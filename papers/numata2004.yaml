@@ -1,0 +1,272 @@
+# Numata 2004 — 刚性 FP 腔热噪声极限
+# 提取者：Claude（AI草稿，待专家确认）
+# 提取日期：2026-04-14
+
+meta:
+  zotero_key: "VDXBPUQB"
+  source_type: technical_paper
+  reliability: high   # 奠基性理论+实验验证论文，被领域广泛引用
+  title: "Thermal-Noise Limit in the Frequency Stabilization of Lasers with Rigid Cavities"
+  year: 2004
+  first_author: Numata
+  journal: "Physical Review Letters"
+  volume: 93
+  pages: "250602"
+  doi: "10.1103/PhysRevLett.93.250602"
+  note: >
+    首次系统量化刚性 FP 腔各部件热噪声贡献；
+    证明 Young 1999 结果已在热噪声极限处工作。
+    奠定了"腔设计优化"的理论框架。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.rigid_fp_cavity
+    name: "刚性 F-P 参考腔"
+    aliases: ["rigid Fabry-Perot cavity", "刚性光学谐振腔"]
+    function: >
+      以固态间隔物（ULE、Zerodur、Invar 等）连接两端腔镜，
+      形成固定光学路径长度的频率参考。
+      稳定性的根本限制：腔内各部件的热噪声（布朗运动）。
+    key_parameters: [finesse, cavity_length, mirror_beam_radius, spacer_material, mirror_substrate_material]
+    typical_specifications:
+      length_example: "24 cm（Numata 2004 分析腔型）"
+      finesse_example: "> 150,000（Young 1999 所用）"
+      beam_radius_example: "240 μm（Numata 2004 计算值）"
+    dominated_by: "镜底物热噪声（约 84% 贡献）"
+
+  - id: ent.mirror_coating
+    name: "腔镜高反射镀层"
+    aliases: ["mirror coating", "HR coating", "多层介质膜"]
+    function: "提供高反射率（R > 99.99%）以实现高精细度；自身热噪声贡献约 15%"
+    material_examples: ["Ta₂O₅/SiO₂ 交替层（标准方案）"]
+    thermal_noise_contribution: "约 15%（仅次于镜底物，远大于间隔物）"
+    note: >
+      镀层的机械损耗（φ_coating）显著高于基底，
+      但厚度薄（几μm），综合贡献约 15%。
+      降低策略：开发低损耗镀层材料（如 AlGaAs、非晶 Si）
+
+  - id: ent.mirror_substrate
+    name: "腔镜基底（底物）"
+    aliases: ["mirror substrate", "镜底物", "mirror blank"]
+    function: "支撑镀层并决定腔端面形变；热噪声贡献最大（约 84%）"
+    material_examples: ["ULE（超低膨胀玻璃）", "熔融石英（fused silica）", "Zerodur"]
+    thermal_noise_contribution: "约 84%（最主要贡献来源）"
+    improvement_direction: >
+      增大光束半径 w₀（噪声 ∝ 1/w₀），
+      或选用低机械损耗材料（熔融石英 φ < 10⁻⁷，远低于 ULE φ ≈ 10⁻⁵）。
+
+  - id: ent.spacer_ule
+    name: "腔间隔物（ULE/Zerodur）"
+    aliases: ["cavity spacer", "腔间隔", "腔体"]
+    function: "固定两腔镜间距，决定腔长稳定性；热噪声贡献最小（约 1%）"
+    thermal_noise_contribution: "约 1%（可忽略）"
+    note: "间隔物的热噪声贡献远小于腔镜，腔设计优化应聚焦于腔镜。"
+
+principles:
+  - id: pri.brownian_thermal_noise_fdt
+    name: "布朗热噪声——涨落耗散定理（FDT）"
+    statement: >
+      根据涨落耗散定理（Fluctuation-Dissipation Theorem），
+      任何机械系统在热平衡时必然存在随机热涨落（布朗运动）。
+      对刚性 FP 腔：腔镜/镀层/间隔物的机械损耗（φ，品质因子 Q = 1/φ）
+      决定了各部件产生的热位移噪声谱密度，
+      进而转化为频率噪声 S_ν(f) ∝ φ·k_B·T / (f · w₀² · L²)。
+      这是"热噪声极限"——刚性腔稳频系统的基本物理上限，不可绕过。
+    domain: "精密光学谐振腔，刚性腔稳频"
+    formula:
+      frequency_noise_psd: "S_ν(f) ≈ (ν/L)² · S_x(f)"
+      displacement_noise_psd: "S_x(f) ∝ k_B T φ / (π² f m_eff ω₀²) [谐振 Q 近似]"
+      simplified_scaling: "S_ν(f) ∝ φ · k_B · T / (f · w₀²)"
+    key_insight: >
+      f⁻¹/² 频率依赖（在 1/f 噪声之上）是布朗噪声的标志性谱形。
+      腔越长（L↑）、光斑越大（w₀↑）、材料损耗越低（φ↓）、温度越低（T↓），热噪声越小。
+    conditions: "热平衡，机械损耗主导（非热弹性噪声为主时）"
+    source_claim: >
+      "thermal noise originating from the Brownian motion of the cavity mirrors
+       and spacer is the fundamental noise source that limits the frequency
+       stability of lasers locked to rigid Fabry-Perot cavities"
+    applicable_when: "刚性 FP 腔稳频，短中期稳定度（低于技术噪声水平时）"
+
+  - id: pri.mirror_substrate_noise_dominance
+    name: "镜底物热噪声主导（84% 贡献）"
+    statement: >
+      对典型 ULE 腔（Numata 2004 参数：L=24 cm，w₀=240 μm），
+      三类部件热噪声贡献比为：
+        镜底物（ULE）：约 84%
+        镀层：约 15%
+        间隔物：约 1%
+      总计：频率噪声谱密度约 0.13 × (1Hz/f)^(1/2) Hz/√Hz。
+      与 Young 1999 的观测值吻合，证明该结果已在热噪声极限工作。
+    domain: "刚性 FP 腔设计"
+    quantitative:
+      total_freq_noise: "~0.13 Hz/√Hz × (1 Hz/f)^(1/2)"
+      mirror_substrate_fraction: "84%"
+      coating_fraction: "15%"
+      spacer_fraction: "1%"
+    key_implication: >
+      优化路径：优先改进腔镜基底材料（如换用低损耗熔融石英）和增大光束半径，
+      而非减小间隔物损耗（贡献太小）。
+    source_claim: >
+      "thermal noise of the mirror substrate accounts for 84% of the total
+       thermal noise power ... while the coating contributes about 15% and
+       the spacer only 1%"
+
+  - id: pri.beam_radius_scaling
+    name: "光束半径对热噪声的改善效应"
+    statement: >
+      镜面热噪声（布朗噪声）的频率噪声谱密度 ∝ 1/w₀（光束半径）。
+      因此增大腔内光斑（使用较长腔或曲率更大的腔镜），
+      可以直接降低热噪声水平。此为最直接的工程改进方向之一。
+    domain: "刚性 FP 腔设计优化"
+    formula: "S_ν(f) ∝ 1/w₀²"
+    limitation: >
+      光斑增大受腔镜尺寸限制；过大光斑会增加对腔镜瑕疵的敏感性。
+      同时，长腔振动敏感度也会提高（若腔设计不做加速度补偿）。
+    source_claim: >
+      "the noise can be reduced by using a larger beam size on the mirrors"
+
+  - id: pri.low_loss_substrate_improvement
+    name: "低机械损耗基底材料改善热噪声"
+    statement: >
+      热噪声 ∝ 机械损耗角 φ（= 1/Q）。
+      熔融石英（fused silica）的机械损耗角 φ ≈ 10⁻⁷—10⁻⁸，
+      远低于 ULE（φ ≈ 1×10⁻⁵）。
+      因此以熔融石英替换 ULE 作为腔镜基底，
+      可将镜底物热噪声贡献降低约 100 倍。
+      代价：熔融石英无零 CTE 温度点，需要额外的精密温控或补偿。
+    domain: "刚性 FP 腔材料选择"
+    comparison:
+      ule_phi: "~1×10⁻⁵"
+      fused_silica_phi: "~10⁻⁷ to 10⁻⁸（约低 100 倍）"
+    practical_note: >
+      现代超稳腔（如 NIST 10 cm 腔、PTB 48 cm 腔）已普遍采用
+      熔融石英腔镜 + ULE/Zerodur 间隔物的组合方案（取其所长）。
+    source_claim: >
+      "Fused silica mirrors with their much lower mechanical loss ...
+       could reduce the thermal noise by two orders of magnitude"
+
+metrics:
+  - id: met.thermal_noise_freq_psd
+    name: "热噪声频率噪声谱密度（刚性腔极限）"
+    unit: "Hz/√Hz"
+    description: >
+      刚性 FP 腔热噪声对应的等效激光频率噪声谱密度，
+      随频率以 f^(-1/2) 下降（布朗噪声特征谱形）。
+    demonstrated_value:
+      value: "~0.13 × (1Hz/f)^(1/2) Hz/√Hz"
+      conditions: "ULE 腔，L=24 cm，w₀=240 μm，T=300 K，三类部件贡献之和"
+      confidence: established
+      source: {zotero_key: "VDXBPUQB", claim: "total thermal noise ... 0.13×(1Hz/f)^0.5 Hz/√Hz"}
+    benchmark: >
+      与 Young 1999 测量的 0.6 Hz 线宽相符，
+      证明 Young 1999 已在热噪声极限工作。
+
+  - id: met.fractional_freq_instability_thermal
+    name: "热噪声决定的分数频率不稳定度"
+    unit: "无量纲（Allan 偏差）"
+    description: "热噪声对应的 Allan 偏差下限（与 S_ν(f) 通过 Fourier 变换对应）"
+    estimated_value:
+      value: "~10⁻¹⁶ 量级（1 s，ULE 参数）"
+      confidence: likely
+      source: {zotero_key: "VDXBPUQB", claim: "frequency instability consistent with thermal noise limit"}
+      note: "与 Young 1999 所报道的 3×10⁻¹⁶ 量级一致"
+
+# ═══════════════════════════════════════════════
+#  RELATIONS（关系）
+# ═══════════════════════════════════════════════
+
+relations:
+  - id: rel.N01
+    subject: ent.rigid_fp_cavity
+    predicate: GOVERNED-BY
+    object: pri.brownian_thermal_noise_fdt
+    confidence: established
+    source: {zotero_key: "VDXBPUQB", claim: "thermal noise from Brownian motion is the fundamental noise source for rigid FP cavities"}
+    conditions: "在技术噪声（振动、温控）被充分抑制后，热噪声是基本极限"
+
+  - id: rel.N02
+    subject: ent.rigid_fp_cavity
+    predicate: CHARACTERIZED-BY
+    object: met.thermal_noise_freq_psd
+    confidence: established
+    source: {zotero_key: "VDXBPUQB", claim: "total thermal noise ~0.13×(1Hz/f)^0.5 Hz/√Hz for ULE 24cm cavity"}
+    conditions: "ULE 腔，L=24 cm，w₀=240 μm，T=300 K"
+
+  - id: rel.N03
+    subject: ent.mirror_substrate
+    predicate: GOVERNED-BY
+    object: pri.mirror_substrate_noise_dominance
+    confidence: established
+    source: {zotero_key: "VDXBPUQB", claim: "mirror substrate accounts for 84% of total thermal noise"}
+    conditions: "ULE 腔镜基底 + 标准 Ta₂O₅/SiO₂ 镀层"
+
+  - id: rel.N04
+    subject: ent.mirror_coating
+    predicate: GOVERNED-BY
+    object: pri.mirror_substrate_noise_dominance
+    confidence: established
+    source: {zotero_key: "VDXBPUQB", claim: "coating contributes about 15%"}
+    conditions: null
+
+  - id: rel.N05
+    subject: met.thermal_noise_freq_psd
+    predicate: GOVERNED-BY
+    object: pri.beam_radius_scaling
+    confidence: established
+    source: {zotero_key: "VDXBPUQB", claim: "noise can be reduced by using larger beam size on mirrors"}
+    conditions: "改变 w₀ 时其他参数不变"
+
+  - id: rel.N06
+    subject: met.thermal_noise_freq_psd
+    predicate: GOVERNED-BY
+    object: pri.low_loss_substrate_improvement
+    confidence: established
+    source: {zotero_key: "VDXBPUQB", claim: "fused silica mirrors with lower mechanical loss could reduce thermal noise by ~100×"}
+    conditions: "以熔融石英替换 ULE 腔镜基底"
+
+  - id: rel.N07
+    subject: met.thermal_noise_freq_psd
+    predicate: GOVERNED-BY
+    object: pri.brownian_thermal_noise_fdt
+    confidence: established
+    source: {zotero_key: "VDXBPUQB", claim: "thermal noise ... originates from Brownian motion of cavity components"}
+    conditions: null
+
+  - id: rel.N08
+    subject: met.laser_linewidth_563nm   # Young 1999 结果
+    predicate: GOVERNED-BY
+    object: pri.brownian_thermal_noise_fdt
+    confidence: established
+    source: {zotero_key: "VDXBPUQB", claim: "the results of Young et al. are consistent with being at the thermal noise limit"}
+    conditions: "Young 1999 所用 ULE 腔参数（L=24 cm，finesse>150,000）"
+    note: >
+      跨论文关系：Numata 2004 确认 Young 1999 的 0.6 Hz 结果
+      已在热噪声极限处工作，是对 Young 1999 的事后"认证"。
+
+  - id: rel.N09
+    subject: ent.rigid_fp_cavity
+    predicate: PART-OF
+    object: ent.mirror_substrate
+    confidence: established
+    source: {zotero_key: "VDXBPUQB"}
+    conditions: null
+    note: "部件层级：腔镜基底、镀层、间隔物共同构成刚性 FP 腔"
+
+  - id: rel.N10
+    subject: ent.rigid_fp_cavity
+    predicate: PART-OF
+    object: ent.mirror_coating
+    confidence: established
+    source: {zotero_key: "VDXBPUQB"}
+    conditions: null
+
+  - id: rel.N11
+    subject: ent.rigid_fp_cavity
+    predicate: PART-OF
+    object: ent.spacer_ule
+    confidence: established
+    source: {zotero_key: "VDXBPUQB"}
+    conditions: null

@@ -1,0 +1,172 @@
+# Drever 1983 — PDH 技术原论文
+# 提取者：Claude（AI草稿，待专家确认）
+# 提取日期：2026-04-14
+
+meta:
+  zotero_key: "694DPR5F"
+  source_type: technical_paper   # technical_paper | review | textbook | standard
+  reliability: high              # 经典奠基论文，结果已被广泛验证
+  title: "Laser phase and frequency stabilization using an optical resonator"
+  year: 1983
+  first_author: Drever
+  journal: "Applied Physics B: Lasers and Optics"
+  volume: 31
+  pages: "97-105"
+  doi: "10.1007/BF00702605"
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.fp_cavity_reference
+    name: "F-P 参考腔"
+    aliases: ["Fabry-Perot reference cavity", "stable Fabry-Perot interferometer", "光学谐振腔"]
+    function: "提供稳定的光学频率参考；PDH 方法中以反射模式工作"
+    key_parameters: [finesse, cavity_linewidth, free_spectral_range, cavity_storage_time]
+    note: "反射模式（而非透射模式）是 Drever 1983 的关键创新，避免了 fringe-side 锁定的问题"
+
+  - id: ent.rf_phase_modulator
+    name: "射频相位调制器"
+    aliases: ["ADP crystal modulator", "EOM", "电光调制器"]
+    function: "产生偏移 ±fm 的射频边带，用于 PDH 方法中的外差探测"
+    parameters:
+      fm_example: "15–24 MHz（论文中实验值）"
+      modulation_depth_example: "0.8 rad"
+
+principles:
+  - id: pri.pdh_heterodyne_detection
+    name: "PDH 射频边带光学外差探测原理"
+    statement: >
+      激光经相位调制后产生 ±fm 边带。边带频率位于 F-P 腔通带之外，
+      从腔输入镜全反射；载波频率接近腔谐振，在腔内建立驻波。
+      腔内场通过输入镜泄漏回的场（leakage field），与直接反射的边带
+      在探测器上产生差拍，经相敏解调后得到正比于频率失谐的双极性
+      误差信号，锁定点恰好在谐振中心（而非 fringe side）。
+    domain: "激光频率稳定"
+    applicable_when: "射频调制频率 >> 腔线宽（FWHM）"
+    key_advantage: "锁定点在谐振中心；对激光强度噪声免疫"
+    source_claim: >
+      "High sensitivity for detection of resonance information is achieved by
+       optical heterodyne detection with sidebands produced by rf phase modulation"
+
+  - id: pri.pdh_high_speed_regime
+    name: "PDH 高速相位检测域"
+    statement: >
+      当激光相位变化速率远快于腔场存储时间（τ_cav = 1/πδν_cav）时，
+      腔内场来不及跟随输入相位，系统从频率鉴别器变为相位检测器。
+      伺服带宽因此不受腔响应时间限制，可远超腔线宽倒数。
+    domain: "激光频率稳定"
+    key_insight: "允许伺服带宽 >> δν_cav，同时保持窄腔谐振的低频锁定精度"
+    conditions: "激光相位变化速率 >> δν_cav（腔半高宽）"
+    source_claim: >
+      "the servo loop bandwidth is not limited by the cavity response time"
+    analogy: "光学版 Pound 微波稳频器（腔等效为相位存储元件）"
+
+  - id: pri.shot_noise_frequency_limit
+    name: "散粒噪声频率稳定度极限"
+    statement: >
+      探测器光电子散粒噪声是频率控制系统的根本性能极限。
+      在高伺服增益下，散粒噪声等效为不可区分的频率扰动，
+      被强制写入激光频率。
+    domain: "激光频率稳定"
+    formula: "δν(τ) ∝ √(ħω · δν_c / Po · T · η) · √B"
+    parameters:
+      - "δν_c: 腔半高宽"
+      - "Po: 注入功率"
+      - "T: 腔在谐振处的透射效率"
+      - "η: 探测器量子效率"
+      - "B: 测量带宽 = 1/(2πτ)"
+    source_claim: >
+      "fundamental performance limit of any optical frequency control system
+       is set by the photoelectron shot noise"
+
+metrics:
+  - id: met.laser_linewidth
+    name: "激光线宽"
+    unit: "Hz"
+    description: "激光频谱的半高宽（FWHM）"
+    demonstrated_value:
+      value: "< 100 Hz"
+      conditions: "染料激光器 + 气体激光器分别 PDH 锁定到同一 F-P 腔，测两者拍频"
+      source: {zotero_key: "694DPR5F", claim: "observed sub-100 Hz beat line width"}
+      confidence: established
+
+  - id: met.freq_spectral_density
+    name: "激光频率噪声谱密度"
+    unit: "Hz/√Hz"
+    description: "激光频率起伏的单边功率谱密度"
+    demonstrated_value:
+      value: "< 0.3 Hz/√Hz @ 1 kHz"
+      conditions: "氩离子激光器 PDH 锁定到三角形环形腔（10 m 臂长，finesse ≈ 100，注入功率 6 mW）"
+      source: {zotero_key: "694DPR5F", claim: "frequency spectral density of better than 0.3 Hz/√Hz at 1 kHz"}
+      confidence: established
+
+methods:
+  - id: meth.pdh_locking
+    name: "PDH 锁频方法"
+    full_name: "Pound-Drever-Hall laser frequency stabilization"
+    steps_summary: >
+      射频相位调制激光 →
+      注入 F-P 腔（反射模式）→
+      反射光（泄漏场 + 全反边带）打在光探测器上 →
+      在调制频率处相敏解调 → 得到双极性频率误差信号 →
+      伺服反馈校正激光频率（PZT / EOM / AOM）
+    required_hardware:
+      - ent.fp_cavity_reference   # 提供光学频率参考
+      - ent.rf_phase_modulator    # 产生探测边带
+    advantages:
+      - "锁定点在腔谐振中心（非 fringe side），长期稳定"
+      - "伺服带宽不受腔响应时间限制"
+      - "对激光强度噪声免疫"
+    conditions:
+      - "射频调制频率 fm >> 腔半高宽 δν_cav"
+      - "调制深度 β ≈ 0.8–1 rad"
+    source_claim: >
+      "A superior configuration uses the optical resonator in the reflection mode"
+
+# ═══════════════════════════════════════════════
+#  RELATIONS（关系）
+# ═══════════════════════════════════════════════
+
+relations:
+  - id: rel.D01
+    subject: met.laser_linewidth
+    predicate: OPERATIONALIZED-AS   # PDH锁频是实现/控制激光线宽的方法
+    object: meth.pdh_locking
+    confidence: established
+    source: {zotero_key: "694DPR5F", claim: "laser stabilization system ... observed sub-100 Hz beat line width"}
+    conditions: null
+
+  - id: rel.D02
+    subject: meth.pdh_locking
+    predicate: GOVERNED-BY
+    object: pri.pdh_heterodyne_detection
+    confidence: established
+    source: {zotero_key: "694DPR5F", claim: "High sensitivity achieved by optical heterodyne detection with sidebands from rf phase modulation"}
+    conditions: "射频调制频率 >> 腔线宽"
+
+  - id: rel.D03
+    subject: meth.pdh_locking
+    predicate: GOVERNED-BY
+    object: pri.pdh_high_speed_regime
+    confidence: established
+    source: {zotero_key: "694DPR5F", claim: "the servo loop bandwidth is not limited by the cavity response time"}
+    conditions: "工作于高速相位检测域"
+
+  - id: rel.D04
+    subject: met.laser_linewidth
+    predicate: GOVERNED-BY
+    object: pri.shot_noise_frequency_limit
+    confidence: established
+    source: {zotero_key: "694DPR5F", claim: "fundamental performance limit set by photoelectron shot noise"}
+    conditions: "伺服增益足够高，散粒噪声为主导限制"
+
+  - id: rel.D05
+    subject: ent.fp_cavity_reference
+    predicate: CHARACTERIZED-BY
+    object: met.freq_spectral_density
+    confidence: established
+    source: {zotero_key: "694DPR5F", claim: "frequency spectral density of better than 0.3 Hz/√Hz at 1 kHz"}
+    conditions: "氩离子激光器 PDH 锁定到三角形环形腔（10 m 臂，finesse ≈ 100）后的残余频率噪声"
+    note: "此指标同时表征腔的稳定性和整个锁频系统的性能"
