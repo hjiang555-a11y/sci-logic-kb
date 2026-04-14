@@ -24,7 +24,7 @@
 - [x] `VDXBPUQB` | Numata 2004 | Thermal-Noise Limit in the Frequency Stabilization of Lasers with Rigid Cavities → `numata2004.yaml`
 - [ ] `VU2V2PTX` | Webster 2003? | Thermal-noise-limited optical cavity
 - [x] `UCNS7EM7` | Webster 2007 | Vibration insensitive optical cavity → `webster2007.yaml`
-- [ ] `A96XGR82` | Webster 2011 | Force-insensitive optical cavity
+- [x] `A96XGR82` | Webster 2011 | Force-insensitive optical cavity
 - [ ] `MW3RDB68` | Legero 2010 | Tuning the thermal expansion properties of optical reference cavities
 - [ ] `GLXHEIPV` | Millo 200x | Ultrastable lasers based on vibration insensitive cavities
 - [x] `YKPFKDD9` | Kessler 2012 | A sub-40-mHz-linewidth laser based on a silicon single-crystal optical cavity → `kessler2012.yaml`
@@ -33,7 +33,7 @@
 - [ ] `ZDF94KK5` | Matei 2017 (v2?) | 1.5 μm Lasers with Sub-10 mHz Linewidth (same paper, check)
 - [x] `UV6S5FFL` | Häfner 2015 | 8×10⁻¹⁷ fractional laser frequency instability with a long room-temp. cavity → `hafner2015.yaml`
 - [ ] `PZGR9S7S` | Wu 201x | 0.26-Hz-linewidth ultrastable lasers at 1557 nm
-- [ ] `JIZCUZLY` | Robinson 2019 | Crystalline optical cavity at 4 K with thermal-noise-limited instability
+- [x] `JIZCUZLY` | Robinson 2019 | Crystalline optical cavity at 4 K with thermal-noise-limited instability
 - [ ] `8YK6EH22` | Kedar 202x | Frequency stability of cryogenic silicon cavities with semiconductor crystalline coatings
 - [ ] `N6HILT6B` | Chen 2025 | A laser with instability reaching 4×10⁻¹⁷ based on a 10-cm-long silicon cavity
 - [ ] `U2LXSU62` | Parke 2025 | Three hundred microsecond optical cavity storage time and 10⁻⁷ acceleration insensitivity
@@ -58,7 +58,7 @@
 
 ### 其他技术细节
 
-- [ ] `S5GJNVG8` | Zhang 2014 | Reduction of residual amplitude modulation to 1×10⁻⁶
+- [x] `S5GJNVG8` | Zhang 2014 | Reduction of residual amplitude modulation to 1×10⁻⁶
 - [ ] `FIJXUVZV` | Tai 2016 | Electro-optic modulator with ultra-low residual amplitude modulation
 - [ ] `WDGF2B36` | Potnis 201x | Broadband low-noise photodetector for PDH
 - [ ] `VM5MJ9B3` | Grote 2016 | High power and ultra-low-noise photodetector for squeezed-light
