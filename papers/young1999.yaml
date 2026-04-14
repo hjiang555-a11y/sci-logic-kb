@@ -309,6 +309,7 @@ relations:
         expected_gain: "采用低温硅腔平台可把底物/间隔物热噪声进一步降到 10⁻¹⁷ 量级。"
         status: demonstrated
         source: {zotero_key: "YKPFKDD9", claim: "high mechanical quality factor of silicon reduces thermal noise contribution from spacer and substrates"}
+        note: "YKPFKDD9 提供低温硅腔原理路径；具体 10⁻¹⁷ 量级演示由后续 Matei 2017 / Lee 2026 等工作完成。"
     note: >
       跨文件引用，ent.fp_cavity_system 与 pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml。
       Young 1999 作为该共享节点的 reference implementation，其 0.6 Hz / 3×10⁻¹⁶ 结果
