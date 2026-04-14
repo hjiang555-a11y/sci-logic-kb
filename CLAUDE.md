@@ -139,9 +139,44 @@ git push
 - `ent.spacer_ule` — 腔间隔物
 - `pri.brownian_thermal_noise_fdt` — 布朗热噪声——涨落耗散定理
 - `pri.mirror_substrate_noise_dominance` — 镜底物热噪声主导（84%）
-- `pri.beam_radius_scaling` — 光束半径对热噪声的改善效应
-- `pri.low_loss_substrate_improvement` — 低机械损耗基底材料改善热噪声
 - `met.thermal_noise_freq_psd` — 热噪声频率噪声谱密度
+
+### 来自 webster2007.yaml
+
+- `ent.vibration_insensitive_fp_cavity_w07` — 水平方向振动不敏感 FP 腔（Webster 2007）
+- `pri.cavity_deformation_compensation` — 腔镜中心位移补偿原理（四点对称支撑）
+- `pri.ule_cte_zero_crossing` — ULE 零膨胀点工作原理
+- `met.vibration_sensitivity_w07` — 加速度灵敏度（< 1 kHz/(m/s²)）
+- `ent.vibration_environment` — 环境振动噪声（外围条件节点，ext）
+
+### 来自 kessler2012.yaml
+
+- `ent.si_crystal_fp_cavity_k12` — Si 单晶低温 FP 腔（Level 1，124 K，~1×10⁻¹⁶）
+- `pri.silicon_cte_zero_crossing_124k` — Si 单晶 CTE 零点（124.2 K，dα/dT=1.71×10⁻⁸ K⁻²）
+- `pri.cryogenic_mechanical_q_enhancement` — 低温机械 Q 增强（Si Q > 10⁷ at 124 K）
+- `met.fractional_freq_instability_k12` — ~1×10⁻¹⁶（Kessler 2012，Si 腔）
+- `met.laser_linewidth_k12` — <35 mHz 单激光线宽（Kessler 2012）
+- `met.vibration_sensitivity_k12` — κ < 10⁻¹⁰/g（Si 腔全向）
+
+### 来自 cole2013.yaml
+
+- `ent.algaas_crystalline_mirror_c13` — AlGaAs/GaAs 晶体镀层腔镜（Level 2，φ≤2.5×10⁻⁵，室温）
+- `pri.crystalline_coating_low_brownian_noise` — 单晶镀层低布朗热噪声原理（φ_AlGaAs/φ_IBS ≈ 1/16）
+- `met.algaas_coating_loss_angle_c13` — 晶体镀层损耗角 φ≤2.5×10⁻⁵（室温上限）
+
+### 来自 matei2017.yaml
+
+- `pri.flicker_noise_linewidth_divergence` — 闪变频率噪声线宽发散问题与实用线宽定义
+- `met.fractional_freq_instability_m17` — mod σ_y = 4×10⁻¹⁷（Matei 2017，Si 腔镀层极限）
+- `met.laser_linewidth_m17` — 5–10 mHz 个体线宽（Matei 2017，Si2–Si3 拍频）
+- `met.optical_coherence_time_m17` — 11 s (Ramsey) 至 55 s (回溯)（Matei 2017）
+
+### 来自 hafner2015.yaml
+
+- `ent.self_balancing_long_cavity_h15` — 自平衡安装 48 cm ULE 腔（Level 2，< 2×10⁻¹⁰/g 全向）
+- `pri.long_cavity_thermal_noise_reduction` — 增长腔长降低热噪声分数贡献（σ_y ∝ 1/L）
+- `met.fractional_freq_instability_h15` — <1×10⁻¹⁶（1–1000 s，Häfner 2015，室温 48 cm 腔）
+- `met.acceleration_sensitivity_h15` — κ < 2×10⁻¹⁰/g 全向（自平衡安装）
 
 ### 来自 jiang2010.yaml
 
@@ -160,10 +195,10 @@ git push
 
 按照超稳激光三分支架构，优先处理填充"缺口"最大的方向：
 
-1. **FP 腔防振设计**：Webster 系列（UCNS7EM7、A96XGR82、H5MYBTXH）
-2. **更低热噪声腔**：Kessler Si 腔（YKPFKDD9）、Cole 晶体镀层（CWIHQRJD）
-3. **前沿记录**：Matei 2017 mHz 线宽（TVY7T59A / ZDF94KK5）
-4. **光纤稳频**：Dong 2015（W8K5GLK6）、Huang（JYGVFJBN）
+1. **低温硅腔系列**：Robinson 2019（JIZCUZLY，4 K Si 腔）、Kedar 202x（8YK6EH22，晶体镀层+低温）
+2. **FP 腔防振改进**：Webster 2011（A96XGR82，force-insensitive）、Legero 2010（MW3RDB68，热膨胀调谐）
+3. **前沿记录**：Chen 2025（N6HILT6B，4×10⁻¹⁷）、Parke 2025（U2LXSU62，300 μs 存储时间）
+4. **光纤稳频**：Huang 2023（JYGVFJBN，全光纤 200 mHz）
 5. **其余论文**：按 QUEUE.md 顺序
 
 ---

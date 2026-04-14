@@ -27,11 +27,11 @@
 - [ ] `A96XGR82` | Webster 2011 | Force-insensitive optical cavity
 - [ ] `MW3RDB68` | Legero 2010 | Tuning the thermal expansion properties of optical reference cavities
 - [ ] `GLXHEIPV` | Millo 200x | Ultrastable lasers based on vibration insensitive cavities
-- [ ] `YKPFKDD9` | Kessler 2012? | A sub-40-mHz-linewidth laser based on a silicon single-crystal optical cavity
-- [ ] `CWIHQRJD` | Cole 201x | Tenfold reduction of Brownian noise in high-reflectivity optical coatings
-- [ ] `TVY7T59A` | Matei 2017 | 1.5 μm Lasers with Sub-10 mHz Linewidth
+- [x] `YKPFKDD9` | Kessler 2012 | A sub-40-mHz-linewidth laser based on a silicon single-crystal optical cavity → `kessler2012.yaml`
+- [x] `CWIHQRJD` | Cole 2013 | Tenfold reduction of Brownian noise in high-reflectivity optical coatings → `cole2013.yaml`
+- [x] `TVY7T59A` | Matei 2017 | 1.5 μm Lasers with Sub-10 mHz Linewidth → `matei2017.yaml`
 - [ ] `ZDF94KK5` | Matei 2017 (v2?) | 1.5 μm Lasers with Sub-10 mHz Linewidth (same paper, check)
-- [ ] `UV6S5FFL` | Häfner 2015 | 8×10⁻¹⁷ fractional laser frequency instability with a long room-temp. cavity
+- [x] `UV6S5FFL` | Häfner 2015 | 8×10⁻¹⁷ fractional laser frequency instability with a long room-temp. cavity → `hafner2015.yaml`
 - [ ] `PZGR9S7S` | Wu 201x | 0.26-Hz-linewidth ultrastable lasers at 1557 nm
 - [ ] `JIZCUZLY` | Robinson 2019 | Crystalline optical cavity at 4 K with thermal-noise-limited instability
 - [ ] `8YK6EH22` | Kedar 202x | Frequency stability of cryogenic silicon cavities with semiconductor crystalline coatings
