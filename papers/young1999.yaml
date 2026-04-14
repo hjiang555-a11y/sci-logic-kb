@@ -313,6 +313,8 @@ relations:
       跨文件引用，ent.fp_cavity_system 与 pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml。
       Young 1999 作为该共享节点的 reference implementation，其 0.6 Hz / 3×10⁻¹⁶ 结果
       后由 Numata 2004 认定为热噪声极限验证案例。
+      本关系及其 breakthrough_paths 使用后续论文（Numata 2004 / Kessler 2012）
+      作为跨论文验证与演进证据，而非 Young 1999 原文自述。
 
   - id: rel.Y11
     subject: ent.fp_cavity_system
