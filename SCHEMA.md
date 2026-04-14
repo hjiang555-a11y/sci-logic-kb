@@ -322,6 +322,9 @@ note: "跨文件引用，定义于 shaddock1999.yaml"
 | `matei2017.yaml` | TVY7T59A | Matei 2017 — Si 腔 5–10 mHz 线宽，mod σ_y=4×10⁻¹⁷ | ✅ v2.0 完成（2026-04-14） |
 | `hafner2015.yaml` | UV6S5FFL | Häfner 2015 — 48 cm 室温 ULE 腔，σ_y < 1×10⁻¹⁶ | ✅ v2.0 完成（2026-04-14） |
 | `lee2026.yaml` | 4QVEXY63 | Lee 2026 — 2.5×10⁻¹⁷ Si 腔 + AlGaAs 晶体镀层（世界纪录） | ✅ v2.0 完成（2026-04-14） |
+| `webster2011.yaml` | A96XGR82 | Webster 2011 — 立方体力不敏感光学腔，最大被动灵敏度 2.5×10⁻¹¹/g | ✅ v2.0 完成（2026-04-14） |
+| `robinson2019.yaml` | JIZCUZLY | Robinson 2019 — 4 K Si 腔热噪声极限 mod σ_y=6.5×10⁻¹⁷，16 mHz 线宽 | ✅ v2.0 完成（2026-04-14） |
+| `zhang2014_ram.yaml` | S5GJNVG8 | Zhang 2014 — RAM主动消除至1×10⁻⁶，PDH锁频系统误差抑制 | ✅ v2.0 完成（2026-04-14） |
 
 **v2.0 重整摘要**：
 - `numata2004`：`ent.rigid_fp_cavity` → `ent.fp_cavity_system`；GOVERNED-BY → BOUNDED-BY（含 breakthrough_paths）；修正 PART-OF 方向；删除语义错误的工程路径 BOUNDED-BY；新增 DERIVED-FROM 链
