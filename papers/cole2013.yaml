@@ -1,0 +1,172 @@
+# Cole 2013 — 高反镀层布朗噪声十倍降低（AlGaAs 晶体镀层）
+# 提取者：Claude（AI草稿，待专家确认）
+# 提取日期：2026-04-14
+# Schema版本：v2.0
+
+meta:
+  zotero_key: "CWIHQRJD"
+  source_type: technical_paper
+  reliability: high
+  title: "Tenfold reduction of Brownian noise in high-reflectivity optical coatings"
+  year: 2013
+  first_author: Cole
+  journal: "Nature Photonics"
+  volume: 7
+  pages: "644-650"
+  doi: "10.1038/nphoton.2013.174"
+  note: >
+    首次在光学参考腔中演示 AlGaAs/GaAs 单晶外延镀层（晶体镀层），
+    室温下测量的镀层损耗角 φ ≤ 2.5×10⁻⁵（上限值），较最优 IBS 介质膜（φ ~ 2×10⁻⁴）低约 10×。
+    直接解决了 Kessler 2012 Si 腔确认的最终瓶颈：IBS 镀层布朗热噪声。
+    核心技术：MBE 外延 AlGaAs/GaAs DBR + 基底转移工艺（键合到曲面熔融石英），
+    腔精细度 F = 1.5(1)×10⁵，Allan 偏差 σ_y = 1.05(1)×10⁻¹⁵ at 1 s（35mm Zerodur 腔）。
+    JILA（Ye 组）+ 维也纳大学（Aspelmeyer 组）合作。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.algaas_crystalline_mirror_c13
+    name: "AlGaAs/GaAs 晶体镀层腔镜"
+    aliases: ["crystalline coating", "AlGaAs DBR mirror", "substrate-transferred crystalline coating", "晶体镀层"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      以 AlGaAs/GaAs 单晶外延多层反射镜（DBR）替代传统 IBS 介质镀层，
+      利用单晶半导体的本征低机械损耗（φ_AlGaAs ~ 2.5×10⁻⁵，Q ~ 40,000，室温）
+      将镀层布朗热噪声在室温下降低约 10×，
+      同时保持 >99.98% 高反射率和 F = 1.5(1)×10⁵ 腔精细度。
+      开辟室温 10⁻¹⁷ 稳定度路径，并作为 Si 低温腔的镀层升级方案。
+    key_parameters:
+      material: "Al₀.₉₂Ga₀.₀₈As（低折射率）/ GaAs（高折射率）交替层，MBE 外延，40.5 周期"
+      design: "标准四分之一波长 DBR，中心波长约 1064 nm（Cole 2013 腔）"
+      loss_angle_room_T: "φ_AlGaAs ≤ 2.5×10⁻⁵（室温，FP 腔热噪声测量上限）"
+      loss_angle_cryo_10K: "φ_AlGaAs ~ 4.5×10⁻⁶（10 K，自由悬挂谐振器测量）"
+      reflectivity: "> 99.98%（R > 0.9998），散射 4 ppm + 透射 4 ppm + 吸收 12.5 ppm"
+      finesse: "1.5(1)×10⁵（1064 nm，35 mm Zerodur 腔，与理论值 1.53×10⁵ 符合）"
+      substrate_transfer: "MBE 生长后选择性化学蚀刻去除 GaAs 底板，直接范德华键合到曲面熔融石英底物"
+      noise_reduction_room_T: "镀层布朗噪声较标准 IBS 降低 ~10×（1 Hz 处）"
+      wavelength_range: "650 nm – ~3 μm（带隙吸收以下至自由载流子吸收以上）"
+      birefringence: "双折射劈裂 4.0(4) MHz（各向异性固有应变，远大于腔线宽 29 kHz）"
+    design_rationale: >
+      IBS 介质膜（SiO₂/Ta₂O₅）损耗角 φ ~ 4×10⁻⁴，过去十年改善不超过 2×。
+      AlGaAs 单晶无晶界散射，机械 Q ~ 40,000（φ ~ 2.5×10⁻⁵），本征降低约 16×。
+      基底转移工艺解决了单晶薄膜无法直接沉积在非晶弯曲底物上的技术障碍。
+    note: >
+      Level 2；可 PART-OF ent.fp_cavity_system 或 ent.si_crystal_fp_cavity_k12（定义于 kessler2012.yaml）；
+      与 ent.mirror_coating（numata2004.yaml）竞争。
+
+principles:
+  - id: pri.crystalline_coating_low_brownian_noise
+    name: "单晶镀层低布朗热噪声原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      传统 IBS 介质镀层（SiO₂/Ta₂O₅ 等）的非晶结构引起高机械损耗（φ ~ 4×10⁻⁴）。
+      单晶半导体多层反射镜（AlGaAs/GaAs）的有序晶体结构使损耗角降至 φ ~ 2.5×10⁻⁵（Q ~ 4×10⁴，室温），
+      根据涨落耗散定理，布朗热噪声功率谱密度降低约 10×（损耗角之比）。
+      低温（10 K）下 AlGaAs Q 可进一步提升约 6×，损耗角降至 ~4.5×10⁻⁶。
+    domain: "精密光学镀层，低热噪声干涉仪"
+    formula: "S_x,c(f) ∝ φ_c × k_B × T / (π × f × k_eff)；φ_AlGaAs / φ_IBS ≈ 1/16（室温）"
+    key_insight: >
+      镀层热噪声突破不在于改进 IBS 工艺（受限于非晶本质），
+      而在于改变材料体系：有序单晶结构从根本上降低机械损耗。
+    conditions: "T = 300 K（室温）；键合界面无附加损耗（van der Waals 直接键合 + 退火）"
+    applicable_when: "AlGaAs/GaAs DBR，650 nm–3 μm 波长范围"
+    source_claim: >
+      "we observe a thermally limited noise floor consistent with a tenfold reduction
+       in mechanical damping when compared with the best dielectric multilayers"
+
+metrics:
+  - id: met.algaas_coating_loss_angle_c13
+    name: "AlGaAs 晶体镀层损耗角（Cole 2013）"
+    unit: "无量纲（损耗角 φ = 1/Q_mech）"
+    description: "从 FP 腔热噪声测量提取的 AlGaAs/GaAs 晶体镀层机械损耗角上限"
+    demonstrated_value:
+      value: "φ_AlGaAs ≤ 2.5×10⁻⁵（室温上限，FP 腔测量）；对比 IBS 最优 φ ~ 2×10⁻⁴"
+      conditions: "35 mm Zerodur 腔，熔融石英底物，1064 nm，室温，与 PTB 698 nm 参考激光比较（Häfner 2015 前身）"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "CWIHQRJD", claim: "extracted a loss angle of 0(4)×10⁻⁵ for the substrate-transferred crystalline coatings... agreement with room-temperature loss angle of 2.5×10⁻⁵"}
+    comparison:
+      ibs_best: "φ_IBS_best ~ 2×10⁻⁴（最优 TiO₂:Ta₂O₅ 共掺 IBS 膜）"
+      ibs_standard: "φ_IBS_standard ~ 4×10⁻⁴（标准 SiO₂/Ta₂O₅）"
+      reduction_factor: "约 10–16×（损耗角之比）"
+      cryogenic_10k: "φ_AlGaAs ~ 4.5×10⁻⁶（10 K，自由悬挂谐振器测量，进一步降低约 6×）"
+
+# ═══════════════════════════════════════════════
+#  RELATIONS（关系）
+# ═══════════════════════════════════════════════
+
+relations:
+  - id: rel.C01
+    subject: ent.algaas_crystalline_mirror_c13
+    predicate: PART-OF
+    object: ent.fp_cavity_system
+    confidence: established
+    source: {zotero_key: "CWIHQRJD", claim: "employing these crystalline coatings as end mirrors in a Fabry-Perot cavity"}
+    conditions: null
+    note: "ent.fp_cavity_system 定义于 numata2004.yaml；晶体镀层同样适用于 ent.si_crystal_fp_cavity_k12（kessler2012.yaml）"
+
+  - id: rel.C02
+    subject: ent.algaas_crystalline_mirror_c13
+    predicate: ENABLED-BY
+    object: pri.crystalline_coating_low_brownian_noise
+    confidence: established
+    source: {zotero_key: "CWIHQRJD", claim: "monocrystalline multilayers, which exhibit both intrinsically low mechanical loss and high optical quality"}
+    conditions: null
+    temporal_role: proposes
+
+  - id: rel.C03
+    subject: pri.crystalline_coating_low_brownian_noise
+    predicate: DERIVED-FROM
+    object: pri.brownian_thermal_noise_fdt
+    confidence: established
+    source: {zotero_key: "CWIHQRJD", claim: "According to the fluctuation-dissipation theorem, this motion is directly linked to mechanical damping in the constituent materials"}
+    conditions: null
+    note: "pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml"
+
+  - id: rel.C04
+    subject: ent.algaas_crystalline_mirror_c13
+    predicate: COMPETES-WITH
+    object: ent.mirror_coating
+    context: "FP 腔镜高反射镀层方案：AlGaAs 晶体镀层 vs IBS 介质膜"
+    tradeoffs:
+      subject_wins:
+        - "室温损耗角 φ ~ 2.5×10⁻⁵，约 10× 低于最优 IBS（~2×10⁻⁴），直接降低镀层布朗噪声"
+        - "低温（10 K）下进一步降低至 φ ~ 4.5×10⁻⁶，共改善约 100×"
+        - "开辟室温 10⁻¹⁷ 稳定度路径，无需全面低温化"
+        - "与 Si 低温腔结合，有望突破 10⁻¹⁸ 量级"
+      object_wins:
+        - "IBS 介质膜直接沉积于任意形状底物，工艺成熟，成本低，波长覆盖广"
+        - "AlGaAs 存在固有双折射（4 MHz 劈裂），IBS 双折射更小"
+        - "AlGaAs 波长范围受限（650 nm–3 μm），IBS 可覆盖 300 nm–4 μm"
+        - "晶体镀层制备复杂（MBE + 基底转移），批量制造难度大"
+    confidence: established
+    source: {zotero_key: "CWIHQRJD", claim: "tenfold reduction in coating noise at 1 Hz"}
+    note: "ent.mirror_coating 定义于 numata2004.yaml"
+
+  - id: rel.C05
+    subject: ent.fp_cavity_system
+    predicate: BOUNDED-BY
+    object: pri.brownian_thermal_noise_fdt
+    confidence: established
+    source: {zotero_key: "CWIHQRJD", claim: "current bounds of stability and sensitivity are dictated by the excess mechanical damping of the high-reflectivity coatings"}
+    conditions: "室温 ULE/Zerodur 腔，IBS 介质镀层；镀层为最大热噪声来源"
+    is_system_limit: true
+    dominated_by: null
+    quantitative_contribution: "镀层主导（φ_IBS ~ 4×10⁻⁴，相比熔融石英底物 φ_FS ~ 10⁻⁶ 大 2–3 数量级）"
+    regime: all
+    verification_status: observed
+    temporal_role: validates
+    breakthrough_paths:
+      - direction: ent.algaas_crystalline_mirror_c13
+        expected_gain: "AlGaAs 晶体镀层 → 镀层噪声降低 10×；室温长腔（48 cm）总热噪声可降至 ~10⁻¹⁷"
+        status: demonstrated
+        source: {zotero_key: "CWIHQRJD", claim: "tenfold reduction in mechanical damping when compared with the best dielectric multilayers"}
+    note: >
+      ent.fp_cavity_system 定义于 numata2004.yaml；
+      pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml；
+      此 BOUNDED-BY 从 Cole 2013 视角验证了 numata2004 的镀层主导结论，
+      temporal_role: validates。

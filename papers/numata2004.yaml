@@ -96,8 +96,8 @@ principles:
     domain: "精密光学谐振腔，刚性腔稳频"
     formula:
       frequency_noise_psd: "S_ν(f) ≈ (ν/L)² · S_x(f)"
-      displacement_noise_psd: "S_x(f) ∝ k_B T φ / (π² f m_eff ω₀²)"
-      simplified_scaling: "S_ν(f) ∝ φ · k_B · T / (f · w₀²)"
+      displacement_noise_psd: "S_x(f) ∝ k_B T φ / (Y · w₀ · f)  # Levin/FDT 结果"
+      simplified_scaling: "S_ν(f) ∝ φ · k_B · T / (L² · w₀ · f)"
     key_insight: >
       腔越长（L↑）、光斑越大（w₀↑）、材料损耗越低（φ↓）、温度越低（T↓），热噪声越小。
       f⁻¹/² 频率依赖是布朗噪声的标志性谱形。
@@ -107,6 +107,42 @@ principles:
       "thermal noise originating from the Brownian motion of the cavity mirrors
        and spacer is the fundamental noise source that limits the frequency
        stability of lasers locked to rigid Fabry-Perot cavities"
+    condition_variables:
+      - symbol: φ
+        name: "腔镜基底机械损耗角"
+        analytical_relation: "S_ν ∝ φ"
+        current_value: "~1×10⁻⁵（ULE 腔镜基底，Numata 2004 参数）"
+        best_demonstrated:
+          value: "~1×10⁻⁸（熔融石英腔镜）"
+          source: {zotero_key: "VDXBPUQB", claim: "fused silica mirrors could reduce thermal noise by two orders of magnitude"}
+        constraints: "熔融石英无 CTE 零点，需额外精密温控或补偿间隔物膨胀"
+
+      - symbol: w₀
+        name: "腔内光斑半径（镜面处）"
+        analytical_relation: "S_ν ∝ 1/w₀"
+        current_value: "240 μm（Numata 2004 分析腔型，L=24 cm）"
+        best_demonstrated:
+          value: "~600 μm（Häfner 2015，48 cm 腔，室温最长实用腔）"
+          source: null   # 待 häfner2015.yaml 处理后补充
+        constraints: "需调整腔镜曲率半径（g 参数），受腔镜通光孔径限制；过大光斑增加对镜面局部缺陷的敏感性"
+
+      - symbol: T
+        name: "工作温度"
+        analytical_relation: "S_ν ∝ T"
+        current_value: "300 K（室温）"
+        best_demonstrated:
+          value: "4 K（Robinson 2019，晶体硅腔）；124 K（Kessler 2012，硅零膨胀温度点）"
+          source: null   # 待对应论文处理后补充
+        constraints: "需低温制冷系统；腔体材料须在工作温度附近有 CTE 零点（硅在 124 K 和 ~17 K）"
+
+      - symbol: L
+        name: "腔长"
+        analytical_relation: "S_ν ∝ 1/L²（固定 w₀）；实践中 w₀ 随 L 增大，综合效益更大"
+        current_value: "24 cm（Numata 2004）"
+        best_demonstrated:
+          value: "48 cm（Häfner 2015，室温；PTB 最长实用腔）"
+          source: null   # 待 häfner2015.yaml 处理后补充
+        constraints: "腔越长隔振越难（加速度灵敏度随腔长增大）；真空容器和实验平台尺寸受限"
 
   - id: pri.mirror_substrate_noise_dominance
     name: "镜底物热噪声主导（84% 贡献）"
@@ -133,45 +169,6 @@ principles:
       "thermal noise of the mirror substrate accounts for 84% of the total
        thermal noise power ... while the coating contributes about 15% and
        the spacer only 1%"
-
-  - id: pri.beam_radius_scaling
-    name: "光束半径对热噪声的改善效应"
-    tier: engineering
-    verification_status: calculated
-    statement: >
-      镜面热噪声（布朗噪声）的频率噪声谱密度 ∝ 1/w₀（光束半径反比）。
-      因此增大腔内光斑，可以直接降低热噪声水平。此为最直接的工程改进方向之一。
-      增大光斑的方式：选用适当曲率半径的腔镜（不可简单等同于"加长腔"，
-      需同时调整 g 参数确保束腰确实增大）。
-    domain: "刚性 FP 腔设计优化"
-    formula: "S_ν(f) ∝ 1/w₀（按 Levin/FDT 推导：S_x ∝ 1/(Y·w₀)，S_ν = (ν₀/L)²·S_x）"
-    limitation: >
-      光斑增大受腔镜尺寸限制；过大光斑会增加对腔镜瑕疵的敏感性。
-      增大光斑需调整腔镜曲率半径，不是简单加长腔体；同时需控制振动敏感度。
-    source_claim: >
-      "the noise can be reduced by using a larger beam size on the mirrors"
-
-  - id: pri.low_loss_substrate_improvement
-    name: "低机械损耗基底材料改善热噪声"
-    tier: engineering
-    verification_status: calculated
-    statement: >
-      热噪声 ∝ 机械损耗角 φ（= 1/Q）。
-      熔融石英（fused silica）的机械损耗角 φ ≈ 10⁻⁷—10⁻⁸，
-      远低于 ULE（φ ≈ 1×10⁻⁵）。
-      因此以熔融石英替换 ULE 作为腔镜基底，
-      可将镜底物热噪声贡献降低约 100 倍。
-      代价：熔融石英无零 CTE 温度点，需要额外的精密温控或补偿。
-    domain: "刚性 FP 腔材料选择"
-    comparison:
-      ule_phi: "~1×10⁻⁵"
-      fused_silica_phi: "~10⁻⁷ to 10⁻⁸（约低 100 倍）"
-    practical_note: >
-      现代超稳腔（如 NIST 10 cm 腔、PTB 48 cm 腔）已普遍采用
-      熔融石英腔镜 + ULE/Zerodur 间隔物的组合方案（取其所长）。
-    source_claim: >
-      "Fused silica mirrors with their much lower mechanical loss ...
-       could reduce the thermal noise by two orders of magnitude"
 
 metrics:
   - id: met.thermal_noise_freq_psd
@@ -219,15 +216,6 @@ relations:
     regime: all
     verification_status: observed
     temporal_role: proposes
-    breakthrough_paths:
-      - direction: pri.beam_radius_scaling
-        expected_gain: "光斑扩大 2× → 热噪声降低 2×（S_ν ∝ 1/w₀）"
-        status: demonstrated
-        source: {zotero_key: "VDXBPUQB"}
-      - direction: pri.low_loss_substrate_improvement
-        expected_gain: "熔融石英镜底物 → 热噪声降低 ~100×"
-        status: demonstrated
-        source: {zotero_key: "VDXBPUQB"}
 
   - id: rel.N02
     subject: ent.fp_cavity_system
@@ -250,15 +238,6 @@ relations:
     regime: all
     verification_status: calculated
     temporal_role: proposes
-    breakthrough_paths:
-      - direction: pri.low_loss_substrate_improvement
-        expected_gain: "熔融石英镜底物 → 镜底物热噪声降低 ~100×"
-        status: demonstrated
-        source: {zotero_key: "VDXBPUQB"}
-      - direction: pri.beam_radius_scaling
-        expected_gain: "增大光斑 2× → 镜底物热噪声降低 2×（S_ν ∝ 1/w₀）"
-        status: demonstrated
-        source: {zotero_key: "VDXBPUQB"}
 
   - id: rel.N04
     subject: ent.mirror_coating
@@ -284,19 +263,6 @@ relations:
     is_system_limit: false
     dominated_by: pri.mirror_substrate_noise_dominance
     quantitative_contribution: "~1%"
-    regime: all
-    verification_status: calculated
-    temporal_role: proposes
-
-  - id: rel.N06
-    subject: met.thermal_noise_freq_psd
-    predicate: BOUNDED-BY
-    object: pri.brownian_thermal_noise_fdt
-    confidence: established
-    source: {zotero_key: "VDXBPUQB", claim: "thermal noise ... originates from Brownian motion of cavity components"}
-    conditions: null
-    is_system_limit: true
-    dominated_by: null
     regime: all
     verification_status: calculated
     temporal_role: proposes
@@ -350,18 +316,3 @@ relations:
     source: {zotero_key: "VDXBPUQB", claim: "mirror substrate accounts for 84% ... calculated from FDT"}
     conditions: "ULE 腔典型参数（L=24 cm，w₀=240 μm）"
 
-  - id: rel.N12
-    subject: pri.beam_radius_scaling
-    predicate: DERIVED-FROM
-    object: pri.brownian_thermal_noise_fdt
-    confidence: established
-    source: {zotero_key: "VDXBPUQB", claim: "noise can be reduced by using larger beam size ... S_ν ∝ 1/w₀"}
-    conditions: null
-
-  - id: rel.N13
-    subject: pri.low_loss_substrate_improvement
-    predicate: DERIVED-FROM
-    object: pri.brownian_thermal_noise_fdt
-    confidence: established
-    source: {zotero_key: "VDXBPUQB", claim: "fused silica mirrors with lower mechanical loss ... S_ν ∝ φ"}
-    conditions: null

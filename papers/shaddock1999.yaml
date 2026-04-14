@@ -199,19 +199,6 @@ relations:
       此关系揭示 PDH 与 Tilt Locking 的物理同源性；
       meth.pdh_locking 定义于 drever1983.yaml。
 
-  - id: rel.S06
-    subject: met.servo_bandwidth
-    predicate: BOUNDED-BY
-    object: pri.spatial_homodyne_detection
-    confidence: likely
-    source: {zotero_key: "S5PX7GHC"}
-    conditions: "受分割探测器跨阻放大器带宽限制"
-    is_system_limit: false
-    dominated_by: null
-    regime: all
-    verification_status: observed
-    temporal_role: proposes
-
   - id: rel.S07
     subject: pri.gouy_phase_discrimination
     predicate: DERIVED-FROM
