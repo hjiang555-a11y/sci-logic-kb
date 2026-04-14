@@ -183,12 +183,12 @@ relations:
     temporal_role: proposes
 
   - id: rel.D04
-    subject: met.laser_linewidth
+    subject: meth.pdh_locking
     predicate: BOUNDED-BY
     object: pri.shot_noise_frequency_limit
     confidence: established
     source: {zotero_key: "694DPR5F", claim: "fundamental performance limit set by photoelectron shot noise"}
-    conditions: "伺服增益足够高，散粒噪声为主导限制"
+    conditions: "伺服增益足够高，散粒噪声为主导限制；高功率/高精细度腔可降低该极限"
     is_system_limit: true
     dominated_by: null
     quantitative_contribution: "根本探测极限（文中未分解实验占比）"
@@ -200,6 +200,7 @@ relations:
         expected_gain: "在同一 PDH 架构下提高注入功率 Po、透射效率 T 和量子效率 η，可按 δν_shot ∝ (Po·T·η)^(-1/2) 继续压低散粒噪声极限。"
         status: demonstrated
         source: {zotero_key: "694DPR5F", claim: "fundamental performance limit ... set by the photoelectron shot noise"}
+    note: "被限制的是 PDH 锁频方法（系统），不是指标本身；met.laser_linewidth 通过 OPERATIONALIZED-AS 关联"
 
   - id: rel.D05
     subject: ent.fp_cavity_system

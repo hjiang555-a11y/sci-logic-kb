@@ -244,7 +244,7 @@ relations:
     note: "跨文件引用，ent.fp_cavity_system 定义于 numata2004.yaml"
 
   - id: rel.Y06
-    subject: met.laser_linewidth_563nm
+    subject: ent.fp_cavity_system
     predicate: BOUNDED-BY
     object: pri.mirror_heating_cavity_shift
     confidence: established
@@ -256,6 +256,7 @@ relations:
     regime: all
     verification_status: observed
     temporal_role: proposes
+    note: "ent.fp_cavity_system 定义于 numata2004.yaml；本限制可通过主动功率控制消除"
 
   - id: rel.Y07
     subject: ent.vibration_isolation
@@ -289,7 +290,7 @@ relations:
     object: pri.brownian_thermal_noise_fdt
     confidence: established
     source: {zotero_key: "VDXBPUQB", claim: "the results of Young et al. are consistent with being at the thermal noise limit"}
-    conditions: "ULE 腔，L=24 cm，finesse>150,000，T≈300 K"
+    conditions: "ULE 腔，L=24 cm，finesse>150,000，T≈300 K；Young 1999 配置"
     is_system_limit: true
     dominated_by: null
     quantitative_contribution: "热噪声主导（由 Numata 2004 跨论文确认）"
@@ -352,3 +353,12 @@ relations:
     note: >
       ent.fp_cavity_system 定义于 numata2004.yaml；
       ent.fiber_interferometer 定义于 jiang2010.yaml。
+
+  - id: rel.Y13
+    subject: ent.two_stage_pdh_lock_young99
+    predicate: PART-OF
+    object: ent.fp_cavity_system
+    confidence: established
+    source: {zotero_key: "EGAZKLXR", claim: "first prestabilize to low-finesse cavity, then lock to high-finesse ULE cavity using PDH"}
+    conditions: "PDH 锁频配置下；ent.two_stage_pdh_lock_young99 是 FP 腔系统的电子+控制子单元"
+    note: "ent.fp_cavity_system 定义于 numata2004.yaml；Level 2 控制子单元"

@@ -328,7 +328,7 @@ relations:
     object: pri.brownian_thermal_noise_fdt
     confidence: established
     source: {zotero_key: "VDXBPUQB", claim: "the results of Young et al. are consistent with being at the thermal noise limit"}
-    conditions: "Young 1999 所用 ULE 腔参数（L=24 cm，finesse>150,000）"
+    conditions: "Young 1999 所用 ULE 腔参数（L=24 cm，finesse>150,000）；与 rel.N01 互为验证"
     is_system_limit: true
     dominated_by: null
     quantitative_contribution: "热噪声主导（与 Young 1999 实测线宽一致）"

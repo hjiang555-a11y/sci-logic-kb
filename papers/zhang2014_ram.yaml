@@ -1,0 +1,187 @@
+# Zhang 2014 — RAM主动消除至1×10⁻⁶
+# 提取者：Claude（AI草稿，待专家确认）
+# 提取日期：2026-04-14
+# Schema版本：v2.0
+
+meta:
+  zotero_key: "S5GJNVG8"
+  source_type: technical_paper
+  reliability: high
+  title: "Reduction of residual amplitude modulation to 1×10⁻⁶ for frequency modulation and laser stabilization"
+  year: 2014
+  first_author: Zhang
+  journal: "Optics Letters"
+  volume: 39
+  pages: "1980-1983"
+  doi: "10.1364/OL.39.001980"
+  note: >
+    首次将PDH锁频中的残余幅度调制（RAM）主动抑制至1 ppm量级（1×10⁻⁶），
+    同时消除同相分量（DC电场反馈）和正交分量（EOM温度反馈），
+    实现56 dB RAM抑制，长达2小时无明显漂移。
+    在35 mm AlGaAs晶体镀层腔（κ=28 kHz）中，1 ppm RAM对应σ_y=1×10⁻¹⁶；
+    在210 mm Si单晶腔（κ=3 kHz）中，5 ppm RAM对应σ_y=8×10⁻¹⁷（接近热噪声极限）。
+    JILA（Ye/Hall组）+ PTB + 维也纳大学合作。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.waveguide_eom_z14
+    name: "波导型电光调制器（LiNbO₃ Ti扩散波导）"
+    aliases: ["waveguide EOM", "Ti-diffused waveguide EOM", "波导EOM"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      以LiNbO₃钛扩散波导替代自由空间体晶体EOM，
+      提供相位调制（半波电压~4 V，远低于体晶体>100 V），
+      内置保偏光纤接口提供空间模式清洁，
+      减少因光束位置漂移引起的RAM相位变化。
+      配合主动RAM伺服，实现1 ppm量级RAM抑制。
+    key_parameters:
+      modulation_voltage_pi: "~4 V（波导型，vs体晶体>100 V）"
+      fiber_interface: "保偏光纤（PM fiber）输入输出，提供空间模式清洁"
+      ram_level_with_servo: "~30 ppm（残余）；Allan偏差~1 ppm（1–1000 s）"
+    note: >
+      定义于zhang2014_ram.yaml；
+      与 ent.rf_phase_modulator（drever1983.yaml）的关系：
+      waveguide_eom_z14 是rf_phase_modulator的一种实现，专门优化以最小化RAM。
+
+principles:
+  - id: pri.ram_pdh_frequency_offset
+    name: "RAM引起PDH频率偏移原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      在PDH锁频中，EOM产生的残余幅度调制（RAM）在调制频率ωm处产生
+      与锁定信号叠加的虚假信号，导致锁定点偏离腔谐振中心，
+      产生频率偏移。RAM引起的分数频率不稳定度为：
+        σ_y = σ_RAM × κ / ν
+      其中κ为腔线宽，ν为光学频率。
+      对固定RAM幅度σ_RAM（ppm量级），腔越窄（κ越小）或光频越高（ν越大），
+      RAM引起的σ_y越小，故更长（窄线宽）的腔或更高光频对RAM更不敏感。
+    domain: "激光频率稳定，PDH锁频"
+    formula: "σ_y = σ_RAM × (κ / ν)"
+    key_insight: >
+      RAM是PDH锁频中除热噪声和振动外的第三类系统误差来源；
+      在腔热噪声极限处于10⁻¹⁶–10⁻¹⁷时，RAM抑制至ppm量级是必要条件。
+    conditions: "PDH锁频工作状态，RAM < 腔线宽"
+    source_claim: >
+      "RAM introduces frequency offset noise to the servo error signal and
+       thus degrades the laser frequency stability"
+
+  - id: pri.ram_active_cancellation
+    name: "RAM双通道主动消除原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      EOM产生的RAM包含两个分量：
+        同相分量：由EOM晶体自然双折射引起，DC电场可直接补偿（sin(Δφ+ΔφDC)=0）；
+        正交分量：由EOM压电致弹光效应和光束不均匀性引起，需温度反馈抑制。
+      DC电场对同相响应比正交响应大20倍；温度反馈对正交响应比同相响应大5倍。
+      两路并行伺服分别抑制两分量，实现综合56 dB RAM抑制（至~30 ppm残余，
+      受光路中残余标具效应限制）。
+    domain: "激光频率稳定，EOM控制"
+    key_advantage: >
+      同时消除RAM的长期漂移（正交伺服带宽<0.1 Hz，由EOM热响应时间限制），
+      是相较于仅使用DC场反馈的以往方法的关键改进。
+    conditions: >
+      波导型EOM（减少光束位置变化引起的RAM相位漂移）；
+      同相伺服带宽~200 kHz；正交伺服带宽<0.1 Hz
+    source_claim: >
+      "The DC electric field affects the in-phase response 20 times larger
+       than the quadrature response ... working in tandem, suppress both
+       the in-phase and quadrature components of the RAM to the 1 ppm level"
+
+methods:
+  - id: meth.ram_cancellation_z14
+    name: "RAM双通道主动消除方法（Zhang 2014）"
+    status: demonstrated
+    applies_to: ent.rf_phase_modulator
+    steps_summary: >
+      1. 在腔输入口前分束，专用RAM探测器（PD1）连续监测RAM幅度；
+      2. 同相RAM伺服：检相解调后的误差信号 → DC电场反馈至EOM（带宽~200 kHz）；
+      3. 正交RAM伺服：混频器正交口输出 → 慢积分器 → EOM温度反馈（带宽<0.1 Hz）；
+      4. 两路并行工作，实现56 dB综合抑制；
+      5. 腔外差信号（PD2）提供离回路RAM表征（系统整体性能验证）。
+    required_hardware:
+      - ent.waveguide_eom_z14    # 波导型EOM，优化RAM均匀性
+      - ent.rf_phase_modulator   # 概念上的射频相位调制器（drever1983.yaml）
+    key_result:
+      ram_suppression_dB: 56
+      ram_allan_deviation: "~1 ppm（1–1000 s）"
+      residual_limit: "~30 ppm（受光路标具效应限制）"
+    source_claim: >
+      "when the in-phase and quadrature RAM servos are activated simultaneously,
+       the RAM is suppressed by 56 dB"
+
+metrics:
+  - id: met.ram_fractional_instability
+    name: "RAM引起的分数频率不稳定度"
+    unit: "无量纲（Allan偏差）"
+    description: "因RAM导致的PDH锁频系统分数频率不稳定度上限"
+    demonstrated_value:
+      value: "σ_y ≤ 1×10⁻¹⁶（35 mm腔，κ=28 kHz，σ_RAM=1 ppm）"
+      conditions: "波导EOM + 双通道主动RAM消除伺服；1 ppm RAM稳定度，1–1000 s"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "S5GJNVG8", claim: "σ_RAM at 1 ppm corresponds to σ_y of 1×10⁻¹⁶ for 35 mm cavity"}
+    note: >
+      对210 mm Si腔（κ=3 kHz），5 ppm RAM → σ_y=8×10⁻¹⁷，接近Si腔热噪声极限。
+      RAM不再是限制因素（贡献低于腔热噪声极限）。
+
+# ═══════════════════════════════════════════════
+#  RELATIONS（关系）
+# ═══════════════════════════════════════════════
+
+relations:
+  - id: rel.Z14_01
+    subject: meth.pdh_locking
+    predicate: BOUNDED-BY
+    object: pri.ram_pdh_frequency_offset
+    confidence: established
+    source: {zotero_key: "S5GJNVG8", claim: "RAM introduces frequency offset noise to the servo error signal, degrading laser frequency stability"}
+    conditions: "EOM RAM未充分抑制时，RAM成为PDH锁频精度的系统性限制"
+    is_system_limit: true
+    dominated_by: null
+    regime: "RAM未被充分消除时"
+    verification_status: observed
+    temporal_role: proposes
+
+  - id: rel.Z14_02
+    subject: meth.pdh_locking
+    predicate: ENABLED-BY
+    object: meth.ram_cancellation_z14
+    confidence: established
+    source: {zotero_key: "S5GJNVG8", claim: "active servo comprising in-phase and quadrature RAM corrections allows frequency stabilization comparable to fundamental thermal noise limit"}
+    conditions: "RAM需抑制至ppm量级以达到腔热噪声极限性能"
+    temporal_role: proposes
+
+  - id: rel.Z14_03
+    subject: meth.ram_cancellation_z14
+    predicate: ENABLED-BY
+    object: pri.ram_active_cancellation
+    confidence: established
+    source: {zotero_key: "S5GJNVG8", claim: "DC electric field and temperature feedback onto the EOM to cancel both in-phase and quadrature components of the RAM"}
+    conditions: null
+
+  - id: rel.Z14_04
+    subject: ent.waveguide_eom_z14
+    predicate: PART-OF
+    object: ent.fp_cavity_system
+    confidence: established
+    source: {zotero_key: "S5GJNVG8", claim: "waveguide-based EOM provides phase modulation for cavity-stabilized laser system"}
+    conditions: null
+    note: "ent.fp_cavity_system 定义于 numata2004.yaml；waveguide EOM 是 ent.rf_phase_modulator 的低RAM实现"
+
+  - id: rel.Z14_05
+    subject: met.ram_fractional_instability
+    predicate: BOUNDED-BY
+    object: pri.ram_pdh_frequency_offset
+    confidence: established
+    source: {zotero_key: "S5GJNVG8", claim: "σ_y = σ_RAM × κ/ν, for 35mm cavity κ=28kHz, σ_RAM=1ppm → σ_y=1×10⁻¹⁶"}
+    conditions: "1 ppm RAM稳定度，给定腔线宽κ和光频ν"
+    is_system_limit: false
+    dominated_by: pri.brownian_thermal_noise_fdt
+    regime: "RAM充分抑制后，热噪声重新成为主导"
+    verification_status: observed
