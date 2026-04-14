@@ -90,7 +90,7 @@ git push
 
 | 类型 | 格式 | 示例 |
 |------|------|------|
-| 实体 | `ent.{描述词}_{可选后缀}` | `ent.ule_fp_cavity_young99` |
+| 实体 | `ent.{描述词}_{可选后缀}` | `ent.fp_cavity_system` |
 | 原理 | `pri.{描述词}` | `pri.brownian_thermal_noise_fdt` |
 | 方法 | `meth.{描述词}` | `meth.pdh_locking` |
 | 指标 | `met.{描述词}_{可选后缀}` | `met.laser_linewidth_563nm` |
@@ -102,46 +102,84 @@ git push
 
 ### 来自 drever1983.yaml
 
-- `ent.fp_cavity_reference` — F-P 参考腔
-- `ent.rf_phase_modulator` — 射频相位调制器
+**Level 2 硬件**（PDH误差探测，配套 ent.fp_cavity_system）
+- `ent.rf_phase_modulator` — 射频相位调制器（EOM，产生±fm边带）
+
+**原理**（全局，本文提出）
 - `pri.pdh_heterodyne_detection` — PDH 射频边带光学外差探测原理
-- `pri.pdh_high_speed_regime` — PDH 高速相位检测域
+- `pri.pdh_high_speed_regime` — PDH 高速相位检测域（伺服带宽不受腔响应时间限制）
 - `pri.shot_noise_frequency_limit` — 散粒噪声频率稳定度极限
-- `meth.pdh_locking` — PDH 锁频方法
-- `met.laser_linewidth` — 激光线宽（通用）
+
+**方法**
+- `meth.pdh_locking` — PDH 锁频方法（超稳激光标准误差探测手段）
+
+**指标**
+- `met.laser_linewidth` — 激光线宽（通用，<100 Hz @ 1983年）
 - `met.freq_spectral_density` — 激光频率噪声谱密度
 
 ### 来自 young1999.yaml
 
-- `ent.ule_fp_cavity_young99` — ULE F-P 参考腔（Young 1999）
-- `ent.vibration_isolated_table_young99` — 隔振光学平台
+> `ent.fp_cavity_system` 定义于 numata2004.yaml，young1999 通过跨文件关系引用，无需重复定义。
+
+**Level 1 实体**
+- `ent.dye_laser_563nm` — 563 nm 染料激光器
+
+**Level 2 子单元**（PART-OF ent.fp_cavity_system）
+- `ent.vibration_isolation` — 被动弹性悬挂隔振系统（手术管悬挂，f₀ ≈ 0.3 Hz）
+- `ent.two_stage_pdh_lock_young99` — 两级级联 PDH 锁频系统
+
+**外围条件（ext）**
+- `ent.vibration_environment` — 环境振动条件（CONDITIONED-BY 接口节点）
+
+**原理**（全局，本文提出）
 - `pri.ule_zero_cte` — ULE 玻璃零热膨胀系数原理
-- `pri.mirror_heating_cavity_shift` — 腔镜加热导致谐振频率漂移
+- `pri.mirror_heating_cavity_shift` — 腔镜加热导致谐振频率漂移（≈1 Hz/mW）
 - `pri.vibration_isolation_pendulum` — 低频弹性悬挂隔振原理
-- `met.laser_linewidth_563nm` — 0.6 Hz 线宽（Young 1999）
-- `met.fractional_freq_instability_y99` — 3×10⁻¹⁶ @ 1s
+
+**指标**
+- `met.laser_linewidth_563nm` — 0.6 Hz 线宽（Young 1999，已在热噪声极限）
+- `met.fractional_freq_instability_y99` — 3×10⁻¹⁶ @ 1 s
+- `met.acceleration_sensitivity_y99` — 腔加速度灵敏度 ≈100 kHz/(m/s²)
+- `met.freq_noise_from_vibration` — 振动引起的频率噪声（接口指标）
+
+**方法**
+- `meth.two_stage_pdh_visible` — 两级级联 PDH 锁频（可见光）
 
 ### 来自 shaddock1999.yaml
 
-- `ent.split_photodetector` — 分割光电探测器
-- `ent.tilting_mirror` — 倾斜反射镜
-- `pri.off_resonance_reference_light` — **元原理**：非谐振参考光（PDH 和 Tilt Locking 共有）
-- `pri.gouy_phase_discrimination` — Gouy 相位横模鉴别原理
-- `pri.spatial_homodyne_detection` — 空间零差探测（分割探测器）
-- `meth.tilt_locking` — Tilt Locking 方法
-- `met.servo_bandwidth` — 伺服带宽
+**Level 2 硬件**（Tilt Locking误差探测，配套 ent.fp_cavity_system）
+- `ent.split_photodetector` — 分割光电探测器（替代PDH的RF探测+解调电路）
+- `ent.tilting_mirror` — 倾斜反射镜（激励腔TEM10横模）
+
+**原理**（全局）
+- `pri.off_resonance_reference_light` — **元原理**（tier: meta）：非谐振参考光（PDH 和 Tilt Locking 共有）
+- `pri.gouy_phase_discrimination` — Gouy 相位横模鉴别原理（Tilt Locking 物理基础）
+- `pri.spatial_homodyne_detection` — 空间零差探测原理（分割探测器差分）
+
+**方法**
+- `meth.tilt_locking` — Tilt Locking（倾斜锁定）方法
+
+**指标**
+- `met.servo_bandwidth` — 伺服带宽（通用指标，Tilt Locking典型值 ~230 Hz）
 
 ### 来自 numata2004.yaml
 
-- `ent.rigid_fp_cavity` — 刚性 F-P 参考腔（通用）
-- `ent.mirror_coating` — 腔镜高反射镀层
-- `ent.mirror_substrate` — 腔镜基底
-- `ent.spacer_ule` — 腔间隔物
+**Level 1 实体**（主节点，跨文件引用请用此 ID）
+- `ent.fp_cavity_system` — 刚性 F-P 参考腔系统
+
+**Level 2 子单元**（PART-OF ent.fp_cavity_system）
+- `ent.mirror_substrate` — 腔镜基底（热噪声 84%，首要改善目标）
+- `ent.mirror_coating` — 腔镜高反射镀层（热噪声 15%）
+- `ent.spacer_ule` — 腔间隔物（热噪声 1%，可忽略）
+
+**原理**（全局，本文提出）
 - `pri.brownian_thermal_noise_fdt` — 布朗热噪声——涨落耗散定理
-- `pri.mirror_substrate_noise_dominance` — 镜底物热噪声主导（84%）
-- `pri.beam_radius_scaling` — 光束半径对热噪声的改善效应
-- `pri.low_loss_substrate_improvement` — 低机械损耗基底材料改善热噪声
-- `met.thermal_noise_freq_psd` — 热噪声频率噪声谱密度
+  - 内含 condition_variables：φ（损耗角）/ w₀（光斑半径）/ T（温度）/ L（腔长）
+  - ⚠ `pri.beam_radius_scaling` 和 `pri.low_loss_substrate_improvement` 不是独立节点，是该原理的 condition_variables 优化方向字段
+- `pri.mirror_substrate_noise_dominance` — 镜底物 84% 主导（engineering 推论）
+
+**指标**
+- `met.thermal_noise_freq_psd` — 热噪声频率噪声谱密度（~0.13 Hz/√Hz @ 1 Hz）
 
 ### 来自 jiang2010.yaml
 

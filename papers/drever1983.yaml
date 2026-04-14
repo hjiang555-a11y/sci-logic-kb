@@ -190,3 +190,12 @@ relations:
     note: >
       此指标同时表征腔的稳定性和整个锁频系统的性能；
       ent.fp_cavity_system 定义于 numata2004.yaml（Drever 1983 中使用三角形环形腔实现）。
+
+  - id: rel.D06
+    subject: ent.rf_phase_modulator
+    predicate: PART-OF
+    object: ent.fp_cavity_system
+    confidence: established
+    source: {zotero_key: "694DPR5F", claim: "rf phase modulator is required hardware for PDH frequency lock of an optical resonator"}
+    conditions: null
+    note: "PDH 误差探测配套硬件；ent.fp_cavity_system 定义于 numata2004.yaml"
