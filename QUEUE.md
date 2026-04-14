@@ -37,6 +37,7 @@
 - [ ] `8YK6EH22` | Kedar 202x | Frequency stability of cryogenic silicon cavities with semiconductor crystalline coatings
 - [ ] `N6HILT6B` | Chen 2025 | A laser with instability reaching 4×10⁻¹⁷ based on a 10-cm-long silicon cavity
 - [ ] `U2LXSU62` | Parke 2025 | Three hundred microsecond optical cavity storage time and 10⁻⁷ acceleration insensitivity
+- [x] `4QVEXY63` | Lee 2026 | Frequency stability of 2.5×10⁻¹⁷ from a Si cavity with AlGaAs crystalline mirrors → `lee2026.yaml`
 
 ### 空间/可搬运应用
 

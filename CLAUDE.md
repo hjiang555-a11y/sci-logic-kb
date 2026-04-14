@@ -218,6 +218,22 @@ git push
 - `met.fractional_freq_instability_h15` — <1×10⁻¹⁶（1–1000 s，Häfner 2015，室温 48 cm 腔）
 - `met.acceleration_sensitivity_h15` — κ < 2×10⁻¹⁰/g 全向（自平衡安装）
 
+### 来自 webster2007.yaml
+
+- `ent.vibration_insensitive_fp_cavity_w07` — 水平方向振动不敏感 FP 腔（Webster 2007）
+- `pri.cavity_deformation_compensation` — 腔镜中心位移补偿原理（四点对称支撑）
+- `pri.ule_cte_zero_crossing` — ULE 零膨胀点工作原理
+- `met.vibration_sensitivity_w07` — 加速度灵敏度（< 1 kHz/(m/s²)）
+- `ent.vibration_environment` — 环境振动噪声（外围条件节点，ext）
+
+### 来自 lee2026.yaml
+
+- `ent.si_crystal_17k_fp_cavity_l26` — Si 单晶 17 K FP 腔（Level 1，AlGaAs 晶体镀层，mod σ_y=2.5×10⁻¹⁷）
+- `pri.silicon_cte_zero_crossing_17k` — Si CTE 第二零点（17 K）
+- `pri.optical_frequency_averaging` — 多腔光学频率平均（双腔平均 √2 提升）
+- `met.fractional_freq_instability_l26` — mod σ_y = 2.5×10⁻¹⁷（Lee 2026，世界纪录）
+- `met.algaas_coating_loss_angle_17k_l26` — AlGaAs 镀层损耗角 φ < 2.3×10⁻⁵（17 K）
+
 ### 来自 jiang2010.yaml
 
 - `ent.fiber_interferometer` — 光纤迈克尔逊干涉仪（频率参考）

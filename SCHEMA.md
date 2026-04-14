@@ -321,6 +321,7 @@ note: "跨文件引用，定义于 shaddock1999.yaml"
 | `cole2013.yaml` | CWIHQRJD | Cole 2013 — AlGaAs 晶体镀层 10× 热噪声降低 | ✅ v2.0 完成（2026-04-14） |
 | `matei2017.yaml` | TVY7T59A | Matei 2017 — Si 腔 5–10 mHz 线宽，mod σ_y=4×10⁻¹⁷ | ✅ v2.0 完成（2026-04-14） |
 | `hafner2015.yaml` | UV6S5FFL | Häfner 2015 — 48 cm 室温 ULE 腔，σ_y < 1×10⁻¹⁶ | ✅ v2.0 完成（2026-04-14） |
+| `lee2026.yaml` | 4QVEXY63 | Lee 2026 — 2.5×10⁻¹⁷ Si 腔 + AlGaAs 晶体镀层（世界纪录） | ✅ v2.0 完成（2026-04-14） |
 
 **v2.0 重整摘要**：
 - `numata2004`：`ent.rigid_fp_cavity` → `ent.fp_cavity_system`；GOVERNED-BY → BOUNDED-BY（含 breakthrough_paths）；修正 PART-OF 方向；删除语义错误的工程路径 BOUNDED-BY；新增 DERIVED-FROM 链
@@ -332,3 +333,5 @@ note: "跨文件引用，定义于 shaddock1999.yaml"
 - `cole2013`：新增 `ent.algaas_crystalline_mirror_c13`（Level 2）；`pri.crystalline_coating_low_brownian_noise`；COMPETES-WITH ent.mirror_coating；室温镀层损耗角降低 10×
 - `matei2017`：新增指标 mod σ_y=4×10⁻¹⁷、5–10 mHz 线宽、11–55 s 相干时间；`pri.flicker_noise_linewidth_divergence`；BOUNDED-BY 从实验确认 Si 腔镀层为唯一极限；temporal_role: validates
 - `hafner2015`：新增 `ent.self_balancing_long_cavity_h15`（Level 2）；`pri.long_cavity_thermal_noise_reduction`；全向加速度灵敏度 < 2×10⁻¹⁰/g；COMPETES-WITH ent.si_crystal_fp_cavity_k12；CONDITIONED-BY ent.thermal_environment
+- `webster2007`：新增 `ent.vibration_insensitive_fp_cavity_w07`（Level 2）；`pri.cavity_deformation_compensation`（四点对称支撑）；CONDITIONED-BY ent.vibration_environment；temporal_role: proposes
+- `lee2026`：新增 `ent.si_crystal_17k_fp_cavity_l26`（Level 1，17K，AlGaAs 2023 批次，2.5×10⁻¹⁷ 世界纪录）；`pri.silicon_cte_zero_crossing_17k`（Si 第二 CTE 零点）；`pri.optical_frequency_averaging`（双腔平均 √2 提升）；BOUNDED-BY（镀层热噪声主导）；COMPETES-WITH ent.si_crystal_fp_cavity_k12；temporal_role: validates（确认 Cole 2013 晶体镀层优势）
