@@ -150,7 +150,23 @@ principles:
       区别在于参考频率偏移来自 AOM（而非 EOM 产生的光学边带）。
     source_claim: >
       "AOM heterodyne detection in the reference arm provides the frequency
-       error signal for the servo loop"
+        error signal for the servo loop"
+
+  - id: pri.shorter_delay_line_rbs_tradeoff
+    name: "缩短延迟线/降低注入功率可减轻 RBS 的工程折中"
+    tier: engineering
+    verification_status: inferred
+    statement: >
+      Rayleigh 背向散射噪声随光纤长度和光功率积累。
+      因此缩短延迟线或降低注入功率可减轻扫频时的 RBS 条纹噪声，
+      但同时会减小延迟时间 τ、降低频率鉴别灵敏度或牺牲误差信号信噪比。
+      这是一条可实施但带明显折中的工程缓解路径。
+    domain: "光纤干涉仪稳频"
+    formula: "RBS burden ↑ with effective fiber length and optical power; sensitivity ∝ τ"
+    key_insight: "降低 RBS 通常要以牺牲延迟灵敏度或 SNR 为代价。"
+    conditions: "扫频线性度优先于极限静态灵敏度的光纤稳频场景"
+    source_claim: >
+      "Reducing fiber length or optical power can mitigate Rayleigh-backscattering-related chirp error, at the expense of discriminator sensitivity"
 
 methods:
   - id: meth.fiber_delay_locking
@@ -291,7 +307,7 @@ relations:
     verification_status: observed
     temporal_role: proposes
     breakthrough_paths:
-      - direction: meth.fiber_delay_locking
+      - direction: pri.shorter_delay_line_rbs_tradeoff
         expected_gain: "通过缩短延迟光纤、降低注入功率并优化偏振/外差实现，可减轻 RBS 对扫频线性度的破坏，但会牺牲部分灵敏度或 SNR。"
         status: demonstrated
         source: {zotero_key: "T8JR8IJ7", claim: "Rayleigh backscattering is the fundamental limitation of the fiber interferometer reference during frequency chirping"}
@@ -309,7 +325,7 @@ relations:
     verification_status: observed
     temporal_role: proposes
     breakthrough_paths:
-      - direction: meth.fiber_delay_locking
+      - direction: pri.shorter_delay_line_rbs_tradeoff
         expected_gain: "围绕光纤延迟线锁频链路优化 RBS 抑制策略，可改善可捷变扫频性能边界。"
         status: demonstrated
         source: {zotero_key: "T8JR8IJ7", claim: "Rayleigh backscattering is the fundamental limitation of the fiber interferometer reference during frequency chirping"}
@@ -361,3 +377,11 @@ relations:
     confidence: established
     source: {zotero_key: "T8JR8IJ7", claim: "fiber interferometer approach suited for agile lasers; trade-off vs FP cavity stability"}
     note: "ent.fp_cavity_system 定义于 numata2004.yaml"
+
+  - id: rel.J13
+    subject: pri.shorter_delay_line_rbs_tradeoff
+    predicate: DERIVED-FROM
+    object: pri.rayleigh_backscattering_noise
+    confidence: likely
+    source: {zotero_key: "T8JR8IJ7", claim: "Rayleigh backscattering is the fundamental limitation during chirping, motivating reduced delay/power tradeoffs"}
+    conditions: "用于讨论 RBS 缓解路径时"

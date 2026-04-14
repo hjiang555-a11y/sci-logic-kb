@@ -252,7 +252,7 @@ relations:
     conditions: "腔内功率未被控制时；此论文通过主动控制减轻该效应"
     is_system_limit: false
     dominated_by: pri.brownian_thermal_noise_fdt
-    quantitative_contribution: null
+    quantitative_contribution: "可达 ~1 Hz/mW，但在本文工作点已被主动功率控制压低至非主导"
     regime: all
     verification_status: observed
     temporal_role: proposes
