@@ -285,34 +285,6 @@ relations:
     verification_status: calculated
     temporal_role: proposes
 
-  - id: rel.N05
-    subject: met.thermal_noise_freq_psd
-    predicate: BOUNDED-BY
-    object: pri.beam_radius_scaling
-    confidence: established
-    source: {zotero_key: "VDXBPUQB", claim: "noise can be reduced by using larger beam size on mirrors"}
-    conditions: "改变 w₀ 时其他参数不变"
-    is_system_limit: false
-    dominated_by: pri.brownian_thermal_noise_fdt
-    quantitative_contribution: null
-    regime: all
-    verification_status: calculated
-    temporal_role: proposes
-
-  - id: rel.N06
-    subject: met.thermal_noise_freq_psd
-    predicate: BOUNDED-BY
-    object: pri.low_loss_substrate_improvement
-    confidence: established
-    source: {zotero_key: "VDXBPUQB", claim: "fused silica mirrors with lower mechanical loss could reduce thermal noise by ~100×"}
-    conditions: "以熔融石英替换 ULE 腔镜基底"
-    is_system_limit: false
-    dominated_by: pri.brownian_thermal_noise_fdt
-    quantitative_contribution: null
-    regime: all
-    verification_status: calculated
-    temporal_role: proposes
-
   - id: rel.N07
     subject: met.thermal_noise_freq_psd
     predicate: BOUNDED-BY
