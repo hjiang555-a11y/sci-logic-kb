@@ -23,7 +23,7 @@
 - [x] `S5PX7GHC` | Shaddock 1999 | Frequency locking a laser to an optical cavity by use of spatial mode interference → `shaddock1999.yaml`
 - [x] `VDXBPUQB` | Numata 2004 | Thermal-Noise Limit in the Frequency Stabilization of Lasers with Rigid Cavities → `numata2004.yaml`
 - [ ] `VU2V2PTX` | Webster 2003? | Thermal-noise-limited optical cavity
-- [ ] `UCNS7EM7` | Webster 200x | Vibration insensitive optical cavity
+- [x] `UCNS7EM7` | Webster 2007 | Vibration insensitive optical cavity → `webster2007.yaml`
 - [ ] `A96XGR82` | Webster 2011 | Force-insensitive optical cavity
 - [ ] `MW3RDB68` | Legero 2010 | Tuning the thermal expansion properties of optical reference cavities
 - [ ] `GLXHEIPV` | Millo 200x | Ultrastable lasers based on vibration insensitive cavities
