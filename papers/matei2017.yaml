@@ -147,17 +147,24 @@ relations:
       这是 Cole 2013 晶体镀层方案最有力的实验动机。temporal_role: validates。
 
   - id: rel.M04
-    subject: met.laser_linewidth_m17
+    subject: ent.si_crystal_fp_cavity_k12
     predicate: BOUNDED-BY
     object: pri.flicker_noise_linewidth_divergence
     confidence: established
     source: {zotero_key: "TVY7T59A", claim: "the linewidth and implicitly the coherence time are mostly determined by the thermal noise level"}
-    conditions: "flicker 频率噪声主导，测量时间 T₀ = 200 s；线宽随 T₀ 变化"
+    conditions: "flicker 频率噪声主导（S_y ∝ 1/f），测量时间 T₀ = 200 s；无唯一稳态线宽定义"
     is_system_limit: true
     dominated_by: null
     regime: all
     verification_status: calculated
     temporal_role: proposes
+    note: >
+      原 subject 为 met.laser_linewidth_m17（指标节点），语义有误——指标是测量结果，
+      不是被限制的系统。改为 ent.si_crystal_fp_cavity_k12（被限制的腔/激光系统）。
+      含义：Si 腔激光系统的线宽定义受 flicker 噪声发散原理限制，
+      无法给出不依赖测量时间 T₀ 的唯一线宽值。
+      met.laser_linewidth_m17 通过 rel.M02 (CHARACTERIZED-BY) 刻画这一受限状态。
+      ent.si_crystal_fp_cavity_k12 定义于 kessler2012.yaml。
 
   - id: rel.M05
     subject: ent.si_crystal_fp_cavity_k12

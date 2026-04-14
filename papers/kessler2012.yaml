@@ -242,3 +242,19 @@ relations:
     source: {zotero_key: "YKPFKDD9", claim: "As a result of the fluctuation-dissipation theorem, the thermal noise of an interferometer made of a crystalline material with a high mechanical quality factor Q can be reduced significantly"}
     conditions: null
     note: "pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml"
+
+  - id: rel.K09
+    subject: ent.si_crystal_fp_cavity_k12
+    predicate: CONDITIONED-BY
+    object: ent.thermal_environment
+    interface_metric: met.fractional_freq_instability_k12
+    coupling_formula: "Δν/ν ≈ (1/2) × (d²α/dT²)_124K × (T − 124.2K)² × ΔT"
+    internal_property: "Si α(124.2K) = 0；dα/dT|_124K = 1.71×10⁻⁸ K⁻²；需温度稳定度约 ±100 μK 量级"
+    confidence: established
+    source: {zotero_key: "YKPFKDD9", claim: "temperature coefficient of the silicon used in the cavity... CTE has a zero crossing at T₀=124.2 K"}
+    is_system_limit:
+      current: false
+      conditions: "在 CTE 零点操作且温控充足时，温度噪声不主导；布朗热噪声为主要极限"
+    note: >
+      ent.thermal_environment 定义于 jiang2010.yaml；
+      pri.silicon_cte_zero_crossing_124k 描述该零点的物理原理（本文件内定义）。

@@ -207,6 +207,24 @@ relations:
     source: {zotero_key: "S5PX7GHC", claim: "TEM10 non-resonant due to Gouy phase ... serves as reference light for frequency discrimination"}
     conditions: "应用于空间横模干涉锁频场景"
 
+  - id: rel.S09
+    subject: ent.split_photodetector
+    predicate: PART-OF
+    object: ent.fp_cavity_system
+    confidence: established
+    source: {zotero_key: "S5PX7GHC", claim: "the reflected field... detected by a vertically split photodetector... provides an error signal"}
+    conditions: "仅在 Tilt Locking 配置下；split detector 是 Tilt Locking 系统的核心探测元件"
+    note: "ent.fp_cavity_system 定义于 numata2004.yaml；split detector 作为 FP 腔锁频系统的探测部件"
+
+  - id: rel.S10
+    subject: ent.tilting_mirror
+    predicate: PART-OF
+    object: ent.fp_cavity_system
+    confidence: established
+    source: {zotero_key: "S5PX7GHC", claim: "the input beam is incident on the resonator at a small angle, controlled by a scanning mirror or PZT-mounted mirror"}
+    conditions: "仅在 Tilt Locking 配置下；tilting mirror 作为 Tilt Locking 的执行器（替代 EOM）"
+    note: "ent.fp_cavity_system 定义于 numata2004.yaml"
+
   - id: rel.S08
     subject: meth.tilt_locking
     predicate: COMPETES-WITH

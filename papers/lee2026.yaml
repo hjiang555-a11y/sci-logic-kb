@@ -258,6 +258,20 @@ relations:
       conditions: "分板设计+主动隔振充分后，3 Hz 以上振动不影响性能；1 Hz 恒温器循环频率仍有离散峰"
     note: "ent.vibration_environment 定义于 young1999.yaml"
 
+  - id: rel.L09
+    subject: ent.si_crystal_17k_fp_cavity_l26
+    predicate: CONDITIONED-BY
+    object: ent.thermal_environment
+    interface_metric: met.fractional_freq_instability_l26
+    coupling_formula: "Δν/ν ≈ (1/2) × (d²α/dT²) × (T − T₀)² × ΔT；at 17K T₀ slope dα/dT ≈ 0，二阶系数极小"
+    internal_property: "Si α(17K) = 0；17K 处 dα/dT 斜率远小于 124K 处 → 热灵敏度更低，温控要求更宽松"
+    confidence: established
+    source: {zotero_key: "4QVEXY63", claim: "at the 17 K zero crossing, where the much gentler slope of the [CTE vs T curve]"}
+    is_system_limit:
+      current: false
+      conditions: "17K CTE 零点操作大幅降低热灵敏度；多层屏蔽充分后温度噪声不主导；布朗热噪声为主要极限"
+    note: "ent.thermal_environment 定义于 jiang2010.yaml；与 124K 零点相比，17K 零点对温控精度要求更宽松"
+
   - id: rel.L08
     subject: pri.crystalline_coating_low_brownian_noise
     predicate: DERIVED-FROM
