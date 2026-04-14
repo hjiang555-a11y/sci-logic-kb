@@ -216,6 +216,22 @@ relations:
     regime: all
     verification_status: observed
     temporal_role: proposes
+    breakthrough_paths:
+      - direction: ent.algaas_crystalline_mirror_c13
+        expected_gain: "φ 方向：AlGaAs 晶体镀层 φ~2.5×10⁻⁵（较 IBS φ~4×10⁻⁴ 低 16×）→ 镀层热噪声降低约 10×；Cole 2013 室温演示，Lee 2026 低温确认"
+        status: demonstrated
+        source: {zotero_key: "CWIHQRJD", claim: "tenfold reduction in mechanical damping when compared with the best dielectric multilayers"}
+        note: "ent.algaas_crystalline_mirror_c13 定义于 cole2013.yaml"
+      - direction: pri.long_cavity_thermal_noise_reduction
+        expected_gain: "L/w₀ 方向：增长腔至 48 cm → σ_y ∝ 1/L，室温实现 <1×10⁻¹⁶（Häfner 2015）；在不改变腔材料的前提下降低热噪声贡献"
+        status: demonstrated
+        source: {zotero_key: "UV6S5FFL", claim: "frequency instability below 1×10⁻¹⁶ for averaging times between 1 s and 1000 s"}
+        note: "pri.long_cavity_thermal_noise_reduction 定义于 hafner2015.yaml"
+      - direction: ent.si_crystal_fp_cavity_k12
+        expected_gain: "T 方向：124 K Si 单晶腔 Q>10⁷，间隔物+底物热噪声降低约 1000×；总热噪声极限降至 ~4×10⁻¹⁷（Matei 2017），进一步降温至 17 K 达 2.5×10⁻¹⁷（Lee 2026）"
+        status: demonstrated
+        source: {zotero_key: "YKPFKDD9", claim: "high mechanical quality factor of silicon reduces thermal noise contribution from spacer and substrates"}
+        note: "ent.si_crystal_fp_cavity_k12 定义于 kessler2012.yaml；17 K 进一步改进见 ent.si_crystal_17k_fp_cavity_l26（lee2026.yaml）"
 
   - id: rel.N02
     subject: ent.fp_cavity_system
