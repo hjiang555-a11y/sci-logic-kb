@@ -317,6 +317,10 @@ note: "跨文件引用，定义于 shaddock1999.yaml"
 | `numata2004.yaml` | VDXBPUQB | Numata 2004 — FP 腔热噪声极限 | ✅ v2.0 完成（2026-04-14） |
 | `jiang2010.yaml` | T8JR8IJ7 | Jiang 2010 — 光纤干涉仪可捷变激光 | ✅ v2.0 完成（2026-04-14） |
 | `webster2007.yaml` | UCNS7EM7 | Webster 2007 — 振动不敏感 FP 腔 | ✅ v2.0 完成（2026-04-14） |
+| `kessler2012.yaml` | YKPFKDD9 | Kessler 2012 — Si 单晶低温腔 <40 mHz 线宽 | ✅ v2.0 完成（2026-04-14） |
+| `cole2013.yaml` | CWIHQRJD | Cole 2013 — AlGaAs 晶体镀层 10× 热噪声降低 | ✅ v2.0 完成（2026-04-14） |
+| `matei2017.yaml` | TVY7T59A | Matei 2017 — Si 腔 5–10 mHz 线宽，mod σ_y=4×10⁻¹⁷ | ✅ v2.0 完成（2026-04-14） |
+| `hafner2015.yaml` | UV6S5FFL | Häfner 2015 — 48 cm 室温 ULE 腔，σ_y < 1×10⁻¹⁶ | ✅ v2.0 完成（2026-04-14） |
 
 **v2.0 重整摘要**：
 - `numata2004`：`ent.rigid_fp_cavity` → `ent.fp_cavity_system`；GOVERNED-BY → BOUNDED-BY（含 breakthrough_paths）；修正 PART-OF 方向；删除语义错误的工程路径 BOUNDED-BY；新增 DERIVED-FROM 链
@@ -324,3 +328,7 @@ note: "跨文件引用，定义于 shaddock1999.yaml"
 - `drever1983`：GOVERNED-BY → ENABLED-BY（PDH 机制）；BOUNDED-BY（散粒噪声极限）；temporal_role: proposes
 - `shaddock1999`：`pri.off_resonance_reference_light` tier: meta；GOVERNED-BY → ENABLED-BY；新增 COMPETES-WITH + DERIVED-FROM；temporal_role: proposes
 - `jiang2010`：新增 `ent.thermal_environment`（ext）+ CONDITIONED-BY 接口；GOVERNED-BY → ENABLED-BY/BOUNDED-BY；新增 COMPETES-WITH；删除猜测性 J10（原 GOVERNED-BY 元原理）；修正 J09 方向
+- `kessler2012`：新增 `ent.si_crystal_fp_cavity_k12`（Level 1，COMPETES-WITH ent.fp_cavity_system）；`pri.silicon_cte_zero_crossing_124k`；`pri.cryogenic_mechanical_q_enhancement`；BOUNDED-BY 指向镀层为瓶颈 + breakthrough via AlGaAs 镀层
+- `cole2013`：新增 `ent.algaas_crystalline_mirror_c13`（Level 2）；`pri.crystalline_coating_low_brownian_noise`；COMPETES-WITH ent.mirror_coating；室温镀层损耗角降低 10×
+- `matei2017`：新增指标 mod σ_y=4×10⁻¹⁷、5–10 mHz 线宽、11–55 s 相干时间；`pri.flicker_noise_linewidth_divergence`；BOUNDED-BY 从实验确认 Si 腔镀层为唯一极限；temporal_role: validates
+- `hafner2015`：新增 `ent.self_balancing_long_cavity_h15`（Level 2）；`pri.long_cavity_thermal_noise_reduction`；全向加速度灵敏度 < 2×10⁻¹⁰/g；COMPETES-WITH ent.si_crystal_fp_cavity_k12；CONDITIONED-BY ent.thermal_environment
