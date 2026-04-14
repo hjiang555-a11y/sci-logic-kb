@@ -217,10 +217,13 @@ relations:
         expected_gain: "AlGaAs 晶体镀层 φ ~ 2.5×10⁻⁵（10× 低于 IBS）→ 镀层热噪声降低 10×，理论下限约 10⁻¹⁷"
         status: demonstrated
         source: {zotero_key: "CWIHQRJD", claim: "tenfold reduction in mechanical damping when compared with the best dielectric multilayers"}
-      - direction: pri.cryogenic_mechanical_q_enhancement
-        expected_gain: "进一步降温至 4 K → AlGaAs Q 可再提升 ~10×（φ ~ 4.5×10⁻⁶）；与晶体镀层结合可达 10⁻¹⁸ 量级"
-        status: theoretical
-        source: {zotero_key: "CWIHQRJD"}
+      - direction: ent.si_crystal_17k_fp_cavity_l26
+        expected_gain: "进一步降温至 17 K（Si CTE 第二零点）+ AlGaAs 晶体镀层（2023 批次）→ mod σ_y = 2.5×10⁻¹⁷（Lee 2026，世界纪录）"
+        status: demonstrated
+        source: {zotero_key: "4QVEXY63", claim: "fractional frequency stability of 2.5×10⁻¹⁷ at 10 s is four times better than expected for dielectric mirrors"}
+        note: >
+          ent.si_crystal_17k_fp_cavity_l26 定义于 lee2026.yaml；
+          Robinson 2019（JIZCUZLY，4 K Si 腔）为更低温度的下一步，尚未入库。
     note: >
       pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml；
       Kessler 2012 明确指出：Si 间隔物+底物热噪声被抑制后，
