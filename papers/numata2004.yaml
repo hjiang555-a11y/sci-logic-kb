@@ -170,6 +170,36 @@ principles:
        thermal noise power ... while the coating contributes about 15% and
        the spacer only 1%"
 
+  - id: pri.beam_radius_scaling
+    name: "增大光斑半径降低热噪声"
+    tier: engineering
+    verification_status: calculated
+    statement: >
+      在其他条件相近时，增大镜面处光斑半径 w₀ 可降低局域弹性形变能密度，
+      从而降低镜底物和镀层的布朗热噪声贡献。该改进通常通过调整腔长、
+      腔镜曲率半径和腔型稳定参数来实现，而不是简单独立增加某一尺寸。
+    domain: "刚性 FP 腔设计"
+    formula: "S_ν ∝ 1/w₀"
+    key_insight: "更大的镜面光斑可直接压低热噪声，但受腔稳定性和通光孔径约束。"
+    conditions: "腔模稳定、镜面口径足够、允许重新设计腔镜曲率"
+    source_claim: >
+      "The thermal noise can be reduced by increasing the beam spot size on the mirrors"
+
+  - id: pri.low_loss_substrate_improvement
+    name: "低损耗镜底物材料改进"
+    tier: engineering
+    verification_status: calculated
+    statement: >
+      在 FDT 框架下，镜底物机械损耗角 φ 越小，热噪声越低。
+      因此用熔融石英、单晶硅等低损耗材料替代 ULE 镜底物，
+      是压低刚性腔热噪声最有效的材料路径之一。
+    domain: "刚性 FP 腔材料优化"
+    formula: "S_ν ∝ φ"
+    key_insight: "镜底物材料损耗角是室温 ULE 腔热噪声的首要优化杠杆。"
+    conditions: "需同时处理材料热膨胀和装配兼容性问题"
+    source_claim: >
+      "Using fused-silica mirrors can lower the thermal noise because of the much smaller mechanical loss"
+
 metrics:
   - id: met.thermal_noise_freq_psd
     name: "热噪声频率噪声谱密度（刚性腔极限）"
@@ -217,21 +247,21 @@ relations:
     verification_status: observed
     temporal_role: proposes
     breakthrough_paths:
-      - direction: ent.algaas_crystalline_mirror_c13
-        expected_gain: "φ 方向：AlGaAs 晶体镀层 φ~2.5×10⁻⁵（较 IBS φ~4×10⁻⁴ 低 16×）→ 镀层热噪声降低约 10×；Cole 2013 室温演示，Lee 2026 低温确认"
+      - direction: pri.crystalline_coating_low_brownian_noise
+        expected_gain: "镀层方向：AlGaAs 晶体镀层 φ~2.5×10⁻⁵（较 IBS φ~4×10⁻⁴ 低 16×）→ 镀层热噪声降低约 10×；Cole 2013 室温演示，Lee 2026 低温确认"
         status: demonstrated
         source: {zotero_key: "CWIHQRJD", claim: "tenfold reduction in mechanical damping when compared with the best dielectric multilayers"}
-        note: "ent.algaas_crystalline_mirror_c13 定义于 cole2013.yaml"
+        note: "pri.crystalline_coating_low_brownian_noise 定义于 cole2013.yaml"
       - direction: pri.long_cavity_thermal_noise_reduction
         expected_gain: "L/w₀ 方向：增长腔至 48 cm → σ_y ∝ 1/L，室温实现 <1×10⁻¹⁶（Häfner 2015）；在不改变腔材料的前提下降低热噪声贡献"
         status: demonstrated
         source: {zotero_key: "UV6S5FFL", claim: "frequency instability below 1×10⁻¹⁶ for averaging times between 1 s and 1000 s"}
         note: "pri.long_cavity_thermal_noise_reduction 定义于 hafner2015.yaml"
-      - direction: ent.si_crystal_fp_cavity_k12
+      - direction: pri.cryogenic_mechanical_q_enhancement
         expected_gain: "T 方向：124 K Si 单晶腔 Q>10⁷，间隔物+底物热噪声降低约 1000×；总热噪声极限降至 ~4×10⁻¹⁷（Matei 2017），进一步降温至 17 K 达 2.5×10⁻¹⁷（Lee 2026）"
         status: demonstrated
         source: {zotero_key: "YKPFKDD9", claim: "high mechanical quality factor of silicon reduces thermal noise contribution from spacer and substrates"}
-        note: "ent.si_crystal_fp_cavity_k12 定义于 kessler2012.yaml；17 K 进一步改进见 ent.si_crystal_17k_fp_cavity_l26（lee2026.yaml）"
+        note: "pri.cryogenic_mechanical_q_enhancement 定义于 kessler2012.yaml；17 K 进一步改进见 lee2026.yaml"
 
   - id: rel.N02
     subject: ent.fp_cavity_system
@@ -254,6 +284,15 @@ relations:
     regime: all
     verification_status: calculated
     temporal_role: proposes
+    breakthrough_paths:
+      - direction: pri.low_loss_substrate_improvement
+        expected_gain: "用低损耗镜底物（熔融石英、单晶硅）替代 ULE，可显著压低占主导的底物热噪声。"
+        status: demonstrated
+        source: {zotero_key: "VDXBPUQB", claim: "fused silica mirrors could reduce thermal noise by roughly two orders of magnitude"}
+      - direction: pri.beam_radius_scaling
+        expected_gain: "通过增大镜面光斑半径 w₀ 继续降低镜底物热噪声贡献。"
+        status: demonstrated
+        source: {zotero_key: "VDXBPUQB", claim: "thermal noise can be reduced by increasing the beam spot size on the mirrors"}
 
   - id: rel.N04
     subject: ent.mirror_coating
@@ -292,14 +331,27 @@ relations:
     conditions: "Young 1999 所用 ULE 腔参数（L=24 cm，finesse>150,000）；与 rel.N01 互为验证"
     is_system_limit: true
     dominated_by: null
+    quantitative_contribution: "热噪声主导（与 Young 1999 实测线宽一致）"
     regime: all
     verification_status: observed
     temporal_role: validates
+    breakthrough_paths:
+      - direction: pri.low_loss_substrate_improvement
+        expected_gain: "更换低损耗镜底物可把 Young 1999 所示室温 ULE 腔热噪声极限继续下推。"
+        status: demonstrated
+        source: {zotero_key: "VDXBPUQB", claim: "using fused-silica mirrors lowers the thermal noise floor"}
+      - direction: pri.beam_radius_scaling
+        expected_gain: "增大镜面光斑半径可在保留室温平台的同时继续降低热噪声。"
+        status: demonstrated
+        source: {zotero_key: "VDXBPUQB", claim: "thermal noise can be reduced by increasing the beam spot size on the mirrors"}
+      - direction: pri.cryogenic_mechanical_q_enhancement
+        expected_gain: "采用低温单晶硅平台可将底物/间隔物热噪声进一步降低至 10⁻¹⁷ 量级。"
+        status: demonstrated
+        source: {zotero_key: "YKPFKDD9", claim: "high mechanical quality factor of silicon reduces thermal noise contribution from spacer and substrates"}
     note: >
-      跨论文关系：Numata 2004 确认 Young 1999 的 ULE 腔已在热噪声极限处工作。
-      subject 为 ent.fp_cavity_system（被限制的腔系统，定义于本文）；
-      ent.fp_cavity_system 即是 Young 1999 所用的通用室温 ULE FP 腔实例，
-      met.laser_linewidth_563nm 通过 young1999 的 CHARACTERIZED-BY 关系刻画该腔的受限性能。
+      跨论文关系：Numata 2004 确认 Young 1999 作为 ent.fp_cavity_system 的 reference implementation
+      已在热噪声极限处工作；其受限性能由 young1999.yaml 中的
+      met.laser_linewidth_563nm / met.fractional_freq_instability_y99 刻画。
 
   - id: rel.N08
     subject: ent.mirror_substrate
@@ -334,3 +386,18 @@ relations:
     source: {zotero_key: "VDXBPUQB", claim: "mirror substrate accounts for 84% ... calculated from FDT"}
     conditions: "ULE 腔典型参数（L=24 cm，w₀=240 μm）"
 
+  - id: rel.N12
+    subject: pri.beam_radius_scaling
+    predicate: DERIVED-FROM
+    object: pri.brownian_thermal_noise_fdt
+    confidence: established
+    source: {zotero_key: "VDXBPUQB", claim: "thermal noise can be reduced by increasing the beam spot size on the mirrors"}
+    conditions: "刚性 FP 腔热噪声优化路径"
+
+  - id: rel.N13
+    subject: pri.low_loss_substrate_improvement
+    predicate: DERIVED-FROM
+    object: pri.brownian_thermal_noise_fdt
+    confidence: established
+    source: {zotero_key: "VDXBPUQB", claim: "using fused-silica mirrors lowers thermal noise because of lower mechanical loss"}
+    conditions: "刚性 FP 腔镜底物材料优化路径"

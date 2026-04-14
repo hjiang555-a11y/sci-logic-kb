@@ -86,7 +86,22 @@ principles:
       - "B: 测量带宽 = 1/(2πτ)"
     source_claim: >
       "fundamental performance limit of any optical frequency control system
-       is set by the photoelectron shot noise"
+        is set by the photoelectron shot noise"
+
+  - id: pri.shot_noise_power_efficiency_scaling
+    name: "提高光功率与探测效率可压低散粒噪声极限"
+    tier: engineering
+    verification_status: calculated
+    statement: >
+      在散粒噪声受限条件下，提高注入光功率 Po、腔透射效率 T
+      和探测量子效率 η，可按平方根规律压低等效频率噪声底。
+      这是对散粒噪声极限的工程逼近路径，而非改变其存在性的物理豁免。
+    domain: "激光频率稳定"
+    formula: "δν_shot ∝ (Po · T · η)^(-1/2)"
+    key_insight: "散粒噪声极限无法取消，但可通过更高光子统计和探测效率继续下压。"
+    conditions: "光功率提高不会引入更强技术噪声或热效应时"
+    source_claim: >
+      "the shot-noise-limited performance improves with increasing detected optical power and quantum efficiency"
 
 metrics:
   - id: met.laser_linewidth
@@ -176,9 +191,15 @@ relations:
     conditions: "伺服增益足够高，散粒噪声为主导限制；高功率/高精细度腔可降低该极限"
     is_system_limit: true
     dominated_by: null
+    quantitative_contribution: "根本探测极限（文中未分解实验占比）"
     regime: all
     verification_status: calculated
     temporal_role: proposes
+    breakthrough_paths:
+      - direction: pri.shot_noise_power_efficiency_scaling
+        expected_gain: "在同一 PDH 架构下提高注入功率 Po、透射效率 T 和量子效率 η，可按 δν_shot ∝ (Po·T·η)^(-1/2) 继续压低散粒噪声极限。"
+        status: demonstrated
+        source: {zotero_key: "694DPR5F", claim: "fundamental performance limit ... set by the photoelectron shot noise"}
     note: "被限制的是 PDH 锁频方法（系统），不是指标本身；met.laser_linewidth 通过 OPERATIONALIZED-AS 关联"
 
   - id: rel.D05
@@ -200,3 +221,11 @@ relations:
     source: {zotero_key: "694DPR5F", claim: "rf phase modulator is required hardware for PDH frequency lock of an optical resonator"}
     conditions: null
     note: "PDH 误差探测配套硬件；ent.fp_cavity_system 定义于 numata2004.yaml"
+
+  - id: rel.D07
+    subject: pri.shot_noise_power_efficiency_scaling
+    predicate: DERIVED-FROM
+    object: pri.shot_noise_frequency_limit
+    confidence: established
+    source: {zotero_key: "694DPR5F", claim: "shot-noise-limited performance depends on optical power and detector efficiency"}
+    conditions: "用于讨论散粒噪声极限的工程逼近路径时"
