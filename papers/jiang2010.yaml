@@ -286,9 +286,15 @@ relations:
     conditions: "扫频（啁啾）时为主导限制；静态时较小"
     is_system_limit: true
     dominated_by: null
+    quantitative_contribution: "扫频状态下主导限制（未给出统一百分比分解）"
     regime: during-sweep
     verification_status: observed
     temporal_role: proposes
+    breakthrough_paths:
+      - direction: meth.fiber_delay_locking
+        expected_gain: "通过缩短延迟光纤、降低注入功率并优化偏振/外差实现，可减轻 RBS 对扫频线性度的破坏，但会牺牲部分灵敏度或 SNR。"
+        status: demonstrated
+        source: {zotero_key: "T8JR8IJ7", claim: "Rayleigh backscattering is the fundamental limitation of the fiber interferometer reference during frequency chirping"}
   - id: rel.J07
     subject: ent.fiber_interferometer
     predicate: BOUNDED-BY
@@ -298,9 +304,15 @@ relations:
     conditions: "扫频模式"
     is_system_limit: true
     dominated_by: null
+    quantitative_contribution: "扫频模式主导限制"
     regime: during-sweep
     verification_status: observed
     temporal_role: proposes
+    breakthrough_paths:
+      - direction: meth.fiber_delay_locking
+        expected_gain: "围绕光纤延迟线锁频链路优化 RBS 抑制策略，可改善可捷变扫频性能边界。"
+        status: demonstrated
+        source: {zotero_key: "T8JR8IJ7", claim: "Rayleigh backscattering is the fundamental limitation of the fiber interferometer reference during frequency chirping"}
 
   - id: rel.J08
     subject: ent.faraday_rotation_mirror
@@ -318,7 +330,7 @@ relations:
     source: {zotero_key: "T8JR8IJ7", claim: "servo bandwidth ~20 kHz"}
     conditions: "AOM 快执行器"
 
-  - id: rel.J10
+  - id: rel.J12
     subject: ent.fiber_interferometer
     predicate: CONDITIONED-BY
     object: ent.thermal_environment

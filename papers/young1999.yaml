@@ -252,6 +252,7 @@ relations:
     conditions: "腔内功率未被控制时；此论文通过主动控制减轻该效应"
     is_system_limit: false
     dominated_by: pri.brownian_thermal_noise_fdt
+    quantitative_contribution: null
     regime: all
     verification_status: observed
     temporal_role: proposes
@@ -283,20 +284,35 @@ relations:
     note: "隔振台是 FP 腔系统的 Level 2 子单元（物理承载）；ent.fp_cavity_system 定义于 numata2004.yaml"
 
   - id: rel.Y10
-    subject: met.laser_linewidth_563nm
+    subject: ent.fp_cavity_system
     predicate: BOUNDED-BY
     object: pri.brownian_thermal_noise_fdt
     confidence: established
-    source: {zotero_key: "EGAZKLXR", claim: "linewidth of 0.6 Hz ... consistent with thermal noise limit (confirmed by Numata 2004)"}
+    source: {zotero_key: "VDXBPUQB", claim: "the results of Young et al. are consistent with being at the thermal noise limit"}
     conditions: "ULE 腔，L=24 cm，finesse>150,000，T≈300 K"
     is_system_limit: true
     dominated_by: null
+    quantitative_contribution: "热噪声主导（由 Numata 2004 跨论文确认）"
     regime: all
     verification_status: observed
-    temporal_role: proposes
+    temporal_role: validates
+    breakthrough_paths:
+      - direction: pri.low_loss_substrate_improvement
+        expected_gain: "用低损耗镜底物替代 ULE，可继续压低该 reference implementation 的热噪声底。"
+        status: demonstrated
+        source: {zotero_key: "VDXBPUQB", claim: "using fused-silica mirrors lowers the thermal noise floor"}
+      - direction: pri.beam_radius_scaling
+        expected_gain: "增大镜面光斑半径可在室温架构下继续降低热噪声。"
+        status: demonstrated
+        source: {zotero_key: "VDXBPUQB", claim: "thermal noise can be reduced by increasing the beam spot size on the mirrors"}
+      - direction: pri.cryogenic_mechanical_q_enhancement
+        expected_gain: "采用低温硅腔平台可把底物/间隔物热噪声进一步降到 10⁻¹⁷ 量级。"
+        status: demonstrated
+        source: {zotero_key: "YKPFKDD9", claim: "high mechanical quality factor of silicon reduces thermal noise contribution from spacer and substrates"}
     note: >
-      pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml；
-      突破路径见该原理节点的 condition_variables（φ/w₀/T/L 各变量的改善方向）。
+      跨文件引用，ent.fp_cavity_system 与 pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml。
+      Young 1999 作为该共享节点的 reference implementation，其 0.6 Hz / 3×10⁻¹⁶ 结果
+      后由 Numata 2004 认定为热噪声极限验证案例。
 
   - id: rel.Y11
     subject: ent.fp_cavity_system
