@@ -11,6 +11,28 @@
 
 ---
 
+## GitHub Copilot 优先原则
+
+**优先使用 GitHub Copilot 完成工作，仅在 GitHub Copilot 无法完成时才使用本地 Claude Code 处理。**
+
+具体实施：
+1. **GitHub Copilot 适用场景**：
+   - 代码生成（YAML 模板、Python 脚本、bash 脚本）
+   - 文档撰写（README、注释、说明）
+   - 代码审查和问题修复
+   - 基于已有模式的重复性工作
+
+2. **本地 Claude Code 适用场景**：
+   - 需要读取本地 PDF 文件（Zotero 存储）
+   - 需要调用本地工具（Read、Edit、Bash 等）
+   - 需要交互式探索和决策（如关系提取、节点识别）
+   - GitHub Copilot 无法直接处理的复杂逻辑推理
+
+3. **工作流整合**：
+   - 尽可能将任务分解为可 GitHub Copilot 完成的子任务
+   - 使用 GitHub PR 流程管理所有更改
+   - 本地处理结果必须通过 GitHub PR 提交
+
 ## 单篇论文处理流程
 
 ### 步骤 1：确定目标论文
