@@ -244,7 +244,7 @@ relations:
     note: "跨文件引用，ent.fp_cavity_system 定义于 numata2004.yaml"
 
   - id: rel.Y06
-    subject: met.laser_linewidth_563nm
+    subject: ent.fp_cavity_system
     predicate: BOUNDED-BY
     object: pri.mirror_heating_cavity_shift
     confidence: established
@@ -255,6 +255,7 @@ relations:
     regime: all
     verification_status: observed
     temporal_role: proposes
+    note: "ent.fp_cavity_system 定义于 numata2004.yaml；本限制可通过主动功率控制消除"
 
   - id: rel.Y07
     subject: ent.vibration_isolation
@@ -283,20 +284,21 @@ relations:
     note: "隔振台是 FP 腔系统的 Level 2 子单元（物理承载）；ent.fp_cavity_system 定义于 numata2004.yaml"
 
   - id: rel.Y10
-    subject: met.laser_linewidth_563nm
+    subject: ent.fp_cavity_system
     predicate: BOUNDED-BY
     object: pri.brownian_thermal_noise_fdt
     confidence: established
     source: {zotero_key: "EGAZKLXR", claim: "linewidth of 0.6 Hz ... consistent with thermal noise limit (confirmed by Numata 2004)"}
-    conditions: "ULE 腔，L=24 cm，finesse>150,000，T≈300 K"
+    conditions: "ULE 腔，L=24 cm，finesse>150,000，T≈300 K；Young 1999 配置"
     is_system_limit: true
     dominated_by: null
     regime: all
     verification_status: observed
     temporal_role: proposes
     note: >
-      pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml；
-      突破路径见该原理节点的 condition_variables（φ/w₀/T/L 各变量的改善方向）。
+      ent.fp_cavity_system 定义于 numata2004.yaml；
+      被限制的是腔系统（不是指标本身）；
+      pri.brownian_thermal_noise_fdt 的 condition_variables 给出了所有突破方向。
 
   - id: rel.Y11
     subject: ent.fp_cavity_system
@@ -333,3 +335,12 @@ relations:
     note: >
       ent.fp_cavity_system 定义于 numata2004.yaml；
       ent.fiber_interferometer 定义于 jiang2010.yaml。
+
+  - id: rel.Y13
+    subject: ent.two_stage_pdh_lock_young99
+    predicate: PART-OF
+    object: ent.fp_cavity_system
+    confidence: established
+    source: {zotero_key: "EGAZKLXR", claim: "first prestabilize to low-finesse cavity, then lock to high-finesse ULE cavity using PDH"}
+    conditions: "PDH 锁频配置下；ent.two_stage_pdh_lock_young99 是 FP 腔系统的电子+控制子单元"
+    note: "ent.fp_cavity_system 定义于 numata2004.yaml；Level 2 控制子单元"

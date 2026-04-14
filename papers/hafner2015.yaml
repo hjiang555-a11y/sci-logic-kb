@@ -30,7 +30,7 @@ entities:
   - id: ent.self_balancing_long_cavity_h15
     name: "自平衡安装长 ULE 腔（Häfner 2015）"
     aliases: ["48 cm ULE cavity PTB", "self-balancing mount cavity", "long room-temperature cavity 2015"]
-    hierarchy_level: 2
+    hierarchy_level: 1
     status: demonstrated
     function: >
       48 cm 长 ULE 间隔物 FP 腔，采用自平衡安装（self-balancing mount）：
@@ -119,12 +119,21 @@ metrics:
 relations:
   - id: rel.H01
     subject: ent.self_balancing_long_cavity_h15
-    predicate: PART-OF
+    predicate: COMPETES-WITH
     object: ent.fp_cavity_system
+    context: "室温 ULE 腔频率参考：48 cm 自平衡长腔（Häfner 2015）vs 标准室温 ULE 腔（10–25 cm）"
+    tradeoffs:
+      subject_wins:
+        - "分数热噪声降低约 2–5×（σ_y ~ 8×10⁻¹⁷ vs ~3×10⁻¹⁶），室温腔最优性能"
+        - "全向加速度灵敏度 < 2×10⁻¹⁰/g（自平衡安装）；标准腔约 ~100×10⁻¹⁰/g"
+        - "可直接工作于原子钟跃迁波长（698 nm Sr），无需频率变换"
+      object_wins:
+        - "设计简单，成本低，尺寸紧凑（10–25 cm），工程化更易"
+        - "波长覆盖更灵活（无特定波长要求）"
+        - "自平衡安装要求精密机械设计（Teflon 柱、玻璃球、铝夹具），标准腔无此需求"
     confidence: established
-    source: {zotero_key: "UV6S5FFL", claim: "48 cm long optical glass resonator... laser system"}
-    conditions: null
-    note: "ent.fp_cavity_system 定义于 numata2004.yaml"
+    source: {zotero_key: "UV6S5FFL", claim: "48 cm long room temperature resonator achieves instability below 1×10⁻¹⁶"}
+    note: "ent.fp_cavity_system 定义于 numata2004.yaml；两者均为室温 ULE 腔，此关系标明设计选择"
 
   - id: rel.H02
     subject: ent.self_balancing_long_cavity_h15
@@ -140,7 +149,7 @@ relations:
       通过自平衡安装解决长腔特有的支撑力均衡问题。
 
   - id: rel.H03
-    subject: ent.fp_cavity_system
+    subject: ent.self_balancing_long_cavity_h15
     predicate: CHARACTERIZED-BY
     object: met.fractional_freq_instability_h15
     confidence: established
@@ -209,7 +218,7 @@ relations:
     note: "ent.si_crystal_fp_cavity_k12 定义于 kessler2012.yaml"
 
   - id: rel.H08
-    subject: ent.fp_cavity_system
+    subject: ent.self_balancing_long_cavity_h15
     predicate: CONDITIONED-BY
     object: ent.thermal_environment
     interface_metric: met.fractional_freq_instability_h15

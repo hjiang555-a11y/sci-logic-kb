@@ -277,18 +277,9 @@ relations:
     source: {zotero_key: "T8JR8IJ7", claim: "AOM in reference arm for heterodyne detection of frequency error"}
     conditions: null
 
-  - id: rel.J06
-    subject: met.freq_noise_psd_fiber
-    predicate: BOUNDED-BY
-    object: pri.rayleigh_backscattering_noise
-    confidence: established
-    source: {zotero_key: "T8JR8IJ7", claim: "Rayleigh backscattering fundamental limitation during chirping"}
-    conditions: "扫频（啁啾）时为主导限制；静态时较小"
-    is_system_limit: true
-    dominated_by: null
-    regime: during-sweep
-    verification_status: observed
-    temporal_role: proposes
+  # rel.J06 已合并到 rel.J07（ent.fiber_interferometer BOUNDED-BY pri.rayleigh_backscattering_noise）
+  # 原 subject met.freq_noise_psd_fiber 为指标节点，语义有误；指标由 CHARACTERIZED-BY 关联，
+  # 系统级限制已在 rel.J07 中以实体节点作为 subject 正确表达。
   - id: rel.J07
     subject: ent.fiber_interferometer
     predicate: BOUNDED-BY

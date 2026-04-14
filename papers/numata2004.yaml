@@ -284,12 +284,12 @@ relations:
     temporal_role: proposes
 
   - id: rel.N07
-    subject: ent.ule_fp_cavity_young99
+    subject: ent.fp_cavity_system
     predicate: BOUNDED-BY
     object: pri.brownian_thermal_noise_fdt
     confidence: established
     source: {zotero_key: "VDXBPUQB", claim: "the results of Young et al. are consistent with being at the thermal noise limit"}
-    conditions: "Young 1999 所用 ULE 腔参数（L=24 cm，finesse>150,000）"
+    conditions: "Young 1999 所用 ULE 腔参数（L=24 cm，finesse>150,000）；与 rel.N01 互为验证"
     is_system_limit: true
     dominated_by: null
     regime: all
@@ -297,9 +297,8 @@ relations:
     temporal_role: validates
     note: >
       跨论文关系：Numata 2004 确认 Young 1999 的 ULE 腔已在热噪声极限处工作。
-      原 subject 为 met.laser_linewidth_563nm（指标节点，语义有误——指标不是被限制的系统）；
-      改为 ent.ule_fp_cavity_young99（被限制的腔系统）。
-      ent.ule_fp_cavity_young99 定义于 young1999.yaml；
+      subject 为 ent.fp_cavity_system（被限制的腔系统，定义于本文）；
+      ent.fp_cavity_system 即是 Young 1999 所用的通用室温 ULE FP 腔实例，
       met.laser_linewidth_563nm 通过 young1999 的 CHARACTERIZED-BY 关系刻画该腔的受限性能。
 
   - id: rel.N08
