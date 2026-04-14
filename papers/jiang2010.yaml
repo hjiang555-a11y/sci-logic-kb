@@ -290,8 +290,8 @@ relations:
     verification_status: observed
     temporal_role: proposes
     breakthrough_paths:
-      - direction: meth.fiber_delay_locking
-        expected_gain: "缩短光纤长度（降低总 RBS）— 以牺牲频率分辨率为代价"
+      - direction: "shorter_fiber_length"
+        expected_gain: "缩短光纤长度（降低总 RBS）— 以牺牲频率分辨率为代价；无已知原理节点，为工程权衡"
         status: theoretical
         source: {zotero_key: "T8JR8IJ7"}
 

@@ -168,7 +168,7 @@ metrics:
     unit: "Hz/√Hz"
     description: "环境振动通过加速度灵敏度耦合进入 FP 腔的等效频率噪声"
     is_interface_metric: true
-    coupling_formula: "Δν = acceleration_sensitivity × ambient_acceleration × ν₀/c"
+    coupling_formula: "Δν = acceleration_sensitivity × ambient_acceleration"
     demonstrated_value:
       value: "残余振动噪声贡献 < 热噪声水平（充分隔振后）"
       conditions: "Young 1999 悬挂隔振台 + 腔加速度灵敏度 ~100 kHz/(m/s²)"
@@ -300,7 +300,7 @@ relations:
         status: demonstrated
         source: {zotero_key: "VDXBPUQB"}
       - direction: pri.beam_radius_scaling
-        expected_gain: "增大光斑 2× → 热噪声降低 4×"
+        expected_gain: "增大光斑 2× → 热噪声降低 2×（S_ν ∝ 1/w₀）"
         status: demonstrated
         source: {zotero_key: "VDXBPUQB"}
     note: >
