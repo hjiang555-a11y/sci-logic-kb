@@ -302,14 +302,19 @@ note: "跨文件引用，定义于 shaddock1999.yaml"
 
 ---
 
-## 七、已处理论文（待按 v2.0 重整）
+## 七、已处理论文
 
 | 文件 | Zotero Key | 论文 | v2.0状态 |
 |------|-----------|------|---------|
-| `drever1983.yaml` | 694DPR5F | Drever 1983 — PDH 技术 | 待重整 |
-| `young1999.yaml` | EGAZKLXR | Young 1999 — 亚赫兹线宽可见激光 | 待重整 |
-| `shaddock1999.yaml` | S5PX7GHC | Shaddock 1999 — Tilt Locking | 待重整 |
-| `numata2004.yaml` | VDXBPUQB | Numata 2004 — FP 腔热噪声极限 | 待重整 |
-| `jiang2010.yaml` | T8JR8IJ7 | Jiang 2010 — 光纤干涉仪可捷变激光 | 待重整 |
+| `drever1983.yaml` | 694DPR5F | Drever 1983 — PDH 技术 | ✅ v2.0 完成（2026-04-14） |
+| `young1999.yaml` | EGAZKLXR | Young 1999 — 亚赫兹线宽可见激光 | ✅ v2.0 完成（2026-04-14） |
+| `shaddock1999.yaml` | S5PX7GHC | Shaddock 1999 — Tilt Locking | ✅ v2.0 完成（2026-04-14） |
+| `numata2004.yaml` | VDXBPUQB | Numata 2004 — FP 腔热噪声极限 | ✅ v2.0 完成（2026-04-14） |
+| `jiang2010.yaml` | T8JR8IJ7 | Jiang 2010 — 光纤干涉仪可捷变激光 | ✅ v2.0 完成（2026-04-14） |
 
-**重整优先级**：numata2004（热噪声极限，BOUNDED-BY 关系最典型）→ young1999（跨论文验证关系）→ drever1983（ENABLED-BY 原型）→ shaddock1999（COMPETES-WITH + 元原理）→ jiang2010（外围条件层 + CONDITIONED-BY）
+**v2.0 重整摘要**：
+- `numata2004`：`ent.rigid_fp_cavity` → `ent.fp_cavity_system`；GOVERNED-BY → BOUNDED-BY（含 breakthrough_paths）；修正 PART-OF 方向；删除语义错误的工程路径 BOUNDED-BY；新增 DERIVED-FROM 链
+- `young1999`：新增 `ent.vibration_environment`（ext）+ CONDITIONED-BY 接口；GOVERNED-BY → ENABLED-BY/BOUNDED-BY；新增 COMPETES-WITH；temporal_role: proposes
+- `drever1983`：GOVERNED-BY → ENABLED-BY（PDH 机制）；BOUNDED-BY（散粒噪声极限）；temporal_role: proposes
+- `shaddock1999`：`pri.off_resonance_reference_light` tier: meta；GOVERNED-BY → ENABLED-BY；新增 COMPETES-WITH + DERIVED-FROM；temporal_role: proposes
+- `jiang2010`：新增 `ent.thermal_environment`（ext）+ CONDITIONED-BY 接口；GOVERNED-BY → ENABLED-BY/BOUNDED-BY；新增 COMPETES-WITH；删除猜测性 J10（原 GOVERNED-BY 元原理）；修正 J09 方向
