@@ -183,10 +183,10 @@ git push
 
 ### 来自 webster2007.yaml
 
-- `ent.vibration_insensitive_fp_cavity_w07` — 水平方向振动不敏感 FP 腔（Webster 2007）
+- `ent.cutout_cavity_mount_w07` — 切口腔体安装设计（Level 2，PART-OF fp_cavity_system，COMPETES-WITH vibration_isolation）
 - `pri.cavity_deformation_compensation` — 腔镜中心位移补偿原理（四点对称支撑）
 - `pri.ule_cte_zero_crossing` — ULE 零膨胀点工作原理
-- `met.vibration_sensitivity_w07` — 加速度灵敏度（< 1 kHz/(m/s²)）
+- `met.acceleration_sensitivity_vertical_w07` — 竖直加速度灵敏度 < 0.1 kHz/ms⁻²（Webster 2007）
 - `ent.vibration_environment` — 环境振动噪声（外围条件节点，ext）
 
 ### 来自 kessler2012.yaml
@@ -213,17 +213,18 @@ git push
 
 ### 来自 hafner2015.yaml
 
-- `ent.self_balancing_long_cavity_h15` — 自平衡安装 48 cm ULE 腔（Level 2，< 2×10⁻¹⁰/g 全向）
+- `ent.self_balancing_long_cavity_h15` — 自平衡安装 48 cm ULE 腔（**Level 1**，COMPETES-WITH fp_cavity_system 和 si_crystal_fp_cavity_k12）
 - `pri.long_cavity_thermal_noise_reduction` — 增长腔长降低热噪声分数贡献（σ_y ∝ 1/L）
 - `met.fractional_freq_instability_h15` — <1×10⁻¹⁶（1–1000 s，Häfner 2015，室温 48 cm 腔）
 - `met.acceleration_sensitivity_h15` — κ < 2×10⁻¹⁰/g 全向（自平衡安装）
 
 ### 来自 webster2007.yaml
 
-- `ent.vibration_insensitive_fp_cavity_w07` — 水平方向振动不敏感 FP 腔（Webster 2007）
+- `ent.cutout_cavity_mount_w07` — 切口腔体安装设计（Level 2，PART-OF fp_cavity_system，COMPETES-WITH vibration_isolation）
 - `pri.cavity_deformation_compensation` — 腔镜中心位移补偿原理（四点对称支撑）
 - `pri.ule_cte_zero_crossing` — ULE 零膨胀点工作原理
-- `met.vibration_sensitivity_w07` — 加速度灵敏度（< 1 kHz/(m/s²)）
+- `met.acceleration_sensitivity_vertical_w07` — 竖直加速度灵敏度 < 0.1 kHz/ms⁻²（Webster 2007）
+- `met.acceleration_sensitivity_horizontal_w07` — 水平加速度灵敏度 3.7 kHz/ms⁻²（Webster 2007）
 - `ent.vibration_environment` — 环境振动噪声（外围条件节点，ext）
 
 ### 来自 lee2026.yaml
