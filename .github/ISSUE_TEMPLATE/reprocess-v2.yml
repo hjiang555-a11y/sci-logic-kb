@@ -1,0 +1,34 @@
+name: Reprocess to SCHEMA v2.0
+description: Migrate an existing paper YAML to SCHEMA v2.0 (new relation types)
+title: "Reprocess v2.0: {author}{year}"
+labels: ["reprocess-v2"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        提交后自动迁移 `papers/` 目录中已有的 YAML 文件到 SCHEMA v2.0：
+        - GOVERNED-BY → ENABLED-BY / BOUNDED-BY
+        - 新增 hierarchy_level, status, tier, verification_status 字段
+        - 新增 DERIVED-FROM, COMPETES-WITH, CONDITIONED-BY 关系
+
+  - type: input
+    id: author_year
+    attributes:
+      label: Author Year
+      description: "已有 YAML 文件名（不含 .yaml），如 numata2004"
+      placeholder: numata2004
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 重整优先级
+      options:
+        - "1 - numata2004（BOUNDED-BY 原型）"
+        - "2 - young1999（跨论文验证关系）"
+        - "3 - drever1983（ENABLED-BY 原型）"
+        - "4 - shaddock1999（COMPETES-WITH + 元原理）"
+        - "5 - jiang2010（外围条件层）"
+    validations:
+      required: false
