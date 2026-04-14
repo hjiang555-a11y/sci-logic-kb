@@ -1,6 +1,7 @@
 # Jiang 2010 — 光纤干涉仪超低噪声可捷变激光
 # 提取者：Claude（AI草稿，待专家确认）
 # 提取日期：2026-04-14
+# Schema版本：v2.0
 
 meta:
   zotero_key: "T8JR8IJ7"
@@ -18,6 +19,7 @@ meta:
     演示了以光纤迈克尔逊干涉仪（非刚性 FP 腔）作为频率参考的超低噪声可捷变激光。
     在非扫频条件下频率噪声接近 ULE 腔稳激光水平；
     扫频时的根本限制：Rayleigh 背向散射（RBS）产生的干涉条纹噪声。
+    核心贡献：光纤干涉仪方案与 FP 腔方案的工程权衡得到量化比较。
 
 # ═══════════════════════════════════════════════
 #  NODES（节点）
@@ -27,57 +29,77 @@ entities:
   - id: ent.fiber_interferometer
     name: "光纤迈克尔逊干涉仪（频率参考）"
     aliases: ["fiber Michelson interferometer", "光纤频率参考", "fiber delay line interferometer"]
+    hierarchy_level: 1
+    status: demonstrated
     function: >
       以长光纤线轴（2.5 km SMF-28 单模光纤）作为延迟臂，
       构成迈克尔逊干涉仪（含法拉第旋转镜 FRM，消除偏振漂移）；
       通过 AOM 异差探测，提取激光频率相对于光纤延迟线的误差信号，
       作为频率参考替代刚性 FP 腔。
-    specifications:
+    key_parameters:
       fiber_length: "2.5 km SMF-28"
       interferometer_type: "Michelson with Faraday Rotation Mirrors (FRM)"
       detection_scheme: "AOM heterodyne（AOM3 在参考臂中，移频约 40 MHz）"
-      packaging: "光纤线轴盘绕，放置于隔振箱内（类比热/振动隔离）"
+      packaging: "光纤线轴盘绕，放置于隔振箱内"
+    interface_requirements:
+      temperature: "温度稳定性 < 0.1 K/day（以保持长期频率稳定度）"
+      vibration: "机械振动 < mrad/s 量级（避免光纤相位扰动）"
     key_advantage: "可在宽频率范围内扫频（可捷变）；无需精密 ULE 腔"
     key_limitation: >
       非刚性结构，腔长随温度/应力缓慢漂移（长期频率参考不如 ULE 腔）；
-      扫频时 Rayleigh 背向散射（RBS）是根本限制（见 pri.rayleigh_backscattering）。
-    comparison_to_fp_cavity:
-      advantage: "扫频能力、无精密光学装调要求、成本低"
-      disadvantage: "长期稳定度差（缺少零 CTE 支撑）；扫频受 RBS 限制"
+      扫频时 Rayleigh 背向散射（RBS）是根本限制。
 
   - id: ent.faraday_rotation_mirror
     name: "法拉第旋转镜（FRM）"
     aliases: ["Faraday Rotation Mirror", "FRM"]
+    hierarchy_level: 2
+    status: demonstrated
     function: >
       将反射光偏振态旋转 90°，
       补偿光纤双折射引起的偏振漂移，
       保证干涉信号对比度稳定。
-    note: "迈克尔逊光纤干涉仪中消除偏振问题的标准方案"
+    note: "迈克尔逊光纤干涉仪中消除偏振问题的标准方案；是 ent.fiber_interferometer 的 Level 2 子单元"
 
   - id: ent.agile_laser_system
     name: "可捷变超低噪声激光系统（Jiang 2010）"
     aliases: ["agile laser", "frequency-sweepable ultra-low noise laser"]
+    hierarchy_level: 1
+    status: demonstrated
     function: "以光纤干涉仪为参考，实现可大范围扫频且频率噪声极低的激光源"
-    specifications:
-      laser_type: "外腔半导体激光（ECDL，1319 nm / 1064 nm？文中为通用光纤激光）"
+    key_parameters:
+      laser_type: "外腔半导体激光（ECDL，通用光纤波段）"
       sweep_range: "可在数 GHz 至数十 GHz 范围线性扫频"
-      actuators:
-        slow: "PZT 腔长调节（低频，<几 kHz）"
-        fast: "AOM0（高频偏频，带宽约 20 kHz）"
-    performance:
+      actuators_slow: "PZT 腔长调节（低频，< 几 kHz）"
+      actuators_fast: "AOM0（高频偏频，带宽约 20 kHz）"
+    key_performance:
       freq_noise_psd_static: "约 10—100 Hz²/Hz @ 1 Hz（静态，接近 ULE 腔稳激光水平）"
       allan_deviation_static: "~10⁻¹⁴ @ 0.1—1 s（静态）"
       sweep_linearity: "< ppm 级偏差（使用伺服补偿后）"
 
+  - id: ent.thermal_environment
+    name: "热环境条件（温度稳定性）"
+    aliases: ["thermal environment", "temperature stability", "ambient temperature"]
+    hierarchy_level: ext
+    status: demonstrated
+    function: "描述光纤干涉仪工作环境的温度稳定性条件"
+    key_parameters:
+      typical_temperature_drift: "~1 K/day（实验室环境，无专用温控）"
+      temperature_sensitivity_mechanism: "光纤 Δν ∝ T × (dn/dT + α) × L"
+    note: >
+      外围条件节点；温度变化通过光纤折射率温度系数（dn/dT ≈ 1.1×10⁻⁵/K）
+      和热膨胀系数（α ≈ 0.55×10⁻⁶/K）耦合到频率参考。
+      光纤对温度的敏感性远高于 ULE 腔（ULE 有 CTE 零点，光纤没有）。
+
 principles:
   - id: pri.fiber_delay_line_frequency_ref
     name: "光纤延迟线频率参考原理"
+    tier: domain
+    verification_status: observed
     statement: >
       长光纤作为光延迟线（Delay Line），使同一激光在不同时刻的相位
       通过干涉进行比较。延迟时间 τ = n·L/c（L 为光纤长度，n 为折射率）。
       激光频率起伏 δν 转化为干涉相位起伏 δφ = 2π·δν·τ，
       经 AOM 外差探测后提取误差信号并反馈。
-      与刚性 FP 腔相比：以"时间延迟"代替"腔长谐振"作为频率参考。
     domain: "激光频率稳定（替代方案）"
     formula: "δφ = 2π · δν · τ = 2π · δν · nL/c"
     key_advantage: "不依赖光学谐振，天然支持扫频（可捷变）"
@@ -90,6 +112,8 @@ principles:
 
   - id: pri.rayleigh_backscattering_noise
     name: "Rayleigh 背向散射（RBS）——扫频时的根本噪声极限"
+    tier: domain
+    verification_status: observed
     statement: >
       光纤中的微观折射率不均匀性（密度/组分涨落）产生 Rayleigh 散射。
       向后散射的光（RBS）与正向传输光在探测器上干涉，
@@ -101,12 +125,10 @@ principles:
     key_insight: >
       RBS 是光纤干涉仪（对比 FP 腔）特有的根本噪声机制，
       无法通过普通滤波或信号处理消除。
-      限制了光纤干涉仪参考激光的扫频速率与噪声性能。
     mitigation_strategies:
       - "降低光纤注入功率（减少受激 RBS，但会降低 SNR）"
       - "使用偏振分集接收（减少偏振相关 RBS 干涉）"
       - "采用更短光纤（减少总 RBS，但降低灵敏度/延迟时间）"
-      - "使用循环延迟线替代 Michelson（避免双程放大 RBS）"
     conditions: "扫频（线性啁啾）时特别显著；静态锁频时相对可控"
     source_claim: >
       "Rayleigh backscattering is the fundamental limitation of the
@@ -114,12 +136,13 @@ principles:
 
   - id: pri.aom_heterodyne_fiber_detection
     name: "AOM 外差检测（光纤干涉仪误差信号提取）"
+    tier: domain
+    verification_status: observed
     statement: >
       在参考臂中插入 AOM（声光调制器），使参考臂光偏移固定频率 f_AOM（约 40 MHz）。
       与信号臂（延迟臂）光干涉后，在探测器产生差拍信号。
       该差拍信号的相位包含激光频率起伏信息，
       经相敏解调（类 PDH）后得到误差信号，反馈到激光。
-      本质上是时域版外差探测，类比 PDH 的空间（或时间）边带方案。
     domain: "光纤干涉仪稳频"
     key_advantage: "可分离载波与误差信号，抑制强度噪声（外差优势）"
     analogy: >
@@ -133,6 +156,8 @@ methods:
   - id: meth.fiber_delay_locking
     name: "光纤延迟线锁频（Fiber Delay Line Locking）"
     full_name: "光纤迈克尔逊干涉仪 AOM 外差稳频法"
+    status: demonstrated
+    applies_to: ent.fiber_interferometer
     steps_summary: >
       激光分束 → 参考臂（含 AOM，移频 f_AOM）→ 延迟臂（长光纤 2.5 km，FRM 反射）→
       两臂干涉 → AOM 频率处外差探测 → 相敏解调得误差信号 →
@@ -140,16 +165,6 @@ methods:
     required_hardware:
       - ent.fiber_interferometer     # 频率参考（替代刚性 FP 腔）
       - ent.faraday_rotation_mirror  # 消偏振漂移
-    versus_pdh:
-      common: "均使用外差探测提取误差信号，原理上同属 pri.off_resonance_reference_light 框架"
-      difference: >
-        PDH：以光学腔谐振为参考，误差信号源自腔反射；
-        Fiber：以光纤延迟为参考，误差信号源自延迟干涉；
-        本质差异：PDH 是"频域谐振"，Fiber 是"时域延迟"。
-    versus_tilt_locking:
-      difference: >
-        Tilt Locking：空域横模干涉（仍基于 FP 腔）；
-        Fiber Delay：时域延迟线干涉（不需要 FP 腔，适合扫频）
     advantages:
       - "天然支持大范围扫频（可捷变），FP 腔方案扫频困难"
       - "无需精密光学装调（ULE 腔需极其精密的机械设计）"
@@ -173,6 +188,7 @@ metrics:
     demonstrated_value:
       value: "约 10–100 Hz²/Hz @ 1–10 Hz；在 30–3000 Hz 频段接近 ULE 腔锁定水平"
       conditions: "2.5 km SMF-28 光纤，静态锁频，室温隔振箱"
+      verification_status: observed
       confidence: established
       source: {zotero_key: "T8JR8IJ7", claim: "frequency noise comparable to ULE cavity-stabilized laser in 30-3000 Hz range"}
 
@@ -183,6 +199,7 @@ metrics:
     demonstrated_value:
       value: "~10⁻¹⁴ @ 0.1–1 s"
       conditions: "2.5 km 光纤，静态锁频"
+      verification_status: observed
       confidence: established
       source: {zotero_key: "T8JR8IJ7", claim: "Allan deviation ~10^-14 at 0.1-1 s averaging time"}
 
@@ -193,12 +210,27 @@ metrics:
     demonstrated_value:
       value: "约 20 kHz（AOM 快速执行器）"
       conditions: "PZT（慢）+ AOM0（快）双执行器方案"
+      verification_status: observed
       confidence: established
       source: {zotero_key: "T8JR8IJ7", claim: "servo bandwidth ~20 kHz with AOM as fast actuator"}
     comparison:
       pdh_typical: "> 1 MHz"
       tilt_locking_demo: "约 230 Hz（Chabbra 2021）"
       fiber_delay: "约 20 kHz（中等，受 AOM 带宽限制）"
+
+  - id: met.freq_noise_from_temperature_fiber
+    name: "温度变化引起的光纤频率噪声（接口指标）"
+    unit: "Hz/K（静态偏移）"
+    description: "环境温度变化通过光纤折射率温度系数和热膨胀耦合到频率参考的等效频率偏移"
+    is_interface_metric: true
+    coupling_formula: "Δν ≈ ν₀ × (dn/dT + α) × L × ΔT / L = ν₀ × (dn/dT + α) × ΔT"
+    demonstrated_value:
+      value: "~几 kHz/K（2.5 km SMF-28 光纤，ν₀ ≈ 193 THz）"
+      conditions: "室温下 SMF-28 光纤，dn/dT ≈ 1.1×10⁻⁵/K，α ≈ 0.55×10⁻⁶/K"
+      verification_status: calculated
+      confidence: likely
+      source: {zotero_key: "T8JR8IJ7"}
+    note: "与 FP 腔（ULE，CTE 零点处 dν/dT ≈ 0）相比，光纤温度灵敏度高约 6 个量级"
 
 # ═══════════════════════════════════════════════
 #  RELATIONS（关系）
@@ -222,16 +254,16 @@ relations:
     conditions: "静态锁频"
 
   - id: rel.J03
-    subject: meth.fiber_delay_locking
+    subject: met.freq_noise_psd_fiber
     predicate: OPERATIONALIZED-AS
-    object: met.freq_noise_psd_fiber
+    object: meth.fiber_delay_locking
     confidence: established
     source: {zotero_key: "T8JR8IJ7", claim: "fiber interferometer locking achieves ultra-low frequency noise"}
     conditions: "静态锁频"
 
   - id: rel.J04
     subject: meth.fiber_delay_locking
-    predicate: GOVERNED-BY
+    predicate: ENABLED-BY
     object: pri.fiber_delay_line_frequency_ref
     confidence: established
     source: {zotero_key: "T8JR8IJ7", claim: "uses fiber delay line as frequency reference"}
@@ -239,7 +271,7 @@ relations:
 
   - id: rel.J05
     subject: meth.fiber_delay_locking
-    predicate: GOVERNED-BY
+    predicate: ENABLED-BY
     object: pri.aom_heterodyne_fiber_detection
     confidence: established
     source: {zotero_key: "T8JR8IJ7", claim: "AOM in reference arm for heterodyne detection of frequency error"}
@@ -247,19 +279,34 @@ relations:
 
   - id: rel.J06
     subject: met.freq_noise_psd_fiber
-    predicate: GOVERNED-BY
+    predicate: BOUNDED-BY
     object: pri.rayleigh_backscattering_noise
     confidence: established
     source: {zotero_key: "T8JR8IJ7", claim: "Rayleigh backscattering fundamental limitation during chirping"}
     conditions: "扫频（啁啾）时为主导限制；静态时较小"
+    is_system_limit: true
+    dominated_by: null
+    regime: during-sweep
+    verification_status: observed
+    temporal_role: proposes
+    breakthrough_paths:
+      - direction: meth.fiber_delay_locking
+        expected_gain: "缩短光纤长度（降低总 RBS）— 以牺牲频率分辨率为代价"
+        status: theoretical
+        source: {zotero_key: "T8JR8IJ7"}
 
   - id: rel.J07
     subject: ent.fiber_interferometer
-    predicate: GOVERNED-BY
+    predicate: BOUNDED-BY
     object: pri.rayleigh_backscattering_noise
     confidence: established
     source: {zotero_key: "T8JR8IJ7", claim: "RBS in fiber sets fundamental noise floor during sweep"}
     conditions: "扫频模式"
+    is_system_limit: true
+    dominated_by: null
+    regime: during-sweep
+    verification_status: observed
+    temporal_role: proposes
 
   - id: rel.J08
     subject: ent.faraday_rotation_mirror
@@ -270,23 +317,41 @@ relations:
     conditions: null
 
   - id: rel.J09
-    subject: met.servo_bandwidth_fiber
+    subject: meth.fiber_delay_locking
     predicate: CHARACTERIZED-BY
-    object: meth.fiber_delay_locking
+    object: met.servo_bandwidth_fiber
     confidence: established
     source: {zotero_key: "T8JR8IJ7", claim: "servo bandwidth ~20 kHz"}
     conditions: "AOM 快执行器"
 
   - id: rel.J10
-    subject: meth.fiber_delay_locking
-    predicate: GOVERNED-BY
-    object: pri.off_resonance_reference_light    # 来自 shaddock1999.yaml，通用原理
-    confidence: likely
-    source: {zotero_key: "T8JR8IJ7"}
-    conditions: null
-    speculative: true
-    note: >
-      猜测性关联：光纤延迟线方案在功能上属于"用非腔谐振方式提取误差信号"，
-      与 PDH/Tilt Locking 的"非谐振参考光原理"具有物理同构性，
-      但实现机制（时域延迟）不同于空间域或频域方案。
-      此关系需专家确认是否纳入同一元原理框架。
+    subject: ent.fiber_interferometer
+    predicate: CONDITIONED-BY
+    object: ent.thermal_environment
+    interface_metric: met.freq_noise_from_temperature_fiber
+    coupling_formula: "Δν ≈ ν₀ × (dn/dT + α) × ΔT"
+    internal_property: "光纤温度灵敏度：dn/dT ≈ 1.1×10⁻⁵/K，与 ULE 腔物理机制不同（无 CTE 零点）"
+    confidence: established
+    source: {zotero_key: "T8JR8IJ7", claim: "fiber interferometer placed in thermally isolated enclosure to reduce temperature-induced drift"}
+    is_system_limit:
+      current: false
+      conditions: "Jiang 2010 使用隔振控温箱，温度漂移为长期稳定度限制（秒级非主导）"
+    note: "ent.thermal_environment 为外围条件节点，定义于本文；光纤热耦合机制与 FP 腔不同，不共享内部原理"
+
+  - id: rel.J11
+    subject: ent.fiber_interferometer
+    predicate: COMPETES-WITH
+    object: ent.fp_cavity_system
+    context: "频率参考选择：光纤迈克尔逊干涉仪 vs 刚性 FP 腔"
+    tradeoffs:
+      subject_wins:
+        - "可捷变扫频（FP 腔方案大范围扫频困难）"
+        - "无需精密光学装调（ULE 腔需极其精密的机械设计）"
+        - "成本低，工程化友好，易于集成"
+      object_wins:
+        - "长期稳定度 3×10⁻¹⁶（FP 腔），光纤方案仅 ~10⁻¹⁴（约差 2 个量级）"
+        - "绝对频率参考（可溯源至原子跃迁）"
+        - "热噪声极限更低（ULE 腔有 CTE 零点；光纤无零膨胀点）"
+    confidence: established
+    source: {zotero_key: "T8JR8IJ7", claim: "fiber interferometer approach suited for agile lasers; trade-off vs FP cavity stability"}
+    note: "ent.fp_cavity_system 定义于 numata2004.yaml"

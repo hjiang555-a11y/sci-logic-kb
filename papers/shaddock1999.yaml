@@ -1,6 +1,7 @@
 # Shaddock 1999 — Tilt Locking 原论文
 # 提取者：Claude（AI草稿，待专家确认）
 # 提取日期：2026-04-14
+# Schema版本：v2.0
 
 meta:
   zotero_key: "S5PX7GHC"
@@ -14,7 +15,10 @@ meta:
   issue: 21
   pages: "1499-1501"
   doi: "10.1364/OL.24.001499"
-  note: "Tilt locking 原始提出论文；2021 年 Chabbra et al. 有高性能验证后续"
+  note: >
+    首次提出 Tilt Locking 方法（空间横模干涉锁频）；
+    揭示 PDH 与 Tilt Locking 的物理同源性（共有"非谐振参考光"元原理）；
+    2021 年 Chabbra et al. 有高性能验证后续。
 
 # ═══════════════════════════════════════════════
 #  NODES（节点）
@@ -24,22 +28,28 @@ entities:
   - id: ent.split_photodetector
     name: "分割光电探测器"
     aliases: ["split detector", "quadrant detector", "vertically split photodetector"]
+    hierarchy_level: 2
+    status: demonstrated
     function: >
       探测 TEM00 与 TEM10 模式叠加后的横向功率分布。
       对半差分信号 = 频率误差信号。
       替代 PDH 中的高频光电探测器 + 混频器。
-    note: "Tilt locking 的核心器件，极大简化了电子学"
+    note: "Tilt Locking 的核心器件，极大简化了电子学"
 
   - id: ent.tilting_mirror
     name: "倾斜反射镜（Tilt 镜）"
     aliases: ["tilt mirror", "input steering mirror with tilt"]
+    hierarchy_level: 2
+    status: demonstrated
     function: "对入射光束引入精确角度倾斜，激励腔的 TEM10 高阶横模"
-    parameters:
+    key_parameters:
       tilt_angle_example: "约 8°（Chabbra 2021 实验值）"
 
 principles:
   - id: pri.off_resonance_reference_light
     name: "非谐振参考光原理（PDH 与 Tilt Locking 共有）"
+    tier: meta
+    verification_status: observed
     statement: >
       任何激光-腔锁频方案的核心：需要一束与谐振载波同频率来源、
       但本身不谐振（直接从腔反射）的"参考光"，
@@ -47,7 +57,7 @@ principles:
       不同方案的区别仅在于"参考光"的产生方式：
       - PDH：时域——射频相位调制产生频率偏移边带
       - Tilt Locking：空域——角度倾斜激励高阶横模（Gouy 相位不同 → 非谐振）
-    domain: "激光频率稳定（通用原理）"
+    domain: "激光频率稳定（通用原理，跨方案共有）"
     key_insight: >
       PDH 和 Tilt Locking 的差异是工程实现，不是物理本质；
       两者的量子噪声极限相同。
@@ -57,6 +67,8 @@ principles:
 
   - id: pri.gouy_phase_discrimination
     name: "Gouy 相位横模鉴别原理"
+    tier: domain
+    verification_status: observed
     statement: >
       不同横模（TEM00, TEM10, TEM20 ...）在腔内每次往返积累不同的 Gouy 相位，
       导致各横模的谐振频率不同（相差约 FSR × ξ/π，ξ 为 Gouy 相移）。
@@ -71,6 +83,8 @@ principles:
 
   - id: pri.spatial_homodyne_detection
     name: "空间零差探测（分割探测器）"
+    tier: domain
+    verification_status: observed
     statement: >
       TEM00（谐振泄漏场）与 TEM10（非谐振参考光）的叠加，
       在横截面上形成功率非对称分布（横向位移）。
@@ -89,6 +103,8 @@ methods:
   - id: meth.tilt_locking
     name: "Tilt Locking（倾斜锁定）"
     full_name: "Spatial mode interference laser frequency locking"
+    status: demonstrated
+    applies_to: ent.fp_cavity_system
     steps_summary: >
       对入射光束施加角度倾斜 →
       进入 F-P 腔：TEM00 谐振建腔，TEM10 因 Gouy 相位差非谐振直接反射 →
@@ -96,21 +112,18 @@ methods:
       差分信号 = 双极性频率误差信号 →
       伺服反馈校正激光频率
     required_hardware:
-      - ent.fp_cavity_reference   # 提供光学频率参考（与 PDH 相同）
-      - ent.tilting_mirror        # 引入角度倾斜激励 TEM10
-      - ent.split_photodetector   # 空间差分探测（替代 PDH 的 RF 探测+解调）
-    versus_pdh:
-      advantages:
-        - "无需射频信号源、EOM/AOM、高频探测器、混频器——硬件大幅简化"
-        - "无射频电子学噪声"
-        - "量子噪声极限与 PDH 相同"
-        - "对腔前光路中的标准具效应不敏感（双程方案）"
-        - "适合空间应用（LISA、GRACE-FO）"
-      disadvantages:
-        - "单程方案对入射光束角抖动敏感（光斑抖动直接进入误差信号）"
-        - "实际伺服带宽较低（Chabbra 2021：约 230 Hz；PDH 可达 MHz）"
-        - "双程方案需要行波腔（如三角形环形腔），不适用于线形腔"
-        - "误差信号锁点对准直有轻微依赖（单程方案）"
+      - ent.fp_cavity_system     # 提供光学频率参考（定义于 numata2004.yaml）
+      - ent.tilting_mirror       # 引入角度倾斜激励 TEM10
+      - ent.split_photodetector  # 空间差分探测（替代 PDH 的 RF 探测+解调）
+    advantages:
+      - "无需射频信号源、EOM/AOM、高频探测器、混频器——硬件大幅简化"
+      - "无射频电子学噪声"
+      - "量子噪声极限与 PDH 相同"
+      - "适合空间应用（LISA、GRACE-FO）"
+    disadvantages:
+      - "单程方案对入射光束角抖动敏感（光斑抖动直接进入误差信号）"
+      - "实际伺服带宽较低（Chabbra 2021：约 230 Hz；PDH 可达 MHz）"
+      - "双程方案需要行波腔（如三角形环形腔），不适用于线形腔"
     conditions:
       - "腔为非简并腔（横模频率间隔足够大）"
       - "入射光束质量良好（主要为 TEM00）"
@@ -123,11 +136,16 @@ metrics:
     name: "伺服带宽（Unity Gain Frequency）"
     unit: "Hz"
     description: "伺服环路的单位增益频率，决定高频噪声抑制能力"
+    demonstrated_value:
+      value: "约 230 Hz（Chabbra 2021 实验值）"
+      conditions: "Tilt Locking，受分割探测器跨阻放大器带宽限制"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "S5PX7GHC", claim: "tilt locking ... simple implementation"}
     comparison:
       pdh_typical: "> 1 MHz（EOM 方案）"
-      tilt_locking_demo: "约 230 Hz（Chabbra 2021，受探测器跨阻抗放大器限制）"
+      tilt_locking_demo: "约 230 Hz（Chabbra 2021）"
       tilt_locking_limit: "受分割探测器跨阻放大器带宽限制，可工程改进"
-    source: {zotero_key: "S5PX7GHC", claim: "tilt locking ... simple implementation"}
 
 # ═══════════════════════════════════════════════
 #  RELATIONS（关系）
@@ -141,45 +159,82 @@ relations:
     confidence: established
     source: {zotero_key: "S5PX7GHC", claim: "novel technique to frequency lock a laser to an optical cavity"}
     conditions: "腔为非简并腔；入射光 TEM00 质量好"
+    note: "met.laser_linewidth 定义于 drever1983.yaml"
 
   - id: rel.S02
     subject: meth.tilt_locking
-    predicate: GOVERNED-BY
-    object: pri.off_resonance_reference_light    # 与 PDH 共有的元原理
+    predicate: ENABLED-BY
+    object: pri.off_resonance_reference_light
     confidence: established
     source: {zotero_key: "S5PX7GHC", claim: "spatial mode ... non-resonant ... interference ... frequency discriminator"}
     conditions: null
+    temporal_role: proposes
 
   - id: rel.S03
     subject: meth.tilt_locking
-    predicate: GOVERNED-BY
+    predicate: ENABLED-BY
     object: pri.gouy_phase_discrimination
     confidence: established
     source: {zotero_key: "S5PX7GHC", claim: "TEM10 non-resonant due to different Gouy phase accumulation"}
     conditions: "腔非简并"
+    temporal_role: proposes
 
   - id: rel.S04
     subject: meth.tilt_locking
-    predicate: GOVERNED-BY
+    predicate: ENABLED-BY
     object: pri.spatial_homodyne_detection
     confidence: established
     source: {zotero_key: "S5PX7GHC", claim: "observing the interference between the carrier and the spatial mode"}
     conditions: null
+    temporal_role: proposes
 
   - id: rel.S05
-    subject: meth.pdh_locking          # 来自 drever1983.yaml
-    predicate: GOVERNED-BY
-    object: pri.off_resonance_reference_light    # 同一元原理
+    subject: meth.pdh_locking          # 定义于 drever1983.yaml
+    predicate: ENABLED-BY
+    object: pri.off_resonance_reference_light
     confidence: established
     source: {zotero_key: "694DPR5F", claim: "sidebands outside passband ... reflected ... heterodyne detection"}
     conditions: null
-    note: "此关系揭示 PDH 与 Tilt Locking 的物理同源性"
+    note: >
+      此关系揭示 PDH 与 Tilt Locking 的物理同源性；
+      meth.pdh_locking 定义于 drever1983.yaml。
 
   - id: rel.S06
     subject: met.servo_bandwidth
-    predicate: GOVERNED-BY
+    predicate: BOUNDED-BY
     object: pri.spatial_homodyne_detection
     confidence: likely
     source: {zotero_key: "S5PX7GHC"}
     conditions: "受分割探测器跨阻放大器带宽限制"
-    speculative: false
+    is_system_limit: false
+    dominated_by: null
+    regime: all
+    verification_status: observed
+    temporal_role: proposes
+
+  - id: rel.S07
+    subject: pri.gouy_phase_discrimination
+    predicate: DERIVED-FROM
+    object: pri.off_resonance_reference_light
+    confidence: established
+    source: {zotero_key: "S5PX7GHC", claim: "TEM10 non-resonant due to Gouy phase ... serves as reference light for frequency discrimination"}
+    conditions: "应用于空间横模干涉锁频场景"
+
+  - id: rel.S08
+    subject: meth.tilt_locking
+    predicate: COMPETES-WITH
+    object: meth.pdh_locking
+    context: "FP 腔误差探测方法选择"
+    tradeoffs:
+      subject_wins:
+        - "无需 EOM / RF 信号源 / 高频混频器——电子学硬件大幅简化"
+        - "无射频电子学噪声"
+        - "量子噪声极限与 PDH 相同"
+        - "适合空间应用（LISA、GRACE-FO 等对 SWaP 敏感的场景）"
+      object_wins:
+        - "伺服带宽 > 1 MHz（Tilt Locking 典型值 ~230 Hz，受探测器限制）"
+        - "成熟度高，工程经验丰富"
+        - "对光束准直不敏感（Tilt Locking 单程方案对角抖动敏感）"
+    confidence: established
+    source: {zotero_key: "S5PX7GHC", claim: "tilt locking offers potential benefits over existing locking schemes"}
+    note: "meth.pdh_locking 定义于 drever1983.yaml"
