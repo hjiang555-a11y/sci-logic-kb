@@ -1,0 +1,46 @@
+name: Process New Paper
+description: Trigger Claude API to extract knowledge from a PDF in pdfs/
+title: "Process: {author}{year}"
+labels: ["process-paper"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        填写以下字段后提交 Issue，GitHub Actions 会自动调用 claude-sonnet-4-6 处理论文，
+        并创建包含生成 YAML 的 Pull Request。
+
+  - type: input
+    id: author_year
+    attributes:
+      label: Author Year
+      description: "文件名格式，如 matei2017"
+      placeholder: matei2017
+    validations:
+      required: true
+
+  - type: input
+    id: zotero_key
+    attributes:
+      label: Zotero Key
+      description: "8位 Zotero Key，如 TVY7T59A"
+      placeholder: TVY7T59A
+    validations:
+      required: true
+
+  - type: input
+    id: pdf
+    attributes:
+      label: PDF
+      description: "pdfs/ 目录中的文件名，如 TVY7T59A_matei2017.pdf"
+      placeholder: TVY7T59A_matei2017.pdf
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes（可选）
+      description: "给 Claude 的补充提示，如该论文的特殊关注点"
+      placeholder: "重点关注加速度灵敏度的改进方案"
+    validations:
+      required: false
