@@ -178,18 +178,22 @@ relations:
     verification_status: inferred
     temporal_role: validates
     breakthrough_paths:
-      - direction: pri.beam_radius_scaling
-        expected_gain: "增大光斑半径 → 热噪声 ∝ 1/w₀；增长腔同时维持振动不敏感性（灵敏度与腔长无关）"
+      - direction: pri.long_cavity_thermal_noise_reduction
+        expected_gain: "增长腔（如 48 cm）→ σ_y ∝ 1/L，同时光斑随腔长增大；Häfner 2015 实现 ~8×10⁻¹⁷"
         status: demonstrated
-        source: {zotero_key: "UCNS7EM7", claim: "cavity length may be increased while maintaining vibration insensitivity; thermal fluctuations reduced"}
-      - direction: pri.low_loss_substrate_improvement
-        expected_gain: "换用低损耗镜底物（熔融石英）→ 热噪声大幅降低"
+        source: {zotero_key: "UV6S5FFL", claim: "cavity length may be increased while maintaining vibration insensitivity; thermal fluctuations reduced"}
+        note: "pri.long_cavity_thermal_noise_reduction 定义于 hafner2015.yaml"
+      - direction: ent.algaas_crystalline_mirror_c13
+        expected_gain: "AlGaAs 晶体镀层（φ ~ 2.5×10⁻⁵）→ 镀层热噪声降低 10×（Cole 2013）"
         status: demonstrated
-        source: {zotero_key: "VDXBPUQB"}
+        source: {zotero_key: "CWIHQRJD", claim: "tenfold reduction in mechanical damping when compared with the best dielectric multilayers"}
+        note: "ent.algaas_crystalline_mirror_c13 定义于 cole2013.yaml"
     note: >
       pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml；
       Webster 2007 明确以 Numata 2004 为引用，确认热噪声为下一极限，
       为 Numata 2004 理论在工程场景中的验证。
+      （原 breakthrough_paths 引用了已删除节点 pri.beam_radius_scaling 和 pri.low_loss_substrate_improvement，
+      已更新为实际实现这两个突破的有效节点 ID。）
 
   - id: rel.W06
     subject: ent.cutout_cavity_mount_w07

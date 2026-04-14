@@ -268,7 +268,7 @@ relations:
     temporal_role: proposes
 
   - id: rel.N07
-    subject: met.laser_linewidth_563nm   # Young 1999 结果
+    subject: ent.ule_fp_cavity_young99
     predicate: BOUNDED-BY
     object: pri.brownian_thermal_noise_fdt
     confidence: established
@@ -280,8 +280,11 @@ relations:
     verification_status: observed
     temporal_role: validates
     note: >
-      跨论文关系：Numata 2004 确认 Young 1999 的 0.6 Hz 结果
-      已在热噪声极限处工作。met.laser_linewidth_563nm 定义于 young1999.yaml。
+      跨论文关系：Numata 2004 确认 Young 1999 的 ULE 腔已在热噪声极限处工作。
+      原 subject 为 met.laser_linewidth_563nm（指标节点，语义有误——指标不是被限制的系统）；
+      改为 ent.ule_fp_cavity_young99（被限制的腔系统）。
+      ent.ule_fp_cavity_young99 定义于 young1999.yaml；
+      met.laser_linewidth_563nm 通过 young1999 的 CHARACTERIZED-BY 关系刻画该腔的受限性能。
 
   - id: rel.N08
     subject: ent.mirror_substrate
