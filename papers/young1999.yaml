@@ -186,7 +186,7 @@ methods:
       AOM 偏频锁定到 ULE 高精细度腔 →
       光纤传输（含 Doppler 补偿）→
       最终实现 0.6 Hz 线宽。
-    reference_method: "meth.pdh_locking（定义于 drever1983.yaml）"
+    note: "基于 meth.pdh_locking（定义于 drever1983.yaml）的两级扩展实现"
     key_additions:
       - "预稳级（stage 1）：2 MHz 带宽，隔离激光器自身噪声"
       - "AOM 作为高频执行器（90 kHz 带宽）"
@@ -294,18 +294,9 @@ relations:
     regime: all
     verification_status: observed
     temporal_role: proposes
-    breakthrough_paths:
-      - direction: pri.low_loss_substrate_improvement
-        expected_gain: "熔融石英镜底物 → 热噪声降低 ~100×，线宽可压窄至 mHz 量级"
-        status: demonstrated
-        source: {zotero_key: "VDXBPUQB"}
-      - direction: pri.beam_radius_scaling
-        expected_gain: "增大光斑 2× → 热噪声降低 2×（S_ν ∝ 1/w₀）"
-        status: demonstrated
-        source: {zotero_key: "VDXBPUQB"}
     note: >
       pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml；
-      pri.low_loss_substrate_improvement 和 pri.beam_radius_scaling 均定义于 numata2004.yaml。
+      突破路径见该原理节点的 condition_variables（φ/w₀/T/L 各变量的改善方向）。
 
   - id: rel.Y11
     subject: ent.fp_cavity_system
