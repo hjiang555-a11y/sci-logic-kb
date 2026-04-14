@@ -311,6 +311,8 @@ note: "跨文件引用，定义于 shaddock1999.yaml"
 | `shaddock1999.yaml` | S5PX7GHC | Shaddock 1999 — Tilt Locking | ✅ v2.0 完成（2026-04-14） |
 | `numata2004.yaml` | VDXBPUQB | Numata 2004 — FP 腔热噪声极限 | ✅ v2.0 完成（2026-04-14） |
 | `jiang2010.yaml` | T8JR8IJ7 | Jiang 2010 — 光纤干涉仪可捷变激光 | ✅ v2.0 完成（2026-04-14） |
+| `webster2007.yaml` | UCNS7EM7 | Webster 2007 — 振动不敏感 FP 腔 | ✅ v2.0 完成（2026-04-14） |
+| `lee2026.yaml` | 4QVEXY63 | Lee 2026 — 2.5×10⁻¹⁷ Si 腔 + AlGaAs 晶体镀层（世界纪录） | ✅ v2.0 完成（2026-04-14） |
 
 **v2.0 重整摘要**：
 - `numata2004`：`ent.rigid_fp_cavity` → `ent.fp_cavity_system`；GOVERNED-BY → BOUNDED-BY（含 breakthrough_paths）；修正 PART-OF 方向；删除语义错误的工程路径 BOUNDED-BY；新增 DERIVED-FROM 链
@@ -318,3 +320,5 @@ note: "跨文件引用，定义于 shaddock1999.yaml"
 - `drever1983`：GOVERNED-BY → ENABLED-BY（PDH 机制）；BOUNDED-BY（散粒噪声极限）；temporal_role: proposes
 - `shaddock1999`：`pri.off_resonance_reference_light` tier: meta；GOVERNED-BY → ENABLED-BY；新增 COMPETES-WITH + DERIVED-FROM；temporal_role: proposes
 - `jiang2010`：新增 `ent.thermal_environment`（ext）+ CONDITIONED-BY 接口；GOVERNED-BY → ENABLED-BY/BOUNDED-BY；新增 COMPETES-WITH；删除猜测性 J10（原 GOVERNED-BY 元原理）；修正 J09 方向
+- `webster2007`：新增 `ent.vibration_insensitive_fp_cavity_w07`（Level 2）；`pri.cavity_deformation_compensation`（四点对称支撑）；CONDITIONED-BY ent.vibration_environment；temporal_role: proposes
+- `lee2026`：新增 `ent.si_crystal_17k_fp_cavity_l26`（Level 1，17K，AlGaAs 2023 批次，2.5×10⁻¹⁷ 世界纪录）；`pri.silicon_cte_zero_crossing_17k`（Si 第二 CTE 零点）；`pri.optical_frequency_averaging`（双腔平均 √2 提升）；BOUNDED-BY（镀层热噪声主导）；COMPETES-WITH ent.si_crystal_fp_cavity_k12；temporal_role: validates（确认 Cole 2013 晶体镀层优势）

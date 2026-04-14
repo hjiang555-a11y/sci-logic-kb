@@ -1,0 +1,273 @@
+# Lee 2026 — 2.5×10⁻¹⁷ Si 腔配 AlGaAs 晶体镀层（世界纪录）
+# 提取者：Claude（AI草稿，待专家确认）
+# 提取日期：2026-04-14
+# Schema版本：v2.0
+
+meta:
+  zotero_key: "4QVEXY63"
+  source_type: technical_paper
+  reliability: high
+  title: "Frequency Stability of 2.5×10⁻¹⁷ from a Si Cavity with AlGaAs Crystalline Mirrors"
+  year: 2026
+  first_author: Lee
+  journal: "Physical Review Letters"
+  volume: 136
+  pages: "033801"
+  doi: "10.1103/zgrm-cjbb"
+  note: >
+    首次从实验证明 AlGaAs 晶体镀层相对传统介质镀层具有明确优势（4×改善）：
+    6 cm Si 腔，17 K（Si CTE 第二零点），mod σ_y = 2.5×10⁻¹⁷——光学参考腔世界纪录（截至 2026 年）。
+    关键发现：2017 年镀层批次存在"超额全局噪声"（excess global noise），2023 年新批次无此问题，
+    首次实现晶体镀层理论噪声优势。
+    额外技术创新：（1）双偏振锁定（dual-polarization lock）消除晶体镀层固有双折射噪声；
+    （2）两台 Si 腔光学频率平均（optical frequency averaging）→ √2 稳定度提升；
+    （3）四台 Si 腔（PTB + JILA）超过十年长期频率漂移统计。
+    JILA（Ye组）+ PTB（Sterr/Legero 组），1542 nm。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.si_crystal_17k_fp_cavity_l26
+    name: "Si 单晶低温 FP 腔（17 K，AlGaAs 晶体镀层，Lee 2026）"
+    aliases: ["Si6 cavity", "6-cm Si cavity 17K", "JILA 17K Si cavity 2026"]
+    hierarchy_level: 1
+    status: demonstrated
+    function: >
+      6 cm 硅单晶 FP 腔，在 17 K（Si CTE 第二零点）操作，使用 AlGaAs/GaAs 晶体镀层（2023 年批次）。
+      双偏振锁定消除晶体镀层固有双折射噪声（890 kHz 劈裂）。
+      实现分数频率稳定度 mod σ_y = 2.5×10⁻¹⁷，为迄今最高性能光学参考腔。
+      在验证晶体镀层低热噪声理论上具有里程碑意义。
+    key_parameters:
+      spacer_material: "Si 单晶（111）方向"
+      spacer_length: "60.2 mm（6 cm）"
+      operating_temperature: "17 K（Si CTE 第二零点：α_Si(17K) = 0）"
+      mirror_coating: "AlGaAs/GaAs 晶体镀层（2023 年批次），48.5 周期，厚 12.0 μm，1 m 曲率半径底物"
+      coating_loss_angle_upper_bound: "φ < 2.3×10⁻⁵（17 K，本文实测上限）"
+      finesse: "470,000（1542 nm；理论上限由散射+吸收损耗 ~10 ppm/mirror 决定）"
+      cavity_linewidth: "5 kHz（半高全宽，1542 nm）"
+      beam_radius_at_mirror: "293 μm"
+      coating_thickness: "12.0 μm（GaAs/Al₀.₉₂Ga₀.₀₈As 48.5 周期）"
+      orientation: "垂直安装（double-cone 双锥形，从中截面悬挂）"
+      vibration_isolation: "分板设计（split-plate）+ 主动隔振台，抑制低温恒温器振动"
+      ram_cancellation: "AOM FM-triplet 方案，使 RAM 低于热噪声极限"
+      dual_polarization_lock: "同时锁定两个正交偏振模，抵消 890 kHz 双折射噪声"
+      wavelength: "1542 nm"
+      drift_rate_recent: "~10 μHz/s（~5.2×10⁻²⁰ s⁻¹，运行约 2 年后趋于稳定）"
+    design_rationale: >
+      与 Si2/Si3（124 K，21 cm）相比，Si6（17 K，6 cm）在三方面有别：
+      （1）更低温度：T=17 K 使 k_B T 降低 ~7×，理论热噪声进一步降低；
+      （2）晶体镀层（2023 年批次）：φ < 2.3×10⁻⁵，较传统介质膜 φ ~3.2×10⁻⁴ 低约 14×；
+      （3）较短腔体（6 cm vs 21 cm）：热噪声绝对位移更大，但晶体镀层增益足够补偿。
+      2017 年批次镜片存在超额全局噪声（来源未知），2023 年新镜片无此问题是本文成功的关键。
+    interface_requirements:
+      temperature: "17 K ± 极小波动；多层屏蔽：辐射屏+外主动控温屏+内被动屏"
+      vibration: "低温恒温器 1 Hz 循环频率噪声须主动抑制"
+    note: "Level 1；与 ent.si_crystal_fp_cavity_k12（124K，kessler2012.yaml）和 ent.fp_cavity_system（室温，numata2004.yaml）竞争"
+
+principles:
+  - id: pri.silicon_cte_zero_crossing_17k
+    name: "Si 单晶 CTE 第二零点（17 K）"
+    tier: domain
+    verification_status: observed
+    statement: >
+      硅单晶热膨胀系数（CTE）在低温下存在两个零点：约 124 K（高温零点）和约 17 K（低温零点）。
+      在 17 K 操作时，温度涨落引起的腔长变化为二阶效应（dα/dT × ΔT），
+      且 17 K 处的 dα/dT 斜率远小于 124 K 处，使温度稳定性要求更宽松。
+      此外，T = 17 K 意味着热噪声功率 ∝ k_B T 相比 124 K 降低约 7×。
+    domain: "低温超稳 Si FP 腔"
+    formula: "α_Si(T=17K) = 0；dα/dT|_17K ≪ dα/dT|_124K（坡度更平缓）"
+    key_insight: >
+      17 K 零点较 124 K 零点提供双重优势：更低热噪声（T更低）+ 更宽松的温控精度要求（坡度更平缓）。
+      代价：需要更深低温冷却系统（如闭循环制冷机到 17 K）。
+    conditions: "Si 单晶（111），参见 Lyon et al. 1977 热膨胀数据"
+    applicable_when: "需要在 17 K 附近操作的 Si 腔；相比 124K 方案对低温恒温器要求更高"
+    source_claim: >
+      "Si6, on the other hand, operates at the 17 K zero crossing,
+       where the much gentler slope of the [CTE vs T curve]"
+
+  - id: pri.optical_frequency_averaging
+    name: "多腔光学频率平均"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      将两台独立超稳激光的频率取平均（ν_avg = (ν₁ + ν₂)/2）可使频率不稳定度降低 √2，
+      前提是两台腔的噪声不相关。
+      实现方式：利用光学频率梳将两台腔的频差注入反馈环路，使梳齿频率锁定到两腔频率均值；
+      下游激光（如时钟激光）锁定到梳则自动获得均值稳定度。
+      代价：切换询问导致 Dick 噪声增加（死时间），短时稳定度受限。
+    domain: "超稳激光系统工程，光频标"
+    formula: "σ_y,avg(τ) = σ_y,single(τ) / √2（两腔噪声不相关时）"
+    key_insight: >
+      当单腔已达技术极限时，多腔平均是提升稳定度的工程捷径，
+      无需研制新型腔体，利用现有系统即可获得额外 3 dB 改善。
+    conditions: "两腔噪声不相关；切换测量方案引入额外 Dick 噪声，非切换方案可恢复短时性能"
+    applicable_when: "已有两台性能相当的超稳腔激光系统；特别适用于已到达记录水平的腔"
+    source_claim: >
+      "With two state-of-the-art cryogenic silicon cavities online at JILA,
+       we improved the laser stability even further by averaging the two cavities...
+       The averaged laser is more stable than the two similar individual lasers by approximately √2"
+
+metrics:
+  - id: met.fractional_freq_instability_l26
+    name: "分数频率不稳定度（Lee 2026，6 cm Si 腔 + AlGaAs 晶体镀层）"
+    unit: "无量纲（修正 Allan 偏差 mod σ_y(τ)）"
+    description: "JILA 6 cm Si 腔（17 K，AlGaAs 2023 镀层）三角帽法测量的分数频率不稳定度"
+    demonstrated_value:
+      value: "mod σ_y = 2.5×10⁻¹⁷（10 s 附近 flicker floor）"
+      conditions: "1542 nm，17 K，AlGaAs 晶体镀层（2023 批次），三角帽法（6 cm Si腔 + 21 cm Si腔 + 40 cm ULE腔）"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "4QVEXY63", claim: "fractional frequency stability of 2.5 × 10⁻¹⁷ at 10 s is four times better than expected for dielectric mirrors"}
+    theoretical_floor:
+      value: "~2.5×10⁻¹⁷（AlGaAs 晶体镀层热噪声下限，φ < 2.3×10⁻⁵，17 K，6 cm 腔）"
+      basis: "FDT 计算：S_y(f) = 4kBT·dcoat·φcoat / (π²·w²·Ysub·L²·f)，Table II/III 参数代入"
+      gap_note: "已达晶体镀层热噪声极限；进一步改善需降温（<17K）、扩大光斑、或更低损耗镀层批次"
+    comparison:
+      dielectric_equivalent: "等效介质镀层（φ~3.2×10⁻⁴）下预期为 ~1×10⁻¹⁶；晶体镀层改善约 4×"
+      si_124k_kessler2012: "mod σ_y ~ 4×10⁻¹⁷（Matei 2017 验证），17K 腔再优约 1.6×"
+      with_averaging: "两台 Si 腔平均后约 1.8×10⁻¹⁷（√2 提升；受 Dick 噪声限制于短时）"
+
+  - id: met.algaas_coating_loss_angle_17k_l26
+    name: "AlGaAs 晶体镀层损耗角（Lee 2026，17 K）"
+    unit: "无量纲（损耗角 φ = 1/Q_mech）"
+    description: "从 6 cm Si 腔热噪声测量提取的 AlGaAs/GaAs 晶体镀层机械损耗角上限（17 K）"
+    demonstrated_value:
+      value: "φ_AlGaAs(17K) < 2.3×10⁻⁵（上限，FP 腔热噪声测量）"
+      conditions: "6 cm Si 腔，17 K，1542 nm，AlGaAs 晶体镀层（2023 批次，48.5 周期）"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "4QVEXY63", claim: "upper bound on the mechanical loss factor of 2.3 × 10⁻⁵ at 17 K, confirming expectations on the superior mechanical properties of crystalline AlGaAs coatings"}
+    comparison:
+      dielectric_at_17k: "φ_dielectric(17K) ~ 3.2×10⁻⁴（SiO₂/Ta₂O₅，Robinson 2021）"
+      algaas_at_300k: "φ_AlGaAs(300K) ≤ 2.5×10⁻⁵（Cole 2013，室温上限）"
+      algaas_at_124k: "φ_AlGaAs(124K) = 2.5×10⁻⁵（Yu 2023，已有测量）"
+      note: "17K 与 124K 相比，晶体镀层损耗角改善不显著（~同一量级）；但温度本身（T）降低带来热噪声减少"
+
+# ═══════════════════════════════════════════════
+#  RELATIONS（关系）
+# ═══════════════════════════════════════════════
+
+relations:
+  - id: rel.L01
+    subject: ent.si_crystal_17k_fp_cavity_l26
+    predicate: CHARACTERIZED-BY
+    object: met.fractional_freq_instability_l26
+    confidence: established
+    source: {zotero_key: "4QVEXY63", claim: "fractional frequency stability of 2.5 × 10⁻¹⁷ at 10 s"}
+    conditions: "1542 nm，17 K，AlGaAs 晶体镀层（2023 批次），三角帽比较法"
+
+  - id: rel.L02
+    subject: ent.si_crystal_17k_fp_cavity_l26
+    predicate: BOUNDED-BY
+    object: pri.brownian_thermal_noise_fdt
+    confidence: established
+    source: {zotero_key: "4QVEXY63", claim: "fractional frequency stability of 2.5 × 10⁻¹⁷ at 10 s is four times better than expected for dielectric mirrors and corresponds to more than a tenfold reduction in the coating mechanical loss factor"}
+    conditions: "17 K，Si 单晶间隔物+底物 φ_Si(17K)≪φ_coat，AlGaAs 晶体镀层（2023 批次）为唯一主要热噪声来源"
+    is_system_limit: true
+    dominated_by: null
+    quantitative_contribution: "100%（Si 单晶间隔物+底物热噪声完全可忽略；仅镀层贡献）"
+    regime: all
+    verification_status: observed
+    temporal_role: validates
+    breakthrough_paths:
+      - direction: pri.optical_frequency_averaging
+        expected_gain: "两腔平均 → √2 稳定度提升；实现约 1.8×10⁻¹⁷（短时受 Dick 噪声限制）"
+        status: demonstrated
+        source: {zotero_key: "4QVEXY63", claim: "averaged laser is more stable than the two similar individual lasers by approximately √2"}
+      - direction: pri.silicon_cte_zero_crossing_17k
+        expected_gain: "降温至更低零点（如 < 4K）→ k_B T 进一步降低；目前 17K 已是已知方便零点中较低的"
+        status: theoretical
+        source: {zotero_key: "4QVEXY63", claim: "open up realistic prospects for cavity-stabilized lasers with 10⁻¹⁸ fractional stability"}
+    note: >
+      pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml；
+      当前镀层热噪声是硬极限；改进需新镀层材料（如半导体 + 更低 φ 批次）或更低温度。
+
+  - id: rel.L03
+    subject: ent.algaas_crystalline_mirror_c13
+    predicate: PART-OF
+    object: ent.si_crystal_17k_fp_cavity_l26
+    confidence: established
+    source: {zotero_key: "4QVEXY63", claim: "6-cm-long cryogenic silicon cavity operated at 17 K... uses two 1 m radius of curvature mirrors made of alternating layers of crystalline GaAs/AlGaAs"}
+    conditions: "2023 年批次 AlGaAs 晶体镀层（无超额全局噪声）"
+    temporal_role: extends
+    note: >
+      ent.algaas_crystalline_mirror_c13 定义于 cole2013.yaml（原始室温演示）；
+      Lee 2026 将晶体镀层应用于 17 K Si 腔，是 Cole 2013 技术的低温延伸。
+      本文 temporal_role: extends（在 Cole 2013 的基础上推进至低温，首次实现明确优势）。
+
+  - id: rel.L04
+    subject: ent.si_crystal_17k_fp_cavity_l26
+    predicate: ENABLED-BY
+    object: pri.silicon_cte_zero_crossing_17k
+    confidence: established
+    source: {zotero_key: "4QVEXY63", claim: "cooled with a closed-cycle cryostat to 17 K, where the coefficient of thermal expansion of silicon is zero"}
+    conditions: "Si 单晶，在 17 K CTE 零点工作，抑制温度起伏引起的腔长变化"
+    temporal_role: proposes
+    note: "pri.silicon_cte_zero_crossing_124k 定义于 kessler2012.yaml；17 K 零点是第二个工作点"
+
+  - id: rel.L05
+    subject: ent.si_crystal_17k_fp_cavity_l26
+    predicate: COMPETES-WITH
+    object: ent.si_crystal_fp_cavity_k12
+    context: "超稳激光频率参考：17 K Si 腔 + 晶体镀层（Lee 2026）vs 124 K Si 腔 + 传统镀层（Kessler 2012 / Matei 2017）"
+    tradeoffs:
+      subject_wins:
+        - "mod σ_y = 2.5×10⁻¹⁷，较 124K Si 腔（4×10⁻¹⁷）再优 1.6×（实测）"
+        - "T = 17 K → k_B T 较 124 K 降低约 7×，理论热噪声极限更低"
+        - "AlGaAs 晶体镀层（2023 批次）无超额全局噪声，理论优势首次实现"
+        - "开辟 10⁻¹⁸ 量级的现实路径"
+      object_wins:
+        - "124 K 低温恒温器技术更成熟（Si2/Si3/Si5 已运行 10+ 年）"
+        - "21 cm 腔长更长 → 光斑更大 → 绝对热噪声更低（但 17K 腔通过更低 T 和晶体镀层补偿）"
+        - "124 K 闭循环制冷机较 17 K 更省功耗、更可靠"
+    confidence: established
+    source: {zotero_key: "4QVEXY63", claim: "fractional frequency stability of 2.5 × 10⁻¹⁷... four times better than expected for dielectric mirrors"}
+    note: "ent.si_crystal_fp_cavity_k12 定义于 kessler2012.yaml"
+
+  - id: rel.L06
+    subject: ent.si_crystal_17k_fp_cavity_l26
+    predicate: COMPETES-WITH
+    object: ent.fp_cavity_system
+    context: "超稳激光频率参考：低温 Si 腔 + 晶体镀层（世界纪录）vs 室温 ULE 腔"
+    tradeoffs:
+      subject_wins:
+        - "mod σ_y = 2.5×10⁻¹⁷，较最优室温 ULE 腔（~8×10⁻¹⁷，Häfner 2015）好约 3×"
+        - "激光漂移率 ~10 μHz/s（~10⁻²⁰/s），远低于 ULE 室温腔（kHz/day）"
+        - "晶体 Si + 晶体镀层理论上无玻璃弛豫漂移"
+      object_wins:
+        - "室温操作（无低温恒温器），技术成熟，可在多种波长工作"
+        - "ULE 长腔（如 Häfner 2015 48 cm）直接工作于时钟跃迁波长（698 nm Sr）"
+        - "维护成本低，实验室空间需求小"
+    confidence: established
+    source: {zotero_key: "4QVEXY63", claim: "Frequency Stability of 2.5×10⁻¹⁷"}
+    note: "ent.fp_cavity_system 定义于 numata2004.yaml"
+
+  - id: rel.L07
+    subject: ent.si_crystal_17k_fp_cavity_l26
+    predicate: CONDITIONED-BY
+    object: ent.vibration_environment
+    interface_metric: met.fractional_freq_instability_l26
+    coupling_formula: "Δν/ν = κ × a；low-T cryostat introduces ~1 Hz cycle frequency noise"
+    internal_property: "split-plate 设计 + 主动隔振台；κ 数值见 ref [31] 原论文"
+    confidence: established
+    source: {zotero_key: "4QVEXY63", claim: "Vibration noise from the cryostat is mitigated with the split-plate design and an active vibration isolation table, so that vibration noise does not degrade cavity performance at Fourier frequencies below 3 Hz except for discrete peaks at harmonics of the 1 Hz cryostat cycle frequency"}
+    is_system_limit:
+      current: false
+      conditions: "分板设计+主动隔振充分后，3 Hz 以上振动不影响性能；1 Hz 恒温器循环频率仍有离散峰"
+    note: "ent.vibration_environment 定义于 young1999.yaml"
+
+  - id: rel.L08
+    subject: pri.crystalline_coating_low_brownian_noise
+    predicate: DERIVED-FROM
+    object: pri.brownian_thermal_noise_fdt
+    confidence: established
+    source: {zotero_key: "4QVEXY63", claim: "upper bound on the mechanical loss factor of 2.3 × 10⁻⁵ at 17 K, confirming expectations on the superior mechanical properties of crystalline AlGaAs coatings"}
+    conditions: "17 K；FDT 框架下晶体镀层 φ < 2.3×10⁻⁵ 对应热噪声降低 ~14× vs 传统介质膜"
+    temporal_role: validates
+    note: >
+      pri.crystalline_coating_low_brownian_noise 定义于 cole2013.yaml；
+      pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml；
+      Lee 2026 首次实验确认理论预期（14× 改善）在低温 Si 腔中成立（此前被超额全局噪声掩盖）。
+      temporal_role: validates（验证 Cole 2013 的理论预期）。
