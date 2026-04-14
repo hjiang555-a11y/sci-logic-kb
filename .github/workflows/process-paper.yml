@@ -14,7 +14,6 @@ jobs:
       contents: write
       pull-requests: write
       issues: write
-      models: read        # Required for GitHub Models API access
 
     steps:
       - name: Checkout repo
