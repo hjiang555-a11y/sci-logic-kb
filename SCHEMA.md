@@ -311,6 +311,7 @@ note: "跨文件引用，定义于 shaddock1999.yaml"
 | `shaddock1999.yaml` | S5PX7GHC | Shaddock 1999 — Tilt Locking | ✅ v2.0 完成（2026-04-14） |
 | `numata2004.yaml` | VDXBPUQB | Numata 2004 — FP 腔热噪声极限 | ✅ v2.0 完成（2026-04-14） |
 | `jiang2010.yaml` | T8JR8IJ7 | Jiang 2010 — 光纤干涉仪可捷变激光 | ✅ v2.0 完成（2026-04-14） |
+| `webster2007.yaml` | UCNS7EM7 | Webster 2007 — 振动不敏感 FP 腔 | ✅ v2.0 完成（2026-04-14） |
 
 **v2.0 重整摘要**：
 - `numata2004`：`ent.rigid_fp_cavity` → `ent.fp_cavity_system`；GOVERNED-BY → BOUNDED-BY（含 breakthrough_paths）；修正 PART-OF 方向；删除语义错误的工程路径 BOUNDED-BY；新增 DERIVED-FROM 链
