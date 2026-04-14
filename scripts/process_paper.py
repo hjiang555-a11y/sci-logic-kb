@@ -1,21 +1,35 @@
 #!/usr/bin/env python3
 """
-Process a paper PDF using Claude API → generate YAML knowledge node file.
+Process a paper PDF using GitHub Models API (claude-sonnet-4-6) → generate YAML.
 Also supports reprocessing existing YAMLs to SCHEMA v2.0.
 
+Uses OpenAI-compatible GitHub Models endpoint with GITHUB_TOKEN.
+No separate Anthropic API key needed — Copilot Pro+ subscription covers this.
+
 Environment variables (set by GitHub Actions):
-  ANTHROPIC_API_KEY   - Claude API key
+  GITHUB_TOKEN        - Auto-injected by Actions (no extra secret needed)
   TASK                - 'process' | 'reprocess-v2'
   AUTHOR_YEAR         - e.g. matei2017
   PDF_FILENAME        - e.g. TVY7T59A_matei2017.pdf  (only for process task)
   ZOTERO_KEY          - e.g. TVY7T59A
 """
 
-import anthropic
-import base64
 import os
 import sys
 from pathlib import Path
+
+from openai import OpenAI
+
+GITHUB_MODELS_ENDPOINT = "https://models.inference.ai.azure.com"
+MODEL = "claude-sonnet-4-6"
+
+
+def get_client() -> OpenAI:
+    token = os.environ.get("GITHUB_TOKEN", "")
+    if not token:
+        print("ERROR: GITHUB_TOKEN not set", file=sys.stderr)
+        sys.exit(1)
+    return OpenAI(base_url=GITHUB_MODELS_ENDPOINT, api_key=token)
 
 
 def load_context() -> tuple[str, str, str]:
@@ -31,7 +45,23 @@ def load_context() -> tuple[str, str, str]:
     return schema, instructions, existing_str
 
 
-def process_new_paper(client: anthropic.Anthropic, author_year: str,
+def extract_pdf_text(pdf_path: Path) -> str:
+    """Extract text from PDF using pypdf."""
+    try:
+        from pypdf import PdfReader
+    except ImportError:
+        from PyPDF2 import PdfReader  # type: ignore[no-redef]
+
+    reader = PdfReader(str(pdf_path))
+    pages = []
+    for page in reader.pages:
+        text = page.extract_text()
+        if text:
+            pages.append(text)
+    return "\n\n".join(pages)
+
+
+def process_new_paper(client: OpenAI, author_year: str,
                       zotero_key: str, pdf_filename: str,
                       schema: str, instructions: str, existing: str) -> str:
     """Extract knowledge from a new PDF."""
@@ -39,11 +69,12 @@ def process_new_paper(client: anthropic.Anthropic, author_year: str,
     if not pdf_path.exists():
         raise FileNotFoundError(f"PDF not found: {pdf_path}")
 
-    pdf_b64 = base64.standard_b64encode(pdf_path.read_bytes()).decode("utf-8")
+    pdf_text = extract_pdf_text(pdf_path)
+    print(f"PDF extracted: {len(pdf_text)} chars")
 
     system_prompt = f"""You are a knowledge extraction expert for ultra-stable laser physics research.
 
-Extract structured YAML knowledge nodes from the provided research paper PDF.
+Extract structured YAML knowledge nodes from the provided research paper.
 Follow SCHEMA v2.0 strictly. Output ONLY the complete YAML file — no explanation,
 no markdown code fences. Start directly with the comment line.
 
@@ -57,38 +88,29 @@ no markdown code fences. Start directly with the comment line.
 {instructions}
 """
 
-    response = client.messages.create(
-        model="claude-opus-4-6",
+    response = client.chat.completions.create(
+        model=MODEL,
         max_tokens=8192,
-        system=[{"type": "text", "text": system_prompt,
-                 "cache_control": {"type": "ephemeral"}}],
-        messages=[{
-            "role": "user",
-            "content": [
-                {
-                    "type": "document",
-                    "source": {"type": "base64", "media_type": "application/pdf",
-                               "data": pdf_b64},
-                    "cache_control": {"type": "ephemeral"}
-                },
-                {
-                    "type": "text",
-                    "text": (
-                        f"Process this paper (Zotero key: {zotero_key}).\n"
-                        f"Generate the complete YAML file for papers/{author_year}.yaml "
-                        f"following SCHEMA v2.0.\n"
-                        f"This is a NEW paper — extract all entities, principles, "
-                        f"methods, metrics, and relations."
-                    )
-                }
-            ]
-        }]
+        messages=[
+            {"role": "system", "content": system_prompt},
+            {
+                "role": "user",
+                "content": (
+                    f"Process this paper (Zotero key: {zotero_key}).\n"
+                    f"Generate the complete YAML file for papers/{author_year}.yaml "
+                    f"following SCHEMA v2.0.\n"
+                    f"This is a NEW paper — extract all entities, principles, "
+                    f"methods, metrics, and relations.\n\n"
+                    f"=== PAPER TEXT ===\n{pdf_text}"
+                )
+            }
+        ]
     )
 
-    return response.content[0].text
+    return response.choices[0].message.content
 
 
-def reprocess_v2(client: anthropic.Anthropic, author_year: str,
+def reprocess_v2(client: OpenAI, author_year: str,
                  schema: str, existing: str) -> str:
     """Update an existing YAML file to comply with SCHEMA v2.0."""
     existing_yaml_path = Path(f"papers/{author_year}.yaml")
@@ -140,31 +162,32 @@ Specific changes required for v2.0 migration:
 5. DERIVED-FROM — add relations from engineering-tier principles to their parent:
    e.g. pri.beam_radius_scaling DERIVED-FROM pri.brownian_thermal_noise_fdt
 
-6. COMPETES-WITH — add at Level 1 if applicable
+6. COMPETES-WITH — add at Level 1 if applicable (e.g. FP cavity vs fiber interferometer)
 
-7. CONDITIONED-BY — add for external conditions with interface fields
+7. CONDITIONED-BY — add for external conditions (vibration, temperature) with interface fields
 
-8. Remove deprecated: GOVERNED-BY, EQUIVALENT-IN-CONTEXT, SUPPORTED-BY
+8. Remove deprecated relations: GOVERNED-BY, EQUIVALENT-IN-CONTEXT, SUPPORTED-BY
 
-9. Update header comment: # Schema版本：v2.0
+9. Update header comment to include: # Schema版本：v2.0
 """
 
-    response = client.messages.create(
-        model="claude-opus-4-6",
+    response = client.chat.completions.create(
+        model=MODEL,
         max_tokens=8192,
-        system=[{"type": "text", "text": system_prompt,
-                 "cache_control": {"type": "ephemeral"}}],
-        messages=[{
-            "role": "user",
-            "content": (
-                f"Migrate this file to SCHEMA v2.0:\n\n"
-                f"```yaml\n{existing_yaml}\n```\n\n"
-                f"{migration_instructions}"
-            )
-        }]
+        messages=[
+            {"role": "system", "content": system_prompt},
+            {
+                "role": "user",
+                "content": (
+                    f"Migrate this file to SCHEMA v2.0:\n\n"
+                    f"```yaml\n{existing_yaml}\n```\n\n"
+                    f"{migration_instructions}"
+                )
+            }
+        ]
     )
 
-    return response.content[0].text
+    return response.choices[0].message.content
 
 
 def main():
@@ -177,15 +200,10 @@ def main():
         print("ERROR: AUTHOR_YEAR not set", file=sys.stderr)
         sys.exit(1)
 
-    api_key = os.environ.get("ANTHROPIC_API_KEY", "")
-    if not api_key:
-        print("ERROR: ANTHROPIC_API_KEY not set", file=sys.stderr)
-        sys.exit(1)
-
-    client = anthropic.Anthropic(api_key=api_key)
+    client = get_client()
     schema, instructions, existing = load_context()
 
-    print(f"Task: {task} | Paper: {author_year}")
+    print(f"Task: {task} | Paper: {author_year} | Model: {MODEL}")
 
     if task == "reprocess-v2":
         yaml_content = reprocess_v2(client, author_year, schema, existing)
@@ -196,7 +214,8 @@ def main():
                 pdf_filename = matches[0].name
                 print(f"Found PDF: {pdf_filename}")
             else:
-                print(f"ERROR: PDF not found for {author_year}", file=sys.stderr)
+                print(f"ERROR: PDF_FILENAME not set and no match found for {author_year}",
+                      file=sys.stderr)
                 sys.exit(1)
 
         yaml_content = process_new_paper(
@@ -211,6 +230,7 @@ def main():
     with open(os.environ.get("GITHUB_STEP_SUMMARY", "/dev/null"), "a") as f:
         f.write(f"## Paper processed: `{author_year}.yaml`\n")
         f.write(f"- Task: `{task}`\n")
+        f.write(f"- Model: `{MODEL}`\n")
         f.write(f"- Output: `{output_path}` ({len(yaml_content)} chars)\n")
 
 
