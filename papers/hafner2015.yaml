@@ -176,7 +176,7 @@ relations:
         expected_gain: "48 cm 腔使室温热噪声分数贡献降低约 2–5× vs 典型 10–25 cm 腔，达到 ~8×10⁻¹⁷"
         status: demonstrated
         source: {zotero_key: "UV6S5FFL", claim: "instability of below 1×10⁻¹⁶ at averaging times from 1 to 1000 s"}
-      - direction: ent.algaas_crystalline_mirror_c13
+      - direction: pri.crystalline_coating_low_brownian_noise
         expected_gain: "AlGaAs 晶体镀层（φ ~ 2.5×10⁻⁵）替代 IBS → 镀层噪声降低 10× → 室温长腔可接近 10⁻¹⁷"
         status: demonstrated
         source: {zotero_key: "CWIHQRJD", claim: "tenfold reduction in mechanical damping"}

@@ -135,7 +135,7 @@ relations:
     verification_status: observed
     temporal_role: validates
     breakthrough_paths:
-      - direction: ent.algaas_crystalline_mirror_c13
+      - direction: pri.crystalline_coating_low_brownian_noise
         expected_gain: "AlGaAs 晶体镀层（φ ~ 2.5×10⁻⁵）→ 镀层热噪声降低 10×；理论下限约 4×10⁻¹⁸"
         status: demonstrated
         source: {zotero_key: "CWIHQRJD", claim: "tenfold reduction in mechanical damping when compared with the best dielectric multilayers"}

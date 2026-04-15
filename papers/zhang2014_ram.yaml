@@ -27,25 +27,9 @@ meta:
 # ═══════════════════════════════════════════════
 
 entities:
-  - id: ent.waveguide_eom_z14
-    name: "波导型电光调制器（LiNbO₃ Ti扩散波导）"
-    aliases: ["waveguide EOM", "Ti-diffused waveguide EOM", "波导EOM"]
-    hierarchy_level: 2
-    status: demonstrated
-    function: >
-      以LiNbO₃钛扩散波导替代自由空间体晶体EOM，
-      提供相位调制（半波电压~4 V，远低于体晶体>100 V），
-      内置保偏光纤接口提供空间模式清洁，
-      减少因光束位置漂移引起的RAM相位变化。
-      配合主动RAM伺服，实现1 ppm量级RAM抑制。
-    key_parameters:
-      modulation_voltage_pi: "~4 V（波导型，vs体晶体>100 V）"
-      fiber_interface: "保偏光纤（PM fiber）输入输出，提供空间模式清洁"
-      ram_level_with_servo: "~30 ppm（残余）；Allan偏差~1 ppm（1–1000 s）"
-    note: >
-      定义于zhang2014_ram.yaml；
-      与 ent.rf_phase_modulator（drever1983.yaml）的关系：
-      waveguide_eom_z14 是rf_phase_modulator的一种实现，专门优化以最小化RAM。
+  # ent.waveguide_eom_z14 已合并到 ent.eom（定义于 drever1983.yaml）的 implementations.waveguide 字段中。
+  # Zhang 2014 的波导 EOM 是通用 EOM 概念的低 RAM 特化实现。
+  # RAM 相关参数保留在 ent.eom 的 ram_properties 字段和 meth.ram_cancellation_z14 方法中。
 
 principles:
   - id: pri.ram_pdh_frequency_offset
@@ -97,7 +81,7 @@ methods:
   - id: meth.ram_cancellation_z14
     name: "RAM双通道主动消除方法（Zhang 2014）"
     status: demonstrated
-    applies_to: ent.rf_phase_modulator
+    applies_to: ent.eom
     steps_summary: >
       1. 在腔输入口前分束，专用RAM探测器（PD1）连续监测RAM幅度；
       2. 同相RAM伺服：检相解调后的误差信号 → DC电场反馈至EOM（带宽~200 kHz）；
@@ -105,8 +89,7 @@ methods:
       4. 两路并行工作，实现56 dB综合抑制；
       5. 腔外差信号（PD2）提供离回路RAM表征（系统整体性能验证）。
     required_hardware:
-      - ent.waveguide_eom_z14    # 波导型EOM，优化RAM均匀性
-      - ent.rf_phase_modulator   # 概念上的射频相位调制器（drever1983.yaml）
+      - ent.eom    # 波导型EOM实现（优化RAM均匀性），已合并到 ent.eom（drever1983.yaml）
     key_result:
       ram_suppression_dB: 56
       ram_allan_deviation: "~1 ppm（1–1000 s）"
@@ -166,13 +149,15 @@ relations:
     conditions: null
 
   - id: rel.Z14_04
-    subject: ent.waveguide_eom_z14
+    subject: ent.eom
     predicate: PART-OF
     object: ent.fp_cavity_system
     confidence: established
     source: {zotero_key: "S5GJNVG8", claim: "waveguide-based EOM provides phase modulation for cavity-stabilized laser system"}
     conditions: null
-    note: "ent.fp_cavity_system 定义于 numata2004.yaml；waveguide EOM 是 ent.rf_phase_modulator 的低RAM实现"
+    note: >
+      ent.fp_cavity_system 定义于 numata2004.yaml；ent.eom 定义于 drever1983.yaml（合并节点）。
+      原 ent.waveguide_eom_z14 已合并到 ent.eom；此关系确认 EOM 作为 FP 腔系统子单元。
 
   - id: rel.Z14_05
     subject: met.ram_fractional_instability

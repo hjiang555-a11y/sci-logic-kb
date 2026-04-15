@@ -41,6 +41,11 @@ entities:
       interferometer_type: "Michelson with Faraday Rotation Mirrors (FRM)"
       detection_scheme: "AOM heterodyne（AOM3 在参考臂中，移频约 40 MHz）"
       packaging: "光纤线轴盘绕，放置于隔振箱内"
+      equivalent_q_factor: "Q_eff = π·ν₀·τ_delay ≈ 10⁹（远低于 FP 腔的 ~10¹⁰，但无共振增强）"
+      temperature_sensitivity: "dn/dT ≈ 1.1×10⁻⁵/K（无 CTE 零点，与 FP 腔的 ULE/Si 材料物理不同）"
+      internal_components:
+        faraday_rotation_mirror: "法拉第旋转镜（FRM）——将反射光偏振态旋转 90°，补偿光纤双折射引起的偏振漂移，保证干涉信号对比度稳定"
+        aom_reference: "AOM3 在参考臂中，移频约 40 MHz，用于外差检测"
     interface_requirements:
       temperature: "温度稳定性 < 0.1 K/day（以保持长期频率稳定度）"
       vibration: "机械振动 < mrad/s 量级（避免光纤相位扰动）"
@@ -49,23 +54,20 @@ entities:
       非刚性结构，腔长随温度/应力缓慢漂移（长期频率参考不如 ULE 腔）；
       扫频时 Rayleigh 背向散射（RBS）是根本限制。
 
-  - id: ent.faraday_rotation_mirror
-    name: "法拉第旋转镜（FRM）"
-    aliases: ["Faraday Rotation Mirror", "FRM"]
-    hierarchy_level: 2
-    status: demonstrated
-    function: >
-      将反射光偏振态旋转 90°，
-      补偿光纤双折射引起的偏振漂移，
-      保证干涉信号对比度稳定。
-    note: "迈克尔逊光纤干涉仪中消除偏振问题的标准方案；是 ent.fiber_interferometer 的 Level 2 子单元"
+  # ent.faraday_rotation_mirror 已合并到 ent.fiber_interferometer 的 internal_components 字段中。
+  # FRM 没有独立"设计选择空间"，是光纤干涉仪的标准内部组件。
 
   - id: ent.agile_laser_system
     name: "可捷变超低噪声激光系统（Jiang 2010）"
     aliases: ["agile laser", "frequency-sweepable ultra-low noise laser"]
-    hierarchy_level: 1
+    hierarchy_level: ext
     status: demonstrated
     function: "以光纤干涉仪为参考，实现可大范围扫频且频率噪声极低的激光源"
+    note: >
+      重构后降级为 ext（外围条件/系统描述）。
+      agile_laser_system 实质是 ent.laser_source + ent.fiber_interferometer + meth.fiber_delay_locking 的组合，
+      不是独立的频率参考部件。其指标（met.freq_noise_psd_fiber, met.allan_deviation_fiber）
+      反映的是整个光纤稳频系统的性能。
     key_parameters:
       laser_type: "外腔半导体激光（ECDL，通用光纤波段）"
       sweep_range: "可在数 GHz 至数十 GHz 范围线性扫频"
@@ -129,6 +131,13 @@ principles:
       - "降低光纤注入功率（减少受激 RBS，但会降低 SNR）"
       - "使用偏振分集接收（减少偏振相关 RBS 干涉）"
       - "采用更短光纤（减少总 RBS，但降低灵敏度/延迟时间）"
+    engineering_tradeoff:
+      description: >
+        Rayleigh 背向散射噪声随光纤长度和光功率积累。
+        缩短延迟线或降低注入功率可减轻扫频时的 RBS 条纹噪声，
+        但同时会减小延迟时间 τ、降低频率鉴别灵敏度或牺牲误差信号信噪比。
+      scaling: "RBS burden ↑ with effective fiber length and optical power; sensitivity ∝ τ"
+      note: "原独立节点 pri.shorter_delay_line_rbs_tradeoff 已并入此字段"
     conditions: "扫频（线性啁啾）时特别显著；静态锁频时相对可控"
     source_claim: >
       "Rayleigh backscattering is the fundamental limitation of the
@@ -152,21 +161,7 @@ principles:
       "AOM heterodyne detection in the reference arm provides the frequency
         error signal for the servo loop"
 
-  - id: pri.shorter_delay_line_rbs_tradeoff
-    name: "缩短延迟线/降低注入功率可减轻 RBS 的工程折中"
-    tier: engineering
-    verification_status: inferred
-    statement: >
-      Rayleigh 背向散射噪声随光纤长度和光功率积累。
-      因此缩短延迟线或降低注入功率可减轻扫频时的 RBS 条纹噪声，
-      但同时会减小延迟时间 τ、降低频率鉴别灵敏度或牺牲误差信号信噪比。
-      这是一条可实施但带明显折中的工程缓解路径。
-    domain: "光纤干涉仪稳频"
-    formula: "RBS burden ↑ with effective fiber length and optical power; sensitivity ∝ τ"
-    key_insight: "降低 RBS 通常要以牺牲延迟灵敏度或 SNR 为代价。"
-    conditions: "扫频线性度优先于极限静态灵敏度的光纤稳频场景"
-    source_claim: >
-      "Reducing fiber length or optical power can mitigate Rayleigh-backscattering-related chirp error, at the expense of discriminator sensitivity"
+  # pri.shorter_delay_line_rbs_tradeoff 已合并到 pri.rayleigh_backscattering_noise 的 engineering_tradeoff 字段中。
 
 methods:
   - id: meth.fiber_delay_locking
@@ -179,8 +174,7 @@ methods:
       两臂干涉 → AOM 频率处外差探测 → 相敏解调得误差信号 →
       快速反馈至 AOM0（偏频）+ 慢速反馈至 PZT（腔长）
     required_hardware:
-      - ent.fiber_interferometer     # 频率参考（替代刚性 FP 腔）
-      - ent.faraday_rotation_mirror  # 消偏振漂移
+      - ent.fiber_interferometer     # 频率参考（替代刚性 FP 腔；FRM 已包含在 internal_components 中）
     advantages:
       - "天然支持大范围扫频（可捷变），FP 腔方案扫频困难"
       - "无需精密光学装调（ULE 腔需极其精密的机械设计）"
@@ -310,18 +304,13 @@ relations:
     verification_status: observed
     temporal_role: proposes
     breakthrough_paths:
-      - direction: pri.shorter_delay_line_rbs_tradeoff
-        expected_gain: "围绕光纤延迟线锁频链路优化 RBS 抑制策略，可改善可捷变扫频性能边界。"
+      - direction: pri.rayleigh_backscattering_noise
+        expected_gain: "围绕光纤延迟线锁频链路优化 RBS 抑制策略（缩短光纤/降低功率/偏振分集），可改善可捷变扫频性能边界（见 engineering_tradeoff 字段）。"
         status: demonstrated
         source: {zotero_key: "T8JR8IJ7", claim: "Rayleigh backscattering is the fundamental limitation of the fiber interferometer reference during frequency chirping"}
 
-  - id: rel.J08
-    subject: ent.faraday_rotation_mirror
-    predicate: PART-OF
-    object: ent.fiber_interferometer
-    confidence: established
-    source: {zotero_key: "T8JR8IJ7", claim: "Faraday rotation mirrors used at fiber ends to compensate birefringence"}
-    conditions: null
+  # rel.J08 已废弃（原 ent.faraday_rotation_mirror PART-OF ent.fiber_interferometer）——
+  # FRM 已合并到 ent.fiber_interferometer 的 internal_components 字段中。
 
   - id: rel.J09
     subject: ent.agile_laser_system
@@ -365,10 +354,5 @@ relations:
     source: {zotero_key: "T8JR8IJ7", claim: "fiber interferometer approach suited for agile lasers; trade-off vs FP cavity stability"}
     note: "ent.fp_cavity_system 定义于 numata2004.yaml"
 
-  - id: rel.J13
-    subject: pri.shorter_delay_line_rbs_tradeoff
-    predicate: DERIVED-FROM
-    object: pri.rayleigh_backscattering_noise
-    confidence: likely
-    source: {zotero_key: "T8JR8IJ7", claim: "Rayleigh backscattering is the fundamental limitation during chirping, motivating reduced delay/power tradeoffs"}
-    conditions: "用于讨论 RBS 缓解路径时"
+  # rel.J13 已废弃（原 pri.shorter_delay_line_rbs_tradeoff DERIVED-FROM pri.rayleigh_backscattering_noise）
+  # 工程推理已合并到 pri.rayleigh_backscattering_noise 的 engineering_tradeoff 字段中。
