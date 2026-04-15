@@ -32,7 +32,7 @@ entities:
   - id: ent.si_crystal_17k_fp_cavity_l26
     name: "Si 单晶低温 FP 腔（17 K，AlGaAs 晶体镀层，Lee 2026）"
     aliases: ["Si6 cavity", "6-cm Si cavity 17K", "JILA 17K Si cavity 2026"]
-    hierarchy_level: 1
+    hierarchy_level: 2
     status: demonstrated
     function: >
       6 cm 硅单晶 FP 腔，在 17 K（Si CTE 第二零点）操作，使用 AlGaAs/GaAs 晶体镀层（2023 年批次）。
@@ -64,7 +64,7 @@ entities:
     interface_requirements:
       temperature: "17 K ± 极小波动；多层屏蔽：辐射屏+外主动控温屏+内被动屏"
       vibration: "低温恒温器 1 Hz 循环频率噪声须主动抑制"
-    note: "Level 1；与 ent.si_crystal_fp_cavity_k12（124K，kessler2012.yaml）和 ent.fp_cavity_system（室温，numata2004.yaml）竞争"
+    note: "Level 2 PART-OF ent.fp_cavity_system；17 K Si 腔+晶体镀层实例（参数变体，世界纪录 2.5×10⁻¹⁷）"
 
 principles:
   - id: pri.silicon_cte_zero_crossing_17k
@@ -209,40 +209,20 @@ relations:
 
   - id: rel.L05
     subject: ent.si_crystal_17k_fp_cavity_l26
-    predicate: COMPETES-WITH
-    object: ent.si_crystal_fp_cavity_k12
-    context: "超稳激光频率参考：17 K Si 腔 + 晶体镀层（Lee 2026）vs 124 K Si 腔 + 传统镀层（Kessler 2012 / Matei 2017）"
-    tradeoffs:
-      subject_wins:
-        - "mod σ_y = 2.5×10⁻¹⁷，较 124K Si 腔（4×10⁻¹⁷）再优 1.6×（实测）"
-        - "T = 17 K → k_B T 较 124 K 降低约 7×，理论热噪声极限更低"
-        - "AlGaAs 晶体镀层（2023 批次）无超额全局噪声，理论优势首次实现"
-        - "开辟 10⁻¹⁸ 量级的现实路径"
-      object_wins:
-        - "124 K 低温恒温器技术更成熟（Si2/Si3/Si5 已运行 10+ 年）"
-        - "21 cm 腔长更长 → 光斑更大 → 绝对热噪声更低（但 17K 腔通过更低 T 和晶体镀层补偿）"
-        - "124 K 闭循环制冷机较 17 K 更省功耗、更可靠"
-    confidence: established
-    source: {zotero_key: "4QVEXY63", claim: "fractional frequency stability of 2.5 × 10⁻¹⁷... four times better than expected for dielectric mirrors"}
-    note: "ent.si_crystal_fp_cavity_k12 定义于 kessler2012.yaml"
-
-  - id: rel.L06
-    subject: ent.si_crystal_17k_fp_cavity_l26
-    predicate: COMPETES-WITH
+    predicate: PART-OF
     object: ent.fp_cavity_system
-    context: "超稳激光频率参考：低温 Si 腔 + 晶体镀层（世界纪录）vs 室温 ULE 腔"
-    tradeoffs:
-      subject_wins:
-        - "mod σ_y = 2.5×10⁻¹⁷，较最优室温 ULE 腔（~8×10⁻¹⁷，Häfner 2015）好约 3×"
-        - "激光漂移率 ~10 μHz/s（~10⁻²⁰/s），远低于 ULE 室温腔（kHz/day）"
-        - "晶体 Si + 晶体镀层理论上无玻璃弛豫漂移"
-      object_wins:
-        - "室温操作（无低温恒温器），技术成熟，可在多种波长工作"
-        - "ULE 长腔（如 Häfner 2015 48 cm）直接工作于时钟跃迁波长（698 nm Sr）"
-        - "维护成本低，实验室空间需求小"
     confidence: established
-    source: {zotero_key: "4QVEXY63", claim: "Frequency Stability of 2.5×10⁻¹⁷"}
-    note: "ent.fp_cavity_system 定义于 numata2004.yaml"
+    source: {zotero_key: "4QVEXY63", claim: "6-cm-long cryogenic silicon cavity operated at 17 K"}
+    conditions: null
+    note: >
+      原 rel.L05 为 COMPETES-WITH ent.si_crystal_fp_cavity_k12、
+      rel.L06 为 COMPETES-WITH ent.fp_cavity_system，
+      重构后所有 FP 腔实例降级为 Level 2（PART-OF ent.fp_cavity_system）。
+      17 K vs 124 K vs 室温性能对比保留在各自指标的 comparison 字段中。
+      ent.fp_cavity_system 定义于 numata2004.yaml。
+
+  # rel.L06 已废弃（原 COMPETES-WITH ent.fp_cavity_system）——
+  # 重构后 ent.si_crystal_17k_fp_cavity_l26 为 Level 2 实例，PART-OF ent.fp_cavity_system（见 rel.L05）。
 
   - id: rel.L07
     subject: ent.si_crystal_17k_fp_cavity_l26

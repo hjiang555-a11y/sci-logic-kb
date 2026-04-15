@@ -31,7 +31,7 @@ entities:
   - id: ent.si_crystal_fp_cavity_k12
     name: "硅单晶低温 FP 参考腔"
     aliases: ["silicon single-crystal optical cavity", "cryogenic silicon cavity", "Si cavity 124K", "Si 腔"]
-    hierarchy_level: 1
+    hierarchy_level: 2
     status: demonstrated
     function: >
       以硅单晶为间隔物和镜底物，工作于 124 K（Si CTE 零点），
@@ -54,7 +54,7 @@ entities:
     interface_requirements:
       temperature: "124 K ± 1 mK（低温恒温器+被动隔热屏，热时间常数 10 天）"
       vibration: "低频振动需主动隔振；低温恒温器自身引入加速度噪声 few 0.1 mg/√Hz（1–100 Hz）"
-    note: "Level 1，与 ent.fp_cavity_system（ULE 室温腔）在频率参考选择上竞争"
+    note: "Level 2 PART-OF ent.fp_cavity_system；124 K Si 腔实例（参数变体）"
 
 principles:
   - id: pri.silicon_cte_zero_crossing_124k
@@ -147,23 +147,15 @@ metrics:
 relations:
   - id: rel.K01
     subject: ent.si_crystal_fp_cavity_k12
-    predicate: COMPETES-WITH
+    predicate: PART-OF
     object: ent.fp_cavity_system
-    context: "频率参考选择：低温硅单晶腔 vs 室温 ULE 腔"
-    tradeoffs:
-      subject_wins:
-        - "热噪声降低约一个数量级（Si Q > 10⁷ at 124K vs. ULE Q ~ 10³–10⁴）"
-        - "激光线宽 <40 mHz，稳定度 ~1×10⁻¹⁶（Kessler 2012），后续 4×10⁻¹⁷（Matei 2017）"
-        - "Si CTE 零点在 124 K，可与低温高 Q 效应同时利用"
-        - "材料蠕变极低（单晶），长期频率漂移 ~0.2 mHz/s"
-      object_wins:
-        - "室温操作，无需低温恒温器（简化设计，降低成本，工程化友好）"
-        - "成熟工艺：ULE 腔多直接工作于 Sr/Yb 钟跃迁可见光波长"
-        - "低温恒温器自身振动引入额外振动噪声（短期限制因素）"
-        - "操作维护难度低，无液氦/脉冲管制冷需求"
     confidence: established
-    source: {zotero_key: "YKPFKDD9", claim: "reduces this thermal noise limit by an order of magnitude"}
-    note: "ent.fp_cavity_system 定义于 numata2004.yaml"
+    source: {zotero_key: "YKPFKDD9", claim: "silicon single-crystal optical cavity... reduces this thermal noise limit by an order of magnitude"}
+    conditions: null
+    note: >
+      原为 COMPETES-WITH（Level 1 vs Level 1），重构后降级为 Level 2 实例（PART-OF）。
+      Si 腔是 FP 腔系统的参数变体（材料=Si，T=124K），不是独立竞争方案。
+      ent.fp_cavity_system 定义于 numata2004.yaml。
 
   - id: rel.K02
     subject: ent.si_crystal_fp_cavity_k12
