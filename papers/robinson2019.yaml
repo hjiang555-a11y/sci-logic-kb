@@ -283,13 +283,13 @@ relations:
     verification_status: observed
     temporal_role: validates
     breakthrough_paths:
-      - direction: ent.algaas_crystalline_mirror_c13
+      - direction: pri.crystalline_coating_low_brownian_noise
         expected_gain: >
           AlGaAs 晶体镀层（室温 φ ~ 2.5×10⁻⁵，4 K 下预期更低）替换 IBS 镀层
           → 镀层热噪声降低 10–100×；理论下限 mod σ_y 可达 ~10⁻¹⁸ 量级（6 cm 腔）
         status: proposed
         source: {zotero_key: "JIZCUZLY", claim: "Reduction of the thermal noise will be possible by replacing the conventional SiO₂/Ta₂O₅ mirrors with crystalline mirrors. Such crystalline mirrors have been shown to exhibit a factor of 10 lower loss angle at room temperature"}
-      - direction: ent.si_crystal_17k_fp_cavity_l26
+      - direction: pri.silicon_cte_zero_crossing_17k
         expected_gain: >
           17 K（Si CTE 严格第二零点）+ AlGaAs 晶体镀层（4 K 损耗更低）路线，
           Lee 2026 实现 mod σ_y = 2.5×10⁻¹⁷ 世界纪录
@@ -316,7 +316,7 @@ relations:
     verification_status: observed
     temporal_role: proposes
     breakthrough_paths:
-      - direction: ent.si_crystal_fp_cavity_4k_r19
+      - direction: pri.silicon_cte_asymptotic_zero_4k
         expected_gain: >
           进一步降低腔内循环功率（<40 nW 传输）或采用偶发扫描方案（无持续锁定光）
           → 漂移外推趋向零，有望作为时间尺度使用

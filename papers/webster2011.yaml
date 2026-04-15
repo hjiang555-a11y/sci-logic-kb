@@ -178,7 +178,7 @@ relations:
     verification_status: inferred
     temporal_role: validates
     breakthrough_paths:
-      - direction: ent.algaas_crystalline_mirror_c13
+      - direction: pri.crystalline_coating_low_brownian_noise
         expected_gain: "晶体镀层降低镀层热噪声 ~10×（Cole 2013）"
         status: demonstrated
         source: {zotero_key: "CWIHQRJD", claim: "tenfold reduction in mechanical damping"}
