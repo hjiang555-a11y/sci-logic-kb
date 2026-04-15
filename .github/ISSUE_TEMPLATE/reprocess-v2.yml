@@ -1,15 +1,13 @@
-name: Reprocess to SCHEMA v2.0
-description: Migrate an existing paper YAML to SCHEMA v2.0 (new relation types)
-title: "Reprocess v2.0: {author}{year}"
-labels: ["reprocess-v2"]
+name: Reprocess to current schema
+description: Align an existing paper YAML with the current SCHEMA.md
+title: "Reprocess schema: {author}{year}"
+labels: ["reprocess-schema"]
 body:
   - type: markdown
     attributes:
       value: |
-        提交后自动迁移 `papers/` 目录中已有的 YAML 文件到 SCHEMA v2.0：
-        - GOVERNED-BY → ENABLED-BY / BOUNDED-BY
-        - 新增 hierarchy_level, status, tier, verification_status 字段
-        - 新增 DERIVED-FROM, COMPETES-WITH, CONDITIONED-BY 关系
+        提交后自动按当前 `SCHEMA.md` 重整 `papers/` 目录中已有的 YAML 文件。
+        若其他文档与 Schema 冲突，一律以 `SCHEMA.md` 为准。
 
   - type: input
     id: author_year

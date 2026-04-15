@@ -1,7 +1,7 @@
 # Jiang 2010 — 光纤干涉仪超低噪声可捷变激光
 # 提取者：Claude（AI草稿，待专家确认）
 # 提取日期：2026-04-14
-# Schema版本：v2.0
+# Schema版本：v3.1
 
 meta:
   zotero_key: "T8JR8IJ7"
@@ -334,7 +334,7 @@ relations:
       conditions: "Jiang 2010 使用隔振控温箱，温度漂移为长期稳定度限制（秒级非主导）"
     note: >
       ent.thermal_environment 为外围条件节点，定义于本文；光纤热耦合机制与 FP 腔不同，不共享内部原理。
-      此关系保留了原有热环境 CONDITIONED-BY 语义，但按 v2.0 重整要求将废弃的 rel.J10 编号移除并改记为 rel.J12。
+      此关系保留了原有热环境 CONDITIONED-BY 语义，但在历史重整过程中将废弃的 rel.J10 编号移除并改记为 rel.J12。
 
   - id: rel.J11
     subject: ent.fiber_interferometer

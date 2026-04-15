@@ -1,20 +1,21 @@
 #!/usr/bin/env python3
 """
 Process a paper PDF using GitHub Models API (claude-sonnet-4-6) → generate YAML.
-Also supports reprocessing existing YAMLs to SCHEMA v2.0.
+Also supports reprocessing existing YAMLs to the current schema version defined in SCHEMA.md.
 
 Uses OpenAI-compatible GitHub Models endpoint with GITHUB_TOKEN.
 No separate Anthropic API key needed — Copilot Pro+ subscription covers this.
 
 Environment variables (set by GitHub Actions):
   GITHUB_TOKEN        - Auto-injected by Actions (no extra secret needed)
-  TASK                - 'process' | 'reprocess-v2'
+  TASK                - 'process' | 'reprocess-v2' | 'reprocess-schema'
   AUTHOR_YEAR         - e.g. matei2017
   PDF_FILENAME        - e.g. TVY7T59A_matei2017.pdf  (only for process task)
   ZOTERO_KEY          - e.g. TVY7T59A
 """
 
 import os
+import re
 import sys
 from pathlib import Path
 
@@ -32,9 +33,16 @@ def get_client() -> OpenAI:
     return OpenAI(base_url=GITHUB_MODELS_ENDPOINT, api_key=token)
 
 
-def load_context() -> tuple[str, str, str]:
-    """Load SCHEMA, copilot instructions, and existing papers as context."""
+def get_schema_version(schema: str) -> str:
+    """Extract the current schema version string from SCHEMA.md."""
+    match = re.search(r"\*\*版本\*\*：([^\n（]+)", schema)
+    return match.group(1).strip() if match else "current"
+
+
+def load_context() -> tuple[str, str, str, str]:
+    """Load SCHEMA, version, copilot instructions, and existing papers as context."""
     schema = Path("SCHEMA.md").read_text(encoding="utf-8")
+    schema_version = get_schema_version(schema)
     instructions = Path(".github/copilot-instructions.md").read_text(encoding="utf-8")
 
     existing = []
@@ -42,7 +50,7 @@ def load_context() -> tuple[str, str, str]:
         existing.append(f"### {f.name}\n```yaml\n{f.read_text(encoding='utf-8')}\n```")
     existing_str = "\n\n".join(existing) if existing else "(none yet)"
 
-    return schema, instructions, existing_str
+    return schema, schema_version, instructions, existing_str
 
 
 def extract_pdf_text(pdf_path: Path) -> str:
@@ -63,7 +71,8 @@ def extract_pdf_text(pdf_path: Path) -> str:
 
 def process_new_paper(client: OpenAI, author_year: str,
                       zotero_key: str, pdf_filename: str,
-                      schema: str, instructions: str, existing: str) -> str:
+                      schema: str, schema_version: str,
+                      instructions: str, existing: str) -> str:
     """Extract knowledge from a new PDF."""
     pdf_path = Path(f"pdfs/{pdf_filename}")
     if not pdf_path.exists():
@@ -75,11 +84,11 @@ def process_new_paper(client: OpenAI, author_year: str,
     system_prompt = f"""You are a knowledge extraction expert for ultra-stable laser physics research.
 
 Extract structured YAML knowledge nodes from the provided research paper.
-Follow SCHEMA v2.0 strictly. Output ONLY the complete YAML file — no explanation,
-no markdown code fences. Start directly with the comment line.
+    Follow the current SCHEMA.md strictly. Output ONLY the complete YAML file — no explanation,
+    no markdown code fences. Start directly with the comment line.
 
-=== SCHEMA v2.0 ===
-{schema}
+    === SCHEMA {schema_version} ===
+    {schema}
 
 === EXISTING NODES (cross-reference, do NOT redefine) ===
 {existing}
@@ -97,11 +106,12 @@ no markdown code fences. Start directly with the comment line.
                 "role": "user",
                 "content": (
                     f"Process this paper (Zotero key: {zotero_key}).\n"
-                    f"Generate the complete YAML file for papers/{author_year}.yaml "
-                    f"following SCHEMA v2.0.\n"
-                    f"This is a NEW paper — extract all entities, principles, "
-                    f"methods, metrics, and relations.\n\n"
-                    f"=== PAPER TEXT ===\n{pdf_text}"
+                     f"Generate the complete YAML file for papers/{author_year}.yaml "
+                     f"following SCHEMA {schema_version}.\n"
+                     f"This is a NEW paper — extract all entities, principles, "
+                     f"methods, metrics, and relations.\n"
+                     f"Use SCHEMA.md as the only schema source of truth.\n\n"
+                     f"=== PAPER TEXT ===\n{pdf_text}"
                 )
             }
         ]
@@ -111,8 +121,8 @@ no markdown code fences. Start directly with the comment line.
 
 
 def reprocess_v2(client: OpenAI, author_year: str,
-                 schema: str, existing: str) -> str:
-    """Update an existing YAML file to comply with SCHEMA v2.0."""
+                 schema: str, schema_version: str, existing: str) -> str:
+    """Update an existing YAML file to comply with the current schema."""
     existing_yaml_path = Path(f"papers/{author_year}.yaml")
     if not existing_yaml_path.exists():
         raise FileNotFoundError(f"Existing YAML not found: {existing_yaml_path}")
@@ -121,18 +131,18 @@ def reprocess_v2(client: OpenAI, author_year: str,
 
     system_prompt = f"""You are a knowledge graph schema migration expert.
 
-Migrate the provided YAML file from SCHEMA v1.0 to SCHEMA v2.0.
-Output ONLY the complete migrated YAML — no explanation, no markdown fences.
+    Migrate the provided YAML file to the current schema version defined in SCHEMA.md.
+    Output ONLY the complete migrated YAML — no explanation, no markdown fences.
 
-=== SCHEMA v2.0 (target) ===
-{schema}
+    === SCHEMA {schema_version} (target) ===
+    {schema}
 
 === OTHER EXISTING FILES (for cross-reference) ===
 {existing}
 """
 
     migration_instructions = """
-Specific changes required for v2.0 migration:
+    Specific changes required for current-schema migration:
 
 1. RELATION TYPES — replace all GOVERNED-BY:
    - If the principle explains WHY the method works → ENABLED-BY
@@ -166,10 +176,20 @@ Specific changes required for v2.0 migration:
 
 7. CONDITIONED-BY — add for external conditions (vibration, temperature) with interface fields
 
-8. Remove deprecated relations: GOVERNED-BY, EQUIVALENT-IN-CONTEXT, SUPPORTED-BY
+    8. Remove deprecated relations: GOVERNED-BY, EQUIVALENT-IN-CONTEXT, SUPPORTED-BY, BREAKTHROUGH-VIA
 
-9. Update header comment to include: # Schema版本：v2.0
-"""
+    9. Add current-schema fields when appropriate, including:
+       - preconditions
+       - invalidated_when
+       - open_questions
+       - contested_claims
+       - historical_landmarks (prioritize first_demonstration and best_demonstration)
+
+    10. Update header comment to include the current schema version:
+        # Schema版本：{schema_version}
+
+    11. If older instructions conflict with SCHEMA.md, follow SCHEMA.md.
+    """
 
     response = client.chat.completions.create(
         model=MODEL,
@@ -179,7 +199,7 @@ Specific changes required for v2.0 migration:
             {
                 "role": "user",
                 "content": (
-                    f"Migrate this file to SCHEMA v2.0:\n\n"
+                    f"Migrate this file to SCHEMA {schema_version}:\n\n"
                     f"```yaml\n{existing_yaml}\n```\n\n"
                     f"{migration_instructions}"
                 )
@@ -201,12 +221,12 @@ def main():
         sys.exit(1)
 
     client = get_client()
-    schema, instructions, existing = load_context()
+    schema, schema_version, instructions, existing = load_context()
 
-    print(f"Task: {task} | Paper: {author_year} | Model: {MODEL}")
+    print(f"Task: {task} | Paper: {author_year} | Model: {MODEL} | Schema: {schema_version}")
 
-    if task == "reprocess-v2":
-        yaml_content = reprocess_v2(client, author_year, schema, existing)
+    if task in {"reprocess-v2", "reprocess-schema"}:
+        yaml_content = reprocess_v2(client, author_year, schema, schema_version, existing)
     else:
         if not pdf_filename:
             matches = list(Path("pdfs").glob(f"*_{author_year}.pdf"))
@@ -220,7 +240,7 @@ def main():
 
         yaml_content = process_new_paper(
             client, author_year, zotero_key, pdf_filename,
-            schema, instructions, existing
+            schema, schema_version, instructions, existing
         )
 
     output_path = Path(f"papers/{author_year}.yaml")
@@ -230,6 +250,7 @@ def main():
     with open(os.environ.get("GITHUB_STEP_SUMMARY", "/dev/null"), "a") as f:
         f.write(f"## Paper processed: `{author_year}.yaml`\n")
         f.write(f"- Task: `{task}`\n")
+        f.write(f"- Schema: `{schema_version}`\n")
         f.write(f"- Model: `{MODEL}`\n")
         f.write(f"- Output: `{output_path}` ({len(yaml_content)} chars)\n")
 
