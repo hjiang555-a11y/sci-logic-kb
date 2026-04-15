@@ -298,12 +298,12 @@ relations:
     verification_status: observed
     temporal_role: validates
     breakthrough_paths:
-      - direction: pri.low_loss_substrate_improvement
-        expected_gain: "用低损耗镜底物替代 ULE，可继续压低该 reference implementation 的热噪声底。"
+      - direction: pri.brownian_thermal_noise_fdt
+        expected_gain: "优化 condition_variable φ：用低损耗镜底物替代 ULE，可继续压低该 reference implementation 的热噪声底。"
         status: demonstrated
         source: {zotero_key: "VDXBPUQB", claim: "using fused-silica mirrors lowers the thermal noise floor"}
-      - direction: pri.beam_radius_scaling
-        expected_gain: "增大镜面光斑半径可在室温架构下继续降低热噪声。"
+      - direction: pri.brownian_thermal_noise_fdt
+        expected_gain: "优化 condition_variable w₀：增大镜面光斑半径可在室温架构下继续降低热噪声。"
         status: demonstrated
         source: {zotero_key: "VDXBPUQB", claim: "thermal noise can be reduced by increasing the beam spot size on the mirrors"}
       - direction: pri.cryogenic_mechanical_q_enhancement
