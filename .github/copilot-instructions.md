@@ -2,7 +2,7 @@
 
 > **最高规则**：若本文件与 `SCHEMA.md` 冲突，**一律以 `/home/runner/work/sci-logic-kb/sci-logic-kb/SCHEMA.md` 为准**。
 
-> **当前 Schema 版本**：v3.1（2026-04-15）
+> **当前 Schema 版本**：v3.2（2026-04-15）
 
 ---
 
