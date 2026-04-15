@@ -468,6 +468,9 @@ note: "跨文件引用，定义于 shaddock1999.yaml"
 | `webster2011.yaml` | A96XGR82 | Webster 2011 — 立方体力不敏感光学腔 | ✅ 兼容（无 v3.0 专项变更） |
 | `robinson2019.yaml` | JIZCUZLY | Robinson 2019 — 4 K Si 腔热噪声极限 | ✅ v3.0（Level 1→2，COMPETES-WITH→PART-OF） |
 | `zhang2014_ram.yaml` | S5GJNVG8 | Zhang 2014 — RAM 主动消除 | ✅ v3.0（merge waveguide_eom_z14 into ent.eom） |
+| `dong2015.yaml` | W8K5GLK6 | Dong 2015 — 光纤延迟线锁频首次亚赫兹线宽（0.67 Hz） | ✅ 符合v3.1（首次提取） |
+| `kefelian2009.yaml` | MN54T4F3 | Kéfélian 2009 — 光纤延迟线锁频首次实现超低频率噪声 | ✅ 符合v3.1（首次提取） |
+| `huang2023.yaml` | JYGVFJBN | Huang 2023 — 全光纤超稳激光长期稳定度 1.1×10⁻¹⁴ | ✅ 符合v3.1（首次提取） |
 
 **历史 v3.0 重构摘要**（2026-04-15）：
 
