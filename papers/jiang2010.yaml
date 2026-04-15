@@ -53,6 +53,24 @@ entities:
     key_limitation: >
       非刚性结构，腔长随温度/应力缓慢漂移（长期频率参考不如 ULE 腔）；
       扫频时 Rayleigh 背向散射（RBS）是根本限制。
+    thermal_noise_specific:
+      mechanism: "Thermorefractive noise (dn/dT fluctuations) and thermoelastic noise (thermal expansion α fluctuations) in silica fiber core"
+      key_difference_from_fp_cavity: >
+        Unlike FP cavity thermal noise (dominated by mirror surface displacement via FDT/Brownian motion),
+        fiber thermal noise is dominated by thermorefractive index fluctuations in the fiber core material.
+        The noise scales with fiber length L (more material → more fluctuation) but also with 1/L
+        in terms of fractional frequency (longer delay line → better frequency discrimination).
+        Net effect: longer fiber generally wins for short-term stability but worsens long-term temperature drift.
+      preconditions:
+        - "Fiber core is solid silica (standard SMF-28 or similar); thermorefractive coefficient dn/dT ≈ 1.1×10⁻⁵/K dominates over thermal expansion α ≈ 0.55×10⁻⁶/K"
+        - "No CTE zero crossing exists for silica fiber — unlike ULE/Si cavity materials, temperature sensitivity cannot be nulled by operating at a specific temperature"
+        - "Thermal noise limit assumes all technical noise (vibration, laser intensity, RAM) has been suppressed below the thermorefractive floor"
+      failure_conditions:
+        - "Hollow-core fiber fundamentally changes the thermal noise mechanism — thermorefractive noise from silica walls is replaced by gas thermodynamics (pressure, composition)"
+        - "Very short fiber (<10 m) where thermal noise amplitude is below detector noise floor — system becomes detector-noise limited"
+        - "Cryogenic operation of fiber spool: silica dn/dT decreases at low temperatures, but no CTE zero crossing eliminates the fundamental sensitivity"
+      scaling: "Phase noise PSD ∝ k_B T² × (dn/dT)² × L / (A_eff × κ × f²) — Wanser model for thermorefractive noise"
+      source: {zotero_key: "T8JR8IJ7", note: "Jiang 2010 discusses thermal limits; detailed thermal noise models in Wanser 1992 and Duan 2010"}
 
   # ent.faraday_rotation_mirror 已合并到 ent.fiber_interferometer 的 internal_components 字段中。
   # FRM 没有独立"设计选择空间"，是光纤干涉仪的标准内部组件。
@@ -111,6 +129,18 @@ principles:
     source_claim: >
       "fiber interferometer as an optical frequency reference provides
        ultra-low frequency noise while allowing laser frequency agility"
+    preconditions:
+      - "Fiber delay line length L is sufficient to provide adequate frequency discrimination sensitivity: δφ = 2π·δν·nL/c requires nL/c ≫ 1/f_max where f_max is the highest Fourier frequency of interest"
+      - "Fiber is single-mode at operating wavelength (higher-order mode interference would corrupt error signal)"
+      - "Faraday rotation mirrors (FRM) or equivalent polarization compensation is employed to maintain stable interference visibility despite fiber birefringence drift"
+      - "AOM heterodyne detection frequency is well outside the acoustic/mechanical noise band of the fiber spool"
+      - "Fiber thermal environment is sufficiently stable that temperature-induced optical path length drift does not saturate the servo dynamic range on the measurement timescale"
+    invalidated_when:
+      - "Fiber birefringence changes faster than FRM can compensate (e.g., rapid mechanical stress on fiber spool)"
+      - "Temperature drift rate exceeds servo tracking bandwidth × frequency capture range (servo loses lock)"
+      - "Rayleigh backscattering noise exceeds signal during frequency sweep (sweep rate × fiber length product too large)"
+      - "Acoustic/vibrational noise on fiber spool exceeds thermal noise floor (insufficient acoustic isolation)"
+      - "Fiber length thermally drifts sufficiently to shift operating point outside linear range of error signal"
 
   - id: pri.rayleigh_backscattering_noise
     name: "Rayleigh 背向散射（RBS）——扫频时的根本噪声极限"
@@ -142,6 +172,20 @@ principles:
     source_claim: >
       "Rayleigh backscattering is the fundamental limitation of the
        fiber interferometer reference during frequency chirping"
+    preconditions:
+      - "Analysis assumes single-mode fiber with standard Rayleigh scattering coefficient (~αR = 4.5×10⁻⁵ /m for SMF-28 at 1550 nm)"
+      - "Backscattered light is coherent with forward-propagating light within coherence length of the laser"
+      - "Fiber is operated in the spontaneous (not stimulated) Brillouin scattering regime — i.e., optical power is below stimulated Brillouin threshold"
+      - "Interference between backscattered and forward light occurs at the detector with appreciable visibility (polarization not fully orthogonal)"
+    invalidated_when:
+      - "Hollow-core fiber is used instead of solid-core fiber — Rayleigh backscattering is reduced by >40 dB (Michaud-Belleau 2021), making other noise sources dominant"
+      - "Static (non-sweeping) operation where backscattering produces a fixed phase offset that can be calibrated out"
+      - "Optical power exceeds stimulated Brillouin threshold — stimulated scattering dynamics replace spontaneous RBS as the limiting mechanism"
+      - "Very short fiber lengths (<10 m) where total accumulated backscattering is negligible compared to detector noise"
+    open_questions:
+      - "Can hollow-core antiresonant fiber (NANF) eliminate Rayleigh backscattering as a limitation while maintaining sufficient delay-line thermal stability for sub-Hz linewidth applications?"
+      - "What is the minimum fiber length at which RBS transitions from negligible to dominant noise source during typical sweep rates (1-100 GHz/s)?"
+      - "Can polarization-diverse detection schemes completely separate RBS interference from the heterodyne error signal, or is there a fundamental cross-coupling limit?"
 
   - id: pri.aom_heterodyne_fiber_detection
     name: "AOM 外差检测（光纤干涉仪误差信号提取）"

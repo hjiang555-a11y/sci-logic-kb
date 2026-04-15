@@ -65,6 +65,21 @@ entities:
       temperature: "17 K ± 极小波动；多层屏蔽：辐射屏+外主动控温屏+内被动屏"
       vibration: "低温恒温器 1 Hz 循环频率噪声须主动抑制"
     note: "Level 2 PART-OF ent.fp_cavity_system；17 K Si 腔+晶体镀层实例（参数变体，世界纪录 2.5×10⁻¹⁷）"
+    contested_claims:
+      - claim: "The 2017 AlGaAs coating batch exhibited 'excess global noise' whose origin remains unknown — it is unclear whether this was a fabrication defect, surface contamination, or an intrinsic property of earlier crystalline coating processes"
+        status: unresolved
+        source: {zotero_key: "4QVEXY63", claim: "while the first set of mirrors was installed... the performance was limited by anomalous excess frequency noise that was uncorrelated between polarization modes"}
+        note: "Resolution of this question is critical for manufacturing reliability of crystalline coatings; without understanding the root cause, batch-to-batch variability remains a risk"
+      - claim: "Whether the 17 K CTE zero crossing provides genuinely superior thermal performance over 124 K, or whether the observed improvement is primarily due to the better (2023) coating batch rather than the temperature difference"
+        status: unresolved
+        source: {zotero_key: "4QVEXY63", claim: "fractional frequency stability of 2.5 × 10⁻¹⁷ at 10 s is four times better than expected for dielectric mirrors"}
+        note: "The 4× improvement is attributed to crystalline coatings, not to 17K vs 124K temperature difference per se; the temperature contributes additional ~7× via k_BT reduction"
+    open_questions:
+      - "Can the excess global noise observed in 2017 coating batch be systematically prevented in future fabrication runs, or is it an intrinsic risk of the substrate-transfer crystalline coating process?"
+      - "What is the ultimate coating loss angle achievable with AlGaAs crystalline coatings at cryogenic temperatures — is φ < 10⁻⁵ reachable, and would this enable 10⁻¹⁸ stability?"
+      - "Does the dual-polarization locking technique fully cancel all birefringence noise contributions, or are there higher-order birefringent effects (e.g., from thermal gradients across the coating) that become relevant at sub-10⁻¹⁷ stability?"
+      - "How does the long-term drift rate (~10 μHz/s) compare between crystalline and dielectric coatings — is crystalline coating structural relaxation a concern for decade-scale frequency references?"
+      - "Can optical frequency averaging be extended to N>2 cavities to achieve further √N improvements, and what are the practical limitations (Dick noise, frequency comb complexity)?"
 
 principles:
   - id: pri.silicon_cte_zero_crossing_17k
@@ -86,6 +101,9 @@ principles:
     source_claim: >
       "Si6, on the other hand, operates at the 17 K zero crossing,
        where the much gentler slope of the [CTE vs T curve]"
+    open_questions:
+      - "Is the 17 K zero crossing sufficiently sharp and reproducible across different Si crystal samples to serve as a universal operating point?"
+      - "How sensitive is the 17 K zero crossing temperature to crystal orientation, dopant concentration, and isotopic composition of silicon?"
 
   - id: pri.optical_frequency_averaging
     name: "多腔光学频率平均"
@@ -108,6 +126,9 @@ principles:
       "With two state-of-the-art cryogenic silicon cavities online at JILA,
        we improved the laser stability even further by averaging the two cavities...
        The averaged laser is more stable than the two similar individual lasers by approximately √2"
+    open_questions:
+      - "What is the optimal number of cavities for frequency averaging before diminishing returns from system complexity and Dick noise offset the √N gain?"
+      - "Can non-switching averaging schemes (simultaneous multi-cavity probing) fully eliminate Dick noise contributions?"
 
 methods:
   - id: meth.multi_cavity_averaging
