@@ -31,18 +31,33 @@ jobs:
 
             const fields = {};
             for (const line of body.split('\n')) {
-              const m = line.match(/^([^:]+):\s*(.+)$/);
-              if (m) fields[m[1].trim().toLowerCase().replace(/\s+/g, '_')] = m[2].trim();
+              const m = line.match(/^\\s*\\*\\*([^*]+)\\*\\*\\s*:\\s*(.+)$/);
+              if (m) fields[m[1].trim().toLowerCase().replace(/\\s+/g, '_').replace(/\\*/g, '')] = m[2].trim();
             }
 
-            const authorYear  = fields.author_year || fields.file || '';
+            let authorYear  = fields.author_year || fields.file || '';
             const zoteroKey   = fields.zotero_key  || fields.key  || '';
             const pdfFilename = fields.pdf          || fields.pdf_filename || '';
+
+            // Try to extract author_year from PDF filename as fallback
+            if (!authorYear && pdfFilename) {
+              const match = pdfFilename.match(/_([^_]+)\.pdf$/);
+              if (match) {
+                authorYear = match[1];
+                console.log('Extracted authorYear from PDF filename:', authorYear);
+              }
+            }
+
             const task = (label === 'reprocess-v2' || label === 'reprocess-schema')
               ? 'reprocess-schema'
               : 'process';
 
-            if (!authorYear) core.setFailed('author_year missing from issue body');
+            // Debug: show available fields and body preview
+            console.log('Available fields:', Object.keys(fields));
+            console.log('Fields object:', fields);
+            console.log('Issue body preview (first 500 chars):', body.substring(0, 500));
+
+            if (!authorYear) core.setFailed('author_year missing from issue body. Available fields: ' + Object.keys(fields).join(', '));
 
             core.setOutput('author_year',  authorYear);
             core.setOutput('zotero_key',   zoteroKey);
