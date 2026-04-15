@@ -31,8 +31,8 @@ jobs:
 
             const fields = {};
             for (const line of body.split('\n')) {
-              const m = line.match(/^\s*\*\*([^*]+)\*\*:\s*(.+)$/);
-              if (m) fields[m[1].trim().toLowerCase().replace(/\s+/g, '_').replace(/\*/g, '')] = m[2].trim();
+              const m = line.match(/^\\s*\\*\\*([^*]+)\\*\\*\\s*:\\s*(.+)$/);
+              if (m) fields[m[1].trim().toLowerCase().replace(/\\s+/g, '_').replace(/\\*/g, '')] = m[2].trim();
             }
 
             const authorYear  = fields.author_year || fields.file || '';
