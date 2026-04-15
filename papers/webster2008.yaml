@@ -20,7 +20,8 @@ meta:
     稳定度 ≈2×10⁻¹⁵（0.5–100 s），归因于镜基底和镀层的布朗运动，
     与 Numata 2004 理论预测定量一致。是该理论的首次全面实验验证。
     NPL（Gill组）+ SYRTE（Millo），1064 nm 双 ULE 腔拍频。
-    ⚠ QUEUE.md 标注 "Webster 2003?"，文件名为 webster2004.pdf，实际为 2008。
+    ⚠ 年份注意：QUEUE.md 标注 "Webster 2003?"，PDF 文件名为 webster2004.pdf，
+    实际 Received 31 Oct 2007, Published 27 Mar 2008 (Phys. Rev. A 77, 033847)。
 
 # ═══════════════════════════════════════════════
 #  NODES（节点）

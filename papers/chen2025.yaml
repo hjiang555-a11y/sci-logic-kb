@@ -101,13 +101,13 @@ relations:
     object: pri.brownian_thermal_noise_fdt
     confidence: established
     source: {zotero_key: "N6HILT6B", claim: "fundamentally limited by the Brownian thermal noise"}
-    is_system_limit: false
+    is_system_limit: true
     dominated_by: null
     verification_status: observed
     temporal_role: validates
     note: >
-      跨文件引用 numata2004.yaml; 连续冷却下低温机振动和 RAM 仍为主要技术限制，
-      但 CQQM 显示固有性能已接近热噪声极限。
+      跨文件引用 numata2004.yaml; CQQM 协议显示 Si1 腔固有性能已接近热噪声极限，
+      但在连续冷却下低温机振动和 RAM 仍为当前主要技术限制（由 CONDITIONED-BY 表述）。
       振动抑制方法（刚性安装+前馈等）作为工程手段记录于 key_parameters，
       不单独建立原理/方法节点。
 

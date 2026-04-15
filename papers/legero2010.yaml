@@ -11,6 +11,8 @@ meta:
   year: 2010
   first_author: Legero
   journal: "Optics Letters"
+  volume: 35
+  pages: "1275-1277"
   doi: "10.1364/OL.35.001275"
   note: >
     研究 LTE（低热膨胀）间隔物 + 熔融石英（FS）镜的混合材料腔热膨胀特性。
