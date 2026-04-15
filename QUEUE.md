@@ -107,12 +107,12 @@
 ## Zotero Collection: 光纤稳频激光
 
 - [x] `T8JR8IJ7` | Jiang 2010 | An agile laser with ultra-low frequency noise → `jiang2010.yaml`
-- [ ] `MN54T4F3` | Kefelian 201x | Ultralow-frequency-noise stabilization of a laser by locking to a fiber
-- [ ] `W8K5GLK6` | Dong 2015 | Subhertz linewidth laser by locking to a fiber delay line
+- [x] `MN54T4F3` | Kéfélian 2009 | Ultralow-frequency-noise stabilization of a laser by locking to a fiber → `kefelian2009.yaml`
+- [x] `W8K5GLK6` | Dong 2015 | Subhertz linewidth laser by locking to a fiber delay line → `dong2015.yaml`
 - [ ] `KH82PQJ2` | Hu 2015 | An optical fiber spool for laser stabilization with reduced acceleration sensitivity
 - [ ] `5DCNFGX4` | 黄军超 2019 | Vibration-insensitive fiber spool for laser stabilization
 - [ ] `F2GG2N6W` | Huang 202x | All-fiber-based laser with 200 mHz linewidth
-- [ ] `JYGVFJBN` | Huang 2023 | All-fiber-based ultrastable laser with long-term frequency stability
+- [x] `JYGVFJBN` | Huang 2023 | All-fiber-based ultrastable laser with long-term frequency stability → `huang2023.yaml`
 - [ ] `RENEQVU9` | Wei 202x | Support-Free Thermally Insensitive Hollow Core Fiber Coil
 - [ ] `QLXRP462` | Shi 202x | Thinly coated hollow core fiber for improved thermal phase-stability
 - [ ] `UKBFZLXG` | Shi 202x | Temperature Insensitive Delay-Line Fiber Interferometer
