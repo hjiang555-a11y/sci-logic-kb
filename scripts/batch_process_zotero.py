@@ -162,7 +162,7 @@ class BatchProcessor:
     def create_github_issue(self, paper: ZoteroPaper) -> bool:
         """创建GitHub Issue触发论文处理"""
         if not self.github_token:
-            print("  警告: 未设置GITHUB_TOKEN，跳过Issue创建")
+            print(f"  警告: 未设置GITHUB_TOKEN，跳过Issue创建 (env: {os.environ.get('GITHUB_TOKEN', '未设置')[:10]}...)")
             return False
 
         # Issue模板数据
@@ -197,7 +197,7 @@ class BatchProcessor:
             print(f"  {paper.zotero_key}: 创建Issue异常: {e}")
             return False
 
-    def batch_process(self, batch_size: int = 10):
+    def batch_process(self, batch_size: int = 10, non_interactive: bool = False):
         """批量处理论文"""
         # 获取未处理论文
         papers = self.parse_queue()
@@ -207,6 +207,8 @@ class BatchProcessor:
             return
 
         print(f"开始批量处理 {len(papers)} 篇论文，每 {batch_size} 篇一批")
+        if non_interactive:
+            print("非交互模式：自动继续所有批次")
 
         # 分批处理
         for batch_idx in range(0, len(papers), batch_size):
@@ -239,16 +241,20 @@ class BatchProcessor:
                     print(f"  警告: Issue创建失败，但PDF已复制")
 
             print(f"\n第 {batch_num} 批处理完成")
-            print("等待用户确认或自动继续...")
-            print("(按Ctrl+C中断，或等待继续下一批)")
 
             # 如果不是最后一批，询问是否继续
             if batch_idx + batch_size < len(papers):
-                try:
-                    input("按Enter继续下一批，或Ctrl+C中断: ")
-                except KeyboardInterrupt:
-                    print("\n用户中断")
-                    break
+                if non_interactive:
+                    print("非交互模式：自动继续下一批")
+                    continue
+                else:
+                    print("等待用户确认或自动继续...")
+                    print("(按Ctrl+C中断，或等待继续下一批)")
+                    try:
+                        input("按Enter继续下一批，或Ctrl+C中断: ")
+                    except KeyboardInterrupt:
+                        print("\n用户中断")
+                        break
 
         print(f"\n{'='*60}")
         print(f"批量处理完成")
@@ -286,6 +292,7 @@ def main():
     import argparse
     parser = argparse.ArgumentParser(description="批量处理Zotero未处理论文")
     parser.add_argument("--batch-size", type=int, default=10, help="每批处理数量")
+    parser.add_argument("--non-interactive", action="store_true", help="非交互模式，自动继续所有批次")
     parser.add_argument("--cleanup", action="store_true", help="清理已处理的PDF文件")
 
     args = parser.parse_args()
@@ -293,7 +300,7 @@ def main():
     if args.cleanup:
         processor.cleanup_processed_pdfs()
     else:
-        processor.batch_process(args.batch_size)
+        processor.batch_process(args.batch_size, args.non_interactive)
 
 
 if __name__ == "__main__":
