@@ -113,15 +113,15 @@
 - [ ] `5DCNFGX4` | 黄军超 2019 | Vibration-insensitive fiber spool for laser stabilization
 - [ ] `F2GG2N6W` | Huang 202x | All-fiber-based laser with 200 mHz linewidth
 - [x] `JYGVFJBN` | Huang 2023 | All-fiber-based ultrastable laser with long-term frequency stability → `huang2023.yaml`
-- [ ] `RENEQVU9` | Wei 202x | Support-Free Thermally Insensitive Hollow Core Fiber Coil
-- [ ] `QLXRP462` | Shi 202x | Thinly coated hollow core fiber for improved thermal phase-stability
+- [→] `RENEQVU9` | Wei 202x | Support-Free Thermally Insensitive Hollow Core Fiber Coil
+- [→] `QLXRP462` | Shi 202x | Thinly coated hollow core fiber for improved thermal phase-stability
 - [ ] `UKBFZLXG` | Shi 202x | Temperature Insensitive Delay-Line Fiber Interferometer
 - [x] `DD6SE43C` | Michaud-Belleau 2021 | Backscattering in antiresonant hollow-core fibers: over 40 dB lower → `michaudbelleau2021.yaml`
 - [x] `4GT5VD54` | Michaud-Belleau 2022 | Fundamental thermal noise in antiresonant hollow-core fibers → `michaudbelleau2022.yaml`
-- [ ] `QGLVTMB7` | Ding 202x | Hollow-core fiber made of ultralow expansion glass
+- [→] `QGLVTMB7` | Ding 202x | Hollow-core fiber made of ultralow expansion glass
 - [ ] `GIUQZ2EE` | Zuba 202x | Limits of Coupling Efficiency Into Hollow-Core Antiresonant Fibers
 - [ ] `SBPRDKPV` | Jeon 202x | 10⁻¹⁵-level laser stabilization down to fiber thermal noise limit
-- [ ] `XSMPRNT3` | Grabielle 2025 | Locking noise in laser frequency stabilization to an optical fiber
+- [→] `XSMPRNT3` | Grabielle 2025 | Locking noise in laser frequency stabilization to an optical fiber
 - [ ] `JAW66GYL` | J. Gao 2025 | Ultra-Low Frequency Noise Laser Based on All-Fiber Integrated Interferometer
 - [ ] `H5YVF5AR` | Kim 2008 | Drift-free femtosecond timing synchronization of remote optical and microwave
 - [ ] `ULMQ3IXP` | Winful 1985 | SELF-INDUCED POLARIZATION CHANGES IN BIREFRINGENT OPTICAL FIBERS
