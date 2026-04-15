@@ -167,9 +167,9 @@ class BatchProcessor:
 
         # Issue模板数据
         issue_data = {
-            "title": f"Process: {paper.author_year}",
+            "title": f"Process: {paper.author_year.replace(' ', '_')}",
             "body": f"处理论文: {paper.title}\n\n"
-                   f"**Author Year**: {paper.author_year}\n"
+                   f"**Author Year**: {paper.author_year.replace(' ', '_')}\n"
                    f"**Zotero Key**: {paper.zotero_key}\n"
                    f"**PDF**: {paper.pdf_filename}\n"
                    f"**Notes**: 批量处理 - 新节点标注未审核，优先复用已有节点",
