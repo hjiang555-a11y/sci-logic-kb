@@ -1,0 +1,143 @@
+name: Suggest New Knowledge Node
+description: Propose a new node (entity, principle, method, or metric) for expert review before creation
+title: "New Node: {type}.{proposed_id}"
+labels: ["new-node-proposal", "needs-expert-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## New Node Proposal
+
+        When AI or a contributor believes a new node is needed that cannot be absorbed by existing nodes,
+        this template provides a structured proposal for expert review.
+
+        **Governance rule**: No new node should be silently normalized as final.
+        All new nodes must be reviewed and confirmed by a domain expert before permanent inclusion.
+
+  - type: input
+    id: proposed_name
+    attributes:
+      label: Proposed Node Name
+      description: "Full node ID following naming conventions (e.g., ent.hollow_core_fiber, pri.gas_thermorefractive_noise)"
+      placeholder: "pri.example_principle"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: node_type
+    attributes:
+      label: Node Type
+      options:
+        - "ent. (Technical Entity)"
+        - "pri. (Principle)"
+        - "meth. (Method)"
+        - "met. (Metric)"
+    validations:
+      required: true
+
+  - type: input
+    id: parent_node
+    attributes:
+      label: Parent Topic / Parent Node / Location
+      description: "Which branch or parent node does this belong to? (e.g., PART-OF ent.fp_cavity_system, or 'fiber branch')"
+      placeholder: "PART-OF ent.fiber_interferometer"
+    validations:
+      required: true
+
+  - type: textarea
+    id: why_new
+    attributes:
+      label: Why existing nodes cannot adequately contain this content
+      description: "Explain what existing node(s) were considered and why they are insufficient"
+      placeholder: |
+        Considered: pri.rayleigh_backscattering_noise
+        Insufficient because: the proposed principle covers a fundamentally different physical mechanism
+        (gas thermodynamics vs solid-state Rayleigh scattering) with different scaling laws and mitigation strategies.
+    validations:
+      required: true
+
+  - type: textarea
+    id: independent_value
+    attributes:
+      label: Minimal Independent Value
+      description: "What meaningful question can this node independently answer? Does it have its own design choice space, limitation chain, or evidence chain?"
+      placeholder: |
+        This node independently answers: "What is the fundamental thermal noise limit of hollow-core fiber interferometers?"
+        It has independent design variables (gas pressure, core diameter, fiber structure).
+    validations:
+      required: true
+
+  - type: textarea
+    id: relationships
+    attributes:
+      label: Relationship to Existing Nodes
+      description: "List expected BOUNDED-BY, ENABLED-BY, PART-OF, COMPETES-WITH, etc. connections"
+      placeholder: |
+        - BOUNDED-BY: pri.gas_thermorefractive_noise (proposed) limits ent.hollow_core_fiber_interferometer
+        - DERIVED-FROM: pri.brownian_thermal_noise_fdt (different branch application)
+    validations:
+      required: true
+
+  - type: textarea
+    id: overlap_risks
+    attributes:
+      label: Possible Overlap / Ambiguity Risks
+      description: "Could this node be confused with or duplicated by another existing or potential node?"
+      placeholder: "Risk: could be confused with pri.rayleigh_backscattering_noise. Distinction: RBS is elastic scattering in solid core; this is thermal fluctuation in gas-filled core."
+    validations:
+      required: false
+
+  - type: textarea
+    id: source_references
+    attributes:
+      label: Source References / Evidence
+      description: "Zotero keys, DOIs, or literature citations supporting this node"
+      placeholder: |
+        - Michaud-Belleau 2022 (4GT5VD54): first thermal noise measurement in hollow-core fiber
+        - Wanser 1992: foundational thermal noise model for fiber interferometers
+    validations:
+      required: true
+
+  - type: textarea
+    id: initial_content
+    attributes:
+      label: AI-Proposed Initial Content Draft
+      description: "Provide the proposed YAML content for the node (following SCHEMA.md template)"
+      render: yaml
+      placeholder: |
+        - id: pri.example_principle
+          name: "Example Principle Name"
+          tier: domain
+          verification_status: calculated
+          statement: >
+            Description of the principle...
+          conditions: "When this applies..."
+          preconditions:
+            - "Precondition 1"
+          source_claim: "Quote from source paper"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: expert_decision
+    attributes:
+      label: Expert Decision (to be filled by reviewer)
+      description: "Expert fills this after review"
+      options:
+        - "Pending review"
+        - "Accepted — create as permanent node"
+        - "Accepted with modifications — see comments"
+        - "Rejected — merge into existing node (see guidance below)"
+        - "Rejected — content not needed"
+        - "Deferred — needs more evidence"
+    validations:
+      required: false
+
+  - type: textarea
+    id: expert_guidance
+    attributes:
+      label: Expert Guidance (if rejected or modified)
+      description: "If rejected: where should the content go? If modified: what changes are needed?"
+      placeholder: "Merge the core insight into pri.rayleigh_backscattering_noise as a new subsection. The scaling law should be added to condition_variables."
+    validations:
+      required: false
