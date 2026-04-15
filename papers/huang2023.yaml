@@ -213,8 +213,8 @@ relations:
     verification_status: observed
     temporal_role: validates
     breakthrough_paths:
-      - direction: pri.fiber_thermal_noise_wanser
-        expected_gain: "使用光子晶体空心光纤可降低温度灵敏度 2 个数量级"
+      - direction: pri.fiber_temperature_sensitivity_limit
+        expected_gain: "使用光子晶体空心光纤可降低温度灵敏度 2 个数量级（热折射系数大幅减小）"
         status: theoretical
         source:
           zotero_key: "JYGVFJBN"
