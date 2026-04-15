@@ -1,0 +1,132 @@
+# Chen 2025 — 10 cm 硅腔 sub-5K 温度 10⁻¹⁷ 级激光
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-15
+# Schema版本：v3.1
+
+meta:
+  zotero_key: "N6HILT6B"
+  source_type: technical_paper
+  reliability: high
+  title: "A laser with instability reaching 10⁻¹⁷ based on a 10-cm-long silicon cavity at sub-5-K temperatures"
+  year: 2025
+  first_author: Chen
+  journal: "Science Bulletin"
+  volume: 70
+  pages: "3337-3344"
+  doi: "10.1016/j.scib.2025.08.050"
+  note: >
+    首次使用 10 cm 长硅腔在 sub-5 K 温度实现 10⁻¹⁷ 量级频率稳定度。
+    开发 CQQM（Cool-Quiet Quench Measurement）协议诊断腔体固有性能。
+    在连续冷却下通过振动抑制达到 mod σ_y ≈ (4±1)×10⁻¹⁷（4-12 s），
+    中位线宽 9.6(3) mHz @ 1397 nm。
+    北京大学（Xibo Zhang 组），闭循环低温机。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+entities:
+  # Level 2/3 实例节点——10 cm sub-5K 硅腔
+  - id: ent.si_crystal_fp_cavity_sub5k_c25
+    name: "Sub-5K 10 cm 硅单晶 FP 腔（Chen 2025，Si1）"
+    aliases: ["Si1 cavity", "10-cm Si cavity sub-5K", "PKU sub-5K Si cavity"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      10 cm 硅单晶 FP 腔，工作于 sub-5 K（利用 Si CTE 在低温趋近零的特性，α→0 as T→0），
+      IBS 介质镀层，闭循环低温机。增长腔长路线降低热噪声分数贡献（σ_y ∝ 1/L）。
+      实现低温机连续冷却下 ≈(4±1)×10⁻¹⁷ 稳定度。
+    key_parameters:
+      cavity_length: "10 cm"
+      operating_temperature: "sub-5 K (typical 4.9 K)"
+      spacer_material: "Si single crystal"
+      mirror_coating: "IBS dielectric (SiO₂/Ta₂O₅)"
+      wavelength: "1397 nm"
+      cryostat_type: "closed-cycle cryocooler"
+      vibration_suppression: "刚性安装+低温机振动抑制（改进1-6）"
+    interface_requirements:
+      vibration: "低温机振动为当前主要限制，需主动抑制"
+      temperature: "sub-5K, 低温机平台温度表征"
+    note: >
+      Level 2 PART-OF ent.fp_cavity_system；低温 Si 腔实例。
+      与 Robinson 2019 Si4 (6cm, 4K) 和 Kessler 2012 Si (21cm, 124K) 构成参数演进序列。
+      不同机构（北大 vs JILA/PTB），独立验证长腔路线可行性。
+
+metrics:
+  - id: met.fractional_freq_instability_c25
+    name: "分数频率不稳定度（Chen 2025，10 cm Si 腔 sub-5K）"
+    unit: "无量纲"
+    description: >
+      连续冷却下振动抑制后的修正 Allan 偏差。
+    demonstrated_value:
+      value: "≈(4±1)×10⁻¹⁷ (4-12 s averaging)"
+      conditions: "连续冷却 @4.9K, 1397 nm, 振动抑制后, IBS 镀层"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "N6HILT6B", claim: "observe an average frequency instability of (4±1)×10⁻¹⁷ for averaging times of 4 to 12 s"}
+    theoretical_floor:
+      value: "~3×10⁻¹⁷"
+      basis: "Brownian thermal noise @4.9K, 10 cm Si, IBS coating"
+      gap_note: "实测值接近热噪声极限但仍略高（~1.3×）"
+    historical_landmarks:
+      best_demonstration:
+        value: "≈4×10⁻¹⁷"
+        year: 2025
+        source: {zotero_key: "N6HILT6B"}
+        note: "闭循环低温机 sub-5K Si 腔新纪录"
+
+  - id: met.laser_linewidth_c25
+    name: "激光线宽（Chen 2025，Si1 腔）"
+    unit: "Hz"
+    description: "Si1 腔锁定激光的中位线宽"
+    demonstrated_value:
+      value: "9.6(3) mHz (computed from PSD); 5.7(3) mHz (beat measurement)"
+      conditions: "1397 nm, sub-5K Si 腔, 连续冷却振动抑制后"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "N6HILT6B", claim: "median linewidth of 9.6(3) mHz... empirically determined linewidth of 5.7(3) mHz"}
+
+relations:
+  - id: rel.Che01
+    subject: ent.si_crystal_fp_cavity_sub5k_c25
+    predicate: PART-OF
+    object: ent.fp_cavity_system
+    confidence: established
+    source: {zotero_key: "N6HILT6B", claim: "10-cm-long silicon cavity"}
+    note: "跨文件引用 numata2004.yaml"
+
+  - id: rel.Che02
+    subject: ent.si_crystal_fp_cavity_sub5k_c25
+    predicate: BOUNDED-BY
+    object: pri.brownian_thermal_noise_fdt
+    confidence: established
+    source: {zotero_key: "N6HILT6B", claim: "fundamentally limited by the Brownian thermal noise"}
+    is_system_limit: true
+    dominated_by: null
+    verification_status: observed
+    temporal_role: validates
+    note: >
+      跨文件引用 numata2004.yaml; CQQM 协议显示 Si1 腔固有性能已接近热噪声极限，
+      但在连续冷却下低温机振动和 RAM 仍为当前主要技术限制（由 CONDITIONED-BY 表述）。
+      振动抑制方法（刚性安装+前馈等）作为工程手段记录于 key_parameters，
+      不单独建立原理/方法节点。
+
+  - id: rel.Che03
+    subject: ent.si_crystal_fp_cavity_sub5k_c25
+    predicate: CONDITIONED-BY
+    object: ent.vibration_environment
+    confidence: established
+    source: {zotero_key: "N6HILT6B", claim: "substantially larger frequency noise induced by the cryostat vibration"}
+    interface_metric: met.fractional_freq_instability_c25
+    coupling_formula: "Δν = κ_vibration × a_cryostat"
+    is_system_limit:
+      current: true
+      conditions: "连续冷却时低温机振动为主要技术限制"
+    note: "跨文件引用 young1999.yaml"
+
+  - id: rel.Che04
+    subject: ent.si_crystal_fp_cavity_sub5k_c25
+    predicate: CHARACTERIZED-BY
+    object: met.fractional_freq_instability_c25
+    confidence: established
+    source: {zotero_key: "N6HILT6B", claim: "average frequency instability of (4±1)×10⁻¹⁷"}

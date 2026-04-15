@@ -1,0 +1,93 @@
+# Kedar 2023 — 低温硅腔晶体镀层频率稳定度与双折射噪声
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-15
+# Schema版本：v3.1
+
+meta:
+  zotero_key: "8YK6EH22"
+  source_type: technical_paper
+  reliability: high
+  title: "Frequency stability of cryogenic silicon cavities with semiconductor crystalline coatings"
+  year: 2023
+  first_author: Kedar
+  journal: "Optica"
+  volume: 10
+  pages: "464"
+  doi: "10.1364/OPTICA.479462"
+  note: >
+    首次系统表征 AlGaAs 晶体镀层在低温硅腔（Si5 @124K, Si6 @16K/4K）上的频率噪声。
+    观测到与偏振模式反相关的"双折射噪声"，与腔内功率 ∝1/√P_c、光斑面积有标度律。
+    通过双偏振同时探测一阶消除双折射噪声。
+    残余噪声低于等效 IBS 镀层腔（Si6: 5.5×10⁻¹⁷, Si5: 3.5×10⁻¹⁷），
+    但仍高于热噪声极限——来源不明，后续研究认为不是真正的"双折射噪声"。
+    JILA（Ye组）+ PTB（Sterr/Riehle组），1542 nm。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+# 注意：根据专家意见，双折射噪声不作为独立原理节点（后续证明并非如此命名的机制），
+# 双偏振消除方法也不作为高级独立节点（属于晶体镀层腔专有问题实例）。
+# 相关信息记录在本文 meta.note 和指标条件中。
+
+metrics:
+  - id: met.fractional_freq_instability_kedar23
+    name: "分数频率不稳定度（Kedar 2023，晶体镀层双偏振）"
+    unit: "无量纲"
+    description: >
+      双偏振消除观测到的偏振反相关噪声后的残余频率不稳定度。
+      Si6 (16K): 5.5×10⁻¹⁷; Si5 (124K): 3.5×10⁻¹⁷。
+    demonstrated_value:
+      value: "5.5×10⁻¹⁷ (Si6, 16K); 3.5×10⁻¹⁷ (Si5, 124K)"
+      conditions: "双偏振锁定消除偏振反相关噪声后; 1542 nm; Si6 @16K / Si5 @124K"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "8YK6EH22", claim: "Si6 realizes a fractional frequency instability of 5.5×10⁻¹⁷... The 3.5×10⁻¹⁷ fractional instability of Si5 matches the thermal limit of Si2."}
+    theoretical_floor:
+      value: "~2×10⁻¹⁷ (Si6 热噪声极限)"
+      basis: "Brownian thermal noise with AlGaAs coating loss angle"
+      gap_note: "残余噪声 5.5×10⁻¹⁷ 约为热噪声极限 2–3× — 来源不明"
+
+  - id: met.algaas_coating_loss_angle_kedar23
+    name: "AlGaAs 晶体镀层损耗角上限（Kedar 2023）"
+    unit: "无量纲"
+    description: "从残余噪声推断的镀层损耗角上限"
+    demonstrated_value:
+      value: "φ < 4.1×10⁻⁴ (4.7K); φ < 1.2×10⁻⁴ (16.7K)"
+      conditions: "Si6 腔, AlGaAs/GaAs 晶体镀层, 低温"
+      verification_status: inferred
+      confidence: established
+      source: {zotero_key: "8YK6EH22", claim: "φ_4.7K < 4.1×10⁻⁴; φ_16.7K < 1.2×10⁻⁴"}
+
+relations:
+  - id: rel.Ked01
+    subject: ent.algaas_crystalline_mirror_c13
+    predicate: CHARACTERIZED-BY
+    object: met.fractional_freq_instability_kedar23
+    confidence: established
+    source: {zotero_key: "8YK6EH22", claim: "crystalline coatings can provide stability and sensitivity competitive with resonators employing dielectric coatings"}
+    note: "跨文件引用 cole2013.yaml; 晶体镀层在低温 Si 腔上的首次系统频率噪声表征"
+
+  - id: rel.Ked02
+    subject: ent.algaas_crystalline_mirror_c13
+    predicate: CHARACTERIZED-BY
+    object: met.algaas_coating_loss_angle_kedar23
+    confidence: established
+    source: {zotero_key: "8YK6EH22", claim: "we place constraints on the maximum value of the coating loss angle"}
+    note: "跨文件引用 cole2013.yaml"
+
+  - id: rel.Ked03
+    subject: ent.si_crystal_fp_cavity_k12
+    predicate: BOUNDED-BY
+    object: pri.brownian_thermal_noise_fdt
+    confidence: established
+    source: {zotero_key: "8YK6EH22", claim: "limited in performance by the Brownian thermal noise associated with the mechanical dissipation of the mirror coatings"}
+    is_system_limit: true
+    dominated_by: null
+    verification_status: observed
+    temporal_role: validates
+    note: "跨文件引用 numata2004.yaml、kessler2012.yaml; 残余噪声高于理论极限——额外噪声源不明"
+    note: >
+      残余噪声来源不明（无温度/功率/模式依赖），
+      所谓'双折射噪声'的微观物理来源存疑（后续研究质疑此命名）。
+      参见 pri.brownian_thermal_noise_fdt (numata2004.yaml) 的 open_questions。

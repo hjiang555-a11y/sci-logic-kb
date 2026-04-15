@@ -1,0 +1,71 @@
+# Tai 2017 — 可搬运 1555 nm 超稳激光 0.185 Hz 线宽
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-15
+# Schema版本：v3.1
+
+meta:
+  zotero_key: "AHUZI4A7"
+  source_type: technical_paper
+  reliability: medium
+  title: "Transportable 1555-nm Ultra-Stable Laser with Sub-0.185-Hz Linewidth"
+  year: 2017
+  first_author: Tai
+  journal: "Chinese Physics Letters"
+  volume: 34
+  pages: "090602"
+  doi: "10.1088/0256-307X/34/9/090602"
+  note: >
+    展示面向可搬运光子微波产生系统的两台 1555 nm 腔稳定激光。
+    10 cm ULE 竖直腔，PDH 锁频，稳定度达热噪声极限 7×10⁻¹⁶（1-10 s），
+    双激光拍频线宽 185 mHz。
+    中国国家授时中心（张首刚/姜海峰组）。
+    知识贡献较小：标准 ULE 腔技术的工程实现，代表可搬运应用维度。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+# 全部复用已有节点，不新增
+
+metrics:
+  - id: met.fractional_freq_instability_tai17
+    name: "分数频率不稳定度（Tai 2017，可搬运 ULE 腔）"
+    unit: "无量纲"
+    description: "可搬运系统的频率稳定度"
+    demonstrated_value:
+      value: "7×10⁻¹⁶ (1-10 s)"
+      conditions: "10 cm ULE 竖直腔, 1555 nm, PDH 锁频, 可搬运设计"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "AHUZI4A7", claim: "frequency instability reaches the thermal noise limit (7×10⁻¹⁶) of the 10-cm ULE glass cavity at 1–10 s"}
+
+  - id: met.laser_linewidth_tai17
+    name: "激光拍频线宽（Tai 2017）"
+    unit: "Hz"
+    description: "双激光拍频线宽"
+    demonstrated_value:
+      value: "185 mHz (两台激光拍频)"
+      conditions: "1555 nm, 两台独立 ULE 腔锁定激光"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "AHUZI4A7", claim: "beat signal of the two lasers reveals a remarkable linewidth of 185 mHz"}
+
+relations:
+  - id: rel.Tai01
+    subject: ent.fp_cavity_system
+    predicate: BOUNDED-BY
+    object: pri.brownian_thermal_noise_fdt
+    confidence: established
+    source: {zotero_key: "AHUZI4A7", claim: "fundamental limitation of laser frequency stability is the thermal fluctuation of cavity length, primarily caused by the Brownian motion"}
+    is_system_limit: true
+    dominated_by: null
+    verification_status: observed
+    temporal_role: validates
+    note: "跨文件引用 numata2004.yaml; 可搬运系统也达到了标准热噪声极限"
+
+  - id: rel.Tai02
+    subject: ent.fp_cavity_system
+    predicate: CHARACTERIZED-BY
+    object: met.fractional_freq_instability_tai17
+    confidence: established
+    source: {zotero_key: "AHUZI4A7", claim: "thermal noise limit 7×10⁻¹⁶ at 1-10 s"}

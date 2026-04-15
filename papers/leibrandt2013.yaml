@@ -1,0 +1,104 @@
+# Leibrandt 2013 — 加速度灵敏度低于 10⁻¹² g⁻¹ 的腔稳定激光
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-15
+# Schema版本：v3.1
+# ⚠ 年份注意：PDF 文件名含 leibrandt2011，实际发表 2013
+
+meta:
+  zotero_key: "H5MYBTXH"
+  source_type: technical_paper
+  reliability: high
+  title: "Cavity-stabilized laser with acceleration sensitivity below 10⁻¹² g⁻¹"
+  year: 2013
+  first_author: Leibrandt
+  journal: "Physical Review A"
+  volume: 87
+  pages: "023829"
+  doi: "10.1103/PhysRevA.87.023829"
+  note: >
+    表征腔稳定激光对惯性力（线性加速度、旋转加速度、旋转速度）和温度波动的频率灵敏度，
+    并实施实时前馈校正。被动灵敏度 2(1)×10⁻¹¹/g，
+    经全惯性力前馈后 <10⁻¹²/g（低频），提高 50×。温度前馈降低漂移 70×。
+    NIST（Bergquist/Rosenband 组），互补于 Webster 的被动设计路线。
+    ⚠ PDF 文件名为 leibrandt2011.pdf，实际发表 2013。
+    根据专家意见：前馈方法归入振动环境部分的方法/子节点。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+# 根据专家意见：meth.inertial_feedforward_correction 归入振动环境部分的方法节点
+methods:
+  - id: meth.inertial_feedforward_correction
+    name: "惯性力实时前馈频率校正"
+    status: demonstrated
+    applies_to: ent.fp_cavity_system
+    steps_summary: >
+      三轴加速度计+陀螺仪测量腔体所受惯性力 → 标定传递函数 →
+      实时前馈到激光频率（AOM） → 消除一阶+二阶惯性变形引起的频率波动。
+      带宽 0–300 Hz，分量贡献：96.8% 一阶线性加速度, 2.2% 二阶线性, 0.1% 旋转加速度, 0.9% 旋转速度。
+    advantages:
+      - "可将加速度灵敏度从被动 ~10⁻¹¹/g 提升到 <10⁻¹²/g"
+      - "同时可做温度前馈（降低漂移 70×）"
+      - "产出传递函数信息可反哺腔体设计优化"
+    disadvantages:
+      - "需要额外传感器（加速度计、陀螺仪）"
+      - "高频（>300 Hz）前馈效果有限"
+      - "依赖传递函数标定精度"
+    conditions:
+      - "需已知腔体对惯性力的传递函数"
+      - "适用于振动环境部分的主动噪声抑制"
+    source_claim: >
+      "real-time feedforward to correct for these sources of noise...
+      reduced by a factor of 50 to below 10⁻¹² g⁻¹"
+
+metrics:
+  - id: met.acceleration_sensitivity_lei13
+    name: "加速度灵敏度（Leibrandt 2013，前馈后）"
+    unit: "1/g"
+    description: "腔体对线性加速度的频率灵敏度，经前馈校正后"
+    demonstrated_value:
+      value: "<10⁻¹²/g (worst-direction, low-frequency, after feedforward); 2(1)×10⁻¹¹/g (passive)"
+      conditions: "前馈校正后, 0-50 Hz; 被动 2(1)×10⁻¹¹/g"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "H5MYBTXH", claim: "reduced by a factor of 50 to below 10⁻¹² g⁻¹ for low-frequency accelerations by real-time feedforward corrections"}
+    historical_landmarks:
+      best_demonstration:
+        value: "<10⁻¹²/g (feedforward)"
+        year: 2013
+        source: {zotero_key: "H5MYBTXH"}
+        note: "前馈方法的最佳加速度灵敏度"
+
+  - id: met.temperature_feedforward_lei13
+    name: "温度前馈漂移抑制（Leibrandt 2013）"
+    unit: "无量纲（抑制因子）"
+    description: "温度前馈校正的频率漂移抑制倍数"
+    demonstrated_value:
+      value: "70× (漂移率降低)"
+      conditions: "温度传感器在真空腔外壁, 前馈到激光频率"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "H5MYBTXH", claim: "reduced by a factor of 70 via real-time feedforward from a temperature sensor"}
+
+relations:
+  - id: rel.Lei01
+    subject: ent.fp_cavity_system
+    predicate: CONDITIONED-BY
+    object: ent.vibration_environment
+    confidence: established
+    source: {zotero_key: "H5MYBTXH", claim: "sensitive to environmental perturbations that change the length of the cavity, including vibrations"}
+    interface_metric: met.acceleration_sensitivity_lei13
+    coupling_formula: "Δν/ν = κ × a; κ_passive = 2×10⁻¹¹/g → κ_feedforward < 10⁻¹²/g"
+    is_system_limit:
+      current: false
+      conditions: "经前馈校正后退出限制序列"
+    note: "跨文件引用 young1999.yaml"
+
+  - id: rel.Lei02
+    subject: meth.inertial_feedforward_correction
+    predicate: ENABLED-BY
+    object: pri.cavity_deformation_compensation
+    confidence: established
+    source: {zotero_key: "H5MYBTXH", claim: "information about the transfer function that describes how accelerations change the length of the cavity"}
+    note: "跨文件引用 webster2007.yaml; 前馈依赖传递函数知识，与被动设计互补"
