@@ -407,7 +407,7 @@ metrics:
 relations:
   - id: rel.{X##}               # X=论文首字母，##=两位序号
     subject: {node_id}
-    predicate: {PREDICATE}       # 见第四节九种关系
+    predicate: {PREDICATE}       # 见第四节八种关系
     object: {node_id}
     confidence: established      # established | likely | contested
     source: {zotero_key: "KEY", claim: "原文支撑"}
