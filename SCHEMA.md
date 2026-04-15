@@ -1,6 +1,6 @@
 # sci-logic-kb YAML 知识提取模式文档
 
-> **版本**：v3.1（2026-04-15）  
+> **版本**：v3.2（2026-04-15）  
 > **变更摘要**：在 v3.0 基础上新增争议/开放问题维度、结构化前提条件与失效条件、首创/最优导向的时间里程碑字段，并明确文档同步与跨分支原理隔离规则。
 
 ---
@@ -253,6 +253,7 @@ historical_landmarks:
   interface_metric: met.frequency_noise_from_vibration  # 耦合指标节点 ID
   coupling_formula: "Δν = acceleration_sensitivity × ambient_acceleration"
   internal_property: "acceleration_sensitivity: ~100 kHz/(m/s²)"
+  scaling_law: "Δν/ν ∝ 1/L²  (thermal noise); κ ∝ M (vibration sensitivity)"  # 定量比例关系（v3.2新增）
   is_system_limit:
     current: false
     conditions: "Young 1999 充分隔振后退出限制序列；Webster 2007 场景下可能主导"
@@ -269,6 +270,20 @@ historical_landmarks:
   tradeoffs:
     subject_wins: ["长期稳定度 3×10⁻¹⁶", "绝对频率参考", "热噪声极限更低"]
     object_wins: ["可捷变扫频", "无需精密光学装调", "成本低", "工程化友好"]
+  # 多维权衡矩阵（v3.2新增，用于架构级技术路线比较）
+  comparison_matrix:
+    - dimension: "vibration_insensitivity"
+      subject: "low (requires active isolation)"
+      object: "high (coil design)"
+    - dimension: "ultimate_stability"
+      subject: "2.5×10⁻¹⁷ (demonstrated)"
+      object: "10⁻¹⁷? (theoretical)"
+    - dimension: "portability"
+      subject: "low"
+      object: "high"
+    - dimension: "engineering_complexity"
+      subject: "high (vacuum, cryogenics)"
+      object: "medium (fiber spool, thermal control)"
 ```
 
 ---
@@ -279,7 +294,7 @@ historical_landmarks:
 # {Author} {Year} — {简述}
 # 提取者：Claude / GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：YYYY-MM-DD
-# Schema版本：v3.1
+# Schema版本：v3.2
 
 meta:
   zotero_key: "{8位Zotero KEY}"
@@ -305,6 +320,16 @@ entities:
     interface_requirements:       # 需要外部条件满足什么（接口规格）
       vibration: "残余加速度 < X nm/s²"
       temperature: "稳定性 < X mK/day"
+    # 代价/可行性评估（v3.2新增）
+    feasibility_assessment:
+      engineering_complexity: "high | medium | low"
+      cost_estimate: "$$$ | $$ | $ （相对评估）"
+      space_requirements: "描述空间需求"
+      vibration_management_difficulty: "描述振动管理难度"
+    practical_limitations:        # 实际工程限制（如支撑力均衡、温度梯度等）
+      - description: "限制描述"
+        source_claim: "原文依据（可选）"
+        impact: "对系统性能或可扩展性的影响"
     note: "补充说明（可选）"
 
 principles:
@@ -330,6 +355,20 @@ principles:
       - claim: "存在争议的论断（可选）"
         status: unresolved
         disputed_by: {zotero_key: "KEY"}
+    # 改善潜力与路线图预测（v3.2新增）
+    improvement_potential:
+      parameter: "{关键参数（如 φ, T, L, w₀）}"
+      current_best: "当前最佳值（含来源）"
+      theoretical_limit: "理论极限值（如已知）"
+      bottleneck: "限制继续改善的瓶颈（如材料、工艺、测量）"
+    roadmap_estimates:
+      - timeline: "3–5 years"
+        expected_value: "预期可达到的值"
+        conditions: "所需条件（如工艺改进、新材料）"
+      - timeline: "5–10 years"
+        expected_value: "远期预期值"
+        conditions: "所需突破（如新物理机制）"
+
     # 条件变量分析（仅对 BOUNDED-BY 引用的限制性原理填写）
     # 边界值 = 公式(条件变量)。每个变量说明当前水平和已实现的最佳水平。
     # 有清晰解析关系的写 analytical_relation；没有的只记录 best_demonstrated。
