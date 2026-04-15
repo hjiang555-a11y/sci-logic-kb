@@ -22,20 +22,20 @@
 - [x] `EGAZKLXR` | Young 1999 | Visible lasers with subhertz linewidths → `young1999.yaml`
 - [x] `S5PX7GHC` | Shaddock 1999 | Frequency locking a laser to an optical cavity by use of spatial mode interference → `shaddock1999.yaml`
 - [x] `VDXBPUQB` | Numata 2004 | Thermal-Noise Limit in the Frequency Stabilization of Lasers with Rigid Cavities → `numata2004.yaml`
-- [ ] `VU2V2PTX` | Webster 2003? | Thermal-noise-limited optical cavity
+- [x] `VU2V2PTX` | Webster 2008 | Thermal-noise-limited optical cavity → `webster2008.yaml`
 - [x] `UCNS7EM7` | Webster 2007 | Vibration insensitive optical cavity → `webster2007.yaml`
-- [x] `A96XGR82` | Webster 2011 | Force-insensitive optical cavity
-- [ ] `MW3RDB68` | Legero 2010 | Tuning the thermal expansion properties of optical reference cavities
-- [ ] `GLXHEIPV` | Millo 200x | Ultrastable lasers based on vibration insensitive cavities
+- [x] `A96XGR82` | Webster 2011 | Force-insensitive optical cavity → `webster2011.yaml`
+- [x] `MW3RDB68` | Legero 2010 | Tuning the thermal expansion properties of optical reference cavities → `legero2010.yaml`
+- [x] `GLXHEIPV` | Millo 2009 | Ultrastable lasers based on vibration insensitive cavities → `millo2009.yaml`
 - [x] `YKPFKDD9` | Kessler 2012 | A sub-40-mHz-linewidth laser based on a silicon single-crystal optical cavity → `kessler2012.yaml`
 - [x] `CWIHQRJD` | Cole 2013 | Tenfold reduction of Brownian noise in high-reflectivity optical coatings → `cole2013.yaml`
 - [x] `TVY7T59A` | Matei 2017 | 1.5 μm Lasers with Sub-10 mHz Linewidth → `matei2017.yaml`
 - [ ] `ZDF94KK5` | Matei 2017 (v2?) | 1.5 μm Lasers with Sub-10 mHz Linewidth (same paper, check)
 - [x] `UV6S5FFL` | Häfner 2015 | 8×10⁻¹⁷ fractional laser frequency instability with a long room-temp. cavity → `hafner2015.yaml`
 - [ ] `PZGR9S7S` | Wu 201x | 0.26-Hz-linewidth ultrastable lasers at 1557 nm
-- [x] `JIZCUZLY` | Robinson 2019 | Crystalline optical cavity at 4 K with thermal-noise-limited instability
-- [ ] `8YK6EH22` | Kedar 202x | Frequency stability of cryogenic silicon cavities with semiconductor crystalline coatings
-- [ ] `N6HILT6B` | Chen 2025 | A laser with instability reaching 4×10⁻¹⁷ based on a 10-cm-long silicon cavity
+- [x] `JIZCUZLY` | Robinson 2019 | Crystalline optical cavity at 4 K with thermal-noise-limited instability → `robinson2019.yaml`
+- [x] `8YK6EH22` | Kedar 2023 | Frequency stability of cryogenic silicon cavities with semiconductor crystalline coatings → `kedar2023.yaml`
+- [x] `N6HILT6B` | Chen 2025 | A laser with instability reaching 4×10⁻¹⁷ based on a 10-cm-long silicon cavity → `chen2025.yaml`
 - [ ] `U2LXSU62` | Parke 2025 | Three hundred microsecond optical cavity storage time and 10⁻⁷ acceleration insensitivity
 - [x] `4QVEXY63` | Lee 2026 | Frequency stability of 2.5×10⁻¹⁷ from a Si cavity with AlGaAs crystalline mirrors → `lee2026.yaml`
 
@@ -46,13 +46,13 @@
 - [ ] `H3HYK5D3` | Sanjuan 201x | Long-term stable optical cavity for special relativity tests in space
 - [ ] `X7XXKXDZ` | Hafner 201x | Transportable interrogation laser system with an instability of m×10⁻¹⁶
 - [ ] `NU79W75P` | Herbers 202x | Transportable clock laser system with an instability of 1.6×10⁻¹⁶
-- [ ] `AHUZI4A7` | Tai 2017 | Transportable 1555-nm Ultra-Stable Laser with Sub-0.185-Hz Linewidth
+- [x] `AHUZI4A7` | Tai 2017 | Transportable 1555-nm Ultra-Stable Laser with Sub-0.185-Hz Linewidth → `tai2017.yaml`
 - [ ] `WTUHUAQ7` | Qun-Feng 201x | A compact, robust, and transportable ultra-stable laser
 - [ ] `U4Z95559` | Tao 201x | A vibration-insensitive-cavity design holds impact of higher than 100g
 
 ### 镀层相关
 
-- [ ] `4GUXEM2C` | Cole 201x | High-performance near- and mid-infrared crystalline coatings
+- [x] `4GUXEM2C` | Cole 2016 | High-performance near- and mid-infrared crystalline coatings → `cole2016.yaml`
 - [ ] `L6KKLLSR` | Steinlechner 201x | Development of mirror coatings for gravitational-wave detectors
 - [ ] `LCMWCIWB` | Marchio 202x | Optical performance of large-area crystalline coatings
 
@@ -73,7 +73,7 @@
 - [ ] `MIAVJSIK` | Didier 201x | 946-nm Nd:YAG digital-locked laser at 1.1×10⁻¹⁶
 - [ ] `Z37PT8RC` | Chen 202x | Laser frequency instability of 6×10⁻¹⁶ using 10-cm-long cavities
 - [ ] `XWBUNX3P` | Yan 2018 | Multi-cavity-stabilized ultrastable laser
-- [ ] `H5MYBTXH` | Leibrandt 201x | Cavity-stabilized laser with acceleration sensitivity below 10⁻¹²
+- [x] `H5MYBTXH` | Leibrandt 2013 | Cavity-stabilized laser with acceleration sensitivity below 10⁻¹² → `leibrandt2013.yaml`
 - [ ] `WK9QLCGF` | Leibrandt 201x | Absolute and Relative Stability of an Optical Frequency Reference
 - [ ] `N9AGEQ8S` | Zhang 201x | Ultrastable Silicon Cavity in a Continuously Operating Closed-Cycle
 - [ ] `SBPRDKPV` | Jeon 202x | 10⁻¹⁵-level laser stabilization down to fiber thermal noise limit
@@ -116,8 +116,8 @@
 - [ ] `RENEQVU9` | Wei 202x | Support-Free Thermally Insensitive Hollow Core Fiber Coil
 - [ ] `QLXRP462` | Shi 202x | Thinly coated hollow core fiber for improved thermal phase-stability
 - [ ] `UKBFZLXG` | Shi 202x | Temperature Insensitive Delay-Line Fiber Interferometer
-- [ ] `DD6SE43C` | Michaud-Belleau 202x | Backscattering in antiresonant hollow-core fibers: over 40 dB lower
-- [ ] `4GT5VD54` | Michaud-Belleau 202x | Fundamental thermal noise in antiresonant hollow-core fibers
+- [x] `DD6SE43C` | Michaud-Belleau 2021 | Backscattering in antiresonant hollow-core fibers: over 40 dB lower → `michaudbelleau2021.yaml`
+- [x] `4GT5VD54` | Michaud-Belleau 2022 | Fundamental thermal noise in antiresonant hollow-core fibers → `michaudbelleau2022.yaml`
 - [ ] `QGLVTMB7` | Ding 202x | Hollow-core fiber made of ultralow expansion glass
 - [ ] `GIUQZ2EE` | Zuba 202x | Limits of Coupling Efficiency Into Hollow-Core Antiresonant Fibers
 - [ ] `SBPRDKPV` | Jeon 202x | 10⁻¹⁵-level laser stabilization down to fiber thermal noise limit
