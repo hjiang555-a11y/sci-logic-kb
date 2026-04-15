@@ -51,7 +51,7 @@ entities:
 
   - id: ent.laser_source
     name: "激光源（外围条件）"
-    aliases: ["laser source", "free-running laser", "激光器", "dye_laser_563nm"]
+    aliases: ["563 nm dye laser", "可见染料激光"]
     hierarchy_level: ext
     status: demonstrated
     function: >
