@@ -49,15 +49,25 @@ entities:
       dominant_frequencies: "1–100 Hz（建筑机械振动主频段）"
     note: "外围条件节点；通过 CONDITIONED-BY 接口连接到 ent.fp_cavity_system"
 
-  - id: ent.dye_laser_563nm
-    name: "563 nm 染料激光器"
+  - id: ent.laser_source
+    name: "激光源（外围条件）"
     aliases: ["563 nm dye laser", "可见染料激光"]
-    hierarchy_level: 1
+    hierarchy_level: ext
     status: demonstrated
-    function: "产生 563 nm 可见光，用于频率稳定实验及后续 Hg⁺ 光频标"
+    function: >
+      超稳激光系统的光源输入。自由运行激光（线宽 ~MHz 量级）经预稳和
+      锁频后压窄至亚赫兹。不同波长/类型的激光器作为该通用外围条件的实例。
     key_parameters:
-      prestabilization: "先锁定到低精细度腔（finesse ≈ 800），线宽压窄至约 1 kHz"
+      free_running_linewidth: "~1–10 MHz（典型自由运行线宽）"
+      tuning_range: "依激光器类型而定（数十 GHz 到 THz）"
+      implementations:
+        young1999_dye: "563 nm 染料激光器（Young 1999，预稳至 ~1 kHz）"
+        kessler2012_fiber: "1542 nm Er 光纤激光器（Kessler 2012/Matei 2017）"
+        hafner2015_diode: "698 nm 激光二极管（Häfner 2015，Sr 钟跃迁）"
     source: {zotero_key: "EGAZKLXR", claim: "dye laser at 563 nm as the optical source that is locked to this reference cavity"}
+    note: >
+      原 ent.dye_laser_563nm（Level 1），重构后泛化为通用外围条件节点 ent.laser_source（ext）。
+      激光器不属于"频率参考部件"，是系统的输入源。
 
   - id: ent.two_stage_pdh_lock_young99
     name: "两级 PDH 锁频系统（Young 1999）"
@@ -177,20 +187,28 @@ metrics:
       source: {zotero_key: "EGAZKLXR", claim: "previous results limited by vibrational noise; improvement from better isolation"}
 
 methods:
-  - id: meth.two_stage_pdh_visible
-    name: "两级级联 PDH 锁频（可见光）"
+  - id: meth.multi_stage_locking
+    name: "多级级联稳频策略"
+    full_name: "Multi-stage cascade frequency stabilization"
     status: demonstrated
     applies_to: ent.fp_cavity_system
+    category: "稳频策略（高级，可叠加于核心误差探测方法之上）"
     steps_summary: >
-      染料激光预稳到低精细度腔（finesse≈800，线宽~1 kHz）→
-      AOM 偏频锁定到 ULE 高精细度腔 →
-      光纤传输（含 Doppler 补偿）→
-      最终实现 0.6 Hz 线宽。
-    note: "基于 meth.pdh_locking（定义于 drever1983.yaml）的两级扩展实现"
+      激光器先锁定到低精细度预稳腔（线宽 ~kHz）→
+      再锁定到高精细度参考腔（线宽 ~亚赫兹）→
+      可选第三级：腔间传递或原子参考。
+    implementations:
+      young1999_two_stage_pdh: >
+        Young 1999：染料激光预稳到 finesse≈800 腔（2 MHz 带宽，~1 kHz 线宽），
+        AOM 偏频锁定到 ULE 高精细度腔（90 kHz 带宽），最终 0.6 Hz 线宽。
+    note: >
+      原 meth.two_stage_pdh_visible 泛化为通用多级稳频策略。
+      不纠缠在 PDH 内部——是独立的"稳频策略"分支。
+      ent.two_stage_pdh_lock_young99 作为其 Young 1999 的具体硬件实现。
     key_additions:
-      - "预稳级（stage 1）：2 MHz 带宽，隔离激光器自身噪声"
+      - "预稳级（stage 1）隔离激光器自身宽带噪声"
       - "AOM 作为高频执行器（90 kHz 带宽）"
-      - "光纤传输光到隔振台（含 Doppler 补偿）"
+      - "光纤传输含 Doppler 补偿"
     source_claim: >
       "first prestabilize it to a cavity with a finesse of ≈800 using a
        Pound-Drever-Hall frequency modulation (FM) lock"
@@ -201,7 +219,7 @@ methods:
 
 relations:
   - id: rel.Y01
-    subject: ent.dye_laser_563nm
+    subject: ent.laser_source
     predicate: CHARACTERIZED-BY
     object: met.laser_linewidth_563nm
     confidence: established
@@ -209,7 +227,7 @@ relations:
     conditions: "锁定到 ULE 高精细度腔后；两腔拍频测量"
 
   - id: rel.Y02
-    subject: ent.dye_laser_563nm
+    subject: ent.laser_source
     predicate: CHARACTERIZED-BY
     object: met.fractional_freq_instability_y99
     confidence: established
@@ -219,13 +237,13 @@ relations:
   - id: rel.Y03
     subject: ent.two_stage_pdh_lock_young99
     predicate: OPERATIONALIZED-AS
-    object: meth.two_stage_pdh_visible
+    object: meth.multi_stage_locking
     confidence: established
     source: {zotero_key: "EGAZKLXR", claim: "first prestabilize to low-finesse cavity ... then PDH lock to high-finesse ULE cavity"}
     conditions: null
 
   - id: rel.Y04
-    subject: meth.two_stage_pdh_visible
+    subject: meth.multi_stage_locking
     predicate: ENABLED-BY
     object: pri.pdh_heterodyne_detection
     confidence: established
@@ -298,12 +316,12 @@ relations:
     verification_status: observed
     temporal_role: validates
     breakthrough_paths:
-      - direction: pri.low_loss_substrate_improvement
-        expected_gain: "用低损耗镜底物替代 ULE，可继续压低该 reference implementation 的热噪声底。"
+      - direction: pri.brownian_thermal_noise_fdt
+        expected_gain: "优化 condition_variable φ：用低损耗镜底物替代 ULE，可继续压低该 reference implementation 的热噪声底。"
         status: demonstrated
         source: {zotero_key: "VDXBPUQB", claim: "using fused-silica mirrors lowers the thermal noise floor"}
-      - direction: pri.beam_radius_scaling
-        expected_gain: "增大镜面光斑半径可在室温架构下继续降低热噪声。"
+      - direction: pri.brownian_thermal_noise_fdt
+        expected_gain: "优化 condition_variable w₀：增大镜面光斑半径可在室温架构下继续降低热噪声。"
         status: demonstrated
         source: {zotero_key: "VDXBPUQB", claim: "thermal noise can be reduced by increasing the beam spot size on the mirrors"}
       - direction: pri.cryogenic_mechanical_q_enhancement
@@ -355,10 +373,18 @@ relations:
       ent.fiber_interferometer 定义于 jiang2010.yaml。
 
   - id: rel.Y13
-    subject: ent.two_stage_pdh_lock_young99
-    predicate: PART-OF
-    object: ent.fp_cavity_system
+    subject: ent.fp_cavity_system
+    predicate: CONDITIONED-BY
+    object: ent.laser_source
+    interface_metric: met.laser_linewidth_563nm
+    coupling_formula: "自由运行线宽 ~MHz → 预稳后 ~kHz → PDH 锁定后 ~0.6 Hz"
+    internal_property: "激光源初始噪声水平决定预稳级的需求；激光器本身不属于频率参考"
     confidence: established
     source: {zotero_key: "EGAZKLXR", claim: "first prestabilize to low-finesse cavity, then lock to high-finesse ULE cavity using PDH"}
-    conditions: "PDH 锁频配置下；ent.two_stage_pdh_lock_young99 是 FP 腔系统的电子+控制子单元"
-    note: "ent.fp_cavity_system 定义于 numata2004.yaml；Level 2 控制子单元"
+    is_system_limit:
+      current: false
+      conditions: "预稳充分后，激光源自身噪声不再主导"
+    note: >
+      原 rel.Y13 为 ent.two_stage_pdh_lock_young99 PART-OF ent.fp_cavity_system。
+      重构后：two_stage_pdh 不再挂在 FP 腔下（是"稳频策略"而非腔子单元），
+      ent.laser_source 作为外围条件通过 CONDITIONED-BY 连接到 FP 腔系统。

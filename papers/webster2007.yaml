@@ -183,7 +183,7 @@ relations:
         status: demonstrated
         source: {zotero_key: "UV6S5FFL", claim: "cavity length may be increased while maintaining vibration insensitivity; thermal fluctuations reduced"}
         note: "pri.long_cavity_thermal_noise_reduction 定义于 hafner2015.yaml"
-      - direction: ent.algaas_crystalline_mirror_c13
+      - direction: pri.crystalline_coating_low_brownian_noise
         expected_gain: "AlGaAs 晶体镀层（φ ~ 2.5×10⁻⁵）→ 镀层热噪声降低 10×（Cole 2013）"
         status: demonstrated
         source: {zotero_key: "CWIHQRJD", claim: "tenfold reduction in mechanical damping when compared with the best dielectric multilayers"}

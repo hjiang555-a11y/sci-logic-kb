@@ -24,16 +24,29 @@ meta:
 # ═══════════════════════════════════════════════
 
 entities:
-  - id: ent.rf_phase_modulator
-    name: "射频相位调制器"
-    aliases: ["ADP crystal modulator", "EOM", "电光调制器"]
+  - id: ent.eom
+    name: "电光调制器（EOM）"
+    aliases: ["EOM", "ADP crystal modulator", "electro-optic modulator", "rf_phase_modulator", "射频相位调制器", "waveguide EOM"]
     hierarchy_level: 2
     status: demonstrated
-    function: "产生偏移 ±fm 的射频边带，用于 PDH 方法中的外差探测"
+    function: >
+      产生偏移 ±fm 的射频边带，用于 PDH 方法中的外差探测。
+      自身产生的残余幅度调制（RAM）是 PDH 系统的噪声源之一。
     key_parameters:
-      fm_example: "15–24 MHz（论文中实验值）"
+      fm_example: "15–24 MHz（Drever 1983 实验值）"
       modulation_depth_example: "0.8 rad"
-    note: "PDH 系统的关键硬件组件，与 ent.fp_cavity_system（定义于 numata2004.yaml）共同构成 PDH 锁频硬件"
+      implementations:
+        bulk_crystal: "体晶体 EOM（ADP/LiNbO₃），Vπ > 100 V，通用方案"
+        waveguide: "波导 EOM（Ti:LiNbO₃），Vπ ~ 4 V，保偏光纤接口，低 RAM 特化（Zhang 2014）"
+    ram_properties:
+      ram_source: "EOM 晶体双折射 + 压电致弹光效应"
+      ram_level_typical: "~60 ppm（未抑制）"
+      ram_level_with_servo: "~1 ppm（Zhang 2014 双通道主动消除后）"
+    note: >
+      合并原 ent.rf_phase_modulator（Drever 1983，通用概念）和
+      ent.waveguide_eom_z14（Zhang 2014，低 RAM 波导实现）。
+      两者功能相同（PDH 边带调制），区别仅在 RAM 性能。
+      ent.fp_cavity_system 定义于 numata2004.yaml。
 
 principles:
   - id: pri.pdh_heterodyne_detection
@@ -87,21 +100,14 @@ principles:
     source_claim: >
       "fundamental performance limit of any optical frequency control system
         is set by the photoelectron shot noise"
-
-  - id: pri.shot_noise_power_efficiency_scaling
-    name: "提高光功率与探测效率可压低散粒噪声极限"
-    tier: engineering
-    verification_status: calculated
-    statement: >
-      在散粒噪声受限条件下，提高注入光功率 Po、腔透射效率 T
-      和探测量子效率 η，可按平方根规律压低等效频率噪声底。
-      这是对散粒噪声极限的工程逼近路径，而非改变其存在性的物理豁免。
-    domain: "激光频率稳定"
-    formula: "δν_shot ∝ (Po · T · η)^(-1/2)"
-    key_insight: "散粒噪声极限无法取消，但可通过更高光子统计和探测效率继续下压。"
-    conditions: "光功率提高不会引入更强技术噪声或热效应时"
-    source_claim: >
-      "the shot-noise-limited performance improves with increasing detected optical power and quantum efficiency"
+    engineering_optimization:
+      description: >
+        在散粒噪声受限条件下，提高注入光功率 Po、腔透射效率 T
+        和探测量子效率 η，可按平方根规律压低等效频率噪声底。
+        这是对散粒噪声极限的工程逼近路径，而非改变其存在性的物理豁免。
+      scaling: "δν_shot ∝ (Po · T · η)^(-1/2)"
+      constraints: "光功率提高不会引入更强技术噪声或热效应时"
+      note: "原独立节点 pri.shot_noise_power_efficiency_scaling 已并入此字段"
 
 metrics:
   - id: met.laser_linewidth
@@ -140,7 +146,7 @@ methods:
       伺服反馈校正激光频率（PZT / EOM / AOM）
     required_hardware:
       - ent.fp_cavity_system    # 提供光学频率参考（定义于 numata2004.yaml）
-      - ent.rf_phase_modulator  # 产生探测边带
+      - ent.eom                # 产生探测边带（合并原 rf_phase_modulator + waveguide_eom）
     advantages:
       - "锁定点在腔谐振中心（非 fringe side），长期稳定"
       - "伺服带宽不受腔响应时间限制"
@@ -196,8 +202,8 @@ relations:
     verification_status: calculated
     temporal_role: proposes
     breakthrough_paths:
-      - direction: pri.shot_noise_power_efficiency_scaling
-        expected_gain: "在同一 PDH 架构下提高注入功率 Po、透射效率 T 和量子效率 η，可按 δν_shot ∝ (Po·T·η)^(-1/2) 继续压低散粒噪声极限。"
+      - direction: pri.shot_noise_frequency_limit
+        expected_gain: "优化 engineering_optimization：提高注入功率 Po、透射效率 T 和量子效率 η，可按 δν_shot ∝ (Po·T·η)^(-1/2) 继续压低散粒噪声极限。"
         status: demonstrated
         source: {zotero_key: "694DPR5F", claim: "fundamental performance limit ... set by the photoelectron shot noise"}
     note: "被限制的是 PDH 锁频方法（系统），不是指标本身；met.laser_linewidth 通过 OPERATIONALIZED-AS 关联"
@@ -208,24 +214,19 @@ relations:
     object: met.freq_spectral_density
     confidence: established
     source: {zotero_key: "694DPR5F", claim: "frequency spectral density of better than 0.3 Hz/√Hz at 1 kHz"}
-    conditions: "氩离子激光器 PDH 锁定到三角形环形腔（10 m 臂，finesse ≈ 100）后的残余频率噪声"
+    conditions: "氩离子激光器 PDH 锁定到三角形环形腔（10 m 臂长，finesse ≈ 100）后的残余频率噪声"
     note: >
       此指标同时表征腔的稳定性和整个锁频系统的性能；
       ent.fp_cavity_system 定义于 numata2004.yaml（Drever 1983 中使用三角形环形腔实现）。
 
   - id: rel.D06
-    subject: ent.rf_phase_modulator
+    subject: ent.eom
     predicate: PART-OF
     object: ent.fp_cavity_system
     confidence: established
     source: {zotero_key: "694DPR5F", claim: "rf phase modulator is required hardware for PDH frequency lock of an optical resonator"}
     conditions: null
-    note: "PDH 误差探测配套硬件；ent.fp_cavity_system 定义于 numata2004.yaml"
+    note: "PDH 误差探测配套硬件；ent.fp_cavity_system 定义于 numata2004.yaml；原 ent.rf_phase_modulator 已合并为 ent.eom"
 
-  - id: rel.D07
-    subject: pri.shot_noise_power_efficiency_scaling
-    predicate: DERIVED-FROM
-    object: pri.shot_noise_frequency_limit
-    confidence: established
-    source: {zotero_key: "694DPR5F", claim: "shot-noise-limited performance depends on optical power and detector efficiency"}
-    conditions: "用于讨论散粒噪声极限的工程逼近路径时"
+  # rel.D07 已废弃（原 pri.shot_noise_power_efficiency_scaling DERIVED-FROM pri.shot_noise_frequency_limit）
+  # 工程推理已合并到 pri.shot_noise_frequency_limit 的 engineering_optimization 字段中

@@ -135,7 +135,7 @@ relations:
     verification_status: observed
     temporal_role: validates
     breakthrough_paths:
-      - direction: ent.algaas_crystalline_mirror_c13
+      - direction: pri.crystalline_coating_low_brownian_noise
         expected_gain: "AlGaAs 晶体镀层（φ ~ 2.5×10⁻⁵）→ 镀层热噪声降低 10×；理论下限约 4×10⁻¹⁸"
         status: demonstrated
         source: {zotero_key: "CWIHQRJD", claim: "tenfold reduction in mechanical damping when compared with the best dielectric multilayers"}
@@ -166,23 +166,6 @@ relations:
       met.laser_linewidth_m17 通过 rel.M02 (CHARACTERIZED-BY) 刻画这一受限状态。
       ent.si_crystal_fp_cavity_k12 定义于 kessler2012.yaml。
 
-  - id: rel.M05
-    subject: ent.si_crystal_fp_cavity_k12
-    predicate: COMPETES-WITH
-    object: ent.fp_cavity_system
-    context: "超稳激光频率参考：Matei 2017 Si 腔性能水平 vs 最优室温 ULE 腔（Häfner 2015）"
-    tradeoffs:
-      subject_wins:
-        - "mod σ_y = 4×10⁻¹⁷（Matei 2017），约为最优室温 ULE 腔（~8×10⁻¹⁷，Häfner 2015）的 2× 更稳"
-        - "激光线宽 5–10 mHz，相干时间 11–55 s（可用于 Fourier 极限光钟询问）"
-        - "理论下限更低（Si Q > 10⁷ vs ULE Q ~ 10³–10⁴）"
-      object_wins:
-        - "室温操作，无低温恒温器（简单、稳定、维护成本低）"
-        - "48 cm 室温 ULE 腔（Häfner 2015）稳定度 ~8×10⁻¹⁷ 已足够多数应用"
-        - "可直接工作于多种原子钟跃迁波长（Sr: 698 nm，Yb: 759 nm）"
-    confidence: established
-    source: {zotero_key: "TVY7T59A", claim: "entering the regime where the frequency stability of the interrogation laser is on par with the quantum projection noise limit of today's most stable optical clocks"}
-    note: >
-      ent.si_crystal_fp_cavity_k12 定义于 kessler2012.yaml；
-      ent.fp_cavity_system 定义于 numata2004.yaml。
-      此 COMPETES-WITH 补充了 kessler2012 rel.K01，基于 Matei 2017 更新的性能数据。
+  # rel.M05 已废弃（原 COMPETES-WITH ent.fp_cavity_system）——
+  # 重构后 ent.si_crystal_fp_cavity_k12 为 Level 2 实例（PART-OF ent.fp_cavity_system），
+  # 同级实例不再用 COMPETES-WITH。性能对比保留在指标的 comparison 字段中。

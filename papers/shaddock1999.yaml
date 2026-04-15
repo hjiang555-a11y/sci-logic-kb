@@ -25,31 +25,17 @@ meta:
 # ═══════════════════════════════════════════════
 
 entities:
-  - id: ent.split_photodetector
-    name: "分割光电探测器"
-    aliases: ["split detector", "quadrant detector", "vertically split photodetector"]
-    hierarchy_level: 2
-    status: demonstrated
-    function: >
-      探测 TEM00 与 TEM10 模式叠加后的横向功率分布。
-      对半差分信号 = 频率误差信号。
-      替代 PDH 中的高频光电探测器 + 混频器。
-    note: "Tilt Locking 的核心器件，极大简化了电子学"
-
-  - id: ent.tilting_mirror
-    name: "倾斜反射镜（Tilt 镜）"
-    aliases: ["tilt mirror", "input steering mirror with tilt"]
-    hierarchy_level: 2
-    status: demonstrated
-    function: "对入射光束引入精确角度倾斜，激励腔的 TEM10 高阶横模"
-    key_parameters:
-      tilt_angle_example: "约 8°（Chabbra 2021 实验值）"
+  # ent.split_photodetector 和 ent.tilting_mirror 已合并为 meth.tilt_locking 的 required_hardware 描述。
+  # 这些探测器件没有独立的"设计选择空间"，其全部信息都服务于 Tilt Locking 方法。
 
 principles:
   - id: pri.off_resonance_reference_light
-    name: "非谐振参考光原理（PDH 与 Tilt Locking 共有）"
-    tier: meta
+    name: "非谐振参考光原理（FP 腔误差探测共性原理）"
+    tier: domain
     verification_status: observed
+    note: >
+      v3.0 从 meta 降为 domain。虽然 PDH 和 Tilt Locking 都使用非谐振参考光，
+      但该概念本质上依赖 FP 腔模式结构，不具有跨领域元原理的通用性。
     statement: >
       任何激光-腔锁频方案的核心：需要一束与谐振载波同频率来源、
       但本身不谐振（直接从腔反射）的"参考光"，
@@ -113,8 +99,10 @@ methods:
       伺服反馈校正激光频率
     required_hardware:
       - ent.fp_cavity_system     # 提供光学频率参考（定义于 numata2004.yaml）
-      - ent.tilting_mirror       # 引入角度倾斜激励 TEM10
-      - ent.split_photodetector  # 空间差分探测（替代 PDH 的 RF 探测+解调）
+    tilt_locking_hardware:
+      tilting_mirror: "倾斜反射镜——对入射光束引入精确角度倾斜（~8°），激励腔的 TEM10 高阶横模"
+      split_photodetector: "分割光电探测器——探测 TEM00 与 TEM10 叠加的横向功率分布，差分信号=频率误差信号"
+      note: "原 ent.split_photodetector 和 ent.tilting_mirror 已并入此字段，作为方法专属硬件描述"
     advantages:
       - "无需射频信号源、EOM/AOM、高频探测器、混频器——硬件大幅简化"
       - "无射频电子学噪声"
@@ -207,23 +195,8 @@ relations:
     source: {zotero_key: "S5PX7GHC", claim: "TEM10 non-resonant due to Gouy phase ... serves as reference light for frequency discrimination"}
     conditions: "应用于空间横模干涉锁频场景"
 
-  - id: rel.S09
-    subject: ent.split_photodetector
-    predicate: PART-OF
-    object: ent.fp_cavity_system
-    confidence: established
-    source: {zotero_key: "S5PX7GHC", claim: "the reflected field... detected by a vertically split photodetector... provides an error signal"}
-    conditions: "仅在 Tilt Locking 配置下；split detector 是 Tilt Locking 系统的核心探测元件"
-    note: "ent.fp_cavity_system 定义于 numata2004.yaml；split detector 作为 FP 腔锁频系统的探测部件"
-
-  - id: rel.S10
-    subject: ent.tilting_mirror
-    predicate: PART-OF
-    object: ent.fp_cavity_system
-    confidence: established
-    source: {zotero_key: "S5PX7GHC", claim: "the input beam is incident on the resonator at a small angle, controlled by a scanning mirror or PZT-mounted mirror"}
-    conditions: "仅在 Tilt Locking 配置下；tilting mirror 作为 Tilt Locking 的执行器（替代 EOM）"
-    note: "ent.fp_cavity_system 定义于 numata2004.yaml"
+  # rel.S09 / rel.S10 已废弃：ent.split_photodetector 和 ent.tilting_mirror
+  # 不再作为独立实体节点，其信息已合并到 meth.tilt_locking 的 tilt_locking_hardware 字段中。
 
   - id: rel.S08
     subject: meth.tilt_locking

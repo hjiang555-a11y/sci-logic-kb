@@ -33,7 +33,7 @@ entities:
   - id: ent.si_crystal_fp_cavity_4k_r19
     name: "4 K 硅单晶 FP 参考腔（Robinson 2019，Si4）"
     aliases: ["Si4", "4K silicon cavity", "4 K cryogenic silicon cavity", "Si4 cavity"]
-    hierarchy_level: 1
+    hierarchy_level: 2
     status: demonstrated
     function: >
       以硅单晶为间隔物（6 cm），工作于 4 K（CTE 渐近零，α → 0 as T → 0，
@@ -62,12 +62,10 @@ entities:
       vibration: "脉冲管制冷机引入低频振动（1 Hz 及谐波），精细调节腔与制冷机相对位置"
       optical_power: "传输功率需稳定至 pW 量级（AOM 功率稳定反馈），以消除强度耦合和漂移"
     note: >
-      Level 1；与 ent.si_crystal_fp_cavity_k12（124 K，kessler2012.yaml）和
-      ent.si_crystal_17k_fp_cavity_l26（17 K，lee2026.yaml）在低温 Si 腔路线中
-      构成 4K/17K/124K 三种操作温度方案，可 COMPETES-WITH。
-      4 K 处 Si CTE 渐近零（α → 0 as T → 0，热力学第三定律），不同于 124 K 的严格 CTE 零点；
-      对温度涨落的敏感度在 4 K 处也接近极小，但需注意：CTE 对温度的导数在 4 K 远小于 124 K，
-      因此温控要求可能更宽松（待专家确认）。
+      Level 2 PART-OF ent.fp_cavity_system；4 K Si 腔实例（参数变体）。
+      与 ent.si_crystal_fp_cavity_k12（124 K，kessler2012.yaml）和
+      ent.si_crystal_17k_fp_cavity_l26（17 K，lee2026.yaml）构成
+      4K/17K/124K 三种操作温度方案的参数演进序列。
 
 principles:
   - id: pri.silicon_cte_asymptotic_zero_4k
@@ -215,23 +213,16 @@ metrics:
 relations:
   - id: rel.R01
     subject: ent.si_crystal_fp_cavity_4k_r19
-    predicate: COMPETES-WITH
-    object: ent.si_crystal_fp_cavity_k12
-    context: "低温 Si 腔操作温度选择：4 K vs 124 K（JILA Si4 vs PTB/JILA Si3）"
-    tradeoffs:
-      subject_wins:
-        - "4 K 处 α(T) → 0（热力学第三定律），对温度波动一阶敏感度天然极低，理论上更鲁棒"
-        - "CTE 在 4 K 量级更小，无需精确定位到窄 mK 宽度的 CTE 零点温度"
-        - "更低温度对 Si 机械 Q 进一步有利（Q 随 T 降低而提升）"
-        - "漂移率在低功率时极低（-3×10⁻¹⁹/s），与 124 K 最优结果相当"
-      object_wins:
-        - "124 K Si 腔（Matei 2017）mod σ_y = 4×10⁻¹⁷，比 Si4 6.5×10⁻¹⁷ 约好 1.6×（相同 IBS 镀层）"
-        - "124 K 易用 GM 制冷或液氮前级，工程成熟度更高"
-        - "Si3 漂移 -3×10⁻¹⁹/s 在 2.8 μW 功率下实现，功率余量大；Si4 需降至 40 nW 才能匹配"
-        - "Si3 腔长约 21 cm（比 Si4 6 cm 长 ~3.5×），热噪声本底更低"
+    predicate: PART-OF
+    object: ent.fp_cavity_system
     confidence: established
-    source: {zotero_key: "JIZCUZLY", claim: "instability of 1×10⁻¹⁶ [at 4 K in previous work]... With improved thermal and vibration isolation... we demonstrate instability at the thermal noise floor of 6.5×10⁻¹⁷"}
-    note: "ent.si_crystal_fp_cavity_k12 定义于 kessler2012.yaml"
+    source: {zotero_key: "JIZCUZLY", claim: "crystalline optical cavity at 4 K... demonstrates fractional frequency instability of 6.5×10⁻¹⁷"}
+    conditions: null
+    note: >
+      原为 COMPETES-WITH ent.si_crystal_fp_cavity_k12（Level 1 vs Level 1），
+      重构后所有 FP 腔实例降级为 Level 2（PART-OF ent.fp_cavity_system）。
+      4 K vs 124 K 性能对比保留在各自指标的 comparison 字段中。
+      ent.fp_cavity_system 定义于 numata2004.yaml。
 
   - id: rel.R02
     subject: ent.si_crystal_fp_cavity_4k_r19
@@ -292,13 +283,13 @@ relations:
     verification_status: observed
     temporal_role: validates
     breakthrough_paths:
-      - direction: ent.algaas_crystalline_mirror_c13
+      - direction: pri.crystalline_coating_low_brownian_noise
         expected_gain: >
           AlGaAs 晶体镀层（室温 φ ~ 2.5×10⁻⁵，4 K 下预期更低）替换 IBS 镀层
           → 镀层热噪声降低 10–100×；理论下限 mod σ_y 可达 ~10⁻¹⁸ 量级（6 cm 腔）
         status: proposed
         source: {zotero_key: "JIZCUZLY", claim: "Reduction of the thermal noise will be possible by replacing the conventional SiO₂/Ta₂O₅ mirrors with crystalline mirrors. Such crystalline mirrors have been shown to exhibit a factor of 10 lower loss angle at room temperature"}
-      - direction: ent.si_crystal_17k_fp_cavity_l26
+      - direction: pri.silicon_cte_zero_crossing_17k
         expected_gain: >
           17 K（Si CTE 严格第二零点）+ AlGaAs 晶体镀层（4 K 损耗更低）路线，
           Lee 2026 实现 mod σ_y = 2.5×10⁻¹⁷ 世界纪录
@@ -325,7 +316,7 @@ relations:
     verification_status: observed
     temporal_role: proposes
     breakthrough_paths:
-      - direction: ent.si_crystal_fp_cavity_4k_r19
+      - direction: pri.silicon_cte_asymptotic_zero_4k
         expected_gain: >
           进一步降低腔内循环功率（<40 nW 传输）或采用偶发扫描方案（无持续锁定光）
           → 漂移外推趋向零，有望作为时间尺度使用
