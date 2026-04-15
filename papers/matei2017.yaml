@@ -55,6 +55,11 @@ principles:
       "Flicker frequency noise and random walk frequency noise are the dominant noise processes
        in our lasers. In this case, the laser frequency ν(t) is nonstationary and R_E(τ) is
        divergent so that no unique coherence function can be assigned"
+    open_questions:
+      - "Can a measurement-time-independent linewidth definition be constructed for flicker-dominated lasers that is physically meaningful and universally accepted?"
+      - "What is the fundamental lower bound on flicker frequency noise for crystalline coatings (AlGaAs) — will it follow the same 1/f spectral shape, or could structural differences in single-crystal materials alter the noise spectrum?"
+      - "How does the coherence time scale with further reductions in thermal noise (e.g., at 10⁻¹⁸ stability) — is the Ramsey coherence time strictly proportional to 1/h₋₁, or do higher-order noise terms become relevant?"
+      - "Can real-time frequency estimation algorithms (Kalman filtering, predictive tracking) effectively extend the usable coherence time beyond the bare Ramsey limit for precision spectroscopy applications?"
 
 metrics:
   - id: met.fractional_freq_instability_m17
@@ -71,6 +76,9 @@ metrics:
       value: "mod σ_y ≈ 4×10⁻¹⁷（与实测吻合，镀层 IBS 布朗噪声决定）"
       basis: "FDT 计算：Si 腔间隔物+底物 φ_Si ~ 10⁻⁸ at 124K，镀层 φ_IBS ~ 4×10⁻⁴ 主导"
       gap_note: "已达理论极限；改善需晶体镀层（Cole 2013，AlGaAs 可降低 10×）或更低温"
+    open_questions:
+      - "Is the 4×10⁻¹⁷ flicker floor truly the irreducible coating thermal noise limit, or could unknown excess technical noise (e.g., coating structural relaxation, surface contamination drift) contribute at this level?"
+      - "Can next-generation crystalline coatings (AlGaAs) push the Si cavity flicker floor below 10⁻¹⁷ as predicted by FDT calculations?"
 
   - id: met.laser_linewidth_m17
     name: "激光线宽（Matei 2017，Si2–Si3 拍频）"
