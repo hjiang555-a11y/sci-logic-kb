@@ -8,6 +8,7 @@ body:
       value: |
         填写以下字段后提交 Issue，GitHub Actions 会自动调用 claude-sonnet-4-6 处理论文，
         并创建包含生成 YAML 的 Pull Request。
+        若其他文档与 Schema 冲突，一律以 `SCHEMA.md` 为准。
 
   - type: input
     id: author_year
