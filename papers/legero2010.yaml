@@ -1,0 +1,73 @@
+# Legero 2010 — 熔融石英镜参考腔热膨胀调谐
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-15
+# Schema版本：v3.1
+
+meta:
+  zotero_key: "MW3RDB68"
+  source_type: technical_paper
+  reliability: high
+  title: "Tuning the thermal expansion properties of optical reference cavities with fused silica mirrors"
+  year: 2010
+  first_author: Legero
+  journal: "Optics Letters"
+  doi: "10.1364/OL.35.001275"
+  note: >
+    研究 LTE（低热膨胀）间隔物 + 熔融石英（FS）镜的混合材料腔热膨胀特性。
+    发现 FS 镜导致 CTE 零点温度比全 ULE 腔降低约 20 K，
+    但通过在 FS 镜背面光学贴合 ULE 环可调谐零点温度范围 ~30 K。
+    PTB（Legero/Kessler/Sterr），为后续 Millo 2009 等 FS 镜低热噪声腔提供工程基础。
+    CTE 调谐技术作为腔热漂移控制的子内容记录，不单独建立原理节点。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+# 根据专家意见：pri.fs_mirror_cte_tuning 归入腔漂移部分的子内容，
+# 不单独建立原理节点。相关信息记录在 meta.note 和指标条件中。
+
+metrics:
+  - id: met.cte_zero_crossing_tuning_range_leg10
+    name: "CTE 零点温度调谐范围（Legero 2010）"
+    unit: "K"
+    description: "通过 ULE 补偿环可调谐的 CTE 零点温度范围"
+    demonstrated_value:
+      value: "~30 K"
+      conditions: "FS 镜 + ULE 间隔物 + ULE 补偿环，FEM 模拟 + 实测"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "MW3RDB68", claim: "LTE rings optically contacted to the back surface of the FS mirrors allow to tune the zero crossing temperature over a range of 30 K"}
+
+  - id: met.cte_shift_fs_mirror_leg10
+    name: "FS 镜引起的 CTE 零点温度偏移（Legero 2010）"
+    unit: "K"
+    description: "FS 镜导致的 CTE 零点温度降低量"
+    demonstrated_value:
+      value: "~20 K (降低)"
+      conditions: "FS 镜 + ULE 间隔物，镜面变形 (bulging) 效应"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "MW3RDB68", claim: "This deformation strongly contributes to the cavity's effective CTE, decreasing the zero crossing temperature by about 20 K"}
+
+relations:
+  - id: rel.Leg01
+    subject: ent.mirror_substrate
+    predicate: CHARACTERIZED-BY
+    object: met.cte_zero_crossing_tuning_range_leg10
+    confidence: established
+    source: {zotero_key: "MW3RDB68", claim: "tune the zero crossing temperature over a range of 30 K"}
+    note: >
+      跨文件引用 numata2004.yaml; FS 镜降低热噪声但引入 CTE 失配，
+      ULE 补偿环方案解决此问题。此内容属于腔漂移/温度工程的子主题。
+
+  - id: rel.Leg02
+    subject: ent.fp_cavity_system
+    predicate: BOUNDED-BY
+    object: pri.brownian_thermal_noise_fdt
+    confidence: established
+    source: {zotero_key: "MW3RDB68", claim: "The fractional length stability of typical 10 cm long cavities is limited to a flicker floor at the 10⁻¹⁵ level, attributed to inevitable thermal noise"}
+    is_system_limit: true
+    dominated_by: null
+    verification_status: calculated
+    temporal_role: validates
+    note: "跨文件引用 numata2004.yaml; FS 镜路线通过降低 φ 来突破 ULE 热噪声极限"

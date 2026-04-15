@@ -1,0 +1,127 @@
+# Michaud-Belleau 2022 — 反谐振空心光纤基础热噪声
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-15
+# Schema版本：v3.1
+
+meta:
+  zotero_key: "4GT5VD54"
+  source_type: technical_paper
+  reliability: high
+  title: "Fundamental thermal noise in antiresonant hollow-core fibers"
+  year: 2022
+  first_author: Michaud-Belleau
+  journal: "Physical Review A"
+  volume: 106
+  pages: "023501"
+  doi: "10.1103/PhysRevA.106.023501"
+  note: >
+    首次评估空心光纤的基础热噪声。
+    发现大气压空气填充 NANF 在 1550 nm 比等效光学长度的实芯光纤更噪，
+    但抽真空至 0.15 atm 后实现光纤中最低热噪声 ≈1.3×10⁻¹⁷ (rad²/Hz)/m @30 kHz。
+    热传导噪声模型主导（气体热光学贡献）。
+    预测低损耗空心光纤可与超稳腔竞争用于激光频率稳定。
+    Editors' Suggestion。Southampton + Laval 大学。
+    根据专家意见：空心光纤热噪声原理属于光纤干涉仪下面的内容，
+    对应 FP 腔的 pri.brownian_thermal_noise_fdt 处理方式（跨分支原理隔离）。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+principles:
+  - id: pri.hollow_core_fiber_thermal_noise
+    name: "空心光纤热噪声原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      反谐振空心光纤中，基础热噪声的主导来源是核心气体的热传导噪声
+      （thermoconductive noise），而非实芯光纤中的热弹性/热折射噪声。
+      噪声水平取决于：(1) 核心气体的热光学系数和压力，(2) 模场面积，
+      (3) 光纤几何结构（壁厚、核心直径）。
+      大气压空气填充时噪声可能高于实芯光纤（因空气 dn/dT 较大），
+      但抽真空或充惰性气体可大幅降低噪声。
+    domain: "光纤光学 / 空心光纤热噪声"
+    formula: "S_thermal ∝ P_gas × (dn/dT)² / A_mode"
+    key_insight: >
+      空心光纤的热噪声由核心气体热光学效应主导——抽真空是最直接的降噪手段。
+      抽真空后热噪声可低于实芯光纤。
+    conditions: "适用于反谐振空心光纤（NANF/AR-HCF），20–200 kHz 频段已验证"
+    preconditions:
+      - "热传导噪声模型假设核心气体均匀且稳态"
+    invalidated_when:
+      - "极低压力下，玻璃壁自身的热噪声可能成为新极限（尚未探测到）"
+    open_questions:
+      - "低频段（<20 kHz）热噪声行为是否与模型一致？"
+      - "充惰性气体（He, Ne, Ar）的实际降噪效果尚未实验验证"
+      - "在激光频率稳定应用中长时间尺度（>1 s）的性能如何？"
+    source_claim: >
+      "our measurements are in good agreement with the adapted thermoconductive noise
+      model we introduce, suggesting that the thermo-optic contribution from the gas
+      that fills the core is generally dominant"
+    condition_variables:
+      - symbol: "P_gas"
+        name: "核心气体压力"
+        analytical_relation: "S_thermal ∝ P_gas (热传导噪声主导区)"
+        current_value: "大气压（最噪）→ 0.15 atm（最低实测）"
+        best_demonstrated:
+          value: "0.15 atm（密封 NANF）"
+          source: {zotero_key: "4GT5VD54"}
+        constraints: "完全抽真空可能引入机械不稳定或耦合效率问题"
+      - symbol: "A_mode"
+        name: "模场面积"
+        analytical_relation: "S_thermal ∝ 1/A_mode"
+        current_value: "大模场面积 NANF"
+        best_demonstrated:
+          value: "本文使用的 large-mode-area NANF"
+          source: {zotero_key: "4GT5VD54"}
+
+metrics:
+  - id: met.thermal_noise_psd_hcf_mb22
+    name: "空心光纤热噪声功率谱密度（Michaud-Belleau 2022）"
+    unit: "(rad²/Hz)/m"
+    description: "单位光学长度的相位噪声功率谱密度"
+    demonstrated_value:
+      value: "≈1.3×10⁻¹⁷ (rad²/Hz)/m @30 kHz"
+      conditions: "大模场面积 NANF, 抽真空密封至 0.15 atm, 1550 nm"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "4GT5VD54", claim: "the lowest thermal noise power per unit optical length ever measured in a fiber (≈1.3×10⁻¹⁷ (rad²/Hz)/m at 30 kHz)"}
+    historical_landmarks:
+      first_demonstration:
+        value: "≈1.3×10⁻¹⁷ (rad²/Hz)/m @30 kHz"
+        year: 2022
+        source: {zotero_key: "4GT5VD54"}
+        note: "光纤中首次/最低热噪声功率密度"
+      best_demonstration:
+        value: "≈1.3×10⁻¹⁷ (rad²/Hz)/m @30 kHz"
+        year: 2022
+        source: {zotero_key: "4GT5VD54"}
+        note: "截至 2022 年所有光纤中的最低热噪声"
+
+relations:
+  - id: rel.MB22_01
+    subject: ent.fiber_interferometer
+    predicate: BOUNDED-BY
+    object: pri.hollow_core_fiber_thermal_noise
+    confidence: established
+    source: {zotero_key: "4GT5VD54", claim: "fundamental thermal noise are known to set the ultimate phase resolution of fiber-based interferometers"}
+    is_system_limit: true
+    dominated_by: null
+    verification_status: observed
+    temporal_role: proposes
+    note: >
+      空心光纤热噪声——独立于实芯光纤热噪声原理（跨分支原理隔离原则）。
+      属于光纤干涉仪分支下的基础热噪声，对应 FP 腔的 pri.brownian_thermal_noise_fdt。
+    breakthrough_paths:
+      - direction: pri.hollow_core_fiber_thermal_noise
+        mechanism: "降低核心气体压力或充低极化率惰性气体"
+        status: demonstrated
+        source: {zotero_key: "4GT5VD54"}
+
+  - id: rel.MB22_02
+    subject: ent.fiber_interferometer
+    predicate: CHARACTERIZED-BY
+    object: met.thermal_noise_psd_hcf_mb22
+    confidence: established
+    source: {zotero_key: "4GT5VD54", claim: "lowest thermal noise power per unit optical length ever measured in a fiber"}
+    note: "属于光纤干涉仪分支下的内容"

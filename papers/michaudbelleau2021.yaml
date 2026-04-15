@@ -1,0 +1,98 @@
+# Michaud-Belleau 2021 — 反谐振空心光纤背向散射低 40 dB
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-15
+# Schema版本：v3.1
+
+meta:
+  zotero_key: "DD6SE43C"
+  source_type: technical_paper
+  reliability: high
+  title: "Backscattering in antiresonant hollow-core fibers: over 40 dB lower than in standard optical fibers"
+  year: 2021
+  first_author: Michaud-Belleau
+  journal: "Optica"
+  volume: 8
+  pages: "216"
+  doi: "10.1364/OPTICA.403087"
+  note: >
+    首次测量低损耗反谐振空心光纤（AR-HCF/NANF）的背向散射。
+    背向散射系数 −118 dB/m，较实芯光纤低 40 dB 以上，
+    与假设表面粗糙度为散射源的模拟一致。
+    对光纤稳频意义：消除 Rayleigh 背向散射——实芯光纤干涉仪的主要噪声源之一。
+    Southampton + Laval 大学。
+    根据专家意见：空心光纤相关原理节点属于光纤干涉仪 (ent.fiber_interferometer) 下面的内容，
+    对应 FP 腔热噪声处理方式。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+principles:
+  - id: pri.hollow_core_fiber_low_backscattering
+    name: "空心光纤低背向散射原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      反谐振空心光纤（AR-HCF）中，光在中空核心传播，与玻璃材料相互作用极弱。
+      背向散射不再由体 Rayleigh 散射主导（实芯光纤），而由纤芯壁表面粗糙度
+      引起的散射决定，背向散射系数可低至 −118 dB/m——较实芯光纤低 >40 dB。
+    domain: "光纤光学 / 空心光纤"
+    key_insight: >
+      空心光纤可从根本上消除实芯光纤的 Rayleigh 背向散射限制——
+      这是光纤干涉仪/延迟线稳频的关键噪声源之一。
+    conditions: "适用于低损耗反谐振空心光纤（NANF/AR-HCF）"
+    preconditions:
+      - "光纤为反谐振导光（非光子带隙）"
+      - "纤芯壁表面粗糙度足够低"
+    source_claim: >
+      "show that it is more than 40 dB below reported values in silica-core fiber
+      and hollow-core photonic bandgap fiber"
+
+metrics:
+  - id: met.backscattering_coefficient_hcf_mb21
+    name: "背向散射系数（Michaud-Belleau 2021，AR-HCF）"
+    unit: "dB/m"
+    description: "反谐振空心光纤的背向散射系数"
+    demonstrated_value:
+      value: "−118 dB/m"
+      conditions: "低损耗 NANF, 1.55 μm, 自研 OFDR 测量"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "DD6SE43C", claim: "record-low level of −118 dB/m"}
+    historical_landmarks:
+      first_demonstration:
+        value: "−118 dB/m"
+        year: 2021
+        source: {zotero_key: "DD6SE43C"}
+        note: "首次测量反谐振空心光纤背向散射"
+      best_demonstration:
+        value: "−118 dB/m"
+        year: 2021
+        source: {zotero_key: "DD6SE43C"}
+        note: "所有光纤中最低背向散射系数"
+
+relations:
+  - id: rel.MB21_01
+    subject: ent.fiber_interferometer
+    predicate: BOUNDED-BY
+    object: pri.rayleigh_backscattering_noise
+    confidence: established
+    source: {zotero_key: "DD6SE43C", claim: "backscattered light... act as a source of noise whenever they are allowed to reach the detector"}
+    is_system_limit: true
+    dominated_by: null
+    verification_status: observed
+    temporal_role: validates
+    note: "跨文件引用 jiang2010.yaml; 对实芯光纤仍为活跃限制"
+    breakthrough_paths:
+      - direction: pri.hollow_core_fiber_low_backscattering
+        mechanism: "空心光纤将背向散射降低 >40 dB"
+        status: demonstrated
+        source: {zotero_key: "DD6SE43C"}
+
+  - id: rel.MB21_02
+    subject: ent.fiber_interferometer
+    predicate: CHARACTERIZED-BY
+    object: met.backscattering_coefficient_hcf_mb21
+    confidence: established
+    source: {zotero_key: "DD6SE43C", claim: "−118 dB/m measured with our custom-built OFDR"}
+    note: "属于光纤干涉仪分支下的内容"

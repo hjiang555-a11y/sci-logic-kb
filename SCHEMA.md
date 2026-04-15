@@ -87,6 +87,7 @@
 │   │       ├── ent.si_crystal_fp_cavity_k12（124K Si 腔，Kessler 2012 / Matei 2017）
 │   │       ├── ent.si_crystal_17k_fp_cavity_l26（17K Si 腔 + AlGaAs，Lee 2026，世界纪录）
 │   │       ├── ent.si_crystal_fp_cavity_4k_r19（4K Si 腔，Robinson 2019）
+│   │       ├── ent.si_crystal_fp_cavity_sub5k_c25（sub-5K 10cm Si 腔，Chen 2025）
 │   │       └── ent.self_balancing_long_cavity_h15（48 cm 长腔，Häfner 2015）
 │   │
 │   └── 光纤干涉仪 (ent.fiber_interferometer) [Level 1 实体]
@@ -471,6 +472,16 @@ note: "跨文件引用，定义于 shaddock1999.yaml"
 | `dong2015.yaml` | W8K5GLK6 | Dong 2015 — 光纤延迟线锁频首次亚赫兹线宽（0.67 Hz） | ✅ 符合v3.1（首次提取） |
 | `kefelian2009.yaml` | MN54T4F3 | Kéfélian 2009 — 光纤延迟线锁频首次实现超低频率噪声 | ✅ 符合v3.1（首次提取） |
 | `huang2023.yaml` | JYGVFJBN | Huang 2023 — 全光纤超稳激光长期稳定度 1.1×10⁻¹⁴ | ✅ 符合v3.1（首次提取） |
+| `kedar2023.yaml` | 8YK6EH22 | Kedar 2023 — 低温硅腔晶体镀层频率噪声与双折射 | ✅ 符合v3.1（首次提取） |
+| `chen2025.yaml` | N6HILT6B | Chen 2025 — 10 cm Si 腔 sub-5K 10⁻¹⁷ 级稳定度 | ✅ 符合v3.1（首次提取） |
+| `webster2008.yaml` | VU2V2PTX | Webster 2008 — 热噪声极限光学腔（首次全面验证） | ✅ 符合v3.1（首次提取） |
+| `legero2010.yaml` | MW3RDB68 | Legero 2010 — FS 镜参考腔 CTE 调谐 | ✅ 符合v3.1（首次提取） |
+| `leibrandt2013.yaml` | H5MYBTXH | Leibrandt 2013 — 惯性力前馈加速度灵敏度 <10⁻¹²/g | ✅ 符合v3.1（首次提取） |
+| `millo2009.yaml` | GLXHEIPV | Millo 2009 — 振动不敏感腔超稳激光 5.6×10⁻¹⁶ | ✅ 符合v3.1（首次提取） |
+| `cole2016.yaml` | 4GUXEM2C | Cole 2016 — 高性能晶体镀层 NIR/MIR 3 ppm 损耗 | ✅ 符合v3.1（首次提取） |
+| `tai2017.yaml` | AHUZI4A7 | Tai 2017 — 可搬运 1555 nm 超稳激光 185 mHz 线宽 | ✅ 符合v3.1（首次提取） |
+| `michaudbelleau2021.yaml` | DD6SE43C | Michaud-Belleau 2021 — 空心光纤背向散射 −118 dB/m | ✅ 符合v3.1（首次提取） |
+| `michaudbelleau2022.yaml` | 4GT5VD54 | Michaud-Belleau 2022 — 空心光纤热噪声理论+实测 | ✅ 符合v3.1（首次提取） |
 
 **历史 v3.0 重构摘要**（2026-04-15）：
 
