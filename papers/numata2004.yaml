@@ -120,6 +120,18 @@ principles:
       f⁻¹/² 频率依赖是布朗噪声的标志性谱形。
     conditions: "热平衡，机械损耗主导（非热弹性噪声为主时）"
     applicable_when: "刚性 FP 腔稳频，短中期稳定度（低于技术噪声水平时）"
+    preconditions:
+      - "Cavity is in thermal equilibrium at temperature T (no transient thermal gradients)"
+      - "Mechanical loss is dominated by internal friction (bulk/shear, not thermoelastic noise)"
+      - "Levin/FDT virtual pressure method applies: beam-weighted surface displacement with Gaussian pressure profile"
+      - "Mirror geometry satisfies half-infinite solid approximation (mirror thickness ≫ beam spot radius w₀)"
+      - "Cavity mirrors are rigidly attached to spacer (no decoupled mechanical modes within measurement bandwidth)"
+      - "Optical mode is TEM₀₀ with well-defined beam waist on each mirror surface"
+    invalidated_when:
+      - "Thermoelastic noise (Braginsky–Vyatchanin) dominates over Brownian noise (e.g., fused silica at specific geometries)"
+      - "Cavity departs from half-infinite mirror approximation (very thin substrates or membranes)"
+      - "Non-equilibrium thermal transients (e.g., from intracavity power absorption) cause time-varying thermal fields"
+      - "Acoustic/seismic noise exceeds thermal noise floor (insufficient vibration isolation)"
     source_claim: >
       "thermal noise originating from the Brownian motion of the cavity mirrors
        and spacer is the fundamental noise source that limits the frequency
@@ -203,6 +215,17 @@ metrics:
     benchmark: >
       与 Young 1999 测量的 0.6 Hz 线宽相符，
       证明 Young 1999 已在热噪声极限工作。
+    historical_landmarks:
+      first_demonstration:
+        value: "~0.13 Hz/√Hz @ 1 Hz (calculated, ULE 24cm cavity)"
+        year: 2004
+        source: {zotero_key: "VDXBPUQB"}
+        note: "Numata 2004: first systematic quantification of thermal noise contributions from individual cavity components (substrate 84%, coating 15%, spacer 1%)"
+      best_demonstration:
+        value: "~7×10⁻³ Hz/√Hz @ 1 Hz (inferred from mod σ_y = 2.5×10⁻¹⁷, Lee 2026)"
+        year: 2026
+        source: {zotero_key: "4QVEXY63"}
+        note: "Lee 2026: 6 cm Si cavity at 17 K with AlGaAs crystalline coatings; current world record"
 
   - id: met.fractional_freq_instability_thermal
     name: "热噪声决定的分数频率不稳定度"
@@ -214,6 +237,26 @@ metrics:
       confidence: likely
       source: {zotero_key: "VDXBPUQB", claim: "frequency instability consistent with thermal noise limit"}
       note: "与 Young 1999 所报道的 3×10⁻¹⁶ 量级一致"
+    historical_landmarks:
+      first_demonstration:
+        value: "~3×10⁻¹⁶ @ 1 s (Young 1999, ULE cavity, confirmed at thermal noise limit by Numata 2004)"
+        year: 1999
+        source: {zotero_key: "EGAZKLXR"}
+        note: "Young 1999: first laser confirmed at FP cavity thermal noise limit"
+      best_demonstration:
+        value: "mod σ_y = 2.5×10⁻¹⁷ @ 10 s (Lee 2026, Si cavity + AlGaAs crystalline coatings)"
+        year: 2026
+        source: {zotero_key: "4QVEXY63"}
+        note: "Lee 2026: world record, 17 K Si cavity with crystalline coatings"
+      selected_milestones:
+        - year: 2012
+          value: "~1×10⁻¹⁶ (Kessler 2012, 124 K Si cavity)"
+          source: {zotero_key: "YKPFKDD9"}
+          note: "First cryogenic Si cavity breakthrough"
+        - year: 2017
+          value: "mod σ_y = 4×10⁻¹⁷ (Matei 2017, 124 K Si cavity, coating-limited)"
+          source: {zotero_key: "TVY7T59A"}
+          note: "First experimental confirmation of coating thermal noise limit in Si cavity"
 
 # ═══════════════════════════════════════════════
 #  RELATIONS（关系）
