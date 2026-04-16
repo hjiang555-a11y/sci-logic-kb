@@ -351,7 +351,7 @@ relations:
     conditions: null
     note: >
       此 PART-OF 描述系统演化关系而非物理包含：Si4 是在 Zhang 2017（4 K 系统前身；
-      现已建模于 zhang2017.yaml）
+      其早期性能指标现已记录于 zhang2017.yaml）
       基础上改进的版本，并非 Si3（Kessler/Matei 系统）的子单元。
       建议改用 DERIVED-FROM 语义（若 Schema 支持）。
       暂时保留 PART-OF 以标记谱系关系，待专家审核后调整。
