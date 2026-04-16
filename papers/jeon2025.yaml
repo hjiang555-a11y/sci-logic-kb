@@ -98,8 +98,9 @@ metrics:
         claim: "The frequency instability reaches a minimum of 6.3 × 10−15 at a 16-ms averaging time"
     theoretical_floor:
       value: "1 km 光纤往返热噪声极限"
-      basis: "对应跨文件原理 pri.fiber_thermal_noise_wanser（定义于 dong2015.yaml）；Jeon 2025 这里采用 thermomechanical + thermo-refractive fiber noise 求和表述"
+      basis: "Jeon 2025 采用 thermomechanical + thermo-refractive fiber noise 求和表述"
       gap_note: "4–200 Hz 频段实测频噪已达到该极限；更长平均时间仍受光纤长度漂移影响"
+    note: "该热噪声下限与跨文件原理 pri.fiber_thermal_noise_wanser（定义于 dong2015.yaml）对应"
     historical_landmarks:
       first_demonstration:
         value: "6.3×10⁻¹⁵ @ 16 ms"
@@ -270,7 +271,7 @@ relations:
     subject: meth.self_homodyne_fiber_locking
     predicate: COMPETES-WITH
     object: meth.fiber_delay_locking
-    context: "光纤延迟线误差信号提取架构：自零差 vs meth.fiber_delay_locking 的 AOM 自外差实现"
+    context: "光纤延迟线误差信号提取架构：自零差相对于 meth.fiber_delay_locking 的 AOM 自外差实现"
     tradeoffs:
       subject_wins:
         - "无需 AOM 与额外 RF 组件，仅靠无源光纤器件 + 单个 BPD 即可锁频"
