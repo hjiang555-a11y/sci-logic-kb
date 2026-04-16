@@ -11,6 +11,7 @@ on:
 jobs:
   expand:
     runs-on: ubuntu-latest
+    permissions: {}
     outputs:
       issue_numbers: ${{ steps.parse.outputs.issue_numbers }}
     steps:
