@@ -45,7 +45,7 @@
 - [ ] `PHRXF4IL` | Didier 201x | Ultracompact reference ultralow expansion glass cavity
 - [ ] `H3HYK5D3` | Sanjuan 201x | Long-term stable optical cavity for special relativity tests in space
 - [ ] `X7XXKXDZ` | Hafner 201x | Transportable interrogation laser system with an instability of m×10⁻¹⁶
-- [ ] `NU79W75P` | Herbers 202x | Transportable clock laser system with an instability of 1.6×10⁻¹⁶
+- [x] `NU79W75P` | Herbers 2022 | Transportable clock laser system with an instability of 1.6×10⁻¹⁶ → `herbers2022.yaml`
 - [x] `AHUZI4A7` | Tai 2017 | Transportable 1555-nm Ultra-Stable Laser with Sub-0.185-Hz Linewidth → `tai2017.yaml`
 - [ ] `WTUHUAQ7` | Qun-Feng 201x | A compact, robust, and transportable ultra-stable laser
 - [ ] `U4Z95559` | Tao 201x | A vibration-insensitive-cavity design holds impact of higher than 100g

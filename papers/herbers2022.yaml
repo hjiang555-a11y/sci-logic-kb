@@ -1,0 +1,127 @@
+# Herbers 2022 — 可搬运钟激光系统达到 1.6×10⁻¹⁶ 不稳定度
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-16
+# Schema版本：v3.2
+
+meta:
+  zotero_key: "NU79W75P"
+  source_type: technical_paper
+  reliability: high
+  title: "Transportable clock laser system with an instability of 1.6×10⁻¹⁶"
+  year: 2022
+  first_author: Herbers
+  journal: "Optics Letters"
+  volume: 47
+  issue: 20
+  pages: "5441-5444"
+  doi: "10.1364/OL.470984"
+  note: >
+    PTB 面向可搬运 87Sr 光钟的超稳激光系统。20 cm ULE 间隔物、FS 镜基底与
+    Al0.92Ga0.08As/GaAs 晶体镀层结合，在 1397 nm 工作并倍频到 698 nm。
+    论文给出预测热噪声底 mod σ_y≈7×10⁻¹⁷@1 s，实测系统 instability 低至
+    1.6×10⁻¹⁶，为文中所称当时最低报道的可搬运钟激光 instability。
+    10 点软安装在 20 cm 长腔条件下仍实现 2–3×10⁻¹²/(m/s²) 级三轴加速度灵敏度。
+    与纯实验室长腔/低温腔不同，本文突出“transportable + crystalline coating”
+    的折中：长度和温度受可搬运性限制，因此更依赖低热噪声镀层、紧凑分光稳频链路、
+    RAM 抑制和 Doppler cancellation。
+
+metrics:
+  - id: met.fractional_freq_instability_herbers22
+    name: "分数频率不稳定度（Herbers 2022，可搬运晶体镀层钟激光）"
+    unit: "无量纲（modified Allan deviation）"
+    description: "可搬运 87Sr 光钟本振激光系统在 1397 nm 的分数频率不稳定度"
+    demonstrated_value:
+      value: "mod σ_y = 1.6×10⁻¹⁶"
+      conditions: >
+        1397 nm 外腔二极管激光；20 cm ULE spacer + FS mirror substrates +
+        Al0.92Ga0.08As/GaAs crystalline coatings；工作在 TEM10 模；
+        Doppler-cancelled optical distribution；waveguide EOM + active RAM stabilization
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "NU79W75P", claim: "The laser system’s instability reaches down to mod σy = 1.6 × 10−16"}
+    theoretical_floor:
+      value: "mod σ_y ≈ 7×10⁻¹⁷ @ 1 s"
+      basis: "20 cm ULE + FS + AlGaAs crystalline mirrors 的预测热噪声底"
+      gap_note: >
+        实测值仍约高 2.3×；文中模型显示残余地震振动、温度驱动机械应力以及
+        <0.2 Hz 区域的未明低频噪声共同抬高实际 instability。
+    historical_landmarks:
+      best_demonstration:
+        value: "mod σ_y = 1.6×10⁻¹⁶"
+        year: 2022
+        source: {zotero_key: "NU79W75P"}
+        note: "论文称其为当时最低报道的可搬运钟激光分数频率不稳定度"
+
+  - id: met.acceleration_sensitivity_herbers22
+    name: "三轴加速度灵敏度（Herbers 2022，20 cm 可搬运腔）"
+    unit: "(m/s²)⁻¹"
+    description: "20 cm 水平圆柱腔在 10 点软安装下的三轴分数频率加速度灵敏度"
+    demonstrated_value:
+      value: "κx = 2(1)×10⁻¹²/(m/s²), κy = 3(3)×10⁻¹²/(m/s²), κz = 3(1)×10⁻¹²/(m/s²)"
+      conditions: >
+        20 cm horizontal cylindrical cavity；10-point spring-steel / fluororubber soft mount；
+        active vibration isolation platform 上正弦加速度测量
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "NU79W75P", claim: "We find acceleration sensitivities of 2(1) × 10−12 /(ms−2), 3(3) × 10−12 /(ms−2), and 3(1) × 10−12 /(ms−2) for the x-, y-, and z-axis, respectively"}
+    comparison:
+      table1_context: "与文中汇总的可搬运腔最低值同量级，同时腔长达到 20 cm（明显长于多种 5–10 cm 方案）"
+      system_requirement: "文中估计若商用隔振平台将残余加速度压到 ~10⁻⁵ m/s²，则 few×10⁻¹¹/(m/s²) 即足以支撑优于旧 transportable laser 的性能；本文实测优于这一门槛"
+
+relations:
+  - id: rel.Her22_01
+    subject: ent.fp_cavity_system
+    predicate: CHARACTERIZED-BY
+    object: met.fractional_freq_instability_herbers22
+    confidence: established
+    source: {zotero_key: "NU79W75P", claim: "The laser system’s instability reaches down to mod σy = 1.6 × 10−16"}
+    conditions: "1397 nm，可搬运 20 cm ULE + FS + AlGaAs 腔，TEM10 模运行"
+    note: "跨文件引用，ent.fp_cavity_system 定义于 numata2004.yaml"
+
+  - id: rel.Her22_02
+    subject: ent.fp_cavity_system
+    predicate: CHARACTERIZED-BY
+    object: met.acceleration_sensitivity_herbers22
+    confidence: established
+    source: {zotero_key: "NU79W75P", claim: "The cavity has a cylindrical shape and is mounted at 10 points. Its measured sensitivity of the fractional frequency to acceleration for the three Cartesian directions are 2(1)×10−12 /(ms−2), 3(3)×10−12 /(ms−2), and 3(1) ×10−12 /(ms−2)"}
+    conditions: "20 cm 水平圆柱腔，10 点软安装，主动隔振平台正弦加速度表征"
+    note: "跨文件引用，ent.fp_cavity_system 定义于 numata2004.yaml"
+
+  - id: rel.Her22_03
+    subject: ent.fp_cavity_system
+    predicate: CONDITIONED-BY
+    object: ent.vibration_environment
+    interface_metric: met.acceleration_sensitivity_herbers22
+    coupling_formula: "Δν/ν = κx·ax + κy·ay + κz·az"
+    internal_property: "κx = 2(1)×10⁻¹²/(m/s²), κy = 3(3)×10⁻¹²/(m/s²), κz = 3(1)×10⁻¹²/(m/s²)"
+    scaling_law: "残余振动引起的 instability ≈ |κ⃗·a⃗_residual|；隔振平台剩余加速度越低，系统越接近预测热噪声底"
+    confidence: established
+    source: {zotero_key: "NU79W75P", claim: "Finally, we measured the residual acceleration on the vibration isolation platform to infer the instability caused mainly by seismic vibrations"}
+    is_system_limit:
+      current: false
+      conditions: "当前系统在 >0.2 Hz 区域与振动/技术噪声模型一致；进一步的加速度前馈或更强低频隔振仍可继续逼近热噪声底"
+    note: "跨文件引用，ent.vibration_environment 定义见 young1999.yaml / webster2007.yaml"
+
+  - id: rel.Her22_04
+    subject: ent.fp_cavity_system
+    predicate: CONDITIONED-BY
+    object: ent.thermal_environment
+    interface_metric: met.fractional_freq_instability_herbers22
+    coupling_formula: "Δν/ν ≈ 3(2)×10⁻¹² K⁻¹ × ΔT_active_shield"
+    internal_property: "active heat shield 稳定在 CTE 零点附近（约 295 K）；测得主动热屏温度到腔频率的转换系数 3(2)×10⁻¹² K⁻¹"
+    scaling_law: "热屏温度波动经多级热低通传递到腔体；剩余波动与上述转换系数相乘给出热致机械应力贡献"
+    confidence: established
+    source: {zotero_key: "NU79W75P", claim: "we assume simple proportionality between fractional frequency change and the active heat shield’s temperature and get a conversion factor of 3(2) ×10−12 K−1"}
+    is_system_limit:
+      current: false
+      conditions: "温度链路已被压低，但 mounting 的过约束仍引入可观测热致机械应力通道，主要影响低频段"
+    note: "跨文件引用，ent.thermal_environment 定义于 jiang2010.yaml"
+
+  - id: rel.Her22_05
+    subject: met.fractional_freq_instability_herbers22
+    predicate: OPERATIONALIZED-AS
+    object: meth.pdh_locking
+    confidence: established
+    source: {zotero_key: "NU79W75P", claim: "The laser is locked with the PDH method to the ultra-stable cavity"}
+    conditions: "incident power 约 10 µW；shot-noise limit near Sy = 10⁻³⁵ Hz⁻¹"
+    note: "跨文件引用，meth.pdh_locking 定义于 drever1983.yaml"
