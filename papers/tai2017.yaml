@@ -69,3 +69,12 @@ relations:
     object: met.fractional_freq_instability_tai17
     confidence: established
     source: {zotero_key: "AHUZI4A7", claim: "thermal noise limit 7×10⁻¹⁶ at 1-10 s"}
+
+  - id: rel.Tai03
+    subject: ent.fp_cavity_system
+    predicate: CHARACTERIZED-BY
+    object: met.laser_linewidth_tai17
+    confidence: established
+    source: {zotero_key: "AHUZI4A7", claim: "beat signal of the two lasers reveals a remarkable linewidth of 185 mHz"}
+    conditions: "1555 nm, 两台独立 ULE 腔锁定激光拍频"
+    note: "跨文件引用，ent.fp_cavity_system 定义于 numata2004.yaml"

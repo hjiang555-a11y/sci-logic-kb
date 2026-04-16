@@ -60,6 +60,7 @@ principles:
       在探测器上产生差拍，经相敏解调后得到正比于频率失谐的双极性
       误差信号，锁定点恰好在谐振中心（而非 fringe side）。
     domain: "激光频率稳定"
+    conditions: "射频调制频率 fm >> 腔线宽 δν_cav（FWHM）；腔为高精细度 F-P 腔；输入耦合镜部分透射"
     applicable_when: "射频调制频率 >> 腔线宽（FWHM）"
     key_advantage: "锁定点在谐振中心；对激光强度噪声免疫；伺服带宽不受腔响应时间限制"
     source_claim: >
@@ -90,6 +91,7 @@ principles:
       在高伺服增益下，散粒噪声等效为不可区分的频率扰动，
       被强制写入激光频率。
     domain: "激光频率稳定"
+    conditions: "伺服增益足够高使散粒噪声成为主导限制；光功率未引入更强技术噪声（如光热效应、RAM）"
     formula: "δν(τ) ∝ √(ħω · δν_c / Po · T · η) · √B"
     parameters:
       - "δν_c: 腔半高宽"

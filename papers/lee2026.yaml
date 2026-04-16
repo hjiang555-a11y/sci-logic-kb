@@ -320,3 +320,11 @@ relations:
     conditions: "两腔噪声不相关"
     temporal_role: proposes
     note: "pri.optical_frequency_averaging 描述不相关噪声 √N 平均的物理基础"
+
+  - id: rel.L11
+    subject: ent.si_crystal_17k_fp_cavity_l26
+    predicate: CHARACTERIZED-BY
+    object: met.algaas_coating_loss_angle_17k_l26
+    confidence: established
+    source: {zotero_key: "4QVEXY63", claim: "upper bound on the mechanical loss factor of 2.3 × 10⁻⁵ at 17 K"}
+    conditions: "6 cm Si 腔，17 K，1542 nm，AlGaAs 晶体镀层（2023 批次）"

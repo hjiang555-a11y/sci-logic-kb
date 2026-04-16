@@ -130,3 +130,11 @@ relations:
     object: met.fractional_freq_instability_c25
     confidence: established
     source: {zotero_key: "N6HILT6B", claim: "average frequency instability of (4±1)×10⁻¹⁷"}
+
+  - id: rel.Che05
+    subject: ent.si_crystal_fp_cavity_sub5k_c25
+    predicate: CHARACTERIZED-BY
+    object: met.laser_linewidth_c25
+    confidence: established
+    source: {zotero_key: "N6HILT6B", claim: "median linewidth of 9.6(3) mHz... empirically determined linewidth of 5.7(3) mHz"}
+    conditions: "1397 nm, sub-5K Si 腔, 连续冷却振动抑制后"

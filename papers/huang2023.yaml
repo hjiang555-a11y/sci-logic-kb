@@ -269,3 +269,12 @@ relations:
       claim: "by locking it to an optical fiber delay line"
     conditions: "5 km SMF-28 + 五层热屏蔽综合方案"
     note: "meth.fiber_delay_locking 定义于 jiang2010.yaml"
+
+  - id: rel.Hu07
+    subject: ent.fiber_interferometer
+    predicate: CHARACTERIZED-BY
+    object: met.laser_linewidth_h23
+    confidence: likely
+    source: {zotero_key: "JYGVFJBN", claim: "fractional frequency stability of 3.2×10⁻¹⁵ at 1 s"}
+    conditions: "5 km SMF-28，五层热屏蔽，从 Allan 偏差估算约 200 mHz"
+    note: "ent.fiber_interferometer 定义于 jiang2010.yaml；线宽为推断值"

@@ -102,3 +102,20 @@ relations:
     confidence: established
     source: {zotero_key: "H5MYBTXH", claim: "information about the transfer function that describes how accelerations change the length of the cavity"}
     note: "跨文件引用 webster2007.yaml; 前馈依赖传递函数知识，与被动设计互补"
+
+  - id: rel.Lei03
+    subject: ent.fp_cavity_system
+    predicate: CHARACTERIZED-BY
+    object: met.acceleration_sensitivity_lei13
+    confidence: established
+    source: {zotero_key: "H5MYBTXH", claim: "reduced by a factor of 50 to below 10⁻¹² g⁻¹ for low-frequency accelerations by real-time feedforward corrections"}
+    conditions: "前馈校正后, 0-50 Hz"
+    note: "跨文件引用，ent.fp_cavity_system 定义于 numata2004.yaml"
+
+  - id: rel.Lei04
+    subject: meth.inertial_feedforward_correction
+    predicate: CHARACTERIZED-BY
+    object: met.temperature_feedforward_lei13
+    confidence: established
+    source: {zotero_key: "H5MYBTXH", claim: "reduced by a factor of 70 via real-time feedforward from a temperature sensor"}
+    conditions: "温度传感器在真空腔外壁, 前馈到激光频率"

@@ -174,6 +174,15 @@ relations:
       met.laser_linewidth_m17 通过 rel.M02 (CHARACTERIZED-BY) 刻画这一受限状态。
       ent.si_crystal_fp_cavity_k12 定义于 kessler2012.yaml。
 
-  # rel.M05 已废弃（原 COMPETES-WITH ent.fp_cavity_system）——
+  - id: rel.M05
+    subject: ent.si_crystal_fp_cavity_k12
+    predicate: CHARACTERIZED-BY
+    object: met.optical_coherence_time_m17
+    confidence: established
+    source: {zotero_key: "TVY7T59A", claim: "coherence time of 11 s (Ramsey scenario) to 55 s (retrospective frequency estimation)"}
+    conditions: "Si2 vs Si3 相位数据；1 天数据集"
+    note: "跨文件引用，ent.si_crystal_fp_cavity_k12 定义于 kessler2012.yaml"
+
+  # rel.M06 已废弃（原 COMPETES-WITH ent.fp_cavity_system）——
   # 重构后 ent.si_crystal_fp_cavity_k12 为 Level 2 实例（PART-OF ent.fp_cavity_system），
   # 同级实例不再用 COMPETES-WITH。性能对比保留在指标的 comparison 字段中。
