@@ -124,6 +124,7 @@ relations:
     source: {zotero_key: "S5GJNVG8", claim: "active servo comprising in-phase and quadrature RAM corrections allows frequency stabilization comparable to fundamental thermal noise limit"}
     conditions: "RAM需抑制至ppm量级以达到腔热噪声极限性能"
     temporal_role: proposes
+    note: "双通道伺服实现细节已并入 ent.eom.key_parameters.ram_suppression_interfaces.zhang2014_dual_servo"
 
   - id: rel.Z14_03
     subject: meth.pdh_locking

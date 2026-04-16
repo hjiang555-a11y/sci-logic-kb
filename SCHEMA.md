@@ -188,6 +188,26 @@ historical_landmarks:
       note: "关键演进节点"
 ```
 
+### 子单元接口字段（约定）
+
+当某种“方法”实质上只是某个 Level 2 子单元的实现接口、执行回路或工程变体，
+且不再保留为独立 `meth.*` 节点时，可并入对应实体的 `key_parameters` 字段。
+
+推荐模式：
+
+```yaml
+key_parameters:
+  interface_group_name:
+    variant_name:
+      source: {zotero_key: "KEY"}
+      mechanism: "该接口/变体如何工作"
+      performance: "代表性性能或抑制水平"
+      conditions: "可选，适用条件"
+```
+
+适用场景：如 `ent.eom` 下的 RAM 主动抑制接口、某安装子单元的特定支撑变体等。
+若该内容后来形成可独立复用、可跨分支比较的方法，再提升回独立 `meth.*` 节点。
+
 ---
 
 ### 面向科研的附加知识维度（v3.1 新增）
