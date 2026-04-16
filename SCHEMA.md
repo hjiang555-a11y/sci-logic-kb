@@ -521,6 +521,7 @@ note: "跨文件引用，定义于 shaddock1999.yaml"
 | `millo2009.yaml` | GLXHEIPV | Millo 2009 — 振动不敏感腔超稳激光 5.6×10⁻¹⁶ | ✅ 符合v3.1（首次提取） |
 | `cole2016.yaml` | 4GUXEM2C | Cole 2016 — 高性能晶体镀层 NIR/MIR 3 ppm 损耗 | ✅ 符合v3.1（首次提取） |
 | `tai2017.yaml` | AHUZI4A7 | Tai 2017 — 可搬运 1555 nm 超稳激光 185 mHz 线宽 | ✅ 符合v3.1（首次提取） |
+| `herbers2022.yaml` | NU79W75P | Herbers 2022 — 可搬运钟激光系统达到 1.6×10⁻¹⁶ 不稳定度 | ✅ 符合v3.2（首次提取） |
 | `michaudbelleau2021.yaml` | DD6SE43C | Michaud-Belleau 2021 — 空心光纤背向散射 −118 dB/m | ✅ 符合v3.1（首次提取） |
 | `michaudbelleau2022.yaml` | 4GT5VD54 | Michaud-Belleau 2022 — 空心光纤热噪声理论+实测 | ✅ 符合v3.1（首次提取） |
 | `kim2008.yaml` | H5YVF5AR | Kim 2008 — 远程光学/微波源漂移自由飞秒同步 | ✅ 符合v3.2（首次提取） |
