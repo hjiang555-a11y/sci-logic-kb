@@ -107,11 +107,6 @@ metrics:
         year: 2025
         source: {zotero_key: "SBPRDKPV"}
         note: "首次自零差光纤延迟线锁频达到 10⁻¹⁵ 级短期稳定度（无真空系统）"
-      selected_milestones:
-        - year: 2023
-          value: "3.2×10⁻¹⁵ @ 1 s；1.1×10⁻¹⁴ @ 1000 s"
-          source: {zotero_key: "JYGVFJBN"}
-          note: "Huang 2023 代表自外差+强温控的最佳长期稳定度"
 
   - id: met.freq_noise_psd_fiber_jeon25
     name: "频率噪声谱密度（Jeon 2025，自零差 1 km 光纤）"
@@ -260,7 +255,7 @@ relations:
     predicate: CONDITIONED-BY
     object: ent.vibration_environment
     interface_metric: met.freq_noise_from_vibration
-    coupling_formula: "Δν/ν ≈ 10⁻¹⁰/g × a for the packaged 1 km spool"
+    coupling_formula: "Δν/ν ≈ 10⁻¹⁰/g × a（a 为环境加速度）for the packaged 1 km spool"
     internal_property: "vibration-insensitive 1 km fiber spool in a 140×180×51 mm³ air-tight aluminum case"
     scaling_law: "残余频率扰动随环境加速度与线轴加速度灵敏度近似线性缩放"
     confidence: established
@@ -292,7 +287,7 @@ relations:
         object: "AOM + RF heterodyne chain"
       - dimension: "short_term_stability"
         subject: "6.3×10⁻¹⁵ @ 16 ms"
-        object: "5×10⁻¹⁵ @ 0.1–1 s（Dong 2015 单激光）"
+        object: "3.2×10⁻¹⁵ @ 1 s（Huang 2023，自外差+强温控）"
       - dimension: "long_term_stability"
         subject: "受 28–270 Hz/s 漂移影响，未给出优于 Huang 2023 的秒级结果"
         object: "1.1×10⁻¹⁴ @ 1000 s（Huang 2023）"
