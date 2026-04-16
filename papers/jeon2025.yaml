@@ -76,8 +76,7 @@ methods:
       - "BPD 电噪声低于 2 km 有效光纤往返的热噪声"
       - "激光可通过电流调制端接受 PI 伺服反馈"
     source_claim: >
-      "we adopt an all-single-mode (SM) fiber self-homodyne interferometric
-      configuration with a 1-km vibration-insensitive optical fiber delay"
+      "we adopt an all-single-mode (SM) fiber self-homodyne interferometric configuration with a 1-km vibration-insensitive optical fiber delay"
     note: >
       新方法节点，作为 meth.fiber_delay_locking（jiang2010.yaml 中 AOM 自外差实现）的
       极简替代分支；新节点边界待专家审核。
@@ -99,7 +98,7 @@ metrics:
         claim: "The frequency instability reaches a minimum of 6.3 × 10−15 at a 16-ms averaging time"
     theoretical_floor:
       value: "1 km 光纤往返热噪声极限"
-      basis: "对应既有原理 pri.fiber_thermal_noise_wanser（dong2015.yaml）；Jeon 2025 这里采用 thermomechanical + thermo-refractive fiber noise 求和表述"
+      basis: "对应跨文件原理 pri.fiber_thermal_noise_wanser（定义于 dong2015.yaml）；Jeon 2025 这里采用 thermomechanical + thermo-refractive fiber noise 求和表述"
       gap_note: "4–200 Hz 频段实测频噪已达到该极限；更长平均时间仍受光纤长度漂移影响"
     historical_landmarks:
       first_demonstration:
@@ -271,7 +270,7 @@ relations:
     subject: meth.self_homodyne_fiber_locking
     predicate: COMPETES-WITH
     object: meth.fiber_delay_locking
-    context: "光纤延迟线误差信号提取架构：自零差 vs AOM 自外差"
+    context: "光纤延迟线误差信号提取架构：自零差 vs meth.fiber_delay_locking 的 AOM 自外差实现"
     tradeoffs:
       subject_wins:
         - "无需 AOM 与额外 RF 组件，仅靠无源光纤器件 + 单个 BPD 即可锁频"
