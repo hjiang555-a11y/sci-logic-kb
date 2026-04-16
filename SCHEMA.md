@@ -560,6 +560,13 @@ note: "跨文件引用，定义于 shaddock1999.yaml"
 | `nelson2008.yaml` | XAKCIXKT | Nelson 2008 — RIN 抑制 | ✅ 符合v3.2（首次提取） |
 | `gobron2017.yaml` | HKYLIW8U | Gobron 2017 — 色散外差 SHB | ✅ 符合v3.2（首次提取） |
 | `dixneuf2020.yaml` | HJZ6BVYE | Dixneuf 2020 — 365W 低 RIN 激光 | ✅ 符合v3.2（首次提取） |
+| `thorpe2011.yaml` | Q2MRB267 | Thorpe 2011 — SHB 6×10⁻¹⁶ | ✅ 符合v3.2（首次提取） |
+| `cook2015.yaml` | KZJHGH3N | Cook 2015 — 稳态 SHB | ✅ 符合v3.2（首次提取） |
+| `konz2003.yaml` | MNIZVIMG | Könz 2003 — Eu:YSO 材料参数 | ✅ 符合v3.2（首次提取） |
+| `galland2020.yaml` | MPWLNUIH | Galland 2020 — 双外差 SHB | ✅ 符合v3.2（首次提取） |
+| `meiser2009.yaml` | WW9ESVMK | Meiser 2009 — 超辐射 mHz 激光 | ✅ 符合v3.2（首次提取） |
+| `loh2019.yaml` | UP2Q8F9Y | Loh 2019 — 布里渊激光 | ✅ 符合v3.2（首次提取） |
+| `li2019.yaml` | ELKHJ5GL | Li 2019 — 光纤陀螺热噪声 | ✅ 符合v3.2（首次提取） |
 
 **历史 v3.0 重构摘要**（2026-04-15）：
 

@@ -78,23 +78,23 @@
 - [x] `N9AGEQ8S` | Zhang 2017 | Ultrastable Silicon Cavity in a Continuously Operating Closed-Cycle Cryostat at 4 K → `zhang2017.yaml`
 - [x] `SBPRDKPV` | Jeon 2025 | 10⁻¹⁵-level laser stabilization down to fiber thermal noise limit → `jeon2025.yaml`
 - [x] `HKYLIW8U` | Gobron 2017 | 色散外差 SHB 稳频 → `gobron2017.yaml`
-- [ ] `MPWLNUIH` | Galland 202x | Double-heterodyne probing for an ultra-stable laser based on spectral hole
+- [x] `MPWLNUIH` | Galland 2020 | 双外差 SHB 探测 → `galland2020.yaml`
 
 ### 谱孔燃烧锁频（替代方法）
 
-- [ ] `Q2MRB267` | Thorpe 201x | Frequency stabilization to 6×10⁻¹⁶ via spectral-hole burning
-- [ ] `KZJHGH3N` | Cook 201x | Laser-Frequency Stabilization Based on Steady-State Spectral-Hole
-- [ ] `MNIZVIMG` | Könz 200x | Temperature and concentration dependence of optical dephasing
+- [x] `Q2MRB267` | Thorpe 2011 | SHB 稳频 6×10⁻¹⁶ → `thorpe2011.yaml`
+- [x] `KZJHGH3N` | Cook 2015 | 稳态 SHB 稳频 → `cook2015.yaml`
+- [x] `MNIZVIMG` | Könz 2003 | Eu:YSO 材料参数 → `konz2003.yaml`
 
 ### 其他
 
-- [ ] `WW9ESVMK` | Meiser 201x | Prospects for a Millihertz-Linewidth Laser
+- [x] `WW9ESVMK` | Meiser 2009 | 超辐射 mHz 激光理论 → `meiser2009.yaml`
 - [ ] `8NUIA2K7` | Aasi 2013 | Enhanced sensitivity of the LIGO gravitational wave detector
 - [ ] `P3NU2EKB` | Zhang 202x | Ultranarrow Linewidth Photonic-Atomic Laser
 - [ ] `FTXSM9QC` | Adhikari 201x | Gravitational radiation detection with laser interferometry
 - [ ] `CDX3DFQR` | Olson 201x | Ramsey-Borde Matter-Wave Interferometry for Laser Frequency
-- [ ] `UP2Q8F9Y` | Loh 2019 | Ultra-narrow linewidth Brillouin laser with nanokelvin temperature
-- [ ] `ELKHJ5GL` | Li 2019 | Thermal phase noise in giant interferometric fiber optic gyro
+- [x] `UP2Q8F9Y` | Loh 2019 | 布里渊超窄线宽激光 → `loh2019.yaml`
+- [x] `ELKHJ5GL` | Li 2019 | 大型光纤陀螺仪热噪声 → `li2019.yaml`
 - [x] `HJZ6BVYE` | Dixneuf 2020 | 365 W 超低 RIN 单频光纤激光 → `dixneuf2020.yaml`
 - [x] `XAKCIXKT` | Nelson 2008 | RIN 抑制技术 → `nelson2008.yaml`
 - [x] `KH82PQJ2` | Hu 2015 | Ultralow acceleration sensitivity fiber spool → `hu2015.yaml`

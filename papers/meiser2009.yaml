@@ -1,0 +1,79 @@
+# Meiser 2009 — 毫赫兹线宽超辐射激光理论
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-16
+# Schema版本：v3.2
+
+meta:
+  zotero_key: "WW9ESVMK"
+  source_type: technical_paper
+  reliability: high
+  title: "Prospects for a Millihertz-Linewidth Laser"
+  year: 2009
+  first_author: Meiser
+  journal: "Physical Review Letters"
+  volume: 102
+  pages: "163601"
+  doi: "10.1103/PhysRevLett.102.163601"
+  note: >
+    理论提出基于碱土金属原子超辐射的毫赫兹线宽激光源。
+    光晶格中原子在超窄钟跃迁上集体发射至高 Q 腔模，
+    集体效应使线宽小于钟跃迁自然线宽，功率 ~10⁻¹² W 可用于锁定从激光。
+    核心贡献：超辐射激光概念——绕过 FP 腔热噪声限制的替代方案。
+
+entities:
+  - id: ent.superradiant_laser_m09
+    name: "超辐射激光（Meiser 2009 理论）"
+    aliases: ["superradiant laser", "millihertz laser"]
+    hierarchy_level: 1
+    status: theoretical
+    function: >
+      碱土金属原子（如 Sr, Ca）在光晶格中被泵浦到钟跃迁激发态，
+      集体超辐射发射至高 Q 腔模。线宽可达 mHz 级——
+      远窄于单原子自然线宽，因为集体效应压缩相位扩散。
+    key_parameters:
+      predicted_linewidth: "mHz range"
+      output_power: "~10⁻¹² W"
+      improvement_over_cavity: "2 orders of magnitude in clock stability"
+    practical_limitations:
+      - description: "需要同时维持大量冷原子在光晶格中并持续泵浦"
+        impact: "实验复杂度极高"
+      - description: "输出功率极低，需要注入锁定从激光"
+        impact: "增加系统复杂度"
+    note: "与 ent.fp_cavity_system COMPETES-WITH——从不同物理机制绕过热噪声。"
+
+principles:
+  - id: pri.superradiant_emission_narrow_linewidth
+    name: "超辐射集体发射窄线宽原理"
+    tier: foundational
+    verification_status: theoretical
+    statement: >
+      N 个原子在高 Q 腔中集体发射时，相位信息存储在原子集体而非腔场中。
+      腔仅作为输出耦合器，其热噪声不直接影响激光线宽。
+      集体相位扩散速率远小于单原子退相速率，
+      理论线宽可达 mHz 级。
+    domain: "量子光学 / 超辐射"
+    key_insight: "相位信息锚定于原子集体而非腔场，绕过腔的热噪声限制。"
+    conditions: "需要大量冷原子、超窄钟跃迁、高 Q 腔"
+    source_claim: "optical radiation has an extremely narrow linewidth in the mHz range, even smaller than that of the clock transition itself due to collective effects"
+    open_questions:
+      - "实验实现中原子数波动和泵浦噪声如何限制实际线宽？"
+      - "能否达到理论预测的 mHz 线宽？"
+
+methods: []
+metrics: []
+
+relations:
+  - id: rel.ME01
+    subject: ent.superradiant_laser_m09
+    predicate: COMPETES-WITH
+    object: ent.fp_cavity_system
+    confidence: likely
+    source: {zotero_key: "WW9ESVMK", claim: "improve the stability of the best clocks by 2 orders of magnitude"}
+    note: "超辐射激光作为 FP 腔的替代频率参考方案"
+
+  - id: rel.ME02
+    subject: ent.superradiant_laser_m09
+    predicate: ENABLED-BY
+    object: pri.superradiant_emission_narrow_linewidth
+    confidence: established
+    source: {zotero_key: "WW9ESVMK", claim: "collectively emit photons on an ultranarrow clock transition"}
