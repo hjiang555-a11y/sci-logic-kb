@@ -1,23 +1,59 @@
-name: Process Paper with GitHub Models (claude-sonnet-4-6)
+name: Backfill Paper Processing
 
 on:
-  issues:
-    types: [labeled, edited]
+  workflow_dispatch:
+    inputs:
+      issue_numbers:
+        description: "Comma-separated issue numbers or ranges, e.g. 25-27,30,71"
+        required: true
+        default: "25-78"
 
 jobs:
+  expand:
+    runs-on: ubuntu-latest
+    outputs:
+      issue_numbers: ${{ steps.parse.outputs.issue_numbers }}
+    steps:
+      - id: parse
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const spec = core.getInput('issue_numbers', { required: true }).trim();
+            const values = new Set();
+
+            for (const chunk of spec.split(',').map((part) => part.trim()).filter(Boolean)) {
+              const range = chunk.match(/^(\d+)-(\d+)$/);
+              if (range) {
+                const start = Number(range[1]);
+                const end = Number(range[2]);
+                const lower = Math.min(start, end);
+                const upper = Math.max(start, end);
+                for (let current = lower; current <= upper; current += 1) {
+                  values.add(current);
+                }
+                continue;
+              }
+
+              if (/^\d+$/.test(chunk)) {
+                values.add(Number(chunk));
+                continue;
+              }
+
+              core.setFailed(`Invalid issue number segment: ${chunk}`);
+              return;
+            }
+
+            const issueNumbers = [...values].sort((a, b) => a - b);
+            core.info(`Resolved issue numbers: ${issueNumbers.join(', ')}`);
+            core.setOutput('issue_numbers', JSON.stringify(issueNumbers));
+
   process:
-    if: |
-      github.event.label.name == 'process-paper' ||
-      github.event.label.name == 'reprocess-v2' ||
-      github.event.label.name == 'reprocess-schema' ||
-      (
-        github.event.action == 'edited' &&
-        (
-          contains(join(github.event.issue.labels.*.name, ','), 'process-paper') ||
-          contains(join(github.event.issue.labels.*.name, ','), 'reprocess-v2') ||
-          contains(join(github.event.issue.labels.*.name, ','), 'reprocess-schema')
-        )
-      )
+    needs: expand
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        issue_number: ${{ fromJson(needs.expand.outputs.issue_numbers) }}
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -28,17 +64,24 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      # ── Parse issue body ──────────────────────────────────────────────────
-      - name: Parse issue fields
-        id: parse
+      - name: Fetch issue fields
+        id: fetch
         uses: actions/github-script@v7
+        env:
+          ISSUE_NUMBER: ${{ matrix.issue_number }}
         with:
           script: |
-            const body = context.payload.issue.body || '';
-            const label = context.payload.label?.name || '';
-            const title = context.payload.issue.title || '';
-            const labels = (context.payload.issue.labels || []).map((item) =>
-              typeof item === 'string' ? item : item.name
+            const issueNumber = Number(process.env.ISSUE_NUMBER);
+            const { data: issue } = await github.rest.issues.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issueNumber,
+            });
+
+            const body = issue.body || '';
+            const title = issue.title || '';
+            const labels = (issue.labels || []).map((label) =>
+              typeof label === 'string' ? label : label.name
             );
 
             const fields = {};
@@ -69,18 +112,17 @@ jobs:
             };
 
             for (const line of body.split('\n')) {
-              let m = line.match(/^\s*\*\*([^*]+)\*\*\s*:\s*(.+)$/);
-              if (!m) {
-                m = line.match(/^\s*([A-Za-z][A-Za-z0-9 _.-]*)\s*:\s*(.+)$/);
+              let match = line.match(/^\s*\*\*([^*]+)\*\*\s*:\s*(.+)$/);
+              if (!match) {
+                match = line.match(/^\s*([A-Za-z][A-Za-z0-9 _.-]*)\s*:\s*(.+)$/);
               }
-              if (m) fields[normalizeKey(m[1])] = m[2].trim();
+              if (match) fields[normalizeKey(match[1])] = match[2].trim();
             }
 
-            let authorYear  = fields.author_year || fields.file || '';
-            const zoteroKey   = fields.zotero_key  || fields.key  || '';
-            const pdfFilename = fields.pdf          || fields.pdf_filename || '';
+            let authorYear = fields.author_year || fields.file || '';
+            const zoteroKey = fields.zotero_key || fields.key || '';
+            const pdfFilename = fields.pdf || fields.pdf_filename || '';
 
-            // Try to extract author_year from PDF filename as fallback
             if (!authorYear && pdfFilename) {
               const match = pdfFilename.match(/^[^_]+_(.+)\.pdf$/);
               if (match) {
@@ -99,31 +141,27 @@ jobs:
               console.log('Canonical authorYear:', authorYear);
             }
 
-            const task = (
-              label === 'reprocess-v2' ||
-              label === 'reprocess-schema' ||
-              labels.includes('reprocess-v2') ||
-              labels.includes('reprocess-schema')
-            )
+            const task = labels.includes('reprocess-v2') || labels.includes('reprocess-schema')
               ? 'reprocess-schema'
               : 'process';
 
-            // Debug: show available fields and body preview
-            console.log('Available fields:', Object.keys(fields));
-            console.log('Fields object:', fields);
-            console.log('Issue body preview (first 500 chars):', body.substring(0, 500));
+            if (!authorYear) {
+              core.setFailed(`Issue #${issueNumber}: author_year missing from issue body/title.`);
+              return;
+            }
 
-            if (!authorYear) core.setFailed('author_year missing from issue body. Available fields: ' + Object.keys(fields).join(', '));
+            if (!labels.some((label) => ['process-paper', 'reprocess-v2', 'reprocess-schema'].includes(label))) {
+              core.setFailed(`Issue #${issueNumber}: missing processing label.`);
+              return;
+            }
 
-            core.setOutput('author_year',  authorYear);
-            core.setOutput('zotero_key',   zoteroKey);
+            core.setOutput('issue_number', String(issueNumber));
+            core.setOutput('author_year', authorYear);
+            core.setOutput('zotero_key', zoteroKey);
             core.setOutput('pdf_filename', pdfFilename);
-            core.setOutput('task',         task);
-            core.setOutput('branch',       `paper/${authorYear}-${Date.now()}`);
+            core.setOutput('task', task);
+            core.setOutput('branch', `paper/${authorYear}-issue-${issueNumber}-${Date.now()}`);
 
-            core.notice(`Task: ${task} | Paper: ${authorYear} | Model: claude-sonnet-4-6 | Source of truth: SCHEMA.md`);
-
-      # ── Python + GitHub Models API ────────────────────────────────────────
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
@@ -135,20 +173,19 @@ jobs:
       - name: Run Claude extraction
         env:
           GITHUB_TOKEN:  ${{ secrets.GITHUB_TOKEN }}
-          TASK:          ${{ steps.parse.outputs.task }}
-          AUTHOR_YEAR:   ${{ steps.parse.outputs.author_year }}
-          ZOTERO_KEY:    ${{ steps.parse.outputs.zotero_key }}
-          PDF_FILENAME:  ${{ steps.parse.outputs.pdf_filename }}
+          TASK:          ${{ steps.fetch.outputs.task }}
+          AUTHOR_YEAR:   ${{ steps.fetch.outputs.author_year }}
+          ZOTERO_KEY:    ${{ steps.fetch.outputs.zotero_key }}
+          PDF_FILENAME:  ${{ steps.fetch.outputs.pdf_filename }}
         run: python scripts/process_paper.py
 
-      # ── Commit to new branch ──────────────────────────────────────────────
       - name: Commit generated YAML
         id: commit
         uses: actions/github-script@v7
         env:
-          AUTHOR_YEAR: ${{ steps.parse.outputs.author_year }}
-          BRANCH:      ${{ steps.parse.outputs.branch }}
-          TASK:        ${{ steps.parse.outputs.task }}
+          AUTHOR_YEAR: ${{ steps.fetch.outputs.author_year }}
+          BRANCH:      ${{ steps.fetch.outputs.branch }}
+          TASK:        ${{ steps.fetch.outputs.task }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
@@ -192,20 +229,20 @@ jobs:
             core.setOutput('branch', branch);
             core.setOutput('file_path', filePath);
 
-      # ── Open PR ───────────────────────────────────────────────────────────
       - name: Create Pull Request
         uses: actions/github-script@v7
         env:
-          AUTHOR_YEAR: ${{ steps.parse.outputs.author_year }}
+          AUTHOR_YEAR: ${{ steps.fetch.outputs.author_year }}
           BRANCH:      ${{ steps.commit.outputs.branch }}
-          TASK:        ${{ steps.parse.outputs.task }}
+          TASK:        ${{ steps.fetch.outputs.task }}
+          ISSUE_NUMBER: ${{ steps.fetch.outputs.issue_number }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const authorYear = process.env.AUTHOR_YEAR;
             const branch     = process.env.BRANCH;
             const task       = process.env.TASK;
-            const issueNum   = context.issue.number;
+            const issueNum   = Number(process.env.ISSUE_NUMBER);
 
             const title = task === 'reprocess-schema'
               ? `[schema] refactor ${authorYear}: align with current SCHEMA.md`
@@ -216,16 +253,16 @@ jobs:
               '',
               `**Task**: \`${task}\``,
               `**Paper**: \`papers/${authorYear}.yaml\``,
-               `**Generated by**: claude-sonnet-4-6 via GitHub Models API`,
-               `**Schema source of truth**: \`SCHEMA.md\``,
-               '',
-               '## Review checklist',
-               '- [ ] Node IDs are globally unique',
-               '- [ ] All BOUNDED-BY relations have `is_system_limit` + `breakthrough_paths`',
-               '- [ ] No deprecated relation types (GOVERNED-BY, SUPPORTED-BY, BREAKTHROUGH-VIA)',
-               '- [ ] External conditions use CONDITIONED-BY with interface fields',
-               '- [ ] If schema wording conflicts elsewhere, SCHEMA.md was treated as the source of truth',
-               '- [ ] Cross-file references are correct',
+              `**Generated by**: claude-sonnet-4-6 via GitHub Models API`,
+              `**Schema source of truth**: \`SCHEMA.md\``,
+              '',
+              '## Review checklist',
+              '- [ ] Node IDs are globally unique',
+              '- [ ] All BOUNDED-BY relations have `is_system_limit` + `breakthrough_paths`',
+              '- [ ] No deprecated relation types (GOVERNED-BY, SUPPORTED-BY, BREAKTHROUGH-VIA)',
+              '- [ ] External conditions use CONDITIONED-BY with interface fields',
+              '- [ ] If schema wording conflicts elsewhere, SCHEMA.md was treated as the source of truth',
+              '- [ ] Cross-file references are correct',
               '',
               '_AI draft — expert review required before merge._'
             ].join('\n');
@@ -241,4 +278,4 @@ jobs:
               body: `✅ Processing complete! PR ready for review: **#${pr.number}**\n\n${pr.html_url}`
             });
 
-            core.notice(`PR created: #${pr.number}`);
+            core.notice(`PR created for issue #${issueNum}: #${pr.number}`);
