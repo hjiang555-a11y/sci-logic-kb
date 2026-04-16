@@ -1,7 +1,7 @@
 # Cole 2013 — 高反镀层布朗噪声十倍降低（AlGaAs 晶体镀层）
 # 提取者：Claude（AI草稿，待专家确认）
 # 提取日期：2026-04-14
-# Schema版本：v3.1
+# Schema版本：v3.2
 
 meta:
   zotero_key: "CWIHQRJD"
@@ -54,8 +54,10 @@ entities:
       AlGaAs 单晶无晶界散射，机械 Q ~ 40,000（φ ~ 2.5×10⁻⁵），本征降低约 16×。
       基底转移工艺解决了单晶薄膜无法直接沉积在非晶弯曲底物上的技术障碍。
     note: >
-      Level 2；可 PART-OF ent.fp_cavity_system 或 ent.si_crystal_fp_cavity_k12（定义于 kessler2012.yaml）；
-      与 ent.mirror_coating（numata2004.yaml）竞争。
+      Level 2；PART-OF ent.fp_cavity_system（numata2004.yaml），亦适用于 ent.si_crystal_fp_cavity_k12（kessler2012.yaml）。
+      与 ent.mirror_coating（numata2004.yaml）为同一 L1 下的镀层技术代际演进（非 COMPETES-WITH 关系）：
+      AlGaAs 晶体镀层 φ ~ 2.5×10⁻⁵（室温），比最优 IBS 低 ~10×，开辟室温 10⁻¹⁷ 路径；
+      IBS 工艺成熟、成本低、波长覆盖广；AlGaAs 制备复杂（MBE+基底转移）、有固有双折射（4 MHz 劈裂）。
 
 principles:
   - id: pri.crystalline_coating_low_brownian_noise
@@ -127,25 +129,13 @@ relations:
     conditions: null
     note: "pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml"
 
-  - id: rel.C04
-    subject: ent.algaas_crystalline_mirror_c13
-    predicate: COMPETES-WITH
-    object: ent.mirror_coating
-    context: "FP 腔镜高反射镀层方案：AlGaAs 晶体镀层 vs IBS 介质膜"
-    tradeoffs:
-      subject_wins:
-        - "室温损耗角 φ ~ 2.5×10⁻⁵，约 10× 低于最优 IBS（~2×10⁻⁴），直接降低镀层布朗噪声"
-        - "低温（10 K）下进一步降低至 φ ~ 4.5×10⁻⁶，共改善约 100×"
-        - "开辟室温 10⁻¹⁷ 稳定度路径，无需全面低温化"
-        - "与 Si 低温腔结合，有望突破 10⁻¹⁸ 量级"
-      object_wins:
-        - "IBS 介质膜直接沉积于任意形状底物，工艺成熟，成本低，波长覆盖广"
-        - "AlGaAs 存在固有双折射（4 MHz 劈裂），IBS 双折射更小"
-        - "AlGaAs 波长范围受限（650 nm–3 μm），IBS 可覆盖 300 nm–4 μm"
-        - "晶体镀层制备复杂（MBE + 基底转移），批量制造难度大"
-    confidence: established
-    source: {zotero_key: "CWIHQRJD", claim: "tenfold reduction in coating noise at 1 Hz"}
-    note: "ent.mirror_coating 定义于 numata2004.yaml"
+  # rel.C04 已删除：原为 ent.algaas_crystalline_mirror_c13 COMPETES-WITH ent.mirror_coating，
+  # 违反 Schema 规则（L2 实体之间不使用 COMPETES-WITH）。
+  # 两者均为 ent.fp_cavity_system 的 L2 子单元，属于镀层技术的代际演进。
+  # 原文对比摘要：AlGaAs 晶体镀层损耗角 ~2.5×10⁻⁵（比 IBS 低 ~10×），开辟室温 10⁻¹⁷ 路径；
+  # IBS 工艺成熟、成本低、波长覆盖广、双折射小；AlGaAs 制备复杂（MBE+基底转移）、
+  # 有固有双折射（4 MHz 劈裂）、波长受限（650 nm–3 μm）。
+  # 性能对比见 met.algaas_coating_loss_angle_c13 的 comparison 字段。
 
   - id: rel.C05
     subject: ent.fp_cavity_system

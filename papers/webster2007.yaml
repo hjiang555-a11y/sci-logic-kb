@@ -1,7 +1,7 @@
 # Webster 2007 — 振动不敏感光学谐振腔
 # 提取者：Claude（AI草稿，待专家确认）
 # 提取日期：2026-04-14
-# Schema版本：v3.1
+# Schema版本：v3.2
 
 meta:
   zotero_key: "UCNS7EM7"
@@ -54,7 +54,11 @@ entities:
       水平不敏感性依赖四点安装的几何对称和橡胶球的力学均匀性。
     interface_requirements:
       vibration: "有效频段：DC 至 ~10 kHz（结构谐振前）；>10 Hz 段主动隔振平台提供额外 35 dB 衰减"
-    note: "Level 2 PART-OF ent.fp_cavity_system（定义于 numata2004.yaml）"
+    note: >
+      Level 2 PART-OF ent.fp_cavity_system（定义于 numata2004.yaml）。
+      与 ent.vibration_isolation（young1999.yaml）为同一 L1 下不同振动抑制策略（非 COMPETES-WITH 关系）：
+      几何补偿在 DC–10 kHz 有效，灵敏度降低 >1000×，与增长腔兼容；
+      被动隔振在 >2 Hz 衰减好、实现简单；最优方案两者结合。
 
 principles:
   - id: pri.cavity_deformation_compensation
@@ -195,24 +199,12 @@ relations:
       （原 breakthrough_paths 引用了已删除节点 pri.beam_radius_scaling 和 pri.low_loss_substrate_improvement，
       已更新为实际实现这两个突破的有效节点 ID。）
 
-  - id: rel.W06
-    subject: ent.cutout_cavity_mount_w07
-    predicate: COMPETES-WITH
-    object: ent.vibration_isolation
-    context: "FP腔振动噪声抑制策略：腔体几何补偿（Webster 2007）vs 被动弹性悬挂隔振（Young 1999）"
-    tradeoffs:
-      subject_wins:
-        - "对 DC 和 <2 Hz 极低频振动同样有效（悬挂隔振在 <2 Hz 失效）"
-        - "灵敏度降低 >1000×（竖直），靠腔体自身设计实现，无需独立隔振机构"
-        - "紧凑：100 mm 腔体，无需 3 m 弹性悬挂"
-        - "与增长腔兼容：腔长增加不降低振动不敏感性，同时减少热噪声"
-      object_wins:
-        - "被动隔振在 >2 Hz 衰减 -40 dB/decade，对宽频振动效果好"
-        - "实现简单，不依赖精密加工和力学对称安装"
-        - "可与几何补偿叠加（最优方案两者结合）"
-    confidence: established
-    source: {zotero_key: "UCNS7EM7", claim: "a better approach is to reduce the sensitivity of the cavity to vibrations"}
-    note: "ent.vibration_isolation 定义于 young1999.yaml"
+  # rel.W06 已删除：原为 ent.cutout_cavity_mount_w07 COMPETES-WITH ent.vibration_isolation，
+  # 违反 Schema 规则（L2 实体之间不使用 COMPETES-WITH）。
+  # 两者均为 ent.fp_cavity_system 的 L2 子单元，tradeoff 信息已迁移至
+  # ent.cutout_cavity_mount_w07 的 design_rationale 和 note 中。
+  # 原文对比摘要：几何补偿在 DC–10kHz 有效且与增长腔兼容；
+  # 被动隔振在 >2 Hz 衰减好且实现简单；最优方案两者结合。
 
   - id: rel.W07
     subject: ent.fp_cavity_system
