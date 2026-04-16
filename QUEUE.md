@@ -120,7 +120,6 @@
 - [x] `4GT5VD54` | Michaud-Belleau 2022 | Fundamental thermal noise in antiresonant hollow-core fibers → `michaudbelleau2022.yaml`
 - [→] `QGLVTMB7` | Ding 202x | Hollow-core fiber made of ultralow expansion glass
 - [ ] `GIUQZ2EE` | Zuba 202x | Limits of Coupling Efficiency Into Hollow-Core Antiresonant Fibers
-- [ ] `SBPRDKPV` | Jeon 202x | 10⁻¹⁵-level laser stabilization down to fiber thermal noise limit
 - [→] `XSMPRNT3` | Grabielle 2025 | Locking noise in laser frequency stabilization to an optical fiber
 - [ ] `JAW66GYL` | J. Gao 2025 | Ultra-Low Frequency Noise Laser Based on All-Fiber Integrated Interferometer
 - [ ] `H5YVF5AR` | Kim 2008 | Drift-free femtosecond timing synchronization of remote optical and microwave
