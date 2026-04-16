@@ -30,7 +30,10 @@ class QualityChecker:
 
     def __init__(self, repo_path: str = "."):
         self.repo_path = Path(repo_path)
-        self.papers_dir = self.repo_path / "papers"
+        # Support both old and new directory structures
+        new_path = self.repo_path / "topics" / "ultrastable-laser" / "papers"
+        old_path = self.repo_path / "papers"
+        self.papers_dir = new_path if new_path.exists() else old_path
         self.schema_path = self.repo_path / "SCHEMA.md"
 
         # 存储所有已知节点（用于检查唯一性）

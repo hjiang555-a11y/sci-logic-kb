@@ -39,15 +39,17 @@ def get_schema_version(schema: str) -> str:
     return match.group(1).strip() if match else "current"
 
 
-def load_context() -> tuple[str, str, str, str]:
+def load_context(topic: str = "ultrastable-laser") -> tuple[str, str, str, str]:
     """Load SCHEMA, version, copilot instructions, and existing papers as context."""
     schema = Path("SCHEMA.md").read_text(encoding="utf-8")
     schema_version = get_schema_version(schema)
     instructions = Path(".github/copilot-instructions.md").read_text(encoding="utf-8")
 
     existing = []
-    for f in sorted(Path("papers").glob("*.yaml")):
-        existing.append(f"### {f.name}\n```yaml\n{f.read_text(encoding='utf-8')}\n```")
+    papers_dir = Path(f"topics/{topic}/papers")
+    if papers_dir.exists():
+        for f in sorted(papers_dir.glob("*.yaml")):
+            existing.append(f"### {f.name}\n```yaml\n{f.read_text(encoding='utf-8')}\n```")
     existing_str = "\n\n".join(existing) if existing else "(none yet)"
 
     return schema, schema_version, instructions, existing_str
@@ -72,7 +74,8 @@ def extract_pdf_text(pdf_path: Path) -> str:
 def process_new_paper(client: OpenAI, author_year: str,
                       zotero_key: str, pdf_filename: str,
                       schema: str, schema_version: str,
-                      instructions: str, existing: str) -> str:
+                      instructions: str, existing: str,
+                      topic: str = "ultrastable-laser") -> str:
     """Extract knowledge from a new PDF."""
     pdf_path = Path(f"pdfs/{pdf_filename}")
     if not pdf_path.exists():
@@ -106,7 +109,7 @@ Extract structured YAML knowledge nodes from the provided research paper.
                 "role": "user",
                 "content": (
                     f"Process this paper (Zotero key: {zotero_key}).\n"
-                     f"Generate the complete YAML file for papers/{author_year}.yaml "
+                     f"Generate the complete YAML file for topics/{topic}/papers/{author_year}.yaml "
                      f"following SCHEMA {schema_version}.\n"
                      f"This is a NEW paper — extract all entities, principles, "
                      f"methods, metrics, and relations.\n"
@@ -121,9 +124,10 @@ Extract structured YAML knowledge nodes from the provided research paper.
 
 
 def reprocess_v2(client: OpenAI, author_year: str,
-                 schema: str, schema_version: str, existing: str) -> str:
+                 schema: str, schema_version: str, existing: str,
+                 topic: str = "ultrastable-laser") -> str:
     """Update an existing YAML file to comply with the current schema."""
-    existing_yaml_path = Path(f"papers/{author_year}.yaml")
+    existing_yaml_path = Path(f"topics/{topic}/papers/{author_year}.yaml")
     if not existing_yaml_path.exists():
         raise FileNotFoundError(f"Existing YAML not found: {existing_yaml_path}")
 
@@ -215,18 +219,19 @@ def main():
     author_year = os.environ.get("AUTHOR_YEAR", "")
     zotero_key = os.environ.get("ZOTERO_KEY", "")
     pdf_filename = os.environ.get("PDF_FILENAME", "")
+    topic = os.environ.get("TOPIC", "ultrastable-laser")
 
     if not author_year:
         print("ERROR: AUTHOR_YEAR not set", file=sys.stderr)
         sys.exit(1)
 
     client = get_client()
-    schema, schema_version, instructions, existing = load_context()
+    schema, schema_version, instructions, existing = load_context(topic)
 
-    print(f"Task: {task} | Paper: {author_year} | Model: {MODEL} | Schema: {schema_version}")
+    print(f"Task: {task} | Paper: {author_year} | Topic: {topic} | Model: {MODEL} | Schema: {schema_version}")
 
     if task in {"reprocess-v2", "reprocess-schema"}:
-        yaml_content = reprocess_v2(client, author_year, schema, schema_version, existing)
+        yaml_content = reprocess_v2(client, author_year, schema, schema_version, existing, topic)
     else:
         if not pdf_filename:
             matches = list(Path("pdfs").glob(f"*_{author_year}.pdf"))
@@ -240,10 +245,11 @@ def main():
 
         yaml_content = process_new_paper(
             client, author_year, zotero_key, pdf_filename,
-            schema, schema_version, instructions, existing
+            schema, schema_version, instructions, existing, topic
         )
 
-    output_path = Path(f"papers/{author_year}.yaml")
+    output_path = Path(f"topics/{topic}/papers/{author_year}.yaml")
+    output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(yaml_content, encoding="utf-8")
     print(f"Written: {output_path} ({len(yaml_content)} chars)")
 

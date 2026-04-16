@@ -62,7 +62,10 @@ def analyze_papers(papers_dir):
     return total, node_ids, relation_ids, duplicate_nodes, duplicate_relations
 
 def main():
-    papers_dir = 'papers'
+    # Support both old and new directory structures
+    papers_dir = 'topics/ultrastable-laser/papers'
+    if not os.path.exists(papers_dir):
+        papers_dir = 'papers'
     if not os.path.exists(papers_dir):
         print(f"错误: 目录 {papers_dir} 不存在")
         sys.exit(1)

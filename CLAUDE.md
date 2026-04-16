@@ -4,10 +4,10 @@
 
 ## 仓库用途
 
-**时间频率计量科研知识库**（超稳激光专题）。
+**时间频率计量科研知识库**（多专题，当前已建超稳激光专题）。
 从 Zotero 管理的论文 PDF 中提取结构化知识，存储为 YAML 节点图。
 
-详细 Schema 见 `SCHEMA.md`，待处理论文见 `QUEUE.md`。
+详细 Schema 见 `SCHEMA.md`，专题体系见 `TOPICS.md`。
 
 ---
 
@@ -79,16 +79,18 @@ for i in items:
 
 ### 步骤 5：写入文件
 
-写入 `papers/{first_author_lower}{year}.yaml`，例如 `papers/matei2017.yaml`。
+写入 `topics/<topic>/papers/{first_author_lower}{year}.yaml`，例如 `topics/ultrastable-laser/papers/matei2017.yaml`。
+
+当前默认专题为 `ultrastable-laser`。
 
 ### 步骤 6：更新队列
 
-将 `QUEUE.md` 中该论文的 `[ ]` 改为 `[x]`，并在 `SCHEMA.md` 的"已处理论文"表中补充记录。
+在 `SCHEMA.md` 的"已处理论文"表中补充记录。
 
 ### 步骤 7：提交
 
 ```bash
-git add papers/{filename}.yaml QUEUE.md SCHEMA.md
+git add topics/<topic>/papers/{filename}.yaml SCHEMA.md
 git commit -m "add {author}{year}: {论文核心贡献一句话}"
 git push
 ```
@@ -99,7 +101,7 @@ git push
 
 提交前确认：
 
-- [ ] 每个节点 ID 全局唯一（不与 papers/ 目录其他文件冲突）
+- [ ] 每个节点 ID 全局唯一（不与同专题 papers/ 目录及其他专题的文件冲突）
 - [ ] 所有 relation 有 `source.claim`（原文论断）
 - [ ] 所有 metric 的 `demonstrated_value` 有 `conditions`
 - [ ] 原理节点有 `conditions` 或 `applicable_when`
@@ -120,7 +122,9 @@ git push
 
 ---
 
-## 已有节点参考（跨文件引用时使用）
+## 已有节点参考（超稳激光专题，跨文件引用时使用）
+
+> 以下节点均位于 `topics/ultrastable-laser/papers/` 目录下。
 
 ### 来自 drever1983.yaml
 
@@ -282,4 +286,5 @@ git push
 
 ---
 
-*本文件由 Claude Code 生成，更新日期：2026-04-14*
+*本文件由 Claude Code 生成，更新日期：2026-04-16*
+*多专题架构升级：v4.0*
