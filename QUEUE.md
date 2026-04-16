@@ -124,7 +124,7 @@
 - [ ] `JAW66GYL` | J. Gao 2025 | Ultra-Low Frequency Noise Laser Based on All-Fiber Integrated Interferometer
 - [x] `H5YVF5AR` | Kim 2008 | Drift-free femtosecond timing synchronization of remote optical and microwave → `kim2008.yaml`
 - [ ] `ULMQ3IXP` | Winful 1985 | SELF-INDUCED POLARIZATION CHANGES IN BIREFRINGENT OPTICAL FIBERS
-- [ ] `2F3PD62T` | Belardi 201x | Design and Properties of Hollow Antiresonant Fibers
+- [x] `2F3PD62T` | Belardi 2015 | Design and Properties of Hollow Antiresonant Fibers → `belardi2015.yaml`
 
 ---
 
