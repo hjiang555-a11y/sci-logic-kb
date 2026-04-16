@@ -75,9 +75,9 @@ metrics:
     demonstrated_value:
       value: "中位线宽 17 mHz（1542 nm）"
       conditions: >
-        40 cm ULE 腔参考；771 nm 拍频，64 s FFT 测量，15 mHz RBW，75 次重复；
+        40 cm ULE 腔参考；771 nm 拍频，64 s FFT 测量，15 mHz resolution bandwidth，75 次重复；
         先去除由 40 cm ULE 腔主导的 20 mHz/s 线性漂移，再按 σSi/√(σSi²+σULE²)
-        将拍频线宽折算为锁定到 Si 腔的 1542 nm 单激光线宽
+        这一单腔贡献反卷积因子，将拍频线宽折算为锁定到 Si 腔的 1542 nm 单激光线宽
       verification_status: observed
       confidence: established
       source: {zotero_key: "N9AGEQ8S", claim: "the computed results... reveal that the median of the linewidth distribution is 17 mHz at 1542 nm"}
