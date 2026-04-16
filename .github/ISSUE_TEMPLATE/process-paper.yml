@@ -37,6 +37,23 @@ body:
     validations:
       required: true
 
+  - type: dropdown
+    id: topic
+    attributes:
+      label: Topic（专题）
+      description: "论文所属专题"
+      options:
+        - ultrastable-laser
+        - optical-frequency-combs
+        - optical-clocks
+        - microwave-standards
+        - time-frequency-transfer
+        - timescales
+        - fundamental-physics
+      default: 0
+    validations:
+      required: true
+
   - type: textarea
     id: notes
     attributes:

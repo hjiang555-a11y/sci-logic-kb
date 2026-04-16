@@ -2,13 +2,13 @@
 
 > **最高规则**：若本文件与 `SCHEMA.md` 冲突，**一律以 `/home/runner/work/sci-logic-kb/sci-logic-kb/SCHEMA.md` 为准**。
 
-> **当前 Schema 版本**：v3.2（2026-04-15）
+> **当前 Schema 版本**：v4.0（2026-04-16）
 
 ---
 
 ## 1. 项目定位
 
-本仓库是一个**面向科研探索的结构化知识库**，服务时间频率计量中的超稳激光专题。
+本仓库是一个**面向科研探索的结构化知识库**，服务**时间频率计量**全领域。当前已建专题：超稳激光。专题体系详见 `TOPICS.md`。
 
 核心问题：
 
@@ -17,7 +17,7 @@
 3. 怎样突破？
 4. 在什么条件下成立、失效、存在争议，或仍是开放问题？
 
-知识以 `papers/*.yaml` 保存，不做纯文本摘要堆积。
+知识以 `topics/<topic>/papers/*.yaml` 保存，不做纯文本摘要堆积。当前超稳激光论文在 `topics/ultrastable-laser/papers/`。
 
 ---
 
@@ -173,4 +173,5 @@ YAML 仍是主库；Obsidian 等工具是阅读层，而不是事实真源。
 - `/home/runner/work/sci-logic-kb/sci-logic-kb/.github/copilot-instructions.md`
 - `/home/runner/work/sci-logic-kb/sci-logic-kb/scripts/process_paper.py`
 - `/home/runner/work/sci-logic-kb/sci-logic-kb/.github/workflows/process-paper.yml`
-- `/home/runner/work/sci-logic-kb/sci-logic-kb/papers/*.yaml` 头部版本注释
+- `/home/runner/work/sci-logic-kb/sci-logic-kb/TOPICS.md`
+- `/home/runner/work/sci-logic-kb/sci-logic-kb/topics/*/papers/*.yaml` 头部版本注释
