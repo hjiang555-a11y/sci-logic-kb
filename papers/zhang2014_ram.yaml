@@ -29,7 +29,9 @@ meta:
 entities:
   # ent.waveguide_eom_z14 已合并到 ent.eom（定义于 drever1983.yaml）的 implementations.waveguide 字段中。
   # Zhang 2014 的波导 EOM 是通用 EOM 概念的低 RAM 特化实现。
-  # RAM 相关参数保留在 ent.eom 的 ram_properties 字段和 meth.ram_cancellation_z14 方法中。
+  # 原 meth.ram_cancellation_z14 已并入 ent.eom（drever1983.yaml）的
+  # key_parameters.ram_suppression_interfaces.zhang2014_dual_servo 字段。
+  # RAM 相关参数保留在 ent.eom 的 ram_properties 和 ram_suppression_interfaces 字段中。
 
 principles:
   - id: pri.ram_pdh_frequency_offset
@@ -77,27 +79,6 @@ principles:
        than the quadrature response ... working in tandem, suppress both
        the in-phase and quadrature components of the RAM to the 1 ppm level"
 
-methods:
-  - id: meth.ram_cancellation_z14
-    name: "RAM双通道主动消除方法（Zhang 2014）"
-    status: demonstrated
-    applies_to: ent.eom
-    steps_summary: >
-      1. 在腔输入口前分束，专用RAM探测器（PD1）连续监测RAM幅度；
-      2. 同相RAM伺服：检相解调后的误差信号 → DC电场反馈至EOM（带宽~200 kHz）；
-      3. 正交RAM伺服：混频器正交口输出 → 慢积分器 → EOM温度反馈（带宽<0.1 Hz）；
-      4. 两路并行工作，实现56 dB综合抑制；
-      5. 腔外差信号（PD2）提供离回路RAM表征（系统整体性能验证）。
-    required_hardware:
-      - ent.eom    # 波导型EOM实现（优化RAM均匀性），已合并到 ent.eom（drever1983.yaml）
-    key_result:
-      ram_suppression_dB: 56
-      ram_allan_deviation: "~1 ppm（1–1000 s）"
-      residual_limit: "~30 ppm（受光路标具效应限制）"
-    source_claim: >
-      "when the in-phase and quadrature RAM servos are activated simultaneously,
-       the RAM is suppressed by 56 dB"
-
 metrics:
   - id: met.ram_fractional_instability
     name: "RAM引起的分数频率不稳定度"
@@ -134,19 +115,20 @@ relations:
   - id: rel.Z14_02
     subject: meth.pdh_locking
     predicate: ENABLED-BY
-    object: meth.ram_cancellation_z14
+    object: pri.ram_active_cancellation
     confidence: established
     source: {zotero_key: "S5GJNVG8", claim: "active servo comprising in-phase and quadrature RAM corrections allows frequency stabilization comparable to fundamental thermal noise limit"}
     conditions: "RAM需抑制至ppm量级以达到腔热噪声极限性能"
     temporal_role: proposes
+    note: "双通道伺服实现细节已并入 ent.eom.key_parameters.ram_suppression_interfaces.zhang2014_dual_servo"
 
   - id: rel.Z14_03
-    subject: meth.ram_cancellation_z14
-    predicate: ENABLED-BY
-    object: pri.ram_active_cancellation
+    subject: meth.pdh_locking
+    predicate: CHARACTERIZED-BY
+    object: met.ram_fractional_instability
     confidence: established
-    source: {zotero_key: "S5GJNVG8", claim: "DC electric field and temperature feedback onto the EOM to cancel both in-phase and quadrature components of the RAM"}
-    conditions: null
+    source: {zotero_key: "S5GJNVG8", claim: "σ_RAM at 1 ppm corresponds to σ_y of 1×10⁻¹⁶ for 35mm cavity"}
+    conditions: "波导 EOM + 双通道 RAM 主动消除下，PDH 锁频的 RAM 等效分数不稳定度"
 
   - id: rel.Z14_04
     subject: ent.eom

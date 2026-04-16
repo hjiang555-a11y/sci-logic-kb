@@ -82,13 +82,17 @@
 │   │   │   ├── ent.cutout_cavity_mount_w07（切口安装设计）
 │   │   │   └── ent.cubic_force_insensitive_cavity_w11（力不敏感立方腔）
 │   │   ├── [调制解调子单元] → BOUNDED-BY pri.ram_pdh_frequency_offset
-│   │   │   └── ent.eom（电光调制器，合并 rf_phase_modulator + waveguide_eom）
+│   │   │   └── ent.eom（电光调制器，合并 rf_phase_modulator + waveguide_eom，含 RAM 主动抑制接口）
 │   │   └── [实例节点] (Level 2, 参数变体)
 │   │       ├── ent.si_crystal_fp_cavity_k12（124K Si 腔，Kessler 2012 / Matei 2017）
 │   │       ├── ent.si_crystal_17k_fp_cavity_l26（17K Si 腔 + AlGaAs，Lee 2026，世界纪录）
 │   │       ├── ent.si_crystal_fp_cavity_4k_r19（4K Si 腔，Robinson 2019）
 │   │       ├── ent.si_crystal_fp_cavity_sub5k_c25（sub-5K 10cm Si 腔，Chen 2025）
 │   │       └── ent.self_balancing_long_cavity_h15（48 cm 长腔，Häfner 2015）
+│   │
+│   ├── 光谱烧孔频率参考 (ent.shb_eu_yso_reference_l13) [Level 1 实体]
+│   │   ├── 核心特性：低温稀土晶体、光谱孔寿命、漂移率
+│   │   └── 定位：当前与 FP 腔并列；未来若扩展到更广义时频库，可上提到“光学频率参考”父层
 │   │
 │   └── 光纤干涉仪 (ent.fiber_interferometer) [Level 1 实体]
 │       ├── 核心特性：延迟时间、等效 Q 值、温度灵敏度
@@ -102,8 +106,7 @@
 │
 ├── 分支3：稳频策略（高级，可叠加于核心方法之上）  ← v3.0 新增
 │   ├── meth.multi_stage_locking（多级级联稳频，原 two_stage_pdh 泛化）
-│   ├── meth.multi_cavity_averaging（多腔频率平均，从 pri.optical_frequency_averaging 提升）
-│   └── meth.ram_cancellation_z14（RAM 双通道主动消除）
+│   └── meth.multi_cavity_averaging（多腔频率平均，从 pri.optical_frequency_averaging 提升）
 │
 └── 外围条件层                              [独立层，通过接口连接主分支]
     ├── ent.vibration_environment（环境振动谱）
@@ -183,6 +186,26 @@ historical_landmarks:
       source: {zotero_key: "KEY"}
       note: "关键演进节点"
 ```
+
+### 子单元接口字段（约定）
+
+当某种“方法”实质上只是某个 Level 2 子单元的实现接口、执行回路或工程变体，
+且不再保留为独立 `meth.*` 节点时，可并入对应实体的 `key_parameters` 字段。
+
+推荐模式：
+
+```yaml
+key_parameters:
+  interface_group_name:
+    variant_name:
+      source: {zotero_key: "KEY"}
+      mechanism: "该接口/变体如何工作"
+      performance: "代表性性能或抑制水平"
+      conditions: "可选，适用条件"
+```
+
+适用场景：如 `ent.eom` 下的 RAM 主动抑制接口、某安装子单元的特定支撑变体等。
+若该内容后来形成可独立复用、可跨分支比较的方法，再提升回独立 `meth.*` 节点。
 
 ---
 
@@ -575,13 +598,13 @@ note: "跨文件引用，定义于 shaddock1999.yaml"
 | `olson2019.yaml` | CDX3DFQR | Olson 2019 — RB 干涉仪 <2×10⁻¹⁶ | ✅ 符合v3.2（首次提取） |
 | `huangjc2019b.yaml` | 5DCNFGX4 | Huang 2019b — 双缠绕抗振光纤盘 | ✅ 符合v3.2（首次提取） |
 
-**历史 v3.0 重构摘要**（2026-04-15）：
+**历史重构摘要**（v3.0 起，含 2026-04-16 的 v3.2 增补）：
 
 ### 核心改动
 1. **实例节点降级**：4 个 FP 腔"独立方案"（Si 124K/17K/4K、48cm 长腔）从 Level 1 降为 Level 2（PART-OF fp_cavity_system），取消 8 条 COMPETES-WITH 关系
 2. **噪声源分类**：在 ent.fp_cavity_system 中建立热噪声/振动/调制解调三个子类
 3. **原理节点精简**：6 个工程推理并入父原理 condition_variables（mirror_substrate_noise_dominance、beam_radius_scaling、low_loss_substrate_improvement、shot_noise_power_efficiency_scaling、shorter_delay_line_rbs_tradeoff、pri.off_resonance_reference_light tier: meta→domain）
-4. **方法层重组**：新增"稳频策略"分支（meth.multi_stage_locking、meth.multi_cavity_averaging），meth.ram_cancellation_z14 归入
+4. **方法层重组**（v3.0，2026-04-16 补充 RAM 决议）：新增"稳频策略"分支（meth.multi_stage_locking、meth.multi_cavity_averaging）；RAM 抑制不再单列方法节点，而并入 ent.eom 子单元接口
 5. **探测硬件合并**：split_photodetector/tilting_mirror 并入 tilt_locking；faraday_rotation_mirror 并入 fiber_interferometer；rf_phase_modulator + waveguide_eom → ent.eom
 6. **外围条件完善**：ent.dye_laser_563nm → ent.laser_source (ext)；ent.agile_laser_system → ext
 7. **breakthrough_paths 修正**：所有 direction 字段从 ent.* 改为 pri.*/meth.*（schema 合规）
@@ -594,4 +617,4 @@ note: "跨文件引用，定义于 shaddock1999.yaml"
 - **疑问 5（agile_laser_system）**：降为 ext（外围条件/系统描述），不是独立频率参考
 - **疑问 6（实例 YAML 表达）**：采用方案 (a)——在各论文 YAML 中保留为 Level 2 实体节点
 - **疑问 7（Webster 2011）**：已确认为 ent.cubic_force_insensitive_cavity_w11
-- **疑问 8（分支3 反馈执行部件）**：替换为"稳频策略"分支，EOM 归入 FP 腔调制解调子单元
+- **疑问 8（分支3 反馈执行部件）**：替换为"稳频策略"分支，EOM 归入 FP 腔调制解调子单元；RAM 抑制作为该子单元接口而非独立 meth 节点

@@ -96,11 +96,6 @@ principles:
     open_questions:
       - "当腔长继续增大至 1 m 以上，FSR 进一步缩小，高阶模污染是否会成为 RAM 测量的新限制？"
 
-methods: []
-  # PDH 锁频方法复用 meth.pdh_locking（定义于 drever1983.yaml）
-  # RAM 消除方法复用 meth.ram_cancellation_z14（定义于 zhang2014_ram.yaml），
-  # 本文的偏置电场方案是 ram_cancellation 的一种实现变体
-
 metrics:
   - id: met.cavity_storage_time_p25
     name: "光学腔存储时间"
@@ -160,12 +155,12 @@ relations:
     source: {zotero_key: "U2LXSU62", claim: "we maximize τ_cav by developing an optical reference cavity with a length of 68 cm"}
 
   - id: rel.P04
-    subject: met.ram_fractional_instability_p25
-    predicate: OPERATIONALIZED-AS
-    object: meth.ram_cancellation_z14
+    subject: meth.pdh_locking
+    predicate: CHARACTERIZED-BY
+    object: met.ram_fractional_instability_p25
     confidence: established
     source: {zotero_key: "U2LXSU62", claim: "active cancellation can reduce the RAM-induced deviations... by more than two orders of magnitude"}
-    note: "跨文件引用，meth.ram_cancellation_z14 定义于 zhang2014_ram.yaml；本文偏置电场方案为其实现变体"
+    note: "本文偏置电场 RAM 抑制方案已并入 ent.eom 子单元接口；这里记录其对 PDH 锁频性能的刻画"
 
   - id: rel.P05
     subject: ent.long_cavity_68cm_p25

@@ -41,18 +41,23 @@ entities:
         impact: "增加系统复杂度和成本"
       - description: "频率漂移需要周期性校准"
         impact: "长期稳定度受漂移率限制"
-    note: "替代 FP 腔的频率参考方案，与 ent.fp_cavity_system COMPETES-WITH。"
+    note: >
+      替代 FP 腔的频率参考方案，与 ent.fp_cavity_system COMPETES-WITH。
+      在当前超稳激光知识库中保留为并列频率参考分支；
+      若未来扩展到更广义的时频体系，可与光钟跃迁参考共同提升到更高层“光学频率参考”父类。
 
 principles:
   - id: pri.spectral_hole_burning_frequency_ref
     name: "光谱烧孔频率参考原理"
-    tier: foundational
+    tier: domain
     verification_status: observed
     statement: >
       在低温稀土离子晶体中，窄带激光可在非均匀展宽吸收线中烧出
       频率精确的光谱孔，孔的中心频率由离子跃迁频率决定，
       对外部扰动（振动、温度）敏感度极低。
       光谱孔可作为长期稳定的频率参考，其漂移主要来自晶体应力变化。
+      该原理依赖稀土掺杂晶体中的持久光谱孔形成与读取，
+      因而是 SHB 参考特有的工作原理，而非适用于其他频率参考分支的通用基础定律。
     domain: "替代频率参考 / 固态光谱"
     key_insight: "SHB 将频率参考锚定在原子跃迁上，避免了 FP 腔的机械热噪声限制。"
     conditions: "低温（<10 K），稀土离子晶体，窄线宽激光激发"
@@ -61,6 +66,7 @@ principles:
       - "低温恒温器温度稳定"
     source_claim: >
       "optical frequency reference based on spectral hole burning in Eu³⁺:Y₂SiO₅"
+    note: "按当前 schema 归为 domain：该原理只描述 SHB 参考中的烧孔—探测—锁定分支机制，不适用于 FP 腔、光纤延迟线或未来光钟跃迁参考等其他频率参考类型。"
     open_questions:
       - "SHB 频率参考能否在不需要外部校准的情况下达到 10⁻¹⁸ 级绝对精度？"
       - "频率漂移的物理机制是否可以进一步抑制？"
