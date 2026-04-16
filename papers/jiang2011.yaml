@@ -1,0 +1,79 @@
+# Jiang 2011 — 2×10⁻¹⁶ 腔稳激光用于 Yb 光晶格钟
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-16
+# Schema版本：v3.2
+
+meta:
+  zotero_key: "RAC23NZV"
+  source_type: technical_paper
+  reliability: high
+  title: "Making optical atomic clocks more stable with 10⁻¹⁶-level laser stabilization"
+  year: 2011
+  first_author: Jiang
+  journal: "Nature Photonics"
+  volume: 5
+  pages: "158-161"
+  doi: "10.1038/nphoton.2010.313"
+  note: >
+    演示热噪声极限降低的腔稳激光系统，分数频率不稳定度 2×10⁻¹⁶。
+    用于 Yb 光晶格钟，分辨 1 Hz 线宽钟跃迁（Q = 5×10¹⁴），
+    实现钟不稳定度 5×10⁻¹⁶/√τ。
+    核心贡献：首次用 10⁻¹⁶ 级激光源充分发挥 Yb 光钟潜力。
+
+entities:
+  - id: ent.low_thermal_noise_cavity_j11
+    name: "低热噪声 FP 参考腔（Jiang 2011）"
+    aliases: ["NIST long cavity", "Jiang 2011 cavity"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      长 ULE 腔配合 FS 镜基底，优化光斑尺寸和腔长以降低热噪声极限。
+      用作 Yb 光晶格钟的本振。
+    key_parameters:
+      thermal_noise_floor: "2×10⁻¹⁶"
+      mirror_material: "fused silica (lower mechanical loss than ULE)"
+    note: "PART-OF ent.fp_cavity_system（定义于 numata2004.yaml）。"
+
+principles: []
+
+methods: []
+
+metrics:
+  - id: met.fractional_freq_instability_j11
+    name: "分数频率不稳定度（Jiang 2011）"
+    unit: "无量纲"
+    demonstrated_value:
+      value: "2×10⁻¹⁶"
+      conditions: "长 ULE 腔，FS 镜，室温"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "RAC23NZV", claim: "fractional frequency instability of 2×10⁻¹⁶"}
+
+  - id: met.yb_clock_instability_j11
+    name: "Yb 光钟不稳定度（Jiang 2011）"
+    unit: "无量纲"
+    demonstrated_value:
+      value: "5×10⁻¹⁶/√τ"
+      conditions: "Yb 光晶格钟，10⁻¹⁶ 级本振"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "RAC23NZV", claim: "measurements consistent with a clock instability of 5×10⁻¹⁶/√τ"}
+
+relations:
+  - id: rel.JI01
+    subject: ent.low_thermal_noise_cavity_j11
+    predicate: PART-OF
+    object: ent.fp_cavity_system
+    confidence: established
+    source: {zotero_key: "RAC23NZV", claim: "cavity-stabilized laser system with a reduced thermal noise floor"}
+
+  - id: rel.JI02
+    subject: ent.low_thermal_noise_cavity_j11
+    predicate: BOUNDED-BY
+    object: pri.brownian_thermal_noise_fdt
+    confidence: established
+    source: {zotero_key: "RAC23NZV", claim: "fundamental limit... Brownian thermal mechanical fluctuations of the FP cavity"}
+    is_system_limit: true
+    regime: short-term
+    verification_status: observed
+    note: "跨文件引用，pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml"

@@ -1,121 +1,121 @@
-# Leibrandt 2013 — 加速度灵敏度低于 10⁻¹² g⁻¹ 的腔稳定激光
+# Leibrandt 2013 — Eu³⁺:Y₂SiO₅ 光谱烧孔频率参考
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-15
+# 提取日期：2026-04-16
 # Schema版本：v3.2
-# ⚠ 年份注意：PDF 文件名含 leibrandt2011，实际发表 2013
 
 meta:
-  zotero_key: "H5MYBTXH"
+  zotero_key: "WK9QLCGF"
   source_type: technical_paper
   reliability: high
-  title: "Cavity-stabilized laser with acceleration sensitivity below 10⁻¹² g⁻¹"
+  title: "Absolute and Relative Stability of an Optical Frequency Reference Based on Spectral Hole Burning in Eu³⁺:Y₂SiO₅"
   year: 2013
   first_author: Leibrandt
-  journal: "Physical Review A"
-  volume: 87
-  pages: "023829"
-  doi: "10.1103/PhysRevA.87.023829"
+  journal: "Physical Review Letters"
+  volume: 111
+  pages: "237402"
+  doi: "10.1103/PhysRevLett.111.237402"
   note: >
-    表征腔稳定激光对惯性力（线性加速度、旋转加速度、旋转速度）和温度波动的频率灵敏度，
-    并实施实时前馈校正。被动灵敏度 2(1)×10⁻¹¹/g，
-    经全惯性力前馈后 <10⁻¹²/g（低频），提高 50×。温度前馈降低漂移 70×。
-    NIST（Bergquist/Rosenband 组），互补于 Webster 的被动设计路线。
-    ⚠ PDF 文件名为 leibrandt2011.pdf，实际发表 2013。
-    根据专家意见：前馈方法归入振动环境部分的方法/子节点。
+    基于 Eu³⁺:Y₂SiO₅ 光谱烧孔（SHB）的光学频率参考。
+    短期稳定度 1×10⁻¹⁵/√τ（vs FP 腔），
+    双晶体比较达 5.5×10⁻¹⁷ @ 204 s，频率漂移率 5×10⁻¹⁸/s。
+    核心贡献：SHB 作为替代 FP 腔频率参考的里程碑验证。
 
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
-# 根据专家意见：meth.inertial_feedforward_correction 归入振动环境部分的方法节点
-methods:
-  - id: meth.inertial_feedforward_correction
-    name: "惯性力实时前馈频率校正"
+entities:
+  - id: ent.shb_eu_yso_reference_l13
+    name: "Eu³⁺:Y₂SiO₅ 光谱烧孔频率参考"
+    aliases: ["SHB reference", "Eu:YSO spectral hole"]
+    hierarchy_level: 1
     status: demonstrated
-    applies_to: ent.fp_cavity_system
-    steps_summary: >
-      三轴加速度计+陀螺仪测量腔体所受惯性力 → 标定传递函数 →
-      实时前馈到激光频率（AOM） → 消除一阶+二阶惯性变形引起的频率波动。
-      带宽 0–300 Hz，分量贡献：96.8% 一阶线性加速度, 2.2% 二阶线性, 0.1% 旋转加速度, 0.9% 旋转速度。
-    advantages:
-      - "可将加速度灵敏度从被动 ~10⁻¹¹/g 提升到 <10⁻¹²/g"
-      - "同时可做温度前馈（降低漂移 70×）"
-      - "产出传递函数信息可反哺腔体设计优化"
-    disadvantages:
-      - "需要额外传感器（加速度计、陀螺仪）"
-      - "高频（>300 Hz）前馈效果有限"
-      - "依赖传递函数标定精度"
-    conditions:
-      - "需已知腔体对惯性力的传递函数"
-      - "适用于振动环境部分的主动噪声抑制"
+    function: >
+      利用稀土离子 Eu³⁺ 掺杂 Y₂SiO₅ 晶体中的光谱烧孔作为频率参考。
+      低温（4 K）工作，光谱孔寿命长（kHz 线宽），
+      提供与 FP 腔互补的频率参考方案。
+    key_parameters:
+      material: "Eu³⁺:Y₂SiO₅"
+      temperature: "4 K"
+      wavelength: "580 nm (⁷F₀ → ⁵D₀)"
+      hole_lifetime: "long (hours to days)"
+      drift_rate: "5×10⁻¹⁸ /s"
+    practical_limitations:
+      - description: "需要低温（4 K）环境"
+        impact: "增加系统复杂度和成本"
+      - description: "频率漂移需要周期性校准"
+        impact: "长期稳定度受漂移率限制"
+    note: "替代 FP 腔的频率参考方案，与 ent.fp_cavity_system COMPETES-WITH。"
+
+principles:
+  - id: pri.spectral_hole_burning_frequency_ref
+    name: "光谱烧孔频率参考原理"
+    tier: foundational
+    verification_status: observed
+    statement: >
+      在低温稀土离子晶体中，窄带激光可在非均匀展宽吸收线中烧出
+      频率精确的光谱孔，孔的中心频率由离子跃迁频率决定，
+      对外部扰动（振动、温度）敏感度极低。
+      光谱孔可作为长期稳定的频率参考，其漂移主要来自晶体应力变化。
+    domain: "替代频率参考 / 固态光谱"
+    key_insight: "SHB 将频率参考锚定在原子跃迁上，避免了 FP 腔的机械热噪声限制。"
+    conditions: "低温（<10 K），稀土离子晶体，窄线宽激光激发"
+    preconditions:
+      - "晶体质量高，Eu³⁺ 浓度适当"
+      - "低温恒温器温度稳定"
     source_claim: >
-      "real-time feedforward to correct for these sources of noise...
-      reduced by a factor of 50 to below 10⁻¹² g⁻¹"
+      "optical frequency reference based on spectral hole burning in Eu³⁺:Y₂SiO₅"
+    open_questions:
+      - "SHB 频率参考能否在不需要外部校准的情况下达到 10⁻¹⁸ 级绝对精度？"
+      - "频率漂移的物理机制是否可以进一步抑制？"
+
+methods:
+  - id: meth.spectral_hole_burning_stabilization
+    name: "光谱烧孔稳频方法"
+    type: frequency_stabilization
+    status: demonstrated
+    description: >
+      将激光频率锁定到 Eu³⁺:Y₂SiO₅ 晶体中烧制的光谱孔，
+      使用调频光谱（FMS）或相似的色散/吸收信号提取误差信号。
+    source: {zotero_key: "WK9QLCGF"}
+    note: "与 meth.pdh_locking 竞争的替代稳频方案"
 
 metrics:
-  - id: met.acceleration_sensitivity_lei13
-    name: "加速度灵敏度（Leibrandt 2013，前馈后）"
-    unit: "1/g"
-    description: "腔体对线性加速度的频率灵敏度，经前馈校正后"
+  - id: met.shb_relative_stability_l13
+    name: "SHB 双晶体相对稳定度（Leibrandt 2013）"
+    unit: "无量纲"
     demonstrated_value:
-      value: "<10⁻¹²/g (worst-direction, low-frequency, after feedforward); 2(1)×10⁻¹¹/g (passive)"
-      conditions: "前馈校正后, 0-50 Hz; 被动 2(1)×10⁻¹¹/g"
+      value: "5.5×10⁻¹⁷ @ 204 s (quadratic drift removed)"
+      conditions: "两块 Eu³⁺:Y₂SiO₅ 晶体，同一低温容器，4 K"
       verification_status: observed
       confidence: established
-      source: {zotero_key: "H5MYBTXH", claim: "reduced by a factor of 50 to below 10⁻¹² g⁻¹ for low-frequency accelerations by real-time feedforward corrections"}
-    historical_landmarks:
-      best_demonstration:
-        value: "<10⁻¹²/g (feedforward)"
-        year: 2013
-        source: {zotero_key: "H5MYBTXH"}
-        note: "前馈方法的最佳加速度灵敏度"
+      source: {zotero_key: "WK9QLCGF", claim: "short-term stability of 7×10⁻¹⁶/√τ that averages down to 5.5×10⁻¹⁷ at τ = 204 s"}
 
-  - id: met.temperature_feedforward_lei13
-    name: "温度前馈漂移抑制（Leibrandt 2013）"
-    unit: "无量纲（抑制因子）"
-    description: "温度前馈校正的频率漂移抑制倍数"
+  - id: met.shb_absolute_stability_l13
+    name: "SHB 绝对稳定度（vs H-maser, Leibrandt 2013）"
+    unit: "无量纲"
     demonstrated_value:
-      value: "70× (漂移率降低)"
-      conditions: "温度传感器在真空腔外壁, 前馈到激光频率"
+      value: "1×10⁻¹⁵/√τ, drift 5×10⁻¹⁸/s"
+      conditions: "单个光谱孔 vs 氢钟"
       verification_status: observed
       confidence: established
-      source: {zotero_key: "H5MYBTXH", claim: "reduced by a factor of 70 via real-time feedforward from a temperature sensor"}
+      source: {zotero_key: "WK9QLCGF", claim: "fractional frequency drift rate of 5×10⁻¹⁸ s⁻¹"}
 
 relations:
-  - id: rel.Lei01
-    subject: ent.fp_cavity_system
-    predicate: CONDITIONED-BY
-    object: ent.vibration_environment
+  - id: rel.LB01
+    subject: ent.shb_eu_yso_reference_l13
+    predicate: COMPETES-WITH
+    object: ent.fp_cavity_system
     confidence: established
-    source: {zotero_key: "H5MYBTXH", claim: "sensitive to environmental perturbations that change the length of the cavity, including vibrations"}
-    interface_metric: met.acceleration_sensitivity_lei13
-    coupling_formula: "Δν/ν = κ × a; κ_passive = 2×10⁻¹¹/g → κ_feedforward < 10⁻¹²/g"
-    is_system_limit:
-      current: false
-      conditions: "经前馈校正后退出限制序列"
-    note: "跨文件引用 young1999.yaml"
+    source: {zotero_key: "WK9QLCGF", claim: "optical frequency reference based on spectral hole burning... compared to a Fabry-Pérot cavity"}
+    note: "SHB 与 FP 腔作为频率参考的竞争方案"
 
-  - id: rel.Lei02
-    subject: meth.inertial_feedforward_correction
+  - id: rel.LB02
+    subject: ent.shb_eu_yso_reference_l13
+    predicate: CHARACTERIZED-BY
+    object: met.shb_relative_stability_l13
+    confidence: established
+    source: {zotero_key: "WK9QLCGF", claim: "5.5×10⁻¹⁷ at τ = 204 s"}
+
+  - id: rel.LB03
+    subject: ent.shb_eu_yso_reference_l13
     predicate: ENABLED-BY
-    object: pri.cavity_deformation_compensation
+    object: pri.spectral_hole_burning_frequency_ref
     confidence: established
-    source: {zotero_key: "H5MYBTXH", claim: "information about the transfer function that describes how accelerations change the length of the cavity"}
-    note: "跨文件引用 webster2007.yaml; 前馈依赖传递函数知识，与被动设计互补"
-
-  - id: rel.Lei03
-    subject: ent.fp_cavity_system
-    predicate: CHARACTERIZED-BY
-    object: met.acceleration_sensitivity_lei13
-    confidence: established
-    source: {zotero_key: "H5MYBTXH", claim: "reduced by a factor of 50 to below 10⁻¹² g⁻¹ for low-frequency accelerations by real-time feedforward corrections"}
-    conditions: "前馈校正后, 0-50 Hz"
-    note: "跨文件引用，ent.fp_cavity_system 定义于 numata2004.yaml"
-
-  - id: rel.Lei04
-    subject: meth.inertial_feedforward_correction
-    predicate: CHARACTERIZED-BY
-    object: met.temperature_feedforward_lei13
-    confidence: established
-    source: {zotero_key: "H5MYBTXH", claim: "reduced by a factor of 70 via real-time feedforward from a temperature sensor"}
-    conditions: "温度传感器在真空腔外壁, 前馈到激光频率"
+    source: {zotero_key: "WK9QLCGF", claim: "spectral hole burning in Eu³⁺:Y₂SiO₅"}

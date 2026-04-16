@@ -67,14 +67,14 @@
 
 ### 时钟应用
 
-- [ ] `RAC23NZV` | Jiang 201x | Making optical atomic clocks more stable with 10⁻¹⁶-level laser
-- [ ] `6R3RCHPT` | Jin 2018 | Laser frequency instability of 2×10⁻¹⁶
-- [ ] `AFFU5KGB` | Li 201x | An improved strontium lattice clock with 10⁻¹⁶ level laser frequency
-- [ ] `MIAVJSIK` | Didier 201x | 946-nm Nd:YAG digital-locked laser at 1.1×10⁻¹⁶
-- [ ] `Z37PT8RC` | Chen 202x | Laser frequency instability of 6×10⁻¹⁶ using 10-cm-long cavities
-- [ ] `XWBUNX3P` | Yan 2018 | Multi-cavity-stabilized ultrastable laser
+- [x] `RAC23NZV` | Jiang 2011 | 10⁻¹⁶ 级腔稳激光用于 Yb 光钟 → `jiang2011.yaml`
+- [x] `6R3RCHPT` | Jin 2018 | 30 cm 腔 578 nm 2×10⁻¹⁶ 超稳激光 → `jin2018.yaml`
+- [x] `AFFU5KGB` | Li 2018 | 改进 Sr 光钟 30 cm 腔 10⁻¹⁶ 稳定度 → `li2018.yaml`
+- [x] `MIAVJSIK` | Didier 2019 | 946 nm Nd:YAG 数字锁定 1.1×10⁻¹⁶ → `didier2019.yaml`
+- [x] `Z37PT8RC` | Chen 2020 | 10 cm 立方腔 6×10⁻¹⁶ 可搬运 → `chen2020.yaml`
+- [x] `XWBUNX3P` | Yan 2018 | 多腔稳定合成超稳激光 → `yan2018.yaml`
 - [x] `H5MYBTXH` | Leibrandt 2013 | Cavity-stabilized laser with acceleration sensitivity below 10⁻¹² → `leibrandt2013.yaml`
-- [ ] `WK9QLCGF` | Leibrandt 201x | Absolute and Relative Stability of an Optical Frequency Reference
+- [x] `WK9QLCGF` | Leibrandt 2013 | Eu³⁺:Y₂SiO₅ 光谱烧孔频率参考 → `leibrandt2013.yaml`
 - [x] `N9AGEQ8S` | Zhang 2017 | Ultrastable Silicon Cavity in a Continuously Operating Closed-Cycle Cryostat at 4 K → `zhang2017.yaml`
 - [x] `SBPRDKPV` | Jeon 2025 | 10⁻¹⁵-level laser stabilization down to fiber thermal noise limit → `jeon2025.yaml`
 - [ ] `HKYLIW8U` | Gobron 2017 | Dispersive heterodyne probing method for laser frequency stabilization

@@ -538,6 +538,13 @@ note: "跨文件引用，定义于 shaddock1999.yaml"
 | `hafner2020.yaml` | X7XXKXDZ | Häfner 2020 — 可搬运 12cm 腔询问激光 3×10⁻¹⁶ | ✅ 符合v3.2（首次提取） |
 | `chen2014.yaml` | WTUHUAQ7 | Chen 2014 — STE-QUEST 紧凑可搬运超稳激光 | ✅ 符合v3.2（首次提取） |
 | `herbers2019.yaml` | WP8FMS5N | Herbers 2019 — 光钟频率倍频器相位噪声 | ✅ 符合v3.2（首次提取） |
+| `jin2018.yaml` | 6R3RCHPT | Jin 2018 — 30cm 腔 578nm 2×10⁻¹⁶ | ✅ 符合v3.2（首次提取） |
+| `jiang2011.yaml` | RAC23NZV | Jiang 2011 — 10⁻¹⁶ 腔稳激光 Yb 光钟 | ✅ 符合v3.2（首次提取） |
+| `li2018.yaml` | AFFU5KGB | Li 2018 — 30cm 腔 Sr 钟 10⁻¹⁶ | ✅ 符合v3.2（首次提取） |
+| `didier2019.yaml` | MIAVJSIK | Didier 2019 — 946nm 数字锁定+传递锁定 | ✅ 符合v3.2（首次提取） |
+| `chen2020.yaml` | Z37PT8RC | Chen 2020 — 10cm 立方双腔 6×10⁻¹⁶ | ✅ 符合v3.2（首次提取） |
+| `yan2018.yaml` | XWBUNX3P | Yan 2018 — 多腔频率平均超稳激光 | ✅ 符合v3.2（首次提取） |
+| `leibrandt2013.yaml` | WK9QLCGF | Leibrandt 2013 — SHB 光谱烧孔频率参考 | ✅ 符合v3.2（首次提取） |
 
 **历史 v3.0 重构摘要**（2026-04-15）：
 
