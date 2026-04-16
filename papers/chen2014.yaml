@@ -1,0 +1,101 @@
+# Chen (Qun-Feng) 2014 — 紧凑可搬运超稳激光
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-16
+# Schema版本：v3.2
+
+meta:
+  zotero_key: "WTUHUAQ7"
+  source_type: technical_paper
+  reliability: high
+  title: "A compact, robust, and transportable ultra-stable laser with a fractional frequency instability of 1×10⁻¹⁵"
+  year: 2014
+  first_author: Chen
+  journal: "Review of Scientific Instruments"
+  volume: 85
+  pages: "113107"
+  doi: "10.1063/1.4898334"
+  note: >
+    面向 STE-QUEST 空间任务的紧凑可搬运超稳激光系统，
+    10 cm ULE 腔，20 个细柱分三组在对称面上夹持，
+    加速度灵敏度 1.7, 8.0, 39 ×10⁻¹¹/g，
+    三角帽测量确定 σ_y = 1×10⁻¹⁵ @ 1–10 s。
+    整体光学系统尺寸 40×20×30 cm。
+    核心贡献：首个面向 STE-QUEST 的可搬运超稳激光原型。
+
+entities:
+  - id: ent.compact_transportable_cavity_c14
+    name: "STE-QUEST 紧凑可搬运参考腔（Chen 2014）"
+    aliases: ["STE-QUEST cavity", "Chen 2014 transportable cavity"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      10 cm ULE 圆柱腔（D = 60 mm），20 个细柱（Φ3 mm）分三组
+      在对称面上夹持，分离轴向和横向约束力。
+      FS 镜 + ULE 补偿环，1064 nm，Finesse 400,000。
+      两级热屏蔽 + 双级 TEC 温控，CTE 零点 ~0°C。
+    key_parameters:
+      cavity_length: "100 mm"
+      diameter: "60 mm"
+      spacer_material: "ULE"
+      mirror_material: "fused silica + ULE compensation rings"
+      wavelength: "1064 nm"
+      finesse: "400,000"
+      linewidth: "3.7 kHz"
+      thermal_noise_floor: "σ_y = 4×10⁻¹⁶"
+      vibration_sensitivity: "1.7, 8.0, 39 ×10⁻¹¹/g"
+      overall_optical_dimensions: "40×20×30 cm"
+      cte_zero_crossing: "~0°C"
+    note: "PART-OF ent.fp_cavity_system（定义于 numata2004.yaml）。"
+
+principles: []
+  # 夹持原理类似 pri.multi_point_symmetric_clamping（tao2018.yaml），
+  # 但本文采用 20 个细柱而非 12 个
+
+methods: []
+
+metrics:
+  - id: met.fractional_freq_instability_c14
+    name: "分数频率不稳定度（Chen 2014）"
+    unit: "无量纲"
+    demonstrated_value:
+      value: "1×10⁻¹⁵ @ 1–10 s"
+      conditions: "10 cm ULE 腔，1064 nm，三角帽测量"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "WTUHUAQ7", claim: "minimum fractional frequency instability of 1×10⁻¹⁵ at integration times between 1 and 10 s"}
+
+  - id: met.vibration_sensitivity_c14
+    name: "振动灵敏度（Chen 2014）"
+    unit: "/g"
+    demonstrated_value:
+      value: "1.7×10⁻¹¹, 8.0×10⁻¹¹, 3.9×10⁻¹⁰"
+      conditions: "10 cm ULE 腔，20 柱三组夹持"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "WTUHUAQ7", claim: "acceleration sensitivities... 1.7×10⁻¹¹/g, 8.0×10⁻¹¹/g, and 3.9×10⁻¹⁰/g"}
+
+relations:
+  - id: rel.C01
+    subject: ent.compact_transportable_cavity_c14
+    predicate: PART-OF
+    object: ent.fp_cavity_system
+    confidence: established
+    source: {zotero_key: "WTUHUAQ7", claim: "ultra-stable laser system... Fabry-Perot cavity"}
+
+  - id: rel.C02
+    subject: ent.compact_transportable_cavity_c14
+    predicate: CHARACTERIZED-BY
+    object: met.fractional_freq_instability_c14
+    confidence: established
+    source: {zotero_key: "WTUHUAQ7", claim: "fractional frequency instability of 1×10⁻¹⁵"}
+
+  - id: rel.C03
+    subject: ent.compact_transportable_cavity_c14
+    predicate: BOUNDED-BY
+    object: pri.brownian_thermal_noise_fdt
+    confidence: likely
+    source: {zotero_key: "WTUHUAQ7", claim: "calculated instability flicker floor of σ_y = 4×10⁻¹⁶"}
+    is_system_limit: false
+    regime: short-term
+    verification_status: calculated
+    note: "当前性能 1×10⁻¹⁵ 尚未达到热噪声极限 4×10⁻¹⁶"

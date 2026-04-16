@@ -41,13 +41,13 @@
 
 ### 空间/可搬运应用
 
-- [ ] `RP8Q44RZ` | Argence 201x | Prototype of an ultra-stable optical cavity for space applications
-- [ ] `PHRXF4IL` | Didier 201x | Ultracompact reference ultralow expansion glass cavity
-- [ ] `H3HYK5D3` | Sanjuan 201x | Long-term stable optical cavity for special relativity tests in space
-- [ ] `X7XXKXDZ` | Hafner 201x | Transportable interrogation laser system with an instability of m×10⁻¹⁶
+- [x] `RP8Q44RZ` | Argence 2012 | Prototype of an ultra-stable optical cavity for space applications → `argence2012.yaml`
+- [x] `PHRXF4IL` | Didier 2018 | Ultracompact reference ultralow expansion glass cavity → `didier2018.yaml`
+- [x] `H3HYK5D3` | Sanjuan 2019 | Long-term stable optical cavity for special relativity tests in space → `sanjuan2019.yaml`
+- [x] `X7XXKXDZ` | Häfner 2020 | Transportable interrogation laser system with mod σ_y = 3×10⁻¹⁶ → `hafner2020.yaml`
 - [x] `NU79W75P` | Herbers 2022 | Transportable clock laser system with an instability of 1.6×10⁻¹⁶ → `herbers2022.yaml`
 - [x] `AHUZI4A7` | Tai 2017 | Transportable 1555-nm Ultra-Stable Laser with Sub-0.185-Hz Linewidth → `tai2017.yaml`
-- [ ] `WTUHUAQ7` | Qun-Feng 201x | A compact, robust, and transportable ultra-stable laser
+- [x] `WTUHUAQ7` | Chen 2014 | Compact, robust, transportable ultra-stable laser 1×10⁻¹⁵ → `chen2014.yaml`
 - [x] `U4Z95559` | Tao 2018 | A vibration-insensitive-cavity design holds impact of higher than 100g → `tao2018.yaml`
 
 ### 镀层相关
@@ -63,7 +63,7 @@
 - [ ] `WDGF2B36` | Potnis 201x | Broadband low-noise photodetector for PDH
 - [ ] `VM5MJ9B3` | Grote 2016 | High power and ultra-low-noise photodetector for squeezed-light
 - [x] `8MNIBZEW` | Möhle 2013 | Highly stable piezoelectrically tunable optical cavities → `mohle2013.yaml`
-- [ ] `WP8FMS5N` | Herbers 201x | Phase noise of frequency doublers on optical clock lasers
+- [x] `WP8FMS5N` | Herbers 2019 | Phase noise of frequency doublers in optical clock lasers → `herbers2019.yaml`
 
 ### 时钟应用
 

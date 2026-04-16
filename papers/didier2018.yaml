@@ -1,0 +1,75 @@
+# Didier 2018 — 超紧凑 25 mm 金字塔形参考腔
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-16
+# Schema版本：v3.2
+
+meta:
+  zotero_key: "PHRXF4IL"
+  source_type: technical_paper
+  reliability: high
+  title: "Ultracompact reference ultralow expansion glass cavity"
+  year: 2018
+  first_author: Didier
+  journal: "Applied Optics"
+  volume: 57
+  issue: 22
+  pages: "6470-6473"
+  doi: "10.1364/AO.57.006470"
+  note: >
+    首次实验表征 25 mm 金字塔形 ULE 参考腔，配备 AlGaAs 晶体镀层，
+    含真空腔室和光学组件总体积仅 30 L。
+    σ_y(1s) ≈ 7.5×10⁻¹⁵，主要受限于腔体尺寸（热噪声）和技术噪声。
+    核心贡献：极端紧凑化方向的探索，适合嵌入式和空间应用。
+
+entities:
+  - id: ent.ultracompact_pyramid_cavity_d18
+    name: "超紧凑金字塔形 ULE 参考腔（Didier 2018）"
+    aliases: ["25 mm pyramid cavity", "ultracompact cavity Didier"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      25 mm 长金字塔形 ULE 腔体，配备 AlGaAs 晶体镀层降低热噪声。
+      紧凑真空腔室（立方形）允许光学元件直接安装在腔壁上，总体积 30 L。
+      被动不锈钢热屏蔽 + 主动铜屏蔽（Peltier）温度控制。
+    key_parameters:
+      cavity_length: "25 mm"
+      spacer_material: "ULE"
+      geometry: "pyramidal"
+      coating: "AlGaAs crystalline"
+      total_volume: "30 L"
+    note: "PART-OF ent.fp_cavity_system。极端紧凑方案，性能受限于短腔长。"
+
+principles: []
+
+methods: []
+
+metrics:
+  - id: met.fractional_freq_instability_d18
+    name: "分数频率不稳定度（Didier 2018）"
+    unit: "无量纲"
+    demonstrated_value:
+      value: "~7.5×10⁻¹⁵ @ 1 s"
+      conditions: "25 mm ULE 金字塔腔，晶体镀层，30 L 体积"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "PHRXF4IL", claim: "first estimation of the cavity fractional frequency instability at σy(1s) ≈ 7.5×10⁻¹⁵"}
+
+relations:
+  - id: rel.D01
+    subject: ent.ultracompact_pyramid_cavity_d18
+    predicate: PART-OF
+    object: ent.fp_cavity_system
+    confidence: established
+    source: {zotero_key: "PHRXF4IL", claim: "original Fabry-Perot cavity with 25 mm length and pyramidal geometry"}
+    note: "跨文件引用，ent.fp_cavity_system 定义于 numata2004.yaml"
+
+  - id: rel.D02
+    subject: ent.ultracompact_pyramid_cavity_d18
+    predicate: BOUNDED-BY
+    object: pri.brownian_thermal_noise_fdt
+    confidence: established
+    source: {zotero_key: "PHRXF4IL", claim: "thermal noise of cavities, which now reaches the 10⁻¹⁷ decade, at the cost of complex systems"}
+    is_system_limit: false
+    regime: short-term
+    verification_status: calculated
+    note: "短腔长使热噪声极限较高，但当前性能可能还受技术噪声限制"

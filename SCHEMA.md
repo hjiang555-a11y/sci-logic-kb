@@ -532,6 +532,12 @@ note: "跨文件引用，定义于 shaddock1999.yaml"
 | `steinlechner2018.yaml` | L6KKLLSR | Steinlechner 2018 — 引力波探测器镜面镀层发展综述 | ✅ 符合v3.2（首次提取） |
 | `tao2018.yaml` | U4Z95559 | Tao 2018 — 抗 100g 冲击振动不敏感腔设计 | ✅ 符合v3.2（首次提取） |
 | `mohle2013.yaml` | 8MNIBZEW | Möhle 2013 — 高稳定压电可调谐参考腔 | ✅ 符合v3.2（首次提取） |
+| `argence2012.yaml` | RP8Q44RZ | Argence 2012 — 空间应用超稳腔原型 | ✅ 符合v3.2（首次提取） |
+| `didier2018.yaml` | PHRXF4IL | Didier 2018 — 超紧凑 25mm 金字塔形参考腔 | ✅ 符合v3.2（首次提取） |
+| `sanjuan2019.yaml` | H3HYK5D3 | Sanjuan 2019 — BOOST 空间狭义相对论检验光学腔 | ✅ 符合v3.2（首次提取） |
+| `hafner2020.yaml` | X7XXKXDZ | Häfner 2020 — 可搬运 12cm 腔询问激光 3×10⁻¹⁶ | ✅ 符合v3.2（首次提取） |
+| `chen2014.yaml` | WTUHUAQ7 | Chen 2014 — STE-QUEST 紧凑可搬运超稳激光 | ✅ 符合v3.2（首次提取） |
+| `herbers2019.yaml` | WP8FMS5N | Herbers 2019 — 光钟频率倍频器相位噪声 | ✅ 符合v3.2（首次提取） |
 
 **历史 v3.0 重构摘要**（2026-04-15）：
 

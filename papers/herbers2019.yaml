@@ -1,0 +1,95 @@
+# Herbers 2019 — 光钟激光频率倍频器的相位噪声
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-16
+# Schema版本：v3.2
+
+meta:
+  zotero_key: "WP8FMS5N"
+  source_type: technical_paper
+  reliability: high
+  title: "Phase noise of frequency doublers in optical clock lasers"
+  year: 2019
+  first_author: Herbers
+  journal: "Optics Express"
+  volume: 27
+  issue: 16
+  pages: "23262-23273"
+  doi: "10.1364/OE.27.023262"
+  note: >
+    系统表征 PPLN 波导频率倍频器（1396 nm → 698 nm）在光钟应用中的相位噪声。
+    双 SHG 模块对比测量表明，稳态工作时倍频器引入的额外相位噪声
+    比当前最佳询问激光噪声低两个数量级以上。
+    光功率变化导致的相位啁啾对钟精度的影响也做了评估。
+    核心贡献：证明 PPLN 波导 SHG 不是光钟性能的限制因素。
+
+entities:
+  - id: ent.ppln_shg_module_h19
+    name: "PPLN 波导二次谐波产生模块"
+    aliases: ["PPLN waveguide doubler", "SHG module"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      周期极化铌酸锂（PPLN）波导频率倍频器，将 1396 nm 基频光
+      倍频至 698 nm 用于锶光钟。NTT Electronics 商用模块。
+    key_parameters:
+      input_wavelength: "1396 nm"
+      output_wavelength: "698 nm"
+      type: "PPLN waveguide"
+      manufacturer: "NTT Electronics"
+    note: "光钟系统中的频率转换器件，连接红外超稳激光与可见光钟跃迁。"
+
+principles:
+  - id: pri.shg_excess_phase_noise_limit
+    name: "二次谐波产生额外相位噪声极限"
+    tier: domain
+    verification_status: observed
+    statement: >
+      PPLN 波导 SHG 的额外相位噪声来源包括：
+      (1) 温度波动引起的折射率变化，
+      (2) Kerr 效应（χ⁽³⁾ 或级联 χ⁽²⁾ 过程的强度依赖相移），
+      (3) 热噪声。
+      在稳态工作条件下，PPLN 波导 SHG 的额外相位噪声谱密度
+      比当前最佳硅腔稳定激光噪声低至少两个数量级（<10 Hz）。
+      光功率变化导致的相位啁啾是需要关注的系统效应。
+    domain: "频率倍频 / 光钟"
+    key_insight: "PPLN 波导 SHG 在稳态下不是光钟激光性能的限制因素。"
+    conditions: "稳态工作，光功率变化缓慢"
+    preconditions:
+      - "SHG 模块温度稳定"
+      - "输入光功率稳定"
+    invalidated_when:
+      - "光功率快速切换导致的相位啁啾超过钟精度预算"
+    source_claim: >
+      "excess phase noise of the doubler under steady-state operation is at least two orders of
+      magnitude lower than the noise of today's best interrogation lasers"
+    open_questions:
+      - "光功率变化引起的相位啁啾的补偿方案是否可以做到完全透明？"
+
+methods: []
+
+metrics:
+  - id: met.shg_excess_phase_noise_h19
+    name: "SHG 额外相位噪声"
+    unit: "rad²/Hz"
+    description: "双 SHG 模块对比测量的额外相位噪声谱密度"
+    demonstrated_value:
+      value: ">2 orders of magnitude below best clock lasers (Si cavity) for f < 10 Hz"
+      conditions: "PPLN 波导 SHG，1396→698 nm，双模块差分，稳态"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "WP8FMS5N", claim: "phase noise PSD of the SHG module is at least two orders of magnitude lower than today's best clock lasers for frequencies lower than 10 Hz"}
+
+relations:
+  - id: rel.He01
+    subject: ent.ppln_shg_module_h19
+    predicate: CHARACTERIZED-BY
+    object: met.shg_excess_phase_noise_h19
+    confidence: established
+    source: {zotero_key: "WP8FMS5N", claim: "excess phase noise at least two orders of magnitude lower"}
+
+  - id: rel.He02
+    subject: ent.ppln_shg_module_h19
+    predicate: ENABLED-BY
+    object: pri.shg_excess_phase_noise_limit
+    confidence: established
+    source: {zotero_key: "WP8FMS5N", claim: "characterize excess phase noise and chirps introduced by the SHG module"}
