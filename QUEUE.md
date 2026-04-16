@@ -122,7 +122,7 @@
 - [ ] `GIUQZ2EE` | Zuba 202x | Limits of Coupling Efficiency Into Hollow-Core Antiresonant Fibers
 - [→] `XSMPRNT3` | Grabielle 2025 | Locking noise in laser frequency stabilization to an optical fiber
 - [ ] `JAW66GYL` | J. Gao 2025 | Ultra-Low Frequency Noise Laser Based on All-Fiber Integrated Interferometer
-- [ ] `H5YVF5AR` | Kim 2008 | Drift-free femtosecond timing synchronization of remote optical and microwave
+- [x] `H5YVF5AR` | Kim 2008 | Drift-free femtosecond timing synchronization of remote optical and microwave → `kim2008.yaml`
 - [ ] `ULMQ3IXP` | Winful 1985 | SELF-INDUCED POLARIZATION CHANGES IN BIREFRINGENT OPTICAL FIBERS
 - [ ] `2F3PD62T` | Belardi 201x | Design and Properties of Hollow Antiresonant Fibers
 
