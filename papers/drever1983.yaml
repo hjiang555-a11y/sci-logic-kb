@@ -43,10 +43,12 @@ entities:
           source: {zotero_key: "S5GJNVG8"}
           mechanism: "DC 偏置电场抑制同相 RAM + EOM 温度伺服抑制正交 RAM"
           performance: "56 dB RAM 抑制，~1 ppm（1–1000 s）"
+          conditions: "波导型 EOM；同相伺服带宽~200 kHz；正交伺服带宽<0.1 Hz"
         parke2025_bias_only_variant:
           source: {zotero_key: "U2LXSU62"}
           mechanism: "x-cut APE 波导 EOM 采用偏置电场闭环，省去温度伺服"
           performance: "RAM 稳定在 10⁻⁷ 水平，对应 3×10⁻¹⁹ 分数频率不稳定度"
+          conditions: "x-cut APE 铌酸锂波导 EOM；独立 RAM 监测光路；实验室温度稳定约 1°C"
     ram_properties:
       ram_source: "EOM 晶体双折射 + 压电致弹光效应"
       ram_level_typical: "~60 ppm（未抑制）"
