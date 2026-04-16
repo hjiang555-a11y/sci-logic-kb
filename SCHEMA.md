@@ -507,6 +507,7 @@ note: "跨文件引用，定义于 shaddock1999.yaml"
 | `lee2026.yaml` | 4QVEXY63 | Lee 2026 — 2.5×10⁻¹⁷ Si 腔 + AlGaAs 晶体镀层（世界纪录） | ✅ v3.0（Level 1→2，remove 2 COMPETES-WITH，add meth.multi_cavity_averaging） |
 | `webster2011.yaml` | A96XGR82 | Webster 2011 — 立方体力不敏感光学腔 | ✅ 兼容（无 v3.0 专项变更） |
 | `robinson2019.yaml` | JIZCUZLY | Robinson 2019 — 4 K Si 腔热噪声极限 | ✅ v3.0（Level 1→2，COMPETES-WITH→PART-OF） |
+| `zhang2017.yaml` | N9AGEQ8S | Zhang 2017 — 闭循环 4 K Si 腔 1×10⁻¹⁶ 稳定度 | ✅ 符合v3.2（首次提取） |
 | `zhang2014_ram.yaml` | S5GJNVG8 | Zhang 2014 — RAM 主动消除 | ✅ v3.0（merge waveguide_eom_z14 into ent.eom） |
 | `dong2015.yaml` | W8K5GLK6 | Dong 2015 — 光纤延迟线锁频首次亚赫兹线宽（0.67 Hz） | ✅ 符合v3.1（首次提取） |
 | `kefelian2009.yaml` | MN54T4F3 | Kéfélian 2009 — 光纤延迟线锁频首次实现超低频率噪声 | ✅ 符合v3.1（首次提取） |

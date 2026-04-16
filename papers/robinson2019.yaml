@@ -350,13 +350,13 @@ relations:
     source: {zotero_key: "JIZCUZLY", claim: "Building on our previous silicon cavity effort [ref 15, Zhang 2017]"}
     conditions: null
     note: >
-      此 PART-OF 描述系统演化关系而非物理包含：Si4 是在 Zhang 2017（4 K 系统前身）
-      基础上改进的版本，并非 Si3（Kessler/Matei 系统）的子单元。
+      此 PART-OF 描述系统演化关系而非物理包含：Si4 是在 Zhang 2017 基础上改进的版本
+      （4 K 系统前身；其早期性能指标现已记录于 zhang2017.yaml），并非 Si3
+      （Kessler/Matei 系统）的子单元。
       建议改用 DERIVED-FROM 语义（若 Schema 支持）。
       暂时保留 PART-OF 以标记谱系关系，待专家审核后调整。
       ent.si_crystal_fp_cavity_k12 定义于 kessler2012.yaml（描述 PTB Si3 124K 腔，
-      非直接前身）；Si4 的直接前身为 JILA Zhang 2017（PRL 119:243601），
-      目前未在库中建模。
+      非直接前身）；Si4 的直接前身为 JILA Zhang 2017（PRL 119:243601）。
 
   - id: rel.R11
     subject: met.algaas_coating_loss_angle_ibs_4k_r19
