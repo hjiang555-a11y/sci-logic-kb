@@ -22,7 +22,7 @@ from pathlib import Path
 from openai import OpenAI
 
 GITHUB_MODELS_ENDPOINT = "https://models.inference.ai.azure.com"
-MODEL = "claude-3-sonnet-20241022"
+MODEL = "claude-3.5-sonnet"
 
 
 def get_client() -> OpenAI:
