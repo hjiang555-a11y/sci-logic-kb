@@ -1,12 +1,20 @@
-# sci-logic-kb — 科研知识库（时间频率计量相关）
+# sci-logic-kb — 时间频率计量科研知识库
 
-> 一个面向科研探索的结构化知识库，用来回答：**当前极限在哪、为什么受限、如何突破。**
+> 一个面向科研探索的结构化知识库，覆盖**时间频率计量**全领域，用来回答：**当前极限在哪、为什么受限、如何突破。**
 
 ---
 
 ## 1. 项目目标
 
-本仓库面向**时间频率计量 / 超稳激光**研究，目标不是做通用检索，而是沉淀可推理、可追溯、可扩展的科研知识结构。
+本仓库面向**时间频率计量**（Time-Frequency Metrology）研究，目标不是做通用检索，而是沉淀可推理、可追溯、可扩展的科研知识结构。
+
+当前已建设完成的专题：
+
+- **超稳激光**（Ultra-stable Lasers）：78 篇论文，~200+ 知识节点
+
+规划中的专题（详见 [`TOPICS.md`](TOPICS.md)）：
+
+- 光学频率梳、光钟、微波频率标准、时间频率传递、时间标尺与钟组、基础物理应用
 
 核心查询目标：
 
@@ -27,6 +35,7 @@
 - 关系区分“机制”“限制”“条件”“竞争”“层级推导”
 - 每个重要结论都可追溯到文献原句或标准来源
 - 高级节点应遵循最小化原则，组合内容不成为高级节点
+- 各专题独立建设，通过跨专题引用建立联系
 
 ### 2.2 人类认知优先，机器处理兼容
 
@@ -43,7 +52,7 @@
 - `/home/runner/work/sci-logic-kb/sci-logic-kb/.github/copilot-instructions.md`
 - `/home/runner/work/sci-logic-kb/sci-logic-kb/scripts/process_paper.py`
 - GitHub Actions / Issue 模板文案
-- `papers/*.yaml` 的头部版本注释
+- `topics/*/papers/*.yaml` 的头部版本注释
 
 更新 Schema 时，必须同步检查上述文件，避免再次发生版本漂移。
 
@@ -65,30 +74,32 @@
    - 来源：BIPM 等权威机构发布的标准、定义、术语说明
    - 用途：单位定义、测量标准、概念边界
 
-当前已覆盖的主要频率参考分支包括：
+当前已覆盖的专题（超稳激光）内的频率参考分支包括：
 
 - Fabry-Pérot 参考腔
 - 光纤延迟线/干涉仪参考
 - 光谱烧孔（spectral-hole burning, SHB）频率参考
 
-其中 SHB 在当前仓库中仍作为“超稳激光频率参考”的并列分支处理；
-若未来知识库扩展到更广义的时频体系，可再与光钟跃迁参考共同上提为更高层的“光学频率参考”父类。
+完整的专题体系划分和建设路线见 [`TOPICS.md`](TOPICS.md)。
 
 ---
 
 ## 4. 目录结构
 
 ```text
-/home/runner/work/sci-logic-kb/sci-logic-kb
-├── README.md
-├── SCHEMA.md
-├── QUEUE.md
-├── CLAUDE.md
-├── BATCH_PROCESSING_PLAN.md
-├── papers/                 # 已提取的论文知识条目（YAML）
-├── pdfs/                   # 待处理 PDF
+/
+├── README.md                    # 本文件（顶层说明）
+├── SCHEMA.md                    # 知识 Schema 规范（唯一真源）
+├── TOPICS.md                    # 专题体系架构与建设路线
+├── CLAUDE.md                    # Claude Code 行为规范
+├── topics/                      # 各专题知识存放
+│   ├── ultrastable-laser/       # 专题1：超稳激光（已建）
+│   │   └── papers/              # 78篇论文 YAML 知识条目
+│   ├── optical-frequency-combs/ # 专题2：光学频率梳（待建）
+│   ├── optical-clocks/          # 专题3：光钟（待建）
+│   └── ...                      # 更多专题
 ├── scripts/
-│   └── process_paper.py    # GitHub Models/Claude 提取脚本
+│   └── process_paper.py         # GitHub Models/Claude 提取脚本
 └── .github/
     ├── copilot-instructions.md
     ├── workflows/process-paper.yml
@@ -286,7 +297,7 @@
 - `.github/copilot-instructions.md`
 - `scripts/process_paper.py`
 - workflow / issue template
-- `papers/*.yaml` 头部 Schema 版本
+- `topics/*/papers/*.yaml` 头部 Schema 版本
 
 ### 10.2 条目维护
 
@@ -308,16 +319,19 @@
 
 ## 11. 未来演进方向
 
-1. 增强争议与开放问题的结构化管理
-2. 强化“首次实现 / 当前最佳 / 关键拐点”的时间表达
-3. 增加专家审阅支持的节点新增流程
-4. 视需要补充 Obsidian/前端接口，但不改变 YAML 为主库的原则
-5. 在跨分支比较确有价值时，再逐步增加更高层的共性原理组织
+1. **扩展新专题**：按 `TOPICS.md` 中的优先级建设光学频率梳、光钟等新专题
+2. 增强争议与开放问题的结构化管理
+3. 强化“首次实现 / 当前最佳 / 关键拐点”的时间表达
+4. 建立跨专题共享节点机制（通用原理、通用指标）
+5. 增加专家审阅支持的节点新增流程
+6. 视需要补充 Obsidian/前端接口，但不改变 YAML 为主库的原则
+7. 在跨专题比较确有价值时，逐步增加高层共性原理组织
 
 ---
 
 ## 12. 进一步阅读
 
-- Schema 规范：`/home/runner/work/sci-logic-kb/sci-logic-kb/SCHEMA.md`
-- 队列与主题覆盖：`/home/runner/work/sci-logic-kb/sci-logic-kb/QUEUE.md`
-- 本地处理规范：`/home/runner/work/sci-logic-kb/sci-logic-kb/CLAUDE.md`
+- Schema 规范：[`SCHEMA.md`](SCHEMA.md)
+- 专题体系架构：[`TOPICS.md`](TOPICS.md)
+- 本地处理规范：[`CLAUDE.md`](CLAUDE.md)
+- 超稳激光论文：[`topics/ultrastable-laser/papers/`](topics/ultrastable-laser/papers/)

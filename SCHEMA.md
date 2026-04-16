@@ -1,7 +1,7 @@
 # sci-logic-kb YAML 知识提取模式文档
 
-> **版本**：v3.2（2026-04-15）  
-> **变更摘要**：在 v3.0 基础上新增争议/开放问题维度、结构化前提条件与失效条件、首创/最优导向的时间里程碑字段，并明确文档同步与跨分支原理隔离规则。
+> **版本**：v4.0（2026-04-16）  
+> **变更摘要**：在 v3.2 基础上升级为**多专题架构**。顶层扩展为"时间频率计量"知识体系，原"超稳激光"降为专题子域。新增 `TOPICS.md` 定义专题体系，YAML 文件迁移至 `topics/<topic>/papers/`。Schema 规则（节点类型、关系类型、质量要求）保持通用，适用于所有专题。
 
 ---
 
@@ -9,7 +9,9 @@
 
 ### 定位
 
-符号主义结构化知识库，服务时间频率计量科研（超稳激光专题）。
+符号主义结构化知识库，服务**时间频率计量**科研全领域。
+- **当前已建专题**：超稳激光（`topics/ultrastable-laser/`，78 篇论文）
+- **专题体系**：详见 [`TOPICS.md`](TOPICS.md)
 - **目标查询**：当前性能极限在哪？为什么卡在这？怎么突破？
 - **不是**向量知识库，**支持**逻辑推理和精确路径查询。
 
@@ -23,7 +25,8 @@
   2. `.github/copilot-instructions.md`
   3. `scripts/process_paper.py`
   4. GitHub Actions / Issue 模板中的版本文案
-  5. `papers/*.yaml` 头部 `# Schema版本：...`
+  5. `TOPICS.md`
+  6. `topics/*/papers/*.yaml` 头部 `# Schema版本：...`
 - 若暂未同步完成，必须在相关文件中明确标注“以 `SCHEMA.md` 为准”
 
 ### 智能单元原则
@@ -66,7 +69,25 @@
 
 ---
 
-## 二、系统架构（五层）
+## 二、系统架构
+
+### 顶层：时间频率计量知识体系（v4.0 新增）
+
+```
+时间频率计量 (Time-Frequency Metrology)
+├── 专题1：超稳激光 ← 当前已建（topics/ultrastable-laser/）
+├── 专题2：光学频率梳 ← 待建
+├── 专题3：光钟 ← 待建
+├── 专题4：微波频率标准 ← 待建
+├── 专题5：时间频率传递 ← 待建
+├── 专题6：时间标尺与钟组 ← 待建
+└── 专题7：基础物理应用 ← 待建
+```
+
+> 详见 [`TOPICS.md`](TOPICS.md) 中的完整专题架构和建设路线。
+> 以下"五层"架构描述的是**超稳激光专题**的内部结构。其他专题建设时将添加各自的架构描述。
+
+### 超稳激光专题内部架构（五层）
 
 ```
 超稳激光系统
@@ -317,10 +338,12 @@ key_parameters:
 # {Author} {Year} — {简述}
 # 提取者：Claude / GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：YYYY-MM-DD
-# Schema版本：v3.2
+# Schema版本：v4.0
+# 专题：ultrastable-laser
 
 meta:
   zotero_key: "{8位Zotero KEY}"
+  topic: ultrastable-laser         # 所属专题（对应 topics/ 子目录名）
   source_type: technical_paper   # technical_paper | review | textbook | standard
   reliability: medium            # high | medium | low
   title: "完整论文标题"
@@ -507,8 +530,13 @@ relations:
 ### 跨文件引用规范
 
 ```yaml
+# 同一专题内跨文件引用
 object: pri.off_resonance_reference_light
 note: "跨文件引用，定义于 shaddock1999.yaml"
+
+# 跨专题引用（v4.0 新增）
+object: pri.dick_effect
+note: "跨专题引用，定义于 topics/optical-clocks/papers/xxx.yaml"
 ```
 
 ---
