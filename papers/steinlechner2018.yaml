@@ -1,0 +1,99 @@
+# Steinlechner 2018 — 引力波探测器镜面镀层发展综述
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-16
+# Schema版本：v3.2
+
+meta:
+  zotero_key: "L6KKLLSR"
+  source_type: review
+  reliability: high
+  title: "Development of mirror coatings for gravitational-wave detectors"
+  year: 2018
+  first_author: Steinlechner
+  journal: "Philosophical Transactions of the Royal Society A"
+  volume: 376
+  pages: "20170282"
+  doi: "10.1098/rsta.2017.0282"
+  note: >
+    引力波探测器镜面镀层发展的系统综述。总结 SiO₂/Ti:Ta₂O₅、a-Si、
+    AlGaAs 晶体镀层和 SiNₓ 等材料在不同温度下的机械损耗角、光学吸收和
+    散射性能。为超稳激光参考腔镀层选材提供直接依据。
+    核心贡献：提供了多种镀层材料在室温和低温下的损耗角系统比较表。
+
+entities: []
+  # 本文为综述，不新建实体。镀层相关实体已有：
+  # ent.mirror_coating（numata2004.yaml）
+  # ent.algaas_crystalline_mirror_c13（cole2013.yaml）
+
+principles:
+  - id: pri.coating_thermal_noise_material_comparison
+    name: "镀层热噪声材料比较原理"
+    tier: engineering
+    verification_status: calculated
+    statement: >
+      高反射镀层的布朗热噪声功率谱密度正比于 k_B T φ d / (w² f)，
+      其中 φ 为镀层机械损耗角、d 为镀层总厚度、w 为光斑半径、f 为频率。
+      降低热噪声的路径包括：(1) 降低 φ（材料选择），(2) 减小 d（高折射率比 n_H/n_L），
+      (3) 增大 w（增大镜面直径），(4) 降低 T（低温工作）。
+      不同材料组合在不同温度下的 φ 差异显著：
+      - SiO₂: 0.4×10⁻⁴ (290K) → 7.8×10⁻⁴ (20K)
+      - Ti:Ta₂O₅: 2.4×10⁻⁴ (290K) → 8.6×10⁻⁴ (20K)
+      - a-Si (IBS): 1.0×10⁻⁴ (290K) → 0.2×10⁻⁴ (20K)
+      - SiNₓ: 0.8×10⁻⁴ (290K) → 0.1×10⁻⁴ (20K)
+    domain: "镀层热噪声 / 材料科学"
+    key_insight: "非晶 SiO₂/Ta₂O₅ 在低温下损耗角反而增大；a-Si 和 SiNₓ 在低温下大幅降低，是低温镀层的关键替代材料。"
+    conditions: "适用于多层介电高反射镀层的热噪声评估"
+    preconditions:
+      - "涨落耗散定理成立（热平衡态）"
+      - "镀层厚度远小于基底，可使用薄膜近似"
+    invalidated_when:
+      - "镀层材料在特定退火条件下出现微观结构变化，改变损耗角温度依赖关系"
+    source_claim: >
+      "Thermal noise arising from the highly reflective mirror coatings will limit the sensitivity
+      both of current detectors and of planned future detectors"
+    open_questions:
+      - "a-Si 在 1550 nm 的光学吸收（~1000 ppm 对高反射率镀层）是否可降至可接受水平？"
+      - "SiNₓ 的实际高反射率镀层是否能保持其低温低损耗角？"
+    condition_variables:
+      - symbol: "φ"
+        name: "镀层机械损耗角"
+        analytical_relation: "S_x ∝ φ"
+        current_value: "Ti:Ta₂O₅: 2.4×10⁻⁴ @ 290K (IBS)"
+        best_demonstrated:
+          value: "AlGaAs: 2.5×10⁻⁵ @ 290K; a-Si: 0.2×10⁻⁴ @ 20K; SiNₓ: 0.1×10⁻⁴ @ 20K"
+          source: {zotero_key: "L6KKLLSR"}
+        constraints: "a-Si 光学吸收过高限制其应用于引力波探测器"
+
+methods: []
+
+metrics:
+  - id: met.coating_loss_angle_comparison_s18
+    name: "镀层损耗角多材料多温度比较"
+    unit: "无量纲"
+    description: "不同镀层材料在不同温度下的机械损耗角 φ 系统比较"
+    demonstrated_value:
+      value: "SiO₂: 0.4×10⁻⁴(290K)/1.7×10⁻⁴(120K)/7.8×10⁻⁴(20K); Ti:Ta₂O₅: 2.4×10⁻⁴(290K)/3.3×10⁻⁴(120K)/8.6×10⁻⁴(20K); a-Si: 1.0×10⁻⁴(290K)/0.8×10⁻⁴(120K)/0.2×10⁻⁴(20K); SiNₓ: 0.8×10⁻⁴(290K)/0.2×10⁻⁴(120K)/0.1×10⁻⁴(20K)"
+      conditions: "IBS 沉积，各温度点的机械损耗测量"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "L6KKLLSR", claim: "Table 1: Mechanical loss φ at different temperatures"}
+
+relations:
+  - id: rel.ST01
+    subject: ent.mirror_coating
+    predicate: BOUNDED-BY
+    object: pri.coating_thermal_noise_material_comparison
+    confidence: established
+    source: {zotero_key: "L6KKLLSR", claim: "coating thermal noise... will limit the sensitivity both of current detectors and of planned future detectors"}
+    is_system_limit: true
+    dominated_by: null
+    quantitative_contribution: "dominant in GW detector mid-band (30–300 Hz)"
+    regime: all
+    verification_status: calculated
+    temporal_role: validates
+    note: "跨文件引用，ent.mirror_coating 定义于 numata2004.yaml"
+    breakthrough_paths:
+      - direction: pri.crystalline_coating_low_brownian_noise
+        mechanism: "AlGaAs 晶体镀层 φ = 2.5×10⁻⁵，10 倍降低"
+        status: demonstrated
+        note: "跨文件引用，定义于 cole2013.yaml"

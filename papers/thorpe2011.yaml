@@ -1,0 +1,68 @@
+# Thorpe 2011 — 光谱烧孔稳频 6×10⁻¹⁶
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-16
+# Schema版本：v3.2
+
+meta:
+  zotero_key: "Q2MRB267"
+  source_type: technical_paper
+  reliability: high
+  title: "Frequency stabilization to 6×10⁻¹⁶ via spectral-hole burning"
+  year: 2011
+  first_author: Thorpe
+  journal: "Nature Photonics"
+  volume: 5
+  pages: "688-693"
+  doi: "10.1038/nphoton.2011.215"
+  note: >
+    首次演示 FP 腔 + SHB 两级稳频方案，
+    激光先预稳定至 FP 腔（σ_y < 1×10⁻¹³），
+    再锁定至 Eu³⁺:Y₂SiO₅ 光谱烧孔模式达 σ_y ≤ 6×10⁻¹⁶ @ 2–8 s。
+    测量光谱孔对温度（16 kHz/K²）、压力（-11.4 Hz/Pa）和加速度（7×10⁻¹²/g）的灵敏度。
+    核心贡献：SHB 稳频的里程碑——首次达到 10⁻¹⁶ 级。
+
+entities: []
+  # 复用 ent.shb_eu_yso_reference_l13（定义于 leibrandt2013.yaml）
+
+principles: []
+  # 复用 pri.spectral_hole_burning_frequency_ref
+
+methods: []
+  # 复用 meth.spectral_hole_burning_stabilization
+
+metrics:
+  - id: met.shb_stability_thorpe11
+    name: "SHB 稳频稳定度（Thorpe 2011）"
+    unit: "无量纲"
+    demonstrated_value:
+      value: "σ_y ≤ 6×10⁻¹⁶ @ 2–8 s"
+      conditions: "Eu³⁺:Y₂SiO₅，两级稳频（FP预稳+SHB），4 K"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "Q2MRB267", claim: "stabilize the laser to σ_y ≤ 6×10⁻¹⁶ for 2 s ≤ τ ≤ 8 s"}
+
+  - id: met.shb_environmental_sensitivity_thorpe11
+    name: "SHB 环境灵敏度（Thorpe 2011）"
+    unit: "various"
+    demonstrated_value:
+      value: "temperature: 16 kHz/K²; pressure: -11.4 Hz/Pa; acceleration: 7×10⁻¹²/g"
+      conditions: "Eu³⁺:Y₂SiO₅, 4 K"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "Q2MRB267", claim: "temperature (16 kHz K⁻²), pressure (-11.4 Hz Pa⁻¹) and acceleration (7×10⁻¹² g⁻¹)"}
+    note: "每个参数均低于对应的 FP 腔参数"
+
+relations:
+  - id: rel.TH01
+    subject: ent.shb_eu_yso_reference_l13
+    predicate: CHARACTERIZED-BY
+    object: met.shb_stability_thorpe11
+    confidence: established
+    source: {zotero_key: "Q2MRB267", claim: "6×10⁻¹⁶ via spectral-hole burning"}
+    note: "跨文件引用，ent.shb_eu_yso_reference_l13 定义于 leibrandt2013.yaml"
+
+historical_landmarks:
+  first_demonstration:
+    event: "SHB 稳频首次达到 10⁻¹⁶ 级"
+    year: 2011
+    source: {zotero_key: "Q2MRB267"}

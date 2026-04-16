@@ -1,0 +1,130 @@
+# Häfner 2020 — 可搬运 12 cm 腔锶钟询问激光系统
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-16
+# Schema版本：v3.2
+
+meta:
+  zotero_key: "X7XXKXDZ"
+  source_type: technical_paper
+  reliability: high
+  title: "Transportable interrogation laser system with an instability of mod σ_y = 3×10⁻¹⁶"
+  year: 2020
+  first_author: Häfner
+  journal: "Optics Express"
+  volume: 28
+  issue: 11
+  pages: "16407"
+  doi: "10.1364/OE.28.016407"
+  note: >
+    可搬运锶晶格钟询问激光系统，基于 12 cm ULE 参考腔。
+    10 个 Invar 引脚 + 柔性钢丝/带独立约束六自由度，可承受 50g 冲击。
+    达到热噪声极限 mod σ_y ≈ 3×10⁻¹⁶ @ 0.5–10 s。
+    已在多次野外实验中成功运行。
+    核心贡献：L/D > 1 长细比腔体的可搬运刚性安装方案。
+
+entities:
+  - id: ent.transportable_12cm_cavity_h20
+    name: "可搬运 12 cm ULE 参考腔（Häfner 2020）"
+    aliases: ["PTB transportable cavity", "12 cm transportable Sr clock cavity"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      12 cm ULE 圆柱腔（D = 60.8 mm），10 个 Invar 引脚胶合于腔侧面，
+      柔性钢丝和带分三组独立约束六自由度，可承受 55g 加速度。
+      FS 镜基底 + ULE 补偿环，698 nm 工作波长。
+      多级热屏蔽（主动 + 被动），CTE 零点 ~11.4°C。
+    key_parameters:
+      cavity_length: "120 mm"
+      diameter: "60.8 mm"
+      spacer_material: "ULE"
+      mirror_material: "fused silica + ULE compensation rings"
+      wavelength: "698 nm"
+      thermal_noise_floor: "mod σ_y = 2.8×10⁻¹⁶"
+      vibration_sensitivity: "κ_x=0.7, κ_y=2.3, κ_z=12.3 (×10⁻¹⁰/g)"
+      max_acceleration: "55 g"
+      cte_zero_crossing: "~11.4°C"
+      thermal_time_constants: "τ_a=2.5 days, τ_b=0.29 days"
+      drift: "~0.1 Hz/s"
+    note: "PART-OF ent.fp_cavity_system（定义于 numata2004.yaml）。可搬运方案。"
+
+principles:
+  - id: pri.independent_dof_wire_mounting
+    name: "独立自由度柔性钢丝安装原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      通过将 Invar 引脚胶合于腔体侧面，每对引脚用柔性钢丝连接到安装杆或热屏蔽，
+      分三组独立约束平移和旋转自由度（x: T_x+R_z, y: T_y+R_x, z: T_z+R_y）。
+      柔性钢丝沿丝方向提供刚性约束，垂直方向传递力较小，
+      避免过约束导致的应力耦合。适用于 L/D > 1 长细比腔体。
+    domain: "可搬运参考腔安装"
+    key_insight: "独立自由度约束避免过约束，柔性钢丝 + Invar 引脚实现可搬运级鲁棒性。"
+    conditions: "适用于圆柱形腔体，需要引脚胶合和预应力调节"
+    source_claim: >
+      "Ten Invar pins are glued into holes to the side of the cavity...
+      each set of mounting elements restricts one rotational and one translational degree of freedom"
+
+methods: []
+
+metrics:
+  - id: met.fractional_freq_instability_h20
+    name: "分数频率不稳定度（Häfner 2020）"
+    unit: "无量纲"
+    demonstrated_value:
+      value: "mod σ_y ≈ 3×10⁻¹⁶ @ 0.5–10 s"
+      conditions: "12 cm ULE 腔，698 nm，可搬运系统，隔振台"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "X7XXKXDZ", claim: "reaching its thermal noise floor of mod σ_y ≈ 3×10⁻¹⁶ for averaging times between 0.5 s and 10 s"}
+    theoretical_floor:
+      value: "2.8×10⁻¹⁶"
+      basis: "12 cm ULE 腔 + FS 镜 + Ta₂O₅/SiO₂ 镀层热噪声"
+      gap_note: "实测值已达到热噪声极限"
+
+  - id: met.vibration_sensitivity_h20
+    name: "振动灵敏度（Häfner 2020）"
+    unit: "/g"
+    demonstrated_value:
+      value: "κ_x=0.7×10⁻¹⁰, κ_y=2.3×10⁻¹⁰, κ_z=12.3×10⁻¹⁰"
+      conditions: "12 cm ULE 腔，Invar 引脚 + 钢丝安装"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "X7XXKXDZ", claim: "vibration sensitivity κ_x=0.7×10⁻¹⁰/g, κ_y=2.3×10⁻¹⁰/g, κ_z=12.3×10⁻¹⁰/g"}
+
+relations:
+  - id: rel.HF20_01
+    subject: ent.transportable_12cm_cavity_h20
+    predicate: PART-OF
+    object: ent.fp_cavity_system
+    confidence: established
+    source: {zotero_key: "X7XXKXDZ", claim: "ultra-low-expansion glass reference cavity"}
+    note: "跨文件引用，ent.fp_cavity_system 定义于 numata2004.yaml"
+
+  - id: rel.HF20_02
+    subject: ent.transportable_12cm_cavity_h20
+    predicate: ENABLED-BY
+    object: pri.independent_dof_wire_mounting
+    confidence: established
+    source: {zotero_key: "X7XXKXDZ", claim: "rigid, compact, and vibration insensitive mounting... sustaining shocks of up to 50 g"}
+
+  - id: rel.HF20_03
+    subject: ent.transportable_12cm_cavity_h20
+    predicate: BOUNDED-BY
+    object: pri.brownian_thermal_noise_fdt
+    confidence: established
+    source: {zotero_key: "X7XXKXDZ", claim: "reaching its thermal noise floor of mod σ_y ≈ 3×10⁻¹⁶"}
+    is_system_limit: true
+    regime: short-term
+    verification_status: observed
+    note: "跨文件引用，pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml"
+
+  - id: rel.HF20_04
+    subject: ent.transportable_12cm_cavity_h20
+    predicate: CONDITIONED-BY
+    object: ent.vibration_environment
+    confidence: established
+    source: {zotero_key: "X7XXKXDZ", claim: "vibration isolation table reduces vibrations by more than 20 dB for >5 Hz"}
+    interface_metric: met.vibration_sensitivity_h20
+    is_system_limit:
+      current: false
+    note: "跨文件引用，ent.vibration_environment 定义于 webster2007.yaml"

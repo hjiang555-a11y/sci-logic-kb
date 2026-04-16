@@ -1,0 +1,73 @@
+# Li 2018 — 30 cm 腔改进 Sr 光钟 10⁻¹⁶ 稳定度
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-16
+# Schema版本：v3.2
+
+meta:
+  zotero_key: "AFFU5KGB"
+  source_type: technical_paper
+  reliability: high
+  title: "An improved strontium lattice clock with 10⁻¹⁶ level laser frequency stabilization"
+  year: 2018
+  first_author: Li
+  journal: "Chinese Optics Letters"
+  volume: 16
+  pages: "051402"
+  doi: "10.3788/COL201816.051402"
+  note: >
+    30 cm ULE 高精细度腔用于 ⁸⁷Sr 光晶格钟，
+    Rabi 跃迁线宽 1.8 Hz（500 ms 询问），
+    短期稳定度优于 3.2×10⁻¹⁶，平均至 1.8×10⁻¹⁵/√τ。
+    核心贡献：中国 NIM Sr 钟性能提升至 10⁻¹⁶ 级。
+
+entities:
+  - id: ent.ule_cavity_30cm_sr_l18
+    name: "30 cm ULE 参考腔（Li 2018, Sr 钟）"
+    aliases: ["NIM 30 cm cavity", "Li 2018 Sr clock cavity"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      30 cm ULE 凹口圆柱腔（D = 15 cm），FS 镜 + ULE 补偿环，
+      Finesse ~314,000（ringdown 测量），水平放置于 Zerodur 基板
+      + 4 个硅球，用于 ⁸⁷Sr 光晶格钟。
+    key_parameters:
+      cavity_length: "30 cm"
+      spacer_material: "ULE (notched cylinder)"
+      diameter: "15 cm"
+      mirror_material: "fused silica + ULE compensation rings"
+      finesse: "~314,000"
+      servo_bandwidth: "~1.5 MHz"
+    note: "PART-OF ent.fp_cavity_system（定义于 numata2004.yaml）。"
+
+principles: []
+
+methods: []
+
+metrics:
+  - id: met.sr_clock_instability_l18
+    name: "Sr 钟频率稳定度（Li 2018）"
+    unit: "无量纲"
+    demonstrated_value:
+      value: "<3.2×10⁻¹⁶ short-term, 1.8×10⁻¹⁵/√τ"
+      conditions: "30 cm ULE 腔，⁸⁷Sr 光晶格钟，NIM"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "AFFU5KGB", claim: "short-term frequency stability is better than 3.2×10⁻¹⁶ and averages down followed by 1.8×10⁻¹⁵/√τ"}
+
+relations:
+  - id: rel.LI01
+    subject: ent.ule_cavity_30cm_sr_l18
+    predicate: PART-OF
+    object: ent.fp_cavity_system
+    confidence: established
+    source: {zotero_key: "AFFU5KGB", claim: "30-cm-long ultrahigh finesse optical cavity"}
+
+  - id: rel.LI02
+    subject: ent.ule_cavity_30cm_sr_l18
+    predicate: BOUNDED-BY
+    object: pri.brownian_thermal_noise_fdt
+    confidence: likely
+    source: {zotero_key: "AFFU5KGB", claim: "laser frequency stabilization at 10⁻¹⁶ level"}
+    is_system_limit: true
+    regime: short-term
+    verification_status: observed

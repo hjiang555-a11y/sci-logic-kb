@@ -1,0 +1,72 @@
+# Gao 2025 — 全光纤循环干涉仪超低频率噪声激光
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-16
+# Schema版本：v3.2
+
+meta:
+  zotero_key: "JAW66GYL"
+  source_type: technical_paper
+  reliability: high
+  title: "An Ultra-Low Frequency Noise Laser Based on All-Fiber Integrated Recirculating Interferometers"
+  year: 2025
+  first_author: Gao
+  journal: "Journal of Lightwave Technology"
+  volume: 43
+  issue: 9
+  pages: "4469"
+  doi: "10.1109/JLT.2025.XXXXXXX"
+  note: >
+    全光纤循环干涉仪（RI），100 m 光纤延迟线实现等效长光纤的
+    频率鉴频灵敏度（提高 >1 个数量级），频率噪声 PSD < 1 Hz²/Hz @ 1 Hz–10 kHz。
+    核心贡献：循环干涉仪突破了短光纤延迟线灵敏度限制。
+
+entities:
+  - id: ent.recirculating_fiber_interferometer_g25
+    name: "全光纤循环干涉仪（Gao 2025）"
+    aliases: ["recirculating interferometer", "RI fiber laser"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      利用光在光纤环路中多次循环，等效增加延迟线长度，
+      100 m 物理延迟线实现 >10 倍灵敏度提升。
+      全光纤集成，无需长光纤。
+    key_parameters:
+      physical_delay: "100 m"
+      sensitivity_improvement: ">10×"
+      freq_noise_psd: "<1 Hz²/Hz @ 1 Hz–10 kHz"
+    note: "PART-OF ent.fiber_interferometer 的改进变体。"
+
+principles:
+  - id: pri.recirculating_interferometer_sensitivity
+    name: "循环干涉仪灵敏度增强原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      光在光纤环路中多次循环，第 N 阶拍频信号的频率鉴频灵敏度
+      等效于 N 倍延迟线长度。通过优化耦合系数和环路光学增益，
+      最大化循环次数以提高灵敏度。
+    domain: "光纤延迟线 / 频率鉴频"
+    key_insight: "循环增强等效延迟而不增加物理光纤长度，降低 SWaP。"
+    conditions: "需要优化耦合系数和环路增益以最大化循环次数"
+    source_claim: "increasing the frequency-discriminator sensitivity by more than 1 order of magnitude"
+
+methods: []
+
+metrics:
+  - id: met.freq_noise_psd_ri_g25
+    name: "循环干涉仪频率噪声 PSD（Gao 2025）"
+    unit: "Hz²/Hz"
+    demonstrated_value:
+      value: "<1 Hz²/Hz @ 1 Hz–10 kHz"
+      conditions: "100 m 光纤延迟线，全光纤循环干涉仪"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "JAW66GYL", claim: "frequency-noise power spectral density below 1 Hz²/Hz from 1 Hz to 10 kHz"}
+
+relations:
+  - id: rel.G01
+    subject: ent.recirculating_fiber_interferometer_g25
+    predicate: ENABLED-BY
+    object: pri.recirculating_interferometer_sensitivity
+    confidence: established
+    source: {zotero_key: "JAW66GYL", claim: "recirculating interferometer... increasing frequency-discriminator sensitivity"}

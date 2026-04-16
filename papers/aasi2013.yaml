@@ -1,0 +1,43 @@
+# Aasi 2013 — LIGO 压缩光增强灵敏度
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-16
+# Schema版本：v3.2
+
+meta:
+  zotero_key: "8NUIA2K7"
+  source_type: technical_paper
+  reliability: high
+  title: "Enhanced sensitivity of the LIGO gravitational wave detector by using squeezed states of light"
+  year: 2013
+  first_author: Aasi
+  journal: "Nature Photonics"
+  volume: 7
+  pages: "613-619"
+  doi: "10.1038/nphoton.2013.177"
+  note: >
+    LIGO 注入压缩真空态光场突破量子散粒噪声极限，
+    150 Hz 以上灵敏度改善，实现历史最佳宽带引力波灵敏度。
+    核心贡献：量子增强精密测量的里程碑。
+    与超稳激光共享量子噪声和光电探测技术。
+
+entities: []
+
+principles:
+  - id: pri.squeezed_light_quantum_enhancement
+    name: "压缩光量子增强干涉仪灵敏度"
+    tier: foundational
+    verification_status: observed
+    statement: >
+      注入压缩真空态光场到迈克尔逊干涉仪暗端口，
+      降低特定正交分量的量子噪声（散粒噪声），
+      改善干涉仪灵敏度而不增加光功率。
+      LIGO 实现了 150 Hz 以上的灵敏度改善。
+    domain: "量子光学 / 引力波探测"
+    key_insight: "压缩态光场可在不增加功率的情况下降低量子噪声。"
+    conditions: "需要高品质压缩光源和低损耗注入路径"
+    source_claim: "inject squeezed states to improve performance beyond quantum noise limit"
+
+methods: []
+metrics: []
+
+relations: []

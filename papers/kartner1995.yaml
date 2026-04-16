@@ -1,0 +1,27 @@
+# Krtner 1995 — 增强空间烧孔的连续锁模固态激光（理论）
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-16
+# Schema版本：v3.2
+
+meta:
+  zotero_key: "5XG8FTEE"
+  source_type: technical_paper
+  reliability: high
+  title: "Continuous-wave mode-locked solid-state lasers with enhanced spatial hole burning, Part II: Theory"
+  year: 1995
+  first_author: Kärtner
+  journal: "Applied Physics B"
+  volume: 61
+  pages: "569-579"
+  doi: "10.1007/BF01091213"
+  note: >
+    Part I（Braun 1995）的理论配套。理论分析端泵浦固态激光中
+    强空间烧孔的动力学，模间距由增益介质长度决定。
+    核心贡献：空间烧孔动力学的数值理论框架。
+    与超稳激光主题关系较远。
+
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

@@ -1,0 +1,71 @@
+# Hu 2015 — 超低加速度灵敏度光纤盘（10⁻¹²/g）
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-16
+# Schema版本：v3.2
+
+meta:
+  zotero_key: "KH82PQJ2"
+  source_type: technical_paper
+  reliability: high
+  title: "An optical fiber spool for laser stabilization with reduced acceleration sensitivity to 10⁻¹²/g"
+  year: 2015
+  first_author: Hu
+  journal: "Chinese Physics B"
+  volume: 24
+  pages: "104213"
+  doi: "10.1088/1674-1056/24/10/104213"
+  note: >
+    对称安装光纤盘设计，FEM 优化实现水平和垂直方向
+    加速度灵敏度分别降至 3.25×10⁻¹²/g 和 5.38×10⁻¹²/g。
+    对几何参数变化不敏感，抗加工公差。
+    核心贡献：光纤稳频系统振动噪声抑制的关键部件设计。
+
+entities:
+  - id: ent.ultralow_accel_fiber_spool_h15
+    name: "超低加速度灵敏度光纤盘（Hu 2015）"
+    aliases: ["symmetric fiber spool", "ultralow acceleration fiber spool"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      对称安装结构光纤盘，通过 FEM 优化几何参数
+      （缠绕半径、高度、安装位置），实现水平和垂直方向
+      ~10⁻¹²/g 的加速度灵敏度。对参数变化不敏感。
+    key_parameters:
+      horizontal_sensitivity: "3.25×10⁻¹²/g"
+      vertical_sensitivity: "5.38×10⁻¹²/g"
+      design: "symmetrically mounted structure"
+    note: "PART-OF ent.fiber_interferometer（定义于 jiang2010.yaml）。"
+
+principles:
+  - id: pri.symmetric_spool_vibration_cancellation
+    name: "对称光纤盘振动消除原理"
+    tier: engineering
+    verification_status: calculated
+    statement: >
+      通过对称安装光纤盘，使加速度引起的光纤上半部和下半部
+      的应变相互抵消。FEM 优化几何参数使残余灵敏度降至 10⁻¹²/g 级。
+      关键在于对称面位置和缠绕张力均匀性。
+    domain: "光纤稳频 / 振动抑制"
+    key_insight: "对称安装使振动引起的光纤形变在上下半部分相互抵消。"
+    conditions: "需要精密加工和均匀缠绕张力"
+    source_claim: "symmetrically mounted structure... acceleration sensitivity can be reduced to ~10⁻¹²/g"
+
+methods: []
+
+metrics: []
+
+relations:
+  - id: rel.HU15_01
+    subject: ent.ultralow_accel_fiber_spool_h15
+    predicate: PART-OF
+    object: ent.fiber_interferometer
+    confidence: established
+    source: {zotero_key: "KH82PQJ2", claim: "optical fiber spool for laser stabilization"}
+    note: "跨文件引用，ent.fiber_interferometer 定义于 jiang2010.yaml"
+
+  - id: rel.HU15_02
+    subject: ent.ultralow_accel_fiber_spool_h15
+    predicate: ENABLED-BY
+    object: pri.symmetric_spool_vibration_cancellation
+    confidence: established
+    source: {zotero_key: "KH82PQJ2", claim: "symmetrically mounted structure to reduce acceleration sensitivity"}

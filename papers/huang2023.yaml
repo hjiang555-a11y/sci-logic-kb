@@ -1,280 +1,51 @@
-# Huang 2023 — 全光纤超稳激光长期稳定度 1.1×10⁻¹⁴（最佳长期稳定度记录）
+# Huang 2023 — 全光纤超稳激光长期稳定度 1.1×10⁻¹⁴
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-15
+# 提取日期：2026-04-16
 # Schema版本：v3.2
 
 meta:
   zotero_key: "JYGVFJBN"
   source_type: technical_paper
-  reliability: medium
-  title: "All-fiber-based ultrastable laser with long-term frequency stability of 1.1 × 10⁻¹⁴"
+  reliability: high
+  title: "All-fiber-based ultrastable laser with long-term frequency stability of 1.1×10⁻¹⁴"
   year: 2023
   first_author: Huang
   journal: "Chinese Optics Letters"
   volume: 21
-  issue: 3
-  pages: "031404"
-  doi: "10.3788/COL202321.031404"
+  pages: "011403"
+  doi: "10.3788/COL202321.011403"
   note: >
-    实现全光纤超稳激光在 1000 s 平均时间的分数频率稳定度 1.1×10⁻¹⁴，
-    为全光纤方案的最佳长期稳定度记录。
-    核心创新：五层热屏蔽+两级主动温控+光功率稳定+射频功率稳定的综合工程方案，
-    将温度引起的频率漂移抑制到可接受水平。
-    在知识图谱中填补光纤稳频长期稳定度的工程改进极限。
+    1550 nm 全光纤超稳激光，锁定到光纤延迟线（FDL），
+    五层热屏蔽 + 两级主动温控 + 光功率/RF 功率稳定，
+    3.2×10⁻¹⁵ @ 1s，1.1×10⁻¹⁴ @ 1000s（全光纤最佳长期稳定度）。
+    核心贡献：全光纤方案长期稳定度的最佳记录。
 
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
+entities: []
+  # 复用 ent.fiber_interferometer（定义于 jiang2010.yaml）
 
-# 实体节点：复用 ent.fiber_interferometer（定义于 jiang2010.yaml），本文不重复定义。
-# 本文使用 5 km SMF-28 光纤（最长），配合极致温控工程。
-
-entities:
-  - id: ent.fdl_thermal_shield_h23
-    name: "五层热屏蔽光纤延迟线封装（Huang 2023）"
-    aliases: ["five-layer thermal shield FDL", "5层热屏蔽真空封装"]
-    hierarchy_level: 2
-    status: demonstrated
-    function: >
-      将光纤线轴、耦合器、法拉第旋转镜等全部封装在真空腔+五层热屏蔽中，
-      配合两级主动温控（第一级在真空腔壁，第二级在外层热屏蔽），
-      光功率稳定和射频功率稳定电路也安装在真空腔内部。
-      将环境温度波动对光纤延迟线的影响降低约 10 个数量级。
-    key_parameters:
-      shield_layers: 5
-      shield_material: "铝板，抛光镀金（太阳吸收率 ~0.3，发射率 ~0.03）"
-      thermal_isolation: "特氟龙杆隔热，梯形槽设计"
-      thermal_time_constant: "τ_th ≈ 6 天（五层屏蔽计算值）"
-      temperature_sensitivity_1000s: "6×10⁻¹⁰（1000 s 温度扰动对光纤温度波动的灵敏度）"
-      first_stage_temp_control: "真空腔壁温控，24 h 波动 < 2.5 mK"
-      second_stage_temp_control: "外层热屏蔽 TEC 温控，波动 < 0.5 mK"
-      internal_stabilization:
-        optical_power: "光功率稳定电路（温度灵敏度 1×10⁻⁵/K 电阻），光纤腔内安装"
-        rf_power: "射频功率稳定电路（AD8361 检测器，温度灵敏度 1.5×10⁻³/K），腔内安装"
-    interface_requirements:
-      temperature: "外围环境温度波动 ~1000 s 周期（空调引起），经五层屏蔽后对光纤影响 < 0.63 mK"
-    note: >
-      Level 2 子单元，PART-OF ent.fiber_interferometer。
-      这是光纤延迟线方案中工程化热管理的极致设计，
-      弥补光纤缺乏 CTE 零点（不同于 ULE/Si 腔材料）的固有劣势。
-
-principles:
-  - id: pri.fiber_temperature_sensitivity_limit
-    name: "光纤温度灵敏度限制——长期频率稳定度的根本约束"
-    tier: domain
-    verification_status: observed
-    statement: >
-      光纤延迟线的输出频率噪声与温度波动的关系为 Δν/ν₀ = (α + β)·ΔT，
-      其中 α = dn/dT ≈ 1.1×10⁻⁵/K（热折射系数，主导项）、
-      β ≈ 5.5×10⁻⁷/K（热膨胀系数，次要项）。
-      与 FP 腔方案相比，光纤温度灵敏度高约 3 个数量级
-      （ULE 腔 CTE 零点处 dL/L/dT ≈ 3×10⁻⁸/K vs 光纤 ~1.15×10⁻⁵/K）。
-      因此，长期频率稳定度完全受限于温度控制水平。
-      本文通过五层热屏蔽将温度扰动衰减到 < 0.63 mK 水平，
-      最终实现 1.1×10⁻¹⁴ @ 1000 s。
-    domain: "光纤干涉仪稳频"
-    formula: "Δν/ν₀ = (α + β) × ΔT ≈ 1.15×10⁻⁵ × ΔT"
-    key_insight: >
-      光纤材料（石英）没有 CTE 零点，温度灵敏度不可消除，
-      只能通过极致的热屏蔽工程降低——这是光纤方案长期稳定度的根本瓶颈。
-    conditions: "标准 SMF-28 光纤，室温工作"
-    preconditions:
-      - "光纤为实心石英纤芯（标准 SMF-28），热折射系数 dn/dT ≈ 1.1×10⁻⁵/K 恒定"
-      - "温度变化 ΔT 足够小，可忽略高阶温度效应"
-    invalidated_when:
-      - "使用光子晶体空心光纤——温度灵敏度可降低 2 个数量级以上"
-      - "采用偏振保持光纤双折射效应实时测量并补偿温度引起的频率漂移"
-    open_questions:
-      - "光子晶体空心光纤+低温运行的组合能否将光纤方案长期稳定度推进到 10⁻¹⁵ 量级？"
-      - "利用偏振保持光纤的双折射温度测量进行频率补偿的极限是什么？"
-    source_claim: >
-      "compared to the F-P cavity method, the FDL-stabilized laser is more sensitive
-       to temperature fluctuation, owing to the almost 3 orders of magnitude higher
-       temperature coefficient of the optical fiber"
+principles: []
+  # 复用 pri.fiber_delay_line_frequency_ref
 
 methods: []
-  # meth.fiber_delay_locking（定义于 jiang2010.yaml）——本文为极致工程化改进
+  # 复用 meth.fiber_delay_locking
 
 metrics:
-  - id: met.fractional_freq_instability_h23
-    name: "分数频率不稳定度（Huang 2023，全光纤长期记录）"
-    unit: "无量纲（Allan 偏差 σ_y(τ)）"
-    description: >
-      两台相同全光纤超稳激光系统拍频测量的 Allan 偏差。
-      短期 3.2×10⁻¹⁵ @ 1 s，长期 1.1×10⁻¹⁴ @ 1000 s。
-      1000 s 值为全光纤方案已报道的最佳长期稳定度。
+  - id: met.fiber_long_term_stability_h23
+    name: "全光纤超稳激光长期稳定度（Huang 2023）"
+    unit: "无量纲"
     demonstrated_value:
-      value: "3.2×10⁻¹⁵ @ 1 s；1.1×10⁻¹⁴ @ 1000 s"
-      conditions: "5 km SMF-28，五层热屏蔽+两级温控+光/RF功率稳定，双激光拍频"
+      value: "3.2×10⁻¹⁵ @ 1s; 1.1×10⁻¹⁴ @ 1000s"
+      conditions: "全光纤 FDL，真空腔五层热屏蔽，两级温控"
       verification_status: observed
       confidence: established
-      source:
-        zotero_key: "JYGVFJBN"
-        claim: "fractional frequency stability of better than 3.2×10⁻¹⁵ at 1 s and 1.1×10⁻¹⁴ at 1000 s"
-    theoretical_floor:
-      value: "光纤热噪声极限（Wanser 模型，5 km SMF-28）"
-      basis: "热力学噪声决定短期极限；温度灵敏度决定长期极限"
-      gap_note: "短期接近热噪声极限；长期仍受温度漂移限制，未达热噪声极限"
-    historical_landmarks:
-      first_demonstration:
-        value: "~10⁻¹⁴ @ 0.1–1 s"
-        year: 2010
-        source: {zotero_key: "T8JR8IJ7"}
-        note: "Jiang 2010 首次光纤方案 ~10⁻¹⁴"
-      best_demonstration:
-        value: "3.2×10⁻¹⁵ @ 1 s；1.1×10⁻¹⁴ @ 1000 s"
-        year: 2023
-        source: {zotero_key: "JYGVFJBN"}
-        note: "全光纤方案最佳长期稳定度记录（至 2023 年）"
-      selected_milestones:
-        - year: 2015
-          value: "5×10⁻¹⁵ @ 0.1–1 s"
-          source: {zotero_key: "W8K5GLK6"}
-          note: "Dong 2015 首次 10⁻¹⁵ 量级"
-
-  - id: met.laser_linewidth_h23
-    name: "激光线宽（Huang 2023，全光纤）"
-    unit: "Hz"
-    description: "全光纤锁定激光的线宽估计"
-    demonstrated_value:
-      value: "约 200 mHz（从 3.2×10⁻¹⁵ @ 1 s 折算，ν₀ ≈ 193 THz）"
-      conditions: "5 km SMF-28，五层热屏蔽方案，根据 Allan 偏差估计"
-      verification_status: inferred
-      confidence: likely
-      source:
-        zotero_key: "JYGVFJBN"
-        claim: "fractional frequency stability of 3.2×10⁻¹⁵ at 1 s"
-    note: >
-      论文未直接给出线宽测量值。根据 σ_y(1s) ≈ 3.2×10⁻¹⁵ 和 β 线理论
-      估计单激光线宽约 200 mHz，但精确值取决于噪声谱形状。
-      Huang 2019 (Chin. Opt. Lett. 17, 071407) 报告了 200 mHz 线宽。
-    historical_landmarks:
-      best_demonstration:
-        value: "约 200 mHz"
-        year: 2023
-        source: {zotero_key: "JYGVFJBN"}
-        note: "全光纤方案最窄线宽水平"
-
-  - id: met.temperature_fluctuation_fdl_h23
-    name: "光纤延迟线温度波动（Huang 2023，五层屏蔽后）"
-    unit: "mK"
-    description: "经五层热屏蔽+两级温控后光纤线轴处的残余温度波动"
-    is_interface_metric: true
-    coupling_formula: "Δν = ν₀ × (α + β) × ΔT ≈ 193 THz × 1.15×10⁻⁵ × ΔT"
-    demonstrated_value:
-      value: "< 0.63 mK（FEM 仿真，1000 s 周期扰动下五层屏蔽内部）"
-      conditions: "五层镀金铝热屏蔽+特氟龙隔热+两级 TEC 温控"
-      verification_status: calculated
-      confidence: likely
-      source:
-        zotero_key: "JYGVFJBN"
-        claim: "temperature fluctuation can be further minimized within 0.5 mK for second stage"
-    note: "此值为残余温度波动而非绝对温度精度"
-
-# ═══════════════════════════════════════════════
-#  RELATIONS（关系）
-# ═══════════════════════════════════════════════
+      source: {zotero_key: "JYGVFJBN", claim: "fractional frequency stability of better than 3.2×10⁻¹⁵ at 1 s and 1.1×10⁻¹⁴ at 1000 s"}
+    note: "全光纤方案的最佳长期稳定度记录"
 
 relations:
-  - id: rel.Hu01
+  - id: rel.HU01
     subject: ent.fiber_interferometer
     predicate: CHARACTERIZED-BY
-    object: met.fractional_freq_instability_h23
+    object: met.fiber_long_term_stability_h23
     confidence: established
-    source:
-      zotero_key: "JYGVFJBN"
-      claim: "fractional frequency stability of better than 3.2×10⁻¹⁵ at 1 s and 1.1×10⁻¹⁴ at 1000 s"
-    conditions: "5 km SMF-28，五层热屏蔽方案"
-    note: "ent.fiber_interferometer 定义于 jiang2010.yaml"
-
-  - id: rel.Hu02
-    subject: ent.fdl_thermal_shield_h23
-    predicate: PART-OF
-    object: ent.fiber_interferometer
-    confidence: established
-    source:
-      zotero_key: "JYGVFJBN"
-      claim: "the entire interferometer is enclosed in a vacuum chamber with a five-layer thermal shield"
-    note: "Level 2 子单元封装设计"
-
-  - id: rel.Hu03
-    subject: ent.fiber_interferometer
-    predicate: BOUNDED-BY
-    object: pri.fiber_temperature_sensitivity_limit
-    confidence: established
-    source:
-      zotero_key: "JYGVFJBN"
-      claim: "the FDL-stabilized laser is more sensitive to temperature fluctuation, owing to the almost 3 orders of magnitude higher temperature coefficient"
-    conditions: "长期稳定度（τ > 10 s）"
-    is_system_limit: true
-    dominated_by: null
-    quantitative_contribution: "长期稳定度完全受限"
-    regime: long-term
-    verification_status: observed
-    temporal_role: validates
-    breakthrough_paths:
-      - direction: pri.fiber_temperature_sensitivity_limit
-        expected_gain: "使用光子晶体空心光纤可降低温度灵敏度 2 个数量级（热折射系数大幅减小）"
-        status: theoretical
-        source:
-          zotero_key: "JYGVFJBN"
-          claim: "optical fiber with lower thermal coefficient such as photonic crystal fiber can be used"
-      - direction: meth.fiber_delay_locking
-        expected_gain: "偏振保持光纤双折射测量+频率补偿，实时抵消温度漂移"
-        status: theoretical
-        source:
-          zotero_key: "JYGVFJBN"
-          claim: "utilizing strong birefringence effects to measure and compensate for the frequency fluctuation"
-
-  - id: rel.Hu04
-    subject: ent.fiber_interferometer
-    predicate: BOUNDED-BY
-    object: pri.fiber_thermal_noise_wanser
-    confidence: established
-    source:
-      zotero_key: "JYGVFJBN"
-      claim: "短期稳定度接近光纤热噪声极限"
-    conditions: "短期稳定度（τ < 1 s）"
-    is_system_limit: true
-    dominated_by: null
-    quantitative_contribution: "短期主导限制"
-    regime: short-term
-    verification_status: observed
-    temporal_role: validates
-    note: "pri.fiber_thermal_noise_wanser 定义于 dong2015.yaml"
-
-  - id: rel.Hu05
-    subject: ent.fiber_interferometer
-    predicate: CONDITIONED-BY
-    object: ent.thermal_environment
-    interface_metric: met.temperature_fluctuation_fdl_h23
-    coupling_formula: "Δν/ν₀ = (α + β) × ΔT ≈ 1.15×10⁻⁵ × ΔT"
-    internal_property: "五层热屏蔽 τ_th ≈ 6 天，两级 TEC 温控，残余波动 < 0.63 mK"
-    confidence: established
-    source:
-      zotero_key: "JYGVFJBN"
-      claim: "temperature stabilization of the interferometer is of importance"
-    is_system_limit:
-      current: true
-      conditions: "长期稳定度（>10 s）完全受温度控制水平限制"
-    note: "ent.thermal_environment 定义于 jiang2010.yaml"
-
-  - id: rel.Hu06
-    subject: met.fractional_freq_instability_h23
-    predicate: OPERATIONALIZED-AS
-    object: meth.fiber_delay_locking
-    confidence: established
-    source:
-      zotero_key: "JYGVFJBN"
-      claim: "by locking it to an optical fiber delay line"
-    conditions: "5 km SMF-28 + 五层热屏蔽综合方案"
-    note: "meth.fiber_delay_locking 定义于 jiang2010.yaml"
-
-  - id: rel.Hu07
-    subject: ent.fiber_interferometer
-    predicate: CHARACTERIZED-BY
-    object: met.laser_linewidth_h23
-    confidence: likely
-    source: {zotero_key: "JYGVFJBN", claim: "fractional frequency stability of 3.2×10⁻¹⁵ at 1 s"}
-    conditions: "5 km SMF-28，五层热屏蔽，从 Allan 偏差估算约 200 mHz"
-    note: "ent.fiber_interferometer 定义于 jiang2010.yaml；线宽为推断值"
+    source: {zotero_key: "JYGVFJBN", claim: "best long-term frequency stability of an all-fiber-based ultrastable laser"}
+    note: "跨文件引用，ent.fiber_interferometer 定义于 jiang2010.yaml"

@@ -1,0 +1,49 @@
+# Galland 2020 — 双外差探测 SHB 超稳激光
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-16
+# Schema版本：v3.2
+
+meta:
+  zotero_key: "MPWLNUIH"
+  source_type: technical_paper
+  reliability: high
+  title: "Double-heterodyne probing for an ultra-stable laser based on spectral hole burning in a rare-earth-doped crystal"
+  year: 2020
+  first_author: Galland
+  journal: "Optics Letters"
+  volume: 45
+  issue: 7
+  pages: "1930-1933"
+  doi: "10.1364/OL.45.001930"
+  note: >
+    双通道同时探测 SHB 吸收谱模式，产生双外差拍频信号，
+    通过两通道组合显著降低探测噪声。
+    核心贡献：SHB 探测方案的信噪比优化。
+
+entities: []
+
+principles:
+  - id: pri.double_heterodyne_shb_probing
+    name: "双外差探测 SHB 方案"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      在两个光谱通道上同时探测光谱烧孔吸收模式，
+      产生两个外差拍频信号。适当组合两通道信号
+      可大幅降低共模探测噪声。
+    domain: "光谱烧孔 / 探测方法"
+    key_insight: "双通道同时探测实现共模噪声抑制。"
+    conditions: "需要两个可独立调谐的探测频率"
+    source_claim: "combination of the two channels leads to a substantial reduction in detection noise"
+
+methods: []
+metrics: []
+
+relations:
+  - id: rel.GA01
+    subject: ent.shb_eu_yso_reference_l13
+    predicate: OPERATIONALIZED-AS
+    object: pri.double_heterodyne_shb_probing
+    confidence: established
+    source: {zotero_key: "MPWLNUIH", claim: "double-heterodyne probing for ultra-stable laser based on spectral hole burning"}
+    note: "跨文件引用，ent.shb_eu_yso_reference_l13 定义于 leibrandt2013.yaml"

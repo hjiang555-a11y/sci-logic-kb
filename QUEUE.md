@@ -30,77 +30,77 @@
 - [x] `YKPFKDD9` | Kessler 2012 | A sub-40-mHz-linewidth laser based on a silicon single-crystal optical cavity → `kessler2012.yaml`
 - [x] `CWIHQRJD` | Cole 2013 | Tenfold reduction of Brownian noise in high-reflectivity optical coatings → `cole2013.yaml`
 - [x] `TVY7T59A` | Matei 2017 | 1.5 μm Lasers with Sub-10 mHz Linewidth → `matei2017.yaml`
-- [ ] `ZDF94KK5` | Matei 2017 (v2?) | 1.5 μm Lasers with Sub-10 mHz Linewidth (same paper, check)
+- [x] `ZDF94KK5` | Matei 2017 (duplicate) | 重复条目，同 TVY7T59A → `matei2017.yaml`
 - [x] `UV6S5FFL` | Häfner 2015 | 8×10⁻¹⁷ fractional laser frequency instability with a long room-temp. cavity → `hafner2015.yaml`
-- [ ] `PZGR9S7S` | Wu 201x | 0.26-Hz-linewidth ultrastable lasers at 1557 nm
+- [x] `PZGR9S7S` | Wu 2016 | 0.26-Hz-linewidth ultrastable lasers at 1557 nm → `wu2016.yaml`
 - [x] `JIZCUZLY` | Robinson 2019 | Crystalline optical cavity at 4 K with thermal-noise-limited instability → `robinson2019.yaml`
 - [x] `8YK6EH22` | Kedar 2023 | Frequency stability of cryogenic silicon cavities with semiconductor crystalline coatings → `kedar2023.yaml`
 - [x] `N6HILT6B` | Chen 2025 | A laser with instability reaching 4×10⁻¹⁷ based on a 10-cm-long silicon cavity → `chen2025.yaml`
-- [ ] `U2LXSU62` | Parke 2025 | Three hundred microsecond optical cavity storage time and 10⁻⁷ acceleration insensitivity
+- [x] `U2LXSU62` | Parke 2025 | Three hundred microsecond optical cavity storage time and 10⁻⁷ RAM cancellation → `parke2025.yaml`
 - [x] `4QVEXY63` | Lee 2026 | Frequency stability of 2.5×10⁻¹⁷ from a Si cavity with AlGaAs crystalline mirrors → `lee2026.yaml`
 
 ### 空间/可搬运应用
 
-- [ ] `RP8Q44RZ` | Argence 201x | Prototype of an ultra-stable optical cavity for space applications
-- [ ] `PHRXF4IL` | Didier 201x | Ultracompact reference ultralow expansion glass cavity
-- [ ] `H3HYK5D3` | Sanjuan 201x | Long-term stable optical cavity for special relativity tests in space
-- [ ] `X7XXKXDZ` | Hafner 201x | Transportable interrogation laser system with an instability of m×10⁻¹⁶
+- [x] `RP8Q44RZ` | Argence 2012 | Prototype of an ultra-stable optical cavity for space applications → `argence2012.yaml`
+- [x] `PHRXF4IL` | Didier 2018 | Ultracompact reference ultralow expansion glass cavity → `didier2018.yaml`
+- [x] `H3HYK5D3` | Sanjuan 2019 | Long-term stable optical cavity for special relativity tests in space → `sanjuan2019.yaml`
+- [x] `X7XXKXDZ` | Häfner 2020 | Transportable interrogation laser system with mod σ_y = 3×10⁻¹⁶ → `hafner2020.yaml`
 - [x] `NU79W75P` | Herbers 2022 | Transportable clock laser system with an instability of 1.6×10⁻¹⁶ → `herbers2022.yaml`
 - [x] `AHUZI4A7` | Tai 2017 | Transportable 1555-nm Ultra-Stable Laser with Sub-0.185-Hz Linewidth → `tai2017.yaml`
-- [ ] `WTUHUAQ7` | Qun-Feng 201x | A compact, robust, and transportable ultra-stable laser
-- [ ] `U4Z95559` | Tao 201x | A vibration-insensitive-cavity design holds impact of higher than 100g
+- [x] `WTUHUAQ7` | Chen 2014 | Compact, robust, transportable ultra-stable laser 1×10⁻¹⁵ → `chen2014.yaml`
+- [x] `U4Z95559` | Tao 2018 | A vibration-insensitive-cavity design holds impact of higher than 100g → `tao2018.yaml`
 
 ### 镀层相关
 
 - [x] `4GUXEM2C` | Cole 2016 | High-performance near- and mid-infrared crystalline coatings → `cole2016.yaml`
-- [ ] `L6KKLLSR` | Steinlechner 201x | Development of mirror coatings for gravitational-wave detectors
-- [ ] `LCMWCIWB` | Marchio 202x | Optical performance of large-area crystalline coatings
+- [x] `L6KKLLSR` | Steinlechner 2018 | Development of mirror coatings for gravitational-wave detectors → `steinlechner2018.yaml`
+- [x] `LCMWCIWB` | Marchio 2018 | Optical performance of large-area crystalline coatings → `marchio2018.yaml`
 
 ### 其他技术细节
 
 - [x] `S5GJNVG8` | Zhang 2014 | Reduction of residual amplitude modulation to 1×10⁻⁶
-- [ ] `FIJXUVZV` | Tai 2016 | Electro-optic modulator with ultra-low residual amplitude modulation
-- [ ] `WDGF2B36` | Potnis 201x | Broadband low-noise photodetector for PDH
-- [ ] `VM5MJ9B3` | Grote 2016 | High power and ultra-low-noise photodetector for squeezed-light
-- [ ] `8MNIBZEW` | Möhle 2013 | Highly stable piezoelectrically tunable optical cavities
-- [ ] `WP8FMS5N` | Herbers 201x | Phase noise of frequency doublers on optical clock lasers
+- [x] `FIJXUVZV` | Tai 2016 | 超低 RAM 布儒斯特角 EOM → `tai2016.yaml`
+- [x] `WDGF2B36` | Potnis 2016 | 宽带低噪声 PDH 光电探测器 → `potnis2016.yaml`
+- [x] `VM5MJ9B3` | Grote 2016 | 高功率超低噪声光电探测器 → `grote2016.yaml`
+- [x] `8MNIBZEW` | Möhle 2013 | Highly stable piezoelectrically tunable optical cavities → `mohle2013.yaml`
+- [x] `WP8FMS5N` | Herbers 2019 | Phase noise of frequency doublers in optical clock lasers → `herbers2019.yaml`
 
 ### 时钟应用
 
-- [ ] `RAC23NZV` | Jiang 201x | Making optical atomic clocks more stable with 10⁻¹⁶-level laser
-- [ ] `6R3RCHPT` | Jin 2018 | Laser frequency instability of 2×10⁻¹⁶
-- [ ] `AFFU5KGB` | Li 201x | An improved strontium lattice clock with 10⁻¹⁶ level laser frequency
-- [ ] `MIAVJSIK` | Didier 201x | 946-nm Nd:YAG digital-locked laser at 1.1×10⁻¹⁶
-- [ ] `Z37PT8RC` | Chen 202x | Laser frequency instability of 6×10⁻¹⁶ using 10-cm-long cavities
-- [ ] `XWBUNX3P` | Yan 2018 | Multi-cavity-stabilized ultrastable laser
+- [x] `RAC23NZV` | Jiang 2011 | 10⁻¹⁶ 级腔稳激光用于 Yb 光钟 → `jiang2011.yaml`
+- [x] `6R3RCHPT` | Jin 2018 | 30 cm 腔 578 nm 2×10⁻¹⁶ 超稳激光 → `jin2018.yaml`
+- [x] `AFFU5KGB` | Li 2018 | 改进 Sr 光钟 30 cm 腔 10⁻¹⁶ 稳定度 → `li2018.yaml`
+- [x] `MIAVJSIK` | Didier 2019 | 946 nm Nd:YAG 数字锁定 1.1×10⁻¹⁶ → `didier2019.yaml`
+- [x] `Z37PT8RC` | Chen 2020 | 10 cm 立方腔 6×10⁻¹⁶ 可搬运 → `chen2020.yaml`
+- [x] `XWBUNX3P` | Yan 2018 | 多腔稳定合成超稳激光 → `yan2018.yaml`
 - [x] `H5MYBTXH` | Leibrandt 2013 | Cavity-stabilized laser with acceleration sensitivity below 10⁻¹² → `leibrandt2013.yaml`
-- [ ] `WK9QLCGF` | Leibrandt 201x | Absolute and Relative Stability of an Optical Frequency Reference
+- [x] `WK9QLCGF` | Leibrandt 2013 | Eu³⁺:Y₂SiO₅ 光谱烧孔频率参考 → `leibrandt2013.yaml`
 - [x] `N9AGEQ8S` | Zhang 2017 | Ultrastable Silicon Cavity in a Continuously Operating Closed-Cycle Cryostat at 4 K → `zhang2017.yaml`
 - [x] `SBPRDKPV` | Jeon 2025 | 10⁻¹⁵-level laser stabilization down to fiber thermal noise limit → `jeon2025.yaml`
-- [ ] `HKYLIW8U` | Gobron 2017 | Dispersive heterodyne probing method for laser frequency stabilization
-- [ ] `MPWLNUIH` | Galland 202x | Double-heterodyne probing for an ultra-stable laser based on spectral hole
+- [x] `HKYLIW8U` | Gobron 2017 | 色散外差 SHB 稳频 → `gobron2017.yaml`
+- [x] `MPWLNUIH` | Galland 2020 | 双外差 SHB 探测 → `galland2020.yaml`
 
 ### 谱孔燃烧锁频（替代方法）
 
-- [ ] `Q2MRB267` | Thorpe 201x | Frequency stabilization to 6×10⁻¹⁶ via spectral-hole burning
-- [ ] `KZJHGH3N` | Cook 201x | Laser-Frequency Stabilization Based on Steady-State Spectral-Hole
-- [ ] `MNIZVIMG` | Könz 200x | Temperature and concentration dependence of optical dephasing
+- [x] `Q2MRB267` | Thorpe 2011 | SHB 稳频 6×10⁻¹⁶ → `thorpe2011.yaml`
+- [x] `KZJHGH3N` | Cook 2015 | 稳态 SHB 稳频 → `cook2015.yaml`
+- [x] `MNIZVIMG` | Könz 2003 | Eu:YSO 材料参数 → `konz2003.yaml`
 
 ### 其他
 
-- [ ] `WW9ESVMK` | Meiser 201x | Prospects for a Millihertz-Linewidth Laser
-- [ ] `8NUIA2K7` | Aasi 2013 | Enhanced sensitivity of the LIGO gravitational wave detector
-- [ ] `P3NU2EKB` | Zhang 202x | Ultranarrow Linewidth Photonic-Atomic Laser
-- [ ] `FTXSM9QC` | Adhikari 201x | Gravitational radiation detection with laser interferometry
-- [ ] `CDX3DFQR` | Olson 201x | Ramsey-Borde Matter-Wave Interferometry for Laser Frequency
-- [ ] `UP2Q8F9Y` | Loh 2019 | Ultra-narrow linewidth Brillouin laser with nanokelvin temperature
-- [ ] `ELKHJ5GL` | Li 2019 | Thermal phase noise in giant interferometric fiber optic gyro
-- [ ] `HJZ6BVYE` | Dixneuf 202x | Ultra-low intensity noise all-fiber laser
-- [ ] `XAKCIXKT` | Nelson 200x | Relative Intensity Noise Suppression for RF Photonic Links
-- [ ] `KH82PQJ2` | Hu 2015 | Optical fiber spool for laser stabilization with reduced acceleration sensitivity
-- [ ] `LY9I8I9I` | Braun 199x | CONTINUOUS-WAVE MODE-LOCKED SOLID-STATE LASERS
-- [ ] `5XG8FTEE` | Kartner 199x | CONTINUOUS-WAVE MODE-LOCKED SOLID-STATE LASERS
-- [ ] `UQL6FYN7` | Kogelnik 1966 | LASER BEAMS AND RESONATORS (基础教材)
+- [x] `WW9ESVMK` | Meiser 2009 | 超辐射 mHz 激光理论 → `meiser2009.yaml`
+- [x] `8NUIA2K7` | Aasi 2013 | LIGO 压缩光增强 → `aasi2013.yaml`
+- [⊘] `P3NU2EKB` | Zhang 202x | Photonic-Atomic Laser（PDF 不在库中，跳过）
+- [x] `FTXSM9QC` | Adhikari 2014 | 引力波探测综述 → `adhikari2014.yaml`
+- [x] `CDX3DFQR` | Olson 2019 | Ramsey-Bordé 原子干涉仪 <2×10⁻¹⁶ → `olson2019.yaml`
+- [x] `UP2Q8F9Y` | Loh 2019 | 布里渊超窄线宽激光 → `loh2019.yaml`
+- [x] `ELKHJ5GL` | Li 2019 | 大型光纤陀螺仪热噪声 → `li2019.yaml`
+- [x] `HJZ6BVYE` | Dixneuf 2020 | 365 W 超低 RIN 单频光纤激光 → `dixneuf2020.yaml`
+- [x] `XAKCIXKT` | Nelson 2008 | RIN 抑制技术 → `nelson2008.yaml`
+- [x] `KH82PQJ2` | Hu 2015 | Ultralow acceleration sensitivity fiber spool → `hu2015.yaml`
+- [x] `LY9I8I9I` | Braun 1995 | 空间烧孔锁模激光（实验）→ `braun1995.yaml`
+- [x] `5XG8FTEE` | Kärtner 1995 | 空间烧孔锁模激光（理论）→ `kartner1995.yaml`
+- [x] `UQL6FYN7` | Kogelnik 1966 | 激光光束与谐振腔理论 → `kogelnik1966.yaml`
 
 ---
 
@@ -109,21 +109,21 @@
 - [x] `T8JR8IJ7` | Jiang 2010 | An agile laser with ultra-low frequency noise → `jiang2010.yaml`
 - [x] `MN54T4F3` | Kéfélian 2009 | Ultralow-frequency-noise stabilization of a laser by locking to a fiber → `kefelian2009.yaml`
 - [x] `W8K5GLK6` | Dong 2015 | Subhertz linewidth laser by locking to a fiber delay line → `dong2015.yaml`
-- [ ] `KH82PQJ2` | Hu 2015 | An optical fiber spool for laser stabilization with reduced acceleration sensitivity
-- [ ] `5DCNFGX4` | 黄军超 2019 | Vibration-insensitive fiber spool for laser stabilization
-- [ ] `F2GG2N6W` | Huang 202x | All-fiber-based laser with 200 mHz linewidth
+- [x] `KH82PQJ2` | Hu 2015 | Ultralow acceleration sensitivity fiber spool → `hu2015.yaml`
+- [x] `5DCNFGX4` | Huang 2019b | 双缠绕抗振光纤盘 → `huangjc2019b.yaml`
+- [x] `F2GG2N6W` | Huang 2019 | All-fiber laser with 200 mHz linewidth → `huangjc2019.yaml`
 - [x] `JYGVFJBN` | Huang 2023 | All-fiber-based ultrastable laser with long-term frequency stability → `huang2023.yaml`
 - [→] `RENEQVU9` | Wei 202x | Support-Free Thermally Insensitive Hollow Core Fiber Coil
-- [→] `QLXRP462` | Shi 202x | Thinly coated hollow core fiber for improved thermal phase-stability
-- [ ] `UKBFZLXG` | Shi 202x | Temperature Insensitive Delay-Line Fiber Interferometer
+- [x] `QLXRP462` | Shi 2021 | Thinly coated HCF thermal phase-stability → `shi2021.yaml`
+- [x] `UKBFZLXG` | Shi 2022 | Temperature Insensitive Delay-Line Fiber Interferometer → `shi2022.yaml`
 - [x] `DD6SE43C` | Michaud-Belleau 2021 | Backscattering in antiresonant hollow-core fibers: over 40 dB lower → `michaudbelleau2021.yaml`
 - [x] `4GT5VD54` | Michaud-Belleau 2022 | Fundamental thermal noise in antiresonant hollow-core fibers → `michaudbelleau2022.yaml`
-- [→] `QGLVTMB7` | Ding 202x | Hollow-core fiber made of ultralow expansion glass
-- [ ] `GIUQZ2EE` | Zuba 202x | Limits of Coupling Efficiency Into Hollow-Core Antiresonant Fibers
+- [x] `QGLVTMB7` | Ding 2025 | ULE glass hollow-core fiber → `ding2025.yaml`
+- [x] `GIUQZ2EE` | Zuba 2023 | Coupling Efficiency Limits for Hollow-Core ARF → `zuba2023.yaml`
 - [→] `XSMPRNT3` | Grabielle 2025 | Locking noise in laser frequency stabilization to an optical fiber
-- [ ] `JAW66GYL` | J. Gao 2025 | Ultra-Low Frequency Noise Laser Based on All-Fiber Integrated Interferometer
+- [x] `JAW66GYL` | Gao 2025 | Ultra-Low Frequency Noise Laser via Recirculating Interferometer → `gao2025.yaml`
 - [x] `H5YVF5AR` | Kim 2008 | Drift-free femtosecond timing synchronization of remote optical and microwave → `kim2008.yaml`
-- [ ] `ULMQ3IXP` | Winful 1985 | SELF-INDUCED POLARIZATION CHANGES IN BIREFRINGENT OPTICAL FIBERS
+- [⊘] `ULMQ3IXP` | Winful 1985 | Self-induced polarization changes（PDF 不在库中，跳过）
 - [x] `2F3PD62T` | Belardi 2015 | Design and Properties of Hollow Antiresonant Fibers → `belardi2015.yaml`
 
 ---

@@ -1,0 +1,52 @@
+# Zuba 2023 — 空心反谐振光纤耦合效率极限
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-16
+# Schema版本：v3.2
+
+meta:
+  zotero_key: "GIUQZ2EE"
+  source_type: technical_paper
+  reliability: high
+  title: "Limits of Coupling Efficiency Into Hollow-Core Antiresonant Fibres"
+  year: 2023
+  first_author: Zuba
+  journal: "Journal of Lightwave Technology"
+  volume: 41
+  issue: 19
+  pages: "6374"
+  doi: "10.1109/JLT.2023.3289892"
+  note: >
+    理论和实验研究空心反谐振光纤（ARF/NANF）的耦合效率极限：
+    LP01 模式耦合效率在束腰约为纤芯直径 70% 时最大（96–98%）。
+    偶数反谐振窗口比奇数窗口耦合效率更高。
+    核心贡献：为 HCF 光纤延迟线系统的功率预算提供设计指导。
+
+entities: []
+
+principles:
+  - id: pri.hcf_coupling_efficiency_limit
+    name: "空心反谐振光纤耦合效率极限"
+    tier: domain
+    verification_status: observed
+    statement: >
+      高斯光束到 NANF LP01 模式的耦合效率极限为 96–98%，
+      最佳束腰约为纤芯直径的 70%。
+      偶数反谐振窗口因模场分布更接近高斯而耦合效率更高。
+      耦合损耗在短光纤应用中可能主导总损耗。
+    domain: "空心光纤 / 耦合光学"
+    key_insight: "NANF 结构对称性与高斯光束的不完美匹配限制了耦合效率在 96–98%。"
+    conditions: "适用于 NANF/DNANF 类反谐振空心光纤"
+    source_claim: "coupling into the fundamental LP01-like mode is typically maximized around 96–98%"
+
+methods: []
+
+metrics: []
+
+relations:
+  - id: rel.ZU01
+    subject: ent.fiber_interferometer
+    predicate: CONDITIONED-BY
+    object: pri.hcf_coupling_efficiency_limit
+    confidence: likely
+    source: {zotero_key: "GIUQZ2EE", claim: "coupling loss into the fibre will dominate the overall power loss in applications requiring relatively short fibre lengths"}
+    note: "影响光纤延迟线系统的功率预算和信噪比"

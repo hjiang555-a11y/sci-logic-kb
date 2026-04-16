@@ -1,0 +1,50 @@
+# Grote 2016 — 高功率超低噪声光电探测器（引力波）
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-16
+# Schema版本：v3.2
+
+meta:
+  zotero_key: "VM5MJ9B3"
+  source_type: technical_paper
+  reliability: high
+  title: "High power and ultra-low-noise photodetector for squeezed-light enhanced gravitational wave detectors"
+  year: 2016
+  first_author: Grote
+  journal: "Optics Express"
+  volume: 24
+  pages: "20107"
+  doi: "10.1364/OE.24.020107"
+  note: >
+    为压缩光增强引力波探测器设计的高功率超低噪声光电探测器，
+    音频频段电子噪声降低 4 倍以上（>1 kHz），
+    应用于 GEO 600 引力波探测器。
+    核心贡献：量子噪声极限探测的光电探测器工程方案。
+
+entities:
+  - id: ent.gw_photodetector_g16
+    name: "高功率超低噪声光电探测器（Grote 2016）"
+    aliases: ["GEO 600 photodetector", "squeezed-light photodetector"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      用于引力波探测器自零差读出的高功率（5–50 mW/元件）
+      超低电子噪声光电探测电路。音频频段散粒噪声/电子噪声比
+      提高 4 倍以上。
+    key_parameters:
+      power_handling: "5–50 mW per element"
+      noise_improvement: ">4× above 1 kHz"
+      application: "GEO 600 gravitational wave detector"
+    note: "引力波探测技术，与超稳激光共享光电探测需求。"
+
+principles: []
+methods: []
+metrics: []
+
+relations:
+  - id: rel.GR16_01
+    subject: ent.gw_photodetector_g16
+    predicate: CHARACTERIZED-BY
+    object: met.servo_bandwidth
+    confidence: likely
+    source: {zotero_key: "VM5MJ9B3", claim: "electronic noise of the photodetection circuit in the audio band"}
+    note: "与超稳激光领域共享光电探测技术需求"

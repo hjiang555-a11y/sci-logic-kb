@@ -1,0 +1,50 @@
+# Kogelnik 1966 — 激光光束与谐振腔理论综述
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-16
+# Schema版本：v3.2
+
+meta:
+  zotero_key: "UQL6FYN7"
+  source_type: review_paper
+  reliability: high
+  title: "Laser Beams and Resonators"
+  year: 1966
+  first_author: Kogelnik
+  journal: "Applied Optics"
+  volume: 5
+  issue: 10
+  pages: "1550-1567"
+  doi: "10.1364/AO.5.001550"
+  note: >
+    经典综述论文：激光光束传播和谐振腔理论。
+    涵盖高斯光束、ABCD 矩阵、腔模式、稳定性条件等。
+    超稳激光 FP 腔设计的基础理论参考。
+
+entities: []
+
+principles:
+  - id: pri.gaussian_beam_resonator_theory
+    name: "高斯光束与谐振腔理论"
+    tier: foundational
+    verification_status: established
+    statement: >
+      激光谐振腔中的光场以高斯光束模式为基础，
+      光斑大小由腔镜曲率半径和腔长决定。
+      腔的稳定性条件为 0 ≤ g₁g₂ ≤ 1（g = 1 - L/R）。
+      这些关系决定了 FP 腔中光斑在镜面上的大小，
+      直接影响热噪声水平。
+    domain: "激光物理 / 谐振腔"
+    key_insight: "光斑大小 w₀ 由腔几何确定，是热噪声的关键参数。"
+    conditions: "适用于稳定球面镜 FP 腔"
+    source_claim: "theory of laser beams and resonators"
+
+methods: []
+metrics: []
+relations:
+  - id: rel.KG01
+    subject: ent.fp_cavity_system
+    predicate: ENABLED-BY
+    object: pri.gaussian_beam_resonator_theory
+    confidence: established
+    source: {zotero_key: "UQL6FYN7", claim: "laser beams and resonators"}
+    note: "基础理论，定义了 FP 腔光斑大小等关键参数"

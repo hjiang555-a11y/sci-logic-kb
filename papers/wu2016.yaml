@@ -1,0 +1,145 @@
+# Wu 2016 — 1557 nm 0.26 Hz 线宽室温超稳激光
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-16
+# Schema版本：v3.2
+
+meta:
+  zotero_key: "PZGR9S7S"
+  source_type: technical_paper
+  reliability: high
+  title: "0.26-Hz-linewidth ultrastable lasers at 1557 nm"
+  year: 2016
+  first_author: Wu
+  journal: "Scientific Reports"
+  volume: 6
+  pages: "24969"
+  doi: "10.1038/srep24969"
+  note: >
+    两台独立的 10 cm ULE 参考腔稳定 1557 nm 激光，实现 0.26 Hz 最可几线宽
+    和 8×10⁻¹⁶ @ 1–30 s 频率不稳定度，达到室温热噪声极限。
+    光纤传输噪声主动消除实现远程拍频测量。
+    核心贡献：在 1.5 μm 电信波段室温 FP 腔实现热噪声极限性能。
+
+entities:
+  - id: ent.ule_cavity_10cm_w16
+    name: "10 cm ULE 参考腔（Wu 2016）"
+    aliases: ["Wu 2016 cavity", "10 cm ULE room-temp cavity at 1557 nm"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      室温 10 cm ULE 水平放置参考腔，采用四点半球橡胶支撑
+      在 U 形熔融石英块上，通过 FEA 优化支撑位置使振动灵敏度最小化。
+      配合两级热屏蔽实现长期 1×10⁻¹⁵ 不稳定度。
+    key_parameters:
+      cavity_length: "10 cm"
+      spacer_material: "ULE"
+      mirror_material: "fused silica"
+      finesse_cav1: "~270,000"
+      finesse_cav2: "~250,000"
+      linewidth_cav1: "~5.6 kHz"
+      linewidth_cav2: "~6 kHz"
+      wavelength: "1557 nm"
+      vibration_sensitivity_simulated: "5.5×10⁻¹³/g (z-axis, at optimum support position)"
+      thermal_shields: "two layers between FP cavity and vacuum chamber"
+    note: "PART-OF ent.fp_cavity_system（定义于 numata2004.yaml）。室温 ULE 腔实例。"
+
+principles: []
+  # 本文未提出新原理，复用：
+  # pri.brownian_thermal_noise_fdt（numata2004.yaml）
+  # pri.ule_zero_cte（young1999.yaml）
+
+methods: []
+  # 复用 meth.pdh_locking（drever1983.yaml）
+
+metrics:
+  - id: met.laser_linewidth_w16
+    name: "激光线宽（Wu 2016, 1557 nm）"
+    unit: "Hz"
+    description: "两台独立腔稳激光拍频谱的最可几线宽除以 √2"
+    demonstrated_value:
+      value: "0.26 Hz (most probable linewidth)"
+      conditions: "10 cm ULE 腔 × 2，1557 nm，室温，拍频 RBW 122 mHz，1000 组统计"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "PZGR9S7S", claim: "most probable linewidth of 0.26 Hz"}
+
+  - id: met.fractional_freq_instability_w16
+    name: "分数频率不稳定度（Wu 2016）"
+    unit: "无量纲"
+    description: "单腔稳定激光的 Allan 偏差"
+    demonstrated_value:
+      value: "8×10⁻¹⁶ @ 1–30 s"
+      conditions: "10 cm ULE 腔，室温，1557 nm，去除线性漂移 0.03 Hz/s"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "PZGR9S7S", claim: "fractional frequency instability of 8×10⁻¹⁶ at 1–30 s"}
+    theoretical_floor:
+      value: "8×10⁻¹⁶"
+      basis: "10 cm ULE 腔室温热噪声极限"
+      gap_note: "实测值已达到热噪声极限"
+
+  - id: met.long_term_instability_w16
+    name: "长期频率不稳定度（Wu 2016）"
+    unit: "无量纲"
+    description: "100–4000 s 平均时间的频率不稳定度"
+    demonstrated_value:
+      value: "1×10⁻¹⁵ @ 100–4000 s"
+      conditions: "10 cm ULE 腔，室温，两级热屏蔽，去除线性漂移"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "PZGR9S7S", claim: "frequency instability of 1×10⁻¹⁵ is achieved on the long time scale of 100–4000 s"}
+
+relations:
+  - id: rel.WU01
+    subject: ent.ule_cavity_10cm_w16
+    predicate: PART-OF
+    object: ent.fp_cavity_system
+    confidence: established
+    source: {zotero_key: "PZGR9S7S", claim: "frequency-stabilizing to the resonance of 10-cm-long ultrastable Fabry-Pérot cavities"}
+    note: "跨文件引用，ent.fp_cavity_system 定义于 numata2004.yaml"
+
+  - id: rel.WU02
+    subject: ent.ule_cavity_10cm_w16
+    predicate: CHARACTERIZED-BY
+    object: met.fractional_freq_instability_w16
+    confidence: established
+    source: {zotero_key: "PZGR9S7S", claim: "fractional frequency instability of each laser system is nearly 8×10⁻¹⁶"}
+
+  - id: rel.WU03
+    subject: ent.ule_cavity_10cm_w16
+    predicate: BOUNDED-BY
+    object: pri.brownian_thermal_noise_fdt
+    confidence: established
+    source: {zotero_key: "PZGR9S7S", claim: "approaching the thermal noise limit of the reference cavities"}
+    is_system_limit: true
+    dominated_by: null
+    quantitative_contribution: "dominant"
+    regime: short-term
+    verification_status: observed
+    temporal_role: validates
+    note: "跨文件引用，pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml"
+    breakthrough_paths:
+      - direction: pri.crystalline_coating_low_brownian_noise
+        mechanism: "FS 镜 + AlGaAs 晶体镀层可降至 3×10⁻¹⁶"
+        status: demonstrated
+        note: "论文讨论部分明确指出"
+      - direction: pri.long_cavity_thermal_noise_reduction
+        mechanism: "增加腔长降低热噪声"
+        status: demonstrated
+      - direction: pri.cryogenic_mechanical_q_enhancement
+        mechanism: "低温硅腔方案"
+        status: demonstrated
+
+  - id: rel.WU04
+    subject: ent.ule_cavity_10cm_w16
+    predicate: CONDITIONED-BY
+    object: ent.vibration_environment
+    confidence: established
+    source: {zotero_key: "PZGR9S7S", claim: "vibration isolator platform... acoustic isolation chambers"}
+    interface_metric: met.freq_noise_from_vibration
+    coupling_formula: "Δν = acceleration_sensitivity × ambient_acceleration"
+    internal_property: "acceleration_sensitivity: 5.5×10⁻¹³/g (simulated, z-axis)"
+    is_system_limit:
+      current: false
+      conditions: "被动隔振平台 + 声学隔离箱有效抑制"
+    note: "跨文件引用，ent.vibration_environment 定义于 webster2007.yaml"

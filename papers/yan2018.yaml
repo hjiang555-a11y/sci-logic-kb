@@ -1,0 +1,50 @@
+# Yan 2018 — 多腔稳定合成超稳激光
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-16
+# Schema版本：v3.2
+
+meta:
+  zotero_key: "XWBUNX3P"
+  source_type: technical_paper
+  reliability: high
+  title: "Multi-cavity-stabilized ultrastable laser"
+  year: 2018
+  first_author: Yan
+  journal: "Chinese Optics Letters"
+  volume: 16
+  pages: "121403"
+  doi: "10.3788/COL201816.121403"
+  note: >
+    演示多腔频率平均的超稳激光方案：两台独立超稳激光的频率通过
+    AOM 实时合成，等效降低热噪声 √n 倍（n 为腔数）。
+    实验用两台 10 cm 腔实现 5×10⁻¹⁶ 合成激光不稳定度（√2 改善）。
+    核心贡献：验证 pri.optical_frequency_averaging 的实验方案。
+
+entities: []
+  # 复用已有节点，不新建实体
+
+principles: []
+  # 复用 pri.optical_frequency_averaging（定义于 lee2026.yaml）
+
+methods: []
+  # 复用 meth.multi_cavity_averaging（已知方法）
+
+metrics:
+  - id: met.synthesized_laser_instability_y18
+    name: "合成激光不稳定度（Yan 2018）"
+    unit: "无量纲"
+    demonstrated_value:
+      value: "5×10⁻¹⁶ @ 1–20 s"
+      conditions: "两台独立 10 cm ULE 腔，AOM 频率合成"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "XWBUNX3P", claim: "relative frequency instability of the synthesized laser is 5×10⁻¹⁶, improved by a factor of √2"}
+
+relations:
+  - id: rel.YA01
+    subject: met.synthesized_laser_instability_y18
+    predicate: OPERATIONALIZED-AS
+    object: meth.multi_cavity_averaging
+    confidence: established
+    source: {zotero_key: "XWBUNX3P", claim: "averaging the lengths of these cavities... the equivalent beam size is then enlarged n times"}
+    note: "跨文件引用，meth.multi_cavity_averaging 为已知方法"

@@ -526,6 +526,54 @@ note: "跨文件引用，定义于 shaddock1999.yaml"
 | `michaudbelleau2022.yaml` | 4GT5VD54 | Michaud-Belleau 2022 — 空心光纤热噪声理论+实测 | ✅ 符合v3.1（首次提取） |
 | `kim2008.yaml` | H5YVF5AR | Kim 2008 — 远程光学/微波源漂移自由飞秒同步 | ✅ 符合v3.2（首次提取） |
 | `belardi2015.yaml` | 2F3PD62T | Belardi 2015 — 反谐振空心光纤在可见/近红外的宽带设计与低损耗特性 | ✅ 符合v3.2（首次提取） |
+| `parke2025.yaml` | U2LXSU62 | Parke 2025 — 68 cm 腔 300 μs 存储时间与 10⁻⁷ RAM 消除 | ✅ 符合v3.2（首次提取） |
+| `wu2016.yaml` | PZGR9S7S | Wu 2016 — 1557 nm 0.26 Hz 线宽室温超稳激光 | ✅ 符合v3.2（首次提取） |
+| `marchio2018.yaml` | LCMWCIWB | Marchio 2018 — 大面积晶体镀层光学性能表征 | ✅ 符合v3.2（首次提取） |
+| `steinlechner2018.yaml` | L6KKLLSR | Steinlechner 2018 — 引力波探测器镜面镀层发展综述 | ✅ 符合v3.2（首次提取） |
+| `tao2018.yaml` | U4Z95559 | Tao 2018 — 抗 100g 冲击振动不敏感腔设计 | ✅ 符合v3.2（首次提取） |
+| `mohle2013.yaml` | 8MNIBZEW | Möhle 2013 — 高稳定压电可调谐参考腔 | ✅ 符合v3.2（首次提取） |
+| `argence2012.yaml` | RP8Q44RZ | Argence 2012 — 空间应用超稳腔原型 | ✅ 符合v3.2（首次提取） |
+| `didier2018.yaml` | PHRXF4IL | Didier 2018 — 超紧凑 25mm 金字塔形参考腔 | ✅ 符合v3.2（首次提取） |
+| `sanjuan2019.yaml` | H3HYK5D3 | Sanjuan 2019 — BOOST 空间狭义相对论检验光学腔 | ✅ 符合v3.2（首次提取） |
+| `hafner2020.yaml` | X7XXKXDZ | Häfner 2020 — 可搬运 12cm 腔询问激光 3×10⁻¹⁶ | ✅ 符合v3.2（首次提取） |
+| `chen2014.yaml` | WTUHUAQ7 | Chen 2014 — STE-QUEST 紧凑可搬运超稳激光 | ✅ 符合v3.2（首次提取） |
+| `herbers2019.yaml` | WP8FMS5N | Herbers 2019 — 光钟频率倍频器相位噪声 | ✅ 符合v3.2（首次提取） |
+| `jin2018.yaml` | 6R3RCHPT | Jin 2018 — 30cm 腔 578nm 2×10⁻¹⁶ | ✅ 符合v3.2（首次提取） |
+| `jiang2011.yaml` | RAC23NZV | Jiang 2011 — 10⁻¹⁶ 腔稳激光 Yb 光钟 | ✅ 符合v3.2（首次提取） |
+| `li2018.yaml` | AFFU5KGB | Li 2018 — 30cm 腔 Sr 钟 10⁻¹⁶ | ✅ 符合v3.2（首次提取） |
+| `didier2019.yaml` | MIAVJSIK | Didier 2019 — 946nm 数字锁定+传递锁定 | ✅ 符合v3.2（首次提取） |
+| `chen2020.yaml` | Z37PT8RC | Chen 2020 — 10cm 立方双腔 6×10⁻¹⁶ | ✅ 符合v3.2（首次提取） |
+| `yan2018.yaml` | XWBUNX3P | Yan 2018 — 多腔频率平均超稳激光 | ✅ 符合v3.2（首次提取） |
+| `leibrandt2013.yaml` | WK9QLCGF | Leibrandt 2013 — SHB 光谱烧孔频率参考 | ✅ 符合v3.2（首次提取） |
+| `huang2023.yaml` | JYGVFJBN | Huang 2023 — 全光纤长期稳定度 1.1×10⁻¹⁴ | ✅ 符合v3.2（首次提取） |
+| `huangjc2019.yaml` | F2GG2N6W | Huang 2019 — 全光纤 200mHz 线宽 | ✅ 符合v3.2（首次提取） |
+| `hu2015.yaml` | KH82PQJ2 | Hu 2015 — 超低加速度灵敏度光纤盘 | ✅ 符合v3.2（首次提取） |
+| `shi2021.yaml` | QLXRP462 | Shi 2021 — HCF 涂层热灵敏度 | ✅ 符合v3.2（首次提取） |
+| `zuba2023.yaml` | GIUQZ2EE | Zuba 2023 — HCF 耦合效率极限 | ✅ 符合v3.2（首次提取） |
+| `gao2025.yaml` | JAW66GYL | Gao 2025 — 循环干涉仪超低频噪声 | ✅ 符合v3.2（首次提取） |
+| `ding2025.yaml` | QGLVTMB7 | Ding 2025 — ULE 玻璃空心光纤 | ✅ 符合v3.2（首次提取） |
+| `shi2022.yaml` | UKBFZLXG | Shi 2022 — 温度不敏感光纤干涉仪 | ✅ 符合v3.2（首次提取） |
+| `grabielle2025.yaml` | XSMPRNT3 | Grabielle 2025 — FDL 锁定噪声 | ✅ 符合v3.2（首次提取） |
+| `tai2016.yaml` | FIJXUVZV | Tai 2016 — 超低 RAM EOM | ✅ 符合v3.2（首次提取） |
+| `potnis2016.yaml` | WDGF2B36 | Potnis 2016 — PDH 光电探测器 | ✅ 符合v3.2（首次提取） |
+| `grote2016.yaml` | VM5MJ9B3 | Grote 2016 — GW 光电探测器 | ✅ 符合v3.2（首次提取） |
+| `nelson2008.yaml` | XAKCIXKT | Nelson 2008 — RIN 抑制 | ✅ 符合v3.2（首次提取） |
+| `gobron2017.yaml` | HKYLIW8U | Gobron 2017 — 色散外差 SHB | ✅ 符合v3.2（首次提取） |
+| `dixneuf2020.yaml` | HJZ6BVYE | Dixneuf 2020 — 365W 低 RIN 激光 | ✅ 符合v3.2（首次提取） |
+| `thorpe2011.yaml` | Q2MRB267 | Thorpe 2011 — SHB 6×10⁻¹⁶ | ✅ 符合v3.2（首次提取） |
+| `cook2015.yaml` | KZJHGH3N | Cook 2015 — 稳态 SHB | ✅ 符合v3.2（首次提取） |
+| `konz2003.yaml` | MNIZVIMG | Könz 2003 — Eu:YSO 材料参数 | ✅ 符合v3.2（首次提取） |
+| `galland2020.yaml` | MPWLNUIH | Galland 2020 — 双外差 SHB | ✅ 符合v3.2（首次提取） |
+| `meiser2009.yaml` | WW9ESVMK | Meiser 2009 — 超辐射 mHz 激光 | ✅ 符合v3.2（首次提取） |
+| `loh2019.yaml` | UP2Q8F9Y | Loh 2019 — 布里渊激光 | ✅ 符合v3.2（首次提取） |
+| `li2019.yaml` | ELKHJ5GL | Li 2019 — 光纤陀螺热噪声 | ✅ 符合v3.2（首次提取） |
+| `kogelnik1966.yaml` | UQL6FYN7 | Kogelnik 1966 — 激光光束谐振腔 | ✅ 符合v3.2（首次提取） |
+| `braun1995.yaml` | LY9I8I9I | Braun 1995 — SHB 锁模（实验）| ✅ 符合v3.2（首次提取） |
+| `kartner1995.yaml` | 5XG8FTEE | Kärtner 1995 — SHB 锁模（理论）| ✅ 符合v3.2（首次提取） |
+| `aasi2013.yaml` | 8NUIA2K7 | Aasi 2013 — LIGO 压缩光 | ✅ 符合v3.2（首次提取） |
+| `adhikari2014.yaml` | FTXSM9QC | Adhikari 2014 — GW 探测综述 | ✅ 符合v3.2（首次提取） |
+| `olson2019.yaml` | CDX3DFQR | Olson 2019 — RB 干涉仪 <2×10⁻¹⁶ | ✅ 符合v3.2（首次提取） |
+| `huangjc2019b.yaml` | 5DCNFGX4 | Huang 2019b — 双缠绕抗振光纤盘 | ✅ 符合v3.2（首次提取） |
 
 **历史 v3.0 重构摘要**（2026-04-15）：
 

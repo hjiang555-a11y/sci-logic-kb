@@ -1,0 +1,58 @@
+# Gobron 2017 — 色散外差探测光谱烧孔稳频
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-16
+# Schema版本：v3.2
+
+meta:
+  zotero_key: "HKYLIW8U"
+  source_type: technical_paper
+  reliability: high
+  title: "Dispersive heterodyne probing method for laser frequency stabilization based on spectral hole burning in rare-earth doped crystals"
+  year: 2017
+  first_author: Gobron
+  journal: "Optics Express"
+  volume: 25
+  pages: "15539"
+  doi: "10.1364/OE.25.015539"
+  note: >
+    基于稀土掺杂晶体光谱烧孔的色散外差探测稳频新方法。
+    主激光和从激光产生外差拍频，通过色散信号锁定频率。
+    核心贡献：SHB 稳频的新探测方案，互补 Leibrandt 2013 的方法。
+
+entities: []
+
+principles:
+  - id: pri.dispersive_heterodyne_shb
+    name: "色散外差探测光谱烧孔稳频原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      利用主激光与从激光在光谱烧孔处产生的色散信号
+      进行外差探测，获取频率误差信号进行锁定。
+      与传统调频光谱（FMS）相比，外差方案信噪比更高，
+      且不受烧孔功率引起的光谱畸变影响。
+    domain: "光谱烧孔 / 频率稳定化"
+    key_insight: "色散外差探测可获得更干净的 SHB 误差信号。"
+    conditions: "需要两个频率可调的窄线宽激光"
+    source_claim: "a novel technique... based on generating a heterodyne beat-note between a master laser and a slave laser"
+
+methods:
+  - id: meth.dispersive_heterodyne_shb_locking
+    name: "色散外差 SHB 稳频方法"
+    type: frequency_stabilization
+    status: demonstrated
+    description: >
+      主激光锁定到 FP 腔，从激光通过 AOM 移频后探测光谱烧孔的色散特征，
+      外差拍频信号提供频率误差信号。
+    source: {zotero_key: "HKYLIW8U"}
+
+metrics: []
+
+relations:
+  - id: rel.GO01
+    subject: ent.shb_eu_yso_reference_l13
+    predicate: OPERATIONALIZED-AS
+    object: meth.dispersive_heterodyne_shb_locking
+    confidence: established
+    source: {zotero_key: "HKYLIW8U", claim: "frequency-locking a laser to a spectral hole"}
+    note: "跨文件引用，ent.shb_eu_yso_reference_l13 定义于 leibrandt2013.yaml"
