@@ -64,7 +64,7 @@ principles:
       - "低温恒温器温度稳定"
     source_claim: >
       "optical frequency reference based on spectral hole burning in Eu³⁺:Y₂SiO₅"
-    note: "按当前 schema 归为 domain：该原理只描述 SHB 参考中“烧孔—探测—锁定”的分支机制，不适用于 FP 腔、光纤延迟线或未来光钟跃迁参考等其他频率参考类型。"
+    note: "按当前 schema 归为 domain：该原理只描述 SHB 参考中的烧孔—探测—锁定分支机制，不适用于 FP 腔、光纤延迟线或未来光钟跃迁参考等其他频率参考类型。"
     open_questions:
       - "SHB 频率参考能否在不需要外部校准的情况下达到 10⁻¹⁸ 级绝对精度？"
       - "频率漂移的物理机制是否可以进一步抑制？"
