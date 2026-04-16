@@ -523,6 +523,7 @@ note: "跨文件引用，定义于 shaddock1999.yaml"
 | `tai2017.yaml` | AHUZI4A7 | Tai 2017 — 可搬运 1555 nm 超稳激光 185 mHz 线宽 | ✅ 符合v3.1（首次提取） |
 | `michaudbelleau2021.yaml` | DD6SE43C | Michaud-Belleau 2021 — 空心光纤背向散射 −118 dB/m | ✅ 符合v3.1（首次提取） |
 | `michaudbelleau2022.yaml` | 4GT5VD54 | Michaud-Belleau 2022 — 空心光纤热噪声理论+实测 | ✅ 符合v3.1（首次提取） |
+| `belardi2015.yaml` | 2F3PD62T | Belardi 2015 — 反谐振空心光纤在可见/近红外的宽带设计与低损耗特性 | ✅ 符合v3.2（首次提取） |
 
 **历史 v3.0 重构摘要**（2026-04-15）：
 
