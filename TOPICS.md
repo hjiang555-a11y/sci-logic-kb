@@ -17,14 +17,14 @@
 │   ├── 误差探测方法（PDH、Tilt Locking 等）
 │   └── 稳频策略（多级级联、多腔平均）
 │
-├── 2. 光学频率梳 (Optical Frequency Combs)      ← 待建
+├── 2. 光学频率梳 (Optical Frequency Combs)      ← 初建，2篇论文
 │   ├── 锁模激光器（钛宝石、光纤、固体）
 │   ├── 微腔光梳 (Microresonator Combs)
 │   ├── 电光调制梳 (EO Combs)
 │   ├── 梳齿稳定（f-2f 自参考、光学锁定）
 │   └── 噪声传递与相干性
 │
-├── 3. 光钟 (Optical Clocks)                     ← 待建
+├── 3. 光钟 (Optical Clocks)                     ← 初建，1篇论文
 │   ├── 光晶格钟（Sr、Yb）
 │   ├── 单离子钟（Al⁺、¹⁷¹Yb⁺、⁸⁸Sr⁺、¹⁵N₂⁺）
 │   ├── 核钟（²²⁹Th）
@@ -45,7 +45,7 @@
 │   ├── GNSS 载波相位
 │   └── 噪声消除与相位补偿
 │
-├── 6. 时间标尺与钟组 (Timescales & Clock Ensembles) ← 待建
+├── 6. 时间标尺与钟组 (Timescales & Clock Ensembles) ← 初建，1篇论文
 │   ├── UTC/TAI 生成
 │   ├── 钟组算法（AT1、ALGOS）
 │   ├── 频率稳定度表征（Allan 偏差族）
@@ -92,11 +92,11 @@
 | 编号 | 专题 | 目录 | 状态 | 论文数 | 核心节点数(估) |
 |------|------|------|------|--------|---------------|
 | 1 | 超稳激光 | `topics/ultrastable-laser/` | ✅ 已建 | 78 | ~200+ |
-| 2 | 光学频率梳 | `topics/optical-frequency-combs/` | 📋 待建 | — | — |
-| 3 | 光钟 | `topics/optical-clocks/` | 📋 待建 | — | — |
+| 2 | 光学频率梳 | `topics/optical-frequency-combs/` | 🚧 初建 | 2 | ~10 |
+| 3 | 光钟 | `topics/optical-clocks/` | 🚧 初建 | 1 | ~10 |
 | 4 | 微波频率标准 | `topics/microwave-standards/` | 📋 待建 | — | — |
 | 5 | 时间频率传递 | `topics/time-frequency-transfer/` | 📋 待建 | — | — |
-| 6 | 时间标尺与钟组 | `topics/timescales/` | 📋 待建 | — | — |
+| 6 | 时间标尺与钟组 | `topics/timescales/` | 🚧 初建 | 1 | ~8 |
 | 7 | 基础物理应用 | `topics/fundamental-physics/` | 📋 待建 | — | — |
 
 ---
@@ -140,7 +140,11 @@ topics/
 │   └── metrics/                 # 通用指标定义
 ├── ultrastable-laser/           # 专题1
 │   └── papers/
-├── optical-frequency-combs/     # 专题2（待建）
+├── optical-frequency-combs/     # 专题2（初建）
+│   └── papers/
+├── optical-clocks/              # 专题3（初建）
+│   └── papers/
+├── timescales/                  # 专题6（初建）
 │   └── papers/
 └── ...
 ```
@@ -156,7 +160,7 @@ note: "跨专题引用，定义于 topics/ultrastable-laser/papers/drever1983.ya
 
 ## 六、演进原则
 
-1. **渐进扩展**：每次只建设一个新专题，确保质量后再扩展下一个
+1. **渐进扩展**：保持一个主专题深耕，同时允许下游专题先以少量代表论文预热
 2. **Schema 复用**：所有专题共用同一 SCHEMA.md 中的节点类型、关系类型和质量要求
 3. **架构适配**：SCHEMA.md 中的"系统架构"部分按专题分区描述
 4. **现有内容不破坏**：超稳激光的 78 篇论文 YAML 内容不变，仅调整存放路径

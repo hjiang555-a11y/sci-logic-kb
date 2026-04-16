@@ -12,6 +12,7 @@
 
 符号主义结构化知识库，服务**时间频率计量**科研全领域。
 - **当前已建专题**：超稳激光（`topics/ultrastable-laser/`，78 篇论文）
+- **当前初建专题**：光学频率梳（`topics/optical-frequency-combs/`，2 篇）、光钟（`topics/optical-clocks/`，1 篇）、时间标尺与钟组（`topics/timescales/`，1 篇）
 - **专题体系**：详见 [`TOPICS.md`](TOPICS.md)
 - **目标查询**：当前性能极限在哪？为什么卡在这？怎么突破？
 - **不是**向量知识库，**支持**逻辑推理和精确路径查询。
@@ -77,11 +78,11 @@
 ```
 时间频率计量 (Time-Frequency Metrology)
 ├── 专题1：超稳激光 ← 当前已建（topics/ultrastable-laser/）
-├── 专题2：光学频率梳 ← 待建
-├── 专题3：光钟 ← 待建
+├── 专题2：光学频率梳 ← 初建（topics/optical-frequency-combs/）
+├── 专题3：光钟 ← 初建（topics/optical-clocks/）
 ├── 专题4：微波频率标准 ← 待建
 ├── 专题5：时间频率传递 ← 待建
-├── 专题6：时间标尺与钟组 ← 待建
+├── 专题6：时间标尺与钟组 ← 初建（topics/timescales/）
 └── 专题7：基础物理应用 ← 待建
 ```
 
@@ -626,6 +627,10 @@ note: "跨专题引用，定义于 topics/optical-clocks/papers/xxx.yaml"
 | `adhikari2014.yaml` | FTXSM9QC | Adhikari 2014 — GW 探测综述 | ✅ 符合v3.2（首次提取） |
 | `olson2019.yaml` | CDX3DFQR | Olson 2019 — RB 干涉仪 <2×10⁻¹⁶ | ✅ 符合v3.2（首次提取） |
 | `huangjc2019b.yaml` | 5DCNFGX4 | Huang 2019b — 双缠绕抗振光纤盘 | ✅ 符合v3.2（首次提取） |
+| `fortier2026.yaml` | BWR7TEZ6 | Fortier 2026 — 光学原子钟综述（Optica） | ✅ 符合v4.0（首次提取，optical-clocks 专题） |
+| `giunta2019.yaml` | KTHCQRJ2 | Giunta 2019 — 光学频率梳 20 年回顾 | ✅ 符合v4.0（首次提取，optical-frequency-combs 专题） |
+| `giunta2020.yaml` | UFWLAXMA | Giunta 2020 — 10⁻²⁰ 级宽带光学频率合成（Nature Photonics） | ✅ 符合v4.0（首次提取，optical-frequency-combs 专题） |
+| `dimarcq2024.yaml` | SDG6KXNZ | Dimarcq 2024 — SI 秒重定义路线图（Metrologia） | ✅ 符合v4.0（首次提取，timescales 专题） |
 
 **历史重构摘要**（v3.0 起，含 2026-04-16 的 v3.2 增补）：
 
