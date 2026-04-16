@@ -32,11 +32,11 @@
 - [x] `TVY7T59A` | Matei 2017 | 1.5 μm Lasers with Sub-10 mHz Linewidth → `matei2017.yaml`
 - [ ] `ZDF94KK5` | Matei 2017 (v2?) | 1.5 μm Lasers with Sub-10 mHz Linewidth (same paper, check)
 - [x] `UV6S5FFL` | Häfner 2015 | 8×10⁻¹⁷ fractional laser frequency instability with a long room-temp. cavity → `hafner2015.yaml`
-- [ ] `PZGR9S7S` | Wu 201x | 0.26-Hz-linewidth ultrastable lasers at 1557 nm
+- [x] `PZGR9S7S` | Wu 2016 | 0.26-Hz-linewidth ultrastable lasers at 1557 nm → `wu2016.yaml`
 - [x] `JIZCUZLY` | Robinson 2019 | Crystalline optical cavity at 4 K with thermal-noise-limited instability → `robinson2019.yaml`
 - [x] `8YK6EH22` | Kedar 2023 | Frequency stability of cryogenic silicon cavities with semiconductor crystalline coatings → `kedar2023.yaml`
 - [x] `N6HILT6B` | Chen 2025 | A laser with instability reaching 4×10⁻¹⁷ based on a 10-cm-long silicon cavity → `chen2025.yaml`
-- [ ] `U2LXSU62` | Parke 2025 | Three hundred microsecond optical cavity storage time and 10⁻⁷ acceleration insensitivity
+- [x] `U2LXSU62` | Parke 2025 | Three hundred microsecond optical cavity storage time and 10⁻⁷ RAM cancellation → `parke2025.yaml`
 - [x] `4QVEXY63` | Lee 2026 | Frequency stability of 2.5×10⁻¹⁷ from a Si cavity with AlGaAs crystalline mirrors → `lee2026.yaml`
 
 ### 空间/可搬运应用
@@ -48,13 +48,13 @@
 - [x] `NU79W75P` | Herbers 2022 | Transportable clock laser system with an instability of 1.6×10⁻¹⁶ → `herbers2022.yaml`
 - [x] `AHUZI4A7` | Tai 2017 | Transportable 1555-nm Ultra-Stable Laser with Sub-0.185-Hz Linewidth → `tai2017.yaml`
 - [ ] `WTUHUAQ7` | Qun-Feng 201x | A compact, robust, and transportable ultra-stable laser
-- [ ] `U4Z95559` | Tao 201x | A vibration-insensitive-cavity design holds impact of higher than 100g
+- [x] `U4Z95559` | Tao 2018 | A vibration-insensitive-cavity design holds impact of higher than 100g → `tao2018.yaml`
 
 ### 镀层相关
 
 - [x] `4GUXEM2C` | Cole 2016 | High-performance near- and mid-infrared crystalline coatings → `cole2016.yaml`
-- [ ] `L6KKLLSR` | Steinlechner 201x | Development of mirror coatings for gravitational-wave detectors
-- [ ] `LCMWCIWB` | Marchio 202x | Optical performance of large-area crystalline coatings
+- [x] `L6KKLLSR` | Steinlechner 2018 | Development of mirror coatings for gravitational-wave detectors → `steinlechner2018.yaml`
+- [x] `LCMWCIWB` | Marchio 2018 | Optical performance of large-area crystalline coatings → `marchio2018.yaml`
 
 ### 其他技术细节
 
@@ -62,7 +62,7 @@
 - [ ] `FIJXUVZV` | Tai 2016 | Electro-optic modulator with ultra-low residual amplitude modulation
 - [ ] `WDGF2B36` | Potnis 201x | Broadband low-noise photodetector for PDH
 - [ ] `VM5MJ9B3` | Grote 2016 | High power and ultra-low-noise photodetector for squeezed-light
-- [ ] `8MNIBZEW` | Möhle 2013 | Highly stable piezoelectrically tunable optical cavities
+- [x] `8MNIBZEW` | Möhle 2013 | Highly stable piezoelectrically tunable optical cavities → `mohle2013.yaml`
 - [ ] `WP8FMS5N` | Herbers 201x | Phase noise of frequency doublers on optical clock lasers
 
 ### 时钟应用

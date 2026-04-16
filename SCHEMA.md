@@ -526,6 +526,12 @@ note: "跨文件引用，定义于 shaddock1999.yaml"
 | `michaudbelleau2022.yaml` | 4GT5VD54 | Michaud-Belleau 2022 — 空心光纤热噪声理论+实测 | ✅ 符合v3.1（首次提取） |
 | `kim2008.yaml` | H5YVF5AR | Kim 2008 — 远程光学/微波源漂移自由飞秒同步 | ✅ 符合v3.2（首次提取） |
 | `belardi2015.yaml` | 2F3PD62T | Belardi 2015 — 反谐振空心光纤在可见/近红外的宽带设计与低损耗特性 | ✅ 符合v3.2（首次提取） |
+| `parke2025.yaml` | U2LXSU62 | Parke 2025 — 68 cm 腔 300 μs 存储时间与 10⁻⁷ RAM 消除 | ✅ 符合v3.2（首次提取） |
+| `wu2016.yaml` | PZGR9S7S | Wu 2016 — 1557 nm 0.26 Hz 线宽室温超稳激光 | ✅ 符合v3.2（首次提取） |
+| `marchio2018.yaml` | LCMWCIWB | Marchio 2018 — 大面积晶体镀层光学性能表征 | ✅ 符合v3.2（首次提取） |
+| `steinlechner2018.yaml` | L6KKLLSR | Steinlechner 2018 — 引力波探测器镜面镀层发展综述 | ✅ 符合v3.2（首次提取） |
+| `tao2018.yaml` | U4Z95559 | Tao 2018 — 抗 100g 冲击振动不敏感腔设计 | ✅ 符合v3.2（首次提取） |
+| `mohle2013.yaml` | 8MNIBZEW | Möhle 2013 — 高稳定压电可调谐参考腔 | ✅ 符合v3.2（首次提取） |
 
 **历史 v3.0 重构摘要**（2026-04-15）：
 
