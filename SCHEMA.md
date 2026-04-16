@@ -545,6 +545,14 @@ note: "跨文件引用，定义于 shaddock1999.yaml"
 | `chen2020.yaml` | Z37PT8RC | Chen 2020 — 10cm 立方双腔 6×10⁻¹⁶ | ✅ 符合v3.2（首次提取） |
 | `yan2018.yaml` | XWBUNX3P | Yan 2018 — 多腔频率平均超稳激光 | ✅ 符合v3.2（首次提取） |
 | `leibrandt2013.yaml` | WK9QLCGF | Leibrandt 2013 — SHB 光谱烧孔频率参考 | ✅ 符合v3.2（首次提取） |
+| `huang2023.yaml` | JYGVFJBN | Huang 2023 — 全光纤长期稳定度 1.1×10⁻¹⁴ | ✅ 符合v3.2（首次提取） |
+| `huangjc2019.yaml` | F2GG2N6W | Huang 2019 — 全光纤 200mHz 线宽 | ✅ 符合v3.2（首次提取） |
+| `hu2015.yaml` | KH82PQJ2 | Hu 2015 — 超低加速度灵敏度光纤盘 | ✅ 符合v3.2（首次提取） |
+| `shi2021.yaml` | QLXRP462 | Shi 2021 — HCF 涂层热灵敏度 | ✅ 符合v3.2（首次提取） |
+| `zuba2023.yaml` | GIUQZ2EE | Zuba 2023 — HCF 耦合效率极限 | ✅ 符合v3.2（首次提取） |
+| `gao2025.yaml` | JAW66GYL | Gao 2025 — 循环干涉仪超低频噪声 | ✅ 符合v3.2（首次提取） |
+| `ding2025.yaml` | QGLVTMB7 | Ding 2025 — ULE 玻璃空心光纤 | ✅ 符合v3.2（首次提取） |
+| `shi2022.yaml` | UKBFZLXG | Shi 2022 — 温度不敏感光纤干涉仪 | ✅ 符合v3.2（首次提取） |
 
 **历史 v3.0 重构摘要**（2026-04-15）：
 

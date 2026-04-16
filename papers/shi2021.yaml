@@ -1,0 +1,53 @@
+# Shi 2021 — 薄涂层空心光纤改善热相位稳定性
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-16
+# Schema版本：v3.2
+
+meta:
+  zotero_key: "QLXRP462"
+  source_type: technical_paper
+  reliability: high
+  title: "Thinly coated hollow core fiber for improved thermal phase-stability performance"
+  year: 2021
+  first_author: Shi
+  journal: "Optics Letters"
+  volume: 46
+  issue: 20
+  pages: "5177-5180"
+  doi: "10.1364/OL.46.005177"
+  note: >
+    实验证明空心光纤（HCF）涂层对热相位灵敏度的显著影响：
+    涂层贡献可使 HCF 热灵敏度恶化数倍。
+    薄外壁 HCF（~20 μm）受涂层影响尤为显著。
+    核心贡献：解释了 HCF 热灵敏度文献差异的物理机制。
+
+entities: []
+
+principles:
+  - id: pri.hcf_coating_thermal_sensitivity
+    name: "空心光纤涂层热灵敏度机制"
+    tier: domain
+    verification_status: observed
+    statement: >
+      HCF 的热相位灵敏度不仅来自玻璃本身，
+      涂层材料的热膨胀（α_coating = 180 ppm/K）通过应力耦合
+      使光纤有效热膨胀系数显著增加。
+      当涂层截面积与玻璃截面积可比时，涂层贡献可与玻璃本身相当或更大。
+      这解释了文献中 HCF 热灵敏度差异的 3–20 倍范围。
+    domain: "空心光纤 / 热稳定性"
+    key_insight: "涂层热膨胀通过应力耦合主导了薄壁 HCF 的热灵敏度。"
+    conditions: "HCF 玻璃外壁较薄（~20 μm），涂层截面积不可忽略"
+    source_claim: "coating contribution lies behind most of the discrepancies in the thermal sensitivity measured for HCFs"
+
+methods: []
+
+metrics: []
+
+relations:
+  - id: rel.SH01
+    subject: ent.fiber_interferometer
+    predicate: CONDITIONED-BY
+    object: pri.hcf_coating_thermal_sensitivity
+    confidence: established
+    source: {zotero_key: "QLXRP462", claim: "coating may strongly increase the overall fiber expansion"}
+    note: "影响光纤延迟线稳频系统的长期稳定度"

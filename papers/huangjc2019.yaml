@@ -1,0 +1,57 @@
+# Huang (Junchao) 2019 — 全光纤 200 mHz 线宽激光
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-16
+# Schema版本：v3.2
+
+meta:
+  zotero_key: "F2GG2N6W"
+  source_type: technical_paper
+  reliability: high
+  title: "All-fiber-based laser with 200 mHz linewidth"
+  year: 2019
+  first_author: Huang
+  journal: "Chinese Optics Letters"
+  volume: 17
+  pages: "071407"
+  doi: "10.3788/COL201917.071407"
+  note: >
+    1.55 μm 掺铒光纤激光锁定到 5 km 光纤延迟线（FDL），
+    实现 200 mHz 线宽（FDL 稳激光最窄线宽记录），
+    分数频率稳定度 3×10⁻¹⁵ @ 1–10s。
+    核心贡献：光纤延迟线稳频方案窄线宽极限的代表性验证。
+
+entities: []
+
+principles: []
+
+methods: []
+
+metrics:
+  - id: met.fiber_laser_linewidth_hjc19
+    name: "全光纤激光线宽（Huang JC 2019）"
+    unit: "Hz"
+    demonstrated_value:
+      value: "0.2 Hz (200 mHz)"
+      conditions: "5 km FDL，超低加速度灵敏度光纤盘，真空"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "F2GG2N6W", claim: "laser linewidth of 0.2 Hz, which is the narrowest linewidth of an FDL-stabilized laser observed to date"}
+
+  - id: met.fiber_freq_stability_hjc19
+    name: "全光纤频率稳定度（Huang JC 2019）"
+    unit: "无量纲"
+    demonstrated_value:
+      value: "3×10⁻¹⁵ @ 1–10 s"
+      conditions: "5 km FDL，1.55 μm"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "F2GG2N6W", claim: "fractional frequency stability of better than 3×10⁻¹⁵ over time scales of 1–10 s"}
+
+relations:
+  - id: rel.HJC01
+    subject: ent.fiber_interferometer
+    predicate: CHARACTERIZED-BY
+    object: met.fiber_laser_linewidth_hjc19
+    confidence: established
+    source: {zotero_key: "F2GG2N6W", claim: "narrowest linewidth of an FDL-stabilized laser"}
+    note: "跨文件引用，ent.fiber_interferometer 定义于 jiang2010.yaml"
