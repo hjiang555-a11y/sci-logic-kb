@@ -33,6 +33,7 @@ principles:
     name: "非谐振参考光原理（FP 腔误差探测共性原理）"
     tier: domain
     verification_status: observed
+    conditions: "需要高精细度 F-P 腔，使谐振线宽远小于 FSR；参考光（边带或高阶横模）位于谐振通带之外"
     note: >
       v3.0 从 meta 降为 domain。虽然 PDH 和 Tilt Locking 都使用非谐振参考光，
       但该概念本质上依赖 FP 腔模式结构，不具有跨领域元原理的通用性。
@@ -61,6 +62,7 @@ principles:
       因此，当 TEM00 谐振时，TEM10 不谐振，直接从腔镜反射，
       可作为非谐振参考光——这是 Tilt Locking 的物理基础。
     domain: "光学谐振腔横模理论"
+    conditions: "腔为非简并腔（横模频率间隔 ≠ 0）；TEM00 与 TEM10 的 Gouy 相移差导致频率分离远大于腔线宽"
     applicable_when: "腔为非简并腔（横模频率间隔 ≠ 0）"
     source_claim: >
       "The TEM10 component is non-resonant in the cavity, due to the different
@@ -77,6 +79,7 @@ principles:
       分割探测器取差分，直接输出正比于频率失谐的误差信号。
       无需本振，无需解调电路——这是"零差"区别于 PDH "外差"的关键。
     domain: "激光频率稳定"
+    conditions: "入射光束良好准直于腔 TEM00 模式；分割探测器精确对准于模式中心；光束质量（M² ≈ 1）"
     key_advantage: "无需射频调制器、信号源、混频器，电子学极简"
     key_limitation: >
       单次通过时，误差信号对入射光束的横向抖动敏感
@@ -216,3 +219,11 @@ relations:
     confidence: established
     source: {zotero_key: "S5PX7GHC", claim: "tilt locking offers potential benefits over existing locking schemes"}
     note: "meth.pdh_locking 定义于 drever1983.yaml"
+
+  - id: rel.S09
+    subject: meth.tilt_locking
+    predicate: CHARACTERIZED-BY
+    object: met.servo_bandwidth
+    confidence: established
+    source: {zotero_key: "S5PX7GHC", claim: "tilt locking ... simple implementation with demonstrated servo bandwidth ~230 Hz"}
+    conditions: "Tilt Locking 方案，受分割探测器跨阻放大器带宽限制"

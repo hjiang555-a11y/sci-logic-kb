@@ -170,3 +170,11 @@ relations:
       pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml；
       此 BOUNDED-BY 从 Cole 2013 视角验证了 numata2004 的镀层主导结论，
       temporal_role: validates。
+
+  - id: rel.C06
+    subject: ent.algaas_crystalline_mirror_c13
+    predicate: CHARACTERIZED-BY
+    object: met.algaas_coating_loss_angle_c13
+    confidence: established
+    source: {zotero_key: "CWIHQRJD", claim: "extracted a loss angle of 0(4)×10⁻⁵ for the substrate-transferred crystalline coatings"}
+    conditions: "35 mm Zerodur 腔，熔融石英底物，1064 nm，室温"

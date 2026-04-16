@@ -197,6 +197,7 @@ principles:
       该差拍信号的相位包含激光频率起伏信息，
       经相敏解调（类 PDH）后得到误差信号，反馈到激光。
     domain: "光纤干涉仪稳频"
+    conditions: "AOM 偏频频率远大于伺服带宽；参考臂与信号臂的偏振态需匹配（或使用 FRM 保偏）"
     key_advantage: "可分离载波与误差信号，抑制强度噪声（外差优势）"
     analogy: >
       在功能上类似 PDH 的射频外差探测，
@@ -400,3 +401,11 @@ relations:
 
   # rel.J13 已废弃（原 pri.shorter_delay_line_rbs_tradeoff DERIVED-FROM pri.rayleigh_backscattering_noise）
   # 工程推理已合并到 pri.rayleigh_backscattering_noise 的 engineering_tradeoff 字段中。
+
+  - id: rel.J13
+    subject: ent.fiber_interferometer
+    predicate: CHARACTERIZED-BY
+    object: met.freq_noise_from_temperature_fiber
+    confidence: established
+    source: {zotero_key: "T8JR8IJ7", claim: "fiber interferometer placed in thermally isolated enclosure to reduce temperature-induced drift"}
+    conditions: "接口指标——温度变化通过 dn/dT 和热膨胀耦合到频率参考"

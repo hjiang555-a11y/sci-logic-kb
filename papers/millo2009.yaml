@@ -91,3 +91,12 @@ relations:
     object: met.fractional_freq_instability_millo09
     confidence: established
     source: {zotero_key: "GLXHEIPV", claim: "stability better than 5.6×10⁻¹⁶ at 1 second"}
+
+  - id: rel.Mil04
+    subject: ent.fp_cavity_system
+    predicate: CHARACTERIZED-BY
+    object: met.acceleration_sensitivity_millo09
+    confidence: established
+    source: {zotero_key: "GLXHEIPV", claim: "Vibration sensitivity components measured are equal to or better than 1.5×10⁻¹¹ per m/s² for each spatial direction"}
+    conditions: "竖直/水平两种设计, 10 cm 腔"
+    note: "跨文件引用，ent.fp_cavity_system 定义于 numata2004.yaml"

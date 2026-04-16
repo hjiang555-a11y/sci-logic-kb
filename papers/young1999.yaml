@@ -95,6 +95,7 @@ principles:
       在特定温度附近（典型值 15–30 °C，材料批次相关）过零点，
       即存在 dL/dT = 0 的工作温度，此时腔长对温度一阶不敏感。
     domain: "光学谐振腔稳定性"
+    conditions: "温度控制在 CTE 零点附近（±0.1 K 量级）；ULE 材料批次的零点温度需独立标定"
     applicable_when: "温度控制在 CTE 零点附近"
     source_claim: >
       "The temperature of the vacuum chamber is held at ≈30 °C, which is near the
@@ -109,6 +110,7 @@ principles:
       腔内光场加热镜面镀层，引起镜面形变或热膨胀，
       导致腔长变化进而谐振频率偏移。效应量级约 1 Hz/mW 腔内功率。
     domain: "高精细度 F-P 腔"
+    conditions: "高精细度 F-P 腔，腔内循环功率 > 100 μW 量级时不可忽略；效应与镀层吸收率成正比"
     applicable_when: "腔内功率 > 100 μW 量级时不可忽略"
     quantitative: "≈ 1 Hz/mW（Young 1999 实验结果）"
     source_claim: >
@@ -125,6 +127,7 @@ principles:
       对高于悬挂谐振频率的外部振动，传递函数以 -40 dB/decade 衰减。
       谐振频率越低（Young 1999 约 0.3 Hz），有效隔振频率范围越宽。
     domain: "精密仪器隔振"
+    conditions: "悬挂谐振频率远低于待隔离振动频段（f₀ << f_disturbance）；阻尼系数需平衡谐振峰放大与衰减速率"
     key_parameters:
       - "悬挂谐振频率 f0（越低越好）"
       - "阻尼系数（太小会有谐振峰放大）"
@@ -139,6 +142,7 @@ metrics:
     description: "Young 1999 实验测量的 563 nm 激光 FWHM 线宽"
     demonstrated_value:
       value: "0.6 Hz"
+      conditions: "563 nm 染料激光，PDH 锁定到 24 cm ULE 高精细度腔（finesse > 150,000），两腔拍频 + FFT 谱分析，平均时间 up to 32 s"
       averaging_time: "up to 32 s"
       wavelength: "563 nm"
       method: "两腔拍频 + FFT 谱分析"
@@ -156,6 +160,7 @@ metrics:
     description: "Young 1999 实验测量的分数频率不稳定度 σ_y(τ)"
     demonstrated_value:
       value: "≈ 3 × 10⁻¹⁶"
+      conditions: "563 nm 染料激光锁定到 24 cm ULE 腔，两腔拍频测量，τ = 1 s"
       averaging_time: "1 s"
       verification_status: observed
       confidence: established
@@ -167,6 +172,7 @@ metrics:
     description: "FP 腔谐振频率随竖直方向加速度的变化率"
     demonstrated_value:
       value: "≈ 100 kHz/(m/s²)"
+      conditions: "竖直方向加速，1 Hz 正弦驱动测量，24 cm ULE 腔水平放置"
       frequency: "1 Hz 驱动"
       verification_status: observed
       confidence: established
@@ -367,7 +373,7 @@ relations:
         - "无需精密 ULE 腔光学装调，工程化友好"
         - "成本低"
     confidence: established
-    source: {zotero_key: "EGAZKLXR"}
+    source: {zotero_key: "EGAZKLXR", claim: "visible lasers with subhertz linewidths achieved by locking to rigid FP cavity; fiber interferometer offers agile frequency tuning but lower stability"}
     note: >
       ent.fp_cavity_system 定义于 numata2004.yaml；
       ent.fiber_interferometer 定义于 jiang2010.yaml。
@@ -388,3 +394,12 @@ relations:
       原 rel.Y13 为 ent.two_stage_pdh_lock_young99 PART-OF ent.fp_cavity_system。
       重构后：two_stage_pdh 不再挂在 FP 腔下（是"稳频策略"而非腔子单元），
       ent.laser_source 作为外围条件通过 CONDITIONED-BY 连接到 FP 腔系统。
+
+  - id: rel.Y14
+    subject: ent.fp_cavity_system
+    predicate: CHARACTERIZED-BY
+    object: met.freq_noise_from_vibration
+    confidence: established
+    source: {zotero_key: "EGAZKLXR", claim: "previous results limited by vibrational noise; improvement from better isolation"}
+    conditions: "接口指标——环境振动通过加速度灵敏度耦合"
+    note: "跨文件引用，ent.fp_cavity_system 定义于 numata2004.yaml"

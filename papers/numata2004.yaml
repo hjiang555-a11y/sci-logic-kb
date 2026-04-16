@@ -388,7 +388,7 @@ relations:
     predicate: PART-OF
     object: ent.fp_cavity_system
     confidence: established
-    source: {zotero_key: "VDXBPUQB"}
+    source: {zotero_key: "VDXBPUQB", claim: "mirror substrates contribute 84% of total thermal noise in rigid FP cavities"}
     conditions: null
     note: "腔镜基底是刚性 FP 腔系统的核心组成部件"
 
@@ -397,7 +397,7 @@ relations:
     predicate: PART-OF
     object: ent.fp_cavity_system
     confidence: established
-    source: {zotero_key: "VDXBPUQB"}
+    source: {zotero_key: "VDXBPUQB", claim: "mirror coatings contribute approximately 15% of total thermal noise"}
     conditions: null
 
   - id: rel.N10
@@ -405,9 +405,17 @@ relations:
     predicate: PART-OF
     object: ent.fp_cavity_system
     confidence: established
-    source: {zotero_key: "VDXBPUQB"}
+    source: {zotero_key: "VDXBPUQB", claim: "spacer contribution is approximately 1% and can be ignored in most cases"}
     conditions: null
 
   # rel.N11/N12/N13 已废弃（原 DERIVED-FROM 关系，对应的 3 个工程推理节点
   # pri.mirror_substrate_noise_dominance / pri.beam_radius_scaling / pri.low_loss_substrate_improvement
   # 已合并到 pri.brownian_thermal_noise_fdt 的 condition_variables 和 component_noise_budget 中）
+
+  - id: rel.N14
+    subject: ent.fp_cavity_system
+    predicate: CHARACTERIZED-BY
+    object: met.fractional_freq_instability_thermal
+    confidence: established
+    source: {zotero_key: "VDXBPUQB", claim: "frequency instability consistent with thermal noise limit at ~10⁻¹⁶ level"}
+    conditions: "理论计算值——ULE 腔参数下的热噪声 Allan 偏差下限"

@@ -73,3 +73,12 @@ relations:
     verification_status: calculated
     temporal_role: validates
     note: "跨文件引用 numata2004.yaml; FS 镜路线通过降低 φ 来突破 ULE 热噪声极限"
+
+  - id: rel.Leg03
+    subject: ent.mirror_substrate
+    predicate: CHARACTERIZED-BY
+    object: met.cte_shift_fs_mirror_leg10
+    confidence: established
+    source: {zotero_key: "MW3RDB68", claim: "This deformation strongly contributes to the cavity's effective CTE, decreasing the zero crossing temperature by about 20 K"}
+    conditions: "FS 镜 + ULE 间隔物，镜面变形 (bulging) 效应"
+    note: "跨文件引用，ent.mirror_substrate 定义于 numata2004.yaml"
