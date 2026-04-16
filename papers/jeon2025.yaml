@@ -99,7 +99,7 @@ metrics:
         claim: "The frequency instability reaches a minimum of 6.3 × 10−15 at a 16-ms averaging time"
     theoretical_floor:
       value: "1 km 光纤往返热噪声极限"
-      basis: "Duan 2012 + Dong 2016 的 thermomechanical + thermo-refractive fiber noise 求和"
+      basis: "对应既有原理 pri.fiber_thermal_noise_wanser（dong2015.yaml）；Jeon 2025 这里采用 thermomechanical + thermo-refractive fiber noise 求和表述"
       gap_note: "4–200 Hz 频段实测频噪已达到该极限；更长平均时间仍受光纤长度漂移影响"
     historical_landmarks:
       first_demonstration:
@@ -255,7 +255,7 @@ relations:
     predicate: CONDITIONED-BY
     object: ent.vibration_environment
     interface_metric: met.freq_noise_from_vibration
-    coupling_formula: "Δν/ν ≈ 10⁻¹⁰/g × a（a 为环境加速度）for the packaged 1 km spool"
+    coupling_formula: "Δν/ν ≈ 10⁻¹⁰/g × a（a 为环境加速度，适用于本文封装的 1 km 线轴）"
     internal_property: "vibration-insensitive 1 km fiber spool in a 140×180×51 mm³ air-tight aluminum case"
     scaling_law: "残余频率扰动随环境加速度与线轴加速度灵敏度近似线性缩放"
     confidence: established
