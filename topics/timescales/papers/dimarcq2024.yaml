@@ -1,0 +1,260 @@
+# Dimarcq 2024 — 秒定义重定义路线图
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-16
+# Schema版本：v4.0
+# 专题：timescales
+
+meta:
+  zotero_key: "SDG6KXNZ"
+  topic: timescales
+  source_type: review
+  reliability: high
+  title: "Roadmap towards the redefinition of the second"
+  year: 2024
+  first_author: Dimarcq
+  journal: "Metrologia"
+  volume: 61
+  pages: "012001"
+  doi: "10.1088/1681-7575/ad17d2"
+  note: >
+    CCTF（国际时间频率咨询委员会）官方路线图文件，系统阐述 SI 秒从铯超精细跃迁
+    到光学跃迁重定义的条件、标准和时间表。核心内容：（1）三种重定义选项的 SWOT 分析
+    （单一光学跃迁 vs 多跃迁加权平均 vs 基本常数）；（2）15 条强制性标准和辅助条件；
+    （3）当前光学频率标准的性能现状（系统不确定度最低 9.4×10⁻¹⁹，²⁷Al⁺）；
+    （4）时间频率传递基础设施需求。
+    CCTF Task Force（Dimarcq 任主席），涵盖全球主要 NMI 实验室。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.si_second_definition
+    name: "SI 秒定义（当前基于铯，面向光学重定义）"
+    aliases: ["SI second", "definition of the second", "秒定义"]
+    hierarchy_level: 0
+    status: demonstrated
+    function: >
+      国际单位制中时间基本单位"秒"的定义。当前定义（1967 年起）：
+      "秒是铯-133 原子基态两个超精细能级之间跃迁对应辐射的 9 192 631 770 个周期的持续时间。"
+      铯喷泉钟当前实现精度约 ~10⁻¹⁶。
+      光学频率标准已展示 ~10⁻¹⁸ 级不确定度，推动秒定义从微波跃迁向光学跃迁转变。
+    key_parameters:
+      current_definition_transition: "¹³³Cs 基态超精细跃迁，9 192 631 770 Hz"
+      current_realization_uncertainty: "~1–2×10⁻¹⁶（铯喷泉钟最佳水平）"
+      optical_standard_best_uncertainty: "9.4×10⁻¹⁹（²⁷Al⁺ 量子逻辑钟，NIST）"
+      secondary_representations_count: "10 个光学跃迁 + 1 个微波跃迁（⁸⁷Rb）已被 CCTF 采纳为秒的次级表示"
+      expected_improvement: "重定义后短期实现精度提升 10–100 倍（达 10⁻¹⁷–10⁻¹⁸）"
+    note: "Level 0 系统级实体，是时间频率计量的最顶层概念"
+
+  - id: ent.optical_frequency_standard
+    name: "光学频率标准（通用）"
+    aliases: ["OFS", "optical frequency standard", "optical clock", "光钟"]
+    hierarchy_level: 1
+    status: demonstrated
+    function: >
+      基于激光冷却囚禁原子/离子的窄线宽光学跃迁的频率标准。
+      分为两大类：（1）单离子钟（²⁷Al⁺、¹⁷¹Yb⁺、⁸⁸Sr⁺ 等）——精度高、单原子；
+      （2）光晶格钟（⁸⁷Sr、¹⁷¹Yb 等）——利用魔术波长光晶格囚禁 ~10⁴ 原子，
+      统计灵敏度高。当前最佳系统不确定度 ~10⁻¹⁹（²⁷Al⁺），
+      分数频率不稳定度 ~10⁻¹⁷/√τ（光晶格钟）。
+    key_parameters:
+      ion_clocks: "²⁷Al⁺（9.4×10⁻¹⁹）、¹⁷¹Yb⁺ E3（~10⁻¹⁸）、¹¹⁵In⁺（~2.5×10⁻¹⁸）"
+      lattice_clocks: "⁸⁷Sr（~10⁻¹⁸）、¹⁷¹Yb（1×10⁻¹⁸）"
+      clock_laser_requirement: "线宽 < 1 Hz，分数频率不稳定度 ~10⁻¹⁶ – 10⁻¹⁷ @ 1 s"
+      approved_for_tai: "11 个光钟已被批准用于校准 TAI 标度间隔"
+    note: >
+      Level 1 通用实体节点，各具体光钟（Sr lattice、Al⁺ ion 等）为 Level 2 实例。
+      跨专题引用：clock_laser_requirement 与超稳激光专题直接关联。
+
+principles:
+  - id: pri.redefinition_criteria_second
+    name: "SI 秒重定义强制性标准体系"
+    tier: engineering
+    verification_status: calculated
+    statement: >
+      CCTF 定义了 15 条标准（mandatory criteria + ancillary conditions），
+      必须在重定义前满足。核心强制性标准包括：
+      I.1 — 多个光学频率标准的系统不确定度达到 10⁻¹⁸ 水平；
+      I.2 — 独立光钟之间频率比测量一致性达到 5×10⁻¹⁸；
+      I.3 — 与当前铯定义的连续性（在铯定义不确定度内一致）；
+      I.4 — 光学频率标准定期向 TAI 提供校准数据；
+      II.1 — 可持续的光钟比较技术（本地和远程）；
+      II.2 — 本地重力位知识精度达到 10⁻¹⁸ 等效水平（~0.1 m² s⁻²）；
+      III.1 — 新定义允许未来进一步改善。
+    domain: "计量学，SI 单位制，时间频率标准"
+    key_insight: >
+      秒定义重定义不仅是物理精度问题，还涉及全球计量基础设施的就绪度。
+      最严格的技术障碍是：多个独立实验室的光钟比较一致性须达到 5×10⁻¹⁸。
+    conditions: "由 CCTF Task Force 定义和维护，CGPM 最终批准"
+    preconditions:
+      - "至少 3 种以上光学跃迁类型的频率标准达到 10⁻¹⁸ 系统不确定度"
+      - "洲际光钟比较在 5×10⁻¹⁸ 水平一致"
+      - "光学频率标准定期、可靠地向 TAI 贡献"
+      - "商用光学频率标准可获取"
+    invalidated_when:
+      - "CGPM 决定推迟重定义（标准未满足）"
+      - "新的基本物理发现使光学跃迁频率比不再是常数"
+    source_claim: >
+      "Offers an improvement by 10–100 of the uncertainty of the realization of the new definition 
+      in the short term after the redefinition (reaching 10⁻¹⁷–10⁻¹⁸ relative frequency uncertainty)"
+    open_questions:
+      - "Will a single-transition or multi-transition definition be adopted? Community consensus remains elusive as of 2024."
+      - "Can the I.2 criterion (frequency ratio agreement at 5×10⁻¹⁸ across independent laboratories) be reliably demonstrated within the 2026-2030 timeframe?"
+      - "How will the new definition impact UTC and TAI generation algorithms? Will optical clocks need to operate continuously, or can intermittent calibration suffice?"
+    contested_claims:
+      - claim: "Whether a single-transition definition (Option 1) or a multi-transition weighted geometric mean (Option 2) provides better long-term metrological stability"
+        status: unresolved
+        disputed_by: {zotero_key: "SDG6KXNZ", claim: "The CCTF has analysed the various options... debate continues"}
+        note: "Option 1（单一跃迁）简单直观但难以达成共识；Option 2（多跃迁平均）灵活但概念复杂"
+
+  - id: pri.secondary_representation_si_second
+    name: "SI 秒次级表示（Secondary Representations of the SI Second, SRS）"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      CCTF 通过的"秒的次级表示"机制：除铯超精细跃迁（primary）外，
+      某些光学和微波跃迁经充分测量后被赋予推荐频率值和不确定度，
+      可用于辅助实现 SI 秒。当前 10 个光学跃迁和 1 个微波跃迁（⁸⁷Rb）已被采纳。
+      SRS 的不确定度目前主要受限于铯标准的不确定度（~10⁻¹⁶），而非光学标准自身。
+    domain: "计量学，SI 单位制"
+    formula: null
+    key_insight: >
+      SRS 机制是从铯定义到光学定义的过渡桥梁：光学标准在重定义前就可通过 SRS
+      参与 TAI 校准，积累运行经验和可靠性记录。
+    conditions: "需要高精度绝对频率测量（相对于铯标准）和多个独立实验室的重复验证"
+    source_claim: >
+      "Presently, ten optical transitions and one microwave transition (⁸⁷Rb) are recommended as SRS"
+
+methods:
+  - id: meth.optical_clock_comparison
+    name: "光钟比较方法（本地与远程）"
+    status: demonstrated
+    applies_to: ent.optical_frequency_standard
+    steps_summary: >
+      1. 本地比较：两台光钟通过频率梳直接比较频率比 →
+      2. 远程比较：通过光纤链路或卫星链路传递光学/微波参考频率 →
+      3. 绝对频率测量：光钟频率通过频率梳与铯喷泉钟比较（限于 ~10⁻¹⁶）→
+      4. 频率比测量：直接比较两台光钟的频率比（不受铯限制，可达 <10⁻¹⁸）
+    required_hardware:
+      - ent.optical_frequency_standard
+    advantages:
+      - "频率比测量可达 <10⁻¹⁸ 精度"
+      - "本地比较可在数小时内完成"
+    disadvantages:
+      - "远程比较需要超高稳定度光纤链路或先进卫星链路"
+      - "绝对频率测量受限于铯标准精度 (~10⁻¹⁶)"
+      - "重力位校正精度需达到 ~0.1 m² s⁻²"
+    conditions:
+      - "本地比较：同一实验室内两台独立光钟"
+      - "远程比较：需光纤相位噪声补偿或卫星双向传递"
+    source_claim: >
+      "simultaneous measurements of the same optical frequency ratio with two independent OFCs 
+      have shown agreement at the level of 10⁻²¹"
+
+metrics:
+  - id: met.optical_clock_systematic_uncertainty
+    name: "光学频率标准系统不确定度"
+    unit: "无量纲（分数频率不确定度）"
+    description: >
+      光学频率标准的系统效应总不确定度，是评价光钟准确度的核心指标。
+      包括黑体辐射频移、碰撞频移、格子光频移、运动效应、外场效应等所有已知系统效应。
+    demonstrated_value:
+      value: "9.4×10⁻¹⁹（²⁷Al⁺ 量子逻辑钟，NIST）"
+      conditions: "²⁷Al⁺ 单离子，量子逻辑探测，NIST Boulder"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "SDG6KXNZ", claim: "The current record for systematic uncertainty of an atomic clock is held by the ²⁷Al⁺ quantum logic clock, with a fractional frequency systematic uncertainty of 9.4 × 10⁻¹⁹"}
+    historical_landmarks:
+      first_demonstration:
+        value: "~10⁻¹⁵（早期铯喷泉钟，~1990s）"
+        year: 1995
+        source: {zotero_key: "SDG6KXNZ"}
+        note: "铯喷泉钟时代"
+      best_demonstration:
+        value: "9.4×10⁻¹⁹"
+        year: 2019
+        source: {zotero_key: "SDG6KXNZ"}
+        note: "²⁷Al⁺ NIST 量子逻辑钟（Brewer et al. 2019）"
+      selected_milestones:
+        - year: 2019
+          value: "9.4×10⁻¹⁹（²⁷Al⁺）"
+          source: {zotero_key: "SDG6KXNZ"}
+          note: "当前世界纪录"
+        - year: 2021
+          value: "~1×10⁻¹⁸（⁸⁷Sr 和 ¹⁷¹Yb 光晶格钟）"
+          source: {zotero_key: "SDG6KXNZ"}
+          note: "中性原子光晶格钟也进入 10⁻¹⁸ 量级"
+    open_questions:
+      - "Can optical lattice clocks (Sr, Yb) reach below 10⁻¹⁹ systematic uncertainty to match or surpass single-ion clocks?"
+      - "Will the ²²⁹Th nuclear clock achieve competitive systematic uncertainties, leveraging nuclear transition's insensitivity to external fields?"
+
+  - id: met.frequency_ratio_agreement_cross_lab
+    name: "跨实验室光钟频率比一致性"
+    unit: "无量纲（分数频率差异）"
+    description: >
+      不同实验室独立测量同一光学频率比的一致性，
+      是验证光钟不确定度预算和秒定义重定义就绪度的关键指标。
+    demonstrated_value:
+      value: "部分频率比已在 ~10⁻¹⁷ 水平一致，但多数尚未达到 5×10⁻¹⁸ 目标"
+      conditions: "Sr/Sr、Yb/Yb 同种比较最佳；异种比较和洲际比较仍在进行中"
+      verification_status: observed
+      confidence: likely
+      source: {zotero_key: "SDG6KXNZ", claim: "Mandatory criterion I.2: validation of OFS accuracy budgets through frequency ratios"}
+    theoretical_floor:
+      value: "原则上无基本物理限制——受限于光钟系统不确定度和比较链路噪声"
+      basis: "光钟不确定度和时间频率传递技术"
+      gap_note: "目标 5×10⁻¹⁸ 一致性尚未在洲际范围内普遍实现"
+
+# ═══════════════════════════════════════════════
+#  RELATIONS（关系）
+# ═══════════════════════════════════════════════
+
+relations:
+  - id: rel.D24_01
+    subject: ent.si_second_definition
+    predicate: BOUNDED-BY
+    object: pri.redefinition_criteria_second
+    confidence: established
+    source: {zotero_key: "SDG6KXNZ", claim: "Mandatory criteria that must be achieved before changing the definition"}
+    is_system_limit: true
+    dominated_by: null
+    quantitative_contribution: null
+    regime: all
+    verification_status: calculated
+    temporal_role: proposes
+    note: "秒定义的更新受限于 CCTF 路线图中定义的 15 条强制性标准和辅助条件"
+
+  - id: rel.D24_02
+    subject: ent.optical_frequency_standard
+    predicate: CHARACTERIZED-BY
+    object: met.optical_clock_systematic_uncertainty
+    confidence: established
+    source: {zotero_key: "SDG6KXNZ", claim: "systematic uncertainty of 9.4 × 10⁻¹⁹ for the ²⁷Al⁺ quantum logic clock"}
+
+  - id: rel.D24_03
+    subject: ent.optical_frequency_standard
+    predicate: CHARACTERIZED-BY
+    object: met.frequency_ratio_agreement_cross_lab
+    confidence: established
+    source: {zotero_key: "SDG6KXNZ", claim: "Mandatory criterion I.2: validation of OFS accuracy budgets through frequency ratios"}
+
+  - id: rel.D24_04
+    subject: met.optical_clock_systematic_uncertainty
+    predicate: OPERATIONALIZED-AS
+    object: meth.optical_clock_comparison
+    confidence: established
+    source: {zotero_key: "SDG6KXNZ", claim: "simultaneous measurements of the same optical frequency ratio with two independent OFCs have shown agreement at the level of 10⁻²¹"}
+    note: "光钟不确定度通过频率比比较方法验证"
+
+  - id: rel.D24_05
+    subject: ent.si_second_definition
+    predicate: CONDITIONED-BY
+    object: ent.optical_frequency_standard
+    interface_metric: met.optical_clock_systematic_uncertainty
+    coupling_formula: "秒定义的实现精度直接由光学频率标准的系统不确定度决定"
+    internal_property: "best demonstrated: 9.4×10⁻¹⁹（²⁷Al⁺）"
+    is_system_limit:
+      current: false
+      conditions: "当前秒定义基于铯（~10⁻¹⁶），光学标准已超越 2 个量级但尚未被采纳为定义基础"
+    note: "跨专题接口：光钟专题的输出是时间标尺专题的输入"

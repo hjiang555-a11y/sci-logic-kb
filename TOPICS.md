@@ -92,11 +92,11 @@
 | 编号 | 专题 | 目录 | 状态 | 论文数 | 核心节点数(估) |
 |------|------|------|------|--------|---------------|
 | 1 | 超稳激光 | `topics/ultrastable-laser/` | ✅ 已建 | 78 | ~200+ |
-| 2 | 光学频率梳 | `topics/optical-frequency-combs/` | 📋 待建 | — | — |
-| 3 | 光钟 | `topics/optical-clocks/` | 📋 待建 | — | — |
+| 2 | 光学频率梳 | `topics/optical-frequency-combs/` | 🚧 初建 | 2 | ~10 |
+| 3 | 光钟 | `topics/optical-clocks/` | 🚧 初建 | 1 | ~10 |
 | 4 | 微波频率标准 | `topics/microwave-standards/` | 📋 待建 | — | — |
 | 5 | 时间频率传递 | `topics/time-frequency-transfer/` | 📋 待建 | — | — |
-| 6 | 时间标尺与钟组 | `topics/timescales/` | 📋 待建 | — | — |
+| 6 | 时间标尺与钟组 | `topics/timescales/` | 🚧 初建 | 1 | ~8 |
 | 7 | 基础物理应用 | `topics/fundamental-physics/` | 📋 待建 | — | — |
 
 ---

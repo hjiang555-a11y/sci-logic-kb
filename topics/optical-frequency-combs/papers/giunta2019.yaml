@@ -1,0 +1,247 @@
+# Giunta 2019 — 光学频率梳 20 年发展：从基础物理到 20 位数精度
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-16
+# Schema版本：v4.0
+# 专题：optical-frequency-combs
+
+meta:
+  zotero_key: "KTHCQRJ2"
+  topic: optical-frequency-combs
+  source_type: review
+  reliability: high
+  title: "20 Years and 20 Decimal Digits: A Journey With Optical Frequency Combs"
+  year: 2019
+  first_author: Giunta
+  journal: "IEEE Photonics Technology Letters"
+  volume: 31
+  issue: 23
+  pages: "1898-1901"
+  doi: "10.1109/LPT.2019.2947907"
+  note: >
+    Menlo Systems 团队（含 Hänsch/Holzwarth）回顾光学频率梳从 1999 年诞生到 2019 年达到
+    20 位数测量精度的 20 年发展历程。综述涵盖：（1）氢 1S-2S 频率测量精度的逐步提升
+    （从 ~840 Hz 到 ~10 Hz 级）；（2）光纤频率梳替代 Ti:sapphire 成为主流的工程演进；
+    （3）从绝对频率测量到频率比测量的范式转换；（4）超低噪声微波合成（-171 dBc/Hz @ 1 Hz，
+    相当于 6.5×10⁻¹⁶ @ 1 s）；（5）展望跨越 octave 的光学频率合成与连续运行天文光谱仪校准。
+    作为 retrospective letter，节点提取侧重于关键原理和演化里程碑。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.optical_frequency_comb
+    name: "光学频率梳（通用）"
+    aliases: ["OFC", "optical frequency comb", "femtosecond laser frequency comb", "频率梳"]
+    hierarchy_level: 1
+    status: demonstrated
+    function: >
+      基于锁模激光器的光学频率合成/测量工具。输出频谱包含 10⁵–10⁶ 根等间距梳齿，
+      每根梳齿频率 fₙ = f_CEO + n·f_rep。通过稳定 f_rep 和 f_CEO 两个射频参数，
+      即可将光学频率与射频/微波频率双向关联，实现光频计数、光-光频率比较、
+      光学分频微波合成等核心功能。
+    key_parameters:
+      comb_equation: "fₙ = f_CEO + n·f_rep（n 为大整数，~10⁵–10⁶）"
+      repetition_rate: "典型 100 MHz – 10 GHz"
+      ceo_frequency: "0 < f_CEO < f_rep，通过 f-2f 自参考检测"
+      spectral_coverage: "可通过非线性展宽覆盖 >1 octave"
+      demonstrated_platforms: "Ti:sapphire、Er:fiber、Yb:fiber、Cr:ZnSe、microresonator 等"
+      mode_count: "~10⁵–10⁶ 根梳齿（取决于展宽带宽和 f_rep）"
+    note: >
+      Level 1 通用实体节点，定义光学频率梳的基本架构。
+      各具体实现（Er:fiber comb、Ti:sapphire comb 等）为 Level 2 实例。
+
+principles:
+  - id: pri.self_referencing_f2f
+    name: "f-2f 自参考原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      通过将频率梳低频端的梳齿频率倍频（SHG），与高频端的梳齿直接拍频，
+      可提取载波包络偏移频率 f_CEO = 2fₙ − f₂ₙ。这一自参考方案将频率梳的
+      两个自由度（f_rep 和 f_CEO）全部锁定至射频参考，实现对所有梳齿
+      绝对频率的完全控制。要求频谱覆盖至少一个倍频程（octave）。
+    domain: "光学频率梳，精密计量"
+    formula: >
+      f_CEO = 2(f_CEO + n·f_rep) − (f_CEO + 2n·f_rep) = f_CEO；
+      检测信号：I_beat ∝ cos(2π·f_CEO·t + Δφ)
+    key_insight: >
+      f-2f 自参考使频率梳从"相对频率标尺"升级为"绝对频率标尺"，
+      是频率梳成为通用计量工具的关键突破（2000 年，Hall/Hänsch 组）。
+    conditions: "频谱须覆盖至少一个倍频程；需要 SHG 晶体和合适的探测器"
+    preconditions:
+      - "梳齿频谱经非线性展宽后覆盖至少一个 octave"
+      - "f_CEO 信号信噪比须足够高以实现相位锁定（通常 >30 dB）"
+    source_claim: >
+      "If the two quantities f_rep and f_CEO are known (and, ideally, referenced through phase-locks), 
+      the frequency ruler is established and each laser mode is well-identified as fₙ = f_CEO + n·f_rep"
+    open_questions:
+      - "Can integrated photonic platforms provide reliable octave-spanning spectra with sufficient SNR for f-2f self-referencing in compact, fieldable frequency combs?"
+
+  - id: pri.optical_frequency_division_microwave
+    name: "光学分频微波合成原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      通过将频率梳的一个梳齿锁定至超稳光学参考（如超稳腔激光或光钟跃迁），
+      光学参考的频率稳定度被等比例分频传递至梳的重复频率 f_rep 上，
+      实现超低相位噪声的微波信号合成。分频比 N = ν_opt/f_rep ≈ 10⁵–10⁶，
+      相位噪声功率谱密度按 1/N² 降低。
+    domain: "精密微波合成，光学频率测量"
+    formula: >
+      S_φ(f_rep) = S_φ(ν_opt)/N²，N = ν_opt/f_rep ≈ 10⁵–10⁶；
+      等效 Allan 偏差：σ_y(f_rep) = σ_y(ν_opt)（分数频率不稳定度保持不变）
+    key_insight: >
+      光学分频将光学参考的 ~10⁻¹⁷ 级分数频率稳定度直接传递至 ~10 GHz 微波域，
+      产生的微波信号比任何电子振荡器优越 >1000 倍。
+    conditions: "梳齿须无周期滑动地锁定至光学参考；光学参考自身的噪声为最终限制"
+    source_claim: >
+      "the technology of photonic microwave synthesis... demonstrated a single-sideband phase noise 
+      of −171 dBc/Hz at 1 Hz offset frequency from the 9.8 GHz carrier"
+
+  - id: pri.frequency_ratio_measurement
+    name: "光学频率比测量原理（无需 SI 秒定义）"
+    tier: domain
+    verification_status: observed
+    statement: >
+      通过频率梳同时拍频两个光学频率 ν₁ 和 ν₂（分别靠近梳齿 N 和 M），
+      可以直接测量频率比 R = ν₁/ν₂ = (N·f_rep + f_CEO + Δf₁)/(M·f_rep + f_CEO + Δf₂)，
+      而无需知道 f_rep 和 f_CEO 的绝对值。
+      频率比为无量纲量，不依赖于 SI 秒的定义精度（当前 ~10⁻¹⁶），
+      因此可以达到光钟本身的不确定度极限（<10⁻¹⁸）。
+    domain: "光学频率计量，光钟比较"
+    formula: >
+      R = ν₁/ν₂；可用 transfer oscillator 方案消除 f_rep 技术噪声
+    key_insight: >
+      频率比测量绕过了 SI 秒定义的精度瓶颈，是光钟比较和秒定义重定义的核心测量模式。
+    conditions: "两个光学频率须同时与同一频率梳拍频；梳的展宽须覆盖两个频段"
+    source_claim: >
+      "the OFC permits to count the fast cycles of optical transition frequencies in atomic systems"
+
+methods:
+  - id: meth.photonic_microwave_synthesis
+    name: "光子微波合成方法"
+    status: demonstrated
+    applies_to: ent.optical_frequency_comb
+    steps_summary: >
+      1. 超稳光学参考（USL 或光钟跃迁）提供光学频率基准 →
+      2. 频率梳一个梳齿相位锁定至光学参考 →
+      3. 光电探测梳脉冲序列，提取重复频率 f_rep 微波信号 →
+      4. f_rep 继承光学参考的分数频率稳定度 →
+      5. 输出：超低相位噪声微波信号（~10 GHz，-171 dBc/Hz @ 1 Hz）
+    required_hardware:
+      - ent.optical_frequency_comb
+    advantages:
+      - "相位噪声性能优于任何电子振荡器 >1000×"
+      - "分数频率稳定度直接继承光学参考"
+      - "可产生任意微波频率（f_rep 的谐波）"
+    disadvantages:
+      - "需要超稳光学参考作为种子（系统复杂度和成本高）"
+      - "光电探测过程中的 AM-PM 转换增加额外噪声"
+    conditions:
+      - "梳锁相环须无周期滑动运行"
+      - "光电探测器线性度和 AM-PM 转换须优化"
+    source_claim: >
+      "single-sideband phase noise of −171 dBc/Hz at 1 Hz offset frequency from the 9.8 GHz carrier"
+
+metrics:
+  - id: met.photonic_microwave_phase_noise
+    name: "光子微波合成相位噪声"
+    unit: "dBc/Hz（单边带相位噪声功率谱密度）"
+    description: >
+      光学分频产生的微波信号的相位噪声水平，是评价光子微波合成器性能的核心指标。
+    demonstrated_value:
+      value: "−171 dBc/Hz @ 1 Hz offset, 9.8 GHz carrier（等效 σ_y ≈ 6.5×10⁻¹⁶ @ 1 s）"
+      conditions: "Er:fiber comb 锁定至 ULE 超稳腔激光，光电探测 + 滤波，Menlo Systems 系统"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "KTHCQRJ2", claim: "single-sideband phase noise of −171 dBc/Hz at 1 Hz offset frequency from the 9.8 GHz carrier"}
+    historical_landmarks:
+      first_demonstration:
+        value: "~−100 dBc/Hz @ 1 Hz（早期 Ti:sapphire 梳，~2002）"
+        year: 2002
+        source: {zotero_key: "KTHCQRJ2"}
+        note: "早期演示，受限于光电探测器 AM-PM 转换"
+      best_demonstration:
+        value: "−171 dBc/Hz @ 1 Hz, 9.8 GHz"
+        year: 2019
+        source: {zotero_key: "KTHCQRJ2"}
+        note: "Giunta 2019 报告，Menlo Systems 商业化系统水平"
+
+  - id: met.hydrogen_1s2s_frequency_accuracy
+    name: "氢原子 1S-2S 跃迁频率测量精度"
+    unit: "Hz（绝对频率不确定度）或无量纲（分数不确定度）"
+    description: >
+      氢原子 1S-2S 双光子跃迁（~2466 THz）的绝对频率测量精度，
+      是频率梳在基础物理中最具代表性的应用之一。
+    demonstrated_value:
+      value: "4.2 parts in 10¹⁵ 分数精度（~10 Hz 绝对不确定度）"
+      conditions: "频率梳锁定至铯喷泉钟（SI 秒定义），MPQ 实验"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "KTHCQRJ2", claim: "1.4 parts in 10¹⁴ in 2004, to 4.2 parts in 10¹⁵ relative accuracy in 2013"}
+    historical_landmarks:
+      first_demonstration:
+        value: "~840 Hz 绝对不确定度"
+        year: 1999
+        source: {zotero_key: "KTHCQRJ2"}
+        note: "频率梳出现前，使用频率链测量"
+      best_demonstration:
+        value: "4.2 parts in 10¹⁵"
+        year: 2013
+        source: {zotero_key: "KTHCQRJ2"}
+        note: "Matveev et al. 2013，使用频率梳"
+      selected_milestones:
+        - year: 2000
+          value: "~46 Hz"
+          source: {zotero_key: "KTHCQRJ2"}
+          note: "频率梳首次应用于 1S-2S 测量"
+        - year: 2004
+          value: "1.4 parts in 10¹⁴"
+          source: {zotero_key: "KTHCQRJ2"}
+          note: "Fischer et al. 2004"
+
+# ═══════════════════════════════════════════════
+#  RELATIONS（关系）
+# ═══════════════════════════════════════════════
+
+relations:
+  - id: rel.G19_01
+    subject: ent.optical_frequency_comb
+    predicate: ENABLED-BY
+    object: pri.self_referencing_f2f
+    confidence: established
+    source: {zotero_key: "KTHCQRJ2", claim: "If the two quantities f_rep and f_CEO are known (and, ideally, referenced through phase-locks), the frequency ruler is established"}
+    conditions: "频谱覆盖至少一个 octave"
+    note: "f-2f 自参考是频率梳作为绝对频率标尺的基础"
+
+  - id: rel.G19_02
+    subject: meth.photonic_microwave_synthesis
+    predicate: ENABLED-BY
+    object: pri.optical_frequency_division_microwave
+    confidence: established
+    source: {zotero_key: "KTHCQRJ2", claim: "photonic microwave synthesis... −171 dBc/Hz"}
+    conditions: "梳锁定至超稳光学参考"
+
+  - id: rel.G19_03
+    subject: ent.optical_frequency_comb
+    predicate: CHARACTERIZED-BY
+    object: met.photonic_microwave_phase_noise
+    confidence: established
+    source: {zotero_key: "KTHCQRJ2", claim: "−171 dBc/Hz at 1 Hz offset frequency from the 9.8 GHz carrier"}
+
+  - id: rel.G19_04
+    subject: ent.optical_frequency_comb
+    predicate: CHARACTERIZED-BY
+    object: met.hydrogen_1s2s_frequency_accuracy
+    confidence: established
+    source: {zotero_key: "KTHCQRJ2", claim: "4.2 parts in 10¹⁵ relative accuracy in 2013"}
+    note: "氢 1S-2S 测量是频率梳在基础物理中的标志性应用"
+
+  - id: rel.G19_05
+    subject: met.hydrogen_1s2s_frequency_accuracy
+    predicate: OPERATIONALIZED-AS
+    object: meth.photonic_microwave_synthesis
+    confidence: established
+    source: {zotero_key: "KTHCQRJ2", claim: "the OFC permits to count the fast cycles of optical transition frequencies in atomic systems"}
+    note: "氢 1S-2S 频率通过频率梳桥接至 SI 秒定义（铯喷泉钟）"

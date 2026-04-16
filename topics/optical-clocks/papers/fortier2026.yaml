@@ -1,0 +1,355 @@
+# Fortier 2026 — 光学原子钟：定义时间频率计量的未来（综述）
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-16
+# Schema版本：v4.0
+# 专题：optical-clocks
+
+meta:
+  zotero_key: "BWR7TEZ6"
+  topic: optical-clocks
+  source_type: review
+  reliability: high
+  title: "Optical atomic clocks: defining the future of time and frequency metrology"
+  year: 2026
+  first_author: Fortier
+  journal: "Optica"
+  volume: 13
+  issue: 1
+  pages: "143-160"
+  doi: "10.1364/OPTICA.575770"
+  note: >
+    NIST/BIPM/NPL 联合综述，系统回顾光学原子钟的原理、架构、支撑技术和应用前景。
+    核心内容：（1）光钟基本原理——Ramsey 光谱、量子投影噪声、Dick 效应；
+    （2）三类光钟架构——单离子钟（²⁷Al⁺、¹⁷¹Yb⁺）、光晶格钟（⁸⁷Sr、¹⁷¹Yb）、核钟（²²⁹Th）；
+    （3）支撑光学技术——超稳腔激光（与超稳激光专题直接关联）、光学频率梳；
+    （4）光钟比较——本地与远程、频率比测量；
+    （5）秒定义重定义路线——11 个光钟已获批参与 TAI 校准；
+    （6）新兴应用——基础物理检验、相对论大地测量。
+    当前最佳分数不确定度 <10⁻¹⁸，不稳定度 ~5×10⁻¹⁷/√τ。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.trapped_ion_optical_clock
+    name: "囚禁离子光钟"
+    aliases: ["trapped-ion clock", "single-ion clock", "离子光钟"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      利用射频 Paul 阱囚禁单个或少数激光冷却离子，探测极窄光学跃迁作为频率参考。
+      单离子系统具有极低的系统效应（运动效应、碰撞效应可忽略），
+      适合追求极致准确度。代表系统：²⁷Al⁺ 量子逻辑钟（NIST，5.5×10⁻¹⁹ 系统不确定度）。
+    key_parameters:
+      representative_species: "²⁷Al⁺、¹⁷¹Yb⁺（E3）、⁸⁸Sr⁺、¹¹⁵In⁺、¹⁷⁶Lu⁺"
+      best_systematic_uncertainty: "5.5×10⁻¹⁹（²⁷Al⁺ NIST）"
+      detection_method: "电子搁置技术（electron shelving）/ 量子逻辑读出"
+      atom_number: "1（单离子）或少数离子（Coulomb 晶体方案正在发展）"
+      stability_limit: "σ_y ∝ 1/(ν₀·T_m·√N_a)，N_a=1 → 需长时间平均"
+    note: "Level 2 实例，PART-OF ent.optical_frequency_standard"
+
+  - id: ent.optical_lattice_clock
+    name: "光晶格钟"
+    aliases: ["optical lattice clock", "neutral-atom lattice clock", "中性原子光钟"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      利用"魔术波长"光晶格囚禁约 10⁴ 个激光冷却中性原子，
+      探测 ¹S₀→³P₀ 窄跃迁。大原子数使统计灵敏度极高（σ_y ∝ 1/√N_a），
+      短期不稳定度可达 ~10⁻¹⁷/√τ。代表系统：⁸⁷Sr、¹⁷¹Yb。
+    key_parameters:
+      representative_species: "⁸⁷Sr（698 nm）、¹⁷¹Yb（578 nm）"
+      best_systematic_uncertainty: "~1×10⁻¹⁸（多个实验室 Sr 和 Yb 钟）"
+      atom_number: "~10⁴"
+      magic_wavelength: "813.4 nm（Sr）、759.4 nm（Yb）"
+      stability: "~5×10⁻¹⁷/√τ（最佳演示）"
+      key_systematics: "黑体辐射频移（BBR）、格子光频移（lattice light shift）、碰撞频移"
+    note: "Level 2 实例，PART-OF ent.optical_frequency_standard"
+
+  - id: ent.nuclear_clock_229th
+    name: "²²⁹Th 核钟"
+    aliases: ["thorium nuclear clock", "nuclear clock", "核跃迁钟"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      基于钍-229 同核异能态（isomeric state）的核跃迁（~148 nm，~2 PHz）的新型频率标准。
+      核跃迁发生在原子核内部，被电子云屏蔽，
+      对外部电磁场扰动具有极强免疫力，潜在分数准确度可达 10⁻¹⁹。
+      2024 年首次实现该跃迁的激光光谱测量（TU Wien）。作为频率标准尚处于早期演示阶段。
+    key_parameters:
+      transition_wavelength: "~148 nm（VUV，~2.02 PHz）"
+      isomer_energy: "~8.36 eV（核跃迁，极窄线宽）"
+      shielding_advantage: "核跃迁受电子云屏蔽，对 BBR、Zeeman、Stark 效应敏感度极低"
+      current_status: "2024 年首次激光激发（TU Wien），作为频率标准尚处早期演示阶段"
+    note: >
+      Level 2 实例，PART-OF ent.optical_frequency_standard。
+      核跃迁已于 2024 年首次被激光激发，但作为完整频率标准（含系统不确定度评估）
+      尚处于早期演示阶段，是光钟领域最前沿的方向之一。
+
+principles:
+  - id: pri.quantum_projection_noise_limit
+    name: "量子投影噪声极限"
+    tier: domain
+    verification_status: calculated
+    statement: >
+      光钟的基本统计测量极限由量子投影噪声（QPN）决定。
+      对于 N_a 个原子、跃迁频率 ν₀、询问时间 T_m 的钟，
+      QPN 限制的 Allan 偏差为 σ_y(τ) = 1/(ν₀·T_m·√(N_a·η))·1/√(τ/T_c)，
+      其中 η 为工作占空比，T_c 为时钟周期。
+      这一极限设定了光钟不稳定度的基本下限。
+    domain: "光学原子钟，量子计量"
+    formula: >
+      σ_y(τ) = 1/(2π·ν₀·T_m) · 1/√(N_a·η) · √(T_c/τ)；
+      对单离子（N_a=1）：σ_y ∝ 1/(ν₀·T_m·√τ)；
+      对光晶格钟（N_a~10⁴）：σ_y 降低 ~100×
+    key_insight: >
+      光钟的统计优势核心来源：（1）更高 ν₀（光学 vs 微波，~10⁵× 提升）；
+      （2）更长 T_m（超稳激光→更长相干询问时间）；
+      （3）更多 N_a（光晶格钟 ~10⁴ 原子）。
+    conditions: "理想探测效率、无技术噪声、无 Dick 效应"
+    preconditions:
+      - "原子处于 Lamb-Dicke 域（运动量子化）"
+      - "探测效率接近 100%"
+    invalidated_when:
+      - "询问激光的噪声（Dick 效应）超过 QPN 贡献"
+      - "原子间碰撞引入相关噪声"
+    source_claim: >
+      "the quantum projection noise limit to stability... scales as 1/(ν₀·T_m·√N_a)"
+
+  - id: pri.dick_effect
+    name: "Dick 效应（时钟周期死时间噪声混叠）"
+    tier: domain
+    verification_status: observed
+    statement: >
+      光钟工作周期中，原子制备和检测的"死时间"期间不采样询问激光频率噪声，
+      导致噪声通过采样混叠（aliasing）转化为低频不稳定度。
+      Dick 效应的大小取决于：（1）询问激光的频率噪声功率谱密度；
+      （2）工作占空比 η = T_m/T_c；（3）Ramsey 灵敏度函数的傅里叶分量。
+      当腔稳激光的 flicker 噪声地板较高时，Dick 效应可能超过 QPN 成为主要限制。
+    domain: "光学原子钟，频率稳定度"
+    formula: >
+      σ_y²(Dick) = Σ_k |g_k|² · S_y(k/T_c) / g₀²；
+      其中 g_k 为灵敏度函数的傅里叶分量，S_y 为激光频率噪声谱
+    key_insight: >
+      Dick 效应是超稳激光性能直接影响光钟稳定度的核心机制——
+      更好的超稳激光 → 更长 T_m → 更高占空比 → 更小 Dick 效应。
+      这是超稳激光专题与光钟专题的关键接口。
+    conditions: "光钟工作周期存在非零死时间（T_c > T_m）"
+    preconditions:
+      - "时钟周期包含原子制备/检测步骤（死时间不可避免）"
+      - "询问激光频率噪声在 T_c 倒数频率处不可忽略"
+    invalidated_when:
+      - "零死时间操作（如连续 Bose-Einstein 凝聚装载、交替两组原子）"
+      - "询问激光噪声极低（如 10⁻¹⁸ 级稳定度超稳腔），Dick 效应远低于 QPN"
+    source_claim: >
+      "the Dick effect... contributes to the Allan deviation as an aliased frequency noise 
+      that can exceed the QPN limit when the clock laser noise is significant"
+    open_questions:
+      - "Can continuous-loading lattice clocks with 3D lattices completely eliminate the Dick effect, or do residual systematic effects from ongoing loading degrade accuracy?"
+      - "At what ultrastable laser stability level does the Dick effect become negligible compared to QPN for state-of-the-art lattice clocks?"
+
+  - id: pri.magic_wavelength_lattice
+    name: "魔术波长光晶格原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      在特定"魔术波长"处，光晶格对钟跃迁上下能级产生相同的 AC Stark 频移，
+      使净频移为零（一阶）。这使得 ~10⁴ 个原子可在深光晶格中囚禁，
+      在 Lamb-Dicke 域中进行高精度光谱，而不引入与晶格强度相关的系统频移。
+      高阶效应（超极化率、磁偶极跃迁）在 10⁻¹⁸ 精度下需仔细评估。
+    domain: "光晶格钟，精密光谱"
+    formula: >
+      ΔE_AC(e) = ΔE_AC(g) @ λ_magic；
+      Sr: λ_magic ≈ 813.4 nm；Yb: λ_magic ≈ 759.4 nm
+    key_insight: >
+      魔术波长方案解决了光晶格囚禁与光谱精度之间的根本矛盾，
+      是光晶格钟概念的基础（Katori 2003 提出）。
+    conditions: "晶格激光波长须精确调谐至魔术波长；多极化率和超极化率效应需在 10⁻¹⁸ 下修正"
+    source_claim: >
+      "the proposal of a 'magic wavelength'—a lattice laser frequency at which the AC Stark shifts 
+      of the ground and excited clock states are equal"
+
+methods:
+  - id: meth.ramsey_spectroscopy_clock
+    name: "Ramsey 光谱法（光钟频率测量）"
+    status: demonstrated
+    applies_to: ent.optical_frequency_standard
+    steps_summary: >
+      1. 制备原子于基态 |g⟩ →
+      2. 第一个 π/2 脉冲：创建 |g⟩ 和 |e⟩ 的等权叠加 →
+      3. 自由演化时间 T_m：积累相位差 Δφ = 2π(ν_laser − ν_atom)·T_m →
+      4. 第二个 π/2 脉冲：将相位差映射为布居差 →
+      5. 态选择荧光探测：确定原子处于 |g⟩ 还是 |e⟩ →
+      6. 频率校正信号反馈至钟激光 →
+      7. 重复以构建统计
+    required_hardware:
+      - ent.optical_frequency_standard
+    advantages:
+      - "对激光频率噪声的灵敏度集中在 T_m 对应的傅里叶频率"
+      - "可实现极长询问时间（>1 s，受限于钟激光相干时间）"
+    disadvantages:
+      - "受限于询问激光的频率稳定度（T_m 不能超过激光相干时间）"
+      - "存在 Dick 效应（死时间噪声混叠）"
+    conditions:
+      - "原子须处于 Lamb-Dicke 域"
+      - "询问激光线宽须远小于跃迁线宽和 1/T_m"
+    source_claim: >
+      "A commonly used interferometric method for measurement of the clock laser 
+      with respect to the atomic transition is Ramsey spectroscopy"
+
+metrics:
+  - id: met.optical_clock_fractional_instability
+    name: "光学原子钟分数频率不稳定度"
+    unit: "无量纲（Allan 偏差 σ_y(τ)）"
+    description: >
+      光钟的频率稳定度，由 QPN 极限、Dick 效应和技术噪声共同决定。
+      决定了达到目标分辨率（如 10⁻¹⁸）所需的平均时间。
+    demonstrated_value:
+      value: "σ_y(τ) ≈ 5×10⁻¹⁷/√τ（最佳光晶格钟）"
+      conditions: "⁸⁷Sr 或 ¹⁷¹Yb 光晶格钟，~10⁴ 原子，T_m ≈ 1–4 s，超稳腔激光"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "BWR7TEZ6", claim: "fractional instabilities approaching 5 × 10⁻¹⁷τ⁻¹/²"}
+    theoretical_floor:
+      value: "由 QPN 极限决定：σ_y(QPN) = 1/(2π·ν₀·T_m·√(N_a·η·τ/T_c))"
+      basis: "量子投影噪声"
+      gap_note: "实际性能受 Dick 效应限制，需更好的超稳激光或零死时间操作来缩小差距"
+    historical_landmarks:
+      best_demonstration:
+        value: "~5×10⁻¹⁷/√τ"
+        year: 2025
+        source: {zotero_key: "BWR7TEZ6"}
+        note: "最佳光晶格钟（Sr/Yb），受限于超稳腔激光 Dick 效应"
+
+  - id: met.optical_clock_fractional_uncertainty
+    name: "光学原子钟分数频率不确定度（系统效应）"
+    unit: "无量纲"
+    description: >
+      光钟所有已知系统效应的总不确定度，决定了光钟的准确度。
+    demonstrated_value:
+      value: "<10⁻¹⁸（多个系统）；5.5×10⁻¹⁹（²⁷Al⁺ NIST，当前最佳）"
+      conditions: "²⁷Al⁺ 量子逻辑钟（NIST），完整不确定度预算评估"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "BWR7TEZ6", claim: "fractional frequency uncertainties now surpassing 10⁻¹⁸... the best systems have achieved fractional uncertainties below 10⁻¹⁸"}
+    historical_landmarks:
+      best_demonstration:
+        value: "5.5×10⁻¹⁹"
+        year: 2025
+        source: {zotero_key: "BWR7TEZ6"}
+        note: "²⁷Al⁺ NIST，综述中引用的最佳值"
+    open_questions:
+      - "Can lattice clocks achieve systematic uncertainties below 10⁻¹⁹ by controlling higher-order lattice light shifts and BBR effects?"
+      - "Will multi-ion clocks (Coulomb crystals) combine the accuracy advantage of ions with the statistical advantage of many atoms?"
+
+# ═══════════════════════════════════════════════
+#  RELATIONS（关系）
+# ═══════════════════════════════════════════════
+
+relations:
+  - id: rel.F26_01
+    subject: ent.trapped_ion_optical_clock
+    predicate: PART-OF
+    object: ent.optical_frequency_standard
+    confidence: established
+    source: {zotero_key: "BWR7TEZ6", claim: "Single-ion clocks typically excel in accuracy due to minimal motional effects"}
+
+  - id: rel.F26_02
+    subject: ent.optical_lattice_clock
+    predicate: PART-OF
+    object: ent.optical_frequency_standard
+    confidence: established
+    source: {zotero_key: "BWR7TEZ6", claim: "optical lattice clocks leverage large ensembles of neutral atoms"}
+
+  - id: rel.F26_03
+    subject: ent.nuclear_clock_229th
+    predicate: PART-OF
+    object: ent.optical_frequency_standard
+    confidence: established
+    source: {zotero_key: "BWR7TEZ6", claim: "nuclear clocks represent an emerging class of frequency standards"}
+
+  - id: rel.F26_04
+    subject: ent.optical_frequency_standard
+    predicate: BOUNDED-BY
+    object: pri.quantum_projection_noise_limit
+    confidence: established
+    source: {zotero_key: "BWR7TEZ6", claim: "the quantum projection noise limit to stability"}
+    is_system_limit: false
+    dominated_by: pri.dick_effect
+    quantitative_contribution: "QPN 为基本下限，但当前实际限制主要来自 Dick 效应（询问激光噪声）"
+    regime: short-term
+    verification_status: calculated
+    temporal_role: validates
+    breakthrough_paths:
+      - direction: pri.dick_effect
+        expected_gain: "消除 Dick 效应（零死时间操作或 10⁻¹⁸ 超稳激光）→ 直接达到 QPN 极限"
+        status: in_progress
+        source: {zotero_key: "BWR7TEZ6", claim: "Mitigation therefore requires minimizing the Dick effect"}
+
+  - id: rel.F26_05
+    subject: ent.optical_frequency_standard
+    predicate: BOUNDED-BY
+    object: pri.dick_effect
+    confidence: established
+    source: {zotero_key: "BWR7TEZ6", claim: "the Dick effect... can exceed the QPN limit when the clock laser noise is significant"}
+    is_system_limit: true
+    dominated_by: null
+    quantitative_contribution: "当前多数光钟的短期不稳定度由 Dick 效应主导"
+    regime: short-term
+    verification_status: observed
+    temporal_role: validates
+    breakthrough_paths:
+      - direction: pri.quantum_projection_noise_limit
+        expected_gain: "更好的超稳激光（10⁻¹⁸ 级）或零死时间操作 → Dick 效应降至 QPN 以下"
+        status: in_progress
+        source: {zotero_key: "BWR7TEZ6", claim: "can still achieve uncertainties below 2 × 10⁻¹⁸ when the cavity-stabilized local oscillator is limited to fractional instabilities at the 10⁻¹⁶ level"}
+    note: >
+      跨专题关键接口：Dick 效应直接链接超稳激光性能与光钟稳定度。
+      更好的超稳激光 → 更长 T_m → 更小 Dick 效应 → 更好的光钟稳定度。
+      跨专题引用：超稳激光专题的 met.fractional_freq_instability 系列指标直接影响此处。
+
+  - id: rel.F26_06
+    subject: ent.optical_lattice_clock
+    predicate: ENABLED-BY
+    object: pri.magic_wavelength_lattice
+    confidence: established
+    source: {zotero_key: "BWR7TEZ6", claim: "the proposal of a 'magic wavelength'"}
+    conditions: "晶格激光波长精确调谐至魔术波长"
+
+  - id: rel.F26_07
+    subject: ent.optical_frequency_standard
+    predicate: CHARACTERIZED-BY
+    object: met.optical_clock_fractional_instability
+    confidence: established
+    source: {zotero_key: "BWR7TEZ6", claim: "fractional instabilities approaching 5 × 10⁻¹⁷τ⁻¹/²"}
+
+  - id: rel.F26_08
+    subject: ent.optical_frequency_standard
+    predicate: CHARACTERIZED-BY
+    object: met.optical_clock_fractional_uncertainty
+    confidence: established
+    source: {zotero_key: "BWR7TEZ6", claim: "fractional frequency uncertainties now surpassing 10⁻¹⁸"}
+
+  - id: rel.F26_09
+    subject: met.optical_clock_fractional_instability
+    predicate: OPERATIONALIZED-AS
+    object: meth.ramsey_spectroscopy_clock
+    confidence: established
+    source: {zotero_key: "BWR7TEZ6", claim: "Ramsey spectroscopy... a commonly used interferometric method"}
+
+  - id: rel.F26_10
+    subject: ent.optical_frequency_standard
+    predicate: CONDITIONED-BY
+    object: ent.optical_frequency_comb
+    interface_metric: met.comb_frequency_synthesis_accuracy_g20
+    coupling_formula: "光钟频率比较精度受限于频率梳的合成保真度"
+    internal_property: "当前梳合成精度 ~10⁻²¹，远优于光钟不确定度"
+    is_system_limit:
+      current: false
+      conditions: "当前梳精度（10⁻²¹）远优于光钟不确定度（~10⁻¹⁸），不是限制因素"
+    note: >
+      跨专题引用：ent.optical_frequency_comb 定义于 topics/optical-frequency-combs/papers/giunta2019.yaml；
+      met.comb_frequency_synthesis_accuracy_g20 定义于 topics/optical-frequency-combs/papers/giunta2020.yaml。
+      光学频率梳是连接光钟与 SI 秒的必要工具。
+      前提：上述跨专题节点须存在于对应文件中，才能使本关系完整可查询。
