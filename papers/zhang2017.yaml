@@ -101,7 +101,7 @@ metrics:
       conditions: "经 Yb fiber comb 锁定到 Sr optical lattice clock，三天观测，线性拟合"
       verification_status: observed
       confidence: moderate
-      source: {zotero_key: "N9AGEQ8S", claim: "Over a three-day period, the linear drift was <1 mHz=s at 1542 nm (5 × 10−18 s−1)"}
+      source: {zotero_key: "N9AGEQ8S", claim: "Over a three-day period, the linear drift was <1 mHz/s at 1542 nm (5 × 10−18 s−1)"}
     note: "论文注明长期漂移机理仍在继续研究；后续 Robinson 2019 专门系统研究了功率相关漂移。"
 
 # ═══════════════════════════════════════════════
@@ -132,7 +132,7 @@ relations:
     predicate: CHARACTERIZED-BY
     object: met.cavity_frequency_drift_z17
     confidence: established
-    source: {zotero_key: "N9AGEQ8S", claim: "Over a three-day period, the linear drift was <1 mHz=s at 1542 nm"}
+    source: {zotero_key: "N9AGEQ8S", claim: "Over a three-day period, the linear drift was <1 mHz/s at 1542 nm"}
     conditions: "Sr optical lattice clock 引用，三天观测"
     note: "ent.si_crystal_fp_cavity_4k_r19 定义于 robinson2019.yaml"
 
