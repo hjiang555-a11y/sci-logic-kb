@@ -1,7 +1,7 @@
 # Jiang 2010 — 光纤干涉仪超低噪声可捷变激光
 # 提取者：Claude（AI草稿，待专家确认）
 # 提取日期：2026-04-14
-# Schema版本：v3.1
+# Schema版本：v3.2
 
 meta:
   zotero_key: "T8JR8IJ7"
@@ -126,6 +126,10 @@ principles:
     key_limitation: >
       对高于 1/τ 的频率噪声敏感度下降（高频区响应弱）；
       参考本身（光纤延迟线）受温度、振动影响，长期稳定度低于刚性腔。
+    conditions: >
+      光纤延迟线长度足以提供所需的频率鉴别灵敏度（nL/c ≫ 1/f_max）；
+      光纤为工作波长单模；法拉第旋转镜或等效偏振补偿保证干涉可见度；
+      AOM 外差频率远离光纤声学/机械噪声频段；光纤温度环境足够稳定。
     source_claim: >
       "fiber interferometer as an optical frequency reference provides
        ultra-low frequency noise while allowing laser frequency agility"

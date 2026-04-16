@@ -1,7 +1,7 @@
 # Webster 2011 — 力不敏感光学谐振腔
 # 提取者：Claude（AI草稿，待专家确认）
 # 提取日期：2026-04-14
-# Schema版本：v3.1
+# Schema版本：v3.2
 
 meta:
   zotero_key: "A96XGR82"
@@ -58,8 +58,11 @@ entities:
     interface_requirements:
       vibration: "被动全向不敏感（DC 至结构谐振）；配合主动前馈可进一步降低残余敏感度"
       orientation: "任意方向，含失重环境；不依赖重力方向"
-    note: "Level 2 PART-OF ent.fp_cavity_system（定义于 numata2004.yaml）；
-           与 ent.cutout_cavity_mount_w07（webster2007.yaml）在同一层级 COMPETES-WITH"
+    note: >
+      Level 2 PART-OF ent.fp_cavity_system（定义于 numata2004.yaml）。
+      与 ent.cutout_cavity_mount_w07（webster2007.yaml）为同一 L1 下的技术演进（非 COMPETES-WITH 关系）：
+      立方体腔全约束、全向不敏感（含失重环境）、被动最大灵敏度 2.5×10⁻¹¹/g；
+      切口腔支撑点可调谐、腔长更长（有利于降低热噪声）、已被多组实验室验证。
 
 principles:
   - id: pri.force_insensitive_tetrahedral_symmetry
@@ -145,24 +148,11 @@ relations:
     source: {zotero_key: "A96XGR82", claim: "maximum acceleration sensitivity is 2.5×10⁻¹¹/g, the lowest passive sensitivity to be reported for an optical cavity"}
     conditions: "被动灵敏度，三轴反转测试"
 
-  - id: rel.W11_04
-    subject: ent.cubic_force_insensitive_cavity_w11
-    predicate: COMPETES-WITH
-    object: ent.cutout_cavity_mount_w07
-    context: "FP腔力/振动不敏感安装策略：立方体刚性全约束（Webster 2011）vs 切口半约束调谐安装（Webster 2007）"
-    tradeoffs:
-      subject_wins:
-        - "刚性全约束，可在任意方向（含失重）工作；Webster 2007 依赖重力方向固定"
-        - "对支撑压力本身也不敏感（顶点截断消除压力灵敏度）；Webster 2007 仅抑制加速度响应"
-        - "被动全向最大灵敏度 2.5×10⁻¹¹/g（当时最低纪录）"
-        - "适用于卫星/机载等非实验室平台"
-      object_wins:
-        - "腔长 ~100 mm vs 立方体 50 mm 棱长，利用更多光程可降低热噪声影响"
-        - "支撑点可调谐（z 方向滑动），对加工误差有稳健性；立方体需精密对准（≤100 μm）"
-        - "切口腔已被 SYRTE/PTB 等多组实验室验证和使用；立方体腔尚未有稳定度性能报告"
-    confidence: established
-    source: {zotero_key: "A96XGR82", claim: "challenge is to make a cavity that is both mounted rigidly and insensitive to the forces acting upon it"}
-    note: "ent.cutout_cavity_mount_w07 定义于 webster2007.yaml"
+  # rel.W11_04 已删除：原为 ent.cubic_force_insensitive_cavity_w11 COMPETES-WITH ent.cutout_cavity_mount_w07，
+  # 违反 Schema 规则（L2 实体之间不使用 COMPETES-WITH）。
+  # 两者均为 ent.fp_cavity_system 的 L2 子单元，代表同一问题（振动/力不敏感安装）的技术演进。
+  # 原文对比摘要：立方体腔全约束、全向不敏感（含失重）、最大灵敏度 2.5×10⁻¹¹/g（被动最优）；
+  # 切口腔可调谐、腔长更长（热噪声更低）、已被多组验证。
 
   - id: rel.W11_05
     subject: ent.fp_cavity_system
