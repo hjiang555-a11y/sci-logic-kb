@@ -8,13 +8,16 @@
 
 本仓库面向**时间频率计量**（Time-Frequency Metrology）研究，目标不是做通用检索，而是沉淀可推理、可追溯、可扩展的科研知识结构。
 
-当前已建设完成的专题：
+当前已建设/已入库的专题：
 
 - **超稳激光**（Ultra-stable Lasers）：78 篇论文，~200+ 知识节点
+- **光学频率梳**（Optical Frequency Combs）：2 篇论文，初建
+- **光钟**（Optical Clocks）：1 篇论文，初建
+- **时间标尺与钟组**（Timescales & Clock Ensembles）：1 篇论文，初建
 
 规划中的专题（详见 [`TOPICS.md`](TOPICS.md)）：
 
-- 光学频率梳、光钟、微波频率标准、时间频率传递、时间标尺与钟组、基础物理应用
+- 微波频率标准、时间频率传递、基础物理应用
 
 核心查询目标：
 
@@ -95,8 +98,9 @@
 ├── topics/                      # 各专题知识存放
 │   ├── ultrastable-laser/       # 专题1：超稳激光（已建）
 │   │   └── papers/              # 78篇论文 YAML 知识条目
-│   ├── optical-frequency-combs/ # 专题2：光学频率梳（待建）
-│   ├── optical-clocks/          # 专题3：光钟（待建）
+│   ├── optical-frequency-combs/ # 专题2：光学频率梳（初建，2篇）
+│   ├── optical-clocks/          # 专题3：光钟（初建，1篇）
+│   ├── timescales/              # 专题6：时间标尺与钟组（初建，1篇）
 │   └── ...                      # 更多专题
 ├── scripts/
 │   └── process_paper.py         # GitHub Models/Claude 提取脚本

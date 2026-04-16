@@ -12,6 +12,7 @@
 
 符号主义结构化知识库，服务**时间频率计量**科研全领域。
 - **当前已建专题**：超稳激光（`topics/ultrastable-laser/`，78 篇论文）
+- **当前初建专题**：光学频率梳（`topics/optical-frequency-combs/`，2 篇）、光钟（`topics/optical-clocks/`，1 篇）、时间标尺与钟组（`topics/timescales/`，1 篇）
 - **专题体系**：详见 [`TOPICS.md`](TOPICS.md)
 - **目标查询**：当前性能极限在哪？为什么卡在这？怎么突破？
 - **不是**向量知识库，**支持**逻辑推理和精确路径查询。
@@ -77,11 +78,11 @@
 ```
 时间频率计量 (Time-Frequency Metrology)
 ├── 专题1：超稳激光 ← 当前已建（topics/ultrastable-laser/）
-├── 专题2：光学频率梳 ← 待建
-├── 专题3：光钟 ← 待建
+├── 专题2：光学频率梳 ← 初建（topics/optical-frequency-combs/）
+├── 专题3：光钟 ← 初建（topics/optical-clocks/）
 ├── 专题4：微波频率标准 ← 待建
 ├── 专题5：时间频率传递 ← 待建
-├── 专题6：时间标尺与钟组 ← 待建
+├── 专题6：时间标尺与钟组 ← 初建（topics/timescales/）
 └── 专题7：基础物理应用 ← 待建
 ```
 
