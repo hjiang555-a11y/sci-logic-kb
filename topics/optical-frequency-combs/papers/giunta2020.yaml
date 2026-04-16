@@ -1,0 +1,229 @@
+# Giunta 2020 — 实时光学相位追踪与色散外差检测，10⁻²⁰ 级频率梳合成精度
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-16
+# Schema版本：v4.0
+# 专题：optical-frequency-combs
+
+meta:
+  zotero_key: "UFWLAXMA"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  reliability: high
+  title: "Real-time phase tracking for wide-band optical frequency measurements at the 20th decimal place"
+  year: 2020
+  first_author: Giunta
+  journal: "Nature Photonics"
+  volume: 14
+  pages: "44-49"
+  doi: "10.1038/s41566-019-0520-5"
+  note: >
+    首次演示实时光学相位追踪（optical phase tracking）与色散外差检测（dichroic heterodyne detection）
+    两项创新技术，使光学频率梳在宽带（~90 THz）光学频率合成中达到 10⁻²⁰ 级精度和准确度，
+    测量时间仅需 <100 s。两台梳频比较偏差 (5.4 ± 5.3)×10⁻²¹（10⁵ s 单次测量运行），
+    无需传统 transfer oscillator 方案。Menlo Systems + MPQ（Hänsch/Holzwarth 组），掺铒光纤梳。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.ultra_low_noise_fiber_comb_g20
+    name: "超低噪声掺铒光纤频率梳系统（Giunta 2020）"
+    aliases: ["Menlo Systems ultra-low-noise Er:fiber comb", "multi-branch FC system"]
+    hierarchy_level: 1
+    status: demonstrated
+    function: >
+      基于掺铒光纤锁模激光器的光学频率梳系统，重复频率 ~250 MHz，
+      通过 f-2f 自参考锁定 f_CEO，并将一个梳齿相位锁定至超稳激光器（USL）。
+      采用多分支非线性光纤展宽架构，同时产生 1063 nm、1157 nm、1397 nm 和 1543 nm 光学频率。
+      配合色散外差检测技术实时补偿非线性展宽链路中的相位漂移，
+      实现宽带光学频率合成精度达 10⁻²⁰ 水平。
+    key_parameters:
+      repetition_rate: "~250 MHz（梳齿间距）"
+      comb_type: "掺铒光纤锁模激光器（Er:fiber mode-locked laser）"
+      spectral_coverage: "1063 nm – 1543 nm（覆盖 ~90 THz 光学间隔）"
+      ceo_stabilization: "f-2f 自参考（fceo→相位锁定至 RF 参考）"
+      optical_lock: "梳齿 n=777,445 相位锁定至 1542 nm USL"
+      multi_branch_architecture: "分立非线性展宽臂：1063 nm、1157 nm、1397 nm 各含 EDFA+HNLF"
+      dichroic_heterodyne_detection: "1543 nm 辅助拍频用于实时相位漂移补偿"
+      phase_noise_floor: "SSB 相噪 < -130 dBc/Hz @ 1 Hz offset（1397 nm, 1157 nm）"
+      integrated_phase_noise: "<200 mrad（1 Hz – 1 MHz，所有频段）"
+    interface_requirements:
+      reference_laser: "超稳激光器（USL），提供 1542 nm 相位参考"
+      environment: "实验室环境，光纤链路需温度控制"
+    note: "Level 1 实体：光学频率梳专题的核心实体类型"
+
+principles:
+  - id: pri.dichroic_heterodyne_detection
+    name: "色散外差检测（Dichroic Heterodyne Detection）相位漂移补偿原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      在多分支光学频率梳系统中，非线性展宽链路（EDFA + HNLF）引入的附加相位噪声和漂移
+      通过以下方式实时补偿：将展宽臂中残存的基频光 ṽ₁ 与来自短参考路径的同一梳齿 ν₁ 
+      分别与共同的连续波参考激光 ν_ref 拍频，提取两路径间的相位差 (φ̃₁ − φ₁)。
+      对非线性频移后的目标光 ṽ₂ 上的相位噪声 φ̃₂，利用实验确定的比例因子 r 
+      进行校正：φ₂ = φ̃₂ − r(φ̃₁ − φ₁)。
+      该比例因子 r 近似等于两个外差检测中光学频率的比值（r ≈ ν₂/ν₁），
+      忽略小量色散效应后即可获得 Doppler 补偿后的纯净相位 φ₂。
+    domain: "光学频率梳，精密频率合成"
+    formula: >
+      φ₂ = φ̃₂ − r·(φ̃₁ − φ₁)，其中 r ≈ ν₂/ν₁；
+      效果：消除非线性光纤链路中累积的短期和长期相位漂移
+    key_insight: >
+      通过在同一非线性链路末端同时提取基频光（受同样噪声污染）和目标频率光的拍频，
+      利用频率比例关系实现被动式相位漂移补偿，无需反向传输光束的主动补偿环路。
+    conditions: "多分支频率梳系统，非线性展宽引入的光纤相位漂移为主要噪声源"
+    preconditions:
+      - "需要共同的连续波参考激光（USL）覆盖基频光频段"
+      - "非线性链路中的色散效应须足够小，使 r ≈ ν₂/ν₁ 成立"
+      - "基频光和目标频率光经历相同的光纤路径（共路传输）"
+    invalidated_when:
+      - "色散效应不可忽略（大光学间隔+高色散光纤），需要额外色散校正"
+      - "非线性展宽过程引入非共模噪声（如四波混频产生的随机相位贡献）"
+    source_claim: >
+      "we introduce passive dichroic heterodyne detection, an innovative concept 
+      to compensate such phase drifts, which allows us to demonstrate unprecedented 
+      agreement between two combs in the 10⁻²⁰ range within only 100 s"
+    open_questions:
+      - "Can dichroic heterodyne detection be extended to even broader spectral gaps (>200 THz) where dispersive effects may become non-negligible?"
+      - "What is the fundamental limit of the correction factor r accuracy in the presence of chromatic dispersion in HNLF?"
+
+  - id: pri.optical_phase_tracking
+    name: "实时光学相位追踪原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      通过对光学频率梳的多个梳齿同时进行实时相位追踪（而非时间平均频率计数），
+      可以在短时间尺度（~100 s）内分辨并消除微小的系统性频率偏差。
+      传统频率计数器在 10⁻¹⁹ 以下精度时受限于计数死时间和平均效应，
+      而连续相位追踪可直接监测累积相位差，实现对频率偏移的实时灵敏检测。
+      该技术使得频率梳的合成精度可与光钟的不稳定度（10⁻¹⁷ @ 1 s）匹配，
+      而不引入额外误差。
+    domain: "光学频率测量，精密计量"
+    formula: >
+      Δφ(t) = 2π∫₀ᵗ [ν_comb(t') − ν_ref(t')] dt'；
+      分数频率偏差 = Δφ/(2π·ν_opt·T_meas)
+    key_insight: >
+      从"计数频率"到"追踪相位"的范式转换，使得 10⁻²⁰ 级的频率偏差检测
+      成为可能，而不需要超长积分时间。
+    conditions: "需要相位连续（无周期滑动）的锁相环运行"
+    source_claim: >
+      "we introduce real-time optical phase tracking with ultra-low-noise frequency combs 
+      as a fundamental means to constantly monitor frequency offsets"
+
+methods:
+  - id: meth.wideband_optical_frequency_synthesis
+    name: "宽带光学频率合成方法（多分支梳+色散外差检测）"
+    status: demonstrated
+    applies_to: ent.ultra_low_noise_fiber_comb_g20
+    steps_summary: >
+      1. 超稳激光器提供 1542 nm 相位参考 →
+      2. 一个梳齿相位锁定至 USL（传递稳定度至整个梳谱）→
+      3. 多个非线性展宽臂分别产生 1063/1157/1397 nm 光 →
+      4. 色散外差检测：在每个展宽臂末端提取基频光拍频用于相位漂移补偿 →
+      5. 实时相位追踪：连续监测各频段梳齿与外部光源的相位差 →
+      6. 输出：宽带（~90 THz）光学频率合成，精度 10⁻²⁰
+    required_hardware:
+      - ent.ultra_low_noise_fiber_comb_g20
+    advantages:
+      - "无需 transfer oscillator 方案，大幅简化系统"
+      - "实时相位追踪，100 s 内达到 10⁻²⁰ 精度"
+      - "被动补偿方案，无需额外反馈环路"
+      - "支持 ~90 THz 光学间隔的高保真频率桥接"
+    disadvantages:
+      - "仍需超稳激光作为相位参考（系统复杂度转移至参考源）"
+      - "多分支架构增加光学对准复杂度"
+      - "色散外差检测的 r 因子需要实验标定"
+    conditions:
+      - "实验室环境，光纤链路温控"
+      - "相位锁定须无周期滑动（cycle-slip-free）运行"
+    source_claim: >
+      "we demonstrate similar performance in a much reduced acquisition time, 
+      while simultaneously dropping the need for the technically complex transfer oscillator scheme"
+
+metrics:
+  - id: met.comb_frequency_synthesis_accuracy_g20
+    name: "光学频率梳合成准确度（Giunta 2020）"
+    unit: "无量纲（分数频率偏差）"
+    description: >
+      两台独立光学频率梳之间的宽带频率合成偏差，覆盖 1063–1543 nm（~90 THz），
+      表征梳作为光钟间频率桥接工具的保真度。
+    demonstrated_value:
+      value: "(5.4 ± 5.3)×10⁻²¹（单次 10⁵ s 测量运行）；各频段 35 h 平均偏差 < 2×10⁻¹⁹"
+      conditions: >
+        两台 Er:fiber 梳（多分支 vs 单分支参考），共享 1542 nm USL 参考；
+        同室共置；1063 nm、1157 nm、1397 nm 三个频段同时测量；10⁵ s 连续运行
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "UFWLAXMA", claim: "measuring an offset between two combs of (5.4 ± 5.3) × 10⁻²¹ in one single measurement run of 1 × 10⁵ s"}
+    theoretical_floor:
+      value: "原则上不存在基本物理极限——受光纤色散残余和探测器噪声限制"
+      basis: "技术噪声地板，非基本物理限制"
+      gap_note: "实测精度已超过当前任何光钟不确定度 100 倍以上"
+    historical_landmarks:
+      first_demonstration:
+        value: "(−0.4 ± 2.7)×10⁻²¹（90 次测量平均，23 THz 间隔）"
+        year: 2019
+        source: {zotero_key: "UFWLAXMA", claim: "ref. 39: fractional frequency offset of (−0.4 ± 2.7) × 10⁻²¹ between two combs"}
+        note: "先前工作使用 transfer oscillator 方案，需多次测量平均"
+      best_demonstration:
+        value: "(5.4 ± 5.3)×10⁻²¹（单次运行，~90 THz 间隔）"
+        year: 2020
+        source: {zotero_key: "UFWLAXMA"}
+        note: "Giunta 2020：首次在宽带（90 THz）上单次运行达到 10⁻²¹ 精度"
+
+  - id: met.comb_transfer_stability_g20
+    name: "光学频率梳传递稳定度（Giunta 2020）"
+    unit: "无量纲（修正 Allan 偏差 mod σ_y(τ)）"
+    description: >
+      两台频率梳之间各频段拍频的修正 Allan 偏差，表征梳频率合成的短期和中期稳定度。
+    demonstrated_value:
+      value: "mod σ_y(τ) < 10⁻¹⁸ @ τ > 10 s（各频段）；10⁻²⁰ @ ~100 s"
+      conditions: "两台 Er:fiber 梳，共享 1542 nm USL 参考，色散外差检测启用"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "UFWLAXMA", claim: "stability and accuracy at the 20th decimal place within a measurement time of <100 s"}
+
+# ═══════════════════════════════════════════════
+#  RELATIONS（关系）
+# ═══════════════════════════════════════════════
+
+relations:
+  - id: rel.G20_01
+    subject: ent.ultra_low_noise_fiber_comb_g20
+    predicate: CHARACTERIZED-BY
+    object: met.comb_frequency_synthesis_accuracy_g20
+    confidence: established
+    source: {zotero_key: "UFWLAXMA", claim: "measuring an offset between two combs of (5.4 ± 5.3) × 10⁻²¹"}
+    conditions: "多分支架构 + 色散外差检测 + 实时相位追踪"
+
+  - id: rel.G20_02
+    subject: ent.ultra_low_noise_fiber_comb_g20
+    predicate: CHARACTERIZED-BY
+    object: met.comb_transfer_stability_g20
+    confidence: established
+    source: {zotero_key: "UFWLAXMA", claim: "stability and accuracy at the 20th decimal place within a measurement time of <100 s"}
+
+  - id: rel.G20_03
+    subject: meth.wideband_optical_frequency_synthesis
+    predicate: ENABLED-BY
+    object: pri.dichroic_heterodyne_detection
+    confidence: established
+    source: {zotero_key: "UFWLAXMA", claim: "dichroic heterodyne detection is used to compensate phase drifts occurring in the generation and dissemination of widely spaced optical frequencies"}
+    conditions: "多分支非线性展宽架构中光纤相位漂移为主要误差来源"
+
+  - id: rel.G20_04
+    subject: meth.wideband_optical_frequency_synthesis
+    predicate: ENABLED-BY
+    object: pri.optical_phase_tracking
+    confidence: established
+    source: {zotero_key: "UFWLAXMA", claim: "real-time optical phase tracking with ultra-low-noise frequency combs as a fundamental means to constantly monitor frequency offsets"}
+
+  - id: rel.G20_05
+    subject: met.comb_frequency_synthesis_accuracy_g20
+    predicate: OPERATIONALIZED-AS
+    object: meth.wideband_optical_frequency_synthesis
+    confidence: established
+    source: {zotero_key: "UFWLAXMA", claim: "we significantly push the limits of such frequency measurements"}
+    note: "频率梳合成准确度通过宽带光学频率合成方法实现和验证"

@@ -626,6 +626,10 @@ note: "跨专题引用，定义于 topics/optical-clocks/papers/xxx.yaml"
 | `adhikari2014.yaml` | FTXSM9QC | Adhikari 2014 — GW 探测综述 | ✅ 符合v3.2（首次提取） |
 | `olson2019.yaml` | CDX3DFQR | Olson 2019 — RB 干涉仪 <2×10⁻¹⁶ | ✅ 符合v3.2（首次提取） |
 | `huangjc2019b.yaml` | 5DCNFGX4 | Huang 2019b — 双缠绕抗振光纤盘 | ✅ 符合v3.2（首次提取） |
+| `fortier2026.yaml` | BWR7TEZ6 | Fortier 2026 — 光学原子钟综述（Optica） | ✅ 符合v4.0（首次提取，optical-clocks 专题） |
+| `giunta2019.yaml` | KTHCQRJ2 | Giunta 2019 — 光学频率梳 20 年回顾 | ✅ 符合v4.0（首次提取，optical-frequency-combs 专题） |
+| `giunta2020.yaml` | UFWLAXMA | Giunta 2020 — 10⁻²⁰ 级宽带光学频率合成（Nature Photonics） | ✅ 符合v4.0（首次提取，optical-frequency-combs 专题） |
+| `dimarcq2024.yaml` | SDG6KXNZ | Dimarcq 2024 — SI 秒重定义路线图（Metrologia） | ✅ 符合v4.0（首次提取，timescales 专题） |
 
 **历史重构摘要**（v3.0 起，含 2026-04-16 的 v3.2 增补）：
 
