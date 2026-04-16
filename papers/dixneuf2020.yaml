@@ -1,0 +1,47 @@
+# Dixneuf 2020 — 超低强度噪声 365 W 单频光纤激光
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-16
+# Schema版本：v3.2
+
+meta:
+  zotero_key: "HJZ6BVYE"
+  source_type: technical_paper
+  reliability: high
+  title: "Ultra-low intensity noise, all fiber 365 W linearly polarized single frequency laser at 1064 nm"
+  year: 2020
+  first_author: Dixneuf
+  journal: "Optics Express"
+  volume: 28
+  issue: 8
+  pages: "10960"
+  doi: "10.1364/OE.28.010960"
+  note: >
+    全光纤 365 W 线偏振单频 1064 nm MOPA，
+    RIN 降至 -160 dBc/Hz @ 2–10 kHz（1 MHz 带宽伺服），
+    350 W 隔离输出，功率稳定性 <0.7% RMS / 1100 小时。
+    核心贡献：引力波探测和精密测量所需的高功率低噪声激光源。
+
+entities:
+  - id: ent.high_power_low_rin_fiber_laser_d20
+    name: "365 W 超低 RIN 全光纤单频激光（Dixneuf 2020）"
+    aliases: ["365 W fiber MOPA", "ultra-low RIN fiber laser"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      全光纤主振荡器-功率放大器（MOPA），1064 nm，365 W 输出，
+      定制大模面积光纤（MFD = 30 μm），RIN 伺服 1 MHz 带宽。
+      无 SBS 或模式不稳定。
+    key_parameters:
+      output_power: "365 W (350 W isolated)"
+      wavelength: "1064 nm"
+      rin: "-160 dBc/Hz @ 2–10 kHz"
+      servo_bandwidth: "1 MHz"
+      power_stability: "<0.7% RMS over 1100 hours"
+      beam_quality: "M² < 1.1"
+    note: "高功率激光源，服务引力波探测和精密光谱。"
+
+principles: []
+methods: []
+metrics: []
+
+relations: []

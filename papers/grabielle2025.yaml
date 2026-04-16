@@ -1,0 +1,53 @@
+# Grabielle 2025 — 光纤延迟线锁定噪声分析
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-16
+# Schema版本：v3.2
+
+meta:
+  zotero_key: "XSMPRNT3"
+  source_type: technical_paper
+  reliability: high
+  title: "Locking noise in laser frequency stabilization to an optical fiber delay line"
+  year: 2025
+  first_author: Grabielle
+  journal: "Optics Express"
+  volume: 33
+  issue: 16
+  pages: "35028"
+  doi: "10.1364/OE.33.035028"
+  note: >
+    研究光纤延迟线 PDH 锁频中的锁定过程噪声。
+    白频率噪声底限来自频率鉴频器非线性。
+    通过增大锁定带宽降低此噪声至非线性不再限制的水平。
+    核心贡献：识别并解决光纤延迟线锁频的锁定噪声限制。
+
+entities: []
+
+principles:
+  - id: pri.fdl_locking_noise_nonlinearity
+    name: "光纤延迟线锁定噪声——鉴频器非线性"
+    tier: domain
+    verification_status: observed
+    statement: >
+      光纤延迟线 PDH 频率稳定中，频率鉴频器的非线性
+      将残余频率波动转换为白频率噪声底限。
+      增大锁定带宽可降低残余频率波动，从而降低非线性噪声贡献。
+    domain: "光纤延迟线稳频"
+    key_insight: "鉴频器非线性是 FDL 锁定的一个重要噪声源，可通过增大带宽解决。"
+    conditions: "适用于 PDH 锁定到光纤延迟线的配置"
+    source_claim: "white frequency noise floor... focusing on the role of frequency discriminator nonlinearity"
+
+methods: []
+
+metrics: []
+
+relations:
+  - id: rel.GR01
+    subject: ent.fiber_interferometer
+    predicate: BOUNDED-BY
+    object: pri.fdl_locking_noise_nonlinearity
+    confidence: established
+    source: {zotero_key: "XSMPRNT3", claim: "white frequency noise floor that limited the locking performance"}
+    is_system_limit: false
+    regime: short-term
+    note: "跨文件引用，ent.fiber_interferometer 定义于 jiang2010.yaml"

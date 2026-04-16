@@ -553,6 +553,13 @@ note: "跨文件引用，定义于 shaddock1999.yaml"
 | `gao2025.yaml` | JAW66GYL | Gao 2025 — 循环干涉仪超低频噪声 | ✅ 符合v3.2（首次提取） |
 | `ding2025.yaml` | QGLVTMB7 | Ding 2025 — ULE 玻璃空心光纤 | ✅ 符合v3.2（首次提取） |
 | `shi2022.yaml` | UKBFZLXG | Shi 2022 — 温度不敏感光纤干涉仪 | ✅ 符合v3.2（首次提取） |
+| `grabielle2025.yaml` | XSMPRNT3 | Grabielle 2025 — FDL 锁定噪声 | ✅ 符合v3.2（首次提取） |
+| `tai2016.yaml` | FIJXUVZV | Tai 2016 — 超低 RAM EOM | ✅ 符合v3.2（首次提取） |
+| `potnis2016.yaml` | WDGF2B36 | Potnis 2016 — PDH 光电探测器 | ✅ 符合v3.2（首次提取） |
+| `grote2016.yaml` | VM5MJ9B3 | Grote 2016 — GW 光电探测器 | ✅ 符合v3.2（首次提取） |
+| `nelson2008.yaml` | XAKCIXKT | Nelson 2008 — RIN 抑制 | ✅ 符合v3.2（首次提取） |
+| `gobron2017.yaml` | HKYLIW8U | Gobron 2017 — 色散外差 SHB | ✅ 符合v3.2（首次提取） |
+| `dixneuf2020.yaml` | HJZ6BVYE | Dixneuf 2020 — 365W 低 RIN 激光 | ✅ 符合v3.2（首次提取） |
 
 **历史 v3.0 重构摘要**（2026-04-15）：
 

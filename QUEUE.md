@@ -59,9 +59,9 @@
 ### 其他技术细节
 
 - [x] `S5GJNVG8` | Zhang 2014 | Reduction of residual amplitude modulation to 1×10⁻⁶
-- [ ] `FIJXUVZV` | Tai 2016 | Electro-optic modulator with ultra-low residual amplitude modulation
-- [ ] `WDGF2B36` | Potnis 201x | Broadband low-noise photodetector for PDH
-- [ ] `VM5MJ9B3` | Grote 2016 | High power and ultra-low-noise photodetector for squeezed-light
+- [x] `FIJXUVZV` | Tai 2016 | 超低 RAM 布儒斯特角 EOM → `tai2016.yaml`
+- [x] `WDGF2B36` | Potnis 2016 | 宽带低噪声 PDH 光电探测器 → `potnis2016.yaml`
+- [x] `VM5MJ9B3` | Grote 2016 | 高功率超低噪声光电探测器 → `grote2016.yaml`
 - [x] `8MNIBZEW` | Möhle 2013 | Highly stable piezoelectrically tunable optical cavities → `mohle2013.yaml`
 - [x] `WP8FMS5N` | Herbers 2019 | Phase noise of frequency doublers in optical clock lasers → `herbers2019.yaml`
 
@@ -77,7 +77,7 @@
 - [x] `WK9QLCGF` | Leibrandt 2013 | Eu³⁺:Y₂SiO₅ 光谱烧孔频率参考 → `leibrandt2013.yaml`
 - [x] `N9AGEQ8S` | Zhang 2017 | Ultrastable Silicon Cavity in a Continuously Operating Closed-Cycle Cryostat at 4 K → `zhang2017.yaml`
 - [x] `SBPRDKPV` | Jeon 2025 | 10⁻¹⁵-level laser stabilization down to fiber thermal noise limit → `jeon2025.yaml`
-- [ ] `HKYLIW8U` | Gobron 2017 | Dispersive heterodyne probing method for laser frequency stabilization
+- [x] `HKYLIW8U` | Gobron 2017 | 色散外差 SHB 稳频 → `gobron2017.yaml`
 - [ ] `MPWLNUIH` | Galland 202x | Double-heterodyne probing for an ultra-stable laser based on spectral hole
 
 ### 谱孔燃烧锁频（替代方法）
@@ -95,8 +95,8 @@
 - [ ] `CDX3DFQR` | Olson 201x | Ramsey-Borde Matter-Wave Interferometry for Laser Frequency
 - [ ] `UP2Q8F9Y` | Loh 2019 | Ultra-narrow linewidth Brillouin laser with nanokelvin temperature
 - [ ] `ELKHJ5GL` | Li 2019 | Thermal phase noise in giant interferometric fiber optic gyro
-- [ ] `HJZ6BVYE` | Dixneuf 202x | Ultra-low intensity noise all-fiber laser
-- [ ] `XAKCIXKT` | Nelson 200x | Relative Intensity Noise Suppression for RF Photonic Links
+- [x] `HJZ6BVYE` | Dixneuf 2020 | 365 W 超低 RIN 单频光纤激光 → `dixneuf2020.yaml`
+- [x] `XAKCIXKT` | Nelson 2008 | RIN 抑制技术 → `nelson2008.yaml`
 - [x] `KH82PQJ2` | Hu 2015 | Ultralow acceleration sensitivity fiber spool → `hu2015.yaml`
 - [ ] `LY9I8I9I` | Braun 199x | CONTINUOUS-WAVE MODE-LOCKED SOLID-STATE LASERS
 - [ ] `5XG8FTEE` | Kartner 199x | CONTINUOUS-WAVE MODE-LOCKED SOLID-STATE LASERS

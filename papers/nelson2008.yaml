@@ -1,0 +1,43 @@
+# Nelson 2008 — 相对强度噪声（RIN）抑制
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-16
+# Schema版本：v3.2
+
+meta:
+  zotero_key: "XAKCIXKT"
+  source_type: technical_paper
+  reliability: high
+  title: "Relative Intensity Noise Suppression for RF Photonic Links"
+  year: 2008
+  first_author: Nelson
+  journal: "IEEE Photonics Technology Letters"
+  volume: 20
+  issue: 18
+  pages: "1542-1544"
+  doi: "10.1109/LPT.2008.928834"
+  note: >
+    利用光链路中已有的强度调制器同时实现 RIN 抑制和信号编码，
+    在 10 MHz 带宽内抑制 RIN 10–50 dB。
+    应用于光电振荡器（OEO）显著改善相位噪声。
+    核心贡献：无需额外硬件的 RIN 抑制技术。
+
+entities: []
+
+principles:
+  - id: pri.rin_suppression_reuse_modulator
+    name: "利用已有调制器的 RIN 抑制原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      利用射频光子链路中已有的强度调制器，
+      在编码微波信号的同时通过闭环伺服抑制激光 RIN，
+      避免额外插入损耗。10 MHz 带宽内实现 10–50 dB 抑制。
+    domain: "激光噪声抑制 / 光电振荡器"
+    key_insight: "复用已有调制器实现零额外硬件的 RIN 抑制。"
+    conditions: "需要光链路中已存在强度调制器"
+    source_claim: "utilize the intensity modulator already present in a photonic link... suppression of 10 to 50 dB"
+
+methods: []
+metrics: []
+
+relations: []
