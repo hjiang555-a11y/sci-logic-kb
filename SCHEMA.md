@@ -511,6 +511,7 @@ note: "跨文件引用，定义于 shaddock1999.yaml"
 | `dong2015.yaml` | W8K5GLK6 | Dong 2015 — 光纤延迟线锁频首次亚赫兹线宽（0.67 Hz） | ✅ 符合v3.1（首次提取） |
 | `kefelian2009.yaml` | MN54T4F3 | Kéfélian 2009 — 光纤延迟线锁频首次实现超低频率噪声 | ✅ 符合v3.1（首次提取） |
 | `huang2023.yaml` | JYGVFJBN | Huang 2023 — 全光纤超稳激光长期稳定度 1.1×10⁻¹⁴ | ✅ 符合v3.1（首次提取） |
+| `jeon2025.yaml` | SBPRDKPV | Jeon 2025 — 自零差光纤锁频 6.3×10⁻¹⁵ @ 16 ms，4–200 Hz 达到热噪声极限 | ✅ 符合v3.2（首次提取） |
 | `kedar2023.yaml` | 8YK6EH22 | Kedar 2023 — 低温硅腔晶体镀层频率噪声与双折射 | ✅ 符合v3.1（首次提取） |
 | `chen2025.yaml` | N6HILT6B | Chen 2025 — 10 cm Si 腔 sub-5K 10⁻¹⁷ 级稳定度 | ✅ 符合v3.1（首次提取） |
 | `webster2008.yaml` | VU2V2PTX | Webster 2008 — 热噪声极限光学腔（首次全面验证） | ✅ 符合v3.1（首次提取） |

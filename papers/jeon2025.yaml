@@ -1,0 +1,306 @@
+# Jeon 2025 — 自零差光纤延迟线锁频达到光纤热噪声极限
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-16
+# Schema版本：v3.2
+
+meta:
+  zotero_key: "SBPRDKPV"
+  source_type: technical_paper
+  reliability: high
+  title: "10⁻¹⁵-level laser stabilization down to fiber thermal noise limit using self-homodyne detection"
+  year: 2025
+  first_author: Jeon
+  journal: "Optics Letters"
+  volume: 50
+  issue: 4
+  pages: "1057-1060"
+  doi: "10.1364/OL.541281"
+  note: >
+    采用 1 km 全单模光纤迈克尔逊自零差干涉仪与平衡探测，
+    在无真空系统条件下将 1550 nm 连续激光稳定到光纤热噪声极限，
+    实现 6.3×10⁻¹⁵ @ 16 ms 的频率不稳定度。
+    核心贡献：把光纤延迟线稳频从“自外差 + AOM/RF”推进到“自零差 + 单 BPD”
+    的极简架构，并在 4–200 Hz 频段达到 1 km 光纤往返热噪声地板。
+
+entities: []
+  # 复用 ent.fiber_interferometer（定义于 jiang2010.yaml）和 ext 条件节点；
+  # 本文的便携金属气密封装作为实现细节并入方法/关系条件，不单建新实体。
+
+principles:
+  - id: pri.self_homodyne_balanced_detection
+    name: "自零差平衡探测原理（光纤延迟线）"
+    tier: domain
+    verification_status: observed
+    statement: >
+      在光纤迈克尔逊干涉仪中，两臂返回的同频光场直接在 50:50 耦合器输出端形成互补干涉，
+      平衡光电探测器对两路光功率做差，可直接输出随激光频率失谐变化的误差信号。
+      由于不需要 AOM 频移或后续 RF 解调，系统可仅依靠被动光纤器件和单个 BPD 实现稳频；
+      同时，共模强度噪声在差分探测中被显著抑制，使系统噪声地板可降至光纤热噪声极限以下。
+    domain: "光纤干涉仪稳频 / 误差信号探测"
+    key_insight: "自零差平衡探测将光纤延迟线频率鉴别与强度噪声抑制合并到单个无 RF 的探测环节。"
+    conditions: "适用于迈克尔逊型光纤延迟线，两路返回光保持足够相干且 BPD 两路平衡良好"
+    preconditions:
+      - "两臂干涉光的偏振态经 FRM 或等效手段匹配，以维持高对比度干涉"
+      - "BPD 的本底电噪声低于目标光纤热噪声地板"
+      - "激光锁定点工作在干涉曲线线性区（近正交点）"
+    invalidated_when:
+      - "两输出端的平衡探测失配严重，共模强度噪声重新耦合到误差信号"
+      - "需要高频频移标记或远离直流的异频探测时，自零差不再具备结构优势"
+    source_claim: >
+      "this system uses only a few passive optical components and a single balanced
+      photodetector (BPD) to generate the error signal"
+    open_questions:
+      - "在保持无 AOM/无 RF 极简结构的前提下，自零差方案的长期漂移抑制是否能逼近 Huang 2023 那样的 1 s 级最佳光纤稳定度？"
+
+methods:
+  - id: meth.self_homodyne_fiber_locking
+    name: "自零差光纤延迟线锁频"
+    status: demonstrated
+    applies_to: ent.fiber_interferometer
+    steps_summary: >
+      激光进入光纤迈克尔逊干涉仪 → 1 km 光纤延迟臂与短参考臂分别往返反射 →
+      两输出端在 BPD 上做平衡差分得到误差信号 → PI 伺服反馈至激光电流调制端 → 实现连续波激光稳频
+    required_hardware:
+      - ent.fiber_interferometer
+    advantages:
+      - "无需 AOM、EOM、混频器或额外 RF 电子学，硬件显著简化"
+      - "仅用全单模无源光纤器件和单个 BPD，结构紧凑，适合便携部署"
+      - "平衡探测抑制激光强度噪声，使 1 km 光纤系统在 4–200 Hz 达到热噪声极限"
+      - "不需要真空系统即可获得 10⁻¹⁵ 级短期稳定度"
+    disadvantages:
+      - "长期稳定度仍受光纤长度漂移限制，0.1 s 以上积分线宽可增至 ~12 Hz"
+      - "锁定带宽受 1 km 延迟限制，约 100 kHz 处出现带宽峰"
+      - "现场应用仍依赖低振动线轴设计与气密封装来抑制声学/机械扰动"
+    conditions:
+      - "使用 1 km 级低振动灵敏度光纤线轴与 FRM 迈克尔逊结构"
+      - "BPD 电噪声低于 2 km 有效光纤往返的热噪声"
+      - "激光可通过电流调制端接受 PI 伺服反馈"
+    source_claim: >
+      "we adopt an all-single-mode (SM) fiber self-homodyne interferometric
+      configuration with a 1-km vibration-insensitive optical fiber delay"
+    note: >
+      新方法节点，作为 meth.fiber_delay_locking（jiang2010.yaml 中 AOM 自外差实现）的
+      极简替代分支；新节点边界待专家审核。
+
+metrics:
+  - id: met.fractional_freq_instability_jeon25
+    name: "分数频率不稳定度（Jeon 2025，自零差光纤锁频）"
+    unit: "无量纲（重叠 Allan 偏差 σ_y(τ)）"
+    description: >
+      两台独立自零差光纤锁定 1550 nm 激光拍频得到的短期频率不稳定度。
+      最低值出现在 16 ms 平均时间，达到 10⁻¹⁵ 量级。
+    demonstrated_value:
+      value: "6.3×10⁻¹⁵ @ 16 ms"
+      conditions: "两台 1550 nm CW 激光，各锁定到独立 1 km 光纤自零差迈克尔逊干涉仪，拍频约 78.9 MHz"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "SBPRDKPV"
+        claim: "The frequency instability reaches a minimum of 6.3 × 10−15 at a 16-ms averaging time"
+    theoretical_floor:
+      value: "1 km 光纤往返热噪声极限"
+      basis: "Duan 2012 + Dong 2016 的 thermomechanical + thermo-refractive fiber noise 求和"
+      gap_note: "4–200 Hz 频段实测频噪已达到该极限；更长平均时间仍受光纤长度漂移影响"
+    historical_landmarks:
+      first_demonstration:
+        value: "6.3×10⁻¹⁵ @ 16 ms"
+        year: 2025
+        source: {zotero_key: "SBPRDKPV"}
+        note: "首次自零差光纤延迟线锁频达到 10⁻¹⁵ 级短期稳定度（无真空系统）"
+      selected_milestones:
+        - year: 2023
+          value: "3.2×10⁻¹⁵ @ 1 s；1.1×10⁻¹⁴ @ 1000 s"
+          source: {zotero_key: "JYGVFJBN"}
+          note: "Huang 2023 代表自外差+强温控的最佳长期稳定度"
+
+  - id: met.freq_noise_psd_fiber_jeon25
+    name: "频率噪声谱密度（Jeon 2025，自零差 1 km 光纤）"
+    unit: "Hz²/Hz"
+    description: >
+      自零差光纤锁定后激光的频率噪声谱密度。
+      相对于自由运行激光，在 4 Hz–10 kHz 频段最高降低约 10⁴ 倍，并在 4–200 Hz 触及光纤热噪声地板。
+    demonstrated_value:
+      value: "4 Hz–10 kHz 频段最高降噪约 10⁴；4–200 Hz 达到 1 km 光纤往返热噪声极限"
+      conditions: "1 km 光纤线轴（2 km 有效往返长度），短期频噪测量，多次重复试验一致"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "SBPRDKPV"
+        claim: "the frequency noise is reduced by up to 10^4 times in the Fourier frequency range from 4 Hz to 10 kHz"
+    theoretical_floor:
+      value: "fiber thermal-noise limit of the 1-km fiber round trip"
+      basis: "thermomechanical + thermo-refractive fiber noise"
+      gap_note: "BPD 电噪声低于该极限，因此系统能真实触及热噪声地板"
+    historical_landmarks:
+      first_demonstration:
+        value: "4–200 Hz 频段触及 1 km 光纤往返热噪声极限"
+        year: 2025
+        source: {zotero_key: "SBPRDKPV"}
+        note: "首次在无真空自零差光纤延迟线模块中明确达到该热噪声极限"
+
+  - id: met.laser_linewidth_jeon25
+    name: "激光线宽（Jeon 2025，自零差光纤锁频）"
+    unit: "Hz"
+    description: >
+      由稳定后频率噪声估算的线宽。
+      短时间窗内达到亚赫兹，而从 1 Hz Fourier 频率起积分则受较长时间热漂移影响。
+    demonstrated_value:
+      value: "< 1 Hz（0.1 s 时间窗）；12 Hz（从 1 Hz Fourier 频率起积分）"
+      conditions: "基于 β-separation line 与稳定后频率噪声 PSD 估算"
+      verification_status: inferred
+      confidence: likely
+      source:
+        zotero_key: "SBPRDKPV"
+        claim: "the linewidth within 0.1 s is less than 1 Hz ... The integrated linewidth from a 1-Hz Fourier frequency is calculated as 12 Hz"
+    note: "两种线宽数值对应不同积分时间窗，反映短期热噪声极限与长期热漂移的区分"
+
+relations:
+  - id: rel.Je01
+    subject: met.fractional_freq_instability_jeon25
+    predicate: OPERATIONALIZED-AS
+    object: meth.self_homodyne_fiber_locking
+    confidence: established
+    source:
+      zotero_key: "SBPRDKPV"
+      claim: "we demonstrate a self-homodyne detection method to stabilize a continuous-wave 1550-nm laser to a 1-km optical fiber delay line"
+    conditions: "两台独立自零差光纤锁定激光拍频测量"
+
+  - id: rel.Je02
+    subject: met.freq_noise_psd_fiber_jeon25
+    predicate: OPERATIONALIZED-AS
+    object: meth.self_homodyne_fiber_locking
+    confidence: established
+    source:
+      zotero_key: "SBPRDKPV"
+      claim: "the frequency noise is reduced by up to 10^4 times in the Fourier frequency range from 4 Hz to 10 kHz"
+    conditions: "1 km 光纤自零差迈克尔逊干涉仪"
+
+  - id: rel.Je03
+    subject: meth.self_homodyne_fiber_locking
+    predicate: ENABLED-BY
+    object: pri.fiber_delay_line_frequency_ref
+    confidence: established
+    source:
+      zotero_key: "SBPRDKPV"
+      claim: "The 1-km fiber delay with the Michelson interferometer offers a Q factor of four billion"
+    conditions: "1 km 光纤线轴对应 2 km 有效往返长度"
+    temporal_role: extends
+    note: "pri.fiber_delay_line_frequency_ref 定义于 jiang2010.yaml"
+
+  - id: rel.Je04
+    subject: meth.self_homodyne_fiber_locking
+    predicate: ENABLED-BY
+    object: pri.self_homodyne_balanced_detection
+    confidence: established
+    source:
+      zotero_key: "SBPRDKPV"
+      claim: "A simple BPD can effectively suppress the coupling of intensity noise of the laser to be stabilized to the frequency noise"
+    conditions: "BPD 输出电噪声低于 2 km 有效光纤热噪声地板"
+    temporal_role: proposes
+
+  - id: rel.Je05
+    subject: ent.fiber_interferometer
+    predicate: CHARACTERIZED-BY
+    object: met.fractional_freq_instability_jeon25
+    confidence: established
+    source:
+      zotero_key: "SBPRDKPV"
+      claim: "achieving a frequency instability of 6.3×10−15 at a 16-ms averaging time"
+    conditions: "1 km vibration-insensitive fiber spool, air-tight aluminum case"
+    note: "ent.fiber_interferometer 定义于 jiang2010.yaml"
+
+  - id: rel.Je06
+    subject: ent.fiber_interferometer
+    predicate: CHARACTERIZED-BY
+    object: met.freq_noise_psd_fiber_jeon25
+    confidence: established
+    source:
+      zotero_key: "SBPRDKPV"
+      claim: "the frequency noise is reduced by up to 10^4 times in the Fourier frequency range from 4 Hz to 10 kHz"
+    conditions: "1 km vibration-insensitive fiber spool, short-term noise measurement"
+    note: "ent.fiber_interferometer 定义于 jiang2010.yaml"
+
+  - id: rel.Je07
+    subject: ent.fiber_interferometer
+    predicate: CHARACTERIZED-BY
+    object: met.laser_linewidth_jeon25
+    confidence: likely
+    source:
+      zotero_key: "SBPRDKPV"
+      claim: "the linewidth within 0.1 s is less than 1 Hz"
+    conditions: "基于稳定后频噪估算"
+    note: "ent.fiber_interferometer 定义于 jiang2010.yaml"
+
+  - id: rel.Je08
+    subject: ent.fiber_interferometer
+    predicate: BOUNDED-BY
+    object: pri.fiber_thermal_noise_wanser
+    confidence: established
+    source:
+      zotero_key: "SBPRDKPV"
+      claim: "the frequency noise level reaches the thermal noise limit of the 1-km fiber round trip ... in the 4–200 Hz Fourier frequency range"
+    conditions: "短期频率噪声测量，4–200 Hz，1 km 线轴对应 2 km 有效往返长度"
+    is_system_limit: true
+    dominated_by: null
+    quantitative_contribution: "4–200 Hz 频段主导限制；BPD 电噪声已低于该热噪声地板"
+    regime: short-term
+    verification_status: observed
+    temporal_role: validates
+    breakthrough_paths:
+      - direction: meth.self_homodyne_fiber_locking
+        expected_gain: "通过自零差平衡探测压低强度噪声与探测电噪声，使 1 km 光纤系统在无真空条件下首次显露热噪声极限"
+        status: demonstrated
+        source:
+          zotero_key: "SBPRDKPV"
+          claim: "The fact that this noise level is lower than the thermal noise ... indicates that the self-homodyne balanced detection is sufficient"
+    note: "pri.fiber_thermal_noise_wanser 定义于 dong2015.yaml"
+
+  - id: rel.Je09
+    subject: ent.fiber_interferometer
+    predicate: CONDITIONED-BY
+    object: ent.vibration_environment
+    interface_metric: met.freq_noise_from_vibration
+    coupling_formula: "Δν/ν ≈ 10⁻¹⁰/g × a for the packaged 1 km spool"
+    internal_property: "vibration-insensitive 1 km fiber spool in a 140×180×51 mm³ air-tight aluminum case"
+    scaling_law: "残余频率扰动随环境加速度与线轴加速度灵敏度近似线性缩放"
+    confidence: established
+    source:
+      zotero_key: "SBPRDKPV"
+      claim: "The spool ... demonstrates a vibration sensitivity of approximately 10−10 [1/g]"
+    is_system_limit:
+      current: false
+      conditions: "本文封装与线轴设计已将振动/声学噪声压到短期热噪声极限以下；若离开气密封装或更强振动环境，振动限制可能重新变为主导"
+    note: "ent.vibration_environment 与 met.freq_noise_from_vibration 跨文件引用，定义见 young1999.yaml / webster2007.yaml"
+
+  - id: rel.Je10
+    subject: meth.self_homodyne_fiber_locking
+    predicate: COMPETES-WITH
+    object: meth.fiber_delay_locking
+    context: "光纤延迟线误差信号提取架构：自零差 vs AOM 自外差"
+    tradeoffs:
+      subject_wins:
+        - "无需 AOM 与额外 RF 组件，仅靠无源光纤器件 + 单个 BPD 即可锁频"
+        - "结构更紧凑，便于封装成 140×180×51 mm³ 便携模块"
+        - "在无真空条件下达到 10⁻¹⁵ 级短期稳定度并触及光纤热噪声地板"
+      object_wins:
+        - "已有更成熟的高性能演示，含亚赫兹线宽和更优 1 s–1000 s 长期稳定度"
+        - "AOM 异频探测更适合需要远离直流噪声与复杂伺服架构的场景"
+        - "现有知识库中的 meth.fiber_delay_locking 对扫频/可捷变应用建模更完整"
+    comparison_matrix:
+      - dimension: "rf_component_count"
+        subject: "single BPD only"
+        object: "AOM + RF heterodyne chain"
+      - dimension: "short_term_stability"
+        subject: "6.3×10⁻¹⁵ @ 16 ms"
+        object: "5×10⁻¹⁵ @ 0.1–1 s（Dong 2015 单激光）"
+      - dimension: "long_term_stability"
+        subject: "受 28–270 Hz/s 漂移影响，未给出优于 Huang 2023 的秒级结果"
+        object: "1.1×10⁻¹⁴ @ 1000 s（Huang 2023）"
+      - dimension: "packaging_complexity"
+        subject: "low"
+        object: "medium"
+    confidence: established
+    source:
+      zotero_key: "SBPRDKPV"
+      claim: "Unlike self-heterodyne interferometers, which require acousto-optic modulators and additional RF components, this system uses only a few passive optical components and a single balanced photodetector"
+    note: "meth.fiber_delay_locking 定义于 jiang2010.yaml；此处特指其 AOM 自外差实现"
