@@ -1,0 +1,196 @@
+# Zhang 2017 — 4 K 闭循环连续运行硅腔 1×10⁻¹⁶ 不稳定度
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-16
+# Schema版本：v3.2
+# 主体实体沿用 robinson2019.yaml 中的 ent.si_crystal_fp_cavity_4k_r19
+# 说明：Zhang 2017 是同一 6 cm / 4 K / closed-cycle Si cavity 平台的前身演示，
+#       重点补充早期性能指标，以及当时仍活跃的振动/热环境限制关系。
+
+meta:
+  zotero_key: "N9AGEQ8S"
+  source_type: technical_paper
+  reliability: high
+  title: "Ultrastable Silicon Cavity in a Continuously Operating Closed-Cycle Cryostat at 4 K"
+  year: 2017
+  first_author: Zhang
+  journal: "Physical Review Letters"
+  volume: 119
+  pages: "243601"
+  doi: "10.1103/PhysRevLett.119.243601"
+  note: >
+    首次演示在连续运行闭循环低温机中工作的 4 K 硅单晶参考腔（6 cm，1542 nm），
+    实现约 1×10⁻¹⁶ 的分数频率不稳定度和 17 mHz 中位线宽。
+    论文核心贡献不是突破热噪声极限本身，而是证明闭循环 4 K 平台可以在无人值守下
+    将振动与温度扰动压低到接近热噪声底（6×10⁻¹⁷）附近。
+    关键工程创新包括多级热滤波屏蔽（HoCu₂ + 铜/铝热屏 + G10 低导热支撑）
+    和 split-plate 机械解耦布局。本文给出进一步通向 10⁻¹⁸ 的两条明确路径：
+    更长腔长（20 cm）与 AlGaAs 晶体镀层。该平台后续在 Robinson 2019 中达到
+    6.5×10⁻¹⁷ 热噪声极限。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+# 不新增实体节点——本文对应的主体系统与 robinson2019.yaml 中的
+# ent.si_crystal_fp_cavity_4k_r19 为同一 6 cm / 4 K / closed-cycle Si cavity 平台。
+
+metrics:
+  - id: met.fractional_freq_instability_z17
+    name: "分数频率不稳定度（Zhang 2017，4 K 闭循环 Si 腔）"
+    unit: "无量纲（修正 Allan 偏差 mod σ_y）"
+    description: >
+      6 cm 4 K 硅单晶腔在连续运行闭循环低温机中的短时分数频率不稳定度，
+      通过与 25 cm / 40 cm 两台 ULE 腔做相关三角帽比较获得。
+    demonstrated_value:
+      value: "≈1×10⁻¹⁶（0.06–100 s averaging；0.06 s 以下受振动限制）"
+      conditions: >
+        1542 nm，6 cm Si cavity，T≈4 K，SiO₂/Ta₂O₅ 镀层，finesse ≈ 4×10⁵；
+        三角帽比较对象为 25 cm ULE 腔（1542 nm）与 40 cm ULE 腔（698 nm，经 Yb comb 连接）
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "N9AGEQ8S", claim: "the silicon cavity supports a low instability around 1 × 10−16, which is close to the expected thermal noise floor over several decades of averaging times"}
+    theoretical_floor:
+      value: "6×10⁻¹⁷"
+      basis: "按 4 K、6 cm 腔长与光斑尺寸计算的布朗热噪声底"
+      gap_note: >
+        实测值已接近该底噪，但仍高于热噪声极限；论文估计额外技术噪声总和约 3×10⁻¹⁷，
+        且 τ < 0.06 s 明显受振动限制。
+    historical_landmarks:
+      first_demonstration:
+        value: "≈1×10⁻¹⁶"
+        year: 2017
+        source: {zotero_key: "N9AGEQ8S"}
+        note: "首次连续运行闭循环 4 K Si 腔达到 10⁻¹⁶ 级稳定度"
+      best_demonstration:
+        value: "6.5×10⁻¹⁷"
+        year: 2019
+        source: {zotero_key: "JIZCUZLY"}
+        note: "Robinson 2019 在同平台后续优化后达到热噪声极限"
+
+  - id: met.laser_linewidth_z17
+    name: "激光线宽（Zhang 2017，4 K 闭循环 Si 腔）"
+    unit: "mHz（FWHM）"
+    description: >
+      通过 771 nm 光学拍频统计分布反推得到的 1542 nm Si 腔锁定激光个体线宽。
+    demonstrated_value:
+      value: "中位线宽 17 mHz（1542 nm）"
+      conditions: >
+        40 cm ULE 腔参考；771 nm 拍频，64 s FFT 测量，15 mHz RBW，75 次重复；
+        先去除由 40 cm ULE 腔主导的 20 mHz/s 线性漂移，再按 σSi/√(σSi²+σULE²) 反推单激光线宽
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "N9AGEQ8S", claim: "the computed results... reveal that the median of the linewidth distribution is 17 mHz at 1542 nm"}
+    historical_landmarks:
+      first_demonstration:
+        value: "17 mHz"
+        year: 2017
+        source: {zotero_key: "N9AGEQ8S"}
+        note: "首次闭循环 4 K Si 腔达到亚 20 mHz 中位线宽"
+      best_demonstration:
+        value: "16 mHz"
+        year: 2019
+        source: {zotero_key: "JIZCUZLY"}
+        note: "Robinson 2019 在同平台后续优化后进一步压低到 16 mHz 中位值"
+
+  - id: met.cavity_frequency_drift_z17
+    name: "腔频率漂移率（Zhang 2017，4 K 闭循环 Si 腔）"
+    unit: "Hz/s（附对应分数漂移率）"
+    description: "通过 Sr 光晶格钟引用测得的 4 K Si 腔三天尺度线性频率漂移上限"
+    demonstrated_value:
+      value: "< 1 mHz/s @ 1542 nm（约 5×10⁻¹⁸ s⁻¹）"
+      conditions: "经 Yb fiber comb 锁定到 Sr optical lattice clock，三天观测，线性拟合"
+      verification_status: observed
+      confidence: moderate
+      source: {zotero_key: "N9AGEQ8S", claim: "Over a three-day period, the linear drift was <1 mHz=s at 1542 nm (5 × 10−18 s−1)"}
+    note: "论文注明长期漂移机理仍在继续研究；后续 Robinson 2019 专门系统研究了功率相关漂移。"
+
+# ═══════════════════════════════════════════════
+#  RELATIONS（关系）
+# ═══════════════════════════════════════════════
+
+relations:
+  - id: rel.Z17_01
+    subject: ent.si_crystal_fp_cavity_4k_r19
+    predicate: CHARACTERIZED-BY
+    object: met.fractional_freq_instability_z17
+    confidence: established
+    source: {zotero_key: "N9AGEQ8S", claim: "the silicon cavity supports a low instability around 1 × 10−16"}
+    conditions: "连续运行闭循环低温机，4 K，6 cm Si 腔"
+    note: "ent.si_crystal_fp_cavity_4k_r19 定义于 robinson2019.yaml；Zhang 2017 为同平台前身演示。"
+
+  - id: rel.Z17_02
+    subject: ent.si_crystal_fp_cavity_4k_r19
+    predicate: CHARACTERIZED-BY
+    object: met.laser_linewidth_z17
+    confidence: established
+    source: {zotero_key: "N9AGEQ8S", claim: "the median of the linewidth distribution is 17 mHz at 1542 nm"}
+    conditions: "4 K，1542 nm，771 nm 拍频反推"
+    note: "ent.si_crystal_fp_cavity_4k_r19 定义于 robinson2019.yaml；本文给出该平台首次闭循环低温机线宽纪录。"
+
+  - id: rel.Z17_03
+    subject: ent.si_crystal_fp_cavity_4k_r19
+    predicate: CHARACTERIZED-BY
+    object: met.cavity_frequency_drift_z17
+    confidence: established
+    source: {zotero_key: "N9AGEQ8S", claim: "Over a three-day period, the linear drift was <1 mHz=s at 1542 nm"}
+    conditions: "Sr optical lattice clock 引用，三天观测"
+    note: "ent.si_crystal_fp_cavity_4k_r19 定义于 robinson2019.yaml"
+
+  - id: rel.Z17_04
+    subject: ent.si_crystal_fp_cavity_4k_r19
+    predicate: BOUNDED-BY
+    object: pri.brownian_thermal_noise_fdt
+    confidence: established
+    source: {zotero_key: "N9AGEQ8S", claim: "the thermal noise floor of 6 × 10−17... is computed taking into account the operating temperature, the cavity length, and the beam spot size"}
+    conditions: "4 K，6 cm Si 腔，SiO₂/Ta₂O₅ 镀层，光斑尺寸由 1 m 曲率半径镜确定"
+    is_system_limit: false
+    dominated_by: null
+    quantitative_contribution: "理论底噪 6×10⁻¹⁷；实测约 1×10⁻¹⁶，说明热噪声已接近但尚未单独决定系统上限"
+    regime: short-term
+    verification_status: calculated
+    temporal_role: proposes
+    breakthrough_paths:
+      - direction: pri.crystalline_coating_low_brownian_noise
+        expected_gain: "以 AlGaAs 晶体镀层替代 SiO₂/Ta₂O₅ → 进一步降低镀层布朗噪声，是文中明确给出的 <10⁻¹⁷ / 10⁻¹⁸ 路径之一"
+        status: theoretical
+        source: {zotero_key: "N9AGEQ8S", claim: "By combining the technical advances of this work with AlGaAs coatings... there is a clear path forward for developing a cavity with 10−18-level instability"}
+      - direction: pri.long_cavity_thermal_noise_reduction
+        expected_gain: "将腔长从 6 cm 增至 20 cm 可按 σ_y ∝ 1/L 降低分数热噪声，是文中提出的另一条明确升级路径"
+        status: theoretical
+        source: {zotero_key: "N9AGEQ8S", claim: "By combining the technical advances of this work with... a longer cavity length of 20 cm, there is a clear path forward for developing a cavity with 10−18-level instability"}
+    note: >
+      pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml。
+      本文表明闭循环 4 K 平台已把技术噪声压低到接近热噪声底，
+      但 2017 阶段尚未像 Robinson 2019 那样真正达到热噪声极限。
+
+  - id: rel.Z17_05
+    subject: ent.si_crystal_fp_cavity_4k_r19
+    predicate: CONDITIONED-BY
+    object: ent.vibration_environment
+    interface_metric: met.fractional_freq_instability_z17
+    coupling_formula: "S_νν,vib(f) ≈ Σ_i |H_ai(f)|² · S_aiai(f)"
+    internal_property: >
+      10–400 Hz 频段测得从三轴加速度到频率噪声的传递函数；
+      cryocooler 1 Hz 循环及其谐波在 1–10 Hz 出现近单位相干峰
+    confidence: established
+    source: {zotero_key: "N9AGEQ8S", claim: "For τ < 0.06 s, the instability is limited by vibrations"}
+    is_system_limit:
+      current: true
+      conditions: "短时（τ < 0.06 s）与 cryocooler cycle harmonics 附近，振动仍是当前主导限制"
+    note: >
+      ent.vibration_environment 定义于 young1999.yaml / webster2007.yaml。
+      本文通过 split-plate + AVI 将 1–10 Hz 振动衰减 4–5 个数量级，但尚未完全退出限制链。
+
+  - id: rel.Z17_06
+    subject: ent.si_crystal_fp_cavity_4k_r19
+    predicate: CONDITIONED-BY
+    object: ent.thermal_environment
+    interface_metric: met.fractional_freq_instability_z17
+    coupling_formula: "σ_y,temp ≈ α_Si(4K) · ΔT"
+    internal_property: "α_Si(4K) ≈ 2×10⁻¹¹ K⁻¹；cryo cooler 本征温度波动约 20 mK @ 6 s；多级热滤波后腔温涨落在 100 s 内低于热噪声底"
+    confidence: established
+    source: {zotero_key: "N9AGEQ8S", claim: "The corresponding temperature-induced frequency fluctuations are below the expected thermal noise floor for averaging times up to 100 s"}
+    is_system_limit:
+      current: false
+      conditions: "经多级热屏和 HoCu₂ 被动滤波后，短中时标已退出主导限制；更长平均时间仍受室温外壳涨落影响"
+    note: "ent.thermal_environment 定义于 jiang2010.yaml；本文的关键工程贡献之一就是将温度链路压低到接近热噪声底。"

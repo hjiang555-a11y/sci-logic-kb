@@ -75,7 +75,7 @@
 - [ ] `XWBUNX3P` | Yan 2018 | Multi-cavity-stabilized ultrastable laser
 - [x] `H5MYBTXH` | Leibrandt 2013 | Cavity-stabilized laser with acceleration sensitivity below 10⁻¹² → `leibrandt2013.yaml`
 - [ ] `WK9QLCGF` | Leibrandt 201x | Absolute and Relative Stability of an Optical Frequency Reference
-- [ ] `N9AGEQ8S` | Zhang 201x | Ultrastable Silicon Cavity in a Continuously Operating Closed-Cycle
+- [x] `N9AGEQ8S` | Zhang 2017 | Ultrastable Silicon Cavity in a Continuously Operating Closed-Cycle Cryostat at 4 K → `zhang2017.yaml`
 - [x] `SBPRDKPV` | Jeon 2025 | 10⁻¹⁵-level laser stabilization down to fiber thermal noise limit → `jeon2025.yaml`
 - [ ] `HKYLIW8U` | Gobron 2017 | Dispersive heterodyne probing method for laser frequency stabilization
 - [ ] `MPWLNUIH` | Galland 202x | Double-heterodyne probing for an ultra-stable laser based on spectral hole
