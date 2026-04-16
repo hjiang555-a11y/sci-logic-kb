@@ -76,7 +76,8 @@ metrics:
       value: "中位线宽 17 mHz（1542 nm）"
       conditions: >
         40 cm ULE 腔参考；771 nm 拍频，64 s FFT 测量，15 mHz RBW，75 次重复；
-        先去除由 40 cm ULE 腔主导的 20 mHz/s 线性漂移，再按 σSi/√(σSi²+σULE²) 反推单激光线宽
+        先去除由 40 cm ULE 腔主导的 20 mHz/s 线性漂移，再按 σSi/√(σSi²+σULE²)
+        将拍频线宽折算为锁定到 Si 腔的 1542 nm 单激光线宽
       verification_status: observed
       confidence: established
       source: {zotero_key: "N9AGEQ8S", claim: "the computed results... reveal that the median of the linewidth distribution is 17 mHz at 1542 nm"}
@@ -187,7 +188,7 @@ relations:
     object: ent.thermal_environment
     interface_metric: met.fractional_freq_instability_z17
     coupling_formula: "σ_y,temp ≈ α_Si(4K) · ΔT"
-    internal_property: "α_Si(4K) ≈ 2×10⁻¹¹ K⁻¹；cryo cooler 本征温度波动约 20 mK @ 6 s；多级热滤波后腔温涨落在 100 s 内低于热噪声底"
+    internal_property: "α_Si(4K) ≈ 2×10⁻¹¹ K⁻¹；cryocooler 本征温度波动约 20 mK @ 6 s；多级热滤波后腔温涨落在 100 s 内低于热噪声底"
     confidence: established
     source: {zotero_key: "N9AGEQ8S", claim: "The corresponding temperature-induced frequency fluctuations are below the expected thermal noise floor for averaging times up to 100 s"}
     is_system_limit:
