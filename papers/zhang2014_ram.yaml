@@ -79,10 +79,6 @@ principles:
        than the quadrature response ... working in tandem, suppress both
        the in-phase and quadrature components of the RAM to the 1 ppm level"
 
-methods: []
-  # RAM 双通道主动消除不再单列为独立方法节点；
-  # 作为 ent.eom 的调制解调子单元接口保留。
-
 metrics:
   - id: met.ram_fractional_instability
     name: "RAM引起的分数频率不稳定度"

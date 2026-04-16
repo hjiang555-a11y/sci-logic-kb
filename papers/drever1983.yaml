@@ -41,7 +41,7 @@ entities:
       ram_suppression_interfaces:
         zhang2014_dual_servo:
           source: {zotero_key: "S5GJNVG8"}
-          mechanism: "DC 偏置场抑制同相 RAM + EOM 温度伺服抑制正交 RAM"
+          mechanism: "DC 偏置电场抑制同相 RAM + EOM 温度伺服抑制正交 RAM"
           performance: "56 dB RAM 抑制，~1 ppm（1–1000 s）"
         parke2025_bias_only_variant:
           source: {zotero_key: "U2LXSU62"}

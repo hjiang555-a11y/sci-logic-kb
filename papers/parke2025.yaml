@@ -96,11 +96,6 @@ principles:
     open_questions:
       - "当腔长继续增大至 1 m 以上，FSR 进一步缩小，高阶模污染是否会成为 RAM 测量的新限制？"
 
-methods: []
-  # PDH 锁频方法复用 meth.pdh_locking（定义于 drever1983.yaml）
-  # 本文 RAM 抑制方案并入 ent.eom（drever1983.yaml）的
-  # key_parameters.ram_suppression_interfaces.parke2025_bias_only_variant 字段
-
 metrics:
   - id: met.cavity_storage_time_p25
     name: "光学腔存储时间"

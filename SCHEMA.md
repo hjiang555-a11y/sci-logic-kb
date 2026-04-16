@@ -599,13 +599,13 @@ note: "跨文件引用，定义于 shaddock1999.yaml"
 | `olson2019.yaml` | CDX3DFQR | Olson 2019 — RB 干涉仪 <2×10⁻¹⁶ | ✅ 符合v3.2（首次提取） |
 | `huangjc2019b.yaml` | 5DCNFGX4 | Huang 2019b — 双缠绕抗振光纤盘 | ✅ 符合v3.2（首次提取） |
 
-**历史 v3.0 重构摘要**（2026-04-15）：
+**历史重构摘要**（v3.0 起，含 2026-04-16 的 v3.2 增补）：
 
 ### 核心改动
 1. **实例节点降级**：4 个 FP 腔"独立方案"（Si 124K/17K/4K、48cm 长腔）从 Level 1 降为 Level 2（PART-OF fp_cavity_system），取消 8 条 COMPETES-WITH 关系
 2. **噪声源分类**：在 ent.fp_cavity_system 中建立热噪声/振动/调制解调三个子类
 3. **原理节点精简**：6 个工程推理并入父原理 condition_variables（mirror_substrate_noise_dominance、beam_radius_scaling、low_loss_substrate_improvement、shot_noise_power_efficiency_scaling、shorter_delay_line_rbs_tradeoff、pri.off_resonance_reference_light tier: meta→domain）
-4. **方法层重组**：新增"稳频策略"分支（meth.multi_stage_locking、meth.multi_cavity_averaging）；RAM 抑制不再单列方法节点，而并入 ent.eom 子单元接口
+4. **方法层重组**（v3.0，2026-04-16 补充 RAM 决议）：新增"稳频策略"分支（meth.multi_stage_locking、meth.multi_cavity_averaging）；RAM 抑制不再单列方法节点，而并入 ent.eom 子单元接口
 5. **探测硬件合并**：split_photodetector/tilting_mirror 并入 tilt_locking；faraday_rotation_mirror 并入 fiber_interferometer；rf_phase_modulator + waveguide_eom → ent.eom
 6. **外围条件完善**：ent.dye_laser_563nm → ent.laser_source (ext)；ent.agile_laser_system → ext
 7. **breakthrough_paths 修正**：所有 direction 字段从 ent.* 改为 pri.*/meth.*（schema 合规）
