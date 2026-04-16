@@ -56,7 +56,7 @@ entities:
 principles:
   - id: pri.dichroic_heterodyne_detection
     name: "色散外差检测（Dichroic Heterodyne Detection）相位漂移补偿原理"
-    tier: domain
+    tier: engineering
     verification_status: observed
     statement: >
       在多分支光学频率梳系统中，非线性展宽链路（EDFA + HNLF）引入的附加相位噪声和漂移

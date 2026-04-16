@@ -71,21 +71,21 @@ entities:
     name: "²²⁹Th 核钟"
     aliases: ["thorium nuclear clock", "nuclear clock", "核跃迁钟"]
     hierarchy_level: 2
-    status: theoretical
+    status: demonstrated
     function: >
       基于钍-229 同核异能态（isomeric state）的核跃迁（~148 nm，~2 PHz）的新型频率标准。
       核跃迁发生在原子核内部，被电子云屏蔽，
       对外部电磁场扰动具有极强免疫力，潜在分数准确度可达 10⁻¹⁹。
-      2024 年首次实现该跃迁的激光光谱测量。
+      2024 年首次实现该跃迁的激光光谱测量（TU Wien）。作为频率标准尚处于早期演示阶段。
     key_parameters:
       transition_wavelength: "~148 nm（VUV，~2.02 PHz）"
       isomer_energy: "~8.36 eV（核跃迁，极窄线宽）"
       shielding_advantage: "核跃迁受电子云屏蔽，对 BBR、Zeeman、Stark 效应敏感度极低"
-      current_status: "2024 年首次激光激发（TU Wien），频率标准尚未实现"
+      current_status: "2024 年首次激光激发（TU Wien），作为频率标准尚处早期演示阶段"
     note: >
       Level 2 实例，PART-OF ent.optical_frequency_standard。
-      核钟目前处于 theoretical/early demonstration 阶段，
-      是光钟领域最前沿的方向之一。
+      核跃迁已于 2024 年首次被激光激发，但作为完整频率标准（含系统不确定度评估）
+      尚处于早期演示阶段，是光钟领域最前沿的方向之一。
 
 principles:
   - id: pri.quantum_projection_noise_limit
@@ -349,6 +349,7 @@ relations:
       current: false
       conditions: "当前梳精度（10⁻²¹）远优于光钟不确定度（~10⁻¹⁸），不是限制因素"
     note: >
-      跨专题引用：ent.optical_frequency_comb 定义于 giunta2019.yaml（optical-frequency-combs 专题）；
-      met.comb_frequency_synthesis_accuracy_g20 定义于 giunta2020.yaml。
+      跨专题引用：ent.optical_frequency_comb 定义于 topics/optical-frequency-combs/papers/giunta2019.yaml；
+      met.comb_frequency_synthesis_accuracy_g20 定义于 topics/optical-frequency-combs/papers/giunta2020.yaml。
       光学频率梳是连接光钟与 SI 秒的必要工具。
+      前提：上述跨专题节点须存在于对应文件中，才能使本关系完整可查询。
