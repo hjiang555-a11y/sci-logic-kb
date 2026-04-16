@@ -41,12 +41,15 @@ entities:
         impact: "增加系统复杂度和成本"
       - description: "频率漂移需要周期性校准"
         impact: "长期稳定度受漂移率限制"
-    note: "替代 FP 腔的频率参考方案，与 ent.fp_cavity_system COMPETES-WITH。"
+    note: >
+      替代 FP 腔的频率参考方案，与 ent.fp_cavity_system COMPETES-WITH。
+      在当前超稳激光知识库中保留为并列频率参考分支；
+      若未来扩展到更广义的时频体系，可与光钟跃迁参考共同提升到更高层“光学频率参考”父类。
 
 principles:
   - id: pri.spectral_hole_burning_frequency_ref
     name: "光谱烧孔频率参考原理"
-    tier: foundational
+    tier: domain
     verification_status: observed
     statement: >
       在低温稀土离子晶体中，窄带激光可在非均匀展宽吸收线中烧出

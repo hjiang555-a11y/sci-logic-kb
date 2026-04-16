@@ -38,6 +38,15 @@ entities:
       implementations:
         bulk_crystal: "体晶体 EOM（ADP/LiNbO₃），Vπ > 100 V，通用方案"
         waveguide: "波导 EOM（Ti:LiNbO₃），Vπ ~ 4 V，保偏光纤接口，低 RAM 特化（Zhang 2014）"
+      ram_suppression_interfaces:
+        zhang2014_dual_servo:
+          source: {zotero_key: "S5GJNVG8"}
+          mechanism: "DC 偏置场抑制同相 RAM + EOM 温度伺服抑制正交 RAM"
+          performance: "56 dB RAM 抑制，~1 ppm（1–1000 s）"
+        parke2025_bias_only_variant:
+          source: {zotero_key: "U2LXSU62"}
+          mechanism: "x-cut APE 波导 EOM 采用偏置电场闭环，省去温度伺服"
+          performance: "RAM 稳定在 10⁻⁷ 水平，对应 3×10⁻¹⁹ 分数频率不稳定度"
     ram_properties:
       ram_source: "EOM 晶体双折射 + 压电致弹光效应"
       ram_level_typical: "~60 ppm（未抑制）"
@@ -46,6 +55,8 @@ entities:
       合并原 ent.rf_phase_modulator（Drever 1983，通用概念）和
       ent.waveguide_eom_z14（Zhang 2014，低 RAM 波导实现）。
       两者功能相同（PDH 边带调制），区别仅在 RAM 性能。
+      原 meth.ram_cancellation_z14 已并入该子单元的 ram_suppression_interfaces 字段，
+      不再保留为独立方法节点。
       ent.fp_cavity_system 定义于 numata2004.yaml。
 
 principles:
