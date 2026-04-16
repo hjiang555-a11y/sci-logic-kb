@@ -82,7 +82,7 @@ metrics:
       source: {zotero_key: "LCMWCIWB", claim: "absorption is very low... the signal is ≤0.8 ppm which is comparable to the setup sensitivity"}
 
 relations:
-  - id: rel.M01
+  - id: rel.MA01
     subject: ent.large_area_crystalline_coating_m18
     predicate: PART-OF
     object: ent.mirror_coating
@@ -90,14 +90,14 @@ relations:
     source: {zotero_key: "LCMWCIWB", claim: "crystalline coatings transferred to 50.8-mm diameter fused silica and sapphire substrates"}
     note: "跨文件引用，ent.mirror_coating 定义于 numata2004.yaml；本文是大面积晶体镀层工艺验证"
 
-  - id: rel.M02
+  - id: rel.MA02
     subject: ent.large_area_crystalline_coating_m18
     predicate: CHARACTERIZED-BY
     object: met.crystalline_coating_tis_m18
     confidence: established
     source: {zotero_key: "LCMWCIWB", claim: "TIS comparable with currently used amorphous coatings"}
 
-  - id: rel.M03
+  - id: rel.MA03
     subject: ent.large_area_crystalline_coating_m18
     predicate: ENABLED-BY
     object: pri.crystalline_coating_low_brownian_noise

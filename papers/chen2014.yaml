@@ -75,21 +75,21 @@ metrics:
       source: {zotero_key: "WTUHUAQ7", claim: "acceleration sensitivities... 1.7×10⁻¹¹/g, 8.0×10⁻¹¹/g, and 3.9×10⁻¹⁰/g"}
 
 relations:
-  - id: rel.C01
+  - id: rel.CHF01
     subject: ent.compact_transportable_cavity_c14
     predicate: PART-OF
     object: ent.fp_cavity_system
     confidence: established
     source: {zotero_key: "WTUHUAQ7", claim: "ultra-stable laser system... Fabry-Perot cavity"}
 
-  - id: rel.C02
+  - id: rel.CHF02
     subject: ent.compact_transportable_cavity_c14
     predicate: CHARACTERIZED-BY
     object: met.fractional_freq_instability_c14
     confidence: established
     source: {zotero_key: "WTUHUAQ7", claim: "fractional frequency instability of 1×10⁻¹⁵"}
 
-  - id: rel.C03
+  - id: rel.CHF03
     subject: ent.compact_transportable_cavity_c14
     predicate: BOUNDED-BY
     object: pri.brownian_thermal_noise_fdt

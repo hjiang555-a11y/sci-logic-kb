@@ -57,7 +57,7 @@ methods: []
 metrics: []
 
 relations:
-  - id: rel.DI01
+  - id: rel.DG01
     subject: ent.ule_hollow_core_fiber_d25
     predicate: ENABLED-BY
     object: pri.ule_hcf_thermal_stability

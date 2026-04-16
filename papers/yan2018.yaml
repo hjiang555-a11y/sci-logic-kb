@@ -41,7 +41,7 @@ metrics:
       source: {zotero_key: "XWBUNX3P", claim: "relative frequency instability of the synthesized laser is 5×10⁻¹⁶, improved by a factor of √2"}
 
 relations:
-  - id: rel.Y01
+  - id: rel.YA01
     subject: met.synthesized_laser_instability_y18
     predicate: OPERATIONALIZED-AS
     object: meth.multi_cavity_averaging

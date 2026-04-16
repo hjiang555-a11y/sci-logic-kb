@@ -125,7 +125,7 @@ metrics:
       source: {zotero_key: "U4Z95559", claim: "minimal of the Allan deviation is about 4.2×10⁻¹⁶, which is closed to the estimated thermal noise limit"}
 
 relations:
-  - id: rel.T01
+  - id: rel.TO01
     subject: ent.robust_cuboid_cavity_t18
     predicate: PART-OF
     object: ent.fp_cavity_system

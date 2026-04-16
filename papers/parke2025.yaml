@@ -137,7 +137,7 @@ metrics:
         note: "已知最低 RAM 引起频率不稳定度"
 
 relations:
-  - id: rel.P01
+  - id: rel.PK01
     subject: ent.long_cavity_68cm_p25
     predicate: PART-OF
     object: ent.fp_cavity_system

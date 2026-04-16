@@ -30,7 +30,7 @@
 - [x] `YKPFKDD9` | Kessler 2012 | A sub-40-mHz-linewidth laser based on a silicon single-crystal optical cavity → `kessler2012.yaml`
 - [x] `CWIHQRJD` | Cole 2013 | Tenfold reduction of Brownian noise in high-reflectivity optical coatings → `cole2013.yaml`
 - [x] `TVY7T59A` | Matei 2017 | 1.5 μm Lasers with Sub-10 mHz Linewidth → `matei2017.yaml`
-- [ ] `ZDF94KK5` | Matei 2017 (v2?) | 1.5 μm Lasers with Sub-10 mHz Linewidth (same paper, check)
+- [x] `ZDF94KK5` | Matei 2017 (duplicate) | 重复条目，同 TVY7T59A → `matei2017.yaml`
 - [x] `UV6S5FFL` | Häfner 2015 | 8×10⁻¹⁷ fractional laser frequency instability with a long room-temp. cavity → `hafner2015.yaml`
 - [x] `PZGR9S7S` | Wu 2016 | 0.26-Hz-linewidth ultrastable lasers at 1557 nm → `wu2016.yaml`
 - [x] `JIZCUZLY` | Robinson 2019 | Crystalline optical cavity at 4 K with thermal-noise-limited instability → `robinson2019.yaml`
@@ -89,18 +89,18 @@
 ### 其他
 
 - [x] `WW9ESVMK` | Meiser 2009 | 超辐射 mHz 激光理论 → `meiser2009.yaml`
-- [ ] `8NUIA2K7` | Aasi 2013 | Enhanced sensitivity of the LIGO gravitational wave detector
-- [ ] `P3NU2EKB` | Zhang 202x | Ultranarrow Linewidth Photonic-Atomic Laser
-- [ ] `FTXSM9QC` | Adhikari 201x | Gravitational radiation detection with laser interferometry
-- [ ] `CDX3DFQR` | Olson 201x | Ramsey-Borde Matter-Wave Interferometry for Laser Frequency
+- [x] `8NUIA2K7` | Aasi 2013 | LIGO 压缩光增强 → `aasi2013.yaml`
+- [⊘] `P3NU2EKB` | Zhang 202x | Photonic-Atomic Laser（PDF 不在库中，跳过）
+- [x] `FTXSM9QC` | Adhikari 2014 | 引力波探测综述 → `adhikari2014.yaml`
+- [x] `CDX3DFQR` | Olson 2019 | Ramsey-Bordé 原子干涉仪 <2×10⁻¹⁶ → `olson2019.yaml`
 - [x] `UP2Q8F9Y` | Loh 2019 | 布里渊超窄线宽激光 → `loh2019.yaml`
 - [x] `ELKHJ5GL` | Li 2019 | 大型光纤陀螺仪热噪声 → `li2019.yaml`
 - [x] `HJZ6BVYE` | Dixneuf 2020 | 365 W 超低 RIN 单频光纤激光 → `dixneuf2020.yaml`
 - [x] `XAKCIXKT` | Nelson 2008 | RIN 抑制技术 → `nelson2008.yaml`
 - [x] `KH82PQJ2` | Hu 2015 | Ultralow acceleration sensitivity fiber spool → `hu2015.yaml`
-- [ ] `LY9I8I9I` | Braun 199x | CONTINUOUS-WAVE MODE-LOCKED SOLID-STATE LASERS
-- [ ] `5XG8FTEE` | Kartner 199x | CONTINUOUS-WAVE MODE-LOCKED SOLID-STATE LASERS
-- [ ] `UQL6FYN7` | Kogelnik 1966 | LASER BEAMS AND RESONATORS (基础教材)
+- [x] `LY9I8I9I` | Braun 1995 | 空间烧孔锁模激光（实验）→ `braun1995.yaml`
+- [x] `5XG8FTEE` | Kärtner 1995 | 空间烧孔锁模激光（理论）→ `kartner1995.yaml`
+- [x] `UQL6FYN7` | Kogelnik 1966 | 激光光束与谐振腔理论 → `kogelnik1966.yaml`
 
 ---
 
@@ -110,7 +110,7 @@
 - [x] `MN54T4F3` | Kéfélian 2009 | Ultralow-frequency-noise stabilization of a laser by locking to a fiber → `kefelian2009.yaml`
 - [x] `W8K5GLK6` | Dong 2015 | Subhertz linewidth laser by locking to a fiber delay line → `dong2015.yaml`
 - [x] `KH82PQJ2` | Hu 2015 | Ultralow acceleration sensitivity fiber spool → `hu2015.yaml`
-- [ ] `5DCNFGX4` | 黄军超 2019 | Vibration-insensitive fiber spool for laser stabilization
+- [x] `5DCNFGX4` | Huang 2019b | 双缠绕抗振光纤盘 → `huangjc2019b.yaml`
 - [x] `F2GG2N6W` | Huang 2019 | All-fiber laser with 200 mHz linewidth → `huangjc2019.yaml`
 - [x] `JYGVFJBN` | Huang 2023 | All-fiber-based ultrastable laser with long-term frequency stability → `huang2023.yaml`
 - [→] `RENEQVU9` | Wei 202x | Support-Free Thermally Insensitive Hollow Core Fiber Coil
@@ -123,7 +123,7 @@
 - [→] `XSMPRNT3` | Grabielle 2025 | Locking noise in laser frequency stabilization to an optical fiber
 - [x] `JAW66GYL` | Gao 2025 | Ultra-Low Frequency Noise Laser via Recirculating Interferometer → `gao2025.yaml`
 - [x] `H5YVF5AR` | Kim 2008 | Drift-free femtosecond timing synchronization of remote optical and microwave → `kim2008.yaml`
-- [ ] `ULMQ3IXP` | Winful 1985 | SELF-INDUCED POLARIZATION CHANGES IN BIREFRINGENT OPTICAL FIBERS
+- [⊘] `ULMQ3IXP` | Winful 1985 | Self-induced polarization changes（PDF 不在库中，跳过）
 - [x] `2F3PD62T` | Belardi 2015 | Design and Properties of Hollow Antiresonant Fibers → `belardi2015.yaml`
 
 ---

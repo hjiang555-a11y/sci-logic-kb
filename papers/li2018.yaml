@@ -55,14 +55,14 @@ metrics:
       source: {zotero_key: "AFFU5KGB", claim: "short-term frequency stability is better than 3.2×10⁻¹⁶ and averages down followed by 1.8×10⁻¹⁵/√τ"}
 
 relations:
-  - id: rel.L01
+  - id: rel.LI01
     subject: ent.ule_cavity_30cm_sr_l18
     predicate: PART-OF
     object: ent.fp_cavity_system
     confidence: established
     source: {zotero_key: "AFFU5KGB", claim: "30-cm-long ultrahigh finesse optical cavity"}
 
-  - id: rel.L02
+  - id: rel.LI02
     subject: ent.ule_cavity_30cm_sr_l18
     predicate: BOUNDED-BY
     object: pri.brownian_thermal_noise_fdt

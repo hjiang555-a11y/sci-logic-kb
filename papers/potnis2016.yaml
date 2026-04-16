@@ -35,7 +35,7 @@ methods: []
 metrics: []
 
 relations:
-  - id: rel.P01
+  - id: rel.PT01
     subject: ent.pdh_photodetector_p16
     predicate: PART-OF
     object: meth.pdh_locking

@@ -56,7 +56,7 @@ methods: []
 metrics: []
 
 relations:
-  - id: rel.T01
+  - id: rel.TA01
     subject: ent.brewster_eom_t16
     predicate: ENABLED-BY
     object: pri.brewster_angle_ram_suppression

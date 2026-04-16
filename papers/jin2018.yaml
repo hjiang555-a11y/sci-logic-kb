@@ -68,14 +68,14 @@ metrics:
       source: {zotero_key: "6R3RCHPT", claim: "most probable linewidth of each laser system is about 0.2 Hz"}
 
 relations:
-  - id: rel.J01
+  - id: rel.JN01
     subject: ent.ule_cavity_30cm_578nm_j18
     predicate: PART-OF
     object: ent.fp_cavity_system
     confidence: established
     source: {zotero_key: "6R3RCHPT", claim: "30-cm-long Fabry-Pérot cavities"}
 
-  - id: rel.J02
+  - id: rel.JN02
     subject: ent.ule_cavity_30cm_578nm_j18
     predicate: BOUNDED-BY
     object: pri.brownian_thermal_noise_fdt

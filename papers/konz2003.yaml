@@ -49,7 +49,7 @@ metrics:
       source: {zotero_key: "MNIZVIMG", claim: "lifetimes varying from 1 s at 18 K to an estimated value of greater than 20 days at 2 K"}
 
 relations:
-  - id: rel.KO01
+  - id: rel.KZ01
     subject: ent.shb_eu_yso_reference_l13
     predicate: CONDITIONED-BY
     object: met.spectral_hole_lifetime_k03

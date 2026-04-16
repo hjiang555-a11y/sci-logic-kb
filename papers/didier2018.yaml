@@ -55,7 +55,7 @@ metrics:
       source: {zotero_key: "PHRXF4IL", claim: "first estimation of the cavity fractional frequency instability at σy(1s) ≈ 7.5×10⁻¹⁵"}
 
 relations:
-  - id: rel.D01
+  - id: rel.DD01
     subject: ent.ultracompact_pyramid_cavity_d18
     predicate: PART-OF
     object: ent.fp_cavity_system
@@ -63,7 +63,7 @@ relations:
     source: {zotero_key: "PHRXF4IL", claim: "original Fabry-Perot cavity with 25 mm length and pyramidal geometry"}
     note: "跨文件引用，ent.fp_cavity_system 定义于 numata2004.yaml"
 
-  - id: rel.D02
+  - id: rel.DD02
     subject: ent.ultracompact_pyramid_cavity_d18
     predicate: BOUNDED-BY
     object: pri.brownian_thermal_noise_fdt

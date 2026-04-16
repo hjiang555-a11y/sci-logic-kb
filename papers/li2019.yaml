@@ -42,7 +42,7 @@ methods: []
 metrics: []
 
 relations:
-  - id: rel.LI01
+  - id: rel.LIG01
     subject: ent.fiber_interferometer
     predicate: BOUNDED-BY
     object: pri.fiber_thermal_phase_noise_giant_ifog

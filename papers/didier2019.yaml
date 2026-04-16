@@ -71,7 +71,7 @@ metrics:
       source: {zotero_key: "MIAVJSIK", claim: "fractional frequency instability of 1.1×10⁻¹⁶ at 1 s... transfer the stability of a 1542 nm laser stabilized to a cryogenic silicon cavity"}
 
 relations:
-  - id: rel.DI01
+  - id: rel.DI19_01
     subject: ent.ndyag_946nm_laser_d19
     predicate: ENABLED-BY
     object: pri.transfer_lock_via_frequency_comb

@@ -92,7 +92,7 @@ metrics:
       source: {zotero_key: "X7XXKXDZ", claim: "vibration sensitivity κ_x=0.7×10⁻¹⁰/g, κ_y=2.3×10⁻¹⁰/g, κ_z=12.3×10⁻¹⁰/g"}
 
 relations:
-  - id: rel.H01
+  - id: rel.HF20_01
     subject: ent.transportable_12cm_cavity_h20
     predicate: PART-OF
     object: ent.fp_cavity_system
@@ -100,14 +100,14 @@ relations:
     source: {zotero_key: "X7XXKXDZ", claim: "ultra-low-expansion glass reference cavity"}
     note: "跨文件引用，ent.fp_cavity_system 定义于 numata2004.yaml"
 
-  - id: rel.H02
+  - id: rel.HF20_02
     subject: ent.transportable_12cm_cavity_h20
     predicate: ENABLED-BY
     object: pri.independent_dof_wire_mounting
     confidence: established
     source: {zotero_key: "X7XXKXDZ", claim: "rigid, compact, and vibration insensitive mounting... sustaining shocks of up to 50 g"}
 
-  - id: rel.H03
+  - id: rel.HF20_03
     subject: ent.transportable_12cm_cavity_h20
     predicate: BOUNDED-BY
     object: pri.brownian_thermal_noise_fdt
@@ -118,7 +118,7 @@ relations:
     verification_status: observed
     note: "跨文件引用，pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml"
 
-  - id: rel.H04
+  - id: rel.HF20_04
     subject: ent.transportable_12cm_cavity_h20
     predicate: CONDITIONED-BY
     object: ent.vibration_environment

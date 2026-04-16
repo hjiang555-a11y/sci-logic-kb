@@ -79,7 +79,7 @@ metrics:
       source: {zotero_key: "L6KKLLSR", claim: "Table 1: Mechanical loss φ at different temperatures"}
 
 relations:
-  - id: rel.S01
+  - id: rel.ST01
     subject: ent.mirror_coating
     predicate: BOUNDED-BY
     object: pri.coating_thermal_noise_material_comparison

@@ -90,7 +90,7 @@ metrics:
       source: {zotero_key: "PZGR9S7S", claim: "frequency instability of 1×10⁻¹⁵ is achieved on the long time scale of 100–4000 s"}
 
 relations:
-  - id: rel.W01
+  - id: rel.WU01
     subject: ent.ule_cavity_10cm_w16
     predicate: PART-OF
     object: ent.fp_cavity_system
@@ -98,14 +98,14 @@ relations:
     source: {zotero_key: "PZGR9S7S", claim: "frequency-stabilizing to the resonance of 10-cm-long ultrastable Fabry-Pérot cavities"}
     note: "跨文件引用，ent.fp_cavity_system 定义于 numata2004.yaml"
 
-  - id: rel.W02
+  - id: rel.WU02
     subject: ent.ule_cavity_10cm_w16
     predicate: CHARACTERIZED-BY
     object: met.fractional_freq_instability_w16
     confidence: established
     source: {zotero_key: "PZGR9S7S", claim: "fractional frequency instability of each laser system is nearly 8×10⁻¹⁶"}
 
-  - id: rel.W03
+  - id: rel.WU03
     subject: ent.ule_cavity_10cm_w16
     predicate: BOUNDED-BY
     object: pri.brownian_thermal_noise_fdt
@@ -130,7 +130,7 @@ relations:
         mechanism: "低温硅腔方案"
         status: demonstrated
 
-  - id: rel.W04
+  - id: rel.WU04
     subject: ent.ule_cavity_10cm_w16
     predicate: CONDITIONED-BY
     object: ent.vibration_environment

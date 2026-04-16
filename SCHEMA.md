@@ -567,6 +567,13 @@ note: "跨文件引用，定义于 shaddock1999.yaml"
 | `meiser2009.yaml` | WW9ESVMK | Meiser 2009 — 超辐射 mHz 激光 | ✅ 符合v3.2（首次提取） |
 | `loh2019.yaml` | UP2Q8F9Y | Loh 2019 — 布里渊激光 | ✅ 符合v3.2（首次提取） |
 | `li2019.yaml` | ELKHJ5GL | Li 2019 — 光纤陀螺热噪声 | ✅ 符合v3.2（首次提取） |
+| `kogelnik1966.yaml` | UQL6FYN7 | Kogelnik 1966 — 激光光束谐振腔 | ✅ 符合v3.2（首次提取） |
+| `braun1995.yaml` | LY9I8I9I | Braun 1995 — SHB 锁模（实验）| ✅ 符合v3.2（首次提取） |
+| `kartner1995.yaml` | 5XG8FTEE | Kärtner 1995 — SHB 锁模（理论）| ✅ 符合v3.2（首次提取） |
+| `aasi2013.yaml` | 8NUIA2K7 | Aasi 2013 — LIGO 压缩光 | ✅ 符合v3.2（首次提取） |
+| `adhikari2014.yaml` | FTXSM9QC | Adhikari 2014 — GW 探测综述 | ✅ 符合v3.2（首次提取） |
+| `olson2019.yaml` | CDX3DFQR | Olson 2019 — RB 干涉仪 <2×10⁻¹⁶ | ✅ 符合v3.2（首次提取） |
+| `huangjc2019b.yaml` | 5DCNFGX4 | Huang 2019b — 双缠绕抗振光纤盘 | ✅ 符合v3.2（首次提取） |
 
 **历史 v3.0 重构摘要**（2026-04-15）：
 

@@ -1,0 +1,54 @@
+# Huang (Junchao) 2019b — 抗振光纤盘（双缠绕设计）
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-16
+# Schema版本：v3.2
+
+meta:
+  zotero_key: "5DCNFGX4"
+  source_type: technical_paper
+  reliability: high
+  title: "Vibration-insensitive fiber spool for laser stabilization"
+  year: 2019
+  first_author: Huang
+  journal: "Chinese Optics Letters"
+  volume: 17
+  pages: "081403"
+  doi: "10.3788/COL201917.081403"
+  note: >
+    双缠绕光纤盘设计，实现全方向超低加速度灵敏度：
+    轴向 8×10⁻¹¹/g，径向 3×10⁻¹¹/g。
+    TC4 钛合金材料，FEM 优化几何参数。
+    核心贡献：改进了 Hu 2015 的对称光纤盘设计，
+    对径向和轴向同时优化。
+
+entities:
+  - id: ent.double_winding_fiber_spool_hjc19
+    name: "双缠绕抗振光纤盘（Huang JC 2019b）"
+    aliases: ["double-winding fiber spool", "vibration-insensitive spool"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      钛合金（TC4）双缠绕光纤盘，上下两层对称缠绕，
+      FEM 优化使振动引起的表面面积变化在上下半部分相互抵消。
+      轴向灵敏度 8×10⁻¹¹/g，径向灵敏度 3×10⁻¹¹/g。
+    key_parameters:
+      material: "TC4 titanium alloy"
+      axial_sensitivity: "8×10⁻¹¹/g"
+      radial_sensitivity: "3×10⁻¹¹/g"
+      design: "double-winding symmetric structure"
+    note: "PART-OF ent.fiber_interferometer。改进 ent.ultralow_accel_fiber_spool_h15。"
+
+principles: []
+
+methods: []
+
+metrics: []
+
+relations:
+  - id: rel.HJC19B_01
+    subject: ent.double_winding_fiber_spool_hjc19
+    predicate: PART-OF
+    object: ent.fiber_interferometer
+    confidence: established
+    source: {zotero_key: "5DCNFGX4", claim: "vibration-insensitive fiber spool for laser stabilization"}
+    note: "跨文件引用，ent.fiber_interferometer 定义于 jiang2010.yaml"
