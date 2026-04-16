@@ -93,7 +93,7 @@
 |------------|----------|------|------------|
 | `QGLVTMB7` | Ding 202x | Hollow-core fiber made of ultralow expansion glass | ULE玻璃空心光纤的热性能边界 |
 | `GIUQZ2EE` | Zuba 202x | Limits of Coupling Efficiency Into Hollow-Core Antiresonant Fibers | 反谐振空心光纤耦合效率极限 |
-| `SBPRDKPV` | Jeon 202x | 10⁻¹⁵-level laser stabilization down to fiber thermal noise limit | 光纤热噪声极限下的10⁻¹⁵稳频 |
+| `SBPRDKPV` | Jeon 2025 | 10⁻¹⁵-level laser stabilization down to fiber thermal noise limit | 光纤热噪声极限下的10⁻¹⁵稳频 |
 | `XSMPRNT3` | Grabielle 2025 | Locking noise in laser frequency stabilization to an optical fiber | 光纤锁频的锁定噪声机制与限制 |
 | `JAW66GYL` | J. Gao 2025 | Ultra-Low Frequency Noise Laser Based on All-Fiber Integrated Interferometer | 全光纤集成干涉仪的超低频率噪声边界 |
 | `ULMQ3IXP` | Winful 1985 | SELF-INDUCED POLARIZATION CHANGES IN BIREFRINGENT OPTICAL FIBERS | 双折射光纤偏振变化的基础限制 |
@@ -236,7 +236,7 @@
 
 1. `ZDF94KK5`（疑似 Matei 2017 重复条目）：待确认后决定删除或合并
 2. `KH82PQJ2`（Hu 2015）：在 QUEUE.md 中出现两次（FP 腔 + 光纤），待确认归属后处理一次
-3. `SBPRDKPV`（Jeon 202x）：在 QUEUE.md 中出现两次（时钟应用 + 光纤），待确认归属后处理一次
+3. `SBPRDKPV`（Jeon 2025）：重复队列项已清理，论文已处理为 `jeon2025.yaml`
 4. 56 篇无 PDF 论文：不在本轮处理范围
 
 > **注意**: 本计划遵循"GitHub Copilot优先"原则，最大限度利用Copilot处理结构化提取任务，仅在必要时使用本地Claude Code。
