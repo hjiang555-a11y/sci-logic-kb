@@ -6,7 +6,7 @@
 # contribution_type: framework — 此文件为 timescales 专题的顶层架构定义文档
 #   定义：顶层实体 ent.si_second_definition（权威来源）、核心原理（重定义标准、次级表示机制）。
 #   跨专题接口：timescales CONDITIONED-BY 光钟（CONDITIONED-BY 超稳激光）。
-#   ent.optical_frequency_standard：跨专题引用，定义于 topics/optical-clocks/papers/fortier2026.yaml。
+#   ent.optical_frequency_standard：跨专题引用，定义于 topics/frequency-standards/papers/fortier2026.yaml。
 
 meta:
   zotero_key: "SDG6KXNZ"
@@ -26,9 +26,9 @@ meta:
     CCTF（国际时间频率咨询委员会）官方路线图，系统阐述 SI 秒重定义的条件、标准和时间表。
     定义：顶层实体 ent.si_second_definition（Level 0，权威来源）；
     原理 pri.redefinition_criteria_second（15 条强制性标准）、pri.secondary_representation_si_second。
-    不负责具体光钟技术参数（参见 optical-clocks 专题）。
+    不负责具体光钟技术参数（参见 frequency-standards 专题）。
     跨专题关键接口：ent.si_second_definition CONDITIONED-BY ent.optical_frequency_standard
-    （定义于 topics/optical-clocks/papers/fortier2026.yaml）。
+    （定义于 topics/frequency-standards/papers/fortier2026.yaml）。
 
 # ═══════════════════════════════════════════════
 #  NODES（节点）
@@ -38,7 +38,7 @@ entities:
   # ── 框架型实体节点 ─────────────────────────────────────────────────────────
   # ent.si_second_definition：本文件权威定义（timescales 专题顶层）
   # ent.optical_frequency_standard：跨专题引用，定义于
-  #   topics/optical-clocks/papers/fortier2026.yaml（不在本文件重复定义）
+  #   topics/frequency-standards/papers/fortier2026.yaml（不在本文件重复定义）
   # ──────────────────────────────────────────────────────────────────────────
   - id: ent.si_second_definition
     name: "SI 秒定义（当前基于铯，面向光学重定义）"
@@ -156,7 +156,7 @@ metrics:
     description: >
       光学频率标准的系统效应总不确定度，是评价光钟准确度的核心指标。
       包括黑体辐射频移、碰撞频移、格子光频移、运动效应、外场效应等所有已知系统效应。
-      此处为路线图汇总值（verification_status: inferred），原始测量参见 optical-clocks 专题各技术论文。
+      此处为路线图汇总值（verification_status: inferred），原始测量参见 frequency-standards 专题各技术论文。
     demonstrated_value:
       value: "9.4×10⁻¹⁹（²⁷Al⁺ 量子逻辑钟，NIST，路线图汇总）"
       conditions: "²⁷Al⁺ 单离子，量子逻辑探测，NIST Boulder"
@@ -230,7 +230,7 @@ relations:
     confidence: established
     source: {zotero_key: "SDG6KXNZ", claim: "systematic uncertainty of 9.4 × 10⁻¹⁹ for the ²⁷Al⁺ quantum logic clock"}
     note: >
-      跨专题引用：ent.optical_frequency_standard 定义于 topics/optical-clocks/papers/fortier2026.yaml。
+      跨专题引用：ent.optical_frequency_standard 定义于 topics/frequency-standards/papers/fortier2026.yaml。
       本文件（dimarcq2024.yaml）只引用该节点，不重复定义。
 
   - id: rel.D24_03
@@ -240,7 +240,7 @@ relations:
     confidence: established
     source: {zotero_key: "SDG6KXNZ", claim: "Mandatory criterion I.2: validation of OFS accuracy budgets through frequency ratios"}
     note: >
-      跨专题引用：ent.optical_frequency_standard 定义于 topics/optical-clocks/papers/fortier2026.yaml。
+      跨专题引用：ent.optical_frequency_standard 定义于 topics/frequency-standards/papers/fortier2026.yaml。
 
   - id: rel.D24_04
     subject: met.optical_clock_systematic_uncertainty
@@ -250,7 +250,7 @@ relations:
     source: {zotero_key: "SDG6KXNZ", claim: "simultaneous measurements of the same optical frequency ratio with two independent OFCs have shown agreement at the level of 10⁻²¹"}
     note: >
       光钟不确定度通过频率比比较方法验证。
-      跨专题引用：meth.optical_clock_comparison 定义于 topics/optical-clocks/papers/fortier2026.yaml（通过 dimarcq2024 补充定义）。
+      跨专题引用：meth.optical_clock_comparison 定义于 topics/frequency-standards/papers/fortier2026.yaml（通过 dimarcq2024 补充定义）。
 
   - id: rel.D24_05
     subject: ent.si_second_definition
@@ -264,7 +264,7 @@ relations:
       conditions: "当前秒定义基于铯（~10⁻¹⁶），光学标准已超越 2 个量级但尚未被采纳为定义基础"
     note: >
       跨专题核心接口：光钟专题→时间标尺专题。
-      ent.optical_frequency_standard 定义于 topics/optical-clocks/papers/fortier2026.yaml。
+      ent.optical_frequency_standard 定义于 topics/frequency-standards/papers/fortier2026.yaml。
       光学频率标准的性能（系统不确定度）是 SI 秒重定义的首要技术条件。
 
   - id: rel.D24_06
