@@ -1,0 +1,382 @@
+# Schliesser 2012 — 中红外频率梳综述 [光学频率梳专题：中红外子域架构文档]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-07-15
+# Schema版本：v4.0
+# 专题：optical-frequency-combs
+# contribution_type: framework — 定义中红外频率梳子域顶层架构。
+#   定义：Level 1 实体 ent.mid_ir_frequency_comb（中红外频率梳功能类别）；
+#   核心原理（分子振转指纹、非线性频率转换）；DFG/OPO 产生方法及关键指标。
+#   不负责：具体系统工程参数（由各技术论文提供）。
+
+meta:
+  zotero_key: ""
+  topic: optical-frequency-combs
+  source_type: review
+  contribution_type: framework
+  reliability: high
+  title: "Mid-infrared frequency combs"
+  year: 2012
+  first_author: Schliesser
+  journal: "Nature Photonics"
+  volume: 6
+  pages: "440-449"
+  doi: "10.1038/nphoton.2012.142"
+  note: >
+    [综述论文 / 子域架构文档] Schliesser (EPFL) + Picqué (MPQ/CNRS) + Hänsch (MPQ) 2012 Nature Photonics 综述。
+    首篇系统性中红外频率梳综述，定义 2–20 μm 频率梳子域架构：
+    (1) 阐明中红外频谱的核心科学驱动——分子振转指纹光谱（强吸收线、大气窗口、痕量气体检测）；
+    (2) 系统综述四类中红外梳产生方案：直接锁模激光器（Cr²⁺:ZnSe/ZnS）、差频产生（DFG）、
+        光参量振荡（OPO）、微谐振腔 Kerr 梳（CaF₂/MgF₂）；
+    (3) 综述应用：精密光谱、双梳光谱、腔增强光谱、痕量气体检测；
+    (4) 明确关键挑战：单梳齿功率、光谱覆盖范围、相干性/相位稳定性。
+    ent.optical_frequency_comb 定义于 giunta2019.yaml；
+    ent.microresonator_frequency_comb 定义于 kippenberg2011.yaml；
+    pri.self_referencing_f2f 定义于 giunta2019.yaml。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.mid_ir_frequency_comb
+    name: "中红外频率梳"
+    aliases: ["mid-IR frequency comb", "mid-infrared comb", "中红外光学频率梳"]
+    hierarchy_level: 1
+    status: demonstrated
+    function: >
+      覆盖中红外光谱区（2–20 μm / 500–5000 cm⁻¹）的光学频率梳。
+      梳齿频率仍遵循 νₙ = n·f_rep + f_CEO，但工作波段延伸至中红外"指纹区"，
+      直接覆盖分子强振转吸收带和大气透明窗口（3–5 μm、8–13 μm）。
+      产生方案包括：(a) 直接锁模激光器（Cr²⁺:ZnSe/ZnS ~2.5 μm）；
+      (b) 非线性频率转换（DFG、OPO、OPA）从近红外梳下转换；
+      (c) 中红外光纤超连续谱（硫化物、氟化物）；
+      (d) 微谐振腔 Kerr 梳（CaF₂、MgF₂ 晶体谐振腔）。
+    key_parameters:
+      spectral_region: "2–20 μm（500–5000 cm⁻¹）"
+      atmospheric_windows: "3–5 μm（第一窗口）、8–13 μm（第二窗口）"
+      generation_approaches: "锁模激光器、DFG、OPO、OPA、微谐振腔 Kerr 梳"
+      typical_power_per_mode: "nW（DFG）至 mW（微谐振腔）量级，取决于方案"
+      demonstrated_bandwidth: ">500 cm⁻¹（DFG in PPLN）、>900 cm⁻¹（简并 OPO）"
+    interface_requirements:
+      near_ir_pump_comb: "多数非线性转换方案需近红外频率梳作为泵浦源"
+      phase_matching: "非线性晶体相位匹配条件（周期极化、取向图案化等）"
+      mid_ir_detectors: "中红外低噪声高速探测器（当前技术瓶颈之一）"
+    note: >
+      Level 1 实体节点，代表中红外频率梳这一功能类别。
+      与 ent.optical_frequency_comb（近红外/可见光通用梳，giunta2019.yaml）互补，
+      与 ent.microresonator_frequency_comb（kippenberg2011.yaml）在微梳方案上有交叉。
+      各具体实现（Cr:ZnSe 梳、DFG 梳、OPO 梳等）为 Level 2 实例。
+
+principles:
+  - id: pri.molecular_rovibrational_fingerprint
+    name: "分子振转指纹光谱原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      中红外光谱区（2–20 μm）包含大量分子的基频振转跃迁，吸收强度比近红外泛频带
+      高 1–3 个数量级。每种分子具有独特的振转吸收"指纹"图案，可实现无歧义的分子
+      鉴别和定量分析（包括同位素异构体）。大气在 3–5 μm 和 8–13 μm 存在透明窗口，
+      使得远程痕量气体检测成为可能。这一基本物理事实是中红外频率梳的核心科学驱动力。
+    domain: "分子光谱学，痕量气体检测，大气科学"
+    key_insight: >
+      中红外频率梳的核心价值在于将频率梳的精密频率控制能力与分子振转指纹的高灵敏度
+      和高选择性结合，实现宽带、高分辨、高灵敏的分子光谱测量。
+    conditions: "气体样品需在合适温度和压力下；吸收路径长度影响灵敏度"
+    preconditions:
+      - "中红外光源覆盖目标分子的基频振转吸收带"
+      - "光谱分辨率须足以解析多普勒线宽或更精细的线型结构"
+    source_claim: >
+      "A large number of molecules undergo strong characteristic vibrational transitions in this
+      domain (Fig. 1a), thus making mid-infrared spectroscopy a univocal way to identify and
+      quantify molecular species, including isotopologues, in a given environment."
+    open_questions:
+      - "能否在 6–20 μm 深中红外实现与 3–5 μm 窗口同等水平的频率梳光谱覆盖和灵敏度？"
+
+  - id: pri.nonlinear_frequency_conversion_comb
+    name: "非线性频率转换梳产生原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      通过二阶非线性光学效应（χ⁽²⁾），将近红外频率梳的梳齿结构相干转移至中红外波段。
+      核心机制包括：(a) 差频产生（DFG）：ν_DFG = ν_comb − ν_CW 或 ν_DFG = (n−m)·f_rep
+      （梳内 DFG，f_CEO 自动归零）；(b) 光参量振荡（OPO）：谐振腔内参量增益放大，
+      信号和闲频梳继承泵浦梳的 f_rep，但 f_CEO 需额外锁定
+      （f_CEO^signal + f_CEO^idler − f_CEO^pump = n·f_rep）；(c) 光参量放大（OPA）：
+      单程增益放大种子梳。所有方案要求宽带相位匹配（通常通过周期极化晶体实现），
+      转换效率和带宽受相位匹配条件限制。
+    domain: "非线性光学，频率梳技术，中红外光子学"
+    formula: >
+      DFG（单梳内）：ν_n,m^DFG = |n − m|·f_rep（f_CEO = 0）；
+      DFG（梳 + CW）：ν_n^DFG = |ν_n − ν_CW| = |n·f_rep + f_CEO − ν_CW|；
+      OPO：f_CEO^signal + f_CEO^idler = f_CEO^pump + n·f_rep
+    key_insight: >
+      非线性频率转换将已成熟的近红外频率梳（Er:fiber, Yb:fiber 等）的频率精度和相干性
+      完整传递至中红外，无需开发全新的中红外锁模激光器。梳内 DFG 方案自动实现
+      f_CEO = 0，简化绝对频率控制。
+    conditions: "需要合适的非线性晶体（PPLN、GaSe、OP-GaAs 等）和宽带相位匹配"
+    preconditions:
+      - "近红外泵浦频率梳具有足够功率和带宽"
+      - "非线性晶体在目标中红外波段透明"
+      - "相位匹配带宽覆盖目标光谱范围"
+    invalidated_when:
+      - "非线性晶体吸收限制（如 PPLN 在 ~5 μm 以上吸收增大）"
+      - "相位匹配带宽不足导致光谱覆盖受限"
+    source_claim: >
+      "all modes of a near-infrared frequency comb can simultaneously be subjected to
+      difference-frequency generation (DFG)... the modes of a comb with frequencies
+      νn = nfrep + fceo can correspondingly be transferred to νnDFG = |νn − νCW|,
+      which can lie in the mid-infrared for an appropriately chosen νCW."
+    open_questions:
+      - "能否开发在 6 μm 以上仍具有高效率和宽带宽的新型非线性晶体或波导？"
+      - "梳内 DFG 方案能否达到与 OPO 方案相当的单梳齿功率？"
+
+methods:
+  - id: meth.dfg_comb_generation
+    name: "差频产生（DFG）中红外梳产生方法"
+    status: demonstrated
+    applies_to: ent.mid_ir_frequency_comb
+    steps_summary: >
+      1. 近红外频率梳提供宽带梳齿光谱 →
+      2. 与 CW 激光器（或梳自身另一端梳齿）在非线性晶体中混频 →
+      3. 相位匹配条件下产生中红外差频梳齿 →
+      4. 梳内 DFG 方案：ν_DFG = |n−m|·f_rep，f_CEO 自动归零 →
+      5. 梳+CW 方案：需额外控制 f_CEO
+    required_hardware:
+      - ent.optical_frequency_comb
+      - "非线性晶体（PPLN、GaSe、OP-GaAs）"
+    advantages:
+      - "梳内 DFG 自动实现 f_CEO = 0，简化频率控制"
+      - "可利用成熟的近红外 Er:fiber / Yb:fiber 梳作为泵浦"
+      - "GaSe 晶体可实现 3–17 μm 调谐覆盖"
+    disadvantages:
+      - "转换效率通常 <1%，单梳齿功率低（nW 至 ~50 nW 量级）"
+      - "相位匹配带宽限制光谱覆盖（PPLN 典型 ~200 cm⁻¹）"
+      - "PPLN 在 ~5 μm 以上吸收增大，限制长波端延伸"
+    conditions:
+      - "非线性晶体须在目标波段透明且满足相位匹配"
+      - "泵浦梳功率须足够高以获得可用的中红外功率"
+    source_claim: >
+      "DFG between the different teeth of a single comb... the comb's carrier–envelope offset
+      frequency is fixed to zero... researchers have generated spectra that span 3–5 μm with
+      a width of more than 500 cm⁻¹ and powers of up to 10 nW per comb mode."
+
+  - id: meth.opo_comb_generation
+    name: "光参量振荡（OPO）中红外梳产生方法"
+    status: demonstrated
+    applies_to: ent.mid_ir_frequency_comb
+    steps_summary: >
+      1. 近红外飞秒频率梳同步泵浦 OPO 谐振腔 →
+      2. PPLN/OP-GaAs 等非线性晶体提供参量增益 →
+      3. 信号梳在谐振腔内振荡，闲频梳同时产生 →
+      4. 信号/闲频梳继承泵浦梳 f_rep →
+      5. 利用 OPO 中伴随产生的和频/倍频信号控制 f_CEO →
+      6. 简并 OPO 特殊情况：f_CEO 仅有两个离散取值，进一步简化稳定
+    required_hardware:
+      - ent.optical_frequency_comb
+      - "OPO 谐振腔 + 非线性晶体（PPLN 或 OP-GaAs）"
+    advantages:
+      - "谐振腔增强转换效率，单梳齿功率远高于 DFG（~30 μW/mode，OPO vs ~10 nW/mode，DFG）"
+      - "简并 OPO 可实现超宽带（>900 cm⁻¹ @ 3 μm）"
+      - "OP-GaAs 深中红外透明，可延伸至更长波"
+    disadvantages:
+      - "需同步泵浦和腔内色散管理，系统复杂度高"
+      - "f_CEO 需额外自由度锁定（非简并情况）"
+      - "谐振腔对准和稳定性要求高"
+    conditions:
+      - "OPO 谐振腔色散须管理以确保宽带信号梳与腔模重合"
+      - "泵浦脉冲须与 OPO 腔同步（同步泵浦）"
+    source_claim: >
+      "Using PPLN-based OPOs pumped by compact solid-state or powerful fibre-laser-based
+      near-infrared combs, researchers have demonstrated wide (>100 cm⁻¹) spectra that are
+      tunable over a range of 2–4 μm and have powers of up to 30 μW per mode."
+
+metrics:
+  - id: met.mid_ir_spectral_coverage
+    name: "中红外梳光谱覆盖范围"
+    unit: "cm⁻¹（或 μm 表示波长范围）"
+    description: >
+      中红外频率梳在目标波段内实际覆盖的光谱宽度。决定可同时探测的分子种类数
+      和光谱信息量。不同产生方案的光谱覆盖差异巨大。
+    demonstrated_value:
+      value: ">900 cm⁻¹ around 3 μm（简并 OPO）；>500 cm⁻¹ in 3–5 μm（梳内 DFG in PPLN）；~300 cm⁻¹ tunable 3–17 μm（DFG in GaSe）"
+      conditions: "简并 OPO：PPLN-based，泵浦为 Tm:fiber 梳；DFG：PPLN 或 GaSe 晶体，近红外梳泵浦"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "", claim: "ultra-broad mid-infrared spectra spanning 900 cm⁻¹ around a wavelength of 3 μm with an impressive power of 200 nW per mode... 300-cm⁻¹-wide spectra tunable in the range of 3–17 μm"}
+    historical_landmarks:
+      first_demonstration:
+        value: "~200 cm⁻¹（DFG in PPLN，~3.4 μm）"
+        year: 2004
+        source: {zotero_key: ""}
+        note: "早期 DFG 梳，受相位匹配带宽限制"
+      best_demonstration:
+        value: ">900 cm⁻¹ around 3 μm（简并 OPO）"
+        year: 2011
+        source: {zotero_key: ""}
+        note: "Leindecker et al. 2011, 简并 OPO in PPLN"
+
+  - id: met.trace_gas_sensitivity
+    name: "痕量气体检测灵敏度"
+    unit: "ppb（体积混合比）或 cm⁻¹（最小可探测吸收系数）"
+    description: >
+      中红外频率梳光谱系统对痕量气体的检测灵敏度。
+      受限于单梳齿功率、有效吸收路径长度和探测器噪声。
+      腔增强技术可提升灵敏度数千倍。
+    demonstrated_value:
+      value: "~1 ppb（H₂O₂ @ ~3.75 μm，腔增强频率梳傅里叶变换光谱）"
+      conditions: "OPO 中红外频率梳 + 高精细度增强腔（finesse >3800）+ Michelson-based FTIR"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "", claim: "a sensitivity enhancement in the cavity of several thousand provides detection levels as low as one part per billion for H₂O₂ at a wavelength of around 3.75 μm"}
+    historical_landmarks:
+      best_demonstration:
+        value: "~1 ppb for H₂O₂"
+        year: 2011
+        source: {zotero_key: ""}
+        note: "腔增强频率梳 FTS，Foltynowicz et al."
+    open_questions:
+      - "能否在 8–13 μm 第二大气窗口实现同等水平的腔增强痕量气体检测？"
+
+# ═══════════════════════════════════════════════
+#  RELATIONS（关系）
+# ═══════════════════════════════════════════════
+
+relations:
+  # ---- 层级与归属 ----
+
+  - id: rel.S12_01
+    subject: ent.mid_ir_frequency_comb
+    predicate: PART-OF
+    object: ent.optical_frequency_comb
+    confidence: established
+    source: {zotero_key: "", claim: "Frequency combs are now becoming enabling tools for an increasing number of applications... The extension of frequency comb techniques to new spectral regions"}
+    note: >
+      中红外频率梳是光学频率梳向 2–20 μm 波段的功能扩展。
+      ent.optical_frequency_comb 定义于 giunta2019.yaml。
+
+  # ---- ENABLED-BY（方法/实体 → 原理）----
+
+  - id: rel.S12_02
+    subject: meth.dfg_comb_generation
+    predicate: ENABLED-BY
+    object: pri.nonlinear_frequency_conversion_comb
+    confidence: established
+    source: {zotero_key: "", claim: "all modes of a near-infrared frequency comb can simultaneously be subjected to difference-frequency generation"}
+    conditions: "需要合适的 χ⁽²⁾ 非线性晶体和宽带相位匹配"
+
+  - id: rel.S12_03
+    subject: meth.opo_comb_generation
+    predicate: ENABLED-BY
+    object: pri.nonlinear_frequency_conversion_comb
+    confidence: established
+    source: {zotero_key: "", claim: "optical parametric oscillator... many longitudinal signal modes of the resonator in an OPO can simultaneously experience gain that exceeds the threshold for parametric oscillation"}
+    conditions: "需要同步泵浦和 OPO 腔色散管理"
+
+  - id: rel.S12_04
+    subject: ent.mid_ir_frequency_comb
+    predicate: ENABLED-BY
+    object: pri.molecular_rovibrational_fingerprint
+    confidence: established
+    source: {zotero_key: "", claim: "The mid-infrared domain, with its strong molecular fingerprints, attracts considerable interest."}
+    note: "分子振转指纹光谱是中红外频率梳的核心科学驱动力"
+
+  # ---- CHARACTERIZED-BY（实体 → 指标）----
+
+  - id: rel.S12_05
+    subject: ent.mid_ir_frequency_comb
+    predicate: CHARACTERIZED-BY
+    object: met.mid_ir_spectral_coverage
+    confidence: established
+    source: {zotero_key: "", claim: "wide (>100 cm⁻¹) spectra that are tunable over a range of 2–4 μm... spectra spanning 900 cm⁻¹"}
+
+  - id: rel.S12_06
+    subject: ent.mid_ir_frequency_comb
+    predicate: CHARACTERIZED-BY
+    object: met.trace_gas_sensitivity
+    confidence: established
+    source: {zotero_key: "", claim: "detection levels as low as one part per billion for H₂O₂"}
+    note: "腔增强中红外梳光谱系统的痕量气体检测灵敏度"
+
+  # ---- OPERATIONALIZED-AS（指标 → 方法）----
+
+  - id: rel.S12_07
+    subject: met.mid_ir_spectral_coverage
+    predicate: OPERATIONALIZED-AS
+    object: meth.dfg_comb_generation
+    confidence: established
+    source: {zotero_key: "", claim: "spectra that span 3–5 μm with a width of more than 500 cm⁻¹"}
+    note: "DFG 是实现中红外光谱覆盖的主要方法之一"
+
+  - id: rel.S12_08
+    subject: met.mid_ir_spectral_coverage
+    predicate: OPERATIONALIZED-AS
+    object: meth.opo_comb_generation
+    confidence: established
+    source: {zotero_key: "", claim: "ultra-broad mid-infrared spectra spanning 900 cm⁻¹... with an impressive power of 200 nW per mode"}
+    note: "OPO 提供最宽带的中红外光谱覆盖"
+
+  # ---- BOUNDED-BY（限制链）----
+
+  - id: rel.S12_09
+    subject: met.mid_ir_spectral_coverage
+    predicate: BOUNDED-BY
+    object: pri.nonlinear_frequency_conversion_comb
+    confidence: established
+    source: {zotero_key: "", claim: "imperfect phase-matching is often the limiting factor for the achieved bandwidth because the poling period is optimized for only part of the comb spectrum"}
+    conditions: "相位匹配带宽是当前光谱覆盖的主要限制因素"
+    note: "非线性晶体的相位匹配带宽和透明范围直接限制中红外梳光谱覆盖"
+
+  - id: rel.S12_10
+    subject: met.trace_gas_sensitivity
+    predicate: BOUNDED-BY
+    object: met.mid_ir_spectral_coverage
+    confidence: established
+    source: {zotero_key: "", claim: "the spectral span is limited only by the spectral bandwidths of the source and detector"}
+    note: "痕量气体检测灵敏度部分受限于光谱覆盖范围（决定可探测分子种类数）"
+
+  # ---- COMPETES-WITH（竞争关系）----
+
+  - id: rel.S12_11
+    subject: meth.dfg_comb_generation
+    predicate: COMPETES-WITH
+    object: meth.opo_comb_generation
+    confidence: established
+    source: {zotero_key: "", claim: "A key challenge in sources based on nonlinear optics is the efficiency of the desired photon-conversion process. This metric often remains well below 1%... One way of boosting efficiency is to use an optical parametric oscillator"}
+    note: >
+      DFG 与 OPO 是中红外梳产生的两种主要非线性转换方案：
+      DFG 结构简单（单程）、f_CEO 可自动归零，但功率低（~nW/mode）；
+      OPO 谐振增强、功率高（~μW/mode），但系统复杂、需额外 f_CEO 锁定。
+
+  # ---- CONDITIONED-BY（外围条件接口）----
+
+  - id: rel.S12_12
+    subject: ent.mid_ir_frequency_comb
+    predicate: CONDITIONED-BY
+    object: ent.optical_frequency_comb
+    interface_metric: met.mid_ir_spectral_coverage
+    coupling_formula: >
+      非线性转换方案（DFG/OPO）的中红外梳性能受限于近红外泵浦梳的功率、
+      带宽和相干性：P_mid-IR ∝ P_pump × η_conversion；带宽受相位匹配限制。
+    is_system_limit:
+      current: true
+      conditions: "泵浦梳功率和光谱带宽是非线性转换方案性能的上游限制"
+    confidence: established
+    source: {zotero_key: "", claim: "In most cases, a different route is taken to access the spectral region beyond 3 μm, in which nonlinear optical effects are harnessed to transfer electromagnetic energy from the visible or near-infrared domain into the mid-infrared"}
+    note: >
+      跨方案核心接口：近红外频率梳→中红外频率梳。
+      ent.optical_frequency_comb 定义于 giunta2019.yaml。
+
+  - id: rel.S12_13
+    subject: ent.mid_ir_frequency_comb
+    predicate: CONDITIONED-BY
+    object: ent.microresonator_frequency_comb
+    interface_metric: met.mid_ir_spectral_coverage
+    is_system_limit:
+      current: false
+      conditions: "微谐振腔 Kerr 梳方案处于早期阶段，已在 MgF₂ 中演示 ~2.5 μm"
+    confidence: tentative
+    source: {zotero_key: "", claim: "Researchers have employed pumping at 2.45 μm to demonstrate a Kerr comb covering the range of 2.35–2.5 μm... milliwatt powers per mode"}
+    note: >
+      微谐振腔方案为中红外梳提供紧凑、高重频的替代路径。
+      ent.microresonator_frequency_comb 定义于 kippenberg2011.yaml。
+      截至 2012 年，仅在 ~2.5 μm 附近演示，尚未深入中红外。

@@ -1,0 +1,387 @@
+# Udem 2002 — 光学频率计量：飞秒频率梳革命性综述 [光学频率梳专题奠基文献]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-07-15
+# Schema版本：v4.0
+# 专题：optical-frequency-combs
+# contribution_type: framework — 本文是光学频率梳领域的奠基性综述（Nobel 团队 2002 Nature review），
+#   早于 giunta2019.yaml 框架文档。定义：飞秒梳频率标尺原理、超连续谱展宽、光频计数方法。
+#   ent.optical_frequency_comb 和 pri.self_referencing_f2f 已在 giunta2019.yaml 中定义，本文引用之。
+
+meta:
+  zotero_key: ""
+  topic: optical-frequency-combs
+  source_type: review
+  contribution_type: framework
+  reliability: high
+  title: "Optical frequency metrology"
+  year: 2002
+  first_author: Udem
+  journal: "Nature"
+  volume: 416
+  pages: "233-237"
+  doi: "10.1038/416233a"
+  note: >
+    [综述论文 / 奠基文献] Hänsch 组（2005 Nobel 获奖工作核心团队）2002 年 Nature 综述。
+    首次系统阐述飞秒锁模激光器频率梳作为通用光学频率合成/计数工具的原理与应用。
+    核心贡献：(1) 阐明梳齿方程 fₙ = n·f_rep + f_CEO 的物理来源（脉冲包络周期性 + 载波-包络相移）；
+    (2) 描述 f-2f 自参考方案（倍频程展宽 + SHG 拍频检测 f_CEO）；
+    (3) 引入光子晶体光纤 / 微结构光纤实现超连续谱展宽至倍频程；
+    (4) 演示氢 1S-2S 测量、Ca/Hg⁺/In⁺/I₂ 等光学频率绝对测量；
+    (5) 提出基于窄线宽光跃迁 + 频率梳的全光学原子钟概念。
+    本文标志着谐波频率链被淘汰、频率梳成为光学频率计量标准工具的转折点。
+    ent.optical_frequency_comb 定义于 giunta2019.yaml；pri.self_referencing_f2f 定义于 giunta2019.yaml。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.ti_sapphire_frequency_comb
+    name: "钛宝石飞秒频率梳"
+    aliases: ["Ti:sapphire frequency comb", "Ti:sapphire mode-locked laser comb", "Kerr-lens mode-locked Ti:sapphire comb"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      基于 Kerr 透镜锁模的钛宝石飞秒激光器作为光学频率梳平台。
+      输出脉冲宽度 ~10 fs，重复频率 ~80 MHz–1 GHz，中心波长 ~800 nm，
+      通过光子晶体光纤（PCF）展宽至倍频程后，配合 f-2f 自参考实现所有梳齿绝对频率控制。
+      2000–2010 年间频率梳的主要实现平台，首次实现 RF-光学直接频率链接。
+    key_parameters:
+      pulse_duration: "~10 fs（Kerr 透镜锁模）"
+      repetition_rate: "~80 MHz – 1 GHz（取决于腔长）"
+      center_wavelength: "~800 nm"
+      spectral_bandwidth: "~45 THz（原始输出），经 PCF 展宽覆盖 >1 octave"
+      mode_count: "~10⁵–10⁶"
+      comb_equation: "fₙ = n·f_rep + f_CEO"
+      pump_laser: "绿色泵浦激光器（Verdi / 532 nm）"
+      footprint: "~1 m²（含泵浦、PCF、非线性干涉仪）"
+    note: >
+      Level 2 实例节点，是 ent.optical_frequency_comb（定义于 giunta2019.yaml）的具体实现。
+      2002 年时代的主力频率梳平台。首台商业化系统由 Menlo Systems GmbH 推出（由本文作者 Holzwarth 和 Hänsch 联合创立）。
+
+  - id: ent.photonic_crystal_fiber
+    name: "光子晶体光纤（微结构光纤）"
+    aliases: ["PCF", "photonic crystal fibre", "microstructure fiber", "air-silica microstructure optical fibre"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      通过微结构化的空气-石英包层设计，在 ~800 nm 波段实现反常色散，
+      增强自相位调制等非线性效应，将钛宝石飞秒脉冲的频谱从 ~45 THz 展宽至覆盖
+      超过一个光学倍频程（>300 THz）。这使得从标准振荡器输出功率（数百 mW）
+      即可获得倍频程频率梳，是实现 f-2f 自参考方案的关键使能器件。
+    key_parameters:
+      core_diameter: "~1.5–2 μm（微结构核心）"
+      zero_dispersion_wavelength: "~770 nm（红移至钛宝石波段）"
+      nonlinear_mechanism: "自相位调制（SPM）、孤子裂变、色散波产生"
+      input_requirement: "~100–500 mW 飞秒脉冲（~10 fs, 800 nm）"
+      output_bandwidth: ">1 octave（~500 nm–1100 nm）"
+    note: >
+      Level 2 器件节点。频率梳的核心使能组件之一（PART-OF ent.optical_frequency_comb 系统）。
+      Knight, Russell 等（Bath 大学）率先发展；Ranka et al. 2000 首次演示用于超连续谱产生。
+
+  - id: ent.harmonic_frequency_chain
+    name: "谐波频率链"
+    aliases: ["harmonic frequency chain", "frequency multiplication chain"]
+    hierarchy_level: 1
+    status: obsolete
+    function: >
+      从铯原子钟的 9.2 GHz 微波频率出发，通过非线性二极管混频器、晶体倍频器
+      和相锁传递振荡器逐级产生谐波，最终到达光学频域（~10¹⁵ Hz）。
+      30 年间仅建成极少数频率链，每条只能测量一个特定光学频率，
+      系统庞大、昂贵、操作困难。被飞秒频率梳完全取代。
+    key_parameters:
+      starting_frequency: "9,192,631,770 Hz（铯超精细分裂，SI 秒定义）"
+      frequency_range: "微波 → 红外 → 可见光（跨越 >4 个数量级）"
+      stages: "多级非线性倍频 + 相锁传递振荡器"
+      limitation: "每条链只能测量单个光学频率"
+      operational_complexity: "极高——需大量资源，全球仅少数实验室建成"
+    note: >
+      Level 1 实体。本文明确指出频率梳取代了谐波频率链。
+      COMPETES-WITH ent.optical_frequency_comb（已被淘汰）。
+
+principles:
+  - id: pri.femtosecond_comb_frequency_ruler
+    name: "飞秒激光频率梳：脉冲序列形成精密频率标尺原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      锁模飞秒激光器输出的等间距脉冲序列，在频域对应一组等间距的连续波梳齿。
+      脉冲包络以群速度传播，载波以相速度传播，每个往返载波相对包络移位 Δφ。
+      假设包络函数 A(t) 满足周期性 A(t) = A(t+T)（T = 1/f_rep 为往返时间），
+      电场 E(t) = Re(A(t)·exp(−iω_c·t)) 的 Fourier 变换给出精确等间距的频率梳：
+      fₙ = n·f_rep + f_CEO，其中 f_CEO = Δφ/(2πT)。
+      该原理的关键假设是包络函数的周期性——即使脉冲有频率啁啾，
+      只要各脉冲的啁啾相同，梳齿结构仍严格成立。
+      1999 年 Udem et al. 通过光学频率间隔分频器（OFID）实验验证了
+      梳齿间距均匀性优于 3×10⁻¹⁷。
+    domain: "超快光学，光学频率计量"
+    formula: >
+      E(t) = Re(Σₙ Aₙ exp(−i(ω_c + n·ω_rep)t))；
+      fₙ = n·f_rep + f_CEO（n ~ 10⁵–10⁶，f_CEO < f_rep）；
+      f_rep = v_g/(2L)（群速度 / 两倍腔长）；
+      Δφ = 2πf_CEO/f_rep（每脉冲载波-包络相移）
+    key_insight: >
+      两个射频量（f_rep 和 f_CEO）完全确定 10⁵–10⁶ 根光学频率梳齿，
+      将光学频率映射至可计数的射频域——这是频率梳作为"光学齿轮"的物理基础。
+    conditions: >
+      脉冲包络须满足逐脉冲周期性（稳态脉冲序列）；
+      腔内色散和非线性效应须脉冲间一致（即静态工作点稳定）
+    preconditions:
+      - "激光器须处于稳定锁模状态（Kerr 透镜锁模或其他机制）"
+      - "脉冲间相干性须保持——脉冲间相位波动不破坏梳齿结构"
+    source_claim: >
+      "the modes of a mode-locked femtosecond laser can be used as a precise ruler in frequency space, 
+      as they form a series of frequency spikes called a frequency comb"
+    open_questions:
+      - "What is the fundamental limit of comb-tooth equidistancy set by intracavity nonlinear and dispersive effects?"
+
+  - id: pri.supercontinuum_octave_spanning
+    name: "超连续谱倍频程展宽原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      飞秒脉冲在光子晶体光纤（PCF）或光纤锥中传播时，
+      由于自相位调制（SPM）、孤子裂变和色散波产生等非线性效应的组合作用，
+      频谱从 ~45 THz 展宽至覆盖超过一个光学倍频程（>300 THz）。
+      PCF 的微结构包层使零色散波长红移至 ~770 nm（钛宝石波段），
+      从而在标准振荡器输出功率（数百 mW）下即可实现高效超连续谱产生。
+      关键物理洞见：尽管光纤内色散显著改变脉冲形状，
+      但对所有脉冲的改变方式相同——因此包络函数的周期性得以保持，
+      输出频谱仍然是精确等间距的频率梳。
+    domain: "非线性光学，超连续谱产生，光学频率计量"
+    formula: >
+      展宽带宽 ∝ γ·P_peak·L_eff（γ 为非线性系数，P_peak 为峰值功率，L_eff 为有效光纤长度）；
+      零色散波长需匹配泵浦波长以最大化展宽效率
+    key_insight: >
+      PCF 使得单台锁模振荡器的输出即可获得倍频程频率梳——
+      这是 f-2f 自参考方案从理论变为实验可行的关键使能技术。
+    conditions: "需 PCF 零色散波长匹配泵浦激光波段；脉冲峰值功率须足够激发非线性效应"
+    preconditions:
+      - "飞秒脉冲峰值功率 > ~kW 级（对应 ~100 mW 平均功率，~10 fs 脉冲）"
+      - "光纤色散经工程优化（微结构包层设计）使零色散点落在泵浦波段"
+    invalidated_when:
+      - "脉冲功率不足以激发显著非线性效应（如 CW 或长脉冲输入）"
+      - "光纤色散特性与泵浦波长严重不匹配（如标准单模光纤在 800 nm 的正常色散域）"
+    source_claim: >
+      "With newly invented micro-structured photonic crystal fibres (PCF), this spectral broadening 
+      is so pronounced that the resulting frequency comb can span more than an optical octave, 
+      even with the moderate output power from the laser oscillator."
+    open_questions:
+      - "Can integrated photonic waveguides fully replace PCF for octave-spanning supercontinuum generation in compact frequency combs?"
+
+  - id: pri.optical_clock_higher_frequency_advantage
+    name: "光学钟高频振荡优势原理"
+    tier: domain
+    verification_status: calculated
+    statement: >
+      时钟精度随振荡频率的提高而改善：更高的振荡频率将时间分割为更小的单元，
+      使得在相同观测时间内可计数更多的振荡周期。
+      光学频率（~10¹⁵ Hz）比铯微波频率（~9.2 GHz）高出 ~10⁵ 倍，
+      因此基于窄线宽光跃迁（冷原子/囚禁离子）的光学钟
+      原则上可比现有铯钟精确 ~10⁵ 倍（系统不确定度可达 10⁻¹⁸）。
+      频率梳提供了将这些高频光学振荡"向下计数"至可处理的射频域的齿轮机制。
+    domain: "时间频率计量，原子钟"
+    formula: >
+      σ_y(τ) ∝ 1/(ν₀·τ^(1/2))（白频率噪声极限下）；
+      ν_optical/ν_Cs ≈ 10⁵ → 潜在精度提升 ~10⁵
+    key_insight: >
+      光学钟的本质优势在于振荡频率高出微波钟 5 个数量级，
+      而频率梳解决了"如何计数 10¹⁵ Hz 振荡"的工程难题。
+    conditions: "需要窄线宽光跃迁（自然线宽 < Hz 级）作为频率参考"
+    source_claim: >
+      "if we consider the history of timekeeping and compare clocks as different as sun dials, 
+      pendulum clocks and quartz clocks it is obvious that they get more accurate as the oscillation 
+      frequency increases. This is simply because a higher oscillation frequency divides time into smaller pieces."
+
+methods:
+  - id: meth.optical_frequency_counting
+    name: "飞秒频率梳光学频率计数方法"
+    status: demonstrated
+    applies_to: ent.optical_frequency_comb
+    steps_summary: >
+      1. 飞秒锁模激光器产生等间距脉冲序列（频率梳）→
+      2. 通过 PCF 将梳谱展宽至覆盖 >1 个光学倍频程 →
+      3. f-2f 自参考检测并锁定 f_CEO（载波包络偏移频率）→
+      4. 将 f_rep 相位锁定至铯原子钟或 GPS 控制的石英振荡器 →
+      5. 确定 f_rep 和 f_CEO 后，所有梳齿频率 fₙ = n·f_rep + f_CEO 已知 →
+      6. 待测光学频率与最近梳齿拍频，通过模数 n 确定（粗测波长即可定 n）→
+      7. 输出：绝对光学频率，精度由参考时钟决定（~10⁻¹⁵ 级）
+    required_hardware:
+      - ent.ti_sapphire_frequency_comb
+      - ent.photonic_crystal_fiber
+    advantages:
+      - "通用——同一套系统可测量任意光学频率（取代特制谐波链）"
+      - "紧凑——占地 ~1 m²，远小于谐波频率链"
+      - "可靠——可连续运行数小时，可商业化（Menlo Systems）"
+      - "高精度——验证两独立方案偏差 < 5.1×10⁻¹⁶"
+    disadvantages:
+      - "精度受限于射频参考（铯钟 ~10⁻¹⁵），而非光学梳本身"
+      - "需要 PCF 超连续谱展宽（增加系统复杂度和额外噪声源）"
+    conditions:
+      - "f_rep 和 f_CEO 均须相位锁定至参考时钟"
+      - "待测光学频率须落在梳齿覆盖范围内"
+    source_claim: >
+      "a compact and reliable all-solid-state optical frequency synthesizer that requires only a single 
+      mode-locked laser, but is nevertheless capable of measuring essentially any optical frequency"
+
+metrics:
+  - id: met.optical_frequency_measurement_accuracy_u02
+    name: "光学频率测量准确度（Udem 2002 综述报告）"
+    unit: "无量纲（分数频率不确定度）"
+    description: >
+      飞秒频率梳测量光学频率的准确度，综合考虑梳齿完整性、
+      参考时钟精度和光学拍频信噪比。本文报告了多种原子/离子跃迁的测量结果。
+    demonstrated_value:
+      value: "1.9×10⁻¹⁴（氢 1S-2S 跃迁，受限于氢光谱仪再现性而非频率梳）"
+      conditions: >
+        Ti:sapphire 频率梳 + PCF 展宽，f_rep 锁定至铯喷泉钟（LPTF），
+        486 nm 四倍频 → 121 nm 两光子跃迁，MPQ 实验（~2000 年）
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "", claim: "one of the most precise measurements of an optical frequency so far recorded, providing a transition frequency value as accurate as 1.9 parts in 10¹⁴, limited by the reproducibility of the hydrogen spectrometer"}
+    historical_landmarks:
+      first_demonstration:
+        value: "~10⁻¹⁰（波长干涉法极限，频率梳出现前）"
+        year: 1990
+        source: {zotero_key: ""}
+        note: "波长测量精度受波前畸变限制于 ~10⁻¹⁰"
+      best_demonstration:
+        value: "5.1×10⁻¹⁶（梳内部一致性验证，354 THz 处两方案比较）"
+        year: 2000
+        source: {zotero_key: "", claim: "a mean deviation from the expected beat frequency of 7±15±79 mHz at 353 THz. This corresponds to a relative uncertainty of 5.1×10⁻¹⁶"}
+        note: "Holzwarth et al. 2000，7f:4f:f 方案与 f:2f 方案比较——验证梳完整性"
+      selected_milestones:
+        - year: 1999
+          value: "首次用飞秒梳测量光学频率间隔（Cs D1 线）"
+          source: {zotero_key: ""}
+          note: "Udem et al. 1999，梳用作频率标尺首次演示"
+        - year: 2000
+          value: "1.9×10⁻¹⁴（氢 1S-2S）"
+          source: {zotero_key: ""}
+          note: "首次直接 RF-光学频率计数，Niering et al. 2000"
+        - year: 2001
+          value: "Hg⁺ 和 Ca 光钟跃迁绝对频率测量"
+          source: {zotero_key: ""}
+          note: "Udem et al. 2001，多种光钟跃迁的首批绝对频率值"
+
+  - id: met.comb_mode_equidistancy_u02
+    name: "频率梳梳齿等间距验证精度（Udem 2002）"
+    unit: "无量纲（分数偏差上限）"
+    description: >
+      验证飞秒频率梳梳齿间距是否严格相等的实验精度——
+      这是梳齿方程 fₙ = n·f_rep + f_CEO 成立的根本前提。
+    demonstrated_value:
+      value: "< 3×10⁻¹⁷"
+      conditions: >
+        两个激光二极管分别相位锁定至梳的远端模式，
+        通过光学频率间隔分频器（OFID）验证中间点与梳齿的一致性
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "", claim: "After averaging all our data we concluded that there was no deviation from the perfect regular grid larger than 3 parts in 10¹⁷"}
+    note: >
+      这一验证实验（Udem et al. 1999）是频率梳发展史上的关键实验——
+      证明了飞秒脉冲的大乘法因子 n（~10⁵–10⁶）不会破坏梳齿结构的相干性。
+
+# ═══════════════════════════════════════════════
+#  RELATIONS（关系）
+# ═══════════════════════════════════════════════
+
+relations:
+  # --- 实体层级关系 ---
+  - id: rel.U02_01
+    subject: ent.ti_sapphire_frequency_comb
+    predicate: PART-OF
+    object: ent.optical_frequency_comb
+    confidence: established
+    source: {zotero_key: "", claim: "Broadband femtosecond Ti:sapphire lasers have existed since the beginning of the 1990s, and we have shown conclusively that such lasers can be crucial in this field"}
+    note: "Level 2 实例 → Level 1 通用实体。ent.optical_frequency_comb 定义于 giunta2019.yaml"
+
+  - id: rel.U02_02
+    subject: ent.photonic_crystal_fiber
+    predicate: PART-OF
+    object: ent.optical_frequency_comb
+    confidence: established
+    source: {zotero_key: "", claim: "With newly invented micro-structured photonic crystal fibres (PCF), this spectral broadening is so pronounced that the resulting frequency comb can span more than an optical octave"}
+    note: "PCF 是频率梳系统的使能组件，PART-OF 整体梳系统。ent.optical_frequency_comb 定义于 giunta2019.yaml"
+
+  # --- 核心使能关系 ---
+  - id: rel.U02_03
+    subject: ent.optical_frequency_comb
+    predicate: ENABLED-BY
+    object: pri.femtosecond_comb_frequency_ruler
+    confidence: established
+    source: {zotero_key: "", claim: "the modes of a mode-locked femtosecond laser can be used as a precise ruler in frequency space"}
+    note: "频率梳存在的物理基础。跨文件引用：ent.optical_frequency_comb 定义于 giunta2019.yaml"
+
+  - id: rel.U02_04
+    subject: pri.self_referencing_f2f
+    predicate: ENABLED-BY
+    object: pri.supercontinuum_octave_spanning
+    confidence: established
+    source: {zotero_key: "", claim: "to reference the comb directly to a precisely known radio frequency an absolute optical frequency could be mapped onto a frequency difference between harmonics or sub-harmonics of the same laser. In the simplest case this would be the interval between an optical frequency f and its own second harmonic 2f"}
+    conditions: "频谱须覆盖至少一个倍频程以实现 f 与 2f 的同时访问"
+    note: "超连续谱展宽是 f-2f 自参考的使能技术。pri.self_referencing_f2f 定义于 giunta2019.yaml"
+
+  - id: rel.U02_05
+    subject: meth.optical_frequency_counting
+    predicate: ENABLED-BY
+    object: pri.femtosecond_comb_frequency_ruler
+    confidence: established
+    source: {zotero_key: "", claim: "a compact and reliable all-solid-state optical frequency synthesizer that requires only a single mode-locked laser"}
+    note: "梳齿等间距特性是光频计数方法的物理基础"
+
+  - id: rel.U02_06
+    subject: meth.optical_frequency_counting
+    predicate: ENABLED-BY
+    object: pri.self_referencing_f2f
+    confidence: established
+    source: {zotero_key: "", claim: "the two radio frequencies that enter equation (1), f_rep and f_CEO, are determined. The pulse repetition rate f_rep is simply measured with a photo-detector... and f_CEO is derived as explained"}
+    conditions: "需同时稳定 f_rep 和 f_CEO"
+    note: "f-2f 自参考提供 f_CEO 的检测，是绝对光频计数的关键。pri.self_referencing_f2f 定义于 giunta2019.yaml"
+
+  # --- 指标关系 ---
+  - id: rel.U02_07
+    subject: ent.optical_frequency_comb
+    predicate: CHARACTERIZED-BY
+    object: met.optical_frequency_measurement_accuracy_u02
+    confidence: established
+    source: {zotero_key: "", claim: "a transition frequency value as accurate as 1.9 parts in 10¹⁴"}
+    note: "跨文件引用：ent.optical_frequency_comb 定义于 giunta2019.yaml"
+
+  - id: rel.U02_08
+    subject: ent.optical_frequency_comb
+    predicate: CHARACTERIZED-BY
+    object: met.comb_mode_equidistancy_u02
+    confidence: established
+    source: {zotero_key: "", claim: "no deviation from the perfect regular grid larger than 3 parts in 10¹⁷"}
+    note: "梳齿等间距性是频率梳的核心性能指标。ent.optical_frequency_comb 定义于 giunta2019.yaml"
+
+  - id: rel.U02_09
+    subject: met.optical_frequency_measurement_accuracy_u02
+    predicate: OPERATIONALIZED-AS
+    object: meth.optical_frequency_counting
+    confidence: established
+    source: {zotero_key: "", claim: "This work has now culminated in a compact and reliable all-solid-state optical frequency synthesizer"}
+
+  # --- 竞争关系 ---
+  - id: rel.U02_10
+    subject: ent.optical_frequency_comb
+    predicate: COMPETES-WITH
+    object: ent.harmonic_frequency_chain
+    context: "光学频率绝对测量手段"
+    tradeoffs:
+      subject_wins: ["通用——测量任意光学频率", "紧凑（~1 m²）", "可靠运行数小时", "可商业化"]
+      object_wins: ["无（已被完全淘汰）"]
+    confidence: established
+    source: {zotero_key: "", claim: "None of the problems associated with harmonic frequency chains has been solved since the first chain was constructed about 30 years ago. In 1998 our laboratory introduced a revolutionary new approach that vastly simplifies optical frequency measurements"}
+    note: "频率梳完全取代了谐波频率链。ent.optical_frequency_comb 定义于 giunta2019.yaml"
+
+  # --- 原理层级关系 ---
+  - id: rel.U02_11
+    subject: pri.optical_clock_higher_frequency_advantage
+    predicate: ENABLED-BY
+    object: pri.femtosecond_comb_frequency_ruler
+    confidence: established
+    source: {zotero_key: "", claim: "operating at much higher frequencies has now become possible... When it became possible to count these optical oscillations"}
+    conditions: "需要频率梳提供'齿轮机制'将光频降至可计数的射频域"
+    note: "频率梳解决了光学钟的'计数问题'——是光钟从概念到实验可行的关键"
