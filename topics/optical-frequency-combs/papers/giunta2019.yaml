@@ -1,13 +1,17 @@
-# Giunta 2019 — 光学频率梳 20 年发展：从基础物理到 20 位数精度
+# Giunta 2019 — 光学频率梳 20 年发展：从基础物理到 20 位数精度 [光学频率梳专题框架文档]
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
 # Schema版本：v4.0
 # 专题：optical-frequency-combs
+# contribution_type: framework — 此文件为 optical-frequency-combs 专题的顶层架构定义文档
+#   定义：顶层实体 ent.optical_frequency_comb（权威来源）、核心原理（f-2f 自参考、光学分频、频率比测量）。
+#   不负责：具体梳实现的工程参数（由各技术论文提供）。
 
 meta:
   zotero_key: "KTHCQRJ2"
   topic: optical-frequency-combs
   source_type: review
+  contribution_type: framework
   reliability: high
   title: "20 Years and 20 Decimal Digits: A Journey With Optical Frequency Combs"
   year: 2019
@@ -18,12 +22,13 @@ meta:
   pages: "1898-1901"
   doi: "10.1109/LPT.2019.2947907"
   note: >
-    Menlo Systems 团队（含 Hänsch/Holzwarth）回顾光学频率梳从 1999 年诞生到 2019 年达到
-    20 位数测量精度的 20 年发展历程。综述涵盖：（1）氢 1S-2S 频率测量精度的逐步提升
-    （从 ~840 Hz 到 ~10 Hz 级）；（2）光纤频率梳替代 Ti:sapphire 成为主流的工程演进；
-    （3）从绝对频率测量到频率比测量的范式转换；（4）超低噪声微波合成（-171 dBc/Hz @ 1 Hz，
-    相当于 6.5×10⁻¹⁶ @ 1 s）；（5）展望跨越 octave 的光学频率合成与连续运行天文光谱仪校准。
-    作为 retrospective letter，节点提取侧重于关键原理和演化里程碑。
+    [综述论文] optical-frequency-combs 专题框架文档。
+    Menlo Systems 团队（含 Hänsch/Holzwarth）回顾光学频率梳从 1999 年诞生到 2019 年 20 位数精度的发展历程。
+    定义：顶层实体 ent.optical_frequency_comb（Level 1，权威来源）；
+    核心原理 pri.self_referencing_f2f、pri.optical_frequency_division_microwave、pri.frequency_ratio_measurement；
+    方法 meth.photonic_microwave_synthesis 及对应指标。
+    不负责具体梳架构的工程参数（如相噪地板、保真度数值由 giunta2020.yaml 等技术论文提供）。
+    作为 retrospective review，综述转述值标注 verification_status: inferred。
 
 # ═══════════════════════════════════════════════
 #  NODES（节点）
@@ -245,3 +250,24 @@ relations:
     confidence: established
     source: {zotero_key: "KTHCQRJ2", claim: "the OFC permits to count the fast cycles of optical transition frequencies in atomic systems"}
     note: "氢 1S-2S 频率通过频率梳桥接至 SI 秒定义（铯喷泉钟）"
+
+  - id: rel.G19_06
+    subject: ent.optical_frequency_comb
+    predicate: CONDITIONED-BY
+    object: ent.fp_cavity_system
+    interface_metric: met.fractional_freq_instability_m17
+    coupling_formula: >
+      梳齿频率稳定度上限由锁定的光学参考（超稳腔激光）决定：
+      σ_y(comb_tooth) ≥ σ_y(reference_laser)
+    internal_property: "光学分频分数稳定度保持不变：σ_y(f_rep) = σ_y(ν_opt)"
+    scaling_law: "S_φ(f_rep) = S_φ(ν_opt)/N²，N = ν_opt/f_rep ≈ 10⁵–10⁶"
+    is_system_limit:
+      current: true
+      conditions: "梳的频率噪声最终受限于锁定目标（超稳腔激光）的噪声"
+    confidence: established
+    source: {zotero_key: "KTHCQRJ2", claim: "the optical frequency comb needs to be stabilized to a suitable optical reference for the synthesis of ultra-stable frequencies"}
+    note: >
+      跨专题核心接口：超稳激光专题→光学频率梳专题。
+      ent.fp_cavity_system 定义于 topics/ultrastable-laser/papers/numata2004.yaml；
+      met.fractional_freq_instability_m17 定义于 topics/ultrastable-laser/papers/matei2017.yaml。
+      光学频率梳的噪声性能上限由超稳激光决定；反之，超稳激光通过梳传递稳定度至光钟和微波域。

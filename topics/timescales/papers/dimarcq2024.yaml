@@ -1,13 +1,18 @@
-# Dimarcq 2024 — 秒定义重定义路线图
+# Dimarcq 2024 — 秒定义重定义路线图 [时间标尺专题框架文档]
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
 # Schema版本：v4.0
 # 专题：timescales
+# contribution_type: framework — 此文件为 timescales 专题的顶层架构定义文档
+#   定义：顶层实体 ent.si_second_definition（权威来源）、核心原理（重定义标准、次级表示机制）。
+#   跨专题接口：timescales CONDITIONED-BY 光钟（CONDITIONED-BY 超稳激光）。
+#   ent.optical_frequency_standard：跨专题引用，定义于 topics/optical-clocks/papers/fortier2026.yaml。
 
 meta:
   zotero_key: "SDG6KXNZ"
   topic: timescales
   source_type: review
+  contribution_type: framework
   reliability: high
   title: "Roadmap towards the redefinition of the second"
   year: 2024
@@ -17,18 +22,24 @@ meta:
   pages: "012001"
   doi: "10.1088/1681-7575/ad17d2"
   note: >
-    CCTF（国际时间频率咨询委员会）官方路线图文件，系统阐述 SI 秒从铯超精细跃迁
-    到光学跃迁重定义的条件、标准和时间表。核心内容：（1）三种重定义选项的 SWOT 分析
-    （单一光学跃迁 vs 多跃迁加权平均 vs 基本常数）；（2）15 条强制性标准和辅助条件；
-    （3）当前光学频率标准的性能现状（系统不确定度最低 9.4×10⁻¹⁹，²⁷Al⁺）；
-    （4）时间频率传递基础设施需求。
-    CCTF Task Force（Dimarcq 任主席），涵盖全球主要 NMI 实验室。
+    [综述/路线图] timescales 专题框架文档。
+    CCTF（国际时间频率咨询委员会）官方路线图，系统阐述 SI 秒重定义的条件、标准和时间表。
+    定义：顶层实体 ent.si_second_definition（Level 0，权威来源）；
+    原理 pri.redefinition_criteria_second（15 条强制性标准）、pri.secondary_representation_si_second。
+    不负责具体光钟技术参数（参见 optical-clocks 专题）。
+    跨专题关键接口：ent.si_second_definition CONDITIONED-BY ent.optical_frequency_standard
+    （定义于 topics/optical-clocks/papers/fortier2026.yaml）。
 
 # ═══════════════════════════════════════════════
 #  NODES（节点）
 # ═══════════════════════════════════════════════
 
 entities:
+  # ── 框架型实体节点 ─────────────────────────────────────────────────────────
+  # ent.si_second_definition：本文件权威定义（timescales 专题顶层）
+  # ent.optical_frequency_standard：跨专题引用，定义于
+  #   topics/optical-clocks/papers/fortier2026.yaml（不在本文件重复定义）
+  # ──────────────────────────────────────────────────────────────────────────
   - id: ent.si_second_definition
     name: "SI 秒定义（当前基于铯，面向光学重定义）"
     aliases: ["SI second", "definition of the second", "秒定义"]
@@ -42,30 +53,12 @@ entities:
     key_parameters:
       current_definition_transition: "¹³³Cs 基态超精细跃迁，9 192 631 770 Hz"
       current_realization_uncertainty: "~1–2×10⁻¹⁶（铯喷泉钟最佳水平）"
-      optical_standard_best_uncertainty: "9.4×10⁻¹⁹（²⁷Al⁺ 量子逻辑钟，NIST）"
+      optical_standard_best_uncertainty: "9.4×10⁻¹⁹（²⁷Al⁺ 量子逻辑钟，NIST，综述汇总）"
       secondary_representations_count: "10 个光学跃迁 + 1 个微波跃迁（⁸⁷Rb）已被 CCTF 采纳为秒的次级表示"
       expected_improvement: "重定义后短期实现精度提升 10–100 倍（达 10⁻¹⁷–10⁻¹⁸）"
-    note: "Level 0 系统级实体，是时间频率计量的最顶层概念"
-
-  - id: ent.optical_frequency_standard
-    name: "光学频率标准（通用）"
-    aliases: ["OFS", "optical frequency standard", "optical clock", "光钟"]
-    hierarchy_level: 1
-    status: demonstrated
-    function: >
-      基于激光冷却囚禁原子/离子的窄线宽光学跃迁的频率标准。
-      分为两大类：（1）单离子钟（²⁷Al⁺、¹⁷¹Yb⁺、⁸⁸Sr⁺ 等）——精度高、单原子；
-      （2）光晶格钟（⁸⁷Sr、¹⁷¹Yb 等）——利用魔术波长光晶格囚禁 ~10⁴ 原子，
-      统计灵敏度高。当前最佳系统不确定度 ~10⁻¹⁹（²⁷Al⁺），
-      分数频率不稳定度 ~10⁻¹⁷/√τ（光晶格钟）。
-    key_parameters:
-      ion_clocks: "²⁷Al⁺（9.4×10⁻¹⁹）、¹⁷¹Yb⁺ E3（~10⁻¹⁸）、¹¹⁵In⁺（~2.5×10⁻¹⁸）"
-      lattice_clocks: "⁸⁷Sr（~10⁻¹⁸）、¹⁷¹Yb（1×10⁻¹⁸）"
-      clock_laser_requirement: "线宽 < 1 Hz，分数频率不稳定度 ~10⁻¹⁶ – 10⁻¹⁷ @ 1 s"
-      approved_for_tai: "11 个光钟已被批准用于校准 TAI 标度间隔"
     note: >
-      Level 1 通用实体节点，各具体光钟（Sr lattice、Al⁺ ion 等）为 Level 2 实例。
-      跨专题引用：clock_laser_requirement 与超稳激光专题直接关联。
+      Level 0 系统级实体，是时间频率计量的最顶层概念，也是 timescales 专题的核心实体。
+      本文件（dimarcq2024.yaml）是此节点的权威定义来源。
 
 principles:
   - id: pri.redefinition_criteria_second
@@ -153,16 +146,21 @@ methods:
       have shown agreement at the level of 10⁻²¹"
 
 metrics:
+  # ── 框架级汇总指标 ─────────────────────────────────────────────────────────
+  # 综述/路线图汇总的领域最佳值。verification_status: inferred（路线图引用原始数据）。
+  # 具体原始测量值由各光钟技术论文（optical-clocks 专题）提供。
+  # ──────────────────────────────────────────────────────────────────────────
   - id: met.optical_clock_systematic_uncertainty
     name: "光学频率标准系统不确定度"
     unit: "无量纲（分数频率不确定度）"
     description: >
       光学频率标准的系统效应总不确定度，是评价光钟准确度的核心指标。
       包括黑体辐射频移、碰撞频移、格子光频移、运动效应、外场效应等所有已知系统效应。
+      此处为路线图汇总值（verification_status: inferred），原始测量参见 optical-clocks 专题各技术论文。
     demonstrated_value:
-      value: "9.4×10⁻¹⁹（²⁷Al⁺ 量子逻辑钟，NIST）"
+      value: "9.4×10⁻¹⁹（²⁷Al⁺ 量子逻辑钟，NIST，路线图汇总）"
       conditions: "²⁷Al⁺ 单离子，量子逻辑探测，NIST Boulder"
-      verification_status: observed
+      verification_status: inferred
       confidence: established
       source: {zotero_key: "SDG6KXNZ", claim: "The current record for systematic uncertainty of an atomic clock is held by the ²⁷Al⁺ quantum logic clock, with a fractional frequency systematic uncertainty of 9.4 × 10⁻¹⁹"}
     historical_landmarks:
@@ -175,12 +173,12 @@ metrics:
         value: "9.4×10⁻¹⁹"
         year: 2019
         source: {zotero_key: "SDG6KXNZ"}
-        note: "²⁷Al⁺ NIST 量子逻辑钟（Brewer et al. 2019）"
+        note: "²⁷Al⁺ NIST 量子逻辑钟（Brewer et al. 2019），路线图汇总"
       selected_milestones:
         - year: 2019
           value: "9.4×10⁻¹⁹（²⁷Al⁺）"
           source: {zotero_key: "SDG6KXNZ"}
-          note: "当前世界纪录"
+          note: "当前世界纪录（路线图汇总，2024年数据）"
         - year: 2021
           value: "~1×10⁻¹⁸（⁸⁷Sr 和 ¹⁷¹Yb 光晶格钟）"
           source: {zotero_key: "SDG6KXNZ"}
@@ -198,7 +196,7 @@ metrics:
     demonstrated_value:
       value: "部分频率比已在 ~10⁻¹⁷ 水平一致，但多数尚未达到 5×10⁻¹⁸ 目标"
       conditions: "Sr/Sr、Yb/Yb 同种比较最佳；异种比较和洲际比较仍在进行中"
-      verification_status: observed
+      verification_status: inferred
       confidence: likely
       source: {zotero_key: "SDG6KXNZ", claim: "Mandatory criterion I.2: validation of OFS accuracy budgets through frequency ratios"}
     theoretical_floor:
@@ -231,6 +229,9 @@ relations:
     object: met.optical_clock_systematic_uncertainty
     confidence: established
     source: {zotero_key: "SDG6KXNZ", claim: "systematic uncertainty of 9.4 × 10⁻¹⁹ for the ²⁷Al⁺ quantum logic clock"}
+    note: >
+      跨专题引用：ent.optical_frequency_standard 定义于 topics/optical-clocks/papers/fortier2026.yaml。
+      本文件（dimarcq2024.yaml）只引用该节点，不重复定义。
 
   - id: rel.D24_03
     subject: ent.optical_frequency_standard
@@ -238,6 +239,8 @@ relations:
     object: met.frequency_ratio_agreement_cross_lab
     confidence: established
     source: {zotero_key: "SDG6KXNZ", claim: "Mandatory criterion I.2: validation of OFS accuracy budgets through frequency ratios"}
+    note: >
+      跨专题引用：ent.optical_frequency_standard 定义于 topics/optical-clocks/papers/fortier2026.yaml。
 
   - id: rel.D24_04
     subject: met.optical_clock_systematic_uncertainty
@@ -245,7 +248,9 @@ relations:
     object: meth.optical_clock_comparison
     confidence: established
     source: {zotero_key: "SDG6KXNZ", claim: "simultaneous measurements of the same optical frequency ratio with two independent OFCs have shown agreement at the level of 10⁻²¹"}
-    note: "光钟不确定度通过频率比比较方法验证"
+    note: >
+      光钟不确定度通过频率比比较方法验证。
+      跨专题引用：meth.optical_clock_comparison 定义于 topics/optical-clocks/papers/fortier2026.yaml（通过 dimarcq2024 补充定义）。
 
   - id: rel.D24_05
     subject: ent.si_second_definition
@@ -253,8 +258,25 @@ relations:
     object: ent.optical_frequency_standard
     interface_metric: met.optical_clock_systematic_uncertainty
     coupling_formula: "秒定义的实现精度直接由光学频率标准的系统不确定度决定"
-    internal_property: "best demonstrated: 9.4×10⁻¹⁹（²⁷Al⁺）"
+    internal_property: "best demonstrated: 9.4×10⁻¹⁹（²⁷Al⁺，路线图汇总）"
     is_system_limit:
       current: false
       conditions: "当前秒定义基于铯（~10⁻¹⁶），光学标准已超越 2 个量级但尚未被采纳为定义基础"
-    note: "跨专题接口：光钟专题的输出是时间标尺专题的输入"
+    note: >
+      跨专题核心接口：光钟专题→时间标尺专题。
+      ent.optical_frequency_standard 定义于 topics/optical-clocks/papers/fortier2026.yaml。
+      光学频率标准的性能（系统不确定度）是 SI 秒重定义的首要技术条件。
+
+  - id: rel.D24_06
+    subject: ent.si_second_definition
+    predicate: CONDITIONED-BY
+    object: ent.optical_frequency_comb
+    interface_metric: met.comb_frequency_synthesis_accuracy_g20
+    coupling_formula: "SI 秒的光学实现需要频率梳将光钟频率（ent.optical_frequency_standard）桥接至 ent.si_second_definition（当前阶段），或直接实现光频计数"
+    internal_property: "梳频率合成精度 ~10⁻²¹，远优于秒定义目标精度"
+    is_system_limit:
+      current: false
+      conditions: "频率梳精度（10⁻²¹）远优于重定义目标（5×10⁻¹⁸），不是限制因素"
+    note: >
+      跨专题引用：ent.optical_frequency_comb 定义于 topics/optical-frequency-combs/papers/giunta2019.yaml；
+      met.comb_frequency_synthesis_accuracy_g20 定义于 topics/optical-frequency-combs/papers/giunta2020.yaml。
