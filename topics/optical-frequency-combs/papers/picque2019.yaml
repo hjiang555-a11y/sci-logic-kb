@@ -1,0 +1,580 @@
+# Picqué 2019 — 频率梳光谱综述：直接梳光谱技术分类与前沿 [光学频率梳专题：梳光谱方法架构文档]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2025-07-18
+# Schema版本：v4.0
+# 专题：optical-frequency-combs
+# contribution_type: framework — 综述/分类，定义频率梳光谱（直接梳光谱）的方法体系。
+#   定义：电光调制梳实体（Level 2）、腔增强梳光谱原理、Ramsey-comb 光谱原理、
+#   腔增强双梳光谱方法、VIPA 梳光谱方法、光谱覆盖指标、分子检测灵敏度指标。
+#   不负责：双梳光谱核心范式（由 coddington2016.yaml 定义）、频率梳通用实体（由 giunta2019.yaml 定义）。
+
+meta:
+  zotero_key: ""
+  topic: optical-frequency-combs
+  source_type: review
+  contribution_type: framework
+  reliability: high
+  title: "Frequency comb spectroscopy"
+  year: 2019
+  first_author: Picqué
+  journal: "Nature Photonics"
+  volume: 13
+  pages: "146-157"
+  doi: "10.1038/s41566-018-0347-5"
+  note: >
+    [综述论文 / 方法架构文档] Picqué (MPQ/CNRS) & Hänsch (MPQ) 2019 Nature Photonics 综述。
+    聚焦"直接频率梳光谱"（频率梳直接与样品相互作用的宽带光谱学），区别于"梳辅助精密光谱"。
+    系统分类六大光谱方法：
+    (1) 直接频率梳光谱（双光子无多普勒激发）；
+    (2) Ramsey-comb 光谱（脉冲对干涉，精密测频）；
+    (3) 色散光谱仪 + 梳（VIPA 交叉色散，600 MHz 分辨）；
+    (4) 迈克尔逊傅里叶变换光谱 + 梳（腔增强，10 MHz 分辨）；
+    (5) 双梳光谱（最受关注，多波段覆盖）；
+    (6) 非线性梳光谱（相干 Raman、泵浦-探测）。
+    覆盖光谱区域：亚毫米波/THz (0.3–3 THz)、远红外 (3–15 THz)、中红外 (15–150 THz)、
+    近红外 (150–375 THz)、可见光/紫外 (>750 THz)。
+    梳源包括：锁模激光器、电光调制梳、微腔梳、量子级联激光梳。
+    ent.optical_frequency_comb 定义于 giunta2019.yaml；
+    ent.dual_comb_spectrometer、meth.dual_comb_spectroscopy 定义于 coddington2016.yaml；
+    ent.mid_ir_frequency_comb 定义于 schliesser2012.yaml；
+    ent.microresonator_frequency_comb 定义于 kippenberg2011.yaml。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.electro_optic_frequency_comb
+    name: "电光调制频率梳"
+    aliases: ["EO comb", "electro-optic comb", "EOM-based comb", "电光梳", "frequency-agile comb"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      基于一个或多个电光调制器（EOM）将单频连续波激光调制产生的频率梳。
+      由 CW 激光种子和射频驱动的 EOM 级联产生等间距梳齿，
+      线间距等于射频驱动频率（可自由选择），中心频率可快速调谐。
+      典型产生数十至数千根梳齿（至多 ~10,000 根），远少于锁模激光器（~10⁵–10⁶），
+      但具有结构简单、无需锁模、线间距和中心频率灵活可调等独特优势。
+      两个 EO 梳可共享 CW 种子激光器和调制器部件，天然具有高互相干性，
+      极大简化双梳光谱的相干性控制需求。
+    key_parameters:
+      generation_method: "CW 种子激光 + 级联相位/强度 EOM，射频驱动"
+      line_spacing: "自由可选，典型 10–40 GHz（由射频驱动频率决定）"
+      spectral_shape: "平顶（flat-top）光谱分布"
+      typical_tooth_count: "数十至 ~10,000 根（远少于锁模激光器）"
+      center_frequency: "可快速调谐（继承 CW 种子激光器调谐能力）"
+      mutual_coherence: "双 EO 梳共用 CW 种子时天然互相干，无需额外稳定"
+      demonstrated_spectral_regions: "近红外（电信波段 ~1.5 μm）、中红外（通过 DFG 转换）"
+    note: >
+      Level 2 实体节点，归属于 ent.optical_frequency_comb（giunta2019.yaml）。
+      与 ent.microresonator_frequency_comb（kippenberg2011.yaml）同为"非锁模激光器"梳源类别。
+      EO 梳在双梳光谱中的核心优势是天然互相干，免去复杂的相干性控制。
+      Picqué 2019 特别指出 EO 梳"greatly facilitate dual-comb spectroscopy and hold
+      promise for transportable or even portable compact and easy-to-use interferometers"。
+
+principles:
+  - id: pri.cavity_enhanced_comb_spectroscopy
+    name: "腔增强频率梳光谱原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      将频率梳耦合进高精细度光学腔（Fabry-Pérot 增强腔），
+      利用腔内光程的数千倍增强提高弱吸收样品的检测灵敏度。
+      要求频率梳的梳齿间距与腔的自由光谱范围精确匹配（或为整数倍/分数倍关系），
+      使大量梳齿同时谐振于腔模。腔内样品与增强后的梳光多次作用，
+      等效吸收路径长度增加至 2·F/π 倍（F 为腔精细度，典型 10³–10⁴），
+      使微弱振转吸收可被检测。
+      该原理可与多种读出方案结合：VIPA 交叉色散、FTS 扫描干涉仪、双梳检测等。
+    domain: "频率梳光谱学，痕量气体检测，分子光谱"
+    formula: >
+      等效路径增强因子：L_eff = L_cavity · 2F/π（F = 精细度）；
+      梳-腔匹配条件：f_rep = FSR/k 或 FSR = k·f_rep（k 为整数）
+    key_insight: >
+      腔增强将频率梳的宽带特性与高精细度腔的灵敏度增强结合，
+      实现宽带（>THz 覆盖）+ 高灵敏度（ppb 级痕量检测）的光谱测量。
+      关键挑战是梳齿与腔模的精确匹配，尤其在宽光谱范围内色散引起的失配。
+    conditions: >
+      梳齿间距须与腔 FSR 精确匹配；腔色散需要补偿以维持宽带宽匹配；
+      样品须引入腔内（气体样品通常充满腔体）
+    preconditions:
+      - "腔精细度足够高（F > 1000）以实现显著路径增强"
+      - "梳齿-腔模色散失配须小于腔模线宽（否则远离中心的梳齿被腔滤除）"
+      - "需要主动锁定或跟踪机制维持梳-腔共振"
+    invalidated_when:
+      - "样品吸收过强，导致腔内功率衰减、腔精细度有效降低"
+      - "宽带色散失配无法补偿时，只有少数梳齿可耦合入腔"
+    source_claim: >
+      "Fabry-Pérot resonators may present a high finesse of several thousands; therefore,
+      they may simultaneously serve as enhancement cavities for weakly absorbing samples."
+    open_questions:
+      - "能否在中红外 5–20 μm 实现高精细度增强腔（镀层技术限制）？"
+      - "腔增强 + 双梳检测的组合方案能否达到散粒噪声极限灵敏度？"
+
+  - id: pri.ramsey_comb_spectroscopy
+    name: "Ramsey-comb 光谱原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      一种时域精密测频技术：利用频率梳产生的两个时间延迟脉冲对
+      （从同一脉冲序列中选取，或经放大后的脉冲对）激发原子/分子样品，
+      测量第二个脉冲激发与第一个脉冲产生的原子相干之间的干涉条纹。
+      条纹相位对第二个脉冲相对于原子相干的相位敏感。
+      通过在多个不同延迟时间（脉冲间距的整数倍加上选定的分数增量）处采样，
+      对干涉条纹进行拟合，可以精确确定跃迁频率。
+      自由光谱范围等于梳重复频率 f_rep，因此主要适用于简单光谱（少数跃迁）。
+      该技术的核心优势在于：可利用脉冲放大到毫焦耳级，
+      通过高效非线性频率转换实现深紫外/真空紫外精密光谱测量，
+      而这些波段 CW 激光不可用。
+    domain: "精密光谱学，原子物理，基础物理常数测量"
+    formula: >
+      干涉条纹信号：S(τ) ∝ cos(2π·ν_transition·τ + φ)；
+      延迟时间：τ = N/f_rep + Δτ（N 为整数，Δτ 为分数增量）；
+      自由光谱范围 = f_rep（光谱模糊度）
+    key_insight: >
+      Ramsey-comb 光谱将频率梳的相干控制能力与 Ramsey 干涉原理结合，
+      实现 CW 激光不可达的深紫外波段（如 202 nm）的精密频率测量。
+      已在 H₂ 分子的双光子跃迁上达到 10⁻¹² 级分数精度。
+    conditions: >
+      样品须具有足够长的相干时间以支持脉冲间隔内的干涉；
+      仅适用于少数窄线跃迁的简单光谱（自由光谱范围 = f_rep 限制）
+    preconditions:
+      - "脉冲对须具有精确已知且可控的相对相位（继承自频率梳的 f_CEO 和 f_rep 控制）"
+      - "对于紫外/深紫外应用，须有高效非线性频率转换（如高次谐波产生）"
+      - "脉冲能量须足以激发非线性过程（如双光子激发）"
+    invalidated_when:
+      - "样品光谱复杂（多条重叠跃迁超出 f_rep 自由光谱范围的解析能力）"
+      - "原子/分子相干时间短于脉冲间隔（干涉条纹衰减导致精度降低）"
+    source_claim: >
+      "Ramsey-comb spectroscopy is a related time-domain technique that measures the interference
+      between the excitations of an atomic or molecular sample by two time-delayed intense pulses
+      derived from a frequency comb. The fringes, which are sensitive to the phase of the second pulse
+      relative to the atomic coherence, are sampled at a set of different delay times."
+    open_questions:
+      - "能否将 Ramsey-comb 技术扩展至极端紫外（XUV），利用高次谐波梳实现核跃迁精密光谱？"
+      - "分子系统（复杂光谱）能否通过脉冲整形降低 f_rep 自由光谱范围限制？"
+
+  - id: pri.comb_nonlinear_spectroscopy
+    name: "频率梳非线性光谱原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      利用频率梳的超短脉冲特性（高峰值功率）激发样品的非线性光学响应，
+      包括双光子激发、受激拉曼散射（SRS）、相干反斯托克斯拉曼散射（CARS）、
+      泵浦-探测光谱和多维光谱（光子回波）等。
+      频率梳的多根梳齿可提供多对频率组合满足非线性共振条件，
+      从而以与 CW 激光相当的平均功率实现高效非线性激发。
+      双梳配置可将非线性光谱编码为傅里叶调制，实现宽带非线性光谱的多通道并行获取，
+      无需传统的机械延迟线扫描。
+    domain: "非线性光谱学，拉曼光谱，超快光谱"
+    key_insight: >
+      频率梳使得宽带非线性光谱从逐点扫描升级为多通道并行获取，
+      同时保持频率梳的绝对频率标定精度。双梳非线性光谱（CARS/SRS）
+      可实现无需延迟线的相干拉曼成像。
+    conditions: >
+      需要足够的峰值功率激发非线性过程；
+      对于大重复频率梳（微腔/EO 梳），脉冲能量低，需要新策略
+    preconditions:
+      - "梳的峰值功率须超过非线性过程阈值"
+      - "对于 CARS/SRS：两个梳的差频须覆盖目标拉曼频移"
+    source_claim: >
+      "As dual-comb interferometers often harness ultrashort-pulse lasers, they enable novel nonlinear
+      broadband spectroscopy. New schemes of coherent Raman spectroscopy, stimulated Raman
+      spectroscopy and two-photon excitation were demonstrated first, followed by others such as
+      pump–probe spectroscopy."
+    open_questions:
+      - "多维多梳光谱（如三梳光子回波）能否揭示传统非线性光谱无法获取的分子动力学信息？"
+
+methods:
+  - id: meth.cavity_enhanced_dcs
+    name: "腔增强双梳光谱方法"
+    status: demonstrated
+    applies_to: ent.dual_comb_spectrometer
+    steps_summary: >
+      1. 将信号频率梳耦合进高精细度增强腔（F ~10³–10⁴），梳齿与腔模精确匹配 →
+      2. 样品充满腔内，梳光在腔内多次反射（等效路径 ~km 级）增强弱吸收信号 →
+      3. 腔透射/反射梳光与第二个频率梳（本振梳）在光电探测器上拍频 →
+      4. 按标准双梳检测流程数字化、傅里叶变换获得 RF 频谱 →
+      5. 归一化获得腔增强吸收/色散光谱
+    required_hardware:
+      - ent.optical_frequency_comb
+      - ent.dual_comb_spectrometer
+    advantages:
+      - "结合双梳的高速无机械扫描与增强腔的高灵敏度"
+      - "可检测 ppb 级痕量气体"
+      - "保持双梳光谱的频率精度和速度优势"
+    disadvantages:
+      - "梳-腔匹配条件严格，色散失配限制有效带宽"
+      - "系统复杂度进一步增加（在双梳基础上增加增强腔锁定）"
+    conditions:
+      - "梳齿间距须与腔 FSR 精确匹配"
+      - "需要主动锁定维持梳-腔共振"
+    source_claim: >
+      "The sensitivity to weak absorption is enhanced with multipass cells and enhancement cavities."
+
+  - id: meth.vipa_comb_spectroscopy
+    name: "VIPA 交叉色散频率梳光谱方法"
+    status: demonstrated
+    applies_to: ent.optical_frequency_comb
+    steps_summary: >
+      1. 频率梳照射样品（可结合增强腔提高灵敏度） →
+      2. 透射光进入 VIPA（虚拟成像相位阵列）标准具进行高分辨率色散 →
+      3. VIPA 在一个方向上以高分辨率色散梳齿（分辨率可达 ~600 MHz） →
+      4. 正交方向使用光栅或棱镜作为交叉色散元件，消除 VIPA 自由光谱范围重叠 →
+      5. 二维色散图案投影到 CCD/CMOS 相机上，单次曝光获取宽带高分辨光谱 →
+      6. 可选：结合增强腔（VIPA + cavity-enhanced）实现高灵敏度时间分辨光谱
+    required_hardware:
+      - ent.optical_frequency_comb
+    advantages:
+      - "结构简单：无需第二个频率梳或干涉仪"
+      - "单次曝光获取宽带光谱，时间分辨率可达 ~10 μs"
+      - "已证明可监测快速化学反应动力学（如 CO + OH → HO₂ 中间体）"
+    disadvantages:
+      - "分辨率受限于 VIPA 标准具（典型 ~600 MHz，多数情况下无法分辨单根梳齿）"
+      - "相机读出速率和动态范围限制信噪比"
+      - "频率标定依赖于参考谱线，不如双梳方法的梳齿自标定精确"
+    conditions:
+      - "需要高质量 VIPA 标准具和合适的交叉色散元件"
+      - "CCD/CMOS 相机须有足够像素数以接收二维色散图案"
+    source_claim: >
+      "Dispersive spectrographs provide simple and robust tools for multichannel parallel approaches
+      to broadband spectroscopy with frequency combs. Gratings and crossed dispersers, utilizing,
+      for example, virtual imaging phase array étalons, have been successfully implemented with
+      scanning single detectors and with cameras. With a crossed disperser, resolutions as high as
+      600 MHz have been reported."
+
+  - id: meth.direct_two_photon_comb_spectroscopy
+    name: "直接频率梳双光子光谱方法"
+    status: demonstrated
+    applies_to: ent.optical_frequency_comb
+    steps_summary: >
+      1. 频率梳脉冲照射气相原子/分子样品（通常在驻波配置下实现无多普勒激发） →
+      2. 多对梳齿的频率之和满足双光子共振条件，相干叠加贡献激发效率 →
+      3. 扫描载波包络偏移频率 f₀ 或重复频率 f_rep 可扫描光谱 →
+      4. 荧光或电离信号由单探测器记录，光谱以 f_rep 为自由光谱范围周期重复 →
+      5. 通过频率梳绝对标定（f₀ 和 f_rep 已知）获得跃迁频率的绝对值
+    required_hardware:
+      - ent.optical_frequency_comb
+    advantages:
+      - "无需光谱仪或干涉仪，实验装置简单"
+      - "多梳齿对相干叠加，激发效率与同等平均功率 CW 激光相当"
+      - "驻波配置实现无多普勒展宽的精密光谱"
+      - "绝对频率标定无需额外参考谱线"
+      - "可通过非线性频率转换扩展至紫外/深紫外"
+    disadvantages:
+      - "光谱以 f_rep 为自由光谱范围重复，仅适用于简单光谱（少数窄跃迁）"
+      - "需要非线性频率转换以覆盖远紫外/极端紫外波段"
+    conditions:
+      - "样品须为气相原子或简单分子，光谱中跃迁数量有限"
+      - "f_rep 须足够大以区分不同跃迁"
+    source_claim: >
+      "In the simplest approach, a frequency comb excites and interrogates the sample. The response
+      of the sample, for example, its transmission, its fluorescence or its ionization rate, is recorded
+      using a single detector. Sweeping, for example, the comb carrier–envelope frequency f₀,
+      scans the spectrum, which is measured with a free spectral range equal to the comb line
+      spacing f_rep, ideally large."
+
+metrics:
+  - id: met.comb_spectroscopy_spectral_coverage
+    name: "频率梳光谱覆盖范围"
+    unit: "THz 或 μm（光谱跨度）"
+    description: >
+      频率梳光谱技术可覆盖的电磁波段范围。
+      截至 2019 年，已在以下波段实现频率梳光谱实验：
+      亚毫米波/THz (0.3–3 THz，100 μm–1 mm)、
+      远红外 (3–15 THz，20–100 μm)、
+      中红外 (15–150 THz，2–20 μm)、
+      近红外 (150–375 THz，0.8–2 μm)、
+      可见光/紫外 (>375 THz，<800 nm)。
+      不同梳源和光谱方法在各波段的覆盖能力差异很大。
+    demonstrated_value:
+      value: >
+        亚毫米波 0.3–3 THz（光导天线/光整流下转换）；
+        远红外 3–15 THz（THz QCL 梳 ~3 THz 中心，~1 octave 带宽）；
+        中红外 15–150 THz（DFG/OPO 梳覆盖 3–12 μm）；
+        近红外 150–375 THz（Er/Yb 光纤梳，商业成熟）；
+        紫外 >750 THz（高次谐波/倍频，202 nm H₂ Ramsey-comb 光谱）
+      conditions: >
+        双梳光谱已在所有上述波段实现实验演示（见 Fig. 6）；
+        近红外技术最为成熟（商业化光纤梳）；
+        中红外进展最快（DFG/OPO/QCL 梳源快速发展）；
+        紫外/极端紫外仍受光源功率限制
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: ""
+        claim: >
+          "the targeted regions are the submillimetre (also called terahertz; wavelength range: 100 μm–1 mm;
+          frequency range: 0.3–3.0 THz), the far-infrared (100–20 μm, 3–15 THz), the mid-infrared
+          (2–20 μm, 15–150 THz) and the ultraviolet (<400 nm, >750 THz) ranges."
+    historical_landmarks:
+      first_demonstration:
+        value: "双光子激发光谱（ps 脉冲锁模激光器，可见光/近红外）"
+        year: 1970
+        source: {zotero_key: ""}
+        note: >
+          频率梳光谱最早的应用形式（1970 年代），使用皮秒脉冲锁模激光器
+          进行无多普勒双光子激发。Picqué 2019 称之为"the first application of a
+          frequency comb in the 1970s"。
+      best_demonstration:
+        value: "双梳光谱覆盖 0.3 THz 至 >750 THz 全波段（多种梳源汇总）"
+        year: 2019
+        source: {zotero_key: ""}
+        note: "截至 2019 综述，双梳光谱已覆盖从 THz 到紫外的全部主要光谱区"
+
+  - id: met.comb_spectroscopy_molecular_sensitivity
+    name: "频率梳光谱分子检测灵敏度"
+    unit: "ppm/ppb（体积混合比）或 cm⁻¹（最小可检测吸收系数）"
+    description: >
+      频率梳光谱技术检测气相分子痕量组分的灵敏度。
+      取决于方法（直接吸收 vs 腔增强）、光程长度、积分时间和噪声水平。
+      腔增强方案可实现 ppb 级灵敏度。
+    demonstrated_value:
+      value: "ppb 级痕量气体检测（腔增强方案）"
+      conditions: >
+        腔增强频率梳光谱（VIPA + 增强腔或双梳 + 增强腔）；
+        气相分子中红外强振转吸收带；
+        典型灵敏度取决于腔精细度、积分时间和梳齿功率
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: ""
+        claim: >
+          "the sensitivity has been enhanced by synchronous detection, multi-pass cells or high finesse
+          cavities... cavity-enhanced frequency comb spectroscopy with a virtual imaging phase array
+          has proven a powerful tool for monitoring (with a time resolution of 10 μs) the kinetics
+          of the gas-phase reaction between carbon monoxide and the hydroxyl radical"
+    note: >
+      Picqué 2019 作为综述文献给出定性灵敏度描述，具体 ppb 数值来自其引用的
+      原始技术论文。呼吸分析（breath analysis）等应用场景已有概念验证。
+
+  - id: met.vipa_spectral_resolution
+    name: "VIPA 交叉色散光谱分辨率"
+    unit: "MHz"
+    description: >
+      使用 VIPA 交叉色散器分辨频率梳梳齿的光谱分辨率。
+      该分辨率限制了单根梳齿的可分辨性。
+    demonstrated_value:
+      value: "~600 MHz（最佳报告值）"
+      conditions: "VIPA 标准具 + 交叉色散光栅，二维 CCD 检测"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: ""
+        claim: >
+          "With a crossed disperser, resolutions as high as 600 MHz have been reported."
+    note: >
+      600 MHz 分辨率多数情况下仍不足以分辨锁模激光器的单根梳齿（f_rep ~100–250 MHz），
+      但足以分辨微腔梳或 EO 梳（f_rep >10 GHz）的单齿。
+
+  - id: met.ramsey_comb_fractional_accuracy
+    name: "Ramsey-comb 光谱分数频率精度"
+    unit: "无量纲（分数不确定度）"
+    description: >
+      Ramsey-comb 光谱技术测量原子/分子跃迁频率的分数精度，
+      是该方法在精密光谱学中的核心性能指标。
+    demonstrated_value:
+      value: "~10⁻¹² 级分数精度（H₂ 双光子跃迁，202 nm）"
+      conditions: >
+        H₂ 分子 EF¹Σ_g⁺ ← X¹Σ_g⁺ 双光子跃迁，深紫外 202 nm (1,485 THz)，
+        脉冲对放大至 mJ 级后高次谐波产生
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: ""
+        claim: >
+          "As already demonstrated in the deep ultraviolet with two-photon transitions of H₂
+          around 202 nm (1,485 THz), Ramsey-comb spectroscopy holds particular promise
+          for precision spectroscopy in the ultraviolet region."
+    note: >
+      精确数值来自 Altmann 2018 (ref. 57)。Picqué 2019 综述中以此作为
+      Ramsey-comb 技术的代表性成就。
+
+# ═══════════════════════════════════════════════
+#  RELATIONS（关系）
+# ═══════════════════════════════════════════════
+
+relations:
+  # --- 实体层级与归属 ---
+  - id: rel.P19_01
+    subject: ent.electro_optic_frequency_comb
+    predicate: PART-OF
+    object: ent.optical_frequency_comb
+    confidence: established
+    source:
+      zotero_key: ""
+      claim: >
+        "Frequency-agile combs, based on architectures involving one or several electro-optic
+        modulators, exhibit flat-top spectra with a moderate number of lines (up to 10,000)
+        but a freely selectable line spacing and a centre frequency that can be rapidly tuned."
+    note: >
+      EO 梳是光学频率梳的 Level 2 子类（非锁模激光器梳源类别）。
+      ent.optical_frequency_comb 定义于 giunta2019.yaml。
+
+  # --- 双梳光谱与 EO 梳 ---
+  - id: rel.P19_02
+    subject: meth.dual_comb_spectroscopy
+    predicate: ENABLED-BY
+    object: ent.electro_optic_frequency_comb
+    confidence: established
+    source:
+      zotero_key: ""
+      claim: >
+        "The two combs of electro-optic-modulator-based systems can share a number of components.
+        With some of these set-ups, the mutual-coherence time exceeds 1 s. Such designs without any
+        stabilization electronics greatly facilitate dual-comb spectroscopy and hold promise for
+        transportable or even portable compact and easy-to-use interferometers."
+    conditions: "EO 梳共享 CW 种子激光器时，天然具有高互相干性"
+    note: >
+      EO 梳简化了双梳光谱的互相干要求。
+      meth.dual_comb_spectroscopy 定义于 coddington2016.yaml。
+
+  # --- 腔增强双梳光谱的原理支撑 ---
+  - id: rel.P19_03
+    subject: meth.cavity_enhanced_dcs
+    predicate: ENABLED-BY
+    object: pri.cavity_enhanced_comb_spectroscopy
+    confidence: established
+    source:
+      zotero_key: ""
+      claim: >
+        "The sensitivity to weak absorption is enhanced with multipass cells and enhancement cavities."
+    conditions: "梳齿间距须与增强腔 FSR 精确匹配"
+
+  # --- VIPA 方法与光学频率梳 ---
+  - id: rel.P19_04
+    subject: met.comb_spectroscopy_molecular_sensitivity
+    predicate: OPERATIONALIZED-AS
+    object: meth.vipa_comb_spectroscopy
+    confidence: established
+    source:
+      zotero_key: ""
+      claim: >
+        "cavity-enhanced frequency comb spectroscopy with a virtual imaging phase array has proven
+        a powerful tool for monitoring (with a time resolution of 10 μs) the kinetics of the gas-phase
+        reaction between carbon monoxide and the hydroxyl radical"
+    note: "VIPA + 增强腔方案是实现高灵敏度宽带分子光谱的代表性方法之一"
+
+  # --- VIPA 分辨率作为方法指标 ---
+  - id: rel.P19_05
+    subject: meth.vipa_comb_spectroscopy
+    predicate: CHARACTERIZED-BY
+    object: met.vipa_spectral_resolution
+    confidence: established
+    source:
+      zotero_key: ""
+      claim: >
+        "With a crossed disperser, resolutions as high as 600 MHz have been reported."
+
+  # --- Ramsey-comb 方法的原理支撑 ---
+  - id: rel.P19_06
+    subject: meth.direct_two_photon_comb_spectroscopy
+    predicate: ENABLED-BY
+    object: pri.ramsey_comb_spectroscopy
+    confidence: established
+    source:
+      zotero_key: ""
+      claim: >
+        "Ramsey-comb spectroscopy is a related time-domain technique that measures the interference
+        between the excitations of an atomic or molecular sample by two time-delayed intense pulses
+        derived from a frequency comb."
+    note: "Ramsey-comb 技术是直接频率梳光谱的扩展，共享双光子激发平台"
+
+  # --- Ramsey-comb 精度指标 ---
+  - id: rel.P19_07
+    subject: meth.direct_two_photon_comb_spectroscopy
+    predicate: CHARACTERIZED-BY
+    object: met.ramsey_comb_fractional_accuracy
+    confidence: established
+    source:
+      zotero_key: ""
+      claim: >
+        "As already demonstrated in the deep ultraviolet with two-photon transitions of H₂
+        around 202 nm (1,485 THz), Ramsey-comb spectroscopy holds particular promise
+        for precision spectroscopy in the ultraviolet region."
+
+  # --- 双梳光谱覆盖范围 ---
+  - id: rel.P19_08
+    subject: ent.dual_comb_spectrometer
+    predicate: CHARACTERIZED-BY
+    object: met.comb_spectroscopy_spectral_coverage
+    confidence: established
+    source:
+      zotero_key: ""
+      claim: >
+        "Overview of the spectral regions where experiments of dual-comb spectroscopy have been reported."
+    note: >
+      Fig. 6 汇总了截至 2019 年双梳光谱的全波段覆盖情况。
+      ent.dual_comb_spectrometer 定义于 coddington2016.yaml。
+
+  # --- 微腔梳在双梳光谱中的应用 ---
+  - id: rel.P19_09
+    subject: meth.dual_comb_spectroscopy
+    predicate: ENABLED-BY
+    object: ent.microresonator_frequency_comb
+    confidence: established
+    source:
+      zotero_key: ""
+      claim: >
+        "Soliton Kerr combs generated in high-quality-factor microresonators, as reviewed in ref. 21,
+        provide convenient access to a range of repetition frequencies, from 10 GHz to 1 THz,
+        which is difficult, or even impossible, to reach with conventional mode-locked lasers."
+    conditions: "大重复频率微腔梳适合凝聚态宽线样品的快速光谱测量"
+    note: >
+      ent.microresonator_frequency_comb 定义于 kippenberg2011.yaml。
+      微腔梳的大线间距适合凝聚态样品光谱测量，但单齿功率变化大可能限制动态范围。
+
+  # --- 中红外梳的光谱应用 ---
+  - id: rel.P19_10
+    subject: ent.mid_ir_frequency_comb
+    predicate: CHARACTERIZED-BY
+    object: met.comb_spectroscopy_spectral_coverage
+    confidence: established
+    source:
+      zotero_key: ""
+      claim: >
+        "mid-infrared frequency comb sensing technology will increase the number of detectable
+        molecules, as well as the detection sensitivity."
+    conditions: "中红外 2–20 μm 覆盖分子振转指纹区，科学驱动力最强"
+    note: >
+      ent.mid_ir_frequency_comb 定义于 schliesser2012.yaml。
+      中红外波段是频率梳光谱的核心应用方向之一。
+
+  # --- 腔增强双梳灵敏度指标 ---
+  - id: rel.P19_11
+    subject: meth.cavity_enhanced_dcs
+    predicate: CHARACTERIZED-BY
+    object: met.comb_spectroscopy_molecular_sensitivity
+    confidence: established
+    source:
+      zotero_key: ""
+      claim: >
+        "The sensitivity to weak absorption is enhanced with multipass cells and enhancement cavities."
+
+  # --- 非线性梳光谱方法支撑 ---
+  - id: rel.P19_12
+    subject: meth.dual_comb_spectroscopy
+    predicate: ENABLED-BY
+    object: pri.comb_nonlinear_spectroscopy
+    confidence: established
+    source:
+      zotero_key: ""
+      claim: >
+        "As dual-comb interferometers often harness ultrashort-pulse lasers, they enable novel nonlinear
+        broadband spectroscopy."
+    conditions: "需要足够的脉冲峰值功率激发非线性过程"
+    note: >
+      非线性梳光谱（CARS、SRS、双光子激发、泵浦-探测）是双梳光谱的重要扩展方向。
+
+  # --- 频率梳作为光谱工具的核心竞争力 ---
+  - id: rel.P19_13
+    subject: ent.optical_frequency_comb
+    predicate: CHARACTERIZED-BY
+    object: met.comb_spectroscopy_spectral_coverage
+    confidence: established
+    source:
+      zotero_key: ""
+      claim: >
+        "All regions of the electromagnetic spectrum offer interesting opportunities for spectroscopy."
+    note: >
+      频率梳光谱的核心优势之一是覆盖从 THz 到紫外的广泛波段。
+      ent.optical_frequency_comb 定义于 giunta2019.yaml。
