@@ -1,13 +1,17 @@
-# Giunta 2020 — 实时光学相位追踪与色散外差检测，10⁻²⁰ 级频率梳合成精度
+# Giunta 2020 — 实时光学相位追踪与色散外差检测，10⁻²⁰ 级频率梳合成精度 [首篇技术论文]
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
 # Schema版本：v4.0
 # 专题：optical-frequency-combs
+# contribution_type: technical — optical-frequency-combs 专题首篇技术论文
+#   贡献：实时相位追踪 + 色散外差检测两项创新技术，实现 10⁻²⁰ 级频率梳合成精度。
+#   Framework 定义参见：giunta2019.yaml（ent.optical_frequency_comb 权威来源）。
 
 meta:
   zotero_key: "UFWLAXMA"
   topic: optical-frequency-combs
   source_type: technical_paper
+  contribution_type: technical
   reliability: high
   title: "Real-time phase tracking for wide-band optical frequency measurements at the 20th decimal place"
   year: 2020
@@ -17,10 +21,11 @@ meta:
   pages: "44-49"
   doi: "10.1038/s41566-019-0520-5"
   note: >
+    [技术论文] optical-frequency-combs 专题首篇技术论文。
     首次演示实时光学相位追踪（optical phase tracking）与色散外差检测（dichroic heterodyne detection）
-    两项创新技术，使光学频率梳在宽带（~90 THz）光学频率合成中达到 10⁻²⁰ 级精度和准确度，
-    测量时间仅需 <100 s。两台梳频比较偏差 (5.4 ± 5.3)×10⁻²¹（10⁵ s 单次测量运行），
-    无需传统 transfer oscillator 方案。Menlo Systems + MPQ（Hänsch/Holzwarth 组），掺铒光纤梳。
+    两项创新技术，使光学频率梳在宽带（~90 THz）光学频率合成中达到 10⁻²⁰ 级精度和准确度。
+    测量时间仅需 <100 s。两台梳频比较偏差 (5.4 ± 5.3)×10⁻²¹（10⁵ s 单次测量运行）。
+    Menlo Systems + MPQ（Hänsch/Holzwarth 组），掺铒光纤梳。
 
 # ═══════════════════════════════════════════════
 #  NODES（节点）

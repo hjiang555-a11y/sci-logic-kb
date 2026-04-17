@@ -347,6 +347,7 @@ meta:
   zotero_key: "{8位Zotero KEY}"
   topic: ultrastable-laser         # 所属专题（对应 topics/ 子目录名）
   source_type: technical_paper   # technical_paper | review | textbook | standard
+  contribution_type: technical   # technical=具体技术贡献 | framework=专题框架定义 | incremental=增量改进
   reliability: medium            # high | medium | low
   title: "完整论文标题"
   year: YYYY
@@ -627,10 +628,10 @@ note: "跨专题引用，定义于 topics/optical-clocks/papers/xxx.yaml"
 | `adhikari2014.yaml` | FTXSM9QC | Adhikari 2014 — GW 探测综述 | ✅ 符合v3.2（首次提取） |
 | `olson2019.yaml` | CDX3DFQR | Olson 2019 — RB 干涉仪 <2×10⁻¹⁶ | ✅ 符合v3.2（首次提取） |
 | `huangjc2019b.yaml` | 5DCNFGX4 | Huang 2019b — 双缠绕抗振光纤盘 | ✅ 符合v3.2（首次提取） |
-| `fortier2026.yaml` | BWR7TEZ6 | Fortier 2026 — 光学原子钟综述（Optica） | ✅ 符合v4.0（首次提取，optical-clocks 专题） |
-| `giunta2019.yaml` | KTHCQRJ2 | Giunta 2019 — 光学频率梳 20 年回顾 | ✅ 符合v4.0（首次提取，optical-frequency-combs 专题） |
-| `giunta2020.yaml` | UFWLAXMA | Giunta 2020 — 10⁻²⁰ 级宽带光学频率合成（Nature Photonics） | ✅ 符合v4.0（首次提取，optical-frequency-combs 专题） |
-| `dimarcq2024.yaml` | SDG6KXNZ | Dimarcq 2024 — SI 秒重定义路线图（Metrologia） | ✅ 符合v4.0（首次提取，timescales 专题） |
+| `fortier2026.yaml` | BWR7TEZ6 | Fortier 2026 — 光学原子钟综述（Optica）**[框架型]** | ✅ 符合v4.0（contribution_type:framework，定义 optical-clocks 专题顶层架构） |
+| `giunta2019.yaml` | KTHCQRJ2 | Giunta 2019 — 光学频率梳 20 年回顾**[框架型]** | ✅ 符合v4.0（contribution_type:framework，定义 optical-frequency-combs 专题顶层架构） |
+| `giunta2020.yaml` | UFWLAXMA | Giunta 2020 — 10⁻²⁰ 级宽带光学频率合成（Nature Photonics）**[技术型]** | ✅ 符合v4.0（contribution_type:technical，首篇技术论文） |
+| `dimarcq2024.yaml` | SDG6KXNZ | Dimarcq 2024 — SI 秒重定义路线图（Metrologia）**[框架型]** | ✅ 符合v4.0（contribution_type:framework，定义 timescales 专题顶层架构；ent.optical_frequency_standard 改为跨文件引用） |
 
 **历史重构摘要**（v3.0 起，含 2026-04-16 的 v3.2 增补）：
 
@@ -652,3 +653,96 @@ note: "跨专题引用，定义于 topics/optical-clocks/papers/xxx.yaml"
 - **疑问 6（实例 YAML 表达）**：采用方案 (a)——在各论文 YAML 中保留为 Level 2 实体节点
 - **疑问 7（Webster 2011）**：已确认为 ent.cubic_force_insensitive_cavity_w11
 - **疑问 8（分支3 反馈执行部件）**：替换为"稳频策略"分支，EOM 归入 FP 腔调制解调子单元；RAM 抑制作为该子单元接口而非独立 meth 节点
+
+---
+
+## 八、综述/框架型论文处理规范（v4.0 新增）
+
+### 8.1 两类论文的区分原则
+
+| 维度 | 技术论文（`contribution_type: technical`） | 框架型论文（`contribution_type: framework`） |
+|------|------------------------------------------|--------------------------------------------|
+| 来源 | 报告具体实验结果或方法创新的原始研究论文 | 综述（review）、路线图（roadmap）、教科书章节 |
+| 节点职责 | 新增 Level 2 实例节点、具体 met.* 指标值 | 定义专题 Level 0–1 顶层实体、meta/domain 原理 |
+| 关系职责 | 深化某条技术链的 BOUNDED-BY/ENABLED-BY 关系 | 建立**跨专题** CONDITIONED-BY 接口关系 |
+| 数值责任 | 提供首次/最佳演示值，必须附 conditions | 提供领域共识范围值；对于汇总数据须注明来源 |
+| 争议/开放问题 | 实验层面的争议和未解决技术问题 | 领域方向层面的争议和战略开放问题 |
+| `source_type` | `technical_paper` | `review` / `standard` / `textbook` |
+| `contribution_type` | `technical` | `framework` |
+
+> **注意**：`source_type` 和 `contribution_type` 独立使用。某些技术论文因是专题第一篇而承担部分框架角色时，可用 `contribution_type: technical`（默认），并在 `note` 中说明其"首篇"地位。
+
+### 8.2 框架型论文的节点提取规则
+
+**可以（鼓励）**：
+1. 定义专题最顶层实体（hierarchy_level: 0 或 1），成为该专题 ID 的**权威来源**（canonical source）
+2. 定义 tier: meta 或 tier: domain 的原理，特别是跨专题共用的物理机制
+3. 建立跨专题 CONDITIONED-BY 关系（如光钟 CONDITIONED-BY 超稳激光）
+4. 在 `open_questions` 和 `contested_claims` 中记录**领域战略级**未解问题
+5. 在指标节点的 `historical_landmarks` 中系统梳理演化历程
+
+**避免**：
+1. 定义 Level 2 实例节点（如某特定实验系统的参数；这类节点应由具体技术论文定义）
+2. 将综述摘要改写为 `demonstrated_value`（只有原始测量才算 `observed`，综述转述须标注 `inferred`）
+3. 在关系 `source.claim` 中引用综述的转述，而非原始论文的论断
+
+### 8.3 跨文件引用与重复定义禁令
+
+> **全局唯一 ID 是最高准则**：同一节点 ID 只能在一个文件中**完整定义**，其他文件只引用。
+
+当框架型论文 A（如 `dimarcq2024.yaml`）需要使用已在框架型论文 B（如 `fortier2026.yaml`）中定义的实体时：
+
+```yaml
+# dimarcq2024.yaml 中的正确写法（引用而非重复定义）
+relations:
+  - id: rel.D24_02
+    subject: ent.optical_frequency_standard   # 跨文件引用：定义于 fortier2026.yaml
+    predicate: CHARACTERIZED-BY
+    object: met.optical_clock_systematic_uncertainty
+    note: "跨专题引用，ent.optical_frequency_standard 定义于 topics/optical-clocks/papers/fortier2026.yaml"
+```
+
+**不允许**在 `dimarcq2024.yaml` 的 `entities:` 中再次完整定义 `ent.optical_frequency_standard`。
+
+### 8.4 综述论文处理的典型结构
+
+```yaml
+# {Author} {Year} — {综述主题} [框架文档]
+# contribution_type: framework
+# 此文件是 {topic} 专题的顶层架构定义文档
+
+meta:
+  source_type: review
+  contribution_type: framework
+  note: >
+    [综述论文] {专题名称}专题框架文档。
+    定义：顶层实体 ent.xxx（Level 0/1）、核心原理 pri.xxx（meta/domain 级）、
+    跨专题接口 CONDITIONED-BY 关系。
+    不负责具体技术实现细节（Level 2 节点由技术论文提供）。
+
+entities:
+  # 只定义 Level 0/1 实体；不定义 Level 2 具体实现
+  - id: ent.{topic_main_entity}
+    hierarchy_level: 1
+    ...
+
+principles:
+  # 只定义 tier: meta 或 tier: domain 的原理
+  - id: pri.{domain_principle}
+    tier: domain
+    ...
+
+relations:
+  # 重点建立跨专题 CONDITIONED-BY 关系
+  - id: rel.X##
+    predicate: CONDITIONED-BY
+    note: "跨专题接口：..."
+```
+
+### 8.5 当前框架型文档目录
+
+| 文件 | 专题 | 定义的顶层实体 | 定义的核心原理 |
+|------|------|--------------|-------------|
+| `topics/optical-clocks/papers/fortier2026.yaml` | optical-clocks | `ent.optical_frequency_standard`（权威来源）、`ent.trapped_ion_optical_clock`、`ent.optical_lattice_clock`、`ent.nuclear_clock_229th` | `pri.quantum_projection_noise_limit`、`pri.dick_effect`、`pri.magic_wavelength_lattice` |
+| `topics/optical-frequency-combs/papers/giunta2019.yaml` | optical-frequency-combs | `ent.optical_frequency_comb`（权威来源） | `pri.self_referencing_f2f`、`pri.optical_frequency_division_microwave`、`pri.frequency_ratio_measurement` |
+| `topics/timescales/papers/dimarcq2024.yaml` | timescales | `ent.si_second_definition`（权威来源）| `pri.redefinition_criteria_second`、`pri.secondary_representation_si_second` |
