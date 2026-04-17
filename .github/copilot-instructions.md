@@ -1,4 +1,4 @@
-# GitHub Copilot 任务说明 — sci-logic-kb 超稳激光知识提取
+# GitHub Copilot 任务说明 — sci-logic-kb 时间频率计量知识提取
 
 > **最高规则**：若本文件与 `SCHEMA.md` 冲突，**一律以 `/home/runner/work/sci-logic-kb/sci-logic-kb/SCHEMA.md` 为准**。
 
@@ -8,7 +8,7 @@
 
 ## 1. 项目定位
 
-本仓库是一个**面向科研探索的结构化知识库**，服务**时间频率计量**全领域。当前已建主专题：超稳激光；已初建专题：光学频率梳、光钟、时间标尺与钟组。专题体系详见 `TOPICS.md`。
+本仓库是一个**面向科研探索的结构化知识库**，服务**时间频率计量**全领域。当前已建主专题：超稳激光；已初建专题：光学频率梳、光钟、时间标尺与钟组。需要注意：这 3 个初建专题当前主要由框架型综述/路线图条目建立顶层架构。专题体系详见 `TOPICS.md`。
 
 核心问题：
 
@@ -137,6 +137,11 @@
    - 是否有争议或开放问题？
    - 是否值得记录首次/最佳时间点？
 
+若论文本身的贡献是**专题框架定义**而非具体技术点（如综述、路线图、教科书章节），应：
+- 在 `meta.contribution_type` 中标记为 `framework`
+- 主要定义 Level 0/1 顶层实体、tier: meta/domain 原理与跨专题接口关系
+- 避免把具体实验系统的 Level 2 参数实例写成该框架文档的主内容
+
 ---
 
 ## 7. 质量要求
@@ -171,7 +176,7 @@ YAML 仍是主库；Obsidian 等工具是阅读层，而不是事实真源。
 
 - `/home/runner/work/sci-logic-kb/sci-logic-kb/README.md`
 - `/home/runner/work/sci-logic-kb/sci-logic-kb/.github/copilot-instructions.md`
-- `/home/runner/work/sci-logic-kb/sci-logic-kb/scripts/process_paper.py`
+- `/home/runner/work/sci-logic-kb/sci-logic-kb/scripts/` 下自动化脚本与辅助工具
 - `/home/runner/work/sci-logic-kb/sci-logic-kb/.github/workflows/process-paper.yml`
 - `/home/runner/work/sci-logic-kb/sci-logic-kb/TOPICS.md`
 - `/home/runner/work/sci-logic-kb/sci-logic-kb/topics/*/papers/*.yaml` 头部版本注释

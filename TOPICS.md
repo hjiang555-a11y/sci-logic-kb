@@ -17,14 +17,14 @@
 │   ├── 误差探测方法（PDH、Tilt Locking 等）
 │   └── 稳频策略（多级级联、多腔平均）
 │
-├── 2. 光学频率梳 (Optical Frequency Combs)      ← 初建，2篇论文
+├── 2. 光学频率梳 (Optical Frequency Combs)      ← 初建，2篇论文（1框架+1技术）
 │   ├── 锁模激光器（钛宝石、光纤、固体）
 │   ├── 微腔光梳 (Microresonator Combs)
 │   ├── 电光调制梳 (EO Combs)
 │   ├── 梳齿稳定（f-2f 自参考、光学锁定）
 │   └── 噪声传递与相干性
 │
-├── 3. 光钟 (Optical Clocks)                     ← 初建，1篇论文
+├── 3. 光钟 (Optical Clocks)                     ← 初建，1篇框架综述
 │   ├── 光晶格钟（Sr、Yb）
 │   ├── 单离子钟（Al⁺、¹⁷¹Yb⁺、⁸⁸Sr⁺、¹⁵N₂⁺）
 │   ├── 核钟（²²⁹Th）
@@ -45,7 +45,7 @@
 │   ├── GNSS 载波相位
 │   └── 噪声消除与相位补偿
 │
-├── 6. 时间标尺与钟组 (Timescales & Clock Ensembles) ← 初建，1篇论文
+├── 6. 时间标尺与钟组 (Timescales & Clock Ensembles) ← 初建，1篇框架路线图
 │   ├── UTC/TAI 生成
 │   ├── 钟组算法（AT1、ALGOS）
 │   ├── 频率稳定度表征（Allan 偏差族）
@@ -92,16 +92,18 @@
 | 编号 | 专题 | 目录 | 状态 | 论文数 | 核心节点数(估) |
 |------|------|------|------|--------|---------------|
 | 1 | 超稳激光 | `topics/ultrastable-laser/` | ✅ 已建 | 78 | ~200+ |
-| 2 | 光学频率梳 | `topics/optical-frequency-combs/` | 🚧 初建 | 2 | ~10 |
-| 3 | 光钟 | `topics/optical-clocks/` | 🚧 初建 | 1 | ~10 |
+| 2 | 光学频率梳 | `topics/optical-frequency-combs/` | 🚧 初建（1框架+1技术） | 2 | ~10 |
+| 3 | 光钟 | `topics/optical-clocks/` | 🚧 初建（仅框架） | 1 | ~10 |
 | 4 | 微波频率标准 | `topics/microwave-standards/` | 📋 待建 | — | — |
 | 5 | 时间频率传递 | `topics/time-frequency-transfer/` | 📋 待建 | — | — |
-| 6 | 时间标尺与钟组 | `topics/timescales/` | 🚧 初建 | 1 | ~8 |
+| 6 | 时间标尺与钟组 | `topics/timescales/` | 🚧 初建（仅框架） | 1 | ~8 |
 | 7 | 基础物理应用 | `topics/fundamental-physics/` | 📋 待建 | — | — |
 
 ---
 
 ## 四、建设优先级建议
+
+> 当前 3 个初建专题中，`giunta2019.yaml`、`fortier2026.yaml`、`dimarcq2024.yaml` 的主要作用是定义专题顶层架构和跨专题接口，不应误读为这些专题已经完成了技术论文层的系统填充。
 
 ### 第一梯队（与超稳激光耦合最紧密）
 
