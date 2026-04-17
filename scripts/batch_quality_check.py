@@ -38,8 +38,9 @@ class QualityChecker:
 
     def _yaml_files(self) -> List[Path]:
         """返回仓库中的所有论文 YAML 文件。"""
+        topic_papers_dirs = list(self.repo_path.glob("topics/*/papers"))
         topic_files = sorted(self.repo_path.glob("topics/*/papers/*.yaml"))
-        if topic_files:
+        if topic_papers_dirs:
             return topic_files
         return sorted((self.repo_path / "papers").glob("*.yaml"))
 
@@ -153,10 +154,12 @@ class QualityChecker:
         if not nodes:
             return issues
 
+        source_name = Path(source_file).name
+
         for node_id, node_data in self._iter_collection_items(nodes):
             # 检查节点唯一性（仅跨文件重复时告警）
             locations = self.node_locations.get(node_id, set())
-            other_locations = {loc for loc in locations if Path(loc).name != source_file}
+            other_locations = {loc for loc in locations if Path(loc).name != source_name}
             if other_locations:
                 issues["duplicate_nodes"].append(f"{node_id} (在 {section_name}；另见 {', '.join(sorted(Path(loc).name for loc in other_locations))})")
 
@@ -184,9 +187,11 @@ class QualityChecker:
         if not relations:
             return issues
 
+        source_name = Path(source_file).name
+
         for rel_id, rel_data in self._iter_collection_items(relations):
             locations = self.relation_locations.get(rel_id, set())
-            other_locations = {loc for loc in locations if Path(loc).name != source_file}
+            other_locations = {loc for loc in locations if Path(loc).name != source_name}
             if other_locations:
                 issues["warnings"].append(f"关系ID重复: {rel_id}（另见 {', '.join(sorted(Path(loc).name for loc in other_locations))}）")
 
