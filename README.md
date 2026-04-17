@@ -11,7 +11,7 @@
 当前已建设/已入库的专题：
 
 - **超稳激光**（Ultra-stable Lasers）：78 篇论文，~200+ 知识节点
-- **光学频率梳**（Optical Frequency Combs）：2 篇论文（1 篇框架综述 + 1 篇技术论文），初建
+- **光学频率梳**（Optical Frequency Combs）：8 篇论文（6 篇综述框架 + 1 篇框架综述 + 1 篇技术论文），~147 知识节点，已建
 - **光钟**（Optical Clocks）：1 篇框架综述，初建
 - **时间标尺与钟组**（Timescales & Clock Ensembles）：1 篇框架路线图，初建
 
@@ -90,6 +90,12 @@
 目前 3 个非超稳激光专题中，已有 3 篇论文的角色是**专题框架定义**，而不是具体技术点的原始实验论文：
 
 - `topics/optical-frequency-combs/papers/giunta2019.yaml`：定义光学频率梳专题的顶层实体、核心原理与跨专题接口
+- `topics/optical-frequency-combs/papers/udem2002.yaml`：光学频率梳开创性综述（Hänsch/Udem 2002），定义 Ti:sapphire 梳、超连续谱展宽、光学频率计数方法
+- `topics/optical-frequency-combs/papers/kippenberg2011.yaml`：微腔光梳综述（Kippenberg 2011），定义微谐振器频率梳架构、参量四波混频、CW 泵浦梳生成
+- `topics/optical-frequency-combs/papers/schliesser2012.yaml`：中红外频率梳综述（Schliesser 2012），定义中红外梳架构、DFG/OPO 方法、分子指纹光谱
+- `topics/optical-frequency-combs/papers/coddington2016.yaml`：双梳光谱学综述（Coddington 2016），定义双梳光谱仪、多外差检测原理、自适应采样校正
+- `topics/optical-frequency-combs/papers/kippenberg2018.yaml`：耗散克尔孤子综述（Kippenberg 2018），定义 DKS 原理、LLE 方程、色散波、微梳自参考
+- `topics/optical-frequency-combs/papers/picque2019.yaml`：频率梳光谱学综述（Picqué 2019），定义电光梳、腔增强梳光谱、VIPA 光谱、Ramsey 梳光谱
 - `topics/optical-clocks/papers/fortier2026.yaml`：定义光钟专题的顶层实体、架构分类与关键限制原理
 - `topics/timescales/papers/dimarcq2024.yaml`：定义时间标尺专题的顶层实体、秒重定义标准与跨专题接口
 
@@ -108,7 +114,7 @@
 ├── topics/                      # 各专题知识存放
 │   ├── ultrastable-laser/       # 专题1：超稳激光（已建）
 │   │   └── papers/              # 78篇论文 YAML 知识条目
-│   ├── optical-frequency-combs/ # 专题2：光学频率梳（初建，1框架+1技术）
+│   ├── optical-frequency-combs/ # 专题2：光学频率梳（已建，6综述+1框架+1技术）
 │   ├── optical-clocks/          # 专题3：光钟（初建，1框架）
 │   ├── timescales/              # 专题6：时间标尺与钟组（初建，1框架）
 │   └── ...                      # 更多专题
@@ -336,7 +342,7 @@
 
 ## 11. 未来演进方向
 
-1. **推进已初建专题从框架走向技术填充**：优先补充光学频率梳、光钟、时间标尺专题中的技术论文
+1. **推进已初建专题从框架走向技术填充**：光学频率梳已完成框架建设（8篇综述），下一步重点补充具体技术论文；优先补充光钟、时间标尺专题中的技术论文
 2. 增强争议与开放问题的结构化管理
 3. 强化“首次实现 / 当前最佳 / 关键拐点”的时间表达
 4. 建立跨专题共享节点机制（通用原理、通用指标）
