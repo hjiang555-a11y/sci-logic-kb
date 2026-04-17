@@ -347,7 +347,9 @@ meta:
   zotero_key: "{8位Zotero KEY}"
   topic: ultrastable-laser         # 所属专题（对应 topics/ 子目录名）
   source_type: technical_paper   # technical_paper | review | textbook | standard
-  contribution_type: technical   # technical=具体技术贡献 | framework=专题框架定义 | incremental=增量改进
+  contribution_type: technical   # technical=具体技术贡献 | framework=专题框架定义
+                                 # technical: 原始研究论文，提供新的实验结果/方法
+                                 # framework: 综述/路线图/教科书，定义专题顶层架构（见第八节）
   reliability: medium            # high | medium | low
   title: "完整论文标题"
   year: YYYY

@@ -53,7 +53,7 @@ entities:
     key_parameters:
       best_systematic_uncertainty: "<10⁻¹⁸（多个系统）；5.5×10⁻¹⁹（²⁷Al⁺ NIST，综述汇总）"
       best_instability: "~5×10⁻¹⁷/√τ（最佳光晶格钟，综述汇总）"
-      clock_laser_requirement: "线宽 <1 Hz；分数频率不稳定度 ~10⁻¹⁶–10⁻¹⁷ @ 1 s（见超稳激光专题）"
+      clock_laser_requirement: "线宽 <1 Hz；分数频率不稳定度 ~10⁻¹⁶–10⁻¹⁷ @ 1 s（跨专题引用，参见 topics/ultrastable-laser/papers/ 中各技术论文）"
     note: >
       Level 1 通用实体节点，是 optical-clocks 专题的核心实体。
       本文件（fortier2026.yaml）是此节点的权威定义来源。

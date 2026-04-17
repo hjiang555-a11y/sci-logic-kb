@@ -272,7 +272,7 @@ relations:
     predicate: CONDITIONED-BY
     object: ent.optical_frequency_comb
     interface_metric: met.comb_frequency_synthesis_accuracy_g20
-    coupling_formula: "SI 秒的光学实现需要频率梳将光钟频率桥接至铯标准（当前阶段）或直接实现光频计数"
+    coupling_formula: "SI 秒的光学实现需要频率梳将光钟频率（ent.optical_frequency_standard）桥接至 ent.si_second_definition（当前阶段），或直接实现光频计数"
     internal_property: "梳频率合成精度 ~10⁻²¹，远优于秒定义目标精度"
     is_system_limit:
       current: false
