@@ -1,8 +1,8 @@
 # sci-logic-kb YAML 知识提取模式文档
 
-> **版本**：v4.0（2026-04-16）  
-> **变更摘要**：在 v3.2 基础上升级为**多专题架构**。顶层扩展为"时间频率计量"知识体系，原"超稳激光"降为专题子域。新增 `TOPICS.md` 定义专题体系，YAML 文件迁移至 `topics/<topic>/papers/`。Schema 规则（节点类型、关系类型、质量要求）保持通用，适用于所有专题。
-> **向后兼容**：v3.2 YAML 文件无需修改内容即可在 v4.0 下使用。已迁移的文件保留 `# Schema版本：v3.2` 头注释不影响解析；新建文件应使用 `# Schema版本：v4.0` 并在 meta 中包含 `topic:` 字段。
+> **版本**：v4.1（2026-04-17）  
+> **变更摘要**：v4.1 在 v4.0 基础上重组专题架构——合并"光钟"+"微波频率标准"为"频率标准"；移除"基础物理应用"（暂缓）；重组光学频率梳（技术/应用清晰分离、微腔梳+电光梳归并、新增天文光梳）；新增"时频计量数学基础"跨专题模块。目录 `topics/optical-clocks/` 迁移为 `topics/frequency-standards/`。
+> **向后兼容**：v3.2 YAML 文件无需修改内容即可在 v4.1 下使用。已迁移的文件保留 `# Schema版本：v3.2` 头注释不影响解析；新建文件应使用 `# Schema版本：v4.1` 并在 meta 中包含 `topic:` 字段。
 
 ---
 
@@ -12,7 +12,7 @@
 
 符号主义结构化知识库，服务**时间频率计量**科研全领域。
 - **当前已建专题**：超稳激光（`topics/ultrastable-laser/`，78 篇论文）、光学频率梳（`topics/optical-frequency-combs/`，8 篇论文，~147 节点）
-- **当前初建专题**：光钟（`topics/optical-clocks/`，1 篇）、时间标尺与钟组（`topics/timescales/`，1 篇）
+- **当前初建专题**：频率标准（`topics/frequency-standards/`，1 篇光钟框架综述）、时间标尺与钟组（`topics/timescales/`，1 篇）
 - **专题体系**：详见 [`TOPICS.md`](TOPICS.md)
 - **目标查询**：当前性能极限在哪？为什么卡在这？怎么突破？
 - **不是**向量知识库，**支持**逻辑推理和精确路径查询。
@@ -73,17 +73,22 @@
 
 ## 二、系统架构
 
-### 顶层：时间频率计量知识体系（v4.0 新增）
+### 顶层：时间频率计量知识体系（v4.1 更新）
 
 ```
 时间频率计量 (Time-Frequency Metrology)
 ├── 专题1：超稳激光 ← 当前已建（topics/ultrastable-laser/）
 ├── 专题2：光学频率梳 ← 已建（topics/optical-frequency-combs/，8篇，~147节点）
-├── 专题3：光钟 ← 初建（topics/optical-clocks/）
-├── 专题4：微波频率标准 ← 待建
-├── 专题5：时间频率传递 ← 架构已定义（topics/time-frequency-transfer/，统一光频传递与微波传递）
-├── 专题6：时间标尺与钟组 ← 初建（topics/timescales/）
-└── 专题7：基础物理应用 ← 待建
+│   ├── A. 光梳技术（传统飞秒梳、微腔+电光梳、天文光梳）
+│   └── B. 光梳应用（频率综合、光学频率计数、双梳光谱、梳光谱学、中红外光谱）
+├── 专题3：频率标准 ← 初建（topics/frequency-standards/，合并光钟+微波标准）
+├── 专题4：时间频率传递 ← 架构已定义（topics/time-frequency-transfer/）
+├── 专题5：时间标尺与钟组 ← 初建（topics/timescales/）
+└── 模块M：时频计量数学基础 ← 跨专题模块（topics/shared/metrics/）
+```
+
+> 详见 [`TOPICS.md`](TOPICS.md) 中的完整专题架构和建设路线。
+> 以下按专题补充内部架构描述；当前已补超稳激光、光学频率梳（v4.1 重组）、频率标准，并给出"时间频率传递"的统一框架草图。
 ```
 
 > 详见 [`TOPICS.md`](TOPICS.md) 中的完整专题架构和建设路线。
@@ -145,56 +150,78 @@
     pri.shorter_delay_line_rbs_tradeoff
 ```
 
-### 光学频率梳专题内部架构（四层）
+### 光学频率梳专题内部架构（v4.1 重组：技术/应用分离）
 
 ```
 光学频率梳系统
-├── 分支1：梳源架构（Level 1）
-│   ├── ent.optical_frequency_comb（通用锁模激光器频率梳，权威顶层）
-│   │   ├── Level 2 实例：ent.ti_sapphire_frequency_comb
-│   │   └── 配套子单元：ent.photonic_crystal_fiber（超连续谱展宽）
-│   │
-│   ├── ent.microresonator_frequency_comb（微腔光梳，独立产生范式）
-│   │   ├── Level 2 实例：ent.silica_microtoroid_comb
-│   │   ├── Level 2 实例：ent.crystalline_resonator_comb
-│   │   └── Level 2 实例：ent.si3n4_integrated_comb
-│   │
-│   ├── ent.mid_ir_frequency_comb（中红外频率梳）
-│   └── ent.electro_optic_frequency_comb（电光调制梳，Level 2 特化实现）
 │
-├── 分支2：梳的核心计量原理
-│   ├── pri.femtosecond_comb_frequency_ruler（飞秒梳频率标尺）
-│   ├── pri.supercontinuum_octave_spanning（倍频程展宽）
-│   ├── pri.self_referencing_f2f（f-2f 自参考）
-│   ├── pri.optical_frequency_division_microwave（光学分频到微波）
-│   ├── pri.frequency_ratio_measurement（光频比测量）
-│   ├── pri.parametric_four_wave_mixing_comb（微梳 Kerr/FWM 产生）
-│   ├── pri.dissipative_kerr_soliton（DKS 相干态范式）
-│   └── pri.lugiato_lefever_equation（LLE 统一描述）
+├── A. 光梳技术 ─────────────────────────────────────────────────
+│   │
+│   ├── A1. 飞秒锁模激光器光频梳（传统成熟光梳，Level 1）
+│   │   ├── 锁模激光器
+│   │   │   ├── ent.optical_frequency_comb（通用锁模激光器频率梳，权威顶层）
+│   │   │   └── Level 2 实例：ent.ti_sapphire_frequency_comb
+│   │   ├── 频率信号探测（含 CEO 探测）
+│   │   │   ├── pri.self_referencing_f2f（f-2f 自参考）
+│   │   │   └── pri.femtosecond_comb_frequency_ruler（飞秒梳频率标尺）
+│   │   ├── 频率控制技术（含腔内控制部件）
+│   │   │   └── （腔内 PZT、泵浦功率控制、反馈伺服等，待技术论文填充）
+│   │   └── 非线性光谱拓展技术
+│   │       ├── ent.photonic_crystal_fiber（超连续谱展宽）
+│   │       ├── pri.supercontinuum_octave_spanning（倍频程展宽）
+│   │       └── pri.nonlinear_frequency_conversion_comb（非线性频率转换）
+│   │
+│   ├── A2. 微腔与电光调制光梳（新型光梳平台，Level 1）
+│   │   ├── ent.microresonator_frequency_comb（微腔光梳，Kerr/FWM/DKS）
+│   │   │   ├── Level 2 实例：ent.silica_microtoroid_comb
+│   │   │   ├── Level 2 实例：ent.crystalline_resonator_comb
+│   │   │   └── Level 2 实例：ent.si3n4_integrated_comb
+│   │   ├── ent.electro_optic_frequency_comb（电光调制梳，主动梳）
+│   │   ├── pri.parametric_four_wave_mixing_comb（微梳 Kerr/FWM 产生）
+│   │   ├── pri.dissipative_kerr_soliton（DKS 相干态范式）
+│   │   ├── pri.lugiato_lefever_equation（LLE 统一描述）
+│   │   ├── pri.microresonator_anomalous_dispersion（微腔反常色散）
+│   │   ├── meth.cw_pumped_microcomb_generation（CW 泵浦梳产生）
+│   │   ├── meth.laser_tuning_soliton_access（孤子激活方法）
+│   │   └── meth.microcomb_self_referencing（微梳自参考）
+│   │
+│   └── A3. 天文光梳（Astro-Comb）
+│       └── （光滤波技术 + 传统梳结合，待技术论文填充）
 │
-├── 分支3：应用方法层
-│   ├── 频率计量与合成
-│   │   ├── meth.optical_frequency_counting
-│   │   ├── meth.photonic_microwave_synthesis
-│   │   └── meth.wideband_optical_frequency_synthesis
-│   ├── 梳产生与稳频
-│   │   ├── meth.cw_pumped_microcomb_generation
-│   │   ├── meth.laser_tuning_soliton_access
-│   │   ├── meth.microcomb_self_referencing
-│   │   ├── meth.dfg_comb_generation
-│   │   └── meth.opo_comb_generation
-│   └── 梳光谱学
-│       ├── ent.dual_comb_spectrometer（Level 1 应用系统）
-│       ├── meth.dual_comb_spectroscopy
-│       ├── meth.adaptive_sampling_correction
-│       ├── meth.cavity_enhanced_dcs
-│       ├── meth.vipa_comb_spectroscopy
-│       └── meth.direct_two_photon_comb_spectroscopy
+├── B. 光梳应用 ─────────────────────────────────────────────────
+│   │
+│   ├── 频率综合与计量
+│   │   ├── meth.optical_frequency_counting（光学频率计数）
+│   │   ├── meth.photonic_microwave_synthesis（光生微波合成）
+│   │   ├── meth.wideband_optical_frequency_synthesis（宽带光学频率合成）
+│   │   └── pri.optical_frequency_division_microwave（光学分频到微波）
+│   │
+│   ├── 双梳光谱学
+│   │   ├── ent.dual_comb_spectrometer（Level 1 应用系统）
+│   │   ├── meth.dual_comb_spectroscopy
+│   │   ├── meth.adaptive_sampling_correction
+│   │   ├── meth.cavity_enhanced_dcs
+│   │   └── pri.dual_comb_multiheterodyne_detection（多外差检测原理）
+│   │
+│   ├── 频率梳光谱学
+│   │   ├── meth.vipa_comb_spectroscopy
+│   │   ├── meth.direct_two_photon_comb_spectroscopy
+│   │   ├── pri.cavity_enhanced_comb_spectroscopy
+│   │   └── pri.ramsey_comb_spectroscopy
+│   │
+│   └── 中红外梳光谱
+│       ├── ent.mid_ir_frequency_comb（中红外频率梳，光谱应用导向）
+│       ├── meth.dfg_comb_generation（DFG 梳产生）
+│       ├── meth.opo_comb_generation（OPO 梳产生）
+│       └── pri.molecular_rovibrational_fingerprint（分子指纹光谱）
+│
+├── 原理层（全局）
+│   └── pri.frequency_ratio_measurement（光频比测量）
 │
 └── 外围接口层
     ├── CONDITIONED-BY ent.fp_cavity_system（超稳激光提供窄线宽光学参考）
-    ├── CONDITIONED-BY ent.optical_frequency_standard（光钟提供高准确度光学频率）
-    └── 支撑专题：时间频率传递、微波频率标准（由梳实现跨域桥接）
+    ├── CONDITIONED-BY ent.optical_frequency_standard（频率标准提供高准确度光学频率）
+    └── 支撑专题：时间频率传递、频率标准（由梳实现跨域桥接）
 
 指标层（跨分支）
 ├── 梳本体指标：met.comb_mode_equidistancy_u02, met.microcomb_mode_spacing_uniformity
@@ -202,6 +229,67 @@
 │   met.comb_transfer_stability_g20
 └── 光谱学指标：met.dcs_acquisition_speed, met.dcs_frequency_resolution,
     met.comb_spectroscopy_spectral_coverage, met.trace_gas_sensitivity
+```
+
+### 频率标准专题内部架构（v4.1 新增，合并光钟+微波标准）
+
+```
+频率标准系统
+├── 分支1：光学频率标准（Level 1）
+│   ├── ent.optical_frequency_standard（通用光学频率标准，权威顶层）
+│   ├── ent.trapped_ion_optical_clock（囚禁离子光钟，Level 2 架构子类型）
+│   ├── ent.optical_lattice_clock（光晶格钟，Level 2 架构子类型）
+│   └── ent.nuclear_clock_229th（²²⁹Th 核钟，Level 2 架构子类型）
+│
+├── 分支2：微波频率标准（Level 1，待建）
+│   ├── 铯喷泉钟 (Cs Fountain)
+│   ├── 氢脉泽 (H Maser)
+│   ├── 铷标准 (Rb Standard)
+│   └── 芯片级原子钟 (CSAC / CPT)
+│
+├── 分支3：核心原理
+│   ├── pri.quantum_projection_noise_limit（量子投影噪声极限）
+│   ├── pri.dick_effect（Dick 效应）
+│   └── pri.magic_wavelength_lattice（魔术波长光晶格）
+│
+├── 分支4：钟比对与绝对频率测量
+│   └── meth.ramsey_spectroscopy_clock（Ramsey 光谱钟方法）
+│
+└── 外围接口层
+    ├── CONDITIONED-BY ent.fp_cavity_system（超稳激光→询问激光线宽/Dick 效应耦合）
+    ├── CONDITIONED-BY ent.optical_frequency_comb（光学频率梳→频率读出与比对）
+    └── CONDITIONED-BY ent.si_second_definition（时间标尺→秒定义溯源）
+
+指标层
+├── met.optical_clock_fractional_instability（分数频率不稳定度）
+└── met.optical_clock_fractional_uncertainty（分数频率不确定度）
+```
+
+### 时频计量数学基础模块（v4.1 新增，跨专题共享）
+
+```
+时频计量数学基础 (Metrology Mathematical Foundations)
+├── Allan 偏差族
+│   ├── Allan 偏差（ADEV）
+│   ├── 修正 Allan 偏差（MDEV）
+│   ├── 时间偏差（TDEV）
+│   ├── Hadamard 方差
+│   └── 重叠 Allan 偏差（OADEV）
+│
+├── 频率噪声谱密度
+│   ├── S_y(f)：分数频率噪声谱密度
+│   ├── S_φ(f)：相位噪声谱密度
+│   └── 噪声模型分类（白相位噪声、闪变相位噪声、白频率噪声、闪变频率噪声、随机游走频率噪声）
+│
+├── 相位与时间抖动
+│   ├── 相位抖动（phase jitter）
+│   └── 时间抖动（time jitter）
+│
+├── 方差间转换关系
+│   └── ADEV ↔ MDEV ↔ S_y 的解析/数值转换
+│
+└── 噪声类型辨识
+    └── 从 ADEV 斜率或谱密度斜率辨识噪声类型
 ```
 
 ### 时间频率传递专题内部架构（统一框架）
@@ -231,7 +319,7 @@
 │   └── 远程频率比对 / 时差比对
 │
 └── 外围接口层
-    ├── CONDITIONED-BY ent.optical_frequency_standard（远程光钟比对目标）
+    ├── CONDITIONED-BY ent.optical_frequency_standard（远程频率标准比对目标）
     ├── CONDITIONED-BY ent.optical_frequency_comb（光-微波桥接与频率读出）
     ├── CONDITIONED-BY ent.fp_cavity_system（相干光源稳定度）
     └── CONDITIONED-BY 环境链路条件（振动、温度、湍流、电离层、卫星轨道）
@@ -639,7 +727,7 @@ note: "跨文件引用，定义于 shaddock1999.yaml"
 
 # 跨专题引用（v4.0 新增）
 object: pri.dick_effect
-note: "跨专题引用，定义于 topics/optical-clocks/papers/xxx.yaml"
+note: "跨专题引用，定义于 topics/frequency-standards/papers/xxx.yaml"
 ```
 
 ---
@@ -728,7 +816,7 @@ note: "跨专题引用，定义于 topics/optical-clocks/papers/xxx.yaml"
 | `adhikari2014.yaml` | FTXSM9QC | Adhikari 2014 — GW 探测综述 | ✅ 符合v3.2（首次提取） |
 | `olson2019.yaml` | CDX3DFQR | Olson 2019 — RB 干涉仪 <2×10⁻¹⁶ | ✅ 符合v3.2（首次提取） |
 | `huangjc2019b.yaml` | 5DCNFGX4 | Huang 2019b — 双缠绕抗振光纤盘 | ✅ 符合v3.2（首次提取） |
-| `fortier2026.yaml` | BWR7TEZ6 | Fortier 2026 — 光学原子钟综述（Optica）**[框架型]** | ✅ 符合v4.0（contribution_type:framework，定义 optical-clocks 专题顶层架构） |
+| `fortier2026.yaml` | BWR7TEZ6 | Fortier 2026 — 光学原子钟综述（Optica）**[框架型]** | ✅ 符合v4.0（contribution_type:framework，定义 frequency-standards 专题（光学频率标准部分）顶层架构） |
 | `giunta2019.yaml` | KTHCQRJ2 | Giunta 2019 — 光学频率梳 20 年回顾**[框架型]** | ✅ 符合v4.0（contribution_type:framework，定义 optical-frequency-combs 专题顶层架构） |
 | `giunta2020.yaml` | UFWLAXMA | Giunta 2020 — 10⁻²⁰ 级宽带光学频率合成（Nature Photonics）**[技术型]** | ✅ 符合v4.0（contribution_type:technical，首篇技术论文） |
 | `dimarcq2024.yaml` | SDG6KXNZ | Dimarcq 2024 — SI 秒重定义路线图（Metrologia）**[框架型]** | ✅ 符合v4.0（contribution_type:framework，定义 timescales 专题顶层架构；ent.optical_frequency_standard 改为跨文件引用） |
@@ -799,7 +887,7 @@ relations:
     subject: ent.optical_frequency_standard   # 跨文件引用：定义于 fortier2026.yaml
     predicate: CHARACTERIZED-BY
     object: met.optical_clock_systematic_uncertainty
-    note: "跨专题引用，ent.optical_frequency_standard 定义于 topics/optical-clocks/papers/fortier2026.yaml"
+    note: "跨专题引用，ent.optical_frequency_standard 定义于 topics/frequency-standards/papers/fortier2026.yaml"
 ```
 
 **不允许**在 `dimarcq2024.yaml` 的 `entities:` 中再次完整定义 `ent.optical_frequency_standard`。
@@ -843,7 +931,7 @@ relations:
 
 | 文件 | 专题 | 定义的顶层实体 | 定义的核心原理 |
 |------|------|--------------|-------------|
-| `topics/optical-clocks/papers/fortier2026.yaml` | optical-clocks | `ent.optical_frequency_standard`（权威来源）、`ent.trapped_ion_optical_clock`、`ent.optical_lattice_clock`、`ent.nuclear_clock_229th` | `pri.quantum_projection_noise_limit`、`pri.dick_effect`、`pri.magic_wavelength_lattice` |
+| `topics/frequency-standards/papers/fortier2026.yaml` | frequency-standards | `ent.optical_frequency_standard`（权威来源）、`ent.trapped_ion_optical_clock`、`ent.optical_lattice_clock`、`ent.nuclear_clock_229th` | `pri.quantum_projection_noise_limit`、`pri.dick_effect`、`pri.magic_wavelength_lattice` |
 | `topics/optical-frequency-combs/papers/giunta2019.yaml` | optical-frequency-combs | `ent.optical_frequency_comb`（权威来源） | `pri.self_referencing_f2f`、`pri.optical_frequency_division_microwave`、`pri.frequency_ratio_measurement` |
 | `topics/timescales/papers/dimarcq2024.yaml` | timescales | `ent.si_second_definition`（权威来源）| `pri.redefinition_criteria_second`、`pri.secondary_representation_si_second` |
 

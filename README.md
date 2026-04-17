@@ -12,12 +12,15 @@
 
 - **超稳激光**（Ultra-stable Lasers）：78 篇论文，~200+ 知识节点
 - **光学频率梳**（Optical Frequency Combs）：8 篇论文（6 篇综述框架 + 1 篇框架综述 + 1 篇技术论文），~147 知识节点，已建
-- **光钟**（Optical Clocks）：1 篇框架综述，初建
+  - A. 光梳技术：飞秒锁模激光器梳（传统）、微腔+电光调制梳（新型平台）、天文光梳
+  - B. 光梳应用：频率综合、光学频率计数、双梳光谱学、频率梳光谱学、中红外梳光谱
+- **频率标准**（Frequency Standards）：合并光学频率标准（光钟）与微波频率标准，1 篇光钟框架综述，初建
 - **时间标尺与钟组**（Timescales & Clock Ensembles）：1 篇框架路线图，初建
 
 规划中的专题（详见 [`TOPICS.md`](TOPICS.md)）：
 
-- 微波频率标准、时间频率传递（统一光频传递与微波传递）、基础物理应用
+- 时间频率传递（统一光频传递与微波传递）
+- 时频计量数学基础（Allan 偏差族、噪声谱密度、相位抖动，跨专题共享模块）
 
 核心查询目标：
 
@@ -96,7 +99,7 @@
 - `topics/optical-frequency-combs/papers/coddington2016.yaml`：双梳光谱学综述（Coddington 2016），定义双梳光谱仪、多外差检测原理、自适应采样校正
 - `topics/optical-frequency-combs/papers/kippenberg2018.yaml`：耗散克尔孤子综述（Kippenberg 2018），定义 DKS 原理、LLE 方程、色散波、微梳自参考
 - `topics/optical-frequency-combs/papers/picque2019.yaml`：频率梳光谱学综述（Picqué 2019），定义电光梳、腔增强梳光谱、VIPA 光谱、Ramsey 梳光谱
-- `topics/optical-clocks/papers/fortier2026.yaml`：定义光钟专题的顶层实体、架构分类与关键限制原理
+- `topics/frequency-standards/papers/fortier2026.yaml`：定义频率标准专题（光学部分）的顶层实体、架构分类与关键限制原理
 - `topics/timescales/papers/dimarcq2024.yaml`：定义时间标尺专题的顶层实体、秒重定义标准与跨专题接口
 
 其中 `fortier2026.yaml` 和 `dimarcq2024.yaml` 目前仍主要承担框架角色；光学频率梳专题则已由多篇框架综述与 `giunta2020.yaml` 等技术条目共同支撑，说明该专题已经进入具体技术填充阶段。
@@ -115,10 +118,16 @@
 │   ├── ultrastable-laser/       # 专题1：超稳激光（已建）
 │   │   └── papers/              # 78篇论文 YAML 知识条目
 │   ├── optical-frequency-combs/ # 专题2：光学频率梳（已建，6综述+1框架+1技术）
-│   ├── optical-clocks/          # 专题3：光钟（初建，1框架）
-│   ├── time-frequency-transfer/ # 专题5：时间频率传递（统一光频传递与微波传递，待建）
-│   ├── timescales/              # 专题6：时间标尺与钟组（初建，1框架）
-│   └── ...                      # 更多专题
+│   │   └── papers/              #   A.光梳技术 + B.光梳应用
+│   ├── frequency-standards/     # 专题3：频率标准（合并光钟+微波标准，初建）
+│   │   └── papers/
+│   ├── time-frequency-transfer/ # 专题4：时间频率传递（待建）
+│   │   └── papers/
+│   ├── timescales/              # 专题5：时间标尺与钟组（初建，1框架）
+│   │   └── papers/
+│   └── shared/                  # 跨专题共享（时频计量数学基础等）
+│       ├── principles/
+│       └── metrics/
 ├── scripts/
 │   ├── batch_process_zotero.py  # 批量创建处理任务
 │   ├── batch_quality_check.py   # YAML 质量检查
@@ -343,10 +352,10 @@
 
 ## 11. 未来演进方向
 
-1. **推进已初建专题从框架走向技术填充**：光学频率梳已完成框架建设（8篇综述），下一步重点补充具体技术论文；优先补充光钟、时间标尺专题中的技术论文
+1. **推进已初建专题从框架走向技术填充**：光学频率梳已完成框架建设（8篇综述），下一步重点补充具体技术论文；优先补充频率标准（光学+微波）、时间标尺专题中的技术论文
 2. 增强争议与开放问题的结构化管理
 3. 强化“首次实现 / 当前最佳 / 关键拐点”的时间表达
-4. 建立跨专题共享节点机制（通用原理、通用指标）
+4. 建立跨专题共享节点机制——时频计量数学基础模块（Allan 偏差族、噪声谱密度、相位抖动等）
 5. 增加专家审阅支持的节点新增流程
 6. 视需要补充 Obsidian/前端接口，但不改变 YAML 为主库的原则
 7. 在跨专题比较确有价值时，逐步增加高层共性原理组织

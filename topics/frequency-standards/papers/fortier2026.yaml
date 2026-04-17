@@ -1,16 +1,16 @@
-# Fortier 2026 — 光学原子钟：定义时间频率计量的未来（综述）[光钟专题框架文档]
+# Fortier 2026 — 光学原子钟：定义时间频率计量的未来（综述）[频率标准专题框架文档]
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
-# Schema版本：v4.0
-# 专题：optical-clocks
-# contribution_type: framework — 此文件为 optical-clocks 专题的顶层架构定义文档
+# Schema版本：v4.1
+# 专题：frequency-standards
+# contribution_type: framework — 此文件为 frequency-standards 专题的光学频率标准框架定义文档
 #   定义：顶层实体（ent.optical_frequency_standard 及 Level 2 分类框架节点）、
 #         核心原理（量子投影噪声、Dick 效应、魔术波长）、跨专题接口关系。
 #   不负责：具体系统工程参数（由各技术论文提供）。
 
 meta:
   zotero_key: "BWR7TEZ6"
-  topic: optical-clocks
+  topic: frequency-standards
   source_type: review
   contribution_type: framework
   reliability: high
@@ -23,7 +23,7 @@ meta:
   pages: "143-160"
   doi: "10.1364/OPTICA.575770"
   note: >
-    [综述论文] optical-clocks 专题框架文档。
+    [综述论文] frequency-standards 专题框架文档（光学频率标准部分）。
     NIST/BIPM/NPL 联合综述，系统回顾光学原子钟的原理、架构、支撑技术和应用前景。
     定义：顶层实体 ent.optical_frequency_standard（Level 1）及三类架构子节点（Level 2）；
     核心原理 pri.quantum_projection_noise_limit、pri.dick_effect、pri.magic_wavelength_lattice；
@@ -55,7 +55,7 @@ entities:
       best_instability: "~5×10⁻¹⁷/√τ（最佳光晶格钟，综述汇总）"
       clock_laser_requirement: "线宽 <1 Hz；分数频率不稳定度 ~10⁻¹⁶–10⁻¹⁷ @ 1 s（跨专题引用，参见 topics/ultrastable-laser/papers/ 中各技术论文）"
     note: >
-      Level 1 通用实体节点，是 optical-clocks 专题的核心实体。
+      Level 1 通用实体节点，是 frequency-standards 专题的核心实体。
       本文件（fortier2026.yaml）是此节点的权威定义来源。
       跨专题引用：dimarcq2024.yaml 通过关系引用此节点（不重复定义）。
 
