@@ -11,9 +11,9 @@
 当前已建设/已入库的专题：
 
 - **超稳激光**（Ultra-stable Lasers）：78 篇论文，~200+ 知识节点
-- **光学频率梳**（Optical Frequency Combs）：2 篇论文，初建
-- **光钟**（Optical Clocks）：1 篇论文，初建
-- **时间标尺与钟组**（Timescales & Clock Ensembles）：1 篇论文，初建
+- **光学频率梳**（Optical Frequency Combs）：2 篇论文（1 篇框架综述 + 1 篇技术论文），初建
+- **光钟**（Optical Clocks）：1 篇框架综述，初建
+- **时间标尺与钟组**（Timescales & Clock Ensembles）：1 篇框架路线图，初建
 
 规划中的专题（详见 [`TOPICS.md`](TOPICS.md)）：
 
@@ -53,7 +53,7 @@
 
 - `/home/runner/work/sci-logic-kb/sci-logic-kb/README.md`
 - `/home/runner/work/sci-logic-kb/sci-logic-kb/.github/copilot-instructions.md`
-- `/home/runner/work/sci-logic-kb/sci-logic-kb/scripts/process_paper.py`
+- `/home/runner/work/sci-logic-kb/sci-logic-kb/scripts/` 下自动化脚本与批处理工具
 - GitHub Actions / Issue 模板文案
 - `topics/*/papers/*.yaml` 的头部版本注释
 
@@ -85,6 +85,16 @@
 
 完整的专题体系划分和建设路线见 [`TOPICS.md`](TOPICS.md)。
 
+### 当前初建专题的入库方式
+
+目前 3 个非超稳激光专题中，已有 3 篇论文的角色是**专题框架定义**，而不是具体技术点的原始实验论文：
+
+- `topics/optical-frequency-combs/papers/giunta2019.yaml`：定义光学频率梳专题的顶层实体、核心原理与跨专题接口
+- `topics/optical-clocks/papers/fortier2026.yaml`：定义光钟专题的顶层实体、架构分类与关键限制原理
+- `topics/timescales/papers/dimarcq2024.yaml`：定义时间标尺专题的顶层实体、秒重定义标准与跨专题接口
+
+这 3 篇条目在 `meta.contribution_type` 中标记为 `framework`。只有 `giunta2020.yaml` 目前属于 `technical`，代表光学频率梳专题已开始进入具体技术填充阶段。
+
 ---
 
 ## 4. 目录结构
@@ -98,12 +108,15 @@
 ├── topics/                      # 各专题知识存放
 │   ├── ultrastable-laser/       # 专题1：超稳激光（已建）
 │   │   └── papers/              # 78篇论文 YAML 知识条目
-│   ├── optical-frequency-combs/ # 专题2：光学频率梳（初建，2篇）
-│   ├── optical-clocks/          # 专题3：光钟（初建，1篇）
-│   ├── timescales/              # 专题6：时间标尺与钟组（初建，1篇）
+│   ├── optical-frequency-combs/ # 专题2：光学频率梳（初建，1框架+1技术）
+│   ├── optical-clocks/          # 专题3：光钟（初建，1框架）
+│   ├── timescales/              # 专题6：时间标尺与钟组（初建，1框架）
 │   └── ...                      # 更多专题
 ├── scripts/
-│   └── process_paper.py         # GitHub Models/Claude 提取脚本
+│   ├── batch_process_zotero.py  # 批量创建处理任务
+│   ├── batch_quality_check.py   # YAML 质量检查
+│   ├── count_unprocessed.py     # 统计未处理条目
+│   └── fix_author_year.py       # 文件名/author_year 修正辅助脚本
 └── .github/
     ├── copilot-instructions.md
     ├── workflows/process-paper.yml
@@ -299,7 +312,7 @@
 
 - `README.md`
 - `.github/copilot-instructions.md`
-- `scripts/process_paper.py`
+- `scripts/` 下自动化脚本与辅助工具
 - workflow / issue template
 - `topics/*/papers/*.yaml` 头部 Schema 版本
 
@@ -323,7 +336,7 @@
 
 ## 11. 未来演进方向
 
-1. **扩展新专题**：按 `TOPICS.md` 中的优先级建设光学频率梳、光钟等新专题
+1. **推进已初建专题从框架走向技术填充**：优先补充光学频率梳、光钟、时间标尺专题中的技术论文
 2. 增强争议与开放问题的结构化管理
 3. 强化“首次实现 / 当前最佳 / 关键拐点”的时间表达
 4. 建立跨专题共享节点机制（通用原理、通用指标）

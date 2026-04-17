@@ -72,10 +72,15 @@ for i in items:
 ### 步骤 4：提取 YAML
 
 按 `SCHEMA.md` 中的模板提取：
-- 识别该论文的**核心贡献**（方法创新/原理解析/实验结果）
+- 识别该论文的**核心贡献**（方法创新/原理解析/实验结果，或专题框架定义）
 - 提取节点（entities/principles/methods/metrics）
 - 建立关系（relations）
 - 检查是否有跨文件引用的已有节点
+
+若该论文是综述/路线图，且主要贡献在于建立专题顶层架构而非提供新的具体技术演示：
+- 使用 `meta.contribution_type: framework`
+- 优先定义 Level 0/1 顶层实体、tier: meta/domain 原理、跨专题 `CONDITIONED-BY` 接口
+- 不把具体实验系统的 Level 2 参数实例作为该文件的主职责
 
 ### 步骤 5：写入文件
 

@@ -21,11 +21,11 @@
 
 > **`SCHEMA.md` 是唯一 Schema 真源（source of truth）。**
 
-- 若 `README.md`、`.github/copilot-instructions.md`、自动化脚本提示词、旧 YAML 文件头注释与本文件冲突，**一律以 `SCHEMA.md` 为准**
+- 若 `README.md`、`.github/copilot-instructions.md`、`scripts/` 下自动化脚本提示词、旧 YAML 文件头注释与本文件冲突，**一律以 `SCHEMA.md` 为准**
 - 更新 Schema 时，需同步检查：
   1. `README.md`
   2. `.github/copilot-instructions.md`
-  3. `scripts/process_paper.py`
+  3. `scripts/` 下自动化脚本与提示词
   4. GitHub Actions / Issue 模板中的版本文案
   5. `TOPICS.md`
   6. `topics/*/papers/*.yaml` 头部 `# Schema版本：...`
