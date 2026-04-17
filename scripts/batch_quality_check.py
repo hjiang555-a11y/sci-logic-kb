@@ -9,19 +9,16 @@
 4. 标注新开节点为未审核
 5. 生成质量报告
 
-遵循Schema v3.2要求：
+遵循 Schema v4.0 要求：
 - 全局唯一ID
 - 关系有source.claim
 - 指标有conditions
 - 原理节点有conditions/preconditions
 """
 
-import os
-import sys
 import yaml
-import glob
 from pathlib import Path
-from typing import List, Dict, Set, Tuple
+from typing import Iterable, List, Dict, Set, Tuple
 from datetime import datetime
 
 
@@ -30,48 +27,65 @@ class QualityChecker:
 
     def __init__(self, repo_path: str = "."):
         self.repo_path = Path(repo_path)
-        # Support both old and new directory structures
-        new_path = self.repo_path / "topics" / "ultrastable-laser" / "papers"
-        old_path = self.repo_path / "papers"
-        self.papers_dir = new_path if new_path.exists() else old_path
         self.schema_path = self.repo_path / "SCHEMA.md"
 
-        # 存储所有已知节点（用于检查唯一性）
-        self.all_nodes: Set[str] = set()
-        self.all_relations: Set[str] = set()
+        # 存储所有已知节点/关系及其出现位置（用于检查唯一性）
+        self.node_locations: Dict[str, Set[str]] = {}
+        self.relation_locations: Dict[str, Set[str]] = {}
 
         # 加载已有节点
         self._load_existing_nodes()
 
+    def _yaml_files(self) -> List[Path]:
+        """返回仓库中的所有论文 YAML 文件。"""
+        topic_files = sorted(self.repo_path.glob("topics/*/papers/*.yaml"))
+        if topic_files:
+            return topic_files
+        return sorted((self.repo_path / "papers").glob("*.yaml"))
+
+    @staticmethod
+    def _iter_collection_items(collection) -> Iterable[Tuple[str, Dict]]:
+        """兼容 v3.x dict 结构和 v4.x list 结构。"""
+        if isinstance(collection, dict):
+            for item_id, item_data in collection.items():
+                if isinstance(item_data, dict):
+                    yield item_id, item_data
+        elif isinstance(collection, list):
+            for item_data in collection:
+                if isinstance(item_data, dict) and item_data.get("id"):
+                    yield item_data["id"], item_data
+
     def _load_existing_nodes(self):
         """加载所有已存在的节点"""
-        # 扫描所有YAML文件
-        yaml_files = list(self.papers_dir.glob("*.yaml"))
+        yaml_files = self._yaml_files()
 
         for yaml_file in yaml_files:
             try:
                 with open(yaml_file, 'r', encoding='utf-8') as f:
                     data = yaml.safe_load(f)
 
+                if not isinstance(data, dict):
+                    continue
+
                 # 收集节点
                 for section in ['entities', 'principles', 'methods', 'metrics']:
                     if section in data:
-                        for node_id in data[section].keys():
-                            self.all_nodes.add(node_id)
+                        for node_id, _ in self._iter_collection_items(data[section]):
+                            self.node_locations.setdefault(node_id, set()).add(str(yaml_file))
 
                 # 收集关系
                 if 'relations' in data:
-                    for rel_id in data['relations'].keys():
-                        self.all_relations.add(rel_id)
+                    for rel_id, _ in self._iter_collection_items(data['relations']):
+                        self.relation_locations.setdefault(rel_id, set()).add(str(yaml_file))
 
             except Exception as e:
                 print(f"警告: 加载 {yaml_file} 失败: {e}")
 
-        print(f"已加载 {len(self.all_nodes)} 个节点，{len(self.all_relations)} 个关系")
+        print(f"已加载 {len(self.node_locations)} 个节点，{len(self.relation_locations)} 个关系")
 
     def get_recent_papers(self, count: int = 10) -> List[Path]:
         """获取最近修改的论文YAML文件"""
-        yaml_files = list(self.papers_dir.glob("*.yaml"))
+        yaml_files = self._yaml_files()
 
         # 按修改时间排序
         yaml_files.sort(key=lambda x: x.stat().st_mtime, reverse=True)
@@ -94,12 +108,16 @@ class QualityChecker:
             with open(yaml_path, 'r', encoding='utf-8') as f:
                 data = yaml.safe_load(f)
 
-            # 检查必需字段
-            if 'paper' not in data:
-                issues["errors"].append("缺少 'paper' 部分")
+            if not isinstance(data, dict):
+                issues["errors"].append("YAML 根节点不是字典结构")
                 return issues
 
-            paper_info = data['paper']
+            # 检查必需字段
+            if 'paper' not in data and 'meta' not in data:
+                issues["errors"].append("缺少 'paper' 或 'meta' 部分")
+                return issues
+
+            paper_info = data.get('paper') or data.get('meta') or {}
             paper_title = paper_info.get('title', '未知')
 
             print(f"\n检查: {paper_title}")
@@ -111,9 +129,13 @@ class QualityChecker:
                     continue
 
                 if section_name in ['entities', 'principles', 'methods', 'metrics']:
-                    issues.update(self._check_nodes(section_name, section_data, yaml_path.name))
+                    section_issues = self._check_nodes(section_name, section_data, yaml_path.name)
+                    for key, values in section_issues.items():
+                        issues[key].extend(values)
                 elif section_name == 'relations':
-                    issues.update(self._check_relations(section_data))
+                    relation_issues = self._check_relations(section_data, yaml_path.name)
+                    for key, values in relation_issues.items():
+                        issues[key].extend(values)
 
         except Exception as e:
             issues["errors"].append(f"解析YAML失败: {e}")
@@ -131,13 +153,12 @@ class QualityChecker:
         if not nodes:
             return issues
 
-        for node_id, node_data in nodes.items():
-            # 检查节点唯一性
-            if node_id in self.all_nodes:
-                issues["duplicate_nodes"].append(f"{node_id} (在 {section_name})")
-            else:
-                issues["new_nodes"].append(f"{node_id} (在 {section_name})")
-                self.all_nodes.add(node_id)  # 添加到已知节点
+        for node_id, node_data in self._iter_collection_items(nodes):
+            # 检查节点唯一性（仅跨文件重复时告警）
+            locations = self.node_locations.get(node_id, set())
+            other_locations = {loc for loc in locations if Path(loc).name != source_file}
+            if other_locations:
+                issues["duplicate_nodes"].append(f"{node_id} (在 {section_name}；另见 {', '.join(sorted(Path(loc).name for loc in other_locations))})")
 
             # 对于原理节点，检查是否有conditions
             if section_name == 'principles':
@@ -153,22 +174,21 @@ class QualityChecker:
 
         return issues
 
-    def _check_relations(self, relations: Dict) -> Dict:
+    def _check_relations(self, relations: Dict, source_file: str) -> Dict:
         """检查关系质量"""
         issues = {
+            "warnings": [],
             "missing_source_claim": []
         }
 
         if not relations:
             return issues
 
-        for rel_id, rel_data in relations.items():
-            # 检查关系唯一性
-            if rel_id in self.all_relations:
-                # 关系ID重复（可能在不同文件）
-                pass
-            else:
-                self.all_relations.add(rel_id)
+        for rel_id, rel_data in self._iter_collection_items(relations):
+            locations = self.relation_locations.get(rel_id, set())
+            other_locations = {loc for loc in locations if Path(loc).name != source_file}
+            if other_locations:
+                issues["warnings"].append(f"关系ID重复: {rel_id}（另见 {', '.join(sorted(Path(loc).name for loc in other_locations))}）")
 
             # 检查是否有source.claim
             if 'source' not in rel_data or 'claim' not in rel_data['source']:
@@ -304,7 +324,7 @@ class QualityChecker:
             # 为所有节点添加note标注未审核
             for section in ['entities', 'principles', 'methods', 'metrics']:
                 if section in data:
-                    for node_id, node_data in data[section].items():
+                    for _, node_data in self._iter_collection_items(data[section]):
                         # 检查是否已有note
                         if 'note' not in node_data:
                             node_data['note'] = "未审核 - 批量处理添加"
