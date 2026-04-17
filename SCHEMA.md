@@ -81,13 +81,13 @@
 ├── 专题2：光学频率梳 ← 已建（topics/optical-frequency-combs/，8篇，~147节点）
 ├── 专题3：光钟 ← 初建（topics/optical-clocks/）
 ├── 专题4：微波频率标准 ← 待建
-├── 专题5：时间频率传递 ← 待建
+├── 专题5：时间频率传递 ← 架构已定义（topics/time-frequency-transfer/，统一光频传递与微波传递）
 ├── 专题6：时间标尺与钟组 ← 初建（topics/timescales/）
 └── 专题7：基础物理应用 ← 待建
 ```
 
 > 详见 [`TOPICS.md`](TOPICS.md) 中的完整专题架构和建设路线。
-> 以下"五层"架构描述的是**超稳激光专题**的内部结构。其他专题建设时将添加各自的架构描述。
+> 以下按专题补充内部架构描述；当前已补超稳激光、光学频率梳，并给出“时间频率传递”的统一框架草图。
 
 ### 超稳激光专题内部架构（五层）
 
@@ -143,6 +143,104 @@
 └── 已并入父节点：pri.mirror_substrate_noise_dominance, pri.beam_radius_scaling,
     pri.low_loss_substrate_improvement, pri.shot_noise_power_efficiency_scaling,
     pri.shorter_delay_line_rbs_tradeoff
+```
+
+### 光学频率梳专题内部架构（四层）
+
+```
+光学频率梳系统
+├── 分支1：梳源架构（Level 1）
+│   ├── ent.optical_frequency_comb（通用锁模激光器频率梳，权威顶层）
+│   │   ├── Level 2 实例：ent.ti_sapphire_frequency_comb
+│   │   └── 配套子单元：ent.photonic_crystal_fiber（超连续谱展宽）
+│   │
+│   ├── ent.microresonator_frequency_comb（微腔光梳，独立产生范式）
+│   │   ├── Level 2 实例：ent.silica_microtoroid_comb
+│   │   ├── Level 2 实例：ent.crystalline_resonator_comb
+│   │   └── Level 2 实例：ent.si3n4_integrated_comb
+│   │
+│   ├── ent.mid_ir_frequency_comb（中红外频率梳）
+│   └── ent.electro_optic_frequency_comb（电光调制梳，Level 2 特化实现）
+│
+├── 分支2：梳的核心计量原理
+│   ├── pri.femtosecond_comb_frequency_ruler（飞秒梳频率标尺）
+│   ├── pri.supercontinuum_octave_spanning（倍频程展宽）
+│   ├── pri.self_referencing_f2f（f-2f 自参考）
+│   ├── pri.optical_frequency_division_microwave（光学分频到微波）
+│   ├── pri.frequency_ratio_measurement（光频比测量）
+│   ├── pri.parametric_four_wave_mixing_comb（微梳 Kerr/FWM 产生）
+│   ├── pri.dissipative_kerr_soliton（DKS 相干态范式）
+│   └── pri.lugiato_lefever_equation（LLE 统一描述）
+│
+├── 分支3：应用方法层
+│   ├── 频率计量与合成
+│   │   ├── meth.optical_frequency_counting
+│   │   ├── meth.photonic_microwave_synthesis
+│   │   └── meth.wideband_optical_frequency_synthesis
+│   ├── 梳产生与稳频
+│   │   ├── meth.cw_pumped_microcomb_generation
+│   │   ├── meth.laser_tuning_soliton_access
+│   │   ├── meth.microcomb_self_referencing
+│   │   ├── meth.dfg_comb_generation
+│   │   └── meth.opo_comb_generation
+│   └── 梳光谱学
+│       ├── ent.dual_comb_spectrometer（Level 1 应用系统）
+│       ├── meth.dual_comb_spectroscopy
+│       ├── meth.adaptive_sampling_correction
+│       ├── meth.cavity_enhanced_dcs
+│       ├── meth.vipa_comb_spectroscopy
+│       └── meth.direct_two_photon_comb_spectroscopy
+│
+└── 外围接口层
+    ├── CONDITIONED-BY ent.fp_cavity_system（超稳激光提供窄线宽光学参考）
+    ├── CONDITIONED-BY ent.optical_frequency_standard（光钟提供高准确度光学频率）
+    └── 支撑专题：时间频率传递、微波频率标准（由梳实现跨域桥接）
+
+指标层（跨分支）
+├── 梳本体指标：met.comb_mode_equidistancy_u02, met.microcomb_mode_spacing_uniformity
+├── 稳定度/合成指标：met.photonic_microwave_phase_noise, met.comb_frequency_synthesis_accuracy_g20,
+│   met.comb_transfer_stability_g20
+└── 光谱学指标：met.dcs_acquisition_speed, met.dcs_frequency_resolution,
+    met.comb_spectroscopy_spectral_coverage, met.trace_gas_sensitivity
+```
+
+### 时间频率传递专题内部架构（统一框架）
+
+```
+时间频率传递系统
+├── Level 1 统一目标实体：ent.time_frequency_transfer
+│   └── 定位：统一“光频传递”“微波传递”“时间传递”为同一专题，
+│       区分介质、链路结构与补偿机制，而不按信号频段拆成两个平行专题
+│
+├── 分支1：链路介质 / 场景
+│   ├── 光纤链路传递（可承载超稳光频、梳分频微波、授时信号）
+│   ├── 自由空间链路传递（地基 / 空地 / 星地）
+│   ├── 卫星双向链路（TWSTFT / 未来光学双向链路）
+│   └── GNSS 载波相位 / PPP 比较链路
+│
+├── 分支2：核心原理
+│   ├── 双向噪声抵消 / reciprocity 近似
+│   ├── 相位噪声主动补偿
+│   ├── 链路时延波动与同步误差传播
+│   └── 不同介质下的非互易效应、气象/电离层/机械扰动限制
+│
+├── 分支3：方法层
+│   ├── 光纤相位噪声补偿
+│   ├── 双向卫星时间频率传递
+│   ├── GNSS 载波相位解算
+│   └── 远程频率比对 / 时差比对
+│
+└── 外围接口层
+    ├── CONDITIONED-BY ent.optical_frequency_standard（远程光钟比对目标）
+    ├── CONDITIONED-BY ent.optical_frequency_comb（光-微波桥接与频率读出）
+    ├── CONDITIONED-BY ent.fp_cavity_system（相干光源稳定度）
+    └── CONDITIONED-BY 环境链路条件（振动、温度、湍流、电离层、卫星轨道）
+
+核心指标
+├── 链路分数频率不稳定度
+├── 时间偏差 / 时差不确定度
+├── 补偿残余相位噪声
+└── 有效可比对距离、链路可用度与系统偏差
 ```
 
 ### 封装规则
@@ -748,3 +846,5 @@ relations:
 | `topics/optical-clocks/papers/fortier2026.yaml` | optical-clocks | `ent.optical_frequency_standard`（权威来源）、`ent.trapped_ion_optical_clock`、`ent.optical_lattice_clock`、`ent.nuclear_clock_229th` | `pri.quantum_projection_noise_limit`、`pri.dick_effect`、`pri.magic_wavelength_lattice` |
 | `topics/optical-frequency-combs/papers/giunta2019.yaml` | optical-frequency-combs | `ent.optical_frequency_comb`（权威来源） | `pri.self_referencing_f2f`、`pri.optical_frequency_division_microwave`、`pri.frequency_ratio_measurement` |
 | `topics/timescales/papers/dimarcq2024.yaml` | timescales | `ent.si_second_definition`（权威来源）| `pri.redefinition_criteria_second`、`pri.secondary_representation_si_second` |
+
+> `time-frequency-transfer` 专题尚无框架型 YAML 文档；在首篇 framework 文档入库前，以“二、系统架构”中的统一框架描述为准，并明确将光频传递与微波传递合并到同一专题下。

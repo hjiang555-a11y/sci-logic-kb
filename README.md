@@ -17,7 +17,7 @@
 
 规划中的专题（详见 [`TOPICS.md`](TOPICS.md)）：
 
-- 微波频率标准、时间频率传递、基础物理应用
+- 微波频率标准、时间频率传递（统一光频传递与微波传递）、基础物理应用
 
 核心查询目标：
 
@@ -87,7 +87,7 @@
 
 ### 当前初建专题的入库方式
 
-目前 3 个非超稳激光专题中，已有 3 篇论文的角色是**专题框架定义**，而不是具体技术点的原始实验论文：
+当前已入库的 3 个非超稳激光专题中，都有承担**专题框架定义**角色的代表性文档，而不只是具体技术点的原始实验论文：
 
 - `topics/optical-frequency-combs/papers/giunta2019.yaml`：定义光学频率梳专题的顶层实体、核心原理与跨专题接口
 - `topics/optical-frequency-combs/papers/udem2002.yaml`：光学频率梳开创性综述（Hänsch/Udem 2002），定义 Ti:sapphire 梳、超连续谱展宽、光学频率计数方法
@@ -99,7 +99,7 @@
 - `topics/optical-clocks/papers/fortier2026.yaml`：定义光钟专题的顶层实体、架构分类与关键限制原理
 - `topics/timescales/papers/dimarcq2024.yaml`：定义时间标尺专题的顶层实体、秒重定义标准与跨专题接口
 
-这 3 篇条目在 `meta.contribution_type` 中标记为 `framework`。只有 `giunta2020.yaml` 目前属于 `technical`，代表光学频率梳专题已开始进入具体技术填充阶段。
+其中 `fortier2026.yaml` 和 `dimarcq2024.yaml` 目前仍主要承担框架角色；光学频率梳专题则已由多篇框架综述与 `giunta2020.yaml` 等技术条目共同支撑，说明该专题已经进入具体技术填充阶段。
 
 ---
 
@@ -116,6 +116,7 @@
 │   │   └── papers/              # 78篇论文 YAML 知识条目
 │   ├── optical-frequency-combs/ # 专题2：光学频率梳（已建，6综述+1框架+1技术）
 │   ├── optical-clocks/          # 专题3：光钟（初建，1框架）
+│   ├── time-frequency-transfer/ # 专题5：时间频率传递（统一光频传递与微波传递，待建）
 │   ├── timescales/              # 专题6：时间标尺与钟组（初建，1框架）
 │   └── ...                      # 更多专题
 ├── scripts/
