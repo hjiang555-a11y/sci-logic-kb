@@ -45,11 +45,9 @@ body:
       options:
         - ultrastable-laser
         - optical-frequency-combs
-        - optical-clocks
-        - microwave-standards
+        - frequency-standards
         - time-frequency-transfer
         - timescales
-        - fundamental-physics
       default: 0
     validations:
       required: true
