@@ -1,7 +1,7 @@
 # Webster 2007 — 振动不敏感光学谐振腔
 # 提取者：Claude（AI草稿，待专家确认）
 # 提取日期：2026-04-14
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "UCNS7EM7"
@@ -15,6 +15,7 @@ meta:
   pages: "011801(R)"
   doi: "10.1103/PhysRevA.75.011801"
   note: >
+    技术分支：FP参考腔系统（Fabry-Pérot Reference Cavity Systems）
     首次实验证明全向振动不敏感 FP 腔（Rapid Communication，NPL）；
     竖直加速度灵敏度 <0.1 kHz/ms⁻²（较典型值 ~100 kHz/ms⁻² 改善 >1000×）；
     水平灵敏度 3.7 kHz/ms⁻²（改善 ~27×）。

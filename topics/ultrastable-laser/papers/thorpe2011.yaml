@@ -1,7 +1,7 @@
 # Thorpe 2011 — 光谱烧孔稳频 6×10⁻¹⁶
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "Q2MRB267"
@@ -15,6 +15,7 @@ meta:
   pages: "688-693"
   doi: "10.1038/nphoton.2011.215"
   note: >
+    技术分支：光谱烧孔稳频（Spectral Hole Burning Frequency Reference）
     首次演示 FP 腔 + SHB 两级稳频方案，
     激光先预稳定至 FP 腔（σ_y < 1×10⁻¹³），
     再锁定至 Eu³⁺:Y₂SiO₅ 光谱烧孔模式达 σ_y ≤ 6×10⁻¹⁶ @ 2–8 s。
