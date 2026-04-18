@@ -1,13 +1,13 @@
-# Picqué 2019 — 频率梳光谱综述：直接梳光谱技术分类与前沿 [光学频率梳专题：梳光谱方法架构文档]
+# Picqué 2019 — 频率梳光谱综述：六大方法体系总纲 [光学频率梳专题：应用层框架文档]
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2025-07-18
 # Schema版本：v4.0
 # 专题：optical-frequency-combs
-# contribution_type: framework — 综述/分类，定义频率梳光谱（直接梳光谱）的方法体系。
-#   定义：电光调制梳实体（Level 2）、腔增强梳光谱原理、Ramsey-comb 光谱原理、
-#   腔增强双梳光谱方法、VIPA 梳光谱方法、光谱覆盖指标、分子检测灵敏度指标。
-#   不负责：双梳光谱核心范式（由 coddington2016.yaml 定义）、频率梳通用实体（由 giunta2019.yaml 定义）。
-
+# contribution_type: framework — 定义频率梳光谱学（应用层）的完整方法体系，六大方法分类总纲。
+#   定义：频率梳光谱学六大方法分类总纲（应用层）；
+#   电光调制梳实体（EO comb，Level 2 技术实体）；
+#   腔增强梳光谱、Ramsey-comb 光谱等核心原理；
+#   光谱覆盖范围、分子检测灵敏度等关键指标。
 meta:
   zotero_key: ""
   topic: optical-frequency-combs

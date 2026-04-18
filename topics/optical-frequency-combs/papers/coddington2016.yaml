@@ -1,13 +1,13 @@
-# Coddington 2016 — 双梳光谱综述：原理、相干性要求与性能极限 [光学频率梳专题 DCS 框架文档]
+# Coddington 2016 — 双梳光谱综述：原理、相干性要求与性能极限 [光学频率梳专题：应用层子类框架文档]
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2025-07-18
 # Schema版本：v4.0
 # 专题：optical-frequency-combs
-# contribution_type: framework — NIST 综述，定义双梳光谱（DCS）范式。
-#   定义：ent.dual_comb_spectrometer（Level 1），核心原理（多外差检测、互相干要求），
-#   方法（DCS、自适应采样校正），性能指标（采集速度、频率分辨率、SNR）。
-#   不负责：具体梳源的工程参数（由各技术论文提供）。
-
+# contribution_type: framework — 定义双梳光谱（DCS）作为频率梳光谱学的重要子类范式。
+#   定义：双梳光谱（DCS）作为频率梳光谱学子类的完整范式；
+#   核心实体 ent.dual_comb_spectrometer（Level 1 应用系统）；
+#   核心原理（多外差检测、互相干要求）；
+#   关键指标（采集速度、频率分辨率、SNR 标度律）。
 meta:
   zotero_key: ""
   topic: optical-frequency-combs
@@ -23,8 +23,8 @@ meta:
   pages: "414-426"
   doi: "10.1364/OPTICA.3.000414"
   note: >
-    [综述论文 / 框架文献] NIST Coddington, Newbury, Swann 团队 2016 年 Optica 综述。
-    全面定义双梳光谱（DCS）范式：(1) 两个重复频率略不同的频率梳在光电探测器上干涉，
+    [综述论文 / 应用层子类框架文档] NIST Coddington, Newbury, Swann 团队 2016 年 Optica 综述。
+    在 Picqué 2019 定义的六大光谱方法中，双梳光谱是覆盖波段最广、发展最迅速的子类。
     产生 RF 梳，将光学谱以压缩因子 m = f_rep/Δf_rep 映射到射频域；
     (2) 阐明互相干（mutual coherence）要求——两梳相对线宽须远小于 Δf_rep；
     (3) 给出 SNR 标度律 SNR ≈ √(τ·n_comb)/M（散粒噪声极限）；

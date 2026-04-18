@@ -1,12 +1,13 @@
-# Schliesser 2012 — 中红外频率梳综述 [光学频率梳专题：中红外子域架构文档]
+# Schliesser 2012 — 中红外频率梳综述 [光学频率梳专题：非线性展宽技术 + 应用驱动框架]
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-07-15
 # Schema版本：v4.0
 # 专题：optical-frequency-combs
-# contribution_type: framework — 定义中红外频率梳子域顶层架构。
-#   定义：Level 1 实体 ent.mid_ir_frequency_comb（中红外频率梳功能类别）；
-#   核心原理（分子振转指纹、非线性频率转换）；DFG/OPO 产生方法及关键指标。
-#   不负责：具体系统工程参数（由各技术论文提供）。
+# contribution_type: framework — 定义中红外频率梳的技术原理与应用框架，涵盖非线性展宽技术与分子光谱应用。
+#   定义：中红外梳作为波段特性实体 (ent.mid_ir_frequency_comb)；
+#   核心应用驱动原理 (pri.molecular_rovibrational_fingerprint)；
+#   非线性频率转换原理 (pri.nonlinear_frequency_conversion_comb)；
+#   具体实现方法 (meth.dfg_comb_generation, meth.opo_comb_generation)。
 
 meta:
   zotero_key: ""
