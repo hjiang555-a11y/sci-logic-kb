@@ -1,7 +1,7 @@
 # Young 1999 — 亚赫兹线宽可见激光
 # 提取者：Claude（AI草稿，待专家确认）
 # 提取日期：2026-04-14
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "EGAZKLXR"
@@ -18,6 +18,7 @@ meta:
     首次实验证明亚赫兹线宽可见激光（0.6 Hz @ 563 nm）；
     后经 Numata 2004 确认该结果已在热噪声极限处工作。
     核心贡献：展示低频弹性悬挂隔振 + 两级 PDH 锁频的组合方案。
+    技术分支：FP参考腔系统（Fabry-Pérot Reference Cavity Systems）。
 
 # ═══════════════════════════════════════════════
 #  NODES（节点）
@@ -280,6 +281,12 @@ relations:
     regime: all
     verification_status: observed
     temporal_role: proposes
+    breakthrough_paths:
+      - direction: meth.active_power_control
+        expected_gain: "通过主动功率控制将腔频移压低至非主导水平"
+        status: demonstrated
+        source: {zotero_key: "EGAZKLXR", claim: "intracavity light heats mirror coatings, shifting cavity resonance by ≈1 Hz/mW"}
+        note: "本文通过主动控制减轻该效应"
     note: "ent.fp_cavity_system 定义于 numata2004.yaml；本限制可通过主动功率控制消除"
 
   - id: rel.Y07

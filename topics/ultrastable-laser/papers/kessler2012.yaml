@@ -1,7 +1,7 @@
 # Kessler 2012 — 硅单晶腔亚40毫赫兹线宽激光
 # 提取者：Claude（AI草稿，待专家确认）
 # 提取日期：2026-04-14
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "YKPFKDD9"
@@ -22,6 +22,7 @@ meta:
     （3）实验确认 Si 腔 CTE 零点在 124.2 K，dα/dT = 1.71×10⁻⁸ K⁻²。
     PTB（Sterr/Riehle 组）+ JILA（Ye 组）合作；Si 腔热噪声理论下限 mod σ_y ≈ 5×10⁻¹⁷，
     但镀层（IBS 介质膜）成为唯一瓶颈，指向 Cole 2013 晶体镀层方案。
+    技术分支：FP参考腔系统（Fabry-Pérot Reference Cavity Systems）。
 
 # ═══════════════════════════════════════════════
 #  NODES（节点）

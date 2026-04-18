@@ -1,7 +1,7 @@
 # Matei 2017 — 5–10 mHz 线宽 Si 腔激光，mod σ_y = 4×10⁻¹⁷
 # 提取者：Claude（AI草稿，待专家确认）
 # 提取日期：2026-04-14
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "TVY7T59A"
@@ -21,6 +21,7 @@ meta:
     （2）严格处理 flicker 频率噪声主导时的线宽/相干时间定义问题（发散问题及实用定义）；
     （3）提供迄今最高频率稳定度激光的完整相位噪声谱和相干时间分析。
     PTB（Matei/Legero/Sterr 组）+ JILA（Ye 组）合作。
+    技术分支：FP参考腔系统（Fabry-Pérot Reference Cavity Systems）。
 
 # ═══════════════════════════════════════════════
 #  NODES（节点）
@@ -166,6 +167,12 @@ relations:
     regime: all
     verification_status: calculated
     temporal_role: proposes
+    breakthrough_paths:
+      - direction: pri.flicker_noise_linewidth_divergence
+        expected_gain: "尚无已知解决方案可消除flicker噪声对线宽定义的发散性限制"
+        status: open
+        source: {zotero_key: "TVY7T59A", claim: "the linewidth and implicitly the coherence time are mostly determined by the thermal noise level"}
+        note: "flicker噪声是低频噪声，其1/f特性导致线宽定义依赖于测量时间"
     note: >
       原 subject 为 met.laser_linewidth_m17（指标节点），语义有误——指标是测量结果，
       不是被限制的系统。改为 ent.si_crystal_fp_cavity_k12（被限制的腔/激光系统）。
