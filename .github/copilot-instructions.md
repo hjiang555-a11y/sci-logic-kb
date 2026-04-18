@@ -1,8 +1,8 @@
 # GitHub Copilot 任务说明 — sci-logic-kb 时间频率计量知识提取
 
-> **最高规则**：若本文件与 `SCHEMA.md` 冲突，**一律以 `/home/runner/work/sci-logic-kb/sci-logic-kb/SCHEMA.md` 为准**。
+> **最高规则**：若本文件与 `SCHEMA.md` 冲突，**一律以 `SCHEMA.md` 为准**。
 
-> **当前 Schema 版本**：v4.0（2026-04-16）
+> **当前 Schema 版本**：v4.1（2026-04-18）
 
 ---
 
@@ -68,7 +68,35 @@
 
 > 时间维度遵循：**先记首次，再记最佳，其余关键拐点按需补充。**
 
----
+
+    
+### 3.1 问题-解决方案-结果推理链条（新增重点）
+为强化知识库的科研推理能力，提取时需显式构建以下推理链条：
+
+**1. 问题识别**
+- 通过 `BOUNDED-BY` 关系清晰定义技术限制
+- 通过 `open_questions` 字段记录未解问题
+- 通过 `contested_claims` 字段记录有争议的论断
+
+**2. 解决方案追踪**
+- 通过 `breakthrough_paths` 字段记录已验证或待验证的突破路径
+- 每个突破路径必须包含：
+  - `direction`: 指向 `pri.*` 或 `meth.*` 节点（不得引用 `ent.*`）
+  - `expected_gain`: 预期性能提升描述
+  - `status`: `proposed`（待验证）、`demonstrated`（已验证）、`refuted`（已证伪）
+  - `source`: 引用原文论断
+  - 可选的 `note` 字段提供补充说明
+
+**3. 结果验证**
+- 通过 `verification_status`（observed/calculated/inferred）记录证据类型
+- 通过 `temporal_role`（proposes/validates/refutes/extends）记录论文在知识演进中的角色
+- 通过 `breakthrough_paths[*].status` 记录解决方案的验证状态
+
+**4. 证据溯源**
+- 每个重要论断必须有 `source` 字段引用原文
+- 跨论文验证需在 `note` 中说明证据链
+
+**提取优先级**：优先确保每个 `BOUNDED-BY` 关系都配有相应的 `breakthrough_paths`，形成完整的问题-解决方案对。---
 
 ## 4. 节点与关系速查
 

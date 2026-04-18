@@ -469,6 +469,15 @@ key_parameters:
   # 认识论状态（Feynman 原则）
   verification_status: observed   # observed | calculated | inferred
   temporal_role: validates        # proposes | validates | refutes | extends
+
+  # 突破路径（可选但鼓励）——问题-解决方案-结果推理链条的核心
+  breakthrough_paths:
+    - direction: pri.new_principle          # 必须引用 pri.* 或 meth.* 节点
+      expected_gain: "预期性能提升描述"
+      status: proposed                      # proposed | demonstrated | refuted
+      source: {zotero_key: "KEY", claim: "原文论断"}
+      note: "可选的补充说明"
+    # 可添加多个突破路径，每个代表一个潜在的解决方案方向
 ```
 
 > **突破路径**在 BOUNDED-BY 关系的 `breakthrough_paths` 字段中写，`direction` 必须引用 `pri.*` 或 `meth.*` 节点（不得引用 `ent.*`）。

@@ -11,13 +11,19 @@
 当前已建设/已入库的专题：
 
 - **超稳激光**（Ultra-stable Lasers）：78 篇论文，~200+ 知识节点
+  - 关键技术分支：FP 参考腔系统、光纤延迟线/干涉仪参考、光谱烧孔(SHB)频率参考
+  - 状态：已建立完整技术架构，待按**问题-解决方案-结果**推理链条重新梳理
 - **光学频率梳**（Optical Frequency Combs）：8 篇论文（6 篇综述框架 + 1 篇框架综述 + 1 篇技术论文），~147 知识节点，已建
   - A. 光梳技术：飞秒锁模激光器梳（传统）、微腔+电光调制梳（新型平台）、天文光梳
   - B. 光梳应用：频率综合、光学频率计数、双梳光谱学、频率梳光谱学、中红外梳光谱
 - **频率标准**（Frequency Standards）：合并光学频率标准（光钟）与微波频率标准，1 篇光钟框架综述，初建
+  - 框架定义完成，待技术论文填充
 - **时间标尺与钟组**（Timescales & Clock Ensembles）：1 篇框架路线图，初建
+  - 顶层架构定义完成
+- **时间频率传递**（Time-Frequency Transfer）：专题架构已定义，0 篇论文，待建
+- **时频计量数学基础**（Metrology Mathematical Foundations）：跨专题共享模块，已定义，待填充
 
-规划中的专题（详见 [`TOPICS.md`](TOPICS.md)）：
+**知识库总计**：101 个文件（88 YAML 论文文件，9 Python 脚本，4 Markdown 文档），总计 859.0 KB规划中的专题（详见 [`TOPICS.md`](TOPICS.md)）：
 
 - 时间频率传递（统一光频传递与微波传递）
 - 时频计量数学基础（Allan 偏差族、噪声谱密度、相位抖动，跨专题共享模块）
@@ -29,7 +35,13 @@
 3. **有哪些已验证/待验证的突破路径？**
 4. **某个方案在什么条件下成立、失效、存在争议，或仍是开放问题？**
 
----
+
+    
+**新增推理能力**：知识库现在显式支持**问题-解决方案-结果**推理链条：
+- **问题**：通过 `BOUNDED-BY` 关系 + `open_questions` 字段清晰定义技术限制和未解问题
+- **解决方案**：通过 `breakthrough_paths` 字段记录已验证或待验证的突破路径
+- **结果**：通过 `verification_status` + `temporal_role` + `status` 字段追踪解决方案的证据状态
+- **证据链**：通过 `source` 字段确保每个论断都可追溯到原始文献---
 
 ## 2. 设计理念
 
@@ -50,12 +62,12 @@
 
 ### 2.3 Source of Truth 规则
 
-> **`/home/runner/work/sci-logic-kb/sci-logic-kb/SCHEMA.md` 是唯一 Schema 真源。**
+> **`SCHEMA.md` 是唯一 Schema 真源。**
 
 若以下文件与 `SCHEMA.md` 冲突，一律以 `SCHEMA.md` 为准：
 
-- `/home/runner/work/sci-logic-kb/sci-logic-kb/README.md`
-- `/home/runner/work/sci-logic-kb/sci-logic-kb/.github/copilot-instructions.md`
+- `README.md`
+- `.github/copilot-instructions.md`
 - `/home/runner/work/sci-logic-kb/sci-logic-kb/scripts/` 下自动化脚本与批处理工具
 - GitHub Actions / Issue 模板文案
 - `topics/*/papers/*.yaml` 的头部版本注释

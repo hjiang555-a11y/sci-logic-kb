@@ -9,11 +9,12 @@
 4. 标注新开节点为未审核
 5. 生成质量报告
 
-遵循 Schema v4.0 要求：
+遵循 Schema v4.1 要求：
 - 全局唯一ID
 - 关系有source.claim
 - 指标有conditions
 - 原理节点有conditions/preconditions
+- BOUNDED-BY关系鼓励有breakthrough_paths字段
 """
 
 import yaml
@@ -181,7 +182,8 @@ class QualityChecker:
         """检查关系质量"""
         issues = {
             "warnings": [],
-            "missing_source_claim": []
+            "missing_source_claim": [],
+            "missing_breakthrough_paths": []  # 新增：检查BOUNDED-BY关系是否缺少breakthrough_paths
         }
 
         if not relations:
@@ -198,6 +200,11 @@ class QualityChecker:
             # 检查是否有source.claim
             if 'source' not in rel_data or 'claim' not in rel_data['source']:
                 issues["missing_source_claim"].append(rel_id)
+
+            # 新增：对于BOUNDED-BY关系，检查是否有breakthrough_paths字段（警告级别）
+            if rel_data.get('predicate') == 'BOUNDED-BY':
+                if 'breakthrough_paths' not in rel_data or not rel_data['breakthrough_paths']:
+                    issues["missing_breakthrough_paths"].append(rel_id)
 
         return issues
 
@@ -258,8 +265,15 @@ class QualityChecker:
                     total_warnings += 1
                 report_lines.append("")
 
+            # 缺失breakthrough_paths
+            if result.get('missing_breakthrough_paths'):
+                report_lines.append("### 💡 建议：补充breakthrough_paths")
+                for rel_id in result['missing_breakthrough_paths']:
+                    report_lines.append(f"- {rel_id}")
+                report_lines.append("")
+
             # 缺失conditions
-            if result['missing_conditions']:
+            if result.get('missing_conditions'):
                 report_lines.append("### ⚠️ 缺失 conditions")
                 for item in result['missing_conditions']:
                     report_lines.append(f"- {item}")
@@ -267,7 +281,7 @@ class QualityChecker:
                 report_lines.append("")
 
             # 错误
-            if result['errors']:
+            if result.get('errors'):
                 report_lines.append("### ❌ 错误")
                 for error in result['errors']:
                     report_lines.append(f"- {error}")
@@ -275,7 +289,7 @@ class QualityChecker:
                 report_lines.append("")
 
             # 警告
-            if result['warnings']:
+            if result.get('warnings'):
                 report_lines.append("### ⚠️ 警告")
                 for warning in result['warnings']:
                     report_lines.append(f"- {warning}")
