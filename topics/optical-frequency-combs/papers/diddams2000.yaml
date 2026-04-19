@@ -1,0 +1,298 @@
+# Diddams 2000 — 首次用 300 THz 倍频程飞秒梳直接链接微波与光学频率 [里程碑技术论文]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical — 光学频率合成/计量奠基性实验论文
+#   核心贡献：
+#     (1) 首次利用空气-石英微结构光纤将 Ti:Sa 锁模激光梳展宽到倍频程（1064↔532 nm）；
+#     (2) 首次用单台飞秒梳直接将 Cs 微波基准与光学频率（282 THz 的 I₂-Nd:YAG）相连；
+#     (3) 同时验证 633 nm HeNe/I₂ 与 778 nm Rb 双光子标准，奠定 f-2f 自参考可行性。
+#   Framework 依赖：udem2002.yaml、giunta2019.yaml 已定义 ent.optical_frequency_comb、
+#     pri.self_referencing_f2f、pri.femtosecond_comb_frequency_ruler；本文件提供首次演示证据。
+
+meta:
+  zotero_key: "9BV3WBSH"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical
+  reliability: high
+  title: "Direct Link between Microwave and Optical Frequencies with a 300 THz Femtosecond Laser Comb"
+  year: 2000
+  first_author: Diddams
+  journal: "Physical Review Letters"
+  volume: 84
+  issue: 22
+  pages: "5102-5105"
+  doi: "10.1103/PhysRevLett.84.5102"
+  note: >
+    [里程碑技术论文] JILA (Hall/Diddams/Cundiff/Jones/Ye) + MPQ (Hänsch/Holzwarth/Udem)
+    + Bell Labs (Ranka/Windeler) 合作。Ti:Sa 锁模激光（~10 fs，100 MHz 重复频率）耦合入
+    5–10 cm 空气-石英微结构光纤，输出超连续谱覆盖 >300 THz，覆盖 1064 nm 及其 532 nm 二倍频。
+    测得 I₂-Nd:YAG@1064 nm 频率 563 260 223 514 ± 5 kHz，2500 s 统计不确定度 2×10⁻¹³；
+    同时测 HeNe/I₂@633 nm 与 Rb@778 nm，均在已有标准不确定度内。开启"一台飞秒梳取代整条分频链"时代。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.octave_spanning_tisa_comb_d00
+    name: "倍频程 Ti:Sa 飞秒梳（Diddams 2000 系统）"
+    aliases: ["300 THz Ti:sapphire frequency comb", "Kerr-lens mode-locked Ti:Sa + PCF comb"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      Kerr-lens 锁模 Ti:Sa 激光器（中心波长 ~800 nm，~10 fs 脉宽，重复频率 100 MHz）
+      输出耦合入空气-石英微结构光纤（air-silica microstructure fiber，~1.7 µm 芯径，5–10 cm 长），
+      通过自相位调制与 χ³ 非线性将梳谱展宽至覆盖一个光学八度（1064 nm 及 532 nm），
+      形成 300 THz 宽带相干光学频率标尺。重频 Δ 通过 PZT 控制腔长锁定至 10 GHz 微波参考。
+    key_parameters:
+      laser_type: "Kerr-lens 锁模 Ti:sapphire"
+      repetition_rate: "100 MHz"
+      pulse_width: "~10 fs"
+      spectral_coverage: ">300 THz（覆盖 1064→532 nm 八度）"
+      microstructure_fiber: "空气-石英微结构光纤，1.7 µm 芯径，5–10 cm"
+      fiber_gvd: "零群速度色散 @ 800 nm"
+      coupled_power: "~40 mW"
+      mode_spacing_lock: "PZT 锁腔长，100 次谐波锁至 10 GHz 本振"
+    interface_requirements:
+      microwave_reference: "10 GHz 本振 → 本地 Rb 标准 → NIST Cs 集合（GPS 共视）"
+      optical_reference: "I₂-Nd:YAG @1064 nm（用作 f-2f 锚点候选）"
+    note: "Level 2 实例节点，PART-OF ent.optical_frequency_comb（权威定义于 udem2002.yaml / giunta2019.yaml）"
+
+  - id: ent.air_silica_microstructure_fiber_d00
+    name: "空气-石英微结构光纤（PCF / air-silica microstructure fiber）"
+    aliases: ["photonic crystal fiber", "holey fiber"]
+    hierarchy_level: 3
+    status: demonstrated
+    function: >
+      通过微结构包层设计实现 800 nm 附近零群速度色散，在小芯径（~1.7 µm）中保持飞秒脉冲
+      峰值强度（数百 GW/cm²）不色散弥散，使自相位调制与四波混频持续积累，
+      从而将 ~10 fs Ti:Sa 输出的频率梳横跨一个光学八度展宽。
+    key_parameters:
+      core_diameter: "~1.7 µm"
+      length: "5–10 cm"
+      zero_gvd_wavelength: "~800 nm（设计值）"
+      broadening_mechanism: "自相位调制 + 四波混频"
+    note: >
+      跨文件引用：超连续光纤同时被后续论文（52N4T2DE Kerr 微梳 + 光子芯片 SC、多篇 Er 光纤梳）使用。
+      本文件提供最早的 f-2f 自参考实现路径。
+
+principles:
+  - id: pri.supercontinuum_octave_spanning
+    name: "超连续谱倍频程展宽原理（SPM + FWM in ZGVD PCF）"
+    tier: domain
+    verification_status: observed
+    statement: >
+      当飞秒脉冲在零群速度色散（ZGVD）的微结构光纤中传播时，
+      脉冲包络的时间压缩维持使自相位调制（SPM）和四波混频（FWM）在长相互作用距离上累积，
+      输出频谱可从脉冲中心波长展宽到覆盖倍频程（f → 2f），同时严格保持原始梳齿等间距性与相干性。
+    domain: "非线性光纤光学；光学频率梳产生"
+    formula: >
+      展宽条件：β₂(ω₀) ≈ 0 且 P_peak L_nl ~ 1；
+      输出梳：νₙ = n·Δ + f_CEO，跨 1064–532 nm；
+      SPM 与 FWM 保持相邻梳齿相位关系
+    key_insight: >
+      倍频程展宽是实现 f-2f 自参考（pri.self_referencing_f2f）的硬件前提；
+      否则需要多级分频器（Telle 1999 方案）。微结构光纤单模 + ZGVD 是关键工程突破。
+    conditions: "飞秒脉冲（≲20 fs）；ZGVD 光纤；足够耦合功率（~数十 mW）"
+    preconditions:
+      - "泵浦脉冲带宽 ≥ ~30 THz（对应 <30 fs）"
+      - "光纤非线性相互作用距离 L_eff >> 色散长度 L_D"
+      - "光纤保持单横模传播以避免相干性破坏"
+    invalidated_when:
+      - "脉冲进入孤子分裂区，导致梳齿间严重相位扰动"
+      - "光纤双折射或多模行为破坏相干性"
+    source_claim: >
+      "An air-silica microstructure optical fiber broadens the frequency comb of a femtosecond laser
+      to span the optical octave from 1064 to 532 nm"
+    open_questions:
+      - "如何同时优化展宽带宽与低相位噪声（长光纤易引入 ASE 噪声与偏振漂移）？"
+
+  - id: pri.microwave_reference_noise_limit
+    name: "微波参考相噪限制原理（飞秒梳 f-2f 频率测量场景）"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      在以微波本振（Rb / Cs / GPS 共视等）作为频率梳重频锁定参考的测量链中，
+      光频绝对测量不确定度受限于该微波参考的相位噪声与稳定度：
+      σ_y(光)(τ) ≈ σ_y(微波)(τ) × (f_opt / f_mw)⁰ ≈ σ_y(微波)(τ)，
+      因为梳的 "乘 n" 过程在分数稳定度上是 1:1 传递。
+    domain: "光频-微波链路；绝对频率计量"
+    formula: "σ_y,opt(τ) ≥ σ_y,µw(τ)（忽略梳本身噪声）"
+    key_insight: >
+      "只用微波参考锁梳重频" 是 10⁻¹³ 级精密频率计量的天然天花板；
+      后续进展（如 Giunta 2020）必须将参考从微波迁移到超稳激光 + 光钟。
+    conditions: "梳重频锁定至微波本振；光频绝对测量（相对于 Cs）"
+    preconditions:
+      - "飞秒梳自身相噪/展宽噪声低于微波本振贡献"
+      - "tracking oscillator 无 cycle slip"
+    invalidated_when:
+      - "参考从微波切换为超稳激光或光频标准（此时限制转移到光参考）"
+    source_claim: >
+      "the microwave oscillator controlling Δ provides the current noise limitation,
+      as the observed 6×10⁻¹²/√τ instability is nearly equal to that specified for our microwave standard"
+
+  - id: pri.octave_spanning_enables_f2f_self_reference
+    name: "倍频程谱使 f-2f 自参考成为单激光器方案"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      当梳谱覆盖从 f_low 到 2·f_low 的一个光学八度时，短波端梳齿 ν_{2n} = 2n·f_rep + f_CEO
+      可与长波端某梳齿倍频后 2ν_n = 2n·f_rep + 2·f_CEO 外差，直接产生 f_CEO 拍频，
+      从而实现单激光器内的 f-2f 自参考。该架构取代了 Telle 1999 的多级分频器链。
+    domain: "光学频率合成"
+    formula: "f_CEO = 2·ν_n(长波) − ν_{2n}(短波)，只需单台飞秒激光器 + 倍频程展宽光纤"
+    key_insight: >
+      倍频程展宽是自参考从"原理可行"进入"单机可行"的关键工程拐点。
+    conditions: "梳谱完整覆盖 [f, 2f] 区间；具备 f-2f 干涉仪与拍频探测链路"
+    source_claim: >
+      "the introduction of special air-silica microstructure optical fibers which broaden the fs laser
+      frequency comb to span an entire optical octave ... obviates the need for even the single divider stage"
+
+methods:
+  - id: meth.octave_f2f_optical_frequency_measurement
+    name: "倍频程 f-2f 光学频率测量方法（Diddams 2000 首次演示）"
+    status: demonstrated
+    applies_to: ent.octave_spanning_tisa_comb_d00
+    steps_summary: >
+      1. Ti:Sa 锁模激光 → ~10 fs / 100 MHz 梳；
+      2. 空气-石英微结构光纤展宽到 >300 THz（横跨 1064–532 nm 八度）；
+      3. 将未知光频 ν_opt（I₂-Nd:YAG@1064 nm）与相邻梳齿拍频得 δ₁，
+         将其 SHG（532 nm）与相邻梳齿拍频得 δ₂；
+      4. 锁重频 Δ 至 10 GHz 本振（→ NIST Cs）；
+      5. 用 tracking oscillator 稳定两路弱拍频，
+         用平衡混频器求 δ₁ ± δ₂ 以消除 f_CEO 共模噪声；
+      6. 解方程 ν_opt = n·Δ ± (δ₁ ± δ₂)，
+         读出光频相对于 Cs 微波标准的绝对值。
+    required_hardware:
+      - ent.octave_spanning_tisa_comb_d00
+      - ent.air_silica_microstructure_fiber_d00
+    advantages:
+      - "单台飞秒梳取代整条多级分频链，大幅简化"
+      - "Allan 偏差 t⁻¹/² 下降，2500 s 达 2×10⁻¹³"
+      - "同一系统可同时测量多个光频标准（633、778、1064 nm）"
+    disadvantages:
+      - "Rb 本振 t⁻¹/² 噪声主导中长期稳定度"
+      - "tracking oscillator 跳周（cycle slip）限制统计不确定度"
+      - "微结构光纤展宽附加相位噪声（未量化）"
+    conditions:
+      - "梳重频锁定无 cycle-slip 运行"
+      - "f-2f 差频共模抑制足够"
+    source_claim: >
+      "We demonstrate a great simplification in the long-standing problem of measuring optical frequencies
+      in terms of the cesium primary standard"
+
+metrics:
+  - id: met.comb_spectral_bandwidth
+    name: "光学频率梳谱宽（通用指标）"
+    unit: "THz 或 nm"
+    description: >
+      频率梳连续覆盖的光学频率范围，决定可直接桥接的最大光频间隔与是否允许单激光 f-2f 自参考。
+    is_interface_metric: true
+    coupling_formula: "若谱宽 ≥ ν_low → 2ν_low，则可单激光 f-2f"
+    demonstrated_value:
+      value: ">300 THz（1064→532 nm，覆盖一个光学八度）"
+      conditions: "Ti:Sa ~10 fs / 100 MHz + 空气-石英微结构光纤（Diddams 2000）"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "9BV3WBSH", claim: "a broadband (>300 THz) optical frequency comb generated with femtosecond laser technology and novel optical fiber"}
+    historical_landmarks:
+      first_demonstration:
+        value: ">300 THz 倍频程，1064↔532 nm"
+        year: 2000
+        source: {zotero_key: "9BV3WBSH"}
+        note: "首次单激光 + 单段微结构光纤实现倍频程飞秒梳"
+
+  - id: met.optical_frequency_measurement_uncertainty_d00
+    name: "光学频率测量统计不确定度（Diddams 2000，282 THz@1064 nm）"
+    unit: "无量纲（分数不确定度）"
+    description: >
+      用飞秒梳 f-2f 方案直接对应 Cs 微波基准测得 I₂-Nd:YAG@1064 nm 频率的统计不确定度。
+    demonstrated_value:
+      value: "~2×10⁻¹³（2500 s，~50 Hz 于 282 THz）"
+      conditions: "10 GHz 本振锁定至本地 Rb，GPS 共视至 NIST Cs 集合；tracking oscillator 读出 δ₁±δ₂"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "9BV3WBSH", claim: "the 282 THz optical frequency can be determined with a statistical uncertainty of about 50 Hz, or 2 × 10⁻¹³"}
+    theoretical_floor:
+      value: "受限于微波本振（Rb→Cs）相噪，~6×10⁻¹²·τ⁻¹/²"
+      basis: "本振锁定 Allan 偏差下限"
+      gap_note: "测得 t⁻¹/² 表现已接近本振极限；展宽光纤引入的附加噪声未能量化"
+    historical_landmarks:
+      first_demonstration:
+        value: "5×10⁻¹² @1 s → 2×10⁻¹³ @2500 s"
+        year: 2000
+        source: {zotero_key: "9BV3WBSH"}
+
+# ═══════════════════════════════════════════════
+#  RELATIONS（关系）
+# ═══════════════════════════════════════════════
+
+relations:
+  - id: rel.D00_01
+    subject: ent.air_silica_microstructure_fiber_d00
+    predicate: PART-OF
+    object: ent.octave_spanning_tisa_comb_d00
+    confidence: established
+    source: {zotero_key: "9BV3WBSH", claim: "approximately 40 mW of the fs laser light is coupled into a 5 or 10 cm piece of an air-silica microstructure fiber"}
+
+  - id: rel.D00_02
+    subject: ent.octave_spanning_tisa_comb_d00
+    predicate: CHARACTERIZED-BY
+    object: met.comb_spectral_bandwidth
+    confidence: established
+    source: {zotero_key: "9BV3WBSH", claim: "the spectral output of the fiber covers more than an octave in the optical domain"}
+    temporal_role: validates
+
+  - id: rel.D00_03
+    subject: ent.octave_spanning_tisa_comb_d00
+    predicate: CHARACTERIZED-BY
+    object: met.optical_frequency_measurement_uncertainty_d00
+    confidence: established
+    source: {zotero_key: "9BV3WBSH", claim: "statistical uncertainty of about 50 Hz, or 2 × 10⁻¹³"}
+    conditions: "2500 s 积分，I₂-Nd:YAG@1064 nm"
+
+  - id: rel.D00_04
+    subject: meth.octave_f2f_optical_frequency_measurement
+    predicate: ENABLED-BY
+    object: pri.supercontinuum_octave_spanning
+    confidence: established
+    source: {zotero_key: "9BV3WBSH", claim: "an air-silica microstructure optical fiber broadens the frequency comb ... to span the optical octave"}
+
+  - id: rel.D00_05
+    subject: meth.octave_f2f_optical_frequency_measurement
+    predicate: ENABLED-BY
+    object: pri.octave_spanning_enables_f2f_self_reference
+    confidence: established
+    source: {zotero_key: "9BV3WBSH", claim: "obviates the need for even the single divider stage"}
+
+  - id: rel.D00_06
+    subject: pri.octave_spanning_enables_f2f_self_reference
+    predicate: DERIVED-FROM
+    object: pri.self_referencing_f2f
+    confidence: established
+    source: {zotero_key: "9BV3WBSH", claim: "phase-coherently bridge the gap between the fundamental and its second harmonic"}
+    note: "pri.self_referencing_f2f 定义于 giunta2019.yaml / udem2002.yaml（跨文件引用）"
+
+  - id: rel.D00_07
+    subject: met.optical_frequency_measurement_uncertainty_d00
+    predicate: OPERATIONALIZED-AS
+    object: meth.octave_f2f_optical_frequency_measurement
+    confidence: established
+    source: {zotero_key: "9BV3WBSH"}
+
+  - id: rel.D00_08
+    subject: met.optical_frequency_measurement_uncertainty_d00
+    predicate: BOUNDED-BY
+    object: pri.microwave_reference_noise_limit
+    confidence: inferred
+    source: {zotero_key: "9BV3WBSH", claim: "the microwave oscillator controlling Δ provides the current noise limitation, as the observed 6×10⁻¹²/√τ instability is nearly equal to that specified for our microwave standard"}
+    note: "限制原理：本地 Rb 本振相噪；为后续工作（giunta2020 等）引入 USL 光参考 + f-2f 锁定提供动机"
+    breakthrough_paths:
+      - direction: meth.wideband_optical_frequency_synthesis
+        expected_gain: "使用超稳激光作为光频参考 + 光相位追踪，达到 10⁻²⁰"
+        status: demonstrated
+        source: {zotero_key: "UFWLAXMA", claim: "real-time optical phase tracking with ultra-low-noise frequency combs"}
+        note: "跨文件引用：meth.wideband_optical_frequency_synthesis 定义于 topics/optical-frequency-combs/papers/giunta2020.yaml（Giunta 2020 Nat Photon，zotero_key UFWLAXMA）。本论文（2000 年）受限于本地 Rb 微波本振，该突破由 Giunta 2020 用超稳激光 + 光相位追踪实现。"

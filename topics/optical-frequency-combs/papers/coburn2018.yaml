@@ -1,0 +1,156 @@
+# Coburn 2018 — 野外部署双梳光谱仪做区域痕量气体溯源
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical — 双梳光谱应用层首次野外远程部署
+
+meta:
+  zotero_key: "2QU7BQ44"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical
+  reliability: high
+  title: "Regional trace-gas source attribution using a field-deployed dual frequency comb spectrometer"
+  year: 2018
+  first_author: Coburn
+  journal: "Optica"
+  volume: 5
+  issue: 4
+  pages: "320-327"
+  doi: "10.1364/OPTICA.5.000320"
+  note: >
+    [应用层技术论文] Colorado/NIST（Rieker/Newbury/Coddington 组）。
+    首次野外远程部署双梳光谱仪 + 大气反演模型，实现数平方公里区域连续痕量气体监测与源定位。
+    1 km 距离检测到 1.6 g/min 甲烷源（小于典型气动控制器本底排放），
+    区域灵敏度比现有方法提升 ~10³ 倍。应用层范例：CH₄ 监测、油气泄漏、碳封存验证。
+
+entities:
+  - id: ent.field_deployed_dcs_c18
+    name: "野外部署双梳光谱仪系统（Coburn 2018）"
+    aliases: ["Colorado/NIST mobile DCS trailer"]
+    hierarchy_level: 1
+    status: demonstrated
+    function: >
+      集装箱/拖车式自主运行平台，发射稀疏分布的 km 尺度光束阵列覆盖多平方公里区域，
+      Er:fiber 双梳光源 + 开放路径探测 + 大气反演模型实现：
+      (1) 连续时间分辨的痕量气体浓度监测；
+      (2) 空间多点反演定位气体源位置与流量；
+      (3) 自动化 24/7 运行，应用于油气设施排放监管。
+    key_parameters:
+      platform: "移动集装箱 + 可自主运行"
+      beam_range: "~1 km 开放路径"
+      region_coverage: "数平方公里"
+      target_species: "CH₄（主），CO₂ / H₂O / 其他 HITRAN 物种"
+      detection_limit: "1.6 g/min @ 1 km（CH₄）"
+      spectral_coverage: "~1550–1700 nm（Er:fiber 梳波段 + CH₄ 2ν₃ 带）"
+    interface_requirements:
+      atmospheric_model: "大气传输 + 贝叶斯反演"
+      weather: "风场数据用于源定位反演"
+    note: "Level 1 应用层实体，PART-OF ent.dual_comb_spectrometer（coddington2016.yaml）"
+
+principles:
+  - id: pri.open_path_dcs_attribution_chain
+    name: "开放路径 DCS 痕量气体溯源推理链原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      多路径开放 DCS 测得的积分浓度 c_i(t) 结合实时风场与大气扩散模型 f(x, y, t)，
+      可反演源位置 x_s 与流量 q_s：c_i(t) = Σ_s G(x_i, x_s, t) · q_s + ε；
+      多光束时间序列提供足够约束以分辨多个源。
+    domain: "大气反演；DCS 应用"
+    formula: "c_i(t) = Σ_s G_is(t)·q_s + ε；源定位与量化通过贝叶斯反演"
+    key_insight: >
+      双梳的"宽带 + 高精度 + 快采集"使开放路径方案首次同时具备源溯源所需的
+      时间连续性、空间稀疏采样与高灵敏度，突破传统点测网或卫星瞬时覆盖的不足。
+    conditions: "梳光束可穿透大气（1550 nm 波段好）；风场稳定或已测；足够光束覆盖多源"
+    preconditions:
+      - "多光束几何对目标源可分辨"
+      - "大气扩散模型在区域尺度有效"
+    invalidated_when:
+      - "大气扩散模型失效（强对流、复杂地形）"
+      - "光束数量不足导致源位置欠约束"
+    source_claim: >
+      "the first remote field deployment of dual frequency comb technology, coupled with innovations
+      in atmospheric inversion modeling, to enable the continuous detection, location and quantification
+      of small trace gas sources over several square kilometer regions"
+
+methods:
+  - id: meth.open_path_dcs_field_monitoring
+    name: "开放路径双梳野外监测方法"
+    status: demonstrated
+    applies_to: ent.field_deployed_dcs_c18
+    steps_summary: >
+      1. Er:fiber 双梳光源在中心站发射 → 稀疏布置回反射器；
+      2. 每路开放路径测积分吸收谱 → HITRAN 拟合得路径积分浓度 c_i(t)；
+      3. 实时接入风场 + 大气扩散模型；
+      4. 贝叶斯反演求 (x_s, q_s) → 定位源 + 估算流量；
+      5. 连续运行覆盖天/周时间尺度。
+    required_hardware:
+      - ent.field_deployed_dcs_c18
+    advantages:
+      - "10³× 灵敏度提升（相对传统区域方法）"
+      - "连续时间分辨"
+      - "可同时检测多物种"
+    disadvantages:
+      - "依赖风场模型准确性"
+      - "需要多个回反射器与 km 级光程对准"
+    source_claim: >
+      "the technology achieves the goal of detecting, quantifying, and attributing emissions sources
+      continuously through time, over large areas, and at emissions rates ~1000× lower"
+
+metrics:
+  - id: met.dcs_field_detection_limit_c18
+    name: "野外 DCS 甲烷源检测限（Coburn 2018）"
+    unit: "g/min（最小可检测流量）"
+    description: "1 km 距离开放路径 DCS 对点源 CH₄ 排放流量的检测限"
+    demonstrated_value:
+      value: "1.6 g/min @ 1 km 距离"
+      conditions: "Er:fiber 双梳，CH₄ 2ν₃ 带，典型大气条件，30 min–24 h 数据窗口"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "2QU7BQ44", claim: "detection and quantification of a 1.6 g min⁻¹ source ... from a distance of 1 km"}
+    historical_landmarks:
+      first_demonstration:
+        value: "首次野外 DCS 区域痕量气体溯源"
+        year: 2018
+        source: {zotero_key: "2QU7BQ44"}
+
+relations:
+  - id: rel.CB18_01
+    subject: ent.field_deployed_dcs_c18
+    predicate: CHARACTERIZED-BY
+    object: met.dcs_field_detection_limit_c18
+    confidence: established
+    source: {zotero_key: "2QU7BQ44"}
+
+  - id: rel.CB18_02
+    subject: meth.open_path_dcs_field_monitoring
+    predicate: ENABLED-BY
+    object: pri.open_path_dcs_attribution_chain
+    confidence: established
+    source: {zotero_key: "2QU7BQ44"}
+
+  - id: rel.CB18_03
+    subject: meth.open_path_dcs_field_monitoring
+    predicate: ENABLED-BY
+    object: meth.dual_comb_spectroscopy
+    confidence: established
+    source: {zotero_key: "2QU7BQ44"}
+    note: "meth.dual_comb_spectroscopy 定义于 coddington2010.yaml"
+
+  - id: rel.CB18_04
+    subject: ent.field_deployed_dcs_c18
+    predicate: PART-OF
+    object: ent.dual_comb_spectrometer
+    confidence: established
+    source: {zotero_key: "2QU7BQ44"}
+    note: "ent.dual_comb_spectrometer 定义于 coddington2016.yaml"
+
+  - id: rel.CB18_05
+    subject: ent.field_deployed_dcs_c18
+    predicate: CONDITIONED-BY
+    object: pri.molecular_rovibrational_fingerprint
+    confidence: established
+    source: {zotero_key: "2QU7BQ44"}
+    note: "跨文件引用（picque2019.yaml 应用层原理）"

@@ -1,0 +1,150 @@
+# Cuyvers 2021 — III-V/SiN 异质集成被动锁模激光梳（低噪声芯片级）
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical
+
+meta:
+  zotero_key: "5R8PUBX7"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical
+  reliability: high
+  title: "Low Noise Heterogeneous III-V-on-Silicon-Nitride Mode-Locked Comb Laser"
+  year: 2021
+  first_author: Cuyvers
+  journal: "Laser & Photonics Reviews"
+  volume: 15
+  pages: "2000485"
+  doi: "10.1002/lpor.202000485"
+  note: >
+    [技术论文] Ghent/imec（Kuyken 组）+ Tyndall。首次异质集成 III-V 增益 + SiN 低损耗
+    无源波导构成扩展腔环形 colliding-pulse 被动锁模激光梳；
+    755 MHz 重频、RF 线宽 1 Hz、光学线宽 <200 kHz；晶圆级工艺可批产；
+    用 SiN 超低损耗消除传统片上 MLL 被动腔损耗瓶颈。
+
+entities:
+  - id: ent.hetero_iii_v_sin_mll_comb_c21
+    name: "异质集成 III-V / SiN 被动锁模激光梳（Cuyvers 2021）"
+    aliases: ["heterogeneous III-V-on-SiN MLL comb"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      III-V 增益剖面（QW 增益 + 可饱和吸收器）通过键合集成到 Si₃N₄ 低损耗波导平台上，
+      构成扩展腔环形 colliding-pulse 被动锁模激光器；利用 SiN 的超低线性/非线性损耗
+      大幅延长腔长，使重频降至 755 MHz（远低于纯 III-V MLL 的 GHz-THz 级），
+      同时保持 RF 线宽 1 Hz、光学线宽 <200 kHz。晶圆级工艺 → 可低成本批量制造。
+    key_parameters:
+      platform: "III-V on Si₃N₄（heterogeneous integration, wafer-scale）"
+      topology: "ring-type extended cavity, colliding-pulse MLL"
+      repetition_rate: "755 MHz"
+      rf_linewidth: "1 Hz"
+      optical_linewidth: "<200 kHz"
+      pumping: "电泵浦（无需外部光泵）"
+    note: "Level 2 实例节点；PART-OF ent.optical_frequency_comb；集成 MLL 子分支"
+
+principles:
+  - id: pri.sin_low_loss_extended_cavity_low_rep_rate
+    name: "SiN 低损耗扩展腔降低集成 MLL 重频原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      Si₃N₄ 波导损耗 ~dB/m（远低于 III-V 的 ~dB/cm），可在片上构建长达几十 cm 的扩展腔，
+      将集成锁模激光重频降到 100 MHz – 1 GHz 范围（dense comb lines），
+      同时延长的光子寿命抑制相噪，获得 Hz 级 RF 线宽和 sub-MHz 光学线宽。
+    domain: "片上集成锁模激光；相噪工程"
+    formula: "f_rep = c/(2nL)；SiN 损耗低 → L 大 → f_rep 小 & 线宽窄"
+    key_insight: >
+      增益与无源腔"材料分工"（III-V 管增益，SiN 管腔）是芯片级低噪光梳的关键架构；
+      比纯 III-V 或纯 SiN Kerr 梳各有平衡点。
+    conditions: "III-V/SiN 异质集成工艺可用；键合损耗低；热失配可控"
+    invalidated_when:
+      - "键合界面损耗大"
+      - "III-V 段对 SiN 谐振有反射导致模式竞争"
+    source_claim: >
+      "we leverage the ultra-low losses of silicon-nitride waveguides to demonstrate a
+      heterogeneously integrated III-V-on-silicon-nitride passively mode-locked laser with a narrow
+      755 MHz line spacing, a radio frequency linewidth of 1 Hz and an optical linewidth below 200 kHz"
+
+methods:
+  - id: meth.iii_v_sin_heterogeneous_mll_fabrication
+    name: "III-V/SiN 异质集成 MLL 制造方法"
+    status: demonstrated
+    applies_to: ent.hetero_iii_v_sin_mll_comb_c21
+    steps_summary: >
+      1. SiN 无源环形腔 + DC coupler 出光设计；
+      2. III-V 外延片通过 BCB 或直接键合集成到 SiN 芯片；
+      3. 定义增益段 + 饱和吸收器；
+      4. 电泵浦触发 colliding-pulse 被动锁模；
+      5. 探测输出 → 755 MHz 梳，RF/光学线宽测量。
+    required_hardware:
+      - ent.hetero_iii_v_sin_mll_comb_c21
+    advantages:
+      - "晶圆级可批产，成本低"
+      - "电泵浦（无需光泵，区别于 Kerr 微梳）"
+      - "重频密 + 光学线宽窄适合 DCS 与 LIDAR"
+    disadvantages:
+      - "需键合工艺"
+      - "波长覆盖受 III-V 增益带限制"
+    source_claim: >
+      "these comb sources are fabricated with wafer scale technology, hence enabling low-cost and
+      high volume manufacturable devices"
+
+metrics:
+  - id: met.mll_rf_linewidth_c21
+    name: "集成 MLL 重频 RF 线宽"
+    unit: "Hz"
+    demonstrated_value:
+      value: "1 Hz"
+      conditions: "III-V/SiN MLL，755 MHz 重频"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "5R8PUBX7"}
+
+  - id: met.mll_optical_linewidth_c21
+    name: "集成 MLL 光学梳齿线宽"
+    unit: "Hz"
+    demonstrated_value:
+      value: "<200 kHz"
+      conditions: "同上"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "5R8PUBX7"}
+
+relations:
+  - id: rel.CV21_01
+    subject: ent.hetero_iii_v_sin_mll_comb_c21
+    predicate: CHARACTERIZED-BY
+    object: met.mll_rf_linewidth_c21
+    confidence: established
+    source: {zotero_key: "5R8PUBX7"}
+
+  - id: rel.CV21_02
+    subject: ent.hetero_iii_v_sin_mll_comb_c21
+    predicate: CHARACTERIZED-BY
+    object: met.mll_optical_linewidth_c21
+    confidence: established
+    source: {zotero_key: "5R8PUBX7"}
+
+  - id: rel.CV21_03
+    subject: meth.iii_v_sin_heterogeneous_mll_fabrication
+    predicate: ENABLED-BY
+    object: pri.sin_low_loss_extended_cavity_low_rep_rate
+    confidence: established
+    source: {zotero_key: "5R8PUBX7"}
+
+  - id: rel.CV21_04
+    subject: ent.hetero_iii_v_sin_mll_comb_c21
+    predicate: COMPETES-WITH
+    object: ent.microresonator_frequency_comb
+    confidence: established
+    source: {zotero_key: "5R8PUBX7"}
+    conditions: "集成片上梳两大路线：电泵 III-V/SiN MLL（Cuyvers 2021）vs 光泵 Kerr 微梳；前者电泵、后者 Kerr 非线性"
+
+  - id: rel.CV21_05
+    subject: ent.hetero_iii_v_sin_mll_comb_c21
+    predicate: PART-OF
+    object: ent.optical_frequency_comb
+    confidence: established
+    source: {zotero_key: "5R8PUBX7"}

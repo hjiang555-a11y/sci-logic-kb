@@ -1,0 +1,123 @@
+# Pröbster 2021 — FOKUS II 紧凑真空兼容双梳系统空间飞行验证
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical
+
+meta:
+  zotero_key: "2SMDS6NY"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical
+  reliability: high
+  title: "FOKUS II—Space flight of a compact and vacuum compatible dual frequency comb system"
+  year: 2021
+  first_author: Pröbster
+  journal: "JOSA B"
+  volume: 38
+  issue: 3
+  pages: "932-939"
+  doi: "10.1364/JOSAB.413929"
+  note: >
+    [技术论文] Menlo Systems + U Bremen/ZARM。FOKUS II 是紧凑真空兼容双光梳载荷，
+    基于 NOLM 光纤锁模激光；相对 FOKUS I 缩减体积/质量/功耗；两路冗余梳 + 自主模式数判定；
+    经 TEXUS 54 探空火箭零重力飞行，与 JOKARUS 碘稳频 cw 激光连接测试。
+    推进光梳走向导航卫星、星间测距、空间光钟的工程成熟度。
+
+entities:
+  - id: ent.fokus_ii_space_dual_comb_p21
+    name: "FOKUS II 空间双光梳系统（Pröbster 2021）"
+    aliases: ["FOKUS II payload"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      双路 NOLM（非线性光环镜）Er:fiber 锁模激光光频梳，机架集成；
+      真空兼容封装；质量/体积/功耗全面优化；双梳提供冗余 + 无外部先验条件下的
+      自主模式数判定；通过光纤与 JOKARUS 碘分子稳频 cw 光学标准连接；
+      TEXUS 54 探空火箭 6 分钟零重力飞行验证（280 km 高度）。
+    key_parameters:
+      laser_technology: "NOLM 非线性光环镜 Er:fiber 锁模"
+      redundancy: "双梳（两路独立）"
+      mode_num_determination: "自主（双梳几何约束）"
+      env_test: "TEXUS 54 探空火箭，真空，零重力"
+      external_reference: "JOKARUS 碘稳频 cw 光学标准"
+    note: "Level 2 实例节点；PART-OF ent.optical_frequency_comb；空间/导航应用分支"
+
+principles:
+  - id: pri.dual_comb_mode_number_self_determination
+    name: "双梳自主模式数确定原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      若已知两梳 f_rep 与 f_CEO 与拍频频率，可对同一未知光频同时建立两个独立方程
+      ν = n₁·f_rep1 + f_ceo1 ± f_bep1 = n₂·f_rep2 + f_ceo2 ± f_bep2，
+      通过 (n₁, n₂) 整数解的唯一性自主确定光学模式数；在空间应用中不需 wavemeter。
+    domain: "双梳；光频计量"
+    formula: "联立两梳方程的整数最小残差唯一确定 (n₁, n₂)"
+    key_insight: >
+      双梳不只是冗余备份，还是消除对 wavemeter 依赖的必要几何手段，
+      适合无人空间载荷的全自主运行。
+    conditions: "两梳 f_rep 有足够差分；f_CEO、f_bep 都被精确测量"
+
+methods:
+  - id: meth.space_qualified_comb_integration
+    name: "空间兼容光梳载荷集成方法"
+    status: demonstrated
+    applies_to: ent.fokus_ii_space_dual_comb_p21
+    steps_summary: >
+      1. NOLM 光纤激光器（相位噪声低、锁模稳）集成于真空兼容机架；
+      2. 双梳冗余 + 自主模式数判定；
+      3. 与 JOKARUS 碘 cw 标准通过光纤耦合；
+      4. TEXUS 探空火箭零重力飞行验证全系统；
+      5. 评估飞行过程中锁模、f-2f、模式数判定稳定性。
+    required_hardware:
+      - ent.fokus_ii_space_dual_comb_p21
+    advantages:
+      - "TRL 向空间应用推进"
+      - "双梳冗余 + 自主判定"
+      - "真空 / 零重力兼容"
+    disadvantages:
+      - "仍需优化长期辐射环境耐受性"
+
+metrics:
+  - id: met.space_comb_environmental_readiness_p21
+    name: "空间光梳环境成熟度（FOKUS II）"
+    unit: "定性指标"
+    description: "真空 + 零重力飞行测试通过情况"
+    demonstrated_value:
+      value: "TEXUS 54 通过；280 km 高度，6 分钟零重力运行，锁定保持"
+      conditions: "探空火箭飞行，真空，零重力"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "2SMDS6NY"}
+
+relations:
+  - id: rel.PR21_01
+    subject: ent.fokus_ii_space_dual_comb_p21
+    predicate: CHARACTERIZED-BY
+    object: met.space_comb_environmental_readiness_p21
+    confidence: established
+    source: {zotero_key: "2SMDS6NY"}
+
+  - id: rel.PR21_02
+    subject: meth.space_qualified_comb_integration
+    predicate: ENABLED-BY
+    object: pri.dual_comb_mode_number_self_determination
+    confidence: established
+    source: {zotero_key: "2SMDS6NY"}
+
+  - id: rel.PR21_03
+    subject: ent.fokus_ii_space_dual_comb_p21
+    predicate: PART-OF
+    object: ent.optical_frequency_comb
+    confidence: established
+    source: {zotero_key: "2SMDS6NY"}
+
+  - id: rel.PR21_04
+    subject: ent.fokus_ii_space_dual_comb_p21
+    predicate: CONDITIONED-BY
+    object: pri.molecular_rovibrational_fingerprint
+    confidence: established
+    source: {zotero_key: "2SMDS6NY", claim: "connected with an optical fiber to an iodine-based optical standard (JOKARUS)"}
+    note: "碘分子电子跃迁参考，近似作为分子参考接口"

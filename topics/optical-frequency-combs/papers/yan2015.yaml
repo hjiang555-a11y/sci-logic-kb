@@ -1,0 +1,120 @@
+# Yan 2015 — 阿秒分辨 Er:fiber 光频梳（腔内 EOM 快速反馈）
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical
+
+meta:
+  zotero_key: "9BEBKUGG"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical
+  reliability: high
+  title: "Attosecond-Resolution Er:Fiber-Based Optical Frequency Comb"
+  year: 2015
+  first_author: Yan
+  journal: "Chinese Physics Letters"
+  volume: 32
+  issue: 10
+  pages: "104207"
+  doi: "10.1088/0256-307X/32/10/104207"
+  note: >
+    [技术论文] 中科院国家授时中心（Jiang Haifeng 组）。232 MHz Er:fiber 锁模激光梳，
+    腔内集成 LiNbO₃ EOM + PZT 做 f_r 高速伺服（锁至 cw 参考），泵浦功率控 f_CEO。
+    环内相对频率稳定度 <1×10⁻¹⁶ @ 1 s，10⁴ s 积分至低 10⁻²⁰ 级；
+    对应计时不确定度 100–200 as（阿秒级），是当时最好的 Er 梳指标之一。
+
+entities:
+  - id: ent.attosecond_erfiber_comb_y15
+    name: "阿秒分辨 Er:fiber 光频梳（Yan 2015，NTSC 系统）"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      232 MHz 重频 Er:fiber 锁模激光器；腔内 8 mm LiNbO₃ 电光晶体做快速腔长伺服，
+      PZT 做慢漂移补偿；梳齿相位锁定至 1550 nm cw 参考（in-loop 测量）；
+      f-2f 共路 f_CEO 探测，锁至 RF 参考（通过泵浦功率控制）。
+      HNLF 展宽至覆盖 1–2 µm 八度。
+    key_parameters:
+      gain_medium: "Er:fiber（110 dB/m）"
+      repetition_rate: "232 MHz"
+      output_power: "~180 mW @ 1 W 泵浦"
+      intracavity_modulator: "LiNbO₃ EOM（8×3.2 mm）+ PZT"
+      f_ceo_actuator: "泵浦功率调制"
+      f_r_actuator: "腔内 EOM（快） + PZT（慢）"
+      sc_span: "1–2 µm（HNLF 展宽）"
+    note: "Level 2 实例节点，PART-OF ent.optical_frequency_comb"
+
+principles:
+  - id: pri.intracavity_eom_fast_rep_rate_control
+    name: "腔内 EOM 快速重频伺服原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      腔内电光晶体通过折射率调制等效改变腔长，反馈带宽由调制电极电容与驱动阻抗决定，
+      可远高于 PZT 声速极限（~几十 kHz）与泵浦调制的增益寿命极限（~100 kHz），
+      从而实现 f_r 高带宽锁定 → 降低 cw 参考相噪向光梳的传递残差。
+    domain: "光梳 f_r 伺服"
+    key_insight: >
+      腔内 EOM 是传统 Ti:Sa / Yb:fiber / Er:fiber 梳实现亚赫兹级锁定的通用硬件；
+      与腔内石墨烯调制器（Kuse 2015）形成"块状 vs 2D"两条工程路径。
+    conditions: "EOM 色散被精细补偿；驱动电路带宽匹配"
+    source_claim: >
+      "Its repetition rate is phase-stabilized to a continuous-wave laser with both an intra-cavity
+      electro-optic modulator and a piezo-transducer"
+
+methods:
+  - id: meth.er_fiber_comb_dual_actuator_stabilization
+    name: "Er:fiber 梳双执行器稳频方法（EOM + PZT + 泵浦）"
+    status: demonstrated
+    applies_to: ent.attosecond_erfiber_comb_y15
+    steps_summary: >
+      1. Er:fiber 锁模 → 232 MHz 脉冲串；
+      2. 腔内 EOM（快）+ PZT（慢）锁 f_r 至 1550 nm cw 参考；
+      3. 共路 f-2f 探测 f_CEO，反馈泵浦功率；
+      4. HNLF 展宽至 1–2 µm 覆盖光频测量目标；
+      5. 环内读出 σ_y <1×10⁻¹⁶ @ 1 s。
+    required_hardware:
+      - ent.attosecond_erfiber_comb_y15
+
+metrics:
+  - id: met.erfiber_timing_uncertainty_y15
+    name: "Er:fiber 梳环内计时不确定度（Yan 2015）"
+    unit: "as（阿秒）"
+    description: "梳环内相对 cw 参考的累积相位-时间转换计时不确定度"
+    demonstrated_value:
+      value: "100–200 as（全测量范围）；σ_y <1×10⁻¹⁶ @1s；低 10⁻²⁰ @ 10⁴ s"
+      conditions: "In-loop 测量（1550 nm cw 参考）"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "9BEBKUGG", claim: "In-loop relative frequency stabilities of the comb are below 1 × 10⁻¹⁶ at 1 s, and integrate down to low 10⁻²⁰ level at 10⁴ s. The corresponding timing uncertainties are 100–200 as"}
+
+relations:
+  - id: rel.Y15_01
+    subject: ent.attosecond_erfiber_comb_y15
+    predicate: CHARACTERIZED-BY
+    object: met.erfiber_timing_uncertainty_y15
+    confidence: established
+    source: {zotero_key: "9BEBKUGG"}
+
+  - id: rel.Y15_02
+    subject: meth.er_fiber_comb_dual_actuator_stabilization
+    predicate: ENABLED-BY
+    object: pri.intracavity_eom_fast_rep_rate_control
+    confidence: established
+    source: {zotero_key: "9BEBKUGG"}
+
+  - id: rel.Y15_03
+    subject: ent.attosecond_erfiber_comb_y15
+    predicate: COMPETES-WITH
+    object: ent.all_pm_er_fiber_comb_k15
+    confidence: tentative
+    source: {zotero_key: "9BEBKUGG"}
+    note: "同期 Er:fiber 梳稳频路线竞争：块状腔内 EOM（Yan 2015） vs 石墨烯 EOM（Kuse 2015，定义于 kuse2015.yaml）"
+
+  - id: rel.Y15_04
+    subject: ent.attosecond_erfiber_comb_y15
+    predicate: PART-OF
+    object: ent.optical_frequency_comb
+    confidence: established
+    source: {zotero_key: "9BEBKUGG"}

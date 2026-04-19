@@ -1,0 +1,147 @@
+# Ycas 2012 — 25 GHz 近红外天文光梳用于 Hobby-Eberly 望远镜径向速度校准
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical
+
+meta:
+  zotero_key: "3JN2PBKX"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical
+  reliability: high
+  title: "Demonstration of on-sky calibration of astronomical spectra using a 25 GHz near-IR laser frequency comb"
+  year: 2012
+  first_author: Ycas
+  journal: "Optics Express"
+  volume: 20
+  issue: 6
+  pages: "6631-6643"
+  doi: "10.1364/OE.20.006631"
+  note: >
+    [技术论文] NIST/Colorado + Penn State 合作。腔滤波 Er:fiber 梳（原生 250 MHz →
+    Fabry-Perot 滤波梳到 25 GHz 间距），覆盖 1450–1700 nm，GPS 原子钟锁定；
+    部署于 Hobby-Eberly 9.2 m 望远镜，连接 Pathfinder 近红外 echelle 光谱仪做 on-sky
+    径向速度校准，4 晚恒星观测 3 个 echelle order 达 ~10 m/s (~6 MHz) 精度。
+    天文光梳首批 on-sky NIR 现场验证之一。
+
+entities:
+  - id: ent.near_ir_astro_comb_y12
+    name: "25 GHz 近红外天文光梳（Ycas 2012，HET/Pathfinder 系统）"
+    aliases: ["NIR astro-comb 25 GHz"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      原生 Er:fiber 250 MHz 锁模梳 → Fabry-Perot 腔滤波（FSR = 25 GHz）得到
+      25 GHz 间距梳齿阵列（匹配 R=50000 级 echelle 光谱仪分辨本征），
+      HNLF 展宽至 1450–1700 nm；GPS-driven Rb/Cs 频标稳 f_rep 与 f_CEO；
+      通过单模光纤送入 Pathfinder NIR 光谱仪做波长校准，
+      实现恒星径向速度 6 MHz (10 m/s) 级精度。
+    key_parameters:
+      base_comb_rep_rate: "250 MHz Er:fiber MLL"
+      filter_spacing: "25 GHz（F-P 腔滤波）"
+      spectral_coverage: "1450–1700 nm"
+      reference: "GPS-referenced 原子钟"
+      deployed_at: "Hobby-Eberly 9.2 m / McDonald Observatory"
+      rv_precision: "~10 m/s（~6 MHz）"
+    note: "Level 2 实例节点；PART-OF ent.optical_frequency_comb；应用层为天文光谱学"
+
+principles:
+  - id: pri.fabry_perot_mode_filter_astro_comb
+    name: "Fabry-Perot 腔模式滤波天文光梳原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      原生锁模梳重频（50–250 MHz）齿间距远小于天文 echelle 光谱仪分辨本征，
+      通过共振 F-P 腔（FSR 对应 10–30 GHz）只透射每 N 根梳齿，得到"稀疏天文梳"；
+      保留绝对频率准确度，同时使每根可解析齿 SNR 足够高做 precision RV 校准。
+    domain: "天文光梳；滤波梳"
+    formula: "f_filtered = m·FSR_FP = (N·m)·f_rep_base"
+    key_insight: >
+      将"梳的绝对准确性"与"光谱仪的分辨本征"通过无源腔做几何匹配，
+      是天文光梳从实验室进入望远镜的关键工程手段。
+    conditions: "F-P 腔锁定至基频梳，且未抑制齿的 SNR 足够"
+    invalidated_when:
+      - "F-P 腔失锁 → 旁瓣齿不可忽略（side-mode suppression 下降）"
+    source_claim: >
+      "a 25 GHz laser frequency comb based on a cavity-filtered erbium fiber mode-locked laser"
+
+methods:
+  - id: meth.astro_comb_rv_calibration
+    name: "天文光梳径向速度校准方法"
+    status: demonstrated
+    applies_to: ent.near_ir_astro_comb_y12
+    steps_summary: >
+      1. Er:fiber 梳 + F-P 滤波 → 25 GHz 天文梳；
+      2. GPS 原子钟锁 f_rep + f_CEO；
+      3. 单模光纤注入 NIR 光谱仪共光路（与恒星光同探测）；
+      4. 每 echelle order 同时记录梳齿与恒星吸收线；
+      5. 梳齿建立精确波长标尺 → 恒星谱 RV 拟合；
+      6. 多夜数据得 ~10 m/s RV 精度。
+    required_hardware:
+      - ent.near_ir_astro_comb_y12
+    advantages:
+      - "NIR 波段覆盖（1.45–1.7 µm）弥补可见光外区"
+      - "绝对频率准确度来自 GPS 原子钟"
+      - "同光路校准避免色差/漂移"
+    disadvantages:
+      - "10 m/s 尚不足以探测地球类行星（需 cm/s 级）"
+      - "F-P 滤波波长范围依赖腔色散工程"
+    source_claim: >
+      "radial velocity precision of ~10 m/s (~6 MHz) was achieved from the comb-calibrated spectra"
+
+metrics:
+  - id: met.astro_comb_rv_precision_y12
+    name: "天文光梳径向速度校准精度"
+    unit: "m/s"
+    description: "梳校准下的恒星 RV 测量精度"
+    demonstrated_value:
+      value: "~10 m/s（~6 MHz @ 1.6 µm）"
+      conditions: "4 夜，HET 9.2 m + Pathfinder NIR 光谱仪，3 echelle order"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "3JN2PBKX"}
+    theoretical_floor:
+      value: "cm/s 级（EPRV 类系外行星科学目标）"
+      basis: "H. Eberly Spectrograph 分辨率 + 梳齿 SNR 极限"
+      gap_note: "限制来自光谱仪端稳定性 + 大气/仪器漂移，而非梳本身"
+    historical_landmarks:
+      first_demonstration:
+        value: "早期 NIR on-sky 天文梳 RV 校准之一"
+        year: 2012
+        source: {zotero_key: "3JN2PBKX"}
+
+relations:
+  - id: rel.YC12_01
+    subject: ent.near_ir_astro_comb_y12
+    predicate: CHARACTERIZED-BY
+    object: met.astro_comb_rv_precision_y12
+    confidence: established
+    source: {zotero_key: "3JN2PBKX"}
+
+  - id: rel.YC12_02
+    subject: meth.astro_comb_rv_calibration
+    predicate: ENABLED-BY
+    object: pri.fabry_perot_mode_filter_astro_comb
+    confidence: established
+    source: {zotero_key: "3JN2PBKX"}
+
+  - id: rel.YC12_03
+    subject: ent.near_ir_astro_comb_y12
+    predicate: PART-OF
+    object: ent.optical_frequency_comb
+    confidence: established
+    source: {zotero_key: "3JN2PBKX"}
+
+  - id: rel.YC12_04
+    subject: met.astro_comb_rv_precision_y12
+    predicate: BOUNDED-BY
+    object: pri.fabry_perot_mode_filter_astro_comb
+    confidence: tentative
+    source: {zotero_key: "3JN2PBKX"}
+    breakthrough_paths:
+      - direction: meth.astro_comb_rv_calibration
+        expected_gain: "联合光谱仪稳定化 → cm/s 级 RV（未来目标）"
+        status: proposed
+        source: {zotero_key: "3JN2PBKX"}

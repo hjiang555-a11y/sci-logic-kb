@@ -7,7 +7,7 @@
 | 编号 | 专题 | 目录 | 状态 | 论文数 | 核心节点数(估) |
 |------|------|------|------|--------|----------------|
 | 1 | **超稳激光** | `topics/ultrastable-laser/` | **已入库（重点梳理中）** | 78 | ~500 |
-| 2 | **光学频率梳** | `topics/optical-frequency-comb/` | **已入库** | 9 | ~150 |
+| 2 | **光学频率梳** | `topics/optical-frequency-combs/` | **已入库** | 28 | 见各论文 |
 | 3 | **频率标准（光学+微波）** | `topics/frequency-standard/` | **已入库** | 9 | ~120 |
 | 4 | **时间频率传递** | `topics/time-frequency-transfer/` | **仅有框架** | 0 | ~30 |
 | 5 | **时频计量数学基础** | `topics/mathematical-foundations/` | **待建设** | 0 | ~50 |

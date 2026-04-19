@@ -1,0 +1,101 @@
+# Picqué & Diddams 2020 — 光频梳相干统一电磁谱（Science 里程碑综述）
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: framework
+
+meta:
+  zotero_key: "43TAX2KE"
+  topic: optical-frequency-combs
+  source_type: review
+  contribution_type: framework
+  reliability: high
+  title: "Optical frequency combs: Coherently uniting the electromagnetic spectrum"
+  year: 2020
+  first_author: Diddams
+  authors: ["Scott A. Diddams", "Kerry Vahala", "Thomas Udem"]
+  journal: "Science"
+  doi: "10.1126/science.aay3676"
+  note: >
+    [框架论文] Diddams/Vahala/Udem 三位领域奠基人在 Science 的 20 周年回顾+展望。
+    确立光频梳作为"从 THz 到 UV 跨六个频域的相干统一桥"核心框架：
+    电子 ↔ 微波 ↔ 光 ↔ 紫外/X 射线 全谱相干互联的范式。
+    本文件只定义顶层 Level 0/1 实体与 tier=meta 原理以及跨专题接口；
+    不做具体实验系统的参数实例。
+
+entities:
+  - id: ent.electromagnetic_spectrum_coherent_bridge
+    name: "电磁谱相干统一桥（Level 0 顶层范式）"
+    hierarchy_level: 0
+    status: demonstrated
+    function: >
+      以光频梳为核心建立从 RF/微波 → 光学 → UV/X 射线的跨六个频域相干联结。
+      既是范式实体，也是应用层的"根领域节点"，下挂所有具体光频梳应用分支。
+    note: "Level 0 跨专题根节点"
+
+principles:
+  - id: pri.self_referencing_f2f_framework
+    name: "f-2f 自参考原理（框架陈述）"
+    tier: meta
+    verification_status: observed
+    statement: >
+      覆盖一个倍频程的光梳可通过同梳第 n 齿的二次谐波与第 2n 齿拍频得到 f_CEO，
+      从而将光学频率"绝对锁定"到无线电频率 → 实现光/微波双向相干"齿轮箱"。
+      这是 1999–2000 奠基的核心原理，也是所有后续光频梳应用的基石。
+    domain: "光频梳基础物理；光-微波桥"
+    formula: "f_CEO = 2·(n·f_rep + f_CEO) − (2n·f_rep + f_CEO)  （倍频程梳中 f-2f 直接测量）"
+    key_insight: >
+      自参考把光梳从"仅仅是等间距齿的集合"提升为"可绝对定位的频率标尺"，
+      是光频梳整个科学应用链条的起始点。
+    conditions: "梳谱覆盖至少一个倍频程；f_CEO 可测/可锁"
+    source_claim: >
+      "the technique of self-referencing, by which the optical frequencies of the comb are
+      locked in an absolute sense to a radio frequency reference"
+
+  - id: pri.optical_microwave_coherent_gearbox
+    name: "光-微波相干齿轮箱原理（Level 0 范式原理）"
+    tier: meta
+    verification_status: observed
+    statement: >
+      光频梳同时提供上百个 THz 间距相干的光频与一个可计数的 RF（=f_rep），
+      以"齿轮箱"方式在两域间双向传递相位相干性，包括：
+      (i) RF 频标 → 光钟精度（光频合成）
+      (ii) 光钟 → 超低噪声微波（OFD）
+      (iii) 光谱覆盖全光电磁谱的多路并行频标。
+    domain: "跨域频率计量"
+    key_insight: >
+      梳不仅是测量工具，更是一个"频率域翻译机"。
+    conditions: "梳自参考锁定；f_rep 有稳定参考源"
+
+relations:
+  - id: rel.PD20_01
+    subject: ent.optical_frequency_comb
+    predicate: ENABLED-BY
+    object: pri.self_referencing_f2f_framework
+    confidence: established
+    source: {zotero_key: "43TAX2KE"}
+
+  - id: rel.PD20_02
+    subject: ent.optical_frequency_comb
+    predicate: PART-OF
+    object: ent.electromagnetic_spectrum_coherent_bridge
+    confidence: established
+    source: {zotero_key: "43TAX2KE"}
+
+  - id: rel.PD20_03
+    subject: pri.self_referencing_f2f_framework
+    predicate: DERIVED-FROM
+    object: pri.optical_microwave_coherent_gearbox
+    confidence: established
+    source: {zotero_key: "43TAX2KE"}
+
+  - id: rel.PD20_04
+    subject: ent.electromagnetic_spectrum_coherent_bridge
+    predicate: CHARACTERIZED-BY
+    object: met.fractional_freq_instability_y99
+    confidence: tentative
+    source: {zotero_key: "43TAX2KE", claim: "combs are used to realize and compare ultra-precise optical clocks at the 19th decimal place"}
+    note: >
+      接口跨专题：光钟精度指标定义于 topics/ultrastable-laser/；此处仅做框架性的
+      "光梳把超稳腔精度传递到多波段"接口声明

@@ -1,0 +1,151 @@
+# Huang 2024 — 光频梳校准 FMCW 相干 NLOS 成像 + 测振
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical
+
+meta:
+  zotero_key: "2QUW2P6D"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical
+  reliability: high
+  title: "Non-Line-of-Sight Imaging and Vibrometry Using a Comb-Calibrated Coherent Sensor"
+  year: 2024
+  first_author: Huang
+  journal: "Physical Review Letters"
+  volume: 132
+  pages: "233802"
+  doi: "10.1103/PhysRevLett.132.233802"
+  note: >
+    [技术论文] USTC（Pan Jian-Wei 组）+ Hefei 国家实验室。提出用光频梳校准的 FMCW
+    调频连续波激光相干传感方案做非视距（NLOS）成像 + 测振；光梳作为 FMCW 频率调谐
+    线性度的实时校准参考，实现系统时间分辨 652 fs（可优化至 70 fs），SNR 比原生
+    FMCW 提升约 5 dB，能在强环境光下重建复杂 NLOS 场景，亚毫米定位精度，
+    NLOS 振动测量精度达数十 Hz。
+
+entities:
+  - id: ent.comb_calibrated_fmcw_nlos_sensor_h24
+    name: "光梳校准 FMCW 相干 NLOS 传感系统（Huang 2024）"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      FMCW 激光器连续调频输出 + 干涉式探测（本振 + 散射信号干涉）构成相干 LIDAR；
+      光频梳作为调频线性度实时参考（fringe-counting/频率坐标校准）；
+      针对 NLOS 场景（光漫反射混叠）用梳校准获得 ~5 dB SNR 提升；
+      兼顾成像（652 fs → ~200 µm 距离分辨）、测速、测振（数十 Hz 精度）。
+    key_parameters:
+      coherent_scheme: "FMCW 相干 LIDAR"
+      calibration: "光频梳齿阵列作频率坐标参考"
+      temporal_resolution: "652 fs（可达 70 fs）"
+      localization_precision: "150 µm（NLOS 隐藏物体）"
+      vibration_accuracy: "~数十 Hz"
+      snr_gain: "~5 dB（相对未校准 FMCW）"
+      ambient_light_tolerance: "强环境光下 NLOS 重建仍有效"
+    note: "Level 2 实例节点；PART-OF ent.optical_frequency_comb（应用：LIDAR/成像）"
+
+principles:
+  - id: pri.comb_calibrated_fmcw_frequency_linearity
+    name: "光频梳实时校准 FMCW 调频线性度原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      FMCW 距离分辨率与调频线性度直接相关：Δz ∝ c/(2·Δν_eff)，非线性调频会导致
+      距离-频率映射弥散。光频梳提供已知频率坐标栅格（间距 = f_rep），
+      将 FMCW 激光实时差频至梳上可重建真实 ν(t) 轨迹并软件反卷积补偿，
+      使等效带宽利用率接近 100%，提升 SNR ≈5 dB 并把时间分辨逼近光梳齿定义精度。
+    domain: "相干 LIDAR；FMCW 校准"
+    formula: "Δz = c/(2·Δν_eff)，Δν_eff = 实际扫描带宽，梳校准提升 Δν_eff 有效利用率"
+    key_insight: >
+      把光频梳从"光钟专属"重定位为"FMCW 通用频率标尺"，
+      打开光梳在相干 LIDAR/成像/测振领域的新应用面。
+    conditions: "光梳带宽覆盖 FMCW 扫描范围；拍频检测 SNR 足够"
+    invalidated_when:
+      - "FMCW 扫描带宽远超梳覆盖"
+      - "梳 f_rep 与扫描速率不匹配导致混叠"
+    source_claim: >
+      "the coherent scheme—frequency-modulated continuous wave calibrated by optical frequency
+      comb—for high-resolution NLOS imaging, velocimetry, and vibrometry"
+
+methods:
+  - id: meth.comb_calibrated_fmcw_nlos_imaging
+    name: "光梳校准 FMCW NLOS 成像方法"
+    status: demonstrated
+    applies_to: ent.comb_calibrated_fmcw_nlos_sensor_h24
+    steps_summary: >
+      1. FMCW 激光扫描 → 照射中继漫射面（NLOS 几何）；
+      2. 收集漫射回波 + 本振干涉；
+      3. 光频梳作参考实时测 FMCW ν(t) 非线性；
+      4. 软件反卷积重建正确 τ-ν 映射；
+      5. 逆向散射算法重建隐藏场景 3D 结构；
+      6. 对同一像素多帧相位 → 振动测量。
+    required_hardware:
+      - ent.comb_calibrated_fmcw_nlos_sensor_h24
+    advantages:
+      - "NLOS 亚毫米定位"
+      - "NLOS 测振数十 Hz 精度"
+      - "强环境光下仍有效"
+      - "SNR 5 dB 提升"
+    disadvantages:
+      - "需宽带梳覆盖 FMCW 扫描"
+      - "多次漫反射信号弱，采集时间长"
+
+metrics:
+  - id: met.fmcw_temporal_resolution_h24
+    name: "FMCW NLOS 时间分辨"
+    unit: "fs"
+    demonstrated_value:
+      value: "652 fs（当前）；70 fs（宽带激光可达）"
+      conditions: "光梳校准 + 当前扫描带宽"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "2QUW2P6D"}
+
+  - id: met.nlos_vibrometry_accuracy_h24
+    name: "NLOS 测振精度"
+    unit: "Hz"
+    demonstrated_value:
+      value: "数十 Hz（~10 Hz 量级）"
+      conditions: "NLOS 几何，多帧相位跟踪"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "2QUW2P6D"}
+
+relations:
+  - id: rel.HU24_01
+    subject: ent.comb_calibrated_fmcw_nlos_sensor_h24
+    predicate: CHARACTERIZED-BY
+    object: met.fmcw_temporal_resolution_h24
+    confidence: established
+    source: {zotero_key: "2QUW2P6D"}
+
+  - id: rel.HU24_02
+    subject: ent.comb_calibrated_fmcw_nlos_sensor_h24
+    predicate: CHARACTERIZED-BY
+    object: met.nlos_vibrometry_accuracy_h24
+    confidence: established
+    source: {zotero_key: "2QUW2P6D"}
+
+  - id: rel.HU24_03
+    subject: meth.comb_calibrated_fmcw_nlos_imaging
+    predicate: ENABLED-BY
+    object: pri.comb_calibrated_fmcw_frequency_linearity
+    confidence: established
+    source: {zotero_key: "2QUW2P6D"}
+
+  - id: rel.HU24_04
+    subject: ent.comb_calibrated_fmcw_nlos_sensor_h24
+    predicate: PART-OF
+    object: ent.optical_frequency_comb
+    confidence: established
+    source: {zotero_key: "2QUW2P6D"}
+
+  - id: rel.HU24_05
+    subject: meth.comb_calibrated_fmcw_nlos_imaging
+    predicate: COMPETES-WITH
+    object: meth.dual_comb_spectroscopy
+    confidence: tentative
+    source: {zotero_key: "2QUW2P6D"}
+    conditions: "光梳在 LIDAR 场景的应用路线：FMCW 校准（Huang 2024）vs 双梳测距/成像"
+    note: "两者解决问题维度不同——此 COMPETES-WITH 仅限在 NLOS 三维测量这一应用定位下"

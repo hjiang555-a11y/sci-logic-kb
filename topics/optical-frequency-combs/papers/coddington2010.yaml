@@ -1,0 +1,233 @@
+# Coddington 2010 — 高信噪比相干双梳光谱（基础性技术论文）
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical — 双梳光谱学高 SNR 基础性论文（应用层核心证据）
+#   贡献：系统阐述相干双梳光谱仪设计与高 SNR 实现；演示 9 THz 带宽、220 MHz 分辨、
+#         41,000 谱元、平均 SNR=2500、峰值 SNR=4000（1550 nm @ HCN overtone）。
+#   Framework 依赖：coddington2016.yaml（应用层综述）、picque2019.yaml、udem2002.yaml。
+
+meta:
+  zotero_key: "7PDY5FDM"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical
+  reliability: high
+  title: "Coherent dual-comb spectroscopy at high signal-to-noise ratio"
+  year: 2010
+  first_author: Coddington
+  journal: "Physical Review A"
+  volume: 82
+  issue: 4
+  pages: "043817"
+  doi: "10.1103/PhysRevA.82.043817"
+  note: >
+    [应用层技术论文] NIST Coddington/Swann/Newbury 组。详细阐述相干双梳光谱（DCS）
+    仪设计：两台 Er:fiber 梳分别相位锁至两路 cw 参考，通过重频差 Δf_r 做多外差采样，
+    实时相干平均恢复复响应（magnitude + phase）。在 HCN overtone（194 THz / 1545 nm）
+    上 9 THz 带宽 × 220 MHz 分辨 → 41,000 resolution elements，平均 SNR 2500，
+    峰值 SNR 4000；相位灵敏度 250 μrad，分数吸收灵敏度 0.05%。
+
+entities:
+  - id: ent.coherent_dual_comb_spectrometer_c10
+    name: "相干双梳光谱仪（Coddington 2010 系统）"
+    aliases: ["NIST Er:fiber DCS", "coherent DCS"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      两台 Er:fiber 锁模梳（重频 ~100 MHz，Δf_r ≈ 几 kHz），通过 f-2f 自参考稳 f_CEO，
+      并将两台梳各自的一个梳齿相位锁至独立 cw 参考激光（1550 nm 附近），实现跨两台梳的完整相干性。
+      一台梳作为"信号梳"通过样品，另一台作为"本振梳"与其外差，光电探测器输出 RF 多外差拍频谱，
+      经快速 ADC 数字化并相干实时平均恢复样品复透过函数 H̃(ν)。
+    key_parameters:
+      comb_type: "Er:fiber 锁模激光梳，~100 MHz 重频"
+      Δf_r: "~几 kHz（失谐重频差）"
+      ceo_stabilization: "f-2f 自参考"
+      cw_reference: "两路 cw 激光（1550 nm），光学相位锁定"
+      spectral_coverage: "9 THz（实测，展宽后）"
+      spectral_resolution: "220 MHz（等于梳重频）"
+      data_acquisition: "数字实时相干平均，SNR ∝ √T"
+    interface_requirements:
+      optical_frequency_reference: "两路独立 cw 激光，提供光学相位参考"
+      sample_path: "~100 m HCN 气体吸收池"
+    note: "Level 2 实例节点，PART-OF ent.dual_comb_spectrometer（定义于 coddington2016.yaml）"
+
+principles:
+  - id: pri.dual_comb_multiheterodyne_mapping
+    name: "双梳多外差射频下变频映射原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      两台梳重频失谐 Δf_r 时，信号梳的第 n 根齿 ν_n = f_{CEO,s} + n·f_{r,s} 与
+      本振梳的第 n 根齿 ν'_n = f_{CEO,LO} + n·f_{r,LO} 外差产生 RF 拍频
+      f_n = (f_{CEO,s} − f_{CEO,LO}) + n·Δf_r。
+      整个光学梳谱被无混叠地映射到 RF 域 [0, f_r/2]，压缩因子 M = f_r/Δf_r。
+      只要两台梳彼此相干（相位噪声满足 Nyquist 条件），RF 谱中每条线的幅度和相位
+      都与光频响应 H̃(ν_n) 一一对应。
+    domain: "双梳光谱学"
+    formula: "f_RF(n) = Δf_CEO + n·Δf_r；映射压缩比 M = f_r/Δf_r"
+    key_insight: >
+      光学梳谱 → RF 谱的点对点相干映射，使单个高速光电探测器 + ADC 可并行测量数万条梳齿，
+      获得同时具备高分辨（梳齿间距）和高精度（光频锚定）的宽带复响应。
+    conditions: "两台梳之间相位相干；Δf_r 选择避免 RF 混叠（Nyquist 条件）"
+    preconditions:
+      - "两台梳各自 f_CEO、光学相位都锁至共同或互锁参考"
+      - "Δf_r · N ≤ f_r / 2，其中 N 为总梳齿数"
+      - "相对相位噪声在单次 IGM 时间内 << 2π"
+    invalidated_when:
+      - "相对相位噪声积累 > 2π（失相干，需额外校正或 adaptive sampling）"
+      - "Δf_r 过大导致 RF 带宽混叠"
+    source_claim: >
+      "Two coherent frequency combs are used to measure the full complex response of a sample ...
+      This dual-comb spectrometer retains the frequency accuracy and resolution of the reference
+      underlying the stabilized combs"
+
+  - id: pri.dual_comb_coherent_averaging_snr_scaling
+    name: "双梳相干平均 SNR 标度原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      当两台梳维持充分相干时，RF 谱幅度/相位可相干平均（而非功率平均），
+      SNR ∝ √(T·M_h)，其中 T 为平均时间，M_h 为有效相干梳齿数。
+      相干平均是双梳光谱在宽带 + 高分辨下获得高 SNR 的核心机制。
+    domain: "双梳光谱学；射频相干信号处理"
+    formula: "SNR(T) ~ √T × SNR_单次；SNR 峰值受动态范围限制（ADC 有效位数）"
+    key_insight: >
+      单次扫描 SNR 被 ADC 动态范围限制（~40 dB），
+      多扫描相干平均可突破单次极限而不丢失频率准确度/分辨率。
+    conditions: "相对相位噪声 << 2π/√T；ADC 动态范围足够覆盖峰值梳齿幅度"
+    invalidated_when:
+      - "相干性丧失 → 只能做功率平均，频率准确度丢失"
+      - "动态范围饱和或削波"
+    source_claim: >
+      "the peak SNR is 4000. This peak SNR corresponds to a fractional absorption sensitivity of 0.05%
+      and a phase sensitivity of 250 microradians"
+
+methods:
+  - id: meth.dual_comb_spectroscopy
+    name: "相干双梳光谱方法（dual-comb spectroscopy）"
+    status: demonstrated
+    applies_to: ent.coherent_dual_comb_spectrometer_c10
+    steps_summary: >
+      1. 构建两台重频略失谐 Δf_r 的相干锁定梳；
+      2. 将两台梳各自一个梳齿相位锁至两路 cw 激光（或共同光钟 / 超稳激光）；
+      3. 信号梳穿过样品 → 与本振梳合束 → 光电探测器获 RF 多外差干涉图（IGM）；
+      4. 高速 ADC 数字化后实时相干平均恢复复 IGM；
+      5. FFT 得复谱 H̃(f_RF) → 光频域回映为 H̃(ν)；
+      6. 归一化消除梳幅度基线后读出样品吸收系数 α(ν) 与折射率 n(ν)。
+    required_hardware:
+      - ent.coherent_dual_comb_spectrometer_c10
+    advantages:
+      - "无动部件，分辨由梳重频决定（~100 MHz）"
+      - "完整复响应（吸收 + 色散）同时测量"
+      - "频率准确度由 cw 参考/光钟直接决定（可达 10⁻¹²–10⁻¹⁷）"
+      - "采集速度快（每个 IGM ~1/Δf_r）"
+    disadvantages:
+      - "需双台稳定相干梳（系统复杂度）"
+      - "动态范围限制单次 SNR"
+      - "相干性维持对光纤/环境要求高"
+    conditions:
+      - "两台梳 f_CEO + 1 齿 相位锁定"
+      - "Δf_r · N ≤ f_r / 2"
+    source_claim: >
+      "We discuss the specific design of our coherent dual-comb spectrometer and demonstrate the
+      potential of this technique by measuring the overtone vibration of hydrogen cyanide"
+
+metrics:
+  - id: met.dcs_frequency_resolution
+    name: "双梳光谱频率分辨率"
+    unit: "MHz（等于梳重频）"
+    description: "相干双梳光谱的单齿分辨率，由信号梳重频 f_r 决定；分辨元数 = 光谱带宽 / f_r"
+    demonstrated_value:
+      value: "220 MHz，~41,000 分辨元 @ 9 THz 带宽"
+      conditions: "NIST Er:fiber 双梳，1550 nm 附近 HCN overtone 带"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "7PDY5FDM", claim: "9 THz bandwidth at 220 MHz frequency resolution yielding 41,000 resolution elements"}
+
+  - id: met.dcs_snr_coherent
+    name: "相干双梳光谱信噪比（幅度 + 相位）"
+    unit: "无量纲"
+    description: "平均 RF 谱信号幅度 / 噪声 σ，同时表征幅度和相位通道"
+    demonstrated_value:
+      value: "平均 SNR 2500，峰值 SNR 4000；相位灵敏度 250 μrad；分数吸收灵敏度 0.05%"
+      conditions: "9 THz 带宽，HCN overtone @ 1550 nm，相干实时平均"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "7PDY5FDM", claim: "The average spectral signal-to-noise ratio (SNR) over the 9 THz bandwidth is 2500 for both the magnitude and phase"}
+    theoretical_floor:
+      value: "受限于 ADC 动态范围（~40 dB 单次）+ 相干平均时间"
+      basis: "量化噪声 + 相对相位噪声积累"
+      gap_note: "延长相干平均时间可继续提升，直至相位噪声使相干性丧失"
+    historical_landmarks:
+      first_demonstration:
+        value: "早期 DCS SNR ~100（2008）"
+        year: 2008
+        source: {zotero_key: "7PDY5FDM", claim: "earlier work ... demonstrated a coherent dual-comb spectrometer"}
+      best_demonstration:
+        value: "SNR 2500（平均），4000（峰值）"
+        year: 2010
+        source: {zotero_key: "7PDY5FDM"}
+        note: "Coddington 2010：该工作是 DCS 高 SNR 基础范式论文"
+
+relations:
+  - id: rel.C10_01
+    subject: ent.coherent_dual_comb_spectrometer_c10
+    predicate: CHARACTERIZED-BY
+    object: met.dcs_frequency_resolution
+    confidence: established
+    source: {zotero_key: "7PDY5FDM", claim: "9 THz bandwidth at 220 MHz frequency resolution"}
+
+  - id: rel.C10_02
+    subject: ent.coherent_dual_comb_spectrometer_c10
+    predicate: CHARACTERIZED-BY
+    object: met.dcs_snr_coherent
+    confidence: established
+    source: {zotero_key: "7PDY5FDM", claim: "average spectral signal-to-noise ratio (SNR) over the 9 THz bandwidth is 2500"}
+
+  - id: rel.C10_03
+    subject: meth.dual_comb_spectroscopy
+    predicate: ENABLED-BY
+    object: pri.dual_comb_multiheterodyne_mapping
+    confidence: established
+    source: {zotero_key: "7PDY5FDM", claim: "multiheterodyne laser spectrometer"}
+
+  - id: rel.C10_04
+    subject: meth.dual_comb_spectroscopy
+    predicate: ENABLED-BY
+    object: pri.dual_comb_coherent_averaging_snr_scaling
+    confidence: established
+    source: {zotero_key: "7PDY5FDM", claim: "coherent real-time averaging"}
+
+  - id: rel.C10_05
+    subject: met.dcs_frequency_resolution
+    predicate: OPERATIONALIZED-AS
+    object: meth.dual_comb_spectroscopy
+    confidence: established
+    source: {zotero_key: "7PDY5FDM"}
+
+  - id: rel.C10_06
+    subject: met.dcs_snr_coherent
+    predicate: BOUNDED-BY
+    object: pri.dual_comb_coherent_averaging_snr_scaling
+    confidence: established
+    source: {zotero_key: "7PDY5FDM", claim: "SNR on a single scan will be limited by dynamic range constraints"}
+    breakthrough_paths:
+      - direction: meth.adaptive_sampling_correction
+        expected_gain: "在部分相干或自由运行梳条件下恢复相干平均能力，延长有效相干时间"
+        status: demonstrated
+        source: {zotero_key: "RZME5CH8", claim: "adaptive sampling enables coherent averaging with free-running combs"}
+        note: "picque2019 综述中提及；meth.adaptive_sampling_correction 作为后续替代路径"
+      - direction: meth.cavity_enhanced_dcs
+        expected_gain: "样品腔增强吸收灵敏度 10²–10⁴ 倍"
+        status: demonstrated
+        source: {zotero_key: "RZME5CH8", claim: "cavity-enhanced DCS"}
+
+  - id: rel.C10_07
+    subject: ent.coherent_dual_comb_spectrometer_c10
+    predicate: PART-OF
+    object: ent.dual_comb_spectrometer
+    confidence: established
+    source: {zotero_key: "7PDY5FDM"}
+    note: "ent.dual_comb_spectrometer 定义于 coddington2016.yaml（权威）；此处跨文件引用"
