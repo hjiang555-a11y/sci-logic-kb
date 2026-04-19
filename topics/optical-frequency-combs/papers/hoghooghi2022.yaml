@@ -1,0 +1,180 @@
+# Hoghooghi 2022 — 宽带 1 GHz 中红外频率梳（IP-DFG）
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical
+
+meta:
+  zotero_key: "7HSU6V7Q"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical
+  reliability: high
+  title: "Broadband 1-GHz mid-infrared frequency comb"
+  year: 2022
+  first_author: Hoghooghi
+  journal: "Light: Science & Applications"
+  volume: 11
+  pages: "264"
+  doi: "10.1038/s41377-022-00947-w"
+  note: >
+    [技术论文] Colorado/NIST（Diddams/Rieker 组）。以商用 1.56 µm 锁模激光 + 全光纤 Er
+    放大 + χ² 非线性晶体做脉冲内差频（IP-DFG）产生少周期脉冲，实现首个 3–13 µm 覆盖
+    的 1 GHz 中红外梳。为 μs 时间分辨、>5 THz 瞬态化学/燃烧 DCS 提供核心光源。
+
+entities:
+  - id: ent.broadband_1ghz_mir_comb_h22
+    name: "1 GHz 宽带中红外光频梳（Hoghooghi 2022）"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      1.56 µm 锁模激光器（1 GHz 重频）→ 全光纤 Er 放大至少周期脉冲（~fs 级）→
+      χ²（如 GaSe / OP-GaP）非线性晶体 IP-DFG 产生中红外梳谱，覆盖 3–13 µm。
+      保留 NIR 梳的重频与 f_CEO = 0（IP-DFG 自动消除 f_CEO）特性，
+      兼容 DCS 应用 μs 时间分辨与 1 GHz 点间距。
+    key_parameters:
+      repetition_rate: "1 GHz"
+      spectral_coverage: "3–13 µm（全中红外指纹区）"
+      pulse_width: "少周期（few-cycle）"
+      nonlinear_process: "脉冲内差频 IP-DFG in χ² crystal"
+      f_ceo: "本征为零（IP-DFG 消 f_CEO）"
+    note: >
+      Level 2 实例节点，PART-OF ent.mid_ir_frequency_comb（应用层概念，
+      跨文件引用自 picque2019.yaml / 框架架构）
+
+principles:
+  - id: pri.intra_pulse_dfg_comb_generation
+    name: "脉冲内差频（IP-DFG）梳产生原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      少周期超短脉冲光谱本身覆盖足够宽度，可在单一 χ² 晶体中将脉冲内短波端与长波端
+      相互作 difference-frequency generation，生成中红外梳，且 f_CEO_MIR = f_CEO_NIR − f_CEO_NIR = 0，
+      本征消除载波包络偏移。
+    domain: "非线性光学；中红外梳产生"
+    formula: "ν_MIR(n) = n·f_rep；f_CEO_MIR ≡ 0"
+    key_insight: >
+      IP-DFG 以"脉冲自与自差频"取代传统 OPO/双激光 DFG，
+      免除 f_CEO 主动锁定，极大简化中红外梳系统。
+    conditions: "脉冲足够短（覆盖差频所需光谱跨度）；χ² 晶体相位匹配良好"
+    preconditions:
+      - "少周期脉冲可在 χ² 晶体中不经过色散展宽"
+      - "晶体相位匹配带宽 ≥ 目标 MIR 带宽"
+    invalidated_when:
+      - "泵浦脉冲过长（未覆盖差频所需光谱跨度）"
+      - "相位匹配带宽过窄导致有限谱覆盖"
+    source_claim: >
+      "intra-pulse difference frequency generation (IP-DFG) of few-cycle pulses in χ(2) nonlinear crystals"
+
+methods:
+  - id: meth.dfg_comb_generation
+    name: "中红外 DFG 梳产生方法（含 IP-DFG 分支）"
+    status: demonstrated
+    applies_to: ent.broadband_1ghz_mir_comb_h22
+    steps_summary: >
+      1. 1 GHz NIR 锁模激光 + Er 光纤放大 → 少周期脉冲；
+      2. 聚焦入 χ² 非线性晶体（相位匹配 3–13 µm）；
+      3. IP-DFG 产生 MIR 光频梳（f_CEO=0）；
+      4. DCS 架构：另一路 MIR 梳作本振 → 双梳吸收光谱；
+      5. 可达 μs 时间分辨、0.03 cm⁻¹ 分辨、>5 THz 带宽。
+    required_hardware:
+      - ent.broadband_1ghz_mir_comb_h22
+    advantages:
+      - "覆盖 3–13 µm 全分子指纹区"
+      - "1 GHz 重频 → μs 时间分辨（高重频 DCS）"
+      - "f_CEO 本征为零，无需主动锁定"
+    disadvantages:
+      - "χ² 晶体带宽限制每次实现约 2–3 µm 子带"
+      - "转换效率低于 NIR 梳功率"
+    conditions:
+      - "晶体相位匹配配置可覆盖目标波段"
+    source_claim: >
+      "this source will simultaneously enable measurements with μs time resolution, 1 GHz (0.03 cm⁻¹)
+      spectral point spacing and a full bandwidth of >5 THz"
+
+metrics:
+  - id: met.mir_comb_spectral_coverage_h22
+    name: "中红外梳光谱覆盖"
+    unit: "µm"
+    description: "单一 IP-DFG 平台可达的 MIR 覆盖范围（通过晶体切换可实现全段）"
+    demonstrated_value:
+      value: "3–13 µm（合计）；每次 >5 THz 瞬时带宽"
+      conditions: "1 GHz NIR 梳 + χ² 晶体（GaSe/OP-GaP 等）"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "7HSU6V7Q", claim: "the first broadband MIR frequency comb laser platform at 1 GHz repetition rate that achieves spectral coverage from 3 to 13 µm"}
+    historical_landmarks:
+      first_demonstration:
+        value: "首个 1 GHz 级、3–13 µm 全指纹区 MIR 梳"
+        year: 2022
+        source: {zotero_key: "7HSU6V7Q"}
+
+  - id: met.dcs_acquisition_speed
+    name: "双梳光谱采集速度（时间分辨）"
+    unit: "s（或单 IGM 时间 τ_IGM）"
+    description: "双梳光谱单次完整干涉图的最短采集时间，决定可观测瞬态过程时间尺度"
+    demonstrated_value:
+      value: "μs 级时间分辨（基于 1 GHz 重频）"
+      conditions: "1 GHz MIR 梳 DCS 配置"
+      verification_status: inferred
+      confidence: tentative
+      source: {zotero_key: "7HSU6V7Q", claim: "measurements with μs time resolution"}
+    theoretical_floor:
+      value: "τ_IGM ≥ 1/Δf_r，最小 ≈ 1/f_r ≈ 1 ns"
+      basis: "双梳采样 Nyquist 条件"
+
+relations:
+  - id: rel.H22_01
+    subject: ent.broadband_1ghz_mir_comb_h22
+    predicate: CHARACTERIZED-BY
+    object: met.mir_comb_spectral_coverage_h22
+    confidence: established
+    source: {zotero_key: "7HSU6V7Q"}
+
+  - id: rel.H22_02
+    subject: meth.dfg_comb_generation
+    predicate: ENABLED-BY
+    object: pri.intra_pulse_dfg_comb_generation
+    confidence: established
+    source: {zotero_key: "7HSU6V7Q"}
+
+  - id: rel.H22_03
+    subject: meth.dfg_comb_generation
+    predicate: ENABLED-BY
+    object: pri.nonlinear_frequency_conversion_comb
+    confidence: established
+    source: {zotero_key: "7HSU6V7Q"}
+    note: "pri.nonlinear_frequency_conversion_comb 跨文件引用（picque2019.yaml）"
+
+  - id: rel.H22_04
+    subject: ent.broadband_1ghz_mir_comb_h22
+    predicate: CONDITIONED-BY
+    object: pri.molecular_rovibrational_fingerprint
+    confidence: established
+    source: {zotero_key: "7HSU6V7Q", claim: "Mid-infrared (MIR) spectrometers are invaluable tools for molecular fingerprinting"}
+    note: "应用层接口原理（picque2019.yaml / 框架）"
+
+  - id: rel.H22_05
+    subject: meth.dfg_comb_generation
+    predicate: COMPETES-WITH
+    object: meth.opo_comb_generation
+    confidence: established
+    source: {zotero_key: "7HSU6V7Q", claim: "through nonlinear down-conversion of near-infrared frequency combs, either through parametric oscillation or difference frequency generation"}
+    conditions: "MIR 梳产生路线：DFG/IP-DFG 单通道 vs OPO 共振增强"
+
+  - id: rel.H22_06
+    subject: ent.broadband_1ghz_mir_comb_h22
+    predicate: PART-OF
+    object: ent.mid_ir_frequency_comb
+    confidence: established
+    source: {zotero_key: "7HSU6V7Q"}
+    note: "跨文件引用（picque2019.yaml 应用层架构）"
+
+  - id: rel.H22_07
+    subject: met.dcs_acquisition_speed
+    predicate: OPERATIONALIZED-AS
+    object: meth.dual_comb_spectroscopy
+    confidence: established
+    source: {zotero_key: "7HSU6V7Q"}
+    note: "meth.dual_comb_spectroscopy 定义于 coddington2010.yaml / picque2019.yaml"

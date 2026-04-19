@@ -1,0 +1,213 @@
+# Kuse 2015 — 石墨烯调制器实现全保偏 Er 光纤梳超低相位噪声
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical
+
+meta:
+  zotero_key: "3RT4U4TV"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical
+  reliability: high
+  title: "Ultra-low noise all polarization-maintaining Er fiber-based optical frequency combs facilitated with a graphene modulator"
+  year: 2015
+  first_author: Kuse
+  journal: "Optics Express"
+  volume: 23
+  issue: 19
+  pages: "24342-24354"
+  doi: "10.1364/OE.23.024342"
+  note: >
+    [技术论文] IMRA America（Fermann 组）+ Colorado（Schibli）。利用腔内石墨烯电光
+    调制器（GM）做 f_CEO 与 f_rep 的快速调制，配合腔外块状 EOM 做 f_rep 细控制；
+    首次在全保偏（all-PM）Er 光纤梳上实现记录级相噪：f_CEO 积分相噪 0.25 rad
+    (10 Hz–3 MHz)，拍频相噪 0.11 rad。解决了泵浦电流调制带宽受增益寿命限制的瓶颈。
+
+entities:
+  - id: ent.graphene_modulator_comb_kuse15
+    name: "石墨烯腔内电光调制器（Kuse 2015，用于 Er:fiber 梳）"
+    hierarchy_level: 3
+    status: demonstrated
+    function: >
+      腔内集成石墨烯-波导耦合型电光调制器，通过快速调控石墨烯费米能级改变腔内损耗，
+      从而在 >1 MHz 带宽上调制 f_CEO 与 n·f_rep。
+      兼容可见光到中红外；低损耗、易集成于全保偏 Er:fiber 锁模激光谐振腔。
+    key_parameters:
+      mechanism: "石墨烯可调吸收（费米能级控制损耗）"
+      modulation_bandwidth: ">1 MHz（远超泵浦电流调制 ~100 kHz 与 AOM ~250 kHz）"
+      wavelength_range: "可见光 → 中红外"
+      insertion: "腔内插入，低损耗"
+    note: "Level 3 部件节点，PART-OF ent.all_pm_er_fiber_comb_k15"
+
+  - id: ent.all_pm_er_fiber_comb_k15
+    name: "全保偏 Er 光纤超低相噪梳（Kuse 2015）"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      全保偏（all-PM）Er:fiber 锁模激光谐振腔 + SA 被动锁模；
+      腔内石墨烯 EOM 做 f_CEO 高速伺服，腔外块状 EOM 做 f_rep 伺服；
+      f-2f 自参考 + 单 cw 参考光拍频锁定；
+      HNLF 展宽至覆盖 1050–2100 nm；打破全 PM 梳相噪 >1 rad 的历史瓶颈。
+    key_parameters:
+      cavity_type: "全保偏线性腔 + SA 锁模"
+      repetition_rate: ">200 MHz"
+      f_ceo_integrated_phase_noise: "0.25 rad (10 Hz – 3 MHz)"
+      f_beat_integrated_phase_noise: "0.11 rad (10 Hz – 3 MHz)"
+    note: "Level 2 实例节点，PART-OF ent.optical_frequency_comb"
+
+principles:
+  - id: pri.intracavity_graphene_fast_modulation
+    name: "腔内石墨烯 EOM 高速反馈原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      石墨烯腔内调制器以"电控损耗"方式同时调制 f_CEO 与 n·f_rep，
+      避开增益介质寿命对泵浦电流调制带宽（<100 kHz for Er）与 AOM 声波延迟（~250 kHz）的限制，
+      使单伺服环能达到 MHz 级带宽，兼容 f-2f 与拍频同时锁定。
+    domain: "光纤梳伺服控制；2D 材料光电"
+    key_insight: >
+      2D 材料提供"低损、高速、腔内"兼容的三合一调制能力，
+      是全 PM 光纤梳走向超低相噪的关键硬件转折点。
+    conditions: "石墨烯质量 / 接触工艺达到低损伤阈值；全 PM 腔本身为低噪声基线"
+    invalidated_when:
+      - "石墨烯插入损耗过高导致锁模不稳定"
+    source_claim: >
+      "a graphene based EOM can work as a high bandwidth modulator not only for fceo, but also
+      for frep in an all PM Er fiber optical frequency comb"
+
+  - id: pri.fceo_frep_decoupling_via_beat_subtraction
+    name: "fbeat − fceo 合成实现 n·f_rep 独立锁定原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      石墨烯调制器在光学载波附近使 f_CEO 与 n·f_rep 的频移相互抵消，
+      无法直接单独控制 n·f_rep。通过双平衡混频器从 fbeat 中减去 fceo 得到 fbeat' = n·f_rep − ν_cw，
+      并锁定 fbeat' → cw 参考，从而让 n·f_rep 锁至 cw 而 fceo 自由漂移（或被另一路独立锁）。
+    domain: "光梳相位锁定拓扑"
+    formula: "fbeat' = fbeat − fceo = n·f_rep − ν_cw"
+    key_insight: >
+      通过 RF 域差频运算重新定义锁定目标，使同一个调制器可被"当作 f_rep 调制器"用，
+      是梳锁定拓扑设计的一个通用技巧。
+    conditions: "可同时测 fbeat 与 fceo；差频信号 SNR 足够"
+
+  - id: pri.gain_lifetime_servo_bandwidth_limit
+    name: "增益介质寿命限制伺服带宽原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      通过泵浦电流调制激光器输出相位/频率时，反馈带宽受激发态寿命 τ_g 限制：
+      f_servo^max ~ 1/(2π τ_g)。对于 Er:fiber ~10 ms 激发态寿命，带宽 ~100 kHz。
+    domain: "激光伺服控制"
+    formula: "f_servo_max ≈ 1/(2π τ_g)"
+    source_claim: >
+      "feedback bandwidth for pump current modulation for Er fiber lasers is around 100 kHz,
+      which hampers ultra-low phase noise operation"
+
+methods:
+  - id: meth.graphene_modulator_comb_stabilization
+    name: "石墨烯 EOM + 腔外 EOM 双伺服梳稳频方法"
+    status: demonstrated
+    applies_to: ent.all_pm_er_fiber_comb_k15
+    steps_summary: >
+      1. 全 PM Er:fiber 线性腔 + SA 锁模；
+      2. 腔内石墨烯 EOM 做 f_CEO 伺服（>1 MHz 带宽）；
+      3. 腔外块状 EOM 做 f_rep 伺服；
+      4. f-2f 干涉仪 + 光学拍频 → 双通道锁相环；
+      5. 读出 f_CEO 与 f_beat 积分相噪 → 0.25 / 0.11 rad。
+    required_hardware:
+      - ent.graphene_modulator_comb_kuse15
+      - ent.all_pm_er_fiber_comb_k15
+    advantages:
+      - "全 PM，适合场外应用"
+      - "打破泵浦电流调制带宽限制"
+      - "f_CEO 与 f_rep 几乎无串扰"
+    disadvantages:
+      - "石墨烯工艺复杂"
+      - "腔内额外损耗需优化"
+
+metrics:
+  - id: met.fceo_integrated_phase_noise_k15
+    name: "f_CEO 积分相位噪声"
+    unit: "rad"
+    description: "锁定后 f_CEO 相位噪声谱在 10 Hz–3 MHz 的积分均方根值"
+    demonstrated_value:
+      value: "0.25 rad（10 Hz–3 MHz）"
+      conditions: "全 PM Er:fiber 梳 + 石墨烯 EOM"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "3RT4U4TV", claim: "record low integrated phase noise of both fceo (0.25 rad from 10 Hz to 3 MHz)"}
+    historical_landmarks:
+      best_demonstration:
+        value: "0.25 rad（2015，全 PM Er 梳）"
+        year: 2015
+        source: {zotero_key: "3RT4U4TV"}
+        note: "此前全 PM 梳 f_CEO 相噪 >1 rad，本工作显著突破"
+
+  - id: met.fbeat_integrated_phase_noise_k15
+    name: "光学拍频积分相位噪声"
+    unit: "rad"
+    description: "锁定后单齿-cw 拍频相位噪声 10 Hz–3 MHz 积分值"
+    demonstrated_value:
+      value: "0.11 rad（10 Hz–3 MHz）"
+      conditions: "全 PM Er:fiber 梳锁至 cw 参考"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "3RT4U4TV", claim: "fbeat (0.11 rad from 10 Hz to 3 MHz)"}
+
+relations:
+  - id: rel.K15_01
+    subject: ent.graphene_modulator_comb_kuse15
+    predicate: PART-OF
+    object: ent.all_pm_er_fiber_comb_k15
+    confidence: established
+    source: {zotero_key: "3RT4U4TV"}
+
+  - id: rel.K15_02
+    subject: ent.all_pm_er_fiber_comb_k15
+    predicate: CHARACTERIZED-BY
+    object: met.fceo_integrated_phase_noise_k15
+    confidence: established
+    source: {zotero_key: "3RT4U4TV"}
+
+  - id: rel.K15_03
+    subject: ent.all_pm_er_fiber_comb_k15
+    predicate: CHARACTERIZED-BY
+    object: met.fbeat_integrated_phase_noise_k15
+    confidence: established
+    source: {zotero_key: "3RT4U4TV"}
+
+  - id: rel.K15_04
+    subject: meth.graphene_modulator_comb_stabilization
+    predicate: ENABLED-BY
+    object: pri.intracavity_graphene_fast_modulation
+    confidence: established
+    source: {zotero_key: "3RT4U4TV"}
+
+  - id: rel.K15_05
+    subject: meth.graphene_modulator_comb_stabilization
+    predicate: ENABLED-BY
+    object: pri.fceo_frep_decoupling_via_beat_subtraction
+    confidence: established
+    source: {zotero_key: "3RT4U4TV"}
+
+  - id: rel.K15_06
+    subject: met.fceo_integrated_phase_noise_k15
+    predicate: BOUNDED-BY
+    object: pri.gain_lifetime_servo_bandwidth_limit
+    confidence: established
+    source: {zotero_key: "3RT4U4TV", claim: "feedback bandwidth for pump current modulation is limited by the response time of the gain medium"}
+    breakthrough_paths:
+      - direction: pri.intracavity_graphene_fast_modulation
+        expected_gain: "绕过增益寿命限制，带宽达 MHz"
+        status: demonstrated
+        source: {zotero_key: "3RT4U4TV"}
+
+  - id: rel.K15_07
+    subject: ent.all_pm_er_fiber_comb_k15
+    predicate: PART-OF
+    object: ent.optical_frequency_comb
+    confidence: established
+    source: {zotero_key: "3RT4U4TV"}
+    note: "跨文件引用 ent.optical_frequency_comb（定义于 giunta2019.yaml）"

@@ -1,0 +1,143 @@
+# Lamb 2018 — 15 GHz 倍频程 Kerr 微梳 + SiN 超连续光谱，f-2f 自参考光频比对
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical — 微梳自参考 + 光频测量关键集成技术论文
+
+meta:
+  zotero_key: "52N4T2DE"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical
+  reliability: high
+  title: "Optical-Frequency Measurements with a Kerr Microcomb and Photonic-Chip Supercontinuum"
+  year: 2018
+  first_author: Lamb
+  journal: "Physical Review Applied"
+  volume: 9
+  pages: "024030"
+  doi: "10.1103/PhysRevApplied.9.024030"
+  note: >
+    [技术论文] NIST Boulder（Papp/Diddams 组）。15 GHz 重频倍频程单孤子 SiO₂ 微环梳，
+    SiN 集成波导产生 700–2100 nm 超连续谱（每模 >100 nW），支持 f-2f 自参考；
+    演示微梳介导的两超稳腔光频比较。首次在集成 Kerr 微梳平台同时实现 f-2f + 光频计量级比对。
+
+entities:
+  - id: ent.kerr_microcomb_photonic_chip_sc_l18
+    name: "15 GHz Kerr 微梳 + SiN 片上超连续谱系统（Lamb 2018）"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      SiO₂ 盘状微谐振器（15 GHz FSR）单 DKS 孤子输出 → 放大 → 通过 Si₃N₄ 集成非线性波导
+      展宽至 700–2100 nm 超连续谱（倍频程）；f-2f 干涉仪锁定 f_CEO；
+      一个梳齿相位锁定至超稳激光；整体用于微梳介导的两 cw 激光频率比对。
+    key_parameters:
+      platform: "SiO₂ 盘微环（微梳）+ Si₃N₄ 集成波导（SC）"
+      repetition_rate: "15 GHz"
+      sc_span: "700–2100 nm（octave）"
+      power_per_mode: ">100 nW"
+      ceo_stabilization: "f-2f 集成自参考"
+    note: "Level 2 实例节点，PART-OF ent.microresonator_frequency_comb（定义于 kippenberg2011.yaml）"
+
+principles:
+  - id: pri.integrated_photonic_supercontinuum_for_microcomb_f2f
+    name: "片上集成 SiN 波导超连续谱使低功率微梳 f-2f 可行"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      微梳单孤子脉冲能量远低于锁模激光飞秒脉冲，直接难以在微环内产生倍频程。
+      通过外部 Si₃N₄ 波导（色散工程化 + 高非线性系数）做二次非线性展宽，
+      可获得倍频程 SC 与 >100 nW/模的 f-2f 拍频信号，解锁微梳自参考。
+    domain: "集成非线性光子学；微梳自参考"
+    key_insight: >
+      "微梳产生 + 片上 SC 展宽" 分工解耦色散工程压力，
+      使高重频（10–100 GHz）微梳仍可做 f-2f 自参考。
+    conditions: "微梳重频 ~15 GHz；SiN 波导色散工程化 + 短工作段"
+    source_claim: >
+      "Efficient silicon-nitride waveguides provide a supercontinuum spanning 700 to 2100 nm,
+      enabling both offset-frequency stabilization and optical-frequency measurements with >100 nW per mode"
+
+methods:
+  - id: meth.microcomb_self_referencing
+    name: "微梳 f-2f 自参考方法（外部 SC 展宽）"
+    status: demonstrated
+    applies_to: ent.kerr_microcomb_photonic_chip_sc_l18
+    steps_summary: >
+      1. 孤子态微梳输出 → 光学放大；
+      2. 耦合入色散工程化 SiN 波导产生倍频程 SC；
+      3. 取 f 与 2f 两端梳齿 → f-2f 干涉仪 → f_CEO 拍频；
+      4. 反馈至泵浦功率 / 泵浦 detuning 稳 f_CEO；
+      5. 将一个梳齿光锁至超稳激光稳重频 f_r；
+      6. 读出其他梳齿绝对频率做微梳介导比对。
+    required_hardware:
+      - ent.kerr_microcomb_photonic_chip_sc_l18
+    advantages:
+      - "完全兼容微梳低 SWaP 目标"
+      - "两阶段展宽降低对微环色散工程的要求"
+    disadvantages:
+      - "需外部光放大器"
+      - "SC 波导损耗与色散残差影响 SNR"
+    source_claim: >
+      "We demonstrate the stabilized comb by performing a microcomb-mediated comparison of two
+      ultrastable optical-reference cavities"
+
+metrics:
+  - id: met.microcomb_sc_spectral_span
+    name: "微梳 + 片上 SC 光谱跨度"
+    unit: "nm"
+    demonstrated_value:
+      value: "700–2100 nm（倍频程）"
+      conditions: "15 GHz SiO₂ 微梳 + Si₃N₄ 波导"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "52N4T2DE", claim: "a supercontinuum spanning 700 to 2100 nm"}
+
+  - id: met.microcomb_mediated_cavity_comparison_instability
+    name: "微梳介导的超稳腔光频比较不稳定度"
+    unit: "无量纲"
+    description: "微梳作为光频桥接工具时两台超稳参考腔比较的分数频率不稳定度"
+    demonstrated_value:
+      value: "~10⁻¹³ 级（微梳介导比对，短积分）"
+      conditions: "两台 ULE 超稳腔，15 GHz 微梳作为分频桥接"
+      verification_status: observed
+      confidence: tentative
+      source: {zotero_key: "52N4T2DE", claim: "microcomb-mediated comparison of two ultrastable optical-reference cavities"}
+
+relations:
+  - id: rel.LM18_01
+    subject: ent.kerr_microcomb_photonic_chip_sc_l18
+    predicate: CHARACTERIZED-BY
+    object: met.microcomb_sc_spectral_span
+    confidence: established
+    source: {zotero_key: "52N4T2DE"}
+
+  - id: rel.LM18_02
+    subject: meth.microcomb_self_referencing
+    predicate: ENABLED-BY
+    object: pri.integrated_photonic_supercontinuum_for_microcomb_f2f
+    confidence: established
+    source: {zotero_key: "52N4T2DE"}
+
+  - id: rel.LM18_03
+    subject: meth.microcomb_self_referencing
+    predicate: ENABLED-BY
+    object: pri.self_referencing_f2f
+    confidence: established
+    source: {zotero_key: "52N4T2DE"}
+    note: "pri.self_referencing_f2f 定义于 giunta2019.yaml"
+
+  - id: rel.LM18_04
+    subject: ent.kerr_microcomb_photonic_chip_sc_l18
+    predicate: PART-OF
+    object: ent.microresonator_frequency_comb
+    confidence: established
+    source: {zotero_key: "52N4T2DE"}
+
+  - id: rel.LM18_05
+    subject: ent.kerr_microcomb_photonic_chip_sc_l18
+    predicate: CONDITIONED-BY
+    object: ent.fp_cavity_system
+    confidence: established
+    source: {zotero_key: "52N4T2DE", claim: "microcomb-mediated comparison of two ultrastable optical-reference cavities"}
+    note: "跨专题：ent.fp_cavity_system 定义于 topics/ultrastable-laser/papers/numata2004.yaml"

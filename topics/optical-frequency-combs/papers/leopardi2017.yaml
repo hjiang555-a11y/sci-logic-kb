@@ -1,0 +1,164 @@
+# Leopardi 2017 — 单分支 Er:fiber 光频梳，10⁻¹⁸ 级光频测量不稳定度
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical
+
+meta:
+  zotero_key: "8XUFRL4K"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical
+  reliability: high
+  title: "Single-branch Er:fiber frequency comb for precision optical metrology with 10⁻¹⁸ fractional instability"
+  year: 2017
+  first_author: Leopardi
+  journal: "Optica"
+  volume: 4
+  issue: 8
+  pages: "879-885"
+  doi: "10.1364/OPTICA.4.000879"
+  note: >
+    [技术论文] NIST Boulder（Fortier/Diddams 组）。单分支 Er:fiber 梳：所有关键光纤链路
+    共模并置于锁相环伺服环内，从而消除多分支架构中光纤相位噪声的非共模残差。
+    实测分数光频测量不确定度 <1×10⁻¹⁹，1 s 不稳定度 3×10⁻¹⁸，1000 s 降至 1×10⁻¹⁹，
+    为光钟比对提供计量级桥接工具。
+
+entities:
+  - id: ent.single_branch_erfiber_comb_l17
+    name: "单分支 Er:fiber 光频梳（Leopardi 2017）"
+    aliases: ["NIST single-branch Er:fiber OFC"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      Er:fiber 锁模激光器（~250 MHz 重频），f-2f 自参考稳 f_CEO，
+      单一 EDFA + HNLF 展宽路径同时覆盖多个光学频率拍频点，
+      所有关键光纤路径保持共模（光学参考、f_CEO 探测、多 cw 拍频共用同一展宽路径），
+      并整体处于伺服反馈环内；以此消除传统多分支架构中 EDFA/HNLF 不同路径间的
+      非共模相位噪声，实现接近 10⁻¹⁹ 级光频合成。
+    key_parameters:
+      laser: "Er:fiber 锁模激光器（~1550 nm）"
+      repetition_rate: "~250 MHz"
+      output_power: "<100 mW（原生）"
+      architecture: "单分支 EDFA + HNLF 展宽"
+      servo_topology: "关键光纤路径共模 + 伺服环内"
+    interface_requirements:
+      optical_reference: "超稳激光作为光频参考"
+    note: "Level 2 实例节点，PART-OF ent.optical_frequency_comb"
+
+principles:
+  - id: pri.common_mode_fiber_path_noise_rejection
+    name: "共模光纤路径噪声共模抑制原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      Er:fiber 梳中 EDFA 与 HNLF 引入的相位漂移与光纤温度/应变涨落相关，
+      若多拍频点使用独立展宽分支，这些噪声为非共模，无法被伺服环抑制；
+      若所有关键路径共用同一光纤链路并整体置于伺服反馈环内，
+      光纤相位漂移变为共模扰动，可由锁相环共模拒斥，从而达到 10⁻¹⁸ 级稳定度。
+    domain: "光纤光梳工程；相位噪声伺服"
+    formula: "σ_y_nonCM / σ_y_CM ≈ 1/η_servo（η_servo = 伺服开环增益）"
+    key_insight: >
+      "共模优化" 是 Er:fiber 梳从 10⁻¹⁶ 突破到 10⁻¹⁹ 的核心工程路径；
+      与多分支 + 色散外差检测（Giunta 2020）形成两条并行的解决路线。
+    conditions: "单路径展宽可同时覆盖所需拍频点；伺服带宽足够抑制共模"
+    invalidated_when:
+      - "所需拍频点跨度过宽，单路径 SNR 不足"
+      - "光纤路径非全共模（如放大器前后分叉）"
+    source_claim: >
+      "an erbium-fiber laser frequency comb that overcomes these conventional challenges by ensuring
+      that all critical fiber paths are common mode and within the servo-controlled feedback loop"
+
+methods:
+  - id: meth.common_mode_fiber_comb_servo
+    name: "单分支共模 Er:fiber 梳伺服方法"
+    status: demonstrated
+    applies_to: ent.single_branch_erfiber_comb_l17
+    steps_summary: >
+      1. Er:fiber 梳输出 → 单路 EDFA + HNLF 展宽；
+      2. 同一光纤输出同时提供 f-2f、多路 cw 拍频；
+      3. 梳锁定（f_CEO + 1 齿相位锁至 USL）将整个展宽链路纳入伺服环；
+      4. 共模相位噪声被锁相环拒斥；
+      5. 读出光频测量不确定度 → <1×10⁻¹⁹。
+    required_hardware:
+      - ent.single_branch_erfiber_comb_l17
+    advantages:
+      - "10⁻¹⁹ 级光频测量不确定度"
+      - "架构简单，单一放大+展宽"
+      - "适合紧凑鲁棒计量级光梳源"
+    disadvantages:
+      - "单路径限制拍频点谱覆盖"
+      - "部分场景下 SNR 比多分支架构低"
+    conditions:
+      - "需要共用路径的所有拍频点在光谱上紧邻"
+    source_claim: >
+      "fractional optical measurement uncertainty below 1×10⁻¹⁹ and fractional frequency instabilities
+      less than 3×10⁻¹⁸ at 1 s and 1×10⁻¹⁹ at 1000 s"
+
+metrics:
+  - id: met.erfiber_comb_synthesis_instability_l17
+    name: "Er:fiber 梳分数频率不稳定度（Leopardi 2017）"
+    unit: "无量纲（分数频率 Allan 偏差 σ_y(τ)）"
+    description: "单分支共模架构下，Er:fiber 梳作为光频合成/测量桥的分数不稳定度"
+    demonstrated_value:
+      value: "σ_y ~ 3×10⁻¹⁸ @ 1 s；1×10⁻¹⁹ @ 1000 s；测量不确定度 <1×10⁻¹⁹"
+      conditions: "超稳激光锁定至单齿，f-2f 稳 f_CEO，单分支共模"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "8XUFRL4K", claim: "fractional frequency instabilities less than 3 × 10⁻¹⁸ at 1 s and 1 × 10⁻¹⁹ at 1000 s"}
+    theoretical_floor:
+      value: "进一步受限于 USL 光参考相噪，低温 Si 腔可支撑 10⁻¹⁷ @ 1 s"
+      basis: "USL 参考腔热噪声地板"
+    historical_landmarks:
+      best_demonstration:
+        value: "3×10⁻¹⁸ @ 1 s（单分支 Er 梳，2017）"
+        year: 2017
+        source: {zotero_key: "8XUFRL4K"}
+        note: "为光钟比对提供 >10⁻¹⁸ 级 Er:fiber 梳基准；2020 Giunta 多分支 + 色散外差达 10⁻²⁰"
+
+relations:
+  - id: rel.L17F_01
+    subject: ent.single_branch_erfiber_comb_l17
+    predicate: CHARACTERIZED-BY
+    object: met.erfiber_comb_synthesis_instability_l17
+    confidence: established
+    source: {zotero_key: "8XUFRL4K"}
+
+  - id: rel.L17F_02
+    subject: meth.common_mode_fiber_comb_servo
+    predicate: ENABLED-BY
+    object: pri.common_mode_fiber_path_noise_rejection
+    confidence: established
+    source: {zotero_key: "8XUFRL4K"}
+
+  - id: rel.L17F_03
+    subject: met.erfiber_comb_synthesis_instability_l17
+    predicate: OPERATIONALIZED-AS
+    object: meth.common_mode_fiber_comb_servo
+    confidence: established
+    source: {zotero_key: "8XUFRL4K"}
+
+  - id: rel.L17F_04
+    subject: ent.single_branch_erfiber_comb_l17
+    predicate: COMPETES-WITH
+    object: ent.ultra_low_noise_fiber_comb_g20
+    confidence: established
+    source: {zotero_key: "8XUFRL4K"}
+    note: "两条并行工程路径：Leopardi 2017 单分支共模 vs Giunta 2020 多分支+色散外差；定义于 giunta2020.yaml"
+
+  - id: rel.L17F_05
+    subject: ent.single_branch_erfiber_comb_l17
+    predicate: PART-OF
+    object: ent.optical_frequency_comb
+    confidence: established
+    source: {zotero_key: "8XUFRL4K"}
+    note: "跨文件引用 ent.optical_frequency_comb（giunta2019.yaml / udem2002.yaml）"
+
+  - id: rel.L17F_06
+    subject: ent.single_branch_erfiber_comb_l17
+    predicate: CONDITIONED-BY
+    object: ent.fp_cavity_system
+    confidence: established
+    source: {zotero_key: "8XUFRL4K", claim: "high-fidelity frequency synthesis with these optical frequency references will require optical frequency comb sources with equally good or better performance"}
+    note: "跨专题：ULE 参考腔 / 低温 Si 腔定义于 topics/ultrastable-laser/"
