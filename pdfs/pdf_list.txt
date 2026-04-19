@@ -1,0 +1,67 @@
+光频梳相关论文PDF文件列表
+============================================================
+
+ 1. 25EY6V8L.pdf
+    标题: Tunable VUV frequency comb for 229mTh nuclear spectroscopy
+    原路径: ol-47-21-5591.pdf
+
+ 2. 2QU7BQ44.pdf
+    标题: Regional trace-gas source attribution using a field-deployed dual frequency comb spectrometer
+    原路径: untitled.pdf
+
+ 3. 2QUW2P6D.pdf
+    标题: Non-Line-of-Sight Imaging and Vibrometry Using a Comb-Calibrated Coherent Sensor
+    原路径: PhysRevLett.132.233802.pdf
+
+ 4. 2SMDS6NY.pdf
+    标题: FOKUS II—Space flight of a compact and vacuum compatible dual frequency comb system
+    原路径: josab-38-3-932.pdf
+
+ 5. 3JN2PBKX.pdf
+    标题: Demonstration of on-sky calibration of astronomical spectra using a 25 GHz near-IR laser frequency comb
+    原路径: 2587.pdf
+
+ 6. 3RT4U4TV.pdf
+    标题: Ultra-low noise all polarization-maintaining Er fiber-based optical frequency combs facilitated with a graphene modulator
+    原路径: oe-23-19-24342.pdf
+
+ 7. 3VF89TBF.pdf
+    标题: X-Band photonic microwaves with phase noise below-180 dBc/Hz using a free-running monolithic comb
+    原路径: oe-30-7-11266.pdf
+
+ 8. 43TAX2KE.pdf
+    标题: Optical frequency combs: Coherently uniting the electromagnetic spectrum
+    原路径: eaay3676.full.pdf
+
+ 9. 52N4T2DE.pdf
+    标题: Optical-Frequency Measurements with a Kerr Microcomb and Photonic-Chip Supercontinuum
+    原路径: 2932.pdf
+
+10. 59ULFL9Y.pdf
+    标题: Demonstration of a near-IR line-referenced electro-optical laser frequency comb for precision radial velocity measurements in astronomy
+    原路径: ncomms10436.pdf
+
+11. 5NSQLZTS.pdf
+    标题: Optical Frequency Comb Generation based on Erbium Fiber Lasers
+    原路径: 2016 Nanophotonics optical frequency comb generation based on erbium fiber lasers.pdf
+
+12. 5R8PUBX7.pdf
+    标题: Low Noise Heterogeneous III-V-on-Silicon-Nitride Mode-Locked Comb Laser
+    原路径: Laser   Photonics Reviews - 2021 - Cuyvers - L.pdf
+
+13. 6JY7ZNWX.pdf
+    标题: Stably accessing octave-spanning microresonator frequency combs in the soliton regime
+    原路径: 2905.pdf
+
+14. 7978HTD3.pdf
+    标题: High-sensitivity frequency comb carrier-envelope-phase metrology in solid state high harmonic generation
+    原路径: 3180.pdf
+
+15. 7HSU6V7Q.pdf
+    标题: Broadband 1-GHz mid-infrared frequency comb
+    原路径: s41377-022-00947-w.pdf
+
+16. 7PDY5FDM.pdf
+    标题: Coherent dual-comb spectroscopy at high signal-to-noise ratio
+    原路径: PhysRevA.82.pdf
+
