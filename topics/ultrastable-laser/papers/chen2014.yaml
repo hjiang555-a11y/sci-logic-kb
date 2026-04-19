@@ -1,7 +1,7 @@
 # Chen (Qun-Feng) 2014 — 紧凑可搬运超稳激光
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "WTUHUAQ7"
@@ -47,11 +47,36 @@ entities:
       cte_zero_crossing: "~0°C"
     note: "PART-OF ent.fp_cavity_system（定义于 numata2004.yaml）。"
 
-principles: []
-  # 夹持原理类似 pri.multi_point_symmetric_clamping（tao2018.yaml），
-  # 但本文采用 20 个细柱而非 12 个
+principles:
+  - id: pri.multi_point_symmetric_clamping_20pin_c14
+    name: "20柱多点对称夹持原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      采用 20 个细柱（Φ3 mm）在腔体对称面上分三组夹持，每组独立约束轴向或横向自由度，
+      减少过约束导致的应力。与 12 柱夹持（tao2018）相比，增加柱数进一步分散夹持力，
+      降低局部应力集中，适用于可搬运系统所需的鲁棒性。
+    domain: "可搬运参考腔安装"
+    key_insight: "更多夹持柱（20 vs 12）可分散夹持力，降低局部应力，同时保持低振动灵敏度。"
+    conditions: "适用于圆柱形腔体，需要精密加工确保柱孔对齐"
+    source_claim: "Twenty thin posts are used to clamp the cavity at three symmetry planes; each group of posts restricts one translational and one rotational degree of freedom."
 
-methods: []
+methods:
+  - id: meth.compact_transportable_laser_integration_testing_c14
+    name: "紧凑可搬运激光系统集成与测试方法"
+    description: >
+      面向 STE-QUEST 空间任务的紧凑可搬运超稳激光系统集成方法：采用 20 柱对称夹持实现低振动灵敏度；
+      两级热屏蔽 + 双级 TEC 温控确保温度稳定性；通过三角帽测量法验证频率不稳定度（1×10⁻¹⁵ @ 1–10 s）；
+      整体光学系统尺寸仅 40×20×30 cm，适合可搬运应用。
+    verification_status: observed
+    implementation_details:
+      - "20 个细柱（Φ3 mm）在对称面上分三组夹持"
+      - "两级热屏蔽（内层被动，外层主动 TEC）"
+      - "三角帽测量法（three‑cornered‑hat）验证频率不稳定度"
+      - "振动灵敏度测量（1.7, 8.0, 39 ×10⁻¹¹/g）"
+      - "整体光学系统尺寸 40×20×30 cm"
+    enables: ent.compact_transportable_cavity_c14
+    source_claim: "The system uses 20 thin posts to clamp the cavity; the overall optical dimensions are 40×20×30 cm; the fractional frequency instability reaches 1×10⁻¹⁵ at 1–10 s."
 
 metrics:
   - id: met.fractional_freq_instability_c14

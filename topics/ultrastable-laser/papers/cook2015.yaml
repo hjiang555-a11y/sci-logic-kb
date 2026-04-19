@@ -1,7 +1,7 @@
 # Cook 2015 — 稳态光谱烧孔稳频方法
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "KZJHGH3N"
@@ -37,7 +37,28 @@ principles:
     conditions: "需要三组匹配超精细分裂的光谱孔"
     source_claim: "steady-state patterns of spectral holes... absorption pattern does not degrade after days"
 
-methods: []
+methods:
+  - id: meth.steady_state_shb_stabilization_c15
+    name: "稳态光谱烧孔稳频方法（Cook 2015）"
+    type: stabilization_technique
+    purpose: >
+      通过三区域稳态光谱烧孔模式实现长期稳定的激光频率锁定，
+      无需周期性重新烧制光谱孔
+    steps:
+      - "在Eu³⁺:Y₂SiO₅晶体中烧制三组光谱孔，频率间隔匹配¹⁵¹Eu³⁺基态超精细分裂"
+      - "使用探测激光同时维持和监测烧孔模式"
+      - "实施主动伺服系统将残余振幅调制（RAM）降至<1×10⁻⁶"
+      - "将激光频率锁定到稳态烧孔模式"
+      - "与Yb光钟比较以验证稳定度"
+    key_parameters:
+      pattern_type: "三区域稳态烧孔"
+      ram_suppression: "<1×10⁻⁶"
+      hole_degradation: "数天不退化"
+    connects:
+      - pri.steady_state_shb_pattern
+      - met.steady_state_shb_stability_c15
+      - ent.shb_eu_yso_reference_l13
+    source_claim: "steady-state patterns of spectral holes... absorption pattern does not degrade after days"
 
 metrics:
   - id: met.steady_state_shb_stability_c15

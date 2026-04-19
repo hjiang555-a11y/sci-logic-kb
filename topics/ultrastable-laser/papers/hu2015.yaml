@@ -1,7 +1,7 @@
 # Hu 2015 — 超低加速度灵敏度光纤盘（10⁻¹²/g）
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "KH82PQJ2"
@@ -50,7 +50,30 @@ principles:
     conditions: "需要精密加工和均匀缠绕张力"
     source_claim: "symmetrically mounted structure... acceleration sensitivity can be reduced to ~10⁻¹²/g"
 
-methods: []
+methods:
+  - id: meth.symmetric_fiber_spool_design_h15
+    name: "对称光纤盘设计方法（Hu 2015）"
+    status: demonstrated
+    applies_to: ent.fiber_interferometer
+    steps_summary: >
+      1. 采用对称安装结构设计光纤盘，使上下半部分光纤应变相互抵消
+      2. 使用有限元分析（FEM）优化光纤盘的几何参数（缠绕半径、高度、安装位置）
+      3. 确保缠绕张力均匀性，降低残余加速度灵敏度
+      4. 加工制造超低加速度灵敏度光纤盘（水平3.25×10⁻¹²/g，垂直5.38×10⁻¹²/g）
+    required_hardware:
+      - ent.ultralow_accel_fiber_spool_h15
+    advantages:
+      - "实现超低加速度灵敏度（~10⁻¹²/g），有效抑制振动引起的频率噪声"
+      - "对称设计对几何参数变化不敏感，抗加工公差"
+      - "FEM优化提供理论指导，减少试错成本"
+    disadvantages:
+      - "需要精密加工和均匀缠绕张力控制"
+      - "对称安装结构比传统光纤盘更复杂"
+    conditions:
+      - "需要精密机械加工能力"
+      - "需要均匀的光纤缠绕张力控制"
+    source_claim: >
+      "symmetrically mounted fiber spool structure designed via FEM optimization, achieving acceleration sensitivity of ~10⁻¹²/g in both horizontal and vertical directions"
 
 metrics: []
 

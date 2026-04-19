@@ -1,7 +1,7 @@
 # Jin 2018 — 30 cm 腔 578 nm 2×10⁻¹⁶ 超稳激光
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "6R3RCHPT"
@@ -44,7 +44,21 @@ entities:
 
 principles: []
 
-methods: []
+methods:
+  - id: meth.room_temp_long_cavity_pdh_j18
+    name: "室温长腔 PDH 锁频实现热噪声极限稳定度"
+    description: >
+      使用 30 cm ULE 长腔（凹口设计，FS 镜基底 + ULE 补偿环），
+      通过 PDH 锁频将 578 nm 激光稳定至热噪声极限。
+      系统采用水平放置于硅球支撑、两级金镀铜热屏蔽，真空 10⁻⁷ torr。
+      实现 2×10⁻¹⁶ @ 1 s 分数频率不稳定度和 ~0.2 Hz 最可几线宽。
+    status: demonstrated
+    source_claim: >
+      "fractional frequency instability of each cavity-stabilized laser system is 2×10⁻¹⁶ at 1 s averaging time"
+    implements: [meth.pdh_locking]
+    characterizes: [met.fractional_freq_instability_j18, met.laser_linewidth_j18]
+    used_with: [ent.ule_cavity_30cm_578nm_j18]
+    bounded_by: [pri.brownian_thermal_noise_fdt]
 
 metrics:
   - id: met.fractional_freq_instability_j18

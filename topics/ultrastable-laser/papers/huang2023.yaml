@@ -1,7 +1,7 @@
 # Huang 2023 — 全光纤超稳激光长期稳定度 1.1×10⁻¹⁴
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "JYGVFJBN"
@@ -26,8 +26,19 @@ entities: []
 principles: []
   # 复用 pri.fiber_delay_line_frequency_ref
 
-methods: []
-  # 复用 meth.fiber_delay_locking
+methods:
+  - id: meth.multilayer_thermal_shielding_fdl_h23
+    name: "五层热屏蔽+两级温控的全光纤延迟线稳定方法"
+    description: >
+      全光纤延迟线锁频系统的多层热屏蔽与主动温控方案。
+      包含真空腔内的五层热屏蔽结构、两级主动温度控制（腔体+光学平台）、
+      光功率稳定和RF功率稳定，以抑制长期热漂移。
+    applicable_context: "全光纤延迟线（FDL）锁频系统，追求长期稳定度"
+    key_steps:
+      - "构建五层热屏蔽真空腔，减小环境温度波动影响"
+      - "实施两级主动温控：第一级控制腔体温度，第二级控制光学平台"
+      - "稳定输入光功率和PDH误差信号RF功率"
+    note: "Huang 2023报道的全光纤系统温度稳定方案，实现1.1×10⁻¹⁴的长期稳定度"
 
 metrics:
   - id: met.fiber_long_term_stability_h23

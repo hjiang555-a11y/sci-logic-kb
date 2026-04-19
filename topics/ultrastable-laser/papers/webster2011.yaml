@@ -1,7 +1,7 @@
 # Webster 2011 — 力不敏感光学谐振腔
 # 提取者：Claude（AI草稿，待专家确认）
 # 提取日期：2026-04-14
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "A96XGR82"
@@ -95,6 +95,16 @@ principles:
        mirror centers are either zero or cancel out so that there is no net change of
        length on axis"
     applicable_when: "刚性约束腔，任意方向加速度，包括失重或强惯性力环境"
+
+methods:
+  - id: meth.cubic_force_insensitive_cavity_lock_w11
+    name: "立方体力不敏感腔 PDH 锁频方法（Webster 2011）"
+    description: "通过立方体几何和四面体支撑实现全向力不敏感的腔 PDH 锁频"
+    core_principle: pri.pdh_heterodyne_detection
+    key_entity: ent.cubic_force_insensitive_cavity_w11
+    reliability: established
+    verification_status: observed
+    source: {zotero_key: "A96XGR82", claim: "The laser is locked to the cubic force-insensitive cavity using PDH technique"}
 
 metrics:
   - id: met.acceleration_sensitivity_w11

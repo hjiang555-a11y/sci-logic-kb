@@ -1,7 +1,7 @@
 # Millo 2009 — 基于振动不敏感腔的超稳激光
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-15
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "GLXHEIPV"
@@ -26,6 +26,28 @@ meta:
 # ═══════════════════════════════════════════════
 
 # 不新增实体/原理节点——FS 镜材料选择记录在指标 conditions 中
+
+methods:
+  - id: meth.vibration_insensitive_cavity_design_m09
+    name: "振动不敏感腔设计（Millo 2009）"
+    full_name: "Vibration-insensitive cavity design with low support-point sensitivity"
+    status: demonstrated
+    category: "腔体设计方法"
+    applies_to: ent.fp_cavity_system
+    steps_summary: >
+      设计竖直和水平光轴两种10 cm FP腔，采用FS镜基底降低热噪声，通过对称支撑点设计和优化几何形状，
+      使振动灵敏度对各方向≤1.5×10⁻¹¹ per m/s²，且支撑点位置依赖性极低，无需精细调谐。
+    advantages:
+      - "低振动灵敏度（各方向≤1.5×10⁻¹¹ per m/s²）"
+      - "支撑点位置依赖低，易于安装"
+      - "FS镜降低热噪声（相比全ULE腔）"
+    disadvantages:
+      - "FS镜CTE不为零，需温控"
+      - "仅10 cm腔长，热噪声极限相对较高"
+    note: >
+      Millo 2009首次演示FS镜腔，振动灵敏度达到当时最佳水平。
+    source_claim: >
+      "Vibration sensitivity components measured are equal to or better than 1.5×10⁻¹¹ per m/s² for each spatial direction"
 
 metrics:
   - id: met.fractional_freq_instability_millo09

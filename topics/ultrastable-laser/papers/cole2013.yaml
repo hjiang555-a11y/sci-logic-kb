@@ -1,7 +1,7 @@
 # Cole 2013 — 高反镀层布朗噪声十倍降低（AlGaAs 晶体镀层）
 # 提取者：Claude（AI草稿，待专家确认）
 # 提取日期：2026-04-14
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "CWIHQRJD"
@@ -96,6 +96,20 @@ metrics:
       ibs_standard: "φ_IBS_standard ~ 4×10⁻⁴（标准 SiO₂/Ta₂O₅）"
       reduction_factor: "约 10–16×（损耗角之比）"
       cryogenic_10k: "φ_AlGaAs ~ 4.5×10⁻⁶（10 K，自由悬挂谐振器测量，进一步降低约 6×）"
+
+methods:
+  - id: meth.substrate_transferred_crystalline_coating_c13
+    name: "基底转移单晶镀层制备方法"
+    category: material_fabrication
+    description: >
+      将 MBE 生长的 AlGaAs/GaAs 晶体反射镜从 GaAs 生长衬底转移至最终光学底物（如熔融石英）的工艺。
+      关键步骤：GaAs 衬底选择性湿法腐蚀、van der Waals 直接键合、退火增强附着力。
+      解决单晶薄膜无法直接沉积在非晶弯曲底物上的技术障碍。
+    verification_status: demonstrated
+    reference_implementation: "Cole 2013 实验：35 mm Zerodur 腔，熔融石英底物"
+    note: >
+      实现 φ ≤ 2.5×10⁻⁵（室温）的 AlGaAs 晶体镀层，比最优 IBS 介质镀层低约 10×。
+      波长范围 650 nm–3 μm（带隙吸收以下至自由载流子吸收以上），但存在固有双折射（4 MHz 劈裂）。
 
 # ═══════════════════════════════════════════════
 #  RELATIONS（关系）

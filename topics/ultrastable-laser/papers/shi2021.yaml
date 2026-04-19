@@ -1,7 +1,7 @@
 # Shi 2021 — 薄涂层空心光纤改善热相位稳定性
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "QLXRP462"
@@ -39,7 +39,23 @@ principles:
     conditions: "HCF 玻璃外壁较薄（~20 μm），涂层截面积不可忽略"
     source_claim: "coating contribution lies behind most of the discrepancies in the thermal sensitivity measured for HCFs"
 
-methods: []
+methods:
+  - id: meth.coating_thermal_sensitivity_characterization_shi21
+    name: "空心光纤涂层热灵敏度表征方法"
+    description: >
+      通过测量不同涂层厚度空心光纤的温度依赖性相位变化，
+      分离涂层与玻璃本体的热膨胀贡献，量化涂层对整体热灵敏度的影响。
+      实验使用可调温环境箱和干涉仪相位测量系统。
+    applicable_when: "需要评估涂层对HCF热稳定性的影响，尤其是薄壁光纤"
+    implementation_hints: >
+      对比不同涂层厚度样品，测量相位随温度变化斜率；
+      通过截面几何参数计算涂层截面积占比；
+      拟合得到涂层热膨胀系数有效贡献。
+    relationships:
+      - type: based_on
+        target: pri.hcf_coating_thermal_sensitivity
+      - type: used_for
+        target: ent.fiber_interferometer
 
 metrics: []
 

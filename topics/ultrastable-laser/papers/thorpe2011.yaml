@@ -28,8 +28,28 @@ entities: []
 principles: []
   # 复用 pri.spectral_hole_burning_frequency_ref
 
-methods: []
-  # 复用 meth.spectral_hole_burning_stabilization
+methods:
+  - id: meth.two_stage_shb_fp_lock_thorpe11
+    name: "两级稳频方法：FP腔预稳 + SHB锁定（Thorpe 2011）"
+    type: stabilization_technique
+    purpose: >
+      通过两级锁定方案实现超稳激光：先将激光预稳定到FP腔，
+      再将预稳激光锁定到Eu³⁺:Y₂SiO₅光谱烧孔模式
+    steps:
+      - "将激光锁定到FP参考腔实现预稳定（σ_y < 1×10⁻¹³）"
+      - "在Eu³⁺:Y₂SiO₅晶体中烧制光谱孔"
+      - "使用预稳激光作为探针检测光谱孔频率"
+      - "将激光频率锁定到光谱孔中心"
+      - "测量环境灵敏度（温度、压力、加速度）"
+    key_parameters:
+      fp_prestability: "σ_y < 1×10⁻¹³"
+      shb_stability: "σ_y ≤ 6×10⁻¹⁶ @ 2–8 s"
+      temperature: "4 K"
+    connects:
+      - ent.shb_eu_yso_reference_l13
+      - met.shb_stability_thorpe11
+      - met.shb_environmental_sensitivity_thorpe11
+    source_claim: "stabilize the laser to σ_y ≤ 6×10⁻¹⁶ for 2 s ≤ τ ≤ 8 s via spectral-hole burning"
 
 metrics:
   - id: met.shb_stability_thorpe11

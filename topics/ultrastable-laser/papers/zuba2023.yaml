@@ -1,7 +1,7 @@
 # Zuba 2023 — 空心反谐振光纤耦合效率极限
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "GIUQZ2EE"
@@ -38,7 +38,23 @@ principles:
     conditions: "适用于 NANF/DNANF 类反谐振空心光纤"
     source_claim: "coupling into the fundamental LP01-like mode is typically maximized around 96–98%"
 
-methods: []
+methods:
+  - id: meth.hcf_coupling_efficiency_characterization_zuba23
+    name: "空心反谐振光纤耦合效率表征方法"
+    description: >
+      通过扫描输入高斯光束束腰和光纤位置，测量耦合到NANF LP01模式的效率，
+      确定最佳耦合条件（束腰约为纤芯直径70%）和效率极限（96-98%）。
+      比较不同反谐振窗口（奇/偶数）的耦合性能。
+    applicable_when: "设计HCF光纤延迟线系统需要优化耦合效率，特别是短光纤应用"
+    implementation_hints: >
+      使用可调束腰扩束系统，精密三维光纤对准台；
+      测量透射功率与束腰尺寸关系曲线；
+      通过模式匹配理论拟合实验数据。
+    relationships:
+      - type: based_on
+        target: pri.hcf_coupling_efficiency_limit
+      - type: used_for
+        target: ent.fiber_interferometer
 
 metrics: []
 

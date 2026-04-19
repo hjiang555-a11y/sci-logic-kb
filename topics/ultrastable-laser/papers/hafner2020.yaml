@@ -1,7 +1,7 @@
 # Häfner 2020 — 可搬运 12 cm 腔锶钟询问激光系统
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "X7XXKXDZ"
@@ -64,7 +64,23 @@ principles:
       "Ten Invar pins are glued into holes to the side of the cavity...
       each set of mounting elements restricts one rotational and one translational degree of freedom"
 
-methods: []
+methods:
+  - id: meth.transportable_cavity_mounting_performance_testing_h20
+    name: "可搬运腔体安装与性能测试方法"
+    description: >
+      针对长细比 L/D > 1 腔体的可搬运安装方案：采用 Invar 引脚胶合于腔体侧面，柔性钢丝分三组独立约束六自由度；
+      振动灵敏度测量（κ_x, κ_y, κ_z）验证低振动耦合；通过热噪声极限验证（mod σ_y ≈ 3×10⁻¹⁶），
+      并测量长期漂移（~0.1 Hz/s）和热时间常数（τ_a=2.5天，τ_b=0.29天）。
+    verification_status: observed
+    implementation_details:
+      - "10 个 Invar 引脚胶合于腔体侧面"
+      - "柔性钢丝 + 带分三组独立约束自由度"
+      - "多级热屏蔽（主动 + 被动）"
+      - "振动灵敏度测量采用抖动台 + PDH 误差信号解调"
+      - "频率不稳定度测量（双腔拍频或传递锁定）"
+      - "长期漂移和热时间常数监测"
+    enables: ent.transportable_12cm_cavity_h20
+    source_claim: "The cavity is mounted with ten Invar pins glued into holes; three sets of mounting elements restrict independent degrees of freedom; the system reaches thermal noise floor mod σ_y ≈ 3×10⁻¹⁶."
 
 metrics:
   - id: met.fractional_freq_instability_h20

@@ -1,7 +1,7 @@
 # Zhang 2014 — RAM主动消除至1×10⁻⁶
 # 提取者：Claude（AI草稿，待专家确认）
 # 提取日期：2026-04-14
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "S5GJNVG8"
@@ -78,6 +78,16 @@ principles:
       "The DC electric field affects the in-phase response 20 times larger
        than the quadrature response ... working in tandem, suppress both
        the in-phase and quadrature components of the RAM to the 1 ppm level"
+
+methods:
+  - id: meth.dual_channel_ram_cancellation_z14
+    name: "双通道 RAM 主动消除方法（Zhang 2014）"
+    description: "通过同相DC电场和正交温度反馈双通道伺服将RAM抑制至1 ppm的方法"
+    core_principle: pri.ram_active_cancellation
+    key_entity: ent.eom
+    reliability: established
+    verification_status: observed
+    source: {zotero_key: "S5GJNVG8", claim: "active servo comprising in-phase and quadrature RAM corrections allows frequency stabilization comparable to fundamental thermal noise limit"}
 
 metrics:
   - id: met.ram_fractional_instability

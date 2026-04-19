@@ -1,7 +1,7 @@
 # Herbers 2019 — 光钟激光频率倍频器的相位噪声
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "WP8FMS5N"
@@ -65,7 +65,19 @@ principles:
     open_questions:
       - "光功率变化引起的相位啁啾的补偿方案是否可以做到完全透明？"
 
-methods: []
+methods:
+  - id: meth.dual_shg_differential_h19
+    name: "双 SHG 模块差分对比测量方法"
+    description: >
+      使用两个相同的 PPLN 波导 SHG 模块进行差分对比测量，以分离出倍频器本身的额外相位噪声，
+      排除共模激光噪声。测量时，同一超稳激光源分束后分别输入两个 SHG 模块，
+      输出二次谐波拍频，其相位噪声谱即为 SHG 额外相位噪声的两倍。
+    status: demonstrated
+    source_claim: >
+      "We compare the phase noise of two identical frequency doublers using a common laser source."
+    implements: [pri.shg_excess_phase_noise_limit]
+    characterizes: [met.shg_excess_phase_noise_h19]
+    used_with: [ent.ppln_shg_module_h19]
 
 metrics:
   - id: met.shg_excess_phase_noise_h19

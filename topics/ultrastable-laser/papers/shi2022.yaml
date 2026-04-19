@@ -1,7 +1,7 @@
 # Shi 2022 — 温度不敏感光纤延迟线干涉仪
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "UKBFZLXG"
@@ -41,7 +41,23 @@ principles:
       - "两种光纤在工作温度范围内热灵敏度系数稳定"
     source_claim: "by setting their associated length ratio to approximately 25:1, the optical phase difference is insensitive to temperature"
 
-methods: []
+methods:
+  - id: meth.hcf_smf_thermal_compensation_design_shi22
+    name: "HCF-SMF热补偿干涉仪设计方法"
+    description: >
+      设计温度不敏感光纤马赫-曾德尔干涉仪：将HCF（低热灵敏度）和SMF（高热灵敏度）
+      分别置于两臂，按照约25:1的长度比配置，使温度变化时两臂光程变化相互抵消。
+      通过微调长度比精确控制零灵敏度温度点。
+    applicable_when: "需要在室温环境下实现温度不敏感的光纤延迟线系统"
+    implementation_hints: >
+      测量HCF和SMF的热灵敏度系数，确定精确长度比；
+      使用光纤熔接机构建不对称臂长干涉仪；
+      通过温控实验验证相位差对温度的不敏感性。
+    relationships:
+      - type: based_on
+        target: pri.hcf_smf_thermal_compensation
+      - type: used_for
+        target: ent.fiber_interferometer
 
 metrics: []
 

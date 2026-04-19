@@ -1,7 +1,7 @@
 # Jiang 2011 — 2×10⁻¹⁶ 腔稳激光用于 Yb 光晶格钟
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "RAC23NZV"
@@ -36,7 +36,21 @@ entities:
 
 principles: []
 
-methods: []
+methods:
+  - id: meth.low_thermal_noise_cavity_pdh_j11
+    name: "低热噪声腔 PDH 锁频用于 Yb 光钟本振"
+    description: >
+      使用长 ULE 腔配合 FS 镜基底（低机械损耗）优化热噪声极限，
+      通过 PDH 锁频实现 2×10⁻¹⁶ 分数频率不稳定度。
+      该超稳激光作为 Yb 光晶格钟的本振，分辨 1 Hz 线宽钟跃迁（Q = 5×10¹⁴），
+      使钟不稳定度达到 5×10⁻¹⁶/√τ。
+    status: demonstrated
+    source_claim: >
+      "fractional frequency instability of 2×10⁻¹⁶... measurements consistent with a clock instability of 5×10⁻¹⁶/√τ"
+    implements: [meth.pdh_locking]
+    characterizes: [met.fractional_freq_instability_j11, met.yb_clock_instability_j11]
+    used_with: [ent.low_thermal_noise_cavity_j11]
+    bounded_by: [pri.brownian_thermal_noise_fdt]
 
 metrics:
   - id: met.fractional_freq_instability_j11

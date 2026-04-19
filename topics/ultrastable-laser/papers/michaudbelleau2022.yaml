@@ -1,7 +1,7 @@
 # Michaud-Belleau 2022 — 反谐振空心光纤基础热噪声
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-15
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "4GT5VD54"
@@ -74,6 +74,14 @@ principles:
         best_demonstrated:
           value: "本文使用的 large-mode-area NANF"
           source: {zotero_key: "4GT5VD54"}
+
+methods:
+  - id: meth.hcf_thermal_noise_characterization_mb22
+    name: "空心光纤热噪声表征方法（Michaud-Belleau 2022）"
+    description: "通过抽真空与压力调控表征反谐振空心光纤热噪声的方法"
+    applies_to: ent.fiber_interferometer
+    key_technique: "抽真空压力控制与噪声谱测量"
+    note: "该方法首次系统评估空心光纤热噪声，揭示气体热传导噪声主导机制"
 
 metrics:
   - id: met.thermal_noise_psd_hcf_mb22

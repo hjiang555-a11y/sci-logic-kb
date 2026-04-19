@@ -1,7 +1,7 @@
 # Michaud-Belleau 2021 — 反谐振空心光纤背向散射低 40 dB
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-15
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "DD6SE43C"
@@ -47,6 +47,27 @@ principles:
     source_claim: >
       "show that it is more than 40 dB below reported values in silica-core fiber
       and hollow-core photonic bandgap fiber"
+
+methods:
+  - id: meth.backscattering_measurement_ofdr_mb21
+    name: "背向散射测量（自研OFDR）"
+    full_name: "Custom-built optical frequency-domain reflectometry (OFDR) for backscattering measurement"
+    status: demonstrated
+    category: "表征方法"
+    applies_to: ent.fiber_interferometer
+    steps_summary: >
+      自研光学频域反射计（OFDR）测量空心光纤背向散射：扫频激光（1550 nm）注入待测光纤，
+      记录后向散射光的干涉信号，通过傅里叶变换得到空间分辨的背向散射系数。
+    advantages:
+      - "空间分辨能力（可定位散射热点）"
+      - "高动态范围（~80 dB）"
+    disadvantages:
+      - "仅适用于实验室环境"
+      - "需要精密光学对准"
+    note: >
+      该方法为 Michaud-Belleau 2021 所用，首次定量测量反谐振空心光纤的背向散射系数。
+    source_claim: >
+      "we present measurements of backscattering in antiresonant hollow‑core fibers... using a custom‑built optical frequency‑domain reflectometer"
 
 metrics:
   - id: met.backscattering_coefficient_hcf_mb21

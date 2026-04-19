@@ -1,7 +1,7 @@
 # Häfner 2015 — 8×10⁻¹⁷ 分数频率不稳定度，48 cm ULE 室温腔
 # 提取者：Claude（AI草稿，待专家确认）
 # 提取日期：2026-04-14
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "UV6S5FFL"
@@ -81,6 +81,23 @@ principles:
     source_claim: >
       "we employ the last approach and report on the design and evaluation of a
        48 cm long room temperature resonator... instability of below 1×10⁻¹⁶"
+
+methods:
+  - id: meth.self_balancing_mount_h15
+    name: "自平衡安装方法（Häfner 2015）"
+    type: mechanical_design
+    status: demonstrated
+    description: >
+      为长腔（48 cm ULE，~1.8 kg）设计的自平衡安装方法：腔一端的两个 Teflon 柱装在铝夹具上，
+      夹具通过单个玻璃球可绕轴旋转，另一端两个玻璃球防止旋转，从而自动均衡四支撑点受力，
+      消除 Teflon 柱高度误差（加工精度）引起的支撑弹性不均匀。
+    key_steps:
+      - "将腔体一端置于铝夹具上，通过单个玻璃球提供旋转自由度"
+      - "另一端使用两个玻璃球固定以防止旋转"
+      - "利用腔体自身重量自动均衡四个支撑点（Viton 球 + Teflon 柱）的受力"
+      - "通过实验优化 Viton 球间距以最小化加速度灵敏度"
+    source: {zotero_key: "UV6S5FFL"}
+    note: "该方法解决了长腔特有的支撑力均衡问题，实现全向加速度灵敏度 < 2×10⁻¹⁰/g"
 
 metrics:
   - id: met.fractional_freq_instability_h15

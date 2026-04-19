@@ -1,7 +1,7 @@
 # Legero 2010 — 熔融石英镜参考腔热膨胀调谐
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-15
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "MW3RDB68"
@@ -27,6 +27,14 @@ meta:
 
 # 根据专家意见：pri.fs_mirror_cte_tuning 归入腔漂移部分的子内容，
 # 不单独建立原理节点。相关信息记录在 meta.note 和指标条件中。
+
+methods:
+  - id: meth.cte_tuning_fs_mirror_leg10
+    name: "FS镜CTE调谐方法（Legero 2010）"
+    description: "通过在熔融石英镜背面光学贴合ULE补偿环，调谐参考腔的CTE零点温度范围"
+    applies_to: ent.mirror_substrate
+    key_technique: "光学贴合ULE环补偿镜面变形效应"
+    note: "该方法解决FS镜降低热噪声但引入CTE失配的问题，属于腔热漂移控制工程子主题"
 
 metrics:
   - id: met.cte_zero_crossing_tuning_range_leg10

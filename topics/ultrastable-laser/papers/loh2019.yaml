@@ -1,7 +1,7 @@
 # Loh 2019 — 超窄线宽布里渊激光
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "UP2Q8F9Y"
@@ -55,7 +55,22 @@ principles:
     conditions: "需要大模体积光纤谐振器和足够的泵浦功率"
     source_claim: "large mode-volume optical resonator... suppress the resonator's fast thermal fluctuations, together with SBS nonlinearity"
 
-methods: []
+methods:
+  - id: meth.sbs_thermal_self_referencing_l19
+    name: "SBS热自参考窄线宽稳频方法"
+    aliases: ["布里渊激光稳频", "光纤大模体积谐振器稳频"]
+    purpose: "利用光纤大模体积谐振器的热惯性和SBS增益自然窄线宽特性实现超窄线宽激光输出"
+    implementation:
+      - "使用2米长光纤形成大模体积谐振器"
+      - "通过受激布里渊散射提供窄线宽增益"
+      - "依靠光纤的大热容量抑制快速热波动"
+      - "实现纳开尔文级温度自参考"
+    key_parameters:
+      fiber_length: "2 m"
+      thermal_self_reference_level: "nanokelvin"
+    applicable_when: "需要紧凑型超稳激光源，对长期稳定度要求不高但追求短期超窄线宽"
+    note: "与 ent.fp_cavity_system 的PDH锁频方法竞争，提供更紧凑的解决方案"
+
 metrics: []
 
 relations:

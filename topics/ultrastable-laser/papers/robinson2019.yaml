@@ -1,7 +1,7 @@
 # Robinson 2019 — 4 K 晶体硅腔热噪声极限稳定度
 # 提取者：Claude（AI草稿，待专家确认）
 # 提取日期：2026-04-14
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "JIZCUZLY"
@@ -120,6 +120,27 @@ principles:
     source_claim: >
       "We present the first rigorous characterization of a power-dependent frequency drift
        in an optical cavity. The slope of the power dependence is roughly −7×10⁻²¹/s/nW."
+
+methods:
+  - id: meth.low_power_cavity_drift_characterization_r19
+    name: "低功率腔漂移表征方法（Robinson 2019）"
+    full_name: "Low-power cavity drift characterization method"
+    status: demonstrated
+    category: "表征方法"
+    applies_to: ent.fp_cavity_system
+    steps_summary: >
+      通过扫描腔内循环功率（~40 nW 传输功率），测量腔频率漂移率与功率的线性关系。
+      在功率突变后等待1–2天特征瞬态时间，再提取稳态漂移率；外推至零功率获得本征漂移极限。
+    advantages:
+      - "定量分离功率依赖漂移与材料蠕变"
+      - "外推获得零功率漂移极限（理论上接近零）"
+    disadvantages:
+      - "测量周期长（需数天等待瞬态）"
+      - "仅适用于低温腔"
+    note: >
+      Robinson 2019首次严格表征光功率驱动的腔频率漂移，为低漂移腔设计提供关键方法。
+    source_claim: >
+      "We present the first rigorous characterization of a power-dependent frequency drift in an optical cavity. The slope of the power dependence is roughly −7×10⁻²¹/s/nW."
 
 metrics:
   - id: met.fractional_freq_instability_r19

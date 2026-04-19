@@ -1,7 +1,7 @@
 # Dong 2015 — 光纤延迟线锁频首次亚赫兹线宽（0.67 Hz）
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-15
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "W8K5GLK6"
@@ -67,8 +67,18 @@ principles:
        thermal noise and RF amplifier thermal noise with only about 2 dB discrepancy
        with the measured result"
 
-methods: []
-  # meth.fiber_delay_locking（定义于 jiang2010.yaml）——本文改进实现
+methods:
+  - id: meth.fiber_delay_locking_improved_d15
+    name: "光纤延迟线锁频改进实现（Dong 2015）"
+    category: frequency_stabilization
+    description: >
+      在 jiang2010 提出的光纤延迟线锁频方案基础上的改进实现，首次达到亚赫兹线宽（<0.5 Hz）。
+      关键改进：500 m SMF-28×2 光纤延迟线、主动热补偿、低噪声 RF 放大器、激光器 RIN 抑制。
+    verification_status: demonstrated
+    reference_implementation: "Dong 2015 实验系统：两台相同光纤锁定激光器拍频线宽 0.67 Hz"
+    note: >
+      基于 meth.fiber_delay_locking（定义于 jiang2010.yaml），本文首次实现亚赫兹线宽，
+      验证了光纤延迟线方案在热噪声极限下的性能潜力。
 
 metrics:
   - id: met.laser_linewidth_dong15

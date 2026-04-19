@@ -1,7 +1,7 @@
 # Didier 2018 — 超紧凑 25 mm 金字塔形参考腔
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "PHRXF4IL"
@@ -39,9 +39,38 @@ entities:
       total_volume: "30 L"
     note: "PART-OF ent.fp_cavity_system。极端紧凑方案，性能受限于短腔长。"
 
-principles: []
+principles:
+  - id: pri.pyramidal_compact_cavity_design_d18
+    name: "金字塔形紧凑腔体设计原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      采用金字塔形腔体几何（四侧面倾斜）允许光学元件（窗口、光电探测器）直接安装在腔壁上，
+      无需额外光学支架，极大缩减总体积（30 L）。短腔长（25 mm）导致热噪声极限较高，
+      但适合对体积、重量极端敏感的嵌入式和空间应用。
+    domain: "紧凑参考腔设计"
+    key_insight: "金字塔形几何 + 腔壁集成光学元件 = 极端紧凑化；短腔长与热噪声的折衷已知且可接受。"
+    conditions: "需要精密加工确保四侧面平行度和镜面准直；真空兼容安装设计。"
+    invalidated_when: "若需要亚 10⁻¹⁶ 性能，则短腔长成为瓶颈。"
+    source_claim: "The pyramid geometry of the cavity (four tilted sides) enables to mount optical elements directly onto the cavity walls, leading to a total volume of 30 L."
 
-methods: []
+methods:
+  - id: meth.ultracompact_cavity_integration_testing_d18
+    name: "超紧凑腔体集成与测试方法"
+    description: >
+      金字塔形 ULE 腔体与真空腔室、光学元件一体化集成方法：将光学窗口、光电探测器直接安装在腔壁倾斜面上；
+      采用双层热屏蔽（被动不锈钢 + 主动 Peltier 铜屏蔽）实现紧凑温控；
+      通过 PDH 锁频测量频率不稳定度，评估短腔长下的热噪声极限与技术噪声。
+    verification_status: observed
+    implementation_details:
+      - "金字塔形 ULE 腔体加工（四侧面倾斜 45°）"
+      - "AlGaAs 晶体镀层降低热噪声"
+      - "光学元件直接安装在腔壁，无需额外支架"
+      - "紧凑真空腔室（30 L 总体积）设计"
+      - "被动 + 主动双层热屏蔽"
+      - "频率不稳定度测量（σ_y ≈ 7.5×10⁻¹⁵ @ 1 s）"
+    enables: ent.ultracompact_pyramid_cavity_d18
+    source_claim: "The cavity is placed inside a compact vacuum chamber; optical elements are mounted directly onto the cavity walls; frequency instability measured via PDH locking."
 
 metrics:
   - id: met.fractional_freq_instability_d18

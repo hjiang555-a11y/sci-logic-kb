@@ -1,7 +1,7 @@
 # Olson 2019 — Ramsey-Bordé 物质波干涉仪稳频 <2×10⁻¹⁶
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "CDX3DFQR"
@@ -54,13 +54,21 @@ principles:
 
 methods:
   - id: meth.ramsey_borde_stabilization
-    name: "Ramsey-Bordé 物质波干涉仪稳频"
-    type: frequency_stabilization
-    status: demonstrated
-    description: >
-      四脉冲 Ramsey-Bordé 干涉方案在 Ca 热原子束上实现，
-      激光频率锁定到干涉条纹中心，提供 <2×10⁻¹⁶ 稳定度。
-    source: {zotero_key: "CDX3DFQR"}
+    name: "Ramsey-Bordé 物质波干涉仪稳频方法"
+    aliases: ["RB原子干涉仪稳频", "Ca原子束稳频"]
+    purpose: "利用Ramsey-Bordé四脉冲原子干涉仪将激光频率锁定到原子跃迁，避免FP腔的热噪声限制"
+    implementation:
+      - "使用两束对射的⁴⁰Ca热原子束"
+      - "在657 nm (¹S₀-³P₁)跃迁上实现四脉冲Ramsey-Bordé干涉"
+      - "激光频率锁定到1.6 kHz干涉条纹中心"
+      - "荧光探测激发态布居作为误差信号"
+    key_parameters:
+      atom: "⁴⁰Ca"
+      transition: "¹S₀ → ³P₁ (657 nm)"
+      fringe_linewidth: "1.6 kHz"
+      instability: "<2×10⁻¹⁶ @ 10–1000 s"
+    applicable_when: "需要避免FP腔热噪声限制，追求长期频率稳定性的应用"
+    note: "与 ent.fp_cavity_system 的PDH锁频方法竞争，提供基于原子跃迁的频率参考"
 
 metrics:
   - id: met.rb_interferometer_stability_o19

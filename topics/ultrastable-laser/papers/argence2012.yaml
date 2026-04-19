@@ -1,7 +1,7 @@
 # Argence 2012 — 空间应用超稳腔原型
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "RP8Q44RZ"
@@ -68,7 +68,22 @@ principles:
       "A ring in the midplane of the cylinder allows rigid attachment of the cavity...
       the axial vibration sensitivity was evaluated at (4 ± 0.5) × 10⁻¹¹/(m.s⁻²)"
 
-methods: []
+methods:
+  - id: meth.space_cavity_design_testing_a12
+    name: "空间应用超稳腔设计-制造-测试方法"
+    description: >
+      面向空间任务的超稳腔原型设计方法：采用中平面刚性固定（CFD）实现低振动灵敏度与高机械鲁棒性；
+      结合有限元分析优化加工公差；在宽温区（-33°C至73°C）验证频率稳定性；
+      测量轴向/横向振动灵敏度以确认对称固定有效性。
+    verification_status: observed
+    implementation_details:
+      - "中平面环形法兰固定于 Invar 双悬臂梁结构（CFD）"
+      - "FEM 优化腔体和 CFD 加工公差"
+      - "五层热屏蔽确保长期温度稳定"
+      - "振动灵敏度测量采用抖动台激励+PDH 误差信号解调"
+      - "频率不稳定度测量基于双腔拍频或传递锁定"
+    enables: ent.space_cavity_prototype_a12
+    source_claim: "A ring in the midplane of the cylinder allows rigid attachment... the cavity is designed to be acceleration tolerant, with a total mass ~40 kg."
 
 metrics:
   - id: met.fractional_freq_instability_a12

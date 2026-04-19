@@ -376,7 +376,7 @@
 
 | 编号 | 专题 | 目录 | 状态 | 论文数 | 核心节点数(估) |
 |------|------|------|------|--------|---------------|
-| 1 | 超稳激光 | `topics/ultrastable-laser/` | ✅ 已建 | 78 | ~200+ |
+| 1 | 超稳激光 | `topics/ultrastable-laser/` | ✅ 已建（78/78 YAML，全部升级为 ✅ v4.1） | 78 | ~200+ |
 | 2 | 光学频率梳 | `topics/optical-frequency-combs/` | ✅ 已建（应用‑技术‑原理三层框架） | 8 | ~147 |
 
 ### 光学频率梳专题内部结构（重构后）
@@ -936,36 +936,36 @@ note: "跨专题引用，定义于 topics/frequency-standards/papers/xxx.yaml"
 
 | 文件 | Zotero Key | 论文 | 历史重构状态 |
 |------|-----------|------|---------|
-| `drever1983.yaml` | 694DPR5F | Drever 1983 — PDH 技术 | ✅ v3.0（ent.rf_phase_modulator→ent.eom，merge shot_noise_power_efficiency_scaling） |
+|| `drever1983.yaml` | 694DPR5F | Drever 1983 — PDH 技术 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
 | `young1999.yaml` | EGAZKLXR | Young 1999 — 亚赫兹线宽可见激光 | ✅ v3.0（ent.dye_laser_563nm→ent.laser_source ext，meth.two_stage_pdh→meth.multi_stage_locking） |
-| `shaddock1999.yaml` | S5PX7GHC | Shaddock 1999 — Tilt Locking | ✅ v3.0（merge split_photodetector/tilting_mirror into tilt_locking，off_resonance_reference_light meta→domain） |
+| `shaddock1999.yaml` | S5PX7GHC | Shaddock 1999 — Tilt Locking | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
 | `numata2004.yaml` | VDXBPUQB | Numata 2004 — FP 腔热噪声极限 | ✅ v3.0（noise_source_classification，merge 3 engineering principles into brownian_thermal_noise_fdt） |
-| `jiang2010.yaml` | T8JR8IJ7 | Jiang 2010 — 光纤干涉仪可捷变激光 | ✅ v3.0（merge faraday_rotation_mirror into fiber_interferometer，agile_laser→ext，merge shorter_delay_line_rbs_tradeoff） |
+| `jiang2010.yaml` | T8JR8IJ7 | Jiang 2010 — 光纤干涉仪可捷变激光 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
 | `webster2007.yaml` | UCNS7EM7 | Webster 2007 — 振动不敏感 FP 腔 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
 | `kessler2012.yaml` | YKPFKDD9 | Kessler 2012 — Si 单晶低温腔 <40 mHz 线宽 | ✅ v3.0（Level 1→2，COMPETES-WITH→PART-OF，fix breakthrough_paths） |
-| `cole2013.yaml` | CWIHQRJD | Cole 2013 — AlGaAs 晶体镀层 10× 热噪声降低 | ✅ 兼容（无 v3.0 专项变更） |
+|| `cole2013.yaml` | CWIHQRJD | Cole 2013 — AlGaAs 晶体镀层 10× 热噪声降低 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
 | `matei2017.yaml` | TVY7T59A | Matei 2017 — Si 腔 5–10 mHz 线宽，mod σ_y=4×10⁻¹⁷ | ✅ v3.0（remove COMPETES-WITH，fix breakthrough_paths） |
-| `hafner2015.yaml` | UV6S5FFL | Häfner 2015 — 48 cm 室温 ULE 腔，σ_y < 1×10⁻¹⁶ | ✅ v3.0（Level 1→2，remove 2 COMPETES-WITH，fix breakthrough_paths） |
-| `lee2026.yaml` | 4QVEXY63 | Lee 2026 — 2.5×10⁻¹⁷ Si 腔 + AlGaAs 晶体镀层（世界纪录） | ✅ v3.0（Level 1→2，remove 2 COMPETES-WITH，add meth.multi_cavity_averaging） |
-| `webster2011.yaml` | A96XGR82 | Webster 2011 — 立方体力不敏感光学腔 | ✅ 兼容（无 v3.0 专项变更） |
-| `robinson2019.yaml` | JIZCUZLY | Robinson 2019 — 4 K Si 腔热噪声极限 | ✅ v3.0（Level 1→2，COMPETES-WITH→PART-OF） |
+| `hafner2015.yaml` | UV6S5FFL | Häfner 2015 — 48 cm 室温 ULE 腔，σ_y < 1×10⁻¹⁶ | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
+| `lee2026.yaml` | 4QVEXY63 | Lee 2026 — 2.5×10⁻¹⁷ Si 腔 + AlGaAs 晶体镀层（世界纪录） | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
+| `webster2011.yaml` | A96XGR82 | Webster 2011 — 立方体力不敏感光学腔 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
+| `robinson2019.yaml` | JIZCUZLY | Robinson 2019 — 4 K Si 腔热噪声极限 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
 | `zhang2017.yaml` | N9AGEQ8S | Zhang 2017 — 闭循环 4 K Si 腔 1×10⁻¹⁶ 稳定度 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
-| `zhang2014_ram.yaml` | S5GJNVG8 | Zhang 2014 — RAM 主动消除 | ✅ v3.0（merge waveguide_eom_z14 into ent.eom） |
-| `dong2015.yaml` | W8K5GLK6 | Dong 2015 — 光纤延迟线锁频首次亚赫兹线宽（0.67 Hz） | ✅ 符合v3.1（首次提取） |
-| `kefelian2009.yaml` | MN54T4F3 | Kéfélian 2009 — 光纤延迟线锁频首次实现超低频率噪声 | ✅ 符合v3.1（首次提取） |
+| `zhang2014_ram.yaml` | S5GJNVG8 | Zhang 2014 — RAM 主动消除 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
+|| `dong2015.yaml` | W8K5GLK6 | Dong 2015 — 光纤延迟线锁频首次亚赫兹线宽（0.67 Hz） | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
+| `kefelian2009.yaml` | MN54T4F3 | Kéfélian 2009 — 光纤延迟线锁频首次实现超低频率噪声 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
 | `huang2023.yaml` | JYGVFJBN | Huang 2023 — 全光纤超稳激光长期稳定度 1.1×10⁻¹⁴ | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
 || `jeon2025.yaml` | SBPRDKPV | Jeon 2025 — 自零差光纤锁频 6.3×10⁻¹⁵ @ 16 ms，4–200 Hz 达到热噪声极限 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
-| `kedar2023.yaml` | 8YK6EH22 | Kedar 2023 — 低温硅腔晶体镀层频率噪声与双折射 | ✅ 符合v3.1（首次提取） |
+| `kedar2023.yaml` | 8YK6EH22 | Kedar 2023 — 低温硅腔晶体镀层频率噪声与双折射 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
 | `chen2025.yaml` | N6HILT6B | Chen 2025 — 10 cm Si 腔 sub-5K 10⁻¹⁷ 级稳定度 | ✅ 符合v3.1（首次提取） |
-| `webster2008.yaml` | VU2V2PTX | Webster 2008 — 热噪声极限光学腔（首次全面验证） | ✅ 符合v3.1（首次提取） |
-| `legero2010.yaml` | MW3RDB68 | Legero 2010 — FS 镜参考腔 CTE 调谐 | ✅ 符合v3.1（首次提取） |
+| `webster2008.yaml` | VU2V2PTX | Webster 2008 — 热噪声极限光学腔（首次全面验证） | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
+| `legero2010.yaml` | MW3RDB68 | Legero 2010 — FS 镜参考腔 CTE 调谐 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
 | `leibrandt2013.yaml` | H5MYBTXH | Leibrandt 2013 — 惯性力前馈加速度灵敏度 <10⁻¹²/g | ✅ 符合v3.1（首次提取） |
-| `millo2009.yaml` | GLXHEIPV | Millo 2009 — 振动不敏感腔超稳激光 5.6×10⁻¹⁶ | ✅ 符合v3.1（首次提取） |
-| `cole2016.yaml` | 4GUXEM2C | Cole 2016 — 高性能晶体镀层 NIR/MIR 3 ppm 损耗 | ✅ 符合v3.1（首次提取） |
-| `tai2017.yaml` | AHUZI4A7 | Tai 2017 — 可搬运 1555 nm 超稳激光 185 mHz 线宽 | ✅ 符合v3.1（首次提取） |
+| `millo2009.yaml` | GLXHEIPV | Millo 2009 — 振动不敏感腔超稳激光 5.6×10⁻¹⁶ | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
+| `cole2016.yaml` | 4GUXEM2C | Cole 2016 — 高性能晶体镀层 NIR/MIR 3 ppm 损耗 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
+| `tai2017.yaml` | AHUZI4A7 | Tai 2017 — 可搬运 1555 nm 超稳激光 185 mHz 线宽 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
 || `herbers2022.yaml` | NU79W75P | Herbers 2022 — 可搬运钟激光系统达到 1.6×10⁻¹⁶ 不稳定度 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
-| `michaudbelleau2021.yaml` | DD6SE43C | Michaud-Belleau 2021 — 空心光纤背向散射 −118 dB/m | ✅ 符合v3.1（首次提取） |
-| `michaudbelleau2022.yaml` | 4GT5VD54 | Michaud-Belleau 2022 — 空心光纤热噪声理论+实测 | ✅ 符合v3.1（首次提取） |
+| `michaudbelleau2021.yaml` | DD6SE43C | Michaud-Belleau 2021 — 空心光纤背向散射 −118 dB/m | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
+| `michaudbelleau2022.yaml` | 4GT5VD54 | Michaud-Belleau 2022 — 空心光纤热噪声理论+实测 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
 || `kim2008.yaml` | H5YVF5AR | Kim 2008 — 远程光学/微波源漂移自由飞秒同步 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
 || `belardi2015.yaml` | 2F3PD62T | Belardi 2015 — 反谐振空心光纤在可见/近红外的宽带设计与低损耗特性 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
 | `parke2025.yaml` | U2LXSU62 | Parke 2025 — 68 cm 腔 300 μs 存储时间与 10⁻⁷ RAM 消除 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
@@ -974,48 +974,48 @@ note: "跨专题引用，定义于 topics/frequency-standards/papers/xxx.yaml"
 | `steinlechner2018.yaml` | L6KKLLSR | Steinlechner 2018 — 引力波探测器镜面镀层发展综述 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
 | `tao2018.yaml` | U4Z95559 | Tao 2018 — 抗 100g 冲击振动不敏感腔设计 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
 | `mohle2013.yaml` | 8MNIBZEW | Möhle 2013 — 高稳定压电可调谐参考腔 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
-| `argence2012.yaml` | RP8Q44RZ | Argence 2012 — 空间应用超稳腔原型 | ✅ 符合v3.2（首次提取） |
-| `didier2018.yaml` | PHRXF4IL | Didier 2018 — 超紧凑 25mm 金字塔形参考腔 | ✅ 符合v3.2（首次提取） |
-| `sanjuan2019.yaml` | H3HYK5D3 | Sanjuan 2019 — BOOST 空间狭义相对论检验光学腔 | ✅ 符合v3.2（首次提取） |
-| `hafner2020.yaml` | X7XXKXDZ | Häfner 2020 — 可搬运 12cm 腔询问激光 3×10⁻¹⁶ | ✅ 符合v3.2（首次提取） |
-| `chen2014.yaml` | WTUHUAQ7 | Chen 2014 — STE-QUEST 紧凑可搬运超稳激光 | ✅ 符合v3.2（首次提取） |
-| `herbers2019.yaml` | WP8FMS5N | Herbers 2019 — 光钟频率倍频器相位噪声 | ✅ 符合v3.2（首次提取） |
-| `jin2018.yaml` | 6R3RCHPT | Jin 2018 — 30cm 腔 578nm 2×10⁻¹⁶ | ✅ 符合v3.2（首次提取） |
-| `jiang2011.yaml` | RAC23NZV | Jiang 2011 — 10⁻¹⁶ 腔稳激光 Yb 光钟 | ✅ 符合v3.2（首次提取） |
-| `li2018.yaml` | AFFU5KGB | Li 2018 — 30cm 腔 Sr 钟 10⁻¹⁶ | ✅ 符合v3.2（首次提取） |
-| `didier2019.yaml` | MIAVJSIK | Didier 2019 — 946nm 数字锁定+传递锁定 | ✅ 符合v3.2（首次提取） |
-| `chen2020.yaml` | Z37PT8RC | Chen 2020 — 10cm 立方双腔 6×10⁻¹⁶ | ✅ 符合v3.2（首次提取） |
-| `yan2018.yaml` | XWBUNX3P | Yan 2018 — 多腔频率平均超稳激光 | ✅ 符合v3.2（首次提取） |
-| `leibrandt2013.yaml` | WK9QLCGF | Leibrandt 2013 — SHB 光谱烧孔频率参考 | ✅ 符合v3.2（首次提取） |
+| `argence2012.yaml` | RP8Q44RZ | Argence 2012 — 空间应用超稳腔原型 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
+| `didier2018.yaml` | PHRXF4IL | Didier 2018 — 超紧凑 25mm 金字塔形参考腔 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
+| `sanjuan2019.yaml` | H3HYK5D3 | Sanjuan 2019 — BOOST 空间狭义相对论检验光学腔 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
+| `hafner2020.yaml` | X7XXKXDZ | Häfner 2020 — 可搬运 12cm 腔询问激光 3×10⁻¹⁶ | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
+| `chen2014.yaml` | WTUHUAQ7 | Chen 2014 — STE-QUEST 紧凑可搬运超稳激光 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
+| `herbers2019.yaml` | WP8FMS5N | Herbers 2019 — 光钟频率倍频器相位噪声 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
+| `jin2018.yaml` | 6R3RCHPT | Jin 2018 — 30cm 腔 578nm 2×10⁻¹⁶ | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
+| `jiang2011.yaml` | RAC23NZV | Jiang 2011 — 10⁻¹⁶ 腔稳激光 Yb 光钟 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
+| `li2018.yaml` | AFFU5KGB | Li 2018 — 30cm 腔 Sr 钟 10⁻¹⁶ | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
+| `didier2019.yaml` | MIAVJSIK | Didier 2019 — 946nm 数字锁定+传递锁定 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
+| `chen2020.yaml` | Z37PT8RC | Chen 2020 — 10cm 立方双腔 6×10⁻¹⁶ | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
+| `yan2018.yaml` | XWBUNX3P | Yan 2018 — 多腔频率平均超稳激光 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
+| `leibrandt2013.yaml` | WK9QLCGF | Leibrandt 2013 — SHB 光谱烧孔频率参考 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
 | `huang2023.yaml` | JYGVFJBN | Huang 2023 — 全光纤长期稳定度 1.1×10⁻¹⁴ | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
-| `huangjc2019.yaml` | F2GG2N6W | Huang 2019 — 全光纤 200mHz 线宽 | ✅ 符合v3.2（首次提取） |
-| `hu2015.yaml` | KH82PQJ2 | Hu 2015 — 超低加速度灵敏度光纤盘 | ✅ 符合v3.2（首次提取） |
-| `shi2021.yaml` | QLXRP462 | Shi 2021 — HCF 涂层热灵敏度 | ✅ 符合v3.2（首次提取） |
-| `zuba2023.yaml` | GIUQZ2EE | Zuba 2023 — HCF 耦合效率极限 | ✅ 符合v3.2（首次提取） |
-| `gao2025.yaml` | JAW66GYL | Gao 2025 — 循环干涉仪超低频噪声 | ✅ 符合v3.2（首次提取） |
-| `ding2025.yaml` | QGLVTMB7 | Ding 2025 — ULE 玻璃空心光纤 | ✅ 符合v3.2（首次提取） |
-| `shi2022.yaml` | UKBFZLXG | Shi 2022 — 温度不敏感光纤干涉仪 | ✅ 符合v3.2（首次提取） |
+| `huangjc2019.yaml` | F2GG2N6W | Huang 2019 — 全光纤 200mHz 线宽 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
+| `hu2015.yaml` | KH82PQJ2 | Hu 2015 — 超低加速度灵敏度光纤盘 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
+| `shi2021.yaml` | QLXRP462 | Shi 2021 — HCF 涂层热灵敏度 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
+| `zuba2023.yaml` | GIUQZ2EE | Zuba 2023 — HCF 耦合效率极限 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
+| `gao2025.yaml` | JAW66GYL | Gao 2025 — 循环干涉仪超低频噪声 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
+| `ding2025.yaml` | QGLVTMB7 | Ding 2025 — ULE 玻璃空心光纤 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
+| `shi2022.yaml` | UKBFZLXG | Shi 2022 — 温度不敏感光纤干涉仪 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
 | `grabielle2025.yaml` | XSMPRNT3 | Grabielle 2025 — FDL 锁定噪声 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
-| `tai2016.yaml` | FIJXUVZV | Tai 2016 — 超低 RAM EOM | ✅ 符合v3.2（首次提取） |
+| `tai2016.yaml` | FIJXUVZV | Tai 2016 — 超低 RAM EOM | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
 | `potnis2016.yaml` | WDGF2B36 | Potnis 2016 — PDH 光电探测器 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
 | `grote2016.yaml` | VM5MJ9B3 | Grote 2016 — GW 光电探测器 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
 | `nelson2008.yaml` | XAKCIXKT | Nelson 2008 — RIN 抑制 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
 | `gobron2017.yaml` | HKYLIW8U | Gobron 2017 — 色散外差 SHB | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
 | `dixneuf2020.yaml` | HJZ6BVYE | Dixneuf 2020 — 365W 低 RIN 激光 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
-| `thorpe2011.yaml` | Q2MRB267 | Thorpe 2011 — SHB 6×10⁻¹⁶ | ✅ 符合v3.2（首次提取） |
-| `cook2015.yaml` | KZJHGH3N | Cook 2015 — 稳态 SHB | ✅ 符合v3.2（首次提取） |
-| `konz2003.yaml` | MNIZVIMG | Könz 2003 — Eu:YSO 材料参数 | ✅ 符合v3.2（首次提取） |
+| `thorpe2011.yaml` | Q2MRB267 | Thorpe 2011 — SHB 6×10⁻¹⁶ | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
+| `cook2015.yaml` | KZJHGH3N | Cook 2015 — 稳态 SHB | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
+| `konz2003.yaml` | MNIZVIMG | Könz 2003 — Eu:YSO 材料参数 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
 | `galland2020.yaml` | MPWLNUIH | Galland 2020 — 双外差 SHB | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
-| `meiser2009.yaml` | WW9ESVMK | Meiser 2009 — 超辐射 mHz 激光 | ✅ 符合v3.2（首次提取） |
-| `loh2019.yaml` | UP2Q8F9Y | Loh 2019 — 布里渊激光 | ✅ 符合v3.2（首次提取） |
-| `li2019.yaml` | ELKHJ5GL | Li 2019 — 光纤陀螺热噪声 | ✅ 符合v3.2（首次提取） |
+| `meiser2009.yaml` | WW9ESVMK | Meiser 2009 — 超辐射 mHz 激光 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
+|| `loh2019.yaml` | UP2Q8F9Y | Loh 2019 — 布里渊激光 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
+| `li2019.yaml` | ELKHJ5GL | Li 2019 — 光纤陀螺热噪声 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
 | `kogelnik1966.yaml` | UQL6FYN7 | Kogelnik 1966 — 激光光束谐振腔 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
-| `braun1995.yaml` | LY9I8I9I | Braun 1995 — SHB 锁模（实验）| ✅ 符合v3.2（首次提取） |
-| `kartner1995.yaml` | 5XG8FTEE | Kärtner 1995 — SHB 锁模（理论）| ✅ 符合v3.2（首次提取） |
+| `braun1995.yaml` | LY9I8I9I | Braun 1995 — SHB 锁模（实验）| ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
+| `kartner1995.yaml` | 5XG8FTEE | Kärtner 1995 — SHB 锁模（理论）| ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
 | `aasi2013.yaml` | 8NUIA2K7 | Aasi 2013 — LIGO 压缩光 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
-| `adhikari2014.yaml` | FTXSM9QC | Adhikari 2014 — GW 探测综述 | ✅ 符合v3.2（首次提取） |
-| `olson2019.yaml` | CDX3DFQR | Olson 2019 — RB 干涉仪 <2×10⁻¹⁶ | ✅ 符合v3.2（首次提取） |
-| `huangjc2019b.yaml` | 5DCNFGX4 | Huang 2019b — 双缠绕抗振光纤盘 | ✅ 符合v3.2（首次提取） |
+| `adhikari2014.yaml` | FTXSM9QC | Adhikari 2014 — GW 探测综述 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
+| `olson2019.yaml` | CDX3DFQR | Olson 2019 — RB 干涉仪 <2×10⁻¹⁶ | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
+| `huangjc2019b.yaml` | 5DCNFGX4 | Huang 2019b — 双缠绕抗振光纤盘 | ✅ v4.1（补充principles/methods/metrics/relations推理链条） |
 | `fortier2026.yaml` | BWR7TEZ6 | Fortier 2026 — 光学原子钟综述（Optica）**[框架型]** | ✅ 符合v4.0（contribution_type:framework，定义 frequency-standards 专题（光学频率标准部分）顶层架构） |
 | `giunta2019.yaml` | KTHCQRJ2 | Giunta 2019 — 光学频率梳 20 年回顾**[框架型]** | ✅ 符合v4.0（contribution_type:framework，定义 optical-frequency-combs 专题顶层架构） |
 | `giunta2020.yaml` | UFWLAXMA | Giunta 2020 — 10⁻²⁰ 级宽带光学频率合成（Nature Photonics）**[技术型]** | ✅ 符合v4.0（contribution_type:technical，首篇技术论文） |

@@ -1,7 +1,7 @@
 # Li 2019 — 大型光纤陀螺仪热相位噪声
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "ELKHJ5GL"
@@ -38,7 +38,22 @@ principles:
     conditions: "光纤长度 >10 km 时热噪声显著"
     source_claim: "thermal phase noise cannot be overlooked for the giant IFOGs"
 
-methods: []
+methods:
+  - id: meth.giant_ifog_thermal_noise_analysis_l19
+    name: "大型光纤陀螺仪热相位噪声分析方法"
+    aliases: ["光纤热噪声测量方法", "IFOG热相位噪声分析"]
+    purpose: "分析和测量大型光纤陀螺仪中热相位噪声的影响和限制"
+    implementation:
+      - "理论推导热光效应和热膨胀引起的相位噪声模型"
+      - "实验验证30 km单模光纤线圈的热相位噪声"
+      - "分析高阶本征频率调制对漫步分量的抑制效果"
+      - "评估热噪声对探测带宽和灵敏度的限制"
+    key_parameters:
+      fiber_length: ">10 km (大型IFOG)"
+      noise_measurement_frequencies: "低频至100 Hz"
+    applicable_when: "分析大型光纤传感系统（如光纤陀螺仪、光纤延迟线稳频系统）的热噪声限制"
+    note: "与超稳激光光纤延迟线系统共享相同的热噪声物理机制"
+
 metrics: []
 
 relations:

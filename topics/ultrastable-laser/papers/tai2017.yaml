@@ -1,7 +1,7 @@
 # Tai 2017 — 可搬运 1555 nm 超稳激光 0.185 Hz 线宽
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-15
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "AHUZI4A7"
@@ -26,6 +26,16 @@ meta:
 # ═══════════════════════════════════════════════
 
 # 全部复用已有节点，不新增
+
+methods:
+  - id: meth.transportable_ule_cavity_lock_tai17
+    name: "可搬运 ULE 腔 PDH 锁频方法（Tai 2017）"
+    description: "面向可搬运光子微波产生系统的 ULE 腔 PDH 锁频实现"
+    core_principle: pri.pdh_heterodyne_detection
+    key_entity: ent.fp_cavity_system
+    reliability: established
+    verification_status: observed
+    source: {zotero_key: "AHUZI4A7", claim: "The laser is stabilized to a 10-cm ULE vertical cavity using the PDH locking technique"}
 
 metrics:
   - id: met.fractional_freq_instability_tai17

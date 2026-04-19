@@ -1,7 +1,7 @@
 # Ding 2025 — 超低膨胀玻璃空心光纤
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "QGLVTMB7"
@@ -52,7 +52,23 @@ principles:
       - "ULE HCF 的长期可靠性和批量制造一致性？"
       - "ULE HCF 能否用于长距离（km 级）延迟线？"
 
-methods: []
+methods:
+  - id: meth.ule_hcf_fabrication_ding25
+    name: "ULE玻璃空心光纤制造方法"
+    description: >
+      使用超低膨胀（ULE）玻璃材料制造空心光纤，结合堆叠拉制技术，
+      实现热延迟系数比传统光纤低三个数量级的突破性性能。
+      优化玻璃组成和加工参数以保持低损耗和机械强度。
+    applicable_when: "需要极端热稳定性的光纤延迟线应用，尤其是室温环境"
+    implementation_hints: >
+      选择合适的热膨胀系数ULE玻璃组成；
+      采用毛细管堆叠法构建反谐振空心结构；
+      控制拉制温度曲线以保持玻璃低膨胀特性。
+    relationships:
+      - type: based_on
+        target: pri.ule_hcf_thermal_stability
+      - type: implements
+        target: ent.ule_hollow_core_fiber_d25
 
 metrics: []
 

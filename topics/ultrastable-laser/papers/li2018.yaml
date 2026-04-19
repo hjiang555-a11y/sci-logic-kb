@@ -1,7 +1,7 @@
 # Li 2018 — 30 cm 腔改进 Sr 光钟 10⁻¹⁶ 稳定度
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "AFFU5KGB"
@@ -41,7 +41,21 @@ entities:
 
 principles: []
 
-methods: []
+methods:
+  - id: meth.high_finesse_cavity_pdh_sr_l18
+    name: "高精细度腔 PDH 锁频用于 Sr 光钟"
+    description: >
+      使用 30 cm ULE 高精细度腔（Finesse ~314,000，ringdown 测量），
+      水平放置于 Zerodur 基板 + 4 个硅球支撑，通过 PDH 锁频实现 10⁻¹⁶ 级稳定度。
+      该超稳激光用于 ⁸⁷Sr 光晶格钟，Rabi 跃迁线宽 1.8 Hz（500 ms 询问），
+      短期稳定度优于 3.2×10⁻¹⁶，平均至 1.8×10⁻¹⁵/√τ。
+    status: demonstrated
+    source_claim: >
+      "short-term frequency stability is better than 3.2×10⁻¹⁶ and averages down followed by 1.8×10⁻¹⁵/√τ"
+    implements: [meth.pdh_locking]
+    characterizes: [met.sr_clock_instability_l18]
+    used_with: [ent.ule_cavity_30cm_sr_l18]
+    bounded_by: [pri.brownian_thermal_noise_fdt]
 
 metrics:
   - id: met.sr_clock_instability_l18

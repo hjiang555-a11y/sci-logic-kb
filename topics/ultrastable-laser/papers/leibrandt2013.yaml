@@ -1,7 +1,7 @@
 # Leibrandt 2013 — Eu³⁺:Y₂SiO₅ 光谱烧孔频率参考
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "WK9QLCGF"
@@ -72,15 +72,33 @@ principles:
       - "频率漂移的物理机制是否可以进一步抑制？"
 
 methods:
-  - id: meth.spectral_hole_burning_stabilization
-    name: "光谱烧孔稳频方法"
-    type: frequency_stabilization
+  - id: meth.spectral_hole_burning_stabilization_l13
+    name: "光谱烧孔稳频方法（Leibrandt 2013）"
     status: demonstrated
-    description: >
-      将激光频率锁定到 Eu³⁺:Y₂SiO₅ 晶体中烧制的光谱孔，
-      使用调频光谱（FMS）或相似的色散/吸收信号提取误差信号。
-    source: {zotero_key: "WK9QLCGF"}
-    note: "与 meth.pdh_locking 竞争的替代稳频方案"
+    applies_to: ent.shb_eu_yso_reference_l13
+    steps_summary: >
+      1. 在Eu³⁺:Y₂SiO₅晶体中通过窄线宽激光烧制光谱孔
+      2. 使用调频光谱（FMS）技术探测光谱孔的色散/吸收信号
+      3. 提取误差信号并将激光频率锁定到光谱孔中心
+      4. 监测频率漂移并进行周期性校准
+    required_hardware:
+      - ent.shb_eu_yso_reference_l13
+      - ent.narrow_linewidth_laser
+      - ent.low_temperature_cryostat
+    advantages:
+      - "频率参考锚定在原子跃迁上，避免FP腔的机械热噪声限制"
+      - "对外部振动和温度扰动敏感度极低"
+      - "长期频率漂移率低（5×10⁻¹⁸/s）"
+    disadvantages:
+      - "需要低温环境（4 K），增加系统复杂性"
+      - "光谱孔需要周期性重新烧制，存在频率漂移"
+      - "短期稳定度（1×10⁻¹⁵/√τ）目前低于最佳FP腔"
+    conditions:
+      - "需要低温恒温器（<10 K）"
+      - "需要高质量的Eu³⁺:Y₂SiO₅晶体"
+      - "需要窄线宽激光器"
+    source_claim: >
+      "optical frequency reference based on spectral hole burning in Eu³⁺:Y₂SiO₅, using frequency-modulation spectroscopy to lock the laser to the spectral hole"
 
 metrics:
   - id: met.shb_relative_stability_l13

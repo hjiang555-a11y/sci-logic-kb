@@ -1,7 +1,7 @@
 # Huang (Junchao) 2019b — 抗振光纤盘（双缠绕设计）
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "5DCNFGX4"
@@ -38,9 +38,38 @@ entities:
       design: "double-winding symmetric structure"
     note: "PART-OF ent.fiber_interferometer。改进 ent.ultralow_accel_fiber_spool_h15。"
 
-principles: []
+principles:
+  - id: pri.double_winding_vibration_cancellation_hjc19
+    name: "双缠绕对称抵消振动灵敏度原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      双缠绕对称光纤盘设计通过上下两层的对称缠绕结构，
+      使振动引起的表面面积变化在上下半部分相互抵消，
+      从而大幅降低全方向加速度灵敏度。
+      FEM优化几何参数以实现最佳抵消效果。
+    domain: "光纤传感 / 振动抑制"
+    key_insight: "对称缠绕结构通过几何抵消降低振动灵敏度"
+    conditions: "需要钛合金等合适材料，精确的FEM优化，对称缠绕工艺"
+    source_claim: "double-winding symmetric structure cancels vibration-induced surface area changes"
 
-methods: []
+methods:
+  - id: meth.double_winding_fiber_spool_design_hjc19
+    name: "双缠绕抗振光纤盘设计方法"
+    aliases: ["对称缠绕光纤盘设计", "超低振动灵敏度光纤盘设计"]
+    purpose: "设计制造具有超低加速度灵敏度的双缠绕对称光纤盘"
+    implementation:
+      - "使用钛合金（TC4）材料制造光纤盘基座"
+      - "采用上下两层对称缠绕结构"
+      - "FEM优化几何参数以最大化振动抵消效果"
+      - "实现全方向超低加速度灵敏度（轴向8×10⁻¹¹/g，径向3×10⁻¹¹/g）"
+    key_parameters:
+      material: "TC4 titanium alloy"
+      axial_sensitivity: "8×10⁻¹¹/g"
+      radial_sensitivity: "3×10⁻¹¹/g"
+      winding_structure: "double-winding symmetric"
+    applicable_when: "需要超低振动灵敏度的光纤延迟线稳频系统"
+    note: "改进 ent.ultralow_accel_fiber_spool_h15 设计，对径向和轴向同时优化"
 
 metrics: []
 

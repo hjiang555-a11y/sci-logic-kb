@@ -1,7 +1,7 @@
 # Tai 2016 — 超低 RAM 布儒斯特角 EOM
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "FIJXUVZV"
@@ -51,7 +51,25 @@ principles:
     conditions: "EOM 晶体需要按布儒斯特角精密切割和抛光"
     source_claim: "a simple passive approach employing an EOM cut at Brewster's angle... RAM of a few parts per million"
 
-methods: []
+methods:
+  - id: meth.brewster_eom_design_t16
+    name: "布儒斯特角 EOM 设计与实现方法"
+    type: design_and_fabrication
+    purpose: >
+      设计并制造布儒斯特角切割的电光调制器，被动实现 ppm 级残余振幅调制（RAM）
+    steps:
+      - "计算所需波长下 LiNbO₃ 晶体的布儒斯特角"
+      - "按布儒斯特角精密切割和抛光晶体"
+      - "在晶体表面镀抗反射膜"
+      - "设计电极结构以提供相位调制"
+      - "将晶体封装到温度控制外壳中"
+    key_parameters:
+      ram_level: "few ppm"
+      approach: "passive (Brewster-angle cut)"
+    connects:
+      - ent.brewster_eom_t16
+      - pri.brewster_angle_ram_suppression
+    source_claim: "a simple passive approach employing an EOM cut at Brewster's angle... RAM of a few parts per million"
 
 metrics: []
 

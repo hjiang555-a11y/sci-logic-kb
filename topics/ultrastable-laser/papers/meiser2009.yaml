@@ -1,7 +1,7 @@
 # Meiser 2009 — 毫赫兹线宽超辐射激光理论
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "WW9ESVMK"
@@ -59,7 +59,29 @@ principles:
       - "实验实现中原子数波动和泵浦噪声如何限制实际线宽？"
       - "能否达到理论预测的 mHz 线宽？"
 
-methods: []
+methods:
+  - id: meth.superradiant_laser_design_m09
+    name: "超辐射激光设计方法（Meiser 2009）"
+    type: theoretical_design
+    purpose: >
+      设计基于碱土金属原子集体超辐射的毫赫兹线宽激光源，
+      通过将原子相位信息存储在原子集体而非腔场中，
+      绕过传统FP腔的热噪声限制
+    steps:
+      - "将大量碱土金属原子（如Sr、Ca）冷却并囚禁在光晶格中"
+      - "将原子泵浦到钟跃迁激发态"
+      - "将原子耦合到高Q光学腔模"
+      - "利用集体超辐射效应产生相位相干的激光输出"
+      - "使用输出激光注入锁定从激光以增强功率"
+    key_parameters:
+      predicted_linewidth: "mHz range"
+      output_power: "~10⁻¹² W"
+      atoms_number: "large ensemble"
+      cavity_q: "high"
+    connects:
+      - ent.superradiant_laser_m09
+      - pri.superradiant_emission_narrow_linewidth
+    source_claim: "optical radiation has an extremely narrow linewidth in the mHz range, even smaller than that of the clock transition itself due to collective effects"
 metrics: []
 
 relations:

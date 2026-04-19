@@ -1,7 +1,7 @@
 # Chen 2020 — 10 cm 立方腔 6×10⁻¹⁶ 可搬运超稳激光
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "Z37PT8RC"
@@ -41,7 +41,29 @@ entities:
 
 principles: []
 
-methods: []
+methods:
+  - id: meth.cubic_dual_cavity_rigid_mount_c20
+    name: "立方双腔刚性安装方法"
+    status: demonstrated
+    applies_to: ent.fp_cavity_system
+    steps_summary: >
+      1. 使用10cm立方ULE间隔物，设计两对正交FP腔共享同一间隔物
+      2. 采用四点硅球支撑将间隔物刚性安装于铝笼中
+      3. 将激光锁定到立方双腔系统，实现低振动灵敏度可搬运超稳激光
+    required_hardware:
+      - ent.cubic_dual_cavity_c20
+    advantages:
+      - "立方几何提供各向同性机械刚度，降低振动灵敏度"
+      - "双腔共享间隔物减小系统体积，提高可搬运性"
+      - "四点硅球刚性支撑提供稳定的机械安装"
+    disadvantages:
+      - "热时间常数较长（58小时），温度稳定需要时间"
+      - "立方加工比圆柱间隔物更复杂"
+    conditions:
+      - "需要真空环境（5×10⁻⁸ Torr）"
+      - "需要温度稳定性控制"
+    source_claim: >
+      "10-cm-long Fabry-Pérot cavities on a cubic spacer, rigidly mounted via four silicon balls in an aluminum cage, providing transportable ultrastable laser with 6×10⁻¹⁶ instability"
 
 metrics:
   - id: met.fractional_freq_instability_c20

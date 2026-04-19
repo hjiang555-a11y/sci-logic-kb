@@ -1,7 +1,7 @@
 # Yan 2018 — 多腔稳定合成超稳激光
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "XWBUNX3P"
@@ -26,8 +26,31 @@ entities: []
 principles: []
   # 复用 pri.optical_frequency_averaging（定义于 lee2026.yaml）
 
-methods: []
-  # 复用 meth.multi_cavity_averaging（已知方法）
+methods:
+  - id: meth.multi_cavity_frequency_averaging_y18
+    name: "多腔频率平均方法（Yan 2018）"
+    status: demonstrated
+    applies_to: ent.fp_cavity_system
+    steps_summary: >
+      1. 使用两台独立的10cm ULE FP腔分别锁定两台激光器
+      2. 通过声光调制器（AOM）将两台激光器的频率实时合成
+      3. 合成激光的频率为两腔频率的平均值，等效降低热噪声√2倍
+    required_hardware:
+      - ent.fp_cavity_system
+      - ent.ultrastable_laser
+      - ent.aom_frequency_shifter
+    advantages:
+      - "通过多腔平均降低热噪声极限，理论改善因子为√n（n为腔数）"
+      - "不改变单个腔的设计，通过合成提升系统性能"
+      - "实验验证了光学频率平均原理的可行性"
+    disadvantages:
+      - "需要多个独立的参考腔系统，增加系统复杂性和成本"
+      - "合成过程引入额外的相位噪声和漂移"
+    conditions:
+      - "需要多个独立的超稳激光系统"
+      - "需要精密的频率合成和相位控制"
+    source_claim: >
+      "averaging the lengths of these cavities... the equivalent beam size is then enlarged n times, and the thermal-noise-limited frequency instability is reduced by a factor of √n"
 
 metrics:
   - id: met.synthesized_laser_instability_y18

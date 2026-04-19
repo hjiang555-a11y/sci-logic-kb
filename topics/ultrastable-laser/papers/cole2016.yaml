@@ -1,7 +1,7 @@
 # Cole 2016 — 高性能近红外/中红外晶体镀层
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-15
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "4GUXEM2C"
@@ -26,6 +26,14 @@ meta:
 
 # 不重复定义 ent.algaas_crystalline_mirror_c13（cole2013.yaml）
 # 本文为已有晶体镀层节点增加工程性能指标
+
+methods:
+  - id: meth.crystalline_coating_engineering_cole16
+    name: "晶体镀层工程优化方法（Cole 2016）"
+    description: >-
+      AlGaAs晶体镀层的工程优化流程，包括基底转移技术、退火工艺和光学损耗控制，
+      实现近红外超额损耗降至3 ppm，中红外波段性能表征。
+    note: "工程扩展Cole 2013的晶体镀层技术，实现与IBS镀层可比的光学性能"
 
 metrics:
   - id: met.algaas_optical_loss_cole16

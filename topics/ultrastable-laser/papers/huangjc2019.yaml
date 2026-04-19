@@ -1,7 +1,7 @@
 # Huang (Junchao) 2019 — 全光纤 200 mHz 线宽激光
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "F2GG2N6W"
@@ -24,7 +24,34 @@ entities: []
 
 principles: []
 
-methods: []
+methods:
+  - id: meth.all_fiber_fdl_stabilization_hjc19
+    name: "全光纤延迟线稳频方法（Huang JC 2019）"
+    status: demonstrated
+    applies_to: ent.fiber_interferometer
+    steps_summary: >
+      1. 使用5km长光纤延迟线（FDL）作为频率参考
+      2. 采用超低加速度灵敏度光纤盘（~10⁻¹²/g）降低振动噪声
+      3. 将1.55μm掺铒光纤激光器锁定到FDL的共振频率
+      4. 在真空环境中运行以减少热波动和声学噪声
+    required_hardware:
+      - ent.fiber_interferometer
+      - ent.erbium_doped_fiber_laser
+      - ent.ultralow_accel_fiber_spool
+    advantages:
+      - "全光纤结构，无需自由空间光学元件，系统紧凑可靠"
+      - "实现200mHz线宽，是FDL稳频激光的最窄线宽记录"
+      - "超低加速度灵敏度光纤盘有效抑制振动噪声"
+    disadvantages:
+      - "光纤延迟线受热噪声限制，短期稳定度不如FP腔"
+      - "长光纤对环境温度敏感，需要精密温控"
+      - "分数频率稳定度（3×10⁻¹⁵ @ 1-10s）低于最佳FP腔系统"
+    conditions:
+      - "需要真空环境减少声学噪声"
+      - "需要超低加速度灵敏度光纤盘（~10⁻¹²/g）"
+      - "需要精密温度稳定性控制"
+    source_claim: >
+      "all-fiber-based laser stabilized to a 5-km fiber delay line, achieving 0.2 Hz linewidth - the narrowest linewidth of an FDL-stabilized laser observed to date"
 
 metrics:
   - id: met.fiber_laser_linewidth_hjc19

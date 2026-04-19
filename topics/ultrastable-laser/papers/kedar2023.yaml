@@ -1,7 +1,7 @@
 # Kedar 2023 — 低温硅腔晶体镀层频率稳定度与双折射噪声
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-15
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "8YK6EH22"
@@ -29,6 +29,18 @@ meta:
 # 注意：根据专家意见，双折射噪声不作为独立原理节点（后续证明并非如此命名的机制），
 # 双偏振消除方法也不作为高级独立节点（属于晶体镀层腔专有问题实例）。
 # 相关信息记录在本文 meta.note 和指标条件中。
+
+methods:
+  - id: meth.dual_polarization_suppression_kedar23
+    name: "双偏振同时探测抑制偏振反相关噪声"
+    description: >
+      同时探测两个正交偏振模式的误差信号，实时相减抑制偏振反相关噪声。
+      用于消除 AlGaAs 晶体镀层腔中观测到的与偏振模式反相关的噪声。
+    conditions: "仅对具有偏振相关噪声的晶体镀层腔有效"
+    applicability_domain: "AlGaAs/GaAs 晶体镀层低温硅腔"
+    note: >
+      本文报道的实验技术，针对 Kedar 2023 中观测到的所谓"双折射噪声"。
+      后续研究表明该噪声并非真正的双折射效应，命名存疑。
 
 metrics:
   - id: met.fractional_freq_instability_kedar23

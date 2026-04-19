@@ -1,7 +1,7 @@
 # Numata 2004 — 刚性 FP 腔热噪声极限
 # 提取者：Claude（AI草稿，待专家确认）
 # 提取日期：2026-04-14
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "VDXBPUQB"
@@ -198,6 +198,14 @@ principles:
         低温 Si 腔中底物 Q 提升约 1000×，镀层变为唯一主导（Matei 2017 确认）。
         原独立节点 pri.mirror_substrate_noise_dominance、pri.beam_radius_scaling、
         pri.low_loss_substrate_improvement 已合并为 condition_variables 和此预算表。
+
+methods:
+  - id: meth.thermal_noise_analysis_fp_cavity_num04
+    name: "FP腔热噪声分析方法（Numata 2004）"
+    description: >-
+      刚性FP腔热噪声系统分析方法，包括各部件贡献分解、涨落耗散定理应用、
+      噪声谱形建模和参数灵敏度分析。
+    note: "奠基性的热噪声理论分析与实验验证方法"
 
 metrics:
   - id: met.thermal_noise_freq_psd

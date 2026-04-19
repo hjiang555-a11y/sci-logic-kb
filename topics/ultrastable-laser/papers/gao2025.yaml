@@ -1,7 +1,7 @@
 # Gao 2025 — 全光纤循环干涉仪超低频率噪声激光
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "JAW66GYL"
@@ -50,7 +50,25 @@ principles:
     conditions: "需要优化耦合系数和环路增益以最大化循环次数"
     source_claim: "increasing the frequency-discriminator sensitivity by more than 1 order of magnitude"
 
-methods: []
+methods:
+  - id: meth.recirculating_interferometer_implementation_gao25
+    name: "全光纤循环干涉仪实现方法"
+    description: >
+      构建全光纤循环干涉仪系统：利用光纤耦合器和掺铒光纤放大器（EDFA）构成循环环路，
+      优化耦合系数和环路增益以最大化循环次数，提高频率鉴频灵敏度。
+      100米物理延迟线实现>10倍灵敏度提升。
+    applicable_when: "需要高灵敏度频率鉴频但受限于光纤长度或系统体积"
+    implementation_hints: >
+      使用低损耗光纤耦合器控制耦合系数（典型值~10%）；
+      EDFA补偿环路损耗，维持接近单位净增益；
+      监测多阶拍频信号，优化灵敏度提升。
+    relationships:
+      - type: based_on
+        target: pri.recirculating_interferometer_sensitivity
+      - type: implements
+        target: ent.recirculating_fiber_interferometer_g25
+      - type: characterizes
+        target: met.freq_noise_psd_ri_g25
 
 metrics:
   - id: met.freq_noise_psd_ri_g25

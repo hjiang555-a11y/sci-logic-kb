@@ -1,7 +1,7 @@
 # Didier 2019 — 946 nm Nd:YAG 数字锁定超稳激光
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "MIAVJSIK"
@@ -57,7 +57,20 @@ principles:
       "we transfer the stability of a 1542 nm laser stabilized to a cryogenic silicon cavity
       exhibiting a fractional frequency instability of 4×10⁻¹⁷ at 1 s to the laser at 946 nm"
 
-methods: []
+methods:
+  - id: meth.digital_pdh_transfer_lock_d19
+    name: "数字 PDH 锁频 + 光频梳传递锁定"
+    description: >
+      946 nm Nd:YAG 激光采用腔内 KTP 晶体同时作为 EOM 和双折射滤波器，
+      FPGA 数字伺服实现 400 kHz 锁频带宽，预稳定至 30 cm ULE 室温腔达 1.1×10⁻¹⁶ @ 1 s。
+      再通过光学频率梳传递锁定到 1542 nm 低温硅腔（4×10⁻¹⁷），
+      实现 <10⁻¹⁶ 不稳定度，用于 In⁺ 多离子钟询问。
+    status: demonstrated
+    source_claim: >
+      "946-nm Nd:YAG digital-locked laser at 1.1×10⁻¹⁶ in 1 s and transfer-locked to a cryogenic silicon cavity"
+    implements: [meth.pdh_locking, pri.transfer_lock_via_frequency_comb]
+    characterizes: [met.fractional_freq_instability_d19]
+    used_with: [ent.ndyag_946nm_laser_d19]
 
 metrics:
   - id: met.fractional_freq_instability_d19

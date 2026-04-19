@@ -1,7 +1,7 @@
 # Krtner 1995 — 增强空间烧孔的连续锁模固态激光（理论）
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "5XG8FTEE"
@@ -21,7 +21,32 @@ meta:
     与超稳激光主题关系较远。
 
 entities: []
-principles: []
-methods: []
+principles:
+  - id: pri.enhanced_shb_dynamics_theory_k95
+    name: "增强空间烧孔动力学理论模型"
+    tier: foundational
+    verification_status: observed
+    statement: >
+      端泵浦固态激光器中强空间烧孔的动力学理论模型，模间距由增益介质长度决定。
+      空间烧孔增强增益带宽平坦化，从而影响锁模激光脉冲特性。
+    domain: "锁模激光理论"
+    key_insight: "增益介质长度决定模间距，强空间烧孔改变激光动力学"
+    conditions: "端泵浦固态激光器，存在强空间烧孔效应"
+    source_claim: "mode spacing is determined by the length of the gain medium"
+
+methods:
+  - id: meth.enhanced_shb_numerical_analysis_k95
+    name: "增强空间烧孔数值分析方法"
+    aliases: ["空间烧孔动力学数值模拟", "SHB理论分析方法"]
+    purpose: "数值分析端泵浦固态激光器中强空间烧孔的动力学特性"
+    implementation:
+      - "建立空间烧孔动力学理论框架"
+      - "数值模拟增益介质长度对模间距的影响"
+      - "分析强空间烧孔对锁模激光性能的影响"
+    key_parameters:
+      gain_medium_length: "决定模间距的关键参数"
+      pump_configuration: "端泵浦"
+    applicable_when: "需要理论分析增强空间烧孔对锁模激光器性能的影响"
+    note: "Braun 1995实验部分的理论配套"
 metrics: []
 relations: []

@@ -1,7 +1,7 @@
 # Webster 2008 — 热噪声极限光学腔
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-15
-# Schema版本：v3.2
+# Schema版本：v4.1
 # ⚠ 年份注意：QUEUE.md 标 "Webster 2003?"，PDF 文件名含 webster2004，实际发表 2008
 
 meta:
@@ -28,6 +28,16 @@ meta:
 # ═══════════════════════════════════════════════
 
 # 不新增实体节点——本文使用的是标准 10 cm ULE 腔，复用 ent.fp_cavity_system
+
+methods:
+  - id: meth.vibration_insensitive_cavity_lock_w08
+    name: "振动不敏感 ULE 腔 PDH 锁频方法（Webster 2008）"
+    description: "通过振动不敏感设计和温度稳定实现热噪声极限的 ULE 腔 PDH 锁频"
+    core_principle: pri.pdh_heterodyne_detection
+    key_entity: ent.fp_cavity_system
+    reliability: established
+    verification_status: observed
+    source: {zotero_key: "VU2V2PTX", claim: "The laser is stabilized to a vibration-insensitive ULE cavity using PDH locking"}
 
 metrics:
   - id: met.fractional_freq_instability_w08
