@@ -295,4 +295,4 @@ relations:
         expected_gain: "使用超稳激光作为光频参考 + 光相位追踪，达到 10⁻²⁰"
         status: demonstrated
         source: {zotero_key: "UFWLAXMA", claim: "real-time optical phase tracking with ultra-low-noise frequency combs"}
-        note: "Giunta 2020 已实现，见 giunta2020.yaml"
+        note: "跨文件引用：meth.wideband_optical_frequency_synthesis 定义于 topics/optical-frequency-combs/papers/giunta2020.yaml（Giunta 2020 Nat Photon，zotero_key UFWLAXMA）。本论文（2000 年）受限于本地 Rb 微波本振，该突破由 Giunta 2020 用超稳激光 + 光相位追踪实现。"

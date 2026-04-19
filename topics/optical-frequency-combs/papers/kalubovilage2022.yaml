@@ -150,10 +150,11 @@ relations:
     confidence: established
     source: {zotero_key: "3VF89TBF"}
     breakthrough_paths:
-      - direction: pri.photodetection_shot_noise_limit
-        expected_gain: "提高 P_avg 或改善探测器量子效率进一步降低本底"
+      - direction: meth.monolithic_free_running_photonic_microwave
+        expected_gain: "提高光平均功率 P_avg 或改善光电探测器量子效率降低散粒噪声本底"
         status: proposed
         source: {zotero_key: "3VF89TBF"}
+        note: '通过工程方法提高 P_avg 或 η 可在"散粒噪声 ∝ 1/P_avg"关系下进一步压低本底'
 
   - id: rel.KB22_04
     subject: ent.monolithic_modelocked_laser_comb_k22

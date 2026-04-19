@@ -160,3 +160,4 @@ relations:
         expected_gain: "通过调谐基频中心波长覆盖 229mTh 不确定度全部区间"
         status: demonstrated
         source: {zotero_key: "25EY6V8L"}
+        note: 'direction 指向本文新提出的方法节点（meth.*），对应于"在限制内绕过"的工程突破'
