@@ -163,12 +163,12 @@ relations:
 
   - id: rel.D14_04
     subject: ent.silica_microrod_comb_d14
-    predicate: BOUNDED-BY
+    predicate: CONDITIONED-BY
     object: pri.microresonator_anomalous_dispersion
     source:
       claim: "the dispersion dictates that the parametric gain is maximized for modes that are not adjacent to the pump"
       section: "Experimental setup"
-    note: "跨文件引用，pri.microresonator_anomalous_dispersion 定义于 kippenberg2011.yaml"
+    note: "跨文件引用，pri.microresonator_anomalous_dispersion 定义于 kippenberg2011.yaml；反常色散是使能条件而非性能限制"
 
   - id: rel.D14_05
     subject: pri.nondeterministic_phase_microcomb

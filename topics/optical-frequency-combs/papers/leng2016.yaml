@@ -208,6 +208,6 @@ open_questions:
 
 cross_topic_interfaces:
   - from_topic: "optical-frequency-combs"
-    to_topic: "time-frequency-transfer"
+    to_topic: "frequency-standards"
     interface_type: "enables"
-    description: "光频梳作为 RF 信号的光学载体，通过光纤链路传输微波频率参考"
+    description: "光频梳作为 RF 信号的光学载体，通过光纤链路传输微波频率参考（时频传递是频率标准应用的一部分）"

@@ -331,13 +331,13 @@ breakthrough_paths:
       claim: "mode interactions are very useful for comb generation in the normal dispersion region"
       section: "Section 6.2.1"
 
-  - direction: ent.filter_driven_fwm_laser
+  - direction: pri.filter_driven_fwm_oscillation
     expected_gain: "无需外部窄线宽 CW 泵浦的微梳产生——降低系统复杂度和成本"
     status: demonstrated
     source:
       claim: "alternative techniques... filter-driven four-wave mixing"
       section: "Conclusions (Section 9)"
-    note: "FD-FWM 激光器绕过了 DKS 产生中的热不稳定性挑战"
+    note: "FD-FWM 激光器绕过了 DKS 产生中的热不稳定性挑战；pri.filter_driven_fwm_oscillation 为 FD-FWM 的工作原理"
 
 # ═══════════════════════════════════════════════
 #  OPEN QUESTIONS & CONTESTED CLAIMS

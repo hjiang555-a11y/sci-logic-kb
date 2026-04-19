@@ -179,7 +179,11 @@ relations:
     source:
       claim: "OSCAT, which shares a similar self-delayed construction, acquires interferograms at the sweeping speed"
       section: "Introduction"
-    note: "PHIRE 比 OSCAT 快 ~4 个量级，且保持完整分辨率"
+    note: >
+      PHIRE 比 OSCAT 快 ~4 个量级，且保持完整分辨率。
+      meth.oscat_dual_comb = OSCAT (Optical Scanning Coherence Autocorrelation Tomography)，
+      通过连续扫描重频实现单梳双梳干涉（Hochrein 2010, Yang 2013, Boudreau 2014）。
+      此处为首次引用，暂不单独建立完整节点。
 
 breakthrough_paths:
   - direction: meth.phire_dual_comb

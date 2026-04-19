@@ -71,7 +71,7 @@ principles:
       噪声抵消技术可将传递稳定度改善 ~10 倍至 ~2×10⁻¹⁸/1s。
     conditions: "SCG 在反常色散 HNLF 中产生，输入脉冲能量足够"
     invalidated_when:
-      - "SCG 完全在 SPM 主导的相干区域（N_soliton < 10）——量子噪声放大被抑制"
+      - "SCG 完全在 SPM 主导的相干区域（孤子阶数 N_soliton < 10，定义为 N = √(γP₀T₀²/|β₂|)）——量子噪声放大被抑制"
       - "不使用 SCG——直接锁定梳的自然带宽内的频率"
     source_claim: >
       "Additional noise arises from fiber amplifiers, nonlinear fibers and even simple

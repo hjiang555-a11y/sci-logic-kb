@@ -212,12 +212,13 @@ breakthrough_paths:
       section: "Results"
     note: "使 PECVD SiN 首次达到可用于非线性光子学的损耗水平，并保持 CMOS 后端兼容性"
 
-  - direction: meth.cmp_surface_polishing
+  - direction: meth.cmp_surface_polishing_c18
     expected_gain: "进一步降低散射损耗，提升 Q 因子（可能达到 LPCVD SiN 的水平 ~10⁷）"
     status: proposed
     source:
       claim: "improvements to the quality factor could be realized by chemical-mechanical polishing"
       section: "Results"
+    note: "meth.cmp_surface_polishing_c18 = 化学机械抛光（CMP）方法，用于降低波导表面粗糙度散射损耗；本文提出但未实施"
 
 open_questions:
   - "SiN:D 平台能否通过 CMP 和刻蚀优化达到 Q > 10⁷？"
