@@ -61,6 +61,7 @@ relations:
     dominated_by: null
     verification_status: observed
     temporal_role: validates
+    breakthrough_paths: []
     note: "跨文件引用 numata2004.yaml; 可搬运系统也达到了标准热噪声极限"
 
   - id: rel.Tai02

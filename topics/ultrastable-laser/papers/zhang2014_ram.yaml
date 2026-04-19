@@ -111,6 +111,7 @@ relations:
     regime: "RAM未被充分消除时"
     verification_status: observed
     temporal_role: proposes
+    breakthrough_paths: []
 
   - id: rel.Z14_02
     subject: meth.pdh_locking
@@ -152,3 +153,4 @@ relations:
     dominated_by: pri.brownian_thermal_noise_fdt
     regime: "RAM充分抑制后，热噪声重新成为主导"
     verification_status: observed
+    breakthrough_paths: []

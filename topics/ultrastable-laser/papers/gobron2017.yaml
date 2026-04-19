@@ -46,7 +46,34 @@ methods:
       外差拍频信号提供频率误差信号。
     source: {zotero_key: "HKYLIW8U"}
 
-metrics: []
+metrics:
+  - id: met.frequency_stability_g17
+    name: "频率稳定度（Gobron 2017）"
+    quantity: "frequency_stability"
+    unit: ""
+    demonstrated_value: "与标准FMS方法相当或更好"
+    conditions: "光谱烧孔稳频，Eu:YSO晶体，1.6 K"
+    measurement_method: "艾伦方差测量，对比传统调频光谱（FMS）方法"
+    significance: "验证色散外差方法在性能上至少与传统方法相当。"
+    source_claim: {zotero_key: "HKYLIW8U", claim: "performance similar to or better than standard FMS"}
+  - id: met.snr_improvement_g17
+    name: "信噪比提升（Gobron 2017）"
+    quantity: "signal_to_noise_ratio_improvement"
+    unit: "dB"
+    demonstrated_value: "具体数值未给出，但理论上更优"
+    conditions: "光谱烧孔稳频，避免烧孔功率引起的光谱畸变"
+    measurement_method: "外差信号与直接探测信号对比"
+    significance: "外差方案提供更干净的SHB误差信号，信噪比更高。"
+    source_claim: {zotero_key: "HKYLIW8U", claim: "higher SNR than FMS, cleaner error signal"}
+  - id: met.spectral_distortion_immunity_g17
+    name: "光谱畸变免疫性（Gobron 2017）"
+    quantity: "immunity_to_spectral_distortion"
+    unit: ""
+    demonstrated_value: "不受烧孔功率引起的畸变影响"
+    conditions: "高烧孔功率下"
+    measurement_method: "对比FMS方法在不同烧孔功率下的信号质量"
+    significance: "外差方法对烧孔功率引起的光谱畸变不敏感。"
+    source_claim: {zotero_key: "HKYLIW8U", claim: "immune to spectral distortion caused by hole‑burning power"}
 
 relations:
   - id: rel.GO01
@@ -56,3 +83,31 @@ relations:
     confidence: established
     source: {zotero_key: "HKYLIW8U", claim: "frequency-locking a laser to a spectral hole"}
     note: "跨文件引用，ent.shb_eu_yso_reference_l13 定义于 leibrandt2013.yaml"
+  - id: rel.GO02
+    subject: meth.dispersive_heterodyne_shb_locking
+    predicate: IMPLEMENTS
+    object: pri.dispersive_heterodyne_shb
+    confidence: established
+    source: {zotero_key: "HKYLIW8U", claim: "novel technique based on heterodyne beat-note"}
+    note: "色散外差SHB稳频方法实现了该原理。"
+  - id: rel.GO03
+    subject: met.frequency_stability_g17
+    predicate: CHARACTERIZES
+    object: meth.dispersive_heterodyne_shb_locking
+    confidence: established
+    source: {zotero_key: "HKYLIW8U", claim: "performance similar to or better than standard FMS"}
+    note: "频率稳定度表征该方法的稳频性能。"
+  - id: rel.GO04
+    subject: met.snr_improvement_g17
+    predicate: CHARACTERIZES
+    object: meth.dispersive_heterodyne_shb_locking
+    confidence: established
+    source: {zotero_key: "HKYLIW8U", claim: "higher SNR than FMS, cleaner error signal"}
+    note: "信噪比提升是该方法的优势之一。"
+  - id: rel.GO05
+    subject: met.spectral_distortion_immunity_g17
+    predicate: CHARACTERIZES
+    object: meth.dispersive_heterodyne_shb_locking
+    confidence: established
+    source: {zotero_key: "HKYLIW8U", claim: "immune to spectral distortion caused by hole‑burning power"}
+    note: "对光谱畸变的免疫性是该方法的独特优势。"

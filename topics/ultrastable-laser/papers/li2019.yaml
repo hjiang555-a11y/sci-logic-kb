@@ -51,3 +51,4 @@ relations:
     is_system_limit: true
     regime: fundamental
     note: "跨文件引用，ent.fiber_interferometer 定义于 jiang2010.yaml。热相位噪声机制通用。"
+    breakthrough_paths: []

@@ -1,7 +1,7 @@
 # Tao 2018 — 抗 100g 冲击的振动不敏感参考腔设计
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "U4Z95559"
@@ -81,8 +81,28 @@ principles:
       the vibration sensitivities of the cavity in three orthogonal directions were measured to be
       0.8×10⁻¹⁰/g, 2.5×10⁻¹⁰/g and 1.5×10⁻¹⁰/g"
 
-methods: []
-  # 复用 meth.pdh_locking（drever1983.yaml）
+methods:
+  - id: meth.multi_point_cavity_mounting_t18
+    name: "多点对称夹持腔体安装方法"
+    description: >
+      通过12个细柱在腔体三个正交对称面上进行多点对称夹持的安装方法。
+      每个方向4个夹持点，通过Viton球缓冲提供弹性支撑，限制腔体六自由度运动。
+      夹持力通过螺丝精确控制，平衡机械鲁棒性与腔长稳定性。
+      该方法在有限元分析(FEA)优化后进行实验验证。
+    inputs:
+      - "方形截面ULE腔体"
+      - "7075铝合金支撑框架"
+      - "Viton缓冲球"
+      - "精密螺丝和夹持柱"
+    outputs:
+      - "抗冲击>100g的腔体安装"
+      - "低振动灵敏度（<3×10⁻¹⁰/g）"
+      - "稳定的腔长参考"
+    verification_status: observed
+    evidence: "Fig. 1: CAD design of the cavity mounting; Fig. 3: FEA simulation results"
+    limitations:
+      - "夹持力控制需要经验，过紧会导致腔长永久变形"
+      - "Viton缓冲在极端温度下性能可能变化"
 
 metrics:
   - id: met.acceleration_sensitivity_t18
@@ -165,6 +185,7 @@ relations:
     regime: short-term
     verification_status: observed
     temporal_role: validates
+    breakthrough_paths: []
     note: "跨文件引用，pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml"
 
   - id: rel.T06
@@ -180,3 +201,21 @@ relations:
       current: false
       conditions: "主动隔振台上工作，振动退出限制序列"
     note: "跨文件引用，ent.vibration_environment 定义于 webster2007.yaml"
+
+  - id: rel.T07
+    subject: meth.multi_point_cavity_mounting_t18
+    predicate: IMPLEMENTS
+    object: pri.multi_point_symmetric_clamping
+    confidence: established
+    source: {zotero_key: "U4Z95559", claim: "12 points on the symmetric planes... corporately restricted the movement"}
+    verification_status: observed
+    note: "安装方法实现了多点对称夹持原理"
+
+  - id: rel.T08
+    subject: ent.robust_cuboid_cavity_t18
+    predicate: OPERATIONALIZED-AS
+    object: meth.multi_point_cavity_mounting_t18
+    confidence: established
+    source: {zotero_key: "U4Z95559", claim: "The cavity was mounted by squeezing at 12 points..."}
+    verification_status: observed
+    note: "实体通过安装方法进行操作"

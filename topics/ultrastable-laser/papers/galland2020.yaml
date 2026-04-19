@@ -36,8 +36,39 @@ principles:
     conditions: "需要两个可独立调谐的探测频率"
     source_claim: "combination of the two channels leads to a substantial reduction in detection noise"
 
-methods: []
-metrics: []
+methods:
+  - id: meth.double_heterodyne_shb_probing
+    name: "双外差SHB探测（Galland 2020）"
+    procedure:
+      - "在掺铕硅酸钇（Eu:YSO）晶体中烧制光谱烧孔。"
+      - "使用两个独立可调谐探测激光器，分别对准烧孔的两个光谱通道。"
+      - "同时探测两个通道的吸收变化，产生两个外差拍频信号。"
+      - "组合两通道信号，抵消共模探测噪声。"
+      - "提取组合后的误差信号用于激光频率锁定。"
+    domain: laser_stabilization
+    subdomain: spectral_hole_burning
+    inputs: ["shb_crystal", "probe_lasers"]
+    outputs: ["low_noise_error_signal"]
+    note: "该方法显著提升了SHB探测的信噪比。"
+metrics:
+  - id: met.noise_reduction_g20
+    name: "探测噪声降低（Galland 2020）"
+    quantity: "noise_reduction"
+    unit: "dB"
+    demonstrated_value: "显著降低（具体数值未给出）"
+    conditions: "双外差探测SHB，共模噪声抑制"
+    measurement_method: "比较单通道与双通道组合后的噪声谱密度。"
+    significance: "共模噪声抑制提升探测信噪比。"
+    source_claim: {zotero_key: "MPWLNUIH", claim: "substantial reduction in detection noise"}
+  - id: met.detection_snr_improvement_g20
+    name: "探测信噪比改善（Galland 2020）"
+    quantity: "signal_to_noise_ratio_improvement"
+    unit: "dB"
+    demonstrated_value: "改善（具体数值未给出）"
+    conditions: "双外差探测SHB"
+    measurement_method: "比较组合前后误差信号的信噪比。"
+    significance: "信噪比改善直接提升锁频性能。"
+    source_claim: {zotero_key: "MPWLNUIH", claim: "combination of the two channels leads to a substantial reduction in detection noise"}
 
 relations:
   - id: rel.GA01
@@ -47,3 +78,24 @@ relations:
     confidence: established
     source: {zotero_key: "MPWLNUIH", claim: "double-heterodyne probing for ultra-stable laser based on spectral hole burning"}
     note: "跨文件引用，ent.shb_eu_yso_reference_l13 定义于 leibrandt2013.yaml"
+  - id: rel.GA02
+    subject: meth.double_heterodyne_shb_probing
+    predicate: IMPLEMENTS
+    object: pri.double_heterodyne_shb_probing
+    confidence: established
+    source: {zotero_key: "MPWLNUIH", claim: "combination of the two channels leads to a substantial reduction in detection noise"}
+    note: "方法实现了双外差探测原理。"
+  - id: rel.GA03
+    subject: met.noise_reduction_g20
+    predicate: CHARACTERIZES
+    object: meth.double_heterodyne_shb_probing
+    confidence: established
+    source: {zotero_key: "MPWLNUIH", claim: "substantial reduction in detection noise"}
+    note: "噪声降低表征方法的效果。"
+  - id: rel.GA04
+    subject: met.detection_snr_improvement_g20
+    predicate: CHARACTERIZES
+    object: meth.double_heterodyne_shb_probing
+    confidence: established
+    source: {zotero_key: "MPWLNUIH", claim: "combination of the two channels leads to a substantial reduction in detection noise"}
+    note: "信噪比改善表征方法的性能提升。"

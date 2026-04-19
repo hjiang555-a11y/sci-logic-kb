@@ -1,7 +1,7 @@
 # Herbers 2022 — 可搬运钟激光系统达到 1.6×10⁻¹⁶ 不稳定度
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "NU79W75P"
@@ -24,6 +24,94 @@ meta:
     与纯实验室长腔/低温腔不同，本文突出“transportable + crystalline coating”
     的折中：长度和温度受可搬运性限制，因此更依赖低热噪声镀层、紧凑分光稳频链路、
     RAM 抑制和 Doppler cancellation。
+
+principles:
+  - id: pri.transportable_cavity_design_tradeoff_herbers22
+    name: "可搬运腔设计折中原理（Herbers 2022）"
+    tier: domain
+    verification_status: observed
+    statement: >
+      可搬运钟激光腔设计面临长度与温度的折中：受限于搬运体积，腔长不能过长（本文选用 20 cm）；受限于功耗与复杂性，难以采用低温运行。因此必须通过其他途径逼近热噪声底，核心策略包括：
+      1) 采用低热噪声晶体镀层（AlGaAs）大幅降低 coating Brownian noise；
+      2) 利用软安装（soft mount）降低加速度灵敏度，即使在较长腔体下仍保持 ~10⁻¹²/(m/s²) 量级；
+      3) 紧凑分光与 Doppler cancellation 链路，减少光学分布引入的额外相位噪声。
+      该原理说明可搬运系统性能不追求实验室极限，而是在可搬运约束下通过多技术组合达到接近 10⁻¹⁶ 的性能。
+    domain: "超稳激光系统设计 / 可搬运性约束"
+    foundation: engineering
+    evidence: experimental
+    conditions: "可搬运钟激光系统；体积、重量、功耗受严格约束"
+    source_claim: >
+      "Transportable systems require a compact design... The cavity length of 20 cm is a compromise between a high finesse and transportability... We achieve an instability of 1.6×10⁻¹⁶ despite the constraints."
+    applicable_when: "面向可搬运应用（光钟、空间、野外）的超稳激光腔设计"
+    condition_variables:
+      - symbol: "L_cavity"
+        name: "腔长"
+        current_value: "20 cm"
+        significance: "热噪声底与加速度灵敏度的关键参数"
+      - symbol: "κ_xyz"
+        name: "三轴加速度灵敏度"
+        current_value: "2–3×10⁻¹²/(m/s²)"
+        significance: "反映软安装对振动噪声的抑制效果"
+      - symbol: "φ_coating"
+        name: "镀层损耗角"
+        current_value: "AlGaAs 晶体镀层 φ ≈ 2×10⁻⁵"
+        significance: "决定 coating Brownian noise 水平"
+
+  - id: pri.soft_mount_acceleration_suppression_herbers22
+    name: "软安装加速度抑制原理（Herbers 2022）"
+    tier: domain
+    verification_status: observed
+    statement: >
+      对于水平圆柱形长腔（20 cm），通过 10 点弹性软安装（spring-steel / fluororubber）可在三个方向实现匀质的低加速度灵敏度（~2–3×10⁻¹²/(m/s²)）。软安装通过弹性变形吸收外部加速度引起的腔体形变，将振动‑频率耦合系数压低到远低于刚性安装的水平。
+      该原理特别适用于可搬运系统，因为可搬运环境振动较强，且主动隔振平台在低频（<1 Hz）衰减有限。
+    domain: "超稳激光振动抑制 / 加速度灵敏度"
+    foundation: engineering
+    evidence: experimental
+    conditions: "水平圆柱腔；弹性软安装材料（spring-steel / fluororubber）；三轴加速度测量"
+    source_claim: >
+      "The cavity has a cylindrical shape and is mounted at 10 points... We find acceleration sensitivities of 2(1)×10⁻¹²/(ms⁻²), 3(3)×10⁻¹²/(ms⁻²), and 3(1)×10⁻¹²/(ms⁻²) for the x-, y-, and z-axis, respectively."
+    applicable_when: "长腔体（>10 cm）在可搬运或高振动环境下的加速度灵敏度优化"
+    condition_variables:
+      - symbol: "n_mount_points"
+        name: "安装点数"
+        current_value: "10"
+        significance: "影响刚度分布与形变均匀性"
+      - symbol: "material_stiffness"
+        name: "安装材料刚度"
+        current_value: "spring‑steel / fluororubber"
+        significance: "决定加速度‑形变传递函数"
+
+methods:
+  - id: meth.transportable_clock_laser_integration_herbers22
+    name: "可搬运钟激光系统集成方法（Herbers 2022）"
+    status: demonstrated
+    applies_to: ent.fp_cavity_system
+    steps_summary: >
+      1) 构建 20 cm ULE spacer + FS mirrors + AlGaAs 晶体镀层水平圆柱腔；
+      2) 10 点软安装（spring-steel / fluororubber）固定腔体，降低三轴加速度灵敏度；
+      3) 主动热屏控制腔温在 CTE 零点附近（~295 K），温度‑频率转换系数约 3(2)×10⁻¹² K⁻¹；
+      4) 1397 nm 外腔二极管激光通过 PDH 锁定到腔，入射功率约 10 µW，接近散粒噪声极限；
+      5) 经 waveguide EOM + 主动 RAM 抑制后，通过 Doppler‑cancelled 分光链路输出至倍频模块（→ 698 nm）。
+    required_hardware:
+      - ent.fp_cavity_system
+      - ent.laser_source
+      - ent.eom
+    advantages:
+      - "在可搬运体积内实现 1.6×10⁻¹⁶ 不稳定度，为当时报道最低"
+      - "三轴加速度灵敏度匀质低至 ~2–3×10⁻¹²/(m/s²)，适合振动较强环境"
+      - "晶体镀层大幅压低 coating thermal noise，20 cm 腔预测热噪声底 ~7×10⁻¹⁷"
+    disadvantages:
+      - "腔长受可搬运性限制，热噪声底相比实验室长腔（48 cm）仍有差距"
+      - "软安装引入低频机械共振，需与主动隔振平台协同设计"
+      - "系统复杂性较高（热屏、RAM 抑制、Doppler cancellation 等）"
+    conditions:
+      - "可搬运平台；商用主动隔振平台；低振动运输条件"
+      - "工作波长 1397 nm（对应 Sr 钟 698 nm 倍频）"
+      - "晶体镀层损耗角 φ ≈ 2×10⁻⁵"
+    source_claim: >
+      "We present a transportable clock laser system... The cavity has a cylindrical shape and is mounted at 10 points... The laser is locked with the PDH method... The system's instability reaches down to mod σ_y = 1.6×10⁻¹⁶."
+    note: >
+      本方法集成多技术（软安装、晶体镀层、主动热屏、Doppler cancellation）以实现可搬运约束下的高性能钟激光。
 
 metrics:
   - id: met.fractional_freq_instability_herbers22

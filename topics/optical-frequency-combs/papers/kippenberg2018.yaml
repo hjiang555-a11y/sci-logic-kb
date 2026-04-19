@@ -1,436 +1,389 @@
-# Kippenberg 2018 — 耗散 Kerr 孤子微梳综述 [光学频率梳专题：DKS 微梳范式定义文档]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-07-15
-# Schema版本：v4.0
-# 专题：optical-frequency-combs
-# contribution_type: framework — 定义耗散 Kerr 孤子（DKS）微梳的完整物理范式与应用框架。
-#   定义：DKS 双平衡原理、Lugiato-Lefever 方程、色散波展宽机制、孤子激发方法、自参考方法。
-#   不负责：具体平台工程参数细节（由各技术论文提供）。
-#   本文是 2018 年 Science 重磅综述，系统总结 DKS 微梳从物理机制到应用的完整范式转变。
-
 meta:
-  zotero_key: ""
+  zotero_key: TRFV3Y5G
   topic: optical-frequency-combs
   source_type: review
   contribution_type: framework
   reliability: high
-  title: "Dissipative Kerr solitons in optical microresonators"
+  title: Dissipative Kerr solitons in optical microresonators
   year: 2018
   first_author: Kippenberg
-  journal: "Science"
+  journal: Science
   volume: 361
-  pages: "eaan8083"
-  doi: "10.1126/science.aan8083"
-  note: >
-    [综述论文 / DKS 范式定义文档] Kippenberg (EPFL) + Gaeta (Columbia) + Lipson (Columbia) + Gorodetsky (MSU) 2018 Science 综述。
-    系统总结耗散 Kerr 孤子（DKS）在微谐振腔中的物理机制、形成动力学、平台实现与应用前景。
-    核心贡献：(1) 定义 DKS 双平衡原理（非线性↔色散 + 增益↔损耗）作为微梳从混沌态走向相干态的关键机制；
-    (2) 阐述 Lugiato-Lefever 方程（LLE）作为腔内场演化的统一数学描述；
-    (3) 总结色散波（Cherenkov 辐射）实现倍频程展宽的物理机制；
-    (4) 建立激光扫频进入孤子态的标准方法；
-    (5) 总结 DKS 微梳在通信（>50 Tbit/s）、双梳光谱、LiDAR、天文光谱定标、
-    光学频率合成（自参考已实现）、低噪声微波产生等领域的应用演示。
-    ent.microresonator_frequency_comb 定义于 kippenberg2011.yaml；
-    ent.si3n4_integrated_comb 定义于 kippenberg2011.yaml；
-    ent.optical_frequency_comb 定义于 giunta2019.yaml。
+  pages: eaan8083
+  doi: 10.1126/science.aan8083
+  note: '[综述论文 / DKS 范式定义文档] Kippenberg (EPFL) + Gaeta (Columbia) + Lipson (Columbia)
+    + Gorodetsky (MSU) 2018 Science 综述。 系统总结耗散 Kerr 孤子（DKS）在微谐振腔中的物理机制、形成动力学、平台实现与应用前景。
+    核心贡献：(1) 定义 DKS 双平衡原理（非线性↔色散 + 增益↔损耗）作为微梳从混沌态走向相干态的关键机制； (2) 阐述 Lugiato-Lefever
+    方程（LLE）作为腔内场演化的统一数学描述； (3) 总结色散波（Cherenkov 辐射）实现倍频程展宽的物理机制； (4) 建立激光扫频进入孤子态的标准方法；
+    (5) 总结 DKS 微梳在通信（>50 Tbit/s）、双梳光谱、LiDAR、天文光谱定标、 光学频率合成（自参考已实现）、低噪声微波产生等领域的应用演示。
+    ent.microresonator_frequency_comb 定义于 kippenberg2011.yaml； ent.si3n4_integrated_comb
+    定义于 kippenberg2011.yaml； ent.optical_frequency_comb 定义于 giunta2019.yaml。
 
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
+    '
 entities: []
-  # 本文为 framework 综述，不新定义实体节点。
-  # 核心实体（ent.microresonator_frequency_comb、ent.si3n4_integrated_comb）
-  # 已在 kippenberg2011.yaml 中定义。
-
 principles:
-  - id: pri.dissipative_kerr_soliton
-    name: "耗散 Kerr 孤子（DKS）双平衡原理"
-    tier: domain
-    verification_status: observed
-    statement: >
-      耗散 Kerr 孤子（DKS）是驱动耗散非线性系统中的自强化、定态、局域化波包。
-      与保守系统中的光纤孤子不同，DKS 依赖双重平衡：
-      (1) Kerr 非线性与色散的平衡（维持脉冲形状不变）；
-      (2) 参量增益与腔损耗的平衡（维持脉冲能量恒定）。
-      DKS 仅在泵浦激光红失谐于腔谐振时稳定存在（双稳态区域），
-      泵浦激光本身是梳齿的一部分（与锁模激光器本质不同）。
-      DKS 的时域波形为 sech² 包络的局域脉冲叠加在 CW 背景上，
-      频域对应宽带相干光学频率梳。DKS 态的发现（2014 年）
-      解决了早期微梳低相干性的核心挑战，释放了微梳的全部应用潜力。
-    domain: "非线性光学，耗散孤子物理，微谐振腔光子学"
-    formula: >
-      DKS 是阻尼-驱动-失谐非线性薛定谔方程（LLE）的局域解；
-      时域包络：A(φ) ∝ sech(φ/Δφ)·exp(iφ₀) + A_CW（sech 脉冲 + CW 背景）；
-      双平衡条件：(非线性 ↔ 色散) ∧ (参量增益 ↔ 腔损耗)
-    key_insight: >
-      DKS 的双平衡机制使微梳从混沌低相干态转变为完全相干宽带频率梳，
-      是微梳从实验室好奇心走向实用计量工具的关键突破。
-    conditions: >
-      反常群速度色散（D₂ > 0）；泵浦激光红失谐于腔谐振（δω > 0，双稳态区域）；
-      泵浦功率超过参量振荡阈值；Kerr 非线性（χ⁽³⁾）材料
-    preconditions:
-      - "微谐振腔在泵浦波长具有反常色散（D₂ > 0）"
-      - "泵浦激光从蓝失谐侧扫描至红失谐侧，进入双稳态区域"
-      - "克服热非线性引起的不稳定性（需快速扫频或辅助技术）"
-    invalidated_when:
-      - "泵浦激光处于蓝失谐侧——仅产生混沌调制不稳定（MI）态"
-      - "色散为正常色散且无模式耦合扰动——不支持亮孤子（但可产生暗脉冲/platicon）"
-      - "腔 Q 因子过低，参量增益不足以补偿腔损耗"
-    source_claim: >
-      "DKSs, opposite to fiber solitons, therefore rely on a double balance of nonlinearity 
-      and dispersion as well as parametric gain and loss and depend on the laser-cavity detuning 
-      as a control parameter"
-    open_questions:
-      - "DKS 在复杂色散景观（多模式交叉、高阶色散）中的完整稳定性边界尚未充分理解"
-      - "受激拉曼散射对 DKS 时域宽度和带宽的基本限制（Wang et al. 2018, PRL 120, 053902）"
-      - "确定性单孤子激发和长期稳定性的通用方案"
+- id: pri.dissipative_kerr_soliton
+  name: 耗散 Kerr 孤子（DKS）双平衡原理
+  tier: domain
+  verification_status: observed
+  statement: '耗散 Kerr 孤子（DKS）是驱动耗散非线性系统中的自强化、定态、局域化波包。 与保守系统中的光纤孤子不同，DKS 依赖双重平衡： (1)
+    Kerr 非线性与色散的平衡（维持脉冲形状不变）； (2) 参量增益与腔损耗的平衡（维持脉冲能量恒定）。 DKS 仅在泵浦激光红失谐于腔谐振时稳定存在（双稳态区域），
+    泵浦激光本身是梳齿的一部分（与锁模激光器本质不同）。 DKS 的时域波形为 sech² 包络的局域脉冲叠加在 CW 背景上， 频域对应宽带相干光学频率梳。DKS
+    态的发现（2014 年） 解决了早期微梳低相干性的核心挑战，释放了微梳的全部应用潜力。
 
-  - id: pri.lugiato_lefever_equation
-    name: "Lugiato-Lefever 方程（LLE）"
-    tier: domain
-    verification_status: calculated
-    statement: >
-      Lugiato-Lefever 方程（LLE）是描述 CW 激光驱动的含 Kerr 非线性微谐振腔
-      腔内场时空演化的均场方程。最初用于描述非线性 Fabry-Perot 腔中的
-      二维空间自组织图案，后重新公式化为纵向时间孤子方程。
-      LLE 是具有阻尼、驱动和失谐项的非线性薛定谔方程（NLS），
-      其稳态局域解即为耗散 Kerr 孤子。LLE 与耦合模方程（CME）等价，
-      CME 可视为 LLE 的离散傅里叶变换。LLE 框架统一了微梳的
-      调制不稳定态、呼吸孤子态和稳定 DKS 态的描述。
-    domain: "非线性光学，应用数学，微谐振腔频率梳"
-    formula: >
-      ∂A/∂t − i(D₂/2)∂²A/∂φ² − ig|A|²A + (κ/2 + iδω)A = √(κ_ext)·s_in；
-      其中 A(φ,t) 为腔内场包络，φ 为共传播坐标系角坐标，t 为慢时间，
-      D₂ 为群速度色散，g = ℏω₀²cn₂/(n²V₀) 为 Kerr 频移系数，
-      κ 为总腔衰减率，δω 为激光-腔失谐，κ_ext 为外部耦合率，s_in 为泵浦场
-    key_insight: >
-      LLE 将微梳问题映射到应用数学中被广泛研究的耗散结构/图案形成理论，
-      为理解 DKS 存在范围、呼吸动力学和多孤子态提供了严格数学框架。
-    conditions: >
-      Kerr 非线性主导（忽略拉曼效应和自陡峭效应时）；
-      腔内场每圈变化小（均场近似有效）；仅含二阶色散（高阶色散需广义 LLE）
-    preconditions:
-      - "微谐振腔精细度足够高，使得腔内场每圈变化远小于场强本身（均场近似）"
-      - "χ⁽³⁾ Kerr 非线性为主导非线性效应"
-    invalidated_when:
-      - "受激拉曼散射增益带宽与梳齿间距可比——需加入拉曼项的广义 LLE"
-      - "自陡峭效应显著（超宽带脉冲）——需高阶修正"
-      - "离散模式效应重要（单模耦合、避免交叉）——需转用 CME 描述"
-    source_claim: >
-      "The internal optical field envelope A(φ,t) in a microresonator with a self-focusing Kerr 
-      nonlinearity and only second-order GVD may be described with the LLE... The damped 
-      driven NLS (Eq. 3) is frequently referred to as the LLE, an important equation first 
-      introduced to describe two-dimensional spatial transversal solitonic field patterns"
+    '
+  domain: 非线性光学，耗散孤子物理，微谐振腔光子学
+  formula: 'DKS 是阻尼-驱动-失谐非线性薛定谔方程（LLE）的局域解； 时域包络：A(φ) ∝ sech(φ/Δφ)·exp(iφ₀) + A_CW（sech
+    脉冲 + CW 背景）； 双平衡条件：(非线性 ↔ 色散) ∧ (参量增益 ↔ 腔损耗)
 
-  - id: pri.dispersive_wave_generation
-    name: "色散波（Cherenkov 辐射）产生原理"
-    tier: domain
-    verification_status: observed
-    statement: >
-      当 DKS 的光谱带宽延伸到正常色散区域时，孤子在脉冲前沿或后沿发展出
-      振荡尾巴，在频域形成离散的色散波（dispersive wave），也称为孤子 Cherenkov 辐射。
-      色散波的频谱位置近似对应积分色散为零的位置 D_int(m) = 0，
-      即谐振腔 FSR 与无色散孤子的 FSR 匹配处。
-      色散波的实用价值在于将梳谱覆盖范围扩展到正常色散区域，
-      增强梳谱两端的功率。通过合适的四阶色散设计，
-      可产生双色散波覆盖完整倍频程（如 Si₃N₄ 微谐振腔中已实现）。
-    domain: "非线性光学，孤子物理，色散工程"
-    formula: >
-      色散波相位匹配条件：D_int(m) = ω_m − (ω₀ + D₁·m) = 0；
-      需要高阶色散（D₃, D₄, ...）使 D_int 在远离泵浦处过零
-    key_insight: >
-      色散波机制将 DKS 的光谱覆盖范围从反常色散带宽限制中解放出来，
-      是实现倍频程展宽 DKS 梳（满足 f-2f 自参考条件）的关键物理机制。
-    conditions: >
-      DKS 光谱带宽延伸至色散符号变化区域；高阶色散（D₃ 或 D₄）足够大
-      使积分色散在远离泵浦处过零
-    preconditions:
-      - "稳定的 DKS 态已建立"
-      - "高阶色散项（D₃, D₄）足够大，使 D_int(m) 在可及模式范围内过零"
-    invalidated_when:
-      - "色散曲线单调，无零点——不产生色散波"
-      - "DKS 带宽不足以到达色散零点"
-    source_claim: >
-      "soliton-induced Cherenkov radiation, also known as dispersive wave formation... 
-      The spectral location of this dispersive wave corresponds approximately to the condition 
-      where D_int(m) = 0... Suitable quartic dispersion enables also the creation of DKSs 
-      with two dispersive waves that can cover a full octave"
+    '
+  key_insight: 'DKS 的双平衡机制使微梳从混沌低相干态转变为完全相干宽带频率梳， 是微梳从实验室好奇心走向实用计量工具的关键突破。
 
+    '
+  conditions: '反常群速度色散（D₂ > 0）；泵浦激光红失谐于腔谐振（δω > 0，双稳态区域）； 泵浦功率超过参量振荡阈值；Kerr 非线性（χ⁽³⁾）材料
+
+    '
+  preconditions:
+  - 微谐振腔在泵浦波长具有反常色散（D₂ > 0）
+  - 泵浦激光从蓝失谐侧扫描至红失谐侧，进入双稳态区域
+  - 克服热非线性引起的不稳定性（需快速扫频或辅助技术）
+  invalidated_when:
+  - 泵浦激光处于蓝失谐侧——仅产生混沌调制不稳定（MI）态
+  - 色散为正常色散且无模式耦合扰动——不支持亮孤子（但可产生暗脉冲/platicon）
+  - 腔 Q 因子过低，参量增益不足以补偿腔损耗
+  source_claim: '"DKSs, opposite to fiber solitons, therefore rely on a double balance
+    of nonlinearity  and dispersion as well as parametric gain and loss and depend
+    on the laser-cavity detuning  as a control parameter"
+
+    '
+  open_questions:
+  - DKS 在复杂色散景观（多模式交叉、高阶色散）中的完整稳定性边界尚未充分理解
+  - 受激拉曼散射对 DKS 时域宽度和带宽的基本限制（Wang et al. 2018, PRL 120, 053902）
+  - 确定性单孤子激发和长期稳定性的通用方案
+- id: pri.lugiato_lefever_equation
+  name: Lugiato-Lefever 方程（LLE）
+  tier: domain
+  verification_status: calculated
+  statement: 'Lugiato-Lefever 方程（LLE）是描述 CW 激光驱动的含 Kerr 非线性微谐振腔 腔内场时空演化的均场方程。最初用于描述非线性
+    Fabry-Perot 腔中的 二维空间自组织图案，后重新公式化为纵向时间孤子方程。 LLE 是具有阻尼、驱动和失谐项的非线性薛定谔方程（NLS）， 其稳态局域解即为耗散
+    Kerr 孤子。LLE 与耦合模方程（CME）等价， CME 可视为 LLE 的离散傅里叶变换。LLE 框架统一了微梳的 调制不稳定态、呼吸孤子态和稳定 DKS
+    态的描述。
+
+    '
+  domain: 非线性光学，应用数学，微谐振腔频率梳
+  formula: '∂A/∂t − i(D₂/2)∂²A/∂φ² − ig|A|²A + (κ/2 + iδω)A = √(κ_ext)·s_in； 其中 A(φ,t)
+    为腔内场包络，φ 为共传播坐标系角坐标，t 为慢时间， D₂ 为群速度色散，g = ℏω₀²cn₂/(n²V₀) 为 Kerr 频移系数， κ 为总腔衰减率，δω
+    为激光-腔失谐，κ_ext 为外部耦合率，s_in 为泵浦场
+
+    '
+  key_insight: 'LLE 将微梳问题映射到应用数学中被广泛研究的耗散结构/图案形成理论， 为理解 DKS 存在范围、呼吸动力学和多孤子态提供了严格数学框架。
+
+    '
+  conditions: 'Kerr 非线性主导（忽略拉曼效应和自陡峭效应时）； 腔内场每圈变化小（均场近似有效）；仅含二阶色散（高阶色散需广义 LLE）
+
+    '
+  preconditions:
+  - 微谐振腔精细度足够高，使得腔内场每圈变化远小于场强本身（均场近似）
+  - χ⁽³⁾ Kerr 非线性为主导非线性效应
+  invalidated_when:
+  - 受激拉曼散射增益带宽与梳齿间距可比——需加入拉曼项的广义 LLE
+  - 自陡峭效应显著（超宽带脉冲）——需高阶修正
+  - 离散模式效应重要（单模耦合、避免交叉）——需转用 CME 描述
+  source_claim: '"The internal optical field envelope A(φ,t) in a microresonator with
+    a self-focusing Kerr  nonlinearity and only second-order GVD may be described
+    with the LLE... The damped  driven NLS (Eq. 3) is frequently referred to as the
+    LLE, an important equation first  introduced to describe two-dimensional spatial
+    transversal solitonic field patterns"
+
+    '
+- id: pri.dispersive_wave_generation
+  name: 色散波（Cherenkov 辐射）产生原理
+  tier: domain
+  verification_status: observed
+  statement: '当 DKS 的光谱带宽延伸到正常色散区域时，孤子在脉冲前沿或后沿发展出 振荡尾巴，在频域形成离散的色散波（dispersive wave），也称为孤子
+    Cherenkov 辐射。 色散波的频谱位置近似对应积分色散为零的位置 D_int(m) = 0， 即谐振腔 FSR 与无色散孤子的 FSR 匹配处。 色散波的实用价值在于将梳谱覆盖范围扩展到正常色散区域，
+    增强梳谱两端的功率。通过合适的四阶色散设计， 可产生双色散波覆盖完整倍频程（如 Si₃N₄ 微谐振腔中已实现）。
+
+    '
+  domain: 非线性光学，孤子物理，色散工程
+  formula: '色散波相位匹配条件：D_int(m) = ω_m − (ω₀ + D₁·m) = 0； 需要高阶色散（D₃, D₄, ...）使 D_int
+    在远离泵浦处过零
+
+    '
+  key_insight: '色散波机制将 DKS 的光谱覆盖范围从反常色散带宽限制中解放出来， 是实现倍频程展宽 DKS 梳（满足 f-2f 自参考条件）的关键物理机制。
+
+    '
+  conditions: 'DKS 光谱带宽延伸至色散符号变化区域；高阶色散（D₃ 或 D₄）足够大 使积分色散在远离泵浦处过零
+
+    '
+  preconditions:
+  - 稳定的 DKS 态已建立
+  - 高阶色散项（D₃, D₄）足够大，使 D_int(m) 在可及模式范围内过零
+  invalidated_when:
+  - 色散曲线单调，无零点——不产生色散波
+  - DKS 带宽不足以到达色散零点
+  source_claim: '"soliton-induced Cherenkov radiation, also known as dispersive wave
+    formation...  The spectral location of this dispersive wave corresponds approximately
+    to the condition  where D_int(m) = 0... Suitable quartic dispersion enables also
+    the creation of DKSs  with two dispersive waves that can cover a full octave"
+
+    '
 methods:
-  - id: meth.laser_tuning_soliton_access
-    name: "激光扫频孤子激发方法"
-    status: demonstrated
-    applies_to: ent.microresonator_frequency_comb
-    steps_summary: >
-      1. CW 泵浦激光器从蓝失谐侧扫描进入微谐振腔谐振 →
-      2. 蓝失谐区产生参量振荡、子梳形成、混沌 MI 态 →
-      3. 继续扫频至红失谐侧（双稳态区域）→
-      4. 透射功率出现一系列离散阶梯（每步对应减少一个孤子）→
-      5. 克服热不稳定性（快速扫频/功率踢/热调谐/载流子注入）→
-      6. 稳定在 N 孤子态或单孤子态 →
-      7. 热效应自稳定：DKS 自身的热非线性构成自主反馈环，
-         使红失谐态被动稳定（可持续数小时）
-    required_hardware:
-      - ent.microresonator_frequency_comb
-    advantages:
-      - "通用性：适用于晶体、硅盘、Si₃N₄ 等各类平台"
-      - "一旦进入孤子态，热效应自稳定可维持数小时"
-      - "失谐量作为控制参数可调节孤子时域宽度"
-    disadvantages:
-      - "热不稳定性使初始激发具有挑战性，需辅助技术"
-      - "多孤子→单孤子的确定性选择仍非完全可控"
-      - "DKS 态功率转换效率较低（因失谐泵浦特性）"
-    conditions:
-      - "微谐振腔具有反常色散"
-      - "扫频速度须足够快以克服热瞬态效应"
-    source_claim: >
-      "Stably accessing soliton states requires overcoming the thermal instabilities associated 
-      with the drop in intracavity power and led to the development of a wide range of techniques... 
-      Once accessed, DKS in microresonators can be passively stable for hours"
+- id: meth.laser_tuning_soliton_access
+  name: 激光扫频孤子激发方法
+  status: demonstrated
+  applies_to: ent.microresonator_frequency_comb
+  steps_summary: "1. CW 泵浦激光器从蓝失谐侧扫描进入微谐振腔谐振 → 2. 蓝失谐区产生参量振荡、子梳形成、混沌 MI 态 → 3. 继续扫频至红失谐侧（双稳态区域）→\
+    \ 4. 透射功率出现一系列离散阶梯（每步对应减少一个孤子）→ 5. 克服热不稳定性（快速扫频/功率踢/热调谐/载流子注入）→ 6. 稳定在 N 孤子态或单孤子态\
+    \ → 7. 热效应自稳定：DKS 自身的热非线性构成自主反馈环，\n   使红失谐态被动稳定（可持续数小时）\n"
+  required_hardware:
+  - ent.microresonator_frequency_comb
+  advantages:
+  - 通用性：适用于晶体、硅盘、Si₃N₄ 等各类平台
+  - 一旦进入孤子态，热效应自稳定可维持数小时
+  - 失谐量作为控制参数可调节孤子时域宽度
+  disadvantages:
+  - 热不稳定性使初始激发具有挑战性，需辅助技术
+  - 多孤子→单孤子的确定性选择仍非完全可控
+  - DKS 态功率转换效率较低（因失谐泵浦特性）
+  conditions:
+  - 微谐振腔具有反常色散
+  - 扫频速度须足够快以克服热瞬态效应
+  source_claim: '"Stably accessing soliton states requires overcoming the thermal
+    instabilities associated  with the drop in intracavity power and led to the development
+    of a wide range of techniques...  Once accessed, DKS in microresonators can be
+    passively stable for hours"
 
-  - id: meth.microcomb_self_referencing
-    name: "DKS 微梳自参考方法"
-    status: demonstrated
-    applies_to: ent.microresonator_frequency_comb
-    steps_summary: >
-      1. 产生倍频程展宽的 DKS 梳（通过色散波或外部展宽）→
-      2. 使用 2f-3f 或 f-2f 方案检测载波包络偏移频率 f_CEO →
-      3. 将 f_CEO 锁定至射频参考 →
-      4. 同时锁定梳齿间距 f_rep →
-      5. 实现所有梳齿绝对频率的完全控制 →
-      6. 已实现全集成光学频率合成器（Spencer et al. 2018, Nature 557, 81）
-    required_hardware:
-      - ent.microresonator_frequency_comb
-      - ent.si3n4_integrated_comb
-    advantages:
-      - "DKS 梳可直接实现倍频程展宽（无需外部展宽）"
-      - "芯片级集成潜力——已演示全光子集成频率合成器"
-      - "高重复频率简化 f_rep 检测"
-    disadvantages:
-      - "目前仍需外部展宽辅助某些平台的 f-2f 自参考"
-      - "f_CEO 信噪比取决于色散波功率和梳相干性"
-    conditions:
-      - "梳光谱须覆盖至少一个倍频程（直接或通过色散波）"
-      - "f_CEO 信噪比足够高以实现相位锁定"
-    source_claim: >
-      "Soliton Kerr microcombs have enabled the counting of the cycles of light by creating 
-      a direct microwave-to-optical link, by using self-referencing assisted with external 
-      fiber-based broadening and by directly exploiting the broadband nature of DKS"
+    '
+- id: meth.microcomb_self_referencing
+  name: DKS 微梳自参考方法
+  status: demonstrated
+  applies_to: ent.microresonator_frequency_comb
+  steps_summary: '1. 产生倍频程展宽的 DKS 梳（通过色散波或外部展宽）→ 2. 使用 2f-3f 或 f-2f 方案检测载波包络偏移频率 f_CEO
+    → 3. 将 f_CEO 锁定至射频参考 → 4. 同时锁定梳齿间距 f_rep → 5. 实现所有梳齿绝对频率的完全控制 → 6. 已实现全集成光学频率合成器（Spencer
+    et al. 2018, Nature 557, 81）
 
+    '
+  required_hardware:
+  - ent.microresonator_frequency_comb
+  - ent.si3n4_integrated_comb
+  advantages:
+  - DKS 梳可直接实现倍频程展宽（无需外部展宽）
+  - 芯片级集成潜力——已演示全光子集成频率合成器
+  - 高重复频率简化 f_rep 检测
+  disadvantages:
+  - 目前仍需外部展宽辅助某些平台的 f-2f 自参考
+  - f_CEO 信噪比取决于色散波功率和梳相干性
+  conditions:
+  - 梳光谱须覆盖至少一个倍频程（直接或通过色散波）
+  - f_CEO 信噪比足够高以实现相位锁定
+  source_claim: '"Soliton Kerr microcombs have enabled the counting of the cycles
+    of light by creating  a direct microwave-to-optical link, by using self-referencing
+    assisted with external  fiber-based broadening and by directly exploiting the
+    broadband nature of DKS"
+
+    '
 metrics:
-  - id: met.dks_comb_bandwidth
-    name: "DKS 微梳光谱带宽"
-    unit: "nm 或 octave"
-    description: >
-      DKS 微梳的光谱覆盖范围。通过色散波（Cherenkov 辐射）机制，
-      DKS 梳可实现倍频程展宽，满足 f-2f 自参考条件。
-      带宽由色散曲线（特别是高阶色散项）和泵浦功率决定。
-    demonstrated_value:
-      value: ">1 octave（Si₃N₄ 微谐振腔，双色散波，THz 模式间距）"
-      conditions: "Si₃N₄ 集成微环谐振腔，色散工程优化四阶色散，CW 泵浦，数十 mW 泵浦功率"
-      verification_status: observed
-      confidence: established
-      source:
-        zotero_key: ""
-        claim: >
-          "chip-integrated microresonators have achieved low-power, octave-spanning frequency combs 
-          in various spectral windows that now encompass the near-infrared, telecommunication, 
-          and mid-infrared spectral window"
-    historical_landmarks:
-      first_demonstration:
-        value: ">2/3 octave（Si₃N₄，非孤子态）"
-        year: 2011
-        source: {zotero_key: ""}
-        note: "Okawachi et al. 2011, Levy et al. 2010 — 早期宽带微梳（非相干态）"
-      best_demonstration:
-        value: ">1 octave（Si₃N₄，DKS 双色散波）"
-        year: 2017
-        source: {zotero_key: ""}
-        note: "Pfeiffer et al. 2017, Li et al. 2017 — DKS 态下倍频程直接展宽"
+- id: met.dks_comb_bandwidth
+  name: DKS 微梳光谱带宽
+  unit: nm 或 octave
+  description: 'DKS 微梳的光谱覆盖范围。通过色散波（Cherenkov 辐射）机制， DKS 梳可实现倍频程展宽，满足 f-2f 自参考条件。
+    带宽由色散曲线（特别是高阶色散项）和泵浦功率决定。
 
-  - id: met.microcomb_power_consumption
-    name: "DKS 微梳泵浦功率"
-    unit: "mW"
-    description: >
-      维持 DKS 态所需的 CW 泵浦功率。DKS 微梳可在极低功率下
-      产生倍频程展宽的相干频率梳，是芯片级集成的关键优势。
-    demonstrated_value:
-      value: "数十 mW（倍频程展宽 DKS 已报告）"
-      conditions: "Si₃N₄ 集成微环谐振腔，CW 泵浦 @ ~1550 nm，色散工程优化"
-      verification_status: observed
-      confidence: established
-      source:
-        zotero_key: ""
-        claim: >
-          "the generation of the Kerr soliton microcombs can occur at record low power 
-          [tens of milliwatts have been reported for octave spanning spectra]"
-    theoretical_floor:
-      value: "由 P_th ∝ n₀²V_eff/(n₂Q²) 决定，超高 Q 腔可达 sub-μW 阈值"
-      basis: "参量振荡阈值缩放关系"
-      gap_note: "阈值功率可极低，但 DKS 态维持需要高于阈值的泵浦以建立失谐"
-
-# ═══════════════════════════════════════════════
-#  RELATIONS（关系）
-# ═══════════════════════════════════════════════
-
-relations:
-  # --- 使能关系：DKS 原理使能微梳相干态 ---
-  - id: rel.K18_01
-    subject: ent.microresonator_frequency_comb
-    predicate: ENABLED-BY
-    object: pri.dissipative_kerr_soliton
-    confidence: established
-    source:
-      zotero_key: ""
-      claim: >
-        "the discovery of the DKS regime has unlocked their full potential by providing 
-        a route to broadband and fully coherent microresonator-based frequency combs, 
-        overcoming earlier challenges of low coherence"
-    conditions: "反常色散，红失谐泵浦"
-    temporal_role: validates
-    note: "DKS 是微梳从混沌态走向相干态的关键机制"
-
-  # --- DKS 原理推导自 LLE ---
-  - id: rel.K18_02
-    subject: pri.dissipative_kerr_soliton
-    predicate: DERIVED-FROM
-    object: pri.lugiato_lefever_equation
-    confidence: established
-    source:
-      zotero_key: ""
-      claim: >
-        "DKSs... represent self-enforcing, stationary, and localized solutions of a damped, 
-        driven, and detuned nonlinear Schrödinger equation"
-    note: "DKS 是 LLE 的定态局域解"
-
-  # --- LLE 使能激光扫频方法 ---
-  - id: rel.K18_03
-    subject: meth.laser_tuning_soliton_access
-    predicate: ENABLED-BY
-    object: pri.dissipative_kerr_soliton
-    confidence: established
-    source:
-      zotero_key: ""
-      claim: >
-        "an unusual set of discrete step-like behavior in the transmitted power occurred... 
-        These steps, as is now well understood, are a sign of soliton formation and correspond 
-        to the continued reduction of the number of solitons in the cavity from N, N-1, ..."
-    conditions: "需克服热不稳定性"
-
-  # --- 色散波使能倍频程展宽 ---
-  - id: rel.K18_04
-    subject: met.dks_comb_bandwidth
-    predicate: OPERATIONALIZED-AS
-    object: pri.dispersive_wave_generation
-    confidence: established
-    source:
-      zotero_key: ""
-      claim: >
-        "Dispersive waves offer the practical advantage that they enable extension of the 
-        spectral coverage of the soliton Kerr comb to the normal dispersion regime... 
-        Suitable quartic dispersion enables also the creation of DKSs with two dispersive 
-        waves that can cover a full octave"
-    note: "色散波是实现倍频程 DKS 梳的关键物理机制"
-
-  # --- 自参考方法使能微梳绝对频率控制 ---
-  - id: rel.K18_05
-    subject: meth.microcomb_self_referencing
-    predicate: ENABLED-BY
-    object: pri.self_referencing_f2f
-    confidence: established
-    source:
-      zotero_key: ""
-      claim: >
-        "Soliton Kerr microcombs have enabled the counting of the cycles of light 
-        by creating a direct microwave-to-optical link, by using self-referencing"
-    conditions: "梳光谱覆盖至少一个倍频程"
-    note: "pri.self_referencing_f2f 定义于 giunta2019.yaml"
-
-  # --- DKS 原理建立在 FWM 梳产生原理之上 ---
-  - id: rel.K18_06
-    subject: pri.dissipative_kerr_soliton
-    predicate: DERIVED-FROM
-    object: pri.parametric_four_wave_mixing_comb
-    confidence: established
-    source:
-      zotero_key: ""
-      claim: >
-        "DKSs... can spontaneously form in parametrically driven Kerr frequency combs 
-        in optical microresonators... optical sidebands are generated by means of 
-        four-wave mixing processes and undergo a self-organization process that leads 
-        to the emergence of a soliton pulse train"
-    note: "DKS 是参量 FWM 梳的自组织相干态。pri.parametric_four_wave_mixing_comb 定义于 kippenberg2011.yaml"
-
-  # --- 微梳受限于色散（色散波可突破） ---
-  - id: rel.K18_07
-    subject: ent.microresonator_frequency_comb
-    predicate: BOUNDED-BY
-    object: pri.microresonator_anomalous_dispersion
-    confidence: established
-    source:
-      zotero_key: ""
-      claim: >
-        "Dispersion... ultimately limits this conversion process and leads to a finite 
-        bandwidth of the comb generation process"
-    is_system_limit:
-      current: true
-      conditions: "梳带宽由色散限制；色散波和色散工程可部分突破"
+    '
+  demonstrated_value:
+    value: '>1 octave（Si₃N₄ 微谐振腔，双色散波，THz 模式间距）'
+    conditions: Si₃N₄ 集成微环谐振腔，色散工程优化四阶色散，CW 泵浦，数十 mW 泵浦功率
     verification_status: observed
-    temporal_role: extends
-    breakthrough_paths:
-      - direction: pri.dispersive_wave_generation
-        strategy: "利用高阶色散产生色散波（Cherenkov 辐射），将梳谱扩展至正常色散区域"
-        feasibility: demonstrated
-        source:
-          zotero_key: ""
-          claim: "DKSs with two dispersive waves that can cover a full octave"
-    note: "对 kippenberg2011.yaml rel.K11_07 的扩展——DKS 色散波提供了突破色散限制的路径"
-
-  # --- 微梳 CHARACTERIZED-BY 带宽 ---
-  - id: rel.K18_08
-    subject: ent.microresonator_frequency_comb
-    predicate: CHARACTERIZED-BY
-    object: met.dks_comb_bandwidth
     confidence: established
     source:
-      zotero_key: ""
-      claim: "octave-spanning frequency combs, with microwave to terahertz repetition rates, at low pump power"
+      zotero_key: ''
+      claim: '"chip-integrated microresonators have achieved low-power, octave-spanning
+        frequency combs  in various spectral windows that now encompass the near-infrared,
+        telecommunication,  and mid-infrared spectral window"
 
-  # --- 微梳 CHARACTERIZED-BY 泵浦功率 ---
-  - id: rel.K18_09
-    subject: ent.microresonator_frequency_comb
-    predicate: CHARACTERIZED-BY
-    object: met.microcomb_power_consumption
+        '
+  historical_landmarks:
+    first_demonstration:
+      value: '>2/3 octave（Si₃N₄，非孤子态）'
+      year: 2011
+      source:
+        zotero_key: ''
+      note: Okawachi et al. 2011, Levy et al. 2010 — 早期宽带微梳（非相干态）
+    best_demonstration:
+      value: '>1 octave（Si₃N₄，DKS 双色散波）'
+      year: 2017
+      source:
+        zotero_key: ''
+      note: Pfeiffer et al. 2017, Li et al. 2017 — DKS 态下倍频程直接展宽
+- id: met.microcomb_power_consumption
+  name: DKS 微梳泵浦功率
+  unit: mW
+  description: '维持 DKS 态所需的 CW 泵浦功率。DKS 微梳可在极低功率下 产生倍频程展宽的相干频率梳，是芯片级集成的关键优势。
+
+    '
+  demonstrated_value:
+    value: 数十 mW（倍频程展宽 DKS 已报告）
+    conditions: Si₃N₄ 集成微环谐振腔，CW 泵浦 @ ~1550 nm，色散工程优化
+    verification_status: observed
     confidence: established
     source:
-      zotero_key: ""
-      claim: "tens of milliwatts have been reported for octave spanning spectra"
+      zotero_key: ''
+      claim: '"the generation of the Kerr soliton microcombs can occur at record low
+        power  [tens of milliwatts have been reported for octave spanning spectra]"
 
-  # --- Si₃N₄ 平台主导 DKS 集成 ---
-  - id: rel.K18_10
-    subject: ent.si3n4_integrated_comb
-    predicate: ENABLED-BY
-    object: pri.dissipative_kerr_soliton
-    confidence: established
-    source:
-      zotero_key: ""
-      claim: >
-        "Single DKSs can equally be accessed in fully planar architectures, 
-        notably in photonic-chip-based silicon nitride (Si₃N₄) resonators"
-    conditions: "色散工程优化、克服热效应（power kicking / 快速调谐 / 加热器）"
-    note: "ent.si3n4_integrated_comb 定义于 kippenberg2011.yaml"
+        '
+  theoretical_floor:
+    value: 由 P_th ∝ n₀²V_eff/(n₂Q²) 决定，超高 Q 腔可达 sub-μW 阈值
+    basis: 参量振荡阈值缩放关系
+    gap_note: 阈值功率可极低，但 DKS 态维持需要高于阈值的泵浦以建立失谐
+relations:
+- id: rel.K18_01
+  subject: ent.microresonator_frequency_comb
+  predicate: ENABLED-BY
+  object: pri.dissipative_kerr_soliton
+  confidence: established
+  source:
+    zotero_key: ''
+    claim: '"the discovery of the DKS regime has unlocked their full potential by
+      providing  a route to broadband and fully coherent microresonator-based frequency
+      combs,  overcoming earlier challenges of low coherence"
 
-  # --- 色散波推导自 LLE 高阶色散扩展 ---
-  - id: rel.K18_11
-    subject: pri.dispersive_wave_generation
-    predicate: DERIVED-FROM
-    object: pri.lugiato_lefever_equation
-    confidence: established
+      '
+  conditions: 反常色散，红失谐泵浦
+  temporal_role: validates
+  note: DKS 是微梳从混沌态走向相干态的关键机制
+- id: rel.K18_02
+  subject: pri.dissipative_kerr_soliton
+  predicate: DERIVED-FROM
+  object: pri.lugiato_lefever_equation
+  confidence: established
+  source:
+    zotero_key: ''
+    claim: '"DKSs... represent self-enforcing, stationary, and localized solutions
+      of a damped,  driven, and detuned nonlinear Schrödinger equation"
+
+      '
+  note: DKS 是 LLE 的定态局域解
+- id: rel.K18_03
+  subject: meth.laser_tuning_soliton_access
+  predicate: ENABLED-BY
+  object: pri.dissipative_kerr_soliton
+  confidence: established
+  source:
+    zotero_key: ''
+    claim: '"an unusual set of discrete step-like behavior in the transmitted power
+      occurred...  These steps, as is now well understood, are a sign of soliton formation
+      and correspond  to the continued reduction of the number of solitons in the
+      cavity from N, N-1, ..."
+
+      '
+  conditions: 需克服热不稳定性
+- id: rel.K18_04
+  subject: met.dks_comb_bandwidth
+  predicate: OPERATIONALIZED-AS
+  object: pri.dispersive_wave_generation
+  confidence: established
+  source:
+    zotero_key: ''
+    claim: '"Dispersive waves offer the practical advantage that they enable extension
+      of the  spectral coverage of the soliton Kerr comb to the normal dispersion
+      regime...  Suitable quartic dispersion enables also the creation of DKSs with
+      two dispersive  waves that can cover a full octave"
+
+      '
+  note: 色散波是实现倍频程 DKS 梳的关键物理机制
+- id: rel.K18_05
+  subject: meth.microcomb_self_referencing
+  predicate: ENABLED-BY
+  object: pri.self_referencing_f2f
+  confidence: established
+  source:
+    zotero_key: ''
+    claim: '"Soliton Kerr microcombs have enabled the counting of the cycles of light  by
+      creating a direct microwave-to-optical link, by using self-referencing"
+
+      '
+  conditions: 梳光谱覆盖至少一个倍频程
+  note: pri.self_referencing_f2f 定义于 giunta2019.yaml
+- id: rel.K18_06
+  subject: pri.dissipative_kerr_soliton
+  predicate: DERIVED-FROM
+  object: pri.parametric_four_wave_mixing_comb
+  confidence: established
+  source:
+    zotero_key: ''
+    claim: '"DKSs... can spontaneously form in parametrically driven Kerr frequency
+      combs  in optical microresonators... optical sidebands are generated by means
+      of  four-wave mixing processes and undergo a self-organization process that
+      leads  to the emergence of a soliton pulse train"
+
+      '
+  note: DKS 是参量 FWM 梳的自组织相干态。pri.parametric_four_wave_mixing_comb 定义于 kippenberg2011.yaml
+- id: rel.K18_07
+  subject: ent.microresonator_frequency_comb
+  predicate: BOUNDED-BY
+  object: pri.microresonator_anomalous_dispersion
+  confidence: established
+  source:
+    zotero_key: ''
+    claim: '"Dispersion... ultimately limits this conversion process and leads to
+      a finite  bandwidth of the comb generation process"
+
+      '
+  is_system_limit:
+    current: true
+    conditions: 梳带宽由色散限制；色散波和色散工程可部分突破
+  verification_status: observed
+  temporal_role: extends
+  breakthrough_paths:
+  - direction: pri.dispersive_wave_generation
+    strategy: 利用高阶色散产生色散波（Cherenkov 辐射），将梳谱扩展至正常色散区域
+    feasibility: demonstrated
     source:
-      zotero_key: ""
-      claim: >
-        "For solitons whose spectral bandwidth extends into the normal GVD regime, 
-        the LLE has to be extended with higher-order dispersion terms. This gives rise 
-        in particular to the effect of soliton-induced Cherenkov radiation"
-    note: "色散波是广义 LLE（含高阶色散项）的自然推论"
+      zotero_key: ''
+      claim: DKSs with two dispersive waves that can cover a full octave
+  note: 对 kippenberg2011.yaml rel.K11_07 的扩展——DKS 色散波提供了突破色散限制的路径
+- id: rel.K18_08
+  subject: ent.microresonator_frequency_comb
+  predicate: CHARACTERIZED-BY
+  object: met.dks_comb_bandwidth
+  confidence: established
+  source:
+    zotero_key: ''
+    claim: octave-spanning frequency combs, with microwave to terahertz repetition
+      rates, at low pump power
+- id: rel.K18_09
+  subject: ent.microresonator_frequency_comb
+  predicate: CHARACTERIZED-BY
+  object: met.microcomb_power_consumption
+  confidence: established
+  source:
+    zotero_key: ''
+    claim: tens of milliwatts have been reported for octave spanning spectra
+- id: rel.K18_10
+  subject: ent.si3n4_integrated_comb
+  predicate: ENABLED-BY
+  object: pri.dissipative_kerr_soliton
+  confidence: established
+  source:
+    zotero_key: ''
+    claim: '"Single DKSs can equally be accessed in fully planar architectures,  notably
+      in photonic-chip-based silicon nitride (Si₃N₄) resonators"
+
+      '
+  conditions: 色散工程优化、克服热效应（power kicking / 快速调谐 / 加热器）
+  note: ent.si3n4_integrated_comb 定义于 kippenberg2011.yaml
+- id: rel.K18_11
+  subject: pri.dispersive_wave_generation
+  predicate: DERIVED-FROM
+  object: pri.lugiato_lefever_equation
+  confidence: established
+  source:
+    zotero_key: ''
+    claim: '"For solitons whose spectral bandwidth extends into the normal GVD regime,  the
+      LLE has to be extended with higher-order dispersion terms. This gives rise  in
+      particular to the effect of soliton-induced Cherenkov radiation"
+
+      '
+  note: 色散波是广义 LLE（含高阶色散项）的自然推论

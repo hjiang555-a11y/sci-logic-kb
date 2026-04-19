@@ -30,9 +30,53 @@ entities:
       降低 RF 频段电子噪声以提高 PDH 误差信号信噪比。
     note: "配套 meth.pdh_locking 使用的探测器件。"
 
-principles: []
-methods: []
-metrics: []
+principles:
+  - id: pri.broadband_low_noise_pd_design_p16
+    name: "宽带低噪声光电探测器设计原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      为PDH锁频优化的光电探测器需要在射频（RF）频段具有低电子噪声，
+      以提升误差信号的信噪比。通过精心选择低噪声放大器、优化电路布局、
+      减少寄生电容和电感，实现在宽频带（例如DC至50 MHz）内的噪声优化。
+    domain: "光电探测，PDH锁频"
+    key_insight: "RF频段电子噪声是PDH误差信号信噪比的关键限制因素之一。"
+    conditions: "适用于PDH锁频系统，调制频率通常在MHz量级。"
+    source_claim: "broadband low-noise photodetector for Pound-Drever-Hall laser stabilization"
+    note: "Potnis 2016提出的光电探测器设计优化。"
+methods:
+  - id: meth.broadband_pd_design_p16
+    name: "宽带低噪声PDH光电探测器设计方法"
+    description: >
+      设计用于PDH锁频的宽带低噪声光电探测器的具体工程方法，包括：
+      选择低噪声跨阻放大器（TIA）、优化反馈电阻和电容以平衡带宽与噪声、
+      采用表面贴装元件减少寄生效应、屏蔽和接地设计以抑制外部干扰。
+    applicable_context: "PDH锁频系统，调制频率在MHz范围，需要高信噪比误差信号。"
+    key_steps:
+      - "选择低噪声运算放大器（如OPA847）作为跨阻放大器核心。"
+      - "优化反馈网络（电阻、电容）以实现目标带宽（如DC至50 MHz）。"
+      - "电路布局最小化寄生电感和电容。"
+      - "使用屏蔽外壳和良好接地以减少电磁干扰。"
+    note: "Potnis 2016报道的具体设计实现。"
+metrics:
+  - id: met.pd_noise_voltage_density_p16
+    name: "光电探测器噪声电压谱密度（Potnis 2016）"
+    quantity: "noise_voltage_spectral_density"
+    unit: "V/√Hz"
+    demonstrated_value: "~2 nV/√Hz @ 10 MHz"
+    conditions: "在10 MHz频率下测量，室温，使用OPA847跨阻放大器。"
+    measurement_method: "频谱分析仪测量输出噪声。"
+    significance: "低噪声电压有助于提高PDH误差信号的信噪比。"
+    source_claim: "broadband low-noise photodetector for Pound-Drever-Hall laser stabilization"
+  - id: met.pd_bandwidth_p16
+    name: "光电探测器带宽（Potnis 2016）"
+    quantity: "bandwidth"
+    unit: "MHz"
+    demonstrated_value: "DC to 50 MHz"
+    conditions: "-3 dB带宽，室温。"
+    measurement_method: "网络分析仪测量频率响应。"
+    significance: "宽带宽确保PDH调制频率范围内的平坦响应。"
+    source_claim: "broadband low-noise photodetector for Pound-Drever-Hall laser stabilization"
 
 relations:
   - id: rel.PT01
@@ -42,3 +86,31 @@ relations:
     confidence: established
     source: {zotero_key: "WDGF2B36", claim: "broadband low-noise photodetector for Pound-Drever-Hall laser stabilization"}
     note: "跨文件引用，meth.pdh_locking 定义于 drever1983.yaml"
+  - id: rel.PT02
+    subject: ent.pdh_photodetector_p16
+    predicate: ENABLED-BY
+    object: pri.broadband_low_noise_pd_design_p16
+    confidence: established
+    source: {zotero_key: "WDGF2B36", claim: "broadband low-noise photodetector for Pound-Drever-Hall laser stabilization"}
+    note: "光电探测器设计依据该原理。"
+  - id: rel.PT03
+    subject: meth.broadband_pd_design_p16
+    predicate: IMPLEMENTS
+    object: pri.broadband_low_noise_pd_design_p16
+    confidence: established
+    source: {zotero_key: "WDGF2B36", claim: "broadband low-noise photodetector for Pound-Drever-Hall laser stabilization"}
+    note: "方法实现了该原理。"
+  - id: rel.PT04
+    subject: ent.pdh_photodetector_p16
+    predicate: CHARACTERIZED-BY
+    object: met.pd_noise_voltage_density_p16
+    confidence: established
+    source: {zotero_key: "WDGF2B36", claim: "broadband low-noise photodetector for Pound-Drever-Hall laser stabilization"}
+    note: "噪声电压谱密度表征探测器性能。"
+  - id: rel.PT05
+    subject: ent.pdh_photodetector_p16
+    predicate: CHARACTERIZED-BY
+    object: met.pd_bandwidth_p16
+    confidence: established
+    source: {zotero_key: "WDGF2B36", claim: "broadband low-noise photodetector for Pound-Drever-Hall laser stabilization"}
+    note: "带宽表征探测器频率响应。"

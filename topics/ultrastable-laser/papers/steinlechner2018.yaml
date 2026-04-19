@@ -1,7 +1,7 @@
 # Steinlechner 2018 — 引力波探测器镜面镀层发展综述
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "L6KKLLSR"
@@ -64,7 +64,26 @@ principles:
           source: {zotero_key: "L6KKLLSR"}
         constraints: "a-Si 光学吸收过高限制其应用于引力波探测器"
 
-methods: []
+methods:
+  - id: meth.coating_material_comparative_analysis_s18
+    name: "镀层材料多性能指标比较分析方法"
+    description: >
+      文献综述方法：系统收集并比较不同镀层材料（SiO₂/Ti:Ta₂O₅、a-Si、AlGaAs、SiNₓ）在室温和低温下的关键性能参数，
+      包括机械损耗角 φ、光学吸收 α、散射损失等。通过表格形式展示多温度点数据，
+      分析材料性能与温度依赖关系，识别适用于不同温度区间的镀层材料。
+    inputs:
+      - "文献中的实验测量数据"
+      - "材料参数（损耗角、光学吸收、散射等）"
+      - "温度范围（室温至20K）"
+    outputs:
+      - "多材料多温度性能比较表"
+      - "温度依赖关系分析"
+      - "材料选型建议"
+    verification_status: observed
+    evidence: "Table 1: Mechanical loss φ at different temperatures; Fig. 5: Coating thermal noise PSD"
+    limitations:
+      - "数据来自不同研究组，测量条件和样品制备可能不一致"
+      - "部分材料数据点有限，外推需谨慎"
 
 metrics:
   - id: met.coating_loss_angle_comparison_s18
@@ -97,3 +116,21 @@ relations:
         mechanism: "AlGaAs 晶体镀层 φ = 2.5×10⁻⁵，10 倍降低"
         status: demonstrated
         note: "跨文件引用，定义于 cole2013.yaml"
+
+  - id: rel.ST02
+    subject: meth.coating_material_comparative_analysis_s18
+    predicate: IMPLEMENTS
+    object: pri.coating_thermal_noise_material_comparison
+    confidence: established
+    source: {zotero_key: "L6KKLLSR", claim: "we review the development of mirror coatings... summarizing their performance"}
+    verification_status: observed
+    note: "综述分析方法实现了材料比较原理"
+
+  - id: rel.ST03
+    subject: met.coating_loss_angle_comparison_s18
+    predicate: CHARACTERIZES
+    object: meth.coating_material_comparative_analysis_s18
+    confidence: established
+    source: {zotero_key: "L6KKLLSR", claim: "Table 1: Mechanical loss φ at different temperatures"}
+    verification_status: observed
+    note: "指标表征了分析方法的输出结果"

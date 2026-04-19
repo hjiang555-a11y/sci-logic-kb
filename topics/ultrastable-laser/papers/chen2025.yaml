@@ -105,6 +105,7 @@ relations:
     dominated_by: null
     verification_status: observed
     temporal_role: validates
+    breakthrough_paths: []
     note: >
       跨文件引用 numata2004.yaml; CQQM 协议显示 Si1 腔固有性能已接近热噪声极限，
       但在连续冷却下低温机振动和 RAM 仍为当前主要技术限制（由 CONDITIONED-BY 表述）。

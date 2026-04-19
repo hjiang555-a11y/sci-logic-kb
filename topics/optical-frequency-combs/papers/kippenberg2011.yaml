@@ -1,441 +1,465 @@
-# Kippenberg 2011 — 微谐振腔光学频率梳综述 [光学频率梳专题：微梳子域架构文档]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-07-15
-# Schema版本：v4.0
-# 专题：optical-frequency-combs
-# contribution_type: framework — 定义微谐振腔频率梳（microcomb）子域顶层架构。
-#   定义：Level 1 实体 ent.microresonator_frequency_comb（与锁模激光器梳竞争的全新产生原理）；
-#   Level 2 平台实例（silica microtoroid、crystalline resonator、Si₃N₄ integrated）；
-#   核心原理 pri.parametric_four_wave_mixing_comb、pri.microresonator_anomalous_dispersion；
-#   方法 meth.cw_pumped_microcomb_generation 及对应指标。
-#   不负责：具体梳态（如孤子态、暗孤子态）的精细物理（由后续技术论文提供）。
-
 meta:
-  zotero_key: ""
+  zotero_key: 2ADYRC8C
   topic: optical-frequency-combs
   source_type: review
   contribution_type: framework
   reliability: high
-  title: "Microresonator-Based Optical Frequency Combs"
+  title: Microresonator-Based Optical Frequency Combs
   year: 2011
   first_author: Kippenberg
-  journal: "Science"
+  journal: Science
   volume: 332
-  pages: "555-559"
-  doi: "10.1126/science.1193968"
-  note: >
-    [综述论文 / 子域架构文档] Kippenberg (EPFL) + Holzwarth (Menlo) + Diddams (NIST) 2011 Science 综述。
-    首篇 Science 级微谐振腔频率梳综述，系统阐述参量四波混频（FWM）在高 Q 微谐振腔中产生光学频率梳的新原理，
-    定义微梳子域架构：CW 泵浦 → Kerr 非线性 → 参量振荡 → 级联 FWM → 等间距梳齿。
-    核心贡献：(1) 阐明与锁模激光器梳本质不同的梳产生机制（参量 vs 受激辐射）；
+  pages: 555-559
+  doi: 10.1126/science.1193968
+  note: '[综述论文 / 子域架构文档] Kippenberg (EPFL) + Holzwarth (Menlo) + Diddams (NIST) 2011
+    Science 综述。 首篇 Science 级微谐振腔频率梳综述，系统阐述参量四波混频（FWM）在高 Q 微谐振腔中产生光学频率梳的新原理， 定义微梳子域架构：CW
+    泵浦 → Kerr 非线性 → 参量振荡 → 级联 FWM → 等间距梳齿。 核心贡献：(1) 阐明与锁模激光器梳本质不同的梳产生机制（参量 vs 受激辐射）；
     (2) 综述四类平台：silica microtoroid、crystalline (CaF₂/MgF₂)、Si₃N₄ integrated、Hydex；
-    (3) 明确高重频（10–1000 GHz）和芯片集成两大核心优势；
-    (4) 论述应用前景：天文光谱定标、微波光子学、电信、分子光谱；
-    (5) 指出关键挑战：相干梳态、f-2f 自参考、相位噪声、倍频程展宽。
-    ent.optical_frequency_comb 定义于 giunta2019.yaml；pri.self_referencing_f2f 定义于 giunta2019.yaml。
+    (3) 明确高重频（10–1000 GHz）和芯片集成两大核心优势； (4) 论述应用前景：天文光谱定标、微波光子学、电信、分子光谱； (5) 指出关键挑战：相干梳态、f-2f
+    自参考、相位噪声、倍频程展宽。 ent.optical_frequency_comb 定义于 giunta2019.yaml；pri.self_referencing_f2f
+    定义于 giunta2019.yaml。
 
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
+    '
 entities:
-  - id: ent.microresonator_frequency_comb
-    name: "微谐振腔光学频率梳（微梳）"
-    aliases: ["microcomb", "microresonator comb", "Kerr frequency comb", "parametric frequency comb", "微梳"]
-    hierarchy_level: 1
-    status: demonstrated
-    function: >
-      基于高 Q 微谐振腔中 Kerr 非线性（χ⁽³⁾）参量四波混频产生的光学频率梳。
-      CW 泵浦激光器注入微谐振腔，通过简并与非简并（级联）FWM 将泵浦光子转换为
-      等间距的信号-闲频光子对，形成频率梳。梳齿间距等于腔的自由光谱范围（FSR），
-      典型重复频率 10–1000 GHz，远高于传统锁模激光器梳（~100 MHz–10 GHz），
-      可实现芯片级集成。泵浦激光器本身是梳齿的一部分。
-    key_parameters:
-      comb_equation: "fₙ = f_CEO + n·f_rep（泵浦激光为梳齿之一）"
-      generation_mechanism: "参量四波混频（Kerr χ⁽³⁾ 非线性）"
-      repetition_rate: "10–1000 GHz（由 FSR = c/(2πRn_eff) 决定）"
-      pump_type: "CW 激光器（非脉冲锁模激光器）"
-      threshold_scaling: "P_th ∝ n₀²V_eff/(n₂Q²)（参量振荡阈值）"
-      demonstrated_bandwidth: ">1 octave（1000–2200 nm，silica microtoroid）"
-      mode_spacing_uniformity: "优于 1 part in 10¹⁷"
-      integration_potential: "CMOS 兼容工艺（Si₃N₄），芯片级封装"
-    interface_requirements:
-      pump_laser: "窄线宽 CW 激光器，功率 >P_th（平台相关，sub-μW 至 ~300 mW）"
-      dispersion: "反常色散（anomalous GVD）或色散工程使净色散近零"
-      coupling: "渐逝波耦合（锥形光纤、棱镜、波导总线）"
-    note: >
-      Level 1 实体节点，代表与锁模激光器梳（ent.optical_frequency_comb）本质不同的频率梳产生原理。
-      工作原理为参量频率转换（虚能级，无能量存储）而非受激辐射（实能级，增益介质）。
-      各具体平台（silica microtoroid、crystalline resonator、Si₃N₄ 等）为 Level 2 实例。
+- id: ent.microresonator_frequency_comb
+  name: 微谐振腔光学频率梳（微梳）
+  aliases:
+  - microcomb
+  - microresonator comb
+  - Kerr frequency comb
+  - parametric frequency comb
+  - 微梳
+  hierarchy_level: 1
+  status: demonstrated
+  function: '基于高 Q 微谐振腔中 Kerr 非线性（χ⁽³⁾）参量四波混频产生的光学频率梳。 CW 泵浦激光器注入微谐振腔，通过简并与非简并（级联）FWM
+    将泵浦光子转换为 等间距的信号-闲频光子对，形成频率梳。梳齿间距等于腔的自由光谱范围（FSR）， 典型重复频率 10–1000 GHz，远高于传统锁模激光器梳（~100
+    MHz–10 GHz）， 可实现芯片级集成。泵浦激光器本身是梳齿的一部分。
 
-  - id: ent.silica_microtoroid_comb
-    name: "二氧化硅微环形腔频率梳"
-    aliases: ["silica toroid microcomb", "silica microtoroid comb"]
-    hierarchy_level: 2
-    status: demonstrated
-    function: >
-      基于 SiO₂ 微环形谐振腔（silicon chip 上热回流成型）的微梳平台。
-      Q 因子 >10⁸（超高 Q），利用 SiO₂ 在 ~1550 nm 附近材料色散与几何色散补偿
-      实现反常色散，可产生超过一个倍频程的频率梳（1000–2200 nm）。
-      首次微梳演示平台（Del'Haye et al. 2007）。
-    key_parameters:
-      Q_factor: ">10⁸（超高 Q）"
-      material: "熔融石英（fused silica）"
-      coupling_method: "锥形光纤渐逝波耦合（tapered fiber）"
-      demonstrated_repetition_rate: "86 GHz（首次演示）、375 GHz"
-      demonstrated_bandwidth: ">1 octave（1000–2200 nm）"
-      dispersion_engineering: "材料色散补偿几何色散，~1550 nm 附近零色散"
-    note: >
-      Level 2 实例，PART-OF ent.microresonator_frequency_comb。
-      首次微梳演示平台。Del'Haye et al. 2007 (Nature 450, 1214)。
+    '
+  key_parameters:
+    comb_equation: fₙ = f_CEO + n·f_rep（泵浦激光为梳齿之一）
+    generation_mechanism: 参量四波混频（Kerr χ⁽³⁾ 非线性）
+    repetition_rate: 10–1000 GHz（由 FSR = c/(2πRn_eff) 决定）
+    pump_type: CW 激光器（非脉冲锁模激光器）
+    threshold_scaling: P_th ∝ n₀²V_eff/(n₂Q²)（参量振荡阈值）
+    demonstrated_bandwidth: '>1 octave（1000–2200 nm，silica microtoroid）'
+    mode_spacing_uniformity: 优于 1 part in 10¹⁷
+    integration_potential: CMOS 兼容工艺（Si₃N₄），芯片级封装
+  interface_requirements:
+    pump_laser: 窄线宽 CW 激光器，功率 >P_th（平台相关，sub-μW 至 ~300 mW）
+    dispersion: 反常色散（anomalous GVD）或色散工程使净色散近零
+    coupling: 渐逝波耦合（锥形光纤、棱镜、波导总线）
+  note: 'Level 1 实体节点，代表与锁模激光器梳（ent.optical_frequency_comb）本质不同的频率梳产生原理。 工作原理为参量频率转换（虚能级，无能量存储）而非受激辐射（实能级，增益介质）。
+    各具体平台（silica microtoroid、crystalline resonator、Si₃N₄ 等）为 Level 2 实例。
 
-  - id: ent.crystalline_resonator_comb
-    name: "晶体微谐振腔频率梳"
-    aliases: ["crystalline WGM comb", "CaF₂ comb", "MgF₂ comb", "crystalline microcomb"]
-    hierarchy_level: 2
-    status: demonstrated
-    function: >
-      基于毫米尺度晶体回音壁模式（WGM）谐振腔（CaF₂、MgF₂ 等）的微梳平台。
-      通过抛光圆柱坯件制备，Q 因子超过 10¹⁰（光学精细度 >10⁷），
-      棱镜渐逝波耦合，可实现低至 ~12 GHz 的梳齿间距（可直接光电探测），
-      透射窗口覆盖 160 nm–~8 μm，尤其适合中红外梳产生。
-    key_parameters:
-      Q_factor: ">10¹⁰（极高 Q）"
-      optical_finesse: ">10⁷"
-      material: "CaF₂ 或 MgF₂（反演对称性材料，χ⁽³⁾ 主导）"
-      coupling_method: "棱镜渐逝波耦合（prismatic coupler）"
-      demonstrated_repetition_rate: "低至 ~12 GHz（可直接光电探测）"
-      transparency_window: "160 nm – ~8 μm（CaF₂），中红外潜力极大"
-      n2: "~10⁻¹⁶ cm²/W（较低非线性系数，由超高 Q 补偿）"
-    note: >
-      Level 2 实例，PART-OF ent.microresonator_frequency_comb。
-      Ilchenko et al. 2004 首次在晶体谐振腔中演示参量振荡。
-      Savchenkov et al. 2008 演示 ~12 GHz 重频梳。
+    '
+- id: ent.silica_microtoroid_comb
+  name: 二氧化硅微环形腔频率梳
+  aliases:
+  - silica toroid microcomb
+  - silica microtoroid comb
+  hierarchy_level: 2
+  status: demonstrated
+  function: '基于 SiO₂ 微环形谐振腔（silicon chip 上热回流成型）的微梳平台。 Q 因子 >10⁸（超高 Q），利用 SiO₂ 在 ~1550
+    nm 附近材料色散与几何色散补偿 实现反常色散，可产生超过一个倍频程的频率梳（1000–2200 nm）。 首次微梳演示平台（Del''Haye et al.
+    2007）。
 
-  - id: ent.si3n4_integrated_comb
-    name: "氮化硅集成微梳"
-    aliases: ["SiN microcomb", "Si₃N₄ integrated comb", "silicon nitride microcomb", "chip-scale comb"]
-    hierarchy_level: 2
-    status: demonstrated
-    function: >
-      基于 CMOS 兼容工艺制造的 Si₃N₄ 微环谐振腔频率梳，波导与谐振腔集成在同一芯片上。
-      尽管 Q 因子较低（10⁵–10⁶），但通过强光场限制（小模式体积）和较大的 Kerr 非线性系数
-      （n₂ = 2.5×10⁻¹⁵ cm²/W，约为 SiO₂ 的 10 倍）部分补偿。
-      支持色散工程（通过谐振腔涂层/几何调控），可与光电探测器、调制器等光子器件单片集成，
-      是芯片级频率梳的最具前景平台。
-    key_parameters:
-      Q_factor: "10⁵–10⁶（中等 Q）"
-      material: "Si₃N₄（氮化硅）"
-      n2: "2.5×10⁻¹⁵ cm²/W（SiO₂ 的 ~10 倍）"
-      fabrication: "CMOS 兼容光刻工艺"
-      coupling_method: "片上波导总线耦合（bus waveguide）"
-      demonstrated_repetition_rate: "204 GHz"
-      demonstrated_bandwidth: "2/3 octave（300 mW 泵浦 @ 1550 nm）"
-      integration_advantage: "波导 + 谐振腔同片集成，支持全光子芯片封装"
-    note: >
-      Level 2 实例，PART-OF ent.microresonator_frequency_comb。
-      Levy et al. 2010 (Nat. Photonics) 和 Foster et al. 2010 首次演示。
-      芯片级集成是微梳区别于传统梳的核心竞争优势之一。
+    '
+  key_parameters:
+    Q_factor: '>10⁸（超高 Q）'
+    material: 熔融石英（fused silica）
+    coupling_method: 锥形光纤渐逝波耦合（tapered fiber）
+    demonstrated_repetition_rate: 86 GHz（首次演示）、375 GHz
+    demonstrated_bandwidth: '>1 octave（1000–2200 nm）'
+    dispersion_engineering: 材料色散补偿几何色散，~1550 nm 附近零色散
+  note: 'Level 2 实例，PART-OF ent.microresonator_frequency_comb。 首次微梳演示平台。Del''Haye
+    et al. 2007 (Nature 450, 1214)。
 
+    '
+- id: ent.crystalline_resonator_comb
+  name: 晶体微谐振腔频率梳
+  aliases:
+  - crystalline WGM comb
+  - CaF₂ comb
+  - MgF₂ comb
+  - crystalline microcomb
+  hierarchy_level: 2
+  status: demonstrated
+  function: '基于毫米尺度晶体回音壁模式（WGM）谐振腔（CaF₂、MgF₂ 等）的微梳平台。 通过抛光圆柱坯件制备，Q 因子超过 10¹⁰（光学精细度
+    >10⁷）， 棱镜渐逝波耦合，可实现低至 ~12 GHz 的梳齿间距（可直接光电探测）， 透射窗口覆盖 160 nm–~8 μm，尤其适合中红外梳产生。
+
+    '
+  key_parameters:
+    Q_factor: '>10¹⁰（极高 Q）'
+    optical_finesse: '>10⁷'
+    material: CaF₂ 或 MgF₂（反演对称性材料，χ⁽³⁾ 主导）
+    coupling_method: 棱镜渐逝波耦合（prismatic coupler）
+    demonstrated_repetition_rate: 低至 ~12 GHz（可直接光电探测）
+    transparency_window: 160 nm – ~8 μm（CaF₂），中红外潜力极大
+    n2: ~10⁻¹⁶ cm²/W（较低非线性系数，由超高 Q 补偿）
+  note: 'Level 2 实例，PART-OF ent.microresonator_frequency_comb。 Ilchenko et al. 2004
+    首次在晶体谐振腔中演示参量振荡。 Savchenkov et al. 2008 演示 ~12 GHz 重频梳。
+
+    '
+- id: ent.si3n4_integrated_comb
+  name: 氮化硅集成微梳
+  aliases:
+  - SiN microcomb
+  - Si₃N₄ integrated comb
+  - silicon nitride microcomb
+  - chip-scale comb
+  hierarchy_level: 2
+  status: demonstrated
+  function: '基于 CMOS 兼容工艺制造的 Si₃N₄ 微环谐振腔频率梳，波导与谐振腔集成在同一芯片上。 尽管 Q 因子较低（10⁵–10⁶），但通过强光场限制（小模式体积）和较大的
+    Kerr 非线性系数 （n₂ = 2.5×10⁻¹⁵ cm²/W，约为 SiO₂ 的 10 倍）部分补偿。 支持色散工程（通过谐振腔涂层/几何调控），可与光电探测器、调制器等光子器件单片集成，
+    是芯片级频率梳的最具前景平台。
+
+    '
+  key_parameters:
+    Q_factor: 10⁵–10⁶（中等 Q）
+    material: Si₃N₄（氮化硅）
+    n2: 2.5×10⁻¹⁵ cm²/W（SiO₂ 的 ~10 倍）
+    fabrication: CMOS 兼容光刻工艺
+    coupling_method: 片上波导总线耦合（bus waveguide）
+    demonstrated_repetition_rate: 204 GHz
+    demonstrated_bandwidth: 2/3 octave（300 mW 泵浦 @ 1550 nm）
+    integration_advantage: 波导 + 谐振腔同片集成，支持全光子芯片封装
+  note: 'Level 2 实例，PART-OF ent.microresonator_frequency_comb。 Levy et al. 2010 (Nat.
+    Photonics) 和 Foster et al. 2010 首次演示。 芯片级集成是微梳区别于传统梳的核心竞争优势之一。
+
+    '
 principles:
-  - id: pri.parametric_four_wave_mixing_comb
-    name: "参量四波混频梳产生原理"
-    tier: domain
-    verification_status: observed
-    statement: >
-      在具有 Kerr 非线性（χ⁽³⁾）的高 Q 微谐振腔中，CW 泵浦激光器的高腔内功率密度
-      （~GW/cm²）驱动参量四波混频过程：两个泵浦光子湮灭，产生一对频率上移（信号 ωₛ）
-      和频率下移（闲频 ωᵢ）的光子。能量守恒要求 2ħωₚ = ħωₛ + ħωᵢ，即边带相对泵浦对称。
-      当信号和闲频的腔内散射率超过腔损耗率 κ 时，参量振荡发生。
-      随后级联 FWM（非简并 FWM：已产生的边带作为新的"泵浦"继续产生子边带）
-      将等间距性传递至整个梳谱，形成光学频率梳。
-      参量振荡阈值 P_th ∝ n₀²V_eff/(n₂Q²)，高 Q 可极大降低阈值至 sub-μW 水平。
-    domain: "非线性光学，微谐振腔光子学，光学频率梳"
-    formula: >
-      能量守恒：2ωₚ = ωₛ + ωᵢ；
-      动量守恒：2βₚ = βₛ + βᵢ（β = n/R，WGM 传播常数）；
-      参量振荡阈值：P_th ∝ n₀²·V_eff/(n₂·Q²)；
-      折射率：n(I) = n₀ + n₂·I（Kerr 效应）
-    key_insight: >
-      与锁模激光器通过受激辐射产生脉冲不同，微梳通过虚能级的参量过程产生梳齿——
-      非线性材料无能量存储，仅起光子频率转换作用。级联 FWM 是锁定所有梳齿相位关系、
-      实现等间距梳的关键耦合机制。
-    conditions: "高 Q 微谐振腔（Q > 10⁵）；χ⁽³⁾ 非线性材料；泵浦功率超过参量振荡阈值"
-    preconditions:
-      - "腔的回音壁模式（WGM）或波导模式与泵浦、信号、闲频频率共振"
-      - "信号与闲频频率须与腔模式重合（色散限制带宽）"
-      - "泵浦功率 > P_th（阈值随 1/Q² 降低）"
-    invalidated_when:
-      - "色散过大导致级联 FWM 效率急剧下降，梳带宽受限"
-      - "双光子吸收主导（如 Si 在 1550 nm 附近），净光学损耗增加"
-      - "热效应或热折射噪声破坏腔模式稳定性"
-    source_claim: >
-      "parametric frequency conversion will annihilate two pump photons (with angular frequency ωp) 
-      and create a new pair of photons: a frequency up-shifted signal (ωs), and a frequency downshifted 
-      idler (ωi). The conservation of energy (2ħωp = ħωi + ħωs) implies that the frequency components 
-      are equally spaced with respect to the pump"
-    open_questions:
-      - "How can phase coherence of all comb modes be reliably achieved and maintained across the full bandwidth in different microresonator platforms?"
-      - "What are the fundamental limits of thermo-refractive and thermo-elastic noise on microcomb frequency stability given the small mode volumes?"
+- id: pri.parametric_four_wave_mixing_comb
+  name: 参量四波混频梳产生原理
+  tier: domain
+  verification_status: observed
+  statement: '在具有 Kerr 非线性（χ⁽³⁾）的高 Q 微谐振腔中，CW 泵浦激光器的高腔内功率密度 （~GW/cm²）驱动参量四波混频过程：两个泵浦光子湮灭，产生一对频率上移（信号
+    ωₛ） 和频率下移（闲频 ωᵢ）的光子。能量守恒要求 2ħωₚ = ħωₛ + ħωᵢ，即边带相对泵浦对称。 当信号和闲频的腔内散射率超过腔损耗率 κ 时，参量振荡发生。
+    随后级联 FWM（非简并 FWM：已产生的边带作为新的"泵浦"继续产生子边带） 将等间距性传递至整个梳谱，形成光学频率梳。 参量振荡阈值 P_th ∝ n₀²V_eff/(n₂Q²)，高
+    Q 可极大降低阈值至 sub-μW 水平。
 
-  - id: pri.microresonator_anomalous_dispersion
-    name: "微谐振腔反常色散条件"
-    tier: domain
-    verification_status: observed
-    statement: >
-      宽带频率梳产生要求微谐振腔在泵浦波长附近工作在反常群速度色散（anomalous GVD）区域，
-      即高频光传播速度快于低频光（Δnₘ 随波长增大而增大）。色散决定了腔的自由光谱范围（FSR）
-      随波长的变化：正常色散使 FSR 随波长减小，反常色散使 FSR 增大。
-      当级联 FWM 产生的新梳齿偏离腔谐振模式时（因色散导致的 FSR 不均匀），
-      转换效率下降，限制梳带宽。然而，Kerr 非线性引起的光学模式牵引效应
-      可部分补偿色散，将梳带宽扩展至纯色散限制之外。
-      色散工程（几何色散 + 材料色散设计）是实现宽带微梳的核心技术。
-    domain: "非线性光学，色散工程，微谐振腔光子学"
-    formula: >
-      FSR ≈ c/(2πRn_eff)（WGM 谐振腔）；
-      色散参数 D = dFSR/dλ < 0 为正常色散，D > 0 为反常色散；
-      Kerr 模式牵引：δω_Kerr ∝ n₂·I 可补偿色散引起的模式失配
-    key_insight: >
-      反常色散是宽带微梳产生的必要条件，但 Kerr 模式牵引可部分放宽这一限制。
-      SiO₂ 在 ~1550 nm 附近材料色散为反常，恰好补偿 WGM 的正常几何色散，
-      实现零色散附近泵浦和超倍频程展宽。
-    conditions: "泵浦波长位于反常 GVD 区域，或通过色散工程使净色散近零/弱反常"
-    preconditions:
-      - "材料色散与几何色散的总和在泵浦波长附近为反常色散"
-      - "腔体几何参数（半径、截面形状）需精确控制以实现目标色散曲线"
-    invalidated_when:
-      - "泵浦波长位于强正常色散区域，且无法通过几何/涂层工程补偿"
-    source_claim: >
-      "Dispersion, the variation of the free spectral range of the cavity with wavelength, 
-      ultimately limits this conversion process and leads to a finite bandwidth of the comb 
-      generation process because the cascaded FWM is less efficient once the comb modes are 
-      not commensurate with the cavity mode spectrum"
-    open_questions:
-      - "Can dispersion engineering in Si₃N₄ and crystalline resonators reliably achieve octave-spanning combs with low threshold power?"
-      - "What are the limits of Kerr nonlinear mode pulling in extending comb bandwidth beyond dispersion-imposed limits?"
+    '
+  domain: 非线性光学，微谐振腔光子学，光学频率梳
+  formula: '能量守恒：2ωₚ = ωₛ + ωᵢ； 动量守恒：2βₚ = βₛ + βᵢ（β = n/R，WGM 传播常数）； 参量振荡阈值：P_th
+    ∝ n₀²·V_eff/(n₂·Q²)； 折射率：n(I) = n₀ + n₂·I（Kerr 效应）
 
+    '
+  key_insight: '与锁模激光器通过受激辐射产生脉冲不同，微梳通过虚能级的参量过程产生梳齿—— 非线性材料无能量存储，仅起光子频率转换作用。级联 FWM
+    是锁定所有梳齿相位关系、 实现等间距梳的关键耦合机制。
+
+    '
+  conditions: 高 Q 微谐振腔（Q > 10⁵）；χ⁽³⁾ 非线性材料；泵浦功率超过参量振荡阈值
+  preconditions:
+  - 腔的回音壁模式（WGM）或波导模式与泵浦、信号、闲频频率共振
+  - 信号与闲频频率须与腔模式重合（色散限制带宽）
+  - 泵浦功率 > P_th（阈值随 1/Q² 降低）
+  invalidated_when:
+  - 色散过大导致级联 FWM 效率急剧下降，梳带宽受限
+  - 双光子吸收主导（如 Si 在 1550 nm 附近），净光学损耗增加
+  - 热效应或热折射噪声破坏腔模式稳定性
+  source_claim: '"parametric frequency conversion will annihilate two pump photons
+    (with angular frequency ωp)  and create a new pair of photons: a frequency up-shifted
+    signal (ωs), and a frequency downshifted  idler (ωi). The conservation of energy
+    (2ħωp = ħωi + ħωs) implies that the frequency components  are equally spaced with
+    respect to the pump"
+
+    '
+  open_questions:
+  - How can phase coherence of all comb modes be reliably achieved and maintained
+    across the full bandwidth in different microresonator platforms?
+  - What are the fundamental limits of thermo-refractive and thermo-elastic noise
+    on microcomb frequency stability given the small mode volumes?
+- id: pri.microresonator_anomalous_dispersion
+  name: 微谐振腔反常色散条件
+  tier: domain
+  verification_status: observed
+  statement: '宽带频率梳产生要求微谐振腔在泵浦波长附近工作在反常群速度色散（anomalous GVD）区域， 即高频光传播速度快于低频光（Δnₘ 随波长增大而增大）。色散决定了腔的自由光谱范围（FSR）
+    随波长的变化：正常色散使 FSR 随波长减小，反常色散使 FSR 增大。 当级联 FWM 产生的新梳齿偏离腔谐振模式时（因色散导致的 FSR 不均匀）， 转换效率下降，限制梳带宽。然而，Kerr
+    非线性引起的光学模式牵引效应 可部分补偿色散，将梳带宽扩展至纯色散限制之外。 色散工程（几何色散 + 材料色散设计）是实现宽带微梳的核心技术。
+
+    '
+  domain: 非线性光学，色散工程，微谐振腔光子学
+  formula: 'FSR ≈ c/(2πRn_eff)（WGM 谐振腔）； 色散参数 D = dFSR/dλ < 0 为正常色散，D > 0 为反常色散； Kerr
+    模式牵引：δω_Kerr ∝ n₂·I 可补偿色散引起的模式失配
+
+    '
+  key_insight: '反常色散是宽带微梳产生的必要条件，但 Kerr 模式牵引可部分放宽这一限制。 SiO₂ 在 ~1550 nm 附近材料色散为反常，恰好补偿
+    WGM 的正常几何色散， 实现零色散附近泵浦和超倍频程展宽。
+
+    '
+  conditions: 泵浦波长位于反常 GVD 区域，或通过色散工程使净色散近零/弱反常
+  preconditions:
+  - 材料色散与几何色散的总和在泵浦波长附近为反常色散
+  - 腔体几何参数（半径、截面形状）需精确控制以实现目标色散曲线
+  invalidated_when:
+  - 泵浦波长位于强正常色散区域，且无法通过几何/涂层工程补偿
+  source_claim: '"Dispersion, the variation of the free spectral range of the cavity
+    with wavelength,  ultimately limits this conversion process and leads to a finite
+    bandwidth of the comb  generation process because the cascaded FWM is less efficient
+    once the comb modes are  not commensurate with the cavity mode spectrum"
+
+    '
+  open_questions:
+  - Can dispersion engineering in Si₃N₄ and crystalline resonators reliably achieve
+    octave-spanning combs with low threshold power?
+  - What are the limits of Kerr nonlinear mode pulling in extending comb bandwidth
+    beyond dispersion-imposed limits?
 methods:
-  - id: meth.cw_pumped_microcomb_generation
-    name: "CW 泵浦微谐振腔梳产生方法"
-    status: demonstrated
-    applies_to: ent.microresonator_frequency_comb
-    steps_summary: >
-      1. 窄线宽 CW 激光器调谐至微谐振腔谐振模式 →
-      2. 渐逝波耦合注入腔内（锥形光纤/棱镜/波导）→
-      3. 腔内功率增强（~GW/cm² 量级），Kerr 非线性驱动简并 FWM →
-      4. 参量振荡产生对称信号-闲频边带 →
-      5. 级联（非简并）FWM 将已产生边带进一步转换为新边带 →
-      6. 所有边带等间距排列形成光学频率梳 →
-      7. 渐逝波输出耦合至光纤/波导 →
-      8. 光电探测梳重复频率拍频信号
-    required_hardware:
-      - ent.microresonator_frequency_comb
-    advantages:
-      - "CW 泵浦，无需锁模激光器——系统大幅简化"
-      - "天然高重频（10–1000 GHz），每根梳齿功率高（>1 mW 可能）"
-      - "芯片级集成潜力（特别是 Si₃N₄ 平台）"
-      - "增益仅受材料透射窗和色散限制，原则上可覆盖从 UV 到中红外"
-      - "无活动部件（无可移动镜片），f_rep 和 f_CEO 可通过泵浦频率和功率电子控制"
-    disadvantages:
-      - "相干梳态（如孤子态）的可靠激发和维持仍具挑战性（2011 年时）"
-      - "f-2f 自参考需要倍频程展宽和足够低的梳模式频率噪声"
-      - "小模式体积增强热折射和热弹性噪声"
-      - "将 f_rep 降至 <100 GHz 需要更大谐振腔和更高 Q"
-    conditions:
-      - "泵浦功率超过参量振荡阈值"
-      - "微谐振腔在泵浦波长具有反常色散"
-      - "渐逝波耦合效率足够高（过耦合态有利于提取效率）"
-    source_claim: >
-      "A new optical frequency comb generation principle has emerged that uses parametric 
-      frequency conversion in high resonance quality factor (Q) microresonators"
+- id: meth.cw_pumped_microcomb_generation
+  name: CW 泵浦微谐振腔梳产生方法
+  status: demonstrated
+  applies_to: ent.microresonator_frequency_comb
+  steps_summary: '1. 窄线宽 CW 激光器调谐至微谐振腔谐振模式 → 2. 渐逝波耦合注入腔内（锥形光纤/棱镜/波导）→ 3. 腔内功率增强（~GW/cm²
+    量级），Kerr 非线性驱动简并 FWM → 4. 参量振荡产生对称信号-闲频边带 → 5. 级联（非简并）FWM 将已产生边带进一步转换为新边带 → 6.
+    所有边带等间距排列形成光学频率梳 → 7. 渐逝波输出耦合至光纤/波导 → 8. 光电探测梳重复频率拍频信号
 
+    '
+  required_hardware:
+  - ent.microresonator_frequency_comb
+  advantages:
+  - CW 泵浦，无需锁模激光器——系统大幅简化
+  - 天然高重频（10–1000 GHz），每根梳齿功率高（>1 mW 可能）
+  - 芯片级集成潜力（特别是 Si₃N₄ 平台）
+  - 增益仅受材料透射窗和色散限制，原则上可覆盖从 UV 到中红外
+  - 无活动部件（无可移动镜片），f_rep 和 f_CEO 可通过泵浦频率和功率电子控制
+  disadvantages:
+  - 相干梳态（如孤子态）的可靠激发和维持仍具挑战性（2011 年时）
+  - f-2f 自参考需要倍频程展宽和足够低的梳模式频率噪声
+  - 小模式体积增强热折射和热弹性噪声
+  - 将 f_rep 降至 <100 GHz 需要更大谐振腔和更高 Q
+  conditions:
+  - 泵浦功率超过参量振荡阈值
+  - 微谐振腔在泵浦波长具有反常色散
+  - 渐逝波耦合效率足够高（过耦合态有利于提取效率）
+  source_claim: '"A new optical frequency comb generation principle has emerged that
+    uses parametric  frequency conversion in high resonance quality factor (Q) microresonators"
+
+    '
 metrics:
-  - id: met.microcomb_repetition_rate_range
-    name: "微梳重复频率范围"
-    unit: "GHz"
-    description: >
-      微谐振腔频率梳的梳齿间距（等于 FSR），由谐振腔尺寸决定。
-      微梳的核心竞争优势之一是天然高重频（10–1000 GHz），
-      传统锁模激光器梳难以达到此范围。
-    demonstrated_value:
-      value: "10–1000 GHz（平台相关：crystalline ~12 GHz，Si₃N₄ ~204 GHz，silica microtoroid ~86–375 GHz）"
-      conditions: "各平台已演示值：silica microtoroid 86 GHz（首次）、375 GHz；crystalline CaF₂ ~12–25 GHz；Si₃N₄ 204 GHz"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "", claim: "high repetition rates in the range of 10 to 1000 gigahertz through compact, chip-scale integration"}
-    historical_landmarks:
-      first_demonstration:
-        value: "86 GHz（silica microtoroid）"
-        year: 2007
-        source: {zotero_key: ""}
-        note: "Del'Haye et al. 2007, Nature 450, 1214 — 首次微梳演示"
-      best_demonstration:
-        value: "~12 GHz（crystalline CaF₂，可直接光电探测）至 >375 GHz（silica microtoroid）"
-        year: 2008
-        source: {zotero_key: ""}
-        note: "Savchenkov et al. 2008 达到 ~12 GHz；Del'Haye et al. 2009 达到倍频程展宽"
+- id: met.microcomb_repetition_rate_range
+  name: 微梳重复频率范围
+  unit: GHz
+  description: '微谐振腔频率梳的梳齿间距（等于 FSR），由谐振腔尺寸决定。 微梳的核心竞争优势之一是天然高重频（10–1000 GHz）， 传统锁模激光器梳难以达到此范围。
 
-  - id: met.parametric_oscillation_threshold
-    name: "参量振荡阈值功率"
-    unit: "W（或 μW/mW）"
-    description: >
-      在微谐振腔中启动 Kerr 参量振荡所需的最低泵浦功率。
-      阈值随 1/Q² 缩放，超高 Q 腔可实现 sub-μW 阈值。
-      是衡量微梳能效和实用性的关键指标。
-    demonstrated_value:
-      value: "sub-μW（超高 Q silica/crystalline）至 ~300 mW（Si₃N₄，Q = 10⁵–10⁶）"
-      conditions: "P_th ∝ n₀²V_eff/(n₂Q²)；silica microtoroid Q > 10⁸，Si₃N₄ Q ~ 10⁵–10⁶，CW 泵浦 @ ~1550 nm"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "", claim: "the threshold for initiation of parametric oscillation can be strongly reduced, because the threshold scales with the inverse Q factor squared"}
-    theoretical_floor:
-      value: "由腔 Q 因子和模式体积决定：P_th ∝ n₀²V_eff/(n₂Q²)"
-      basis: "Kerr 非线性参量振荡理论"
-      gap_note: "超高 Q 腔已接近 sub-μW 极限；集成平台受限于较低 Q 因子"
-
-  - id: met.microcomb_mode_spacing_uniformity
-    name: "微梳梳齿间距均匀性"
-    unit: "无量纲（相对偏差）"
-    description: >
-      微梳梳齿间距的均匀性（即所有相邻梳齿的频率差是否严格相等），
-      是验证微梳是否为真正频率梳的核心指标。
-    demonstrated_value:
-      value: "优于 1 part in 10¹⁷"
-      conditions: "silica microtoroid，多外差光谱法验证"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "", claim: "The uniformity of the mode spacing was shown to be better than 1 part in 10¹⁷"}
-    historical_landmarks:
-      first_demonstration:
-        value: "1 part in 10¹⁷"
-        year: 2007
-        source: {zotero_key: ""}
-        note: "Del'Haye et al. 2007 验证梳齿等间距性"
-
-# ═══════════════════════════════════════════════
-#  RELATIONS（关系）
-# ═══════════════════════════════════════════════
-
-relations:
-  # --- 层级关系 ---
-  - id: rel.K11_01
-    subject: ent.silica_microtoroid_comb
-    predicate: PART-OF
-    object: ent.microresonator_frequency_comb
-    confidence: established
-    source: {zotero_key: "", claim: "Toroidal microresonators were the first system in which optical frequency comb generation was demonstrated"}
-    note: "Level 2 实例 → Level 1 父实体"
-
-  - id: rel.K11_02
-    subject: ent.crystalline_resonator_comb
-    predicate: PART-OF
-    object: ent.microresonator_frequency_comb
-    confidence: established
-    source: {zotero_key: "", claim: "A different class of resonators amenable to optical frequency comb generation are crystalline resonators"}
-    note: "Level 2 实例 → Level 1 父实体"
-
-  - id: rel.K11_03
-    subject: ent.si3n4_integrated_comb
-    predicate: PART-OF
-    object: ent.microresonator_frequency_comb
-    confidence: established
-    source: {zotero_key: "", claim: "optical frequency comb generation in integrated silicon nitride (SiN) resonators fabricated using approaches compatible with widespread complementary metal-oxide semiconductor (CMOS) technology"}
-    note: "Level 2 实例 → Level 1 父实体；芯片级集成核心平台"
-
-  # --- 竞争关系 ---
-  - id: rel.K11_04
-    subject: ent.microresonator_frequency_comb
-    predicate: COMPETES-WITH
-    object: ent.optical_frequency_comb
-    context: "光学频率梳产生方案选择"
-    tradeoffs:
-      subject_wins: ["天然高重频 10–1000 GHz", "芯片级集成潜力", "CW 泵浦（系统简单）", "每梳齿功率高（>1 mW）", "无活动部件"]
-      object_wins: ["成熟的 f-2f 自参考方案", "相干性已验证", "商业化成熟（Menlo Systems 等）", "窄线宽已证明至 mHz 级", "光钟/精密计量标准工具"]
-    comparison_matrix:
-      - dimension: "repetition_rate"
-        subject: "10–1000 GHz（天然，由腔 FSR 决定）"
-        object: "~100 MHz–10 GHz（由腔长决定，>10 GHz 极具挑战）"
-      - dimension: "spectral_bandwidth"
-        subject: ">1 octave 已演示（silica），但相干性待验证"
-        object: ">1 octave 已演示且完全频率稳定"
-      - dimension: "integration"
-        subject: "芯片级 CMOS 兼容（Si₃N₄）"
-        object: "光纤系统成熟但体积较大"
-      - dimension: "phase_coherence"
-        subject: "2011 年时仍为挑战，梳态相干性待系统验证"
-        object: "已完全验证，f-2f 锁定成熟"
-      - dimension: "pump_simplicity"
-        subject: "单台 CW 激光器"
-        object: "需锁模激光器 + 泵浦源"
-    confidence: established
-    source: {zotero_key: "", claim: "Microresonator comb generators are not likely to replace existing commercialized laser-based frequency comb generators but may well be the system of choice that can serve the demand for high repetition rates and wavelength ranges such as the mid-IR"}
-    note: >
-      Level 1 之间的竞争关系。微梳不会取代锁模激光器梳，而是在高重频和特殊波段（中红外）
-      领域提供互补方案。ent.optical_frequency_comb 定义于 giunta2019.yaml。
-
-  # --- 使能关系 ---
-  - id: rel.K11_05
-    subject: meth.cw_pumped_microcomb_generation
-    predicate: ENABLED-BY
-    object: pri.parametric_four_wave_mixing_comb
-    confidence: established
-    source: {zotero_key: "", claim: "Combs can also be produced from a continuous wave (CW) laser through the nonlinear optical process of parametric frequency conversion in optical microresonators"}
-    conditions: "泵浦功率超过参量振荡阈值，腔具有反常色散"
-
-  - id: rel.K11_06
-    subject: ent.microresonator_frequency_comb
-    predicate: ENABLED-BY
-    object: pri.parametric_four_wave_mixing_comb
-    confidence: established
-    source: {zotero_key: "", claim: "parametric frequency conversion will annihilate two pump photons and create a new pair of photons"}
-    note: "参量 FWM 是微梳的核心产生机制"
-
-  # --- 限制关系 ---
-  - id: rel.K11_07
-    subject: ent.microresonator_frequency_comb
-    predicate: BOUNDED-BY
-    object: pri.microresonator_anomalous_dispersion
-    confidence: established
-    source: {zotero_key: "", claim: "Dispersion... ultimately limits this conversion process and leads to a finite bandwidth of the comb generation process"}
-    is_system_limit:
-      current: true
-      conditions: "梳带宽由色散限制；Kerr 模式牵引可部分扩展"
+    '
+  demonstrated_value:
+    value: 10–1000 GHz（平台相关：crystalline ~12 GHz，Si₃N₄ ~204 GHz，silica microtoroid
+      ~86–375 GHz）
+    conditions: 各平台已演示值：silica microtoroid 86 GHz（首次）、375 GHz；crystalline CaF₂ ~12–25
+      GHz；Si₃N₄ 204 GHz
     verification_status: observed
-    temporal_role: validates
-    breakthrough_paths:
-      - direction: pri.microresonator_anomalous_dispersion
-        strategy: "色散工程：通过谐振腔几何/涂层设计优化色散曲线"
-        feasibility: demonstrated
-        source: {zotero_key: "", claim: "dispersion engineering through suitable resonator coatings"}
-    note: "色散是微梳带宽的主要限制因素，但可通过工程设计优化"
-
-  # --- 特征化关系 ---
-  - id: rel.K11_08
-    subject: ent.microresonator_frequency_comb
-    predicate: CHARACTERIZED-BY
-    object: met.microcomb_repetition_rate_range
     confidence: established
-    source: {zotero_key: "", claim: "high repetition rates in the range of 10 to 1000 gigahertz"}
+    source:
+      zotero_key: ''
+      claim: high repetition rates in the range of 10 to 1000 gigahertz through compact,
+        chip-scale integration
+  historical_landmarks:
+    first_demonstration:
+      value: 86 GHz（silica microtoroid）
+      year: 2007
+      source:
+        zotero_key: ''
+      note: Del'Haye et al. 2007, Nature 450, 1214 — 首次微梳演示
+    best_demonstration:
+      value: ~12 GHz（crystalline CaF₂，可直接光电探测）至 >375 GHz（silica microtoroid）
+      year: 2008
+      source:
+        zotero_key: ''
+      note: Savchenkov et al. 2008 达到 ~12 GHz；Del'Haye et al. 2009 达到倍频程展宽
+- id: met.parametric_oscillation_threshold
+  name: 参量振荡阈值功率
+  unit: W（或 μW/mW）
+  description: '在微谐振腔中启动 Kerr 参量振荡所需的最低泵浦功率。 阈值随 1/Q² 缩放，超高 Q 腔可实现 sub-μW 阈值。 是衡量微梳能效和实用性的关键指标。
 
-  - id: rel.K11_09
-    subject: ent.microresonator_frequency_comb
-    predicate: CHARACTERIZED-BY
-    object: met.parametric_oscillation_threshold
+    '
+  demonstrated_value:
+    value: sub-μW（超高 Q silica/crystalline）至 ~300 mW（Si₃N₄，Q = 10⁵–10⁶）
+    conditions: P_th ∝ n₀²V_eff/(n₂Q²)；silica microtoroid Q > 10⁸，Si₃N₄ Q ~ 10⁵–10⁶，CW
+      泵浦 @ ~1550 nm
+    verification_status: observed
     confidence: established
-    source: {zotero_key: "", claim: "the threshold scales with the inverse Q factor squared, implying that high Q can give a dramatic reduction in required optical power"}
+    source:
+      zotero_key: ''
+      claim: the threshold for initiation of parametric oscillation can be strongly
+        reduced, because the threshold scales with the inverse Q factor squared
+  theoretical_floor:
+    value: 由腔 Q 因子和模式体积决定：P_th ∝ n₀²V_eff/(n₂Q²)
+    basis: Kerr 非线性参量振荡理论
+    gap_note: 超高 Q 腔已接近 sub-μW 极限；集成平台受限于较低 Q 因子
+- id: met.microcomb_mode_spacing_uniformity
+  name: 微梳梳齿间距均匀性
+  unit: 无量纲（相对偏差）
+  description: '微梳梳齿间距的均匀性（即所有相邻梳齿的频率差是否严格相等）， 是验证微梳是否为真正频率梳的核心指标。
 
-  - id: rel.K11_10
-    subject: ent.microresonator_frequency_comb
-    predicate: CHARACTERIZED-BY
-    object: met.microcomb_mode_spacing_uniformity
+    '
+  demonstrated_value:
+    value: 优于 1 part in 10¹⁷
+    conditions: silica microtoroid，多外差光谱法验证
+    verification_status: observed
     confidence: established
-    source: {zotero_key: "", claim: "The uniformity of the mode spacing was shown to be better than 1 part in 10¹⁷"}
+    source:
+      zotero_key: ''
+      claim: The uniformity of the mode spacing was shown to be better than 1 part
+        in 10¹⁷
+  historical_landmarks:
+    first_demonstration:
+      value: 1 part in 10¹⁷
+      year: 2007
+      source:
+        zotero_key: ''
+      note: Del'Haye et al. 2007 验证梳齿等间距性
+relations:
+- id: rel.K11_01
+  subject: ent.silica_microtoroid_comb
+  predicate: PART-OF
+  object: ent.microresonator_frequency_comb
+  confidence: established
+  source:
+    zotero_key: ''
+    claim: Toroidal microresonators were the first system in which optical frequency
+      comb generation was demonstrated
+  note: Level 2 实例 → Level 1 父实体
+- id: rel.K11_02
+  subject: ent.crystalline_resonator_comb
+  predicate: PART-OF
+  object: ent.microresonator_frequency_comb
+  confidence: established
+  source:
+    zotero_key: ''
+    claim: A different class of resonators amenable to optical frequency comb generation
+      are crystalline resonators
+  note: Level 2 实例 → Level 1 父实体
+- id: rel.K11_03
+  subject: ent.si3n4_integrated_comb
+  predicate: PART-OF
+  object: ent.microresonator_frequency_comb
+  confidence: established
+  source:
+    zotero_key: ''
+    claim: optical frequency comb generation in integrated silicon nitride (SiN) resonators
+      fabricated using approaches compatible with widespread complementary metal-oxide
+      semiconductor (CMOS) technology
+  note: Level 2 实例 → Level 1 父实体；芯片级集成核心平台
+- id: rel.K11_04
+  subject: ent.microresonator_frequency_comb
+  predicate: COMPETES-WITH
+  object: ent.optical_frequency_comb
+  context: 光学频率梳产生方案选择
+  tradeoffs:
+    subject_wins:
+    - 天然高重频 10–1000 GHz
+    - 芯片级集成潜力
+    - CW 泵浦（系统简单）
+    - 每梳齿功率高（>1 mW）
+    - 无活动部件
+    object_wins:
+    - 成熟的 f-2f 自参考方案
+    - 相干性已验证
+    - 商业化成熟（Menlo Systems 等）
+    - 窄线宽已证明至 mHz 级
+    - 光钟/精密计量标准工具
+  comparison_matrix:
+  - dimension: repetition_rate
+    subject: 10–1000 GHz（天然，由腔 FSR 决定）
+    object: ~100 MHz–10 GHz（由腔长决定，>10 GHz 极具挑战）
+  - dimension: spectral_bandwidth
+    subject: '>1 octave 已演示（silica），但相干性待验证'
+    object: '>1 octave 已演示且完全频率稳定'
+  - dimension: integration
+    subject: 芯片级 CMOS 兼容（Si₃N₄）
+    object: 光纤系统成熟但体积较大
+  - dimension: phase_coherence
+    subject: 2011 年时仍为挑战，梳态相干性待系统验证
+    object: 已完全验证，f-2f 锁定成熟
+  - dimension: pump_simplicity
+    subject: 单台 CW 激光器
+    object: 需锁模激光器 + 泵浦源
+  confidence: established
+  source:
+    zotero_key: ''
+    claim: Microresonator comb generators are not likely to replace existing commercialized
+      laser-based frequency comb generators but may well be the system of choice that
+      can serve the demand for high repetition rates and wavelength ranges such as
+      the mid-IR
+  note: 'Level 1 之间的竞争关系。微梳不会取代锁模激光器梳，而是在高重频和特殊波段（中红外） 领域提供互补方案。ent.optical_frequency_comb
+    定义于 giunta2019.yaml。
 
-  # --- 操作化关系 ---
-  - id: rel.K11_11
-    subject: met.microcomb_repetition_rate_range
-    predicate: OPERATIONALIZED-AS
-    object: meth.cw_pumped_microcomb_generation
-    confidence: established
-    source: {zotero_key: "", claim: "access to high repetition rates in the range of 10 to 1000 gigahertz through compact, chip-scale integration"}
-    note: "重复频率由微梳方法天然决定（FSR = f_rep）"
+    '
+- id: rel.K11_05
+  subject: meth.cw_pumped_microcomb_generation
+  predicate: ENABLED-BY
+  object: pri.parametric_four_wave_mixing_comb
+  confidence: established
+  source:
+    zotero_key: ''
+    claim: Combs can also be produced from a continuous wave (CW) laser through the
+      nonlinear optical process of parametric frequency conversion in optical microresonators
+  conditions: 泵浦功率超过参量振荡阈值，腔具有反常色散
+- id: rel.K11_06
+  subject: ent.microresonator_frequency_comb
+  predicate: ENABLED-BY
+  object: pri.parametric_four_wave_mixing_comb
+  confidence: established
+  source:
+    zotero_key: ''
+    claim: parametric frequency conversion will annihilate two pump photons and create
+      a new pair of photons
+  note: 参量 FWM 是微梳的核心产生机制
+- id: rel.K11_07
+  subject: ent.microresonator_frequency_comb
+  predicate: BOUNDED-BY
+  object: pri.microresonator_anomalous_dispersion
+  confidence: established
+  source:
+    zotero_key: ''
+    claim: Dispersion... ultimately limits this conversion process and leads to a
+      finite bandwidth of the comb generation process
+  is_system_limit:
+    current: true
+    conditions: 梳带宽由色散限制；Kerr 模式牵引可部分扩展
+  verification_status: observed
+  temporal_role: validates
+  breakthrough_paths:
+  - direction: pri.microresonator_anomalous_dispersion
+    strategy: 色散工程：通过谐振腔几何/涂层设计优化色散曲线
+    feasibility: demonstrated
+    source:
+      zotero_key: ''
+      claim: dispersion engineering through suitable resonator coatings
+  note: 色散是微梳带宽的主要限制因素，但可通过工程设计优化
+- id: rel.K11_08
+  subject: ent.microresonator_frequency_comb
+  predicate: CHARACTERIZED-BY
+  object: met.microcomb_repetition_rate_range
+  confidence: established
+  source:
+    zotero_key: ''
+    claim: high repetition rates in the range of 10 to 1000 gigahertz
+- id: rel.K11_09
+  subject: ent.microresonator_frequency_comb
+  predicate: CHARACTERIZED-BY
+  object: met.parametric_oscillation_threshold
+  confidence: established
+  source:
+    zotero_key: ''
+    claim: the threshold scales with the inverse Q factor squared, implying that high
+      Q can give a dramatic reduction in required optical power
+- id: rel.K11_10
+  subject: ent.microresonator_frequency_comb
+  predicate: CHARACTERIZED-BY
+  object: met.microcomb_mode_spacing_uniformity
+  confidence: established
+  source:
+    zotero_key: ''
+    claim: The uniformity of the mode spacing was shown to be better than 1 part in
+      10¹⁷
+- id: rel.K11_11
+  subject: met.microcomb_repetition_rate_range
+  predicate: OPERATIONALIZED-AS
+  object: meth.cw_pumped_microcomb_generation
+  confidence: established
+  source:
+    zotero_key: ''
+    claim: access to high repetition rates in the range of 10 to 1000 gigahertz through
+      compact, chip-scale integration
+  note: 重复频率由微梳方法天然决定（FSR = f_rep）

@@ -117,6 +117,7 @@ relations:
     regime: short-term
     verification_status: observed
     note: "跨文件引用，pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml"
+    breakthrough_paths: []
 
   - id: rel.HF20_04
     subject: ent.transportable_12cm_cavity_h20

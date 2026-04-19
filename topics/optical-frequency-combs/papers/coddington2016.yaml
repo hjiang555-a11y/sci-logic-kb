@@ -1,529 +1,510 @@
-# Coddington 2016 — 双梳光谱综述：原理、相干性要求与性能极限 [光学频率梳专题：应用层子类框架文档]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2025-07-18
-# Schema版本：v4.0
-# 专题：optical-frequency-combs
-# contribution_type: framework — 定义双梳光谱（DCS）作为频率梳光谱学的重要子类范式。
-#   定义：双梳光谱（DCS）作为频率梳光谱学子类的完整范式；
-#   核心实体 ent.dual_comb_spectrometer（Level 1 应用系统）；
-#   核心原理（多外差检测、互相干要求）；
-#   关键指标（采集速度、频率分辨率、SNR 标度律）。
 meta:
-  zotero_key: ""
+  zotero_key: XJ9M7ZLG
   topic: optical-frequency-combs
   source_type: review
   contribution_type: framework
   reliability: high
-  title: "Dual-comb spectroscopy"
+  title: Dual-comb spectroscopy
   year: 2016
   first_author: Coddington
-  journal: "Optica"
+  journal: Optica
   volume: 3
   issue: 4
-  pages: "414-426"
-  doi: "10.1364/OPTICA.3.000414"
-  note: >
-    [综述论文 / 应用层子类框架文档] NIST Coddington, Newbury, Swann 团队 2016 年 Optica 综述。
-    在 Picqué 2019 定义的六大光谱方法中，双梳光谱是覆盖波段最广、发展最迅速的子类。
-    产生 RF 梳，将光学谱以压缩因子 m = f_rep/Δf_rep 映射到射频域；
-    (2) 阐明互相干（mutual coherence）要求——两梳相对线宽须远小于 Δf_rep；
-    (3) 给出 SNR 标度律 SNR ≈ √(τ·n_comb)/M（散粒噪声极限）；
-    (4) 对比 FTIR：无移动部件、微秒级采集、Hz 级频率精度、激光源亮度优势；
-    (5) 总结三类实现：自由运行梳、互相干梳、全参考梳；
-    (6) 覆盖近红外、中红外、远红外、THz 各波段 DCS 演示。
-    ent.optical_frequency_comb 定义于 giunta2019.yaml；pri.self_referencing_f2f 定义于 giunta2019.yaml。
+  pages: 414-426
+  doi: 10.1364/OPTICA.3.000414
+  note: '[综述论文 / 应用层子类框架文档] NIST Coddington, Newbury, Swann 团队 2016 年 Optica 综述。 在
+    Picqué 2019 定义的六大光谱方法中，双梳光谱是覆盖波段最广、发展最迅速的子类。 产生 RF 梳，将光学谱以压缩因子 m = f_rep/Δf_rep
+    映射到射频域； (2) 阐明互相干（mutual coherence）要求——两梳相对线宽须远小于 Δf_rep； (3) 给出 SNR 标度律 SNR ≈
+    √(τ·n_comb)/M（散粒噪声极限）； (4) 对比 FTIR：无移动部件、微秒级采集、Hz 级频率精度、激光源亮度优势； (5) 总结三类实现：自由运行梳、互相干梳、全参考梳；
+    (6) 覆盖近红外、中红外、远红外、THz 各波段 DCS 演示。 ent.optical_frequency_comb 定义于 giunta2019.yaml；pri.self_referencing_f2f
+    定义于 giunta2019.yaml。
 
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
+    '
 entities:
-  - id: ent.dual_comb_spectrometer
-    name: "双梳光谱仪"
-    aliases: ["dual-comb spectrometer", "DCS system", "multiheterodyne spectrometer", "dual-comb spectroscopy system"]
-    hierarchy_level: 1
-    status: demonstrated
-    function: >
-      基于两个重复频率略不同（Δf_rep）的光学频率梳的宽带光谱测量系统。
-      两梳干涉在单个光电探测器上产生 RF 梳，将光学频谱以压缩因子 m = f_rep/Δf_rep
-      （典型值 3×10⁴–10⁶）映射至射频域，实现无需色散光谱仪或机械干涉仪的
-      宽带高分辨率光谱测量。频率分辨率由单根梳齿线宽（kHz–MHz）决定，
-      频率精度继承梳齿的绝对频率标定（Hz 级），采集速度可达微秒量级。
-    key_parameters:
-      operating_principle: "多外差拍频：两梳光学齿逐对拍频生成 RF 梳"
-      compression_factor: "m = f_rep/Δf_rep，典型 3×10⁴–10⁶"
-      rf_comb_spacing: "Δf_rep（典型 100 Hz–1 kHz，可变）"
-      spectral_coverage: "近红外覆盖 >100 THz（展宽后），中红外/远红外持续扩展"
-      acquisition_time: "单次干涉图 ~1/Δf_rep（ms 量级），窄带可达 <1 μs"
-      spectral_elements: ">10⁵ 同时测量的光谱通道"
-      nyquist_constraint: "Δν ≤ f_rep²/(2·Δf_rep)"
-      detection: "单光电探测器 + RF 电子学"
-      configurations: "色散型（单梳过样品）或对称型（双梳过样品）"
-    note: >
-      Level 1 实体节点。DCS 是频率梳最广泛应用的宽带光谱技术。
-      与 FTIR 竞争：无移动部件、更高频率精度、更快采集速度，
-      但光谱覆盖范围目前仍不及传统 FTIR。
+- id: ent.dual_comb_spectrometer
+  name: 双梳光谱仪
+  aliases:
+  - dual-comb spectrometer
+  - DCS system
+  - multiheterodyne spectrometer
+  - dual-comb spectroscopy system
+  hierarchy_level: 1
+  status: demonstrated
+  function: '基于两个重复频率略不同（Δf_rep）的光学频率梳的宽带光谱测量系统。 两梳干涉在单个光电探测器上产生 RF 梳，将光学频谱以压缩因子 m
+    = f_rep/Δf_rep （典型值 3×10⁴–10⁶）映射至射频域，实现无需色散光谱仪或机械干涉仪的 宽带高分辨率光谱测量。频率分辨率由单根梳齿线宽（kHz–MHz）决定，
+    频率精度继承梳齿的绝对频率标定（Hz 级），采集速度可达微秒量级。
 
-  - id: ent.ftir_spectrometer
-    name: "傅里叶变换红外光谱仪"
-    aliases: ["FTIR", "Fourier-transform infrared spectrometer", "FTS"]
-    hierarchy_level: 1
-    status: demonstrated
-    function: >
-      基于迈克尔逊干涉仪的经典宽带光谱仪。通过机械移动反射镜扫描光程差，
-      记录干涉图后傅里叶变换获得光谱。使用热光源（黑体辐射），
-      光谱覆盖范围极宽（近红外到远红外），是分析化学和分子光谱的标准工具。
-    key_parameters:
-      light_source: "热光源（黑体辐射，非相干）"
-      resolution_limit: "由最大光程差决定，典型 0.001–1 cm⁻¹"
-      moving_parts: "需要精密扫描反射镜（机械干涉仪）"
-      spectral_coverage: "极宽（近红外至远红外全覆盖）"
-      frequency_accuracy: "受仪器标定限制"
-    note: >
-      Level 1 实体节点，作为 DCS 的主要竞争方案。
-      本文明确将 DCS 与 FTIR 进行系统比较，DCS 在分辨率、精度和速度上有优势，
-      FTIR 在光谱覆盖范围上仍占优。
+    '
+  key_parameters:
+    operating_principle: 多外差拍频：两梳光学齿逐对拍频生成 RF 梳
+    compression_factor: m = f_rep/Δf_rep，典型 3×10⁴–10⁶
+    rf_comb_spacing: Δf_rep（典型 100 Hz–1 kHz，可变）
+    spectral_coverage: 近红外覆盖 >100 THz（展宽后），中红外/远红外持续扩展
+    acquisition_time: 单次干涉图 ~1/Δf_rep（ms 量级），窄带可达 <1 μs
+    spectral_elements: '>10⁵ 同时测量的光谱通道'
+    nyquist_constraint: Δν ≤ f_rep²/(2·Δf_rep)
+    detection: 单光电探测器 + RF 电子学
+    configurations: 色散型（单梳过样品）或对称型（双梳过样品）
+  note: 'Level 1 实体节点。DCS 是频率梳最广泛应用的宽带光谱技术。 与 FTIR 竞争：无移动部件、更高频率精度、更快采集速度， 但光谱覆盖范围目前仍不及传统
+    FTIR。
 
+    '
+- id: ent.ftir_spectrometer
+  name: 傅里叶变换红外光谱仪
+  aliases:
+  - FTIR
+  - Fourier-transform infrared spectrometer
+  - FTS
+  hierarchy_level: 1
+  status: demonstrated
+  function: '基于迈克尔逊干涉仪的经典宽带光谱仪。通过机械移动反射镜扫描光程差， 记录干涉图后傅里叶变换获得光谱。使用热光源（黑体辐射）， 光谱覆盖范围极宽（近红外到远红外），是分析化学和分子光谱的标准工具。
+
+    '
+  key_parameters:
+    light_source: 热光源（黑体辐射，非相干）
+    resolution_limit: 由最大光程差决定，典型 0.001–1 cm⁻¹
+    moving_parts: 需要精密扫描反射镜（机械干涉仪）
+    spectral_coverage: 极宽（近红外至远红外全覆盖）
+    frequency_accuracy: 受仪器标定限制
+  note: 'Level 1 实体节点，作为 DCS 的主要竞争方案。 本文明确将 DCS 与 FTIR 进行系统比较，DCS 在分辨率、精度和速度上有优势，
+    FTIR 在光谱覆盖范围上仍占优。
+
+    '
 principles:
-  - id: pri.dual_comb_multiheterodyne_detection
-    name: "双梳多外差检测原理"
-    tier: domain
-    verification_status: observed
-    statement: >
-      两个重复频率分别为 f_rep 和 f_rep + Δf_rep 的光学频率梳在光电探测器上干涉时，
-      每对光学梳齿（频率差为 n·Δf_rep）产生一个独立的射频拍频信号。
-      所有拍频信号构成 RF 梳，间距为 Δf_rep，将光学频谱以压缩因子 m = f_rep/Δf_rep
-      映射至射频域。光学带宽 Δν 的信息被压缩至 Δν/m 的 RF 带宽内。
-      Nyquist 条件要求 Δν ≤ f_rep²/(2·Δf_rep) 以避免 RF 混叠。
-      时域等价描述：一个梳的飞秒脉冲以有效时间步长 ΔT ≈ 1/(m·f_rep) 异步采样
-      另一个梳的脉冲序列，产生类似 FTIR 干涉图的降采样波形。
-    domain: "光学频率梳，宽带光谱学"
-    formula: >
-      RF 梳齿频率：f_RF,n = n·Δf_rep；
-      压缩因子：m = f_rep/Δf_rep；
-      Nyquist 约束：Δν ≤ f_rep²/(2·Δf_rep)；
-      有效时间步长：ΔT = Δf_rep/(f_rep·(f_rep+Δf_rep)) ≈ 1/(m·f_rep)
-    key_insight: >
-      DCS 将宽带光学频谱（~THz–100 THz）通过两梳异步拍频无损映射至 RF 域（~MHz），
-      用单个光电探测器即可同时分辨 >10⁵ 根梳齿，无需色散光谱仪或机械扫描。
-    conditions: >
-      两梳须维持互相干；Δf_rep 须足够小以满足 Nyquist 约束；
-      光电探测器须有足够带宽和线性度
-    preconditions:
-      - "两个频率梳须具有高度相似的梳齿结构（均为等间距）"
-      - "光电探测器带宽须 ≥ f_rep/2"
-      - "RF 数字化系统须支持 ≥ f_rep 采样率"
-    invalidated_when:
-      - "两梳相对线宽 > Δf_rep（退化为自由运行模式，丧失梳齿分辨能力）"
-      - "光学带宽 > f_rep²/(2·Δf_rep)（RF 混叠，一对一映射破坏）"
-    source_claim: >
-      "DCS effectively maps the optical spectrum of width, Δν, to an rf spectrum of width, Δν/m,
-      where m = f_r/Δf_r. Here, f_r is the comb repetition frequency and Δf_r is the repetition
-      frequency difference between the two combs. Compression factors m of 30,000–1,000,000 are
-      common, and several hundred thousand comb teeth, spanning tens to hundreds of THz, can be
-      mapped into a 100 MHz rf band and digitized."
-    open_questions:
-      - "能否通过 I/Q 检测将 Nyquist 带宽翻倍，实现更宽光学覆盖？"
-      - "微腔/EOM 梳的高重复频率（>10 GHz）能否在牺牲光谱密度的同时实现 <1 μs 超快采集？"
+- id: pri.dual_comb_multiheterodyne_detection
+  name: 双梳多外差检测原理
+  tier: domain
+  verification_status: observed
+  statement: '两个重复频率分别为 f_rep 和 f_rep + Δf_rep 的光学频率梳在光电探测器上干涉时， 每对光学梳齿（频率差为 n·Δf_rep）产生一个独立的射频拍频信号。
+    所有拍频信号构成 RF 梳，间距为 Δf_rep，将光学频谱以压缩因子 m = f_rep/Δf_rep 映射至射频域。光学带宽 Δν 的信息被压缩至 Δν/m
+    的 RF 带宽内。 Nyquist 条件要求 Δν ≤ f_rep²/(2·Δf_rep) 以避免 RF 混叠。 时域等价描述：一个梳的飞秒脉冲以有效时间步长
+    ΔT ≈ 1/(m·f_rep) 异步采样 另一个梳的脉冲序列，产生类似 FTIR 干涉图的降采样波形。
 
-  - id: pri.mutual_coherence_requirement
-    name: "双梳互相干要求"
-    tier: domain
-    verification_status: observed
-    statement: >
-      DCS 要求两个频率梳在测量时间内维持足够的互相干性——即两梳的相对光学线宽
-      须远小于 RF 梳间距 Δf_rep。若相对线宽 > Δf_rep，RF 梳齿重叠，
-      丧失单根梳齿分辨能力，退化为低分辨模式。互相干时间决定最大有效平均时间 τ，
-      从而限制 SNR（SNR ∝ √τ）。实现互相干的三种途径：
-      (1) 主动相位/定时反馈——两梳锁定至共同 CW 激光参考；
-      (2) 数字相位/定时校正——记录误差信号，后处理重采样；
-      (3) 模拟自适应采样——模拟电子学实时校正载波相位和采样时钟。
-    domain: "双梳光谱，相干光学测量"
-    formula: >
-      互相干条件：δν_relative ≪ Δf_rep；
-      最大有效平均时间 τ_max ≈ 1/δν_relative；
-      SNR 标度律：SNR ∝ √τ（在互相干时间内）
-    key_insight: >
-      互相干是 DCS 从"概念验证"升级为"高 SNR 精密测量工具"的关键瓶颈。
-      三种实现途径在实验复杂度与校正精度之间权衡。
-    conditions: >
-      适用于所有 DCS 实现（近红外、中红外、THz）；
-      THz 和 EOM 梳因长波长/共源天然具有更好的互相干性
-    preconditions:
-      - "须有共同参考源（如两根 CW 激光或单腔稳频激光）用于比较两梳的相位/定时"
-      - "数字校正方案须有足够快的 ADC 和 FPGA 实时处理能力"
-    invalidated_when:
-      - "单次采集 SNR 已足够（如极短测量时间 <1/Δf_rep，无需多次平均）"
-    source_claim: >
-      "DCS 'doubles' that challenge by requiring two such combs with high mutual coherence.
-      In practice, DCS has been demonstrated over a wide range of frequency comb performance.
-      Coarsely, DCS demonstrations can be broken into three categories: free-running combs,
-      mutually coherent combs, and fully referenced combs."
-    open_questions:
-      - "单腔双梳（dual-comb from a single laser cavity）能否完全消除互相干问题？"
-      - "数字校正的有效带宽能否扩展至处理 >10 GHz 重复频率梳的相位噪声？"
+    '
+  domain: 光学频率梳，宽带光谱学
+  formula: 'RF 梳齿频率：f_RF,n = n·Δf_rep； 压缩因子：m = f_rep/Δf_rep； Nyquist 约束：Δν ≤ f_rep²/(2·Δf_rep)；
+    有效时间步长：ΔT = Δf_rep/(f_rep·(f_rep+Δf_rep)) ≈ 1/(m·f_rep)
 
+    '
+  key_insight: 'DCS 将宽带光学频谱（~THz–100 THz）通过两梳异步拍频无损映射至 RF 域（~MHz）， 用单个光电探测器即可同时分辨
+    >10⁵ 根梳齿，无需色散光谱仪或机械扫描。
+
+    '
+  conditions: '两梳须维持互相干；Δf_rep 须足够小以满足 Nyquist 约束； 光电探测器须有足够带宽和线性度
+
+    '
+  preconditions:
+  - 两个频率梳须具有高度相似的梳齿结构（均为等间距）
+  - 光电探测器带宽须 ≥ f_rep/2
+  - RF 数字化系统须支持 ≥ f_rep 采样率
+  invalidated_when:
+  - 两梳相对线宽 > Δf_rep（退化为自由运行模式，丧失梳齿分辨能力）
+  - 光学带宽 > f_rep²/(2·Δf_rep)（RF 混叠，一对一映射破坏）
+  source_claim: '"DCS effectively maps the optical spectrum of width, Δν, to an rf
+    spectrum of width, Δν/m, where m = f_r/Δf_r. Here, f_r is the comb repetition
+    frequency and Δf_r is the repetition frequency difference between the two combs.
+    Compression factors m of 30,000–1,000,000 are common, and several hundred thousand
+    comb teeth, spanning tens to hundreds of THz, can be mapped into a 100 MHz rf
+    band and digitized."
+
+    '
+  open_questions:
+  - 能否通过 I/Q 检测将 Nyquist 带宽翻倍，实现更宽光学覆盖？
+  - 微腔/EOM 梳的高重复频率（>10 GHz）能否在牺牲光谱密度的同时实现 <1 μs 超快采集？
+- id: pri.mutual_coherence_requirement
+  name: 双梳互相干要求
+  tier: domain
+  verification_status: observed
+  statement: 'DCS 要求两个频率梳在测量时间内维持足够的互相干性——即两梳的相对光学线宽 须远小于 RF 梳间距 Δf_rep。若相对线宽 > Δf_rep，RF
+    梳齿重叠， 丧失单根梳齿分辨能力，退化为低分辨模式。互相干时间决定最大有效平均时间 τ， 从而限制 SNR（SNR ∝ √τ）。实现互相干的三种途径： (1)
+    主动相位/定时反馈——两梳锁定至共同 CW 激光参考； (2) 数字相位/定时校正——记录误差信号，后处理重采样； (3) 模拟自适应采样——模拟电子学实时校正载波相位和采样时钟。
+
+    '
+  domain: 双梳光谱，相干光学测量
+  formula: '互相干条件：δν_relative ≪ Δf_rep； 最大有效平均时间 τ_max ≈ 1/δν_relative； SNR 标度律：SNR
+    ∝ √τ（在互相干时间内）
+
+    '
+  key_insight: '互相干是 DCS 从"概念验证"升级为"高 SNR 精密测量工具"的关键瓶颈。 三种实现途径在实验复杂度与校正精度之间权衡。
+
+    '
+  conditions: '适用于所有 DCS 实现（近红外、中红外、THz）； THz 和 EOM 梳因长波长/共源天然具有更好的互相干性
+
+    '
+  preconditions:
+  - 须有共同参考源（如两根 CW 激光或单腔稳频激光）用于比较两梳的相位/定时
+  - 数字校正方案须有足够快的 ADC 和 FPGA 实时处理能力
+  invalidated_when:
+  - 单次采集 SNR 已足够（如极短测量时间 <1/Δf_rep，无需多次平均）
+  source_claim: '"DCS ''doubles'' that challenge by requiring two such combs with
+    high mutual coherence. In practice, DCS has been demonstrated over a wide range
+    of frequency comb performance. Coarsely, DCS demonstrations can be broken into
+    three categories: free-running combs, mutually coherent combs, and fully referenced
+    combs."
+
+    '
+  open_questions:
+  - 单腔双梳（dual-comb from a single laser cavity）能否完全消除互相干问题？
+  - 数字校正的有效带宽能否扩展至处理 >10 GHz 重复频率梳的相位噪声？
 methods:
-  - id: meth.dual_comb_spectroscopy
-    name: "双梳光谱方法"
-    status: demonstrated
-    applies_to: ent.dual_comb_spectrometer
-    steps_summary: >
-      1. 两个频率梳（f_rep 和 f_rep+Δf_rep）经同一样品路径或色散/对称配置照射样品 →
-      2. 样品的吸收/色散响应编码在梳光上 →
-      3. 信号梳与本振梳在光电探测器上拍频，生成 RF 梳 →
-      4. 数字化 RF 梳信号（采样率 ≥ f_rep），傅里叶变换获得 RF 频谱 →
-      5. 归一化（除以无样品参考谱），获得样品线性响应（幅度+相位） →
-      6. 可选：相干叠加多次干涉图以提升 SNR
-    required_hardware:
-      - ent.optical_frequency_comb
-      - ent.dual_comb_spectrometer
-    advantages:
-      - "无移动部件（机械干涉仪被两个频率梳取代）"
-      - "微秒级单次采集速度（1/Δf_rep）"
-      - "频率分辨率由梳齿线宽决定（kHz–MHz），远优于 FTIR 仪器分辨率"
-      - "频率精度继承梳齿绝对标定（Hz 级），可溯源至频率标准"
-      - "激光源亮度：单空间模式输出，支持长光程高灵敏度测量"
-      - "同时测量吸收和色散（色散配置）"
-    disadvantages:
-      - "需要两个高度相干的频率梳（系统复杂度和成本高）"
-      - "光谱覆盖范围目前不及 FTIR（尤其在中红外/远红外）"
-      - "单探测器多路复用惩罚：SNR ∝ 1/M（M 为光谱元素数）"
-      - "需要高动态范围光电探测器以避免非线性失真"
-      - "光谱归一化困难：梳齿功率可有 >20 dB 变化"
-    conditions:
-      - "两梳须维持互相干（主动锁定或后处理校正）"
-      - "光学带宽须满足 Nyquist 约束：Δν ≤ f_rep²/(2·Δf_rep)"
-      - "光电探测器须有足够线性度和动态范围"
-    source_claim: >
-      "Dual-comb spectroscopy is an emerging new spectroscopic tool that exploits the frequency
-      resolution, frequency accuracy, broad bandwidth, and brightness of frequency combs for
-      ultrahigh-resolution, high-sensitivity broadband spectroscopy."
+- id: meth.dual_comb_spectroscopy
+  name: 双梳光谱方法
+  status: demonstrated
+  applies_to: ent.dual_comb_spectrometer
+  steps_summary: '1. 两个频率梳（f_rep 和 f_rep+Δf_rep）经同一样品路径或色散/对称配置照射样品 → 2. 样品的吸收/色散响应编码在梳光上
+    → 3. 信号梳与本振梳在光电探测器上拍频，生成 RF 梳 → 4. 数字化 RF 梳信号（采样率 ≥ f_rep），傅里叶变换获得 RF 频谱 → 5.
+    归一化（除以无样品参考谱），获得样品线性响应（幅度+相位） → 6. 可选：相干叠加多次干涉图以提升 SNR
 
-  - id: meth.adaptive_sampling_correction
-    name: "自适应采样校正方法"
-    status: demonstrated
-    applies_to: ent.dual_comb_spectrometer
-    steps_summary: >
-      1. 两梳各自与一对共同 CW 参考激光拍频，生成误差信号 →
-      2a. 数字方案：误差信号与干涉图同步数字化，后处理重采样消除载波相位噪声和定时抖动 →
-      2b. 模拟方案：误差信号驱动模拟电子学，实时校正载波相位并调整 ADC 采样时钟 →
-      3. 校正后干涉图可长时间相干叠加（小时至天），SNR 线性增长（∝ √τ） →
-      4. FPGA 实时实现：可达 24 小时连续相干平均，SNR 达 316,000
-    required_hardware:
-      - ent.optical_frequency_comb
-      - ent.dual_comb_spectrometer
-    advantages:
-      - "数字校正避免高带宽主动反馈的实验困难"
-      - "允许无限长相干平均（已演示连续 24 小时和 3 天）"
-      - "FPGA 实时处理：数据量压缩 100–1000 倍，解决存储瓶颈"
-      - "记录 figure of merit ~2×10⁸ Hz^(1/2)，超越所有其他技术"
-    disadvantages:
-      - "仍需低带宽主动反馈保持信号在有用频率窗口内"
-      - "需要高速 ADC 和 FPGA 硬件"
-      - "模拟方案的校正精度不及数字方案"
-    conditions:
-      - "需要两根共同 CW 参考激光（间隔数 THz）用于误差信号生成"
-      - "数字化系统须支持 ≥ f_rep 采样率的多通道同步采集"
-    source_claim: >
-      "References [42,44] developed an analog adaptive sampling approach that also leads to
-      tooth-resolved spectra and is more accessible to many laboratories... the digital phase/timing
-      correction approach to full coherent averaging is particularly attractive, as it combines all of
-      the processing above on a single real-time platform and with high effective correction bandwidths."
+    '
+  required_hardware:
+  - ent.optical_frequency_comb
+  - ent.dual_comb_spectrometer
+  advantages:
+  - 无移动部件（机械干涉仪被两个频率梳取代）
+  - 微秒级单次采集速度（1/Δf_rep）
+  - 频率分辨率由梳齿线宽决定（kHz–MHz），远优于 FTIR 仪器分辨率
+  - 频率精度继承梳齿绝对标定（Hz 级），可溯源至频率标准
+  - 激光源亮度：单空间模式输出，支持长光程高灵敏度测量
+  - 同时测量吸收和色散（色散配置）
+  disadvantages:
+  - 需要两个高度相干的频率梳（系统复杂度和成本高）
+  - 光谱覆盖范围目前不及 FTIR（尤其在中红外/远红外）
+  - 单探测器多路复用惩罚：SNR ∝ 1/M（M 为光谱元素数）
+  - 需要高动态范围光电探测器以避免非线性失真
+  - 光谱归一化困难：梳齿功率可有 >20 dB 变化
+  conditions:
+  - 两梳须维持互相干（主动锁定或后处理校正）
+  - 光学带宽须满足 Nyquist 约束：Δν ≤ f_rep²/(2·Δf_rep)
+  - 光电探测器须有足够线性度和动态范围
+  source_claim: '"Dual-comb spectroscopy is an emerging new spectroscopic tool that
+    exploits the frequency resolution, frequency accuracy, broad bandwidth, and brightness
+    of frequency combs for ultrahigh-resolution, high-sensitivity broadband spectroscopy."
 
+    '
+- id: meth.adaptive_sampling_correction
+  name: 自适应采样校正方法
+  status: demonstrated
+  applies_to: ent.dual_comb_spectrometer
+  steps_summary: '1. 两梳各自与一对共同 CW 参考激光拍频，生成误差信号 → 2a. 数字方案：误差信号与干涉图同步数字化，后处理重采样消除载波相位噪声和定时抖动
+    → 2b. 模拟方案：误差信号驱动模拟电子学，实时校正载波相位并调整 ADC 采样时钟 → 3. 校正后干涉图可长时间相干叠加（小时至天），SNR 线性增长（∝
+    √τ） → 4. FPGA 实时实现：可达 24 小时连续相干平均，SNR 达 316,000
+
+    '
+  required_hardware:
+  - ent.optical_frequency_comb
+  - ent.dual_comb_spectrometer
+  advantages:
+  - 数字校正避免高带宽主动反馈的实验困难
+  - 允许无限长相干平均（已演示连续 24 小时和 3 天）
+  - FPGA 实时处理：数据量压缩 100–1000 倍，解决存储瓶颈
+  - 记录 figure of merit ~2×10⁸ Hz^(1/2)，超越所有其他技术
+  disadvantages:
+  - 仍需低带宽主动反馈保持信号在有用频率窗口内
+  - 需要高速 ADC 和 FPGA 硬件
+  - 模拟方案的校正精度不及数字方案
+  conditions:
+  - 需要两根共同 CW 参考激光（间隔数 THz）用于误差信号生成
+  - 数字化系统须支持 ≥ f_rep 采样率的多通道同步采集
+  source_claim: '"References [42,44] developed an analog adaptive sampling approach
+    that also leads to tooth-resolved spectra and is more accessible to many laboratories...
+    the digital phase/timing correction approach to full coherent averaging is particularly
+    attractive, as it combines all of the processing above on a single real-time platform
+    and with high effective correction bandwidths."
+
+    '
 metrics:
-  - id: met.dcs_acquisition_speed
-    name: "双梳光谱采集速度"
-    unit: "s（单次光谱采集时间）"
-    description: >
-      单次完整光谱采集所需的最短时间，等于 1/Δf_rep。
-      在 100 MHz 梳齿间距下，百万光谱通道可在毫秒内获取；
-      高重复频率梳（>10 GHz）可实现亚微秒采集。
-    demonstrated_value:
-      value: "毫秒级（f_rep ~100 MHz，>10⁵ 光谱通道）至 <1 μs（f_rep >10 GHz，~50-100 通道）"
-      conditions: >
-        单次干涉图采集时间 = 1/Δf_rep；100 MHz 梳典型 Δf_rep = 100 Hz–1 kHz，
-        单次采集 1–10 ms；微腔梳 f_rep >10 GHz 可达亚微秒
-      verification_status: observed
-      confidence: established
-      source:
-        zotero_key: ""
-        claim: >
-          "at 100 MHz comb tooth spacing, a single spectrum having over a million spectral elements
-          can be acquired in milliseconds; narrower spectra can be acquired proportionally faster...
-          Emerging microresonator combs, electro-optic modulator (EOM) combs, and quantum cascade
-          laser (QCL) combs have repetition rates in excess of 10 GHz; with these one can consider
-          recording complete spectra in time scales below 1 μs."
-    historical_landmarks:
-      first_demonstration:
-        value: "~ms 级单次采集（100 MHz 梳）"
-        year: 2004
-        source: {zotero_key: ""}
-        note: "Keilmann et al. 2004，首次 DCS 演示"
-      best_demonstration:
-        value: "<1 μs（>10 GHz 重复频率梳）"
-        year: 2016
-        source: {zotero_key: ""}
-        note: "微腔梳/EOM 梳/QCL 梳，截至本综述"
+- id: met.dcs_acquisition_speed
+  name: 双梳光谱采集速度
+  unit: s（单次光谱采集时间）
+  description: '单次完整光谱采集所需的最短时间，等于 1/Δf_rep。 在 100 MHz 梳齿间距下，百万光谱通道可在毫秒内获取； 高重复频率梳（>10
+    GHz）可实现亚微秒采集。
 
-  - id: met.dcs_frequency_resolution
-    name: "双梳光谱频率分辨率"
-    unit: "Hz"
-    description: >
-      DCS 的频率分辨率由两个因素决定：(1) 光谱采样间距 = f_rep（典型 100 MHz–10 GHz），
-      (2) 单根梳齿的绝对线宽（典型 kHz–MHz）。无仪器线型函数——每根梳齿提供
-      独立光谱采样点，相邻通道无串扰。若需更密采样，可扫描梳齿。
-    demonstrated_value:
-      value: "光谱点间距 ~100 MHz（典型），梳齿分辨率 kHz–MHz"
-      conditions: >
-        互相干梳，相对线宽 ≪ Δf_rep；梳齿绝对频率稳定至 kHz 级（全参考模式）
-      verification_status: observed
-      confidence: established
-      source:
-        zotero_key: ""
-        claim: >
-          "the spectral point spacings are 50–200 MHz, matching the highest resolution FTIRs,
-          traditionally the gold standard of high-resolution broadband spectroscopy. Finally, this
-          point spacing is not the actual resolution limit; if needed, the comb can be scanned for
-          higher point density up to a resolution limit set by the absolute comb tooth linewidths
-          (typically a few kilohertz to megahertz)."
+    '
+  demonstrated_value:
+    value: 毫秒级（f_rep ~100 MHz，>10⁵ 光谱通道）至 <1 μs（f_rep >10 GHz，~50-100 通道）
+    conditions: '单次干涉图采集时间 = 1/Δf_rep；100 MHz 梳典型 Δf_rep = 100 Hz–1 kHz， 单次采集 1–10
+      ms；微腔梳 f_rep >10 GHz 可达亚微秒
 
-  - id: met.dcs_snr_per_tooth
-    name: "双梳光谱单齿信噪比"
-    unit: "无量纲（或 Hz^(1/2)，figure of merit）"
-    description: >
-      DCS 单根梳齿的信噪比。散粒噪声极限下 SNR ≈ √(τ·n_comb)/M
-      （τ 为平均时间，n_comb 为探测光子率，M 为光谱通道数）。
-      figure of merit 定义为 SNR×M/√τ（归一化到 1 s 采集时间），
-      允许不同系统间公平比较。
-    demonstrated_value:
-      value: "figure of merit ~2×10⁸ Hz^(1/2)（数字相位/定时校正 + 高动态范围探测器）"
-      conditions: >
-        近红外 Er:fiber 梳，100 MHz 梳齿间距，数字相位/定时校正 + 高动态范围 InGaAs 探测器
-      verification_status: observed
-      confidence: established
-      source:
-        zotero_key: ""
-        claim: >
-          "digital phase/timing correction, which, combined with a high dynamic range detector,
-          yields a record figure of merit of ~2×10⁸ Hz^(1/2)."
-    historical_landmarks:
-      first_demonstration:
-        value: "~10⁶ Hz^(1/2)（早期互相干 DCS 演示）"
-        year: 2008
-        source: {zotero_key: ""}
-        note: "首次梳齿分辨 DCS"
-      best_demonstration:
-        value: "~2×10⁸ Hz^(1/2)"
-        year: 2016
-        source: {zotero_key: ""}
-        note: "数字校正方案，SNR 达 316,000 @ 100 MHz 点间距（24 小时平均）"
-      selected_milestones:
-        - year: 2008
-          value: "~10⁶ Hz^(1/2)"
-          source: {zotero_key: ""}
-          note: "Coddington et al. 2008，首次 coherent multiheterodyne spectroscopy"
-        - year: 2014
-          value: "SNR ~4000 per point @ 100 MHz spacing"
-          source: {zotero_key: ""}
-          note: "近红外完整 HCN 转动带演示"
-
-# ═══════════════════════════════════════════════
-#  RELATIONS（关系）
-# ═══════════════════════════════════════════════
-
-relations:
-  # --- 结构关系 ---
-
-  - id: rel.C16_01
-    subject: ent.dual_comb_spectrometer
-    predicate: PART-OF
-    object: ent.optical_frequency_comb
-    confidence: established
-    source:
-      zotero_key: ""
-      claim: >
-        "Underlying DCS is the frequency comb laser emitting an array of narrow, phase-coherent
-        spectral lines, or 'teeth.'"
-    note: >
-      DCS 系统以两个光学频率梳为核心组件。
-      ent.optical_frequency_comb 定义于 topics/optical-frequency-combs/papers/giunta2019.yaml。
-
-  # --- 原理使能关系 ---
-
-  - id: rel.C16_02
-    subject: meth.dual_comb_spectroscopy
-    predicate: ENABLED-BY
-    object: pri.dual_comb_multiheterodyne_detection
-    confidence: established
-    source:
-      zotero_key: ""
-      claim: >
-        "Two combs with slightly different repetition rates are interfered on a photodiode generating
-        an rf comb composed of distinguishable heterodyne beats between pairs of optical comb teeth."
-    conditions: "两梳重复频率须有可控差值 Δf_rep"
-
-  - id: rel.C16_03
-    subject: meth.dual_comb_spectroscopy
-    predicate: ENABLED-BY
-    object: pri.mutual_coherence_requirement
-    confidence: established
-    source:
-      zotero_key: ""
-      claim: >
-        "DCS 'doubles' that challenge by requiring two such combs with high mutual coherence."
-    conditions: "适用于高分辨率、高 SNR DCS 测量"
-
-  - id: rel.C16_04
-    subject: meth.adaptive_sampling_correction
-    predicate: ENABLED-BY
-    object: pri.mutual_coherence_requirement
-    confidence: established
-    source:
-      zotero_key: ""
-      claim: >
-        "The mutual coherence can be enforced through active feedback to the combs and/or signal
-        processing, as discussed later."
-    note: "自适应采样校正是实现互相干的实用途径之一"
-
-  # --- 指标表征关系 ---
-
-  - id: rel.C16_05
-    subject: ent.dual_comb_spectrometer
-    predicate: CHARACTERIZED-BY
-    object: met.dcs_acquisition_speed
-    confidence: established
-    source:
-      zotero_key: ""
-      claim: >
-        "a single spectrum having over a million spectral elements can be acquired in milliseconds"
-
-  - id: rel.C16_06
-    subject: ent.dual_comb_spectrometer
-    predicate: CHARACTERIZED-BY
-    object: met.dcs_frequency_resolution
-    confidence: established
-    source:
-      zotero_key: ""
-      claim: >
-        "the frequency resolution and accuracy is set by the laser rather than the instrument"
-
-  - id: rel.C16_07
-    subject: ent.dual_comb_spectrometer
-    predicate: CHARACTERIZED-BY
-    object: met.dcs_snr_per_tooth
-    confidence: established
-    source:
-      zotero_key: ""
-      claim: >
-        "In the ideal shot-noise limit, the SNR ≈ √(τ·n_comb)/M"
-
-  # --- 指标→方法 ---
-
-  - id: rel.C16_08
-    subject: met.dcs_snr_per_tooth
-    predicate: OPERATIONALIZED-AS
-    object: meth.adaptive_sampling_correction
-    confidence: established
-    source:
-      zotero_key: ""
-      claim: >
-        "digital phase/timing correction, which, combined with a high dynamic range detector,
-        yields a record figure of merit of ~2×10⁸ Hz^(1/2)"
-    note: "自适应采样/数字校正是提升 SNR 至极限的关键方法"
-
-  # --- BOUNDED-BY 关系 ---
-
-  - id: rel.C16_09
-    subject: ent.dual_comb_spectrometer
-    predicate: BOUNDED-BY
-    object: pri.mutual_coherence_requirement
-    confidence: established
-    is_system_limit: true
-    regime: all
+      '
     verification_status: observed
-    temporal_role: validates
-    source:
-      zotero_key: ""
-      claim: >
-        "the importance of a long coherent averaging time, or equivalently a long effective mutual
-        coherence time between combs, which sets the maximum possible τ"
-    note: >
-      互相干时间限制最大有效平均时间，从而限制可达 SNR。
-      这是 DCS 从自由运行到高性能的核心瓶颈。
-    breakthrough_paths:
-      - direction: meth.adaptive_sampling_correction
-        mechanism: "数字相位/定时校正将有效互相干时间延展至小时-天量级"
-        status: demonstrated
-        source:
-          zotero_key: ""
-          claim: "real-time, continuous coherent averaging for 24 h with record levels of SNRs"
-
-  # --- COMPETES-WITH 关系 ---
-
-  - id: rel.C16_10
-    subject: ent.dual_comb_spectrometer
-    predicate: COMPETES-WITH
-    object: ent.ftir_spectrometer
-    context: "宽带分子光谱测量方法选择"
-    tradeoffs:
-      subject_wins:
-        - "无移动部件（光梳替代机械干涉仪）"
-        - "微秒级采集速度（vs FTIR 秒级扫描）"
-        - "Hz 级频率精度（可溯源至频率标准）"
-        - "频率分辨率由梳齿线宽决定（kHz–MHz），远优于 FTIR 仪器分辨率"
-        - "激光源亮度：单空间模式，支持长光程高灵敏度测量"
-        - "无仪器线型函数，相邻光谱通道无串扰"
-      object_wins:
-        - "光谱覆盖范围远超 DCS（尤其中红外/远红外全覆盖）"
-        - "成本低、技术成熟、商业化程度高"
-        - "无需两个高度相干频率梳"
-        - "热光源简单廉价"
-    comparison_matrix:
-      - dimension: "spectral_coverage"
-        subject: "~100 THz（近红外展宽后），中红外/远红外仍有限"
-        object: ">300 THz（近红外至远红外全覆盖）"
-      - dimension: "frequency_resolution"
-        subject: "kHz–MHz（由梳齿线宽决定）"
-        object: "~GHz（由最大光程差决定，0.001 cm⁻¹ 级）"
-      - dimension: "frequency_accuracy"
-        subject: "Hz 级（可溯源至频率标准）"
-        object: "受仪器标定限制"
-      - dimension: "acquisition_speed"
-        subject: "ms–μs（单次干涉图）"
-        object: "秒级（机械扫描）"
-      - dimension: "system_complexity"
-        subject: "高（需要两个频率梳 + 相干控制）"
-        object: "低至中等（成熟商业系统）"
-      - dimension: "SNR_figure_of_merit"
-        subject: "~2×10⁸ Hz^(1/2)（最佳演示）"
-        object: "~10⁶ Hz^(1/2)（典型高分辨率 FTIR）"
-    source:
-      zotero_key: ""
-      claim: >
-        "DCS will never usurp FTIR for many applications until it has much broader spectral
-        coverage into the mid-IR (3–5 μm) and far-IR (6–13 μm)... for all its advantages,
-        DCS will never usurp FTIR for many applications until it has much broader spectral coverage."
-
-  # --- 跨专题接口 ---
-
-  - id: rel.C16_11
-    subject: ent.dual_comb_spectrometer
-    predicate: CONDITIONED-BY
-    object: ent.optical_frequency_comb
-    interface_metric: met.dcs_frequency_resolution
-    coupling_formula: >
-      DCS 频率分辨率和精度由底层频率梳的梳齿稳定度决定：
-      频率分辨率 = max(f_rep, comb_tooth_linewidth)
-    internal_property: "频率精度继承梳齿绝对频率标定"
-    is_system_limit:
-      current: true
-      conditions: "梳齿线宽和稳定度由梳源技术决定"
     confidence: established
     source:
-      zotero_key: ""
-      claim: >
-        "the frequency resolution and accuracy is set by the laser rather than the instrument"
-    note: >
-      跨专题接口：DCS 的分辨率和精度由底层频率梳技术决定。
-      ent.optical_frequency_comb 定义于 topics/optical-frequency-combs/papers/giunta2019.yaml。
+      zotero_key: ''
+      claim: '"at 100 MHz comb tooth spacing, a single spectrum having over a million
+        spectral elements can be acquired in milliseconds; narrower spectra can be
+        acquired proportionally faster... Emerging microresonator combs, electro-optic
+        modulator (EOM) combs, and quantum cascade laser (QCL) combs have repetition
+        rates in excess of 10 GHz; with these one can consider recording complete
+        spectra in time scales below 1 μs."
+
+        '
+  historical_landmarks:
+    first_demonstration:
+      value: ~ms 级单次采集（100 MHz 梳）
+      year: 2004
+      source:
+        zotero_key: ''
+      note: Keilmann et al. 2004，首次 DCS 演示
+    best_demonstration:
+      value: <1 μs（>10 GHz 重复频率梳）
+      year: 2016
+      source:
+        zotero_key: ''
+      note: 微腔梳/EOM 梳/QCL 梳，截至本综述
+- id: met.dcs_frequency_resolution
+  name: 双梳光谱频率分辨率
+  unit: Hz
+  description: 'DCS 的频率分辨率由两个因素决定：(1) 光谱采样间距 = f_rep（典型 100 MHz–10 GHz）， (2) 单根梳齿的绝对线宽（典型
+    kHz–MHz）。无仪器线型函数——每根梳齿提供 独立光谱采样点，相邻通道无串扰。若需更密采样，可扫描梳齿。
+
+    '
+  demonstrated_value:
+    value: 光谱点间距 ~100 MHz（典型），梳齿分辨率 kHz–MHz
+    conditions: '互相干梳，相对线宽 ≪ Δf_rep；梳齿绝对频率稳定至 kHz 级（全参考模式）
+
+      '
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: ''
+      claim: '"the spectral point spacings are 50–200 MHz, matching the highest resolution
+        FTIRs, traditionally the gold standard of high-resolution broadband spectroscopy.
+        Finally, this point spacing is not the actual resolution limit; if needed,
+        the comb can be scanned for higher point density up to a resolution limit
+        set by the absolute comb tooth linewidths (typically a few kilohertz to megahertz)."
+
+        '
+- id: met.dcs_snr_per_tooth
+  name: 双梳光谱单齿信噪比
+  unit: 无量纲（或 Hz^(1/2)，figure of merit）
+  description: 'DCS 单根梳齿的信噪比。散粒噪声极限下 SNR ≈ √(τ·n_comb)/M （τ 为平均时间，n_comb 为探测光子率，M
+    为光谱通道数）。 figure of merit 定义为 SNR×M/√τ（归一化到 1 s 采集时间）， 允许不同系统间公平比较。
+
+    '
+  demonstrated_value:
+    value: figure of merit ~2×10⁸ Hz^(1/2)（数字相位/定时校正 + 高动态范围探测器）
+    conditions: '近红外 Er:fiber 梳，100 MHz 梳齿间距，数字相位/定时校正 + 高动态范围 InGaAs 探测器
+
+      '
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: ''
+      claim: '"digital phase/timing correction, which, combined with a high dynamic
+        range detector, yields a record figure of merit of ~2×10⁸ Hz^(1/2)."
+
+        '
+  historical_landmarks:
+    first_demonstration:
+      value: ~10⁶ Hz^(1/2)（早期互相干 DCS 演示）
+      year: 2008
+      source:
+        zotero_key: ''
+      note: 首次梳齿分辨 DCS
+    best_demonstration:
+      value: ~2×10⁸ Hz^(1/2)
+      year: 2016
+      source:
+        zotero_key: ''
+      note: 数字校正方案，SNR 达 316,000 @ 100 MHz 点间距（24 小时平均）
+    selected_milestones:
+    - year: 2008
+      value: ~10⁶ Hz^(1/2)
+      source:
+        zotero_key: ''
+      note: Coddington et al. 2008，首次 coherent multiheterodyne spectroscopy
+    - year: 2014
+      value: SNR ~4000 per point @ 100 MHz spacing
+      source:
+        zotero_key: ''
+      note: 近红外完整 HCN 转动带演示
+relations:
+- id: rel.C16_01
+  subject: ent.dual_comb_spectrometer
+  predicate: PART-OF
+  object: ent.optical_frequency_comb
+  confidence: established
+  source:
+    zotero_key: ''
+    claim: '"Underlying DCS is the frequency comb laser emitting an array of narrow,
+      phase-coherent spectral lines, or ''teeth.''"
+
+      '
+  note: 'DCS 系统以两个光学频率梳为核心组件。 ent.optical_frequency_comb 定义于 topics/optical-frequency-combs/papers/giunta2019.yaml。
+
+    '
+- id: rel.C16_02
+  subject: meth.dual_comb_spectroscopy
+  predicate: ENABLED-BY
+  object: pri.dual_comb_multiheterodyne_detection
+  confidence: established
+  source:
+    zotero_key: ''
+    claim: '"Two combs with slightly different repetition rates are interfered on
+      a photodiode generating an rf comb composed of distinguishable heterodyne beats
+      between pairs of optical comb teeth."
+
+      '
+  conditions: 两梳重复频率须有可控差值 Δf_rep
+- id: rel.C16_03
+  subject: meth.dual_comb_spectroscopy
+  predicate: ENABLED-BY
+  object: pri.mutual_coherence_requirement
+  confidence: established
+  source:
+    zotero_key: ''
+    claim: '"DCS ''doubles'' that challenge by requiring two such combs with high
+      mutual coherence."
+
+      '
+  conditions: 适用于高分辨率、高 SNR DCS 测量
+- id: rel.C16_04
+  subject: meth.adaptive_sampling_correction
+  predicate: ENABLED-BY
+  object: pri.mutual_coherence_requirement
+  confidence: established
+  source:
+    zotero_key: ''
+    claim: '"The mutual coherence can be enforced through active feedback to the combs
+      and/or signal processing, as discussed later."
+
+      '
+  note: 自适应采样校正是实现互相干的实用途径之一
+- id: rel.C16_05
+  subject: ent.dual_comb_spectrometer
+  predicate: CHARACTERIZED-BY
+  object: met.dcs_acquisition_speed
+  confidence: established
+  source:
+    zotero_key: ''
+    claim: '"a single spectrum having over a million spectral elements can be acquired
+      in milliseconds"
+
+      '
+- id: rel.C16_06
+  subject: ent.dual_comb_spectrometer
+  predicate: CHARACTERIZED-BY
+  object: met.dcs_frequency_resolution
+  confidence: established
+  source:
+    zotero_key: ''
+    claim: '"the frequency resolution and accuracy is set by the laser rather than
+      the instrument"
+
+      '
+- id: rel.C16_07
+  subject: ent.dual_comb_spectrometer
+  predicate: CHARACTERIZED-BY
+  object: met.dcs_snr_per_tooth
+  confidence: established
+  source:
+    zotero_key: ''
+    claim: '"In the ideal shot-noise limit, the SNR ≈ √(τ·n_comb)/M"
+
+      '
+- id: rel.C16_08
+  subject: met.dcs_snr_per_tooth
+  predicate: OPERATIONALIZED-AS
+  object: meth.adaptive_sampling_correction
+  confidence: established
+  source:
+    zotero_key: ''
+    claim: '"digital phase/timing correction, which, combined with a high dynamic
+      range detector, yields a record figure of merit of ~2×10⁸ Hz^(1/2)"
+
+      '
+  note: 自适应采样/数字校正是提升 SNR 至极限的关键方法
+- id: rel.C16_09
+  subject: ent.dual_comb_spectrometer
+  predicate: BOUNDED-BY
+  object: pri.mutual_coherence_requirement
+  confidence: established
+  is_system_limit: true
+  regime: all
+  verification_status: observed
+  temporal_role: validates
+  source:
+    zotero_key: ''
+    claim: '"the importance of a long coherent averaging time, or equivalently a long
+      effective mutual coherence time between combs, which sets the maximum possible
+      τ"
+
+      '
+  note: '互相干时间限制最大有效平均时间，从而限制可达 SNR。 这是 DCS 从自由运行到高性能的核心瓶颈。
+
+    '
+  breakthrough_paths:
+  - direction: meth.adaptive_sampling_correction
+    mechanism: 数字相位/定时校正将有效互相干时间延展至小时-天量级
+    status: demonstrated
+    source:
+      zotero_key: ''
+      claim: real-time, continuous coherent averaging for 24 h with record levels
+        of SNRs
+- id: rel.C16_10
+  subject: ent.dual_comb_spectrometer
+  predicate: COMPETES-WITH
+  object: ent.ftir_spectrometer
+  context: 宽带分子光谱测量方法选择
+  tradeoffs:
+    subject_wins:
+    - 无移动部件（光梳替代机械干涉仪）
+    - 微秒级采集速度（vs FTIR 秒级扫描）
+    - Hz 级频率精度（可溯源至频率标准）
+    - 频率分辨率由梳齿线宽决定（kHz–MHz），远优于 FTIR 仪器分辨率
+    - 激光源亮度：单空间模式，支持长光程高灵敏度测量
+    - 无仪器线型函数，相邻光谱通道无串扰
+    object_wins:
+    - 光谱覆盖范围远超 DCS（尤其中红外/远红外全覆盖）
+    - 成本低、技术成熟、商业化程度高
+    - 无需两个高度相干频率梳
+    - 热光源简单廉价
+  comparison_matrix:
+  - dimension: spectral_coverage
+    subject: ~100 THz（近红外展宽后），中红外/远红外仍有限
+    object: '>300 THz（近红外至远红外全覆盖）'
+  - dimension: frequency_resolution
+    subject: kHz–MHz（由梳齿线宽决定）
+    object: ~GHz（由最大光程差决定，0.001 cm⁻¹ 级）
+  - dimension: frequency_accuracy
+    subject: Hz 级（可溯源至频率标准）
+    object: 受仪器标定限制
+  - dimension: acquisition_speed
+    subject: ms–μs（单次干涉图）
+    object: 秒级（机械扫描）
+  - dimension: system_complexity
+    subject: 高（需要两个频率梳 + 相干控制）
+    object: 低至中等（成熟商业系统）
+  - dimension: SNR_figure_of_merit
+    subject: ~2×10⁸ Hz^(1/2)（最佳演示）
+    object: ~10⁶ Hz^(1/2)（典型高分辨率 FTIR）
+  source:
+    zotero_key: ''
+    claim: '"DCS will never usurp FTIR for many applications until it has much broader
+      spectral coverage into the mid-IR (3–5 μm) and far-IR (6–13 μm)... for all its
+      advantages, DCS will never usurp FTIR for many applications until it has much
+      broader spectral coverage."
+
+      '
+- id: rel.C16_11
+  subject: ent.dual_comb_spectrometer
+  predicate: CONDITIONED-BY
+  object: ent.optical_frequency_comb
+  interface_metric: met.dcs_frequency_resolution
+  coupling_formula: 'DCS 频率分辨率和精度由底层频率梳的梳齿稳定度决定： 频率分辨率 = max(f_rep, comb_tooth_linewidth)
+
+    '
+  internal_property: 频率精度继承梳齿绝对频率标定
+  is_system_limit:
+    current: true
+    conditions: 梳齿线宽和稳定度由梳源技术决定
+  confidence: established
+  source:
+    zotero_key: ''
+    claim: '"the frequency resolution and accuracy is set by the laser rather than
+      the instrument"
+
+      '
+  note: '跨专题接口：DCS 的分辨率和精度由底层频率梳技术决定。 ent.optical_frequency_comb 定义于 topics/optical-frequency-combs/papers/giunta2019.yaml。
+
+    '

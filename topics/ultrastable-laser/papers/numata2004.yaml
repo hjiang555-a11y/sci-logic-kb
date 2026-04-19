@@ -337,6 +337,7 @@ relations:
     regime: all
     verification_status: calculated
     temporal_role: proposes
+    breakthrough_paths: []
 
   - id: rel.N05
     subject: ent.spacer_ule
@@ -351,6 +352,7 @@ relations:
     regime: all
     verification_status: calculated
     temporal_role: proposes
+    breakthrough_paths: []
 
   - id: rel.N07
     subject: ent.fp_cavity_system

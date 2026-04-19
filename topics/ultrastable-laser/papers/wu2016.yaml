@@ -1,7 +1,7 @@
 # Wu 2016 — 1557 nm 0.26 Hz 线宽室温超稳激光
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "PZGR9S7S"
@@ -43,13 +43,63 @@ entities:
       thermal_shields: "two layers between FP cavity and vacuum chamber"
     note: "PART-OF ent.fp_cavity_system（定义于 numata2004.yaml）。室温 ULE 腔实例。"
 
-principles: []
-  # 本文未提出新原理，复用：
-  # pri.brownian_thermal_noise_fdt（numata2004.yaml）
-  # pri.ule_zero_cte（young1999.yaml）
+principles:
+  - id: pri.optimal_support_position_vibration_minimization_w16
+    name: "最优支撑位置振动最小化原理（Wu 2016）"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      对于水平放置的 ULE 圆柱腔，通过有限元分析（FEA）优化支撑点的轴向位置，可以最小化腔的加速度灵敏度。
+      当支撑点位于特定位置时，轴向加速度引起的腔体弯曲变形与谐振频率变化的耦合系数达到局部极小值。
+      本文通过 FEA 找到该最优位置，实现模拟 z 轴加速度灵敏度 5.5×10⁻¹³/g，显著低于非优化支撑。
+    domain: "超稳激光振动抑制"
+    foundation: engineering
+    evidence: simulated_and_experimental
+    conditions: "水平圆柱腔；支撑材料弹性（橡胶半球）；轴向加速度为主要振动方向"
+    source_claim: >
+      "The positions of the four supporting hemispheres were optimized by finite element analysis (FEA) to minimize the vibration sensitivity... The simulated acceleration sensitivity along the z axis is 5.5×10⁻¹³/g at the optimum position."
+    applicable_when: "水平圆柱腔的振动灵敏度优化设计"
+    condition_variables:
+      - symbol: "z_support"
+        name: "支撑点轴向位置"
+        current_value: "最优位置（文中未给出具体值）"
+        significance: "决定加速度灵敏度极小值"
+      - symbol: "κ_z_sim"
+        name: "模拟z轴加速度灵敏度"
+        current_value: "5.5×10⁻¹³/g"
+        significance: "FEA 优化的目标指标"
 
-methods: []
-  # 复用 meth.pdh_locking（drever1983.yaml）
+methods:
+  - id: meth.fiber_link_phase_noise_cancellation_w16
+    name: "光纤链路相位噪声主动消除方法（Wu 2016）"
+    status: demonstrated
+    applies_to: ent.ule_cavity_10cm_w16
+    steps_summary: >
+      为了在远程（12 m 光纤）拍频测量中消除光纤传输引入的相位噪声：
+      1) 将主激光输出分束，一路直接进入本地探测器（参考），另一路通过 12 m 光纤传输到远端；
+      2) 在远端将信号再次分束，一部分反射回源端，与原始参考光干涉；
+      3) 测量返回光与参考光的相位差，该差值为光纤链路往返相位噪声的两倍；
+      4) 使用该误差信号反馈控制光纤链路中的相位调制器，补偿相位噪声；
+      5) 补偿后，远端拍频信号中的光纤噪声被抑制 >30 dB（1–100 Hz）。
+    required_hardware:
+      - "光纤相位调制器"
+      - "平衡光电探测器"
+      - "反馈控制器"
+    advantages:
+      - "允许远程拍频测量而不受光纤环境噪声影响"
+      - "显著提升长距离频率比较的精度"
+      - "补偿带宽覆盖 1–100 Hz，覆盖典型环境振动频率"
+    disadvantages:
+      - "增加系统复杂性（额外相位调制与反馈回路）"
+      - "补偿效果受限于反馈环路带宽"
+    conditions:
+      - "需要稳定参考光与返回光干涉"
+      - "光纤链路长度已知且稳定"
+      - "相位调制器响应足够快"
+    source_claim: >
+      "The phase noise introduced by the fibre link was actively suppressed by more than 30 dB in the 1–100 Hz frequency range using an additional feedback loop."
+    note: >
+      该方法使得两台独立超稳激光的远程拍频测量能够真实反映腔本身性能，而不受光纤环境扰动影响。
 
 metrics:
   - id: met.laser_linewidth_w16

@@ -96,6 +96,30 @@ principles:
     open_questions:
       - "当腔长继续增大至 1 m 以上，FSR 进一步缩小，高阶模污染是否会成为 RAM 测量的新限制？"
 
+methods:
+  - id: meth.long_fp_cavity_design_fabrication_p25
+    name: "68 cm 长 FP 腔设计与制造方法（Parke 2025）"
+    description: >
+      设计并制造 68 cm 长 ULE 玻璃 FP 参考腔，通过优化腔体几何、
+      超高反射镜镀层（反射率 0.99998）和精密装配，实现 410,000 精细度
+      和 295 μs 光学存储时间。关键步骤：1) ULE 腔体精密加工与抛光；
+      2) 超高反射镜光学接触粘接；3) 真空系统设计与封装（6×10⁻⁸ mbar）；
+      4) 存储时间测量（环降法）与鉴别系数标定。
+    inputs: ["cavity_length_spec", "mirror_reflectivity_spec", "vacuum_requirements"]
+    outputs: ["fabricated_cavity", "measured_storage_time", "normalized_discriminator_coefficient"]
+    note: "该方法实现了长腔鉴别系数增强原理，为 10⁻¹⁹ 级频率稳定提供高鉴别能力。"
+  
+  - id: meth.eom_bias_field_ram_cancellation_p25
+    name: "EOM 偏置电场 RAM 主动消除方法（Parke 2025）"
+    description: >
+      在 x 切退火质子交换（APE）铌酸锂波导 EOM 中，通过偏置端口施加低压直流电场
+      （~1 V）补偿晶体双折射引起的残余振幅调制（RAM）。建立反馈环路：
+      1) 分离的 RAM 监测光电探测器提取误差信号；2) PID 控制器调节偏置电压；
+      3) 闭环带宽 ~0.5 MHz，实现 RAM 降至 10⁻⁷ 水平并长期稳定，无需温度伺服。
+    inputs: ["eom_rf_signal", "pdh_error_signal", "ram_monitor_signal"]
+    outputs: ["adjusted_bias_voltage", "suppressed_ram_level", "ram_instability_spectrum"]
+    note: "该方法实现了 EOM 偏置电场 RAM 主动消除原理，显著降低 PDH 锁频中的 RAM 噪声。"
+
 metrics:
   - id: met.cavity_storage_time_p25
     name: "光学腔存储时间"

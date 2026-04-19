@@ -36,9 +36,56 @@ entities:
       application: "GEO 600 gravitational wave detector"
     note: "引力波探测技术，与超稳激光共享光电探测需求。"
 
-principles: []
-methods: []
-metrics: []
+principles:
+  - id: pri.high_power_low_noise_photodetector_design_g16
+    name: "高功率超低噪声光电探测器设计（Grote 2016）"
+    statement: >
+      为压缩光增强引力波探测器设计的光电探测器，通过优化电路设计和元件选择，
+      在音频频段（>1 kHz）将电子噪声降低4倍以上，同时保持高功率处理能力
+      （5–50 mW/元件），使系统接近量子散粒噪声极限。
+    domain: photodetection
+    subdomain: gravitational_wave_detection
+    foundation: engineering
+    evidence: experimental
+    note: "该设计解决了压缩光增强引力波探测中的光电探测器噪声瓶颈。"
+methods:
+  - id: meth.low_noise_high_power_pd_circuit_design_g16
+    name: "低噪声高功率光电探测器电路设计（Grote 2016）"
+    description: >
+      为压缩光增强引力波探测器设计的光电探测器电路，通过优化跨阻放大器、
+      反馈网络和元件选择（低噪声运放、低寄生电容光电二极管），在音频频段
+      （>1 kHz）实现4倍以上的电子噪声降低，同时保持5–50 mW/元件的高功率处理能力。
+    inputs: ["photodiode_signal", "bias_voltage"]
+    outputs: ["amplified_signal", "noise_spectrum"]
+    note: "该设计解决了压缩光增强引力波探测中的光电探测器噪声瓶颈。"
+metrics:
+  - id: met.electronic_noise_reduction_factor_g16
+    name: "电子噪声降低倍数（Grote 2016）"
+    quantity: "noise_reduction_factor"
+    unit: ""
+    demonstrated_value: ">4"
+    conditions: "音频频段 >1 kHz，高功率光电探测器"
+    measurement_method: "功率谱密度测量，与基准探测器对比"
+    significance: "证明电路设计在音频频段有效降低电子噪声，接近量子散粒噪声极限。"
+    source_claim: {zotero_key: "6BLHJNGD", claim: "electronic noise reduced by factor >4 above 1 kHz"}
+  - id: met.power_handling_capacity_g16
+    name: "功率处理能力（Grote 2016）"
+    quantity: "power_handling"
+    unit: "mW/element"
+    demonstrated_value: "5–50"
+    conditions: "光电探测器元件，针对压缩光增强引力波探测器"
+    measurement_method: "连续波激光测试，测量线性响应范围和饱和阈值"
+    significance: "满足引力波探测器对高功率处理的需求。"
+    source_claim: {zotero_key: "6BLHJNGD", claim: "5–50 mW/element power handling"}
+  - id: met.frequency_band_g16
+    name: "有效频段（Grote 2016）"
+    quantity: "frequency_band"
+    unit: "kHz"
+    demonstrated_value: ">1"
+    conditions: "电子噪声降低效果显著的频段"
+    measurement_method: "噪声谱测量"
+    significance: "表明设计在音频频段对引力波探测最相关。"
+    source_claim: {zotero_key: "6BLHJNGD", claim: "electronic noise reduced above 1 kHz"}
 
 relations:
   - id: rel.GR16_01
@@ -48,3 +95,38 @@ relations:
     confidence: likely
     source: {zotero_key: "VM5MJ9B3", claim: "electronic noise of the photodetection circuit in the audio band"}
     note: "与超稳激光领域共享光电探测技术需求"
+  - id: rel.GR16_02
+    subject: pri.high_power_low_noise_photodetector_design_g16
+    predicate: ENABLES
+    object: ent.gw_photodetector_g16
+    confidence: established
+    source: {zotero_key: "6BLHJNGD", claim: "photodetector design for squeezed light enhanced gravitational wave detection"}
+    note: "该设计原理使高功率低噪声光电探测器成为可能。"
+  - id: rel.GR16_03
+    subject: meth.low_noise_high_power_pd_circuit_design_g16
+    predicate: IMPLEMENTS
+    object: pri.high_power_low_noise_photodetector_design_g16
+    confidence: established
+    source: {zotero_key: "6BLHJNGD", claim: "circuit optimization for low noise high power photodetection"}
+    note: "电路设计方法实现了该设计原理。"
+  - id: rel.GR16_04
+    subject: met.electronic_noise_reduction_factor_g16
+    predicate: CHARACTERIZES
+    object: meth.low_noise_high_power_pd_circuit_design_g16
+    confidence: established
+    source: {zotero_key: "6BLHJNGD", claim: "electronic noise reduced by factor >4 above 1 kHz"}
+    note: "电子噪声降低倍数是该方法的关键性能指标。"
+  - id: rel.GR16_05
+    subject: met.power_handling_capacity_g16
+    predicate: CHARACTERIZES
+    object: meth.low_noise_high_power_pd_circuit_design_g16
+    confidence: established
+    source: {zotero_key: "6BLHJNGD", claim: "5–50 mW/element power handling"}
+    note: "功率处理能力是该方法的重要参数。"
+  - id: rel.GR16_06
+    subject: met.frequency_band_g16
+    predicate: CHARACTERIZES
+    object: meth.low_noise_high_power_pd_circuit_design_g16
+    confidence: established
+    source: {zotero_key: "6BLHJNGD", claim: "electronic noise reduced above 1 kHz"}
+    note: "有效频段表征了该方法适用的频率范围。"

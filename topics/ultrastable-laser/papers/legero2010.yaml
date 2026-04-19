@@ -72,6 +72,7 @@ relations:
     dominated_by: null
     verification_status: calculated
     temporal_role: validates
+    breakthrough_paths: []
     note: "跨文件引用 numata2004.yaml; FS 镜路线通过降低 φ 来突破 ULE 热噪声极限"
 
   - id: rel.Leg03

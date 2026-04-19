@@ -49,3 +49,24 @@ relations:
     confidence: established
     source: {zotero_key: "JYGVFJBN", claim: "best long-term frequency stability of an all-fiber-based ultrastable laser"}
     note: "跨文件引用，ent.fiber_interferometer 定义于 jiang2010.yaml"
+  - id: rel.HU02
+    subject: ent.fiber_interferometer
+    predicate: IMPLEMENTS
+    object: pri.fiber_delay_line_frequency_ref
+    confidence: established
+    source: {zotero_key: "JYGVFJBN", claim: "All-fiber-based ultrastable laser locked to fiber delay line"}
+    note: "跨文件引用，pri.fiber_delay_line_frequency_ref 定义于 jiang2010.yaml"
+  - id: rel.HU03
+    subject: meth.fiber_delay_locking
+    predicate: IMPLEMENTS
+    object: pri.fiber_delay_line_frequency_ref
+    confidence: established
+    source: {zotero_key: "JYGVFJBN", claim: "锁定到光纤延迟线"}
+    note: "跨文件引用，meth.fiber_delay_locking 定义于 jiang2010.yaml"
+  - id: rel.HU04
+    subject: met.fiber_long_term_stability_h23
+    predicate: CHARACTERIZES
+    object: pri.fiber_delay_line_frequency_ref
+    confidence: established
+    source: {zotero_key: "JYGVFJBN", claim: "fractional frequency stability of better than 3.2×10⁻¹⁵ at 1 s and 1.1×10⁻¹⁴ at 1000 s"}
+    note: "稳定度指标表征该原理的性能。"

@@ -73,3 +73,4 @@ relations:
     regime: short-term
     verification_status: calculated
     note: "短腔长使热噪声极限较高，但当前性能可能还受技术噪声限制"
+    breakthrough_paths: []

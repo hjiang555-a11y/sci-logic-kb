@@ -86,6 +86,7 @@ relations:
     dominated_by: null
     verification_status: observed
     temporal_role: validates
+    breakthrough_paths: []
     note: >
       跨文件引用 numata2004.yaml、kessler2012.yaml; 残余噪声高于理论极限——额外噪声源不明。
       残余噪声来源不明（无温度/功率/模式依赖），

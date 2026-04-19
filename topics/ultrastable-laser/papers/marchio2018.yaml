@@ -1,7 +1,7 @@
 # Marchio 2018 — 大面积晶体镀层光学性能表征
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "LCMWCIWB"
@@ -52,11 +52,35 @@ entities:
         impact: "限制蓝宝石基底的良率和光学品质"
     note: "与 ent.algaas_crystalline_mirror_c13（定义于 cole2013.yaml）相关，本文聚焦大面积制造。"
 
-principles: []
-  # 复用 pri.crystalline_coating_low_brownian_noise（cole2013.yaml）
-  # 本文不提出新原理，核心是大面积制造工艺验证
+principles:
+  - id: pri.comprehensive_optical_characterization_large_area_coatings_m18
+    name: "大面积晶体镀层光学性能综合表征原理"
+    description: >
+      大面积（≥50 mm）晶体镀层的光学性能需通过透射、吸收、散射、缺陷密度等多个独立参数进行综合表征，
+      任何单一参数不足以评估其整体光学品质。镀层在引力波探测器等精密应用中的适用性取决于这些参数的同时达标。
+    domain: optics, coating_characterization
+    core_idea: multi‑parameter characterization ensures coating suitability for high‑precision applications
+    source: {zotero_key: "LCMWCIWB", claim: "We present a full optical characterization of the large‑area crystalline coatings, including transmission, absorption, total integrated scatter (TIS) and defect density"}
+    note: "针对大面积 GaAs/AlGaAs 晶体镀层，首次系统测量了全部四个关键光学参数，验证其与 IBS 非晶镀层相当的性能。"
 
-methods: []
+methods:
+  - id: meth.large_area_coating_optical_characterization_m18
+    name: "大面积晶体镀层光学性能表征方法"
+    description: >
+      采用多种互补测量技术对大面积（50.8 mm）GaAs/AlGaAs 晶体镀层进行全面光学表征：
+      1) 光热偏转法（photothermal deflection）测量吸收率（≤0.8 ppm），
+      2) CASI 散射仪（CASI scatterometer）测量总积分散射（TIS, 6–9.5 ppm），
+      3) 透射测量（6 ppm），
+      4) 缺陷密度统计（0.85 defects/mm²）。该方法首次实现了对大面积晶体镀层全部关键光学参数的实验评估。
+    domain: optics, metrology
+    key_steps:
+      - "样品准备：GaAs/AlGaAs 晶体镀层转移到 2 英寸熔融石英和蓝宝石基底"
+      - "吸收测量：光热偏转法，激光波长 1064 nm，探测极限约 0.8 ppm"
+      - "散射测量：CASI 散射仪，测量 4π 立体角内的积分散射"
+      - "透射测量：标准分光光度计"
+      - "缺陷检测：显微镜图像分析，统计直径 ≥100 μm 的缺陷"
+    source: {zotero_key: "LCMWCIWB", claim: "The characterization consists of four main measurements: transmission, absorption, total integrated scatter (TIS) and defect density"}
+    note: "该方法验证了大面积晶体镀层的光学性能与 IBS 非晶镀层相当，为引力波探测器等应用提供关键数据。"
 
 metrics:
   - id: met.crystalline_coating_tis_m18

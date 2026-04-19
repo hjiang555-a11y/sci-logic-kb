@@ -37,7 +37,58 @@ principles:
     conditions: "需要高品质压缩光源和低损耗注入路径"
     source_claim: "inject squeezed states to improve performance beyond quantum noise limit"
 
-methods: []
-metrics: []
+methods:
+  - id: meth.squeezed_light_injection_ligo
+    name: "压缩光注入LIGO（Aasi 2013）"
+    procedure:
+      - "制备高品质压缩真空态光场（1064 nm）。"
+      - "将压缩光注入迈克尔逊干涉仪的暗端口。"
+      - "控制压缩光的正交分量相位，以降低散粒噪声。"
+      - "监测干涉仪输出信号噪声谱，验证灵敏度改善。"
+    domain: gravitational_wave_detection
+    subdomain: quantum_enhancement
+    inputs: ["squeezed_light_source", "interferometer"]
+    outputs: ["enhanced_sensitivity"]
+    note: "该方法首次在大型引力波探测器中实现压缩光量子增强。"
+metrics:
+  - id: met.sensitivity_improvement_a13
+    name: "灵敏度改善（Aasi 2013）"
+    quantity: "sensitivity_improvement"
+    unit: "dB"
+    demonstrated_value: "改善具体数值未给出，但超过量子散粒噪声极限"
+    conditions: "压缩光注入LIGO干涉仪暗端口"
+    measurement_method: "比较压缩光注入前后的噪声谱，计算信噪比提升。"
+    significance: "证明压缩光可在实际引力波探测器中突破量子噪声极限。"
+    source_claim: {zotero_key: "8NUIA2K7", claim: "Enhanced sensitivity of the LIGO gravitational wave detector by using squeezed states of light"}
+  - id: met.frequency_range_a13
+    name: "改善频率范围（Aasi 2013）"
+    quantity: "frequency_range"
+    unit: "Hz"
+    demonstrated_value: "150 Hz 以上"
+    conditions: "压缩光注入，正交相位优化"
+    measurement_method: "测量不同频率下的噪声降低。"
+    significance: "改善主要出现在高频区域。"
+    source_claim: {zotero_key: "8NUIA2K7", claim: "improved sensitivity above 150 Hz"}
 
-relations: []
+relations:
+  - id: rel.A01
+    subject: meth.squeezed_light_injection_ligo
+    predicate: IMPLEMENTS
+    object: pri.squeezed_light_quantum_enhancement
+    confidence: established
+    source: {zotero_key: "8NUIA2K7", claim: "inject squeezed states to improve performance beyond quantum noise limit"}
+    note: "该方法实现了压缩光量子增强原理。"
+  - id: rel.A02
+    subject: met.sensitivity_improvement_a13
+    predicate: CHARACTERIZES
+    object: pri.squeezed_light_quantum_enhancement
+    confidence: established
+    source: {zotero_key: "8NUIA2K7", claim: "Enhanced sensitivity of the LIGO gravitational wave detector by using squeezed states of light"}
+    note: "灵敏度改善表征原理的效果。"
+  - id: rel.A03
+    subject: met.frequency_range_a13
+    predicate: CHARACTERIZES
+    object: meth.squeezed_light_injection_ligo
+    confidence: established
+    source: {zotero_key: "8NUIA2K7", claim: "improved sensitivity above 150 Hz"}
+    note: "频率范围表征方法的适用区域。"

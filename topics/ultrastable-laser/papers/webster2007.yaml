@@ -98,6 +98,20 @@ principles:
           source: {zotero_key: "UCNS7EM7", claim: "minimum response of 0.1 (3.7) kHz/ms⁻² for vertical (horizontal)"}
         constraints: "水平对称性要求四接触点支撑力均匀；刚性接触难以实现，橡胶球更优"
 
+methods:
+  - id: meth.cutout_cavity_design_fem_optimization_w07
+    name: "切口腔体设计与有限元优化方法（Webster 2007）"
+    description: >
+      通过有限元分析（FEM）优化FP腔的几何设计，实现全向振动不敏感性。
+      核心步骤：1）在腔体底部加工方形切口（cutout），补偿竖直加速度引起的腔体不对称形变；
+      2）采用四点橡胶球对称支撑（Case B），保证水平方向的力学对称性；
+      3）在参数空间（切口深度c、支撑横坐标x、轴坐标z）中寻找零点面（zero locus plane），
+      使加速度引起的两腔镜面中心位移等大反向，净腔长变化为零。
+      支撑位置z可在实验中连续调节以找到最优零点。
+    inputs: ["cavity_geometry", "acceleration_vector", "material_properties"]
+    outputs: ["optimized_cutout_parameters", "acceleration_sensitivity", "zero_locus_surface"]
+    note: "该方法实现了振动不敏感不依赖隔振，而是通过几何补偿降低腔对振动的响应系数。"
+
 metrics:
   - id: met.acceleration_sensitivity_vertical_w07
     name: "竖直加速度灵敏度（切口腔，Webster 2007）"
@@ -223,3 +237,11 @@ relations:
       ent.vibration_environment 定义于 young1999.yaml；ent.fp_cavity_system 定义于 numata2004.yaml。
       本关系扩充了 young1999 rel.Y11 中的 internal_property：
       Webster 2007 将竖直加速度灵敏度从 ~100 kHz/ms⁻² 降至 <0.1 kHz/ms⁻²。
+
+  - id: rel.W08
+    subject: meth.cutout_cavity_design_fem_optimization_w07
+    predicate: IMPLEMENTS
+    object: pri.cavity_deformation_compensation
+    confidence: established
+    source: {zotero_key: "UCNS7EM7", claim: "ensure distance between centers of mirror surfaces remains invariant when force is applied"}
+    note: "切口腔体设计与有限元优化方法实现了腔体形变补偿原理。"

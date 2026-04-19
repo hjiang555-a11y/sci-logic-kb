@@ -63,6 +63,7 @@ relations:
     dominated_by: null
     verification_status: observed
     temporal_role: validates
+    breakthrough_paths: []
     note: "跨文件引用 numata2004.yaml; 首次全面实验验证 ULE 腔热噪声极限"
 
   - id: rel.We08_02

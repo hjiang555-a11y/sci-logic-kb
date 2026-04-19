@@ -71,6 +71,7 @@ relations:
     dominated_by: null
     verification_status: observed
     temporal_role: validates
+    breakthrough_paths: []
     note: "跨文件引用 numata2004.yaml; FS 镜使热噪声极限低于全 ULE 腔"
 
   - id: rel.Mil02

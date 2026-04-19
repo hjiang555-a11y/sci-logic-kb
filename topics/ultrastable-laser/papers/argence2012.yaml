@@ -117,6 +117,7 @@ relations:
     regime: short-term
     verification_status: calculated
     note: "跨文件引用，pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml"
+    breakthrough_paths: []
 
   - id: rel.A04
     subject: ent.space_cavity_prototype_a12

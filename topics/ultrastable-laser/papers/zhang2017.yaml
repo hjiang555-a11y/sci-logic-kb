@@ -1,7 +1,7 @@
 # Zhang 2017 — 4 K 闭循环连续运行硅腔 1×10⁻¹⁶ 不稳定度
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
-# Schema版本：v3.2
+# Schema版本：v4.1
 # 主体实体沿用 robinson2019.yaml 中的 ent.si_crystal_fp_cavity_4k_r19
 # 说明：Zhang 2017 是同一 6 cm / 4 K / closed-cycle Si cavity 平台的前身演示，
 #       重点补充早期性能指标，以及当时仍活跃的振动/热环境限制关系。
@@ -33,6 +33,129 @@ meta:
 
 # 不新增实体节点——本文对应的主体系统与 robinson2019.yaml 中的
 # ent.si_crystal_fp_cavity_4k_r19 为同一 6 cm / 4 K / closed-cycle Si cavity 平台。
+
+principles:
+  - id: pri.multistage_thermal_damping_low_temp_z17
+    name: "多级热阻尼低温滤波原理（Zhang 2017）"
+    tier: domain
+    verification_status: observed
+    statement: >
+      在闭循环低温机（4 K）中，通过多级热屏蔽和低热导路径构建二阶热低通滤波器，
+      可有效抑制 cryocooler 本征温度波动（~20 mK @ 6 s）至热噪声底以下。
+      关键设计：1) 高比热材料（HoCu₂，比热为铜的 2500 倍 @ 4 K）作为热容缓冲；
+      2) 低热导支撑（G10 玻璃纤维，截面积 96 mm²）延长热时间常数；
+      3) 铝/铜屏蔽层顺序冷却（30 K → 3.5 K → ~4 K）。
+      该系统等效为 RC 二阶低通滤波，时间常数 τ₁≈1400 s（主动-被动屏蔽间）、
+      τ₂≈600 s（被动屏蔽-腔间），将温度引起的频率涨落压低到 6×10⁻¹⁷ 热噪声底以下。
+    domain: "低温超稳激光，温度噪声抑制"
+    foundation: engineering
+    evidence: experimental
+    conditions: >
+      闭循环低温机（Gifford-McMahon 型），工作温度 ~4 K；
+      需要真空环境减少气体传热；材料在低温下保持结构稳定性。
+    source_claim: >
+      "To suppress temperature fluctuations from the cryocooler, we use a custom,
+      multistage thermal damping system... The corresponding temperature-induced
+      frequency fluctuations are below the expected thermal noise floor for
+      averaging times up to 100 s."
+    applicable_when: "闭循环低温机工作的超稳光学参考腔，尤其是亚 10 K 温区"
+    condition_variables:
+      - symbol: "C_HoCu₂/C_Cu"
+        name: "HoCu₂ 与铜的比热比 @ 4 K"
+        current_value: "~2500"
+        significance: "提供大热容缓冲，平滑温度波动"
+      - symbol: "R_th_G10"
+        name: "G10 支撑的热阻"
+        current_value: "2.3×10⁵ K/W（被动屏蔽-腔间）"
+        significance: "决定低通滤波器截止频率"
+      - symbol: "τ_1, τ_2"
+        name: "热时间常数"
+        current_value: "τ₁≈1400 s，τ₂≈600 s"
+        significance: "决定温度波动衰减的频响"
+
+  - id: pri.mechanical_decoupling_split_plate_z17
+    name: "机械解耦 split-plate 振动隔离原理（Zhang 2017）"
+    tier: domain  
+    verification_status: observed
+    statement: >
+      通过 split-plate 设计将振动源（闭循环低温机）与光学腔机械解耦：
+      1) 主平台（main plate）固定低温机，直接锚定到地基；
+      2) 分离平台（split plate）支撑真空腔，通过 1.5 mm 间隙与主平台物理隔离；
+      3) split plate 由三根支撑杆连接到主动隔振（AVI）台。
+      该布局实现 4–5 个数量级的振动衰减（1–10 Hz），并将 cryocooler 1 Hz 循环
+      谐波引起的相干振动峰抑制到接近非相干振动底噪水平。
+    domain: "超稳激光振动噪声抑制"
+    foundation: engineering
+    evidence: experimental
+    conditions: >
+      需要刚性地基（混凝土）锚定主平台；AVI 台提供 >1 Hz 的主动衰减；
+      间隙需保持真空密封（通过波纹管连接）。
+    source_claim: >
+      "The mechanical design isolates the cavity from the vibrations of the
+      cryocooler... The split plate is mechanically decoupled from the main plate
+      and is directly attached to the active vibration isolation (AVI) table."
+    applicable_when: "闭循环低温机驱动的超稳光学系统，振动环境苛刻"
+    condition_variables:
+      - symbol: "gap_width"
+        name: "主平台与分离平台间隙"
+        current_value: "1.5 mm"
+        significance: "确保机械解耦同时允许真空连接"
+      - symbol: "damping_factor"
+        name: "振动衰减因子"
+        current_value: "10⁴–10⁵（1–10 Hz）"
+        significance: "衡量振动隔离效果"
+      - symbol: "coherence_peak"
+        name: "cryocooler 谐波相干峰"
+        current_value: "近单位相干 @ 1 Hz 谐波"
+        significance: "剩余未完全抑制的周期性振动"
+
+methods:
+  - id: meth.multistage_thermal_shield_implementation_z17
+    name: "多级热屏蔽实现方法（Zhang 2017）"
+    description: >
+      具体实现闭循环 4 K 低温机的多级热阻尼系统：
+      1) 铝辐射屏蔽：连接至低温机第一级，冷却到 30 K；
+      2) 铜主动屏蔽：通过柔性冷指连接至第二级（2.2 K），内置 HoCu₂ 圆柱板，
+         使用电阻加热器稳定在 3.5 K（0.5 mK 不稳定度 @ 6 s）；
+      3) 被动屏蔽：G10 环支撑，底部为 HoCu₂ 杯形结构，热阻 2.3×10⁵ K/W；
+      4) 腔支撑结构：三根 1 mm 长 G10 杆，接触面积 0.75 mm²，最小化热导。
+      整体构成二阶热低通滤波器，实测将温度引起的频率涨落抑制到热噪声底以下。
+    inputs: ["2.2 K 冷源", "温度控制信号", "真空环境"]
+    outputs: ["~4 K 稳定腔温", "亚 mK 级温度涨落"]
+    implementation_details:
+      materials: "铝（30 K 屏蔽）、铜（主动屏蔽）、HoCu₂（热容板）、G10（低热导支撑）"
+      thermal_resistances: "R_a-p = 395 K/W（主动-被动间），R_p-Si = 2.3×10⁵ K/W（被动-腔间）"
+      heat_capacities: "C_p = 3.5 J/K（被动屏蔽），C_Si = 2.6 mJ/K（硅腔）"
+    verification_method: "测量各屏蔽层温度涨落，卷积传递函数估计腔温涨落，比较热噪声底"
+    source_claim: >
+      "We use a custom, multistage thermal damping system... The corresponding
+      temperature-induced frequency fluctuations are below the expected thermal
+      noise floor for averaging times up to 100 s."
+
+  - id: meth.split_plate_vibration_isolation_z17
+    name: "split-plate 振动隔离实现方法（Zhang 2017）"
+    description: >
+      实现 cryocooler 与光学腔机械解耦的具体安装方案：
+      1) 主平台：整体铝柱螺栓固定到混凝土地基，支撑 cryocooler；
+      2) 分离平台：支撑真空腔，与主平台通过 1.5 mm 间隙分离；
+      3) 连接件：仅保留三条必要连接（冷指、30 K 屏蔽热链、真空波纹管），
+         均采用柔性设计减少振动传递；
+      4) AVI 连接：分离平台通过三根支撑杆固定到主动隔振台。
+      通过加速度计测量验证 4–5 个数量级振动衰减（1–10 Hz）。
+    inputs: ["cryocooler 振动谱", "地基振动环境"]
+    outputs: ["衰减后的腔体振动环境", "振动-频率噪声传递函数"]
+    implementation_details:
+      gap: "1.5 mm（主平台与分离平台间隙）"
+      supports: "三根支撑杆连接分离平台与 AVI 台"
+      mandatory_links: "冷指（柔性）、30 K 热链、真空波纹管"
+      measurement: "三轴加速度计测量 AVI 台与 cryocooler 顶部振动谱"
+    verification_method: >
+      比较 cryocooler 开启/关闭时 AVI 台振动谱；计算振动-频率噪声相干函数
+      C_aiν(f) 与传递函数 H_ai(f)；估计振动引起的频率噪声贡献。
+    source_claim: >
+      "The mechanical design isolates the cavity from the vibrations of the
+      cryocooler... The split plate is mechanically decoupled from the main plate
+      and is directly attached to the active vibration isolation (AVI) table."
 
 metrics:
   - id: met.fractional_freq_instability_z17
@@ -195,3 +318,57 @@ relations:
       current: false
       conditions: "经多级热屏和 HoCu₂ 被动滤波后，短中时标已退出主导限制；更长平均时间仍受室温外壳涨落影响"
     note: "ent.thermal_environment 定义于 jiang2010.yaml；本文的关键工程贡献之一就是将温度链路压低到接近热噪声底。"
+
+  - id: rel.Z17_07
+    subject: ent.si_crystal_fp_cavity_4k_r19
+    predicate: ENABLED-BY
+    object: pri.multistage_thermal_damping_low_temp_z17
+    confidence: established
+    source: {zotero_key: "N9AGEQ8S", claim: "To suppress temperature fluctuations from the cryocooler, we use a custom, multistage thermal damping system... The corresponding temperature-induced frequency fluctuations are below the expected thermal noise floor"}
+    conditions: "闭循环低温机，4 K 工作温度"
+    note: "多级热阻尼系统使温度引起的频率涨落低于热噪声底，是系统能达到 1×10⁻¹⁶ 不稳定度的关键支撑技术。"
+
+  - id: rel.Z17_08
+    subject: ent.si_crystal_fp_cavity_4k_r19
+    predicate: ENABLED-BY
+    object: pri.mechanical_decoupling_split_plate_z17
+    confidence: established
+    source: {zotero_key: "N9AGEQ8S", claim: "The mechanical design isolates the cavity from the vibrations of the cryocooler... The split plate is mechanically decoupled from the main plate and is directly attached to the active vibration isolation table"}
+    conditions: "闭循环低温机产生显著振动（~0.1g pk-pk）"
+    note: "split-plate 机械解耦设计实现 4-5 个数量级振动衰减，是系统在 τ < 0.06 s 外不受振动限制的关键。"
+
+  - id: rel.Z17_09
+    subject: meth.multistage_thermal_shield_implementation_z17
+    predicate: IMPLEMENTS
+    object: pri.multistage_thermal_damping_low_temp_z17
+    confidence: established
+    source: {zotero_key: "N9AGEQ8S", claim: "We use a custom, multistage thermal damping system... The shields are designed to maximize their heat capacity, while the connections between the shields have a low thermal conductance"}
+    conditions: "具体实现包括铝辐射屏蔽、铜主动屏蔽、HoCu₂ 热容板、G10 支撑结构"
+    note: "该方法具体实现了多级热阻尼原理，通过材料选择和几何设计达成所需的热时间常数。"
+
+  - id: rel.Z17_10
+    subject: meth.split_plate_vibration_isolation_z17
+    predicate: IMPLEMENTS
+    object: pri.mechanical_decoupling_split_plate_z17
+    confidence: established
+    source: {zotero_key: "N9AGEQ8S", claim: "The mechanical design isolates the cavity from the vibrations of the cryocooler... All other mechanical connections are eliminated by placing the vacuum chamber on a split plate"}
+    conditions: "具体实现包括 main plate/split plate 分离、1.5 mm 间隙、三支撑杆连接 AVI 台"
+    note: "该方法具体实现了 split-plate 机械解耦原理，达成振动源与光学腔的有效隔离。"
+
+  - id: rel.Z17_11
+    subject: ent.si_crystal_fp_cavity_4k_r19
+    predicate: OPERATIONALIZED-AS
+    object: meth.multistage_thermal_shield_implementation_z17
+    confidence: established
+    source: {zotero_key: "N9AGEQ8S", claim: "Our system comprises a 6-cm-long silicon cavity... operating at 4 K using a two-stage Gifford-McMahon closed-cycle cryocooler"}
+    conditions: "系统实际运行中应用多级热屏蔽方法维持腔温稳定"
+    note: "4 K Si 腔系统通过该方法维持温度稳定性，是其实验操作的核心环节之一。"
+
+  - id: rel.Z17_12
+    subject: ent.si_crystal_fp_cavity_4k_r19
+    predicate: OPERATIONALIZED-AS
+    object: meth.split_plate_vibration_isolation_z17
+    confidence: established
+    source: {zotero_key: "N9AGEQ8S", claim: "The mechanical design isolates the cavity from the vibrations of the cryocooler... The split plate is mechanically decoupled from the main plate"}
+    conditions: "系统实际安装中应用 split-plate 方法隔离振动"
+    note: "4 K Si 腔系统通过该方法实现振动隔离，是其实验安装的核心环节之一。"

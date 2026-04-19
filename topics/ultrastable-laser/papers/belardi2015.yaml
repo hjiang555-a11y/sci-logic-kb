@@ -1,7 +1,7 @@
 # Belardi 2015 — 反谐振空心光纤在可见/近红外的宽带设计与低损耗特性
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "2F3PD62T"
@@ -97,6 +97,37 @@ principles:
     source_claim: >
       "the adoption of a 'free' core boundary ... presents the advantage of reducing
       the coupling between cladding and fundamental modes"
+
+methods:
+  - id: meth.hcarf_design_fabrication_b15
+    name: "反谐振空心光纤设计与制备方法（Belardi 2015）"
+    status: demonstrated
+    applies_to: ent.antiresonant_hollow_core_fiber
+    steps_summary: >
+      1) 根据目标波长范围确定壁厚 t：第一反谐振窗口 λ ≈ 4t/√(n²-1)；
+      2) 选择核心直径（典型 20–50 μm）与包层管数目（6–8 管）；
+      3) 可选采用 free core boundary 设计（DARfbf），将相邻包层管分离以降低包层模耦合；
+      4) 通过堆叠-拉制工艺制备预成型棒并拉制成光纤；
+      5) 通过 cutback 法测量透射谱与衰减，验证反谐振窗口位置与带宽。
+    required_hardware:
+      - "光纤拉丝塔"
+      - "光谱分析系统"
+    advantages:
+      - "设计自由度大：通过壁厚 t 可在可见到近红外灵活调谐反谐振窗口"
+      - "制造相对简单：相比光子带隙空心光纤，对结构周期性要求较低"
+      - "传输带宽宽：第一反谐振窗口可达 ~1 μm 以上"
+    disadvantages:
+      - "最低衰减通常高于优化后的光子带隙光纤（尤其近红外）"
+      - "free core boundary 设计可能牺牲部分最低损耗以换取更平滑带宽"
+      - "壁厚均匀性对反谐振窗口形状影响显著"
+    conditions:
+      - "适用于石英基空心光纤；目标波长在可见至近红外（0.4–2.5 μm）"
+      - "制造工艺需保证壁厚均匀性（偏差 < ±0.02 μm）"
+    source_claim: >
+      "the design and fabrication of HC‑ARF rely on the antiresonance guidance principle...
+      The fiber presented in this paper was fabricated by the stack‑and‑draw technique."
+    note: >
+      本文方法提供 HC‑ARF 设计的系统性流程，特别强调壁厚作为一级设计参数的作用。
 
 metrics:
   - id: met.transmission_bandwidth_hcarf_b15

@@ -37,7 +37,65 @@ principles:
     conditions: "需要光链路中已存在强度调制器"
     source_claim: "utilize the intensity modulator already present in a photonic link... suppression of 10 to 50 dB"
 
-methods: []
-metrics: []
+methods:
+  - id: meth.rin_suppression_reuse_modulator
+    name: "复用调制器的RIN抑制方法"
+    description: >
+      利用射频光子链路中已有的强度调制器，通过闭环伺服同时实现
+      微波信号编码和激光相对强度噪声（RIN）抑制的方法。伺服系统检测
+      光功率波动并反馈调节调制器偏置，在10 MHz带宽内实现10–50 dB抑制。
+    applicable_context: "射频光子链路（如光电振荡器），其中已有强度调制器。"
+    key_steps:
+      - "检测光链路输出功率波动（RIN）。"
+      - "通过反馈回路调节强度调制器的偏置电压。"
+      - "同时进行微波信号编码。"
+    note: "Nelson 2008报道的方法，避免额外硬件插入损耗。"
+metrics:
+  - id: met.rin_suppression_ratio_n08
+    name: "RIN抑制比（Nelson 2008）"
+    quantity: "suppression_ratio"
+    unit: "dB"
+    demonstrated_value: "10–50 dB"
+    conditions: "在10 MHz带宽内，针对激光相对强度噪声，利用已有强度调制器实现。"
+    measurement_method: "比较抑制前后光功率噪声谱密度。"
+    significance: "高抑制比改善射频光子链路的信噪比。"
+    source_claim: "utilize the intensity modulator already present in a photonic link... suppression of 10 to 50 dB"
+  - id: met.rin_suppression_bandwidth_n08
+    name: "RIN抑制带宽（Nelson 2008）"
+    quantity: "bandwidth"
+    unit: "MHz"
+    demonstrated_value: "10 MHz"
+    conditions: "抑制有效的频率范围。"
+    measurement_method: "测量不同频率下的抑制比。"
+    significance: "带宽决定了对动态噪声的抑制能力。"
+    source_claim: "utilize the intensity modulator already present in a photonic link... suppression of 10 to 50 dB"
 
-relations: []
+relations:
+  - id: rel.N01
+    subject: meth.rin_suppression_reuse_modulator
+    predicate: IMPLEMENTS
+    object: pri.rin_suppression_reuse_modulator
+    confidence: established
+    source: {zotero_key: "XAKCIXKT", claim: "utilize the intensity modulator already present in a photonic link... suppression of 10 to 50 dB"}
+    note: "方法实现了该原理。"
+  - id: rel.N02
+    subject: met.rin_suppression_ratio_n08
+    predicate: CHARACTERIZES
+    object: pri.rin_suppression_reuse_modulator
+    confidence: established
+    source: {zotero_key: "XAKCIXKT", claim: "utilize the intensity modulator already present in a photonic link... suppression of 10 to 50 dB"}
+    note: "抑制比表征原理性能。"
+  - id: rel.N03
+    subject: met.rin_suppression_bandwidth_n08
+    predicate: CHARACTERIZES
+    object: pri.rin_suppression_reuse_modulator
+    confidence: established
+    source: {zotero_key: "XAKCIXKT", claim: "utilize the intensity modulator already present in a photonic link... suppression of 10 to 50 dB"}
+    note: "带宽表征原理性能。"
+  - id: rel.N04
+    subject: pri.rin_suppression_reuse_modulator
+    predicate: ENABLED-BY
+    object: ent.eom
+    confidence: established
+    source: {zotero_key: "XAKCIXKT", claim: "utilize the intensity modulator already present in a photonic link"}
+    note: "跨文件引用，ent.eom 定义于 drever1983.yaml。依赖已有强度调制器。"

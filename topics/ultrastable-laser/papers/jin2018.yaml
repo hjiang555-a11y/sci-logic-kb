@@ -85,3 +85,4 @@ relations:
     regime: short-term
     verification_status: observed
     note: "跨文件引用，pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml"
+    breakthrough_paths: []

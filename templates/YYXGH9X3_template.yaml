@@ -1,0 +1,46 @@
+# Mid-infrared frequency combs
+# 生成时间: 2026-04-18 18:10:11
+# Zotero Key: YYXGH9X3
+
+meta:
+  title: "Mid-infrared frequency combs"
+  first_author: "Schliesser"
+  year: 2012
+  zotero_key: "YYXGH9X3"
+  publication: "Nature Photonics"
+  status: "未审核"
+  tags: []
+
+logical_units:
+  # 逻辑单元1: 核心贡献
+  - id: "core_contribution"
+    claim: "本文的核心贡献是..."
+    evidence:
+      - type: "experimental_result"
+        description: "实验结果表明..."
+        source: {zotero_key: "YYXGH9X3", page: "X"}
+      - type: "theoretical_derivation"
+        description: "理论推导..."
+        source: {zotero_key: "YYXGH9X3", page: "X"}
+    relationships:
+      - type: "extends"
+        target: "相关论文的ID"
+        justification: "扩展了..."
+
+  # 逻辑单元2: 关键技术
+  - id: "key_technique"
+    claim: "关键技术包括..."
+    evidence:
+      - type: "method_description"
+        description: "方法描述..."
+        source: {zotero_key: "YYXGH9X3", page: "X"}
+    relationships:
+      - type: "implements"
+        target: "技术原理的ID"
+        justification: "实现了..."
+
+# 注意:
+# 1. 替换...为具体内容
+# 2. 填写正确的页码(page字段)
+# 3. 建立与已有逻辑单元的关联
+# 4. 确保符合SCHEMA规范

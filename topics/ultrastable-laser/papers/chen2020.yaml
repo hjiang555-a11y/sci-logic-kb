@@ -72,3 +72,4 @@ relations:
     regime: short-term
     verification_status: calculated
     note: "当前 6×10⁻¹⁶ 尚未达到热噪声极限 4.3×10⁻¹⁶"
+    breakthrough_paths: []

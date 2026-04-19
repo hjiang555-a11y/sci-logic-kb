@@ -1,7 +1,7 @@
 # Möhle 2013 — 高稳定压电可调谐参考腔
 # 提取者：GitHub Copilot（AI草稿，待专家确认）
 # 提取日期：2026-04-16
-# Schema版本：v3.2
+# Schema版本：v4.1
 
 meta:
   zotero_key: "8MNIBZEW"
@@ -74,8 +74,29 @@ principles:
       "the frequency stability of the piezo cavities is not limited by the piezo actuator
       but by the experimental setup"
 
-methods: []
-  # 复用 meth.pdh_locking（drever1983.yaml）
+methods:
+  - id: meth.piezo_cavity_integration_characterization_m13
+    name: "压电可调谐腔集成与表征方法"
+    description: >
+      系统评估四种压电材料（PZT叠层、PZT管、石英、PZN-PT单晶）在10 cm Zerodur高精细度腔中的性能。
+      方法包括：(1) 压电驱动器三点环氧树脂（Eccobond 285）胶合到腔镜，(2) 电学短路条件下的频率稳定度测量，
+      (3) 调谐系数和范围测量，(4) 频率噪声谱分析，识别噪声来源。
+      通过对比相同腔体不同压电材料的性能，分离压电驱动器本身贡献与环境噪声。
+    inputs:
+      - "10 cm Zerodur高精细度腔"
+      - "四种压电驱动器（PZT叠层、PZT管、石英、PZN-PT）"
+      - "Eccobond 285环氧树脂"
+      - "低噪声电压源和测量系统"
+    outputs:
+      - "各压电材料的调谐系数（MHz/V）"
+      - "调谐范围（>1 FSR）"
+      - "短路条件下的频率稳定度（<1×10⁻¹⁴）"
+      - "噪声来源分析"
+    verification_status: observed
+    evidence: "Table 1: Characteristics of the piezo actuators; Fig. 3: Frequency noise spectra"
+    limitations:
+      - "环氧树脂固化需要10-12周达到最佳稳定度"
+      - "高调谐系数材料对驱动电压噪声更敏感"
 
 metrics:
   - id: met.freq_stability_piezo_cavity_m13
@@ -129,3 +150,21 @@ relations:
     object: pri.piezo_tuning_stability_tradeoff
     confidence: established
     source: {zotero_key: "8MNIBZEW", claim: "frequency stability of the piezo cavities is not limited by the piezo actuator"}
+
+  - id: rel.Mo05
+    subject: meth.piezo_cavity_integration_characterization_m13
+    predicate: IMPLEMENTS
+    object: pri.piezo_tuning_stability_tradeoff
+    confidence: established
+    source: {zotero_key: "8MNIBZEW", claim: "we present a systematic study of four different piezoelectric materials..."}
+    verification_status: observed
+    note: "集成与表征方法实现了压电调谐范围与稳定度权衡原理"
+
+  - id: rel.Mo06
+    subject: met.freq_stability_piezo_cavity_m13
+    predicate: CHARACTERIZES
+    object: meth.piezo_cavity_integration_characterization_m13
+    confidence: established
+    source: {zotero_key: "8MNIBZEW", claim: "relative frequency stability better than 1×10⁻¹⁴"}
+    verification_status: observed
+    note: "频率稳定度指标表征了集成方法的输出性能"
