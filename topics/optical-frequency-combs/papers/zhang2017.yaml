@@ -1,0 +1,440 @@
+# Zhang 2017 — NPE+NALM 混合锁模 Er:fiber 飞秒激光构建鲁棒光学频率梳 [技术论文]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical
+#   核心贡献：
+#     (1) 提出 NPE + NALM 混合锁模 Er:fiber 飞秒激光（NALM 启动/整形宽脉冲，NPE 快饱和吸收细化短脉冲）；
+#     (2) 系统兼具 NALM 的自启动/鲁棒性与 NPE 的低 RIN/低相噪，重频提升至 168 MHz，最窄脉冲 49 fs，峰值脉冲能量 0.75 nJ；
+#     (3) 稳定化 f_ceo 和 1555 nm 梳齿，双路 in-loop Allan 偏差均 < 1×10⁻¹⁷ @1s，长期稳定性达 10⁻²⁰ @10000 s；
+#     (4) 掉电 6 个月后仍可自启动，验证了对空间等严苛应用的鲁棒性。
+#   Framework 依赖：ent.optical_frequency_comb 权威定义于 udem2002.yaml；
+#     pri.self_referencing_f2f 定义于 udem2002.yaml / giunta2019.yaml；本文件为 Er:fiber 飞秒梳方向的
+#     Level 2 实例节点 + 混合锁模机制原理。
+
+meta:
+  zotero_key: "9RFKI5SH"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical
+  reliability: high
+  title: "Robust optical-frequency-comb based on the hybrid mode-locked Er:fiber femtosecond laser"
+  year: 2017
+  first_author: "Zhang"
+  journal: "Optics Express"
+  volume: 25
+  issue: 18
+  pages: "21719-21725"
+  doi: "10.1364/OE.25.021719"
+  note: >
+    [技术论文] 国家授时中心（Zhang/Jiang 等）研制的 Er:fiber 混合锁模飞秒激光梳。
+    左环为主谐振腔（NPE 单元：SMF-28 + 自由空间 PBS/波片/PZT/EOM + 隔离器 + 偏振片），
+    右环为典型 NALM（50:50 耦合器连接）。NALM 负责启动锁模并整形宽脉冲，NPE 作为快饱和吸收机制
+    在腔内实现幅度非线性滤波、压缩脉冲。腔长 122.5 cm，净色散 ~ -5000 fs²，重频 168 MHz，
+    860 mW 泵浦下最窄脉冲 49 fs、输出功率最高 126 mW、单脉冲能量 0.75 nJ。
+    通过全光纤超连续展宽 + 共光程 f-2f 探测 f_ceo（SNR 35 dB @300 kHz RBW）；f_ceo 通过调泵浦电流锁定（0.7 MHz/mA）；
+    1555 nm 梳齿对窄线宽 CW 激光锁定（EOM + PZT 双通道）。in-loop f_ceo Allan 偏差 9.0×10⁻¹⁸ @1 s，
+    in-loop f_beat 9.4×10⁻¹⁸ @1 s 并下降到 10⁻²⁰ @10000 s。
+    跨文件节点：ent.optical_frequency_comb、pri.self_referencing_f2f 已定义于 udem2002.yaml。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.hybrid_ml_erfiber_comb_z17
+    name: "NPE+NALM 混合锁模 Er:fiber 光学频率梳（Zhang 2017 系统）"
+    aliases: ["hybrid mode-locked Er:fiber frequency comb", "NPE+NALM Er:fiber comb"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      以 50:50 光纤耦合器连接两个环：左环为主谐振腔（NPE 单元，含 SMF-28、EDF、波片、PBS、隔离器、PZT、EOM、偏振控制元件），
+      右环为 NALM（利用非线性相位差实现等效快饱和吸收）。NALM 启动并维持锁模，NPE 作为快饱和吸收压缩脉冲。
+      976 nm 双二极管泵浦（总最大 1 W），腔内净色散约 -5000 fs²，基频重频 168 MHz。
+      输出经共光程 f-2f 干涉仪产生 f_ceo（反馈至泵浦电流锁定），1555 nm 梳齿对窄线宽 CW 激光拍频锁定
+      （EOM 高速通道 + PZT 低频大范围通道）。掉电 6 个月后仍可自启动。
+    key_parameters:
+      mode_locking_scheme: "NPE + NALM hybrid"
+      repetition_rate: "168 MHz（基频）"
+      pulse_width_min: "49 fs（sech² 拟合，860 mW 泵浦）"
+      max_output_power: "126 mW（旋转波片至最大）"
+      max_pulse_energy: "0.75 nJ"
+      spectral_3dB_width: "~75 nm @ 460 mW 泵浦（1550 nm 中心）"
+      net_cavity_dispersion: "-5000 fs²"
+      cavity_length: "122.5 cm（含 50 cm SMF-28 + 42 cm EDF + 16.5 cm 封装 + 14 cm 自由空间）"
+      pump: "2×976 nm LD（Oclaro LC96），总最大 1 W"
+      self_start_threshold: "泵浦 > 860 mW"
+      mode_locked_range: "330–860 mW 泵浦、波片 >24° 旋转均保持单脉冲"
+      fceo_control: "泵浦电流（~0.7 MHz/mA 调谐系数）"
+      frep_control: "intra-cavity EOM（高速）+ PZT（长程漂移补偿）"
+    interface_requirements:
+      optical_reference: "1555 nm 窄线宽 CW 激光（用于 f_beat 锁定参考）"
+      microwave_reference: "外部 RF 参考（用于 f_ceo 设定频率）"
+      supercontinuum_stage: "全光纤 HNLF 展宽 + 共光程 f-2f 干涉仪"
+    note: >
+      Level 2 实例节点，PART-OF ent.optical_frequency_comb（权威定义于 udem2002.yaml）。
+      在方案空间上 COMPETES-WITH 纯 NPE Er:fiber 梳、纯 NALM figure-8 Er:fiber 梳、SESAM 锁模 Er:fiber 梳。
+
+  - id: ent.nalm_unit_z17
+    name: "非线性放大环镜（NALM）子模块"
+    aliases: ["nonlinear amplifier loop mirror"]
+    hierarchy_level: 3
+    status: demonstrated
+    function: >
+      通过 50:50 光纤耦合器形成的环路，利用两束反向传播光的非线性相位差产生等效强度依赖反射率，
+      在本文方案中负责启动锁模、整形较宽脉冲。包含偏振控制器用于调节光纤双折射以优化相位差关系。
+    key_parameters:
+      coupler_ratio: "50:50"
+      role: "启动锁模 + 宽脉冲整形"
+      pulse_energy_limit: "soliton fission 出现 → 单脉冲能量上限 ~0.75 nJ"
+    note: "PART-OF ent.hybrid_ml_erfiber_comb_z17"
+
+  - id: ent.npe_unit_z17
+    name: "非线性偏振演化（NPE）主谐振腔单元"
+    aliases: ["nonlinear polarization evolution cavity"]
+    hierarchy_level: 3
+    status: demonstrated
+    function: >
+      主谐振腔，含 SMF-28 光纤、42 cm EDF（Liekki ER110/125，1530 nm 处 110 dB/m 吸收）、
+      自由空间波片 + PBS + 偏振无关隔离器、PZT（HR 镜漂移补偿）、腔内 EOM（f_rep 高速控制）。
+      作为快饱和吸收机制，通过偏振非线性变换实现脉冲幅度窄化，得到超短脉冲。
+    key_parameters:
+      gain_fiber: "42 cm Liekki ER110/125（色散 ~12 fs²/mm）"
+      smf28: "50 cm（色散 ~-22 fs²/mm）"
+      eom_dispersion: "8 mm EOM（~100 fs²/mm）"
+      free_space_length: "14 cm"
+    note: "PART-OF ent.hybrid_ml_erfiber_comb_z17；NPE 提供强快饱和吸收作用，降低频率噪声。"
+
+principles:
+  - id: pri.npe_nalm_hybrid_mode_locking
+    name: "NPE+NALM 混合锁模原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      在同一激光腔内串联两种锁模机制：NALM 通过相对慢、但鲁棒的非线性环镜等效饱和吸收提供
+      自启动与宽脉冲整形；NPE 通过快（超飞秒量级）非线性偏振旋转 + PBS 振幅滤波进一步压缩脉冲。
+      前者保证自启动性与对偏振/环境漂移的容差，后者将脉冲宽度压到接近腔色散补偿极限、
+      同时获得低 RIN 与低相位噪声。结果是兼具 NALM 鲁棒性与 NPE 低噪声的复合方案。
+    domain: "飞秒光纤激光锁模"
+    formula: "有效饱和吸收 = σ_NALM(I) ⊗ σ_NPE(I)，NPE 响应时间 << NALM；整体动态范围由 NALM 决定"
+    key_insight: >
+      纯 NPE 腔对环境/偏振漂移敏感（易失锁），纯 NALM 腔重频低、功率小；
+      混合方案借 NALM 做"粗锁模 + 启动"，借 NPE 做"精压缩 + 降噪"，突破单机制折中。
+    conditions:
+      - "NALM 偏振控制器状态正确，否则无法锁模"
+      - "腔内净色散为负（本实验 -5000 fs²）以支持孤子脉冲整形"
+      - "存在足够泵浦（本实验自启动阈值 860 mW）"
+    preconditions:
+      - "EDF 增益足够补偿腔损耗"
+      - "NALM 脉冲能量低于孤子分裂阈值（~0.75 nJ）"
+    invalidated_when:
+      - "NALM 偏振控制错位 → 无法启动"
+      - "脉冲能量过高触发 soliton fission → 多脉冲"
+    source_claim: >
+      "NALM is adopted here to initiate mode-locking and shape wide pulses. The ultrashort pulses
+      are obtained in the fast NPE progress by nonlinear filtering of the pulse amplitude.
+      The hybrid mode-locked scheme is more robust than lasers that only use NPE, and the RIN is
+      as low as schemes based on pure NPE."
+    open_questions:
+      - "NPE 与 NALM 的饱和吸收参数如何独立调节以系统性优化噪声-鲁棒性折中？"
+
+  - id: pri.am_to_pm_conversion_in_comb
+    name: "梳中 RIN→PM 幅相转换限制原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      光电探测 f_rep 以及超连续展宽+f-2f 探测 f_ceo 过程中，激光强度噪声（RIN）通过探测器
+      非线性、载流子动力学、以及介质非线性折射率 n₂ 诱导的强度-相位耦合，转换为 f_rep 和 f_ceo
+      的相位/频率噪声。因此，降低腔内 RIN 是降低梳残余相噪的直接路径。
+    domain: "光纤频率梳噪声传递"
+    key_insight: >
+      这是"为什么 RIN 是梳性能关键指标"的机制解释；NPE 机制因响应快、等效饱和强、
+      腔内能量涨落更稳，能使 RIN 低至 -135 dBc/Hz 水平。
+    conditions:
+      - "f_ceo 探测依赖 SC 展宽 + HNLF 非线性过程"
+      - "f_rep 由光电二极管探测，存在 AM-PM 转换系数"
+    source_claim: >
+      "The RIN of the mode-locked laser plays a key role in amplitude-to-phase conversion of
+      f_rep detection and the conversion of intensity noise to f_ceo noise in optical combs."
+
+  - id: pri.servo_bandwidth_limited_comb_locking
+    name: "伺服带宽限制原理（泵浦调制锁 f_ceo）"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      当 f_ceo 锁定通路以泵浦电流调制为执行器时，环路带宽受限于 EDF 上能级寿命（~10 ms 量级）
+      与执行器响应，导致闭环增益在 ~10 kHz 处出现 gain bump，残余高频噪声无法被抑制，
+      进而限制了系统对机械振动/高频环境扰动的抑制能力。
+    domain: "光纤梳伺服工程"
+    formula: "BW_servo ≲ 1 / (2π τ_upper_state)（EDF）"
+    key_insight: >
+      "伺服带宽是 f_ceo 噪声的工程天花板，而不是 NPE+NALM 机制本身的物理极限"；
+      突破路径是改用更快执行器（腔内 EOM 的辅助通路、快声光调制）或前馈补偿。
+    conditions:
+      - "执行器为泵浦电流调制"
+      - "EDF 上能级寿命较长"
+    invalidated_when:
+      - "切换到快执行器（EOM 泵浦前馈 / 声光）或将 f_ceo 信息前馈至下游 AOM"
+    source_claim: >
+      "the locking loop still has a relatively low servo bandwidth, which is indicated by the
+      obvious gain bump at about 10 kHz ... This limits the vibration-resistance performance"
+
+methods:
+  - id: meth.pump_current_modulation_fceo_lock_z17
+    name: "泵浦电流调制锁定 f_ceo 方法"
+    status: demonstrated
+    applies_to: ent.hybrid_ml_erfiber_comb_z17
+    steps_summary: >
+      1. 取一路输出，经 HNLF 超连续展宽 + 共光程 f-2f 干涉仪，InGaAs 放大探测器接收得 f_ceo 信号
+         （SNR 35 dB @300 kHz RBW，估计线宽 ≤200 kHz）；
+      2. 与外部 RF 参考混频得误差信号，经自制 loop filter；
+      3. 反馈至 976 nm 泵浦 LD 电流（调谐系数 0.7 MHz/mA）完成锁定；
+      4. 用频率计数器记录 1 s 门时间 Allan 偏差，同时用 FFT 分析仪记录相噪 PSD。
+    required_hardware:
+      - ent.hybrid_ml_erfiber_comb_z17
+    advantages:
+      - "泵浦电流调制为 Er:fiber 梳最成熟的 f_ceo 执行器"
+      - "1 s in-loop Allan 偏差 9.0×10⁻¹⁸，积分相噪 0.53 rad（1 Hz–100 kHz）"
+    disadvantages:
+      - "EDF 上能级寿命长 → 环路带宽 ~10 kHz 有 gain bump"
+      - "高频振动抑制不足"
+    source_claim: >
+      "f_ceo is locked to an external reference by modulating the pump laser current with a homemade
+      loop filter. The coefficient as a function of pump current is about 0.7 MHz/mA."
+
+  - id: meth.eom_pzt_dual_actuator_frep_lock_z17
+    name: "EOM + PZT 双执行器梳齿锁定方法"
+    status: demonstrated
+    applies_to: ent.hybrid_ml_erfiber_comb_z17
+    steps_summary: >
+      1. 1555 nm 梳齿与 1555 nm 窄线宽 CW 参考激光拍频得 f_beat；
+      2. 高速通道：腔内 EOM 修改光程 → 快速修正 f_rep；
+      3. 低频大范围通道：PZT 移动 HR 镜补偿温度漂移；
+      4. 闭环后得 Allan 偏差 9.4×10⁻¹⁸ @1 s，下降至 10⁻²⁰ @10000 s；积分相噪 0.86 rad，时基抖动 0.71 fs。
+    required_hardware:
+      - ent.hybrid_ml_erfiber_comb_z17
+    advantages:
+      - "EOM 提供高速带宽，PZT 负责长期漂移补偿"
+      - "双通道覆盖从 DC 到 ~数十 kHz 的工程频带"
+    disadvantages:
+      - "in-loop 结果；out-of-loop 性能受参考激光限制"
+    source_claim: >
+      "We use both the intra-cavity EOM and PZT to stabilize a comb tooth. The comb tooth at
+      1555 nm is phase-locked to a 1555-nm narrow linewidth continuous laser."
+
+metrics:
+  - id: met.rep_rate_erfiber_z17
+    name: "重频（Er:fiber 混合锁模梳）"
+    unit: "Hz"
+    description: "飞秒激光基频重复频率，决定梳齿间距与探测便利度。"
+    demonstrated_value:
+      value: "168 MHz"
+      conditions: "860 mW 泵浦；腔长 122.5 cm；NALM+NPE 混合锁模；测量用 RF 谱仪"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "9RFKI5SH", claim: "The fundamental repetition rate is up to 168 MHz, which is much higher than that of a traditional all-fiber figure-eight scheme based on the NALM mechanism."}
+
+  - id: met.pulse_width_erfiber_z17
+    name: "最短输出脉冲宽度"
+    unit: "fs"
+    description: "强度自相关曲线拟合（sech² 形状假设）得到的直接输出脉冲宽度。"
+    demonstrated_value:
+      value: "49 fs（最小）；330 mW 泵浦下为 60 fs"
+      conditions: "sech² 拟合；860 mW 泵浦；自由空间自相关仪测量；腔内净色散 -5000 fs²"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "9RFKI5SH", claim: "The narrowest direct output pulse is approximately 49 fs when a hyperbolic secant pulse is assumed at 860 mW pump power"}
+
+  - id: met.rin_erfiber_z17
+    name: "相对强度噪声（RIN）"
+    unit: "dBc/Hz"
+    description: "输出脉冲的双边带相对强度噪声谱密度，衡量梳中幅相转换的源头噪声。"
+    demonstrated_value:
+      value: "-135 dBc/Hz（10 Hz–1 kHz）；-130 dBc/Hz @1 Hz；< -145 dBc/Hz @ >10 kHz"
+      conditions: "~10 mW 耦合至 Thorlabs DET10 光电探测器；SR785 FFT 分析；不同泵浦功率"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "9RFKI5SH", claim: "The noise level is approximately -135 dBc/Hz from 10 Hz to 1 kHz, but it rapidly drops above 1 kHz"}
+    theoretical_floor:
+      value: "Yb:fiber NPE 梳同量级（参考 Nugent-Glandorf 2011）"
+      basis: "纯 NPE 腔同类 RIN 水平"
+      gap_note: "本工作 RIN 与 NPE 锁模 Yb:fiber 激光接近，显示 NPE 分量确实主导降噪"
+
+  - id: met.fceo_instability_z17
+    name: "稳定化 f_ceo in-loop 分数频率稳定度"
+    unit: "分数不确定度"
+    description: "f_ceo 锁定后用频率计数器测得的 1 s 门时间 Allan 偏差（in-loop）。"
+    demonstrated_value:
+      value: "9.0×10⁻¹⁸ @1 s；按 τ⁻¹/² 下降（受测量系统 dead time 影响）"
+      conditions: "泵浦电流反馈锁定；外部 RF 参考；频率计数器门时间 1 s；τ⁻¹/² 源自计数器 dead time"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "9RFKI5SH", claim: "The in-loop frequency instability, evaluated by the Allan deviation, is approximately 9.0 × 10⁻¹⁸ with 1 s average time"}
+
+  - id: met.fbeat_instability_z17
+    name: "稳定化 1555 nm 梳齿 in-loop 分数频率稳定度"
+    unit: "分数不确定度"
+    description: "1555 nm 梳齿对 CW 参考激光锁定后的 Allan 偏差（in-loop）。"
+    demonstrated_value:
+      value: "9.4×10⁻¹⁸ @1 s → 10⁻²⁰ @10000 s"
+      conditions: "EOM + PZT 双执行器；1555 nm 窄线宽 CW 激光参考；f_beat 频率计数器门 1 s"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "9RFKI5SH", claim: "Allan deviation exhibits in-loop frequency instability of approximately 9.4 × 10⁻¹⁸ with an average time of 1 s, which decreases to 10⁻²⁰ level at 10000 s"}
+
+  - id: met.integrated_phase_noise_z17
+    name: "积分相位噪声（f_ceo / f_beat）"
+    unit: "rad / fs"
+    description: "1 Hz 到 100 kHz 积分的残余相位噪声与对应时基抖动。"
+    demonstrated_value:
+      value: "f_ceo: 0.53 rad（0.44 fs 抖动）；f_beat: 0.86 rad（0.71 fs 抖动）"
+      conditions: "1 Hz–100 kHz 积分区间；FFT 分析仪（in-loop）"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "9RFKI5SH", claim: "integrated phase noise of 0.53 rad from 1 Hz to 100 kHz, and the corresponding time jitter is about 0.44 fs ... corresponding integral phase noise is about 0.86 rad"}
+
+  - id: met.fceo_snr_z17
+    name: "自由运行 f_ceo 信噪比与线宽"
+    unit: "dB / Hz"
+    description: "全光纤 SC + 共光程 f-2f 探测得到的 f_ceo RF 拍频信号质量。"
+    demonstrated_value:
+      value: "SNR 35 dB @300 kHz RBW；线宽 ≤ 200 kHz"
+      conditions: "InGaAs 放大探测器；RBW 300 kHz"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "9RFKI5SH", claim: "The signal to noise ratio (SNR) is about 35 dB with a resolution bandwidth of 300 kHz, and the estimated linewidth of f_ceo is no more than 200 kHz"}
+
+# ═══════════════════════════════════════════════
+#  RELATIONS（关系）
+# ═══════════════════════════════════════════════
+
+relations:
+  - id: rel.Z17_01
+    subject: ent.nalm_unit_z17
+    predicate: PART-OF
+    object: ent.hybrid_ml_erfiber_comb_z17
+    confidence: established
+    source: {zotero_key: "9RFKI5SH", claim: "Two loops are connected by a fiber coupler (50:50): the left one is a primary resonator and the other is a typical NALM."}
+
+  - id: rel.Z17_02
+    subject: ent.npe_unit_z17
+    predicate: PART-OF
+    object: ent.hybrid_ml_erfiber_comb_z17
+    confidence: established
+    source: {zotero_key: "9RFKI5SH", claim: "The primary resonator, i.e., the NPE unit, is composed of the SMF-28 fiber and a free-space optical path"}
+
+  - id: rel.Z17_03
+    subject: ent.hybrid_ml_erfiber_comb_z17
+    predicate: ENABLED-BY
+    object: pri.npe_nalm_hybrid_mode_locking
+    confidence: established
+    source: {zotero_key: "9RFKI5SH", claim: "The hybrid mode-locked scheme is more robust than lasers that only use NPE, and the RIN is as low as schemes based on pure NPE."}
+    temporal_role: proposes
+
+  - id: rel.Z17_04
+    subject: ent.hybrid_ml_erfiber_comb_z17
+    predicate: CHARACTERIZED-BY
+    object: met.rep_rate_erfiber_z17
+    confidence: established
+    source: {zotero_key: "9RFKI5SH", claim: "The fundamental repetition rate is up to 168 MHz"}
+
+  - id: rel.Z17_05
+    subject: ent.hybrid_ml_erfiber_comb_z17
+    predicate: CHARACTERIZED-BY
+    object: met.pulse_width_erfiber_z17
+    confidence: established
+    source: {zotero_key: "9RFKI5SH", claim: "The narrowest direct output pulse is approximately 49 fs"}
+
+  - id: rel.Z17_06
+    subject: ent.hybrid_ml_erfiber_comb_z17
+    predicate: CHARACTERIZED-BY
+    object: met.rin_erfiber_z17
+    confidence: established
+    source: {zotero_key: "9RFKI5SH", claim: "The noise level is approximately -135 dBc/Hz from 10 Hz to 1 kHz"}
+
+  - id: rel.Z17_07
+    subject: ent.hybrid_ml_erfiber_comb_z17
+    predicate: CHARACTERIZED-BY
+    object: met.fceo_instability_z17
+    confidence: established
+    source: {zotero_key: "9RFKI5SH", claim: "resulting in-loop frequency instability is about 9.1 × 10⁻¹⁸ with an average time of 1 s"}
+
+  - id: rel.Z17_08
+    subject: ent.hybrid_ml_erfiber_comb_z17
+    predicate: CHARACTERIZED-BY
+    object: met.fbeat_instability_z17
+    confidence: established
+    source: {zotero_key: "9RFKI5SH", claim: "in-loop frequency instability of approximately 9.4 × 10⁻¹⁸ with an average time of 1 s"}
+
+  - id: rel.Z17_09
+    subject: ent.hybrid_ml_erfiber_comb_z17
+    predicate: CHARACTERIZED-BY
+    object: met.integrated_phase_noise_z17
+    confidence: established
+    source: {zotero_key: "9RFKI5SH", claim: "The integral phase noises are both less than 1 rad from 1 Hz to 100 kHz, corresponding to residual time jitter of less than 1 fs"}
+
+  - id: rel.Z17_10
+    subject: ent.hybrid_ml_erfiber_comb_z17
+    predicate: CHARACTERIZED-BY
+    object: met.fceo_snr_z17
+    confidence: established
+    source: {zotero_key: "9RFKI5SH", claim: "SNR is about 35 dB with a resolution bandwidth of 300 kHz"}
+
+  - id: rel.Z17_11
+    subject: met.fceo_instability_z17
+    predicate: OPERATIONALIZED-AS
+    object: meth.pump_current_modulation_fceo_lock_z17
+    confidence: established
+    source: {zotero_key: "9RFKI5SH", claim: "f_ceo is locked to an external reference by modulating the pump laser current"}
+
+  - id: rel.Z17_12
+    subject: met.fbeat_instability_z17
+    predicate: OPERATIONALIZED-AS
+    object: meth.eom_pzt_dual_actuator_frep_lock_z17
+    confidence: established
+    source: {zotero_key: "9RFKI5SH", claim: "We use both the intra-cavity EOM and PZT to stabilize a comb tooth."}
+
+  - id: rel.Z17_13
+    subject: meth.pump_current_modulation_fceo_lock_z17
+    predicate: ENABLED-BY
+    object: pri.self_referencing_f2f
+    confidence: established
+    source: {zotero_key: "9RFKI5SH", claim: "detect the f_ceo signal with an all-fiber supercontinuum generation and a common-path f-2f configuration"}
+    note: "pri.self_referencing_f2f 权威定义于 udem2002.yaml / giunta2019.yaml（跨文件引用）"
+
+  - id: rel.Z17_14
+    subject: met.fceo_instability_z17
+    predicate: BOUNDED-BY
+    object: pri.servo_bandwidth_limited_comb_locking
+    confidence: established
+    source: {zotero_key: "9RFKI5SH", claim: "the locking loop still has a relatively low servo bandwidth, which is indicated by the obvious gain bump at about 10 kHz"}
+    breakthrough_paths:
+      - direction: meth.eom_pzt_dual_actuator_frep_lock_z17
+        expected_gain: "改用腔内 EOM 等快执行器作为 f_ceo 高速通道，突破泵浦调制带宽限制"
+        status: proposed
+        source: {zotero_key: "9RFKI5SH", claim: "the feedback loop must be improved in subsequent work"}
+        note: "本文 f_beat 环路已示范 EOM+PZT 双通道可行；f_ceo 通路复用同一思路是自然突破路径。"
+
+  - id: rel.Z17_15
+    subject: met.fceo_instability_z17
+    predicate: BOUNDED-BY
+    object: pri.am_to_pm_conversion_in_comb
+    confidence: established
+    source: {zotero_key: "9RFKI5SH", claim: "The RIN of the mode-locked laser plays a key role in amplitude-to-phase conversion of f_rep detection and the conversion of intensity noise to f_ceo noise in optical combs."}
+    breakthrough_paths:
+      - direction: pri.npe_nalm_hybrid_mode_locking
+        expected_gain: "通过 NPE 快饱和吸收降低 RIN → 降低 AM-PM 转换带来的 f_ceo 残余相噪"
+        status: demonstrated
+        source: {zotero_key: "9RFKI5SH", claim: "the RIN is as low as schemes based on pure NPE"}
+
+  - id: rel.Z17_16
+    subject: ent.hybrid_ml_erfiber_comb_z17
+    predicate: COMPETES-WITH
+    object: ent.optical_frequency_comb
+    confidence: provisional
+    source: {zotero_key: "9RFKI5SH", claim: "femtosecond fiber lasers have attracted widespread attention because they are compact and widely compatible for long-term operation"}
+    note: >
+      方案竞争关系：相对 Ti:Sa 飞秒梳方向（udem2002/diddams2000 系），本工作代表 Er:fiber 鲁棒化方向，
+      面向空间与长时运行。ent.optical_frequency_comb 是权威顶层节点；具体 Ti:Sa 实例节点见
+      diddams2000.yaml（ent.octave_spanning_tisa_comb_d00）。

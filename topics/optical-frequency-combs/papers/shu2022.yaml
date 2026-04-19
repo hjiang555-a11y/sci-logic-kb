@@ -1,0 +1,479 @@
+# Shu 2022 — AlGaAsOI 暗孤子微梳驱动 CMOS 硅光引擎，实现 2 Tbit/s 并行相干光互连与可重构微波光子滤波器 [技术演示/里程碑]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical — 微梳+硅光系统集成演示
+#   核心贡献：
+#     (1) 将 DFB 激光直接泵浦的 AlGaAsOI 高 Q 微环（Q ≈ 1–2 M，阈值 <100 μW，10 mW 泵浦出 180 GHz 暗孤子梳）
+#         与 CMOS 代工厂流片的 SOI 硅光引擎（MZM、微加热器、延迟线、Ge 光电二极管、微环滤波器）组合成单芯片尺度光电系统；
+#     (2) 首次以微梳取代 WDM DFB 阵列，演示 20-通道 PAM4 @ 50 Gbaud → 2 Tbit/s 聚合速率（1.65 Tbit/s 净速率）并行相干数据链路；
+#     (3) 构建可重构微波光子滤波器（MPF）：通带 0.9–1.1 GHz 可调、FSR 1.8/3.6/7.2 GHz 可重构、约 53 μs 重构速度，同时兼容非色散与色散 tap delay 方案。
+#   Framework 依赖：ent.microresonator_frequency_comb / ent.si3n4_integrated_comb / pri.dissipative_kerr_soliton /
+#     pri.lugiato_lefever_equation / meth.cw_pumped_microcomb_generation / meth.laser_tuning_soliton_access
+#     均定义于 kippenberg2011.yaml / kippenberg2018.yaml / huang2024.yaml，本文件通过 note 跨文件引用，不重复定义。
+
+meta:
+  zotero_key: "AT5ZTB9M"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical
+  reliability: high
+  title: "Microcomb-driven silicon photonic systems"
+  year: 2022
+  first_author: "Shu"
+  journal: "Nature"
+  volume: 605
+  issue: 7910
+  pages: "457-463"
+  doi: "10.1038/s41586-022-04579-3"
+  note: >
+    [里程碑技术论文] 北京大学 + UCSB (Bowers 组) 联合工作。用 AlGaAsOI 异质集成高 Q 微腔
+    （n₂ ≈ 2.6×10⁻¹⁷ m²/W，热光系数 2.3×10⁻⁴ K⁻¹）在正常色散 + 避免模交叉条件下产生暗脉冲 Kerr 梳，
+    低阈值（<100 μW 振荡阈值，mW 级相干态）、turnkey 启动、7 小时无反馈自由运行稳定。
+    将 20 条梳齿并行驱动 CMOS 硅光 T/R 芯片实现 50 Gbaud PAM4、2 Tbit/s 聚合数据率；
+    同一微梳同时驱动可重构 MPF（53 μs 重构速度）。奠定"微梳替代 DFB 阵列作为片上多波长光源"路线。
+    跨文件：AlGaAsOI Kerr 梳产生所依赖的 ent.microresonator_frequency_comb、
+    pri.dissipative_kerr_soliton、pri.lugiato_lefever_equation、meth.cw_pumped_microcomb_generation
+    均定义于 kippenberg2011.yaml / kippenberg2018.yaml；本文件仅创建 Level-2 本系统实例与本论文新指标。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.algaasoi_dark_pulse_microcomb_s22
+    name: "AlGaAsOI 暗脉冲 Kerr 微梳源（Shu 2022 系统）"
+    aliases: ["AlGaAs-on-insulator dark-pulse microcomb", "DFB-pumped AlGaAsOI Kerr comb"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      AlGaAs-on-insulator 异质集成高 Q 微环谐振器（Q ≈ 1–2×10⁶，半径 ~200 μm），
+      依靠 AlGaAs 巨大三阶非线性（n₂ ≈ 2.6×10⁻¹⁷ m²/W）在正常色散 + 避免模交叉（avoided mode-crossing）
+      条件下由 DFB 片上激光直接 CW 泵浦，生成 180 GHz 齿距的暗脉冲（dark-pulse）Kerr 微梳。
+      相对明孤子，暗脉冲通过较小的相干态跃迁功率阶跃 + 热光自稳平衡，获得十倍宽的相干态接入窗口，
+      实现 turnkey 启动与 7 h 以上无反馈自由运行稳定度。
+    key_parameters:
+      platform: "AlGaAs-on-insulator（AlGaAsOI）异质集成"
+      quality_factor_Q: "1×10⁶ – 2×10⁶"
+      n2_kerr_coefficient: "2.6×10⁻¹⁷ m²/W"
+      thermo_optic_coefficient: "2.3×10⁻⁴ K⁻¹"
+      parametric_oscillation_threshold: "~tens of μW（<100 μW）"
+      coherent_comb_pump_power: "few mW to 10 mW on-chip"
+      comb_spacing_FSR: "~90 GHz（1-FSR）/ 180 GHz（2-FSR 工作点）"
+      comb_state: "normal-dispersion dark-pulse（通过 avoided mode-crossing 获得）"
+      coherent_access_window: "tens of GHz 泵浦失谐（~10× bright soliton）"
+      startup_mode: "turnkey（直接 DFB 打开即生成相干梳）"
+      stability: "free-running >7 h，small power fluctuation"
+      usable_lines_C_band: "20 连续梳齿（1537–1567 nm，3.75 THz 宽），<5 dB 功率差"
+    interface_requirements:
+      pump_source: "InP DFB on-chip laser（mW 级 CW，~1552 nm）或商用 ECL"
+      downstream_chip: "CMOS 代工厂 SOI 硅光引擎（MZM、Ge PD、微环阵列、加热器、延迟线）"
+    note: >
+      Level 2 实例节点。PART-OF ent.microresonator_frequency_comb（权威定义于 kippenberg2011.yaml / kippenberg2018.yaml）；
+      与 ent.si3n4_integrated_comb 为同层级替代平台（COMPETES-WITH）。
+      暗脉冲机制由 pri.normal_dispersion_dark_pulse_s22 支撑。
+
+  - id: ent.microcomb_driven_siph_system_s22
+    name: "微梳驱动 CMOS 硅光集成系统（Shu 2022 完整链路）"
+    aliases: ["microcomb-driven silicon photonic engine", "AlGaAsOI + SiPh integrated optoelectronic system"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      以 AlGaAsOI 暗脉冲微梳（ent.algaasoi_dark_pulse_microcomb_s22）作为片上多波长光源，
+      驱动一体化 CMOS 代工厂 SOI 硅光引擎（>33 GHz 带宽 PN-depletion MZM、TiN 微加热器、
+      自适应螺旋波导延迟线、180 GHz 通道可选微环滤波阵列、垂直外延 Ge PD、CMOS MZM 驱动）。
+      同一光源下可配置成两种系统：(1) 20-通道 PAM4 WDM T/R 链路；(2) 基于 tap delay line 的可重构 MPF。
+    key_parameters:
+      num_wdm_channels: "20（C 波段）"
+      per_channel_baud_rate: "50 Gbaud PAM4（ECL 泵浦）/ 32 Gbaud PAM4（DFB 泵浦）"
+      aggregate_line_rate: "2 Tbit/s（20 × 50 Gbaud PAM4，ECL 泵浦）"
+      aggregate_net_rate: "1.65 Tbit/s（扣除 7% HD-FEC / 20% SD-FEC 开销）"
+      dfb_pumped_rate: "448 Gbit/s（7 通道通过 FEC 阈值）"
+      modulator_EO_bandwidth: ">33 GHz（PN-depletion MZM）"
+      ge_photodetector_responsivity: "0.5–0.8 A/W，饱和 ~20 mW"
+      microring_tuning_range: "180 GHz（2 FSR），20 mW 加热功率"
+      mpf_reconfiguration_time: "~53 μs"
+      mpf_passband_BW_tuning: "0.9–1.1 GHz（非色散）至亚 GHz（色散方案）"
+      mpf_FSR_set: "1.8 / 3.6 / 7.2 GHz（对应梳齿间距 5.6/2.8/1.4 nm）"
+      mpf_sidelobe_suppression: "~10 dB（非色散）/ >20 dB（色散）"
+    interface_requirements:
+      optical_IO: "片上光源 + 片上 T/R + 光纤链路（2 km fibre link）"
+      electronic_IO: "CMOS MZM 驱动 + TIA（器件兼容，未全集成）"
+    note: >
+      Level 2 实例。PART-OF: ent.algaasoi_dark_pulse_microcomb_s22。
+      演示"微梳替代 DFB 激光阵列作 WDM 光源"的可扩展路径。
+
+  - id: ent.siph_tr_chip_s22
+    name: "CMOS 硅光 T/R 处理芯片（Shu 2022）"
+    aliases: ["silicon photonic engine", "SOI transmit-receive chip"]
+    hierarchy_level: 3
+    status: demonstrated
+    function: >
+      单片 SOI 硅光集成，包含：depletion-mode PN MZM（>33 GHz 带宽）、TiN 加热器通道对齐、
+      螺旋波导延迟线（60 ps，<3 ps 偏差）、180 GHz 调谐范围微环滤波阵列、垂直外延 Ge PD、
+      CMOS MZM 驱动电路。标准 CMOS 流片工艺制造。
+    key_parameters:
+      platform: "CMOS 代工厂 SOI 硅光"
+      mzm_bandwidth: ">33 GHz"
+      delay_line_delay: "60 ps（偏差 <3 ps）"
+      ge_pd_responsivity: "0.5–0.8 A/W，saturation ~20 mW"
+    note: "PART-OF ent.microcomb_driven_siph_system_s22"
+
+principles:
+  - id: pri.normal_dispersion_dark_pulse_s22
+    name: "正常色散 + 避免模交叉下暗脉冲 Kerr 梳生成原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      在正常群速度色散微腔中，单一 CW 泵浦本身不支持亮孤子（需反常色散），
+      但当某个谐振模因多模耦合发生 "avoided mode-crossing"（频率被推离）时，
+      局部等效色散被修饰为可支持相干暗脉冲（背景 CW 上有相位扭结的凹陷脉冲）。
+      相比亮孤子，暗脉冲从非相干态进入相干态的泵浦功率阶跃显著更小，
+      且在大热光系数平台（AlGaAs α_T = 2.3×10⁻⁴ K⁻¹）上借助热光自稳平衡，
+      将相干态接入窗口展宽到数十 GHz，实现 turnkey 无反馈启动。
+    domain: "微腔 Kerr 光频梳；Lugiato–Lefever 框架"
+    formula: >
+      LLE 修饰色散项 β₂^eff(ω)（由 avoided mode-crossing 重整）;
+      暗脉冲解：u(t) = u_CW − A·sech(t/τ_d)·exp(iφ(t));
+      接入条件：Δω_detune ∈ [Δω_min, Δω_max]，宽度随 α_T·Q 增大
+    key_insight: >
+      "正常色散 + avoided mode-crossing + 大热光效应" 三件套是 turnkey、低阈值、长稳定微梳的工程钥匙。
+      它让 DFB 直接泵浦成为系统级可行方案，取代了明孤子所需的快速频率扫描/辅助激光等复杂启动。
+    conditions: "正常色散微腔 + 存在受控的 avoided mode-crossing + 显著热光效应"
+    preconditions:
+      - "高 Q 因子（≥10⁶）以降低阈值到 mW 级"
+      - "模式串扰位置可通过腔几何/多模设计工程化"
+      - "热光效应足以抵消 Kerr 自稳不稳定区"
+    invalidated_when:
+      - "无避免模交叉 → 正常色散纯 CW 无法相干化"
+      - "温度漂移超出热光自稳范围 → 相干态丢失"
+    source_claim: >
+      "a dark-pulse state is used to achieve coherent microcombs. This state works in the normal
+      dispersion regime with the assistance of the avoided mode-crossing effect ...
+      the strong thermo-optic effects of AlGaAs (2.3 × 10⁻⁴ K⁻¹) here can be leveraged to significantly
+      extend the accessibility window of the coherent comb state"
+    open_questions:
+      - "avoided mode-crossing 的定量设计规则（位置、耦合强度）与功率阈值如何协同最优化？"
+      - "暗脉冲相位噪声与线宽极限相比明孤子的定量差异？"
+
+  - id: pri.microcomb_replaces_laser_array_for_wdm_s22
+    name: "相干微梳等效替代 WDM DFB 激光阵列原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      相干 Kerr 微梳输出 N 条相位锁定、等频率间隔、谱包络平坦的光载波，
+      其每条梳齿可等效为独立 CW 激光，同时保留梳齿间的相对频率/相位确定性。
+      因此一个微梳 + 解复用器可整体替代 N 通道 DFB 激光阵列，省去通道对齐、
+      频率稳定化、逐激光驱动电路等硬件与校准开销，并天然支持相干/密集 WDM。
+    domain: "光通信；光电集成"
+    formula: >
+      Aggregate_rate = N_channels × Per_channel_rate;
+      N_channels_usable ∝ (带内可用梳齿数 − FEC 裕量)
+    key_insight: >
+      这是微梳从"物理演示"进入"替代商用 DFB 阵列"的价值拐点——
+      单激光器驱动一条片上 AlGaAsOI 微环即可获得 20+ 相干 CW 光源，
+      相对 DFB 阵列大幅降低功耗、体积与组装成本。
+    conditions: "微梳齿间相位/幅度噪声低于调制格式容限；每齿功率足够通过 EDFA 补偿后打 FEC 阈值"
+    preconditions:
+      - "相干态微梳（dissipative Kerr soliton 或 dark pulse）"
+      - "齿距匹配硅光解复用器的通道栅格"
+    invalidated_when:
+      - "单齿功率或 OSNR 无法支持目标调制格式 → FEC 不通"
+      - "齿距不匹配 WDM 栅格导致无法 demux"
+    source_claim: >
+      "Such a coherent comb is used to drive CMOS-foundry-based SiPh engines ...
+      20 comb lines in the C-band are used as the source ... aggregate bit rate of 2 Tbit s⁻¹"
+    open_questions:
+      - "微梳路线在 O/E 链路总功耗（pJ/bit）上对比 DFB 阵列的真实盈亏点？"
+
+methods:
+  - id: meth.dfb_pumped_turnkey_dark_pulse_generation_s22
+    name: "DFB 直接泵浦 turnkey 暗脉冲微梳生成方法（Shu 2022）"
+    status: demonstrated
+    applies_to: ent.algaasoi_dark_pulse_microcomb_s22
+    steps_summary: >
+      1. 选 AlGaAsOI 微环，设计 avoided mode-crossing 位置使其落在目标泵浦谐振附近；
+      2. 将商用 InP DFB 激光芯片（mW 级，~1552 nm）直接耦合至微环，on-chip 功率 ~10 mW；
+      3. 打开 DFB 即进入暗脉冲相干态（不需频率扫描、辅助激光或反馈回路）；
+      4. 热光自稳维持相干态（自由运行 >7 h，小功率漂移）；
+      5. 2-FSR（180 GHz）工作点输出用于下游 SiPh 引擎；预标定 laser detuning/温度 切换 FSR。
+    required_hardware:
+      - ent.algaasoi_dark_pulse_microcomb_s22
+      - ent.siph_tr_chip_s22
+    advantages:
+      - "turnkey 启动：无需复杂频率扫描/辅助激光"
+      - "极低阈值（<100 μW）与 mW 级相干态泵浦，可直接 DFB 驱动"
+      - "长稳定（>7 h 自由运行，无反馈回路）"
+      - "接入窗口 tens of GHz（~10× 明孤子），对 DFB 波长漂移鲁棒"
+    disadvantages:
+      - "依赖 AlGaAsOI 异质集成工艺，非纯 CMOS 代工流程"
+      - "暗脉冲相位噪声、线宽相对明孤子尚未做系统表征"
+      - "avoided mode-crossing 设计对工艺容差敏感"
+    conditions:
+      - "正常色散微腔 + 受控 avoided mode-crossing"
+      - "足够强热光效应（AlGaAs 级别）"
+    source_claim: >
+      "Such a state can be deterministically triggered by simply turning on the laser without relying on
+      any tuning control of electronics, thus showing 'turnkey' behaviour"
+
+  - id: meth.microcomb_parallel_pam4_wdm_link_s22
+    name: "微梳并行 PAM4 WDM 相干数据链路方法"
+    status: demonstrated
+    applies_to: ent.microcomb_driven_siph_system_s22
+    steps_summary: >
+      1. AlGaAsOI 暗脉冲梳在 C 波段输出 20 条 180 GHz 间隔的相干齿（5 dB 内平坦）；
+      2. EDFA 补偿解复用损耗 → WSS 拆分奇偶通道；
+      3. 送入 SOI T/R 芯片：每通道 PN-depletion MZM 加载 PAM4（32/40/50 Gbaud）；
+      4. 2 km 单模光纤传输；
+      5. 片上 Ge-Si PD 与商用 PD 并行直接检测；
+      6. 按通道计算 BER，用 7% HD-FEC / 20% SD-FEC 作阈值。
+    required_hardware:
+      - ent.algaasoi_dark_pulse_microcomb_s22
+      - ent.siph_tr_chip_s22
+    advantages:
+      - "20 条相干载波来自单一微梳，免除 DFB 阵列对齐/稳频"
+      - "PAM4 50 Gbaud × 20 → 2 Tbit/s 聚合线速率（1.65 Tbit/s 净速率）"
+      - "全 CMOS 代工厂 SOI 组件，具可扩展制造路径"
+    disadvantages:
+      - "EDFA 仍需外接（片上低噪放大器未集成）"
+      - "DFB 泵浦下可用通道降至 7 条（448 Gbit/s）——受 DFB 功率/线宽限制"
+    conditions:
+      - "梳齿 OSNR + 功率通过 EDFA 后满足 FEC 余量"
+    source_claim: >
+      "a baud rate of 50 Gbaud per single lane, corresponding to an aggregate bit rate of 2 Tbit s⁻¹
+      (1.65 Tbit s⁻¹ net rate after FEC overhead subtraction)"
+    conditions_note: "ENABLED-BY pri.microcomb_replaces_laser_array_for_wdm_s22"
+
+  - id: meth.microcomb_reconfigurable_mpf_s22
+    name: "微梳驱动可重构微波光子滤波器（TDL）方法"
+    status: demonstrated
+    applies_to: ent.microcomb_driven_siph_system_s22
+    steps_summary: >
+      1. 180 GHz 梳齿作为 tap 权重集合；
+      2. MZM 加载 RF 输入到所有 taps；
+      3. 8-通道 add-drop 微环阵列（OSS）做 line-by-line 幅度加权（Gaussian apodization）；
+      4. 片上螺旋波导（非色散，setup-1）或 SMF 光谱色散（setup-2）提供 tap delay ΔT；
+      5. 高速 PD 合束 beat 出 RF 滤波响应。可通过重设梳齿间距切换 RF FSR。
+    required_hardware:
+      - ent.algaasoi_dark_pulse_microcomb_s22
+      - ent.siph_tr_chip_s22
+    advantages:
+      - "~53 μs 重构速度（热调加权，远快于改变孤子态）"
+      - "通带 0.9–1.1 GHz（非色散）至亚 GHz（色散）连续可调"
+      - "RF FSR 1.8/3.6/7.2 GHz 可切换（支持 5G/雷达/片上信号处理）"
+      - "色散方案下主旁瓣抑制 >20 dB"
+    disadvantages:
+      - "总 tap 数受可用梳齿数限制"
+      - "EDFA/SMF 仍部分外置"
+    source_claim: >
+      "this work significantly advances the degree of integration and the reconfiguration speed
+      (about 53 μs) ... 3-dB BW of the MPF in the non-dispersive delay scheme can be continuously
+      adjusted within a range of about 1.97–2.42 GHz"
+
+metrics:
+  - id: met.microcomb_aggregate_data_rate_s22
+    name: "微梳驱动 WDM 链路聚合数据率"
+    unit: "Tbit/s"
+    description: >
+      单个微梳作为 WDM 多波长源驱动集成硅光 T/R 芯片时，所有 WDM 通道的总比特率。
+      反映"单梳替代激光阵列"路线的系统级价值。
+    is_interface_metric: true
+    coupling_formula: "R_agg = N_channels × R_per_channel（受 FEC 阈值筛选后的可用通道数）"
+    demonstrated_value:
+      value: "2 Tbit/s（线速率）/ 1.65 Tbit/s（净速率）"
+      conditions: "20 条梳齿 × 50 Gbaud PAM4，ECL 泵浦 AlGaAsOI 暗脉冲梳，2 km SMF，20% SD-FEC 阈值"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "AT5ZTB9M", claim: "a baud rate of 50 Gbaud per single lane, corresponding to an aggregate bit rate of 2 Tbit s⁻¹ (1.65 Tbit s⁻¹ net rate after FEC overhead subtraction)"}
+    theoretical_floor:
+      value: "受单齿 OSNR、MZM 带宽、Ge PD 频响共同限制；扩容至 10 Tbit/s 需提高每齿功率与调制带宽"
+      basis: "Shannon-Hartley + 通道数；参见论文 Discussion"
+      gap_note: "DFB 泵浦时降至 448 Gbit/s（7 通道），说明当前 DFB 功率/线宽为工程瓶颈"
+    historical_landmarks:
+      first_demonstration:
+        value: "2 Tbit/s 聚合、1.65 Tbit/s 净速率（20 × 50 Gbaud PAM4）"
+        year: 2022
+        source: {zotero_key: "AT5ZTB9M"}
+        note: "首次在 CMOS 代工厂 SOI 硅光 T/R 芯片上演示由单一集成微梳驱动的 Tbit/s 级并行链路"
+
+  - id: met.microcomb_parametric_oscillation_threshold_s22
+    name: "AlGaAsOI 微梳参量振荡阈值"
+    unit: "μW"
+    description: >
+      Kerr 微腔产生首个边带（参量振荡起振）所需的最低连续波泵浦功率，
+      决定能否由低功率 DFB 芯片直接驱动。
+    demonstrated_value:
+      value: "<100 μW（tens of μW）"
+      conditions: "AlGaAsOI Q = 1–2×10⁶ 微环，1552 nm，CW 泵浦"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "AT5ZTB9M", claim: "a record-low parametric oscillation threshold down to tens of microwatts"}
+    historical_landmarks:
+      best_demonstration:
+        value: "<100 μW（AlGaAsOI，本文）"
+        year: 2022
+        source: {zotero_key: "AT5ZTB9M"}
+        note: "AlGaAs 超高 n₂ 使其阈值显著低于 Si₃N₄（mW 级）"
+
+  - id: met.mpf_reconfiguration_time_s22
+    name: "微波光子滤波器重构时间"
+    unit: "μs"
+    description: >
+      改变 MPF 通带/FSR 配置所需的稳定时间。决定能否支撑快速跳频 5G/雷达等实时应用。
+    demonstrated_value:
+      value: "~53 μs"
+      conditions: "AlGaAsOI 微梳 + SOI 硅光 OSS 热调加权；非色散 TDL 与色散 SMF TDL 双方案"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "AT5ZTB9M", claim: "advances the degree of integration and the reconfiguration speed (about 53 μs)"}
+    theoretical_floor:
+      value: "受热光调谐时间常数限制；电光加权可到 ns 级"
+      basis: "TiN 加热器热时间常数 ~ 10 μs 级"
+      gap_note: "切换到电光/等离子体调制器可进一步缩短"
+
+  - id: met.coherent_comb_access_window_s22
+    name: "相干暗脉冲接入窗口（泵浦失谐）"
+    unit: "GHz"
+    description: >
+      泵浦失谐扫描中可稳定获得相干梳的频率范围，决定 turnkey 稳定性与对 DFB 漂移的鲁棒性。
+    demonstrated_value:
+      value: "tens of GHz（约为亮孤子的 10 倍）"
+      conditions: "10 mW 泵浦，AlGaAsOI 暗脉冲梳，热光自稳"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "AT5ZTB9M", claim: "the accessible frequency range of the dark pulse to tens of gigahertz, about ten times wider than that with bright solitons"}
+
+# ═══════════════════════════════════════════════
+#  RELATIONS（关系）
+# ═══════════════════════════════════════════════
+
+relations:
+  - id: rel.S22_01
+    subject: ent.algaasoi_dark_pulse_microcomb_s22
+    predicate: PART-OF
+    object: ent.microresonator_frequency_comb
+    confidence: established
+    source: {zotero_key: "AT5ZTB9M", claim: "Kerr comb generation from the AlGaAsOI microresonators"}
+    note: "跨文件引用：ent.microresonator_frequency_comb 定义于 kippenberg2011.yaml / kippenberg2018.yaml"
+
+  - id: rel.S22_02
+    subject: ent.siph_tr_chip_s22
+    predicate: PART-OF
+    object: ent.microcomb_driven_siph_system_s22
+    confidence: established
+    source: {zotero_key: "AT5ZTB9M", claim: "A monolithic SiPh circuit is used to process the generated comb lines for diverse optoelectronics systems"}
+
+  - id: rel.S22_03
+    subject: ent.algaasoi_dark_pulse_microcomb_s22
+    predicate: PART-OF
+    object: ent.microcomb_driven_siph_system_s22
+    confidence: established
+    source: {zotero_key: "AT5ZTB9M", claim: "Such a coherent comb is used to drive CMOS-foundry-based SiPh engines"}
+
+  - id: rel.S22_04
+    subject: ent.algaasoi_dark_pulse_microcomb_s22
+    predicate: COMPETES-WITH
+    object: ent.si3n4_integrated_comb
+    confidence: established
+    source: {zotero_key: "AT5ZTB9M", claim: "record-low parametric oscillation threshold down to tens of microwatts ... which can be satisfied by a commercial InP DFB laser chip"}
+    note: "AlGaAsOI 与 Si₃N₄ 是集成 Kerr 梳两大竞争平台：AlGaAsOI 阈值更低（~10× 优势）但工艺非纯 CMOS；Si₃N₄ 阈值较高但与 CMOS 兼容性更好。ent.si3n4_integrated_comb 定义于 huang2024.yaml / kippenberg2018.yaml。"
+
+  - id: rel.S22_05
+    subject: ent.microcomb_driven_siph_system_s22
+    predicate: CHARACTERIZED-BY
+    object: met.microcomb_aggregate_data_rate_s22
+    confidence: established
+    source: {zotero_key: "AT5ZTB9M", claim: "aggregate bit rate of 2 Tbit s⁻¹ (1.65 Tbit s⁻¹ net rate after FEC overhead subtraction)"}
+    temporal_role: validates
+
+  - id: rel.S22_06
+    subject: ent.algaasoi_dark_pulse_microcomb_s22
+    predicate: CHARACTERIZED-BY
+    object: met.microcomb_parametric_oscillation_threshold_s22
+    confidence: established
+    source: {zotero_key: "AT5ZTB9M", claim: "a record-low parametric oscillation threshold down to tens of microwatts"}
+
+  - id: rel.S22_07
+    subject: ent.algaasoi_dark_pulse_microcomb_s22
+    predicate: CHARACTERIZED-BY
+    object: met.coherent_comb_access_window_s22
+    confidence: established
+    source: {zotero_key: "AT5ZTB9M", claim: "accessible frequency range of the dark pulse to tens of gigahertz"}
+
+  - id: rel.S22_08
+    subject: ent.microcomb_driven_siph_system_s22
+    predicate: CHARACTERIZED-BY
+    object: met.mpf_reconfiguration_time_s22
+    confidence: established
+    source: {zotero_key: "AT5ZTB9M", claim: "reconfiguration speed (about 53 μs)"}
+
+  - id: rel.S22_09
+    subject: meth.dfb_pumped_turnkey_dark_pulse_generation_s22
+    predicate: ENABLED-BY
+    object: pri.normal_dispersion_dark_pulse_s22
+    confidence: established
+    source: {zotero_key: "AT5ZTB9M", claim: "a dark-pulse state is used to achieve coherent microcombs. This state works in the normal dispersion regime with the assistance of the avoided mode-crossing effect"}
+
+  - id: rel.S22_10
+    subject: meth.dfb_pumped_turnkey_dark_pulse_generation_s22
+    predicate: ENABLED-BY
+    object: meth.cw_pumped_microcomb_generation
+    confidence: established
+    source: {zotero_key: "AT5ZTB9M", claim: "coherent comb-state generation under pump power at the few-milliwatts level"}
+    note: "跨文件引用：meth.cw_pumped_microcomb_generation 定义于 kippenberg2018.yaml"
+
+  - id: rel.S22_11
+    subject: pri.normal_dispersion_dark_pulse_s22
+    predicate: DERIVED-FROM
+    object: pri.lugiato_lefever_equation
+    confidence: established
+    source: {zotero_key: "AT5ZTB9M", claim: "This state works in the normal dispersion regime with the assistance of the avoided mode-crossing effect"}
+    note: "跨文件引用：pri.lugiato_lefever_equation 与 pri.dissipative_kerr_soliton 均定义于 kippenberg2018.yaml；暗脉冲是 LLE 正常色散解支。"
+
+  - id: rel.S22_12
+    subject: meth.microcomb_parallel_pam4_wdm_link_s22
+    predicate: ENABLED-BY
+    object: pri.microcomb_replaces_laser_array_for_wdm_s22
+    confidence: established
+    source: {zotero_key: "AT5ZTB9M", claim: "20 comb lines in the C-band are used as the source ... aggregate bit rate of 2 Tbit s⁻¹"}
+
+  - id: rel.S22_13
+    subject: met.microcomb_aggregate_data_rate_s22
+    predicate: OPERATIONALIZED-AS
+    object: meth.microcomb_parallel_pam4_wdm_link_s22
+    confidence: established
+    source: {zotero_key: "AT5ZTB9M", claim: "pulse-amplitude four-level modulation scheme with a two-terabit-per-second aggregate rate"}
+
+  - id: rel.S22_14
+    subject: met.mpf_reconfiguration_time_s22
+    predicate: OPERATIONALIZED-AS
+    object: meth.microcomb_reconfigurable_mpf_s22
+    confidence: established
+    source: {zotero_key: "AT5ZTB9M", claim: "a highly reconfigurable microwave photonic filter with a high level of integration is constructed using a time-stretch approach"}
+
+  - id: rel.S22_15
+    subject: ent.algaasoi_dark_pulse_microcomb_s22
+    predicate: CONDITIONED-BY
+    object: ent.siph_tr_chip_s22
+    confidence: established
+    source: {zotero_key: "AT5ZTB9M", claim: "Such a coherent comb is used to drive CMOS-foundry-based SiPh engines containing versatile functionality"}
+    note: "微梳的系统级价值条件于下游 CMOS 硅光处理链路的可用性（调制、解复用、探测、控制）。"
+
+  - id: rel.S22_16
+    subject: met.microcomb_aggregate_data_rate_s22
+    predicate: BOUNDED-BY
+    object: pri.microcomb_replaces_laser_array_for_wdm_s22
+    confidence: provisional
+    source: {zotero_key: "AT5ZTB9M", claim: "the transmitter achieves a total data transmission rate of 448 Gbit s⁻¹, with 7 channels under the FEC threshold"}
+    note: "DFB 泵浦下聚合速率由 2 Tbit/s 降至 448 Gbit/s，瓶颈在 DFB 泵浦功率/线宽 → 每齿 OSNR 不足使部分通道 FEC 不通。"
+    breakthrough_paths:
+      - direction: meth.laser_tuning_soliton_access
+        expected_gain: "通过更强泵浦 + 更高 Q 微腔，让 DFB 激励下全部 20 通道进入 FEC 余量 → 回到 2 Tbit/s 级"
+        status: proposed
+        source: {zotero_key: "AT5ZTB9M", claim: "The performance of these systems can be further improved by optimizing the integrated devices or employing superior signal-processing techniques"}
+        note: "跨文件引用：meth.laser_tuning_soliton_access 定义于 kippenberg2018.yaml"
+      - direction: pri.normal_dispersion_dark_pulse_s22
+        expected_gain: "进一步定量化 avoided mode-crossing 设计，提升单齿功率与平坦度，扩展可用通道数至 >30"
+        status: proposed
+        source: {zotero_key: "AT5ZTB9M", claim: "Additional multiplexing techniques (such as space-division) ... can further scale the system capacity"}

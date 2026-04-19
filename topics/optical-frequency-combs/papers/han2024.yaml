@@ -1,0 +1,678 @@
+# Han 2024 — 113 km 开放大气双梳光谱：双站双向+时频传递+高功率梳，世界最长开放路径 DCS [里程碑技术论文]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical
+#   核心贡献：
+#     (1) 首次实现 113 km（此前最长 ~20 km）开放大气水平路径双梳光谱，信道损耗 83 dB，
+#         接近高轨卫星-地面单模光纤耦合的 60–80 dB 典型损耗量级；
+#     (2) 提出双站两向（bistatic two-way）协议：两台梳分置两端互发互收，
+#         消除反射镜几何损耗，把"二次穿过大气"降为"单程穿过"；
+#     (3) 用光纤/自由空间时频传递将两端独立 Rb+USL 频率基准绑定，
+#         将频率精度由 1 GHz 提升 5 个数量级至 10 kHz（M = fr/Δfr = 10⁵）；
+#     (4) 开发高功率 OFC（EDFA 后 1 W/梳）、400 mm 口径望远镜、低 NEP 平衡探测、
+#         门限触发采集等硬件链路，使 nW 级接收回波仍可相干平均；
+#     (5) 在 5 min 内对 CO₂ 达到 <2 ppm，36 min 达 <0.6 ppm 的 Allan 精度。
+#   Framework 依赖：
+#     ent.dual_comb_spectrometer（权威定义于 coddington2016.yaml）；
+#     meth.dual_comb_spectroscopy / pri.dual_comb_multiheterodyne_detection
+#     / meth.adaptive_sampling_correction 均已定义，本文件仅跨文件引用。
+
+meta:
+  zotero_key: "AZ25GQE3"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical
+  reliability: high
+  title: "Dual-comb spectroscopy over a 100 km open-air path"
+  year: 2024
+  first_author: "Han"
+  journal: "Nature Photonics"
+  volume: null
+  issue: null
+  pages: null
+  doi: "10.1038/s41566-024-01525-9"
+  note: >
+    [里程碑技术论文] USTC（Pan/Zhang/Xue/Jiang 等）与新疆天文台合作，Nanshan↔Gaoyazi
+    两终端跨越 113 km 山地水平路径。每端独立 Rb 原子钟+USL+OFC（Er 光纤梳，fr≈250 MHz），
+    两端 Δfr = 2.5 kHz。两梳经 EDFA 放大至 1 W、3 dB 带宽 7 nm @1545 nm，经 400 mm 望远镜
+    互发互收，接收端与本地梳干涉形成双梳干涉图。时频传递（参考 Shen 2022 @10⁻¹⁹/113 km）
+    将独立基准绑定，从原始 ~1 GHz 频移收窄到 10 kHz 光学频率精度；HITRAN2020 反演 CO₂/H₂O。
+    跨文件引用：ent.dual_comb_spectrometer、meth.dual_comb_spectroscopy、
+    pri.dual_comb_multiheterodyne_detection、meth.adaptive_sampling_correction
+    定义于 coddington2016.yaml / coddington2010 体系；ent.optical_frequency_comb
+    定义于 udem2002.yaml。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.long_path_dcs_h24
+    name: "113 km 开放大气双站双向双梳光谱系统（Han 2024）"
+    aliases:
+      - "Bistatic two-way long-path DCS"
+      - "100 km open-air dual-comb spectrometer"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      两端独立的双梳光谱实例：每端包含 Rb 原子钟 + 超稳激光（USL）+ Er 光纤梳（fr=250 MHz，
+      fCEO+fBeat=0 锁定）+ 两级 EDFA（输出 1 W）+ 20 nm 滤光 + 400 mm/1600 mm 望远镜 +
+      低 NEP 平衡探测 + GPS 时钟同步（<30 ns）。两端梳重频差 Δfr=2.5 kHz，
+      经 113 km 水平大气互发互收，本地探测回波与本地梳拍频形成双梳干涉图。
+      通过干涉图本身同步提取"时频比对+光谱信息"，将两端基准锁定到 10⁻¹⁹ 量级相对稳定度。
+    key_parameters:
+      path_length: "113 km（Nanshan 43°28′N→Gaoyazi 43°31′N，新疆）"
+      altitude: "2109 m / 1782 m"
+      channel_loss: "83 dB"
+      center_wavelength: "1545 nm"
+      spectral_3db_bandwidth: "~7 nm（≈50 cm⁻¹，6455.5–6505.5 cm⁻¹）"
+      repetition_rate: "fr = 250 MHz"
+      repetition_difference: "Δfr = 2.5 kHz"
+      comb_teeth_spanned: "~6000 对"
+      frequency_resolution: "605 MHz（受 40% 干涉图截取限制）"
+      comb_power_after_edfa: "1 W / 梳"
+      telescope_aperture: "400 mm"
+      telescope_focal_length: "1600 mm"
+      received_power_first_ifg: ">100 nW"
+      received_power_subsequent: ">5 nW"
+      temperature_stability: "σ_T = 7 mK（TEC 控温光学模块）"
+      gps_sync: "<30 ns"
+    interface_requirements:
+      frequency_reference: "每端 Rb 原子钟 + USL（双终端独立）"
+      time_frequency_link: "干涉图同时承担时频比对，消除 Δf_CW/Δfr 漂移"
+      atmospheric_channel: "水平开放山地路径，湍流+大摆幅功率起伏"
+      acquisition: "门限触发采集（只保存超过电压阈值的中心爆发段）"
+    note: >
+      Level 2 实例节点。跨文件引用：PART-OF ent.dual_comb_spectrometer（权威定义
+      于 coddington2016.yaml）；其梳源 PART-OF ent.optical_frequency_comb
+      （udem2002.yaml）。
+
+  - id: ent.high_power_erbium_comb_h24
+    name: "高功率 Er 光纤梳+两级 EDFA 放大链路"
+    aliases: ["1 W Er-fiber frequency comb", "two-stage EDFA amplified OFC"]
+    hierarchy_level: 3
+    status: demonstrated
+    function: >
+      Er 光纤锁模激光器，中心 1545 nm，fr=250 MHz，载波包络偏频 fCEO 与光学拍频 fBeat
+      锁定为幅值相等符号相反（fCEO+fBeat=0），使 N·fr=fCW（USL 光频）。
+      输出经两级高功率 EDFA 放大至 1 W，20 nm 滤光后用于远距离发射。
+      高功率是穿透 83 dB 大气信道并保持 nW 接收级的前提。
+    key_parameters:
+      laser_type: "Er 光纤锁模激光"
+      repetition_rate: "250 MHz"
+      output_power: "1 W（滤光 20 nm 之后）"
+      lock_scheme: "fCEO 与 fBeat 等幅反号锁定 → N·fr = fCW"
+    note: "PART-OF ent.long_path_dcs_h24；跨文件：PART-OF ent.optical_frequency_comb。"
+
+  - id: ent.bistatic_two_way_optical_link_h24
+    name: "双站双向自由空间光链路（400 mm 望远镜 + 信标对准）"
+    hierarchy_level: 3
+    status: demonstrated
+    function: >
+      两终端各一台 400 mm/1600 mm 望远镜，辅以信标激光+可调反射镜实现方向跟踪，
+      偏振保持光纤+铝合金恒温箱稳定光路；低 NEP 平衡探测器检测本地梳与远端接收梳的拍频。
+      相对于传统单站+远端反射镜协议（光束二次穿过大气，镜面孔径有限带来额外几何损耗），
+      本链路仅单程穿过大气，消除了 GEO 级别 >100 dB 的几何附加衰减。
+    key_parameters:
+      aperture: "400 mm"
+      focal_length: "1600 mm"
+      tracking: "信标激光 + 可调反射镜"
+      detector: "低 NEP 平衡 PD"
+    note: "PART-OF ent.long_path_dcs_h24。"
+
+  - id: ent.atmospheric_turbulence_channel
+    name: "开放大气湍流信道（外围条件节点）"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      长距离水平大气路径作为被测介质+传输信道的双重角色：提供 CO₂/H₂O 分子吸收信号，
+      同时带来功率起伏、相位扰动、光束扩散（100 km 后光斑半径 ~3 m）、
+      散射光与信号光干涉等系统噪声源。
+    key_parameters:
+      speckle_freeze_time: "单个干涉图快速获取时间内湍流相位被冻结"
+      typical_beam_spread: "~3 m 半径 @100 km"
+    note: >
+      外围条件接口节点（ext）。在其它专题中此节点作为 CONDITIONED-BY 的对象出现。
+
+principles:
+  - id: pri.bistatic_two_way_dcs_geometry
+    name: "双站双向双梳协议：单程大气穿越+干涉图内嵌时频比对"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      两台独立锁定的飞秒梳分置两端，彼此互发互收，本地探测器测量本地梳与远端接收梳的
+      多外差拍频干涉图。相较单站反射镜协议，光束仅单程穿过大气，省去了远端反射镜的
+      几何孔径限制；同时两端独立 Rb+USL 基准之间的频率偏差 Δf_CW 以及 Δfr 的漂移
+      会编码进干涉图相位（见论文方程 8–10），因而可以直接从同一条干涉图同步解出
+      "光谱信号"和"时频比对"，无需为比对再搭建一条专用链路。
+    domain: "光学频率梳 / 双梳光谱 / 时频传递"
+    formula: >
+      V(t,τ₀) ∝ Im Σₙ E*_{A,n} E_{B,n} E_{atm,n} exp{i2π[(ω_B−ω_A+nΔfr)t
+      −n(fr+Δfr)τ₀ − ω_B τ₀ + φ_{B,n} − φ_{A,n} + φ_{atm,n}]}
+    key_insight: >
+      核心洞察：把"时频链路"与"光谱链路"合并为同一条干涉图，使双基准方案的附加
+      不确定度仅表现为频率轴整体平移（可直接 post-processing 抠除），而不污染光谱形状。
+      这使得长链路、无反射镜、卫星-地面几何成为可能。
+    conditions: "两端 fCEO+fBeat=0 锁定，USL 保持相干时间 > 单个干涉图获取时间"
+    preconditions:
+      - "两端均有 Rb 量级频率标准 + USL"
+      - "GPS 提供 <30 ns 的采样起点同步"
+      - "返回信号功率足以支撑相干门限触发（>5 nW）"
+    invalidated_when:
+      - "两端基准漂移速率超过单干涉图相干时间的频率分辨率"
+      - "大气相位在单个干涉图内未被冻结（速率超标）"
+    source_claim: >
+      "Here we introduce another bistatic protocol ... Both combs are sent to each other
+      through the atmosphere and interfere with each other at the receiving terminals.
+      ... both absorption and phase spectrum change by the atmosphere over the path can
+      be achieved at each terminal. Since the comb passes through the atmosphere only
+      once and no reflector is required, the link loss can be sharply reduced."
+    open_questions:
+      - "是否可推广到 GEO 卫星-地面（36000 km，105.8 dB 几何损耗）场景？"
+      - "两端 USL 相干时间能否支持进一步延长单次相干平均？"
+
+  - id: pri.interferogram_embedded_freq_comparison
+    name: "干涉图内嵌频率比对原理（M = fr/Δfr 放大因子）"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      当两端基准独立时，光学频率偏差 Δf_CW 在射频拍频域里被压缩为 Δf_CW·(Δfr/fr)，
+      等价地任何残留的频率偏差在反推回光域时会被放大 M = fr/Δfr 倍；反之，
+      若同时记录发射/接收两向干涉图并做相位对比，则可以从干涉图本身直接解出
+      Δf_CW（论文方程 11–13），实现时频比对并反演补偿，把光学频率精度
+      从 ~1 GHz（未校准）收紧到 ~10 kHz（校准后）。
+    domain: "光学频率梳 / 双梳光谱"
+    formula: "ν_RF = 2 f_Beat − n·Δfr − Δf_CW；M = fr / Δfr"
+    key_insight: >
+      核心洞察：Δfr 既是双梳多外差的"降采因子"，也是基准偏差的"放大器"；
+      主动利用这一放大去测 Δf_CW 而非把它当成噪声，是实现双站协议可用性的关键。
+    conditions: "两向干涉图均可获取；fCEO/fBeat 稳定锁定"
+    source_claim: >
+      "the frequency accuracy of the bistatic protocol is worse by a factor
+      M = fr/Δfr, where fr is the repetition rate of the local comb and Δfr
+      is the difference between the repetition rate of the two combs ...
+      the frequency accuracy can be improved by M = fr/Δfr, that is, 5 orders
+      of magnitude, which is 1 GHz before and 10 kHz after the frequency comparison."
+
+  - id: pri.turbulence_speckle_freeze_dcs
+    name: "双梳快速采集冻结湍流散斑原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      单个双梳干涉图的中心爆发获取时间（~1/Δfr）远短于大气湍流相位的典型变化时间，
+      因此湍流带来的强度噪声与活塞相位噪声在单帧内被"冻结"，不污染单帧光谱；
+      帧间的相干平均能进一步压低散粒噪声与探测器噪声等背景噪声，
+      使长链路、低接收功率下仍可得到高 SNR 谱。
+    domain: "双梳光谱 / 大气光传播"
+    key_insight: >
+      核心洞察：DCS 对湍流"免疫"不是因为没有湍流，而是因为采集速度超过湍流演化速度；
+      这一性质是它相对 TDLAS、IPDA-lidar 的核心优势，也是 113 km 可行的基础之一。
+    conditions: "单干涉图获取时间 ≪ 湍流相干时间 τ_atm"
+    invalidated_when:
+      - "强湍流下 τ_atm 短于单干涉图时间，单帧内就已退相干"
+    source_claim: >
+      "Owing to high acquisition speed for a single interferogram, the intensity noise
+      and piston-like phase noise caused by turbulence are frozen. ... DCS has shown
+      excellent immunity to turbulent speckle."
+
+  - id: pri.coherent_averaging_background_noise_suppression
+    name: "长时相干平均抑制散粒/探测器背景噪声原理（DCS 专用）"
+    tier: domain
+    verification_status: observed
+    statement: >
+      连续干涉图之间保持相干关系时，相干平均可使随机背景噪声（散粒噪声、探测器噪声）
+      按 √N 下降，而相干信号线性累加；因此只要梳-USL-基准链路的相干时间足够长，
+      SNR 可以持续改善。本文借此在 1 h 平均内构建出 6000 齿完整谱。
+    domain: "双梳光谱 / 相干探测"
+    key_insight: >
+      核心洞察：将"时频传递+USL+锁定梳"的高相干性转化为光谱 SNR 的结构性优势。
+    conditions: "梳间相对相位噪声在平均窗口内可控"
+    source_claim: >
+      "Coherence between each interferogram makes coherent averaging possible,
+      which can resist background noise such as shot noise and detector noise.
+      The advantages of immunity to turbulent speckle and background noise result
+      in the capability of sensing longer distances without calibration."
+
+  - id: pri.photon_starved_open_path_dcs_limit
+    name: "光子饥饿长程 DCS 灵敏度/距离极限（散粒噪声+信道损耗）"
+    tier: engineering
+    verification_status: inferred
+    statement: >
+      开放路径 DCS 的核心瓶颈是"每根梳齿每单位时间的探测光子数"：随着路径加长，
+      几何/散射/吸收损耗指数上升，回波功率进入 nW–pW 量级后散粒噪声主导，
+      必须通过（a）提高发射功率、（b）缩小几何损耗（单程/大口径）、
+      （c）延长相干平均时间 来补偿。本文 83 dB 损耗+5 nW 回波+1 W 发射+1 h 平均
+      给出此约束面下的一个可行点。
+    domain: "双梳光谱 / 自由空间光通信"
+    key_insight: >
+      核心洞察：长程 DCS 不是"单项指标"问题，而是"功率×几何×相干时间"的联合优化问题。
+    conditions: "梳线间功率近似均匀；探测器为散粒噪声极限"
+    source_claim: >
+      "The main obstacle to the longer distance of DCS is the low signal-to-noise
+      ratio. ... the return signal of the first interferogram is above 100 nW and
+      is above 5 nW for other interferograms, equivalent to a total attenuation of 83 dB."
+    open_questions:
+      - "在 GEO 级 >100 dB 损耗下能否维持相干？是否需要量子极限探测（Caldwell 2023）？"
+
+  - id: pri.bandwidth_power_tradeoff_long_path_comb
+    name: "长程 DCS 高功率-大带宽权衡原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      为了在 83 dB 损耗下仍有 nW 级回波，需要把发射功率集中到窄滤光带（20 nm→7 nm 3dB）；
+      但带宽越窄可测气种越少，本文仅 50 cm⁻¹ 覆盖，导致 CH₄ 等主气种暂时无法测。
+      解决路径指向功率-带宽同时提升的新型梳（如孤子自频移 1600–1700 nm 全光纤激光）。
+    domain: "光学频率梳 / 双梳光谱"
+    key_insight: >
+      核心洞察：当前长程 DCS 的"距离"与"气种覆盖"是直接竞争的设计约束。
+    conditions: "EDFA/滤光方案下的光谱功率密度需达到 nW/梳齿 级"
+    source_claim: >
+      "We developed high-power OFCs that helped us achieve horizontal 100 km
+      measurements, but at the cost of a bandwidth of only 50 cm⁻¹. In the future,
+      many new technologies such as soliton self-frequency shift can be applied
+      to OFCs to simultaneously develop high-power and large bandwidths."
+    open_questions:
+      - "同时实现 >1 W 输出与覆盖 CH₄ 的 1.65 μm 带的最佳 OFC 方案？"
+
+methods:
+  - id: meth.bistatic_two_way_dcs_protocol_h24
+    name: "双站双向双梳光谱协议（含干涉图内嵌时频比对）"
+    status: demonstrated
+    applies_to: ent.long_path_dcs_h24
+    steps_summary: >
+      (1) 两端各独立锁定 OFC 到本地 USL+Rb，fCEO+fBeat=0；
+      (2) 两梳经 EDFA 放大 1 W，经 400 mm 望远镜互发；
+      (3) 接收端低 NEP 平衡探测本地梳与远端梳的多外差干涉图，GPS <30 ns 同步采集起点；
+      (4) 门限触发只保存中心爆发段；
+      (5) 对两向干涉图做 FFT + 相位对比，直接反演 Δf_CW 与 Δfr 漂移（时频比对）；
+      (6) 减去时频偏差后，用 HITRAN2020 + 复 Voigt 线型 + 加权最小二乘基线校正
+          同时从幅度谱与相位谱反演 CO₂/H₂O 浓度。
+    required_hardware:
+      - ent.long_path_dcs_h24
+      - ent.high_power_erbium_comb_h24
+      - ent.bistatic_two_way_optical_link_h24
+    advantages:
+      - "单程穿越大气，消除远端反射镜几何损耗"
+      - "无需另建时频链路"
+      - "同时获得幅度谱与相位谱"
+    disadvantages:
+      - "两端基准漂移若未校准会带来 ~1 GHz 光频偏移"
+      - "高功率下散射光与信号光干涉引入吸收/相位反演偏差"
+      - "受发射带宽限制，目前仅 50 cm⁻¹ 覆盖"
+    conditions:
+      - "两端相对相干时间 > 单干涉图获取时间"
+      - "接收功率 >5 nW（相位展开正确的下限）"
+    source_claim: >
+      "we demonstrate a bistatic DCS protocol combining time–frequency transfer
+      technology. ... The full complex spectrum has been measured at both terminals
+      over a 113 km open-air path, with a channel loss of 83 dB."
+
+  - id: meth.threshold_triggered_ifg_acquisition_h24
+    name: "门限触发干涉图采集方法"
+    status: demonstrated
+    applies_to: ent.long_path_dcs_h24
+    steps_summary: >
+      由于 100 km 自由空间链路接收功率大幅摆动，设置固定电压门限，仅当探测器电压
+      超过门限时捕获以中心爆发段为中心的一段干涉图，其余时间丢弃，从而大幅
+      降低存储带宽与后处理压力。
+    advantages:
+      - "降低存储与传输带宽压力"
+      - "自动跳过湍流深衰落帧"
+    disadvantages:
+      - "固定门限对功率漂移不具自适应性，可能漏采弱帧"
+    conditions:
+      - "探测噪声远低于门限电平"
+    source_claim: >
+      "a threshold-triggered acquisition method is introduced: once the detector
+      voltage exceeds a fixed threshold, an interferogram centred around the
+      centerburst is captured."
+
+metrics:
+  - id: met.open_path_length_dcs_h24
+    name: "开放大气 DCS 最长演示路径长度"
+    unit: "km"
+    description: >
+      双梳光谱公开报道的连续水平开放大气路径长度，衡量 DCS 链路预算能力。
+    is_interface_metric: true
+    coupling_formula: "channel_loss ≈ geometric_loss + atmospheric_extinction"
+    demonstrated_value:
+      value: "113 km"
+      conditions: "水平开放大气，Nanshan(2109 m)→Gaoyazi(1782 m)，2022-06 实测，83 dB 信道损耗"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "AZ25GQE3", claim: "we implement DCS over a 113 km turbulent horizontal open-air path"}
+    historical_landmarks:
+      first_demonstration:
+        value: "~2 km（首次开放路径 DCS）"
+        year: 2014
+        source: {zotero_key: "AZ25GQE3"}
+        note: "Rieker 2014（Optica）早期代表性演示"
+      best_demonstration:
+        value: "113 km"
+        year: 2024
+        source: {zotero_key: "AZ25GQE3"}
+
+  - id: met.channel_loss_dcs_h24
+    name: "DCS 信道总衰减（发射到接收光功率比）"
+    unit: "dB"
+    description: "从梳发射端到接收端的总链路损耗（几何+大气）。"
+    is_interface_metric: false
+    demonstrated_value:
+      value: "83 dB"
+      conditions: "1 W 发射，首帧 >100 nW 接收，后续帧 >5 nW，113 km 水平路径"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "AZ25GQE3", claim: "equivalent to a total attenuation of 83 dB"}
+    theoretical_floor:
+      value: "~60–80 dB（高轨卫星-地面单模光纤耦合典型值）"
+      basis: "参考 Caldwell 2023 / Shen 2022 自由空间链路预算"
+      gap_note: "本文 83 dB 已超过高轨单模耦合下界，接近 GEO 几何损耗量级"
+
+  - id: met.received_power_per_ifg_h24
+    name: "单干涉图接收光功率（回波功率）"
+    unit: "nW"
+    description: "触发采集时瞬时接收光功率下限，决定相位展开与 SNR。"
+    is_interface_metric: false
+    demonstrated_value:
+      value: "首帧 >100 nW；后续帧 >5 nW"
+      conditions: "门限触发，中心爆发段，113 km 路径，1 h 累积"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "AZ25GQE3", claim: "the return signal of the first interferogram is above 100 nW and is above 5 nW for other interferograms"}
+
+  - id: met.freq_accuracy_dcs_h24
+    name: "DCS 绝对频率精度（校准后）"
+    unit: "kHz"
+    description: "双梳谱光学频率轴的绝对精度，校准前后相差 M=fr/Δfr=10⁵ 倍。"
+    is_interface_metric: false
+    coupling_formula: "Δν_calibrated = Δν_raw · (Δfr/fr)"
+    demonstrated_value:
+      value: "10 kHz（校准后）；~1 GHz（未校准，因 Δf_CW 漂移）"
+      conditions: "fr=250 MHz，Δfr=2.5 kHz，干涉图内嵌时频比对校准"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "AZ25GQE3", claim: "the frequency accuracy can be improved by M = fr/Δfr, that is, 5 orders of magnitude, which is 1 GHz before and 10 kHz after the frequency comparison"}
+
+  - id: met.co2_precision_allan_h24
+    name: "CO₂ 柱浓度 Allan 精度"
+    unit: "ppm"
+    description: >
+      从吸收谱反演的 CO₂ 路径平均体积比的 Allan 偏差，衡量长程 DCS 温室气体
+      监测灵敏度。
+    is_interface_metric: false
+    demonstrated_value:
+      value: "<2 ppm @ 5 min；<0.6 ppm @ 36 min"
+      conditions: "2022-06-06 23:29 – 2022-06-07 04:29 相对稳定期，113 km 路径，吸收谱反演"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "AZ25GQE3", claim: "The Allan variance of the concentration extracted from the absorbance was less than 2 ppm in 5 min and less than 0.6 ppm in 36 min."}
+
+  - id: met.spectral_coverage_h24
+    name: "长程 DCS 光谱覆盖范围（3 dB 带宽）"
+    unit: "cm⁻¹"
+    description: "为在 83 dB 损耗下保证足够光谱功率密度，滤光至 ~50 cm⁻¹。"
+    is_interface_metric: false
+    demonstrated_value:
+      value: "~50 cm⁻¹（6455.5–6505.5 cm⁻¹，≈7 nm @1545 nm，≈6000 梳齿）"
+      conditions: "两级 EDFA + 20 nm 滤光 → 3 dB=7 nm"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "AZ25GQE3", claim: "a bandwidth of only 50 cm⁻¹ ... spectra span 6,000 comb teeth covering 6,505.5 cm⁻¹ to 6,455.5 cm⁻¹"}
+    theoretical_floor:
+      value: "CO₂+H₂O+CH₄ 同时测量需覆盖 ~1.55–1.70 μm"
+      basis: "HITRAN2020 主吸收带位置"
+      gap_note: "当前带宽不足以覆盖 CH₄（1.65 μm 带），突破路径见 pri.bandwidth_power_tradeoff_long_path_comb"
+
+  - id: met.freq_resolution_dcs_h24
+    name: "DCS 频率分辨率"
+    unit: "MHz"
+    description: "干涉图截取比例决定的频率分辨率。"
+    is_interface_metric: false
+    demonstrated_value:
+      value: "605 MHz"
+      conditions: "数据带宽限制，仅采集 40% 单干涉图"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "AZ25GQE3", claim: "Limited by data bandwidth, 40% of the entire single interferogram was captured, which reduced frequency resolution, and the frequency resolution is 605 MHz."}
+
+# ═══════════════════════════════════════════════
+#  RELATIONS（关系）
+# ═══════════════════════════════════════════════
+
+relations:
+  - id: rel.H01
+    subject: ent.long_path_dcs_h24
+    predicate: PART-OF
+    object: ent.dual_comb_spectrometer
+    confidence: established
+    source: {zotero_key: "AZ25GQE3", claim: "we demonstrate a bistatic DCS protocol combining time–frequency transfer technology"}
+    conditions: null
+    temporal_role: extends
+    note: "跨文件引用：ent.dual_comb_spectrometer 权威定义于 coddington2016.yaml。"
+
+  - id: rel.H02
+    subject: ent.high_power_erbium_comb_h24
+    predicate: PART-OF
+    object: ent.long_path_dcs_h24
+    confidence: established
+    source: {zotero_key: "AZ25GQE3", claim: "The output power of each comb can reach 1 W after amplification in a two-stage high-power erbium-doped fibre amplifier"}
+    conditions: null
+    temporal_role: validates
+    note: null
+
+  - id: rel.H03
+    subject: ent.bistatic_two_way_optical_link_h24
+    predicate: PART-OF
+    object: ent.long_path_dcs_h24
+    confidence: established
+    source: {zotero_key: "AZ25GQE3", claim: "Two homemade optical telescopes with an aperture of 400 mm and a focal length of 1,600 mm are used to transmit and receive the laser"}
+    conditions: null
+    temporal_role: validates
+    note: null
+
+  - id: rel.H04
+    subject: ent.long_path_dcs_h24
+    predicate: CHARACTERIZED-BY
+    object: met.open_path_length_dcs_h24
+    confidence: established
+    source: {zotero_key: "AZ25GQE3", claim: "we implement DCS over a 113 km turbulent horizontal open-air path"}
+    conditions: null
+    temporal_role: validates
+    note: "世界纪录级长度。"
+
+  - id: rel.H05
+    subject: ent.long_path_dcs_h24
+    predicate: CHARACTERIZED-BY
+    object: met.channel_loss_dcs_h24
+    confidence: established
+    source: {zotero_key: "AZ25GQE3", claim: "equivalent to a total attenuation of 83 dB"}
+    conditions: null
+    temporal_role: validates
+    note: null
+
+  - id: rel.H06
+    subject: ent.long_path_dcs_h24
+    predicate: CHARACTERIZED-BY
+    object: met.freq_accuracy_dcs_h24
+    confidence: established
+    source: {zotero_key: "AZ25GQE3", claim: "which is 1 GHz before and 10 kHz after the frequency comparison"}
+    conditions: null
+    temporal_role: validates
+    note: null
+
+  - id: rel.H07
+    subject: ent.long_path_dcs_h24
+    predicate: CHARACTERIZED-BY
+    object: met.co2_precision_allan_h24
+    confidence: established
+    source: {zotero_key: "AZ25GQE3", claim: "<2 ppm in 5 min and <0.6 ppm in 36 min"}
+    conditions: null
+    temporal_role: validates
+    note: null
+
+  - id: rel.H08
+    subject: ent.long_path_dcs_h24
+    predicate: CHARACTERIZED-BY
+    object: met.spectral_coverage_h24
+    confidence: established
+    source: {zotero_key: "AZ25GQE3", claim: "a bandwidth of only 50 cm⁻¹"}
+    conditions: null
+    temporal_role: validates
+    note: null
+
+  - id: rel.H09
+    subject: ent.long_path_dcs_h24
+    predicate: CHARACTERIZED-BY
+    object: met.freq_resolution_dcs_h24
+    confidence: established
+    source: {zotero_key: "AZ25GQE3", claim: "the frequency resolution is 605 MHz"}
+    conditions: null
+    temporal_role: validates
+    note: null
+
+  - id: rel.H10
+    subject: meth.bistatic_two_way_dcs_protocol_h24
+    predicate: ENABLED-BY
+    object: pri.bistatic_two_way_dcs_geometry
+    confidence: established
+    source: {zotero_key: "AZ25GQE3", claim: "Since the comb passes through the atmosphere only once and no reflector is required, the link loss can be sharply reduced"}
+    conditions: null
+    temporal_role: proposes
+    note: null
+
+  - id: rel.H11
+    subject: meth.bistatic_two_way_dcs_protocol_h24
+    predicate: ENABLED-BY
+    object: pri.interferogram_embedded_freq_comparison
+    confidence: established
+    source: {zotero_key: "AZ25GQE3", claim: "both frequency comparison and spectral information are obtained from the interferograms without the need for a separate link"}
+    conditions: null
+    temporal_role: proposes
+    note: null
+
+  - id: rel.H12
+    subject: meth.bistatic_two_way_dcs_protocol_h24
+    predicate: ENABLED-BY
+    object: pri.turbulence_speckle_freeze_dcs
+    confidence: established
+    source: {zotero_key: "AZ25GQE3", claim: "the intensity noise and piston-like phase noise caused by turbulence are frozen"}
+    conditions: null
+    temporal_role: validates
+    note: null
+
+  - id: rel.H13
+    subject: meth.bistatic_two_way_dcs_protocol_h24
+    predicate: ENABLED-BY
+    object: pri.coherent_averaging_background_noise_suppression
+    confidence: established
+    source: {zotero_key: "AZ25GQE3", claim: "Coherence between each interferogram makes coherent averaging possible, which can resist background noise such as shot noise and detector noise"}
+    conditions: null
+    temporal_role: validates
+    note: null
+
+  - id: rel.H14
+    subject: meth.bistatic_two_way_dcs_protocol_h24
+    predicate: ENABLED-BY
+    object: pri.dual_comb_multiheterodyne_detection
+    confidence: established
+    source: {zotero_key: "AZ25GQE3", claim: "DCS utilizes the change of interference to figure out the atmospheric property"}
+    conditions: null
+    temporal_role: extends
+    note: "跨文件：pri.dual_comb_multiheterodyne_detection 定义于 coddington2016.yaml。"
+
+  - id: rel.H15
+    subject: meth.threshold_triggered_ifg_acquisition_h24
+    predicate: PART-OF
+    object: meth.bistatic_two_way_dcs_protocol_h24
+    confidence: established
+    source: {zotero_key: "AZ25GQE3", claim: "a threshold-triggered acquisition method is introduced"}
+    conditions: null
+    temporal_role: proposes
+    note: null
+
+  - id: rel.H16
+    subject: ent.long_path_dcs_h24
+    predicate: CONDITIONED-BY
+    object: ent.atmospheric_turbulence_channel
+    confidence: established
+    source: {zotero_key: "AZ25GQE3", claim: "113 km turbulent horizontal open-air path"}
+    conditions: "山地水平路径，夜间相对稳定时段"
+    temporal_role: validates
+    note: "外围条件接口节点。"
+
+  - id: rel.H17
+    subject: met.open_path_length_dcs_h24
+    predicate: BOUNDED-BY
+    object: pri.photon_starved_open_path_dcs_limit
+    confidence: established
+    source: {zotero_key: "AZ25GQE3", claim: "The main obstacle to the longer distance of DCS is the low signal-to-noise ratio"}
+    breakthrough_paths:
+      - direction: meth.bistatic_two_way_dcs_protocol_h24
+        expected_gain: "消除反射镜几何损耗，使 100 km 级单程链路可行"
+        status: demonstrated
+        source: {zotero_key: "AZ25GQE3", claim: "the link loss can be sharply reduced compared with the previous monostatic round-trip protocol"}
+        note: "把 100 km 级 >100 dB 几何损耗降至 83 dB 水平。"
+      - direction: pri.coherent_averaging_background_noise_suppression
+        expected_gain: "√N 压低散粒/探测器噪声，直达 nW 回波下的可测灵敏度"
+        status: demonstrated
+        source: {zotero_key: "AZ25GQE3", claim: "coherent averaging possible, which can resist background noise such as shot noise and detector noise"}
+        note: null
+      - direction: pri.bandwidth_power_tradeoff_long_path_comb
+        expected_gain: "发射功率 1 W + 窄 7 nm 带宽 → 足够梳齿功率密度穿透 83 dB"
+        status: demonstrated
+        source: {zotero_key: "AZ25GQE3", claim: "we develop high-power optical combs and ultrasensitive detection set-up to cope with the large loss of the link"}
+        note: null
+
+  - id: rel.H18
+    subject: met.open_path_length_dcs_h24
+    predicate: BOUNDED-BY
+    object: pri.turbulence_speckle_freeze_dcs
+    confidence: established
+    source: {zotero_key: "AZ25GQE3", claim: "DCS has shown excellent immunity to turbulent speckle"}
+    breakthrough_paths:
+      - direction: meth.adaptive_sampling_correction
+        expected_gain: "进一步把湍流相位抖动折算进实时相位校正，延长相干窗口"
+        status: proposed
+        source: {zotero_key: "AZ25GQE3", claim: "real-time phase correction method would improve precision and time resolution"}
+        note: "跨文件：meth.adaptive_sampling_correction 定义于 coddington2016 体系。"
+    conditions: "单干涉图获取时间 < τ_atm"
+    temporal_role: validates
+    note: null
+
+  - id: rel.H19
+    subject: met.spectral_coverage_h24
+    predicate: BOUNDED-BY
+    object: pri.bandwidth_power_tradeoff_long_path_comb
+    confidence: established
+    source: {zotero_key: "AZ25GQE3", claim: "but at the cost of a bandwidth of only 50 cm⁻¹ ... cannot measure CH4"}
+    breakthrough_paths:
+      - direction: pri.nonlinear_frequency_conversion_comb
+        expected_gain: "孤子自频移等非线性方案可在保持高功率同时展宽至 1.6–1.7 μm，覆盖 CH₄ 带"
+        status: proposed
+        source: {zotero_key: "AZ25GQE3", claim: "soliton self-frequency shift can be applied to OFCs to simultaneously develop high-power and large bandwidths to enable more GHG measurements such as CH4"}
+        note: "跨文件：pri.nonlinear_frequency_conversion_comb 定义于 diddams2000.yaml 等。"
+    conditions: null
+    temporal_role: validates
+    note: null
+
+  - id: rel.H20
+    subject: met.freq_accuracy_dcs_h24
+    predicate: OPERATIONALIZED-AS
+    object: meth.bistatic_two_way_dcs_protocol_h24
+    confidence: established
+    source: {zotero_key: "AZ25GQE3", claim: "both frequency comparison and spectral information are obtained from the interferograms"}
+    conditions: null
+    temporal_role: validates
+    note: null
+
+  - id: rel.H21
+    subject: meth.bistatic_two_way_dcs_protocol_h24
+    predicate: COMPETES-WITH
+    object: meth.dual_comb_spectroscopy
+    confidence: provisional
+    source: {zotero_key: "AZ25GQE3", claim: "Compared with the previous monostatic round-trip protocol ... the link loss can be sharply reduced"}
+    conditions: "仅在超长链路（>20 km）且需相位谱时优势明显；短链路仍可用单站方案"
+    temporal_role: extends
+    note: "与传统单站反射镜 DCS 协议竞争/互补；跨文件父方法 meth.dual_comb_spectroscopy 定义于 coddington2016.yaml。"
