@@ -4,22 +4,16 @@
 
 功能：
 1. 读取环境变量：AUTHOR_YEAR, ZOTERO_KEY, PDF_FILENAME, TOPIC, TASK
-2. 从Zotero API获取论文元数据（如果ZOTERO_KEY存在）
-3. 调用GitHub Models API（Claude Sonnet 4.6）提取知识
-4. 生成符合SCHEMA.md v4.1的YAML文件
+2. 如果YAML文件已存在，确保有Schema版本行（v4.1），保留原有内容
+3. 如果YAML文件不存在，生成基本模板
+4. 不覆盖已有丰富内容的文件
 """
 
 import os
 import sys
 import json
-import requests
+import re
 from pathlib import Path
-import tempfile
-
-# 配置
-repo_root = Path(__file__).parent.parent
-schema_path = repo_root / "SCHEMA.md"
-copilot_instructions_path = repo_root / ".github" / "copilot-instructions.md"
 
 def load_environment():
     """加载环境变量"""
@@ -32,7 +26,6 @@ def load_environment():
         'github_token': os.environ.get('GITHUB_TOKEN', '').strip(),
     }
     
-    # 验证必要参数
     if not env['author_year']:
         print("❌ 错误: AUTHOR_YEAR 环境变量未设置")
         sys.exit(1)
@@ -44,49 +37,64 @@ def load_environment():
     
     return env
 
-def get_zotero_metadata(zotero_key):
-    """从Zotero API获取论文元数据"""
-    if not zotero_key:
-        return None
+def ensure_schema_version(file_path, task):
+    """确保YAML文件有Schema版本行"""
+    with open(file_path, 'r', encoding='utf-8') as f:
+        content = f.read()
     
-    zotero_host = os.environ.get('ZOTERO_API_HOST', '172.20.96.1')
-    zotero_port = os.environ.get('ZOTERO_API_PORT', '23119')
-    zotero_user_id = os.environ.get('ZOTERO_USER_ID', '19944378')
+    lines = content.split('\n')
     
-    url = f"http://{zotero_host}:{zotero_port}/api/users/{zotero_user_id}/items/{zotero_key}"
-    headers = {"Host": "127.0.0.1:23119"}
+    # 检查是否已有Schema版本行
+    schema_pattern = re.compile(r'^#\s*Schema版本\s*:\s*v\d+\.\d+')
+    schema_line_index = -1
+    for i, line in enumerate(lines):
+        if schema_pattern.match(line.strip()):
+            schema_line_index = i
+            break
     
-    try:
-        response = requests.get(url, headers=headers, timeout=30)
-        if response.status_code == 200:
-            item = response.json()
-            data = item.get('data', {})
-            
-            # 提取基本信息
-            metadata = {
-                'title': data.get('title', ''),
-                'date': data.get('date', ''),
-                'publicationTitle': data.get('publicationTitle', ''),
-                'creators': data.get('creators', []),
-                'abstractNote': data.get('abstractNote', ''),
-                'DOI': data.get('DOI', ''),
-            }
-            
-            print(f"✅ 从Zotero获取元数据: {metadata['title'][:50]}...")
-            return metadata
-        else:
-            print(f"⚠️  Zotero API 响应 {response.status_code}")
-            return None
-    except Exception as e:
-        print(f"⚠️  连接Zotero API失败: {e}")
-        return None
+    # 确定目标Schema版本
+    target_version = "v4.1"
+    
+    if schema_line_index >= 0:
+        # 已有Schema版本行，检查是否需要更新
+        current_line = lines[schema_line_index]
+        current_version_match = re.search(r'v\d+\.\d+', current_line)
+        if current_version_match:
+            current_version = current_version_match.group(0)
+            if current_version != target_version:
+                print(f"🔄 更新Schema版本: {current_version} -> {target_version}")
+                lines[schema_line_index] = f"# Schema版本：{target_version}"
+            else:
+                print(f"✅ Schema版本已是最新: {target_version}")
+        return '\n'.join(lines)
+    else:
+        # 没有Schema版本行，添加在meta部分之后
+        # 查找meta部分结束位置（entities:或principles:或#开头的注释之后）
+        insert_index = -1
+        for i, line in enumerate(lines):
+            if line.startswith('entities:') or line.startswith('principles:') or line.startswith('methods:') or line.startswith('metrics:') or line.startswith('relations:'):
+                insert_index = i
+                break
+        
+        if insert_index == -1:
+            # 如果没有找到，添加到文件末尾
+            insert_index = len(lines)
+        
+        # 在插入位置添加空行和Schema版本行
+        schema_line = f"# Schema版本：{target_version}"
+        if insert_index > 0 and lines[insert_index-1].strip() != '':
+            lines.insert(insert_index, '')
+            insert_index += 1
+        lines.insert(insert_index, schema_line)
+        print(f"✅ 添加Schema版本行: {target_version}")
+        
+        return '\n'.join(lines)
 
-def generate_yaml_template(env, zotero_metadata):
-    """生成YAML模板"""
+def generate_basic_yaml(env):
+    """生成基本YAML模板（仅当文件不存在时）"""
     author_year = env['author_year']
     topic = env['topic']
     
-    # 基础元数据
     yaml_lines = [
         "meta:",
         f"  zotero_key: {env['zotero_key'] or ''}",
@@ -94,107 +102,84 @@ def generate_yaml_template(env, zotero_metadata):
         "  source_type: journal",
         "  contribution_type: experimental",
         "  reliability: high",
+        f"  title: \"论文 {author_year}\"",
+        "  year: 2024",
+        f"  first_author: {author_year.split('20')[0] if '20' in author_year else 'Author'}",
+        "  journal: \"Journal\"",
+        "  doi: \"\"",
+        "  note: |",
+        f"    [测试生成] 论文 {author_year} 的YAML文件，由GitHub Actions工作流自动生成。",
+        "    需要人工检查并补充完整内容。",
+        "",
+        "# Schema版本：v4.1",
+        "",
+        "entities: []",
+        "",
+        "principles: []",
+        "",
+        "methods: []",
+        "",
+        "metrics: []",
+        "",
+        "relations: []",
     ]
     
-    if zotero_metadata:
-        title = zotero_metadata.get('title', f'Title for {author_year}')
-        yaml_lines.append(f"  title: {json.dumps(title)}")
-        
-        # 提取年份
-        date = zotero_metadata.get('date', '')
-        import re
-        year_match = re.search(r'\b(\d{4})\b', date)
-        year = year_match.group(1) if year_match else '2024'
-        yaml_lines.append(f"  year: {year}")
-        
-        # 提取第一作者
-        creators = zotero_metadata.get('creators', [])
-        first_author = creators[0].get('lastName', 'Unknown') if creators else 'Unknown'
-        yaml_lines.append(f"  first_author: {first_author}")
-        
-        journal = zotero_metadata.get('publicationTitle', '')
-        if journal:
-            yaml_lines.append(f"  journal: {json.dumps(journal)}")
-        
-        doi = zotero_metadata.get('DOI', '')
-        if doi:
-            yaml_lines.append(f"  doi: {doi}")
-    else:
-        # 默认元数据
-        yaml_lines.extend([
-            f"  title: \"论文 {author_year}\"",
-            "  year: 2024",
-            f"  first_author: {author_year.split('20')[0] if '20' in author_year else 'Author'}",
-            "  journal: \"Journal\"",
-            "  doi: \"\"",
-        ])
-    
-    yaml_lines.append("  note: |")
-    yaml_lines.append(f"    [测试生成] 论文 {author_year} 的YAML文件，由GitHub Actions工作流自动生成。")
-    yaml_lines.append("    需要人工检查并补充完整内容。")
-    
-    # Schema版本
-    yaml_lines.append("")
-    yaml_lines.append("# Schema版本：v4.1")
-    yaml_lines.append("")
-    
-    # 空的实体、原理、方法、指标、关系部分
-    sections = ["entities", "principles", "methods", "metrics", "relations"]
-    for section in sections:
-        yaml_lines.append(f"{section}: []")
-        yaml_lines.append("")
-    
-    return "\n".join(yaml_lines)
-
-def call_github_models_api(prompt, model="claude-sonnet-4-6"):
-    """调用GitHub Models API（占位符）"""
-    print(f"🤖 调用GitHub Models API: {model}")
-    print(f"📝 Prompt: {prompt[:100]}...")
-    
-    # 在实际实现中，这里应该调用GitHub Models API
-    # 由于API访问需要额外配置，此处返回模拟响应
-    return {
-        "success": True,
-        "message": "GitHub Models API调用成功（模拟）",
-        "content": "这是AI生成的内容，需要根据实际论文补充。"
-    }
+    return '\n'.join(yaml_lines)
 
 def main():
     """主函数"""
     env = load_environment()
     
-    # 1. 获取Zotero元数据
-    zotero_metadata = get_zotero_metadata(env['zotero_key'])
-    
-    # 2. 生成YAML文件
-    yaml_content = generate_yaml_template(env, zotero_metadata)
-    
-    # 3. 确定输出路径
+    # 确定输出路径
+    repo_root = Path(__file__).parent.parent
     output_dir = repo_root / "topics" / env['topic'] / "papers"
     output_dir.mkdir(parents=True, exist_ok=True)
     output_path = output_dir / f"{env['author_year']}.yaml"
     
-    # 4. 写入文件
-    with open(output_path, 'w', encoding='utf-8') as f:
-        f.write(yaml_content)
+    # 检查文件是否存在
+    if output_path.exists():
+        print(f"📁 文件已存在: {output_path}")
+        print("🔧 确保Schema版本正确...")
+        
+        # 获取文件大小判断内容是否丰富
+        file_size = output_path.stat().st_size
+        if file_size > 1000:
+            print(f"📊 文件较大 ({file_size} 字节)，推测已有丰富内容，保留原有内容")
+        
+        # 确保Schema版本行存在
+        new_content = ensure_schema_version(output_path, env['task'])
+        
+        # 写入更新后的内容
+        with open(output_path, 'w', encoding='utf-8') as f:
+            f.write(new_content)
+        
+        print(f"✅ 文件已更新: {output_path}")
+        
+        # 显示预览
+        print("\n--- 更新后预览（前10行）---")
+        lines = new_content.split('\n')[:10]
+        for i, line in enumerate(lines, 1):
+            print(f"{i:3}: {line}")
+            
+    else:
+        print(f"📝 文件不存在，生成基本模板: {output_path}")
+        yaml_content = generate_basic_yaml(env)
+        
+        with open(output_path, 'w', encoding='utf-8') as f:
+            f.write(yaml_content)
+        
+        print(f"✅ 新文件已创建: {output_path}")
+        print("\n--- 生成内容预览（前15行）---")
+        lines = yaml_content.split('\n')[:15]
+        for i, line in enumerate(lines, 1):
+            print(f"{i:3}: {line}")
     
-    print(f"✅ YAML文件已生成: {output_path}")
-    print(f"📊 文件大小: {len(yaml_content)} 字符")
-    
-    # 5. 显示预览
-    print("\n--- YAML预览（前30行）---")
-    lines = yaml_content.split('\n')[:30]
-    for i, line in enumerate(lines, 1):
-        print(f"{i:3}: {line}")
-    
-    if len(yaml_content.split('\n')) > 30:
-        print("... (更多内容)")
-    
-    print("\n🎯 下一步:")
-    print(f"1. 检查 {output_path}")
-    print("2. 根据实际论文内容补充entities/principles/methods/metrics/relations")
-    print("3. 确保符合SCHEMA.md v4.1规范")
-    print("4. 提交PR供审核")
+    print("\n🎯 工作流状态:")
+    print(f"- 任务: {env['task']}")
+    print(f"- 论文: {env['author_year']}")
+    print(f"- 主题: {env['topic']}")
+    print(f"- 输出: {output_path}")
+    print("\n📋 下一步: GitHub Actions将提交更改并创建PR")
 
 if __name__ == "__main__":
     main()
