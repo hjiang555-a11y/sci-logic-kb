@@ -1,0 +1,595 @@
+# Gaeta 2019 — 光子芯片基频率梳综述：SCG + Kerr微梳平台分类、形成机制与集成路线图 [综述/框架型]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: framework
+
+meta:
+  zotero_key: "BRKZG9H2"
+  topic: optical-frequency-combs
+  source_type: review
+  contribution_type: framework
+  reliability: high
+  title: "Photonic-chip-based frequency combs"
+  year: 2019
+  first_author: "Gaeta"
+  journal: "Nature Photonics"
+  volume: 13
+  issue: 3
+  pages: "158-169"
+  doi: "10.1038/s41566-019-0358-x"
+  note: >
+    [综述/框架型] Gaeta (Columbia) + Lipson (Columbia) + Kippenberg (EPFL) 2019
+    Nature Photonics 综述。统一梳理光子芯片平台上的频率梳生成两大路径：
+    (1) 波导中的超连续谱生成（SCG，飞秒泵浦）；(2) 微谐振腔中的 Kerr 梳生成（KCG，CW 泵浦）。
+    核心框架贡献：(a) 建立芯片非线性光子学平台分类表（Si3N4、Si、a-Si:H、Hydex、AlN、GaP、
+    Diamond、AlGaAs、SiGe、Ge、LiNbO3、硫系玻璃等 15+ 平台的折射率/非线性指数/透明窗口/χ(2)
+    对比）；(b) 形式化 KCG 形成态分类体系（Turing rolls/稳定低噪声、混沌 MI、单/多孤子 DKS、
+    孤子晶体、呼吸孤子、暗脉冲/platicon）；(c) 阐明色散工程-平台-功耗-带宽四维权衡空间；
+    (d) 指出 Raman 散射对最小 FSR 的基本限制（gR/gK 条件）；(e) 综述芯片梳在通信、测距、光谱、
+    时钟、微波综合、LiDAR、天文光谱定标等应用的成熟度。
+    跨文件节点引用（只引用，不重复定义）：
+    ent.microresonator_frequency_comb / ent.si3n4_integrated_comb 定义于 kippenberg2011.yaml；
+    pri.parametric_four_wave_mixing_comb / pri.microresonator_anomalous_dispersion /
+    pri.dissipative_kerr_soliton / pri.lugiato_lefever_equation /
+    meth.cw_pumped_microcomb_generation / meth.laser_tuning_soliton_access /
+    meth.microcomb_self_referencing 定义于 kippenberg2018.yaml；
+    pri.supercontinuum_octave_spanning 定义于 diddams2000.yaml；
+    pri.self_referencing_f2f 定义于 udem2002.yaml。
+
+entities:
+  - id: ent.chip_scg_waveguide_g19
+    name: "芯片基超连续谱波导（SCG 平台）"
+    aliases: ["chip-based SCG waveguide", "photonic-chip supercontinuum waveguide"]
+    hierarchy_level: 1
+    status: demonstrated
+    function: >
+      由飞秒锁模激光器脉冲串注入的高非线性集成波导，通过 χ(3) 参量四波混频、自相位调制、
+      孤子裂变与色散波辐射，将初始光谱展宽至倍频程以上，产生 CEO 可检测的相干频率梳。
+      相较光子晶体光纤，芯片波导具有更高有效非线性 γ、更强色散工程自由度以及批量制造潜力。
+    key_parameters:
+      typical_waveguide_length: "≤5 cm"
+      input_pulse_duration: "<100 fs（保持相干性）"
+      input_pulse_energy: "pJ 至数十 pJ 量级（例如 Si 纳米线：16 pJ/pulse @ 2.29 μm）"
+      typical_spectral_span: "≥1 octave（0.6–2.6 μm 或更宽）"
+      coherence_criterion: "N_soliton < 10 且 SPM 主导"
+    interface_requirements:
+      input: "锁模激光器脉冲串（飞秒，具有 CEO 相干性）"
+      output: "倍频程相干梳（可送入 f–2f 或 f–3f 干涉仪进行 CEO 稳定）"
+    note: >
+      作为 SCG 路径的框架级 Level 1 实体；具体材料子平台（Si3N4、Si、a-Si:H、硫系等）
+      作为 hierarchy_level=2 子节点或 key_parameters 展开，不单独拆分。
+
+  - id: ent.chip_comb_platform_taxonomy_g19
+    name: "芯片非线性光子学平台分类表（15+ 材料对比）"
+    aliases: ["chip-based nonlinear platform table", "Table 1 of Gaeta 2019"]
+    hierarchy_level: 1
+    status: demonstrated
+    function: >
+      本综述建立的跨材料平台对比框架，覆盖 Silica/Si/α-Si:H/Si3N4/Hydex/AlN/GaN/GaP/
+      Diamond/AlGaAs/SiGe/Ge/LiNbO3/As2S3/As2Se3 等平台，在 1.55 μm 下列举：
+      折射率 n、非线性指数 n2（m²/W）、透明窗口（μm）、KCG 是否观察到、SCG 是否观察到、
+      是否具有体 χ(2)。该表构成芯片梳材料选型的权威参考。
+    key_parameters:
+      nonlinear_index_range: "3×10⁻²⁰ (silica) – 4.4×10⁻¹⁷ (Ge) m²/W（跨 3 个量级）"
+      refractive_index_range: "1.45 (silica) – 4.33 (Ge)"
+      transparency_window_coverage: "0.2–50 μm 合计（Diamond 最宽）"
+      chi2_materials: ["AlN", "GaN", "GaP", "AlGaAs", "LiNbO3"]
+      both_scg_and_kcg_demonstrated: ["Silica", "Si", "Si3N4", "Hydex", "AlN", "Diamond", "AlGaAs", "LiNbO3"]
+    interface_requirements:
+      input: "用于选择给定波长/功率/带宽需求下的最佳平台"
+      output: "平台-应用匹配决策（例如：中红外选 Si/SiGe/Ge；自参考选 AlN/LiNbO3；CMOS 兼容选 Si3N4/Hydex）"
+    note: >
+      非物理实体，而是本综述作为"框架贡献"定义的分类表；后续微梳论文可直接引用此节点。
+
+principles:
+  - id: pri.chip_dispersion_engineering_high_index_contrast
+    name: "高折射率对比波导色散工程原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      芯片波导（如 Si3N4 核/SiO2 包层）的高折射率对比（Δn ≈ 0.5）使光场可被约束到远小于
+      λ² 的面积，从而 (a) 显著增强有效非线性 γ = ω₀ n₂/(A_eff c)；(b) 允许通过调整
+      波导几何（宽度、厚度）在相当宽的范围内独立调节有效群速度色散（GVD），其结果
+      可与体材料本征 GVD 完全不同——在近红外拉近至零甚至反常色散区。该自由度是
+      芯片基 SCG 与 KCG 能以激光笔量级功率跨倍频程相位匹配参量过程的物理根源。
+    domain: "集成非线性光子学，色散工程"
+    formula: >
+      D(δ) = Σ_{n≥2} (β_n/n!) δⁿ；δ_DW ≈ 3|β₂|/β₃（三阶色散下的色散波峰频率）；
+      γ = ω₀ n₂ / (A_eff · c)
+    key_insight: >
+      高折射率对比同时带来"强非线性"与"可裁剪色散"——这是芯片梳相比光纤梳
+      能够在 <1 W、<1 cm³ 形态下实现的关键使能机制。
+    conditions: "波导模式在工作波长下主要约束于高折射率核层；制造侧壁粗糙度可控"
+    preconditions:
+      - "核/包层折射率对比 Δn ≳ 0.3"
+      - "波导尺寸与工作波长同量级（亚微米至微米）"
+      - "目标波长位于材料透明窗口内"
+    invalidated_when:
+      - "波长过长，模式主要外溢到低折射率包层，有效 GVD 趋近体 GVD"
+      - "波导损耗主导，非线性相位积累不足"
+    source_claim: >
+      "This large index contrast allows for light with a wavelength λ to be strongly
+      confined to an area smaller than λ², which further enhances the nonlinear
+      interaction. More importantly, this tight confinement allows for dispersion
+      engineering that offers control of the interaction to enhance and/or tailor
+      the comb spectrum."
+
+  - id: pri.dispersive_wave_cherenkov_radiation
+    name: "色散波（Cherenkov 辐射）生成原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      当存在高于二阶的色散项时，泵浦波附近能量可通过相位匹配转移到一至数个远离泵浦的
+      窄谱成分——这些谱峰位置近似由色散函数 D(δ) 的零点决定，对应 Cherenkov 辐射式的
+      线性色散波。色散波是将芯片梳谱宽从单倍频扩展至倍频程以上、在预定目标波长
+      （如 f–2f 所需的红蓝两端、f–3f 的近紫外端、或中红外窗口）生成强梳齿的标准工具。
+    domain: "非线性光纤与波导光学，孤子动力学"
+    formula: "δ_DW ≈ 3|β₂|/β₃（仅考虑到三阶色散时）；更一般情况由 D(δ) = 0 决定"
+    key_insight: >
+      色散波是 SCG 与 KCG 共用的谱延展机制；通过波导几何一次性设计同时决定孤子位置
+      和色散波位置，可获得倍频程+自参考可用的确定性谱形。
+    preconditions:
+      - "存在三阶或更高阶色散"
+      - "背景孤子或泵浦场提供可转换能量"
+    source_claim: >
+      "Dispersive waves are a result of a phase-matched process in the presence of
+      dispersion that is of a higher order than the GVD that can result in the
+      transfer of energy from the region near the pump wave to spectral components
+      that can be as far as an octave away."
+
+  - id: pri.microcomb_formation_regime_taxonomy_g19
+    name: "Kerr 微梳形成态分类体系"
+    tier: meta
+    verification_status: observed
+    statement: >
+      CW 泵浦微谐振腔中的梳形成依赖于 (泵-腔失谐 δ₀, 泵浦功率, 腔 Q 与色散) 参数空间中
+      的状态转换路径，本综述形式化以下六类相干/非相干态：
+      (1) Turing rolls（"natively-spaced comb"）——最接近泵浦的一对模先受激，窄带、低噪声；
+      (2) 混沌 MI 态——多组 mini-comb 交叠，高 RF 噪声、非相干；
+      (3) 多孤子 DKS 态——N 个循环孤子，梳谱具有复杂调制结构；
+      (4) 单孤子 DKS 态——平滑 sech² 谱形，低噪声，最常用于应用；
+      (5) 孤子晶体（soliton crystals）——多孤子在腔中形成周期性角位排列的稳态；
+      (6) 呼吸孤子（breathers）——孤子幅度/宽度周期性振荡的不稳定态。
+      此外在正常 GVD 下存在：(7) 暗脉冲/platicon——双稳态上下支的切换波互锁。
+      红失谐侧为相干态（DKS 系列）的必要失谐方向。
+    domain: "微谐振腔非线性动力学"
+    key_insight: >
+      早期微梳低相干性的困扰源于实验停留在 (2) 混沌 MI 态；理解状态图并确定性地
+      跨越至 DKS 态是微梳实用化的关键。分类体系为后续论文提供统一语言。
+    preconditions:
+      - "泵浦激光红失谐通过腔谐振（对 DKS 族）"
+      - "反常色散（对亮孤子族）或正常色散+模式耦合（对暗脉冲/platicon）"
+    invalidated_when:
+      - "热非线性引起失谐漂移超过稳态区域宽度而无补偿机制"
+    source_claim: >
+      "researchers have shown that the system can show rich and complex nonlinear
+      behaviour, including bistability, chaos, single- and multiple-soliton formation,
+      soliton crystals and breather instabilities."
+    open_questions:
+      - "不同形成态之间的确定性切换协议（尤其单孤子 vs 孤子晶体）"
+      - "呼吸孤子的完整稳定性判据"
+
+  - id: pri.dark_pulse_normal_dispersion_comb
+    name: "正常色散暗脉冲/platicon 梳原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      在正常 GVD 区域，微谐振腔支持"暗脉冲"或平顶脉冲（platicon）态：可解释为腔内双稳态
+      上下支间两个切换波（switching wave）的互锁——一个波的下降沿与另一个波的上升沿
+      构成局域脉冲。暗脉冲态通常由模式耦合（空间、偏振或双腔模式）引起的腔内调制不稳定
+      触发，耦合强度决定梳带宽。
+    domain: "微谐振腔非线性动力学"
+    key_insight: >
+      正常色散梳相较亮孤子梳具有显著更高的泵-梳转换效率和更平坦的谱形，
+      对通信 WDM 与高功率应用特别有吸引力——但需额外设计模式耦合机制进行激发。
+    preconditions:
+      - "微腔在泵浦波长处为正常 GVD"
+      - "存在空间模式交叉或偏振模式耦合提供调制不稳定种子"
+    source_claim: >
+      "Under suitable conditions, dark or bright pulses can be excited with low noise,
+      which can be interpreted as the interlocked switching waves... termed a
+      'platicon', can be assisted by mode coupling that gives rise to an intracavity
+      modulational instability. Such normal-GVD combs offer a number of advantages
+      over soliton-mode-locked combs including higher conversion efficiency."
+
+  - id: pri.soliton_crystal_multistability
+    name: "孤子晶体多稳态原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      在适当的模式交叉扰动存在时，多个腔内孤子之间的相互作用可稳定于角度等间距的
+      周期性排列——"孤子晶体"。不同填充数（N = 孤子数/可用格点数）对应不同稳态，
+      梳谱呈现强 FSR 倍频调制；该态可由 (热/功率/频率) 扫描确定性进入。
+    domain: "微谐振腔非线性动力学"
+    key_insight: >
+      孤子晶体提供一种确定性访问 N-孤子态的工程路径，规避了单孤子态激发时的
+      随机性问题，同时提升泵-梳转换效率（∝ N）。
+    preconditions:
+      - "腔内存在可控的模式交叉相位扰动"
+      - "孤子间通过色散波尾或声学/热效应相互锁定"
+    source_claim: >
+      "the system can show rich and complex nonlinear behaviour, including...
+      soliton crystals and breather instabilities."
+
+  - id: pri.raman_limits_min_fsr_microcomb
+    name: "拉曼散射限制微梳最小 FSR 原理"
+    tier: domain
+    verification_status: calculated
+    statement: >
+      当拉曼线宽 Γ_R 窄于梳间距时，拉曼受激散射（即拉曼激光）与 Kerr 参量增益竞争；
+      若 Raman 增益 g_R 高于 Kerr 增益 g_K = 2γ，则 Kerr 梳/DKS 形成被破坏。
+      唯一规避方式是加大 FSR 使拉曼增益峰落在两相邻腔模之间，
+      对应条件 FSR > (Γ_R/2π)·√(g_R/g_K − 1)。
+      对金刚石 1.56 μm：g_R = 6 cm/GW, g_K = 0.2 cm/GW → 最小 FSR ≈ 454 GHz；
+      对 CaF2（g_K/g_R ≈ 1）则无此限制。
+    domain: "微谐振腔非线性动力学，拉曼物理"
+    formula: "FSR > (Γ_R/2π)·√(g_R/g_K − 1)"
+    key_insight: >
+      该原理为晶体平台（金刚石、LiNbO3 等 g_R 显著大于 g_K 的材料）的微梳设计
+      设定了最小 FSR 下限——从而限制了能电子检测的梳间距的可达性。
+    preconditions:
+      - "拉曼线宽 Γ_R 窄于目标梳间距"
+      - "g_R > g_K"
+    invalidated_when:
+      - "材料 g_K ≥ g_R（如 CaF2）"
+      - "拉曼线宽宽于孤子带宽（→ 仅导致红移孤子而非破坏）"
+    source_claim: >
+      "FSR > (Γ_R/2π)(g_R/g_K − 1)^{1/2}... in diamond at 1,560 nm, g_R = 6 cm GW⁻¹
+      and g_K = 0.2 cm GW⁻¹, which indicates that soliton-mode-locked combs are only
+      possible with an FSR > 454 GHz."
+
+  - id: pri.chip_comb_platform_tradeoff_space
+    name: "芯片梳平台四维权衡空间原理"
+    tier: meta
+    verification_status: inferred
+    statement: >
+      芯片梳平台选型受四类主要属性的互相冲突制约：
+      (i) 集成度 / CMOS 兼容性（Si3N4、Hydex ≫ Diamond、AlGaAs）；
+      (ii) 腔品质因数 Q（Silica microwedge >8.75×10⁸ > Si3N4 >3.7×10⁷ > AlGaAs/Diamond）；
+      (iii) 非线性强度与工作波长（AlGaAs, Ge, SiGe 带来极高 γ 但中红外或高损耗；
+            Si3N4 综合最佳近红外；Si 利于中红外但双光子吸收限制近红外）；
+      (iv) 是否具有 χ(2) 以便片上 f–2f 与电光调谐（AlN、LiNbO3、GaP、AlGaAs 是；
+            Si3N4 本征无但可通过应力/光电迁移诱导有效 χ(2)）。
+      任何单一平台均无法同时最大化四维，因此"最佳平台"严格依赖应用。
+    domain: "集成光子学工程"
+    key_insight: >
+      本原理解释了为何芯片梳领域不收敛至单一材料——Si3N4 主导集成与 CMOS 路线；
+      Silica microwedge 主导极高 Q 与低阈值；AlN/LiNbO3 主导片上自参考；
+      Si/SiGe/Ge 主导中红外；AlGaAs 主导超低泵浦功率演示。
+    source_claim: >
+      "Critical properties of these chip-based materials are the strong nonlinearity
+      and the high refractive index contrast between the core waveguide and the
+      cladding layer... The last column in Table 1 indicates whether the bulk material
+      possesses intrinsic χ(2)."
+    open_questions:
+      - "异构集成（如 LiNbO3-on-insulator + Si3N4 bus）能否同时兼顾高 Q、CMOS 与 χ(2)"
+      - "AlGaAs 平台 Q 能否提升到与 Si3N4 相当（当前仍低 1–2 量级）"
+
+methods:
+  - id: meth.chip_scg_comb_generation_g19
+    name: "芯片波导超连续谱梳生成方法（框架版本）"
+    status: demonstrated
+    applies_to: ent.chip_scg_waveguide_g19
+    steps_summary: >
+      (1) 选择具有合适透明窗口与 n₂ 的平台（近红外：Si3N4 / Hydex / Si3N4-rich；
+      中红外：Si / SiGe / 硫系 / Ge）；
+      (2) 通过波导宽/高扫描数值优化 GVD，设计目标色散波位置（f–2f 需覆盖红蓝两端）；
+      (3) 注入 <100 fs 飞秒脉冲、soliton number N<10，保证相干性由 SPM 主导而非 MI；
+      (4) 在切割端面或倒锥形耦合处接收倍频程输出；
+      (5) 送入 f–2f 或 f–3f 干涉仪检测 CEO，必要时借助平台本征 χ(2)（AlN、LiNbO3、
+      应力诱导 Si3N4）省去额外倍频晶体。
+    required_hardware:
+      - ent.chip_scg_waveguide_g19
+      - "飞秒锁模激光器（可为 Er/Yb 光纤锁模 + 功率放大）"
+    advantages:
+      - "芯片化、可批量制造、形态 <1 cm³"
+      - "可通过波导几何精确定位色散波与目标谱位"
+      - "部分平台可片上实现 f–2f（AlN/LiNbO3/应力 Si3N4）"
+    disadvantages:
+      - "仍依赖外部锁模飞秒泵浦（片上电泵锁模激光器尚未成熟）"
+      - "相干窗口要求 N_soliton<10，限制了脉冲能量可用范围"
+    conditions:
+      - "输入脉冲 CEO 相干"
+      - "波导损耗低于非线性积累所需阈值"
+    source_claim: >
+      "to produce coherent spectra it is necessary to operate in the regime in which
+      coherence of the initial mode-locked ultrashort pulse train is preserved and
+      self-phase modulation is the dominant mechanism that produces the initial
+      broadening rather than through the growth of spectral components from noise
+      via parametric FWM gain."
+
+metrics:
+  - id: met.platform_q_factor_g19
+    name: "芯片微腔品质因数 Q（平台对比）"
+    unit: "无量纲"
+    description: >
+      微谐振腔的固有品质因数，决定参量振荡阈值功率 P_th ∝ 1/Q²；
+      本综述汇总芯片平台典型 Q 范围作为平台选型的关键工程指标。
+    is_interface_metric: true
+    coupling_formula: "P_th ∝ V / (Q²·n₂)"
+    demonstrated_value:
+      value: "Silica microwedge >8.75×10⁸；Si3N4 >3.7×10⁷（最高）及 >10⁷（典型）"
+      conditions: "1.55 μm 带；本征 Q（非负载 Q）；室温"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "BRKZG9H2", claim: "ultra-high microresonator Q (>875 million) [silica]; Q > 37 million [Si3N4]"}
+    theoretical_floor:
+      value: "受限于材料吸收与散射损耗；Si3N4 近红外 α ≈ 几 dB/m 量级"
+      basis: "表面粗糙度散射 + 体材料吸收"
+      gap_note: "Damascene reflow 工艺已将 Si3N4 表面粗糙度降至亚埃级"
+
+  - id: met.microcomb_pump_threshold_g19
+    name: "微梳泵浦阈值功率"
+    unit: "mW"
+    description: >
+      激发参量振荡/单孤子态所需的最低泵浦光功率。反映了 Q、模体积、非线性指数
+      三者的综合品质。
+    is_interface_metric: true
+    coupling_formula: "P_th ∝ V_mode / (n₂ · Q_load²)"
+    demonstrated_value:
+      value: "亚毫瓦级（Si3N4 低损耗腔）至数十毫瓦级（倍频程谱）"
+      conditions: "1.55 μm 泵浦；CW 单频激光；室温"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "BRKZG9H2", claim: "sub-milliwatt parametric oscillation threshold... very low threshold power for soliton generation"}
+
+  - id: met.microcomb_conversion_efficiency_g19
+    name: "微梳泵-梳功率转换效率"
+    unit: "%"
+    description: >
+      梳（不含泵浦线）输出功率与入射泵浦功率之比，是通信/WDM 等应用的关键效率指标。
+    is_interface_metric: false
+    demonstrated_value:
+      value: "单孤子态典型 1–3%（∝ 孤子数 N）；正常 GVD 暗脉冲/platicon 显著更高"
+      conditions: "Si3N4 / Silica DKS，1.55 μm 泵浦"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "BRKZG9H2", claim: "In the single-soliton state, the ratio of the power in the comb to the input pump power is typically 1–3%."}
+
+  - id: met.chip_scg_octave_span_g19
+    name: "芯片 SCG 倍频程谱宽"
+    unit: "倍频程 / THz"
+    description: >
+      芯片 SCG 输出光谱覆盖宽度；达到倍频程以上是 f–2f 自参考的硬性前提。
+    is_interface_metric: false
+    demonstrated_value:
+      value: "Si3N4 > 495 THz (on-chip)；Si 纳米线 1.06–2.4 μm（倍频程，16 pJ/pulse @ 2.29 μm）；硅-蓝宝石 1.9–6 μm"
+      conditions: "飞秒锁模泵浦；波导长度 ≤5 cm；色散工程优化"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "BRKZG9H2", claim: "spectra with bandwidths as high as 495 THz... octave-spanning mid-infrared frequency comb generated in a silicon nanophotonic wire waveguide"}
+
+  - id: met.chip_comb_system_power_g19
+    name: "集成芯片梳系统电功耗"
+    unit: "mW"
+    description: >
+      完整集成梳源（含泵浦激光、锁定电子学、温控）的总电功耗，衡量便携/电池供电可行性。
+    is_interface_metric: false
+    demonstrated_value:
+      value: "<100 mW（RSOA + Si3N4 微梳 + 电池供电演示）"
+      conditions: "边缘耦合 RSOA 集成泵源；AAA 电池供电；室温；基于 Si3N4 微腔"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "BRKZG9H2", claim: "an integrated comb generator that draws less than 100 mW of electrical power and can be operated with an AAA battery"}
+
+relations:
+  - id: rel.G19_01
+    subject: ent.chip_scg_waveguide_g19
+    predicate: ENABLED-BY
+    object: pri.chip_dispersion_engineering_high_index_contrast
+    confidence: established
+    source: {zotero_key: "BRKZG9H2", claim: "this dispersion engineering allows for the pulses to undergo significant self-phase modulation before undergoing dispersive broadening and enhancing various FWM processes and DW generation"}
+    temporal_role: extends
+    note: null
+
+  - id: rel.G19_02
+    subject: ent.chip_scg_waveguide_g19
+    predicate: ENABLED-BY
+    object: pri.supercontinuum_octave_spanning
+    confidence: established
+    source: {zotero_key: "BRKZG9H2", claim: "The demonstration that pulses from a mode-locked oscillator could be spectrally broadened to beyond an octave of bandwidth using photonic crystal fibre represented a revolution in OFCs"}
+    conditions: "N_soliton<10 且 SPM 主导相干区"
+    note: "pri.supercontinuum_octave_spanning 定义于 diddams2000.yaml"
+
+  - id: rel.G19_03
+    subject: ent.chip_scg_waveguide_g19
+    predicate: OPERATIONALIZED-AS
+    object: meth.chip_scg_comb_generation_g19
+    confidence: established
+    source: {zotero_key: "BRKZG9H2", claim: "chip-based platforms offer several key features for performing SCG and KCG compared with fibre-based platforms"}
+    temporal_role: proposes
+
+  - id: rel.G19_04
+    subject: ent.chip_scg_waveguide_g19
+    predicate: CHARACTERIZED-BY
+    object: met.chip_scg_octave_span_g19
+    confidence: established
+    source: {zotero_key: "BRKZG9H2", claim: "octave-spanning mid-infrared supercontinuum spectra could be generated that produced coherent beat notes in an f–2f interferometer"}
+
+  - id: rel.G19_05
+    subject: meth.chip_scg_comb_generation_g19
+    predicate: ENABLED-BY
+    object: pri.dispersive_wave_cherenkov_radiation
+    confidence: established
+    source: {zotero_key: "BRKZG9H2", claim: "Dispersive wave generation... can be tuned via dispersion engineering and can be applied to enhance either the long- or short-wavelength side, and is essential, for example, for f–2f interferometry to stabilize the comb"}
+
+  - id: rel.G19_06
+    subject: pri.dispersive_wave_cherenkov_radiation
+    predicate: DERIVED-FROM
+    object: pri.chip_dispersion_engineering_high_index_contrast
+    confidence: established
+    source: {zotero_key: "BRKZG9H2", claim: "the location of the peaks of the DWs are nearly given by frequencies corresponding to the zeros of the dispersion function D(δ)"}
+
+  - id: rel.G19_07
+    subject: ent.microresonator_frequency_comb
+    predicate: ENABLED-BY
+    object: pri.chip_dispersion_engineering_high_index_contrast
+    confidence: established
+    source: {zotero_key: "BRKZG9H2", claim: "tight confinement allows for dispersion engineering that offers control of the interaction to enhance and/or tailor the comb spectrum"}
+    note: "ent.microresonator_frequency_comb 定义于 kippenberg2011.yaml"
+
+  - id: rel.G19_08
+    subject: ent.microresonator_frequency_comb
+    predicate: CHARACTERIZED-BY
+    object: pri.microcomb_formation_regime_taxonomy_g19
+    confidence: established
+    source: {zotero_key: "BRKZG9H2", claim: "the system can show rich and complex nonlinear behaviour, including bistability, chaos, single- and multiple-soliton formation, soliton crystals and breather instabilities"}
+    temporal_role: extends
+    note: "本综述对微梳形成态的系统分类"
+
+  - id: rel.G19_09
+    subject: pri.microcomb_formation_regime_taxonomy_g19
+    predicate: DERIVED-FROM
+    object: pri.lugiato_lefever_equation
+    confidence: established
+    source: {zotero_key: "BRKZG9H2", claim: "The dynamics of comb generation in microresonators is well described by the Lugiato–Lefever equation in which higher-order GVD terms and stimulated Raman scattering are included"}
+    note: "pri.lugiato_lefever_equation 定义于 kippenberg2018.yaml"
+
+  - id: rel.G19_10
+    subject: pri.dark_pulse_normal_dispersion_comb
+    predicate: COMPETES-WITH
+    object: pri.dissipative_kerr_soliton
+    confidence: established
+    source: {zotero_key: "BRKZG9H2", claim: "Such normal-GVD combs offer a number of advantages over soliton-mode-locked combs including higher conversion efficiency from the pump to the comb and flatter comb spectra"}
+    conditions: "分别适用正常/反常 GVD 区域；相互替代的梳形成路径"
+    note: "pri.dissipative_kerr_soliton 定义于 kippenberg2018.yaml"
+
+  - id: rel.G19_11
+    subject: pri.soliton_crystal_multistability
+    predicate: DERIVED-FROM
+    object: pri.dissipative_kerr_soliton
+    confidence: established
+    source: {zotero_key: "BRKZG9H2", claim: "single- and multiple-soliton formation, soliton crystals and breather instabilities"}
+
+  - id: rel.G19_12
+    subject: ent.microresonator_frequency_comb
+    predicate: BOUNDED-BY
+    object: pri.raman_limits_min_fsr_microcomb
+    confidence: established
+    source: {zotero_key: "BRKZG9H2", claim: "Raman oscillation (that is, lasing) can compete with and disrupt comb formation and cavity-soliton formation. This can be overcome by suppressing the Raman gain by operating with a sufficiently large FSR"}
+    conditions: "晶体平台 g_R ≫ g_K（如 diamond、部分 LiNbO3）"
+    temporal_role: extends
+    breakthrough_paths:
+      - direction: pri.microresonator_anomalous_dispersion
+        expected_gain: "采用 g_K ≥ g_R 的平台（Si3N4、SiO2、CaF2）绕开该限制"
+        status: demonstrated
+        source: {zotero_key: "BRKZG9H2", claim: "If gK ≥ gR, then pure KCG is always possible for any FSR, as is the case for CaF2"}
+        note: "平台选型层面的突破路径，而非物理突破"
+      - direction: pri.chip_dispersion_engineering_high_index_contrast
+        expected_gain: "通过色散工程将 FSR 提升到 Raman 增益峰之间（如金刚石 FSR>454 GHz）"
+        status: demonstrated
+        source: {zotero_key: "BRKZG9H2", claim: "operating with a sufficiently large FSR such that the Raman gain peak is located between two microresonator modes"}
+
+  - id: rel.G19_13
+    subject: ent.microresonator_frequency_comb
+    predicate: BOUNDED-BY
+    object: pri.chip_comb_platform_tradeoff_space
+    confidence: provisional
+    source: {zotero_key: "BRKZG9H2", claim: "Table 1 shows a summary of the linear and nonlinear properties of various platforms... whether KCG or SCG has been observed"}
+    breakthrough_paths:
+      - direction: meth.cw_pumped_microcomb_generation
+        expected_gain: "在同一平台上通过异构集成（如 LiNbO3 键合 Si3N4）兼顾 χ(2)、高 Q 与 CMOS 兼容"
+        status: proposed
+        source: {zotero_key: "BRKZG9H2", claim: "we foresee wide adoption of these chip-comb technologies across a broad range of environments"}
+        note: "综述列为未来展望方向"
+      - direction: pri.chip_dispersion_engineering_high_index_contrast
+        expected_gain: "通过 Damascene reflow + 亚埃级表面粗糙度使 Si3N4 Q>37M，同时保持色散工程自由度"
+        status: demonstrated
+        source: {zotero_key: "BRKZG9H2", claim: "Damascene process that allows for large waveguide sizes and ultrasmooth preform reflow to produce high Q"}
+
+  - id: rel.G19_14
+    subject: ent.microresonator_frequency_comb
+    predicate: CHARACTERIZED-BY
+    object: met.platform_q_factor_g19
+    confidence: established
+    source: {zotero_key: "BRKZG9H2", claim: "the highest quality (Q) factors (>10 million) demonstrated in a non-silica-based chip platform"}
+
+  - id: rel.G19_15
+    subject: met.platform_q_factor_g19
+    predicate: OPERATIONALIZED-AS
+    object: meth.cw_pumped_microcomb_generation
+    confidence: established
+    source: {zotero_key: "BRKZG9H2", claim: "low threshold power for soliton generation"}
+    note: "meth.cw_pumped_microcomb_generation 定义于 kippenberg2018.yaml"
+
+  - id: rel.G19_16
+    subject: ent.microresonator_frequency_comb
+    predicate: CHARACTERIZED-BY
+    object: met.microcomb_pump_threshold_g19
+    confidence: established
+    source: {zotero_key: "BRKZG9H2", claim: "sub-milliwatt parametric oscillation threshold"}
+
+  - id: rel.G19_17
+    subject: ent.microresonator_frequency_comb
+    predicate: CHARACTERIZED-BY
+    object: met.microcomb_conversion_efficiency_g19
+    confidence: established
+    source: {zotero_key: "BRKZG9H2", claim: "the ratio of the power in the comb to the input pump power is typically 1–3%"}
+
+  - id: rel.G19_18
+    subject: met.microcomb_conversion_efficiency_g19
+    predicate: BOUNDED-BY
+    object: pri.dissipative_kerr_soliton
+    confidence: established
+    source: {zotero_key: "BRKZG9H2", claim: "the single-soliton state, the ratio of the power in the comb to the input pump power is typically 1–3%. This efficiency can be increased roughly linearly with the number of cavity solitons"}
+    breakthrough_paths:
+      - direction: pri.dark_pulse_normal_dispersion_comb
+        expected_gain: "正常 GVD 暗脉冲/platicon 提供显著更高的转换效率"
+        status: demonstrated
+        source: {zotero_key: "BRKZG9H2", claim: "normal-GVD combs offer a number of advantages over soliton-mode-locked combs including higher conversion efficiency from the pump to the comb"}
+      - direction: pri.soliton_crystal_multistability
+        expected_gain: "多孤子/孤子晶体态效率 ∝ N"
+        status: demonstrated
+        source: {zotero_key: "BRKZG9H2", claim: "This efficiency can be increased roughly linearly with the number of cavity solitons"}
+
+  - id: rel.G19_19
+    subject: ent.si3n4_integrated_comb
+    predicate: PART-OF
+    object: ent.chip_comb_platform_taxonomy_g19
+    confidence: established
+    source: {zotero_key: "BRKZG9H2", claim: "silicon nitride has proven to be an exceptional platform for generating microresonator combs due to its relatively high index contrast and nonlinearity and the highest quality (Q) factors (>10 million) demonstrated in a non-silica-based chip platform"}
+    note: "ent.si3n4_integrated_comb 定义于 kippenberg2011.yaml"
+
+  - id: rel.G19_20
+    subject: meth.microcomb_self_referencing
+    predicate: CONDITIONED-BY
+    object: ent.chip_comb_platform_taxonomy_g19
+    confidence: provisional
+    source: {zotero_key: "BRKZG9H2", claim: "materials such as aluminium nitride and lithium niobate are promising for SCG since they possess χ(2) nonlinearities that allow for f–2f interferometry within the same waveguide"}
+    conditions: "需要平台本征或诱导 χ(2)，否则需外置倍频晶体"
+    note: "meth.microcomb_self_referencing 定义于 kippenberg2018.yaml"
+
+  - id: rel.G19_21
+    subject: meth.chip_scg_comb_generation_g19
+    predicate: CONDITIONED-BY
+    object: ent.chip_comb_platform_taxonomy_g19
+    confidence: established
+    source: {zotero_key: "BRKZG9H2", claim: "Critical properties of these chip-based materials are the strong nonlinearity and the high refractive index contrast"}
+    note: "SCG 路径的平台选择约束：近红外 Si3N4/Hydex；中红外 Si/SiGe/硫系；Si 在 1.55 μm 受双光子吸收限制"
+
+  - id: rel.G19_22
+    subject: ent.chip_scg_waveguide_g19
+    predicate: COMPETES-WITH
+    object: ent.microresonator_frequency_comb
+    confidence: established
+    source: {zotero_key: "BRKZG9H2", claim: "two of the most remarkable examples that can produce such broad spectra are the processes of supercontinuum generation (SCG) in optical waveguides and Kerr-comb generation (KCG) in microresonators"}
+    conditions: "SCG 路径需外部飞秒泵浦但梳齿间距由 f_rep 设定；KCG 路径用 CW 泵浦但梳间距 = FSR 受腔尺寸约束"
+    note: "两条互补而非互斥的芯片梳路径"
+
+  - id: rel.G19_23
+    subject: ent.chip_scg_waveguide_g19
+    predicate: CHARACTERIZED-BY
+    object: met.chip_comb_system_power_g19
+    confidence: established
+    source: {zotero_key: "BRKZG9H2", claim: "an integrated comb generator that draws less than 100 mW of electrical power and can be operated with an AAA battery"}
+    note: "系统级功耗指标同时约束 SCG 与 KCG 集成路线"
+
+  - id: rel.G19_24
+    subject: pri.microcomb_formation_regime_taxonomy_g19
+    predicate: CONDITIONED-BY
+    object: ent.chip_comb_platform_taxonomy_g19
+    confidence: provisional
+    source: {zotero_key: "BRKZG9H2", claim: "KCG has been demonstrated in many different chip-based platforms and exhibits universal behaviour"}
+    note: "形成态分类在跨平台普适，但各平台可达的状态子集受 Q、色散、χ(2) 约束"

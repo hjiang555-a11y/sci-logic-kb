@@ -1,0 +1,369 @@
+# Suh 2019 — 首次将微谐振腔孤子微梳用作天文光谱仪校准源（Keck II/NIRSPEC）[里程碑技术论文]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical — 天文光梳（astrocomb）方向的首次微腔实施
+#   核心贡献：
+#     (1) 首次将 DKS 孤子微梳（22.1 GHz 线距，1550 nm 附近）搬上 10 m 级望远镜（Keck II）
+#         并直接对天文近红外光谱仪 NIRSPEC 进行校准；
+#     (2) 利用微腔 FSR 原生 22.1 GHz 与天文光谱仪分辨率天然匹配，
+#         **无需外加 Fabry-Pérot 模式过滤**即达到可分辨梳线——区别于 Ti:Sa/EO 类传统 astrocomb；
+#     (3) 方案整体简化（CW 泵浦 + 芯片微腔 + HCN 锁定 + Rb 钟），
+#         达到 ≤5 m/s 的定标不确定度（受 f0 锁定的 ~1 MHz 主导，等效 ~1 m/s RV）。
+#   注：本论文实际工作在 **近红外 ~1550 nm**（NIRSPEC, echelle orders 44-51, 1471–1620 nm），
+#       并非可见光/HIRES/SHG。任务指示中的 "620–690 nm via SHG / HIRES" 与实际 PDF 内容不符，
+#       本文件按论文实际内容提取；SHG 到可见的微梳 astrocomb 方案是后续工作（如 Obrzud 2019）。
+#   Framework 依赖：
+#     ent.microresonator_frequency_comb（权威定义：kippenberg2018 / yi2016）
+#     ent.silica_microtoroid_comb / ent.silica_wedge_microresonator（权威定义：yi2016）
+#     pri.dissipative_kerr_soliton（权威定义：herr2014 / yi2016）
+#     meth.laser_tuning_soliton_access（权威定义：herr2014 / yi2016）
+
+meta:
+  zotero_key: "BYUPFGJY"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical
+  reliability: high
+  title: "Searching for exoplanets using a microresonator astrocomb"
+  year: 2019
+  first_author: Suh
+  journal: "Nature Photonics"
+  volume: 13
+  pages: "25-30"
+  doi: "10.1038/s41566-018-0312-3"
+  temporal_role: proposes
+  verification_status: observed
+  note: >
+    Caltech Vahala 组 + NIST/JILA Papp/Diddams + JPL + UCLA + Keck Observatory 合作。
+    3 mm 直径硅基二氧化硅（silica wedge）微腔，Q≈3×10^8，CW 光纤激光泵浦产生单孤子态，
+    孤子脉宽 145 fs，重频 22.1 GHz。offset 通过与锁定在 H¹³C¹⁴N (HCN) P(16) 线的参考激光拍频确定，
+    frep 通过 AOM 锁定。输出经非线性展宽覆盖 NIRSPEC 八个 echelle 级（1471–1620 nm），
+    2017-09-10 UTC 在 Keck II 上与传统 EO astrocomb 交替校准，作用于 51 Peg、HD 187123。
+    梳线质心在 30 min 内的 1-σ 稳定度 ~2 m/s，整体定标不确定度 ≤5 m/s。
+
+# ═══════════════════════════════════════════════
+#  NODES
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.microresonator_astrocomb_s19
+    name: "微谐振腔天文光梳系统（Suh 2019 @ Keck II/NIRSPEC）"
+    aliases: ["soliton microcomb astrocomb", "Vahala-Papp-Keck microcomb astrocomb"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      以 silica-wedge 微腔 DKS 单孤子为源头的天文光谱仪校准梳，输出经非线性光纤展宽后
+      以单模光纤输送至 Keck II / NIRSPEC 的积分球定标端口。系统原生输出 22.1 GHz 梳线
+      间距，与 NIRSPEC 分辨率相匹配，无需 Fabry-Pérot 模式滤波即可被仪器分辨。
+      梳的绝对频率由 frep 锁定 + f0（通过与 HCN-锁定参考激光拍频检测）共同确定，
+      Rb 钟作为射频参考。
+    key_parameters:
+      host_telescope: "W.M. Keck Observatory, Keck II (10 m)"
+      spectrograph: "NIRSPEC（近红外 echelle，orders 44–51）"
+      mode_spacing: "22.1 GHz（原生 FSR，无需滤波）"
+      spectral_coverage: "1471–1620 nm（覆盖 NIRSPEC 八级光栅；泵浦 1550 nm 附近）"
+      soliton_pulse_width: "145 fs（sech² 拟合）"
+      microresonator_diameter: "3 mm"
+      microresonator_Q: "≈3×10^8（unloaded）"
+      frequency_reference: "HCN (H¹³C¹⁴N) P(16) 锁定参考激光 + Rb 钟"
+      calibration_uncertainty: "≤5 m/s（整体定标）"
+      offset_precision: "<1 MHz std（20 s 积分），等效 ~1 m/s RV"
+    interface_requirements:
+      pump_laser: "CW 光纤激光，AOM 功率/频率伺服"
+      rf_reference: "Rb 原子钟"
+      optical_reference: "HCN P(16) 锁定参考激光"
+      delivery: "单模光纤 → NIRSPEC 积分球定标端口"
+    note: "Level 2 实例节点，PART-OF ent.microresonator_frequency_comb（权威定义 yi2016.yaml）"
+
+  - id: ent.silica_wedge_microresonator_s19
+    name: "3 mm 硅基二氧化硅 wedge 微腔（Suh 2019）"
+    hierarchy_level: 3
+    status: demonstrated
+    function: >
+      硅晶圆上加工的 silica wedge 微盘谐振腔，直径 3 mm，对应 FSR ≈ 22.1 GHz，
+      unloaded Q≈3×10^8，支持 1550 nm 附近连续波泵浦下的单孤子 DKS 态。
+    key_parameters:
+      diameter: "3 mm"
+      FSR: "22.1 GHz"
+      Q_unloaded: "3×10^8"
+      material_platform: "silica wedge on silicon"
+    note: "PART-OF ent.microresonator_astrocomb_s19；跨文件引用 ent.silica_microtoroid_comb / silica wedge 类（权威定义 yi2016.yaml）"
+
+  - id: ent.nonlinear_broadening_stage_s19
+    name: "孤子梳非线性展宽级（Suh 2019）"
+    hierarchy_level: 3
+    status: demonstrated
+    function: >
+      将微腔输出孤子梳（~1550 nm 附近、数十 nm 带宽）经高非线性光纤展宽到覆盖
+      NIRSPEC echelle 1471–1620 nm 的 8 个级次，保留 22.1 GHz 梳齿结构。
+    key_parameters:
+      input_center: "~1550 nm"
+      output_coverage: "1471–1620 nm"
+    note: "PART-OF ent.microresonator_astrocomb_s19；任务原始指示中的 SHG-to-visible 级在本论文中并不存在。"
+
+  - id: ent.hcn_reference_laser_s19
+    name: "HCN-锁定参考激光（f0 检测锚点）"
+    hierarchy_level: 3
+    status: demonstrated
+    function: >
+      参考激光锁至 H¹³C¹⁴N 分子 P(16) 吸收线，作为绝对光学频率锚点，
+      与微梳相邻梳齿拍频测定 f0，1 MHz 级不确定度。
+    note: "PART-OF ent.microresonator_astrocomb_s19"
+
+principles:
+  - id: pri.native_mode_spacing_matching
+    name: "微梳 FSR 与天文光谱仪分辨率原生匹配原理"
+    tier: domain
+    statement: >
+      当光学频率梳的线间距 Δν_rep 大于天文 echelle 光谱仪的分辨率线宽 Δν_res 时，
+      仪器可直接分辨每根梳齿，无需外部 Fabry-Pérot 模式过滤级。
+      微谐振腔由于其 mm 级几何尺度天然具有 10–30 GHz 量级 FSR，
+      使得 Δν_rep (≈22 GHz) > Δν_res (NIR echelle 典型 ~几 GHz)，从而满足该条件。
+    conditions:
+      - "梳线间距 > 光谱仪分辨率线宽"
+      - "梳包络稳定可重复（soliton mode-locking 保证）"
+    preconditions:
+      - "微腔处于单 DKS 孤子态（envelope 稳定）"
+      - "frep 与 f0 均有独立锁定"
+    invalidated_when:
+      - "目标光谱仪分辨率提高到接近或超过 FSR 时（则梳齿变得不可分辨，需要更大 FSR 微腔）"
+    note: "该原理是 microcomb astrocomb 相对于 Ti:Sa/Er 飞秒梳 astrocomb 的核心优势。"
+
+  - id: pri.microcomb_to_astrocomb_adaptation
+    name: "微谐振孤子梳适配为天文光梳的系统原理"
+    tier: domain
+    statement: >
+      基于 DKS 的微谐振腔梳经以下三要素适配即可作为天文光谱仪定标源：
+      (i) frep 的射频锁定（受 Rb/Cs 钟约束）；
+      (ii) f0 的光学锚定（通过与原子/分子线锁定参考激光拍频确定，无需 f-2f 自参考）；
+      (iii) 非线性展宽至覆盖目标 echelle 多级次。
+    conditions:
+      - "存在稳定 CW 泵浦与 AOM 快速伺服"
+      - "存在分子/原子线锁定的光学参考激光"
+    preconditions:
+      - "微腔已进入并保持单孤子态（meth.laser_tuning_soliton_access）"
+    note: >
+      f0 锚定通过 HCN 参考激光而非 f-2f 自参考，是与 diddams2000 类传统梳的关键差别，
+      降低了对八度谱与高峰值功率的硬件门槛。
+
+  - id: pri.microcomb_rv_calibration_limit
+    name: "微梳 astrocomb 径向速度定标不确定度极限"
+    tier: domain
+    statement: >
+      微梳作为 astrocomb 时，最终 RV 定标不确定度由 f0 锁定精度、frep 锁定精度、
+      以及梳齿在光谱仪上的质心提取精度共同决定；在 Suh 2019 条件下 f0 抖动 ~1 MHz
+      成为主导项，对应 ~1 m/s RV 等效，而整体定标 ≤5 m/s。
+    conditions:
+      - "Rb 钟参考，20 s 积分"
+      - "HCN 锁定参考激光 <1 MHz"
+    note: "可通过更稳定的光学参考（光钟/光纤网链路）降低 f0 项。"
+
+methods: []
+
+metrics:
+  - id: met.mode_spacing_s19
+    name: "微梳原生线间距"
+    unit: GHz
+    demonstrated_value: 22.1
+    conditions: "3 mm silica wedge 微腔 FSR"
+    note: "原生可被 NIRSPEC 分辨，无需 FP 滤波。"
+
+  - id: met.spectral_coverage_s19
+    name: "NIRSPEC 可用谱覆盖"
+    unit: nm
+    demonstrated_value: "1471–1620"
+    conditions: "孤子梳经非线性光纤展宽后，覆盖 NIRSPEC echelle orders 44–51"
+
+  - id: met.rv_calibration_uncertainty_s19
+    name: "Keck II/NIRSPEC 定标不确定度"
+    unit: "m/s"
+    demonstrated_value: "≤5"
+    conditions: "2017-09-10 UTC，望远镜静态指向，soliton + EO comb 交替"
+    note: "梳齿质心 30 min 1-σ 重复性约 2 m/s；f0 项等效 ~1 m/s。"
+
+  - id: met.f0_imprecision_s19
+    name: "f0 锁定不精确度"
+    unit: MHz
+    demonstrated_value: "<1 (1-σ, 20 s)"
+    conditions: "HCN P(16) 锁定参考激光拍频，Rb 钟计数"
+
+  - id: met.microresonator_Q_s19
+    name: "微腔无载 Q 值"
+    demonstrated_value: "≈3×10^8"
+    conditions: "3 mm silica wedge 微腔"
+
+# ═══════════════════════════════════════════════
+#  RELATIONS
+# ═══════════════════════════════════════════════
+
+relations:
+  - id: rel.S01
+    subject: ent.microresonator_astrocomb_s19
+    predicate: PART-OF
+    object: ent.microresonator_frequency_comb
+    source:
+      claim: "Fig. 2; 方法节 'Soliton generation uses a silica microresonator fabricated on a silicon wafer.'"
+    note: "跨文件引用：ent.microresonator_frequency_comb 权威定义于 yi2016.yaml。"
+
+  - id: rel.S02
+    subject: ent.silica_wedge_microresonator_s19
+    predicate: PART-OF
+    object: ent.microresonator_astrocomb_s19
+    source:
+      claim: "方法节：3 mm 直径硅基 silica 微腔为孤子源。"
+
+  - id: rel.S03
+    subject: ent.nonlinear_broadening_stage_s19
+    predicate: PART-OF
+    object: ent.microresonator_astrocomb_s19
+    source:
+      claim: "'the soliton microcomb is spectrally broadened and sent to the integrating sphere of NIRSPEC'"
+
+  - id: rel.S04
+    subject: ent.hcn_reference_laser_s19
+    predicate: PART-OF
+    object: ent.microresonator_astrocomb_s19
+    source:
+      claim: "'reference laser, which is locked to a hydrogen cyanide (HCN)'"
+
+  - id: rel.S05
+    subject: ent.microresonator_astrocomb_s19
+    predicate: CHARACTERIZED-BY
+    object: met.mode_spacing_s19
+    source:
+      claim: "Fig. 2b inset: 'showing a 22.1 GHz line spacing'."
+
+  - id: rel.S06
+    subject: ent.microresonator_astrocomb_s19
+    predicate: CHARACTERIZED-BY
+    object: met.spectral_coverage_s19
+    source:
+      claim: "Fig. 3a: eight echelle orders 1,471 nm …"
+
+  - id: rel.S07
+    subject: ent.microresonator_astrocomb_s19
+    predicate: CHARACTERIZED-BY
+    object: met.rv_calibration_uncertainty_s19
+    source:
+      claim: "'the final wavelength calibration across the entire echellogram would be ≤5 m s⁻¹'"
+
+  - id: rel.S08
+    subject: ent.microresonator_astrocomb_s19
+    predicate: CHARACTERIZED-BY
+    object: met.f0_imprecision_s19
+    source:
+      claim: "'standard deviation less than 1 MHz … equivalent to about 1 m s⁻¹ of RV imprecision'"
+
+  - id: rel.S09
+    subject: ent.silica_wedge_microresonator_s19
+    predicate: CHARACTERIZED-BY
+    object: met.microresonator_Q_s19
+    source:
+      claim: "'unloaded quality factor of approximately 300 million'"
+
+  - id: rel.S10
+    subject: ent.microresonator_astrocomb_s19
+    predicate: ENABLED-BY
+    object: pri.dissipative_kerr_soliton
+    source:
+      claim: "'soliton mode-locking … ensures highly stable mode-locking and reproducible spectral envelopes'"
+    note: "跨文件引用：pri.dissipative_kerr_soliton 权威定义于 yi2016.yaml。"
+
+  - id: rel.S11
+    subject: ent.microresonator_astrocomb_s19
+    predicate: ENABLED-BY
+    object: meth.laser_tuning_soliton_access
+    source:
+      claim: "方法节：通过 AOM 控制泵浦功率/频率进入与维持单孤子态。"
+    note: "跨文件引用：meth.laser_tuning_soliton_access 权威定义于 yi2016.yaml。"
+
+  - id: rel.S12
+    subject: ent.microresonator_astrocomb_s19
+    predicate: ENABLED-BY
+    object: pri.microcomb_to_astrocomb_adaptation
+    source:
+      claim: "Fig. 1/2 整体方案：frep 射频锁 + f0 via HCN 参考激光 + 非线性展宽至 echelle 覆盖。"
+
+  - id: rel.S13
+    subject: ent.microresonator_astrocomb_s19
+    predicate: ENABLED-BY
+    object: pri.native_mode_spacing_matching
+    source:
+      claim: "'devices require additional optical or microwave filtering … until recently micro[-combs] … 22 GHz native spacing is suited for astronomical calibration'"
+
+  - id: rel.S14
+    subject: ent.microresonator_astrocomb_s19
+    predicate: BOUNDED-BY
+    object: pri.microcomb_rv_calibration_limit
+    source:
+      claim: "'the offset frequency imprecision was the principal source of instability in the comb calibration'"
+    breakthrough_paths:
+      - direction: pri.microcomb_to_astrocomb_adaptation
+        expected_gain: "若 f0 参考升级为光钟/光纤链路稳定的光学参考，可将 f0 抖动从 ~1 MHz 降至 <<1 kHz，RV 等效 <<1 mm/s。"
+        status: proposed
+        source: "Discussion: 作者指出未来可用更稳定光学参考替代 HCN。"
+      - direction: meth.laser_tuning_soliton_access
+        expected_gain: "更稳定的孤子泵浦伺服与包络稳定，降低梳线幅度扰动对质心提取的影响。"
+        status: proposed
+        source: "方法节：AOM + 服控孤子平均功率为现有手段。"
+
+  - id: rel.S15
+    subject: ent.microresonator_astrocomb_s19
+    predicate: BOUNDED-BY
+    object: pri.native_mode_spacing_matching
+    source:
+      claim: "'comb line frequency spacing that is not resolvable by astronomical spectrographs … has necessitated special spectral filters'"
+    note: >
+      此处 BOUNDED-BY 表示可用谱覆盖与线距之间的耦合限制：
+      更宽的非线性展宽需要更高峰值功率，而 22 GHz 重频下的单脉冲能量低，
+      因此当前谱覆盖受限于非线性展宽效率。
+    breakthrough_paths:
+      - direction: pri.microcomb_to_astrocomb_adaptation
+        expected_gain: "采用更高效的非线性芯片（Si3N4, AlGaAs）展宽至可见/近紫外，覆盖 HIRES/HARPS 工作带。"
+        status: proposed
+        source: "Discussion；后续文献 Obrzud 2019 / Suh-Vahala 后续工作。"
+
+  - id: rel.S16
+    subject: ent.microresonator_astrocomb_s19
+    predicate: CONDITIONED-BY
+    object: ent.hcn_reference_laser_s19
+    source:
+      claim: "'The value of f0 of a soliton comb line is measured [via] reference laser … locked to HCN'"
+
+  - id: rel.S17
+    subject: ent.microresonator_astrocomb_s19
+    predicate: COMPETES-WITH
+    object: ent.filtered_tisa_astrocomb_y12
+    source:
+      claim: "'As a cross-check, the functionality of the soliton microcomb was compared with a previously demonstrated line-referenced EO-astrocomb'; 背景讨论对比 Ti:Sa 需 FP 滤波的传统 astrocomb 路线。"
+    note: >
+      跨文件引用：ent.filtered_tisa_astrocomb_y12 定义于 ycas2012.yaml。
+      区别：Ti:Sa 梳重频 ~1 GHz，需 Fabry-Pérot 滤波至 ~20 GHz 才被天文光谱仪分辨；
+      本工作微腔原生 22.1 GHz 无需滤波。
+
+# ═══════════════════════════════════════════════
+#  QUESTIONS & CONTESTS
+# ═══════════════════════════════════════════════
+
+open_questions:
+  - id: oq.S01
+    question: "微梳 astrocomb 能否在可见光谱（HARPS/HIRES 工作带，~400–700 nm）达到 cm/s 级 RV 定标？"
+    context: "本工作在 NIR 达到 ≤5 m/s；向可见延伸需要高效 SHG 或芯片级可见光微梳产生。"
+
+  - id: oq.S02
+    question: "单孤子态长期（>1 夜）无人值守稳定运行的工程极限？"
+    context: "AOM 平均功率伺服在本工作中可维持数小时；更长时间稳定性未在文中量化。"
+
+contested_claims: []
+
+historical_landmarks:
+  first_demonstration:
+    claim: "首次将 DKS 微谐振腔梳部署在 10 m 级望远镜上对天文光谱仪进行 on-sky 定标"
+    year: 2019
+    source: "本论文 Fig. 1 / Fig. 3；Keck II 2017-09-10 UTC"
+  best_demonstration:
+    claim: "≤5 m/s 的 NIRSPEC 定标不确定度（微梳 astrocomb 路线）"
+    year: 2019
+    source: "本论文结果节"
