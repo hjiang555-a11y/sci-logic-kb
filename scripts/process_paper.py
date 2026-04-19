@@ -7,6 +7,10 @@
 2. 如果YAML文件已存在，确保有Schema版本行（v4.1），保留原有内容
 3. 如果YAML文件不存在，生成基本模板
 4. 不覆盖已有丰富内容的文件
+5. 检查PDF文件是否存在（在pdfs/目录下），如果存在则记录但不处理（后续可扩展AI处理）
+
+注意：当前版本不实际处理PDF内容，仅维护Schema一致性。
+未来扩展：添加AI模型调用从PDF提取知识。
 """
 
 import os
@@ -36,6 +40,38 @@ def load_environment():
     print(f"🎯 Task: {env['task']}")
     
     return env
+
+def check_pdf_availability(env):
+    """检查PDF文件是否可用"""
+    repo_root = Path(__file__).parent.parent
+    pdf_dir = repo_root / "pdfs"
+    
+    # 如果指定了pdf_filename，优先查找
+    if env['pdf_filename']:
+        pdf_path = pdf_dir / env['pdf_filename']
+        if pdf_path.exists():
+            print(f"✅ PDF文件存在: {pdf_path}")
+            print(f"  大小: {pdf_path.stat().st_size:,} 字节")
+            return True, str(pdf_path)
+        else:
+            print(f"⚠️  指定的PDF文件不存在: {pdf_path}")
+    
+    # 尝试基于author_year猜测PDF文件名
+    possible_names = [
+        f"{env['author_year']}.pdf",
+        f"{env['author_year'].replace('_', '-')}.pdf",
+        f"{env['author_year'].replace('_', '')}.pdf",
+    ]
+    
+    for name in possible_names:
+        pdf_path = pdf_dir / name
+        if pdf_path.exists():
+            print(f"✅ 找到PDF文件（猜测）: {pdf_path}")
+            print(f"  大小: {pdf_path.stat().st_size:,} 字节")
+            return True, str(pdf_path)
+    
+    print("⚠️  未找到PDF文件，跳过PDF处理")
+    return False, None
 
 def ensure_schema_version(file_path, task):
     """确保YAML文件有Schema版本行"""
@@ -130,6 +166,9 @@ def main():
     """主函数"""
     env = load_environment()
     
+    # 检查PDF可用性
+    pdf_available, pdf_path = check_pdf_availability(env)
+    
     # 确定输出路径
     repo_root = Path(__file__).parent.parent
     output_dir = repo_root / "topics" / env['topic'] / "papers"
@@ -179,7 +218,13 @@ def main():
     print(f"- 论文: {env['author_year']}")
     print(f"- 主题: {env['topic']}")
     print(f"- 输出: {output_path}")
+    print(f"- PDF可用: {'是' if pdf_available else '否'}")
+    if pdf_available:
+        print(f"- PDF路径: {pdf_path}")
+    
     print("\n📋 下一步: GitHub Actions将提交更改并创建PR")
+    print("💡 注意: 当前脚本仅维护Schema一致性，未实际处理PDF内容。")
+    print("     如需AI提取知识，需要扩展脚本并配置API密钥。")
 
 if __name__ == "__main__":
     main()
