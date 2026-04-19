@@ -134,7 +134,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install openai pypdf
+        run: pip install openai pypdf requests python-dotenv
 
       - name: Run Claude extraction
         env:
