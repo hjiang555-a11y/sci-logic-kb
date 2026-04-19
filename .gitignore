@@ -1,5 +1,5 @@
 # PDF files - temporary storage for processing
-# pdfs/  # 临时取消忽略以上传PDF
+pdfs/
 
 # Python cache files
 __pycache__/
