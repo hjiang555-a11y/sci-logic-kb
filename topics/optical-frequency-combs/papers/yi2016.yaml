@@ -1,0 +1,134 @@
+# Yi 2016 — 分子/原子线锁定近红外电光调制梳用于天文径向速度测量
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical
+
+meta:
+  zotero_key: "59ULFL9Y"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical
+  reliability: high
+  title: "Demonstration of a near-IR line-referenced electro-optical laser frequency comb for precision radial velocity measurements in astronomy"
+  year: 2016
+  first_author: Yi
+  journal: "Nature Communications"
+  volume: 7
+  pages: "10436"
+  doi: "10.1038/ncomms10436"
+  note: >
+    [技术论文] Caltech（Vahala 组）+ NIST + JPL + NASA Exoplanet Science。
+    以 EO 调制 CW 激光产生~10–20 GHz 间距梳（H 波段 1560 nm），中心波长锁至
+    分子/原子参考线（无需 f-2f 自参考）；成分全为商用现货；部署于 NASA IRTF 与 Keck II。
+    EOFC 是"天文梳"第二条路线：与锁模梳 + F-P 滤波（Ycas 2012）形成技术竞争。
+
+entities:
+  - id: ent.line_referenced_eo_comb_y16
+    name: "分子/原子线锁定 EO 调制天文光梳（Yi 2016）"
+    aliases: ["LR-EOFC H-band astro-comb"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      稳频 CW 激光器（1559.9 nm，锁至分子/原子参考线）通过级联相位+强度 EO 调制器
+      产生电光调制梳（EOFC），梳间距由 RF 微波源决定（可直接 10–20 GHz），
+      原生匹配天文 grating 光谱仪分辨本征，无需 F-P 滤波。
+      商用现货搭建，简单可靠；现场部署于 NASA IRTF + Keck II 10 m 望远镜做概念验证。
+    key_parameters:
+      comb_center_wavelength: "~1559.9 nm（H 波段）"
+      line_spacing: "RF 可调（10–20 GHz 量级）"
+      f_ceo: "由 CW 锁定的绝对频率 → 不需 f-2f 自参考"
+      reference: "分子/原子吸收线（如 HCN 2ν₃ 带）"
+      deployed_at: "IRTF + Keck II"
+      components: "全商用现货（COTS）"
+    note: "Level 2 实例节点；PART-OF ent.electro_optic_frequency_comb（应用层 EOFC 架构）"
+
+principles:
+  - id: pri.line_referenced_eo_comb
+    name: "分子/原子线锁定 EO 梳绝对频率溯源原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      EO 调制梳中每根齿 ν_n = ν_cw + n·f_RF。若 CW 激光锁至已知分子/原子吸收线 ν_ref（如
+      HCN、NH₃ 等）、f_RF 锁至原子钟/GPS 频标，则整个梳阵列绝对频率确定，无需 f-2f 自参考。
+    domain: "EO 梳；绝对频率合成"
+    formula: "ν_n = ν_ref + n·f_RF；不确定度由 ν_ref 和 f_RF 两项叠加决定"
+    key_insight: >
+      对于天文 RV 应用，绝对频率精度要求远低于金属原子光钟 → 线参考 EO 梳路线
+      在工程简洁性上优于 f-2f 自参考梳。
+    conditions: "CW 激光可锁至 Hz–kHz 级稳定的分子/原子线；f_RF 有高稳定源"
+    invalidated_when:
+      - "分子线选择压力/温度依赖过大"
+      - "EO 调制器带宽不足导致齿数有限"
+
+methods:
+  - id: meth.eo_comb_line_reference_rv_calibration
+    name: "线参考 EO 梳 RV 校准方法"
+    status: demonstrated
+    applies_to: ent.line_referenced_eo_comb_y16
+    steps_summary: >
+      1. 1559.9 nm CW 锁至 HCN/类似分子吸收线；
+      2. 级联 EO 相位 + 强度调制器 + 色散补偿 → 10+ GHz 齿间距 EOFC；
+      3. 通过单模光纤送入天文 grating 光谱仪共光路；
+      4. 同帧记录梳齿 + 恒星；
+      5. 拟合 RV。
+    required_hardware:
+      - ent.line_referenced_eo_comb_y16
+    advantages:
+      - "全商用组件、简单可靠"
+      - "间距匹配天文仪器，免 F-P 滤波"
+      - "无需 f-2f 自参考"
+    disadvantages:
+      - "梳覆盖带宽受 EO 调制器与非线性展宽限制"
+      - "长期绝对频率漂移受分子线稳定性限制"
+
+metrics:
+  - id: met.eo_comb_spectral_span_y16
+    name: "EO 天文梳光谱覆盖（Yi 2016）"
+    unit: "nm"
+    demonstrated_value:
+      value: "~100+ nm，中心 1559.9 nm（H 波段）"
+      conditions: "EO 调制梳 + HNLF 展宽"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "59ULFL9Y"}
+
+relations:
+  - id: rel.YI16_01
+    subject: ent.line_referenced_eo_comb_y16
+    predicate: CHARACTERIZED-BY
+    object: met.eo_comb_spectral_span_y16
+    confidence: established
+    source: {zotero_key: "59ULFL9Y"}
+
+  - id: rel.YI16_02
+    subject: meth.eo_comb_line_reference_rv_calibration
+    predicate: ENABLED-BY
+    object: pri.line_referenced_eo_comb
+    confidence: established
+    source: {zotero_key: "59ULFL9Y"}
+
+  - id: rel.YI16_03
+    subject: ent.line_referenced_eo_comb_y16
+    predicate: PART-OF
+    object: ent.electro_optic_frequency_comb
+    confidence: established
+    source: {zotero_key: "59ULFL9Y"}
+    note: "ent.electro_optic_frequency_comb 定义于上游光梳架构文件"
+
+  - id: rel.YI16_04
+    subject: ent.line_referenced_eo_comb_y16
+    predicate: COMPETES-WITH
+    object: ent.near_ir_astro_comb_y12
+    confidence: established
+    source: {zotero_key: "59ULFL9Y", claim: "line spacing is readily resolvable using typical astronomical grating spectrographs"}
+    conditions: "天文梳两路线：EOFC 直接宽间距（Yi 2016）vs 锁模梳 + F-P 滤波（Ycas 2012）"
+
+  - id: rel.YI16_05
+    subject: ent.line_referenced_eo_comb_y16
+    predicate: CONDITIONED-BY
+    object: pri.molecular_rovibrational_fingerprint
+    confidence: established
+    source: {zotero_key: "59ULFL9Y"}
+    note: "分子参考线由分子振转光谱给出"

@@ -11,7 +11,7 @@
 ### 定位
 
 符号主义结构化知识库，服务**时间频率计量**科研全领域。
-- **当前已建专题**：超稳激光（`topics/ultrastable-laser/`，78 篇论文）、光学频率梳（`topics/optical-frequency-combs/`，8 篇论文，~147 节点）
+- **当前已建专题**：超稳激光（`topics/ultrastable-laser/`，78 篇论文）、光学频率梳（`topics/optical-frequency-combs/`，28 篇论文）
 - **当前初建专题**：频率标准（`topics/frequency-standards/`，1 篇光钟框架综述）、时间标尺与钟组（`topics/timescales/`，1 篇）
 - **专题体系**：详见 [`TOPICS.md`](TOPICS.md)
 - **目标查询**：当前性能极限在哪？为什么卡在这？怎么突破？
@@ -78,7 +78,7 @@
 ```
 时间频率计量 (Time-Frequency Metrology)
 ├── 专题1：超稳激光 ← 当前已建（topics/ultrastable-laser/）
-├── 专题2：光学频率梳 ← 已建（topics/optical-frequency-combs/，8篇，~147节点）
+├── 专题2：光学频率梳 ← 已建（topics/optical-frequency-combs/，28 篇，三层应用‑技术‑原理架构）
 │   ├── A. 光梳技术（传统飞秒梳、微腔+电光梳、天文光梳）
 │   └── B. 光梳应用（频率综合、光学频率计数、双梳光谱、梳光谱学、中红外光谱）
 ├── 专题3：频率标准 ← 初建（topics/frequency-standards/，合并光钟+微波标准）
@@ -377,7 +377,7 @@
 | 编号 | 专题 | 目录 | 状态 | 论文数 | 核心节点数(估) |
 |------|------|------|------|--------|---------------|
 | 1 | 超稳激光 | `topics/ultrastable-laser/` | ✅ 已建（78/78 YAML，全部升级为 ✅ v4.1） | 78 | ~200+ |
-| 2 | 光学频率梳 | `topics/optical-frequency-combs/` | ✅ 已建（应用‑技术‑原理三层框架） | 8 | ~147 |
+| 2 | 光学频率梳 | `topics/optical-frequency-combs/` | ✅ 已建（应用‑技术‑原理三层框架） | 28 | 见各论文 |
 
 ### 光学频率梳专题内部结构（重构后）
 
@@ -1020,6 +1020,26 @@ note: "跨专题引用，定义于 topics/frequency-standards/papers/xxx.yaml"
 | `giunta2019.yaml` | KTHCQRJ2 | Giunta 2019 — 光学频率梳 20 年回顾**[框架型]** | ✅ 符合v4.0（contribution_type:framework，定义 optical-frequency-combs 专题顶层架构） |
 | `giunta2020.yaml` | UFWLAXMA | Giunta 2020 — 10⁻²⁰ 级宽带光学频率合成（Nature Photonics）**[技术型]** | ✅ 符合v4.0（contribution_type:technical，首篇技术论文） |
 | `dimarcq2024.yaml` | SDG6KXNZ | Dimarcq 2024 — SI 秒重定义路线图（Metrologia）**[框架型]** | ✅ 符合v4.0（contribution_type:framework，定义 timescales 专题顶层架构；ent.optical_frequency_standard 改为跨文件引用） |
+| `topics/optical-frequency-combs/papers/diddams2000.yaml` | 9BV3WBSH | Diddams 2000 PRL — 首次飞秒光梳跨 300 THz 直接链接微波/光学 **[技术·奠基]** | ✅ v4.1（OFC 批量提取，2026-04-19） |
+| `topics/optical-frequency-combs/papers/coddington2010.yaml` | 7PDY5FDM | Coddington 2010 PRA — 相干双梳光谱高 SNR 基础 | ✅ v4.1（OFC 批量提取，2026-04-19） |
+| `topics/optical-frequency-combs/papers/li2017.yaml` | 6JY7ZNWX | Li 2017 Optica — Si₃N₄ 倍频程微梳稳定进入孤子区 | ✅ v4.1（OFC 批量提取，2026-04-19） |
+| `topics/optical-frequency-combs/papers/lamb2018.yaml` | 52N4T2DE | Lamb 2018 PRApplied — Kerr 微梳 + 光子芯片 SC 光频测量 | ✅ v4.1（OFC 批量提取，2026-04-19） |
+| `topics/optical-frequency-combs/papers/leopardi2017.yaml` | 8XUFRL4K | Leopardi 2017 Optica — 单分支 Er:fiber 10⁻¹⁸ 精密计量 | ✅ v4.1（OFC 批量提取，2026-04-19） |
+| `topics/optical-frequency-combs/papers/kuse2015.yaml` | 3RT4U4TV | Kuse 2015 OE — 石墨烯调制器全保偏 Er 梳 | ✅ v4.1（OFC 批量提取，2026-04-19） |
+| `topics/optical-frequency-combs/papers/yan2015.yaml` | 9BEBKUGG | Yan 2015 CPL — 阿秒分辨 Er:fiber 梳（腔内 EOM） | ✅ v4.1（OFC 批量提取，2026-04-19） |
+| `topics/optical-frequency-combs/papers/coburn2018.yaml` | 2QU7BQ44 | Coburn 2018 Optica — 野外双梳区域甲烷溯源 | ✅ v4.1（OFC 批量提取，2026-04-19） |
+| `topics/optical-frequency-combs/papers/hoghooghi2022.yaml` | 7HSU6V7Q | Hoghooghi 2022 LSA — 1 GHz 中红外 IP-DFG 梳 | ✅ v4.1（OFC 批量提取，2026-04-19） |
+| `topics/optical-frequency-combs/papers/zhang2022.yaml` | 25EY6V8L | Zhang 2022 OL — 229mTh 核钟可调 VUV 梳 | ✅ v4.1（OFC 批量提取，2026-04-19） |
+| `topics/optical-frequency-combs/papers/lesko2022.yaml` | 7978HTD3 | Lesko 2022 Optica — 固态 HHG 的 CEP 计量 (CAMS) | ✅ v4.1（OFC 批量提取，2026-04-19） |
+| `topics/optical-frequency-combs/papers/wu2024.yaml` | 8IPE8B8T | Wu 2024 Nat Photon — TF-LN 波导可见-紫外梳 | ✅ v4.1（OFC 批量提取，2026-04-19） |
+| `topics/optical-frequency-combs/papers/kalubovilage2022.yaml` | 3VF89TBF | Kalubovilage 2022 OE — 自由运行单片梳 X 波段 < -180 dBc/Hz | ✅ v4.1（OFC 批量提取，2026-04-19） |
+| `topics/optical-frequency-combs/papers/cuyvers2021.yaml` | 5R8PUBX7 | Cuyvers 2021 LPR — III-V/SiN 异质集成 MLL 梳 | ✅ v4.1（OFC 批量提取，2026-04-19） |
+| `topics/optical-frequency-combs/papers/ycas2012.yaml` | 3JN2PBKX | Ycas 2012 OE — 25 GHz NIR 天文光梳 on-sky 验证 | ✅ v4.1（OFC 批量提取，2026-04-19） |
+| `topics/optical-frequency-combs/papers/yi2016.yaml` | 59ULFL9Y | Yi 2016 Nat Commun — 线参考 EO 梳 NIR 天文 RV | ✅ v4.1（OFC 批量提取，2026-04-19） |
+| `topics/optical-frequency-combs/papers/probster2021.yaml` | 2SMDS6NY | Pröbster 2021 JOSAB — FOKUS II 空间双梳 TEXUS 飞行 | ✅ v4.1（OFC 批量提取，2026-04-19） |
+| `topics/optical-frequency-combs/papers/huang2024.yaml` | 2QUW2P6D | Huang 2024 PRL — 梳校准 FMCW 非视距成像+测振 | ✅ v4.1（OFC 批量提取，2026-04-19） |
+| `topics/optical-frequency-combs/papers/picque2020.yaml` | 43TAX2KE | Picqué/Diddams/Vahala/Udem 2020 Science — 光频梳 20 年回顾 **[框架型]** | ✅ v4.1（OFC 批量提取，contribution_type:framework，2026-04-19） |
+| `topics/optical-frequency-combs/papers/droste2016.yaml` | 5NSQLZTS | Droste & Newbury 2016 Nanophotonics — Er:fiber 梳综述 **[框架型]** | ✅ v4.1（OFC 批量提取，contribution_type:framework，2026-04-19） |
 
 **历史重构摘要**（v3.0 起，含 2026-04-16 的 v3.2 增补）：
 

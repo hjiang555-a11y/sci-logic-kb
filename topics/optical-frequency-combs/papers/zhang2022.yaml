@@ -1,0 +1,162 @@
+# Zhang 2022 — 可调谐 VUV 光频梳用于 229mTh 核钟光谱（腔增强七次谐波）
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical
+
+meta:
+  zotero_key: "25EY6V8L"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical
+  reliability: high
+  title: "Tunable VUV frequency comb for 229mTh nuclear spectroscopy"
+  year: 2022
+  first_author: Zhang
+  journal: "Optics Letters"
+  volume: 47
+  issue: 21
+  pages: "5591-5594"
+  doi: "10.1364/OL.473006"
+  note: >
+    [技术论文] JILA（Ye 组）+ IMRA。75 MHz Yb:fiber 梳 → 大模面积光纤放大器 >50 W，
+    <150 fs；f-2f 自参考 + Sr 光钟激光（698 nm）相位锁一齿；可调带通滤波使中心波长
+    1040–1070 nm 可调；腔增强 ~×100 后用非共线几何做七次谐波（150 nm VUV）输出。
+    产生的 VUV 梳频率覆盖 229mTh 核钟跃迁的当前不确定度范围（~8.34 eV），是核钟发展
+    关键光源。
+
+entities:
+  - id: ent.tunable_vuv_comb_z22
+    name: "可调谐 VUV 光频梳（Zhang 2022，229mTh 核光谱）"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      75 MHz Yb:fiber 梳 → 相似子（similariton）放大 + 大模面积光纤功率放大 → >50 W
+      <150 fs 近红外脉冲；耦合进飞秒增强腔（enhancement factor ~100）驱动七次谐波产生
+      （HHG in gas），获得 150 nm 附近 VUV 梳；通过中间可调带通滤波器实现 1040–1070 nm
+      基频波长调谐 → VUV 输出可扫过 229mTh 跃迁全部不确定度范围。
+    key_parameters:
+      base_comb: "Yb:fiber 锁模 75 MHz"
+      amplified_ir_power: ">50 W @ <150 fs"
+      enhancement_factor: "~100"
+      harmonic_order: "7 (λ ≈ 150 nm, VUV)"
+      tunable_range_ir: "1040–1070 nm"
+      outcoupling_method: "非共线几何（~30% 效率，VUV 七次谐波）"
+      stabilization: "f-2f 自参考 + Sr 698 nm 光钟激光相位锁"
+    note: "Level 2 实例节点；PART-OF ent.optical_frequency_comb；属于 VUV 扩展技术分支"
+
+principles:
+  - id: pri.cavity_enhanced_hhg_comb
+    name: "飞秒增强腔高次谐波产生梳原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      飞秒脉冲在无源增强腔中相干叠加，腔内峰值功率放大 ~100×，
+      在气体靶上驱动高次谐波产生 (HHG)；输出每个谐波 q·ν_n 保持 f_CEO 结构为 q·f_CEO，
+      重复率保持基频 f_rep，形成 VUV / XUV 波段光频梳。
+    domain: "非线性光学；飞秒腔增强 HHG"
+    formula: >
+      ν_q,n = q·(n·f_rep + f_CEO) = n_q·f_rep + q·f_CEO；
+      其中 q 为谐波阶数（如 7），VUV 梳保留基频梳结构
+    key_insight: >
+      增强腔将传统 HHG 的 "pJ 脉冲能量" 放大到 HHG 阈值，使 HHG 兼容高重频（MHz 级）光频梳，
+      解锁 VUV/XUV 直接光梳光谱。
+    conditions: "腔锁定至基频梳；腔损耗低；气体靶密度与焦斑设计良好"
+    preconditions:
+      - "腔输入耦合比与腔损耗匹配使增强因子 >10"
+      - "非共线 / Brewster / 光栅等有效 outcoupling 机制"
+    invalidated_when:
+      - "腔失锁或反射率在 VUV 快速劣化（UV 引起材料降解）"
+
+methods:
+  - id: meth.tunable_vuv_comb_generation_cavity_hhg
+    name: "可调 VUV 梳腔增强七次谐波方法"
+    status: demonstrated
+    applies_to: ent.tunable_vuv_comb_z22
+    steps_summary: >
+      1. Yb:fiber 75 MHz 梳 → similariton 非线性放大；
+      2. 插入可调带通滤波 (1040–1070 nm) → LMF 功率放大至 >50 W；
+      3. f-2f 稳 f_CEO；一齿锁至 Sr 698 nm 光钟激光；
+      4. 耦合进飞秒增强腔（增益 ~100），非共线几何 HHG；
+      5. 七次谐波（150 nm）引出 → 229mTh 薄膜靶光谱。
+    required_hardware:
+      - ent.tunable_vuv_comb_z22
+    advantages:
+      - "VUV 覆盖 229mTh 跃迁全部不确定度范围"
+      - "保留光梳频率准确度，可同时做光谱 + 绝对频率测量"
+      - "与 Sr 光钟激光共参考 → 未来核钟比对链路"
+    disadvantages:
+      - "七次谐波外耦合效率 ≤30%，并受材料降解限制"
+      - "增强腔需精密锁定"
+
+metrics:
+  - id: met.vuv_comb_tunability_z22
+    name: "VUV 梳波长可调谐范围"
+    unit: "nm（VUV 输出）"
+    description: "覆盖 229mTh 核跃迁不确定度所需的 VUV 梳波长调谐范围"
+    demonstrated_value:
+      value: "~148–153 nm（对应 1040–1070 nm 基频 × 1/7）"
+      conditions: "Yb:fiber 梳 + 可调带通滤波 + 增强腔 H7"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "25EY6V8L", claim: "Its tunable spectrum covers the current uncertainty range of the 229mTh nuclear clock transition"}
+
+  - id: met.ir_power_before_hhg_z22
+    name: "HHG 前基频脉冲平均功率与脉宽"
+    unit: "W / fs"
+    demonstrated_value:
+      value: ">50 W 平均 / <150 fs"
+      conditions: "Yb:fiber LMF 功率放大器输出"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "25EY6V8L"}
+
+relations:
+  - id: rel.Z22_01
+    subject: ent.tunable_vuv_comb_z22
+    predicate: CHARACTERIZED-BY
+    object: met.vuv_comb_tunability_z22
+    confidence: established
+    source: {zotero_key: "25EY6V8L"}
+
+  - id: rel.Z22_02
+    subject: ent.tunable_vuv_comb_z22
+    predicate: CHARACTERIZED-BY
+    object: met.ir_power_before_hhg_z22
+    confidence: established
+    source: {zotero_key: "25EY6V8L"}
+
+  - id: rel.Z22_03
+    subject: meth.tunable_vuv_comb_generation_cavity_hhg
+    predicate: ENABLED-BY
+    object: pri.cavity_enhanced_hhg_comb
+    confidence: established
+    source: {zotero_key: "25EY6V8L"}
+
+  - id: rel.Z22_04
+    subject: ent.tunable_vuv_comb_z22
+    predicate: PART-OF
+    object: ent.optical_frequency_comb
+    confidence: established
+    source: {zotero_key: "25EY6V8L"}
+
+  - id: rel.Z22_05
+    subject: ent.tunable_vuv_comb_z22
+    predicate: CONDITIONED-BY
+    object: ent.fp_cavity_system
+    confidence: established
+    source: {zotero_key: "25EY6V8L", claim: "phase locked one of the comb lines in the supercontinuum to the Sr clock laser at 698 nm"}
+    note: "跨专题：Sr 光钟激光由超稳腔提供；ent.fp_cavity_system 定义于 topics/ultrastable-laser/"
+
+  - id: rel.Z22_06
+    subject: met.vuv_comb_tunability_z22
+    predicate: BOUNDED-BY
+    object: pri.cavity_enhanced_hhg_comb
+    confidence: established
+    source: {zotero_key: "25EY6V8L", claim: "the typical bandwidth of a VUV comb is smaller than the uncertainty range of the 229mTh transition"}
+    breakthrough_paths:
+      - direction: meth.tunable_vuv_comb_generation_cavity_hhg
+        expected_gain: "通过调谐基频中心波长覆盖 229mTh 不确定度全部区间"
+        status: demonstrated
+        source: {zotero_key: "25EY6V8L"}

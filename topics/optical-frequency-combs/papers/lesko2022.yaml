@@ -1,0 +1,177 @@
+# Lesko 2022 — 固态高次谐波的 CEP 相位敏感光梳计量（CAMS 方法）
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical
+
+meta:
+  zotero_key: "7978HTD3"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical
+  reliability: high
+  title: "High-sensitivity frequency comb carrier-envelope-phase metrology in solid state high harmonic generation"
+  year: 2022
+  first_author: Lesko
+  journal: "Optica"
+  volume: 9
+  issue: 10
+  pages: "1156-1162"
+  doi: "10.1364/OPTICA.465709"
+  note: >
+    [技术论文] NIST/Colorado（Diddams 组）。用 100 MHz 简洁 Er:fiber 梳（12 nJ / 20 fs /
+    TW·cm⁻² 峰值）在 500 µm ZnO 固态晶体中单程驱动 HHG，谐波谱延伸至 200 nm；
+    提出 "CAMS" (carrier-envelope amplitude modulation spectroscopy) 技术：用 f_CEO
+    作为自然载波调制信号 + 锁相解调，实现 85 dB SNR 相位敏感谐波计量。
+    开辟 100 MHz 重频下 CEP-敏感非微扰 HHG 光谱学的新路线。
+
+entities:
+  - id: ent.cep_hhg_comb_system_l22
+    name: "100 MHz Er:fiber + 固态 HHG CEP 计量系统（Lesko 2022）"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      Er:fiber 锁模梳（100 MHz）+ 非线性放大器 → 12 nJ / 20 fs / 1550 nm 脉冲；
+      聚焦到 500 µm ZnO 晶体达 TW/cm² 峰值强度；单程驱动低带隙固态 HHG，
+      谐波谱覆盖 200–650 nm；f_CEO 作为自然"CEP 旋转信号"，
+      通过锁相放大在 f_CEO 及谐波处解调获得 CEP 相敏信号（CAMS）。
+    key_parameters:
+      base_comb: "Er:fiber 100 MHz"
+      pulse_energy: "12 nJ"
+      pulse_width: "~20 fs"
+      peak_intensity: "~TW/cm²"
+      nonlinear_crystal: "ZnO 500 µm"
+      harmonic_output: "200–650 nm 连续"
+      detection_snr: "85 dB（CAMS 技术）"
+    note: "Level 2 实例节点；PART-OF ent.optical_frequency_comb"
+
+principles:
+  - id: pri.solid_state_non_perturbative_hhg
+    name: "低带隙固态非微扰高次谐波产生原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      低带隙半导体/导体在 nJ 级低脉冲能量即可进入非微扰 HHG 区域，
+      谐波强度对 CEP 呈现显著相位敏感性；相对于气体 HHG 所需 µJ-mJ 脉冲，
+      所需驱动强度低 ~3 数量级，兼容 100 MHz 级高重频简单光梳源。
+    domain: "强场物理；固态 HHG"
+    key_insight: >
+      低带隙平台使 HHG 从低重频强场系统解耦到高重频低能光梳系统，
+      打开高 SNR 锁相解调可能性。
+    conditions: "带隙足够低（eV 级）；脉冲足够短（few-cycle）；聚焦强度达 TW/cm² 级"
+    invalidated_when:
+      - "带隙过高进入微扰区，CEP 依赖消失"
+      - "脉冲过长 CEP 效应被平均"
+    source_claim: >
+      "nonlinear effects dependent on the carrier-envelope phase can be accessed in solid state
+      crystals with simple, low pulse energy frequency combs"
+
+  - id: pri.cams_fceo_demodulation
+    name: "f_CEO 自然载波 + 锁相解调 CEP 信号原理（CAMS）"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      锁模梳本征以 f_CEO 频率让 CEP 周期扫过 2π，相位敏感谐波信号自然被 f_CEO 调制；
+      在 f_CEO 处做锁相探测可提取 CEP 依赖分量，排除 DC 相无关背景，
+      达到 85 dB 级 SNR，无需精细 CEP 稳定或外部调制器。
+    domain: "光梳 + HHG 锁相检测"
+    formula: "S(t) = S_0 + S_CEP·cos(2π f_CEO t + φ) → 锁相在 f_CEO 获 S_CEP"
+    key_insight: >
+      把 f_CEO 从"需要抵消的噪声"转化为"天然调制载波"，是 CEP 计量的范式转变；
+      与传统"CEP 锁定 + 慢扫描"方案形成对比。
+    conditions: "自由运行或弱锁定 f_CEO 均可；f_CEO 已知/可测"
+    source_claim: >
+      "With a nonzero fceo, the CEP cycles through 2π at a well-defined rate.
+      By using lock-in detection at fceo, ... we introduce a technique of carrier-envelope
+      amplitude modulation spectroscopy (CAMS)"
+
+methods:
+  - id: meth.carrier_envelope_amplitude_modulation_spectroscopy
+    name: "载波包络幅度调制光谱（CAMS）方法"
+    status: demonstrated
+    applies_to: ent.cep_hhg_comb_system_l22
+    steps_summary: >
+      1. Er:fiber 100 MHz 梳 → 放大 → 12 nJ / 20 fs；
+      2. 聚焦 ZnO 晶体产生 HHG；
+      3. 同时测 f_CEO（f-2f）；
+      4. 谐波光电探测器信号 → 锁相放大器在 f_CEO 基频或谐波解调；
+      5. 输出 CEP 相敏谐波谱，SNR 85 dB。
+    required_hardware:
+      - ent.cep_hhg_comb_system_l22
+    advantages:
+      - "无需 µJ-mJ 脉冲能量"
+      - "100 MHz 重频兼容精密 DCS"
+      - "SNR 85 dB，比传统方法高数量级"
+      - "200–650 nm 宽带 UV/VIS 梳扩展副产品"
+    disadvantages:
+      - "只适用于低带隙固态材料"
+      - "需已知或可锁定的 f_CEO"
+
+metrics:
+  - id: met.cams_snr_l22
+    name: "CAMS 相位敏感谐波探测 SNR"
+    unit: "dB"
+    demonstrated_value:
+      value: "85 dB"
+      conditions: "100 MHz Er:fiber + ZnO HHG + 锁相解调 @ f_CEO"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "7978HTD3", claim: "characterize the phase-sensitive modulation of the ultraviolet harmonics with an 85 dB signal-to-noise ratio"}
+
+  - id: met.uv_vis_harmonic_bandwidth_l22
+    name: "UV/VIS 谐波光梳带宽"
+    unit: "nm"
+    demonstrated_value:
+      value: "200–650 nm"
+      conditions: "ZnO 固态 HHG from 1550 nm"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "7978HTD3", claim: "harmonic spectra extending down to 200 nm"}
+
+relations:
+  - id: rel.LK22_01
+    subject: ent.cep_hhg_comb_system_l22
+    predicate: CHARACTERIZED-BY
+    object: met.cams_snr_l22
+    confidence: established
+    source: {zotero_key: "7978HTD3"}
+
+  - id: rel.LK22_02
+    subject: ent.cep_hhg_comb_system_l22
+    predicate: CHARACTERIZED-BY
+    object: met.uv_vis_harmonic_bandwidth_l22
+    confidence: established
+    source: {zotero_key: "7978HTD3"}
+
+  - id: rel.LK22_03
+    subject: meth.carrier_envelope_amplitude_modulation_spectroscopy
+    predicate: ENABLED-BY
+    object: pri.cams_fceo_demodulation
+    confidence: established
+    source: {zotero_key: "7978HTD3"}
+
+  - id: rel.LK22_04
+    subject: meth.carrier_envelope_amplitude_modulation_spectroscopy
+    predicate: ENABLED-BY
+    object: pri.solid_state_non_perturbative_hhg
+    confidence: established
+    source: {zotero_key: "7978HTD3"}
+
+  - id: rel.LK22_05
+    subject: ent.cep_hhg_comb_system_l22
+    predicate: PART-OF
+    object: ent.optical_frequency_comb
+    confidence: established
+    source: {zotero_key: "7978HTD3"}
+
+  - id: rel.LK22_06
+    subject: meth.carrier_envelope_amplitude_modulation_spectroscopy
+    predicate: COMPETES-WITH
+    object: meth.tunable_vuv_comb_generation_cavity_hhg
+    confidence: established
+    source: {zotero_key: "7978HTD3"}
+    note: >
+      两条 HHG 光梳路线竞争：增强腔气体 HHG（Zhang 2022 VUV）需高功率 IR + 增强腔；
+      固态 HHG（Lesko 2022）简单 100 MHz 单程 + 低能脉冲；前者频率更高（VUV），
+      后者重频更高（100 MHz）、系统更简单（UV/VIS）。

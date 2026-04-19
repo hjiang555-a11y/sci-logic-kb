@@ -1,0 +1,171 @@
+# Wu 2024 — 铌酸锂薄膜纳米波导可见-紫外频率梳
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical
+
+meta:
+  zotero_key: "8IPE8B8T"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical
+  reliability: high
+  title: "Visible-to-ultraviolet frequency comb generation in lithium niobate nanophotonic waveguides"
+  year: 2024
+  first_author: Wu
+  journal: "Nature Photonics"
+  doi: "10.1038/s41566-023-01364-0"
+  note: >
+    [技术论文] NIST/Colorado（Diddams 组）+ Caltech（Marandi 组）+ JPL。多段铌酸锂（TF-LN）
+    纳米波导：色散工程 + 啁啾准相位匹配（chirped QPM），结合 χ²+χ³ 非线性；
+    仅 90 pJ（1550 nm）Er:fiber 梳脉冲输入，产生 330–2400 nm 无间断梳谱；
+    350–550 nm UV/VIS 转换效率 17%；同一波导 χ² 倍频 + f-2f 直接给出 f_CEO，
+    并在 350 nm 处验证梳相干性。解决 UV/VIS 光梳长期缺失问题，关键服务离子/原子钟光梳参考。
+
+entities:
+  - id: ent.tf_lin_uv_vis_comb_w24
+    name: "薄膜铌酸锂纳米波导 UV-VIS 梳（Wu 2024）"
+    aliases: ["chirped-QPM TF-LN supercontinuum waveguide"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      多段级联 TF-LN 纳米波导（6.6 mm 长，1.8 µm 宽，350 nm 厚）集成啁啾 QPM 结构
+      + 色散工程；将 100 MHz Er:fiber 梳 90 pJ 输入脉冲（1550 nm）高效展宽至
+      330–2400 nm 全光谱；UV/VIS 350–550 nm 段转换效率 17%；
+      同一波导可直接输出 f-2f 自参考信号。
+    key_parameters:
+      platform: "Thin-film LiNbO₃（X-cut）on SiO₂"
+      waveguide_length: "6.6 mm"
+      cross_section: "1800 × 350 nm"
+      poling: "chirped QPM"
+      input_pulse_energy: "90 pJ @ 1550 nm"
+      output_span: "330–2400 nm（gap-free）"
+      uv_vis_conversion_efficiency: "17%（350–550 nm）"
+      f_ceo_scheme: "同波导 χ² 倍频 + f-2f，验证于 350 nm"
+    note: "Level 2 实例节点；PART-OF ent.optical_frequency_comb"
+
+principles:
+  - id: pri.chirped_qpm_broadband_chi2_sc
+    name: "啁啾准相位匹配实现 χ² 宽带光谱展宽原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      通过沿波导长度逐渐变化 QPM 极化周期 Λ(z)，使不同波长对在不同位置满足相位匹配，
+      从而一次性高效产生跨宽带的 SHG / SFG 频率分量；与 χ³ 自相位调制 + 色散波结合，
+      可在 mm 级波导内以 pJ 级脉冲能量获得 330–2400 nm 无间隙超连续谱。
+    domain: "集成非线性光子学；宽带 SC 产生"
+    formula: "Λ(z) 连续变化 → ∫ exp(iΔk(ω,z)) dz ≈ 0 的宽波段条件"
+    key_insight: >
+      "啁啾 QPM + 色散工程 + 多段级联" 构成 TF-LN 平台高效 UV/VIS 梳产生的核心工程模版；
+      比 HNLF 方案功耗低 3 个数量级。
+    conditions: "TF-LN 可定制极化结构；色散与 QPM 联合设计；波导损耗足够低"
+    preconditions:
+      - "pJ 级短脉冲（亚 ps）输入"
+      - "QPM 极化精度 <µm"
+    source_claim: >
+      "multisegment nanophotonic thin-film lithium niobate waveguides that combine engineered
+      dispersion and chirped quasi-phase matching for efficient supercontinuum generation via
+      the combination of χ(2) and χ(3) nonlinearities"
+
+methods:
+  - id: meth.tf_ln_uv_vis_comb_generation
+    name: "TF-LN 波导 UV/VIS 梳产生方法"
+    status: demonstrated
+    applies_to: ent.tf_lin_uv_vis_comb_w24
+    steps_summary: >
+      1. 100 MHz Er:fiber 梳输出 → 压缩至亚 ps；
+      2. 透镜光纤耦合进 TF-LN 波导（90 pJ）；
+      3. 多段啁啾 QPM + 色散工程同时做 χ²（SHG/SFG）+ χ³（SPM）；
+      4. 输出 330–2400 nm 无间断梳；
+      5. 同一波导中截取 f 与 2f 分量做 f-2f，验证 f_CEO 和相干性（短至 350 nm）。
+    required_hardware:
+      - ent.tf_lin_uv_vis_comb_w24
+    advantages:
+      - "UV/VIS 段 17% 转换效率（比 HNLF 方案高数十倍）"
+      - "90 pJ 低能耗，兼容集成芯片梳"
+      - "同一波导输出 f-2f → 全链路集成自参考"
+      - "覆盖离子/原子钟冷却/探测跃迁波段（350–550 nm）"
+    disadvantages:
+      - "QPM 工艺复杂度高"
+      - "UV 段波导损耗与材料吸收限制更短波长延展"
+    source_claim: >
+      "With only 90 pJ of pulse energy at 1,550 nm, we achieve gap-free frequency comb coverage
+      spanning 330–2,400 nm. The conversion efficiency from the near-infrared pump to the
+      ultraviolet–visible region of 350–550 nm is 17%"
+
+metrics:
+  - id: met.tf_ln_spectral_coverage_w24
+    name: "TF-LN UV/VIS 梳光谱覆盖"
+    unit: "nm"
+    demonstrated_value:
+      value: "330–2400 nm 无间断"
+      conditions: "90 pJ @ 1550 nm 输入，TF-LN 多段啁啾 QPM 波导"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "8IPE8B8T", claim: "gap-free frequency comb coverage spanning 330–2,400 nm"}
+    historical_landmarks:
+      first_demonstration:
+        value: "首次 pJ 级能耗集成波导实现 UV 到 2.4 µm 无间断梳覆盖"
+        year: 2024
+        source: {zotero_key: "8IPE8B8T"}
+
+  - id: met.tf_ln_uv_conversion_efficiency_w24
+    name: "UV/VIS 段转换效率"
+    unit: "%"
+    description: "NIR 泵浦功率到 350–550 nm UV/VIS 段的光学转换效率"
+    demonstrated_value:
+      value: "17%（350–550 nm）"
+      conditions: "TF-LN 多段 QPM，90 pJ 泵浦"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "8IPE8B8T"}
+    theoretical_floor:
+      value: "优化 poling 结构模型预言更高"
+      basis: "数值模型"
+      gap_note: "当前为设计第一版，QPM 啁啾与波导色散可进一步优化"
+
+relations:
+  - id: rel.W24_01
+    subject: ent.tf_lin_uv_vis_comb_w24
+    predicate: CHARACTERIZED-BY
+    object: met.tf_ln_spectral_coverage_w24
+    confidence: established
+    source: {zotero_key: "8IPE8B8T"}
+
+  - id: rel.W24_02
+    subject: ent.tf_lin_uv_vis_comb_w24
+    predicate: CHARACTERIZED-BY
+    object: met.tf_ln_uv_conversion_efficiency_w24
+    confidence: established
+    source: {zotero_key: "8IPE8B8T"}
+
+  - id: rel.W24_03
+    subject: meth.tf_ln_uv_vis_comb_generation
+    predicate: ENABLED-BY
+    object: pri.chirped_qpm_broadband_chi2_sc
+    confidence: established
+    source: {zotero_key: "8IPE8B8T"}
+
+  - id: rel.W24_04
+    subject: ent.tf_lin_uv_vis_comb_w24
+    predicate: PART-OF
+    object: ent.optical_frequency_comb
+    confidence: established
+    source: {zotero_key: "8IPE8B8T"}
+
+  - id: rel.W24_05
+    subject: meth.tf_ln_uv_vis_comb_generation
+    predicate: COMPETES-WITH
+    object: meth.carrier_envelope_amplitude_modulation_spectroscopy
+    confidence: tentative
+    source: {zotero_key: "8IPE8B8T"}
+    conditions: "UV/VIS 梳产生路线竞争：TF-LN χ²+χ³ 无 HHG（Wu 2024，效率高、覆盖到 330 nm）vs 固态 HHG（Lesko 2022，可延至 200 nm 但效率低）"
+
+  - id: rel.W24_06
+    subject: ent.tf_lin_uv_vis_comb_w24
+    predicate: CONDITIONED-BY
+    object: pri.molecular_rovibrational_fingerprint
+    confidence: tentative
+    source: {zotero_key: "8IPE8B8T", claim: "reach and reference the multiple trapping, cooling and state preparation transitions of atoms and ions"}
+    note: "主要面向原子/离子电子跃迁（非分子振转），此处更适合连接到原子能级接口原理——暂记为 tentative"
