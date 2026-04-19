@@ -1,0 +1,500 @@
+# Sinclair 2014 — 全 PM 光纤 + SESAM 自锁模 Er 光纤梳首次在移动车辆与振动台（0.5 g rms）上保持光学相干锁定 [工程里程碑技术论文]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical — 首次将"锁定到光参考"级别的相干飞秒梳带出计量实验室
+#   核心贡献：
+#     (1) 全保偏（PM）光纤 + SESAM 自锁模 + 波导 PPLN + PM 在线 f-2f 干涉仪的可现场化架构；
+#     (2) 车载运行（>0.5 g 峰值加速度）与振动台（0.5 g rms，10 Hz–1 kHz）下保持 f_ceo 和 f_opt 全锁定，
+#         残余光学线宽 < 1 Hz、亚弧度光学相噪、2.4–5 fs 脉间时间抖动；
+#     (3) 连续 35 h 无相位滑移运行；映射至 typical air-mount 下可用于船、卡车、C-5 飞机等平台。
+#   跨文件引用：
+#     - ent.optical_frequency_comb（udem2002.yaml）
+#     - pri.self_referencing_f2f（udem2002.yaml）
+#     - ent.fp_cavity_system（ultrastable-laser/papers/numata2004.yaml，用作光频参考腔）
+#   相关节点：与 ent.spaceborne_erfiber_comb_l16（lezius2016.yaml）并列，同属"ruggedized Er:fiber comb"家族，
+#     但 Sinclair 2014 锁至光参考（光学相干），Lezius 2016 锁至 rf 参考（火箭飞行）。
+
+meta:
+  zotero_key: "D9ANIZW6"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical
+  reliability: high
+  title: "Operation of an optically coherent frequency comb outside the metrology lab"
+  year: 2014
+  first_author: Sinclair
+  journal: "Optics Express"
+  volume: 22
+  issue: 6
+  pages: "6996-7006"
+  doi: "10.1364/OE.22.006996"
+  note: >
+    [工程里程碑技术论文] NIST Boulder (Sinclair/Coddington/Swann/Rieker/Hati/Iwakuni/Newbury)。
+    200 MHz PM Er:fiber + SESAM 自锁模梳，全 PM 光纤拼接、无自由空间段、飞秒激光灌胶减振；
+    PM HNLF 展宽到 1.05–>2.3 μm（倍频程），波导 PPLN + PM 在线干涉仪探测 f_ceo（SNR 35 dB/470 kHz）；
+    f_ceo 经 150 kHz 带宽反馈至泵浦功率，f_opt 经 90 kHz PZT 反馈至腔长锁至 cw 参考激光。
+    车辆测试（>0.5 g 峰值）与振动台测试（0.035→1.3 g rms，10 Hz–1 kHz）均保持锁定，
+    f_opt 积分相噪对振动的斜率约 3.8 rad/g，f_ceo 相噪对振动不敏感；
+    光学相干覆盖约 140 THz（以锁点 1565 nm 为中心）。本文件定义 Level-2 实例 ent.ruggedized_field_comb_s14。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.ruggedized_field_comb_s14
+    name: "全 PM 光纤 SESAM 自锁模现场化相干飞秒梳（Sinclair 2014）"
+    aliases:
+      - "fieldable coherent fiber frequency comb"
+      - "200 MHz PM Er:fiber SESAM comb"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      线性腔 Er:fiber 飞秒激光（50 cm 腔，~28 cm 高掺 PM Er 光纤 + ~22 cm PM 光纤，净腔色散 ~−0.02 ps²），
+      用半导体可饱和吸收镜（SESAM，3% 饱和损耗 / 6% 非饱和损耗，20 μm 光斑）实现真自锁模；
+      FC/PC 端面介质膜（90% 反射，980 nm 泵浦透射）作输出耦合器。重频 200 MHz，1567 nm 中心、10 nm 带宽、25 pJ/脉冲。
+      下游 PM Er 光纤放大（1.5 nJ → 70 fs 压缩）+ 20 cm PM HNLF 展宽至 1.05–>2.3 μm 倍频程；
+      波导 PPLN 将 2128 nm 倍频到 1064 nm 后与超连续 1064 nm 光干涉，PM "在线"光纤干涉仪（~1.6 m PM 光纤快慢轴差延补偿 0.7 ps）
+      探测 f_ceo，SNR 35 dB/470 kHz。整机完全基于 PM 光纤拼接，无自由空间段，
+      光纤元件环氧固定于铝壳、飞秒激光灌胶阻尼；铝盒外形 29×42×5 cm。
+    key_parameters:
+      laser_type: "SESAM 自锁模 PM Er 光纤激光（soliton 锁模）"
+      repetition_rate: "200 MHz"
+      center_wavelength: "1567 nm"
+      pulse_bandwidth: "10 nm"
+      pulse_energy: "25 pJ（5 mW 平均输出）"
+      cavity_length: "~50 cm"
+      net_cavity_dispersion: "~−0.02 ps²"
+      sescs_parameters: "SESAM 3% 饱和损耗 / 6% 非饱和 / 20 μm 光斑 / 2× saturation fluence"
+      supercontinuum_span: "1.05 μm → >2.3 μm（倍频程）"
+      hnlf_length: "20 cm PM HNLF"
+      fceo_snr: "35 dB @ 470 kHz RBW"
+      fceo_lock_bandwidth: "150 kHz（反馈至泵浦功率，52 MHz/mW）"
+      fopt_lock_bandwidth: "90 kHz（2 mm 立方 PZT 直接贴于光纤腔 + 大行程 PZT 堆栈）"
+      optics_box_size: "29 × 42 × 5 cm"
+    interface_requirements:
+      optical_reference: "cw 参考激光（实验室：cavity-stabilized 1565 nm；车辆/振动台：free-running 1535 nm）"
+      rf_reference: "10 MHz（f_ceo 锁点）、9 MHz（f_opt 锁点）"
+      power_environment: "小型汽油发电机供电（车载测试）"
+    note: >
+      Level-2 PART-OF ent.optical_frequency_comb（权威定义于 udem2002.yaml）。
+      与 ent.spaceborne_erfiber_comb_l16（lezius2016.yaml）COMPETES-WITH：后者 rf 锁、探空火箭场景；
+      本实例光锁、地面车辆/振动台场景，强调"光学相干出实验室"。
+
+  - id: ent.pm_inline_f2f_interferometer_s14
+    name: "PM 光纤在线 f-2f 干涉仪（Sinclair 2014）"
+    aliases:
+      - "PM in-line f-2f interferometer"
+    hierarchy_level: 3
+    status: demonstrated
+    function: >
+      紧跟波导 PPLN 后，用 45° 拼接把倍频光与基频 1064 nm 光同时投射到一段 PM 光纤的快慢轴上；
+      ~1.6 m PM 光纤快慢轴差分群延补偿 PPLN 后 ~0.7 ps 的基频-倍频时序差，
+      再一次 45° 拼接回到原基矢，偏振分束器取慢轴输出。插入损耗 ~6 dB，
+      由于所有光纤长度起伏对两路共模，不向 f_ceo 引入额外相位噪声。
+    key_parameters:
+      pm_fiber_length: "~1.6 m"
+      compensated_delay: "0.7 ps"
+      insertion_loss: "~6 dB"
+      common_mode_advantage: "光纤长度/温度起伏共模，不引入 f_ceo 额外相噪"
+    note: "PART-OF ent.ruggedized_field_comb_s14；解决了波导 PPLN 长尾纤无法再做光纤长度微调的问题。"
+
+  - id: ent.vibration_environment_mobile
+    name: "地面移动平台振动环境（外部条件节点）"
+    aliases: ["ground-vehicle vibration", "shaker table profile"]
+    hierarchy_level: 1
+    kind: ext
+    status: characterized
+    function: >
+      车辆路况（减速带、砂石路）产生峰值 >0.5 g 的加速度；
+      振动台 1/f 谱（~10 Hz 至 1 kHz）对应 0.035 / 0.067 / 0.13 / 0.25 / 0.5 / 1.3 g rms 工况。
+      与典型 air-mount（2.5 Hz 自然频率，6% 阻尼）配合后可对应船、卡车（美国公路）、C-5 飞机振动谱（MIL-STD-810G）。
+    note: "外部条件节点（ext），通过 CONDITIONED-BY 与 ent.ruggedized_field_comb_s14 接口。"
+
+principles:
+  - id: pri.pm_fiber_splice_vibration_immunity
+    name: "全 PM 光纤拼接免调校振动免疫原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      采用全保偏光纤 + 光纤拼接/连接头、彻底去除自由空间段后，振动主要通过光纤长度起伏耦合；
+      此类起伏对 f-2f 干涉仪的两路共模，可通过在线（in-line）结构取消；
+      同时避免了自由空间光学对准偏移与偏振漂移（非线性偏振旋转锁模方案对 PM 光纤拼接不兼容）。
+      这是把"实验室飞秒梳"演化为"现场可运行相干梳"的关键设计原理。
+    domain: "光纤光学；现场化飞秒梳工程设计"
+    key_insight: >
+      "简单重包装典型实验室系统不足以实现鲁棒现场梳"——必须从拓扑上消灭对振动/偏振敏感的自由空间节点。
+    conditions:
+      - "SESAM 或其它与 PM 光纤兼容的被动锁模机制"
+      - "PM HNLF 用于低噪超连续展宽"
+      - "f-2f 使用波导 PPLN + PM 在线干涉仪完成光纤内倍频与群延补偿"
+    preconditions:
+      - "飞秒激光灌胶（potted）并将光纤组件环氧固定于金属底板"
+      - "腔长反馈 PZT 直接贴于光纤并阻尼任何光纤谐振"
+    invalidated_when:
+      - "存在可观的自由空间段或裸机架结构谐振耦合入腔长"
+      - "机械谐振频率落入反馈带宽以外（伺服无法跟踪）"
+    source_claim: >
+      "the system is completely based on PM fiber and PM telecom-grade fiber optics components.
+      All fiber connections are spliced or connectorized; there are no free-space sections,
+      reducing sensitivity to vibration and alignment drift."
+    open_questions:
+      - "在更高振动（>1 g rms）下 PZT 伸缩器动态范围耗尽后，如何延长 f_opt 锁可用加速度上限？"
+
+  - id: pri.vibration_fopt_linear_coupling
+    name: "振动→光学相位（f_opt）线性耦合原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      对本架构，随机振动引入的腔长起伏导致光频（f_opt）残余相噪随加速度近似线性增长：
+      本实验测得积分相噪斜率 ≈ 3.8 rad/g，对应脉间时间抖动 ≈ 3.1 fs/g；
+      而 f_ceo 相噪对振动水平近似无关，因此整体 5 fs 级时间抖动由 f_ceo 主导，对振动不敏感。
+    domain: "飞秒梳相噪；机电耦合"
+    formula: "σ_φ,fopt (rad, integrated 1 Hz–5 MHz) ≈ 3.8 × a_rms (g)"
+    key_insight: >
+      f_ceo 与 f_opt 对振动的响应解耦：SESAM+PM 结构使 f_ceo 基本免疫，
+      f_opt 对腔长振动敏感——需要在 PZT 动态范围 + 机械/气动隔振 + 参考激光鲁棒性之间权衡。
+    conditions:
+      - "振动谱 10 Hz – 1 kHz，1/f 形；0.035–1.3 g rms 范围"
+      - "PM Er:fiber SESAM 梳 + PZT 腔长伺服"
+    preconditions:
+      - "f_opt 锁路仍在 PZT 动态范围内（>0.5 g rms 后 PZT 伸缩器饱和）"
+    invalidated_when:
+      - "机械谐振进入 f_opt 伺服带宽以外"
+      - "参考激光本身相噪主导（此时公式不再线性于加速度）"
+    source_claim: >
+      "the integrated phase noise on fopt increased roughly linearly with vibration level at 3.8 rad/g
+      with a corresponding contribution to the timing jitter of 3.1 fs/g ... the fceo phase noise was unchanged"
+
+  - id: pri.optical_lock_lever_arm_timing_jitter
+    name: "光锁杠杆臂降低脉间时间抖动原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      通过把梳的一根梳齿锁到光参考（而不是直接稳定重频），利用 f_opt / f_rep ≈ 10⁶ 的杠杆臂，
+      使折算到脉间时间抖动上的相噪下降约 6 个数量级；
+      整体抖动 ≈ √(σ_φ,fceo² + σ_φ,fopt²) / (2π·ν_opt) ≈ 2.4 fs（实验室）至 5 fs（现场）。
+    domain: "飞秒梳相位/时间抖动"
+    formula: "Δt_pp = √(σ_φ,fceo² + σ_φ,fopt²) / (2π · ν_opt),  ν_opt ≈ 192 THz"
+    key_insight: >
+      光锁方案使 2.9 rad (f_ceo) + 0.23 rad (f_opt) 积分相噪折算为 2.4 fs 脉间时间抖动，
+      这是无光参考的 rf 锁方案难以达到的。
+    conditions: "存在光参考激光（cavity-stabilized 或 free-running cw），PZT 带宽足以跟踪"
+    source_claim: >
+      "The use of an optical lock to a single comb mode rather than direct stabilization of the repetition rate
+      provides the large lever arm to produce the low pulse-to-pulse timing jitter."
+
+  - id: pri.transportable_cavity_reference_coupling
+    name: "可移动腔稳激光作为光参考的接口原理"
+    tier: engineering
+    verification_status: inferred
+    statement: >
+      现场相干梳的最终性能上限由其所锁到的光参考的相噪与稳定度决定；
+      使用鲁棒可移动的 cavity-stabilized cw 参考（如 Leibrandt 2011/2013 紧凑便携腔）取代 free-running cw 参考，
+      可消除在车辆测试中观测到的温度漂移/频率跳动所需的人工泵浦补偿。
+    domain: "光频参考工程；ent.fp_cavity_system 接口"
+    key_insight: >
+      现场 f_opt 相噪对振动线性（pri.vibration_fopt_linear_coupling）只是"相对于参考激光"的相对相噪，
+      绝对光学稳定度要求参考腔本身的低加速度灵敏度（<10⁻¹² /g 级）。
+    conditions: "参考激光具备 <Hz 级线宽、低加速度灵敏度、可移动封装"
+    invalidated_when:
+      - "参考激光自身漂移/相噪主导，梳相干带宽不再以锁点为中心展开"
+    source_claim: >
+      "Even more stable comb operation would be achieved using a robust, mobile, cavity-stabilized cw
+      reference laser such as in [16,17]."
+    open_questions:
+      - "车载 cavity-stabilized 参考激光与梳的联合加速度灵敏度预算如何分配？"
+
+methods:
+  - id: meth.ruggedized_fiber_comb_optical_lock_s14
+    name: "现场化 PM 光纤梳光参考锁定方法（Sinclair 2014）"
+    status: demonstrated
+    applies_to: ent.ruggedized_field_comb_s14
+    steps_summary: >
+      1. SESAM 启动 PM Er:fiber 自锁模；2. Er 光纤放大 + PM HNLF 生成 1.05–>2.3 μm 超连续；
+      3. 波导 PPLN 倍频 2128 nm → 1064 nm，进入 PM 在线干涉仪补偿 0.7 ps 群延，探测 f_ceo；
+      4. f_ceo 上混至 640 MHz → ÷64 → 锁至 10 MHz 参考，经相位超前补偿反馈至泵浦电流，带宽 150 kHz；
+      5. 梳齿与 cw 参考激光外差得 f_opt，÷8 → 锁至 9 MHz 参考，反馈至 2 mm PZT (高带宽) + 大 PZT 堆栈 (大行程)，带宽 90 kHz；
+      6. 大 PZT 串联电阻在 200 Hz 滚降以抑制机械谐振。
+    required_hardware:
+      - ent.ruggedized_field_comb_s14
+      - ent.pm_inline_f2f_interferometer_s14
+    advantages:
+      - "Hz 级光学线宽 + <1 rad 光相噪 + 2.4–5 fs 时间抖动，堪比实验室梳"
+      - "全 PM 光纤 + 无自由空间 → 振动/对准免疫"
+      - ">35 h 无相位滑移连续运行"
+      - "在 0.5 g rms 振动与 >0.5 g 峰值车辆加速度下保持全锁"
+    disadvantages:
+      - "f_opt 锁在 >0.5 g rms 时受限于 PZT 伸缩器动态范围"
+      - "f_ceo 相噪 ~3 rad 使相干带宽 ~140 THz（非全 1–2 μm 光谱）"
+      - "使用 free-running cw 参考时，长时间温度漂移需人工泵浦调整"
+    conditions:
+      - "车辆或振动台 10 Hz–1 kHz，1/f 谱，≤0.5 g rms"
+      - "cw 参考激光（cavity-stabilized 或 free-running）可用"
+    source_claim: >
+      "This fully phase-locked frequency comb has been successfully operated in a moving vehicle with
+      0.5 g peak accelerations and on a shaker table with a sustained 0.5 g rms integrated acceleration,
+      while retaining its optical coherence and 5-fs-level timing jitter."
+
+metrics:
+  - id: met.residual_optical_linewidth_s14
+    name: "残余光学梳齿线宽（Sinclair 2014）"
+    unit: "Hz"
+    description: >
+      梳齿与第二台腔稳参考激光之间 out-of-loop 外差的残余线宽（仪器分辨率受限 1 Hz）。
+    demonstrated_value:
+      value: "< 1 Hz（out-of-loop，仪器受限）"
+      conditions: "实验室，1565 nm cavity-stabilized 参考锁点，1535 nm 第二腔稳参考做 out-of-loop 测量"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "D9ANIZW6", claim: "residual optical linewidths of < 1 Hz ... the linewidth is instrument-limited at 1 Hz"}
+
+  - id: met.integrated_phase_noise_fopt_s14
+    name: "光学相位环（f_opt）积分相位噪声"
+    unit: "rad (1 Hz–5 MHz)"
+    description: >
+      梳齿-参考光外差锁路积分相噪，表征光学相干度；定义 <1 rad 为"光相干"。
+    demonstrated_value:
+      value: "0.22 rad（实验室，1 Hz–5 MHz）；0.3 rad（车辆）；~0.5 rad @ 低振动 → 0.5 g rms 时 ~1.9 rad（斜率 3.8 rad/g）"
+      conditions: "实验室：1565 nm cavity-stabilized 参考；车辆/振动台：1535 nm free-running 参考"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "D9ANIZW6", claim: "integrated phase noise is ... 0.22 rad for fopt from 5 MHz to 1 Hz ... fopt increased roughly linearly with vibration level at 3.8 rad/g"}
+
+  - id: met.integrated_phase_noise_fceo_s14
+    name: "CEO 相位环（f_ceo）积分相位噪声"
+    unit: "rad (1 Hz–5 MHz)"
+    description: >
+      f-2f 锁路积分相噪，决定相干带宽 Δν ≈ 1 rad / (σ_φ,fceo · 2π / (2ν_opt))。
+    demonstrated_value:
+      value: "2.9 rad（实验室）；6.2 rad（车辆，因泵浦电流控制器带宽降低）；~6 rad（振动台，EMI 主导），与振动水平无关"
+      conditions: "反馈至泵浦功率 (52 MHz/mW)，150 kHz 带宽；车辆测试使用不同泵浦电流源"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "D9ANIZW6", claim: "integrated phase noise is 2.9 rad for fceo ... as the vibration was increased beyond 1g, the fceo phase noise was unchanged"}
+
+  - id: met.pulse_to_pulse_timing_jitter_s14
+    name: "脉间时间抖动（Sinclair 2014）"
+    unit: "fs"
+    description: >
+      由 f_ceo 与 f_opt 积分相噪按 √(σ²_fceo + σ²_fopt)/(2π·ν_opt) 折算，ν_opt ≈ 192 THz。
+    demonstrated_value:
+      value: "2.4 fs（实验室）；5 fs（车辆 & 振动台 0.5 g rms）；~3.1 fs/g 随加速度线性"
+      conditions: "锁至 cw 参考，积分 1 Hz–5 MHz"
+      verification_status: calculated
+      confidence: established
+      source: {zotero_key: "D9ANIZW6", claim: "residual pulse-to-pulse timing jitter of 2.4 - 5 fs, when locked to an optical reference ... 3.1 fs/g"}
+
+  - id: met.vibration_tolerance_s14
+    name: "维持光锁的振动耐受水平"
+    unit: "g rms (10 Hz–1 kHz) 及 g peak"
+    description: >
+      梳保持 f_ceo + f_opt 同时相位锁定所允许的振动级别。上限由 PZT 伸缩器动态范围决定。
+    demonstrated_value:
+      value: "0.5 g rms（振动台 1/f 谱 10 Hz–1 kHz，f_opt 锁上限）；>0.5 g 峰值（车辆，路况加速度）；f_ceo 锁可至 1.3 g rms"
+      conditions: "无额外隔振，光学盒直接安装；供电：小型发电机（车辆）"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "D9ANIZW6", claim: "This phase lock was unreliable beyond 0.5 g rms because of limitations in the PZT fiber-stretchers"}
+
+  - id: met.lock_uptime_s14
+    name: "连续无相位滑移锁定时间"
+    unit: "h"
+    description: >
+      f_ceo 与 f_opt 同时维持相位锁定、无周跳（phase slip）的连续运行时间。
+    demonstrated_value:
+      value: ">35 h 连续无相位滑移（实验室，1 s 门时计数 f_ceo σ = 0.62 mHz / f_opt σ = 0.97 mHz）"
+      conditions: "实验室环境；最终受限于致动器动态范围或偶发电气瞬态"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "D9ANIZW6", claim: "both fceo and fopt are free of phase slips for over 35 hours, eventually limited by actuator dynamic range or occasional electrical transients"}
+
+  - id: met.coherent_spectral_bandwidth_s14
+    name: "相干输出光谱范围"
+    unit: "THz"
+    description: >
+      以光学锁点为中心，f_ceo 相噪折算后 <1 rad 的梳齿覆盖范围。
+    demonstrated_value:
+      value: "实验室 ~140 THz（以 1565 nm 为中心，覆盖 1–2 μm 全范围）；现场 ~70 THz（f_ceo 相噪翻倍所致）"
+      conditions: "按 Δν ≈ 2·ν_opt / σ_φ,fceo 近似估计"
+      verification_status: calculated
+      confidence: established
+      source: {zotero_key: "D9ANIZW6", claim: "projected coherence across a comb spectrum of ~140 THz ... the doubling of the fceo phase noise halves this spectral range"}
+
+# ═══════════════════════════════════════════════
+#  RELATIONS（关系）
+# ═══════════════════════════════════════════════
+
+relations:
+  - id: rel.S14_01
+    subject: ent.ruggedized_field_comb_s14
+    predicate: PART-OF
+    object: ent.optical_frequency_comb
+    confidence: established
+    source: {zotero_key: "D9ANIZW6", claim: "a self-referenced fiber frequency comb that can operate outside the well-controlled optical laboratory"}
+    note: "ent.optical_frequency_comb 权威定义于 udem2002.yaml（跨文件引用）"
+
+  - id: rel.S14_02
+    subject: ent.pm_inline_f2f_interferometer_s14
+    predicate: PART-OF
+    object: ent.ruggedized_field_comb_s14
+    confidence: established
+    source: {zotero_key: "D9ANIZW6", claim: "we implement an \"in-line\" PM-fiber interferometer after the waveguide PPLN that exploits the differential delay between fast and slow PM-fiber axes"}
+
+  - id: rel.S14_03
+    subject: ent.ruggedized_field_comb_s14
+    predicate: CHARACTERIZED-BY
+    object: met.residual_optical_linewidth_s14
+    confidence: established
+    source: {zotero_key: "D9ANIZW6", claim: "residual optical linewidths of < 1 Hz"}
+
+  - id: rel.S14_04
+    subject: ent.ruggedized_field_comb_s14
+    predicate: CHARACTERIZED-BY
+    object: met.integrated_phase_noise_fopt_s14
+    confidence: established
+    source: {zotero_key: "D9ANIZW6", claim: "0.22 rad for fopt ... 0.3 rad ... 3.8 rad/g"}
+
+  - id: rel.S14_05
+    subject: ent.ruggedized_field_comb_s14
+    predicate: CHARACTERIZED-BY
+    object: met.integrated_phase_noise_fceo_s14
+    confidence: established
+    source: {zotero_key: "D9ANIZW6", claim: "integrated phase noise is 2.9 rad for fceo"}
+
+  - id: rel.S14_06
+    subject: ent.ruggedized_field_comb_s14
+    predicate: CHARACTERIZED-BY
+    object: met.pulse_to_pulse_timing_jitter_s14
+    confidence: established
+    source: {zotero_key: "D9ANIZW6", claim: "residual pulse-to-pulse timing jitter of 2.4 - 5 fs"}
+
+  - id: rel.S14_07
+    subject: ent.ruggedized_field_comb_s14
+    predicate: CHARACTERIZED-BY
+    object: met.vibration_tolerance_s14
+    confidence: established
+    source: {zotero_key: "D9ANIZW6", claim: "0.5 g rms integrated acceleration ... 0.5 g peak accelerations"}
+
+  - id: rel.S14_08
+    subject: ent.ruggedized_field_comb_s14
+    predicate: CHARACTERIZED-BY
+    object: met.lock_uptime_s14
+    confidence: established
+    source: {zotero_key: "D9ANIZW6", claim: "both fceo and fopt are free of phase slips for over 35 hours"}
+
+  - id: rel.S14_09
+    subject: ent.ruggedized_field_comb_s14
+    predicate: CHARACTERIZED-BY
+    object: met.coherent_spectral_bandwidth_s14
+    confidence: established
+    source: {zotero_key: "D9ANIZW6", claim: "projected coherence across a comb spectrum of ~140 THz"}
+
+  - id: rel.S14_10
+    subject: ent.ruggedized_field_comb_s14
+    predicate: ENABLED-BY
+    object: pri.self_referencing_f2f
+    confidence: established
+    source: {zotero_key: "D9ANIZW6", claim: "fceo is detected via the f-to-2f approach"}
+    note: "pri.self_referencing_f2f 定义于 udem2002.yaml（跨文件引用）"
+
+  - id: rel.S14_11
+    subject: ent.ruggedized_field_comb_s14
+    predicate: ENABLED-BY
+    object: pri.pm_fiber_splice_vibration_immunity
+    confidence: established
+    source: {zotero_key: "D9ANIZW6", claim: "completely based on PM fiber ... no free-space sections, reducing sensitivity to vibration and alignment drift"}
+
+  - id: rel.S14_12
+    subject: meth.ruggedized_fiber_comb_optical_lock_s14
+    predicate: ENABLED-BY
+    object: pri.optical_lock_lever_arm_timing_jitter
+    confidence: established
+    source: {zotero_key: "D9ANIZW6", claim: "optical lock to a single comb mode rather than direct stabilization of the repetition rate provides the large lever arm"}
+
+  - id: rel.S14_13
+    subject: meth.ruggedized_fiber_comb_optical_lock_s14
+    predicate: ENABLED-BY
+    object: pri.self_referencing_f2f
+    confidence: established
+    source: {zotero_key: "D9ANIZW6"}
+
+  - id: rel.S14_14
+    subject: met.pulse_to_pulse_timing_jitter_s14
+    predicate: OPERATIONALIZED-AS
+    object: meth.ruggedized_fiber_comb_optical_lock_s14
+    confidence: established
+    source: {zotero_key: "D9ANIZW6"}
+
+  - id: rel.S14_15
+    subject: ent.ruggedized_field_comb_s14
+    predicate: CONDITIONED-BY
+    object: ent.vibration_environment_mobile
+    confidence: established
+    source: {zotero_key: "D9ANIZW6", claim: "operated in the strong vibrational environments typical of terrestrial platforms"}
+
+  - id: rel.S14_16
+    subject: ent.ruggedized_field_comb_s14
+    predicate: CONDITIONED-BY
+    object: ent.fp_cavity_system
+    confidence: established
+    source: {zotero_key: "D9ANIZW6", claim: "cavity-stabilized 1565 nm cw fiber laser ... reference laser"}
+    note: >
+      ent.fp_cavity_system 定义于 topics/ultrastable-laser/papers/numata2004.yaml（跨专题接口）。
+      梳的绝对光学相干最终由其所锁的 FP 腔稳 cw 参考决定。
+
+  - id: rel.S14_17
+    subject: ent.ruggedized_field_comb_s14
+    predicate: BOUNDED-BY
+    object: pri.vibration_fopt_linear_coupling
+    confidence: established
+    source: {zotero_key: "D9ANIZW6", claim: "integrated phase noise on fopt increased roughly linearly with vibration level at 3.8 rad/g"}
+    note: "光学相位环残余相噪随加速度线性增长，PZT 伸缩器动态范围于 0.5 g rms 处饱和，成为 f_opt 锁定的直接上限。"
+    breakthrough_paths:
+      - direction: pri.transportable_cavity_reference_coupling
+        expected_gain: "采用车载低加速度灵敏度的腔稳参考（如 Leibrandt 2011/2013，<10⁻¹² /g）以消除 f_opt 相对相噪对参考激光漂移的依赖"
+        status: proposed
+        source: {zotero_key: "D9ANIZW6", claim: "Even more stable comb operation would be achieved using a robust, mobile, cavity-stabilized cw reference laser"}
+        note: "跨文件接口：ent.fp_cavity_system（numata2004.yaml）的低加速度灵敏度工程版本是关键抓手。"
+      - direction: pri.pm_fiber_splice_vibration_immunity
+        expected_gain: "改进机械封装 + 加气动隔振（2.5 Hz air-mount）可映射到船/卡车/C-5 等平台振动谱内"
+        status: demonstrated
+        source: {zotero_key: "D9ANIZW6", claim: "the frequency comb so mounted should maintain successful operation on a ship, in a truck traveling across U.S. highways, and in a C-5 aircraft"}
+
+  - id: rel.S14_18
+    subject: ent.ruggedized_field_comb_s14
+    predicate: BOUNDED-BY
+    object: pri.vibration_cavity_length_coupling
+    confidence: inferred
+    source: {zotero_key: "D9ANIZW6", claim: "tight phase locking to a cw reference laser via high-bandwidth feedback to the laser cavity length ... PZT attached directly to the fiber-laser cavity with careful damping of any fiber resonances"}
+    note: >
+      pri.vibration_cavity_length_coupling 定义于 lezius2016.yaml（跨文件引用）。
+      振动→腔长→f_rep/f_opt 耦合是 Sinclair 2014 与 Lezius 2016 共享的基础限制原理。
+    breakthrough_paths:
+      - direction: pri.pm_fiber_splice_vibration_immunity
+        expected_gain: "全 PM 光纤 + 灌胶 + 光纤组件环氧固定，压制 f_ceo 对振动的敏感度至不可测水平"
+        status: demonstrated
+        source: {zotero_key: "D9ANIZW6", claim: "as the vibration was increased beyond 1g, the fceo phase noise was unchanged"}
+
+  - id: rel.S14_19
+    subject: ent.ruggedized_field_comb_s14
+    predicate: COMPETES-WITH
+    object: ent.octave_spanning_tisa_comb_d00
+    confidence: established
+    source: {zotero_key: "D9ANIZW6", claim: "fiber-based frequency combs appeared as a strong alternative ... with regard to expense, robustness, and field operation"}
+    note: >
+      实验室级 Ti:Sa 梳（diddams2000.yaml）vs. 现场化 Er:fiber 梳：性能相近但后者鲁棒性/成本显著占优，
+      代表"实验室"与"出实验室"两条路线的直接竞争。
+
+  - id: rel.S14_20
+    subject: ent.ruggedized_field_comb_s14
+    predicate: COMPETES-WITH
+    object: ent.spaceborne_erfiber_comb_l16
+    confidence: established
+    source: {zotero_key: "D9ANIZW6", claim: "Menlo Systems has reported development of an rf-stabilized fiber frequency comb for operation on a sounding rocket [38] ... These systems rely on phase-stabilization to an rf clock ... Here we explore different operational conditions ... tight optical coherence and low timing jitter, achievable only by phase-stabilization to an optical reference"}
+    note: >
+      两者同属 ruggedized Er:fiber comb 家族，但锁定参考不同：
+      ent.spaceborne_erfiber_comb_l16（lezius2016.yaml）锁 rf，注重空间飞行工程；
+      ent.ruggedized_field_comb_s14 锁光参考，注重保持光学相干。两条工程路线并列竞争。

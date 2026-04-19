@@ -1,0 +1,498 @@
+# Rao 2019 — 面向 Li 原子 D1 线频率测量应用的掺铒飞秒光纤光梳系统研制 [应用型技术论文]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical — Er:fiber 光梳 + f-2f 自参考 + 光谱扩展至 671 nm + Li D1 线拍频应用
+#   核心贡献：
+#     (1) 自研 NPR 锁模掺铒飞秒光纤激光器（196.5 MHz，中心 1572 nm，59 fs）；
+#     (2) f-2f 自参考获得 fceo SNR ~40 dB（RBW 300 kHz），泵浦电流锁 fceo；EOM+PZT 双驱动锁 frep；
+#     (3) HNLF 光谱展宽到 1342 nm + MgO:PPLN 倍频至 671 nm（单模能量 208 nW），与 DLCpro 671 nm 单频激光
+#         拍频得 ~60 dB（RBW 1 Hz）信号，满足 Li 原子 D1 线精密频率测量应用需求。
+#   Framework 依赖：
+#     - ent.optical_frequency_comb（udem2002.yaml，顶层权威定义）
+#     - pri.self_referencing_f2f（udem2002.yaml / giunta2019.yaml）
+#     - 同组前作：zhang2017.yaml（NPE+NALM 混合锁模 Er:fiber 光梳，用于锶光钟测量），
+#       本文件面向 Li D1 线应用独立建 Level-2 系统节点。
+
+meta:
+  zotero_key: "CA55MEKS"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical
+  reliability: high
+  title: "Er:fiber Femtosecond Optical Frequency Comb Aimed at Measurement of Frequency of D1 Line in Li Atoms"
+  title_zh: "面向 Li 原子 D1 线频率测量应用的掺铒飞秒光纤光梳系统"
+  year: 2019
+  first_author: Rao
+  authors_zh: "饶冰洁, 张颜艳, 闫露露, 武跃龙, 张攀, 樊松涛, 郭文阁, 张晓斐, 张首刚, 姜海峰"
+  affiliation: "中国科学院国家授时中心 时间频率基准重点实验室"
+  journal: "Acta Photonica Sinica 光子学报"
+  volume: 48
+  issue: 1
+  pages: "0114003"
+  doi: "10.3788/gzxb20194801.0114003"
+  note: >
+    [应用型技术论文] NTSC 团队继 Zhang 2017 锶光钟 Er:fiber 光梳之后，针对 Li 原子 D1 线（~670.78 nm）
+    频率测量需求，搭建 NPR 锁模掺铒飞秒光纤光梳 + f-2f 自参考 + HNLF/PPLN 扩展到 671 nm 的完整链路。
+    跨文件节点引用：ent.optical_frequency_comb、pri.self_referencing_f2f 定义于 udem2002.yaml；
+    ent.hybrid_ml_erfiber_comb_z17 等 Zhang 2017 节点仅作背景参考，不复用。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.erfiber_comb_li_d1_r19
+    name: "面向 Li D1 线测量的 Er:fiber 飞秒光纤光梳系统（Rao 2019）"
+    aliases: ["Er:fiber comb for Li D1", "NTSC Er:fiber comb @671 nm"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      三个子单元级联：(1) NPR（非线性偏振旋转）锁模掺铒飞秒光纤激光源，中心波长 1572 nm，
+      重复频率 196.5 MHz，3dB 带宽 35 nm，脉宽 59 fs（sech²）；(2) 频率探测与控制单元：
+      光纤放大 + HNLF 展宽得倍频程光谱，f-2f 共线干涉 + PPLN1 将 2 µm 分量倍频至 1 µm 干涉
+      探测 fceo；泵浦电流环路锁 fceo；EOM（DO16050-1-3，高频相位）+ PZT（AE05D16F，慢调腔长）
+      双驱动锁 frep；(3) 光谱扩展与拍频单元：反射式 EDFA 放大至 280 mW，单模光纤整形至 250 fs，
+      55 cm HNLF（SUMITOMO OFS HNLF02，熔接效率 96%）将能量搬移至 1342 nm，PPLN2 倍频至
+      671 nm，带通滤光（670 nm，70%），与 DLCpro 671 nm 单频激光在 PD2 上拍频。
+    key_parameters:
+      laser_type: "NPR 锁模掺铒飞秒光纤激光器"
+      gain_fiber: "Er110-4/125，长度 40 cm"
+      pump_wavelength: "976 nm"
+      pump_power: "590 mW"
+      center_wavelength: "1572 nm"
+      spectrum_3db_bw: "35 nm"
+      repetition_rate: "196.5 MHz"
+      pulse_width: "59 fs（sech²）"
+      output_power_co3: "52 mW"
+      amplified_power_fceo_arm: "220 mW"
+      octave_hnlf_length: "30 cm"
+      spectral_extension_hnlf: "55 cm SUMITOMO OFS HNLF02（96% 熔接效率）"
+      power_at_1342nm: "0.210 mW/nm（单模 251 nW）"
+      power_at_671nm: "0.681 mW/nm（单模 208 nW）"
+    interface_requirements:
+      microwave_reference: "外部参考频率源（合成器 SYN），频率稳定度传递给光梳"
+      single_frequency_laser: "Toptica DLCpro 671 nm 激光器"
+      detection: "EOT3000A 光电探测器 × 2；Rohde&Schwarz FSL 频谱仪"
+    note: "Level-2 实例节点，PART-OF ent.optical_frequency_comb（顶层定义于 udem2002.yaml）。"
+
+principles:
+  - id: pri.nir_to_visible_shg_comb_link_r19
+    name: "红外飞秒梳经 HNLF 展宽 + PPLN 倍频链接至可见光原子跃迁线原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      在 Er:fiber 梳直接输出光谱（1520–1607 nm）不能覆盖可见光原子跃迁的情况下，
+      通过 HNLF 非线性展宽将部分能量搬移至 2·λ_target（本文 1342 nm），
+      再用准相位匹配 MgO:PPLN 晶体将其倍频到目标波长（671 nm），
+      即可在可见光端与单频激光拍频，将梳的相位稳定性传递到可见波段。
+    domain: "非线性光纤光学；准相位匹配二次谐波；光梳-原子跃迁链路"
+    formula: >
+      λ_target = λ_HNLF / 2；单模能量 > ~100 nW @ RBW 300 kHz → 可产生 > ~30 dB 拍频信号；
+      本文 208 nW @671 nm 对应 RBW 1 Hz 下 ~60 dB 拍频。
+    key_insight: >
+      对于 Er:fiber 这类红外梳，"HNLF 频谱搬移 + PPLN 倍频" 是扩展到可见原子线的标准工程路径，
+      关键在于 HNLF 长度和激光偏振态的联合优化使足够能量落在 2·λ_target 附近。
+    conditions: "输入脉冲宽度 ~250 fs；HNLF 熔接效率足够；PPLN 准相位匹配 @1342→671 nm；PM 保持"
+    preconditions:
+      - "Er:fiber 梳已完成 fceo 与 frep 锁定，梳齿相位稳定"
+      - "HNLF 长度与输入偏振共同优化使 1342 nm 单模功率最大化"
+    invalidated_when:
+      - "HNLF 过长导致脉冲分裂、孤子漂移，破坏相干性"
+      - "PPLN 温度/相位匹配条件未满足，倍频效率塌陷"
+    source_claim: >
+      "利用高非线性光纤和倍频晶体将光纤光梳直接输出光谱由 1520~1607 nm 扩展到 671 nm，
+       获得了单模功率为 208 nW 的光信号…与 671 nm 单频激光拍频产生约为 60 dB（分辨率带宽 1 Hz）信号"
+
+  - id: pri.dual_actuator_eom_pzt_frep_control
+    name: "EOM + PZT 双驱动 frep 控制原理（高频相位 + 低频慢调）"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      frep 的伺服需要同时覆盖宽带（高频相位修正）与大动态范围（慢漂修正）。
+      PZT 粘接反射镜改变几何腔长，提供 Hz~kHz 的慢调节大行程；
+      EOM（电光晶体）通过电压驱动折射率变化提供快速（数十 kHz 以上）相位调节，
+      两者叠加在同一误差信号闭环中，形成宽带 + 大动态的 frep 锁定。
+    domain: "光梳伺服工程"
+    formula: "误差信号 → LP 滤波 → 并联驱动 PZT（低频段）与 EOM（高频段）"
+    key_insight: >
+      单独 PZT 带宽不足以压缩 frep 快速抖动，单独 EOM 行程不足以跟随慢漂；
+      双驱动是 Er:fiber 光梳实现 10⁻¹³/√τ 量级 frep 内环稳定度的标准架构。
+    conditions: "反射镜粘接 PZT（AE05D16F）；EOM（DO16050-1-3）插入腔内自由空间段"
+    preconditions:
+      - "fceo 已先锁定，frep 抖动占主导"
+      - "两路驱动的传递函数交叠区无相位反转"
+    source_claim: >
+      "通过电光晶体和压电陶瓷改变飞秒激光光源腔长来控制重复频率 frep，
+       频率稳定度是 1.75×10⁻¹³/τ¹ᐟ²"
+
+  - id: pri.microwave_reference_transfer_to_optical_comb
+    name: "微波参考频率源通过 frep/fceo 锁定传递稳定度给光梳原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      将 frep 与 fceo 分别分频（本文 fceo 经 80 分频，frep 经 40 分频）后与外部参考频率源混频得
+      误差信号，反馈到飞秒激光源的泵浦电流与腔长驱动，即可把外部参考源的频率稳定度
+      通过 ν_n = N·frep + fceo 传递给每一根梳齿。
+      因此光梳任一梳齿的长期稳定度不可能优于所用微波参考源。
+    domain: "光梳-微波链路；绝对频率计量"
+    formula: "σ_y(梳齿，长期) ≥ σ_y(微波参考)；短期受限于伺服带宽"
+    key_insight: >
+      本文 frep 的 100 s 稳定度 2×10⁻¹⁴ 对应 Li D1 频率 ~10 Hz 量级，恰好够用于 kHz 量级绝对测量；
+      若希望测量精度继续提升，需将参考从微波升级为光频标准（超稳激光 / 光钟）。
+    conditions: "frep / fceo 均连续锁定无 cycle slip；分频器、混频器相噪可忽略"
+    preconditions:
+      - "参考源自身稳定度优于目标测量精度"
+      - "frep 伺服带宽内 PZT+EOM 组合可压制激光腔长扰动"
+    invalidated_when:
+      - "参考源跳跃或 GPS 失锁"
+      - "frep / fceo 任一路发生 cycle slip"
+    source_claim: >
+      "将这两个频率信号锁定，可以获得稳定的任意梳齿频率的输出…
+       利用锁相技术分别将这两个信号锁定到稳定的外部参考频率源上，
+       从而将外部参考源的稳定度传递给光梳"
+
+methods:
+  - id: meth.pump_current_fceo_lock_r19
+    name: "泵浦电流反馈锁定 fceo 方法（Rao 2019 实现）"
+    status: demonstrated
+    applies_to: ent.erfiber_comb_li_d1_r19
+    steps_summary: >
+      f-2f 光电探测器输出经带通滤波后得 fceo 射频信号；80 分频后与同频参考源混频产生误差；
+      经环路滤波器（LP）反馈至 976 nm 泵浦激光器驱动，通过泵浦电流改变腔内增益/SPM
+      从而调节载波包络相移频率。
+    required_hardware:
+      - "EOT3000A 光电探测器"
+      - "带通滤波器 + ÷80 分频器 + 混频器 + 环路滤波"
+      - "976 nm 泵浦激光驱动电流源"
+    advantages:
+      - "泵浦电流调节响应快，可达 kHz 级伺服带宽"
+      - "无需额外机械/EO 执行器，结构简洁"
+    disadvantages:
+      - "泵浦电流同时影响 frep 与 RIN，存在耦合"
+      - "in-loop 稳定度受限于分频后参考相噪与计数器噪底"
+    conditions: "fceo SNR ≥ ~30 dB（RBW 300 kHz）；参考源相噪低于环路目标"
+    source_claim: >
+      "将 fceo 信号经 80 分频器后与同频率的参考信号源进行混频，
+       最后通过环路滤波器反馈到飞秒激光源的泵浦控制器上，通过改变激光源的泵浦电流实现对 fceo 信号的实时控制"
+
+  - id: meth.eom_pzt_cavity_length_frep_lock_r19
+    name: "EOM+PZT 双驱动锁定 frep 方法（Rao 2019 实现）"
+    status: demonstrated
+    applies_to: ent.erfiber_comb_li_d1_r19
+    steps_summary: >
+      光电探测 frep → 滤波 → ÷40 分频 → 与参考源混频得误差信号 →
+      LP 环路滤波后并联驱动 PZT（慢、大行程）与 EOM（快、小行程）改变腔长，闭环稳定 frep。
+    required_hardware:
+      - "PZT（AE05D16F）+ 粘接反射镜"
+      - "EOM（DO16050-1-3）"
+      - "÷40 分频器 + 混频器 + 环路滤波"
+    advantages:
+      - "双执行器覆盖宽伺服带宽 + 大行程，内环 frep 稳定度 1.75×10⁻¹³/√τ"
+    disadvantages:
+      - "高压驱动 EOM 复杂，须防放电；PZT 共振可能引入峰"
+    conditions: "fceo 已先锁定；两执行器交叠带宽相位匹配"
+    source_claim: >
+      "通过外加电压到 PZT 和 EOM 上改变飞秒激光源的腔长来控制 frep"
+
+  - id: meth.hnlf_pplc_671nm_comb_extension_r19
+    name: "HNLF 展宽 + PPLN 倍频扩展光梳至 671 nm 方法（Rao 2019）"
+    status: demonstrated
+    applies_to: ent.erfiber_comb_li_d1_r19
+    steps_summary: >
+      1. 反射式 EDFA 将 Er:fiber 梳输出放大至 280 mW；
+      2. 熔接一段普通 SMF 进行脉冲整形至 ~250 fs；
+      3. 熔接 55 cm SUMITOMO OFS HNLF02（96% 熔接效率），优化长度与输入偏振
+         使足够能量落在 1342 nm（0.210 mW/nm，3dB 带宽 0.2 nm，单模 251 nW）；
+      4. 进入倍频光路（准直器 + λ/2 + MgO:PPLN2 + 带通滤光片 670 nm 70%），
+         得 671 nm 输出 0.681 mW/nm，单模 208 nW；
+      5. 与 DLCpro 671 nm 单频激光在 PD2 拍频，得 ~60 dB SNR（RBW 1 Hz）信号，
+         驱动商用锁频伺服将光梳稳定性传递给单频激光，用于 Li 原子 D1 线精密测量。
+    required_hardware:
+      - "反射式 Er:fiber 放大器"
+      - "SUMITOMO OFS HNLF02（55 cm）"
+      - "MgO:PPLN 倍频晶体"
+      - "带通滤光片 670 nm / 70%"
+      - "EOT3000A 光电探测器（PD2）"
+      - "DLCpro 671 nm 单频激光器"
+    advantages:
+      - "单模 208 nW > 100 nW 经验阈值，拍频 SNR 60 dB 可直接驱动商用锁频电路"
+      - "链路全固态、纤维化，利于 Li D1 线测量实验集成"
+    disadvantages:
+      - "HNLF 长度与偏振敏感，需手工优化"
+      - "PPLN 倍频效率对温度/准相位匹配敏感"
+    conditions: "Er:fiber 梳已锁定；HNLF 偏振与长度优化；PPLN 温控稳定"
+    source_claim: >
+      "最终得到的输出光强为 0.25 mW…671 nm 处光功率为 0.681 mW/nm，对应单模能量为 208 nW…
+       其信噪比为 60 dB（RBW 1 Hz），可以驱动商用锁频伺服系统对单频激光器进行锁定"
+
+metrics:
+  - id: met.fceo_snr_r19
+    name: "fceo 信号信噪比（Rao 2019）"
+    unit: "dB"
+    description: >
+      f-2f 干涉获得的载波包络相移频率拍频信号信噪比，决定锁相环路可实现的带宽与可靠性。
+    demonstrated_value:
+      value: "~40 dB"
+      conditions: "RBW 300 kHz；220 mW 放大 + 30 cm HNLF 倍频程展宽 + PPLN1 共线 f-2f"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "CA55MEKS", claim: "最终得到的 fceo 信号信噪比约为 40 dB（RBW=300 kHz），满足后续光梳锁定所需的信噪比强度"}
+
+  - id: met.fceo_inloop_instability_r19
+    name: "fceo 环内分数频率稳定度（Rao 2019）"
+    unit: "无量纲 Allan 偏差"
+    description: >
+      锁定后 fceo 信号相对于外部参考的 in-loop 残差 Allan 偏差（经 80 分频计数）。
+    demonstrated_value:
+      value: "3.74×10⁻¹⁸ / τ¹ᐟ²"
+      conditions: "泵浦电流反馈锁定；in-loop 测量"
+      verification_status: observed
+      confidence: suggestive
+      source: {zotero_key: "CA55MEKS", claim: "fceo 频率稳定度 3.74×10⁻¹⁸/τ¹ᐟ²"}
+    note: "in-loop 数值仅反映伺服残差，不等于梳齿绝对稳定度；绝对性能受微波参考限制。"
+
+  - id: met.frep_inloop_instability_r19
+    name: "frep 环内分数频率稳定度（Rao 2019）"
+    unit: "无量纲 Allan 偏差"
+    description: >
+      EOM+PZT 锁定后 frep 的 in-loop Allan 偏差（经 40 分频计数），含 100 s 点 2×10⁻¹⁴ 数据。
+    demonstrated_value:
+      value: "1.75×10⁻¹³ / τ¹ᐟ²；@100 s ≈ 2×10⁻¹⁴"
+      conditions: "EOM+PZT 双驱动；in-loop 测量"
+      verification_status: observed
+      confidence: suggestive
+      source: {zotero_key: "CA55MEKS", claim: "frep 频率稳定度为 1.75×10⁻¹³/τ¹ᐟ²；百秒 2×10⁻¹⁴"}
+    note: >
+      百秒 2×10⁻¹⁴ 对应 Li D1 频率 ~447 THz × 2×10⁻¹⁴ ≈ 9 Hz，满足 kHz 量级测量准确度需求；
+      原文明确"重复频率稳定度受限于测量计数器的噪声水平"。
+
+  - id: met.free_running_fceo_instability_r19
+    name: "自由运转 fceo 秒级稳定度（Rao 2019）"
+    unit: "无量纲 Allan 偏差"
+    demonstrated_value:
+      value: "1.52×10⁻⁷ @1 s"
+      conditions: "自由运转、无锁定"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "CA55MEKS", claim: "fceo 和 frep 的秒级频率稳定度分别为 1.52×10⁻⁷ 和 2.65×10⁻¹⁰"}
+
+  - id: met.free_running_frep_instability_r19
+    name: "自由运转 frep 秒级稳定度（Rao 2019）"
+    unit: "无量纲 Allan 偏差"
+    demonstrated_value:
+      value: "2.65×10⁻¹⁰ @1 s"
+      conditions: "自由运转、无锁定"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "CA55MEKS", claim: "fceo 和 frep 的秒级频率稳定度分别为 1.52×10⁻⁷ 和 2.65×10⁻¹⁰"}
+
+  - id: met.comb_linewidth_1572nm_r19
+    name: "Er:fiber 光梳直接输出谱参数（Rao 2019）"
+    unit: "nm / fs"
+    description: >
+      NPR 锁模飞秒光纤激光源输出光谱宽度与脉冲宽度（表征自由运转梳齿品质的基础指标）。
+    demonstrated_value:
+      value: "中心 1572 nm；3dB 带宽 35 nm；脉宽 59 fs（sech²）"
+      conditions: "590 mW 976 nm 泵浦；40 cm Er110-4/125 增益光纤；Yokogawa AQ6370 + Femtochrome FR-103MN"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "CA55MEKS", claim: "输出光谱的中心波长为 1572 nm，光谱的 3dB 带宽为 35 nm…脉冲宽度为 59 fs"}
+
+  - id: met.beat_snr_li_d1_r19
+    name: "671 nm 拍频信号信噪比 → Li D1 线频率测量（Rao 2019）"
+    unit: "dB"
+    description: >
+      光梳经 HNLF + PPLN 扩展至 671 nm 后与 DLCpro 单频激光拍频得到的可见光拍频信号信噪比，
+      直接决定能否驱动商用锁频伺服实现 Li D1 线精密测量。
+    is_interface_metric: true
+    coupling_formula: "SNR ≥ ~30 dB → 可驱动商用锁频电路；本文 60 dB 余量充足"
+    demonstrated_value:
+      value: "~60 dB"
+      conditions: "RBW 1 Hz；671 nm 单模功率 208 nW；DLCpro 单频激光"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "CA55MEKS", claim: "在 RBW 为 1 Hz 时，其信噪比为 60 dB，可以驱动商用锁频伺服系统对单频激光器进行锁定"}
+
+  - id: met.li_d1_measurement_uncertainty_r19
+    name: "Li 原子 D1 线频率测量应用的可达测量不确定度（Rao 2019 目标）"
+    unit: "Hz / 无量纲"
+    description: >
+      基于本文光梳 frep 100 s 稳定度 2×10⁻¹⁴ 推得的 Li D1 跃迁（~447 THz）频率测量分辨率。
+    demonstrated_value:
+      value: "~10 Hz @ 100 s（对应 kHz 量级绝对准确度需求）"
+      conditions: "梳锁定到外部微波参考；100 s 积分；Li D1 ~447 THz"
+      verification_status: inferred
+      confidence: suggestive
+      source: {zotero_key: "CA55MEKS", claim: "百秒 2×10⁻¹⁴ 的稳定度可以为 Li 原子 D1 线频率测量提供 10 Hz 量级的频率测量，满足其千赫兹频率测量准确度的需要"}
+    note: "实际绝对不确定度须结合外部参考源（通常 Rb/Cs/GPS 驯服）的性能评估。"
+
+# ═══════════════════════════════════════════════
+#  RELATIONS（关系）
+# ═══════════════════════════════════════════════
+
+relations:
+  - id: rel.R19_01
+    subject: ent.erfiber_comb_li_d1_r19
+    predicate: PART-OF
+    object: ent.optical_frequency_comb
+    confidence: established
+    source: {zotero_key: "CA55MEKS", claim: "本文报道了一套完整的面向 Li 原子 D1 线频率测量应用的掺铒飞秒光纤光梳系统"}
+    note: "ent.optical_frequency_comb 顶层定义于 udem2002.yaml（跨文件引用）"
+
+  - id: rel.R19_02
+    subject: ent.erfiber_comb_li_d1_r19
+    predicate: CHARACTERIZED-BY
+    object: met.comb_linewidth_1572nm_r19
+    confidence: established
+    source: {zotero_key: "CA55MEKS", claim: "中心波长为 1572 nm，光谱的 3 dB 带宽为 35 nm…脉冲宽度为 59 fs"}
+
+  - id: rel.R19_03
+    subject: ent.erfiber_comb_li_d1_r19
+    predicate: CHARACTERIZED-BY
+    object: met.fceo_snr_r19
+    confidence: established
+    source: {zotero_key: "CA55MEKS", claim: "fceo 信号信噪比约为 40 dB（RBW=300 kHz）"}
+
+  - id: rel.R19_04
+    subject: ent.erfiber_comb_li_d1_r19
+    predicate: CHARACTERIZED-BY
+    object: met.fceo_inloop_instability_r19
+    confidence: established
+    source: {zotero_key: "CA55MEKS", claim: "fceo 频率稳定度 3.74×10⁻¹⁸/τ¹ᐟ²"}
+
+  - id: rel.R19_05
+    subject: ent.erfiber_comb_li_d1_r19
+    predicate: CHARACTERIZED-BY
+    object: met.frep_inloop_instability_r19
+    confidence: established
+    source: {zotero_key: "CA55MEKS", claim: "frep 频率稳定度为 1.75×10⁻¹³/τ¹ᐟ²"}
+
+  - id: rel.R19_06
+    subject: ent.erfiber_comb_li_d1_r19
+    predicate: CHARACTERIZED-BY
+    object: met.free_running_fceo_instability_r19
+    confidence: established
+    source: {zotero_key: "CA55MEKS", claim: "自由运转情况下 fceo 的秒级频率稳定度为 1.52×10⁻⁷"}
+
+  - id: rel.R19_07
+    subject: ent.erfiber_comb_li_d1_r19
+    predicate: CHARACTERIZED-BY
+    object: met.free_running_frep_instability_r19
+    confidence: established
+    source: {zotero_key: "CA55MEKS", claim: "自由运转情况下 frep 的秒级频率稳定度为 2.65×10⁻¹⁰"}
+
+  - id: rel.R19_08
+    subject: ent.erfiber_comb_li_d1_r19
+    predicate: CHARACTERIZED-BY
+    object: met.beat_snr_li_d1_r19
+    confidence: established
+    source: {zotero_key: "CA55MEKS", claim: "与 671 nm 单频激光拍频产生约为 60 dB（RBW=1 Hz）信号"}
+
+  - id: rel.R19_09
+    subject: ent.erfiber_comb_li_d1_r19
+    predicate: CHARACTERIZED-BY
+    object: met.li_d1_measurement_uncertainty_r19
+    confidence: suggestive
+    source: {zotero_key: "CA55MEKS", claim: "可以为 Li 原子 D1 线频率测量提供 10 Hz 量级的频率测量"}
+
+  - id: rel.R19_10
+    subject: met.fceo_snr_r19
+    predicate: OPERATIONALIZED-AS
+    object: meth.pump_current_fceo_lock_r19
+    confidence: established
+    source: {zotero_key: "CA55MEKS"}
+
+  - id: rel.R19_11
+    subject: met.frep_inloop_instability_r19
+    predicate: OPERATIONALIZED-AS
+    object: meth.eom_pzt_cavity_length_frep_lock_r19
+    confidence: established
+    source: {zotero_key: "CA55MEKS"}
+
+  - id: rel.R19_12
+    subject: met.beat_snr_li_d1_r19
+    predicate: OPERATIONALIZED-AS
+    object: meth.hnlf_pplc_671nm_comb_extension_r19
+    confidence: established
+    source: {zotero_key: "CA55MEKS"}
+
+  - id: rel.R19_13
+    subject: meth.pump_current_fceo_lock_r19
+    predicate: ENABLED-BY
+    object: pri.self_referencing_f2f
+    confidence: established
+    source: {zotero_key: "CA55MEKS", claim: "fceo 一般利用 f-2f 自参考技术得到…利用 PPLN1 将 2 µm 的波长成分倍频至 1 µm"}
+    note: "pri.self_referencing_f2f 定义于 udem2002.yaml（跨文件引用）"
+
+  - id: rel.R19_14
+    subject: meth.eom_pzt_cavity_length_frep_lock_r19
+    predicate: ENABLED-BY
+    object: pri.dual_actuator_eom_pzt_frep_control
+    confidence: established
+    source: {zotero_key: "CA55MEKS", claim: "通过电光晶体和压电陶瓷改变飞秒激光光源腔长来控制重复频率 frep"}
+
+  - id: rel.R19_15
+    subject: meth.hnlf_pplc_671nm_comb_extension_r19
+    predicate: ENABLED-BY
+    object: pri.nir_to_visible_shg_comb_link_r19
+    confidence: established
+    source: {zotero_key: "CA55MEKS", claim: "利用高非线性光纤和倍频晶体将光纤光梳直接输出光谱由 1520~1607 nm 扩展到 671 nm"}
+
+  - id: rel.R19_16
+    subject: ent.erfiber_comb_li_d1_r19
+    predicate: ENABLED-BY
+    object: pri.microwave_reference_transfer_to_optical_comb
+    confidence: established
+    source: {zotero_key: "CA55MEKS", claim: "将外部参考源的稳定度传递给光梳"}
+
+  - id: rel.R19_17
+    subject: met.frep_inloop_instability_r19
+    predicate: BOUNDED-BY
+    object: pri.microwave_reference_transfer_to_optical_comb
+    confidence: established
+    source: {zotero_key: "CA55MEKS", claim: "重复频率稳定度受限于测量计数器的噪声水平"}
+    note: >
+      中长期稳定度被外部微波参考 + 计数器噪底共同限制，这是 Rao 2019 链路的首要瓶颈。
+    breakthrough_paths:
+      - direction: meth.wideband_optical_frequency_synthesis
+        expected_gain: "引入超稳激光 + 光相位追踪作为光频参考，绕过微波参考相噪天花板，达 10⁻¹⁷ 量级"
+        status: demonstrated
+        source: {zotero_key: "CA55MEKS", claim: "重复频率稳定度受限于测量计数器的噪声水平"}
+        note: "meth.wideband_optical_frequency_synthesis 定义于 giunta2020.yaml（跨文件引用）"
+
+  - id: rel.R19_18
+    subject: met.li_d1_measurement_uncertainty_r19
+    predicate: BOUNDED-BY
+    object: pri.microwave_reference_transfer_to_optical_comb
+    confidence: inferred
+    source: {zotero_key: "CA55MEKS", claim: "百秒 2×10⁻¹⁴ 的稳定度可以为 Li 原子 D1 线频率测量提供 10 Hz 量级的频率测量"}
+    breakthrough_paths:
+      - direction: meth.optical_frequency_counting
+        expected_gain: "若把梳锁定至光频标准（如 Sr/Yb 光钟）而非微波，可将 D1 绝对频率测量推进到 < 1 Hz"
+        status: proposed
+        source: {zotero_key: "CA55MEKS", claim: "满足其千赫兹频率测量准确度的需要"}
+        note: "meth.optical_frequency_counting 为通用框架方法，见 giunta2019/giunta2020 等。"
+
+  - id: rel.R19_19
+    subject: met.beat_snr_li_d1_r19
+    predicate: BOUNDED-BY
+    object: pri.nir_to_visible_shg_comb_link_r19
+    confidence: established
+    source: {zotero_key: "CA55MEKS", claim: "单模能量为 208 nW…满足后续与单频激光拍频所需的能量（一般来说，单模能量为 100 nW 的激光信号拍频后可以产生 30 dB 的信号）"}
+    note: "拍频 SNR 直接受限于 HNLF + PPLN 链路中落在 671 nm 单模的能量。"
+    breakthrough_paths:
+      - direction: pri.nonlinear_frequency_conversion_comb
+        expected_gain: "改用 PM-HNLF、色散工程设计的硅基波导 SC 源或多级 PPLN 级联，进一步把 671 nm 单模功率推向 µW 级"
+        status: proposed
+        source: {zotero_key: "CA55MEKS"}
+        note: "pri.nonlinear_frequency_conversion_comb 为顶层原理节点（udem2002.yaml 框架定义）。"
+
+  - id: rel.R19_20
+    subject: ent.erfiber_comb_li_d1_r19
+    predicate: COMPETES-WITH
+    object: ent.octave_spanning_tisa_comb_d00
+    confidence: suggestive
+    source: {zotero_key: "CA55MEKS", claim: "钛宝石光梳同样存在一些不足，如体积较大，不利于后续商品化发展…光纤光梳体积小，功耗低，可以实现系统的微型化和集成化"}
+    note: "同为可用于可见光原子跃迁频率测量的飞秒梳方案；本文选择 Er:fiber 路线换取体积、成本、维护优势。"

@@ -1,0 +1,404 @@
+# Chou 2020 — 首次在单分子离子纯量子态上实现飞秒梳驱动的 THz 转动光谱 [里程碑技术论文]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical
+#   核心贡献：
+#     (1) 将量子逻辑光谱（QLS）与飞秒光学频率梳的相干 Raman 驱动首次结合，
+#         在单一囚禁 40CaH+ 分子离子的纯量子态上直接驱动 THz 级转动跃迁；
+#     (2) 实现 <1 kHz 傅里叶极限线型，统计不确定度 <100 Hz，绝对跃迁频率精度 ~1 ppb；
+#     (3) 首次直接测得 40CaH+ 转动常数 BR = 142 501 777.9(1.7) kHz，
+#         相对精度 1.2×10⁻⁸，远超 ab initio 量子化学计算；
+#     (4) 可非破坏性读出，分子保留以继续量子态操纵，打开分子量子信息与精密计量的结合方向。
+#   Framework 依赖：ent.optical_frequency_comb 权威定义于 udem2002.yaml；
+#     pri.ramsey_comb_spectroscopy、meth.direct_two_photon_comb_spectroscopy 定义于 picque2019.yaml；
+#     ent.optical_frequency_standard 为跨主题接口节点。
+
+meta:
+  zotero_key: "DUJ8VXBR"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical
+  reliability: high
+  title: "Frequency-comb spectroscopy on pure quantum states of a single molecular ion"
+  year: 2020
+  first_author: Chou
+  journal: "Science"
+  volume: 367
+  issue: 6485
+  pages: "1458-1461"
+  doi: "10.1126/science.aba3628"
+  note: >
+    [里程碑技术论文] NIST Time and Frequency Division (Chou/Leibfried/Leibrandt 等)。
+    40Ca+–40CaH+ 共囚禁于线性 Paul 阱；1051 nm CW 光纤 Raman 激光做投影式态制备与非破坏性读出，
+    Ti:S 飞秒梳（frep ≈ 80 MHz，800–850 nm，~10 THz 带宽）分为两束、各经 AOM 频移 ±fAOM，
+    两梳齿对共同驱动 ΔJ = ±2 型 THz 级受激 Raman 转动跃迁，
+    fRaman = |N·frep − 2·fAOM|，N ∈ ℤ。J=1→3, 2→4, 3→5, 4→6 四条转动跃迁，
+    95% 置信统计不确定度 <100 Hz，系统不确定度 ~2–5 kHz（阱 RF 电场 Stark 移动主导），
+    Fourier 极限线宽 <1 kHz @ 1.6 ms 方脉冲。该实验打通 QLS + OFC + 分子，
+    可推广到多原子分子、手性分子、m_e/m_p 变化检验等。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.single_ion_comb_spectrometer_c20
+    name: "单分子离子 + 飞秒梳 Raman 光谱仪（Chou 2020 系统）"
+    aliases:
+      - "quantum-logic + OFC molecular spectrometer"
+      - "trapped CaH+ comb Raman spectrometer"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      由线性 Paul 阱（超高真空）共囚禁的 40Ca+–40CaH+ 双离子组成；
+      1051 nm 连续光纤激光产生一对 CW Raman 光束做分子态制备与读出（通过耦合运动模式的共振边带转移）；
+      Ti:S 飞秒 OFC 经分束 + 一对 AOM 产生两束脉冲梳 Raman 光束，
+      梳齿对共同驱动 ΔJ = ±2、Δm = ±1 的 THz 级受激 Raman 转动跃迁（CRPT，comb Raman pulse train）；
+      色散由啁啾镜预补偿，可调延迟线保证两臂脉冲在离子位置时间重合。
+      读出通过探测 40Ca+ 的运动边带状态完成，分子保留原始量子态供进一步操纵。
+    key_parameters:
+      molecular_species: "40CaH+（与 40Ca+ 共囚禁于线性 Paul 阱）"
+      trap_type: "线性 Paul 阱，UHV，z 方向共享运动模式"
+      state_prep_laser: "1051 nm CW 光纤 Raman，signature transition 投影制备（启发式）"
+      comb_source: "Ti:Sa 飞秒 OFC，frep ≈ 80 MHz，中心波长 800–850 nm"
+      comb_bandwidth: "~10 THz（决定可覆盖的转动跃迁范围）"
+      aom_shift: "±fAOM（两臂反向频移，扫描步长 ~frep/2）"
+      selection_rules: "ΔJ = 0, ±2；Δm = ±1（两光子 Raman）"
+      dispersion_control: "啁啾镜预补偿 GDD + 可调延迟台使两臂脉冲时间重合"
+      readout: "40Ca+ 运动边带态非破坏性检测；启发式投影态制备"
+    interface_requirements:
+      magnetic_field: "静态 B ≈ 0.357(1) mT 量子化轴"
+      comb_frep_reference: "微波参考（限制当前相干时间，见 breakthrough_paths）"
+      vacuum_and_trap_stability: "阱 RF 电场稳定性直接决定系统不确定度 (~kHz 级)"
+    note: >
+      Level 2 实例节点，PART-OF ent.optical_frequency_comb（权威定义于 udem2002.yaml）。
+      与 ent.dual_comb_spectrometer（coddington 系列）并列为"OFC 应用于光谱"的两条不同分支：
+      本文为单离子、相干 Raman、THz 转动；后者为气相吸收、多外差、IR 宽带。
+
+principles:
+  - id: pri.comb_driven_stimulated_raman_terahertz
+    name: "飞秒梳驱动的 THz 受激 Raman 转动跃迁原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      两束同源飞秒梳光束经 AOM 反向频移后同时照射分子离子；
+      每一束中大量梳齿彼此离电子共振远失谐，但其任一对（一束中第 n 齿、另一束中第 m 齿）
+      可满足两光子共振条件 fRaman = |N·frep − 2·fAOM|，集体驱动 ΔJ = ±2 型受激 Raman 跃迁。
+      由于失谐远大于振动/电子共振（~10 THz 带宽离电子共振 ~100 THz），
+      自发散射率极低，而受激 Raman 拉比频率由梳齿对数 N 相干累加增强。
+    domain: "分子光谱；相干量子控制；飞秒梳应用"
+    formula: "fRaman = |N·frep − 2·fAOM|；Ω_eff ∝ Σ_n E_n^(p) E_{n+N}^(s*) / Δ"
+    key_insight: >
+      相比窄线 CW Raman，OFC 可覆盖任意 THz 范围跃迁而无需专门合成相应频率光源，
+      通过扫描 fAOM（在 frep/2 内）即可在 ~10 THz 带宽内搜索未知跃迁；
+      适合预知不精确的分子常数情形。
+    conditions:
+      - "OFC 带宽覆盖目标 Raman 频率"
+      - "梳齿对电子/振动态远失谐（抑制自发散射）"
+      - "两臂脉冲在分子位置时间重合（需 GDD 补偿 + 可调延迟）"
+    preconditions:
+      - "frep 相干稳定性足以支撑所需相干时间"
+      - "两 AOM 相对相位噪声可控"
+    invalidated_when:
+      - "失谐不足导致散射率不可忽略"
+      - "脉冲时间不重合导致梳齿对相干相消"
+    source_claim: >
+      "We coherently drive stimulated terahertz Raman rotational transitions using an optical frequency
+      comb with a spectrum far off-resonant from most vibrational and all electronic transitions"
+
+  - id: pri.state_prepared_single_ion_spectroscopy
+    name: "单离子纯量子态光谱原理（heralded QLS 制备 + 非破坏读出）"
+    tier: domain
+    verification_status: observed
+    statement: >
+      将分子离子与逻辑原子（40Ca+）通过共享运动模式耦合；
+      用 CW Raman 对"signature transition"施加 π 脉冲，尝试把分子从未知转动态投影到已知态，
+      成功与否通过原子运动态变化启发式检测。重复序列抑制制备错误，
+      最终制备出确定的 |J; m; χ⟩ 单量子态。读出同样基于原子运动边带，分子保留可继续操纵。
+      由此消除了分子系综中常见的热分布、环境扰动、碰撞等效应，光谱线形接近自然线宽极限。
+    domain: "量子逻辑光谱；单离子精密计量"
+    key_insight: >
+      纯量子态 + 非破坏读出使"单分子"成为有效统计样本：
+      既规避系综加宽，又保留分子供重复测量与进一步量子操纵。
+    conditions:
+      - "逻辑原子可通过共享运动模式与分子离子耦合"
+      - "存在可重复驱动的 signature transition 用作投影态制备"
+    preconditions:
+      - "阱冷却使运动模式可初始化到 |n=0⟩ 或 |n=1⟩"
+      - "分子转动态变化时间 ≫ 制备 + 探测序列时长（本工作：10 ms 至 s 级）"
+    invalidated_when:
+      - "signature transition 不存在或不可辨（m、χ 简并）"
+      - "黑体辐射率过高致制备期间态跳变"
+    source_claim: >
+      "We use quantum-logic techniques to prepare a trapped molecular ion in a single quantum state,
+      drive terahertz rotational transitions with an optical frequency comb, and read out the final state
+      nondestructively, leaving the molecule ready for further manipulation."
+
+  - id: pri.microwave_referenced_comb_coherence_limit
+    name: "微波参考飞秒梳相干性限制原理（分子光谱场景）"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      当 OFC 的 frep（及等效 fCEO/光频链路）锁定至微波本振时，
+      Raman 差频 fRaman = |N·frep − 2·fAOM| 的相位噪声由微波参考主导，
+      限制相干驱动时间与谱线线宽；sub-Hz 级分辨率需将参考从微波迁移到超稳激光 / 光钟。
+    domain: "光学频率梳 — 精密光谱链路"
+    key_insight: >
+      本工作 <1 kHz FWHM 主要是 ~1.6 ms 方脉冲的傅里叶极限，尚未到微波参考极限；
+      但进一步延长脉冲至秒级相干探询将触及此极限，需按 Bartels 2004（Opt. Lett. 29, 1081）方案
+      把梳锁到光学参考。
+    conditions: "梳 frep 仅锁定至微波本振；分子跃迁线宽源于探询脉冲时长"
+    invalidated_when:
+      - "梳锁至超稳激光 / 光钟，限制转移至光参考"
+    source_claim: >
+      "Our resolution is currently limited by the coherence of the microwave-referenced OFC and
+      can be further improved to the sub-hertz level"
+
+  - id: pri.trap_rf_field_stark_systematic
+    name: "阱 RF 电场诱导 Stark 移动系统误差原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      线性 Paul 阱的射频电场在分子离子位置并非严格为零，耦合分子电偶极/极化率导致
+      跃迁频率系统性偏移；外推至零电场的过程含百 Hz 至 kHz 级剩余不确定度。
+      该项构成当前绝对频率不确定度的主导来源，对电子极化率较大的分子尤甚。
+    domain: "囚禁离子精密光谱；系统误差"
+    key_insight: >
+      单离子 + 纯量子态已消除系综效应，但"单离子仍在电磁势中"——
+      阱场 Stark 移动成为新的主导系统项；后续突破依赖于更好的阱场控制，
+      或改用对阱场不敏感的分子物种。
+    conditions: "线性 Paul 阱 RF 场；分子极化率显著"
+    invalidated_when:
+      - "迁移至对阱场不敏感物种（例如同核反平行对）"
+      - "采用 RF-null 阱构型或补偿电极精细对准"
+    source_claim: >
+      "uncertainty in the trap radio-frequency electric field in our current setup limits
+      uncertainties in extrapolation of line centers to zero electric field to hundreds of hertz"
+
+methods:
+  - id: meth.single_ion_ofc_quantum_logic_spectroscopy_c20
+    name: "单分子离子 + OFC 量子逻辑光谱方法（Chou 2020）"
+    status: demonstrated
+    applies_to: ent.single_ion_comb_spectrometer_c20
+    steps_summary: >
+      1. 共囚禁 40Ca+–40CaH+，基态冷却共享 z 向运动模式；
+      2. 用 1051 nm CW Raman 对 signature transition 施加边带 π 脉冲，
+         成功时运动态由 |n=0⟩ 翻到 |n=1⟩，用原子检测启发式投影制备分子到已知 |J;m;χ⟩；
+      3. 序列重复以抑制制备错误；
+      4. Ti:Sa OFC 分束 + 两 AOM 产生 comb Raman 脉冲串（CRPT），
+         两梳齿对共同驱动 ΔJ=±2 转动跃迁，fRaman=|N·frep−2·fAOM|；
+      5. 扫描 fAOM（或扫描脉冲时长探 Rabi 振荡）；
+      6. 用 CW Raman 依次检测初态 |J″⟩ 与末态 |J′⟩ 的占据，获得转移概率；
+      7. 扣除 B 场与自旋-转动耦合修正得到 centroid 频率；
+      8. 用 Eq. (1) 的多阶 J(J+1) 展开拟合 C₁–C₄ 转动常数。
+    required_hardware:
+      - ent.single_ion_comb_spectrometer_c20
+      - ent.optical_frequency_comb
+    advantages:
+      - "纯量子态 + 非破坏读出：单分子可重复测量"
+      - "OFC ~10 THz 带宽内任意转动跃迁可通过 fAOM 扫描找到，适合先验不精确的物种"
+      - "ΔJ=±2 选择定则与 signature transition 结合，同时检测初末态，简化谱图"
+      - "原理通用，可推广到多原子分子与手性分子"
+    disadvantages:
+      - "依赖与逻辑原子的运动模式耦合，对阱稳定性要求高"
+      - "当前相干时间受微波参考 OFC 限制"
+      - "阱 RF Stark 移动外推引入 kHz 级系统误差"
+    conditions:
+      - "OFC 带宽覆盖目标跃迁"
+      - "分子转动态变化时间远长于序列时长"
+    source_claim: >
+      "With the molecule prepared in a known state, the ~10-THz bandwidth OFC can probe all allowed
+      transitions up to several terahertz by scanning fAOM over frep/2."
+
+metrics:
+  - id: met.rotational_transition_frequency_uncertainty_c20
+    name: "转动跃迁绝对频率不确定度（Chou 2020，40CaH+）"
+    unit: "Hz / 无量纲分数"
+    description: >
+      J→J+2 型受激 Raman 转动跃迁 centroid 频率的总不确定度，
+      包含 95% 置信统计（<100 Hz）与系统（kHz 级，阱 RF 主导）两部分。
+    demonstrated_value:
+      value: "~1 ppb（~1×10⁻⁹）；统计 <100 Hz，系统 2.4–4.5 kHz"
+      conditions: "B=0.357(1) mT；~1.6 ms 方脉冲 CRPT；J ∈ {1,2,3,4} → J+2；40CaH+"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "DUJ8VXBR", claim: "determine the transition centroid frequencies with ∼1 part per billion (ppb) accuracy"}
+    theoretical_floor:
+      value: "sub-Hz（<10⁻¹²）"
+      basis: "改用超稳激光参考 OFC + 阱 RF Stark 不敏感分子"
+      gap_note: "当前主要限制：阱 RF 电场外推（系统） + 微波参考 OFC 相干（统计线宽）"
+    historical_landmarks:
+      first_demonstration:
+        value: "单分子离子纯量子态 OFC 转动光谱，1 ppb"
+        year: 2020
+        source: {zotero_key: "DUJ8VXBR"}
+        note: "首次在单分子离子纯量子态上实现 OFC 驱动的 THz 转动光谱"
+
+  - id: met.comb_raman_line_fwhm_c20
+    name: "飞秒梳 Raman 驱动转动谱线宽（Chou 2020）"
+    unit: "Hz"
+    description: >
+      Raman 差频扫描得到的共振线 FWHM，由 CRPT 方脉冲时长的傅里叶极限决定。
+    demonstrated_value:
+      value: "<1 kHz FWHM"
+      conditions: "~1.6 ms 方脉冲 CRPT；Fourier 限；40CaH+ J=2→4"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "DUJ8VXBR", claim: "<1 kHz full width at half-maximum (FWHM) Fourier-limited spectroscopic line shapes"}
+    theoretical_floor:
+      value: "自然线宽（分子基态转动寿命长，远小于 Hz 级）"
+      basis: "若 OFC 锁至光学参考且脉冲延长至 s 量级"
+      gap_note: "当前受探询脉冲时长（傅里叶）而非微波参考限制"
+
+  - id: met.rotational_constant_br_c20
+    name: "40CaH+ 转动常数 BR（Chou 2020）"
+    unit: "kHz"
+    description: >
+      从多条 J→J+2 跃迁频率按 Eq. (1) 联合拟合得到的一阶转动常数。
+    demonstrated_value:
+      value: "142 501 777.9 ± 1.7 kHz（相对精度 1.2×10⁻⁸）"
+      conditions: "联合 J ∈ {1,2,3,4} → J+2 共 4 条跃迁；含四阶离心修正"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "DUJ8VXBR", claim: "BR = 142 501 777.9(1.7) kHz ... 1.2 × 10⁻⁸ relative precision"}
+    historical_landmarks:
+      best_demonstration:
+        value: "1.2×10⁻⁸（较 ab initio 量子化学计算高若干数量级）"
+        year: 2020
+        source: {zotero_key: "DUJ8VXBR"}
+
+# ═══════════════════════════════════════════════
+#  RELATIONS（关系）
+# ═══════════════════════════════════════════════
+
+relations:
+  - id: rel.C20_01
+    subject: ent.single_ion_comb_spectrometer_c20
+    predicate: PART-OF
+    object: ent.optical_frequency_comb
+    confidence: established
+    source: {zotero_key: "DUJ8VXBR", claim: "Ti:S OFC is divided into two Raman beams ... drive two-photon SRTs in the molecule"}
+    note: "ent.optical_frequency_comb 权威定义于 topics/optical-frequency-combs/papers/udem2002.yaml"
+
+  - id: rel.C20_02
+    subject: ent.single_ion_comb_spectrometer_c20
+    predicate: ENABLED-BY
+    object: pri.comb_driven_stimulated_raman_terahertz
+    confidence: established
+    source: {zotero_key: "DUJ8VXBR", claim: "comb teeth in one beam together with the corresponding ones in the other beam collectively drive a stimulated Raman transition of frequency fRaman = |N·frep − 2·fAOM|"}
+
+  - id: rel.C20_03
+    subject: ent.single_ion_comb_spectrometer_c20
+    predicate: ENABLED-BY
+    object: pri.state_prepared_single_ion_spectroscopy
+    confidence: established
+    source: {zotero_key: "DUJ8VXBR", claim: "a trapped molecular ion in a single quantum state ... read out the final state nondestructively"}
+
+  - id: rel.C20_04
+    subject: meth.single_ion_ofc_quantum_logic_spectroscopy_c20
+    predicate: ENABLED-BY
+    object: pri.comb_driven_stimulated_raman_terahertz
+    confidence: established
+    source: {zotero_key: "DUJ8VXBR", claim: "interrogated by a CRPT (comb Raman pulse train)"}
+
+  - id: rel.C20_05
+    subject: meth.single_ion_ofc_quantum_logic_spectroscopy_c20
+    predicate: ENABLED-BY
+    object: pri.state_prepared_single_ion_spectroscopy
+    confidence: established
+    source: {zotero_key: "DUJ8VXBR", claim: "heralded projective molecular state preparation ... sequentially detecting the |J″⟩ and |J′⟩ states"}
+
+  - id: rel.C20_06
+    subject: ent.single_ion_comb_spectrometer_c20
+    predicate: CHARACTERIZED-BY
+    object: met.rotational_transition_frequency_uncertainty_c20
+    confidence: established
+    source: {zotero_key: "DUJ8VXBR", claim: "∼1 part per billion (ppb) accuracy"}
+    temporal_role: proposes
+    conditions: "40CaH+ J=1–4 → J+2；B=0.357(1) mT"
+
+  - id: rel.C20_07
+    subject: ent.single_ion_comb_spectrometer_c20
+    predicate: CHARACTERIZED-BY
+    object: met.comb_raman_line_fwhm_c20
+    confidence: established
+    source: {zotero_key: "DUJ8VXBR", claim: "<1 kHz FWHM Fourier-limited spectroscopic line shapes"}
+
+  - id: rel.C20_08
+    subject: meth.single_ion_ofc_quantum_logic_spectroscopy_c20
+    predicate: CHARACTERIZED-BY
+    object: met.rotational_constant_br_c20
+    confidence: established
+    source: {zotero_key: "DUJ8VXBR", claim: "BR = 142 501 777.9(1.7) kHz"}
+
+  - id: rel.C20_09
+    subject: met.rotational_transition_frequency_uncertainty_c20
+    predicate: OPERATIONALIZED-AS
+    object: meth.single_ion_ofc_quantum_logic_spectroscopy_c20
+    confidence: established
+    source: {zotero_key: "DUJ8VXBR"}
+
+  - id: rel.C20_10
+    subject: met.comb_raman_line_fwhm_c20
+    predicate: BOUNDED-BY
+    object: pri.microwave_referenced_comb_coherence_limit
+    confidence: established
+    source: {zotero_key: "DUJ8VXBR", claim: "Our resolution is currently limited by the coherence of the microwave-referenced OFC and can be further improved to the sub-hertz level"}
+    note: "当前 <1 kHz FWHM 为方脉冲傅里叶极限，延长脉冲后将触及微波参考极限。"
+    breakthrough_paths:
+      - direction: meth.wideband_optical_frequency_synthesis
+        expected_gain: "将 OFC 锁至超稳激光 / 光钟 → sub-Hz 线宽（>10³ 倍提升）"
+        status: proposed
+        source: {zotero_key: "DUJ8VXBR", claim: "can be further improved to the sub-hertz level (Bartels et al. 2004)"}
+        note: "meth.wideband_optical_frequency_synthesis 定义于 topics/optical-frequency-combs/papers/giunta2020.yaml"
+
+  - id: rel.C20_11
+    subject: met.rotational_transition_frequency_uncertainty_c20
+    predicate: BOUNDED-BY
+    object: pri.trap_rf_field_stark_systematic
+    confidence: established
+    source: {zotero_key: "DUJ8VXBR", claim: "uncertainty in the trap radio-frequency electric field in our current setup limits uncertainties in extrapolation of line centers to zero electric field to hundreds of hertz"}
+    note: "当前绝对频率系统误差主导项（kHz 级）。"
+    breakthrough_paths:
+      - direction: pri.state_prepared_single_ion_spectroscopy
+        expected_gain: "迁移至对阱 RF 场不敏感的分子物种 → sub-Hz / <10⁻¹² 绝对精度"
+        status: proposed
+        source: {zotero_key: "DUJ8VXBR", claim: "the measurement accuracy could be improved to the sub-hertz (<1 part per trillion) level with improvements of the apparatus or for molecules that are less sensitive to the trap field"}
+      - direction: meth.single_ion_ofc_quantum_logic_spectroscopy_c20
+        expected_gain: "改进阱场控制与补偿电极对准 → kHz → 百 Hz 级系统"
+        status: proposed
+        source: {zotero_key: "DUJ8VXBR", claim: "A more detailed study of these effects is ongoing, and we expect that they can be better controlled in future experiments"}
+
+  - id: rel.C20_12
+    subject: meth.single_ion_ofc_quantum_logic_spectroscopy_c20
+    predicate: CONDITIONED-BY
+    object: ent.optical_frequency_standard
+    confidence: inferred
+    source: {zotero_key: "DUJ8VXBR", claim: "can be further improved to the sub-hertz level"}
+    note: >
+      跨主题接口：将 OFC 从微波参考切换为光学参考（光钟/超稳激光）可去除
+      pri.microwave_referenced_comb_coherence_limit。ent.optical_frequency_standard
+      为跨主题接口节点。
+
+  - id: rel.C20_13
+    subject: pri.comb_driven_stimulated_raman_terahertz
+    predicate: DERIVED-FROM
+    object: meth.direct_two_photon_comb_spectroscopy
+    confidence: inferred
+    source: {zotero_key: "DUJ8VXBR", claim: "stimulated Raman transition of frequency fRaman = |N·frep − 2·fAOM|"}
+    note: >
+      概念血缘：本方法的两光子 Raman 由两束梳齿对协同产生，与直接两光子梳光谱（picque2019.yaml）
+      共享"多对梳齿相干累加"核心思想，但在单分子离子纯态上以 AOM 差频精确控制目标频率。
+
+  - id: rel.C20_14
+    subject: pri.comb_driven_stimulated_raman_terahertz
+    predicate: COMPETES-WITH
+    object: pri.ramsey_comb_spectroscopy
+    confidence: inferred
+    source: {zotero_key: "DUJ8VXBR", claim: "comb Raman pulse train ... Rabi flopping between |J″⟩ and |J′⟩"}
+    note: >
+      同层级竞争：pri.ramsey_comb_spectroscopy（picque2019.yaml）采用两脉冲梳 Ramsey 序列；
+      本工作采用单 CRPT 方脉冲做 Rabi 振荡 + 扫频，两者均可在梳带宽内探询相干跃迁，
+      互为可选方案。

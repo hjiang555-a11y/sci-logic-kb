@@ -1,0 +1,346 @@
+# McFerran 2007 — 通过抑制泵浦 RIN 将 Er:fiber 梳 fceo 积分相位抖动降至 ~1 rad [技术论文]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical — Er:fiber 频率梳 fceo 相噪机理与抑制工程论文
+#   核心贡献：
+#     (1) 明确识别 Er:fiber 梳 fceo 大频率抖动的物理起源 = 1480 nm 泵浦二极管的白噪声 RIN；
+#     (2) 建立 RIN → f_r / fceo 的定量 AM-FM 响应链（P·df_ceo/dP = −1.30 GHz，
+#         P·df_r/dP = −320 Hz；7 kHz 低通滚降）；
+#     (3) 提出"固定点呼吸模型"定量预测整条梳各梳齿频率噪声（公式 S_ceo/S_λ = n_fix²/(n_fix−n_λ)²）；
+#     (4) 双重抑制：提高泵浦电流压低白 RIN + 相位超前补偿将伺服带宽从 ~5 kHz 推至 ~80 kHz；
+#     (5) 演示仪器极限 fceo 线宽 + 积分相位噪声 0.99 rad²（≈1 rad），
+#         Nyquist 外推 1.3 rad，计数 fceo ≤1 mHz@1 s (<10⁻¹⁷ 相对于 200 THz 光频)。
+#   Framework 依赖：ent.optical_frequency_comb、pri.self_referencing_f2f 定义于 udem2002.yaml，
+#     本文件定义其 Er:fiber 低相噪实例 ent.pump_noise_suppressed_erfiber_comb_m07 与工程原理
+#     pri.pump_rin_to_fceo_coupling。
+
+meta:
+  zotero_key: "CNSSF9YY"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical
+  reliability: high
+  title: "Suppression of pump-induced frequency noise in fiber-laser frequency combs leading to sub-radian fceo phase excursions"
+  year: 2007
+  first_author: McFerran
+  journal: "Applied Physics B"
+  volume: 86
+  issue: 2
+  pages: "219-227"
+  doi: "10.1007/s00340-006-2426-4"
+  note: >
+    [技术论文] NIST Boulder 光电部（McFerran/Swann/Washburn/Newbury）。Er:fiber 非线性偏振旋转
+    锁模梳（50 MHz，~45 fs，1560 nm 中心）+ EDFA + HNLF 倍频程展宽（960–2200 nm）+ 2060 nm f-2f
+    干涉仪。识别 Bragg 光栅稳定 Fabry-Pérot 1480 nm 泵浦二极管 RIN 为 fceo 宽线宽（数百 kHz）主因；
+    提高泵流至 1 A 压低白 RIN，结合相位超前补偿将伺服带宽扩至 ~80 kHz，锁环积分相噪 ≤1 rad。
+    跨文件节点引用：ent.optical_frequency_comb 与 pri.self_referencing_f2f 定义于 udem2002.yaml。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.pump_noise_suppressed_erfiber_comb_m07
+    name: "低泵噪 Er:fiber 频率梳（McFerran 2007 系统）"
+    aliases: ["NIST NPR Er:fiber frequency comb", "low-RIN EDFA-HNLF comb"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      非线性偏振旋转（NPR）锁模 Er:fiber 环形腔（拉伸脉冲区，β₂ 近零略正）+
+      EDFA 放大 + 锗硅 HNLF 展宽至倍频程（~960–2200 nm），以 2060 nm 二倍频 f-2f
+      提取 fceo；通过（i）将 1480 nm Bragg-grating 稳定 FP 泵浦二极管工作电流推至 ~1 A
+      以进入低白 RIN 区、（ii）带相位超前补偿的快速伺服反馈至泵流，
+      实现 fceo 仪器极限线宽与积分相噪 ~1 rad。
+    key_parameters:
+      laser_type: "NPR 锁模 Er:fiber 拉伸脉冲激光器"
+      repetition_rate: "49.3–50.1 MHz"
+      pulse_width_intracavity: "~45 fs（变换极限）"
+      pulse_width_pre_hnlf: "~55 fs"
+      mean_output_power: "~8 mW"
+      pump_wavelength: "1480 nm"
+      pump_current_optimal: "1 A（低 RIN 工作点）"
+      edfa_pump_power: "~250 mW（反向泵浦）"
+      hnlf_mean_power: "~80 mW（峰值 ~25 kW）"
+      supercontinuum_span: "~960 nm 到 ~2200 nm（倍频程）"
+      f2f_wavelength: "2060 nm SHG"
+      servo_bandwidth: "~80 kHz"
+      fixed_point_wavelength: "1.48 µm ± 2%（n_fix ≈ 4.1×10⁶）"
+    interface_requirements:
+      pump_diode: "Bragg-grating 稳定 1480 nm Fabry-Pérot 二极管（或 980 nm 替代）"
+      rf_reference: "用于 fceo 锁相的射频参考源（微波合成器）"
+    note: >
+      Level 2 实例节点，PART-OF ent.optical_frequency_comb（权威定义于 udem2002.yaml）。
+      COMPETES-WITH ent.octave_spanning_tisa_comb_d00（diddams2000.yaml）——
+      光纤方案低噪声劣势的针对性工程解。
+
+principles:
+  - id: pri.pump_rin_to_fceo_coupling
+    name: "泵浦 RIN→fceo 频率噪声耦合原理（Er:fiber 梳固定点呼吸模型）"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      光纤飞秒激光器中，泵浦功率扰动 δP 通过谐振增益、谱移、三阶色散、自陡与 SPM
+      等机制确定性地改变腔往返时间与载波-包络相位，使 f_r 与 fceo 线性相关漂移；
+      定义固定点梳齿 n_fix = (dfceo/dP)/(df_r/dP)，其他梳齿围绕 f_fix 做"呼吸运动"。
+      泵浦 RIN 经低通（−3 dB @ ν_{3dB} ≈ 7 kHz，来自腔动力学与 Er 增益响应时间）
+      映射为 fs 激光 RIN，再通过 AM→FM 响应平方转换为 f_r 与 fceo 频率噪声 PSD。
+    domain: "光纤锁模激光器相位噪声；载波-包络偏频控制"
+    formula: >
+      S_ceo(ν) = (P·dfceo/dP)² · RIN_l(ν)
+              = (P·dfceo/dP)² · ε·RIN_p(ν) / [1 + (ν/ν_{3dB})²]；
+      S_λ(ν)  = (n_λ − n_fix)² · S_r(ν)（相对泵 RIN 主导区）；
+      S_ceo / S_λ = n_fix² / (n_fix − n_λ)² = f_fix² / (f_fix − f_λ)²；
+      McFerran 2007 测得 P·df_r/dP = −320 ± 8 Hz，P·dfceo/dP = −1.30 ± 0.02 GHz
+    key_insight: >
+      fceo 大线宽不是"非线性光纤展宽引入的附加噪声"，而是泵浦 RIN 经确定性 AM-FM
+      转换后固定点呼吸运动在 fceo（远离 f_fix 的梳齿）的放大表现；该模型预测的
+      S_ceo/S_1064 ≈ 6.15 与实验符合，为主动+被动噪声抑制提供物理依据。
+    conditions: "泵流恒定下 n_fix 固定；测量 ν 远离环境扰动主导的低频带"
+    preconditions:
+      - "锁模激光器处于稳定的拉伸脉冲工作态"
+      - "泵浦功率入射到 fs 腔保持恒定（由衰减器补偿）"
+      - "RIN_p 显著高于电流源背景（实测 −138~−148 dBc/Hz），因此泵二极管 RIN 主导"
+    invalidated_when:
+      - "泵浦功率直流电平漂移 → n_fix 随之漂移（超出本模型静态假设）"
+      - "Fourier 频率低于 ~200 Hz：环境振动/温度主导 f_r 噪声，偏离 (1) 预测"
+      - "采用低 RIN DFB 泵浦二极管：量子噪声极限接管，白底噪抬高贡献"
+    source_claim: >
+      "the primary cause of frequency noise associated with the offset frequency is
+      the relative intensity noise of the pump laser driving the femtosecond laser ...
+      noise on the pump power will lead to linearly correlated noise on fceo and fr"
+    contested_claims:
+      - "早期一些工作推测 fceo 宽线宽源于 HNLF 超连续谱产生中的附加噪声；
+         本文（结合 Benkler 2005 的 f_r–fceo 相关性）证伪该解释，确立泵 RIN 为主因"
+    open_questions:
+      - "最高电流下白噪声底（~43 dB Hz²/Hz）高于量子极限预期，其具体机制？"
+      - "Bragg-grating 稳定 FP 泵二极管高 RIN 是否源于光反馈到栅？"
+
+  - id: pri.comb_breathing_fixed_point
+    name: "频率梳固定点呼吸运动原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      在单一标量扰动（此处为泵功率）作用下，线性相关的 δf_r 与 δf_ceo 使梳 n_fix =
+      (dfceo/dP)/(df_r/dP) 处梳齿频率噪声被完全抵消，其余梳齿以离 f_fix 距离为权
+      发生呼吸式扩张/收缩；固定点位置通常位于激光光谱内但不等于中心频率。
+    domain: "锁模激光器梳噪声学"
+    formula: >
+      f_n = n·f_r − f_ceo；固定点条件 df_n/dP = 0 ⇒ n_fix = (dfceo/dP)/(df_r/dP)；
+      δf_n = (n − n_fix)·δf_r；本实验 n_fix ≈ 4.1×10⁶ ↔ λ_fix = 1.48 µm
+    key_insight: >
+      预测"梳齿噪声随波长线性变化"：光谱翼区（远离 1.48 µm）噪声远大于中心，
+      fceo（n=0）噪声为最大；解释为何 1 µm 处 1064 nm 拍频噪声比 1536/1550 nm
+      高 ~5.8 倍（符合 (n_fix − n_1064)² 加权）。
+    conditions: "单一参数扰动（泵功率）主导；扰动在激光响应带宽内线性"
+    preconditions:
+      - "df_r/dP 与 dfceo/dP 符号与大小已通过低频调制标定"
+      - "其他扰动（温度、振动）在关心频段内不主导"
+    invalidated_when:
+      - "多独立扰动共存（腔长+泵流），此时无单一固定点"
+    source_claim: >
+      "the comb will perform breathing motion about this fixed point ...
+      n_fix = (df_ceo/dP)/(df_r/dP) ... Based on the measurements above,
+      we find n_fix = 4.1 × 10⁶"
+    note: "概念早期见 Benkler 2005 与 Telle 2002；本文定量化到 Er:fiber 梳并与实验核对"
+
+methods:
+  - id: meth.pump_current_feedback_fceo_lock
+    name: "泵电流前馈/反馈 fceo 锁相方法（RIN 被动压制 + 快速伺服）"
+    status: demonstrated
+    applies_to: ent.pump_noise_suppressed_erfiber_comb_m07
+    steps_summary: >
+      1. 将 1480 nm 泵二极管工作电流推至 ~1 A（接近额定），使白 RIN 下降到 ~−150 dBc/Hz
+         量级；用可变衰减器保持 fs 腔入射光功率恒定，避免 n_fix 漂移；
+      2. 用 f-2f 干涉仪在 2060 nm 处提取 fceo 拍信号（/256 分频）；
+      3. 鉴相输出送至带相位超前补偿（phase-lead）的伺服放大器；
+      4. 误差信号经快速电流调制端口直接反馈至泵二极管电流，利用 fs 激光的简单
+         低通（~7 kHz）响应将伺服带宽推至 ~80 kHz（由电流调制电路累积相移限制）；
+      5. 锁环内测量 fceo 场谱（分辨率带宽 0.3 Hz）出现仪器极限相干峰，
+         积分相噪 δφ² = ∫₀^{500 kHz} ν⁻²·S_ceo(ν)dν = 0.99 rad²。
+    required_hardware:
+      - ent.pump_noise_suppressed_erfiber_comb_m07
+    advantages:
+      - "被动（高电流压 RIN）+ 主动（相位超前伺服）双重抑制"
+      - "无需替换泵源即可获得 fceo 仪器极限线宽"
+      - "计数 fceo 频率误差 ≤1 mHz@1 s → ~10⁻¹⁷ 相对于 200 THz 光频"
+    disadvantages:
+      - "伺服带宽被泵二极管电流调制电路相移硬限制在 ~80 kHz"
+      - "Bragg-grating FP 泵 RIN 底仍明显高于 DFB 可达水平"
+      - "泵电流直流值改变会移动 n_fix，需辅助伺服稳 DC 入射功率"
+    conditions:
+      - "fs 激光处于稳定 NPR 锁模态"
+      - "泵浦光衰减器已重新标定使入射 fs 腔功率恒定"
+    source_claim: >
+      "the in-loop linewidth of fceo can be reduced to less than 1 Hz with an integrated
+      phase noise of ~1 rad using pump current feedback with a servo bandwidth of ~80 kHz"
+
+metrics:
+  - id: met.fceo_integrated_phase_noise_m07
+    name: "fceo 锁环内积分相位噪声（McFerran 2007）"
+    unit: "rad (rms)"
+    description: >
+      对锁相后 fceo 相噪功率谱在 [0, 500 kHz] 积分得到的均方根相位抖动，
+      衡量载波-包络相位的时域稳定性。
+    demonstrated_value:
+      value: "0.99 rad²（≈1 rad rms，0–500 kHz 积分）"
+      conditions: "1480 nm 泵流 1 A；相位超前伺服带宽 ~80 kHz；分辨带宽 0.3 Hz"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "CNSSF9YY", claim: "δφ²_ceo = ∫₀^{500 kHz} ν⁻² S_ceo(ν) dν = 0.99 rad²"}
+    theoretical_floor:
+      value: "外推至 Nyquist (25 MHz)：~1.3 rad"
+      basis: "−75 dB rad²/Hz 白相噪底延拓"
+      gap_note: "剩余噪声受电流调制电路相移限制的伺服带宽 + 泵 RIN 白底"
+    historical_landmarks:
+      first_demonstration:
+        value: "~1 rad 积分相噪于 Er:fiber 梳"
+        year: 2007
+        source: {zotero_key: "CNSSF9YY"}
+        note: "首次在光纤梳上达到 sub-radian fceo 相位抖动"
+
+  - id: met.fceo_linewidth_m07
+    name: "fceo 场谱线宽（Er:fiber 梳，McFerran 2007）"
+    unit: "Hz"
+    description: >
+      自由运行与锁环内条件下 fceo 拍信号的 FWHM 线宽，受泵 RIN、ν_{3dB}、伺服带宽共同决定。
+    demonstrated_value:
+      value: "自由运行：数百 kHz → ~60 kHz（泵流 1 A）；锁环内：仪器极限（RBW 0.3 Hz）"
+      conditions: "RIN 通过泵电流选择；锁相时伺服带宽 ~80 kHz"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "CNSSF9YY", claim: "the field spectrum linewidth of the free-running CEO frequency signal has been lowered from several hundred kHz to ~60 kHz ... instrument-limited full width half-maximum"}
+
+  - id: met.pump_laser_rin_m07
+    name: "1480 nm Bragg-grating FP 泵二极管 RIN 谱"
+    unit: "dBc/Hz"
+    description: >
+      泵二极管相对强度噪声谱密度，主要决定 fceo 自由运行线宽。
+    is_interface_metric: true
+    coupling_formula: "S_ceo(0) ∝ (P·dfceo/dP)² · ε·RIN_p(0)"
+    demonstrated_value:
+      value: "310 mA: 最高；1 A: 最低（相比 310 mA 下降 ~10–20 dB，近电流源底 −138~−148 dBc/Hz）"
+      conditions: "Bragg-grating 稳定 FP 1480 nm 二极管；同样现象见 980 nm 泵"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "CNSSF9YY", claim: "A change in pump laser current has a clear influence on the relative-intensity noise of the emitted light"}
+
+  - id: met.servo_bandwidth_m07
+    name: "fceo 泵电流伺服带宽（McFerran 2007）"
+    unit: "Hz"
+    description: >
+      通过相位超前补偿推进的 fceo 锁环闭环带宽，受 fs 激光 7 kHz 低通响应之外的
+      电流调制电路累积相移限制。
+    demonstrated_value:
+      value: "~80 kHz（从无相位超前的 ~5 kHz 扩展）"
+      conditions: "phase-lead 补偿 + 泵电流直接反馈端口"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "CNSSF9YY", claim: "the servo bandwidth controlling fceo has been extended well beyond the ν_{3dB} response bandwidth of the femtosecond laser by employing phase-lead compensation ... servo bumps occur approximately 80 kHz from the carrier"}
+
+# ═══════════════════════════════════════════════
+#  RELATIONS（关系）
+# ═══════════════════════════════════════════════
+
+relations:
+  - id: rel.M07_01
+    subject: ent.pump_noise_suppressed_erfiber_comb_m07
+    predicate: PART-OF
+    object: ent.optical_frequency_comb
+    confidence: established
+    source: {zotero_key: "CNSSF9YY", claim: "fiber-based frequency combs ... one drawback of fiber combs compared to solid-state systems"}
+    note: "ent.optical_frequency_comb 定义于 topics/optical-frequency-combs/papers/udem2002.yaml（跨文件引用）"
+
+  - id: rel.M07_02
+    subject: ent.pump_noise_suppressed_erfiber_comb_m07
+    predicate: ENABLED-BY
+    object: pri.self_referencing_f2f
+    confidence: established
+    source: {zotero_key: "CNSSF9YY", claim: "octave-spanning comb then allows for photodetector extraction of the offset frequency signal"}
+    note: "pri.self_referencing_f2f 定义于 topics/optical-frequency-combs/papers/udem2002.yaml（跨文件引用）"
+
+  - id: rel.M07_03
+    subject: ent.pump_noise_suppressed_erfiber_comb_m07
+    predicate: CHARACTERIZED-BY
+    object: met.fceo_integrated_phase_noise_m07
+    confidence: established
+    source: {zotero_key: "CNSSF9YY", claim: "integrated phase noise ... 0.99 rad²"}
+    temporal_role: validates
+
+  - id: rel.M07_04
+    subject: ent.pump_noise_suppressed_erfiber_comb_m07
+    predicate: CHARACTERIZED-BY
+    object: met.fceo_linewidth_m07
+    confidence: established
+    source: {zotero_key: "CNSSF9YY", claim: "field spectrum linewidth ... lowered from several hundred kHz to ~60 kHz ... instrument-limited"}
+
+  - id: rel.M07_05
+    subject: met.fceo_integrated_phase_noise_m07
+    predicate: OPERATIONALIZED-AS
+    object: meth.pump_current_feedback_fceo_lock
+    confidence: established
+    source: {zotero_key: "CNSSF9YY", claim: "using pump current feedback with a servo bandwidth of ~80 kHz"}
+
+  - id: rel.M07_06
+    subject: meth.pump_current_feedback_fceo_lock
+    predicate: ENABLED-BY
+    object: pri.pump_rin_to_fceo_coupling
+    confidence: established
+    source: {zotero_key: "CNSSF9YY", claim: "the primary cause of frequency noise associated with the offset frequency is the relative intensity noise of the pump laser"}
+    note: "抑制方法的有效性根植于 RIN→fceo 确定性耦合机理；反过来利用该机理闭环"
+
+  - id: rel.M07_07
+    subject: meth.pump_current_feedback_fceo_lock
+    predicate: CHARACTERIZED-BY
+    object: met.servo_bandwidth_m07
+    confidence: established
+    source: {zotero_key: "CNSSF9YY", claim: "servo bumps occur approximately 80 kHz from the carrier"}
+
+  - id: rel.M07_08
+    subject: pri.pump_rin_to_fceo_coupling
+    predicate: DERIVED-FROM
+    object: pri.comb_breathing_fixed_point
+    confidence: established
+    source: {zotero_key: "CNSSF9YY", claim: "the comb will perform breathing motion about this fixed point ... S_ceo/S_λ = n_fix²/(n_fix − n_λ)²"}
+
+  - id: rel.M07_09
+    subject: ent.pump_noise_suppressed_erfiber_comb_m07
+    predicate: CONDITIONED-BY
+    object: met.pump_laser_rin_m07
+    confidence: established
+    source: {zotero_key: "CNSSF9YY", claim: "noise on the pump power will lead to linearly correlated noise on fceo and fr"}
+    note: "外围条件接口指标：泵二极管 RIN 直接决定该系统 fceo 噪声水平"
+
+  - id: rel.M07_10
+    subject: met.fceo_integrated_phase_noise_m07
+    predicate: BOUNDED-BY
+    object: pri.pump_rin_to_fceo_coupling
+    confidence: established
+    source: {zotero_key: "CNSSF9YY", claim: "the observed level of white noise appears higher than expected ... presumably responsible for the lower limit on the linewidth observed in Fig. 4 at high pump currents"}
+    note: "即使提高泵流至 1 A 后残留的泵二极管白 RIN 底仍为最终相噪底的主贡献"
+    breakthrough_paths:
+      - direction: meth.pump_current_feedback_fceo_lock
+        expected_gain: "用更低 RIN 的 DFB 泵二极管（若适配功率）可进一步压低白底"
+        status: proposed
+        source: {zotero_key: "CNSSF9YY", claim: "There are distributed feedback diode lasers that have significantly lower RIN levels although, unfortunately, they are not at present commercially available at the appropriate power levels"}
+        note: "2007 年 DFB 大功率 1480 nm 泵不易得；是工程替换而非原理突破"
+      - direction: meth.pump_current_feedback_fceo_lock
+        expected_gain: "更激进的相位超前补偿可进一步推高伺服带宽并压积分相噪"
+        status: proposed
+        source: {zotero_key: "CNSSF9YY", claim: "Further decreases in the pump RIN and even more aggressive phase-lead compensation could reduce this phase jitter even further"}
+
+  - id: rel.M07_11
+    subject: met.servo_bandwidth_m07
+    predicate: BOUNDED-BY
+    object: pri.pump_rin_to_fceo_coupling
+    confidence: established
+    source: {zotero_key: "CNSSF9YY", claim: "This limit is a result of accumulated phase shifts within the current-modulation circuit for the pump diode, and servo"}
+    note: >
+      严格讲伺服带宽硬限来自电流调制电路相移而非 RIN 本身；但在本文的 AM→FM 耦合图景下，
+      伺服物理通道就是"泵电流→激光 RIN→fceo"，所以机制绑定到同一工程原理。
+    breakthrough_paths:
+      - direction: meth.pump_current_feedback_fceo_lock
+        expected_gain: "改进电流调制电路降低累积相移，或引入外腔光强调制通道"
+        status: proposed
+        source: {zotero_key: "CNSSF9YY", claim: "even more aggressive phase-lead compensation could reduce this phase jitter even further"}

@@ -1,0 +1,382 @@
+# Caldwell 2020 — 飞秒梳测大气定时抖动 PSD 与同址微气象 Cn² 首次定量对齐 [技术论文]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical
+#   核心贡献：NIST Table Mountain 280 m 折返路径上，两台 1560 nm 自参考光纤梳
+#   + 线性光学采样测 δT_atmosphere；同址 sonic + 气压计独立反演 Cn² 与 V⊥；
+#   三种湍流谱模型（Kolmogorov / von Kármán / Greenwood-Tarazano）以气象数据为
+#   输入直接预测 S_jitter(f)，首次与梳实测 PSD 定量对齐；V⊥>1 m/s 时梳-Cn² 与
+#   sonic-Cn² 一致到 5× 内，V⊥→0 时 Taylor 冻结湍流假设失效。
+#   Framework 依赖：ent.optical_frequency_comb（udem2002.yaml）；
+#   ent.atmospheric_turbulence_channel（han2024.yaml）；
+#   ent.dual_comb_spectrometer（coddington2016.yaml，技术基线）。
+
+meta:
+  zotero_key: "EB5IM2K9"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical
+  reliability: high
+  title: "Optical timing jitter due to atmospheric turbulence: comparison of frequency comb measurements to predictions from micrometeorological sensors"
+  year: 2020
+  first_author: Caldwell
+  journal: "Optics Express"
+  volume: 28
+  issue: 18
+  pages: "26661-26675"
+  doi: "10.1364/OE.400434"
+  note: >
+    [技术论文] NIST + CU Boulder + NorthWest Research Associates 合作。
+    280 m 折返水平近地路径；两台 200 MHz 光纤梳（signal / LO），
+    1560 nm 中心波长，带宽 14 nm；Δfr ≈ 2 kHz 实现线性光学采样；
+    比对象为超声风温仪（32 Hz 采样，精度 1 cm/s, 0.01 K）+ 石英压力计（10 Hz）。
+    本论文首次完成飞秒梳 timing jitter 与同址微气象 Cn² 传感器的量化跨域验证，
+    为光学自由空间时频传递、激光测距、长基线干涉的噪声建模提供可信预测链。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.two_way_comb_timing_link_c20
+    name: "两向梳定时抖动测量链路（Caldwell 2020 系统）"
+    aliases: ["NIST Table Mountain 280 m folded comb link", "Two-comb linear-sampling jitter link"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      两台自参考 1560 nm 光纤飞秒梳（signal / LO，~200 MHz，Δfr ≈ 2 kHz）共锁至同一台
+      超稳激光；signal 光 14 nm 带通后分两路——短光纤参考支与经抛物面镜 + 137 m 角反射器
+      的自由空间 280 m 折返支——分别与 LO 梳在平衡探测器上线性光学采样，干涉图到达时刻
+      经 δTpulse=(Δfr/fr,S)·δt_IGM 还原，两路相减得 δT_atmosphere（共模抑制梳与光纤噪声）。
+    key_parameters:
+      center_wavelength: "1560 nm"
+      comb_repetition_rate: "~200 MHz（signal / LO 两台）"
+      delta_fr: "~2 kHz"
+      optical_bandwidth: "14 nm"
+      folded_path_length: "280 m（137 m 单程 × 2）"
+      launch_optics: "off-axis parabolic mirror → retroreflector"
+      detection: "线性光学采样 + 平衡探测"
+      reference_laser: "场可部署型腔稳定激光（锁两台梳）"
+      received_power_range: "<2 nW (scintillation fade) ~ 60 µW"
+      system_drift: "~0.5 ps / 2.5 h（三脚架沉降 + 光纤温漂）"
+    interface_requirements:
+      frequency_reference: "cavity-stabilized laser；两台梳共锁"
+      detection_threshold: "~2 nW 接收功率"
+      ancillary_meteorology: "同址超声风温仪 + 石英压力计（见 CONDITIONED-BY）"
+    note: >
+      Level 2 实例节点，PART-OF ent.optical_frequency_comb（定义于 udem2002.yaml）。
+      技术上属于 linear optical sampling / dual-comb 多外差探测家族
+      （参见 ent.dual_comb_spectrometer，coddington2016.yaml），但用途为 timing 而非 spectroscopy。
+
+principles:
+  - id: pri.kolmogorov_turbulence_timing_jitter
+    name: "Kolmogorov 湍流定时抖动功率谱原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      大气折射率湍流惯性子区服从 Kolmogorov 谱 Φn(κ)=0.033 Cn² κ^{-11/3}；经 Tatarskii
+      路径积分 + Taylor 冻结湍流假设转为时间谱 Sφ(f)=0.0326 k² Cn² L f^{-8/3} V⊥^{5/3}，
+      再乘 (ng λ₀/2πc)² 得 timing PSD；惯性子区 -8/3（timing）/-5/3（折射率）幂律。
+    domain: "大气光学；湍流统计；时频传递噪声建模"
+    formula: |
+      S_jitter(f) = (ng λ₀/2πc)² · 0.0326 k² Cn² L f^{-8/3} V⊥^{5/3}
+      （折返路径乘 4：var(Z)=var(X+Y)=4 var(X)，因 X, Y 完全相关）
+    key_insight: >
+      Cn²、V⊥、L、L₀ 四个可独立测量的气象/几何参数即可定量预测梳 timing PSD，
+      使梳测噪声可事前估算、事后归因。
+    conditions:
+      - "路径平坦、地形均匀、湍流局部各向同性"
+      - "V⊥ 足够大以使 Taylor 假设成立（σ_V⊥/⟨V⊥⟩ ≲ 0.33）"
+      - "κ_⊥² L / k ≪ 1（远场条件，diffraction filter g≈2）"
+    preconditions:
+      - "Cn² 相对稳态，且被同址 sonic 以 r=1 m 结构函数法反演"
+      - "两梳相干时间 > 单次 PSD 估计段长"
+    invalidated_when:
+      - "V⊥ < 1 m/s 导致 Taylor 冻结湍流假设失效（σ_V⊥/⟨V⊥⟩>0.33）"
+      - "路径非均匀（建筑/坡地）导致各向异性湍流"
+      - "外尺度 L₀ 贡献主导（低频 f<1/L₀·V⊥ 区）"
+    source_claim: >
+      "Substituting Eq. (1) for Φn in Eq. (7) we get the Kolmogorov model for the phase power
+      spectral density, Sφ(f) = 0.0326 k² Cn² L f^{-8/3} V⊥^{5/3}"
+    open_questions:
+      - "V⊥ → 0 时湍流统计的正确描述（Taylor 假设破坏后的替代模型）？"
+      - "测得 f^{-6.7/3} 缓坡的物理来源（内禀 vs. 测量假象）？"
+
+  - id: pri.greenwood_tarazano_outer_scale_rolloff
+    name: "Greenwood-Tarazano 外尺度缓滚降谱"
+    tier: domain
+    verification_status: observed
+    statement: >
+      经验修正的空间谱 Φn(κ)=0.033 Cn²[κ²+κ/L₀]^{-11/6}，在 κ<1/L₀ 比 von Kármán 的
+      [κ²+1/L₀²]^{-11/6} 滚降更缓，timing PSD 在 f<V⊥/(2π L₀) 渐进压平，
+      物理上反映 >L₀ 的大涡仍贡献 timing。
+    domain: "大气光学；近地湍流谱"
+    formula: "Φn(κ) = 0.033 Cn² [κ² + κ/L₀]^{-11/6}，0<κ<1/l₀"
+    key_insight: >
+      近地水平路径（L₀ 取 beam height ≈ 1.6 m）中 G-T 模型比 von Kármán 更好地
+      拟合低频 PSD；忽视外尺度会系统性低估 timing 方差。
+    conditions: "近地水平路径；L₀ 取 beam 高度量级"
+    preconditions:
+      - "外尺度 L₀ 可由 beam 高度近似（Ref. 4,21,22,26）"
+    invalidated_when:
+      - "高海拔或自由大气路径，L₀ 可远大于 beam 高度"
+    source_claim: >
+      "we found the Greenwood-Tarazano model best describes the low frequency behavior of the
+      timing jitter power spectral density. In contrast, we found the von Kármán model
+      underestimates the low-frequency power spectrum."
+    contested_claims:
+      - "von Kármán 形式在某些上层大气场景仍被推荐；低频拟合 L₀ 具有几何依赖"
+
+  - id: pri.folded_path_turbulence_correlation_c20
+    name: "折返路径湍流扰动完全相关 → 方差 ×4"
+    tier: engineering
+    verification_status: inferred
+    statement: >
+      若光在脉冲往返时间内湍流相位"冻结"，出射 X 与返回 Y 积累相位扰动完全相关，
+      Z=X+Y 的方差 var(Z)=var(X)+var(Y)+2cov(X,Y)=4 var(X)；折返 PSD 相对单程乘 4 而非 2。
+    domain: "两向链路几何；光学 timing noise"
+    formula: "S_jitter,round-trip(f) = 4 · S_jitter,one-way(f)  （Taylor 成立时）"
+    key_insight: >
+      与 two-way 时频传递的"互易性抵消"相反：folded 单路回返放大噪声；
+      两点各配一台梳的 bistatic two-way（han2024 AZ25GQE3）才能利用互易性抵消 piston。
+    conditions: "单梳 + 远端被动反射器；往返时间 < 湍流相干时间"
+    invalidated_when:
+      - "往返时间 ≥ 湍流相干时间（高频极限）"
+      - "双向独立随机（部分去相关）"
+    source_claim: >
+      "Since the turbulence is perfectly correlated over the timescales of the pulse propagation,
+      cov(X,Y)=var(X) and var(Z) = 4 var(X). ... we can multiply the one-way temporal spectrum
+      by 4 to get the two-way temporal spectrum."
+
+  - id: pri.taylor_frozen_turbulence_hypothesis
+    name: "Taylor 冻结湍流假设（时间↔空间谱等价）"
+    tier: domain
+    verification_status: observed
+    statement: >
+      若湍流涡在穿过光束的时间尺度内近似不变，则横向空间波数 κ₂ 与时间频率 f
+      经 κ₂ = 2π f / V⊥ 等价，允许把空间 3D 谱转为时间 1D 谱。
+      经验上需要 σ_V⊥ / ⟨V⊥⟩ ≲ 0.33。
+    domain: "湍流统计；时频对偶"
+    formula: "κ₂ = 2π f / V⊥"
+    conditions: "中高风速；湍流 eddy 随 mean flow 平移"
+    invalidated_when:
+      - "σ_V⊥ / ⟨V⊥⟩ > 0.33（本文 June 7 测得 1.09，假设失效）"
+      - "V⊥ ≈ 0 m/s 情形"
+    source_claim: >
+      "we measured the standard deviation of V⊥ divided by its time average to be 1.09,
+      which is much greater than the value 0.33 empirically set as the upper limit for the
+      validity of Taylor's Hypothesis"
+
+methods:
+  - id: meth.micrometeorological_cn2_retrieval_c20
+    name: "直接结构函数法反演 Cn²（sonic + barometer）"
+    status: demonstrated
+    applies_to: ent.two_way_comb_timing_link_c20
+    steps_summary: >
+      1. 超声风温仪（32 Hz）测 T、V_k、V_⊥,H、V_⊥,V；气压计（10 Hz）测 P；
+      2. n(t)=1+a·⟨P⟩/T，a=7.8×10⁻⁷ K/Pa；3. 取 τ 使 r=U τ=1 m；
+      4. Cn²=⟨[n(t+τ)−n(t)]²⟩/(U τ)^{2/3}，1 min 平均；
+      5. 梳 PSD 在 0.19–5 Hz 拟 Kolmogorov 反演梳-Cn²；6. 两路按 1 min 对齐比较。
+    required_hardware:
+      - "4 台超声风温仪（6 m 气象塔，z₁ = 1.59 m ≈ 光束高度）"
+      - "石英压力计 + Quad Disk（抑制风噪）"
+      - ent.two_way_comb_timing_link_c20
+    advantages:
+      - "跨仪器独立验证湍流参数"
+      - "可用现成商用微气象设备部署成本低"
+    disadvantages:
+      - "V⊥ < 1 m/s 时系统性偏差 >5×"
+      - "超声路径长度引入 >3 Hz 空间低通滤波"
+    source_claim: >
+      "Cn² = ⟨[n(t+τ)−n(t)]²⟩/(Uτ)^{2/3} ... For r = 1 m, a typical wind speed of U = 1 m/s
+      corresponds to a time lag of τ = 1 s."
+
+  - id: meth.linear_optical_sampling_timing_jitter_c20
+    name: "线性光学采样定时抖动提取"
+    status: demonstrated
+    applies_to: ent.two_way_comb_timing_link_c20
+    steps_summary: >
+      1. LO 梳与 signal 梳 Δfr≈2 kHz 差拍，每 1/Δfr 秒生成一个干涉图；
+      2. 平衡探测器记录干涉图峰值时刻 δt_IGM；
+      3. 下采样得脉冲到达时刻 δT_pulse=(Δfr/fr,S) δt_IGM；
+      4. 短光纤支 δT_pulse^shorted 与开放支 δT_pulse^openpath 相减得 δT_atmosphere；
+      5. Welch + Hamming 窗估 PSD；噪声底 >10× 低于大气谱（10 mHz–10 Hz）。
+    required_hardware:
+      - ent.two_way_comb_timing_link_c20
+    conditions:
+      - "无 cycle slip 发生（本文未见明确 cycle slip 证据）"
+      - "接收功率 >2 nW 时可持续采样；fade 期信号丢失但相位连续性系统容错"
+    source_claim: >
+      "Using frequency combs and linear optical sampling to measure the timing jitter of pulses"
+
+metrics:
+  - id: met.timing_jitter_psd_atmospheric_c20
+    name: "大气 timing jitter 功率谱密度 S_jitter(f)（Caldwell 2020）"
+    unit: "fs²/Hz 或 ps²/Hz"
+    description: >
+      2019 年 6 月于 Table Mountain 280 m 折返路径、1560 nm 梳测得的 timing jitter PSD。
+      低频（<5 Hz）近似 -8/3 幂律，实测斜率 ~f^{-6.7/3}；~0.1 Hz 附近滚降，
+      G-T 模型最优。
+    demonstrated_value:
+      value: "时间序列 ~2 ps（169 min 最长段）；PSD 低频 ∝ f^{-6.7/3}"
+      conditions:
+        - "280 m folded outdoor path，1.6 m 高"
+        - "V⊥ 0–2 m/s，T 8–27 °C，L₀ ≈ 1.6 m"
+        - "系统噪声底 >10× 低于大气谱（10 mHz–10 Hz）"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "EB5IM2K9", claim: "we detect ~2 ps of variation in the time of flight over almost three hours ... For frequencies, f, below 5 Hz, the PSD approximately follows the -8/3 power law"}
+    historical_landmarks:
+      first_demonstration:
+        value: "飞秒梳 timing PSD 与同址气象 Cn² 传感器预测首次定量对齐（G-T 模型）"
+        year: 2020
+        source: {zotero_key: "EB5IM2K9"}
+        note: "此前（NRL 2 km slant path, Sinclair 2018 / Ref. [13]）为 order-of-magnitude 对齐，无同址 Cn²。"
+
+  - id: met.cn2_cross_validation_c20
+    name: "Cn² 跨方法一致性指标"
+    unit: "无量纲比值"
+    description: >
+      以 sonic + barometer 反演 Cn² 为参考，梳 timing PSD 拟合 Kolmogorov 模型
+      反演的 Cn² 与之比值；V⊥ 依赖明显。
+    is_interface_metric: true
+    coupling_formula: "ratio = Cn²_comb / Cn²_sonic = f(⟨V⊥⟩)"
+    demonstrated_value:
+      value: "V⊥ > 1 m/s 时比值 ≲ 5；V⊥ → 0 时比值发散"
+      conditions:
+        - "1 min 分辨率"
+        - "Kolmogorov 模型在 0.19–5 Hz 区间拟合梳 PSD"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "EB5IM2K9", claim: "agreement to within a factor of 5 for wind speed >1 m/s, and further improvement is possible as wind speed increases"}
+
+  - id: met.outer_scale_length_c20
+    name: "近地水平路径外尺度 L₀（拟合值）"
+    unit: "m"
+    description: >
+      Greenwood-Tarazano / von Kármán 模型中外尺度参数，本文经验取为 beam 高度。
+    demonstrated_value:
+      value: "1.6 m（beam 高度）；敏感性测试范围 1–10 m"
+      conditions: "L₀ ≈ 光束离地高度（Refs. [4,21,22,26]）"
+      verification_status: inferred
+      confidence: medium
+      source: {zotero_key: "EB5IM2K9", claim: "L0 which we have set to the beam height above ground (1.6 m)"}
+
+# ═══════════════════════════════════════════════
+#  RELATIONS（关系）
+# ═══════════════════════════════════════════════
+
+relations:
+  - id: rel.C20_01
+    subject: ent.two_way_comb_timing_link_c20
+    predicate: PART-OF
+    object: ent.optical_frequency_comb
+    confidence: established
+    source: {zotero_key: "EB5IM2K9", claim: "two self-referenced optical frequency comb lasers ... phase-locked to a field-deployable cavity stabilized laser"}
+    note: "ent.optical_frequency_comb 权威定义于 udem2002.yaml（跨文件引用）。"
+
+  - id: rel.C20_02
+    subject: ent.two_way_comb_timing_link_c20
+    predicate: CONDITIONED-BY
+    object: ent.atmospheric_turbulence_channel
+    confidence: established
+    source: {zotero_key: "EB5IM2K9", claim: "variations in the refractive index of air cause fluctuations in the time-of-flight of laser light"}
+    note: "ent.atmospheric_turbulence_channel 定义于 han2024.yaml（zotero_key AZ25GQE3）；外围条件接口节点。"
+
+  - id: rel.C20_03
+    subject: ent.two_way_comb_timing_link_c20
+    predicate: CHARACTERIZED-BY
+    object: met.timing_jitter_psd_atmospheric_c20
+    confidence: established
+    source: {zotero_key: "EB5IM2K9", claim: "we present power spectral densities from the δT_atmosphere time series using Welch's method"}
+    temporal_role: validates
+
+  - id: rel.C20_04
+    subject: met.timing_jitter_psd_atmospheric_c20
+    predicate: OPERATIONALIZED-AS
+    object: meth.linear_optical_sampling_timing_jitter_c20
+    confidence: established
+    source: {zotero_key: "EB5IM2K9"}
+
+  - id: rel.C20_05
+    subject: meth.linear_optical_sampling_timing_jitter_c20
+    predicate: ENABLED-BY
+    object: pri.folded_path_turbulence_correlation_c20
+    confidence: established
+    source: {zotero_key: "EB5IM2K9", claim: "we can multiply the one-way temporal spectrum by 4 to get the two-way temporal spectrum"}
+
+  - id: rel.C20_06
+    subject: met.timing_jitter_psd_atmospheric_c20
+    predicate: BOUNDED-BY
+    object: pri.kolmogorov_turbulence_timing_jitter
+    confidence: established
+    source: {zotero_key: "EB5IM2K9", claim: "the PSD approximately follows the -8/3 power law predicted by theory"}
+    note: "大气湍流是梳自由空间 timing 的基础噪声下限。"
+    breakthrough_paths:
+      - direction: meth.bistatic_two_way_dcs_protocol_h24
+        expected_gain: "两端互易协议消除 piston 噪声（非折返反射路径）"
+        status: demonstrated
+        source: {zotero_key: "AZ25GQE3", claim: "Since the comb passes through the atmosphere only once and no reflector is required, the link loss can be sharply reduced"}
+        note: "跨文件引用：meth.bistatic_two_way_dcs_protocol_h24 定义于 han2024.yaml；互易双向协议利用 cov(X,Y)=−var(X) 抵消 piston，与本论文折返 ×4 放大相反。"
+      - direction: pri.taylor_frozen_turbulence_hypothesis
+        expected_gain: "高风速下 Taylor 假设成立 → 模型预测残差可进一步降低"
+        status: demonstrated
+        source: {zotero_key: "EB5IM2K9", claim: "with some indication that agreement may continue to improve with higher wind speed"}
+        note: "属同文内自洽：提高 V⊥ 使模型更适用。"
+      - direction: pri.greenwood_tarazano_outer_scale_rolloff
+        expected_gain: "采用 G-T 谱而非 von Kármán 谱避免低频 timing 方差低估"
+        status: demonstrated
+        source: {zotero_key: "EB5IM2K9", claim: "the gradual rolloff of the Greenwood-Tarazano better fits the data than the more dramatic von Kármán model"}
+
+  - id: rel.C20_07
+    subject: met.timing_jitter_psd_atmospheric_c20
+    predicate: BOUNDED-BY
+    object: pri.taylor_frozen_turbulence_hypothesis
+    confidence: established
+    source: {zotero_key: "EB5IM2K9", claim: "a breakdown of Taylor's frozen-turbulence hypothesis which might be possible for our measurements due to the low perpendicular wind speeds"}
+    note: "低风速下 σ_V⊥/⟨V⊥⟩=1.09 远超 0.33 阈值，是实测 -6.7/3 缓坡与 V⊥→0 时 Cn² 比值发散的主因。"
+
+  - id: rel.C20_08
+    subject: pri.greenwood_tarazano_outer_scale_rolloff
+    predicate: DERIVED-FROM
+    object: pri.kolmogorov_turbulence_timing_jitter
+    confidence: established
+    source: {zotero_key: "EB5IM2K9", claim: "Greenwood et al. to propose a new, empirically-derived spectrum ... exhibits a more gradual rolloff below κ=1/L0 than the von Kármán spectrum"}
+
+  - id: rel.C20_09
+    subject: met.cn2_cross_validation_c20
+    predicate: OPERATIONALIZED-AS
+    object: meth.micrometeorological_cn2_retrieval_c20
+    confidence: established
+    source: {zotero_key: "EB5IM2K9", claim: "we extract and compare the refractive index structure parameter, Cn², from both systems"}
+
+  - id: rel.C20_10
+    subject: met.cn2_cross_validation_c20
+    predicate: BOUNDED-BY
+    object: pri.taylor_frozen_turbulence_hypothesis
+    confidence: established
+    source: {zotero_key: "EB5IM2K9", claim: "The ratio of comb-retrieved Cn² to sonic-retrieved Cn² is asymptotically high at ⟨V⊥⟩ = 0 m/s"}
+    breakthrough_paths:
+      - direction: meth.micrometeorological_cn2_retrieval_c20
+        expected_gain: "以水平总风速 U 替代 V⊥ 可缓解 V⊥→0 奇点（U 通常大于 V⊥）"
+        status: proposed
+        source: {zotero_key: "EB5IM2K9", claim: "U was greater than ⟨V⊥⟩ 98% of the time ... would cause the zero-wind-speed asymptotic behavior less frequently"}
+
+  - id: rel.C20_11
+    subject: ent.two_way_comb_timing_link_c20
+    predicate: COMPETES-WITH
+    object: ent.bistatic_two_way_optical_link_h24
+    confidence: inferred
+    source: {zotero_key: "EB5IM2K9", claim: "the factor of 4 comes from treating the timing jitter ... two separate random variables, X and Y"}
+    note: >
+      折返反射器方案（本文）与双站两向方案（han2024）在长路径自由空间 timing 应用上是竞争性几何：
+      前者部署简单但 piston 噪声 ×4 放大；后者需双端终端但 piston 互易抵消。
+
+  - id: rel.C20_12
+    subject: ent.two_way_comb_timing_link_c20
+    predicate: CHARACTERIZED-BY
+    object: met.outer_scale_length_c20
+    confidence: established
+    source: {zotero_key: "EB5IM2K9", claim: "L0 which we have set to the beam height above ground (1.6 m)"}
