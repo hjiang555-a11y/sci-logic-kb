@@ -1,0 +1,222 @@
+# Li 2017 — 慢调谐稳定进入倍频程 Si₃N₄ 微梳孤子区
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical — 微腔梳（技术层 A2 分支）重要技术论文
+#   贡献：首次在 Si₃N₄ 微谐振腔中稳定访问倍频程单孤子态（pump ~120 mW）；
+#         仅靠"慢调谐泵浦激光频率"（远慢于热时间常数）实现，不需要快速功率踢动或复杂反馈；
+#         提出"邻近横模家族辅助热稳定"的新机制；两步分析模型 + LLE 数值模拟。
+#   Framework 依赖：kippenberg2011.yaml（微梳子域架构）、kippenberg2018.yaml（DKS 范式）。
+
+meta:
+  zotero_key: "6JY7ZNWX"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical
+  reliability: high
+  title: "Stably accessing octave-spanning microresonator frequency combs in the soliton regime"
+  year: 2017
+  first_author: Li
+  journal: "Optica"
+  volume: 4
+  issue: 2
+  pages: "193-203"
+  doi: "10.1364/OPTICA.4.000193"
+  note: >
+    [技术论文] NIST Gaithersburg（Srinivasan/Li）+ NIST Boulder（Papp/Diddams）合作。
+    Si₃N₄ 微环 Q≈10⁶，色散工程化后支持倍频程。展示仅靠"慢频率扫描泵浦激光"（时间尺度 >>
+    热时间常数 μs）即可获得多孤子态（40 mW）与单孤子态（120 mW）倍频程梳。
+    关键新发现：红失谐侧邻近模族成员可被动稳定热动力学。
+
+entities:
+  - id: ent.octave_si3n4_microcomb_l17
+    name: "倍频程 Si₃N₄ 微腔梳（Li 2017 系统）"
+    aliases: ["octave-spanning Si3N4 microring comb"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      氮化硅微环谐振器，色散工程化后支持倍频程 Kerr 光梳，
+      通过慢速扫描 CW 泵浦激光频率（从蓝失谐 → 穿过谐振 → 红失谐）触发 DKS 孤子形成。
+      单孤子态泵浦功率 ~120 mW，多孤子态 ~40 mW；辅助模族协助稳定热动力学。
+    key_parameters:
+      platform: "Si₃N₄ microring on SiO₂"
+      ring_FSR: "~1 THz（决定梳齿间距）"
+      quality_factor: "Q ~ 10⁶（加载）"
+      pump_wavelength: "~1550 nm"
+      single_soliton_power: "~120 mW on-chip"
+      multi_soliton_power: "~40 mW on-chip"
+      spectral_coverage: "octave-spanning（~1064–2100 nm 量级）"
+      thermal_time_constant: "~μs"
+    interface_requirements:
+      pump_laser: "CW 可调谐激光，频率扫描速率 << 1/τ_thermal"
+      thermal_control: "被动室温（无需快反馈）"
+    note: >
+      Level 2 实例节点，PART-OF ent.microresonator_frequency_comb
+      （权威定义于 kippenberg2011.yaml / kippenberg2018.yaml）
+
+principles:
+  - id: pri.thermo_optic_soliton_access_barrier
+    name: "热光效应导致孤子区访问困难原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      Kerr 微腔 DKS 孤子存在于腔模红失谐侧。蓝失谐 → 红失谐的跃迁过程中，
+      腔内功率骤降导致腔温快速下降（τ_thermal ~ μs），Kerr 频移 + 热光频移的耦合使
+      泵浦 detuning 不稳定，常常错过孤子态窗口而回到 MI 或无光梳状态。
+    domain: "微腔 Kerr 光梳；DKS 形成动力学"
+    formula: >
+      Δν_cavity(t) = Δν_Kerr(P(t)) + Δν_thermo(T(t))；
+      从 MI → 孤子：P 突降 → T 下降 → 谐振蓝移 → detuning 再移动
+    key_insight: >
+      孤子访问的"热陷阱"是微梳从实验室演示走向实用化的核心工程瓶颈。
+    conditions: "任何有限 dn/dT、μs 热时常数的微腔平台"
+    invalidated_when:
+      - "使用快速泵浦控制（功率踢动/快速频率反馈，τ_control << τ_thermal）"
+      - "使用极低热光系数材料或低温平台"
+    source_claim: >
+      "accessing such states is complicated by thermo-optic dispersion ... microsecond thermal time
+      constants often require fast pump power or frequency control to stabilize the solitons"
+    open_questions:
+      - "是否存在仅靠腔设计（而非快反馈）完全消除热陷阱的通用方案？"
+
+  - id: pri.adjacent_mode_thermal_stabilization
+    name: "邻近模族被动热稳定原理（Li 2017 新提出）"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      当泵浦谐振红失谐侧存在来自邻近横模族的模式时，其蓝失谐加热效应为总腔温提供负反馈，
+      使孤子形成期间的温度下降速率减缓，扩大了孤子态可访问的 detuning 窗口，
+      使慢扫描（无快反馈）即可稳定进入单孤子态。
+    domain: "微腔热-非线性耦合动力学"
+    formula: "dT/dt 来自 P_pump_mode + P_adjacent_mode 双项加热"
+    key_insight: >
+      将"模式工程"纳入热动力学设计，以被动手段替代快速反馈，是微梳集成化的关键思路。
+    conditions: "邻近横模族 FSR 接近泵浦模 + 可通过模交叉工程设计"
+    source_claim: >
+      "an adjacent mode family member on the red-detuned side of the pump resonance helps stabilize
+      the thermal dynamics during soliton formation"
+    open_questions:
+      - "邻近模族位置如何在设计阶段精确预测并裁剪？"
+
+methods:
+  - id: meth.laser_tuning_soliton_access
+    name: "慢泵浦频率调谐孤子访问方法"
+    status: demonstrated
+    applies_to: ent.octave_si3n4_microcomb_l17
+    steps_summary: >
+      1. 固定泵浦功率（>阈值）；
+      2. 泵浦波长从蓝失谐缓慢扫向红失谐（扫描速率 << 1/τ_thermal）；
+      3. 穿过 MI 梳区 → 腔温被动跟随；
+      4. 过渡到红失谐侧后热动力学由邻近模族与 Kerr 自平衡共同稳定；
+      5. 停在目标 detuning → 获得稳定的单孤子或多孤子倍频程梳。
+    required_hardware:
+      - ent.octave_si3n4_microcomb_l17
+    advantages:
+      - "无需快速功率控制或反馈硬件"
+      - "简单 CW 可调谐激光即可操作"
+      - "兼容倍频程工作（支持 f-2f 自参考路径）"
+    disadvantages:
+      - "依赖邻近模族的存在，设计自由度受限"
+      - "单孤子态功率阈值仍较高（~120 mW）"
+    conditions:
+      - "Si₃N₄ 平台色散已工程化为倍频程反常色散"
+      - "邻近红失谐模族位置满足热平衡条件"
+    source_claim: >
+      "we consider how broadband soliton states can be accessed with simple pump laser frequency
+      tuning, at a rate much slower than the thermal dynamics"
+
+metrics:
+  - id: met.microcomb_soliton_pump_power_threshold
+    name: "微梳单孤子泵浦功率阈值"
+    unit: "mW（on-chip）"
+    description: "稳定维持单孤子态所需的 CW 泵浦功率，反映平台非线性效率与损耗"
+    demonstrated_value:
+      value: "~120 mW（单孤子，Si₃N₄，octave）；~40 mW（多孤子）"
+      conditions: "Si₃N₄ 微环 Q ~ 10⁶，~1550 nm 泵浦，室温慢扫描"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "6JY7ZNWX", claim: "a multi-soliton state with a pump power near 40 mW and a single-soliton state with a pump power near 120 mW"}
+    theoretical_floor:
+      value: "P_th ∝ (n_eff² V_eff)/(n₂ Q²·λ)，可降至 mW 级（更高 Q、更小模体积）"
+      basis: "Kerr 参量振荡阈值公式"
+      gap_note: "色散工程化为 octave 所需的微环几何与高 Q 难以兼得"
+
+  - id: met.microcomb_spectral_bandwidth
+    name: "微梳光学带宽"
+    unit: "THz 或 nm"
+    description: "微腔梳连续有效覆盖的光学带宽，决定是否支持 f-2f 自参考"
+    demonstrated_value:
+      value: "~1 octave（~1064–2100 nm 量级）单孤子态"
+      conditions: "色散工程化 Si₃N₄ 微环，Li 2017"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "6JY7ZNWX", claim: "octave-spanning soliton frequency combs in Si3N4 microresonators"}
+    historical_landmarks:
+      first_demonstration:
+        value: "首次稳定倍频程 DKS 单孤子@Si₃N₄（无需快反馈）"
+        year: 2017
+        source: {zotero_key: "6JY7ZNWX"}
+
+relations:
+  - id: rel.L17_01
+    subject: ent.octave_si3n4_microcomb_l17
+    predicate: CHARACTERIZED-BY
+    object: met.microcomb_soliton_pump_power_threshold
+    confidence: established
+    source: {zotero_key: "6JY7ZNWX"}
+
+  - id: rel.L17_02
+    subject: ent.octave_si3n4_microcomb_l17
+    predicate: CHARACTERIZED-BY
+    object: met.microcomb_spectral_bandwidth
+    confidence: established
+    source: {zotero_key: "6JY7ZNWX", claim: "octave-spanning soliton frequency combs in Si3N4"}
+
+  - id: rel.L17_03
+    subject: meth.laser_tuning_soliton_access
+    predicate: ENABLED-BY
+    object: pri.adjacent_mode_thermal_stabilization
+    confidence: established
+    source: {zotero_key: "6JY7ZNWX", claim: "adjacent mode family member ... helps stabilize the thermal dynamics during soliton formation"}
+
+  - id: rel.L17_04
+    subject: meth.laser_tuning_soliton_access
+    predicate: ENABLED-BY
+    object: pri.dissipative_kerr_soliton
+    confidence: established
+    source: {zotero_key: "6JY7ZNWX", claim: "Soliton states in Kerr microcavities represent a path to low-noise comb formation"}
+    note: "pri.dissipative_kerr_soliton 定义于 kippenberg2018.yaml"
+
+  - id: rel.L17_05
+    subject: ent.octave_si3n4_microcomb_l17
+    predicate: BOUNDED-BY
+    object: pri.thermo_optic_soliton_access_barrier
+    confidence: established
+    source: {zotero_key: "6JY7ZNWX", claim: "accessing such states is complicated by thermo-optic dispersion"}
+    breakthrough_paths:
+      - direction: pri.adjacent_mode_thermal_stabilization
+        expected_gain: "无需快反馈即可稳定访问单孤子态，降低系统复杂度"
+        status: demonstrated
+        source: {zotero_key: "6JY7ZNWX", claim: "an adjacent mode family member ... helps stabilize the thermal dynamics"}
+      - direction: meth.laser_tuning_soliton_access
+        expected_gain: "简化控制硬件到只用 CW 激光慢调谐"
+        status: demonstrated
+        source: {zotero_key: "6JY7ZNWX"}
+
+  - id: rel.L17_06
+    subject: ent.octave_si3n4_microcomb_l17
+    predicate: PART-OF
+    object: ent.microresonator_frequency_comb
+    confidence: established
+    source: {zotero_key: "6JY7ZNWX"}
+    note: "ent.microresonator_frequency_comb 定义于 kippenberg2011.yaml"
+
+  - id: rel.L17_07
+    subject: ent.octave_si3n4_microcomb_l17
+    predicate: COMPETES-WITH
+    object: ent.optical_frequency_comb
+    confidence: established
+    source: {zotero_key: "6JY7ZNWX", claim: "Microresonator frequency combs can be an enabling technology ... in low size, weight, and power architectures"}
+    conditions: "集成、低 SWaP 应用 vs 传统锁模激光梳"
+    note: "应用层竞争：微梳强调 SWaP 优势；ent.optical_frequency_comb 定义于 udem2002/giunta2019.yaml"
