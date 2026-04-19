@@ -11,7 +11,7 @@
 ### 定位
 
 符号主义结构化知识库，服务**时间频率计量**科研全领域。
-- **当前已建专题**：超稳激光（`topics/ultrastable-laser/`，78 篇论文）、光学频率梳（`topics/optical-frequency-combs/`，28 篇论文）
+- **当前已建专题**：超稳激光（`topics/ultrastable-laser/`，78 篇论文）、光学频率梳（`topics/optical-frequency-combs/`，53 篇论文）
 - **当前初建专题**：频率标准（`topics/frequency-standards/`，1 篇光钟框架综述）、时间标尺与钟组（`topics/timescales/`，1 篇）
 - **专题体系**：详见 [`TOPICS.md`](TOPICS.md)
 - **目标查询**：当前性能极限在哪？为什么卡在这？怎么突破？
@@ -78,7 +78,7 @@
 ```
 时间频率计量 (Time-Frequency Metrology)
 ├── 专题1：超稳激光 ← 当前已建（topics/ultrastable-laser/）
-├── 专题2：光学频率梳 ← 已建（topics/optical-frequency-combs/，28 篇，三层应用‑技术‑原理架构）
+├── 专题2：光学频率梳 ← 已建（topics/optical-frequency-combs/，53 篇，三层应用‑技术‑原理架构）
 │   ├── A. 光梳技术（传统飞秒梳、微腔+电光梳、天文光梳）
 │   └── B. 光梳应用（频率综合、光学频率计数、双梳光谱、梳光谱学、中红外光谱）
 ├── 专题3：频率标准 ← 初建（topics/frequency-standards/，合并光钟+微波标准）
@@ -377,7 +377,7 @@
 | 编号 | 专题 | 目录 | 状态 | 论文数 | 核心节点数(估) |
 |------|------|------|------|--------|---------------|
 | 1 | 超稳激光 | `topics/ultrastable-laser/` | ✅ 已建（78/78 YAML，全部升级为 ✅ v4.1） | 78 | ~200+ |
-| 2 | 光学频率梳 | `topics/optical-frequency-combs/` | ✅ 已建（应用‑技术‑原理三层框架） | 28 | 见各论文 |
+| 2 | 光学频率梳 | `topics/optical-frequency-combs/` | ✅ 已建（应用‑技术‑原理三层框架） | 53 | 见各论文 |
 
 ### 光学频率梳专题内部结构（重构后）
 
@@ -1040,6 +1040,20 @@ note: "跨专题引用，定义于 topics/frequency-standards/papers/xxx.yaml"
 | `topics/optical-frequency-combs/papers/huang2024.yaml` | 2QUW2P6D | Huang 2024 PRL — 梳校准 FMCW 非视距成像+测振 | ✅ v4.1（OFC 批量提取，2026-04-19） |
 | `topics/optical-frequency-combs/papers/picque2020.yaml` | 43TAX2KE | Picqué/Diddams/Vahala/Udem 2020 Science — 光频梳 20 年回顾 **[框架型]** | ✅ v4.1（OFC 批量提取，contribution_type:framework，2026-04-19） |
 | `topics/optical-frequency-combs/papers/droste2016.yaml` | 5NSQLZTS | Droste & Newbury 2016 Nanophotonics — Er:fiber 梳综述 **[框架型]** | ✅ v4.1（OFC 批量提取，contribution_type:framework，2026-04-19） |
+| `topics/optical-frequency-combs/papers/rao2019.yaml` | CA55MEKS | Rao 2019 光子学报 — Er:fiber 梳测 Li D1 线频率 | ✅ v4.1（2026-04-19） |
+| `topics/optical-frequency-combs/papers/wang2025.yaml` | CEB7L6EM | Wang 2025 RSI — FPGA 低延迟数字伺服 1.1 MHz 带宽稳频 | ✅ v4.1（2026-04-19） |
+| `topics/optical-frequency-combs/papers/hickstein2017.yaml` | CML5935T | Hickstein 2017 PRApplied — 片上χ²+χ³ 波导单器件 f-2f 自参考 | ✅ v4.1（2026-04-19） |
+| `topics/optical-frequency-combs/papers/mcferran2007.yaml` | CNSSF9YY | McFerran 2007 APB — 泵浦RIN→f_CEO 耦合抑制，亚弧度相位噪声 | ✅ v4.1（2026-04-19） |
+| `topics/optical-frequency-combs/papers/sinclair2014.yaml` | D9ANIZW6 | Sinclair 2014 OE — 野外可搬运 Er:fiber 相干光频梳 | ✅ v4.1（2026-04-19） |
+| `topics/optical-frequency-combs/papers/chou2020.yaml` | DUJ8VXBR | Chou 2020 Science — 单分子离子量子态的梳光谱 | ✅ v4.1（2026-04-19） |
+| `topics/optical-frequency-combs/papers/caldwell2020.yaml` | EB5IM2K9 | Caldwell 2020 OE — 大气湍流光学时序抖动测量与预测比较 | ✅ v4.1（2026-04-19） |
+| `topics/optical-frequency-combs/papers/stern2018.yaml` | EBNL35EE | Stern 2018 Nature — 电池供电全集成微梳 | ✅ v4.1（2026-04-19） |
+| `topics/optical-frequency-combs/papers/kashiwagi2018.yaml` | ERNT9GV3 | Kashiwagi 2018 OE — 多分支光纤梳噪声差分消除，相对不确定度 10⁻²⁰ | ✅ v4.1（2026-04-19） |
+| `topics/optical-frequency-combs/papers/ycas2019.yaml` | FQ4KYV38 | Ycas 2019 Optica — 中红外双梳野外路径 VOC 探测 | ✅ v4.1（2026-04-19） |
+| `topics/optical-frequency-combs/papers/wang2017.yaml` | GY48UQ7F | Wang 2017 LSA — III-V-on-Si 超密间距光频梳激光器 | ✅ v4.1（2026-04-19） |
+| `topics/optical-frequency-combs/papers/hartl2007.yaml` | H4DKWZWF | Hartl 2007 OL — 腔增强 Yb 光纤梳，136 MHz 下 3×10¹⁴ W/cm² 贵气体电离 | ✅ v4.1（2026-04-19） |
+| `topics/optical-frequency-combs/papers/endo2018.yaml` | H93SHF89 | Endo 2018 IEEE JSTQE — 超低噪声光频梳综述，整体式腔 10⁻¹⁹ 稳定度 **[框架型]** | ✅ v4.1（2026-04-19，contribution_type:framework） |
+| `topics/optical-frequency-combs/papers/lesko2020.yaml` | HG8TSPT6 | Lesko 2020 OSA Continuum — 1 GHz 交钥匙 1.56 µm 全相位稳定梳 | ✅ v4.1（2026-04-19） |
 
 **历史重构摘要**（v3.0 起，含 2026-04-16 的 v3.2 增补）：
 
