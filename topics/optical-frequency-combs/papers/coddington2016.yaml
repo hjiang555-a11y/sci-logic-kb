@@ -20,6 +20,8 @@ meta:
     定义于 giunta2019.yaml。
 
     '
+
+# Schema版本：v4.1
 entities:
 - id: ent.dual_comb_spectrometer
   name: 双梳光谱仪
