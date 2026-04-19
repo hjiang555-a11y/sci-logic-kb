@@ -1,0 +1,210 @@
+# Fermann 2022 — 光纤频率梳精密频率传递综述 [综述/框架型]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: framework
+
+meta:
+  zotero_key: "J37V2ZZQ"
+  topic: optical-frequency-combs
+  source_type: review
+  contribution_type: framework
+  reliability: high
+  title: "Precision frequency transfer with fiber frequency combs"
+  year: 2022
+  first_author: "Fermann"
+  journal: "Frontiers in Physics"
+  volume: 10
+  pages: "1005074"
+  doi: "10.3389/fphy.2022.1005074"
+  note: >
+    [综述/框架型] IMRA America（Fermann, Lee, Li, Rolland, Jiang）。综述光纤频率梳的
+    精密频率传递技术：(1) 单分支超连续谱频率传递——跨倍频程稳定度 <1×10⁻¹⁷/1s；
+    (2) 超连续谱拼接（stitching）——跨 >2 倍频程超连续谱带宽；(3) 噪声抵消技术——
+    相对频率传递稳定度 ≈2×10⁻¹⁸/1s；(4) 脉冲整形优化多波段功率分配。
+    同时综述：Er 光纤频率梳一般架构（NALM、G-EOM、LN-EOM 高带宽调制器）、
+    XUV-to-MIR 全谱域频率扩展、功率放大、低噪声微波/毫米波生成。
+    跨文件节点引用：ent.er_fiber_frequency_comb / ent.optical_frequency_comb
+    定义于 giunta2019.yaml；meth.heterodyne_beat_note 定义于 udem2002.yaml；
+    pri.ofc_two_dof_stabilization 定义于 giunta2019.yaml。
+
+entities:
+  - id: ent.precision_frequency_transfer_system_f22
+    name: "光纤梳精密频率传递系统框架（Fermann 2022）"
+    aliases:
+      - "fiber comb frequency transfer system"
+      - "precision optical-to-optical frequency transfer"
+    hierarchy_level: 1
+    status: demonstrated
+    function: >
+      利用锁模 Er 光纤激光器产生的频率梳，通过非线性放大和超连续谱产生（SCG），
+      将锁定的光学频率从梳的一个波段精确传递到另一个波段或多个波段。
+      核心挑战：SCG 和放大过程引入的额外噪声（光学非线性噪声、ASE、技术噪声）
+      限制了传递稳定度。关键方法：(1) 单分支 SCG 传递（直接在一根 HNLF 上产生
+      倍频程频谱并锁定两端波段）；(2) 噪声抵消技术（在传递路径两端各建立
+      拍频检测 + 伺服反馈，主动消除 SCG 引入的噪声）；
+      (3) 脉冲整形（在 SCG 之前用可编程光谱整形器优化特定波段的功率和相位）。
+    key_parameters:
+      single_branch_transfer_stability: "<1 × 10⁻¹⁷ @ 1 s（跨倍频程）"
+      noise_cancelled_transfer_stability: "≈2 × 10⁻¹⁸ @ 1 s"
+      scg_bandwidth: ">2 octaves（拼接后）"
+      comb_source: "Er:fiber NALM 锁模激光器（250 MHz 典型）"
+    note: >
+      Level 1 框架实体——定义频率梳从"频率标尺"到"频率传递工具"的应用架构。
+      核心问题：SCG/放大的额外噪声是频率传递精度的当前瓶颈。
+
+principles:
+  - id: pri.scg_added_noise_in_frequency_transfer
+    name: "超连续谱产生中的附加噪声对频率传递的限制"
+    tier: domain
+    verification_status: observed
+    statement: >
+      超连续谱（SCG）通过非线性光学效应（SPM、FWM、Raman 散射、色散波辐射等）
+      将窄带脉冲光谱展宽至倍频程或更宽。此过程不可避免地引入量子噪声放大
+      （尤其在调制不稳定性主导的区域），以及 EDFA 的放大自发辐射（ASE）噪声。
+      这些噪声源限制了频率传递精度：单分支 SCG 的典型传递稳定度为 ~10⁻¹⁷/1s 量级，
+      是光学钟比对等应用的当前瓶颈。
+    domain: "非线性光学，频率梳噪声，频率传递"
+    key_insight: >
+      SCG 噪声是频率梳从"频率标尺"升级为"超精密频率传递工具"的核心限制。
+      噪声抵消技术可将传递稳定度改善 ~10 倍至 ~2×10⁻¹⁸/1s。
+    conditions: "SCG 在反常色散 HNLF 中产生，输入脉冲能量足够"
+    invalidated_when:
+      - "SCG 完全在 SPM 主导的相干区域（N_soliton < 10）——量子噪声放大被抑制"
+      - "不使用 SCG——直接锁定梳的自然带宽内的频率"
+    source_claim: >
+      "Additional noise arises from fiber amplifiers, nonlinear fibers and even simple
+      fiber leads and free-space sections downstream of the oscillator. How to handle
+      these additional noise sources is the subject of frequency transfer technology."
+
+  - id: pri.noise_cancellation_frequency_transfer
+    name: "主动噪声抵消精密频率传递原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      在频率传递路径（振荡器 → EDFA → HNLF → 目标波段）的两端各设置拍频检测环路，
+      检测 SCG/放大引入的额外频率/相位噪声，并通过伺服反馈（如 AOM 频移、EOM 相位
+      调制或泵浦功率调制）主动消除。等效于将传递路径"短路"——使目标波段的频率
+      与源波段的频率之差仅由可控的 RF 偏移决定，而非由非线性噪声主导。
+      实现传递稳定度从 ~10⁻¹⁷ 改善至 ~2×10⁻¹⁸ @ 1 s。
+    domain: "频率传递，噪声抵消，伺服控制"
+    conditions: "检测环路的噪声底低于目标传递稳定度"
+    preconditions:
+      - "两端都有可用的窄线宽拍频信号"
+      - "伺服带宽覆盖主要噪声贡献频段"
+    invalidated_when:
+      - "环路延迟过长——伺服带宽不足以跟踪快速噪声"
+      - "非线性噪声功率超过检测链动态范围"
+    source_claim: >
+      "With noise cancellation techniques a relative frequency transfer stability of
+      ≈2 × 10⁻¹⁸ in 1 s can be achieved"
+
+methods:
+  - id: meth.scg_stitching_broadband_transfer
+    name: "超连续谱拼接宽带频率传递方法"
+    tier: domain
+    verification_status: observed
+    statement: >
+      单根 HNLF 的 SCG 带宽受限于零色散点附近的色散剖面和 Raman 效应。
+      通过将多段 HNLF 串联（各段优化不同波段的色散和相位匹配），
+      或使用不同类型的非线性光纤（如标准 HNLF + PPLN + Ge 光纤），
+      将多个 SCG 频谱"拼接"成跨 >2 倍频程的超宽带相干频谱。
+      每段 SCG 之间通过共同的拍频参考确保频率一致性。
+    domain: "超连续谱产生，频率梳展宽"
+    source_claim: >
+      "With supercontinuum stitching, highly coherent supercontinuum spectra spanning
+      across more than two octaves are generated"
+
+metrics:
+  - id: met.single_branch_transfer_stability_f22
+    name: "单分支 SCG 频率传递稳定度（Fermann 2022 综述）"
+    tier: domain
+    verification_status: observed
+    value: 1.0e-17
+    unit: "dimensionless (fractional @ 1 s)"
+    conditions: "Er:fiber 梳，单根 HNLF SCG，跨倍频程传递"
+    source_claim: >
+      "Single-branch supercontinuum generation allows for a frequency transfer
+      stability of < 1 × 10⁻¹⁷ in 1 s across an octave"
+
+  - id: met.noise_cancelled_transfer_stability_f22
+    name: "噪声抵消后频率传递稳定度（Fermann 2022 综述）"
+    tier: domain
+    verification_status: observed
+    value: 2.0e-18
+    unit: "dimensionless (fractional @ 1 s)"
+    conditions: "噪声抵消技术，Er:fiber 梳"
+    source_claim: >
+      "With noise cancellation techniques a relative frequency transfer stability of
+      ≈2 × 10⁻¹⁸ in 1 s can be achieved"
+
+relations:
+  - id: rel.F22_01
+    subject: ent.precision_frequency_transfer_system_f22
+    predicate: CHARACTERIZED-BY
+    object: met.single_branch_transfer_stability_f22
+    source:
+      claim: "<1 × 10⁻¹⁷ in 1 s across an octave"
+      section: "Abstract"
+
+  - id: rel.F22_02
+    subject: ent.precision_frequency_transfer_system_f22
+    predicate: CHARACTERIZED-BY
+    object: met.noise_cancelled_transfer_stability_f22
+    source:
+      claim: "≈2 × 10⁻¹⁸ in 1 s"
+      section: "Abstract"
+
+  - id: rel.F22_03
+    subject: ent.precision_frequency_transfer_system_f22
+    predicate: BOUNDED-BY
+    object: pri.scg_added_noise_in_frequency_transfer
+    source:
+      claim: "Additional noise arises from fiber amplifiers, nonlinear fibers"
+      section: "Introduction"
+
+  - id: rel.F22_04
+    subject: met.noise_cancelled_transfer_stability_f22
+    predicate: OPERATIONALIZED-AS
+    object: pri.noise_cancellation_frequency_transfer
+    source:
+      claim: "noise cancellation techniques achieve ≈2 × 10⁻¹⁸"
+      section: "Abstract"
+
+  - id: rel.F22_05
+    subject: ent.precision_frequency_transfer_system_f22
+    predicate: PART-OF
+    object: ent.er_fiber_frequency_comb
+    note: "跨文件引用，ent.er_fiber_frequency_comb 定义于 giunta2019.yaml"
+
+breakthrough_paths:
+  - direction: pri.noise_cancellation_frequency_transfer
+    expected_gain: "频率传递稳定度从 ~10⁻¹⁷ 改善至 ~2×10⁻¹⁸ @ 1 s（~5-10 倍改善）"
+    status: demonstrated
+    source:
+      claim: "≈2 × 10⁻¹⁸ in 1 s can be achieved"
+      section: "Abstract"
+
+  - direction: meth.scg_stitching_broadband_transfer
+    expected_gain: "将相干频谱扩展至 >2 倍频程，覆盖 XUV-to-MIR 全谱域"
+    status: demonstrated
+    source:
+      claim: "highly coherent supercontinuum spectra spanning across more than two octaves"
+      section: "Abstract"
+
+open_questions:
+  - "噪声抵消技术的最终极限——是否能达到 10⁻¹⁹ 量级？受限于量子噪声还是技术噪声？"
+  - "脉冲整形对 SCG 噪声的抑制效果——是否可以在非线性放大前优化脉冲时域形状以降低噪声？"
+  - "频率传递稳定度在不同梳源（Er vs Yb vs Tm 光纤梳）之间的差异"
+  - "多分支并行频率传递的噪声相关性——能否通过组合多分支进一步降低噪声？"
+
+cross_topic_interfaces:
+  - from_topic: "optical-frequency-combs"
+    to_topic: "ultrastable-laser"
+    interface_type: "enables"
+    description: "频率传递将超稳激光的稳定性从单一波长扩展到宽带多波段"
+  - from_topic: "optical-frequency-combs"
+    to_topic: "frequency-standards"
+    interface_type: "enables"
+    description: "精密频率传递是光学钟比对和绝对频率测量的基础"

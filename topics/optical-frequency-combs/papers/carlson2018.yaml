@@ -1,0 +1,197 @@
+# Carlson 2018 — 单梳重频切换双梳干涉术（PHIRE）[方法学论文]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: methodology
+
+meta:
+  zotero_key: "JTI6TJFU"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: methodology
+  reliability: high
+  title: "Dual-comb interferometry via repetition rate switching of a single frequency comb"
+  year: 2018
+  first_author: "Carlson"
+  journal: "Optics Letters"
+  volume: 43
+  issue: 15
+  pages: "3614-3617"
+  doi: "10.1364/OL.43.003614"
+  note: >
+    [方法学论文] NIST（Carlson, Hickstein, Cole, Diddams, Papp）。提出 PHIRE 方法
+    （Parallel Heterodyne Interferometry via Rep-rate Exchange）：仅用单个频率梳
+    通过快速重频切换实现双梳干涉。二进制调制 f_mod 使 frep 在两个值间交替，
+    一半输出经光纤延迟线（匹配 Ldelay = vg/2f_mod），另一半经 AOM 频移后重组，
+    产生标准双梳干涉图。保持完整双梳干涉的速度和分辨率，同时大幅简化实验装置
+    （单梳代替双梳）。使用 10.1 GHz EOM 梳演示：(1) 光谱测量（HCN 气体吸收）；
+    (2) 非线性展宽 PHIRE（HNLF 后的宽带光谱）；(3) 绝对距离测量（Vernier 扩展
+    NAR 至 45.7 m，精度 1 μm / 半周期，90 nm / 200 μs 平均）；(4) 远距离声学窃听
+    （4.5 m 外玻璃窗振动恢复音频）。
+    跨文件节点引用：pri.dual_comb_multiheterodyne_detection 定义于 coddington2016.yaml。
+
+entities:
+  - id: ent.phire_single_comb_dual_comb_c18
+    name: "PHIRE 单梳双梳干涉系统（Carlson 2018）"
+    aliases:
+      - "PHIRE dual-comb interferometer"
+      - "single-comb dual-comb via rep-rate switching"
+      - "Parallel Heterodyne Interferometry via Rep-rate Exchange"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      仅使用单个频率梳（EOM 梳，10.1 GHz），通过二进制重频切换（f_mod = 164 kHz，
+      在 frep 和 frep' 之间交替，Δfrep = 3.28 MHz）产生时分复用频率梳。
+      分光后一臂经光纤延迟线（Ldelay = vg/2f_mod ≈ 600 m），另一臂经 AOM
+      （250 MHz 频移，避免基带混叠）。重组后在每个 f_mod 半周期内产生干涉图序列，
+      等效于标准双梳干涉。关键优势：(1) 成本降低 ~50%（仅需单梳）；
+      (2) 无需双梳相位锁定——两"梳"来自同一源，本征互相干；
+      (3) 适用于任何可快速切换重频的脉冲源（EOM、半导体、微腔梳）。
+    key_parameters:
+      comb_type: "电光调制梳（EOM comb，3 个相位调制器 + 1 个强度调制器）"
+      nominal_frep: "10.1 GHz"
+      delta_frep: "3.28 MHz"
+      switching_rate: "f_mod = 164 kHz"
+      switching_speed: "~10 ns"
+      fiber_delay: "~600 m SMF（标准配置）/ 3 km（宽带展宽配置）"
+      aom_frequency: "250 MHz"
+      spectroscopy_osnr: ">25 dB/√N（N 为平均次数）"
+      acquisition_speed: "单干涉图 ~2.8 μs"
+    interface_requirements:
+      cw_pump_laser: "窄线宽 CW 激光（相干时间 > 光纤延迟传播时间）"
+      rf_sources: "两个相干 RF 合成器（或 FM 调制一个源）"
+    note: >
+      Level 2 方法/系统节点。PHIRE 不改变双梳干涉的物理原理，
+      而是提供了一种工程上极大简化的实现方式。
+      特别适合 EOM 梳等重频可电子控制的梳源。
+
+methods:
+  - id: meth.phire_dual_comb
+    name: "PHIRE 重频切换双梳干涉方法"
+    tier: domain
+    verification_status: observed
+    statement: >
+      通过对单个频率梳施加二进制重频调制（在 frep 和 frep' 之间快速切换），
+      经分光-延迟-重组产生等效双梳干涉图。延迟线长度匹配切换速率的半周期，
+      使两个不同重频的脉冲序列在光电探测器上时间重叠。
+    steps: >
+      (1) RF 源施加二进制调制：frep 周期性在 f₁ 和 f₂ 之间切换（速率 f_mod）；
+      (2) 梳输出分光：50/50 分束器分为延迟臂和参考臂；
+      (3) 延迟臂经光纤（L = vg/2f_mod）延迟半个切换周期；
+      (4) 参考臂经 AOM 频移（避免基带混叠）；
+      (5) 两臂重组：延迟后 f₁ 脉冲与当前 f₂ 脉冲重叠，产生 Δfrep = |f₁−f₂| 的干涉图；
+      (6) 光电探测 + 数字采样 + FFT 得到相位和振幅光谱；
+      (7) 每半个 f_mod 周期干涉图反转（需分别处理或反转拼接）。
+    domain: "双梳干涉术，光谱测量，距离测量"
+    note: >
+      与标准双梳的关键区别：(1) 两"梳"本征互相干（来自同一源），
+      无需相位锁定；(2) 延迟线路径波动是共模噪声（对 ranging 无影响）；
+      (3) 限制：CW 泵浦激光器相干时间必须 > 延迟线传播时间。
+
+  - id: meth.phire_absolute_distance
+    name: "PHIRE Vernier 绝对距离测量方法"
+    tier: domain
+    verification_status: observed
+    statement: >
+      利用 PHIRE 中固有的重频切换，自动实现 Vernier 效应扩展非模糊距离范围（NAR）。
+      标准双梳 TOF 的 NAR = vg/(2frep)；通过两个半周期（frep₁ 和 frep₂）
+      得到两个略不同的距离 L_TOF 和 L'_TOF，
+      NAR 倍数 m = (L_TOF − L'_TOF)/(NAR − NAR')，
+      扩展后 NAR_ext = vg/(2Δfrep)。
+    steps: >
+      (1) 分离参考面和目标面的干涉图（正交偏振 + PBS 分离）；
+      (2) 分别处理两半周期的干涉图，FFT 提取相位谱；
+      (3) 目标与参考相位谱相减，线性拟合得 TOF 距离；
+      (4) 两半周期给出 L_TOF 和 L'_TOF，解算 NAR 倍数 m；
+      (5) 绝对距离 = m × NAR + L_TOF。
+    domain: "绝对距离测量，双梳测距"
+
+metrics:
+  - id: met.phire_distance_precision_c18
+    name: "PHIRE 距离测量精度（Carlson 2018）"
+    tier: domain
+    verification_status: observed
+    value: 1.0
+    unit: "μm"
+    conditions: "单个 f_mod 半周期（8 个干涉图），10.1 GHz EOM 梳，Δfrep = 3.28 MHz"
+    source_claim: >
+      "The TOF measurement yields a precision of 1 μm after a single half-period of f_mod"
+
+  - id: met.phire_distance_precision_averaged_c18
+    name: "PHIRE 距离测量精度（平均后，Carlson 2018）"
+    tier: domain
+    verification_status: observed
+    value: 90
+    unit: "nm"
+    conditions: "200 μs 平均"
+    source_claim: >
+      "90 nm after 200 μs of averaging"
+
+  - id: met.phire_nar_extended_c18
+    name: "PHIRE 扩展非模糊距离范围（Carlson 2018）"
+    tier: domain
+    verification_status: observed
+    value: 45.7
+    unit: "m"
+    conditions: "10.1 GHz EOM 梳，Δfrep = 3.28 MHz，大气条件"
+    source_claim: >
+      "NAR can be extended from 1.5 cm to NAR_ext = vg/(2Δfrep) = 45.7 m"
+
+relations:
+  - id: rel.JTI_01
+    subject: meth.phire_dual_comb
+    predicate: DERIVED-FROM
+    object: pri.dual_comb_multiheterodyne_detection
+    source:
+      claim: "full speed and resolution of standard dual-comb interferometry is preserved"
+      section: "Abstract"
+    note: "跨文件引用，pri.dual_comb_multiheterodyne_detection 定义于 coddington2016.yaml"
+
+  - id: rel.JTI_02
+    subject: ent.phire_single_comb_dual_comb_c18
+    predicate: CHARACTERIZED-BY
+    object: met.phire_distance_precision_c18
+    source:
+      claim: "precision of 1 μm after a single half-period"
+      section: "Results"
+
+  - id: rel.JTI_03
+    subject: ent.phire_single_comb_dual_comb_c18
+    predicate: CHARACTERIZED-BY
+    object: met.phire_nar_extended_c18
+    source:
+      claim: "NAR extended to 45.7 m"
+      section: "Results"
+
+  - id: rel.JTI_04
+    subject: met.phire_distance_precision_c18
+    predicate: OPERATIONALIZED-AS
+    object: meth.phire_absolute_distance
+    source:
+      claim: "PHIRE has a unique advantage for absolute distance metrology"
+      section: "Distance metrology"
+
+  - id: rel.JTI_05
+    subject: meth.phire_dual_comb
+    predicate: COMPETES-WITH
+    object: meth.oscat_dual_comb
+    source:
+      claim: "OSCAT, which shares a similar self-delayed construction, acquires interferograms at the sweeping speed"
+      section: "Introduction"
+    note: "PHIRE 比 OSCAT 快 ~4 个量级，且保持完整分辨率"
+
+breakthrough_paths:
+  - direction: meth.phire_dual_comb
+    expected_gain: "将双梳干涉从需要两台相位锁定梳简化为单梳 + 重频切换，成本降 ~50%，复杂度大幅降低"
+    status: demonstrated
+    source:
+      claim: "significant experimental simplification and cost savings"
+      section: "Abstract"
+    note: "特别适合 EOM 梳和其他重频可电子调制的梳源"
+
+open_questions:
+  - "PHIRE 能否用于锁模激光器梳——重频切换速度是否足够快？"
+  - "光纤延迟线的相位漂移对长时间相干平均的限制——是否需要主动稳定？"
+  - "非线性展宽后两个重频状态的不同脉冲啁啾对宽带 PHIRE 光谱质量的影响"
+  - "与微腔梳的兼容性——DKS 孤子态是否支持快速重频切换？"
