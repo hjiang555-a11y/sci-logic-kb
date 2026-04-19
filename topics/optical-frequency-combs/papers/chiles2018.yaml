@@ -1,0 +1,233 @@
+# Chiles 2018 — 氘化氮化硅（SiN:D）PECVD 集成光子平台，宽带 Kerr 梳与倍频程 SCG [技术突破]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical_breakthrough
+
+meta:
+  zotero_key: "HW9TAY3W"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical_breakthrough
+  reliability: high
+  title: "Deuterated silicon nitride photonic devices for broadband optical frequency comb generation"
+  year: 2018
+  first_author: "Chiles"
+  journal: "Optics Letters"
+  volume: 43
+  issue: 7
+  pages: "1527-1530"
+  doi: "10.1364/OL.43.001527"
+  note: >
+    [技术突破] NIST（Chiles, Diddams, Papp, Nam 等）。首次演示氘化氮化硅（SiN:D）
+    通过等离子体增强化学气相沉积（PECVD / ICP-CVD）制备的集成光子平台用于非线性光学：
+    (1) 峰值工艺温度 <300°C，CMOS 后端兼容；(2) 用氘化硅烷（SiD₄）替代常规硅烷（SiH₄），
+    将 N-H 吸收带从 1.5 μm 移至 ~2.04 μm，C 波段损耗降至 0.31 dB/cm（vs PECVD SiN:H 的
+    2.5 dB/cm，改善 8 倍）；(3) 微环谐振器 Q 因子达 1.6×10⁶ @ 1552 nm；
+    (4) 演示 1 THz FSR、900 nm 带宽 MI Kerr 微梳；(5) 演示倍频程超连续谱。
+    跨文件节点引用：ent.si3n4_integrated_comb 定义于 kippenberg2011.yaml；
+    pri.parametric_four_wave_mixing_comb 定义于 kippenberg2011.yaml；
+    pri.supercontinuum_octave_spanning 定义于 diddams2000.yaml。
+
+entities:
+  - id: ent.deuterated_sin_photonic_platform_c18
+    name: "氘化氮化硅（SiN:D）PECVD 集成光子平台（Chiles 2018）"
+    aliases:
+      - "deuterated silicon nitride platform"
+      - "SiN:D ICP-CVD photonic waveguide"
+      - "PECVD SiN:D integrated photonics"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      通过使用氘化硅烷（SiD₄，98% 同位素纯度）作为 PECVD/ICP-CVD 前驱体，
+      将传统 SiN 薄膜中的 N-H 键替换为 N-D 键。N-D 泛频吸收带移至 ~2.04 μm
+      （vs N-H 的 ~1.52 μm），使 C 波段（1530-1565 nm）损耗大幅降低。
+      低温沉积（270°C）使其 CMOS 后端兼容，可直接在预处理硅片上沉积，
+      无需高温退火（vs LPCVD SiN 需 >700°C）或裂纹控制。
+    key_parameters:
+      material: "SiN:D（氘化氮化硅）"
+      deposition_method: "ICP-CVD（感应耦合等离子体化学气相沉积）"
+      peak_temperature: "<300°C（CMOS 后端兼容）"
+      precursor: "SiD₄（98% 同位素纯度）+ N₂"
+      refractive_index: "1.98 ± 0.01 @ 1548 nm"
+      film_stress: "191 MPa（低拉应力，568 nm 厚膜，无裂纹）"
+      max_tested_thickness: "1.05 μm（无裂纹）"
+      propagation_loss_c_band: "0.31 dB/cm（C 波段最差情况，1510-1600 nm）"
+      propagation_loss_improvement: "8 倍优于当时最佳 PECVD SiN:H（2.5 dB/cm）"
+      nd_absorption_peak: "5.2 dB/cm @ 2.04 μm（N-D 泛频吸收）"
+      quality_factor_peak: "1.6 × 10⁶ @ 1552 nm"
+      quality_factor_broadband: ">1.2 × 10⁶（1510-1600 nm 全 C 波段）"
+      microring_radius: "180 μm"
+      etch_depth: "430 nm（部分刻蚀）"
+    interface_requirements:
+      pump: "CW 泵浦（Kerr 梳）或飞秒脉冲泵浦（SCG）"
+      coupling: "光纤-光栅耦合器"
+    note: >
+      Level 2 实例节点；可视为 ent.si3n4_integrated_comb 的低温沉积替代方案。
+      关键优势：CMOS 后端兼容——可在已有电子芯片上直接集成光子层。
+
+  - id: ent.sind_mi_kerr_comb_c18
+    name: "SiN:D 微环 MI Kerr 微梳（Chiles 2018，1 THz FSR，900 nm 带宽）"
+    aliases:
+      - "deuterated SiN MI microcomb"
+    hierarchy_level: 3
+    status: demonstrated
+    function: >
+      基于 SiN:D 微环谐振器（半径 23 μm，FSR ~1 THz，Q ~3.7×10⁵）的
+      调制不稳定性（MI）Kerr 微梳。CW 泵浦 @ 1555 nm，耦合功率 ~300 mW，
+      产生覆盖 ~1200-2100 nm（900 nm 带宽）的宽带频率梳。
+    key_parameters:
+      ring_radius: "23 μm"
+      fsr: "~1 THz"
+      quality_factor: "~3.7 × 10⁵"
+      pump_wavelength: "1555 nm"
+      pump_power_coupled: "~300 mW"
+      comb_bandwidth: "~900 nm（1200-2100 nm）"
+      comb_type: "modulation instability (MI)"
+    note: "Level 3 实验实例，属于 MI 态（非 DKS 孤子态），带宽受 N-D 吸收 @ 2 μm 限制"
+
+principles:
+  - id: pri.isotope_substitution_absorption_shift
+    name: "同位素替换吸收带移位原理（N-H → N-D）"
+    tier: domain
+    verification_status: observed
+    statement: >
+      分子振动频率 ω ∝ √(k/μ)，其中 k 为键力常数，μ 为约化质量。
+      用氘（D，质量 ≈2 amu）替代氢（H，质量 ≈1 amu），N-D 键的约化质量增加，
+      基频振动频率降低约 √2 倍。对应的泛频（overtone）吸收带也同步红移：
+      N-H 泛频 @ ~1.52 μm → N-D 泛频 @ ~2.04 μm，完全移出电信 C 波段。
+      同位素替换不改变键力常数（化学键类型不变），因此折射率和非线性系数
+      几乎不受影响。
+    domain: "材料光学，分子光谱，集成光子学"
+    formula: "ω_ND/ω_NH ≈ √(μ_NH/μ_ND) ≈ √(14·1/(14+1)) / √(14·2/(14+2))) ≈ 0.73"
+    key_insight: >
+      同位素替换是一种优雅的材料工程手段——保持材料的折射率、非线性和机械性质，
+      仅移动不需要的吸收带。对 SiN 光子学，将 C 波段损耗从 PECVD SiN:H 的
+      >2.5 dB/cm 降至 SiN:D 的 0.31 dB/cm（8 倍改善）。
+    conditions: "高纯度同位素前驱体（≥98% 氘纯度）"
+    preconditions:
+      - "PECVD/ICP-CVD 沉积工艺能兼容氘化前驱体"
+      - "前驱体纯度足够高，残余 H 含量 <2% 以避免残余 N-H 吸收"
+    invalidated_when:
+      - "应用波段恰好与 N-D 吸收带重叠（~2 μm）——损耗反而增加"
+      - "前驱体氘纯度不足——残余 N-H 吸收仍然显著"
+    source_claim: >
+      "employ isotopically substituted precursors during the deposition process to modify
+      the bond energy of the N-H overtone (such as deuterated silane [SiD4])"
+
+metrics:
+  - id: met.sind_propagation_loss_c18
+    name: "SiN:D C 波段传播损耗（Chiles 2018）"
+    tier: domain
+    verification_status: observed
+    value: 0.31
+    unit: "dB/cm"
+    conditions: "C 波段最差情况（1510-1600 nm），ICP-CVD 沉积 920 nm 厚膜，无退火"
+    source_claim: >
+      "the worst-case propagation loss of 0.31 dB per cm represents an 8× reduction
+      over a span from 1510 to 1600 nm"
+
+  - id: met.sind_quality_factor_c18
+    name: "SiN:D 微环 Q 因子（Chiles 2018）"
+    tier: domain
+    verification_status: observed
+    value: 1.6e6
+    unit: "dimensionless"
+    conditions: "@ 1552 nm，TE 偏振，微环半径 180 μm，环宽 2.3 μm，间隙 2 μm"
+    source_claim: >
+      "A peak quality factor in the C-band of 1.6 × 10^6 was observed at 1552 nm"
+
+  - id: met.sind_nd_absorption_peak_c18
+    name: "SiN:D N-D 吸收峰（Chiles 2018）"
+    tier: domain
+    verification_status: observed
+    value: 5.2
+    unit: "dB/cm"
+    conditions: "@ 2.04 μm，cut-back 法测量"
+    source_claim: >
+      "A peak propagation loss of 5.2 dB per cm is observed in a narrow band centered
+      at a wavelength of 2.04 μm"
+
+relations:
+  - id: rel.C18_01
+    subject: ent.deuterated_sin_photonic_platform_c18
+    predicate: COMPETES-WITH
+    object: ent.si3n4_integrated_comb
+    source:
+      claim: "LPCVD silicon nitride has been a highly successful material... PECVD is a straightforward and commercially favorable processing technique"
+      section: "Introduction"
+    note: "跨文件引用，ent.si3n4_integrated_comb 定义于 kippenberg2011.yaml"
+
+  - id: rel.C18_02
+    subject: ent.deuterated_sin_photonic_platform_c18
+    predicate: CHARACTERIZED-BY
+    object: met.sind_propagation_loss_c18
+    source:
+      claim: "worst-case propagation loss of 0.31 dB/cm"
+      section: "Results"
+
+  - id: rel.C18_03
+    subject: ent.deuterated_sin_photonic_platform_c18
+    predicate: CHARACTERIZED-BY
+    object: met.sind_quality_factor_c18
+    source:
+      claim: "peak quality factor of 1.6 × 10^6 at 1552 nm"
+      section: "Results"
+
+  - id: rel.C18_04
+    subject: ent.sind_mi_kerr_comb_c18
+    predicate: PART-OF
+    object: ent.deuterated_sin_photonic_platform_c18
+
+  - id: rel.C18_05
+    subject: ent.sind_mi_kerr_comb_c18
+    predicate: ENABLED-BY
+    object: pri.parametric_four_wave_mixing_comb
+    note: "跨文件引用，pri.parametric_four_wave_mixing_comb 定义于 kippenberg2011.yaml"
+
+  - id: rel.C18_06
+    subject: ent.deuterated_sin_photonic_platform_c18
+    predicate: ENABLED-BY
+    object: pri.isotope_substitution_absorption_shift
+    source:
+      claim: "isotopically substituted precursors to modify the N-H overtone"
+      section: "Introduction"
+
+  - id: rel.C18_07
+    subject: ent.deuterated_sin_photonic_platform_c18
+    predicate: BOUNDED-BY
+    object: pri.isotope_substitution_absorption_shift
+    source:
+      claim: "peak propagation loss of 5.2 dB/cm at 2.04 μm"
+      section: "Results"
+    note: "N-D 吸收限制了 2 μm 附近的应用（代价是：移走了 C 波段吸收，但引入了 2 μm 吸收）"
+
+breakthrough_paths:
+  - direction: pri.isotope_substitution_absorption_shift
+    expected_gain: "PECVD SiN C 波段损耗从 >2.5 dB/cm 降至 0.31 dB/cm（8 倍改善），同时保持 <300°C 工艺温度"
+    status: demonstrated
+    source:
+      claim: "8× reduction over a span from 1510 to 1600 nm, compared to state-of-the-art PECVD SiN:H"
+      section: "Results"
+    note: "使 PECVD SiN 首次达到可用于非线性光子学的损耗水平，并保持 CMOS 后端兼容性"
+
+  - direction: meth.cmp_surface_polishing_c18
+    expected_gain: "进一步降低散射损耗，提升 Q 因子（可能达到 LPCVD SiN 的水平 ~10⁷）"
+    status: proposed
+    source:
+      claim: "improvements to the quality factor could be realized by chemical-mechanical polishing"
+      section: "Results"
+    note: "meth.cmp_surface_polishing_c18 = 化学机械抛光（CMP）方法，用于降低波导表面粗糙度散射损耗；本文提出但未实施"
+
+open_questions:
+  - "SiN:D 平台能否通过 CMP 和刻蚀优化达到 Q > 10⁷？"
+  - "SiN:D 在中红外（3-5 μm）的透明窗口是否优于 LPCVD SiN？"
+  - "更高纯度 SiD₄（>99.9%）能否进一步消除 C 波段残余 N-H 吸收？"
+  - "SiN:D 与薄膜 LiNbO₃ 等温度敏感平台的异质集成可行性"
+
+historical_landmarks:
+  first_demonstration:
+    description: "首次在 SiN:D 平台上演示 Kerr 微梳和倍频程 SCG"
+    year: 2018
+    reference: "Chiles et al., Opt. Lett. 43, 1527 (2018)"

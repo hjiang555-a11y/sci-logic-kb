@@ -1,0 +1,218 @@
+# Zhang 2012 — 商用光纤梳 EOM 传递函数表征与低噪声微波生成 [方法学论文]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: methodology
+
+meta:
+  zotero_key: "IK6MW5Q4"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: methodology
+  reliability: high
+  title: "Characterizing a Fiber-Based Frequency Comb With Electro-Optic Modulator"
+  year: 2012
+  first_author: "Zhang"
+  journal: "IEEE Trans. Ultrason. Ferroelectr. Freq. Control"
+  volume: 59
+  issue: 3
+  pages: "432-438"
+  doi: "10.1109/TUFFC.2012.2212"
+  note: >
+    [方法学论文] LNE-SYRTE（Santarelli 组）+ Menlo Systems。对 Menlo 商用核心掺铒光纤梳
+    （250 MHz，内含自由空间 EOM）进行完整的 3×3 传递函数矩阵表征：
+    三个执行器（PZT、泵浦二极管电流、EOM 电压）→ 三个参数（frep、f0、振幅 A）。
+    核心贡献：(1) 系统测量九个传递函数，展示 EOM 作为 frep 高速执行器的潜力
+    （平坦响应至 ~900 kHz）；(2) 量化泵浦 RIN 到激光器 RIN 的传递关系，
+    证明低噪声电流源可显著降低激光器 RIN；(3) 分析 EOM 电压-to-f0 和电压-to-A
+    的交叉耦合效应；(4) 预测光-微波分频（12 GHz）的残余相位噪声限制。
+    跨文件节点引用：ent.optical_frequency_comb 定义于 giunta2019.yaml；
+    ent.er_fiber_frequency_comb 定义于 giunta2019.yaml；
+    pri.self_referencing_f2f 定义于 udem2002.yaml。
+
+entities:
+  - id: ent.menlo_erfiber_eom_comb_z12
+    name: "Menlo 商用掺铒光纤梳 + 自由空间 EOM（Zhang 2012 表征系统）"
+    aliases:
+      - "Menlo FC1500 with intra-cavity EOM"
+      - "commercial Er:fiber comb with free-space EOM"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      Menlo Systems 商用核心掺铒光纤光频梳（250 MHz 重频），内含自由空间腔内 EOM
+      用于高带宽 frep 控制，内置 f-2f 自参考单元。三个独立执行器：
+      (1) PZT（腔长，低速大范围）；(2) 泵浦二极管电流（影响 f0、A、frep）；
+      (3) EOM（主要作用于 frep，通过电压控制群延迟）。EOM 传递函数平坦至 ~900 kHz
+      （受晶体声学谐振限制），PZT 带宽 ~2.4 kHz（受驱动放大器限制），
+      泵浦-to-f0 带宽 ~50 kHz（受 Er 增益弛豫限制）。
+    key_parameters:
+      laser_type: "Er:fiber mode-locked laser"
+      repetition_rate: "250 MHz"
+      center_wavelength: "~1556 nm"
+      eom_type: "自由空间腔内 EOM"
+      eom_bandwidth: "平坦至 ~900 kHz（声学谐振限制）"
+      pzt_bandwidth: "~2.4 kHz（驱动放大器限制）"
+      pump_to_f0_bandwidth: "~50 kHz（Er 增益弛豫限制）"
+      self_referencing: "内置 f-2f 单元"
+    interface_requirements:
+      optical_reference: "超稳 CW 激光（1542 nm，用于 frep 锁定）"
+      rf_reference: "低噪声微波参考（用于 f0 锁定和微波生成比较）"
+    note: >
+      Level 2 实例节点；PART-OF ent.er_fiber_frequency_comb。
+      本文不是性能突破，而是系统性方法学贡献：建立了光频梳执行器传递函数
+      完整表征方法论，为后续低噪声微波生成优化提供定量基础。
+
+principles:
+  - id: pri.comb_actuator_transfer_matrix
+    name: "光频梳三参数三执行器传递函数矩阵表征原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      自参考光频梳的自由度完全由三个全局参数描述：frep（重频）、f0（CEO 频率）、A（振幅）。
+      梳的 N 个执行器（PZT、泵浦电流、EOM 等）对这三个参数的影响可用 3×N 传递函数矩阵
+      H(jω) 完整表征。通过矢量信号分析仪（VSA）系统测量九个（3×3）传递函数的幅度和相位
+      随傅里叶频率的频率响应，可以：(1) 确定每个执行器可用的伺服带宽；
+      (2) 量化交叉耦合（如 EOM→f0, EOM→A）；(3) 预测残余噪声限制；
+      (4) 优化多执行器级联控制架构。
+    domain: "光频梳噪声分析，伺服系统设计"
+    formula: >
+      [A(jω); frep(jω); f0(jω)] = H(jω) · [I_pump(jω); V_PZT(jω); V_EOM(jω)]；
+      其中 H 为 3×3 复传递函数矩阵
+    key_insight: >
+      光频梳的噪声优化不能仅关注单个执行器-参数通道，而需考虑完整矩阵的非对角元素
+      （交叉耦合），尤其在光-微波分频应用中，EOM→A 耦合通过振幅-相位转换（AM-PM）
+      直接限制微波相位噪声底。
+    conditions: "锁模激光器稳定运行，非线性模式锁定机制未导致梳齿间额外去相关"
+    preconditions:
+      - "三个全局参数（frep, f0, A）完整描述梳的状态——即梳齿间的相位和振幅关系不随时间变化"
+      - "VSA 或等效测量仪器的带宽和噪声底低于被测传递函数"
+    invalidated_when:
+      - "锁模激光器出现多脉冲或不稳定状态——三参数描述不完整"
+      - "梳齿间存在显著的去相关噪声（如超连续谱产生中的量子噪声放大）"
+    source_claim: >
+      "A full characterization of the comb's noise properties, therefore, requires the
+      measurement of three power spectral densities... A full characterization of the
+      response of the comb to the various actuators therefore requires the measurement
+      of the nine transfer function matrix elements"
+
+methods:
+  - id: meth.comb_transfer_function_measurement
+    name: "光频梳传递函数矩阵测量方法"
+    tier: domain
+    verification_status: observed
+    statement: >
+      使用双通道矢量信号分析仪（VSA）系统测量光频梳的传递函数：
+      通道 1 连接白噪声或扫频正弦调制信号至执行器驱动（PZT、泵浦电流或 EOM），
+      通道 2 连接被测参数的检测信号（frep 通过光拍频解调，f0 通过 f-2f 干涉仪，
+      A 通过直接光电检测）。VSA 计算通道 1 到通道 2 的传递函数（幅度+相位 vs 频率）。
+      同一 VSA 在无调制时还可测量各参数的自由运行噪声功率谱密度。
+    steps: >
+      (1) 搭建 frep 检测链：窄带滤波梳齿 + CW 激光拍频 + 电混频下转换；
+      (2) 搭建 f0 检测链：f-2f 自参考干涉仪输出；
+      (3) 搭建 A 检测链：直接光电检测 + 低噪声放大器；
+      (4) 对每个执行器依次施加调制，VSA 测量九个传递函数；
+      (5) 独立表征执行器驱动电路的带宽（确保不限制测量）；
+      (6) 分析交叉耦合和噪声预测。
+    domain: "光频梳表征，噪声计量学"
+    note: >
+      此方法论是系统性的、可推广的——适用于任何类型的光频梳（光纤、固态、微腔等），
+      只要其自由度可由有限个全局参数描述。
+
+metrics:
+  - id: met.eom_frep_transfer_bandwidth_z12
+    name: "EOM→frep 传递函数带宽（Zhang 2012，Menlo Er:fiber 梳）"
+    tier: domain
+    verification_status: observed
+    value: 900
+    unit: "kHz"
+    conditions: "Menlo 商用 Er:fiber 梳，250 MHz 重频，自由空间腔内 EOM"
+    source_claim: >
+      "the maximum available servo bandwidth when using the EOM as an actuator
+      to control frep is limited by sharp resonances observed around 900 kHz"
+
+  - id: met.pump_to_rin_transfer_z12
+    name: "泵浦电流→激光器 RIN 传递系数（Zhang 2012）"
+    tier: domain
+    verification_status: observed
+    value: 4.0e-3
+    unit: "W/A"
+    conditions: "一阶低通模型，滚降频率 ~60 kHz"
+    source_claim: >
+      "amplitude transfer function which can be simply modeled by a first-order
+      low-pass filter (roll-off ~60 kHz) with a coefficient of ~4 × 10^−3 W/A"
+
+  - id: met.eom_crosstalk_residual_phase_noise_z12
+    name: "EOM 交叉耦合残余微波相位噪声预测（Zhang 2012，12 GHz）"
+    tier: domain
+    verification_status: calculated
+    conditions: >
+      12 GHz 微波信号（250 MHz 梳的第 48 谐波），AM-PM 转换系数 0.03 rad/(dP/P)，
+      基于实测 EOM→A 传递函数和环路运行时 EOM 校正电压谱密度预测
+    source_claim: >
+      "Fig. 7 presents the predicted residual phase noise limits obtained from
+      RIN-induced phase noise [curve (c)] and EOM crosstalk-induced phase noise [curve (d)]"
+    note: "预测表明 EOM 交叉耦合限制微波相位噪声至约 −155 dBc/Hz 量级（10 kHz 偏移），需改进 EOM 设计"
+
+relations:
+  - id: rel.Z12_01
+    subject: ent.menlo_erfiber_eom_comb_z12
+    predicate: PART-OF
+    object: ent.er_fiber_frequency_comb
+    note: "跨文件引用，ent.er_fiber_frequency_comb 定义于 giunta2019.yaml"
+
+  - id: rel.Z12_02
+    subject: ent.menlo_erfiber_eom_comb_z12
+    predicate: CHARACTERIZED-BY
+    object: met.eom_frep_transfer_bandwidth_z12
+    source:
+      claim: "EOM bandwidth limited by sharp resonances around 900 kHz"
+      section: "Section IV"
+
+  - id: rel.Z12_03
+    subject: met.eom_frep_transfer_bandwidth_z12
+    predicate: OPERATIONALIZED-AS
+    object: meth.comb_transfer_function_measurement
+    source:
+      claim: "we use a two-channel vector signal analyzer to measure transfer functions"
+      section: "Section III"
+
+  - id: rel.Z12_04
+    subject: meth.comb_transfer_function_measurement
+    predicate: ENABLED-BY
+    object: pri.comb_actuator_transfer_matrix
+    source:
+      claim: "A full characterization requires the measurement of the nine transfer function matrix elements"
+      section: "Section II"
+
+  - id: rel.Z12_05
+    subject: ent.menlo_erfiber_eom_comb_z12
+    predicate: BOUNDED-BY
+    object: pri.eom_acoustic_resonance_limit_t17
+    source:
+      claim: "limited by sharp resonances observed around 900 kHz"
+      section: "Section IV"
+    note: "跨文件引用 pri 节点来自 torcheboeuf2017.yaml（同一物理限制机制）"
+
+  - id: rel.Z12_06
+    subject: ent.menlo_erfiber_eom_comb_z12
+    predicate: BOUNDED-BY
+    object: pri.am_pm_conversion_photodetection
+    source:
+      claim: "amplitude-to-phase coupling in the photodetection process is a strong limitation"
+      section: "Section II"
+    note: "AM-PM 转换是光-微波分频中微波相位噪声底的根本限制之一"
+
+breakthrough_paths:
+  - direction: meth.comb_transfer_function_measurement
+    expected_gain: "完整表征传递函数矩阵可指导伺服优化，预测并降低残余噪声至理论极限"
+    status: demonstrated
+    source:
+      claim: "From these measurements, we infer the capabilities of the femtosecond laser comb to generate very-low-phase-noise microwave signals"
+      section: "Abstract"
+    note: "方法论贡献，非直接性能突破，但为后续优化提供定量基础"
+
+open_questions:
+  - "波导型 EOM（如 LiNbO₃ 波导 EOM）能否将声学谐振推至 >1.2 MHz 以进一步扩展带宽？"
+  - "AM-PM 转换系数在不同光电二极管和工作条件下的最小可实现值"
+  - "非对角传递函数在不同锁模机制（NPE vs NALM vs SESAM）间的差异性"

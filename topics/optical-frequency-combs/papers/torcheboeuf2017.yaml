@@ -1,0 +1,218 @@
+# Torcheboeuf 2017 — DPSSL Er:Yb:glass 光频梳腔内 EOM 实现 700 kHz 重频锁定带宽 [技术论文]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical_breakthrough
+
+meta:
+  zotero_key: "HJHCMSZG"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical_breakthrough
+  reliability: high
+  title: "Repetition rate stabilization of an optical frequency comb based on solid-state laser technology with an intra-cavity electro-optic modulator"
+  year: 2017
+  first_author: "Torcheboeuf"
+  journal: "Optics Express"
+  volume: 25
+  issue: 3
+  pages: "2215-2220"
+  doi: "10.1364/OE.25.002215"
+  note: >
+    [技术突破] CSEM Neuchâtel（Lecomte 组）。首次在二极管泵浦固态激光器（DPSSL，Er:Yb:glass，
+    100 MHz，1546 nm，220 fs 孤子脉冲）中采用腔内 EOM 实现 frep 锁定，锁定带宽达 700 kHz——
+    超越当时所有其他类型重频执行器。腔内 EOM 作用为电压控制群延迟元件，改变腔光程
+    从而调制 frep。fCEO 通过 f-2f 干涉仪探测，反馈至泵浦二极管注入电流，带宽 45 kHz。
+    frep 稳定至 1 Hz 级线宽的 PDH 稳腔 CW 激光（1560 nm），EOM 快速执行 + PZT 慢执行
+    级联架构。环路内积分相位噪声 133 mrad [10 Hz; 1 MHz]（扣除 CW 参考噪声后 115 mrad），
+    为固态激光器 OFC 的最佳结果之一。同时研究了 EOM 的 PM-to-AM 耦合效应。
+    跨文件节点引用：ent.optical_frequency_comb 定义于 giunta2019.yaml；
+    ent.dpss_comb_interleaver_pc15 定义于 portuondo-campa2015.yaml（同组前序工作）；
+    pri.self_referencing_f2f 定义于 udem2002.yaml。
+
+entities:
+  - id: ent.dpssl_eryb_eom_comb_t17
+    name: "DPSSL Er:Yb:glass 腔内 EOM 光频梳（Torcheboeuf 2017，700 kHz frep 锁定带宽）"
+    aliases:
+      - "Er:Yb:glass DPSSL comb with intra-cavity EOM"
+      - "CSEM solid-state comb with EOM rep-rate lock"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      基于 Er:Yb:glass 增益介质 + SESAM 被动锁模的 DPSSL 光频梳（1546 nm，220 fs，100.05 MHz），
+      首次在固态激光器中引入腔内电光调制器（EOM）作为 frep 高速执行器。EOM 通过电压调制
+      晶体折射率改变腔内群延迟，从而快速调制重复频率。相比 PZT（典型带宽 ~10 kHz），
+      EOM 提供带宽达 700 kHz 的 frep 控制，为当时所有执行器类型的最佳记录。
+      frep 锁定至 PDH 稳 CW 激光（1560 nm，1 Hz 线宽），fCEO 通过 f-2f 自参考锁定至氢钟参考合成器。
+    key_parameters:
+      gain_medium: "Er:Yb:glass（掺铒铒镱玻璃）"
+      mode_locking: "SESAM 被动锁模"
+      center_wavelength: "1546 nm"
+      pulse_width: "220 fs（变换极限孤子）"
+      repetition_rate: "100.05 MHz"
+      pump_wavelength: "976 nm"
+      pump_power: "≤600 mW"
+      fceo_snr: "50 dB（91 kHz RBW）"
+      fceo_lock_bandwidth: "45 kHz（泵浦电流反馈）"
+      fceo_integrated_phase_noise: "286 mrad [10 Hz; 1 MHz]"
+      frep_lock_bandwidth: "700 kHz（EOM，当时所有执行器最佳记录）"
+      frep_integrated_phase_noise: "133 mrad [10 Hz; 1 MHz]（环路内）"
+      frep_integrated_phase_noise_corrected: "115 mrad [10 Hz; 1 MHz]（扣除 CW 参考贡献）"
+      beat_note_snr: "40 dB（91 kHz RBW）"
+    interface_requirements:
+      optical_reference: "PDH 稳腔 CW 激光（1560 nm，1 Hz 级线宽）"
+      rf_reference: "氢钟参考合成器"
+    note: >
+      Level 2 实例节点；PART-OF ent.optical_frequency_comb。
+      与 portuondo-campa2015（同组前序 DPSSL+interleaver 工作）关联。
+      EOM 在固态激光器中的首次 frep 锁定演示，之前 EOM 仅在光纤激光器中实现。
+
+principles:
+  - id: pri.intracavity_eom_group_delay_modulation
+    name: "腔内 EOM 群延迟调制实现高带宽重频控制原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      腔内电光调制器（EOM）通过外加电压改变晶体折射率（电光效应），
+      产生电压控制的群延迟变化，从而改变激光腔的光程长度，直接调制重复频率 frep。
+      与 PZT 的机械谐振限制（典型 ~10 kHz）不同，EOM 的带宽仅受晶体自身声学谐振
+      （~900 kHz 处的锐谐振）和驱动电路带宽限制，可实现数百 kHz 至 ~1 MHz 的 frep 控制带宽。
+      在级联控制架构中，EOM 负责高傅里叶频率（>6-10 kHz），PZT 负责低频率大范围调谐。
+    domain: "光频梳频率控制，电光效应，激光稳定"
+    formula: >
+      Δf_rep/f_rep ≈ -Δn·L_EOM / L_cavity（其中 Δn = n³·r·V/(2d)，r 为电光系数，
+      V 为施加电压，d 为晶体厚度）
+    key_insight: >
+      EOM 突破了 PZT 机械谐振对 frep 伺服带宽的限制，使固态激光器 OFC 的 frep 锁定带宽
+      从 ~10 kHz 提升至 ~700 kHz，使 DPSSL 达到与光纤激光器 EOM 相当的控制性能。
+    conditions: "EOM 晶体声学谐振频率 > 目标带宽；EOM 驱动电路带宽 > 目标带宽"
+    preconditions:
+      - "EOM 晶体安装于激光腔内，不显著增加腔损耗"
+      - "驱动电路能提供足够的电压摆幅（HV 放大器带宽 ≥1 MHz）"
+    invalidated_when:
+      - "EOM 晶体声学谐振处于所需控制带宽内——产生锐增益峰导致不稳定"
+      - "PM-to-AM 耦合过大——改变腔内功率，干扰 fCEO 和振幅稳定性"
+    source_claim: >
+      "The large feedback bandwidth of such modulators allows disciplining the comb
+      repetition rate on a cavity-stabilized continuous-wave laser with a locking
+      bandwidth up to 700 kHz. This surpasses what can be achieved with any other
+      type of actuator reported so far."
+    open_questions:
+      - "EOM 声学谐振对更高带宽（>1 MHz）的根本限制程度——是否可通过更短晶体或新材料进一步提升？"
+      - "PM-to-AM 耦合对高精度光微波分频的残余相位噪声影响的定量边界"
+
+methods:
+  - id: meth.eom_pzt_cascade_frep_lock
+    name: "EOM+PZT 级联重频锁定方法"
+    tier: domain
+    verification_status: observed
+    statement: >
+      采用双执行器级联架构稳定光频梳的 frep：腔内 EOM 作为快速执行器
+      （负责 >6-10 kHz 傅里叶频率），PZT（安装 SESAM 的压电陶瓷）作为慢执行器
+      （负责低频率和大范围腔长调谐）。PI²D 模拟控制器输出同时驱动 EOM 的 HV 放大器
+      和经积分的 PZT 信号。锁定信号来源于梳齿与 PDH 稳 CW 激光的光拍频。
+    steps: >
+      (1) 光频梳输出经窄带滤波器（1.2 nm @ 1560 nm）后与 CW 激光混频；
+      (2) 光电二极管检测拍频信号，选取单梳齿拍频，电带通滤波+放大；
+      (3) 拍频信号送入混频器（相位检测器），与氢钟参考合成器比相；
+      (4) 误差信号送入 PI²D 控制器（Vescent D2-125，10 MHz 带宽）；
+      (5) 控制信号同时驱动 EOM 的 1 MHz HV 源（快通道）和 PZT（慢通道，经积分）。
+    domain: "光频梳频率控制，伺服回路设计"
+    note: >
+      与 Zhang et al. 2012 (IK6MW5Q4) 的光纤激光器 EOM+PZT 架构类似，
+      但本文为固态激光器中的首次实现。交叉点频率 ~6-10 kHz。
+
+metrics:
+  - id: met.frep_lock_bandwidth_t17
+    name: "frep 锁定带宽（Torcheboeuf 2017，DPSSL EOM）"
+    tier: domain
+    verification_status: observed
+    value: 700
+    unit: "kHz"
+    conditions: >
+      Er:Yb:glass DPSSL（100 MHz），腔内自由空间 EOM，1 MHz HV 放大器驱动，
+      frep 锁定至 1 Hz 级 PDH 稳 CW 激光（1560 nm）
+    source_claim: >
+      "leading to a locking bandwidth up to 700 kHz"
+    note: "当时所有执行器类型的最佳 frep 锁定带宽记录"
+
+  - id: met.frep_integrated_phase_noise_t17
+    name: "frep 环路内积分相位噪声（Torcheboeuf 2017）"
+    tier: domain
+    verification_status: observed
+    value: 133
+    unit: "mrad"
+    conditions: "积分范围 10 Hz–1 MHz，环路内测量，包含 CW 参考噪声贡献"
+    source_claim: >
+      "An in-loop integrated phase noise of 133 mrad has been measured"
+
+relations:
+  - id: rel.T17_01
+    subject: ent.dpssl_eryb_eom_comb_t17
+    predicate: PART-OF
+    object: ent.optical_frequency_comb
+    note: "跨文件引用，ent.optical_frequency_comb 定义于 giunta2019.yaml"
+
+  - id: rel.T17_02
+    subject: ent.dpssl_eryb_eom_comb_t17
+    predicate: CHARACTERIZED-BY
+    object: met.frep_lock_bandwidth_t17
+    source:
+      claim: "locking bandwidth up to 700 kHz"
+      section: "Results"
+
+  - id: rel.T17_03
+    subject: ent.dpssl_eryb_eom_comb_t17
+    predicate: CHARACTERIZED-BY
+    object: met.frep_integrated_phase_noise_t17
+    source:
+      claim: "in-loop integrated phase noise of 133 mrad [10 Hz; 1 MHz]"
+      section: "Results"
+
+  - id: rel.T17_04
+    subject: meth.eom_pzt_cascade_frep_lock
+    predicate: ENABLED-BY
+    object: pri.intracavity_eom_group_delay_modulation
+    source:
+      claim: "EOM operates mainly as a very fast voltage-controlled group delay element"
+      section: "Introduction"
+
+  - id: rel.T17_05
+    subject: met.frep_lock_bandwidth_t17
+    predicate: OPERATIONALIZED-AS
+    object: meth.eom_pzt_cascade_frep_lock
+    source:
+      claim: "EOM-based repetition rate stabilization of a DPSSL is presented"
+      section: "Introduction"
+
+  - id: rel.T17_06
+    subject: pri.intracavity_eom_group_delay_modulation
+    predicate: BOUNDED-BY
+    object: pri.eom_acoustic_resonance_limit_t17
+    source:
+      claim: "limited by sharp resonances observed around 900 kHz"
+      section: "Results"
+
+  - id: rel.T17_07
+    subject: ent.dpssl_eryb_eom_comb_t17
+    predicate: COMPETES-WITH
+    object: ent.er_fiber_frequency_comb
+    note: >
+      跨文件引用，ent.er_fiber_frequency_comb 定义于 giunta2019.yaml。
+      DPSSL 相比光纤激光器有更低本征噪声（定时抖动、振幅噪声），
+      但 EOM 在固态激光器中首次实现。
+
+breakthrough_paths:
+  - direction: pri.intracavity_eom_group_delay_modulation
+    expected_gain: "frep 锁定带宽从 PZT 的 ~10 kHz 提升至 EOM 的 700 kHz（~70 倍）"
+    status: demonstrated
+    source:
+      claim: "This surpasses what can be achieved with any other type of actuator reported so far"
+      section: "Abstract"
+    note: "DPSSL 中首次实现，之前仅在光纤激光器中使用 EOM"
+
+open_questions:
+  - "更短 EOM 晶体是否可将声学谐振推至 >2 MHz 以进一步拓展带宽？"
+  - "PM-to-AM 耦合对残余微波相位噪声的定量极限（需结合光微波分频全链路分析）"
+  - "EOM 在 Yb 或 Ti:Sa 等其他固态激光器中的适用性和性能"

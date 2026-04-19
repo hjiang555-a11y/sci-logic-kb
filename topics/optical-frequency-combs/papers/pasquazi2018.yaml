@@ -1,0 +1,393 @@
+# Pasquazi 2018 — 微梳综述：新一代光源 [综述/框架型论文，81 pages]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: framework
+
+meta:
+  zotero_key: "HPCYUSLJ"
+  topic: optical-frequency-combs
+  source_type: review
+  contribution_type: framework
+  reliability: high
+  title: "Micro-combs: A novel generation of optical sources"
+  year: 2018
+  first_author: "Pasquazi"
+  journal: "Physics Reports"
+  volume: 729
+  pages: "1-81"
+  doi: "10.1016/j.physrep.2017.08.004"
+  note: >
+    [综述/框架型] Pasquazi, Peccianti, Razzari, Moss, Coen, Erkintalo, Chembo,
+    Hansson, Wabnitz, Del'Haye, Xue, Weiner, Morandotti。迄今最全面的微腔光频梳综述
+    （81 页，~330 篇参考文献）。系统覆盖：
+    (1) 微谐振器技术平台（bulk WGM vs CMOS 兼容集成平台）；
+    (2) 耦合模理论建模（线性性质、非线性耦合、热效应）；
+    (3) 光学参量振荡阈值以上的微梳产生（大带宽、时域特征）；
+    (4) Lugiato-Lefever 方程（LLE）及其与耦合模形式的联系；
+    (5) 相干微梳产生（时域腔孤子 DKS、模式交互辅助梳产生、
+        暗脉冲锁模、自注入锁定、滤波驱动 FWM 激光）；
+    (6) 应用（计量学、射频光子学、光通信、量子光学微梳）。
+    作为框架型综述，本文主要建立微梳领域的顶层架构——
+    定义 Level 0/1 实体、tier: meta/domain 原理和跨专题接口。
+    跨文件节点引用：ent.microresonator_frequency_comb 定义于 kippenberg2011.yaml；
+    pri.parametric_four_wave_mixing_comb、pri.dissipative_kerr_soliton、
+    pri.lugiato_lefever_equation 定义于现有文件。
+
+# ═══════════════════════════════════════════════
+#  ENTITIES — 框架型顶层定义
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.bulk_wgm_resonator_platform
+    name: "体材料耳语回廊模（WGM）微谐振器平台"
+    aliases:
+      - "bulk whispering-gallery mode resonator"
+      - "crystalline/glass WGM resonator"
+    hierarchy_level: 1
+    status: demonstrated
+    function: >
+      基于体材料（MgF₂、CaF₂、fused silica、石英）加工的毫米至厘米级微谐振腔，
+      利用耳语回廊模（WGM）的全内反射实现极高 Q 因子（>10⁹–10¹¹）。
+      通过锥形光纤或棱镜渐逝波耦合泵浦。优势：最高 Q 因子、最低阈值；
+      劣势：体材料难以批量集成、需要精密机械加工和抛光。
+    key_parameters:
+      material_examples: "MgF₂, CaF₂, fused silica, crystalline quartz"
+      q_factor_range: "10⁹–10¹¹"
+      fsr_range: "10–100 GHz（取决于尺寸）"
+      coupling_methods: "锥形光纤、棱镜耦合"
+    note: >
+      Level 1 平台类别节点；COMPETES-WITH ent.cmos_integrated_resonator_platform。
+      在本综述的 Section 2.1 中详细讨论。
+
+  - id: ent.cmos_integrated_resonator_platform
+    name: "CMOS 兼容集成微谐振器平台"
+    aliases:
+      - "CMOS-compatible integrated microresonator"
+      - "on-chip microring resonator"
+    hierarchy_level: 1
+    status: demonstrated
+    function: >
+      基于 CMOS 兼容工艺（Si₃N₄、SiO₂、SiON、Si）的片上微环谐振器或微盘，
+      通过光刻定义几何形状，总线波导渐逝波耦合。优势：可批量制造、可集成、
+      适合商业化；劣势：Q 因子通常低于体 WGM（10⁵–10⁷），需要精密工艺控制。
+      Si₃N₄ 是当前最成熟的材料（Kerr 非线性 + 低双光子吸收 + 宽透明窗口）。
+      Si 因 C 波段双光子吸收限制，主要用于中红外。
+    key_parameters:
+      material_examples: "Si₃N₄, SiO₂ (Hydex), SiON, Si"
+      q_factor_range: "10⁵–10⁷（Si₃N₄ 可达 ~10⁷–10⁸）"
+      fabrication: "标准 CMOS 光刻 + 刻蚀"
+      integration_advantage: "可与电子芯片、泵浦激光器、探测器单片集成"
+    note: >
+      Level 1 平台类别节点；COMPETES-WITH ent.bulk_wgm_resonator_platform。
+      在本综述的 Section 2.2 中详细讨论。
+      关键里程碑：2010年 Levy et al. 在 Si₃N₄ 中首次演示 CMOS 兼容微梳。
+
+  - id: ent.filter_driven_fwm_laser
+    name: "滤波驱动四波混频激光器（FD-FWM laser）"
+    aliases:
+      - "filter-driven four-wave mixing laser"
+      - "FD-FWM comb laser"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      一种替代 CW 泵浦方案的微梳产生技术：将微谐振器嵌入光纤环路中
+      （包含增益介质如 EDFA、窄带滤波器、隔离器），构成主动振荡器。
+      环路中的滤波器选择谐振器的一个或少数模式进行放大，
+      通过谐振器内的四波混频（FWM）自发产生宽带相干梳。
+      无需外部高功率 CW 泵浦激光器，系统类似于环形激光器但以 FWM 为增益机制。
+    key_parameters:
+      gain_medium: "EDFA（典型）"
+      cavity_element: "高 Q 微谐振器"
+      filter_type: "窄带滤波器（选模）"
+      comb_type: "mode-locked states（暗脉冲或亮脉冲）"
+    note: >
+      Level 2 技术实体。在本综述的 Section 6.4 中详细讨论。
+      与传统 CW 泵浦微梳的关键区别：(1) 无需外部窄线宽 CW 激光；
+      (2) 系统自洽确定梳齿频率和泵浦线——降低了相干微梳的产生难度。
+
+# ═══════════════════════════════════════════════
+#  PRINCIPLES — 框架型顶层定义
+# ═══════════════════════════════════════════════
+
+principles:
+  - id: pri.temporal_cavity_soliton_dks
+    name: "时域腔孤子（耗散 Kerr 孤子 DKS）在微腔中的形成原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      在 CW 泵浦的反常色散微谐振腔中，当泵浦激光频率从蓝侧扫过谐振时，
+      系统可在特定失谐参数区域（通常 Δ > 1 且泵浦功率高于 MI 阈值）
+      支持时域腔孤子（DKS）——耗散系统中非线性（Kerr 效应）与色散、
+      增益（泵浦）与损耗（腔损耗+输出耦合）四方平衡的稳态局域化结构。
+      DKS 对应于 LLE 的局域化解，时域为 sech²(τ/τ_s) 脉冲包络，
+      频域为平滑的 sech² 光谱。DKS 态的微梳具有最佳相干性——
+      所有梳齿间有确定的相位关系，对应时域中稳定的超短脉冲循环。
+    domain: "非线性光学，微腔物理，光频梳"
+    formula: >
+      DKS 脉冲宽度 τ_s ≈ √(2|β₂|L/(αΔ))；DKS 带宽 ∝ 1/τ_s ∝ √Δ；
+      存在范围：Δ > 1（红失谐侧）且泵浦 X > X_min(Δ)
+    key_insight: >
+      DKS 是微梳实现全相干（低噪声、所有梳齿相位锁定）的关键态——
+      与 MI 态、混沌态形成鲜明对比。DKS 的产生需要精确控制泵浦失谐，
+      这是微梳从实验室走向实际应用的核心挑战之一。
+    conditions: "反常色散（β₂ < 0）；泵浦功率 > MI 阈值；红失谐（Δ > 1）"
+    preconditions:
+      - "微谐振腔 Q 因子足够高以降低 OPO 阈值"
+      - "色散受控——高阶色散不破坏 DKS 稳定性"
+      - "热效应可管理——DKS 从蓝侧到红侧的功率阶跃不导致热不稳定"
+    invalidated_when:
+      - "正色散（β₂ > 0）——不支持传统亮 DKS（但可支持暗脉冲/platicons）"
+      - "泵浦功率不足——低于 MI 阈值"
+      - "热效应不可控——快速热锁定阻止进入红失谐区域"
+    source_claim: >
+      "The control of the coherent generation and stabilisation of the solitary solutions
+      has generated a set of important developments" (Section 9, Conclusions)
+    note: >
+      此节点的首次实验验证归功于 Herr et al. 2014 (Nature Photonics)。
+      在本综述 Section 5.5.2 和 6.1 中详细讨论。
+      与 pri.dissipative_kerr_soliton（已有节点，kippenberg2011.yaml）密切相关——
+      此处更明确强调 DKS 在微梳相干性中的核心地位。
+
+  - id: pri.thermal_instability_dks_access
+    name: "热效应限制 DKS 接入——微梳核心工程挑战"
+    tier: domain
+    verification_status: observed
+    statement: >
+      在 CW 泵浦微谐振腔中进入 DKS 态时，腔内功率突然下降（从高功率 MI/混沌态
+      跳变到低功率单/少孤子态），导致谐振腔温度快速变化（热光效应），
+      进而使谐振频率漂移，可能导致泵浦激光"跑出"DKS 存在范围。
+      这一热不稳定性是实验上可靠产生和维持 DKS 的主要工程挑战。
+    domain: "微腔热管理，DKS 稳定性"
+    key_insight: >
+      热效应与 DKS 产生之间存在根本矛盾：DKS 需要从蓝侧快速扫到红侧，
+      但扫描速率过快可能跳过 DKS 态，过慢则被热锁定"捕获"。
+      解决方案包括：(1) 快速泵浦频率扫描（>MHz/μs）；
+      (2) 辅助激光器加热/冷却控制；(3) 自注入锁定方案。
+    conditions: "热光系数非零（几乎所有介质材料）"
+    preconditions:
+      - "CW 泵浦微谐振器在 MI 阈值以上工作"
+    invalidated_when:
+      - "热光系数极小的材料（如 MgF₂ 在室温下极小——但仍非零）"
+      - "使用非 CW 泵浦方案（如 FD-FWM 激光器——绕过直接泵浦扫描）"
+    source_claim: >
+      "Thermal effects have proved to be an important challenge in implementing such
+      adiabatic cavity de-tuning procedures for exciting CSs" (Section 6.1.1)
+
+  - id: pri.mode_interaction_comb_generation
+    name: "模式交互辅助微梳产生原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      微谐振腔中不同空间模式族（不同横模阶数、不同偏振）之间可发生
+      避免交叉（avoided mode crossing），在交叉频率附近导致有效色散的
+      局部修改。这可以：(1) 在正色散区域创建局部反常色散区——
+      使原本不支持 MI 的正色散谐振器也能产生微梳（暗脉冲/platicons）；
+      (2) 为 primary sidebands 提供优先增长点——控制梳的初始模式间距。
+      模式交互的可控性（如双耦合环结构）为工程微梳的色散剖面提供了
+      超越材料和几何色散的额外自由度。
+    domain: "微腔光学，色散工程，微梳产生"
+    conditions: "谐振器支持多个空间模式族；不同模式族的色散使其频率在某处交叉"
+    invalidated_when:
+      - "单模谐振器（仅支持一个模式族）——无模式交互"
+      - "模式交叉频率远离泵浦——交互效果可忽略"
+    source_claim: >
+      "mode interactions are very useful for comb generation in the normal dispersion region"
+      (Section 6.2.1)
+
+# ═══════════════════════════════════════════════
+#  METHODS — 框架型
+# ═══════════════════════════════════════════════
+
+methods:
+  - id: meth.pump_detuning_scan_dks
+    name: "泵浦失谐扫描产生 DKS 方法"
+    tier: domain
+    verification_status: observed
+    statement: >
+      通过将泵浦激光频率从蓝侧（Δ < 0）扫到红侧（Δ > 1），
+      经过 MI/混沌态→DKS 态的转变产生相干微梳。扫描速率需足够快
+      以避免热锁定阻碍进入红失谐区域，同时不能过快以免跳过 DKS 态。
+      典型扫描速率：~1 GHz/μs（取决于谐振器热时间常数）。
+    domain: "微梳产生技术"
+    source_claim: >
+      "It was first proposed theoretically by Matsko et al. and is shown in Fig. 19"
+      (Section 6.1)
+
+# ═══════════════════════════════════════════════
+#  METRICS — 框架型综述中的关键数据
+# ═══════════════════════════════════════════════
+
+metrics:
+  - id: met.microcomb_q_factor_record_p18
+    name: "微谐振腔 Q 因子记录（Pasquazi 2018 综述汇总）"
+    tier: domain
+    verification_status: observed
+    conditions: >
+      体 WGM 谐振器（MgF₂, CaF₂）：Q > 10⁹–10¹¹；
+      CMOS 兼容 Si₃N₄：Q > 10⁶–10⁷；
+      Hydex (SiO₂-based)：Q ~ 10⁶
+    note: "综述汇总值，非单一测量"
+
+  - id: met.microcomb_opo_threshold_p18
+    name: "微梳 OPO 阈值功率汇总（Pasquazi 2018）"
+    tier: domain
+    verification_status: observed
+    conditions: >
+      OPO 阈值与 Q² 和模式体积成反比：P_th ∝ V_eff/(Q² · n₂)；
+      体 WGM（Q~10¹⁰）：阈值 ~μW 级；Si₃N₄（Q~10⁶）：阈值 ~100 mW 级
+    note: "框架型汇总——阈值是材料/工艺选择的核心权衡指标"
+
+# ═══════════════════════════════════════════════
+#  RELATIONS
+# ═══════════════════════════════════════════════
+
+relations:
+  - id: rel.P18_01
+    subject: ent.bulk_wgm_resonator_platform
+    predicate: COMPETES-WITH
+    object: ent.cmos_integrated_resonator_platform
+    source:
+      claim: "bulk resonators possess the best Q-factors demonstrated thus far, as well as silicon nitride... for their potential as on-chip optical sources"
+      section: "Conclusions (Section 9)"
+
+  - id: rel.P18_02
+    subject: ent.cmos_integrated_resonator_platform
+    predicate: CHARACTERIZED-BY
+    object: met.microcomb_q_factor_record_p18
+    source:
+      claim: "extensive review of Q-factors across platforms"
+      section: "Section 2"
+
+  - id: rel.P18_03
+    subject: ent.microresonator_frequency_comb
+    predicate: BOUNDED-BY
+    object: pri.thermal_instability_dks_access
+    source:
+      claim: "Thermal effects have proved to be an important challenge"
+      section: "Section 6.1.1"
+    note: "跨文件引用，ent.microresonator_frequency_comb 定义于 kippenberg2011.yaml"
+
+  - id: rel.P18_04
+    subject: pri.temporal_cavity_soliton_dks
+    predicate: DERIVED-FROM
+    object: pri.lugiato_lefever_equation
+    source:
+      claim: "The Lugiato-Lefever equation has proved to be an effective tool for micro-comb modelling which has pushed the field towards demonstration of temporal cavity solitons"
+      section: "Conclusions (Section 9)"
+    note: "跨文件引用，pri.lugiato_lefever_equation 定义于 kippenberg2018.yaml"
+
+  - id: rel.P18_05
+    subject: pri.temporal_cavity_soliton_dks
+    predicate: DERIVED-FROM
+    object: pri.parametric_four_wave_mixing_comb
+    source:
+      claim: "fundamental dynamics of micro-comb sources are based on the interplay of Kerr nonlinearity and optical dispersion"
+      section: "Conclusions (Section 9)"
+
+  - id: rel.P18_06
+    subject: ent.filter_driven_fwm_laser
+    predicate: PART-OF
+    object: ent.microresonator_frequency_comb
+    source:
+      claim: "alternative techniques for micro-comb generation, such as... filter-driven four-wave mixing"
+      section: "Conclusions (Section 9)"
+
+  - id: rel.P18_07
+    subject: pri.mode_interaction_comb_generation
+    predicate: ENABLES
+    object: ent.microresonator_frequency_comb
+    source:
+      claim: "mode interactions are very useful for comb generation in the normal dispersion region"
+      section: "Section 6.2.1"
+
+  - id: rel.P18_08
+    subject: ent.microresonator_frequency_comb
+    predicate: BOUNDED-BY
+    object: pri.microcomb_self_injection_locking
+    source:
+      claim: "self-injection locking mechanisms for coherence control"
+      section: "Section 6.3"
+    note: "跨文件引用 pri.microcomb_self_injection_locking 定义于 delhaye2014.yaml"
+
+# ═══════════════════════════════════════════════
+#  BREAKTHROUGH PATHS
+# ═══════════════════════════════════════════════
+
+breakthrough_paths:
+  - direction: pri.temporal_cavity_soliton_dks
+    expected_gain: "实现完全相干倍频程微梳——f-2f 自参考、光学钟、计量应用"
+    status: demonstrated
+    source:
+      claim: "demonstration of temporal cavity solitons... the generation of dark pulses to the demonstration of alternative techniques"
+      section: "Conclusions (Section 9)"
+    note: "DKS 是微梳从宽带非相干源升级为精密频率标尺的关键突破"
+
+  - direction: pri.mode_interaction_comb_generation
+    expected_gain: "在正色散材料/谐振器中产生相干微梳——扩展材料选择空间"
+    status: demonstrated
+    source:
+      claim: "mode interactions are very useful for comb generation in the normal dispersion region"
+      section: "Section 6.2.1"
+
+  - direction: pri.filter_driven_fwm_oscillation
+    expected_gain: "无需外部窄线宽 CW 泵浦的微梳产生——降低系统复杂度和成本"
+    status: demonstrated
+    source:
+      claim: "alternative techniques... filter-driven four-wave mixing"
+      section: "Conclusions (Section 9)"
+    note: "FD-FWM 激光器绕过了 DKS 产生中的热不稳定性挑战；pri.filter_driven_fwm_oscillation 为 FD-FWM 的工作原理"
+
+# ═══════════════════════════════════════════════
+#  OPEN QUESTIONS & CONTESTED CLAIMS
+# ═══════════════════════════════════════════════
+
+open_questions:
+  - "微梳能否实现与锁模激光器梳相当的相位噪声性能？——当前 DKS 微梳的相位噪声仍高于最佳 Er:fiber 梳数个量级"
+  - "CMOS 兼容平台（Si₃N₄）能否达到体 WGM 的 Q 因子水平（>10⁹）？——当前 CMP 技术下的 Q~10⁷ 是否为极限？"
+  - "微梳的全集成（泵浦激光+谐振器+探测器+电子控制）何时可实现？——异质集成 vs 混合集成的路线争论"
+  - "量子微梳（纠缠光子对、压缩态）能否成为实际量子技术的光源？"
+  - "正色散暗脉冲微梳在计量应用中的潜力——是否可作为 DKS 的替代方案？"
+
+contested_claims:
+  - claim: "微梳可以在集成芯片上实现完整的光学钟——替代当前的桌面级光钟"
+    supporting_evidence: "2018年已有 2/3 倍频程相干微梳和参考锁定时钟演示"
+    counter_evidence: "微梳的长期频率稳定性、相位噪声和环境鲁棒性仍远低于锁模激光器梳"
+    status: unresolved
+    note: "这是微梳领域最核心的长期愿景，也是最大的开放挑战"
+
+  - claim: "Si₃N₄ 是微梳集成化的最终材料平台"
+    supporting_evidence: "最成熟的 CMOS 工艺、宽透明窗口、无双光子吸收"
+    counter_evidence: "LiNbO₃（电光调制+χ²+χ³）、AlGaAs（更高非线性）等新平台持续涌现"
+    status: unresolved
+
+historical_landmarks:
+  first_demonstration:
+    description: "微谐振腔中首次观测到宽带 Kerr 光参量振荡/频率梳"
+    year: 2007
+    reference: "Del'Haye et al., Nature 450, 1214 (2007)"
+  best_demonstration:
+    description: "截至 2018 年综述：DKS 孤子微梳 + 2/3 倍频程相干光谱"
+    year: 2017
+    reference: "多个研究组同步推进，见综述 Section 7"
+  selected_milestones:
+    - description: "CMOS 兼容 Si₃N₄ 微环中首次微梳产生"
+      year: 2010
+      reference: "Levy et al., Nature Photon. 4, 37 (2010)"
+    - description: "微腔中首次观测到时域腔孤子（DKS）"
+      year: 2014
+      reference: "Herr et al., Nature Photon. 8, 145 (2014)"
+    - description: "首次基于微梳的全稳定时钟"
+      year: 2016
+      reference: "Papp et al., Optica 1, 10 (2014); 后续改进见综述"
+
+cross_topic_interfaces:
+  - from_topic: "optical-frequency-combs"
+    to_topic: "ultrastable-laser"
+    interface_type: "requires"
+    description: "微梳 DKS 产生通常需要窄线宽 CW 泵浦激光器（Hz–kHz 线宽）"
+  - from_topic: "optical-frequency-combs"
+    to_topic: "frequency-standards"
+    interface_type: "enables"
+    description: "微梳提供紧凑型光学-微波频率链接，可能实现芯片级光学钟"

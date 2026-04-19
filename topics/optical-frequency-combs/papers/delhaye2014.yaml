@@ -1,0 +1,203 @@
+# Del'Haye 2014 — 微腔梳自注入锁定与相位锁定态 [原理验证论文]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: principle_validation
+
+meta:
+  zotero_key: "HSRPL6ZX"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: principle_validation
+  reliability: high
+  title: "Self-Injection Locking and Phase-Locked States in Microresonator-Based Optical Frequency Combs"
+  year: 2014
+  first_author: "Del'Haye"
+  journal: "Physical Review Letters"
+  volume: 112
+  pages: "043905"
+  doi: "10.1103/PhysRevLett.112.043905"
+  note: >
+    [原理验证] NIST（Del'Haye, Beha, Papp, Diddams）。通过频域实验揭示微谐振腔光频梳
+    （silica microrod，~25.6 GHz FSR，Q = 1.85×10⁸）从束状梳（bunched comb）向
+    连续相位锁定梳（phase-locked continuous comb）的转变机制。核心发现：
+    (1) 自注入锁定（self-injection locking）是微梳相位锁定的关键机制——
+    当束状梳的子梳（bunches）开始频域重叠时，参量增益介导的注入锁定使频率偏移
+    锁定至零，遵循 Adler 方程描述；(2) 锁定范围与泵浦功率（即重叠区梳齿振幅比）
+    相关，可从 Adler 模型定量拟合；(3) 发现了频率等间距但梳齿间相位关系
+    不确定的相位稳定微梳态——表明存在不依赖超短脉冲环形循环的相位锁定机制，
+    与传统锁模激光器的可饱和吸收体机制本质不同。
+    跨文件节点引用：ent.microresonator_frequency_comb 定义于 kippenberg2011.yaml；
+    pri.parametric_four_wave_mixing_comb 定义于 kippenberg2011.yaml；
+    pri.dissipative_kerr_soliton 定义于 kippenberg2018.yaml。
+
+entities:
+  - id: ent.silica_microrod_comb_d14
+    name: "熔融石英微杆谐振腔频率梳（Del'Haye 2014，自注入锁定实验）"
+    aliases:
+      - "fused silica microrod resonator comb"
+      - "NIST silica microrod microcomb"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      熔融石英微杆谐振腔（直径 2.6 mm，FSR ~25.6 GHz，加载 Q = 1.85×10⁸），
+      通过锥形光纤渐逝波耦合泵浦。可调二极管激光器从蓝侧调谐入腔谐振，
+      通过热锁定稳定在谐振位置。梳产生经历：(1) 阈值以上首先产生束状梳
+      （bunched comb，由不同模式族的色散决定各子梳偏移）；(2) 增加泵浦/调谐
+      使子梳重叠时，自注入锁定使偏移归零，形成连续等间距梳。
+    key_parameters:
+      resonator_material: "fused silica"
+      resonator_geometry: "microrod（圆柱微杆）"
+      diameter: "2.6 mm"
+      fsr: "~25.6 GHz"
+      loaded_Q: "1.85 × 10⁸"
+      gvd: "β₂ = −14.5 ps²/km"
+      dispersion_regime: "anomalous"
+      pump_type: "可调 CW 二极管激光器 + EDFA"
+      coupling: "锥形光纤渐逝波耦合"
+    note: "Level 2 实例节点；PART-OF ent.microresonator_frequency_comb。"
+
+principles:
+  - id: pri.microcomb_self_injection_locking
+    name: "微梳参量增益介导的自注入锁定原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      在微谐振腔频率梳中，当初始产生的束状梳（bunched comb）的子梳在频域开始重叠时，
+      重叠区域的梳齿通过参量增益（四波混频）相互注入锁定。这一过程遵循 Adler 方程：
+      (1/2π)·dφ/dt = Δν − (ν₀/2Q)·(E₁/E₀)·sin(φ)，
+      其中 Δν 为自由运行频率差，E₁/E₀ 为注入场与自由振荡场的相对振幅，
+      Q 为加载品质因子。当 |Δν| < (ν₀/2Q)·(E₁/E₀)（锁定范围），
+      系统达到稳态 φ = arcsin(2QΔν/(ν₀E₁/E₀))，频率偏移被锁定为零。
+      与外注入锁定不同，微梳中注入源和被锁振荡器均在同一谐振腔内产生。
+    domain: "微腔光频梳，非线性光学，注入锁定"
+    formula: >
+      (1/2π)·dφ(t)/dt = Δν − (ν₀/2Q)·(E₁/E₀)·sin(φ(t))；
+      锁定范围 Δν_lock = (ν₀/2Q)·(E₁/E₀)
+    key_insight: >
+      自注入锁定提供了一种不同于 DKS 孤子锁模的相位锁定机制——
+      不需要超短脉冲的循环传播，仅需频域束状梳的重叠。
+      这解释了实验中观察到的等间距但无确定脉冲相位关系的微梳态。
+    conditions: "束状梳的子梳在频域有重叠区域；参量增益足以介导注入锁定"
+    preconditions:
+      - "微谐振腔在反常色散区工作，已超过 OPO 阈值"
+      - "泵浦功率或失谐足以使子梳扩展至重叠"
+    invalidated_when:
+      - "子梳之间无频域重叠（如低泵浦功率下的孤立束状梳）——无注入锁定发生"
+      - "色散过强导致子梳频率间距过大——E₁/E₀ 在重叠区太小"
+    source_claim: >
+      "We show the presence of a self-injection locking mechanism within the resonator
+      that is mediated via the parametric gain"
+
+  - id: pri.nondeterministic_phase_microcomb
+    name: "非确定性相位关系的等间距微梳态"
+    tier: domain
+    verification_status: observed
+    statement: >
+      存在一类微梳态：梳齿间频率严格等间距（通过与参考梳比较验证偏移 <100 mHz），
+      时间上相位稳定（拍频信号窄线宽），但梳齿之间的相位关系是非确定性的——
+      即不对应于时域中的超短脉冲或任何简单的脉冲图案。这与传统锁模激光器
+      （相位关系确定，对应傅里叶极限脉冲）和 DKS 孤子（确定的 sech² 脉冲形状）
+      形成鲜明对比。
+    domain: "微腔光频梳，相干性，脉冲物理"
+    key_insight: >
+      相位稳定 ≠ 确定性相位关系。微梳可以是频率精确且时间稳定的频率标尺，
+      即使不产生超短脉冲。这拓展了"光频梳"概念的边界。
+    conditions: "自注入锁定后的微梳态"
+    invalidated_when:
+      - "梳产生进入 DKS 孤子态——此时相位关系变为确定性"
+    source_claim: >
+      "we demonstrate the existence of equidistant optical frequency combs that are phase
+      stable but have nondeterministic phase relationships between individual comb modes"
+
+metrics:
+  - id: met.microcomb_offset_precision_d14
+    name: "微梳频率偏移测量精度（Del'Haye 2014）"
+    tier: domain
+    verification_status: observed
+    value: 100
+    unit: "mHz"
+    conditions: >
+      第 37 边带处测量，通过与参考锁模激光器频率梳比较，
+      10 s 门时间频率计数，silica microrod Q = 1.85×10⁸
+    source_claim: >
+      "the offset can be fine-tuned by slightly changing the power launched into
+      the resonator"
+    note: "偏移锁定至零的精度优于 100 mHz，验证了自注入锁定的有效性"
+
+  - id: met.injection_locking_range_d14
+    name: "自注入锁定范围（Del'Haye 2014）"
+    tier: domain
+    verification_status: observed
+    conditions: >
+      依赖于泵浦功率（即子梳重叠区的梳齿振幅比 E₁/E₀），
+      典型锁定范围数百 kHz 至 ~100 MHz（对应不同重叠程度）
+    source_claim: >
+      "the injection-locking range as function of the microcomb spacing (tuned via launched power)"
+    note: "锁定范围随泵浦功率增加而增大——更多子梳模式重叠"
+
+relations:
+  - id: rel.D14_01
+    subject: ent.silica_microrod_comb_d14
+    predicate: PART-OF
+    object: ent.microresonator_frequency_comb
+    note: "跨文件引用，ent.microresonator_frequency_comb 定义于 kippenberg2011.yaml"
+
+  - id: rel.D14_02
+    subject: ent.silica_microrod_comb_d14
+    predicate: CHARACTERIZED-BY
+    object: met.microcomb_offset_precision_d14
+    source:
+      claim: "offset locks to zero in a characteristic injection-locking way"
+      section: "Injection locking"
+
+  - id: rel.D14_03
+    subject: pri.microcomb_self_injection_locking
+    predicate: DERIVED-FROM
+    object: pri.parametric_four_wave_mixing_comb
+    source:
+      claim: "self-injection locking mechanism within the resonator that is mediated via the parametric gain"
+      section: "Introduction"
+    note: "跨文件引用，pri.parametric_four_wave_mixing_comb 定义于 kippenberg2011.yaml"
+
+  - id: rel.D14_04
+    subject: ent.silica_microrod_comb_d14
+    predicate: CONDITIONED-BY
+    object: pri.microresonator_anomalous_dispersion
+    source:
+      claim: "the dispersion dictates that the parametric gain is maximized for modes that are not adjacent to the pump"
+      section: "Experimental setup"
+    note: "跨文件引用，pri.microresonator_anomalous_dispersion 定义于 kippenberg2011.yaml；反常色散是使能条件而非性能限制"
+
+  - id: rel.D14_05
+    subject: pri.nondeterministic_phase_microcomb
+    predicate: DERIVED-FROM
+    object: pri.microcomb_self_injection_locking
+    source:
+      claim: "phase stable microcombs with uniform mode spacing but a nondeterministic phase relationship"
+      section: "Introduction"
+
+breakthrough_paths:
+  - direction: pri.microcomb_self_injection_locking
+    expected_gain: "提供微梳从非相干态到相干等间距梳的自发转变机制理解，无需外部锁定"
+    status: demonstrated
+    source:
+      claim: "self-injection locking mechanism mediated via parametric gain"
+      section: "Introduction"
+    note: >
+      与 DKS 孤子锁模互补——自注入锁定可在不同的参数空间产生相位锁定态，
+      为微梳相干性控制提供额外自由度
+
+open_questions:
+  - "自注入锁定态与 DKS 孤子态之间的精确参数空间边界——是否存在连续过渡？"
+  - "非确定性相位微梳在计量应用中的实际可用性——是否所有应用都需要确定性相位关系？"
+  - "自注入锁定范围与谐振腔 Q 值的定量标度关系——高 Q 是否始终有利？"
+  - "多模式族参与时的自注入锁定行为——是否可能同时锁定不同模式族？"
+
+contested_claims:
+  - claim: "微梳可以是相位稳定但无确定性相位关系——与锁模激光器的传统理解形成对比"
+    supporting_evidence: "本文频域实验和相位测量直接验证"
+    counter_evidence: "后续 DKS 孤子理论（Kippenberg 2018）认为确定性相位关系（孤子态）才是最终相干目标"
+    status: unresolved
+    note: "两种观点并非矛盾而是互补——描述微梳参数空间中的不同工作区域"

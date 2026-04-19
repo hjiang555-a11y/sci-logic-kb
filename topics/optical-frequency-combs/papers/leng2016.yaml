@@ -1,0 +1,213 @@
+# Leng 2016 — 光频梳 50 km 光纤 RF 传输，4.7×10⁻¹⁸ 不稳定度 [技术论文]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical_breakthrough
+
+meta:
+  zotero_key: "JN8JY9XG"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical_breakthrough
+  reliability: high
+  title: "RF Transfer by Optical Comb Over 50-km Fiber Link With 4.7 × 10⁻¹⁸ Instability"
+  year: 2016
+  first_author: "Leng"
+  journal: "IEEE Photonics Journal"
+  volume: 8
+  issue: 1
+  pages: "7901309"
+  doi: "10.1109/JPHOT.2016.2520830"
+  note: >
+    [技术突破] 北京大学（赵建业组）。基于光频梳的 RF 传输系统：将 100 MHz 参考频率
+    编码在光频梳重频中，通过 50 km 光纤链路传输，利用光学窄带滤波器（0.5 nm @ 1550 nm）
+    抑制色散影响，结合光-微波相位检测器（OM-PD）和电学相位补偿方案消除
+    温度和振动引起的链路相位波动。实现相对频率不稳定度 1.9×10⁻¹⁴ @ 1 s，
+    4.7×10⁻¹⁸ @ 16400 s。关键创新：(1) 光学滤波器抑制宽带梳在长距离光纤中的
+    色散展宽问题——比 DCF（色散补偿光纤）更简单且通用；(2) Faraday 镜
+    回反双向传输 + 电学相位补偿架构。
+    跨文件节点引用：ent.optical_frequency_comb 定义于 giunta2019.yaml。
+
+entities:
+  - id: ent.rf_transfer_via_comb_50km_l16
+    name: "光频梳 50 km 光纤 RF 传输系统（Leng 2016）"
+    aliases:
+      - "optical comb RF dissemination over 50 km fiber"
+      - "PKU comb-based RF transfer system"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      将 100 MHz 参考信号编码在光频梳的重复频率中，通过 50 km 单模光纤传输至远端。
+      系统架构：(1) 本地端：参考信号 PLL 锁定光频梳 frep；(2) 光学窄带滤波器
+      （OBF，0.5 nm @ 1550 nm）从宽带梳中提取窄带光，大幅抑制色散展宽；
+      (3) 光环行器实现双向传输——前向传至远端，远端 Faraday 镜反射回本地；
+      (4) 本地混频器检测往返相位差，与倍频参考信号比较产生误差信号；
+      (5) 外环 PLL 补偿相位——通过调制参考信号相位消除链路相位波动。
+    key_parameters:
+      transfer_frequency: "100 MHz"
+      fiber_length: "50 km（单模光纤）"
+      optical_filter_bandwidth: "0.5 nm @ 1550 nm"
+      compensation_scheme: "电学相位补偿（双向传输 + 混频检测）"
+      phase_detector: "光-微波相位检测器（OM-PD）"
+      instability_1s: "1.9 × 10⁻¹⁴"
+      instability_16400s: "4.7 × 10⁻¹⁸"
+    interface_requirements:
+      input: "100 MHz 参考信号（来自原子钟或其他频率基准）"
+      fiber: "50 km 单模光纤链路"
+      output: "100 MHz 远端恢复信号（相位补偿后）"
+    note: >
+      Level 2 应用系统节点，属于时间频率传递应用层。
+      光频梳在此系统中的角色是 RF 信号的光学载体——
+      利用梳的重频携带微波信息，同时利用窄带滤波抑制色散。
+
+principles:
+  - id: pri.optical_filter_dispersion_suppression
+    name: "光学窄带滤波抑制长距离光纤色散原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      光频梳的宽带频谱（~150 fs 脉冲对应 >10 nm 带宽）在长距离光纤中受二阶色散
+      （β₂ ≈ −18 ps²/km @ 1550 nm）严重展宽——50 km 后脉冲完全重叠，
+      无法准确提取重复频率。通过在传输前用窄带滤波器（Δλ ~0.5 nm）
+      提取少量光谱分量，等效于延长脉冲宽度至 >1 ps 量级，
+      大幅降低色散展宽效应。由于 frep 信息由所有梳齿共同编码
+      （梳齿等间距即 frep），窄带滤波后仍可提取完整的重频信号。
+      此方法比 DCF 匹配更简单（无需精确匹配链路色散）且通用。
+    domain: "光纤传输，色散管理，时频传递"
+    conditions: "滤波带宽需覆盖足够多的梳齿以保持拍频 SNR；中心波长匹配光纤低损耗窗口"
+    preconditions:
+      - "光频梳在滤波窗口内有足够光功率"
+      - "滤波器中心波长稳定"
+    invalidated_when:
+      - "传输距离极长（>1000 km）——即使窄带光也受高阶色散和非线性影响"
+      - "需要传输超短脉冲时序信息（非仅频率信息）——窄带滤波丢失脉冲时域结构"
+    source_claim: >
+      "An optical filter is utilized to suppress the dispersion influence of the optical
+      comb in the transfer fiber link"
+
+  - id: pri.roundtrip_phase_compensation_rf_transfer
+    name: "往返相位补偿微波传输原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      假设光纤链路的前向和后向相位噪声相同（互易性近似），
+      远端信号经 Faraday 镜反射后沿同一光纤返回本地端。
+      本地端检测到的往返相位为 φ_round = 2(φ_d + Δφ)，其中 φ_d 为固定时延，
+      Δφ 为随时间变化的相位波动（温度、振动）。
+      通过外环 PLL 将 Δφ 的两倍与参考比相，施加补偿相位 φ_c = −Δφ，
+      使远端接收信号相位 φ_remote = φ_0 + φ_d（消除波动分量）。
+    domain: "时间频率传递，相位补偿"
+    formula: >
+      V_remote = A₃·cos(ωt + φ₀ + φ_m + φ_c + φ_d + Δφ)；
+      补偿后 φ_c = −Δφ，远端相位 = φ₀ + φ_m + φ_d（稳定）
+    conditions: "光纤链路互易性成立（前向=后向相位噪声）"
+    preconditions:
+      - "Faraday 镜消除偏振旋转影响"
+      - "往返时延远小于相位波动的相关时间"
+    invalidated_when:
+      - "非互易效应显著（如单向光放大、Sagnac 效应等）"
+      - "链路相位波动频率高于补偿带宽"
+    source_claim: >
+      "The compensation scheme cancels the phase fluctuation introduced by the
+      temperature variation and the mechanical vibration in the transfer fiber link"
+
+methods:
+  - id: meth.comb_rf_fiber_transfer
+    name: "光频梳编码 RF 光纤传输方法"
+    tier: domain
+    verification_status: observed
+    statement: >
+      将微波参考信号（100 MHz）通过 PLL 锁定至光频梳 frep，用梳的重频携带
+      微波信息。梳光经窄带滤波后注入光纤链路，远端光电检测恢复 frep，
+      结合往返相位补偿消除链路噪声。
+    steps: >
+      (1) 内环 PLL1 将光频梳 frep 锁定至参考信号；
+      (2) 0.5 nm 窄带滤波器提取 1550 nm 附近光谱；
+      (3) 光环行器将窄带梳光送入 50 km 光纤；
+      (4) 远端 Faraday 镜反射信号；
+      (5) 本地端将回反信号与原始信号混频，得往返相位误差；
+      (6) 外环 PLL2 施加补偿相位至发射端；
+      (7) 远端光电检测恢复补偿后的 100 MHz 信号。
+    domain: "时间频率传递，RF 传输"
+
+metrics:
+  - id: met.rf_transfer_instability_1s_l16
+    name: "RF 传输频率不稳定度 @ 1 s（Leng 2016）"
+    tier: domain
+    verification_status: observed
+    value: 1.9e-14
+    unit: "dimensionless (fractional)"
+    conditions: "100 MHz 传输，50 km 单模光纤，OBF 窄带滤波，电学相位补偿"
+    source_claim: >
+      "relative frequency instability of 1.9 × 10⁻¹⁴ at 1 s"
+
+  - id: met.rf_transfer_instability_16400s_l16
+    name: "RF 传输频率不稳定度 @ 16400 s（Leng 2016）"
+    tier: domain
+    verification_status: observed
+    value: 4.7e-18
+    unit: "dimensionless (fractional)"
+    conditions: "100 MHz 传输，50 km 单模光纤，OBF 窄带滤波，电学相位补偿"
+    source_claim: >
+      "4.7 × 10⁻¹⁸ at 16400 s"
+
+relations:
+  - id: rel.L16_01
+    subject: ent.rf_transfer_via_comb_50km_l16
+    predicate: CHARACTERIZED-BY
+    object: met.rf_transfer_instability_1s_l16
+    source:
+      claim: "1.9 × 10⁻¹⁴ at 1 s"
+      section: "Abstract"
+
+  - id: rel.L16_02
+    subject: ent.rf_transfer_via_comb_50km_l16
+    predicate: CHARACTERIZED-BY
+    object: met.rf_transfer_instability_16400s_l16
+    source:
+      claim: "4.7 × 10⁻¹⁸ at 16400 s"
+      section: "Abstract"
+
+  - id: rel.L16_03
+    subject: meth.comb_rf_fiber_transfer
+    predicate: ENABLED-BY
+    object: pri.optical_filter_dispersion_suppression
+    source:
+      claim: "optical filter is utilized to suppress the dispersion influence"
+      section: "Abstract"
+
+  - id: rel.L16_04
+    subject: meth.comb_rf_fiber_transfer
+    predicate: ENABLED-BY
+    object: pri.roundtrip_phase_compensation_rf_transfer
+    source:
+      claim: "compensation scheme cancels the phase fluctuation"
+      section: "Abstract"
+
+  - id: rel.L16_05
+    subject: met.rf_transfer_instability_1s_l16
+    predicate: OPERATIONALIZED-AS
+    object: meth.comb_rf_fiber_transfer
+    source:
+      claim: "100 MHz transfer signal over 50 km fiber link"
+      section: "Abstract"
+
+breakthrough_paths:
+  - direction: pri.optical_filter_dispersion_suppression
+    expected_gain: "无需 DCF 色散补偿光纤，简化长距离光频梳 RF 传输系统"
+    status: demonstrated
+    source:
+      claim: "optical filter to suppress dispersion influence"
+      section: "Introduction"
+
+open_questions:
+  - "窄带滤波方案在 >100 km 链路上的性能极限——是否需要中继放大？"
+  - "与纯 CW 调制微波传输方案的长期稳定性对比（在 >10⁵ s 时间尺度）"
+  - "光频梳 RF 传输 vs 光载波频率传输在实际链路中的优劣权衡"
+
+cross_topic_interfaces:
+  - from_topic: "optical-frequency-combs"
+    to_topic: "frequency-standards"
+    interface_type: "enables"
+    description: "光频梳作为 RF 信号的光学载体，通过光纤链路传输微波频率参考（时频传递是频率标准应用的一部分）"
