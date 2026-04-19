@@ -1,0 +1,377 @@
+# Hickstein 2017 — AlN 片上波导同时利用 χ²/χ³ 实现超连续展宽与 f-2f 自参考单芯片化 [技术论文]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical
+#   核心贡献：
+#     (1) 用 800 nm 厚、SiO2 包覆的 AlN 片上波导，以 0.8 nJ/1560 nm/80 fs Er:光纤梳泵浦
+#         生成 500–4000 nm 超宽带超连续谱（覆盖倍频程，含 3500–5500 nm DFG 中红外）；
+#     (2) 利用 AlN 同时具有 χ²（SHG）与 χ³（SPM/FWM/SC）的材料特性，在单片波导内同时
+#         完成超连续展宽与 SHG，直接从 780 nm 滤波+光电探测读出 f_CEO（SNR 37 dB，
+#         TM00 泵浦 4800 nm 宽波导），省去体块 f-2f 干涉仪与延迟线；
+#     (3) 实现 f_CEO 数小时稳相锁定，稳定度与传统 f-2f 干涉仪可比；
+#     (4) 展示通过改变波导宽度调控色散波位置与 TE/TM 模式交叉点，以强化窄带谱强度。
+#   跨文件节点引用：
+#     ent.optical_frequency_comb 定义于 udem2002.yaml；
+#     pri.self_referencing_f2f 定义于 udem2002.yaml / giunta2019.yaml；
+#     pri.supercontinuum_octave_spanning 定义于 diddams2000.yaml；
+#     pri.nonlinear_frequency_conversion_comb 已在仓库顶层节点列表注册。
+
+meta:
+  zotero_key: "CML5935T"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical
+  reliability: high
+  title: "Ultrabroadband Supercontinuum Generation and Frequency-Comb Stabilization Using On-Chip Waveguides with Both Cubic and Quadratic Nonlinearities"
+  year: 2017
+  first_author: Hickstein
+  journal: "Physical Review Applied"
+  volume: 8
+  issue: 1
+  pages: "014025"
+  doi: "10.1103/PhysRevApplied.8.014025"
+  note: >
+    [技术论文] NIST Boulder + Yale（Tang 组）合作。在 SiO2 包覆 AlN 薄膜上刻蚀高限域
+    波导（800 nm 厚，宽 400–5100 nm），利用 AlN 材料同时具备 χ² 与 χ³ 的特点，使超连续
+    展宽（χ³: SPM/FWM/色散波）与 SHG（χ²）在同一单模波导中共存、自然时域重合，
+    无需外置倍频晶体、重组光路或延迟线即可从输出光直接光电探测 f_CEO。相比体块 f-2f 干涉仪，
+    该方案对 GHz 重频、低脉冲能量梳（EO 梳、微梳）友好，为便携式自参考梳奠基。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.chi2_chi3_waveguide_fceo_h17
+    name: "AlN 片上 χ²+χ³ 双非线性超连续波导（Hickstein 2017 系统）"
+    aliases:
+      - "aluminum nitride photonic-chip waveguide"
+      - "monolithic SCG+SHG AlN waveguide"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      由 SiO2 包覆、800 nm 厚的 AlN 薄膜刻蚀而成的矩形波导，宽度可调 400–5100 nm，
+      入/出端渐变至 150 nm 宽以改善耦合。波导强限域把 1560 nm 泵浦场压缩至亚波长模面，
+      显著提升有效非线性系数 γ；同时 AlN 薄膜保留 c 轴竖直取向的六角柱结构，使
+      竖直（TM）方向存在强 χ² 张量分量。单根波导内同时发生：
+        · χ³ 主导的 SPM + 四波混频 → 超连续展宽 500–4000 nm；
+        · 模式交叉（TE00↔TM10）导致局部相位匹配 → 800–1200 nm 强度增强 ~20 dB；
+        · χ² 主导的 SHG → 780 nm 附近倍频光与超连续谱天然时域重叠；
+        · 泵浦展宽区与长波色散波的 DFG → 3500–5500 nm 中红外宽带光。
+      输出光经 780 nm 带通滤波后单片光电探测即可得到 f_CEO 拍频。
+    key_parameters:
+      material: "AlN 薄膜（c 轴竖直；六角柱多晶）on SiO2（全 SiO2 包覆）"
+      thickness: "800 nm"
+      width: "400–5100 nm（工艺扫描）"
+      facet_taper_width: "150 nm（改善耦合）"
+      pump_laser: "turnkey Er 光纤频率梳，1560 nm，~80 fs，100 MHz 重频"
+      pump_coupled_power: "~80 mW → 0.8 nJ/脉冲（波导内）"
+      coupling: "aspheric NA=0.6 耦入；微物镜 NA=0.85 / InF3 多模光纤 butt 耦出"
+      fceo_detection: "780 nm 带通 + 光电二极管（无干涉仪、无延迟线）"
+      fceo_feedback: "FPGA 数字伺服 → Er 梳泵浦二极管电流"
+      material_n2: "2.3×10⁻¹⁹ m²/W（与 Si3N4 相当）"
+    interface_requirements:
+      pump_pulse_energy: "~0.8 nJ 量级（可被 EO 梳 / 微梳放大后直接满足，HNLF f-2f 典型需 ≥10 kW 峰值）"
+      mode_control: "TM00 泵浦最佳（χ²_zz 最强；SHG SNR 最高）"
+      thermal_stability: "自由空间输入耦合受热漂移限制；未来应采用光纤胶接端面"
+    note: >
+      Level 2 实例节点，PART-OF ent.optical_frequency_comb（定义于 udem2002.yaml）。
+      与 ent.air_silica_microstructure_fiber_d00（diddams2000.yaml）是同一功能层的 COMPETES-WITH：
+      前者单片提供 SC+SHG，后者需外加 LiNbO3 倍频晶体。
+
+principles:
+  - id: pri.dual_chi2_chi3_integrated_f2f
+    name: "单片 χ²+χ³ 集成 f-2f 自参考原理（monolithic SCG+SHG）"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      若同一非线性介质同时具备显著的 χ³（支持超连续八度展宽）和相干 χ²（支持 SHG），
+      则 f 分量与 2f 分量在同一空间模式、同一波导长度内共同产生，天然共享传播路径
+      并自动实现时域与空间重叠，使 f-2f 拍频可直接经过一枚带通滤波 + 光电探测器读出，
+      无需 Mach-Zehnder/Michelson 干涉仪、倍频晶体或可调延迟线。
+    domain: "集成光学频率梳；f-2f 自参考"
+    formula: >
+      f_CEO = 2ν_n(短波端 SHG 来源) − ν_{2n}(短波端 SC 分量)
+      且路径条件：L_SHG = L_SCG，模场 E_SHG(x,y) ≈ E_SCG(x,y)
+    key_insight: >
+      将 pri.self_referencing_f2f 的"原理可行（Telle 1999）"与"单激光器可行（Diddams 2000）"
+      再推进到"单片单模可行"。对低峰值功率（EO 梳、微梳）梳源尤为关键，因为体块 f-2f
+      方案需要 kW 级峰值功率 HNLF + 外部倍频晶体，整链工程脆弱。
+    conditions: "介质同时具备强 χ² 与 χ³（如 AlN、PPLN、LiNbO3-on-insulator）；单模波导；χ² 在泵浦偏振上强耦合"
+    preconditions:
+      - "χ³ 足以把 0.8 nJ 量级脉冲在数毫米–厘米内展宽到倍频程"
+      - "χ² 在与 SC 相同模式内有非零分量（AlN: TM00 泵浦时 χ²_zz 最强）"
+      - "SHG 与 SC 在时域重合，即二者在同一脉冲压缩/孤子裂变区附近产生"
+    invalidated_when:
+      - "SHG 仅在高阶模中相位匹配，与基模 SC 模重叠差 → SNR 显著下降（本文观察到同一机制）"
+      - "介质 χ² 被晶体取向无序化抵消（如 AlN 水平方向 χ² 因 a/b 轴随机而弱）"
+    source_claim: >
+      "Since AlN exhibits both χ(2) and a strong χ(3), f_CEO can be directly detected in the
+      780-nm region as a result of simultaneous SHG and SCG. ... no interferometer is needed
+      to set the temporal overlap of the interfering beams, and no additional alignment is necessary."
+    open_questions:
+      - "是否可同时实现相位匹配 SHG 与良好模场重叠（on-chip 模式转换器方向）？"
+      - "如何在 GHz 重频微梳/EO 梳上复现同等 SNR？"
+    breakthrough_paths:
+      - direction: meth.on_chip_f2f_stabilization
+        expected_gain: "整机层面把 f-2f 自参考从自由空间光学平台迁到单芯片，支持便携式梳"
+        status: demonstrated
+        source: {zotero_key: "CML5935T", claim: "simplified detection of f_CEO using a single, monolithic waveguide"}
+
+  - id: pri.mode_overlap_limits_fceo_snr
+    name: "模场重叠限制 f_CEO 信噪比原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      即使在片上单片 f-2f 方案中存在高效率相位匹配 SHG，只要倍频光位于与超连续基模
+      不同的高阶模，模场重叠积分 ∫E_SHG*·E_SC dA 将抑制拍频可见度，f_CEO SNR 反而低于
+      效率更低但模场匹配更好的"相位失配 SHG 在基模"方案。
+    domain: "集成 f-2f；模式-非线性联合优化"
+    formula: "SNR ∝ |∫E_SHG*(x,y)·E_SC(x,y) dA|² / [η_SHG⁻¹ × 噪声项]"
+    key_insight: >
+      Hickstein 2017 观察到的反直觉结果：4800 nm 宽波导（相位失配 SHG、基模内）
+      给出 37 dB f_CEO SNR，而 1000 nm 宽波导（相位匹配 SHG、但在高阶 TM 模）f_CEO 不可见。
+      解释：相位失配 SHG 虽效率低，但其 E 场保持在 TM00，与 SC 重叠好。
+    conditions: "χ² 介质内相位匹配通常要求高阶模；SC 在基模"
+    invalidated_when:
+      - "引入片上模式转换器，将相位匹配 SHG 投影回基模"
+    source_claim: >
+      "the highest SNR f_CEO is obtained from phase-mismatched SHG in the larger width waveguides,
+      despite the fact that much higher efficiency phase-matched SHG is seen for waveguide widths near 1000 nm"
+    breakthrough_paths:
+      - direction: meth.on_chip_f2f_stabilization
+        expected_gain: "借助 on-chip 模式转换器，同时获得相位匹配与基模重叠，进一步抬升 f_CEO SNR"
+        status: proposed
+        source: {zotero_key: "CML5935T", claim: "on-chip mode converters could be used to provide both phase-matched SHG and mode overlap, thereby providing a higher f_CEO signal"}
+
+  - id: pri.phase_matching_bandwidth_limit_chi2
+    name: "χ² 相位匹配带宽限制原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      波导内模式-相位匹配 SHG 的带宽 Δλ ∝ (∂Δk/∂ω)⁻¹ 通常只有数纳米量级；
+      超出该带宽的泵浦分量其 SHG 严重相位失配，效率按 sinc²(ΔkL/2) 迅速衰减，
+      从而限制可利用的 f-2f 锚点位置与梳齿数。
+    domain: "集成非线性光学"
+    formula: "η_SHG(ω) ∝ sinc²(Δk(ω)L/2); Δλ_FWHM 典型 ~数 nm"
+    conditions: "均匀波导（无 QPM 周期极化）；单一模式对"
+    source_claim: >
+      "this phase-matching mechanism provides a phase-matching bandwidth of only a few nanometers"
+    breakthrough_paths:
+      - direction: pri.nonlinear_frequency_conversion_comb
+        expected_gain: "采用周期性极化（PPLN、PP-LiNbO3-on-insulator）或 chirped QPM 扩展相位匹配带宽到数十–数百 nm"
+        status: proposed
+        source: {zotero_key: "CML5935T", claim: "PPLN experiments have demonstrated supercontinuum generation via cascaded χ(2) processes"}
+        note: "跨文件引用：pri.nonlinear_frequency_conversion_comb 在仓库顶层节点列表中注册（udem2002 系）"
+
+methods:
+  - id: meth.on_chip_f2f_stabilization
+    name: "单片 AlN 波导 f-2f 自参考稳频方法（Hickstein 2017）"
+    status: demonstrated
+    applies_to: ent.chi2_chi3_waveguide_fceo_h17
+    steps_summary: >
+      1. Er 光纤梳（1560 nm, ~80 fs, 100 MHz）TM 偏振，aspheric 透镜耦入 AlN 波导
+         （~80 mW, 0.8 nJ/脉冲进入波导）；
+      2. 波导内同时发生 χ³ SC 展宽（500–4000 nm）与 χ² SHG（780 nm 附近）；
+         二者共享 TM00 基模、同一波导长度，时空自动重合；
+      3. 输出端微物镜准直 + 光栅色散 + 780 nm 带通滤波 → 光电二极管；
+      4. 光电流频谱直接显示 f_CEO 拍频（SNR 37 dB）；
+      5. FPGA 数字鉴频 → 反馈 Er 梳泵浦二极管电流，锁定 f_CEO；
+      6. 用独立 Π 型计数器读出锁定态 f_CEO，连续数小时无跳周。
+    required_hardware:
+      - ent.chi2_chi3_waveguide_fceo_h17
+    advantages:
+      - "单片、无外置 SHG 晶体、无延迟线、无 f-2f 干涉仪"
+      - "脉冲能量需求降至 0.8 nJ 量级（比传统 HNLF f-2f 低 1–2 个数量级）"
+      - "f-2f 所需时空重叠天然满足（对准鲁棒）"
+      - "同一芯片可扫描多种波导宽度定制谱形（色散波位置、模式交叉位置）"
+    disadvantages:
+      - "自由空间耦合热漂移限制连续锁定时间（本文仅能维持数小时）"
+      - "相位匹配 SHG 与基模重叠互斥，当前 SNR 并非终极值"
+      - "AlN 水平方向 χ² 弱，必须 TM00 泵浦"
+    conditions:
+      - "泵浦脉冲能量 ≈ 0.8 nJ，~80 fs，1560 nm"
+      - "波导宽度经扫描选择（~4800 nm 给出最高 f_CEO SNR）"
+    source_claim: >
+      "we can achieve glitch-free f_CEO locking of a compact frequency comb for several hours ...
+      stabilized to a level comparable to what can be achieved with a traditional f-2f interferometer"
+
+metrics:
+  - id: met.on_chip_sc_span_h17
+    name: "AlN 片上超连续谱宽（Hickstein 2017）"
+    unit: "nm / THz"
+    description: "单根 AlN 波导在 0.8 nJ 泵浦下输出超连续谱的完整覆盖波长范围。"
+    is_interface_metric: true
+    demonstrated_value:
+      value: "500–4000 nm（覆盖倍频程，含 1400–2800 nm 亮区可用于 OH 吸收谱）"
+      conditions: "AlN 波导 800 nm 厚；宽度扫描 400–5100 nm；1560 nm / 80 fs / 100 MHz / 80 mW 泵浦；TE00 or TM00 偏振"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "CML5935T", claim: "optical-frequency-comb supercontinuum spanning from 500 to 4000 nm with a 0.8-nJ seed pulse"}
+    historical_landmarks:
+      first_demonstration:
+        value: "500–4000 nm 在 χ²+χ³ 单片波导 0.8 nJ 下"
+        year: 2017
+        source: {zotero_key: "CML5935T"}
+
+  - id: met.fceo_snr_on_chip_h17
+    name: "片上 f_CEO 信噪比（Hickstein 2017）"
+    unit: "dB（@ RBW 未明示，典型 100 kHz）"
+    description: "单片 AlN 波导直接光电探测的 f_CEO 拍频峰信噪比。"
+    demonstrated_value:
+      value: "37 dB"
+      conditions: "TM00 泵浦 4800 nm 宽波导；780 nm 带通 + 光电二极管（相位失配 SHG 在基模）"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "CML5935T", claim: "we achieve a 37-dB SNR for the f_CEO peak"}
+    theoretical_floor:
+      value: ">37 dB（引入 on-chip 模式转换器后，相位匹配 SHG 也可回到基模）"
+      basis: "pri.mode_overlap_limits_fceo_snr 的突破路径"
+      gap_note: "当前 SNR 由模场重叠而非 SHG 效率决定"
+
+  - id: met.pump_pulse_energy_threshold_h17
+    name: "片上 f-2f 自参考泵浦脉冲能量阈值（Hickstein 2017）"
+    unit: "nJ"
+    description: "实现 500–4000 nm SC + 可用 f_CEO 所需的波导内脉冲能量。"
+    demonstrated_value:
+      value: "0.8 nJ（80 mW @ 100 MHz）"
+      conditions: "AlN 波导；1560 nm；~80 fs 脉宽"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "CML5935T", claim: "Broadband light from 500 to 4000 nm can be generated with only about 80 mW (0.8 nJ) of 1560-nm pump power in the waveguide"}
+    note: "对比 HNLF f-2f 路径所需 ≥10 kW 峰值功率（论文引言）：该阈值约降低 1–2 个数量级。"
+
+  - id: met.on_chip_mid_ir_power_h17
+    name: "片上中红外 DFG 输出功率（Hickstein 2017）"
+    unit: "mW"
+    description: "波导内 χ² DFG 在 3500–4000 nm 区域输出的宽带光功率估计值。"
+    demonstrated_value:
+      value: "~0.3 mW（3500–4000 nm 区间）"
+      conditions: "2600 nm 宽波导；TM 泵浦；DFG 来自展宽泵浦与长波色散波的差频"
+      verification_status: inferred
+      confidence: likely
+      source: {zotero_key: "CML5935T", claim: "we estimate that the 2600-nm waveguide produces about 0.3 mW in the 3500- to 4000-nm spectral region"}
+
+# ═══════════════════════════════════════════════
+#  RELATIONS（关系）
+# ═══════════════════════════════════════════════
+
+relations:
+  - id: rel.H17_01
+    subject: ent.chi2_chi3_waveguide_fceo_h17
+    predicate: PART-OF
+    object: ent.optical_frequency_comb
+    confidence: established
+    source: {zotero_key: "CML5935T", claim: "stabilization of a compact laser frequency comb"}
+    note: "ent.optical_frequency_comb 定义于 udem2002.yaml（跨文件引用）"
+
+  - id: rel.H17_02
+    subject: ent.chi2_chi3_waveguide_fceo_h17
+    predicate: CHARACTERIZED-BY
+    object: met.on_chip_sc_span_h17
+    confidence: established
+    source: {zotero_key: "CML5935T", claim: "supercontinuum spanning from 500 to 4000 nm"}
+
+  - id: rel.H17_03
+    subject: ent.chi2_chi3_waveguide_fceo_h17
+    predicate: CHARACTERIZED-BY
+    object: met.fceo_snr_on_chip_h17
+    confidence: established
+    source: {zotero_key: "CML5935T", claim: "37-dB SNR for the f_CEO peak"}
+
+  - id: rel.H17_04
+    subject: ent.chi2_chi3_waveguide_fceo_h17
+    predicate: CHARACTERIZED-BY
+    object: met.pump_pulse_energy_threshold_h17
+    confidence: established
+    source: {zotero_key: "CML5935T", claim: "Broadband light ... with only about 80 mW (0.8 nJ) of 1560-nm pump power"}
+
+  - id: rel.H17_05
+    subject: ent.chi2_chi3_waveguide_fceo_h17
+    predicate: CHARACTERIZED-BY
+    object: met.on_chip_mid_ir_power_h17
+    confidence: likely
+    source: {zotero_key: "CML5935T", claim: "about 0.3 mW in the 3500- to 4000-nm spectral region"}
+
+  - id: rel.H17_06
+    subject: meth.on_chip_f2f_stabilization
+    predicate: ENABLED-BY
+    object: pri.dual_chi2_chi3_integrated_f2f
+    confidence: established
+    source: {zotero_key: "CML5935T", claim: "simultaneous SHG and SCG ... no interferometer is needed"}
+
+  - id: rel.H17_07
+    subject: meth.on_chip_f2f_stabilization
+    predicate: ENABLED-BY
+    object: pri.supercontinuum_octave_spanning
+    confidence: established
+    source: {zotero_key: "CML5935T", claim: "octave-spanning bandwidth allows the carrier-envelope-offset frequency (f_CEO) of the frequency comb to be measured"}
+    note: "pri.supercontinuum_octave_spanning 定义于 diddams2000.yaml（跨文件引用）"
+
+  - id: rel.H17_08
+    subject: pri.dual_chi2_chi3_integrated_f2f
+    predicate: DERIVED-FROM
+    object: pri.self_referencing_f2f
+    confidence: established
+    source: {zotero_key: "CML5935T", claim: "In the f-2f scheme, the low-frequency portion of the spectrum undergoes second-harmonic generation ... and interferes with the high-frequency portion"}
+    note: "pri.self_referencing_f2f 定义于 udem2002.yaml / giunta2019.yaml（跨文件引用）"
+
+  - id: rel.H17_09
+    subject: pri.dual_chi2_chi3_integrated_f2f
+    predicate: DERIVED-FROM
+    object: pri.nonlinear_frequency_conversion_comb
+    confidence: established
+    source: {zotero_key: "CML5935T", claim: "supercontinuum generation ... difference-frequency generation, second-harmonic generation, and third-harmonic generation"}
+    note: "pri.nonlinear_frequency_conversion_comb 为仓库顶层节点（跨文件引用）"
+
+  - id: rel.H17_10
+    subject: met.fceo_snr_on_chip_h17
+    predicate: OPERATIONALIZED-AS
+    object: meth.on_chip_f2f_stabilization
+    confidence: established
+    source: {zotero_key: "CML5935T"}
+
+  - id: rel.H17_11
+    subject: met.fceo_snr_on_chip_h17
+    predicate: BOUNDED-BY
+    object: pri.mode_overlap_limits_fceo_snr
+    confidence: established
+    source: {zotero_key: "CML5935T", claim: "poor mode overlap between the supercontinuum (in the TM00 mode) and the phase-matched second harmonic (in a higher-order TM mode) hinders detection of the f_CEO"}
+    breakthrough_paths:
+      - direction: meth.on_chip_f2f_stabilization
+        expected_gain: "加入 on-chip 模式转换器，使相位匹配 SHG 回到 TM00，SNR 预期 >37 dB"
+        status: proposed
+        source: {zotero_key: "CML5935T", claim: "on-chip mode converters could be used to provide both phase-matched SHG and mode overlap"}
+
+  - id: rel.H17_12
+    subject: meth.on_chip_f2f_stabilization
+    predicate: BOUNDED-BY
+    object: pri.phase_matching_bandwidth_limit_chi2
+    confidence: established
+    source: {zotero_key: "CML5935T", claim: "this phase-matching mechanism provides a phase-matching bandwidth of only a few nanometers"}
+    breakthrough_paths:
+      - direction: pri.nonlinear_frequency_conversion_comb
+        expected_gain: "周期极化（PPLN/PP-LiNbO3-on-insulator）或 chirped QPM 扩展相位匹配带宽到数十–数百 nm"
+        status: proposed
+        source: {zotero_key: "CML5935T", claim: "periodically poled LiNbO3 (PPLN) have demonstrated supercontinuum generation via cascaded χ(2) processes"}
+        note: "AlN 为多晶无 QPM；PPLN-on-insulator 是该方向的工程路径。"
+
+  - id: rel.H17_13
+    subject: meth.on_chip_f2f_stabilization
+    predicate: CONDITIONED-BY
+    object: ent.chi2_chi3_waveguide_fceo_h17
+    confidence: established
+    source: {zotero_key: "CML5935T", claim: "The only equipment required to detect f_CEO is a 780-nm bandpass filter and a photodetector"}
+
+  - id: rel.H17_14
+    subject: ent.chi2_chi3_waveguide_fceo_h17
+    predicate: COMPETES-WITH
+    object: ent.air_silica_microstructure_fiber_d00
+    confidence: established
+    source: {zotero_key: "CML5935T", claim: "the adoption of compact frequency-comb sources at gigahertz repetition rates ... is currently hindered by the difficulty of generating octave-spanning spectra using low-peak-power pulses"}
+    note: >
+      ent.air_silica_microstructure_fiber_d00 定义于 diddams2000.yaml。两者功能相同（f-2f 前端 SC 源），
+      但 AlN 片上方案在脉冲能量阈值（0.8 nJ vs ≥10 kW 峰值 HNLF）与集成度（单片 vs 光纤+外部 SHG 晶体）上更优；
+      HNLF 方案工艺成熟度更高、谱形灵活性更大。

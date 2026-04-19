@@ -1,0 +1,401 @@
+# Zhang 2022b — 全 PM 保偏光纤 figure-9 NALM Er:fiber 梳用于光钟频率比对 [技术论文]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical
+# 文件名说明：本目录已有 zhang2022.yaml 对应另一篇 Zhang 2022（229mTh VUV 梳光谱）论文，
+#   本文为同年不同课题组的 Er:fiber 梳论文，故加后缀 "b"。
+#   核心贡献：
+#     (1) 全保偏（all-PM）光纤 + figure-9 NALM 自启动锁模的 turnkey Er:fiber 光频梳，专为多种光钟频率比对设计；
+#     (2) 四支路分别输出 698/729/1068/1156 nm（对应 Sr / Ca+ / Al+ / Yb 光钟跃迁波长），SNR >30 dB @300 kHz；
+#     (3) 通过严格匹配支路光纤长度（±1 cm）与恒温控制（±0.2 °C）压低共模外的热漂移，out-of-loop 稳定度 9×10⁻¹⁷ @1 s → 5.5×10⁻¹⁹ @4000 s；
+#     (4) 证明在不引入实时光相位追踪（Nicolodi 2014 方案）的前提下，仅靠热管理即可满足 10⁻¹⁸ 级光钟比对需求。
+#   Framework 依赖：ent.optical_frequency_comb 权威定义于 udem2002.yaml；
+#     pri.self_referencing_f2f 定义于 udem2002.yaml / giunta2019.yaml；
+#     本系统相对 zhang2017.yaml 的 NPE+NALM 混合锁模方案属工程演进（全 PM + 纯 figure-9 NALM + 多支路应用结构）。
+
+meta:
+  zotero_key: "BPQDL4DN"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical
+  reliability: high
+  title: "All polarization-maintaining Er:fiber-based optical frequency comb for frequency comparison of optical clocks"
+  year: 2022
+  first_author: "Zhang"
+  journal: "Chinese Physics B"
+  volume: 31
+  issue: 5
+  pages: "054210"
+  doi: "10.1088/1674-1056/ac40f6"
+  note: >
+    [技术论文] 国家授时中心（Pan Zhang / Yan-Yan Zhang / Hai-Feng Jiang / Shou-Gang Zhang 等）。
+    基于 figure-9 结构 NALM 锁模 + 全保偏光纤的 Er:fiber turnkey 飞秒激光，基频 200 MHz，
+    输出光谱 FWHM 75 nm（1550 nm 中心）、变换极限 46 fs。单支路展宽至倍频程 SC 产生 f_ceo（SNR 38 dB @300 kHz RBW），
+    通过调泵浦功率锁定 f_ceo，f_beat 通过腔内 EOM（~300 kHz 带宽）+ PZT 锁定到 1555 nm 超稳激光。
+    四条"应用支路"以 EDFA + PM-HNLF（+ PPLN）生成 698/729/1068/1156 nm 单模功率 ≥707 nW~5 µW，
+    与 Sr/Ca+/Al+/Yb 钟激光拍频 SNR 均 >30 dB @300 kHz。
+    in-loop：f_ceo 7.5×10⁻¹⁸/√τ @1 s，f_beat 8.5×10⁻¹⁸/√τ @1 s；
+    out-of-loop：9×10⁻¹⁷ @1 s → 5.5×10⁻¹⁹ @4000 s，优于目前 Sr/Yb 最佳钟比对水平。
+    跨文件节点：ent.optical_frequency_comb、pri.self_referencing_f2f 定义于 udem2002.yaml；
+    与 ent.hybrid_ml_erfiber_comb_z17（zhang2017.yaml）构成同组 Er:fiber 梳架构演进序列（COMPETES-WITH）。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.all_pm_erfiber_comb_z22b
+    name: "全保偏 figure-9 NALM Er:fiber 光学频率梳（Zhang 2022b 系统）"
+    aliases: ["all-PM Er:fiber frequency comb", "figure-9 NALM PM Er:fiber comb", "turnkey Er:fiber OFC for optical clock comparison"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      以 figure-9 结构的 NALM（非线性放大环镜）作为唯一锁模机制，所有腔内及支路光纤均采用保偏（PM）光纤，
+      并以 Faraday 旋转器 + λ/8 波片构成非互易相位偏置器件（π/2）实现自启动锁模。腔净色散近零；
+      基频重频 200 MHz，光谱 FWHM 75 nm（变换极限 46 fs）。
+      主输出端 6 mW 平均分配给五支路：一支用于 PM-HNLF 单支路超连续展宽（倍频程）+ 共光程 f-2f 干涉仪产生 f_ceo；
+      四支应用支路分别通过 CPA（EDFA + PM 色散管理 + PM-HNLF + 可选 PPLN 倍频）在 698/729/1068/1156 nm 处
+      生成目标波长供 Sr、Ca+、Al+（1064 nm 四倍频自 Al+ 钟方案）、Yb（1156 nm 倍频）光钟比对。
+    key_parameters:
+      mode_locking_scheme: "figure-9 NALM（纯 NALM，不含 NPE）"
+      polarization_architecture: "全保偏（all-PM）光纤"
+      self_start_mechanism: "Faraday 旋转器 + λ/8 WP 产生 π/2 非互易相位偏置"
+      repetition_rate: "200 MHz（基频）"
+      spectrum_fwhm: "75 nm @ 0.1 nm RBW（1550 nm 中心，该类锁模激光已知最宽）"
+      ftl_pulse_duration: "46 fs"
+      pump_threshold: "泵浦 >900 mW 自启动"
+      output1_power: "6 mW（平均分配给 5 支路）"
+      fceo_snr: "38 dB @ 300 kHz RBW"
+      fceo_control: "调泵浦电流（一支路专用 EDFA + PM-HNLF）"
+      fbeat_control: "腔内 EOM（~300 kHz 带宽，快）+ PZT（慢，大范围）"
+      fbeat_feedback_bandwidth: "~300 kHz（f_beat），~40 kHz（f_ceo）"
+      application_branches: "698 nm (Sr) / 729 nm (Ca+) / 1068 nm (Al+) / 1156 nm (Yb)"
+      branch_snr: ">30 dB @ 300 kHz RBW（全部四路）"
+      fiber_length_match: "支路光纤长度差 ±1 cm"
+      temperature_control: "±0.2 °C（支路控温箱）"
+    interface_requirements:
+      optical_reference: "1555 nm 超稳激光（f_beat 锁定 & out-of-loop 参考）"
+      microwave_reference: "H-maser 10 MHz（f_ceo、f_beat 锁相环与频率计数参考）"
+      clock_lasers: "698 nm (Sr) / 729 nm (Ca+) / 1068 nm (Al+) / 1156 nm (Yb)"
+    note: >
+      Level 2 实例节点。PART-OF ent.optical_frequency_comb（权威定义于 udem2002.yaml）。
+      COMPETES-WITH ent.hybrid_ml_erfiber_comb_z17（zhang2017.yaml，NPE+NALM 混合锁模），
+      体现同研究组从"NPE+NALM 混合 + 部分非保偏"向"纯 NALM + 全保偏 + 多支路应用"的工程演进。
+
+  - id: ent.multi_branch_supercontinuum_z22b
+    name: "多支路 CPA + PM-HNLF 超连续/频率扩展模块"
+    aliases: ["multi-branch EDFA+PM-HNLF + PPLN wavelength delivery"]
+    hierarchy_level: 3
+    status: demonstrated
+    function: >
+      将主输出 ~1 mW/支路的种子光经 CPA（预啁啾 → EDFA 放大到 >200 mW / 峰值 ~15 kW → PM 光纤色散补偿压缩）后，
+      注入零色散波长设计不同的 PM-HNLF（ZDW 分别为 1545 nm、1405 nm、1450 nm 等）产生靶波长单模光；
+      对 <1 µm 波长采用 PPLN（含 50 mm bulk PPLN，温度敏感 0.3 nm/°C）倍频（1396→698、1458→729）。
+    key_parameters:
+      seed_per_branch: "~1 mW"
+      cpa_output_power: ">200 mW / 峰值 ~15 kW / 约 80 fs"
+      pm_hnlf_zdw: "1545 nm (1068 nm 支路) / 1405 nm (1156 nm) / 1450 nm (1458→729)"
+      ppln_length: "50 mm bulk PPLN（729 nm 支路）"
+      single_mode_power: "707 nW @1068 / 891 nW @1156 / >1 µW @698 / ~5 µW @729"
+    note: "PART-OF ent.all_pm_erfiber_comb_z22b；以支路结构解决单支路 SC 在多靶波长上功率不足的问题。"
+
+principles:
+  - id: pri.multibranch_vs_single_branch_tradeoff
+    name: "多支路 vs 单支路超连续架构权衡原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      单支路倍频程 SC 方案能在共光程中同时覆盖多个靶波长并共模抑制光纤热噪声，但在任一靶波长上的单模功率
+      都被分摊、拍频 SNR 难以同时达标；多支路架构为每个靶波长单独做 EDFA+PM-HNLF（±PPLN），
+      能把 SNR 推到 >30 dB @300 kHz，代价是每条支路都是"out-of-loop"未补偿光纤路径，
+      其热致光程漂移直接进入 out-of-loop 稳定度。
+    domain: "光学频率梳系统架构"
+    formula: >
+      σ_OOL(τ) ≈ Σ_i [∂φ_i/∂T · δT_i(τ)] / (2π · f_opt)；
+      支路长度不匹配 ΔL、温差 ΔT 直接产生非共模噪声
+    key_insight: >
+      多支路是"SNR-vs-稳定度"的工程折中；本文用严格的支路长度匹配（±1 cm）与温度控制（±0.2 °C）
+      避开了实时光相位追踪（Nicolodi 2014）带来的系统复杂度，仍达到 5.5×10⁻¹⁹ @4000 s。
+    conditions: "多靶波长光钟比对应用；对 SNR 的需求压倒对极端长期稳定度的需求"
+    preconditions:
+      - "各支路光纤热膨胀系数相近（全 PM 同批次光纤）"
+      - "温度控制优于 ±0.2 °C"
+      - "支路光纤长度差 ≤1 cm 量级"
+    invalidated_when:
+      - "支路数增多到热/振动噪声不可协同压制"
+      - "需比对的光钟稳定度进入 10⁻¹⁹ 以下需要实时相位追踪"
+    source_claim: >
+      "multi-branch architecture can easily produce high power OFC signals at specific wavelengths ...
+      However, this results in more uncompensated fiber paths, which degrades the out-of-loop frequency instability of an OFC"
+
+  - id: pri.figure9_nalm_pm_self_starting
+    name: "figure-9 NALM + 全保偏 + 非互易 π/2 偏置自启动原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      figure-9 NALM 结构中，Faraday 旋转器 + λ/8 波片对环内反向传播的两束脉冲产生 π/2 互易相位偏置，
+      使反射率-强度曲线工作在最大斜率点，从而实现低阈值自启动锁模；全保偏光纤保证偏振态长期稳定，
+      避免 NPE 方案因光纤双折射漂移导致的锁模失稳。
+    domain: "光纤飞秒激光锁模"
+    formula: "R_NALM(P) = sin²[ (φ_NL(P) + π/2) / 2 ]（线性化工作点）"
+    key_insight: >
+      这是把"figure-8/NALM 启动差"的经典缺陷在全 PM 架构下工程化解决的标准方案，
+      代价是放弃 NPE 所提供的更快饱和吸收响应（脉冲宽度、RIN、f_ceo 线宽略逊 hybrid 方案）。
+    conditions: "全 PM 光纤环；非互易 π/2 相位偏置器件；腔净色散近零"
+    preconditions:
+      - "非互易器件相位偏置稳定在 π/2 附近"
+      - "环内增益光纤色散被 SMF-PM 抵消（净色散 ≈ 0）"
+    source_claim: >
+      "a non-reciprocal phase device, consisting of a Faraday rotator (FR) and a λ/8 wave plate,
+      is installed on the space linear arm to ensure the self-starting operation by introducing a
+      phase bias of π/2 between the counter-propagating portions of laser pulses in the fiber loop"
+
+  - id: pri.thermal_drift_out_of_loop_fiber_noise
+    name: "Out-of-loop 光纤热漂移限制原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      光纤 OFC 中只有环内 + in-loop 光程被 f_ceo / f_beat 伺服闭环锁定，支路 EDFA 与 PM-HNLF
+      等 out-of-loop 光纤段的长度随温度变化产生非共模光程漂移，直接附加到输出梳齿相位，
+      主导长期（>1 s）out-of-loop Allan 偏差。
+    domain: "光纤飞秒梳稳定性"
+    formula: "δν/ν ≈ (1/L)·(∂L/∂T)·δT + (1/n)·(∂n/∂T)·δT ≈ 7×10⁻⁶·δT（石英 PM 光纤）"
+    key_insight: >
+      这是多支路架构的结构性瓶颈；实时光相位追踪（Nicolodi 2014）或严格热管理是两条工程路径。
+    conditions: "out-of-loop 光纤段 >几十 cm；未采用实时光相位追踪"
+    preconditions:
+      - "支路光纤暴露在非共模温度环境"
+      - "伺服带宽无法覆盖 out-of-loop 光程"
+    invalidated_when:
+      - "引入实时光相位追踪使 out-of-loop 光程进入伺服闭环"
+    source_claim: >
+      "the main factor affecting the frequency instability of fiber OFCs is environmental disturbance
+      in the out-of-loop fiber"
+
+methods:
+  - id: meth.temperature_matched_multibranch_stabilization
+    name: "支路长度/温度匹配以抑制 out-of-loop 热漂移的方法"
+    status: demonstrated
+    applies_to: ent.all_pm_erfiber_comb_z22b
+    steps_summary: >
+      (1) 将所有应用支路封装在同一温控盒内，温度波动 ≤±0.2 °C；
+      (2) 把每条支路的总 PM 光纤长度裁剪到彼此差 ≤±1 cm，使热致光程漂移在支路间近似共模；
+      (3) 以 1068 nm 与 1156 nm 两支路的 SC 分别与同一 1555 nm 超稳激光拍频，
+          一路作为 in-loop 锁定通道（经 EOM+PZT 反馈腔内），另一路作为 out-of-loop 计数通道；
+      (4) 用频率计（Agilent 53230A，Λ-type）长期计数 out-of-loop 拍频，给出 Allan 偏差曲线。
+    required_hardware:
+      - ent.all_pm_erfiber_comb_z22b
+      - ent.multi_branch_supercontinuum_z22b
+    advantages:
+      - "无需 Nicolodi 2014 式实时光相位追踪电子学"
+      - "out-of-loop 稳定度优于 Sr/Yb 最佳光钟比对水平（不构成系统极限）"
+    disadvantages:
+      - "若支路进一步增多或光纤延长则方案可扩展性受限"
+      - "无法跨越非共模振动/声学扰动"
+    conditions:
+      - "支路光纤同材质同批次"
+      - "应用环境振动较低"
+    source_claim: >
+      "we ensure that the fiber length error between different branches is within ±1 cm,
+      and the temperature control range is within ±0.2 °C"
+
+metrics:
+  - id: met.fceo_allan_inloop_z22b
+    name: "in-loop f_ceo 稳定度（Zhang 2022b）"
+    unit: "无量纲（分数频率 Allan 偏差）"
+    description: >
+      锁定后 f_ceo 的 in-loop Allan 偏差，已 scaled 到 1050 nm 对应光学频率。
+    is_interface_metric: false
+    demonstrated_value:
+      value: "7.5×10⁻¹⁸ / √τ @ 1 s"
+      conditions: "泵浦电流反馈，f_ceo=250 MHz，40 kHz 反馈带宽，H-maser 参考；计数器 Agilent 53230A（dead-time → τ⁻¹/²）"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "BPQDL4DN", claim: "7.5 × 10⁻¹⁸/τ^{1/2} ... for fceo"}
+
+  - id: met.fbeat_allan_inloop_z22b
+    name: "in-loop f_beat 稳定度（Zhang 2022b）"
+    unit: "无量纲（分数频率 Allan 偏差）"
+    description: >
+      1555 nm 超稳激光锁定 f_beat 的 in-loop Allan 偏差。
+    is_interface_metric: false
+    demonstrated_value:
+      value: "8.5×10⁻¹⁸ / √τ @ 1 s"
+      conditions: "EOM+PZT 反馈，f_beat=270 MHz，~300 kHz 反馈带宽，H-maser 参考；Agilent 53230A（Λ-type）"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "BPQDL4DN", claim: "8.5×10⁻¹⁸/τ^{1/2} for fbeat"}
+
+  - id: met.out_of_loop_instability_z22b
+    name: "out-of-loop 多支路相对稳定度（Zhang 2022b）"
+    unit: "无量纲（分数频率 Allan 偏差）"
+    description: >
+      以 1068 nm 与 1156 nm 两支路的 SC 分别与同一 1555 nm 超稳激光拍频计数得到的
+      非共模（out-of-loop）分数频率不稳定度。
+    is_interface_metric: true
+    coupling_formula: "σ_clock_comparison² ≥ σ_OOL² + σ_clock²（若 σ_OOL << σ_clock，则不限制比对结果）"
+    demonstrated_value:
+      value: "9×10⁻¹⁷ @1 s → 5.5×10⁻¹⁹ @4000 s"
+      conditions: "支路长度差 ±1 cm、温度 ±0.2 °C；同一 1555 nm 超稳激光作共同参考；无实时光相位追踪"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "BPQDL4DN", claim: "The relative instability is 9×10⁻¹⁷ at an averaging time of 1 s, and decreases to 5.5×10⁻¹⁹ with an averaging time of approximately 4000 s"}
+    theoretical_floor:
+      value: "~10⁻²⁰（采用 Nicolodi 2014 实时光相位追踪）"
+      basis: "out-of-loop 光纤纳入伺服闭环后残余噪声极限"
+      gap_note: "本方案未实现实时光相位追踪；当前值已优于 Sr/Yb 最佳光钟比对水平"
+
+  - id: met.clock_beatnote_snr_z22b
+    name: "四支路梳-钟激光拍频 SNR（Zhang 2022b）"
+    unit: "dB"
+    description: >
+      四个应用支路输出与对应 Sr/Ca+/Al+/Yb 钟激光的外差拍频 SNR，决定是否满足下游 PLL 锁定与计数要求。
+    is_interface_metric: false
+    demonstrated_value:
+      value: ">30 dB @ 300 kHz RBW（四路全部）"
+      conditions: "单模功率 707 nW~5 µW；InGaAs 或 Si 光电探测器；698/729 nm 两路噪底低 20 dB（Si 探测器）"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "BPQDL4DN", claim: "the SNR of each beat signal is greater than 30 dB at an RBW of 300 kHz"}
+
+  - id: met.integrated_phase_noise_z22b
+    name: "in-loop 积分相位噪声（1 Hz–1 MHz）"
+    unit: "rad"
+    description: >
+      锁定后 f_ceo / f_beat 相位噪声功率谱密度在 1 Hz–1 MHz 积分得到的 RMS 相位抖动。
+    is_interface_metric: false
+    demonstrated_value:
+      value: "f_ceo: 0.99 rad（0.55 fs）；f_beat: 0.14 rad（0.12 fs）"
+      conditions: "锁定条件同 met.fceo_allan_inloop_z22b / met.fbeat_allan_inloop_z22b；f_beat 带宽更高 → 高频噪声抑制更好"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "BPQDL4DN", claim: "integrated phase noise of 0.99 rad from 1 Hz to 1 MHz ... 0.14 rad in a frequency range from 1 Hz to 1 MHz"}
+
+# ═══════════════════════════════════════════════
+#  RELATIONS（关系）
+# ═══════════════════════════════════════════════
+
+relations:
+  - id: rel.Z22B_01
+    subject: ent.all_pm_erfiber_comb_z22b
+    predicate: PART-OF
+    object: ent.optical_frequency_comb
+    confidence: established
+    source: {zotero_key: "BPQDL4DN", claim: "a turnkey erbium fiber laser-based OFC with multi-branch architecture"}
+    note: "ent.optical_frequency_comb 权威定义于 udem2002.yaml"
+
+  - id: rel.Z22B_02
+    subject: ent.multi_branch_supercontinuum_z22b
+    predicate: PART-OF
+    object: ent.all_pm_erfiber_comb_z22b
+    confidence: established
+    source: {zotero_key: "BPQDL4DN", claim: "four branches for application ... each branch produces a particular wavelength separately at 698 nm, 729 nm, 1068 nm, and 1156 nm"}
+
+  - id: rel.Z22B_03
+    subject: ent.all_pm_erfiber_comb_z22b
+    predicate: COMPETES-WITH
+    object: ent.hybrid_ml_erfiber_comb_z17
+    confidence: established
+    source: {zotero_key: "BPQDL4DN", claim: "NALM systems have exhibited outstanding robustness and low noise features; consequently, this technique is preferred for applications in scenarios outside the laboratory"}
+    note: "同研究组的架构演进（NPE+NALM hybrid → 纯 NALM + 全 PM）；ent.hybrid_ml_erfiber_comb_z17 定义于 zhang2017.yaml"
+
+  - id: rel.Z22B_04
+    subject: ent.all_pm_erfiber_comb_z22b
+    predicate: ENABLED-BY
+    object: pri.figure9_nalm_pm_self_starting
+    confidence: established
+    source: {zotero_key: "BPQDL4DN", claim: "non-reciprocal phase device ... to ensure the self-starting operation by introducing a phase bias of π/2"}
+
+  - id: rel.Z22B_05
+    subject: ent.all_pm_erfiber_comb_z22b
+    predicate: ENABLED-BY
+    object: pri.self_referencing_f2f
+    confidence: established
+    source: {zotero_key: "BPQDL4DN", claim: "A standard f-to-2f interferometer following the PM HNLF is used to obtain the fceo signal"}
+    note: "pri.self_referencing_f2f 定义于 udem2002.yaml / giunta2019.yaml"
+
+  - id: rel.Z22B_06
+    subject: ent.all_pm_erfiber_comb_z22b
+    predicate: CHARACTERIZED-BY
+    object: met.fceo_allan_inloop_z22b
+    confidence: established
+    source: {zotero_key: "BPQDL4DN", claim: "7.4 × 10⁻¹⁸/τ^{1/2} ... for fceo"}
+    temporal_role: validates
+
+  - id: rel.Z22B_07
+    subject: ent.all_pm_erfiber_comb_z22b
+    predicate: CHARACTERIZED-BY
+    object: met.fbeat_allan_inloop_z22b
+    confidence: established
+    source: {zotero_key: "BPQDL4DN", claim: "8.5×10⁻¹⁸/τ^{1/2} for fbeat"}
+    temporal_role: validates
+
+  - id: rel.Z22B_08
+    subject: ent.all_pm_erfiber_comb_z22b
+    predicate: CHARACTERIZED-BY
+    object: met.out_of_loop_instability_z22b
+    confidence: established
+    source: {zotero_key: "BPQDL4DN", claim: "The relative instability is 9×10⁻¹⁷ at an averaging time of 1 s, and decreases to 5.5×10⁻¹⁹ ... 4000 s"}
+    temporal_role: validates
+
+  - id: rel.Z22B_09
+    subject: ent.multi_branch_supercontinuum_z22b
+    predicate: CHARACTERIZED-BY
+    object: met.clock_beatnote_snr_z22b
+    confidence: established
+    source: {zotero_key: "BPQDL4DN", claim: "the SNR of each beat signal is greater than 30 dB at an RBW of 300 kHz"}
+
+  - id: rel.Z22B_10
+    subject: ent.all_pm_erfiber_comb_z22b
+    predicate: CHARACTERIZED-BY
+    object: met.integrated_phase_noise_z22b
+    confidence: established
+    source: {zotero_key: "BPQDL4DN", claim: "integrated phase noise of 0.99 rad from 1 Hz to 1 MHz ... 0.14 rad"}
+
+  - id: rel.Z22B_11
+    subject: met.out_of_loop_instability_z22b
+    predicate: BOUNDED-BY
+    object: pri.thermal_drift_out_of_loop_fiber_noise
+    confidence: established
+    source: {zotero_key: "BPQDL4DN", claim: "the main factor affecting the frequency instability of fiber OFCs is environmental disturbance in the out-of-loop fiber"}
+    breakthrough_paths:
+      - direction: meth.temperature_matched_multibranch_stabilization
+        expected_gain: "支路长度 ±1 cm + 温度 ±0.2 °C → out-of-loop 5.5×10⁻¹⁹ @4000 s"
+        status: demonstrated
+        source: {zotero_key: "BPQDL4DN", claim: "we ensure that the fiber length error between different branches is within ±1 cm, and the temperature control range is within ±0.2 °C"}
+        note: "本论文所采用的路径：纯热管理，不引入实时相位追踪电子学"
+      - direction: meth.wideband_optical_frequency_synthesis
+        expected_gain: "out-of-loop 可进一步压到 ~10⁻²⁰"
+        status: demonstrated
+        source: {zotero_key: "BPQDL4DN", claim: "Real-time phase tracking technology can be used to compensate for optical phase drift due to thermal drift, which improves an OFC's relative instability at a low level of 10⁻²⁰"}
+        note: "Nicolodi 2014 / Giunta 2020 方案（meth.wideband_optical_frequency_synthesis 定义于 giunta2020.yaml）；代价是电子/光学系统复杂度"
+
+  - id: rel.Z22B_12
+    subject: met.out_of_loop_instability_z22b
+    predicate: BOUNDED-BY
+    object: pri.multibranch_vs_single_branch_tradeoff
+    confidence: established
+    source: {zotero_key: "BPQDL4DN", claim: "multi-branch architecture ... results in more uncompensated fiber paths, which degrades the out-of-loop frequency instability of an OFC"}
+    breakthrough_paths:
+      - direction: meth.temperature_matched_multibranch_stabilization
+        expected_gain: "保留多支路 SNR 优势的同时将 OOL 压到 5.5×10⁻¹⁹"
+        status: demonstrated
+        source: {zotero_key: "BPQDL4DN", claim: "we adopt a simple and effective method. That is done to ensure that the length and temperature between the different branch fibers are coincident"}
+
+  - id: rel.Z22B_13
+    subject: met.fbeat_allan_inloop_z22b
+    predicate: OPERATIONALIZED-AS
+    object: meth.temperature_matched_multibranch_stabilization
+    confidence: inferred
+    source: {zotero_key: "BPQDL4DN", claim: "hydrogen maser provides a frequency reference for fceo locking, fbeat locking, and out-of-loop frequency stability counting"}
+    note: "in-loop f_beat 锁定 + 多支路热匹配共同支撑 out-of-loop 指标"
+
+  - id: rel.Z22B_14
+    subject: ent.all_pm_erfiber_comb_z22b
+    predicate: CONDITIONED-BY
+    object: ent.fp_cavity_system
+    confidence: established
+    source: {zotero_key: "BPQDL4DN", claim: "The beat signal between the comb and a 1555-nm ultra-stable laser is controlled by the EOM and PZT in the laser cavity"}
+    note: "1555 nm 超稳激光为 FP 腔锁激光；ent.fp_cavity_system 定义于 topics/ultrastable-laser/papers/numata2004.yaml（跨专题接口）"

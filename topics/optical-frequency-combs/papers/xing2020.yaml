@@ -1,0 +1,382 @@
+# Xing 2020 — 首次全光纤 2 µm 频率梳实现 1.4 光周期（9.5 fs）脉冲与倍频程自参考 [技术论文]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical
+
+meta:
+  zotero_key: "BDY8JHA4"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical
+  reliability: high
+  title: "All-fiber frequency comb at 2 µm providing 1.4-cycle pulses"
+  year: 2020
+  first_author: "Xing"
+  journal: "Optics Letters"
+  volume: 45
+  issue: 9
+  pages: "2660-2663"
+  doi: "10.1364/OL.391486"
+  note: >
+    [技术论文] NIST + JILA (Xing / Kowligy / Lesko / Lind / Diddams)。以 Menlo Figure-9
+    Er:光纤锁模激光器（1.56 µm，100 MHz）为种子，经 EDFA 放大到 190 mW，50 fs，
+    在 30 cm HNLF1 中通过 Raman 孤子自频移产生 1928 nm / 45 fs / 40 mW 的 2 µm 种子；
+    PM-TDF CPA（Nufern PM-TSF-9/125，前向 1550 nm 泵浦）放大至 420 mW，随后两级压缩
+    （PM1550XP 64 cm 补偿 + PM-HNLF2 6 cm 非线性自压缩）得到 327 mW、9.5 fs（1.4 光周期）
+    脉冲，谱覆盖 1–2.4 µm。13 mW 旁路经 PPLN 做 f-2f，在 1075 nm 波段回读 f_ceo，
+    30 dB SNR @300 kHz RBW、3 dB 线宽 ~5 kHz。系统完全采用商用光纤器件，35×30 cm 立面盒可容纳。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.all_fiber_2um_comb_x20
+    name: "全光纤 2 µm 飞秒频率梳系统（Xing 2020）"
+    aliases: ["All-fiber 2 µm frequency comb", "Tm-doped fiber comb with SSFS seeding"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      以 1.56 µm Er:光纤锁模激光器为种子，经 EDFA 放大到 190 mW / 50 fs，
+      30 cm HNLF1 通过 Raman 孤子自频移（SSFS）产生 1928 nm / 45 fs / 40 mW 2 µm 种子；
+      PM-TDF CPA（2 m PM-TSF-9/125，前向 1550 nm 泵浦）放大至 420 mW，两级非线性自压缩
+      （PM1550XP 64 cm + 椭圆芯 PM-HNLF2 6 cm）将脉冲压缩到 9.5 fs（1.4 光周期），
+      输出 327 mW 平均功率、104 kW 峰值功率、1–2.4 µm 倍频程谱，直接支持 f-2f 自参考。
+      整机完全采用商用 PM 光纤器件，35×30 cm 立面盒内容纳。
+    key_parameters:
+      seed: "Menlo Figure-9 Er:fiber MLL, 1.56 µm, 100 MHz"
+      ssfs_seed: "1928 nm / 45 fs / 40 mW"
+      tdf_cpa: "Nufern PM-TSF-9/125, 2 m, 前向 1550 nm CW，输出 420 mW"
+      compressors: "PM1550XP 64 cm → ~90 fs；PM-HNLF2 6 cm → 9.5 fs"
+      final_output: "327 mW, 9.5 fs, 100 MHz, 1–2.4 µm"
+      pump_efficiency: "~17% (1.94 W C-band → 327 mW @2 µm)"
+    interface_requirements:
+      input: "1.56 µm Er:fiber 梳种子"
+      output: "倍频程相干 2 µm 梳；f-2f CEO 稳定；下游 MIR DFG/SCG"
+    note: >
+      Level 2 实例节点，PART-OF ent.optical_frequency_comb（权威定义于 udem2002.yaml）。
+      与 ent.octave_spanning_tisa_comb_d00（diddams2000.yaml）形成 COMPETES-WITH。
+
+  - id: ent.hnlf_ssfs_stage_x20
+    name: "HNLF 孤子自频移级（Xing 2020）"
+    aliases: ["HNLF1 Raman soliton stage"]
+    hierarchy_level: 3
+    status: demonstrated
+    function: >
+      30 cm PM-HNLF（β₂=-7.82 ps²/km, γ=10 (W·km)⁻¹ @1550 nm）承接 50 fs 1.56 µm 脉冲，
+      脉冲内 Raman 散射把孤子红移到 1928 nm / 45 fs / 40 mW，
+      单级实现"波段切换+种子成形"，连接 Er:fiber 与 Tm:fiber 放大窗口。
+    note: "PART-OF ent.all_fiber_2um_comb_x20"
+
+  - id: ent.hnlf_self_compression_stage_x20
+    name: "HNLF2 非线性自压缩级（Xing 2020）"
+    aliases: ["Elliptical-core PM-HNLF2 self-compression"]
+    hierarchy_level: 3
+    status: demonstrated
+    function: >
+      6 cm 椭圆芯 PM-HNLF（β₂=-13 ps²/km, γ=3.1 (W·km)⁻¹ @1930 nm）同时完成频谱展宽与时域压缩，
+      末端 ~1 cm 内把 ~90 fs 脉冲自压缩到 9.5 fs 并在 1 µm 产生 dispersive wave，
+      使 2 µm SHG 与 DW 在时域上自然重叠，支撑 inline f-2f。长度容差 ±2 mm。
+    note: "PART-OF ent.all_fiber_2um_comb_x20"
+
+principles:
+  - id: pri.soliton_self_frequency_shift_2um
+    name: "2 µm 孤子自频移原理（Raman SSFS 波段切换）"
+    tier: domain
+    verification_status: observed
+    statement: >
+      反常色散光纤中亚皮秒孤子通过脉冲内受激 Raman 散射持续红移（dν/dz ∝ -|β₂|/τ⁴），
+      利用该机制可在单段 HNLF 内把 1.56 µm Er:fiber 梳平移到 1.9 µm，保持梳线相位相干性，
+      得到 Tm:fiber 可直接放大的 2 µm 种子。
+    domain: "非线性光纤光学；频率梳波段扩展"
+    key_insight: >
+      SSFS 把成熟 1.5 µm 电信级 Er:fiber 梳 "搬" 到 2 µm Tm:fiber 放大窗口，
+      避开直接锁模 Tm:fiber 在少周期区未成熟的问题，是全光纤 2 µm 梳的使能桥梁。
+    conditions: "反常色散 HNLF；亚皮秒基阶孤子输入；PM 光纤维持偏振相干"
+    invalidated_when:
+      - "脉冲进入多孤子分裂与色散波剥离的强噪声区"
+    source_claim: >
+      "the seed laser converts the commercially available low noise 1.56 µm frequency comb to 2 µm
+       by soliton self-frequency shift in highly nonlinear fiber (HNLF)"
+
+  - id: pri.all_fiber_nonlinear_self_compression_2um
+    name: "2 µm 全光纤非线性自压缩原理（反常色散 HNLF 中 SPM + 孤子压缩）"
+    tier: domain
+    verification_status: observed
+    statement: >
+      反常色散 HNLF 中高阶孤子（N² = γ P₀ τ₀² / |β₂|，N>1）在 z_c ≈ L_D/N 处同时完成
+      SPM 展宽与孤子压缩，脉宽降至亚 2 光周期，频谱展宽到倍频程（1–2.4 µm），
+      且在 dispersive wave 波段自然形成与基频 SHG 时域重合的光场。该机制把"展宽+压缩"
+      合并在单段 ~6 cm 光纤，避免自由空间光栅压缩器在 2 µm 处被三阶色散限制在 ~80 fs。
+    domain: "非线性光纤光学；少周期脉冲产生"
+    key_insight: >
+      "带宽展宽"与"时间压缩"在同一段反常色散 HNLF 中耦合完成，是实现全光纤 <2 光周期
+      2 µm 输出与倍频程谱的关键；并天然让 SHG 与 DW 时域重叠，方便同纤 f-2f。
+    conditions: "反常色散 HNLF；近傅里叶极限 ~90 fs 输入；光纤长度匹配最优自压缩长度"
+    invalidated_when:
+      - "光纤长度超过最优压缩长度 → 孤子分裂，卫星脉冲恶化"
+      - "输入脉冲畸变（非近傅里叶）→ 峰值强度不足"
+    source_claim: >
+      "nonlinear self-compression method combines spectral broadening and compression in one single fiber,
+       making it ideal for implementation in an all-fiber setup"
+
+  - id: pri.octave_self_compression_enables_inline_f2f
+    name: "自压缩倍频程谱使同纤 f-2f 免延迟化"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      非线性自压缩产生的 1 µm dispersive wave 与 2 µm 基频 PPLN SHG 在时域上本征重合
+      （走离 <2 mm HNLF 长度），无需外部延迟线即可得到高 SNR 的 f-2f 拍频。
+    domain: "光学频率梳自参考"
+    formula: "f_CEO = 2ν_n(2 µm) − ν_{2n}(DW @1 µm)；SH 与 DW 时间走离 <2 mm 光纤传播"
+    key_insight: >
+      把 DW 直接当作 f-2f 高频支，而非外加分频器或延迟，是全光纤少周期梳 inline f_ceo 的工程拐点。
+    conditions: "SHG 与 DW 时间走离小于光路传播时间"
+    source_claim: >
+      "the SHG of the 2 µm pulse falls right on the DW pulse peak ... using no extra pulse delay control"
+
+methods:
+  - id: meth.ssfs_tdf_cpa_self_compression_comb_x20
+    name: "SSFS + Tm:fiber CPA + 两级自压缩 2 µm 全光纤梳产生方法"
+    status: demonstrated
+    applies_to: ent.all_fiber_2um_comb_x20
+    steps_summary: >
+      (1) Er:fiber MLL 种子 → EDFA 190 mW / 50 fs；
+      (2) 30 cm HNLF1 SSFS → 1928 nm / 45 fs / 40 mW；
+      (3) PM2000D 预伸展 + 2 m PM-TSF-9/125 TDF CPA（1550 nm 前向泵浦）→ 420 mW；
+      (4) 两级压缩：PM1550XP 64 cm → ~90 fs，PM-HNLF2 6 cm 自压缩 → 9.5 fs / 327 mW / 1–2.4 µm；
+      (5) 13 mW 旁路经 1 mm PPLN (Λ=30 µm) SHG + BP (1075±25 nm) → f_ceo SNR≥30 dB @300 kHz RBW。
+    required_hardware:
+      - ent.all_fiber_2um_comb_x20
+      - ent.hnlf_ssfs_stage_x20
+      - ent.hnlf_self_compression_stage_x20
+    advantages:
+      - "全商用 PM 光纤器件，可重复、免对齐"
+      - "首次全光纤 <2 光周期 2 µm，峰值 ~104 kW"
+      - "倍频程谱支持同纤 f-2f，无需外部延迟"
+    disadvantages:
+      - "主峰仅含 ~32% 总能量，卫星脉冲限制峰值效率"
+      - "~17% 泵浦效率；重频固定 100 MHz"
+    conditions:
+      - "HNLF2 长度 6 cm ±2 mm；C 波段泵浦 ~1.9 W"
+    source_claim: >
+      "we present the first sub-2-cycle (9.5 fs) frequency comb source implemented using an all-fiber configuration at 2 µm"
+
+metrics:
+  - id: met.pulse_duration_cycles_x20
+    name: "2 µm 脉冲持续时间（以光周期计）"
+    unit: "fs / optical cycles"
+    description: >
+      FROG 重建得到的脉冲半高全宽，用于衡量光学频率梳的时间局域化能力；
+      2 µm 处一个光周期 ≈6.67 fs，1.4 cycle ≈ 9.5 fs。
+    is_interface_metric: false
+    coupling_formula: null
+    demonstrated_value:
+      value: "9.5 fs（1.4 光周期 @2 µm）"
+      conditions: "327 mW 输出，1.94 W C-band 泵浦，SHG-FROG 重建误差 1.1%，±1.2 ps 扫描无卫星脉冲"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "BDY8JHA4", claim: "reconstructed pulse of 9.5 fs ... 1.4 optical cycles"}
+    theoretical_floor:
+      value: "~6.7 fs（2 µm 单光周期 TL 极限）"
+      basis: "倍频程谱对应的傅里叶极限脉宽"
+      gap_note: "主峰仅含 ~32% 总能量，能量外溢到卫星脉冲；提升一级压缩质量可逼近单周期"
+    historical_landmarks:
+      first_demonstration:
+        value: "9.5 fs（1.4 cycle）全光纤 2 µm"
+        year: 2020
+        source: {zotero_key: "BDY8JHA4"}
+        note: "首次在全光纤 2 µm 系统中达到 <2 光周期"
+
+  - id: met.optical_bandwidth_2um_x20
+    name: "2 µm 频率梳光谱带宽（Xing 2020）"
+    unit: "nm / octave"
+    description: >
+      梳源输出的连续光学带宽，决定是否允许单激光器内 f-2f 自参考与下游宽带 MIR 产生。
+    is_interface_metric: true
+    coupling_formula: "带宽 ≥ 一倍频程 ⇒ 单激光 f-2f 可行"
+    demonstrated_value:
+      value: "1 µm 至 >2.4 µm（倍频程）"
+      conditions: "HNLF2 6 cm 自压缩输出，327 mW 平均功率"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "BDY8JHA4", claim: "The spectrum of the ultrashort pulse spans from 1 to beyond 2.4 µm and enables direct measurement of the carrier-envelope offset frequency"}
+
+  - id: met.average_power_2um_comb_x20
+    name: "2 µm 梳平均输出功率"
+    unit: "mW"
+    description: "压缩级输出的 2 µm 平均功率，决定下游非线性转换（DFG/SCG）可行性。"
+    demonstrated_value:
+      value: "327 mW @100 MHz"
+      conditions: "1.94 W C-band 泵浦，17% 总效率"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "BDY8JHA4", claim: "327 mW average power at a 100 MHz repetition rate"}
+
+  - id: met.peak_power_2um_comb_x20
+    name: "2 µm 压缩脉冲峰值功率"
+    unit: "kW"
+    description: "压缩后 9.5 fs 脉冲主峰峰值功率，决定 SCG/DFG 效率与 IP-DFG 下游能力。"
+    demonstrated_value:
+      value: "~104 kW（主峰含 32% 能量，含 10% Fresnel 反射损失）"
+      conditions: "327 mW 平均功率，100 MHz，1.4 cycle"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "BDY8JHA4", claim: "the main peak contains about 32 % of total power, hence 104 kW in the peak, with 10 % loss due to Fresnel reflection"}
+
+  - id: met.fceo_snr_x20
+    name: "f_ceo 拍频信噪比（2 µm 倍频程自参考）"
+    unit: "dB @ RBW"
+    description: >
+      PPLN SHG + DW 拍频得到的 f_ceo 信噪比与线宽，衡量 CEO 锁定可行性。
+    demonstrated_value:
+      value: ">30 dB SNR @300 kHz RBW；3 dB 线宽 ~5 kHz @1 kHz RBW"
+      conditions: "13 mW 旁路进 1 mm PPLN (Λ=30 µm)，BP 滤波 (1075±25) nm，EOT-3000A 探测"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "BDY8JHA4", claim: "an inline f−2f setup is used to recover a 30 dB signal-to-noise ratio (SNR) at a 300 kHz resolution bandwidth (RBW). The carrier-envelope offset (CEO) frequency, f_ceo, has a 3 dB bandwidth of approximately 5 kHz"}
+
+# ═══════════════════════════════════════════════
+#  RELATIONS（关系）
+# ═══════════════════════════════════════════════
+
+relations:
+  - id: rel.X01
+    subject: ent.hnlf_ssfs_stage_x20
+    predicate: PART-OF
+    object: ent.all_fiber_2um_comb_x20
+    confidence: established
+    source: {zotero_key: "BDY8JHA4", claim: "The amplified light is then sent into a 30 cm PM HNLF1 ... to generate a 2 µm pulse by a Raman soliton self-frequency shift"}
+
+  - id: rel.X02
+    subject: ent.hnlf_self_compression_stage_x20
+    predicate: PART-OF
+    object: ent.all_fiber_2um_comb_x20
+    confidence: established
+    source: {zotero_key: "BDY8JHA4", claim: "The second compression stage utilizes nonlinear self-compression inside an elliptical core PM-HNLF from OFS (HNLF2 in Fig. 1)"}
+
+  - id: rel.X03
+    subject: ent.all_fiber_2um_comb_x20
+    predicate: PART-OF
+    object: ent.optical_frequency_comb
+    confidence: established
+    source: {zotero_key: "BDY8JHA4", claim: "an all-fiber 2 µm frequency comb that outputs 9.5 fs (1.4-cycle) pulses"}
+    note: "ent.optical_frequency_comb 权威定义于 udem2002.yaml（跨文件引用）"
+
+  - id: rel.X04
+    subject: ent.all_fiber_2um_comb_x20
+    predicate: CHARACTERIZED-BY
+    object: met.pulse_duration_cycles_x20
+    confidence: established
+    source: {zotero_key: "BDY8JHA4", claim: "reconstructed pulse of 9.5 fs"}
+    temporal_role: validates
+
+  - id: rel.X05
+    subject: ent.all_fiber_2um_comb_x20
+    predicate: CHARACTERIZED-BY
+    object: met.optical_bandwidth_2um_x20
+    confidence: established
+    source: {zotero_key: "BDY8JHA4", claim: "spectrum ... spans from 1 to beyond 2.4 µm"}
+
+  - id: rel.X06
+    subject: ent.all_fiber_2um_comb_x20
+    predicate: CHARACTERIZED-BY
+    object: met.average_power_2um_comb_x20
+    confidence: established
+    source: {zotero_key: "BDY8JHA4", claim: "327 mW average power at a 100 MHz repetition rate"}
+
+  - id: rel.X07
+    subject: ent.all_fiber_2um_comb_x20
+    predicate: CHARACTERIZED-BY
+    object: met.peak_power_2um_comb_x20
+    confidence: established
+    source: {zotero_key: "BDY8JHA4", claim: "104 kW in the peak"}
+
+  - id: rel.X08
+    subject: ent.all_fiber_2um_comb_x20
+    predicate: CHARACTERIZED-BY
+    object: met.fceo_snr_x20
+    confidence: established
+    source: {zotero_key: "BDY8JHA4", claim: "30 dB signal-to-noise ratio (SNR) at a 300 kHz resolution bandwidth"}
+
+  - id: rel.X09
+    subject: meth.ssfs_tdf_cpa_self_compression_comb_x20
+    predicate: ENABLED-BY
+    object: pri.soliton_self_frequency_shift_2um
+    confidence: established
+    source: {zotero_key: "BDY8JHA4", claim: "soliton self-frequency shift in highly nonlinear fiber (HNLF), the seed laser converts the commercially available low noise 1.56 µm frequency comb to 2 µm"}
+
+  - id: rel.X10
+    subject: meth.ssfs_tdf_cpa_self_compression_comb_x20
+    predicate: ENABLED-BY
+    object: pri.all_fiber_nonlinear_self_compression_2um
+    confidence: established
+    source: {zotero_key: "BDY8JHA4", claim: "nonlinear self-compression method combines spectral broadening and compression in one single fiber"}
+
+  - id: rel.X11
+    subject: meth.ssfs_tdf_cpa_self_compression_comb_x20
+    predicate: ENABLED-BY
+    object: pri.octave_self_compression_enables_inline_f2f
+    confidence: established
+    source: {zotero_key: "BDY8JHA4", claim: "the SHG of the 2 µm pulse falls right on the DW pulse peak ... using no extra pulse delay control"}
+
+  - id: rel.X12
+    subject: pri.octave_self_compression_enables_inline_f2f
+    predicate: DERIVED-FROM
+    object: pri.self_referencing_f2f
+    confidence: established
+    source: {zotero_key: "BDY8JHA4", claim: "With an octave-spanning spectrum available from the soliton self-compression, it is possible to retrieve the f_ceo in a straightforward manner"}
+    note: "pri.self_referencing_f2f 定义于 udem2002.yaml / giunta2019.yaml"
+
+  - id: rel.X13
+    subject: pri.all_fiber_nonlinear_self_compression_2um
+    predicate: DERIVED-FROM
+    object: pri.supercontinuum_octave_spanning
+    confidence: established
+    source: {zotero_key: "BDY8JHA4", claim: "structured central region of the spectrum with smooth wings covering about one octave is a general indication of successful self-compression"}
+    note: "pri.supercontinuum_octave_spanning 定义于 diddams2000.yaml"
+
+  - id: rel.X14
+    subject: met.pulse_duration_cycles_x20
+    predicate: OPERATIONALIZED-AS
+    object: meth.ssfs_tdf_cpa_self_compression_comb_x20
+    confidence: established
+    source: {zotero_key: "BDY8JHA4", claim: "a two-stage self-compression scheme reduces the pulse duration to 9.5 fs"}
+
+  - id: rel.X15
+    subject: met.pulse_duration_cycles_x20
+    predicate: BOUNDED-BY
+    object: pri.all_fiber_nonlinear_self_compression_2um
+    confidence: established
+    source: {zotero_key: "BDY8JHA4", claim: "the main peak contains about 32 % of total power ... Improving the pulse quality from the first compression stage will contribute to higher power in the central pulse"}
+    conditions: "主峰仅 ~32% 能量，单段 HNLF 自压缩的高阶色散与孤子分裂限制了主峰占比"
+    breakthrough_paths:
+      - direction: meth.ssfs_tdf_cpa_self_compression_comb_x20
+        expected_gain: "改善一级压缩脉冲质量（例如 L-band EDFA + 高掺杂 TDF），提高主峰能量比与峰值功率"
+        status: proposed
+        source: {zotero_key: "BDY8JHA4", claim: "An L-band EDFA with a larger doping concentration TDF can be a simple improvement"}
+        note: "作者明确提出但未在本文演示"
+      - direction: pri.all_fiber_nonlinear_self_compression_2um
+        expected_gain: "末级 PCF 替代 HNLF2，可在 100 MHz 下达到 mW 级峰值能量并进一步压缩"
+        status: proposed
+        source: {zotero_key: "BDY8JHA4", claim: "milliwatt-level peak powers at a 100 MHz repetition rate should be feasible with a photonic crystal fiber at the last compression stage"}
+
+  - id: rel.X16
+    subject: ent.all_fiber_2um_comb_x20
+    predicate: COMPETES-WITH
+    object: ent.octave_spanning_tisa_comb_d00
+    confidence: established
+    source: {zotero_key: "BDY8JHA4", claim: "an all-fiber approach to generating sub-2-cycle pulses at 2 µm and a corresponding octave-spanning optical frequency comb"}
+    note: >
+      工程层面的竞争：Ti:Sa + air-silica PCF（800 nm，diddams2000.yaml）与 Tm:fiber + HNLF（2 µm）
+      同属 "单激光倍频程飞秒梳" 方案；两者在波段选择、全光纤化、MIR 泵浦适配性上各有取舍。
+
+  - id: rel.X17
+    subject: ent.all_fiber_2um_comb_x20
+    predicate: CONDITIONED-BY
+    object: ent.photonic_crystal_fiber
+    confidence: provisional
+    source: {zotero_key: "BDY8JHA4", claim: "milliwatt-level peak powers at a 100 MHz repetition rate should be feasible with a photonic crystal fiber at the last compression stage"}
+    note: "PCF 作为潜在末级压缩元件，接口条件节点；ent.photonic_crystal_fiber 定义于 diddams2000.yaml"

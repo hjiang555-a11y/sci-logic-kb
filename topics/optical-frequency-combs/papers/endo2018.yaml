@@ -1,0 +1,388 @@
+# Endo 2018 — 超低噪声光学频率梳综述：从固态到光纤到整体式腔结构 [综述框架论文]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: framework
+
+meta:
+  zotero_key: H93SHF89
+  topic: optical-frequency-combs
+  source_type: review
+  contribution_type: framework
+  reliability: high
+  title: Ultralow Noise Optical Frequency Combs
+  year: 2018
+  first_author: Endo
+  journal: IEEE Journal of Selected Topics in Quantum Electronics
+  volume: 24
+  issue: 5
+  pages: "1102413"
+  doi: 10.1109/JSTQE.2018.2818461
+  note: '[综述框架论文] Endo、Schibli 2018 年 IEEE JSTQE 受邀综述。系统梳理各类 OFC 技术平台的噪声特性与稳定化方案，
+    聚焦"超低噪声"维度：(1) 介绍 OFC 两个自由度 frep、f_CEO 及其稳定化原理（f-2f 自参考、BOMPD）；
+    (2) 对比 Ti:sapphire、Er/Yb/Tm 光纤梳、VECSEL/MIXSEL 半导体梳、微谐振腔 Kerr 梳、EO 梳的噪声机制与工程特点；
+    (3) 阐明噪声层级：量子极限（Schawlow-Townes）< 技术噪声（泵浦 RIN、振动、温度、ASE、非线性相位噪声）；
+    (4) 核心结果：整体式 Er:glass + CaF₂ 腔 OFC（~1.5 GHz frep，1.56 μm）在自由运转条件下实现 ~1×10⁻¹⁹@1 s 频率不稳定度——
+    首次报告 OFC 自由运转达到 10⁻¹⁹ 量级。
+    ent.optical_frequency_comb 定义于 giunta2019.yaml；
+    ent.ti_sapphire_frequency_comb 定义于 udem2002.yaml；
+    ent.microresonator_frequency_comb 定义于 kippenberg2011.yaml；
+    ent.electro_optic_frequency_comb 定义于 picque2019.yaml；
+    ent.er_fiber_frequency_comb 定义于 droste2016.yaml；
+    pri.self_referencing_f2f 定义于 giunta2019.yaml；
+    pri.dual_comb_multiheterodyne_detection 定义于 coddington2016.yaml。
+
+    '
+
+entities:
+- id: ent.monolithic_erglass_comb_e18
+  name: 整体式 Er:glass OFC（Endo 2018）
+  aliases:
+  - monolithic Er:glass optical frequency comb
+  - Er:glass CaF2 monolithic comb
+  - solid-state Er:glass 1.5 GHz OFC
+  hierarchy_level: 1
+  status: demonstrated
+  function: '以 Er:glass 增益介质和 CaF₂ 晶体腔镜构成整体式全固态光学谐振腔，工作波长 1.56 μm，
+    重复频率 ~1.5 GHz。整体式结构消除腔内气路波动，显著降低往返损耗与腔内非线性相位噪声，
+    实现 OFC 自由运转（不锁定任何外部参考）下 ~1×10⁻¹⁹@1 s 的分数频率不稳定度——
+    是已报告 OFC 自由运转性能中最优值。
+
+    '
+  key_parameters:
+    gain_medium: Er:glass（掺铒玻璃）
+    cavity_material: CaF₂（氟化钙晶体腔镜）
+    center_wavelength: 1.56 μm
+    repetition_rate: ~1.5 GHz
+    cavity_type: 整体式（monolithic）——无空气路径
+    free_running_instability: ~1×10⁻¹⁹ @ 1 s gate time
+  note: 'Level 1 实体，定义于本文件（endo2018.yaml）。本文核心实验贡献。
+    与 ent.ti_sapphire_frequency_comb（udem2002.yaml）及 ent.er_fiber_frequency_comb（droste2016.yaml）
+    构成主要竞争比较对象。
+
+    '
+
+principles:
+- id: pri.ofc_two_dof_stabilization
+  name: OFC 双自由度独立稳定化原理
+  tier: meta
+  verification_status: observed
+  statement: '光学频率梳由两个独立自由度完全描述：重复频率 frep 和载波包络偏移频率 f_CEO（梳齿方程 fₙ = f_CEO + n·frep）。
+    实现绝对频率计量要求两个自由度同时受控，各自可独立溯源至光学或微波参考：
+    f_CEO 通常通过 f-2f 自参考方案检测和锁定（需倍频程频谱）；
+    frep 通过将梳齿拍频至光学频率参考（光钟/超稳激光）或锁定至微波频率标准实现稳定化。
+    两路稳定化相互独立，工程上可分别优化带宽与残余噪声。
+
+    '
+  domain: 光学频率计量，超快光学
+  formula: 'fₙ = f_CEO + n·frep（n ~ 10⁵–10⁶）；
+    f_CEO 通过 f-2f 拍频检测：f_beat = 2f_n − f_{2n} = f_CEO；
+    frep 通过光-微波拍频或光-光拍频锁定
+
+    '
+  key_insight: '将 OFC 理解为双自由度可控系统，是实现全光学原子钟和超低噪声微波合成的框架基础——
+    两个自由度可分别溯源至光钟（超高精度）或微波基准，并可单独或联合优化。
+
+    '
+  conditions: 'f-2f 自参考要求 OFC 频谱覆盖至少一个光学倍频程；
+    frep 光学锁定要求有可用的超稳激光参考
+
+    '
+  preconditions:
+  - 激光器处于稳定锁模状态，脉冲序列周期性满足
+  - f_CEO 检测需倍频程频谱（直接或经非线性展宽）
+  invalidated_when:
+  - OFC 非锁模运转（CW 或多脉冲不稳定）
+  - 光谱带宽不足以实现 f-2f 拍频
+  source_claim: '"optical frequency combs require simultaneous stabilization of both
+    the repetition rate frep and the carrier-envelope offset frequency f_CEO,
+    each of which can be referenced independently to an optical or microwave standard"
+
+    '
+  open_questions:
+  - Can frep and f_CEO be simultaneously locked with sub-attosecond residual jitter
+    using purely optical references?
+
+- id: pri.ofc_noise_hierarchy
+  name: OFC 噪声层级原理
+  tier: domain
+  verification_status: observed
+  statement: 'OFC 的频率噪声来源分为量子层和技术层：
+    (1) 量子极限：Schawlow-Townes 相位噪声（自发辐射驱动），设定 OFC 线宽下限，
+    对于高 Q 腔的固态激光器此极限在 mHz 量级以下；
+    (2) 技术噪声（主导实际性能）：泵浦 RIN 通过 KK（Kramers-Kronig）耦合转化为频率噪声，
+    机械振动和温度波动通过腔长变化引入 frep 和 f_CEO 噪声，
+    光纤激光器额外受 ASE（自发辐射放大）和非线性相位噪声影响（Raman、SPM），
+    导致光纤梳的自由运转技术噪声通常高于固态梳。
+    固态低损耗腔（如 Ti:sapphire、Er:glass 整体式腔）因往返损耗低、非线性效应弱，
+    技术噪声本底显著低于光纤平台。
+
+    '
+  domain: 激光噪声理论，光学频率计量
+  formula: 'S_f(f) = S_ST + S_pump-RIN + S_vib + S_temp + S_ASE + S_NL；
+    光纤激光器：S_ASE ∝ N_sp·hν·δν / P（N_sp 反转因子，δν 带宽，P 信号功率）；
+    非线性相位噪声 S_NL ∝ γ·P_peak²（γ 非线性系数）
+
+    '
+  key_insight: '同一 OFC 平台（如整体式 Er:glass 腔）可通过同时降低往返损耗、
+    消除腔内气路、减少非线性相互作用，协同压制多个技术噪声源——
+    这解释了为何整体式固态腔能在自由运转下达到 ~10⁻¹⁹ 水平。
+
+    '
+  conditions: '固态低损耗腔优势在自由运转下最为显著；
+    经主动稳定后，所有 OFC 类型均可达到参考源水平
+
+    '
+  preconditions:
+  - 激光器工作在稳定锁模状态
+  breakthrough_paths:
+  - direction: pri.monolithic_cavity_intrinsic_noise_reduction
+    expected_gain: 自由运转 frep 不稳定度从典型光纤梳 ~10⁻¹³ 提升至 ~10⁻¹⁹ @ 1 s
+    status: demonstrated
+    source: 'Endo et al. 2018: monolithic Er:glass + CaF₂ OFC free-running ~1×10⁻¹⁹ @ 1 s'
+  source_claim: '"fiber lasers have larger technical noise than solid-state due to
+    high round-trip loss and nonlinearity; solid-state: lower intrinsic noise"
+
+    '
+  open_questions:
+  - What is the quantum (Schawlow-Townes) noise floor for a monolithic Er:glass cavity
+    at 1.5 GHz frep?
+  - Can integrated photonic OFCs reach solid-state intrinsic noise levels through
+    ultra-low-loss waveguides?
+
+- id: pri.monolithic_cavity_intrinsic_noise_reduction
+  name: 整体式全固态腔 OFC 内禀噪声压制原理
+  tier: domain
+  verification_status: observed
+  statement: '采用整体式（空气路径为零）全固态激光腔（如 Er:glass 增益 + CaF₂ 晶体腔镜），
+    可同时实现以下噪声压制效果：
+    (1) 消除腔内气路引起的空气折射率波动（消除气流 frep 噪声）；
+    (2) 降低往返损耗（固态介质损耗 << 光纤往返损耗），减少 ASE 噪声；
+    (3) 减少非线性相位积累（无单模光纤非线性），抑制 Raman/SPM 引起的 f_CEO 噪声；
+    (4) 热机械稳定性高（腔体单一材料，热膨胀均匀）。
+    综合效果使 OFC 在自由运转（不锁任何外部参考）下达到 ~1×10⁻¹⁹@1 s 分数频率不稳定度。
+
+    '
+  domain: 激光腔设计，光学频率计量
+  key_insight: '整体式腔将多个独立噪声源（气路、往返损耗、非线性）同步消除，
+    是实现"近量子极限"自由运转 OFC 的核心工程路径。
+
+    '
+  conditions: '需腔体材料热膨胀系数低且均匀（CaF₂ 低热膨胀，Er:glass 增益匹配）；
+    整体式设计需精密光学接触或键合，增加制造难度
+
+    '
+  preconditions:
+  - 增益介质与腔镜材料光学接触良好（无胶黏引入的吸收和膨胀噪声）
+  - frep 较高（~GHz 级）以减少模式间距相对不确定度
+  invalidated_when:
+  - 腔内引入任何气隙或调谐压电元件（破坏整体性）
+  - 热功耗过大导致 Er:glass 热透镜效应显著
+  source_claim: '"monolithic all-solid-state cavity (Er:glass + CaF2) eliminates
+    air-path fluctuations, reduces round-trip loss, and achieves free-running
+    stability at the 10^-19 level"
+
+    '
+  breakthrough_paths:
+  - direction: meth.balanced_optical_microwave_phase_detector
+    expected_gain: 进一步从 10⁻¹⁹ 自由运转基础上实现锁定后 <10⁻¹⁸ 定时抖动（残余）
+    status: proposed
+    source: 'Endo 2018: BOMPD as the next step for locking monolithic OFC to optical reference'
+
+methods:
+- id: meth.balanced_optical_microwave_phase_detector
+  name: 平衡光-微波相位探测器（BOMPD）
+  aliases:
+  - BOMPD
+  - balanced optical-microwave phase detector
+  status: demonstrated
+  applies_to: ent.optical_frequency_comb
+  steps_summary: '1. 从超稳激光（光学参考）采样 OFC 的重复频率谐波 n·frep；
+    2. 利用光电探测器将 OFC 脉冲转换为微波信号，与本地微波振荡器比较相位；
+    3. 通过平衡探测架构抵消 AM 噪声对 PM 探测的串扰（消除幅度-相位转换误差）；
+    4. 输出残余相位误差信号，用于锁定 frep 至光学参考，实现亚飞秒定时抖动。
+
+    '
+  advantages:
+  - 相位探测灵敏度达 sub-fs 量级（消除 AM→PM 串扰）
+  - 可同时测量和锁定 OFC 光-微波相位相干性
+  - 适用于高 frep（GHz 级）OFC 的微波合成
+  disadvantages:
+  - 需要超稳激光作为光学参考
+  - 平衡探测对光路对称性要求高
+  conditions:
+  - 需要高功率 OFC（光电探测 SNR 足够）
+  - 需要频谱纯净的微波本振作为比较基准
+  source_claim: '"balanced optical-microwave phase detector (BOMPD) measures residual
+    phase noise between optical reference and microwave with sub-femtosecond precision"
+
+    '
+  note: '如 meth.balanced_optical_microwave_phase_detector 已在其他文件定义，本定义以首次出现文件为权威来源。
+    本文件为首次引入本方法节点，待查重后确认。
+
+    '
+
+metrics:
+- id: met.free_running_freq_instability_e18
+  name: 自由运转分数频率不稳定度（Endo 2018，整体式 Er:glass OFC）
+  unit: 无量纲（分数频率不稳定度，modified Allan deviation 或 gate time）
+  description: '整体式 Er:glass + CaF₂ OFC 在不锁定任何外部频率参考条件下（自由运转）
+    的 frep 分数频率不稳定度。反映 OFC 平台的内禀热机械与光学噪声本底。
+
+    '
+  demonstrated_value:
+    value: ~1×10⁻¹⁹
+    conditions: 'Er:glass + CaF₂ 整体式腔，frep ≈ 1.5 GHz，波长 1.56 μm，
+      1 s 门控时间（gate time），自由运转（无外部参考锁定），室温
+
+      '
+    verification_status: observed
+    confidence: high
+    source:
+      zotero_key: H93SHF89
+      claim: monolithic Er:glass OFC at ~1.5 GHz frep achieves free-running stability
+        of ~1×10^-19 at 1 s gate time
+  historical_landmarks:
+    best_demonstration:
+      value: ~1×10⁻¹⁹ @ 1 s（自由运转）
+      year: 2018
+      source:
+        zotero_key: H93SHF89
+      note: 本文报告值，为已报告 OFC 自由运转性能最优纪录（截至 2018 年）
+  note: '与典型光纤梳自由运转不稳定度（~10⁻¹³ @ 1 s）相比改善 ~6 个数量级，
+    与经主动稳定的超稳激光参考（~10⁻¹⁶–10⁻¹⁷）量级接近。
+
+    '
+
+- id: met.ofc_timing_jitter_floor
+  name: OFC 模间定时抖动本底
+  unit: fs（飞秒，均方根）
+  description: '光学频率梳输出脉冲序列的定时抖动（即 frep 相位噪声积分值），
+    表征 OFC 作为微波/光学时钟信号源的相位纯净度下限。
+    在不同平台（光纤梳 vs. 固态梳）和稳定化方案（自由运转 vs. 主动锁定）下数值差异显著。
+
+    '
+  demonstrated_value:
+    value: <1 fs（主动锁定至超稳激光后，BOMPD 方案）
+    conditions: 'OFC frep 通过 BOMPD 锁定至光学参考，积分频率范围 1 Hz–1 MHz
+
+      '
+    verification_status: observed
+    confidence: high
+    source:
+      zotero_key: H93SHF89
+      claim: BOMPD achieves sub-femtosecond residual timing jitter between OFC and
+        optical reference
+  note: '通用指标节点，适用于所有 OFC 类型。具体数值随平台和稳定化方案变化。
+    与 met.free_running_freq_instability_e18 互补：前者描述锁定后残余，后者描述自由运转本底。
+
+    '
+
+relations:
+- id: rel.E18_01
+  subject: ent.monolithic_erglass_comb_e18
+  predicate: CHARACTERIZED-BY
+  object: met.free_running_freq_instability_e18
+  confidence: established
+  source:
+    zotero_key: H93SHF89
+    claim: monolithic Er:glass OFC achieves free-running stability of ~1×10^-19 at
+      1 s gate time
+  note: 本文核心实验结论。ent.monolithic_erglass_comb_e18 定义于本文件。
+
+- id: rel.E18_02
+  subject: ent.monolithic_erglass_comb_e18
+  predicate: ENABLED-BY
+  object: pri.monolithic_cavity_intrinsic_noise_reduction
+  confidence: established
+  source:
+    zotero_key: H93SHF89
+    claim: monolithic all-solid-state cavity eliminates air-path fluctuations and
+      reduces round-trip loss, enabling 10^-19 free-running stability
+  note: 物理机制→性能的使能关系。
+
+- id: rel.E18_03
+  subject: ent.optical_frequency_comb
+  predicate: BOUNDED-BY
+  object: pri.ofc_noise_hierarchy
+  confidence: established
+  source:
+    zotero_key: H93SHF89
+    claim: noise sources ranked from quantum (Schawlow-Townes) to technical (pump
+      RIN, vibration, temperature, ASE, nonlinear phase noise); fiber OFCs have larger
+      technical noise than solid-state
+  breakthrough_paths:
+  - direction: pri.monolithic_cavity_intrinsic_noise_reduction
+    expected_gain: 自由运转不稳定度从 ~10⁻¹³（光纤梳）提升至 ~10⁻¹⁹（整体式固态腔）
+    status: demonstrated
+    source: 'Endo 2018: monolithic Er:glass OFC free-running ~1×10⁻¹⁹ @ 1 s'
+  - direction: meth.balanced_optical_microwave_phase_detector
+    expected_gain: 锁定后定时抖动 <1 fs（sub-attosecond 目标）
+    status: demonstrated
+    source: 'Endo 2018: BOMPD sub-fs residual jitter'
+  note: ent.optical_frequency_comb 定义于 giunta2019.yaml。
+
+- id: rel.E18_04
+  subject: ent.optical_frequency_comb
+  predicate: CHARACTERIZED-BY
+  object: met.ofc_timing_jitter_floor
+  confidence: established
+  source:
+    zotero_key: H93SHF89
+    claim: timing jitter floor is a key performance metric for all OFC platforms,
+      distinguishing free-running from actively stabilized operation
+  note: 通用关系，适用于所有 OFC 类型。ent.optical_frequency_comb 定义于 giunta2019.yaml。
+
+- id: rel.E18_05
+  subject: ent.optical_frequency_comb
+  predicate: ENABLED-BY
+  object: pri.ofc_two_dof_stabilization
+  confidence: established
+  source:
+    zotero_key: H93SHF89
+    claim: OFC requires simultaneous stabilization of frep and f_CEO; each degree
+      of freedom can be independently referenced to optical or microwave standard
+  note: 元原理→OFC 系统存在的使能关系。ent.optical_frequency_comb 定义于 giunta2019.yaml。
+
+- id: rel.E18_06
+  subject: ent.monolithic_erglass_comb_e18
+  predicate: COMPETES-WITH
+  object: ent.er_fiber_frequency_comb
+  confidence: established
+  source:
+    zotero_key: H93SHF89
+    claim: solid-state monolithic OFC achieves superior free-running noise floor compared
+      to fiber-based OFCs due to lower round-trip loss and absence of nonlinear fiber
+  note: '固态整体式腔 vs. 光纤梳的同层级竞争。
+    ent.er_fiber_frequency_comb 定义于 droste2016.yaml；
+    ent.monolithic_erglass_comb_e18 定义于本文件。
+
+    '
+
+- id: rel.E18_07
+  subject: ent.monolithic_erglass_comb_e18
+  predicate: COMPETES-WITH
+  object: ent.ti_sapphire_frequency_comb
+  confidence: established
+  source:
+    zotero_key: H93SHF89
+    claim: Er:glass monolithic OFC at 1.56 µm competes with Ti:sapphire combs in
+      low-noise performance while offering advantages in compactness and eye-safe
+      wavelength
+  note: '整体式 Er:glass 腔 vs. Ti:sapphire 梳的同层级竞争。
+    ent.ti_sapphire_frequency_comb 定义于 udem2002.yaml；
+    ent.monolithic_erglass_comb_e18 定义于本文件。
+
+    '
+
+- id: rel.E18_08
+  subject: meth.balanced_optical_microwave_phase_detector
+  predicate: ENABLED-BY
+  object: pri.ofc_two_dof_stabilization
+  confidence: established
+  source:
+    zotero_key: H93SHF89
+    claim: BOMPD implements the frep stabilization arm of the two-DOF OFC control
+      scheme with sub-femtosecond residual phase noise
+  note: BOMPD 是 OFC 双自由度稳定化方案中 frep 锁定臂的具体实现方法。

@@ -1,0 +1,329 @@
+# Wang 2025 — 低延迟 FPGA 数字伺服将 Er 光纤梳重频锁定到 1560 nm 超稳激光，控制带宽 1.1 MHz [技术论文]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# 核心贡献：(1) Xilinx 7k325t FPGA @400 MHz 系统性压缩 IQ 解调链路延迟；
+#   (2) 低阶 FIR + 陷波（群延迟 2.5 T_s）+ atan2 LUT/倒数乘法（11 周期，vs CORDIC 24 周期）→
+#       板级延迟 <250 ns，控制带宽 1.1 MHz；
+#   (3) 100 MHz Er:fiber 梳同时锁 fceo 与 fbeat 至 1560 nm USL，fbeat 积分相噪 168 mrad（1 Hz–1 MHz），
+#       定时抖动 139 as，归一化 mod σ_y = 7.27×10⁻¹⁸ @1 s、1.29×10⁻²² @10 000 s。
+# Framework 依赖：ent.optical_frequency_comb (udem2002.yaml)；
+#   ent.fp_cavity_system (ultrastable-laser/papers/numata2004.yaml) 作 CONDITIONED-BY 接口。
+
+meta:
+  zotero_key: "CEB7L6EM"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical
+  reliability: high
+  title: "A Low-Latency Digital Servo for Optical Frequency Comb Stabilization"
+  year: 2025
+  first_author: Wang
+  journal: "Review of Scientific Instruments"
+  doi: "10.1063/5.0280679"
+  note: >
+    [技术论文，USTC 粒子探测与电子学国家重点实验室 + 合肥微尺度 / 合肥国家实验室合作]
+    核心是"数字伺服延迟-带宽权衡"的工程实现：低阶 FIR + 陷波 + LUT/倒数乘法 atan2 → IQ 解调 50 ns，
+    整板 <250 ns，控制带宽 1.1 MHz，在保留数字相位展开/可重构/诊断集成优势同时逼近模拟 PLL。
+    跨文件引用：ent.optical_frequency_comb (udem2002.yaml)、
+    ent.fp_cavity_system (ultrastable-laser/numata2004.yaml，1560 nm USL 参考)。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.low_latency_digital_servo_w25
+    name: "低延迟 FPGA 数字伺服板（Wang 2025）"
+    aliases:
+      - "FPGA-based digital locking board"
+      - "USTC low-latency digital servo"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      光频梳 fceo 与 fbeat 的同时数字锁相电子学。板载 2×16-bit/100 MSPS ADC、2×DAC、
+      Xilinx Kintex-7 7k325t FPGA（400 MHz 主时钟）；外部参考信号缓冲做 FPGA 时钟以实现全板同步。
+      Channel 1 → fceo 环（驱动泵浦电流）；Channel 2 → fbeat 环（快 EOM + 慢 PZT）。
+      数字链路：IIR 一阶高通 → 低阶 FIR + 陷波 → DDS 混频 IQ 解调 → 改进 atan2（非 CORDIC）→
+      快慢级联 PID → DAC。
+    key_parameters:
+      fpga: "Xilinx Kintex-7 7k325t, 400 MHz 主时钟（部分链路降至 200 MHz 以单周期化 DSP）"
+      adc_dac: "2×16-bit 100 MSPS ADC (SNR 73.9 dB @50 MHz BW, ENOB 12.2 bit) + 2 路 DAC"
+      iq_demod_latency: "~50 ns"
+      total_board_latency: "<250 ns"
+      control_bandwidth: "1.1 MHz"
+      pid_architecture: "快 PID 级联慢 PID（扩展频率范围）"
+      diagnostics: "内建频率计数器、频谱分析、VNA 环路传函测量"
+    interface_requirements:
+      optical_reference: "1560 nm USL（CONDITIONED-BY ent.fp_cavity_system）"
+      microwave_reference: "外部高稳频率标准（如 Rb）作 FPGA 时钟"
+      comb_platform: "100 MHz Er:fiber 梳；致动器 = 泵浦 + EOM + PZT"
+    note: >
+      Level 2 实例节点，PART-OF ent.optical_frequency_comb（定义于 udem2002.yaml）的锁定电子学子系统；
+      CONDITIONED-BY ent.fp_cavity_system（1560 nm USL，定义于 ultrastable-laser/numata2004.yaml）。
+
+principles:
+  - id: pri.digital_servo_latency_bandwidth_tradeoff
+    name: "数字伺服延迟-带宽权衡原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      闭环数字锁相带宽 f_BW 受总延迟 τ_total（器件 τ_dev + 处理 τ_proc）限制：
+      f_BW ≲ 1/(2π·τ_total)，且受相位裕度更严约束（1/(6…10·τ_total)）。
+      降低 τ_total 的代价是精度（位宽/滤波器阶数）、稳定性（高时钟 DSP 多周期流水）或镜像抑制等功能。
+      数字伺服极限由"延迟 vs 精度 vs 时钟频率"三角权衡决定。
+    domain: "FPGA 数字控制电子学；光频梳锁相工程"
+    formula: "f_BW,max ≈ 1/(2π·τ_total)；τ_total = τ_ADC + τ_DAC + τ_filter + τ_mix + τ_arctan + τ_PID"
+    key_insight: >
+      (1) 低阶 FIR + 陷波把群延迟 5.5→2.5 T_s；
+      (2) atan2 用 LUT + 倒数乘法（恒等式 tan⁻¹(Q/I)+tan⁻¹(I/Q)=π/2 把范围压到 [0,π/4]）替代 CORDIC，
+          24→11 周期且保 18-bit 精度；
+      (3) DSP 时钟牺牲频率换单周期延迟，IQ 解调 50 ns，板级 <250 ns，带宽 1.1 MHz。
+    conditions: "FPGA 数字锁相；IQ 解调 + arctan 相位提取；闭环稳定工作"
+    preconditions:
+      - "ADC/DAC 延迟与量化噪声最小化；模拟前端群延迟可测稳定"
+      - "PID 参数通过 VNA 实测环路传函整定"
+    invalidated_when:
+      - "致动器（PZT/EOM/泵浦）响应带宽低于 f_BW，此时延迟非主导"
+      - "ADC 相噪或模拟前端噪声成为主导限制"
+      - "迁至 ASIC 后延迟不再是主矛盾"
+    source_claim: >
+      "Through the optimization of filtering and phase detection algorithms, computational latency is reduced
+      while maintaining precision, enabling a control bandwidth of 1.1 MHz ... total board latency of less than 250 ns"
+    open_questions:
+      - "进一步压缩到 ASIC 是否能达到 >5 MHz 数字控制带宽而不被致动器限制？"
+      - "在更高 fbeat 信噪比下，该权衡曲线的 Pareto 前沿位置如何随 ADC 相噪平移？"
+    contested_claims:
+      - "数字锁相相比模拟 PLL 的优势是否足以抵消残余延迟惩罚，随致动器带宽和应用场景而异"
+
+methods:
+  - id: meth.low_latency_iq_phase_detection_w25
+    name: "低延迟 IQ 解调 + 改进 atan2 数字鉴相方法（Wang 2025）"
+    status: demonstrated
+    applies_to: ent.low_latency_digital_servo_w25
+    steps_summary: >
+      1. ADC 采样 (100 MSPS, 16 bit)；2. 一阶 IIR 高通 + 低阶 FIR 低通 (群延迟 ~2.5 T_s)；
+      3. 陷波滤波器 (单位圆 4 共轭零点 + π 处一零点) 抑制镜像，零附加延迟；
+      4. DDS 本振混频得 I/Q；5. atan2：按符号/大小分类 + LUT + 倒数乘法 + 恒等式 [0,π/4] 压缩，11 周期；
+      6. 相位加 DDS 相位做相位展开（突破 ±π）；7. 快/慢级联 PID → DAC 驱动 fceo 泵浦 / fbeat EOM+PZT。
+    required_hardware:
+      - ent.low_latency_digital_servo_w25
+    advantages:
+      - "相位展开突破模拟鉴相 ±π（抑制 cycle slip）"
+      - "滤波器/鉴相可重构，温漂鲁棒"
+      - "板级延迟 <250 ns，带宽 1.1 MHz，逼近模拟 PLL"
+      - "atan2 11 周期 vs CORDIC 24 周期，同精度下延迟减半"
+    disadvantages:
+      - "400 MHz 高时钟 DSP 需 3 周期流水；200 MHz 才能单周期（采样率折中）"
+      - "ADC 相噪本底直接限制鉴相精度"
+      - "对 FPGA 布局布线敏感，复现依赖板级工程"
+    conditions:
+      - "输入 fceo、fbeat 已通过模拟前端带通/分频/放大预处理"
+      - "FPGA 主时钟锁定至低相噪外部参考（Rb 或 frep）"
+    source_claim: >
+      "the demodulation latency is reduced to 50 ns, resulting in a total board latency of less than 250 ns
+      and enabling a control bandwidth of 1.1 MHz"
+
+  - id: meth.digital_comb_frep_to_usl_locking_w25
+    name: "Er 光纤梳 frep 数字锁定到 1560 nm 超稳激光方法（Wang 2025）"
+    status: demonstrated
+    applies_to: ent.optical_frequency_comb
+    steps_summary: >
+      1. f-2f 干涉仪探测 fceo → Channel 1 → IQ 解调+PID → 调制泵浦电流；
+      2. 选梳齿与 1560 nm USL 外差得 fbeat → Channel 2 → 快 PID 驱 EOM + 慢 PID 驱 PZT；
+      3. 板载频率计数器 (1 s 门时间 × 1000 点) 评估长期稳定度；
+      4. AnaPico APPH20G 相噪仪测 1 Hz–1 MHz 积分相噪。
+    required_hardware:
+      - ent.low_latency_digital_servo_w25
+      - ent.optical_frequency_comb
+      - ent.fp_cavity_system
+    advantages:
+      - "单板同时锁 fceo 与 fbeat，诊断/调参集成"
+      - "EOM 快 + PZT 慢数字 PID 级联，无需模拟分频"
+      - "cycle-slip-free 锁定可维持 10 000 s"
+    conditions:
+      - "100 MHz Er:fiber 梳，fceo 与 fbeat 信噪比满足数字鉴相精度要求"
+      - "1560 nm USL 本身相噪低于梳本底，否则性能被参考限制"
+    source_claim: >
+      "A locking test was performed on a 100 MHz repetition frequency erbium-doped fiber optical comb,
+      using a 1560 nm ... ultrastable laser ... fbeat exhibits 7.27 × 10⁻¹⁸ at 1 s and 1.29 × 10⁻²² at 10,000 s"
+
+metrics:
+  - id: met.digital_servo_control_bandwidth_w25
+    name: "数字伺服控制带宽（Wang 2025）"
+    unit: "MHz"
+    description: >
+      闭环数字锁相环可有效抑制扰动并跟踪参考的最高频率；由整板延迟 τ_total 主导。
+    demonstrated_value:
+      value: "1.1 MHz"
+      conditions: "Xilinx 7k325t @400 MHz 主时钟；板级延迟 <250 ns；100 MHz Er:fiber 梳上闭环；VNA 实测传函"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "CEB7L6EM", claim: "enabling a control bandwidth of 1.1 MHz"}
+    theoretical_floor:
+      value: "由总延迟下限决定，f_BW ≈ 1/(2π·τ_total)；若 τ_total→50 ns 量级则 f_BW 可至数 MHz"
+      basis: "pri.digital_servo_latency_bandwidth_tradeoff"
+      gap_note: "当前 250 ns 延迟对应理论上限 ~0.6–1 MHz 量级（相位裕度依赖），实测 1.1 MHz 已接近"
+    historical_landmarks:
+      first_demonstration:
+        value: "1.1 MHz（数字伺服，光频梳稳频场景）"
+        year: 2025
+        source: {zotero_key: "CEB7L6EM"}
+      best_demonstration:
+        value: "1.1 MHz（本工作即当前最佳数字方案之一）"
+        year: 2025
+        source: {zotero_key: "CEB7L6EM"}
+
+  - id: met.digital_servo_total_latency_w25
+    name: "数字伺服板级总延迟（Wang 2025）"
+    unit: "ns"
+    description: >
+      信号从 ADC 输入到 DAC 输出经过的总延迟（含器件延迟 + 处理延迟），直接决定闭环带宽上限。
+    is_interface_metric: true
+    coupling_formula: "f_BW ≲ 1/(2π·τ_total)"
+    demonstrated_value:
+      value: "<250 ns（其中 IQ 解调 ~50 ns，整链路含 ADC/DAC）"
+      conditions: "7k325t FPGA，400 MHz 时钟，低阶 FIR + 陷波，改进 atan2"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "CEB7L6EM", claim: "total board latency of less than 250 ns"}
+    note: "参考表 II（Latency comparison of digital servo systems）显示此为当前已报道数字方案中的较低值。"
+
+  - id: met.fbeat_mod_allan_deviation_w25
+    name: "锁定梳 fbeat 归一化光载波的 modified Allan 偏差（Wang 2025）"
+    unit: "无量纲（分数频率稳定度，归一化到 1560 nm ≈ 192.3 THz 光载波）"
+    description: >
+      fbeat 锁定残差，把 fbeat 频率稳定度除以光载波频率（192 THz）得到与光钟可比的分数稳定度；
+      反映该数字伺服环能否让梳 frep 继承 1560 nm 超稳激光的稳定度。
+    demonstrated_value:
+      value: "7.27×10⁻¹⁸ @1 s；1.29×10⁻²² @10 000 s"
+      conditions: "100 MHz Er:fiber 梳 + 1560 nm USL + 本数字伺服；频率计数器 1 s 门时间 × 1000 点；cycle-slip-free"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "CEB7L6EM", claim: "fbeat exhibits 7.27 × 10⁻¹⁸ at 1 s and 1.29 × 10⁻²² at 10,000 s"}
+    theoretical_floor:
+      value: "受限于 1560 nm USL 本身的 FP 腔热噪声极限（通常 ~10⁻¹⁶ 级的激光分数不稳定度 / f_opt）"
+      basis: "pri.brownian_thermal_noise_fdt（定义于 numata2004.yaml，1560 nm USL 本体）"
+      gap_note: "fbeat 归一化数值（10⁻¹⁸）优于 USL 自身分数稳定度，表明伺服残差已低于参考本底，即为 in-loop 而非绝对频标"
+
+  - id: met.fbeat_residual_integrated_phase_noise_w25
+    name: "fbeat 残余积分相位噪声与定时抖动（Wang 2025）"
+    unit: "mrad（相噪）/ as（定时抖动）"
+    description: >
+      1 Hz–1 MHz 频带内对 fbeat 相噪谱的积分，与对应定时抖动，表征高带宽数字环对快扰动的抑制能力。
+    demonstrated_value:
+      value: "fbeat 积分相噪 168 mrad（1 Hz–1 MHz），定时抖动 139 as；fceo 积分相噪 469 mrad（1 Hz–1 MHz）"
+      conditions: "AnaPico APPH20G 相噪仪；100 MHz Er:fiber 梳闭环；1560 nm USL 参考"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "CEB7L6EM", claim: "integrated phase noise within this range is 469 mrad for fceo and 168 mrad for fbeat, corresponding to timing jitter of 139 attoseconds"}
+
+# ═══════════════════════════════════════════════
+#  RELATIONS（关系）
+# ═══════════════════════════════════════════════
+
+relations:
+  - id: rel.W25_01
+    subject: ent.low_latency_digital_servo_w25
+    predicate: PART-OF
+    object: ent.optical_frequency_comb
+    confidence: established
+    source: {zotero_key: "CEB7L6EM", claim: "a low-latency digital servo system designed for optical frequency comb stabilization ... implemented on a custom-designed FPGA-based digital board"}
+    note: "ent.optical_frequency_comb 定义于 udem2002.yaml；本数字伺服板是锁相电子学子系统。"
+
+  - id: rel.W25_02
+    subject: ent.low_latency_digital_servo_w25
+    predicate: CONDITIONED-BY
+    object: ent.fp_cavity_system
+    confidence: established
+    source: {zotero_key: "CEB7L6EM", claim: "The repetition rate of the optical frequency comb is locked to a 1560 nm ultrastable laser"}
+    note: >
+      跨专题接口：1560 nm 超稳激光的稳定度由 FP 腔系统提供（定义于
+      topics/ultrastable-laser/papers/numata2004.yaml 的 ent.fp_cavity_system）。
+      该伺服的 fbeat 路径稳定度上限由 USL 自身决定。
+
+  - id: rel.W25_03
+    subject: ent.low_latency_digital_servo_w25
+    predicate: CHARACTERIZED-BY
+    object: met.digital_servo_control_bandwidth_w25
+    confidence: established
+    source: {zotero_key: "CEB7L6EM", claim: "enabling a control bandwidth of 1.1 MHz"}
+    temporal_role: validates
+
+  - id: rel.W25_04
+    subject: ent.low_latency_digital_servo_w25
+    predicate: CHARACTERIZED-BY
+    object: met.digital_servo_total_latency_w25
+    confidence: established
+    source: {zotero_key: "CEB7L6EM", claim: "total board latency of less than 250 ns"}
+
+  - id: rel.W25_05
+    subject: meth.digital_comb_frep_to_usl_locking_w25
+    predicate: CHARACTERIZED-BY
+    object: met.fbeat_mod_allan_deviation_w25
+    confidence: established
+    source: {zotero_key: "CEB7L6EM", claim: "modified Allan deviation of the measured beat signal, normalized to the optical frequency, is 7.27 × 10⁻¹⁸ at 1 second"}
+
+  - id: rel.W25_06
+    subject: meth.digital_comb_frep_to_usl_locking_w25
+    predicate: CHARACTERIZED-BY
+    object: met.fbeat_residual_integrated_phase_noise_w25
+    confidence: established
+    source: {zotero_key: "CEB7L6EM", claim: "168 mrad for fbeat, corresponding to timing jitter of 139 attoseconds"}
+
+  - id: rel.W25_07
+    subject: met.digital_servo_control_bandwidth_w25
+    predicate: OPERATIONALIZED-AS
+    object: meth.low_latency_iq_phase_detection_w25
+    confidence: established
+    source: {zotero_key: "CEB7L6EM", claim: "Through the optimization of filtering and phase detection algorithms, computational latency is reduced while maintaining precision"}
+
+  - id: rel.W25_08
+    subject: meth.low_latency_iq_phase_detection_w25
+    predicate: ENABLED-BY
+    object: pri.digital_servo_latency_bandwidth_tradeoff
+    confidence: established
+    source: {zotero_key: "CEB7L6EM", claim: "a trade-off must therefore be made among precision, latency, [and resources]"}
+
+  - id: rel.W25_09
+    subject: meth.digital_comb_frep_to_usl_locking_w25
+    predicate: ENABLED-BY
+    object: meth.low_latency_iq_phase_detection_w25
+    confidence: established
+    source: {zotero_key: "CEB7L6EM", claim: "The digital board comprises three main components: ADC, FPGA, and DAC ... phase detector ... PID controller processes the phase information to generate a feedback signal"}
+
+  - id: rel.W25_10
+    subject: met.digital_servo_control_bandwidth_w25
+    predicate: BOUNDED-BY
+    object: pri.digital_servo_latency_bandwidth_tradeoff
+    confidence: established
+    source: {zotero_key: "CEB7L6EM", claim: "the control bandwidth of the digital servo system is constrained by substantial computational latency"}
+    note: >
+      在该原理框架内，fpga 主时钟选择、FIR 阶数、atan2 实现方式共同决定 τ_total；
+      实测结果（延迟 300 ns → 带宽 ~80 kHz；延迟 500 ns → 带宽 ~70 kHz）进一步佐证该边界关系。
+    breakthrough_paths:
+      - direction: meth.low_latency_iq_phase_detection_w25
+        expected_gain: "IQ 解调 50 ns → 带宽从 ~100 kHz 级提升到 1.1 MHz"
+        status: demonstrated
+        source: {zotero_key: "CEB7L6EM", claim: "demodulation latency is reduced to 50 ns ... control bandwidth of 1.1 MHz"}
+      - direction: pri.digital_servo_latency_bandwidth_tradeoff
+        expected_gain: "ASIC / 更高时钟 FPGA 把 τ_total 压至 <50 ns，原则上支持 >5 MHz；需同步改善 ADC 相噪"
+        status: proposed
+        source: {zotero_key: "CEB7L6EM", claim: "latency ... from intrinsic delays of hardware components"}
+        note: "ASIC 路线为工程演进常识；本文未做实验，但明确把器件延迟列为剩余瓶颈。"
+
+  - id: rel.W25_11
+    subject: met.fbeat_mod_allan_deviation_w25
+    predicate: BOUNDED-BY
+    object: pri.digital_servo_latency_bandwidth_tradeoff
+    confidence: inferred
+    source: {zotero_key: "CEB7L6EM", claim: "The results show that increasing delay degrades both [phase noise and long-term stability]"}
+    note: >
+      论文表 III 对照实验：人为增加 300 ns 延迟 → fbeat modσ_y 升至 2.88×10⁻¹⁷；
+      500 ns 延迟 → 升至 4.40×10⁻¹⁷（fceo），证实延迟降低对 in-loop 残差稳定度的直接收益。
+    breakthrough_paths:
+      - direction: meth.low_latency_iq_phase_detection_w25
+        expected_gain: "把 fbeat modσ_y@1 s 从典型数字方案的 ~10⁻¹⁷ 改进到 7.27×10⁻¹⁸"
+        status: demonstrated
+        source: {zotero_key: "CEB7L6EM", claim: "fbeat exhibits 7.27 × 10⁻¹⁸ at 1 s"}

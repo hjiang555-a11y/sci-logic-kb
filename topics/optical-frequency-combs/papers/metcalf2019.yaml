@@ -1,0 +1,507 @@
+# Metcalf 2019 — 30 GHz EO + SiN 纳米光子超连续天文梳首次在 10 m HET 上支持 NIR M 型矮星 RV 光谱 [应用技术里程碑]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical — 天文光梳/系外行星 RV 测量应用论文
+#   核心贡献：
+#     (1) 首次实现覆盖 700–1600 nm、30 GHz 齿距的 EO + 纳米光子 SiN 天文梳；
+#     (2) 在 10 m Hobby–Eberly 望远镜 + HPF 光谱仪上运行数月，实现 NIR 首个 ~1 m/s 级 RV 精度
+#         （Barnard 星 3 个月 RMS 1.53 m/s）；
+#     (3) 差分仪器稳定度达到 <10 cm/s（300 min 平均 ~6 cm/s），接近光子噪声极限；
+#     (4) 工程路径：EO 电光调制 → 30 GHz FP 滤波 → Yb 光纤放大 → 70 fs 压缩 → 25 mm SiN 波导
+#         低功率（525 mW）展宽 + 静/动态幅度滤波整形 + GPS-disciplined 时钟溯源到 SI 秒。
+#   Framework 依赖：udem2002.yaml / giunta2019.yaml 已定义 ent.optical_frequency_comb、
+#     pri.femtosecond_comb_frequency_ruler；ycas2012.yaml / leopardi2017.yaml 已分别提供
+#     ent.near_ir_astro_comb_y12 与 meth.astro_comb_rv_calibration。本文件是 NIR + EO + 纳米光子
+#     一体化方案的首次天文部署实例。
+
+meta:
+  zotero_key: "9YYDT9H4"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical
+  reliability: high
+  title: "Stellar spectroscopy in the near-infrared with a laser frequency comb"
+  year: 2019
+  first_author: "Metcalf"
+  journal: "Optica"
+  volume: 6
+  issue: 2
+  pages: "233-239"
+  doi: "10.1364/OPTICA.6.000233"
+  note: >
+    [应用技术里程碑] NIST（Diddams/Papp/Quinlan/Carlson/Hickstein 等）+ Penn State
+    （Mahadevan/Halverson/Ramsey/Wright 等）+ UT Austin McDonald + Macquarie 等合作。
+    在 McDonald 天文台 10 m HET 搭载自制 30 GHz EO+SiN 天文梳 + 低温真空 HPF 交叉色散
+    echelle 光谱仪（R≈53000，28 阶，810–1280 nm），2018-05 起自动长期运行。
+    梳溯源至 GPS 驯服时钟，1 s 分数稳定度 2×10⁻¹¹，>1 day <3×10⁻¹³；
+    Barnard 星 3 个月 RV 散布 RMS 1.53 m/s（5 min 原始 2.83 m/s），
+    仪器差分漂移 10 min 20 cm/s、300 min bin 6 cm/s。
+    跨文件节点引用：ent.optical_frequency_comb 定义于 udem2002.yaml；
+    ent.electro_optic_frequency_comb 与 meth.astro_comb_rv_calibration 分别位于专题顶层与
+    ycas2012.yaml；pri.self_referencing_f2f 在此论文中未启用（梳直接锁到微波，
+    无需 f-2f 自参考）。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.hpf_nir_astrocomb_m19
+    name: "HPF 30 GHz EO + 纳米光子 NIR 天文梳（Metcalf 2019 系统）"
+    aliases: ["HPF astrocomb", "30 GHz EO-SiN astrocomb", "HET comb calibrator"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      以 1064 nm CW 半导体激光为种子，经集成波导 EO 调制器 + 30 GHz 微波源产生 ~100 根等间距
+      （30 GHz）梳齿；通过 30 GHz Fabry–Perot 腔抑制宽带电学热噪声；Yb 光纤放大 + 色散压缩至
+      ~70 fs；射入 25 mm 长 SiN 纳米光子波导（750 nm × 690 nm）产生 700–1600 nm 超连续；
+      静态 + 可编程幅度滤波整形光谱平坦度；输出耦合到 HPF 光谱仪作为 NIR 实时波长标尺。
+      系统装配在 60 × 152 cm 面包板上，在 HET 机房自主连续运行数月。
+    key_parameters:
+      mode_spacing: "30 GHz（由微波参考决定）"
+      spectral_coverage: "700–1600 nm（EO + SiN SC）"
+      num_modes: "~100 根（EO 初始梳）→ 展宽后覆盖 ~1 个八度"
+      seed_laser: "1064 nm CW 半导体激光"
+      pulse_width_after_compression: "~70 fs"
+      sin_waveguide_dim: "25 mm × 750 nm × 690 nm"
+      sc_input_power: "525 mW（18 pJ 脉冲能量）"
+      footprint: "60 cm × 152 cm 面包板"
+      autonomy: "自 2018-05 起自动运行"
+    interface_requirements:
+      microwave_reference: "GPS-disciplined clock（溯源到 SI 秒）"
+      optical_delivery: "50 µm 多模光纤 → 300 µm 动态光纤搅动器 → 2\" 积分球 → HPF 定标光纤"
+      spectrograph: "ent.hpf_spectrograph_m19"
+    note: >
+      Level 2 实例节点，PART-OF ent.optical_frequency_comb（定义于 udem2002.yaml）；
+      同时属于 ent.electro_optic_frequency_comb 专题顶层实例。与 ent.near_ir_astro_comb_y12
+      （Ycas 2012，Ti:Sa + FP 模式过滤路线）COMPETES-WITH：二者同为 NIR 天文梳，
+      但本方案用 EO 直接产生 GHz 齿距 + 纳米光子展宽，鲁棒性更高。
+
+  - id: ent.sin_nanophotonic_waveguide_m19
+    name: "氮化硅纳米光子非线性波导（HPF 梳展宽段）"
+    aliases: ["Si3N4 nanophotonic waveguide", "SiN chip"]
+    hierarchy_level: 3
+    status: demonstrated
+    function: >
+      5 mm × 3 mm SiN 芯片上刻蚀的 25 mm 长 × 750 nm 宽 × 690 nm 厚波导，
+      紧束缚 + 工程化反常色散提供高非线性与宽带相位匹配，
+      将 70 fs / 30 GHz EO 梳脉冲以仅 525 mW 平均功率展宽至 700–1600 nm 连续谱，
+      同时保持 30 GHz 齿距与相干性（910 nm、1210 nm 高分辨率观测证实梳结构存留）。
+    key_parameters:
+      chip_size: "5 mm × 3 mm"
+      waveguide_length: "25 mm"
+      core_cross_section: "750 nm × 690 nm"
+      input_avg_power: "525 mW"
+      input_pulse_energy: "18 pJ"
+    note: >
+      PART-OF ent.hpf_nir_astrocomb_m19。低耦合功率显著降低热负载，是长期无人值守运行关键。
+
+  - id: ent.hpf_spectrograph_m19
+    name: "Habitable Zone Planet Finder (HPF) 低温真空 NIR echelle 光谱仪"
+    aliases: ["HPF spectrograph"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      1.5 m × 3 m 真空封装交叉色散 echelle 光谱仪，R = λ/Δλ ≈ 53 000，28 阶覆盖 810–1280 nm，
+      2048×2048 HgCdTe H2RG 探测器（截止 1.7 µm）。光学平台低温冷却 + mK 级温控。
+      三输入光纤（星光、sky、定标）同时工作以追踪漂移。每日 LN₂ 加液引起 15–20 m/s 热漂移，
+      需梳实时定标。
+    key_parameters:
+      resolving_power: "R ≈ 53 000"
+      spectral_range: "810–1280 nm（28 echelle 阶）"
+      detector: "2048×2048 HgCdTe H2RG，截止 1.7 µm"
+      temperature_stability: "mK 级（光学平台）"
+      daily_thermal_drift: "15–20 m/s 峰峰（主要来自 LN₂ 填充）"
+    note: >
+      本文未重新设计光谱仪本体（Mahadevan 等早前工作），但作为系统级实体记录以支撑梳-光谱仪
+      接口与差分 RV 测量方法。
+
+  - id: ent.dynamic_fiber_scrambler_m19
+    name: "动态光纤搅动器 + 积分球模态扰动系统"
+    aliases: ["dynamic fiber agitator", "Giga Concept agitator"]
+    hierarchy_level: 3
+    status: demonstrated
+    function: >
+      300 µm 芯径光纤在压缩状态下以几 Hz 频率做扭转振荡，与 2 英寸积分球串联构成时间扰动 +
+      空间平均双层模态噪声抑制，在 NIR 高模式数条件下保证送入 HPF 定标光纤的光斑照度分布稳定。
+    key_parameters:
+      agitator_freq: "few Hz（扭转振荡）"
+      integrating_sphere: "2 inch"
+      fiber_diameter: "300 µm 动态搅动 + 50 µm 多模耦合"
+    note: >
+      PART-OF ent.hpf_nir_astrocomb_m19 定标输出链。是限制链 pri.fiber_modal_noise_nir_rv_limit
+      的直接缓解器件。
+
+principles:
+  - id: pri.eo_comb_direct_ghz_spacing
+    name: "电光调制器直接产生 GHz 级梳齿间距原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      以 CW 激光为载波，用微波频率 f_m（~30 GHz）驱动集成波导相位/强度 EO 调制器级联，
+      生成数十到上百根严格等间距（间距 = f_m）的光学边带，构成梳齿间距直接由微波源决定的
+      频率梳。相比飞秒激光锁模梳（≲1 GHz 重频），EO 梳可在不做 Fabry–Perot 模式过滤的情况下
+      直接匹配天文高分辨率光谱仪像元/线对分辨需求。
+    domain: "电光频率梳；天文光梳工程"
+    formula: "ν_n = ν_0 + n·f_m，n ∈ [−N/2, N/2]，N 取决于调制深度与级联级数"
+    key_insight: >
+      把"梳齿间距"与"光谱仪分辨率"的匹配从"光学滤波（高损耗、对齐漂移）"转移为"微波源选择"，
+      本质提升天文梳稳定性与可用率；代价是微波源相噪通过梳乘法转移到梳齿线宽。
+    conditions:
+      - "驱动微波源相噪足够低，避免梳齿线宽过宽"
+      - "CW 种子激光谱纯度高，相噪不污染梳齿"
+    preconditions:
+      - "EO 调制器带宽 ≥ 所需齿数 × f_m"
+      - "级联损耗与色散可被后续放大补偿"
+    invalidated_when:
+      - "需要 1 GHz 以下齿距（此时 EO 路线丧失优势，飞秒锁模更合适）"
+    source_claim: >
+      "The frequency comb begins with 1064 nm CW light... driven by a 30 GHz microwave source.
+      This results in a comb of approximately 100 teeth spaced exactly by the microwave drive frequency."
+
+  - id: pri.nanophotonic_supercontinuum_low_power
+    name: "纳米光子波导低功率超连续展宽原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      以亚微米截面 SiN 波导实现强模场约束（有效模面积 ~0.5 µm²）与工程化反常色散，
+      在皮焦耳量级脉冲能量下即可达到 SPM + 孤子 + 色散波共同作用的相干超连续展宽，
+      覆盖约一个光学八度，且热负载远低于传统 PCF 方案。
+    domain: "集成非线性光子学；光梳展宽"
+    formula: "L_nl ~ 1/(γ·P_peak)；γ(SiN) ≫ γ(silica PCF) → 所需 P_peak 降低 1–2 数量级"
+    key_insight: >
+      "低功率展宽"把超连续段从高功率自由空间/PCF 系统转为芯片级、低热漂移器件，
+      这是天文梳长期无人值守连续运行的工程关键。
+    conditions:
+      - "波导色散设计在泵浦波长附近可支持孤子动力学"
+      - "输入脉冲 ≤ 100 fs，能量 ~10 pJ 量级"
+    preconditions:
+      - "波导端面耦合损耗可控"
+      - "SiN 层无显著双光子吸收（NIR 可满足）"
+    source_claim: >
+      "a supercontinuum spectrum spanning 700–1600 nm with only 525 mW of incident average power
+      (18 pJ of pulse energy). This low power reduces the thermal loading and aides the long-term operability."
+
+  - id: pri.fiber_modal_noise_nir_rv_limit
+    name: "多模光纤模态噪声对 NIR RV 精度的限制原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      当相干或准相干光通过多模光纤照射光谱仪狭缝时，光纤内的模式干涉导致出射光斑照度分布
+      随机涨落，叠加到探测谱上后在波长维度产生伪漂移，直接限制 RV 精度。
+      该效应在 NIR 比可见波段更严重（模式数更少、干涉斑更粗）。
+      时间扰动（动态搅动器）+ 空间平均（积分球）+ 更激进的扰模只能部分抑制。
+    domain: "天文仪器；光纤光学"
+    key_insight: >
+      即使完美光梳 + 完美光谱仪，只要定标/星光耦合链依赖多模光纤，模态噪声就是 RV 精度
+      天花板之一——本论文 1.53 m/s 星 RV 与 6 cm/s 差分仪器漂移之间的差距，
+      主要即由星-梳光路非共模模态噪声构成。
+    conditions:
+      - "星光/定标光经过多模或富模光纤"
+      - "扰模不能在所有关联时间尺度上遍历全部模态分布"
+    source_claim: >
+      "the calibration light splays across a significant fraction of the 30 arcmin focal plane—leading to
+      fiber modal noise, which is known to be worse in the NIR than the optical"
+    open_questions:
+      - "完整光路上的模态噪声理论下限在具体仪器上是多少？"
+      - "主动（非互易）模态扰动能否把 NIR 模态噪声压到 <10 cm/s？"
+
+  - id: pri.gps_disciplined_si_traceability
+    name: "GPS-驯服时钟提供梳 SI-秒溯源原理（天文梳场景）"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      以 GPS 共视驯服的本地铷/石英振荡器作为梳重频 + f_m 驱动源的参考，
+      使梳齿绝对频率溯源到 SI 秒；分数稳定度 1 s ~2×10⁻¹¹，≥1 day <3×10⁻¹³，
+      对 RV 定标而言已远低于光子与模态噪声限制。
+    domain: "精密频率计量；天文仪器"
+    key_insight: >
+      天文 RV 定标对梳稳定度的需求远低于光钟；GPS-disciplined 时钟即可饱和，
+      把绝对频率定标从"瓶颈"降级为"非瓶颈"，复杂度转移到光谱仪稳定性与光路模态控制。
+    source_claim: >
+      "the stability of the comb matches that of the GPS-disciplined clock with fractional uncertainty of
+      2 × 10⁻¹¹ at 1 s, and <3 × 10⁻¹³ for time scales of one day and longer"
+
+methods:
+  - id: meth.eo_sin_astrocomb_calibration_m19
+    name: "EO + 纳米光子 SiN 天文梳 HPF 实时波长定标方法"
+    status: demonstrated
+    applies_to: ent.hpf_spectrograph_m19
+    steps_summary: >
+      1. 1064 nm CW → EO 调制产生 30 GHz × ~100 根初始梳；
+      2. 30 GHz FP 腔抑制宽带电学热噪声；
+      3. Yb 光纤放大 + 色散压缩至 ~70 fs；
+      4. 25 mm SiN 纳米波导展宽至 700–1600 nm 超连续；
+      5. 静态 + 可编程幅度滤波整形光谱包络平坦度；
+      6. 50 µm MMF → 300 µm 动态搅动器 → 2\" 积分球 → 定标光纤 → HPF；
+      7. HPF 在 810–1280 nm 28 阶同时记录星光 + 梳光；
+      8. 用梳齿作参考反演每阶波长解，再施加到星光谱计算 RV，扣除光谱仪慢漂移。
+    required_hardware:
+      - ent.hpf_nir_astrocomb_m19
+      - ent.sin_nanophotonic_waveguide_m19
+      - ent.dynamic_fiber_scrambler_m19
+      - ent.hpf_spectrograph_m19
+    advantages:
+      - "30 GHz 齿距天然匹配 R≈5×10⁴ 光谱仪，无需额外模式过滤"
+      - "梳展宽段用纳米光子低功率方案，长期热稳定"
+      - "自主连续运行 ≥ 数月，真正达到天文运行可用度"
+      - "梳溯源到 GPS-SI 秒，绝对波长不漂移"
+    disadvantages:
+      - "微波相噪通过梳乘法转移，齿线宽高于飞秒锁模梳（对 RV 不构成瓶颈，但限制未来光钟级应用）"
+      - "初始梳齿数 ~100，需 SC 展宽后才能覆盖 HPF 全阶"
+      - "光谱包络整形依赖 WaveShaper 类可编程滤波，引入插损"
+    conditions:
+      - "SiN 波导热稳定、耦合保持"
+      - "模态噪声抑制链（搅动 + 积分球）持续工作"
+    source_claim: >
+      "We have developed a 30 GHz optical frequency comb spanning 700–1600 nm built on integrated
+      electro-optic (EO) modulators and high-efficiency nanophotonic nonlinear waveguides to provide a
+      robust calibrator for long-term operation at the telescope."
+
+  - id: meth.common_comb_differential_rv_test
+    name: "同梳双光纤差分 RV 漂移表征方法"
+    status: demonstrated
+    applies_to: ent.hpf_spectrograph_m19
+    steps_summary: >
+      将同一束梳光同时注入 HPF 的 sky 与 science 两路光纤（定标光绕望远镜焦平面均匀
+      分布），每 5–10 min 记一次双通道 RV，求两通道之差以消除梳共模漂移，
+      剩余散布即为光谱仪 + 探测器 + 光路非共模漂移极限。多日 bin 后得到 300 min 6 cm/s。
+    required_hardware:
+      - ent.hpf_nir_astrocomb_m19
+      - ent.hpf_spectrograph_m19
+    advantages:
+      - "独立于星光直接给出仪器端 RV 噪声本底"
+      - "可分辨模态 / 探测器 / 数据约简残差等非共模误差"
+    disadvantages:
+      - "不能捕获星-梳非共模光路误差（如真实星光注入模态）"
+    conditions:
+      - "梳为两通道共同参考"
+      - "曝光时间足够短以避免慢漂移混叠"
+    source_claim: >
+      "The difference of the two channels should ideally be zero within the uncertainty of the photon
+      noise... the scatter of a single 10 min differential drift measurement is at the 20 cm/s level...
+      the RV precision improves approximately as the square root of total measurement time to as low
+      as 6 cm/s at 300 min."
+
+metrics:
+  - id: met.astrocomb_mode_spacing_m19
+    name: "天文梳齿距（HPF EO 梳）"
+    unit: "GHz"
+    description: >
+      梳齿频率间距，决定与天文光谱仪分辨率的匹配：R≈5×10⁴ 要求齿距 ≳ 10 GHz 方能逐齿解析。
+    is_interface_metric: true
+    coupling_formula: "δν_inst(R,λ) = c/(R·λ) → 梳齿需 ≥ δν_inst 才能逐齿分辨"
+    demonstrated_value:
+      value: "30 GHz（由微波源锁定，逐齿分辨于 910、1210 nm 已演示）"
+      conditions: "HPF R≈53000，810–1280 nm；910/1210 nm 高分辨光谱观察到分立齿"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "9YYDT9H4", claim: "30 GHz comb modes centered at 910 and 1210 nm"}
+
+  - id: met.astrocomb_spectral_coverage_m19
+    name: "天文梳谱覆盖（HPF EO + SiN 方案）"
+    unit: "nm"
+    description: >
+      展宽后连续谱覆盖范围，决定可同时定标的 echelle 阶数与 RV 信息带宽。
+    is_interface_metric: true
+    demonstrated_value:
+      value: "700–1600 nm"
+      conditions: "525 mW 平均功率入射 25 mm SiN 波导；覆盖 HPF 全部 28 阶 810–1280 nm"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "9YYDT9H4", claim: "supercontinuum spectrum spanning 700–1600 nm with only 525 mW of incident average power"}
+    historical_landmarks:
+      first_demonstration:
+        value: "700–1600 nm，30 GHz 齿距，纳米光子 SC"
+        year: 2019
+        source: {zotero_key: "9YYDT9H4"}
+        note: "首次在 NIR 天文 RV 定标中演示 EO + 纳米光子一体化方案"
+
+  - id: met.comb_fractional_stability_m19
+    name: "梳分数频率稳定度（GPS-驯服）"
+    unit: "无量纲（Allan 偏差）"
+    description: >
+      梳齿相对 GPS-disciplined 时钟的分数频率稳定度，决定梳本身对 RV 定标的贡献项。
+    demonstrated_value:
+      value: "2×10⁻¹¹ @ 1 s；<3×10⁻¹³ @ ≥1 day"
+      conditions: "梳 vs. 频率稳定参考激光的光学外差测量；对应 GPS-disciplined 时钟规格"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "9YYDT9H4", claim: "fractional uncertainty of 2 × 10⁻¹¹ at 1 s, and <3 × 10⁻¹³ for time scales of one day and longer"}
+    theoretical_floor:
+      value: "受限于 GPS-disciplined 本振；对 RV（1 m/s = 3×10⁻⁹）远未触顶"
+      basis: "微波本振 Allan 偏差"
+      gap_note: "对天文 RV 应用已过剩；升级空间在光谱仪与光路而非梳"
+
+  - id: met.stellar_rv_precision_nir_m19
+    name: "NIR 恒星 RV 精度（HPF + EO-SiN 梳定标，Barnard 星）"
+    unit: "m/s"
+    description: >
+      综合（望远镜 + 大气 + 星 + 光纤 + 光谱仪 + 探测器 + 梳定标）的 on-sky RV 测量散布。
+    demonstrated_value:
+      value: "5 min 单次 2.83 m/s；1 h track bin 1.53 m/s RMS（3 个月时间尺度）"
+      conditions: "HET 10 m；Barnard 星（M4）；2018-05 起 118 次高 SNR 观测；5 min 曝光防饱和"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "9YYDT9H4", claim: "the scatter is reduced to 1.53 m/s. This RV precision is unprecedented in the NIR"}
+    historical_landmarks:
+      first_demonstration:
+        value: "NIR 1.53 m/s（HgCdTe 探测器 + 光梳定标）"
+        year: 2019
+        source: {zotero_key: "9YYDT9H4"}
+        note: "NIR 首次达到可见光 HARPS 级（HARPS on Barnard 星 1.23 m/s）"
+
+  - id: met.hpf_instrumental_rv_precision_m19
+    name: "HPF 仪器差分 RV 漂移（同梳双纤测试）"
+    unit: "cm/s"
+    description: >
+      消除梳共模漂移后，HPF 光谱仪 + 光纤 + 探测器 + 数据约简的剩余 RV 噪声。
+    demonstrated_value:
+      value: "10 min bin 20 cm/s；300 min bin 6 cm/s；6 天内无显著漂移"
+      conditions: "sky 与 science 两光纤同梳照射，差分求漂移；2018 多夜测试"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "9YYDT9H4", claim: "the RV precision improves approximately as the square root of total measurement time to as low as 6 cm/s at 300 min"}
+    theoretical_floor:
+      value: "光子噪声极限 3.7 cm/s @ 10 min"
+      basis: "HPF 梳光子统计"
+      gap_note: "当前 20 cm/s @ 10 min 约 5× 光子极限，剩余来自模态/探测器/约简残差"
+
+# ═══════════════════════════════════════════════
+#  RELATIONS（关系）
+# ═══════════════════════════════════════════════
+
+relations:
+  - id: rel.M19_01
+    subject: ent.sin_nanophotonic_waveguide_m19
+    predicate: PART-OF
+    object: ent.hpf_nir_astrocomb_m19
+    confidence: established
+    source: {zotero_key: "9YYDT9H4", claim: "focused into a 25 mm long nonlinear silicon nitride (SiN) waveguide"}
+
+  - id: rel.M19_02
+    subject: ent.dynamic_fiber_scrambler_m19
+    predicate: PART-OF
+    object: ent.hpf_nir_astrocomb_m19
+    confidence: established
+    source: {zotero_key: "9YYDT9H4", claim: "a 300 μm dynamic fiber agitator, which is coupled to one port of a 2 inch integrating sphere"}
+
+  - id: rel.M19_03
+    subject: ent.hpf_nir_astrocomb_m19
+    predicate: CHARACTERIZED-BY
+    object: met.astrocomb_mode_spacing_m19
+    confidence: established
+    source: {zotero_key: "9YYDT9H4", claim: "teeth spaced exactly by the microwave drive frequency"}
+    temporal_role: validates
+
+  - id: rel.M19_04
+    subject: ent.hpf_nir_astrocomb_m19
+    predicate: CHARACTERIZED-BY
+    object: met.astrocomb_spectral_coverage_m19
+    confidence: established
+    source: {zotero_key: "9YYDT9H4", claim: "supercontinuum spectrum spanning 700–1600 nm"}
+    temporal_role: validates
+
+  - id: rel.M19_05
+    subject: ent.hpf_nir_astrocomb_m19
+    predicate: CHARACTERIZED-BY
+    object: met.comb_fractional_stability_m19
+    confidence: established
+    source: {zotero_key: "9YYDT9H4", claim: "stability of the comb matches that of the GPS-disciplined clock"}
+    temporal_role: validates
+
+  - id: rel.M19_06
+    subject: ent.hpf_spectrograph_m19
+    predicate: CHARACTERIZED-BY
+    object: met.hpf_instrumental_rv_precision_m19
+    confidence: established
+    source: {zotero_key: "9YYDT9H4", claim: "comb-calibrated HPF has the intrinsic stability to support infrared spectroscopy with precision below 10 cm/s"}
+    temporal_role: validates
+
+  - id: rel.M19_07
+    subject: meth.eo_sin_astrocomb_calibration_m19
+    predicate: CHARACTERIZED-BY
+    object: met.stellar_rv_precision_nir_m19
+    confidence: established
+    source: {zotero_key: "9YYDT9H4", claim: "stellar RVs approaching 1 m/s"}
+    temporal_role: validates
+
+  - id: rel.M19_08
+    subject: meth.eo_sin_astrocomb_calibration_m19
+    predicate: ENABLED-BY
+    object: pri.eo_comb_direct_ghz_spacing
+    confidence: established
+    source: {zotero_key: "9YYDT9H4", claim: "a comb of approximately 100 teeth spaced exactly by the microwave drive frequency"}
+
+  - id: rel.M19_09
+    subject: meth.eo_sin_astrocomb_calibration_m19
+    predicate: ENABLED-BY
+    object: pri.nanophotonic_supercontinuum_low_power
+    confidence: established
+    source: {zotero_key: "9YYDT9H4", claim: "supercontinuum spectrum spanning 700–1600 nm with only 525 mW of incident average power"}
+
+  - id: rel.M19_10
+    subject: meth.eo_sin_astrocomb_calibration_m19
+    predicate: ENABLED-BY
+    object: pri.gps_disciplined_si_traceability
+    confidence: established
+    source: {zotero_key: "9YYDT9H4", claim: "referenced to a GPS-disciplined clock that provides absolute traceability to the SI second"}
+
+  - id: rel.M19_11
+    subject: met.hpf_instrumental_rv_precision_m19
+    predicate: OPERATIONALIZED-AS
+    object: meth.common_comb_differential_rv_test
+    confidence: established
+    source: {zotero_key: "9YYDT9H4", claim: "The difference of the RVs of the two channels is shown in Fig. 4(c)"}
+
+  - id: rel.M19_12
+    subject: met.stellar_rv_precision_nir_m19
+    predicate: BOUNDED-BY
+    object: pri.fiber_modal_noise_nir_rv_limit
+    confidence: established
+    source: {zotero_key: "9YYDT9H4", claim: "leading to fiber modal noise, which is known to be worse in the NIR than the optical"}
+    breakthrough_paths:
+      - direction: meth.common_comb_differential_rv_test
+        expected_gain: "把差分仪器漂移降到 <10 cm/s（仪器端非瓶颈），
+          暴露模态噪声残差为主导项"
+        status: demonstrated
+        source: {zotero_key: "9YYDT9H4", claim: "6 cm/s at 300 min"}
+      - direction: pri.nanophotonic_supercontinuum_low_power
+        expected_gain: "片上单模 SC 替代多模光纤段，减少模态干涉源"
+        status: proposed
+        source: {zotero_key: "9YYDT9H4", claim: "Further improvements ... should be possible with algorithmic improvements, better characterization of the NIR detectors, and better modal scrambling"}
+        note: "本文未完成，仅指明路径；需结合全单模光路工程化"
+
+  - id: rel.M19_13
+    subject: met.hpf_instrumental_rv_precision_m19
+    predicate: BOUNDED-BY
+    object: pri.fiber_modal_noise_nir_rv_limit
+    confidence: established
+    source: {zotero_key: "9YYDT9H4", claim: "RV scatter is currently about 5 times greater than the photon-limited precision (3.7 cm/s in 10 min)"}
+    breakthrough_paths:
+      - direction: meth.astro_comb_rv_calibration
+        expected_gain: "更激进的扰模 + 探测器定标改进，接近 3.7 cm/s 光子极限"
+        status: proposed
+        source: {zotero_key: "9YYDT9H4", claim: "Further improvements towards the photon-limited precision should be possible with algorithmic improvements, better characterization of the NIR detectors, and better modal scrambling"}
+        note: "meth.astro_comb_rv_calibration 定义于 topics/optical-frequency-combs/papers/ycas2012.yaml；这里引用其定标范式作为后续优化方向的通用框架。"
+
+  - id: rel.M19_14
+    subject: ent.hpf_nir_astrocomb_m19
+    predicate: COMPETES-WITH
+    object: ent.near_ir_astro_comb_y12
+    confidence: established
+    source: {zotero_key: "9YYDT9H4", claim: "Multiple frequency comb approaches targeting astronomical spectrograph calibration have been explored, including mode filtering, EO generation, and microresonators"}
+    note: >
+      Ycas 2012 采用 Ti:Sa + Fabry–Perot 模式过滤得到 GHz 齿距 NIR 天文梳；
+      Metcalf 2019 采用 EO 直接 30 GHz + 纳米光子 SC，免去模式过滤滤波链。
+      二者同在 NIR 天文梳层面解同一问题，工程路径不同，长期稳定性取舍不同。
+
+  - id: rel.M19_15
+    subject: ent.hpf_nir_astrocomb_m19
+    predicate: CONDITIONED-BY
+    object: ent.hpf_spectrograph_m19
+    confidence: established
+    source: {zotero_key: "9YYDT9H4", claim: "This comb-based calibrator provides tailored light to the stable Habitable Zone Planet Finder (HPF) spectrograph"}
+    note: "梳的齿距、光谱整形、光纤接口均由 HPF 光谱仪分辨率与定标入口约束，构成外围条件接口。"

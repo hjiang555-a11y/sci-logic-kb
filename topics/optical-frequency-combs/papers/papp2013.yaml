@@ -1,0 +1,389 @@
+# Papp 2013 — 电光调制边带参量种子注入，精确定义微腔梳的模间距 [方法/原理技术论文]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical
+#   核心贡献：
+#     (1) 提出 "parametric seeding"：将强度调制的泵浦边带（feo≈FSR）注入微腔，强制梳的模间距 Δν 精确锁定于 feo，
+#         打破以往微梳模间距由腔 FSR 偶然决定的局面；
+#     (2) 展示 Δν 在 ~10 MHz 范围内可由射频 feo 连续调谐，绝对线间距 Allan 偏差达 1.6×10⁻¹³（1 s），
+#         较既有微梳线间距稳定度提升 ~10×；
+#     (3) 揭示微梳通常由多个独立子梳（subcomb，mi≈20、mi≈60 的初级参量过程）叠加组成，
+#         并演示参量种子注入可部分 injection-lock 子梳、产生跨 >54 模完全等间距（≤2 Hz 偏差）的梳谱；
+#     (4) 为后续通过热稳定化/孤子机制（Yi 2016 等）获得确定性锁模微梳提供物理线索（调谐范围 / 稳定性受模族、Raman、热双稳限制）。
+#   节点复用：ent.microresonator_frequency_comb（kippenberg2011/2018）、pri.parametric_four_wave_mixing_comb、
+#     pri.microresonator_anomalous_dispersion、meth.cw_pumped_microcomb_generation —— 均跨文件引用，不重复定义。
+
+meta:
+  zotero_key: "BG93PZPK"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical
+  reliability: high
+  title: "Parametric seeding of a microresonator optical frequency comb"
+  year: 2013
+  first_author: Papp
+  journal: "Optics Express"
+  volume: 21
+  issue: 15
+  pages: "17615-17624"
+  doi: "10.1364/OE.21.017615"
+  note: >
+    [方法/原理技术论文] NIST Boulder (Papp/Del'Haye/Diddams)，fused-silica 33 GHz 盘形微腔（Vahala 组提供），
+    CW 泵浦 + Mach-Zehnder EO 强度调制产生间距 feo≈FSR 的双边带，
+    通过参量 FWM 放大将 EO 相干性转写进整个微梳。首次给出 "sub-comb" 的直接光学频率证据，
+    并预示通过偏移微波 feo 可控制子梳 offset，但真正完全等间距要求 mi→0（injection lock），
+    这一局限为后续孤子微梳路径（laser_tuning_soliton_access，yi2016.yaml）提供动机。
+
+# ═══════════════════════════════════════════════
+#  NODES
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.parametrically_seeded_microcomb_p13
+    name: "参量种子注入微腔频梳系统（Papp 2013）"
+    aliases: ["parametrically seeded microcomb", "EO-sideband-seeded Kerr microcomb"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      以 CW 半导体激光器泵浦 fused-silica 盘形微腔（FSR≈33.02932 GHz，Q>10⁸）产生 Kerr 梳；
+      在泵浦前加入 Mach-Zehnder 电光强度调制器，于频率 feo≈FSR 产生双边带作为 "参量种子"，
+      种子在腔内与泵浦经 FWM 产生等间距梳线，并与初级参量振荡（signal/idler at ±mi·FSR）竞争/部分注入锁定子梳，
+      最终使整个微梳的线间距 Δν 精确等于 feo。射频 feo 可在 ~10 MHz 范围连续调谐 Δν。
+    key_parameters:
+      resonator: "fused-silica wedge disk（Vahala 组提供）"
+      free_spectral_range: "33.02932(9) GHz"
+      parametric_threshold_power: "~10 mW"
+      pump_band: "~1550 nm 波段"
+      seeding_sideband_spacing: "feo ≈ FSR ± 10 MHz（可射频调谐）"
+      primary_subcomb_orders_mi: "mi ≈ 20 与 mi ≈ 60（与色散/泵浦失谐相关）"
+      equidistant_span_demonstrated: "m = 0…54（±1.8 THz from pump）"
+    interface_requirements:
+      pump: "CW 单频激光（窄线宽） + MZ 强度调制器 + EDFA"
+      rf_reference: "微波合成器提供 feo；锁定链可延伸至 H-maser / 光钟"
+      diagnostics: "10 GHz Fabry-Perot EO 参考梳用于绝对光频差分测量"
+    note: >
+      Level 2 节点，PART-OF ent.microresonator_frequency_comb（权威定义于 kippenberg2011.yaml / kippenberg2018.yaml）。
+      与 yi2016.yaml 的孤子微梳 COMPETES-WITH：两者都追求 "确定性、等间距"，但机制不同
+      （参量种子 = 外部相干注入；孤子 = 腔内耗散结构）。
+
+  - id: ent.eo_sideband_seed_injector_p13
+    name: "EO 调制泵浦边带种子源（MZM 双边带注入模块）"
+    aliases: ["Mach-Zehnder intensity modulation seeding stage"]
+    hierarchy_level: 3
+    status: demonstrated
+    function: >
+      标准 Mach-Zehnder 电光强度调制器，工作在偏置点附近以产生载波 + 对称两阶边带（间距 feo）；
+      偏置电压控制载波/边带功率比。射频 feo 来自低相噪合成器，决定整梳 Δν。
+    key_parameters:
+      modulation_frequency: "feo ≈ 33.02–33.04 GHz"
+      sideband_structure: "±feo 对称两边带"
+      bias_control: "MZM 偏置调载波抑制/边带比"
+    note: "PART-OF ent.parametrically_seeded_microcomb_p13"
+
+principles:
+  - id: pri.parametric_seeding_microcomb_spacing_control
+    name: "参量种子注入实现微梳模间距射频可控原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      当在 CW 泵浦之上叠加间距 feo≈FSR 的相干边带对时，腔内 FWM 以这对边带为 "种子"
+      产生等间距于 feo 的次级梳齿；由于参量增益对泵-种相位关系敏感，种子场相干性被逐齿转写，
+      最终整梳的线间距 Δν 精确等于 feo（而非腔 FSR），并继承 feo 的相噪与长期稳定度。
+      从物理上，它打破了无种子情形下 "Δν 由 mi×FSR 偶然选择" 的随机性（chance-locking on FSR），
+      把模间距由 "腔几何决定" 转为 "射频决定"。
+    domain: "Kerr 微腔频梳；参量非线性光学"
+    formula: >
+      无种子：Δν = mi·FSR（mi 整数，由相位匹配/色散随机选出）；
+      有种子：Δν = feo，且 |feo − FSR| ≲ 几 MHz 的牵引窗口内整梳注入锁定
+    key_insight: >
+      线间距从 "设计后不可动" 变为 "射频连续可调 + 射频参考可继承"，
+      这是把微梳纳入频率综合链（光钟 → 微波）的前提之一。
+      但它只锁定 Δν，不直接保证完全等间距：子梳的 offset ν0 仍可非零（见 pri.microcomb_subcomb_offset_p13）。
+    conditions: "feo 位于 FSR 附近的参量牵引窗（实验中 ~±5 MHz）；EO 边带功率足以触发 FWM 但低于破坏参量振荡"
+    preconditions:
+      - "泵浦位于异常色散腔模（参考 pri.microresonator_anomalous_dispersion）"
+      - "腔热双稳态在测量时保持稳定（Carmon 2004 描述的工作点）"
+      - "EO 调制相噪远低于 feo 所需精度"
+    invalidated_when:
+      - "feo 失谐超出参量牵引窗 → 回到自发 mi·FSR 间距"
+      - "子梳 offset ν0 不为零时，整梳非严格等间距（只是线间距 Δν 锁定到 feo）"
+    source_claim: >
+      "the ∼33 GHz line spacing (Δν) of the resulting microcomb spectrum is precisely locked to feo,
+      and that Δν can be varied over a range of ∼10 MHz, and we measure an absolute Δν stability of
+      1.6×10⁻¹³ at 1 s"
+    open_questions:
+      - "多对种子（>2 sidebands）能否直接强制 ν0→0，从而获得真正无 offset 的等间距梳？"
+      - "参量种子注入与孤子微梳机制（耗散 Kerr 孤子）能否共存/叠加？"
+
+  - id: pri.microcomb_subcomb_offset_p13
+    name: "微腔梳子梳（sub-comb）偏移原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      微梳通常由多个独立参量振荡过程（初级间距 Ωs ≈ mi·FSR, mi=1,2,…）产生的子梳叠加而成。
+      每个子梳内部梳齿等间距 Δν，但子梳整体相对于 "泵 + n·Δν" 等间距格点有一个 offset
+      ν0 = n1·(Ωs/2π − mi·Δν)，该 offset 一般非零，并随 feo 以斜率 −mi 线性变化。
+      同一 m 模位置可同时存在多支 subcomb 的贡献（线宽内共存）。
+    domain: "Kerr 微梳频谱结构"
+    formula: "νm = νpump + m·Δν + n1·(Ωs/2π − mi·Δν)；ν0 ≡ νm − m·Δν = n1·(Ωs/2π − mi·Δν)"
+    key_insight: >
+      直接解释 "线间距锁定但整梳仍非完全等间距" 现象：要得到严格等间距，
+      必须让主导子梳的 ν0→0（通过共调 feo 与泵频率），或完全 injection-lock 所有子梳到 pump-seed FWM 梳。
+    conditions: "Kerr 微梳在参量振荡 + FWM 机制下工作；≥2 个 mi 共存于工作区"
+    source_claim: >
+      "the subcomb offset from equidistance can be controlled with feo … ν0 varies continuously through
+      zero with a linear slope of −mi as feo changes"
+
+  - id: pri.injection_locked_equidistant_microcomb_p13
+    name: "参量增益竞争下的等间距微梳涌现原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      当 feo 和泵频率共同调使某一主导子梳 ν0 趋近零时，pump-seed FWM 产生的等间距梳线
+      可通过参量增益竞争 "注入锁定" 该子梳，从而在 ≥1.8 THz 跨度内产生严格等间距梳（偏差 ≤2 Hz）。
+      其他 ν0≠0 的次要子梳以独立频率共存但不再主导。
+    domain: "参量增益竞争；注入锁定"
+    key_insight: >
+      给出一条不依赖耗散孤子的 "确定性等间距微梳" 路径，但调谐灵活度与跨度受子梳竞争限制。
+    conditions: "主导子梳 ν0 调到 ~0；其他 mi 子梳弱于 pump-seed FWM 强度"
+    invalidated_when:
+      - "多支 mi 子梳强度相当，无法同时拉入等间距"
+      - "Raman 增益或模族交叉破坏参量相位匹配窗口"
+    source_claim: >
+      "we demonstrate parametric amplification of the offset-free lines to at least microcomb mode 54
+      (±1.8 THz from pump), conditioned on tuning the subcomb offset (ν0) close to zero"
+
+methods:
+  - id: meth.parametric_seeding_microcomb_p13
+    name: "参量种子注入微梳产生方法（Papp 2013）"
+    status: demonstrated
+    applies_to: ent.parametrically_seeded_microcomb_p13
+    steps_summary: >
+      1. CW 激光（~1550 nm）经 MZ 强度调制器调制到 feo≈FSR，产生载波 + 双边带；
+      2. 经 EDFA 放大后通过锥形光纤耦合进 fused-silica 盘形微腔（FSR=33.029 GHz）；
+      3. 缓慢从蓝失谐扫入泵浦模，依赖腔热双稳态稳定工作点；
+      4. 过参量阈值（~10 mW）后测量梳的光谱、线间距微波拍频、与 10 GHz FP-EO 参考梳的差分；
+      5. 调 feo 在 ±几 MHz 范围扫描，实时观测 Δν=feo 锁定行为；
+      6. 共调 feo 与泵频率以拉近主导子梳 ν0 至 0，获得跨 >54 模的等间距梳。
+    required_hardware:
+      - ent.parametrically_seeded_microcomb_p13
+      - ent.eo_sideband_seed_injector_p13
+    advantages:
+      - "Δν 完全由射频 feo 决定，继承电子振荡器/maser 稳定度，1 s Allan 达 1.6×10⁻¹³"
+      - "无需梳后稳定（no post-generation stabilization of line spacing）"
+      - "同一系统可切换 mi（通过 feo）研究参量过程族"
+    disadvantages:
+      - "牵引窗仅 ~10 MHz；超出窗外回到自由 mi·FSR 间距"
+      - "等间距性仍需 ν0→0 的共调，非普适"
+      - "与孤子微梳相比，锁模深度/脉冲形成不确定"
+    conditions:
+      - "腔热双稳工作点稳定"
+      - "feo 在参量牵引窗内"
+      - "射频合成器宽带噪声低（否则转写到 Δν）"
+    source_claim: >
+      "parametric seeding can not only control the subcombs, but can lead to the
+      generation of a continuously equidistant microcomb spectrum"
+
+metrics:
+  - id: met.microcomb_linespacing_stability_p13
+    name: "微梳绝对线间距 Allan 稳定度（Papp 2013）"
+    unit: "无量纲（分数 Allan 偏差）"
+    description: >
+      对 Δν（~33 GHz）相对于独立 H-maser 的 Allan 偏差，用频率计数直接测得。
+    is_interface_metric: false
+    demonstrated_value:
+      value: "1.6×10⁻¹³ @ 1 s"
+      conditions: "feo 锁定至低相噪合成器 → H-maser；Δν≈33.027 GHz；积分时间 1 s"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "BG93PZPK", claim: "The 1.6 × 10⁻¹³ stability we achieve exceeds by 10x previous results obtained with microcombs"}
+    theoretical_floor:
+      value: "受限于 feo 合成器 + maser 参考；残余跟踪噪声 ~10⁻¹⁵"
+      basis: "与 Del'Haye 2008 / hybrid EO microcomb 控制技术的残差水平"
+      gap_note: "要突破 maser 限制需将 feo 锁定至光钟（via 分频链）"
+    historical_landmarks:
+      best_demonstration:
+        value: "1.6×10⁻¹³ @ 1 s（2013 年微梳线间距绝对稳定度新纪录）"
+        year: 2013
+        source: {zotero_key: "BG93PZPK"}
+
+  - id: met.microcomb_linespacing_tuning_range_p13
+    name: "微梳线间距射频调谐范围"
+    unit: "MHz"
+    description: >
+      通过改变 EO 种子频率 feo，Δν 仍保持 "Δν=feo" 锁定的最大连续调谐区间。
+    demonstrated_value:
+      value: "~10 MHz（围绕 FSR=33.02932 GHz）"
+      conditions: "过参量阈值、泵浦频率固定，在同一热双稳工作点内"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "BG93PZPK", claim: "Δν can be varied over a range of ∼10 MHz"}
+
+  - id: met.microcomb_equidistance_offset_p13
+    name: "微梳跨模等间距性偏差（offset from equidistance）"
+    unit: "Hz"
+    description: >
+      用 10 GHz Fabry-Perot EO 参考梳与微梳差分外差，测各 m 模的 ν0 = νm − m·Δν。
+    demonstrated_value:
+      value: "|ν0| ≤ 2 Hz，m = 0…54；m=54 分数不确定度 1×10⁻¹²"
+      conditions: "主导子梳 ν0 调至 ~0；参量振荡 + FWM 共同增益；参考梳 −60 dBm 线功率"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "BG93PZPK", claim: "offset we observe for all the studied m values is within the ∼2 Hz uncertainty of our measurements"}
+
+  - id: met.microcomb_linewidth_transfer_p13
+    name: "泵浦/种子 → 梳齿相干性传递宽度（定性指标）"
+    unit: "Hz"
+    description: >
+      等间距梳齿在光外差中呈现窄峰，ν0 不随泵频变化，表明泵激光频率噪声作为共模被参考梳抵消，
+      而 feo 的相干性被转写进 Δν；该指标反映种子/泵相干性向整梳的传递。
+    demonstrated_value:
+      value: "窄于仪器分辨 ~2 Hz（共模抑制后）"
+      conditions: "pump-seed FWM 等间距梳齿；光外差 RBW 级别的定性评估"
+      verification_status: observed
+      confidence: provisional
+      source: {zotero_key: "BG93PZPK", claim: "peaks centered at ν0 = 0 have a narrow spectral width since pump laser frequency noise is common mode"}
+
+# ═══════════════════════════════════════════════
+#  RELATIONS
+# ═══════════════════════════════════════════════
+
+relations:
+  - id: rel.P13_01
+    subject: ent.eo_sideband_seed_injector_p13
+    predicate: PART-OF
+    object: ent.parametrically_seeded_microcomb_p13
+    confidence: established
+    source: {zotero_key: "BG93PZPK", claim: "a CW laser's intensity is modulated at frequency feo with a standard Mach-Zehnder electro-optic modulator"}
+
+  - id: rel.P13_02
+    subject: ent.parametrically_seeded_microcomb_p13
+    predicate: PART-OF
+    object: ent.microresonator_frequency_comb
+    confidence: established
+    source: {zotero_key: "BG93PZPK", claim: "parametric seeding of a microresonator frequency comb (microcomb)"}
+    note: "跨文件引用：ent.microresonator_frequency_comb 定义于 kippenberg2011.yaml / kippenberg2018.yaml"
+
+  - id: rel.P13_03
+    subject: ent.parametrically_seeded_microcomb_p13
+    predicate: ENABLED-BY
+    object: pri.parametric_seeding_microcomb_spacing_control
+    confidence: established
+    source: {zotero_key: "BG93PZPK", claim: "pump-sideband spacing is passed onto the comb via nonlinear optical interactions"}
+
+  - id: rel.P13_04
+    subject: pri.parametric_seeding_microcomb_spacing_control
+    predicate: DERIVED-FROM
+    object: pri.parametric_four_wave_mixing_comb
+    confidence: established
+    source: {zotero_key: "BG93PZPK", claim: "comb generation based on parametric oscillation and FWM"}
+    note: "pri.parametric_four_wave_mixing_comb 定义于 kippenberg2011.yaml（跨文件引用）"
+
+  - id: rel.P13_05
+    subject: ent.parametrically_seeded_microcomb_p13
+    predicate: CONDITIONED-BY
+    object: pri.microresonator_anomalous_dispersion
+    confidence: established
+    source: {zotero_key: "BG93PZPK", claim: "Parametric phase matching depends on numerous parameters … the dispersion of disk resonators is described in [26]"}
+    note: "跨文件引用：pri.microresonator_anomalous_dispersion 定义于 kippenberg2011.yaml"
+
+  - id: rel.P13_06
+    subject: ent.parametrically_seeded_microcomb_p13
+    predicate: CHARACTERIZED-BY
+    object: met.microcomb_linespacing_stability_p13
+    confidence: established
+    source: {zotero_key: "BG93PZPK", claim: "1.6 × 10⁻¹³ stability we achieve exceeds by 10x previous results"}
+    temporal_role: validates
+
+  - id: rel.P13_07
+    subject: ent.parametrically_seeded_microcomb_p13
+    predicate: CHARACTERIZED-BY
+    object: met.microcomb_linespacing_tuning_range_p13
+    confidence: established
+    source: {zotero_key: "BG93PZPK", claim: "Δν can be varied over a range of ∼10 MHz"}
+
+  - id: rel.P13_08
+    subject: ent.parametrically_seeded_microcomb_p13
+    predicate: CHARACTERIZED-BY
+    object: met.microcomb_equidistance_offset_p13
+    confidence: established
+    source: {zotero_key: "BG93PZPK", claim: "offset from equidistance can be as low as 10⁻¹²"}
+
+  - id: rel.P13_09
+    subject: ent.parametrically_seeded_microcomb_p13
+    predicate: CHARACTERIZED-BY
+    object: met.microcomb_linewidth_transfer_p13
+    confidence: provisional
+    source: {zotero_key: "BG93PZPK", claim: "pump laser frequency noise is common mode to both the equidistant microcomb and the reference comb"}
+
+  - id: rel.P13_10
+    subject: met.microcomb_linespacing_stability_p13
+    predicate: OPERATIONALIZED-AS
+    object: meth.parametric_seeding_microcomb_p13
+    confidence: established
+    source: {zotero_key: "BG93PZPK", claim: "absolute Allan deviation of Δν by comparing it to an independent hydrogen maser reference"}
+
+  - id: rel.P13_11
+    subject: meth.parametric_seeding_microcomb_p13
+    predicate: ENABLED-BY
+    object: pri.parametric_seeding_microcomb_spacing_control
+    confidence: established
+    source: {zotero_key: "BG93PZPK", claim: "parametric seeding … controls microcomb line spacing"}
+
+  - id: rel.P13_12
+    subject: meth.parametric_seeding_microcomb_p13
+    predicate: COMPETES-WITH
+    object: meth.cw_pumped_microcomb_generation
+    confidence: established
+    source: {zotero_key: "BG93PZPK", claim: "without feo the line spacing at threshold would be 60×FSR and undetectable electronically"}
+    note: >
+      同层级方法对比：无种子的 CW 泵浦微梳（meth.cw_pumped_microcomb_generation，定义于 kippenberg2011.yaml）
+      Δν 由 mi·FSR 随机决定；参量种子将 Δν 锁定至射频 feo。
+
+  - id: rel.P13_13
+    subject: pri.microcomb_subcomb_offset_p13
+    predicate: DERIVED-FROM
+    object: pri.parametric_four_wave_mixing_comb
+    confidence: established
+    source: {zotero_key: "BG93PZPK", claim: "multiple independent parametric oscillation processes are active"}
+
+  - id: rel.P13_14
+    subject: met.microcomb_equidistance_offset_p13
+    predicate: BOUNDED-BY
+    object: pri.microcomb_subcomb_offset_p13
+    confidence: established
+    source: {zotero_key: "BG93PZPK", claim: "the subcomb offset from equidistance can be tuned through zero by changing the line spacing … simply tuning the subcomb offset to zero with Δν does not necessarily yield the type of equidistant comb"}
+    breakthrough_paths:
+      - direction: pri.injection_locked_equidistant_microcomb_p13
+        expected_gain: "通过 pump-seed FWM 注入锁定主导子梳，跨 >54 模等间距偏差 ≤2 Hz"
+        status: demonstrated
+        source: {zotero_key: "BG93PZPK", claim: "parametric amplification of the offset-free lines to at least microcomb mode 54"}
+      - direction: meth.laser_tuning_soliton_access
+        expected_gain: "以耗散 Kerr 孤子机制直接给出确定性、严格等间距的单态梳，打破 subcomb 族竞争"
+        status: demonstrated
+        source: {zotero_key: "BG93PZPK", claim: "a number of interesting microcomb operating regimes have been reported including … the generation of soliton waveforms"}
+        note: "跨文件引用：meth.laser_tuning_soliton_access 定义于 topics/optical-frequency-combs/papers/yi2016.yaml（Yi 2016 soliton access via thermal tuning）。该路径要求稳定的热双稳 + 红失谐软着陆。"
+
+  - id: rel.P13_15
+    subject: met.microcomb_linespacing_tuning_range_p13
+    predicate: BOUNDED-BY
+    object: pri.parametric_seeding_microcomb_spacing_control
+    confidence: established
+    source: {zotero_key: "BG93PZPK", claim: "Parametric phase matching depends on numerous parameters, and is apparently influenced by the line spacing of the emergent comb"}
+    conditions: "feo 偏离 FSR 超出 ~±5 MHz 后牵引失效；Raman / 模族交叉亦限制窗口"
+    breakthrough_paths:
+      - direction: meth.laser_tuning_soliton_access
+        expected_gain: "孤子态下 Δν 由孤子重复率决定，可通过泵失谐/热控连续大范围调"
+        status: demonstrated
+        source: {zotero_key: "BG93PZPK", claim: "future experiments will focus on … ∼picosecond optical waveforms associated with the microcomb spectra"}
+        note: "跨文件引用：meth.laser_tuning_soliton_access 定义于 yi2016.yaml"
+
+  - id: rel.P13_16
+    subject: ent.parametrically_seeded_microcomb_p13
+    predicate: CONDITIONED-BY
+    object: pri.microcomb_subcomb_offset_p13
+    confidence: established
+    source: {zotero_key: "BG93PZPK", claim: "a single microcomb tooth often has spectral contributions from independent subcombs"}
+    note: "子梳叠加是微梳的内禀生成结构，是参量种子方法的外围条件/边界。"

@@ -1,0 +1,375 @@
+# Lesko 2020 — 1.56 µm处1 GHz全相位稳定交钥匙光频梳 [技术论文]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical
+
+meta:
+  zotero_key: "HG8TSPT6"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical
+  reliability: high
+  title: "Fully phase-stabilized 1 GHz turnkey frequency comb at 1.56 µm"
+  year: 2020
+  first_author: Lesko
+  journal: "OSA Continuum"
+  volume: 3
+  issue: 8
+  pages: "2070-2079"
+  doi: "10.1364/OSAC.396597"
+  note: >
+    [技术论文] NIST/CU Boulder 团队（Lesko, Lind, Hoghooghi, Kowligy, Timmers, Sekhar,
+    Rudin, Emaury, Rieker, Diddams）。采用商用交钥匙 1 GHz MENHIR-1550 Er:fiber 振荡器，
+    配合 PM 色散管理放大器（12 mW → 680 mW）、1.7 m PM-HNLF 超连续谱展宽（覆盖 1–2 µm）、
+    内联式 1 mm PPLN f-to-2f 干涉仪，实现全相位稳定光频梳。
+    f_CEO 锁至 H-maser（泵浦电流调制，20 kHz BW），积分相位噪声 438 mrad；
+    f_beat 锁至 1550 nm 腔稳 CW 激光（腔内压电陶瓷，100 kHz BW），积分相位噪声 40.6 mrad。
+    两台相同振荡器表现一致，验证了商业平台的可重复性。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.ghz_turnkey_erfiber_comb_l20
+    name: "1 GHz 交钥匙 Er:fiber 光频梳系统（Lesko 2020，1.56 µm）"
+    aliases:
+      - "MENHIR-1550 based 1 GHz frequency comb"
+      - "turnkey 1 GHz Er fiber comb"
+    hierarchy_level: 2
+    status: demonstrated
+    temporal_role: demonstrates
+    function: >
+      以商用 1 GHz 锁模 Er:fiber 振荡器（MENHIR-1550，密封 PM 输出，5 V/<2 A 供电）为核心，
+      经 PM 色散管理光纤放大器将功率从 12 mW 提升至 680 mW，压缩脉宽至 89 fs（峰值功率 7.4 kW），
+      再经 1.7 m PM-HNLF 展宽至覆盖 1–2 µm 八度超连续谱（孤子自频移将功率转移至 2 µm），
+      通过内联 1 mm PPLN（周期 30.80 µm）f-to-2f 干涉仪实现自参考。
+      f_CEO 和光学拍频分别锁定至 H-maser 与 1550 nm 腔稳 CW 激光，形成全相位稳定光频梳。
+    key_parameters:
+      oscillator: "MENHIR-1550（商用交钥匙，密封 PM 光纤输出）"
+      repetition_rate: "1 GHz（电信波段锁模振荡器）"
+      wavelength: "1.56 µm（中心波长）"
+      amplifier_input_power: "12 mW"
+      amplifier_output_power: "680 mW"
+      amplifier_gain: "17.5 dB"
+      compressed_pulse_width: "89 fs"
+      peak_power: "7.4 kW"
+      hnlf_length: "1.7 m PM-HNLF（D = 5.7 ps/nm/km）"
+      spectral_coverage: "1–2 µm（超连续谱，覆盖一个八度）"
+      ppln_length: "1 mm（内联 f-to-2f，周期 30.80 µm）"
+      fceo_lock_method: "泵浦电流调制，BW = 20 kHz，/32 分频至 H-maser"
+      fbeat_lock_method: "腔内压电陶瓷，BW = 100 kHz，锁至 1550 nm 腔稳 CW 激光"
+    historical_landmarks:
+      first_demonstration: >
+        2020 — 1 GHz 全相位稳定交钥匙 Er 光纤梳，1.56 µm，438 mrad f_CEO 积分相位噪声
+        （泵浦电流锁，10²–10⁷ Hz），40.6 mrad 光学拍频积分相位噪声（Lesko et al. 2020）
+    note: >
+      Level-2 实例节点，PART-OF ent.optical_frequency_comb（权威定义于 udem2002.yaml/giunta2019.yaml）。
+      与 ent.ruggedized_field_comb_s14（sinclair2014.yaml）COMPETES-WITH：后者 250 MHz Er:fiber，
+      侧重野外部署机械鲁棒性；本系统侧重高重频（1 GHz）交钥匙便利性与 DCS 速度优势。
+      两台相同振荡器 f_CEO 性能一致，验证商业生产一致性。
+
+  - id: ent.pm_dispersion_managed_amplifier_l20
+    name: "PM 色散管理光纤放大器（Lesko 2020）"
+    hierarchy_level: 3
+    status: demonstrated
+    function: >
+      利用保偏（PM）光纤构成的色散预补偿放大器将振荡器输出从 12 mW 放大至 680 mW，
+      同时通过色散管理抑制脉冲展宽，使压缩后脉宽达到 89 fs（7.4 kW 峰值功率），
+      为后续 PM-HNLF 超连续谱展宽提供足够的峰值功率。
+    key_parameters:
+      input_power: "12 mW"
+      output_power: "680 mW"
+      gain: "17.5 dB"
+      output_pulse_width: "89 fs（压缩后）"
+      peak_power: "7.4 kW"
+      fiber_type: "保偏（PM）"
+    note: "Level-3 子单元，PART-OF ent.ghz_turnkey_erfiber_comb_l20"
+
+  - id: ent.inline_ppln_f2f_l20
+    name: "内联 PPLN f-to-2f 干涉仪（Lesko 2020，1 mm）"
+    hierarchy_level: 3
+    status: demonstrated
+    function: >
+      利用 1 mm 厚 PPLN（周期 30.80 µm）对 PM-HNLF 输出超连续谱中的 ~1 µm 分量进行倍频，
+      与孤子自频移产生的 ~2 µm 分量在 PPLN 出口处干涉，产生 f_CEO 拍频信号（SNR = 40 dB @300 kHz RBW），
+      无需额外体光学元件或延迟级，实现紧凑全光纤路径。
+    key_parameters:
+      ppln_length: "1 mm"
+      ppln_period: "30.80 µm"
+      fceo_snr: "40 dB @ 300 kHz RBW"
+    note: "Level-3 子单元，PART-OF ent.ghz_turnkey_erfiber_comb_l20"
+
+# ═══════════════════════════════════════════════
+#  PRINCIPLES（原理）
+# ═══════════════════════════════════════════════
+
+principles:
+  - id: pri.inline_f2f_soliton_shift
+    name: "内联 f-to-2f 孤子自频移供能原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      在 PM-HNLF 中，脉冲超连续谱展宽过程中产生的孤子通过拉曼散射（孤子自频移，SSFS）
+      将功率从泵浦波长（~1.56 µm）连续转移至长波（~2 µm），
+      为内联 f-to-2f 中 PPLN SHG（1 µm → 2 µm）提供所需的 2 µm 频谱分量，
+      无需体光学延迟臂或独立 2 µm 光源。
+    domain: "非线性光纤光学；光频梳自参考"
+    key_insight: >
+      孤子自频移将超连续谱展宽与 f-to-2f 干涉两步融合为单段光纤内的一体化过程，
+      极大简化全光纤路径的紧凑性；要求 HNLF 色散参数（D = 5.7 ps/nm/km）与长度（1.7 m）
+      精确设计以保证 2 µm 波段有足够功率。
+    conditions: >
+      PM-HNLF（D = 5.7 ps/nm/km，长度 ~1.7 m）；
+      峰值功率 ≥ 7 kW（89 fs 脉冲）；
+      需 PPLN 相位匹配至 ~1 µm（周期 30.80 µm）进行 SHG
+    preconditions:
+      - "振荡器脉冲必须经放大并压缩至亚 100 fs（足够峰值功率驱动 SSFS）"
+      - "HNLF 必须为 PM 型以抑制偏振串扰"
+    invalidated_when: >
+      峰值功率不足以触发 SSFS（如直接用振荡器输出而不放大）；
+      或 HNLF 长度/色散不匹配导致孤子无法移至 2 µm
+    source:
+      claim: >
+        "soliton shifts to 2 µm in the HNLF, providing the long-wavelength arm
+         of the f-to-2f interferometer without additional bulk optics"
+      paper: "Lesko et al. 2020, OSA Continuum 3(8), 2070–2079"
+
+  - id: pri.high_frep_dcs_speed_advantage
+    name: "高重频梳 DCS 采集速度优势原理"
+    tier: domain
+    verification_status: inferred
+    statement: >
+      双梳光谱（DCS）的单次采集时间 T_acq ∝ 1/f_rep²（在固定光谱分辨率与 SNR 要求下），
+      因此将重复频率从 100 MHz 提高至 1 GHz 可使数据采集速度提升约 100 倍，
+      适用于瞬态分子光谱、气体流场成像等需要高时间分辨率的场景。
+    domain: "双梳光谱学；快速分子传感"
+    key_insight: >
+      f_rep = 1 GHz 的 DCS 系统可在 µs–ms 时间尺度内完成单次扫描，
+      比 100 MHz 系统快约两个数量级，但每个梳齿对应的光谱采样间隔也增大至 1 GHz，
+      需确保目标分子谱线宽度 >> 1 GHz（常压气体碰撞加宽通常满足此条件）。
+    conditions: >
+      目标气体谱线压强加宽线宽 ≫ 1 GHz（常压条件通常满足）；
+      双梳重频差 Δf_rep 设计保证足够采样点数覆盖分子特征
+    preconditions:
+      - "两台梳重频相对差 Δf_rep 需精确控制以避免欠采样"
+    invalidated_when: >
+      目标分子谱线窄于 1 GHz（如低压冷分子束）——此时需要更密梳齿（低 f_rep）以充分采样
+    open_questions:
+      - "1 GHz DCS 在低压（Doppler-limited）分子光谱中的实用性尚待系统评估"
+    source:
+      claim: >
+        "repetition rate of 1 GHz enables acquisition rates ~100× faster than
+         100 MHz combs for broadband DCS applications"
+      paper: "Lesko et al. 2020, OSA Continuum 3(8), 2070–2079"
+
+# ═══════════════════════════════════════════════
+#  METHODS（方法）
+# ═══════════════════════════════════════════════
+
+methods:
+  - id: meth.pm_dispersion_managed_amplification
+    name: "PM 色散管理光纤放大（PM-CFBG 预啁啾 + Er:fiber MOPA）"
+    applies_to: ent.ghz_turnkey_erfiber_comb_l20
+    description: >
+      采用保偏（PM）光纤布拉格光栅（PM-CFBG）对振荡器输出脉冲施加反向啁啾预补偿，
+      再经保偏 Er:fiber 主振荡功率放大（MOPA）将功率放大至 680 mW，
+      放大后脉冲经光栅或光纤压缩器还原至 89 fs，
+      使峰值功率达到驱动 HNLF 超连续谱展宽的阈值（7.4 kW）。
+    key_steps:
+      - "PM-CFBG 负啁啾预压缩（抵消后续 PM 光纤正色散积累）"
+      - "Er:fiber 放大级（12 mW → 680 mW，17.5 dB）"
+      - "输出端脉冲压缩至 89 fs（7.4 kW 峰值功率）"
+    performance:
+      gain_dB: "17.5"
+      compressed_pulse_fs: "89"
+      peak_power_kW: "7.4"
+    note: "新节点；适用于全 PM 光纤路径的 GHz 重频梳功率放大场景"
+
+# ═══════════════════════════════════════════════
+#  METRICS（指标）
+# ═══════════════════════════════════════════════
+
+metrics:
+  - id: met.frep_l20
+    name: "重复频率（Lesko 2020，1 GHz Er:fiber）"
+    value: "1 GHz"
+    unit: "GHz"
+    conditions:
+      oscillator: "MENHIR-1550 商用锁模 Er:fiber 振荡器"
+      wavelength: "1.56 µm"
+    verification_status: observed
+    source:
+      claim: "1 GHz repetition rate turnkey Er:fiber oscillator (MENHIR-1550)"
+      paper: "Lesko et al. 2020, OSA Continuum 3(8), 2070–2079"
+
+  - id: met.compressed_pulse_duration_l20
+    name: "压缩后脉冲宽度（Lesko 2020）"
+    value: "89 fs"
+    unit: "fs"
+    conditions:
+      amplifier_output: "680 mW"
+      compression: "PM 色散管理放大后压缩"
+    verification_status: observed
+    source:
+      claim: "compressed pulse duration of 89 fs with 7.4 kW peak power"
+      paper: "Lesko et al. 2020, OSA Continuum 3(8), 2070–2079"
+
+  - id: met.fceo_snr_l20
+    name: "f_CEO 信噪比（Lesko 2020，内联 PPLN f-to-2f）"
+    value: "40 dB"
+    unit: "dB"
+    conditions:
+      rbw: "300 kHz RBW"
+      detector: "内联 1 mm PPLN f-to-2f 干涉仪"
+    verification_status: observed
+    source:
+      claim: "f_CEO signal-to-noise ratio of 40 dB at 300 kHz resolution bandwidth"
+      paper: "Lesko et al. 2020, OSA Continuum 3(8), 2070–2079"
+
+  - id: met.fceo_phase_noise_integrated_l20
+    name: "f_CEO 积分相位噪声（Lesko 2020，泵浦电流锁）"
+    value: "438 mrad"
+    unit: "mrad"
+    conditions:
+      integration_band: "10²–10⁷ Hz"
+      lock_method: "泵浦电流调制，伺服带宽 20 kHz，/32 分频至 H-maser"
+    verification_status: observed
+    source:
+      claim: >
+        "residual integrated phase noise of 438 mrad (100 Hz to 10 MHz)
+         with pump current modulation lock to H-maser"
+      paper: "Lesko et al. 2020, OSA Continuum 3(8), 2070–2079"
+
+  - id: met.fbeat_phase_noise_integrated_l20
+    name: "光学拍频积分相位噪声（Lesko 2020，压电陶瓷光学锁）"
+    value: "40.6 mrad"
+    unit: "mrad"
+    conditions:
+      integration_band: "10²–10⁷ Hz"
+      lock_method: "腔内压电陶瓷，伺服带宽 100 kHz，锁至 1550 nm 腔稳 CW 激光"
+    verification_status: observed
+    note: >
+      光学拍频锁定性能（40.6 mrad）显著优于 f_CEO 锁（438 mrad），
+      因光学伺服带宽更宽（100 kHz vs 20 kHz），且压电陶瓷执行器响应更快。
+    source:
+      claim: >
+        "residual integrated phase noise of 40.6 mrad (100 Hz to 10 MHz)
+         with intracavity piezo lock to cavity-stabilized CW laser at 1550 nm"
+      paper: "Lesko et al. 2020, OSA Continuum 3(8), 2070–2079"
+
+# ═══════════════════════════════════════════════
+#  RELATIONS（关系）
+# ═══════════════════════════════════════════════
+
+relations:
+  - id: rel.L001
+    subject: ent.ghz_turnkey_erfiber_comb_l20
+    predicate: PART-OF
+    object: ent.optical_frequency_comb
+    source:
+      claim: "fully phase-stabilized 1 GHz frequency comb at 1.56 µm"
+      paper: "Lesko et al. 2020, OSA Continuum 3(8), 2070–2079"
+    note: "ent.optical_frequency_comb 权威定义于 udem2002.yaml/giunta2019.yaml（跨文件引用）"
+
+  - id: rel.L002
+    subject: ent.ghz_turnkey_erfiber_comb_l20
+    predicate: ENABLED-BY
+    object: pri.self_referencing_f2f
+    source:
+      claim: "f-to-2f interferometry using inline 1 mm PPLN enables f_CEO detection"
+      paper: "Lesko et al. 2020, OSA Continuum 3(8), 2070–2079"
+    note: "pri.self_referencing_f2f 权威定义于 udem2002.yaml（跨文件引用）"
+
+  - id: rel.L003
+    subject: ent.ghz_turnkey_erfiber_comb_l20
+    predicate: ENABLED-BY
+    object: pri.inline_f2f_soliton_shift
+    source:
+      claim: >
+        "soliton self-frequency shift in HNLF provides 2 µm spectral arm
+         for inline f-to-2f without bulk optics"
+      paper: "Lesko et al. 2020, OSA Continuum 3(8), 2070–2079"
+
+  - id: rel.L004
+    subject: ent.ghz_turnkey_erfiber_comb_l20
+    predicate: CHARACTERIZED-BY
+    object: met.fceo_phase_noise_integrated_l20
+    source:
+      claim: "438 mrad integrated f_CEO phase noise (100 Hz–10 MHz)"
+      paper: "Lesko et al. 2020, OSA Continuum 3(8), 2070–2079"
+
+  - id: rel.L005
+    subject: ent.ghz_turnkey_erfiber_comb_l20
+    predicate: CHARACTERIZED-BY
+    object: met.fbeat_phase_noise_integrated_l20
+    source:
+      claim: "40.6 mrad integrated optical beat phase noise (100 Hz–10 MHz)"
+      paper: "Lesko et al. 2020, OSA Continuum 3(8), 2070–2079"
+
+  - id: rel.L006
+    subject: ent.ghz_turnkey_erfiber_comb_l20
+    predicate: BOUNDED-BY
+    object: pri.pump_rin_to_fceo_coupling
+    source:
+      claim: >
+        "f_CEO servo bandwidth limited to 20 kHz by pump current modulation actuator;
+         pump RIN coupling to f_CEO sets residual phase noise floor at 438 mrad"
+      paper: "Lesko et al. 2020, OSA Continuum 3(8), 2070–2079"
+    note: "pri.pump_rin_to_fceo_coupling 权威定义于 mcferran2007.yaml（跨文件引用）"
+    breakthrough_paths:
+      - direction: meth.aom_feedforward_fceo
+        expected_gain: >
+          AOM 前馈可将 f_CEO 伺服带宽从 20 kHz 扩展至 >100 kHz，
+          预期将积分相位噪声从 438 mrad 降至与光学锁相当的 ~50 mrad 量级
+        status: proposed
+        source:
+          claim: >
+            "pump current modulation bandwidth of 20 kHz limits f_CEO servo;
+             AOM feed-forward or faster actuator could improve performance"
+          paper: "Lesko et al. 2020, OSA Continuum 3(8), 2070–2079"
+        note: "AOM 前馈宽带抑制已在其他 Er:fiber 梳中演示（参见 sinclair2014.yaml）"
+
+  - id: rel.L007
+    subject: ent.ghz_turnkey_erfiber_comb_l20
+    predicate: COMPETES-WITH
+    object: ent.ruggedized_field_comb_s14
+    source:
+      claim: >
+        "both systems are Er:fiber combs targeting field-deployable / low-complexity operation;
+         Lesko 2020 prioritizes 1 GHz rep rate for DCS speed; Sinclair 2014 prioritizes
+         mechanical ruggedization for field deployment"
+      paper: "Lesko et al. 2020, OSA Continuum 3(8), 2070–2079"
+    note: >
+      ent.ruggedized_field_comb_s14 定义于 sinclair2014.yaml（跨文件引用）。
+      竞争维度：Lesko 2020 优势在高重频（DCS 速度）和交钥匙便利性；
+      Sinclair 2014 优势在机械鲁棒性（振动、冲击环境）。
+
+  - id: rel.L008
+    subject: pri.high_frep_dcs_speed_advantage
+    predicate: CONDITIONED-BY
+    object: ent.dual_comb_spectrometer
+    source:
+      claim: >
+        "1 GHz repetition rate provides ~100× faster acquisition in dual-comb spectroscopy
+         applications, provided spectral sampling matches molecular linewidth"
+      paper: "Lesko et al. 2020, OSA Continuum 3(8), 2070–2079"
+    note: "ent.dual_comb_spectrometer 定义于 coddington2016.yaml（跨文件引用）"
+
+  - id: rel.L009
+    subject: ent.pm_dispersion_managed_amplifier_l20
+    predicate: PART-OF
+    object: ent.ghz_turnkey_erfiber_comb_l20
+    source:
+      claim: "PM dispersion-managed amplifier is integral subsystem of the 1 GHz comb"
+      paper: "Lesko et al. 2020, OSA Continuum 3(8), 2070–2079"
+
+  - id: rel.L010
+    subject: ent.inline_ppln_f2f_l20
+    predicate: PART-OF
+    object: ent.ghz_turnkey_erfiber_comb_l20
+    source:
+      claim: "inline 1 mm PPLN f-to-2f interferometer is integral subsystem"
+      paper: "Lesko et al. 2020, OSA Continuum 3(8), 2070–2079"

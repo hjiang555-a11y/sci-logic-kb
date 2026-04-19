@@ -1,0 +1,412 @@
+# Kashiwagi 2018 — 多分支 Er 光纤梳通过"分支间光纤噪声差分消除（FNDC）"将相对频率不确定度压到 10⁻²⁰ 量级 [技术论文]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical — 多分支光纤梳的分支间噪声工程方案
+#   核心贡献：
+#     (1) 指出多分支光纤梳（CEO-锁定支、拍频-锁定支、应用支各有独立 EDFA+HNLF 非公用光纤路径）
+#         的支间光纤噪声差是长期分数稳定度的首要限制；
+#     (2) 提出 FNDC：以 1542 nm CW 参考激光同时与 CEO-锁定支及其余两支拍频，
+#         用鼓式 PZT 光纤拉伸器以 ~100 Hz 带宽抵消每支相对 CEO-锁定支的光纤相噪；
+#     (3) 用两套准相同梳做光域比较，在 modified Allan 偏差下达到 9.7×10⁻²¹ @ 126500 s，
+#         加权标准差（单梳）1.6×10⁻²⁰，首次将多分支光纤梳的支间相对不确定度推入 10⁻²⁰ 级。
+#   Framework 依赖：ent.optical_frequency_comb、pri.self_referencing_f2f 定义于 udem2002.yaml；
+#     相关方法 meth.wideband_optical_frequency_synthesis 定义于 giunta2020.yaml。
+
+meta:
+  zotero_key: "ERNT9GV3"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical
+  reliability: high
+  title: "Multi-branch fiber comb with relative frequency uncertainty at 10⁻²⁰ using fiber noise difference cancellation"
+  year: 2018
+  first_author: Kashiwagi
+  journal: "Optics Express"
+  volume: 26
+  issue: 7
+  pages: "8831-8840"
+  doi: "10.1364/OE.26.008831"
+  note: >
+    [技术论文] NMIJ/AIST + JST ERATO MINOSHIMA IOS Project。自锁模 Er:fiber 振荡器
+    （4.4 mW，135 fs，1560 nm，43.4 MHz）输出分为四支（其中一支未用），每支分别经 EDFA+HNLF
+    获得不同应用所需谱段。f_CEO 由 CEO-锁定支的 f-2f 干涉仪探测、以泵浦 LD 电流反馈锁到 30 MHz；
+    f_beat 由 1064 nm 超稳 CW 参考经腔内 WG-EOM（快）+ 腔温 TEC（慢）锁定。为抑制分支间
+    独立光纤噪声差，在拍频-锁定支与应用支中各引入鼓型 PZT 光纤拉伸器；以 1542 nm CW 参考激光
+    与 CEO-锁定支的拍频作参考信号，和另两支拍频作误差信号，构成 FNDC 伺服（带宽约 100 Hz）。
+    两套准相同梳通过光域比较：1542 nm 拍频-锁定支混频比对 + 1700 nm 应用支直接拍频（BS+10 nm BPF）。
+    跨文件节点引用：ent.optical_frequency_comb、pri.self_referencing_f2f 定义于 udem2002.yaml；
+    meth.wideband_optical_frequency_synthesis 定义于 giunta2020.yaml。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.multi_branch_fiber_comb_k18
+    name: "多分支 Er 光纤梳（NMIJ Kashiwagi 2018，FNDC 增强）"
+    aliases: ["multi-branch Er:fiber frequency comb with FNDC", "NMIJ multi-branch comb"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      以非线性偏振旋转自锁模的 Er 掺杂光纤振荡器为源（4.4 mW / 135 fs / 1560 nm / f_rep=43.4 MHz），
+      振荡器内集成 WG-EOM（快伺服）与 TEC（慢伺服）用于 f_beat 锁定；输出被分束到四支光纤支路
+      （CEO-锁定支、拍频-锁定支、应用支 + 一支未用），各支独立经 EDFA 放大与 HNLF 展宽至不同波段。
+      f_CEO 由 CEO-锁定支的 f-2f 干涉仪检测，经泵浦 LD 电流反馈锁到 30 MHz RF 参考；f_beat 由
+      1064 nm 超稳 CW 参考与最近梳齿拍频锁到 30 MHz。拍频-锁定支与应用支各装 PZT 鼓型光纤拉伸器，
+      与 1542 nm CW 参考激光的拍频构成 FNDC 伺服，用以抵消支与 CEO-锁定支之间的独立光纤相噪差。
+    key_parameters:
+      oscillator_type: "NPR 自锁模 Er 光纤振荡器"
+      repetition_rate: "43.4 MHz"
+      pulse_width: "135 fs"
+      center_wavelength: "1560 nm"
+      average_power: "4.4 mW"
+      branch_count: "4（使用 3 支：CEO-locking / beat-locking / application）"
+      fceo_actuator: "泵浦 LD 电流（→ 30 MHz RF 参考）"
+      fbeat_actuator: "腔内 WG-EOM（快）+ 腔温 TEC（慢）（→ 1064 nm USL）"
+      fndc_actuator: "鼓型 PZT 光纤拉伸器（拍频-锁定支 + 应用支，~100 Hz 控制带宽）"
+      fndc_reference: "1542 nm CW 激光，松锁至 CEO-锁定支梳"
+    interface_requirements:
+      ultrastable_reference_1064nm: "1064 nm 超稳 CW 激光（为 f_beat 提供光学参考，详见 hosaka2010 / Inaba 组）"
+      cw_reference_1542nm: "1542 nm CW 激光，作为 FNDC 公共参考"
+      enclosure: "全纤系统加盖盒以抑制环境扰动；PZT 支段因布线难以全封闭"
+    note: >
+      Level 2 实例节点，PART-OF ent.optical_frequency_comb（权威定义于 udem2002.yaml）。
+      与 ent.octave_spanning_tisa_comb_d00（Ti:Sa 八度谱，diddams2000.yaml）、
+      ent.ultra_low_noise_fiber_comb_g20（Menlo 光锁 Er 梳，giunta2020.yaml）并列为 Level 2 平行方案。
+
+  - id: ent.pzt_fiber_stretcher_k18
+    name: "鼓型 PZT 光纤拉伸器（Kashiwagi 2018，FNDC 执行元件）"
+    aliases: ["drum-type PZT fiber stretcher", "FNDC actuator"]
+    hierarchy_level: 3
+    status: demonstrated
+    function: >
+      将一段支路光纤缠绕于鼓型压电陶瓷上，PZT 电压变化拉伸光纤长度，从而快速改变该支路的
+      光学相位延迟。被 FNDC 伺服驱动以抵消该支相对 CEO-锁定支的独立光纤相噪差。
+    key_parameters:
+      type: "鼓型压电陶瓷缠绕光纤"
+      control_bandwidth: "~100 Hz"
+      installed_branches: "拍频-锁定支、应用支（CEO-锁定支无）"
+    note: "PART-OF ent.multi_branch_fiber_comb_k18。低频 (<100 Hz) 光纤相噪的关键执行机构。"
+
+  - id: ent.fndc_reference_cw_laser_1542nm_k18
+    name: "1542 nm FNDC 参考 CW 激光（Kashiwagi 2018）"
+    aliases: ["1542 nm CW reference for FNDC"]
+    hierarchy_level: 3
+    status: demonstrated
+    function: >
+      1542 nm 连续波激光，松锁至 CEO-锁定支梳线以稳定其输出；与三支的最近梳齿各自拍频：
+      与 CEO-锁定支的拍频作为 FNDC 伺服参考，与其余两支的拍频作为误差信号。
+      光源本身不必超稳，只要在 FNDC 带宽内稳定即可（"loosely locked to the comb"）。
+    note: >
+      PART-OF ent.multi_branch_fiber_comb_k18。它只承担支间相位差的"共公参考"角色，
+      其本身相噪不会被 FNDC 带入最终输出（因为 FNDC 伺服信号是三路拍频之差）。
+
+principles:
+  - id: pri.inter_branch_fiber_noise_degradation
+    name: "多分支光纤梳的支间光纤相噪退化原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      在多分支/路光纤梳结构中，振荡器输出被分到若干独立的 EDFA+HNLF 支路以覆盖不同应用波段。
+      常规的 f_CEO / f_beat 反馈只锁定"CEO-探测支 + 拍频-探测支"这一条光学通路包含的相噪；
+      其他支（尤其外环的应用支）除叠加自身独立光纤相噪外，还会反馈入由锁定支光纤相噪
+      经反馈机制"打入"的相噪，二者联合限制了多分支梳的输出相对频率稳定度。
+    domain: "光纤频率梳工程；相位噪声传递"
+    formula: >
+      φ_out_branch_j(t) = φ_comb(t) + φ_fiber_j(t) − φ_fiber_lock(t)
+      （第 j 支观测相位 = 梳基带相位 + 本支独立光纤相噪 − 锁定支光纤相噪）
+      其中 φ_fiber_j − φ_fiber_lock 即是 FNDC 目标。
+    key_insight: >
+      "锁 CEO + 锁 beat" 使梳在锁定支精确锁紧，却无法保证离开该支之外的输出也锁紧；
+      这就是单支/单路架构（Ohmae 2017、Leopardi 2017）以 10⁻²¹–10⁻²⁰ 优势领先多支架构的原因。
+    conditions: "多分支光纤梳；CEO 与 beat 只在其中一到两支中被探测/反馈"
+    preconditions:
+      - "各支 EDFA+HNLF 光纤路径长度达米量级，环境扰动可测"
+      - "CEO-探测路径与应用输出路径不共公物理光纤"
+    invalidated_when:
+      - "采用单支/单路架构（所有应用输出与 CEO 探测共用同一段光纤）"
+      - "所有分支共用一段 CEO 探测后的主光纤，仅在末端分束（共公光纤模式）"
+    source_claim: >
+      "The inter-branch/path phase noise differences degrade the frequency stabilities ...
+       although the feedback control of the comb stabilization (for f_CEO or f_beat) stabilizes
+       the comb frequency including the phase noise originating from the branch paths,
+       another branch output suffers from not only the phase noise from the branch paths but
+       also from the phase noise from the branch used for comb stabilization."
+    open_questions:
+      - "支间相噪与自由空间路径相噪在 100 Hz–1 kHz 区域如何精确区分？"
+
+  - id: pri.multi_branch_fiber_noise_difference_cancellation
+    name: "多分支光纤噪声差分消除原理（FNDC，本论文提出）"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      以一台公共 CW 激光（波长远离各支应用波段亦可，本论文取 1542 nm）同时与 CEO-锁定支及其余每支的
+      最近梳齿拍频；以"CW ↔ CEO-锁定支梳齿"拍频作伺服参考，"CW ↔ 第 j 支梳齿"拍频作误差信号；
+      控制第 j 支中的光纤长度执行器（如 PZT 拉伸器）使二者同相。CW 激光自身相噪为共模项，
+      在两路拍频相减时抵消；残余即是第 j 支相对 CEO-锁定支的独立光纤相噪差，该差被伺服置零。
+      最终 f_CEO 与 f_beat 的常规反馈再把两支共公的剩余光纤相噪一同抵消。
+    domain: "光纤频率梳相位工程；差分相位锁定"
+    formula: >
+      ε_j(t) = [φ_CW(t) + φ_fiber_j(t)] − [φ_CW(t) + φ_fiber_lock(t)]
+             = φ_fiber_j(t) − φ_fiber_lock(t)
+      （CW 激光相噪作为共模项在相减中消除；FNDC 将 ε_j → 0）
+    key_insight: >
+      这是把 Ma 1994 / Williams 2008 式"点对点光纤相噪消除"概念下移到了梳的"分支对分支"尺度，
+      并巧妙利用公共 CW 参考使得该参考本身的长期稳定度不会成为噪声源。
+    conditions:
+      - "每支与 CW 参考的拍频 S/N 足以用作误差/参考信号"
+      - "支内存在可用于快速相位补偿的光纤长度执行器（如 PZT 拉伸器，带宽 ≳ 100 Hz）"
+      - "CW 参考激光在 FNDC 控制带宽内相位连续"
+    preconditions:
+      - "CEO-锁定支必须完整锁紧（f_CEO 反馈至泵浦 LD）"
+      - "CW 参考激光相干时间长于 FNDC 服务环时间常数"
+    invalidated_when:
+      - "自由空间路径相噪 > 光纤相噪差（此时 FNDC 不再是主导限制）"
+      - "PZT 驱动带宽不足以追上支间环境扰动带宽（> 100 Hz 的分量仅被 f_CEO/f_beat 反馈消除）"
+    source_claim: >
+      "we introduced fiber noise difference cancellation to multi-branch fiber combs.
+       We detected and phase-locked the beat notes between the branch outputs and a common
+       1542 nm continuous wave laser. A piezo-electric transducer-based fiber stretcher was
+       installed in each branch except for the branch used as the cancellation reference."
+    breakthrough_paths:
+      - direction: meth.fiber_noise_difference_cancellation_k18
+        expected_gain: "多分支 Er 梳相对不确定度从 10⁻¹⁸–10⁻¹⁹（应用支 without FNDC）降至 10⁻²⁰ 级"
+        status: demonstrated
+        source: {zotero_key: "ERNT9GV3", claim: "The cancellation improved the frequency uncertainty to a low level of 10⁻²⁰ at a 100000-s averaging time"}
+
+  - id: pri.residual_free_space_path_noise_floor
+    name: "残余自由空间路径相噪地板原理（FNDC 应用后主导长期不稳定）"
+    tier: engineering
+    verification_status: inferred
+    statement: >
+      FNDC 能抵消光纤段内的相噪差，但 f_CEO 拍频探测路径与 FNDC 拍频探测路径中仍有若干
+      自由空间段落未被伺服覆盖。这些短（数十 cm 量级）但裸露的自由空间光程因环境（气压、温度、
+      振动）涨落贡献 mod σ_y ≈ 2×10⁻¹⁷·τ⁻¹/²（Williams 2008），在 τ ≳ 1000 s 时主导长期稳定度。
+    domain: "光频比对工程；残余相噪预算"
+    formula: "mod σ_y(τ) ≈ 2×10⁻¹⁷ · τ⁻¹/² (covered free-space, 数十 cm)"
+    key_insight: "FNDC 做完后，长期地板从'支间光纤差'迁移到'未封装自由空间段'。"
+    conditions:
+      - "自由空间段长度数十 cm，有外罩但非真空"
+      - "FNDC 有效抑制 <100 Hz 的光纤相噪"
+    invalidated_when:
+      - "将 f_CEO 及 FNDC 探测路径全部封装或置于真空"
+      - "采用全光纤化（末端分束 + 全光纤拍频）架构"
+    source_claim: >
+      "the limitation will be optical path length fluctuation of the uncancelled free-space parts
+       caused by the environmental change. Williams et al. reported that the frequency instability
+       induced by a covered free space optical path tens of cm in length was 2×10⁻¹⁷ / τ¹ᐟ² ..."
+
+methods:
+  - id: meth.fiber_noise_difference_cancellation_k18
+    name: "分支间光纤噪声差分消除法（FNDC，Kashiwagi 2018）"
+    status: demonstrated
+    applies_to: ent.multi_branch_fiber_comb_k18
+    steps_summary: >
+      1. 取 CEO-锁定支为 FNDC 参考支（其光纤相噪由 f_CEO 反馈在泵浦 LD 上锁紧）；
+      2. 将 1542 nm CW 激光分束送入三支，与各支最近梳齿各拍频 → 三路 RF 信号；
+      3. "CW ↔ CEO-锁定支梳" 拍频作 FNDC 参考信号；"CW ↔ 第 j 支梳" 拍频作第 j 支误差信号；
+      4. 伺服电子学比较参考信号与误差信号相位，驱动第 j 支的鼓型 PZT 光纤拉伸器使差相位 → 0
+         （控制带宽 ~100 Hz）；
+      5. 并发的 f_CEO（泵浦 LD）与 f_beat（WG-EOM + TEC）反馈回路抵消共公（CEO-锁定支）光纤相噪；
+      6. CW 参考激光只需"松锁"至梳，其自身相噪作为共模在两拍频相减中消除。
+    required_hardware:
+      - ent.multi_branch_fiber_comb_k18
+      - ent.pzt_fiber_stretcher_k18
+      - ent.fndc_reference_cw_laser_1542nm_k18
+    advantages:
+      - "保留多分支架构在应用层面（不同波段输出独立可调谱）优势"
+      - "相对不确定度达 10⁻²⁰ 级，与单支架构（Ohmae 2017、Leopardi 2017）同量级"
+      - "CW 参考激光相噪为共模项，不传入最终比对"
+    disadvantages:
+      - "整体系统复杂：需额外的 CW 激光、三路拍频探测与三路伺服电子学"
+      - "PZT 控制带宽 ~100 Hz → >100 Hz 支间相噪只能靠 f_CEO / f_beat 反馈抑制"
+      - "PZT 段因布线难以置于同一隔离盒，增加低频环境噪声入口"
+    conditions:
+      - "每支与 CW 参考拍频 S/N 足够 (> 20 dB @ 可用带宽)"
+      - "CEO-锁定支 f_CEO 已无 cycle slip 锁紧"
+    source_claim: >
+      "The fiber stretchers installed in the two branches controlled the fiber lengths of the branches
+       and cancelled out the phase differences between the reference and the respective error signals.
+       Thus, the residual fiber noise was the same in each branch."
+
+metrics:
+  - id: met.relative_frequency_instability_allan_k18
+    name: "支间相对频率 Allan 偏差（Kashiwagi 2018，FNDC 开启）"
+    unit: "无量纲（分数频率稳定度）"
+    description: >
+      两套准相同多分支 Er 光纤梳输出（1542 nm 拍频-锁定支 / 1700 nm 应用支）在光域直接比对
+      得到的相对频率 Allan 偏差；报告值已除以 √2 归一到单梳。
+    demonstrated_value:
+      value: "1.4×10⁻¹⁶ @1 s（拍频-锁定支，FNDC on）；1.8×10⁻¹⁶ @1 s（应用支，FNDC on）；~10⁻¹⁹ @10000 s"
+      conditions: >
+        两套共用 1064 nm USL（f_beat）与 1542 nm CW（FNDC）；f_rep=43.4 MHz，两梳 f_beat/f_CEO 反向；
+        π-type 无死时间计数器，1 s 门；tracking oscillator 于每路拍频使用。
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "ERNT9GV3", claim: "1.4×10⁻¹⁶ and 1.8×10⁻¹⁶ at a 1-s averaging time in beat-locking and application branches, respectively"}
+    theoretical_floor:
+      value: "1-s：50 Hz–1 kHz 电源噪声 → ~8×10⁻¹⁷"
+      basis: "相噪 PSD 在 100 Hz–20 kHz 区间积分后除以 √2；FNDC 带宽 ~100 Hz，tracking osc. 带宽 ~20 kHz"
+      gap_note: >
+        测值 1.4×10⁻¹⁶ 距该估计地板约 2× 差距，作者归因于 PZT 段光纤未完全封装引入的低频环境扰动。
+
+  - id: met.relative_frequency_uncertainty_modallan_k18
+    name: "支间相对频率 modified Allan 偏差（长期，Kashiwagi 2018）"
+    unit: "无量纲（分数频率稳定度）"
+    description: >
+      为抑制白相噪贡献，对同一比对序列计算 modified Allan 偏差并外推到超长平均时间。
+    demonstrated_value:
+      value: "9.7×10⁻²¹ @ 126500 s（mod σ_y）；加权标准差（单梳）1.6×10⁻²⁰"
+      conditions: >
+        总测量时长 510000 s（mod σ_y 序列）与 600000 s（移动平均序列）；
+        除以 √2 归一到单梳。
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "ERNT9GV3", claim: "The frequency instabilities reached a sub-10⁻²⁰ order (9.7×10⁻²¹) at an averaging time of 126500 s ... a weighted standard deviation for a single comb of 1.6×10⁻²⁰"}
+    historical_landmarks:
+      first_demonstration:
+        value: "多分支光纤梳相对不确定度首次进入 10⁻²⁰ 级"
+        year: 2018
+        source: {zotero_key: "ERNT9GV3"}
+        note: "单支架构此前已达 10⁻²¹–10⁻²⁰（Ohmae 2017 / Leopardi 2017 / Johnson 2015 / Yao 2016）；本文首次在多分支架构做到同级。"
+    theoretical_floor:
+      value: "未封装自由空间路径 ~2×10⁻¹⁷·τ⁻¹/²（Williams 2008），@1000 s 约 6×10⁻¹⁹"
+      basis: "数十 cm 覆盖自由空间段相噪经验值"
+      gap_note: "作者测得 >30 次长期序列均未突破 10⁻²⁰，与该地板预测一致。"
+
+  - id: met.residual_phase_noise_psd_k18
+    name: "FNDC 开启前支间残余相噪 PSD（Kashiwagi 2018）"
+    unit: "dBrad²/Hz（vs. Hz）"
+    description: >
+      FNDC 关闭时 1700 nm 应用支直接拍频的相位噪声功率谱密度，用于说明 FNDC 的有效带宽与剩余地板来源。
+    demonstrated_value:
+      value: "0.1 Hz–100 Hz 区间相噪占主导（FNDC 开启后被压；100 Hz–20 kHz 为残余地板）"
+      conditions: "1700 nm 应用支直接拍频，BS+10 nm BPF，~45 dB S/N @ 300 kHz RBW"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "ERNT9GV3", claim: "The Allan deviation at 1-s averaging with the FNDC and the tracking oscillator was mainly limited by the power supply noise in the 50 Hz to 1 kHz range"}
+
+# ═══════════════════════════════════════════════
+#  RELATIONS（关系）
+# ═══════════════════════════════════════════════
+
+relations:
+  - id: rel.K18_01
+    subject: ent.multi_branch_fiber_comb_k18
+    predicate: PART-OF
+    object: ent.optical_frequency_comb
+    confidence: established
+    source: {zotero_key: "ERNT9GV3", claim: "fiber combs with multiple outputs (multi-branch fiber combs)"}
+    note: "ent.optical_frequency_comb 权威定义于 udem2002.yaml（跨文件引用）。"
+
+  - id: rel.K18_02
+    subject: ent.pzt_fiber_stretcher_k18
+    predicate: PART-OF
+    object: ent.multi_branch_fiber_comb_k18
+    confidence: established
+    source: {zotero_key: "ERNT9GV3", claim: "a piezo-electric transducer-based fiber stretcher was installed in each branch except for the branch used as the cancellation reference"}
+
+  - id: rel.K18_03
+    subject: ent.fndc_reference_cw_laser_1542nm_k18
+    predicate: PART-OF
+    object: ent.multi_branch_fiber_comb_k18
+    confidence: established
+    source: {zotero_key: "ERNT9GV3", claim: "A beat note between the CW laser output at 1542 nm and the nearest comb mode of the CEO-locking branch output was used as a reference signal for the FNDC"}
+
+  - id: rel.K18_04
+    subject: ent.multi_branch_fiber_comb_k18
+    predicate: ENABLED-BY
+    object: pri.self_referencing_f2f
+    confidence: established
+    source: {zotero_key: "ERNT9GV3", claim: "a portion of the HNLF output was guided to an f-2f interferometer to detect the CEO beat of the comb"}
+    note: "pri.self_referencing_f2f 定义于 udem2002.yaml / giunta2019.yaml（跨文件引用）。"
+
+  - id: rel.K18_05
+    subject: ent.multi_branch_fiber_comb_k18
+    predicate: CHARACTERIZED-BY
+    object: met.relative_frequency_instability_allan_k18
+    confidence: established
+    source: {zotero_key: "ERNT9GV3", claim: "1.4×10⁻¹⁶ and 1.8×10⁻¹⁶ at a 1-s averaging time"}
+    temporal_role: validates
+
+  - id: rel.K18_06
+    subject: ent.multi_branch_fiber_comb_k18
+    predicate: CHARACTERIZED-BY
+    object: met.relative_frequency_uncertainty_modallan_k18
+    confidence: established
+    source: {zotero_key: "ERNT9GV3", claim: "a practical multi-branch fiber-comb with a relative uncertainty at the 10⁻²⁰ level"}
+    temporal_role: validates
+
+  - id: rel.K18_07
+    subject: met.relative_frequency_instability_allan_k18
+    predicate: OPERATIONALIZED-AS
+    object: meth.fiber_noise_difference_cancellation_k18
+    confidence: established
+    source: {zotero_key: "ERNT9GV3", claim: "the FNDC improved the frequency stability ... Fig. 5"}
+
+  - id: rel.K18_08
+    subject: met.relative_frequency_uncertainty_modallan_k18
+    predicate: OPERATIONALIZED-AS
+    object: meth.fiber_noise_difference_cancellation_k18
+    confidence: established
+    source: {zotero_key: "ERNT9GV3"}
+
+  - id: rel.K18_09
+    subject: meth.fiber_noise_difference_cancellation_k18
+    predicate: ENABLED-BY
+    object: pri.multi_branch_fiber_noise_difference_cancellation
+    confidence: established
+    source: {zotero_key: "ERNT9GV3", claim: "The FNDC is similar to conventional fiber noise cancellation ... cancelled out the fiber noise differences between the CEO-locking branch and the other two branches"}
+
+  - id: rel.K18_10
+    subject: ent.multi_branch_fiber_comb_k18
+    predicate: BOUNDED-BY
+    object: pri.inter_branch_fiber_noise_degradation
+    confidence: established
+    source: {zotero_key: "ERNT9GV3", claim: "The inter-branch/path phase noise differences degrade the frequency stabilities"}
+    breakthrough_paths:
+      - direction: meth.fiber_noise_difference_cancellation_k18
+        expected_gain: "支间相对不确定度从 >10⁻¹⁸ 降至 10⁻²⁰ 级"
+        status: demonstrated
+        source: {zotero_key: "ERNT9GV3", claim: "The cancellation improved the frequency uncertainty to a low level of 10⁻²⁰ at a 100000-s averaging time"}
+
+  - id: rel.K18_11
+    subject: met.relative_frequency_uncertainty_modallan_k18
+    predicate: BOUNDED-BY
+    object: pri.residual_free_space_path_noise_floor
+    confidence: inferred
+    source: {zotero_key: "ERNT9GV3", claim: "the limitation will be optical path length fluctuation of the uncancelled free-space parts caused by the environmental change"}
+    note: "作者 >30 次长期测量均未突破 10⁻²⁰，与 Williams 2008 自由空间段 2×10⁻¹⁷·τ⁻¹/² 一致。"
+    breakthrough_paths:
+      - direction: meth.fiber_noise_difference_cancellation_k18
+        expected_gain: "延长 FNDC 覆盖范围至 f_CEO 探测路径 & FNDC 探测自由空间段（封装/真空化或全光纤化）→ 进入 10⁻²¹"
+        status: proposed
+        source: {zotero_key: "ERNT9GV3", claim: "To reach a frequency uncertainty of 10⁻²¹ order, further improvement is required, such as shortening the out-of-loop path length and reducing the power supply noise"}
+      - direction: meth.wideband_optical_frequency_synthesis
+        expected_gain: "以超稳激光 + 光相位追踪替代 1542 nm 松锁 CW 参考，进一步压低短期 1-s 地板"
+        status: demonstrated
+        source: {zotero_key: "UFWLAXMA", claim: "real-time optical phase tracking with ultra-low-noise frequency combs"}
+        note: "跨文件引用：meth.wideband_optical_frequency_synthesis 定义于 giunta2020.yaml。"
+
+  - id: rel.K18_12
+    subject: met.relative_frequency_instability_allan_k18
+    predicate: BOUNDED-BY
+    object: pri.residual_free_space_path_noise_floor
+    confidence: inferred
+    source: {zotero_key: "ERNT9GV3", claim: "some part of the optical path length fluctuation was not cancelled; the f_CEO beat detection path and part of the beat detection path for the FNDC"}
+    note: "1-s 端主要由 100 Hz–20 kHz 相噪（特别是 50 Hz–1 kHz 电源噪声）决定，估计贡献约 8×10⁻¹⁷；自由空间段次之。"
+    breakthrough_paths:
+      - direction: meth.fiber_noise_difference_cancellation_k18
+        expected_gain: "封装 PZT 段 + 降低电源噪声 → 1-s 稳定度接近估计地板 8×10⁻¹⁷"
+        status: proposed
+        source: {zotero_key: "ERNT9GV3", claim: "This noise was assumed to limit the short-term frequency stability and can be reduced by some technical improvement"}
+
+  - id: rel.K18_13
+    subject: meth.fiber_noise_difference_cancellation_k18
+    predicate: CONDITIONED-BY
+    object: ent.fndc_reference_cw_laser_1542nm_k18
+    confidence: established
+    source: {zotero_key: "ERNT9GV3", claim: "The laser was loosely locked to the comb by using the reference signal to stably obtain the signal"}
+    note: "CW 参考激光只需在 FNDC 控制带宽内相位连续，其自身相噪作为共模在两拍频差中消除。"

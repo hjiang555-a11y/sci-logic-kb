@@ -1,0 +1,542 @@
+# Stern 2018 — 首次实现电池供电、III–V/Si3N4 全集成 Kerr 微梳源 [里程碑技术论文]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical — 便携化微梳系统里程碑
+#   核心贡献：
+#     (1) 首次将电泵 III–V RSOA 增益芯片与 Si3N4 高 Q (8×10⁶) 微环端面对接，整芯片
+#         在 Pelec = 78–130 mW 下激发 194 GHz 耗散 Kerr 孤子梳；
+#     (2) 首次用 AAA 干电池（Pelec = 98 mW）直接供电驱动产生单孤子梳，证明 Kerr 微梳
+#         的 wall-plug 功率已可降至便携/电池级，打开车载、移动传感器应用空间；
+#     (3) 两种拓扑并存演示：(a) 双用微谐振腔（既做激光腔 Rayleigh 反射端镜又做 FWM 腔）
+#         与 (b) 独立 Sagnac 环镜 + 分离梳腔的模块化设计，展示平台灵活性与产业化路径。
+#   Framework 依赖：kippenberg2018.yaml 定义 ent.microresonator_frequency_comb、
+#     pri.dissipative_kerr_soliton、pri.microresonator_anomalous_dispersion、
+#     meth.cw_pumped_microcomb_generation、meth.laser_tuning_soliton_access；
+#     gaeta2019.yaml 定义 ent.si3n4_integrated_comb / chip-integration 语境；
+#     li2017.yaml 给出 Si3N4 微梳低阈值 + thermo-optic soliton access 语境。
+
+meta:
+  zotero_key: "EBNL35EE"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical
+  reliability: high
+  title: "Battery-operated integrated frequency comb generator"
+  year: 2018
+  first_author: Stern
+  journal: "Nature"
+  volume: 562
+  issue: 7727
+  pages: "401-405"
+  doi: "10.1038/s41586-018-0598-9"
+  note: >
+    [里程碑技术论文] Cornell + Columbia (Stern/Ji/Okawachi/Gaeta/Lipson) 合作。
+    毫米级 III–V RSOA 增益芯片端面对接 Si3N4 光子芯片，后者集成双 Vernier 微环滤波器
+    （半径 20/22 µm，FSR 1.18/1.07 THz）作为单纵模选择 + 半径 120 µm 非线性高 Q 微环
+    （Q_i = 8×10⁶，FSR = 194 GHz）既做激光腔输出耦合（Rayleigh 背散 40% 反射）又做
+    Kerr FWM 产生腔。1579 nm 泵浦 CW 激光、Popt = 2.5 mW（bus 波导前）即可触发孤子化；
+    片上电泵 Pelec = 98 mW（AAA 电池直接供电）输出 1.3 mW 激光 + 0.24 mW 梳，孤子谱宽
+    8.6 THz (72 nm, 30 dB)。模块化版本（Sagnac 环镜）在 Pelec = 162 mW 下产生双孤子
+    13.4 THz 谱，总梳功率 80 µW，转换效率 1.6%。本文件定义 Level-2 集成系统实例
+    ent.battery_operated_microcomb_s18 及若干 SWaP（size-weight-and-power）层面的
+    工程原理/指标；Level-1 类型节点 ent.microresonator_frequency_comb 等全部跨文件引用。
+    跨文件节点引用：
+      - ent.microresonator_frequency_comb 定义于 kippenberg2018.yaml
+      - ent.si3n4_integrated_comb 定义于 gaeta2019.yaml / kippenberg2018.yaml
+      - pri.dissipative_kerr_soliton 定义于 kippenberg2018.yaml
+      - pri.microresonator_anomalous_dispersion 定义于 kippenberg2018.yaml
+      - meth.cw_pumped_microcomb_generation 定义于 kippenberg2018.yaml
+      - meth.laser_tuning_soliton_access 定义于 li2017.yaml / kippenberg2018.yaml
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.battery_operated_microcomb_s18
+    name: "电池供电全集成 III–V/Si3N4 Kerr 微梳源（Stern 2018）"
+    aliases:
+      - "laser-integrated Kerr frequency comb generator"
+      - "hybrid III–V/Si3N4 battery-operated microcomb"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      毫米级异质集成 Kerr 微梳芯片组：III–V 反射型半导体光放大器（RSOA）端面对接
+      Si3N4 光子芯片；Si3N4 芯片内集成双 Vernier 微环滤波器选择单纵模 + 120 µm
+      半径高 Q 非线性微环，后者兼做激光腔输出耦合器（Rayleigh 背散射反射 ≈40%）
+      与 Kerr FWM/耗散孤子梳产生腔。电驱动下在 Pelec 约 100 mW 量级产生 194 GHz
+      间距、近 1550 nm 的低噪声单孤子梳，首次可由 AAA 干电池直接供电，开创便携
+      微梳系统方向。
+    key_parameters:
+      platform: "III–V (RSOA) + Si3N4 光子芯片（异质端面对接）"
+      laser_gain_medium: "电泵 III–V 反射型半导体光放大器 (RSOA)"
+      pump_wavelength: "1579–1582 nm"
+      repetition_rate: "194 GHz（梳齿间距，等于 120 µm 微环 FSR）"
+      comb_ring_radius: "120 µm"
+      comb_ring_intrinsic_Q: "(8.0 ± 0.8) × 10⁶"
+      comb_ring_waveguide: "Si3N4, 730 nm × 1800 nm 截面（反常 GVD）"
+      vernier_filters: "两个 Si3N4 微环（R = 20 µm / 22 µm，FSR 1.18 / 1.07 THz，FWHM 15 GHz）"
+      lasing_threshold_current: "49 mA"
+      slope_efficiency: "52 mW A⁻¹"
+      max_laser_optical_power: "9.5 mW @ Pelec = 277 mW"
+      wall_plug_efficiency: "3.4%"
+      laser_linewidth: "40 kHz（延迟自外差）"
+      SMSR: ">60 dB"
+      parametric_threshold_Popt: "1.1 mW（bus 波导，环前），对应 Pelec = 78 mW"
+      single_soliton_operating_point: "Pelec = 130 mW（Fig.3c）"
+      battery_operating_point: "Pelec = 98 mW / Popt = 1.3 mW / comb_power = 0.24 mW（AAA 干电池）"
+      soliton_30dB_bandwidth: "8.6 THz / 72 nm（单孤子，Fig.3c）"
+    topology_variants:
+      dual_role_ring:
+        description: >
+          Fig.1–3 拓扑：非线性微环同时作为激光腔输出镜（Rayleigh 背散反射）与 FWM 梳腔。
+          优点：pump-comb 本征锁相对齐；缺点：腔耦合与 FWM 耦合条件强耦合，独立调节受限。
+      sagnac_modular:
+        description: >
+          Fig.4 拓扑：Sagnac 环镜作为宽带激光腔输出耦合器（R≈20%），梳腔与激光腔解耦。
+          Pelec = 162 mW，Popt = 4.9 mW，双孤子 13.4 THz / 105 nm 30 dB 谱，
+          梳功率 80 µW，转换效率 1.6%。优点：模块化、调谐灵活；缺点：需更高泵功率。
+    interface_requirements:
+      electrical_supply: "~100 mW DC 电流源（可由 AAA 电池提供）"
+      packaging: "III–V 与 Si3N4 端面对接（butt coupling）；后续可迁移为硅衬底键合 / 被动对准"
+      temperature_control: "无（孤子稳定运行无需主动温控）"
+    note: >
+      Level-2 集成系统实例。PART-OF ent.microresonator_frequency_comb（权威定义于
+      kippenberg2018.yaml）；同时是 ent.si3n4_integrated_comb（gaeta2019.yaml）家族的
+      电泵便携化子类，COMPETES-WITH 外置光纤/台式泵浦 Si3N4 微梳（li2017 等）。
+
+  - id: ent.integrated_iii_v_rsoa_pump_s18
+    name: "片上 III–V 反射型半导体光放大器（RSOA）泵源"
+    hierarchy_level: 3
+    status: demonstrated
+    function: >
+      III–V 量子阱电泵增益波导，一端镀高反镜为固定反射端，另一端端面对接 Si3N4 芯片；
+      与 Si3N4 Vernier 滤波器 + 微环 Rayleigh 反射共同构成外腔单纵模激光器。
+      取代外置台式泵浦激光，是系统 SWaP（体积-功耗）降至电池级的关键。
+    key_parameters:
+      gain_bandwidth: "覆盖 1550 nm 波段"
+      threshold_current: "49 mA"
+      max_optical_output: "9.5 mW（端面对接进入 Si3N4 后测得）"
+      slope_efficiency: "52 mW A⁻¹"
+    note: "PART-OF ent.battery_operated_microcomb_s18；未来可迁移为硅衬底被动对准键合（Methods 所述升级路径）。"
+
+  - id: ent.vernier_microring_filter_pair_s18
+    name: "Si3N4 双微环 Vernier 单纵模选择滤波器"
+    hierarchy_level: 3
+    status: demonstrated
+    function: >
+      R = 20 µm / 22 µm 双 Si3N4 微环，FSR 分别 1.18 / 1.07 THz，只有在对齐位置才
+      合成单一透射峰（Vernier 选择），FWHM 15 GHz；通过集成电阻式微加热器宽范围
+      热调谐，与 120 µm 大微环的某个模式对齐以确定泵浦波长。
+    note: "PART-OF ent.battery_operated_microcomb_s18。"
+
+  - id: ent.nonlinear_microring_dual_role_s18
+    name: "双用非线性 Si3N4 微环（激光输出镜 + Kerr 梳腔）"
+    hierarchy_level: 3
+    status: demonstrated
+    function: >
+      半径 120 µm、Q_i ≈ 8×10⁶ 的 Si3N4 微环。通过反向环行模 Rayleigh 散射
+      耦合产生共振窄带 40% 回反射，替代传统输出镜；同时其反常 GVD + 高非线性
+      支持 CW-泵 FWM 与耗散 Kerr 孤子形成，产生 194 GHz 间距梳。
+    key_parameters:
+      radius: "120 µm"
+      FSR: "194 GHz"
+      intrinsic_Q: "(8.0 ± 0.8) × 10⁶"
+      on_resonance_reflection: "≈40%"
+      waveguide_cross_section: "730 nm × 1800 nm"
+      predicted_threshold_bus: "700 µW（仿真，bus 波导）"
+    note: >
+      PART-OF ent.battery_operated_microcomb_s18；本结构复用是 Stern 2018 首创
+      （区别于 Fig.4 Sagnac 模块化版本的功能分离设计）。
+
+principles:
+  - id: pri.rayleigh_backscatter_self_injection_lock_s18
+    name: "微环 Rayleigh 背散自注入锁定原理（双用腔实现）"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      高 Q 微环因波导侧壁微弱无序散射，在共振峰附近将正向环行模部分耦合到反向环行模，
+      对外表现为窄带回反射 R ≈ 40%。该回反射锁定 RSOA 外腔激光频率至微环共振，
+      自动保证 "泵-梳" 对齐，不再需要外置激光 + PDH/反馈电路主动跟踪微环共振。
+    domain: "集成光子激光器；Kerr 微梳泵浦对齐"
+    formula: "反射率 R(ω) ≈ |κ_R / (i·Δω + κ_tot/2)|²，窄带 @ 微环共振"
+    key_insight: >
+      把 "稳定激光相对于微环共振" 这一控制问题折叠进被动 Rayleigh 物理，
+      是移除主动反馈电子、进入电池供电级 SWaP 的关键突破。
+    conditions:
+      - "微环 Q 足够高，以使 Rayleigh 耦合率 κ_R 与总损耗可比"
+      - "激光腔内其他损耗低，使微环回反成为主端镜"
+    preconditions:
+      - "RSOA 有反射端 + Vernier 单纵模选择，避免多模寄生"
+    invalidated_when:
+      - "微环处于强 FWM / 孤子状态时 Rayleigh 相位被 Kerr 非线性扰动 → 锁相可能漂移"
+      - "温漂将微环共振拖离 Vernier 透射峰 → 失锁"
+    source_claim: >
+      "the microresonator generates a narrowband back-reflection due to coupling between
+       counter-propagating circulating beams resulting from Rayleigh scattering ...
+       effectively serving as an output mirror of the pump laser cavity"
+
+  - id: pri.pump_comb_copackaging_swap_reduction_s18
+    name: "泵源-梳腔同芯片集成的 SWaP 降低原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      当泵浦激光与 Kerr 微环集成在同一光子平台并通过端面对接耦合时，光学插入损耗、
+      偏振对齐、温控与空间隔振需求都大幅下降，从而将系统总电功耗 Pelec 从
+      传统台式泵（W 级 EDFA/台式 ECL）压缩到 ~100 mW 量级，使电池供电成为可能。
+      这并非新的物理机制，而是把外置链路损耗（通常 >10 dB）与附属电子功耗从系统
+      功率预算中消去的工程结果。
+    domain: "集成光子学；便携频率计量系统工程"
+    formula: "Pelec_total = Pelec_pump + Pelec_driver + P_thermal；本工作 ≈ 98 mW（电池）"
+    key_insight: >
+      电池供电不是单一器件突破，而是 "RSOA 低阈值 + Si3N4 高 Q 低阈值 + 端面对接低损耗 +
+      无需主动温控" 四条链路同时满足后的系统级涌现结果。
+    conditions:
+      - "片上泵浦激光 wall-plug 效率 ≥ few %"
+      - "微环 FWM/孤子阈值（bus 波导处）≤ mW"
+      - "端面对接损耗控制在 few dB"
+    preconditions:
+      - "孤子态无需主动反馈即可维持（见 source_claim 2）"
+    invalidated_when:
+      - "引入低温（如 Si 腔光钟级系统）或主动温控，功耗再次回到 W 级"
+    source_claim: >
+      "we generate a Kerr comb spanning more than 8 THz and achieve a mode-locked,
+       single-soliton state with Pelec less than 100 mW, enabling battery-operation applications"
+    open_questions:
+      - "如何在保持 <100 mW 功耗同时实现 f-2f 自参考（需倍频程展宽 + 片上 SHG）？"
+      - "长期稳定度（Allan 偏差）在电池供电下未被表征"
+
+  - id: pri.packaging_loss_limits_wallplug_efficiency_s18
+    name: "端面对接损耗对 wall-plug 效率与总功耗的限制"
+    tier: engineering
+    verification_status: inferred
+    statement: >
+      III–V 与 Si3N4 端面对接的耦合损耗是系统 wall-plug 效率（本工作 3.4%）与
+      最低 Pelec 的主要限制之一。降低封装损耗（被动对准 / 倒装键合 / 硅衬底
+      III–V 直接键合）可同步压缩 Pelec 至更低水平或释放余量给片上功能扩展。
+    domain: "集成光子学封装"
+    formula: "η_wallplug = Popt_laser / Pelec_pump; 进一步损耗降低直接改善 η"
+    conditions:
+      - "pump 增益芯片 wall-plug 效率 fixed"
+      - "片上波导与微环内禀 Q 不是主限制"
+    source_claim: >
+      "In future implementations, the RSOA could be placed directly on the silicon substrate,
+       through passively aligned mounting or material bonding, taking advantage of the
+       infrastructure for assembly and packaging of III–V and silicon chips"
+
+  - id: pri.high_Q_si3n4_low_threshold_soliton_s18
+    name: "高 Q Si3N4 微环使 CW-泵孤子阈值降至 mW 级的工程原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      Si3N4 微环内禀 Q 提升至 8×10⁶ 量级后，参量振荡阈值与孤子形成所需 bus 波导
+      功率降至 ~1 mW（本工作实测 Popt_th = 1.1 mW；仿真孤子阈值 ~700 µW），
+      这是在有限电泵 RSOA 输出功率（~mW 级）下仍能稳定产生孤子梳的必要条件。
+    domain: "微腔非线性光学；微梳系统设计"
+    formula: "P_th ∝ V_eff / (Q² · n₂)；Q 提升为两次方杠杆"
+    conditions:
+      - "反常 GVD（730 × 1800 nm 截面）"
+      - "加载 Q 与内禀 Q 匹配良好（过耦合/欠耦合平衡）"
+    invalidated_when:
+      - "Si3N4 材料/界面损耗回退，Q < 10⁶，阈值升至 >10 mW 将无法电池供电"
+    source_claim: >
+      "Si3N4 microresonators were recently demonstrated with record low parametric
+       oscillation thresholds due to the high quality factors (Q > 3 × 10⁷), high
+       nonlinear refractive index ... simulations indicate that a soliton-state frequency
+       comb can be generated with 700 µW of pump power in the bus waveguide"
+
+methods:
+  - id: meth.electrical_soliton_tuning_s18
+    name: "集成微加热器热调谐孤子进入法（Stern 2018）"
+    status: demonstrated
+    applies_to: ent.battery_operated_microcomb_s18
+    steps_summary: >
+      1. 给 RSOA 通电至 Pelec ≈ 130 mW，先把 120 µm 微环稍失调，建立单纵模激光；
+      2. 用集成电阻微加热器热调谐 Vernier 微环对齐，单模锁定于所选激光波长；
+      3. 逐步调谐 120 µm 微环加热器使其共振从蓝向红扫向泵浦，依次经过
+         参量振荡（Popt ≈ 1.1 mW 阈值） → 多齿 MI 梳（RF 噪声高） →
+         单孤子态（RF 噪声骤降、sech² 包络）；
+      4. 孤子形成后无需主动温控或电子反馈，维持稳定运行直至主动失调。
+    required_hardware:
+      - ent.battery_operated_microcomb_s18
+      - ent.integrated_iii_v_rsoa_pump_s18
+      - ent.vernier_microring_filter_pair_s18
+      - ent.nonlinear_microring_dual_role_s18
+    advantages:
+      - "全电学调谐，零可移动光学部件"
+      - "Rayleigh 自注入锁避免主动激光 scan"
+      - "孤子状态自锁，无需反馈电路"
+    disadvantages:
+      - "热调谐带宽受微加热器响应限制（~ms）"
+      - "单孤子 vs 多孤子选择仍依赖经验调谐"
+    conditions:
+      - "Vernier 对齐 + 120 µm 微环模式对齐激光单纵模"
+      - "Pelec ≥ 78 mW（参量阈值），~130 mW 获稳定单孤子"
+    source_claim: >
+      "As the microresonator is tuned into resonance, greater circulating power leads to
+       comb formation ... Tuning the resonance further results in stable combs with smooth
+       spectral envelopes characteristic of temporal cavity solitons"
+    note: >
+      方法论上是 meth.laser_tuning_soliton_access（kippenberg2018/li2017）的
+      电学集成变体：把激光失谐扫描替换为微环共振热扫描，主体物理相同。
+
+metrics:
+  - id: met.microcomb_wallplug_electrical_power_s18
+    name: "集成 Kerr 微梳系统总电功耗 Pelec"
+    unit: "mW"
+    description: >
+      从电源端看到的梳系统总消耗功率，含 RSOA 泵电流 + 微加热器 + 驱动电子。
+      决定系统能否由便携/电池供电。
+    is_interface_metric: true
+    demonstrated_value:
+      value: "98 mW（AAA 电池，单孤子运行）；78 mW（参量阈值）；130 mW（稳定单孤子运行点）"
+      conditions: "120 µm Si3N4 微环 Q_i = 8×10⁶，无主动温控，端面对接 III–V RSOA"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "EBNL35EE", claim: "we generate a Kerr comb ... with Pelec less than 100 mW, enabling battery-operation applications"}
+    historical_landmarks:
+      first_demonstration:
+        value: "98 mW @ AAA 电池直接供电产生单孤子梳"
+        year: 2018
+        source: {zotero_key: "EBNL35EE"}
+        note: "首次电池供电全集成 Kerr 微梳（Stern 2018 Nature 562:401）"
+
+  - id: met.microcomb_laser_pump_power_s18
+    name: "微梳片上泵浦光功率 Popt（bus 波导入环处）"
+    unit: "mW"
+    description: >
+      Si3N4 bus 波导进入 120 µm 非线性微环前的 CW 光功率，
+      决定是否越过参量振荡/孤子阈值。
+    demonstrated_value:
+      value: "2.5 mW（off-resonance 激光）；1.1 mW（参量阈值，实测）；1.3 mW（电池运行）；0.7 mW（仿真孤子阈值）"
+      conditions: "延迟自外差线宽 40 kHz，SMSR > 60 dB"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "EBNL35EE", claim: "the laser power measured after the ring (Popt) reaches a threshold of 1.1 mW at Pelec = 78 mW"}
+
+  - id: met.microcomb_repetition_rate_s18
+    name: "集成微梳梳齿间距 / 重复频率"
+    unit: "GHz"
+    description: >
+      梳齿频率间距，由微环 FSR 决定；对时域映射为孤子脉冲串重频。
+    demonstrated_value:
+      value: "194 GHz"
+      conditions: "R = 120 µm Si3N4 微环"
+      verification_status: observed
+      source: {zotero_key: "EBNL35EE", claim: "a repetition rate of 194 gigahertz at wavelengths near 1,550 nanometres"}
+
+  - id: met.microcomb_comb_line_power_s18
+    name: "集成微梳梳齿总光功率 / 单齿功率"
+    unit: "mW（总）或 µW/tooth"
+    description: >
+      输出端所有梳齿叠加总光功率以及转换效率，决定下游探测/调制所需放大链。
+    demonstrated_value:
+      value: "0.24 mW 总梳功率（双用环拓扑，Pelec=130 mW）；80 µW（Sagnac 模块化拓扑，Pelec=162 mW，CE=1.6%）"
+      conditions: "单孤子 / 双孤子 30-dB bandwidth 8.6–13.4 THz"
+      verification_status: observed
+      source: {zotero_key: "EBNL35EE", claim: "The power of the comb lines totals 0.24 mW ... The measured comb power is 80 µW, corresponding to a conversion efficiency of 1.6%"}
+
+  - id: met.microcomb_30dB_bandwidth_s18
+    name: "集成微梳 30-dB 光谱带宽"
+    unit: "THz / nm"
+    description: >
+      单孤子 sech² 包络 30-dB 宽度，反映孤子持续时间与 pump-到-孤子带宽利用率。
+    demonstrated_value:
+      value: "8.6 THz (72 nm) 单孤子；13.4 THz (105 nm) 双孤子"
+      conditions: "近 1550 nm 泵浦；Pelec = 130 / 162 mW 两种拓扑"
+      verification_status: observed
+      source: {zotero_key: "EBNL35EE", claim: "a single-soliton state with a 8.6 THz (72 nm) 30-dB bandwidth ... a multiple-soliton-state frequency comb spanning a 13.4 THz (105 nm) 30-dB bandwidth"}
+
+  - id: met.integrated_laser_linewidth_s18
+    name: "集成 III–V/Si3N4 外腔激光器线宽"
+    unit: "kHz"
+    description: >
+      延迟自外差法测得的泵浦激光线宽，决定泵-梳相干性与孤子相噪下限。
+    demonstrated_value:
+      value: "40 kHz"
+      conditions: "Pelec ≈ 277 mW，Popt = 9.5 mW，60 dB SMSR"
+      verification_status: observed
+      source: {zotero_key: "EBNL35EE", claim: "we measure a narrow laser linewidth of 40 kHz using the delayed self-heterodyne method"}
+
+# ═══════════════════════════════════════════════
+#  RELATIONS（关系）
+# ═══════════════════════════════════════════════
+
+relations:
+  - id: rel.S18_01
+    subject: ent.battery_operated_microcomb_s18
+    predicate: PART-OF
+    object: ent.microresonator_frequency_comb
+    confidence: established
+    source: {zotero_key: "EBNL35EE", claim: "a laser-integrated Kerr frequency comb generator"}
+    note: "ent.microresonator_frequency_comb 权威定义于 kippenberg2018.yaml（跨文件引用）"
+
+  - id: rel.S18_02
+    subject: ent.integrated_iii_v_rsoa_pump_s18
+    predicate: PART-OF
+    object: ent.battery_operated_microcomb_s18
+    confidence: established
+    source: {zotero_key: "EBNL35EE", claim: "a gain section based on a III–V reflective semiconductor optical amplifier (RSOA) is coupled to a Si3N4 laser cavity"}
+
+  - id: rel.S18_03
+    subject: ent.vernier_microring_filter_pair_s18
+    predicate: PART-OF
+    object: ent.battery_operated_microcomb_s18
+    confidence: established
+    source: {zotero_key: "EBNL35EE", claim: "two Vernier microring filters for wavelength tunability"}
+
+  - id: rel.S18_04
+    subject: ent.nonlinear_microring_dual_role_s18
+    predicate: PART-OF
+    object: ent.battery_operated_microcomb_s18
+    confidence: established
+    source: {zotero_key: "EBNL35EE", claim: "a high-Q nonlinear microresonator ... serves two purposes ... back-reflection ... and ... generates a frequency comb through parametric FWM"}
+
+  - id: rel.S18_05
+    subject: ent.battery_operated_microcomb_s18
+    predicate: ENABLED-BY
+    object: pri.dissipative_kerr_soliton
+    confidence: established
+    source: {zotero_key: "EBNL35EE", claim: "stable combs with smooth spectral envelopes characteristic of temporal cavity solitons"}
+    note: "pri.dissipative_kerr_soliton 定义于 kippenberg2018.yaml"
+
+  - id: rel.S18_06
+    subject: ent.battery_operated_microcomb_s18
+    predicate: ENABLED-BY
+    object: pri.microresonator_anomalous_dispersion
+    confidence: established
+    source: {zotero_key: "EBNL35EE", claim: "Based on this Q and the anomalous group-velocity dispersion for the 730 nm×1,800 nm waveguide, simulations indicate that a soliton-state frequency comb can be generated"}
+    note: "pri.microresonator_anomalous_dispersion 定义于 kippenberg2018.yaml"
+
+  - id: rel.S18_07
+    subject: ent.battery_operated_microcomb_s18
+    predicate: ENABLED-BY
+    object: pri.rayleigh_backscatter_self_injection_lock_s18
+    confidence: established
+    source: {zotero_key: "EBNL35EE", claim: "narrowband back-reflection due to coupling between counter-propagating circulating beams resulting from Rayleigh scattering ... effectively serving as an output mirror of the pump laser cavity"}
+
+  - id: rel.S18_08
+    subject: ent.battery_operated_microcomb_s18
+    predicate: ENABLED-BY
+    object: pri.pump_comb_copackaging_swap_reduction_s18
+    confidence: established
+    source: {zotero_key: "EBNL35EE", claim: "the flexibility afforded by close integration of these components, and together with the ultra low power consumption should enable production of highly portable and robust frequency and timing references"}
+
+  - id: rel.S18_09
+    subject: meth.electrical_soliton_tuning_s18
+    predicate: DERIVED-FROM
+    object: meth.laser_tuning_soliton_access
+    confidence: established
+    source: {zotero_key: "EBNL35EE", claim: "comb formation as the microresonator is tuned using its integrated microheater"}
+    note: "meth.laser_tuning_soliton_access 定义于 li2017.yaml / kippenberg2018.yaml；本工作将激光扫描变为微环热扫描。"
+
+  - id: rel.S18_10
+    subject: meth.electrical_soliton_tuning_s18
+    predicate: ENABLED-BY
+    object: meth.cw_pumped_microcomb_generation
+    confidence: established
+    source: {zotero_key: "EBNL35EE", claim: "pumping the microresonator with a single-frequency pump laser, additional discrete, equidistant frequencies are generated through parametric four-wave mixing"}
+    note: "meth.cw_pumped_microcomb_generation 定义于 kippenberg2018.yaml"
+
+  - id: rel.S18_11
+    subject: ent.battery_operated_microcomb_s18
+    predicate: CHARACTERIZED-BY
+    object: met.microcomb_wallplug_electrical_power_s18
+    confidence: established
+    source: {zotero_key: "EBNL35EE", claim: "Pelec less than 100 mW, enabling battery-operation applications"}
+    temporal_role: validates
+
+  - id: rel.S18_12
+    subject: ent.battery_operated_microcomb_s18
+    predicate: CHARACTERIZED-BY
+    object: met.microcomb_laser_pump_power_s18
+    confidence: established
+    source: {zotero_key: "EBNL35EE", claim: "Popt reaches a threshold of 1.1 mW at Pelec = 78 mW"}
+
+  - id: rel.S18_13
+    subject: ent.battery_operated_microcomb_s18
+    predicate: CHARACTERIZED-BY
+    object: met.microcomb_repetition_rate_s18
+    confidence: established
+    source: {zotero_key: "EBNL35EE", claim: "repetition rate of 194 gigahertz"}
+
+  - id: rel.S18_14
+    subject: ent.battery_operated_microcomb_s18
+    predicate: CHARACTERIZED-BY
+    object: met.microcomb_30dB_bandwidth_s18
+    confidence: established
+    source: {zotero_key: "EBNL35EE", claim: "8.6 THz (72 nm) 30-dB bandwidth"}
+
+  - id: rel.S18_15
+    subject: ent.battery_operated_microcomb_s18
+    predicate: CHARACTERIZED-BY
+    object: met.microcomb_comb_line_power_s18
+    confidence: established
+    source: {zotero_key: "EBNL35EE", claim: "The power of the comb lines totals 0.24 mW"}
+
+  - id: rel.S18_16
+    subject: ent.integrated_iii_v_rsoa_pump_s18
+    predicate: CHARACTERIZED-BY
+    object: met.integrated_laser_linewidth_s18
+    confidence: established
+    source: {zotero_key: "EBNL35EE", claim: "we measure a narrow laser linewidth of 40 kHz"}
+
+  - id: rel.S18_17
+    subject: met.microcomb_wallplug_electrical_power_s18
+    predicate: OPERATIONALIZED-AS
+    object: meth.electrical_soliton_tuning_s18
+    confidence: established
+    source: {zotero_key: "EBNL35EE"}
+
+  - id: rel.S18_18
+    subject: met.microcomb_wallplug_electrical_power_s18
+    predicate: BOUNDED-BY
+    object: pri.packaging_loss_limits_wallplug_efficiency_s18
+    confidence: inferred
+    source: {zotero_key: "EBNL35EE", claim: "This corresponds to a 3.4% wall-plug efficiency ... In future implementations, the RSOA could be placed directly on the silicon substrate, through passively aligned mounting or material bonding"}
+    note: "端面对接损耗是当前 3.4% wall-plug 效率与 Pelec ≥ 78 mW 的主要限制之一。"
+    breakthrough_paths:
+      - direction: pri.pump_comb_copackaging_swap_reduction_s18
+        expected_gain: "被动对准/键合封装，将 Pelec 再压 2–5×，释放余量供 f-2f 链路"
+        status: proposed
+        source: {zotero_key: "EBNL35EE", claim: "passively aligned mounting or material bonding, taking advantage of the infrastructure for assembly and packaging of III–V and silicon chips"}
+
+  - id: rel.S18_19
+    subject: met.microcomb_laser_pump_power_s18
+    predicate: BOUNDED-BY
+    object: pri.high_Q_si3n4_low_threshold_soliton_s18
+    confidence: established
+    source: {zotero_key: "EBNL35EE", claim: "simulations indicate that a soliton-state frequency comb can be generated with 700 µW of pump power in the bus waveguide just before the microresonator"}
+    note: "孤子阈值 Popt 受 Q²·n₂·V_eff 共同控制；Q↑ 是降阈值最有效杠杆。"
+    breakthrough_paths:
+      - direction: pri.high_Q_si3n4_low_threshold_soliton_s18
+        expected_gain: "Si3N4 Q 从 8×10⁶ 提升至 3×10⁷，阈值 Popt 再降一个量级至 ~100 µW"
+        status: proposed
+        source: {zotero_key: "EBNL35EE", claim: "Si3N4 microresonators were recently demonstrated with record low parametric oscillation thresholds due to the high quality factors (Q > 3 × 10⁷)"}
+
+  - id: rel.S18_20
+    subject: met.microcomb_wallplug_electrical_power_s18
+    predicate: BOUNDED-BY
+    object: pri.pump_comb_copackaging_swap_reduction_s18
+    confidence: established
+    source: {zotero_key: "EBNL35EE", claim: "Pelec less than 100 mW, enabling battery-operation applications"}
+    note: >
+      当前 SWaP 下限（~100 mW）由 "RSOA wall-plug 效率 × 端面对接损耗 ×
+      Si3N4 微环孤子阈值" 三者乘积决定；任一环节改进可共同压缩。
+    breakthrough_paths:
+      - direction: meth.cw_pumped_microcomb_generation
+        expected_gain: "引入更高效率 III–V 增益材料 + 直接片上集成，进一步降低泵电功耗"
+        status: proposed
+        source: {zotero_key: "EBNL35EE"}
+
+  - id: rel.S18_21
+    subject: ent.battery_operated_microcomb_s18
+    predicate: COMPETES-WITH
+    object: ent.si3n4_integrated_comb
+    confidence: established
+    source: {zotero_key: "EBNL35EE", claim: "previous demonstrations using integrated resonators have relied on external pump lasers that are typically large, expensive and power-hungry"}
+    note: >
+      与 gaeta2019.yaml / li2017.yaml 中由外置台式激光泵浦的 Si3N4 微梳（ent.si3n4_integrated_comb
+      家族常见实现）构成同层级替代：牺牲峰值性能（最高 Q、octave span）换取电池级 SWaP。

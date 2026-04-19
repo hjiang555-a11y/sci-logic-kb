@@ -1,0 +1,284 @@
+# sci-logic-kb v4.1 (2026-04-18)
+meta:
+  topic: optical-frequency-combs
+  zotero_key: "BWX8NI2P"
+  paper_id: lezius2016
+  title: "Space-borne frequency comb metrology"
+  authors: ["Lezius, M.", "Wilken, T.", "Deutsch, C.", "Giunta, M.", "Mandel, O.", "Thaller, A.", "Schkolnik, V.", "Schiemangk, M.", "Dinkelaker, A.", "Kohfeldt, A.", "Wicht, A.", "Krutzik, M.", "Peters, A.", "Hellmig, O.", "Duncker, H.", "Sengstock, K.", "Windpassinger, P.", "Lampmann, K.", "Hülsing, T.", "Hänsch, T. W.", "Holzwarth, R."]
+  year: 2016
+  venue: "Optica"
+  doi: "10.1364/OPTICA.3.001381"
+  contribution_type: experimental_demonstration
+  summary: >
+    First demonstration of a self-referenced Er:fiber optical frequency comb
+    operated on a sounding rocket (TEXUS-51). The ruggedized comb maintained
+    full f-2f self-reference lock through launch, microgravity phase, and
+    re-entry, establishing baseline engineering for space-qualified OFCs.
+
+entities:
+  - id: ent.optical_frequency_comb
+    name: "Optical frequency comb (generic)"
+    level: 1
+    note: "Cross-file reuse; defined in udem2002.yaml."
+
+  - id: ent.spaceborne_erfiber_comb_l16
+    name: "Space-qualified Er:fiber self-referenced OFC (TEXUS-51)"
+    level: 2
+    part_of: ent.optical_frequency_comb
+    description: >
+      Ruggedized Er-doped fiber mode-locked laser (100 MHz rep-rate) with
+      highly nonlinear fiber supercontinuum and f-2f interferometer, packaged
+      for sounding-rocket flight. Monolithic free-space-free Er:fiber oscillator
+      with saturable absorber mirror mode-locking; locked to an onboard
+      ultra-narrow cavity-stabilized laser reference.
+    key_parameters:
+      - name: repetition_rate
+        value: 100
+        unit: MHz
+      - name: center_wavelength
+        value: 1560
+        unit: nm
+      - name: volume
+        value: 22
+        unit: L
+        note: "Comb optics+electronics payload envelope."
+      - name: mass
+        value: 22
+        unit: kg
+      - name: power_consumption
+        value: 70
+        unit: W
+      - name: operating_temperature_range
+        value: "10–40"
+        unit: "°C"
+      - name: vibration_qualification
+        value: "8.1 g_rms random (20–2000 Hz), 25 g sinusoidal shock"
+      - name: acceleration_launch_peak
+        value: 12.8
+        unit: g
+    note: "Level-2 engineering instance of ent.optical_frequency_comb."
+
+  - id: ent.texus51_rocket_platform
+    name: "TEXUS-51 sounding rocket platform"
+    level: 1
+    kind: ext
+    note: "External flight platform; ~6 min ballistic microgravity, apogee 254 km."
+
+  - id: ent.onboard_cavity_reference_laser
+    name: "Onboard cavity-stabilized 1560 nm reference laser"
+    level: 2
+    part_of: ent.spaceborne_erfiber_comb_l16
+    note: "ULE cavity-stabilized diode laser used as optical frequency reference; comb locked to it during flight."
+
+  - id: ent.rocket_vibration_shock_environment
+    name: "Launch/flight vibration and shock environment"
+    level: 1
+    kind: ext
+    note: "External environmental condition node (vibration, shock, acoustic, thermal transients)."
+
+principles:
+  - id: pri.self_referencing_f2f
+    name: "f-2f self-referencing"
+    tier: domain
+    note: "Cross-file reuse; defined in udem2002.yaml."
+
+  - id: pri.ruggedized_erfiber_comb_space_qualification
+    name: "Ruggedization principles for space-qualified Er:fiber combs"
+    tier: engineering
+    description: >
+      Engineering-tier design rules enabling a self-referenced Er:fiber comb
+      to survive and operate under launch shock, broadband random vibration,
+      and thermal transients: (1) all-fiber or fiber-spliced architecture
+      eliminating free-space alignment-critical elements in the oscillator;
+      (2) monolithic mechanical packaging with matched-CTE optomechanics and
+      potted fiber spools to damp vibration coupling into cavity length;
+      (3) environmentally isolated f-2f interferometer with short, rigid
+      free-space paths; (4) closed-loop thermal control of critical optical
+      subassemblies; (5) electronic servo bandwidths and capture ranges sized
+      to absorb residual launch-induced frequency excursions without
+      unlocking.
+    conditions:
+      - "Er:fiber mode-locked oscillator with SAM-based passive mode-locking"
+      - "Launch vibration ≤ ~8 g_rms random, shock ≤ ~25 g"
+      - "Thermal baseplate control within ±2 °C during flight"
+    preconditions:
+      - "f-2f interferometer must retain spatial overlap under vibration"
+      - "Pump-diode current and temperature servos remain within capture range"
+    invalidated_when:
+      - "Mechanical resonances couple into oscillator cavity length above servo bandwidth"
+      - "Thermal excursions exceed CTE compensation budget of optomechanics"
+    source:
+      claim: "Compact, robust, self-referenced Er:fiber comb survived TEXUS-51 launch and operated through microgravity."
+
+  - id: pri.vibration_cavity_length_coupling
+    name: "Vibration-induced oscillator cavity-length modulation"
+    tier: domain
+    description: >
+      Mechanical vibration couples into the mode-locked oscillator cavity
+      length and pump-coupling efficiency, producing repetition-rate and
+      carrier-envelope-offset noise, and in extreme cases loss of mode-lock.
+    conditions:
+      - "Applies to free-space and fiber mode-locked oscillators under g-level random vibration"
+    source:
+      claim: "Dominant in-flight noise contributions correlate with broadband mechanical excitation."
+
+  - id: pri.thermal_drift_comb_offsets
+    name: "Thermal drift of f_rep and f_ceo in fiber combs"
+    tier: domain
+    description: >
+      Temperature changes of the fiber oscillator shift cavity optical path
+      length (f_rep) and intracavity dispersion (f_ceo), requiring active
+      servo compensation with finite capture range.
+    source:
+      claim: "Payload thermal management is required to keep servos in-lock across flight profile."
+
+methods:
+  - id: meth.flight_operation_protocol_l16
+    name: "Sounding-rocket OFC flight operation protocol"
+    description: >
+      Pre-launch: warm-up, mode-lock acquisition on pad, closure of f_ceo
+      and optical lock to onboard cavity reference. Launch phase: servos
+      held with wide capture range; monitor only. Microgravity phase:
+      verify continuous f-2f lock, record in-flight beat SNR and lock
+      residuals. Re-entry/recovery: graceful servo handoff; post-flight
+      functional verification.
+    enabled_by: [pri.ruggedized_erfiber_comb_space_qualification, pri.self_referencing_f2f]
+
+metrics:
+  - id: met.inflight_f2f_beat_snr_l16
+    name: "In-flight f-2f beat-note SNR"
+    demonstrated_value: "≥ 30 dB in 100 kHz RBW throughout flight"
+    conditions:
+      - "TEXUS-51 flight, 100 MHz Er:fiber comb, HNLF supercontinuum"
+    source:
+      claim: "f-2f beat remained usable for phase-lock across launch, microgravity, and descent."
+
+  - id: met.inflight_lock_continuity_l16
+    name: "Continuous self-reference lock duration in flight"
+    demonstrated_value: "Uninterrupted lock across ~6 min microgravity; lock survived 12.8 g launch acceleration"
+    conditions:
+      - "TEXUS-51 ballistic profile"
+    source:
+      claim: "Comb maintained full self-referenced operation during entire flight."
+
+  - id: met.swap_budget_l16
+    name: "SWaP budget of space-qualified comb"
+    demonstrated_value: "22 L, 22 kg, 70 W"
+    conditions:
+      - "Integrated payload including optics, electronics, thermal control"
+
+  - id: met.vibration_qualification_l16
+    name: "Qualified vibration / shock levels"
+    demonstrated_value: "8.1 g_rms random (20–2000 Hz), 25 g shock"
+    conditions:
+      - "Sounding-rocket qualification campaign"
+
+  - id: met.operating_temperature_range_l16
+    name: "Qualified operating temperature range"
+    demonstrated_value: "10–40 °C baseplate"
+
+relations:
+  - id: rel.L01
+    subject: ent.spaceborne_erfiber_comb_l16
+    predicate: PART-OF
+    object: ent.optical_frequency_comb
+    source:
+      claim: "Space-qualified Er:fiber comb is a ruggedized engineering instance of a self-referenced OFC."
+
+  - id: rel.L02
+    subject: ent.spaceborne_erfiber_comb_l16
+    predicate: CHARACTERIZED-BY
+    object: met.swap_budget_l16
+
+  - id: rel.L03
+    subject: ent.spaceborne_erfiber_comb_l16
+    predicate: CHARACTERIZED-BY
+    object: met.vibration_qualification_l16
+
+  - id: rel.L04
+    subject: ent.spaceborne_erfiber_comb_l16
+    predicate: CHARACTERIZED-BY
+    object: met.operating_temperature_range_l16
+
+  - id: rel.L05
+    subject: ent.spaceborne_erfiber_comb_l16
+    predicate: CHARACTERIZED-BY
+    object: met.inflight_f2f_beat_snr_l16
+
+  - id: rel.L06
+    subject: ent.spaceborne_erfiber_comb_l16
+    predicate: CHARACTERIZED-BY
+    object: met.inflight_lock_continuity_l16
+
+  - id: rel.L07
+    subject: ent.spaceborne_erfiber_comb_l16
+    predicate: ENABLED-BY
+    object: pri.self_referencing_f2f
+    source:
+      claim: "Full f-2f self-referencing was implemented and held lock during flight."
+
+  - id: rel.L08
+    subject: ent.spaceborne_erfiber_comb_l16
+    predicate: ENABLED-BY
+    object: pri.ruggedized_erfiber_comb_space_qualification
+    source:
+      claim: "Mechanical/thermal/optical ruggedization rules enabled space-qualified operation."
+
+  - id: rel.L09
+    subject: ent.spaceborne_erfiber_comb_l16
+    predicate: CONDITIONED-BY
+    object: ent.rocket_vibration_shock_environment
+
+  - id: rel.L10
+    subject: ent.spaceborne_erfiber_comb_l16
+    predicate: CONDITIONED-BY
+    object: ent.texus51_rocket_platform
+
+  - id: rel.L11
+    subject: ent.spaceborne_erfiber_comb_l16
+    predicate: BOUNDED-BY
+    object: pri.vibration_cavity_length_coupling
+    note: "Launch/flight vibration couples into f_rep and f_ceo noise; can cause unlock."
+    breakthrough_paths:
+      - direction: pri.ruggedized_erfiber_comb_space_qualification
+        expected_gain: "Monolithic packaging + potted fiber spools suppress vibration-to-cavity-length coupling."
+        status: demonstrated
+        source:
+          claim: "Comb remained locked under 8.1 g_rms random vibration."
+      - direction: meth.flight_operation_protocol_l16
+        expected_gain: "Wide-capture-range servos absorb residual launch-induced excursions."
+        status: demonstrated
+    source:
+      claim: "Mechanical vibration identified as principal environmental stressor."
+
+  - id: rel.L12
+    subject: ent.spaceborne_erfiber_comb_l16
+    predicate: BOUNDED-BY
+    object: pri.thermal_drift_comb_offsets
+    breakthrough_paths:
+      - direction: pri.ruggedized_erfiber_comb_space_qualification
+        expected_gain: "Active baseplate thermal control keeps f_rep/f_ceo servos within capture range."
+        status: demonstrated
+    source:
+      claim: "Thermal control maintained lock across payload temperature profile."
+
+  - id: rel.L13
+    subject: ent.onboard_cavity_reference_laser
+    predicate: PART-OF
+    object: ent.spaceborne_erfiber_comb_l16
+
+  - id: rel.L14
+    subject: meth.flight_operation_protocol_l16
+    predicate: ENABLED-BY
+    object: pri.ruggedized_erfiber_comb_space_qualification
+
+historical_landmarks:
+  first_demonstration:
+    event: "First self-referenced optical frequency comb operated on a sounding rocket (TEXUS-51)"
+    year: 2016
+    source: "Lezius et al., Optica 3, 1381 (2016)"
+
+open_questions:
+  - "Long-duration (months–years) reliability of ruggedized Er:fiber combs in true orbital radiation and thermal-cycling environments."
+  - "Path to further SWaP reduction (sub-10 L / sub-10 kg / sub-30 W) for CubeSat deployment."
+  - "Qualification of crystalline microcombs vs. fiber combs for future space missions."

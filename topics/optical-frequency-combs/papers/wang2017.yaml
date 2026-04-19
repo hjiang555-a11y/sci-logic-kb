@@ -1,0 +1,274 @@
+# Schema: v4.1 (2026-04-18)
+# Topic: optical-frequency-combs
+meta:
+  topic: optical-frequency-combs
+  zotero_key: "GY48UQ7F"
+  schema_version: "v4.1"
+  contribution_type: technique
+  temporal_role: proposes
+  source:
+    authors: ["Wang, Z.", "Van Gasse, K.", "Moskalenko, V.", "Latkowski, S.", "Bente, E.", "Kuyken, B.", "Roelkens, G."]
+    year: 2017
+    title: "A III-V-on-Si ultra-dense comb laser"
+    venue: "Light: Science & Applications"
+    doi: "10.1038/lsa.2016.260"
+
+entities:
+  - id: ent.iii_v_on_si_ultradense_comb_w17
+    level: 1
+    name: "III-V-on-Si ultra-dense comb laser (Wang 2017)"
+    description: >
+      Heterogeneously integrated passively mode-locked laser combining a III-V
+      (InP-based) semiconductor optical amplifier / saturable absorber gain
+      stage with a long low-loss silicon waveguide extended cavity, producing a
+      sub-GHz-spacing optical frequency comb on a single chip.
+    note: "Novel Level-1 entity; COMPETES-WITH microresonator combs in spacing regime."
+
+  - id: ent.iii_v_soa_gain_section_w17
+    level: 2
+    part_of: ent.iii_v_on_si_ultradense_comb_w17
+    name: "III-V (InP) SOA gain section"
+    description: "Heterogeneously bonded III-V epitaxial stack providing optical gain on Si photonic chip."
+
+  - id: ent.saturable_absorber_w17
+    level: 2
+    part_of: ent.iii_v_on_si_ultradense_comb_w17
+    name: "Reverse-biased saturable absorber"
+    description: "III-V saturable absorber section enabling passive mode-locking via intensity-dependent loss."
+
+  - id: ent.si_extended_cavity_waveguide_w17
+    level: 2
+    part_of: ent.iii_v_on_si_ultradense_comb_w17
+    name: "Long low-loss silicon extended-cavity waveguide"
+    description: >
+      Silicon-on-insulator passive waveguide (several-cm long) that extends
+      the round-trip cavity length far beyond what monolithic III-V cavities
+      allow, setting the sub-GHz free spectral range.
+
+  - id: ent.microresonator_frequency_comb
+    level: 1
+    name: "Microresonator Kerr frequency comb (reference)"
+    note: "External reference node for comparison; defined in gaeta2019.yaml / stern2018.yaml."
+
+  - id: ent.optical_frequency_comb
+    level: 0
+    name: "Optical frequency comb (domain entity)"
+    note: "Reused from udem2002.yaml."
+
+principles:
+  - id: pri.long_cavity_subghz_comb_spacing
+    tier: domain
+    name: "Long extended cavity → sub-GHz comb spacing"
+    description: >
+      In a passively mode-locked laser the fundamental repetition rate (and
+      thus comb line spacing) equals c/(n_g · L_round). Increasing L via a
+      low-loss Si extended cavity directly compresses the FSR into the
+      sub-GHz regime while preserving mode-locking.
+    conditions:
+      - "Low round-trip loss in the extended passive section"
+      - "Saturable absorber recovery time compatible with round-trip time"
+      - "Group-velocity dispersion kept low enough over the gain bandwidth"
+    applicable_when: "Heterogeneous III-V/Si integration allowing low-loss long waveguides"
+    invalidated_when: "Waveguide propagation loss dominates round-trip gain"
+    source:
+      claim: "Extending the cavity length on the Si platform lowers the repetition rate into the GHz / sub-GHz range while maintaining mode-locking."
+
+  - id: pri.passive_mode_locking_soa_sa
+    tier: domain
+    name: "Passive mode-locking via SOA + saturable absorber"
+    description: >
+      Combined fast saturable absorption and gain saturation in the III-V
+      sections phase-lock longitudinal modes of the composite cavity, yielding
+      an equidistant optical comb without external modulation.
+    conditions:
+      - "Net gain window shorter than round-trip time"
+      - "SA recovery faster than SOA gain recovery"
+
+  - id: pri.heterogeneous_iii_v_on_si_integration
+    tier: domain
+    name: "Heterogeneous III-V-on-Si integration"
+    description: >
+      Adhesive / molecular bonding of III-V epitaxy onto SOI waveguides
+      enables co-integration of efficient III-V gain with low-loss, dispersion-
+      engineered Si passive circuits in a single chip.
+
+  - id: pri.linewidth_enhancement_factor_limit
+    tier: domain
+    name: "Henry linewidth enhancement factor (α) broadening"
+    description: >
+      Amplitude-phase coupling in semiconductor gain (α ≠ 0) broadens the
+      Schawlow-Townes linewidth of each comb tooth, setting a floor on per-line
+      coherence in semiconductor comb lasers.
+
+  - id: pri.group_velocity_dispersion_comb_limit
+    tier: domain
+    name: "Cavity GVD limit on comb bandwidth / equidistance"
+    description: >
+      Residual group-velocity dispersion of the composite III-V/Si cavity
+      walks off longitudinal modes from equal spacing and narrows the
+      mode-locking bandwidth, limiting the number of coherent comb lines.
+
+  - id: pri.waveguide_loss_comb_limit
+    tier: domain
+    name: "Si waveguide propagation loss as cavity-Q / efficiency limit"
+    description: "Propagation loss in the long Si extension reduces net gain margin, limits wall-plug efficiency and ultimately caps achievable cavity length / minimum comb spacing."
+
+methods:
+  - id: meth.passive_mode_locking_iii_v_si
+    name: "Passive mode-locking of III-V-on-Si extended-cavity laser"
+    enabled_by: [pri.passive_mode_locking_soa_sa, pri.heterogeneous_iii_v_on_si_integration]
+    description: "DC-biased SOA + reverse-biased SA in a long SOI extended cavity; no RF drive required."
+
+  - id: meth.rf_beatnote_comb_characterization
+    name: "RF beatnote / optical spectrum comb characterization"
+    description: "Measure optical spectrum (line count, envelope) and RF repetition-rate beatnote (spacing, phase-noise / timing jitter) to verify comb coherence."
+
+metrics:
+  - id: met.comb_line_spacing_w17
+    name: "Comb line spacing (repetition rate)"
+    characterizes: ent.iii_v_on_si_ultradense_comb_w17
+    demonstrated_value: "~1 GHz (sub-GHz regime)"
+    conditions:
+      - "Long Si extended cavity, passive mode-locking, room temperature"
+    operationalized_as: meth.rf_beatnote_comb_characterization
+    note: "Ultra-dense relative to typical monolithic III-V MLLs (tens of GHz) and Kerr microcombs (10–100 GHz)."
+
+  - id: met.number_of_comb_lines_w17
+    name: "Number of coherent comb lines"
+    characterizes: ent.iii_v_on_si_ultradense_comb_w17
+    demonstrated_value: "thousands of equidistant lines across the C-band"
+    conditions: ["Above mode-locking threshold; single operating point"]
+
+  - id: met.per_line_linewidth_w17
+    name: "Per-tooth optical linewidth"
+    characterizes: ent.iii_v_on_si_ultradense_comb_w17
+    demonstrated_value: "sub-MHz per comb line (semiconductor-limited)"
+    conditions: ["Free-running; no external stabilization"]
+
+  - id: met.timing_jitter_w17
+    name: "Repetition-rate timing jitter"
+    characterizes: ent.iii_v_on_si_ultradense_comb_w17
+    demonstrated_value: "picosecond-class integrated jitter (free-running)"
+
+  - id: met.wall_plug_power_w17
+    name: "Electrical drive power / wall-plug"
+    characterizes: ent.iii_v_on_si_ultradense_comb_w17
+    demonstrated_value: "sub-watt chip-level electrical drive"
+
+relations:
+  - id: rel.W01
+    subject: ent.iii_v_soa_gain_section_w17
+    predicate: PART-OF
+    object: ent.iii_v_on_si_ultradense_comb_w17
+
+  - id: rel.W02
+    subject: ent.saturable_absorber_w17
+    predicate: PART-OF
+    object: ent.iii_v_on_si_ultradense_comb_w17
+
+  - id: rel.W03
+    subject: ent.si_extended_cavity_waveguide_w17
+    predicate: PART-OF
+    object: ent.iii_v_on_si_ultradense_comb_w17
+
+  - id: rel.W04
+    subject: ent.iii_v_on_si_ultradense_comb_w17
+    predicate: CHARACTERIZED-BY
+    object: met.comb_line_spacing_w17
+
+  - id: rel.W05
+    subject: ent.iii_v_on_si_ultradense_comb_w17
+    predicate: CHARACTERIZED-BY
+    object: met.number_of_comb_lines_w17
+
+  - id: rel.W06
+    subject: ent.iii_v_on_si_ultradense_comb_w17
+    predicate: CHARACTERIZED-BY
+    object: met.per_line_linewidth_w17
+
+  - id: rel.W07
+    subject: met.comb_line_spacing_w17
+    predicate: OPERATIONALIZED-AS
+    object: meth.rf_beatnote_comb_characterization
+
+  - id: rel.W08
+    subject: meth.passive_mode_locking_iii_v_si
+    predicate: ENABLED-BY
+    object: pri.passive_mode_locking_soa_sa
+
+  - id: rel.W09
+    subject: meth.passive_mode_locking_iii_v_si
+    predicate: ENABLED-BY
+    object: pri.heterogeneous_iii_v_on_si_integration
+
+  - id: rel.W10
+    subject: ent.iii_v_on_si_ultradense_comb_w17
+    predicate: ENABLED-BY
+    object: pri.long_cavity_subghz_comb_spacing
+    source:
+      claim: "Sub-GHz mode spacing arises from the cm-scale Si extended cavity round-trip time."
+
+  - id: rel.W11
+    subject: ent.iii_v_on_si_ultradense_comb_w17
+    predicate: BOUNDED-BY
+    object: pri.waveguide_loss_comb_limit
+    source:
+      claim: "Si waveguide propagation loss limits how long the extended cavity (and hence how dense the comb) can be made while preserving mode-locking."
+
+  - id: rel.W12
+    subject: ent.iii_v_on_si_ultradense_comb_w17
+    predicate: BOUNDED-BY
+    object: pri.group_velocity_dispersion_comb_limit
+    source:
+      claim: "Residual GVD in the composite cavity limits comb bandwidth and equidistance."
+
+  - id: rel.W13
+    subject: ent.iii_v_on_si_ultradense_comb_w17
+    predicate: BOUNDED-BY
+    object: pri.linewidth_enhancement_factor_limit
+    source:
+      claim: "Per-tooth linewidth is set by semiconductor amplitude-phase coupling (α-factor)."
+
+  - id: rel.W14
+    subject: ent.iii_v_on_si_ultradense_comb_w17
+    predicate: COMPETES-WITH
+    object: ent.microresonator_frequency_comb
+    note: "Opposite spacing regimes: sub-GHz dense comb (semiconductor MLL) vs 10–100 GHz Kerr microcomb."
+
+  - id: rel.W15
+    subject: ent.iii_v_on_si_ultradense_comb_w17
+    predicate: PART-OF
+    object: ent.optical_frequency_comb
+
+breakthrough_paths:
+  - target: ent.iii_v_on_si_ultradense_comb_w17
+    bounded_by: pri.waveguide_loss_comb_limit
+    direction: pri.heterogeneous_iii_v_on_si_integration
+    expected_gain: "Lower-loss Si / SiN extended cavities further reduce comb spacing and improve efficiency."
+    status: proposed
+    source:
+      claim: "Improvements in Si waveguide loss will enable even denser combs."
+
+  - target: ent.iii_v_on_si_ultradense_comb_w17
+    bounded_by: pri.group_velocity_dispersion_comb_limit
+    direction: meth.passive_mode_locking_iii_v_si
+    expected_gain: "Dispersion-engineered Si waveguide geometry broadens coherent comb bandwidth."
+    status: proposed
+
+  - target: ent.iii_v_on_si_ultradense_comb_w17
+    bounded_by: pri.linewidth_enhancement_factor_limit
+    direction: pri.heterogeneous_iii_v_on_si_integration
+    expected_gain: "Hybrid cavity with dominant low-loss Si section reduces effective α-factor, narrowing per-tooth linewidth."
+    status: proposed
+
+open_questions:
+  - "Can sub-GHz III-V-on-Si combs be self-referenced (f-2f) given per-line power and bandwidth constraints?"
+  - "What is the ultimate minimum comb spacing before waveguide loss quenches mode-locking?"
+  - "How does timing jitter scale with extended-cavity length in this platform?"
+
+contested_claims: []
+
+historical_landmarks:
+  first_demonstration:
+    year: 2017
+    claim: "First heterogeneously integrated III-V-on-Si passively mode-locked laser delivering a sub-GHz-spacing, thousand-line optical frequency comb on chip."

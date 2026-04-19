@@ -1,0 +1,384 @@
+# Portuondo-Campa 2015 — DPSSL Er:Yb:glass 光频梳 + PM 保偏脉冲交织器，9.6 GHz 光生微波 −171 dBc/Hz 本底 [技术论文]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical
+
+meta:
+  zotero_key: "BESI3AEE"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical
+  reliability: high
+  title: "Ultra-low phase-noise microwave generation using a diode-pumped solid-state laser based frequency comb and a polarization-maintaining pulse interleaver"
+  year: 2015
+  first_author: "Portuondo-Campa"
+  journal: "Optics Express"
+  volume: 23
+  issue: 25
+  pages: "32441-32451"
+  doi: "10.1364/OE.23.032441"
+  note: >
+    [技术论文] CSEM Neuchâtel（Lecomte 组）。基于 Er:Yb:glass 二极管泵浦固态激光器
+    （DPSSL，1556 nm，146 fs，100 MHz）的光频梳，通过 6 级保偏（PM）低损耗光纤脉冲交织器
+    将重频提升至 3.2 GHz（2⁵ 倍增）+ 额外 1 级专门增强 9.6 GHz 第 3 谐波，
+    并在末级用 PM 偏振合束器（PBC）将双臂功率合成至单一输出（额外 ~3 dB 增益）。
+    两台相同 OFC 各自锁至共同的 PDH-稳 DFB 光纤激光（4 cm FP 腔），对拍测得
+    9.6 GHz 光生微波相位噪声底 −168 dBc/Hz（双源贡献）、−171 dBc/Hz（单源）@ 10 MHz 偏移——
+    PIN InGaAs 探测器架构的当时记录；仅超 cw 散粒噪声极限 ~3 dB，
+    受限于微波放大器残余相位噪声；平衡光学互相关（BOC）测得锁定 OFC 本征定时抖动
+    对应微波相噪低至 −148 dBc/Hz（1 Hz–1 kHz 区间，双源贡献）。
+    跨文件节点引用：ent.optical_frequency_comb 定义于 udem2002.yaml；
+    meth.photonic_microwave_synthesis 与 pri.optical_frequency_division_microwave
+    定义于 fortier2011.yaml / leopardi2017.yaml 相关文件；
+    pri.photodetection_shot_noise_limit 定义于 kalubovilage2022.yaml。
+
+# ═══════════════════════════════════════════════
+#  NODES
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.dpss_comb_interleaver_pc15
+    name: "DPSSL Er:Yb:glass 光频梳 + PM 脉冲交织器系统（Portuondo-Campa 2015，9.6 GHz 光微波源）"
+    aliases:
+      - "Er:Yb:glass DPSSL frequency comb with PM pulse interleaver"
+      - "CSEM 9.6 GHz photonic microwave comb"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      基于 Er:Yb:glass 增益介质 + SESAM 被动锁模的二极管泵浦固态激光器（DPSSL）作为 OFC 源，
+      输出 1556 nm / 146 fs / 100 MHz / ~150 mW 变换极限孤子脉冲；75% 输出功率送入 6 级
+      全保偏（PM）光纤脉冲交织器，前 5 级以 PM 50/50 分束/合束器级联将重频倍增至 2⁵ × 100 MHz
+      = 3.2 GHz，第 6 级加入延时 104.2 ps = 1/9.6 GHz 以抬升 9.6 GHz 第 3 谐波幅度，
+      并用保偏偏振合束器（PBC）将双臂合为单一输出（vs. 非偏振合束的 50/50 端口损失 3 dB）；
+      25% 余光用于 OFC 稳定：EDFA+HNLF 展宽 + f-2f 稳 f₀（对泵浦电流反馈），另一支路
+      窄带滤波后与共同参考 cw 激光拍频稳 f_rep（对腔内 PZT 反馈），两环带宽均 ~40 kHz。
+      12 GHz / 23 GHz 高线性 PIN InGaAs 光电二极管（Discovery HLPD）探测，
+      两台相同 OFC 互拍得 9.6 GHz 微波相位噪声。
+    key_parameters:
+      gain_medium: "Er:Yb:glass（掺铒铒镱玻璃）"
+      mode_locking: "SESAM 被动锁模"
+      center_wavelength: "1556 nm（电信波段）"
+      pulse_width: "146 fs（变换极限孤子）"
+      native_rep_rate: "100 MHz"
+      avg_optical_power: "~150 mW"
+      interleaver_stages: "5 倍增级 + 1 谐波增强级（共 6 级，全保偏）"
+      rep_rate_after_5stage: "3.2 GHz (= 2⁵ × 100 MHz)"
+      sixth_stage_delay: "104.2 ps = 1/9.6 GHz（第 3 谐波优化）"
+      microwave_carrier: "9.6 GHz"
+      photodiode: "Discovery HLPD DSC50S (12 GHz) / DSC30S (23 GHz) PIN InGaAs"
+      max_photocurrent_used: "20 mA"
+      interleaver_total_loss: "1–1.5 dB（不含光纤耦合）"
+      interleaver_output_power: "≤67 mW"
+      lock_bandwidth_frep_f0: "~40 kHz（均等）"
+    interface_requirements:
+      optical_reference: "共同 PDH-稳 cw DFB 光纤激光（4 cm 高精细度 FP 腔，Hz 级线宽 @ 1 s，漂移 <100 mHz/s）"
+      rf_reference: "共同主动氢钟，驱动两台独立合成器作为 f_rep / f₀ 锁定本振"
+    note: >
+      Level 2 实例节点；PART-OF ent.optical_frequency_comb（定义于 udem2002.yaml）。
+      与 fortier2011 Er:fiber OFD 架构、kalubovilage2022 自由运行 MMLL 架构并列
+      作为光生微波的 DPSSL 工程分支代表。
+
+  - id: ent.pm_fiber_pulse_interleaver_pc15
+    name: "保偏 6 级光纤脉冲交织器（Portuondo-Campa 2015）"
+    aliases:
+      - "PM fiber pulse interleaver with polarizing beam combiner"
+      - "6-stage PM pulse rate multiplier"
+    hierarchy_level: 3
+    status: demonstrated
+    function: >
+      由 5 级级联 PM 50/50 熔接光纤分束/合束器（分光比误差 <1%）实现脉冲重频 2⁵ = 32 倍增
+      （100 MHz → 3.2 GHz），第 6 级延时 104.2 ps 增强 9.6 GHz（第 3 谐波）幅度，
+      末端用保偏偏振合束器（PBC）将两输入通道以正交偏振合并到单一光纤输出，
+      输出脉冲对具备交替正交偏振；由于光电探测对偏振不敏感，单端口功率
+      比非偏振 50/50 合束器高近 3 dB。使用快速采样示波器（0.2 ps 分辨率）
+      保证 6 级延时误差 ≤1.5 ps，无需主动温度稳定。
+    key_parameters:
+      stage_count: 6
+      multiplication_factor: "2⁵ = 32（前 5 级）"
+      output_rep_rate: "3.2 GHz（前 5 级后）"
+      sixth_stage_delay: "104.2 ps（= 1/9.6 GHz）"
+      delay_error_all_stages: "≤1.5 ps"
+      splice_ratio_error: "<1%"
+      insertion_loss: "1–1.5 dB"
+      output_polarization: "交替正交（两入经 PBC 合一出）"
+      thermal_stabilization: "无（被动）"
+    note: "PART-OF ent.dpss_comb_interleaver_pc15；工程角色：抬升单光探测平均光电流 + 把脉冲重频逼近目标微波频率以提高探测器饱和极限。"
+
+principles:
+  - id: pri.pulse_interleaver_rep_rate_multiplication
+    name: "光纤脉冲交织器重频倍增与光生微波散粒噪声降底原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      在光生微波方案中，光电探测散粒噪声对相噪本底贡献近似为
+      L_shot(f) ≈ q·ē / (2·P_RF · ī²) ，受平均光电流 ī 与 RF 载波功率 P_RF 限制；
+      若将重频 f_rep 通过 2ⁿ 级光纤交织器（分束+延时+合束）倍增至接近目标微波载频 f_µw，
+      则：(a) 探测器在目标载频附近的饱和电流上限大幅提升（因相邻脉冲间光功率更均匀）；
+      (b) 目标谐波的微波功率在固定平均光电流下提高；
+      (c) 从而将散粒噪声底 L_shot(f) 按 ī 与 P_RF 的提升幅度同步下压。
+      交织过程保持梳齿相干性，不引入随机相位噪声（仅窄带附加谱分布由延时误差决定）。
+      使用保偏光纤 + 末级 PBC 可将双臂功率合为单输出，相对非偏振合束器额外获得 ~3 dB 输出光功率。
+    domain: "光子微波生成；光纤脉冲成形；探测器饱和管理"
+    formula: >
+      f_out = 2ⁿ · f_rep （前 n 级 50/50 分束/延时/合束）；
+      目标谐波延时匹配：Δτ_last = k / f_µw （k ∈ ℤ₊）；
+      L_shot(f) ∝ 1 / (ī · P_RF) ，ī 与 P_RF 均随交织倍增提高 → L_shot(f) 下移
+    key_insight: >
+      交织器是解耦"激光稳定锁模重频（受限于腔 FSR 与增益动力学）"与
+      "探测器最佳工作重频（越接近 f_µw 饱和电流越高）"两个约束的关键工程手段。
+      PM + PBC 末级合束是把双臂功率"零损耗"合入单探测器的额外工程窍门。
+    conditions:
+      - "所有级延时误差 << 1/f_µw（这里 ≤1.5 ps << 104 ps）"
+      - "光纤保偏以避免偏振模式色散破坏脉冲时序"
+      - "末级延时 Δτ = k/f_µw 以使目标谐波幅度最大"
+    preconditions:
+      - "入射脉冲宽度 << 交织延时 Δτ（避免相邻脉冲重叠）"
+      - "分束比误差足够小以维持各支路等幅"
+    invalidated_when:
+      - "交织器长度波动导致 Δτ 漂移超过 1/(f_µw × SNR) 等效预算"
+      - "HNLF/光纤中非线性引入附加相位噪声超过基底"
+    source_claim: >
+      "the power ... can be increased through multiplication of the optical repetition rate
+      by using a cascaded fibered pulse interleaver ... In this configuration each pair of
+      pulses in the output has alternating orthogonal polarizations ... such a construction
+      allows for a net output power almost 3 dB higher than in the case of non-polarizing
+      fiber combiners"
+    open_questions:
+      - "多级 PM 光纤交织器的长期热/机械稳定性对 1 Hz 偏移以下近载波相噪的影响尚未完全量化（本文推测为闭环外主导源之一）"
+
+  - id: pri.amplifier_residual_phase_noise_limit
+    name: "微波放大器残余相位噪声限制原理（光微波链路远载波本底）"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      光生微波链路中，PIN 光电二极管的饱和光电流限制了无放大器情况下可送入混频器的
+      RF 功率；当必须经微波放大器匹配混频器工作点时，放大器的残余相位噪声（flicker +
+      白相噪）直接叠加到测量结果上，在远载波（~10 MHz 偏移）形成新的不可消除本底。
+      该本底可比实际 cw 散粒噪声高数 dB，使 Quinlan 等报道的"短脉冲光电探测散粒噪声
+      相关性压低于 cw 散粒本底"效应无法被观测到。
+    domain: "光子微波链路；RF 后端相位噪声"
+    key_insight: >
+      在 PIN 架构下，放大器残余相噪而非光电探测散粒噪声本身，
+      构成了远载波测得本底的"准极限"；解除此限制必须提高光电二极管饱和电流（即 RF 无放大输出功率），
+      例如换用 mUTC（modified uni-traveling carrier）探测器，使混频器可无放大器直接驱动。
+    conditions: "光电二极管饱和功率 < 混频器所需 LO/RF 功率；需插入微波放大器"
+    invalidated_when:
+      - "改用高饱和 mUTC 光电二极管（>100 mW 光功率、无放大 10 dBm @ 10 GHz）使放大器可去除"
+      - "采用无放大器相噪测量方案（相关接收机等）"
+    source_claim: >
+      "the residual phase-noise of the amplifiers limits the achieved phase-noise floor
+      far from the carrier ... prevents observation of shot-noise correlations leading to
+      phase-noise floors below the cw shot-noise limit"
+
+methods:
+  - id: meth.dpssl_interleaver_photonic_microwave_pc15
+    name: "DPSSL 梳 + PM 交织器 + PIN 探测的光生 9.6 GHz 微波产生方法"
+    status: demonstrated
+    applies_to: ent.dpss_comb_interleaver_pc15
+    steps_summary: >
+      1. Er:Yb:glass DPSSL 输出 100 MHz / 146 fs / 1556 nm 脉冲；
+      2. 75% 光功率入 6 级 PM 光纤交织器：5 级 2⁵ 倍增至 3.2 GHz + 1 级 104.2 ps 延时强化 9.6 GHz；
+      3. 25% 余光分两路：(a) EDFA+HNLF 展宽→f-2f 稳 f₀（反馈至泵浦电流）；
+         (b) 窄带滤波与共同参考 cw 激光拍频→稳 f_rep（反馈至腔内 PZT），两环 ~40 kHz 带宽；
+      4. 高线性 PIN InGaAs 光电探测（12 / 23 GHz HLPD，最大 20 mA 光电流）；
+      5. 带通滤波出 9.6 GHz → 平衡混频器以相位鉴别器模式运行
+         （两台相同 OFC 互拍得相对相噪）；
+      6. FFT 分析得 SSB 相噪 L(f)；用 BOC 独立测锁定 OFC 本征定时抖动作为对照。
+    required_hardware:
+      - ent.dpss_comb_interleaver_pc15
+      - ent.pm_fiber_pulse_interleaver_pc15
+    advantages:
+      - "DPSSL Er:Yb:glass 亚 100 as 定时抖动本征（10 kHz–50 MHz 积分）"
+      - "PM 交织器 + PBC 末级双臂合束额外 3 dB 输出功率"
+      - "InGaAs PIN + 6 级交织实现 −171 dBc/Hz @ 10 MHz 单源本底（PIN 纪录）"
+      - "电信波段 1556 nm + SESAM 锁模适合空间应用"
+    disadvantages:
+      - "远载波本底受微波放大器残余相噪限制（+3 dB 于 cw 散粒极限）"
+      - "PIN 饱和电流限制 → 无法去掉放大器以利用短脉冲散粒相关性"
+      - "近载波相噪（1–1 kHz）被交织器光纤机械/热扰动与自由空间耦合抖动限制"
+    conditions:
+      - "OFC 双环锁定稳定（f_rep 与 f₀ 均闭环）"
+      - "共同 cw 光参考与氢钟参考"
+    source_claim: >
+      "Ultralow phase-noise microwave generation through the photodetection of a stabilized
+      passively mode-locked DPSSL has been demonstrated using commercially available InGaAs
+      PIN photodetectors ... the lowest far-from-the-carrier phase-noise floor so far using
+      PIN photodetectors (−171 dBc/Hz @ 10 MHz offset, single source contribution)"
+
+metrics:
+  - id: met.photonic_microwave_phase_noise_pc15
+    name: "9.6 GHz 光生微波 SSB 相位噪声（Portuondo-Campa 2015）"
+    unit: "dBc/Hz"
+    description: >
+      基于 DPSSL Er:Yb:glass OFC + PM 6 级交织器 + PIN InGaAs 探测的 9.6 GHz 光生微波
+      相位噪声 L(f)，分频段记录（近载波 / 中频 / 远载波本底）。
+    is_interface_metric: false
+    demonstrated_value:
+      value: >
+        −100 dBc/Hz @ 1 Hz（近载波）；
+        −148 dBc/Hz（BOC 光学测得 OFC 本征定时抖动等效 @ 9.6 GHz，1 Hz–1 kHz）；
+        远载波本底 @ 10 MHz：6 mA → −162.4 dBc/Hz、11 mA → −165.4 dBc/Hz、20 mA → −168 dBc/Hz（双源）；
+        单源本底（假设两源相等）= −171 dBc/Hz @ 10 MHz（20 mA）
+      conditions: >
+        两台相同 DPSSL OFC 锁至共同 cw 参考（4 cm FP 腔 PDH 稳 DFB 光纤激光），
+        f_rep + f₀ 双环锁定 ~40 kHz 带宽；Discovery HLPD PIN InGaAs 探测，9 V 偏压，20°C；
+        9.6 GHz 带通滤波 + 微波放大 + 平衡混频器相位鉴别；FFT 分析。
+        测得相噪为两源共同贡献；单源数值在假设两源等贡献下减 3 dB。
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "BESI3AEE"
+        claim: "For a photocurrent of 20 mA, the combined noise floor reaching −168 dBc/Hz (−171 dBc/Hz for a single oscillator assuming identical sources) represents to the best of our knowledge the lowest phase-noise floor ever demonstrated for photonics-generated microwaves using InGaAs PIN photodetectors"
+    theoretical_floor:
+      value: "cw 散粒噪声极限：6 mA → −165.7，11 mA → −168.4，20 mA → −171 dBc/Hz"
+      basis: "pri.photodetection_shot_noise_limit（cw 近似，不含短脉冲相关性修正）"
+      gap_note: >
+        实测本底比 cw 散粒极限高 ~3 dB，差距来自微波放大器残余相噪；
+        预期采用 mUTC 高饱和光电探测器去除放大器后可观测到 [Quinlan 2013 Nat. Photon.]
+        所述的短脉冲散粒相关效应 → 压到 cw 散粒极限以下。
+    historical_landmarks:
+      best_demonstration:
+        value: "−171 dBc/Hz @ 10 MHz 偏移（单源，PIN InGaAs）"
+        year: 2015
+        source: {zotero_key: "BESI3AEE"}
+        note: "PIN InGaAs 探测器架构下当时 photonic microwave 远载波本底纪录；后续 Kalubovilage 2022 用自由运行单片梳 + 低温 RF 链路达 <-180 dBc/Hz。"
+
+  - id: met.dpssl_ofc_timing_jitter_pc15
+    name: "锁定 DPSSL OFC 本征定时抖动（BOC 光学测量，Portuondo-Campa 2015）"
+    unit: "dBc/Hz（等效 9.6 GHz 载频相噪）"
+    description: >
+      平衡光学互相关器（BOC）直接测量两台完全锁定 OFC 脉冲串之间的本征定时抖动，
+      换算为 9.6 GHz 载频等效 SSB 相噪，反映不含交织器与光电探测贡献的 OFC 噪声下限。
+    demonstrated_value:
+      value: "等效相噪低至 −148 dBc/Hz（1 Hz–1 kHz，两源共同贡献）"
+      conditions: "完全锁定 OFC（f_rep + f₀ 均闭环），BOC 无反馈式同步（重频锁至共同光参考即已同步）"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "BESI3AEE"
+        claim: "The microwave phase-noise is not limited by the laser timing jitter, which shows extremely low values down to −148 dBc/Hz (both oscillators contributing)"
+
+# ═══════════════════════════════════════════════
+#  RELATIONS
+# ═══════════════════════════════════════════════
+
+relations:
+  - id: rel.PC15_01
+    subject: ent.pm_fiber_pulse_interleaver_pc15
+    predicate: PART-OF
+    object: ent.dpss_comb_interleaver_pc15
+    confidence: established
+    source: {zotero_key: "BESI3AEE", claim: "Approximately 75% of the optical power generated by each OFC was fed into 6-stage pulse interleavers"}
+
+  - id: rel.PC15_02
+    subject: ent.dpss_comb_interleaver_pc15
+    predicate: PART-OF
+    object: ent.optical_frequency_comb
+    confidence: established
+    source: {zotero_key: "BESI3AEE", claim: "optical frequency combs based on diode-pumped solid-state lasers emitting at telecom wavelength"}
+    note: "跨文件引用 ent.optical_frequency_comb（定义于 udem2002.yaml）。"
+
+  - id: rel.PC15_03
+    subject: ent.dpss_comb_interleaver_pc15
+    predicate: CHARACTERIZED-BY
+    object: met.photonic_microwave_phase_noise_pc15
+    confidence: established
+    source: {zotero_key: "BESI3AEE", claim: "a single-oscillator phase-noise floor of −171 dBc/Hz at 10 MHz offset frequency has been measured with commercial PIN InGaAs photodiodes, constituting a record for this type of detector"}
+    temporal_role: validates
+
+  - id: rel.PC15_04
+    subject: ent.dpss_comb_interleaver_pc15
+    predicate: CHARACTERIZED-BY
+    object: met.dpssl_ofc_timing_jitter_pc15
+    confidence: established
+    source: {zotero_key: "BESI3AEE", claim: "a direct optical measurement of the stabilized frequency combs' timing jitter was performed using a balanced optical cross correlator"}
+
+  - id: rel.PC15_05
+    subject: meth.dpssl_interleaver_photonic_microwave_pc15
+    predicate: ENABLED-BY
+    object: pri.pulse_interleaver_rep_rate_multiplication
+    confidence: established
+    source: {zotero_key: "BESI3AEE", claim: "a high harmonic of the photo-detected signal is generally used as microwave output, whose power can be increased through multiplication of the optical repetition rate by using a cascaded fibered pulse interleaver"}
+
+  - id: rel.PC15_06
+    subject: meth.dpssl_interleaver_photonic_microwave_pc15
+    predicate: ENABLED-BY
+    object: pri.optical_frequency_division_microwave
+    confidence: established
+    source: {zotero_key: "BESI3AEE", claim: "Using an optical frequency comb (OFC) as a coherent frequency divider allows transferring the ultra-high stability of a continuous-wave (CW) laser locked to a reference cavity to the microwave domain"}
+    note: "pri.optical_frequency_division_microwave 为跨文件引用（光频除法→微波）。"
+
+  - id: rel.PC15_07
+    subject: meth.dpssl_interleaver_photonic_microwave_pc15
+    predicate: DERIVED-FROM
+    object: meth.photonic_microwave_synthesis
+    confidence: established
+    source: {zotero_key: "BESI3AEE"}
+    note: "meth.photonic_microwave_synthesis 为光生微波通用方法的跨文件父节点；本文件提供 DPSSL+PM 交织器具体实例。"
+
+  - id: rel.PC15_08
+    subject: met.photonic_microwave_phase_noise_pc15
+    predicate: OPERATIONALIZED-AS
+    object: meth.dpssl_interleaver_photonic_microwave_pc15
+    confidence: established
+    source: {zotero_key: "BESI3AEE"}
+
+  - id: rel.PC15_09
+    subject: met.photonic_microwave_phase_noise_pc15
+    predicate: BOUNDED-BY
+    object: pri.photodetection_shot_noise_limit
+    confidence: established
+    source: {zotero_key: "BESI3AEE", claim: "all three plateaus exceed the corresponding calculated cw shot-noise limits by about 3 dB"}
+    note: "pri.photodetection_shot_noise_limit 定义于 kalubovilage2022.yaml（跨文件引用）。"
+    breakthrough_paths:
+      - direction: pri.pulse_interleaver_rep_rate_multiplication
+        expected_gain: "将 f_rep 倍增至接近 f_µw 提升探测器饱和电流与目标谐波功率，使 L_shot(f) 按 ī·P_RF 下压；PM + PBC 末级再提 ~3 dB"
+        status: demonstrated
+        source: {zotero_key: "BESI3AEE", claim: "such a construction allows for a net output power almost 3 dB higher than in the case of non-polarizing fiber combiners"}
+        note: "本文直接演示路径：6 级 PM 交织器使 20 mA 光电流下 cw 散粒极限达 −171 dBc/Hz。"
+      - direction: meth.dpssl_interleaver_photonic_microwave_pc15
+        expected_gain: "替换 PIN InGaAs 为 mUTC 光电探测器（线性工作光功率 >100 mW，无放大输出 >10 dBm @ 10 GHz），去掉微波放大器，消除其残余相噪，并启用 [Quinlan 2013] 短脉冲探测散粒相关效应 → 压至 cw 散粒极限以下"
+        status: proposed
+        source: {zotero_key: "BESI3AEE", claim: "Combining the high stability of the optical oscillator described here with the large power-handling capabilities of mUTC photodetectors should allow in the near future reaching even lower phase-noise performances"}
+
+  - id: rel.PC15_10
+    subject: met.photonic_microwave_phase_noise_pc15
+    predicate: BOUNDED-BY
+    object: pri.amplifier_residual_phase_noise_limit
+    confidence: established
+    source: {zotero_key: "BESI3AEE", claim: "the residual phase-noise of the amplifiers limits the achieved phase-noise floor far from the carrier"}
+    breakthrough_paths:
+      - direction: meth.dpssl_interleaver_photonic_microwave_pc15
+        expected_gain: "采用 mUTC 高饱和光电探测器提供足够 RF 功率直驱混频器，去除放大器 → 远载波本底直接降至 cw 散粒极限乃至相关压缩区"
+        status: proposed
+        source: {zotero_key: "BESI3AEE", claim: "The use of photodetectors with higher saturation photocurrent such as modified uni-traveling carrier (mUTC) photodiodes should allow reaching sufficient microwave powers for driving the mixer without amplifiers"}
+
+  - id: rel.PC15_11
+    subject: ent.dpss_comb_interleaver_pc15
+    predicate: CONDITIONED-BY
+    object: ent.fp_cavity_system
+    confidence: established
+    source: {zotero_key: "BESI3AEE", claim: "a commercial distributed feedback fiber laser, stabilized to a compact high-finesse Fabry-Perot cavity (4 cm long) through a home-made Pound-Drever-Hall setup, providing Hz-level optical linewidth at 1 sec time scale"}
+    note: "跨专题接口：ent.fp_cavity_system 定义于 topics/ultrastable-laser/papers/numata2004.yaml。"
+
+  - id: rel.PC15_12
+    subject: ent.dpss_comb_interleaver_pc15
+    predicate: COMPETES-WITH
+    object: ent.monolithic_modelocked_laser_comb_k22
+    confidence: established
+    source: {zotero_key: "BESI3AEE"}
+    note: >
+      同为光生低相噪微波源的并列工程路径：
+      Portuondo-Campa 2015（DPSSL OFD + PM 交织器 + PIN，锁至外部 USL） vs
+      Kalubovilage 2022（自由运行单片梳 + 低温 RF，无 OFD、无 USL）。
+      前者长期稳定度高、短时近载波更低；后者架构紧凑且远载波本底已达 <-180 dBc/Hz。
+
+  - id: rel.PC15_13
+    subject: met.dpssl_ofc_timing_jitter_pc15
+    predicate: OPERATIONALIZED-AS
+    object: meth.dpssl_interleaver_photonic_microwave_pc15
+    confidence: established
+    source: {zotero_key: "BESI3AEE", claim: "the BOC measurements have been performed with fully locked OFCs operated in the regime used for microwave generation ... allowing for a direct comparison between the optically-generated phase-noise and the final microwave phase-noise"}
+    note: "BOC 用作诊断工具，确认微波相噪远载波本底并非 OFC 本征来源，而来自光电/放大链。"
