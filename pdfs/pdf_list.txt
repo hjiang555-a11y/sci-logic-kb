@@ -65,3 +65,24 @@
     标题: Coherent dual-comb spectroscopy at high signal-to-noise ratio
     原路径: PhysRevA.82.pdf
 
+
+
+新增的4篇论文PDF文件
+============================================================
+
+ 5. 8IPE8B8T.pdf
+    标题: Visible-to-ultraviolet frequency comb generation in lithium niobate nanophotonic waveguides
+    原路径: Visible-to-ultraviolet_frequency_comb_generati.pdf
+
+ 6. 8XUFRL4K.pdf
+    标题: Single-branch Er:fiber frequency comb for precision optical metrology with 10⁻¹⁸ fractional instability
+    原路径: untitled.pdf
+
+ 7. 9BEBKUGG.pdf
+    标题: Attosecond-Resolution Er:Fiber-Based Optical Frequency Comb
+    原路径: Attosecond-Resolution.pdf
+
+ 8. 9BV3WBSH.pdf
+    标题: Direct link between microwave and optical frequencies with a 300 THz femtosecond laser comb
+    原路径: Diddams PRL_2000_05_300THzComb.pdf
+
