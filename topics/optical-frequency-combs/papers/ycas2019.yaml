@@ -1,0 +1,520 @@
+# Ycas 2019 — 首次用中红外双梳光谱在公里级开阔大气路径测量 VOC 基频 C-H 伸缩吸收 [里程碑技术论文]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-19
+# Schema版本：v4.1
+# 专题：optical-frequency-combs
+# contribution_type: technical — 中红外开阔路径 DCS 应用论文
+#   核心贡献：
+#     (1) 首次将 DCS 从近红外倍频带推进到 2750–3150 cm⁻¹ 基频 C-H 伸缩带，吸收强度提升 ~1000×；
+#     (2) 首次在 162 m – 1 km 开阔大气路径实现中红外 DCS，测得
+#         丙酮 5.7 ppm·m、异丙醇 2.4 ppm·m、乙烷 0.4 ppb（1 min）灵敏度；
+#     (3) 将 NIR 已有的 "传前合束" 共模抵消大气湍流技术 [Rieker 2014, Han 2024] 扩展到中红外；
+#     (4) 用 Hitran2016 Voigt 模型对 H₂O / CH₄ 强吸收进行解杂（declutter），
+#         配合 PNNL 宽带吸收数据库同时反演窄线小分子 + 宽带大分子 VOC。
+#   Framework 依赖：
+#     ent.dual_comb_spectrometer、meth.dual_comb_spectroscopy、pri.dual_comb_multiheterodyne_detection
+#       定义于 coddington2016.yaml；
+#     ent.mid_ir_frequency_comb、meth.dfg_comb_generation、pri.molecular_rovibrational_fingerprint
+#       跨文件引用（详见 TOPICS.md 超集），本文件提供开阔路径 + VOC 应用证据；
+#     ent.atmospheric_turbulence_channel、pri.photon_starved_open_path_dcs_limit
+#       定义于 han2024.yaml（跨文件引用）。
+
+meta:
+  zotero_key: "FQ4KYV38"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: technical
+  reliability: high
+  title: "Mid-infrared dual-comb spectroscopy of volatile organic compounds across long open-air paths"
+  year: 2019
+  first_author: Ycas
+  journal: "Optica"
+  volume: 6
+  issue: 2
+  pages: "165-168"
+  doi: "10.1364/OPTICA.6.000165"
+  note: >
+    [里程碑技术论文] NIST Boulder（Ycas/Giorgetta/Cossel/Waxman/Baumann/Newbury/Coddington）。
+    两台 200 MHz 重频 Er 光纤梳各经 PPLN DFG 产生中红外梳（覆盖 2750–3150 cm⁻¹，C-H 基频伸缩带），
+    在 50:50 合束后通过 ZrF4 光纤耦合到 100 mm 口径望远镜，经 162 m 或 1 km 开阔大气路径
+    往返于角锥回射器。传前合束使湍流相位畸变对两梳共模，外差效率得以保持。
+    解杂流程：(1) 信号/参考谱相除；(2) Hitran2016 Voigt 模型拟合 H₂O/HDO/H₂¹⁸O/CH₄ 并除去；
+    (3) 释放前后比值（change detection）；(4) PNNL 参考谱拟合 VOC。
+    主要结果：丙酮 5.7 ppm·m、异丙醇 2.4 ppm·m（162 m 释放实验，1 min 分辨率）；
+    1 km 路径检出大气背景 C₂H₆ 3.75 ppb（1σ 0.4 ppb），与 10 km 外点式传感器 3.5 ppb 一致。
+    FOM = 1.2×10⁶ √Hz [Coddington 2016 定义]。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.midir_dcs_vocs_y19
+    name: "公里级开阔路径中红外 VOC 双梳光谱仪（Ycas 2019）"
+    aliases:
+      - "open-path MIR DCS"
+      - "1 km MIR dual-comb VOC spectrometer"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      由两台 200 MHz 重频（Δf_rep = 100 Hz）Er 光纤梳经 PPLN 晶体差频产生 2.9–4.2 µm
+      （2750–3150 cm⁻¹）中红外双梳，在 50:50 合束后经 ZrF4 单模光纤送入 100 mm 口径
+      离轴抛物面望远镜，经 162 m 或 1 km 开阔大气链路往返于角锥回射器，
+      返回光由 100 MHz 带宽 HgCdTe 探测器采集，干涉图每 10 ms 重复，FPGA 内相干平均 1 min。
+      0.0067 cm⁻¹（200 MHz）原生分辨率覆盖基频 C-H 伸缩带，使窄线小分子（CH₄、C₂H₆、
+      H₂O 同位素体）与宽带大分子 VOC（丙酮、异丙醇）同时定量。
+    key_parameters:
+      comb_platform: "双分支 PPLN-DFG 中红外梳（泵浦：PM Er 光纤梳，Truong 2016）"
+      repetition_rate: "200 MHz（Δf_rep = 100 Hz）"
+      mir_spectral_coverage: "2750–3150 cm⁻¹（2.9–4.2 µm，覆盖基频 C-H 伸缩带）"
+      mir_power_per_comb: "5 mW 耦入 ZrF4 单模光纤"
+      telescope_aperture: "100 mm OAP，焦距 179 mm，发射光束 ~75 mm"
+      retroreflector: "63.5 mm（162 m 路径）或 127 mm（1 km 路径）"
+      detector: "热电制冷 HgCdTe，100 MHz 带宽"
+      interferogram_rate: "100 Hz（10 ms 间隔），FPGA 内 1 min 相干平均"
+      native_resolution: "0.0067 cm⁻¹（200 MHz）"
+      phase_stabilization: "两梳 f_CEO + 1560 nm CW 锁相至公共腔稳 CW 激光"
+      figure_of_merit: "1.2×10⁶ √Hz（Coddington 2016 定义）"
+    interface_requirements:
+      atmospheric_channel: "见 ent.atmospheric_turbulence_channel（定义于 han2024.yaml）"
+      spectral_database: "Hitran 2016（解杂）+ PNNL（宽带 VOC 参考谱）"
+    note: >
+      Level 2 实例节点，PART-OF ent.dual_comb_spectrometer（权威定义于 coddington2016.yaml）。
+      中红外平台 PART-OF ent.mid_ir_frequency_comb（跨文件引用）。
+
+principles:
+  - id: pri.fundamental_ch_stretch_enhancement_mir
+    name: "基频 C-H 伸缩吸收相对 NIR 倍频带增益原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      多原子有机分子的 C-H 伸缩基频（~3000 cm⁻¹，2.9–4.2 µm）线强度约为其
+      NIR 倍频（1.6–1.7 µm 附近）吸收的 ~1000 倍。将 DCS 从 NIR 迁移到基频窗口，
+      在相同光程和总光子通量下，可把浓度探测下限从 ppm·m 量级推进到 ppb·m / sub-ppb 量级，
+      从而首次把 DCS 应用域从 CH₄/CO₂/H₂O 等高丰度分子扩展到稀有 VOC 与污染物。
+    domain: "中红外分子光谱；大气痕量气体探测"
+    formula: >
+      S_fund / S_overtone ≈ 10³（分子相关，典型 C-H 伸缩）；
+      浓度探测下限 ~ NEA / (S · L · N_gas)，S↑ 1000× ⇒ LOD↓ 1000×
+    key_insight: >
+      DCS 的 "相同 SNR × 吸收强度增益" 结合 "HITRAN/PNNL 已知线型 + 无仪器线形"
+      使中红外基频带成为 DCS 最具科学杠杆的窗口。
+    conditions: "目标分子在 2750–3150 cm⁻¹ 存在显著 C-H 伸缩振动；大气传输窗口开启"
+    preconditions:
+      - "中红外梳平台（DFG / OPO / QCL）可用"
+      - "中红外探测器（HgCdTe 等）具备足够带宽与低噪声"
+      - "已知大气干扰物（H₂O / CH₄）光谱参数可建模去除"
+    invalidated_when:
+      - "目标分子 C-H 基频被更强的 H₂O 连续吸收完全遮蔽"
+      - "路径过长导致主要 C-H 信号饱和至 T < 0.2（本文截断阈）"
+    source_claim: >
+      "access fundamental vibrational transitions further in the infrared,
+      which can be 1000 times stronger"
+
+  - id: pri.common_path_comb_combining_turbulence_cancellation
+    name: "传前合束共模抵消湍流相位畸变原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      将信号梳与本振梳在送入大气前用分束器合为共轴双梳，再一起穿过湍流路径，
+      湍流引入的波前相位畸变对两梳共模，差频（多外差）过程中被一阶抵消，
+      故开阔大气湍流只造成幅度闪烁（amplitude scintillation），不退化外差混频效率，
+      使 DCS 在公里级大气链路上仍保持 mutual coherence。
+    domain: "大气光通信；开阔路径光谱"
+    formula: >
+      外差电流 i(t) ∝ |E₁(t)·E₂*(t)|；若两梳共路径，则 exp[iφ_turb(t)] 在两梳上相同，
+      φ_turb 在 E₁·E₂* 中消除
+    key_insight: >
+      此技巧在 NIR [Rieker 2014, Han 2024] 已验证，本文首次把它扩展到中红外长链路。
+      对比 "分路双梳 + 后验相位校正" 路线，共路径方案无需高带宽实时追踪。
+    conditions: "两梳通过同一光程到达大气入口；湍流相干时间 >> 单次干涉图采集时间"
+    preconditions:
+      - "合束器插入损耗可接受（本文采用 50:50）"
+      - "接收端仍可分离 δ_τ 双梳干涉图时序"
+    invalidated_when:
+      - "分路发射（两梳独立入射大气）"
+      - "湍流引入的非共模极化 / 模式畸变占主导"
+    source_claim: >
+      "we combine both combs before propagation across the turbulent air path
+      so that turbulence-driven phase front distortions are common mode.
+      This eliminates turbulence-induced phase noise and retains high heterodyne
+      mixing efficiency between the combs."
+
+  - id: pri.hitran_voigt_declutter_trace_retrieval
+    name: "基于 Hitran Voigt 模型的强吸收解杂原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      当目标弱吸收（ppb 级 VOC）被强背景（大气 H₂O、CH₄）遮蔽时，
+      利用 DCS 固有的高波数精度与负线形失真，以 Hitran 2016 线参数 + Voigt 卷积
+      拟合出背景分子浓度并在谱域除去，可把残余基线噪声降低数量级并同时给出
+      干扰物的绝对浓度，从而实现 "解杂" 与 "多物种同时定量" 的双重功能。
+    domain: "大气光谱数据处理"
+    formula: >
+      T_clean(ν) = T_meas(ν) / ∏_k exp[−c_k L · σ_k^{Voigt}(ν; T, P)]，
+      c_k 由最小二乘拟合给出
+    key_insight: >
+      DCS 无仪器线形的独特性质使 Voigt 模型可直接与实测谱做点对点除法，
+      这是 OP-FTIR 无法做到的（FTIR 仪器线形随时间漂移）。
+    conditions: "Hitran 线参数准确；大气温度/压强已知或作为拟合参数"
+    preconditions:
+      - "光谱分辨率 ≥ 0.01 cm⁻¹（本文 0.0067 cm⁻¹）"
+      - "目标波段存在可分辨的背景吸收线"
+    invalidated_when:
+      - "Hitran 线形参数偏差 > 1%（文中提到 Voigt 偏离与饱和线为残余误差源）"
+      - "饱和吸收（T < 0.2，本文掩去该区域）"
+    source_claim: >
+      "This decluttering not only cleans up the spectrum, but also extracts absolute
+      concentrations of atmospheric species including H2O, semiheavy water (HDO),
+      H2^18O, and CH4"
+
+  - id: pri.simultaneous_narrow_broad_voc_retrieval
+    name: "窄线小分子 + 宽带大分子同步反演原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      在 2750–3150 cm⁻¹ 400 cm⁻¹ 宽谱覆盖下，
+      以 Hitran 参数化细线物种（H₂O、HDO、H₂¹⁸O、CH₄、C₂H₆）+
+      PNNL 参考谱宽带物种（丙酮、异丙醇、BTEX 潜在目标）
+      的联合线性叠加模型做一次性最小二乘拟合，可在同一条光谱上给出
+      数量级差异巨大（ppb–ppm·m）的多 VOC 浓度。此能力是开阔路径化学事件感知的关键。
+    domain: "多物种化学计量反演"
+    formula: >
+      T_model(ν) = (c_base,0 + c_base,1·ν) · ∏_k exp[−c_k L · σ_k(ν)]
+    key_insight: >
+      宽谱（>100 cm⁻¹）+ 高分辨率（<0.01 cm⁻¹）+ 绝对频率精度 = DCS 独有。
+      这是相对 OP-FTIR 的决定性优势：FTIR 低分辨率会让 CH₄ 等与 VOC 宽峰混叠。
+    conditions: "目标 VOC 的 PNNL/Hitran 参考谱可获得；背景分子模型收敛"
+    source_claim: >
+      "detection not only of small molecules but also of larger, more broadly absorbing
+      VOCs, such as acetone and isopropanol, that do not have rovibrationally resolved
+      lines under atmospheric conditions"
+
+  - id: pri.dfg_power_atmospheric_window_tradeoff
+    name: "DFG 中红外功率 × 大气透明窗口折中原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      开阔路径 MIR DCS 的可用波段受两重约束：
+      (a) 大气透明窗口（2000–3300 cm⁻¹、750–1250 cm⁻¹）；
+      (b) 可用中红外梳源的功率/带宽（本文 PPLN-DFG 覆盖 C-H 基频带，每梳 5 mW）。
+      同时 km 级往返传输损耗（几何 + ZrF4 耦合 + 回射器捕获 + HgCdTe 量子效率）
+      约束了总可用光子通量。工程上必须在 "更宽覆盖" 与 "更长路径 / 更高灵敏度" 之间折中。
+    domain: "中红外 DCS 工程折中"
+    formula: "photon_throughput ∝ P_comb · T_atm(ν) · η_telescope · η_link · QE_det"
+    key_insight: >
+      本文选择 C-H 伸缩窗口（2750–3150 cm⁻¹）作为最佳性价比点：
+      (1) VOC 基频增益 1000×；(2) 大气 H₂O/CH₄ 干扰可解杂；(3) PPLN-DFG 成熟平台。
+    conditions: "中红外泵浦/信号光、非线性晶体与波段匹配"
+    preconditions:
+      - "泵浦梳与信号光在 PPLN 内实现准相位匹配"
+      - "HgCdTe 探测器灵敏带覆盖目标波长"
+    invalidated_when:
+      - "迁移至 750–1250 cm⁻¹ 或 5–12 µm 指纹区需要 OPO / QCL / 差频级联等不同平台"
+    source_claim: >
+      "there have been many DCS demonstrations in the MIR region, covering atmospheric
+      transmission windows at 2000 cm⁻¹–3300 cm⁻¹ and 750 cm⁻¹–1250 cm⁻¹"
+
+methods:
+  - id: meth.midir_dcs_vocs_protocol_y19
+    name: "中红外开阔路径 VOC 双梳光谱测量与反演流程（Ycas 2019）"
+    status: demonstrated
+    applies_to: ent.midir_dcs_vocs_y19
+    steps_summary: >
+      1. 两台 Er 光纤梳 → 各自 PPLN-DFG → 2750–3150 cm⁻¹ 中红外梳，200 MHz 重频；
+      2. 两梳在 50:50 分束器合束，5 mW/梳 耦入 ZrF4 单模光纤；
+      3. 望远镜（100 mm OAP）发射 ~75 mm 准直光束至角锥回射器，距离 162 m / 1 km；
+      4. 返回光经同一望远镜 + 50:50 分束到信号路径；另一半原始合束光作为参考；
+      5. 信号 + 参考 HgCdTe 探测，100 MHz 带宽；10 ms 间隔 IFG，FPGA 相干平均 1 min；
+      6. FFT → 取信号/参考比得 "ratio spectrum"；
+      7. Hitran 2016 Voigt 模型拟合 H₂O 同位素体 + CH₄，除去得 "decluttered spectrum"；
+      8. （受控释放实验）再与释放前参考谱比值（change detection）抑制基线结构；
+      9. PNNL 参考谱（丙酮、异丙醇、C₂H₆）做线性最小二乘拟合反演浓度；
+      10. Allan 方差评估 1σ 灵敏度与最优积分时间。
+    required_hardware:
+      - ent.midir_dcs_vocs_y19
+      - ent.atmospheric_turbulence_channel
+    advantages:
+      - "基频吸收增益 ~1000× 相对 NIR，路径积分灵敏度 ppb·m 量级"
+      - "无仪器线形：DCS 谱可直接与 Hitran 模型做点对点除法（OP-FTIR 做不到）"
+      - "宽谱 + 高分辨率 + 绝对波数：同一次扫描反演 6+ 物种"
+      - "传前合束 → 湍流共模抵消 → 外差效率不随路径下降"
+    disadvantages:
+      - "灵敏度受残余基线结构限制（望远镜光学路径随时间变化 + 探测器空间非均匀）"
+      - "饱和吸收区（T < 0.2）需掩去"
+      - "中红外 HgCdTe 探测器热噪声 > NIR InGaAs，1 min 积分已近极限"
+      - "Hitran 参数不完美（Voigt 偏离、宽线饱和）留下残余系统误差"
+    conditions:
+      - "大气 H₂O / CH₄ 背景可建模"
+      - "目标 VOC 浓度下限受 NEA/光程/吸收截面限制"
+    source_claim: >
+      "Path-integrated spectra are recorded continuously... processed as shown in
+      Figs. 1(c)–1(e)... The obtained 1-σ sensitivities for 1-min averaging are
+      5.7 ppm·m for acetone and 2.4 ppm·m for isopropanol."
+
+metrics:
+  - id: met.midir_spectral_coverage_y19
+    name: "中红外光谱覆盖（Ycas 2019，C-H 伸缩带）"
+    unit: "cm⁻¹（波数） / µm（波长）"
+    description: >
+      MIR DCS 单次扫描同时覆盖的波数范围，决定可同时反演的分子数与区分度。
+    demonstrated_value:
+      value: "2750–3150 cm⁻¹（3.17–3.64 µm，约 400 cm⁻¹ 宽度，覆盖整个 C-H 基频伸缩带）"
+      conditions: "双分支 PPLN-DFG 中红外梳，Er 光纤泵浦（Ycas 2019）"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "FQ4KYV38", claim: "a broad comb spectrum spanning from 2750 cm⁻¹ to 3150 cm⁻¹"}
+
+  - id: met.midir_dcs_resolution_y19
+    name: "中红外 DCS 原生光谱分辨率（Ycas 2019）"
+    unit: "cm⁻¹"
+    description: >
+      重复频率决定的梳齿间距在波数域的表现。本文 200 MHz 对应 0.0067 cm⁻¹，
+      相比 OP-FTIR（~0.5 cm⁻¹）高 70+ 倍。
+    demonstrated_value:
+      value: "0.0067 cm⁻¹（200 MHz，梳齿间距）"
+      conditions: "200 MHz 重复频率 Er 光纤梳 + PPLN-DFG"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "FQ4KYV38", claim: "smoothed from 0.0067 cm⁻¹ (200 MHz) to 0.067 cm⁻¹ resolution"}
+
+  - id: met.open_path_length_midir_dcs_y19
+    name: "开阔大气路径长度（中红外 DCS，Ycas 2019）"
+    unit: "m"
+    description: >
+      双程（望远镜 → 角锥 → 望远镜）大气传输距离。
+    demonstrated_value:
+      value: "162 m（小回射器 63.5 mm）与 1 km（大回射器 127 mm）"
+      conditions: "NIST Boulder 园区 DCS 链路；2018 年 6 月测量"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "FQ4KYV38", claim: "extend open-path dual-comb spectroscopy to probe ... over up to 1 km long open-air paths"}
+    historical_landmarks:
+      first_demonstration:
+        value: "1 km MIR 开阔路径 DCS（首次）"
+        year: 2019
+        source: {zotero_key: "FQ4KYV38"}
+        note: "此前 MIR DCS 限于实验室或几米外场"
+
+  - id: met.voc_path_integrated_sensitivity_y19
+    name: "路径积分 VOC 浓度灵敏度（Ycas 2019，1 min 平均）"
+    unit: "ppm·m 或 ppb（路径积分 / 路径平均）"
+    description: >
+      1σ 浓度检测下限，评估方法为释放前静息段浓度标准差。
+    demonstrated_value:
+      value: >
+        丙酮 5.7 ppm·m；异丙醇 2.4 ppm·m（均在 162 m 释放实验）；
+        乙烷 0.4 ppb（1 km 路径平均，1 min）；甲烷 4 ppb（1 km，1 min）
+      conditions: "1 min 相干平均；Hitran 2016 解杂 + PNNL 宽带拟合；释放前 3500 s 作为基线"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "FQ4KYV38", claim: "1-σ sensitivities are 5.7 ppm·m for acetone and 2.4 ppm·m for isopropanol... average extracted C2H6 concentration is 3.75 ppb with a statistical 1-σ sensitivity of 0.4 ppb"}
+    theoretical_floor:
+      value: "由残余基线结构（望远镜/探测器空间均匀性）主导，非光子散粒噪声极限"
+      basis: "Allan 方差在 100–800 s 内继续下降（丙酮 <2 ppm·m，异丙醇 <1 ppm·m），但随后被系统漂移封顶"
+      gap_note: >
+        文中明确："DCS sensitivity is limited by residual baseline fluctuations...
+        caused in part by changes in the optical path through the telescope,
+        coupled to the spatial illumination of the detector"
+
+  - id: met.dcs_figure_of_merit_y19
+    name: "DCS 品质因数（Coddington 2016 定义，Ycas 2019 值）"
+    unit: "√Hz（无量纲 × 带宽）"
+    description: >
+      Coddington 2016 定义的 DCS 跨平台对比品质因数 M = (SNR·N_element)/√T。
+    demonstrated_value:
+      value: "1.2×10⁶ √Hz"
+      conditions: "2750–3150 cm⁻¹；HgCdTe 探测器；1 min 相干平均"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "FQ4KYV38", claim: "The achieved DCS figure of merit is 1.2 × 10^6 √Hz"}
+
+# ═══════════════════════════════════════════════
+#  RELATIONS（关系）
+# ═══════════════════════════════════════════════
+
+relations:
+  - id: rel.Y19_01
+    subject: ent.midir_dcs_vocs_y19
+    predicate: PART-OF
+    object: ent.dual_comb_spectrometer
+    confidence: established
+    source: {zotero_key: "FQ4KYV38", claim: "includes the MIR dual-comb spectrometer"}
+    note: "ent.dual_comb_spectrometer 定义于 coddington2016.yaml（跨文件引用）"
+
+  - id: rel.Y19_02
+    subject: ent.midir_dcs_vocs_y19
+    predicate: PART-OF
+    object: ent.mid_ir_frequency_comb
+    confidence: established
+    source: {zotero_key: "FQ4KYV38", claim: "two MIR frequency combs are generated with a dual-branch difference frequency generation scheme"}
+    note: "ent.mid_ir_frequency_comb 跨文件引用（TOPICS.md）"
+
+  - id: rel.Y19_03
+    subject: ent.midir_dcs_vocs_y19
+    predicate: ENABLED-BY
+    object: meth.dfg_comb_generation
+    confidence: established
+    source: {zotero_key: "FQ4KYV38", claim: "each generated using difference-frequency generation in a bulk periodically poled lithium niobate (PPLN) crystal from a polarization-maintaining erbium fiber frequency comb"}
+    note: "meth.dfg_comb_generation 跨文件引用"
+
+  - id: rel.Y19_04
+    subject: ent.midir_dcs_vocs_y19
+    predicate: CONDITIONED-BY
+    object: ent.atmospheric_turbulence_channel
+    confidence: established
+    source: {zotero_key: "FQ4KYV38", claim: "turbulence-driven phase front distortions are common mode"}
+    note: "ent.atmospheric_turbulence_channel 定义于 han2024.yaml（跨文件引用）"
+
+  - id: rel.Y19_05
+    subject: meth.midir_dcs_vocs_protocol_y19
+    predicate: ENABLED-BY
+    object: pri.dual_comb_multiheterodyne_detection
+    confidence: established
+    source: {zotero_key: "FQ4KYV38", claim: "Thermoelectrically cooled 100 MHz bandwidth HgCdTe detectors record the light (interferograms)"}
+    note: "pri.dual_comb_multiheterodyne_detection 定义于 coddington2016.yaml"
+
+  - id: rel.Y19_06
+    subject: meth.midir_dcs_vocs_protocol_y19
+    predicate: ENABLED-BY
+    object: pri.common_path_comb_combining_turbulence_cancellation
+    confidence: established
+    source: {zotero_key: "FQ4KYV38", claim: "combine both combs before propagation across the turbulent air path so that turbulence-driven phase front distortions are common mode"}
+
+  - id: rel.Y19_07
+    subject: meth.midir_dcs_vocs_protocol_y19
+    predicate: ENABLED-BY
+    object: pri.hitran_voigt_declutter_trace_retrieval
+    confidence: established
+    source: {zotero_key: "FQ4KYV38", claim: "an atmospheric transmission model using Voigt line-shape parameters from the Hitran 2016 database is fitted to and then divided from the ratio spectrum"}
+
+  - id: rel.Y19_08
+    subject: meth.midir_dcs_vocs_protocol_y19
+    predicate: ENABLED-BY
+    object: pri.simultaneous_narrow_broad_voc_retrieval
+    confidence: established
+    source: {zotero_key: "FQ4KYV38", claim: "detection not only of small molecules but also of larger, more broadly absorbing VOCs"}
+
+  - id: rel.Y19_09
+    subject: meth.midir_dcs_vocs_protocol_y19
+    predicate: ENABLED-BY
+    object: pri.molecular_rovibrational_fingerprint
+    confidence: established
+    source: {zotero_key: "FQ4KYV38", claim: "probe the fundamental mid-infrared C-H stretch modes of volatile organic compounds"}
+    note: "pri.molecular_rovibrational_fingerprint 跨文件引用"
+
+  - id: rel.Y19_10
+    subject: meth.midir_dcs_vocs_protocol_y19
+    predicate: COMPETES-WITH
+    object: meth.dual_comb_spectroscopy
+    confidence: established
+    source: {zotero_key: "FQ4KYV38", claim: "open-path NIR spectroscopy has been limited to quantifying molecules with part-per-million (ppm) level concentrations"}
+    note: >
+      与 NIR 开阔路径 DCS（meth.dual_comb_spectroscopy 定义于 coddington2016.yaml）形成同层竞争：
+      NIR 功率/探测器更成熟但吸收弱；MIR 本文方案灵敏度提升 ~1000× 但硬件链复杂。
+
+  - id: rel.Y19_11
+    subject: ent.midir_dcs_vocs_y19
+    predicate: CHARACTERIZED-BY
+    object: met.midir_spectral_coverage_y19
+    confidence: established
+    source: {zotero_key: "FQ4KYV38", claim: "broad comb spectrum spanning from 2750 cm⁻¹ to 3150 cm⁻¹"}
+
+  - id: rel.Y19_12
+    subject: ent.midir_dcs_vocs_y19
+    predicate: CHARACTERIZED-BY
+    object: met.midir_dcs_resolution_y19
+    confidence: established
+    source: {zotero_key: "FQ4KYV38", claim: "0.0067 cm⁻¹ (200 MHz) resolution"}
+
+  - id: rel.Y19_13
+    subject: ent.midir_dcs_vocs_y19
+    predicate: CHARACTERIZED-BY
+    object: met.open_path_length_midir_dcs_y19
+    confidence: established
+    source: {zotero_key: "FQ4KYV38", claim: "up to 1 km long open-air paths"}
+
+  - id: rel.Y19_14
+    subject: ent.midir_dcs_vocs_y19
+    predicate: CHARACTERIZED-BY
+    object: met.voc_path_integrated_sensitivity_y19
+    confidence: established
+    source: {zotero_key: "FQ4KYV38", claim: "1-σ sensitivity of 5.7 ppm·m and 2.4 ppm·m... atmospheric ethane with a 1-σ sensitivity of 0.4 ppb"}
+
+  - id: rel.Y19_15
+    subject: ent.midir_dcs_vocs_y19
+    predicate: CHARACTERIZED-BY
+    object: met.dcs_figure_of_merit_y19
+    confidence: established
+    source: {zotero_key: "FQ4KYV38", claim: "The achieved DCS figure of merit is 1.2 × 10^6 √Hz"}
+
+  - id: rel.Y19_16
+    subject: met.voc_path_integrated_sensitivity_y19
+    predicate: OPERATIONALIZED-AS
+    object: meth.midir_dcs_vocs_protocol_y19
+    confidence: established
+    source: {zotero_key: "FQ4KYV38", claim: "DCS sensitivity is estimated as the standard deviation of concentration levels"}
+
+  - id: rel.Y19_17
+    subject: met.voc_path_integrated_sensitivity_y19
+    predicate: BOUNDED-BY
+    object: pri.dfg_power_atmospheric_window_tradeoff
+    confidence: established
+    source: {zotero_key: "FQ4KYV38", claim: "5 mW of light from each comb is coupled into a single-mode ZrF4 fiber"}
+    note: "中红外梳功率 × 大气窗口 × 回射几何耦合损耗共同封顶 SNR。"
+    breakthrough_paths:
+      - direction: meth.dfg_comb_generation
+        expected_gain: >
+          更高泵浦功率（>10 W PM Er 光纤梳）或腔内增强 DFG，
+          将单梳 MIR 功率由 5 mW 提升至 50–100 mW，SNR × 10
+        status: proposed
+        source: {zotero_key: "FQ4KYV38", claim: "With even broader spectral coverage, similar performance should be achievable for other important hazardous pollutants such as BTEX"}
+
+  - id: rel.Y19_18
+    subject: met.voc_path_integrated_sensitivity_y19
+    predicate: BOUNDED-BY
+    object: pri.photon_starved_open_path_dcs_limit
+    confidence: inferred
+    source: {zotero_key: "FQ4KYV38", claim: "path length was extended to 1 km... improving sensitivity to ambient gases at the cost of increased spectral clutter"}
+    note: "pri.photon_starved_open_path_dcs_limit 定义于 han2024.yaml（跨文件引用）；km 级路径回射光子通量急剧下降。"
+    breakthrough_paths:
+      - direction: meth.midir_dcs_vocs_protocol_y19
+        expected_gain: >
+          更大回射器口径（127 mm → 多元阵列）+ 更均匀望远镜照明设计，
+          可降低残余基线并在 1 km 以上保持 ppb 级 VOC 灵敏度
+        status: proposed
+        source: {zotero_key: "FQ4KYV38", claim: "Future work should consider more sophisticated telescope designs for more uniform detector illumination"}
+
+  - id: rel.Y19_19
+    subject: met.voc_path_integrated_sensitivity_y19
+    predicate: BOUNDED-BY
+    object: pri.hitran_voigt_declutter_trace_retrieval
+    confidence: established
+    source: {zotero_key: "FQ4KYV38", claim: "spectral structure at the 3% level remains... incomplete baseline removal... small inaccuracies in the Hitran 2016 line-shape parameters... deviations from the Voigt line shape"}
+    note: >
+      Hitran 线形不完美构成灵敏度的另一天花板；CH₄ 饱和线处 Voigt 偏离导致残余结构。
+    breakthrough_paths:
+      - direction: pri.hitran_voigt_declutter_trace_retrieval
+        expected_gain: >
+          引入 Speed-Dependent Voigt / Hartmann–Tran 线型（HTP），
+          加上 H₂O 连续吸收模型，可把残余基线从 3% 压至 <1%，
+          从而在 1 km 路径保持 ppb 以下 VOC 灵敏度
+        status: proposed
+        source: {zotero_key: "FQ4KYV38", claim: "deviations from the Voigt line shape that are relevant for the saturated lines observed"}
+
+  - id: rel.Y19_20
+    subject: ent.midir_dcs_vocs_y19
+    predicate: BOUNDED-BY
+    object: pri.fundamental_ch_stretch_enhancement_mir
+    confidence: established
+    source: {zotero_key: "FQ4KYV38", claim: "access fundamental vibrational transitions further in the infrared, which can be 1000 times stronger"}
+    note: >
+      此处 "BOUNDED-BY" 是正向赋能：原理说明 MIR 基频为何是 DCS 可用的性价比最优窗口；
+      但同时限定 Ycas 2019 只能覆盖 C-H 伸缩带，指纹区（750–1250 cm⁻¹）需不同平台。
+    breakthrough_paths:
+      - direction: meth.dfg_comb_generation
+        expected_gain: >
+          级联 DFG 或 OPO/OPA 向 5–12 µm 指纹区延拓，
+          将可探测 VOC 从 C-H 基频扩展到 C=O、C-O、C-Cl 等官能团
+        status: proposed
+        source: {zotero_key: "FQ4KYV38", claim: "With even broader spectral coverage, similar performance should be achievable for other important hazardous pollutants such as benzene, toluene, ethylbenzene, and xylenes (BTEX)"}
