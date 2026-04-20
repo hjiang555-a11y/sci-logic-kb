@@ -47,6 +47,25 @@ entities:
       rv_precision: "~10 m/s（~6 MHz）"
     note: "Level 2 实例节点；PART-OF ent.optical_frequency_comb；应用层为天文光谱学"
 
+  - id: ent.filtered_tisa_astrocomb_y12
+    name: "F-P 滤波 Ti:Sa 天文光梳（传统路线，代表节点）"
+    aliases: ["filtered Ti:sapphire astro-comb"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      以 Ti:Sapphire 锁模梳（原生重频 ~1 GHz）为基础，通过 Fabry-Pérot 腔滤波将梳齿
+      稀疏至 ~20 GHz 间距，使齿间距与高分辨率天文光谱仪分辨本征相当；
+      提供可见光至近红外宽带波长标尺用于精密径向速度定标。
+      此节点代表"滤波梳"天文光梳通用路线，
+      以 ycas2012/Quinlan 2010 等工作为代表，与原生 GHz 间距微腔天文梳方案竞争。
+    key_parameters:
+      base_comb_rep_rate: "~1 GHz（Ti:Sa MLL）"
+      filter_spacing: "~20–25 GHz（F-P 腔滤波）"
+      spectral_coverage: "可见至近红外"
+    note: >
+      此节点由 suh2019.yaml 作为 COMPETES-WITH 对比参照引入。
+      代表需要腔滤波的传统天文梳路线，区别于微腔原生 GHz 间距方案（Suh 2019）。
+
 principles:
   - id: pri.fabry_perot_mode_filter_astro_comb
     name: "Fabry-Perot 腔模式滤波天文光梳原理"
