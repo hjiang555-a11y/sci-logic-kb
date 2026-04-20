@@ -51,8 +51,10 @@ jobs:
       - name: Run lint on changed files (PR)
         if: github.event_name == 'pull_request' && steps.changed-yaml.outputs.has_changes == 'true'
         run: |
-          mapfile -t FILES < /tmp/changed_yaml_files.txt
-          python scripts/lint.py --summary --files "${FILES[@]}"
+          # Lint the full repo so cross-file and cross-topic references are resolved.
+          # Linting only changed files causes false dangling-ref errors when those files
+          # reference nodes defined in unchanged files in the same or other topics.
+          python scripts/lint.py --summary
 
       - name: No YAML changes to lint (PR)
         if: github.event_name == 'pull_request' && steps.changed-yaml.outputs.has_changes == 'false'
@@ -61,8 +63,7 @@ jobs:
       - name: Run lint detail (PR, informational)
         if: github.event_name == 'pull_request' && steps.changed-yaml.outputs.has_changes == 'true'
         run: |
-          mapfile -t FILES < /tmp/changed_yaml_files.txt
-          python scripts/lint.py --files "${FILES[@]}" 2>&1 | head -200
+          python scripts/lint.py 2>&1 | head -200
         continue-on-error: true
 
       # ── push to main: lint only the YAML files that changed in the push ─
@@ -83,8 +84,8 @@ jobs:
       - name: Run lint on changed files (push)
         if: github.event_name == 'push' && steps.changed-yaml-push.outputs.has_changes == 'true'
         run: |
-          mapfile -t FILES < /tmp/changed_yaml_files.txt
-          python scripts/lint.py --summary --files "${FILES[@]}"
+          # Lint the full repo so cross-file and cross-topic references are resolved.
+          python scripts/lint.py --summary
 
       # ── workflow_dispatch: full-repo lint (manual trigger) ───────────────
       - name: Run full-repo lint (manual)
