@@ -82,7 +82,7 @@ class Issue:
 
 
 def _iter_items(section: Any) -> list[dict[str, Any]]:
-    """Yield dicts from a YAML section that may be a list or a dict."""
+    """Return a list of dicts from a YAML section that may be a list or a dict."""
     if section is None:
         return []
     if isinstance(section, list):
@@ -116,7 +116,7 @@ def scan_files(yaml_paths: list[Path]) -> tuple[
         try:
             text = path.read_text(encoding="utf-8")
             doc = yaml.safe_load(text)
-        except Exception:
+        except (yaml.YAMLError, OSError):
             # Silently skip unparseable files — caller handles this separately if needed
             continue
 
