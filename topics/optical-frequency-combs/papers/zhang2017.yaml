@@ -310,21 +310,21 @@ metrics:
 # ═══════════════════════════════════════════════
 
 relations:
-  - id: rel.Z17_01
+  - id: rel.ZhOFC17_01
     subject: ent.nalm_unit_z17
     predicate: PART-OF
     object: ent.hybrid_ml_erfiber_comb_z17
     confidence: established
     source: {zotero_key: "9RFKI5SH", claim: "Two loops are connected by a fiber coupler (50:50): the left one is a primary resonator and the other is a typical NALM."}
 
-  - id: rel.Z17_02
+  - id: rel.ZhOFC17_02
     subject: ent.npe_unit_z17
     predicate: PART-OF
     object: ent.hybrid_ml_erfiber_comb_z17
     confidence: established
     source: {zotero_key: "9RFKI5SH", claim: "The primary resonator, i.e., the NPE unit, is composed of the SMF-28 fiber and a free-space optical path"}
 
-  - id: rel.Z17_03
+  - id: rel.ZhOFC17_03
     subject: ent.hybrid_ml_erfiber_comb_z17
     predicate: ENABLED-BY
     object: pri.npe_nalm_hybrid_mode_locking
@@ -332,70 +332,70 @@ relations:
     source: {zotero_key: "9RFKI5SH", claim: "The hybrid mode-locked scheme is more robust than lasers that only use NPE, and the RIN is as low as schemes based on pure NPE."}
     temporal_role: proposes
 
-  - id: rel.Z17_04
+  - id: rel.ZhOFC17_04
     subject: ent.hybrid_ml_erfiber_comb_z17
     predicate: CHARACTERIZED-BY
     object: met.rep_rate_erfiber_z17
     confidence: established
     source: {zotero_key: "9RFKI5SH", claim: "The fundamental repetition rate is up to 168 MHz"}
 
-  - id: rel.Z17_05
+  - id: rel.ZhOFC17_05
     subject: ent.hybrid_ml_erfiber_comb_z17
     predicate: CHARACTERIZED-BY
     object: met.pulse_width_erfiber_z17
     confidence: established
     source: {zotero_key: "9RFKI5SH", claim: "The narrowest direct output pulse is approximately 49 fs"}
 
-  - id: rel.Z17_06
+  - id: rel.ZhOFC17_06
     subject: ent.hybrid_ml_erfiber_comb_z17
     predicate: CHARACTERIZED-BY
     object: met.rin_erfiber_z17
     confidence: established
     source: {zotero_key: "9RFKI5SH", claim: "The noise level is approximately -135 dBc/Hz from 10 Hz to 1 kHz"}
 
-  - id: rel.Z17_07
+  - id: rel.ZhOFC17_07
     subject: ent.hybrid_ml_erfiber_comb_z17
     predicate: CHARACTERIZED-BY
     object: met.fceo_instability_z17
     confidence: established
     source: {zotero_key: "9RFKI5SH", claim: "resulting in-loop frequency instability is about 9.1 × 10⁻¹⁸ with an average time of 1 s"}
 
-  - id: rel.Z17_08
+  - id: rel.ZhOFC17_08
     subject: ent.hybrid_ml_erfiber_comb_z17
     predicate: CHARACTERIZED-BY
     object: met.fbeat_instability_z17
     confidence: established
     source: {zotero_key: "9RFKI5SH", claim: "in-loop frequency instability of approximately 9.4 × 10⁻¹⁸ with an average time of 1 s"}
 
-  - id: rel.Z17_09
+  - id: rel.ZhOFC17_09
     subject: ent.hybrid_ml_erfiber_comb_z17
     predicate: CHARACTERIZED-BY
     object: met.integrated_phase_noise_z17
     confidence: established
     source: {zotero_key: "9RFKI5SH", claim: "The integral phase noises are both less than 1 rad from 1 Hz to 100 kHz, corresponding to residual time jitter of less than 1 fs"}
 
-  - id: rel.Z17_10
+  - id: rel.ZhOFC17_10
     subject: ent.hybrid_ml_erfiber_comb_z17
     predicate: CHARACTERIZED-BY
     object: met.fceo_snr_z17
     confidence: established
     source: {zotero_key: "9RFKI5SH", claim: "SNR is about 35 dB with a resolution bandwidth of 300 kHz"}
 
-  - id: rel.Z17_11
+  - id: rel.ZhOFC17_11
     subject: met.fceo_instability_z17
     predicate: OPERATIONALIZED-AS
     object: meth.pump_current_modulation_fceo_lock_z17
     confidence: established
     source: {zotero_key: "9RFKI5SH", claim: "f_ceo is locked to an external reference by modulating the pump laser current"}
 
-  - id: rel.Z17_12
+  - id: rel.ZhOFC17_12
     subject: met.fbeat_instability_z17
     predicate: OPERATIONALIZED-AS
     object: meth.eom_pzt_dual_actuator_frep_lock_z17
     confidence: established
     source: {zotero_key: "9RFKI5SH", claim: "We use both the intra-cavity EOM and PZT to stabilize a comb tooth."}
 
-  - id: rel.Z17_13
+  - id: rel.ZhOFC17_13
     subject: meth.pump_current_modulation_fceo_lock_z17
     predicate: ENABLED-BY
     object: pri.self_referencing_f2f
@@ -403,7 +403,7 @@ relations:
     source: {zotero_key: "9RFKI5SH", claim: "detect the f_ceo signal with an all-fiber supercontinuum generation and a common-path f-2f configuration"}
     note: "pri.self_referencing_f2f 权威定义于 udem2002.yaml / giunta2019.yaml（跨文件引用）"
 
-  - id: rel.Z17_14
+  - id: rel.ZhOFC17_14
     subject: met.fceo_instability_z17
     predicate: BOUNDED-BY
     object: pri.servo_bandwidth_limited_comb_locking
@@ -416,7 +416,7 @@ relations:
         source: {zotero_key: "9RFKI5SH", claim: "the feedback loop must be improved in subsequent work"}
         note: "本文 f_beat 环路已示范 EOM+PZT 双通道可行；f_ceo 通路复用同一思路是自然突破路径。"
 
-  - id: rel.Z17_15
+  - id: rel.ZhOFC17_15
     subject: met.fceo_instability_z17
     predicate: BOUNDED-BY
     object: pri.am_to_pm_conversion_in_comb
@@ -428,7 +428,7 @@ relations:
         status: demonstrated
         source: {zotero_key: "9RFKI5SH", claim: "the RIN is as low as schemes based on pure NPE"}
 
-  - id: rel.Z17_16
+  - id: rel.ZhOFC17_16
     subject: ent.hybrid_ml_erfiber_comb_z17
     predicate: COMPETES-WITH
     object: ent.optical_frequency_comb

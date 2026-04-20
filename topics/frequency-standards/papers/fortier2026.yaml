@@ -381,6 +381,7 @@ relations:
     is_system_limit:
       current: false
       conditions: "当前梳精度（10⁻²¹）远优于光钟不确定度（~10⁻¹⁸），不是限制因素"
+    source: {zotero_key: "BWR7TEZ6", claim: "Optical frequency combs serve as the essential clockwork linking optical atomic references to countable microwave signals"}
     note: >
       跨专题引用：ent.optical_frequency_comb 定义于 topics/optical-frequency-combs/papers/giunta2019.yaml；
       met.comb_frequency_synthesis_accuracy_g20 定义于 topics/optical-frequency-combs/papers/giunta2020.yaml。

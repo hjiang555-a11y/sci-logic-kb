@@ -71,28 +71,28 @@ metrics:
     source_claim: "utilize the intensity modulator already present in a photonic link... suppression of 10 to 50 dB"
 
 relations:
-  - id: rel.N01
+  - id: rel.Nel01
     subject: meth.rin_suppression_reuse_modulator
     predicate: IMPLEMENTS
     object: pri.rin_suppression_reuse_modulator
     confidence: established
     source: {zotero_key: "XAKCIXKT", claim: "utilize the intensity modulator already present in a photonic link... suppression of 10 to 50 dB"}
     note: "方法实现了该原理。"
-  - id: rel.N02
+  - id: rel.Nel02
     subject: met.rin_suppression_ratio_n08
     predicate: CHARACTERIZES
     object: pri.rin_suppression_reuse_modulator
     confidence: established
     source: {zotero_key: "XAKCIXKT", claim: "utilize the intensity modulator already present in a photonic link... suppression of 10 to 50 dB"}
     note: "抑制比表征原理性能。"
-  - id: rel.N03
+  - id: rel.Nel03
     subject: met.rin_suppression_bandwidth_n08
     predicate: CHARACTERIZES
     object: pri.rin_suppression_reuse_modulator
     confidence: established
     source: {zotero_key: "XAKCIXKT", claim: "utilize the intensity modulator already present in a photonic link... suppression of 10 to 50 dB"}
     note: "带宽表征原理性能。"
-  - id: rel.N04
+  - id: rel.Nel04
     subject: pri.rin_suppression_reuse_modulator
     predicate: ENABLED-BY
     object: ent.eom

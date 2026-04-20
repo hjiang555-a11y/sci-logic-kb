@@ -315,7 +315,7 @@ relations:
     predicate: DERIVED-FROM
     object: meth.photonic_microwave_synthesis
     confidence: established
-    source: {zotero_key: "BESI3AEE"}
+    source: {zotero_key: "BESI3AEE", claim: "The DPSSL + PM pulse interleaver photonic microwave method is a specific implementation of the general photonic microwave synthesis approach."}
     note: "meth.photonic_microwave_synthesis 为光生微波通用方法的跨文件父节点；本文件提供 DPSSL+PM 交织器具体实例。"
 
   - id: rel.PC15_08
@@ -323,7 +323,7 @@ relations:
     predicate: OPERATIONALIZED-AS
     object: meth.dpssl_interleaver_photonic_microwave_pc15
     confidence: established
-    source: {zotero_key: "BESI3AEE"}
+    source: {zotero_key: "BESI3AEE", claim: "The −171 dBc/Hz single-source phase noise floor at 9.6 GHz is achieved through the DPSSL comb with PM pulse interleaver architecture."}
 
   - id: rel.PC15_09
     subject: met.photonic_microwave_phase_noise_pc15
@@ -368,7 +368,7 @@ relations:
     predicate: COMPETES-WITH
     object: ent.monolithic_modelocked_laser_comb_k22
     confidence: established
-    source: {zotero_key: "BESI3AEE"}
+    source: {zotero_key: "BESI3AEE", claim: "The DPSSL comb with PM interleaver competes with monolithic mode-locked laser combs as alternative low-phase-noise photonic microwave sources."}
     note: >
       同为光生低相噪微波源的并列工程路径：
       Portuondo-Campa 2015（DPSSL OFD + PM 交织器 + PIN，锁至外部 USL） vs

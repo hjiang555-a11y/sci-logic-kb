@@ -104,36 +104,6 @@ principles:
       "the peak SNR is 4000. This peak SNR corresponds to a fractional absorption sensitivity of 0.05%
       and a phase sensitivity of 250 microradians"
 
-methods:
-  - id: meth.dual_comb_spectroscopy
-    name: "相干双梳光谱方法（dual-comb spectroscopy）"
-    status: demonstrated
-    applies_to: ent.coherent_dual_comb_spectrometer_c10
-    steps_summary: >
-      1. 构建两台重频略失谐 Δf_r 的相干锁定梳；
-      2. 将两台梳各自一个梳齿相位锁至两路 cw 激光（或共同光钟 / 超稳激光）；
-      3. 信号梳穿过样品 → 与本振梳合束 → 光电探测器获 RF 多外差干涉图（IGM）；
-      4. 高速 ADC 数字化后实时相干平均恢复复 IGM；
-      5. FFT 得复谱 H̃(f_RF) → 光频域回映为 H̃(ν)；
-      6. 归一化消除梳幅度基线后读出样品吸收系数 α(ν) 与折射率 n(ν)。
-    required_hardware:
-      - ent.coherent_dual_comb_spectrometer_c10
-    advantages:
-      - "无动部件，分辨由梳重频决定（~100 MHz）"
-      - "完整复响应（吸收 + 色散）同时测量"
-      - "频率准确度由 cw 参考/光钟直接决定（可达 10⁻¹²–10⁻¹⁷）"
-      - "采集速度快（每个 IGM ~1/Δf_r）"
-    disadvantages:
-      - "需双台稳定相干梳（系统复杂度）"
-      - "动态范围限制单次 SNR"
-      - "相干性维持对光纤/环境要求高"
-    conditions:
-      - "两台梳 f_CEO + 1 齿 相位锁定"
-      - "Δf_r · N ≤ f_r / 2"
-    source_claim: >
-      "We discuss the specific design of our coherent dual-comb spectrometer and demonstrate the
-      potential of this technique by measuring the overtone vibration of hydrogen cyanide"
-
 metrics:
   - id: met.dcs_frequency_resolution
     name: "双梳光谱频率分辨率"
@@ -205,7 +175,7 @@ relations:
     predicate: OPERATIONALIZED-AS
     object: meth.dual_comb_spectroscopy
     confidence: established
-    source: {zotero_key: "7PDY5FDM"}
+    source: {zotero_key: "7PDY5FDM", claim: "frequency resolution equals the comb mode spacing of 220 MHz"}
 
   - id: rel.C10_06
     subject: met.dcs_snr_coherent
@@ -229,5 +199,5 @@ relations:
     predicate: PART-OF
     object: ent.dual_comb_spectrometer
     confidence: established
-    source: {zotero_key: "7PDY5FDM"}
+    source: {zotero_key: "7PDY5FDM", claim: "coherent dual-comb spectrometer retains the frequency accuracy and resolution of the reference underlying the stabilized combs"}
     note: "ent.dual_comb_spectrometer 定义于 coddington2016.yaml（权威）；此处跨文件引用"

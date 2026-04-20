@@ -375,7 +375,7 @@ metrics:
       source: {zotero_key: "BRKZG9H2", claim: "an integrated comb generator that draws less than 100 mW of electrical power and can be operated with an AAA battery"}
 
 relations:
-  - id: rel.G19_01
+  - id: rel.Gae19_01
     subject: ent.chip_scg_waveguide_g19
     predicate: ENABLED-BY
     object: pri.chip_dispersion_engineering_high_index_contrast
@@ -384,7 +384,7 @@ relations:
     temporal_role: extends
     note: null
 
-  - id: rel.G19_02
+  - id: rel.Gae19_02
     subject: ent.chip_scg_waveguide_g19
     predicate: ENABLED-BY
     object: pri.supercontinuum_octave_spanning
@@ -393,7 +393,7 @@ relations:
     conditions: "N_soliton<10 且 SPM 主导相干区"
     note: "pri.supercontinuum_octave_spanning 定义于 diddams2000.yaml"
 
-  - id: rel.G19_03
+  - id: rel.Gae19_03
     subject: ent.chip_scg_waveguide_g19
     predicate: OPERATIONALIZED-AS
     object: meth.chip_scg_comb_generation_g19
@@ -401,28 +401,28 @@ relations:
     source: {zotero_key: "BRKZG9H2", claim: "chip-based platforms offer several key features for performing SCG and KCG compared with fibre-based platforms"}
     temporal_role: proposes
 
-  - id: rel.G19_04
+  - id: rel.Gae19_04
     subject: ent.chip_scg_waveguide_g19
     predicate: CHARACTERIZED-BY
     object: met.chip_scg_octave_span_g19
     confidence: established
     source: {zotero_key: "BRKZG9H2", claim: "octave-spanning mid-infrared supercontinuum spectra could be generated that produced coherent beat notes in an f–2f interferometer"}
 
-  - id: rel.G19_05
+  - id: rel.Gae19_05
     subject: meth.chip_scg_comb_generation_g19
     predicate: ENABLED-BY
     object: pri.dispersive_wave_cherenkov_radiation
     confidence: established
     source: {zotero_key: "BRKZG9H2", claim: "Dispersive wave generation... can be tuned via dispersion engineering and can be applied to enhance either the long- or short-wavelength side, and is essential, for example, for f–2f interferometry to stabilize the comb"}
 
-  - id: rel.G19_06
+  - id: rel.Gae19_06
     subject: pri.dispersive_wave_cherenkov_radiation
     predicate: DERIVED-FROM
     object: pri.chip_dispersion_engineering_high_index_contrast
     confidence: established
     source: {zotero_key: "BRKZG9H2", claim: "the location of the peaks of the DWs are nearly given by frequencies corresponding to the zeros of the dispersion function D(δ)"}
 
-  - id: rel.G19_07
+  - id: rel.Gae19_07
     subject: ent.microresonator_frequency_comb
     predicate: ENABLED-BY
     object: pri.chip_dispersion_engineering_high_index_contrast
@@ -430,7 +430,7 @@ relations:
     source: {zotero_key: "BRKZG9H2", claim: "tight confinement allows for dispersion engineering that offers control of the interaction to enhance and/or tailor the comb spectrum"}
     note: "ent.microresonator_frequency_comb 定义于 kippenberg2011.yaml"
 
-  - id: rel.G19_08
+  - id: rel.Gae19_08
     subject: ent.microresonator_frequency_comb
     predicate: CHARACTERIZED-BY
     object: pri.microcomb_formation_regime_taxonomy_g19
@@ -439,7 +439,7 @@ relations:
     temporal_role: extends
     note: "本综述对微梳形成态的系统分类"
 
-  - id: rel.G19_09
+  - id: rel.Gae19_09
     subject: pri.microcomb_formation_regime_taxonomy_g19
     predicate: DERIVED-FROM
     object: pri.lugiato_lefever_equation
@@ -447,7 +447,7 @@ relations:
     source: {zotero_key: "BRKZG9H2", claim: "The dynamics of comb generation in microresonators is well described by the Lugiato–Lefever equation in which higher-order GVD terms and stimulated Raman scattering are included"}
     note: "pri.lugiato_lefever_equation 定义于 kippenberg2018.yaml"
 
-  - id: rel.G19_10
+  - id: rel.Gae19_10
     subject: pri.dark_pulse_normal_dispersion_comb
     predicate: COMPETES-WITH
     object: pri.dissipative_kerr_soliton
@@ -456,14 +456,14 @@ relations:
     conditions: "分别适用正常/反常 GVD 区域；相互替代的梳形成路径"
     note: "pri.dissipative_kerr_soliton 定义于 kippenberg2018.yaml"
 
-  - id: rel.G19_11
+  - id: rel.Gae19_11
     subject: pri.soliton_crystal_multistability
     predicate: DERIVED-FROM
     object: pri.dissipative_kerr_soliton
     confidence: established
     source: {zotero_key: "BRKZG9H2", claim: "single- and multiple-soliton formation, soliton crystals and breather instabilities"}
 
-  - id: rel.G19_12
+  - id: rel.Gae19_12
     subject: ent.microresonator_frequency_comb
     predicate: BOUNDED-BY
     object: pri.raman_limits_min_fsr_microcomb
@@ -482,7 +482,7 @@ relations:
         status: demonstrated
         source: {zotero_key: "BRKZG9H2", claim: "operating with a sufficiently large FSR such that the Raman gain peak is located between two microresonator modes"}
 
-  - id: rel.G19_13
+  - id: rel.Gae19_13
     subject: ent.microresonator_frequency_comb
     predicate: BOUNDED-BY
     object: pri.chip_comb_platform_tradeoff_space
@@ -499,14 +499,14 @@ relations:
         status: demonstrated
         source: {zotero_key: "BRKZG9H2", claim: "Damascene process that allows for large waveguide sizes and ultrasmooth preform reflow to produce high Q"}
 
-  - id: rel.G19_14
+  - id: rel.Gae19_14
     subject: ent.microresonator_frequency_comb
     predicate: CHARACTERIZED-BY
     object: met.platform_q_factor_g19
     confidence: established
     source: {zotero_key: "BRKZG9H2", claim: "the highest quality (Q) factors (>10 million) demonstrated in a non-silica-based chip platform"}
 
-  - id: rel.G19_15
+  - id: rel.Gae19_15
     subject: met.platform_q_factor_g19
     predicate: OPERATIONALIZED-AS
     object: meth.cw_pumped_microcomb_generation
@@ -514,21 +514,21 @@ relations:
     source: {zotero_key: "BRKZG9H2", claim: "low threshold power for soliton generation"}
     note: "meth.cw_pumped_microcomb_generation 定义于 kippenberg2018.yaml"
 
-  - id: rel.G19_16
+  - id: rel.Gae19_16
     subject: ent.microresonator_frequency_comb
     predicate: CHARACTERIZED-BY
     object: met.microcomb_pump_threshold_g19
     confidence: established
     source: {zotero_key: "BRKZG9H2", claim: "sub-milliwatt parametric oscillation threshold"}
 
-  - id: rel.G19_17
+  - id: rel.Gae19_17
     subject: ent.microresonator_frequency_comb
     predicate: CHARACTERIZED-BY
     object: met.microcomb_conversion_efficiency_g19
     confidence: established
     source: {zotero_key: "BRKZG9H2", claim: "the ratio of the power in the comb to the input pump power is typically 1–3%"}
 
-  - id: rel.G19_18
+  - id: rel.Gae19_18
     subject: met.microcomb_conversion_efficiency_g19
     predicate: BOUNDED-BY
     object: pri.dissipative_kerr_soliton
@@ -544,7 +544,7 @@ relations:
         status: demonstrated
         source: {zotero_key: "BRKZG9H2", claim: "This efficiency can be increased roughly linearly with the number of cavity solitons"}
 
-  - id: rel.G19_19
+  - id: rel.Gae19_19
     subject: ent.si3n4_integrated_comb
     predicate: PART-OF
     object: ent.chip_comb_platform_taxonomy_g19
@@ -552,7 +552,7 @@ relations:
     source: {zotero_key: "BRKZG9H2", claim: "silicon nitride has proven to be an exceptional platform for generating microresonator combs due to its relatively high index contrast and nonlinearity and the highest quality (Q) factors (>10 million) demonstrated in a non-silica-based chip platform"}
     note: "ent.si3n4_integrated_comb 定义于 kippenberg2011.yaml"
 
-  - id: rel.G19_20
+  - id: rel.Gae19_20
     subject: meth.microcomb_self_referencing
     predicate: CONDITIONED-BY
     object: ent.chip_comb_platform_taxonomy_g19
@@ -561,7 +561,7 @@ relations:
     conditions: "需要平台本征或诱导 χ(2)，否则需外置倍频晶体"
     note: "meth.microcomb_self_referencing 定义于 kippenberg2018.yaml"
 
-  - id: rel.G19_21
+  - id: rel.Gae19_21
     subject: meth.chip_scg_comb_generation_g19
     predicate: CONDITIONED-BY
     object: ent.chip_comb_platform_taxonomy_g19
@@ -569,7 +569,7 @@ relations:
     source: {zotero_key: "BRKZG9H2", claim: "Critical properties of these chip-based materials are the strong nonlinearity and the high refractive index contrast"}
     note: "SCG 路径的平台选择约束：近红外 Si3N4/Hydex；中红外 Si/SiGe/硫系；Si 在 1.55 μm 受双光子吸收限制"
 
-  - id: rel.G19_22
+  - id: rel.Gae19_22
     subject: ent.chip_scg_waveguide_g19
     predicate: COMPETES-WITH
     object: ent.microresonator_frequency_comb
@@ -578,7 +578,7 @@ relations:
     conditions: "SCG 路径需外部飞秒泵浦但梳齿间距由 f_rep 设定；KCG 路径用 CW 泵浦但梳间距 = FSR 受腔尺寸约束"
     note: "两条互补而非互斥的芯片梳路径"
 
-  - id: rel.G19_23
+  - id: rel.Gae19_23
     subject: ent.chip_scg_waveguide_g19
     predicate: CHARACTERIZED-BY
     object: met.chip_comb_system_power_g19
@@ -586,7 +586,7 @@ relations:
     source: {zotero_key: "BRKZG9H2", claim: "an integrated comb generator that draws less than 100 mW of electrical power and can be operated with an AAA battery"}
     note: "系统级功耗指标同时约束 SCG 与 KCG 集成路线"
 
-  - id: rel.G19_24
+  - id: rel.Gae19_24
     subject: pri.microcomb_formation_regime_taxonomy_g19
     predicate: CONDITIONED-BY
     object: ent.chip_comb_platform_taxonomy_g19

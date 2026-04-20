@@ -162,35 +162,45 @@ relations:
     predicate: PART-OF
     object: ent.all_pm_er_fiber_comb_k15
     confidence: established
-    source: {zotero_key: "3RT4U4TV"}
+    source:
+      claim: "The intracavity graphene electro-optic modulator is integrated as a key component of the all-PM Er:fiber frequency comb for high-bandwidth f_CEO and f_rep modulation."
+      zotero_key: "3RT4U4TV"
 
   - id: rel.K15_02
     subject: ent.all_pm_er_fiber_comb_k15
     predicate: CHARACTERIZED-BY
     object: met.fceo_integrated_phase_noise_k15
     confidence: established
-    source: {zotero_key: "3RT4U4TV"}
+    source:
+      claim: "The all-PM Er:fiber comb achieves record-low f_CEO integrated phase noise of 0.25 rad (10 Hz–3 MHz), breaking the >1 rad barrier of previous all-PM combs."
+      zotero_key: "3RT4U4TV"
 
   - id: rel.K15_03
     subject: ent.all_pm_er_fiber_comb_k15
     predicate: CHARACTERIZED-BY
     object: met.fbeat_integrated_phase_noise_k15
     confidence: established
-    source: {zotero_key: "3RT4U4TV"}
+    source:
+      claim: "The all-PM Er:fiber comb achieves optical beat note integrated phase noise of 0.11 rad (10 Hz–3 MHz) when locked to a CW reference."
+      zotero_key: "3RT4U4TV"
 
   - id: rel.K15_04
     subject: meth.graphene_modulator_comb_stabilization
     predicate: ENABLED-BY
     object: pri.intracavity_graphene_fast_modulation
     confidence: established
-    source: {zotero_key: "3RT4U4TV"}
+    source:
+      claim: "The intracavity graphene EOM enables >1 MHz servo bandwidth for f_CEO stabilization, bypassing the ~100 kHz pump current modulation limit set by the Er gain medium lifetime."
+      zotero_key: "3RT4U4TV"
 
   - id: rel.K15_05
     subject: meth.graphene_modulator_comb_stabilization
     predicate: ENABLED-BY
     object: pri.fceo_frep_decoupling_via_beat_subtraction
     confidence: established
-    source: {zotero_key: "3RT4U4TV"}
+    source:
+      claim: "RF-domain subtraction fbeat' = fbeat − fceo decouples n·f_rep locking from f_CEO, allowing independent stabilization of both comb degrees of freedom using a single intracavity modulator."
+      zotero_key: "3RT4U4TV"
 
   - id: rel.K15_06
     subject: met.fceo_integrated_phase_noise_k15
@@ -209,5 +219,7 @@ relations:
     predicate: PART-OF
     object: ent.optical_frequency_comb
     confidence: established
-    source: {zotero_key: "3RT4U4TV"}
+    source:
+      claim: "The all-PM Er:fiber comb is an ultra-low-noise implementation of optical frequency comb technology suitable for field-deployable applications."
+      zotero_key: "3RT4U4TV"
     note: "跨文件引用 ent.optical_frequency_comb（定义于 giunta2019.yaml）"

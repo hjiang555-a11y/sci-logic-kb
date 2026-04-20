@@ -253,29 +253,6 @@ metrics:
       source:
         zotero_key: ''
       note: 微腔梳/EOM 梳/QCL 梳，截至本综述
-- id: met.dcs_frequency_resolution
-  name: 双梳光谱频率分辨率
-  unit: Hz
-  description: 'DCS 的频率分辨率由两个因素决定：(1) 光谱采样间距 = f_rep（典型 100 MHz–10 GHz）， (2) 单根梳齿的绝对线宽（典型
-    kHz–MHz）。无仪器线型函数——每根梳齿提供 独立光谱采样点，相邻通道无串扰。若需更密采样，可扫描梳齿。
-
-    '
-  demonstrated_value:
-    value: 光谱点间距 ~100 MHz（典型），梳齿分辨率 kHz–MHz
-    conditions: '互相干梳，相对线宽 ≪ Δf_rep；梳齿绝对频率稳定至 kHz 级（全参考模式）
-
-      '
-    verification_status: observed
-    confidence: established
-    source:
-      zotero_key: ''
-      claim: '"the spectral point spacings are 50–200 MHz, matching the highest resolution
-        FTIRs, traditionally the gold standard of high-resolution broadband spectroscopy.
-        Finally, this point spacing is not the actual resolution limit; if needed,
-        the comb can be scanned for higher point density up to a resolution limit
-        set by the absolute comb tooth linewidths (typically a few kilohertz to megahertz)."
-
-        '
 - id: met.dcs_snr_per_tooth
   name: 双梳光谱单齿信噪比
   unit: 无量纲（或 Hz^(1/2)，figure of merit）
