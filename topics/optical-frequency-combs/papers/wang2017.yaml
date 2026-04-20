@@ -45,16 +45,6 @@ entities:
       the round-trip cavity length far beyond what monolithic III-V cavities
       allow, setting the sub-GHz free spectral range.
 
-  - id: ent.microresonator_frequency_comb
-    level: 1
-    name: "Microresonator Kerr frequency comb (reference)"
-    note: "External reference node for comparison; defined in gaeta2019.yaml / stern2018.yaml."
-
-  - id: ent.optical_frequency_comb
-    level: 0
-    name: "Optical frequency comb (domain entity)"
-    note: "Reused from udem2002.yaml."
-
 principles:
   - id: pri.long_cavity_subghz_comb_spacing
     tier: domain

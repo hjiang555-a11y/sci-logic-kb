@@ -67,32 +67,6 @@ principles:
     source_claim: >
       "intra-pulse difference frequency generation (IP-DFG) of few-cycle pulses in χ(2) nonlinear crystals"
 
-methods:
-  - id: meth.dfg_comb_generation
-    name: "中红外 DFG 梳产生方法（含 IP-DFG 分支）"
-    status: demonstrated
-    applies_to: ent.broadband_1ghz_mir_comb_h22
-    steps_summary: >
-      1. 1 GHz NIR 锁模激光 + Er 光纤放大 → 少周期脉冲；
-      2. 聚焦入 χ² 非线性晶体（相位匹配 3–13 µm）；
-      3. IP-DFG 产生 MIR 光频梳（f_CEO=0）；
-      4. DCS 架构：另一路 MIR 梳作本振 → 双梳吸收光谱；
-      5. 可达 μs 时间分辨、0.03 cm⁻¹ 分辨、>5 THz 带宽。
-    required_hardware:
-      - ent.broadband_1ghz_mir_comb_h22
-    advantages:
-      - "覆盖 3–13 µm 全分子指纹区"
-      - "1 GHz 重频 → μs 时间分辨（高重频 DCS）"
-      - "f_CEO 本征为零，无需主动锁定"
-    disadvantages:
-      - "χ² 晶体带宽限制每次实现约 2–3 µm 子带"
-      - "转换效率低于 NIR 梳功率"
-    conditions:
-      - "晶体相位匹配配置可覆盖目标波段"
-    source_claim: >
-      "this source will simultaneously enable measurements with μs time resolution, 1 GHz (0.03 cm⁻¹)
-      spectral point spacing and a full bandwidth of >5 THz"
-
 metrics:
   - id: met.mir_comb_spectral_coverage_h22
     name: "中红外梳光谱覆盖"
@@ -109,20 +83,6 @@ metrics:
         value: "首个 1 GHz 级、3–13 µm 全指纹区 MIR 梳"
         year: 2022
         source: {zotero_key: "7HSU6V7Q"}
-
-  - id: met.dcs_acquisition_speed
-    name: "双梳光谱采集速度（时间分辨）"
-    unit: "s（或单 IGM 时间 τ_IGM）"
-    description: "双梳光谱单次完整干涉图的最短采集时间，决定可观测瞬态过程时间尺度"
-    demonstrated_value:
-      value: "μs 级时间分辨（基于 1 GHz 重频）"
-      conditions: "1 GHz MIR 梳 DCS 配置"
-      verification_status: inferred
-      confidence: tentative
-      source: {zotero_key: "7HSU6V7Q", claim: "measurements with μs time resolution"}
-    theoretical_floor:
-      value: "τ_IGM ≥ 1/Δf_r，最小 ≈ 1/f_r ≈ 1 ns"
-      basis: "双梳采样 Nyquist 条件"
 
 relations:
   - id: rel.H22_01

@@ -99,33 +99,6 @@ principles:
     open_questions:
       - "邻近模族位置如何在设计阶段精确预测并裁剪？"
 
-methods:
-  - id: meth.laser_tuning_soliton_access
-    name: "慢泵浦频率调谐孤子访问方法"
-    status: demonstrated
-    applies_to: ent.octave_si3n4_microcomb_l17
-    steps_summary: >
-      1. 固定泵浦功率（>阈值）；
-      2. 泵浦波长从蓝失谐缓慢扫向红失谐（扫描速率 << 1/τ_thermal）；
-      3. 穿过 MI 梳区 → 腔温被动跟随；
-      4. 过渡到红失谐侧后热动力学由邻近模族与 Kerr 自平衡共同稳定；
-      5. 停在目标 detuning → 获得稳定的单孤子或多孤子倍频程梳。
-    required_hardware:
-      - ent.octave_si3n4_microcomb_l17
-    advantages:
-      - "无需快速功率控制或反馈硬件"
-      - "简单 CW 可调谐激光即可操作"
-      - "兼容倍频程工作（支持 f-2f 自参考路径）"
-    disadvantages:
-      - "依赖邻近模族的存在，设计自由度受限"
-      - "单孤子态功率阈值仍较高（~120 mW）"
-    conditions:
-      - "Si₃N₄ 平台色散已工程化为倍频程反常色散"
-      - "邻近红失谐模族位置满足热平衡条件"
-    source_claim: >
-      "we consider how broadband soliton states can be accessed with simple pump laser frequency
-      tuning, at a rate much slower than the thermal dynamics"
-
 metrics:
   - id: met.microcomb_soliton_pump_power_threshold
     name: "微梳单孤子泵浦功率阈值"

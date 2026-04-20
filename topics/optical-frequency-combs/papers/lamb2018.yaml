@@ -58,30 +58,6 @@ principles:
       "Efficient silicon-nitride waveguides provide a supercontinuum spanning 700 to 2100 nm,
       enabling both offset-frequency stabilization and optical-frequency measurements with >100 nW per mode"
 
-methods:
-  - id: meth.microcomb_self_referencing
-    name: "微梳 f-2f 自参考方法（外部 SC 展宽）"
-    status: demonstrated
-    applies_to: ent.kerr_microcomb_photonic_chip_sc_l18
-    steps_summary: >
-      1. 孤子态微梳输出 → 光学放大；
-      2. 耦合入色散工程化 SiN 波导产生倍频程 SC；
-      3. 取 f 与 2f 两端梳齿 → f-2f 干涉仪 → f_CEO 拍频；
-      4. 反馈至泵浦功率 / 泵浦 detuning 稳 f_CEO；
-      5. 将一个梳齿光锁至超稳激光稳重频 f_r；
-      6. 读出其他梳齿绝对频率做微梳介导比对。
-    required_hardware:
-      - ent.kerr_microcomb_photonic_chip_sc_l18
-    advantages:
-      - "完全兼容微梳低 SWaP 目标"
-      - "两阶段展宽降低对微环色散工程的要求"
-    disadvantages:
-      - "需外部光放大器"
-      - "SC 波导损耗与色散残差影响 SNR"
-    source_claim: >
-      "We demonstrate the stabilized comb by performing a microcomb-mediated comparison of two
-      ultrastable optical-reference cavities"
-
 metrics:
   - id: met.microcomb_sc_spectral_span
     name: "微梳 + 片上 SC 光谱跨度"

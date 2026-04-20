@@ -121,38 +121,6 @@ principles:
   open_questions:
   - What is the fundamental limit of comb-tooth equidistancy set by intracavity nonlinear
     and dispersive effects?
-- id: pri.supercontinuum_octave_spanning
-  name: 超连续谱倍频程展宽原理
-  tier: domain
-  verification_status: observed
-  statement: '飞秒脉冲在光子晶体光纤（PCF）或光纤锥中传播时， 由于自相位调制（SPM）、孤子裂变和色散波产生等非线性效应的组合作用， 频谱从 ~45
-    THz 展宽至覆盖超过一个光学倍频程（>300 THz）。 PCF 的微结构包层使零色散波长红移至 ~770 nm（钛宝石波段）， 从而在标准振荡器输出功率（数百
-    mW）下即可实现高效超连续谱产生。 关键物理洞见：尽管光纤内色散显著改变脉冲形状， 但对所有脉冲的改变方式相同——因此包络函数的周期性得以保持， 输出频谱仍然是精确等间距的频率梳。
-
-    '
-  domain: 非线性光学，超连续谱产生，光学频率计量
-  formula: '展宽带宽 ∝ γ·P_peak·L_eff（γ 为非线性系数，P_peak 为峰值功率，L_eff 为有效光纤长度）； 零色散波长需匹配泵浦波长以最大化展宽效率
-
-    '
-  key_insight: 'PCF 使得单台锁模振荡器的输出即可获得倍频程频率梳—— 这是 f-2f 自参考方案从理论变为实验可行的关键使能技术。
-
-    '
-  conditions: 需 PCF 零色散波长匹配泵浦激光波段；脉冲峰值功率须足够激发非线性效应
-  preconditions:
-  - 飞秒脉冲峰值功率 > ~kW 级（对应 ~100 mW 平均功率，~10 fs 脉冲）
-  - 光纤色散经工程优化（微结构包层设计）使零色散点落在泵浦波段
-  invalidated_when:
-  - 脉冲功率不足以激发显著非线性效应（如 CW 或长脉冲输入）
-  - 光纤色散特性与泵浦波长严重不匹配（如标准单模光纤在 800 nm 的正常色散域）
-  source_claim: '"With newly invented micro-structured photonic crystal fibres (PCF),
-    this spectral broadening  is so pronounced that the resulting frequency comb can
-    span more than an optical octave,  even with the moderate output power from the
-    laser oscillator."
-
-    '
-  open_questions:
-  - Can integrated photonic waveguides fully replace PCF for octave-spanning supercontinuum
-    generation in compact frequency combs?
 - id: pri.optical_clock_higher_frequency_advantage
   name: 光学钟高频振荡优势原理
   tier: domain

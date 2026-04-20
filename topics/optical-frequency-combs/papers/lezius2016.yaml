@@ -16,11 +16,6 @@ meta:
     re-entry, establishing baseline engineering for space-qualified OFCs.
 
 entities:
-  - id: ent.optical_frequency_comb
-    name: "Optical frequency comb (generic)"
-    level: 1
-    note: "Cross-file reuse; defined in udem2002.yaml."
-
   - id: ent.spaceborne_erfiber_comb_l16
     name: "Space-qualified Er:fiber self-referenced OFC (TEXUS-51)"
     level: 2
@@ -77,11 +72,6 @@ entities:
     note: "External environmental condition node (vibration, shock, acoustic, thermal transients)."
 
 principles:
-  - id: pri.self_referencing_f2f
-    name: "f-2f self-referencing"
-    tier: domain
-    note: "Cross-file reuse; defined in udem2002.yaml."
-
   - id: pri.ruggedized_erfiber_comb_space_qualification
     name: "Ruggedization principles for space-qualified Er:fiber combs"
     tier: engineering
