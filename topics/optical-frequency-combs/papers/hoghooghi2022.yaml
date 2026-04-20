@@ -67,32 +67,6 @@ principles:
     source_claim: >
       "intra-pulse difference frequency generation (IP-DFG) of few-cycle pulses in χ(2) nonlinear crystals"
 
-methods:
-  - id: meth.dfg_comb_generation
-    name: "中红外 DFG 梳产生方法（含 IP-DFG 分支）"
-    status: demonstrated
-    applies_to: ent.broadband_1ghz_mir_comb_h22
-    steps_summary: >
-      1. 1 GHz NIR 锁模激光 + Er 光纤放大 → 少周期脉冲；
-      2. 聚焦入 χ² 非线性晶体（相位匹配 3–13 µm）；
-      3. IP-DFG 产生 MIR 光频梳（f_CEO=0）；
-      4. DCS 架构：另一路 MIR 梳作本振 → 双梳吸收光谱；
-      5. 可达 μs 时间分辨、0.03 cm⁻¹ 分辨、>5 THz 带宽。
-    required_hardware:
-      - ent.broadband_1ghz_mir_comb_h22
-    advantages:
-      - "覆盖 3–13 µm 全分子指纹区"
-      - "1 GHz 重频 → μs 时间分辨（高重频 DCS）"
-      - "f_CEO 本征为零，无需主动锁定"
-    disadvantages:
-      - "χ² 晶体带宽限制每次实现约 2–3 µm 子带"
-      - "转换效率低于 NIR 梳功率"
-    conditions:
-      - "晶体相位匹配配置可覆盖目标波段"
-    source_claim: >
-      "this source will simultaneously enable measurements with μs time resolution, 1 GHz (0.03 cm⁻¹)
-      spectral point spacing and a full bandwidth of >5 THz"
-
 metrics:
   - id: met.mir_comb_spectral_coverage_h22
     name: "中红外梳光谱覆盖"
@@ -110,41 +84,33 @@ metrics:
         year: 2022
         source: {zotero_key: "7HSU6V7Q"}
 
-  - id: met.dcs_acquisition_speed
-    name: "双梳光谱采集速度（时间分辨）"
-    unit: "s（或单 IGM 时间 τ_IGM）"
-    description: "双梳光谱单次完整干涉图的最短采集时间，决定可观测瞬态过程时间尺度"
-    demonstrated_value:
-      value: "μs 级时间分辨（基于 1 GHz 重频）"
-      conditions: "1 GHz MIR 梳 DCS 配置"
-      verification_status: inferred
-      confidence: tentative
-      source: {zotero_key: "7HSU6V7Q", claim: "measurements with μs time resolution"}
-    theoretical_floor:
-      value: "τ_IGM ≥ 1/Δf_r，最小 ≈ 1/f_r ≈ 1 ns"
-      basis: "双梳采样 Nyquist 条件"
-
 relations:
   - id: rel.H22_01
     subject: ent.broadband_1ghz_mir_comb_h22
     predicate: CHARACTERIZED-BY
     object: met.mir_comb_spectral_coverage_h22
     confidence: established
-    source: {zotero_key: "7HSU6V7Q"}
+    source:
+      claim: "The 1 GHz MIR comb achieves spectral coverage from 3 to 13 µm through IP-DFG in χ² nonlinear crystals."
+      zotero_key: "7HSU6V7Q"
 
   - id: rel.H22_02
     subject: meth.dfg_comb_generation
     predicate: ENABLED-BY
     object: pri.intra_pulse_dfg_comb_generation
     confidence: established
-    source: {zotero_key: "7HSU6V7Q"}
+    source:
+      claim: "Intra-pulse difference frequency generation of few-cycle pulses in χ² crystals inherently produces a MIR comb with f_CEO = 0, eliminating the need for active CEO stabilization."
+      zotero_key: "7HSU6V7Q"
 
   - id: rel.H22_03
     subject: meth.dfg_comb_generation
     predicate: ENABLED-BY
     object: pri.nonlinear_frequency_conversion_comb
     confidence: established
-    source: {zotero_key: "7HSU6V7Q"}
+    source:
+      claim: "MIR comb generation relies on nonlinear frequency down-conversion of near-infrared frequency combs through difference frequency generation."
+      zotero_key: "7HSU6V7Q"
     note: "pri.nonlinear_frequency_conversion_comb 跨文件引用（picque2019.yaml）"
 
   - id: rel.H22_04
@@ -168,7 +134,9 @@ relations:
     predicate: PART-OF
     object: ent.mid_ir_frequency_comb
     confidence: established
-    source: {zotero_key: "7HSU6V7Q"}
+    source:
+      claim: "The broadband 1 GHz IP-DFG comb is an instance of the mid-infrared frequency comb class, targeting the 3–13 µm molecular fingerprint region."
+      zotero_key: "7HSU6V7Q"
     note: "跨文件引用（picque2019.yaml 应用层架构）"
 
   - id: rel.H22_07
@@ -176,5 +144,7 @@ relations:
     predicate: OPERATIONALIZED-AS
     object: meth.dual_comb_spectroscopy
     confidence: established
-    source: {zotero_key: "7HSU6V7Q"}
+    source:
+      claim: "The 1 GHz repetition rate enables microsecond-level time-resolved dual-comb spectroscopy acquisition speed for transient combustion and chemical dynamics."
+      zotero_key: "7HSU6V7Q"
     note: "meth.dual_comb_spectroscopy 定义于 coddington2010.yaml / picque2019.yaml"

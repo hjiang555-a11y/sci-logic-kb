@@ -262,6 +262,7 @@ relations:
     is_system_limit:
       current: false
       conditions: "当前秒定义基于铯（~10⁻¹⁶），光学标准已超越 2 个量级但尚未被采纳为定义基础"
+    source: {zotero_key: "SDG6KXNZ", claim: "Optical frequency standards have demonstrated uncertainties surpassing the caesium fountain by two orders of magnitude, driving the redefinition of the SI second"}
     note: >
       跨专题核心接口：光钟专题→时间标尺专题。
       ent.optical_frequency_standard 定义于 topics/frequency-standards/papers/fortier2026.yaml。
@@ -277,6 +278,7 @@ relations:
     is_system_limit:
       current: false
       conditions: "频率梳精度（10⁻²¹）远优于重定义目标（5×10⁻¹⁸），不是限制因素"
+    source: {zotero_key: "SDG6KXNZ", claim: "Optical frequency combs provide the essential bridge between optical clock frequencies and the SI second, with synthesis accuracy at the 10⁻²¹ level"}
     note: >
       跨专题引用：ent.optical_frequency_comb 定义于 topics/optical-frequency-combs/papers/giunta2019.yaml；
       met.comb_frequency_synthesis_accuracy_g20 定义于 topics/optical-frequency-combs/papers/giunta2020.yaml。

@@ -118,28 +118,36 @@ relations:
     predicate: CHARACTERIZED-BY
     object: met.mll_rf_linewidth_c21
     confidence: established
-    source: {zotero_key: "5R8PUBX7"}
+    source:
+      claim: "The heterogeneous III-V-on-SiN mode-locked laser achieves a radio frequency linewidth of 1 Hz at 755 MHz repetition rate."
+      zotero_key: "5R8PUBX7"
 
   - id: rel.CV21_02
     subject: ent.hetero_iii_v_sin_mll_comb_c21
     predicate: CHARACTERIZED-BY
     object: met.mll_optical_linewidth_c21
     confidence: established
-    source: {zotero_key: "5R8PUBX7"}
+    source:
+      claim: "The heterogeneous III-V-on-SiN MLL demonstrates an optical linewidth below 200 kHz."
+      zotero_key: "5R8PUBX7"
 
   - id: rel.CV21_03
     subject: meth.iii_v_sin_heterogeneous_mll_fabrication
     predicate: ENABLED-BY
     object: pri.sin_low_loss_extended_cavity_low_rep_rate
     confidence: established
-    source: {zotero_key: "5R8PUBX7"}
+    source:
+      claim: "Ultra-low loss SiN waveguides enable extended cavity lengths that reduce the repetition rate to 755 MHz while suppressing phase noise through longer photon lifetimes."
+      zotero_key: "5R8PUBX7"
 
   - id: rel.CV21_04
     subject: ent.hetero_iii_v_sin_mll_comb_c21
     predicate: COMPETES-WITH
     object: ent.microresonator_frequency_comb
     confidence: established
-    source: {zotero_key: "5R8PUBX7"}
+    source:
+      claim: "Electrically pumped III-V/SiN mode-locked laser combs represent an alternative chip-scale comb platform competing with optically pumped Kerr microresonator combs."
+      zotero_key: "5R8PUBX7"
     conditions: "集成片上梳两大路线：电泵 III-V/SiN MLL（Cuyvers 2021）vs 光泵 Kerr 微梳；前者电泵、后者 Kerr 非线性"
 
   - id: rel.CV21_05
@@ -147,4 +155,6 @@ relations:
     predicate: PART-OF
     object: ent.optical_frequency_comb
     confidence: established
-    source: {zotero_key: "5R8PUBX7"}
+    source:
+      claim: "The heterogeneous III-V/SiN mode-locked laser is a chip-scale implementation of optical frequency comb technology with wafer-scale manufacturability."
+      zotero_key: "5R8PUBX7"

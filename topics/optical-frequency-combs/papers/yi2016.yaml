@@ -100,21 +100,21 @@ relations:
     predicate: CHARACTERIZED-BY
     object: met.eo_comb_spectral_span_y16
     confidence: established
-    source: {zotero_key: "59ULFL9Y"}
+    source: {zotero_key: "59ULFL9Y", claim: "electro-optical laser frequency comb spanning ~100 nm centered near 1560 nm in the H band"}
 
   - id: rel.YI16_02
     subject: meth.eo_comb_line_reference_rv_calibration
     predicate: ENABLED-BY
     object: pri.line_referenced_eo_comb
     confidence: established
-    source: {zotero_key: "59ULFL9Y"}
+    source: {zotero_key: "59ULFL9Y", claim: "carrier frequency stabilized to a molecular/atomic absorption line provides absolute frequency reference without f-2f self-referencing"}
 
   - id: rel.YI16_03
     subject: ent.line_referenced_eo_comb_y16
     predicate: PART-OF
     object: ent.electro_optic_frequency_comb
     confidence: established
-    source: {zotero_key: "59ULFL9Y"}
+    source: {zotero_key: "59ULFL9Y", claim: "near-IR line-referenced electro-optical laser frequency comb for precision radial velocity measurements"}
     note: "ent.electro_optic_frequency_comb 定义于上游光梳架构文件"
 
   - id: rel.YI16_04
@@ -130,5 +130,5 @@ relations:
     predicate: CONDITIONED-BY
     object: pri.molecular_rovibrational_fingerprint
     confidence: established
-    source: {zotero_key: "59ULFL9Y"}
+    source: {zotero_key: "59ULFL9Y", claim: "CW laser locked to known molecular transition provides the absolute frequency anchor for all comb teeth"}
     note: "分子参考线由分子振转光谱给出"

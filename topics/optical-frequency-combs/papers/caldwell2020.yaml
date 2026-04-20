@@ -298,7 +298,7 @@ relations:
     predicate: OPERATIONALIZED-AS
     object: meth.linear_optical_sampling_timing_jitter_c20
     confidence: established
-    source: {zotero_key: "EB5IM2K9"}
+    source: {zotero_key: "EB5IM2K9", claim: "linear optical sampling measures timing jitter power spectral density of atmospheric-perturbed comb link"}
 
   - id: rel.C20_05
     subject: meth.linear_optical_sampling_timing_jitter_c20

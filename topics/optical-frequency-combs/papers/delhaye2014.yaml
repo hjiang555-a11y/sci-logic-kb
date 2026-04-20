@@ -142,6 +142,9 @@ relations:
     subject: ent.silica_microrod_comb_d14
     predicate: PART-OF
     object: ent.microresonator_frequency_comb
+    source:
+      claim: "microresonator-based optical frequency combs generated in a fused silica microrod resonator"
+      section: "Experimental setup"
     note: "跨文件引用，ent.microresonator_frequency_comb 定义于 kippenberg2011.yaml"
 
   - id: rel.D14_02

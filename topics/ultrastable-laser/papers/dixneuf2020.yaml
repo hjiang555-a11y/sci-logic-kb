@@ -113,49 +113,49 @@ metrics:
     source_claim: {zotero_key: "HJZ6BVYE", claim: "beam quality M² < 1.1"}
 
 relations:
-  - id: rel.D01
+  - id: rel.Dix01
     subject: ent.high_power_low_rin_fiber_laser_d20
     predicate: IMPLEMENTS
     object: pri.high_power_low_rin_fiber_laser_design_d20
     confidence: established
     source: {zotero_key: "HJZ6BVYE", claim: "Ultra-low intensity noise, all fiber 365 W linearly polarized single frequency laser at 1064 nm"}
     note: "该激光器实体实现了高功率低RIN设计原理。"
-  - id: rel.D02
+  - id: rel.Dix02
     subject: meth.fiber_mopa_with_rin_servo_d20
     predicate: IMPLEMENTS
     object: pri.high_power_low_rin_fiber_laser_design_d20
     confidence: established
     source: {zotero_key: "HJZ6BVYE", claim: "全光纤MOPA配RIN伺服"}
     note: "该方法具体实现了设计原理。"
-  - id: rel.D03
+  - id: rel.Dix03
     subject: met.output_power_d20
     predicate: CHARACTERIZES
     object: ent.high_power_low_rin_fiber_laser_d20
     confidence: established
     source: {zotero_key: "HJZ6BVYE", claim: "365 W (350 W isolated)"}
     note: "输出功率表征激光器性能。"
-  - id: rel.D04
+  - id: rel.Dix04
     subject: met.rin_level_d20
     predicate: CHARACTERIZES
     object: ent.high_power_low_rin_fiber_laser_d20
     confidence: established
     source: {zotero_key: "HJZ6BVYE", claim: "RIN reduced to -160 dBc/Hz @ 2–10 kHz"}
     note: "RIN水平是核心噪声指标。"
-  - id: rel.D05
+  - id: rel.Dix05
     subject: met.servo_bandwidth_d20
     predicate: CHARACTERIZES
     object: meth.fiber_mopa_with_rin_servo_d20
     confidence: established
     source: {zotero_key: "HJZ6BVYE", claim: "1 MHz bandwidth servo"}
     note: "伺服带宽表征RIN抑制方法的能力。"
-  - id: rel.D06
+  - id: rel.Dix06
     subject: met.power_stability_d20
     predicate: CHARACTERIZES
     object: ent.high_power_low_rin_fiber_laser_d20
     confidence: established
     source: {zotero_key: "HJZ6BVYE", claim: "power stability <0.7% RMS over 1100 hours"}
     note: "功率长期稳定性表征激光器可靠性。"
-  - id: rel.D07
+  - id: rel.Dix07
     subject: met.beam_quality_d20
     predicate: CHARACTERIZES
     object: ent.high_power_low_rin_fiber_laser_d20
