@@ -7,6 +7,26 @@
 
 ---
 
+## [2026-04-20] lint | P1+P2 质量修复——消除全部 lint 错误 + 证据覆盖 100%
+
+- **Lint 错误归零**：198 errors → 0 errors（三类全部修复）
+  - 5 dangling-ref：补充缺失节点定义（`meth.oscat_dual_comb`、`ent.filtered_tisa_astrocomb_y12`、`pri.eom_acoustic_resonance_limit_t17`、`pri.am_pm_conversion_photodetection`）
+  - 21 duplicate-def：10 个重复节点 ID 去重，保留权威定义（涉及 8 个 OFC 文件）
+  - 172 duplicate-rel-id：11 个文件 relation ID 重命名（解决首字母缩写冲突）
+- **Lint 警告大幅降低**：294 warnings → 168 warnings（missing-evidence 分类完全消除）
+- **证据覆盖率**：86.9% → **100%**（957/957 relations 均有 source.claim）
+- **条件完备率**：94.8% → 95.3%（新增原理节点自带 conditions）
+- **更新度量对比**（P0 baseline → P1+P2 修复后）：
+
+| 度量 | P0 值 | P1+P2 值 | 目标 | 状态变化 |
+|------|-------|----------|------|---------|
+| 限制链闭环率 | 71.3% | 71.3% | ≥70% | ✅→✅ |
+| 证据覆盖率 | 86.9% | **100%** | ≥90% | ❌→✅ |
+| 条件完备率 | 94.8% | 95.3% | ≥80% | ✅→✅ |
+| 跨文件复用度 | 8.8% | 8.8% | higher | — |
+| 综合页面覆盖 | 1/4 | 1/4 | 全覆盖 | ⚠️ |
+| 矛盾可见度 | 119 | 118 | more | — |
+
 ## [2026-04-20] restructure | P0 整固——自动化基础设施与度量体系
 
 - **新增脚本**（5 个）：
