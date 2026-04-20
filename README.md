@@ -36,24 +36,34 @@ sci-logic-kb/
 ├── README.md                     # 项目概览（本文件）
 ├── CLAUDE.md                     # AI 协作规范与最佳实践
 ├── TOPICS.md                     # 专题架构概览
-├── INDEX.md                      # 全局知识导航索引（节点/指标/限制链快查）
+├── INDEX.md                      # ← 自动生成（build_index.py），全局导航
+├── INDEX_metrics.md              # ← 自动生成，跨专题指标快查
+├── INDEX_principles.md           # ← 自动生成，跨专题原理快查
 ├── LOG.md                        # 知识库演化日志（时间线追踪变更历史）
-├── PROCESSED_PAPERS.md           # 已处理论文完整列表（从 SCHEMA.md §8 迁移）
+├── PROCESSED_PAPERS.md           # 已处理论文完整列表
 ├── scripts/                      # 自动化脚本
-│   ├── extract.py                # 从论文 PDF/文本提取结构化 YAML
-│   ├── validate.py               # 验证 YAML 符合 SCHEMA
-│   ├── sync_obsidian.py          # 同步到 Obsidian 知识库
-│   └── stats.py                  # 生成知识库统计报告
+│   ├── stats.py                  # 6 项推理就绪度量 + 库存统计
+│   ├── lint.py                   # 11 项健康检查（CI 强制运行）
+│   ├── build_index.py            # 从 YAML 自动生成分层 INDEX 文件
+│   ├── graph.py                  # 知识图谱导出（JSON/GraphML）+ 诊断
+│   ├── freshness.py              # 综合页面新鲜度追踪
+│   ├── batch_quality_check.py    # 批量质量检查
+│   ├── process_paper.py          # GitHub Actions 论文处理
+│   └── ...                       # Zotero 集成脚本
 ├── topics/                       # 专题目录
 │   ├── ultrastable-laser/        # 超稳激光（78篇论文）
 │   │   ├── papers/               # YAML 知识节点（source of truth）
-│   │   └── synthesis/            # 跨论文综合分析页面（derived view）
+│   │   ├── synthesis/            # 跨论文综合分析页面（derived view）
+│   │   ├── _meta/                # 专题架构图与元数据
+│   │   └── INDEX.md              # ← 自动生成，专题详表
 │   ├── optical-frequency-combs/  # 光学频率梳（61篇论文）
 │   ├── frequency-standards/      # 频率标准（光学+微波）
 │   ├── time-frequency-transfer/  # 时间频率传递
 │   ├── timescales/               # 时间标尺与钟组
 │   └── shared/                   # 跨专题共享节点
 └── .github/workflows/            # GitHub Actions 自动化流水线
+    ├── process-paper.yml         # 论文处理工作流
+    └── kb-lint-stats.yml         # 知识库 lint + stats（PR 时自动运行）
 ```
 
 ## 快速开始
@@ -73,21 +83,31 @@ python ../../scripts/validate.py your_paper.yaml
 ### 2. 使用知识库
 
 ```bash
-# 生成统计报告
+# 6 项推理就绪度量（核心进度条）
 python scripts/stats.py
 
-# 同步到 Obsidian（需要配置 API 密钥）
-python scripts/sync_obsidian.py
+# 健康检查（孤立节点、悬空引用、重复等 11 项检查）
+python scripts/lint.py --summary
+
+# 重新生成所有 INDEX 文件（修改 YAML 后运行）
+python scripts/build_index.py
+
+# 导出知识图谱 + 诊断（hub 节点、孤岛等）
+python scripts/graph.py --diagnostics
+python scripts/graph.py --format json --output kb_graph.json
+
+# 综合页面新鲜度检查
+python scripts/freshness.py --check
 
 # 搜索特定节点
-grep -r "ent.laser" topics/
+grep -r "ent.fp_cavity_system" topics/
 ```
 
 ### 3. 重新梳理现有论文（当前重点）
 
 我们正在对超稳激光专题（78篇论文）进行系统性重新梳理，重点强化 **问题‑解决方案‑结果** 推理链条。具体步骤参见 [REORGANIZATION_PLAN.md](REORGANIZATION_PLAN.md)。
 
-## 知识库运维（v4.2 新增）
+## 知识库运维（v4.3 更新）
 
 知识库采用三大运维操作，受 [Karpathy LLM Wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) 模式启发：
 

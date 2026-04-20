@@ -1,7 +1,7 @@
 # sci-logic-kb YAML 知识提取模式文档
 
-> **版本**：v4.2（2026-04-20）  
-> **变更摘要**：v4.2 在 v4.1 基础上引入 Karpathy LLM Wiki 运维层——新增 INDEX.md（全局导航索引）、LOG.md（演化日志）、PROCESSED_PAPERS.md（已处理论文列表，从 §8 迁移）、synthesis/ 综合页面目录；SCHEMA.md 新增第十节「知识库运维操作」（Ingest/Query/Lint 形式化、文件职责矩阵、人机协作原则）；§8 精简为统计摘要。
+> **版本**：v4.3（2026-04-20）  
+> **变更摘要**：v4.3 在 v4.2 基础上完成 P0 整固——新增 5 个自动化脚本（stats/lint/build_index/graph/freshness）、CI 集成（kb-lint-stats.yml）、分层 INDEX 架构（自动生成）、专题 _meta/ 目录、6 项推理就绪度量定义（§10.8）、节点粒度自检清单（§10.9）。INDEX.md 改为脚本生成，不再手工维护。
 > **向后兼容**：v3.2 YAML 文件无需修改内容即可在 v4.1 下使用。已迁移的文件保留 `# Schema版本：v3.2` 头注释不影响解析；新建文件应使用 `# Schema版本：v4.1` 并在 meta 中包含 `topic:` 字段。
 
 ---
@@ -1072,7 +1072,7 @@ YAML 节点图（source of truth，topics/*/papers/*.yaml）
 当前流程：论文 PDF → YAML 提取 → 提交（已成熟）。
 
 **新增要求**：
-1. 摄入后**必须**更新 [`INDEX.md`](INDEX.md)：新增节点、新指标最佳值、专题论文数
+1. 摄入后运行 `python scripts/build_index.py` 重新生成分层 INDEX 文件
 2. 摄入后**必须**追加 [`LOG.md`](LOG.md) 条目（格式：`## [YYYY-MM-DD] ingest | description`）
 3. 若新论文的数据与已有声明矛盾，必须：
    - (a) 更新原有节点的 `contested_claims` 或 `open_questions`
@@ -1107,14 +1107,17 @@ YAML 节点图（source of truth，topics/*/papers/*.yaml）
 | 跨专题接口完整性 | CONDITIONED-BY 是否有对应的 `interface_metric` | ⚠ 警告 |
 | 综合页面过期 | 综合页面 `covers_papers_up_to` 早于最新 ingest | ℹ 提示 |
 
-**执行方式**：可手动 review 或由脚本辅助（见 `scripts/`）。
+**执行方式**：`python scripts/lint.py`（CI 中自动运行，见 `.github/workflows/kb-lint-stats.yml`）。`--strict` 模式将 warnings 视为 errors。
 
 ### 10.5 文件职责矩阵
 
 | 文件 | 职责 | 更新频率 | 维护方 |
 |------|------|---------|-------|
 | `SCHEMA.md` | 规范定义（source of truth） | Schema 升级时 | 人类审核 + AI 起草 |
-| `INDEX.md` | 全局导航索引 | 每次 ingest | AI 自动更新 |
+| `INDEX.md` | 全局导航索引 | 每次 ingest（`build_index.py` 自动生成） | **脚本生成** |
+| `INDEX_metrics.md` | 跨专题指标快查 | 每次 ingest（`build_index.py` 自动生成） | **脚本生成** |
+| `INDEX_principles.md` | 跨专题原理快查 | 每次 ingest（`build_index.py` 自动生成） | **脚本生成** |
+| `topics/*/INDEX.md` | 各专题详表 | 每次 ingest（`build_index.py` 自动生成） | **脚本生成** |
 | `LOG.md` | 演化日志 | 每次变更 | AI 自动追加 |
 | `PROCESSED_PAPERS.md` | 论文详细列表 | 每次 ingest | AI 自动更新 |
 | `topics/*/papers/*.yaml` | 知识节点（source of truth） | 论文入库时 | AI 提取 + 人类审核 |
@@ -1142,3 +1145,70 @@ YAML 节点图（source of truth，topics/*/papers/*.yaml）
 - 健康检查与修复建议（lint）
 - 新论文与已有知识的矛盾检测（consistency check）
 - 新论文入库后自动标记受影响的综合页面为"需要更新"
+
+### 10.7 自动化工具链（P0 整固阶段产物）
+
+以下脚本位于 `scripts/` 目录，均支持 `--repo-path` 参数，可在 CI 中运行。
+
+| 脚本 | 用途 | CI 集成 |
+|------|------|---------|
+| `stats.py` | 6 项推理就绪度量 + 库存统计 | ✅ `kb-lint-stats.yml` |
+| `lint.py` | 11 项健康检查（孤立节点、悬空引用、重复、推理链缺口等） | ✅ `kb-lint-stats.yml` |
+| `build_index.py` | 从 YAML 自动生成分层 INDEX 文件 | 手动或 ingest 后运行 |
+| `graph.py` | 知识图谱导出（JSON/GraphML）+ hub/orphan/bridge 诊断 | 手动 |
+| `freshness.py` | 综合页面新鲜度追踪 | ✅ `kb-lint-stats.yml` |
+
+**使用规范**：
+- `build_index.py` 生成的 INDEX 文件以 `<!-- AUTO-GENERATED -->` 标记，人不应手动编辑
+- `lint.py --strict` 在 CI 中运行时，warnings 也视为 errors
+- `stats.py --json` 输出可被其他脚本消费（如月度报告生成器）
+
+### 10.8 推理就绪度量（Reasoning Readiness Metrics）
+
+这 6 项指标是知识库"逼近专家"的唯一进度条，由 `stats.py` 计算：
+
+| # | 度量 | 公式 | 目标 | 含义 |
+|---|------|------|------|------|
+| 1 | **限制链闭环率** | (有 breakthrough_paths 的 BOUNDED-BY) / (全部 BOUNDED-BY) | ≥70% | "知道什么限制了性能" 且 "知道怎么突破" |
+| 2 | **证据覆盖率** | (有 source.claim 的 relations) / (全部 relations) | ≥90% | 每条关系都有原文依据 |
+| 3 | **条件完备率** | (有 conditions/preconditions/invalidated_when 的 principles) / (全部 principles) | ≥80% | 原理不是无条件成立的 |
+| 4 | **跨文件复用度** | (在 ≥2 文件出现的 node ID) / (全部 unique ID) | 越高越好 | 知识在复合增长 |
+| 5 | **综合页面覆盖** | 有 synthesis/ 的专题数 / 有论文的专题数 | 全覆盖 | 每个专题都有跨论文综合分析 |
+| 6 | **矛盾可见度** | contested_claims 总数 + open_questions 总数 | 越多越好 | 知识库敢于存疑 |
+
+### 10.9 节点粒度自检清单（Node Granularity Checklist）
+
+在创建新节点前，AI 应自检以下条件。满足 ≥2 条的建为独立节点，否则并入父节点字段：
+
+- [ ] **能独立回答有意义的边界问题**（"什么条件下 X 是性能瓶颈？"）
+- [ ] **有独立设计选择空间**（材料、几何、方法可独立优化）
+- [ ] **会被 ≥2 篇论文复用引用**
+- [ ] **拥有独立的限制链**（BOUNDED-BY）或证据链或竞争关系（COMPETES-WITH）
+- [ ] **在不同条件下，其"是否为限制因素"的状态会变化**
+
+若全不满足 → 并入父节点的字段（如 `condition_variables`、`key_parameters`）。
+
+### 10.10 分层索引架构
+
+INDEX 文件由 `build_index.py` 自动生成，结构如下：
+
+```
+INDEX.md                        ← 总览/跳转页（专题表、节点汇总、BOUNDED-BY 链）
+├── topics/<topic>/INDEX.md     ← 各专题详表（实体/原理/方法/指标 + 限制链 + 跨专题引用）
+├── INDEX_metrics.md            ← 跨专题指标快查（最佳值、条件、来源）
+└── INDEX_principles.md         ← 跨专题原理快查（按 tier 分组）
+```
+
+**规则**：所有 INDEX 文件头部含 `<!-- AUTO-GENERATED -->` 标记，**人不应手动编辑**。需要修改时修改 YAML source of truth 后重新运行 `build_index.py`。
+
+### 10.11 专题元数据目录
+
+每个专题目录下的 `_meta/` 存放该专题的架构级文档：
+
+```
+topics/<topic>/_meta/
+├── architecture.md  ← 专题内部架构图、核心限制链、路线图
+└── (未来: roadmap.md, boundary_questions.md)
+```
+
+这些文件由人类审核，不是自动生成的。
