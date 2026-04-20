@@ -2,7 +2,7 @@
 
 # 📊 Metrics Quick Reference
 
-> Auto-generated 2026-04-20 14:03 UTC
+> Auto-generated 2026-04-20 16:45 UTC
 
 ## Frequency Standards
 
@@ -41,11 +41,9 @@
 | `met.comb_transfer_stability_g20` | 光学频率梳传递稳定度（Giunta 2020） | mod σ_y(τ) < 10⁻¹⁸ @ τ > 10 s（各频段）；10⁻²⁰ @ ~100 s | 两台 Er:fiber 梳，共享 1542 nm USL 参考，色散外差检测启用 | [giunta2020](topics/optical-frequency-combs/papers/giunta2020.yaml) |
 | `met.compressed_pulse_duration_l20` | 压缩后脉冲宽度（Lesko 2020） | — | — | [lesko2020](topics/optical-frequency-combs/papers/lesko2020.yaml) |
 | `met.dcs_acquisition_speed` | 双梳光谱采集速度 | 毫秒级（f_rep ~100 MHz，>10⁵ 光谱通道）至 <1 μs（f_rep >10 GHz，~50-100 … | 单次干涉图采集时间 = 1/Δf_rep；100 MHz 梳典型 Δf_rep = 100 Hz–… | [coddington2016](topics/optical-frequency-combs/papers/coddington2016.yaml) |
-| `met.dcs_acquisition_speed` | 双梳光谱采集速度（时间分辨） | μs 级时间分辨（基于 1 GHz 重频） | 1 GHz MIR 梳 DCS 配置 | [hoghooghi2022](topics/optical-frequency-combs/papers/hoghooghi2022.yaml) |
 | `met.dcs_field_detection_limit_c18` | 野外 DCS 甲烷源检测限（Coburn 2018） | 1.6 g/min @ 1 km 距离 | Er:fiber 双梳，CH₄ 2ν₃ 带，典型大气条件，30 min–24 h 数据窗口 | [coburn2018](topics/optical-frequency-combs/papers/coburn2018.yaml) |
 | `met.dcs_figure_of_merit_y19` | DCS 品质因数（Coddington 2016 定义，Ycas 2019 值） | 1.2×10⁶ √Hz | 2750–3150 cm⁻¹；HgCdTe 探测器；1 min 相干平均 | [ycas2019](topics/optical-frequency-combs/papers/ycas2019.yaml) |
 | `met.dcs_frequency_resolution` | 双梳光谱频率分辨率 | 220 MHz，~41,000 分辨元 @ 9 THz 带宽 | NIST Er:fiber 双梳，1550 nm 附近 HCN overtone 带 | [coddington2010](topics/optical-frequency-combs/papers/coddington2010.yaml) |
-| `met.dcs_frequency_resolution` | 双梳光谱频率分辨率 | 光谱点间距 ~100 MHz（典型），梳齿分辨率 kHz–MHz | 互相干梳，相对线宽 ≪ Δf_rep；梳齿绝对频率稳定至 kHz 级（全参考模式） | [coddington2016](topics/optical-frequency-combs/papers/coddington2016.yaml) |
 | `met.dcs_snr_coherent` | 相干双梳光谱信噪比（幅度 + 相位） | 平均 SNR 2500，峰值 SNR 4000；相位灵敏度 250 μrad；分数吸收灵敏度 0.05% | 9 THz 带宽，HCN overtone @ 1550 nm，相干实时平均 | [coddington2010](topics/optical-frequency-combs/papers/coddington2010.yaml) |
 | `met.dcs_snr_per_tooth` | 双梳光谱单齿信噪比 | figure of merit ~2×10⁸ Hz^(1/2)（数字相位/定时校正 + 高动态范围探测器） | 近红外 Er:fiber 梳，100 MHz 梳齿间距，数字相位/定时校正 + 高动态范围 InG… | [coddington2016](topics/optical-frequency-combs/papers/coddington2016.yaml) |
 | `met.digital_servo_control_bandwidth_w25` | 数字伺服控制带宽（Wang 2025） | 1.1 MHz | Xilinx 7k325t @400 MHz 主时钟；板级延迟 <250 ns；100 MHz E… | [wang2025](topics/optical-frequency-combs/papers/wang2025.yaml) |
