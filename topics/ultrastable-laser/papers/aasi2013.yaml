@@ -71,21 +71,21 @@ metrics:
     source_claim: {zotero_key: "8NUIA2K7", claim: "improved sensitivity above 150 Hz"}
 
 relations:
-  - id: rel.A01
+  - id: rel.Aas01
     subject: meth.squeezed_light_injection_ligo
     predicate: IMPLEMENTS
     object: pri.squeezed_light_quantum_enhancement
     confidence: established
     source: {zotero_key: "8NUIA2K7", claim: "inject squeezed states to improve performance beyond quantum noise limit"}
     note: "该方法实现了压缩光量子增强原理。"
-  - id: rel.A02
+  - id: rel.Aas02
     subject: met.sensitivity_improvement_a13
     predicate: CHARACTERIZES
     object: pri.squeezed_light_quantum_enhancement
     confidence: established
     source: {zotero_key: "8NUIA2K7", claim: "Enhanced sensitivity of the LIGO gravitational wave detector by using squeezed states of light"}
     note: "灵敏度改善表征原理的效果。"
-  - id: rel.A03
+  - id: rel.Aas03
     subject: met.frequency_range_a13
     predicate: CHARACTERIZES
     object: meth.squeezed_light_injection_ligo

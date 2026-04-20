@@ -146,86 +146,86 @@ metrics:
     demonstrated_value: "sub-watt chip-level electrical drive"
 
 relations:
-  - id: rel.W01
+  - id: rel.Wan01
     subject: ent.iii_v_soa_gain_section_w17
     predicate: PART-OF
     object: ent.iii_v_on_si_ultradense_comb_w17
 
-  - id: rel.W02
+  - id: rel.Wan02
     subject: ent.saturable_absorber_w17
     predicate: PART-OF
     object: ent.iii_v_on_si_ultradense_comb_w17
 
-  - id: rel.W03
+  - id: rel.Wan03
     subject: ent.si_extended_cavity_waveguide_w17
     predicate: PART-OF
     object: ent.iii_v_on_si_ultradense_comb_w17
 
-  - id: rel.W04
+  - id: rel.Wan04
     subject: ent.iii_v_on_si_ultradense_comb_w17
     predicate: CHARACTERIZED-BY
     object: met.comb_line_spacing_w17
 
-  - id: rel.W05
+  - id: rel.Wan05
     subject: ent.iii_v_on_si_ultradense_comb_w17
     predicate: CHARACTERIZED-BY
     object: met.number_of_comb_lines_w17
 
-  - id: rel.W06
+  - id: rel.Wan06
     subject: ent.iii_v_on_si_ultradense_comb_w17
     predicate: CHARACTERIZED-BY
     object: met.per_line_linewidth_w17
 
-  - id: rel.W07
+  - id: rel.Wan07
     subject: met.comb_line_spacing_w17
     predicate: OPERATIONALIZED-AS
     object: meth.rf_beatnote_comb_characterization
 
-  - id: rel.W08
+  - id: rel.Wan08
     subject: meth.passive_mode_locking_iii_v_si
     predicate: ENABLED-BY
     object: pri.passive_mode_locking_soa_sa
 
-  - id: rel.W09
+  - id: rel.Wan09
     subject: meth.passive_mode_locking_iii_v_si
     predicate: ENABLED-BY
     object: pri.heterogeneous_iii_v_on_si_integration
 
-  - id: rel.W10
+  - id: rel.Wan10
     subject: ent.iii_v_on_si_ultradense_comb_w17
     predicate: ENABLED-BY
     object: pri.long_cavity_subghz_comb_spacing
     source:
       claim: "Sub-GHz mode spacing arises from the cm-scale Si extended cavity round-trip time."
 
-  - id: rel.W11
+  - id: rel.Wan11
     subject: ent.iii_v_on_si_ultradense_comb_w17
     predicate: BOUNDED-BY
     object: pri.waveguide_loss_comb_limit
     source:
       claim: "Si waveguide propagation loss limits how long the extended cavity (and hence how dense the comb) can be made while preserving mode-locking."
 
-  - id: rel.W12
+  - id: rel.Wan12
     subject: ent.iii_v_on_si_ultradense_comb_w17
     predicate: BOUNDED-BY
     object: pri.group_velocity_dispersion_comb_limit
     source:
       claim: "Residual GVD in the composite cavity limits comb bandwidth and equidistance."
 
-  - id: rel.W13
+  - id: rel.Wan13
     subject: ent.iii_v_on_si_ultradense_comb_w17
     predicate: BOUNDED-BY
     object: pri.linewidth_enhancement_factor_limit
     source:
       claim: "Per-tooth linewidth is set by semiconductor amplitude-phase coupling (α-factor)."
 
-  - id: rel.W14
+  - id: rel.Wan14
     subject: ent.iii_v_on_si_ultradense_comb_w17
     predicate: COMPETES-WITH
     object: ent.microresonator_frequency_comb
     note: "Opposite spacing regimes: sub-GHz dense comb (semiconductor MLL) vs 10–100 GHz Kerr microcomb."
 
-  - id: rel.W15
+  - id: rel.Wan15
     subject: ent.iii_v_on_si_ultradense_comb_w17
     predicate: PART-OF
     object: ent.optical_frequency_comb

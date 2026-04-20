@@ -293,7 +293,7 @@ metrics:
 # ═══════════════════════════════════════════════
 
 relations:
-  - id: rel.K18_01
+  - id: rel.Kas18_01
     subject: ent.multi_branch_fiber_comb_k18
     predicate: PART-OF
     object: ent.optical_frequency_comb
@@ -301,21 +301,21 @@ relations:
     source: {zotero_key: "ERNT9GV3", claim: "fiber combs with multiple outputs (multi-branch fiber combs)"}
     note: "ent.optical_frequency_comb 权威定义于 udem2002.yaml（跨文件引用）。"
 
-  - id: rel.K18_02
+  - id: rel.Kas18_02
     subject: ent.pzt_fiber_stretcher_k18
     predicate: PART-OF
     object: ent.multi_branch_fiber_comb_k18
     confidence: established
     source: {zotero_key: "ERNT9GV3", claim: "a piezo-electric transducer-based fiber stretcher was installed in each branch except for the branch used as the cancellation reference"}
 
-  - id: rel.K18_03
+  - id: rel.Kas18_03
     subject: ent.fndc_reference_cw_laser_1542nm_k18
     predicate: PART-OF
     object: ent.multi_branch_fiber_comb_k18
     confidence: established
     source: {zotero_key: "ERNT9GV3", claim: "A beat note between the CW laser output at 1542 nm and the nearest comb mode of the CEO-locking branch output was used as a reference signal for the FNDC"}
 
-  - id: rel.K18_04
+  - id: rel.Kas18_04
     subject: ent.multi_branch_fiber_comb_k18
     predicate: ENABLED-BY
     object: pri.self_referencing_f2f
@@ -323,7 +323,7 @@ relations:
     source: {zotero_key: "ERNT9GV3", claim: "a portion of the HNLF output was guided to an f-2f interferometer to detect the CEO beat of the comb"}
     note: "pri.self_referencing_f2f 定义于 udem2002.yaml / giunta2019.yaml（跨文件引用）。"
 
-  - id: rel.K18_05
+  - id: rel.Kas18_05
     subject: ent.multi_branch_fiber_comb_k18
     predicate: CHARACTERIZED-BY
     object: met.relative_frequency_instability_allan_k18
@@ -331,7 +331,7 @@ relations:
     source: {zotero_key: "ERNT9GV3", claim: "1.4×10⁻¹⁶ and 1.8×10⁻¹⁶ at a 1-s averaging time"}
     temporal_role: validates
 
-  - id: rel.K18_06
+  - id: rel.Kas18_06
     subject: ent.multi_branch_fiber_comb_k18
     predicate: CHARACTERIZED-BY
     object: met.relative_frequency_uncertainty_modallan_k18
@@ -339,28 +339,28 @@ relations:
     source: {zotero_key: "ERNT9GV3", claim: "a practical multi-branch fiber-comb with a relative uncertainty at the 10⁻²⁰ level"}
     temporal_role: validates
 
-  - id: rel.K18_07
+  - id: rel.Kas18_07
     subject: met.relative_frequency_instability_allan_k18
     predicate: OPERATIONALIZED-AS
     object: meth.fiber_noise_difference_cancellation_k18
     confidence: established
     source: {zotero_key: "ERNT9GV3", claim: "the FNDC improved the frequency stability ... Fig. 5"}
 
-  - id: rel.K18_08
+  - id: rel.Kas18_08
     subject: met.relative_frequency_uncertainty_modallan_k18
     predicate: OPERATIONALIZED-AS
     object: meth.fiber_noise_difference_cancellation_k18
     confidence: established
     source: {zotero_key: "ERNT9GV3"}
 
-  - id: rel.K18_09
+  - id: rel.Kas18_09
     subject: meth.fiber_noise_difference_cancellation_k18
     predicate: ENABLED-BY
     object: pri.multi_branch_fiber_noise_difference_cancellation
     confidence: established
     source: {zotero_key: "ERNT9GV3", claim: "The FNDC is similar to conventional fiber noise cancellation ... cancelled out the fiber noise differences between the CEO-locking branch and the other two branches"}
 
-  - id: rel.K18_10
+  - id: rel.Kas18_10
     subject: ent.multi_branch_fiber_comb_k18
     predicate: BOUNDED-BY
     object: pri.inter_branch_fiber_noise_degradation
@@ -372,7 +372,7 @@ relations:
         status: demonstrated
         source: {zotero_key: "ERNT9GV3", claim: "The cancellation improved the frequency uncertainty to a low level of 10⁻²⁰ at a 100000-s averaging time"}
 
-  - id: rel.K18_11
+  - id: rel.Kas18_11
     subject: met.relative_frequency_uncertainty_modallan_k18
     predicate: BOUNDED-BY
     object: pri.residual_free_space_path_noise_floor
@@ -390,7 +390,7 @@ relations:
         source: {zotero_key: "UFWLAXMA", claim: "real-time optical phase tracking with ultra-low-noise frequency combs"}
         note: "跨文件引用：meth.wideband_optical_frequency_synthesis 定义于 giunta2020.yaml。"
 
-  - id: rel.K18_12
+  - id: rel.Kas18_12
     subject: met.relative_frequency_instability_allan_k18
     predicate: BOUNDED-BY
     object: pri.residual_free_space_path_noise_floor
@@ -403,7 +403,7 @@ relations:
         status: proposed
         source: {zotero_key: "ERNT9GV3", claim: "This noise was assumed to limit the short-term frequency stability and can be reduced by some technical improvement"}
 
-  - id: rel.K18_13
+  - id: rel.Kas18_13
     subject: meth.fiber_noise_difference_cancellation_k18
     predicate: CONDITIONED-BY
     object: ent.fndc_reference_cw_laser_1542nm_k18

@@ -212,7 +212,7 @@ metrics:
 # ═══════════════════════════════════════════════
 
 relations:
-  - id: rel.S01
+  - id: rel.Suh01
     subject: ent.microresonator_astrocomb_s19
     predicate: PART-OF
     object: ent.microresonator_frequency_comb
@@ -220,63 +220,63 @@ relations:
       claim: "Fig. 2; 方法节 'Soliton generation uses a silica microresonator fabricated on a silicon wafer.'"
     note: "跨文件引用：ent.microresonator_frequency_comb 权威定义于 yi2016.yaml。"
 
-  - id: rel.S02
+  - id: rel.Suh02
     subject: ent.silica_wedge_microresonator_s19
     predicate: PART-OF
     object: ent.microresonator_astrocomb_s19
     source:
       claim: "方法节：3 mm 直径硅基 silica 微腔为孤子源。"
 
-  - id: rel.S03
+  - id: rel.Suh03
     subject: ent.nonlinear_broadening_stage_s19
     predicate: PART-OF
     object: ent.microresonator_astrocomb_s19
     source:
       claim: "'the soliton microcomb is spectrally broadened and sent to the integrating sphere of NIRSPEC'"
 
-  - id: rel.S04
+  - id: rel.Suh04
     subject: ent.hcn_reference_laser_s19
     predicate: PART-OF
     object: ent.microresonator_astrocomb_s19
     source:
       claim: "'reference laser, which is locked to a hydrogen cyanide (HCN)'"
 
-  - id: rel.S05
+  - id: rel.Suh05
     subject: ent.microresonator_astrocomb_s19
     predicate: CHARACTERIZED-BY
     object: met.mode_spacing_s19
     source:
       claim: "Fig. 2b inset: 'showing a 22.1 GHz line spacing'."
 
-  - id: rel.S06
+  - id: rel.Suh06
     subject: ent.microresonator_astrocomb_s19
     predicate: CHARACTERIZED-BY
     object: met.spectral_coverage_s19
     source:
       claim: "Fig. 3a: eight echelle orders 1,471 nm …"
 
-  - id: rel.S07
+  - id: rel.Suh07
     subject: ent.microresonator_astrocomb_s19
     predicate: CHARACTERIZED-BY
     object: met.rv_calibration_uncertainty_s19
     source:
       claim: "'the final wavelength calibration across the entire echellogram would be ≤5 m s⁻¹'"
 
-  - id: rel.S08
+  - id: rel.Suh08
     subject: ent.microresonator_astrocomb_s19
     predicate: CHARACTERIZED-BY
     object: met.f0_imprecision_s19
     source:
       claim: "'standard deviation less than 1 MHz … equivalent to about 1 m s⁻¹ of RV imprecision'"
 
-  - id: rel.S09
+  - id: rel.Suh09
     subject: ent.silica_wedge_microresonator_s19
     predicate: CHARACTERIZED-BY
     object: met.microresonator_Q_s19
     source:
       claim: "'unloaded quality factor of approximately 300 million'"
 
-  - id: rel.S10
+  - id: rel.Suh10
     subject: ent.microresonator_astrocomb_s19
     predicate: ENABLED-BY
     object: pri.dissipative_kerr_soliton
@@ -284,7 +284,7 @@ relations:
       claim: "'soliton mode-locking … ensures highly stable mode-locking and reproducible spectral envelopes'"
     note: "跨文件引用：pri.dissipative_kerr_soliton 权威定义于 yi2016.yaml。"
 
-  - id: rel.S11
+  - id: rel.Suh11
     subject: ent.microresonator_astrocomb_s19
     predicate: ENABLED-BY
     object: meth.laser_tuning_soliton_access
@@ -292,21 +292,21 @@ relations:
       claim: "方法节：通过 AOM 控制泵浦功率/频率进入与维持单孤子态。"
     note: "跨文件引用：meth.laser_tuning_soliton_access 权威定义于 yi2016.yaml。"
 
-  - id: rel.S12
+  - id: rel.Suh12
     subject: ent.microresonator_astrocomb_s19
     predicate: ENABLED-BY
     object: pri.microcomb_to_astrocomb_adaptation
     source:
       claim: "Fig. 1/2 整体方案：frep 射频锁 + f0 via HCN 参考激光 + 非线性展宽至 echelle 覆盖。"
 
-  - id: rel.S13
+  - id: rel.Suh13
     subject: ent.microresonator_astrocomb_s19
     predicate: ENABLED-BY
     object: pri.native_mode_spacing_matching
     source:
       claim: "'devices require additional optical or microwave filtering … until recently micro[-combs] … 22 GHz native spacing is suited for astronomical calibration'"
 
-  - id: rel.S14
+  - id: rel.Suh14
     subject: ent.microresonator_astrocomb_s19
     predicate: BOUNDED-BY
     object: pri.microcomb_rv_calibration_limit
@@ -322,7 +322,7 @@ relations:
         status: proposed
         source: "方法节：AOM + 服控孤子平均功率为现有手段。"
 
-  - id: rel.S15
+  - id: rel.Suh15
     subject: ent.microresonator_astrocomb_s19
     predicate: BOUNDED-BY
     object: pri.native_mode_spacing_matching
@@ -338,14 +338,14 @@ relations:
         status: proposed
         source: "Discussion；后续文献 Obrzud 2019 / Suh-Vahala 后续工作。"
 
-  - id: rel.S16
+  - id: rel.Suh16
     subject: ent.microresonator_astrocomb_s19
     predicate: CONDITIONED-BY
     object: ent.hcn_reference_laser_s19
     source:
       claim: "'The value of f0 of a soliton comb line is measured [via] reference laser … locked to HCN'"
 
-  - id: rel.S17
+  - id: rel.Suh17
     subject: ent.microresonator_astrocomb_s19
     predicate: COMPETES-WITH
     object: ent.filtered_tisa_astrocomb_y12

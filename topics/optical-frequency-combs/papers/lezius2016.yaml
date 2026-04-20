@@ -168,63 +168,63 @@ metrics:
     demonstrated_value: "10–40 °C baseplate"
 
 relations:
-  - id: rel.L01
+  - id: rel.Lez01
     subject: ent.spaceborne_erfiber_comb_l16
     predicate: PART-OF
     object: ent.optical_frequency_comb
     source:
       claim: "Space-qualified Er:fiber comb is a ruggedized engineering instance of a self-referenced OFC."
 
-  - id: rel.L02
+  - id: rel.Lez02
     subject: ent.spaceborne_erfiber_comb_l16
     predicate: CHARACTERIZED-BY
     object: met.swap_budget_l16
 
-  - id: rel.L03
+  - id: rel.Lez03
     subject: ent.spaceborne_erfiber_comb_l16
     predicate: CHARACTERIZED-BY
     object: met.vibration_qualification_l16
 
-  - id: rel.L04
+  - id: rel.Lez04
     subject: ent.spaceborne_erfiber_comb_l16
     predicate: CHARACTERIZED-BY
     object: met.operating_temperature_range_l16
 
-  - id: rel.L05
+  - id: rel.Lez05
     subject: ent.spaceborne_erfiber_comb_l16
     predicate: CHARACTERIZED-BY
     object: met.inflight_f2f_beat_snr_l16
 
-  - id: rel.L06
+  - id: rel.Lez06
     subject: ent.spaceborne_erfiber_comb_l16
     predicate: CHARACTERIZED-BY
     object: met.inflight_lock_continuity_l16
 
-  - id: rel.L07
+  - id: rel.Lez07
     subject: ent.spaceborne_erfiber_comb_l16
     predicate: ENABLED-BY
     object: pri.self_referencing_f2f
     source:
       claim: "Full f-2f self-referencing was implemented and held lock during flight."
 
-  - id: rel.L08
+  - id: rel.Lez08
     subject: ent.spaceborne_erfiber_comb_l16
     predicate: ENABLED-BY
     object: pri.ruggedized_erfiber_comb_space_qualification
     source:
       claim: "Mechanical/thermal/optical ruggedization rules enabled space-qualified operation."
 
-  - id: rel.L09
+  - id: rel.Lez09
     subject: ent.spaceborne_erfiber_comb_l16
     predicate: CONDITIONED-BY
     object: ent.rocket_vibration_shock_environment
 
-  - id: rel.L10
+  - id: rel.Lez10
     subject: ent.spaceborne_erfiber_comb_l16
     predicate: CONDITIONED-BY
     object: ent.texus51_rocket_platform
 
-  - id: rel.L11
+  - id: rel.Lez11
     subject: ent.spaceborne_erfiber_comb_l16
     predicate: BOUNDED-BY
     object: pri.vibration_cavity_length_coupling
@@ -241,7 +241,7 @@ relations:
     source:
       claim: "Mechanical vibration identified as principal environmental stressor."
 
-  - id: rel.L12
+  - id: rel.Lez12
     subject: ent.spaceborne_erfiber_comb_l16
     predicate: BOUNDED-BY
     object: pri.thermal_drift_comb_offsets
@@ -252,12 +252,12 @@ relations:
     source:
       claim: "Thermal control maintained lock across payload temperature profile."
 
-  - id: rel.L13
+  - id: rel.Lez13
     subject: ent.onboard_cavity_reference_laser
     predicate: PART-OF
     object: ent.spaceborne_erfiber_comb_l16
 
-  - id: rel.L14
+  - id: rel.Lez14
     subject: meth.flight_operation_protocol_l16
     predicate: ENABLED-BY
     object: pri.ruggedized_erfiber_comb_space_qualification
