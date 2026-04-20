@@ -1,0 +1,80 @@
+name: Knowledge Base Lint & Stats
+
+on:
+  pull_request:
+    paths:
+      - 'topics/**/*.yaml'
+      - 'scripts/**'
+      - 'SCHEMA.md'
+  push:
+    branches: [main]
+    paths:
+      - 'topics/**/*.yaml'
+  workflow_dispatch:
+
+jobs:
+  lint:
+    name: Lint YAML Knowledge Base
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Run lint (errors only)
+        run: python scripts/lint.py --summary
+        continue-on-error: false
+
+      - name: Run lint (strict, full detail)
+        if: github.event_name == 'pull_request'
+        run: python scripts/lint.py 2>&1 | head -200
+        continue-on-error: true
+
+  stats:
+    name: Knowledge Base Statistics
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Generate stats report
+        run: python scripts/stats.py --markdown > /tmp/stats_report.md
+
+      - name: Display stats
+        run: python scripts/stats.py
+
+      - name: Upload stats report
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: actions/upload-artifact@v4
+        with:
+          name: kb-stats-report
+          path: /tmp/stats_report.md
+          retention-days: 90
+
+  freshness:
+    name: Synthesis Freshness Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Check synthesis freshness
+        run: python scripts/freshness.py --check
+        continue-on-error: true
