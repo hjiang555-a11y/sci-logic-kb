@@ -7,6 +7,31 @@
 
 ---
 
+## [2026-04-20] restructure | P0 整固——自动化基础设施与度量体系
+
+- **新增脚本**（5 个）：
+  - `scripts/stats.py` — 6 项推理就绪度量（限制链闭环率、证据覆盖率、条件完备率、跨文件复用度、综合覆盖、矛盾可见度）
+  - `scripts/lint.py` — 11 项健康检查（孤立节点、悬空引用、重复定义、推理链缺口等）
+  - `scripts/build_index.py` — 从 YAML 自动生成分层 INDEX（替代手工维护）
+  - `scripts/graph.py` — 知识图谱导出（JSON/GraphML）+ hub/orphan/bridge 诊断
+  - `scripts/freshness.py` — 综合页面新鲜度追踪
+- **分层索引**：INDEX.md 改为脚本自动生成 + 新增 INDEX_metrics.md、INDEX_principles.md、各专题 INDEX.md
+- **专题元数据**：每个专题新增 `_meta/architecture.md`（架构图、限制链、路线图）
+- **CI 集成**：新增 `.github/workflows/kb-lint-stats.yml`（PR 时自动运行 lint + stats）
+- **Baseline 度量**（2026-04-20，141 篇论文 / 869 节点 / 957 关系）：
+
+| 度量 | 当前值 | 目标 | 状态 |
+|------|--------|------|------|
+| 限制链闭环率 | 71.3% (87/122) | ≥70% | ✅ |
+| 证据覆盖率 | 86.9% (832/957) | ≥90% | ❌ |
+| 条件完备率 | 94.8% (220/232) | ≥80% | ✅ |
+| 跨文件复用度 | 8.8% (76/862) | higher | — |
+| 综合页面覆盖 | 1/4 专题 | 全覆盖 | ⚠️ |
+| 矛盾可见度 | 119 (6 contested + 113 open_q) | more | — |
+
+- **Lint baseline**：198 errors (5 dangling-ref + 21 duplicate-def + 172 duplicate-rel-id), 294 warnings
+- **图谱诊断**：113 孤立节点，hub 节点前3: ent.fp_cavity_system (75度), ent.optical_frequency_comb (56度), ent.microresonator_frequency_comb (37度)
+
 ## [2026-04-20] restructure | 引入 Karpathy LLM Wiki 运维层
 
 - 新增 `INDEX.md`（全局导航索引）、`LOG.md`（本文件）、`PROCESSED_PAPERS.md`（论文详细列表）
