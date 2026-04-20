@@ -176,6 +176,9 @@ relations:
     subject: ent.menlo_erfiber_eom_comb_z12
     predicate: PART-OF
     object: ent.er_fiber_frequency_comb
+    source:
+      claim: "a fiber-based frequency comb (Menlo Systems) with an intracavity electro-optic modulator"
+      section: "Section II"
     note: "跨文件引用，ent.er_fiber_frequency_comb 定义于 giunta2019.yaml"
 
   - id: rel.Z12_02

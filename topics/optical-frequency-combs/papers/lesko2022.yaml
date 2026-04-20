@@ -135,42 +135,42 @@ relations:
     predicate: CHARACTERIZED-BY
     object: met.cams_snr_l22
     confidence: established
-    source: {zotero_key: "7978HTD3"}
+    source: {zotero_key: "7978HTD3", claim: "The CEP-sensitive HHG comb system achieves 85 dB signal-to-noise ratio via the CAMS technique."}
 
   - id: rel.LK22_02
     subject: ent.cep_hhg_comb_system_l22
     predicate: CHARACTERIZED-BY
     object: met.uv_vis_harmonic_bandwidth_l22
     confidence: established
-    source: {zotero_key: "7978HTD3"}
+    source: {zotero_key: "7978HTD3", claim: "The solid-state HHG system produces harmonic spectra extending from 200 to 650 nm."}
 
   - id: rel.LK22_03
     subject: meth.carrier_envelope_amplitude_modulation_spectroscopy
     predicate: ENABLED-BY
     object: pri.cams_fceo_demodulation
     confidence: established
-    source: {zotero_key: "7978HTD3"}
+    source: {zotero_key: "7978HTD3", claim: "CAMS exploits the natural f_CEO modulation of CEP-sensitive harmonics for lock-in detection without external modulators."}
 
   - id: rel.LK22_04
     subject: meth.carrier_envelope_amplitude_modulation_spectroscopy
     predicate: ENABLED-BY
     object: pri.solid_state_non_perturbative_hhg
     confidence: established
-    source: {zotero_key: "7978HTD3"}
+    source: {zotero_key: "7978HTD3", claim: "CAMS requires non-perturbative HHG in low-bandgap solids accessible with nJ-level frequency comb pulses."}
 
   - id: rel.LK22_05
     subject: ent.cep_hhg_comb_system_l22
     predicate: PART-OF
     object: ent.optical_frequency_comb
     confidence: established
-    source: {zotero_key: "7978HTD3"}
+    source: {zotero_key: "7978HTD3", claim: "The 100 MHz Er:fiber + solid-state HHG system is an instance of the optical frequency comb platform."}
 
   - id: rel.LK22_06
     subject: meth.carrier_envelope_amplitude_modulation_spectroscopy
     predicate: COMPETES-WITH
     object: meth.tunable_vuv_comb_generation_cavity_hhg
     confidence: established
-    source: {zotero_key: "7978HTD3"}
+    source: {zotero_key: "7978HTD3", claim: "Solid-state HHG CAMS competes with enhancement-cavity gas-phase HHG as alternative routes to UV/VUV comb generation."}
     note: >
       两条 HHG 光梳路线竞争：增强腔气体 HHG（Zhang 2022 VUV）需高功率 IR + 增强腔；
       固态 HHG（Lesko 2022）简单 100 MHz 单程 + 低能脉冲；前者频率更高（VUV），

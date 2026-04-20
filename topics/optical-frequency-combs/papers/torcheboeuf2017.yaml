@@ -168,6 +168,9 @@ relations:
     subject: ent.dpssl_eryb_eom_comb_t17
     predicate: PART-OF
     object: ent.optical_frequency_comb
+    source:
+      claim: "An optical frequency comb based on a diode-pumped solid-state laser (DPSSL) technology"
+      section: "Introduction"
     note: "跨文件引用，ent.optical_frequency_comb 定义于 giunta2019.yaml"
 
   - id: rel.T17_02
@@ -214,6 +217,9 @@ relations:
     subject: ent.dpssl_eryb_eom_comb_t17
     predicate: COMPETES-WITH
     object: ent.er_fiber_frequency_comb
+    source:
+      claim: "solid-state lasers exhibit lower quantum-limited timing jitter compared to fiber lasers due to higher intracavity peak power"
+      section: "Introduction"
     note: >
       跨文件引用，ent.er_fiber_frequency_comb 定义于 giunta2019.yaml。
       DPSSL 相比光纤激光器有更低本征噪声（定时抖动、振幅噪声），

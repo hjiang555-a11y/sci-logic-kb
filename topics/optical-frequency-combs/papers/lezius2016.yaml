@@ -179,26 +179,36 @@ relations:
     subject: ent.spaceborne_erfiber_comb_l16
     predicate: CHARACTERIZED-BY
     object: met.swap_budget_l16
+    source:
+      claim: "Space-qualified comb payload fits within 22 L, 22 kg, 70 W SWaP envelope"
 
   - id: rel.Lez03
     subject: ent.spaceborne_erfiber_comb_l16
     predicate: CHARACTERIZED-BY
     object: met.vibration_qualification_l16
+    source:
+      claim: "Comb qualified to 8.1 g_rms random vibration (20–2000 Hz) and 25 g sinusoidal shock"
 
   - id: rel.Lez04
     subject: ent.spaceborne_erfiber_comb_l16
     predicate: CHARACTERIZED-BY
     object: met.operating_temperature_range_l16
+    source:
+      claim: "Comb operates across 10–40 °C baseplate temperature range during flight"
 
   - id: rel.Lez05
     subject: ent.spaceborne_erfiber_comb_l16
     predicate: CHARACTERIZED-BY
     object: met.inflight_f2f_beat_snr_l16
+    source:
+      claim: "f-2f beat-note SNR ≥ 30 dB maintained throughout sounding-rocket flight"
 
   - id: rel.Lez06
     subject: ent.spaceborne_erfiber_comb_l16
     predicate: CHARACTERIZED-BY
     object: met.inflight_lock_continuity_l16
+    source:
+      claim: "Comb maintained uninterrupted self-referenced lock across ~6 min microgravity and 12.8 g launch"
 
   - id: rel.Lez07
     subject: ent.spaceborne_erfiber_comb_l16
@@ -218,11 +228,15 @@ relations:
     subject: ent.spaceborne_erfiber_comb_l16
     predicate: CONDITIONED-BY
     object: ent.rocket_vibration_shock_environment
+    source:
+      claim: "Comb performance conditioned by launch vibration and shock environment up to 12.8 g peak acceleration"
 
   - id: rel.Lez10
     subject: ent.spaceborne_erfiber_comb_l16
     predicate: CONDITIONED-BY
     object: ent.texus51_rocket_platform
+    source:
+      claim: "Comb operated on TEXUS-51 sounding rocket providing ~6 min ballistic microgravity at 254 km apogee"
 
   - id: rel.Lez11
     subject: ent.spaceborne_erfiber_comb_l16
@@ -256,11 +270,15 @@ relations:
     subject: ent.onboard_cavity_reference_laser
     predicate: PART-OF
     object: ent.spaceborne_erfiber_comb_l16
+    source:
+      claim: "Onboard ULE cavity-stabilized 1560 nm reference laser used as optical frequency reference during flight"
 
   - id: rel.Lez14
     subject: meth.flight_operation_protocol_l16
     predicate: ENABLED-BY
     object: pri.ruggedized_erfiber_comb_space_qualification
+    source:
+      claim: "Flight operation protocol enabled by ruggedized all-fiber architecture surviving launch and microgravity"
 
 historical_landmarks:
   first_demonstration:

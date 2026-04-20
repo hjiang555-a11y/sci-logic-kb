@@ -281,7 +281,7 @@ relations:
     predicate: OPERATIONALIZED-AS
     object: meth.octave_f2f_optical_frequency_measurement
     confidence: established
-    source: {zotero_key: "9BV3WBSH"}
+    source: {zotero_key: "9BV3WBSH", claim: "optical frequency determined with statistical uncertainty of about 50 Hz via femtosecond comb measurement"}
 
   - id: rel.D00_08
     subject: met.optical_frequency_measurement_uncertainty_d00

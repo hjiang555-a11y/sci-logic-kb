@@ -74,21 +74,21 @@ relations:
     predicate: ENABLED-BY
     object: pri.self_referencing_f2f_framework
     confidence: established
-    source: {zotero_key: "43TAX2KE"}
+    source: {zotero_key: "43TAX2KE", claim: "Self-referencing is the foundational technique enabling optical frequency combs to provide absolute optical frequency measurement."}
 
   - id: rel.PD20_02
     subject: ent.optical_frequency_comb
     predicate: PART-OF
     object: ent.electromagnetic_spectrum_coherent_bridge
     confidence: established
-    source: {zotero_key: "43TAX2KE"}
+    source: {zotero_key: "43TAX2KE", claim: "The optical frequency comb serves as the central element coherently uniting the electromagnetic spectrum from RF to UV."}
 
   - id: rel.PD20_03
     subject: pri.self_referencing_f2f_framework
     predicate: DERIVED-FROM
     object: pri.optical_microwave_coherent_gearbox
     confidence: established
-    source: {zotero_key: "43TAX2KE"}
+    source: {zotero_key: "43TAX2KE", claim: "The f-2f self-referencing principle is a specific realization of the broader optical-microwave coherent gearbox paradigm."}
 
   - id: rel.PD20_04
     subject: ent.electromagnetic_spectrum_coherent_bridge

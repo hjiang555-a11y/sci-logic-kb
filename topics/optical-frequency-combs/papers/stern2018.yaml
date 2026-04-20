@@ -488,7 +488,7 @@ relations:
     predicate: OPERATIONALIZED-AS
     object: meth.electrical_soliton_tuning_s18
     confidence: established
-    source: {zotero_key: "EBNL35EE"}
+    source: {zotero_key: "EBNL35EE", claim: "The 78–130 mW wall-plug electrical power for soliton generation is controlled via electrical pump current tuning of the hybrid III-V/Si₃N₄ laser."}
 
   - id: rel.S18_18
     subject: met.microcomb_wallplug_electrical_power_s18

@@ -137,7 +137,7 @@ relations:
     predicate: CHARACTERIZED-BY
     object: met.microcomb_soliton_pump_power_threshold
     confidence: established
-    source: {zotero_key: "6JY7ZNWX"}
+    source: {zotero_key: "6JY7ZNWX", claim: "The octave-spanning Si₃N₄ microcomb requires ~120 mW pump power for single-soliton and ~40 mW for multi-soliton states."}
 
   - id: rel.L17_02
     subject: ent.octave_si3n4_microcomb_l17
@@ -182,7 +182,7 @@ relations:
     predicate: PART-OF
     object: ent.microresonator_frequency_comb
     confidence: established
-    source: {zotero_key: "6JY7ZNWX"}
+    source: {zotero_key: "6JY7ZNWX", claim: "The octave-spanning Si₃N₄ microcomb is an instance of the microresonator frequency comb platform."}
     note: "ent.microresonator_frequency_comb 定义于 kippenberg2011.yaml"
 
   - id: rel.L17_07

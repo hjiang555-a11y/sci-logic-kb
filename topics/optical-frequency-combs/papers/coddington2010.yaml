@@ -175,7 +175,7 @@ relations:
     predicate: OPERATIONALIZED-AS
     object: meth.dual_comb_spectroscopy
     confidence: established
-    source: {zotero_key: "7PDY5FDM"}
+    source: {zotero_key: "7PDY5FDM", claim: "frequency resolution equals the comb mode spacing of 220 MHz"}
 
   - id: rel.C10_06
     subject: met.dcs_snr_coherent
@@ -199,5 +199,5 @@ relations:
     predicate: PART-OF
     object: ent.dual_comb_spectrometer
     confidence: established
-    source: {zotero_key: "7PDY5FDM"}
+    source: {zotero_key: "7PDY5FDM", claim: "coherent dual-comb spectrometer retains the frequency accuracy and resolution of the reference underlying the stabilized combs"}
     note: "ent.dual_comb_spectrometer 定义于 coddington2016.yaml（权威）；此处跨文件引用"

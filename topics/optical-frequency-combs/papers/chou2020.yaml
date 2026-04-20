@@ -338,7 +338,7 @@ relations:
     predicate: OPERATIONALIZED-AS
     object: meth.single_ion_ofc_quantum_logic_spectroscopy_c20
     confidence: established
-    source: {zotero_key: "DUJ8VXBR"}
+    source: {zotero_key: "DUJ8VXBR", claim: "rotational transition frequencies measured via quantum-logic spectroscopy with OFC-referenced probe laser"}
 
   - id: rel.Cho20_10
     subject: met.comb_raman_line_fwhm_c20
