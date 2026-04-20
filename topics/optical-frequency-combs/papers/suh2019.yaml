@@ -112,6 +112,19 @@ entities:
       与微梳相邻梳齿拍频测定 f0，1 MHz 级不确定度。
     note: "PART-OF ent.microresonator_astrocomb_s19"
 
+  - id: ent.filtered_tisa_astrocomb_y12
+    name: "FP 滤波 Ti:Sa 天文光梳（传统方案）"
+    aliases: ["filtered Ti:Sapphire astrocomb", "FP-filtered laser comb astrocomb"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      传统天文光梳方案：Ti:Sapphire 或 Er:fiber 锁模激光器（~1 GHz 重频）
+      输出经 Fabry-Pérot 腔滤波至 ~10–25 GHz 间距，匹配 echelle 光谱仪分辨率。
+      需要高精细度 FP 腔锁定与旁模抑制。
+    note: >
+      泛指需要 FP 滤波的传统天文光梳路线（Ycas 2012, Li 2008 等）。
+      与微梳天文光梳的核心区别：需要 FP 腔滤波级，系统复杂度更高。
+
 principles:
   - id: pri.native_mode_spacing_matching
     name: "微梳 FSR 与天文光谱仪分辨率原生匹配原理"

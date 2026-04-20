@@ -96,6 +96,23 @@ principles:
       response of the comb to the various actuators therefore requires the measurement
       of the nine transfer function matrix elements"
 
+  - id: pri.am_pm_conversion_photodetection
+    name: "光电探测 AM-PM 转换噪声原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      光电探测器在将光脉冲列转换为微波信号时，光功率波动（振幅调制 AM）
+      通过探测器非线性和饱和效应耦合为微波信号的相位波动（相位调制 PM）。
+      这种 AM-PM 转换是光-微波分频中微波相位噪声底的根本限制之一。
+    domain: "光电探测，光微波分频，微波生成"
+    formula: "α_AM-PM = ΔΦ_out / ΔP_in （AM-PM 转换系数，单位 rad/W 或 rad/dB）"
+    conditions: "光功率接近探测器饱和区时 AM-PM 转换最严重"
+    invalidated_when:
+      - "光功率远低于探测器线性区——AM-PM 耦合系数可忽略"
+      - "使用差分探测或两光电二极管平衡探测可部分抑制"
+    source_claim: >
+      "amplitude-to-phase coupling in the photodetection process is a strong limitation"
+
 methods:
   - id: meth.comb_transfer_function_measurement
     name: "光频梳传递函数矩阵测量方法"
