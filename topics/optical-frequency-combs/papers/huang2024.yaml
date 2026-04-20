@@ -118,34 +118,44 @@ relations:
     predicate: CHARACTERIZED-BY
     object: met.fmcw_temporal_resolution_h24
     confidence: established
-    source: {zotero_key: "2QUW2P6D"}
+    source:
+      claim: "The comb-calibrated FMCW sensor achieves 652 fs temporal resolution, with potential to reach 70 fs using broadband lasers."
+      zotero_key: "2QUW2P6D"
 
   - id: rel.HU24_02
     subject: ent.comb_calibrated_fmcw_nlos_sensor_h24
     predicate: CHARACTERIZED-BY
     object: met.nlos_vibrometry_accuracy_h24
     confidence: established
-    source: {zotero_key: "2QUW2P6D"}
+    source:
+      claim: "The comb-calibrated FMCW coherent sensor achieves NLOS vibrometry accuracy at the tens-of-Hz level through multi-frame phase tracking."
+      zotero_key: "2QUW2P6D"
 
   - id: rel.HU24_03
     subject: meth.comb_calibrated_fmcw_nlos_imaging
     predicate: ENABLED-BY
     object: pri.comb_calibrated_fmcw_frequency_linearity
     confidence: established
-    source: {zotero_key: "2QUW2P6D"}
+    source:
+      claim: "Optical frequency comb calibration corrects FMCW tuning nonlinearity in real time, improving effective bandwidth utilization and SNR by ~5 dB."
+      zotero_key: "2QUW2P6D"
 
   - id: rel.HU24_04
     subject: ent.comb_calibrated_fmcw_nlos_sensor_h24
     predicate: PART-OF
     object: ent.optical_frequency_comb
     confidence: established
-    source: {zotero_key: "2QUW2P6D"}
+    source:
+      claim: "The comb-calibrated FMCW sensor uses an optical frequency comb as a precision frequency ruler for LIDAR/imaging applications."
+      zotero_key: "2QUW2P6D"
 
   - id: rel.HU24_05
     subject: meth.comb_calibrated_fmcw_nlos_imaging
     predicate: COMPETES-WITH
     object: meth.dual_comb_spectroscopy
     confidence: tentative
-    source: {zotero_key: "2QUW2P6D"}
+    source:
+      claim: "Comb-calibrated FMCW coherent sensing offers an alternative to dual-comb ranging/imaging for NLOS 3D reconstruction scenarios."
+      zotero_key: "2QUW2P6D"
     conditions: "光梳在 LIDAR 场景的应用路线：FMCW 校准（Huang 2024）vs 双梳测距/成像"
     note: "两者解决问题维度不同——此 COMPETES-WITH 仅限在 NLOS 三维测量这一应用定位下"

@@ -131,35 +131,35 @@ relations:
     predicate: CHARACTERIZED-BY
     object: met.tf_ln_spectral_coverage_w24
     confidence: established
-    source: {zotero_key: "8IPE8B8T"}
+    source: {zotero_key: "8IPE8B8T", claim: "gap-free frequency comb coverage spanning 330–2,400 nm with only 90 pJ of pulse energy"}
 
   - id: rel.W24_02
     subject: ent.tf_lin_uv_vis_comb_w24
     predicate: CHARACTERIZED-BY
     object: met.tf_ln_uv_conversion_efficiency_w24
     confidence: established
-    source: {zotero_key: "8IPE8B8T"}
+    source: {zotero_key: "8IPE8B8T", claim: "conversion efficiency from the near-infrared pump to the ultraviolet–visible region of 350–550 nm is 17%"}
 
   - id: rel.W24_03
     subject: meth.tf_ln_uv_vis_comb_generation
     predicate: ENABLED-BY
     object: pri.chirped_qpm_broadband_chi2_sc
     confidence: established
-    source: {zotero_key: "8IPE8B8T"}
+    source: {zotero_key: "8IPE8B8T", claim: "multisegment nanophotonic waveguides that combine engineered dispersion and chirped quasi-phase matching for efficient supercontinuum generation"}
 
   - id: rel.W24_04
     subject: ent.tf_lin_uv_vis_comb_w24
     predicate: PART-OF
     object: ent.optical_frequency_comb
     confidence: established
-    source: {zotero_key: "8IPE8B8T"}
+    source: {zotero_key: "8IPE8B8T", claim: "visible-to-ultraviolet frequency comb generation in lithium niobate nanophotonic waveguides"}
 
   - id: rel.W24_05
     subject: meth.tf_ln_uv_vis_comb_generation
     predicate: COMPETES-WITH
     object: meth.carrier_envelope_amplitude_modulation_spectroscopy
     confidence: tentative
-    source: {zotero_key: "8IPE8B8T"}
+    source: {zotero_key: "8IPE8B8T", claim: "reach and reference the multiple trapping, cooling and state preparation transitions of atoms and ions in the UV/VIS range"}
     conditions: "UV/VIS 梳产生路线竞争：TF-LN χ²+χ³ 无 HHG（Wu 2024，效率高、覆盖到 330 nm）vs 固态 HHG（Lesko 2022，可延至 200 nm 但效率低）"
 
   - id: rel.W24_06

@@ -176,6 +176,9 @@ relations:
     subject: ent.precision_frequency_transfer_system_f22
     predicate: PART-OF
     object: ent.er_fiber_frequency_comb
+    source:
+      claim: "precision frequency transfer with fiber frequency combs based on Er-doped fiber laser technology"
+      section: "Introduction"
     note: "跨文件引用，ent.er_fiber_frequency_comb 定义于 giunta2019.yaml"
 
 breakthrough_paths:

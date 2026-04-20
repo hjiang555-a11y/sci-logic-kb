@@ -68,17 +68,17 @@ entities:
 
 methods:
   - id: meth.oscat_dual_comb
-    name: "OSCAT 光学扫描相干自相关层析方法"
+    name: "OSCAT 扫描重频单梳双梳干涉方法"
     tier: domain
     verification_status: observed
     statement: >
-      OSCAT（Optical Scanning Coherence Autocorrelation Tomography）通过连续扫描单梳的
-      重频在两个值之间实现等效双梳干涉。需要两台相位锁定梳或连续扫描，
-      逐帧采集干涉图，采集速率受扫描速率限制（与 PHIRE 相比慢约 4 个量级）。
-    domain: "双梳干涉术，光谱测量，距离测量"
+      Optical Scanning Coherence Autocorrelation Tomography (OSCAT) 通过连续线性扫描单个频率梳
+      的重频（而非二进制切换），在自延迟干涉仪中产生等效双梳干涉图。
+      扫描速率决定等效 Δfrep，采集速度受限于扫描速率。
+    domain: "双梳干涉术，光谱测量"
     note: >
-      参见 Hochrein 2010, Yang 2013, Boudreau 2014 等文献。
-      此节点由 carlson2018 引入作为 COMPETES-WITH 对比参照，属跨文件使用的通用方法节点。
+      首次提出：Hochrein 2010, Yang 2013, Boudreau 2014。
+      与 PHIRE 的区别：OSCAT 使用连续扫描（较慢 ~4 个量级），PHIRE 使用二进制切换（更快）。
 
   - id: meth.phire_dual_comb
     name: "PHIRE 重频切换双梳干涉方法"

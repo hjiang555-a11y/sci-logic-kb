@@ -331,7 +331,9 @@ relations:
     predicate: OPERATIONALIZED-AS
     object: meth.on_chip_f2f_stabilization
     confidence: established
-    source: {zotero_key: "CML5935T"}
+    source:
+      claim: "The on-chip f_CEO signal-to-noise ratio is measured and optimized through the on-chip χ²+χ³ self-referencing stabilization method, achieving 37 dB SNR."
+      zotero_key: "CML5935T"
 
   - id: rel.H17_11
     subject: met.fceo_snr_on_chip_h17

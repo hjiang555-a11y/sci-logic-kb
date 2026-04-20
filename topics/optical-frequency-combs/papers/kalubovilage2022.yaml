@@ -134,21 +134,27 @@ relations:
     predicate: CHARACTERIZED-BY
     object: met.photonic_microwave_phase_noise_k22
     confidence: established
-    source: {zotero_key: "3VF89TBF"}
+    source:
+      claim: "The free-running monolithic mode-locked laser comb achieves X-band photonic microwave phase noise below −180 dBc/Hz at offsets below 1 MHz."
+      zotero_key: "3VF89TBF"
 
   - id: rel.KB22_02
     subject: meth.monolithic_free_running_photonic_microwave
     predicate: ENABLED-BY
     object: pri.monolithic_free_running_comb_low_noise
     confidence: established
-    source: {zotero_key: "3VF89TBF"}
+    source:
+      claim: "The monolithic cavity design with ultra-low intracavity loss, near-zero net dispersion, and alignment-free construction enables free-running phase noise approaching quantum limits without active stabilization."
+      zotero_key: "3VF89TBF"
 
   - id: rel.KB22_03
     subject: met.photonic_microwave_phase_noise_k22
     predicate: BOUNDED-BY
     object: pri.photodetection_shot_noise_limit
     confidence: established
-    source: {zotero_key: "3VF89TBF"}
+    source:
+      claim: "The photonic microwave phase noise floor is ultimately bounded by photodetection shot noise; a cryogenically cooled power splitter was used to suppress thermal noise and reveal this limit."
+      zotero_key: "3VF89TBF"
     breakthrough_paths:
       - direction: meth.monolithic_free_running_photonic_microwave
         expected_gain: "提高光平均功率 P_avg 或改善光电探测器量子效率降低散粒噪声本底"
@@ -169,5 +175,7 @@ relations:
     predicate: PART-OF
     object: ent.optical_frequency_comb
     confidence: established
-    source: {zotero_key: "3VF89TBF"}
+    source:
+      claim: "The monolithic mode-locked laser is a compact free-running implementation of optical frequency comb technology targeting photonic microwave generation."
+      zotero_key: "3VF89TBF"
     note: "作为光频梳的一个具体实现类（自由运行单片 MMLL 子分支）"

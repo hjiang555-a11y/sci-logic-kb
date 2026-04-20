@@ -97,31 +97,21 @@ principles:
       of the nine transfer function matrix elements"
 
   - id: pri.am_pm_conversion_photodetection
-    name: "光电探测中的振幅-相位转换（AM-PM 转换）限制原理"
+    name: "光电探测 AM-PM 转换噪声原理"
     tier: domain
     verification_status: observed
     statement: >
-      在光频梳光-微波分频中，光电二极管（PD）在强光照射下存在非线性行为：
-      入射光振幅（强度）调制（AM）通过 PD 非线性直接转换为微波相位调制（PM），
-      称为 AM-PM 转换（幅-相耦合）。该耦合将光频梳的振幅噪声（RIN）映射为
-      微波输出的相位噪声，构成光-微波分频的根本噪声限制之一，
-      难以通过提高信噪比或伺服增益来消除。
-    domain: "光频梳，光-微波分频，微波相位噪声"
-    conditions: "光电二极管工作于强光功率（>1 mW）；微波相位噪声测量精度优于 −160 dBc/Hz"
+      光电探测器在将光脉冲列转换为微波信号时，光功率波动（振幅调制 AM）
+      通过探测器非线性和饱和效应耦合为微波信号的相位波动（相位调制 PM）。
+      这种 AM-PM 转换是光-微波分频中微波相位噪声底的根本限制之一。
+    domain: "光电探测，光微波分频，微波生成"
+    formula: "α_AM-PM = ΔΦ_out / ΔP_in （AM-PM 转换系数，单位 rad/W 或 rad/dB）"
+    conditions: "光功率接近探测器饱和区时 AM-PM 转换最严重"
     invalidated_when:
-      - "采用平衡探测方案抑制共模 RIN"
-      - "光电二极管工作于线性区（低功率），AM-PM 系数可忽略"
-    breakthrough_paths:
-      - direction: meth.comb_transfer_function_measurement
-        expected_gain: "通过传递函数矩阵测量定量 AM-PM 系数，指导低 AM-PM 探测器选型和操作点优化"
-        status: demonstrated
-        source:
-          claim: "amplitude-to-phase coupling in the photodetection process is a strong limitation"
-          section: "Section II"
-    source_claim: "amplitude-to-phase coupling in the photodetection process is a strong limitation"
-    note: >
-      AM-PM 转换是光-微波分频（光梳→12 GHz 微波）中相位噪声底的关键限制，
-      与 EOM 声学谐振（pri.eom_acoustic_resonance_limit_t17）并列为 EOM 梳微波应用的两大限制。
+      - "光功率远低于探测器线性区——AM-PM 耦合系数可忽略"
+      - "使用差分探测或两光电二极管平衡探测可部分抑制"
+    source_claim: >
+      "amplitude-to-phase coupling in the photodetection process is a strong limitation"
 
 methods:
   - id: meth.comb_transfer_function_measurement
@@ -186,6 +176,9 @@ relations:
     subject: ent.menlo_erfiber_eom_comb_z12
     predicate: PART-OF
     object: ent.er_fiber_frequency_comb
+    source:
+      claim: "a fiber-based frequency comb (Menlo Systems) with an intracavity electro-optic modulator"
+      section: "Section II"
     note: "跨文件引用，ent.er_fiber_frequency_comb 定义于 giunta2019.yaml"
 
   - id: rel.Z12_02

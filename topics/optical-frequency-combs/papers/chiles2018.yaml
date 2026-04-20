@@ -179,11 +179,17 @@ relations:
     subject: ent.sind_mi_kerr_comb_c18
     predicate: PART-OF
     object: ent.deuterated_sin_photonic_platform_c18
+    source:
+      claim: "MI Kerr comb generated in SiN:D microring resonator fabricated on the deuterated silicon nitride platform"
+      section: "Results"
 
   - id: rel.C18_05
     subject: ent.sind_mi_kerr_comb_c18
     predicate: ENABLED-BY
     object: pri.parametric_four_wave_mixing_comb
+    source:
+      claim: "CW-pumped parametric oscillation and frequency comb generation via four-wave mixing in the SiN:D microring"
+      section: "Results"
     note: "跨文件引用，pri.parametric_four_wave_mixing_comb 定义于 kippenberg2011.yaml"
 
   - id: rel.C18_06

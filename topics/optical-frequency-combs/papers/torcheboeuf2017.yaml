@@ -103,30 +103,20 @@ principles:
       - "PM-to-AM 耦合对高精度光微波分频的残余相位噪声影响的定量边界"
 
   - id: pri.eom_acoustic_resonance_limit_t17
-    name: "EOM 晶体声学谐振对腔内 frep 控制带宽的限制原理"
+    name: "EOM 晶体声学谐振带宽限制"
     tier: domain
     verification_status: observed
     statement: >
-      腔内电光调制器（EOM）晶体在特定机械频率（Torcheboeuf 2017 观测约 900 kHz）处
-      存在声学共振，当伺服增益在该频率附近较高时，会产生锐增益峰（锐谐振），
-      导致相位裕量不足和锁定回路不稳定。因此 EOM 实际可用的 frep 锁定带宽
-      受限于该声学谐振频率，典型值约 700–900 kHz。
-    domain: "光频梳频率控制，电光调制器，声学谐振"
-    conditions: "腔内 EOM 晶体在频率梳腔中使用；伺服闭环带宽接近声学谐振频率"
+      电光调制器（EOM）晶体在特定频率处存在声学谐振（机械共振模式），
+      导致传递函数在该频率附近出现锐增益峰。对于典型的 LiNbO₃ EOM，
+      声学谐振出现在 ~900 kHz，构成 EOM 作为重频执行器的带宽上限。
+    domain: "电光调制器，频率控制，声学限制"
+    conditions: "EOM 晶体尺寸与声学模式耦合决定谐振频率位置"
     invalidated_when:
-      - "使用短晶体或更高声学谐振频率的 EOM 材料（谐振点 > 1.2 MHz）"
-      - "伺服带宽远低于声学谐振频率（不接近谐振点时不影响稳定性）"
-    breakthrough_paths:
-      - direction: pri.intracavity_eom_group_delay_modulation
-        expected_gain: "采用更短 EOM 晶体或波导型 EOM（LiNbO₃ 波导）将声学谐振推至 >1.2 MHz"
-        status: proposed
-        source:
-          claim: "limited by sharp resonances observed around 900 kHz"
-          section: "Results"
-    source_claim: "limited by sharp resonances observed around 900 kHz"
-    note: >
-      此限制同时影响 Er:fiber 光纤梳（Zhang 2012，rel.Z12_05）和 DPSSL（本文，rel.T17_06）
-      中的 EOM 腔内 frep 控制方案，是 EOM frep 控制的通用物理上限。
+      - "使用更短晶体或不同切向可将谐振频率推向更高"
+      - "使用陶瓷或薄膜 EOM 可能完全消除体声学谐振"
+    source_claim: >
+      "limited by sharp resonances observed around 900 kHz"
 
 methods:
   - id: meth.eom_pzt_cascade_frep_lock
@@ -178,6 +168,9 @@ relations:
     subject: ent.dpssl_eryb_eom_comb_t17
     predicate: PART-OF
     object: ent.optical_frequency_comb
+    source:
+      claim: "An optical frequency comb based on a diode-pumped solid-state laser (DPSSL) technology"
+      section: "Introduction"
     note: "跨文件引用，ent.optical_frequency_comb 定义于 giunta2019.yaml"
 
   - id: rel.T17_02
@@ -224,6 +217,9 @@ relations:
     subject: ent.dpssl_eryb_eom_comb_t17
     predicate: COMPETES-WITH
     object: ent.er_fiber_frequency_comb
+    source:
+      claim: "solid-state lasers exhibit lower quantum-limited timing jitter compared to fiber lasers due to higher intracavity peak power"
+      section: "Introduction"
     note: >
       跨文件引用，ent.er_fiber_frequency_comb 定义于 giunta2019.yaml。
       DPSSL 相比光纤激光器有更低本征噪声（定时抖动、振幅噪声），

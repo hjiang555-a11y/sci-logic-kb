@@ -419,14 +419,14 @@ relations:
     predicate: ENABLED-BY
     object: pri.self_referencing_f2f
     confidence: established
-    source: {zotero_key: "D9ANIZW6"}
+    source: {zotero_key: "D9ANIZW6", claim: "The ruggedized field comb optical lock relies on f-2f self-referencing for carrier-envelope offset frequency stabilization."}
 
   - id: rel.S14_14
     subject: met.pulse_to_pulse_timing_jitter_s14
     predicate: OPERATIONALIZED-AS
     object: meth.ruggedized_fiber_comb_optical_lock_s14
     confidence: established
-    source: {zotero_key: "D9ANIZW6"}
+    source: {zotero_key: "D9ANIZW6", claim: "The 2.4–5 fs pulse-to-pulse timing jitter is achieved through the all-PM fiber comb with optical lock under mobile vibration conditions."}
 
   - id: rel.S14_15
     subject: ent.ruggedized_field_comb_s14

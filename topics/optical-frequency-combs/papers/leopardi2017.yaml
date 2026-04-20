@@ -123,28 +123,28 @@ relations:
     predicate: CHARACTERIZED-BY
     object: met.erfiber_comb_synthesis_instability_l17
     confidence: established
-    source: {zotero_key: "8XUFRL4K"}
+    source: {zotero_key: "8XUFRL4K", claim: "The single-branch Er:fiber comb achieves fractional frequency instability of 3×10⁻¹⁸ at 1 s."}
 
   - id: rel.L17F_02
     subject: meth.common_mode_fiber_comb_servo
     predicate: ENABLED-BY
     object: pri.common_mode_fiber_path_noise_rejection
     confidence: established
-    source: {zotero_key: "8XUFRL4K"}
+    source: {zotero_key: "8XUFRL4K", claim: "The common-mode servo method relies on co-routing all critical fiber paths to reject non-common-mode phase noise."}
 
   - id: rel.L17F_03
     subject: met.erfiber_comb_synthesis_instability_l17
     predicate: OPERATIONALIZED-AS
     object: meth.common_mode_fiber_comb_servo
     confidence: established
-    source: {zotero_key: "8XUFRL4K"}
+    source: {zotero_key: "8XUFRL4K", claim: "The 10⁻¹⁸-level synthesis instability is achieved through the single-branch common-mode fiber comb servo architecture."}
 
   - id: rel.L17F_04
     subject: ent.single_branch_erfiber_comb_l17
     predicate: COMPETES-WITH
     object: ent.ultra_low_noise_fiber_comb_g20
     confidence: established
-    source: {zotero_key: "8XUFRL4K"}
+    source: {zotero_key: "8XUFRL4K", claim: "The single-branch common-mode architecture competes with the multi-branch dispersive-heterodyne approach for ultra-low-noise fiber comb performance."}
     note: "两条并行工程路径：Leopardi 2017 单分支共模 vs Giunta 2020 多分支+色散外差；定义于 giunta2020.yaml"
 
   - id: rel.L17F_05
@@ -152,7 +152,7 @@ relations:
     predicate: PART-OF
     object: ent.optical_frequency_comb
     confidence: established
-    source: {zotero_key: "8XUFRL4K"}
+    source: {zotero_key: "8XUFRL4K", claim: "The single-branch Er:fiber comb is an instance of the optical frequency comb platform."}
     note: "跨文件引用 ent.optical_frequency_comb（giunta2019.yaml / udem2002.yaml）"
 
   - id: rel.L17F_06
