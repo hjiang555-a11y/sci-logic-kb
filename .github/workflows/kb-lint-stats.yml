@@ -16,8 +16,13 @@ jobs:
   lint:
     name: Lint YAML Knowledge Base
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Full history needed so we can diff against the base branch / parent commit
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
@@ -26,18 +31,72 @@ jobs:
       - name: Install dependencies
         run: pip install pyyaml
 
-      - name: Run lint (errors only)
-        run: python scripts/lint.py --summary
-        continue-on-error: false
-
-      - name: Run lint (strict, full detail)
+      # ── PR: lint only the YAML files changed by this PR ─────────────────
+      - name: Detect changed YAML files (PR)
         if: github.event_name == 'pull_request'
-        run: python scripts/lint.py 2>&1 | head -200
+        id: changed-yaml
+        run: |
+          git fetch origin ${{ github.base_ref }} --depth=1
+          CHANGED=$(git diff --name-only origin/${{ github.base_ref }}...HEAD -- 'topics/**/*.yaml')
+          if [ -z "$CHANGED" ]; then
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+            # Store as newline-separated for reading later
+            printf '%s\n' $CHANGED > /tmp/changed_yaml_files.txt
+            echo "Changed YAML files:"
+            cat /tmp/changed_yaml_files.txt
+          fi
+
+      - name: Run lint on changed files (PR)
+        if: github.event_name == 'pull_request' && steps.changed-yaml.outputs.has_changes == 'true'
+        run: |
+          mapfile -t FILES < /tmp/changed_yaml_files.txt
+          python scripts/lint.py --summary --files "${FILES[@]}"
+
+      - name: No YAML changes to lint (PR)
+        if: github.event_name == 'pull_request' && steps.changed-yaml.outputs.has_changes == 'false'
+        run: echo "✅ No topics/**/*.yaml files changed in this PR — lint step skipped."
+
+      - name: Run lint detail (PR, informational)
+        if: github.event_name == 'pull_request' && steps.changed-yaml.outputs.has_changes == 'true'
+        run: |
+          mapfile -t FILES < /tmp/changed_yaml_files.txt
+          python scripts/lint.py --files "${FILES[@]}" 2>&1 | head -200
+        continue-on-error: true
+
+      # ── push to main: lint only the YAML files that changed in the push ─
+      - name: Detect changed YAML files (push)
+        if: github.event_name == 'push'
+        id: changed-yaml-push
+        run: |
+          CHANGED=$(git diff --name-only HEAD^ HEAD -- 'topics/**/*.yaml')
+          if [ -z "$CHANGED" ]; then
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+            printf '%s\n' $CHANGED > /tmp/changed_yaml_files.txt
+            echo "Changed YAML files:"
+            cat /tmp/changed_yaml_files.txt
+          fi
+
+      - name: Run lint on changed files (push)
+        if: github.event_name == 'push' && steps.changed-yaml-push.outputs.has_changes == 'true'
+        run: |
+          mapfile -t FILES < /tmp/changed_yaml_files.txt
+          python scripts/lint.py --summary --files "${FILES[@]}"
+
+      # ── workflow_dispatch: full-repo lint (manual trigger) ───────────────
+      - name: Run full-repo lint (manual)
+        if: github.event_name == 'workflow_dispatch'
+        run: python scripts/lint.py --summary
         continue-on-error: true
 
   stats:
     name: Knowledge Base Statistics
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v4
 
@@ -65,6 +124,8 @@ jobs:
   freshness:
     name: Synthesis Freshness Check
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v4
 

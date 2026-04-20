@@ -445,6 +445,13 @@ def build_parser() -> argparse.ArgumentParser:
         help="Lint only one topic (e.g. 'ultrastable-laser')",
     )
     p.add_argument(
+        "--files", nargs="+", type=Path, default=None,
+        help=(
+            "Lint specific files only (overrides --repo-path and --topic scanning). "
+            "Accepts one or more paths to topics/*/papers/*.yaml files."
+        ),
+    )
+    p.add_argument(
         "--strict", action="store_true",
         help="Treat warnings as errors (non-zero exit code)",
     )
@@ -463,15 +470,26 @@ def main(argv: list[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
 
-    repo: Path = args.repo_path.resolve()
-    yaml_paths = collect_yaml_paths(repo, args.topic)
-
-    if not yaml_paths:
-        msg = f"No YAML files found under {repo / 'topics'}"
-        if args.topic:
-            msg += f" for topic '{args.topic}'"
-        print(msg, file=sys.stderr)
-        return 1
+    if args.files:
+        # Lint specific files provided on the command line
+        yaml_paths = sorted(
+            p.resolve() for p in args.files if p.exists()
+        )
+        if not yaml_paths:
+            print(
+                "No accessible YAML files found in the provided --files list.",
+                file=sys.stderr,
+            )
+            return 1
+    else:
+        repo: Path = args.repo_path.resolve()
+        yaml_paths = collect_yaml_paths(repo, args.topic)
+        if not yaml_paths:
+            msg = f"No YAML files found under {repo / 'topics'}"
+            if args.topic:
+                msg += f" for topic '{args.topic}'"
+            print(msg, file=sys.stderr)
+            return 1
 
     issues = run_all_checks(yaml_paths)
 
