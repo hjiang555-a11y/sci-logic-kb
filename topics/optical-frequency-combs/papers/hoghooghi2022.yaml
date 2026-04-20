@@ -90,21 +90,27 @@ relations:
     predicate: CHARACTERIZED-BY
     object: met.mir_comb_spectral_coverage_h22
     confidence: established
-    source: {zotero_key: "7HSU6V7Q"}
+    source:
+      claim: "The 1 GHz MIR comb achieves spectral coverage from 3 to 13 µm through IP-DFG in χ² nonlinear crystals."
+      zotero_key: "7HSU6V7Q"
 
   - id: rel.H22_02
     subject: meth.dfg_comb_generation
     predicate: ENABLED-BY
     object: pri.intra_pulse_dfg_comb_generation
     confidence: established
-    source: {zotero_key: "7HSU6V7Q"}
+    source:
+      claim: "Intra-pulse difference frequency generation of few-cycle pulses in χ² crystals inherently produces a MIR comb with f_CEO = 0, eliminating the need for active CEO stabilization."
+      zotero_key: "7HSU6V7Q"
 
   - id: rel.H22_03
     subject: meth.dfg_comb_generation
     predicate: ENABLED-BY
     object: pri.nonlinear_frequency_conversion_comb
     confidence: established
-    source: {zotero_key: "7HSU6V7Q"}
+    source:
+      claim: "MIR comb generation relies on nonlinear frequency down-conversion of near-infrared frequency combs through difference frequency generation."
+      zotero_key: "7HSU6V7Q"
     note: "pri.nonlinear_frequency_conversion_comb 跨文件引用（picque2019.yaml）"
 
   - id: rel.H22_04
@@ -128,7 +134,9 @@ relations:
     predicate: PART-OF
     object: ent.mid_ir_frequency_comb
     confidence: established
-    source: {zotero_key: "7HSU6V7Q"}
+    source:
+      claim: "The broadband 1 GHz IP-DFG comb is an instance of the mid-infrared frequency comb class, targeting the 3–13 µm molecular fingerprint region."
+      zotero_key: "7HSU6V7Q"
     note: "跨文件引用（picque2019.yaml 应用层架构）"
 
   - id: rel.H22_07
@@ -136,5 +144,7 @@ relations:
     predicate: OPERATIONALIZED-AS
     object: meth.dual_comb_spectroscopy
     confidence: established
-    source: {zotero_key: "7HSU6V7Q"}
+    source:
+      claim: "The 1 GHz repetition rate enables microsecond-level time-resolved dual-comb spectroscopy acquisition speed for transient combustion and chemical dynamics."
+      zotero_key: "7HSU6V7Q"
     note: "meth.dual_comb_spectroscopy 定义于 coddington2010.yaml / picque2019.yaml"

@@ -351,7 +351,9 @@ relations:
     predicate: OPERATIONALIZED-AS
     object: meth.fiber_noise_difference_cancellation_k18
     confidence: established
-    source: {zotero_key: "ERNT9GV3"}
+    source:
+      claim: "The 10⁻²⁰-level relative frequency uncertainty between comb branches is achieved through the fiber noise difference cancellation (FNDC) method."
+      zotero_key: "ERNT9GV3"
 
   - id: rel.Kas18_09
     subject: meth.fiber_noise_difference_cancellation_k18
