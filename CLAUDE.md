@@ -88,14 +88,18 @@ for i in items:
 
 当前默认专题为 `ultrastable-laser`。
 
-### 步骤 6：更新队列
+### 步骤 6：更新运维文件
 
-在 `SCHEMA.md` 的"已处理论文"表中补充记录。
+- 在 `PROCESSED_PAPERS.md` 中补充论文记录
+- 更新 `INDEX.md`（新节点、新指标最佳值、论文计数）
+- 追加 `LOG.md` 条目（格式：`## [YYYY-MM-DD] ingest | description`）
+- 若新数据与已有声明矛盾，更新相关节点的 `contested_claims` 并在 LOG.md 记录 `contradiction`
+- 若存在相关综合页面（`synthesis/`），检查是否需要标注为"需要更新"
 
 ### 步骤 7：提交
 
 ```bash
-git add topics/<topic>/papers/{filename}.yaml SCHEMA.md
+git add topics/<topic>/papers/{filename}.yaml PROCESSED_PAPERS.md INDEX.md LOG.md
 git commit -m "add {author}{year}: {论文核心贡献一句话}"
 git push
 ```
@@ -291,5 +295,36 @@ git push
 
 ---
 
-*本文件由 Claude Code 生成，更新日期：2026-04-16*
+*本文件由 Claude Code 生成，更新日期：2026-04-20*
 *多专题架构升级：v4.0*
+*运维层引入：v4.2（Karpathy LLM Wiki 思想整合）*
+
+---
+
+## 人机协作原则（v4.2 新增，inspired by Karpathy LLM Wiki）
+
+> **核心理念**：人做策展与提问，AI 做簿记与维护。知识库的价值在于**持久复合知识**的增量构建，而非每次查询时重新发现。
+
+### 人类角色（Domain Expert）
+- **选择论文**（sourcing）：决定下一篇处理的论文
+- **确认节点边界**：判断"这是新实体还是参数变体？"
+- **审核争议性论断**：决定 `contested_claims` 的最终判定
+- **提出探索性问题**：如"为什么 17K 比 4K 的镀层损耗更低？"
+- **审核综合页面**：确认 `synthesis/` 目录下页面的准确性
+- **决定 Schema 方向**：Schema 升级由人类主导
+
+### AI 角色（Knowledge Engineer）
+- **Ingest**：YAML 节点提取与维护
+- **Cross-referencing**：跨文件交叉引用维护
+- **Bookkeeping**：INDEX.md / LOG.md / PROCESSED_PAPERS.md 自动更新
+- **Synthesis**：综合页面生成与更新
+- **Lint**：健康检查与修复建议
+- **Consistency check**：新论文与已有知识的矛盾检测
+- **Freshness tracking**：新论文入库后标记受影响的综合页面为"需要更新"
+
+### 运维文件导航
+- **全局导航索引**：[`INDEX.md`](INDEX.md)
+- **演化日志**：[`LOG.md`](LOG.md)
+- **已处理论文列表**：[`PROCESSED_PAPERS.md`](PROCESSED_PAPERS.md)
+- **综合分析页面**：`topics/<topic>/synthesis/`
+- **完整 Schema 规范**：[`SCHEMA.md`](SCHEMA.md)（第十节定义运维操作）
