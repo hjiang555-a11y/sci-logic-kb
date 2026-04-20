@@ -32,23 +32,28 @@
 
 ```
 sci-logic-kb/
-├── SCHEMA.md                     # 完整规范（节点、关系、专题体系、演进原则）
+├── SCHEMA.md                     # 完整规范（节点、关系、专题体系、运维操作）
 ├── README.md                     # 项目概览（本文件）
 ├── CLAUDE.md                     # AI 协作规范与最佳实践
-├── TOPICS.md                     # 专题架构概览（已合并至 SCHEMA.md，本文件为轻量索引）
+├── TOPICS.md                     # 专题架构概览
+├── INDEX.md                      # 全局知识导航索引（节点/指标/限制链快查）
+├── LOG.md                        # 知识库演化日志（时间线追踪变更历史）
+├── PROCESSED_PAPERS.md           # 已处理论文完整列表（从 SCHEMA.md §8 迁移）
 ├── scripts/                      # 自动化脚本
 │   ├── extract.py                # 从论文 PDF/文本提取结构化 YAML
 │   ├── validate.py               # 验证 YAML 符合 SCHEMA
 │   ├── sync_obsidian.py          # 同步到 Obsidian 知识库
 │   └── stats.py                  # 生成知识库统计报告
 ├── topics/                       # 专题目录
-│   ├── ultrastable-laser/        # 超稳激光（78篇论文，当前重点梳理对象）
-│   ├── optical-frequency-comb/   # 光学频率梳
-│   ├── frequency-standard/       # 频率标准（光学+微波）
+│   ├── ultrastable-laser/        # 超稳激光（78篇论文）
+│   │   ├── papers/               # YAML 知识节点（source of truth）
+│   │   └── synthesis/            # 跨论文综合分析页面（derived view）
+│   ├── optical-frequency-combs/  # 光学频率梳（61篇论文）
+│   ├── frequency-standards/      # 频率标准（光学+微波）
 │   ├── time-frequency-transfer/  # 时间频率传递
-│   └── shared/                   # 跨专题共享节点（原理、方法、指标）
+│   ├── timescales/               # 时间标尺与钟组
+│   └── shared/                   # 跨专题共享节点
 └── .github/workflows/            # GitHub Actions 自动化流水线
-    └── sync-obsidian.yml         # 定时同步到 Obsidian
 ```
 
 ## 快速开始
@@ -81,6 +86,23 @@ grep -r "ent.laser" topics/
 ### 3. 重新梳理现有论文（当前重点）
 
 我们正在对超稳激光专题（78篇论文）进行系统性重新梳理，重点强化 **问题‑解决方案‑结果** 推理链条。具体步骤参见 [REORGANIZATION_PLAN.md](REORGANIZATION_PLAN.md)。
+
+## 知识库运维（v4.2 新增）
+
+知识库采用三大运维操作，受 [Karpathy LLM Wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) 模式启发：
+
+| 操作 | 描述 | 输出 |
+|------|------|------|
+| **Ingest** | 摄入新论文，提取 YAML 节点 | YAML 文件 + INDEX/LOG 更新 |
+| **Query** | 跨论文综合分析，结果反哺回知识库 | `synthesis/` 综合页面 |
+| **Lint** | 健康检查（孤立节点、悬空引用、矛盾数值） | 修复建议 |
+
+**三层架构**：
+```
+Raw Sources (Zotero PDF) → YAML 节点图 (source of truth) → 运维层 (INDEX/LOG/synthesis)
+```
+
+详见 [SCHEMA.md §10](SCHEMA.md) 的完整运维操作规范。
 
 ## 维护与贡献
 
