@@ -6,6 +6,7 @@ meta:
   title: "Space-borne frequency comb metrology"
   authors: ["Lezius, M.", "Wilken, T.", "Deutsch, C.", "Giunta, M.", "Mandel, O.", "Thaller, A.", "Schkolnik, V.", "Schiemangk, M.", "Dinkelaker, A.", "Kohfeldt, A.", "Wicht, A.", "Krutzik, M.", "Peters, A.", "Hellmig, O.", "Duncker, H.", "Sengstock, K.", "Windpassinger, P.", "Lampmann, K.", "Hülsing, T.", "Hänsch, T. W.", "Holzwarth, R."]
   year: 2016
+  first_author: Lezius
   venue: "Optica"
   doi: "10.1364/OPTICA.3.001381"
   contribution_type: experimental_demonstration
@@ -119,6 +120,9 @@ principles:
       Temperature changes of the fiber oscillator shift cavity optical path
       length (f_rep) and intracavity dispersion (f_ceo), requiring active
       servo compensation with finite capture range.
+    conditions:
+      - "Fiber-based oscillator optical path length and intracavity dispersion are temperature-sensitive"
+      - "Ambient / payload thermal transients occur on timescales comparable to servo capture dynamics"
     source:
       claim: "Payload thermal management is required to keep servos in-lock across flight profile."
 

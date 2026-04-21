@@ -133,6 +133,9 @@ principles:
     preconditions:
       - "存在三阶或更高阶色散"
       - "背景孤子或泵浦场提供可转换能量"
+    conditions:
+      - "波导/微腔色散已被工程化到可满足色散波相位匹配"
+      - "泵浦与非线性强度足以形成稳定背景场或孤子态"
     source_claim: >
       "Dispersive waves are a result of a phase-matched process in the presence of
       dispersion that is of a higher order than the GVD that can result in the
@@ -161,6 +164,9 @@ principles:
     preconditions:
       - "泵浦激光红失谐通过腔谐振（对 DKS 族）"
       - "反常色散（对亮孤子族）或正常色散+模式耦合（对暗脉冲/platicon）"
+    conditions:
+      - "系统为连续波泵浦 Kerr 微谐振腔"
+      - "可调控制变量至少包含泵腔失谐、泵浦功率与腔损耗/色散"
     invalidated_when:
       - "热非线性引起失谐漂移超过稳态区域宽度而无补偿机制"
     source_claim: >
@@ -187,6 +193,9 @@ principles:
     preconditions:
       - "微腔在泵浦波长处为正常 GVD"
       - "存在空间模式交叉或偏振模式耦合提供调制不稳定种子"
+    conditions:
+      - "腔内存在双稳态工作区可支持 switching-wave 互锁"
+      - "模式耦合强度与失谐扫描路径允许暗脉冲态被捕获"
     source_claim: >
       "Under suitable conditions, dark or bright pulses can be excited with low noise,
       which can be interpreted as the interlocked switching waves... termed a
@@ -209,6 +218,9 @@ principles:
     preconditions:
       - "腔内存在可控的模式交叉相位扰动"
       - "孤子间通过色散波尾或声学/热效应相互锁定"
+    conditions:
+      - "腔内可同时容纳多个孤子且存在稳定格点结构"
+      - "热/功率/频率扫描路径可重复进入目标多孤子稳态"
     source_claim: >
       "the system can show rich and complex nonlinear behaviour, including...
       soliton crystals and breather instabilities."
@@ -232,6 +244,9 @@ principles:
     preconditions:
       - "拉曼线宽 Γ_R 窄于目标梳间距"
       - "g_R > g_K"
+    conditions:
+      - "材料平台存在显著受激拉曼散射且与 Kerr 增益直接竞争"
+      - "设计目标为 DKS / Kerr 参量梳而非 Raman 激光工作区"
     invalidated_when:
       - "材料 g_K ≥ g_R（如 CaF2）"
       - "拉曼线宽宽于孤子带宽（→ 仅导致红移孤子而非破坏）"
@@ -258,6 +273,9 @@ principles:
       本原理解释了为何芯片梳领域不收敛至单一材料——Si3N4 主导集成与 CMOS 路线；
       Silica microwedge 主导极高 Q 与低阈值；AlN/LiNbO3 主导片上自参考；
       Si/SiGe/Ge 主导中红外；AlGaAs 主导超低泵浦功率演示。
+    conditions:
+      - "应用需要在集成度、Q、非线性强度/波段与 χ(2) 能力之间做平台级取舍"
+      - "平台选择尚未被单一指标完全主导"
     source_claim: >
       "Critical properties of these chip-based materials are the strong nonlinearity
       and the high refractive index contrast between the core waveguide and the
