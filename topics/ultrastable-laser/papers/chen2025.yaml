@@ -106,7 +106,17 @@ relations:
     dominated_by: null
     verification_status: observed
     temporal_role: validates
-    breakthrough_paths: []
+    breakthrough_paths:
+      - direction: pri.crystalline_coating_low_brownian_noise
+        expected_gain: "当前 Si1 使用 IBS 介质镀层；替换为 AlGaAs 晶体镀层可将镀层热噪声进一步降低 ~10×，逼近热噪声理论极限 ~3×10⁻¹⁷"
+        status: proposed
+        source: {zotero_key: "N6HILT6B", claim: "fundamentally limited by the Brownian thermal noise"}
+        note: "pri.crystalline_coating_low_brownian_noise 定义于 cole2013.yaml；尚未在 Chen 2025 系统中演示"
+      - direction: pri.cryogenic_mechanical_q_enhancement
+        expected_gain: "sub-5 K 温区 Si 的 CTE→0 与机械 Q 提升，使间隔物/底物热噪声降至低于镀层贡献；本文已演示 ≈(4±1)×10⁻¹⁷"
+        status: demonstrated
+        source: {zotero_key: "N6HILT6B", claim: "10-cm-long silicon cavity at sub-5-K temperatures"}
+        note: "pri.cryogenic_mechanical_q_enhancement 定义于 kessler2012.yaml；sub-5K 在本文为新温区演示点"
     note: >
       跨文件引用 numata2004.yaml; CQQM 协议显示 Si1 腔固有性能已接近热噪声极限，
       但在连续冷却下低温机振动和 RAM 仍为当前主要技术限制（由 CONDITIONED-BY 表述）。

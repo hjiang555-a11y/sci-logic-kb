@@ -125,7 +125,21 @@ relations:
     regime: "RAM未被充分消除时"
     verification_status: observed
     temporal_role: proposes
-    breakthrough_paths: []
+    breakthrough_paths:
+      - direction: pri.brewster_angle_ram_suppression
+        expected_gain: "布儒斯特角 EOM 几何被动抑制 RAM（无需有源伺服），Tai 2016 演示 RAM < 10⁻⁶ 量级"
+        status: demonstrated
+        source: {zotero_key: "S5GJNVG8", claim: "RAM introduces frequency offset noise to the servo error signal"}
+        note: "pri.brewster_angle_ram_suppression 定义于 tai2016.yaml；几何方案，与本文伺服方案互补"
+      - direction: pri.ram_active_cancellation
+        expected_gain: "本文双通道伺服（同相 DC 电场 + 正交温度反馈）将 RAM 抑制至 1 ppm，对应 σ_y ≤ 1×10⁻¹⁶（35 mm 腔）"
+        status: demonstrated
+        source: {zotero_key: "S5GJNVG8", claim: "working in tandem, suppress both the in-phase and quadrature components of the RAM to the 1 ppm level"}
+      - direction: pri.ram_bias_field_cancellation
+        expected_gain: "Parke 2025 在 APE 铌酸锂波导 EOM 上用偏置电场闭环将 RAM 降至 10⁻⁷，等效 σ_y 贡献 3×10⁻¹⁹ @ 10–100 s"
+        status: demonstrated
+        source: {zotero_key: "U2LXSU62", claim: "actively cancel residual amplitude modulation (RAM) at the 10⁻⁷ level"}
+        note: "pri.ram_bias_field_cancellation 定义于 parke2025.yaml"
 
   - id: rel.Z14_02
     subject: meth.pdh_locking
@@ -156,6 +170,25 @@ relations:
       ent.fp_cavity_system 定义于 numata2004.yaml；ent.eom 定义于 drever1983.yaml（合并节点）。
       原 ent.waveguide_eom_z14 已合并到 ent.eom；此关系确认 EOM 作为 FP 腔系统子单元。
 
+  - id: rel.Z14_04a
+    subject: meth.dual_channel_ram_cancellation_z14
+    predicate: ENABLED-BY
+    object: pri.ram_active_cancellation
+    confidence: established
+    source: {zotero_key: "S5GJNVG8", claim: "active servo comprising in-phase and quadrature RAM corrections allows frequency stabilization comparable to fundamental thermal noise limit"}
+    conditions: "EOM 同相 DC 电场伺服 + 正交温度伺服并行"
+    temporal_role: proposes
+    note: "双通道 RAM 主动消除方法由 RAM 双通道主动消除原理使能"
+
+  - id: rel.Z14_04b
+    subject: meth.dual_channel_ram_cancellation_z14
+    predicate: IMPLEMENTS
+    object: meth.pdh_locking
+    confidence: established
+    source: {zotero_key: "S5GJNVG8", claim: "laser frequency stabilization"}
+    conditions: "作为 PDH 锁频链路中 EOM 的 RAM 抑制子方法"
+    note: "meth.pdh_locking 定义于 drever1983.yaml"
+
   - id: rel.Z14_05
     subject: met.ram_fractional_instability
     predicate: BOUNDED-BY
@@ -167,4 +200,18 @@ relations:
     dominated_by: pri.brownian_thermal_noise_fdt
     regime: "RAM充分抑制后，热噪声重新成为主导"
     verification_status: observed
-    breakthrough_paths: []
+    breakthrough_paths:
+      - direction: pri.ram_active_cancellation
+        expected_gain: "双通道主动消除使 σ_RAM ~ 1 ppm → σ_y(RAM) ≤ 1×10⁻¹⁶（35 mm 腔）；对 210 mm Si 腔 5 ppm 对应 8×10⁻¹⁷，已降至腔热噪声极限之下"
+        status: demonstrated
+        source: {zotero_key: "S5GJNVG8", claim: "active servo comprising in-phase and quadrature RAM corrections allows frequency stabilization comparable to fundamental thermal noise limit"}
+      - direction: pri.brewster_angle_ram_suppression
+        expected_gain: "被动几何方案无需伺服，适用于不便加偏置电场的 EOM 场景"
+        status: demonstrated
+        source: {zotero_key: "S5GJNVG8", claim: "σ_y = σ_RAM × κ/ν"}
+        note: "pri.brewster_angle_ram_suppression 定义于 tai2016.yaml"
+      - direction: pri.ram_bias_field_cancellation
+        expected_gain: "APE 波导 EOM + 偏置电场闭环将 σ_y(RAM) 进一步降至 3×10⁻¹⁹ @ 10–100 s（Parke 2025）"
+        status: demonstrated
+        source: {zotero_key: "U2LXSU62", claim: "RAM-induced fractional instability... 3×10⁻¹⁹ at 10–100 s"}
+        note: "pri.ram_bias_field_cancellation 定义于 parke2025.yaml"

@@ -137,3 +137,12 @@ relations:
     confidence: established
     source: {zotero_key: "4GT5VD54", claim: "lowest thermal noise power per unit optical length ever measured in a fiber"}
     note: "属于光纤干涉仪分支下的内容"
+
+  - id: rel.MB22_03
+    subject: met.thermal_noise_psd_hcf_mb22
+    predicate: OPERATIONALIZED-AS
+    object: meth.hcf_thermal_noise_characterization_mb22
+    confidence: established
+    source: {zotero_key: "4GT5VD54", claim: "our measurements are in good agreement with the adapted thermoconductive noise model"}
+    conditions: "抽真空至 0.15 atm 的反谐振空心光纤（NANF），30 kHz 频段"
+    note: "HCF 热噪声 PSD 通过抽真空压力控制与噪声谱测量方法表征（指标→方法挂接）"
