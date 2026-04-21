@@ -71,10 +71,14 @@ PRIMARY_METRIC_PATTERNS = (
 
 
 def _is_primary_sigma_y_metric(metric: dict) -> bool:
-    """Return True if a metric node is a σ_y primary-line metric."""
+    """Return True if a metric node is a σ_y primary-line metric.
+
+    An explicit `role` field is authoritative: if set to any value other than
+    'primary', heuristic inference is skipped.
+    """
     role = metric.get("role")
-    if isinstance(role, str) and role.strip().lower() == "primary":
-        return True
+    if isinstance(role, str) and role.strip():
+        return role.strip().lower() == "primary"
     mid = (metric.get("id") or "").lower()
     name = (metric.get("name") or "").lower()
     haystack = f"{mid} {name}"

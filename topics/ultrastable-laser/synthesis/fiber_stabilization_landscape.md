@@ -2,9 +2,31 @@
 
 > **综合页面（synthesis）**：跨论文综合视图，YAML 是 source of truth。
 >
-> **最后更新**：2026-04-21 · 🟡 初稿（draft，需要专家补充证据细节）
+> **最后更新**：2026-04-21 · 🟡 初稿（draft，需要专家补充证据细节） · Round 3 σ_y-first 增订
 > **涉及源文件**：jiang2010, kefelian2009, dong2015, li2019, michaudbelleau2021, michaudbelleau2022, belardi2015, ding2025, huang2023, huangjc2019, huangjc2019b, shi2021, shi2022, gao2025, grabielle2025, jeon2025, zuba2023
-> **关联综合页**：[stability_record_timeline.md](stability_record_timeline.md)
+> **关联综合页**：[stability_record_timeline.md](stability_record_timeline.md)（顶层导航）
+
+---
+
+## 🎯 本页对 σ_y(1 s) 主线的贡献
+
+> 本页**回答**：**"光纤分支在 σ_y 主线上的 SOTA、子 SOTA 节点，以及与 FP 分支的差距何在？"**
+
+| σ_y 台阶 | 年份 | 使能配置 | 代表文件 |
+|---------|------|---------|---------|
+| ~10⁻¹⁴ (首次) | 2009–2010 | 多模光纤延迟线 + AOM 外差 | Kéfélian 2009, Jiang 2010 |
+| ~7×10⁻¹⁵ | 2015 | 500 m SMF + 双 AOM + 温控 | Dong 2015 |
+| ~1.1×10⁻¹⁴ 长期 | 2023 | 全光纤 + 多层热屏蔽 | Huang 2023 |
+| **6.3×10⁻¹⁵** 🏆 | 2025 | 自零差光纤，4–200 Hz 热噪声极限 | [jeon2025](../papers/jeon2025.yaml) |
+
+**光纤子分支 SOTA**：6.3×10⁻¹⁵（Jeon 2025）。与 FP 腔分支 SOTA（2.5×10⁻¹⁷，Lee 2026）差距 **~250×**。
+
+**σ_y 主线瓶颈**：
+- `pri.fiber_thermal_noise_wanser`（光纤热相噪声）—— 空心光纤（HC-ARF / ULE-HCF）突破路径已部分 demonstrated（Michaud-Belleau 2022 / Ding 2025），expected_σy_gain 至 10⁻¹⁶ 级仍待实验验证
+- `pri.rayleigh_backscattering_noise` —— AOM 外差、空心光纤两条路径均已 demonstrated
+- `pri.fdl_locking_noise_nonlinearity` —— 仍是未闭环限制，见 [breakthrough_paths_matrix.md](breakthrough_paths_matrix.md) §三
+
+详见 [breakthrough_paths_matrix.md](breakthrough_paths_matrix.md) §C / §D 列的 `expected_σy_gain` 矩阵。
 
 ---
 

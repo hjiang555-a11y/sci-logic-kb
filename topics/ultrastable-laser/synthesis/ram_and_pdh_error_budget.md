@@ -2,9 +2,25 @@
 
 > **综合页面（synthesis）**：跨论文综合视图，YAML 是 source of truth。
 >
-> **最后更新**：2026-04-21 · 🟡 初稿（draft，需要专家补充证据细节）
+> **最后更新**：2026-04-21 · 🟡 初稿（draft，需要专家补充证据细节） · Round 3 σ_y-first 增订
 > **涉及源文件**：drever1983, zhang2014_ram, tai2016, tai2017, shaddock1999 (对比), 其余 PDH 实现论文
-> **关联综合页**：[stability_record_timeline.md](stability_record_timeline.md)
+> **关联综合页**：[stability_record_timeline.md](stability_record_timeline.md)（顶层导航）
+
+---
+
+## 🎯 本页对 σ_y(1 s) 主线的贡献
+
+> 本页**回答**：**"PDH 锁频路径上的 RAM 是如何转化为 σ_y 的、并被各条路径压制到什么程度？"**
+
+RAM → σ_y 的量化关系（Zhang 2014）：`σ_y(1s) ≈ κ · σ_RAM / ν`。典型数值：κ = 28 kHz/(m/s²) 级 EOM + σ_RAM = 1 ppm → σ_y ≈ 10⁻¹⁶。
+
+| 抑制路径 | 典型 σ_RAM | 典型 σ_y(1s) 贡献 | 代表论文 |
+|---------|-----------|------------------|---------|
+| Brewster 角 EOM（被动几何） | ppm 级 | ~10⁻¹⁶ | Tai 2016 |
+| Active RAM Servo（主动伺服） | sub-ppm | <10⁻¹⁶（Zhang 2014 验证） | Zhang 2014 |
+| 波导 EOM 低 RAM（🟡 待论文） | sub-ppm 预期 | indirect（需与上述路径复合） | 待摄入 |
+
+**σ_y 主线启示**：进入 10⁻¹⁶ 以下 σ_y 区间后，PDH-RAM 路径已不再是**主导限制**（热噪声接管），但仍是"技术噪声地板"——在 Si 低温腔 + AlGaAs 的极端系统中，必须保持 σ_RAM 抑制在 ppm 级以下，否则会掩盖热噪声改善。详见 [breakthrough_paths_matrix.md](breakthrough_paths_matrix.md) §B 列。
 
 ---
 

@@ -2,9 +2,21 @@
 
 > **综合页面（synthesis）**：跨论文综合视图，YAML 是 source of truth。
 >
-> **最后更新**：2026-04-21 · 🟡 初稿（draft，随 chain-gap 修复同步演进）
+> **最后更新**：2026-04-21 · 🟡 初稿（draft，随 chain-gap 修复同步演进） · Round 3 σ_y-first 增订（新增 §A.2 σ_y 增益矩阵）
 > **来源数据**：`python scripts/graph.py --format json` + `reports/chain_gap_ultrastable.md`
-> **关联综合页**：所有其他 synthesis 页面（本页是它们的"交叉索引"）
+> **关联综合页**：所有其他 synthesis 页面（本页是它们的"交叉索引"） · [stability_record_timeline.md](stability_record_timeline.md)（顶层导航）
+
+---
+
+## 🎯 本页对 σ_y(1 s) 主线的贡献
+
+> 本页**回答**：**"我当前 σ_y 落在某个量级，下一步哪条路径能把它往下推一档？"**
+
+本页是专题的"突破策略查询矩阵"。v4.4 Round 3 σ_y-first 改造后，每条 BOUNDED-BY 关系的 `breakthrough_paths[*]` 均建议补 `expected_σy_gain` 字段（见 [`templates/ultrastable_laser_template.yaml`](../../../templates/ultrastable_laser_template.yaml)），使矩阵可以**按 σ_y 影响定量排序**：
+- **§A.2 σ_y 增益矩阵** 是本次新增的核心表格，明确每条热噪声突破路径对 σ_y(1 s) 的已验证/预期贡献
+- **§B–E** 其他限制类型的每条路径也补充了 `expected_σy_gain` 列（按当前 YAML 已有数据或论文论断填写）
+
+所有 `expected_σy_gain` 数值均追溯到 YAML `breakthrough_paths[*].expected_σy_gain` 字段；未填写时标"indirect"或"—"，待 YAML 回写补齐。
 
 ---
 
@@ -25,6 +37,8 @@
 
 ### 限制 A · `pri.brownian_thermal_noise_fdt`（布朗热噪声）
 
+#### A.1 状态矩阵（路径 × 条件）
+
 | 路径 \ 条件 | ULE 室温 | Si 124 K | Si 17 K | Si 4 K | 长腔 (≥ 48 cm) |
 |-------------|---------|----------|---------|--------|---------------|
 | `pri.crystalline_coating_low_brownian_noise` | ✅ Cole 2013 | ✅ Matei 2017 / Kedar 2023 | ✅ Lee 2026 | 🟡 部分 | ✅ Marchio 2018 (大面积) |
@@ -33,37 +47,51 @@
 | `pri.optical_frequency_averaging` | ✅ Chen 2020 (双腔) | 🟡 | ✅ Lee 2026 (Si2-Si3) | — | — |
 | beam radius 增大（父原理字段） | ✅ 多数实现 | ✅ | ✅ | 🟡 | ✅ |
 
+#### A.2 σ_y 增益矩阵（`expected_σy_gain` 列，v4.4 新增）
+
+> 每条路径对 σ_y(τ=1 s) 主线的预期/已验证影响。来源为 YAML 中 `breakthrough_paths[*].expected_σy_gain` 字段；
+> 未填写时标 "—"，需后续 YAML 回写时补充。
+
+| 路径 | 基线（Before） | 已验证/预期 σ_y gain | 参考论文 |
+|------|---------------|---------------------|---------|
+| `pri.crystalline_coating_low_brownian_noise` @ Si 124 K | 4×10⁻¹⁷ (Matei 2017) | → 2.5×10⁻¹⁷ (4× 预期，Lee 2026 部分实现 ~1.6×) | matei2017.yaml |
+| `pri.crystalline_coating_low_brownian_noise` @ Si 17 K | 1×10⁻¹⁶ (dielectric预期) | → 2.5×10⁻¹⁷ (4× 改善 demonstrated) | lee2026.yaml |
+| `pri.cryogenic_mechanical_q_enhancement` @ 17K→4K | 2.5×10⁻¹⁷ (Lee 2026) | → ~10⁻¹⁸ 级（热噪声 ∝ √T，≈2× 改善，theoretical） | lee2026.yaml |
+| `pri.long_cavity_thermal_noise_reduction` @ 10cm→48cm | ~3×10⁻¹⁶ (10 cm ULE) | → <1×10⁻¹⁶ (σ_y ∝ 1/L，demonstrated) | hafner2015.yaml |
+| `pri.optical_frequency_averaging`（双腔平均） | 2.5×10⁻¹⁷ | → 1.8×10⁻¹⁷ (√2 提升，demonstrated) | lee2026.yaml |
+| beam radius 增大（父原理字段） | — | 线性抑制基底贡献，σ_y 改善非主导 | numata2004.yaml |
+
 ### 限制 B · `pri.ram_pdh_frequency_offset`（RAM 诱导频偏）
 
-| 路径 | 状态 | 代表 |
-|------|------|------|
-| `pri.brewster_angle_ram_suppression` | ✅ | Tai 2016 |
-| `meth.active_ram_servo` (待命名化) | ✅ | Zhang 2014 |
-| 波导 EOM 低 RAM | 🟡 | 待论文摄入 |
+| 路径 | 状态 | 代表 | expected_σy_gain |
+|------|------|------|------------------|
+| `pri.brewster_angle_ram_suppression` | ✅ | Tai 2016 | σ_RAM ~ppm → κ·σ_RAM/ν ≈ 10⁻¹⁶ 级抑制 |
+| `meth.active_ram_servo` (待命名化) | ✅ | Zhang 2014 | σ_y 从 >10⁻¹⁵ → ~10⁻¹⁶（消除 κ=28kHz/(m/s²) 的 RAM 偏置） |
+| 波导 EOM 低 RAM | 🟡 | 待论文摄入 | indirect |
 
 ### 限制 C · `pri.fiber_thermal_noise_wanser`（光纤热相噪声）
 
-| 路径 | 状态 | 代表 |
-|------|------|------|
-| 空心光纤（HC-ARF/ULE-HCF） | ✅ | Michaud-Belleau 2022 / Ding 2025 |
-| 双缠绕抵消 | ✅ | Huang JC 2019b |
-| 温控与隔离 | ✅ | Dong 2015 (工程基础) |
+| 路径 | 状态 | 代表 | expected_σy_gain |
+|------|------|------|------------------|
+| 空心光纤（HC-ARF/ULE-HCF） | ✅ | Michaud-Belleau 2022 / Ding 2025 | σ_y: ~10⁻¹⁴ → 10⁻¹⁵ 级（光纤分支 SOTA） |
+| 双缠绕抵消 | ✅ | Huang JC 2019b | σ_y 约 2–3× 改善 |
+| 温控与隔离 | ✅ | Dong 2015 (工程基础) | σ_y 温度敏感项抑制 |
 
 ### 限制 D · `pri.rayleigh_backscattering_noise`（Rayleigh 背散射）
 
-| 路径 | 状态 | 代表 |
-|------|------|------|
-| AOM 外差频移区分 | ✅ | Jiang 2010 |
-| 空心光纤低散射 | ✅ | Michaud-Belleau 2021 (`pri.hollow_core_fiber_low_backscattering`) |
-| 短延迟 (tradeoff Q) | 🟡 | Jiang 2010 讨论 |
+| 路径 | 状态 | 代表 | expected_σy_gain |
+|------|------|------|------------------|
+| AOM 外差频移区分 | ✅ | Jiang 2010 | 使 FDL σ_y 达 10⁻¹⁴ 成为可能 |
+| 空心光纤低散射 | ✅ | Michaud-Belleau 2021 | indirect（耦合至 C 路径 σ_y gain） |
+| 短延迟 (tradeoff Q) | 🟡 | Jiang 2010 讨论 | σ_y 可能恶化（Q ↓） |
 
 ### 限制 E · `pri.acceleration_induced_length_change`（隐式，通过 CONDITIONED-BY）
 
-| 路径 | 状态 | 代表 |
-|------|------|------|
-| 腔镜中心位移补偿 / 对称几何 | ✅ | Webster 2007 / 2011, Chen 2020, Sanjuan 2019 |
-| 外部隔振 | ✅ | Young 1999 起多数实验 |
-| 自平衡长腔安装 | ✅ | Häfner 2015 |
+| 路径 | 状态 | 代表 | expected_σy_gain |
+|------|------|------|------------------|
+| 腔镜中心位移补偿 / 对称几何 | ✅ | Webster 2007 / 2011, Chen 2020, Sanjuan 2019 | κ 从 kHz/g 级 → 0.1 kHz/g 级，σ_y 振动项抑制 >10× |
+| 外部隔振 | ✅ | Young 1999 起多数实验 | σ_y 低频项抑制 |
+| 自平衡长腔安装 | ✅ | Häfner 2015 | κ<2×10⁻¹⁰/g；σ_y <10⁻¹⁶ 全域 |
 
 ---
 
