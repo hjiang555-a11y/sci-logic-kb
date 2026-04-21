@@ -9,7 +9,7 @@
 
 ---
 
-## 📌 当前优先级：阶段 A（机制落地闭环）已完成 · 阶段 B（档位感知）已完成 · 阶段 C（breakthrough 档位真缺口清零）已完成 · 阶段 D-0（整治手册沉淀 P2/P3 AI 机械部分）已完成 — 专家审核后进入阶段 D
+## 📌 当前优先级：阶段 A（机制落地闭环）已完成 · 阶段 B（档位感知）已完成 · 阶段 C（breakthrough 档位真缺口清零）已完成 · 阶段 D-0（整治手册沉淀 P2/P3）已完成 · **P2 Tier 3 批准落地 + P3 尾巴收口已完成（2026-04-21 晚批次）** — 等待专家审核进入阶段 D
 
 > **v4.4 机制落地进度（2026-04-21）**：按"先形成工作机制再扩展规模"迭代计划：
 >
@@ -44,26 +44,32 @@
 - 已挂关系的 breakthrough-tier 节点：`cole2013/hafner2015/huang2023/kedar2023/michaudbelleau2022/numata2004/parke2025(×3) / robinson2019/thorpe2011(×2)/webster2008/yan2018/zhang2014_ram` 共 15 个
 - 75 条 evidence-tier orphan INFO 按 §9.1 保留
 
-#### ⏳ P2 · 跨文件复用度提升（8.8% → 15%+）— AI 分析已完成，待专家审核合并
+#### ✅ P2 · 跨文件复用度提升（Tier 3 审批落地完成，2026-04-21 晚批次）
 - 已产出 [`reports/shared_node_candidates.md`](reports/shared_node_candidates.md)（Tier 1 已共用 39 / Tier 2 跨专题 1 / Tier 3 疑似可合并 30）
 - 已新建 [`topics/shared/registry.md`](topics/shared/registry.md)——登记事实上已共用的 39 个 pri/meth 节点
-- **关键发现**：仅靠 pri/meth 整治无法单独达到 15% 目标，需要下一轮扩展到 `ent.*` / `met.*`
-- 专家待决动作：
-  - [ ] 逐条审核 Tier 3 的 10 个重点候选（保留+补关系 vs 合并删除）
-  - [ ] 授权是否在论文 YAML 中显式补 `SHARED-WITH pri.brownian_thermal_noise_fdt`（当前只有隐式引用）
-  - [ ] 启动 P2.2 `ent.*` / `met.*` 共用候选扫描（本轮未覆盖）
+- **P2.1 已执行**：5 条"❌ 保留+补关系" + 1 条 SBS COMPETES-WITH = 6 个新关系落地（详见 LOG 2026-04-21 restructure 条目）
+- **P2.2 已执行**：3 条"⚠️ 类似表述"合并（`dual_comb_multiheterodyne_mapping` / `self_referencing_f2f_framework` / `temporal_cavity_soliton_dks`），本地重复定义删除并重定向关系到 Tier 1 规范节点
+- **P2.3 AI 回报专家异议**：`pri.vibration_fopt_linear_coupling` (sinclair2014) 与 `pri.vibration_cavity_length_coupling` (lezius2016) 物理观测量实为不同（f_opt 相噪 vs f_rep/f_ceo 噪声），**未执行合并**，建议改为保留+补 `DERIVED-FROM` 关系——等专家裁决
+- **指标结果**：cross_file_reuse 76/862 → 76/859（8.8% 保持；pri/meth 整治已做到极限，达 15% 必须启动 P2.4 的 `ent.*` / `met.*` 扫描）
+- 剩余待决动作：
+  - [ ] 专家审核 P2.3 的 vibration 节点异议（合并 vs 保留）
+  - [ ] 专家授权是否在论文 YAML 中显式补 `SHARED-WITH pri.brownian_thermal_noise_fdt`（当前只有隐式 subject/object 引用）
+  - [ ] **P2.4 启动：`ent.*` / `met.*` 共用候选系统性扫描**（本轮未覆盖，是推进 15% 目标的关键一步）
 
-#### ⏳ P3 · Synthesis 页面数值复核（AI 机械复核完成，🟡 draft 保留待专家签字）
+#### ✅ P3 · Synthesis 页面数值复核（AI 机械部分完成，🟡 draft 仍待专家签字）
 - 每篇追加"📋 数值复核日志"章节，记录发现的问题与已修正内容
 - [x] `vibration_insensitivity_landscape.md` — 修正 Tao 2018（5×10⁻¹¹ → 0.8~2.5×10⁻¹⁰/g）和 Chen 2014（2×10⁻¹⁰ → 1.7e-11~3.9e-10 区间）两处数值错误；标注 Chen 2020 / Sanjuan 2019 YAML 缺 κ metric
-- [x] `ram_and_pdh_error_budget.md` — 修正 κ 单位错误（kHz/(m/s²) → kHz 腔线宽）；修正 Tai 2016 σ_y（~10⁻¹⁶ → <3×10⁻¹⁷）；新增 Parke 2025 breakthrough 路径（σ_y 3×10⁻¹⁹ @ 10–100s）
+- [x] `ram_and_pdh_error_budget.md` — 修正 κ 单位错误（kHz/(m/s²) → kHz 腔线宽）；修正 Tai 2016 σ_y（~10⁻¹⁶ → <3×10⁻¹⁷）；新增 Parke 2025 breakthrough 路径（σ_y 3×10⁻¹⁹ @ 10–100s）；「涉及源文件」已含 `parke2025`
 - [x] `fiber_stabilization_landscape.md` — 修正 Huang 2023 短期 σ_y（漏写 3.2×10⁻¹⁵ @ 1s）；修正 Jeon 2025 τ 标注（应为 16ms 非 1s）；修正 FP-vs-光纤差距（250× → ~10³× 时标对齐后）
 - [x] `cryogenic_roadmap.md` — 修正 124K 两行的 AlGaAs/IBS 错配；补入 Robinson 2019 (6.5×10⁻¹⁷ @ 4K) 与 Kedar 2023 (5.5/3.5×10⁻¹⁷ Si6/Si5) 的 mod σ_y 数据
 - [x] `spectral_hole_burning_track.md` — 无数值错误可改（定性表述为主），标注需专家深度参与
 - [x] `breakthrough_paths_matrix.md` — 追加"阶段 C 后刷新日志"，记录 Parke 2025 等单元格更新
-- 专家待决动作：
-  - [ ] 审核每页"📋 数值复核日志"下的"遗留动作"项（典型为 YAML 缺 metric 节点 / 时标呈现风格选择）
-  - [ ] 决定是否移除 🟡 draft 标记
+- **P3 AI 机械可闭环项均已完成**（ram_and_pdh 的 parke2025 源文件登记已在既有 PR 中落地）。遗留动作全部属于专家决策/风格选择：
+  - [ ] 专家确认 Kedar 2023 在 cryogenic_roadmap 单列行 vs 合并行（呈现）
+  - [ ] 专家确认 fiber_stabilization 的「子分支 SOTA 按时标分桶」呈现风格
+  - [ ] 专家决定 Chen 2020 / Sanjuan 2019 的 κ 是补入对应 YAML metrics 还是页面改为定性（这一决策也影响 Hafner 2020 κz 表格是否加列）
+  - [ ] 专家确认 ram_and_pdh §四 的 `ent.brewster_eom_t16` 是否入 `meth.pdh_locking` family
+  - [ ] 专家决定 6 篇 synthesis 的 🟡 draft 标记是否移除（批量签字 vs 按页逐一）
 
 ---
 

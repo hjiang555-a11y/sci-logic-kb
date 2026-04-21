@@ -8,7 +8,14 @@
 >
 > **生成方式**：由 `scripts/stats.py` 统计 `node_files[id] >= 2` 节点；未来考虑自动化产出（见 P2 报告 §6）
 >
-> **最后手工复核**：2026-04-21（Round 3 结束 + 阶段 C 后）
+> **最后手工复核**：2026-04-21（Round 3 结束 + 阶段 C 后 + **P2 Tier 3 合并落地**）
+>
+> **变更记录（2026-04-21 晚批次，P2 Tier 3 批准落地）**：
+> - 3 个局部重复节点已合并到 Tier 1 规范节点（本地定义删除，关系重定向）：
+>   - `pri.dual_comb_multiheterodyne_mapping` → `pri.dual_comb_multiheterodyne_detection`
+>   - `pri.self_referencing_f2f_framework` → `pri.self_referencing_f2f`
+>   - `pri.temporal_cavity_soliton_dks` → `pri.dissipative_kerr_soliton`
+> - 因此 Tier 1 清单中三条规范节点的「使用文件数」各 +1（`dual_comb_multiheterodyne_detection` 4→5、`self_referencing_f2f` 16→17、`dissipative_kerr_soliton` 5→6）——本表下次自动扫描时同步
 >
 > **关联文档**：
 > - 完整分析报告：[`../../reports/shared_node_candidates.md`](../../reports/shared_node_candidates.md)

@@ -67,4 +67,12 @@ relations:
     is_system_limit: true
     regime: fundamental
     note: "跨文件引用，ent.fiber_interferometer 定义于 jiang2010.yaml。热相位噪声机制通用。"
+
+  - id: rel.LIG02
+    subject: pri.fiber_thermal_phase_noise_giant_ifog
+    predicate: DERIVED-FROM
+    object: pri.brownian_thermal_noise_fdt
+    confidence: established
+    source: {zotero_key: "ELKHJ5GL", claim: "thermal phase noise originates from the fluctuation-dissipation theorem applied to the fiber refractive index"}
+    note: "光纤陀螺热相位噪声是 FDT 在长光纤介质上的特化形式；pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml（跨文件共用节点）"
     breakthrough_paths: []
