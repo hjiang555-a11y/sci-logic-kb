@@ -9,16 +9,16 @@
 
 ---
 
-## 📌 当前优先级：阶段 A（机制落地闭环）进行中 — A1+A2 已交付，等待专家裁决触发 A3/A4
+## 📌 当前优先级：阶段 A（机制落地闭环）已完成 — 进入阶段 B
 
 > **v4.4 机制落地进度（2026-04-21）**：按"先形成工作机制再扩展规模"迭代计划：
 >
 > - ✅ **阶段 A1**：档位分级操作规则书 → [`docs/CONTRIBUTION_TIER_RULES.md`](docs/CONTRIBUTION_TIER_RULES.md)（含"专题级偏好"索引节）
 > - ✅ **阶段 A2 · Round 1**：78 篇档位建议草案（🟥 16 / 🟧 17 / 🟦 3 / 🟩 42）
 > - ✅ **阶段 A2 · Round 2**：专家增补**专题原则"稳定度 > 线宽"**（见 [`topics/ultrastable-laser/_meta/scoping_principles.md`](topics/ultrastable-laser/_meta/scoping_principles.md)），清空 🟧 档——8 升 🟥 / 9 降 🟩。新分布 🟥 24 / 🟦 3 / 🟩 51 → [`reports/contribution_tier_draft_ultrastable.md`](reports/contribution_tier_draft_ultrastable.md)
-> - ⏳ **阶段 A3**：等待专家批量 accept / override（Round 2 表）
-> - ⏳ **阶段 A4**：AI 回写 78 篇 YAML 的 `meta.contribution_type`（机械改动，依赖 A3）
-> - ⏳ **阶段 B**：lint / stats 引入档位感知 → 重跑 chain-gap / orphan 报告（依赖 A4）
+> - ✅ **阶段 A3**：专家批量裁决完毕（76 accept + 2 override：`aasi2013` 🟥→🟩；`yan2018` 🟩→🟥），最终分布 🟥 24 / 🟦 3 / 🟩 51
+> - ✅ **阶段 A4**：78 篇 YAML 的 `meta.contribution_type` 已批量回写（lint 0 errors）
+> - ⏳ **阶段 B**：lint / stats 引入档位感知 → 重跑 chain-gap / orphan 报告（A4 已激活 lint 档位感知：新增 12 条 `σ_y primary-role metric missing` 告警——阶段 B 首批待处理清单）
 > - ⏳ **阶段 C**：针对真缺口做精准收敛（依赖 B）
 > - ⏳ **阶段 D**：沉淀专题整治手册，再启动其他专题扩展
 >

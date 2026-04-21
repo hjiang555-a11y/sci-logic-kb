@@ -7,6 +7,20 @@
 
 ---
 
+## [2026-04-21] restructure | 阶段 A3 专家裁决 + A4 批量回写 `meta.contribution_type`
+
+- **动机**：A2 Round 2 草案已交付 78 篇档位建议，专家在 `reports/contribution_tier_draft_ultrastable.md` 的 `决定` 列完成批量裁决，需要把最终档位固化到 YAML。
+- **A3 变更**：在报告末尾新增"Round 3 · 阶段 A3 专家裁决结果（2026-04-21 定稿）"小节，记录：
+  - 76 条 `ok`（accept AI 建议）
+  - 2 条 override：`aasi2013.yaml` 🟥→🟩（LIGO 压缩光属外部应用，非本专题稳定度突破）；`yan2018.yaml` 🟩→🟥（multi-cavity-stabilized 新机制分支）
+  - 最终分布：🟥 24 / 🟦 3 / 🟩 51（两条 override 自平衡，计数不变）
+- **A4 变更**：把 `meta.contribution_type` 批量写入 `topics/ultrastable-laser/papers/*.yaml` 全部 78 个文件（插入位置：`meta:` 块内 `source_type:` 之后，符合 SCHEMA §v4.4 模板）。
+- **TODO.md 同步**：阶段 A 状态改为"已完成，进入阶段 B"，A3/A4 打勾。
+- **验证**：`python scripts/lint.py` → 0 errors（从 168 warnings → 180 warnings，新增 12 条均为"breakthrough 论文缺 σ_y primary-role 指标"告警——这是 A4 回写后 lint 档位感知首次激活带来的真实信号，是阶段 B 的工作对象，而非本次回归）。
+- **影响**：阶段 A 机制落地闭环完成，为阶段 B（lint/stats 档位感知 + chain-gap/orphan 重估）解锁前置条件。
+
+---
+
 ## [2026-04-21] restructure | 说明文件架构精简 · Karpathy 策展/簿记分离
 
 - **动机**：对照知识库目标做评估，发现三大问题：(1) copilot-instructions.md 与 CLAUDE.md 大量重叠，AI agent 容易混读；(2) CLAUDE.md 末尾的"已有节点速查表"是手工维护的簿记，永远过时；(3) 阶段 A3 缺少清晰的专家操作触发器。

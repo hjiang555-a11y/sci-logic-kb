@@ -6,6 +6,7 @@
 meta:
   zotero_key: "694DPR5F"
   source_type: technical_paper
+  contribution_type: breakthrough
   reliability: high              # 经典奠基论文，结果已被广泛验证
   title: "Laser phase and frequency stabilization using an optical resonator"
   year: 1983
