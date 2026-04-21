@@ -18,23 +18,18 @@
 - **目标查询**：当前性能极限在哪？为什么卡在这？怎么突破？
 - **不是**向量知识库，**支持**逻辑推理和精确路径查询。
 
-### 文档同步原则（v3.1 新增）
+### 文档同步原则（v4.5 更新：简化同步触发器）
 
 > **`SCHEMA.md` 是唯一 Schema 真源（source of truth）。**
 
 - 若 `README.md`、`.github/copilot-instructions.md`、`scripts/` 下自动化脚本提示词、旧 YAML 文件头注释与本文件冲突，**一律以 `SCHEMA.md` 为准**
-- 更新 Schema 时，需同步检查：
-  1. `README.md`
-  2. `.github/copilot-instructions.md`
-  3. `scripts/` 下自动化脚本与提示词
-  4. GitHub Actions / Issue 模板中的版本文案
-  5. `TOPICS.md`
-  6. `topics/*/papers/*.yaml` 头部 `# Schema版本：...`
-  7. `INDEX.md`（专题统计、节点清单）
-  8. `LOG.md`（追加 `schema` 类型条目）
-  9. `PROCESSED_PAPERS.md`（论文统计）
-  10. `CLAUDE.md`（工作流步骤）
-- 若暂未同步完成，必须在相关文件中明确标注“以 `SCHEMA.md` 为准”
+- **更新 Schema 时，只需做两件事**（v4.5 起，取代原"同步 10 文件"要求）：
+  1. 更新 `SCHEMA.md`（加版本号，补变更摘要）
+  2. 重跑 `python scripts/build_index.py`（自动重建 INDEX.md / INDEX_metrics.md / INDEX_principles.md / docs/CURRENT_NODES_REFERENCE.md）
+- **行为规范文件（`CLAUDE.md` / `.github/copilot-instructions.md`）** 仅在行为规范**本身**变化时才改，不随 Schema 内容更新而手工同步
+- **专题级规则（`topics/<topic>/_meta/scoping_principles.md`）** 由专题维护者负责，不要求随全局 Schema 更新同步
+- 追加 `LOG.md` 条目（`## [YYYY-MM-DD] schema | description`）
+- 若暂未同步完成，必须在相关文件中明确标注"以 `SCHEMA.md` 为准"
 
 ### 智能单元原则
 

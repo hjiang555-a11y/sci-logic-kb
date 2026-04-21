@@ -15,6 +15,38 @@
 
 ---
 
+## ⚡ 阶段 A3 操作说明（专家必读）
+
+> 这是整条流水线的关键节点：A3 完成后，AI 可批量回写 78 篇 YAML 的 `meta.contribution_type`（阶段 A4），随后 lint/stats 的档位感知指标才能激活（阶段 B）。
+
+### 操作方式
+
+在下方逐篇清单的 **`决定`** 列填写：
+
+| 填写内容 | 含义 |
+|---------|------|
+| `accept` | 同意 AI 建议，不做更改 |
+| `override: breakthrough` | 降档或升档为 breakthrough |
+| `override: evidence` | 降档或升档为 evidence |
+| `override: framework` | 改判为 framework |
+| `skip` | 暂不处理（此论文推到下轮） |
+
+### 批量操作技巧
+
+- 如果对某个分组（如所有 🟩 evidence）没有异议，可在分组标题旁一次性写 `批量 accept`
+- 只需标注**有异议的条目**，其余视为 accept
+- 专家确认完毕后，AI 将执行阶段 A4（批量回写 YAML），无需手工逐一修改文件
+
+### 当前建议分布
+
+| 档位 | 数量 | 是否有异议？ |
+|------|-----:|-------------|
+| 🟥 breakthrough | 24 | 请逐条核查（见下方清单） |
+| 🟦 framework | 3 | 可直接 accept |
+| 🟩 evidence | 51 | 如无异议可批量 accept |
+
+---
+
 ## 新分布
 
 | 档位 | 数量 | 占比 | 说明 |
