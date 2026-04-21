@@ -1,6 +1,9 @@
 # Frequency Standards — Topic Architecture
 
-> This file describes the internal architecture of the frequency-standards topic.
+> **Status**: 🟡 `skeleton` — 当前仅 1 篇框架综述 + 10 节点，**暂不作为 Round 1–4 整治重点**。本架构定义顶层骨架，等待后续论文摄入填充 Level 2 实例与具体限制链。
+>
+> <!-- TODO: 待信息补全 —— 光钟实例、微波标准分支的代表论文、跨专题 CONDITIONED-BY 接口 -->
+>
 > Source of truth: SCHEMA.md §2 (频率标准专题内部架构)
 
 ## Architecture (v4.1)

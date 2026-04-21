@@ -1,5 +1,9 @@
 # Timescales & Clock Ensembles — Topic Architecture
 
+> **Status**: 🟡 `skeleton` — 当前仅 1 篇框架 + 6 节点，**暂不作为 Round 1–4 整治重点**。
+>
+> <!-- TODO: 待信息补全 —— UTC/TAI 算法综述、本地 UTC(k) 实现论文、钟组合成算法与 Kalman 滤波类论文 -->
+>
 > Source of truth: SCHEMA.md
 
 ## Architecture (planned)

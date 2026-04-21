@@ -28,6 +28,18 @@
 
 详细规范请参阅 [SCHEMA.md](SCHEMA.md)。
 
+## 三种使用场景
+
+知识库面向三类用户，每类用户有独立的入口文件：
+
+| 我是谁 | 我要做什么 | 从哪里开始 |
+|--------|-----------|-----------|
+| **使用者**（研究者 / 综述作者 / 学生） | 基于领域知识做查询、诊断、综述 | → [`docs/USAGE.md`](docs/USAGE.md)（三类典型查询 × 三跳路径） |
+| **建设者**（论文摄入、节点整治） | 贡献论文、维护节点与关系 | → [`CONTRIBUTING.md`](CONTRIBUTING.md)（Step 1–10 + AI 协作契约） |
+| **开发者**（脚本、CI、工具链） | 扩展自动化、改进 Schema | → [`SCHEMA.md`](SCHEMA.md) + [`scripts/`](scripts/) + [`.github/workflows/`](.github/workflows/) |
+
+> 首次打开仓库？推荐阅读顺序：[`INDEX.md`](INDEX.md) 顶部的"🧭 按研究问题导航"→ [`docs/USAGE.md`](docs/USAGE.md)。
+
 ## 目录结构
 
 ```
@@ -138,6 +150,18 @@ Raw Sources (Zotero PDF) → YAML 节点图 (source of truth) → 运维层 (IND
 2. **遵循 SCHEMA**：所有 YAML 文件必须符合 SCHEMA.md 规范
 3. **保持一致性**：新节点 ID 使用已有命名约定，避免冲突
 4. **添加推理链条**：每篇论文必须显式标注 `open_questions`、`breakthrough_paths`、`verification_status`
+
+完整流程（Step 1–10 摄入 checklist）见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+
+### AI‑Human 协作契约
+
+本知识库由领域专家（人类）与 AI agent（Copilot / Claude Code）协同建设。职责边界：
+
+- **专家必须拍板**：节点新建/删除、争议裁决（`contested_claims`）、Schema 演进、限制状态（`resolved`）变更、跨专题节点提升（到 `topics/shared/`）
+- **AI 可自主**：YAML 摄入 PR、INDEX 重建、synthesis 草稿、lint 机械修复、chain-gap 批量补（🟢 级别）
+- **灰色地带（AI 先出草稿，专家审定）**：节点粒度拆合、synthesis 结论细节、跨文件复用抽象
+
+详见 [CONTRIBUTING.md · "AI‑Human 协作契约"](CONTRIBUTING.md#ai-human-协作契约)。
 
 ### 同步到 Obsidian
 
