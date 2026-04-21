@@ -7,6 +7,24 @@
 
 ---
 
+## [2026-04-21] schema | v4.3 → v4.4 引入三档贡献分级
+
+- **动机**：专家反馈"逻辑推理机制没形成"，根因之一是 `contribution_type` 旧 enum 过粗（`technical` / `framework` 二分），导致 evidence 级论文被要求补完整限制链，催生大量假 chain-gap / orphan。
+- **变更**：
+  - SCHEMA.md §9.1 新增三档分级：`breakthrough` / `evidence` / `framework`，明确 evidence 档位最低门槛
+  - SCHEMA.md §9.2 新增向后兼容映射表（7 种历史值 → 3 档）
+  - SCHEMA.md §六 YAML 模板默认值 `technical` → `evidence`
+  - SCHEMA.md 头注释版本 v4.3 → v4.4
+  - README.md 新增"项目目标"主/次分层 + "论文贡献分级"小节
+  - CONTRIBUTING.md Step 2 切换到三档；新增"Evidence 档位最低入库门槛"小节
+  - .github/ISSUE_TEMPLATE/ingest-paper.yml dropdown 统一到三档
+  - scripts/process_paper.py 基础模板默认 `evidence`
+  - TODO.md 增加"v4.4 重估提示"，提醒 chain-gap / orphan 数字在分级生效后需重算
+- **不改动**：未批量迁移既有 YAML 文件的历史 `contribution_type` 值（按 §9.2 映射解读，触及时归一化）；未改 Schema 主干（ent/pri/meth/met/rel 保留）；未引入新 lint 规则。
+- **后续**：Step 2（regime / resolves / exposes 状态层）需专家先确认 regime 枚举范围，暂不实施。
+
+---
+
 ## [2026-04-20] lint | P1+P2 质量修复——消除全部 lint 错误 + 证据覆盖 100%
 
 - **Lint 错误归零**：198 errors → 0 errors（三类全部修复）
