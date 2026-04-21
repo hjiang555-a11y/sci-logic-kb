@@ -222,7 +222,7 @@ principles:
       把绝对频率定标从"瓶颈"降级为"非瓶颈"，复杂度转移到光谱仪稳定性与光路模态控制。
     conditions:
       - "目标应用为天文 RV 定标而非光钟级绝对频率计量"
-      - "本地 GPS-disciplined Rb / quartz reference can maintain ≤10^-11 class short-term traceability"
+      - "本地 GPS 驯服的 Rb / quartz 参考源可保持 ≤10^-11 量级短期溯源性"
     source_claim: >
       "the stability of the comb matches that of the GPS-disciplined clock with fractional uncertainty of
       2 × 10⁻¹¹ at 1 s, and <3 × 10⁻¹³ for time scales of one day and longer"
