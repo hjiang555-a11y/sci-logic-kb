@@ -1,0 +1,160 @@
+# Zhang 2015 — Er:fiber 腔内 EOM + PZT 双执行器长期稳频梳
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-21
+# Schema版本：v4.3
+# 专题：optical-frequency-combs
+# contribution_type: evidence（腔内 EOM 提高 f_rep 伺服带宽至 230 kHz 的工程复现）
+
+meta:
+  zotero_key: "R4M8SE4F"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: evidence
+  reliability: medium
+  title: "A long-term frequency-stabilized erbium-fiber-laser-based optical frequency comb with an intra-cavity electro-optic modulator"
+  year: 2015
+  first_author: Zhang
+  journal: "Chinese Physics B"
+  volume: 24
+  issue: 6
+  pages: "064209"
+  doi: "10.1088/1674-1056/24/6/064209"
+  note: >
+    [技术论文] 国家授时中心/中科院合作。209 MHz Er:fiber NPE 锁模梳，
+    腔内 LiNbO₃ EOM + 2 cm 长程 PZT 双执行器锁 f_rep：
+    (1) EOM 高带宽通道实现 ~230 kHz f_rep 伺服带宽（远超纯 PZT ~kHz）；
+    (2) 闭环 3 kHz 时的长期稳定，支持小时量级连续运行；
+    (3) common-path f-2f 干涉仪测 f_CEO，SNR 40 dB @ 3 MHz RBW；
+    (4) 锁定后 f_CEO 1 s 偏差 0.6 mHz。
+    EOM-PZT 双执行器已是彼时成熟拓扑（参见 Hudson 2005、kuse2015），本工作是在
+    国产 Er:fiber 平台上的长期运行工程复现，故归 evidence。
+    对齐 v2 子域主线：A1-Robust（长期稳定）、A1-Noise（伺服带宽）。
+
+entities:
+  - id: ent.er_fiber_intracavity_eom_comb_z15
+    name: "Er:fiber 腔内 EOM 稳频梳（Zhang 2015）"
+    aliases:
+      - Intra-cavity EOM Er:fiber comb (Zhang 2015)
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      209 MHz Er:fiber NPE 锁模激光器 + 腔内 LiNbO₃ 电光调制器（EOM）+
+      2 cm 长程 PZT 构成 f_rep 双执行器伺服环；
+      common-path f-2f 干涉仪探测 f_CEO；HNLF 展宽。
+      EOM 提供高频补偿（服务带宽 ~230 kHz），PZT 提供低频大行程补偿，组合后可长期连续锁定。
+    key_parameters:
+      gain_medium: "Er-doped 光纤（39 cm Liekki ER110-4/125）"
+      repetition_rate: "~209 MHz"
+      frep_actuators: "腔内 LiNbO₃ EOM（高频）+ 2 cm PZT 拉伸器（低频）"
+      frep_servo_bandwidth: "~230 kHz（EOM 通道）, 闭环 3 kHz（综合）"
+      fceo_detection: "common-path f-2f 干涉仪，SNR 40 dB @ 3 MHz RBW"
+      fceo_1s_deviation: "0.6 mHz @ 1 s"
+    note: "Level 2 实例节点，PART-OF ent.er_fiber_frequency_comb（droste2016.yaml）"
+
+principles:
+  - id: pri.intracavity_eom_frep_wideband_feedback
+    name: "光纤腔内 EOM 实现宽带 f_rep 伺服原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      在 Er:fiber 腔内插入 LiNbO₃ EOM，通过电致折射率 → 腔程序长度变化
+      高速调制 f_rep。EOM 带宽不受压电滞后与声波延迟限制，可实现 >100 kHz
+      f_rep 伺服带宽；代价是腔内额外损耗需与增益动态平衡。
+    domain: "光纤梳伺服；晶体电光效应"
+    conditions: "EOM 插入损耗可控；EOM 波前畸变不破坏锁模"
+    invalidated_when:
+      - "EOM 损耗过高使激光无法自启锁模"
+      - "驱动电压非线性致 f_rep 调谐出现跳模"
+
+methods:
+  - id: meth.eom_pzt_dual_actuator_frep_lock_z15
+    name: "腔内 EOM + 腔内长程 PZT 双执行器 f_rep 锁定方法（Zhang 2015）"
+    status: demonstrated
+    applies_to: ent.er_fiber_intracavity_eom_comb_z15
+    steps_summary: >
+      1. Er:fiber NPE 锁模 209 MHz 振荡器 + 腔内 EOM + 2 cm PZT；
+      2. 与 CW 参考光拍频测 f_rep 波动；
+      3. 伺服高频支路驱动 EOM（带宽 ~230 kHz）；
+      4. 低频支路驱动 PZT（带宽 ~kHz，行程大）；
+      5. 合成闭环 3 kHz 锁定带宽，支持小时量级运行。
+    required_hardware:
+      - ent.er_fiber_intracavity_eom_comb_z15
+    advantages:
+      - "伺服带宽比纯 PZT 提升两个数量级"
+      - "PZT 大行程保证长期温漂可跟踪"
+    disadvantages:
+      - "EOM 腔内损耗需精细调谐"
+      - "两执行器交叉耦合需前馈补偿"
+
+metrics:
+  - id: met.frep_servo_bandwidth_z15
+    name: "f_rep 伺服带宽（EOM 通道）"
+    unit: "Hz"
+    description: "腔内 EOM 伺服通道的 -3 dB 环路带宽"
+    demonstrated_value:
+      value: "~230 kHz（EOM），闭环综合 3 kHz"
+      conditions: "Zhang 2015 拓扑，209 MHz Er:fiber"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "R4M8SE4F", claim: "fast servo of the repetition rate (~230 kHz) by using an intra-cavity EOM"}
+
+  - id: met.fceo_1s_deviation_z15
+    name: "锁定后 f_CEO 1 s 偏差"
+    unit: "Hz"
+    description: "自由运转或锁定后 f_CEO 在 1 s 积分的频率偏差"
+    demonstrated_value:
+      value: "0.6 mHz @ 1 s 积分"
+      conditions: "双 DOF 锁定 + common-path f-2f"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "R4M8SE4F", claim: "Stabilized carrier envelope offset frequency exhibits a deviation of 0.6 mHz in an integration time of 1 s"}
+
+relations:
+  - id: rel.Z15_01
+    subject: ent.er_fiber_intracavity_eom_comb_z15
+    predicate: PART-OF
+    object: ent.er_fiber_frequency_comb
+    confidence: established
+    source: {zotero_key: "R4M8SE4F", claim: "erbium-fiber-laser-based optical frequency comb with an intra-cavity electro-optic modulator"}
+    note: "跨文件引用 ent.er_fiber_frequency_comb（droste2016.yaml）"
+
+  - id: rel.Z15_02
+    subject: ent.er_fiber_intracavity_eom_comb_z15
+    predicate: CHARACTERIZED-BY
+    object: met.frep_servo_bandwidth_z15
+    confidence: established
+    source: {zotero_key: "R4M8SE4F", claim: "fast servo of the repetition rate (~230 kHz)"}
+
+  - id: rel.Z15_03
+    subject: ent.er_fiber_intracavity_eom_comb_z15
+    predicate: CHARACTERIZED-BY
+    object: met.fceo_1s_deviation_z15
+    confidence: established
+    source: {zotero_key: "R4M8SE4F", claim: "deviation of 0.6 mHz in an integration time of 1 s"}
+
+  - id: rel.Z15_04
+    subject: meth.eom_pzt_dual_actuator_frep_lock_z15
+    predicate: OPERATIONALIZED-AS
+    object: ent.er_fiber_intracavity_eom_comb_z15
+    confidence: established
+    source: {zotero_key: "R4M8SE4F", claim: "an intra-cavity EOM and a long-range PZT are used as the feedback terminals simultaneously"}
+
+  - id: rel.Z15_05
+    subject: meth.eom_pzt_dual_actuator_frep_lock_z15
+    predicate: ENABLED-BY
+    object: pri.intracavity_eom_frep_wideband_feedback
+    confidence: established
+    source: {zotero_key: "R4M8SE4F", claim: "high-bandwidth servo in a frequency range of 3 kHz"}
+
+  - id: rel.Z15_06
+    subject: met.frep_servo_bandwidth_z15
+    predicate: BOUNDED-BY
+    object: pri.gain_lifetime_servo_bandwidth_limit
+    confidence: established
+    source: {zotero_key: "R4M8SE4F", claim: "Traditionally, fr is stabilized through ... limited by pump-power actuator bandwidth"}
+    note: "跨文件引用 pri.gain_lifetime_servo_bandwidth_limit（kuse2015.yaml）"
+    breakthrough_paths:
+      - direction: pri.intracavity_eom_frep_wideband_feedback
+        expected_gain: "腔内 EOM 绕过增益寿命限制"
+        status: demonstrated
+        source: {zotero_key: "R4M8SE4F"}

@@ -1,0 +1,179 @@
+# Cai 2020 — 紧凑全 PM Er:fiber 梳，单光纤执行器 + 微型 GRIN f-2f
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-21
+# Schema版本：v4.3
+# 专题：optical-frequency-combs
+# contribution_type: evidence（工程化紧凑全 PM Er 梳，H-maser 1 s Allan 330 μHz）
+
+meta:
+  zotero_key: "LBSZCU7P"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Compact, High-Performance All-Polarization-Maintaining Er:Fiber Frequency Comb With Single Fiber Actuator"
+  year: 2020
+  first_author: Cai
+  journal: "IEEE Photonics Journal"
+  volume: 12
+  issue: 4
+  pages: "7201011"
+  doi: "10.1109/JPHOT.2020.3010558"
+  note: >
+    [技术论文 / A1-Robust 工程化] 中科院西光所。200 MHz 全 PM Er:fiber 梳
+    面向场外应用的工程化集成：
+    (1) 基于 GRIN 光纤耦合透镜自研微型 f-2f 干涉仪（替代四片非球面镜方案），
+        f_CEO SNR 40 dB；
+    (2) 自研"光纤执行器"替代腔内 EOM + 外 PZT 双执行器，
+        大调谐范围 + ~1 kHz 控制带宽；
+    (3) 参考 H-maser 得 f_rep 1 s Allan 330 μHz，残余积分时延抖动 418 fs（3 Hz–1 MHz）；
+    (4) 去除温度主动控制简化结构。
+    在"全 PM + 紧凑 + 单执行器"组合上刷新工程化指标，但未刷新本子域的 A1-Noise 或 A1-Rep 纪录，
+    故归 evidence。对齐 v2 子域主线：A1-Robust（紧凑 + 场外）。
+
+entities:
+  - id: ent.compact_pm_er_comb_cai20
+    name: "紧凑全 PM Er:fiber 单执行器梳（Cai 2020）"
+    aliases:
+      - Compact all-PM Er:fiber comb (Cai 2020)
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      200 MHz 全 PM Er:fiber 锁模激光器；130 cm SMF 压缩 + 62.5 cm HNLF 展宽；
+      GRIN 光纤耦合透镜构成的微型共线 f-2f 干涉仪（SNR 40 dB）；
+      自研单光纤机械执行器（大调谐 + ~1 kHz 带宽）直接驱动光纤腔长。
+      参考 H-maser 得 f_rep 1 s Allan 330 μHz、残余时延抖动 418 fs @ 3 Hz–1 MHz。
+    key_parameters:
+      gain_medium: "Er:fiber（62.5 cm HNLF 展宽）"
+      cavity_type: "全 PM"
+      repetition_rate: "~200 MHz"
+      center_wavelength: "1560 nm"
+      frep_actuator: "单光纤机械执行器（自研）"
+      frep_actuator_bandwidth: "~1 kHz"
+      fceo_snr: "40 dB"
+      f2f_interferometer: "GRIN 光纤耦合透镜微型化（替代非球面镜组）"
+      frep_1s_allan: "330 μHz @ 1 s（vs H-maser）"
+      residual_timing_jitter: "418 fs（3 Hz–1 MHz 积分 vs H-maser）"
+    note: "Level 2 实例节点，PART-OF ent.er_fiber_frequency_comb（droste2016.yaml）"
+
+principles:
+  - id: pri.grin_lens_compact_f2f
+    name: "GRIN 透镜微型化 f-2f 干涉仪原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      用梯度折射率（GRIN）光纤耦合透镜替代传统非球面透镜组构建共线 f-2f 干涉仪，
+      可将干涉仪体积从 100 cm³ 级压缩至 cm³ 量级，同时维持 f_CEO 探测 SNR（40 dB）。
+      GRIN 镜头全光纤对接消除空气-玻璃面对准/温漂。
+    domain: "光纤梳集成光学"
+    conditions: "1550 nm 波段；GRIN 规格与光纤 MFD 匹配"
+    invalidated_when:
+      - "GRIN 长度容差失控导致 f_CEO 相位噪声上涨"
+
+  - id: pri.single_fiber_mechanical_actuator
+    name: "单光纤机械执行器大范围调谐原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      以光纤段为机械致动元件（拉伸/形变）构成 f_rep 的唯一执行器，
+      兼具大调谐范围（可吸收环境温漂，无需主动温控）与 ~1 kHz 带宽。
+      与传统"EOM 高频 + PZT 低频"双执行器拓扑相比省去交叉耦合补偿。
+    domain: "光纤梳伺服工程"
+    conditions: "光纤机械 Q/谐振频率不限制目标带宽"
+    invalidated_when:
+      - "执行器低频下仍欠过行程导致锁定失效"
+
+methods:
+  - id: meth.compact_single_actuator_er_comb_lock
+    name: "单光纤执行器 + GRIN f-2f 的紧凑全 PM Er 梳锁定方法"
+    status: demonstrated
+    applies_to: ent.compact_pm_er_comb_cai20
+    steps_summary: >
+      1. 全 PM Er:fiber 振荡器，200 MHz；
+      2. SMF 压缩至 63 fs + HNLF 展宽；
+      3. GRIN 光纤耦合透镜微型共线 f-2f 干涉仪测 f_CEO；
+      4. 自研单光纤执行器驱动腔长 → f_rep 锁至 H-maser 溯源 RF；
+      5. f_CEO 锁至 RF；
+      6. 计数 1 s Allan 330 μHz、积分时延抖动 418 fs。
+    required_hardware:
+      - ent.compact_pm_er_comb_cai20
+    advantages:
+      - "体积 / 功耗显著降低，适合场外部署"
+      - "省去主动温控简化电子链"
+    disadvantages:
+      - "伺服带宽 ~1 kHz 较常规 EOM 方案低"
+
+metrics:
+  - id: met.frep_allan_vs_hmaser_c20
+    name: "f_rep Allan 偏差 @ 1 s（vs H-maser）"
+    unit: "Hz"
+    description: "锁定后 f_rep 1 s 积分 Allan 偏差（与氢钟比对）"
+    demonstrated_value:
+      value: "330 μHz @ 1 s"
+      conditions: "参考 H-maser RF；f_rep = 200 MHz"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "LBSZCU7P", claim: "a robust repetition rate locking with an Allan deviation of 330 μHz at a gate time of 1 s"}
+
+  - id: met.residual_integrated_timing_jitter_c20
+    name: "残余积分时延抖动（3 Hz–1 MHz，vs H-maser）"
+    unit: "s"
+    description: "锁定后与 H-maser 比对的脉冲到达时间积分标准差"
+    demonstrated_value:
+      value: "418 fs（3 Hz–1 MHz 积分）"
+      conditions: "紧凑全 PM Er 梳 vs H-maser"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "LBSZCU7P", claim: "residual integrated timing jitter of 418 fs [3 Hz to 1 MHz] when referenced to a hydrogen maser"}
+
+relations:
+  - id: rel.Cai20_01
+    subject: ent.compact_pm_er_comb_cai20
+    predicate: PART-OF
+    object: ent.er_fiber_frequency_comb
+    confidence: established
+    source: {zotero_key: "LBSZCU7P", claim: "All-Polarization-Maintaining Er:Fiber Frequency Comb With Single Fiber Actuator"}
+    note: "跨文件引用 ent.er_fiber_frequency_comb（droste2016.yaml）"
+
+  - id: rel.Cai20_02
+    subject: ent.compact_pm_er_comb_cai20
+    predicate: CHARACTERIZED-BY
+    object: met.frep_allan_vs_hmaser_c20
+    confidence: established
+    source: {zotero_key: "LBSZCU7P", claim: "Allan deviation of 330 μHz at a gate time of 1 s"}
+
+  - id: rel.Cai20_03
+    subject: ent.compact_pm_er_comb_cai20
+    predicate: CHARACTERIZED-BY
+    object: met.residual_integrated_timing_jitter_c20
+    confidence: established
+    source: {zotero_key: "LBSZCU7P", claim: "residual integrated timing jitter of 418 fs [3 Hz to 1 MHz]"}
+
+  - id: rel.Cai20_04
+    subject: meth.compact_single_actuator_er_comb_lock
+    predicate: OPERATIONALIZED-AS
+    object: ent.compact_pm_er_comb_cai20
+    confidence: established
+    source: {zotero_key: "LBSZCU7P", claim: "compact, high-performance all-PM Er:fiber frequency comb with single fiber actuator"}
+
+  - id: rel.Cai20_05
+    subject: meth.compact_single_actuator_er_comb_lock
+    predicate: ENABLED-BY
+    object: pri.grin_lens_compact_f2f
+    confidence: established
+    source: {zotero_key: "LBSZCU7P", claim: "f-to-2f interferometer based on gradient index (GRIN) lenses"}
+
+  - id: rel.Cai20_06
+    subject: meth.compact_single_actuator_er_comb_lock
+    predicate: ENABLED-BY
+    object: pri.single_fiber_mechanical_actuator
+    confidence: established
+    source: {zotero_key: "LBSZCU7P", claim: "fiber actuator with a large tuning range and a high control bandwidth"}
+
+  - id: rel.Cai20_07
+    subject: meth.compact_single_actuator_er_comb_lock
+    predicate: ENABLED-BY
+    object: pri.self_referencing_f2f
+    confidence: established
+    source: {zotero_key: "LBSZCU7P", claim: "collinear f-to-2f interferometer ... detect the carrier envelope offset (CEO) signal"}
+    note: "跨文件引用 pri.self_referencing_f2f（giunta2019.yaml）"

@@ -7,6 +7,28 @@
 
 ---
 
+## [2026-04-21] ingest | optical-frequency-combs Batch 1 · 飞秒锁模激光器技术平台主线（10 篇）
+
+用户指示光频梳 30 篇分 3 批摄入；Batch 1 聚焦 A1 技术平台（重频、相噪、工程化子域）。同步升级 `_meta/scoping_principles.md` v1 → v2，将子域主线指标从"🟡 待专家确认"升级为 v2 正式 9 条主线（A1-Rep / A1-Noise / A1-Robust / A2-DKS / A3-Astro / B-Spec / B-FreqSyn / B-DCS / B-MIR），明确"光频梳不存在单一主线指标，各子域独立判档"。
+
+- **Batch 1 论文**（10 篇，全部新增）：
+  - `washburn2004.yaml`（TP9NSD4F，**breakthrough**）：首台 Er:fiber 近红外全锁梳；定义 `ent.er_fiber_comb_washburn04`、`pri.dispersion_flattened_hnlf_octave_broadening`、`meth.dual_pll_frep_fceo_rf_reference`。
+  - `newbury2005.yaml`（NHJ84W8G，**framework**）：光纤梳扰动响应理论；定义 `pri.fiber_comb_perturbative_response_theory`、`pri.fiber_comb_mimo_feedback_topology`。
+  - `bartels2009.yaml`（RDBWYLKJ，**breakthrough**）：首台 10 GHz 自参考 Ti:sapph 梳；定义 `ent.ti_sapph_10ghz_comb_bartels09`、`pri.high_frep_bandwidth_power_tradeoff`（跨文件共用的 A1-Rep 核心原理）。
+  - `meyer2013.yaml`（T6AF6HJF，**evidence**）：Yb:KYW 光学稳频梳 + 10 GHz 微波生成；1 Hz @ -99 dBc/Hz，Allan <2.6e-15 @ 1 s。
+  - `wang2014.yaml`（VATLBIAD，**evidence**）：500 MHz Yb:ring 光纤梳振荡器直出（无放大）；in-loop 4.46e-13/√τ。
+  - `zhang2015.yaml`（R4M8SE4F，**evidence**）：Er:fiber 腔内 EOM + PZT 双执行器；定义 `pri.intracavity_eom_frep_wideband_feedback`、`meth.eom_pzt_dual_actuator_frep_lock_z15`。
+  - `kuse2016.yaml`（QXC7FSMC，**breakthrough**）：全 PM Er NALM 梳，40 as 积分时延抖动（子域当时纪录）；与 `kuse2015`（3RT4U4TV）通过 `COMPETES-WITH` 关系相连（不同低噪声路径）。
+  - `li2017b.yaml`（RWPYUXTB，**breakthrough**）：首次全 PM Yb NALM 梳 f-2f 自参考；in-loop 10⁻¹⁹ @ 1 s（注：in-loop 严格度低于 out-of-loop）。
+  - `ma2018.yaml`（P4TCLWW2，**breakthrough**）：首次 750 MHz Yb:fiber 梳紧锁（<1 rad @ 0.1 Hz–10 MHz）；定义 `pri.high_frep_yb_tight_lock_challenges`。
+  - `cai2020.yaml`（LBSZCU7P，**evidence**）：紧凑全 PM Er 梳 + 单光纤执行器 + GRIN 微型 f-2f；330 μHz Allan @ 1 s vs H-maser。
+- **scoping_principles.md v1 → v2**：9 条子域主线正式定义；明确光谱展宽类档位判据为"转移 PSD + 转换效率"，高重频类为"基频 f_rep + self-ref"。
+- **节点复用**：大量跨文件引用 `ent.optical_frequency_comb`（giunta2019）、`ent.er_fiber_frequency_comb`（droste2016）、`pri.self_referencing_f2f`（giunta2019）、`pri.comb_equation`、`pri.supercontinuum_octave_spanning`、`pri.gain_lifetime_servo_bandwidth_limit`（kuse2015）、`pri.figure9_nalm_pm_self_starting`。无节点重复定义。
+- **lint 结果**：0 error（与 Batch 1 前持平），3 warning（pre-existing），新增 reasoning-chain-gap 2 条（均 tier=framework/evidence 允许）。
+- **Batch 2/3 待续**：计量链路子域（10 篇）+ 新平台与光谱应用（10 篇）在后续会话追加。
+
+---
+
 ## [2026-04-21] restructure | 阶段 D-0 延伸：P2 Tier 3 批准落地 + P3 尾巴收口
 
 基于专家批示"同意之前 AI 归类判断，类似表述合并"，执行 `reports/shared_node_candidates.md` §4 的 10 条重点候选。

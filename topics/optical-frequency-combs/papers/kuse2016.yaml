@@ -1,0 +1,151 @@
+# Kuse 2016 — 全保偏 Er:fiber NALM 锁模梳，40 as 时延抖动
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-21
+# Schema版本：v4.3
+# 专题：optical-frequency-combs
+# contribution_type: breakthrough（Er:fiber 梳当时最低 40 as 积分时延抖动，打破 NPR 路径限制）
+
+meta:
+  zotero_key: "QXC7FSMC"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: breakthrough
+  reliability: high
+  title: "All polarization-maintaining Er fiber-based optical frequency combs with nonlinear amplifying loop mirror"
+  year: 2016
+  first_author: Kuse
+  journal: "Optics Express"
+  volume: 24
+  issue: 3
+  pages: "3095-3102"
+  doi: "10.1364/OE.24.003095"
+  note: >
+    [技术论文 / A1-Noise 子域纪录] IMRA America（Fermann）+ Colorado（Schibli）。
+    全保偏 Er:fiber 锁模激光器基于**非线性放大环镜（NALM）**锁模，取代 NPR：
+    (1) f_CEO 积分相位噪声 <0.2 rad；
+    (2) 10 kHz–10 MHz 积分时延抖动 40 as —— 当时 Er:fiber 梳纪录；
+    (3) NALM 锁模兼容全 PM 光路，抗振动/温度、自启易，优于 NPR 的全 PM 难题。
+    相比 Kuse 2015（OE, 石墨烯 EOM，zotero_key 3RT4U4TV）的同作者工作，本篇重点
+    从"f_CEO 相噪突破"转向"**时延抖动**刷新纪录"，是不同的主要贡献——因此作为独立节点。
+    对齐 v2 子域主线：A1-Noise（时延抖动 40 as 纪录）、A1-Robust（全 PM + 自启 NALM）。
+
+entities:
+  - id: ent.all_pm_er_nalm_comb_k16
+    name: "全保偏 Er:fiber NALM 梳（Kuse 2016）"
+    aliases:
+      - All-PM Er NALM comb 2016
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      全保偏（all-PM）Er:fiber 光纤激光器，采用非线性放大环镜（NALM）实现被动锁模；
+      f-2f 自参考锁 f_CEO（积分相噪 <0.2 rad）；高带宽光电探测脉冲序列测时延抖动。
+      全 PM 设计使系统对环境扰动不敏感，自启动稳定性远胜 NPR 锁模梳。
+    key_parameters:
+      cavity_type: "全保偏线性腔 + NALM 锁模"
+      gain_medium: "Er:fiber"
+      fceo_integrated_phase_noise: "<0.2 rad"
+      timing_jitter_integrated: "40 as（10 kHz–10 MHz）"
+      mode_locking_mechanism: "NALM（非线性放大环镜）"
+      self_starting: "是"
+    note: "Level 2 实例节点，PART-OF ent.er_fiber_frequency_comb（droste2016.yaml）"
+
+methods:
+  - id: meth.nalm_all_pm_er_comb_stabilization
+    name: "全 PM NALM Er 梳 f_CEO + 时延抖动联合表征方法"
+    status: demonstrated
+    applies_to: ent.all_pm_er_nalm_comb_k16
+    steps_summary: >
+      1. 全 PM Er:fiber 线性腔 + NALM 锁模器；
+      2. HNLF 超连续展宽覆盖倍频程；
+      3. f-2f 干涉仪 + PLL 锁 f_CEO；
+      4. 高带宽 PD + 平衡光学相关仪（BOC）测 10 kHz–10 MHz 时延抖动；
+      5. f_CEO 积分相噪 → <0.2 rad；时延抖动 → 40 as。
+    required_hardware:
+      - ent.all_pm_er_nalm_comb_k16
+    advantages:
+      - "NALM 自启锁模兼容全 PM → 抗机械/温度扰动"
+      - "比 NPR 路径自然支持低时延抖动"
+    disadvantages:
+      - "NALM 参数窗口（环长、耦合比、放大倍率）需精细工艺"
+
+metrics:
+  - id: met.er_fiber_comb_timing_jitter_k16
+    name: "Er:fiber 梳积分时延抖动（10 kHz–10 MHz）"
+    unit: "s"
+    description: "高频段积分时延抖动（对应脉冲到达时间的标准差）"
+    demonstrated_value:
+      value: "40 as（10 kHz–10 MHz 积分）"
+      conditions: "全 PM Er:fiber NALM 梳"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "QXC7FSMC", claim: "The integrated timing jitter is measured as 40 attosecond from 10 kHz to 10 MHz, which is the lowest value of any Er fiber frequency comb to date."}
+    historical_landmarks:
+      best_demonstration:
+        value: "40 as（2016，Er:fiber 当时纪录）"
+        year: 2016
+        source: {zotero_key: "QXC7FSMC"}
+
+  - id: met.fceo_phase_noise_k16
+    name: "f_CEO 积分相位噪声（Kuse 2016 全 PM NALM）"
+    unit: "rad"
+    description: "锁定后 f_CEO 相位噪声谱积分 rms 值"
+    demonstrated_value:
+      value: "<0.2 rad"
+      conditions: "全 PM NALM Er 梳锁定后"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "QXC7FSMC", claim: "below 0.2 rad carrier-envelope-offset frequency phase noise"}
+
+relations:
+  - id: rel.Kuse16_01
+    subject: ent.all_pm_er_nalm_comb_k16
+    predicate: PART-OF
+    object: ent.er_fiber_frequency_comb
+    confidence: established
+    source: {zotero_key: "QXC7FSMC", claim: "A fully stabilized all polarization-maintaining Er frequency comb with a nonlinear amplifying loop mirror"}
+    note: "跨文件引用 ent.er_fiber_frequency_comb（droste2016.yaml）"
+
+  - id: rel.Kuse16_02
+    subject: ent.all_pm_er_nalm_comb_k16
+    predicate: CHARACTERIZED-BY
+    object: met.er_fiber_comb_timing_jitter_k16
+    confidence: established
+    source: {zotero_key: "QXC7FSMC", claim: "40 attosecond from 10 kHz to 10 MHz, which is the lowest value of any Er fiber frequency comb to date"}
+
+  - id: rel.Kuse16_03
+    subject: ent.all_pm_er_nalm_comb_k16
+    predicate: CHARACTERIZED-BY
+    object: met.fceo_phase_noise_k16
+    confidence: established
+    source: {zotero_key: "QXC7FSMC", claim: "below 0.2 rad carrier-envelope-offset frequency phase noise"}
+
+  - id: rel.Kuse16_04
+    subject: meth.nalm_all_pm_er_comb_stabilization
+    predicate: OPERATIONALIZED-AS
+    object: ent.all_pm_er_nalm_comb_k16
+    confidence: established
+    source: {zotero_key: "QXC7FSMC", claim: "A fully stabilized all polarization-maintaining Er frequency comb with a nonlinear amplifying loop mirror is demonstrated"}
+
+  - id: rel.Kuse16_05
+    subject: meth.nalm_all_pm_er_comb_stabilization
+    predicate: ENABLED-BY
+    object: pri.figure9_nalm_pm_self_starting
+    confidence: established
+    source: {zotero_key: "QXC7FSMC", claim: "nonlinear amplifying loop mirror ... self-starting in all-PM configuration"}
+    note: "跨文件引用 pri.figure9_nalm_pm_self_starting"
+
+  - id: rel.Kuse16_06
+    subject: meth.nalm_all_pm_er_comb_stabilization
+    predicate: ENABLED-BY
+    object: pri.self_referencing_f2f
+    confidence: established
+    source: {zotero_key: "QXC7FSMC", claim: "f-2f self-referencing for fceo stabilization"}
+    note: "跨文件引用 pri.self_referencing_f2f（giunta2019.yaml）"
+
+  - id: rel.Kuse16_07
+    subject: ent.all_pm_er_nalm_comb_k16
+    predicate: COMPETES-WITH
+    object: ent.all_pm_er_fiber_comb_k15
+    confidence: tentative
+    source: {zotero_key: "QXC7FSMC", claim: "NALM vs graphene EOM approaches both achieve all-PM low-noise Er fiber combs with different mechanisms"}
+    note: "同作者 2015 全 PM 梳用石墨烯 EOM（见 kuse2015.yaml），本工作改用 NALM，二者代表不同低噪声路径"

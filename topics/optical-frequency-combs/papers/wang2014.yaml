@@ -1,0 +1,151 @@
+# Wang 2014 — 500 MHz Yb:ring 光纤梳，振荡器直出 f_CEO 无需放大
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-21
+# Schema版本：v4.3
+# 专题：optical-frequency-combs
+# contribution_type: evidence（Yb:fiber 平台首次在 >500 MHz 基频直接自振荡 f_CEO 可锁）
+
+meta:
+  zotero_key: "VATLBIAD"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: evidence
+  reliability: high
+  title: "500 MHz spaced Yb:fiber laser frequency comb without amplifiers"
+  year: 2014
+  first_author: Wang
+  journal: "Optics Letters"
+  volume: 39
+  issue: 9
+  pages: "2534-2537"
+  doi: "10.1364/OL.39.002534"
+  note: >
+    [技术论文] 北京大学 + 中国计量院。500 MHz NPE 锁模 Yb:ring 光纤激光器
+    直接从振荡器产生 f_CEO 无需腔外放大：
+    (1) 振荡器输出功率 450 mW（@ 1.07 W 泵浦，40% 光-光效率）；
+    (2) 脉冲压缩至 46 fs，峰值功率 5 kW 驱动 PCF 展宽 600–1300 nm（倍频程）；
+    (3) f-2f 干涉仪测 f_CEO 信噪比 >40 dB @ 300 kHz RBW；
+    (4) 开放环境 >6 小时稳定；in-loop tracking 4.46×10⁻¹³/√τ，Allan ~1×10⁻¹²/s。
+    意义：省去腔外 EDFA/YDFA 简化系统；500 MHz 齿距更有利于天文光谱仪校准（齿可分辨）。
+    对齐 v2 子域主线：A1-Rep（500 MHz 基频，天文校准友好）、B-Astro（作者明确指向）。
+    相较 bartels2009（10 GHz）在更低功率路径实现"无放大"的工程突破。
+
+entities:
+  - id: ent.yb_fiber_500mhz_comb_wang14
+    name: "500 MHz Yb:ring 光纤梳（无放大，Wang 2014）"
+    aliases:
+      - 500 MHz Yb:fiber comb without amplifier
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      NPE 锁模 Yb:ring 光纤激光器，500 MHz 基频、450 mW 输出、46 fs 压缩脉冲；
+      振荡器直出驱动 PCF 至 600–1300 nm 倍频程展宽；f-2f 自参考探测 f_CEO
+      （SNR >40 dB @ 300 kHz RBW）；开放环境长期稳定。
+    key_parameters:
+      gain_medium: "Yb-doped 光纤（ring cavity, NPE 锁模）"
+      repetition_rate: "500 MHz（基频，振荡器直接产生）"
+      output_power: "450 mW @ 1.07 W 泵浦（40% 效率）"
+      pulse_duration: "46 fs（压缩后）"
+      peak_power: "5 kW"
+      spectral_span_after_pcf: "600–1300 nm（覆盖倍频程）"
+      nonlinear_fiber: "PCF（光子晶体光纤）"
+      fceo_snr: ">40 dB @ 300 kHz RBW"
+    note: "Level 2 实例节点，PART-OF ent.optical_frequency_comb（giunta2019.yaml）"
+
+methods:
+  - id: meth.amplifier_free_high_frep_yb_comb
+    name: "无放大高重频 Yb:fiber 振荡器直驱倍频程展宽方法"
+    status: demonstrated
+    applies_to: ent.yb_fiber_500mhz_comb_wang14
+    steps_summary: >
+      1. 短腔 NPE 锁模 Yb:ring 光纤激光器，500 MHz 基频；
+      2. 高泵浦功率使振荡器单脉冲能量足以直接驱动 PCF（≥0.2 nJ 耦合）；
+      3. 脉冲压缩至 46 fs 获得 5 kW 峰值功率；
+      4. PCF 展宽至 600–1300 nm；
+      5. f-2f 干涉仪锁 f_CEO；PZT 伺服 f_rep；
+      6. 计数器 τ-统计得到 in-loop 4.46×10⁻¹³/√τ。
+    required_hardware:
+      - ent.yb_fiber_500mhz_comb_wang14
+    advantages:
+      - "去掉腔外放大器 → 系统简化、成本降低、ASE 相噪抑制"
+      - "齿距更大有利于天文光谱仪单齿分辨"
+    disadvantages:
+      - "振荡器必须同时承担高功率与稳定锁模，工艺窗口窄"
+      - "Yb 增益寿命致泵浦伺服带宽受限"
+
+metrics:
+  - id: met.frep_500mhz_no_amp_w14
+    name: "振荡器直出倍频程展宽的最高 f_rep（无放大）"
+    unit: "Hz"
+    description: "无需腔外放大即可驱动 PCF 至倍频程展宽的 Yb:fiber 振荡器基频"
+    demonstrated_value:
+      value: "500 MHz（基频，无腔外放大）"
+      conditions: "Yb:ring NPE 锁模 + PCF；室温开放环境"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "VATLBIAD", claim: "first time, to our knowledge, fceo has been generated directly from the oscillator without further amplifications above 500 MHz repetition rate"}
+    historical_landmarks:
+      first_demonstration:
+        year: 2014
+        source: {zotero_key: "VATLBIAD"}
+        note: "Yb:fiber 平台首次 >500 MHz 无放大振荡器直出 f_CEO"
+
+  - id: met.frep_inloop_tracking_w14
+    name: "f_rep 锁定环内跟踪稳定度"
+    unit: "√τ⁻¹"
+    description: "锁定后 f_rep 的环内跟踪 Allan 偏差 τ^(-1/2) 斜率"
+    demonstrated_value:
+      value: "4.46×10⁻¹³/√τ（in-loop）, Allan ~1×10⁻¹²/s"
+      conditions: "开放环境，无温控"
+      verification_status: observed
+      confidence: tentative
+      source: {zotero_key: "VATLBIAD", claim: "The stabilized repetition rate has an in-loop tracking stability of 4.46 × 10−13/τ1/2"}
+    note: >
+      v2 B-FreqSyn 子域主线的残差量；但此处是 f_rep RF 域的 in-loop 值，未换算到
+      光学 σ_y；评价严格度低于 out-of-loop 超稳光学比对。
+
+relations:
+  - id: rel.W14_01
+    subject: ent.yb_fiber_500mhz_comb_wang14
+    predicate: PART-OF
+    object: ent.optical_frequency_comb
+    confidence: established
+    source: {zotero_key: "VATLBIAD", claim: "An optical frequency comb based on Yb:ring fiber laser was demonstrated."}
+    note: "跨文件引用 ent.optical_frequency_comb（giunta2019.yaml）"
+
+  - id: rel.W14_02
+    subject: ent.yb_fiber_500mhz_comb_wang14
+    predicate: CHARACTERIZED-BY
+    object: met.frep_500mhz_no_amp_w14
+    confidence: established
+    source: {zotero_key: "VATLBIAD", claim: "500 MHz ytterbium fiber laser comb without amplifiers"}
+
+  - id: rel.W14_03
+    subject: ent.yb_fiber_500mhz_comb_wang14
+    predicate: CHARACTERIZED-BY
+    object: met.frep_inloop_tracking_w14
+    confidence: established
+    source: {zotero_key: "VATLBIAD", claim: "in-loop tracking stability of 4.46 × 10−13/τ1/2"}
+
+  - id: rel.W14_04
+    subject: meth.amplifier_free_high_frep_yb_comb
+    predicate: OPERATIONALIZED-AS
+    object: ent.yb_fiber_500mhz_comb_wang14
+    confidence: established
+    source: {zotero_key: "VATLBIAD", claim: "we demonstrate a 500 MHz ytterbium fiber laser comb without amplifiers"}
+
+  - id: rel.W14_05
+    subject: meth.amplifier_free_high_frep_yb_comb
+    predicate: ENABLED-BY
+    object: pri.self_referencing_f2f
+    confidence: established
+    source: {zotero_key: "VATLBIAD", claim: "f-2f interferometer" }
+    note: "跨文件引用 pri.self_referencing_f2f（giunta2019.yaml）"
+
+  - id: rel.W14_06
+    subject: met.frep_500mhz_no_amp_w14
+    predicate: BOUNDED-BY
+    object: pri.high_frep_bandwidth_power_tradeoff
+    confidence: established
+    source: {zotero_key: "VATLBIAD", claim: "limited by the ring cavity length, high fundamental repetition rate fiber lasers are still difficult to build"}
+    note: "跨文件引用 pri.high_frep_bandwidth_power_tradeoff（bartels2009.yaml）"
