@@ -7,6 +7,18 @@
 
 ---
 
+## [2026-04-21] restructure | v4.4 机制落地 · 阶段 A1+A2 交付
+
+- **动机**：v4.4 schema 在架构层面已就位，但 78 篇超稳激光论文 YAML 中 `meta.contribution_type` **实际填充率为 0**，导致 lint / stats 的 chain-gap / orphan 指标仍按旧预设报警，TODO.md 上的 21 / 90 数字不反映真实缺口。
+- **本轮交付**（零 YAML 改动、完全可逆）：
+  - 新增 [`docs/CONTRIBUTION_TIER_RULES.md`](docs/CONTRIBUTION_TIER_RULES.md)——三档分级操作规则书（判定次序 + 10 条边界案例 + 3 条互检问题）
+  - 新增 [`reports/contribution_tier_draft_ultrastable.md`](reports/contribution_tier_draft_ultrastable.md)——78 篇论文档位建议表（AI 初判 🟥 16 / 🟧 17 / 🟦 3 / 🟩 42）
+  - 更新 [`TODO.md`](TODO.md) 顶部优先级板块——把整治节奏切换到"阶段 A→B→C→D"
+- **待专家介入**：在草案表 `决定` 列 accept / override / ❓，提交后触发阶段 A4 批量回写 YAML。
+- **不改动**：本轮不修改任何 YAML，不调整 lint / stats 逻辑，不更改 schema 规范文本。
+
+---
+
 ## [2026-04-21] schema | v4.3 → v4.4 引入三档贡献分级
 
 - **动机**：专家反馈"逻辑推理机制没形成"，根因之一是 `contribution_type` 旧 enum 过粗（`technical` / `framework` 二分），导致 evidence 级论文被要求补完整限制链，催生大量假 chain-gap / orphan。

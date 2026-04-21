@@ -9,9 +9,19 @@
 
 ---
 
-## 📌 当前优先级：Round 1-④ 已完成；Round 1-①②③ 待专家配合执行
+## 📌 当前优先级：阶段 A（机制落地闭环）进行中 — A1+A2 已交付，等待专家裁决触发 A3/A4
 
-> **v4.4 重估提示（2026-04-21）**：三档贡献分级（`breakthrough` / `evidence` / `framework`）已在 SCHEMA §9.1 正式化。下列 chain-gap / orphan 数字是在"所有论文都需补限制链"旧预设下统计的；当大量 `evidence` 档位论文被正确分类后，真实缺口大概率显著低于当前数字。建议专家在配合执行 P0/P1 前，**先把目标论文标好 `contribution_type`**，再重跑统计。
+> **v4.4 机制落地进度（2026-04-21）**：按"先形成工作机制再扩展规模"迭代计划：
+>
+> - ✅ **阶段 A1**：档位分级操作规则书 → [`docs/CONTRIBUTION_TIER_RULES.md`](docs/CONTRIBUTION_TIER_RULES.md)
+> - ✅ **阶段 A2**：78 篇超稳激光论文档位建议草案 → [`reports/contribution_tier_draft_ultrastable.md`](reports/contribution_tier_draft_ultrastable.md)（AI 初判分布：🟥 16 / 🟧 17 / 🟦 3 / 🟩 42）
+> - ⏳ **阶段 A3**：等待专家批量 accept / override（操作方式见草案文件顶部）
+> - ⏳ **阶段 A4**：AI 回写 78 篇 YAML 的 `meta.contribution_type`（机械改动，依赖 A3）
+> - ⏳ **阶段 B**：lint / stats 引入档位感知 → 重跑 chain-gap / orphan 报告（依赖 A4）
+> - ⏳ **阶段 C**：针对真缺口做精准收敛（依赖 B）
+> - ⏳ **阶段 D**：沉淀专题整治手册，再启动其他专题扩展
+>
+> **重要提示**：本节后续 chain-gap / orphan / 复用度数字是在"所有论文都需补限制链"旧预设下统计的；阶段 B 完成后，真实缺口大概率显著低于当前数字，届时以 B 的重估结果为准。
 
 ### 超稳激光（重点整治专题）
 
