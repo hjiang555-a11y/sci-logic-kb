@@ -80,7 +80,19 @@ Evidence 档位论文的典型形态：
 
 ---
 
-## 四、与 lint / stats 的交互（B 阶段生效，提前公示）
+## 四、专题级偏好（topic-scoped overrides）
+
+> 全局规则在具体专题内部可能过于粗糙。专题如有补充偏好，请写在各自 `topics/<topic>/_meta/` 下，**不要**回写到本文件。本文件的定位保持为**跨专题通用**。
+>
+> 已登记的专题级补充：
+>
+> - **超稳激光**：[`topics/ultrastable-laser/_meta/scoping_principles.md`](../topics/ultrastable-laser/_meta/scoping_principles.md) — "稳定度 > 线宽" 原则（在 σ_y 与 linewidth 都有新纪录时优先按 σ_y 判）
+>
+> 处理次序：在某专题内判定档位时，先套用本文件第一~三节的全局判据；若落入"需要在多个强信号间仲裁"的情况，再引用对应专题 `_meta/scoping_principles.md` 的偏好。
+
+---
+
+## 五、与 lint / stats 的交互（B 阶段生效，提前公示）
 
 - `breakthrough` 档：`reasoning-chain-gap`、`orphan-node` 按现行规则 **强制**（必须补 `breakthrough_paths`、必须挂到父节点）
 - `evidence` 档：`reasoning-chain-gap`、`orphan-node` **降级为 info**（不计入 TODO 缺口）

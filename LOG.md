@@ -7,6 +7,23 @@
 
 ---
 
+## [2026-04-21] restructure | v4.4 机制落地 · Round 2 · 专题原则 "稳定度>线宽" 纳入档位仲裁
+
+- **动机**：Round 1 输出的 🟧 breakthrough? 17 条是"有弱纪录信号但需仲裁"的集合；专家提出**超稳激光专题内**应以系统稳定度与长期可靠性优于瞬时线宽作为偏好。该原则是**专题级**的，不是知识库整体原则。
+- **信息层次/范围控制**：
+  - 新增 `topics/ultrastable-laser/_meta/scoping_principles.md`（专题级，不上升为全局）
+  - 在 `docs/CONTRIBUTION_TIER_RULES.md` §四 仅留一个指向该专题偏好的索引条目，全局规则本身不改
+- **应用**：用新原则把 Round 1 的 17 条 🟧 全部仲裁完毕——8 条升 🟥（kim2008 / webster2008 / kefelian2009 / thorpe2011 / zhang2014_ram / kedar2023 / huang2023 / michaudbelleau2022，均为稳定度/长期/子分支纪录或新 `pri.*` 级机制），9 条降 🟩（millo2009 / jiang2011 / dong2015 / cole2016 / didier2018 / marchio2018 / herbers2019 / michaudbelleau2021 / ding2025，均为线宽/工程延伸/characterization）
+- **交付**（零 YAML 改动）：
+  - 更新 [`reports/contribution_tier_draft_ultrastable.md`](reports/contribution_tier_draft_ultrastable.md) 为 Round 2 版本；新分布 🟥 24 / 🟦 3 / 🟩 51（breakthrough 占比 30.8%，略高于 SCHEMA §9.1 预期上沿，但反映超稳激光突破史密度）
+  - 新增 [`topics/ultrastable-laser/_meta/scoping_principles.md`](topics/ultrastable-laser/_meta/scoping_principles.md)
+  - `docs/CONTRIBUTION_TIER_RULES.md` §四 增加"专题级偏好"索引节
+- **下一步**：等待专家在 Round 2 建议表上 accept / override，再触发阶段 A4 批量回写 YAML `meta.contribution_type`。
+
+---
+
+
+
 ## [2026-04-21] restructure | v4.4 机制落地 · 阶段 A1+A2 交付
 
 - **动机**：v4.4 schema 在架构层面已就位，但 78 篇超稳激光论文 YAML 中 `meta.contribution_type` **实际填充率为 0**，导致 lint / stats 的 chain-gap / orphan 指标仍按旧预设报警，TODO.md 上的 21 / 90 数字不反映真实缺口。
