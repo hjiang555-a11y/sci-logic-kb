@@ -613,6 +613,80 @@ def build_principles_index(topics: dict[str, TopicData], all_topic_names: list[s
     return "".join(lines)
 
 
+def build_nodes_reference(topics: dict[str, TopicData], all_topic_names: list[str], repo: Path) -> str:
+    """Build docs/CURRENT_NODES_REFERENCE.md — AI摄入推荐入口，按专题×类型列出所有节点ID。
+
+    替代 CLAUDE.md 末尾的手工节点速查表，由脚本自动维护，永不过时。
+    """
+    lines = [HEADER]
+    lines.append("# 📖 Current Nodes Reference — AI 摄入速查\n\n")
+    lines.append(
+        "> **用途**：处理新论文时，用此文件快速检查是否已有同名/同义节点，避免重复定义。\n"
+        "> **维护**：本文件由 `scripts/build_index.py` 自动生成，**请勿手工编辑**。\n"
+        f"> **生成时间**：{_timestamp()}\n\n"
+    )
+    lines.append(
+        "> **使用方式**：\n"
+        "> - 处理新论文时，`Ctrl+F` 搜索关键词（如 `brownian`, `pdh`, `fiber`）\n"
+        "> - 找到已有节点 ID 后，在新 YAML 中直接引用，不重复定义\n"
+        "> - 跨文件引用请在 `note` 字段注明来源文件\n\n"
+        "---\n\n"
+    )
+
+    for t in all_topic_names:
+        td = topics.get(t)
+        if not td or td.node_count == 0:
+            continue
+        display = TOPIC_DISPLAY_NAMES.get(t, t)
+        topic_index_path = f"topics/{t}/INDEX.md"
+        lines.append(f"## {display}  \n> 详细索引: [`{topic_index_path}`]({topic_index_path})\n\n")
+
+        # Entities (Level 0/1 only — Level 2 instances omitted to keep it concise)
+        key_entities = [
+            (ent, path) for ent, path in td.entities
+            if str(ent.get("hierarchy_level", 2)) in ("0", "1")
+        ]
+        if key_entities:
+            lines.append("### Entities (Level 0–1)\n\n")
+            lines.append("| ID | Name | Source |\n|----|------|--------|\n")
+            for ent, path in sorted(key_entities, key=lambda x: x[0].get("id", "")):
+                eid = _md_escape(ent.get("id", "?"))
+                name = _truncate(ent.get("name", "—"), 55)
+                label = _paper_label(path)
+                rel_path = _relative_paper_path(path, repo)
+                lines.append(f"| `{eid}` | {name} | [{label}]({rel_path}) |\n")
+            lines.append("\n")
+
+        # Principles (all tiers — these are most important for cross-file reuse)
+        if td.principles:
+            lines.append("### Principles\n\n")
+            lines.append("| ID | Name | Tier | Source |\n|----|------|------|--------|\n")
+            for pri, path in sorted(td.principles, key=lambda x: x[0].get("id", "")):
+                pid = _md_escape(pri.get("id", "?"))
+                name = _truncate(pri.get("name", "—"), 55)
+                tier = _md_escape(str(pri.get("tier", "—")))
+                label = _paper_label(path)
+                rel_path = _relative_paper_path(path, repo)
+                lines.append(f"| `{pid}` | {name} | {tier} | [{label}]({rel_path}) |\n")
+            lines.append("\n")
+
+        # Methods (all)
+        if td.methods:
+            lines.append("### Methods\n\n")
+            lines.append("| ID | Name | Source |\n|----|------|--------|\n")
+            for meth, path in sorted(td.methods, key=lambda x: x[0].get("id", "")):
+                mid = _md_escape(meth.get("id", "?"))
+                name = _truncate(meth.get("name", "—"), 55)
+                label = _paper_label(path)
+                rel_path = _relative_paper_path(path, repo)
+                lines.append(f"| `{mid}` | {name} | [{label}]({rel_path}) |\n")
+            lines.append("\n")
+
+        lines.append("---\n\n")
+
+    return "".join(lines)
+
+
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
@@ -663,6 +737,9 @@ def main() -> None:
 
     # 4. INDEX_principles.md
     outputs.append((repo / "INDEX_principles.md", build_principles_index(topics, all_topic_names, repo)))
+
+    # 5. docs/CURRENT_NODES_REFERENCE.md  (replaces hand-maintained node list in CLAUDE.md)
+    outputs.append((repo / "docs" / "CURRENT_NODES_REFERENCE.md", build_nodes_reference(topics, all_topic_names, repo)))
 
     # Write or dry-run
     for path, content in outputs:

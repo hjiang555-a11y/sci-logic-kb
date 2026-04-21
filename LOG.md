@@ -7,7 +7,20 @@
 
 ---
 
-## [2026-04-21] restructure | Round 3 · 超稳激光 σ_y-first 主线化 · PR#2 + PR#3
+## [2026-04-21] restructure | 说明文件架构精简 · Karpathy 策展/簿记分离
+
+- **动机**：对照知识库目标做评估，发现三大问题：(1) copilot-instructions.md 与 CLAUDE.md 大量重叠，AI agent 容易混读；(2) CLAUDE.md 末尾的"已有节点速查表"是手工维护的簿记，永远过时；(3) 阶段 A3 缺少清晰的专家操作触发器。
+- **变更**：
+  - `.github/copilot-instructions.md`：从 208 行精简为 33 行，仅保留项目定位 + 工作流路由表 + Copilot 专属约束；删除与 CLAUDE.md / SCHEMA.md 重叠的全部内容
+  - `CLAUDE.md`：删除"已有节点速查表"（~150 行手工节点列表）和"处理顺序建议"节，改为指向自动生成的 `docs/CURRENT_NODES_REFERENCE.md`
+  - `reports/contribution_tier_draft_ultrastable.md`：在文件顶部添加**阶段 A3 操作说明**（专家使用手册：如何填写 accept/override/批量 accept）
+  - `topics/optical-frequency-combs/_meta/scoping_principles.md`：新建光学频率梳专题级评判原则 v1（Multi-Track 原则；过渡期档位判据；待专家确认的子域主线指标问题）
+  - `scripts/build_index.py`：新增 `build_nodes_reference()` 函数，生成 `docs/CURRENT_NODES_REFERENCE.md`（按专题 × Level 0/1 实体 + 原理 + 方法三分类，替代手工节点速查表）
+  - `SCHEMA.md`：§文档同步原则 升级至 v4.5——从"同步 10 文件"简化为"只做两件事"（更新 SCHEMA.md + 重跑 build_index.py）
+- **验证**：`python scripts/build_index.py` → 成功生成所有 INDEX 文件 + `docs/CURRENT_NODES_REFERENCE.md`（59KB）
+- **不涉及**：YAML 内容、论文数据、lint 规则均未改动
+
+
 
 - **动机**：接续 Round 3 PR#1（文档层），完成 PR#2（综合视图层）+ PR#3（脚本与 YAML 数据层）。
 - **PR#2 综合视图层**：
