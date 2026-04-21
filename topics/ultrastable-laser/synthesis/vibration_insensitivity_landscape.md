@@ -55,8 +55,8 @@
 | Webster 2007 | `ent.cutout_cavity_mount_w07` | 切口腔体 + 四点对称支撑 | < 0.1 kHz/(m/s²) 竖直 |
 | Millo 2009 | `ent.fp_cavity_system` 实例 | 水平安装 ULE 腔 | 10⁻¹⁰ /g 量级 |
 | Webster 2011 | `ent.cubic_force_insensitive_cavity_w11` | 立方体 4 个对称点支撑 | 10⁻¹¹ /g（模拟+实验） |
-| Chen 2014 | `ent.compact_transportable_cavity_c14` | STE-QUEST 紧凑可搬运 | 2×10⁻¹⁰ /g |
-| Tao 2018 | `ent.robust_cuboid_cavity_t18` | 抗冲击方形 ULE | 5×10⁻¹¹ /g |
+| Chen 2014 | `ent.compact_transportable_cavity_c14` | STE-QUEST 紧凑可搬运 | 1.7×10⁻¹¹ ~ 3.9×10⁻¹⁰ /g（轴向差异大） |
+| Tao 2018 | `ent.robust_cuboid_cavity_t18` | 抗冲击方形 ULE | 0.8 ~ 2.5×10⁻¹⁰ /g（最佳竖直 0.8×10⁻¹⁰） |
 | Sanjuan 2019 | `ent.boost_cubic_cavity_s19` | BOOST 空间级立方 | 全向 10⁻¹¹ /g |
 | Chen 2020 | `ent.cubic_dual_cavity_c20` | 10 cm 立方双腔 | 全向 < 2×10⁻¹¹ /g |
 | Hafner 2015 | `ent.self_balancing_long_cavity_h15` | 48 cm 长腔自平衡安装 | < 2×10⁻¹⁰ /g 全向 |
@@ -99,3 +99,31 @@
 ---
 
 > 本综合页由 AI 基于 YAML + INDEX 草稿而成，数值引用待专家逐条复核。
+
+---
+
+## 📋 数值复核日志（2026-04-21，AI 机械比对）
+
+按表格行自 YAML 源校对：
+
+| 行 | YAML 源 ID | 页面声明 | YAML 实测 | 结论 |
+|----|----------|---------|---------|------|
+| Young 1999 | `met.acceleration_sensitivity_y99` | "kHz/(m/s²)" | ≈ 100 kHz/(m/s²) | ✅ 量级一致 |
+| Webster 2007 | `met.acceleration_sensitivity_vertical_w07` | "< 0.1 kHz/(m/s²) 竖直" | < 0.1 kHz/ms⁻² | ✅ |
+| Webster 2011 | `met.acceleration_sensitivity_w11` | "10⁻¹¹/g（模拟+实验）" | 2.45/0.21/0.01 ×10⁻¹¹/g | ✅ 最佳 10⁻¹³/g，题述 10⁻¹¹/g 指轴向最大 |
+| Chen 2014 | `met.vibration_sensitivity_c14` | ~~"2×10⁻¹⁰/g"~~ → 已修正 | 1.7×10⁻¹¹ / 8.0×10⁻¹¹ / 3.9×10⁻¹⁰ | **已修正为区间 1.7e-11 ~ 3.9e-10** |
+| Tao 2018 | `met.acceleration_sensitivity_t18` | ~~"5×10⁻¹¹/g"~~ → 已修正 | 0.8 / 2.5 / 1.5 ×10⁻¹⁰/g | **已修正**（原 "5×10⁻¹¹" 与 YAML 最差 2.5×10⁻¹⁰ 相差 5 倍，错误） |
+| Hafner 2015 | `met.acceleration_sensitivity_h15` | "< 2×10⁻¹⁰/g 全向" | κz=1.7, κy=0.5, κx=1.5 ×10⁻¹⁰/g | ✅ |
+| Hafner 2020 | `met.vibration_sensitivity_h20` | "室温可搬运量级" | 0.7/2.3/12.3 ×10⁻¹⁰/g | ⚠️ 页面表述过弱，YAML 有具体值但 κz 远差于其他方向 |
+| Millo 2009 | `met.acceleration_sensitivity_millo09` | "10⁻¹⁰ /g 量级" | ≤1.5×10⁻¹¹ per m/s² | ⚠️ YAML 用 m/s² 单位，换算约 1.5×10⁻¹⁰/g — 一致 |
+| Chen 2020 | — | "全向 < 2×10⁻¹¹/g" | **YAML 缺对应 `met.*_c20`** | ⚠️ 页面声明**无 YAML 直接支撑**，建议补充 metric 节点或加注"原文表述"标签 |
+| Sanjuan 2019 | — | "全向 10⁻¹¹/g" | **YAML 缺对应 `met.*_s19`**（长期稳定度 YAML 有） | ⚠️ 同上 |
+| Didier 2018 | — | "紧凑路线的极限尝试" | YAML 无加速度灵敏度 | ✅ 定性表述可保留 |
+
+**遗留动作**：
+- [ ] 专家确认 Chen 2020 / Sanjuan 2019 的 κ 声明是否应补入对应 YAML metrics（或页面改为定性表述）
+- [ ] Hafner 2020 κz 方向的 ×6 劣化应在表中体现（不仅写"室温可搬运量级"）
+
+本次已修正的**实质性数值错误**：
+1. Tao 2018 "5×10⁻¹¹/g" → 实测最差 2.5×10⁻¹⁰/g（原页面偏乐观 5 倍）
+2. Chen 2014 "2×10⁻¹⁰/g" → 实测 1.7e-11 ~ 3.9e-10（原页面掩盖了轴向差异）

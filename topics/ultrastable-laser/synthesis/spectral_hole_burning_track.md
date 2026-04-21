@@ -106,3 +106,19 @@ SHB 相对 FP 腔/低温路线的核心互补价值：
 ---
 
 > 本综合页由 AI 基于 YAML + INDEX 草稿而成，**SHB 分支是超稳激光专题中结构化程度最低的部分**，最需要专家补充。
+
+---
+
+## 📋 数值复核日志（2026-04-21）
+
+SHB 页面本身含数值声明较少，以**结构化缺口**为主。AI 机械复核仅能识别以下：
+
+- SHB 相关 YAML 论文：`thorpe2011`, `leibrandt2013`, `cook2015`, `gobron2017`, `galland2020`, `braun1995` 等 6~7 篇
+- 多数 paper-local SHB 原理/方法节点属 orphan（仅本文件内使用，未跨文件共用）——见 `reports/shared_node_candidates.md` Tier 3
+- 页面中的数值声明均为**定性/量级**，未发现与 YAML 明显矛盾的条目
+
+**SHB 专题需专家补全的核心问题**（TODO 已标记）：
+- 页面 §六 的三个开放问题（SHB vs FP 差距、SHB 作为 FP 长期漂移的独立校准、10⁻¹⁸ 时代 SHB 的独立价值）
+- 是否应把 `pri.dispersive_heterodyne_shb` / `pri.double_heterodyne_shb_probing` 等 SHB 专门原理正式登记为超稳激光专题公共节点（当前 Tier 1 0 个 SHB 节点）
+
+**AI 机械复核结论**：无可修正的数值错误；保持 🟡 draft 待专家深度介入。

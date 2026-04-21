@@ -7,7 +7,25 @@
 
 ---
 
-## [2026-04-21] lint | 阶段 C 落地：breakthrough-tier WARNING 清零
+## [2026-04-21] synthesis | 阶段 D-0：P2 跨文件复用分析 + P3 六篇 synthesis 数值复核
+
+- **P2 · 跨文件复用**
+  - 产出 `reports/shared_node_candidates.md`：Tier 1 已共用 39 / Tier 2 跨专题 1（`pri.brownian_thermal_noise_fdt`）/ Tier 3 疑似可合并 30
+  - 新建 `topics/shared/registry.md` 登记 Tier 1 的 39 个事实公共 pri/meth（不物理迁移源文件）
+  - 关键发现：仅靠 pri/meth 整治最多能把复用率从 8.8% 推至 ~11%；要达 15% 需要 P2.2 扩展到 `ent.*` / `met.*`
+- **P3 · Synthesis 数值复核（6 篇）**
+  - `vibration_insensitivity_landscape.md`：修正 Tao 2018（5×10⁻¹¹ → 0.8~2.5×10⁻¹⁰/g）、Chen 2014（2×10⁻¹⁰ → 1.7e-11~3.9e-10 区间）
+  - `ram_and_pdh_error_budget.md`：修正 κ 单位（kHz/(m/s²) → kHz 腔线宽，避免与振动页 κ 混淆）、Tai 2016 σ_y（~10⁻¹⁶ → <3×10⁻¹⁷）；新增 Parke 2025 breakthrough 路径（σ_y 3×10⁻¹⁹）
+  - `fiber_stabilization_landscape.md`：修正 Huang 2023 短期 σ_y（补 3.2×10⁻¹⁵ @ 1s）、Jeon 2025 τ 限定词（16ms 非 1s）、FP-vs-光纤差距（250× → ~10³× 时标对齐后）
+  - `cryogenic_roadmap.md`：修正 124K × (IBS vs AlGaAs) 错配；补入 Robinson 2019 / Kedar 2023 mod σ_y
+  - `spectral_hole_burning_track.md`：无数值错误，标注需专家深度参与
+  - `breakthrough_paths_matrix.md`：阶段 C 后刷新日志（Parke 2025 / Kedar 2023 等单元格更新）
+- **验证**：`python scripts/lint.py` = 0 error / 3 warning（与阶段 C 结束时一致）；`stats.py` 各指标未退化
+- **残留专家决策**：Tier 3 的 10 条 pri/meth 合并判断、YAML 中补显式 SHARED-WITH 关系的授权、🟡 draft 标记移除
+
+---
+
+
 
 - **动机**：阶段 B 档位感知重估后暴露出真实缺口：7 条 breakthrough chain-gap + 15 条 breakthrough orphan（共 22 条 WARNING）。阶段 C 针对这两类 WARNING 做精准收敛。
 - **Chain-gap 修复（7 → 0）**：为每条相关 BOUNDED-BY 关系补齐 `breakthrough_paths`（保留每条路径的 `direction` / `expected_gain` / `status` / `source.claim`）：
