@@ -73,6 +73,10 @@ for i in items:
 
 按 `SCHEMA.md` 中的模板提取：
 - 识别该论文的**核心贡献**（方法创新/原理解析/实验结果，或专题框架定义）
+- 决定 `meta.contribution_type`（v4.4 三档规范，详见 [SCHEMA.md §9.1](SCHEMA.md)）：
+  - `breakthrough`：打破指标记录 / 提出新原理 / 证伪旧论断
+  - `evidence`：在已有节点上提供新数据点、复现、工程改进（**大多数论文属此档，默认**）
+  - `framework`：综述 / 路线图 / 教科书章节
 - 提取节点（entities/principles/methods/metrics）
 - 建立关系（relations）
 - 检查是否有跨文件引用的已有节点
@@ -81,6 +85,11 @@ for i in items:
 - 使用 `meta.contribution_type: framework`
 - 优先定义 Level 0/1 顶层实体、tier: meta/domain 原理、跨专题 `CONDITIONED-BY` 接口
 - 不把具体实验系统的 Level 2 参数实例作为该文件的主职责
+
+若该论文是 `evidence` 档（最常见）：
+- 优先复用已有节点，不强求新增 `pri.*`
+- 允许不填 `breakthrough_paths`，允许产出 orphan 节点
+- 详见 [CONTRIBUTING.md "Evidence 档位最低入库门槛"](CONTRIBUTING.md)
 
 ### 步骤 5：写入文件
 
@@ -295,9 +304,10 @@ git push
 
 ---
 
-*本文件由 Claude Code 生成，更新日期：2026-04-20*
+*本文件由 Claude Code 生成，更新日期：2026-04-21*
 *多专题架构升级：v4.0*
 *运维层引入：v4.2（Karpathy LLM Wiki 思想整合）*
+*贡献分级（breakthrough/evidence/framework）：v4.4*
 
 ---
 

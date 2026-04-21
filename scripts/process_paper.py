@@ -136,7 +136,7 @@ def generate_basic_yaml(env):
         f"  zotero_key: {env['zotero_key'] or ''}",
         f"  topic: {topic}",
         "  source_type: journal",
-        "  contribution_type: experimental",
+        "  contribution_type: evidence",
         "  reliability: high",
         f"  title: \"论文 {author_year}\"",
         "  year: 2024",

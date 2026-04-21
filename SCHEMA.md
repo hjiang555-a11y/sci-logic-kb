@@ -1,8 +1,9 @@
 # sci-logic-kb YAML 知识提取模式文档
 
-> **版本**：v4.3（2026-04-20）  
-> **变更摘要**：v4.3 在 v4.2 基础上完成 P0 整固——新增 5 个自动化脚本（stats/lint/build_index/graph/freshness）、CI 集成（kb-lint-stats.yml）、分层 INDEX 架构（自动生成）、专题 _meta/ 目录、6 项推理就绪度量定义（§10.8）、节点粒度自检清单（§10.9）。INDEX.md 改为脚本生成，不再手工维护。
-> **向后兼容**：v3.2 YAML 文件无需修改内容即可在 v4.1 下使用。已迁移的文件保留 `# Schema版本：v3.2` 头注释不影响解析；新建文件应使用 `# Schema版本：v4.1` 并在 meta 中包含 `topic:` 字段。
+> **版本**：v4.4（2026-04-21）
+> **变更摘要**：v4.4 正式化论文贡献三档分级（§9.1）——`breakthrough` / `evidence` / `framework`。`evidence` 档位明确为大多数论文的合法归宿，放宽 chain-gap / orphan 要求，从源头提升信号/噪声比。同步更新 YAML 模板（§六）默认值为 `evidence`、补充向后兼容映射（§9.2）；未强制批量迁移历史 YAML 文件，改为触及时归一化。
+> **上版变更（v4.3）**：v4.3 在 v4.2 基础上完成 P0 整固——新增 5 个自动化脚本（stats/lint/build_index/graph/freshness）、CI 集成（kb-lint-stats.yml）、分层 INDEX 架构（自动生成）、专题 _meta/ 目录、6 项推理就绪度量定义（§10.8）、节点粒度自检清单（§10.9）。INDEX.md 改为脚本生成，不再手工维护。
+> **向后兼容**：v3.2 YAML 文件无需修改内容即可在 v4.4 下使用。历史 `contribution_type` 非规范值（`technical` / `technical_breakthrough` / `methodology` / …）按 §9.2 映射表解读，lint 不报错。新建文件应使用 `# Schema版本：v4.4`。
 
 ---
 
@@ -737,9 +738,10 @@ meta:
   zotero_key: "{8位Zotero KEY}"
   topic: ultrastable-laser         # 所属专题（对应 topics/ 子目录名）
   source_type: technical_paper   # technical_paper | review | textbook | standard
-  contribution_type: technical   # technical=具体技术贡献 | framework=专题框架定义
-                                 # technical: 原始研究论文，提供新的实验结果/方法
-                                 # framework: 综述/路线图/教科书，定义专题顶层架构（见第八节）
+  contribution_type: evidence    # breakthrough | evidence | framework（v4.4 三档规范，见第九节）
+                                 # breakthrough: 打破指标记录 / 提出新原理 / 证伪旧论断
+                                 # evidence:    在已有节点上提供新数据点、复现、工程改进（大多数论文属此档）
+                                 # framework:   综述 / 路线图 / 教科书章节（定义顶层架构，见第九节）
   reliability: medium            # high | medium | low
   title: "完整论文标题"
   year: YYYY
@@ -958,23 +960,53 @@ note: "跨专题引用，定义于 topics/frequency-standards/papers/xxx.yaml"
 
 ---
 
-## 九、综述/框架型论文处理规范（v4.0 新增）
+## 九、论文贡献分级与框架型论文处理规范（v4.4 更新）
 
-### 8.1 两类论文的区分原则
+### 9.1 三档贡献分级（v4.4 新增）
 
-| 维度 | 技术论文（`contribution_type: technical`） | 框架型论文（`contribution_type: framework`） |
-|------|------------------------------------------|--------------------------------------------|
+> **动机**：时间频率计量领域的关键比较指标清晰（σ_y、linewidth、accuracy、SWaP…），绝大多数论文只是在已有坐标轴上提供新数据点。此前把"技术论文"和"框架论文"二分粗暴对称，导致 evidence 级论文被要求补完整限制链，催生大量 chain-gap / orphan 假缺口。v4.4 明确三档分级。
+
+| 档位 | 典型贡献 | 节点责任 | 最低入库要求 |
+|------|---------|---------|-------------|
+| `breakthrough` | 打破指标记录 / 提出新原理 / 证伪旧论断 | 可新增 pri.*、配套 `breakthrough_paths`、刷新 `historical_landmarks.best_demonstration` | 完整限制链、`source.claim`、条件变量；若挑战既有论断须补 `contested_claims` |
+| `evidence` | 在已有节点上提供新数据点、新条件验证、工程复现 | 仅挂钩到已有 ent/pri/meth/met，必要时新增 Level 2 实例节点；**不强求新增 pri.*** | 至少 1 条关系的 `subject` 或 `object` 指向已有节点（跨文件引用 OK）+ 1 个 `demonstrated_value`（带 `conditions`）+ `source.claim` |
+| `framework` | 综述 / 路线图 / 教科书章节 | 定义 Level 0/1 顶层实体、tier: meta/domain 原理、跨专题 CONDITIONED-BY 接口 | 不定义具体参数实例；领域共识值须标注 `verification_status: inferred` |
+
+**设计含义**：
+- 大多数论文是 `evidence` 级，这是合理状态，不是缺陷
+- `evidence` 级论文**允许** orphan / chain-gap 的存在——它们是该档位的正常形态，不应计入缺口指标
+- `breakthrough` 级论文必须走完整 checklist（[CONTRIBUTING.md](CONTRIBUTING.md) Step 1–10）
+- `framework` 级论文规则见 §9.3–9.5
+
+### 9.2 向后兼容映射（v4.4 新增）
+
+v4.3 及以前的 YAML 文件里出现过的非规范值按下表解读（不做批量迁移，以 lint / 后续 PR 逐步归一化）：
+
+| 历史值 | 归一化为 | 说明 |
+|--------|---------|------|
+| `technical` | `evidence`（默认）或 `breakthrough`（若论文 note 明确提到"首次 / 打破记录 / 提出新原理"） | 最常见的遗留值 |
+| `technical_breakthrough` | `breakthrough` | 直接映射 |
+| `principle_validation` | `breakthrough` | 原理首次验证 |
+| `methodology` / `technique` / `experimental_demonstration` | `evidence` | 方法或装置级的演示/改进 |
+| `framework` | `framework` | 不变 |
+
+> **原则**：新建 YAML 必须使用三档规范值之一；旧文件在被专家触及时按上表归一化，不做大规模脚本迁移（避免改动签名影响 git blame）。
+
+### 9.3 框架型 vs 技术型（breakthrough+evidence）的区分原则
+
+| 维度 | 技术论文（`breakthrough` / `evidence`） | 框架型论文（`framework`） |
+|------|--------------------------------------|--------------------------|
 | 来源 | 报告具体实验结果或方法创新的原始研究论文 | 综述（review）、路线图（roadmap）、教科书章节 |
 | 节点职责 | 新增 Level 2 实例节点、具体 met.* 指标值 | 定义专题 Level 0–1 顶层实体、meta/domain 原理 |
 | 关系职责 | 深化某条技术链的 BOUNDED-BY/ENABLED-BY 关系 | 建立**跨专题** CONDITIONED-BY 接口关系 |
 | 数值责任 | 提供首次/最佳演示值，必须附 conditions | 提供领域共识范围值；对于汇总数据须注明来源 |
 | 争议/开放问题 | 实验层面的争议和未解决技术问题 | 领域方向层面的争议和战略开放问题 |
 | `source_type` | `technical_paper` | `review` / `standard` / `textbook` |
-| `contribution_type` | `technical` | `framework` |
+| `contribution_type` | `breakthrough` 或 `evidence` | `framework` |
 
-> **注意**：`source_type` 和 `contribution_type` 独立使用。某些技术论文因是专题第一篇而承担部分框架角色时，可用 `contribution_type: technical`（默认），并在 `note` 中说明其"首篇"地位。
+> **注意**：`source_type` 和 `contribution_type` 独立使用。某些技术论文因是专题第一篇而承担部分框架角色时，可用 `contribution_type: breakthrough`（不是 `framework`），并在 `note` 中说明其"首篇"地位。
 
-### 8.2 框架型论文的节点提取规则
+### 9.4 框架型论文的节点提取规则
 
 **可以（鼓励）**：
 1. 定义专题最顶层实体（hierarchy_level: 0 或 1），成为该专题 ID 的**权威来源**（canonical source）
@@ -988,7 +1020,7 @@ note: "跨专题引用，定义于 topics/frequency-standards/papers/xxx.yaml"
 2. 将综述摘要改写为 `demonstrated_value`（只有原始测量才算 `observed`，综述转述须标注 `inferred`）
 3. 在关系 `source.claim` 中引用综述的转述，而非原始论文的论断
 
-### 8.3 跨文件引用与重复定义禁令
+### 9.5 跨文件引用与重复定义禁令
 
 > **全局唯一 ID 是最高准则**：同一节点 ID 只能在一个文件中**完整定义**，其他文件只引用。
 
@@ -1006,7 +1038,7 @@ relations:
 
 **不允许**在 `dimarcq2024.yaml` 的 `entities:` 中再次完整定义 `ent.optical_frequency_standard`。
 
-### 8.4 综述论文处理的典型结构
+### 9.6 综述论文处理的典型结构
 
 ```yaml
 # {Author} {Year} — {综述主题} [框架文档]
@@ -1041,7 +1073,7 @@ relations:
     note: "跨专题接口：..."
 ```
 
-### 8.5 当前框架型文档目录
+### 9.7 当前框架型文档目录
 
 | 文件 | 专题 | 定义的顶层实体 | 定义的核心原理 |
 |------|------|--------------|-------------|

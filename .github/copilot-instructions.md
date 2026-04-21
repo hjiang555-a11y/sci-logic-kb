@@ -170,6 +170,11 @@
 - 主要定义 Level 0/1 顶层实体、tier: meta/domain 原理与跨专题接口关系
 - 避免把具体实验系统的 Level 2 参数实例写成该框架文档的主内容
 
+**贡献分级（v4.4）**：`meta.contribution_type` 使用三档规范（详见 [SCHEMA.md §9.1](../SCHEMA.md)）：
+- `breakthrough`：打破指标记录 / 提出新原理 / 证伪旧论断（需补完整限制链 + `breakthrough_paths`）
+- `evidence`：在已有节点上提供新数据点、复现、工程改进（**默认档位**；不强求新增 pri.* 或 `breakthrough_paths`，允许 orphan）
+- `framework`：综述 / 路线图 / 教科书章节（如上）
+
 ---
 
 ## 7. 质量要求

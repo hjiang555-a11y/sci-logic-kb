@@ -20,12 +20,13 @@
 
 ### Step 2 · 阅读与提取
 - [ ] 阅读摘要、引言、方法、结果、讨论（至少这 5 节）
-- [ ] 识别该论文的**核心贡献类型**（写入 `meta.contribution_type`）：
-  - `framework`：综述 / 路线图 / 教科书式框架定义
-  - `principle`：理论原理提出 / 机制推导
-  - `method`：新测量 / 新锁定方法
-  - `implementation`：新装置、新参数点演示
-  - `characterization`：对已有系统的再测量或长期稳定性验证
+- [ ] 识别该论文的**核心贡献类型**（写入 `meta.contribution_type`，v4.4 三档规范，详见 [SCHEMA.md §9.1](SCHEMA.md)）：
+  - `breakthrough`：打破指标记录 / 提出新原理 / 证伪旧论断
+  - `evidence`：在已有节点上提供新数据点、新条件验证、工程复现（**大多数论文属此档**）
+  - `framework`：综述 / 路线图 / 教科书章节
+- [ ] 若不确定在 `breakthrough` 还是 `evidence`：默认 `evidence`，由专家在审核时决定是否升档
+
+> 📌 **Evidence 档位是合法状态**：科学史里大多数论文贡献不大但有佐证价值。KB 接受它们存在，**不强求**每篇论文都新增 pri.* 或补完整限制链。
 
 ### Step 3 · 节点新建判据（关键）
 对每个候选节点，检查以下判据至少满足其一：
@@ -40,7 +41,8 @@
 - [ ] 每个新 entity/method 至少有 1 条 `PART-OF` 或 `CHARACTERIZED-BY` / `OPERATIONALIZED-AS`
 - [ ] 每个新 principle 至少被 1 条 `BOUNDED-BY` 或 `ENABLED-BY` 引用
 - [ ] 每条 relation 填 `source.claim`（引自原文的一句论断）
-- [ ] 若为 `BOUNDED-BY`，尽量配套写 `breakthrough_paths`（避免新建 chain-gap）
+- [ ] 若为 `BOUNDED-BY` 且本文是 `breakthrough` 档，尽量配套写 `breakthrough_paths`（避免新建 chain-gap）
+- [ ] **Evidence 档位豁免**：`contribution_type: evidence` 的论文**不强求**新增 `breakthrough_paths`，也**允许**产出 orphan 节点——这是该档位的正常形态，不计入缺口指标
 
 ### Step 5 · 时间维度
 - [ ] `historical_landmarks.first_demonstration` —— 若本文是首次演示
@@ -72,6 +74,32 @@ python scripts/build_index.py                      # 重建 INDEX
 - [ ] PR 标题：`add {author}{year}: {论文核心贡献一句话}`
 - [ ] 勾选 PR 模板中的全部质量门
 - [ ] 关联相关 issue（若由 issue 驱动）
+
+---
+
+## Evidence 档位最低入库门槛（v4.4 新增）
+
+> 对应 `meta.contribution_type: evidence` 的论文，占库中绝大多数。本节明确这类论文的最低要求，避免"每篇都要补完整限制链"的隐含期待。
+
+**必须满足（任何论文都不能省）**：
+- [ ] `meta` 块完整（zotero_key / topic / source_type / contribution_type / title / year / first_author / doi）
+- [ ] 至少 1 条 `relation`，`subject` 或 `object` 指向**已有节点**（跨文件引用 OK）
+- [ ] 至少 1 个带 `conditions` 的 `demonstrated_value`（若论文报告了具体数据点）
+- [ ] 所有 relation 带 `source.claim`
+
+**允许（不构成缺陷）**：
+- ✅ 不新增 `pri.*`（只引用已有原理）
+- ✅ 不填 `breakthrough_paths`（若论文没有提出或演示新路径）
+- ✅ 产出 orphan 节点（Level 2 实例节点挂不上多条关系是正常的）
+- ✅ `verification_status: inferred` 占多数（综述转述、二手数据）
+
+**触发升档为 `breakthrough` 的信号**（若命中其一，请重新评估）：
+- ⚠ 论文明确声称"打破 XX 指标记录"
+- ⚠ 提出新原理并给出实验验证
+- ⚠ 证伪已有论断（需同步补 `contested_claims`）
+- ⚠ 首次在某 regime 下演示某路径
+
+> **为什么放宽**：`evidence` 级论文的价值在于**佐证当时代的状态**和**提供指标数据点**——这是时频领域沿着清晰坐标轴推进的必要材料。硬性要求补限制链会淹没真正的 `breakthrough` 信号。
 
 ---
 

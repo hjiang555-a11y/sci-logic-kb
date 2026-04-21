@@ -63,11 +63,9 @@ body:
     attributes:
       label: Contribution Type (meta.contribution_type)
       options:
-        - framework (综述 / 路线图)
-        - principle (理论原理提出)
-        - method (新方法)
-        - implementation (新装置 / 参数点)
-        - characterization (再测量 / 验证)
+        - evidence (在已有节点上提供新数据点 / 复现 / 工程改进，大多数论文属此档)
+        - breakthrough (打破指标记录 / 提出新原理 / 证伪旧论断)
+        - framework (综述 / 路线图 / 教科书章节)
     validations:
       required: true
 
