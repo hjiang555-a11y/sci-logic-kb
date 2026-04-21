@@ -81,6 +81,13 @@ for i in items:
 - 建立关系（relations）
 - 检查是否有跨文件引用的已有节点
 
+**超稳激光专题 σ_y-first 规则**（Round 3 起，2026-04-21）：若当前处理论文属 `ultrastable-laser`，档位判定遵循专题专属规则：
+- 优先识别并量化该论文的 **σ_y(τ=1 s)** 值 —— 这是档位判定的第一依据
+- 若论文未直接报告 σ_y，尝试从频噪 PSD 换算；只有线宽时在 note 中声明 `primary-metric missing: linewidth only`（不能升 breakthrough）
+- 报告 σ_y 时**必须**标注 Allan 变体类型（ADEV / MDEV / OADEV / Hadamard）
+- 线宽、频噪 PSD、相干时间、**长期漂移**、加速度灵敏度、镀层损耗角等单独刷新一律归 `evidence`
+- 详见 [`topics/ultrastable-laser/_meta/scoping_principles.md`](topics/ultrastable-laser/_meta/scoping_principles.md) v2
+
 若该论文是综述/路线图，且主要贡献在于建立专题顶层架构而非提供新的具体技术演示：
 - 使用 `meta.contribution_type: framework`
 - 优先定义 Level 0/1 顶层实体、tier: meta/domain 原理、跨专题 `CONDITIONED-BY` 接口

@@ -175,6 +175,12 @@
 - `evidence`：在已有节点上提供新数据点、复现、工程改进（**默认档位**；不强求新增 pri.* 或 `breakthrough_paths`，允许 orphan）
 - `framework`：综述 / 路线图 / 教科书章节（如上）
 
+**超稳激光专题 σ_y-first 规则（Round 3 起，2026-04-21）**：若当前处理论文属 `ultrastable-laser` 专题：
+- 档位判定的第一依据是 **σ_y(τ=1 s)**（ADEV / MDEV / OADEV / Hadamard 等价主线）
+- 线宽、频噪 PSD、相干时间、**长期漂移**、加速度灵敏度、镀层损耗角、精细度等单独刷新**一律归 `evidence`**
+- 报告 σ_y 时**必须**标注 Allan 变体类型；未报告 σ_y 但有 PSD → 换算并 note 标注；只有线宽 → 在 note 中声明 `primary-metric missing: linewidth only`，**不能升 breakthrough**
+- 规则细节见 [`topics/ultrastable-laser/_meta/scoping_principles.md`](../topics/ultrastable-laser/_meta/scoping_principles.md) v2
+
 ---
 
 ## 7. 质量要求

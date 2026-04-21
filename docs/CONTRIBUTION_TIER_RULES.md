@@ -1,6 +1,6 @@
 # 论文贡献档位（`contribution_type`）操作规则书
 
-> **版本**：v1（2026-04-21） · **归属**：v4.4 schema 机制落地的配套规范
+> **版本**：v1.1（2026-04-21，Round 3 同步超稳激光 σ_y-first 专题偏好） · **归属**：v4.4 schema 机制落地的配套规范
 > **范围**：本规则书用于决定一篇论文 YAML 头部 `meta.contribution_type` 应填 `breakthrough` / `evidence` / `framework` 中的哪一档。
 > **上位规范**：[`SCHEMA.md` §9.1–9.2](../SCHEMA.md)；本文件与 SCHEMA 冲突时以 SCHEMA 为准。
 >
@@ -30,6 +30,8 @@
 > 判据：论文显著推动了该分支的技术前沿。命中任一条即判 `breakthrough`。
 
 1. **指标纪录**：在某个量化指标上打破已知最佳值（如 σ_y、linewidth、accuracy、coating loss angle）。须有可引用的原文数值与 `source.claim`
+
+   > ⚠ **超稳激光专题特别规则**：在本专题内**只有 σ_y(1 s) 主线指标**的纪录刷新算 breakthrough 信号（ADEV / MDEV / OADEV / Hadamard 等价）；线宽、频噪 PSD、相干时间、长期漂移、加速度灵敏度、镀层损耗角、精细度等单独刷新**一律归 `evidence`**。详见 [`topics/ultrastable-laser/_meta/scoping_principles.md`](../topics/ultrastable-laser/_meta/scoping_principles.md) §1.2。
 2. **新原理**：提出一个可被后续论文复用的新 `pri.*` 节点（不是"从已有原理派生一个条件变量"）
 3. **证伪**：给出实证数据推翻某个既有论断（需写入 `contested_claims`）
 4. **方法原创**：提出新的 `meth.*`（如 PDH、Tilt Locking、AOM 光纤外差这种级别）
@@ -86,9 +88,16 @@ Evidence 档位论文的典型形态：
 >
 > 已登记的专题级补充：
 >
-> - **超稳激光**：[`topics/ultrastable-laser/_meta/scoping_principles.md`](../topics/ultrastable-laser/_meta/scoping_principles.md) — "稳定度 > 线宽" 原则（在 σ_y 与 linewidth 都有新纪录时优先按 σ_y 判）
+> - **超稳激光**：[`topics/ultrastable-laser/_meta/scoping_principles.md`](../topics/ultrastable-laser/_meta/scoping_principles.md) v2 — "**σ_y(1 s) 单一主线**"原则
+>   - 覆盖第二节 Step 2 的通用判据：在超稳激光专题内，只有 **σ_y(1 s) 刷新全局或子分支纪录、或提出新 `pri.*`** 能升 `breakthrough`；线宽 / 频噪 PSD / 相干时间 / 长期漂移 / 加速度灵敏度 / 镀层损耗角等单独刷新**一律归 `evidence`**
+>   - σ_y 族涵盖 ADEV / MDEV / OADEV / Hadamard，视为等价，但 YAML 中必须标注 Allan 变体类型（详见该文件 §1.6）
+>   - 长期 σ_y（≥1000 s）与漂移率**不再作为 breakthrough 信号**——该维度由下游光频标技术兜底（见专题 scoping_principles §1.1 动机）
+>   - 子分支 SOTA（FP 腔 / 光纤干涉仪 / SHB）各自的 σ_y 新纪录独立计为 breakthrough，参见该文件 §1.7
 >
-> 处理次序：在某专题内判定档位时，先套用本文件第一~三节的全局判据；若落入"需要在多个强信号间仲裁"的情况，再引用对应专题 `_meta/scoping_principles.md` 的偏好。
+> - **频率标准**（待后续专题启动时建立）：预期以分数频率不确定度（accuracy）优先
+> - **光学频率梳**（待后续专题启动时按 sub-topic 拆分）：关键指标在 sub-topic 间不一致，需逐个定义
+>
+> 处理次序：在某专题内判定档位时，先套用本文件第一~三节的全局判据；若专题 `_meta/scoping_principles.md` 与全局判据冲突，**专题偏好优先**（仅在本专题范围内）。
 
 ---
 

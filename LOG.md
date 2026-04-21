@@ -7,6 +7,21 @@
 
 ---
 
+## [2026-04-21] restructure | Round 3 · 超稳激光 σ_y-first 主线化 · PR#1（文档层）
+
+- **动机**：专家给出专题关键指标聚焦度判断——超稳激光高度聚焦于 σ_y(1 s)，线宽/频噪 PSD 为次要指标；**长期漂移**也降级（由下游光频标技术解决，非本专题核心战场）；频率标准聚焦于 accuracy；光学频率梳发散，需要 sub-topic 拆分。本轮聚焦超稳激光专题改造，按 3 个 PR 节奏推进。
+- **信息层次/范围控制**：
+  - 升级 [`topics/ultrastable-laser/_meta/scoping_principles.md`](topics/ultrastable-laser/_meta/scoping_principles.md) v1 → v2：σ_y(1 s) 单一主线；ADEV/MDEV/OADEV/Hadamard 等价但必须标注变体；长期 σ_y / 漂移降级为 evidence；子分支 SOTA 界定（FP 腔 / 光纤干涉仪 / SHB）；新增 §1.5 关键指标换算、§1.6 Allan 类型标注规范、§1.7 子分支 SOTA
+  - 重排 [`topics/ultrastable-laser/_meta/architecture.md`](topics/ultrastable-laser/_meta/architecture.md) Key Performance Records 为三层（主线 / 次要 / 工程）；三栏表 → 四栏表，新增 `对 σ_y(1 s) 贡献量级` 列
+  - [`docs/CONTRIBUTION_TIER_RULES.md`](docs/CONTRIBUTION_TIER_RULES.md) v1 → v1.1：Step 2 指标纪录条款添加超稳激光专题特别规则；§四专题级偏好节扩充为完整覆盖规则
+  - [`CONTRIBUTING.md`](CONTRIBUTING.md) Step 2 checklist、[`CLAUDE.md`](CLAUDE.md) 步骤 4、[`.github/copilot-instructions.md`](. github/copilot-instructions.md) §6 同步 σ_y-first 规则
+- **未触及**（推到 PR#2 / PR#3）：
+  - PR#2：synthesis 页面补"对 σ_y 主线贡献总结"小节、`stability_record_timeline.md` 升级为顶层导航页、`breakthrough_paths_matrix.md` 补 `expected_σy_gain` 列
+  - PR#3：scripts（build_index 启用 metric role 分类、lint 加 breakthrough 必须有 σ_y 检查、stats 加 σ_y-linkage rate）、YAML 回写 `met.*.role` + `breakthrough_paths[*].expected_σy_gain`、新增超稳激光专用 template、TODO/TOPICS 登记频率标准与光梳 sub-topic 规划
+- **零 YAML 改动**，仅文档与规则层调整，现有 Round 2 档位建议仍然有效（σ_y-first 与 Round 2 的"稳定度 > 线宽"方向一致，只是更严格）
+
+---
+
 ## [2026-04-21] restructure | v4.4 机制落地 · Round 2 · 专题原则 "稳定度>线宽" 纳入档位仲裁
 
 - **动机**：Round 1 输出的 🟧 breakthrough? 17 条是"有弱纪录信号但需仲裁"的集合；专家提出**超稳激光专题内**应以系统稳定度与长期可靠性优于瞬时线宽作为偏好。该原则是**专题级**的，不是知识库整体原则。

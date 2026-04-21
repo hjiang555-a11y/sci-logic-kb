@@ -25,6 +25,11 @@
   - `evidence`：在已有节点上提供新数据点、新条件验证、工程复现（**大多数论文属此档**）
   - `framework`：综述 / 路线图 / 教科书章节
 - [ ] 若不确定在 `breakthrough` 还是 `evidence`：默认 `evidence`，由专家在审核时决定是否升档
+- [ ] **超稳激光专题专属**（若论文属该专题）：
+  - 定位论文的 σ_y(τ=1 s) 在主线时间线上的位置（刷新全局 / 刷新子分支 / 平齐 / 落后）——档位判定的第一依据
+  - 若论文报告了 Allan 偏差，**必须**在 `demonstrated_value` 中标注 Allan 变体类型（ADEV / MDEV / OADEV / Hadamard）
+  - 若论文只报告线宽或频噪 PSD：优先从 PSD 换算 σ_y 并在 note 标注换算方法；只有线宽则在 note 中声明 `primary-metric missing: linewidth only`，此情况**不能**升 breakthrough 档
+  - 规则细节见 [`topics/ultrastable-laser/_meta/scoping_principles.md`](topics/ultrastable-laser/_meta/scoping_principles.md)
 
 > 📌 **Evidence 档位是合法状态**：科学史里大多数论文贡献不大但有佐证价值。KB 接受它们存在，**不强求**每篇论文都新增 pri.* 或补完整限制链。
 
