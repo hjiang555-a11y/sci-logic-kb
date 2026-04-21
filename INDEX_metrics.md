@@ -2,9 +2,13 @@
 
 # 📊 Metrics Quick Reference
 
-> Auto-generated 2026-04-21 00:22 UTC
+> Auto-generated 2026-04-21 02:21 UTC
+>
+> Metrics are grouped by **role** (v4.4 σ_y-first convention, see `topics/ultrastable-laser/_meta/scoping_principles.md` v2). Role is taken from the `role` field on the metric node when present, otherwise inferred from ID / name heuristics.
 
 ## Frequency Standards
+
+### ❓ Unspecified
 
 | ID | Name | Best Value | Conditions | Source |
 |----|------|------------|------------|--------|
@@ -13,19 +17,65 @@
 
 ## Optical Frequency Combs
 
+### 🎯 Primary (σ_y 主线)
+
+| ID | Name | Best Value | Conditions | Source |
+|----|------|------------|------------|--------|
+| `met.fbeat_mod_allan_deviation_w25` | 锁定梳 fbeat 归一化光载波的 modified Allan 偏差（Wang 202… | 7.27×10⁻¹⁸ @1 s；1.29×10⁻²² @10 000 s | 100 MHz Er:fiber 梳 + 1560 nm USL + 本数字伺服；频率计数器 1 … | [wang2025](topics/optical-frequency-combs/papers/wang2025.yaml) |
+
+### 📊 Secondary (线宽/PSD/相干)
+
+| ID | Name | Best Value | Conditions | Source |
+|----|------|------------|------------|--------|
+| `met.eom_crosstalk_residual_phase_noise_z12` | EOM 交叉耦合残余微波相位噪声预测（Zhang 2012，12 GHz） | — | — | [zhang2012c](topics/optical-frequency-combs/papers/zhang2012c.yaml) |
+| `met.fbeat_integrated_phase_noise_k15` | 光学拍频积分相位噪声 | 0.11 rad（10 Hz–3 MHz） | 全 PM Er:fiber 梳锁至 cw 参考 | [kuse2015](topics/optical-frequency-combs/papers/kuse2015.yaml) |
+| `met.fbeat_phase_noise_integrated_l20` | 光学拍频积分相位噪声（Lesko 2020，压电陶瓷光学锁） | — | — | [lesko2020](topics/optical-frequency-combs/papers/lesko2020.yaml) |
+| `met.fbeat_residual_integrated_phase_noise_w25` | fbeat 残余积分相位噪声与定时抖动（Wang 2025） | fbeat 积分相噪 168 mrad（1 Hz–1 MHz），定时抖动 139 as；fceo 积分相噪 469 m… | AnaPico APPH20G 相噪仪；100 MHz Er:fiber 梳闭环；1560 nm … | [wang2025](topics/optical-frequency-combs/papers/wang2025.yaml) |
+| `met.fceo_integrated_phase_noise_k15` | f_CEO 积分相位噪声 | 0.25 rad（10 Hz–3 MHz） | 全 PM Er:fiber 梳 + 石墨烯 EOM | [kuse2015](topics/optical-frequency-combs/papers/kuse2015.yaml) |
+| `met.fceo_integrated_phase_noise_m07` | fceo 锁环内积分相位噪声（McFerran 2007） | 0.99 rad²（≈1 rad rms，0–500 kHz 积分） | 1480 nm 泵流 1 A；相位超前伺服带宽 ~80 kHz；分辨带宽 0.3 Hz | [mcferran2007](topics/optical-frequency-combs/papers/mcferran2007.yaml) |
+| `met.fceo_phase_noise_integrated_l20` | f_CEO 积分相位噪声（Lesko 2020，泵浦电流锁） | — | — | [lesko2020](topics/optical-frequency-combs/papers/lesko2020.yaml) |
+| `met.frep_integrated_phase_noise_t17` | frep 环路内积分相位噪声（Torcheboeuf 2017） | — | — | [torcheboeuf2017](topics/optical-frequency-combs/papers/torcheboeuf2017.yaml) |
+| `met.integrated_laser_linewidth_s18` | 集成 III–V/Si3N4 外腔激光器线宽 | 40 kHz | Pelec ≈ 277 mW，Popt = 9.5 mW，60 dB SMSR | [stern2018](topics/optical-frequency-combs/papers/stern2018.yaml) |
+| `met.integrated_phase_noise_fceo_s14` | CEO 相位环（f_ceo）积分相位噪声 | 2.9 rad（实验室）；6.2 rad（车辆，因泵浦电流控制器带宽降低）；~6 rad（振动台，EMI 主导），与振… | 反馈至泵浦功率 (52 MHz/mW)，150 kHz 带宽；车辆测试使用不同泵浦电流源 | [sinclair2014](topics/optical-frequency-combs/papers/sinclair2014.yaml) |
+| `met.integrated_phase_noise_fopt_s14` | 光学相位环（f_opt）积分相位噪声 | 0.22 rad（实验室，1 Hz–5 MHz）；0.3 rad（车辆）；~0.5 rad @ 低振动 → 0.5 g… | 实验室：1565 nm cavity-stabilized 参考；车辆/振动台：1535 nm f… | [sinclair2014](topics/optical-frequency-combs/papers/sinclair2014.yaml) |
+| `met.integrated_phase_noise_z17` | 积分相位噪声（f_ceo / f_beat） | f_ceo: 0.53 rad（0.44 fs 抖动）；f_beat: 0.86 rad（0.71 fs 抖动） | 1 Hz–100 kHz 积分区间；FFT 分析仪（in-loop） | [zhang2017](topics/optical-frequency-combs/papers/zhang2017.yaml) |
+| `met.integrated_phase_noise_z22b` | in-loop 积分相位噪声（1 Hz–1 MHz） | f_ceo: 0.99 rad（0.55 fs）；f_beat: 0.14 rad（0.12 fs） | 锁定条件同 met.fceo_allan_inloop_z22b / met.fbeat_alla… | [zhang2022b](topics/optical-frequency-combs/papers/zhang2022b.yaml) |
+| `met.photonic_microwave_phase_noise` | 光子微波合成相位噪声 | −171 dBc/Hz @ 1 Hz offset, 9.8 GHz carrier（等效 σ_y ≈ 6.5×10⁻… | Er:fiber comb 锁定至 ULE 超稳腔激光，光电探测 + 滤波，Menlo Syste… | [giunta2019](topics/optical-frequency-combs/papers/giunta2019.yaml) |
+| `met.photonic_microwave_phase_noise_k22` | 8 GHz 光生微波相位噪声本底 | <-180 dBc/Hz @ 1 MHz 偏移 | 自由运行 MMLL + 低温 RF 功分器 | [kalubovilage2022](topics/optical-frequency-combs/papers/kalubovilage2022.yaml) |
+| `met.photonic_microwave_phase_noise_pc15` | 9.6 GHz 光生微波 SSB 相位噪声（Portuondo-Campa 2015） | −100 dBc/Hz @ 1 Hz（近载波）； −148 dBc/Hz（BOC 光学测得 OFC 本征定时抖动等效 … | 两台相同 DPSSL OFC 锁至共同 cw 参考（4 cm FP 腔 PDH 稳 DFB 光纤激… | [portuondo-campa2015](topics/optical-frequency-combs/papers/portuondo-campa2015.yaml) |
+| `met.residual_phase_noise_psd_k18` | FNDC 开启前支间残余相噪 PSD（Kashiwagi 2018） | 0.1 Hz–100 Hz 区间相噪占主导（FNDC 开启后被压；100 Hz–20 kHz 为残余地板） | 1700 nm 应用支直接拍频，BS+10 nm BPF，~45 dB S/N @ 300 kHz… | [kashiwagi2018](topics/optical-frequency-combs/papers/kashiwagi2018.yaml) |
+
+### 🔗 Interface (CONDITIONED-BY 耦合)
+
+| ID | Name | Best Value | Conditions | Source |
+|----|------|------------|------------|--------|
+| `met.astrocomb_mode_spacing_m19` | 天文梳齿距（HPF EO 梳） | 30 GHz（由微波源锁定，逐齿分辨于 910、1210 nm 已演示） | HPF R≈53000，810–1280 nm；910/1210 nm 高分辨光谱观察到分立齿 | [metcalf2019](topics/optical-frequency-combs/papers/metcalf2019.yaml) |
+| `met.astrocomb_spectral_coverage_m19` | 天文梳谱覆盖（HPF EO + SiN 方案） | 700–1600 nm | 525 mW 平均功率入射 25 mm SiN 波导；覆盖 HPF 全部 28 阶 810–128… | [metcalf2019](topics/optical-frequency-combs/papers/metcalf2019.yaml) |
+| `met.beat_snr_li_d1_r19` | 671 nm 拍频信号信噪比 → Li D1 线频率测量（Rao 2019） | ~60 dB | RBW 1 Hz；671 nm 单模功率 208 nW；DLCpro 单频激光 | [rao2019](topics/optical-frequency-combs/papers/rao2019.yaml) |
+| `met.cn2_cross_validation_c20` | Cn² 跨方法一致性指标 | V⊥ > 1 m/s 时比值 ≲ 5；V⊥ → 0 时比值发散 | ['1 min 分辨率', 'Kolmogorov 模型在 0.19–5 Hz 区间拟合梳 PSD… | [caldwell2020](topics/optical-frequency-combs/papers/caldwell2020.yaml) |
+| `met.comb_spectral_bandwidth` | 光学频率梳谱宽（通用指标） | >300 THz（1064→532 nm，覆盖一个光学八度） | Ti:Sa ~10 fs / 100 MHz + 空气-石英微结构光纤（Diddams 2000） | [diddams2000](topics/optical-frequency-combs/papers/diddams2000.yaml) |
+| `met.digital_servo_total_latency_w25` | 数字伺服板级总延迟（Wang 2025） | <250 ns（其中 IQ 解调 ~50 ns，整链路含 ADC/DAC） | 7k325t FPGA，400 MHz 时钟，低阶 FIR + 陷波，改进 atan2 | [wang2025](topics/optical-frequency-combs/papers/wang2025.yaml) |
+| `met.microcomb_aggregate_data_rate_s22` | 微梳驱动 WDM 链路聚合数据率 | 2 Tbit/s（线速率）/ 1.65 Tbit/s（净速率） | 20 条梳齿 × 50 Gbaud PAM4，ECL 泵浦 AlGaAsOI 暗脉冲梳，2 km … | [shu2022](topics/optical-frequency-combs/papers/shu2022.yaml) |
+| `met.microcomb_pump_threshold_g19` | 微梳泵浦阈值功率 | 亚毫瓦级（Si3N4 低损耗腔）至数十毫瓦级（倍频程谱） | 1.55 μm 泵浦；CW 单频激光；室温 | [gaeta2019](topics/optical-frequency-combs/papers/gaeta2019.yaml) |
+| `met.microcomb_wallplug_electrical_power_s18` | 集成 Kerr 微梳系统总电功耗 Pelec | 98 mW（AAA 电池，单孤子运行）；78 mW（参量阈值）；130 mW（稳定单孤子运行点） | 120 µm Si3N4 微环 Q_i = 8×10⁶，无主动温控，端面对接 III–V RSOA | [stern2018](topics/optical-frequency-combs/papers/stern2018.yaml) |
+| `met.on_chip_sc_span_h17` | AlN 片上超连续谱宽（Hickstein 2017） | 500–4000 nm（覆盖倍频程，含 1400–2800 nm 亮区可用于 OH 吸收谱） | AlN 波导 800 nm 厚；宽度扫描 400–5100 nm；1560 nm / 80 fs … | [hickstein2017](topics/optical-frequency-combs/papers/hickstein2017.yaml) |
+| `met.open_path_length_dcs_h24` | 开放大气 DCS 最长演示路径长度 | 113 km | 水平开放大气，Nanshan(2109 m)→Gaoyazi(1782 m)，2022-06 实测… | [han2024](topics/optical-frequency-combs/papers/han2024.yaml) |
+| `met.optical_bandwidth_2um_x20` | 2 µm 频率梳光谱带宽（Xing 2020） | 1 µm 至 >2.4 µm（倍频程） | HNLF2 6 cm 自压缩输出，327 mW 平均功率 | [xing2020](topics/optical-frequency-combs/papers/xing2020.yaml) |
+| `met.out_of_loop_instability_z22b` | out-of-loop 多支路相对稳定度（Zhang 2022b） | 9×10⁻¹⁷ @1 s → 5.5×10⁻¹⁹ @4000 s | 支路长度差 ±1 cm、温度 ±0.2 °C；同一 1555 nm 超稳激光作共同参考；无实时光相… | [zhang2022b](topics/optical-frequency-combs/papers/zhang2022b.yaml) |
+| `met.platform_q_factor_g19` | 芯片微腔品质因数 Q（平台对比） | Silica microwedge >8.75×10⁸；Si3N4 >3.7×10⁷（最高）及 >10⁷（典型） | 1.55 μm 带；本征 Q（非负载 Q）；室温 | [gaeta2019](topics/optical-frequency-combs/papers/gaeta2019.yaml) |
+| `met.pump_laser_rin_m07` | 1480 nm Bragg-grating FP 泵二极管 RIN 谱 | 310 mA: 最高；1 A: 最低（相比 310 mA 下降 ~10–20 dB，近电流源底 −138~−148 d… | Bragg-grating 稳定 FP 1480 nm 二极管；同样现象见 980 nm 泵 | [mcferran2007](topics/optical-frequency-combs/papers/mcferran2007.yaml) |
+
+### ❓ Unspecified
+
 | ID | Name | Best Value | Conditions | Source |
 |----|------|------------|------------|--------|
 | `met.astro_comb_rv_precision_y12` | 天文光梳径向速度校准精度 | ~10 m/s（~6 MHz @ 1.6 µm） | 4 夜，HET 9.2 m + Pathfinder NIR 光谱仪，3 echelle order | [ycas2012](topics/optical-frequency-combs/papers/ycas2012.yaml) |
-| `met.astrocomb_mode_spacing_m19` | 天文梳齿距（HPF EO 梳） | 30 GHz（由微波源锁定，逐齿分辨于 910、1210 nm 已演示） | HPF R≈53000，810–1280 nm；910/1210 nm 高分辨光谱观察到分立齿 | [metcalf2019](topics/optical-frequency-combs/papers/metcalf2019.yaml) |
-| `met.astrocomb_spectral_coverage_m19` | 天文梳谱覆盖（HPF EO + SiN 方案） | 700–1600 nm | 525 mW 平均功率入射 25 mm SiN 波导；覆盖 HPF 全部 28 阶 810–128… | [metcalf2019](topics/optical-frequency-combs/papers/metcalf2019.yaml) |
 | `met.average_power_2um_comb_x20` | 2 µm 梳平均输出功率 | 327 mW @100 MHz | 1.94 W C-band 泵浦，17% 总效率 | [xing2020](topics/optical-frequency-combs/papers/xing2020.yaml) |
-| `met.beat_snr_li_d1_r19` | 671 nm 拍频信号信噪比 → Li D1 线频率测量（Rao 2019） | ~60 dB | RBW 1 Hz；671 nm 单模功率 208 nW；DLCpro 单频激光 | [rao2019](topics/optical-frequency-combs/papers/rao2019.yaml) |
 | `met.cams_snr_l22` | CAMS 相位敏感谐波探测 SNR | 85 dB | 100 MHz Er:fiber + ZnO HHG + 锁相解调 @ f_CEO | [lesko2022](topics/optical-frequency-combs/papers/lesko2022.yaml) |
 | `met.channel_loss_dcs_h24` | DCS 信道总衰减（发射到接收光功率比） | 83 dB | 1 W 发射，首帧 >100 nW 接收，后续帧 >5 nW，113 km 水平路径 | [han2024](topics/optical-frequency-combs/papers/han2024.yaml) |
 | `met.chip_comb_system_power_g19` | 集成芯片梳系统电功耗 | <100 mW（RSOA + Si3N4 微梳 + 电池供电演示） | 边缘耦合 RSOA 集成泵源；AAA 电池供电；室温；基于 Si3N4 微腔 | [gaeta2019](topics/optical-frequency-combs/papers/gaeta2019.yaml) |
 | `met.chip_scg_octave_span_g19` | 芯片 SCG 倍频程谱宽 | Si3N4 > 495 THz (on-chip)；Si 纳米线 1.06–2.4 μm（倍频程，16 pJ/puls… | 飞秒锁模泵浦；波导长度 ≤5 cm；色散工程优化 | [gaeta2019](topics/optical-frequency-combs/papers/gaeta2019.yaml) |
 | `met.clock_beatnote_snr_z22b` | 四支路梳-钟激光拍频 SNR（Zhang 2022b） | >30 dB @ 300 kHz RBW（四路全部） | 单模功率 707 nW~5 µW；InGaAs 或 Si 光电探测器；698/729 nm 两路噪… | [zhang2022b](topics/optical-frequency-combs/papers/zhang2022b.yaml) |
-| `met.cn2_cross_validation_c20` | Cn² 跨方法一致性指标 | V⊥ > 1 m/s 时比值 ≲ 5；V⊥ → 0 时比值发散 | ['1 min 分辨率', 'Kolmogorov 模型在 0.19–5 Hz 区间拟合梳 PSD… | [caldwell2020](topics/optical-frequency-combs/papers/caldwell2020.yaml) |
 | `met.co2_precision_allan_h24` | CO₂ 柱浓度 Allan 精度 | <2 ppm @ 5 min；<0.6 ppm @ 36 min | 2022-06-06 23:29 – 2022-06-07 04:29 相对稳定期，113 km … | [han2024](topics/optical-frequency-combs/papers/han2024.yaml) |
 | `met.coherent_comb_access_window_s22` | 相干暗脉冲接入窗口（泵浦失谐） | tens of GHz（约为亮孤子的 10 倍） | 10 mW 泵浦，AlGaAsOI 暗脉冲梳，热光自稳 | [shu2022](topics/optical-frequency-combs/papers/shu2022.yaml) |
 | `met.coherent_spectral_bandwidth_s14` | 相干输出光谱范围 | 实验室 ~140 THz（以 1565 nm 为中心，覆盖 1–2 μm 全范围）；现场 ~70 THz（f_ceo … | 按 Δν ≈ 2·ν_opt / σ_φ,fceo 近似估计 | [sinclair2014](topics/optical-frequency-combs/papers/sinclair2014.yaml) |
@@ -35,7 +85,6 @@
 | `met.comb_linewidth_1572nm_r19` | Er:fiber 光梳直接输出谱参数（Rao 2019） | 中心 1572 nm；3dB 带宽 35 nm；脉宽 59 fs（sech²） | 590 mW 976 nm 泵浦；40 cm Er110-4/125 增益光纤；Yokogawa … | [rao2019](topics/optical-frequency-combs/papers/rao2019.yaml) |
 | `met.comb_mode_equidistancy_u02` | 频率梳梳齿等间距验证精度（Udem 2002） | < 3×10⁻¹⁷ | 两个激光二极管分别相位锁定至梳的远端模式， 通过光学频率间隔分频器（OFID）验证中间点与梳齿的一… | [udem2002](topics/optical-frequency-combs/papers/udem2002.yaml) |
 | `met.comb_raman_line_fwhm_c20` | 飞秒梳 Raman 驱动转动谱线宽（Chou 2020） | <1 kHz FWHM | ~1.6 ms 方脉冲 CRPT；Fourier 限；40CaH+ J=2→4 | [chou2020](topics/optical-frequency-combs/papers/chou2020.yaml) |
-| `met.comb_spectral_bandwidth` | 光学频率梳谱宽（通用指标） | >300 THz（1064→532 nm，覆盖一个光学八度） | Ti:Sa ~10 fs / 100 MHz + 空气-石英微结构光纤（Diddams 2000） | [diddams2000](topics/optical-frequency-combs/papers/diddams2000.yaml) |
 | `met.comb_spectroscopy_molecular_sensitivity` | 频率梳光谱分子检测灵敏度 | ppb 级痕量气体检测（腔增强方案） | 腔增强频率梳光谱（VIPA + 增强腔或双梳 + 增强腔）； 气相分子中红外强振转吸收带； 典型灵… | [picque2019](topics/optical-frequency-combs/papers/picque2019.yaml) |
 | `met.comb_spectroscopy_spectral_coverage` | 频率梳光谱覆盖范围 | 亚毫米波 0.3–3 THz（光导天线/光整流下转换）； 远红外 3–15 THz（THz QCL 梳 ~3 THz … | 双梳光谱已在所有上述波段实现实验演示（见 Fig. 6）； 近红外技术最为成熟（商业化光纤梳）； … | [picque2019](topics/optical-frequency-combs/papers/picque2019.yaml) |
 | `met.comb_transfer_stability_g20` | 光学频率梳传递稳定度（Giunta 2020） | mod σ_y(τ) < 10⁻¹⁸ @ τ > 10 s（各频段）；10⁻²⁰ @ ~100 s | 两台 Er:fiber 梳，共享 1542 nm USL 参考，色散外差检测启用 | [giunta2020](topics/optical-frequency-combs/papers/giunta2020.yaml) |
@@ -47,28 +96,19 @@
 | `met.dcs_snr_coherent` | 相干双梳光谱信噪比（幅度 + 相位） | 平均 SNR 2500，峰值 SNR 4000；相位灵敏度 250 μrad；分数吸收灵敏度 0.05% | 9 THz 带宽，HCN overtone @ 1550 nm，相干实时平均 | [coddington2010](topics/optical-frequency-combs/papers/coddington2010.yaml) |
 | `met.dcs_snr_per_tooth` | 双梳光谱单齿信噪比 | figure of merit ~2×10⁸ Hz^(1/2)（数字相位/定时校正 + 高动态范围探测器） | 近红外 Er:fiber 梳，100 MHz 梳齿间距，数字相位/定时校正 + 高动态范围 InG… | [coddington2016](topics/optical-frequency-combs/papers/coddington2016.yaml) |
 | `met.digital_servo_control_bandwidth_w25` | 数字伺服控制带宽（Wang 2025） | 1.1 MHz | Xilinx 7k325t @400 MHz 主时钟；板级延迟 <250 ns；100 MHz E… | [wang2025](topics/optical-frequency-combs/papers/wang2025.yaml) |
-| `met.digital_servo_total_latency_w25` | 数字伺服板级总延迟（Wang 2025） | <250 ns（其中 IQ 解调 ~50 ns，整链路含 ADC/DAC） | 7k325t FPGA，400 MHz 时钟，低阶 FIR + 陷波，改进 atan2 | [wang2025](topics/optical-frequency-combs/papers/wang2025.yaml) |
 | `met.dks_comb_bandwidth` | DKS 微梳光谱带宽 | >1 octave（Si₃N₄ 微谐振腔，双色散波，THz 模式间距） | Si₃N₄ 集成微环谐振腔，色散工程优化四阶色散，CW 泵浦，数十 mW 泵浦功率 | [kippenberg2018](topics/optical-frequency-combs/papers/kippenberg2018.yaml) |
 | `met.dpssl_ofc_timing_jitter_pc15` | 锁定 DPSSL OFC 本征定时抖动（BOC 光学测量，Portuondo-Campa… | 等效相噪低至 −148 dBc/Hz（1 Hz–1 kHz，两源共同贡献） | 完全锁定 OFC（f_rep + f₀ 均闭环），BOC 无反馈式同步（重频锁至共同光参考即已同步） | [portuondo-campa2015](topics/optical-frequency-combs/papers/portuondo-campa2015.yaml) |
 | `met.eo_comb_spectral_span_y16` | EO 天文梳光谱覆盖（Yi 2016） | ~100+ nm，中心 1559.9 nm（H 波段） | EO 调制梳 + HNLF 展宽 | [yi2016](topics/optical-frequency-combs/papers/yi2016.yaml) |
-| `met.eom_crosstalk_residual_phase_noise_z12` | EOM 交叉耦合残余微波相位噪声预测（Zhang 2012，12 GHz） | — | — | [zhang2012c](topics/optical-frequency-combs/papers/zhang2012c.yaml) |
 | `met.eom_frep_transfer_bandwidth_z12` | EOM→frep 传递函数带宽（Zhang 2012，Menlo Er:fiber 梳） | — | — | [zhang2012c](topics/optical-frequency-combs/papers/zhang2012c.yaml) |
 | `met.erfiber_comb_synthesis_instability_l17` | Er:fiber 梳分数频率不稳定度（Leopardi 2017） | σ_y ~ 3×10⁻¹⁸ @ 1 s；1×10⁻¹⁹ @ 1000 s；测量不确定度 <1×10⁻¹⁹ | 超稳激光锁定至单齿，f-2f 稳 f_CEO，单分支共模 | [leopardi2017](topics/optical-frequency-combs/papers/leopardi2017.yaml) |
 | `met.erfiber_timing_uncertainty_y15` | Er:fiber 梳环内计时不确定度（Yan 2015） | 100–200 as（全测量范围）；σ_y <1×10⁻¹⁶ @1s；低 10⁻²⁰ @ 10⁴ s | In-loop 测量（1550 nm cw 参考） | [yan2015](topics/optical-frequency-combs/papers/yan2015.yaml) |
 | `met.f0_imprecision_s19` | f0 锁定不精确度 | <1 (1-σ, 20 s) | HCN P(16) 锁定参考激光拍频，Rb 钟计数 | [suh2019](topics/optical-frequency-combs/papers/suh2019.yaml) |
 | `met.fbeat_allan_inloop_z22b` | in-loop f_beat 稳定度（Zhang 2022b） | 8.5×10⁻¹⁸ / √τ @ 1 s | EOM+PZT 反馈，f_beat=270 MHz，~300 kHz 反馈带宽，H-maser 参… | [zhang2022b](topics/optical-frequency-combs/papers/zhang2022b.yaml) |
 | `met.fbeat_instability_z17` | 稳定化 1555 nm 梳齿 in-loop 分数频率稳定度 | 9.4×10⁻¹⁸ @1 s → 10⁻²⁰ @10000 s | EOM + PZT 双执行器；1555 nm 窄线宽 CW 激光参考；f_beat 频率计数器门 … | [zhang2017](topics/optical-frequency-combs/papers/zhang2017.yaml) |
-| `met.fbeat_integrated_phase_noise_k15` | 光学拍频积分相位噪声 | 0.11 rad（10 Hz–3 MHz） | 全 PM Er:fiber 梳锁至 cw 参考 | [kuse2015](topics/optical-frequency-combs/papers/kuse2015.yaml) |
-| `met.fbeat_mod_allan_deviation_w25` | 锁定梳 fbeat 归一化光载波的 modified Allan 偏差（Wang 202… | 7.27×10⁻¹⁸ @1 s；1.29×10⁻²² @10 000 s | 100 MHz Er:fiber 梳 + 1560 nm USL + 本数字伺服；频率计数器 1 … | [wang2025](topics/optical-frequency-combs/papers/wang2025.yaml) |
-| `met.fbeat_phase_noise_integrated_l20` | 光学拍频积分相位噪声（Lesko 2020，压电陶瓷光学锁） | — | — | [lesko2020](topics/optical-frequency-combs/papers/lesko2020.yaml) |
-| `met.fbeat_residual_integrated_phase_noise_w25` | fbeat 残余积分相位噪声与定时抖动（Wang 2025） | fbeat 积分相噪 168 mrad（1 Hz–1 MHz），定时抖动 139 as；fceo 积分相噪 469 m… | AnaPico APPH20G 相噪仪；100 MHz Er:fiber 梳闭环；1560 nm … | [wang2025](topics/optical-frequency-combs/papers/wang2025.yaml) |
 | `met.fceo_allan_inloop_z22b` | in-loop f_ceo 稳定度（Zhang 2022b） | 7.5×10⁻¹⁸ / √τ @ 1 s | 泵浦电流反馈，f_ceo=250 MHz，40 kHz 反馈带宽，H-maser 参考；计数器 A… | [zhang2022b](topics/optical-frequency-combs/papers/zhang2022b.yaml) |
 | `met.fceo_inloop_instability_r19` | fceo 环内分数频率稳定度（Rao 2019） | 3.74×10⁻¹⁸ / τ¹ᐟ² | 泵浦电流反馈锁定；in-loop 测量 | [rao2019](topics/optical-frequency-combs/papers/rao2019.yaml) |
 | `met.fceo_instability_z17` | 稳定化 f_ceo in-loop 分数频率稳定度 | 9.0×10⁻¹⁸ @1 s；按 τ⁻¹/² 下降（受测量系统 dead time 影响） | 泵浦电流反馈锁定；外部 RF 参考；频率计数器门时间 1 s；τ⁻¹/² 源自计数器 dead t… | [zhang2017](topics/optical-frequency-combs/papers/zhang2017.yaml) |
-| `met.fceo_integrated_phase_noise_k15` | f_CEO 积分相位噪声 | 0.25 rad（10 Hz–3 MHz） | 全 PM Er:fiber 梳 + 石墨烯 EOM | [kuse2015](topics/optical-frequency-combs/papers/kuse2015.yaml) |
-| `met.fceo_integrated_phase_noise_m07` | fceo 锁环内积分相位噪声（McFerran 2007） | 0.99 rad²（≈1 rad rms，0–500 kHz 积分） | 1480 nm 泵流 1 A；相位超前伺服带宽 ~80 kHz；分辨带宽 0.3 Hz | [mcferran2007](topics/optical-frequency-combs/papers/mcferran2007.yaml) |
 | `met.fceo_linewidth_m07` | fceo 场谱线宽（Er:fiber 梳，McFerran 2007） | 自由运行：数百 kHz → ~60 kHz（泵流 1 A）；锁环内：仪器极限（RBW 0.3 Hz） | RIN 通过泵电流选择；锁相时伺服带宽 ~80 kHz | [mcferran2007](topics/optical-frequency-combs/papers/mcferran2007.yaml) |
-| `met.fceo_phase_noise_integrated_l20` | f_CEO 积分相位噪声（Lesko 2020，泵浦电流锁） | — | — | [lesko2020](topics/optical-frequency-combs/papers/lesko2020.yaml) |
 | `met.fceo_snr_l20` | f_CEO 信噪比（Lesko 2020，内联 PPLN f-to-2f） | — | — | [lesko2020](topics/optical-frequency-combs/papers/lesko2020.yaml) |
 | `met.fceo_snr_on_chip_h17` | 片上 f_CEO 信噪比（Hickstein 2017） | 37 dB | TM00 泵浦 4800 nm 宽波导；780 nm 带通 + 光电二极管（相位失配 SHG 在基… | [hickstein2017](topics/optical-frequency-combs/papers/hickstein2017.yaml) |
 | `met.fceo_snr_r19` | fceo 信号信噪比（Rao 2019） | ~40 dB | RBW 300 kHz；220 mW 放大 + 30 cm HNLF 倍频程展宽 + PPLN1 … | [rao2019](topics/optical-frequency-combs/papers/rao2019.yaml) |
@@ -79,7 +119,6 @@
 | `met.free_running_frep_instability_r19` | 自由运转 frep 秒级稳定度（Rao 2019） | 2.65×10⁻¹⁰ @1 s | 自由运转、无锁定 | [rao2019](topics/optical-frequency-combs/papers/rao2019.yaml) |
 | `met.free_running_freq_instability_e18` | 自由运转分数频率不稳定度（Endo 2018，整体式 Er:glass OFC） | ~1×10⁻¹⁹ | Er:glass + CaF₂ 整体式腔，frep ≈ 1.5 GHz，波长 1.56 μm， 1… | [endo2018](topics/optical-frequency-combs/papers/endo2018.yaml) |
 | `met.frep_inloop_instability_r19` | frep 环内分数频率稳定度（Rao 2019） | 1.75×10⁻¹³ / τ¹ᐟ²；@100 s ≈ 2×10⁻¹⁴ | EOM+PZT 双驱动；in-loop 测量 | [rao2019](topics/optical-frequency-combs/papers/rao2019.yaml) |
-| `met.frep_integrated_phase_noise_t17` | frep 环路内积分相位噪声（Torcheboeuf 2017） | — | — | [torcheboeuf2017](topics/optical-frequency-combs/papers/torcheboeuf2017.yaml) |
 | `met.frep_l20` | 重复频率（Lesko 2020，1 GHz Er:fiber） | — | — | [lesko2020](topics/optical-frequency-combs/papers/lesko2020.yaml) |
 | `met.frep_lock_bandwidth_t17` | frep 锁定带宽（Torcheboeuf 2017，DPSSL EOM） | — | — | [torcheboeuf2017](topics/optical-frequency-combs/papers/torcheboeuf2017.yaml) |
 | `met.freq_accuracy_dcs_h24` | DCS 绝对频率精度（校准后） | 10 kHz（校准后）；~1 GHz（未校准，因 Δf_CW 漂移） | fr=250 MHz，Δfr=2.5 kHz，干涉图内嵌时频比对校准 | [han2024](topics/optical-frequency-combs/papers/han2024.yaml) |
@@ -89,11 +128,6 @@
 | `met.inflight_f2f_beat_snr_l16` | In-flight f-2f beat-note SNR | ≥ 30 dB in 100 kHz RBW throughout flight | ['TEXUS-51 flight, 100 MHz Er:fiber comb, HNLF su… | [lezius2016](topics/optical-frequency-combs/papers/lezius2016.yaml) |
 | `met.inflight_lock_continuity_l16` | Continuous self-reference lock duration in f… | Uninterrupted lock across ~6 min microgravity; lock survive… | ['TEXUS-51 ballistic profile'] | [lezius2016](topics/optical-frequency-combs/papers/lezius2016.yaml) |
 | `met.injection_locking_range_d14` | 自注入锁定范围（Del'Haye 2014） | — | — | [delhaye2014](topics/optical-frequency-combs/papers/delhaye2014.yaml) |
-| `met.integrated_laser_linewidth_s18` | 集成 III–V/Si3N4 外腔激光器线宽 | 40 kHz | Pelec ≈ 277 mW，Popt = 9.5 mW，60 dB SMSR | [stern2018](topics/optical-frequency-combs/papers/stern2018.yaml) |
-| `met.integrated_phase_noise_fceo_s14` | CEO 相位环（f_ceo）积分相位噪声 | 2.9 rad（实验室）；6.2 rad（车辆，因泵浦电流控制器带宽降低）；~6 rad（振动台，EMI 主导），与振… | 反馈至泵浦功率 (52 MHz/mW)，150 kHz 带宽；车辆测试使用不同泵浦电流源 | [sinclair2014](topics/optical-frequency-combs/papers/sinclair2014.yaml) |
-| `met.integrated_phase_noise_fopt_s14` | 光学相位环（f_opt）积分相位噪声 | 0.22 rad（实验室，1 Hz–5 MHz）；0.3 rad（车辆）；~0.5 rad @ 低振动 → 0.5 g… | 实验室：1565 nm cavity-stabilized 参考；车辆/振动台：1535 nm f… | [sinclair2014](topics/optical-frequency-combs/papers/sinclair2014.yaml) |
-| `met.integrated_phase_noise_z17` | 积分相位噪声（f_ceo / f_beat） | f_ceo: 0.53 rad（0.44 fs 抖动）；f_beat: 0.86 rad（0.71 fs 抖动） | 1 Hz–100 kHz 积分区间；FFT 分析仪（in-loop） | [zhang2017](topics/optical-frequency-combs/papers/zhang2017.yaml) |
-| `met.integrated_phase_noise_z22b` | in-loop 积分相位噪声（1 Hz–1 MHz） | f_ceo: 0.99 rad（0.55 fs）；f_beat: 0.14 rad（0.12 fs） | 锁定条件同 met.fceo_allan_inloop_z22b / met.fbeat_alla… | [zhang2022b](topics/optical-frequency-combs/papers/zhang2022b.yaml) |
 | `met.intracavity_avg_power_h07` | 腔内平均功率（Hartl 2007） | 3 kW（增强因子 ~230×） | CPA 注入 13.1 W；精细度 ~230×；阻抗匹配条件下 | [hartl2007](topics/optical-frequency-combs/papers/hartl2007.yaml) |
 | `met.intracavity_peak_intensity_h07` | 腔内聚焦峰值强度（Hartl 2007） | 3×10^14 W/cm² | 精细度 ~230×；焦斑面积 150 µm²；腔内峰值功率 230 MW；frep=136 MHz | [hartl2007](topics/optical-frequency-combs/papers/hartl2007.yaml) |
 | `met.intracavity_peak_power_h07` | 腔内峰值功率（Hartl 2007） | 230 MW | 腔内平均功率 3 kW；腔内脉宽 95 fs；frep=136 MHz | [hartl2007](topics/optical-frequency-combs/papers/hartl2007.yaml) |
@@ -101,7 +135,6 @@
 | `met.li_d1_measurement_uncertainty_r19` | Li 原子 D1 线频率测量应用的可达测量不确定度（Rao 2019 目标） | ~10 Hz @ 100 s（对应 kHz 量级绝对准确度需求） | 梳锁定到外部微波参考；100 s 积分；Li D1 ~447 THz | [rao2019](topics/optical-frequency-combs/papers/rao2019.yaml) |
 | `met.lock_uptime_s14` | 连续无相位滑移锁定时间 | >35 h 连续无相位滑移（实验室，1 s 门时计数 f_ceo σ = 0.62 mHz / f_opt σ = 0… | 实验室环境；最终受限于致动器动态范围或偶发电气瞬态 | [sinclair2014](topics/optical-frequency-combs/papers/sinclair2014.yaml) |
 | `met.microcomb_30dB_bandwidth_s18` | 集成微梳 30-dB 光谱带宽 | 8.6 THz (72 nm) 单孤子；13.4 THz (105 nm) 双孤子 | 近 1550 nm 泵浦；Pelec = 130 / 162 mW 两种拓扑 | [stern2018](topics/optical-frequency-combs/papers/stern2018.yaml) |
-| `met.microcomb_aggregate_data_rate_s22` | 微梳驱动 WDM 链路聚合数据率 | 2 Tbit/s（线速率）/ 1.65 Tbit/s（净速率） | 20 条梳齿 × 50 Gbaud PAM4，ECL 泵浦 AlGaAsOI 暗脉冲梳，2 km … | [shu2022](topics/optical-frequency-combs/papers/shu2022.yaml) |
 | `met.microcomb_comb_line_power_s18` | 集成微梳梳齿总光功率 / 单齿功率 | 0.24 mW 总梳功率（双用环拓扑，Pelec=130 mW）；80 µW（Sagnac 模块化拓扑，Pelec=1… | 单孤子 / 双孤子 30-dB bandwidth 8.6–13.4 THz | [stern2018](topics/optical-frequency-combs/papers/stern2018.yaml) |
 | `met.microcomb_conversion_efficiency_g19` | 微梳泵-梳功率转换效率 | 单孤子态典型 1–3%（∝ 孤子数 N）；正常 GVD 暗脉冲/platicon 显著更高 | Si3N4 / Silica DKS，1.55 μm 泵浦 | [gaeta2019](topics/optical-frequency-combs/papers/gaeta2019.yaml) |
 | `met.microcomb_equidistance_offset_p13` | 微梳跨模等间距性偏差（offset from equidistance） | \\|ν0\\| ≤ 2 Hz，m = 0…54；m=54 分数不确定度 1×10⁻¹² | 主导子梳 ν0 调至 ~0；参量振荡 + FWM 共同增益；参考梳 −60 dBm 线功率 | [papp2013](topics/optical-frequency-combs/papers/papp2013.yaml) |
@@ -115,14 +148,12 @@
 | `met.microcomb_opo_threshold_p18` | 微梳 OPO 阈值功率汇总（Pasquazi 2018） | — | — | [pasquazi2018](topics/optical-frequency-combs/papers/pasquazi2018.yaml) |
 | `met.microcomb_parametric_oscillation_threshold_s22` | AlGaAsOI 微梳参量振荡阈值 | <100 μW（tens of μW） | AlGaAsOI Q = 1–2×10⁶ 微环，1552 nm，CW 泵浦 | [shu2022](topics/optical-frequency-combs/papers/shu2022.yaml) |
 | `met.microcomb_power_consumption` | DKS 微梳泵浦功率 | 数十 mW（倍频程展宽 DKS 已报告） | Si₃N₄ 集成微环谐振腔，CW 泵浦 @ ~1550 nm，色散工程优化 | [kippenberg2018](topics/optical-frequency-combs/papers/kippenberg2018.yaml) |
-| `met.microcomb_pump_threshold_g19` | 微梳泵浦阈值功率 | 亚毫瓦级（Si3N4 低损耗腔）至数十毫瓦级（倍频程谱） | 1.55 μm 泵浦；CW 单频激光；室温 | [gaeta2019](topics/optical-frequency-combs/papers/gaeta2019.yaml) |
 | `met.microcomb_q_factor_record_p18` | 微谐振腔 Q 因子记录（Pasquazi 2018 综述汇总） | — | — | [pasquazi2018](topics/optical-frequency-combs/papers/pasquazi2018.yaml) |
 | `met.microcomb_repetition_rate_range` | 微梳重复频率范围 | 10–1000 GHz（平台相关：crystalline ~12 GHz，Si₃N₄ ~204 GHz，silica … | 各平台已演示值：silica microtoroid 86 GHz（首次）、375 GHz；cry… | [kippenberg2011](topics/optical-frequency-combs/papers/kippenberg2011.yaml) |
 | `met.microcomb_repetition_rate_s18` | 集成微梳梳齿间距 / 重复频率 | 194 GHz | R = 120 µm Si3N4 微环 | [stern2018](topics/optical-frequency-combs/papers/stern2018.yaml) |
 | `met.microcomb_sc_spectral_span` | 微梳 + 片上 SC 光谱跨度 | 700–2100 nm（倍频程） | 15 GHz SiO₂ 微梳 + Si₃N₄ 波导 | [lamb2018](topics/optical-frequency-combs/papers/lamb2018.yaml) |
 | `met.microcomb_soliton_pump_power_threshold` | 微梳单孤子泵浦功率阈值 | ~120 mW（单孤子，Si₃N₄，octave）；~40 mW（多孤子） | Si₃N₄ 微环 Q ~ 10⁶，~1550 nm 泵浦，室温慢扫描 | [li2017](topics/optical-frequency-combs/papers/li2017.yaml) |
 | `met.microcomb_spectral_bandwidth` | 微梳光学带宽 | ~1 octave（~1064–2100 nm 量级）单孤子态 | 色散工程化 Si₃N₄ 微环，Li 2017 | [li2017](topics/optical-frequency-combs/papers/li2017.yaml) |
-| `met.microcomb_wallplug_electrical_power_s18` | 集成 Kerr 微梳系统总电功耗 Pelec | 98 mW（AAA 电池，单孤子运行）；78 mW（参量阈值）；130 mW（稳定单孤子运行点） | 120 µm Si3N4 微环 Q_i = 8×10⁶，无主动温控，端面对接 III–V RSOA | [stern2018](topics/optical-frequency-combs/papers/stern2018.yaml) |
 | `met.microresonator_Q_s19` | 微腔无载 Q 值 | ≈3×10^8 | 3 mm silica wedge 微腔 | [suh2019](topics/optical-frequency-combs/papers/suh2019.yaml) |
 | `met.mid_ir_spectral_coverage` | 中红外梳光谱覆盖范围 | >900 cm⁻¹ around 3 μm（简并 OPO）；>500 cm⁻¹ in 3–5 μm（梳内 DFG in… | 简并 OPO：PPLN-based，泵浦为 Tm:fiber 梳；DFG：PPLN 或 GaSe … | [schliesser2012](topics/optical-frequency-combs/papers/schliesser2012.yaml) |
 | `met.midir_dcs_resolution_y19` | 中红外 DCS 原生光谱分辨率（Ycas 2019） | 0.0067 cm⁻¹（200 MHz，梳齿间距） | 200 MHz 重复频率 Er 光纤梳 + PPLN-DFG | [ycas2019](topics/optical-frequency-combs/papers/ycas2019.yaml) |
@@ -137,14 +168,10 @@
 | `met.number_of_comb_lines_w17` | Number of coherent comb lines | thousands of equidistant lines across the C-band | ['Above mode-locking threshold; single operating … | [wang2017](topics/optical-frequency-combs/papers/wang2017.yaml) |
 | `met.ofc_timing_jitter_floor` | OFC 模间定时抖动本底 | <1 fs（主动锁定至超稳激光后，BOMPD 方案） | OFC frep 通过 BOMPD 锁定至光学参考，积分频率范围 1 Hz–1 MHz | [endo2018](topics/optical-frequency-combs/papers/endo2018.yaml) |
 | `met.on_chip_mid_ir_power_h17` | 片上中红外 DFG 输出功率（Hickstein 2017） | ~0.3 mW（3500–4000 nm 区间） | 2600 nm 宽波导；TM 泵浦；DFG 来自展宽泵浦与长波色散波的差频 | [hickstein2017](topics/optical-frequency-combs/papers/hickstein2017.yaml) |
-| `met.on_chip_sc_span_h17` | AlN 片上超连续谱宽（Hickstein 2017） | 500–4000 nm（覆盖倍频程，含 1400–2800 nm 亮区可用于 OH 吸收谱） | AlN 波导 800 nm 厚；宽度扫描 400–5100 nm；1560 nm / 80 fs … | [hickstein2017](topics/optical-frequency-combs/papers/hickstein2017.yaml) |
-| `met.open_path_length_dcs_h24` | 开放大气 DCS 最长演示路径长度 | 113 km | 水平开放大气，Nanshan(2109 m)→Gaoyazi(1782 m)，2022-06 实测… | [han2024](topics/optical-frequency-combs/papers/han2024.yaml) |
 | `met.open_path_length_midir_dcs_y19` | 开阔大气路径长度（中红外 DCS，Ycas 2019） | 162 m（小回射器 63.5 mm）与 1 km（大回射器 127 mm） | NIST Boulder 园区 DCS 链路；2018 年 6 月测量 | [ycas2019](topics/optical-frequency-combs/papers/ycas2019.yaml) |
 | `met.operating_temperature_range_l16` | Qualified operating temperature range | 10–40 °C baseplate | — | [lezius2016](topics/optical-frequency-combs/papers/lezius2016.yaml) |
-| `met.optical_bandwidth_2um_x20` | 2 µm 频率梳光谱带宽（Xing 2020） | 1 µm 至 >2.4 µm（倍频程） | HNLF2 6 cm 自压缩输出，327 mW 平均功率 | [xing2020](topics/optical-frequency-combs/papers/xing2020.yaml) |
 | `met.optical_frequency_measurement_accuracy_u02` | 光学频率测量准确度（Udem 2002 综述报告） | 1.9×10⁻¹⁴（氢 1S-2S 跃迁，受限于氢光谱仪再现性而非频率梳） | Ti:sapphire 频率梳 + PCF 展宽，f_rep 锁定至铯喷泉钟（LPTF）， 486… | [udem2002](topics/optical-frequency-combs/papers/udem2002.yaml) |
 | `met.optical_frequency_measurement_uncertainty_d00` | 光学频率测量统计不确定度（Diddams 2000，282 THz@1064 nm） | ~2×10⁻¹³（2500 s，~50 Hz 于 282 THz） | 10 GHz 本振锁定至本地 Rb，GPS 共视至 NIST Cs 集合；tracking osc… | [diddams2000](topics/optical-frequency-combs/papers/diddams2000.yaml) |
-| `met.out_of_loop_instability_z22b` | out-of-loop 多支路相对稳定度（Zhang 2022b） | 9×10⁻¹⁷ @1 s → 5.5×10⁻¹⁹ @4000 s | 支路长度差 ±1 cm、温度 ±0.2 °C；同一 1555 nm 超稳激光作共同参考；无实时光相… | [zhang2022b](topics/optical-frequency-combs/papers/zhang2022b.yaml) |
 | `met.outer_scale_length_c20` | 近地水平路径外尺度 L₀（拟合值） | 1.6 m（beam 高度）；敏感性测试范围 1–10 m | L₀ ≈ 光束离地高度（Refs. [4,21,22,26]） | [caldwell2020](topics/optical-frequency-combs/papers/caldwell2020.yaml) |
 | `met.parametric_oscillation_threshold` | 参量振荡阈值功率 | sub-μW（超高 Q silica/crystalline）至 ~300 mW（Si₃N₄，Q = 10⁵–10⁶） | P_th ∝ n₀²V_eff/(n₂Q²)；silica microtoroid Q > 10⁸… | [kippenberg2011](topics/optical-frequency-combs/papers/kippenberg2011.yaml) |
 | `met.peak_power_2um_comb_x20` | 2 µm 压缩脉冲峰值功率 | ~104 kW（主峰含 32% 能量，含 10% Fresnel 反射损失） | 327 mW 平均功率，100 MHz，1.4 cycle | [xing2020](topics/optical-frequency-combs/papers/xing2020.yaml) |
@@ -152,15 +179,10 @@
 | `met.phire_distance_precision_averaged_c18` | PHIRE 距离测量精度（平均后，Carlson 2018） | — | — | [carlson2018](topics/optical-frequency-combs/papers/carlson2018.yaml) |
 | `met.phire_distance_precision_c18` | PHIRE 距离测量精度（Carlson 2018） | — | — | [carlson2018](topics/optical-frequency-combs/papers/carlson2018.yaml) |
 | `met.phire_nar_extended_c18` | PHIRE 扩展非模糊距离范围（Carlson 2018） | — | — | [carlson2018](topics/optical-frequency-combs/papers/carlson2018.yaml) |
-| `met.photonic_microwave_phase_noise` | 光子微波合成相位噪声 | −171 dBc/Hz @ 1 Hz offset, 9.8 GHz carrier（等效 σ_y ≈ 6.5×10⁻… | Er:fiber comb 锁定至 ULE 超稳腔激光，光电探测 + 滤波，Menlo Syste… | [giunta2019](topics/optical-frequency-combs/papers/giunta2019.yaml) |
-| `met.photonic_microwave_phase_noise_k22` | 8 GHz 光生微波相位噪声本底 | <-180 dBc/Hz @ 1 MHz 偏移 | 自由运行 MMLL + 低温 RF 功分器 | [kalubovilage2022](topics/optical-frequency-combs/papers/kalubovilage2022.yaml) |
-| `met.photonic_microwave_phase_noise_pc15` | 9.6 GHz 光生微波 SSB 相位噪声（Portuondo-Campa 2015） | −100 dBc/Hz @ 1 Hz（近载波）； −148 dBc/Hz（BOC 光学测得 OFC 本征定时抖动等效 … | 两台相同 DPSSL OFC 锁至共同 cw 参考（4 cm FP 腔 PDH 稳 DFB 光纤激… | [portuondo-campa2015](topics/optical-frequency-combs/papers/portuondo-campa2015.yaml) |
-| `met.platform_q_factor_g19` | 芯片微腔品质因数 Q（平台对比） | Silica microwedge >8.75×10⁸；Si3N4 >3.7×10⁷（最高）及 >10⁷（典型） | 1.55 μm 带；本征 Q（非负载 Q）；室温 | [gaeta2019](topics/optical-frequency-combs/papers/gaeta2019.yaml) |
 | `met.pulse_duration_cycles_x20` | 2 µm 脉冲持续时间（以光周期计） | 9.5 fs（1.4 光周期 @2 µm） | 327 mW 输出，1.94 W C-band 泵浦，SHG-FROG 重建误差 1.1%，±1.… | [xing2020](topics/optical-frequency-combs/papers/xing2020.yaml) |
 | `met.pulse_duration_intracavity_h07` | 腔内脉冲宽度（Hartl 2007） | 95 fs | 腔内色散补偿后；CPA 输出 75 fs（注入前） | [hartl2007](topics/optical-frequency-combs/papers/hartl2007.yaml) |
 | `met.pulse_to_pulse_timing_jitter_s14` | 脉间时间抖动（Sinclair 2014） | 2.4 fs（实验室）；5 fs（车辆 & 振动台 0.5 g rms）；~3.1 fs/g 随加速度线性 | 锁至 cw 参考，积分 1 Hz–5 MHz | [sinclair2014](topics/optical-frequency-combs/papers/sinclair2014.yaml) |
 | `met.pulse_width_erfiber_z17` | 最短输出脉冲宽度 | 49 fs（最小）；330 mW 泵浦下为 60 fs | sech² 拟合；860 mW 泵浦；自由空间自相关仪测量；腔内净色散 -5000 fs² | [zhang2017](topics/optical-frequency-combs/papers/zhang2017.yaml) |
-| `met.pump_laser_rin_m07` | 1480 nm Bragg-grating FP 泵二极管 RIN 谱 | 310 mA: 最高；1 A: 最低（相比 310 mA 下降 ~10–20 dB，近电流源底 −138~−148 d… | Bragg-grating 稳定 FP 1480 nm 二极管；同样现象见 980 nm 泵 | [mcferran2007](topics/optical-frequency-combs/papers/mcferran2007.yaml) |
 | `met.pump_pulse_energy_threshold_h17` | 片上 f-2f 自参考泵浦脉冲能量阈值（Hickstein 2017） | 0.8 nJ（80 mW @ 100 MHz） | AlN 波导；1560 nm；~80 fs 脉宽 | [hickstein2017](topics/optical-frequency-combs/papers/hickstein2017.yaml) |
 | `met.pump_to_rin_transfer_z12` | 泵浦电流→激光器 RIN 传递系数（Zhang 2012） | — | — | [zhang2012c](topics/optical-frequency-combs/papers/zhang2012c.yaml) |
 | `met.ramsey_comb_fractional_accuracy` | Ramsey-comb 光谱分数频率精度 | ~10⁻¹² 级分数精度（H₂ 双光子跃迁，202 nm） | H₂ 分子 EF¹Σ_g⁺ ← X¹Σ_g⁺ 双光子跃迁，深紫外 202 nm (1,485 TH… | [picque2019](topics/optical-frequency-combs/papers/picque2019.yaml) |
@@ -169,7 +191,6 @@
 | `met.relative_frequency_uncertainty_modallan_k18` | 支间相对频率 modified Allan 偏差（长期，Kashiwagi 2018） | 9.7×10⁻²¹ @ 126500 s（mod σ_y）；加权标准差（单梳）1.6×10⁻²⁰ | 总测量时长 510000 s（mod σ_y 序列）与 600000 s（移动平均序列）； 除以 … | [kashiwagi2018](topics/optical-frequency-combs/papers/kashiwagi2018.yaml) |
 | `met.rep_rate_erfiber_z17` | 重频（Er:fiber 混合锁模梳） | 168 MHz | 860 mW 泵浦；腔长 122.5 cm；NALM+NPE 混合锁模；测量用 RF 谱仪 | [zhang2017](topics/optical-frequency-combs/papers/zhang2017.yaml) |
 | `met.residual_optical_linewidth_s14` | 残余光学梳齿线宽（Sinclair 2014） | < 1 Hz（out-of-loop，仪器受限） | 实验室，1565 nm cavity-stabilized 参考锁点，1535 nm 第二腔稳参考… | [sinclair2014](topics/optical-frequency-combs/papers/sinclair2014.yaml) |
-| `met.residual_phase_noise_psd_k18` | FNDC 开启前支间残余相噪 PSD（Kashiwagi 2018） | 0.1 Hz–100 Hz 区间相噪占主导（FNDC 开启后被压；100 Hz–20 kHz 为残余地板） | 1700 nm 应用支直接拍频，BS+10 nm BPF，~45 dB S/N @ 300 kHz… | [kashiwagi2018](topics/optical-frequency-combs/papers/kashiwagi2018.yaml) |
 | `met.rf_transfer_instability_16400s_l16` | RF 传输频率不稳定度 @ 16400 s（Leng 2016） | — | — | [leng2016](topics/optical-frequency-combs/papers/leng2016.yaml) |
 | `met.rf_transfer_instability_1s_l16` | RF 传输频率不稳定度 @ 1 s（Leng 2016） | — | — | [leng2016](topics/optical-frequency-combs/papers/leng2016.yaml) |
 | `met.rin_erfiber_z17` | 相对强度噪声（RIN） | -135 dBc/Hz（10 Hz–1 kHz）；-130 dBc/Hz @1 Hz；< -145 dBc/Hz @ … | ~10 mW 耦合至 Thorlabs DET10 光电探测器；SR785 FFT 分析；不同泵浦… | [zhang2017](topics/optical-frequency-combs/papers/zhang2017.yaml) |
@@ -201,6 +222,8 @@
 
 ## Timescales
 
+### ❓ Unspecified
+
 | ID | Name | Best Value | Conditions | Source |
 |----|------|------------|------------|--------|
 | `met.frequency_ratio_agreement_cross_lab` | 跨实验室光钟频率比一致性 | 部分频率比已在 ~10⁻¹⁷ 水平一致，但多数尚未达到 5×10⁻¹⁸ 目标 | Sr/Sr、Yb/Yb 同种比较最佳；异种比较和洲际比较仍在进行中 | [dimarcq2024](topics/timescales/papers/dimarcq2024.yaml) |
@@ -208,41 +231,11 @@
 
 ## Ultrastable Laser
 
+### 🎯 Primary (σ_y 主线)
+
 | ID | Name | Best Value | Conditions | Source |
 |----|------|------------|------------|--------|
-| `met.acceleration_sensitivity_h15` | 全向加速度灵敏度（Häfner 2015 自平衡安装） | κz=1.7×10⁻¹⁰/g，κy=0.5×10⁻¹⁰/g，κx=1.5×10⁻¹⁰/g（全向 < 2×10⁻¹⁰/g） | 自平衡安装，Viton 球间距实验优化；0.7 Hz 正弦激励；初始未优化约 4×10⁻⁸/g | [hafner2015](topics/ultrastable-laser/papers/hafner2015.yaml) |
-| `met.acceleration_sensitivity_herbers22` | 三轴加速度灵敏度（Herbers 2022，20 cm 可搬运腔） | κx = 2(1)×10⁻¹²/(m/s²), κy = 3(3)×10⁻¹²/(m/s²), κz = 3(1)×1… | 20 cm horizontal cylindrical cavity；10-point spri… | [herbers2022](topics/ultrastable-laser/papers/herbers2022.yaml) |
-| `met.acceleration_sensitivity_horizontal_w07` | 水平加速度灵敏度（切口腔，Webster 2007） | 3.7 ± 0.9 kHz/ms⁻² | Case B（橡胶球），水平方向垂直于腔轴；沿腔轴方向仍为 3.7 kHz/ms⁻² | [webster2007](topics/ultrastable-laser/papers/webster2007.yaml) |
-| `met.acceleration_sensitivity_millo09` | 振动灵敏度（Millo 2009，竖直腔/水平腔） | ≤1.5×10⁻¹¹ per m/s² (每方向); 竖直腔最低 3.5×10⁻¹² (竖直方向); 水平腔最低 5×… | 竖直/水平两种设计, 10 cm 腔, 无需精细调谐支撑点 | [millo2009](topics/ultrastable-laser/papers/millo2009.yaml) |
-| `met.acceleration_sensitivity_t18` | 加速度灵敏度（Tao 2018） | 0.8×10⁻¹⁰/g (vertical), 2.5×10⁻¹⁰/g (along axis), 1.5×10⁻¹⁰… | 10 cm ULE 方形腔，12 点夹持，1064 nm | [tao2018](topics/ultrastable-laser/papers/tao2018.yaml) |
-| `met.acceleration_sensitivity_vertical_w07` | 竖直加速度灵敏度（切口腔，Webster 2007） | < 0.1 kHz/ms⁻² | Case B（3 mm 橡胶球），z≈20.3 mm，c=18.45 mm，x=22 mm，15 … | [webster2007](topics/ultrastable-laser/papers/webster2007.yaml) |
-| `met.acceleration_sensitivity_w11` | 加速度灵敏度（立方体腔，Webster 2011） | 2.45(3) / 0.21(4) / 0.01(1) ×10⁻¹¹/g（轴向/横向1/横向2） | 被动灵敏度，1064 nm Nd:YAG，立方体 ULE 腔，尼龙半球支撑，腔室对称放置（偏心 ≤… | [webster2011](topics/ultrastable-laser/papers/webster2011.yaml) |
-| `met.acceleration_sensitivity_y99` | 腔谐振频率对加速度灵敏度（Young 1999） | ≈ 100 kHz/(m/s²) | 竖直方向加速，1 Hz 正弦驱动测量，24 cm ULE 腔水平放置 | [young1999](topics/ultrastable-laser/papers/young1999.yaml) |
-| `met.algaas_absorption_1064_cole16` | AlGaAs 晶体镀层 1064 nm 吸收（Cole 2016） | <1 ppm | 1064 nm, PTS 测量 | [cole2016](topics/ultrastable-laser/papers/cole2016.yaml) |
-| `met.algaas_coating_loss_angle_17k_l26` | AlGaAs 晶体镀层损耗角（Lee 2026，17 K） | φ_AlGaAs(17K) < 2.3×10⁻⁵（上限，FP 腔热噪声测量） | 6 cm Si 腔，17 K，1542 nm，AlGaAs 晶体镀层（2023 批次，48.5 周… | [lee2026](topics/ultrastable-laser/papers/lee2026.yaml) |
-| `met.algaas_coating_loss_angle_c13` | AlGaAs 晶体镀层损耗角（Cole 2013） | φ_AlGaAs ≤ 2.5×10⁻⁵（室温上限，FP 腔测量）；对比 IBS 最优 φ ~ 2×10⁻⁴ | 35 mm Zerodur 腔，熔融石英底物，1064 nm，室温，与 PTB 698 nm 参考… | [cole2013](topics/ultrastable-laser/papers/cole2013.yaml) |
-| `met.algaas_coating_loss_angle_ibs_4k_r19` | IBS 镀层损耗角（Robinson 2019，4 K Si 腔提取） | φ_IBS(4K) = 5.15×10⁻⁴（SiO₂/Ta₂O₅ IBS 镀层） | 6 cm Si4 腔，4 K，PSD 拟合范围 5 mHz – 2 Hz，Sy = a·f⁻¹ 模… | [robinson2019](topics/ultrastable-laser/papers/robinson2019.yaml) |
-| `met.algaas_coating_loss_angle_kedar23` | AlGaAs 晶体镀层损耗角上限（Kedar 2023） | φ < 4.1×10⁻⁴ (4.7K); φ < 1.2×10⁻⁴ (16.7K) | Si6 腔, AlGaAs/GaAs 晶体镀层, 低温 | [kedar2023](topics/ultrastable-laser/papers/kedar2023.yaml) |
-| `met.algaas_finesse_cole16` | AlGaAs 晶体镀层腔精细度（Cole 2016） | >3×10⁵ | 1550 nm, GaAs/AlGaAs 晶体镀层 | [cole2016](topics/ultrastable-laser/papers/cole2016.yaml) |
-| `met.algaas_optical_loss_cole16` | AlGaAs 晶体镀层超额光学损耗（Cole 2016） | 3 ppm (scatter + absorption, NIR 1064-1560 nm) | GaAs/AlGaAs 基底转移晶体镀层, 近红外 | [cole2016](topics/ultrastable-laser/papers/cole2016.yaml) |
 | `met.allan_deviation_fiber` | 分数频率不稳定度（光纤干涉仪，静态） | ~10⁻¹⁴ @ 0.1–1 s | 2.5 km 光纤，静态锁频 | [jiang2010](topics/ultrastable-laser/papers/jiang2010.yaml) |
-| `met.backscattering_coefficient_hcf_mb21` | 背向散射系数（Michaud-Belleau 2021，AR-HCF） | −118 dB/m | 低损耗 NANF, 1.55 μm, 自研 OFDR 测量 | [michaudbelleau2021](topics/ultrastable-laser/papers/michaudbelleau2021.yaml) |
-| `met.beam_quality_d20` | 光束质量M²（Dixneuf 2020） | <1.1 | 输出光束经过准直，1064 nm | [dixneuf2020](topics/ultrastable-laser/papers/dixneuf2020.yaml) |
-| `met.beam_waist_parameter_k66` | 光束腰斑参数（理论） | 由腔参数决定 | 稳定球面镜谐振腔 | [kogelnik1966](topics/ultrastable-laser/papers/kogelnik1966.yaml) |
-| `met.cavity_frequency_drift_r19` | 腔频率漂移率（Robinson 2019，功率相关，Si4 4 K） | -3×10⁻¹⁹ /s（40 nW 传输功率，最低漂移测量点） | 40 nW 传输（对应 2 mW 腔内循环功率，F=500,000，T=2 ppm）， 等待 5 … | [robinson2019](topics/ultrastable-laser/papers/robinson2019.yaml) |
-| `met.cavity_frequency_drift_z17` | 腔频率漂移率（Zhang 2017，4 K 闭循环 Si 腔） | < 1 mHz/s @ 1542 nm（约 5×10⁻¹⁸ s⁻¹） | 经 Yb fiber comb 锁定到 Sr optical lattice clock，三天观测… | [zhang2017](topics/ultrastable-laser/papers/zhang2017.yaml) |
-| `met.cavity_storage_time_p25` | 光学腔存储时间 | 295 ± 2 μs | 68 cm ULE 腔，真空 6×10⁻⁸ mbar，1542 nm，ringdown 测量 10… | [parke2025](topics/ultrastable-laser/papers/parke2025.yaml) |
-| `met.coating_loss_angle_comparison_s18` | 镀层损耗角多材料多温度比较 | SiO₂: 0.4×10⁻⁴(290K)/1.7×10⁻⁴(120K)/7.8×10⁻⁴(20K); Ti:Ta₂O₅… | IBS 沉积，各温度点的机械损耗测量 | [steinlechner2018](topics/ultrastable-laser/papers/steinlechner2018.yaml) |
-| `met.crystalline_coating_absorption_m18` | 晶体镀层光学吸收 | ≤0.8 ppm (fused silica substrate) | 2 英寸 GaAs/AlGaAs 镀层，1064 nm，光热偏转法 | [marchio2018](topics/ultrastable-laser/papers/marchio2018.yaml) |
-| `met.crystalline_coating_tis_m18` | 晶体镀层总积分散射（TIS） | 6–9.5 ppm | 2 英寸 GaAs/AlGaAs 镀层，1064 nm，CASI 散射仪，FS 9.5 ppm /… | [marchio2018](topics/ultrastable-laser/papers/marchio2018.yaml) |
-| `met.cte_shift_fs_mirror_leg10` | FS 镜引起的 CTE 零点温度偏移（Legero 2010） | ~20 K (降低) | FS 镜 + ULE 间隔物，镜面变形 (bulging) 效应 | [legero2010](topics/ultrastable-laser/papers/legero2010.yaml) |
-| `met.cte_zero_crossing_tuning_range_leg10` | CTE 零点温度调谐范围（Legero 2010） | ~30 K | FS 镜 + ULE 间隔物 + ULE 补偿环，FEM 模拟 + 实测 | [legero2010](topics/ultrastable-laser/papers/legero2010.yaml) |
-| `met.detection_snr_improvement_g20` | 探测信噪比改善（Galland 2020） | 改善（具体数值未给出） | 双外差探测SHB | [galland2020](topics/ultrastable-laser/papers/galland2020.yaml) |
-| `met.electronic_noise_reduction_factor_g16` | 电子噪声降低倍数（Grote 2016） | >4 | 音频频段 >1 kHz，高功率光电探测器 | [grote2016](topics/ultrastable-laser/papers/grote2016.yaml) |
-| `met.eu_yso_t2_k03` | Eu³⁺:Y₂SiO₅ 光学退相时间（Könz 2003） | T₂ up to 2.6 ms | Eu³⁺:Y₂SiO₅, low concentration, ~2 K | [konz2003](topics/ultrastable-laser/papers/konz2003.yaml) |
-| `met.fiber_freq_stability_hjc19` | 全光纤频率稳定度（Huang JC 2019） | 3×10⁻¹⁵ @ 1–10 s | 5 km FDL，1.55 μm | [huangjc2019](topics/ultrastable-laser/papers/huangjc2019.yaml) |
-| `met.fiber_laser_linewidth_hjc19` | 全光纤激光线宽（Huang JC 2019） | 0.2 Hz (200 mHz) | 5 km FDL，超低加速度灵敏度光纤盘，真空 | [huangjc2019](topics/ultrastable-laser/papers/huangjc2019.yaml) |
-| `met.fiber_long_term_stability_h23` | 全光纤超稳激光长期稳定度（Huang 2023） | 3.2×10⁻¹⁵ @ 1s; 1.1×10⁻¹⁴ @ 1000s | 全光纤 FDL，真空腔五层热屏蔽，两级温控 | [huang2023](topics/ultrastable-laser/papers/huang2023.yaml) |
 | `met.fractional_freq_instability_a12` | 分数频率不稳定度（Argence 2012） | 5–6×10⁻¹⁶ @ 1 s | 100 mm ULE 腔，FS 镜，1542 nm，实验室环境 | [argence2012](topics/ultrastable-laser/papers/argence2012.yaml) |
 | `met.fractional_freq_instability_c14` | 分数频率不稳定度（Chen 2014） | 1×10⁻¹⁵ @ 1–10 s | 10 cm ULE 腔，1064 nm，三角帽测量 | [chen2014](topics/ultrastable-laser/papers/chen2014.yaml) |
 | `met.fractional_freq_instability_c20` | 分数频率不稳定度（Chen 2020） | 6×10⁻¹⁶ @ 1 s | 10 cm 立方 ULE 腔，1064 nm，vs 578 nm 参考腔通过光频梳 | [chen2020](topics/ultrastable-laser/papers/chen2020.yaml) |
@@ -269,19 +262,18 @@
 | `met.fractional_freq_instability_w16` | 分数频率不稳定度（Wu 2016） | 8×10⁻¹⁶ @ 1–30 s | 10 cm ULE 腔，室温，1557 nm，去除线性漂移 0.03 Hz/s | [wu2016](topics/ultrastable-laser/papers/wu2016.yaml) |
 | `met.fractional_freq_instability_y99` | 分数频率不稳定度（Young 1999 腔） | ≈ 3 × 10⁻¹⁶ | 563 nm 染料激光锁定到 24 cm ULE 腔，两腔拍频测量，τ = 1 s | [young1999](topics/ultrastable-laser/papers/young1999.yaml) |
 | `met.fractional_freq_instability_z17` | 分数频率不稳定度（Zhang 2017，4 K 闭循环 Si 腔） | ≈1×10⁻¹⁶（0.06–100 s averaging；0.06 s 以下受振动限制） | 1542 nm，6 cm Si cavity，T≈4 K，SiO₂/Ta₂O₅ 镀层，finess… | [zhang2017](topics/ultrastable-laser/papers/zhang2017.yaml) |
-| `met.freq_noise_from_temperature_fiber` | 温度变化引起的光纤频率噪声（接口指标） | ~几 kHz/K（2.5 km SMF-28 光纤，ν₀ ≈ 193 THz） | 室温下 SMF-28 光纤，dn/dT ≈ 1.1×10⁻⁵/K，α ≈ 0.55×10⁻⁶/K | [jiang2010](topics/ultrastable-laser/papers/jiang2010.yaml) |
-| `met.freq_noise_from_vibration` | 振动引起的频率噪声（接口指标） | 残余振动噪声贡献 < 热噪声水平（充分隔振后） | Young 1999 悬挂隔振台 + 腔加速度灵敏度 ~100 kHz/(m/s²) | [young1999](topics/ultrastable-laser/papers/young1999.yaml) |
+
+### 📊 Secondary (线宽/PSD/相干)
+
+| ID | Name | Best Value | Conditions | Source |
+|----|------|------------|------------|--------|
+| `met.fiber_laser_linewidth_hjc19` | 全光纤激光线宽（Huang JC 2019） | 0.2 Hz (200 mHz) | 5 km FDL，超低加速度灵敏度光纤盘，真空 | [huangjc2019](topics/ultrastable-laser/papers/huangjc2019.yaml) |
 | `met.freq_noise_psd_fiber` | 频率噪声谱密度（光纤干涉仪锁定，静态） | 约 10–100 Hz²/Hz @ 1–10 Hz；在 30–3000 Hz 频段接近 ULE 腔锁定水平 | 2.5 km SMF-28 光纤，静态锁频，室温隔振箱 | [jiang2010](topics/ultrastable-laser/papers/jiang2010.yaml) |
 | `met.freq_noise_psd_fiber_dong15` | 频率噪声谱密度（Dong 2015，500 m 光纤） | < 0.8 Hz²/Hz (−1 dB) @ 1 Hz；0.016 Hz²/Hz (−18 dB) @ 200 Hz–… | 500 m SMF-28，双激光拍频（单激光减 3 dB） | [dong2015](topics/ultrastable-laser/papers/dong2015.yaml) |
 | `met.freq_noise_psd_fiber_jeon25` | 频率噪声谱密度（Jeon 2025，自零差 1 km 光纤） | 4 Hz–10 kHz 频段最高降噪约 10⁴；4–200 Hz 达到 1 km 光纤往返热噪声极限 | 1 km 光纤线轴（2 km 有效往返长度），短期频噪测量，多次重复试验一致 | [jeon2025](topics/ultrastable-laser/papers/jeon2025.yaml) |
 | `met.freq_noise_psd_fiber_kef09` | 频率噪声谱密度（Kéfélian 2009，1 km 光纤） | < 1 Hz²/Hz (1 Hz–10 kHz)；10⁻² Hz²/Hz @ 1 kHz | 1 km SMF-28 光纤，DFB EDFL 1550 nm，AOM 外差检测，隔振台+隔声箱 | [kefelian2009](topics/ultrastable-laser/papers/kefelian2009.yaml) |
 | `met.freq_noise_psd_ri_g25` | 循环干涉仪频率噪声 PSD（Gao 2025） | <1 Hz²/Hz @ 1 Hz–10 kHz | 100 m 光纤延迟线，全光纤循环干涉仪 | [gao2025](topics/ultrastable-laser/papers/gao2025.yaml) |
 | `met.freq_spectral_density` | 激光频率噪声谱密度 | < 0.3 Hz/√Hz @ 1 kHz | 氩离子激光器 PDH 锁定到三角形环形腔（10 m 臂长，finesse ≈ 100，注入功率 6… | [drever1983](topics/ultrastable-laser/papers/drever1983.yaml) |
-| `met.freq_stability_piezo_cavity_m13` | 压电腔频率稳定度（Möhle 2013） | <1×10⁻¹⁴ (short-circuited piezo) | 10 cm Zerodur 腔，PZT 叠层/管/PZN-PT，1064 nm，vs ULE 参考腔 | [mohle2013](topics/ultrastable-laser/papers/mohle2013.yaml) |
-| `met.frequency_band_g16` | 有效频段（Grote 2016） | >1 | 电子噪声降低效果显著的频段 | [grote2016](topics/ultrastable-laser/papers/grote2016.yaml) |
-| `met.frequency_range_a13` | 改善频率范围（Aasi 2013） | 150 Hz 以上 | 压缩光注入，正交相位优化 | [aasi2013](topics/ultrastable-laser/papers/aasi2013.yaml) |
-| `met.frequency_stability_g17` | 频率稳定度（Gobron 2017） | 与标准FMS方法相当或更好 | 光谱烧孔稳频，Eu:YSO晶体，1.6 K | [gobron2017](topics/ultrastable-laser/papers/gobron2017.yaml) |
-| `met.impact_resistance_t18` | 抗冲击加速度（Tao 2018） | >100g (ULE cavity, 20 mm drop); >250g (Al model, 250 mm dro… | 7075 铝合金框架，12 点 Viton 球缓冲夹持，跌落至光学平台 | [tao2018](topics/ultrastable-laser/papers/tao2018.yaml) |
 | `met.laser_linewidth` | 激光线宽 | < 100 Hz | 染料激光器 + 气体激光器分别 PDH 锁定到同一 F-P 腔，测两者拍频 | [drever1983](topics/ultrastable-laser/papers/drever1983.yaml) |
 | `met.laser_linewidth_563nm` | 激光线宽（563 nm，Young 1999） | 0.6 Hz | 563 nm 染料激光，PDH 锁定到 24 cm ULE 高精细度腔（finesse > 150… | [young1999](topics/ultrastable-laser/papers/young1999.yaml) |
 | `met.laser_linewidth_c25` | 激光线宽（Chen 2025，Si1 腔） | 9.6(3) mHz (computed from PSD); 5.7(3) mHz (beat measuremen… | 1397 nm, sub-5K Si 腔, 连续冷却振动抑制后 | [chen2025](topics/ultrastable-laser/papers/chen2025.yaml) |
@@ -295,12 +287,75 @@
 | `met.laser_linewidth_tai17` | 激光拍频线宽（Tai 2017） | 185 mHz (两台激光拍频) | 1555 nm, 两台独立 ULE 腔锁定激光 | [tai2017](topics/ultrastable-laser/papers/tai2017.yaml) |
 | `met.laser_linewidth_w16` | 激光线宽（Wu 2016, 1557 nm） | 0.26 Hz (most probable linewidth) | 10 cm ULE 腔 × 2，1557 nm，室温，拍频 RBW 122 mHz，1000 组统计 | [wu2016](topics/ultrastable-laser/papers/wu2016.yaml) |
 | `met.laser_linewidth_z17` | 激光线宽（Zhang 2017，4 K 闭循环 Si 腔） | 中位线宽 17 mHz（1542 nm） | 40 cm ULE 腔参考；771 nm 拍频，64 s FFT 测量，15 mHz resolu… | [zhang2017](topics/ultrastable-laser/papers/zhang2017.yaml) |
+| `met.optical_coherence_time_m17` | 光学相干时间（Matei 2017，Si 腔激光） | 11 s（Ramsey 询问，Δφ_rms 至 1 rad）；55 s（回溯频率估计，Δφ_rms 至 1 rad） | Si2 vs Si3 相位数据（1 天），Δφ_rms 分析；20,750 个样本统计 | [matei2017](topics/ultrastable-laser/papers/matei2017.yaml) |
+| `met.shg_excess_phase_noise_h19` | SHG 额外相位噪声 | >2 orders of magnitude below best clock lasers (Si cavity) … | PPLN 波导 SHG，1396→698 nm，双模块差分，稳态 | [herbers2019](topics/ultrastable-laser/papers/herbers2019.yaml) |
+
+### 🔧 Engineering (κ/温度/磁场)
+
+| ID | Name | Best Value | Conditions | Source |
+|----|------|------------|------------|--------|
+| `met.acceleration_sensitivity_h15` | 全向加速度灵敏度（Häfner 2015 自平衡安装） | κz=1.7×10⁻¹⁰/g，κy=0.5×10⁻¹⁰/g，κx=1.5×10⁻¹⁰/g（全向 < 2×10⁻¹⁰/g） | 自平衡安装，Viton 球间距实验优化；0.7 Hz 正弦激励；初始未优化约 4×10⁻⁸/g | [hafner2015](topics/ultrastable-laser/papers/hafner2015.yaml) |
+| `met.acceleration_sensitivity_herbers22` | 三轴加速度灵敏度（Herbers 2022，20 cm 可搬运腔） | κx = 2(1)×10⁻¹²/(m/s²), κy = 3(3)×10⁻¹²/(m/s²), κz = 3(1)×1… | 20 cm horizontal cylindrical cavity；10-point spri… | [herbers2022](topics/ultrastable-laser/papers/herbers2022.yaml) |
+| `met.acceleration_sensitivity_horizontal_w07` | 水平加速度灵敏度（切口腔，Webster 2007） | 3.7 ± 0.9 kHz/ms⁻² | Case B（橡胶球），水平方向垂直于腔轴；沿腔轴方向仍为 3.7 kHz/ms⁻² | [webster2007](topics/ultrastable-laser/papers/webster2007.yaml) |
+| `met.acceleration_sensitivity_millo09` | 振动灵敏度（Millo 2009，竖直腔/水平腔） | ≤1.5×10⁻¹¹ per m/s² (每方向); 竖直腔最低 3.5×10⁻¹² (竖直方向); 水平腔最低 5×… | 竖直/水平两种设计, 10 cm 腔, 无需精细调谐支撑点 | [millo2009](topics/ultrastable-laser/papers/millo2009.yaml) |
+| `met.acceleration_sensitivity_t18` | 加速度灵敏度（Tao 2018） | 0.8×10⁻¹⁰/g (vertical), 2.5×10⁻¹⁰/g (along axis), 1.5×10⁻¹⁰… | 10 cm ULE 方形腔，12 点夹持，1064 nm | [tao2018](topics/ultrastable-laser/papers/tao2018.yaml) |
+| `met.acceleration_sensitivity_vertical_w07` | 竖直加速度灵敏度（切口腔，Webster 2007） | < 0.1 kHz/ms⁻² | Case B（3 mm 橡胶球），z≈20.3 mm，c=18.45 mm，x=22 mm，15 … | [webster2007](topics/ultrastable-laser/papers/webster2007.yaml) |
+| `met.acceleration_sensitivity_w11` | 加速度灵敏度（立方体腔，Webster 2011） | 2.45(3) / 0.21(4) / 0.01(1) ×10⁻¹¹/g（轴向/横向1/横向2） | 被动灵敏度，1064 nm Nd:YAG，立方体 ULE 腔，尼龙半球支撑，腔室对称放置（偏心 ≤… | [webster2011](topics/ultrastable-laser/papers/webster2011.yaml) |
+| `met.acceleration_sensitivity_y99` | 腔谐振频率对加速度灵敏度（Young 1999） | ≈ 100 kHz/(m/s²) | 竖直方向加速，1 Hz 正弦驱动测量，24 cm ULE 腔水平放置 | [young1999](topics/ultrastable-laser/papers/young1999.yaml) |
+| `met.cavity_frequency_drift_r19` | 腔频率漂移率（Robinson 2019，功率相关，Si4 4 K） | -3×10⁻¹⁹ /s（40 nW 传输功率，最低漂移测量点） | 40 nW 传输（对应 2 mW 腔内循环功率，F=500,000，T=2 ppm）， 等待 5 … | [robinson2019](topics/ultrastable-laser/papers/robinson2019.yaml) |
+| `met.cavity_frequency_drift_z17` | 腔频率漂移率（Zhang 2017，4 K 闭循环 Si 腔） | < 1 mHz/s @ 1542 nm（约 5×10⁻¹⁸ s⁻¹） | 经 Yb fiber comb 锁定到 Sr optical lattice clock，三天观测… | [zhang2017](topics/ultrastable-laser/papers/zhang2017.yaml) |
+| `met.vibration_sensitivity_a12` | 振动灵敏度（Argence 2012） | axial: (4±0.5)×10⁻¹¹; transverse: <1×10⁻¹¹ | 100 mm ULE 腔，中平面 CFD 固定 | [argence2012](topics/ultrastable-laser/papers/argence2012.yaml) |
+| `met.vibration_sensitivity_c14` | 振动灵敏度（Chen 2014） | 1.7×10⁻¹¹, 8.0×10⁻¹¹, 3.9×10⁻¹⁰ | 10 cm ULE 腔，20 柱三组夹持 | [chen2014](topics/ultrastable-laser/papers/chen2014.yaml) |
+| `met.vibration_sensitivity_h20` | 振动灵敏度（Häfner 2020） | κ_x=0.7×10⁻¹⁰, κ_y=2.3×10⁻¹⁰, κ_z=12.3×10⁻¹⁰ | 12 cm ULE 腔，Invar 引脚 + 钢丝安装 | [hafner2020](topics/ultrastable-laser/papers/hafner2020.yaml) |
+| `met.vibration_sensitivity_k12` | 全向振动灵敏度（Kessler 2012 Si 腔） | κx=6.7(3)×10⁻¹¹/g，κy=8.4(4)×10⁻¹¹/g，κz=5.5(3)×10⁻¹¹/g | 竖轴 21 cm Si 腔，⟨110⟩ 三点对称安装，有限元优化 | [kessler2012](topics/ultrastable-laser/papers/kessler2012.yaml) |
+
+### ⚙️ Enabling (φ/Finesse/Q)
+
+| ID | Name | Best Value | Conditions | Source |
+|----|------|------------|------------|--------|
+| `met.algaas_coating_loss_angle_17k_l26` | AlGaAs 晶体镀层损耗角（Lee 2026，17 K） | φ_AlGaAs(17K) < 2.3×10⁻⁵（上限，FP 腔热噪声测量） | 6 cm Si 腔，17 K，1542 nm，AlGaAs 晶体镀层（2023 批次，48.5 周… | [lee2026](topics/ultrastable-laser/papers/lee2026.yaml) |
+| `met.algaas_coating_loss_angle_c13` | AlGaAs 晶体镀层损耗角（Cole 2013） | φ_AlGaAs ≤ 2.5×10⁻⁵（室温上限，FP 腔测量）；对比 IBS 最优 φ ~ 2×10⁻⁴ | 35 mm Zerodur 腔，熔融石英底物，1064 nm，室温，与 PTB 698 nm 参考… | [cole2013](topics/ultrastable-laser/papers/cole2013.yaml) |
+| `met.algaas_coating_loss_angle_ibs_4k_r19` | IBS 镀层损耗角（Robinson 2019，4 K Si 腔提取） | φ_IBS(4K) = 5.15×10⁻⁴（SiO₂/Ta₂O₅ IBS 镀层） | 6 cm Si4 腔，4 K，PSD 拟合范围 5 mHz – 2 Hz，Sy = a·f⁻¹ 模… | [robinson2019](topics/ultrastable-laser/papers/robinson2019.yaml) |
+| `met.algaas_coating_loss_angle_kedar23` | AlGaAs 晶体镀层损耗角上限（Kedar 2023） | φ < 4.1×10⁻⁴ (4.7K); φ < 1.2×10⁻⁴ (16.7K) | Si6 腔, AlGaAs/GaAs 晶体镀层, 低温 | [kedar2023](topics/ultrastable-laser/papers/kedar2023.yaml) |
+| `met.algaas_finesse_cole16` | AlGaAs 晶体镀层腔精细度（Cole 2016） | >3×10⁵ | 1550 nm, GaAs/AlGaAs 晶体镀层 | [cole2016](topics/ultrastable-laser/papers/cole2016.yaml) |
+| `met.coating_loss_angle_comparison_s18` | 镀层损耗角多材料多温度比较 | SiO₂: 0.4×10⁻⁴(290K)/1.7×10⁻⁴(120K)/7.8×10⁻⁴(20K); Ti:Ta₂O₅… | IBS 沉积，各温度点的机械损耗测量 | [steinlechner2018](topics/ultrastable-laser/papers/steinlechner2018.yaml) |
+
+### 🔗 Interface (CONDITIONED-BY 耦合)
+
+| ID | Name | Best Value | Conditions | Source |
+|----|------|------------|------------|--------|
+| `met.freq_noise_from_temperature_fiber` | 温度变化引起的光纤频率噪声（接口指标） | ~几 kHz/K（2.5 km SMF-28 光纤，ν₀ ≈ 193 THz） | 室温下 SMF-28 光纤，dn/dT ≈ 1.1×10⁻⁵/K，α ≈ 0.55×10⁻⁶/K | [jiang2010](topics/ultrastable-laser/papers/jiang2010.yaml) |
+| `met.freq_noise_from_vibration` | 振动引起的频率噪声（接口指标） | 残余振动噪声贡献 < 热噪声水平（充分隔振后） | Young 1999 悬挂隔振台 + 腔加速度灵敏度 ~100 kHz/(m/s²) | [young1999](topics/ultrastable-laser/papers/young1999.yaml) |
+
+### ❓ Unspecified
+
+| ID | Name | Best Value | Conditions | Source |
+|----|------|------------|------------|--------|
+| `met.algaas_absorption_1064_cole16` | AlGaAs 晶体镀层 1064 nm 吸收（Cole 2016） | <1 ppm | 1064 nm, PTS 测量 | [cole2016](topics/ultrastable-laser/papers/cole2016.yaml) |
+| `met.algaas_optical_loss_cole16` | AlGaAs 晶体镀层超额光学损耗（Cole 2016） | 3 ppm (scatter + absorption, NIR 1064-1560 nm) | GaAs/AlGaAs 基底转移晶体镀层, 近红外 | [cole2016](topics/ultrastable-laser/papers/cole2016.yaml) |
+| `met.backscattering_coefficient_hcf_mb21` | 背向散射系数（Michaud-Belleau 2021，AR-HCF） | −118 dB/m | 低损耗 NANF, 1.55 μm, 自研 OFDR 测量 | [michaudbelleau2021](topics/ultrastable-laser/papers/michaudbelleau2021.yaml) |
+| `met.beam_quality_d20` | 光束质量M²（Dixneuf 2020） | <1.1 | 输出光束经过准直，1064 nm | [dixneuf2020](topics/ultrastable-laser/papers/dixneuf2020.yaml) |
+| `met.beam_waist_parameter_k66` | 光束腰斑参数（理论） | 由腔参数决定 | 稳定球面镜谐振腔 | [kogelnik1966](topics/ultrastable-laser/papers/kogelnik1966.yaml) |
+| `met.cavity_storage_time_p25` | 光学腔存储时间 | 295 ± 2 μs | 68 cm ULE 腔，真空 6×10⁻⁸ mbar，1542 nm，ringdown 测量 10… | [parke2025](topics/ultrastable-laser/papers/parke2025.yaml) |
+| `met.crystalline_coating_absorption_m18` | 晶体镀层光学吸收 | ≤0.8 ppm (fused silica substrate) | 2 英寸 GaAs/AlGaAs 镀层，1064 nm，光热偏转法 | [marchio2018](topics/ultrastable-laser/papers/marchio2018.yaml) |
+| `met.crystalline_coating_tis_m18` | 晶体镀层总积分散射（TIS） | 6–9.5 ppm | 2 英寸 GaAs/AlGaAs 镀层，1064 nm，CASI 散射仪，FS 9.5 ppm /… | [marchio2018](topics/ultrastable-laser/papers/marchio2018.yaml) |
+| `met.cte_shift_fs_mirror_leg10` | FS 镜引起的 CTE 零点温度偏移（Legero 2010） | ~20 K (降低) | FS 镜 + ULE 间隔物，镜面变形 (bulging) 效应 | [legero2010](topics/ultrastable-laser/papers/legero2010.yaml) |
+| `met.cte_zero_crossing_tuning_range_leg10` | CTE 零点温度调谐范围（Legero 2010） | ~30 K | FS 镜 + ULE 间隔物 + ULE 补偿环，FEM 模拟 + 实测 | [legero2010](topics/ultrastable-laser/papers/legero2010.yaml) |
+| `met.detection_snr_improvement_g20` | 探测信噪比改善（Galland 2020） | 改善（具体数值未给出） | 双外差探测SHB | [galland2020](topics/ultrastable-laser/papers/galland2020.yaml) |
+| `met.electronic_noise_reduction_factor_g16` | 电子噪声降低倍数（Grote 2016） | >4 | 音频频段 >1 kHz，高功率光电探测器 | [grote2016](topics/ultrastable-laser/papers/grote2016.yaml) |
+| `met.eu_yso_t2_k03` | Eu³⁺:Y₂SiO₅ 光学退相时间（Könz 2003） | T₂ up to 2.6 ms | Eu³⁺:Y₂SiO₅, low concentration, ~2 K | [konz2003](topics/ultrastable-laser/papers/konz2003.yaml) |
+| `met.fiber_freq_stability_hjc19` | 全光纤频率稳定度（Huang JC 2019） | 3×10⁻¹⁵ @ 1–10 s | 5 km FDL，1.55 μm | [huangjc2019](topics/ultrastable-laser/papers/huangjc2019.yaml) |
+| `met.fiber_long_term_stability_h23` | 全光纤超稳激光长期稳定度（Huang 2023） | 3.2×10⁻¹⁵ @ 1s; 1.1×10⁻¹⁴ @ 1000s | 全光纤 FDL，真空腔五层热屏蔽，两级温控 | [huang2023](topics/ultrastable-laser/papers/huang2023.yaml) |
+| `met.freq_stability_piezo_cavity_m13` | 压电腔频率稳定度（Möhle 2013） | <1×10⁻¹⁴ (short-circuited piezo) | 10 cm Zerodur 腔，PZT 叠层/管/PZN-PT，1064 nm，vs ULE 参考腔 | [mohle2013](topics/ultrastable-laser/papers/mohle2013.yaml) |
+| `met.frequency_band_g16` | 有效频段（Grote 2016） | >1 | 电子噪声降低效果显著的频段 | [grote2016](topics/ultrastable-laser/papers/grote2016.yaml) |
+| `met.frequency_range_a13` | 改善频率范围（Aasi 2013） | 150 Hz 以上 | 压缩光注入，正交相位优化 | [aasi2013](topics/ultrastable-laser/papers/aasi2013.yaml) |
+| `met.frequency_stability_g17` | 频率稳定度（Gobron 2017） | 与标准FMS方法相当或更好 | 光谱烧孔稳频，Eu:YSO晶体，1.6 K | [gobron2017](topics/ultrastable-laser/papers/gobron2017.yaml) |
+| `met.impact_resistance_t18` | 抗冲击加速度（Tao 2018） | >100g (ULE cavity, 20 mm drop); >250g (Al model, 250 mm dro… | 7075 铝合金框架，12 点 Viton 球缓冲夹持，跌落至光学平台 | [tao2018](topics/ultrastable-laser/papers/tao2018.yaml) |
 | `met.locking_bandwidth_g25` | 锁定带宽（Grabielle 2025） | 增大后的带宽（具体值未给出） | 优化后的锁定回路 | [grabielle2025](topics/ultrastable-laser/papers/grabielle2025.yaml) |
 | `met.locking_noise_floor_g25` | 锁定噪声底限（Grabielle 2025） | white frequency noise floor (具体值未给出) | 光纤延迟线PDH锁定，鉴频器非线性主导 | [grabielle2025](topics/ultrastable-laser/papers/grabielle2025.yaml) |
 | `met.long_term_instability_s19` | 长期频率不稳定度（Sanjuan 2019） | ~10⁻¹⁴ @ 5400 s (Allan deviation) | 8.7 cm ULE 立方腔，五层热屏蔽，1064 nm | [sanjuan2019](topics/ultrastable-laser/papers/sanjuan2019.yaml) |
 | `met.long_term_instability_w16` | 长期频率不稳定度（Wu 2016） | 1×10⁻¹⁵ @ 100–4000 s | 10 cm ULE 腔，室温，两级热屏蔽，去除线性漂移 | [wu2016](topics/ultrastable-laser/papers/wu2016.yaml) |
 | `met.noise_reduction_g20` | 探测噪声降低（Galland 2020） | 显著降低（具体数值未给出） | 双外差探测SHB，共模噪声抑制 | [galland2020](topics/ultrastable-laser/papers/galland2020.yaml) |
-| `met.optical_coherence_time_m17` | 光学相干时间（Matei 2017，Si 腔激光） | 11 s（Ramsey 询问，Δφ_rms 至 1 rad）；55 s（回溯频率估计，Δφ_rms 至 1 rad） | Si2 vs Si3 相位数据（1 天），Δφ_rms 分析；20,750 个样本统计 | [matei2017](topics/ultrastable-laser/papers/matei2017.yaml) |
 | `met.optical_microwave_sync_jitter_k08` | 远程光-微波同步时序抖动（Kim 2008） | 6.8 fs r.m.s.（1 MHz 带宽，10 h）；相对时序稳定度 1.9×10⁻¹⁹ | 一个 BOM-PD 用于 10.225 GHz 微波再生，另一 BOM-PD 进行 out-of-… | [kim2008](topics/ultrastable-laser/papers/kim2008.yaml) |
 | `met.optical_optical_sync_jitter_k08` | 远程光-光同步时序抖动（Kim 2008） | 0.4 fs r.m.s.（22 mHz–2.3 MHz） | Ti:sapphire 激光与 Cr:forsterite 激光远程同步，连续运行 >12 h，o… | [kim2008](topics/ultrastable-laser/papers/kim2008.yaml) |
 | `met.output_power_d20` | 输出功率（Dixneuf 2020） | 365 W (350 W isolated) | 1064 nm，单频，线偏振，全光纤MOPA | [dixneuf2020](topics/ultrastable-laser/papers/dixneuf2020.yaml) |
@@ -324,7 +379,6 @@
 | `met.shb_environmental_sensitivity_thorpe11` | SHB 环境灵敏度（Thorpe 2011） | temperature: 16 kHz/K²; pressure: -11.4 Hz/Pa; acceleration… | Eu³⁺:Y₂SiO₅, 4 K | [thorpe2011](topics/ultrastable-laser/papers/thorpe2011.yaml) |
 | `met.shb_relative_stability_l13` | SHB 双晶体相对稳定度（Leibrandt 2013） | 5.5×10⁻¹⁷ @ 204 s (quadratic drift removed) | 两块 Eu³⁺:Y₂SiO₅ 晶体，同一低温容器，4 K | [leibrandt2013](topics/ultrastable-laser/papers/leibrandt2013.yaml) |
 | `met.shb_stability_thorpe11` | SHB 稳频稳定度（Thorpe 2011） | σ_y ≤ 6×10⁻¹⁶ @ 2–8 s | Eu³⁺:Y₂SiO₅，两级稳频（FP预稳+SHB），4 K | [thorpe2011](topics/ultrastable-laser/papers/thorpe2011.yaml) |
-| `met.shg_excess_phase_noise_h19` | SHG 额外相位噪声 | >2 orders of magnitude below best clock lasers (Si cavity) … | PPLN 波导 SHG，1396→698 nm，双模块差分，稳态 | [herbers2019](topics/ultrastable-laser/papers/herbers2019.yaml) |
 | `met.snr_improvement_g17` | 信噪比提升（Gobron 2017） | 具体数值未给出，但理论上更优 | 光谱烧孔稳频，避免烧孔功率引起的光谱畸变 | [gobron2017](topics/ultrastable-laser/papers/gobron2017.yaml) |
 | `met.spectral_distortion_immunity_g17` | 光谱畸变免疫性（Gobron 2017） | 不受烧孔功率引起的畸变影响 | 高烧孔功率下 | [gobron2017](topics/ultrastable-laser/papers/gobron2017.yaml) |
 | `met.spectral_hole_lifetime_k03` | 光谱孔寿命（Könz 2003） | 1 s @ 18 K to >20 days @ 2 K | Eu³⁺:Y₂SiO₅, various concentrations | [konz2003](topics/ultrastable-laser/papers/konz2003.yaml) |
@@ -335,10 +389,6 @@
 | `met.thermal_noise_psd_hcf_mb22` | 空心光纤热噪声功率谱密度（Michaud-Belleau 2022） | ≈1.3×10⁻¹⁷ (rad²/Hz)/m @30 kHz | 大模场面积 NANF, 抽真空密封至 0.15 atm, 1550 nm | [michaudbelleau2022](topics/ultrastable-laser/papers/michaudbelleau2022.yaml) |
 | `met.timing_link_stability_k08` | 定时稳定光纤链路残余时差（Kim 2008） | 6.4 fs r.m.s. @ 72 h；0.36 fs r.m.s. @ 10 ms–1 s | 两条独立 ~300 m 色散补偿定时稳定光纤链路，out-of-loop 平衡互相关测量 | [kim2008](topics/ultrastable-laser/papers/kim2008.yaml) |
 | `met.transmission_bandwidth_hcarf_b15` | 传输带宽（Belardi 2015，HC-ARF） | 0.75–1.6 μm | 2 m fabricated HC-ARF, 23 μm core, t = 0.34 ± 0.0… | [belardi2015](topics/ultrastable-laser/papers/belardi2015.yaml) |
-| `met.vibration_sensitivity_a12` | 振动灵敏度（Argence 2012） | axial: (4±0.5)×10⁻¹¹; transverse: <1×10⁻¹¹ | 100 mm ULE 腔，中平面 CFD 固定 | [argence2012](topics/ultrastable-laser/papers/argence2012.yaml) |
-| `met.vibration_sensitivity_c14` | 振动灵敏度（Chen 2014） | 1.7×10⁻¹¹, 8.0×10⁻¹¹, 3.9×10⁻¹⁰ | 10 cm ULE 腔，20 柱三组夹持 | [chen2014](topics/ultrastable-laser/papers/chen2014.yaml) |
-| `met.vibration_sensitivity_h20` | 振动灵敏度（Häfner 2020） | κ_x=0.7×10⁻¹⁰, κ_y=2.3×10⁻¹⁰, κ_z=12.3×10⁻¹⁰ | 12 cm ULE 腔，Invar 引脚 + 钢丝安装 | [hafner2020](topics/ultrastable-laser/papers/hafner2020.yaml) |
-| `met.vibration_sensitivity_k12` | 全向振动灵敏度（Kessler 2012 Si 腔） | κx=6.7(3)×10⁻¹¹/g，κy=8.4(4)×10⁻¹¹/g，κz=5.5(3)×10⁻¹¹/g | 竖轴 21 cm Si 腔，⟨110⟩ 三点对称安装，有限元优化 | [kessler2012](topics/ultrastable-laser/papers/kessler2012.yaml) |
 | `met.visible_attenuation_hcarf_b15` | 可见光最小衰减（Belardi 2015，HC-ARF） | 175 dB/km @ 480 nm | cutback measurement, 51 μm core, t1 ≈ 1.27 ± 0.06… | [belardi2015](topics/ultrastable-laser/papers/belardi2015.yaml) |
 | `met.yb_clock_instability_j11` | Yb 光钟不稳定度（Jiang 2011） | 5×10⁻¹⁶/√τ | Yb 光晶格钟，10⁻¹⁶ 级本振 | [jiang2011](topics/ultrastable-laser/papers/jiang2011.yaml) |
 

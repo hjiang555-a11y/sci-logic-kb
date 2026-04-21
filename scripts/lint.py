@@ -14,6 +14,8 @@ Checks:
   9.  Invalid predicates     (ERROR)   — deprecated predicates
   10. Invalid node ID prefix (ERROR)
   11. Missing meta fields    (WARNING)
+  12. Breakthrough-missing-primary-metric (WARNING) — ultrastable-laser
+      breakthrough papers must link a σ_y primary-role metric.
 
 Exit code: 0 if no errors (warnings OK unless --strict), 1 if errors found.
 """
@@ -54,6 +56,29 @@ DEPRECATED_PREDICATES = frozenset({
 REQUIRED_META_FIELDS = ("zotero_key", "title", "year", "first_author")
 
 NODE_SECTIONS = ("entities", "principles", "methods", "metrics")
+
+# σ_y primary-metric heuristics for ultrastable-laser topic (v4.4+, Round 3).
+# See topics/ultrastable-laser/_meta/scoping_principles.md v2.
+PRIMARY_METRIC_PATTERNS = (
+    "fractional_freq_instability",
+    "fractional_frequency_instability",
+    "allan_deviation",
+    "mod_sigma_y",
+    "mod_σ_y",
+    "oadev",
+    "hadamard",
+)
+
+
+def _is_primary_sigma_y_metric(metric: dict) -> bool:
+    """Return True if a metric node is a σ_y primary-line metric."""
+    role = metric.get("role")
+    if isinstance(role, str) and role.strip().lower() == "primary":
+        return True
+    mid = (metric.get("id") or "").lower()
+    name = (metric.get("name") or "").lower()
+    haystack = f"{mid} {name}"
+    return any(pat in haystack for pat in PRIMARY_METRIC_PATTERNS)
 
 
 # ── Data collection helpers ──────────────────────────────────────────────────
@@ -361,6 +386,73 @@ def check_missing_meta(
     return issues
 
 
+def check_breakthrough_primary_metric(
+    yaml_paths: list[Path],
+    file_metas: dict[str, dict[str, Any]],
+) -> list[Issue]:
+    """12. ultrastable-laser breakthrough papers must link at least one σ_y primary metric.
+
+    Rationale (Round 3, scoping_principles.md v2): the σ_y-first principle says
+    a paper can only be tagged `breakthrough` if it refreshes σ_y(τ=1 s) —
+    therefore it MUST define (or reference) a primary-role σ_y metric.
+
+    A paper passes the check if it satisfies either:
+      (a) defines a metric node with role: primary (or matching heuristic), OR
+      (b) its relations reference an external metric whose ID matches the
+          primary-metric heuristic (cross-file reuse of an existing σ_y metric).
+    """
+    issues: list[Issue] = []
+
+    for path in yaml_paths:
+        rel_path = str(path)
+        # Only apply to ultrastable-laser topic
+        if "ultrastable-laser" not in rel_path.replace("\\", "/"):
+            continue
+
+        meta = file_metas.get(rel_path)
+        if not meta:
+            continue
+        if str(meta.get("contribution_type", "")).strip().lower() != "breakthrough":
+            continue
+
+        # Re-load doc to inspect metrics + relations
+        try:
+            doc = yaml.safe_load(Path(rel_path).read_text(encoding="utf-8"))
+        except (yaml.YAMLError, OSError):
+            continue
+        if not isinstance(doc, dict):
+            continue
+
+        has_primary = False
+        for met in _iter_items(doc.get("metrics")):
+            if _is_primary_sigma_y_metric(met):
+                has_primary = True
+                break
+
+        if not has_primary:
+            # Check if relations reference an external primary-looking metric ID
+            for rel in _iter_items(doc.get("relations")):
+                for field in ("subject", "object"):
+                    ref = (rel.get(field) or "").lower()
+                    if ref.startswith("met.") and any(
+                        pat in ref for pat in PRIMARY_METRIC_PATTERNS
+                    ):
+                        has_primary = True
+                        break
+                if has_primary:
+                    break
+
+        if not has_primary:
+            issues.append(Issue(
+                "WARNING", "breakthrough-missing-primary-metric", rel_path,
+                "ultrastable-laser 'breakthrough' paper has no σ_y primary-role metric "
+                "(neither defined locally with role: primary nor referenced via relations). "
+                "See topics/ultrastable-laser/_meta/scoping_principles.md v2.",
+            ))
+
+    return issues
+
+
 # ── Orchestration ────────────────────────────────────────────────────────────
 
 def collect_yaml_paths(repo: Path, topic: str | None) -> list[Path]:
@@ -388,6 +480,7 @@ def run_all_checks(
     issues.extend(check_invalid_predicates(all_relations))
     issues.extend(check_invalid_id_prefix(all_nodes))
     issues.extend(check_missing_meta(yaml_paths, file_metas))
+    issues.extend(check_breakthrough_primary_metric(yaml_paths, file_metas))
     return issues
 
 

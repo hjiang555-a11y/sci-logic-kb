@@ -1,0 +1,206 @@
+# {Author} {Year} — {一句话核心贡献}
+# 提取者：Claude / GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：YYYY-MM-DD
+# Schema版本：v4.4
+# 专题：ultrastable-laser
+#
+# ════════════════════════════════════════════════════════════════════════
+#  超稳激光专用模板
+# ════════════════════════════════════════════════════════════════════════
+#
+# 与通用模板（SCHEMA.md §六）的差异：
+#   1. 指标节点默认写 `role:` 字段（primary / secondary / engineering /
+#      enabling / interface），用于 build_index.py 与 stats.py 的 σ_y
+#      主线分析（见 _meta/scoping_principles.md v2）
+#   2. σ_y(τ=1 s) 家族（ADEV / MDEV / OADEV / Hadamard）统一归 role: primary，
+#      value 中**必须**显式标注 Allan 变体类型
+#   3. BOUNDED-BY 的 breakthrough_paths 建议补 `expected_σy_gain` 字段，
+#      说明该路径预期对 σ_y(τ=1 s) 的影响（数量级或倍数）
+#   4. 若论文 σ_y 未直接报告，在 meta.note 中声明
+#      `primary-metric missing: linewidth only` 或
+#      `σ_y derived from PSD conversion` —— 此类论文不得升 breakthrough 档
+#
+# 档位判定参考（详见 topics/ultrastable-laser/_meta/scoping_principles.md v2）：
+#   - breakthrough: 刷新 σ_y(1 s) 全局或子分支 SOTA / 首次抵达子分支热噪声极限 / 提出新稳频原理
+#   - evidence:    其余情况（线宽/长期漂移/加速度灵敏度/精细度/镀层损耗角单独刷新一律归此档）
+#   - framework:   综述 / 路线图 / 教科书章节
+#
+# ════════════════════════════════════════════════════════════════════════
+
+meta:
+  zotero_key: "{8位Zotero KEY}"
+  topic: ultrastable-laser
+  source_type: technical_paper       # technical_paper | review | textbook | standard
+  contribution_type: evidence        # breakthrough | evidence | framework
+                                     # ▲ 超稳激光升 breakthrough 的第一依据是
+                                     #   σ_y(τ=1 s) 刷新；线宽/漂移/κ 单独刷新
+                                     #   一律 evidence
+  reliability: medium
+  title: "完整论文标题"
+  year: YYYY
+  first_author: "姓氏"
+  journal: "期刊名"
+  doi: "10.xxxx/xxxxx"
+  note: >
+    一句话说明本文核心贡献；在知识图谱中填补哪个空白。
+    若 σ_y 未直接给出，请在此处注明：
+    `primary-metric missing: linewidth only` 或
+    `σ_y derived from PSD conversion, assumption: ...`
+
+# ───────────────────────────────────────────────────────────────────────
+#  ENTITIES（实体）
+# ───────────────────────────────────────────────────────────────────────
+entities:
+  - id: ent.{snake_case_name}
+    name: "中文名称"
+    aliases: ["英文名", "别称"]
+    hierarchy_level: 1                  # 0|1|2|ext
+    status: demonstrated                # demonstrated | theoretical | obsolete
+    function: >
+      核心功能（1-3句）。
+    key_parameters:
+      param_name: "值或描述"
+    interface_requirements:
+      vibration: "残余加速度 < X nm/s²"
+      temperature: "稳定性 < X mK/day"
+    note: "补充说明（可选）"
+
+# ───────────────────────────────────────────────────────────────────────
+#  PRINCIPLES（原理）
+# ───────────────────────────────────────────────────────────────────────
+principles:
+  - id: pri.{snake_case_name}
+    name: "原理名称（中文）"
+    tier: domain                        # meta | domain | engineering
+    verification_status: calculated     # observed | calculated | inferred
+    statement: >
+      精确表述（2-5句）：物理机制 + 数学关系 + 适用条件。
+    domain: "所属领域"
+    formula: "核心公式"
+    key_insight: "一句话核心洞见"
+    conditions: "适用条件"
+    source_claim: >
+      "原文关键论断（引号内为原文）"
+
+# ───────────────────────────────────────────────────────────────────────
+#  METHODS（方法）
+# ───────────────────────────────────────────────────────────────────────
+methods:
+  - id: meth.{snake_case_name}
+    name: "方法名称"
+    status: demonstrated
+    applies_to: ent.fp_cavity_system
+    steps_summary: >
+      步骤1 → 步骤2 → 步骤3 → 输出
+    source_claim: >
+      "原文关键论断"
+
+# ───────────────────────────────────────────────────────────────────────
+#  METRICS（指标） —— role 字段是超稳激光专题的核心分类字段
+# ───────────────────────────────────────────────────────────────────────
+#
+#  role 取值规范（与 _meta/scoping_principles.md v2 对应）：
+#
+#    primary     — σ_y(τ) 族（ADEV / MDEV / OADEV / Hadamard）
+#                  分数频率不稳定度，超稳激光专题的唯一主线
+#                  ▲ value 字段必须显式标注 Allan 变体类型
+#    secondary   — 线宽（linewidth）、频率噪声 PSD（S_ν(f)）、相干时间
+#                  单独刷新不足以支撑 breakthrough
+#    engineering — 加速度/振动灵敏度（κ）、温度灵敏度、磁场灵敏度
+#                  工程指标，表征环境鲁棒性
+#    enabling    — 镀层损耗角（φ）、精细度（Finesse）、机械 Q、反射率
+#                  使能指标，间接影响 σ_y 但不是 σ_y 本身
+#    interface   — 外围条件耦合指标（振动→频噪、温度→频漂的接口量）
+#                  用于 CONDITIONED-BY 关系，配合 is_interface_metric: true
+#
+metrics:
+  # —— role: primary（σ_y 主线） ——
+  - id: met.fractional_freq_instability_{suffix}
+    name: "分数频率不稳定度（论文标识）"
+    unit: "无量纲（修正 Allan 偏差 mod σ_y(τ)）"   # 或：Allan σ_y / OADEV / Hadamard σ_H
+    role: primary
+    description: "超稳激光核心主线指标，定义光钟询问时的 Dick 效应上限"
+    demonstrated_value:
+      value: "mod σ_y = X×10⁻YY @ τ=1–10 s"   # ▲ 必须标注 Allan 变体类型
+      conditions: "测量条件（腔体参数、温度、积分时间窗）"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "KEY", claim: "原文论断"}
+    theoretical_floor:
+      value: "理论热噪声下限"
+      basis: "FDT 计算假设"
+      gap_note: "实测距理论下限的比例"
+    historical_landmarks:
+      first_demonstration:
+        value: "首次达到该量级的值"
+        year: YYYY
+        source: {zotero_key: "KEY"}
+      best_demonstration:
+        value: "当前最佳"
+        year: YYYY
+        source: {zotero_key: "KEY"}
+
+  # —— role: secondary（线宽 / 频噪 PSD / 相干时间） ——
+  - id: met.laser_linewidth_{suffix}
+    name: "激光线宽"
+    unit: "Hz"
+    role: secondary
+    description: "瞬时线宽，受闪变噪声发散性影响"
+    demonstrated_value:
+      value: "X mHz – Y Hz"
+      conditions: "测量时间、频噪类型、分析方法"
+      source: {zotero_key: "KEY", claim: "原文论断"}
+
+  # —— role: engineering（加速度 / 振动灵敏度） ——
+  - id: met.acceleration_sensitivity_{suffix}
+    name: "腔加速度灵敏度 κ"
+    unit: "kHz/(m/s²) 或 /g"
+    role: engineering
+    description: "CONDITIONED-BY vibration_environment 的核心耦合系数"
+    demonstrated_value:
+      value: "X×10⁻¹⁰ /g（各方向）"
+      conditions: "1 Hz 以下或某频段"
+      source: {zotero_key: "KEY", claim: "原文论断"}
+
+  # —— role: enabling（镀层损耗角 / Finesse / Q） ——
+  - id: met.coating_loss_angle_{suffix}
+    name: "镀层损耗角 φ"
+    unit: "无量纲"
+    role: enabling
+    description: "FDT 公式中布朗热噪声的核心材料参数"
+    demonstrated_value:
+      value: "φ = X×10⁻⁵"
+      conditions: "温度、频率、材料体系"
+      source: {zotero_key: "KEY", claim: "原文论断"}
+
+# ───────────────────────────────────────────────────────────────────────
+#  RELATIONS（关系）
+# ───────────────────────────────────────────────────────────────────────
+relations:
+  - id: rel.{X}01
+    subject: {node_id}
+    predicate: CHARACTERIZED-BY
+    object: met.fractional_freq_instability_{suffix}
+    confidence: established
+    source: {zotero_key: "KEY", claim: "原文论断"}
+
+  # —— BOUNDED-BY 关系：breakthrough_paths[*].expected_σy_gain 是超稳激光 ——
+  # —— 专题的核心字段，显式说明"该路径预期把 σ_y(1 s) 推进到何处"    ——
+  - id: rel.{X}02
+    subject: {entity_id}
+    predicate: BOUNDED-BY
+    object: {principle_id}
+    is_system_limit: true
+    verification_status: observed
+    temporal_role: validates
+    confidence: established
+    source: {zotero_key: "KEY", claim: "原文支撑"}
+    breakthrough_paths:
+      - direction: pri.{breakthrough_principle}          # 必须 pri.* 或 meth.*
+        expected_gain: "通用 gain 描述（如：镀层热噪声降低 10×）"
+        expected_σy_gain: "σ_y(1 s) 从 4×10⁻¹⁷ → 1×10⁻¹⁷（4× 改善）"
+                            # ▲ 超稳激光专用字段：明确 σ_y 主线影响
+                            # 若该路径对 σ_y 无直接量化影响，填 "indirect" 并在 note 说明
+        status: proposed                                  # proposed | demonstrated | refuted
+        source: {zotero_key: "KEY", claim: "原文论断"}
+        note: "可选补充"

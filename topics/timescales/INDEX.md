@@ -2,7 +2,7 @@
 
 # Timescales — Topic Index
 
-> Auto-generated 2026-04-21 00:22 UTC · 1 papers · 6 nodes · 6 relations
+> Auto-generated 2026-04-21 02:21 UTC · 1 papers · 6 nodes · 6 relations
 
 ## Entities
 
@@ -24,6 +24,10 @@
 | `meth.optical_clock_comparison` | 光钟比较方法（本地与远程） | [dimarcq2024](topics/timescales/papers/dimarcq2024.yaml) |
 
 ## Metrics
+
+> Metrics are grouped by **role** (v4.4 σ_y-first convention). See `topics/ultrastable-laser/_meta/scoping_principles.md` v2.
+
+### ❓ Unspecified
 
 | ID | Name | Best Value | Source |
 |----|------|------------|--------|

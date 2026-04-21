@@ -158,6 +158,7 @@ metrics:
   - id: met.fractional_freq_instability_l26
     name: "分数频率不稳定度（Lee 2026，6 cm Si 腔 + AlGaAs 晶体镀层）"
     unit: "无量纲（修正 Allan 偏差 mod σ_y(τ)）"
+    role: primary                       # v4.4 σ_y 主线（见 scoping_principles.md v2）
     description: "JILA 6 cm Si 腔（17 K，AlGaAs 2023 镀层）三角帽法测量的分数频率不稳定度"
     demonstrated_value:
       value: "mod σ_y = 2.5×10⁻¹⁷（10 s 附近 flicker floor）"
@@ -177,6 +178,7 @@ metrics:
   - id: met.algaas_coating_loss_angle_17k_l26
     name: "AlGaAs 晶体镀层损耗角（Lee 2026，17 K）"
     unit: "无量纲（损耗角 φ = 1/Q_mech）"
+    role: enabling
     description: "从 6 cm Si 腔热噪声测量提取的 AlGaAs/GaAs 晶体镀层机械损耗角上限（17 K）"
     demonstrated_value:
       value: "φ_AlGaAs(17K) < 2.3×10⁻⁵（上限，FP 腔热噪声测量）"
@@ -219,10 +221,12 @@ relations:
     breakthrough_paths:
       - direction: pri.optical_frequency_averaging
         expected_gain: "两腔平均 → √2 稳定度提升；实现约 1.8×10⁻¹⁷（短时受 Dick 噪声限制）"
+        expected_σy_gain: "mod σ_y(1 s): 2.5×10⁻¹⁷ → 1.8×10⁻¹⁷（√2 改善，两腔不相关噪声平均）"
         status: demonstrated
         source: {zotero_key: "4QVEXY63", claim: "averaged laser is more stable than the two similar individual lasers by approximately √2"}
       - direction: pri.silicon_cte_zero_crossing_17k
         expected_gain: "降温至更低零点（如 < 4K）→ k_B T 进一步降低；目前 17K 已是已知方便零点中较低的"
+        expected_σy_gain: "mod σ_y(1 s): 2.5×10⁻¹⁷ → ~10⁻¹⁸ 级（热噪声 ∝ √T，4K 相对 17K 降低约 2×）"
         status: theoretical
         source: {zotero_key: "4QVEXY63", claim: "open up realistic prospects for cavity-stabilized lasers with 10⁻¹⁸ fractional stability"}
     note: >

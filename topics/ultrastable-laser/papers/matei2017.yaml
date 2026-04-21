@@ -66,6 +66,7 @@ metrics:
   - id: met.fractional_freq_instability_m17
     name: "分数频率不稳定度（Matei 2017，Si 腔镀层极限）"
     unit: "无量纲（修正 Allan 偏差 mod σ_y(τ)）"
+    role: primary                       # v4.4 σ_y 主线（见 scoping_principles.md v2）
     description: "PTB 两套独立 Si 腔（Si2, Si3）三角帽法提取的个体分数频率不稳定度，镀层热噪声限制"
     demonstrated_value:
       value: "mod σ_y = 4×10⁻¹⁷（0.8–10 s flicker floor）；标准 Allan σ_y ≈ 5×10⁻¹⁷"
@@ -84,6 +85,7 @@ metrics:
   - id: met.laser_linewidth_m17
     name: "激光线宽（Matei 2017，Si2–Si3 拍频）"
     unit: "mHz（FWHM）"
+    role: secondary
     description: "Si2–Si3 拍频 FFT 谱 FWHM；个体激光线宽 = 拍频线宽 / √2（假设相等贡献）"
     demonstrated_value:
       value: "拍频 FWHM: 7–14 mHz（43% 样本）；单激光 FWHM: 5–10 mHz"
@@ -99,6 +101,7 @@ metrics:
   - id: met.optical_coherence_time_m17
     name: "光学相干时间（Matei 2017，Si 腔激光）"
     unit: "秒"
+    role: secondary
     description: "超稳 Si 腔激光的实用相干时间，不同场景下定义不同"
     demonstrated_value:
       value: "11 s（Ramsey 询问，Δφ_rms 至 1 rad）；55 s（回溯频率估计，Δφ_rms 至 1 rad）"
@@ -146,6 +149,7 @@ relations:
     breakthrough_paths:
       - direction: pri.crystalline_coating_low_brownian_noise
         expected_gain: "AlGaAs 晶体镀层（φ ~ 2.5×10⁻⁵）→ 镀层热噪声降低 10×；理论下限约 4×10⁻¹⁸"
+        expected_σy_gain: "mod σ_y(1 s): 4×10⁻¹⁷ → ~1×10⁻¹⁷ (预期 4× 改善，已被 Lee 2026 验证达 2.5×10⁻¹⁷)"
         status: demonstrated
         source: {zotero_key: "CWIHQRJD", claim: "tenfold reduction in mechanical damping when compared with the best dielectric multilayers"}
     note: >

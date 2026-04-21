@@ -2,7 +2,7 @@
 
 # Frequency Standards — Topic Index
 
-> Auto-generated 2026-04-21 00:22 UTC · 1 papers · 10 nodes · 11 relations
+> Auto-generated 2026-04-21 02:21 UTC · 1 papers · 10 nodes · 11 relations
 
 ## Entities
 
@@ -28,6 +28,10 @@
 | `meth.ramsey_spectroscopy_clock` | Ramsey 光谱法（光钟频率测量） | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
 
 ## Metrics
+
+> Metrics are grouped by **role** (v4.4 σ_y-first convention). See `topics/ultrastable-laser/_meta/scoping_principles.md` v2.
+
+### ❓ Unspecified
 
 | ID | Name | Best Value | Source |
 |----|------|------------|--------|

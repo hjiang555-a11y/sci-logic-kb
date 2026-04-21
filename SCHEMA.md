@@ -670,6 +670,10 @@ key_parameters:
   breakthrough_paths:
     - direction: pri.new_principle          # 必须引用 pri.* 或 meth.* 节点
       expected_gain: "预期性能提升描述"
+      expected_σy_gain: null                # v4.4+ 超稳激光专题可选
+                                            # 明确该路径对 σ_y(τ=1 s) 的影响
+                                            # (例如："mod σ_y: 4×10⁻¹⁷ → 1×10⁻¹⁷")
+                                            # 非 σ_y 相关路径填 "indirect" 并在 note 说明
       status: proposed                      # proposed | demonstrated | refuted
       source: {zotero_key: "KEY", claim: "原文论断"}
       note: "可选的补充说明"
@@ -854,6 +858,10 @@ metrics:
   - id: met.{snake_case_name}
     name: "指标名称（中文）"
     unit: "单位"
+    role: primary                       # v4.4+ 可选，超稳激光专题强烈建议
+                                        # primary | secondary | engineering | enabling | interface
+                                        # 详见 topics/ultrastable-laser/_meta/scoping_principles.md v2
+                                        # 若省略，build_index.py / lint.py / stats.py 按 ID/name 启发式推断
     description: "物理意义（1-2句）"
     # 接口指标（仅用于外围条件耦合时填写）
     is_interface_metric: false

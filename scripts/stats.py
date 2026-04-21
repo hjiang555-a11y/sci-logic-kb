@@ -13,6 +13,38 @@ from pathlib import Path
 import yaml
 
 
+# σ_y primary-metric heuristics (ultrastable-laser, Round 3, scoping_principles.md v2)
+PRIMARY_METRIC_PATTERNS = (
+    "fractional_freq_instability",
+    "fractional_frequency_instability",
+    "allan_deviation",
+    "mod_sigma_y",
+    "mod_σ_y",
+    "oadev",
+    "hadamard",
+)
+
+
+def _is_primary_sigma_y_id(node_id: str) -> bool:
+    """Return True if a metric ID matches the σ_y primary-line heuristic."""
+    if not node_id:
+        return False
+    lid = node_id.lower()
+    return lid.startswith("met.") and any(pat in lid for pat in PRIMARY_METRIC_PATTERNS)
+
+
+def _is_primary_sigma_y_metric(metric: dict) -> bool:
+    """Return True if a metric node is a σ_y primary-line metric
+    (explicit role: primary, or ID/name heuristic)."""
+    role = metric.get("role")
+    if isinstance(role, str) and role.strip().lower() == "primary":
+        return True
+    mid = (metric.get("id") or "").lower()
+    name = (metric.get("name") or "").lower()
+    haystack = f"{mid} {name}"
+    return any(pat in haystack for pat in PRIMARY_METRIC_PATTERNS)
+
+
 # ── helpers ──────────────────────────────────────────────────────────────
 
 def _as_list(section):
@@ -84,10 +116,39 @@ def analyse(repo: Path):
     contested_total = 0
     open_q_total = 0
 
+    # σ_y-linkage (ultrastable-laser only): do breakthrough papers actually
+    # carry a σ_y primary-line metric? Round-3 scoping principle v2.
+    usl_breakthrough_total = 0
+    usl_breakthrough_with_sy = 0
+    usl_breakthrough_missing_sy: list[str] = []
+
     for topic, filepath, doc in load_yaml_files(repo):
         fname = filepath.name
         papers_per_topic[topic] += 1
         topic_paper_files[topic].append(fname)
+
+        meta = doc.get("meta") if isinstance(doc.get("meta"), dict) else {}
+        contrib = str(meta.get("contribution_type", "")).strip().lower()
+        is_usl_breakthrough = (topic == "ultrastable-laser" and contrib == "breakthrough")
+        if is_usl_breakthrough:
+            usl_breakthrough_total += 1
+            has_primary_sy = False
+            for met in _as_list(doc.get("metrics")):
+                if _is_primary_sigma_y_metric(met):
+                    has_primary_sy = True
+                    break
+            if not has_primary_sy:
+                for rel in _as_list(doc.get("relations")):
+                    for field in ("subject", "object"):
+                        if _is_primary_sigma_y_id(rel.get(field, "") or ""):
+                            has_primary_sy = True
+                            break
+                    if has_primary_sy:
+                        break
+            if has_primary_sy:
+                usl_breakthrough_with_sy += 1
+            else:
+                usl_breakthrough_missing_sy.append(fname)
 
         # ── nodes ──
         for section_key, prefix in [
@@ -203,6 +264,14 @@ def analyse(repo: Path):
                 "open_questions_total": open_q_total,
                 "combined_total": contested_total + open_q_total,
             },
+            "sigma_y_linkage": {
+                "scope": "ultrastable-laser · contribution_type == breakthrough",
+                "breakthrough_papers": usl_breakthrough_total,
+                "breakthrough_with_sigma_y": usl_breakthrough_with_sy,
+                "rate": _rate(usl_breakthrough_with_sy, usl_breakthrough_total),
+                "target": 1.00,
+                "missing_files": sorted(usl_breakthrough_missing_sy),
+            },
         },
         "inventory": {
             "papers_per_topic": dict(papers_per_topic.most_common()),
@@ -290,6 +359,20 @@ def format_text(stats):
         f"(contested: {cv['contested_claims_total']}, open_q: {cv['open_questions_total']})"
     )
 
+    sy = rr["sigma_y_linkage"]
+    if sy["breakthrough_papers"] > 0:
+        lines.append(
+            f"  7. σ_y Linkage (USL)      {_pct(sy['rate']):>7}  "
+            f"(target ={_pct(sy['target'])})  "
+            f"{_pass_fail(sy['rate'], sy['target'])}  "
+            f"[{sy['breakthrough_with_sigma_y']}/{sy['breakthrough_papers']} USL breakthroughs]"
+        )
+        if sy["missing_files"]:
+            lines.append(f"       ⚠  missing σ_y primary metric: {', '.join(sy['missing_files'][:5])}"
+                         + (f" ... (+{len(sy['missing_files']) - 5} more)" if len(sy['missing_files']) > 5 else ""))
+    else:
+        lines.append("  7. σ_y Linkage (USL)      n/a    (no ultrastable-laser breakthrough papers)")
+
     # ── inventory ──
     lines.append("")
     lines.append("── Inventory ──")
@@ -368,6 +451,20 @@ def format_markdown(stats):
         f"| — "
         f"| contested: {cv['contested_claims_total']}, open_q: {cv['open_questions_total']} |"
     )
+
+    sy = rr["sigma_y_linkage"]
+    if sy["breakthrough_papers"] > 0:
+        sy_status = _pass_fail(sy["rate"], sy["target"])
+        lines.append(
+            f"| 7 | σ_y Linkage (USL breakthrough) | {_pct(sy['rate'])} | ={_pct(sy['target'])} "
+            f"| {sy_status} "
+            f"| {sy['breakthrough_with_sigma_y']}/{sy['breakthrough_papers']} USL breakthroughs |"
+        )
+    else:
+        lines.append(
+            f"| 7 | σ_y Linkage (USL breakthrough) | n/a | ={_pct(sy['target'])} | — "
+            "| no USL breakthrough papers |"
+        )
 
     lines.append("")
     lines.append("### Synthesis details")
