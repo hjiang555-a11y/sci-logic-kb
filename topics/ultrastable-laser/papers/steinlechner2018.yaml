@@ -135,3 +135,11 @@ relations:
     source: {zotero_key: "L6KKLLSR", claim: "Table 1: Mechanical loss φ at different temperatures"}
     verification_status: observed
     note: "指标表征了分析方法的输出结果"
+
+  - id: rel.ST04
+    subject: pri.coating_thermal_noise_material_comparison
+    predicate: DERIVED-FROM
+    object: pri.brownian_thermal_noise_fdt
+    confidence: established
+    source: {zotero_key: "L6KKLLSR", claim: "coating thermal noise is governed by the mechanical loss angle φ via the fluctuation-dissipation theorem"}
+    note: "镀层材料对比分析的物理基础是 FDT 经 loss angle φ 参数化；pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml（跨文件共用节点）"

@@ -89,3 +89,11 @@ relations:
     object: pri.sbs_thermal_self_referencing
     confidence: established
     source: {zotero_key: "UP2Q8F9Y", claim: "large mode-volume resonator suppresses fast thermal fluctuations"}
+
+  - id: rel.LO03
+    subject: meth.sbs_thermal_self_referencing_l19
+    predicate: COMPETES-WITH
+    object: meth.microcomb_self_referencing
+    confidence: likely
+    source: {zotero_key: "UP2Q8F9Y", claim: "a chip-scale alternative to cavity-stabilized reference lasers for integrated timing and metrology"}
+    note: "SBS 自参考是紧凑超稳激光→自参考路径的独立工程方案，与光梳路径的 DKS 微梳自参考形成并列选项；meth.microcomb_self_referencing 定义于 kippenberg2018.yaml（跨专题引用）"

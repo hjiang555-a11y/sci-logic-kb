@@ -112,44 +112,6 @@ entities:
 # ═══════════════════════════════════════════════
 
 principles:
-  - id: pri.temporal_cavity_soliton_dks
-    name: "时域腔孤子（耗散 Kerr 孤子 DKS）在微腔中的形成原理"
-    tier: domain
-    verification_status: observed
-    statement: >
-      在 CW 泵浦的反常色散微谐振腔中，当泵浦激光频率从蓝侧扫过谐振时，
-      系统可在特定失谐参数区域（通常 Δ > 1 且泵浦功率高于 MI 阈值）
-      支持时域腔孤子（DKS）——耗散系统中非线性（Kerr 效应）与色散、
-      增益（泵浦）与损耗（腔损耗+输出耦合）四方平衡的稳态局域化结构。
-      DKS 对应于 LLE 的局域化解，时域为 sech²(τ/τ_s) 脉冲包络，
-      频域为平滑的 sech² 光谱。DKS 态的微梳具有最佳相干性——
-      所有梳齿间有确定的相位关系，对应时域中稳定的超短脉冲循环。
-    domain: "非线性光学，微腔物理，光频梳"
-    formula: >
-      DKS 脉冲宽度 τ_s ≈ √(2|β₂|L/(αΔ))；DKS 带宽 ∝ 1/τ_s ∝ √Δ；
-      存在范围：Δ > 1（红失谐侧）且泵浦 X > X_min(Δ)
-    key_insight: >
-      DKS 是微梳实现全相干（低噪声、所有梳齿相位锁定）的关键态——
-      与 MI 态、混沌态形成鲜明对比。DKS 的产生需要精确控制泵浦失谐，
-      这是微梳从实验室走向实际应用的核心挑战之一。
-    conditions: "反常色散（β₂ < 0）；泵浦功率 > MI 阈值；红失谐（Δ > 1）"
-    preconditions:
-      - "微谐振腔 Q 因子足够高以降低 OPO 阈值"
-      - "色散受控——高阶色散不破坏 DKS 稳定性"
-      - "热效应可管理——DKS 从蓝侧到红侧的功率阶跃不导致热不稳定"
-    invalidated_when:
-      - "正色散（β₂ > 0）——不支持传统亮 DKS（但可支持暗脉冲/platicons）"
-      - "泵浦功率不足——低于 MI 阈值"
-      - "热效应不可控——快速热锁定阻止进入红失谐区域"
-    source_claim: >
-      "The control of the coherent generation and stabilisation of the solitary solutions
-      has generated a set of important developments" (Section 9, Conclusions)
-    note: >
-      此节点的首次实验验证归功于 Herr et al. 2014 (Nature Photonics)。
-      在本综述 Section 5.5.2 和 6.1 中详细讨论。
-      与 pri.dissipative_kerr_soliton（已有节点，kippenberg2011.yaml）密切相关——
-      此处更明确强调 DKS 在微梳相干性中的核心地位。
-
   - id: pri.thermal_instability_dks_access
     name: "热效应限制 DKS 接入——微梳核心工程挑战"
     tier: domain
@@ -270,21 +232,22 @@ relations:
     note: "跨文件引用，ent.microresonator_frequency_comb 定义于 kippenberg2011.yaml"
 
   - id: rel.P18_04
-    subject: pri.temporal_cavity_soliton_dks
+    subject: pri.dissipative_kerr_soliton
     predicate: DERIVED-FROM
     object: pri.lugiato_lefever_equation
     source:
       claim: "The Lugiato-Lefever equation has proved to be an effective tool for micro-comb modelling which has pushed the field towards demonstration of temporal cavity solitons"
       section: "Conclusions (Section 9)"
-    note: "跨文件引用，pri.lugiato_lefever_equation 定义于 kippenberg2018.yaml"
+    note: "pasquazi2018 综述对已有 kippenberg2018 canonical DKS↔LLE 关系的 corroborative 引用；原 subject pri.temporal_cavity_soliton_dks 于 2026-04-21 P2.2 合并到 pri.dissipative_kerr_soliton"
 
   - id: rel.P18_05
-    subject: pri.temporal_cavity_soliton_dks
+    subject: pri.dissipative_kerr_soliton
     predicate: DERIVED-FROM
     object: pri.parametric_four_wave_mixing_comb
     source:
       claim: "fundamental dynamics of micro-comb sources are based on the interplay of Kerr nonlinearity and optical dispersion"
       section: "Conclusions (Section 9)"
+    note: "原 subject pri.temporal_cavity_soliton_dks 于 2026-04-21 P2.2 合并到 pri.dissipative_kerr_soliton"
 
   - id: rel.P18_06
     subject: ent.filter_driven_fwm_laser
@@ -316,13 +279,13 @@ relations:
 # ═══════════════════════════════════════════════
 
 breakthrough_paths:
-  - direction: pri.temporal_cavity_soliton_dks
+  - direction: pri.dissipative_kerr_soliton
     expected_gain: "实现完全相干倍频程微梳——f-2f 自参考、光学钟、计量应用"
     status: demonstrated
     source:
       claim: "demonstration of temporal cavity solitons... the generation of dark pulses to the demonstration of alternative techniques"
       section: "Conclusions (Section 9)"
-    note: "DKS 是微梳从宽带非相干源升级为精密频率标尺的关键突破"
+    note: "DKS 是微梳从宽带非相干源升级为精密频率标尺的关键突破；原 direction pri.temporal_cavity_soliton_dks 于 2026-04-21 P2.2 合并到 pri.dissipative_kerr_soliton"
 
   - direction: pri.mode_interaction_comb_generation
     expected_gain: "在正色散材料/谐振器中产生相干微梳——扩展材料选择空间"

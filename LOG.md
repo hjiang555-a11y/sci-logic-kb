@@ -7,6 +7,28 @@
 
 ---
 
+## [2026-04-21] restructure | 阶段 D-0 延伸：P2 Tier 3 批准落地 + P3 尾巴收口
+
+基于专家批示"同意之前 AI 归类判断，类似表述合并"，执行 `reports/shared_node_candidates.md` §4 的 10 条重点候选。
+
+- **P2.1 · 6 条保留+补关系**（5 ❌ + 1 COMPETES-WITH）：
+  - `michaudbelleau2022`：新增 `rel.MB22_04` — `pri.hollow_core_fiber_thermal_noise DERIVED-FROM pri.brownian_thermal_noise_fdt`
+  - `hafner2015`：新增 `rel.H09` — `pri.long_cavity_thermal_noise_reduction DERIVED-FROM pri.brownian_thermal_noise_fdt`
+  - `li2019`：新增 `rel.LIG02` — `pri.fiber_thermal_phase_noise_giant_ifog DERIVED-FROM pri.brownian_thermal_noise_fdt`
+  - `steinlechner2018`：新增 `rel.ST04` — `pri.coating_thermal_noise_material_comparison DERIVED-FROM pri.brownian_thermal_noise_fdt`
+  - `jiang2011`：新增 `rel.JI03`（IMPLEMENTS meth.pdh_locking）+ `rel.JI04`（CHARACTERIZED-BY pri.brownian_thermal_noise_fdt）
+  - `loh2019`：新增 `rel.LO03` — `meth.sbs_thermal_self_referencing_l19 COMPETES-WITH meth.microcomb_self_referencing`（跨专题 Tier 1 引用）
+- **P2.2 · 3 条类似表述合并**：
+  - `coddington2010.pri.dual_comb_multiheterodyne_mapping` → `pri.dual_comb_multiheterodyne_detection`（coddington2016 canonical）；本地定义删除，`rel.C10_03` object 重指向
+  - `picque2020.pri.self_referencing_f2f_framework` → `pri.self_referencing_f2f`（giunta2019 canonical）；本地定义删除，`rel.PD20_01` object + `rel.PD20_03` subject 重指向
+  - `pasquazi2018.pri.temporal_cavity_soliton_dks` → `pri.dissipative_kerr_soliton`（kippenberg2018 canonical）；本地定义删除，`rel.P18_04`/`rel.P18_05` subject + breakthrough_paths `direction` 重指向（Tier 1 边的 corroborative citation 保留）
+- **P2.3 · 1 条异议回报**：`pri.vibration_fopt_linear_coupling (sinclair2014)` 与 `pri.vibration_cavity_length_coupling (lezius2016)` 经 AI 复查实为**不同物理观测量**（前者是 f_opt 相噪 vs 后者是 f_rep/f_ceo 噪声），**建议保留并改为"保留+补关系"**，未执行合并，留专家再决。
+- **P3.1**：AI 机械可闭环项仅 `ram_and_pdh_error_budget.md` 顶部补 `parke2025` — 复查发现前次 PR 已完成，无新增动作。
+- **P3.2~P3.4 遗留动作**：其余 synthesis 页面遗留项全部属于专家决策/呈现风格选择（补缺 metric YAML vs 页面改定性；表格增列；draft 标记移除），不执行，转入"下一步建议"回报专家。
+- **指标验证**：lint 0 error / 3 warning（与阶段 C 结束一致）；stats `cross_file_reuse` 76/862 → 76/859（分母 -3，纯粹来自节点合并），**指标前进有限**——符合报告 §5 预测，要到 15% 必须扩展到 `ent.*` / `met.*`。
+
+---
+
 ## [2026-04-21] synthesis | 阶段 D-0：P2 跨文件复用分析 + P3 六篇 synthesis 数值复核
 
 - **P2 · 跨文件复用**

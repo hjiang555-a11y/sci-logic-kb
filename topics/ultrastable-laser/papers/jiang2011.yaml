@@ -93,3 +93,19 @@ relations:
     verification_status: observed
     note: "跨文件引用，pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml"
     breakthrough_paths: []
+
+  - id: rel.JI03
+    subject: meth.low_thermal_noise_cavity_pdh_j11
+    predicate: IMPLEMENTS
+    object: meth.pdh_locking
+    confidence: established
+    source: {zotero_key: "RAC23NZV", claim: "PDH stabilization to a high-finesse cavity"}
+    note: "Jiang 2011 的低热噪声腔 PDH 锁是 PDH 通用方法的具体实施；meth.pdh_locking 定义于 drever1983.yaml（跨文件共用节点）"
+
+  - id: rel.JI04
+    subject: meth.low_thermal_noise_cavity_pdh_j11
+    predicate: CHARACTERIZED-BY
+    object: pri.brownian_thermal_noise_fdt
+    confidence: established
+    source: {zotero_key: "RAC23NZV", claim: "the reached 2×10⁻¹⁶ instability is at the thermal noise floor of the long ULE cavity"}
+    note: "方法的性能上限由 FDT 布朗热噪声界定；pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml（跨文件共用节点）"

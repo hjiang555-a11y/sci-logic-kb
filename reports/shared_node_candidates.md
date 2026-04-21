@@ -106,10 +106,16 @@
 
 ## 6. 建议的下一步动作（供专家审核）
 
-1. **[低风险立即执行]** 新建 `topics/shared/registry.md` 登记 Tier 1 节点，不改动源 YAML
-2. **[需审核]** Tier 3 的 10 个重点候选：逐条决定"保留+补关系" vs "合并删除"
-3. **[需审核+新一轮分析]** 启动 P2.2 `ent.*` / `met.*` 共用候选扫描（本报告范围外）
-4. **[Schema 层]** 考虑在 `SCHEMA.md` §6 增加 "domain-shared node" 标记字段，供 `stats.py` 辨识
+> **2026-04-21 晚批次更新**：专家批示"同意之前 AI 归类判断，类似表述合并"，已执行以下动作：
+> - **P2.1 · 6 条"保留+补关系"已落地**（见 LOG.md 2026-04-21 restructure 条目）
+> - **P2.2 · 3 条"类似表述"合并已落地**：`dual_comb_multiheterodyne_mapping` / `self_referencing_f2f_framework` / `temporal_cavity_soliton_dks` 的本地重复定义已删除，相关关系重定向到 Tier 1 canonical 节点
+> - **AI 对 1 条异议回报**：`pri.vibration_fopt_linear_coupling (sinclair2014)` vs `pri.vibration_cavity_length_coupling (lezius2016)` — AI 复查判断二者是**不同物理观测量**（f_opt 相噪 vs f_rep/f_ceo 噪声），未执行合并，建议改为保留+补 `DERIVED-FROM` 关系，等专家再决
+> - **已验证**：lint 0 error / 3 warning；cross_file_reuse 76/862 → 76/859（分母 -3，与预期一致）
+
+1. ✅ **[已执行]** 新建 `topics/shared/registry.md` 登记 Tier 1 节点，不改动源 YAML
+2. ✅ **[已执行]** Tier 3 的 10 个重点候选：5 条补关系 + 3 条合并 + 1 条 COMPETES-WITH + 1 条 AI 异议
+3. ⏳ **[需审核+新一轮分析]** 启动 P2.2 `ent.*` / `met.*` 共用候选扫描（本报告范围外，是推进 15% 的关键）
+4. ⏳ **[Schema 层]** 考虑在 `SCHEMA.md` §6 增加 "domain-shared node" 标记字段，供 `stats.py` 辨识
 
 ---
 

@@ -54,35 +54,6 @@ entities:
     note: "Level 2 实例节点，PART-OF ent.dual_comb_spectrometer（定义于 coddington2016.yaml）"
 
 principles:
-  - id: pri.dual_comb_multiheterodyne_mapping
-    name: "双梳多外差射频下变频映射原理"
-    tier: domain
-    verification_status: observed
-    statement: >
-      两台梳重频失谐 Δf_r 时，信号梳的第 n 根齿 ν_n = f_{CEO,s} + n·f_{r,s} 与
-      本振梳的第 n 根齿 ν'_n = f_{CEO,LO} + n·f_{r,LO} 外差产生 RF 拍频
-      f_n = (f_{CEO,s} − f_{CEO,LO}) + n·Δf_r。
-      整个光学梳谱被无混叠地映射到 RF 域 [0, f_r/2]，压缩因子 M = f_r/Δf_r。
-      只要两台梳彼此相干（相位噪声满足 Nyquist 条件），RF 谱中每条线的幅度和相位
-      都与光频响应 H̃(ν_n) 一一对应。
-    domain: "双梳光谱学"
-    formula: "f_RF(n) = Δf_CEO + n·Δf_r；映射压缩比 M = f_r/Δf_r"
-    key_insight: >
-      光学梳谱 → RF 谱的点对点相干映射，使单个高速光电探测器 + ADC 可并行测量数万条梳齿，
-      获得同时具备高分辨（梳齿间距）和高精度（光频锚定）的宽带复响应。
-    conditions: "两台梳之间相位相干；Δf_r 选择避免 RF 混叠（Nyquist 条件）"
-    preconditions:
-      - "两台梳各自 f_CEO、光学相位都锁至共同或互锁参考"
-      - "Δf_r · N ≤ f_r / 2，其中 N 为总梳齿数"
-      - "相对相位噪声在单次 IGM 时间内 << 2π"
-    invalidated_when:
-      - "相对相位噪声积累 > 2π（失相干，需额外校正或 adaptive sampling）"
-      - "Δf_r 过大导致 RF 带宽混叠"
-    source_claim: >
-      "Two coherent frequency combs are used to measure the full complex response of a sample ...
-      This dual-comb spectrometer retains the frequency accuracy and resolution of the reference
-      underlying the stabilized combs"
-
   - id: pri.dual_comb_coherent_averaging_snr_scaling
     name: "双梳相干平均 SNR 标度原理"
     tier: engineering
@@ -159,9 +130,10 @@ relations:
   - id: rel.C10_03
     subject: meth.dual_comb_spectroscopy
     predicate: ENABLED-BY
-    object: pri.dual_comb_multiheterodyne_mapping
+    object: pri.dual_comb_multiheterodyne_detection
     confidence: established
     source: {zotero_key: "7PDY5FDM", claim: "multiheterodyne laser spectrometer"}
+    note: "合并自原 pri.dual_comb_multiheterodyne_mapping（定义与 pri.dual_comb_multiheterodyne_detection 复述同一物理，于 2026-04-21 P2.2 合并）；Tier 1 规范节点定义于 coddington2016.yaml"
 
   - id: rel.C10_04
     subject: meth.dual_comb_spectroscopy

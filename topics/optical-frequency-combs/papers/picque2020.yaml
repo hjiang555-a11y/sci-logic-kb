@@ -35,24 +35,6 @@ entities:
     note: "Level 0 跨专题根节点"
 
 principles:
-  - id: pri.self_referencing_f2f_framework
-    name: "f-2f 自参考原理（框架陈述）"
-    tier: meta
-    verification_status: observed
-    statement: >
-      覆盖一个倍频程的光梳可通过同梳第 n 齿的二次谐波与第 2n 齿拍频得到 f_CEO，
-      从而将光学频率"绝对锁定"到无线电频率 → 实现光/微波双向相干"齿轮箱"。
-      这是 1999–2000 奠基的核心原理，也是所有后续光频梳应用的基石。
-    domain: "光频梳基础物理；光-微波桥"
-    formula: "f_CEO = 2·(n·f_rep + f_CEO) − (2n·f_rep + f_CEO)  （倍频程梳中 f-2f 直接测量）"
-    key_insight: >
-      自参考把光梳从"仅仅是等间距齿的集合"提升为"可绝对定位的频率标尺"，
-      是光频梳整个科学应用链条的起始点。
-    conditions: "梳谱覆盖至少一个倍频程；f_CEO 可测/可锁"
-    source_claim: >
-      "the technique of self-referencing, by which the optical frequencies of the comb are
-      locked in an absolute sense to a radio frequency reference"
-
   - id: pri.optical_microwave_coherent_gearbox
     name: "光-微波相干齿轮箱原理（Level 0 范式原理）"
     tier: meta
@@ -72,9 +54,10 @@ relations:
   - id: rel.PD20_01
     subject: ent.optical_frequency_comb
     predicate: ENABLED-BY
-    object: pri.self_referencing_f2f_framework
+    object: pri.self_referencing_f2f
     confidence: established
     source: {zotero_key: "43TAX2KE", claim: "Self-referencing is the foundational technique enabling optical frequency combs to provide absolute optical frequency measurement."}
+    note: "合并自原 pri.self_referencing_f2f_framework（框架档位复述同一原理，2026-04-21 P2.2 合并）；Tier 1 规范节点定义于 giunta2019.yaml"
 
   - id: rel.PD20_02
     subject: ent.optical_frequency_comb
@@ -84,11 +67,12 @@ relations:
     source: {zotero_key: "43TAX2KE", claim: "The optical frequency comb serves as the central element coherently uniting the electromagnetic spectrum from RF to UV."}
 
   - id: rel.PD20_03
-    subject: pri.self_referencing_f2f_framework
+    subject: pri.self_referencing_f2f
     predicate: DERIVED-FROM
     object: pri.optical_microwave_coherent_gearbox
     confidence: established
     source: {zotero_key: "43TAX2KE", claim: "The f-2f self-referencing principle is a specific realization of the broader optical-microwave coherent gearbox paradigm."}
+    note: "picque2020 综述将 f-2f 自参考纳入光-微波相干齿轮箱更高层框架；subject 已重定向到 Tier 1 规范节点（原 pri.self_referencing_f2f_framework 于 2026-04-21 合并）"
 
   - id: rel.PD20_04
     subject: ent.electromagnetic_spectrum_coherent_bridge

@@ -240,3 +240,11 @@ relations:
       ent.thermal_environment 定义于 jiang2010.yaml；
       Häfner 2015 精确测量 ULE 腔 CTE 零点（−0.24°C）和二次系数（2×10⁻⁹ K⁻²），
       为温度灵敏度定量计算提供实测数据。
+
+  - id: rel.H09
+    subject: pri.long_cavity_thermal_noise_reduction
+    predicate: DERIVED-FROM
+    object: pri.brownian_thermal_noise_fdt
+    confidence: established
+    source: {zotero_key: "UV6S5FFL", claim: "thermal noise floor scales as 1/L with cavity length; increasing L reduces the FDT-limited displacement noise"}
+    note: "长腔降噪策略是 FDT 位移噪声与腔长 L 的解析依赖关系的工程特化；pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml（跨文件共用节点）"
