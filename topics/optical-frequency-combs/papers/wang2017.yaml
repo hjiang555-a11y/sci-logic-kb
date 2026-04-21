@@ -4,6 +4,9 @@ meta:
   topic: optical-frequency-combs
   zotero_key: "GY48UQ7F"
   schema_version: "v4.1"
+  title: "A III-V-on-Si ultra-dense comb laser"
+  year: 2017
+  first_author: Wang
   contribution_type: technique
   temporal_role: proposes
   source:
@@ -81,6 +84,9 @@ principles:
       Adhesive / molecular bonding of III-V epitaxy onto SOI waveguides
       enables co-integration of efficient III-V gain with low-loss, dispersion-
       engineered Si passive circuits in a single chip.
+    conditions:
+      - "III-V gain sections can be bonded onto low-loss SOI passive waveguides with acceptable coupling loss"
+      - "Thermal / mechanical mismatch remains within the packaging tolerance budget"
 
   - id: pri.linewidth_enhancement_factor_limit
     tier: domain
@@ -89,6 +95,9 @@ principles:
       Amplitude-phase coupling in semiconductor gain (α ≠ 0) broadens the
       Schawlow-Townes linewidth of each comb tooth, setting a floor on per-line
       coherence in semiconductor comb lasers.
+    conditions:
+      - "Comb teeth inherit phase noise from semiconductor gain sections with non-negligible α-factor"
+      - "Operation remains free-running or only weakly externally stabilized"
 
   - id: pri.group_velocity_dispersion_comb_limit
     tier: domain
@@ -97,11 +106,17 @@ principles:
       Residual group-velocity dispersion of the composite III-V/Si cavity
       walks off longitudinal modes from equal spacing and narrows the
       mode-locking bandwidth, limiting the number of coherent comb lines.
+    conditions:
+      - "Composite cavity dispersion is not fully flattened over the gain bandwidth"
+      - "Mode-locking bandwidth is set by the overlap of gain, loss, and dispersion windows"
 
   - id: pri.waveguide_loss_comb_limit
     tier: domain
     name: "Si waveguide propagation loss as cavity-Q / efficiency limit"
     description: "Propagation loss in the long Si extension reduces net gain margin, limits wall-plug efficiency and ultimately caps achievable cavity length / minimum comb spacing."
+    conditions:
+      - "Extended cavity length is increased primarily through passive Si waveguide sections"
+      - "Round-trip gain margin is comparable to cumulative propagation and coupling loss"
 
 methods:
   - id: meth.passive_mode_locking_iii_v_si

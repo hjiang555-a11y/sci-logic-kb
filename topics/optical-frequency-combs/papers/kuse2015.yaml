@@ -101,6 +101,7 @@ principles:
       f_servo^max ~ 1/(2π τ_g)。对于 Er:fiber ~10 ms 激发态寿命，带宽 ~100 kHz。
     domain: "激光伺服控制"
     formula: "f_servo_max ≈ 1/(2π τ_g)"
+    conditions: "以泵浦电流作为主执行器；增益介质激发态寿命显著慢于目标伺服带宽"
     source_claim: >
       "feedback bandwidth for pump current modulation for Er fiber lasers is around 100 kHz,
       which hampers ultra-low phase noise operation"
