@@ -2,7 +2,7 @@
 
 > **综合页面（synthesis）**：跨论文综合视图，YAML 是 source of truth。
 >
-> **最后更新**：2026-04-21 · 🟡 初稿（draft，随 chain-gap 修复同步演进） · Round 3 σ_y-first 增订（新增 §A.2 σ_y 增益矩阵）
+> **最后更新**：2026-04-21 · 🟡 初稿（draft，阶段 C 后数值复核完成） · Round 3 σ_y-first 增订（新增 §A.2 σ_y 增益矩阵）
 > **来源数据**：`python scripts/graph.py --format json` + `reports/chain_gap_ultrastable.md`
 > **关联综合页**：所有其他 synthesis 页面（本页是它们的"交叉索引"） · [stability_record_timeline.md](stability_record_timeline.md)（顶层导航）
 
@@ -133,3 +133,27 @@
 
 > 本矩阵是超稳激光专题的"认知地图"，应作为新论文摄入时的**第一张检查表**：
 > 新论文是否落在某个已知单元格（补证据）？还是发现了新路径（新列）？或新限制（新行）？
+
+---
+
+## 📋 阶段 C 后刷新日志（2026-04-21）
+
+阶段 C 基于 `reports/chain_gap_ultrastable_v2.md` / `reports/orphans_ultrastable_v2.md` 对 7 条 breakthrough chain-gap 与 15 条 breakthrough orphan 全部闭环：
+
+- `chen2025.Che02` · `kedar2023.Ked03` · `numata2004.N04/N05` · `webster2008.We08_01` · `zhang2014_ram.Z14_01/Z14_05` 全部补入 `breakthrough_paths`
+- 15 个 breakthrough orphan 节点（14 methods + 1 principle `pri.ram_bias_field_cancellation`）全部挂关系
+
+**对矩阵单元格的影响**：
+
+| 矩阵位置 | 阶段 C 前 | 阶段 C 后 |
+|---------|---------|---------|
+| A 限制 · Si 4 K × `pri.crystalline_coating_low_brownian_noise` | 🟡 部分 | 🟡 保持（Chen 2025 仍用 IBS 非 AlGaAs，是 cryogenic_roadmap §三 4 K 行的下一步突破点） |
+| A 限制 · Si 17 K × `pri.crystalline_coating_low_brownian_noise` | ✅ Lee 2026 | ✅ + Kedar 2023（Si6 @ 16 K 佐证补入）|
+| B 限制 · Active RAM Servo | ✅ Zhang 2014 | ✅ + Parke 2025 breakthrough（σ_y 3×10⁻¹⁹ @ 10–100s，`pri.ram_bias_field_cancellation` 首次演示） |
+| 振动限制 × 双腔差分 | ✅ Chen 2020 | ✅ 保持（`met.vibration_sensitivity_c14` 等有 YAML 数据） |
+
+**下一轮刷新触发条件**：
+- 新 breakthrough 论文摄入（尤其 Si 4 K + AlGaAs 协同）
+- 专家确认 Tier 3 节点合并动作后，若有 breakthrough orphan 重新浮现则需回填
+
+**AI 数值复核结论**：矩阵结构在阶段 C 后无遗留错误；YAML source of truth 已同步。

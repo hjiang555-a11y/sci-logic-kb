@@ -9,7 +9,7 @@
 
 ---
 
-## 📌 当前优先级：阶段 A（机制落地闭环）已完成 · 阶段 B（档位感知）已完成 · 阶段 C（breakthrough 档位真缺口清零）已完成 — 进入阶段 D
+## 📌 当前优先级：阶段 A（机制落地闭环）已完成 · 阶段 B（档位感知）已完成 · 阶段 C（breakthrough 档位真缺口清零）已完成 · 阶段 D-0（整治手册沉淀 P2/P3 AI 机械部分）已完成 — 专家审核后进入阶段 D
 
 > **v4.4 机制落地进度（2026-04-21）**：按"先形成工作机制再扩展规模"迭代计划：
 >
@@ -44,17 +44,26 @@
 - 已挂关系的 breakthrough-tier 节点：`cole2013/hafner2015/huang2023/kedar2023/michaudbelleau2022/numata2004/parke2025(×3) / robinson2019/thorpe2011(×2)/webster2008/yan2018/zhang2014_ram` 共 15 个
 - 75 条 evidence-tier orphan INFO 按 §9.1 保留
 
-#### P2 · 跨文件复用度提升（8.8% → 15%+）
-- 待抽取：10~15 个公共 pri.* / meth.*（如 `pri.brownian_thermal_noise_fdt`、`meth.pdh_locking`、`pri.cavity_deformation_compensation`）
-- 需要专家确认哪些节点应提升为"公共节点"（可留在专题内，也可上提到 `topics/shared/`）
+#### ⏳ P2 · 跨文件复用度提升（8.8% → 15%+）— AI 分析已完成，待专家审核合并
+- 已产出 [`reports/shared_node_candidates.md`](reports/shared_node_candidates.md)（Tier 1 已共用 39 / Tier 2 跨专题 1 / Tier 3 疑似可合并 30）
+- 已新建 [`topics/shared/registry.md`](topics/shared/registry.md)——登记事实上已共用的 39 个 pri/meth 节点
+- **关键发现**：仅靠 pri/meth 整治无法单独达到 15% 目标，需要下一轮扩展到 `ent.*` / `met.*`
+- 专家待决动作：
+  - [ ] 逐条审核 Tier 3 的 10 个重点候选（保留+补关系 vs 合并删除）
+  - [ ] 授权是否在论文 YAML 中显式补 `SHARED-WITH pri.brownian_thermal_noise_fdt`（当前只有隐式引用）
+  - [ ] 启动 P2.2 `ent.*` / `met.*` 共用候选扫描（本轮未覆盖）
 
-#### P3 · Synthesis 页面数值复核（已完成 8 篇，全部标 🟡 draft）
-- [ ] `vibration_insensitivity_landscape.md` — 需核对 κ 数值
-- [ ] `ram_and_pdh_error_budget.md` — 需核对 RAM 分数频稳典型贡献
-- [ ] `fiber_stabilization_landscape.md` — 需核对光纤稳频最佳值时间线
-- [ ] `cryogenic_roadmap.md` — 需核对 Si 腔最佳 σ_y 对应论文
-- [ ] `spectral_hole_burning_track.md` — SHB 分支整体结构化最弱，需专家深度参与
-- [ ] `breakthrough_paths_matrix.md` — 待 chain-gap 修复后刷新单元格状态
+#### ⏳ P3 · Synthesis 页面数值复核（AI 机械复核完成，🟡 draft 保留待专家签字）
+- 每篇追加"📋 数值复核日志"章节，记录发现的问题与已修正内容
+- [x] `vibration_insensitivity_landscape.md` — 修正 Tao 2018（5×10⁻¹¹ → 0.8~2.5×10⁻¹⁰/g）和 Chen 2014（2×10⁻¹⁰ → 1.7e-11~3.9e-10 区间）两处数值错误；标注 Chen 2020 / Sanjuan 2019 YAML 缺 κ metric
+- [x] `ram_and_pdh_error_budget.md` — 修正 κ 单位错误（kHz/(m/s²) → kHz 腔线宽）；修正 Tai 2016 σ_y（~10⁻¹⁶ → <3×10⁻¹⁷）；新增 Parke 2025 breakthrough 路径（σ_y 3×10⁻¹⁹ @ 10–100s）
+- [x] `fiber_stabilization_landscape.md` — 修正 Huang 2023 短期 σ_y（漏写 3.2×10⁻¹⁵ @ 1s）；修正 Jeon 2025 τ 标注（应为 16ms 非 1s）；修正 FP-vs-光纤差距（250× → ~10³× 时标对齐后）
+- [x] `cryogenic_roadmap.md` — 修正 124K 两行的 AlGaAs/IBS 错配；补入 Robinson 2019 (6.5×10⁻¹⁷ @ 4K) 与 Kedar 2023 (5.5/3.5×10⁻¹⁷ Si6/Si5) 的 mod σ_y 数据
+- [x] `spectral_hole_burning_track.md` — 无数值错误可改（定性表述为主），标注需专家深度参与
+- [x] `breakthrough_paths_matrix.md` — 追加"阶段 C 后刷新日志"，记录 Parke 2025 等单元格更新
+- 专家待决动作：
+  - [ ] 审核每页"📋 数值复核日志"下的"遗留动作"项（典型为 YAML 缺 metric 节点 / 时标呈现风格选择）
+  - [ ] 决定是否移除 🟡 draft 标记
 
 ---
 
