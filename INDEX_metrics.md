@@ -2,7 +2,7 @@
 
 # 📊 Metrics Quick Reference
 
-> Auto-generated 2026-04-21 03:50 UTC
+> Auto-generated 2026-04-21 04:13 UTC
 >
 > Metrics are grouped by **role** (v4.4 σ_y-first convention, see `topics/ultrastable-laser/_meta/scoping_principles.md` v2). Role is taken from the `role` field on the metric node when present, otherwise inferred from ID / name heuristics.
 
@@ -236,6 +236,7 @@
 | ID | Name | Best Value | Conditions | Source |
 |----|------|------------|------------|--------|
 | `met.allan_deviation_fiber` | 分数频率不稳定度（光纤干涉仪，静态） | ~10⁻¹⁴ @ 0.1–1 s | 2.5 km 光纤，静态锁频 | [jiang2010](topics/ultrastable-laser/papers/jiang2010.yaml) |
+| `met.fiber_long_term_stability_h23` | 全光纤超稳激光长期稳定度（Huang 2023） | 3.2×10⁻¹⁵ @ 1s; 1.1×10⁻¹⁴ @ 1000s | 全光纤 FDL，真空腔五层热屏蔽，两级温控 | [huang2023](topics/ultrastable-laser/papers/huang2023.yaml) |
 | `met.fractional_freq_instability_a12` | 分数频率不稳定度（Argence 2012） | 5–6×10⁻¹⁶ @ 1 s | 100 mm ULE 腔，FS 镜，1542 nm，实验室环境 | [argence2012](topics/ultrastable-laser/papers/argence2012.yaml) |
 | `met.fractional_freq_instability_c14` | 分数频率不稳定度（Chen 2014） | 1×10⁻¹⁵ @ 1–10 s | 10 cm ULE 腔，1064 nm，三角帽测量 | [chen2014](topics/ultrastable-laser/papers/chen2014.yaml) |
 | `met.fractional_freq_instability_c20` | 分数频率不稳定度（Chen 2020） | 6×10⁻¹⁶ @ 1 s | 10 cm 立方 ULE 腔，1064 nm，vs 578 nm 参考腔通过光频梳 | [chen2020](topics/ultrastable-laser/papers/chen2020.yaml) |
@@ -262,6 +263,9 @@
 | `met.fractional_freq_instability_w16` | 分数频率不稳定度（Wu 2016） | 8×10⁻¹⁶ @ 1–30 s | 10 cm ULE 腔，室温，1557 nm，去除线性漂移 0.03 Hz/s | [wu2016](topics/ultrastable-laser/papers/wu2016.yaml) |
 | `met.fractional_freq_instability_y99` | 分数频率不稳定度（Young 1999 腔） | ≈ 3 × 10⁻¹⁶ | 563 nm 染料激光锁定到 24 cm ULE 腔，两腔拍频测量，τ = 1 s | [young1999](topics/ultrastable-laser/papers/young1999.yaml) |
 | `met.fractional_freq_instability_z17` | 分数频率不稳定度（Zhang 2017，4 K 闭循环 Si 腔） | ≈1×10⁻¹⁶（0.06–100 s averaging；0.06 s 以下受振动限制） | 1542 nm，6 cm Si cavity，T≈4 K，SiO₂/Ta₂O₅ 镀层，finess… | [zhang2017](topics/ultrastable-laser/papers/zhang2017.yaml) |
+| `met.optical_microwave_sync_jitter_k08` | 远程光-微波同步时序抖动（Kim 2008） | 6.8 fs r.m.s.（1 MHz 带宽，10 h）；相对时序稳定度 1.9×10⁻¹⁹ | 一个 BOM-PD 用于 10.225 GHz 微波再生，另一 BOM-PD 进行 out-of-… | [kim2008](topics/ultrastable-laser/papers/kim2008.yaml) |
+| `met.shb_stability_thorpe11` | SHB 稳频稳定度（Thorpe 2011） | σ_y ≤ 6×10⁻¹⁶ @ 2–8 s | Eu³⁺:Y₂SiO₅，两级稳频（FP预稳+SHB），4 K | [thorpe2011](topics/ultrastable-laser/papers/thorpe2011.yaml) |
+| `met.synthesized_laser_instability_y18` | 合成激光不稳定度（Yan 2018） | 5×10⁻¹⁶ @ 1–20 s | 两台独立 10 cm ULE 腔，AOM 频率合成 | [yan2018](topics/ultrastable-laser/papers/yan2018.yaml) |
 
 ### 📊 Secondary (线宽/PSD/相干)
 
@@ -345,7 +349,6 @@
 | `met.electronic_noise_reduction_factor_g16` | 电子噪声降低倍数（Grote 2016） | >4 | 音频频段 >1 kHz，高功率光电探测器 | [grote2016](topics/ultrastable-laser/papers/grote2016.yaml) |
 | `met.eu_yso_t2_k03` | Eu³⁺:Y₂SiO₅ 光学退相时间（Könz 2003） | T₂ up to 2.6 ms | Eu³⁺:Y₂SiO₅, low concentration, ~2 K | [konz2003](topics/ultrastable-laser/papers/konz2003.yaml) |
 | `met.fiber_freq_stability_hjc19` | 全光纤频率稳定度（Huang JC 2019） | 3×10⁻¹⁵ @ 1–10 s | 5 km FDL，1.55 μm | [huangjc2019](topics/ultrastable-laser/papers/huangjc2019.yaml) |
-| `met.fiber_long_term_stability_h23` | 全光纤超稳激光长期稳定度（Huang 2023） | 3.2×10⁻¹⁵ @ 1s; 1.1×10⁻¹⁴ @ 1000s | 全光纤 FDL，真空腔五层热屏蔽，两级温控 | [huang2023](topics/ultrastable-laser/papers/huang2023.yaml) |
 | `met.freq_stability_piezo_cavity_m13` | 压电腔频率稳定度（Möhle 2013） | <1×10⁻¹⁴ (short-circuited piezo) | 10 cm Zerodur 腔，PZT 叠层/管/PZN-PT，1064 nm，vs ULE 参考腔 | [mohle2013](topics/ultrastable-laser/papers/mohle2013.yaml) |
 | `met.frequency_band_g16` | 有效频段（Grote 2016） | >1 | 电子噪声降低效果显著的频段 | [grote2016](topics/ultrastable-laser/papers/grote2016.yaml) |
 | `met.frequency_range_a13` | 改善频率范围（Aasi 2013） | 150 Hz 以上 | 压缩光注入，正交相位优化 | [aasi2013](topics/ultrastable-laser/papers/aasi2013.yaml) |
@@ -356,7 +359,6 @@
 | `met.long_term_instability_s19` | 长期频率不稳定度（Sanjuan 2019） | ~10⁻¹⁴ @ 5400 s (Allan deviation) | 8.7 cm ULE 立方腔，五层热屏蔽，1064 nm | [sanjuan2019](topics/ultrastable-laser/papers/sanjuan2019.yaml) |
 | `met.long_term_instability_w16` | 长期频率不稳定度（Wu 2016） | 1×10⁻¹⁵ @ 100–4000 s | 10 cm ULE 腔，室温，两级热屏蔽，去除线性漂移 | [wu2016](topics/ultrastable-laser/papers/wu2016.yaml) |
 | `met.noise_reduction_g20` | 探测噪声降低（Galland 2020） | 显著降低（具体数值未给出） | 双外差探测SHB，共模噪声抑制 | [galland2020](topics/ultrastable-laser/papers/galland2020.yaml) |
-| `met.optical_microwave_sync_jitter_k08` | 远程光-微波同步时序抖动（Kim 2008） | 6.8 fs r.m.s.（1 MHz 带宽，10 h）；相对时序稳定度 1.9×10⁻¹⁹ | 一个 BOM-PD 用于 10.225 GHz 微波再生，另一 BOM-PD 进行 out-of-… | [kim2008](topics/ultrastable-laser/papers/kim2008.yaml) |
 | `met.optical_optical_sync_jitter_k08` | 远程光-光同步时序抖动（Kim 2008） | 0.4 fs r.m.s.（22 mHz–2.3 MHz） | Ti:sapphire 激光与 Cr:forsterite 激光远程同步，连续运行 >12 h，o… | [kim2008](topics/ultrastable-laser/papers/kim2008.yaml) |
 | `met.output_power_d20` | 输出功率（Dixneuf 2020） | 365 W (350 W isolated) | 1064 nm，单频，线偏振，全光纤MOPA | [dixneuf2020](topics/ultrastable-laser/papers/dixneuf2020.yaml) |
 | `met.pd_bandwidth_p16` | 光电探测器带宽（Potnis 2016） | DC to 50 MHz | -3 dB带宽，室温。 | [potnis2016](topics/ultrastable-laser/papers/potnis2016.yaml) |
@@ -378,13 +380,11 @@
 | `met.shb_absolute_stability_l13` | SHB 绝对稳定度（vs H-maser, Leibrandt 2013） | 1×10⁻¹⁵/√τ, drift 5×10⁻¹⁸/s | 单个光谱孔 vs 氢钟 | [leibrandt2013](topics/ultrastable-laser/papers/leibrandt2013.yaml) |
 | `met.shb_environmental_sensitivity_thorpe11` | SHB 环境灵敏度（Thorpe 2011） | temperature: 16 kHz/K²; pressure: -11.4 Hz/Pa; acceleration… | Eu³⁺:Y₂SiO₅, 4 K | [thorpe2011](topics/ultrastable-laser/papers/thorpe2011.yaml) |
 | `met.shb_relative_stability_l13` | SHB 双晶体相对稳定度（Leibrandt 2013） | 5.5×10⁻¹⁷ @ 204 s (quadratic drift removed) | 两块 Eu³⁺:Y₂SiO₅ 晶体，同一低温容器，4 K | [leibrandt2013](topics/ultrastable-laser/papers/leibrandt2013.yaml) |
-| `met.shb_stability_thorpe11` | SHB 稳频稳定度（Thorpe 2011） | σ_y ≤ 6×10⁻¹⁶ @ 2–8 s | Eu³⁺:Y₂SiO₅，两级稳频（FP预稳+SHB），4 K | [thorpe2011](topics/ultrastable-laser/papers/thorpe2011.yaml) |
 | `met.snr_improvement_g17` | 信噪比提升（Gobron 2017） | 具体数值未给出，但理论上更优 | 光谱烧孔稳频，避免烧孔功率引起的光谱畸变 | [gobron2017](topics/ultrastable-laser/papers/gobron2017.yaml) |
 | `met.spectral_distortion_immunity_g17` | 光谱畸变免疫性（Gobron 2017） | 不受烧孔功率引起的畸变影响 | 高烧孔功率下 | [gobron2017](topics/ultrastable-laser/papers/gobron2017.yaml) |
 | `met.spectral_hole_lifetime_k03` | 光谱孔寿命（Könz 2003） | 1 s @ 18 K to >20 days @ 2 K | Eu³⁺:Y₂SiO₅, various concentrations | [konz2003](topics/ultrastable-laser/papers/konz2003.yaml) |
 | `met.sr_clock_instability_l18` | Sr 钟频率稳定度（Li 2018） | <3.2×10⁻¹⁶ short-term, 1.8×10⁻¹⁵/√τ | 30 cm ULE 腔，⁸⁷Sr 光晶格钟，NIM | [li2018](topics/ultrastable-laser/papers/li2018.yaml) |
 | `met.steady_state_shb_stability_c15` | 稳态 SHB 稳频稳定度（Cook 2015） | 1.0×10⁻¹⁵/√τ → 8.5×10⁻¹⁷ @ 73 s | Eu³⁺:Y₂SiO₅, 稳态三区域烧孔, vs Yb 光钟 | [cook2015](topics/ultrastable-laser/papers/cook2015.yaml) |
-| `met.synthesized_laser_instability_y18` | 合成激光不稳定度（Yan 2018） | 5×10⁻¹⁶ @ 1–20 s | 两台独立 10 cm ULE 腔，AOM 频率合成 | [yan2018](topics/ultrastable-laser/papers/yan2018.yaml) |
 | `met.thermal_noise_freq_psd` | 热噪声频率噪声谱密度（刚性腔极限） | ~0.13 × (1Hz/f)^(1/2) Hz/√Hz | ULE 腔，L=24 cm，w₀=240 μm，T=300 K，三类部件贡献之和 | [numata2004](topics/ultrastable-laser/papers/numata2004.yaml) |
 | `met.thermal_noise_psd_hcf_mb22` | 空心光纤热噪声功率谱密度（Michaud-Belleau 2022） | ≈1.3×10⁻¹⁷ (rad²/Hz)/m @30 kHz | 大模场面积 NANF, 抽真空密封至 0.15 atm, 1550 nm | [michaudbelleau2022](topics/ultrastable-laser/papers/michaudbelleau2022.yaml) |
 | `met.timing_link_stability_k08` | 定时稳定光纤链路残余时差（Kim 2008） | 6.4 fs r.m.s. @ 72 h；0.36 fs r.m.s. @ 10 ms–1 s | 两条独立 ~300 m 色散补偿定时稳定光纤链路，out-of-loop 平衡互相关测量 | [kim2008](topics/ultrastable-laser/papers/kim2008.yaml) |

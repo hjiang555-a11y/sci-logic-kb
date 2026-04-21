@@ -56,6 +56,7 @@ metrics:
   - id: met.shb_stability_thorpe11
     name: "SHB 稳频稳定度（Thorpe 2011）"
     unit: "无量纲"
+    role: primary   # σ_y（ADEV）@ 2–8 s；SHB 子分支 σ_y 主线指标
     demonstrated_value:
       value: "σ_y ≤ 6×10⁻¹⁶ @ 2–8 s"
       conditions: "Eu³⁺:Y₂SiO₅，两级稳频（FP预稳+SHB），4 K"

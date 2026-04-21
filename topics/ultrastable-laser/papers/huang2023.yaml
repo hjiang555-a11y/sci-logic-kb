@@ -45,6 +45,7 @@ metrics:
   - id: met.fiber_long_term_stability_h23
     name: "全光纤超稳激光长期稳定度（Huang 2023）"
     unit: "无量纲"
+    role: primary   # σ_y(τ)；超稳激光专题主线指标（含 τ=1 s 与长期段）
     demonstrated_value:
       value: "3.2×10⁻¹⁵ @ 1s; 1.1×10⁻¹⁴ @ 1000s"
       conditions: "全光纤 FDL，真空腔五层热屏蔽，两级温控"

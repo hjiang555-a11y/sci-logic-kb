@@ -7,6 +7,9 @@ meta:
   zotero_key: "CWIHQRJD"
   source_type: technical_paper
   contribution_type: breakthrough
+  # 专题 σ_y-first 规则豁免：该论文 breakthrough 基础为新型晶体镀层原理（AlGaAs），
+  # 未直接报告 σ_y(1 s)；损耗角 φ ≤ 2.5×10⁻⁵ 是使能指标，σ_y 收益由下游论文（Matei 2017 等）演示。
+  primary_metric_exempt_reason: new_principle
   reliability: high
   title: "Tenfold reduction of Brownian noise in high-reflectivity optical coatings"
   year: 2013

@@ -9,7 +9,7 @@
 
 ---
 
-## 📌 当前优先级：阶段 A（机制落地闭环）已完成 — 进入阶段 B
+## 📌 当前优先级：阶段 A（机制落地闭环）已完成 · 阶段 B（档位感知）已完成 — 进入阶段 C
 
 > **v4.4 机制落地进度（2026-04-21）**：按"先形成工作机制再扩展规模"迭代计划：
 >
@@ -18,11 +18,18 @@
 > - ✅ **阶段 A2 · Round 2**：专家增补**专题原则"稳定度 > 线宽"**（见 [`topics/ultrastable-laser/_meta/scoping_principles.md`](topics/ultrastable-laser/_meta/scoping_principles.md)），清空 🟧 档——8 升 🟥 / 9 降 🟩。新分布 🟥 24 / 🟦 3 / 🟩 51 → [`reports/contribution_tier_draft_ultrastable.md`](reports/contribution_tier_draft_ultrastable.md)
 > - ✅ **阶段 A3**：专家批量裁决完毕（76 accept + 2 override：`aasi2013` 🟥→🟩；`yan2018` 🟩→🟥），最终分布 🟥 24 / 🟦 3 / 🟩 51
 > - ✅ **阶段 A4**：78 篇 YAML 的 `meta.contribution_type` 已批量回写（lint 0 errors）
-> - ⏳ **阶段 B**：lint / stats 引入档位感知 → 重跑 chain-gap / orphan 报告（A4 已激活 lint 档位感知：新增 12 条 `σ_y primary-role metric missing` 告警——阶段 B 首批待处理清单）
-> - ⏳ **阶段 C**：针对真缺口做精准收敛（依赖 B）
+> - ✅ **阶段 B · 2026-04-21 完成**：
+>   - `scripts/lint.py` 引入档位感知：`reasoning-chain-gap` / `orphan-node` 对 `evidence` / `framework` 档位论文降级为 `INFO`，仅 `breakthrough` 档位保持 `WARNING`
+>   - `scripts/stats.py` 引入 `reasoning_chain_closure.breakthrough_only` 子视图（tier-scoped 73.1% [19/26]）
+>   - 新增 `meta.primary_metric_exempt_reason` 字段供 breakthrough 论文显式声明"σ_y 主线不适用原因"（`new_principle` / `new_method` / `landmark_consensus` / `psd_only`）
+>   - 12 条 `breakthrough-missing-primary-metric` 告警全部清零（4 篇补 `role: primary` + 8 篇补 `primary_metric_exempt_reason`）
+>   - lint 档位感知重估后真实缺口：**chain-gap 21 → 7 WARNING + 14 INFO**；**orphan 90 → 15 WARNING + 75 INFO**
+>   - 重估报告：[`reports/chain_gap_ultrastable_v2.md`](reports/chain_gap_ultrastable_v2.md) · [`reports/orphans_ultrastable_v2.md`](reports/orphans_ultrastable_v2.md)
+>   - σ_y Linkage（stats 指标 #7）：66.7% (16/24) → **100% (16/16)** — 8 篇豁免后分母修正
+> - ⏳ **阶段 C**：针对真缺口做精准收敛 —— 基于 v2 报告的 **7 条 breakthrough chain-gap** 与 **15 条 breakthrough orphan**，一轮 PR 即可清零
 > - ⏳ **阶段 D**：沉淀专题整治手册，再启动其他专题扩展
 >
-> **重要提示**：本节后续 chain-gap / orphan / 复用度数字是在"所有论文都需补限制链"旧预设下统计的；阶段 B 完成后，真实缺口大概率显著低于当前数字，届时以 B 的重估结果为准。
+> **重要提示**：阶段 B 完成后，真实 breakthrough-tier 缺口已显著小于阶段 A 末的 21 条 chain-gap + 90 条 orphan 预估值。以下分节中 P0 / P1 / P2 数字保留为历史记录，阶段 C 应以 v2 报告的缺口为准。
 
 ### 超稳激光（重点整治专题）
 

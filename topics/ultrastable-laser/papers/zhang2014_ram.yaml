@@ -7,6 +7,9 @@ meta:
   zotero_key: "S5GJNVG8"
   source_type: technical_paper
   contribution_type: breakthrough
+  # 专题 σ_y-first 规则豁免：主动 RAM 抑制方法原创（1×10⁻⁶ RAM），
+  # 论文报告 RAM 引起的 σ_y 上限（≤1×10⁻¹⁶ @ 35 mm 腔）而非整机 σ_y(1 s) 纪录。
+  primary_metric_exempt_reason: new_method
   reliability: high
   title: "Reduction of residual amplitude modulation to 1×10⁻⁶ for frequency modulation and laser stabilization"
   year: 2014

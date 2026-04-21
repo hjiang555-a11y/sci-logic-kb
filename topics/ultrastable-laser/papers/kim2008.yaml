@@ -214,6 +214,7 @@ metrics:
   - id: met.optical_microwave_sync_jitter_k08
     name: "远程光-微波同步时序抖动（Kim 2008）"
     unit: "fs"
+    role: primary   # 相对时序稳定度 = 1.9×10⁻¹⁹（σ_y 等价），本论文的 σ_y 主线指标
     description: >
       由 200.5 MHz 光脉冲列再生的 10.225 GHz 微波与原光时基之间的残余时序抖动，
       反映光稳定度向电子域转移后的长期保持能力。

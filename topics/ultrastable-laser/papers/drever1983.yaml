@@ -7,6 +7,9 @@ meta:
   zotero_key: "694DPR5F"
   source_type: technical_paper
   contribution_type: breakthrough
+  # 专题 σ_y-first 规则豁免：PDH 方法原创本身即 breakthrough 信号（新 meth.pdh_locking），
+  # 论文仅给出线宽 < 100 Hz 与频噪 PSD，σ_y 刷新由后续论文承担。
+  primary_metric_exempt_reason: new_method
   reliability: high              # 经典奠基论文，结果已被广泛验证
   title: "Laser phase and frequency stabilization using an optical resonator"
   year: 1983
