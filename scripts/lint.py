@@ -70,6 +70,16 @@ PRIMARY_METRIC_PATTERNS = (
 )
 
 
+# Allowed values for meta.primary_metric_exempt_reason
+# (see docs/CONTRIBUTION_TIER_RULES.md §五)
+VALID_EXEMPT_REASONS = frozenset({
+    "new_principle",
+    "new_method",
+    "landmark_consensus",
+    "psd_only",
+})
+
+
 def _is_primary_sigma_y_metric(metric: dict) -> bool:
     """Return True if a metric node is a σ_y primary-line metric.
 
@@ -195,8 +205,15 @@ def scan_files(yaml_paths: list[Path]) -> tuple[
 def check_orphan_nodes(
     node_defs: dict[str, list[str]],
     all_relations: list[dict[str, Any]],
+    file_metas: dict[str, dict[str, Any]] | None = None,
 ) -> list[Issue]:
-    """1. Nodes never referenced by any relation subject or object."""
+    """1. Nodes never referenced by any relation subject or object.
+
+    Tier-aware (v4.4 · Phase B): if all the files defining an orphan node are
+    ``evidence`` or ``framework`` papers, the issue is demoted to ``INFO``
+    (per docs/CONTRIBUTION_TIER_RULES.md §五). Only orphans from at least one
+    ``breakthrough`` paper remain ``WARNING``.
+    """
     referenced: set[str] = set()
     for rel in all_relations:
         subj = rel.get("subject")
@@ -206,6 +223,7 @@ def check_orphan_nodes(
         if obj:
             referenced.add(obj)
 
+    file_metas = file_metas or {}
     issues: list[Issue] = []
     for nid, files in sorted(node_defs.items()):
         # Relation IDs themselves are not expected as subjects/objects
@@ -213,10 +231,16 @@ def check_orphan_nodes(
             continue
         if nid not in referenced:
             for f in files:
-                issues.append(Issue(
-                    "WARNING", "orphan-node", f,
-                    f"Node '{nid}' is defined but never referenced in any relation",
-                ))
+                tier = str(
+                    (file_metas.get(f) or {}).get("contribution_type", "")
+                ).strip().lower()
+                level = "WARNING" if tier == "breakthrough" else "INFO"
+                detail = (
+                    f"Node '{nid}' is defined but never referenced in any relation"
+                )
+                if level == "INFO":
+                    detail += f" (tier={tier or 'unknown'}; orphan allowed per §9.1)"
+                issues.append(Issue(level, "orphan-node", f, detail))
     return issues
 
 
@@ -268,8 +292,18 @@ def check_duplicate_rel_ids(rel_defs: dict[str, list[str]]) -> list[Issue]:
     return issues
 
 
-def check_reasoning_chain_gaps(all_relations: list[dict[str, Any]]) -> list[Issue]:
-    """5. BOUNDED-BY relations without breakthrough_paths."""
+def check_reasoning_chain_gaps(
+    all_relations: list[dict[str, Any]],
+    file_metas: dict[str, dict[str, Any]] | None = None,
+) -> list[Issue]:
+    """5. BOUNDED-BY relations without breakthrough_paths.
+
+    Tier-aware (v4.4 · Phase B): BOUNDED-BY relations authored in ``evidence``
+    or ``framework`` papers emit ``INFO`` instead of ``WARNING``
+    (per docs/CONTRIBUTION_TIER_RULES.md §五 — evidence papers are not required
+    to carry full breakthrough_paths). Only breakthrough-tier gaps stay WARNING.
+    """
+    file_metas = file_metas or {}
     issues: list[Issue] = []
     for rel in all_relations:
         if rel.get("predicate") != "BOUNDED-BY":
@@ -278,10 +312,14 @@ def check_reasoning_chain_gaps(all_relations: list[dict[str, Any]]) -> list[Issu
         rid = rel.get("id", "?")
         bp = rel.get("breakthrough_paths")
         if bp is None or (isinstance(bp, list) and len(bp) == 0):
-            issues.append(Issue(
-                "WARNING", "reasoning-chain-gap", f,
-                f"BOUNDED-BY relation '{rid}' lacks breakthrough_paths",
-            ))
+            tier = str(
+                (file_metas.get(f) or {}).get("contribution_type", "")
+            ).strip().lower()
+            level = "WARNING" if tier == "breakthrough" else "INFO"
+            detail = f"BOUNDED-BY relation '{rid}' lacks breakthrough_paths"
+            if level == "INFO":
+                detail += f" (tier={tier or 'unknown'}; chain-gap allowed per §9.1)"
+            issues.append(Issue(level, "reasoning-chain-gap", f, detail))
     return issues
 
 
@@ -419,6 +457,20 @@ def check_breakthrough_primary_metric(
         if str(meta.get("contribution_type", "")).strip().lower() != "breakthrough":
             continue
 
+        # Tier-aware exemption: explicit meta.primary_metric_exempt_reason
+        # declares why this breakthrough does not carry a σ_y primary metric
+        # (e.g. new_principle / new_method / landmark_consensus / psd_only).
+        # Allowed values are documented in docs/CONTRIBUTION_TIER_RULES.md §五.
+        exempt = str(meta.get("primary_metric_exempt_reason") or "").strip()
+        if exempt:
+            if exempt.lower() not in VALID_EXEMPT_REASONS:
+                issues.append(Issue(
+                    "WARNING", "invalid-exempt-reason", rel_path,
+                    f"meta.primary_metric_exempt_reason='{exempt}' is not one of "
+                    f"{sorted(VALID_EXEMPT_REASONS)}; see CONTRIBUTION_TIER_RULES.md §五",
+                ))
+            continue
+
         # Re-load doc to inspect metrics + relations
         try:
             doc = yaml.safe_load(Path(rel_path).read_text(encoding="utf-8"))
@@ -473,11 +525,11 @@ def run_all_checks(
     node_defs, rel_defs, rel_refs, all_relations, all_nodes, file_metas = scan_files(yaml_paths)
 
     issues: list[Issue] = []
-    issues.extend(check_orphan_nodes(node_defs, all_relations))
+    issues.extend(check_orphan_nodes(node_defs, all_relations, file_metas))
     issues.extend(check_dangling_refs(node_defs, all_relations))
     issues.extend(check_duplicate_defs(node_defs))
     issues.extend(check_duplicate_rel_ids(rel_defs))
-    issues.extend(check_reasoning_chain_gaps(all_relations))
+    issues.extend(check_reasoning_chain_gaps(all_relations, file_metas))
     issues.extend(check_missing_evidence(all_relations))
     issues.extend(check_missing_conditions(all_nodes))
     issues.extend(check_missing_metric_conditions(all_nodes))
@@ -502,17 +554,39 @@ def format_grouped(issues: list[Issue], summary_only: bool) -> str:
     lines: list[str] = []
     errors = sum(1 for i in issues if i.level == "ERROR")
     warnings = sum(1 for i in issues if i.level == "WARNING")
+    infos = sum(1 for i in issues if i.level == "INFO")
 
     for cat in sorted(by_cat):
         group = by_cat[cat]
         levels = {i.level for i in group}
-        level_tag = "ERROR" if "ERROR" in levels else "WARNING"
-        lines.append(f"\n── {cat} ({len(group)} issues, {level_tag}) ──")
+        if "ERROR" in levels:
+            level_tag = "ERROR"
+        elif "WARNING" in levels:
+            level_tag = "WARNING"
+        else:
+            level_tag = "INFO"
+        n_err = sum(1 for i in group if i.level == "ERROR")
+        n_warn = sum(1 for i in group if i.level == "WARNING")
+        n_info = sum(1 for i in group if i.level == "INFO")
+        breakdown_parts = []
+        if n_err:
+            breakdown_parts.append(f"{n_err} error")
+        if n_warn:
+            breakdown_parts.append(f"{n_warn} warn")
+        if n_info:
+            breakdown_parts.append(f"{n_info} info")
+        breakdown = ", ".join(breakdown_parts) if breakdown_parts else str(len(group))
+        lines.append(
+            f"\n── {cat} ({len(group)} issues; {breakdown}, primary={level_tag}) ──"
+        )
         if not summary_only:
             for issue in group:
                 lines.append(f"  [{issue.level}] {issue.file}: {issue.detail}")
 
-    lines.append(f"\nSummary: {errors} error(s), {warnings} warning(s) across {len(by_cat)} categories")
+    lines.append(
+        f"\nSummary: {errors} error(s), {warnings} warning(s), {infos} info "
+        f"across {len(by_cat)} categories"
+    )
     return "\n".join(lines)
 
 
@@ -520,9 +594,11 @@ def format_json(issues: list[Issue]) -> str:
     """JSON output."""
     errors = sum(1 for i in issues if i.level == "ERROR")
     warnings = sum(1 for i in issues if i.level == "WARNING")
+    infos = sum(1 for i in issues if i.level == "INFO")
     return json.dumps({
         "errors": errors,
         "warnings": warnings,
+        "info": infos,
         "issues": [i.to_dict() for i in issues],
     }, indent=2, ensure_ascii=False)
 

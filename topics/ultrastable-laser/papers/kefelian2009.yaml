@@ -7,6 +7,9 @@ meta:
   zotero_key: "MN54T4F3"
   source_type: technical_paper
   contribution_type: breakthrough
+  # 专题 σ_y-first 规则豁免：论文仅给出频噪 PSD 与线宽，未直接报告 σ_y(1 s)；
+  # 所建立的 FDL 光纤延迟线稳频原理（1 km 光纤）开辟光纤干涉仪子分支，属 new_principle。
+  primary_metric_exempt_reason: psd_only
   reliability: medium
   title: "Ultralow-frequency-noise stabilization of a laser by locking to an optical fiber-delay line"
   year: 2009

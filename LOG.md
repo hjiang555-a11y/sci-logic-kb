@@ -7,6 +7,31 @@
 
 ---
 
+## [2026-04-21] lint | 阶段 B 落地：lint / stats 档位感知 + `primary_metric_exempt_reason`
+
+- **动机**：阶段 A4 激活了 12 条 `breakthrough-missing-primary-metric` 告警，需要配套机制一次性完成：(1) lint / stats 按 `contribution_type` 分档、(2) 清零 12 条 σ_y 首批告警、(3) 重估 chain-gap / orphan 真实缺口。
+- **lint.py 变更**（`scripts/lint.py`）：
+  - 新增 `INFO` 等级；`check_orphan_nodes` 与 `check_reasoning_chain_gaps` 接收 `file_metas`，对 `evidence` / `framework` 档位论文降级为 `INFO`，仅 `breakthrough` 保持 `WARNING`
+  - `check_breakthrough_primary_metric` 支持 `meta.primary_metric_exempt_reason` 豁免（允许值：`new_principle` / `new_method` / `landmark_consensus` / `psd_only`）
+  - `format_grouped` / `format_json` 输出三段计数（error / warning / info）
+- **stats.py 变更**（`scripts/stats.py`）：
+  - `reasoning_chain_closure` 新增 `breakthrough_only` 子视图（BOUNDED-BY 仅统计 breakthrough 档位论文）
+  - `sigma_y_linkage` 分母扣除 `primary_metric_exempt_reason` 标注的论文
+- **YAML 回写**：12 条 σ_y 首批告警全部处理
+  - 补 `role: primary` 到 σ_y 类指标（4 篇）：`huang2023` / `kim2008` (optical-microwave jitter) / `thorpe2011` (SHB stability) / `yan2018` (synthesized laser instability)
+  - 补 `meta.primary_metric_exempt_reason`（8 篇）：`cole2013` (`new_principle`) / `drever1983` (`new_method`) / `kefelian2009` (`psd_only`) / `michaudbelleau2022` (`new_principle`) / `parke2025` (`new_method`) / `shaddock1999` (`new_method`) / `webster2007` (`new_principle`) / `zhang2014_ram` (`new_method`)
+- **档位感知重估后指标**：
+  - lint `breakthrough-missing-primary-metric`: 12 → 0
+  - lint `reasoning-chain-gap` (超稳激光): 21 WARNING → 7 WARNING + 14 INFO
+  - lint `orphan-node` (超稳激光): 90 WARNING → 15 WARNING + 75 INFO
+  - stats `σ_y Linkage (USL)`: 66.7% (16/24) → 100% (16/16)
+  - stats `reasoning_chain_closure.breakthrough_only`: 73.1% (19/26) — 已达 70% 目标
+- **派生报告**：`reports/chain_gap_ultrastable_v2.md` + `reports/orphans_ultrastable_v2.md`（v1 报告保留为历史存档）
+- **规范文档**：`docs/CONTRIBUTION_TIER_RULES.md` 升到 v1.2，§五从"提前公示"改为"已生效"并记录 `primary_metric_exempt_reason` 取值表
+- **TODO.md 同步**：阶段 B 打勾；阶段 C 目标缩小到 v2 报告的 7 + 15 条 breakthrough 真缺口
+
+---
+
 ## [2026-04-21] restructure | 阶段 A3 专家裁决 + A4 批量回写 `meta.contribution_type`
 
 - **动机**：A2 Round 2 草案已交付 78 篇档位建议，专家在 `reports/contribution_tier_draft_ultrastable.md` 的 `决定` 列完成批量裁决，需要把最终档位固化到 YAML。

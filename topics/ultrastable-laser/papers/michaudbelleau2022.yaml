@@ -7,6 +7,9 @@ meta:
   zotero_key: "4GT5VD54"
   source_type: technical_paper
   contribution_type: breakthrough
+  # 专题 σ_y-first 规则豁免：空心光纤基础热噪声理论与测量论文，
+  # 贡献是 pri.hollow_core_fiber_thermal_noise（新原理 + PSD 基准值），不直接刷新 σ_y。
+  primary_metric_exempt_reason: new_principle
   reliability: high
   title: "Fundamental thermal noise in antiresonant hollow-core fibers"
   year: 2022

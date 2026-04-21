@@ -7,6 +7,9 @@ meta:
   zotero_key: "U2LXSU62"
   source_type: technical_paper
   contribution_type: breakthrough
+  # 专题 σ_y-first 规则豁免：主要贡献为 295 μs 光学腔存储时间（高精细度 / 长腔 68 cm）
+  # 与 10⁻⁷ 主动 RAM 抑制新方法；均为 enabling / engineering 指标，论文未直接报告 σ_y(1 s)。
+  primary_metric_exempt_reason: new_method
   reliability: high
   title: "Three hundred microsecond optical cavity storage time and 10⁻⁷ active RAM cancellation for 10⁻¹⁹ laser frequency stabilization"
   year: 2025

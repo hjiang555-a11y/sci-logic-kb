@@ -110,12 +110,18 @@ def analyse(repo: Path):
     # reasoning-readiness accumulators
     bounded_by_total = 0
     bounded_by_with_bp = 0
+    # tier-scoped: BOUNDED-BY within breakthrough papers only (v4.4 · Phase B)
+    bounded_by_total_bt = 0
+    bounded_by_with_bp_bt = 0
     relations_total = 0
     relations_with_claim = 0
     principle_total = 0
     principle_with_cond = 0
     contested_total = 0
     open_q_total = 0
+
+    # Track contribution tier per file so downstream loops can filter
+    file_tier: dict[str, str] = {}
 
     # σ_y-linkage (ultrastable-laser only): do breakthrough papers actually
     # carry a σ_y primary-line metric? Round-3 scoping principle v2.
@@ -130,26 +136,32 @@ def analyse(repo: Path):
 
         meta = doc.get("meta") if isinstance(doc.get("meta"), dict) else {}
         contrib = str(meta.get("contribution_type", "")).strip().lower()
+        file_tier[str(filepath)] = contrib
         is_usl_breakthrough = (topic == "ultrastable-laser" and contrib == "breakthrough")
         if is_usl_breakthrough:
-            usl_breakthrough_total += 1
-            has_primary_sy = False
-            for met in _as_list(doc.get("metrics")):
-                if _is_primary_sigma_y_metric(met):
-                    has_primary_sy = True
-                    break
-            if not has_primary_sy:
-                for rel in _as_list(doc.get("relations")):
-                    for field in ("subject", "object"):
-                        if _is_primary_sigma_y_id(rel.get(field, "") or ""):
-                            has_primary_sy = True
-                            break
-                    if has_primary_sy:
+            # Tier-aware exemption: explicit meta.primary_metric_exempt_reason
+            # (new_principle / new_method / landmark_consensus / psd_only)
+            # means σ_y-first rule does not apply to this breakthrough.
+            exempt = str(meta.get("primary_metric_exempt_reason") or "").strip()
+            if not exempt:
+                usl_breakthrough_total += 1
+                has_primary_sy = False
+                for met in _as_list(doc.get("metrics")):
+                    if _is_primary_sigma_y_metric(met):
+                        has_primary_sy = True
                         break
-            if has_primary_sy:
-                usl_breakthrough_with_sy += 1
-            else:
-                usl_breakthrough_missing_sy.append(fname)
+                if not has_primary_sy:
+                    for rel in _as_list(doc.get("relations")):
+                        for field in ("subject", "object"):
+                            if _is_primary_sigma_y_id(rel.get(field, "") or ""):
+                                has_primary_sy = True
+                                break
+                        if has_primary_sy:
+                            break
+                if has_primary_sy:
+                    usl_breakthrough_with_sy += 1
+                else:
+                    usl_breakthrough_missing_sy.append(fname)
 
         # ── nodes ──
         for section_key, prefix in [
@@ -200,9 +212,16 @@ def analyse(repo: Path):
             # reasoning chain closure (BOUNDED-BY with breakthrough_paths)
             if predicate == "BOUNDED-BY":
                 bounded_by_total += 1
-                bp = rel.get("breakthrough_paths")
-                if isinstance(bp, list) and len(bp) > 0:
+                has_bp = isinstance(bp_val := rel.get("breakthrough_paths"), list) and len(bp_val) > 0
+                if has_bp:
                     bounded_by_with_bp += 1
+                # tier-scoped (v4.4 · Phase B): only breakthrough papers are
+                # required to close the reasoning chain; evidence/framework
+                # papers may leave BOUNDED-BY open without penalty.
+                if contrib == "breakthrough":
+                    bounded_by_total_bt += 1
+                    if has_bp:
+                        bounded_by_with_bp_bt += 1
 
     # ── cross-file reuse ──
     total_unique_ids = len(node_files)
@@ -235,6 +254,14 @@ def analyse(repo: Path):
                 "bounded_by_with_breakthrough_paths": bounded_by_with_bp,
                 "rate": _rate(bounded_by_with_bp, bounded_by_total),
                 "target": 0.70,
+                # v4.4 Phase B: tier-scoped view — only breakthrough papers
+                # are held to the chain-closure target.
+                "breakthrough_only": {
+                    "bounded_by_total": bounded_by_total_bt,
+                    "bounded_by_with_breakthrough_paths": bounded_by_with_bp_bt,
+                    "rate": _rate(bounded_by_with_bp_bt, bounded_by_total_bt),
+                    "target": 0.70,
+                },
             },
             "evidence_coverage": {
                 "relations_total": relations_total,
@@ -318,6 +345,14 @@ def format_text(stats):
         f"{_pass_fail(rc['rate'], rc['target'])}  "
         f"[{rc['bounded_by_with_breakthrough_paths']}/{rc['bounded_by_total']} BOUNDED-BY]"
     )
+    rc_bt = rc.get("breakthrough_only", {})
+    if rc_bt.get("bounded_by_total"):
+        lines.append(
+            f"     └ breakthrough-only  {_pct(rc_bt['rate']):>7}  "
+            f"(target ≥{_pct(rc_bt['target'])})  "
+            f"{_pass_fail(rc_bt['rate'], rc_bt['target'])}  "
+            f"[{rc_bt['bounded_by_with_breakthrough_paths']}/{rc_bt['bounded_by_total']} BOUNDED-BY · v4.4 Phase B]"
+        )
 
     ec = rr["evidence_coverage"]
     lines.append(
@@ -413,6 +448,13 @@ def format_markdown(stats):
         f"| {_pass_fail(rc['rate'], rc['target'])} "
         f"| {rc['bounded_by_with_breakthrough_paths']}/{rc['bounded_by_total']} BOUNDED-BY |"
     )
+    rc_bt = rc.get("breakthrough_only", {})
+    if rc_bt.get("bounded_by_total"):
+        lines.append(
+            f"| 1b | &nbsp;&nbsp;↳ breakthrough-only | {_pct(rc_bt['rate'])} | ≥{_pct(rc_bt['target'])} "
+            f"| {_pass_fail(rc_bt['rate'], rc_bt['target'])} "
+            f"| {rc_bt['bounded_by_with_breakthrough_paths']}/{rc_bt['bounded_by_total']} BOUNDED-BY (v4.4 Phase B tier-scoped) |"
+        )
 
     ec = rr["evidence_coverage"]
     lines.append(

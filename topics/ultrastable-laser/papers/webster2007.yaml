@@ -7,6 +7,9 @@ meta:
   zotero_key: "UCNS7EM7"
   source_type: technical_paper
   contribution_type: breakthrough
+  # 专题 σ_y-first 规则豁免：切口腔振动不敏感几何（新原理，vibration-insensitive notched cavity），
+  # 论文主指标为加速度灵敏度（工程指标），σ_y 刷新由后续论文（Webster 2008 等）承担。
+  primary_metric_exempt_reason: new_principle
   reliability: high
   title: "Vibration insensitive optical cavity"
   year: 2007

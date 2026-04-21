@@ -2,7 +2,7 @@
 
 # 📚 sci-logic-kb — Knowledge Base Index
 
-> Auto-generated 2026-04-21 03:50 UTC
+> Auto-generated 2026-04-21 04:13 UTC
 
 ## 🧭 按研究问题导航
 

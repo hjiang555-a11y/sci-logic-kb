@@ -57,6 +57,7 @@ metrics:
   - id: met.synthesized_laser_instability_y18
     name: "合成激光不稳定度（Yan 2018）"
     unit: "无量纲"
+    role: primary   # σ_y @ 1–20 s；多腔合成后激光 σ_y 主线指标
     demonstrated_value:
       value: "5×10⁻¹⁶ @ 1–20 s"
       conditions: "两台独立 10 cm ULE 腔，AOM 频率合成"

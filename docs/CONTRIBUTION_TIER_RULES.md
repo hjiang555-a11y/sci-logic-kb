@@ -1,6 +1,6 @@
 # 论文贡献档位（`contribution_type`）操作规则书
 
-> **版本**：v1.1（2026-04-21，Round 3 同步超稳激光 σ_y-first 专题偏好） · **归属**：v4.4 schema 机制落地的配套规范
+> **版本**：v1.2（2026-04-21，阶段 B 落地：lint/stats 档位感知 + `primary_metric_exempt_reason`） · **归属**：v4.4 schema 机制落地的配套规范
 > **范围**：本规则书用于决定一篇论文 YAML 头部 `meta.contribution_type` 应填 `breakthrough` / `evidence` / `framework` 中的哪一档。
 > **上位规范**：[`SCHEMA.md` §9.1–9.2](../SCHEMA.md)；本文件与 SCHEMA 冲突时以 SCHEMA 为准。
 >
@@ -101,13 +101,32 @@ Evidence 档位论文的典型形态：
 
 ---
 
-## 五、与 lint / stats 的交互（B 阶段生效，提前公示）
+## 五、与 lint / stats 的交互（B 阶段已生效，2026-04-21）
 
-- `breakthrough` 档：`reasoning-chain-gap`、`orphan-node` 按现行规则 **强制**（必须补 `breakthrough_paths`、必须挂到父节点）
-- `evidence` 档：`reasoning-chain-gap`、`orphan-node` **降级为 info**（不计入 TODO 缺口）
-- `framework` 档：按 §9.5 规则豁免具体参数节点的约束
+- `breakthrough` 档：`reasoning-chain-gap`、`orphan-node` 按现行规则保持 **`WARNING`**（必须补 `breakthrough_paths`、必须挂到父节点）
+- `evidence` 档：`reasoning-chain-gap`、`orphan-node` **降级为 `INFO`**（lint 输出带 `(tier=evidence; ... allowed per §9.1)` 后缀，不计入 warnings）
+- `framework` 档：同 evidence 降级，按 §9.5 规则豁免具体参数节点的约束
 
-详细规则升级计划见 TODO.md「阶段 B」条目。
+### σ_y 主线指标豁免（超稳激光专题）
+
+lint 检查 #12（`breakthrough-missing-primary-metric`）对 `ultrastable-laser` 的 `breakthrough` 论文要求：至少一个 `role: primary` 的 σ_y 类指标（或通过关系引用已有主线指标）。若一篇 breakthrough 的核心贡献不在 σ_y 刷新，可在 `meta.primary_metric_exempt_reason` 显式声明豁免理由，lint 将跳过该警告。
+
+允许的取值：
+
+| 值 | 适用场景 | 示例 |
+|----|----------|------|
+| `new_principle` | breakthrough 基础为提出新 `pri.*`，σ_y 主线由下游论文验证 | Cole 2013 晶体镀层；Michaud-Belleau 2022 空心光纤热噪声；Webster 2007 切口腔 |
+| `new_method` | breakthrough 基础为提出新 `meth.*` | Drever 1983 PDH；Shaddock 1999 Tilt Locking；Zhang 2014 主动 RAM；Parke 2025 EOM bias field RAM |
+| `landmark_consensus` | 教科书/综述反复引用的奠基性工作，非严格 σ_y 纪录 | （暂无，保留） |
+| `psd_only` | 仅报告频噪 PSD / 线宽，按 scoping §1.5 不能升档但已被专家裁决为 breakthrough | Kefelian 2009 FDL 1 km 光纤 |
+
+声明 `primary_metric_exempt_reason` 同时应在 `meta.note` 里补一句说明，并保证论文存在对应的 `new_principle` / `new_method` 节点定义（否则应考虑是否降档为 `evidence`）。
+
+### stats 指标
+
+- `reasoning_chain_closure`：保留全局 rate（历史可比），新增 `breakthrough_only` 子视图作为阶段 C 起的主目标（target 相同 ≥ 70%）
+- `σ_y Linkage (USL)`：分母已扣除带 `primary_metric_exempt_reason` 的论文
+- `orphan-rate`：未改变计算方式，但 WARNING/INFO 分级见 lint 输出
 
 ---
 

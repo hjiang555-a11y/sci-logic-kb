@@ -7,6 +7,9 @@ meta:
   zotero_key: "S5PX7GHC"
   source_type: technical_paper
   contribution_type: breakthrough
+  # 专题 σ_y-first 规则豁免：Tilt Locking 方法原创（新 meth.tilt_locking）——
+  # 利用空间模式干涉实现腔锁定，论文报告伺服带宽而非 σ_y。
+  primary_metric_exempt_reason: new_method
   reliability: medium
   title: "Frequency locking a laser to an optical cavity by use of spatial mode interference"
   year: 1999
