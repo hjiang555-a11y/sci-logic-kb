@@ -7,7 +7,37 @@
 
 ---
 
-## [2026-04-21] lint | 阶段 B 落地：lint / stats 档位感知 + `primary_metric_exempt_reason`
+## [2026-04-21] lint | 阶段 C 落地：breakthrough-tier WARNING 清零
+
+- **动机**：阶段 B 档位感知重估后暴露出真实缺口：7 条 breakthrough chain-gap + 15 条 breakthrough orphan（共 22 条 WARNING）。阶段 C 针对这两类 WARNING 做精准收敛。
+- **Chain-gap 修复（7 → 0）**：为每条相关 BOUNDED-BY 关系补齐 `breakthrough_paths`（保留每条路径的 `direction` / `expected_gain` / `status` / `source.claim`）：
+  - `chen2025::rel.Che02`（sub-5K Si 腔）— 新增 2 条（crystalline coating · cryogenic Q）
+  - `kedar2023::rel.Ked03`（Si 腔 + AlGaAs）— 新增 1 条（crystalline coating demonstrated）
+  - `numata2004::rel.N04`（镀层 ~15%）— 新增 1 条（crystalline coating demonstrated）
+  - `numata2004::rel.N05`（spacer ~1%）— 新增 1 条（long-cavity 稀释，已非主动瓶颈）
+  - `webster2008::rel.We08_01`（父级 Brownian on ent.fp_cavity_system）— 新增 3 条（crystalline coating · long cavity · cryogenic Q）
+  - `zhang2014_ram::rel.Z14_01`（meth.pdh_locking BOUNDED-BY RAM）— 新增 3 条（brewster · active cancellation · bias field）
+  - `zhang2014_ram::rel.Z14_05`（met.ram_fractional_instability BOUNDED-BY RAM）— 新增 3 条（同上）
+- **Orphan 修复（15 → 0）**：按关系语义为每个 breakthrough 档位 orphan 节点挂单条关系，通常为 `ent IMPLEMENTS meth`、`met OPERATIONALIZED-AS meth`、`meth ENABLED-BY pri`：
+  - `cole2013`（rel.C07：AlGaAs 镜 IMPLEMENTS 基底转移方法）
+  - `hafner2015`（rel.H04a：长腔 IMPLEMENTS 自平衡安装方法）
+  - `huang2023`（rel.HU05：光纤干涉仪 IMPLEMENTS 五层热屏蔽方法）
+  - `kedar2023`（rel.Ked04：σ_y 指标 OPERATIONALIZED-AS 双偏振抑制方法）
+  - `michaudbelleau2022`（rel.MB22_03：HCF 热噪声 PSD OPERATIONALIZED-AS 表征方法）
+  - `numata2004`（rel.N15：热噪声 PSD OPERATIONALIZED-AS 分部件 FDT 分析方法）
+  - `parke2025`（rel.P06/P07/P08：68 cm 腔 IMPLEMENTS · EOM 偏置方法 ENABLED-BY pri.ram_bias_field_cancellation · IMPLEMENTS PDH；一并解除 pri 与两条 meth 的 orphan 状态）
+  - `robinson2019`（rel.R12：光功率漂移 OPERATIONALIZED-AS 低功率扫描方法）
+  - `thorpe2011`（rel.TH02/TH03：SHB 参考 CHARACTERIZED-BY 环境灵敏度 · SHB σ_y OPERATIONALIZED-AS 两级锁定方法）
+  - `webster2008`（rel.We08_04：σ_y OPERATIONALIZED-AS 振动不敏感 PDH 锁频方法）
+  - `yan2018`（rel.YA02：合成激光 σ_y OPERATIONALIZED-AS 本文双腔 AOM 合成方法）
+  - `zhang2014_ram`（rel.Z14_04a/04b：双通道 RAM 方法 ENABLED-BY pri.ram_active_cancellation · IMPLEMENTS PDH）
+- **lint 结果**：breakthrough-tier WARNING 22 → 0；总体 warning 从 3 类 25 条 → 1 类 3 条（仅剩 evidence 档 `missing-conditions`，非阶段 C 范围）
+- **验证**：
+  - `python scripts/lint.py --topic ultrastable-laser --summary` → 0 error / 3 warning / 89 info
+  - `python scripts/build_index.py` → 141 papers / 862 nodes / 973 relations（关系数增长对应阶段 C 新增 17 条关系）
+- **运维**：更新 `TODO.md` 阶段 C 状态（标记完成）；`reports/chain_gap_ultrastable_v2.md` 与 `reports/orphans_ultrastable_v2.md` 的 22 条 WARNING 已全部转为 INFO / 已关系化。
+
+
 
 - **动机**：阶段 A4 激活了 12 条 `breakthrough-missing-primary-metric` 告警，需要配套机制一次性完成：(1) lint / stats 按 `contribution_type` 分档、(2) 清零 12 条 σ_y 首批告警、(3) 重估 chain-gap / orphan 真实缺口。
 - **lint.py 变更**（`scripts/lint.py`）：

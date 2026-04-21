@@ -1,5 +1,14 @@
 # 超稳激光专题 · 限制链缺口（Chain-Gap）· v2（阶段 B 档位感知重估）
 
+> **🏁 状态（2026-04-21，阶段 C 完成后）：7 条 breakthrough-tier WARNING 已全部清零**
+>
+> - 7 条 breakthrough chain-gap 在阶段 C 一轮 PR 中全部补齐 `breakthrough_paths`；
+> - 14 条 evidence/framework 档位 INFO 按 §9.1 保留，不强制闭环；
+> - 详见 `LOG.md`「[2026-04-21] lint \| 阶段 C 落地」条目。
+> - 本文件保留为阶段 C 前的工作底稿，下表动作栏已加 ✅ 完成标记。
+
+---
+
 > **生成方式**：`python scripts/lint.py --topic ultrastable-laser --json`（2026-04-21，阶段 B 完成后）
 >
 > **变更说明**：v1（2026-04-21）假设所有 BOUNDED-BY 关系都必须补 `breakthrough_paths`，统计出 21 条缺口。阶段 B（v4.4 档位感知）按 `meta.contribution_type` 归并：只有 **breakthrough** 档位论文的链缺口计为真实工作项（WARNING），`evidence` / `framework` 档位的链缺口降级为 `INFO`（符合 SCHEMA §9.1 — evidence 档位允许留开链）。
@@ -10,17 +19,17 @@
 
 ---
 
-## 一、真实缺口（breakthrough-tier · 7 条 WARNING）
+## 一、真实缺口（breakthrough-tier · 7 条 WARNING · ✅ 阶段 C 已清零）
 
 | 文件 | contribution_type | rel_id | 受限实体 / 方法 | 原文论断摘录 | 建议动作 |
 |------|-------------------|--------|---------------|-------------|---------|
-| `chen2025.yaml` | breakthrough | `rel.Che02` | `ent.si_crystal_fp_cavity_sub5k_c25` | fundamentally limited by Brownian thermal noise | 🟢 已是低温 Si，补 path 1 (AlGaAs 镀层未用) · 标 path 2 status: demonstrated |
-| `kedar2023.yaml` | breakthrough | `rel.Ked03` | `ent.si_crystal_fp_cavity_k12` | Brownian noise from mirror dissipation | 🟢 path 1 (AlGaAs 晶体镀层，Kedar 2023 本身演示) status: demonstrated |
-| `numata2004.yaml` | breakthrough | `rel.N04` | `ent.mirror_coating` | coating contributes ~15% | 🟢 path 1 (晶体镀层直接针对镀层贡献) |
-| `numata2004.yaml` | breakthrough | `rel.N05` | `ent.spacer_ule` | spacer contributes ~1% | 🟡 spacer 贡献已次要，建议 status: resolved (not active bottleneck) |
-| `webster2008.yaml` | breakthrough | `rel.We08_01` | `ent.fp_cavity_system` | Brownian motion of substrate + coating | 🟢 父节点级，引用 Numata 分解作为起点 |
-| `zhang2014_ram.yaml` | breakthrough | `rel.Z14_01` | `meth.pdh_locking` | RAM 诱导 PDH 频偏 | 🟢 path 1 (Tai 2016 Brewster) · path 2 (本文主动抑制) · path 3 (波导 EOM) |
-| `zhang2014_ram.yaml` | breakthrough | `rel.Z14_05` | `met.ram_fractional_instability` | 同上 | 🟢 同上（指标层共享） |
+| `chen2025.yaml` | breakthrough | `rel.Che02` | `ent.si_crystal_fp_cavity_sub5k_c25` | fundamentally limited by Brownian thermal noise | ✅ 阶段 C：补 path 1 (AlGaAs 晶体镀层 proposed) · path 2 (sub-5K cryogenic Q demonstrated) |
+| `kedar2023.yaml` | breakthrough | `rel.Ked03` | `ent.si_crystal_fp_cavity_k12` | Brownian noise from mirror dissipation | ✅ 阶段 C：补 path 1 (AlGaAs 晶体镀层，Kedar 2023 本身演示 demonstrated) |
+| `numata2004.yaml` | breakthrough | `rel.N04` | `ent.mirror_coating` | coating contributes ~15% | ✅ 阶段 C：补 path 1 (晶体镀层 Cole 2013 demonstrated) |
+| `numata2004.yaml` | breakthrough | `rel.N05` | `ent.spacer_ule` | spacer contributes ~1% | ✅ 阶段 C：补 path 1 (长腔稀释，Häfner 2015 demonstrated；note 标明已非主动瓶颈) |
+| `webster2008.yaml` | breakthrough | `rel.We08_01` | `ent.fp_cavity_system` | Brownian motion of substrate + coating | ✅ 阶段 C：补 3 paths（crystalline coating · long cavity · cryogenic Q） |
+| `zhang2014_ram.yaml` | breakthrough | `rel.Z14_01` | `meth.pdh_locking` | RAM 诱导 PDH 频偏 | ✅ 阶段 C：补 3 paths（brewster · active cancellation · bias field） |
+| `zhang2014_ram.yaml` | breakthrough | `rel.Z14_05` | `met.ram_fractional_instability` | 同上 | ✅ 阶段 C：补 3 paths（同上，指标层共享） |
 
 **按限制原理归纳**：
 

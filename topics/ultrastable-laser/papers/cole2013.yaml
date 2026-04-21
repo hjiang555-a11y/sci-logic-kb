@@ -186,3 +186,12 @@ relations:
     confidence: established
     source: {zotero_key: "CWIHQRJD", claim: "extracted a loss angle of 0(4)×10⁻⁵ for the substrate-transferred crystalline coatings"}
     conditions: "35 mm Zerodur 腔，熔融石英底物，1064 nm，室温"
+
+  - id: rel.C07
+    subject: ent.algaas_crystalline_mirror_c13
+    predicate: IMPLEMENTS
+    object: meth.substrate_transferred_crystalline_coating_c13
+    confidence: established
+    source: {zotero_key: "CWIHQRJD", claim: "substrate-transferred crystalline coatings... employing these crystalline coatings as end mirrors in a Fabry-Perot cavity"}
+    conditions: "MBE 外延 AlGaAs/GaAs DBR + 基底转移到熔融石英底物"
+    note: "AlGaAs 腔镜实体由基底转移单晶镀层制备方法实现（连接实体与制备方法节点）"

@@ -84,6 +84,24 @@ relations:
     source: {zotero_key: "Q2MRB267", claim: "6×10⁻¹⁶ via spectral-hole burning"}
     note: "跨文件引用，ent.shb_eu_yso_reference_l13 定义于 leibrandt2013.yaml"
 
+  - id: rel.TH02
+    subject: ent.shb_eu_yso_reference_l13
+    predicate: CHARACTERIZED-BY
+    object: met.shb_environmental_sensitivity_thorpe11
+    confidence: established
+    source: {zotero_key: "Q2MRB267", claim: "temperature (16 kHz K⁻²), pressure (-11.4 Hz Pa⁻¹) and acceleration (7×10⁻¹² g⁻¹)"}
+    conditions: "Eu³⁺:Y₂SiO₅，4 K"
+    note: "SHB 频率参考系统的环境灵敏度表征（温度/压力/加速度）；ent.shb_eu_yso_reference_l13 定义于 leibrandt2013.yaml"
+
+  - id: rel.TH03
+    subject: met.shb_stability_thorpe11
+    predicate: OPERATIONALIZED-AS
+    object: meth.two_stage_shb_fp_lock_thorpe11
+    confidence: established
+    source: {zotero_key: "Q2MRB267", claim: "stabilize the laser to σ_y ≤ 6×10⁻¹⁶ for 2 s ≤ τ ≤ 8 s via spectral-hole burning"}
+    conditions: "Eu³⁺:Y₂SiO₅，4 K，FP 腔预稳（σ_y<1×10⁻¹³）+ SHB 二次锁定"
+    note: "SHB 稳频稳定度通过两级锁定方法（FP 预稳 + SHB 锁定）实现"
+
 historical_landmarks:
   first_demonstration:
     event: "SHB 稳频首次达到 10⁻¹⁶ 级"

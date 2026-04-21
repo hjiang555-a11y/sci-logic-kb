@@ -9,7 +9,7 @@
 
 ---
 
-## 📌 当前优先级：阶段 A（机制落地闭环）已完成 · 阶段 B（档位感知）已完成 — 进入阶段 C
+## 📌 当前优先级：阶段 A（机制落地闭环）已完成 · 阶段 B（档位感知）已完成 · 阶段 C（breakthrough 档位真缺口清零）已完成 — 进入阶段 D
 
 > **v4.4 机制落地进度（2026-04-21）**：按"先形成工作机制再扩展规模"迭代计划：
 >
@@ -26,23 +26,23 @@
 >   - lint 档位感知重估后真实缺口：**chain-gap 21 → 7 WARNING + 14 INFO**；**orphan 90 → 15 WARNING + 75 INFO**
 >   - 重估报告：[`reports/chain_gap_ultrastable_v2.md`](reports/chain_gap_ultrastable_v2.md) · [`reports/orphans_ultrastable_v2.md`](reports/orphans_ultrastable_v2.md)
 >   - σ_y Linkage（stats 指标 #7）：66.7% (16/24) → **100% (16/16)** — 8 篇豁免后分母修正
-> - ⏳ **阶段 C**：针对真缺口做精准收敛 —— 基于 v2 报告的 **7 条 breakthrough chain-gap** 与 **15 条 breakthrough orphan**，一轮 PR 即可清零
+> - ✅ **阶段 C · 2026-04-21 完成**：基于 v2 报告的 **7 条 breakthrough chain-gap** 与 **15 条 breakthrough orphan** 精准收敛
+>   - chain-gap：7 → 0（`chen2025.Che02` · `kedar2023.Ked03` · `numata2004.N04/N05` · `webster2008.We08_01` · `zhang2014_ram.Z14_01/Z14_05` 全部补 `breakthrough_paths`）
+>   - orphan（breakthrough 档位）：15 → 0（14 个方法节点 + 1 个原理节点 `pri.ram_bias_field_cancellation` 全部挂关系）
+>   - lint 结果：0 error / 3 warning（仅 3 条 `missing-conditions` 遗留，且均属 evidence 档，非阶段 C 范围）
 > - ⏳ **阶段 D**：沉淀专题整治手册，再启动其他专题扩展
->
-> **重要提示**：阶段 B 完成后，真实 breakthrough-tier 缺口已显著小于阶段 A 末的 21 条 chain-gap + 90 条 orphan 预估值。以下分节中 P0 / P1 / P2 数字保留为历史记录，阶段 C 应以 v2 报告的缺口为准。
 
 ### 超稳激光（重点整治专题）
 
-#### P0 · Chain-gap 闭环（21 条 → 目标 ≤ 3）
-- 详见 [`reports/chain_gap_ultrastable.md`](reports/chain_gap_ultrastable.md)
-- 🟢 批量可补（~14 条）：由 AI 按 P0 模板批量提 PR，专家审核合并
-- 🟡 精修（4 条）：RAM 相关 + 父节点（legero2010 / tai2017 / webster2008）
-- 🟣 专家裁决（3 条）：didier2018 / grabielle2025 / li2019
+#### ✅ P0 · Chain-gap 闭环（7 条 breakthrough WARNING → 0，阶段 C 已完成）
+- 详见 [`reports/chain_gap_ultrastable_v2.md`](reports/chain_gap_ultrastable_v2.md)
+- 已补 `breakthrough_paths`：`chen2025.Che02`（Si sub-5K）· `kedar2023.Ked03`（AlGaAs 低温 Si 腔）· `numata2004.N04/N05`（镀层 15% / spacer 1%）· `webster2008.We08_01`（ULE 父级 Brownian）· `zhang2014_ram.Z14_01/Z14_05`（RAM）
+- 14 条 evidence-tier chain-gap INFO 按 §9.1 保留不强制闭环
 
-#### P1 · Orphan 收敛（90 → 目标 ≤ 30）
-- 详见 [`reports/orphans_ultrastable.md`](reports/orphans_ultrastable.md)
-- 优先文件：chen2020 / chen2025 / hafner2020 / jin2018 / kedar2023 / lee2026
-- 需要专家在桶 A / B / C 间做归属决策
+#### ✅ P1 · Orphan 收敛（15 条 breakthrough WARNING → 0，阶段 C 已完成）
+- 详见 [`reports/orphans_ultrastable_v2.md`](reports/orphans_ultrastable_v2.md)
+- 已挂关系的 breakthrough-tier 节点：`cole2013/hafner2015/huang2023/kedar2023/michaudbelleau2022/numata2004/parke2025(×3) / robinson2019/thorpe2011(×2)/webster2008/yan2018/zhang2014_ram` 共 15 个
+- 75 条 evidence-tier orphan INFO 按 §9.1 保留
 
 #### P2 · 跨文件复用度提升（8.8% → 15%+）
 - 待抽取：10~15 个公共 pri.* / meth.*（如 `pri.brownian_thermal_noise_fdt`、`meth.pdh_locking`、`pri.cavity_deformation_compensation`）

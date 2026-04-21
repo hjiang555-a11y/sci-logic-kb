@@ -74,7 +74,22 @@ relations:
     dominated_by: null
     verification_status: observed
     temporal_role: validates
-    breakthrough_paths: []
+    breakthrough_paths:
+      - direction: pri.crystalline_coating_low_brownian_noise
+        expected_gain: "AlGaAs 晶体镀层直接针对 Webster 2008 观测到的镀层 + 底物布朗噪声中的镀层分量（Numata 2004 预算中的 ~15%），降低约 10×"
+        status: demonstrated
+        source: {zotero_key: "CWIHQRJD", claim: "tenfold reduction in mechanical damping when compared with the best dielectric multilayers"}
+        note: "pri.crystalline_coating_low_brownian_noise 定义于 cole2013.yaml"
+      - direction: pri.long_cavity_thermal_noise_reduction
+        expected_gain: "长腔（≥ 48 cm）使总热噪声极限 σ_y ∝ 1/L 降低约 5×，Webster 2008 10 cm ULE 腔的 2×10⁻¹⁵ → 室温长腔可进入 10⁻¹⁶ 量级"
+        status: demonstrated
+        source: {zotero_key: "UV6S5FFL", claim: "instability of below 1×10⁻¹⁶ at averaging times from 1 to 1000 s is revealed"}
+        note: "pri.long_cavity_thermal_noise_reduction 定义于 hafner2015.yaml"
+      - direction: pri.cryogenic_mechanical_q_enhancement
+        expected_gain: "低温单晶 Si 腔（124 K/4 K）使底物/间隔物 Q 提升 ~1000×，底物贡献被抑制；总热噪声极限进入 10⁻¹⁷"
+        status: demonstrated
+        source: {zotero_key: "YKPFKDD9", claim: "high mechanical quality factor of silicon reduces thermal noise contribution from spacer and substrates"}
+        note: "pri.cryogenic_mechanical_q_enhancement 定义于 kessler2012.yaml"
     note: "跨文件引用 numata2004.yaml; 首次全面实验验证 ULE 腔热噪声极限"
 
   - id: rel.We08_02
@@ -95,3 +110,12 @@ relations:
       current: false
       conditions: "Webster 2007/2008 设计充分抑制振动后退出限制序列"
     note: "跨文件引用 young1999.yaml"
+
+  - id: rel.We08_04
+    subject: met.fractional_freq_instability_w08
+    predicate: OPERATIONALIZED-AS
+    object: meth.vibration_insensitive_cavity_lock_w08
+    confidence: established
+    source: {zotero_key: "VU2V2PTX", claim: "The laser is stabilized to a vibration-insensitive ULE cavity using PDH locking"}
+    conditions: "10 cm ULE 腔，振动不敏感几何 + 温度 CTE 零点稳定 + PDH 锁频"
+    note: "2×10⁻¹⁵ 热噪声极限稳定度通过振动不敏感 ULE 腔 PDH 锁频方法实现"

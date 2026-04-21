@@ -391,3 +391,12 @@ relations:
       指标之间的派生关系：损耗角由频率不稳定度谱推算得出。
       此节点用于与 cole2013（ent.algaas_crystalline_mirror_c13，φ≤2.5×10⁻⁵）对比，
       说明 IBS 镀层在 4 K 的损耗与室温相近，支持晶体镀层路线的必要性。
+
+  - id: rel.R12
+    subject: met.cavity_frequency_drift_r19
+    predicate: OPERATIONALIZED-AS
+    object: meth.low_power_cavity_drift_characterization_r19
+    confidence: established
+    source: {zotero_key: "JIZCUZLY", claim: "The lowest drift is attained at a transmitted power of 40 nW, giving a fractional frequency drift of −3×10⁻¹⁹/s"}
+    conditions: "Si4 4 K 腔，传输功率 40 nW – 数百 nW；等待 >10 天瞬态稳态后外推"
+    note: "光功率相关漂移通过低功率漂移表征方法（功率扫描 + 稳态外推）获得"

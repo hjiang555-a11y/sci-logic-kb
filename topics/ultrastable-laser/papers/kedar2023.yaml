@@ -89,6 +89,15 @@ relations:
     source: {zotero_key: "8YK6EH22", claim: "we place constraints on the maximum value of the coating loss angle"}
     note: "跨文件引用 cole2013.yaml"
 
+  - id: rel.Ked04
+    subject: met.fractional_freq_instability_kedar23
+    predicate: OPERATIONALIZED-AS
+    object: meth.dual_polarization_suppression_kedar23
+    confidence: established
+    source: {zotero_key: "8YK6EH22", claim: "simultaneously probing both orthogonal polarization modes... cancels the polarization-correlated frequency noise"}
+    conditions: "AlGaAs 晶体镀层低温 Si 腔，存在偏振反相关噪声时"
+    note: "残余频率不稳定度 5.5×10⁻¹⁷（Si6）/ 3.5×10⁻¹⁷（Si5）由双偏振同时探测消除偏振反相关噪声后获得；将方法挂到指标"
+
   - id: rel.Ked03
     subject: ent.si_crystal_fp_cavity_k12
     predicate: BOUNDED-BY
@@ -99,7 +108,12 @@ relations:
     dominated_by: null
     verification_status: observed
     temporal_role: validates
-    breakthrough_paths: []
+    breakthrough_paths:
+      - direction: pri.crystalline_coating_low_brownian_noise
+        expected_gain: "AlGaAs 晶体镀层将镀层损耗角从 IBS 水平（φ~2×10⁻⁴）降至 ~2.5×10⁻⁵，镀层布朗热噪声降低 ~10×；Kedar 2023 在 Si5/Si6 低温 Si 腔上演示该路径"
+        status: demonstrated
+        source: {zotero_key: "8YK6EH22", claim: "crystalline coatings can provide stability and sensitivity competitive with resonators employing dielectric coatings"}
+        note: "pri.crystalline_coating_low_brownian_noise 定义于 cole2013.yaml；本文首次在低温 Si 腔上的系统噪声表征"
     note: >
       跨文件引用 numata2004.yaml、kessler2012.yaml; 残余噪声高于理论极限——额外噪声源不明。
       残余噪声来源不明（无温度/功率/模式依赖），

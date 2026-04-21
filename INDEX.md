@@ -2,7 +2,7 @@
 
 # 📚 sci-logic-kb — Knowledge Base Index
 
-> Auto-generated 2026-04-21 04:13 UTC
+> Auto-generated 2026-04-21 04:34 UTC
 
 ## 🧭 按研究问题导航
 
@@ -25,8 +25,8 @@
 | Optical Frequency Combs | 61 | 509 | 622 | [→ INDEX](topics/optical-frequency-combs/INDEX.md) |
 | Time-Frequency Transfer | 0 | 0 | 0 | [→ INDEX](topics/time-frequency-transfer/INDEX.md) |
 | Timescales | 1 | 6 | 6 | [→ INDEX](topics/timescales/INDEX.md) |
-| Ultrastable Laser | 78 | 337 | 318 | [→ INDEX](topics/ultrastable-laser/INDEX.md) |
-| **Total** | **141** | **862** | **957** | |
+| Ultrastable Laser | 78 | 337 | 334 | [→ INDEX](topics/ultrastable-laser/INDEX.md) |
+| **Total** | **141** | **862** | **973** | |
 
 ## Cross-Topic Quick References
 

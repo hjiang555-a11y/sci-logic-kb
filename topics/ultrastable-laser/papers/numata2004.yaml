@@ -346,7 +346,12 @@ relations:
     regime: all
     verification_status: calculated
     temporal_role: proposes
-    breakthrough_paths: []
+    breakthrough_paths:
+      - direction: pri.crystalline_coating_low_brownian_noise
+        expected_gain: "AlGaAs 晶体镀层损耗角 φ~2.5×10⁻⁵（较 IBS 介质膜 φ~4×10⁻⁴ 低 ~16×）→ 镀层分量降低约 10×；低温下进一步降至 ~4.5×10⁻⁶"
+        status: demonstrated
+        source: {zotero_key: "CWIHQRJD", claim: "tenfold reduction in mechanical damping when compared with the best dielectric multilayers"}
+        note: "pri.crystalline_coating_low_brownian_noise 定义于 cole2013.yaml；镀层为 rel.N04 主要可突破维度"
 
   - id: rel.N05
     subject: ent.spacer_ule
@@ -361,7 +366,12 @@ relations:
     regime: all
     verification_status: calculated
     temporal_role: proposes
-    breakthrough_paths: []
+    breakthrough_paths:
+      - direction: pri.long_cavity_thermal_noise_reduction
+        expected_gain: "Numata 2004 已证明 ULE 间隔物仅贡献总热噪声的 ~1%，不是主动瓶颈；长腔（如 Häfner 2015 48 cm、Parke 2025 68 cm）进一步将其分数贡献稀释到可忽略水平"
+        status: demonstrated
+        source: {zotero_key: "UV6S5FFL", claim: "instability of below 1×10⁻¹⁶ at averaging times from 1 to 1000 s is revealed"}
+        note: "spacer 贡献已非主动瓶颈（resolved-like）；保留 BOUNDED-BY 关系作历史分解参考，pri.long_cavity_thermal_noise_reduction 定义于 hafner2015.yaml"
 
   - id: rel.N07
     subject: ent.fp_cavity_system
@@ -430,3 +440,12 @@ relations:
     confidence: established
     source: {zotero_key: "VDXBPUQB", claim: "frequency instability consistent with thermal noise limit at ~10⁻¹⁶ level"}
     conditions: "理论计算值——ULE 腔参数下的热噪声 Allan 偏差下限"
+
+  - id: rel.N15
+    subject: met.thermal_noise_freq_psd
+    predicate: OPERATIONALIZED-AS
+    object: meth.thermal_noise_analysis_fp_cavity_num04
+    confidence: established
+    source: {zotero_key: "VDXBPUQB", claim: "total thermal noise ... 0.13×(1Hz/f)^0.5 Hz/√Hz"}
+    conditions: "FDT 分部件预算（镜底物 84% + 镀层 15% + 间隔物 1%）"
+    note: "腔热噪声频率 PSD 通过本文的分部件 FDT 分析方法计算；连接奠基性分析方法到其输出指标"

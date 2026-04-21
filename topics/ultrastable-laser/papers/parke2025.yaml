@@ -212,3 +212,31 @@ relations:
         mechanism: "继续增加腔长，热噪声极限 σ_y ∝ 1/L"
         status: demonstrated
         note: "跨文件引用，定义于 hafner2015.yaml"
+
+  - id: rel.P06
+    subject: ent.long_cavity_68cm_p25
+    predicate: IMPLEMENTS
+    object: meth.long_fp_cavity_design_fabrication_p25
+    confidence: established
+    source: {zotero_key: "U2LXSU62", claim: "optical reference cavity with a length of 68 cm... finesse in vacuum 410,000"}
+    conditions: "ULE 精密加工 + 超高反射镀层 + 真空封装（6×10⁻⁸ mbar）"
+    note: "68 cm 腔实体由长腔设计与制造方法实现"
+
+  - id: rel.P07
+    subject: meth.eom_bias_field_ram_cancellation_p25
+    predicate: ENABLED-BY
+    object: pri.ram_bias_field_cancellation
+    confidence: established
+    source: {zotero_key: "U2LXSU62", claim: "active servo comprising in-phase and quadrature RAM corrections... a simple and robust scheme to actively cancel residual amplitude modulation (RAM) at the 10⁻⁷ level in an annealed-proton-exchanged (APE) lithium-niobate waveguide electro-optic modulator (EOM)"}
+    conditions: "x 切 APE 铌酸锂波导 EOM + 独立 RAM 监测探测器"
+    temporal_role: proposes
+    note: "偏置电场 RAM 主动消除方法由对应原理使能；同时连接 meth 与 pri 两个节点，解除双方 orphan 状态"
+
+  - id: rel.P08
+    subject: meth.eom_bias_field_ram_cancellation_p25
+    predicate: IMPLEMENTS
+    object: meth.pdh_locking
+    confidence: established
+    source: {zotero_key: "U2LXSU62", claim: "for 10⁻¹⁹ laser frequency stabilization"}
+    conditions: "PDH 锁频链路中 EOM 的 RAM 主动抑制子方法"
+    note: "作为 PDH 锁频的 RAM 抑制子方法挂接；meth.pdh_locking 定义于 drever1983.yaml"

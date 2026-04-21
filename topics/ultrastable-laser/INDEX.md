@@ -2,7 +2,7 @@
 
 # Ultrastable Laser — Topic Index
 
-> Auto-generated 2026-04-21 04:13 UTC · 78 papers · 337 nodes · 318 relations
+> Auto-generated 2026-04-21 04:34 UTC · 78 papers · 337 nodes · 334 relations
 
 ## Entities
 
@@ -413,6 +413,9 @@
 ### `rel.Che02`: `ent.si_crystal_fp_cavity_sub5k_c25` → `pri.brownian_thermal_noise_fdt`
 
 - **Source**: chen2025
+- **Breakthrough paths**:
+  - `pri.crystalline_coating_low_brownian_noise` — status: proposed · gain: 当前 Si1 使用 IBS 介质镀层；替换为 AlGaAs 晶体镀层可将镀层热噪声进一步降低 ~10×，逼近热噪声理论…
+  - `pri.cryogenic_mechanical_q_enhancement` — status: demonstrated · gain: sub-5 K 温区 Si 的 CTE→0 与机械 Q 提升，使间隔物/底物热噪声降至低于镀层贡献；本文已演示 ≈(4…
 
 ### `rel.D04`: `meth.pdh_locking` → `pri.shot_noise_frequency_limit`
 
@@ -475,6 +478,8 @@
 ### `rel.Ked03`: `ent.si_crystal_fp_cavity_k12` → `pri.brownian_thermal_noise_fdt`
 
 - **Source**: kedar2023
+- **Breakthrough paths**:
+  - `pri.crystalline_coating_low_brownian_noise` — status: demonstrated · gain: AlGaAs 晶体镀层将镀层损耗角从 IBS 水平（φ~2×10⁻⁴）降至 ~2.5×10⁻⁵，镀层布朗热噪声降低 ~…
 
 ### `rel.L02`: `ent.si_crystal_17k_fp_cavity_l26` → `pri.brownian_thermal_noise_fdt`
 
@@ -541,10 +546,14 @@
 ### `rel.N04`: `ent.mirror_coating` → `pri.brownian_thermal_noise_fdt`
 
 - **Source**: numata2004
+- **Breakthrough paths**:
+  - `pri.crystalline_coating_low_brownian_noise` — status: demonstrated · gain: AlGaAs 晶体镀层损耗角 φ~2.5×10⁻⁵（较 IBS 介质膜 φ~4×10⁻⁴ 低 ~16×）→ 镀层分量降…
 
 ### `rel.N05`: `ent.spacer_ule` → `pri.brownian_thermal_noise_fdt`
 
 - **Source**: numata2004
+- **Breakthrough paths**:
+  - `pri.long_cavity_thermal_noise_reduction` — status: demonstrated · gain: Numata 2004 已证明 ULE 间隔物仅贡献总热噪声的 ~1%，不是主动瓶颈；长腔（如 Häfner 2015…
 
 ### `rel.N07`: `ent.fp_cavity_system` → `pri.brownian_thermal_noise_fdt`
 
@@ -613,6 +622,10 @@
 ### `rel.We08_01`: `ent.fp_cavity_system` → `pri.brownian_thermal_noise_fdt`
 
 - **Source**: webster2008
+- **Breakthrough paths**:
+  - `pri.crystalline_coating_low_brownian_noise` — status: demonstrated · gain: AlGaAs 晶体镀层直接针对 Webster 2008 观测到的镀层 + 底物布朗噪声中的镀层分量（Numata 2…
+  - `pri.long_cavity_thermal_noise_reduction` — status: demonstrated · gain: 长腔（≥ 48 cm）使总热噪声极限 σ_y ∝ 1/L 降低约 5×，Webster 2008 10 cm ULE …
+  - `pri.cryogenic_mechanical_q_enhancement` — status: demonstrated · gain: 低温单晶 Si 腔（124 K/4 K）使底物/间隔物 Q 提升 ~1000×，底物贡献被抑制；总热噪声极限进入 10…
 
 ### `rel.Y06`: `ent.fp_cavity_system` → `pri.mirror_heating_cavity_shift`
 
@@ -631,10 +644,18 @@
 ### `rel.Z14_01`: `meth.pdh_locking` → `pri.ram_pdh_frequency_offset`
 
 - **Source**: zhang2014_ram
+- **Breakthrough paths**:
+  - `pri.brewster_angle_ram_suppression` — status: demonstrated · gain: 布儒斯特角 EOM 几何被动抑制 RAM（无需有源伺服），Tai 2016 演示 RAM < 10⁻⁶ 量级
+  - `pri.ram_active_cancellation` — status: demonstrated · gain: 本文双通道伺服（同相 DC 电场 + 正交温度反馈）将 RAM 抑制至 1 ppm，对应 σ_y ≤ 1×10⁻¹⁶（…
+  - `pri.ram_bias_field_cancellation` — status: demonstrated · gain: Parke 2025 在 APE 铌酸锂波导 EOM 上用偏置电场闭环将 RAM 降至 10⁻⁷，等效 σ_y 贡献 …
 
 ### `rel.Z14_05`: `met.ram_fractional_instability` → `pri.ram_pdh_frequency_offset`
 
 - **Source**: zhang2014_ram
+- **Breakthrough paths**:
+  - `pri.ram_active_cancellation` — status: demonstrated · gain: 双通道主动消除使 σ_RAM ~ 1 ppm → σ_y(RAM) ≤ 1×10⁻¹⁶（35 mm 腔）；对 210 …
+  - `pri.brewster_angle_ram_suppression` — status: demonstrated · gain: 被动几何方案无需伺服，适用于不便加偏置电场的 EOM 场景
+  - `pri.ram_bias_field_cancellation` — status: demonstrated · gain: APE 波导 EOM + 偏置电场闭环将 σ_y(RAM) 进一步降至 3×10⁻¹⁹ @ 10–100 s（Park…
 
 ### `rel.Z17_04`: `ent.si_crystal_fp_cavity_4k_r19` → `pri.brownian_thermal_noise_fdt`
 

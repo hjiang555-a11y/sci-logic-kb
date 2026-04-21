@@ -176,6 +176,15 @@ relations:
     source: {zotero_key: "UV6S5FFL", claim: "κz=1.7×10⁻¹⁰/g, κy=0.5×10⁻¹⁰/g, κx=1.5×10⁻¹⁰/g"}
     conditions: "0.7 Hz 正弦激励，自平衡安装 Viton 球间距优化后"
 
+  - id: rel.H04a
+    subject: ent.self_balancing_long_cavity_h15
+    predicate: IMPLEMENTS
+    object: meth.self_balancing_mount_h15
+    confidence: established
+    source: {zotero_key: "UV6S5FFL", claim: "self-balancing mount was essential to reliably reach sensitivities to acceleration of below 2×10⁻¹⁰/g in all directions"}
+    conditions: "腔端铝夹具 + 单玻璃球旋转自由度 + Viton/Teflon 四点支撑"
+    note: "48 cm 长腔实体由自平衡安装方法实现"
+
   - id: rel.H05
     subject: ent.fp_cavity_system
     predicate: BOUNDED-BY

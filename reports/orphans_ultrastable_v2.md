@@ -1,5 +1,14 @@
 # 超稳激光专题 · Orphan 节点 · v2（阶段 B 档位感知重估）
 
+> **🏁 状态（2026-04-21，阶段 C 完成后）：15 条 breakthrough-tier WARNING 已全部清零**
+>
+> - 14 个 orphan method 节点 + 1 个 orphan principle（`pri.ram_bias_field_cancellation`）均已在阶段 C 挂上至少一条关系（IMPLEMENTS / OPERATIONALIZED-AS / ENABLED-BY / CHARACTERIZED-BY 等）；
+> - 75 条 evidence/framework 档位 INFO 按 §9.1 保留，不强制挂接；
+> - 详见 `LOG.md`「[2026-04-21] lint \| 阶段 C 落地」条目。
+> - 本文件保留为阶段 C 前的工作底稿，下表动作栏已加 ✅ 完成标记。
+
+---
+
 > **生成方式**：`python scripts/lint.py --topic ultrastable-laser --json`（2026-04-21，阶段 B 完成后）
 >
 > **变更说明**：v1（2026-04-21）统计出 90 个 orphan。阶段 B（v4.4 档位感知）按论文 `contribution_type` 归并：只有 **breakthrough** 档位论文定义的 orphan 计为真实工作项（WARNING），`evidence` / `framework` 档位的 orphan 降级为 `INFO`（符合 SCHEMA §9.1 — evidence 档位允许 orphan 存在）。
@@ -10,37 +19,37 @@
 
 ---
 
-## 一、真实 orphan（breakthrough-tier · 15 条 WARNING）
+## 一、真实 orphan（breakthrough-tier · 15 条 WARNING · ✅ 阶段 C 已清零）
 
 ### 1.1 方法节点（14 条）
 
 | 文件 | 节点 ID | 建议治理 |
 |------|---------|---------|
-| `cole2013.yaml` | `meth.substrate_transferred_crystalline_coating_c13` | 补 `OPERATIONALIZED-AS` → 晶体镀层镀膜原理 |
-| `hafner2015.yaml` | `meth.self_balancing_mount_h15` | 补 `IMPLEMENTS ent.*` 或并入支架 key_parameters |
-| `huang2023.yaml` | `meth.multilayer_thermal_shielding_fdl_h23` | 补 `IMPLEMENTS` 挂到 FDL 系统实体 |
-| `kedar2023.yaml` | `meth.dual_polarization_suppression_kedar23` | 补关系挂到 Si 腔实体或偏振原理 |
-| `michaudbelleau2022.yaml` | `meth.hcf_thermal_noise_characterization_mb22` | 补 `OPERATIONALIZED-AS` → `pri.hollow_core_fiber_thermal_noise` |
-| `numata2004.yaml` | `meth.thermal_noise_analysis_fp_cavity_num04` | 补 `OPERATIONALIZED-AS met.*` 或 `ENABLED-BY pri.brownian_thermal_noise_fdt` |
-| `parke2025.yaml` | `meth.eom_bias_field_ram_cancellation_p25` | 补 `IMPLEMENTS meth.pdh_locking`（RAM 抑制子方法） |
-| `parke2025.yaml` | `meth.long_fp_cavity_design_fabrication_p25` | 补 `IMPLEMENTS ent.*` 挂到 68 cm 腔实体 |
-| `robinson2019.yaml` | `meth.low_power_cavity_drift_characterization_r19` | 补关系挂到漂移指标 |
-| `thorpe2011.yaml` | `meth.two_stage_shb_fp_lock_thorpe11` | 补 `OPERATIONALIZED-AS met.shb_stability_thorpe11` |
-| `webster2008.yaml` | `meth.vibration_insensitive_cavity_lock_w08` | 补 `IMPLEMENTS` 挂到切口腔实体 |
-| `yan2018.yaml` | `meth.multi_cavity_frequency_averaging_y18` | 补 `OPERATIONALIZED-AS met.synthesized_laser_instability_y18` |
-| `zhang2014_ram.yaml` | `meth.dual_channel_ram_cancellation_z14` | 补 `IMPLEMENTS meth.pdh_locking` 或 RAM 指标 |
+| `cole2013.yaml` | `meth.substrate_transferred_crystalline_coating_c13` | ✅ 阶段 C `rel.C07`：`ent.algaas_crystalline_mirror_c13 IMPLEMENTS meth.*` |
+| `hafner2015.yaml` | `meth.self_balancing_mount_h15` | ✅ 阶段 C `rel.H04a`：`ent.self_balancing_long_cavity_h15 IMPLEMENTS meth.*` |
+| `huang2023.yaml` | `meth.multilayer_thermal_shielding_fdl_h23` | ✅ 阶段 C `rel.HU05`：`ent.fiber_interferometer IMPLEMENTS meth.*` |
+| `kedar2023.yaml` | `meth.dual_polarization_suppression_kedar23` | ✅ 阶段 C `rel.Ked04`：`met.fractional_freq_instability_kedar23 OPERATIONALIZED-AS meth.*` |
+| `michaudbelleau2022.yaml` | `meth.hcf_thermal_noise_characterization_mb22` | ✅ 阶段 C `rel.MB22_03`：`met.thermal_noise_psd_hcf_mb22 OPERATIONALIZED-AS meth.*` |
+| `numata2004.yaml` | `meth.thermal_noise_analysis_fp_cavity_num04` | ✅ 阶段 C `rel.N15`：`met.thermal_noise_freq_psd OPERATIONALIZED-AS meth.*` |
+| `parke2025.yaml` | `meth.eom_bias_field_ram_cancellation_p25` | ✅ 阶段 C `rel.P07 / P08`：`meth ENABLED-BY pri.ram_bias_field_cancellation` + `IMPLEMENTS meth.pdh_locking` |
+| `parke2025.yaml` | `meth.long_fp_cavity_design_fabrication_p25` | ✅ 阶段 C `rel.P06`：`ent.long_cavity_68cm_p25 IMPLEMENTS meth.*` |
+| `robinson2019.yaml` | `meth.low_power_cavity_drift_characterization_r19` | ✅ 阶段 C `rel.R12`：`met.cavity_frequency_drift_r19 OPERATIONALIZED-AS meth.*` |
+| `thorpe2011.yaml` | `meth.two_stage_shb_fp_lock_thorpe11` | ✅ 阶段 C `rel.TH03`：`met.shb_stability_thorpe11 OPERATIONALIZED-AS meth.*` |
+| `webster2008.yaml` | `meth.vibration_insensitive_cavity_lock_w08` | ✅ 阶段 C `rel.We08_04`：`met.fractional_freq_instability_w08 OPERATIONALIZED-AS meth.*` |
+| `yan2018.yaml` | `meth.multi_cavity_frequency_averaging_y18` | ✅ 阶段 C `rel.YA02`：`met.synthesized_laser_instability_y18 OPERATIONALIZED-AS meth.*` |
+| `zhang2014_ram.yaml` | `meth.dual_channel_ram_cancellation_z14` | ✅ 阶段 C `rel.Z14_04a / 04b`：`meth ENABLED-BY pri.ram_active_cancellation` + `IMPLEMENTS meth.pdh_locking` |
 
 ### 1.2 指标节点（1 条）
 
 | 文件 | 节点 ID | 建议治理 |
 |------|---------|---------|
-| `thorpe2011.yaml` | `met.shb_environmental_sensitivity_thorpe11` | 补 `CHARACTERIZED-BY ent.*`（SHB 稳频系统实体） |
+| `thorpe2011.yaml` | `met.shb_environmental_sensitivity_thorpe11` | ✅ 阶段 C `rel.TH02`：`ent.shb_eu_yso_reference_l13 CHARACTERIZED-BY met.*` |
 
 ### 1.3 原理节点（1 条）
 
 | 文件 | 节点 ID | 建议治理 |
 |------|---------|---------|
-| `parke2025.yaml` | `pri.ram_bias_field_cancellation` | 补 `ENABLED-BY meth.eom_bias_field_ram_cancellation_p25` 形成闭环 |
+| `parke2025.yaml` | `pri.ram_bias_field_cancellation` | ✅ 阶段 C `rel.P07`：`meth.eom_bias_field_ram_cancellation_p25 ENABLED-BY pri.*`（同条关系一并解除 meth 与 pri 双 orphan） |
 
 ---
 

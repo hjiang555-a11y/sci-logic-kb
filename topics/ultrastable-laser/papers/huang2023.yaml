@@ -83,3 +83,10 @@ relations:
     confidence: established
     source: {zotero_key: "JYGVFJBN", claim: "fractional frequency stability of better than 3.2×10⁻¹⁵ at 1 s and 1.1×10⁻¹⁴ at 1000 s"}
     note: "稳定度指标表征该原理的性能。"
+  - id: rel.HU05
+    subject: ent.fiber_interferometer
+    predicate: IMPLEMENTS
+    object: meth.multilayer_thermal_shielding_fdl_h23
+    confidence: established
+    source: {zotero_key: "JYGVFJBN", claim: "five-layer thermal shielding and two-stage active temperature control"}
+    note: "全光纤延迟线干涉仪通过五层热屏蔽+两级温控方法实现长期稳定度；ent.fiber_interferometer 定义于 jiang2010.yaml"

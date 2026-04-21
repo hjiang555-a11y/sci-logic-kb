@@ -73,3 +73,12 @@ relations:
     confidence: established
     source: {zotero_key: "XWBUNX3P", claim: "averaging the lengths of these cavities... the equivalent beam size is then enlarged n times"}
     note: "跨文件引用，meth.multi_cavity_averaging 为已知方法"
+
+  - id: rel.YA02
+    subject: met.synthesized_laser_instability_y18
+    predicate: OPERATIONALIZED-AS
+    object: meth.multi_cavity_frequency_averaging_y18
+    confidence: established
+    source: {zotero_key: "XWBUNX3P", claim: "relative frequency instability of the synthesized laser is 5×10⁻¹⁶, improved by a factor of √2"}
+    conditions: "两台独立 10 cm ULE 腔 + AOM 实时频率合成"
+    note: "Yan 2018 本文特定的双腔 AOM 合成方案；将本文方法挂到其输出指标"
