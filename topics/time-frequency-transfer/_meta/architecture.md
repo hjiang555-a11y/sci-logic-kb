@@ -1,5 +1,9 @@
 # Time-Frequency Transfer — Topic Architecture
 
+> **Status**: 🟣 `skeleton-empty` — 当前 0 篇论文，仅有架构占位。**不作为当前整治重点**，架构定义仅用于未来摄入时的 Level 0/1 顶层节点归属。
+>
+> <!-- TODO: 待信息补全 —— 光纤相干链路代表论文、TWSTFT 代表论文、GNSS 载波相位时频比对论文；需至少 3 篇代表论文才能激活 Level 1 实体 -->
+>
 > Source of truth: SCHEMA.md
 
 ## Architecture (planned)

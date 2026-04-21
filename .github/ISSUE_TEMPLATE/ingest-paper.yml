@@ -1,0 +1,104 @@
+name: Ingest Paper (Single)
+description: Request ingestion of a single paper into the knowledge base following the CONTRIBUTING.md Step 1–10 workflow
+title: "ingest: {author}{year} — {one-line contribution}"
+labels: ["ingest", "needs-expert-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Single-Paper Ingestion Task
+        This template standardizes the single-paper摄入 workflow. AI agents and contributors
+        should fill this template before starting extraction, and use its checklist to track
+        completion before PR.
+
+        Cross-references:
+        - [CONTRIBUTING.md](../../CONTRIBUTING.md): Step-by-step ingestion checklist
+        - [SCHEMA.md](../../SCHEMA.md): Node / relation / topic规范
+
+  - type: input
+    id: zotero_key
+    attributes:
+      label: Zotero Key
+      placeholder: "ABCD1234"
+    validations:
+      required: true
+
+  - type: input
+    id: doi
+    attributes:
+      label: DOI (if available)
+      placeholder: "10.1103/PhysRevLett.xxx"
+
+  - type: input
+    id: paper_title
+    attributes:
+      label: Paper Title
+    validations:
+      required: true
+
+  - type: input
+    id: first_author_year
+    attributes:
+      label: First Author + Year
+      placeholder: "Lee 2026"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: topic
+    attributes:
+      label: Target Topic
+      options:
+        - ultrastable-laser
+        - optical-frequency-combs
+        - frequency-standards
+        - timescales
+        - time-frequency-transfer
+        - shared (cross-topic)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: contribution_type
+    attributes:
+      label: Contribution Type (meta.contribution_type)
+      options:
+        - framework (综述 / 路线图)
+        - principle (理论原理提出)
+        - method (新方法)
+        - implementation (新装置 / 参数点)
+        - characterization (再测量 / 验证)
+    validations:
+      required: true
+
+  - type: textarea
+    id: core_claim
+    attributes:
+      label: Core Contribution (one sentence)
+      description: The one-line take-away that will become the PR title and the LOG.md entry
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Pre-Merge Checklist (mirrors CONTRIBUTING.md Step 1–10)
+      options:
+        - label: "Step 1-2: Read abstract, introduction, methods, results, discussion"
+        - label: "Step 3: Each new node passes at least one of the four独立性判据 (SCHEMA §1.4)"
+        - label: "Step 4: Every relation has source.claim; every new principle has ≥ 1 BOUNDED-BY/ENABLED-BY引用"
+        - label: "Step 4: BOUNDED-BY relations include breakthrough_paths OR explicit status=resolved"
+        - label: "Step 5: historical_landmarks updated if first/best demonstration"
+        - label: "Step 6: contested_claims / open_questions captured if present"
+        - label: "Step 7: File saved at topics/<topic>/papers/{author}{year}.yaml with Schema header"
+        - label: "Step 7: All new IDs globally unique (verified by grep)"
+        - label: "Step 8: LOG.md / PROCESSED_PAPERS.md updated; synthesis freshness checked"
+        - label: "Step 9: `python scripts/lint.py` — 0 errors, warnings 不倒退"
+        - label: "Step 9: `python scripts/stats.py` — 6 metrics 不倒退"
+        - label: "Step 9: `python scripts/build_index.py` 已重跑"
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Notes / Open Concerns
+      description: Any判据 ambiguity, cross-topic implications, or items needing expert arbitration

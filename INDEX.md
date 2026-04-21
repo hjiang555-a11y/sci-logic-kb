@@ -2,7 +2,20 @@
 
 # 📚 sci-logic-kb — Knowledge Base Index
 
-> Auto-generated 2026-04-20 16:45 UTC
+> Auto-generated 2026-04-21 00:22 UTC
+
+## 🧭 按研究问题导航
+
+> 如果你是第一次打开这个知识库，建议先从 **研究问题** 而非节点列表入手。详细指南见 [`docs/USAGE.md`](docs/USAGE.md)。
+
+| 我想… | 入口 |
+|-------|------|
+| 设计一套新的超稳激光装置，选择技术路线 | [`topics/ultrastable-laser/_meta/architecture.md`](topics/ultrastable-laser/_meta/architecture.md) → [限制×路径矩阵](topics/ultrastable-laser/synthesis/breakthrough_paths_matrix.md) |
+| 诊断我的实验 σ_y 卡在某个数值的瓶颈 | [`INDEX_metrics.md`](INDEX_metrics.md) → [误差预算综合页](topics/ultrastable-laser/synthesis/ram_and_pdh_error_budget.md) |
+| 了解某个物理分支的历史演化 | [稳定度时间线](topics/ultrastable-laser/synthesis/stability_record_timeline.md)、[低温工程路线图](topics/ultrastable-laser/synthesis/cryogenic_roadmap.md)、[光纤稳频全景](topics/ultrastable-laser/synthesis/fiber_stabilization_landscape.md) |
+| 快速掌握专题架构 | [`TOPICS.md`](TOPICS.md) · 各专题 `_meta/architecture.md` |
+| 参与建设 / 贡献论文 | [`CONTRIBUTING.md`](CONTRIBUTING.md) · [`SCHEMA.md`](SCHEMA.md) |
+| 查看待处理工作 | [`TODO.md`](TODO.md) · [`reports/chain_gap_ultrastable.md`](reports/chain_gap_ultrastable.md) |
 
 ## Topic Overview
 
