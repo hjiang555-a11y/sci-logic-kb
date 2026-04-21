@@ -1,550 +1,327 @@
 {
-  "total_papers": 73,
-  "batch_size": 18,
-  "num_batches": 5,
-  "batches": [
-    {
-      "batch_number": 1,
-      "papers": [
-        "9RFKI5SH",
-        "9YYDT9H4",
-        "AT5ZTB9M",
-        "AZ25GQE3",
-        "BDY8JHA4",
-        "BESI3AEE",
-        "BG93PZPK",
-        "BL4HI3QI",
-        "BPQDL4DN",
-        "BRKZG9H2",
-        "BWX8NI2P",
-        "BYUPFGJY",
-        "CA55MEKS",
-        "CEB7L6EM",
-        "CML5935T",
-        "CNSSF9YY",
-        "D9ANIZW6",
-        "DUJ8VXBR"
-      ],
-      "total_size_mb": 42.6861047744751
-    },
-    {
-      "batch_number": 2,
-      "papers": [
-        "EB5IM2K9",
-        "EBNL35EE",
-        "ERNT9GV3",
-        "FQ4KYV38",
-        "GY48UQ7F",
-        "H4DKWZWF",
-        "H93SHF89",
-        "HG8TSPT6",
-        "HJHCMSZG",
-        "HPCYUSLJ",
-        "HSRPL6ZX",
-        "HW9TAY3W",
-        "IK6MW5Q4",
-        "J37V2ZZQ",
-        "JN8JY9XG",
-        "JTI6TJFU",
-        "L6ZZII7R",
-        "L88UAAEQ"
-      ],
-      "total_size_mb": 39.184935569763184
-    },
-    {
-      "batch_number": 3,
-      "papers": [
-        "LBSZCU7P",
-        "LMFFEUFX",
-        "NDSVHPF5",
-        "NHJ84W8G",
-        "NNLDMCDD",
-        "P4TCLWW2",
-        "P7A5Z647",
-        "PBGQXUED",
-        "QEJS62JG",
-        "QIFVVUIH",
-        "QXC7FSMC",
-        "R4M8SE4F",
-        "R9HNIBTE",
-        "RDBWYLKJ",
-        "RWPYUXTB",
-        "SE4C2RWR",
-        "ST825B59",
-        "SZL4V3W8"
-      ],
-      "total_size_mb": 45.6828670501709
-    },
-    {
-      "batch_number": 4,
-      "papers": [
-        "T6AF6HJF",
-        "TFUBQQB8",
-        "TP9NSD4F",
-        "U5C8AJYM",
-        "U9WDX7JI",
-        "UNL7SSP3",
-        "V7MNFM68",
-        "VATLBIAD",
-        "VKLU3BG6",
-        "WCBMETLH",
-        "WHNQC4FV",
-        "X6KNIXMW",
-        "XHCB4X6R",
-        "XZTNQ8D4",
-        "Y7KZ89LA",
-        "YD2MQC49",
-        "ZG45BBYV",
-        "ZN7TS37H"
-      ],
-      "total_size_mb": 29.20980930328369
-    },
-    {
-      "batch_number": 5,
-      "papers": [
-        "ZSWYS26E"
-      ],
-      "total_size_mb": 1.1123628616333008
-    }
+  "topic": "optical-frequency-combs",
+  "selection_date": "2026-04-21 22:21:24",
+  "target_count": 30,
+  "selected_count": 30,
+  "processed_keys_excluded": [
+    "N3W35JH6",
+    "CML5935T",
+    "HW9TAY3W",
+    "AZ25GQE3",
+    "7HSU6V7Q",
+    "7PDY5FDM",
+    "9BV3WBSH",
+    "8XUFRL4K",
+    "XJ9M7ZLG",
+    "9YYDT9H4",
+    "RZME5CH8",
+    "BRKZG9H2",
+    "BPQDL4DN",
+    "2SMDS6NY",
+    "BYUPFGJY",
+    "43TAX2KE",
+    "BWX8NI2P",
+    "FQ4KYV38",
+    "5R8PUBX7",
+    "JN8JY9XG",
+    "BESI3AEE",
+    "KTHCQRJ2",
+    "EB5IM2K9",
+    "9RFKI5SH",
+    "HG8TSPT6",
+    "7978HTD3",
+    "AT5ZTB9M",
+    "JTI6TJFU",
+    "J37V2ZZQ",
+    "IK6MW5Q4",
+    "3RT4U4TV",
+    "EBNL35EE",
+    "CNSSF9YY",
+    "2QUW2P6D",
+    "3VF89TBF",
+    "H93SHF89",
+    "6JY7ZNWX",
+    "YYXGH9X3",
+    "GY48UQ7F",
+    "8IPE8B8T",
+    "ERNT9GV3",
+    "9BEBKUGG",
+    "59ULFL9Y",
+    "H4DKWZWF",
+    "BDY8JHA4",
+    "HPCYUSLJ",
+    "CA55MEKS",
+    "DUJ8VXBR",
+    "3JN2PBKX",
+    "5NSQLZTS",
+    "HJHCMSZG",
+    "HSRPL6ZX",
+    "CEB7L6EM",
+    "2QU7BQ44",
+    "52N4T2DE",
+    "D9ANIZW6",
+    "UFWLAXMA",
+    "2ADYRC8C",
+    "25EY6V8L",
+    "BG93PZPK",
+    "TRFV3Y5G"
+  ],
+  "keywords_used": [
+    "comb",
+    "frequency comb",
+    "optical comb",
+    "dual-comb",
+    "astrocomb",
+    "microcomb",
+    "electro-optic comb",
+    "kerr comb",
+    "soliton comb",
+    "optical frequency metrology",
+    "optical frequency synthesizer",
+    "femtosecond comb",
+    "microresonator comb",
+    "dual comb spectroscopy"
   ],
   "all_papers": [
     {
-      "parentKey": "9RFKI5SH",
-      "title": "Robust optical-frequency-comb based on the hybrid mode-locked Er:fiber femtosecond laser",
-      "filename": "oe-25-18-21719.pdf",
-      "file_size_mb": 2.403270721435547
-    },
-    {
-      "parentKey": "9YYDT9H4",
-      "title": "Stellar spectroscopy in the near-infrared with a laser frequency comb",
-      "filename": "2985.pdf",
-      "file_size_mb": 1.972905158996582
-    },
-    {
-      "parentKey": "AT5ZTB9M",
-      "title": "Microcomb-driven silicon photonic systems",
-      "filename": "s41586-022-04579-3.pdf",
-      "file_size_mb": 5.907121658325195
-    },
-    {
-      "parentKey": "AZ25GQE3",
-      "title": "Dual-comb spectroscopy over a 100 km open-air path",
-      "filename": "s41566-024-01525-9.pdf",
-      "file_size_mb": 2.2149200439453125
-    },
-    {
-      "parentKey": "BDY8JHA4",
-      "title": "All-fiber frequency comb at 2 µm providing 1.4-cycle pulses",
-      "filename": "3088.pdf",
-      "file_size_mb": 2.054568290710449
-    },
-    {
-      "parentKey": "BESI3AEE",
-      "title": "Ultra-low phase-noise microwave generation using a diode-pumped solid-state laser based frequency comb and a polarization-maintaining pulse interleaver",
-      "filename": "untitled.pdf",
-      "file_size_mb": 1.3248586654663086
-    },
-    {
-      "parentKey": "BG93PZPK",
-      "title": "Parametric seeding of a microresonator optical frequency comb",
-      "filename": "oe-21-15-17615.pdf",
-      "file_size_mb": 1.393498420715332
-    },
-    {
       "parentKey": "BL4HI3QI",
       "title": "Frequency comb spectroscopy",
-      "filename": "s41566-018-0347-5.pdf",
-      "file_size_mb": 2.659555435180664
-    },
-    {
-      "parentKey": "BPQDL4DN",
-      "title": "All polarization-maintaining Er:fiber-based optical frequency comb for frequency comparison of optical clocks",
-      "filename": "Zhang_2022_Chinese_Phys._B_31_054210.pdf",
-      "file_size_mb": 0.977604866027832
-    },
-    {
-      "parentKey": "BRKZG9H2",
-      "title": "Photonic-chip-based frequency combs",
-      "filename": "s41566-019-0358-x.pdf",
-      "file_size_mb": 4.379944801330566
-    },
-    {
-      "parentKey": "BWX8NI2P",
-      "title": "Space-borne frequency comb metrology",
-      "filename": "optica-3-12-1381_看图王.pdf",
-      "file_size_mb": 1.9739274978637695
-    },
-    {
-      "parentKey": "BYUPFGJY",
-      "title": "Searching for exoplanets using a microresonator astrocomb",
-      "filename": "3038.pdf",
-      "file_size_mb": 2.308987617492676
-    },
-    {
-      "parentKey": "CA55MEKS",
-      "title": "Er: fiber Femtosecond Optical Frequency Comb Aimed at Measurement of Frequency of D1 Line in Li Atoms",
-      "filename": "面向Li原子D1线频率测量应用的掺铒飞秒光纤光梳系统.pdf",
-      "file_size_mb": 2.65909481048584
-    },
-    {
-      "parentKey": "CEB7L6EM",
-      "title": "A low-latency digital servo for optical frequency comb stabilization",
-      "filename": "RSI25-AR-00704.pdf",
-      "file_size_mb": 0.5861759185791016
-    },
-    {
-      "parentKey": "CML5935T",
-      "title": "Ultrabroadband Supercontinuum Generation and Frequency-Comb Stabilization Using On-Chip Waveguides with Both Cubic and Quadratic Nonlinearities",
-      "filename": "2923.pdf",
-      "file_size_mb": 3.412186622619629
-    },
-    {
-      "parentKey": "CNSSF9YY",
-      "title": "Suppression of pump-induced frequency noise in fiber-laser frequency combs leading to sub-radian f (ceo) phase excursions",
-      "filename": "art%3A10.1007%2Fs00340-006-2426-4(1).pdf",
-      "file_size_mb": 0.9377403259277344
-    },
-    {
-      "parentKey": "D9ANIZW6",
-      "title": "Operation of an optically coherent frequency comb outside the metrology lab",
-      "filename": "oe-22-6-6996(1).pdf",
-      "file_size_mb": 5.12684440612793
-    },
-    {
-      "parentKey": "DUJ8VXBR",
-      "title": "Frequency-comb spectroscopy on pure quantum states of a single molecular ion",
-      "filename": "3083.pdf",
-      "file_size_mb": 0.3928995132446289
-    },
-    {
-      "parentKey": "EB5IM2K9",
-      "title": "Optical timing jitter due to atmospheric turbulence: comparison of frequency comb measurements to predictions from micrometeorological sensors",
-      "filename": "oe-28-18-26661.pdf",
-      "file_size_mb": 1.7779369354248047
-    },
-    {
-      "parentKey": "EBNL35EE",
-      "title": "Battery-operated integrated frequency comb generator",
-      "filename": "s41586-018-0598-9.pdf",
-      "file_size_mb": 1.6850862503051758
-    },
-    {
-      "parentKey": "ERNT9GV3",
-      "title": "Multi-branch fiber comb with relative frequency uncertainty at 10(-20) using fiber noise difference cancellation",
-      "filename": "untitled.pdf",
-      "file_size_mb": 2.3934202194213867
-    },
-    {
-      "parentKey": "FQ4KYV38",
-      "title": "Mid-infrared dual-comb spectroscopy of volatile organic compounds across long open-air paths",
-      "filename": "untitled.pdf",
-      "file_size_mb": 1.910099983215332
-    },
-    {
-      "parentKey": "GY48UQ7F",
-      "title": "A III-V-on-Si ultra-dense comb laser",
-      "filename": "out.pdf",
-      "file_size_mb": 2.0929574966430664
-    },
-    {
-      "parentKey": "H4DKWZWF",
-      "title": "Cavity-enhanced similariton Yb-fiber laser frequency comb: 3 X 10(14) W/Cm-2 peak intensity at 136 MHz",
-      "filename": "ol-32-19-2870.pdf",
-      "file_size_mb": 0.2261829376220703
-    },
-    {
-      "parentKey": "H93SHF89",
-      "title": "Ultralow Noise Optical Frequency Combs",
-      "filename": "low noise comb1.pdf",
-      "file_size_mb": 0.6123456954956055
-    },
-    {
-      "parentKey": "HG8TSPT6",
-      "title": "Fully phase-stabilized 1 GHz turnkey frequency comb at 1.56 mu m",
-      "filename": "3103.pdf",
-      "file_size_mb": 1.0545711517333984
-    },
-    {
-      "parentKey": "HJHCMSZG",
-      "title": "Repetition rate stabilization of an optical frequency comb based on solid-state laser technology with an intra-cavity electro-optic modulator",
-      "filename": "untitled.pdf",
-      "file_size_mb": 2.4060726165771484
-    },
-    {
-      "parentKey": "HPCYUSLJ",
-      "title": "Micro-combs: A novel generation of optical sources",
-      "filename": "1-s2.0-S0370157317303253-main.pdf",
-      "file_size_mb": 12.521854400634766
-    },
-    {
-      "parentKey": "HSRPL6ZX",
-      "title": "Self-Injection Locking and Phase-Locked States in Microresonator-Based Optical Frequency Combs",
-      "filename": "2691.pdf",
-      "file_size_mb": 2.272955894470215
-    },
-    {
-      "parentKey": "HW9TAY3W",
-      "title": "Deuterated silicon nitride photonic devices for broadband optical frequency comb generation",
-      "filename": "2959.pdf",
-      "file_size_mb": 1.7694883346557617
-    },
-    {
-      "parentKey": "IK6MW5Q4",
-      "title": "Characterizing a Fiber-Based Frequency Comb With Electro-Optic Modulator",
-      "filename": "06174188.pdf",
-      "file_size_mb": 0.6973190307617188
-    },
-    {
-      "parentKey": "J37V2ZZQ",
-      "title": "Precision frequency transfer with fiber frequency combs",
-      "filename": "fphy-10-1005074.pdf",
-      "file_size_mb": 1.850813865661621
-    },
-    {
-      "parentKey": "JN8JY9XG",
-      "title": "RF Transfer by Optical Comb Over 50-km Fiber Link With 4.7 x 10(-18) Instability",
-      "filename": "07389322.pdf",
-      "file_size_mb": 0.9378490447998047
-    },
-    {
-      "parentKey": "JTI6TJFU",
-      "title": "Dual-comb interferometry via repetition rate switching of a single frequency comb",
-      "filename": "2982.pdf",
-      "file_size_mb": 1.8849382400512695
+      "authors": [],
+      "year": "2019",
+      "attachmentKey": "5C6GHT9E",
+      "filename": "s41566-018-0347-5.pdf"
     },
     {
       "parentKey": "L6ZZII7R",
       "title": "Monolithic device for modelocking and stabilization of frequency combs",
-      "filename": "untitled.pdf",
-      "file_size_mb": 1.1985282897949219
+      "authors": [],
+      "year": "2015",
+      "attachmentKey": "HCZW8QEF",
+      "filename": "untitled.pdf"
     },
     {
       "parentKey": "L88UAAEQ",
       "title": "Phase-matched extreme-ultraviolet frequency-comb generation",
-      "filename": "NaturePhoton_XUVcomb phase match 2018.pdf",
-      "file_size_mb": 1.8925151824951172
+      "authors": [],
+      "year": "2018",
+      "attachmentKey": "NY25LJV5",
+      "filename": "NaturePhoton_XUVcomb phase match 2018.pdf"
     },
     {
       "parentKey": "LBSZCU7P",
       "title": "Compact, High-Performance All-Polarization-Maintaining Er: Fiber Frequency Comb With Single Fiber Actuator",
-      "filename": "09145632.pdf",
-      "file_size_mb": 3.2190065383911133
+      "authors": [],
+      "year": "2020",
+      "attachmentKey": "6YD7VFJN",
+      "filename": "09145632.pdf"
     },
     {
       "parentKey": "LMFFEUFX",
       "title": "Invited Article: A compact optically coherent fiber frequency comb",
-      "filename": "sinclair2015.pdf",
-      "file_size_mb": 5.80974006652832
+      "authors": [],
+      "year": "2015",
+      "attachmentKey": "EMBSCMXH",
+      "filename": "sinclair2015.pdf"
     },
     {
       "parentKey": "NDSVHPF5",
       "title": "Continuous ultraviolet to blue-green astrocomb",
-      "filename": "s41467-024-45924-6 (1).pdf",
-      "file_size_mb": 3.2673206329345703
+      "authors": [],
+      "year": "2024",
+      "attachmentKey": "CAUH3F47",
+      "filename": "s41467-024-45924-6 (1).pdf"
     },
     {
       "parentKey": "NHJ84W8G",
       "title": "Theory of the frequency comb output from a femtosecond fiber laser",
-      "filename": "01522588.pdf",
-      "file_size_mb": 0.4763984680175781
+      "authors": [],
+      "year": "2005",
+      "attachmentKey": "LITIBKFD",
+      "filename": "01522588.pdf"
     },
     {
       "parentKey": "NNLDMCDD",
       "title": "Continuous probing of cold complex molecules with infrared frequency comb spectroscopy",
-      "filename": "Nature 533, 517–520 (26 May 2016).pdf",
-      "file_size_mb": 1.5008277893066406
+      "authors": [],
+      "year": "2016",
+      "attachmentKey": "TM4YNQWN",
+      "filename": "Nature 533, 517–520 (26 May 2016).pdf"
     },
     {
       "parentKey": "P4TCLWW2",
       "title": "Low-noise 750&#x2009;&#x2009;MHz spaced ytterbium fiber frequency combs",
-      "filename": "10.1364@OL.43.004136.pdf",
-      "file_size_mb": 2.494823455810547
+      "authors": [],
+      "year": "2018",
+      "attachmentKey": "X2GBTGBN",
+      "filename": "10.1364@OL.43.004136.pdf"
     },
     {
       "parentKey": "P7A5Z647",
       "title": "Dissemination of an optical frequency comb over fiber with 3 x 10(-18) fractional accuracy",
-      "filename": "oe-20-2-1775.pdf",
-      "file_size_mb": 0.9478015899658203
+      "authors": [],
+      "year": "2012",
+      "attachmentKey": "ASECVC4V",
+      "filename": "oe-20-2-1775.pdf"
     },
     {
       "parentKey": "PBGQXUED",
       "title": "Kerr-lens mode-locked bidirectional dual-comb ring laser for broadband dual-comb spectroscopy",
-      "filename": "untitled1.pdf",
-      "file_size_mb": 1.5001392364501953
+      "authors": [],
+      "year": "2016",
+      "attachmentKey": "FTHK6X7P",
+      "filename": "untitled1.pdf"
     },
     {
       "parentKey": "QEJS62JG",
       "title": "Increase in the signal-to-noise ratio of the beat note between a frequency comb and a continuous-wave laser",
-      "filename": "PhysRevApplied.21.034066.pdf",
-      "file_size_mb": 4.970028877258301
+      "authors": [],
+      "year": "2024",
+      "attachmentKey": "YNPFELZV",
+      "filename": "PhysRevApplied.21.034066.pdf"
     },
     {
       "parentKey": "QIFVVUIH",
       "title": "Dual-comb-enhanced microwave clock synchronization over commercial fiber",
-      "filename": "optica-11-9-1268.pdf",
-      "file_size_mb": 6.314517021179199
+      "authors": [],
+      "year": "2024",
+      "attachmentKey": "JSWFJQSQ",
+      "filename": "optica-11-9-1268.pdf"
     },
     {
       "parentKey": "QXC7FSMC",
       "title": "All polarization-maintaining Er fiber-based optical frequency combs with nonlinear amplifying loop mirror",
-      "filename": "oe-24-3-3095.pdf",
-      "file_size_mb": 1.3976211547851562
+      "authors": [],
+      "year": "2016",
+      "attachmentKey": "5EEJA547",
+      "filename": "oe-24-3-3095.pdf"
     },
     {
       "parentKey": "R4M8SE4F",
       "title": "A long-term frequency-stabilized erbium-fiber-laser-based optical frequency comb with an intra-cavity electro-optic modulator",
-      "filename": "CPB Zhang 2015.pdf",
-      "file_size_mb": 1.7465219497680664
+      "authors": [],
+      "year": "2015",
+      "attachmentKey": "AFD7RPNB",
+      "filename": "CPB Zhang 2015.pdf"
     },
     {
       "parentKey": "R9HNIBTE",
       "title": "Optical and Microwave Metrology at the 10(-18 )Level with an Er/Yb:glass Frequency Comb",
-      "filename": "Laser   Photonics Reviews - 2023 - Nardelli -.pdf",
-      "file_size_mb": 3.1476287841796875
+      "authors": [],
+      "year": "2023",
+      "attachmentKey": "YTWZHGMC",
+      "filename": "Laser   Photonics Reviews - 2023 - Nardelli -.pdf"
     },
     {
       "parentKey": "RDBWYLKJ",
       "title": "10-GHz Self-Referenced Optical Frequency Comb",
-      "filename": "2376.pdf",
-      "file_size_mb": 0.1040182113647461
+      "authors": [],
+      "year": "2009",
+      "attachmentKey": "XCXRC5SK",
+      "filename": "2376.pdf"
     },
     {
       "parentKey": "RWPYUXTB",
       "title": "Low noise, self-referenced all polarization maintaining Ytterbium fiber laser frequency comb",
-      "filename": "untitled.pdf",
-      "file_size_mb": 2.5775718688964844
+      "authors": [],
+      "year": "2017",
+      "attachmentKey": "ANJXR753",
+      "filename": "untitled.pdf"
     },
     {
       "parentKey": "SE4C2RWR",
       "title": "Mechanical Control of a Microrod-Resonator Optical Frequency Comb",
-      "filename": "PhysRevX.3.031003.pdf",
-      "file_size_mb": 0.8982820510864258
+      "authors": [],
+      "year": "2013",
+      "attachmentKey": "JA7884LG",
+      "filename": "PhysRevX.3.031003.pdf"
     },
     {
       "parentKey": "ST825B59",
       "title": "An All-Polarization-Maintaining Multi-Branch Optical Frequency Comb for Highly Sensitive Cavity Ring-Down Spectroscopy",
-      "filename": "Ning_2020_Chinese_Phys._Lett._37_064202.pdf",
-      "file_size_mb": 1.394007682800293
+      "authors": [],
+      "year": "2020",
+      "attachmentKey": "7LD5AKRW",
+      "filename": "Ning_2020_Chinese_Phys._Lett._37_064202.pdf"
     },
     {
       "parentKey": "SZL4V3W8",
       "title": "Development of 8-branch Er:fiber frequency comb for Sr and Yb optical lattice clocks",
-      "filename": "untitled.pdf",
-      "file_size_mb": 3.916611671447754
+      "authors": [],
+      "year": "2019",
+      "attachmentKey": "GU7EBMNV",
+      "filename": "untitled.pdf"
     },
     {
       "parentKey": "T6AF6HJF",
       "title": "A frequency-stabilized Yb:KYW femtosecond laser frequency comb and its application to low-phase-noise microwave generation",
-      "filename": "s00340-013-5439-9.pdf",
-      "file_size_mb": 0.6094350814819336
+      "authors": [],
+      "year": "2013",
+      "attachmentKey": "SHM2KHBW",
+      "filename": "s00340-013-5439-9.pdf"
     },
     {
       "parentKey": "TFUBQQB8",
       "title": "Molecular fingerprinting with bright, broadband infrared frequency combs",
-      "filename": "2943.pdf",
-      "file_size_mb": 1.4605045318603516
+      "authors": [],
+      "year": "2018",
+      "attachmentKey": "DSP7PA32",
+      "filename": "2943.pdf"
     },
     {
       "parentKey": "TP9NSD4F",
       "title": "Phase-locked, erbium-fiber-laser-based frequency comb in the near infrared",
-      "filename": "washburn_fiberlaser_lock.pdf",
-      "file_size_mb": 0.7434072494506836
+      "authors": [],
+      "year": "2004",
+      "attachmentKey": "UGU9Z52A",
+      "filename": "washburn_fiberlaser_lock.pdf"
     },
     {
       "parentKey": "U5C8AJYM",
       "title": "Ultra-broadband dual-branch optical frequency comb with 10(-18) instability",
-      "filename": "untitled.pdf",
-      "file_size_mb": 1.5475845336914062
+      "authors": [],
+      "year": "2018",
+      "attachmentKey": "U6VBR6YQ",
+      "filename": "untitled.pdf"
     },
     {
       "parentKey": "U9WDX7JI",
       "title": "Molecular fingerprinting with the resolved modes of a femtosecond laser frequency comb",
-      "filename": "2184.pdf",
-      "file_size_mb": 0.8402976989746094
+      "authors": [],
+      "year": "2007",
+      "attachmentKey": "QUISLG42",
+      "filename": "2184.pdf"
     },
     {
       "parentKey": "UNL7SSP3",
       "title": "White-light frequency comb generation with a diode-pumped Cr : LiSAF laser",
-      "filename": "LZ01027879.pdf",
-      "file_size_mb": 0.14404582977294922
+      "authors": [],
+      "year": "2001",
+      "attachmentKey": "MJPLI9U5",
+      "filename": "LZ01027879.pdf"
     },
     {
       "parentKey": "V7MNFM68",
       "title": "Steering optical comb frequencies by rotating the polarization state",
-      "filename": "LZ01030765.pdf",
-      "file_size_mb": 1.811417579650879
+      "authors": [],
+      "year": "2017",
+      "attachmentKey": "BIS2CAAH",
+      "filename": "LZ01030765.pdf"
     },
     {
       "parentKey": "VATLBIAD",
       "title": "500 MHz spaced Yb:fiber laser frequency comb without amplifiers",
-      "filename": "2014 Opt Lett(39.9.2534)-ZZG_500--MHz spaced Yb-fiber laser frequency comb without amplifiers.pdf",
-      "file_size_mb": 0.6892528533935547
+      "authors": [],
+      "year": "2014",
+      "attachmentKey": "HAJ6GBPQ",
+      "filename": "2014 Opt Lett(39.9.2534)-ZZG_500--MHz spaced Yb-fiber laser frequency comb without amplifiers.pdf"
     },
     {
       "parentKey": "VKLU3BG6",
       "title": "The evolving optical frequency comb",
-      "filename": "2472.pdf",
-      "file_size_mb": 0.8864679336547852
-    },
-    {
-      "parentKey": "WCBMETLH",
-      "title": "Self-referenced frequency combs using high-efficiency silicon-nitride waveguides",
-      "filename": "2905.pdf",
-      "file_size_mb": 2.122282028198242
-    },
-    {
-      "parentKey": "WHNQC4FV",
-      "title": "Ultralow noise microwave generation with fiber-based optical frequency comb and application to atomic fountain clock",
-      "filename": "APL mille et al proof.pdf",
-      "file_size_mb": 0.21913909912109375
-    },
-    {
-      "parentKey": "X6KNIXMW",
-      "title": "130 W, 180 fs ultrafast Yb-doped fiber frequency comb based on chirped-pulse fiber amplification",
-      "filename": "untitled.pdf",
-      "file_size_mb": 1.6184186935424805
-    },
-    {
-      "parentKey": "XHCB4X6R",
-      "title": "Open-path dual-comb spectroscopy to an airborne retroreflector",
-      "filename": "untitled.pdf",
-      "file_size_mb": 1.4527711868286133
-    },
-    {
-      "parentKey": "XZTNQ8D4",
-      "title": "Fully self-referenced frequency comb consuming 5 watts of electrical power",
-      "filename": "3011.pdf",
-      "file_size_mb": 2.977527618408203
-    },
-    {
-      "parentKey": "Y7KZ89LA",
-      "title": "Spectroscopy of 171Yb in an optical lattice based on laser linewidth transfer using a narrow linewidth frequency comb",
-      "filename": "oe-21-7-7891.pdf",
-      "file_size_mb": 0.9974384307861328
-    },
-    {
-      "parentKey": "YD2MQC49",
-      "title": "The time-programmable frequency comb and its use in quantum-limited ranging",
-      "filename": "s41586-022-05225-8.pdf",
-      "file_size_mb": 8.445247650146484
-    },
-    {
-      "parentKey": "ZG45BBYV",
-      "title": "Combining fiber Brillouin amplification with a repeater laser station for fiber-based optical frequency dissemination over 1400 km",
-      "filename": "untitled.pdf",
-      "file_size_mb": 1.1188936233520508
-    },
-    {
-      "parentKey": "ZN7TS37H",
-      "title": "Versatile digital approach to laser frequency comb stabilization",
-      "filename": "3067.pdf",
-      "file_size_mb": 1.5256776809692383
-    },
-    {
-      "parentKey": "ZSWYS26E",
-      "title": "Multi-branch erbium fiber-based femtosecond optical frequency comb for measurement of cavity ring-down spectroscopy",
-      "filename": "8-20212162.pdf",
-      "file_size_mb": 1.1123628616333008
+      "authors": [],
+      "year": "2010",
+      "attachmentKey": "XNAYJH3T",
+      "filename": "2472.pdf"
     }
   ]
 }
