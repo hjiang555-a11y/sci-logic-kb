@@ -35,6 +35,81 @@ TOPIC_DISPLAY_NAMES: dict[str, str] = {
 
 TIER_ORDER = ["meta", "foundational", "domain", "engineering"]
 
+# Metric role classification (v4.4+, ultrastable-laser σ_y-first principle).
+# See topics/ultrastable-laser/_meta/scoping_principles.md v2.
+METRIC_ROLE_ORDER = ["primary", "secondary", "engineering", "enabling", "interface", "unspecified"]
+
+METRIC_ROLE_DISPLAY = {
+    "primary": "🎯 Primary (σ_y 主线)",
+    "secondary": "📊 Secondary (线宽/PSD/相干)",
+    "engineering": "🔧 Engineering (κ/温度/磁场)",
+    "enabling": "⚙️ Enabling (φ/Finesse/Q)",
+    "interface": "🔗 Interface (CONDITIONED-BY 耦合)",
+    "unspecified": "❓ Unspecified",
+}
+
+# Heuristics for inferring role when role field is absent.
+# Keys match ID suffixes / name keywords; checked in order.
+PRIMARY_METRIC_PATTERNS = (
+    "fractional_freq_instability",
+    "fractional_frequency_instability",
+    "allan_deviation",
+    "mod_sigma_y",
+    "mod_σ_y",
+    "oadev",
+    "hadamard",
+)
+SECONDARY_METRIC_PATTERNS = (
+    "laser_linewidth",
+    "freq_noise",
+    "frequency_noise",
+    "freq_spectral_density",
+    "optical_coherence_time",
+    "coherence_time",
+    "phase_noise",
+)
+ENGINEERING_METRIC_PATTERNS = (
+    "acceleration_sensitivity",
+    "vibration_sensitivity",
+    "temperature_sensitivity",
+    "magnetic_sensitivity",
+    "drift",
+)
+ENABLING_METRIC_PATTERNS = (
+    "coating_loss_angle",
+    "loss_angle",
+    "finesse",
+    "mechanical_q",
+    "reflectivity",
+)
+
+
+def _infer_metric_role(metric: dict) -> str:
+    """Return the metric role: explicit `role` field wins, otherwise heuristic."""
+    explicit = metric.get("role")
+    if isinstance(explicit, str) and explicit.strip():
+        role = explicit.strip().lower()
+        if role in METRIC_ROLE_ORDER:
+            return role
+    if metric.get("is_interface_metric"):
+        return "interface"
+    mid = (metric.get("id") or "").lower()
+    name = (metric.get("name") or "").lower()
+    haystack = f"{mid} {name}"
+    for pat in PRIMARY_METRIC_PATTERNS:
+        if pat in haystack:
+            return "primary"
+    for pat in SECONDARY_METRIC_PATTERNS:
+        if pat in haystack:
+            return "secondary"
+    for pat in ENGINEERING_METRIC_PATTERNS:
+        if pat in haystack:
+            return "engineering"
+    for pat in ENABLING_METRIC_PATTERNS:
+        if pat in haystack:
+            return "enabling"
+    return "unspecified"
+
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
@@ -361,19 +436,30 @@ def build_topic_index(td: TopicData, repo: Path) -> str:
             lines.append(f"| `{mid}` | {name} | [{label}]({rel_path}) |\n")
         lines.append("\n")
 
-    # --- Metrics ---
+    # --- Metrics (grouped by role, primary first) ---
     if td.metrics:
         lines.append("## Metrics\n\n")
-        lines.append("| ID | Name | Best Value | Source |\n")
-        lines.append("|----|------|------------|--------|\n")
-        for met, path in sorted(td.metrics, key=lambda x: x[0].get("id", "")):
-            mid = _md_escape(met.get("id", "?"))
-            name = _truncate(met.get("name", "—"), 50)
-            val, _ = _get_demonstrated_value(met)
-            label = _paper_label(path)
-            rel_path = _relative_paper_path(path, repo)
-            lines.append(f"| `{mid}` | {name} | {_truncate(val, 60)} | [{label}]({rel_path}) |\n")
-        lines.append("\n")
+        lines.append("> Metrics are grouped by **role** (v4.4 σ_y-first convention). "
+                     "See `topics/ultrastable-laser/_meta/scoping_principles.md` v2.\n\n")
+        metrics_by_role: dict[str, list[tuple[dict, Path]]] = defaultdict(list)
+        for met, path in td.metrics:
+            role = _infer_metric_role(met)
+            metrics_by_role[role].append((met, path))
+        for role in METRIC_ROLE_ORDER:
+            group = metrics_by_role.get(role, [])
+            if not group:
+                continue
+            lines.append(f"### {METRIC_ROLE_DISPLAY[role]}\n\n")
+            lines.append("| ID | Name | Best Value | Source |\n")
+            lines.append("|----|------|------------|--------|\n")
+            for met, path in sorted(group, key=lambda x: x[0].get("id", "")):
+                mid = _md_escape(met.get("id", "?"))
+                name = _truncate(met.get("name", "—"), 50)
+                val, _ = _get_demonstrated_value(met)
+                label = _paper_label(path)
+                rel_path = _relative_paper_path(path, repo)
+                lines.append(f"| `{mid}` | {name} | {_truncate(val, 60)} | [{label}]({rel_path}) |\n")
+            lines.append("\n")
 
     # --- BOUNDED-BY chains ---
     bounded = [
@@ -397,9 +483,12 @@ def build_topic_index(td: TopicData, repo: Path) -> str:
                     direction = bp.get("direction", "?")
                     status = bp.get("status", "?")
                     gain = bp.get("expected_gain", "")
+                    sy_gain = bp.get("expected_σy_gain") or bp.get("expected_sy_gain", "")
                     line = f"  - `{direction}` — status: {status}"
                     if gain:
                         line += f" · gain: {_truncate(str(gain), 60)}"
+                    if sy_gain:
+                        line += f" · σ_y gain: {_truncate(str(sy_gain), 60)}"
                     lines.append(line + "\n")
             lines.append("\n")
 
@@ -449,7 +538,11 @@ def build_topic_index(td: TopicData, repo: Path) -> str:
 def build_metrics_index(topics: dict[str, TopicData], all_topic_names: list[str], repo: Path) -> str:
     lines = [HEADER]
     lines.append("# 📊 Metrics Quick Reference\n\n")
-    lines.append(f"> Auto-generated {_timestamp()}\n\n")
+    lines.append(f"> Auto-generated {_timestamp()}\n>\n"
+                 "> Metrics are grouped by **role** (v4.4 σ_y-first convention, see "
+                 "`topics/ultrastable-laser/_meta/scoping_principles.md` v2). "
+                 "Role is taken from the `role` field on the metric node when present, "
+                 "otherwise inferred from ID / name heuristics.\n\n")
 
     for t in all_topic_names:
         td = topics.get(t)
@@ -457,19 +550,28 @@ def build_metrics_index(topics: dict[str, TopicData], all_topic_names: list[str]
             continue
         display = TOPIC_DISPLAY_NAMES.get(t, t)
         lines.append(f"## {display}\n\n")
-        lines.append("| ID | Name | Best Value | Conditions | Source |\n")
-        lines.append("|----|------|------------|------------|--------|\n")
-        for met, path in sorted(td.metrics, key=lambda x: x[0].get("id", "")):
-            mid = _md_escape(met.get("id", "?"))
-            name = _truncate(met.get("name", "—"), 45)
-            val, cond = _get_demonstrated_value(met)
-            label = _paper_label(path)
-            rel_path = _relative_paper_path(path, repo)
-            lines.append(
-                f"| `{mid}` | {name} | {_truncate(val, 60)} "
-                f"| {_truncate(cond, 50)} | [{label}]({rel_path}) |\n"
-            )
-        lines.append("\n")
+        metrics_by_role: dict[str, list[tuple[dict, Path]]] = defaultdict(list)
+        for met, path in td.metrics:
+            role = _infer_metric_role(met)
+            metrics_by_role[role].append((met, path))
+        for role in METRIC_ROLE_ORDER:
+            group = metrics_by_role.get(role, [])
+            if not group:
+                continue
+            lines.append(f"### {METRIC_ROLE_DISPLAY[role]}\n\n")
+            lines.append("| ID | Name | Best Value | Conditions | Source |\n")
+            lines.append("|----|------|------------|------------|--------|\n")
+            for met, path in sorted(group, key=lambda x: x[0].get("id", "")):
+                mid = _md_escape(met.get("id", "?"))
+                name = _truncate(met.get("name", "—"), 45)
+                val, cond = _get_demonstrated_value(met)
+                label = _paper_label(path)
+                rel_path = _relative_paper_path(path, repo)
+                lines.append(
+                    f"| `{mid}` | {name} | {_truncate(val, 60)} "
+                    f"| {_truncate(cond, 50)} | [{label}]({rel_path}) |\n"
+                )
+            lines.append("\n")
 
     return "".join(lines)
 

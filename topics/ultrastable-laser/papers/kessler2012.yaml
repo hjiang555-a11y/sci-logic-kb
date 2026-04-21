@@ -104,6 +104,7 @@ metrics:
   - id: met.fractional_freq_instability_k12
     name: "分数频率不稳定度（Kessler 2012，Si 腔）"
     unit: "无量纲（修正 Allan 偏差 mod σ_y(τ)）"
+    role: primary                       # v4.4 σ_y 主线
     description: "硅单晶腔稳频激光三角帽法提取的个体分数频率不稳定度"
     demonstrated_value:
       value: "~1×10⁻¹⁶（0.1–10 s 平均时间；受低温恒温器振动和 RAM 限制）"
@@ -119,6 +120,7 @@ metrics:
   - id: met.laser_linewidth_k12
     name: "激光线宽（Kessler 2012，Si 腔拍频）"
     unit: "mHz（FWHM）"
+    role: secondary
     description: "Si 腔与 JILA REF.2 拍频测量的联合 FWHM 线宽；单激光线宽 < 35 mHz"
     demonstrated_value:
       value: "拍频 FWHM: 49(4) mHz；单激光 < 35 mHz"
@@ -130,6 +132,7 @@ metrics:
   - id: met.vibration_sensitivity_k12
     name: "全向振动灵敏度（Kessler 2012 Si 腔）"
     unit: "10⁻¹¹/g（分数频率变化 per 重力加速度）"
+    role: engineering
     description: "硅单晶腔 ⟨110⟩ 三点最优安装后的三轴分数振动灵敏度"
     demonstrated_value:
       value: "κx=6.7(3)×10⁻¹¹/g，κy=8.4(4)×10⁻¹¹/g，κz=5.5(3)×10⁻¹¹/g"

@@ -2,9 +2,29 @@
 
 > **综合页面（synthesis）**：跨论文综合视图，YAML 是 source of truth。
 >
-> **最后更新**：2026-04-21 · 🟡 初稿（draft，需要专家补充证据细节）
+> **最后更新**：2026-04-21 · 🟡 初稿（draft，需要专家补充证据细节） · Round 3 σ_y-first 增订
 > **涉及源文件**：kessler2012, matei2017, robinson2019, chen2025, lee2026, kedar2023
-> **关联综合页**：[thermal_noise_landscape.md](thermal_noise_landscape.md), [stability_record_timeline.md](stability_record_timeline.md)
+> **关联综合页**：[thermal_noise_landscape.md](thermal_noise_landscape.md), [stability_record_timeline.md](stability_record_timeline.md)（顶层导航）
+
+---
+
+## 🎯 本页对 σ_y(1 s) 主线的贡献
+
+> 本页**回答**：**"降温这条路径，在 σ_y 主线上已经走到哪里、还能走多远？"**
+
+| 温度工作点 | σ_y(1 s) 已实现 | σ_y(1 s) 理论极限（当前镀层） | 差距 | 主要瓶颈 |
+|----------|----------------|-----------------------------|------|---------|
+| 室温 (ULE CTE 零点) | 3×10⁻¹⁶ | ~10⁻¹⁶（ULE φ 主导） | 已达 | 基底损耗角 φ_ULE ~10⁻⁴ |
+| 124 K (Si 第一零点 + IBS) | 4×10⁻¹⁷ | ~4×10⁻¹⁷ | 已达 | 镀层 φ_IBS ~4×10⁻⁴ |
+| 124 K (Si + AlGaAs) | ~1×10⁻¹⁷（预期） | ~1×10⁻¹⁷ | 未达（待 Yu 2023 后续） | — |
+| 17 K (Si + AlGaAs) 🏆 | 2.5×10⁻¹⁷ | ~1.5×10⁻¹⁷ | ~1.5× | AlGaAs 低温批次 φ |
+| 4 K (Si + IBS) | ~4×10⁻¹⁷ (Chen 2025) | ~few×10⁻¹⁸（理论，若 AlGaAs） | ~10× | 振动、镀层未升级 |
+
+**σ_y 主线启示**：降温路线的核心杠杆是 **热噪声 ∝ T（或 √T）**，但**仅当镀层 φ_coat 随之下降**时才转化为 σ_y 改善。17 K 和 4 K 工作点的真正收益在于"温度+晶体镀层"协同：
+- **17 K**：已实现世界纪录 2.5×10⁻¹⁷
+- **4 K**：未与 AlGaAs 协同（Chen 2025 仍用 IBS），故 σ_y 与 17 K 相当而非更优 → **下一步突破点**
+
+详见 [breakthrough_paths_matrix.md](breakthrough_paths_matrix.md) §A.2 σ_y 增益矩阵的 "Si 4 K" 列。
 
 ---
 

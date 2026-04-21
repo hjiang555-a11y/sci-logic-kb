@@ -7,6 +7,27 @@
 
 ---
 
+## [2026-04-21] restructure | Round 3 · 超稳激光 σ_y-first 主线化 · PR#2 + PR#3
+
+- **动机**：接续 Round 3 PR#1（文档层），完成 PR#2（综合视图层）+ PR#3（脚本与 YAML 数据层）。
+- **PR#2 综合视图层**：
+  - [`synthesis/stability_record_timeline.md`](topics/ultrastable-laser/synthesis/stability_record_timeline.md) 升级为**专题顶层导航页**：新增 §🧭 顶层导航跳转表、§一 σ_y Hall of Fame 世界记录总榜（标注 Allan 变体类型）、§二 子分支 SOTA（FP / 光纤 / SHB）
+  - [`synthesis/breakthrough_paths_matrix.md`](topics/ultrastable-laser/synthesis/breakthrough_paths_matrix.md) 新增 §A.2 σ_y 增益矩阵（基线 × 预期 σ_y_gain × 代表论文）；B/C/D/E 各限制列补 `expected_σy_gain` 列
+  - 其余 6 个 synthesis 页（thermal_noise / cryogenic / fiber / ram_pdh / vibration / shb）统一在开头新增 **"🎯 本页对 σ_y(1 s) 主线的贡献"** 小节，量化各条路径在 σ_y 主线上的角色
+- **PR#3 脚本 + YAML 层**：
+  - [`scripts/build_index.py`](scripts/build_index.py)：新增 `_infer_metric_role`（primary/secondary/engineering/enabling/interface），INDEX_metrics.md 与专题 INDEX 中按角色分组；BOUNDED-BY 输出补 `expected_σy_gain` 行
+  - [`scripts/lint.py`](scripts/lint.py)：新增 `breakthrough-missing-primary-metric` 检查（超稳激光 breakthrough 档必须链接 σ_y primary metric，定义于本文件或关系引用外部 σ_y 指标）
+  - [`scripts/stats.py`](scripts/stats.py)：推理就绪度量新增第 7 项 **σ_y-linkage rate**（ultrastable-laser breakthrough 论文中链接 σ_y primary 指标的比例，target=1.00）
+  - [`templates/ultrastable_laser_template.yaml`](templates/ultrastable_laser_template.yaml)：新增超稳激光专用 YAML 模板，包含 `role` 字段文档化、`expected_σy_gain` 字段文档化、档位判定规则
+  - YAML 回写代表论文：matei2017 / lee2026 / kessler2012 的 σ_y 指标写 `role: primary`，线宽/相干时间 `role: secondary`，振动灵敏度 `role: engineering`，镀层损耗角 `role: enabling`；matei2017 和 lee2026 的 3 条 breakthrough_paths 补 `expected_σy_gain`
+  - [`SCHEMA.md`](SCHEMA.md) §六模板记录新字段（metric `role`、breakthrough_paths `expected_σy_gain`），均为可选字段，超稳激光专题建议使用
+- **验证**：`python scripts/lint.py --summary` → 0 errors / 168 warnings（与基线一致）；`python scripts/stats.py` → 第 7 项 σ_y-linkage 指标就绪（当前无 USL breakthrough 论文，显示 n/a）；`python scripts/build_index.py` → 全部 INDEX 按新角色分组重新生成
+- **遗留 / 下一步**：
+  - 目前 USL 78 篇中无一篇 `contribution_type: breakthrough`（历史多为 `technical`），σ_y-linkage 指标当前 n/a，待 contribution_type 归一化（按 v4.4 映射）后激活
+  - YAML `role` 回写仅覆盖 3 篇代表论文；启发式可覆盖 99% 的其余情况（通过 ID / name 模式），如需完全显式化可进一步批量回写
+
+---
+
 ## [2026-04-21] restructure | Round 3 · 超稳激光 σ_y-first 主线化 · PR#1（文档层）
 
 - **动机**：专家给出专题关键指标聚焦度判断——超稳激光高度聚焦于 σ_y(1 s)，线宽/频噪 PSD 为次要指标；**长期漂移**也降级（由下游光频标技术解决，非本专题核心战场）；频率标准聚焦于 accuracy；光学频率梳发散，需要 sub-topic 拆分。本轮聚焦超稳激光专题改造，按 3 个 PR 节奏推进。

@@ -2,9 +2,29 @@
 
 > **综合页面（synthesis）**：跨论文综合视图，YAML 是 source of truth。
 >
-> **最后更新**：2026-04-21 · 🟡 初稿（draft，SHB 分支尚未系统整合，本页既是综合也是下一步工作清单）
+> **最后更新**：2026-04-21 · 🟡 初稿（draft，SHB 分支尚未系统整合，本页既是综合也是下一步工作清单） · Round 3 σ_y-first 增订
 > **涉及源文件**：konz2003, leibrandt2013, gobron2017, galland2020, thorpe2011, cook2015, kartner1995, braun1995
-> **关联综合页**：[stability_record_timeline.md](stability_record_timeline.md)
+> **关联综合页**：[stability_record_timeline.md](stability_record_timeline.md)（顶层导航）
+
+---
+
+## 🎯 本页对 σ_y(1 s) 主线的贡献
+
+> 本页**回答**：**"SHB 作为 FP 腔之外的第三条子分支，当前 σ_y SOTA、理论极限与差距何在？"**
+
+| 子分支 σ_y(1 s) | 年份 | 配置 | 代表论文 |
+|--------------|------|------|---------|
+| 6×10⁻¹⁶ 🏆（子 SOTA） | 2011 | Eu³⁺:YSO SHB 频率参考，~4 K | Thorpe 2011 |
+| 理论预期 ~10⁻¹⁷ | — | Eu:YSO 低温 + 深井烧孔 + 长相干原子系综 | — |
+
+**SHB vs FP 腔 σ_y 差距**：当前子 SOTA 6×10⁻¹⁶ vs FP 腔 SOTA 2.5×10⁻¹⁷，差距 **~24×**。但 SHB 分支在**振动不敏感性**和**绝对频率参考（原子跃迁）**两方面具结构性优势，工程级 σ_y 可能更易可搬运化。
+
+**σ_y 主线瓶颈**：
+- 光谱孔寿命（线性漂移） → 需低温 + 长相干晶体
+- 测量噪声地板（激发-探询循环 Dick 效应）
+- 待扩展的限制原理：本专题 SHB 子分支 YAML 节点尚不完整（见本页"下一步工作清单"）
+
+详见 [stability_record_timeline.md](stability_record_timeline.md) §二 "σ_y 子分支 SOTA"。
 
 ---
 

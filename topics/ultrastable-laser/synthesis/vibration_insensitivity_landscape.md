@@ -2,9 +2,26 @@
 
 > **综合页面（synthesis）**：跨论文综合视图，YAML 是 source of truth。
 >
-> **最后更新**：2026-04-21 · 🟡 初稿（draft，需要专家补充证据细节）
+> **最后更新**：2026-04-21 · 🟡 初稿（draft，需要专家补充证据细节） · Round 3 σ_y-first 增订
 > **涉及源文件**：young1999, webster2007, millo2009, webster2011, chen2014, chen2020, sanjuan2019, tao2018, hafner2015, hafner2020, didier2018, herbers2022
-> **关联综合页**：[thermal_noise_landscape.md](thermal_noise_landscape.md), [stability_record_timeline.md](stability_record_timeline.md)
+> **关联综合页**：[thermal_noise_landscape.md](thermal_noise_landscape.md), [stability_record_timeline.md](stability_record_timeline.md)（顶层导航）
+
+---
+
+## 🎯 本页对 σ_y(1 s) 主线的贡献
+
+> 本页**回答**：**"振动灵敏度 κ 降低如何转化为 σ_y 改善？在热噪声极限面前 κ 何时退出主导？"**
+
+耦合公式：`σ_y,vib(τ) ≈ κ · σ_a(τ) / ν`，其中 σ_a 为环境加速度 PSD 在 τ 对应频段的积分。典型实验室 σ_a ≈ 10⁻⁶ m/s²。
+
+| κ 量级（各向） | σ_y(1s) 振动项贡献（典型实验室 σ_a） | 是否主导 σ_y(1s)? | 代表 |
+|--------------|---------------------------------|-----------------|------|
+| kHz/(m/s²) | ~10⁻¹² 级 | ✅ 主导，必须压制 | 早期 ULE 腔 |
+| 0.1 kHz/(m/s²) | ~10⁻¹³ 级 | 部分主导，与 RAM/热噪声竞争 | Webster 2007 / 2011 |
+| 10⁻¹⁰/g | <10⁻¹⁶ | 退出主导，让位给热噪声 | Chen 2020, Sanjuan 2019 |
+| < 2×10⁻¹⁰/g 全向 | <10⁻¹⁶ | 退出主导，长腔室温仍可达 <1×10⁻¹⁶ | Häfner 2015 |
+
+**σ_y 主线启示**：进入 σ_y ≤ 10⁻¹⁶ 区间后，**振动抑制是"守门员"而非"得分者"**——设计目标是让 κ·σ_a 贡献**低于热噪声地板**，而不是继续降低。下一代 10⁻¹⁸ 级系统需要对 σ_a 本身的环境改善（空间平台、低振动实验室）。详见 [breakthrough_paths_matrix.md](breakthrough_paths_matrix.md) §E 列。
 
 ---
 

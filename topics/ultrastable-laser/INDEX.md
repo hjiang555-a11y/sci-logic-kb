@@ -2,7 +2,7 @@
 
 # Ultrastable Laser — Topic Index
 
-> Auto-generated 2026-04-21 00:22 UTC · 78 papers · 337 nodes · 318 relations
+> Auto-generated 2026-04-21 02:28 UTC · 78 papers · 337 nodes · 318 relations
 
 ## Entities
 
@@ -227,41 +227,13 @@
 
 ## Metrics
 
+> Metrics are grouped by **role** (v4.4 σ_y-first convention). See `topics/ultrastable-laser/_meta/scoping_principles.md` v2.
+
+### 🎯 Primary (σ_y 主线)
+
 | ID | Name | Best Value | Source |
 |----|------|------------|--------|
-| `met.acceleration_sensitivity_h15` | 全向加速度灵敏度（Häfner 2015 自平衡安装） | κz=1.7×10⁻¹⁰/g，κy=0.5×10⁻¹⁰/g，κx=1.5×10⁻¹⁰/g（全向 < 2×10⁻¹⁰/g） | [hafner2015](topics/ultrastable-laser/papers/hafner2015.yaml) |
-| `met.acceleration_sensitivity_herbers22` | 三轴加速度灵敏度（Herbers 2022，20 cm 可搬运腔） | κx = 2(1)×10⁻¹²/(m/s²), κy = 3(3)×10⁻¹²/(m/s²), κz = 3(1)×1… | [herbers2022](topics/ultrastable-laser/papers/herbers2022.yaml) |
-| `met.acceleration_sensitivity_horizontal_w07` | 水平加速度灵敏度（切口腔，Webster 2007） | 3.7 ± 0.9 kHz/ms⁻² | [webster2007](topics/ultrastable-laser/papers/webster2007.yaml) |
-| `met.acceleration_sensitivity_millo09` | 振动灵敏度（Millo 2009，竖直腔/水平腔） | ≤1.5×10⁻¹¹ per m/s² (每方向); 竖直腔最低 3.5×10⁻¹² (竖直方向); 水平腔最低 5×… | [millo2009](topics/ultrastable-laser/papers/millo2009.yaml) |
-| `met.acceleration_sensitivity_t18` | 加速度灵敏度（Tao 2018） | 0.8×10⁻¹⁰/g (vertical), 2.5×10⁻¹⁰/g (along axis), 1.5×10⁻¹⁰… | [tao2018](topics/ultrastable-laser/papers/tao2018.yaml) |
-| `met.acceleration_sensitivity_vertical_w07` | 竖直加速度灵敏度（切口腔，Webster 2007） | < 0.1 kHz/ms⁻² | [webster2007](topics/ultrastable-laser/papers/webster2007.yaml) |
-| `met.acceleration_sensitivity_w11` | 加速度灵敏度（立方体腔，Webster 2011） | 2.45(3) / 0.21(4) / 0.01(1) ×10⁻¹¹/g（轴向/横向1/横向2） | [webster2011](topics/ultrastable-laser/papers/webster2011.yaml) |
-| `met.acceleration_sensitivity_y99` | 腔谐振频率对加速度灵敏度（Young 1999） | ≈ 100 kHz/(m/s²) | [young1999](topics/ultrastable-laser/papers/young1999.yaml) |
-| `met.algaas_absorption_1064_cole16` | AlGaAs 晶体镀层 1064 nm 吸收（Cole 2016） | <1 ppm | [cole2016](topics/ultrastable-laser/papers/cole2016.yaml) |
-| `met.algaas_coating_loss_angle_17k_l26` | AlGaAs 晶体镀层损耗角（Lee 2026，17 K） | φ_AlGaAs(17K) < 2.3×10⁻⁵（上限，FP 腔热噪声测量） | [lee2026](topics/ultrastable-laser/papers/lee2026.yaml) |
-| `met.algaas_coating_loss_angle_c13` | AlGaAs 晶体镀层损耗角（Cole 2013） | φ_AlGaAs ≤ 2.5×10⁻⁵（室温上限，FP 腔测量）；对比 IBS 最优 φ ~ 2×10⁻⁴ | [cole2013](topics/ultrastable-laser/papers/cole2013.yaml) |
-| `met.algaas_coating_loss_angle_ibs_4k_r19` | IBS 镀层损耗角（Robinson 2019，4 K Si 腔提取） | φ_IBS(4K) = 5.15×10⁻⁴（SiO₂/Ta₂O₅ IBS 镀层） | [robinson2019](topics/ultrastable-laser/papers/robinson2019.yaml) |
-| `met.algaas_coating_loss_angle_kedar23` | AlGaAs 晶体镀层损耗角上限（Kedar 2023） | φ < 4.1×10⁻⁴ (4.7K); φ < 1.2×10⁻⁴ (16.7K) | [kedar2023](topics/ultrastable-laser/papers/kedar2023.yaml) |
-| `met.algaas_finesse_cole16` | AlGaAs 晶体镀层腔精细度（Cole 2016） | >3×10⁵ | [cole2016](topics/ultrastable-laser/papers/cole2016.yaml) |
-| `met.algaas_optical_loss_cole16` | AlGaAs 晶体镀层超额光学损耗（Cole 2016） | 3 ppm (scatter + absorption, NIR 1064-1560 nm) | [cole2016](topics/ultrastable-laser/papers/cole2016.yaml) |
 | `met.allan_deviation_fiber` | 分数频率不稳定度（光纤干涉仪，静态） | ~10⁻¹⁴ @ 0.1–1 s | [jiang2010](topics/ultrastable-laser/papers/jiang2010.yaml) |
-| `met.backscattering_coefficient_hcf_mb21` | 背向散射系数（Michaud-Belleau 2021，AR-HCF） | −118 dB/m | [michaudbelleau2021](topics/ultrastable-laser/papers/michaudbelleau2021.yaml) |
-| `met.beam_quality_d20` | 光束质量M²（Dixneuf 2020） | <1.1 | [dixneuf2020](topics/ultrastable-laser/papers/dixneuf2020.yaml) |
-| `met.beam_waist_parameter_k66` | 光束腰斑参数（理论） | 由腔参数决定 | [kogelnik1966](topics/ultrastable-laser/papers/kogelnik1966.yaml) |
-| `met.cavity_frequency_drift_r19` | 腔频率漂移率（Robinson 2019，功率相关，Si4 4 K） | -3×10⁻¹⁹ /s（40 nW 传输功率，最低漂移测量点） | [robinson2019](topics/ultrastable-laser/papers/robinson2019.yaml) |
-| `met.cavity_frequency_drift_z17` | 腔频率漂移率（Zhang 2017，4 K 闭循环 Si 腔） | < 1 mHz/s @ 1542 nm（约 5×10⁻¹⁸ s⁻¹） | [zhang2017](topics/ultrastable-laser/papers/zhang2017.yaml) |
-| `met.cavity_storage_time_p25` | 光学腔存储时间 | 295 ± 2 μs | [parke2025](topics/ultrastable-laser/papers/parke2025.yaml) |
-| `met.coating_loss_angle_comparison_s18` | 镀层损耗角多材料多温度比较 | SiO₂: 0.4×10⁻⁴(290K)/1.7×10⁻⁴(120K)/7.8×10⁻⁴(20K); Ti:Ta₂O₅… | [steinlechner2018](topics/ultrastable-laser/papers/steinlechner2018.yaml) |
-| `met.crystalline_coating_absorption_m18` | 晶体镀层光学吸收 | ≤0.8 ppm (fused silica substrate) | [marchio2018](topics/ultrastable-laser/papers/marchio2018.yaml) |
-| `met.crystalline_coating_tis_m18` | 晶体镀层总积分散射（TIS） | 6–9.5 ppm | [marchio2018](topics/ultrastable-laser/papers/marchio2018.yaml) |
-| `met.cte_shift_fs_mirror_leg10` | FS 镜引起的 CTE 零点温度偏移（Legero 2010） | ~20 K (降低) | [legero2010](topics/ultrastable-laser/papers/legero2010.yaml) |
-| `met.cte_zero_crossing_tuning_range_leg10` | CTE 零点温度调谐范围（Legero 2010） | ~30 K | [legero2010](topics/ultrastable-laser/papers/legero2010.yaml) |
-| `met.detection_snr_improvement_g20` | 探测信噪比改善（Galland 2020） | 改善（具体数值未给出） | [galland2020](topics/ultrastable-laser/papers/galland2020.yaml) |
-| `met.electronic_noise_reduction_factor_g16` | 电子噪声降低倍数（Grote 2016） | >4 | [grote2016](topics/ultrastable-laser/papers/grote2016.yaml) |
-| `met.eu_yso_t2_k03` | Eu³⁺:Y₂SiO₅ 光学退相时间（Könz 2003） | T₂ up to 2.6 ms | [konz2003](topics/ultrastable-laser/papers/konz2003.yaml) |
-| `met.fiber_freq_stability_hjc19` | 全光纤频率稳定度（Huang JC 2019） | 3×10⁻¹⁵ @ 1–10 s | [huangjc2019](topics/ultrastable-laser/papers/huangjc2019.yaml) |
-| `met.fiber_laser_linewidth_hjc19` | 全光纤激光线宽（Huang JC 2019） | 0.2 Hz (200 mHz) | [huangjc2019](topics/ultrastable-laser/papers/huangjc2019.yaml) |
-| `met.fiber_long_term_stability_h23` | 全光纤超稳激光长期稳定度（Huang 2023） | 3.2×10⁻¹⁵ @ 1s; 1.1×10⁻¹⁴ @ 1000s | [huang2023](topics/ultrastable-laser/papers/huang2023.yaml) |
 | `met.fractional_freq_instability_a12` | 分数频率不稳定度（Argence 2012） | 5–6×10⁻¹⁶ @ 1 s | [argence2012](topics/ultrastable-laser/papers/argence2012.yaml) |
 | `met.fractional_freq_instability_c14` | 分数频率不稳定度（Chen 2014） | 1×10⁻¹⁵ @ 1–10 s | [chen2014](topics/ultrastable-laser/papers/chen2014.yaml) |
 | `met.fractional_freq_instability_c20` | 分数频率不稳定度（Chen 2020） | 6×10⁻¹⁶ @ 1 s | [chen2020](topics/ultrastable-laser/papers/chen2020.yaml) |
@@ -288,19 +260,18 @@
 | `met.fractional_freq_instability_w16` | 分数频率不稳定度（Wu 2016） | 8×10⁻¹⁶ @ 1–30 s | [wu2016](topics/ultrastable-laser/papers/wu2016.yaml) |
 | `met.fractional_freq_instability_y99` | 分数频率不稳定度（Young 1999 腔） | ≈ 3 × 10⁻¹⁶ | [young1999](topics/ultrastable-laser/papers/young1999.yaml) |
 | `met.fractional_freq_instability_z17` | 分数频率不稳定度（Zhang 2017，4 K 闭循环 Si 腔） | ≈1×10⁻¹⁶（0.06–100 s averaging；0.06 s 以下受振动限制） | [zhang2017](topics/ultrastable-laser/papers/zhang2017.yaml) |
-| `met.freq_noise_from_temperature_fiber` | 温度变化引起的光纤频率噪声（接口指标） | ~几 kHz/K（2.5 km SMF-28 光纤，ν₀ ≈ 193 THz） | [jiang2010](topics/ultrastable-laser/papers/jiang2010.yaml) |
-| `met.freq_noise_from_vibration` | 振动引起的频率噪声（接口指标） | 残余振动噪声贡献 < 热噪声水平（充分隔振后） | [young1999](topics/ultrastable-laser/papers/young1999.yaml) |
+
+### 📊 Secondary (线宽/PSD/相干)
+
+| ID | Name | Best Value | Source |
+|----|------|------------|--------|
+| `met.fiber_laser_linewidth_hjc19` | 全光纤激光线宽（Huang JC 2019） | 0.2 Hz (200 mHz) | [huangjc2019](topics/ultrastable-laser/papers/huangjc2019.yaml) |
 | `met.freq_noise_psd_fiber` | 频率噪声谱密度（光纤干涉仪锁定，静态） | 约 10–100 Hz²/Hz @ 1–10 Hz；在 30–3000 Hz 频段接近 ULE 腔锁定水平 | [jiang2010](topics/ultrastable-laser/papers/jiang2010.yaml) |
 | `met.freq_noise_psd_fiber_dong15` | 频率噪声谱密度（Dong 2015，500 m 光纤） | < 0.8 Hz²/Hz (−1 dB) @ 1 Hz；0.016 Hz²/Hz (−18 dB) @ 200 Hz–… | [dong2015](topics/ultrastable-laser/papers/dong2015.yaml) |
 | `met.freq_noise_psd_fiber_jeon25` | 频率噪声谱密度（Jeon 2025，自零差 1 km 光纤） | 4 Hz–10 kHz 频段最高降噪约 10⁴；4–200 Hz 达到 1 km 光纤往返热噪声极限 | [jeon2025](topics/ultrastable-laser/papers/jeon2025.yaml) |
 | `met.freq_noise_psd_fiber_kef09` | 频率噪声谱密度（Kéfélian 2009，1 km 光纤） | < 1 Hz²/Hz (1 Hz–10 kHz)；10⁻² Hz²/Hz @ 1 kHz | [kefelian2009](topics/ultrastable-laser/papers/kefelian2009.yaml) |
 | `met.freq_noise_psd_ri_g25` | 循环干涉仪频率噪声 PSD（Gao 2025） | <1 Hz²/Hz @ 1 Hz–10 kHz | [gao2025](topics/ultrastable-laser/papers/gao2025.yaml) |
 | `met.freq_spectral_density` | 激光频率噪声谱密度 | < 0.3 Hz/√Hz @ 1 kHz | [drever1983](topics/ultrastable-laser/papers/drever1983.yaml) |
-| `met.freq_stability_piezo_cavity_m13` | 压电腔频率稳定度（Möhle 2013） | <1×10⁻¹⁴ (short-circuited piezo) | [mohle2013](topics/ultrastable-laser/papers/mohle2013.yaml) |
-| `met.frequency_band_g16` | 有效频段（Grote 2016） | >1 | [grote2016](topics/ultrastable-laser/papers/grote2016.yaml) |
-| `met.frequency_range_a13` | 改善频率范围（Aasi 2013） | 150 Hz 以上 | [aasi2013](topics/ultrastable-laser/papers/aasi2013.yaml) |
-| `met.frequency_stability_g17` | 频率稳定度（Gobron 2017） | 与标准FMS方法相当或更好 | [gobron2017](topics/ultrastable-laser/papers/gobron2017.yaml) |
-| `met.impact_resistance_t18` | 抗冲击加速度（Tao 2018） | >100g (ULE cavity, 20 mm drop); >250g (Al model, 250 mm dro… | [tao2018](topics/ultrastable-laser/papers/tao2018.yaml) |
 | `met.laser_linewidth` | 激光线宽 | < 100 Hz | [drever1983](topics/ultrastable-laser/papers/drever1983.yaml) |
 | `met.laser_linewidth_563nm` | 激光线宽（563 nm，Young 1999） | 0.6 Hz | [young1999](topics/ultrastable-laser/papers/young1999.yaml) |
 | `met.laser_linewidth_c25` | 激光线宽（Chen 2025，Si1 腔） | 9.6(3) mHz (computed from PSD); 5.7(3) mHz (beat measuremen… | [chen2025](topics/ultrastable-laser/papers/chen2025.yaml) |
@@ -314,12 +285,75 @@
 | `met.laser_linewidth_tai17` | 激光拍频线宽（Tai 2017） | 185 mHz (两台激光拍频) | [tai2017](topics/ultrastable-laser/papers/tai2017.yaml) |
 | `met.laser_linewidth_w16` | 激光线宽（Wu 2016, 1557 nm） | 0.26 Hz (most probable linewidth) | [wu2016](topics/ultrastable-laser/papers/wu2016.yaml) |
 | `met.laser_linewidth_z17` | 激光线宽（Zhang 2017，4 K 闭循环 Si 腔） | 中位线宽 17 mHz（1542 nm） | [zhang2017](topics/ultrastable-laser/papers/zhang2017.yaml) |
+| `met.optical_coherence_time_m17` | 光学相干时间（Matei 2017，Si 腔激光） | 11 s（Ramsey 询问，Δφ_rms 至 1 rad）；55 s（回溯频率估计，Δφ_rms 至 1 rad） | [matei2017](topics/ultrastable-laser/papers/matei2017.yaml) |
+| `met.shg_excess_phase_noise_h19` | SHG 额外相位噪声 | >2 orders of magnitude below best clock lasers (Si cavity) … | [herbers2019](topics/ultrastable-laser/papers/herbers2019.yaml) |
+
+### 🔧 Engineering (κ/温度/磁场)
+
+| ID | Name | Best Value | Source |
+|----|------|------------|--------|
+| `met.acceleration_sensitivity_h15` | 全向加速度灵敏度（Häfner 2015 自平衡安装） | κz=1.7×10⁻¹⁰/g，κy=0.5×10⁻¹⁰/g，κx=1.5×10⁻¹⁰/g（全向 < 2×10⁻¹⁰/g） | [hafner2015](topics/ultrastable-laser/papers/hafner2015.yaml) |
+| `met.acceleration_sensitivity_herbers22` | 三轴加速度灵敏度（Herbers 2022，20 cm 可搬运腔） | κx = 2(1)×10⁻¹²/(m/s²), κy = 3(3)×10⁻¹²/(m/s²), κz = 3(1)×1… | [herbers2022](topics/ultrastable-laser/papers/herbers2022.yaml) |
+| `met.acceleration_sensitivity_horizontal_w07` | 水平加速度灵敏度（切口腔，Webster 2007） | 3.7 ± 0.9 kHz/ms⁻² | [webster2007](topics/ultrastable-laser/papers/webster2007.yaml) |
+| `met.acceleration_sensitivity_millo09` | 振动灵敏度（Millo 2009，竖直腔/水平腔） | ≤1.5×10⁻¹¹ per m/s² (每方向); 竖直腔最低 3.5×10⁻¹² (竖直方向); 水平腔最低 5×… | [millo2009](topics/ultrastable-laser/papers/millo2009.yaml) |
+| `met.acceleration_sensitivity_t18` | 加速度灵敏度（Tao 2018） | 0.8×10⁻¹⁰/g (vertical), 2.5×10⁻¹⁰/g (along axis), 1.5×10⁻¹⁰… | [tao2018](topics/ultrastable-laser/papers/tao2018.yaml) |
+| `met.acceleration_sensitivity_vertical_w07` | 竖直加速度灵敏度（切口腔，Webster 2007） | < 0.1 kHz/ms⁻² | [webster2007](topics/ultrastable-laser/papers/webster2007.yaml) |
+| `met.acceleration_sensitivity_w11` | 加速度灵敏度（立方体腔，Webster 2011） | 2.45(3) / 0.21(4) / 0.01(1) ×10⁻¹¹/g（轴向/横向1/横向2） | [webster2011](topics/ultrastable-laser/papers/webster2011.yaml) |
+| `met.acceleration_sensitivity_y99` | 腔谐振频率对加速度灵敏度（Young 1999） | ≈ 100 kHz/(m/s²) | [young1999](topics/ultrastable-laser/papers/young1999.yaml) |
+| `met.cavity_frequency_drift_r19` | 腔频率漂移率（Robinson 2019，功率相关，Si4 4 K） | -3×10⁻¹⁹ /s（40 nW 传输功率，最低漂移测量点） | [robinson2019](topics/ultrastable-laser/papers/robinson2019.yaml) |
+| `met.cavity_frequency_drift_z17` | 腔频率漂移率（Zhang 2017，4 K 闭循环 Si 腔） | < 1 mHz/s @ 1542 nm（约 5×10⁻¹⁸ s⁻¹） | [zhang2017](topics/ultrastable-laser/papers/zhang2017.yaml) |
+| `met.vibration_sensitivity_a12` | 振动灵敏度（Argence 2012） | axial: (4±0.5)×10⁻¹¹; transverse: <1×10⁻¹¹ | [argence2012](topics/ultrastable-laser/papers/argence2012.yaml) |
+| `met.vibration_sensitivity_c14` | 振动灵敏度（Chen 2014） | 1.7×10⁻¹¹, 8.0×10⁻¹¹, 3.9×10⁻¹⁰ | [chen2014](topics/ultrastable-laser/papers/chen2014.yaml) |
+| `met.vibration_sensitivity_h20` | 振动灵敏度（Häfner 2020） | κ_x=0.7×10⁻¹⁰, κ_y=2.3×10⁻¹⁰, κ_z=12.3×10⁻¹⁰ | [hafner2020](topics/ultrastable-laser/papers/hafner2020.yaml) |
+| `met.vibration_sensitivity_k12` | 全向振动灵敏度（Kessler 2012 Si 腔） | κx=6.7(3)×10⁻¹¹/g，κy=8.4(4)×10⁻¹¹/g，κz=5.5(3)×10⁻¹¹/g | [kessler2012](topics/ultrastable-laser/papers/kessler2012.yaml) |
+
+### ⚙️ Enabling (φ/Finesse/Q)
+
+| ID | Name | Best Value | Source |
+|----|------|------------|--------|
+| `met.algaas_coating_loss_angle_17k_l26` | AlGaAs 晶体镀层损耗角（Lee 2026，17 K） | φ_AlGaAs(17K) < 2.3×10⁻⁵（上限，FP 腔热噪声测量） | [lee2026](topics/ultrastable-laser/papers/lee2026.yaml) |
+| `met.algaas_coating_loss_angle_c13` | AlGaAs 晶体镀层损耗角（Cole 2013） | φ_AlGaAs ≤ 2.5×10⁻⁵（室温上限，FP 腔测量）；对比 IBS 最优 φ ~ 2×10⁻⁴ | [cole2013](topics/ultrastable-laser/papers/cole2013.yaml) |
+| `met.algaas_coating_loss_angle_ibs_4k_r19` | IBS 镀层损耗角（Robinson 2019，4 K Si 腔提取） | φ_IBS(4K) = 5.15×10⁻⁴（SiO₂/Ta₂O₅ IBS 镀层） | [robinson2019](topics/ultrastable-laser/papers/robinson2019.yaml) |
+| `met.algaas_coating_loss_angle_kedar23` | AlGaAs 晶体镀层损耗角上限（Kedar 2023） | φ < 4.1×10⁻⁴ (4.7K); φ < 1.2×10⁻⁴ (16.7K) | [kedar2023](topics/ultrastable-laser/papers/kedar2023.yaml) |
+| `met.algaas_finesse_cole16` | AlGaAs 晶体镀层腔精细度（Cole 2016） | >3×10⁵ | [cole2016](topics/ultrastable-laser/papers/cole2016.yaml) |
+| `met.coating_loss_angle_comparison_s18` | 镀层损耗角多材料多温度比较 | SiO₂: 0.4×10⁻⁴(290K)/1.7×10⁻⁴(120K)/7.8×10⁻⁴(20K); Ti:Ta₂O₅… | [steinlechner2018](topics/ultrastable-laser/papers/steinlechner2018.yaml) |
+
+### 🔗 Interface (CONDITIONED-BY 耦合)
+
+| ID | Name | Best Value | Source |
+|----|------|------------|--------|
+| `met.freq_noise_from_temperature_fiber` | 温度变化引起的光纤频率噪声（接口指标） | ~几 kHz/K（2.5 km SMF-28 光纤，ν₀ ≈ 193 THz） | [jiang2010](topics/ultrastable-laser/papers/jiang2010.yaml) |
+| `met.freq_noise_from_vibration` | 振动引起的频率噪声（接口指标） | 残余振动噪声贡献 < 热噪声水平（充分隔振后） | [young1999](topics/ultrastable-laser/papers/young1999.yaml) |
+
+### ❓ Unspecified
+
+| ID | Name | Best Value | Source |
+|----|------|------------|--------|
+| `met.algaas_absorption_1064_cole16` | AlGaAs 晶体镀层 1064 nm 吸收（Cole 2016） | <1 ppm | [cole2016](topics/ultrastable-laser/papers/cole2016.yaml) |
+| `met.algaas_optical_loss_cole16` | AlGaAs 晶体镀层超额光学损耗（Cole 2016） | 3 ppm (scatter + absorption, NIR 1064-1560 nm) | [cole2016](topics/ultrastable-laser/papers/cole2016.yaml) |
+| `met.backscattering_coefficient_hcf_mb21` | 背向散射系数（Michaud-Belleau 2021，AR-HCF） | −118 dB/m | [michaudbelleau2021](topics/ultrastable-laser/papers/michaudbelleau2021.yaml) |
+| `met.beam_quality_d20` | 光束质量M²（Dixneuf 2020） | <1.1 | [dixneuf2020](topics/ultrastable-laser/papers/dixneuf2020.yaml) |
+| `met.beam_waist_parameter_k66` | 光束腰斑参数（理论） | 由腔参数决定 | [kogelnik1966](topics/ultrastable-laser/papers/kogelnik1966.yaml) |
+| `met.cavity_storage_time_p25` | 光学腔存储时间 | 295 ± 2 μs | [parke2025](topics/ultrastable-laser/papers/parke2025.yaml) |
+| `met.crystalline_coating_absorption_m18` | 晶体镀层光学吸收 | ≤0.8 ppm (fused silica substrate) | [marchio2018](topics/ultrastable-laser/papers/marchio2018.yaml) |
+| `met.crystalline_coating_tis_m18` | 晶体镀层总积分散射（TIS） | 6–9.5 ppm | [marchio2018](topics/ultrastable-laser/papers/marchio2018.yaml) |
+| `met.cte_shift_fs_mirror_leg10` | FS 镜引起的 CTE 零点温度偏移（Legero 2010） | ~20 K (降低) | [legero2010](topics/ultrastable-laser/papers/legero2010.yaml) |
+| `met.cte_zero_crossing_tuning_range_leg10` | CTE 零点温度调谐范围（Legero 2010） | ~30 K | [legero2010](topics/ultrastable-laser/papers/legero2010.yaml) |
+| `met.detection_snr_improvement_g20` | 探测信噪比改善（Galland 2020） | 改善（具体数值未给出） | [galland2020](topics/ultrastable-laser/papers/galland2020.yaml) |
+| `met.electronic_noise_reduction_factor_g16` | 电子噪声降低倍数（Grote 2016） | >4 | [grote2016](topics/ultrastable-laser/papers/grote2016.yaml) |
+| `met.eu_yso_t2_k03` | Eu³⁺:Y₂SiO₅ 光学退相时间（Könz 2003） | T₂ up to 2.6 ms | [konz2003](topics/ultrastable-laser/papers/konz2003.yaml) |
+| `met.fiber_freq_stability_hjc19` | 全光纤频率稳定度（Huang JC 2019） | 3×10⁻¹⁵ @ 1–10 s | [huangjc2019](topics/ultrastable-laser/papers/huangjc2019.yaml) |
+| `met.fiber_long_term_stability_h23` | 全光纤超稳激光长期稳定度（Huang 2023） | 3.2×10⁻¹⁵ @ 1s; 1.1×10⁻¹⁴ @ 1000s | [huang2023](topics/ultrastable-laser/papers/huang2023.yaml) |
+| `met.freq_stability_piezo_cavity_m13` | 压电腔频率稳定度（Möhle 2013） | <1×10⁻¹⁴ (short-circuited piezo) | [mohle2013](topics/ultrastable-laser/papers/mohle2013.yaml) |
+| `met.frequency_band_g16` | 有效频段（Grote 2016） | >1 | [grote2016](topics/ultrastable-laser/papers/grote2016.yaml) |
+| `met.frequency_range_a13` | 改善频率范围（Aasi 2013） | 150 Hz 以上 | [aasi2013](topics/ultrastable-laser/papers/aasi2013.yaml) |
+| `met.frequency_stability_g17` | 频率稳定度（Gobron 2017） | 与标准FMS方法相当或更好 | [gobron2017](topics/ultrastable-laser/papers/gobron2017.yaml) |
+| `met.impact_resistance_t18` | 抗冲击加速度（Tao 2018） | >100g (ULE cavity, 20 mm drop); >250g (Al model, 250 mm dro… | [tao2018](topics/ultrastable-laser/papers/tao2018.yaml) |
 | `met.locking_bandwidth_g25` | 锁定带宽（Grabielle 2025） | 增大后的带宽（具体值未给出） | [grabielle2025](topics/ultrastable-laser/papers/grabielle2025.yaml) |
 | `met.locking_noise_floor_g25` | 锁定噪声底限（Grabielle 2025） | white frequency noise floor (具体值未给出) | [grabielle2025](topics/ultrastable-laser/papers/grabielle2025.yaml) |
 | `met.long_term_instability_s19` | 长期频率不稳定度（Sanjuan 2019） | ~10⁻¹⁴ @ 5400 s (Allan deviation) | [sanjuan2019](topics/ultrastable-laser/papers/sanjuan2019.yaml) |
 | `met.long_term_instability_w16` | 长期频率不稳定度（Wu 2016） | 1×10⁻¹⁵ @ 100–4000 s | [wu2016](topics/ultrastable-laser/papers/wu2016.yaml) |
 | `met.noise_reduction_g20` | 探测噪声降低（Galland 2020） | 显著降低（具体数值未给出） | [galland2020](topics/ultrastable-laser/papers/galland2020.yaml) |
-| `met.optical_coherence_time_m17` | 光学相干时间（Matei 2017，Si 腔激光） | 11 s（Ramsey 询问，Δφ_rms 至 1 rad）；55 s（回溯频率估计，Δφ_rms 至 1 rad） | [matei2017](topics/ultrastable-laser/papers/matei2017.yaml) |
 | `met.optical_microwave_sync_jitter_k08` | 远程光-微波同步时序抖动（Kim 2008） | 6.8 fs r.m.s.（1 MHz 带宽，10 h）；相对时序稳定度 1.9×10⁻¹⁹ | [kim2008](topics/ultrastable-laser/papers/kim2008.yaml) |
 | `met.optical_optical_sync_jitter_k08` | 远程光-光同步时序抖动（Kim 2008） | 0.4 fs r.m.s.（22 mHz–2.3 MHz） | [kim2008](topics/ultrastable-laser/papers/kim2008.yaml) |
 | `met.output_power_d20` | 输出功率（Dixneuf 2020） | 365 W (350 W isolated) | [dixneuf2020](topics/ultrastable-laser/papers/dixneuf2020.yaml) |
@@ -343,7 +377,6 @@
 | `met.shb_environmental_sensitivity_thorpe11` | SHB 环境灵敏度（Thorpe 2011） | temperature: 16 kHz/K²; pressure: -11.4 Hz/Pa; acceleration… | [thorpe2011](topics/ultrastable-laser/papers/thorpe2011.yaml) |
 | `met.shb_relative_stability_l13` | SHB 双晶体相对稳定度（Leibrandt 2013） | 5.5×10⁻¹⁷ @ 204 s (quadratic drift removed) | [leibrandt2013](topics/ultrastable-laser/papers/leibrandt2013.yaml) |
 | `met.shb_stability_thorpe11` | SHB 稳频稳定度（Thorpe 2011） | σ_y ≤ 6×10⁻¹⁶ @ 2–8 s | [thorpe2011](topics/ultrastable-laser/papers/thorpe2011.yaml) |
-| `met.shg_excess_phase_noise_h19` | SHG 额外相位噪声 | >2 orders of magnitude below best clock lasers (Si cavity) … | [herbers2019](topics/ultrastable-laser/papers/herbers2019.yaml) |
 | `met.snr_improvement_g17` | 信噪比提升（Gobron 2017） | 具体数值未给出，但理论上更优 | [gobron2017](topics/ultrastable-laser/papers/gobron2017.yaml) |
 | `met.spectral_distortion_immunity_g17` | 光谱畸变免疫性（Gobron 2017） | 不受烧孔功率引起的畸变影响 | [gobron2017](topics/ultrastable-laser/papers/gobron2017.yaml) |
 | `met.spectral_hole_lifetime_k03` | 光谱孔寿命（Könz 2003） | 1 s @ 18 K to >20 days @ 2 K | [konz2003](topics/ultrastable-laser/papers/konz2003.yaml) |
@@ -354,10 +387,6 @@
 | `met.thermal_noise_psd_hcf_mb22` | 空心光纤热噪声功率谱密度（Michaud-Belleau 2022） | ≈1.3×10⁻¹⁷ (rad²/Hz)/m @30 kHz | [michaudbelleau2022](topics/ultrastable-laser/papers/michaudbelleau2022.yaml) |
 | `met.timing_link_stability_k08` | 定时稳定光纤链路残余时差（Kim 2008） | 6.4 fs r.m.s. @ 72 h；0.36 fs r.m.s. @ 10 ms–1 s | [kim2008](topics/ultrastable-laser/papers/kim2008.yaml) |
 | `met.transmission_bandwidth_hcarf_b15` | 传输带宽（Belardi 2015，HC-ARF） | 0.75–1.6 μm | [belardi2015](topics/ultrastable-laser/papers/belardi2015.yaml) |
-| `met.vibration_sensitivity_a12` | 振动灵敏度（Argence 2012） | axial: (4±0.5)×10⁻¹¹; transverse: <1×10⁻¹¹ | [argence2012](topics/ultrastable-laser/papers/argence2012.yaml) |
-| `met.vibration_sensitivity_c14` | 振动灵敏度（Chen 2014） | 1.7×10⁻¹¹, 8.0×10⁻¹¹, 3.9×10⁻¹⁰ | [chen2014](topics/ultrastable-laser/papers/chen2014.yaml) |
-| `met.vibration_sensitivity_h20` | 振动灵敏度（Häfner 2020） | κ_x=0.7×10⁻¹⁰, κ_y=2.3×10⁻¹⁰, κ_z=12.3×10⁻¹⁰ | [hafner2020](topics/ultrastable-laser/papers/hafner2020.yaml) |
-| `met.vibration_sensitivity_k12` | 全向振动灵敏度（Kessler 2012 Si 腔） | κx=6.7(3)×10⁻¹¹/g，κy=8.4(4)×10⁻¹¹/g，κz=5.5(3)×10⁻¹¹/g | [kessler2012](topics/ultrastable-laser/papers/kessler2012.yaml) |
 | `met.visible_attenuation_hcarf_b15` | 可见光最小衰减（Belardi 2015，HC-ARF） | 175 dB/km @ 480 nm | [belardi2015](topics/ultrastable-laser/papers/belardi2015.yaml) |
 | `met.yb_clock_instability_j11` | Yb 光钟不稳定度（Jiang 2011） | 5×10⁻¹⁶/√τ | [jiang2011](topics/ultrastable-laser/papers/jiang2011.yaml) |
 
@@ -451,8 +480,8 @@
 
 - **Source**: lee2026
 - **Breakthrough paths**:
-  - `pri.optical_frequency_averaging` — status: demonstrated · gain: 两腔平均 → √2 稳定度提升；实现约 1.8×10⁻¹⁷（短时受 Dick 噪声限制）
-  - `pri.silicon_cte_zero_crossing_17k` — status: theoretical · gain: 降温至更低零点（如 < 4K）→ k_B T 进一步降低；目前 17K 已是已知方便零点中较低的
+  - `pri.optical_frequency_averaging` — status: demonstrated · gain: 两腔平均 → √2 稳定度提升；实现约 1.8×10⁻¹⁷（短时受 Dick 噪声限制） · σ_y gain: mod σ_y(1 s): 2.5×10⁻¹⁷ → 1.8×10⁻¹⁷（√2 改善，两腔不相关噪声平均）
+  - `pri.silicon_cte_zero_crossing_17k` — status: theoretical · gain: 降温至更低零点（如 < 4K）→ k_B T 进一步降低；目前 17K 已是已知方便零点中较低的 · σ_y gain: mod σ_y(1 s): 2.5×10⁻¹⁷ → ~10⁻¹⁸ 级（热噪声 ∝ √T，4K 相对 17K 降低约 2…
 
 ### `rel.LI02`: `ent.ule_cavity_30cm_sr_l18` → `pri.brownian_thermal_noise_fdt`
 
@@ -470,7 +499,7 @@
 
 - **Source**: matei2017
 - **Breakthrough paths**:
-  - `pri.crystalline_coating_low_brownian_noise` — status: demonstrated · gain: AlGaAs 晶体镀层（φ ~ 2.5×10⁻⁵）→ 镀层热噪声降低 10×；理论下限约 4×10⁻¹⁸
+  - `pri.crystalline_coating_low_brownian_noise` — status: demonstrated · gain: AlGaAs 晶体镀层（φ ~ 2.5×10⁻⁵）→ 镀层热噪声降低 10×；理论下限约 4×10⁻¹⁸ · σ_y gain: mod σ_y(1 s): 4×10⁻¹⁷ → ~1×10⁻¹⁷ (预期 4× 改善，已被 Lee 2026 验证达 …
 
 ### `rel.M04`: `ent.si_crystal_fp_cavity_k12` → `pri.flicker_noise_linewidth_divergence`
 

@@ -2,9 +2,25 @@
 
 > **综合页面**：跨论文综合视图（derived view），不替代 YAML 节点。YAML 是 source of truth。
 >
-> **最后更新**：2026-04-20
+> **最后更新**：2026-04-21 · Round 3 σ_y-first 增订
 > **涉及源文件**：numata2004.yaml, young1999.yaml, kessler2012.yaml, cole2013.yaml, cole2016.yaml, matei2017.yaml, lee2026.yaml, robinson2019.yaml, chen2025.yaml, webster2008.yaml, hafner2015.yaml, kedar2023.yaml, marchio2018.yaml, steinlechner2018.yaml
 > **状态**：🟢 当前（covers papers up to 2026-04-20）
+> **专题入口**：[stability_record_timeline.md](stability_record_timeline.md)（顶层导航）
+
+---
+
+## 🎯 本页对 σ_y(1 s) 主线的贡献
+
+> 超稳激光专题以 σ_y(τ=1 s) 为唯一主线指标（[scoping_principles.md v2](../_meta/scoping_principles.md)）。本页**回答一个问题**：**"σ_y 主线上的每次台阶，分别由热噪声链条中哪条子机制的改善带来？"**
+
+| σ_y 台阶 | 年份 | 主导改善的热噪声子机制 | 关键原理节点 |
+|---------|------|--------------------|------------|
+| 3×10⁻¹⁶ (首次抵达) | 1999 | ULE 基底抵达室温热噪声极限 | `pri.ule_zero_cte` |
+| 1×10⁻¹⁶ | 2012 | 基底 φ 从 10⁻⁴ → 10⁻⁷（Si 单晶 + 124K） | `pri.cryogenic_mechanical_q_enhancement` + `pri.silicon_cte_zero_crossing_124k` |
+| 4×10⁻¹⁷ | 2017 | 暴露镀层主导（间隔物+底物热噪声完全被 Si 抑制） | `pri.mirror_substrate_noise_dominance` → 镀层为唯一瓶颈 |
+| 2.5×10⁻¹⁷ 🏆 | 2026 | 镀层 φ_coat 从 4×10⁻⁴（IBS）→ 2.3×10⁻⁵（AlGaAs @17 K） | `pri.crystalline_coating_low_brownian_noise` + `pri.silicon_cte_zero_crossing_17k` |
+
+**σ_y 主线启示**：热噪声公式 `S_ν ∝ (k_B T φ / w₀²·L²)` 告诉我们每次突破走哪条变量——历史上 **T / φ_sub / φ_coat** 轮番成为主导瓶颈。下一步预期是 **T（4 K）+ 下一代镀层批次** 协同，详见 [cryogenic_roadmap.md](cryogenic_roadmap.md) 与 [breakthrough_paths_matrix.md](breakthrough_paths_matrix.md) 的 §A.2 σ_y 增益矩阵。
 
 ---
 
