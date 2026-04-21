@@ -11,7 +11,7 @@
 > - 🟩 evidence 从 42 升到 **51**（Round 1 剩余 🟧 下沉）
 > - 🟧 breakthrough? 档位已清空（0 条）
 >
-> **性质**：仍是 **AI 草稿 · 待专家裁决**，零 YAML 改动。专家使用方式与 Round 1 相同（`决定` 列 accept / override / ❓）。
+> **性质**：~~仍是 **AI 草稿 · 待专家裁决**，零 YAML 改动。~~ **已定稿（2026-04-21）**：阶段 A3 专家已批量裁决（76 accept + 2 override），阶段 A4 已把最终档位批量写入 78 篇 YAML 的 `meta.contribution_type`。详见文末 [Round 3 · 阶段 A3 专家裁决结果](#round-3--阶段-a3-专家裁决结果2026-04-21-定稿)。
 
 ---
 
@@ -194,3 +194,42 @@
 
 - 全局三档判据 → [`docs/CONTRIBUTION_TIER_RULES.md`](../docs/CONTRIBUTION_TIER_RULES.md)
 - 超稳激光专题偏好（稳定度 > 线宽）→ [`topics/ultrastable-laser/_meta/scoping_principles.md`](../topics/ultrastable-laser/_meta/scoping_principles.md)
+
+---
+
+## Round 3 · 阶段 A3 专家裁决结果（2026-04-21 定稿）
+
+> **状态**：✅ A3 完成 — 逐篇清单 `决定` 列已由专家填写。本节固化结论并触发 A4 批量回写。
+
+### 裁决统计
+
+| 决定类型 | 数量 | 说明 |
+|---------|-----:|-----|
+| `ok`（accept AI 建议） | 76 | 按 AI Round 2 草稿落地 |
+| `override`（专家修正） | 2 | 详见下方 |
+| **合计** | **78** | — |
+
+### 专家 Override 明细
+
+| # | 文件 | AI 建议 | 专家决定（原文） | 最终档位 | 说明 |
+|---|------|---------|----------------|---------|------|
+| 1 | `aasi2013.yaml` | 🟥 breakthrough | `no` | 🟩 evidence | LIGO 压缩光论文在本专题（超稳激光）属"外部应用/佐证"，不是本专题的稳定度突破；降档为 evidence |
+| 2 | `yan2018.yaml` | 🟩 evidence | `belongs to a new method (breakthough)` | 🟥 breakthrough | 多腔合成稳频（multi-cavity-stabilized）属新机制分支，升格为 breakthrough |
+
+### 最终档位分布（A4 回写依据）
+
+| 档位 | 数量 | 占比 |
+|------|-----:|-----:|
+| 🟥 breakthrough | 24 | 30.8% |
+| 🟦 framework | 3 | 3.8% |
+| 🟩 evidence | 51 | 65.4% |
+| **合计** | **78** | 100% |
+
+> 两条 override 自平衡：breakthrough / evidence 计数保持 24 / 51 不变，仅 aasi2013 ↔ yan2018 互换。
+
+### 阶段 A4 执行说明
+
+- 执行脚本：一次性批量写入 `meta.contribution_type` 到 `topics/ultrastable-laser/papers/*.yaml` 78 个文件
+- 插入位置：`meta:` 块内 `source_type:` 之后（符合 SCHEMA.md §v4.4 模板）
+- 验证：`python scripts/lint.py` 通过（0 errors）
+- Phase B 信号：lint 新出现 12 条 `σ_y primary-role metric missing` 告警——这是 A4 回写后档位感知检查首次激活带来的真实缺口，交由阶段 B 处理。

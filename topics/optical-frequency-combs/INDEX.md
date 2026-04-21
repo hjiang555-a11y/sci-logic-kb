@@ -2,7 +2,7 @@
 
 # Optical Frequency Combs — Topic Index
 
-> Auto-generated 2026-04-21 03:15 UTC · 61 papers · 509 nodes · 622 relations
+> Auto-generated 2026-04-21 03:50 UTC · 61 papers · 509 nodes · 622 relations
 
 ## Entities
 

@@ -6,6 +6,7 @@
 meta:
   zotero_key: "EGAZKLXR"
   source_type: technical_paper
+  contribution_type: breakthrough
   reliability: medium            # 前沿论文，结果在领域内高度认可
   title: "Visible Lasers with Subhertz Linewidths"
   year: 1999

@@ -6,6 +6,7 @@
 meta:
   zotero_key: "VDXBPUQB"
   source_type: technical_paper
+  contribution_type: breakthrough
   reliability: high   # 奠基性理论+实验验证论文，被领域广泛引用
   title: "Thermal-Noise Limit in the Frequency Stabilization of Lasers with Rigid Cavities"
   year: 2004
