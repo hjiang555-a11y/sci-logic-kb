@@ -37,7 +37,24 @@ jobs:
       - name: Run freshness check (JSON)
         id: freshness
         run: |
+          set +e
           python scripts/freshness.py --check --json > /tmp/freshness.json
+          STATUS=$?
+          set -e
+
+          # Exit code 1 means "stale pages found" — advisory, not a hard error.
+          # Any other non-zero code indicates a genuine script failure.
+          if [ "$STATUS" -ne 0 ] && [ "$STATUS" -ne 1 ]; then
+            echo "freshness.py failed unexpectedly with exit code $STATUS"
+            exit "$STATUS"
+          fi
+
+          # Ensure the JSON was actually written before parsing it.
+          if [ ! -s /tmp/freshness.json ]; then
+            echo "freshness.py produced no JSON output (exit code $STATUS)"
+            exit 1
+          fi
+
           STALE=$(python -c "import json; print(json.load(open('/tmp/freshness.json'))['stale_count'])")
           echo "stale_count=$STALE" >> "$GITHUB_OUTPUT"
           cat /tmp/freshness.json
