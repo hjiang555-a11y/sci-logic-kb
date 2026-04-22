@@ -196,6 +196,14 @@ relations:
     dominated_by: null
     quantitative_contribution: "镀层主导（与 Numata 2004、Cole 2013 结论一致）"
     regime: all
+    # v4.5+ limit_status：Hafner 本文通过 48 cm 长腔（pri.long_cavity_thermal_noise_reduction）
+    # 演示达到 8×10⁻¹⁷，并引用 Cole 2013 AlGaAs 晶体镀层路径共同压制；
+    # 因此 Brownian FDT 的室温瓶颈已被工程组合路径"突破"。
+    limit_status: resolved
+    resolved_by:
+      - pri.long_cavity_thermal_noise_reduction
+      - pri.crystalline_coating_low_brownian_noise
+    resolution_source: {zotero_key: "UV6S5FFL", claim: "instability of below 1×10⁻¹⁶ at averaging times from 1 to 1000 s"}
     verification_status: observed
     temporal_role: validates
     breakthrough_paths:

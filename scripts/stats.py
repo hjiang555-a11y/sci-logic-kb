@@ -113,6 +113,8 @@ def analyse(repo: Path):
     # tier-scoped: BOUNDED-BY within breakthrough papers only (v4.4 · Phase B)
     bounded_by_total_bt = 0
     bounded_by_with_bp_bt = 0
+    # limit-status accumulators (v4.5+)
+    limit_status_counts: Counter = Counter()
     relations_total = 0
     relations_with_claim = 0
     principle_total = 0
@@ -215,6 +217,10 @@ def analyse(repo: Path):
                 has_bp = isinstance(bp_val := rel.get("breakthrough_paths"), list) and len(bp_val) > 0
                 if has_bp:
                     bounded_by_with_bp += 1
+                # limit-status counting (v4.5+)
+                ls_raw = rel.get("limit_status")
+                ls_key = str(ls_raw).strip().lower() if ls_raw is not None else "unset"
+                limit_status_counts[ls_key] += 1
                 # tier-scoped (v4.4 · Phase B): only breakthrough papers are
                 # required to close the reasoning chain; evidence/framework
                 # papers may leave BOUNDED-BY open without penalty.
@@ -262,6 +268,25 @@ def analyse(repo: Path):
                     "rate": _rate(bounded_by_with_bp_bt, bounded_by_total_bt),
                     "target": 0.70,
                 },
+            },
+            # v4.5+: limit-status closure — how many BOUNDED-BY have been
+            # "resolved" (engineering path demonstrated and limit retired)
+            # vs still "active" in the current regime. Counts with status
+            # 'refuted' and 'conditional' are also shown but do not enter
+            # the headline rate.
+            "limit_resolution_rate": {
+                "counts": dict(limit_status_counts),
+                "active": limit_status_counts.get("active", 0),
+                "resolved": limit_status_counts.get("resolved", 0),
+                "conditional": limit_status_counts.get("conditional", 0),
+                "refuted": limit_status_counts.get("refuted", 0),
+                "unset": limit_status_counts.get("unset", 0),
+                "rate": _rate(
+                    limit_status_counts.get("resolved", 0),
+                    limit_status_counts.get("resolved", 0)
+                    + limit_status_counts.get("active", 0),
+                ),
+                "target": 0.30,  # soft target — most limits remain active
             },
             "evidence_coverage": {
                 "relations_total": relations_total,
@@ -352,6 +377,17 @@ def format_text(stats):
             f"(target ≥{_pct(rc_bt['target'])})  "
             f"{_pass_fail(rc_bt['rate'], rc_bt['target'])}  "
             f"[{rc_bt['bounded_by_with_breakthrough_paths']}/{rc_bt['bounded_by_total']} BOUNDED-BY · v4.4 Phase B]"
+        )
+
+    # Limit-resolution rate (v4.5+)
+    lrr = rr.get("limit_resolution_rate")
+    if lrr and (lrr["active"] + lrr["resolved"] + lrr["conditional"] + lrr["refuted"]) > 0:
+        lines.append(
+            f"  1b. Limit Resolution Rate {_pct(lrr['rate']):>7}  "
+            f"(soft target ≥{_pct(lrr['target'])})  "
+            f"[resolved {lrr['resolved']} / active {lrr['active']} "
+            f"· cond {lrr['conditional']} · refuted {lrr['refuted']} "
+            f"· unset {lrr['unset']} · v4.5+]"
         )
 
     ec = rr["evidence_coverage"]

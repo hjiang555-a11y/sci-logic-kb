@@ -166,6 +166,12 @@ relations:
     dominated_by: null
     quantitative_contribution: "镀层主导（φ_IBS ~ 4×10⁻⁴，相比熔融石英底物 φ_FS ~ 10⁻⁶ 大 2–3 数量级）"
     regime: all
+    # v4.5+ limit_status：AlGaAs 晶体镀层演示后，IBS 介质镀层主导的热噪声
+    # 极限已退出"首要瓶颈"序列（在采用该镀层的实验中）。
+    limit_status: resolved
+    resolved_by:
+      - pri.crystalline_coating_low_brownian_noise
+    resolution_source: {zotero_key: "CWIHQRJD", claim: "tenfold reduction in mechanical damping when compared with the best dielectric multilayers"}
     verification_status: observed
     temporal_role: validates
     breakthrough_paths:

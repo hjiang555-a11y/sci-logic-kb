@@ -44,6 +44,7 @@ VALID_PREDICATES = frozenset({
     "DERIVED-FROM",
     "CONDITIONED-BY",
     "COMPETES-WITH",
+    "SHARED-WITH",  # v4.5+ : cross-topic public mechanism anchoring
 })
 
 DEPRECATED_PREDICATES = frozenset({
@@ -404,6 +405,254 @@ def check_invalid_id_prefix(all_nodes: list[dict[str, Any]]) -> list[Issue]:
     return issues
 
 
+# ── SHARED-WITH checks (v4.5+) ──────────────────────────────────────────────
+
+def _load_tier2_registry(repo: Path) -> set[str]:
+    """Parse `topics/shared/registry.md` §3 Tier 2 and return the set of
+    node IDs registered there.
+
+    Tier 2 table has a pipe-delimited row whose first `|`-enclosed cell is a
+    backticked node ID. We tolerate missing files by returning an empty set,
+    which causes all SHARED-WITH usage to fail lint — the intended default
+    for a misconfigured repo.
+    """
+    registry = repo / "topics" / "shared" / "registry.md"
+    if not registry.is_file():
+        return set()
+    try:
+        text = registry.read_text(encoding="utf-8", errors="replace")
+    except OSError:
+        return set()
+
+    ids: set[str] = set()
+    in_tier2 = False
+    for line in text.splitlines():
+        stripped = line.strip()
+        # Section boundaries: any "## " header toggles state
+        if stripped.startswith("## "):
+            # Robustly match "## 3." or lines containing "Tier 2"
+            if "Tier 2" in stripped or stripped.startswith("## 3"):
+                in_tier2 = True
+            else:
+                in_tier2 = False
+            continue
+        if not in_tier2:
+            continue
+        if not stripped.startswith("|"):
+            continue
+        # Table rows — first cell is the ID wrapped in backticks
+        cells = [c.strip() for c in stripped.strip("|").split("|")]
+        if not cells:
+            continue
+        first = cells[0]
+        # Skip header / separator rows
+        if first.startswith("---") or first.startswith(":---"):
+            continue
+        if first.startswith("`") and first.endswith("`"):
+            ids.add(first.strip("`"))
+    return ids
+
+
+def _file_topic(file_path: str) -> str | None:
+    """Extract the topic directory from a `topics/<topic>/papers/...` path."""
+    norm = file_path.replace("\\", "/")
+    parts = norm.split("/")
+    if "topics" in parts:
+        idx = parts.index("topics")
+        if idx + 1 < len(parts):
+            return parts[idx + 1]
+    return None
+
+
+def check_shared_with(
+    all_relations: list[dict[str, Any]],
+    all_nodes: list[dict[str, Any]],
+    node_defs: dict[str, list[str]],
+    repo: Path,
+) -> list[Issue]:
+    """13. SHARED-WITH usage rules (v4.5+).
+
+    Three rules:
+      a. object must be registered in `topics/shared/registry.md` §3 Tier 2
+      b. subject and object must belong to different topics
+      c. subject and object must both be `pri.*` or `meth.*`
+    """
+    issues: list[Issue] = []
+    tier2 = _load_tier2_registry(repo)
+
+    # Map node_id -> topic of its first defining file (if any)
+    node_topic: dict[str, str | None] = {}
+    for nid, files in node_defs.items():
+        if files:
+            node_topic[nid] = _file_topic(files[0])
+
+    for rel in all_relations:
+        if rel.get("predicate") != "SHARED-WITH":
+            continue
+        f = rel.get("_file", "?")
+        rid = rel.get("id", "?")
+        subj = rel.get("subject", "") or ""
+        obj = rel.get("object", "") or ""
+
+        # Rule c: prefix must be pri./meth. on both ends
+        for role, ref in (("subject", subj), ("object", obj)):
+            if not ref.startswith(("pri.", "meth.")):
+                issues.append(Issue(
+                    "ERROR", "shared-with-invalid-type", f,
+                    f"SHARED-WITH relation '{rid}' {role} '{ref}' is not a "
+                    f"pri.* or meth.* node (SHARED-WITH is only for principles/methods)",
+                ))
+
+        # Rule a: object must be in Tier 2 registry
+        if obj and obj not in tier2:
+            issues.append(Issue(
+                "ERROR", "shared-with-object-not-in-registry", f,
+                f"SHARED-WITH relation '{rid}' object '{obj}' is not "
+                f"registered in topics/shared/registry.md §3 Tier 2",
+            ))
+
+        # Rule b: cross-topic requirement
+        subj_topic = node_topic.get(subj) or _file_topic(f)
+        obj_topic = node_topic.get(obj)
+        if subj_topic and obj_topic and subj_topic == obj_topic:
+            issues.append(Issue(
+                "WARNING", "shared-with-same-topic", f,
+                f"SHARED-WITH relation '{rid}' subject and object are both in "
+                f"topic '{subj_topic}'; same-topic reuse should stay implicit "
+                f"(Tier 1), SHARED-WITH is for cross-topic anchoring",
+            ))
+
+    return issues
+
+
+# ── limit_status checks (v4.5+, BOUNDED-BY) ─────────────────────────────────
+
+VALID_LIMIT_STATUS = frozenset({"active", "conditional", "resolved", "refuted"})
+
+
+def check_limit_status(
+    all_relations: list[dict[str, Any]],
+    node_defs: dict[str, list[str]],
+) -> list[Issue]:
+    """14. BOUNDED-BY `limit_status` field (v4.5+).
+
+    Rules:
+      - If `limit_status` present, value must be one of VALID_LIMIT_STATUS
+      - If `limit_status == 'resolved'`, `resolved_by` MUST be a non-empty list
+        of pri.* / meth.* node IDs
+      - If any `breakthrough_paths[].status == 'demonstrated'`, the parent
+        BOUNDED-BY relation SHOULD carry `limit_status: resolved` (INFO nudge)
+    """
+    issues: list[Issue] = []
+    defined = set(node_defs.keys())
+
+    for rel in all_relations:
+        if rel.get("predicate") != "BOUNDED-BY":
+            continue
+        f = rel.get("_file", "?")
+        rid = rel.get("id", "?")
+        ls = rel.get("limit_status")
+        if ls is not None:
+            ls_norm = str(ls).strip().lower()
+            if ls_norm not in VALID_LIMIT_STATUS:
+                issues.append(Issue(
+                    "ERROR", "invalid-limit-status", f,
+                    f"BOUNDED-BY '{rid}' limit_status='{ls}' not in "
+                    f"{sorted(VALID_LIMIT_STATUS)}",
+                ))
+            elif ls_norm == "resolved":
+                rb = rel.get("resolved_by")
+                if not isinstance(rb, list) or not rb:
+                    issues.append(Issue(
+                        "ERROR", "limit-status-resolved-missing-resolved-by", f,
+                        f"BOUNDED-BY '{rid}' limit_status='resolved' requires "
+                        f"non-empty 'resolved_by' list of pri.*/meth.* node IDs",
+                    ))
+                else:
+                    for item in rb:
+                        if not isinstance(item, str):
+                            continue
+                        if not item.startswith(("pri.", "meth.")):
+                            issues.append(Issue(
+                                "ERROR", "limit-status-resolved-by-bad-ref", f,
+                                f"BOUNDED-BY '{rid}' resolved_by entry '{item}' "
+                                f"must be pri.* or meth.*",
+                            ))
+                        elif item not in defined:
+                            issues.append(Issue(
+                                "ERROR", "limit-status-resolved-by-dangling", f,
+                                f"BOUNDED-BY '{rid}' resolved_by '{item}' is "
+                                f"not defined in any YAML",
+                            ))
+        # Nudge: demonstrated breakthrough_path without resolved status
+        bp = rel.get("breakthrough_paths")
+        if isinstance(bp, list) and bp:
+            has_demonstrated = any(
+                isinstance(p, dict)
+                and str(p.get("status", "")).strip().lower() == "demonstrated"
+                for p in bp
+            )
+            if has_demonstrated:
+                ls_norm = str(rel.get("limit_status") or "").strip().lower()
+                if ls_norm not in ("resolved", "refuted"):
+                    issues.append(Issue(
+                        "INFO", "limit-status-missing-resolved-nudge", f,
+                        f"BOUNDED-BY '{rid}' has a breakthrough_path with "
+                        f"status='demonstrated' but limit_status is not "
+                        f"'resolved'; consider updating (SCHEMA §4.2, v4.5+)",
+                    ))
+    return issues
+
+
+# ── instance_of checks (v4.5+, Level 2 entities) ────────────────────────────
+
+def check_instance_of(
+    all_nodes: list[dict[str, Any]],
+    all_relations: list[dict[str, Any]],
+) -> list[Issue]:
+    """15. Optional `instance_of` field on entity nodes (v4.5+).
+
+    If an entity node declares `instance_of: <parent_ent_id>`, a matching
+    `PART-OF <parent_ent_id>` relation with the entity as subject MUST also
+    exist. This keeps the instance relationship first-class in the relation
+    graph without introducing a new predicate.
+    """
+    issues: list[Issue] = []
+
+    # Build set of (subject, object) pairs for PART-OF relations
+    part_of_pairs: set[tuple[str, str]] = set()
+    for rel in all_relations:
+        if rel.get("predicate") != "PART-OF":
+            continue
+        s = rel.get("subject")
+        o = rel.get("object")
+        if isinstance(s, str) and isinstance(o, str):
+            part_of_pairs.add((s, o))
+
+    for node in all_nodes:
+        if node["section"] != "entities":
+            continue
+        data = node["data"]
+        parent = data.get("instance_of")
+        if not parent:
+            continue
+        if not isinstance(parent, str) or not parent.startswith("ent."):
+            issues.append(Issue(
+                "ERROR", "instance-of-invalid", node["file"],
+                f"Entity '{node['id']}' has instance_of='{parent}' which is "
+                f"not an ent.* node ID",
+            ))
+            continue
+        nid = node["id"]
+        if (nid, parent) not in part_of_pairs:
+            issues.append(Issue(
+                "WARNING", "instance-of-missing-part-of", node["file"],
+                f"Entity '{nid}' declares instance_of: {parent} but no "
+                f"matching 'PART-OF {parent}' relation exists",
+            ))
+    return issues
+
+
 def check_missing_meta(
     yaml_paths: list[Path],
     file_metas: dict[str, dict[str, Any]],
@@ -520,6 +769,7 @@ def collect_yaml_paths(repo: Path, topic: str | None) -> list[Path]:
 
 def run_all_checks(
     yaml_paths: list[Path],
+    repo: Path | None = None,
 ) -> list[Issue]:
     """Run every check and return a flat list of issues."""
     node_defs, rel_defs, rel_refs, all_relations, all_nodes, file_metas = scan_files(yaml_paths)
@@ -537,6 +787,10 @@ def run_all_checks(
     issues.extend(check_invalid_id_prefix(all_nodes))
     issues.extend(check_missing_meta(yaml_paths, file_metas))
     issues.extend(check_breakthrough_primary_metric(yaml_paths, file_metas))
+    if repo is not None:
+        issues.extend(check_shared_with(all_relations, all_nodes, node_defs, repo))
+        issues.extend(check_limit_status(all_relations, node_defs))
+        issues.extend(check_instance_of(all_nodes, all_relations))
     return issues
 
 
@@ -654,8 +908,9 @@ def main(argv: list[str] | None = None) -> int:
                 file=sys.stderr,
             )
             return 1
+        repo = args.repo_path.resolve()
     else:
-        repo: Path = args.repo_path.resolve()
+        repo = args.repo_path.resolve()
         yaml_paths = collect_yaml_paths(repo, args.topic)
         if not yaml_paths:
             msg = f"No YAML files found under {repo / 'topics'}"
@@ -664,7 +919,7 @@ def main(argv: list[str] | None = None) -> int:
             print(msg, file=sys.stderr)
             return 1
 
-    issues = run_all_checks(yaml_paths)
+    issues = run_all_checks(yaml_paths, repo=repo)
 
     # Output
     if args.json_output:

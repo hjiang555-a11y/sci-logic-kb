@@ -104,6 +104,12 @@ relations:
     source: {zotero_key: "N6HILT6B", claim: "fundamentally limited by the Brownian thermal noise"}
     is_system_limit: true
     dominated_by: null
+    # v4.5+ limit_status：sub-5K 低温路径已演示 (4±1)×10⁻¹⁷，Brownian 热噪声
+    # 瓶颈在本系统内被冷却路径压制。保留对 AlGaAs 镀层这一并行路径的 proposed 状态。
+    limit_status: resolved
+    resolved_by:
+      - pri.cryogenic_mechanical_q_enhancement
+    resolution_source: {zotero_key: "N6HILT6B", claim: "10-cm-long silicon cavity at sub-5-K temperatures"}
     verification_status: observed
     temporal_role: validates
     breakthrough_paths:

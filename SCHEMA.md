@@ -624,7 +624,7 @@ key_parameters:
 
 ---
 
-## 五、八种关系类型
+## 五、九种关系类型
 
 ### 4.1 关系总览
 
@@ -638,6 +638,7 @@ key_parameters:
 | `DERIVED-FROM` | subject 原理由 object 原理推导 | `pri.cryogenic_mechanical_q_enhancement DERIVED-FROM pri.brownian_thermal_noise_fdt` |
 | `CONDITIONED-BY` | subject 的工作受 object 外部条件制约 | `ent.fp_cavity_system CONDITIONED-BY ent.vibration_environment` |
 | `COMPETES-WITH` | 同层级的并列方案，有权衡 | `ent.fp_cavity_system COMPETES-WITH ent.fiber_interferometer` |
+| `SHARED-WITH` (v4.5+) | subject 与 object 是跨专题同一机制的锚定 | `pri.local_hcf_thermal_noise SHARED-WITH pri.brownian_thermal_noise_fdt` |
 
 > **废弃**：`GOVERNED-BY`（已拆分为 ENABLED-BY + BOUNDED-BY）、`EQUIVALENT-IN-CONTEXT`（用共同 ENABLED-BY 表达）、`SUPPORTED-BY`（用 temporal_role 字段表达）、`BREAKTHROUGH-VIA`（已内化为原理节点的 `condition_variables` 字段）
 
@@ -651,11 +652,23 @@ key_parameters:
   confidence: established
   source: {zotero_key: "KEY", claim: "原文论断"}
 
-  # 限制状态（必填）
+  # 限制状态（v4.2 规范字段）
   is_system_limit: true           # 当前条件下是否为主动瓶颈
   dominated_by: null              # 若 false，填写压制它的原理 ID
   quantitative_contribution: "84%"  # 占总限制的比例（如已知）
   regime: all                     # all | short-term | long-term | during-sweep
+
+  # 限制状态枚举（v4.5+，与 breakthrough_paths.status 联动）
+  # active      — 当前条件下主动瓶颈（等价 is_system_limit: true）
+  # conditional — 被另一原理压制，条件变化会回归（等价 dominated_by 非空）
+  # resolved    — 已被工程路径突破并退出极限序列（需填 resolved_by）
+  # refuted     — 论断被后续实验证伪
+  # 未填则视为 unknown（历史数据兼容），lint 不强制。
+  limit_status: active
+  resolved_by: null               # 仅 limit_status=resolved 时必填：
+                                  # 列表，条目必须是 pri.* 或 meth.* 节点 ID
+  resolution_source: null         # 仅 limit_status=resolved 时建议填：
+                                  # {zotero_key: "...", claim: "原文论断"}
 
   # 认识论状态（Feynman 原则）
   verification_status: observed   # observed | calculated | inferred
@@ -676,6 +689,10 @@ key_parameters:
 ```
 
 > **突破路径**在 BOUNDED-BY 关系的 `breakthrough_paths` 字段中写，`direction` 必须引用 `pri.*` 或 `meth.*` 节点（不得引用 `ent.*`）。
+
+> **v4.5+ `limit_status` 联动规则**：当某条 `breakthrough_paths[].status == "demonstrated"` 时，其所属的 BOUNDED-BY 关系**建议**同步将 `limit_status` 从 `active` 改为 `resolved` 并补 `resolved_by`。lint 在发现该情况但 `limit_status` 仍为非 `resolved|refuted` 时发出 INFO-级 nudge（不阻塞）。`scripts/migrate_bounded_status.py` 可做批量初始推断。
+>
+> **新指标 `limit_resolution_rate`**：`scripts/stats.py` 基于 `limit_status` 新增一项"极限突破闭环率" `resolved / (active + resolved)`，补充原有 `reasoning_chain_closure`，量化"已突破 vs 仍卡死"。
 
 ### 4.3 CONDITIONED-BY 结构（外围条件接口）
 
@@ -721,6 +738,40 @@ key_parameters:
       subject: "high (vacuum, cryogenics)"
       object: "medium (fiber spool, thermal control)"
 ```
+
+### 4.5 SHARED-WITH 结构（跨专题公共机制锚定，v4.5+）
+
+> **定位**：`SHARED-WITH` 是第 9 种谓词，**仅**用于显式声明"本专题的这个原理/方法，与某个跨专题公共节点是同一机制"。它不替代 `DERIVED-FROM` / `PART-OF` / `ENABLED-BY`，而是为**跨专题叙事**提供清晰锚点。
+
+**触发条件（必要且充分）**：
+
+1. `object` 必须是登记在 [`topics/shared/registry.md`](topics/shared/registry.md) **§3 Tier 2 段**的 domain-level 公共节点（即事实上被 ≥ 2 个**不同专题**的论文引用）
+2. `subject` 必须与 `object` 的主页文件分属**不同专题目录**（`topics/<A>/` vs `topics/<B>/`；同专题复用走 Tier 1 隐式引用即可）
+3. `subject` 与 `object` 必须同为 `pri.*` 或 `meth.*`（不用于 `ent.*` / `met.*` — 这些走 `CONDITIONED-BY` / `OPERATIONALIZED-AS`）
+
+**方向**：`local_node SHARED-WITH shared_node`（单向，本地指向公共节点）。
+
+**结构**：
+
+```yaml
+- id: rel.X##
+  subject: pri.local_variant_or_anchor       # 本专题内的原理/方法（可以是 paper-local 节点）
+  predicate: SHARED-WITH
+  object: pri.brownian_thermal_noise_fdt     # 必须出现在 registry.md §3 Tier 2 表
+  confidence: established
+  source: {zotero_key: "KEY", claim: "原文论断（说明跨专题借用语义）"}
+  note: "跨专题锚定：说明 subject 在本专题的体现与 shared 节点的物理对应关系"
+```
+
+**lint 规则**（`scripts/lint.py`，v4.5+）：
+
+| 违规 | 级别 | 说明 |
+|------|------|------|
+| `SHARED-WITH.object` 不在 `registry.md §3 Tier 2` | ERROR | 防止滥用；若确需扩展 Tier 2，应先补 registry |
+| `subject` 与 `object.defining_file` 属同一专题目录 | WARNING | 同专题复用应降级为 Tier 1 隐式引用 |
+| `subject` / `object` 不是 `pri.*` / `meth.*` | ERROR | 实体/指标不用此谓词 |
+
+**关键原则**：SHARED-WITH 应**稀有、显式、有溯源**。不追求数量——目标是为跨专题"公共机制"提供 navigable 锚点，不是补丁式连接谓词。
 
 ---
 
