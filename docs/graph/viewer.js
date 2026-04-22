@@ -60,7 +60,12 @@
     const c = document.getElementById(containerId);
     c.innerHTML = "";
     [...values].sort().forEach(v => {
-      const id = containerId + "_" + btoa(unescape(encodeURIComponent(v))).replace(/=/g, "");
+      // Build a safe id suffix from any string, including non-ASCII labels.
+      // btoa requires binary-string input, so UTF-8-encode via TextEncoder.
+      const bytes = new TextEncoder().encode(v);
+      let binary = "";
+      bytes.forEach(b => { binary += String.fromCharCode(b); });
+      const id = containerId + "_" + btoa(binary).replace(/=/g, "");
       const wrap = document.createElement("label");
       const cb = document.createElement("input");
       cb.type = "checkbox"; cb.checked = true; cb.dataset.value = v; cb.id = id;

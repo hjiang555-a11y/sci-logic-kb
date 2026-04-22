@@ -908,17 +908,16 @@ def main(argv: list[str] | None = None) -> int:
                 file=sys.stderr,
             )
             return 1
-        repo = args.repo_path.resolve()
     else:
-        repo = args.repo_path.resolve()
-        yaml_paths = collect_yaml_paths(repo, args.topic)
+        yaml_paths = collect_yaml_paths(args.repo_path.resolve(), args.topic)
         if not yaml_paths:
-            msg = f"No YAML files found under {repo / 'topics'}"
+            msg = f"No YAML files found under {args.repo_path.resolve() / 'topics'}"
             if args.topic:
                 msg += f" for topic '{args.topic}'"
             print(msg, file=sys.stderr)
             return 1
 
+    repo = args.repo_path.resolve()
     issues = run_all_checks(yaml_paths, repo=repo)
 
     # Output

@@ -56,7 +56,11 @@ def infer(rel: dict) -> tuple[str, list[str]]:
     if demonstrated:
         # Deduplicate while preserving order
         seen: set[str] = set()
-        uniq = [d for d in directions if not (d in seen or seen.add(d))]
+        uniq: list[str] = []
+        for d in directions:
+            if d not in seen:
+                seen.add(d)
+                uniq.append(d)
         return "resolved", uniq
     is_limit = rel.get("is_system_limit")
     if is_limit is False:
