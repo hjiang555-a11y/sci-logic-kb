@@ -2,7 +2,7 @@
 
 > 这份文档解决一个问题：**作为时间频率计量领域的研究者，我要怎么"用"这个知识库？**
 >
-> 它不是 Schema（→ [SCHEMA.md](../SCHEMA.md)），也不是建设规范（→ [CONTRIBUTING.md](../CONTRIBUTING.md)），而是**读者视角的导航手册**。
+> 它不是 Schema（→ [SCHEMA.md](../SCHEMA.md)），也不是建设规范（→ [CONTRIBUTING.md](../CONTRIBUTING.md)），更不是审核入口（→ [REVIEW_GUIDE.md](REVIEW_GUIDE.md)），而是**读者视角的导航手册**。
 
 ---
 

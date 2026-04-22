@@ -4,6 +4,7 @@
 >
 > 补充关系：
 > - 规范（真源）：[SCHEMA.md](SCHEMA.md)
+> - 审核入口（专家视角）：[docs/REVIEW_GUIDE.md](docs/REVIEW_GUIDE.md)
 > - 使用指南（读者视角）：[docs/USAGE.md](docs/USAGE.md)
 > - AI 协作行为：[CLAUDE.md](CLAUDE.md) · [.github/copilot-instructions.md](.github/copilot-instructions.md)
 
