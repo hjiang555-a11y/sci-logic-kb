@@ -124,7 +124,7 @@ relations:
       本关系承接 Diddams 2000（第一篇完整 f-2f 演示，已在 Batch 1 摄入）与本综述之间的历史逻辑。
 
   - id: rel.Did10_02
-    type: ENABLES
+    predicate: CHARACTERIZED-BY
     subject: ent.optical_frequency_comb_diddams2010
     object: pri.ofc_functional_definition_2010
     context: "定义性特征"
@@ -133,5 +133,5 @@ relations:
       claim: "a frequency comb is the optical output of a mode-locked laser for which the parameters f_n, n, f_r, and f_o are measured and controlled"
     breakthrough_paths: []
     note: >
-      ENABLES 关系：OFC 作为系统实现了 pri.ofc_functional_definition_2010 所定义的功能性特征——
+      CHARACTERIZED-BY 关系：OFC 作为系统由 pri.ofc_functional_definition_2010 所定义的功能性特征刻画——
       这是 OFC 与普通飞秒激光器的本质区别。

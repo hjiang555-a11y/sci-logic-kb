@@ -123,16 +123,16 @@ relations:
       通过 Kerr 非线性不对称原理实现该能力。补 breakthrough_paths（breakthrough tier）。
 
   - id: rel.Ide02
-    type: ENABLES
-    subject: ent.klm_bidirectional_ring_dual_comb_i16
-    object: meth.single_cavity_dual_comb_spectroscopy_i16
+    predicate: ENABLED-BY
+    subject: meth.single_cavity_dual_comb_spectroscopy_i16
+    object: ent.klm_bidirectional_ring_dual_comb_i16
     context: "单腔双梳光谱方法可行性"
     source:
       zotero_key: "PBGQXUED"
       claim: "To show its utility, we demonstrate broadband dual-comb spectroscopy with the single laser."
     breakthrough_paths: []
     note: >
-      ENABLES 关系：单腔双梳激光器使"无主动锁相的双梳光谱"方法可行，简化传统双梳系统。
+      ENABLED-BY 关系：无主动锁相双梳光谱方法由单腔 KLM 双向环形激光器使能，简化传统双梳系统。
 
 methods:
   - id: meth.single_cavity_dual_comb_spectroscopy_i16
