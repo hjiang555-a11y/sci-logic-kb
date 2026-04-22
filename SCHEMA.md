@@ -1,9 +1,16 @@
 # sci-logic-kb YAML 知识提取模式文档
 
-> **版本**：v4.4（2026-04-21）
-> **变更摘要**：v4.4 正式化论文贡献三档分级（§9.1）——`breakthrough` / `evidence` / `framework`。`evidence` 档位明确为大多数论文的合法归宿，放宽 chain-gap / orphan 要求，从源头提升信号/噪声比。同步更新 YAML 模板（§六）默认值为 `evidence`、补充向后兼容映射（§9.2）；未强制批量迁移历史 YAML 文件，改为触及时归一化。
+> **版本**：v4.5（2026-04-22）
+> **变更摘要（v4.5）**：
+> 1. **新增第 9 种谓词 `SHARED-WITH`**（§5）— 用于**显式跨专题**锚定到 `topics/shared/registry.md §3 Tier 2` 中登记的 domain-level 公共节点。仅用于 `pri.*` / `meth.*`。附 lint 双规则（Tier 2 注册白名单 + 跨专题要求）。
+> 2. **`BOUNDED-BY` 扩展 `limit_status` 四态枚举**（§4.2） — `active | conditional | resolved | refuted`，与 `breakthrough_paths.status` 联动；`stats.py` 新增 `limit_resolution_rate` 量化"已突破 vs 仍卡死"。保留 `is_system_limit` 以兼容。
+> 3. **实体节点新增可选 `instance_of` 字段**（§1 实例节点原则） — 声明 Level 2 参数变体指向其 Level 1 父实体；**不升格为 INSTANCE-OF 谓词**，进入一年观察窗口。
+> 4. **freshness CI 正式化**（`docs/USAGE.md`） — `scripts/freshness.py` 改用 git-log 时间戳；新 workflow `synthesis-freshness.yml` 自动打 `needs-refresh` 标签 + sticky 评论。
+> 5. **交互式图谱可视化** — `scripts/graph.py --format cytoscape` + `docs/graph/` 静态 Cytoscape.js 浏览器。
+>
+> **上版变更（v4.4）**：v4.4 正式化论文贡献三档分级（§9.1）——`breakthrough` / `evidence` / `framework`。`evidence` 档位明确为大多数论文的合法归宿，放宽 chain-gap / orphan 要求，从源头提升信号/噪声比。同步更新 YAML 模板（§六）默认值为 `evidence`、补充向后兼容映射（§9.2）；未强制批量迁移历史 YAML 文件，改为触及时归一化。
 > **上版变更（v4.3）**：v4.3 在 v4.2 基础上完成 P0 整固——新增 5 个自动化脚本（stats/lint/build_index/graph/freshness）、CI 集成（kb-lint-stats.yml）、分层 INDEX 架构（自动生成）、专题 _meta/ 目录、6 项推理就绪度量定义（§10.8）、节点粒度自检清单（§10.9）。INDEX.md 改为脚本生成，不再手工维护。
-> **向后兼容**：v3.2 YAML 文件无需修改内容即可在 v4.4 下使用。历史 `contribution_type` 非规范值（`technical` / `technical_breakthrough` / `methodology` / …）按 §9.2 映射表解读，lint 不报错。新建文件应使用 `# Schema版本：v4.4`。
+> **向后兼容**：v3.2 / v4.x YAML 文件无需修改内容即可在 v4.5 下使用。v4.5 新字段（`limit_status` / `resolved_by` / `instance_of`）均为**可选**，历史关系沿用 `is_system_limit` 语义。历史 `contribution_type` 非规范值按 §9.2 映射表解读，lint 不报错。新建文件应使用 `# Schema版本：v4.5`。
 
 ---
 
@@ -47,7 +54,7 @@
 - 若节点拥有独立的 `BOUNDED-BY` / `ENABLED-BY` / `CHARACTERIZED-BY` / `COMPETES-WITH` 关系，或可被多篇论文复用引用 → 保留为独立节点
 - 若单个节点内容过重，但内部存在多个可复用、可单独查询的机制/部件/争议点 → 允许向下分解为子节点，而不是继续堆字段
 
-### 实例节点原则（v3.0 新增）
+### 实例节点原则（v3.0 新增；v4.5 补 `instance_of` 字段）
 
 > **同一类型频率参考的不同参数配置（材料、温度、腔长）为"实例"（Level 2），不是独立竞争方案。**
 
@@ -58,6 +65,21 @@
 **边界判断**：
 - "参数变体"（→ Level 2 实例）：同一物理工作原理，仅改变材料/温度/腔长（如 ULE 腔 vs Si 腔、124K vs 17K）
 - "不同类型"（→ Level 1 独立节点）：工作原理本质不同（如 FP 腔谐振 vs 光纤延迟线非谐振），拥有独立的设计选择空间
+
+**v4.5+ `instance_of` 字段**（可选，entity 节点）：
+
+```yaml
+entities:
+  - id: ent.si_crystal_fp_cavity_sub5k_c25
+    name: "Sub-5 K Si 晶体 FP 腔（Chen 2025）"
+    level: 2
+    instance_of: ent.fp_cavity_system   # 指向其 Level 1 父实体
+```
+
+- 语义：声明当前 entity 是其父 Level 1 实体的**参数变体实例**
+- lint（`scripts/lint.py`）：若 `instance_of` 存在，则必须有一条 `{nid} PART-OF {parent}` 关系，否则 WARNING
+- 用途：查询"某 Level 1 实体的所有实例变体" 一次属性扫描即可命中
+- **不引入新谓词**：该字段**不升格**为 `INSTANCE-OF` 谓词。一年观察窗口内若 ≥ 20 个节点使用且图算法上开始明显分化，再重新评估（决策：v4.5 TODO 书面记录为长期观察项）。
 
 ### 跨分支原理隔离原则（v3.1 新增）
 

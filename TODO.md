@@ -115,16 +115,16 @@
 ## 🛠️ 开发 / 工具 / CI
 
 ### Round 4 延后项
-- [ ] CI 集成 freshness 检查：synthesis 页面依赖的 yaml 更新时自动标 `needs-refresh` 标签
-- [ ] 探索 graph.py 输出的交互式可视化（d3 / cytoscape）
+- [x] CI 集成 freshness 检查：synthesis 页面依赖的 yaml 更新时自动标 `needs-refresh` 标签（2026-04-22，v4.5；`.github/workflows/synthesis-freshness.yml` + `scripts/freshness.py --json`，git-log 时间戳）
+- [x] 探索 graph.py 输出的交互式可视化（d3 / cytoscape）（2026-04-22，v4.5；Cytoscape.js，静态 `docs/graph/index.html` + `docs/graph/viewer.js`，`bash scripts/build_graph_view.sh` 一键刷新）
 
 ---
 
 ## 📋 Schema / 架构层面
 
-- [ ] 评估是否需要新增"`status: resolved`"字段到 BOUNDED-BY 关系（当限制已被工程超越时）
-- [ ] 评估 `INSTANCE-OF` 是否作为正式谓词（或继续用 `PART-OF` 表示 Level 2 参数变体）
-- [ ] 评估 `SHARED-WITH` 关系的使用规范（当前零使用，需要实际案例触发规则定稿）
+- [x] 评估是否需要新增"`status: resolved`"字段到 BOUNDED-BY 关系（当限制已被工程超越时）（2026-04-22，v4.5；采用 4 态枚举 `limit_status: active | conditional | resolved | refuted` + `resolved_by` + `resolution_source`，见 SCHEMA §4.2；stats 新增 `limit_resolution_rate` 指标；migrator `scripts/migrate_bounded_status.py`；3 条示范落地：`cole2013.C05` / `hafner2015.H05` / `chen2025.Che02`）
+- [x] 评估 `INSTANCE-OF` 是否作为正式谓词（或继续用 `PART-OF` 表示 Level 2 参数变体）（2026-04-22 **决策：不新增谓词**；改为在 `ent.*` 上新增可选字段 `instance_of`，配套 lint 一致性检查；进入一年观察窗口，≥ 20 节点使用后再评估升格。已回填 3 节点：`chen2025.si_crystal_fp_cavity_sub5k_c25` / `chen2020.cubic_dual_cavity_c20` / `hafner2015.self_balancing_long_cavity_h15`）
+- [x] 评估 `SHARED-WITH` 关系的使用规范（当前零使用，需要实际案例触发规则定稿）（2026-04-22，v4.5；正式纳入第 9 种谓词，SCHEMA §5 规定触发条件 / 禁用场景 / lint 双规则；`topics/shared/registry.md §3` Tier 2 作为白名单唯一源；首批真实 SHARED-WITH 关系待下一篇在 OFC/频率标准定义 thermal-noise 变体原理的论文触发）
 
 ---
 

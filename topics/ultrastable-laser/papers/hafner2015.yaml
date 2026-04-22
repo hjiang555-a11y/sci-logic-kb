@@ -32,6 +32,7 @@ entities:
     name: "自平衡安装长 ULE 腔（Häfner 2015）"
     aliases: ["48 cm ULE cavity PTB", "self-balancing mount cavity", "long room-temperature cavity 2015"]
     hierarchy_level: 2
+    instance_of: ent.fp_cavity_system   # v4.5+ 长腔（48 cm）+ 自平衡安装参数变体
     status: demonstrated
     function: >
       48 cm 长 ULE 间隔物 FP 腔，采用自平衡安装（self-balancing mount）：

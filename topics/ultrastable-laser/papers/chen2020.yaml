@@ -25,6 +25,7 @@ entities:
     name: "10 cm 立方双 FP 腔（Chen 2020）"
     aliases: ["cubic spacer dual cavity", "Chen 2020 cubic cavity"]
     hierarchy_level: 2
+    instance_of: ent.fp_cavity_system   # v4.5+ Level 2 参数变体锚定（立方间隔物）
     status: demonstrated
     function: >
       10 cm 立方 ULE 间隔物，两对正交 FP 腔共享同一间隔物，

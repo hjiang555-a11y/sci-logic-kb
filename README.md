@@ -70,6 +70,8 @@
 
 > 首次打开仓库？推荐阅读顺序：[`INDEX.md`](INDEX.md) 顶部的"🧭 按研究问题导航"→ [`docs/USAGE.md`](docs/USAGE.md)。
 
+> **交互式图谱可视化（v4.5+）**：`docs/graph/index.html` 提供基于 [Cytoscape.js](https://js.cytoscape.org/) 的只读图浏览，支持按 type / topic / tier 上色、按节点 ID 搜索、按谓词过滤。本地预览：`python -m http.server 8000 --directory docs/graph`，然后打开 <http://localhost:8000>。数据刷新：`bash scripts/build_graph_view.sh`。
+
 ## 目录结构
 
 ```

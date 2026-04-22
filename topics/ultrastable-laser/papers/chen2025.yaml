@@ -32,6 +32,7 @@ entities:
     name: "Sub-5K 10 cm 硅单晶 FP 腔（Chen 2025，Si1）"
     aliases: ["Si1 cavity", "10-cm Si cavity sub-5K", "PKU sub-5K Si cavity"]
     hierarchy_level: 2
+    instance_of: ent.fp_cavity_system   # v4.5+ 参数变体显式锚定
     status: demonstrated
     function: >
       10 cm 硅单晶 FP 腔，工作于 sub-5 K（利用 Si CTE 在低温趋近零的特性，α→0 as T→0），
