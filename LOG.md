@@ -7,6 +7,18 @@
 
 ---
 
+## [2026-04-22] restructure | 现状评估 + TODO/说明文档状态对齐
+
+- 基于 `lint.py --summary` / `stats.py` / `freshness.py --check` 刷新当前基线：170 篇论文、0 error / 3 warning / 188 info、Reasoning Chain Closure 76.6%、Synthesis Coverage 1/4、Cross-file Reuse 8.7%、超稳激光 8 个 synthesis 页面 stale。
+- `TODO.md` 从"阶段 A–D0 完成播报"切换为"阶段 D（专家审阅 + 覆盖扩展）准备中"，新增现状快照与后续建议，明确下一轮重点是 **OFC synthesis 启动 + USL freshness 收口**。
+- `README.md` / `TOPICS.md` / `SCHEMA.md` / `CONTRIBUTING.md` 对齐当前论文数、专题状态与操作口径：
+  - OFC 论文数改为 90；频率标准 / 时间标尺改为 1 篇 framework；目录路径纠正为 `frequency-standards/`、`timescales/`
+  - README 移除失效的 `validate.py` / 每日同步表述，改为当前 lint/stats/freshness workflow
+  - CONTRIBUTING 本地验证改为全库 lint（避免 `--topic` 下跨专题 dangling-ref 假阳性），文件头版本改为 v4.5
+- `.github/PULL_REQUEST_TEMPLATE.md` / `.github/copilot-instructions.md` 同步到 v4.5 文档口径。
+
+---
+
 ## [2026-04-22] schema | Schema v4.4 → v4.5 · SHARED-WITH 谓词 + BOUNDED-BY limit_status 枚举 + entity.instance_of 字段 + CI freshness + Cytoscape 可视化
 
 **一次性发布 v4.5，关闭所有历史 Schema/工具 TODO（TODO-1/2/3/5 完成；TODO-4 落地为 `instance_of` 字段，`INSTANCE-OF` 谓词升格进入一年观察窗口）**。

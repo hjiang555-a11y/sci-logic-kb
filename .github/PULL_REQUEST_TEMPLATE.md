@@ -35,8 +35,8 @@ Closes #
 - [ ] 检查是否影响现有 synthesis 页面（若影响，已标 `needs-refresh` 或已更新）
 
 ### 若涉及 Schema / 规范变更
-- [ ] SCHEMA.md 同步更新 + 版本号 bump
-- [ ] 受影响的下游文件已同步（README / CLAUDE.md / copilot-instructions / templates）
+- [ ] SCHEMA.md 已更新；若语义变更，已补版本号与变更摘要
+- [ ] 已按 SCHEMA 的文档同步原则处理：必要时重跑 `python scripts/build_index.py`，冲突处以 `SCHEMA.md` 为准
 - [ ] LOG.md 追加 `schema` 类型条目
 
 ### 若涉及综合页

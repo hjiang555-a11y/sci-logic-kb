@@ -100,7 +100,7 @@ sci-logic-kb/
 │   │   ├── synthesis/            # 跨论文综合分析页面（derived view）
 │   │   ├── _meta/                # 专题架构图与元数据
 │   │   └── INDEX.md              # ← 自动生成，专题详表
-│   ├── optical-frequency-combs/  # 光学频率梳（61篇论文）
+│   ├── optical-frequency-combs/  # 光学频率梳（90篇论文）
 │   ├── frequency-standards/      # 频率标准（光学+微波）
 │   ├── time-frequency-transfer/  # 时间频率传递
 │   ├── timescales/               # 时间标尺与钟组
@@ -115,13 +115,13 @@ sci-logic-kb/
 ### 1. 添加新论文
 
 ```bash
-# 进入专题目录
-cd topics/ultrastable-laser/papers/
+# 在仓库根目录执行
 
 # 创建 YAML 文件（参考现有模板）
-# 编辑文件，填写节点、关系、问题‑解决方案‑结果链条
-# 运行验证脚本
-python ../../scripts/validate.py your_paper.yaml
+# 编辑文件，填写节点、关系、指标与必要的推理链条
+python scripts/lint.py --summary
+python scripts/stats.py
+python scripts/build_index.py
 ```
 
 ### 2. 使用知识库
@@ -149,7 +149,13 @@ grep -r "ent.fp_cavity_system" topics/
 
 ### 3. 重新梳理现有论文（当前重点）
 
-我们正在对超稳激光专题（78篇论文）进行系统性重新梳理，重点强化 **问题‑解决方案‑结果** 推理链条。具体步骤参见 [REORGANIZATION_PLAN.md](REORGANIZATION_PLAN.md)。
+超稳激光专题（78 篇）Round 1–4 主线整治已基本闭环；当前工作重心转为：
+
+- 收口超稳激光 `synthesis/` 页面的 freshness / 专家签字尾项
+- 为光学频率梳专题（90 篇）补首批 synthesis 页面与跨论文综述入口
+- 推进跨专题复用度与下游骨架专题的代表论文摄入
+
+统一待办与建议见 [`TODO.md`](TODO.md)；历史整治背景见 [`reports/REORGANIZATION_PLAN.md`](reports/REORGANIZATION_PLAN.md)。
 
 ## 知识库运维（v4.3 更新）
 
@@ -172,16 +178,16 @@ Raw Sources (Zotero PDF) → YAML 节点图 (source of truth) → 运维层 (IND
 
 ### 自动化流水线
 
-- **每日同步**：GitHub Actions 自动将最新更改同步到 Obsidian 知识库（通过 REST API）
-- **验证检查**：每次提交自动运行 `validate.py`，确保 YAML 符合 SCHEMA
-- **统计报告**：每周生成知识库规模、节点分布、关系密度等指标
+- **知识库校验**：`kb-lint-stats.yml` 在相关 PR / push 上运行 `lint.py`、`stats.py` 与 freshness 检查
+- **综合页新鲜度**：`synthesis-freshness.yml` 会在 PR 中自动标记 `needs-refresh`
+- **论文处理**：`process-paper*.yml` 支持自动化处理 / 回填工作流
 
 ### 贡献指南
 
 1. **选择专题**：优先从「当前重点」专题开始（见 SCHEMA.md 中的「建设优先级建议」）
 2. **遵循 SCHEMA**：所有 YAML 文件必须符合 SCHEMA.md 规范
 3. **保持一致性**：新节点 ID 使用已有命名约定，避免冲突
-4. **添加推理链条**：每篇论文必须显式标注 `open_questions`、`breakthrough_paths`、`verification_status`
+4. **按档位补结构**：`breakthrough` 论文补完整推理链；`evidence` 论文至少挂已有节点、relation 与可溯源指标
 
 完整流程（Step 1–10 摄入 checklist）见 [CONTRIBUTING.md](CONTRIBUTING.md)。
 

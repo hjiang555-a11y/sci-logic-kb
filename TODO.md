@@ -9,7 +9,17 @@
 
 ---
 
-## 📌 当前优先级：阶段 A（机制落地闭环）已完成 · 阶段 B（档位感知）已完成 · 阶段 C（breakthrough 档位真缺口清零）已完成 · 阶段 D-0（整治手册沉淀 P2/P3）已完成 · **P2 Tier 3 批准落地 + P3 尾巴收口已完成（2026-04-21 晚批次）** — 等待专家审核进入阶段 D
+## 📌 当前优先级：**阶段 D（专家审阅 + 覆盖扩展）准备中** — v4.5 基线已稳定（2026-04-22）
+
+> **现状快照（基于 `python scripts/lint.py --summary` / `python scripts/stats.py` / `python scripts/freshness.py --check`）**
+>
+> - 库存：**170 篇论文**（超稳激光 78 / 光学频率梳 90 / 频率标准 1 / 时间标尺 1）
+> - 质量基线：**lint 0 error / 3 warning / 188 info**
+> - 推理指标：Reasoning Chain Closure **76.6%**；breakthrough-only **100%**；Evidence Coverage **100%**；Condition Completeness **98.8%**
+> - 结构瓶颈：**Synthesis Coverage 仅 1/4 topic**；Cross-file Reuse **8.7%**
+> - 维护瓶颈：freshness 检查显示**超稳激光 8/8 个 synthesis 页面 stale**
+>
+> **建议结论**：超稳激光专题已经从"主线闭环建设"转入"维护收口"；下一轮系统投入应转向**光学频率梳 synthesis 启动**，同时把超稳激光综合页 freshness / 专家签字收尾。
 
 > **v4.4 机制落地进度（2026-04-21）**：按"先形成工作机制再扩展规模"迭代计划：
 >
@@ -30,7 +40,7 @@
 >   - chain-gap：7 → 0（`chen2025.Che02` · `kedar2023.Ked03` · `numata2004.N04/N05` · `webster2008.We08_01` · `zhang2014_ram.Z14_01/Z14_05` 全部补 `breakthrough_paths`）
 >   - orphan（breakthrough 档位）：15 → 0（14 个方法节点 + 1 个原理节点 `pri.ram_bias_field_cancellation` 全部挂关系）
 >   - lint 结果：0 error / 3 warning（仅 3 条 `missing-conditions` 遗留，且均属 evidence 档，非阶段 C 范围）
-> - ⏳ **阶段 D**：沉淀专题整治手册，再启动其他专题扩展
+> - ⏳ **阶段 D**：完成专家审阅、综合页 freshness 收口，并把方法论迁移到光学频率梳专题
 
 ### 超稳激光（重点整治专题）
 
@@ -65,6 +75,7 @@
 - [x] `spectral_hole_burning_track.md` — 无数值错误可改（定性表述为主），标注需专家深度参与
 - [x] `breakthrough_paths_matrix.md` — 追加"阶段 C 后刷新日志"，记录 Parke 2025 等单元格更新
 - **P3 AI 机械可闭环项均已完成**（ram_and_pdh 的 parke2025 源文件登记已在既有 PR 中落地）。遗留动作全部属于专家决策/风格选择：
+  - [ ] 统一处理 freshness 报警的 8 个超稳激光 synthesis 页面（逐页刷新或在 header 明确延后）
   - [ ] 专家确认 Kedar 2023 在 cryogenic_roadmap 单列行 vs 合并行（呈现）
   - [ ] 专家确认 fiber_stabilization 的「子分支 SOTA 按时标分桶」呈现风格
   - [ ] 专家决定 Chen 2020 / Sanjuan 2019 的 κ 是补入对应 YAML metrics 还是页面改为定性（这一决策也影响 Hafner 2020 κz 表格是否加列）
@@ -75,15 +86,17 @@
 
 ### 光学频率梳（已入库待深化）
 
-- [ ] 修 36 条低成本 lint warnings（主要是 `missing-conditions`）
-- [ ] 其他整固（orphan、chain-gap）延后到未来轮次
-- [ ] 无综合页面（`synthesis/`），未来可参考超稳激光专题模式补建
+> **现状**：已入库 **90 篇**，三层架构与 9 条子域主线已明确，但 `synthesis/` 仍为空，是当前全库最大的读者入口缺口。
+- [ ] 建立首批 synthesis 页面（建议最小集：频率综合 / 双梳光谱 / 微梳平台 / 光谱应用）
+- [ ] 把 9 条子域主线映射到页面结构，明确"哪个页面服务哪个查询"
+- [ ] 梳理 OFC ↔ USL / 频率标准 的跨专题接口节点，优先提升可复用 `pri.*` / `meth.*`
+- [ ] 其他 orphan / chain-gap 整固延后到 synthesis 骨架搭起之后
 
 ---
 
 ### 频率标准（骨架）
 
-> **状态**：仅接受新摄入，不投入整治资源
+> **状态**：1 篇 framework；仅接受新摄入，不投入整治资源
 - [ ] 摄入 ≥ 3 篇代表论文（光钟类：Sr、Yb、Hg、Al⁺；微波类：Cs fountain、H-maser）
 - [ ] 激活 Level 1 实体节点
 
@@ -91,7 +104,7 @@
 
 ### 时间标尺与钟组（骨架）
 
-> **状态**：仅接受新摄入
+> **状态**：1 篇 framework；仅接受新摄入
 - [ ] 摄入 UTC/TAI 综述、本地 UTC(k) 实现、Kalman 合成算法论文
 
 ---
@@ -117,12 +130,13 @@
 ### Round 4 延后项
 - [x] CI 集成 freshness 检查：synthesis 页面依赖的 yaml 更新时自动标 `needs-refresh` 标签（2026-04-22，v4.5；`.github/workflows/synthesis-freshness.yml` + `scripts/freshness.py --json`，git-log 时间戳）
 - [x] 探索 graph.py 输出的交互式可视化（d3 / cytoscape）（2026-04-22，v4.5；Cytoscape.js，静态 `docs/graph/index.html` + `docs/graph/viewer.js`，`bash scripts/build_graph_view.sh` 一键刷新）
+- [ ] 固化"文档状态对齐"维护约定：涉及论文数 / 专题状态 / 当前重点的文档统一以 `stats.py`、`PROCESSED_PAPERS.md` 与 `TODO.md` 为对照源
 
 ---
 
 ## 📋 Schema / 架构层面
 
-- [x] 评估是否需要新增"`status: resolved`"字段到 BOUNDED-BY 关系（当限制已被工程超越时）（2026-04-22，v4.5；采用 4 态枚举 `limit_status: active | conditional | resolved | refuted` + `resolved_by` + `resolution_source`，见 SCHEMA §4.2；stats 新增 `limit_resolution_rate` 指标；migrator `scripts/migrate_bounded_status.py`；3 条示范落地：`cole2013.C05` / `hafner2015.H05` / `chen2025.Che02`）
+- [x] 评估是否需要新增 `limit_status: resolved` 字段到 BOUNDED-BY 关系（当限制已被工程超越时）（2026-04-22，v4.5；采用 4 态枚举 `limit_status: active | conditional | resolved | refuted` + `resolved_by` + `resolution_source`，见 SCHEMA §4.2；stats 新增 `limit_resolution_rate` 指标；migrator `scripts/migrate_bounded_status.py`；3 条示范落地：`cole2013.C05` / `hafner2015.H05` / `chen2025.Che02`）
 - [x] 评估 `INSTANCE-OF` 是否作为正式谓词（或继续用 `PART-OF` 表示 Level 2 参数变体）（2026-04-22 **决策：不新增谓词**；改为在 `ent.*` 上新增可选字段 `instance_of`，配套 lint 一致性检查；进入一年观察窗口，≥ 20 节点使用后再评估升格。已回填 3 节点：`chen2025.si_crystal_fp_cavity_sub5k_c25` / `chen2020.cubic_dual_cavity_c20` / `hafner2015.self_balancing_long_cavity_h15`）
 - [x] 评估 `SHARED-WITH` 关系的使用规范（当前零使用，需要实际案例触发规则定稿）（2026-04-22，v4.5；正式纳入第 9 种谓词，SCHEMA §5 规定触发条件 / 禁用场景 / lint 双规则；`topics/shared/registry.md §3` Tier 2 作为白名单唯一源；首批真实 SHARED-WITH 关系待下一篇在 OFC/频率标准定义 thermal-noise 变体原理的论文触发）
 

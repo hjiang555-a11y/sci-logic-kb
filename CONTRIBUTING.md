@@ -60,7 +60,7 @@
 
 ### Step 7 · 文件保存
 - [ ] 位置：`topics/<topic>/papers/{first_author_lower}{year}.yaml`
-- [ ] 文件头：`# Schema版本：v4.3`
+- [ ] 文件头：`# Schema版本：v4.5`
 - [ ] ID 全局唯一（`grep -r "ent.new_id" topics/` 验证）
 
 ### Step 8 · 运维文件同步
@@ -70,7 +70,7 @@
 
 ### Step 9 · 本地验证（必须全过）
 ```bash
-python scripts/lint.py --topic <topic> --summary   # 0 errors
+python scripts/lint.py --summary                   # 0 errors（权威检查；跨专题引用需全库解析）
 python scripts/stats.py                            # 6 指标不倒退
 python scripts/build_index.py                      # 重建 INDEX
 ```
@@ -116,7 +116,7 @@ python scripts/build_index.py                      # 重建 INDEX
 - ✋ **节点新建 / 删除**：尤其是 pri.* 层级的 domain / foundational 节点
 - ✋ **争议裁决**：`contested_claims` 的最终判定
 - ✋ **Schema 演进**：SCHEMA.md 的任何修改
-- ✋ **限制的生命周期**：何时把限制标 `status: resolved`
+- ✋ **限制的生命周期**：何时把限制标 `limit_status: resolved`
 - ✋ **跨专题节点提升**：从单专题 ent/pri 提升到 `topics/shared/`
 
 ### AI 可自主完成的事项

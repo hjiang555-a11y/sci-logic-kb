@@ -1,6 +1,6 @@
 # GitHub Copilot 任务说明 — sci-logic-kb
 
-> **最高规则**：若本文件与 `SCHEMA.md` 冲突，**一律以 `SCHEMA.md` 为准**（当前版本 v4.4）。
+> **最高规则**：若本文件与 `SCHEMA.md` 冲突，**一律以 `SCHEMA.md` 为准**（当前版本 v4.5）。
 
 ## 项目定位
 
