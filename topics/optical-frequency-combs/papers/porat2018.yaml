@@ -1,0 +1,161 @@
+# Porat 2018 — 首次相位匹配 XUV 频率梳（77 MHz 高温气体）[breakthrough]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-22
+# Schema版本：v4.4
+# 专题：optical-frequency-combs
+# contribution_type: breakthrough（首次在高重频飞秒增强腔内实现相位匹配 XUV 高次谐波频率梳产生，单次谐波功率达 ~2 mW）
+
+meta:
+  zotero_key: "L88UAAEQ"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: breakthrough
+  reliability: high
+  title: "Phase-matched extreme-ultraviolet frequency-comb generation"
+  year: 2018
+  first_author: Porat
+  journal: "Nature Photonics"
+  volume: 12
+  issue: 7
+  pages: "387-391"
+  doi: "10.1038/s41566-018-0199-z"
+  note: >
+    [技术论文 / 里程碑] JILA (Porat, Heyl, Schoun, Benko, Dörre, Corwin, Ye) 2018 年 Nature Photonics。
+    首次在 f_rep = 77 MHz 飞秒增强腔内实现**相位匹配的 XUV 高次谐波频率梳产生**——
+    此前高重频（>10 MHz）HHG 系统受稳态等离子体积累阻碍，无法达成相位匹配，XUV 功率受限于 μW 级。
+    本工作引入**高温混合气体**（Ar+He，背压温度 T 高达 800 K）提升原子平动速度 v_gas ∝ √(RT/M_avg)，
+    将束流逗留时间参数 ξ_beam = σ_FWHM/(v_gas·τ_rep) 降至 ξ_beam < 1，使稳态等离子体分数大幅降低 → 相位匹配条件恢复。
+    实现单次谐波（单个 XUV 波长）功率 ~2 mW（先前最高 <100 μW），为 XUV 频率梳光谱、量子基准测试提供实用化光源。
+    v2 子域主线：B-Spec（XUV 波段扩展）主线首次突破 — 刷新高重频 HHG 相位匹配纪录 + XUV 单谐波功率纪录。
+
+entities:
+  - id: ent.high_temp_gas_mixture_hhg_p18
+    name: "高温混合气体 HHG 系统（Porat 2018）"
+    aliases:
+      - hot gas mixture XUV comb
+      - phase-matched 77 MHz XUV generation
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      在飞秒增强腔焦点引入高温（T ≤ 800 K）Ar+He 混合气体，通过提升气体平动速度降低稳态等离子体积累，
+      实现 f_rep = 77 MHz、相位匹配的 XUV 高次谐波频率梳产生。
+      背压加热使原子热运动速度 v_gas = √(RT/M_avg) 提升 √8 倍（300 K → 800 K），
+      束流逗留参数 ξ_beam 从 >>1 降至 <1 → 稳态等离子体密度降低两个数量级 → 中性气体色散恢复主导 → 相位匹配可达成。
+    key_parameters:
+      repetition_rate: "77 MHz（高重频飞秒增强腔，腔内功率 ~10 kW）"
+      gas_mixture: "Ar + He（可变摩尔比）"
+      backing_temperature: "T ≤ 800 K（背压加热）"
+      translational_velocity: "v_gas = √(RT/M_avg)，T=800 K 时 v_gas ≈ 500 m/s（Ar 主导）"
+      beam_dwell_parameter: "ξ_beam = σ_FWHM/(v_gas·τ_rep) < 1（稳态等离子体抑制条件）"
+      steady_state_ionization: "η_steady ~ 10⁻²（T=800 K），vs. ~1（T=300 K）"
+      xuv_power_per_harmonic: "~2 mW（单谐波，~100 nm 波段）"
+      xuv_photon_flux: "~10¹⁴ photons/s（单谐波）"
+      phase_matching: "通过平衡中性气体色散 + Gouy 相移 + HHG 内禀相位实现"
+    note: >
+      Level 2 实例节点，PART-OF pri.cavity_enhanced_hhg_comb（定义于 zhang2022.yaml，Batch 2）。
+      首次将腔增强 HHG 梳的相位匹配可行重频从 <10 MHz 推至 77 MHz，为 XUV 频率梳光谱学打开实用化路径。
+
+principles:
+  - id: pri.high_temp_gas_suppresses_steady_state_plasma_p18
+    name: "高温气体抑制高重频 HHG 稳态等离子体原理（Porat 2018）"
+    tier: domain
+    verification_status: observed
+    statement: >
+      "在高重频（f_rep > 10 MHz）飞秒增强腔 HHG 中，稳态等离子体积累是阻碍相位匹配的根本原因——
+      每个脉冲产生的离子在下一脉冲到来前未能清空焦点，逐渐积累形成高密度等离子体，其色散完全掩盖中性气体色散，
+      使相位匹配无法达成。通过提升气体背压温度 T，原子平动速度 v_gas ∝ √(RT/M_avg) 提升，
+      束流逗留参数 ξ_beam = (beam_diameter)/(v_gas·τ_rep) 降低 → 稳态等离子体密度指数级下降 → 相位匹配恢复。"
+      Porat 2018 实验证明：T = 300 K 时 η_steady ~ 1（完全电离），T = 800 K 时 η_steady ~ 10⁻²（<1% 电离），
+      使 77 MHz HHG 从"不可相位匹配"变为"可相位匹配"，XUV 功率提升 ~20 倍。
+    domain: "高次谐波产生；高重频 XUV 频率梳；非线性光学相位匹配"
+    key_insight: >
+      高重频 HHG 的核心瓶颈不是峰值功率（腔增强可解决），而是"稳态等离子体积累破坏相位匹配"——
+      只有当 ξ_beam < 1（原子在下一脉冲到来前飞离焦点）时，稳态等离子体才能被抑制；
+      加热气体是提升 v_gas 的直接手段，比降低 f_rep（技术路线倒退）或用更轻的气体（限制谐波阶数）更优。
+    conditions: >
+      需高精细度飞秒增强腔（f_rep ≥ 10 MHz，腔内功率 ≥ 10 kW）；
+      需气体喷嘴背压加热系统（T ≤ 800 K）；需 Ar+He 混合比优化以平衡 HHG 效率与等离子体色散；
+      需精密对焦（beam waist < 50 μm）与气体密度梯度控制。
+    formula: >
+      ξ_beam = σ_FWHM / (v_gas · τ_rep)，其中 v_gas = √(RT/M_avg)；
+      η_steady ∝ exp(-ξ_beam)（定性标度）；
+      相位匹配条件：Δk = k_HHG - q·k_laser + Δk_Gouy + Δk_plasma ≈ 0（Δk_plasma 降低至可补偿）
+    source:
+      zotero_key: "L88UAAEQ"
+      claim: >
+        "we use high-temperature gas mixtures as the generation medium to increase the gas translational velocity, 
+        thereby reducing the steady-state plasma in the laser focus. 
+        This allows phase-matched XUV emission inside a femtosecond enhancement cavity at f_rep = 77 MHz, 
+        enabling a record generated power of ~2 mW in a single harmonic order."
+    breakthrough_paths:
+      - step: 1
+        entity: pri.cavity_enhanced_hhg_comb
+        context: "飞秒增强腔 HHG 频率梳的相位匹配可行性在高重频（>10 MHz）下受稳态等离子体积累限制"
+      - step: 2
+        entity: pri.high_temp_gas_suppresses_steady_state_plasma_p18
+        context: "通过提升气体背压温度至 800 K，将 ξ_beam 降至 <1，稳态等离子体密度降低两个数量级，相位匹配恢复"
+      - step: 3
+        entity: ent.high_temp_gas_mixture_hhg_p18
+        context: "实现 77 MHz 相位匹配 XUV 梳产生，单谐波功率 ~2 mW（先前纪录 <100 μW，提升 20 倍），为 XUV 频率梳光谱学提供实用化光源"
+
+relations:
+  - id: rel.Por01
+    predicate: BOUNDED-BY
+    subject: ent.high_temp_gas_mixture_hhg_p18
+    object: pri.high_temp_gas_suppresses_steady_state_plasma_p18
+    context: "高重频相位匹配 HHG 可行性"
+    source:
+      zotero_key: "L88UAAEQ"
+      claim: >
+        "Having identified the steady-state plasma as the main limitation for phase matching, 
+        we study its formation dynamics... by using high-temperature gas mixtures to increase v_gas, 
+        we reduce ξ_beam and enable phase-matched XUV emission at 77 MHz"
+    breakthrough_paths:
+      - step: 1
+        entity: pri.cavity_enhanced_hhg_comb
+        context: "飞秒增强腔 HHG 频率梳的基本工作原理：腔内功率增强 + 气体喷嘴交汇实现高重频 HHG"
+      - step: 2
+        entity: pri.high_temp_gas_suppresses_steady_state_plasma_p18
+        context: "高温气体抑制稳态等离子体原理：v_gas↑ → ξ_beam↓ → η_steady↓ → 相位匹配恢复"
+      - step: 3
+        entity: ent.high_temp_gas_mixture_hhg_p18
+        context: "应用该原理实现 77 MHz 相位匹配 XUV 梳，单谐波功率 ~2 mW（世界纪录）"
+    note: >
+      BOUNDED-BY 关系：高重频相位匹配 HHG 的可行性受"稳态等离子体积累"限制，
+      通过高温气体（提升 v_gas）突破该限制。补 breakthrough_paths（本论文为 breakthrough tier）。
+
+  - id: rel.Por02
+    predicate: CHARACTERIZED-BY
+    subject: ent.high_temp_gas_mixture_hhg_p18
+    object: met.xuv_harmonic_power_p18
+    context: "XUV 单谐波功率表征"
+    source:
+      zotero_key: "L88UAAEQ"
+      claim: "enabling a record generated power of ~2 mW in a single harmonic order"
+    breakthrough_paths: []
+    note: >
+      CHARACTERIZED-BY 关系：XUV 单谐波功率是该系统的关键性能指标，
+      ~2 mW 为 2018 年高重频 HHG 梳的世界纪录（刷新 B-Spec 子域主线）。
+
+metrics:
+  - id: met.xuv_harmonic_power_p18
+    name: "XUV 单谐波功率（Porat 2018）"
+    status: demonstrated
+    demonstrated_value:
+      value: "~2 mW"
+      unit: "mW"
+      conditions: >
+        f_rep = 77 MHz 飞秒增强腔，Ar+He 混合气体（背压温度 T = 800 K），
+        相位匹配条件，单个 XUV 谐波波长（~100 nm 波段），腔内泵浦功率 ~10 kW。
+      measurement_method: "校准光电探测器 + XUV 单色仪"
+      comparison:
+        - context: "先前高重频（77 MHz）HHG 梳最高功率"
+          reference_value: "<100 μW（无相位匹配）"
+          note: "本工作通过高温气体恢复相位匹配，提升功率 ~20 倍"
+        - context: "低重频（<1 MHz）HHG 梳单谐波功率"
+          reference_value: "~10 mW–100 mW（相位匹配条件下）"
+          note: "高重频梳功率仍比低重频梳低一个数量级，但计数统计优势使其更适合光谱学应用"
+    note: >
+      该指标刷新 2018 年 B-Spec（XUV 波段扩展）子域主线纪录——
+      首次在高重频（>10 MHz）HHG 梳中达成相位匹配并获得 mW 级 XUV 单谐波功率，
+      为 XUV 频率梳光谱学（He⁺、H 原子基准测试）提供实用化光源。

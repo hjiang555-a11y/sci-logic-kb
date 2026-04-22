@@ -2,7 +2,7 @@
 
 # Ultrastable Laser — Topic Index
 
-> Auto-generated 2026-04-21 14:58 UTC · 78 papers · 337 nodes · 341 relations
+> Auto-generated 2026-04-22 03:54 UTC · 78 papers · 337 nodes · 341 relations
 
 ## Entities
 

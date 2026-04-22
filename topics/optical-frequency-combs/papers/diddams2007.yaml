@@ -1,0 +1,123 @@
+# Diddams 2007 — 首个分辨梳模式分子指纹光谱（VIPA 色散）[breakthrough]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-22
+# Schema版本：v4.4
+# 专题：optical-frequency-combs
+# contribution_type: breakthrough（首次用 VIPA 高分辨色散器空间分辨单个梳齿，实现分子指纹图谱二维成像）
+
+meta:
+  zotero_key: "U9WDX7JI"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: breakthrough
+  reliability: high
+  title: "Molecular fingerprinting with the resolved modes of a femtosecond laser frequency comb"
+  year: 2007
+  first_author: Diddams
+  journal: "Nature"
+  volume: 445
+  issue: 7128
+  pages: "627-630"
+  doi: "10.1038/nature05524"
+  note: >
+    [技术论文 / 里程碑] NIST Boulder (Diddams, Hollberg, Mbele) 2007 年 Nature。
+    首次用 **VIPA（virtually imaged phased array）高分辨色散器**空间分辨稳定频率梳的单个梳齿（1 GHz 间距），
+    将梳齿排列为二维阵列（x 方向：VIPA 色散 ~50 GHz FSR，y 方向：光栅色散 ~THz 范围），
+    实现**分辨梳模式的分子指纹光谱成像**——每个"点"代表一根梳齿，覆盖 >6 THz 带宽（633 ± 5 nm 区域），
+    采集时间数毫秒（CCD 并行读出）。
+    演示了碘分子蒸气（I₂）高分辨吸收谱，**直接可视化数千梳齿的分子指纹调制**（每根齿的振幅独立测量）。
+    开创了"并行梳齿访问"光谱学范式，为高带宽扩频通信、相干量子控制、任意光学波形合成提供技术路径。
+    v2 子域主线：B-Spec（光谱展宽/波长扩展）主线——首次空间分辨梳齿 + 分子光谱成像（刷新梳齿访问方式纪录）。
+
+entities:
+  - id: ent.vipa_resolved_mode_comb_spectrometer_d07
+    name: "VIPA 分辨梳模式光谱仪（Diddams 2007）"
+    aliases:
+      - VIPA comb spectrometer
+      - resolved-mode frequency comb spectrometer
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      用 VIPA 高分辨色散器（FSR ~50 GHz）+ 衍射光栅（覆盖 THz 范围）将稳定 Ti:sapph 梳（1 GHz 间距）
+      空间分辨为二维阵列：x 方向（VIPA 色散）分辨单个梳齿（3 GHz 经 Fabry-Pérot 滤波后），
+      y 方向（光栅色散）覆盖宽带（>6 THz）；CCD 成像并行读出数千梳齿的振幅（分子吸收调制），
+      采集时间数毫秒（vs. 扫描单齿需数分钟），实现高速分子指纹图谱二维成像。
+    key_parameters:
+      source_comb: "Ti:sapph 梳 1 GHz（经 Fabry-Pérot 滤波至 3 GHz 间距）"
+      vipa_fsr: "~50 GHz（自由光谱范围）"
+      grating_dispersion: "覆盖 THz 范围（y 方向）"
+      spatial_resolution: '每个梳齿对应二维阵列中一个"点"（x-y 坐标唯一）'
+      spectral_coverage: ">6 THz（633 ± 5 nm 区域）"
+      acquisition_time: "数毫秒（CCD 并行读出，vs. 扫描单齿需分钟）"
+      demonstrated_molecule: "碘分子蒸气（I₂）高分辨吸收谱"
+    note: >
+      Level 2 实例节点，属于光谱仪分支。
+      首次将"频率梳"从"时域脉冲列"或"频域拍频信号"升级为"空间并行光场阵列"——
+      每根齿可独立访问、调制、测量，开创了"并行梳齿访问"光谱学范式。
+
+principles:
+  - id: pri.vipa_spatial_comb_mode_resolution_d07
+    name: "VIPA 空间分辨梳模式原理（Diddams 2007）"
+    tier: domain
+    verification_status: observed
+    statement: >
+      "VIPA（virtually imaged phased array）色散器通过多重反射干涉产生高角色散（~50 GHz FSR），
+      可将频率梳的单个梳齿（1 GHz 间距，经 Fabry-Pérot 滤波至 3 GHz）空间分辨为一维阵列；
+      结合衍射光栅（覆盖 THz 范围）形成二维空间频率映射：x 方向分辨单齿（VIPA），y 方向覆盖宽带（光栅）。
+      CCD 成像并行读出 → 数千梳齿的振幅同时测量（分子吸收调制） → 数毫秒采集完整分子指纹图谱。"
+      Diddams 2007 证明：VIPA 分辨梳齿可实现高速（ms 级）、宽带（>6 THz）、高分辨（单齿可辨）分子光谱成像，
+      超越传统"扫描单齿"或"拍频探测"方法（串行，慢）。
+    domain: "高分辨光谱学；频率梳工程；色散光学器件"
+    key_insight: >
+      频率梳的本质优势不仅是"梳齿频率精确已知"（用于频率计量），
+      还在于"数千齿并行存在"——若能空间分辨（而非时域/频域拍频检测），
+      则可实现"百万激光器阵列"效果（每齿独立可控、可测），适用于高带宽扩频通信、相干量子控制、任意波形合成等。
+      VIPA 是实现"空间并行梳齿访问"的关键技术——高色散（FSR ~50 GHz）+ 紧凑（vs. 衍射光栅需数米焦距）。
+    conditions: >
+      需稳定频率梳（f_rep 与 f_CEO 锁定）；需 Fabry-Pérot 滤波（降低梳齿密度至 VIPA FSR 可分辨）；
+      需 VIPA 高分辨色散器 + 衍射光栅组合（二维空间频率映射）；需 CCD 成像（并行读出）。
+    formula: "VIPA 角色散：dθ/dλ ~ FSR/λ²（高色散）；空间分辨率：Δλ ~ λ²/(FSR·光束质量）（单齿可辨）"
+    source:
+      zotero_key: "U9WDX7JI"
+      claim: >
+        "Here we use a high-resolution disperser to separate the individual modes of a stabilized frequency comb 
+        into a two-dimensional array in the image plane of the spectrometer. 
+        ...Our technique for direct and parallel accessing of stabilized frequency comb modes 
+        could find application in high-bandwidth spread-spectrum communications with increased security, 
+        high-resolution coherent quantum control, and arbitrary optical waveform synthesis with control at the optical radian level."
+    breakthrough_paths:
+      - step: 1
+        entity: pri.femtosecond_comb_frequency_ruler
+        context: "飞秒激光频率梳：脉冲序列形成精密频率标尺原理（跨文件引用 udem2002.yaml）"
+      - step: 2
+        entity: pri.vipa_spatial_comb_mode_resolution_d07
+        context: "VIPA 空间分辨梳齿原理：二维色散器将梳齿映射为空间阵列，CCD 并行读出 → 数千齿振幅同时测量"
+      - step: 3
+        entity: ent.vipa_resolved_mode_comb_spectrometer_d07
+        context: "应用该原理实现首个分辨梳模式分子指纹光谱仪（世界首次，2007），演示碘分子蒸气高分辨吸收谱，采集时间数毫秒"
+
+relations:
+  - id: rel.Did07_01
+    predicate: BOUNDED-BY
+    subject: ent.vipa_resolved_mode_comb_spectrometer_d07
+    object: pri.vipa_spatial_comb_mode_resolution_d07
+    context: "并行梳齿访问可行性"
+    source:
+      zotero_key: "U9WDX7JI"
+      claim: >
+        "an efficient means of simultaneously identifying, addressing and measuring the amplitude or relative phase 
+        of individual modes has not existed. Here we use a high-resolution disperser to separate the individual modes 
+        of a stabilized frequency comb into a two-dimensional array in the image plane of the spectrometer."
+    breakthrough_paths:
+      - step: 1
+        entity: pri.femtosecond_comb_frequency_ruler
+        context: "飞秒梳频率标尺基本原理（跨文件引用 udem2002.yaml）"
+      - step: 2
+        entity: pri.vipa_spatial_comb_mode_resolution_d07
+        context: "VIPA 空间分辨梳齿原理：二维色散 + CCD 并行读出 → 数千齿同时访问"
+      - step: 3
+        entity: ent.vipa_resolved_mode_comb_spectrometer_d07
+        context: "应用该原理实现首个分辨梳模式光谱仪（世界首次，2007）"
+    note: >
+      BOUNDED-BY 关系：并行梳齿访问的可行性受"空间分辨能力"限制，
+      通过 VIPA 高分辨色散器突破。补 breakthrough_paths（breakthrough tier）。

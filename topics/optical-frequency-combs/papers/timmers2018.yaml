@@ -1,0 +1,130 @@
+# Timmers 2018 — 宽带中红外梳分子指纹图谱（OP-GaP 超八度）[breakthrough]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-22
+# Schema版本：v4.4
+# 专题：optical-frequency-combs
+# contribution_type: breakthrough（首次用脉冲内 DFG + OP-GaP 晶体实现超八度分子指纹区梳光谱，亮度匹敌同步辐射）
+
+meta:
+  zotero_key: "TFUBQQB8"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: breakthrough
+  reliability: high
+  title: "Molecular fingerprinting with bright, broadband infrared frequency combs"
+  year: 2018
+  first_author: Timmers
+  journal: "Optica"
+  volume: 5
+  issue: 6
+  pages: "727-732"
+  doi: "10.1364/OPTICA.5.000727"
+  note: >
+    [技术论文 / 里程碑] NIST Boulder (Timmers, Kowligy, Lind, Cruz, Nader, Silfies, Ycas, Allison, Schunemann, Papp, Diddams) 2018 年 Optica。
+    首次用**脉冲内差频（intra-pulse DFG）+ OP-GaP 晶体**实现超八度（4–12 μm，覆盖分子指纹区）
+    中红外频率梳，亮度匹敌同步辐射红外光束线——克服传统 FTIR 热光源低亮度限制。
+    基于 Er:fiber 梳（100 MHz）+ EDFA + 正常色散 HNLF 展宽至少周期脉冲（~10 fs），
+    经 OP-GaP 准相位匹配 χ² DFG 产生 4–12 μm 超八度 LWIR 梳（0.25 mW 总功率，500,000 梳齿）；
+    演示甲醇/乙醇双梳光谱，分辨率 100 MHz（0.0033 cm⁻¹），频率不确定度 <10⁻¹¹，采集速率 20 ms。
+    开创了"桌面超宽带高亮度分子指纹梳"路线，为红外纳米光谱/生物医学成像提供新工具。
+    v2 子域主线：B-MIR（中红外光谱）主线——刷新指纹区梳功率 + 带宽纪录。
+
+entities:
+  - id: ent.opgap_super_octave_mir_comb_t18
+    name: "OP-GaP 超八度中红外频率梳（Timmers 2018）"
+    aliases:
+      - intra-pulse DFG mid-IR comb
+      - molecular fingerprint frequency comb
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      基于 Er:fiber 梳（100 MHz）+ EDFA + 正常色散 HNLF 产生少周期脉冲（~10 fs），
+      经 OP-GaP（取向图案化 GaP）晶体准相位匹配χ² 脉冲内差频（intra-pulse DFG），
+      产生 4–12 μm 超八度中红外频率梳（覆盖分子指纹区 2500–830 cm⁻¹），
+      0.25 mW 总功率，亮度匹敌同步辐射（synchrotron IR beamline）。
+      用于双梳光谱（DCS）实现甲醇/乙醇高分辨（100 MHz）分子指纹测量。
+    key_parameters:
+      source_comb: "Er:fiber 梳 100 MHz + EDFA 放大 + 正常色散 HNLF 展宽"
+      pump_pulse: "~10 fs 少周期脉冲（~1.5 μm 中心）"
+      nonlinear_medium: "OP-GaP（取向图案化 GaP，准相位匹配 χ²）"
+      output_spectrum: "4–12 μm 超八度（2500–830 cm⁻¹，覆盖分子指纹区）"
+      total_power: "0.25 mW（4–12 μm 总功率）"
+      mode_count: "500,000 梳齿"
+      spectral_resolution: "100 MHz（0.0033 cm⁻¹，受 f_rep 限制）"
+      frequency_accuracy: "<10⁻¹¹（相对微波标准）"
+      brightness: "匹敌同步辐射红外光束线"
+      acquisition_rate: "20 ms（DCS 配置）"
+    note: >
+      Level 2 实例节点，属于中红外频率梳（ent.mid_ir_frequency_comb）分支。
+      首次将桌面中红外梳亮度提升至同步辐射水平，为红外纳米光谱/生物医学成像提供实用化光源。
+
+principles:
+  - id: pri.intra_pulse_dfg_super_octave_mir_t18
+    name: "脉冲内差频超八度中红外梳产生原理（Timmers 2018）"
+    tier: domain
+    verification_status: observed
+    statement: >
+      "少周期脉冲（~10 fs，~1.5 μm 中心）包含宽带频率成分（Δf ~ 100 THz），
+      在 χ² 非线性晶体（OP-GaP 准相位匹配）中发生脉冲内差频（intra-pulse DFG）：
+      高频成分与低频成分在单个脉冲内混频 → 产生中红外（4–12 μm）光子。
+      关键优势：(1) f_CEO 自然抵消（f_DFG = f_high - f_low = (n·f_rep + f_CEO) - (m·f_rep + f_CEO) = (n-m)·f_rep，无偏移频率）；
+      (2) 超八度带宽（泵浦谱宽直接映射到 DFG 输出）；(3) 相位稳定（单脉冲过程，无 CEO 漂移）。"
+      Timmers 2018 证明：OP-GaP 准相位匹配可高效支持 4–12 μm 超宽带 DFG，
+      输出功率 0.25 mW（vs. 传统 DFG <μW），亮度匹敌同步辐射。
+    domain: "中红外非线性光学；频率梳工程；分子光谱学"
+    key_insight: >
+      中红外梳的核心瓶颈不是"覆盖带宽"（DFG 天然宽带），而是"输出功率 + 亮度"——
+      传统 DFG 用 CW 激光器或窄带泵浦，功率 <μW；脉冲内 DFG 用少周期脉冲（高峰值功率）+ OP-GaP（高 χ²），
+      功率提升至 mW 级，亮度匹敌同步辐射（synchrotron IR）→ 桌面分子指纹光谱可行。
+    conditions: >
+      需少周期泵浦脉冲（<20 fs，峰值功率 >MW）；需宽带准相位匹配非线性晶体（OP-GaP 支持 4–12 μm）；
+      需精密色散补偿（ND-HNLF + fused silica wedges）；需 DCS 配置（双梳读出）。
+    formula: >
+      f_DFG,i = (n-m)·f_rep（无 f_CEO，相位稳定）；
+      带宽 Δλ_DFG ~ Δλ_pump²/λ_center（超八度泵浦 → 超八度输出）；
+      亮度 B ~ P_DFG / (Δλ·Δθ)（匹敌同步辐射）
+    source:
+      zotero_key: "TFUBQQB8"
+      claim: >
+        "we introduce a solution for bright, stabilized LWIR frequency combs based on intra-pulse DFG 
+        using a few-cycle pulse derived from commonplace and robust Er:fiber laser technology... 
+        we generate spectra containing up to 0.25 mW of power and spanning 4–12 μm, 
+        with this simple and robust table-top source, we produce coherent, broadband infrared light 
+        exhibiting comparable brightness to an infrared beamline at synchrotron user facilities."
+    breakthrough_paths:
+      - step: 1
+        entity: pri.nonlinear_frequency_conversion_comb
+        context: "非线性频率转换梳产生原理（DFG 基本工作原理，跨文件引用 schliesser2012.yaml）"
+      - step: 2
+        entity: pri.intra_pulse_dfg_super_octave_mir_t18
+        context: "脉冲内 DFG 超八度中红外梳原理：少周期脉冲 + OP-GaP 准相位匹配 → 4–12 μm 超宽带输出，功率 0.25 mW，亮度匹敌同步辐射"
+      - step: 3
+        entity: ent.opgap_super_octave_mir_comb_t18
+        context: "应用该原理实现首个桌面超八度分子指纹梳（世界首次，2018），演示甲醇/乙醇双梳光谱，分辨率 100 MHz，采集速率 20 ms"
+
+relations:
+  - id: rel.Tim01
+    predicate: BOUNDED-BY
+    subject: ent.opgap_super_octave_mir_comb_t18
+    object: pri.intra_pulse_dfg_super_octave_mir_t18
+    context: "桌面高亮度分子指纹梳可行性"
+    source:
+      zotero_key: "TFUBQQB8"
+      claim: >
+        "Despite decades of interest and effort, this portion of the electromagnetic spectrum remains challenging 
+        to cover with conventional laser technologies. ...we introduce a solution for bright, stabilized LWIR frequency combs 
+        based on intra-pulse DFG using a few-cycle pulse... exhibiting comparable brightness to an infrared beamline 
+        at synchrotron user facilities."
+    breakthrough_paths:
+      - step: 1
+        entity: pri.nonlinear_frequency_conversion_comb
+        context: "DFG 基本原理（跨文件引用 schliesser2012.yaml）"
+      - step: 2
+        entity: pri.intra_pulse_dfg_super_octave_mir_t18
+        context: "脉冲内 DFG + OP-GaP 超八度梳原理：功率 0.25 mW，亮度匹敌同步辐射"
+      - step: 3
+        entity: ent.opgap_super_octave_mir_comb_t18
+        context: "应用该原理实现首个桌面超八度分子指纹梳（世界首次）"
+    note: >
+      BOUNDED-BY 关系：桌面高亮度分子指纹梳的可行性受"输出功率 + 亮度"限制，
+      通过脉冲内 DFG + OP-GaP 准相位匹配突破。补 breakthrough_paths（breakthrough tier）。

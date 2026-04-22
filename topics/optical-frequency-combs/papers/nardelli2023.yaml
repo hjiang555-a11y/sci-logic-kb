@@ -1,0 +1,155 @@
+# Nardelli 2023 — Er/Yb:glass 500 MHz 梳 10⁻¹⁸ 级光学与微波综合
+# 提取者：GitHub Copilot（AI草稿，2026-04-22）
+# 提取日期：2026-04-22
+# Schema版本：v4.3
+# 专题：optical-frequency-combs
+# contribution_type: evidence（首台 Er/Yb:glass 平台梳达到 Ti:sapph 同级综合性能，未刷新跨平台纪录）
+
+meta:
+  zotero_key: "R9HNIBTE"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Optical and Microwave Metrology at the 10⁻¹⁸ Level with an Er/Yb:glass Frequency Comb"
+  year: 2023
+  first_author: Nardelli
+  journal: "Laser & Photonics Reviews"
+  volume: 17
+  issue: "未明示"
+  pages: "2200650"
+  doi: "10.1002/lpor.202200650"
+  note: >
+    [技术论文] NIST Boulder + CU Boulder (Schibli)。基于 Er/Yb:glass 共掺杂磷酸盐玻璃增益介质 + SESAM 锁模的
+    500 MHz 自由空间腔频率梳，完成双超稳光参考（1157 nm / 1070 nm）稳频锁定与低噪声光生微波产生：
+    (1) SESAM 自启锁模 + 低腔损（65 mW 输出，180 fs 脉宽）；
+    (2) 双 CW 超稳激光同时锁定 frep + fceo，拍频 Allan 偏差达到 10⁻¹⁸ @ 1 s（与 Ti:sapph 同级）；
+    (3) 光电探测产生 500 MHz 微波，相位噪声与 Ti:sapph 相当；
+    (4) 平台优势：紧凑、低固有噪声（co-doping 抑制泵浦 RIN）、无需精密对准。
+    本工作是 Er/Yb:glass 平台首次达到 10⁻¹⁸ 级综合性能，但不刷新跨平台纪录（Ti:sapph 已达），
+    归 evidence。对齐 v2 子域主线：A1-Noise（低相噪，整体式腔）、B-FreqSyn（光学频率综合）。
+
+entities:
+  - id: ent.er_yb_glass_comb_nardelli23
+    name: "Er/Yb:glass 500 MHz 频率梳（Nardelli 2023）"
+    aliases:
+      - Er/Yb:glass frequency comb (NIST 2023)
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      Er/Yb 共掺杂磷酸盐玻璃晶体（QX/Er，2 mm，0.8% Er + 21% Yb）+ 自由空间线性腔（600 cm，frep ≈ 500 MHz）
+      + SESAM 锁模 + 980 nm 二极管泵浦（450 mW）→ 65 mW 输出、180 fs 脉宽；
+      经 EDFA + HNLF 非线性展宽至倍频程 → f-2f 自参考；
+      双自由度（frep + fceo）同时锁定至两台超稳激光（1157 nm / 1070 nm），拍频稳定度 <10⁻¹⁸ @ 1 s；
+      光电探测产生 500 MHz 微波（相位噪声与 Ti:sapph 同级）。
+    key_parameters:
+      gain_medium: "Er/Yb:glass (QX/Er, 2mm, 0.8%Er+21%Yb, τ_upper=7.9 ms)"
+      repetition_rate: "500 MHz（自由光谱范围 frep=fFSR）"
+      pulse_width: "180 fs（transform-limited）"
+      output_power: "65 mW（泵浦 450 mW @ 980 nm）"
+      mode_locking: "SESAM（半导体可饱和吸收镜）自启模式锁定"
+      f2f_method: "EDFA + HNLF 超连续展宽 + f-2f 干涉仪"
+      dual_optical_lock: "frep → 1070 nm USL, fceo → 1157 nm USL"
+      beat_stability: "<10⁻¹⁸ @ 1 s（Allan 偏差，与 Ti:sapph 同级）"
+    note: "Level 2 实例节点，PART-OF ent.optical_frequency_comb（定义于 giunta2019.yaml）"
+
+principles:
+  - id: pri.er_yb_co_doping_pump_noise_suppression_n23
+    name: "Er/Yb 共掺杂抑制泵浦强度噪声耦合原理（Nardelli 2023）"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      Er³⁺ 对 980 nm 吸收弱，Yb³⁺ 吸收强；共掺杂后能量转移链路为"980 nm → Yb³⁺ excited (⁴F₅/₂) → Er³⁺ excited (⁴I₁₁/₂) → Er³⁺ laser state (⁴I₁₃/₂) → 1550 nm"。
+      Yb³⁺ 作为中间缓冲层，高频泵浦 RIN 被长寿命增益介质平滑（τ_upper ~ 7.9 ms），对 fceo 高频噪声耦合低于
+      单掺 Er:fiber 平台。同时磷酸盐玻璃高声子能量使 ⁴I₁₁/₂ 寿命缩短至 2-3 µs，降低 Er→Yb 逆转移，提高泵浦效率。
+    domain: "固体激光增益介质；锁模激光动力学"
+    key_insight: >
+      "Er/Yb:glass 梳的低固有噪声既源于低腔损（自由空间对准，非光纤拼接损耗），
+      也源于增益介质本身的能量转移路径对泵浦 RIN 的高频滤波效应"——这使其达到 Ti:sapph 同级稳定度，
+      但无需 Ti:sapph 的高功率可见光泵浦（532 nm，昂贵）。
+    conditions: "Er/Yb 共掺杂磷酸盐玻璃；980 nm 二极管泵浦；腔长足够长（500 MHz 量级，非 GHz 级紧腔）"
+    source_claim: >
+      "The laser also exhibits low intrinsic noise due, in part, to the low intra-cavity loss and the co-doping of Er and Yb that suppresses high-frequency pump intensity noise."
+
+methods:
+  - id: meth.dual_usl_locked_er_yb_glass_comb_n23
+    name: "Er/Yb:glass 梳双超稳激光锁定方法（Nardelli 2023）"
+    status: demonstrated
+    applies_to: ent.er_yb_glass_comb_nardelli23
+    steps_summary: >
+      1. Er/Yb:glass 振荡器 SESAM 自启锁模 → 500 MHz 脉冲序列；
+      2. EDFA 放大 + HNLF 非线性展宽至倍频程 → f-2f 干涉仪测 fceo；
+      3. 1070 nm 超稳激光与梳齿拍频，PLL 锁 frep（腔长 PZT）；
+      4. 1157 nm 超稳激光与梳齿拍频，PLL 锁 fceo（泵浦功率调制）；
+      5. 高速光电二极管探测 500 MHz 梳重频 → 光生微波输出；
+      6. 两路拍频与超稳激光比对，Allan 偏差 <10⁻¹⁸ @ 1 s。
+    required_hardware:
+      - "Er/Yb:glass 振荡器 + SESAM + 980 nm 泵浦"
+      - "EDFA + HNLF + f-2f 干涉仪"
+      - "两台超稳激光（1157 nm / 1070 nm）"
+      - "双 PLL 伺服（PZT + 泵浦功率调制）"
+    advantages:
+      - "SESAM 自启，无需 NPR/NALM 的偏振调校"
+      - "500 MHz frep 高于典型 Er:fiber（100-200 MHz），拍频 SNR 更好"
+      - "固有噪声低（co-doping + 低腔损），与 Ti:sapph 同级但泵浦简单（980 nm 二极管）"
+    disadvantages:
+      - "磷酸盐玻璃热损伤阈值低，泵浦功率受限"
+      - "500 MHz frep 仍低于 Ti:sapph 10 GHz 级高重频方案"
+
+metrics:
+  - id: met.er_yb_glass_comb_beat_stability_n23
+    name: "Er/Yb:glass 梳与超稳激光拍频稳定度"
+    unit: "(dimensionless)"
+    description: "梳齿与两台超稳激光拍频的 Allan 偏差（ADEV）@ 1 s 积分时间"
+    demonstrated_value:
+      value: "<10⁻¹⁸ @ 1 s（ADEV，与 Ti:sapph 同级）"
+      conditions: "Er/Yb:glass 500 MHz 梳 + 双超稳激光（1157 nm / 1070 nm）+ 双 PLL 锁定"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "R9HNIBTE", claim: "We validate ... high-stability frequency synthesis using two ultra-stable optical references at 1157 nm and 1070 nm ... instability at the 10⁻¹⁸ level."}
+
+relations:
+  - id: rel.Nar23_01
+    subject: ent.er_yb_glass_comb_nardelli23
+    predicate: PART-OF
+    object: ent.optical_frequency_comb
+    confidence: established
+    source: {zotero_key: "R9HNIBTE", claim: "optical frequency comb based on a 500 MHz free-space laser with an Er/Yb co-doped phosphate glass gain medium"}
+    note: "跨文件引用 ent.optical_frequency_comb（定义于 giunta2019.yaml）"
+
+  - id: rel.Nar23_02
+    subject: ent.er_yb_glass_comb_nardelli23
+    predicate: CHARACTERIZED-BY
+    object: met.er_yb_glass_comb_beat_stability_n23
+    confidence: established
+    source: {zotero_key: "R9HNIBTE", claim: "10⁻¹⁸ level"}
+
+  - id: rel.Nar23_03
+    subject: met.er_yb_glass_comb_beat_stability_n23
+    predicate: BOUNDED-BY
+    object: pri.er_yb_co_doping_pump_noise_suppression_n23
+    confidence: established
+    source: {zotero_key: "R9HNIBTE", claim: "low intrinsic noise ... co-doping of Er and Yb that suppresses high-frequency pump intensity noise"}
+
+  - id: rel.Nar23_04
+    subject: meth.dual_usl_locked_er_yb_glass_comb_n23
+    predicate: OPERATIONALIZED-AS
+    object: ent.er_yb_glass_comb_nardelli23
+    confidence: established
+    source: {zotero_key: "R9HNIBTE", claim: "two ultra-stable optical references ... optical-to-optical synthesis"}
+
+  - id: rel.Nar23_05
+    subject: meth.dual_usl_locked_er_yb_glass_comb_n23
+    predicate: ENABLED-BY
+    object: pri.self_referencing_f2f
+    confidence: established
+    source: {zotero_key: "R9HNIBTE", claim: "f-2f interferometer ... fceo detection"}
+    note: "跨文件引用 pri.self_referencing_f2f（定义于 giunta2019.yaml）"
+
+  - id: rel.Nar23_06
+    subject: meth.dual_usl_locked_er_yb_glass_comb_n23
+    predicate: ENABLED-BY
+    object: pri.optical_frequency_division_microwave
+    confidence: established
+    source: {zotero_key: "R9HNIBTE", claim: "low-noise photonic microwave generation by dividing these references to the microwave domain"}
+    note: "跨文件引用 pri.optical_frequency_division_microwave（定义于 giunta2019.yaml）"

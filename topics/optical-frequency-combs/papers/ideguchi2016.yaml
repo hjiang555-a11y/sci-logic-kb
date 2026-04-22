@@ -1,0 +1,161 @@
+# Ideguchi 2016 — 首个 KLM 单腔双向双梳环形激光器 [breakthrough]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-22
+# Schema版本：v4.4
+# 专题：optical-frequency-combs
+# contribution_type: breakthrough（首次用单腔 Kerr 透镜锁模双向环形激光器实现双梳光谱，无需主动稳定）
+
+meta:
+  zotero_key: "PBGQXUED"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: breakthrough
+  reliability: high
+  title: "Kerr-lens mode-locked bidirectional dual-comb ring laser for broadband dual-comb spectroscopy"
+  year: 2016
+  first_author: Ideguchi
+  journal: "Optica"
+  volume: 3
+  issue: 7
+  pages: "748-753"
+  doi: "10.1364/OPTICA.3.000748"
+  note: >
+    [技术论文 / 里程碑] U Tokyo (Ideguchi, Nakamura, Kobayashi, Goda) 2016 年 Optica。
+    首次用单个 KLM（Kerr 透镜锁模）Ti:sapph **双向环形激光器**实现双梳光谱——
+    利用环形腔中顺时针（CW）与逆时针（CCW）方向传播的两个锁模脉冲因 Kerr 非线性不对称而具有略不同重频（Δf_rep ~ kHz），
+    形成天然"双梳"配置；由于共享同一物理腔，相对相干性被动稳定，**无需主动锁相系统**（f-2f 干涉仪或外部参考腔+伺服反馈）。
+    实现宽带（~700–1000 nm）双梳光谱，互相干时间 >10 s（自由运行），简化传统双梳系统（需两台独立激光器+复杂稳频）。
+    开创了"单腔双梳"技术路线，为双梳光谱学的便携化/低成本化/鲁棒化提供可行方案。
+    v2 子域主线：B-DCS（双梳光谱）主线首次单腔实现——刷新系统简化纪录（从"双激光器+稳频"到"单激光器+自由运行"）。
+
+entities:
+  - id: ent.klm_bidirectional_ring_dual_comb_i16
+    name: "KLM 单腔双向双梳环形激光器（Ideguchi 2016）"
+    aliases:
+      - bidirectional dual-comb ring laser
+      - single-cavity dual-comb system
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      基于单个 Ti:sapph KLM 环形腔，顺时针（CW）与逆时针（CCW）方向同时产生锁模脉冲；
+      因 Kerr 非线性不对称（CW 与 CCW 光路中非线性相移不同），两方向脉冲重频略有差异（Δf_rep ~ kHz，可调）；
+      形成天然"双梳"配置，相对相干性被动稳定（共享同一腔长），无需主动锁相系统（f-2f 或外部参考腔+伺服反馈）。
+      实现宽带双梳光谱（~700–1000 nm），互相干时间 >10 s（自由运行），简化传统双梳系统。
+    key_parameters:
+      cavity_type: "Ti:sapph KLM 环形腔（单腔，双向锁模）"
+      locking_mechanism: "Kerr 透镜锁模（KLM，软孔径）"
+      cw_ccw_frep_difference: "Δf_rep ~ kHz（可通过腔内元件位置微调）"
+      mutual_coherence_time: ">10 s（自由运行，无主动稳定）"
+      spectral_coverage: "~700–1000 nm（宽带，Ti:sapph 增益带宽限制）"
+      repetition_rate: "f_rep ~ 100 MHz（典型 Ti:sapph 环形腔）"
+      passive_stability: "相对相干性被动稳定（共享同一腔长）"
+      no_active_locking: "无需 f-2f 干涉仪、外部参考腔或伺服反馈系统"
+    note: >
+      Level 2 实例节点，属于双梳光谱仪（ent.dual_comb_spectrometer，定义于 coddington2016.yaml）分支。
+      首次证明"单腔双梳"可行——打破传统双梳系统需"双激光器+复杂稳频"的范式，
+      为双梳光谱学的便携化/低成本化/鲁棒化提供可行方案（尤其适合非光学计量实验室用户）。
+
+principles:
+  - id: pri.kerr_asymmetry_induced_frep_difference_i16
+    name: "Kerr 非线性不对称诱导双向梳重频差原理（Ideguchi 2016）"
+    tier: domain
+    verification_status: observed
+    statement: >
+      "在环形腔中，顺时针（CW）与逆时针（CCW）方向传播的锁模脉冲因 Kerr 非线性不对称而具有略不同的腔往返时间 → 重频差 Δf_rep。
+      传统观点认为'共享同一腔'的双向脉冲应重频相同，但本工作发现：Kerr 透镜锁模过程中，
+      CW 与 CCW 脉冲在非线性晶体（Ti:sapph）中经历的非线性相移略不同（因光路非完全互易，如偏振元件、Kerr 效应本身的微扰），
+      导致等效腔长（含非线性相移贡献）不同 → Δf_rep ~ kHz（可调）。
+      由于共享同一物理腔，长期相对相干性被动稳定（腔长热漂移对 CW 与 CCW 共模抑制）→ 无需主动锁相。"
+      Ideguchi 2016 证明：该效应可产生稳定 Δf_rep（>10 s 互相干时间），适用于宽带双梳光谱。
+    domain: "双梳光谱；Kerr 透镜锁模；环形激光器动力学"
+    key_insight: >
+      双梳光谱的核心瓶颈不是"双激光器"本身（硬件成本可降低），而是"相对相干性维持"（需复杂主动锁相系统）——
+      单腔双向方案通过"共享腔长"实现被动共模抑制，虽 Δf_rep 调谐范围受限（~kHz，vs. 独立梳可达 Hz–MHz），
+      但对大多数双梳光谱应用（分辨率 ~MHz）已足够；这是"系统简化"vs"调谐灵活性"的工程权衡。
+    conditions: >
+      需环形腔（非线性往返腔，如 Ti:sapph）；需 KLM 锁模（Kerr 非线性主导）；
+      需腔内非互易元件或非对称设计（产生 Δf_rep）；需精密温度/振动隔离（维持被动稳定）；
+      需双向脉冲同时锁模（启动技巧：先单向锁模，再引入逆向种子）。
+    formula: "Δf_rep = f_rep,CW - f_rep,CCW ~ kHz（Kerr 非线性不对称贡献）；互相干时间 τ_coh ∝ 1 / (Δf_rep 漂移率)（被动稳定下）"
+    source:
+      zotero_key: "PBGQXUED"
+      claim: >
+        "The laser is composed of a free-running Kerr-lens mode-locked laser cavity that produces 
+        two broadband laser frequency combs with slightly different pulse repetition rates and a tunable yet highly stable rate difference. 
+        This lasing principle, which we refer to as direction-dependent lasing due to the asymmetrical Kerr nonlinearity, 
+        is based on our revisit to and further development of the effect that there exists a slight difference in cavity round-trip time 
+        between the two counter-propagating mode-locked pulses."
+    breakthrough_paths:
+      - step: 1
+        entity: pri.dual_comb_multiheterodyne_detection
+        context: "双梳多外差检测原理：两梳重频差 Δf_rep 产生 RF 梳，光学频谱映射至 RF 域（跨文件引用 coddington2016.yaml）"
+      - step: 2
+        entity: pri.kerr_asymmetry_induced_frep_difference_i16
+        context: "Kerr 非线性不对称原理：单腔双向脉冲因非互易 Kerr 效应产生 Δf_rep ~ kHz，相对相干性被动稳定（共享腔长）"
+      - step: 3
+        entity: ent.klm_bidirectional_ring_dual_comb_i16
+        context: "应用该原理实现单腔双梳光谱（世界首次，2016），互相干时间 >10 s（无主动锁相），简化传统双梳系统"
+
+relations:
+  - id: rel.Ide01
+    predicate: BOUNDED-BY
+    subject: ent.klm_bidirectional_ring_dual_comb_i16
+    object: pri.kerr_asymmetry_induced_frep_difference_i16
+    context: "单腔双梳相对相干性被动稳定可行性"
+    source:
+      zotero_key: "PBGQXUED"
+      claim: >
+        "Since mode-locked lasers (free-running combs) have independent fluctuations in their pulse repetition rate and carrier-envelope phase, 
+        their dual-comb interferogram is significantly distorted... However, since these combs are produced by one and the same laser cavity, 
+        their relative coherence stays passively stable without the need for active stabilization."
+    breakthrough_paths:
+      - step: 1
+        entity: pri.dual_comb_multiheterodyne_detection
+        context: "双梳多外差检测原理（基本工作原理，跨文件引用 coddington2016.yaml）"
+      - step: 2
+        entity: pri.kerr_asymmetry_induced_frep_difference_i16
+        context: "Kerr 非线性不对称原理：单腔双向方案通过共享腔长实现相对相干性被动稳定，无需主动锁相"
+      - step: 3
+        entity: ent.klm_bidirectional_ring_dual_comb_i16
+        context: "应用该原理实现单腔双梳光谱（世界首次），互相干时间 >10 s（无主动稳定），简化传统双梳系统"
+    note: >
+      BOUNDED-BY 关系：单腔双梳的相对相干性被动稳定能力受"共享腔长→共模抑制"限制，
+      通过 Kerr 非线性不对称原理实现该能力。补 breakthrough_paths（breakthrough tier）。
+
+  - id: rel.Ide02
+    type: ENABLES
+    subject: ent.klm_bidirectional_ring_dual_comb_i16
+    object: meth.single_cavity_dual_comb_spectroscopy_i16
+    context: "单腔双梳光谱方法可行性"
+    source:
+      zotero_key: "PBGQXUED"
+      claim: "To show its utility, we demonstrate broadband dual-comb spectroscopy with the single laser."
+    breakthrough_paths: []
+    note: >
+      ENABLES 关系：单腔双梳激光器使"无主动锁相的双梳光谱"方法可行，简化传统双梳系统。
+
+methods:
+  - id: meth.single_cavity_dual_comb_spectroscopy_i16
+    name: "单腔双向环形激光器双梳光谱方法（Ideguchi 2016）"
+    status: demonstrated
+    applies_to: ent.klm_bidirectional_ring_dual_comb_i16
+    steps_summary: >
+      1. 构建 Ti:sapph KLM 环形腔，支持双向锁模；
+      2. 启动双向脉冲（先单向锁模，再引入逆向种子或自发双向）；
+      3. 利用 Kerr 非线性不对称调谐 Δf_rep（调整腔内元件位置或 Kerr 介质厚度）；
+      4. 双梳输出经样品后单光电探测器检测（多外差拍频）；
+      5. RF 梳信号经 ADC 采集，Fourier 变换获得光学吸收谱；
+      6. 无需 f-2f 干涉仪或外部参考腔稳频（相对相干性被动稳定）。
+    required_hardware:
+      - ent.klm_bidirectional_ring_dual_comb_i16
+    advantages:
+      - "系统简化：单激光器替代双激光器，无需主动锁相系统"
+      - "成本降低：去除 f-2f 干涉仪、外部参考腔、伺服反馈电路"
+      - "鲁棒性提升：相对相干性被动稳定，适合非光学计量实验室环境"
+    disadvantages:
+      - "Δf_rep 调谐范围受限（~kHz，vs. 独立梳可达 Hz–MHz）"
+      - "光谱覆盖受单激光器增益带宽限制（Ti:sapph ~700–1000 nm）"
+    note: >
+      该方法为双梳光谱学提供"低成本/鲁棒化"路线——虽牺牲 Δf_rep 灵活性与光谱覆盖，
+      但对大多数分子光谱应用（分辨率 ~MHz，近红外波段）已足够，
+      降低了双梳光谱技术的准入门槛（从"光学计量实验室专用"到"化学/生物实验室可用"）。

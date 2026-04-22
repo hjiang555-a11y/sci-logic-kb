@@ -1,0 +1,96 @@
+# Zhang Y. 2017 — 腔内 EOM 旋转偏振态控制梳频率（NTSC，大动态范围）
+# 提取者：GitHub Copilot（AI草稿，2026-04-22）
+# 提取日期：2026-04-22
+# Schema版本：v4.3
+# 专题：optical-frequency-combs
+# contribution_type: evidence（动态范围提升 10× 达数百 Hz/MHz，工程优化未破跨平台纪录）
+
+meta:
+  zotero_key: "V7MNFM68"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Steering optical comb frequencies by rotating the polarization state"
+  year: 2017
+  first_author: Zhang
+  journal: "Optics Letters"
+  volume: 42
+  issue: 24
+  pages: "5145-5148"
+  doi: "10.1364/OL.42.005145"
+  note: >
+    [技术论文] 中国科学院国家授时中心。提出新型梳频率控制方法：腔内 EOM 旋转偏振态驱动 frep / fceo 调谐：
+    (1) 在 NPR 锁模 Er:fiber 梳中，插入 LiNbO₃ EOM（紧邻 PBS），通过外加电场旋转偏振态 → 改变腔损 → 驱动 frep / fceo；
+    (2) 动态范围：frep 数百 Hz（比传统 EOM 方法大 >10×），fceo 数百 MHz（比传统泵浦调制大 >10×）；
+    (3) 带宽与传统腔内 EOM 方法相当（frep ~kHz–MHz, fceo ~100 kHz–MHz）；
+    (4) 鲁棒性好（NPR 模式锁定对偏振态旋转有一定容忍范围）。
+    本工作是工程优化（扩大控制动态范围，简化多执行器级联），未突破伺服带宽纪录（Kuse 2015 graphene EOM 已达 MHz），
+    归 evidence。对齐 v2 子域主线：A1-Noise（高带宽控制，间接影响相噪抑制能力）。
+
+entities:
+  - id: ent.ntsc_polarization_rotation_eom_comb_z17
+    name: "国家授时中心偏振态旋转 EOM 梳（Zhang Y. 2017）"
+    aliases:
+      - Polarization-rotation EOM comb (NTSC 2017)
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      NPR 锁模 Er:fiber 振荡器（frep ≈ 192 MHz）→ 腔内紧邻 PBS 插入 LiNbO₃ EOM（3mm 厚，~0.12 mrad/V）；
+      外加高压（-200 to +200 V）旋转偏振态 → 改变 PBS 透射/反射比例 → 调制腔损 → 驱动 frep / fceo；
+      frep 控制动态范围数百 Hz（比传统 EOM 方法大 >10×），fceo 控制动态范围数百 MHz（比传统泵浦调制大 >10×）；
+      带宽与传统腔内 EOM 相当（~MHz 量级）。
+    key_parameters:
+      repetition_rate: "192 MHz（基频）"
+      eom_type: "LiNbO₃（3mm 厚，~0.12 mrad/V 偏振旋转系数）"
+      eom_voltage_range: "-200 to +200 V"
+      frep_dynamic_range: "数百 Hz（>10× 传统 EOM）"
+      fceo_dynamic_range: "数百 MHz（>10× 传统泵浦调制）"
+      bandwidth: "~kHz–MHz（与传统腔内 EOM 同级）"
+      mode_locking: "NPR（非线性偏振旋转）"
+    note: "Level 2 实例节点，PART-OF ent.er_fiber_frequency_comb（定义于 droste2016.yaml）"
+
+principles:
+  - id: pri.polarization_rotation_cavity_loss_frequency_control_z17
+    name: "偏振态旋转调制腔损驱动梳频率控制原理（Zhang Y. 2017）"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      在 NPR 锁模光纤梳中，偏振态控制腔损：(a) PBS 后线偏光经腔内传输产生非线性相位移 → 返回 PBS 时偏振态旋转；
+      (b) 腔内 EOM 施加外场进一步旋转偏振态 → 改变 PBS 透射/反射比例 → 调制腔损 Δℓ；
+      (c) 腔损变化影响锁模动力学 → 改变 frep / fceo（增益饱和 + Kerr 非线性 + 色散相互作用）。
+      关键优势：(a) 大动态范围（EOM 电压 ±200 V，偏振旋转可达数 mrad，足以覆盖 NPR 稳定锁模范围）；
+      (b) 带宽不受增益寿命限制（EOM 响应 ~ns，远快于泵浦功率调制的 µs 级限制）；
+      (c) 单一执行器同时影响 frep / fceo（可联合 PZT 实现独立控制）。
+    domain: "光纤激光器动力学；NPR 锁模技术"
+    key_insight: >
+      "偏振态旋转等效于'腔内损耗调制'，但其物理机制不同于传统 EOM 相位调制——这使得在 NPR 锁模系统中，
+      旋转执行器具有大动态范围的天然优势（NPR 本身依赖偏振态演化，故对偏振旋转容忍范围大）"。
+    formula: "Δfrep / Δfceo ∝ Δℓ（腔损变化），Δℓ ∝ 偏振旋转角度（由 EOM 电压驱动）"
+    conditions: "NPR 锁模 Er:fiber 梳；EOM 插入 PBS 后（偏振敏感位置）；NPR 稳定锁模范围足够宽"
+    source_claim: >
+      "Our experimental results show that frequency control dynamic ranges are at least one order of magnitude larger than those of the previous ultra-fast frequency control techniques, reaching hundreds of hertz and hundreds of megahertz for repetition rate (fr) and carrier-envelope-offset frequency (fceo), respectively."
+
+relations:
+  - id: rel.Zha17_01
+    subject: ent.ntsc_polarization_rotation_eom_comb_z17
+    predicate: PART-OF
+    object: ent.er_fiber_frequency_comb
+    confidence: established
+    source: {zotero_key: "V7MNFM68", claim: "nonlinear polarization-rotation mode-locked laser"}
+    note: "跨文件引用 ent.er_fiber_frequency_comb（定义于 droste2016.yaml）"
+
+  - id: rel.Zha17_02
+    subject: ent.ntsc_polarization_rotation_eom_comb_z17
+    predicate: CHARACTERIZED-BY
+    object: pri.polarization_rotation_cavity_loss_frequency_control_z17
+    confidence: established
+    source: {zotero_key: "V7MNFM68", claim: "intracavity electro-optic modulator tunes the polarization state ... dynamic ranges ... at least one order of magnitude larger"}
+
+  - id: rel.Zha17_03
+    subject: pri.polarization_rotation_cavity_loss_frequency_control_z17
+    predicate: BOUNDED-BY
+    object: pri.gain_lifetime_servo_bandwidth_limit
+    confidence: established
+    source: {zotero_key: "V7MNFM68", claim: "broadband associated with high performance ... large dynamic range associated with good robustness"}
+    note: "跨文件引用 pri.gain_lifetime_servo_bandwidth_limit（定义于 kuse2015.yaml）——本方法绕过增益寿命限制，故仍受此原理约束但通过腔损通道规避"

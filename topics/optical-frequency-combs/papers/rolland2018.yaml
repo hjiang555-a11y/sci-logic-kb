@@ -1,0 +1,162 @@
+# Rolland 2018 — 双分支 Er:fiber 梳 10⁻¹⁸ 级稳定度传递（首次<10⁻¹⁸ dual-branch）
+# 提取者：GitHub Copilot（AI草稿，2026-04-22）
+# 提取日期：2026-04-22
+# Schema版本：v4.3
+# 专题：optical-frequency-combs
+# contribution_type: breakthrough（首次实现双分支梳架构下 <10⁻¹⁸ 稳定度传递，打破多支路相噪劣化瓶颈）
+
+meta:
+  zotero_key: "U5C8AJYM"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: breakthrough
+  reliability: high
+  title: "Ultra-broadband dual-branch optical frequency comb with 10⁻¹⁸ instability"
+  year: 2018
+  first_author: Rolland
+  journal: "Optica"
+  volume: 5
+  issue: 9
+  pages: "1070-1077"
+  doi: "10.1364/OPTICA.5.001070"
+  note: >
+    [技术论文 / 突破] IMRA America + Stanford。首次在**双分支**Er:fiber 频率梳架构下达到 10⁻¹⁸ 级稳定度传递：
+    (1) 从单振荡器输出分为两路：IR 分支（1000-2200 nm）+ 可见分支（780 nm 倍频后展宽至 500-1100 nm）；
+    (2) 双分支在 ~1 µm 处光谱重叠，用于主动相关"分支间差分相位噪声"；
+    (3) 通过检测 dual-branch fceo（而非单分支 fceo）+ 被动混频补偿，将残余差分噪声抑制至 out-of-loop 测得
+        1560 nm → 780 nm 稳定度传递残差 3×10⁻¹⁸ @ 1 s、1×10⁻¹⁹ @ 1000 s；
+    (4) 进一步消除未补偿光程噪声后，理论极限降至 6×10⁻¹⁹ @ 1 s（共光电探测器方案）。
+    本工作打破先前多支路梳"10⁻¹⁶ 级劣化"的瓶颈（Kashiwagi 2018 等），是多波长同时服务 10⁻¹⁸ 光钟的关键技术
+    路径。对齐 v2 子域主线：B-FreqSyn（多支路相位同步）。归 breakthrough。
+
+entities:
+  - id: ent.dual_branch_er_comb_rolland18
+    name: "双分支 Er:fiber 频率梳系统（Rolland 2018）"
+    aliases:
+      - Dual-branch Er-fiber frequency comb (IMRA 2018)
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      从单 Er:fiber 锁模振荡器（~1550 nm）分为两个非共路光纤分支：
+      (a) IR 分支：EDFA + HNLF → 超连续 1000-2200 nm + 内嵌 PPLN 产生 fceo'（单分支）；
+      (b) Vis 分支：EDFA + PPLN 倍频至 780 nm + HNLF → 超连续 500-1100 nm；
+      两分支在 ~1 µm 光谱重叠区域进行双分支干涉 → 测得 fceo_dual = (φ_IR - φ_VIS)；
+      PLL 锁 fceo_dual + frep → 两台超稳 CW 激光（1560 nm / 780 nm），通过被动混频补偿分支间差分噪声，
+      out-of-loop 验证 1560 nm → 780 nm 稳定度传递 3×10⁻¹⁸ @ 1 s。
+    key_parameters:
+      repetition_rate: "~200 MHz（未明示精确值，标准 Er:fiber 量级）"
+      IR_branch_span: "1000-2200 nm"
+      VIS_branch_span: "500-1100 nm（780 nm SHG 后展宽）"
+      overlap_region: "~1 µm（用于 dual-branch fceo 干涉）"
+      differential_noise_cancellation: "主动锁 fceo_dual + 被动混频消除"
+      out_of_loop_stability: "3×10⁻¹⁸ @ 1 s, 1×10⁻¹⁹ @ 1000 s（1560 nm → 780 nm）"
+      ultimate_limit: "6×10⁻¹⁹ @ 1 s（共探测器理论极限）"
+    note: "Level 2 实例节点，PART-OF ent.er_fiber_frequency_comb（定义于 droste2016.yaml）"
+
+principles:
+  - id: pri.dual_branch_differential_phase_noise_cancellation_r18
+    name: "双分支差分相位噪声主动相关抵消原理（Rolland 2018）"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      多分支光频梳中，各非共路光纤分支积累的相位噪声 φ_τ_branch_i 不同，导致各分支输出梳齿间相对频率噪声。
+      若将两分支在光谱重叠区域进行干涉，测得"双分支 fceo"= (φ_τ_IR - φ_τ_VIS)，并将此信号 PLL 锁定至 RF 参考，
+      则强制 φ_ceo = φ_τ_IR - φ_τ_VIS，使得两分支的光学拍频 φ_C、φ_D 均包含相同的差分噪声项 Δ = 2φ_τ_IR - φ_τ_VIS。
+      通过被动射频混频 φ_D - (m/n)·φ_C，可抵消此共模差分噪声，仅剩未补偿光程的残余噪声——将多支路劣化从 10⁻¹⁶ 降至 10⁻¹⁸。
+    domain: "多分支光频梳相位同步；精密频率传递"
+    key_insight: >
+      "关键在于不锁单分支 fceo（传统方法），而是锁双分支干涉测得的 fceo_dual——这将两分支相对噪声编码进 fceo，
+      使其成为可在电域被动消除的共模量"——这是突破多支路相噪限制的核心技术。
+    formula: "φ_D_corrected = φ_D - (m/n)·φ_C → 消除 Δ = 2φ_τ_IR - φ_τ_VIS"
+    conditions: "双分支在某波段光谱重叠（~1 µm）；fceo_dual 信噪比足够高；两 CW 激光分别在两分支波段内"
+    source_claim: >
+      "By interfering, at 1 μm, a visible and an IR branch ... we can detect and stabilize f_ceo while simultaneously correlating differential phase noise between the two branches."
+
+methods:
+  - id: meth.dual_branch_fceo_locking_passive_cancellation_r18
+    name: "双分支 fceo 锁定 + 被动混频噪声抵消方法（Rolland 2018）"
+    status: demonstrated
+    applies_to: ent.dual_branch_er_comb_rolland18
+    steps_summary: >
+      1. Er:fiber 振荡器输出 → 两分支 EDFA + 非线性展宽（IR: 1-2.2 µm; Vis: 0.5-1.1 µm）；
+      2. 双分支在 ~1 µm 重叠区域干涉 → 探测 fceo_dual（photodetector A）；
+      3. PLL 锁 fceo_dual 至 RF 参考（强制 φ_ceo = φ_τ_IR - φ_τ_VIS）；
+      4. 同时锁 frep 至 IR 分支 CW 激光（1560 nm）；
+      5. 两分支分别与两 CW 激光拍频（IR: 1560 nm → φ_C; Vis: 780 nm → φ_D）；
+      6. 被动射频混频 φ_D - (m/n)·φ_C → 消除差分噪声 Δ；
+      7. Out-of-loop 测量 1560 nm → 780 nm 稳定度 3×10⁻¹⁸ @ 1 s。
+    required_hardware:
+      - "Er:fiber 振荡器 + 双 EDFA + 双 HNLF + SHG-PPLN（可见分支）+ fceo-PPLN（IR 分支）"
+      - "双光学干涉仪（fceo_dual + 两 CW 拍频）"
+      - "两台超稳 CW 激光（1560 nm / 780 nm）"
+      - "射频混频器（被动噪声抵消）"
+    advantages:
+      - "首次将多支路梳稳定度从 10⁻¹⁶ 提升至 10⁻¹⁸（双支路）"
+      - "可扩展至多支路（原理上适用于 N 分支相关）"
+      - "被动混频无伺服带宽限制"
+    disadvantages:
+      - "需双分支光谱重叠区域（限制波段组合自由度）"
+      - "未补偿光程残余噪声仍存在（out-of-loop 干涉仪噪声）"
+
+metrics:
+  - id: met.dual_branch_transfer_stability_r18
+    name: "双分支梳波长传递稳定度（1560 nm → 780 nm）"
+    unit: "(dimensionless)"
+    description: "双分支 Er:fiber 梳从 IR 分支到 Vis 分支的稳定度传递残差（out-of-loop 测量）"
+    demonstrated_value:
+      value: "3×10⁻¹⁸ @ 1 s, 1×10⁻¹⁹ @ 1000 s（Allan 偏差）"
+      conditions: "双分支 Er:fiber 梳 + dual-branch fceo 锁定 + 被动混频噪声抵消"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "U5C8AJYM", claim: "an out-of-loop measurement demonstrating the stability transfer from 1560 nm to 780 nm with an instability level at 3×10⁻¹⁸ at 1 s averaging time and 1×10⁻¹⁹ at 1000 s"}
+    comparison:
+      - "与 Kashiwagi 2018 / Leopardi 2017 先前多支路梳 10⁻¹⁶ 级比：本工作提升两个数量级"
+      - "与单分支光学锁定（10⁻¹⁸ 已达）比：本工作是双支路首次达到同级"
+    historical_landmarks:
+      best_demonstration:
+        value: "3×10⁻¹⁸ @ 1 s（双分支架构，首次）"
+        year: 2018
+        source: {zotero_key: "U5C8AJYM"}
+
+relations:
+  - id: rel.Rol18_01
+    subject: ent.dual_branch_er_comb_rolland18
+    predicate: PART-OF
+    object: ent.er_fiber_frequency_comb
+    confidence: established
+    source: {zotero_key: "U5C8AJYM", claim: "dual-branch Er-fiber based optical frequency comb"}
+    note: "跨文件引用 ent.er_fiber_frequency_comb（定义于 droste2016.yaml）"
+
+  - id: rel.Rol18_02
+    subject: ent.dual_branch_er_comb_rolland18
+    predicate: CHARACTERIZED-BY
+    object: met.dual_branch_transfer_stability_r18
+    confidence: established
+    source: {zotero_key: "U5C8AJYM", claim: "3×10⁻¹⁸ at 1 s"}
+
+  - id: rel.Rol18_03
+    subject: met.dual_branch_transfer_stability_r18
+    predicate: BOUNDED-BY
+    object: pri.dual_branch_differential_phase_noise_cancellation_r18
+    confidence: established
+    source: {zotero_key: "U5C8AJYM", claim: "actively canceling the differential phase noise of a dual-branch ... frequency comb"}
+    breakthrough_paths:
+      - direction: meth.dual_branch_fceo_locking_passive_cancellation_r18
+        expected_gain: "将双支路劣化从 10⁻¹⁶ 降至 10⁻¹⁸（首次）"
+        status: demonstrated
+        source: {zotero_key: "U5C8AJYM"}
+
+  - id: rel.Rol18_04
+    subject: meth.dual_branch_fceo_locking_passive_cancellation_r18
+    predicate: OPERATIONALIZED-AS
+    object: ent.dual_branch_er_comb_rolland18
+    confidence: established
+    source: {zotero_key: "U5C8AJYM", claim: "detect and stabilize f_ceo while simultaneously correlating differential phase noise"}
+
+  - id: rel.Rol18_05
+    subject: meth.dual_branch_fceo_locking_passive_cancellation_r18
+    predicate: ENABLED-BY
+    object: pri.self_referencing_f2f
+    confidence: established
+    source: {zotero_key: "U5C8AJYM", claim: "PPLN ... generate the carrier-envelope frequency f_ceo"}
+    note: "跨文件引用 pri.self_referencing_f2f（定义于 giunta2019.yaml）"
