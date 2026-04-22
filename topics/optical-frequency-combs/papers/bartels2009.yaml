@@ -1,0 +1,190 @@
+# Bartels 2009 — 首台 10 GHz 自参考 Ti:sapph 光学频率梳
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-21
+# Schema版本：v4.3
+# 专题：optical-frequency-combs
+# contribution_type: breakthrough（首次在 10 GHz 基频条件下实现完整 f-2f 自参考，单齿 >1 nW）
+
+meta:
+  zotero_key: "RDBWYLKJ"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: breakthrough
+  reliability: high
+  title: "10-GHz Self-Referenced Optical Frequency Comb"
+  year: 2009
+  first_author: Bartels
+  journal: "Science"
+  volume: 326
+  issue: 5953
+  pages: "681"
+  doi: "10.1126/science.1179112"
+  note: >
+    [技术论文 / 里程碑] Universität Konstanz + NIST Boulder。首次将基频 10 GHz
+    重复频率的钛宝石 Kerr 透镜锁模激光器做成**完全自参考**的光学频率梳：
+    (1) 紧凑腔长设计 + 强聚焦 + 色散精调支持 <40 fs 脉冲；
+    (2) >50 000 模覆盖 ~350 THz，单 10-GHz 模平均 >0.5 mW，>1 nW 经空间分辨后；
+    (3) f-2f 自参考锁定 f_0 与 f_R 至 Cs 原子钟溯源的 RF 参考。
+    此前 10 GHz+ 梳受"带宽-平均功率"权衡限制不能自参考或被空间分辨；
+    本工作同时打破二者，使"直接单齿访问 + 绝对频率锁定"可行——
+    为天文光谱仪校准、任意波形合成、Fourier 综合等应用奠定基础。
+    对齐子域主线（v2）：A1-Rep 基频 10 GHz 自参考 + 单齿功率；B-Astro（作者明确指向天文光谱校准）。
+
+entities:
+  - id: ent.ti_sapph_10ghz_comb_bartels09
+    name: "10 GHz 自参考 Ti:sapph 频率梳（Bartels 2009）"
+    aliases:
+      - 10-GHz Ti:sapphire frequency comb
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      紧凑腔长钛宝石 Kerr 透镜锁模（KLM）飞秒激光器，f_rep = 10 GHz 基频，
+      <40 fs 脉冲、>350 THz 光谱宽度、>50 000 梳齿、1.2 W 平均功率。
+      经非线性光纤展宽至覆盖倍频程后进入 f-2f 干涉仪 → f_0 自参考锁定。
+      单个 10-GHz 模可经衍射光栅直接空间分辨，单齿功率 >1 nW（光谱仪校准可用）。
+    key_parameters:
+      repetition_rate: "10 GHz（基频，非谐波放大）"
+      pulse_duration: "<40 fs"
+      average_power: "1.2 W"
+      spectral_span: "~350 THz"
+      mode_count: ">50 000"
+      mode_count_fwhm: "~1200（FWHM 内）"
+      per_mode_power: ">0.5 mW/齿（FWHM 内）、经空间分辨后 >1 nW"
+      mode_locking: "Kerr 透镜锁模（KLM），紧聚焦 + 色散平衡"
+      self_reference: "f-2f 自参考，锁至 Cs 溯源 RF"
+    note: >
+      Level 2 实例节点，PART-OF ent.optical_frequency_comb（定义于 giunta2019.yaml）；
+      是 ent.ti_sapphire_frequency_comb（定义于 udem2002.yaml）的 10 GHz 高重频分支。
+
+principles:
+  - id: pri.high_frep_bandwidth_power_tradeoff
+    name: "高重频梳带宽-平均功率-单齿功率三角权衡原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      对固定泵浦功率，提高 f_rep（即缩短腔长）会同时压低脉冲能量：
+      若要求脉冲峰值功率仍能驱动非线性展宽覆盖倍频程（自参考前提），
+      则腔内必须牺牲谱宽（长脉冲）或平均功率——这是 10 GHz 级自参考梳的核心技术瓶颈。
+      Bartels 2009 通过"紧聚焦 KLM + 色散平衡 + 高泵浦"在 10 GHz 基频下同时满足：
+      平均功率 1.2 W、脉冲 <40 fs、倍频程展宽、单齿 >1 nW 可分辨。
+    domain: "高重频飞秒激光；梳齿功率谱"
+    key_insight: >
+      "基频 10 GHz 自参考"不是简单的腔长缩短问题，而是要在脉冲能量量级只有 nJ 的条件下
+      同时维持非线性展宽阈值——这比 100 MHz 梳难约两个数量级。
+    conditions: "Ti:sapph KLM 基频腔；倍频程展宽光纤可用；单齿功率 > 光谱仪探测阈值"
+    formula: "E_pulse = P_avg / f_rep；f_rep↑ 与 supercontinuum 阈值 E_pulse≥E_th 的两难"
+    source_claim: >
+      "Combs with large mode spacings ... greater than 10 GHz have required compromises
+      both in terms of bandwidth and average power, resulting in pulses that are too weak
+      and too long in duration for efficient nonlinear spectral broadening."
+
+methods:
+  - id: meth.klm_10ghz_comb_self_reference
+    name: "10 GHz 紧腔 KLM + 非线性展宽 + f-2f 自参考方法"
+    status: demonstrated
+    applies_to: ent.ti_sapph_10ghz_comb_bartels09
+    steps_summary: >
+      1. 紧腔 Ti:sapph 腔，腔长对应 f_rep = 10 GHz；
+      2. 紧聚焦增强 Kerr 效应 + 精细色散平衡支持 <40 fs 脉冲；
+      3. 非线性光纤展宽覆盖倍频程；
+      4. 标准 f-2f 干涉仪测 f_0；
+      5. 同时 PLL 锁 f_0 与 f_R 至 Cs 原子钟溯源 RF；
+      6. 光栅空间分辨单 10-GHz 梳齿用于光谱仪校准。
+    required_hardware:
+      - ent.ti_sapph_10ghz_comb_bartels09
+    advantages:
+      - "单齿直接可分辨，无需模滤波 Fabry-Perot"
+      - "350 THz 超宽谱覆盖，优于现有模滤波方案"
+    disadvantages:
+      - "紧腔对机械与热稳定性要求极高"
+
+metrics:
+  - id: met.frep_10ghz_self_referenced_b09
+    name: "基频重复频率（10 GHz 级自参考梳）"
+    unit: "Hz"
+    description: "Ti:sapph 基频腔的 f_rep，同时满足 f-2f 自参考条件"
+    demonstrated_value:
+      value: "10 GHz（基频，非谐波放大）"
+      conditions: "Ti:sapph KLM 紧腔 + 倍频程展宽 + f-2f"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "RDBWYLKJ", claim: "directly make a 10-GHz frequency comb ... repetition rate and thus a frequency comb spacing of fR = 10 GHz"}
+    historical_landmarks:
+      first_demonstration:
+        value: "10 GHz 基频自参考梳（2009，首次）"
+        year: 2009
+        source: {zotero_key: "RDBWYLKJ"}
+
+  - id: met.per_mode_power_high_frep_b09
+    name: "10 GHz 梳的单齿功率"
+    unit: "W"
+    description: "经空间分辨后单个梳齿输出功率"
+    demonstrated_value:
+      value: ">1 nW/齿（光栅分辨后），FWHM 内 >0.5 mW/齿（未分辨）"
+      conditions: "10 GHz Ti:sapph 梳 + 衍射光栅分辨率 R~6×10⁴"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "RDBWYLKJ", claim: "a power level exceeding 1 nW per mode ... currently unachievable with existing mode-filtering approaches"}
+
+relations:
+  - id: rel.Bar09_01
+    subject: ent.ti_sapph_10ghz_comb_bartels09
+    predicate: PART-OF
+    object: ent.optical_frequency_comb
+    confidence: established
+    source:
+      zotero_key: "RDBWYLKJ"
+      claim: "a 10-GHz self-referenced optical frequency comb"
+    note: "跨文件引用 ent.optical_frequency_comb（giunta2019.yaml）"
+
+  - id: rel.Bar09_02
+    subject: ent.ti_sapph_10ghz_comb_bartels09
+    predicate: CHARACTERIZED-BY
+    object: met.frep_10ghz_self_referenced_b09
+    confidence: established
+    source:
+      zotero_key: "RDBWYLKJ"
+      claim: "frequency comb spacing of fR = 10 GHz"
+
+  - id: rel.Bar09_03
+    subject: ent.ti_sapph_10ghz_comb_bartels09
+    predicate: CHARACTERIZED-BY
+    object: met.per_mode_power_high_frep_b09
+    confidence: established
+    source:
+      zotero_key: "RDBWYLKJ"
+      claim: ">1 nW per mode ... unachievable with existing mode-filtering approaches"
+
+  - id: rel.Bar09_04
+    subject: met.frep_10ghz_self_referenced_b09
+    predicate: BOUNDED-BY
+    object: pri.high_frep_bandwidth_power_tradeoff
+    confidence: established
+    source:
+      zotero_key: "RDBWYLKJ"
+      claim: "Combs with large mode spacings ... have required compromises both in terms of bandwidth and average power"
+    breakthrough_paths:
+      - direction: meth.klm_10ghz_comb_self_reference
+        expected_gain: "同时满足 10 GHz + 自参考 + 单齿可分辨"
+        status: demonstrated
+        source: {zotero_key: "RDBWYLKJ"}
+
+  - id: rel.Bar09_05
+    subject: meth.klm_10ghz_comb_self_reference
+    predicate: ENABLED-BY
+    object: pri.self_referencing_f2f
+    confidence: established
+    source:
+      zotero_key: "RDBWYLKJ"
+      claim: "f0 is measured with a nonlinear f-2f interferometer"
+    note: "跨文件引用 pri.self_referencing_f2f（giunta2019.yaml）"
+
+  - id: rel.Bar09_06
+    subject: meth.klm_10ghz_comb_self_reference
+    predicate: ENABLED-BY
+    object: pri.supercontinuum_octave_spanning
+    confidence: established
+    source:
+      zotero_key: "RDBWYLKJ"
+      claim: "spectral broadening ... more than an octave"
+    note: "跨文件引用 pri.supercontinuum_octave_spanning"

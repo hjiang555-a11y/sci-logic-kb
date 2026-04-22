@@ -2,7 +2,7 @@
 
 # Ultrastable Laser — Topic Index
 
-> Auto-generated 2026-04-21 04:34 UTC · 78 papers · 337 nodes · 334 relations
+> Auto-generated 2026-04-21 14:58 UTC · 78 papers · 337 nodes · 341 relations
 
 ## Entities
 
@@ -663,4 +663,12 @@
 - **Breakthrough paths**:
   - `pri.crystalline_coating_low_brownian_noise` — status: theoretical · gain: 以 AlGaAs 晶体镀层替代 SiO₂/Ta₂O₅ → 进一步降低镀层布朗噪声，是文中明确给出的 <10⁻¹⁷ / …
   - `pri.long_cavity_thermal_noise_reduction` — status: theoretical · gain: 将腔长从 6 cm 增至 20 cm 可按 σ_y ∝ 1/L 降低分数热噪声，是文中提出的另一条明确升级路径
+
+## Cross-Topic References
+
+Nodes referenced but not defined in this topic:
+
+| Relation | Predicate | External Node | Source |
+|----------|-----------|---------------|--------|
+| `rel.LO03` | COMPETES-WITH | `meth.microcomb_self_referencing` | loh2019 |
 

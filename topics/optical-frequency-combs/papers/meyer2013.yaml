@@ -1,0 +1,130 @@
+# Meyer 2013 — 光学稳频 Yb:KYW 飞秒梳，低相噪 10 GHz 微波生成
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-21
+# Schema版本：v4.3
+# 专题：optical-frequency-combs
+# contribution_type: evidence（首台 Yb:KYW 双 DOF 光学锁定梳，微波相噪与 σ_y 与 Ti:sapph 同级）
+
+meta:
+  zotero_key: "T6AF6HJF"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: evidence
+  reliability: high
+  title: "A frequency-stabilized Yb:KYW femtosecond laser frequency comb and its application to low-phase-noise microwave generation"
+  year: 2013
+  first_author: Meyer
+  journal: "Applied Physics B"
+  volume: 112
+  issue: 4
+  pages: "565-570"
+  doi: "10.1007/s00340-013-5439-9"
+  note: >
+    [技术论文] NIST Boulder (Fortier/Diddams)。首次在 Yb:KYW 飞秒晶体激光平台上
+    完成双自由度（f_0 + f_rep）光学稳频：f_0 用 f-2f 锁定，f_rep 锁至 1068 nm CW
+    参考激光。该稳频梳光电探测产生 10 GHz 微波，1 Hz offset 相噪 -99 dBc/Hz；
+    Allan 偏差 <2.6×10⁻¹⁵ @ 1 s（与独立 Ti:sapph 梳比对）。 提供 Yb:KYW 作为
+    紧凑 GHz 级光学-微波分频平台的工程示范。本工作不刷新跨平台纪录（Ti:sapph
+    同期已达相近水平），但在 Yb:KYW 子支路首次达到该指标——归 evidence。
+    对齐 v2 子域主线：A1-Noise（f_0 subradian PLL）、B-FreqSyn（低相噪 μwave 生成）。
+
+entities:
+  - id: ent.yb_kyw_fs_comb_meyer13
+    name: "光学稳频 Yb:KYW 飞秒频率梳（Meyer 2013）"
+    aliases:
+      - Yb:KYW frequency comb (Meyer 2013)
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      Yb:KYW（钇钨酸钾）晶体 + 980 nm 二极管泵浦 + SF10 棱镜/GTI 色散管理的
+      孤子锁模飞秒激光器；f-2f 干涉仪测 f_0，与 1068 nm 超稳 CW 激光的梳齿拍频测 f_rep；
+      两 DOF 通过 PLL 同时光学锁定。高带宽光电二极管探测脉冲序列 → 10 GHz 微波输出。
+    key_parameters:
+      gain_medium: "10 at.% Yb:KYW"
+      pump: "980 nm 二极管"
+      pulse_duration: "~100 fs 量级"
+      pump_control_bandwidth: "受 Yb 激发态寿命限制（~kHz 量级，需 EOM 补偿高频）"
+      f0_stabilization: "f-2f + subradian 积分相噪锁定"
+      frep_stabilization: "锁至 1068 nm CW 参考（光学锁定）"
+      microwave_output: "10 GHz（光电探测脉冲序列）"
+    note: "Level 2 实例节点，PART-OF ent.optical_frequency_comb（定义于 giunta2019.yaml）"
+
+methods:
+  - id: meth.frep_lock_to_cw_reference_m13
+    name: "f_rep 锁至 CW 参考激光方法（Meyer 2013 Yb:KYW 实施）"
+    status: demonstrated
+    applies_to: ent.yb_kyw_fs_comb_meyer13
+    steps_summary: >
+      1. Yb:KYW 孤子锁模激光器 + f-2f 锁 f_0；
+      2. 梳齿与 1068 nm 腔稳 CW 参考拍频探测 f_rep 波动；
+      3. 通过腔长/泵浦电流伺服锁 f_rep 至 CW；
+      4. 同时光电探测脉冲序列得到相干 10 GHz 微波；
+      5. 与独立 Ti:sapph 梳比对得到 Allan 偏差 <2.6×10⁻¹⁵ @ 1 s。
+    required_hardware:
+      - ent.yb_kyw_fs_comb_meyer13
+    advantages:
+      - "Yb:KYW 平台结构紧凑、热管理优于 Ti:sapph"
+      - "锁至光学参考可避开 RF 基准相噪限制"
+    disadvantages:
+      - "晶体增益寿命有限，泵浦功率伺服带宽不够高"
+
+metrics:
+  - id: met.mwave_phase_noise_10ghz_m13
+    name: "10 GHz 微波相位噪声（1 Hz offset）"
+    unit: "dBc/Hz"
+    description: "由稳频 Yb:KYW 梳经光电探测得到的 10 GHz 微波单边带相位噪声"
+    demonstrated_value:
+      value: "-99 dBc/Hz @ 1 Hz offset"
+      conditions: "Yb:KYW 梳双 DOF 光学锁定 + 高带宽 PD 探测"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "T6AF6HJF", claim: "The phase noise of the resulting 10 GHz microwaves was -99 dBc/Hz at 1 Hz"}
+
+  - id: met.allan_deviation_yb_kyw_comb_m13
+    name: "Yb:KYW 稳频梳 Allan 偏差 @ 1 s"
+    unit: "(dimensionless)"
+    description: "与独立 Ti:sapph 梳比对所得 1 s 积分 Allan 偏差（ADEV）"
+    demonstrated_value:
+      value: "<2.6×10⁻¹⁵ @ 1 s（ADEV）"
+      conditions: "双 DOF 光学锁定 Yb:KYW 梳 vs 独立 Ti:sapph 梳"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "T6AF6HJF", claim: "the corresponding Allen deviation was <2.6 × 10-15 at 1 s, measured by comparison to an independently stabilized Ti:sapphire frequency comb"}
+
+relations:
+  - id: rel.Mey13_01
+    subject: ent.yb_kyw_fs_comb_meyer13
+    predicate: PART-OF
+    object: ent.optical_frequency_comb
+    confidence: established
+    source: {zotero_key: "T6AF6HJF", claim: "We present an optically stabilized Yb:KYW fs-laser frequency comb."}
+    note: "跨文件引用 ent.optical_frequency_comb（giunta2019.yaml）"
+
+  - id: rel.Mey13_02
+    subject: ent.yb_kyw_fs_comb_meyer13
+    predicate: CHARACTERIZED-BY
+    object: met.mwave_phase_noise_10ghz_m13
+    confidence: established
+    source: {zotero_key: "T6AF6HJF", claim: "The phase noise of the resulting 10 GHz microwaves was -99 dBc/Hz at 1 Hz"}
+
+  - id: rel.Mey13_03
+    subject: ent.yb_kyw_fs_comb_meyer13
+    predicate: CHARACTERIZED-BY
+    object: met.allan_deviation_yb_kyw_comb_m13
+    confidence: established
+    source: {zotero_key: "T6AF6HJF", claim: "Allen deviation was <2.6 × 10-15 at 1 s"}
+
+  - id: rel.Mey13_04
+    subject: meth.frep_lock_to_cw_reference_m13
+    predicate: OPERATIONALIZED-AS
+    object: ent.yb_kyw_fs_comb_meyer13
+    confidence: established
+    source: {zotero_key: "T6AF6HJF", claim: "we build upon previous work by stabilizing the second degree of freedom of the comb, frep, to obtain the first optically stabilized Yb:KYW frequency comb. We locked frep to a cavity-stabilized CW laser."}
+
+  - id: rel.Mey13_05
+    subject: meth.frep_lock_to_cw_reference_m13
+    predicate: ENABLED-BY
+    object: pri.self_referencing_f2f
+    confidence: established
+    source: {zotero_key: "T6AF6HJF", claim: "We use an f–2f nonlinear interferometer to measure the carrier envelope offset frequency"}
+    note: "跨文件引用 pri.self_referencing_f2f（giunta2019.yaml）"

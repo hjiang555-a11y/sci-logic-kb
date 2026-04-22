@@ -3,7 +3,7 @@
 > **说明**：本文件包含知识库中所有已处理论文的详细列表。从 SCHEMA.md 第八节迁移而来。
 > SCHEMA.md 仅保留统计摘要，本文件承载完整论文记录。
 >
-> **最后更新**：2026-04-20
+> **最后更新**：2026-04-21（optical-frequency-combs Batch 1 摄入：+10 篇 → 71 篇）
 
 ---
 
@@ -91,7 +91,7 @@
 | `olson2019.yaml` | CDX3DFQR | Olson 2019 — RB 干涉仪 <2×10⁻¹⁶ | ✅ v4.1 |
 | `huangjc2019b.yaml` | 5DCNFGX4 | Huang 2019b — 双缠绕抗振光纤盘 | ✅ v4.1 |
 
-## 光学频率梳专题（61 篇）
+## 光学频率梳专题（71 篇）
 
 ### 框架型文档
 
@@ -101,8 +101,9 @@
 | `picque2020.yaml` | 43TAX2KE | Picqué/Diddams 2020 Science — 光频梳 20 年回顾 | ✅ v4.1 framework |
 | `droste2016.yaml` | 5NSQLZTS | Droste & Newbury 2016 — Er:fiber 梳综述 | ✅ v4.1 framework |
 | `endo2018.yaml` | H93SHF89 | Endo 2018 — 超低噪声光频梳综述 | ✅ v4.1 framework |
+| `newbury2005.yaml` | NHJ84W8G | Newbury & Washburn 2005 — 光纤梳扰动响应理论 | ✅ v4.3 framework（Batch 1） |
 
-### 技术论文（部分列举，共 57 篇）
+### 技术论文（部分列举，共 67 篇）
 
 | 文件 | Zotero Key | 论文 | 状态 |
 |------|-----------|------|------|
@@ -115,7 +116,16 @@
 | `stern2018.yaml` | EBNL35EE | Stern 2018 — 电池供电全集成微梳 | ✅ v4.1 |
 | `wu2024.yaml` | 8IPE8B8T | Wu 2024 — TF-LN 波导可见-紫外梳 | ✅ v4.1 |
 | `zhang2022.yaml` | 25EY6V8L | Zhang 2022 — ²²⁹Th 核钟可调 VUV 梳 | ✅ v4.1 |
-| *（其余 48 篇见 `topics/optical-frequency-combs/papers/` 目录）* | | | |
+| `washburn2004.yaml` | TP9NSD4F | Washburn 2004 — 首台近红外 Er:fiber 全锁梳 | ✅ v4.3 breakthrough（Batch 1） |
+| `bartels2009.yaml` | RDBWYLKJ | Bartels 2009 — 10 GHz 自参考 Ti:sapph 梳首次 | ✅ v4.3 breakthrough（Batch 1） |
+| `meyer2013.yaml` | T6AF6HJF | Meyer 2013 — Yb:KYW 稳频梳 + 10 GHz μwave（-99 dBc/Hz @ 1 Hz） | ✅ v4.3 evidence（Batch 1） |
+| `wang2014.yaml` | VATLBIAD | Wang 2014 — 500 MHz Yb:fiber 振荡器直出 f_CEO 无放大 | ✅ v4.3 evidence（Batch 1） |
+| `zhang2015.yaml` | R4M8SE4F | Zhang 2015 — Er:fiber 腔内 EOM + PZT 双执行器 | ✅ v4.3 evidence（Batch 1） |
+| `kuse2016.yaml` | QXC7FSMC | Kuse 2016 — 全 PM Er NALM 梳，40 as 时延抖动纪录 | ✅ v4.3 breakthrough（Batch 1） |
+| `li2017b.yaml` | RWPYUXTB | Li 2017 — 首次全 PM Yb NALM 自参考梳，10⁻¹⁹ in-loop @ 1 s | ✅ v4.3 breakthrough（Batch 1） |
+| `ma2018.yaml` | P4TCLWW2 | Ma 2018 — 首次 750 MHz Yb:fiber 梳紧锁（<1 rad） | ✅ v4.3 breakthrough（Batch 1） |
+| `cai2020.yaml` | LBSZCU7P | Cai 2020 — 紧凑全 PM Er 梳 + 单光纤执行器 + GRIN f-2f | ✅ v4.3 evidence（Batch 1） |
+| *（其余 49 篇见 `topics/optical-frequency-combs/papers/` 目录）* | | | |
 
 ## 频率标准专题（1 篇）
 

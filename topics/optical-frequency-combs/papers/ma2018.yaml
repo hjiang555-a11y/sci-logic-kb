@@ -1,0 +1,171 @@
+# Ma 2018 — 首次 750 MHz Yb:fiber 梳紧锁（<1 rad 积分相噪）
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-21
+# Schema版本：v4.3
+# 专题：optical-frequency-combs
+# contribution_type: breakthrough（首次 Yb:fiber 750 MHz 基频紧锁到 <1 rad + σ_y 1e-18 in-loop）
+
+meta:
+  zotero_key: "P4TCLWW2"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: breakthrough
+  reliability: high
+  title: "Low-noise 750 MHz spaced ytterbium fiber frequency combs"
+  year: 2018
+  first_author: Ma
+  journal: "Optics Letters"
+  volume: 43
+  issue: 17
+  pages: "4136-4139"
+  doi: "10.1364/OL.43.004136"
+  note: >
+    [技术论文 / A1 子域纪录] 北京大学 + UEC 东京 + Colorado（Schibli）+ JST 合作。
+    两台独立 750 MHz Yb:fiber 梳紧锁到 CW 光学参考：
+    (1) 首次在 750 MHz 基频 Yb:fiber 平台实现 <1 rad 积分相噪
+        （0.1 Hz–10 MHz 积分，远优于此前 >100 MHz 平台的同级锁定）；
+    (2) 两台梳均达到 ~10⁻¹⁸ @ 1 s in-loop fractional instability；
+    (3) 执行器为腔内 EOM + 单级 PZT。
+    关键突破：克服高重频 Yb:fiber 的高 f_CEO 线宽（>100 kHz）与 EOM-泵浦耦合，
+    使"光学原子钟梳"的重复频率从传统 ~100 MHz 提升到 750 MHz。
+    对齐 v2 子域主线：A1-Rep（750 MHz 紧锁首次）+ A1-Noise（<1 rad）+ B-FreqSyn（1e-18 in-loop）。
+    注意：**10⁻¹⁸ 是 in-loop**（严格度低于 out-of-loop 比对）。
+
+entities:
+  - id: ent.yb_fiber_750mhz_comb_m18
+    name: "750 MHz Yb:fiber 紧锁梳（Ma 2018）"
+    aliases:
+      - 750 MHz Yb:fiber tight-locked comb
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      750 MHz 基频 Yb:fiber 锁模激光器，腔内体晶 EOM + 单级 PZT 为 f_rep 执行器，
+      泵浦电流调制为 f_CEO 执行器；两 DOF 均锁至连续波光学参考。
+      双台独立梳的 0.1 Hz–10 MHz 积分相噪 <1 rad，in-loop 分数稳定度 ~10⁻¹⁸ @ 1 s。
+    key_parameters:
+      gain_medium: "Yb-doped 光纤"
+      repetition_rate: "750 MHz（基频）"
+      frep_actuators: "腔内体晶 EOM（高频）+ 单级 PZT（低频）"
+      fceo_actuator: "泵浦 LD 电流调制"
+      integrated_phase_noise: "<1 rad（0.1 Hz–10 MHz）"
+      fractional_instability_inloop: "~10⁻¹⁸ @ 1 s"
+      number_of_systems: "2 台独立梳"
+    note: "Level 2 实例节点，PART-OF ent.optical_frequency_comb（giunta2019.yaml）"
+
+principles:
+  - id: pri.high_frep_yb_tight_lock_challenges
+    name: "高重频 Yb:fiber 梳紧锁的双重挑战原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      高 f_rep Yb:fiber 梳相对于低 f_rep（~100 MHz）系统有两大紧锁障碍：
+      (1) 内秉噪声（线宽、时延抖动）随 f_rep 通常线性甚至超线性增大，
+          要求 MHz 量级 f_CEO 伺服带宽；
+      (2) 腔内 EOM 与泵浦功率执行器之间的交叉耦合增强，
+          纯 PID 控制难以同时保证两 DOF 紧锁。
+      解决途径：体晶 EOM（而非光纤型 EOM）提供低损耗高带宽，配合前馈解耦。
+    domain: "光纤梳伺服；高重频源"
+    conditions: "f_rep > 200–300 MHz；泵浦电流执行器受限于增益寿命"
+    source_claim: >
+      "The tight phase locking in high-repetition-rate Yb:fiber frequency combs involves two issues.
+      One is the insufficient servo bandwidth against high intrinsic noise, and the other is cross-talk
+      between the intra-cavity electro-optic modulator (EOM) [and pump actuator]."
+
+methods:
+  - id: meth.bulk_eom_pzt_750mhz_yb_lock
+    name: "体晶 EOM + 单级 PZT 在 750 MHz Yb:fiber 梳的紧锁方法"
+    status: demonstrated
+    applies_to: ent.yb_fiber_750mhz_comb_m18
+    steps_summary: >
+      1. 两台独立 750 MHz Yb:fiber 振荡器；
+      2. 体晶 EOM 作 f_rep 高频执行器（>100 kHz 带宽）；
+      3. 单级 PZT 作 f_rep 低频执行器；
+      4. 泵浦 LD 电流调制锁 f_CEO；
+      5. 与 CW 光学参考拍频 + PLL；
+      6. 两 DOF 同时闭锁 → <1 rad 积分相噪、~10⁻¹⁸ @ 1 s in-loop。
+    required_hardware:
+      - ent.yb_fiber_750mhz_comb_m18
+    advantages:
+      - "将紧锁梳的 f_rep 从 ~100 MHz 推到 750 MHz"
+      - "双梳同级指标支持光学互比对/同步应用"
+    disadvantages:
+      - "体晶 EOM 需精细光学对准"
+      - "in-loop 指标未反映参考链路真实噪声"
+
+metrics:
+  - id: met.integrated_phase_noise_750mhz_yb_m18
+    name: "750 MHz Yb:fiber 梳积分相位噪声（0.1 Hz–10 MHz）"
+    unit: "rad"
+    description: "两 DOF 均紧锁后单齿相位噪声谱积分 rms"
+    demonstrated_value:
+      value: "<1 rad（0.1 Hz–10 MHz 积分）"
+      conditions: "两台 750 MHz Yb:fiber 梳各自锁至 CW 参考"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "P4TCLWW2", claim: "the first demonstration of tightly phase-locked (<1 rad root mean square phase noise integrated from 0.1 Hz to 10 MHz) fiber frequency combs with 750 MHz fundamental repetition rate"}
+    historical_landmarks:
+      first_demonstration:
+        year: 2018
+        source: {zotero_key: "P4TCLWW2"}
+        note: "750 MHz Yb:fiber 紧锁首例"
+
+  - id: met.fractional_instability_inloop_m18
+    name: "750 MHz Yb:fiber 梳 in-loop 分数频率不稳定度 @ 1 s"
+    unit: "(dimensionless)"
+    description: "锁定后 in-loop 积分得到的分数频率不稳定度"
+    demonstrated_value:
+      value: "~10⁻¹⁸ @ 1 s（in-loop）"
+      conditions: "锁至 CW 光学参考"
+      verification_status: observed
+      confidence: tentative
+      source: {zotero_key: "P4TCLWW2", claim: "Both combs exhibit in-loop fractional frequency instabilities of ~10−18 at 1 s"}
+
+relations:
+  - id: rel.Ma18_01
+    subject: ent.yb_fiber_750mhz_comb_m18
+    predicate: PART-OF
+    object: ent.optical_frequency_comb
+    confidence: established
+    source: {zotero_key: "P4TCLWW2", claim: "750 MHz ytterbium fiber frequency combs"}
+    note: "跨文件引用 ent.optical_frequency_comb（giunta2019.yaml）"
+
+  - id: rel.Ma18_02
+    subject: ent.yb_fiber_750mhz_comb_m18
+    predicate: CHARACTERIZED-BY
+    object: met.integrated_phase_noise_750mhz_yb_m18
+    confidence: established
+    source: {zotero_key: "P4TCLWW2", claim: "<1 rad root mean square phase noise integrated from 0.1 Hz to 10 MHz"}
+
+  - id: rel.Ma18_03
+    subject: ent.yb_fiber_750mhz_comb_m18
+    predicate: CHARACTERIZED-BY
+    object: met.fractional_instability_inloop_m18
+    confidence: established
+    source: {zotero_key: "P4TCLWW2", claim: "in-loop fractional frequency instabilities of ~10−18 at 1 s"}
+
+  - id: rel.Ma18_04
+    subject: meth.bulk_eom_pzt_750mhz_yb_lock
+    predicate: OPERATIONALIZED-AS
+    object: ent.yb_fiber_750mhz_comb_m18
+    confidence: established
+    source: {zotero_key: "P4TCLWW2", claim: "A bulk electro-optic modulator and a single-stack piezo-electric transducer are employed as fast actuators"}
+
+  - id: rel.Ma18_05
+    subject: meth.bulk_eom_pzt_750mhz_yb_lock
+    predicate: ENABLED-BY
+    object: pri.high_frep_yb_tight_lock_challenges
+    confidence: established
+    source: {zotero_key: "P4TCLWW2", claim: "tight phase locking in high-repetition-rate Yb:fiber frequency combs involves two issues"}
+
+  - id: rel.Ma18_06
+    subject: met.integrated_phase_noise_750mhz_yb_m18
+    predicate: BOUNDED-BY
+    object: pri.high_frep_bandwidth_power_tradeoff
+    confidence: tentative
+    source: {zotero_key: "P4TCLWW2", claim: "intrinsic noise, linewidth, or timing jitter generally scales up with the repetition rate"}
+    note: "跨文件引用 pri.high_frep_bandwidth_power_tradeoff（bartels2009.yaml）"
+    breakthrough_paths:
+      - direction: meth.bulk_eom_pzt_750mhz_yb_lock
+        expected_gain: "体晶 EOM + 单级 PZT 将高重频 Yb:fiber 梳推入紧锁域"
+        status: demonstrated
+        source: {zotero_key: "P4TCLWW2"}

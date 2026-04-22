@@ -1,0 +1,118 @@
+# Newbury & Washburn 2005 — Er:fiber 飞秒激光梳输出的扰动理论
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-21
+# Schema版本：v4.3
+# 专题：optical-frequency-combs
+# contribution_type: framework（建立光纤梳 f_r/f_CEO 响应与反馈拓扑的理论基础）
+
+meta:
+  zotero_key: "NHJ84W8G"
+  topic: optical-frequency-combs
+  source_type: review
+  contribution_type: framework
+  reliability: high
+  title: "Theory of the Frequency Comb Output From a Femtosecond Fiber Laser"
+  year: 2005
+  first_author: Newbury
+  journal: "IEEE Journal of Quantum Electronics"
+  volume: 41
+  issue: 11
+  pages: "1388-1402"
+  doi: "10.1109/JQE.2005.857657"
+  note: >
+    [理论专论 / 方法论框架] NIST Boulder + Kansas State。以孤子型 Er:fiber 激光为代表，
+    建立描述梳齿 f_r / f_CEO 随腔长、泵浦功率、腔损的扰动响应理论：
+    (1) 识别并量化共振色散、SAM 饱和、三阶色散、拉曼、SPM、自陡峭等各机理对 f_r / f_CEO 的贡献；
+    (2) 推导腔长—>f_r、泵浦功率—>f_CEO、腔损—>f_CEO 的传递函数；
+    (3) 给出反馈带宽受激发态寿命限制的一般形式。
+    本文是光纤梳设计空间的"工程师手册"，建立了后续十余年光纤梳伺服设计的语言体系，
+    不引入新实验演示，故归 framework。对齐子域主线（v2）：A1-Noise 的理论基石。
+    跨文件引用：pri.gain_lifetime_servo_bandwidth_limit（定义于 kuse2015.yaml）、
+    pri.comb_equation、ent.er_fiber_frequency_comb（定义于 droste2016.yaml）。
+
+principles:
+  - id: pri.fiber_comb_perturbative_response_theory
+    name: "光纤梳 f_r/f_CEO 对腔参量扰动的微扰响应理论"
+    tier: domain
+    verification_status: observed
+    statement: >
+      对孤子型 Er:fiber 锁模激光，其梳齿频率 fn = n·f_r + f_CEO 随三类
+      腔参量（腔长 L、泵浦功率 P、腔损 ℓ）的小扰动满足线性响应关系，其传递函数由
+      增益介质（载子寿命 τ_g）、共振色散（ω_g）、非瞬时 SAM、SPM、自陡峭、拉曼、三阶色散
+      共同决定。这一框架预言：(a) 腔长—>f_r 传递系数为 -f_r / L_eff；
+      (b) 泵浦功率主要驱动 f_CEO（低频）但带宽受 τ_g 限制；
+      (c) 腔损与泵浦对 f_CEO 的贡献可相反号，为"无 f_CEO 反馈的双 CW 锁定"提供物理基础。
+    domain: "光纤激光器动力学；锁模理论"
+    key_insight: >
+      "f_r 与 f_CEO 是少数几个可观测腔参量的线性函数"——这使得光纤梳伺服拓扑可以
+      被当作标准多输入-多输出（MIMO）线性系统来设计，不必回到时域锁模方程求解。
+    formula: "δf_r/δL = -f_r/L_eff;  δf_CEO/δP → transfer function H(f) with bandwidth ~1/(2π τ_g)"
+    conditions: "孤子型或接近孤子区运转；扰动足够小可线性化"
+    source_claim: >
+      "A perturbative theory is developed to describe this frequency comb output ...
+      Transfer functions are derived for the comb response to change in cavity length,
+      pump power or cavity loss."
+
+  - id: pri.fiber_comb_mimo_feedback_topology
+    name: "光纤梳多自由度反馈拓扑设计原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      f_r 与 f_CEO 的扰动响应矩阵在实验常用参数组（腔长-泵浦-损耗）下非奇异，
+      故存在可对角化的线性组合可独立控制 f_r 与 f_CEO。实际伺服中选择
+      "腔长 → f_r、泵浦功率 → f_CEO" 作为主对角通道工作良好，串扰可通过前馈补偿。
+    domain: "光梳伺服工程"
+    conditions: "扰动响应矩阵条件数足够低；选定的执行器带宽满足目标环路带宽"
+
+methods:
+  - id: meth.fiber_comb_transfer_function_identification
+    name: "光纤梳传递函数实验辨识方法"
+    status: demonstrated
+    steps_summary: >
+      1. 将腔长 / 泵浦功率 / 腔损中的一个施加已知小扰动；
+      2. 同时监测 f_r（RF 计数）与 f_CEO（f-2f 拍频计数）；
+      3. 对所得两路响应序列做频域分析得到 2x3 传递函数矩阵；
+      4. 与理论预测比对，回读 τ_g、ω_g、SAM 饱和参数等；
+      5. 用所得矩阵设计 MIMO 锁相伺服参数。
+    advantages:
+      - "无需完整锁模动力学仿真即可设计伺服"
+      - "可直接定标激发态寿命、色散等内部参数"
+
+relations:
+  - id: rel.Newb05_01
+    subject: pri.fiber_comb_perturbative_response_theory
+    predicate: DERIVED-FROM
+    object: pri.comb_equation
+    confidence: established
+    source:
+      zotero_key: "NHJ84W8G"
+      claim: "the Fourier transform of ... a pulse train ... comb with spacing set by the repetition rate ... offset frequency set by the CEO frequency"
+    note: "跨文件引用 pri.comb_equation"
+
+  - id: rel.Newb05_02
+    subject: pri.fiber_comb_perturbative_response_theory
+    predicate: BOUNDED-BY
+    object: pri.gain_lifetime_servo_bandwidth_limit
+    confidence: established
+    source:
+      zotero_key: "NHJ84W8G"
+      claim: "the feedback bandwidth for the phase-lock of the offset frequency has been limited by the laser gain lifetime"
+    note: "跨文件引用 pri.gain_lifetime_servo_bandwidth_limit（定义于 kuse2015.yaml）"
+
+  - id: rel.Newb05_03
+    subject: pri.fiber_comb_mimo_feedback_topology
+    predicate: ENABLED-BY
+    object: pri.fiber_comb_perturbative_response_theory
+    confidence: established
+    source:
+      zotero_key: "NHJ84W8G"
+      claim: "The mechanisms by which the pump power, cavity length and cavity loss control the frequency comb spacing and offset are identified."
+
+  - id: rel.Newb05_04
+    subject: meth.fiber_comb_transfer_function_identification
+    predicate: OPERATIONALIZED-AS
+    object: pri.fiber_comb_perturbative_response_theory
+    confidence: established
+    source:
+      zotero_key: "NHJ84W8G"
+      claim: "Transfer functions are derived for the comb response to change in cavity length, pump power or cavity loss."

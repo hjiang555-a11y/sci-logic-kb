@@ -2,7 +2,7 @@
 
 # Frequency Standards — Topic Index
 
-> Auto-generated 2026-04-21 04:34 UTC · 1 papers · 10 nodes · 11 relations
+> Auto-generated 2026-04-21 14:58 UTC · 1 papers · 10 nodes · 11 relations
 
 ## Entities
 
