@@ -58,6 +58,8 @@ python scripts/build_index.py
 
 ## 约束
 
+维护这个仓库时，只需先守住下面这些边界：
+
 - `SCHEMA.md` 冲突优先级最高
 - `INDEX.md` / `INDEX_metrics.md` / `INDEX_principles.md` / `docs/CURRENT_NODES_REFERENCE.md` / `topics/*/INDEX.md` 为自动生成文件，不手工编辑
 - 专题审查先看 `_meta/architecture.md` 与 `docs/REVIEW_GUIDE.md`，不要从零散 YAML 盲扫
