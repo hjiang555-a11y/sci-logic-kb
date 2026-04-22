@@ -1,0 +1,99 @@
+# Chen Z. 2024 — 双梳增强微波钟同步（205 km 商用光纤，PKU+BUPT）
+# 提取者：GitHub Copilot（AI草稿，2026-04-22）
+# 提取日期：2026-04-22
+# Schema版本：v4.3
+# 专题：optical-frequency-combs
+# contribution_type: evidence（微波钟同步残差 6.23 fs @ 1s，未破光钟同步纪录，定位微波钟应用）
+
+meta:
+  zotero_key: "QIFVVUIH"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Dual-comb-enhanced microwave clock synchronization over commercial fiber"
+  year: 2024
+  first_author: Chen
+  journal: "Optica"
+  volume: 11
+  issue: 9
+  pages: "1268-1276"
+  doi: "10.1364/OPTICA.530224"
+  note: >
+    [技术论文] 北京大学 + 北京邮电大学。基于双梳增强光学双向时间传递（OTWTT）实现远程微波钟时间同步：
+    (1) 独立微波钟驱动双光频梳（本地 + 远端），通过商用光纤（205.86 km）传输强度编码脉冲；
+    (2) 线性光学采样（LOS）+ Kalman 滤波提取脉冲质心（start/stop times）→ 避免光电探测器 ps 级不确定度；
+    (3) 使用脉冲包络相位时间（非载波相位）进行时间同步 → 消除 CEO 频率不稳定影响（微波钟相噪高于光钟）；
+    (4) 色散补偿 + 全自动偏振控制 + 实时反馈保证互相干性；
+    (5) 达到残余时间偏差 6.23 fs @ 1 s, 不稳定度 <6×10⁻¹⁸ @ 10,000 s（微波钟间同步，首次 fs 级）；
+    (6) 副产品：sub-ps 级探测光纤互易性变化（安全监控应用）。
+    本工作是首次将微波钟间同步推进到 fs 级（此前受 TIC / 光电探测限制在 ps 级），但不刷新光钟间同步纪录
+    （已有 10⁻¹⁹ 级报道），且主技术挑战在克服微波钟相噪（非梳本身性能极限）。归 evidence。
+    对齐 v2 子域主线：B-FreqSyn（双梳时频传递）。
+
+entities:
+  - id: ent.pku_dual_comb_microwave_sync_c24
+    name: "北大双梳增强微波钟同步系统（Chen Z. 2024）"
+    aliases:
+      - Dual-comb microwave clock synchronization (PKU 2024)
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      两台独立频率梳（本地 + 远端，各自由微波钟驱动 frep + fceo）→ 强度编码脉冲经商用光纤（205.86 km）传输；
+      双端 LOS（线性光学采样）测量脉冲到达时刻（质心）→ Kalman 滤波提取时间间隔（start-stop）；
+      使用脉冲包络相位时间（非载波相位）进行同步 → 规避 fceo 不稳定影响；
+      色散补偿 + 全自动偏振控制 + 实时反馈保证互相干性；
+      达到微波钟间时间同步残差 6.23 fs @ 1 s, <6×10⁻¹⁸ @ 10,000 s（首次 fs 级微波钟同步）。
+    key_parameters:
+      fiber_length: "205.86 km（商用光纤）"
+      time_sync_residual: "6.23 fs @ 1 s（Allan time deviation）"
+      instability: "<6×10⁻¹⁸ @ 10,000 s"
+      method: "双梳 OTWTT（光学双向时间传递）+ LOS（线性光学采样）"
+      phase_time: "脉冲包络相位时间（非载波相位）"
+      dispersion_compensation: "色散补偿 + 全自动偏振控制"
+      reference_clocks: "两台微波钟（H-maser / Rb 钟，未明示具体型号）"
+    note: "Level 2 实例节点，PART-OF ent.dual_comb_spectrometer（跨文件引用，定义于 coddington2016.yaml）——虽非光谱应用，但架构属双梳时频传递"
+
+principles:
+  - id: pri.envelope_phase_time_ceo_free_sync_c24
+    name: "脉冲包络相位时间同步免 CEO 依赖原理（Chen Z. 2024）"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      光频梳脉冲包络相位时间（group-delay）与载波相位（carrier phase）不同：
+      (a) 载波相位由 fceo + n·frep 决定，fceo 需稳频至 sub-mHz 级才能维持长期相位相干（对光钟可行，对微波钟困难）；
+      (b) 包络相位时间主要由 frep 与光纤色散决定，fceo 影响小（仅影响 CEO slip 的绝对时间标签，非时间间隔）。
+      通过测量脉冲包络质心（Kalman 滤波 + LOS），规避 fceo 锁定要求，使微波钟（相噪高于光钟）驱动的梳
+      仍能维持 fs 级互相干——关键在于色散补偿 + 偏振控制消除链路漂移，使包络相位时间稳定。
+    domain: "时频传递；光脉冲时域测量"
+    key_insight: >
+      "使用包络相位时间（而非载波相位）是微波钟同步的关键选择——因为微波钟本身 Allan 偏差在 10⁻¹⁴ 量级，
+      无法稳频 fceo 至 sub-mHz（会引入更大噪声）"——本工作证明在此场景下仍可达 fs 级同步。
+    formula: "时间间隔 Δt = (质心_stop - 质心_start) @ envelope phase, 独立于 fceo"
+    conditions: "色散补偿；偏振控制；LOS 高灵敏度（attosecond 级）；Kalman 滤波抑制强度噪声"
+    source_claim: >
+      "We used the phase time of the pulse envelope instead of the carrier phase for time synchronization to remove the limit of the carrier envelope offset (CEO) frequency, since the stable carrier phase is vulnerable to fluctuations in independent sources and fiber transmission."
+
+relations:
+  - id: rel.Che24_01
+    subject: ent.pku_dual_comb_microwave_sync_c24
+    predicate: PART-OF
+    object: ent.dual_comb_spectrometer
+    confidence: established
+    source: {zotero_key: "QIFVVUIH", claim: "dual-comb-enhanced OTWTT"}
+    note: "跨文件引用 ent.dual_comb_spectrometer（定义于 coddington2016.yaml）——架构同源但应用不同"
+
+  - id: rel.Che24_02
+    subject: ent.pku_dual_comb_microwave_sync_c24
+    predicate: CHARACTERIZED-BY
+    object: pri.envelope_phase_time_ceo_free_sync_c24
+    confidence: established
+    source: {zotero_key: "QIFVVUIH", claim: "phase time of the pulse envelope instead of the carrier phase"}
+
+  - id: rel.Che24_03
+    subject: pri.envelope_phase_time_ceo_free_sync_c24
+    predicate: ENABLED-BY
+    object: pri.dual_comb_multiheterodyne_detection
+    confidence: likely
+    source: {zotero_key: "QIFVVUIH", claim: "LOS [linear optical sampling] ... mutual optical coherence"}
+    note: "跨文件引用 pri.dual_comb_multiheterodyne_detection（定义于 coddington2016.yaml）——LOS 是双梳多外差检测的时域实施"

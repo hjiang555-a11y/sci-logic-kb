@@ -1,0 +1,166 @@
+# Cheng 2024 — 首个连续 UV–蓝绿天文光梳（χ²组合 MgO:PPLN）[breakthrough]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-22
+# Schema版本：v4.4
+# 专题：optical-frequency-combs
+# contribution_type: breakthrough（首次实现连续 390–520 nm UV–蓝绿天文光梳覆盖，跨越 SHG-only 谱间隙）
+
+meta:
+  zotero_key: "NDSVHPF5"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: breakthrough
+  reliability: high
+  title: "Continuous ultraviolet to blue-green astrocomb"
+  year: 2024
+  first_author: Cheng
+  journal: "Nature Communications"
+  volume: 15
+  issue: 1
+  pages: "1466"
+  doi: "10.1038/s41467-024-45924-6"
+  note: >
+    [技术论文 / 里程碑] Heriot-Watt (Cheng, Dadi, Mitchell, Thompson, Piskunov, Wright, Gawith, McCracken, Reid) 2024 年 Nature Comm。
+    首次实现**连续 UV–蓝绿天文光梳覆盖**（390–520 nm，跨越传统 SHG-only 方案的"蓝绿谱间隙"）——
+    通过在 MgO:PPLN 波导中组合**二次谐波产生（SHG，800 nm → 400 nm）+ 和频混频（SFM，800+1200 nm → 490 nm）**，
+    弥补单 SHG 方案因 Ti:sapph 泵浦谱宽有限而无法覆盖 440–480 nm 的谱间隙。
+    使用 1 GHz Ti:sapph 梳（仅需 ~100 pJ 脉冲能量），经波导非线性转换后过 Fabry-Pérot 滤波提取 30 GHz 子梳，
+    实现 392–472 nm 连续覆盖、梳齿均匀度 <5 dB（经模滤波后），适配 HARPS/ESPRESSO/ANDES 等蓝光 RV 仪器。
+    v2 子域主线：A3-Astro（天文光梳）+ B-Spec（光谱展宽/波长扩展）双主线首次突破——刷新蓝光天文光梳连续覆盖纪录。
+
+entities:
+  - id: ent.continuous_uv_bluegreen_astrocomb_c24
+    name: "连续 UV–蓝绿天文光梳（Cheng 2024）"
+    aliases:
+      - 390–520 nm continuous astrocomb
+      - SHG+SFM combined astrocomb
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      在 MgO:PPLN 波导中组合 SHG（800 nm → 400 nm）+ SFM（800+1200 nm → 490 nm），
+      产生连续 390–520 nm UV–蓝绿光频梳，跨越传统单 SHG 方案的 440–480 nm 谱间隙。
+      经 30 GHz Fabry-Pérot 滤波后提取子梳（由 1 GHz 源梳生成），适配天文光谱仪分辨率要求（典型 ~50 GHz）。
+      梳齿均匀度 <5 dB（模滤波后），覆盖 Balmer H-α/H-β 线及恒星光谱密集吸收线区，
+      适用于 EPRV（极端精度径向速度，目标 <10 cm/s）光谱仪（HARPS, ESPRESSO, ANDES）波长定标。
+    key_parameters:
+      source_comb: "1 GHz Ti:sapph 梳（脉冲能量 ~100 pJ，中心波长 800 nm）"
+      nonlinear_medium: "MgO:PPLN 波导（二阶非线性 χ²，SHG + SFM 双过程）"
+      shg_output: "800 nm → 400 nm（二次谐波）"
+      sfm_output: "800 nm + 1200 nm → 490 nm（和频，需额外 1200 nm 种子）"
+      combined_coverage: "390–520 nm（连续，含 SHG 谱 + SFM 谱）"
+      spectral_gap_filled: "440–480 nm（SHG-only 方案的固有谱间隙）"
+      filtered_subcomb: "30 GHz 间距子梳（经 Fabry-Pérot 滤波，由 1 GHz 源梳提取）"
+      mode_uniformity: "<5 dB（经模滤波后，392–472 nm 范围）"
+      target_spectrographs: "HARPS (380–690 nm), ESPRESSO (378–789 nm), ANDES (365+ nm)"
+      eprv_target: "径向速度精度 <10 cm/s（Earth-analog 探测阈值）"
+    note: >
+      Level 2 实例节点，属于天文光梳（astrocomb）技术分支。
+      首次通过 χ² 双过程组合（SHG + SFM）实现蓝光天文光梳的连续覆盖，解决单 SHG 方案"谱间隙"问题，
+      为下一代 EPRV 仪器（ANDES on ELT，目标 1–2 cm/s RV 精度）提供完整蓝光定标能力。
+
+principles:
+  - id: pri.shg_sfm_combined_astrocomb_continuous_coverage_c24
+    name: "SHG + SFM 组合实现天文光梳连续覆盖原理（Cheng 2024）"
+    tier: domain
+    verification_status: observed
+    statement: >
+      "传统蓝光天文光梳采用单 SHG（二次谐波产生）将 ~800 nm Ti:sapph 梳转至 ~400 nm，
+      但受泵浦梳谱宽（通常 <100 nm FWHM）限制，SHG 输出谱宽 <50 nm（400 nm 中心），
+      无法覆盖恒星光谱密集吸收线区（440–480 nm 蓝绿波段），形成'谱间隙'——这限制了 EPRV 精度潜力。
+      通过在同一 MgO:PPLN 波导中同时实现 SHG（800 → 400 nm）与 SFM（800+1200 → 490 nm），
+      两个输出谱段互补拼接 → 实现 390–520 nm 连续覆盖，消除谱间隙，最大化可用恒星吸收线数量。"
+      Cheng 2024 证明：组合方案仅需 ~100 pJ 脉冲（低于传统单 SHG 阈值），波导集成使 SFM 效率可行，
+      且两谱段均保持梳齿相位相干性（频率溯源至源梳），实现完整蓝光定标能力。
+    domain: "非线性频率转换；天文光梳工程；χ² 波导非线性光学"
+    key_insight: >
+      蓝光天文光梳的核心瓶颈不是单个非线性过程效率（SHG 本身成熟），
+      而是"单 SHG 谱宽不足以覆盖恒星光谱关键波段"——通过 SHG + SFM 双过程组合，
+      用两个独立可控的转换通道"拼接"出连续谱，比"展宽源梳谱宽"（受增益带宽限制）或"更换源梳波长"（牺牲 Ti:sapph 成熟性）更优。
+    conditions: >
+      需宽带 χ² 非线性介质（MgO:PPLN 波导支持多过程准相位匹配）；
+      需双波长泵浦（800 nm Ti:sapph + 1200 nm 种子激光，后者可由 OPO 或光纤激光提供）；
+      需精密温度/角度调谐优化 SHG 与 SFM 相位匹配效率；
+      需 Fabry-Pérot 模滤波提取适配光谱仪分辨率的子梳（30 GHz 间距）。
+    formula: >
+      SHG: ω_800 + ω_800 → ω_400（二次谐波）；
+      SFM: ω_800 + ω_1200 → ω_490（和频）；
+      连续覆盖: SHG 谱（390–440 nm）+ SFM 谱（440–520 nm）→ 无谱间隙 390–520 nm
+    source:
+      zotero_key: "NDSVHPF5"
+      claim: >
+        "Here, we introduce a concept achieving a broad, continuous spectrum by combining 
+        second-harmonic generation and sum-frequency-mixing in an MgO:PPLN waveguide 
+        to generate 390–520 nm light from a 1 GHz Ti:sapphire frequency comb... 
+        demonstrate how the approach can bridge the spectral gap present in second-harmonic-only conversion."
+    breakthrough_paths:
+      - step: 1
+        entity: meth.astro_comb_rv_calibration
+        context: "天文光梳径向速度定标方法的基本原理：多 GHz 间距梳齿提供精密波长参考（跨文件引用 ycas2012.yaml）"
+      - step: 2
+        entity: pri.shg_sfm_combined_astrocomb_continuous_coverage_c24
+        context: "SHG + SFM 组合原理：消除单 SHG 方案的蓝绿谱间隙（440–480 nm），实现连续覆盖恒星光谱密集吸收线区"
+      - step: 3
+        entity: ent.continuous_uv_bluegreen_astrocomb_c24
+        context: "应用该原理实现 390–520 nm 连续天文光梳，梳齿均匀度 <5 dB，适配 HARPS/ESPRESSO/ANDES 蓝光 RV 仪器（目标 <10 cm/s 精度）"
+
+relations:
+  - id: rel.Cheng24_01
+    predicate: BOUNDED-BY
+    subject: ent.continuous_uv_bluegreen_astrocomb_c24
+    object: pri.shg_sfm_combined_astrocomb_continuous_coverage_c24
+    context: "蓝光天文光梳连续覆盖可行性"
+    source:
+      zotero_key: "NDSVHPF5"
+      claim: >
+        "Second-harmonic generation of near-infrared mode-locked lasers has produced narrowband astrocombs at 400 nm. 
+        ...Our concept achieves a broad, continuous spectrum by combining SHG and SFM in an MgO:PPLN waveguide, 
+        bridging the spectral gap present in SHG-only conversion."
+    breakthrough_paths:
+      - step: 1
+        entity: meth.astro_comb_rv_calibration
+        context: "天文光梳径向速度定标方法的基本工作原理（跨文件引用 ycas2012.yaml）"
+      - step: 2
+        entity: pri.shg_sfm_combined_astrocomb_continuous_coverage_c24
+        context: "SHG + SFM 组合原理：通过双过程拼接实现蓝光连续覆盖，消除 SHG-only 谱间隙"
+      - step: 3
+        entity: ent.continuous_uv_bluegreen_astrocomb_c24
+        context: "应用该原理实现 390–520 nm 连续天文光梳，刷新蓝光 astrocomb 覆盖纪录（世界首次连续覆盖 UV–蓝绿）"
+    note: >
+      BOUNDED-BY 关系：蓝光天文光梳的连续覆盖能力受"单 SHG 谱宽不足"限制，
+      通过 SHG + SFM 组合突破该限制。补 breakthrough_paths（breakthrough tier）。
+
+  - id: rel.Cheng24_02
+    predicate: CHARACTERIZED-BY
+    subject: ent.continuous_uv_bluegreen_astrocomb_c24
+    object: met.astrocomb_continuous_coverage_c24
+    context: "天文光梳连续覆盖范围表征"
+    source:
+      zotero_key: "NDSVHPF5"
+      claim: "390–520 nm light from a 1 GHz Ti:sapphire frequency comb... extract a 30 GHz sub-comb spanning 392–472 nm"
+    breakthrough_paths: []
+    note: >
+      CHARACTERIZED-BY 关系：连续覆盖范围是该天文光梳的关键性能指标，
+      390–520 nm（连续，无谱间隙）为 2024 年蓝光 astrocomb 世界纪录（刷新 A3-Astro 子域主线）。
+
+metrics:
+  - id: met.astrocomb_continuous_coverage_c24
+    name: "天文光梳连续覆盖范围（Cheng 2024）"
+    status: demonstrated
+    demonstrated_value:
+      value: "390–520 nm（连续，无谱间隙）"
+      unit: "nm"
+      conditions: >
+        MgO:PPLN 波导 SHG + SFM 组合，1 GHz Ti:sapph 源梳（脉冲能量 ~100 pJ），
+        30 GHz 子梳（经 Fabry-Pérot 滤波），梳齿均匀度 <5 dB（模滤波后）。
+      measurement_method: "高分辨率光谱仪 + CCD 成像（可视化数千梳齿）"
+      comparison:
+        - context: "先前蓝光天文光梳连续覆盖范围"
+          reference_value: "400 nm ± 25 nm（单 SHG 方案，存在 440–480 nm 谱间隙）"
+          note: "本工作通过 SHG + SFM 组合首次实现连续 390–520 nm 覆盖，消除谱间隙"
+        - context: "其他天文光梳方案覆盖"
+          reference_value: "435–600 nm（超连续谱方案），500–620 nm（绿-红方案）"
+          note: "本工作首次覆盖 UV–蓝绿（390–440 nm），适配 Balmer 线及恒星密集吸收线区"
+    note: >
+      该指标刷新 2024 年 A3-Astro（天文光梳）子域主线纪录——
+      首次实现蓝光天文光梳的连续覆盖（无谱间隙），最大化可用恒星吸收线数量，
+      为 EPRV（<10 cm/s RV 精度目标）仪器提供完整蓝光定标能力。

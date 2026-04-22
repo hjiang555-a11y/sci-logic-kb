@@ -1,0 +1,133 @@
+# Hisai 2021 — NMIJ 8分支 Er:fiber 梳服务 Sr/Yb 光钟（稳定运行验证）
+# 提取者：GitHub Copilot（AI草稿，2026-04-22）
+# 提取日期：2026-04-22
+# Schema版本：v4.3
+# 专题：optical-frequency-combs
+# contribution_type: evidence（8支路架构首次演示，但稳定度未破纪录，定位为工程验证）
+
+meta:
+  zotero_key: "SZL4V3W8"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Development of 8-branch Er:fiber frequency comb for Sr and Yb optical lattice clocks"
+  year: 2021
+  first_author: Hisai
+  journal: "Optics Express"
+  volume: 27
+  issue: 5
+  pages: "6404-6415"
+  doi: "10.1364/OE.27.006404"
+  note: >
+    [技术论文] NMIJ (日本国家计量院)。开发 8分支 Er:fiber 频率梳（7 个应用端口 + 1 个 fceo 端口），
+    同时服务 Sr 与 Yb 光晶格钟的冷却/再泵浦/晶格/时钟激光频率锁定与测量：
+    (1) NPR 锁模振荡器（50.25 MHz）+ 三级 1:1 耦合器分光 → 8 分支，各自独立优化 EDFA + 非线性展宽；
+    (2) 7 个应用端口覆盖 578 nm / 679 nm / 698 nm / 759 nm / 798 nm / 813 nm / 1389 nm；
+    (3) 每路拍频 SNR > 30 dB @ 300 kHz RBW；同时锁定 4 个再泵浦/晶格激光 + 测量 2 个时钟激光；
+    (4) 验证光钟可靠运行（依赖梳稳频，无需单独光学腔）。
+    本工作是多分支梳架构的重要工程示范（8 分支，文献中最多），但未报告跨支路相位同步精度（σ_y 或相噪），
+    且 SNR / 稳定度未破先前纪录（Rolland 2018 / Kashiwagi 2018）。归 evidence（工程复杂度里程碑）。
+    对齐 v2 子域主线：B-FreqSyn（多支路相位同步），但性能参数未突破。
+
+entities:
+  - id: ent.nmij_8branch_er_comb_h21
+    name: "NMIJ 8分支 Er:fiber 频率梳（Hisai 2021）"
+    aliases:
+      - 8-branch Er:fiber frequency comb (NMIJ 2019)
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      NPR 锁模 Er:fiber 振荡器（frep ≈ 50.25 MHz）→ 三级 1:1 光纤耦合器（Coupler1 → 1:1 → 2 路；
+      Coupler2/3 各 1:1 → 4 路 → 8 路）；每路独立 EDFA + 非线性展宽（HNLF / PCF / PPLN SHG）至目标波段：
+      Branch 1 → fceo（f-2f）；Branch 2-8 → 7 个应用端口（578 nm / 679 nm / 698 nm / 759 nm / 798 nm / 813 nm / 1389 nm）。
+      frep 锁至 1005 MHz（20次谐波，与 UTC(NMIJ) 1 GHz 参考混频）；fceo 锁至合成器；
+      各应用端口分别与 Sr/Yb 时钟相关 CW 激光拍频（SNR > 30 dB @ 300 kHz RBW）。
+    key_parameters:
+      repetition_rate: "50.25 MHz（基频）"
+      branch_count: "8（1 for fceo + 7 application ports）"
+      application_wavelengths: "578 nm, 679 nm, 698 nm, 759 nm, 798 nm, 813 nm, 1389 nm（覆盖 Sr/Yb 冷却/再泵浦/晶格/时钟）"
+      beat_snr: "> 30 dB @ 300 kHz RBW（各应用端口）"
+      frep_lock: "1005 MHz（20th harmonic）混频至 UTC(NMIJ) 1 GHz"
+      fceo_lock: "锁至 RF 合成器（Keysight 33500B）"
+      splitter_topology: "三级 1:1 耦合器（99:1 after oscillator, then 3 stages of 50:50）"
+    note: "Level 2 实例节点，PART-OF ent.er_fiber_frequency_comb（定义于 droste2016.yaml）"
+
+methods:
+  - id: meth.triple_stage_1to1_splitter_8branch_h21
+    name: "三级 1:1 耦合器 8分支拓扑（Hisai 2021）"
+    status: demonstrated
+    applies_to: ent.nmij_8branch_er_comb_h21
+    steps_summary: >
+      1. NPR 振荡器输出 → 99:1 耦合器（1% 检测 frep，99% 主输出）；
+      2. 主输出 → Coupler1 (50:50) → 2 路；
+      3. 两路各 → Coupler2/3 (50:50) → 4 路 → 8 路总计；
+      4. Branch 1 → HNLF + f-2f 干涉仪测 fceo；
+      5. Branch 2-8 → 各自 EDFA + 非线性展宽（HNLF / PCF / PPLN SHG）至目标波长；
+      6. 各应用端口与对应 CW 激光拍频（高 SNR PLL 锁定或频率测量）；
+      7. 同时锁定 4 个再泵浦/晶格激光 + 测量 2 个时钟激光（Sr 578 nm / Yb 698 nm）。
+    required_hardware:
+      - "NPR Er:fiber 振荡器（50 MHz）"
+      - "三级 50:50 光纤耦合器"
+      - "8 套 EDFA + 非线性模块（HNLF / PCF / PPLN）"
+      - "7 台 CW 激光（Sr/Yb 各波段）"
+    advantages:
+      - "单梳服务双光钟所有频率需求（减少独立腔稳激光数量）"
+      - "分支间功率分配灵活（各 EDFA 独立增益）"
+      - "系统可靠性高（论文验证长期稳定运行）"
+    disadvantages:
+      - "未报告跨支路相位同步精度（σ_y / 相噪比对）"
+      - "分支数量多 → 各支路平均功率低（需大增益 EDFA 补偿）"
+
+metrics:
+  - id: met.8branch_beat_snr_h21
+    name: "8分支梳拍频信噪比"
+    unit: "dB"
+    description: "各应用端口与 CW 激光拍频的信噪比（300 kHz 分辨带宽）"
+    demonstrated_value:
+      value: "> 30 dB @ 300 kHz RBW（所有 7 个应用端口）"
+      conditions: "NMIJ 8分支 Er:fiber 梳 + 独立优化 EDFA/展宽"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "SZL4V3W8", claim: "The beat between the comb and a cw laser has a signal-to-noise ratio exceeding 30 dB at a resolution bandwidth of 300 kHz."}
+    comparison:
+      - "与 Sinclair 2015（紧凑全 PM 梳）同级 SNR，但本工作支路数更多（8 vs 单/双支路）"
+
+relations:
+  - id: rel.His21_01
+    subject: ent.nmij_8branch_er_comb_h21
+    predicate: PART-OF
+    object: ent.er_fiber_frequency_comb
+    confidence: established
+    source: {zotero_key: "SZL4V3W8", claim: "8-branch Er:fiber frequency comb"}
+    note: "跨文件引用 ent.er_fiber_frequency_comb（定义于 droste2016.yaml）"
+
+  - id: rel.His21_02
+    subject: ent.nmij_8branch_er_comb_h21
+    predicate: CHARACTERIZED-BY
+    object: met.8branch_beat_snr_h21
+    confidence: established
+    source: {zotero_key: "SZL4V3W8", claim: "> 30 dB @ 300 kHz"}
+
+  - id: rel.His21_03
+    subject: met.8branch_beat_snr_h21
+    predicate: BOUNDED-BY
+    object: pri.inter_branch_fiber_noise_degradation
+    confidence: likely
+    source: {zotero_key: "SZL4V3W8", claim: "each branch is individually optimized"}
+    note: "跨文件引用 pri.inter_branch_fiber_noise_degradation（定义于 kashiwagi2018.yaml），虽本文未定量报告相噪劣化"
+
+  - id: rel.His21_04
+    subject: meth.triple_stage_1to1_splitter_8branch_h21
+    predicate: OPERATIONALIZED-AS
+    object: ent.nmij_8branch_er_comb_h21
+    confidence: established
+    source: {zotero_key: "SZL4V3W8", claim: "a frequency comb with 8 branches using 3 stages consisting of 1:1 fiber couplers"}
+
+  - id: rel.His21_05
+    subject: meth.triple_stage_1to1_splitter_8branch_h21
+    predicate: ENABLED-BY
+    object: pri.self_referencing_f2f
+    confidence: established
+    source: {zotero_key: "SZL4V3W8", claim: "one of the branches is usually used to detect and stabilize the carrier envelope offset frequency (f_CEO)"}
+    note: "跨文件引用 pri.self_referencing_f2f（定义于 giunta2019.yaml）"

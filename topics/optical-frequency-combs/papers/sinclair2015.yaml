@@ -1,0 +1,96 @@
+# Sinclair 2015 — NIST 紧凑全 PM 光纤梳（移动平台适用）
+# 提取者：GitHub Copilot（AI草稿，2026-04-22）
+# 提取日期：2026-04-22
+# Schema版本：v4.3
+# 专题：optical-frequency-combs
+# contribution_type: framework（综合技术论文，consolidates prior NIST work on compact robust comb design）
+
+meta:
+  zotero_key: "LMFFEUFX"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: framework
+  reliability: high
+  title: "A compact optically coherent fiber frequency comb"
+  year: 2015
+  first_author: Sinclair
+  journal: "Review of Scientific Instruments"
+  volume: 86
+  issue: 8
+  pages: "081301"
+  doi: "10.1063/1.4928163"
+  note: >
+    [Invited Article / 综合技术论文] NIST Boulder。综述并详细描述 NIST 团队开发的紧凑全 PM 光纤频率梳
+    （~1 liter 体积，200 MHz frep，笔记本大小），专为移动平台、野外应用设计：
+    (1) 全 PM 光纤 + SESAM 锁模 → 免对准、抗环境扰动；
+    (2) 高 SNR 控制信号 + 数字反馈 → 相位相干锁定 >90 小时（无 phase slip）；
+    (3) 脉间时间抖动 < 3 fs（适用于绝大多数频率梳应用）；
+    (4) 三台几乎相同的梳性能指标一致（可重复性）；
+    (5) 应用场景：痕量气体探测、激光雷达、时频传递。
+    本文不报告新的性能突破（稳定度 / 相噪 / SNR 与先前 NIST 工作同级），主要整合并公开详细设计规范，
+    使社区可复制——定位为 framework（工程指南 + 复现基准）。对齐 v2 子域主线：A1-Robust（紧凑/移动/鲁棒性）。
+
+entities:
+  - id: ent.nist_compact_pm_fiber_comb_s15
+    name: "NIST 紧凑全 PM 光纤频率梳（Sinclair 2015）"
+    aliases:
+      - Compact optically coherent fiber comb (NIST 2015)
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      全 PM 光纤架构 + SESAM 锁模 + 数字反馈控制的紧凑型 Er:fiber 频率梳（体积 < 1 liter，笔记本大小）：
+      frep ≈ 200 MHz, 倍频程展宽 → f-2f 自参考；数字 PLL 锁 frep + fceo 至 RF 参考，>90 小时无相位滑动；
+      脉间时间抖动 < 3 fs（适用于时频传递 / LADAR / 双梳光谱等应用）；
+      三台近似相同的梳性能指标一致，证明可重复性；设计针对移动平台（地面车辆 / 飞机 / 空间站）振动环境。
+    key_parameters:
+      repetition_rate: "~200 MHz"
+      volume: "< 1 liter (laptop-sized)"
+      pulse_jitter: "< 3 fs (residual pulse-to-pulse timing jitter)"
+      phase_coherent_time: "> 90 hours (phase-slip free)"
+      fiber_type: "全 PM（polarization-maintaining）"
+      mode_locking: "SESAM（半导体可饱和吸收镜）"
+      control: "数字反馈（高 SNR 控制信号）"
+      target_environment: "移动平台（振动、温度变化、无专家维护）"
+    note: "Level 2 实例节点，PART-OF ent.er_fiber_frequency_comb（定义于 droste2016.yaml）"
+
+principles:
+  - id: pri.pm_fiber_digital_feedback_phase_slip_free_s15
+    name: "全 PM 光纤 + 数字反馈实现长期无相位滑动原理（Sinclair 2015）"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      通过高 SNR 控制信号（fceo / frep 探测）+ 数字 PLL（FPGA 实现）+ 全 PM 光纤（免偏振漂移），
+      可在移动平台振动环境下维持频率梳 >90 小时无 phase slip（即 frep / fceo 反馈环路持续相位锁定，无周期跳变）。
+      关键在于：(a) PM 光纤消除环境偏振漂移导致的模式跳变；(b) SESAM 自启锁模（无需 NPR 调校）；
+      (c) 数字 PLL 自适应增益调整 + 高动态范围（14-bit DAC）。
+    domain: "鲁棒性光频梳工程；移动计量平台"
+    key_insight: >
+      "Phase-slip free 是时间频率传递应用的关键指标——单次 phase slip（2π 跳变）会导致积分频率计数错误，
+      无法通过事后校准完全消除"——NIST 该方案通过 SNR 主导设计（而非单纯追求最低相噪）达成。
+    conditions: "全 PM 光纤 + SESAM / NALM 锁模；数字 PLL；高 SNR fceo / frep 探测（> 35 dB）"
+    source_claim: >
+      "Digital control enables phase coherent operation for over 90 h, critical for phase-sensitive applications such as timekeeping. We show that this phase-slip free operation follows the fundamental limit set by the SNR of the control signals."
+
+relations:
+  - id: rel.Sin15_01
+    subject: ent.nist_compact_pm_fiber_comb_s15
+    predicate: PART-OF
+    object: ent.er_fiber_frequency_comb
+    confidence: established
+    source: {zotero_key: "LMFFEUFX", claim: "fiber-frequency comb ... based on polarization-maintaining fiber"}
+    note: "跨文件引用 ent.er_fiber_frequency_comb（定义于 droste2016.yaml）"
+
+  - id: rel.Sin15_02
+    subject: ent.nist_compact_pm_fiber_comb_s15
+    predicate: CHARACTERIZED-BY
+    object: pri.pm_fiber_digital_feedback_phase_slip_free_s15
+    confidence: established
+    source: {zotero_key: "LMFFEUFX", claim: "> 90 h phase-slip free operation"}
+
+  - id: rel.Sin15_03
+    subject: pri.pm_fiber_digital_feedback_phase_slip_free_s15
+    predicate: ENABLED-BY
+    object: pri.self_referencing_f2f
+    confidence: established
+    source: {zotero_key: "LMFFEUFX", claim: "self-referenced, optically coherent frequency comb"}
+    note: "跨文件引用 pri.self_referencing_f2f（定义于 giunta2019.yaml）"

@@ -1,0 +1,163 @@
+# Marra 2012 — 3×10⁻¹⁸ 精度光频梳光纤传递（NPL首次）
+# 提取者：GitHub Copilot（AI草稿，2026-04-22）
+# 提取日期：2026-04-22
+# Schema版本：v4.3
+# 专题：optical-frequency-combs
+# contribution_type: breakthrough（首次实现光频梳结构经 km 级光纤传递达 <3×10⁻¹⁸ 精度，开创光频梳传递新范式）
+
+meta:
+  zotero_key: "P7A5Z647"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: breakthrough
+  reliability: high
+  title: "Dissemination of an optical frequency comb over fiber with 3×10⁻¹⁸ fractional accuracy"
+  year: 2012
+  first_author: Marra
+  journal: "Optics Express"
+  volume: 20
+  issue: 2
+  pages: "1775-1782"
+  doi: "10.1364/OE.20.001775"
+  note: >
+    [技术论文 / 突破] NPL (National Physical Laboratory, UK) + Southampton。首次演示整体光频梳结构
+    （所有梳齿频率关系完整保留）通过 km 级光纤传递并达到与超稳激光频率传递同等精度（3×10⁻¹⁸ @ 1000s）：
+    (1) 光学相位探测 + AOM/光纤拉伸主动噪声抵消，稳定光纤链路光程；
+    (2) 光学模式稳定度 2×10⁻¹⁸ @ 数千秒，模间距（f_rep）经光电转换后稳定度 4×10⁻¹⁷；
+    (3) 超越先前单 CW 激光光纤传递记录（10⁻¹⁹），开创"梳整体传递"范式——为远程光钟比对、天文仪器校准奠定基础。
+    档位判定：刷新 B-FreqSyn 主线"σ_y 链路传递残差 + 传递距离"双重指标（首次<3×10⁻¹⁸ comb full transfer），
+    归 breakthrough。对齐 v2 子域主线：B-FreqSyn。
+
+entities:
+  - id: ent.npl_fiber_comb_transfer_system_m12
+    name: "NPL 光频梳结构光纤传递系统（Marra 2012）"
+    aliases:
+      - NPL fiber-disseminated optical frequency comb
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      通过 km 级光纤传递 Er:fiber 频率梳的完整结构（所有梳齿 fn = n·f_rep + f_CEO），
+      接收端解调出与发射端完全相位相干的梳齿频率：
+      (1) 发射端 Er:fiber 梳（100 MHz f_rep）+ f-2f 自参考；
+      (2) 光学相位探测（参考光 vs 光纤传输光）驱动 AOM + 光纤拉伸器主动噪声抵消；
+      (3) 接收端光电探测 f_rep、f_beat 拍频，Allan 偏差 <3×10⁻¹⁸ @ 1000 s（锁至 Cs 原子钟溯源 RF）。
+    key_parameters:
+      repetition_rate: "100 MHz（传递前后完整保留）"
+      fiber_length: "数 km（主论文未明示具体值，文中提 50 km/86 km 参考报道）"
+      link_stability: "光学模式稳定度 2×10⁻¹⁸ @ 数千秒；f_rep 稳定度 4×10⁻¹⁷"
+      noise_cancellation: "光学相位探测 + AOM/光纤拉伸双执行器"
+      reference: "梳齿锁至 Cs 原子钟溯源 RF（SI-s 溯源）"
+    note: >
+      Level 2 实例节点，PART-OF ent.precision_frequency_transfer_system_f22（跨文件引用，定义于 fermann2022.yaml）；
+      本工作是第一次将"梳结构整体传递"推进到与"超稳激光单频传递"同精度（此前 10⁻¹⁹ 纪录仅针对单 CW 频率）。
+
+principles:
+  - id: pri.optical_phase_detection_fiber_link_m12
+    name: "光学相位探测光纤链路主动稳定原理（Marra 2012）"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      在光纤频率传递中，通过在光纤远端反射一部分传输光回到近端，与近端参考光直接进行光学外差探测，
+      测得光纤双程相位噪声；将此相位噪声信号驱动 AOM/光纤拉伸器实时补偿光程，可将长 km 光纤的相位噪声
+      从 10⁻¹² 量级抑制到 10⁻¹⁸ 量级。这使得远端接收到的光保持与近端相位相干，适用于整个频率梳结构传递。
+    domain: "光纤频率/时间传递；光学计量链路"
+    key_insight: >
+      "光学相位探测"优于射频相位探测，原因在于不受光电探测噪声和 EDFA ASE 噪声的限制——前者在光域测量噪声，
+      再反馈；后者在电域测量（需先光电转换），电噪声会直接劣化反馈信号。
+    conditions: "双程光纤链路；可用 AOM/光纤拉伸器作为快速相位执行器；参考光与传输光在近端可相干外差"
+    source_claim: >
+      "Using an optical phase detection technique we measure the noise introduced by the fiber link and suppress it by stabilizing the optical path length."
+    formula: "Δφ_detected (optical) → AOM/stretcher feedback → residual Δφ_link << 1 rad @ 1000 s"
+
+methods:
+  - id: meth.optical_phase_detection_comb_transfer_m12
+    name: "光学相位探测光频梳整体传递方法（Marra 2012）"
+    status: demonstrated
+    applies_to: ent.npl_fiber_comb_transfer_system_m12
+    steps_summary: >
+      1. Er:fiber 梳经 f-2f 自参考锁 f_CEO + f_rep 至 Cs 溯源 RF；
+      2. 梳输出耦合入光纤（部分功率留作近端参考光）；
+      3. 光纤远端反射镜将部分光反射回近端；
+      4. 近端光学外差探测"参考光 vs 返回光"，获双程相位噪声；
+      5. PID 伺服驱动 AOM + 光纤拉伸器（可能组合），实时抑制噪声；
+      6. 远端接收光梳信号，光电探测 f_rep/f_beat 拍频，比对 Allan 偏差 @ 10⁻¹⁸ 级。
+    required_hardware:
+      - "Er:fiber 梳 + f-2f 自参考"
+      - "光学外差探测器（平衡探测器 / 高速光电二极管）"
+      - "AOM + 光纤拉伸器（相位执行器）"
+      - "Cs 原子钟溯源 RF 参考"
+    advantages:
+      - "梳结构完整保留，接收端可恢复所有梳齿（不同于单 CW 传递）"
+      - "稳定度与先前单频超稳激光传递同级（<3×10⁻¹⁸），但覆盖整个光学谱"
+      - "对齐 SI-s 通过 Cs 钟溯源，可直接用于远程光钟频率比对"
+    disadvantages:
+      - "需要双程光纤链路（单程应用需额外方案）"
+      - "残余相位噪声受未补偿光程影响（论文未详述，但提出存在此限制）"
+
+metrics:
+  - id: met.fiber_transferred_comb_stability_m12
+    name: "光纤传递光频梳稳定度"
+    unit: "(dimensionless)"
+    description: "光频梳经 km 级光纤传递后，接收端解调梳齿频率与发射端参考的 fractional frequency stability"
+    demonstrated_value:
+      value: "光学模式 2×10⁻¹⁸ @ 数千秒；f_rep 模间距 4×10⁻¹⁷ @ 同尺度"
+      conditions: "双程 km 级光纤 + 光学相位探测主动噪声抵消 + Cs 钟溯源"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "P7A5Z647", claim: "The measured fractional frequency stability of the transferred optical modes is 2×10⁻¹⁸ at a few thousand seconds and the mode spacing stability after optical-microwave conversion is better than 4×10⁻¹⁷ over the same time scale."}
+    comparison:
+      - "与 Grosche 2009 单 CW 光学频率传递 10⁻¹⁹ @ 146 km（仅单频）比：本工作覆盖整个梳结构（首次）"
+      - "与 Williams 2008 / Jiang 2008 先前梳传递 10⁻¹⁵ 级比：本工作提升 3 个数量级"
+
+relations:
+  - id: rel.Mar12_01
+    subject: ent.npl_fiber_comb_transfer_system_m12
+    predicate: PART-OF
+    object: ent.precision_frequency_transfer_system_f22
+    confidence: established
+    source:
+      zotero_key: "P7A5Z647"
+      claim: "dissemination of an optical frequency comb over fiber with 3×10⁻¹⁸ fractional accuracy"
+    note: "跨文件引用 ent.precision_frequency_transfer_system_f22（定义于 fermann2022.yaml）"
+
+  - id: rel.Mar12_02
+    subject: ent.npl_fiber_comb_transfer_system_m12
+    predicate: CHARACTERIZED-BY
+    object: met.fiber_transferred_comb_stability_m12
+    confidence: established
+    source:
+      zotero_key: "P7A5Z647"
+      claim: "2×10⁻¹⁸ at a few thousand seconds"
+
+  - id: rel.Mar12_03
+    subject: met.fiber_transferred_comb_stability_m12
+    predicate: BOUNDED-BY
+    object: pri.optical_phase_detection_fiber_link_m12
+    confidence: established
+    source:
+      zotero_key: "P7A5Z647"
+      claim: "Using an optical phase detection technique we measure the noise introduced by the fiber link and suppress it"
+    breakthrough_paths:
+      - direction: meth.optical_phase_detection_comb_transfer_m12
+        expected_gain: "达到与单频超稳激光传递同级稳定度，但覆盖整个梳结构"
+        status: demonstrated
+        source: {zotero_key: "P7A5Z647"}
+
+  - id: rel.Mar12_04
+    subject: meth.optical_phase_detection_comb_transfer_m12
+    predicate: ENABLED-BY
+    object: pri.optical_phase_detection_fiber_link_m12
+    confidence: established
+    source:
+      zotero_key: "P7A5Z647"
+      claim: "optical phase detection technique"
+
+  - id: rel.Mar12_05
+    subject: meth.optical_phase_detection_comb_transfer_m12
+    predicate: ENABLED-BY
+    object: pri.self_referencing_f2f
+    confidence: established
+    source:
+      zotero_key: "P7A5Z647"
+      claim: "The frequency comb is fully stabilized by phase-locking both fCEO and frep to a RF reference traceable to the Cs atomic clock"
+    note: "跨文件引用 pri.self_referencing_f2f（定义于 giunta2019.yaml）"

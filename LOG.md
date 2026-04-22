@@ -7,6 +7,40 @@
 
 ---
 
+## [2026-04-22] ingest | optical-frequency-combs Batch 2+3 · 计量链路 + 新平台与光谱应用（19 篇）
+
+承接 Batch 1（10 篇 · A1 技术平台子域）后摄入 Batch 2 + Batch 3，合计 +19 篇（光频梳 71 → 90）。原计划 20 篇，其中 `BL4HI3QI` 与已处理 `picque2019.yaml`（zotero `RZME5CH8`）DOI 完全相同（`10.1038/s41566-018-0347-5`，Picqué & Hänsch 2019 Nature Photonics 综述），确认为 zotero 备份键，**跳过不创建重复 YAML**。
+
+- **Batch 2 计量链路 / 频率综合子域**（B-FreqSyn 为主，10 篇全部新增）：
+  - `marra2012.yaml`（P7A5Z647，**breakthrough**）：首次光频梳结构光纤传递 3×10⁻¹⁸ 精度（NPL，> 数 km）。
+  - `nardelli2023.yaml`（R9HNIBTE，evidence）：Er/Yb:glass 梳 10⁻¹⁸ 级光学/微波计量（NIST）。
+  - `rolland2018.yaml`（U5C8AJYM，**breakthrough**）：首次双分支 Er 梳 <10⁻¹⁸ 传递稳定度（IMRA，被动差分抵消）。
+  - `hisai2021.yaml`（SZL4V3W8，evidence）：NMIJ 8 分支 Er:fiber 梳服务 Sr/Yb 光钟（架构里程碑）。
+  - `ning2020.yaml`（ST825B59，evidence）：全 PM 多分支 Er:fiber 梳 for CRDS（国家授时中心）。
+  - `sinclair2015.yaml`（LMFFEUFX，**framework**）：紧凑全 PM 相干光纤梳技术综合（NIST Rev Sci Instrum invited）。
+  - `zhang_s2024.yaml`（QEJS62JG，evidence）：门控+平衡探测提升梳-CW 拍频 SNR ≥20 dB（USTC）。
+  - `chen_z2024.yaml`（QIFVVUIH，evidence）：双梳微波钟同步 fs 级（PKU+BUPT Optica）。
+  - `zhang2017b.yaml`（V7MNFM68，evidence）：偏振态旋转控制梳频率（国家授时中心 Opt Lett）。
+  - `lee2015.yaml`（L6ZZII7R，**breakthrough**）：单片 SESAM+graphene EOM 锁模与稳频集成（Schibli 组）。
+- **Batch 3 新平台与光谱应用**（A2-DKS / A3-Astro / B-Spec / B-DCS / B-MIR 多主线，9 篇全部新增）：
+  - `diddams2010.yaml`（VKLU3BG6，**framework**）：JOSA B "The evolving optical frequency comb" 综述。
+  - `porat2018.yaml`（L88UAAEQ，**breakthrough**）：首次相位匹配 XUV 光梳（77 MHz 高温气体，JILA，Nature Photonics）；刷新 B-Spec 主线。
+  - `cheng2024.yaml`（NDSVHPF5，**breakthrough**）：首次连续 UV–蓝绿（390–520 nm）天文光梳；刷新 A3-Astro + B-Spec 主线。
+  - `holzwarth2001.yaml`（UNL7SSP3，**breakthrough**）：首个二极管泵浦倍频程梳（Cr:LiSAF + PCF，Opt Lett 2001）；开创便携式 OFC 路线。
+  - `ideguchi2016.yaml`（PBGQXUED，**breakthrough**）：首个单腔 KLM 双向双梳环形激光器（B-DCS 主线里程碑）。
+  - `spaun2016.yaml`（NNLDMCDD，**breakthrough**）：首次腔增强梳 + 缓冲气体冷分子红外光谱（Nature 2016）。
+  - `timmers2018.yaml`（TFUBQQB8，**breakthrough**）：脉冲内 DFG + OP-GaP 超八度中红外指纹梳（4–12 μm）；刷新 B-MIR 主线。
+  - `diddams2007.yaml`（U9WDX7JI，**breakthrough**）：首次 VIPA 空间分辨梳齿分子指纹光谱（Nature 2007）。
+  - `papp2013b.yaml`（SE4C2RWR，**breakthrough**）：CO₂ 激光微棒梳 + 机械 f_rep 控制（PRX 2013，5×10⁻¹⁵ @ 1 s，较此前 +200×）。注：`papp2013.yaml` 已存在（Papp 2013 parametric-seeding，zotero BG93PZPK），本文件使用 `b` 后缀区分。
+- **节点复用**：广泛跨文件引用 `ent.optical_frequency_comb`（giunta2019）、`ent.er_fiber_frequency_comb`（droste2016）、`ent.dual_comb_spectrometer`（coddington2016）、`ent.microresonator_frequency_comb`（kippenberg2011）、`ent.mid_ir_frequency_comb`（schliesser2012）、`pri.self_referencing_f2f` / `pri.comb_equation` / `pri.cavity_enhanced_hhg_comb`（zhang2022）/ `pri.parametric_four_wave_mixing_comb`（kippenberg2011）/ `pri.dissipative_kerr_soliton` 等核心节点。无节点重复定义。
+- **Schema 一致性修复**：Batch 3 初稿使用了非标准字段名（`type:` / `source_entity:` / `target_entity:`），已批量归一化为 Schema 规范字段（`predicate:` / `subject:` / `object:`），避免 orphan-node 误判。
+- **lint 结果**：0 error · 3 warning（全部 pre-existing，来自 ultrastable-laser 的 `missing-conditions`）· 129 info，与 Batch 1 前一致。新增 breakthrough 论文全部携带 `breakthrough_paths`，无 chain-gap WARNING。
+- **索引重建**：`python scripts/build_index.py` — 170 papers · 953 nodes · 1093 relations（光频梳 90 papers · 600 nodes · 735 relations）；`_meta/architecture.md` 论文计数 71 → 90。
+
+---
+
+
+
 ## [2026-04-21] ingest | optical-frequency-combs Batch 1 · 飞秒锁模激光器技术平台主线（10 篇）
 
 用户指示光频梳 30 篇分 3 批摄入；Batch 1 聚焦 A1 技术平台（重频、相噪、工程化子域）。同步升级 `_meta/scoping_principles.md` v1 → v2，将子域主线指标从"🟡 待专家确认"升级为 v2 正式 9 条主线（A1-Rep / A1-Noise / A1-Robust / A2-DKS / A3-Astro / B-Spec / B-FreqSyn / B-DCS / B-MIR），明确"光频梳不存在单一主线指标，各子域独立判档"。

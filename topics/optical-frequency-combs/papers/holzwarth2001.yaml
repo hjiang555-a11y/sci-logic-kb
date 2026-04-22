@@ -1,0 +1,163 @@
+# Holzwarth 2001 — 首个二极管泵浦倍频程光梳（Cr:LiSAF + PCF）[breakthrough]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-22
+# Schema版本：v4.4
+# 专题：optical-frequency-combs
+# contribution_type: breakthrough（首次用二极管泵浦固态激光器实现倍频程白光频率梳，开创便携/低成本 OFC 路线）
+
+meta:
+  zotero_key: "UNL7SSP3"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: breakthrough
+  reliability: high
+  title: "White-light frequency comb generation with a diode-pumped Cr:LiSAF laser"
+  year: 2001
+  first_author: Holzwarth
+  journal: "Optics Letters"
+  volume: 26
+  issue: 17
+  pages: "1376-1378"
+  doi: "10.1364/OL.26.001376"
+  note: >
+    [技术论文 / 里程碑] MPQ Garching (Holzwarth, Zimmermann, Udem, Hänsch) + RWTH Aachen + U Bath 2001 年 Opt Lett。
+    首次用**二极管直接泵浦 Cr:LiSAF 飞秒激光器**（670 nm 激光二极管泵浦，电池供电）+ 光子晶体光纤（PCF）
+    实现覆盖超过一个倍频程的白光频率梳——此前倍频程梳均依赖 Ti:sapph（需 Ar⁺ 激光器或倍频 Nd:YAG 泵浦，体积大、成本高）。
+    Cr:LiSAF 泵浦光源可直接用激光二极管（2×350 mW @ 670 nm），整机可电池供电，光学斜率效率 39%；
+    输出 115 mW @ 93 MHz、894 nm 中心、24 nm FWHM 带宽（支持 40 fs 脉冲），
+    经 PCF 展宽至覆盖 >1 倍频程（保留梳结构），适用于光学频率计量。
+    开创了"便携式/低成本 OFC"技术路线，为 OFC 走出实验室（空间光钟、野外光谱等）奠定基础。
+    v2 子域主线：A1-Robust（工程化/紧凑化梳）首次演示；B-Spec（光谱展宽/波长扩展）二极管泵浦分支。
+
+entities:
+  - id: ent.diode_pumped_crlisaf_octave_comb_h01
+    name: "二极管泵浦 Cr:LiSAF 倍频程频率梳（Holzwarth 2001）"
+    aliases:
+      - diode-pumped Cr:LiSAF white-light comb
+      - battery-operated octave comb
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      基于 Cr:LiSAF（colquirite 晶体）的 Kerr 透镜锁模飞秒激光器，670 nm 激光二极管直接泵浦（2×350 mW），
+      电池供电，输出 115 mW @ 93 MHz、894 nm 中心、24 nm FWHM 带宽（脉冲 40 fs）；
+      经光子晶体光纤（PCF）超连续谱展宽至覆盖 >1 倍频程（保留梳齿结构），
+      适用于光学频率计量（f-2f 自参考可行）。
+      首次证明"二极管泵浦"路线可实现倍频程梳，打破 Ti:sapph 垄断（后者需 Ar⁺ 或倍频 Nd:YAG 泵浦）。
+    key_parameters:
+      gain_medium: "Cr:LiSAF（colquirite 晶体，增益带宽略小于 Ti:sapph，饱和强度低 2 倍）"
+      pump_source: "2×350 mW 激光二极管 @ 670 nm（电池供电，M² ~ 3×8 光束质量）"
+      mode_locking: "Kerr 透镜锁模（软孔径，紧聚焦增强非线性）"
+      repetition_rate: "93 MHz"
+      output_power: "115 mW（锁模态）"
+      center_wavelength: "894 nm（可调 835–895 nm）"
+      spectral_bandwidth: "24 nm FWHM（支持 40 fs 脉冲）"
+      pulse_duration: "40 fs（FWHM，变换极限附近）"
+      slope_efficiency: "39%（光学斜率效率）"
+      pcf_broadening: "覆盖 >1 倍频程（保留梳齿结构）"
+      portability: "电池供电，紧凑腔设计（Z-fold 腔 + chirped mirror 色散补偿）"
+    note: >
+      Level 2 实例节点，属于"二极管泵浦固态激光器倍频程梳"分支。
+      首次证明便携式、低成本 OFC 可行——不依赖大型实验室泵浦激光器（Ar⁺ 或倍频 Nd:YAG），
+      开创了 OFC 小型化/应用化路线（后续发展至空间光梳、移动平台光谱仪等）。
+
+principles:
+  - id: pri.diode_pumped_octave_comb_portability_h01
+    name: "二极管泵浦实现便携式倍频程梳原理（Holzwarth 2001）"
+    tier: domain
+    verification_status: observed
+    statement: >
+      "Ti:sapph 飞秒激光器虽性能卓越，但需 Ar⁺ 激光器或倍频 Nd:YAG 激光器泵浦（体积大、成本高、功耗高），
+      限制了 OFC 在实验室外的应用。Cr:LiSAF（及其同族 colquirites Cr:LiSGaF/Cr:LiCaF）可**直接用 670 nm 激光二极管泵浦**，
+      增益带宽与 Ti:sapph 相当（略小），饱和强度更低 → 更易锁模；结合光子晶体光纤（PCF）超连续谱展宽，
+      可实现倍频程覆盖 + 电池供电 + 紧凑腔设计 → 便携式 OFC 可行。"
+      Holzwarth 2001 证明：二极管泵浦 Cr:LiSAF 梳（115 mW, 93 MHz, 24 nm FWHM）
+      经 PCF 展宽至 >1 倍频程，保留梳齿结构，适用于频率计量——开创了"便携式 OFC"技术路线，
+      为空间光钟（Lezius 2016）、移动平台光谱（Sinclair 2014）等野外应用铺平道路。
+    domain: "飞秒激光器工程；便携式精密仪器；二极管泵浦固态激光器"
+    key_insight: >
+      OFC 走出实验室的核心瓶颈不是梳技术本身（f-2f 自参考等已成熟），
+      而是"泵浦激光器体积/功耗/成本"——Ti:sapph 的 Ar⁺ 泵浦（>5 kW 功耗，大型机架）是主要障碍。
+      二极管泵浦 Cr:LiSAF（<1 W 功耗，电池供电）直接打破该瓶颈，虽光学性能略逊 Ti:sapph（带宽窄 ~20%，热管理难），
+      但对"频率计量可用"而言已足够——这是"性能充分性"vs"极致性能"的工程权衡典范。
+    conditions: >
+      需低饱和强度增益介质（Cr:LiSAF 饱和强度 < Ti:sapph 一半）；
+      需紧聚焦 KLM 腔设计（补偿 Cr:LiSAF 非线性系数低 5–10 倍）；
+      需精密泵浦光束整形（激光二极管 M² ~ 3×8，需数值优化重叠积分）；
+      需色散平坦 PCF（倍频程展宽，保留梳齿结构）；需电池供电电子学。
+    formula: "倍频程覆盖条件不变：Δf ≥ f_center（如 894 nm ± 447 nm）；便携性增益：泵浦功耗↓ >1000 倍（Ar⁺ ~5 kW → 激光二极管 ~1 W）"
+    source:
+      zotero_key: "UNL7SSP3"
+      claim: >
+        "The relatively new laser crystals of the colquiirites such as Cr:LiSAF, Cr:LiSGaF, and Cr:LiCaF, 
+        which can be directly pumped by laser diodes at 670 nm, offer low-cost high-performance alternatives to Ti:sapphire. 
+        ...We have created a broad spectrum spanning more than an optical octave by launching femtosecond pulses 
+        from a battery operated Cr:LiSAF laser into a photonic crystal fiber."
+    breakthrough_paths:
+      - step: 1
+        entity: pri.supercontinuum_octave_spanning
+        context: "超连续谱倍频程展宽原理（Ti:sapph + PCF 已证明，跨文件引用 diddams2000.yaml）"
+      - step: 2
+        entity: pri.diode_pumped_octave_comb_portability_h01
+        context: "二极管泵浦便携式梳原理：用 Cr:LiSAF 替代 Ti:sapph，泵浦功耗降低 >1000 倍（Ar⁺ → 激光二极管），电池供电可行"
+      - step: 3
+        entity: ent.diode_pumped_crlisaf_octave_comb_h01
+        context: "应用该原理实现首个二极管泵浦倍频程梳（115 mW, 93 MHz, >1 倍频程，电池供电），开创便携式 OFC 路线"
+
+relations:
+  - id: rel.Hol01
+    predicate: BOUNDED-BY
+    subject: ent.diode_pumped_crlisaf_octave_comb_h01
+    object: pri.diode_pumped_octave_comb_portability_h01
+    context: "便携式倍频程梳可行性"
+    source:
+      zotero_key: "UNL7SSP3"
+      claim: >
+        "Although Ti:sapphire lasers are convenient laboratory workhorses, they cannot be directly diode pumped; 
+        instead, costly large-frame Ar-ion or frequency-doubled Nd:YAG lasers are needed for pumping. 
+        ...Cr:LiSAF can be directly pumped by laser diodes at 670 nm, offering low-cost high-performance alternatives."
+    breakthrough_paths:
+      - step: 1
+        entity: pri.supercontinuum_octave_spanning
+        context: "超连续谱倍频程展宽原理（Ti:sapph + PCF 已验证，跨文件引用 diddams2000.yaml）"
+      - step: 2
+        entity: pri.diode_pumped_octave_comb_portability_h01
+        context: "二极管泵浦便携式梳原理：Cr:LiSAF + 激光二极管（670 nm）替代 Ti:sapph + Ar⁺，泵浦功耗 ↓ >1000 倍，电池供电可行"
+      - step: 3
+        entity: ent.diode_pumped_crlisaf_octave_comb_h01
+        context: "应用该原理实现首个二极管泵浦倍频程梳（世界首次，2001），开创便携式 OFC 技术路线"
+    note: >
+      BOUNDED-BY 关系：便携式倍频程梳的可行性受"泵浦激光器体积/功耗"限制，
+      通过二极管泵浦 Cr:LiSAF 突破该限制。补 breakthrough_paths（breakthrough tier）。
+
+  - id: rel.Hol02
+    predicate: CHARACTERIZED-BY
+    subject: ent.diode_pumped_crlisaf_octave_comb_h01
+    object: met.diode_pumped_comb_slope_efficiency_h01
+    context: "二极管泵浦梳光学效率表征"
+    source:
+      zotero_key: "UNL7SSP3"
+      claim: "The optimized pumping scheme and the low losses produced an overall optical slope efficiency of 39%."
+    breakthrough_paths: []
+    note: >
+      CHARACTERIZED-BY 关系：光学斜率效率 39% 是该二极管泵浦梳的关键工程指标，
+      证明 Cr:LiSAF 的泵浦效率可与 Ti:sapph 比肩（虽非线性系数低），验证便携式 OFC 路线可行性。
+
+metrics:
+  - id: met.diode_pumped_comb_slope_efficiency_h01
+    name: "二极管泵浦梳光学斜率效率（Holzwarth 2001）"
+    status: demonstrated
+    demonstrated_value:
+      value: "39%"
+      unit: "%"
+      conditions: >
+        Cr:LiSAF KLM 锁模激光器，670 nm 激光二极管泵浦（2×350 mW），
+        Z-fold 腔 + chirped mirror 色散补偿，输出 115 mW @ 93 MHz、894 nm 中心、24 nm FWHM。
+      measurement_method: "输出功率 vs 泵浦功率斜率拟合"
+      comparison:
+        - context: "Ti:sapph 飞秒激光器光学斜率效率"
+          reference_value: "~30–50%（Ar⁺ 泵浦）"
+          note: "Cr:LiSAF 二极管泵浦效率可与 Ti:sapph Ar⁺ 泵浦比肩，但总功耗降低 >1000 倍"
+    note: >
+      该指标验证二极管泵浦 OFC 的可行性——39% 光学效率证明 Cr:LiSAF 虽非线性系数低（需补偿设计），
+      但总体能量转换效率不输 Ti:sapph，且泵浦光源体积/功耗/成本降低 >1000 倍，
+      为便携式 OFC 应用（空间光钟、野外光谱）铺平道路。

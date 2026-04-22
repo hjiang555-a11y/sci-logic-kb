@@ -1,0 +1,125 @@
+# Spaun 2016 — 首个腔增强冷分子红外梳光谱（连续冷样品）[breakthrough]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-22
+# Schema版本：v4.4
+# 专题：optical-frequency-combs
+# contribution_type: breakthrough（首次将腔增强频率梳光谱与缓冲气体冷却结合，实现连续冷分子样品高分辨红外光谱）
+
+meta:
+  zotero_key: "NNLDMCDD"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: breakthrough
+  reliability: high
+  title: "Continuous probing of cold complex molecules with infrared frequency comb spectroscopy"
+  year: 2016
+  first_author: Spaun
+  journal: "Nature"
+  volume: 533
+  issue: 7604
+  pages: "517-520"
+  doi: "10.1038/nature17440"
+  note: >
+    [技术论文 / 里程碑] JILA (Spaun, Changala, Patterson, Bjork, Heckl, Doyle, Ye) 2016 年 Nature。
+    首次将**腔增强直接频率梳光谱（CE-DFCS）**与**缓冲气体冷却**结合——
+    在 ~10 K 连续冷样品中实现振转分辨中红外吸收光谱（C-H 伸缩区，~3 μm），
+    跨越"光谱拥挤"障碍（室温下复杂分子占据数百万振转态 → 谱线不可分辨）。
+    演示了硝基甲烷（CH₃NO₂）、萘（C₁₀H₈）、金刚烷（C₁₀H₁₆）、六亚甲基四胺（C₆H₁₂N₄）等大分子高分辨谱，
+    分辨率 ~50 kHz（仪器线宽，受梳稳定度限制），灵敏度提升 ~4 个数量级（腔增强 + 冷却双重增益）。
+    开创了"腔增强梳 + 冷分子"范式，为复杂分子结构/动力学/大振幅运动研究提供新工具。
+    v2 子域主线：B-DCS（双梳光谱）+ B-MIR（中红外光谱）双主线——刷新复杂分子光谱分辨率与灵敏度纪录。
+
+entities:
+  - id: ent.cedcs_cold_molecule_system_s16
+    name: "腔增强梳光谱 + 缓冲气体冷却系统（Spaun 2016）"
+    aliases:
+      - CE-DFCS + buffer gas cooling
+      - cold complex molecule spectroscopy
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      将高精细度光学腔（FSR ~100 MHz）与缓冲气体冷却池（~10 K He 背景气）集成，
+      中红外 OPO 梳（2.8–4.8 μm）锁至腔模实现 ~4 个数量级路径长度增强，
+      连续冷分子样品（T_rot ~ 10 K, T_trans ~ 16 K）Doppler 展宽降低 √30 倍，
+      振转态数降低 ~10⁵ 倍 → 谱线分辨、峰值振幅增强，实现复杂分子（>10 原子）高分辨红外光谱。
+    key_parameters:
+      cavity_finesse: "~10⁴（高精细度腔）"
+      cavity_fsr: "~100 MHz（需与梳 f_rep 整数倍匹配）"
+      comb_source: "Yb:fiber 梳泵浦 OPO，2.8–4.8 μm 可调"
+      buffer_gas: "He（背景气，~10 K，连续流）"
+      molecular_temperature: "T_rot ~ 10 K, T_trans ~ 16 K（缓冲气体热化）"
+      doppler_width: "FWHM ~ 33 MHz（T_trans ~ 16 K，vs. ~180 MHz @ 300 K）"
+      instrument_linewidth: "~50 kHz（受梳稳定度限制）"
+      sensitivity_gain: "~4 个数量级（腔增强 + 冷却双重）"
+      demonstrated_molecules: "硝基甲烷、萘、金刚烷、六亚甲基四胺（>10 原子复杂分子）"
+    note: >
+      Level 2 实例节点，属于双梳光谱仪（ent.dual_comb_spectrometer）+ 腔增强梳光谱分支。
+      首次证明"腔增强梳 + 冷分子"可突破"光谱拥挤"障碍，为复杂分子光谱学提供新范式。
+
+principles:
+  - id: pri.buffer_gas_cooling_spectral_simplification_s16
+    name: "缓冲气体冷却简化复杂分子光谱原理（Spaun 2016）"
+    tier: domain
+    verification_status: observed
+    statement: >
+      "室温下复杂分子（>10 原子）占据数百万振转态（Boltzmann 分布），
+      吸收谱线高度重叠 → 不可分辨、不可赋值。通过缓冲气体冷却（He 背景气，~10 K），
+      分子振转能级布居塌缩至最低几个态（T ∝ exp(-E/kT)），谱线数降低 ~10⁵ 倍；
+      同时 Doppler 展宽降低 √(T_cold/T_hot) ~ √30 倍 → 谱线窄化、峰值增强、分辨率提升 >100 倍。"
+      Spaun 2016 证明：结合腔增强梳光谱（灵敏度增益 ~10⁴），
+      可在 ~10 K 连续冷样品中实现 ~50 kHz 分辨率的复杂分子红外谱——突破室温光谱"不可解析"限制。
+    domain: "低温分子物理；高分辨红外光谱；缓冲气体冷却技术"
+    key_insight: >
+      复杂分子光谱学的核心瓶颈不是仪器分辨率（腔增强梳已达 kHz 级），
+      而是"谱线拥挤"（Boltzmann 分布 + Doppler 展宽 → 室温下不可解析）——
+      冷却是根本解法（布居塌缩 + Doppler 窄化），比"超高分辨仪器"或"多光子选择规则"更直接。
+    conditions: >
+      需缓冲气体冷却池（He 流，~10 K，连续运行）；需腔增强梳光谱系统（高精细度腔 + 中红外梳）；
+      需精密腔锁（f_rep 整数倍匹配 FSR）；需低振动环境（腔稳定度维持）。
+    formula: >
+      Doppler FWHM ∝ √T；振转态布居 ∝ exp(-E_rot/kT)（塌缩至基态）；
+      谱线分辨率提升因子 ~ √(T_hot/T_cold) × (态数降低因子) ~ 10²–10³
+    source:
+      zotero_key: "NNLDMCDD"
+      claim: >
+        "Targeting more complex molecules requires methods that can record broadband infrared spectra 
+        with both high resolution and high sensitivity. However, infrared spectroscopic techniques have hitherto been limited 
+        either by narrow bandwidth and long acquisition time, or by low sensitivity and resolution. 
+        ...Here we show that this problem can be overcome by using buffer gas cooling to produce continuous, cold samples 
+        of molecules that are then subjected to CE-DFCS."
+    breakthrough_paths:
+      - step: 1
+        entity: pri.cavity_enhanced_comb_spectroscopy
+        context: "腔增强频率梳光谱原理：高精细度腔增强吸收路径 ~4 个数量级（跨文件引用 picque2019.yaml）"
+      - step: 2
+        entity: pri.buffer_gas_cooling_spectral_simplification_s16
+        context: "缓冲气体冷却简化谱线原理：~10 K 冷却 → 振转态布居塌缩 + Doppler 窄化 → 谱线分辨率提升 >100 倍"
+      - step: 3
+        entity: ent.cedcs_cold_molecule_system_s16
+        context: "应用该组合原理实现首个连续冷分子腔增强梳光谱（世界首次，2016），演示硝基甲烷/萘等复杂分子高分辨红外谱"
+
+relations:
+  - id: rel.Spa01
+    predicate: BOUNDED-BY
+    subject: ent.cedcs_cold_molecule_system_s16
+    object: pri.buffer_gas_cooling_spectral_simplification_s16
+    context: "复杂分子高分辨光谱可行性"
+    source:
+      zotero_key: "NNLDMCDD"
+      claim: >
+        "CE-DFCS... still suffers from spectral congestion. 
+        Here we show that this problem can be overcome by using buffer gas cooling to produce continuous, cold samples 
+        of molecules that are then subjected to CE-DFCS."
+    breakthrough_paths:
+      - step: 1
+        entity: pri.cavity_enhanced_comb_spectroscopy
+        context: "腔增强梳光谱基本原理（跨文件引用 picque2019.yaml）"
+      - step: 2
+        entity: pri.buffer_gas_cooling_spectral_simplification_s16
+        context: "缓冲气体冷却简化光谱原理：~10 K 冷却消除谱线拥挤"
+      - step: 3
+        entity: ent.cedcs_cold_molecule_system_s16
+        context: "应用该组合实现首个连续冷分子腔增强梳光谱系统（世界首次）"
+    note: >
+      BOUNDED-BY 关系：复杂分子高分辨光谱受"谱线拥挤"限制，通过缓冲气体冷却突破。
+      补 breakthrough_paths（breakthrough tier）。

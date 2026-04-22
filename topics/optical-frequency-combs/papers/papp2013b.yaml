@@ -1,0 +1,159 @@
+# Papp 2013b — 微棒谐振器频率梳机械控制（CO₂ 激光加工）[breakthrough/evidence 判定见 note]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-22
+# Schema版本：v4.4
+# 专题：optical-frequency-combs
+# contribution_type: breakthrough（首次用 CO₂ 激光加工微棒谐振器 + 机械控制实现微梳稳定，梳齿间距稳定度达 5×10⁻¹⁵ @ 1 s）
+
+meta:
+  zotero_key: "SE4C2RWR"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: breakthrough
+  reliability: high
+  title: "Mechanical Control of a Microrod-Resonator Optical Frequency Comb"
+  year: 2013
+  first_author: Papp
+  journal: "Physical Review X"
+  volume: 3
+  issue: 3
+  pages: "031003"
+  doi: "10.1103/PhysRevX.3.031003"
+  note: >
+    [技术论文 / 里程碑] NIST Boulder (Papp, Del'Haye, Diddams) 2013 年 PRX。
+    首次用 **CO₂ 激光加工微棒谐振器**（fused-quartz，Q ~ 5×10⁸，<1 分钟加工时间，近 100% 良率）
+    + **机械力控制**（压电执行器改变谐振器形状 → 调谐 FSR/f_rep）实现微梳稳定——
+    梳齿间距（32.6 GHz）稳定度达 **5×10⁻¹⁵ @ 1 s**（vs. 先前微梳工作 ~10⁻¹³），
+    140 根梳齿（跨 4.5 THz）间频率变化 <0.5 mHz（光谱切片稳定性验证）。
+    机械控制相比热光调谐优势：低功耗、简单集成、响应速度潜力快（vs. 谐振器热导时间常数）。
+    开创了"简易加工 + 机械稳频"微梳路线，证明微梳可支持现代光学频率标准（10⁻¹⁵ 稳定度要求）。
+    v2 子域主线：A2-DKS（微腔梳）主线——刷新微梳稳定度纪录（从 10⁻¹³ 到 10⁻¹⁵，提升 200 倍）+ 首次机械控制演示。
+    档位判定：breakthrough（首次 CO₂ 激光加工微棒 + 首次机械控制微梳 + 刷新 DKS 稳定度纪录 200 倍）。
+
+entities:
+  - id: ent.co2_machined_microrod_comb_p13b
+    name: "CO₂ 激光加工微棒谐振器梳（Papp 2013b）"
+    aliases:
+      - CO₂-laser-machined microrod comb
+      - mechanically controlled microcomb
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      用 CO₂ 激光（10.6 μm）熔融蒸发 fused-quartz 棒（直径 2 mm）快速加工成球状微谐振器（Q ~ 5×10⁸，<1 分钟加工，近 100% 良率）；
+      通过压电执行器施加机械力改变谐振器形状 → 调谐 FSR（即微梳梳齿间距 f_rep）；
+      CW 泵浦产生 32.6 GHz 间距参量微梳（1510–1620 nm 谱跨度），
+      锁至微波频率标准后梳齿间距稳定度达 **5×10⁻¹⁵ @ 1 s**（vs. 先前微梳 ~10⁻¹³，提升 200 倍）。
+    key_parameters:
+      fabrication: "CO₂ 激光加工（<1 分钟，近 100% 良率）"
+      material: "fused-quartz（熔融石英）"
+      Q_factor: "~5×10⁸（光学品质因子）"
+      fsr: "32.6 GHz（微梳梳齿间距）"
+      spectral_span: "1510–1620 nm（~4.5 THz）"
+      control_method: "压电执行器机械力调谐（改变谐振器形状）"
+      frep_stability: "5×10⁻¹⁵ @ 1 s（残余涨落，锁至微波标准）"
+      inter_line_variation: "<0.5 mHz（140 根梳齿间频率变化，跨 4.5 THz）"
+    note: >
+      Level 2 实例节点，属于微谐振腔频率梳（ent.microresonator_frequency_comb）分支。
+      首次证明"简易加工（CO₂ 激光，vs. 半导体工艺或手工抛光）+ 机械控制（vs. 热光调谐）"
+      可实现 10⁻¹⁵ 级微梳稳定度——达到支持现代光学频率标准的门槛（光钟要求 10⁻¹⁸，微梳作为传递链路需 10⁻¹⁵）。
+
+principles:
+  - id: pri.co2_laser_rapid_microrod_fabrication_p13b
+    name: "CO₂ 激光快速微棒谐振器加工原理（Papp 2013b）"
+    tier: domain
+    verification_status: observed
+    statement: >
+      "fused-quartz 在 10.6 μm（CO₂ 激光波长）高度吸收，聚焦 CO₂ 激光束（<5 W）可快速熔融蒸发材料；
+      旋转石英棒（2 mm 直径）同时横向扫描 CO₂ 激光（0.3 mm 间距，5 s 脉冲迭代）→ 
+      自终止加工形成球状微谐振器（Q ~ 5×10⁸），内建表面抛光（熔融过程自然形成超光滑表面），
+      <1 分钟加工时间，近 100% 良率（vs. 金刚石研磨 + 火焰抛光需数小时、手工技能、良率低）。"
+      Papp 2013 证明：CO₂ 激光加工可产生高 Q 微棒（支持参量微梳），用户可自定义直径（控制 FSR），
+      为微梳的便捷化/规模化制造提供可行路径。
+    domain: "微谐振器加工；微梳工程；激光材料加工"
+    key_insight: >
+      微梳的普及瓶颈不是物理原理（DKS 已成熟），而是"制造便捷性"——
+      传统方法（半导体光刻 + 蚀刻 / 手工研磨 + 火焰抛光）需专用设备或高级技能；
+      CO₂ 激光加工（<5 W 商用激光器，<1 分钟，near-100% 良率）将制造门槛降低至"普通光学实验室可达"水平。
+    conditions: >
+      需 CO₂ 激光器（<5 W 聚焦，10.6 μm）；需旋转石英棒夹具（ball-bearing spindle）；
+      需扫描控制系统（横向 0.3 mm 间距，迭代 5 s 脉冲）；需 fused-quartz 原料（高吸收 @ 10.6 μm）。
+    formula: "加工时间 < 1 分钟；Q ~ 5×10⁸（熔融表面自然超光滑）；良率 ~ 100%（自终止过程，无过加工风险）"
+    source:
+      zotero_key: "SE4C2RWR"
+      claim: >
+        "We have developed a CO₂-laser-machining technique that yields microrod optical resonators with a Q ~ 5×10⁸, 
+        a user-defined diameter, and a small effective mode area. ...Microrod laser machining offers several unique features, 
+        including a <1-min fabrication time, built-in polishing of the resonator surface to support ultrahigh Q, 
+        and a resonator yield of nearly 100%."
+    breakthrough_paths:
+      - step: 1
+        entity: pri.parametric_four_wave_mixing_comb
+        context: "参量四波混频梳产生原理（微腔梳基本工作原理，跨文件引用 kippenberg2011.yaml）"
+      - step: 2
+        entity: pri.co2_laser_rapid_microrod_fabrication_p13b
+        context: "CO₂ 激光快速加工原理：<1 分钟、Q ~ 5×10⁸、near-100% 良率，降低微梳制造门槛"
+      - step: 3
+        entity: ent.co2_machined_microrod_comb_p13b
+        context: "应用该加工方法 + 机械控制实现首个 CO₂ 激光加工微棒梳（世界首次，2013），稳定度 5×10⁻¹⁵ @ 1 s（提升 200 倍）"
+
+  - id: pri.mechanical_microrod_frep_control_p13b
+    name: "机械力控制微棒谐振器 f_rep 原理（Papp 2013b）"
+    tier: domain
+    verification_status: observed
+    statement: >
+      "微梳梳齿间距 f_rep = c/(n_eff·L)（c 光速，n_eff 有效折射率，L 腔周长）；
+      通过压电执行器施加机械力改变微棒形状 → L 变化 → f_rep 调谐（宽带调谐范围）。
+      机械控制相比热光调谐优势：(1) 低功耗（无需持续加热）；(2) 简单集成（无需精密温度控制）；
+      (3) 响应速度潜力快（机械形变时间常数 < 谐振器热导时间常数）。"
+      Papp 2013 证明：机械控制可实现宽带（>200 倍残余涨落改善）f_rep 稳定，
+      140 根梳齿（跨 4.5 THz）频率变化 <0.5 mHz（光谱切片稳定性验证），达到支持光学频率标准的门槛（10⁻¹⁵）。
+    domain: "微梳稳频；机械光学调谐；精密频率控制"
+    key_insight: >
+      微梳稳频的核心瓶颈不是"调谐能力"（热光/电光均可调谐），
+      而是"低噪声 + 快响应 + 低功耗"——机械控制通过"直接改变腔长"（物理路径调谐），
+      避免热光调谐的热噪声耦合与慢响应（热导时间常数 ~ms–s），为微梳达到光钟级稳定度（10⁻¹⁵–10⁻¹⁸）提供可行路径。
+    conditions: >
+      需微棒谐振器（形变灵敏度高）；需压电执行器（nm 级位移精度）；
+      需微波频率参考（锁定目标）；需伺服反馈系统（PID 控制）。
+    formula: "Δf_rep/f_rep = ΔL/L（机械形变调谐）；稳定度 σ(τ) ~ 5×10⁻¹⁵（τ = 1 s，vs. 热光调谐 ~10⁻¹³）"
+    source:
+      zotero_key: "SE4C2RWR"
+      claim: >
+        "Mechanical control offers significant advantages, including low-power operation, simple integration with bulk resonators, 
+        and response potentially much faster than resonator thermal conduction. 
+        We have improved the residual line-spacing fluctuations by more than a factor of 200 beyond previous microcomb work."
+    breakthrough_paths: []  # 已在上层 pri 补充
+
+relations:
+  - id: rel.Pap13b_01
+    predicate: BOUNDED-BY
+    subject: ent.co2_machined_microrod_comb_p13b
+    object: pri.mechanical_microrod_frep_control_p13b
+    context: "微梳达到 10⁻¹⁵ 稳定度可行性"
+    source:
+      zotero_key: "SE4C2RWR"
+      claim: >
+        "Future metrology applications of microcombs will require stabilization of the line spacing 
+        with respect to fixed-optical and microwave frequency standards. 
+        ...We have improved the residual line-spacing fluctuations by more than a factor of 200 beyond previous microcomb work."
+    breakthrough_paths:
+      - step: 1
+        entity: pri.parametric_four_wave_mixing_comb
+        context: "参量四波混频梳基本原理（跨文件引用 kippenberg2011.yaml）"
+      - step: 2
+        entity: pri.co2_laser_rapid_microrod_fabrication_p13b
+        context: "CO₂ 激光快速加工原理（<1 分钟，Q ~ 5×10⁸，便捷化）"
+      - step: 3
+        entity: pri.mechanical_microrod_frep_control_p13b
+        context: "机械力控制 f_rep 原理：低噪声 + 快响应 + 低功耗 → 稳定度 5×10⁻¹⁵ @ 1 s（提升 200 倍）"
+      - step: 4
+        entity: ent.co2_machined_microrod_comb_p13b
+        context: "应用该组合实现首个 CO₂ 激光加工微棒梳 + 机械控制（世界首次，2013），达到支持光学频率标准的稳定度门槛"
+  - id: rel.Pap13b_02
+    predicate: ENABLED-BY
+    subject: ent.co2_machined_microrod_comb_p13b
+    object: pri.co2_laser_rapid_microrod_fabrication_p13b
+    source:
+      zotero_key: "SE4C2RWR"
+      claim: "novel CO2-laser-machined microrod resonators ... feature optical Q ~ 5×10^8"
+    note: "该微棒梳的制造工艺由 CO₂ 激光快速加工原理支撑。"

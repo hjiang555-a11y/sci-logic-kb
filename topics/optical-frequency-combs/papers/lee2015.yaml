@@ -1,0 +1,108 @@
+# Lee 2015 — 整体式 SESAM+graphene EOM 器件（单片锁模+稳频，CU Boulder+NIST）
+# 提取者：GitHub Copilot（AI草稿，2026-04-22）
+# 提取日期：2026-04-22
+# Schema版本：v4.3
+# 专题：optical-frequency-combs
+# contribution_type: breakthrough（首次单片集成 SESAM 锁模 + graphene EOM 稳频，>5 MHz 带宽）
+
+meta:
+  zotero_key: "L6ZZII7R"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: breakthrough
+  reliability: high
+  title: "Monolithic device for modelocking and stabilization of frequency combs"
+  year: 2015
+  first_author: Lee
+  journal: "Optics Express"
+  volume: 23
+  issue: 26
+  pages: "33038-33046"
+  doi: "10.1364/OE.23.033038"
+  note: >
+    [技术论文 / 突破] CU Boulder + NIST。首次演示单片集成器件，同时实现锁模（SESAM）与高带宽稳频（graphene EOM）：
+    (1) III-V 半导体可饱和吸收镜（SESAM）+ 石墨烯电光调制器（graphene EOM）异质集成在单一镜片上；
+    (2) SESAM 提供自启锁模（InGaAs 量子阱饱和吸收）；graphene EOM 提供纯损耗调制（bandwidth > 5 MHz，仅需低压驱动）；
+    (3) 插入 Er:fiber 梳腔内作为端镜 → 简化腔设计（无需单独插入 EOM，无额外插入损耗）；
+    (4) 演示 fceo 稳频带宽超 5 MHz（超越增益寿命限制 ~100 kHz），frep 控制带宽同步提升；
+    (5) 为紧凑型可野外部署梳奠定基础（全 PM 光纤 + 单片器件 → 免对准）。
+    本工作首次将 SESAM + graphene EOM 集成在单一器件上，打破先前"分立器件级联"架构，是紧凑鲁棒梳的关键里程碑。
+    对齐 v2 子域主线：A1-Robust（紧凑/集成/野外适用）+ A1-Noise（高带宽稳频）。归 breakthrough。
+
+entities:
+  - id: ent.monolithic_sesam_graphene_device_l15
+    name: "整体式 SESAM+graphene EOM 器件（Lee 2015）"
+    aliases:
+      - Monolithic SESAM-graphene modulator (CU Boulder 2015)
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      III-V 半导体 SESAM（InGaAs 量子阱，饱和吸收提供锁模）+ 单层石墨烯 EOM（电压调制 Fermi 能级 → 调制吸收损耗）
+      异质集成在单一镜片上（graphene 直接转移到 SESAM 表面）；
+      插入 Er:fiber 梳腔内作为端镜 → 同时提供自启锁模 + 高带宽 fceo 稳频（> 5 MHz，超越增益寿命限制）；
+      低电压驱动（graphene 栅极调制）+ 低插入损耗（graphene 单层透射率 ~97.7%）→ 紧凑鲁棒梳设计。
+    key_parameters:
+      sesam_material: "InGaAs 量子阱（饱和吸收镜）"
+      graphene_layers: "单层石墨烯（电光调制器）"
+      modulation_bandwidth: "> 5 MHz（纯损耗调制）"
+      voltage_requirement: "低电压驱动（栅极调制 Fermi 能级）"
+      insertion_loss: "graphene 单层 ~2.3%（额外损耗小）"
+      integration: "单片集成（graphene 直接转移到 SESAM 表面）"
+      target_application: "全 PM 光纤梳 + 野外部署"
+    note: "Level 2 实例节点，PART-OF ent.er_fiber_frequency_comb（定义于 droste2016.yaml）"
+
+principles:
+  - id: pri.monolithic_sesam_graphene_bypass_gain_lifetime_l15
+    name: "单片 SESAM+graphene 绕过增益寿命带宽限制原理（Lee 2015）"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      传统 fceo 稳频通过泵浦功率调制，带宽受增益介质寿命限制（Er:fiber ~µs → 带宽 ~100 kHz）。
+      Graphene EOM 通过栅极电压直接调制 Fermi 能级 → 调制光学吸收损耗（纯损耗调制，non-dispersive）→ 绕过增益介质，
+      可达 MHz 级带宽。单片集成 SESAM+graphene：(a) SESAM 提供锁模（无需 NPR/NALM 调校）；(b) graphene 提供高带宽损耗调制；
+      (c) 集成在单一端镜 → 简化腔设计，无额外插入损耗，适合紧凑全 PM 光纤梳。
+    domain: "锁模激光器动力学；集成光子学"
+    key_insight: >
+      "单片集成的关键价值不仅在技术性能（带宽/损耗），更在于工程简化——传统方案需在腔内插入 graphene 金属镜（Lee 2012）
+      或腔外 AOM（复杂且损耗大），单片器件作为端镜即可实现双功能"——这为野外可部署梳（无专家维护）铺平道路。
+    formula: "fceo 带宽 ∝ 1/τ_modulator（graphene 响应 ~ns）>> 1/τ_gain（Er:fiber ~µs）"
+    conditions: "全 PM 光纤梳；SESAM 锁模兼容；graphene 单层转移工艺；低电压驱动电路"
+    source_claim: >
+      "We demonstrate a device that integrates a III-V semiconductor saturable absorber mirror with a graphene electro-optic modulator, which provides a monolithic solution to modelocking and noise suppression in a frequency comb. The device offers a pure loss modulation bandwidth exceeding 5 MHz and only requires a low voltage driver."
+
+relations:
+  - id: rel.Lee15_01
+    subject: ent.monolithic_sesam_graphene_device_l15
+    predicate: PART-OF
+    object: ent.er_fiber_frequency_comb
+    confidence: established
+    source: {zotero_key: "L6ZZII7R", claim: "fiber-based systems ... all polarization-maintaining (PM) oscillator"}
+    note: "跨文件引用 ent.er_fiber_frequency_comb（定义于 droste2016.yaml）"
+
+  - id: rel.Lee15_02
+    subject: ent.monolithic_sesam_graphene_device_l15
+    predicate: CHARACTERIZED-BY
+    object: pri.monolithic_sesam_graphene_bypass_gain_lifetime_l15
+    confidence: established
+    source: {zotero_key: "L6ZZII7R", claim: "pure loss modulation bandwidth exceeding 5 MHz"}
+
+  - id: rel.Lee15_03
+    subject: pri.monolithic_sesam_graphene_bypass_gain_lifetime_l15
+    predicate: BOUNDED-BY
+    object: pri.gain_lifetime_servo_bandwidth_limit
+    confidence: established
+    source: {zotero_key: "L6ZZII7R", claim: "loss modulation bypasses the gain medium and therefore offers a modulation bandwidth beyond the gain lifetime limit"}
+    breakthrough_paths:
+      - direction: ent.monolithic_sesam_graphene_device_l15
+        expected_gain: "单片集成 SESAM+graphene → >5 MHz 稳频带宽（超越增益寿命限制）"
+        status: demonstrated
+        source: {zotero_key: "L6ZZII7R"}
+    note: "跨文件引用 pri.gain_lifetime_servo_bandwidth_limit（定义于 kuse2015.yaml）——本方法通过 graphene 损耗调制绕过此限制"
+
+  - id: rel.Lee15_04
+    subject: pri.monolithic_sesam_graphene_bypass_gain_lifetime_l15
+    predicate: ENABLED-BY
+    object: pri.intracavity_graphene_fast_modulation
+    confidence: established
+    source: {zotero_key: "L6ZZII7R", claim: "graphene electro-optic modulator ... gate-variable optical transitions in graphene"}
+    note: "跨文件引用 pri.intracavity_graphene_fast_modulation（定义于 kuse2015.yaml）——单片集成是 Kuse 2015 分立方案的一体化改进"

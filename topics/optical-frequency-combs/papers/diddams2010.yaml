@@ -1,0 +1,137 @@
+# Diddams 2010 — 光学频率梳演化综述（十年历程与未来展望）[framework]
+# 提取者：GitHub Copilot（AI草稿，待专家确认）
+# 提取日期：2026-04-22
+# Schema版本：v4.4
+# 专题：optical-frequency-combs
+# contribution_type: framework（全面综述 2000–2010 十年间光频梳从稳定化到多分支应用的演化）
+
+meta:
+  zotero_key: "VKLU3BG6"
+  topic: optical-frequency-combs
+  source_type: review
+  contribution_type: framework
+  reliability: high
+  title: "The evolving optical frequency comb"
+  year: 2010
+  first_author: Diddams
+  journal: "J. Opt. Soc. Am. B"
+  volume: 27
+  issue: 11
+  pages: "B51-B62"
+  doi: "10.1364/JOSAB.27.000B51"
+  note: >
+    [综述论文 / 全专题框架] NIST Boulder Diddams 于 2010 年 10 月发表的光频梳专题受邀综述。
+    以"演化树"可视化呈现 2000–2010 十年间光频梳从 f-2f 自参考稳定化技术（根）到
+    光钟计量、光谱、微波合成、天文光谱校准、阿秒脉冲、精密测距、频率综合等多个应用分支（枝）的爆发性成长。
+    本综述定义了 OFC 的**功能性定义**："mode-locked femtosecond laser for which f_n, n, f_r, f_o are measured and controlled"。
+    涵盖自参考技术、光原子钟应用、XUV/mid-IR 波段扩展、双梳光谱、天文光梳、超短脉冲合成等全部主要子方向；
+    是"光学频率梳是什么、为何重要、如何演化"的**顶层框架文献**，与 Udem 2002、Picqué 2019 共同构成
+    OFC 专题的 L0 综述三角。
+    v2 子域主线：本文为跨子域综述，覆盖 A1–B 全分支。
+
+entities:
+  - id: ent.optical_frequency_comb_diddams2010
+    name: "光学频率梳（Diddams 2010 综述定义）"
+    aliases:
+      - stabilized frequency comb
+      - self-referenced optical comb
+    hierarchy_level: 0
+    status: demonstrated
+    function: >
+      "Mode-locked femtosecond laser for which f_n, n, f_r, and f_o are measured and controlled"（Diddams 2010 功能性定义）。
+      与普通飞秒锁模激光器的区别：后者仅产生梳状频谱，但不控制梳齿；前者通过 f-2f 自参考等手段
+      同时控制两个自由度（f_r 与 f_o），使全部梳齿频率可知且可调——这是 OFC 应用于精密频率计量、光钟、光谱、合成等的**前提**。
+      2000–2010 十年间完成从单一技术概念到多分支应用生态的演化。
+    key_parameters:
+      comb_equation: "f_n = n·f_r + f_o（梳齿频率公式，n 为整数模式序号）"
+      control_requirement: "同时测量并控制 f_r 与 f_o 两个自由度"
+      self_referencing: "通过倍频程展宽 + f-2f 干涉仪锁定 f_o"
+      application_branches_2010: "光原子钟、光谱（UV/mid-IR/DCS）、天文校准、微波合成、阿秒脉冲、频率综合"
+    note: >
+      Level 0 跨子域实体节点。Diddams 2010 综述给出的"功能性定义"明确了"频率梳"与"锁模激光器"的边界：
+      后者是前者的硬件基础（根），前者是后者加上"f_n 可测、可控"能力（功能）后的系统。
+      该定义沿用至今，是 OFC 身份证明。本节点与 ent.optical_frequency_comb（giunta2019.yaml）
+      在内容上高度重合——giunta2019 从技术细节角度定义，本节点从历史演化角度定义；摄入时可选其一引用。
+
+principles:
+  - id: pri.ofc_functional_definition_2010
+    name: "光学频率梳功能性定义原理（Diddams 2010）"
+    tier: meta
+    verification_status: observed
+    statement: >
+      "一个 mode-locked femtosecond laser 成为 optical frequency comb 的充要条件是：
+      其输出频谱的梳齿频率 f_n、模式序号 n、重复频率 f_r 及载波包络偏移频率 f_o 
+      被测量并可控制。"
+      这一定义将 OFC 与普通飞秒激光器区分开——前者具备**频率溯源能力**（梳齿频率精确已知），
+      后者仅是"时域脉冲列"或"光域模式群"而不可用于精密计量。
+    domain: "光学频率计量；飞秒激光器工程"
+    key_insight: >
+      OFC 的本质不是梳状频谱（所有 mode-locked laser 都有），而是"每根齿的频率可被知道、可被控制"。
+      这使 OFC 从单纯光源升级为**频率标尺**——可用于测量未知光频、合成任意频率、生成原子钟参考等。
+    conditions: >
+      需倍频程展宽（自参考）或外部 CW 参考激光锁定；需伺服反馈系统同时控制 f_r 与 f_o；
+      需微波或光学频率参考（Cs 钟或光钟）溯源。
+    formula: "f_n = n·f_r + f_o（所有梳齿频率精确已知）"
+    source:
+      zotero_key: "VKLU3BG6"
+      claim: >
+        "a frequency comb is the optical output of a mode-locked laser 
+        for which the parameters f_n, n, f_r, and f_o are measured and controlled. 
+        While this may seem like an insignificant distinction, for the various applications shown in Fig. 1, 
+        the apparently 'simple' act of measuring and controlling the vast number of frequency comb teeth 
+        lends tremendous value to existing applications and opens the possibility of several new applications 
+        of the mode-locked femtosecond laser."
+    breakthrough_paths: []  # framework tier 不要求补
+
+  - id: pri.octave_supercontinuum_enables_self_referencing_d10
+    name: "倍频程超连续谱使 f-2f 自参考可行原理（Diddams 2010 综述版）"
+    tier: domain
+    verification_status: observed
+    statement: >
+      "1999 年非线性光纤技术进步至可从未放大飞秒振荡器直接产生超过一个倍频程的超连续谱，
+      这是实现 f_o 测量与控制的**关键里程碑**——通过 f-2f 干涉仪比对低频端倍频光与高频端原光拍频，
+      解出 f_o，从而解锁光频梳的全部频率自由度。"
+      在此之前，f_r 可测但 f_o 不可测，梳齿频率不完全已知；倍频程展宽+自参考是将"飞秒激光器"升级为"光学频率梳"的**定义性事件**。
+    domain: "非线性光学；光学频率计量"
+    key_insight: >
+      倍频程超连续谱不是为了光谱覆盖宽（虽然也有此优势），而是为了**自参考锁定 f_o**——
+      这是 OFC 从"部分可知"到"完全可知"的跨越。
+    conditions: "需光子晶体光纤或高非线性光纤；需飞秒脉冲峰值功率足够驱动 SPM/FWM；需色散平坦或反常色散区"
+    source:
+      zotero_key: "VKLU3BG6"
+      claim: >
+        "it was only in 1999 that the sources and nonlinear fiber optics progressed to the point 
+        where optical spectra exceeding one octave could be readily generated with unamplified mode-locked laser oscillators. 
+        This was a key requirement for the measurement and control of f_o, and a defining moment 
+        in the development of the optical frequency comb."
+    breakthrough_paths: []  # framework tier 不要求补
+
+relations:
+  - id: rel.Did10_01
+    predicate: ENABLED-BY
+    subject: ent.optical_frequency_comb_diddams2010
+    object: pri.octave_supercontinuum_enables_self_referencing_d10
+    context: "OFC 全频率可知状态"
+    source:
+      zotero_key: "VKLU3BG6"
+      claim: >
+        "the sources and nonlinear fiber optics progressed to the point where optical spectra exceeding one octave 
+        could be readily generated... This was a key requirement for the measurement and control of f_o, 
+        and a defining moment in the development of the optical frequency comb"
+    breakthrough_paths: []
+    note: >
+      ENABLED-BY 关系：倍频程超连续谱原理使 OFC 从"部分可知"升级到"完全可知"。
+      本关系承接 Diddams 2000（第一篇完整 f-2f 演示，已在 Batch 1 摄入）与本综述之间的历史逻辑。
+
+  - id: rel.Did10_02
+    predicate: CHARACTERIZED-BY
+    subject: ent.optical_frequency_comb_diddams2010
+    object: pri.ofc_functional_definition_2010
+    context: "定义性特征"
+    source:
+      zotero_key: "VKLU3BG6"
+      claim: "a frequency comb is the optical output of a mode-locked laser for which the parameters f_n, n, f_r, and f_o are measured and controlled"
+    breakthrough_paths: []
+    note: >
+      CHARACTERIZED-BY 关系：OFC 作为系统由 pri.ofc_functional_definition_2010 所定义的功能性特征刻画——
+      这是 OFC 与普通飞秒激光器的本质区别。

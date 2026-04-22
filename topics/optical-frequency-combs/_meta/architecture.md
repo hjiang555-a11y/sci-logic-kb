@@ -41,6 +41,12 @@
 | OFC → Frequency standards | Enables | Frequency counting, ratio measurement |
 | OFC → Time-frequency transfer | Enables | Coherent link phase noise |
 
-## Paper Count: 71
+## Paper Count: 90
 
-> **更新 2026-04-21**：Batch 1（飞秒锁模激光器 A1 技术平台主线）+10 篇完成：washburn2004, newbury2005, bartels2009, meyer2013, wang2014, zhang2015, kuse2016, li2017b, ma2018, cai2020。Batch 2（计量链路，10 篇）、Batch 3（新平台与光谱应用，10 篇）待后续会话。子域主线指标 v2 定义见 [`scoping_principles.md`](scoping_principles.md)。
+> **更新 2026-04-22**：Batch 2（计量链路 / 频率综合，10 篇）+ Batch 3（新平台与光谱应用，9 篇；`BL4HI3QI` 为 `picque2019.yaml` 的 zotero 备份键，跳过）完成，合计 +19 → 90 篇。
+>
+> Batch 2：`marra2012` · `nardelli2023` · `rolland2018` · `hisai2021` · `ning2020` · `sinclair2015` · `zhang_s2024` · `chen_z2024` · `zhang2017b` · `lee2015`。
+>
+> Batch 3：`diddams2010` · `porat2018` · `cheng2024` · `holzwarth2001` · `ideguchi2016` · `spaun2016` · `timmers2018` · `diddams2007` · `papp2013b`。
+>
+> **更新 2026-04-21**：Batch 1（飞秒锁模激光器 A1 技术平台主线）+10 篇完成：washburn2004, newbury2005, bartels2009, meyer2013, wang2014, zhang2015, kuse2016, li2017b, ma2018, cai2020。子域主线指标 v2 定义见 [`scoping_principles.md`](scoping_principles.md)。

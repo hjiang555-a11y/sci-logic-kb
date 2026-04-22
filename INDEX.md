@@ -2,7 +2,7 @@
 
 # 📚 sci-logic-kb — Knowledge Base Index
 
-> Auto-generated 2026-04-21 14:58 UTC
+> Auto-generated 2026-04-22 03:59 UTC
 
 ## 🧭 按研究问题导航
 
@@ -22,11 +22,11 @@
 | Topic | Papers | Nodes | Relations | Index |
 |-------|-------:|------:|----------:|-------|
 | Frequency Standards | 1 | 10 | 11 | [→ INDEX](topics/frequency-standards/INDEX.md) |
-| Optical Frequency Combs | 71 | 550 | 681 | [→ INDEX](topics/optical-frequency-combs/INDEX.md) |
+| Optical Frequency Combs | 90 | 600 | 735 | [→ INDEX](topics/optical-frequency-combs/INDEX.md) |
 | Time-Frequency Transfer | 0 | 0 | 0 | [→ INDEX](topics/time-frequency-transfer/INDEX.md) |
 | Timescales | 1 | 6 | 6 | [→ INDEX](topics/timescales/INDEX.md) |
 | Ultrastable Laser | 78 | 337 | 341 | [→ INDEX](topics/ultrastable-laser/INDEX.md) |
-| **Total** | **151** | **903** | **1039** | |
+| **Total** | **170** | **953** | **1093** | |
 
 ## Cross-Topic Quick References
 
@@ -40,7 +40,7 @@
 | Topic | Entities | Principles | Methods | Metrics |
 |-------|--------:|-----------:|--------:|--------:|
 | Frequency Standards | 4 | 3 | 1 | 2 |
-| Optical Frequency Combs | 117 | 154 | 79 | 200 |
+| Optical Frequency Combs | 136 | 173 | 84 | 207 |
 | Time-Frequency Transfer | 0 | 0 | 0 | 0 |
 | Timescales | 1 | 2 | 1 | 2 |
 | Ultrastable Laser | 50 | 78 | 78 | 131 |
@@ -50,9 +50,13 @@
 | Subject | → | Limiting Principle | Topic | Source |
 |---------|---|-------------------|-------|--------|
 | `ent.cavity_enhanced_yb_comb_h07` | BOUNDED-BY | `pri.mirror_damage_threshold_limit` | Optical Frequency Combs | hartl2007 |
+| `ent.cedcs_cold_molecule_system_s16` | BOUNDED-BY | `pri.buffer_gas_cooling_spectral_simplification_s16` | Optical Frequency Combs | spaun2016 |
+| `ent.co2_machined_microrod_comb_p13b` | BOUNDED-BY | `pri.mechanical_microrod_frep_control_p13b` | Optical Frequency Combs | papp2013b |
 | `ent.compact_transportable_cavity_c14` | BOUNDED-BY | `pri.brownian_thermal_noise_fdt` | Ultrastable Laser | chen2014 |
+| `ent.continuous_uv_bluegreen_astrocomb_c24` | BOUNDED-BY | `pri.shg_sfm_combined_astrocomb_continuous_coverage_c24` | Optical Frequency Combs | cheng2024 |
 | `ent.cubic_dual_cavity_c20` | BOUNDED-BY | `pri.brownian_thermal_noise_fdt` | Ultrastable Laser | chen2020 |
 | `ent.deuterated_sin_photonic_platform_c18` | BOUNDED-BY | `pri.isotope_substitution_absorption_shift` | Optical Frequency Combs | chiles2018 |
+| `ent.diode_pumped_crlisaf_octave_comb_h01` | BOUNDED-BY | `pri.diode_pumped_octave_comb_portability_h01` | Optical Frequency Combs | holzwarth2001 |
 | `ent.dual_comb_spectrometer` | BOUNDED-BY | `pri.mutual_coherence_requirement` | Optical Frequency Combs | coddington2016 |
 | `ent.fiber_interferometer` | BOUNDED-BY | `pri.fiber_thermal_noise_wanser` | Ultrastable Laser | dong2015 |
 | `ent.fiber_interferometer` | BOUNDED-BY | `pri.fdl_locking_noise_nonlinearity` | Ultrastable Laser | grabielle2025 |
@@ -65,8 +69,4 @@
 | `ent.fp_cavity_system` | BOUNDED-BY | `pri.brownian_thermal_noise_fdt` | Ultrastable Laser | hafner2015 |
 | `ent.fp_cavity_system` | BOUNDED-BY | `pri.brownian_thermal_noise_fdt` | Ultrastable Laser | legero2010 |
 | `ent.fp_cavity_system` | BOUNDED-BY | `pri.brownian_thermal_noise_fdt` | Ultrastable Laser | millo2009 |
-| `ent.fp_cavity_system` | BOUNDED-BY | `pri.brownian_thermal_noise_fdt` | Ultrastable Laser | numata2004 |
-| `ent.fp_cavity_system` | BOUNDED-BY | `pri.brownian_thermal_noise_fdt` | Ultrastable Laser | numata2004 |
-| `ent.fp_cavity_system` | BOUNDED-BY | `pri.brownian_thermal_noise_fdt` | Ultrastable Laser | tai2017 |
-| `ent.fp_cavity_system` | BOUNDED-BY | `pri.brownian_thermal_noise_fdt` | Ultrastable Laser | webster2007 |
 

@@ -3,7 +3,7 @@
 > **说明**：本文件包含知识库中所有已处理论文的详细列表。从 SCHEMA.md 第八节迁移而来。
 > SCHEMA.md 仅保留统计摘要，本文件承载完整论文记录。
 >
-> **最后更新**：2026-04-21（optical-frequency-combs Batch 1 摄入：+10 篇 → 71 篇）
+> **最后更新**：2026-04-22（optical-frequency-combs Batch 2+3 摄入：+19 篇 → 90 篇；`BL4HI3QI` 为 `picque2019.yaml` 的 zotero 备份键，跳过）
 
 ---
 
@@ -91,7 +91,7 @@
 | `olson2019.yaml` | CDX3DFQR | Olson 2019 — RB 干涉仪 <2×10⁻¹⁶ | ✅ v4.1 |
 | `huangjc2019b.yaml` | 5DCNFGX4 | Huang 2019b — 双缠绕抗振光纤盘 | ✅ v4.1 |
 
-## 光学频率梳专题（71 篇）
+## 光学频率梳专题（90 篇）
 
 ### 框架型文档
 
@@ -102,8 +102,10 @@
 | `droste2016.yaml` | 5NSQLZTS | Droste & Newbury 2016 — Er:fiber 梳综述 | ✅ v4.1 framework |
 | `endo2018.yaml` | H93SHF89 | Endo 2018 — 超低噪声光频梳综述 | ✅ v4.1 framework |
 | `newbury2005.yaml` | NHJ84W8G | Newbury & Washburn 2005 — 光纤梳扰动响应理论 | ✅ v4.3 framework（Batch 1） |
+| `sinclair2015.yaml` | LMFFEUFX | Sinclair 2015 — 紧凑全 PM 相干光纤梳技术综合（Rev Sci Instrum） | ✅ v4.3 framework（Batch 2） |
+| `diddams2010.yaml` | VKLU3BG6 | Diddams 2010 — "演化中的光学频率梳"综述（JOSA B） | ✅ v4.3 framework（Batch 3） |
 
-### 技术论文（部分列举，共 67 篇）
+### 技术论文（部分列举，共 83 篇）
 
 | 文件 | Zotero Key | 论文 | 状态 |
 |------|-----------|------|------|
@@ -125,7 +127,26 @@
 | `li2017b.yaml` | RWPYUXTB | Li 2017 — 首次全 PM Yb NALM 自参考梳，10⁻¹⁹ in-loop @ 1 s | ✅ v4.3 breakthrough（Batch 1） |
 | `ma2018.yaml` | P4TCLWW2 | Ma 2018 — 首次 750 MHz Yb:fiber 梳紧锁（<1 rad） | ✅ v4.3 breakthrough（Batch 1） |
 | `cai2020.yaml` | LBSZCU7P | Cai 2020 — 紧凑全 PM Er 梳 + 单光纤执行器 + GRIN f-2f | ✅ v4.3 evidence（Batch 1） |
+| `marra2012.yaml` | P7A5Z647 | Marra 2012 — 光频梳结构光纤传递 3×10⁻¹⁸ 精度（NPL） | ✅ v4.3 breakthrough（Batch 2） |
+| `nardelli2023.yaml` | R9HNIBTE | Nardelli 2023 — Er/Yb:glass 梳 10⁻¹⁸ 级光学/微波计量（NIST） | ✅ v4.3 evidence（Batch 2） |
+| `rolland2018.yaml` | U5C8AJYM | Rolland 2018 — 首次双分支 Er 梳 <10⁻¹⁸ 传递稳定度（IMRA） | ✅ v4.3 breakthrough（Batch 2） |
+| `hisai2021.yaml` | SZL4V3W8 | Hisai 2021 — NMIJ 8分支 Er:fiber 梳服务 Sr/Yb 光钟 | ✅ v4.3 evidence（Batch 2） |
+| `ning2020.yaml` | ST825B59 | Ning 2020 — 全 PM 多分支 Er:fiber 梳用于 CRDS（国家授时中心） | ✅ v4.3 evidence（Batch 2） |
+| `zhang_s2024.yaml` | QEJS62JG | Zhang S. 2024 — 门控+平衡探测提升梳-CW 拍频 SNR 20 dB（USTC） | ✅ v4.3 evidence（Batch 2） |
+| `chen_z2024.yaml` | QIFVVUIH | Chen Z. 2024 — 双梳微波钟同步 fs 级（PKU+BUPT，Optica） | ✅ v4.3 evidence（Batch 2） |
+| `zhang2017b.yaml` | V7MNFM68 | Zhang 2017b — 偏振态旋转控制梳频率（国家授时中心 Opt Lett） | ✅ v4.3 evidence（Batch 2） |
+| `lee2015.yaml` | L6ZZII7R | Lee 2015 — 单片 SESAM+graphene EOM 锁模/稳频集成（Schibli 组） | ✅ v4.3 breakthrough（Batch 2） |
+| `porat2018.yaml` | L88UAAEQ | Porat 2018 — 首次相位匹配 XUV 光梳（77 MHz 高温气体，JILA） | ✅ v4.3 breakthrough（Batch 3） |
+| `cheng2024.yaml` | NDSVHPF5 | Cheng 2024 — 首次连续 UV-蓝绿天文光梳（Nature Comm） | ✅ v4.3 breakthrough（Batch 3） |
+| `holzwarth2001.yaml` | UNL7SSP3 | Holzwarth 2001 — 首个二极管泵浦倍频程梳（Cr:LiSAF + PCF） | ✅ v4.3 breakthrough（Batch 3） |
+| `ideguchi2016.yaml` | PBGQXUED | Ideguchi 2016 — 首个 KLM 双向双梳环形激光器（Optica） | ✅ v4.3 breakthrough（Batch 3） |
+| `spaun2016.yaml` | NNLDMCDD | Spaun 2016 — 首次腔增强梳 + 缓冲气体冷分子红外光谱（Nature） | ✅ v4.3 breakthrough（Batch 3） |
+| `timmers2018.yaml` | TFUBQQB8 | Timmers 2018 — 脉冲内 DFG + OP-GaP 超八度中红外指纹梳（Optica） | ✅ v4.3 breakthrough（Batch 3） |
+| `diddams2007.yaml` | U9WDX7JI | Diddams 2007 — 首次 VIPA 分辨梳齿分子指纹光谱（Nature） | ✅ v4.3 breakthrough（Batch 3） |
+| `papp2013b.yaml` | SE4C2RWR | Papp 2013b — CO₂ 激光微棒梳 + 机械控制（PRX） | ✅ v4.3 breakthrough（Batch 3） |
 | *（其余 49 篇见 `topics/optical-frequency-combs/papers/` 目录）* | | | |
+
+> **备注**：原 Batch 3 清单含 `BL4HI3QI`（Picqué & Hänsch 2019 Nature Photonics 综述），与已处理 `picque2019.yaml`（zotero `RZME5CH8`）为**同一 DOI 的备份键**，不创建重复 YAML。
 
 ## 频率标准专题（1 篇）
 
