@@ -15,7 +15,9 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import json
 import re
+import subprocess
 import sys
 from datetime import date, datetime, timezone
 from pathlib import Path
@@ -71,9 +73,70 @@ def discover_paper_yamls(topic_dir: Path) -> list[Path]:
     return sorted(papers_dir.glob("*.yaml"))
 
 
-def file_mtime(path: Path) -> float:
-    """Return modification time as a POSIX timestamp."""
-    return path.stat().st_mtime
+_MTIME_CACHE: dict[Path, float] = {}
+_GIT_AVAILABLE: bool | None = None
+
+
+def _git_available(repo: Path) -> bool:
+    """Return True if 'git' can be invoked inside repo."""
+    global _GIT_AVAILABLE
+    if _GIT_AVAILABLE is not None:
+        return _GIT_AVAILABLE
+    try:
+        subprocess.run(
+            ["git", "-C", str(repo), "rev-parse", "--is-inside-work-tree"],
+            check=True, capture_output=True, text=True, timeout=5,
+        )
+        _GIT_AVAILABLE = True
+    except (subprocess.SubprocessError, FileNotFoundError, OSError):
+        _GIT_AVAILABLE = False
+    return _GIT_AVAILABLE
+
+
+def _git_last_commit_ts(path: Path, repo: Path) -> float | None:
+    """Return the UNIX timestamp of the last commit touching *path*.
+
+    Returns None if the file is not tracked or git is unavailable. This is
+    the authoritative mtime in CI (where checkout resets filesystem mtimes)
+    and also more robust locally against touch-like operations.
+    """
+    try:
+        rel = path.relative_to(repo)
+    except ValueError:
+        rel = path
+    try:
+        proc = subprocess.run(
+            ["git", "-C", str(repo), "log", "-1", "--format=%ct", "--", str(rel)],
+            check=True, capture_output=True, text=True, timeout=10,
+        )
+    except (subprocess.SubprocessError, FileNotFoundError, OSError):
+        return None
+    out = proc.stdout.strip()
+    if not out:
+        return None
+    try:
+        return float(out)
+    except ValueError:
+        return None
+
+
+def file_mtime(path: Path, repo: Path | None = None) -> float:
+    """Return the effective modification time.
+
+    Prefers the last git commit timestamp (``git log -1 --format=%ct``) so the
+    value is stable across fresh checkouts (CI) and robust to local ``git mv``
+    / ``touch`` no-ops. Falls back to filesystem mtime for untracked files or
+    when git is unavailable.
+    """
+    if path in _MTIME_CACHE:
+        return _MTIME_CACHE[path]
+    ts: float | None = None
+    if repo is not None and _git_available(repo):
+        ts = _git_last_commit_ts(path, repo)
+    if ts is None:
+        ts = path.stat().st_mtime
+    _MTIME_CACHE[path] = ts
+    return ts
 
 
 def extract_node_ids(text: str) -> set[str]:
@@ -167,10 +230,11 @@ class SynthesisStatus:
 
 
 def check_freshness(synth_path: Path, topic_dir: Path,
-                    paper_yamls: list[Path]) -> SynthesisStatus:
+                    paper_yamls: list[Path],
+                    repo: Path | None = None) -> SynthesisStatus:
     """Determine whether a synthesis page is stale."""
     status = SynthesisStatus(synth_path, topic_dir)
-    synth_mtime = file_mtime(synth_path)
+    synth_mtime = file_mtime(synth_path, repo)
 
     text = synth_path.read_text(encoding="utf-8", errors="replace")
     status.frontmatter, _ = parse_frontmatter(text)
@@ -193,20 +257,20 @@ def check_freshness(synth_path: Path, topic_dir: Path,
     # Check 1: any paper YAML modified more recently than the synthesis page
     newer = []
     for yp in paper_yamls:
-        if file_mtime(yp) > synth_mtime:
+        if file_mtime(yp, repo) > synth_mtime:
             newer.append(yp.name)
 
     # Check 2: referenced node IDs whose defining YAML is newer
     for nid in status.node_ids_referenced:
         for yp in node_to_yamls.get(nid, set()):
-            if file_mtime(yp) > synth_mtime and yp.name not in newer:
+            if file_mtime(yp, repo) > synth_mtime and yp.name not in newer:
                 newer.append(yp.name)
 
     # Check 3: explicitly referenced YAML files that are newer
     for ref in status.yaml_refs:
         fname = ref if ref.endswith(".yaml") else ref + ".yaml"
         yp = topic_dir / "papers" / fname
-        if yp.exists() and file_mtime(yp) > synth_mtime and yp.name not in newer:
+        if yp.exists() and file_mtime(yp, repo) > synth_mtime and yp.name not in newer:
             newer.append(yp.name)
 
     status.newer_yamls = sorted(set(newer))
@@ -224,14 +288,18 @@ def check_freshness(synth_path: Path, topic_dir: Path,
 # ---------------------------------------------------------------------------
 
 
-def action_check(repo: Path) -> list[SynthesisStatus]:
+def action_check(repo: Path, *, json_output: bool = False) -> list[SynthesisStatus]:
     """Check freshness of all synthesis pages and report."""
     results: list[SynthesisStatus] = []
     for topic_dir in discover_topics(repo):
         yamls = discover_paper_yamls(topic_dir)
         for sp in discover_synthesis_pages(topic_dir):
-            st = check_freshness(sp, topic_dir, yamls)
+            st = check_freshness(sp, topic_dir, yamls, repo=repo)
             results.append(st)
+
+    if json_output:
+        print(_results_to_json(results))
+        return results
 
     for st in results:
         icon = "⚠️ " if st.is_stale else "✅"
@@ -251,6 +319,30 @@ def action_check(repo: Path) -> list[SynthesisStatus]:
     return results
 
 
+def _results_to_json(results: list[SynthesisStatus]) -> str:
+    """Serialize results for CI / automation consumption."""
+    payload = {
+        "stale_count": sum(1 for s in results if s.is_stale),
+        "total": len(results),
+        "pages": [
+            {
+                "path": st.rel_path,
+                "topic": st.topic_name,
+                "is_stale": st.is_stale,
+                "newer_yamls": st.newer_yamls,
+                "node_refs_count": len(st.node_ids_referenced),
+                "yaml_refs_count": len(st.yaml_refs),
+                "frontmatter_needs_update": bool(
+                    st.frontmatter
+                    and st.frontmatter.get("needs_update") == "true"
+                ),
+            }
+            for st in results
+        ],
+    }
+    return json.dumps(payload, ensure_ascii=False, indent=2)
+
+
 def action_mark(repo: Path) -> list[SynthesisStatus]:
     """Mark stale synthesis pages with frontmatter metadata."""
     results: list[SynthesisStatus] = []
@@ -259,7 +351,7 @@ def action_mark(repo: Path) -> list[SynthesisStatus]:
     for topic_dir in discover_topics(repo):
         yamls = discover_paper_yamls(topic_dir)
         for sp in discover_synthesis_pages(topic_dir):
-            st = check_freshness(sp, topic_dir, yamls)
+            st = check_freshness(sp, topic_dir, yamls, repo=repo)
             results.append(st)
 
             if not st.is_stale:
@@ -320,11 +412,11 @@ def action_list(repo: Path) -> list[SynthesisStatus]:
         yamls = discover_paper_yamls(topic_dir)
         print(f"\n📂 {topic_dir.name}/synthesis/")
         for sp in discover_synthesis_pages(topic_dir):
-            st = check_freshness(sp, topic_dir, yamls)
+            st = check_freshness(sp, topic_dir, yamls, repo=repo)
             results.append(st)
 
             icon = "⚠️ " if st.is_stale else "✅"
-            mtime = mtime_to_datestr(file_mtime(sp))
+            mtime = mtime_to_datestr(file_mtime(sp, repo))
             fm_mark = ""
             if st.frontmatter and st.frontmatter.get("needs_update") == "true":
                 fm_mark = " [frontmatter: needs_update]"
@@ -375,6 +467,10 @@ def build_parser() -> argparse.ArgumentParser:
         "--list", action="store_true", default=False,
         help="List all synthesis pages with detailed status.",
     )
+    parser.add_argument(
+        "--json", action="store_true", default=False, dest="json_output",
+        help="Emit JSON output (only meaningful with --check).",
+    )
     return parser
 
 
@@ -399,7 +495,7 @@ def main() -> int:
     elif args.list:
         results = action_list(repo)
     else:
-        results = action_check(repo)
+        results = action_check(repo, json_output=args.json_output)
 
     # Exit code: 1 if any stale
     return 1 if any(s.is_stale for s in results) else 0

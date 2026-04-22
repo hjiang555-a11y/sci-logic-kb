@@ -157,6 +157,58 @@ def export_json(nodes: dict, edges: list, output) -> None:
     output.write("\n")
 
 
+def export_cytoscape(nodes: dict, edges: list, output) -> None:
+    """Export to Cytoscape.js-native `{nodes: [...], edges: [...]}` format.
+
+    Each element is `{"data": {...}}` with fields compatible with cytoscape.js:
+    nodes carry `id`, `label`, `type`, `topic`, `hierarchy_level`, `tier`,
+    `defining_file`; edges carry `id`, `source`, `target`, `predicate`,
+    `topic`, `file`.
+    """
+    cy_nodes = []
+    for nid, n in nodes.items():
+        data = {
+            "id": nid,
+            "label": n.get("name", nid),
+            "type": n.get("type", ""),
+            "topic": n.get("topic", ""),
+            "defining_file": n.get("defining_file", ""),
+        }
+        if "hierarchy_level" in n:
+            data["hierarchy_level"] = n["hierarchy_level"]
+        if "tier" in n:
+            data["tier"] = n["tier"]
+        cy_nodes.append({"data": data})
+
+    cy_edges = []
+    for i, e in enumerate(edges):
+        cy_edges.append({
+            "data": {
+                "id": e.get("id") or f"e{i}",
+                "source": e["source"],
+                "target": e["target"],
+                "predicate": e.get("predicate", ""),
+                "topic": e.get("topic", ""),
+                "file": e.get("file", ""),
+            }
+        })
+
+    payload = {
+        "elements": {
+            "nodes": cy_nodes,
+            "edges": cy_edges,
+        },
+        "stats": {
+            "total_nodes": len(cy_nodes),
+            "total_edges": len(cy_edges),
+            "topics": sorted({n["topic"] for n in nodes.values()}),
+            "predicates": sorted({e.get("predicate", "") for e in edges}),
+        },
+    }
+    json.dump(payload, output, ensure_ascii=False, indent=2)
+    output.write("\n")
+
+
 # ── GraphML export ────────────────────────────────────────────────────
 
 def export_graphml(nodes: dict, edges: list, output) -> None:
@@ -391,8 +443,8 @@ def main() -> None:
         help="Root of the sci-logic-kb repository (default: current directory)",
     )
     parser.add_argument(
-        "--format", choices=["json", "graphml"], default=None,
-        help="Export format (json or graphml)",
+        "--format", choices=["json", "graphml", "cytoscape"], default=None,
+        help="Export format (json | graphml | cytoscape)",
     )
     parser.add_argument(
         "--output", type=str, default=None,
@@ -426,6 +478,14 @@ def main() -> None:
         with open(out_path, "w", encoding="utf-8") as fh:
             export_graphml(nodes, edges, fh)
         print(f"GraphML written to {out_path}", file=sys.stderr)
+
+    elif args.format == "cytoscape":
+        if args.output:
+            with open(args.output, "w", encoding="utf-8") as fh:
+                export_cytoscape(nodes, edges, fh)
+            print(f"Cytoscape JSON written to {args.output}", file=sys.stderr)
+        else:
+            export_cytoscape(nodes, edges, sys.stdout)
 
     # Diagnostics
     if args.diagnostics:

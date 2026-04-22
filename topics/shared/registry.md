@@ -92,10 +92,20 @@
 
 **语义**：超稳激光中该节点刻画 FP 腔镀层的热噪声；光学频率梳中在 `michaudbelleau2022`（HCF 光梳）等 evidence 文件中作为 source of thermal noise 的通用父原理被引用。
 
+**SHARED-WITH 使用元数据（v4.5+）**：
+
+- **登记日期**：2026-04-22（v4.5 Schema 升级）
+- **Tier 级别**：Tier 2（跨专题公共节点）
+- **Hierarchy level**：0（顶层普适原理）
+- **允许的 SHARED-WITH 主语谓词范围**：`pri.*`（不用于 `meth.*`，因为 FDT 是原理而非方法）
+- **首批试点落地状态**：**infrastructure ready，实际 SHARED-WITH 关系待下一篇在 OFC/频率标准/光纤陀螺专题引入的论文**（该论文需显式定义一个 thermal-noise 局部变体原理作为 SHARED-WITH 主语；见 [reports/shared_node_candidates.md §4](../../reports/shared_node_candidates.md)）
+
 **未来扩展候选**（待跨专题摄入更多论文后激活）：
 - `meth.pdh_locking`（超稳激光 → 频率标准）
 - `pri.photodetection_shot_noise_limit`（光梳 → 超稳激光 → 微波光子学）
 - `pri.self_referencing_f2f`（光梳 → 频率标准 UTC 溯源）
+
+> ⚠ **lint 契约**：`scripts/lint.py` 把本 §3 表中**首列反引号包裹的 ID** 作为 Tier 2 白名单。任何 `SHARED-WITH` 关系若 object 不在此列表中将报 ERROR。添加新 Tier 2 节点时，只需在此表加一行即可生效，无需修改 lint 代码。
 
 ---
 

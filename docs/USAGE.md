@@ -85,6 +85,21 @@
 
 ---
 
+## Synthesis 页新鲜度机制（v4.5+）
+
+Synthesis 页依赖的 paper YAML 更新后，Synthesis 页可能需要随之刷新。仓库的自动化会**在 PR 上自动提示**：
+
+- 触发：任意 PR 修改 `topics/**/*.yaml` 或 `topics/**/*.md`
+- 检查：`scripts/freshness.py --check --json` 基于 **git log 提交时间戳**（非 `mtime`）对比 YAML 和 synthesis 页的新旧
+- 提示方式：
+  - 若某 synthesis 页有更新的 YAML，但本 PR **未同时修改该 synthesis 页** → PR 自动获得 `needs-refresh` 标签，并收到一条 sticky comment 列出受影响页面和触发 YAML
+  - 若同一 PR 已经在修改该 synthesis 页，则视为"已响应"，不加标签
+- 标签不会阻塞合并；由维护者决定合并前修复还是合并后跟进。
+
+本地预览：`python scripts/freshness.py --check` 或 `python scripts/freshness.py --list`（结构化：`--json`）。
+
+---
+
 ## 本指南的定位
 
 - 这是**读者视角**文档，不规定如何摄入论文（→ CONTRIBUTING.md）

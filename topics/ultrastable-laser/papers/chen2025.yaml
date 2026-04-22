@@ -32,6 +32,7 @@ entities:
     name: "Sub-5K 10 cm 硅单晶 FP 腔（Chen 2025，Si1）"
     aliases: ["Si1 cavity", "10-cm Si cavity sub-5K", "PKU sub-5K Si cavity"]
     hierarchy_level: 2
+    instance_of: ent.fp_cavity_system   # v4.5+ 参数变体显式锚定
     status: demonstrated
     function: >
       10 cm 硅单晶 FP 腔，工作于 sub-5 K（利用 Si CTE 在低温趋近零的特性，α→0 as T→0），
@@ -104,6 +105,12 @@ relations:
     source: {zotero_key: "N6HILT6B", claim: "fundamentally limited by the Brownian thermal noise"}
     is_system_limit: true
     dominated_by: null
+    # v4.5+ limit_status：sub-5K 低温路径已演示 (4±1)×10⁻¹⁷，Brownian 热噪声
+    # 瓶颈在本系统内被冷却路径压制。保留对 AlGaAs 镀层这一并行路径的 proposed 状态。
+    limit_status: resolved
+    resolved_by:
+      - pri.cryogenic_mechanical_q_enhancement
+    resolution_source: {zotero_key: "N6HILT6B", claim: "10-cm-long silicon cavity at sub-5-K temperatures"}
     verification_status: observed
     temporal_role: validates
     breakthrough_paths:

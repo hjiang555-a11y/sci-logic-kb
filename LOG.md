@@ -7,6 +7,39 @@
 
 ---
 
+## [2026-04-22] schema | Schema v4.4 → v4.5 · SHARED-WITH 谓词 + BOUNDED-BY limit_status 枚举 + entity.instance_of 字段 + CI freshness + Cytoscape 可视化
+
+**一次性发布 v4.5，关闭所有历史 Schema/工具 TODO（TODO-1/2/3/5 完成；TODO-4 落地为 `instance_of` 字段，`INSTANCE-OF` 谓词升格进入一年观察窗口）**。
+
+- **Schema 层**：
+  - 第 9 种谓词 `SHARED-WITH`（§5）：跨专题 Tier 2 公共机制锚定，双 lint 规则（Tier 2 注册白名单 + 跨专题要求 + pri/meth-only）
+  - `BOUNDED-BY` 新增 `limit_status` 四态枚举（`active | conditional | resolved | refuted`）+ `resolved_by` + `resolution_source`（§4.2），保留 `is_system_limit` 兼容
+  - 实体节点新增可选 `instance_of` 字段（§1），配套 lint 一致性检查（必须有匹配的 `PART-OF`）
+  - 版本号 v4.4 → v4.5，向后兼容（所有新字段可选）
+- **工具层**：
+  - `scripts/freshness.py`：mtime 改基于 `git log -1 --format=%ct`（CI 中 checkout 后仍可工作）；新增 `--json` 输出
+  - `scripts/lint.py`：新增 `check_shared_with` / `check_limit_status` / `check_instance_of` 三项
+  - `scripts/stats.py`：新增 `limit_resolution_rate` 指标（打印为 "1b" 行）
+  - `scripts/migrate_bounded_status.py`：BOUNDED-BY `limit_status` 批量推断建议（read-only）
+  - `scripts/graph.py --format cytoscape`：Cytoscape.js 原生 JSON 输出
+  - `scripts/build_graph_view.sh`：一键重建 `docs/graph/graph.json`
+- **CI / 可视化**：
+  - `.github/workflows/synthesis-freshness.yml`：PR 自动打 `needs-refresh` 标签 + sticky 评论（不阻塞合并）
+  - `docs/graph/index.html` + `viewer.js`：只读交互式 Cytoscape.js 图浏览器（按 type / topic / tier 上色、ID 搜索、谓词过滤）
+- **数据层示范落地**：
+  - `limit_status: resolved` 首批 3 条：`cole2013.C05`（AlGaAs 晶体镀层）· `hafner2015.H05`（48 cm 长腔 + AlGaAs）· `chen2025.Che02`（sub-5K Si 腔）
+  - `instance_of` 首批 3 条：`chen2025.si_crystal_fp_cavity_sub5k_c25` · `chen2020.cubic_dual_cavity_c20` · `hafner2015.self_balancing_long_cavity_h15` → `ent.fp_cavity_system`
+  - `SHARED-WITH` 首批：**infrastructure ready**，首个实际关系待下一篇在 OFC/频率标准定义热噪声变体原理的论文触发
+- **lint/stats 状态（v4.5 基线）**：0 error · 3 warning · 188 info。Reasoning Chain Closure 76.6%（breakthrough-only 100%），σ_y Linkage 100%，Limit Resolution Rate 100%（resolved 3 / active 0 · unset 138，首批示范）。
+- **文档**：
+  - `SCHEMA.md` 顶部变更摘要更新 + §1/§4.2/§5 具体规范
+  - `docs/USAGE.md` 新增 "Synthesis 页新鲜度机制（v4.5+）" 小节
+  - `topics/shared/registry.md §3` 补 Tier 2 完整元数据 + lint 契约说明
+  - `README.md` 增加交互式图谱入口
+  - `TODO.md` 四项全部勾选，附完成日期与交付指针
+
+---
+
 ## [2026-04-22] ingest | optical-frequency-combs Batch 2+3 · 计量链路 + 新平台与光谱应用（19 篇）
 
 承接 Batch 1（10 篇 · A1 技术平台子域）后摄入 Batch 2 + Batch 3，合计 +19 篇（光频梳 71 → 90）。原计划 20 篇，其中 `BL4HI3QI` 与已处理 `picque2019.yaml`（zotero `RZME5CH8`）DOI 完全相同（`10.1038/s41566-018-0347-5`，Picqué & Hänsch 2019 Nature Photonics 综述），确认为 zotero 备份键，**跳过不创建重复 YAML**。

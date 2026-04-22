@@ -1,9 +1,16 @@
 # sci-logic-kb YAML 知识提取模式文档
 
-> **版本**：v4.4（2026-04-21）
-> **变更摘要**：v4.4 正式化论文贡献三档分级（§9.1）——`breakthrough` / `evidence` / `framework`。`evidence` 档位明确为大多数论文的合法归宿，放宽 chain-gap / orphan 要求，从源头提升信号/噪声比。同步更新 YAML 模板（§六）默认值为 `evidence`、补充向后兼容映射（§9.2）；未强制批量迁移历史 YAML 文件，改为触及时归一化。
+> **版本**：v4.5（2026-04-22）
+> **变更摘要（v4.5）**：
+> 1. **新增第 9 种谓词 `SHARED-WITH`**（§5）— 用于**显式跨专题**锚定到 `topics/shared/registry.md §3 Tier 2` 中登记的 domain-level 公共节点。仅用于 `pri.*` / `meth.*`。附 lint 双规则（Tier 2 注册白名单 + 跨专题要求）。
+> 2. **`BOUNDED-BY` 扩展 `limit_status` 四态枚举**（§4.2） — `active | conditional | resolved | refuted`，与 `breakthrough_paths.status` 联动；`stats.py` 新增 `limit_resolution_rate` 量化"已突破 vs 仍卡死"。保留 `is_system_limit` 以兼容。
+> 3. **实体节点新增可选 `instance_of` 字段**（§1 实例节点原则） — 声明 Level 2 参数变体指向其 Level 1 父实体；**不升格为 INSTANCE-OF 谓词**，进入一年观察窗口。
+> 4. **freshness CI 正式化**（`docs/USAGE.md`） — `scripts/freshness.py` 改用 git-log 时间戳；新 workflow `synthesis-freshness.yml` 自动打 `needs-refresh` 标签 + sticky 评论。
+> 5. **交互式图谱可视化** — `scripts/graph.py --format cytoscape` + `docs/graph/` 静态 Cytoscape.js 浏览器。
+>
+> **上版变更（v4.4）**：v4.4 正式化论文贡献三档分级（§9.1）——`breakthrough` / `evidence` / `framework`。`evidence` 档位明确为大多数论文的合法归宿，放宽 chain-gap / orphan 要求，从源头提升信号/噪声比。同步更新 YAML 模板（§六）默认值为 `evidence`、补充向后兼容映射（§9.2）；未强制批量迁移历史 YAML 文件，改为触及时归一化。
 > **上版变更（v4.3）**：v4.3 在 v4.2 基础上完成 P0 整固——新增 5 个自动化脚本（stats/lint/build_index/graph/freshness）、CI 集成（kb-lint-stats.yml）、分层 INDEX 架构（自动生成）、专题 _meta/ 目录、6 项推理就绪度量定义（§10.8）、节点粒度自检清单（§10.9）。INDEX.md 改为脚本生成，不再手工维护。
-> **向后兼容**：v3.2 YAML 文件无需修改内容即可在 v4.4 下使用。历史 `contribution_type` 非规范值（`technical` / `technical_breakthrough` / `methodology` / …）按 §9.2 映射表解读，lint 不报错。新建文件应使用 `# Schema版本：v4.4`。
+> **向后兼容**：v3.2 / v4.x YAML 文件无需修改内容即可在 v4.5 下使用。v4.5 新字段（`limit_status` / `resolved_by` / `instance_of`）均为**可选**，历史关系沿用 `is_system_limit` 语义。历史 `contribution_type` 非规范值按 §9.2 映射表解读，lint 不报错。新建文件应使用 `# Schema版本：v4.5`。
 
 ---
 
@@ -47,7 +54,7 @@
 - 若节点拥有独立的 `BOUNDED-BY` / `ENABLED-BY` / `CHARACTERIZED-BY` / `COMPETES-WITH` 关系，或可被多篇论文复用引用 → 保留为独立节点
 - 若单个节点内容过重，但内部存在多个可复用、可单独查询的机制/部件/争议点 → 允许向下分解为子节点，而不是继续堆字段
 
-### 实例节点原则（v3.0 新增）
+### 实例节点原则（v3.0 新增；v4.5 补 `instance_of` 字段）
 
 > **同一类型频率参考的不同参数配置（材料、温度、腔长）为"实例"（Level 2），不是独立竞争方案。**
 
@@ -58,6 +65,21 @@
 **边界判断**：
 - "参数变体"（→ Level 2 实例）：同一物理工作原理，仅改变材料/温度/腔长（如 ULE 腔 vs Si 腔、124K vs 17K）
 - "不同类型"（→ Level 1 独立节点）：工作原理本质不同（如 FP 腔谐振 vs 光纤延迟线非谐振），拥有独立的设计选择空间
+
+**v4.5+ `instance_of` 字段**（可选，entity 节点）：
+
+```yaml
+entities:
+  - id: ent.si_crystal_fp_cavity_sub5k_c25
+    name: "Sub-5 K Si 晶体 FP 腔（Chen 2025）"
+    level: 2
+    instance_of: ent.fp_cavity_system   # 指向其 Level 1 父实体
+```
+
+- 语义：声明当前 entity 是其父 Level 1 实体的**参数变体实例**
+- lint（`scripts/lint.py`）：若 `instance_of` 存在，则必须有一条 `{nid} PART-OF {parent}` 关系，否则 WARNING
+- 用途：查询"某 Level 1 实体的所有实例变体" 一次属性扫描即可命中
+- **不引入新谓词**：该字段**不升格**为 `INSTANCE-OF` 谓词。一年观察窗口内若 ≥ 20 个节点使用且图算法上开始明显分化，再重新评估（决策：v4.5 TODO 书面记录为长期观察项）。
 
 ### 跨分支原理隔离原则（v3.1 新增）
 
@@ -624,7 +646,7 @@ key_parameters:
 
 ---
 
-## 五、八种关系类型
+## 五、九种关系类型
 
 ### 4.1 关系总览
 
@@ -638,6 +660,7 @@ key_parameters:
 | `DERIVED-FROM` | subject 原理由 object 原理推导 | `pri.cryogenic_mechanical_q_enhancement DERIVED-FROM pri.brownian_thermal_noise_fdt` |
 | `CONDITIONED-BY` | subject 的工作受 object 外部条件制约 | `ent.fp_cavity_system CONDITIONED-BY ent.vibration_environment` |
 | `COMPETES-WITH` | 同层级的并列方案，有权衡 | `ent.fp_cavity_system COMPETES-WITH ent.fiber_interferometer` |
+| `SHARED-WITH` (v4.5+) | subject 与 object 是跨专题同一机制的锚定 | `pri.local_hcf_thermal_noise SHARED-WITH pri.brownian_thermal_noise_fdt` |
 
 > **废弃**：`GOVERNED-BY`（已拆分为 ENABLED-BY + BOUNDED-BY）、`EQUIVALENT-IN-CONTEXT`（用共同 ENABLED-BY 表达）、`SUPPORTED-BY`（用 temporal_role 字段表达）、`BREAKTHROUGH-VIA`（已内化为原理节点的 `condition_variables` 字段）
 
@@ -651,11 +674,23 @@ key_parameters:
   confidence: established
   source: {zotero_key: "KEY", claim: "原文论断"}
 
-  # 限制状态（必填）
+  # 限制状态（v4.2 规范字段）
   is_system_limit: true           # 当前条件下是否为主动瓶颈
   dominated_by: null              # 若 false，填写压制它的原理 ID
   quantitative_contribution: "84%"  # 占总限制的比例（如已知）
   regime: all                     # all | short-term | long-term | during-sweep
+
+  # 限制状态枚举（v4.5+，与 breakthrough_paths.status 联动）
+  # active      — 当前条件下主动瓶颈（等价 is_system_limit: true）
+  # conditional — 被另一原理压制，条件变化会回归（等价 dominated_by 非空）
+  # resolved    — 已被工程路径突破并退出极限序列（需填 resolved_by）
+  # refuted     — 论断被后续实验证伪
+  # 未填则视为 unknown（历史数据兼容），lint 不强制。
+  limit_status: active
+  resolved_by: null               # 仅 limit_status=resolved 时必填：
+                                  # 列表，条目必须是 pri.* 或 meth.* 节点 ID
+  resolution_source: null         # 仅 limit_status=resolved 时建议填：
+                                  # {zotero_key: "...", claim: "原文论断"}
 
   # 认识论状态（Feynman 原则）
   verification_status: observed   # observed | calculated | inferred
@@ -676,6 +711,10 @@ key_parameters:
 ```
 
 > **突破路径**在 BOUNDED-BY 关系的 `breakthrough_paths` 字段中写，`direction` 必须引用 `pri.*` 或 `meth.*` 节点（不得引用 `ent.*`）。
+
+> **v4.5+ `limit_status` 联动规则**：当某条 `breakthrough_paths[].status == "demonstrated"` 时，其所属的 BOUNDED-BY 关系**建议**同步将 `limit_status` 从 `active` 改为 `resolved` 并补 `resolved_by`。lint 在发现该情况但 `limit_status` 仍为非 `resolved|refuted` 时发出 INFO-级 nudge（不阻塞）。`scripts/migrate_bounded_status.py` 可做批量初始推断。
+>
+> **新指标 `limit_resolution_rate`**：`scripts/stats.py` 基于 `limit_status` 新增一项"极限突破闭环率" `resolved / (active + resolved)`，补充原有 `reasoning_chain_closure`，量化"已突破 vs 仍卡死"。
 
 ### 4.3 CONDITIONED-BY 结构（外围条件接口）
 
@@ -721,6 +760,40 @@ key_parameters:
       subject: "high (vacuum, cryogenics)"
       object: "medium (fiber spool, thermal control)"
 ```
+
+### 4.5 SHARED-WITH 结构（跨专题公共机制锚定，v4.5+）
+
+> **定位**：`SHARED-WITH` 是第 9 种谓词，**仅**用于显式声明"本专题的这个原理/方法，与某个跨专题公共节点是同一机制"。它不替代 `DERIVED-FROM` / `PART-OF` / `ENABLED-BY`，而是为**跨专题叙事**提供清晰锚点。
+
+**触发条件（必要且充分）**：
+
+1. `object` 必须是登记在 [`topics/shared/registry.md`](topics/shared/registry.md) **§3 Tier 2 段**的 domain-level 公共节点（即事实上被 ≥ 2 个**不同专题**的论文引用）
+2. `subject` 必须与 `object` 的主页文件分属**不同专题目录**（`topics/<A>/` vs `topics/<B>/`；同专题复用走 Tier 1 隐式引用即可）
+3. `subject` 与 `object` 必须同为 `pri.*` 或 `meth.*`（不用于 `ent.*` / `met.*` — 这些走 `CONDITIONED-BY` / `OPERATIONALIZED-AS`）
+
+**方向**：`local_node SHARED-WITH shared_node`（单向，本地指向公共节点）。
+
+**结构**：
+
+```yaml
+- id: rel.X##
+  subject: pri.local_variant_or_anchor       # 本专题内的原理/方法（可以是 paper-local 节点）
+  predicate: SHARED-WITH
+  object: pri.brownian_thermal_noise_fdt     # 必须出现在 registry.md §3 Tier 2 表
+  confidence: established
+  source: {zotero_key: "KEY", claim: "原文论断（说明跨专题借用语义）"}
+  note: "跨专题锚定：说明 subject 在本专题的体现与 shared 节点的物理对应关系"
+```
+
+**lint 规则**（`scripts/lint.py`，v4.5+）：
+
+| 违规 | 级别 | 说明 |
+|------|------|------|
+| `SHARED-WITH.object` 不在 `registry.md §3 Tier 2` | ERROR | 防止滥用；若确需扩展 Tier 2，应先补 registry |
+| `subject` 与 `object.defining_file` 属同一专题目录 | WARNING | 同专题复用应降级为 Tier 1 隐式引用 |
+| `subject` / `object` 不是 `pri.*` / `meth.*` | ERROR | 实体/指标不用此谓词 |
+
+**关键原则**：SHARED-WITH 应**稀有、显式、有溯源**。不追求数量——目标是为跨专题"公共机制"提供 navigable 锚点，不是补丁式连接谓词。
 
 ---
 
