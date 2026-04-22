@@ -1,0 +1,177 @@
+name: Synthesis Freshness
+
+# Detect when a PR modifies paper YAMLs without updating the synthesis pages
+# that depend on them, and surface the situation via a sticky comment and
+# a 'needs-refresh' label. Never blocks the PR — purely advisory.
+
+on:
+  pull_request:
+    paths:
+      - 'topics/**/*.yaml'
+      - 'topics/**/*.md'
+      - 'scripts/freshness.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  freshness:
+    name: Check synthesis freshness
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Full history so freshness.py can resolve git-log timestamps
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Run freshness check (JSON)
+        id: freshness
+        run: |
+          set +e
+          python scripts/freshness.py --check --json > /tmp/freshness.json
+          STATUS=$?
+          set -e
+
+          # Exit code 1 means "stale pages found" — advisory, not a hard error.
+          # Any other non-zero code indicates a genuine script failure.
+          if [ "$STATUS" -ne 0 ] && [ "$STATUS" -ne 1 ]; then
+            echo "freshness.py failed unexpectedly with exit code $STATUS"
+            exit "$STATUS"
+          fi
+
+          # Ensure the JSON was actually written before parsing it.
+          if [ ! -s /tmp/freshness.json ]; then
+            echo "freshness.py produced no JSON output (exit code $STATUS)"
+            exit 1
+          fi
+
+          STALE=$(python -c "import json; print(json.load(open('/tmp/freshness.json'))['stale_count'])")
+          echo "stale_count=$STALE" >> "$GITHUB_OUTPUT"
+          cat /tmp/freshness.json
+
+      - name: Detect synthesis pages updated in this PR
+        if: github.event_name == 'pull_request'
+        id: changed
+        run: |
+          git fetch origin ${{ github.base_ref }} --depth=1 || true
+          CHANGED_MD=$(git diff --name-only origin/${{ github.base_ref }}...HEAD -- 'topics/**/synthesis/*.md' || true)
+          if [ -z "$CHANGED_MD" ]; then
+            echo "changed_md=" >> "$GITHUB_OUTPUT"
+          else
+            # Join with commas for easy JS parsing
+            CHANGED_MD_CSV=$(printf '%s,' $CHANGED_MD | sed 's/,$//')
+            echo "changed_md=$CHANGED_MD_CSV" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Label + comment on PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const payload = JSON.parse(fs.readFileSync('/tmp/freshness.json', 'utf8'));
+            const changedMd = ('${{ steps.changed.outputs.changed_md }}' || '')
+              .split(',').filter(Boolean);
+            const stalePages = payload.pages.filter(p => p.is_stale);
+
+            // A stale page is considered "addressed" if it appears in the
+            // PR's modified .md files — author is already editing it.
+            const unaddressed = stalePages.filter(
+              p => !changedMd.includes(p.path)
+            );
+
+            const marker = '<!-- synthesis-freshness-bot -->';
+            const repo = context.repo;
+            const issue_number = context.issue.number;
+
+            // Locate any existing sticky comment from this bot
+            const comments = await github.paginate(
+              github.rest.issues.listComments,
+              { ...repo, issue_number, per_page: 100 }
+            );
+            const existing = comments.find(c => (c.body || '').includes(marker));
+
+            let body;
+            if (unaddressed.length === 0) {
+              body = [
+                marker,
+                '### ✅ Synthesis freshness check',
+                '',
+                stalePages.length === 0
+                  ? 'All synthesis pages are fresh relative to the paper YAMLs.'
+                  : `All ${stalePages.length} stale page(s) are already being ` +
+                    `updated in this PR.`,
+              ].join('\n');
+            } else {
+              const lines = unaddressed.map(p => {
+                const refs = p.newer_yamls.slice(0, 8).join(', ');
+                const more = p.newer_yamls.length > 8
+                  ? ` (+${p.newer_yamls.length - 8} more)` : '';
+                return `- \`${p.path}\` ← newer: ${refs}${more}`;
+              });
+              body = [
+                marker,
+                '### ⚠️ Synthesis freshness check',
+                '',
+                `${unaddressed.length} synthesis page(s) reference paper YAMLs ` +
+                  `that changed after their own last commit:`,
+                '',
+                ...lines,
+                '',
+                '_Either update the affected synthesis pages in this PR, or ' +
+                  'acknowledge and defer (the label can be removed by a maintainer)._',
+                '',
+                '<sub>Generated by `.github/workflows/synthesis-freshness.yml` · ' +
+                  '`scripts/freshness.py`</sub>',
+              ].join('\n');
+            }
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                ...repo, comment_id: existing.id, body,
+              });
+            } else if (unaddressed.length > 0) {
+              await github.rest.issues.createComment({
+                ...repo, issue_number, body,
+              });
+            }
+
+            // Label management
+            const labelName = 'needs-refresh';
+            if (unaddressed.length > 0) {
+              // Ensure label exists
+              try {
+                await github.rest.issues.getLabel({ ...repo, name: labelName });
+              } catch (err) {
+                if (err.status === 404) {
+                  await github.rest.issues.createLabel({
+                    ...repo, name: labelName,
+                    color: 'fbca04',
+                    description:
+                      'Synthesis page(s) require refresh due to newer paper YAML',
+                  });
+                }
+              }
+              await github.rest.issues.addLabels({
+                ...repo, issue_number, labels: [labelName],
+              });
+            } else {
+              // Remove the label if we previously added it
+              try {
+                await github.rest.issues.removeLabel({
+                  ...repo, issue_number, name: labelName,
+                });
+              } catch (err) {
+                if (err.status !== 404) throw err;
+              }
+            }
