@@ -1,0 +1,199 @@
+# Fortier et al. 2011 — 光频除法生成超稳微波（首次<10⁻¹⁵光学分频微波） [breakthrough]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
+
+meta:
+  zotero_key: "YMWK52FQ"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: breakthrough
+  reliability: high
+  title: "Generation of ultrastable microwaves via optical frequency division"
+  year: 2011
+  first_author: "Fortier"
+  authors:
+    - "T.M. Fortier"
+    - "M.S. Kirchner"
+    - "F. Quinlan"
+    - "J. Taylor"
+    - "J.C. Bergquist"
+    - "T. Rosenband"
+    - "N. Lemke"
+    - "A. Ludlow"
+    - "Y. Jiang"
+    - "C.W. Oates"
+    - "S.A. Diddams"
+  journal: "Nature Photonics"
+  volume: "5"
+  pages: "425"
+  doi: "10.1038/NPHOTON.2011.121"
+  note: >
+    里程碑成果：首次实现分数频率不稳定度≤8×10⁻¹⁶（1 s）的光学分频微波，
+    超越当时最好的微波振荡器（无需深冷）。使用1 GHz Ti:sapphire OFD+超稳FP腔（578 nm
+    和1070 nm），产生10 GHz信号：L(f)=−104 dBc/Hz（@1 Hz），−157 dBc/Hz散粒噪声底，
+    时序抖动760 as（1 Hz–1 MHz）。比此前工作改善10–1000倍（1 Hz–1 MHz全谱），
+    是光子微波生成领域奠基性突破。
+
+entities:
+  - id: ent.ti_sapphire_ofd_photonic_osc_fortier2011
+    name: "Ti:sapphire OFD光子微波振荡器（Fortier 2011）"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      1 GHz Ti:sapphire飞秒梳锁定至超稳FP光腔（578 nm或1070 nm），
+      通过光电探测10 GHz谐波将光学超稳定性转移至微波域，
+      产生10 GHz信号，分数频率不稳定度≤8×10⁻¹⁶（1 s），
+      是首次无需深冷即达到此精度的电子信号。
+
+principles:
+  - id: pri.ofd_optical_stability_transfer
+    name: "光频除法将光学稳定性转移至微波域原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      超稳FP光腔（Q≈10¹¹，室温腔长波动~100 am/1s）锁定CW激光可实现分数频率不稳定度
+      ~2×10⁻¹⁶（1–10 s）。通过相位锁定自参考飞秒梳至此光学参考，光学频率的相对波动以
+      N²倍（N≈5×10⁴=500 THz/10 GHz）的相位噪声功率降低因子转移至微波重复率，
+      从而将光学精度传递给微波域，使微波信号时序抖动降至760 as量级。
+    domain: "频率计量 / 光子微波生成"
+    key_insight: >
+      光学Q因子（~10¹¹）远超微波谐振腔（即使是蓝宝石腔），且无需深冷，
+      光频除法是突破微波振荡器基本噪声极限的关键技术路径。
+    conditions: >
+      需要自参考OFC（f-2f锁定f_ceo）和超稳光学参考；性能最终受光学腔热噪声和
+      光电探测散粒噪声限制。
+    source:
+      zotero_key: "YMWK52FQ"
+      claim: >
+        "Phase-coherent division of the stable optical signal to the microwave domain
+        preserves the fractional frequency instability, while reducing the phase fluctuations
+        by a factor of ~5×10^4 = (500 THz/10 GHz)"
+
+metrics:
+  - id: met.ofd_microwave_instability_fortier2011
+    name: "OFD 10 GHz微波分数频率不稳定度（Fortier 2011）"
+    unit: "无量纲（ADEV）"
+    role: primary
+    description: >
+      Ti:sapphire OFD产生的10 GHz信号在1 s平均时间的分数频率不稳定度，
+      首次光学分频微波低于10⁻¹⁵。
+    demonstrated_value:
+      value: "≤8×10⁻¹⁶"
+      conditions: "10 GHz，τ=1 s，1 GHz Ti:sapphire OFD，超稳FP腔（578/1070 nm），两台独立系统比对，NIST 2011"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "YMWK52FQ"
+        claim: >
+          "we demonstrate a 10 GHz signal with an absolute instability of ≤8×10^-16 at 1s
+          of averaging"
+
+  - id: met.ofd_phase_noise_1hz_fortier2011
+    name: "OFD 10 GHz相位噪声@1 Hz（Fortier 2011）"
+    unit: "dBc/Hz"
+    role: primary
+    description: "Ti:sapphire OFD产生的10 GHz微波在1 Hz偏移处的单边带绝对相位噪声"
+    demonstrated_value:
+      value: "−104"
+      conditions: "10 GHz载波，1 Hz偏移，1 GHz Ti:sapphire OFD，超稳FP腔，NIST 2011"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "YMWK52FQ"
+        claim: "L(f) = −104 dBc Hz⁻¹ at 1 Hz offset from the carrier"
+
+  - id: met.ofd_shot_noise_floor_fortier2011
+    name: "OFD散粒噪声底（Fortier 2011）"
+    unit: "dBc/Hz"
+    role: secondary
+    description: "1 GHz Ti:sapphire OFD在高偏移频率处的光子散粒噪声限相位噪声底"
+    demonstrated_value:
+      value: "−157"
+      conditions: "10 GHz载波，1 MHz偏移附近，1 GHz Ti:sapphire OFD，~12 mW探测功率，NIST 2011"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "YMWK52FQ"
+        claim: "decreasing to near the photon shot-noise-limited floor of −157 dBc Hz⁻¹ at an offset of 1 MHz"
+
+  - id: met.ofd_timing_jitter_fortier2011
+    name: "OFD 10 GHz绝对时序抖动（Fortier 2011）"
+    unit: "attoseconds (as)"
+    role: primary
+    description: "Ti:sapphire OFD产生的10 GHz信号在1 Hz–1 MHz积分带宽内的绝对时序抖动"
+    demonstrated_value:
+      value: "760"
+      conditions: "10 GHz，积分1 Hz–1 MHz，1 GHz Ti:sapphire OFD，NIST 2011"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "YMWK52FQ"
+        claim: "The integrated timing jitter over this bandwidth is 760 as."
+
+relations:
+  - id: rel.Fo01
+    subject: ent.ti_sapphire_ofd_photonic_osc_fortier2011
+    predicate: GOVERNED-BY
+    object: pri.ofd_optical_stability_transfer
+    confidence: established
+    source:
+      zotero_key: "YMWK52FQ"
+      claim: >
+        "Phase-coherent division of the stable optical signal to the microwave domain
+        preserves the fractional frequency instability, while reducing the phase
+        fluctuations by a factor of ~5×10^4"
+
+  - id: rel.Fo02
+    subject: ent.ti_sapphire_ofd_photonic_osc_fortier2011
+    predicate: CHARACTERIZED-BY
+    object: met.ofd_microwave_instability_fortier2011
+    confidence: established
+    source:
+      zotero_key: "YMWK52FQ"
+      claim: "absolute instability of ≤8×10^-16 at 1s"
+
+  - id: rel.Fo03
+    subject: ent.ti_sapphire_ofd_photonic_osc_fortier2011
+    predicate: CHARACTERIZED-BY
+    object: met.ofd_phase_noise_1hz_fortier2011
+    confidence: established
+    source:
+      zotero_key: "YMWK52FQ"
+      claim: "L(f) = −104 dBc Hz⁻¹ at 1 Hz offset from the carrier"
+
+  - id: rel.Fo04
+    subject: ent.ti_sapphire_ofd_photonic_osc_fortier2011
+    predicate: CHARACTERIZED-BY
+    object: met.ofd_timing_jitter_fortier2011
+    confidence: established
+    source:
+      zotero_key: "YMWK52FQ"
+      claim: "The integrated timing jitter over this bandwidth is 760 as."
+
+  - id: rel.Fo05
+    subject: ent.ti_sapphire_ofd_photonic_osc_fortier2011
+    predicate: USES-METHOD
+    object: meth.optical_frequency_division
+    confidence: established
+    note: "跨文件引用 meth.optical_frequency_division；本文是OFD微波生成的奠基性里程碑"
+    source:
+      zotero_key: "YMWK52FQ"
+      claim: >
+        "a microwave generator based on a high-quality-factor (Q) optical resonator and a
+        frequency comb functioning as an optical-to-microwave divider"
+
+breakthrough_paths:
+  - description: >
+      首次将光学频率除法产生的微波分数频率不稳定度降至≤8×10⁻¹⁶（1 s），
+      比此前最好结果改善约4倍不稳定度、相位噪声功率改善10–1000倍（1 Hz–1 MHz全谱）。
+      证明无需深冷微波振荡器即可实现与最佳低温振荡器相当的微波精度，
+      开创了"光子微波生成"这一新范式，为后续混合振荡器（fortier2012）、
+      集成化合成器（spencer2018）等工作奠定基础。
+    prior_state: "最好商用/实验室微波振荡器在1 Hz处相位噪声约−90至−100 dBc/Hz，不稳定度~2×10⁻¹⁵"
+    improvement: "1s不稳定度改善4倍至≤8×10⁻¹⁶；相位噪声改善10–1000倍（全谱）"
+    evidence_claim: >
+      "This measurement represents a significant improvement over previous work, with a
+      reduction of phase noise power by a factor of 10 to 1,000 across the measured
+      spectrum (1 Hz–1 MHz) and a factor of 4 reduction in the 1s instability."

@@ -1,0 +1,59 @@
+# Bloom 2014 — Sr optical lattice clock at 10^-18 accuracy [breakthrough]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：frequency-standards
+
+meta:
+  zotero_key: "4NS3HJGP"
+  topic: frequency-standards
+  source_type: journal_paper
+  contribution_type: breakthrough
+  reliability: high
+  title: "An optical lattice clock with accuracy and stability at the 10^-18 level"
+  year: 2014
+  first_author: "Bloom"
+  authors: ["B. J. Bloom", "T. L. Nicholson", "J. R. Williams", "S. L. Campbell", "M. Bishof", "X. Zhang", "W. Zhang", "S. L. Bromley", "J. Ye"]
+  journal: "Nature"
+  doi: "10.1038/nature12941"
+  note: "首个多原子系统实现10^-18精度的Sr光晶格钟；原位温度探测用于BBR Stark频移校正；分数不确定度6.4×10^-18"
+
+entities:
+  - id: ent.sr_optical_lattice_clock_jila2014
+    name: "JILA Sr 光晶格原子钟（2014）"
+    hierarchy_level: 2
+    status: demonstrated
+    function: "多原子Sr光晶格钟，原位BBR温度探测，实现10^-18量级精度"
+
+metrics:
+  - id: met.systematic_uncertainty_sr_bloom2014
+    name: "系统频率不确定度（Sr，Bloom 2014）"
+    unit: "无量纲（分数频率）"
+    role: primary
+    description: "总系统不确定度"
+    demonstrated_value:
+      value: "6.4e-18"
+      conditions: "Sr光晶格钟，原位BBR温度探测，JILA 2014"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "4NS3HJGP", claim: "fractional frequency uncertainty of 6.4 × 10^-18"}
+
+  - id: met.clock_instability_sr_bloom2014
+    name: "时钟短期不稳定性（Sr，Bloom 2014）"
+    unit: "无量纲（分数频率）/√τ"
+    role: secondary
+    description: "短期Allan偏差"
+    demonstrated_value:
+      value: "2.2e-16"
+      conditions: "Sr光晶格钟，归一化至1秒"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "4NS3HJGP", claim: "stability of 2.2 × 10^-16 / sqrt(tau)"}
+
+relations:
+  - id: rel.BL01
+    subject: ent.sr_optical_lattice_clock_jila2014
+    predicate: CHARACTERIZED-BY
+    object: met.systematic_uncertainty_sr_bloom2014
+    confidence: established
+    source: {zotero_key: "4NS3HJGP", claim: "fractional frequency uncertainty of 6.4 × 10^-18"}

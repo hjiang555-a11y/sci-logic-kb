@@ -1,0 +1,47 @@
+# Schioppo 2017 — Ultrastable optical clock with two cold-atom ensembles [breakthrough]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：frequency-standards
+
+meta:
+  zotero_key: "PSN8LTP5"
+  topic: frequency-standards
+  source_type: journal_paper
+  contribution_type: breakthrough
+  reliability: high
+  title: "Ultrastable optical clock with two cold-atom ensembles"
+  year: 2017
+  first_author: "Schioppo"
+  authors: ["M. Schioppo", "R. C. Brown", "W. F. McGrew", "N. Hinkley", "R. J. Fasano", "K. Beloy", "T. H. Yoon", "G. Milani", "D. Nicolodi", "J. A. Sherman", "N. B. Phillips", "C. W. Oates", "A. D. Ludlow"]
+  journal: "Nature Photonics"
+  doi: "10.1038/nphoton.2016.231"
+  note: "双冷原子系综同步interrogation抑制Dick效应；1小时内时钟不稳定性3×10^-18；Yb光晶格钟作为本振；相位相干维持36秒"
+
+entities:
+  - id: ent.yb_dual_ensemble_clock_nist2017
+    name: "NIST 双Yb原子系综光钟（2017）"
+    hierarchy_level: 2
+    status: demonstrated
+    function: "两套冷原子系综同步interrogation，消除Dick效应，实现超低不稳定性"
+
+metrics:
+  - id: met.clock_instability_yb_schioppo2017
+    name: "时钟不稳定性（Yb双系综，Schioppo 2017）"
+    unit: "无量纲（分数频率）"
+    role: primary
+    description: "1小时积分后达到的不稳定性"
+    demonstrated_value:
+      value: "3e-18"
+      conditions: "双Yb冷原子系综同步interrogation，积分时间1小时，NIST 2017"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "PSN8LTP5", claim: "clock instability of 3 × 10^-18 in 1 hour"}
+
+relations:
+  - id: rel.SC01
+    subject: ent.yb_dual_ensemble_clock_nist2017
+    predicate: CHARACTERIZED-BY
+    object: met.clock_instability_yb_schioppo2017
+    confidence: established
+    source: {zotero_key: "PSN8LTP5", claim: "clock instability of 3 × 10^-18 in 1 hour"}

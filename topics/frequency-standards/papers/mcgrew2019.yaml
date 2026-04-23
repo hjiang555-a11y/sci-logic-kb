@@ -1,0 +1,48 @@
+# McGrew 2019 — Verifying optical clocks at the SI limit [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：frequency-standards
+
+meta:
+  zotero_key: "A58NXQWU"
+  topic: frequency-standards
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Towards the optical second: verifying optical clocks at the SI limit"
+  year: 2019
+  first_author: "McGrew"
+  authors: ["W. F. McGrew", "X. Zhang", "H. Leopardi", "R. J. Fasano", "D. Nicolodi", "K. Beloy", "J. Yao", "J. A. Sherman", "S. A. Schäffer", "J. Savory", "R. C. Brown", "S. Römisch", "C. W. Oates", "T. E. Parker", "T. M. Fortier", "A. D. Ludlow"]
+  journal: "Optica"
+  doi: "10.1364/OPTICA.6.000448"
+  note: "Yb和Sr光钟相对Cs基准的绝对频率测量；验证光钟比对精度达1×10^-16；多路独立比对结果一致；SI秒重新定义先导演示"
+
+entities:
+  - id: ent.yb_optical_lattice_clock
+    name: "Yb 光晶格原子钟"
+    hierarchy_level: 1
+    status: demonstrated
+    function: "171Yb光晶格钟，用于绝对频率测量和SI秒验证"
+    note: "跨文件引用，与其他Yb钟文件共享类型节点"
+
+metrics:
+  - id: met.absolute_freq_ratio_mcgrew2019
+    name: "光钟绝对频率比对精度（McGrew 2019）"
+    unit: "无量纲（分数频率）"
+    role: primary
+    description: "光钟频率比相对Cs基准的测量不确定度"
+    demonstrated_value:
+      value: "1e-16"
+      conditions: "Yb和Sr光晶格钟相对Cs喷泉钟，NIST 2019，多路独立比对"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "A58NXQWU", claim: "1 × 10^-16 accuracy for optical clock ratios"}
+
+relations:
+  - id: rel.MG01
+    subject: ent.yb_optical_lattice_clock
+    predicate: CHARACTERIZED-BY
+    object: met.absolute_freq_ratio_mcgrew2019
+    confidence: established
+    source: {zotero_key: "A58NXQWU", claim: "1 × 10^-16 accuracy for optical clock ratios"}

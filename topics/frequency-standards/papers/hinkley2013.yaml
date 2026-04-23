@@ -1,0 +1,67 @@
+# Hinkley 2013 — Yb optical lattice clock with 10^-18 instability [breakthrough]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：frequency-standards
+
+meta:
+  zotero_key: "TP8JKHW3"
+  topic: frequency-standards
+  source_type: journal_paper
+  contribution_type: breakthrough
+  reliability: high
+  title: "An Atomic Clock with 10^-18 Instability"
+  year: 2013
+  first_author: "Hinkley"
+  authors: ["N. Hinkley", "J. A. Sherman", "N. B. Phillips", "M. Schioppo", "N. D. Lemke", "K. Beloy", "C. W. Oates", "A. D. Ludlow"]
+  journal: "Science"
+  doi: "10.1126/science.1237557"
+  note: "首次演示亚10^-18时钟不稳定性：两台171Yb光晶格钟同步interrogation消除Dick效应，7小时后达到1.6×10^-18"
+
+entities:
+  - id: ent.yb_optical_lattice_clock_nist2013
+    name: "NIST 171Yb 光晶格原子钟（2013）"
+    hierarchy_level: 2
+    status: demonstrated
+    function: "双钟同步interrogation系统，消除Dick效应，实现QPN极限不稳定性"
+
+metrics:
+  - id: met.clock_instability_yb_hinkley2013
+    name: "时钟不稳定性（Yb，Hinkley 2013）"
+    unit: "无量纲（分数频率）"
+    role: primary
+    description: "7小时积分后达到的Allan偏差"
+    demonstrated_value:
+      value: "1.6e-18"
+      conditions: "两台Yb光晶格钟同步interrogation，积分时间约7小时，578 nm跃迁，自旋极化超冷171Yb"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "TP8JKHW3", claim: "an instability of 1.6 × 10^-18 after only 7 hours of averaging"}
+
+  - id: met.clock_instability_yb_hinkley2013_short
+    name: "时钟短期不稳定性（Yb，Hinkley 2013）"
+    unit: "无量纲（分数频率）/√τ"
+    role: secondary
+    description: "QPN限制的短期不稳定性"
+    demonstrated_value:
+      value: "3.2e-16"
+      conditions: "每秒归一化，QPN极限，578 nm Yb光晶格钟"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "TP8JKHW3", claim: "quantum-projection-noise-limited instability of 3.2 × 10^-16 / sqrt(tau)"}
+
+relations:
+  - id: rel.H01
+    subject: ent.yb_optical_lattice_clock_nist2013
+    predicate: CHARACTERIZED-BY
+    object: met.clock_instability_yb_hinkley2013
+    confidence: established
+    source: {zotero_key: "TP8JKHW3", claim: "an instability of 1.6 × 10^-18 after only 7 hours of averaging"}
+
+  - id: rel.H02
+    subject: ent.yb_optical_lattice_clock_nist2013
+    predicate: IMPLEMENTS
+    object: meth.ramsey_spectroscopy
+    confidence: established
+    note: "跨文件引用，meth.ramsey_spectroscopy 定义于其他文件"
+    source: {zotero_key: "TP8JKHW3", claim: "Ramsey spectroscopy with synchronous interrogation of two clocks"}

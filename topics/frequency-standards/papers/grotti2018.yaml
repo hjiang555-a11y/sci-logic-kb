@@ -1,0 +1,47 @@
+# Grotti 2018 — Geodesy and metrology with a transportable optical clock [breakthrough]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：frequency-standards
+
+meta:
+  zotero_key: "QQ6FRH2U"
+  topic: frequency-standards
+  source_type: journal_paper
+  contribution_type: breakthrough
+  reliability: high
+  title: "Geodesy and metrology with a transportable optical clock"
+  year: 2018
+  first_author: "Grotti"
+  authors: ["J. Grotti", "S. Koller", "S. Vogt", "S. Häfner", "U. Sterr", "C. Lisdat", "H. Denker", "C. Voigt", "L. Timmen", "A. Rolland", "F. N. Baynes", "H. Margolis", "M. Zampaolo", "P. Thoumany", "M. Pizzocaro", "B. Rauf", "F. Bregolin", "A. Tampellini", "P. Tavella", "M. Milani", "G. Costanzo", "C. Clivati", "D. Calonico", "P. Delva"]
+  journal: "Nature Physics"
+  doi: "10.1038/s41567-017-0042-3"
+  note: "首次用可搬运Sr光晶格钟进行大地测量：测量引力势差不确定度5×10^-18；PTB-INRIM光纤链路频率比对"
+
+entities:
+  - id: ent.transportable_sr_clock_ptb2018
+    name: "PTB 可搬运Sr光晶格钟（2018）"
+    hierarchy_level: 2
+    status: demonstrated
+    function: "可搬运Sr光晶格钟，用于大地测量和频率计量，部署于意大利多个大地测量站点"
+
+metrics:
+  - id: met.geodesy_uncertainty_grotti2018
+    name: "大地测量引力势差不确定度（Grotti 2018）"
+    unit: "无量纲（分数频率）"
+    role: primary
+    description: "通过时钟比对测量地理高度差的频率不确定度"
+    demonstrated_value:
+      value: "5e-18"
+      conditions: "可搬运Sr光晶格钟，PTB至意大利INRIM站点，光纤链路频率传输"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "QQ6FRH2U", claim: "gravitational potential differences with an uncertainty of 5 × 10^-18"}
+
+relations:
+  - id: rel.GR01
+    subject: ent.transportable_sr_clock_ptb2018
+    predicate: CHARACTERIZED-BY
+    object: met.geodesy_uncertainty_grotti2018
+    confidence: established
+    source: {zotero_key: "QQ6FRH2U", claim: "gravitational potential differences with an uncertainty of 5 × 10^-18"}

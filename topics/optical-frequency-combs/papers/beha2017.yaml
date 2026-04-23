@@ -1,0 +1,104 @@
+# Beha 2017 — EOM梳电光合成光：f-2f自参考，分数频率精度<5×10⁻¹⁴ [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
+
+meta:
+  zotero_key: "FU92Y8XG"
+  topic: optical-frequency-combs
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Electronic synthesis of light"
+  year: 2017
+  first_author: Beha
+  authors: ["K. Beha", "D. C. Cole", "P. Del'Haye", "A. Coillet", "S. A. Diddams", "S. B. Papp"]
+  journal: "Optica"
+  volume: 4
+  pages: 406
+  doi: "10.1364/OPTICA.4.000406"
+  note: "NIST：首次实现基于电光调制（EOM）梳的 f-2f 自参考与光学频率合成；160 THz超连续谱，
+    分数频率精度 <5×10⁻¹⁴，模间距可调（取决于微波调制频率），不依赖锁模机制。"
+
+entities:
+  - id: ent.eom_frequency_comb
+    name: "电光调制频率梳"
+    aliases: ["EOM comb", "electro-optic comb"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      通过对连续波激光施加微波速率电光调制，确定性地产生频率梳。梳齿频率
+      ν_n = ν_p + n·f_eo，由 CW 激光频率 ν_p 和调制频率 f_eo 共同决定。
+      不依赖锁模机制，模间距可由微波频率灵活调谐。
+    note: "与 ent.optical_frequency_comb 并列，为可调宽模间距梳的代表实现。
+      跨文件引用：ent.optical_frequency_comb 定义于 giunta2019.yaml。"
+
+methods:
+  - id: meth.eom_comb_self_referencing
+    name: "EOM梳 f-2f 自参考方法"
+    status: demonstrated
+    applies_to: ent.eom_frequency_comb
+    steps_summary: >
+      EOM梳种激光（CW，10 GHz调制）→ 光学滤波抑制电子噪声 →
+      非线性展宽（SCG）至 160 THz 超连续谱 → f-2f 干涉检测 f_ceo →
+      相位锁定 f_ceo 和 f_rep → 实现任意光学频率合成
+    advantages:
+      - "模间距可调（微波频率决定），适合宽模间距应用（通信、量子、成像）"
+      - "确定性相位关系，不依赖锁模机制"
+      - "EOM梳源已商品化，易重配置"
+    disadvantages:
+      - "EOM梳展宽效率低（窄带初始谱宽）"
+      - "电子噪声按 n² 逐渐降低光学相干性，需光学滤波解决"
+    source_claim: >
+      "we demonstrate electro-optic generation of a 160 THz bandwidth supercontinuum and realize
+      f-2f self-referencing. Coherence of the supercontinuum is achieved through optical filtering
+      of electronic noise on the seed EOM comb."
+
+metrics:
+  - id: met.eom_comb_frequency_accuracy
+    name: "EOM梳光学频率精度"
+    unit: "无量纲（分数频率）"
+    role: primary
+    description: "EOM梳通过 f-2f 自参考后各梳齿的分数频率精度与稳定度"
+    demonstrated_value:
+      value: "<5×10⁻¹⁴"
+      conditions: "EOM梳（10 GHz调制），f-2f 自参考锁定，160 THz 超连续谱，室温，2017年 NIST"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "FU92Y8XG"
+        claim: "The mode frequencies of the supercontinuum are derived from the electronic oscillator
+          and they achieve <5×10⁻¹⁴ fractional accuracy and stability"
+
+relations:
+  - id: rel.B01
+    subject: ent.eom_frequency_comb
+    predicate: OPERATIONALIZED-AS
+    object: meth.eom_comb_self_referencing
+    confidence: established
+    source:
+      zotero_key: "FU92Y8XG"
+      claim: "we demonstrate electro-optic generation of a 160 THz bandwidth supercontinuum and
+        realize f-2f self-referencing"
+
+  - id: rel.B02
+    subject: met.eom_comb_frequency_accuracy
+    predicate: CHARACTERIZED-BY
+    object: ent.eom_frequency_comb
+    confidence: established
+    source:
+      zotero_key: "FU92Y8XG"
+      claim: "they achieve <5×10⁻¹⁴ fractional accuracy and stability, which opens a novel regime
+        for tunable combs with wide mode spacing"
+
+  - id: rel.B03
+    subject: ent.eom_frequency_comb
+    predicate: COMPETES-WITH
+    object: ent.optical_frequency_comb
+    confidence: likely
+    source:
+      zotero_key: "FU92Y8XG"
+      claim: "opens a novel regime for tunable combs with wide mode spacing apart from the
+        requirements of mode locking"
+    note: "跨文件引用：ent.optical_frequency_comb 定义于 topics/optical-frequency-combs/papers/giunta2019.yaml"

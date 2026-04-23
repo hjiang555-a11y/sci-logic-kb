@@ -1,0 +1,129 @@
+# Nicolodi et al. 2014 — 光学波长间10^-18级光谱纯度传递 [breakthrough]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
+
+meta:
+  zotero_key: "JBIG86N9"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: breakthrough
+  reliability: high
+  title: "Spectral purity transfer between optical wavelengths at the 10^-18 level"
+  year: 2014
+  first_author: "Nicolodi"
+  authors:
+    - "Daniele Nicolodi"
+    - "Bérengère Argence"
+    - "Wei Zhang"
+    - "Rodolphe Le Targat"
+    - "Giorgio Santarelli"
+    - "Yann Le Coq"
+  journal: "Nature Photonics"
+  volume: "8"
+  pages: "219-223"
+  doi: "10.1038/nphoton.2013.361"
+  note: >
+    首次证明Er:fiber光频梳可在1062 nm→1542 nm之间传递激光频率稳定度，
+    梳传递退化低于3×10^-18（1 s），比此前最佳结果改善约两个数量级。
+    使用腔内EOM实现快速相位锁定，源激光（ULE腔稳定，1062 nm）稳定度4.5×10^-16（1 s）。
+
+entities:
+  - id: ent.er_fiber_ofc_spectral_transfer_nicolodi2014
+    name: "Er:fiber光频梳光谱纯度传递系统（Nicolodi 2014）"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      将1062 nm ULE腔稳定激光的频率稳定度通过Er:fiber OFC传递至1542 nm，
+      梳传递退化低于3×10^-18（1 s）。腔内EOM用于宽带快速相位锁定。
+
+principles:
+  - id: pri.ofc_spectral_purity_transfer
+    name: "光频梳光谱纯度传递原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      光频梳可作为相干"齿轮"将一个光学波长的频率稳定度无退化地传递至另一波长。
+      通过紧相位锁定（宽控制带宽）使梳齿噪声远低于输入激光噪声，
+      传递退化可达10^-18量级（1 s），不损害源激光的频率稳定度。
+    domain: "光频梳 / 精密光谱 / 光钟比对"
+    key_insight: >
+      决定传递保真度的不是梳本身的绝对稳定度，而是梳对参考激光的相位锁定剩余噪声。
+      腔内EOM可将控制带宽扩展至>100 kHz，使剩余噪声降至10^-18以下。
+    conditions: "需宽带快速相位锁定（腔内EOM）；源激光频率稳定度优于传递退化水平"
+    source:
+      zotero_key: "JBIG86N9"
+      claim: >
+        "the degradation in spectral purity due to the OFC link is below 3×10^-18
+        at an integration time of 1 s"
+
+methods:
+  - id: meth.intra_cavity_eom_phase_lock
+    name: "腔内EOM快速相位锁定"
+    status: demonstrated
+    steps_summary: >
+      在Er:fiber梳谐振腔内置入电光调制器（EOM），提供远超压电陶瓷（PZT）的控制带宽
+      （~100 kHz vs ~10 kHz），实现对参考激光的紧相位锁定，残差相位噪声降至10^-18以下。
+    source_claim: >
+      "a fast intra-cavity electro-optic modulator for tight phase locking"
+
+metrics:
+  - id: met.spectral_purity_transfer_degradation_nicolodi2014
+    name: "OFC光谱纯度传递退化（1 s）"
+    unit: "fractional frequency instability"
+    role: primary
+    description: >
+      1062 nm→1542 nm传递链路中光频梳引入的额外频率不稳定度（Allan偏差，1 s）。
+    demonstrated_value:
+      value: "<3e-18"
+      conditions: "Er:fiber OFC，腔内EOM相位锁定，积分时间1 s，1062 nm→1542 nm传递"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "JBIG86N9"
+        claim: >
+          "the degradation in spectral purity due to the OFC link is below
+          3×10^-18 at an integration time of 1 s"
+
+  - id: met.source_laser_stability_nicolodi2014
+    name: "源激光频率稳定度（1062 nm ULE腔）"
+    unit: "fractional frequency instability"
+    role: supporting
+    description: "ULE法布里-珀罗腔稳定激光在1062 nm处的Allan偏差（1 s）"
+    demonstrated_value:
+      value: "4.5e-16"
+      conditions: "ULE超稳腔稳定激光，1062 nm，积分时间1 s"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "JBIG86N9"
+        claim: "source laser stability 4.5×10^-16 at 1 s (ULE cavity-stabilized at 1062 nm)"
+
+relations:
+  - id: rel.N01
+    subject: ent.er_fiber_ofc_spectral_transfer_nicolodi2014
+    predicate: CHARACTERIZED-BY
+    object: met.spectral_purity_transfer_degradation_nicolodi2014
+    confidence: established
+    source:
+      zotero_key: "JBIG86N9"
+      claim: "degradation below 3×10^-18 at 1 s"
+
+  - id: rel.N02
+    subject: meth.intra_cavity_eom_phase_lock
+    predicate: ENABLES
+    object: met.spectral_purity_transfer_degradation_nicolodi2014
+    confidence: established
+    source:
+      zotero_key: "JBIG86N9"
+      claim: "fast intra-cavity electro-optic modulator for tight phase locking"
+
+  - id: rel.N03
+    subject: ent.er_fiber_ofc_spectral_transfer_nicolodi2014
+    predicate: IMPLEMENTS
+    object: pri.ofc_spectral_purity_transfer
+    confidence: established
+    source:
+      zotero_key: "JBIG86N9"
+      claim: "spectral purity transfer between optical wavelengths at the 10^-18 level"
