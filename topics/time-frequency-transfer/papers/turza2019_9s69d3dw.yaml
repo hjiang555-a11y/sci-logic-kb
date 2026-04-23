@@ -14,8 +14,8 @@ meta:
   title: "Compensation of the Fluctuations of Differential Delay for Frequency Transfer in DWDM Networks"
   year: 2019
   first_author: Turza
-  authors: ["K. Turza"
-    "P. Krehlik"
+  authors: ["K. Turza",
+    "P. Krehlik",
     "L. Sliwczynski"]
   journal: "Ieee Transactions on Ultrasonics Ferroelectrics and Frequency Control"
   doi: "10.1109/tuffc.2019.2890993"

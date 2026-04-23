@@ -1,23 +1,104 @@
-# Raupach 2014 — Chirped Frequency Transfer: A Tool for Synchronization and Time Transfer
-# 提取者：AI 草稿，待专家确认
+# Raupach 2014 — Chirped Frequency Transfer for synchronization and time transfer [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
 # 提取日期：2026-04-23
 # Schema版本：v4.5
 # 专题：time-frequency-transfer
-# contribution_type: evidence
+# contribution_type: evidence — PTB 149 km 光纤链路上通过"啁啾频率传递"（chirped optical carrier）
+#   实现同步与时间传递：precision ~200 ps @ 500 ps total uncertainty；Allan deviation @18000 s ≈ 2×10⁻¹⁹。
 
 meta:
   zotero_key: "2s94vl95"
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
-  reliability: medium
+  reliability: high
   title: "Chirped Frequency Transfer: A Tool for Synchronization and Time Transfer"
   year: 2014
   first_author: Raupach
-  authors: ["S. M. F. Raupach"
-    "G. Grosche"]
-  journal: "Ieee Transactions on Ultrasonics Ferroelectrics and Frequency Control"
-  doi: "10.1109/tuffc.2014.2988"
+  authors: ["S. M. F. Raupach", "G. Grosche"]
+  journal: "IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control"
+  volume: 61
+  issue: 6
+  pages: "920-929"
+  doi: "10.1109/TUFFC.2014.2988"
   note: >
-    [journal_paper]
-    待补充推理链条和知识点提取。
+    [期刊论文] PTB（Braunschweig）。在 149 km 光纤链路上传递"啁啾光载波"（chirp ~240 kHz/s），
+    远端频率计数器门由本地 10 MHz 氢脉泽驱动，对称路径延迟（几何 + 共模）被自然压制。
+    实测：同步 precision ≈ 200 ps，总 uncertainty ≈ 500 ps；频率 Allan deviation @18000 s ≈ 2×10⁻¹⁹；
+    当前 setup 下可无歧义测量 timing offset ≤ 4 分钟。与传统 1PPS 时间传递互补：只要本地振荡器
+    稳定，不需与外部时标严格关联即可做远程同步观测。
+
+entities:
+  - id: ent.ptb_149km_chirped_link_r14
+    name: "PTB 149 km 啁啾光频率时间传递链路（Raupach 2014）"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      149 km 光纤链路 + 啁啾光载波 + 远端频率计数器（门由本地 10 MHz 氢脉泽驱动），
+      通过远端频率测量数据重建时间标签，实现同步与时间传递。
+    key_parameters:
+      link_length: "149 km（PTB Braunschweig 环路）"
+      chirp_rate: "~240 kHz/s"
+      carrier: "1.5 µm 光频"
+      timing_range: "≤ 4 min 无歧义"
+    note: "Level 2 实例，PART-OF ent.coherent_optical_fiber_link"
+
+principles:
+  - id: pri.chirped_carrier_symmetric_delay_cancellation
+    name: "啁啾载波对称延迟抵消原理"
+    tier: engineering
+    verification_status: demonstrated
+    statement: >
+      当发射端连续线性啁啾光载波 df/dt = κ 时，远端接收到的瞬时频率
+      相对发射端有延迟 τ_path 导致的 offset Δf = κ·τ_path；
+      通过在两端同时测量瞬时频率并关联远端计数器门，可把 τ_path 中的
+      对称部分（如几何路径延迟）与不对称部分分离，从而从频率测量直接重建同步关系，
+      避免传统 1PPS 时标的严格时刻对齐要求。
+    domain: "光纤时间传递；同步观测"
+    conditions: "啁啾速率已知；path 对称；counter gate 由稳定振荡器驱动"
+    source_claim: "suppression of symmetrical delays, such as the geometrical path delay ... Synchronizing observations based on frequency measurements ... only requires a stable oscillator driving the frequency counters"
+
+metrics:
+  - id: met.chirped_tf_sync_precision
+    name: "啁啾光传递同步精度 σ(Δt)"
+    role: operating_point
+    unit: "s"
+    demonstrated_value:
+      value: "≈ 200 ps @ τ_obs ~18000 s（precision）；总 uncertainty ≈ 500 ps"
+      conditions: "PTB 149 km link, chirp 240 kHz/s, 10 MHz H-maser-driven counter gates"
+      source: "raupach2014"
+
+relations:
+  - id: rel.R14_01
+    subject: ent.ptb_149km_chirped_link_r14
+    predicate: PART-OF
+    object: ent.coherent_optical_fiber_link
+    source:
+      paper: raupach2014
+      claim: "phase-stabilized transfer ... fiber link of around 149 km"
+    note: "ent.coherent_optical_fiber_link 定义于 calonico2015"
+
+  - id: rel.R14_02
+    subject: ent.ptb_149km_chirped_link_r14
+    predicate: OPERATIONALIZED-AS
+    object: pri.chirped_carrier_symmetric_delay_cancellation
+    source:
+      paper: raupach2014
+      claim: "transfer of a chirped frequency as a tool for synchronization and time transfer"
+
+  - id: rel.R14_03
+    subject: ent.ptb_149km_chirped_link_r14
+    predicate: CHARACTERIZED-BY
+    object: met.chirped_tf_sync_precision
+    source:
+      paper: raupach2014
+      claim: "precision of around 200 ps at an estimated overall uncertainty of around 500 ps"
+
+  - id: rel.R14_04
+    subject: ent.ptb_149km_chirped_link_r14
+    predicate: ENABLED-BY
+    object: pri.noise_cancellation_frequency_transfer
+    source:
+      paper: raupach2014
+      claim: "phase-stabilized transfer of a chirped frequency"
+    note: "pri.noise_cancellation_frequency_transfer 定义于 fermann2022（OFC 专题）"

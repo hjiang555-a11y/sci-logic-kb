@@ -14,17 +14,17 @@ meta:
   title: "Sub-ns time transfer consistency: a direct comparison between GPS CV and T2L2"
   year: 2016
   first_author: Exertier
-  authors: ["P. Exertier"
-    "E. Samain"
-    "C. Courde"
-    "M. Aimar"
-    "J. M. Torre"
-    "G. D. Rovera"
-    "M. Abgrall"
-    "P. Uhrich"
-    "R. Sherwood"
-    "G. Herold"
-    "U. Schreiber"
+  authors: ["P. Exertier",
+    "E. Samain",
+    "C. Courde",
+    "M. Aimar",
+    "J. M. Torre",
+    "G. D. Rovera",
+    "M. Abgrall",
+    "P. Uhrich",
+    "R. Sherwood",
+    "G. Herold",
+    "U. Schreiber",
     "P. Guillemot"]
   journal: "Metrologia"
   doi: "10.1088/0026-1394/53/6/1395"

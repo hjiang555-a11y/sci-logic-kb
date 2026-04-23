@@ -14,16 +14,16 @@ meta:
   title: "Point-to-point stabilized optical frequency transfer with active optics"
   year: 2021
   first_author: Dix-Matthews
-  authors: ["B. P. Dix-Matthews"
-    "S. W. Schediwy"
-    "D. R. Gozzard"
-    "E. Savalle"
-    "F. X. Esnault"
-    "T. Leveque"
-    "C. Gravestock"
-    "D. D'Mello"
-    "S. Karpathakis"
-    "M. Tobar"
+  authors: ["B. P. Dix-Matthews",
+    "S. W. Schediwy",
+    "D. R. Gozzard",
+    "E. Savalle",
+    "F. X. Esnault",
+    "T. Leveque",
+    "C. Gravestock",
+    "D. D'Mello",
+    "S. Karpathakis",
+    "M. Tobar",
     "P. Wolf"]
   journal: "Nature Communications"
   doi: "10.1038/s41467-020-20591-5"

@@ -14,12 +14,12 @@ meta:
   title: "Single-branch Er:fiber frequency comb for precision optical metrology with 10(-18) fractional instability"
   year: 2017
   first_author: Leopardi
-  authors: ["H. Leopardi"
-    "J. Davila-Rodriguez"
-    "F. Quinlan"
-    "J. Olson"
-    "J. A. Sherman"
-    "S. A. Diddams"
+  authors: ["H. Leopardi",
+    "J. Davila-Rodriguez",
+    "F. Quinlan",
+    "J. Olson",
+    "J. A. Sherman",
+    "S. A. Diddams",
     "T. M. Fortier"]
   journal: "Optica"
   doi: "10.1364/optica.4.000879"

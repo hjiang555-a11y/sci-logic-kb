@@ -14,12 +14,12 @@ meta:
   title: "Robust optical frequency dissemination with a dual-polarization coherent receiver"
   year: 2020
   first_author: Clivati
-  authors: ["C. Clivati"
-    "P. Savio"
-    "S. Abrate"
-    "V. Curri"
-    "R. Gaudino"
-    "M. Pizzocaro"
+  authors: ["C. Clivati",
+    "P. Savio",
+    "S. Abrate",
+    "V. Curri",
+    "R. Gaudino",
+    "M. Pizzocaro",
     "D. Calonico"]
   journal: "Optics Express"
   doi: "10.1364/oe.378602"

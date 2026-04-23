@@ -14,14 +14,14 @@ meta:
   title: "Optical time-frequency transfer across a free-space, three-node network"
   year: 2020
   first_author: Bodine
-  authors: ["M. I. Bodine"
-    "J. L. Ellis"
-    "W. C. Swann"
-    "S. A. Stevenson"
-    "J. D. Deschenes"
-    "E. D. Hannah"
-    "P. Manurkar"
-    "N. R. Newbury"
+  authors: ["M. I. Bodine",
+    "J. L. Ellis",
+    "W. C. Swann",
+    "S. A. Stevenson",
+    "J. D. Deschenes",
+    "E. D. Hannah",
+    "P. Manurkar",
+    "N. R. Newbury",
     "L. C. Sinclair"]
   journal: "Apl Photonics"
   doi: "10.1063/5.0010704"

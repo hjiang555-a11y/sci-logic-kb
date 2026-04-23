@@ -14,10 +14,10 @@ meta:
   title: "Time transfer through the optical supervisory channel in wavelength division multiplexing systems"
   year: 2019
   first_author: Cheng
-  authors: ["Hanhuang Cheng"
-    "Guiling Wu"
-    "Faxing Zuo"
-    "Liang Hu"
+  authors: ["Hanhuang Cheng",
+    "Guiling Wu",
+    "Faxing Zuo",
+    "Liang Hu",
     "Jianping Chen"]
   journal: "Opt. Lett."
   doi: "10.1364/OL.44.005206"

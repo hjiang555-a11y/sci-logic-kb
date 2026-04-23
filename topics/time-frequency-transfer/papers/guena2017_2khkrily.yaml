@@ -1,49 +1,91 @@
-# Guena 2017 — First international comparison of fountain primary frequency standards via a lon...
-# 提取者：AI 草稿，待专家确认
+# Guena 2017 — First international comparison of fountain primary frequency standards via a long distance optical fiber link [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
 # 提取日期：2026-04-23
 # Schema版本：v4.5
 # 专题：time-frequency-transfer
-# contribution_type: evidence
+# contribution_type: evidence — SYRTE（Paris）↔ PTB（Braunschweig）1415 km 光纤相干链路首次
+#   实现两国铯喷泉初级频标（Cs fountain PFS）直接国际比对；一致性 ≈ 5×10⁻¹⁷。
 
 meta:
   zotero_key: "2khkrily"
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
-  reliability: medium
+  reliability: high
   title: "First international comparison of fountain primary frequency standards via a long distance optical fiber link"
   year: 2017
   first_author: Guena
-  authors: ["J. Guena"
-    "S. Weyers"
-    "M. Abgrall"
-    "C. Grebing"
-    "V. Gerginov"
-    "P. Rosenbusch"
-    "S. Bize"
-    "B. Lipphardt"
-    "H. Denker"
-    "N. Quintin"
-    "S. M. F. Raupach"
-    "D. Nicolodi"
-    "F. Stefani"
-    "N. Chiodo"
-    "S. Koke"
-    "A. Kuhl"
-    "F. Wiotte"
-    "F. Meynadier"
-    "E. Camisard"
-    "C. Chardonnet"
-    "Y. Le Coq"
-    "M. Lours"
-    "G. Santarelli"
-    "A. Amy-Klein"
-    "R. Le Targat"
-    "O. Lopez"
-    "P. E. Pottie"
-    "G. Grosche"]
+  authors: ["J. Guéna", "S. Weyers", "M. Abgrall", "C. Grebing", "V. Gerginov", "P. Rosenbusch",
+    "S. Bize", "B. Lipphardt", "H. Denker", "N. Quintin", "S. M. F. Raupach", "D. Nicolodi",
+    "F. Stefani", "N. Chiodo", "S. Koke", "A. Kuhl", "F. Wiotte", "F. Meynadier", "E. Camisard",
+    "C. Chardonnet", "Y. Le Coq", "M. Lours", "G. Santarelli", "A. Amy-Klein", "R. Le Targat",
+    "O. Lopez", "P. E. Pottie", "G. Grosche"]
   journal: "Metrologia"
+  volume: 54
+  issue: 3
+  pages: "348-354"
   doi: "10.1088/1681-7575/aa65fe"
   note: >
-    [journal_paper]
-    待补充推理链条和知识点提取。
+    [期刊论文] SYRTE + PTB + LPL + 合作实验室。1415 km SYRTE↔PTB 光纤相干链路
+    首次用于两国 Cs 喷泉初级频标 PFS 直接国际比对，频率差
+    y(SYRTE−PTB) ≈ 5×10⁻¹⁷，consistent with both fountains' uncertainty budgets。
+    这是光纤链路首次替代卫星（TWSTFT/GNSS）完成跨国 PFS 国际比对，证明链路性能
+    已远超被比对的喷泉，光纤链路不再是比对精度的瓶颈。
+
+entities:
+  - id: ent.syrte_ptb_1415km_link_g17
+    name: "SYRTE↔PTB 1415 km 光纤相干国际链路（Guéna 2017）"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      Paris↔Strasbourg↔Braunschweig 1415 km 级联相干光纤链路；
+      用于两国 Cs 喷泉 PFS 的直接频率比对与 TAI 校准。
+    key_parameters:
+      length: "1415 km"
+      span: "SYRTE Paris ↔ PTB Braunschweig"
+      link_inaccuracy: "<<5×10⁻¹⁷（链路不构成比对瓶颈）"
+    note: "Level 2 实例，PART-OF ent.coherent_optical_fiber_link"
+
+metrics:
+  - id: met.international_fountain_comparison_agreement
+    name: "光纤链路国际初级频标比对一致性"
+    role: operating_point
+    unit: dimensionless
+    demonstrated_value:
+      value: "y(SYRTE−PTB) ≈ 5×10⁻¹⁷（与两边 fountain uncertainty budget 一致）"
+      conditions: "SYRTE↔PTB 1415 km 相干光纤链路 + 光↔微波传递链（光梳）"
+      source: "guena2017"
+
+relations:
+  - id: rel.G17_01
+    subject: ent.syrte_ptb_1415km_link_g17
+    predicate: PART-OF
+    object: ent.coherent_optical_fiber_link
+    source:
+      paper: guena2017
+      claim: "long distance optical fiber link"
+
+  - id: rel.G17_02
+    subject: ent.syrte_ptb_1415km_link_g17
+    predicate: CHARACTERIZED-BY
+    object: met.international_fountain_comparison_agreement
+    source:
+      paper: guena2017
+      claim: "first international comparison of fountain primary frequency standards"
+
+  - id: rel.G17_03
+    subject: ent.syrte_ptb_1415km_link_g17
+    predicate: ENABLED-BY
+    object: pri.noise_cancellation_frequency_transfer
+    source:
+      paper: guena2017
+      claim: "actively phase-stabilized long-distance fiber link"
+
+  - id: rel.G17_04
+    subject: ent.syrte_ptb_1415km_link_g17
+    predicate: CONDITIONED-BY
+    object: ent.optical_frequency_comb
+    source:
+      paper: guena2017
+      claim: "optical-to-microwave link via frequency comb at both ends"
+    note: "跨专题引用：optical-frequency-combs"

@@ -14,17 +14,17 @@ meta:
   title: "All-Passive Cascaded Optical Frequency Transfer"
   year: 2022
   first_author: Zhang
-  authors: ["X. Zhang"
-    "L. Hu"
-    "X. Deng"
-    "Q. Zang"
-    "J. Liu"
-    "D. Jiao"
-    "J. Gao"
-    "R. Dong"
-    "T. Liu"
-    "G. Wu"
-    "J. Chen"
+  authors: ["X. Zhang",
+    "L. Hu",
+    "X. Deng",
+    "Q. Zang",
+    "J. Liu",
+    "D. Jiao",
+    "J. Gao",
+    "R. Dong",
+    "T. Liu",
+    "G. Wu",
+    "J. Chen",
     "S. Zhang"]
   journal: "Ieee Photonics Technology Letters"
   doi: "10.1109/LPT.2022.3164406"

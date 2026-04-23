@@ -14,15 +14,15 @@ meta:
   title: "Fiber-optic joint time and frequency transfer with the same wavelength"
   year: 2020
   first_author: Wang
-  authors: ["J. L. Wang"
-    "C. L. Yue"
-    "Y. L. Xi"
-    "Y. G. Sun"
-    "N. Cheng"
-    "F. Yang"
-    "M. Y. Jiang"
-    "J. F. Sun"
-    "Y. Z. Gui"
+  authors: ["J. L. Wang",
+    "C. L. Yue",
+    "Y. L. Xi",
+    "Y. G. Sun",
+    "N. Cheng",
+    "F. Yang",
+    "M. Y. Jiang",
+    "J. F. Sun",
+    "Y. Z. Gui",
     "H. W. Cai"]
   journal: "Opt. Lett."
   doi: "10.1364/ol.45.000208"

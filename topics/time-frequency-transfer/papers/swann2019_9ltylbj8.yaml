@@ -14,12 +14,12 @@ meta:
   title: "Measurement of the impact of turbulence anisoplanatism on precision free-space optical time transfer"
   year: 2019
   first_author: Swann
-  authors: ["W. C. Swann"
-    "M. I. Bodine"
-    "I. Khader"
-    "J. D. Deschenes"
-    "E. Baumann"
-    "L. C. Sinclair"
+  authors: ["W. C. Swann",
+    "M. I. Bodine",
+    "I. Khader",
+    "J. D. Deschenes",
+    "E. Baumann",
+    "L. C. Sinclair",
     "N. R. Newbury"]
   journal: "Physical Review A"
   doi: "10.1103/PhysRevA.99.023855"

@@ -14,11 +14,11 @@ meta:
   title: "Optical phase noise from atmospheric fluctuations and its impact on optical time-frequency transfer"
   year: 2014
   first_author: Sinclair
-  authors: ["L. C. Sinclair"
-    "F. R. Giorgetta"
-    "W. C. Swann"
-    "E. Baumann"
-    "I. Coddington"
+  authors: ["L. C. Sinclair",
+    "F. R. Giorgetta",
+    "W. C. Swann",
+    "E. Baumann",
+    "I. Coddington",
     "N. R. Newbury"]
   journal: "Physical Review A"
   doi: ""

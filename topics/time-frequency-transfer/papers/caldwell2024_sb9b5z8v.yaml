@@ -14,10 +14,10 @@ meta:
   title: "Application of quantum-limited optical time transfer to space-based optical clock comparisons and coherent networks"
   year: 2024
   first_author: Caldwell
-  authors: ["Emily D. Caldwell"
-    "Laura C. Sinclair"
-    "Jean-Daniel Deschenes"
-    "Fabrizio Giorgetta"
+  authors: ["Emily D. Caldwell",
+    "Laura C. Sinclair",
+    "Jean-Daniel Deschenes",
+    "Fabrizio Giorgetta",
     "Nathan R. Newbury"]
   journal: "Apl Photonics"
   doi: "10.1063/5.0170107"

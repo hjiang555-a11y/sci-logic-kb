@@ -1,24 +1,112 @@
-# Raupach 2015 — Brillouin amplification supports 1 x 10(-20) uncertainty in optical frequency tr...
-# 提取者：AI 草稿，待专家确认
+# Raupach 2015 — Brillouin amplification supports 1×10⁻²⁰ uncertainty in optical frequency transfer over 1400 km [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
 # 提取日期：2026-04-23
 # Schema版本：v4.5
 # 专题：time-frequency-transfer
-# contribution_type: evidence
+# contribution_type: evidence — PTB Braunschweig ↔ Strasbourg 1400 km 地下光纤环，
+#   纯 Brillouin 放大（无 EDFA）支持连续数天相位连续测量，uncertainty (1.1 ± 0.4)×10⁻²⁰（3 周均值），
+#   最佳 instability 6.9×10⁻²¹ @ 30000 s。
 
 meta:
   zotero_key: "lz2hfujz"
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
-  reliability: medium
-  title: "Brillouin amplification supports 1 x 10(-20) uncertainty in optical frequency transfer over 1400 km of underground fiber"
+  reliability: high
+  title: "Brillouin amplification supports 1×10⁻²⁰ uncertainty in optical frequency transfer over 1400 km of underground fiber"
   year: 2015
   first_author: Raupach
-  authors: ["S. M. F. Raupach"
-    "A. Koczwara"
-    "G. Grosche"]
+  authors: ["S. M. F. Raupach", "A. Koczwara", "G. Grosche"]
   journal: "Physical Review A"
+  volume: 92
+  issue: 2
+  pages: "021801(R)"
   doi: "10.1103/PhysRevA.92.021801"
   note: >
-    [journal_paper]
-    待补充推理链条和知识点提取。
+    [快讯] PTB。1400 km 地下光纤环（Braunschweig↔Strasbourg往返），链路仅用 **光纤 Brillouin
+    放大器（FBA）**（窄带、内禀双向对称、无 EDFA 反向反射问题），实现连续数天相位连续测量。
+    3 周加权均值 fractional offset (1.1 ± 0.4)×10⁻²⁰；最佳实例 instability 6.9×10⁻²¹、
+    fractional offset 4.4×10⁻²¹ @ 30000 s。为世界最佳光钟（10⁻¹⁸）比对提供可忽略链路贡献的上限。
+
+entities:
+  - id: ent.ptb_1400km_brillouin_link_r15
+    name: "PTB 1400 km Brillouin 放大光纤链路（Raupach 2015）"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      Braunschweig ↔ Strasbourg ↔ Braunschweig 1400 km 地下光纤环；中继放大全部由光纤
+      Brillouin 放大器实现（无 EDFA）；实现数天量级 phase-continuous 频率测量。
+    key_parameters:
+      length: "1400 km（loop, underground）"
+      amplifier: "Fiber Brillouin Amplifier (FBA) only"
+      phase_continuity: "up to several days"
+    note: "Level 2 实例，PART-OF ent.coherent_optical_fiber_link"
+
+principles:
+  - id: pri.brillouin_amplified_long_haul_fiber_transfer
+    name: "Brillouin 放大长距离光纤频率传递原理"
+    tier: engineering
+    verification_status: demonstrated
+    statement: >
+      窄带光纤 Brillouin 放大器（FBA，泵浦激光 + 受激 Brillouin 散射增益）相对 EDFA 的
+      优势：(a) 窄带自选频，天然滤除 ASE 和反向反射；(b) 结构简单、可场部署；
+      (c) 不需要移除隔离器就能保持两向对称，适合级联数十段。
+      代价：单级增益~15 dB 为主，需级联；对温度和泵浦稳定敏感。
+      在地下光纤环境（温度稳定）下，Brillouin 级联可支撑 ≥1000 km 的 10⁻²⁰ 级链路不稳定度。
+    domain: "长距离光纤频率传递；放大器选择"
+    conditions: "地下/海底稳定温度；泵浦激光稳定；级联间损耗 ≤ FBA 增益"
+    source_claim: "largely autonomous fiber Brillouin amplifiers are the only means of intermediate amplification used here"
+    related_to: pri.brillouin_amplification_long_distance_k19
+    note: "与 pri.brillouin_amplification_long_distance_k19（Koke 2019）同一原理族"
+
+metrics:
+  - id: met.coherent_optical_fiber_link_uncertainty_long
+    name: "长距离相干光纤链路 fractional uncertainty（长均值）"
+    role: accuracy
+    unit: dimensionless
+    demonstrated_value:
+      value: "(1.1 ± 0.4)×10⁻²⁰（3 周加权均值，1400 km Brillouin-only loop）"
+      conditions: "underground fiber, Braunschweig↔Strasbourg, FBA-only, phase-continuous"
+      source: "raupach2015"
+
+relations:
+  - id: rel.R15_01
+    subject: ent.ptb_1400km_brillouin_link_r15
+    predicate: PART-OF
+    object: ent.coherent_optical_fiber_link
+    source:
+      paper: raupach2015
+      claim: "optical frequency transfer over a 1400 km loop of underground fiber"
+
+  - id: rel.R15_02
+    subject: ent.ptb_1400km_brillouin_link_r15
+    predicate: OPERATIONALIZED-AS
+    object: pri.brillouin_amplified_long_haul_fiber_transfer
+    source:
+      paper: raupach2015
+      claim: "fiber Brillouin amplifiers are the only means of intermediate amplification"
+
+  - id: rel.R15_03
+    subject: ent.ptb_1400km_brillouin_link_r15
+    predicate: CHARACTERIZED-BY
+    object: met.coherent_optical_fiber_link_uncertainty_long
+    source:
+      paper: raupach2015
+      claim: "weighted mean of the transferred frequency's fractional offset of (1.1 ± 0.4)×10⁻²⁰"
+
+  - id: rel.R15_04
+    subject: ent.ptb_1400km_brillouin_link_r15
+    predicate: CHARACTERIZED-BY
+    object: met.coherent_optical_fiber_link_instability
+    source:
+      paper: raupach2015
+      claim: "instability of 6.9×10⁻²¹ ... at an averaging time of around 30000 s"
+    note: "met.coherent_optical_fiber_link_instability 定义于 calonico2015"
+
+  - id: rel.R15_05
+    subject: ent.ptb_1400km_brillouin_link_r15
+    predicate: ENABLED-BY
+    object: pri.noise_cancellation_frequency_transfer
+    source:
+      paper: raupach2015
+      claim: "actively stabilizing the phase of the transferred signal"
