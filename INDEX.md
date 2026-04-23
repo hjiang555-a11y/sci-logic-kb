@@ -2,7 +2,7 @@
 
 # 📚 sci-logic-kb — Knowledge Base Index
 
-> Auto-generated 2026-04-23 00:33 UTC
+> Auto-generated 2026-04-23 06:37 UTC
 
 ## 🧭 按研究问题导航
 
@@ -23,10 +23,11 @@
 |-------|-------:|------:|----------:|-------|
 | Frequency Standards | 1 | 10 | 11 | [→ INDEX](topics/frequency-standards/INDEX.md) |
 | Optical Frequency Combs | 101 | 628 | 770 | [→ INDEX](topics/optical-frequency-combs/INDEX.md) |
+| shared | 5 | 19 | 15 | [→ INDEX](topics/shared/INDEX.md) |
 | Time-Frequency Transfer | 1 | 16 | 21 | [→ INDEX](topics/time-frequency-transfer/INDEX.md) |
 | Timescales | 1 | 6 | 6 | [→ INDEX](topics/timescales/INDEX.md) |
 | Ultrastable Laser | 78 | 337 | 341 | [→ INDEX](topics/ultrastable-laser/INDEX.md) |
-| **Total** | **182** | **997** | **1149** | |
+| **Total** | **187** | **1016** | **1164** | |
 
 ## Cross-Topic Quick References
 
@@ -41,6 +42,7 @@
 |-------|--------:|-----------:|--------:|--------:|
 | Frequency Standards | 4 | 3 | 1 | 2 |
 | Optical Frequency Combs | 147 | 178 | 88 | 215 |
+| shared | 0 | 10 | 8 | 1 |
 | Time-Frequency Transfer | 6 | 4 | 2 | 4 |
 | Timescales | 1 | 2 | 1 | 2 |
 | Ultrastable Laser | 50 | 78 | 78 | 131 |

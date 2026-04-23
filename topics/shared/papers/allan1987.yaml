@@ -1,0 +1,109 @@
+# Allan 1987 — Should the Classical Variance Be Used as a Basic Measure in Standards Metrology? [framework]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：shared（时频计量数学基础 · B9 Allan–Howe 奠基白名单）
+# contribution_type: framework — 对 Allan 1966 的 21 年回顾与重申。定义幂律噪声分类体系，
+#   系统给出 σ_y(τ) 斜率 ↔ 噪声类型映射；确立 Allan 方差为计量标准的行业共识。
+
+meta:
+  zotero_key: "ALLAN1987-TUFFC"
+  topic: shared
+  source_type: journal_paper
+  contribution_type: framework
+  reliability: high
+  title: "Should the Classical Variance Be Used as a Basic Measure in Standards Metrology?"
+  year: 1987
+  first_author: Allan
+  authors: ["David W. Allan"]
+  journal: "IEEE Transactions on Instrumentation and Measurement"
+  volume: "IM-36"
+  issue: 2
+  pages: "646-654"
+  doi: "10.1109/TIM.1987.6312761"
+  note: >
+    [奠基期刊论文 · < 1999 年白名单 §A] Allan 在 1966 原始论文 21 年后的系统性重申与
+    扩展。论文以"标准计量学是否应继续使用经典方差"为反问，系统论证 Allan 方差族（含
+    MVAR / HDEV 等派生）在工业计量、原子钟表征、时标建立、激光稳定度测量等所有时频
+    应用中应取代经典方差。本文明确列出 5 种幂律噪声（white PM / flicker PM / white FM
+    / flicker FM / random-walk FM）的 S_y(f) ∝ f^α 谱形，以及对应的 σ_y(τ) ∝ τ^μ 斜率
+    公式（μ = −α−1，α ≤ 1 区；另含 PM 噪声的带宽修正 μ = −1 共一区）。此斜率-噪声映射
+    成为时频工程师读 σ_y(τ) 曲线的基本词典。
+
+entities: []
+
+principles:
+  - id: pri.power_law_noise_taxonomy
+    name: "时频噪声五类幂律分类（white PM / flicker PM / white FM / flicker FM / RW FM）"
+    tier: meta
+    verification_status: observed
+    statement: >
+      频率标准的分数频率波动 y(t) 的单边功率谱密度可分解为五种幂律分量：
+      S_y(f) = Σ_{α=−2}^{+2} h_α · f^α（α ∈ {−2, −1, 0, 1, 2}）。五种噪声对应
+      不同物理机制：α=+2 white PM（测量系统带宽噪声）、α=+1 flicker PM（放大器 1/f）、
+      α=0 white FM（热噪声、散粒噪声）、α=−1 flicker FM（器件老化前奏、环境耦合）、
+      α=−2 random-walk FM（随机游走，老化主成分、长期漂移）。
+      每一种在时域 σ_y(τ) 曲线上有特征斜率 μ，构成时频工程师的"噪声辨识词典"。
+    domain: "时频计量；噪声物理"
+    key_insight: >
+      时频领域的噪声不是单一 white，而是五类幂律叠加；不同振荡器/标准在不同 τ 区间
+      由不同 α 主导（短 τ：PM 噪声；中 τ：white FM；长 τ：RW FM）。因此 σ_y(τ) 曲线
+      在 log-log 图上通常是"五折线"：每一折斜率对应一种 α。这是读稳定度图的基础。
+    conditions: "稳态频率标准；噪声可近似为各 α 分量叠加；积分时间 τ 覆盖多个量级"
+    formula: >
+      S_y(f) = sum over alpha in {-2,-1,0,1,2} of h_alpha * f^alpha;
+      sigma_y^2(tau) approx (constants) * tau^mu with:
+      alpha=+2 (white PM) -> mu = -2 (带宽依赖)
+      alpha=+1 (flicker PM) -> mu = -2 (近似)
+      alpha=0 (white FM)   -> mu = -1
+      alpha=-1 (flicker FM) -> mu = 0
+      alpha=-2 (RW FM)     -> mu = +1
+    source:
+      zotero_key: "ALLAN1987-TUFFC"
+      claim: >
+        "the spectral density of fractional frequency fluctuations can be modeled as a sum of
+        five power-law processes with integer exponents α ∈ {−2, −1, 0, 1, 2}, corresponding
+        to random walk FM, flicker FM, white FM, flicker PM, and white PM noise."
+
+  - id: pri.sigma_y_slope_identifies_noise_type
+    name: "σ_y(τ) 斜率-噪声辨识原理"
+    tier: meta
+    verification_status: observed
+    statement: >
+      在 log-log 图中绘制 σ_y(τ) vs τ，局部斜率 μ = d log σ_y / d log τ 直接映射到
+      主导噪声的谱指数 α。对 FM 区（α ≤ 0）有 μ = (−α−1)/2（对应 σ_y² 的斜率 −α−1）；
+      对 PM 区（α = 1, 2）因为 ADEV 的带宽依赖性，斜率简并到 μ ≈ −1，此时需用 MDEV
+      才能区分 flicker PM 与 white PM。
+    domain: "时频计量；稳定度曲线诊断"
+    key_insight: >
+      单条 σ_y(τ) 曲线同时告诉：(a) 不稳定度绝对水平；(b) 主导噪声物理类型。这是
+      Allan 方差相对经典方差的第二重优越性——不仅收敛，还可诊断。但 PM 噪声诊断需
+      升级到 MDEV（见 sullivan1990.yaml），因此 ADEV 斜率仅能在 FM 区精确辨识。
+    conditions: "单一 α 主导的 τ 区段；对 PM 噪声（α > 0）诊断须切换 MDEV"
+    formula: "mu = -alpha - 1 (for sigma_y^2(tau); divide by 2 for sigma_y(tau))  in FM region (alpha <= 0)"
+    source:
+      zotero_key: "ALLAN1987-TUFFC"
+      claim: >
+        "the slope of σ_y(τ) on a log-log plot serves as a diagnostic of the dominant noise
+        type, with each of the five power-law processes producing a characteristic slope."
+
+methods: []
+
+metrics: []
+
+relations:
+  - id: rel.A87_01
+    subject: pri.sigma_y_slope_identifies_noise_type
+    predicate: DERIVED-FROM
+    object: pri.power_law_noise_taxonomy
+    confidence: established
+    source: {zotero_key: "ALLAN1987-TUFFC", claim: "the slope of σ_y(τ) on a log-log plot serves as a diagnostic of the dominant noise type, with each of the five power-law processes producing a characteristic slope."}
+    note: "斜率辨识原理从幂律噪声分类直接派生：每一 α 对应固定斜率 μ。"
+
+  - id: rel.A87_02
+    subject: meth.allan_deviation_adev
+    predicate: CHARACTERIZED-BY
+    object: pri.sigma_y_slope_identifies_noise_type
+    confidence: established
+    source: {zotero_key: "ALLAN1987-TUFFC", claim: "Allan deviation provides not only a converging measure but also, through its slope on log-log axes, identification of the dominant power-law noise process."}
+    note: "ADEV 的刻画性特征之一：斜率可辨识噪声类型。跨文件引用 meth.allan_deviation_adev（allan1966.yaml）。"

@@ -7,6 +7,35 @@
 
 ---
 
+## [2026-04-23] ingest | B9 Allan–Howe 奠基白名单（shared 专题首批 framework 摄入，5 篇）
+
+按 TODO.md 阶段 3 批次 **B9** 完成时频计量数学基础专题（`topics/shared/`）首批入库。
+
+- **摄入文件**（5 篇，均 framework 档）：
+  - `allan1966.yaml` — Allan 1966 *Proc. IEEE* 54(2):221 — σ_y(τ) 两样本 Allan 方差原始定义（zotero_key `ALLAN1966-PROCIEEE`）
+  - `allan1987.yaml` — Allan 1987 *IEEE TUFFC* IM-36(2):646 — 经典方差 vs Allan 方差辨析；幂律噪声五类分类（`ALLAN1987-TUFFC`）
+  - `howe1976.yaml` — Howe 1976 *NBS Tech Note 679* — 频域稳定度测量教程；相位/频率噪声 PSD 对偶（`HOWE1976-NBS-TN679`）
+  - `sullivan1990.yaml` — Sullivan/Allan/Howe/Walls 1990 *NIST Tech Note 1337* — MDEV/TDEV/HDEV 扩展方差手册（`SULLIVAN1990-NIST-TN1337`）
+  - `riley2008.yaml` — Riley & Howe 2008 *NIST Special Publication 1065* — OADEV/TOTDEV/Theo1/TheoH 方差手册（`RILEY2008-NIST-SP1065`）
+- **新建权威方法节点**（8 个，供全库复用，减少后续 papers YAML 重复定义）：
+  - `meth.allan_deviation_adev` — ADEV / σ_y(τ)
+  - `meth.modified_allan_deviation_mdev` — MDEV / mod σ_y(τ)
+  - `meth.time_deviation_tdev` — TDEV / σ_x(τ)
+  - `meth.hadamard_deviation_hdev` — HDEV（漂移免疫）
+  - `meth.overlapping_allan_deviation_oadev` — OADEV（EDF 提升）
+  - `meth.total_deviation_totdev` — TOTDEV（长 τ 低偏差）
+  - `meth.theo1_thedev` — Theo1 / TheoBR / TheoH（长 τ 统计效率最优）
+  - `meth.phase_noise_psd_measurement` — 相位噪声 S_phi(f) 测量
+- **新建权威原理节点**（7 个）：经典方差发散 / 两样本方差收敛 / 幂律噪声五类分类 / σ_y 斜率辨识噪声 /
+  相位-频率噪声 PSD 对偶 / 时-频域 sin⁴ 传递函数 / MDEV sin⁶ 核 PM 分辨 / HDEV 二阶差分漂移免疫 /
+  重叠估计量 EDF 提升 / Theo1 长 τ 统计效率最优
+- **新建权威指标节点**：`met.fractional_frequency_instability_sigma_y`（role=primary，σ_y(τ) landmark 定义）
+- **专题骨架建立**：`topics/shared/papers/` 目录首次启用（原 `shared/_meta/architecture.md` 中状态 "Not yet populated" 现更新为"已启用"）；`topics/shared/INDEX.md` 经 `scripts/build_index.py` 自动生成
+- **validation**：`python scripts/lint.py` 通过（本批零 error、零 warning）；`python scripts/build_index.py` 全量刷新 INDEX / INDEX_metrics / INDEX_principles / CURRENT_NODES_REFERENCE
+- **后续动作**：后续摄入的 papers 应优先引用这 8 个 `meth.*` 节点而非重复定义本地 Allan/MDEV/OADEV 方法；各 `met.*allan_deviation_*` 实例节点可通过 OPERATIONALIZED-AS 关系绑定到 `met.fractional_frequency_instability_sigma_y`
+
+---
+
 ## [2026-04-23] restructure | JILA/NIST 扩库阶段 2 候选池批准（32 篇）
 
 专家一次性批准阶段 2 全部候选进入阶段 3 摄入。

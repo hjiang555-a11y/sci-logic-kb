@@ -117,21 +117,21 @@ reports/ingest_plan/
 
 ---
 
-## 阶段 3 · 分批摄入（⏳ 待启动，阶段 2 通过后触发）
+## 阶段 3 · 分批摄入（🟡 进行中：B9 已完成 2026-04-23，B1–B8 待启动）
 
 批次编号规则：`B1` ~ `B9`，每批目标 8–15 篇，按子域聚类：
 
-| 批次 | 子域 | 目标篇数 | 说明 |
-|------|------|---------|------|
-| B1 | OFC · 自参考与频率综合 | 8–12 | 衔接现有 OFC 骨架 |
-| B2 | OFC · 双梳光谱 | 8–12 | |
-| B3 | OFC · 微梳平台 | 8–12 | |
-| B4 | 超稳激光 · JILA/NIST 分支补全 | 6–10 | 合并到已有 78 篇 |
-| B5 | 光钟 · Sr / Yb / Al⁺ / Hg | 10–15 | 激活 `topics/frequency-standards/` |
-| B6 | 时间标尺 · UTC/TAI · Kalman 合成 | 6–10 | 激活 `topics/timescales/` |
-| B7 | 时频传递 · 光纤相干 / TWSTFT / GNSS | 8–12 | 激活 `topics/frequency-transfer/` |
-| B8 | 时频计量数学基础 · 非奠基期刊论文 | 4–8 | 归属 `topics/shared/metrics/` 待阶段 2 定 |
-| **B9** | **Allan–Howe 奠基白名单** | **3–5** | **< 1999 白名单专用批次；PR 标题注明 `[foundational-whitelist]`** |
+| 批次 | 子域 | 目标篇数 | 状态 | 说明 |
+|------|------|---------|------|------|
+| B1 | OFC · 自参考与频率综合 | 8–12 | ⏳ 待启动 | 衔接现有 OFC 骨架 |
+| B2 | OFC · 双梳光谱 | 8–12 | ⏳ 待启动 | |
+| B3 | OFC · 微梳平台 | 8–12 | ⏳ 待启动 | |
+| B4 | 超稳激光 · JILA/NIST 分支补全 | 6–10 | ⏳ 待启动 | 合并到已有 78 篇 |
+| B5 | 光钟 · Sr / Yb / Al⁺ / Hg | 10–15 | ⏳ 待启动 | 激活 `topics/frequency-standards/` |
+| B6 | 时间标尺 · UTC/TAI · Kalman 合成 | 6–10 | ⏳ 待启动 | 激活 `topics/timescales/` |
+| B7 | 时频传递 · 光纤相干 / TWSTFT / GNSS | 8–12 | ⏳ 待启动 | 激活 `topics/frequency-transfer/` |
+| B8 | 时频计量数学基础 · 非奠基期刊论文 | 4–8 | ⏳ 待启动 | 归属 `topics/shared/` |
+| **B9** | **Allan–Howe 奠基白名单** | **3–5** | **✅ 已完成 2026-04-23（5/5）** | `allan1966` / `allan1987` / `howe1976` / `sullivan1990` / `riley2008` 入库；8 个权威 `meth.*` 节点供全库复用；lint 0 error，build_index 已刷新 |
 
 **每批 PR 必做事项**：
 - PR 描述中列出 `Rejected from this batch: N 篇会议 / M 篇 preprint`，透明化质量过滤动作

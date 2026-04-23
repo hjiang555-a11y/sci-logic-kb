@@ -3,7 +3,7 @@
 > **说明**：本文件包含知识库中所有已处理论文的详细列表。从 SCHEMA.md 第八节迁移而来。
 > SCHEMA.md 仅保留统计摘要，本文件承载完整论文记录。
 >
-> **最后更新**：2026-04-23（time-frequency-transfer 专题种子 framework 摄入：+1 篇 → 1 篇；`cacciapuoti2017.yaml` 定义 ent.space_optical_clock_mission 及 MWL / ELT+ / FCOL 子节点，建立跨专题 CONDITIONED-BY 接口至 ultrastable-laser / optical-frequency-combs / frequency-standards）
+> **最后更新**：2026-04-23（B9 Allan–Howe 奠基白名单摄入：+5 篇 framework → shared 专题首批入库；建立 `meth.allan_deviation_adev` / `meth.modified_allan_deviation_mdev` / `meth.time_deviation_tdev` / `meth.hadamard_deviation_hdev` / `meth.overlapping_allan_deviation_oadev` / `meth.total_deviation_totdev` / `meth.theo1_thedev` / `meth.phase_noise_psd_measurement` 8 个权威方法节点供全库复用）
 
 ---
 
@@ -181,6 +181,16 @@
 | 文件 | Zotero Key | 论文 | 状态 |
 |------|-----------|------|------|
 | `cacciapuoti2017.yaml` | SCI-ESA-HRE-ESR-ISOC | Cacciapuoti & Schiller 2017 — ESA I-SOC 科学需求（ISS 空间光钟任务，MWL+ELT+ 链路） | ✅ v4.5 framework |
+
+## 时频计量数学基础专题（5 篇，B9 Allan–Howe 奠基白名单）
+
+| 文件 | Zotero Key | 论文 | 状态 |
+|------|-----------|------|------|
+| `allan1966.yaml` | ALLAN1966-PROCIEEE | Allan 1966 — σ_y(τ) 两样本 Allan 方差原始定义（Proc. IEEE） | ✅ v4.5 framework |
+| `allan1987.yaml` | ALLAN1987-TUFFC | Allan 1987 — 经典方差 vs Allan 方差辨析；幂律噪声五类分类（IEEE TUFFC） | ✅ v4.5 framework |
+| `howe1976.yaml` | HOWE1976-NBS-TN679 | Howe 1976 — 频域稳定度测量教程；相位/频率噪声 PSD 对偶（NBS TN 679） | ✅ v4.5 framework |
+| `sullivan1990.yaml` | SULLIVAN1990-NIST-TN1337 | Sullivan/Allan/Howe/Walls 1990 — MDEV/TDEV/HDEV 扩展方差（NIST TN 1337） | ✅ v4.5 framework |
+| `riley2008.yaml` | RILEY2008-NIST-SP1065 | Riley & Howe 2008 — OADEV/TOTDEV/Theo1/TheoH 方差手册（NIST SP 1065） | ✅ v4.5 framework |
 
 ---
 

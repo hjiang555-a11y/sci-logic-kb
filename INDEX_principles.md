@@ -2,19 +2,29 @@
 
 # 🔬 Principles Quick Reference
 
-> Auto-generated 2026-04-23 00:33 UTC
+> Auto-generated 2026-04-23 06:37 UTC
 
 ## Tier: meta
 
 | ID | Name | Topic | Source |
 |----|------|-------|--------|
 | `pri.chip_comb_platform_tradeoff_space` | 芯片梳平台四维权衡空间原理 | Optical Frequency Combs | [gaeta2019](topics/optical-frequency-combs/papers/gaeta2019.yaml) |
+| `pri.classical_variance_divergence_for_flicker_noise` | 经典方差对 flicker / random-walk 频率噪声发散原理 | shared | [allan1966](topics/shared/papers/allan1966.yaml) |
 | `pri.comb_equation` | 光频梳基本方程 f_n = n·f_rep + f_CEO | Optical Frequency Combs | [droste2016](topics/optical-frequency-combs/papers/droste2016.yaml) |
+| `pri.hadamard_variance_drift_insensitive` | Hadamard 方差对线性漂移不敏感原理 | shared | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
 | `pri.microcomb_formation_regime_taxonomy_g19` | Kerr 微梳形成态分类体系 | Optical Frequency Combs | [gaeta2019](topics/optical-frequency-combs/papers/gaeta2019.yaml) |
+| `pri.modified_allan_kernel_resolves_pm_noise` | MDEV 相位平均积分核分辨 PM 噪声原理 | shared | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
 | `pri.ofc_functional_definition_2010` | 光学频率梳功能性定义原理（Diddams 2010） | Optical Frequency Combs | [diddams2010](topics/optical-frequency-combs/papers/diddams2010.yaml) |
 | `pri.ofc_two_dof_stabilization` | OFC 双自由度独立稳定化原理 | Optical Frequency Combs | [endo2018](topics/optical-frequency-combs/papers/endo2018.yaml) |
 | `pri.optical_microwave_coherent_gearbox` | 光-微波相干齿轮箱原理（Level 0 范式原理） | Optical Frequency Combs | [picque2020](topics/optical-frequency-combs/papers/picque2020.yaml) |
+| `pri.overlapping_estimator_improves_edf` | 重叠估计量提升等效自由度原理 | shared | [riley2008](topics/shared/papers/riley2008.yaml) |
+| `pri.phase_noise_frequency_noise_psd_duality` | 相位噪声 PSD 与频率噪声 PSD 对偶关系 | shared | [howe1976](topics/shared/papers/howe1976.yaml) |
+| `pri.power_law_noise_taxonomy` | 时频噪声五类幂律分类（white PM / flicker PM / white FM / flicker … | shared | [allan1987](topics/shared/papers/allan1987.yaml) |
+| `pri.sigma_y_slope_identifies_noise_type` | σ_y(τ) 斜率-噪声辨识原理 | shared | [allan1987](topics/shared/papers/allan1987.yaml) |
+| `pri.theo1_long_tau_statistical_efficiency` | Theo1 方差长 τ 统计效率最优原理 | shared | [riley2008](topics/shared/papers/riley2008.yaml) |
+| `pri.time_frequency_domain_transfer_function` | 时-频域稳定度转换传递函数原理（sin⁴ 核） | shared | [howe1976](topics/shared/papers/howe1976.yaml) |
 | `pri.tpfc_digital_coherent_pulse_control_c22` | 时间可编程频率梳数字相干脉冲控制原理（Caldwell 2022） | Optical Frequency Combs | [caldwell2022](topics/optical-frequency-combs/papers/caldwell2022.yaml) |
+| `pri.two_sample_variance_converges` | 两样本（Allan）方差对幂律噪声收敛原理 | shared | [allan1966](topics/shared/papers/allan1966.yaml) |
 
 ## Tier: foundational
 

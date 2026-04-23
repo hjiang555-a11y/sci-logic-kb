@@ -2,7 +2,7 @@
 
 # 📊 Metrics Quick Reference
 
-> Auto-generated 2026-04-23 00:33 UTC
+> Auto-generated 2026-04-23 06:37 UTC
 >
 > Metrics are grouped by **role** (v4.4 σ_y-first convention, see `topics/ultrastable-laser/_meta/scoping_principles.md` v2). Role is taken from the `role` field on the metric node when present, otherwise inferred from ID / name heuristics.
 
@@ -251,6 +251,14 @@
 | `met.wall_plug_power_w17` | Electrical drive power / wall-plug | sub-watt chip-level electrical drive | — | [wang2017](topics/optical-frequency-combs/papers/wang2017.yaml) |
 | `met.xuv_harmonic_power_p18` | XUV 单谐波功率（Porat 2018） | ~2 mW | f_rep = 77 MHz 飞秒增强腔，Ar+He 混合气体（背压温度 T = 800 K）， … | [porat2018](topics/optical-frequency-combs/papers/porat2018.yaml) |
 | `met.yb_fiber_comb_power_cpa_l20` | Yb 光纤梳 CPA 输出功率 | 132 W（180 fs，99% 主峰能量） | Yb:fiber CPA 系统（250 MHz frep）+ grism 压缩器 | [luo2020](topics/optical-frequency-combs/papers/luo2020.yaml) |
+
+## shared
+
+### 🎯 Primary (σ_y 主线)
+
+| ID | Name | Best Value | Conditions | Source |
+|----|------|------------|------------|--------|
+| `met.fractional_frequency_instability_sigma_y` | 分数频率不稳定度 σ_y(τ)（Allan 偏差通用度量，landmark 定义） | N/A（度量定义而非测量实例；具体数值见本库数十个派生 met.*allan_deviation_* 节点） | 跨整个知识库适用；每个实例指标的条件由其所在 paper YAML 给出；度量自身在 tau >=… | [allan1966](topics/shared/papers/allan1966.yaml) |
 
 ## Time-Frequency Transfer
 

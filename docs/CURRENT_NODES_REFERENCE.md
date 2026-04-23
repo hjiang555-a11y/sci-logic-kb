@@ -4,7 +4,7 @@
 
 > **用途**：处理新论文时，用此文件快速检查是否已有同名/同义节点，避免重复定义。
 > **维护**：本文件由 `scripts/build_index.py` 自动生成，**请勿手工编辑**。
-> **生成时间**：2026-04-23 00:33 UTC
+> **生成时间**：2026-04-23 06:37 UTC
 
 > **使用方式**：
 > - 处理新论文时，`Ctrl+F` 搜索关键词（如 `brownian`, `pdh`, `fiber`）
@@ -339,6 +339,39 @@
 | `meth.tunable_vuv_comb_generation_cavity_hhg` | 可调 VUV 梳腔增强七次谐波方法 | [zhang2022](topics/optical-frequency-combs/papers/zhang2022.yaml) |
 | `meth.vipa_comb_spectroscopy` | VIPA 交叉色散频率梳光谱方法 | [picque2019](topics/optical-frequency-combs/papers/picque2019.yaml) |
 | `meth.wideband_optical_frequency_synthesis` | 宽带光学频率合成方法（多分支梳+色散外差检测） | [giunta2020](topics/optical-frequency-combs/papers/giunta2020.yaml) |
+
+---
+
+## shared  
+> 详细索引: [`topics/shared/INDEX.md`](topics/shared/INDEX.md)
+
+### Principles
+
+| ID | Name | Tier | Source |
+|----|------|------|--------|
+| `pri.classical_variance_divergence_for_flicker_noise` | 经典方差对 flicker / random-walk 频率噪声发散原理 | meta | [allan1966](topics/shared/papers/allan1966.yaml) |
+| `pri.hadamard_variance_drift_insensitive` | Hadamard 方差对线性漂移不敏感原理 | meta | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
+| `pri.modified_allan_kernel_resolves_pm_noise` | MDEV 相位平均积分核分辨 PM 噪声原理 | meta | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
+| `pri.overlapping_estimator_improves_edf` | 重叠估计量提升等效自由度原理 | meta | [riley2008](topics/shared/papers/riley2008.yaml) |
+| `pri.phase_noise_frequency_noise_psd_duality` | 相位噪声 PSD 与频率噪声 PSD 对偶关系 | meta | [howe1976](topics/shared/papers/howe1976.yaml) |
+| `pri.power_law_noise_taxonomy` | 时频噪声五类幂律分类（white PM / flicker PM / white FM / flicker … | meta | [allan1987](topics/shared/papers/allan1987.yaml) |
+| `pri.sigma_y_slope_identifies_noise_type` | σ_y(τ) 斜率-噪声辨识原理 | meta | [allan1987](topics/shared/papers/allan1987.yaml) |
+| `pri.theo1_long_tau_statistical_efficiency` | Theo1 方差长 τ 统计效率最优原理 | meta | [riley2008](topics/shared/papers/riley2008.yaml) |
+| `pri.time_frequency_domain_transfer_function` | 时-频域稳定度转换传递函数原理（sin⁴ 核） | meta | [howe1976](topics/shared/papers/howe1976.yaml) |
+| `pri.two_sample_variance_converges` | 两样本（Allan）方差对幂律噪声收敛原理 | meta | [allan1966](topics/shared/papers/allan1966.yaml) |
+
+### Methods
+
+| ID | Name | Source |
+|----|------|--------|
+| `meth.allan_deviation_adev` | Allan 偏差（两样本 Allan 方差开方，ADEV / σ_y(τ)） | [allan1966](topics/shared/papers/allan1966.yaml) |
+| `meth.hadamard_deviation_hdev` | Hadamard 偏差 HDEV / H_y(τ) | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
+| `meth.modified_allan_deviation_mdev` | 修正 Allan 偏差 MDEV / mod σ_y(τ) | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
+| `meth.overlapping_allan_deviation_oadev` | 重叠 Allan 偏差 OADEV | [riley2008](topics/shared/papers/riley2008.yaml) |
+| `meth.phase_noise_psd_measurement` | 相位噪声功率谱密度 S_phi(f) 测量方法 | [howe1976](topics/shared/papers/howe1976.yaml) |
+| `meth.theo1_thedev` | Theo1 / TheoBR / TheoH 方差（Howe 族） | [riley2008](topics/shared/papers/riley2008.yaml) |
+| `meth.time_deviation_tdev` | 时偏差 TDEV / σ_x(τ) | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
+| `meth.total_deviation_totdev` | Total 偏差 TOTDEV / σ_Total(τ) | [riley2008](topics/shared/papers/riley2008.yaml) |
 
 ---
 
