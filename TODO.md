@@ -1,151 +1,170 @@
-# TODO — 知识库待处理工作登记
+# TODO — 批量摄入计划（JILA / NIST 时频论文扩库）
 
-> **定位**：集中登记各专题尚未完成的结构化工作，避免分散遗忘。
+> **定位**：本轮主任务是将 JILA（Jun Ye group 为主）与 NIST 时间频率部门的代表性论文系统性纳入知识库。
+> **更新日期**：2026-04-23
+> **当前阶段**：✅ 阶段 0（元规则与过滤器）已固化 · ⏳ 阶段 1（源爬取）待启动
 >
 > **维护原则**：
-> - 本文件是"导航器"，具体细节链接到 `reports/` 或 issue
-> - 每完成一项更新对应状态 / 同步 LOG.md
-> - 新增待办请加到对应专题段落，严重缺口请同时在 TOPICS.md 降级对应专题优先级
+> - 阶段推进后更新本文件状态；完成项打勾但保留条目，直到整轮结束再归档到 LOG.md
+> - 每个阶段的产物放在 `reports/ingest_plan/` 下，文件名前缀 `stageN_*`
+> - 每批 PR 合并后同步勾选对应阶段 checkbox
 
 ---
 
-## 📌 当前优先级：**阶段 D（专家审阅 + 覆盖扩展）进行中** — v4.5 基线已稳定（2026-04-23 刷新）
+## 阶段 0 · 元规则与过滤器（✅ 已固化）
 
-> **现状快照（基于 `python scripts/lint.py --summary` / `python scripts/stats.py` / `python scripts/freshness.py --check`，2026-04-23）**
->
-> - 库存：**181 篇论文**（超稳激光 78 / 光学频率梳 101 / 频率标准 1 / 时间标尺 1）— Batch 4 较 Batch 3 新增 11 篇 OFC
-> - 质量基线：**lint 0 error / 3 warning / 192 info**（3 warning 均为 pre-existing `missing-conditions`）
-> - 推理指标：Reasoning Chain Closure **76.0%**（111/146 BOUNDED-BY）；breakthrough-only **100%** (42/42)；Evidence Coverage **100%**；Condition Completeness **98.9%**；σ_y Linkage (USL) **100%**；Limit Resolution Rate **100%**（但 `resolved` 仅 3 条，`unset` 143 条）
-> - 结构瓶颈：**Synthesis Coverage 仍 1/4 topic**（仅 USL，OFC/频标/时标皆空）；Cross-file Reuse **8.9%**（目标 ≥15%）
-> - 维护瓶颈：freshness 检查超稳激光 8/8 个 synthesis 页面仍 stale（阶段 D 待完成）
->
-> **建议结论**：
-> - OFC Batch 4 已将论文量推至 101 篇，**第一梯队重心仍为 OFC synthesis 启动**（首批最小集 4 页：频率综合 / 双梳光谱 / 微梳平台 / 光谱应用）
-> - Batch 4 新加 3 篇 breakthrough（Holzwarth 2000、Koke 2019、Caldwell 2022）为 synthesis 页面提供了 **"OFC 诞生 → 远程传递 → 可编程梳"的里程碑时间线骨架**，可作为"频率综合"与"计量应用"两页的主轴
-> - 超稳激光专题 8 个 synthesis 页面 freshness 与专家签字仍是阶段 D 收口动作
+> 本节一经固化即作为后续所有阶段的硬约束。任何豁免必须在 PR 描述中显式说明并链接到此节。
 
-> **v4.4 机制落地进度（2026-04-21）**：按"先形成工作机制再扩展规模"迭代计划：
->
-> - ✅ **阶段 A1**：档位分级操作规则书 → [`docs/CONTRIBUTION_TIER_RULES.md`](docs/CONTRIBUTION_TIER_RULES.md)（含"专题级偏好"索引节）
-> - ✅ **阶段 A2 · Round 1**：78 篇档位建议草案（🟥 16 / 🟧 17 / 🟦 3 / 🟩 42）
-> - ✅ **阶段 A2 · Round 2**：专家增补**专题原则"稳定度 > 线宽"**（见 [`topics/ultrastable-laser/_meta/scoping_principles.md`](topics/ultrastable-laser/_meta/scoping_principles.md)），清空 🟧 档——8 升 🟥 / 9 降 🟩。新分布 🟥 24 / 🟦 3 / 🟩 51 → [`reports/contribution_tier_draft_ultrastable.md`](reports/contribution_tier_draft_ultrastable.md)
-> - ✅ **阶段 A3**：专家批量裁决完毕（76 accept + 2 override：`aasi2013` 🟥→🟩；`yan2018` 🟩→🟥），最终分布 🟥 24 / 🟦 3 / 🟩 51
-> - ✅ **阶段 A4**：78 篇 YAML 的 `meta.contribution_type` 已批量回写（lint 0 errors）
-> - ✅ **阶段 B · 2026-04-21 完成**：
->   - `scripts/lint.py` 引入档位感知：`reasoning-chain-gap` / `orphan-node` 对 `evidence` / `framework` 档位论文降级为 `INFO`，仅 `breakthrough` 档位保持 `WARNING`
->   - `scripts/stats.py` 引入 `reasoning_chain_closure.breakthrough_only` 子视图（tier-scoped 73.1% [19/26]）
->   - 新增 `meta.primary_metric_exempt_reason` 字段供 breakthrough 论文显式声明"σ_y 主线不适用原因"（`new_principle` / `new_method` / `landmark_consensus` / `psd_only`）
->   - 12 条 `breakthrough-missing-primary-metric` 告警全部清零（4 篇补 `role: primary` + 8 篇补 `primary_metric_exempt_reason`）
->   - lint 档位感知重估后真实缺口：**chain-gap 21 → 7 WARNING + 14 INFO**；**orphan 90 → 15 WARNING + 75 INFO**
->   - 重估报告：[`reports/chain_gap_ultrastable_v2.md`](reports/chain_gap_ultrastable_v2.md) · [`reports/orphans_ultrastable_v2.md`](reports/orphans_ultrastable_v2.md)
->   - σ_y Linkage（stats 指标 #7）：66.7% (16/24) → **100% (16/16)** — 8 篇豁免后分母修正
-> - ✅ **阶段 C · 2026-04-21 完成**：基于 v2 报告的 **7 条 breakthrough chain-gap** 与 **15 条 breakthrough orphan** 精准收敛
->   - chain-gap：7 → 0（`chen2025.Che02` · `kedar2023.Ked03` · `numata2004.N04/N05` · `webster2008.We08_01` · `zhang2014_ram.Z14_01/Z14_05` 全部补 `breakthrough_paths`）
->   - orphan（breakthrough 档位）：15 → 0（14 个方法节点 + 1 个原理节点 `pri.ram_bias_field_cancellation` 全部挂关系）
->   - lint 结果：0 error / 3 warning（仅 3 条 `missing-conditions` 遗留，且均属 evidence 档，非阶段 C 范围）
-> - ⏳ **阶段 D**：完成专家审阅、综合页 freshness 收口，并把方法论迁移到光学频率梳专题
+### 0.1 年份过滤器
 
-### 超稳激光（重点整治专题）
+| 论文出版年 | 处理规则 |
+|-----------|---------|
+| `year ≥ 1999` | 按常规技术/实验论文流程摄入（走 `CONTRIBUTING.md` Step 1–10） |
+| `year < 1999` | **白名单制**：仅接受下列两类奠基性贡献，其他一律拒绝 |
 
-#### ✅ P0 · Chain-gap 闭环（7 条 breakthrough WARNING → 0，阶段 C 已完成）
-- 详见 [`reports/chain_gap_ultrastable_v2.md`](reports/chain_gap_ultrastable_v2.md)
-- 已补 `breakthrough_paths`：`chen2025.Che02`（Si sub-5K）· `kedar2023.Ked03`（AlGaAs 低温 Si 腔）· `numata2004.N04/N05`（镀层 15% / spacer 1%）· `webster2008.We08_01`（ULE 父级 Brownian）· `zhang2014_ram.Z14_01/Z14_05`（RAM）
-- 14 条 evidence-tier chain-gap INFO 按 §9.1 保留不强制闭环
+**< 1999 白名单（两类奠基）**
 
-#### ✅ P1 · Orphan 收敛（15 条 breakthrough WARNING → 0，阶段 C 已完成）
-- 详见 [`reports/orphans_ultrastable_v2.md`](reports/orphans_ultrastable_v2.md)
-- 已挂关系的 breakthrough-tier 节点：`cole2013/hafner2015/huang2023/kedar2023/michaudbelleau2022/numata2004/parke2025(×3) / robinson2019/thorpe2011(×2)/webster2008/yan2018/zhang2014_ram` 共 15 个
-- 75 条 evidence-tier orphan INFO 按 §9.1 保留
+- **A. Allan 方差体系**
+  - Allan 1966 *Proc. IEEE* 54(2): 221 — σ_y(τ) 原始定义
+  - Allan 1987 *IEEE TUFFC* 34(6): 647 — "Should the classical variance be used as a basic measure…"
+  - Barnes / Allan / Sullivan 等 1990s 的派生方差（Modified / Hadamard / Total）奠基期刊/NBS Tech Note
+- **B. David A. Howe 噪声测量体系**（注：用户口述"David Hown"经核实为 NIST 频率稳定性分析奠基人 **David A. Howe**）
+  - Howe 1981 NBS Tech Note 669 — 频率稳定性测量方法
+  - Howe 1995 / 1999 — TheoH / Theo1 方差
+  - Howe 在 1990s 末的频率稳定性测量综述（*Metrologia* / *IEEE TUFFC* 期刊版本优先）
 
-#### ✅ P2 · 跨文件复用度提升（Tier 3 审批落地完成，2026-04-21 晚批次）
-- 已产出 [`reports/shared_node_candidates.md`](reports/shared_node_candidates.md)（Tier 1 已共用 39 / Tier 2 跨专题 1 / Tier 3 疑似可合并 30）
-- 已新建 [`topics/shared/registry.md`](topics/shared/registry.md)——登记事实上已共用的 39 个 pri/meth 节点
-- **P2.1 已执行**：5 条"❌ 保留+补关系" + 1 条 SBS COMPETES-WITH = 6 个新关系落地（详见 LOG 2026-04-21 restructure 条目）
-- **P2.2 已执行**：3 条"⚠️ 类似表述"合并（`dual_comb_multiheterodyne_mapping` / `self_referencing_f2f_framework` / `temporal_cavity_soliton_dks`），本地重复定义删除并重定向关系到 Tier 1 规范节点
-- **P2.3 AI 回报专家异议**：`pri.vibration_fopt_linear_coupling` (sinclair2014) 与 `pri.vibration_cavity_length_coupling` (lezius2016) 物理观测量实为不同（f_opt 相噪 vs f_rep/f_ceo 噪声），**未执行合并**，建议改为保留+补 `DERIVED-FROM` 关系——等专家裁决
-- **指标结果**：cross_file_reuse 76/862 → 76/859（8.8% 保持；pri/meth 整治已做到极限，达 15% 必须启动 P2.4 的 `ent.*` / `met.*` 扫描）
-- 剩余待决动作：
-  - [ ] 专家审核 P2.3 的 vibration 节点异议（合并 vs 保留）
-  - [ ] 专家授权是否在论文 YAML 中显式补 `SHARED-WITH pri.brownian_thermal_noise_fdt`（当前只有隐式 subject/object 引用）
-  - [ ] **P2.4 启动：`ent.*` / `met.*` 共用候选系统性扫描**（本轮未覆盖，是推进 15% 目标的关键一步）
+白名单外的 < 1999 年论文**一律进入 `rejected.csv`**，`reason_code = pre_1999_out_of_whitelist`。
 
-#### ✅ P3 · Synthesis 页面数值复核（AI 机械部分完成，🟡 draft 仍待专家签字）
-- 每篇追加"📋 数值复核日志"章节，记录发现的问题与已修正内容
-- [x] `vibration_insensitivity_landscape.md` — 修正 Tao 2018（5×10⁻¹¹ → 0.8~2.5×10⁻¹⁰/g）和 Chen 2014（2×10⁻¹⁰ → 1.7e-11~3.9e-10 区间）两处数值错误；标注 Chen 2020 / Sanjuan 2019 YAML 缺 κ metric
-- [x] `ram_and_pdh_error_budget.md` — 修正 κ 单位错误（kHz/(m/s²) → kHz 腔线宽）；修正 Tai 2016 σ_y（~10⁻¹⁶ → <3×10⁻¹⁷）；新增 Parke 2025 breakthrough 路径（σ_y 3×10⁻¹⁹ @ 10–100s）；「涉及源文件」已含 `parke2025`
-- [x] `fiber_stabilization_landscape.md` — 修正 Huang 2023 短期 σ_y（漏写 3.2×10⁻¹⁵ @ 1s）；修正 Jeon 2025 τ 标注（应为 16ms 非 1s）；修正 FP-vs-光纤差距（250× → ~10³× 时标对齐后）
-- [x] `cryogenic_roadmap.md` — 修正 124K 两行的 AlGaAs/IBS 错配；补入 Robinson 2019 (6.5×10⁻¹⁷ @ 4K) 与 Kedar 2023 (5.5/3.5×10⁻¹⁷ Si6/Si5) 的 mod σ_y 数据
-- [x] `spectral_hole_burning_track.md` — 无数值错误可改（定性表述为主），标注需专家深度参与
-- [x] `breakthrough_paths_matrix.md` — 追加"阶段 C 后刷新日志"，记录 Parke 2025 等单元格更新
-- **P3 AI 机械可闭环项均已完成**（ram_and_pdh 的 parke2025 源文件登记已在既有 PR 中落地）。遗留动作全部属于专家决策/风格选择：
-  - [ ] 统一处理 freshness 报警的 8 个超稳激光 synthesis 页面（逐页刷新或在 header 明确延后）
-  - [ ] 专家确认 Kedar 2023 在 cryogenic_roadmap 单列行 vs 合并行（呈现）
-  - [ ] 专家确认 fiber_stabilization 的「子分支 SOTA 按时标分桶」呈现风格
-  - [ ] 专家决定 Chen 2020 / Sanjuan 2019 的 κ 是补入对应 YAML metrics 还是页面改为定性（这一决策也影响 Hafner 2020 κz 表格是否加列）
-  - [ ] 专家确认 ram_and_pdh §四 的 `ent.brewster_eom_t16` 是否入 `meth.pdh_locking` family
-  - [ ] 专家决定 6 篇 synthesis 的 🟡 draft 标记是否移除（批量签字 vs 按页逐一）
+> PDH（Drever 1983）等已在库的 < 1999 奠基原理节点无需重复摄入。若本轮发现 Pound 1946 等与 PDH 推导直接相关的论文确有新增必要，单独走白名单例外审批。
 
----
+### 0.2 质量过滤门
 
-### 光学频率梳（已入库待深化）
+| 论文类型 | 判定 | 备注 |
+|---------|------|------|
+| **Peer-reviewed 期刊** | ✅ 接受 | Nature / Science / PRL / PRA / PRX / PR Applied / Metrologia / *IEEE TUFFC* (Regular Paper) / *IEEE JQE* / APL / OL / Opt. Express / Optica / Nat. Photon. / Nat. Commun. / Rev. Sci. Instrum. / JOSA B 等 |
+| **NIST 会议论文** | ❌ **一律拒绝** | CPEM / IFCS (Int. Frequency Control Symposium) / EFTF / PTTI / FCS 等 proceedings 一律拒。用户明确指示 |
+| **其他会议论文** | ❌ 默认拒 | 同上 |
+| **NBS / NIST Tech Note / Technical Monograph** | ⚠️ 白名单制 | 仅 0.1 §B 的 Allan / Howe 奠基技术报告接受；其他拒绝 |
+| **PhD thesis** | ✅ 接受 | 仅 Ye group / 其他一线组的代表性学位论文，定位为 `framework` 档 |
+| **arXiv preprint 无期刊版本** | ❌ 拒绝 | 若同文后续发表期刊版本，以期刊版本为准；记录 preprint DOI 备查 |
+| **Review / Roadmap** | ✅ 接受 | 定位为 `framework` 档 |
 
-> **现状**：已入库 **101 篇**（Batch 4 新增 11 篇，含 3 篇 breakthrough：Holzwarth 2000 / Koke 2019 / Caldwell 2022），三层架构与 9 条子域主线已明确，但 `synthesis/` 仍为空，是当前全库最大的读者入口缺口。
-- [ ] 建立首批 synthesis 页面（建议最小集：频率综合 / 双梳光谱 / 微梳平台 / 光谱应用）
-  - **"频率综合"页**可以 Holzwarth 2000（诞生）→ Koke 2019（1400 km 传递）→ Caldwell 2022（TPFC 范式）为时间主轴
-  - **"光谱应用"页**可串 Cossel 2017（大气 DCS）· Inaba 2013（钟询问线宽传递）· Rao 2022（CRDS 多分支）
-- [ ] 把 9 条子域主线映射到页面结构，明确"哪个页面服务哪个查询"
-- [ ] 梳理 OFC ↔ USL / 频率标准 的跨专题接口节点，优先提升可复用 `pri.*` / `meth.*`（当前 cross-file reuse 仅 8.9%，目标 ≥15%）
-- [ ] Batch 4 新增 5 个 principles 中，`pri.tpfc_digital_coherent_pulse_control_c22`（meta-tier）可能具备跨专题复用潜力，待 synthesis 页搭建时评估是否提炼为 Tier 2 共享节点
-- [ ] 其他 orphan / chain-gap 整固延后到 synthesis 骨架搭起之后
+**例外通道**：若某"IFCS proceedings"论文是 Allan/Howe 奠基算法定义的**唯一来源**，走 0.1 §B 白名单单独审批，PR 标题注明 `[whitelist-exception]`。
+
+### 0.3 拒绝记录规范
+
+所有被过滤掉的候选论文必须记入 `reports/ingest_plan/rejected.csv`，字段：
+
+| 列 | 说明 |
+|----|------|
+| `doi` | 论文 DOI（无 DOI 时填 URL 或 ISBN） |
+| `title` | 论文标题 |
+| `first_author_year` | 作者年份（如 `allan1966`） |
+| `venue` | 期刊 / 会议 / 报告编号原文 |
+| `venue_type` | `journal` / `conference` / `tech_note` / `thesis` / `preprint` |
+| `year` | 出版年 |
+| `reason_code` | `nist_conference` / `other_conference` / `pre_1999_out_of_whitelist` / `preprint_only` / `duplicate_of_existing` / `out_of_scope_topic` |
+| `source_url` | 原始候选来源（JILA 列表页 / NIST 列表页 / 引文） |
+
+### 0.4 候选清单新增字段
+
+`reports/ingest_plan/candidates_final.csv` 必含下列列（在常规书目字段之外）：
+
+- `venue_type`：`journal` / `conference` / `tech_note` / `thesis` / `preprint`
+- `quality_pass`：`yes` / `no` / `whitelist`
+- `whitelist_reason`：`allan_variance` / `howe_noise` / `foundational_other` / `null`
+- `proposed_topic`：预判归属的 `topics/<topic>/`
+- `proposed_tier`：`breakthrough` / `evidence` / `framework`（默认 `evidence`）
+
+### 0.5 阶段产物目录约定
+
+```
+reports/ingest_plan/
+  stage1_raw_candidates_jila.csv       # 阶段 1 · JILA 原始抓取
+  stage1_raw_candidates_nist.csv       # 阶段 1 · NIST 原始抓取
+  stage2_candidates_final.csv          # 阶段 2 · 经 0.1/0.2 过滤后的最终候选池
+  rejected.csv                         # 全阶段共享的拒绝清单
+  summary.md                           # 阶段 2 人读摘要（含拒绝统计 + 白名单候选逐条列出）
+  batches/                             # 阶段 3 起每批的摄入清单
+    B1_*.md
+    ...
+```
 
 ---
 
-### 频率标准（骨架）
+## 阶段 1 · 源爬取（⏳ 待启动）
 
-> **状态**：1 篇 framework；仅接受新摄入，不投入整治资源
-- [ ] 摄入 ≥ 3 篇代表论文（光钟类：Sr、Yb、Hg、Al⁺；微波类：Cs fountain、H-maser）
-- [ ] 激活 Level 1 实体节点
-
----
-
-### 时间标尺与钟组（骨架）
-
-> **状态**：1 篇 framework；仅接受新摄入
-- [ ] 摄入 UTC/TAI 综述、本地 UTC(k) 实现、Kalman 合成算法论文
+- [ ] 抓取 JILA Jun Ye group publication 列表（保留 venue 字段），落盘 `stage1_raw_candidates_jila.csv`
+- [ ] 抓取 NIST Time & Frequency Division publication 列表，按 `journal` / `conference` / `tech_note` 三类分别打标，落盘 `stage1_raw_candidates_nist.csv`
+- [ ] 单独导出 `nist_techreports_howe_allan.csv` 供白名单人工核验
+- [ ] 网络访问受限时立即停止并在 PR 中报告被拦截的域名，等待 allowlist 决策
 
 ---
 
-### 时间频率传递（骨架空壳）
+## 阶段 2 · 过滤与人读摘要（⏳ 待启动）
 
-> **状态**：0 论文，仅架构占位
-- [ ] 摄入 ≥ 3 篇代表论文：光纤相干链路 + TWSTFT + GNSS 载波相位比对
-- [ ] 激活 Level 1 实体节点
-
----
-
-### 时频计量数学基础（未建）
-
-> **状态**：架构未启动
-- [ ] 确定是作为独立专题还是放在 `topics/shared/metrics/`
-- [ ] 摄入基础方差体系论文（Allan, Hadamard, Mod-σ, Dynamic Allan, …）
+- [ ] 应用 0.1 年份过滤器 + 0.2 质量过滤门，生成 `stage2_candidates_final.csv`
+- [ ] 所有被拒候选写入 `rejected.csv`
+- [ ] 生成 `summary.md`，至少包含：
+  - 候选总数 / 接受数 / 拒绝数（按 `reason_code` 分组）
+  - **白名单候选清单（≤ 10 篇）**，逐条列出供专家勾选
+  - 按 `proposed_topic` 分桶的接受候选数量
+  - 与现有 `PROCESSED_PAPERS.md` 的去重结果（`duplicate_of_existing` 计数）
+- [ ] 提 PR 供专家审批最终候选池
 
 ---
 
-## 🛠️ 开发 / 工具 / CI
+## 阶段 3 · 分批摄入（⏳ 待启动，阶段 2 通过后触发）
 
-### Round 4 延后项
-- [x] CI 集成 freshness 检查：synthesis 页面依赖的 yaml 更新时自动标 `needs-refresh` 标签（2026-04-22，v4.5；`.github/workflows/synthesis-freshness.yml` + `scripts/freshness.py --json`，git-log 时间戳）
-- [x] 探索 graph.py 输出的交互式可视化（d3 / cytoscape）（2026-04-22，v4.5；Cytoscape.js，静态 `docs/graph/index.html` + `docs/graph/viewer.js`，`bash scripts/build_graph_view.sh` 一键刷新）
-- [ ] 固化"文档状态对齐"维护约定：涉及论文数 / 专题状态 / 当前重点的文档统一以 `stats.py`、`PROCESSED_PAPERS.md` 与 `TODO.md` 为对照源
+批次编号规则：`B1` ~ `B9`，每批目标 8–15 篇，按子域聚类：
+
+| 批次 | 子域 | 目标篇数 | 说明 |
+|------|------|---------|------|
+| B1 | OFC · 自参考与频率综合 | 8–12 | 衔接现有 OFC 骨架 |
+| B2 | OFC · 双梳光谱 | 8–12 | |
+| B3 | OFC · 微梳平台 | 8–12 | |
+| B4 | 超稳激光 · JILA/NIST 分支补全 | 6–10 | 合并到已有 78 篇 |
+| B5 | 光钟 · Sr / Yb / Al⁺ / Hg | 10–15 | 激活 `topics/frequency-standards/` |
+| B6 | 时间标尺 · UTC/TAI · Kalman 合成 | 6–10 | 激活 `topics/timescales/` |
+| B7 | 时频传递 · 光纤相干 / TWSTFT / GNSS | 8–12 | 激活 `topics/frequency-transfer/` |
+| B8 | 时频计量数学基础 · 非奠基期刊论文 | 4–8 | 归属 `topics/shared/metrics/` 待阶段 2 定 |
+| **B9** | **Allan–Howe 奠基白名单** | **3–5** | **< 1999 白名单专用批次；PR 标题注明 `[foundational-whitelist]`** |
+
+**每批 PR 必做事项**：
+- PR 描述中列出 `Rejected from this batch: N 篇会议 / M 篇 preprint`，透明化质量过滤动作
+- 按 `CONTRIBUTING.md` Step 1–10 逐篇摄入
+- 运行 `python scripts/lint.py` 必须 0 error 通过
+- 同批 YAML 文件内的跨文件节点复用率在 PR 描述中汇报
 
 ---
 
-## 📋 Schema / 架构层面
+## 阶段 4 · 索引与统计刷新（每批合并后）
 
-- [x] 评估是否需要新增 `limit_status: resolved` 字段到 BOUNDED-BY 关系（当限制已被工程超越时）（2026-04-22，v4.5；采用 4 态枚举 `limit_status: active | conditional | resolved | refuted` + `resolved_by` + `resolution_source`，见 SCHEMA §4.2；stats 新增 `limit_resolution_rate` 指标；migrator `scripts/migrate_bounded_status.py`；3 条示范落地：`cole2013.C05` / `hafner2015.H05` / `chen2025.Che02`）
-- [x] 评估 `INSTANCE-OF` 是否作为正式谓词（或继续用 `PART-OF` 表示 Level 2 参数变体）（2026-04-22 **决策：不新增谓词**；改为在 `ent.*` 上新增可选字段 `instance_of`，配套 lint 一致性检查；进入一年观察窗口，≥ 20 节点使用后再评估升格。已回填 3 节点：`chen2025.si_crystal_fp_cavity_sub5k_c25` / `chen2020.cubic_dual_cavity_c20` / `hafner2015.self_balancing_long_cavity_h15`）
-- [x] 评估 `SHARED-WITH` 关系的使用规范（当前零使用，需要实际案例触发规则定稿）（2026-04-22，v4.5；正式纳入第 9 种谓词，SCHEMA §5 规定触发条件 / 禁用场景 / lint 双规则；`topics/shared/registry.md §3` Tier 2 作为白名单唯一源；首批真实 SHARED-WITH 关系待下一篇在 OFC/频率标准定义 thermal-noise 变体原理的论文触发）
+- [ ] 运行 `python scripts/build_index.py` 刷新 `INDEX.md` / `INDEX_metrics.md` / `INDEX_principles.md` / `docs/CURRENT_NODES_REFERENCE.md`
+- [ ] 运行 `python scripts/stats.py` 记录增量指标（库存 / chain-closure / reuse / σ_y linkage）
+- [ ] `LOG.md` 追加 `ingest` 条目
 
 ---
 
-> 本文件随工作推进持续更新；每次 PR 合并后请检查并勾选 / 删减对应条目，保持 TODO 长度收敛。
+## 阶段 5 · Synthesis 页面启动（阶段 3 完成 ≥ 2 批后）
+
+- [ ] OFC 首批 synthesis 最小集（4 页）：频率综合 / 双梳光谱 / 微梳平台 / 光谱应用
+- [ ] 频率标准 / 时间标尺激活后，各起 1 个骨架 synthesis 页
+- [ ] 更新 freshness 报表
+
+---
+
+## 阶段 6 · 专家验收与归档
+
+- [ ] 全阶段合并后生成 `reports/ingest_plan/final_report.md`
+- [ ] 本 TODO 归档到 `LOG.md`，TODO.md 退回到维护性清单
+
+---
+
+## 硬约束速查（开发者请勿跳过）
+
+1. **NIST 会议论文 = 零摄入**（0.2 质量过滤门，用户明确指示）
+2. **< 1999 论文除 Allan / Howe 白名单外 = 零摄入**（0.1 年份过滤器）
+3. **拒绝必留痕**：全部进 `rejected.csv`，可追溯
+4. **默认档位 `evidence`**：不确定时归 evidence，等专家升档
+5. **不手工修改自动生成的 INDEX / CURRENT_NODES_REFERENCE**
