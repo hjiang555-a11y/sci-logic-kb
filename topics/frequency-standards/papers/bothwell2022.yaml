@@ -1,0 +1,70 @@
+# Bothwell 2022 — Resolving the gravitational redshift across a millimeter-scale atomic sample [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：frequency-standards
+# contribution_type: evidence — 考虑升级到 breakthrough。JILA 在毫米尺度 Sr 晶格样品内部
+#   分辨广义相对论引力红移，σ_y ~ 7.6×10⁻²¹ 解析水平，frequency resolution 至 10⁻²³ 级
+#   高程差——把"相对论大地测量"带到单晶格原子样品内部。
+
+meta:
+  zotero_key: "BOTHWELL2022"
+  topic: frequency-standards
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: medium
+  title: "Resolving the gravitational redshift across a millimeter-scale atomic sample"
+  year: 2022
+  first_author: Bothwell
+  authors: ["T. Bothwell", "C. J. Kennedy", "A. Aeppli", "D. Kedar", "J. M. Robinson",
+    "E. Oelker", "A. Staron", "J. Ye"]
+  journal: "Nature"
+  volume: 602
+  pages: "420-424"
+  doi: "10.1038/s41586-021-04349-7"
+  note: >
+    [期刊论文 / PDF 在仓库中不可解析，基于公开文献] JILA SrI 晶格钟内部沿垂直方向
+    分辨 ~1 mm 原子样品上下层的广义相对论引力红移（~10⁻¹⁹/cm = 10⁻¹⁸/10 cm）。
+    实验频率分辨到 7.6×10⁻²¹ 水平（与高程差对应 10⁻²³/cm 级），展示"原子样品内部重力测量"
+    的可行性。对相对论大地测量、暗物质搜索提出新工具。建议专家审核是否升 breakthrough。
+
+entities:
+  - id: ent.jila_mm_scale_redshift_sr_clock_b22
+    name: "JILA 毫米尺度引力红移 Sr 晶格钟实验（Bothwell 2022）"
+    hierarchy_level: 2
+    status: demonstrated
+    key_parameters:
+      sample_size: "~1 mm vertical extent"
+      resolved_redshift_across_sample: "~10⁻¹⁹"
+      frequency_resolution: "7.6×10⁻²¹"
+    note: "Level 2 实例，PART-OF ent.optical_lattice_clock"
+
+principles:
+  - id: pri.gravitational_redshift_within_atomic_sample
+    name: "原子样品内部引力红移可分辨原理"
+    tier: domain
+    verification_status: demonstrated
+    statement: >
+      广义相对论预言，同一原子种类在不同重力势处有不同本征频率 (Δν/ν ≈ g·Δh/c²)；
+      当光晶格钟样品竖直尺度 L 满足 g·L/c² ≥ σ_y(τ)（可分辨极限）时，
+      样品内部上下层频率差可被实验分辨。这为"原子样品内部地球重力测量"提供方法论。
+    domain: "相对论大地测量；光钟新应用"
+    conditions: "样品温度与密度均匀可控；位置依赖系统移位可建模"
+    source_claim: "resolving the gravitational redshift across a millimeter-scale atomic sample"
+
+relations:
+  - id: rel.Bot22_01
+    subject: ent.jila_mm_scale_redshift_sr_clock_b22
+    predicate: PART-OF
+    object: ent.optical_lattice_clock
+    source:
+      paper: bothwell2022
+      claim: "Sr optical lattice clock"
+
+  - id: rel.Bot22_02
+    subject: ent.jila_mm_scale_redshift_sr_clock_b22
+    predicate: OPERATIONALIZED-AS
+    object: pri.gravitational_redshift_within_atomic_sample
+    source:
+      paper: bothwell2022
+      claim: "resolving the gravitational redshift"

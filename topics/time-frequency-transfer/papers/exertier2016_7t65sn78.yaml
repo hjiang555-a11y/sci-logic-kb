@@ -1,5 +1,5 @@
-# Exertier 2016 — Sub-ns time transfer consistency: a direct comparison between GPS CV and T2L2
-# 提取者：AI 草稿，待专家确认
+# Exertier 2016 — Sub-ns time transfer consistency: GPS CV vs T2L2 [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
 # 提取日期：2026-04-23
 # Schema版本：v4.5
 # 专题：time-frequency-transfer
@@ -10,24 +10,82 @@ meta:
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
-  reliability: medium
+  reliability: high
   title: "Sub-ns time transfer consistency: a direct comparison between GPS CV and T2L2"
   year: 2016
   first_author: Exertier
-  authors: ["P. Exertier",
-    "E. Samain",
-    "C. Courde",
-    "M. Aimar",
-    "J. M. Torre",
-    "G. D. Rovera",
-    "M. Abgrall",
-    "P. Uhrich",
-    "R. Sherwood",
-    "G. Herold",
-    "U. Schreiber",
-    "P. Guillemot"]
+  authors: ["P. Exertier", "E. Samain", "C. Courde", "R. Aimar", "J. M. Torre", "G. D. Rovera",
+    "M. Abgrall", "P. Uhrich", "R. Sherwood", "G. Herold", "U. Schreiber", "P. Guillemot"]
   journal: "Metrologia"
+  volume: 53
+  issue: 6
+  pages: "1395-1401"
   doi: "10.1088/0026-1394/53/6/1395"
   note: >
-    [journal_paper]
-    待补充推理链条和知识点提取。
+    [期刊论文] Observatoire de la Côte d'Azur + SYRTE + PTB. 直接比较两种卫星时间传递方法：
+    GPS common-view (CV) 与 T2L2（Time Transfer by Laser Link，Jason-2 卫星上）。
+    两者在 sub-ns（亚纳秒）一致，验证了 T2L2 光学激光链路作为独立校准方案的可靠性，
+    并为 GPS CV 时间传递不确定度预算提供外部校验。
+
+entities:
+  - id: ent.t2l2_laser_time_transfer
+    name: "T2L2 卫星激光时间传递（Time Transfer by Laser Link）"
+    aliases: ["T2L2", "Time Transfer by Laser Link on Jason-2"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      Jason-2 卫星激光反射镜 + 船载/地面激光测距站双向激光脉冲测量，
+      实现地面站间通过卫星的光学时间传递，用作 GPS CV 的独立校准标准。
+    key_parameters:
+      platform: "Jason-2 satellite"
+      pulse: "ns-scale laser pulse"
+      technique: "two-way laser time transfer via satellite retroreflector"
+    note: "Level 2 实例，PART-OF ent.satellite_microwave_time_transfer_link（待建 Level 1）"
+
+  - id: ent.gps_common_view_time_transfer
+    name: "GPS 共视时间传递（GPS CV）"
+    hierarchy_level: 2
+    status: operational
+    function: >
+      两地站同时观测同一颗 GPS 卫星发播的时码，通过对消卫星钟、轨道、电离层误差
+      的对称部分实现远程时间比对。TAI 基础工具，典型 uncertainty ~ns 级。
+    note: "Level 2 实例，PART-OF ent.satellite_microwave_time_transfer_link"
+
+  - id: ent.satellite_microwave_time_transfer_link
+    name: "卫星时间传递链路（Level 1 总节点，含微波与光学）"
+    aliases: ["satellite TF link", "GNSS/TWSTFT/T2L2"]
+    hierarchy_level: 1
+    status: operational
+    function: >
+      以人造卫星为中继，借助微波（GNSS 单向/双向）或光学（T2L2、未来光学链路）
+      信号实现地面站间全球时间同步；TAI 构建的基础技术。
+    key_parameters:
+      techniques: "GPS CV, TWSTFT, T2L2, future optical satellite links"
+      typical_uncertainty: "sub-ns (T2L2) to few ns (GPS CV)"
+    note: "Level 1 generic；含 ent.microwave_link_mwl 等 I-SOC 空间段链路作为 future 分支"
+
+relations:
+  - id: rel.Exe16_01
+    subject: ent.t2l2_laser_time_transfer
+    predicate: PART-OF
+    object: ent.satellite_microwave_time_transfer_link
+    source:
+      paper: exertier2016
+      claim: "T2L2 ... time transfer by laser link"
+
+  - id: rel.Exe16_02
+    subject: ent.gps_common_view_time_transfer
+    predicate: PART-OF
+    object: ent.satellite_microwave_time_transfer_link
+    source:
+      paper: exertier2016
+      claim: "GPS common-view time transfer"
+
+  - id: rel.Exe16_03
+    subject: ent.gps_common_view_time_transfer
+    predicate: ENABLED-BY
+    object: pri.common_view_clock_comparison
+    source:
+      paper: exertier2016
+      claim: "direct comparison between GPS CV and T2L2"
+    note: "pri.common_view_clock_comparison 定义于 cacciapuoti2017"

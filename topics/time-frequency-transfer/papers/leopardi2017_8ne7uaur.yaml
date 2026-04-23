@@ -1,28 +1,41 @@
-# Leopardi 2017 — Single-branch Er:fiber frequency comb for precision optical metrology with 10(-1...
-# 提取者：AI 草稿，待专家确认
+# Leopardi 2017 — Single-branch Er:fiber frequency comb for 10⁻¹⁸ precision optical metrology [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
 # 提取日期：2026-04-23
 # Schema版本：v4.5
-# 专题：time-frequency-transfer
+# 专题：time-frequency-transfer（cross-reference）
 # contribution_type: evidence
+# 注意：此论文同时为 optical-frequency-combs 专题主论文（见 topics/optical-frequency-combs/papers/leopardi2017.yaml），
+# 本文件仅作为 time-frequency-transfer 专题的交叉引用条目，避免节点重复定义。
 
 meta:
   zotero_key: "8ne7uaur"
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
-  reliability: medium
-  title: "Single-branch Er:fiber frequency comb for precision optical metrology with 10(-18) fractional instability"
+  reliability: high
+  title: "Single-branch Er:fiber frequency comb for precision optical metrology with 10⁻¹⁸ fractional instability"
   year: 2017
   first_author: Leopardi
-  authors: ["H. Leopardi",
-    "J. Davila-Rodriguez",
-    "F. Quinlan",
-    "J. Olson",
-    "J. A. Sherman",
-    "S. A. Diddams",
-    "T. M. Fortier"]
+  authors: ["H. Leopardi", "J. Davila-Rodriguez", "F. Quinlan", "J. Olson", "J. A. Sherman",
+    "S. A. Diddams", "T. M. Fortier"]
   journal: "Optica"
-  doi: "10.1364/optica.4.000879"
+  volume: 4
+  issue: 8
+  pages: "879-885"
+  doi: "10.1364/OPTICA.4.000879"
   note: >
-    [journal_paper]
-    待补充推理链条和知识点提取。
+    [期刊论文 / 交叉引用] NIST Boulder. 主题为 Er:fiber 光频梳单分支架构（见
+    `topics/optical-frequency-combs/papers/leopardi2017.yaml` 完整版）。对 TF transfer
+    专题的关联：该梳实现 fractional optical measurement uncertainty <1×10⁻¹⁹，
+    fractional frequency instability 3×10⁻¹⁸ @1 s、1×10⁻¹⁹ @1000 s，
+    可直接服务于光纤/自由空间链路远端的光钟比对、光↔微波桥接读出。
+
+relations:
+  - id: rel.Leo17_01
+    subject: ent.coherent_optical_fiber_link
+    predicate: CONDITIONED-BY
+    object: ent.single_branch_erfiber_comb_l17
+    source:
+      paper: leopardi2017
+      claim: "frequency comb to enable optical clock comparison via fiber links"
+    note: "ent.single_branch_erfiber_comb_l17 定义于 optical-frequency-combs/papers/leopardi2017.yaml；本关系记录跨专题桥接"

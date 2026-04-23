@@ -1,5 +1,5 @@
-# Bodine 2020 — Optical time-frequency transfer across a free-space, three-node network
-# 提取者：AI 草稿，待专家确认
+# Bodine 2020 — Optical time-frequency transfer across a free-space three-node network [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
 # 提取日期：2026-04-23
 # Schema版本：v4.5
 # 专题：time-frequency-transfer
@@ -10,21 +10,58 @@ meta:
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
-  reliability: medium
+  reliability: high
   title: "Optical time-frequency transfer across a free-space, three-node network"
   year: 2020
   first_author: Bodine
-  authors: ["M. I. Bodine",
-    "J. L. Ellis",
-    "W. C. Swann",
-    "S. A. Stevenson",
-    "J. D. Deschenes",
-    "E. D. Hannah",
-    "P. Manurkar",
-    "N. R. Newbury",
-    "L. C. Sinclair"]
-  journal: "Apl Photonics"
+  authors: ["M. I. Bodine", "J. L. Ellis", "W. C. Swann", "S. A. Stevenson", "J.-D. Deschênes",
+    "E. D. Hannah", "P. Manurkar", "N. R. Newbury", "L. C. Sinclair"]
+  journal: "APL Photonics"
+  volume: 5
+  issue: 7
+  pages: "076113"
   doi: "10.1063/5.0010704"
   note: >
-    [journal_paper]
-    待补充推理链条和知识点提取。
+    [期刊论文] NIST Boulder + Laval. 首次在三节点自由空间网络上演示 comb-based O-TWTFT，
+    验证多节点同步的可扩展性（几何一致性、级联误差、多链路并发操作）；为自由空间光钟
+    mesh 网络（ground-ground、ground-satellite）提供多节点操作的证据。
+
+entities:
+  - id: ent.three_node_free_space_network_b20
+    name: "三节点自由空间 O-TWTFT 网络（Bodine 2020）"
+    hierarchy_level: 2
+    status: demonstrated
+    key_parameters:
+      nodes: 3
+      configuration: "triangle free-space geometry"
+    note: "Level 2 实例，PART-OF ent.free_space_optical_tf_link"
+
+principles:
+  - id: pri.multi_node_tf_network_closure
+    name: "多节点时频网络闭合一致性原理"
+    tier: engineering
+    verification_status: demonstrated
+    statement: >
+      当 N ≥ 3 节点形成环形 TF 传递网络时，任一回路的同步偏差应闭合为零
+      (Σ Δt_ij = 0)；实际系统中回路闭合残差反映未建模系统误差，
+      可作为多节点操作的内部一致性诊断。
+    domain: "自由空间 / 光纤时频网络工程"
+    conditions: "N ≥ 3 nodes; 每节点具备本地 comb O-TWTFT 终端；可同时并行测量任一对链路"
+    source_claim: "three-node network"
+
+relations:
+  - id: rel.Bod20_01
+    subject: ent.three_node_free_space_network_b20
+    predicate: PART-OF
+    object: ent.free_space_optical_tf_link
+    source:
+      paper: bodine2020
+      claim: "free-space three-node network optical time-frequency transfer"
+
+  - id: rel.Bod20_02
+    subject: ent.three_node_free_space_network_b20
+    predicate: OPERATIONALIZED-AS
+    object: pri.multi_node_tf_network_closure
+    source:
+      paper: bodine2020
+      claim: "three-node network ... closure diagnostics"

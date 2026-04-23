@@ -2,12 +2,21 @@
 
 # Frequency Standards — Topic Index
 
-> Auto-generated 2026-04-23 07:05 UTC · 3 papers · 16 nodes · 18 relations
+> Auto-generated 2026-04-23 13:06 UTC · 12 papers · 29 nodes · 40 relations
 
 ## Entities
 
 | ID | Name | Level | Source |
 |----|------|------:|--------|
+| `ent.al_ion_quantum_logic_clock_r08` | NIST ²⁷Al⁺ 量子逻辑光钟（Rosenband 2008） | 2 | [rosenband2008](topics/frequency-standards/papers/rosenband2008.yaml) |
+| `ent.bacon_three_clock_network_b21` | Boulder BACON 三光钟网络比对（Bacon 2021） | 2 | [bacon2021](topics/frequency-standards/papers/bacon2021.yaml) |
+| `ent.hg_ion_optical_clock_nist_o06` | NIST ²⁰³Hg⁺ 单离子光钟（Oskay 2006） | 2 | [oskay2006](topics/frequency-standards/papers/oskay2006.yaml) |
+| `ent.jila_dual_sr_clock_si_lo_o19` | JILA 双 ⁸⁷Sr 光晶格钟 + Si cavity LO（Oelker 2019） | 2 | [oelker2019](topics/frequency-standards/papers/oelker2019.yaml) |
+| `ent.jila_mm_scale_redshift_sr_clock_b22` | JILA 毫米尺度引力红移 Sr 晶格钟实验（Bothwell 2022） | 2 | [bothwell2022](topics/frequency-standards/papers/bothwell2022.yaml) |
+| `ent.jila_sr_lattice_clock_n15` | JILA ⁸⁷Sr 光晶格钟（Nicholson 2015, 2×10⁻¹⁸） | 2 | [nicholson2015](topics/frequency-standards/papers/nicholson2015.yaml) |
+| `ent.jila_sri_sr_clock_b19` | JILA SrI ⁸⁷Sr 光晶格钟（Bothwell 2019, 2×10⁻¹⁸） | 2 | [bothwell2019](topics/frequency-standards/papers/bothwell2019.yaml) |
+| `ent.microwave_frequency_standard` | 微波频率标准（Level 1 总节点） | 1 | [heavner2005](topics/frequency-standards/papers/heavner2005.yaml) |
+| `ent.nist_f1_cs_fountain_h05` | NIST-F1 铯喷泉初级频标（2005 改进版） | 2 | [heavner2005](topics/frequency-standards/papers/heavner2005.yaml) |
 | `ent.nuclear_clock_229th` | ²²⁹Th 核钟（架构子类型） | 2 | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
 | `ent.optical_frequency_standard` | 光学频率标准（通用） | 1 | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
 | `ent.optical_lattice_clock` | 光晶格钟（架构子类型） | 2 | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
@@ -17,12 +26,16 @@
 
 | ID | Name | Tier | Source |
 |----|------|------|--------|
+| `pri.blackbody_radiation_stark_shift` | 室温黑体辐射 Stark 频移原理 | domain | [ludlow2015](topics/frequency-standards/papers/ludlow2015.yaml) |
 | `pri.dick_effect` | Dick 效应（时钟周期死时间噪声混叠） | domain | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
+| `pri.gravitational_redshift_within_atomic_sample` | 原子样品内部引力红移可分辨原理 | domain | [bothwell2022](topics/frequency-standards/papers/bothwell2022.yaml) |
 | `pri.magic_wavelength_lattice` | 魔术波长光晶格原理 | domain | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
 | `pri.magic_wavelength_operational_protocol_l08` | 魔术波长光晶格钟操作协议原理（Ludlow thesis） | domain | [ludlow2008_thesis](topics/frequency-standards/papers/ludlow2008_thesis.yaml) |
 | `pri.optical_clock_ten_minus_eighteen_geoid_bridge` | 光钟 10⁻¹⁸ 分数精度 ↔ 1 cm 大地水准面分辨率桥梁 | domain | [diddams2016](topics/frequency-standards/papers/diddams2016.yaml) |
 | `pri.qpn_dick_two_fundamental_limits_dfl16` | 光钟双重基本极限：量子投影噪声 + Dick 效应 | domain | [diddams2016](topics/frequency-standards/papers/diddams2016.yaml) |
+| `pri.quantum_logic_clock_readout` | 量子逻辑光钟读出原理 | domain | [rosenband2008](topics/frequency-standards/papers/rosenband2008.yaml) |
 | `pri.quantum_projection_noise_limit` | 量子投影噪声极限 | domain | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
+| `pri.si_second_cesium_definition` | SI 秒的 Cs 超精细跃迁定义 | foundational | [heavner2005](topics/frequency-standards/papers/heavner2005.yaml) |
 | `pri.sr_clock_systematic_budget_framework_l08` | Sr 光晶格钟系统误差预算框架（Ludlow thesis） | domain | [ludlow2008_thesis](topics/frequency-standards/papers/ludlow2008_thesis.yaml) |
 
 ## Methods
@@ -66,13 +79,20 @@
 
 - **Source**: ludlow2008_thesis
 
+### `rel.Lud15_02`: `ent.optical_lattice_clock` → `pri.blackbody_radiation_stark_shift`
+
+- **Source**: ludlow2015
+
 ## Cross-Topic References
 
 Nodes referenced but not defined in this topic:
 
 | Relation | Predicate | External Node | Source |
 |----------|-----------|---------------|--------|
+| `rel.Bac21_01` | CONDITIONED-BY | `ent.coherent_optical_fiber_link` | bacon2021 |
 | `rel.F26_11` | CONDITIONED-BY | `ent.fp_cavity_system` | fortier2026 |
+| `rel.Oel19_02` | CONDITIONED-BY | `ent.fp_cavity_system` | oelker2019 |
+| `rel.Bac21_02` | CONDITIONED-BY | `ent.free_space_optical_tf_link` | bacon2021 |
 | `rel.F26_10` | CONDITIONED-BY | `ent.optical_frequency_comb` | fortier2026 |
 | `rel.L08T_04` | OPERATIONALIZED-AS | `meth.allan_deviation_adev` | ludlow2008_thesis |
 

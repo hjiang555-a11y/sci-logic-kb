@@ -1,0 +1,76 @@
+# Heavner 2005 — NIST-F1: recent improvements and accuracy evaluations [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：frequency-standards
+# contribution_type: evidence
+
+meta:
+  zotero_key: "HEAVNER2005"
+  topic: frequency-standards
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "NIST-F1: recent improvements and accuracy evaluations"
+  year: 2005
+  first_author: Heavner
+  authors: ["T. P. Heavner", "S. R. Jefferts", "E. A. Donley", "J. H. Shirley", "T. E. Parker"]
+  journal: "Metrologia"
+  volume: 42
+  issue: 5
+  pages: "411-422"
+  doi: "10.1088/0026-1394/42/5/012"
+  note: >
+    [期刊论文] NIST Boulder. NIST-F1 Cs 喷泉初级频标近几年改进与精度评估：
+    2×改善实现 u_B 0.53×10⁻¹⁵（2005-01）、u_B+time-transfer 0.97×10⁻¹⁵（BIPM 上报）。
+    微波频标的代表性 Cs 初级标准文献，为光钟-Cs 比对链（Oskay 2006、Rosenband 2008、
+    本 PR 也包含 Guéna 2017 fiber-link 喷泉比对）提供微波端不确定度预算基准。
+
+entities:
+  - id: ent.nist_f1_cs_fountain_h05
+    name: "NIST-F1 铯喷泉初级频标（2005 改进版）"
+    hierarchy_level: 2
+    status: operational
+    key_parameters:
+      species: "¹³³Cs laser-cooled fountain"
+      uB_2005: "0.53×10⁻¹⁵"
+      uB_plus_tt: "0.97×10⁻¹⁵"
+    note: "Level 2 实例，PART-OF ent.cs_fountain_primary_standard（待建 Level 1；本文件暂作参考节点 PART-OF ent.microwave_frequency_standard）"
+
+  - id: ent.microwave_frequency_standard
+    name: "微波频率标准（Level 1 总节点）"
+    aliases: ["microwave atomic standard", "Cs/Rb/H-maser"]
+    hierarchy_level: 1
+    status: operational
+    function: "基于原子/脉泽微波跃迁的频率标准；包括 Cs 喷泉初级标准、H 脉泽、Rb 副标准、CSAC 等。"
+    note: "Level 1 generic node；占位至微波分支完整展开"
+
+relations:
+  - id: rel.Hea05_01
+    subject: ent.nist_f1_cs_fountain_h05
+    predicate: PART-OF
+    object: ent.microwave_frequency_standard
+    source:
+      paper: heavner2005
+      claim: "NIST-F1 ... laser-cooled Cs fountain primary frequency standard"
+
+  - id: rel.Hea05_02
+    subject: ent.nist_f1_cs_fountain_h05
+    predicate: REALIZES
+    object: pri.si_second_cesium_definition
+    source:
+      paper: heavner2005
+      claim: "realization of the SI second"
+    note: "pri.si_second_cesium_definition 占位（已有或可新增；若已有请专家合并）"
+
+principles:
+  - id: pri.si_second_cesium_definition
+    name: "SI 秒的 Cs 超精细跃迁定义"
+    tier: foundational
+    verification_status: accepted
+    statement: >
+      1967 年 CGPM 定义：SI 秒为铯-133 原子基态两个超精细能级之间跃迁辐射
+      9192631770 周期的持续时间。Cs 喷泉初级频标实现此定义，当前 u_B ≤ 10⁻¹⁶ 级。
+    domain: "计量学基础定义"
+    conditions: "Cs 原子基态；无扰动理想化条件下"
+    source_claim: "realization of the SI second"

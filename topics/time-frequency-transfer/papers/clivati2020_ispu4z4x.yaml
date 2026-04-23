@@ -1,5 +1,5 @@
-# Clivati 2020 — Robust optical frequency dissemination with a dual-polarization coherent receive...
-# 提取者：AI 草稿，待专家确认
+# Clivati 2020 — Robust optical frequency dissemination with a dual-polarization coherent receiver [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
 # 提取日期：2026-04-23
 # Schema版本：v4.5
 # 专题：time-frequency-transfer
@@ -10,19 +10,56 @@ meta:
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
-  reliability: medium
+  reliability: high
   title: "Robust optical frequency dissemination with a dual-polarization coherent receiver"
   year: 2020
   first_author: Clivati
-  authors: ["C. Clivati",
-    "P. Savio",
-    "S. Abrate",
-    "V. Curri",
-    "R. Gaudino",
-    "M. Pizzocaro",
-    "D. Calonico"]
+  authors: ["C. Clivati", "P. Savio", "S. Abrate", "V. Curri", "R. Gaudino", "M. Pizzocaro", "D. Calonico"]
   journal: "Optics Express"
-  doi: "10.1364/oe.378602"
+  volume: 28
+  issue: 6
+  pages: "8494-8511"
+  doi: "10.1364/OE.385306"
   note: >
-    [journal_paper]
-    待补充推理链条和知识点提取。
+    [期刊论文] INRIM + Politecnico di Torino. 识别到光纤链路长期运行中的偏振扰动会
+    导致光学拍频信号 fading 与探测失锁，限制可用时段。提出双偏振相干接收机 + FPGA
+    实时信号处理方案，消除 polarization fading 并实现 endless phase tracking，
+    支持长时、高可靠 optical frequency dissemination——是物理实验链路（如原子物理、
+    VLBI）级可用性的关键工程使能。
+
+principles:
+  - id: pri.dual_polarization_coherent_endless_phase_tracking
+    name: "双偏振相干接收无限相位跟踪原理"
+    tier: engineering
+    verification_status: demonstrated
+    statement: >
+      单偏振接收光学拍频时，光纤偏振随机扰动会引起拍频 amplitude fading（周期性近零），
+      导致相位检测失锁。双偏振相干接收 (DP-CoR) 同时采集 X/Y 偏振分量，FPGA 实时跟踪
+      偏振态变化，合成恒定 SNR 的拍频相位信号，实现跨偏振扰动事件的连续相位跟踪。
+    domain: "光纤频率传递工程；相位探测"
+    conditions: "偏振扰动速率 ≤ FPGA 处理带宽；光学 SNR 充足"
+    source_claim: "dual-polarization coherent receiver and a dedicated signal processing ... endless tracking of the optical phase"
+
+entities:
+  - id: ent.dual_polarization_receiver_link_cl20
+    name: "双偏振相干接收光频分发（INRIM Clivati 2020）"
+    hierarchy_level: 2
+    status: demonstrated
+    note: "Level 2 实例，PART-OF ent.coherent_optical_fiber_link"
+
+relations:
+  - id: rel.Cli20_01
+    subject: ent.dual_polarization_receiver_link_cl20
+    predicate: PART-OF
+    object: ent.coherent_optical_fiber_link
+    source:
+      paper: clivati2020
+      claim: "frequency dissemination over optical fiber links"
+
+  - id: rel.Cli20_02
+    subject: ent.dual_polarization_receiver_link_cl20
+    predicate: OPERATIONALIZED-AS
+    object: pri.dual_polarization_coherent_endless_phase_tracking
+    source:
+      paper: clivati2020
+      claim: "dual-polarization coherent receiver ... endless tracking of the optical phase"

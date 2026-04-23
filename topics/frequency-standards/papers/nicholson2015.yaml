@@ -1,0 +1,65 @@
+# Nicholson 2015 — Systematic evaluation of an atomic clock at 2×10⁻¹⁸ total uncertainty [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：frequency-standards
+# contribution_type: evidence — JILA ⁸⁷Sr 光晶格钟首次达到 2.1×10⁻¹⁸ 总分数不确定度；
+#   σ_y(1 s) = 2.2×10⁻¹⁶，BBR/lattice Stark/密度漂移主系统全面再评估。
+
+meta:
+  zotero_key: "NICHOLSON2015"
+  topic: frequency-standards
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Systematic evaluation of an atomic clock at 2×10⁻¹⁸ total uncertainty"
+  year: 2015
+  first_author: Nicholson
+  authors: ["T. L. Nicholson", "S. L. Campbell", "R. B. Hutson", "G. E. Marti", "B. J. Bloom",
+    "R. L. McNally", "W. Zhang", "M. D. Barrett", "M. S. Safronova", "G. F. Strouse",
+    "W. L. Tew", "J. Ye"]
+  journal: "Nature Communications"
+  volume: 6
+  pages: "6896"
+  doi: "10.1038/ncomms7896"
+  note: >
+    [期刊论文] JILA. 在配合 state-of-the-art 稳频激光时，JILA ⁸⁷Sr 光晶格钟实现 2.2×10⁻¹⁶ @1 s
+    分数稳定度；系统评估重新降低 lattice ac Stark、热环境、原子对室温 BBR 响应等主要系统，
+    总分数不确定度 2.1×10⁻¹⁸。首个 2×10⁻¹⁸ 总不确定度光钟。
+
+entities:
+  - id: ent.jila_sr_lattice_clock_n15
+    name: "JILA ⁸⁷Sr 光晶格钟（Nicholson 2015, 2×10⁻¹⁸）"
+    hierarchy_level: 2
+    status: demonstrated
+    key_parameters:
+      species: "⁸⁷Sr optical lattice clock"
+      instability_1s: "2.2×10⁻¹⁶"
+      total_uncertainty: "2.1×10⁻¹⁸"
+      key_improvements: "lattice ac Stark; BBR; thermal environment"
+    note: "Level 2 实例，PART-OF ent.optical_lattice_clock"
+
+relations:
+  - id: rel.Nic15_01
+    subject: ent.jila_sr_lattice_clock_n15
+    predicate: PART-OF
+    object: ent.optical_lattice_clock
+    source:
+      paper: nicholson2015
+      claim: "⁸⁷Sr optical lattice clock"
+
+  - id: rel.Nic15_02
+    subject: ent.jila_sr_lattice_clock_n15
+    predicate: CHARACTERIZED-BY
+    object: met.optical_clock_fractional_uncertainty
+    source:
+      paper: nicholson2015
+      claim: "total uncertainty of the JILA Sr clock to 2.1×10⁻¹⁸"
+
+  - id: rel.Nic15_03
+    subject: ent.jila_sr_lattice_clock_n15
+    predicate: CHARACTERIZED-BY
+    object: met.optical_clock_fractional_instability
+    source:
+      paper: nicholson2015
+      claim: "fractional stability of 2.2×10⁻¹⁶ at 1 s"

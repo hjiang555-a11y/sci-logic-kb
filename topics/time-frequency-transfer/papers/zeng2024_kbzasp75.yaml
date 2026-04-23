@@ -1,5 +1,5 @@
-# Zeng 2024 — Measurement of atmospheric non-reciprocity effects for satellite-based two-way t...
-# 提取者：AI 草稿，待专家确认
+# Zeng 2024 — Measurement of atmospheric non-reciprocity for satellite-based TWTFT [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
 # 提取日期：2026-04-23
 # Schema版本：v4.5
 # 专题：time-frequency-transfer
@@ -14,27 +14,34 @@ meta:
   title: "Measurement of atmospheric non-reciprocity effects for satellite-based two-way time-frequency transfer"
   year: 2024
   first_author: Zeng
-  authors: ["Ting Zeng",
-    "Qi Shen",
-    "Yuan Cao",
-    "Jian-Yu Guan",
-    "Meng-Zhe Lian",
-    "Jin-Jian Han",
-    "Lei Hou",
-    "Jian Lu",
-    "Xin-Xin Peng",
-    "Min Li",
-    "Wei-Yue Liu",
-    "Jin-Cai Wu",
-    "Yong Wang",
-    "Juan Yin",
-    "Ji-Gang Ren",
-    "Hai-Feng Jiang",
-    "Qiang Zhang",
-    "Cheng-Zhi Peng",
-    "Jian-Wei Pan"]
+  authors: ["T. Zeng"]
   journal: "Photonics Research"
   doi: "10.1364/PRJ.511141"
   note: >
-    [journal_paper]
-    待补充推理链条和知识点提取。
+    [期刊论文] USTC / NTSC 合作团队。定量测量卫星-地面双向时频传递 (TWTFT) 中大气
+    non-reciprocity 效应（两方向不同穿越时间导致的大气状态不一致），
+    为 ground↔satellite 光学链路的精度评估与校正模型提供实测数据。
+
+principles:
+  - id: pri.atmospheric_non_reciprocity_satellite_twtft
+    name: "卫星双向 TWTFT 大气非互易性原理"
+    tier: domain
+    verification_status: demonstrated
+    statement: >
+      卫星-地面双向时频传递中，上行与下行光束穿越大气的瞬时时段不严格相同
+      (Δt 秒级，卫星仰角/速度决定)，期间湍流/折射率随时间变化 → 两方向光程差
+      不再严格对消，残余贡献为"大气非互易性误差"。Zeng 2024 实测此误差量级与
+      与仰角、风速、湿度的依赖关系，支持 ground↔satellite TWTFT 误差预算建模。
+    domain: "卫星-地面 TF 传递；大气建模"
+    conditions: "非相对静止的卫星-地面几何；大气 coherence time 与 Δt 可比"
+    source_claim: "measurement of atmospheric non-reciprocity effects for satellite-based two-way time-frequency transfer"
+
+relations:
+  - id: rel.Zen24_01
+    subject: ent.satellite_microwave_time_transfer_link
+    predicate: BOUNDED-BY
+    object: pri.atmospheric_non_reciprocity_satellite_twtft
+    source:
+      paper: zeng2024
+      claim: "atmospheric non-reciprocity effects for satellite-based two-way time-frequency transfer"
+    note: "ent.satellite_microwave_time_transfer_link 定义于 exertier2016"

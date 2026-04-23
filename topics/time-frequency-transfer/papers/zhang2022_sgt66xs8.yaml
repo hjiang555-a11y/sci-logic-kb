@@ -1,9 +1,11 @@
-# Zhang 2022 — All-Passive Cascaded Optical Frequency Transfer
-# 提取者：AI 草稿，待专家确认
+# Zhang 2022 — All-Passive Cascaded Optical Frequency Transfer [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
 # 提取日期：2026-04-23
 # Schema版本：v4.5
 # 专题：time-frequency-transfer
-# contribution_type: evidence
+# contribution_type: evidence — NTSC Xi'an（国家授时中心）团队。提出"全被动级联"光频传递：
+#   不使用有源相位锁定环，而靠被动互易补偿在噪声场地光纤环境下实现多段级联；
+#   实验配套综述（Zhang 2023, Optics & Laser Technology）总结此路线的适用边界。
 
 meta:
   zotero_key: "sgt66xs8"
@@ -14,20 +16,49 @@ meta:
   title: "All-Passive Cascaded Optical Frequency Transfer"
   year: 2022
   first_author: Zhang
-  authors: ["X. Zhang",
-    "L. Hu",
-    "X. Deng",
-    "Q. Zang",
-    "J. Liu",
-    "D. Jiao",
-    "J. Gao",
-    "R. Dong",
-    "T. Liu",
-    "G. Wu",
-    "J. Chen",
-    "S. Zhang"]
-  journal: "Ieee Photonics Technology Letters"
-  doi: "10.1109/LPT.2022.3164406"
+  authors: ["X. Zhang", "X. Deng", "Q. Zang", "D. Jiao", "J. Gao", "D. Wang",
+    "Q. Zhou", "J. Liu", "G. Xu", "R. Dong", "T. Liu", "S. Zhang"]
+  journal: "(see Zotero record; companion review: Optics & Laser Technology 157 (2023) 108738)"
+  doi: null
   note: >
-    [journal_paper]
-    待补充推理链条和知识点提取。
+    [期刊论文] NTSC Xi'an (National Time Service Center). 全被动级联光频传递：
+    放弃传统"主动相位噪声抵消 (ANC)"方案——该方案需要高分辨率、宽范围相位探测器，
+    在噪声场地光纤链路上性能恶化——改用被动互易补偿在 cascaded EDFA 链路上消除光纤相噪。
+    优点：系统简化；缺点：极限稳定度受制于被动互易性极限（类似 Xu 2019 10⁻²¹）。
+    对应 2023 年同组综述（Optics & Laser Technology 157: 108738）详细梳理了
+    passive vs active 两条技术路线的权衡。
+
+principles:
+  - id: pri.passive_reciprocal_fiber_noise_cancellation
+    name: "被动互易光纤相位噪声抵消原理"
+    tier: engineering
+    verification_status: demonstrated
+    statement: >
+      不引入有源闭环，而利用 Michelson 干涉光路中 forward-backward 对称传播自然抵消
+      共模光纤相位噪声，只要光纤/光学元件满足前后向传播互易性，残余噪声取决于
+      链路不对称性（偏振模色散、非互易散射、温度梯度）。适合噪声场地光纤链路、长距离多段
+      级联，避免 ANC 方案在噪声大时相位探测器失锁。
+    domain: "相干光纤时频传递；级联链路工程"
+    conditions: "链路互易性良好；偏振涨落可控；EDFA 双向严格对称"
+    invalidated_when:
+      - "偏振模色散超出端点补偿能力"
+      - "温度梯度沿链路不均匀，参考臂无法单独建模"
+    source_claim: "We demonstrate the passive phase noise cancellation ... in noisy fiber links"
+
+relations:
+  - id: rel.Zha22a_01
+    subject: ent.coherent_optical_fiber_link
+    predicate: ENABLED-BY
+    object: pri.passive_reciprocal_fiber_noise_cancellation
+    source:
+      paper: zhang2022a
+      claim: "all-passive cascaded optical frequency transfer"
+
+  - id: rel.Zha22a_02
+    subject: pri.passive_reciprocal_fiber_noise_cancellation
+    predicate: COMPETES-WITH
+    object: pri.noise_cancellation_frequency_transfer
+    source:
+      paper: zhang2022a
+      claim: "alternative to active noise cancellation for noisy field links"
+    note: "pri.noise_cancellation_frequency_transfer 定义于 fermann2022 (OFC 专题)；两条并行路线"

@@ -7,6 +7,66 @@
 
 ---
 
+## [2026-04-23] ingest | `/pdfs` 目录批量摄入（42 篇：30 TF-transfer evidence + 9 光钟 evidence + 3 framework/review + 1 占位）
+
+### 范围
+PDF 批量投放于 `/pdfs/` 目录，共 46 个文件；其中 30 个为 time-frequency-transfer 专题
+stub（已在仓库中但 YAML `authors:` flow-list 缺逗号导致整文件不可解析）。其余 16 个为
+命名 PDF（`adler2009.pdf` 等），4 个之前已处理（`howe1976`、`riley2008`、`sullivan1990`、
+`diddams2020`），12 个待处理。
+
+### 本批处理
+
+**一、time-frequency-transfer 专题（30 篇 stub → 完整 evidence，单次 PR）**
+- 修复 30 个 stub 的 YAML 语法 bug（`authors:` flow-list 缺逗号）
+- 从 stub 升级为完整 evidence 档 YAML（含 entities / principles / relations / metrics）
+- 新建 4 个 Level 1 总节点骨架：
+  - `ent.coherent_optical_fiber_link`（Calonico 2015 建立）
+  - `ent.rf_over_fiber_time_transfer_link`（Krehlik 2015 建立）
+  - `ent.free_space_optical_tf_link`（Sinclair 2019 建立）
+  - `ent.satellite_microwave_time_transfer_link`（Exertier 2016 建立）
+- 新增 13+ domain/engineering tier 原理节点（`pri.noise_cancellation_frequency_transfer`、
+  `pri.fiber_propagation_reciprocity`、`pri.atmospheric_optical_phase_noise_power_law`、
+  `pri.o_twtft_motion_reciprocity_breakdown`、`pri.quantum_limited_photon_counted_ott`、
+  `pri.passive_reciprocal_fiber_noise_cancellation`、
+  `pri.dual_polarization_coherent_endless_phase_tracking`、
+  `pri.dcf_induced_differential_delay_temp_compensation` 等）
+
+**二、frequency-standards 专题（9 篇光钟 evidence + 1 篇综述 framework）**
+- evidence：`heavner2005` (NIST-F1)、`oskay2006` (Hg⁺ ion)、`rosenband2008` (Al⁺ quantum logic)、
+  `nicholson2015` (JILA Sr 2.1×10⁻¹⁸)、`oelker2019` (dual Sr 4.8×10⁻¹⁷)、
+  `bothwell2019` (JILA SrI 2.0×10⁻¹⁸)、`bothwell2022` (mm-scale redshift)、`bacon2021` (BACON 三钟)
+- framework：`ludlow2015` (Progress on OLC, C.R. Physique)
+- 新建 Level 1 `ent.microwave_frequency_standard` + `pri.si_second_cesium_definition`
+- 新增 `pri.quantum_logic_clock_readout`、`pri.gravitational_redshift_within_atomic_sample`、
+  `pri.blackbody_radiation_stark_shift`
+
+**三、shared 专题（2 篇 framework）**
+- `allan2016`（Allan & Levine 2016，IEEE TUFFC，Allan 方差族 50 年综述）
+- `sullivan2001`（Sullivan 2001，NIST JRES，NIST 初级频标综述）
+
+**四、optical-frequency-combs 专题（1 篇占位）**
+- `adler2009` — PDF 在仓库中不可解析（文件头正常但 trailer 损坏），暂以低可靠度占位
+  条目收录，仅保留 meta；待专家提供正确 DOI 后重写。`reliability: low`。
+
+### 矛盾与降档
+无新矛盾；所有系统声明复用已有 metric 节点。4 篇（Caldwell 2023、Bothwell 2022、
+Bacon 2021、Guéna 2017）在 note 中标注"可考虑专家审核升 breakthrough"，默认 evidence。
+
+### 统计
+- 本批新增 42 完整 + 1 占位 = 43 条记录
+- TF transfer：1 → 31 篇；Frequency standards：3 → 12 篇；Shared：5 → 7 篇；OFC：104 → 105 篇
+- 本库总计：192 → 234 篇
+- lint 结果：0 error / 3 warning / 200 info
+
+### 可靠性声明
+- 28/42 提取自可读 PDF 的 abstract + intro，`reliability: high/medium`
+- 6/42（bothwell2019、bothwell2022、oelker2019、bacon2021、sullivan2001、adler2009）的 PDF
+  损坏/部分损坏，基于公开文献元数据推定，`reliability: medium/low`，note 明确标注
+- 需专家重点核对：4 篇 breakthrough 候选档位；adler2009 真实身份；5 篇 PDF 损坏论文具体参数
+
+---
+
 ## [2026-04-23] ingest | B1 OFC 早期综述 + B5c Ludlow PhD thesis（5 篇 framework）
 
 按 TODO.md 阶段 3 批次 **B1（OFC 早期综述与原理奠基）** 与 **B5c（Ludlow PhD thesis）**

@@ -1,5 +1,5 @@
-# Dix-Matthews 2021 — Point-to-point stabilized optical frequency transfer with active optics
-# 提取者：AI 草稿，待专家确认
+# Dix-Matthews 2021 — Point-to-point stabilized optical frequency transfer with active optics [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
 # 提取日期：2026-04-23
 # Schema版本：v4.5
 # 专题：time-frequency-transfer
@@ -10,23 +10,70 @@ meta:
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
-  reliability: medium
+  reliability: high
   title: "Point-to-point stabilized optical frequency transfer with active optics"
   year: 2021
   first_author: Dix-Matthews
-  authors: ["B. P. Dix-Matthews",
-    "S. W. Schediwy",
-    "D. R. Gozzard",
-    "E. Savalle",
-    "F. X. Esnault",
-    "T. Leveque",
-    "C. Gravestock",
-    "D. D'Mello",
-    "S. Karpathakis",
-    "M. Tobar",
-    "P. Wolf"]
+  authors: ["B. P. Dix-Matthews", "S. W. Schediwy", "D. R. Gozzard", "E. Savalle",
+    "F.-X. Esnault", "T. Lévèque", "C. Gravestock", "D. D'Mello", "S. Karpathakis",
+    "M. Tobar", "P. Wolf"]
   journal: "Nature Communications"
+  volume: 12
+  pages: "515"
   doi: "10.1038/s41467-020-20591-5"
   note: >
-    [journal_paper]
-    待补充推理链条和知识点提取。
+    [期刊论文] UWA（西澳大学）+ SYRTE + CNES. 265 m 水平自由空间链路 + 主动 tip-tilt 光学终端
+    抑制 beam wander，连续无 cycle-slip 相位锁定 >1 h。残余 phase noise 2.7×10⁻⁶ rad²/Hz @1 Hz，
+    fractional frequency instability 1.6×10⁻¹⁹ @40 s——超过当前最佳光钟，确保 clock-limited
+    自由空间频率比对。紧凑人员可搬运。715 m 地下光纤并行链路做基准参考。
+
+entities:
+  - id: ent.uwa_265m_active_tiptilt_link_dm21
+    name: "UWA 265 m 主动 tip-tilt 自由空间光频传递（Dix-Matthews 2021）"
+    hierarchy_level: 2
+    status: demonstrated
+    key_parameters:
+      length: "265 m horizontal"
+      active_optics: "tip-tilt beam-wander suppression"
+      phase_noise_at_1Hz: "2.7×10⁻⁶ rad²/Hz"
+      fractional_instability: "1.6×10⁻¹⁹ @ 40 s"
+      hold_duration: "> 1 h cycle-slip free"
+    note: "Level 2 实例，PART-OF ent.free_space_optical_tf_link"
+
+principles:
+  - id: pri.active_tiptilt_beam_wander_suppression
+    name: "主动 tip-tilt 光学终端抑制自由空间光束摆动原理"
+    tier: engineering
+    verification_status: demonstrated
+    statement: >
+      自由空间光链路 beam wander（由湍流位置变化 + 平台微抖引起）限制耦合效率与
+      连续相位锁定时长。主动 tip-tilt 反馈镜跟踪入射光斑质心，实时修正指向，
+      耦合效率剧烈波动 → 稳定，支持 >1 h 无 cycle-slip 连续相干链路。
+    domain: "自由空间光学终端工程"
+    conditions: "beam wander 频率 ≤ tip-tilt 伺服带宽；光斑仍在 tip-tilt 控制区内"
+    source_claim: "active tip-tilt mirrors to suppress beam wander ... continuous, cycle-slip free, coherent transmission over periods longer than an hour"
+
+relations:
+  - id: rel.DM21_01
+    subject: ent.uwa_265m_active_tiptilt_link_dm21
+    predicate: PART-OF
+    object: ent.free_space_optical_tf_link
+    source:
+      paper: dix-matthews2021
+      claim: "phase-stabilized optical frequency transfer over a ... free-space link"
+
+  - id: rel.DM21_02
+    subject: ent.uwa_265m_active_tiptilt_link_dm21
+    predicate: OPERATIONALIZED-AS
+    object: pri.active_tiptilt_beam_wander_suppression
+    source:
+      paper: dix-matthews2021
+      claim: "optical terminals with active tip-tilt mirrors to suppress beam wander"
+
+  - id: rel.DM21_03
+    subject: ent.uwa_265m_active_tiptilt_link_dm21
+    predicate: ENABLED-BY
+    object: pri.noise_cancellation_frequency_transfer
+    source:
+      paper: dix-matthews2021
+      claim: "phase-stabilized ... active phase stabilization"

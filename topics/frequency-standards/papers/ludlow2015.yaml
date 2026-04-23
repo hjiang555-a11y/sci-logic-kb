@@ -1,0 +1,61 @@
+# Ludlow 2015 — Progress on the optical lattice clock [framework]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：frequency-standards
+# contribution_type: framework — 综述性质，聚焦 NIST/JILA 光晶格钟进展。
+# 注意：不要与 Ludlow/Boyd/Ye/Peik "Optical atomic clocks" Rev. Mod. Phys. 87, 637 (2015)
+# 混淆——本 PDF 是 C. R. Physique 16 (2015) 499–505 的短篇综述。
+
+meta:
+  zotero_key: "LUDLOW2015"
+  topic: frequency-standards
+  source_type: review
+  contribution_type: framework
+  reliability: high
+  title: "Progress on the optical lattice clock"
+  year: 2015
+  first_author: Ludlow
+  authors: ["A. D. Ludlow", "J. Ye"]
+  journal: "Comptes Rendus Physique"
+  volume: 16
+  issue: 5
+  pages: "499-505"
+  doi: "10.1016/j.crhy.2015.03.006"
+  note: >
+    [综述论文] NIST + JILA. Comptes Rendus Physique "La mesure du temps" 专刊短篇综述，
+    聚焦 Sr/Yb 光晶格钟最新进展：分数稳定度、系统评估、BBR/冷碰撞抑制、未来展望。
+    作为 framework 收录——补充 fortier2026 综述（Optica 2026）的 2015 时点基准。
+    不新增 Level 1 实体（已由 fortier2026 定义），只新增 review-level 关系确认
+    Sr/Yb 光晶格钟当时（2015）的 state-of-the-art。
+
+relations:
+  - id: rel.Lud15_01
+    subject: ent.optical_lattice_clock
+    predicate: CHARACTERIZED-BY
+    object: met.optical_clock_fractional_instability
+    source:
+      paper: ludlow2015
+      claim: "advances in frequency instability of optical lattice clocks"
+
+  - id: rel.Lud15_02
+    subject: ent.optical_lattice_clock
+    predicate: BOUNDED-BY
+    object: pri.blackbody_radiation_stark_shift
+    source:
+      paper: ludlow2015
+      claim: "atomic response to room-temperature blackbody radiation"
+    note: "pri.blackbody_radiation_stark_shift 占位；若已存在请按现有命名合并"
+
+principles:
+  - id: pri.blackbody_radiation_stark_shift
+    name: "室温黑体辐射 Stark 频移原理"
+    tier: domain
+    verification_status: accepted
+    statement: >
+      室温下（~300 K）黑体辐射电场对原子能级产生动态 Stark 频移，是光晶格钟在
+      10⁻¹⁸ 水平下的主导系统不确定度之一。抑制路径：(a) 精确测量原子 BBR 敏感度
+      + 室温监测；(b) 低温屏蔽室（cryogenic BBR shield）。
+    domain: "光晶格钟系统效应"
+    conditions: "典型 Sr: −2.13×10⁻¹⁴ @ 300 K；Yb: −2.6×10⁻¹⁵ @ 300 K"
+    source_claim: "atoms' thermal environment and atomic response to room-temperature blackbody radiation"

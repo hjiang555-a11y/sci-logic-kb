@@ -1,0 +1,58 @@
+# Oskay 2006 — Single-Atom Optical Clock with High Accuracy [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：frequency-standards
+# contribution_type: evidence — 首个达到与 Cs 喷泉初级标准可比（7.2×10⁻¹⁷）不确定度的
+#   单 ²⁰³Hg⁺ 离子光钟，绝对频率对 Cs 测量 9.1×10⁻¹⁶，打开光钟挑战 Cs 初级标准的竞争赛道。
+
+meta:
+  zotero_key: "OSKAY2006"
+  topic: frequency-standards
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Single-Atom Optical Clock with High Accuracy"
+  year: 2006
+  first_author: Oskay
+  authors: ["W. H. Oskay", "S. A. Diddams", "E. A. Donley", "T. M. Fortier", "T. P. Heavner",
+    "L. Hollberg", "W. M. Itano", "S. R. Jefferts", "M. J. Delaney", "K. Kim",
+    "F. Levi", "T. E. Parker", "J. C. Bergquist"]
+  journal: "Physical Review Letters"
+  volume: 97
+  issue: 2
+  pages: "020801"
+  doi: "10.1103/PhysRevLett.97.020801"
+  note: >
+    [期刊论文] NIST Boulder. 单 ²⁰³Hg⁺ 囚禁离子 5d¹⁰6s ²S₁/₂ − 5d⁹6s² ²D₅/₂ 电四极跃迁
+    (282 nm UV) 光钟，系统分数不确定度 7.2×10⁻¹⁷，对 Cs 喷泉 NIST-F1 绝对频率
+    1 064 721 609 899 144.94(97) Hz，统计极限总分数不确定度 9.1×10⁻¹⁶。
+    打开了光学频率标准在系统不确定度上**超越 Cs 喷泉初级标准**的新阶段。
+
+entities:
+  - id: ent.hg_ion_optical_clock_nist_o06
+    name: "NIST ²⁰³Hg⁺ 单离子光钟（Oskay 2006）"
+    hierarchy_level: 2
+    status: demonstrated
+    key_parameters:
+      species: "²⁰³Hg⁺"
+      transition: "²S₁/₂ − ²D₅/₂ electric quadrupole, 282 nm"
+      systematic_uncertainty: "7.2×10⁻¹⁷"
+    note: "Level 2 实例，PART-OF ent.trapped_ion_optical_clock"
+
+relations:
+  - id: rel.Osk06_01
+    subject: ent.hg_ion_optical_clock_nist_o06
+    predicate: PART-OF
+    object: ent.trapped_ion_optical_clock
+    source:
+      paper: oskay2006
+      claim: "optical frequency standard based on an ultraviolet transition in a single, laser-cooled mercury ion"
+
+  - id: rel.Osk06_02
+    subject: ent.hg_ion_optical_clock_nist_o06
+    predicate: CHARACTERIZED-BY
+    object: met.optical_clock_fractional_uncertainty
+    source:
+      paper: oskay2006
+      claim: "fractional systematic frequency uncertainty was below 7.2×10⁻¹⁷"

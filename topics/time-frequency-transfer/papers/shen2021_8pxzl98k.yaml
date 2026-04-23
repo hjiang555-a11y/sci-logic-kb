@@ -1,39 +1,65 @@
-# Shen 2021 — Experimental simulation of time and frequency transfer via an optical satellite–...
-# 提取者：AI 草稿，待专家确认
+# Shen 2021 — Experimental simulation of time and frequency transfer via optical satellite–ground link at 10⁻¹⁸ instability [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
 # 提取日期：2026-04-23
 # Schema版本：v4.5
 # 专题：time-frequency-transfer
-# contribution_type: evidence
+# contribution_type: evidence — USTC Pan 团队 Optica。地面模拟实验验证基于"脉冲激光"
+#   的光学卫星-地面时频传递链路，与微波链路相比具有更高时间分辨率与更大的不模糊区间；
+#   实验 instability 达到 10⁻¹⁸ 量级，为 I-SOC/ACES 后续替代方案提供依据。
 
 meta:
   zotero_key: "8pxzl98k"
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
-  reliability: medium
-  title: "Experimental simulation of time and frequency transfer via an optical satellite–ground link at 10-18 instability"
+  reliability: high
+  title: "Experimental simulation of time and frequency transfer via an optical satellite–ground link at 10⁻¹⁸ instability"
   year: 2021
   first_author: Shen
-  authors: ["Qi Shen",
-    "Jian-Yu Guan",
-    "Ting Zeng",
-    "Qi-Ming Lu",
-    "Liang Huang",
-    "Yuan Cao",
-    "Jiu-Peng Chen",
-    "Tian-Qi Tao",
-    "Jin-Cai Wu",
-    "Lei Hou",
-    "Sheng-Kai Liao",
-    "Ji-Gang Ren",
-    "Juan Yin",
-    "Jian-Jun Jia",
-    "Hai-Feng Jiang",
-    "Cheng-Zhi Peng",
-    "Qiang Zhang",
-    "Jian-Wei Pan"]
+  authors: ["Q. Shen", "J.-Y. Guan", "T. Zeng", "Q.-M. Lu", "L. Huang", "Y. Cao", "J.-P. Chen",
+    "T.-Q. Tao", "J.-C. Wu", "L. Hou", "S.-K. Liao", "J.-G. Ren", "J. Yin", "J.-J. Jia",
+    "H.-F. Jiang", "C.-Z. Peng", "Q. Zhang", "J.-W. Pan"]
   journal: "Optica"
+  volume: 8
+  issue: 4
+  pages: "471-476"
   doi: "10.1364/OPTICA.413114"
   note: >
-    [journal_paper]
-    待补充推理链条和知识点提取。
+    [期刊论文] USTC 潘建伟团队。地面模拟实验：脉冲激光（~10 ps 级脉宽）光学卫星-地面
+    链路 T&F 传递，达到 10⁻¹⁸ 级不稳定度。分析不同轨道（LEO/MEO/GEO）链路可见性、
+    多普勒、链路预算，结论高轨链路（长可见时间 + 慢多普勒）更适合稳定 T&F 比对/分发。
+    为 I-SOC（ELT+）与未来中国地空光链路项目提供证据。
+
+entities:
+  - id: ent.optical_satellite_ground_link_s21
+    name: "光学卫星-地面时频传递链路（脉冲激光，Shen 2021 模拟）"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      卫星与地面站之间以脉冲激光承载时间（脉冲到达时刻）与频率（脉冲 train 重频），
+      高时间分辨（~ps）+ 大非模糊区间；地面模拟 link budget + 动态多普勒，
+      端到端 instability 达到 10⁻¹⁸ 级。
+    key_parameters:
+      carrier: "pulsed laser (fs–ps)"
+      orbit_conclusion: "high orbits favored"
+      demonstrated_instability: "10⁻¹⁸ level"
+    note: "Level 2 实例，PART-OF ent.pulsed_optical_link_elt_plus（已定义于 cacciapuoti2017）"
+
+relations:
+  - id: rel.She21_01
+    subject: ent.optical_satellite_ground_link_s21
+    predicate: PART-OF
+    object: ent.pulsed_optical_link_elt_plus
+    source:
+      paper: shen2021
+      claim: "optical-based satellite–ground link, where the transferred carriers are pulsed lasers"
+    note: "ent.pulsed_optical_link_elt_plus 定义于 cacciapuoti2017"
+
+  - id: rel.She21_02
+    subject: ent.optical_satellite_ground_link_s21
+    predicate: CHARACTERIZED-BY
+    object: met.space_to_ground_link_instability
+    source:
+      paper: shen2021
+      claim: "10⁻¹⁸ instability"
+    note: "met.space_to_ground_link_instability 定义于 cacciapuoti2017"

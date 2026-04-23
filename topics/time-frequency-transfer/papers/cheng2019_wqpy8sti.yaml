@@ -1,9 +1,10 @@
-# Cheng 2019 — Time transfer through the optical supervisory channel in wavelength division mul...
-# 提取者：AI 草稿，待专家确认
+# Cheng 2019 — Time transfer through the optical supervisory channel in WDM systems [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
 # 提取日期：2026-04-23
 # Schema版本：v4.5
 # 专题：time-frequency-transfer
-# contribution_type: evidence
+# contribution_type: evidence — SJTU（上海交大）。利用商用 WDM 系统的光监控信道（OSC）
+#   子带传递时间信号，不影响现有通信业务；100 km 实验室 WDM 链路共传时间/监控/数据业务。
 
 meta:
   zotero_key: "wqpy8sti"
@@ -14,13 +15,47 @@ meta:
   title: "Time transfer through the optical supervisory channel in wavelength division multiplexing systems"
   year: 2019
   first_author: Cheng
-  authors: ["Hanhuang Cheng",
-    "Guiling Wu",
-    "Faxing Zuo",
-    "Liang Hu",
-    "Jianping Chen"]
-  journal: "Opt. Lett."
+  authors: ["H. Cheng", "G. Wu", "L. Hu", "F. Zuo", "J. Chen"]
+  journal: "Optics Letters"
+  volume: 44
+  issue: 21
+  pages: "5206-5209"
   doi: "10.1364/OL.44.005206"
   note: >
-    [journal_paper]
-    待补充推理链条和知识点提取。
+    [期刊论文] Shanghai Jiao Tong University. 在商用 WDM 系统的光监控信道（OSC，
+    通常 1510/1625 nm）内划一个子带承载时间信号，双向使用相同或极接近波长以最大化
+    对称性。100 km 实验室光纤同时承载 time + OSC + 数据业务，验证兼容性与子带时间传递
+    精度。工程示范意义大于性能纪录。
+
+entities:
+  - id: ent.osc_subband_time_transfer_cheng19
+    name: "OSC 子带时间传递（商用 WDM 系统复用）"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      在商用 WDM 系统的 OSC（光监控信道）内开辟一子带，仅加装 sub-OSC 滤波器即可
+      共传时间信号，与现有 OSC 及数据业务不冲突；双向同波长最大化对称。
+    key_parameters:
+      host: "commercial WDM + OSC"
+      length: "100 km (laboratory)"
+      bidir_symmetry: "same or near-identical wavelengths both directions"
+    note: "Level 2 实例，PART-OF ent.rf_over_fiber_time_transfer_link（子带承载 1 PPS 时间信号）"
+
+relations:
+  - id: rel.Che19_01
+    subject: ent.osc_subband_time_transfer_cheng19
+    predicate: PART-OF
+    object: ent.rf_over_fiber_time_transfer_link
+    source:
+      paper: cheng2019
+      claim: "optical fiber time transfer scheme through the optical supervisory channel ... in WDM systems"
+    note: "ent.rf_over_fiber_time_transfer_link 定义于 krehlik2015"
+
+  - id: rel.Che19_02
+    subject: ent.osc_subband_time_transfer_cheng19
+    predicate: OPERATIONALIZED-AS
+    object: pri.telecom_network_metrology_coexistence
+    source:
+      paper: cheng2019
+      claim: "transmission of the existing communication data service is not affected"
+    note: "pri.telecom_network_metrology_coexistence 定义于 lopez2015"

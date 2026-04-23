@@ -1,0 +1,67 @@
+# Bacon 2021 — Frequency ratio measurements at 18-digit accuracy using an optical clock network [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：frequency-standards
+# contribution_type: evidence — 考虑升级到 breakthrough。BACON 协作 (Boulder Atomic
+#   Clock Optical Network) 在 Boulder 三台最佳光钟 ²⁷Al⁺、¹⁷¹Yb、⁸⁷Sr 之间，通过
+#   光纤链路 + 自由空间链路同时测量三个频率比，不确定度均 ≤ 10⁻¹⁸；验证了多光钟网络的
+#   内部一致性与对 α 变化的约束。
+
+meta:
+  zotero_key: "BACON2021"
+  topic: frequency-standards
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: medium
+  title: "Frequency ratio measurements at 18-digit accuracy using an optical clock network"
+  year: 2021
+  first_author: Bacon
+  authors: ["The BACON Collaboration"]
+  journal: "Nature"
+  volume: 591
+  pages: "564-569"
+  doi: "10.1038/s41586-021-03253-4"
+  note: >
+    [期刊论文 / PDF 在仓库中不可解析，基于公开文献] BACON 协作 (NIST + JILA) 在 Boulder
+    通过光纤 + 自由空间链路比对 ²⁷Al⁺、¹⁷¹Yb、⁸⁷Sr 三台世界最佳光钟，三组频率比测量
+    分数不确定度 ≤ 10⁻¹⁸。三链路闭合一致性验证系统误差。对 Time-Frequency Transfer 专题
+    意义重大：本实验系统性展示 10⁻¹⁸ 级 TF 传递的物理可行性（光纤 + 自由空间）。
+
+entities:
+  - id: ent.bacon_three_clock_network_b21
+    name: "Boulder BACON 三光钟网络比对（Bacon 2021）"
+    hierarchy_level: 2
+    status: demonstrated
+    key_parameters:
+      clocks: "²⁷Al⁺ (NIST) + ¹⁷¹Yb (NIST) + ⁸⁷Sr (JILA)"
+      links: "fiber + free-space"
+      ratio_uncertainty: "≤ 10⁻¹⁸"
+    note: "Level 2 实例；跨专题节点（frequency-standards + time-frequency-transfer 证据）"
+
+relations:
+  - id: rel.Bac21_01
+    subject: ent.bacon_three_clock_network_b21
+    predicate: CONDITIONED-BY
+    object: ent.coherent_optical_fiber_link
+    source:
+      paper: bacon2021
+      claim: "fiber-optic link ... for clock frequency ratio measurement"
+    note: "跨专题引用：ent.coherent_optical_fiber_link 定义于 time-frequency-transfer/calonico2015"
+
+  - id: rel.Bac21_02
+    subject: ent.bacon_three_clock_network_b21
+    predicate: CONDITIONED-BY
+    object: ent.free_space_optical_tf_link
+    source:
+      paper: bacon2021
+      claim: "free-space optical link ... for Yb-Sr ratio"
+    note: "跨专题引用：ent.free_space_optical_tf_link 定义于 time-frequency-transfer/sinclair2019"
+
+  - id: rel.Bac21_03
+    subject: ent.bacon_three_clock_network_b21
+    predicate: CHARACTERIZED-BY
+    object: met.optical_clock_fractional_uncertainty
+    source:
+      paper: bacon2021
+      claim: "frequency ratio measurements at 18-digit accuracy"

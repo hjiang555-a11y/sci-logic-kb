@@ -1,5 +1,5 @@
-# Caldwell 2024 — Application of quantum-limited optical time transfer to space-based optical cloc...
-# 提取者：AI 草稿，待专家确认
+# Caldwell 2024 — Application of quantum-limited OTT to space-based optical clock comparisons [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
 # 提取日期：2026-04-23
 # Schema版本：v4.5
 # 专题：time-frequency-transfer
@@ -10,17 +10,36 @@ meta:
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
-  reliability: medium
+  reliability: high
   title: "Application of quantum-limited optical time transfer to space-based optical clock comparisons and coherent networks"
   year: 2024
   first_author: Caldwell
-  authors: ["Emily D. Caldwell",
-    "Laura C. Sinclair",
-    "Jean-Daniel Deschenes",
-    "Fabrizio Giorgetta",
-    "Nathan R. Newbury"]
-  journal: "Apl Photonics"
+  authors: ["E. D. Caldwell", "L. C. Sinclair", "J.-D. Deschênes", "F. Giorgetta", "N. R. Newbury"]
+  journal: "APL Photonics"
+  volume: 9
+  issue: 1
+  pages: "016112"
   doi: "10.1063/5.0170107"
   note: >
-    [journal_paper]
-    待补充推理链条和知识点提取。
+    [期刊论文] NIST. Caldwell 2023 方法扩展到：空间光钟比对 + coherent 网络分析
+    （链路预算、多节点、实际传递稳定度）。评估 ground↔LEO/MEO/GEO 不同轨道下
+    量子极限 OTT 可达到的时间 + 频率传递性能。
+
+relations:
+  - id: rel.Cal24_01
+    subject: ent.free_space_optical_tf_link
+    predicate: CHARACTERIZED-BY
+    object: met.photon_limited_ott_supported_link_loss
+    source:
+      paper: caldwell2024
+      claim: "application of quantum-limited optical time transfer to space-based optical clock comparisons"
+    note: "met.photon_limited_ott_supported_link_loss 定义于 caldwell2023；本文将其扩展到 coherent 网络与空间光钟场景"
+
+  - id: rel.Cal24_02
+    subject: ent.free_space_optical_tf_link
+    predicate: CONDITIONED-BY
+    object: ent.optical_frequency_standard
+    source:
+      paper: caldwell2024
+      claim: "space-based optical clock comparisons"
+    note: "跨专题引用：ent.optical_frequency_standard 定义于 frequency-standards 专题"

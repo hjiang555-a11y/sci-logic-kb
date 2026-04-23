@@ -1,5 +1,5 @@
-# Quan 2021 — High-resolution Microwave Frequency Dissemination via 56 km Optical Fiber Based ...
-# 提取者：AI 草稿，待专家确认
+# Quan 2021 — High-resolution 56 km microwave frequency dissemination via microwave phase compensation [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
 # 提取日期：2026-04-23
 # Schema版本：v4.5
 # 专题：time-frequency-transfer
@@ -14,15 +14,41 @@ meta:
   title: "High-resolution Microwave Frequency Dissemination via 56 km Optical Fiber Based on Microwave Phase Compensation"
   year: 2021
   first_author: Quan
-  authors: ["H. L. Quan",
-    "W. Y. Zhao",
-    "W. X. Xue",
-    "Y. Xing",
-    "H. F. Jiang",
-    "W. G. Guo",
-    "S. G. Zhang"]
+  authors: ["H. Quan", "W. Zhao", "W. Xue", "Y. Xing", "H. Jiang", "W. Guo", "S. Zhang"]
   journal: "Acta Photonica Sinica"
+  volume: 50
+  issue: 4
+  pages: "0406003"
   doi: "10.3788/gzxb20215004.0406003"
   note: >
-    [journal_paper]
-    待补充推理链条和知识点提取。
+    [期刊论文] NTSC Xi'an. 56 km 光纤微波频率传递，环回法测相位 + 本地预补偿，
+    双向采用不同频率微波调制避免光寄生反射串扰；配色散补偿光纤改善探测相噪。
+    实测传递稳定度 1.8×10⁻¹⁵ @1 s、4×10⁻¹⁸ @10⁴ s。
+
+entities:
+  - id: ent.ntsc_56km_rf_precompensation_q21
+    name: "NTSC 56 km 微波预补偿光纤传递（Quan 2021）"
+    hierarchy_level: 2
+    status: demonstrated
+    key_parameters:
+      length: "56 km"
+      instability: "1.8×10⁻¹⁵ @1 s, 4×10⁻¹⁸ @10⁴ s"
+      crosstalk_mitigation: "forward/backward use different microwave frequencies"
+    note: "Level 2 实例，PART-OF ent.rf_over_fiber_time_transfer_link"
+
+relations:
+  - id: rel.Qua21_01
+    subject: ent.ntsc_56km_rf_precompensation_q21
+    predicate: PART-OF
+    object: ent.rf_over_fiber_time_transfer_link
+    source:
+      paper: quan2021
+      claim: "56 km 光纤微波频率传递"
+
+  - id: rel.Qua21_02
+    subject: ent.ntsc_56km_rf_precompensation_q21
+    predicate: ENABLED-BY
+    object: pri.roundtrip_phase_compensation_rf_transfer
+    source:
+      paper: quan2021
+      claim: "环回法比较往返传递的微波信号相位获得链路上的相位扰动量，并实时控制本地发射端的微波发射信号相位实现预补偿"

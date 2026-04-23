@@ -1,5 +1,5 @@
-# Swann 2019 — Measurement of the impact of turbulence anisoplanatism on precision free-space o...
-# 提取者：AI 草稿，待专家确认
+# Swann 2019 — Impact of turbulence anisoplanatism on precision free-space optical time transfer [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
 # 提取日期：2026-04-23
 # Schema版本：v4.5
 # 专题：time-frequency-transfer
@@ -10,19 +10,67 @@ meta:
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
-  reliability: medium
+  reliability: high
   title: "Measurement of the impact of turbulence anisoplanatism on precision free-space optical time transfer"
   year: 2019
   first_author: Swann
-  authors: ["W. C. Swann",
-    "M. I. Bodine",
-    "I. Khader",
-    "J. D. Deschenes",
-    "E. Baumann",
-    "L. C. Sinclair",
-    "N. R. Newbury"]
+  authors: ["W. C. Swann", "M. I. Bodine", "I. Khader", "J.-D. Deschênes", "E. Baumann", "L. C. Sinclair", "N. R. Newbury"]
   journal: "Physical Review A"
+  volume: 99
+  issue: 2
+  pages: "023855"
   doi: "10.1103/PhysRevA.99.023855"
   note: >
-    [journal_paper]
-    待补充推理链条和知识点提取。
+    [期刊论文] NIST Boulder + Laval. 实验测量横向平台运动 + 湍流空间变化导致的 O-TWTFT
+    互易性破坏（anisoplanatism）。2 km 两路空间分离链路，同步与频率传递退化适度，
+    外推到 ground↔MEO 卫星链路仅几 fs 级 timing noise 增加——对自由空间光钟网络具鼓舞意义。
+
+entities:
+  - id: ent.anisoplanatism_study_link_sw19
+    name: "双路空间分离 O-TWTFT 湍流 anisoplanatism 测量（Swann 2019）"
+    hierarchy_level: 2
+    status: demonstrated
+    key_parameters:
+      baseline: "2 km (two spatially separated paths)"
+      extrapolation: "ground↔MEO 仅几 fs timing noise 增加"
+    note: "Level 2 实例，PART-OF ent.free_space_optical_tf_link"
+
+principles:
+  - id: pri.turbulence_anisoplanatism_tf_degradation
+    name: "湍流 anisoplanatism 对双向 TF 传递互易性的破坏原理"
+    tier: domain
+    verification_status: demonstrated
+    statement: >
+      当双向光学时频传递的两方向光束因平台横向运动或链路几何而穿越空间不同
+      湍流 cell 时（anisoplanatism），前向/后向光程不再互易，残余抖动增加。
+      实验测量 2 km 水平链路 anisoplanatism 导致的 timing 抖动与理论一致；
+      线性外推到 ground↔MEO 光学卫星链路只需容忍几 fs 级额外 timing noise，
+      对自由空间光钟网络可行性提供正面支持。
+    domain: "自由空间 TF 传递；大气湍流"
+    conditions: "两方向光束横向分离 ≥ 湍流相关尺度"
+    source_claim: "transverse platform motion coupled with spatial variations in atmospheric optical turbulence will lead to a breakdown in the time-of-flight reciprocity"
+
+relations:
+  - id: rel.Swa19_01
+    subject: ent.anisoplanatism_study_link_sw19
+    predicate: PART-OF
+    object: ent.free_space_optical_tf_link
+    source:
+      paper: swann2019
+      claim: "comb-based optical two-way time-frequency transfer over two spatially separated optical links"
+
+  - id: rel.Swa19_02
+    subject: ent.free_space_optical_tf_link
+    predicate: BOUNDED-BY
+    object: pri.turbulence_anisoplanatism_tf_degradation
+    source:
+      paper: swann2019
+      claim: "breakdown in the time-of-flight reciprocity"
+
+  - id: rel.Swa19_03
+    subject: ent.anisoplanatism_study_link_sw19
+    predicate: OPERATIONALIZED-AS
+    object: pri.turbulence_anisoplanatism_tf_degradation
+    source:
+      paper: swann2019
+      claim: "experimental measurements of this effect"

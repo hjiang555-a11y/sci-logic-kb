@@ -1,5 +1,5 @@
-# Quan 2022 — Microwave Frequency Dissemination over a 212 km Cascaded Urban Fiber Link with S...
-# 提取者：AI 草稿，待专家确认
+# Quan 2022 — Microwave Frequency Dissemination over 212 km cascaded urban fiber link at 10⁻¹⁸ [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
 # 提取日期：2026-04-23
 # Schema版本：v4.5
 # 专题：time-frequency-transfer
@@ -11,18 +11,57 @@ meta:
   source_type: journal_paper
   contribution_type: evidence
   reliability: medium
-  title: "Microwave Frequency Dissemination over a 212 km Cascaded Urban Fiber Link with Stability at the 10(-18) Level"
+  title: "Microwave Frequency Dissemination over a 212 km Cascaded Urban Fiber Link with Stability at the 10⁻¹⁸ Level"
   year: 2022
   first_author: Quan
-  authors: ["H. L. Quan",
-    "W. X. Xue",
-    "W. Y. Zhao",
-    "Y. Xing",
-    "H. F. Jiang",
-    "W. G. Guo",
-    "S. G. Zhang"]
+  authors: ["H. Quan", "W. Xue", "W. Zhao", "Y. Xing", "H. Jiang", "W. Guo", "S. Zhang"]
   journal: "Photonics"
-  doi: "10.3390/photonics9060399"
+  volume: 9
+  issue: 4
+  pages: "239"
+  doi: "10.3390/photonics9040239"
   note: >
-    [journal_paper]
-    待补充推理链条和知识点提取。
+    [期刊论文] NTSC Xi'an. 212 km = 2 段级联 106 km 城市场纤 RF-over-fiber 频率传递，
+    每段用独立微波 dissemination + 预补偿；两级之间采用不同 RF 调制频率避免 adjacent-stage
+    微波泄漏串扰。级联 stability 6.2×10⁻¹⁵ @1 s、6.4×10⁻¹⁸ @40000 s。
+
+entities:
+  - id: ent.ntsc_212km_cascaded_rf_link_q22
+    name: "NTSC 212 km 级联城市 RF-over-fiber 链路（Quan 2022）"
+    hierarchy_level: 2
+    status: demonstrated
+    key_parameters:
+      length: "212 km (2 × 106 km cascaded)"
+      instability: "6.2×10⁻¹⁵ @1 s, 6.4×10⁻¹⁸ @40000 s"
+      crosstalk_mitigation: "different RF frequencies per stage"
+    note: "Level 2 实例，PART-OF ent.rf_over_fiber_time_transfer_link"
+
+principles:
+  - id: pri.cascaded_rf_stages_crosstalk_mitigation
+    name: "级联 RF-over-fiber 分段不同调制频率抑制串扰原理"
+    tier: engineering
+    verification_status: demonstrated
+    statement: >
+      多段级联 RF-over-fiber 链路中，相邻段落共享同一干纤基础设施时，上一段接收信号
+      可能通过微波电路耦合到下一段发射，造成"相邻段串扰"闭环震荡。各段采用彼此
+      不同的 RF 调制频率（频域正交）可消除此串扰通路。
+    domain: "级联 RF 光纤链路工程"
+    conditions: "RF 本振频率间隔 ≥ 微波前端选择性带宽"
+    source_claim: "two adjacent frequency dissemination systems used different frequency transmitted signals, preventing the influence of signal crosstalk"
+
+relations:
+  - id: rel.Qua22_01
+    subject: ent.ntsc_212km_cascaded_rf_link_q22
+    predicate: PART-OF
+    object: ent.rf_over_fiber_time_transfer_link
+    source:
+      paper: quan2022
+      claim: "212 km cascaded urban fiber link"
+
+  - id: rel.Qua22_02
+    subject: ent.ntsc_212km_cascaded_rf_link_q22
+    predicate: OPERATIONALIZED-AS
+    object: pri.cascaded_rf_stages_crosstalk_mitigation
+    source:
+      paper: quan2022
+      claim: "two adjacent frequency dissemination systems used different frequency transmitted signals"

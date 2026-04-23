@@ -1,33 +1,74 @@
-# Kim 2023 — Improved interspecies optical clock comparisons through differential spectroscop...
-# 提取者：AI 草稿，待专家确认
+# Kim 2023 — Improved interspecies optical clock comparisons through differential spectroscopy [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
 # 提取日期：2026-04-23
 # Schema版本：v4.5
 # 专题：time-frequency-transfer
-# contribution_type: evidence
+# contribution_type: evidence — Nature Physics. NIST/JILA. 利用 differential spectroscopy
+#   协议，同步询问两种不同原子种类的光钟，突破光本振相干时间对询问时间的限制，
+#   跨种比对稳定度提升。这对光钟间"频率比"（TF 传递的终极观测量）精度有直接影响。
 
 meta:
   zotero_key: "mc7xt8b5"
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
-  reliability: medium
+  reliability: high
   title: "Improved interspecies optical clock comparisons through differential spectroscopy"
-  year: 2023
+  year: 2022
   first_author: Kim
-  authors: ["M. E. Kim",
-    "W. F. McGrew",
-    "N. V. Nardelli",
-    "E. R. Clements",
-    "Y. S. Hassan",
-    "X. G. Zhang",
-    "J. L. Valencia",
-    "H. Leopardi",
-    "D. B. Hume",
-    "T. M. Fortier",
-    "A. D. Ludlow",
-    "D. R. Leibrandt"]
+  authors: ["M. E. Kim", "W. F. McGrew", "N. V. Nardelli", "E. R. Clements", "Y. S. Hassan",
+    "X. Zhang", "J. L. Valencia", "H. Leopardi", "D. B. Hume", "T. M. Fortier",
+    "A. D. Ludlow", "D. R. Leibrandt"]
   journal: "Nature Physics"
+  volume: 19
+  pages: "25-29"
   doi: "10.1038/s41567-022-01794-7"
   note: >
-    [journal_paper]
-    待补充推理链条和知识点提取。
+    [期刊论文] NIST Boulder. 突破光本振相干时间 τ_LO 对询问时间 T 的限制的
+    differential spectroscopy 协议：两种不同原子 (Al⁺ & Yb 光晶格) 同时由同一超稳激光询问，
+    用一个钟的相位反馈扣除本振共模漂移，使另一个钟可以在 T ≫ τ_LO 下继续 Ramsey 询问。
+    跨种比对稳定度显著提升（实测 σ_y 降低因子 > 3×）。对 TF transfer 相关性：
+    光钟比对 = TF transfer 的终极需求；此协议扩展了"有效比对带宽"。
+
+entities:
+  - id: ent.differential_spectroscopy_interspecies_k23
+    name: "跨种光钟差分光谱协议（Kim 2023）"
+    hierarchy_level: 2
+    status: demonstrated
+    key_parameters:
+      species: "Al⁺ ion clock + Yb optical lattice clock"
+      shared_lo: "common ultrastable laser"
+      benefit: "T (probe time) ≫ τ_LO (LO coherence)"
+    note: "Level 2 实例，使能节点；跨专题（frequency-standards + time-frequency-transfer）"
+
+principles:
+  - id: pri.differential_spectroscopy_lo_coherence_bypass
+    name: "差分光谱绕过本振相干时间原理"
+    tier: domain
+    verification_status: demonstrated
+    statement: >
+      两个光钟共享同一超稳激光本振 (LO)；任一钟检测到的残余相位差主要来自 LO 漂移
+      + 钟跃迁本征频差。在一个钟上反馈扣除 LO 相位后，另一个钟可在探测时间 T ≫ τ_LO
+      下进行 Ramsey spectroscopy，从而提升跨种频比测量稳定度。代价：短期询问期间
+      LO 漂移被"共模消除"，但跨种之间的"绝对"频率差分由两钟反馈共同承载。
+    domain: "光钟比对协议；光本振共享架构"
+    conditions: "共享 LO；两钟探测时间可错开；相位反馈带宽 ≥ LO 漂移特征频率"
+    source_claim: "differential spectroscopy, a comparison protocol that enables interrogating ... beyond the single-clock coherence time"
+
+relations:
+  - id: rel.Kim23_01
+    subject: ent.differential_spectroscopy_interspecies_k23
+    predicate: OPERATIONALIZED-AS
+    object: pri.differential_spectroscopy_lo_coherence_bypass
+    source:
+      paper: kim2023
+      claim: "differential spectroscopy ... enables interrogating ... beyond the single-clock coherence time"
+
+  - id: rel.Kim23_02
+    subject: ent.differential_spectroscopy_interspecies_k23
+    predicate: CONDITIONED-BY
+    object: ent.fp_cavity_system
+    source:
+      paper: kim2023
+      claim: "finite coherence time of the optical local oscillator"
+    note: "跨专题：ent.fp_cavity_system（ultrastable-laser）"

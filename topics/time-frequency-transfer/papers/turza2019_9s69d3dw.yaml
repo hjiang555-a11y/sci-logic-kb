@@ -1,5 +1,5 @@
-# Turza 2019 — Compensation of the Fluctuations of Differential Delay for Frequency Transfer in...
-# 提取者：AI 草稿，待专家确认
+# Turza 2019 — Compensation of differential delay for frequency transfer in DWDM networks [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
 # 提取日期：2026-04-23
 # Schema版本：v4.5
 # 专题：time-frequency-transfer
@@ -11,14 +11,49 @@ meta:
   source_type: journal_paper
   contribution_type: evidence
   reliability: medium
-  title: "Compensation of the Fluctuations of Differential Delay for Frequency Transfer in DWDM Networks"
+  title: "Compensation of the fluctuations of differential delay for frequency transfer in DWDM networks"
   year: 2019
   first_author: Turza
-  authors: ["K. Turza",
-    "P. Krehlik",
-    "L. Sliwczynski"]
-  journal: "Ieee Transactions on Ultrasonics Ferroelectrics and Frequency Control"
-  doi: "10.1109/tuffc.2019.2890993"
+  authors: ["K. Turza", "P. Krehlik", "Ł. Śliwczyński"]
+  journal: "IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control"
+  volume: 66
+  issue: 4
+  pages: "797-805"
+  doi: "10.1109/TUFFC.2018.2890032"
   note: >
-    [journal_paper]
-    待补充推理链条和知识点提取。
+    [期刊论文] AGH University. 识别到 DWDM 电信光纤网络中"色散补偿光纤 (DCF) 模块"
+    引起的双向 differential delay 温度漂移是 RF-over-fiber 长期稳定度的主导劣化因素。
+    利用 DCF 模块内自带温度传感器建模补偿温度诱发 delay 变化，在波兰国家网 3 条 ≤1550 km
+    干线上实验验证，长期稳定度显著改善。工程价值大。
+
+principles:
+  - id: pri.dcf_induced_differential_delay_temp_compensation
+    name: "DCF 模块温度诱发 differential delay 建模补偿原理"
+    tier: engineering
+    verification_status: demonstrated
+    statement: >
+      DWDM 长距离链路中的色散补偿光纤 (DCF) 对双向传播波长导致可观差分延迟，
+      其温度依赖系数远大于传输光纤本身；温度涨落通过 DCF 进入 RF 传递稳定度预算。
+      使用 DCF 模块厂商自带温度传感器实时测温 + 模型外推延迟偏移 + 端点补偿，
+      可显著改善长期稳定度。适用于 alien-wavelength RF-over-fiber 传递。
+    domain: "DWDM 网络 RF 频率传递工程"
+    conditions: "DCF 模块具备可远程读取的温度传感器；RF 频率单一（便于建模）"
+    source_claim: "dispersion compensation fibers (DCFs) ... cause substantial differential delay, whose temperature-induced fluctuations have the most significant impact"
+
+relations:
+  - id: rel.Tur19_01
+    subject: ent.rf_over_fiber_time_transfer_link
+    predicate: BOUNDED-BY
+    object: pri.dcf_induced_differential_delay_temp_compensation
+    source:
+      paper: turza2019
+      claim: "DCFs cause substantial differential delay"
+    note: "ent.rf_over_fiber_time_transfer_link 定义于 krehlik2015"
+
+  - id: rel.Tur19_02
+    subject: ent.rf_over_fiber_time_transfer_link
+    predicate: ENABLED-BY
+    object: pri.dcf_induced_differential_delay_temp_compensation
+    source:
+      paper: turza2019
+      claim: "tested on three different long-haul routes (up to 1550 km)"
