@@ -15,7 +15,12 @@ meta:
   title: "Ultrastable long-distance fibre-optic time transfer: active compensation over a wide range of delays"
   year: 2015
   first_author: Krehlik
-  authors: ["P. Krehlik", "Ł. Śliwczyński", "Ł. Buczek", "J. Kołodziej", "M. Lipiński"]
+  authors:
+  - "P. Krehlik"
+  - "L. Sliwczynski"
+  - "L. Buczek"
+  - "J. Kolodziej"
+  - "M. Lipinski"
   journal: "Metrologia"
   volume: 52
   issue: 1

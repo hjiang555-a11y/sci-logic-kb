@@ -14,7 +14,26 @@ meta:
   title: "Measurement of atmospheric non-reciprocity effects for satellite-based two-way time-frequency transfer"
   year: 2024
   first_author: Zeng
-  authors: ["T. Zeng"]
+  authors:
+  - "Ting Zeng"
+  - "Qi Shen"
+  - "Yuan Cao"
+  - "Jian-Yu Guan"
+  - "Meng-Zhe Lian"
+  - "Jin-Jian Han"
+  - "Lei Hou"
+  - "Jian Lu"
+  - "Xin-Xin Peng"
+  - "Min Li"
+  - "Wei-Yue Liu"
+  - "Jin-Cai Wu"
+  - "Yong Wang"
+  - "Juan Yin"
+  - "Ji-Gang Ren"
+  - "Hai-Feng Jiang"
+  - "Qiang Zhang"
+  - "Cheng-Zhi Peng"
+  - "Jian-Wei Pan"
   journal: "Photonics Research"
   doi: "10.1364/PRJ.511141"
   note: >

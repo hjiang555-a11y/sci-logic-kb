@@ -14,7 +14,14 @@ meta:
   title: "Microwave Frequency Dissemination over a 212 km Cascaded Urban Fiber Link with Stability at the 10⁻¹⁸ Level"
   year: 2022
   first_author: Quan
-  authors: ["H. Quan", "W. Xue", "W. Zhao", "Y. Xing", "H. Jiang", "W. Guo", "S. Zhang"]
+  authors:
+  - "H. L. Quan"
+  - "W. X. Xue"
+  - "W. Y. Zhao"
+  - "Y. Xing"
+  - "H. F. Jiang"
+  - "W. G. Guo"
+  - "S. G. Zhang"
   journal: "Photonics"
   volume: 9
   issue: 4

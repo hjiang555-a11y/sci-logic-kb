@@ -16,7 +16,10 @@ meta:
   title: "Brillouin amplification supports 1×10⁻²⁰ uncertainty in optical frequency transfer over 1400 km of underground fiber"
   year: 2015
   first_author: Raupach
-  authors: ["S. M. F. Raupach", "A. Koczwara", "G. Grosche"]
+  authors:
+  - "S. M. F. Raupach"
+  - "A. Koczwara"
+  - "G. Grosche"
   journal: "Physical Review A"
   volume: 92
   issue: 2

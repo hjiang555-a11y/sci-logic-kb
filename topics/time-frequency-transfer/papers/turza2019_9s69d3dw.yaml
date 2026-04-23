@@ -14,12 +14,12 @@ meta:
   title: "Compensation of the fluctuations of differential delay for frequency transfer in DWDM networks"
   year: 2019
   first_author: Turza
-  authors: ["K. Turza", "P. Krehlik", "Ł. Śliwczyński"]
-  journal: "IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control"
-  volume: 66
-  issue: 4
-  pages: "797-805"
-  doi: "10.1109/TUFFC.2018.2890032"
+  authors:
+  - "K. Turza"
+  - "P. Krehlik"
+  - "L. Sliwczynski"
+  journal: "Ieee Transactions on Ultrasonics Ferroelectrics and Frequency Control"
+  doi: "10.1109/tuffc.2019.2890993"
   note: >
     [期刊论文] AGH University. 识别到 DWDM 电信光纤网络中"色散补偿光纤 (DCF) 模块"
     引起的双向 differential delay 温度漂移是 RF-over-fiber 长期稳定度的主导劣化因素。

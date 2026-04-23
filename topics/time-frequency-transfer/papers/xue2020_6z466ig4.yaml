@@ -14,12 +14,16 @@ meta:
   title: "Microwave frequency transfer over a 112-km urban fiber link based on electronic phase compensation"
   year: 2020
   first_author: Xue
-  authors: ["W.-X. Xue", "W.-Y. Zhao", "H.-L. Quan", "Y. Xing", "H.-F. Jiang", "S.-G. Zhang"]
-  journal: "Chinese Physics B"
-  volume: 29
-  issue: 6
-  pages: "064209"
-  doi: "10.1088/1674-1056/ab84f9"
+  authors:
+  - "W. X. Xue"
+  - "W. Y. Zhao"
+  - "H. L. Quan"
+  - "C. C. Zhao"
+  - "Y. Xing"
+  - "H. F. Jiang"
+  - "S. G. Zhang"
+  journal: "Chin. Phys. B"
+  doi: "10.1088/1674-1056/ab84d6"
   note: >
     [期刊论文] NTSC Xi'an. 112 km 城市场部署光纤链路上 RF-over-fiber 频率传递，
     在本地端用电子移相补偿链路相位漂移（"electronic phase compensation"），

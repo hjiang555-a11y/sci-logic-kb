@@ -16,8 +16,15 @@ meta:
   title: "Quantum-limited optical time transfer for future geosynchronous links"
   year: 2023
   first_author: Caldwell
-  authors: ["E. D. Caldwell", "J.-D. Deschênes", "J. Ellis", "W. C. Swann", "B. K. Stuhl",
-    "H. Bergeron", "N. R. Newbury", "L. C. Sinclair"]
+  authors:
+  - "Emily D. Caldwell"
+  - "Jean-Daniel Deschenes"
+  - "Jennifer Ellis"
+  - "William C. Swann"
+  - "Benjamin K. Stuhl"
+  - "Hugo Bergeron"
+  - "Nathan R. Newbury"
+  - "Laura C. Sinclair"
   journal: "Nature"
   volume: 618
   pages: "721-726"

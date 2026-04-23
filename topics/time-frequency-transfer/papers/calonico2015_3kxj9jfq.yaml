@@ -16,13 +16,22 @@ meta:
   title: "High-accuracy coherent optical frequency transfer over a doubled 642-km fiber link"
   year: 2014
   first_author: Calonico
-  authors: ["D. Calonico", "E. K. Bertacco", "C. E. Calosso", "C. Clivati",
-    "G. A. Costanzo", "M. Frittelli", "A. Godone", "A. Mura",
-    "N. Poli", "D. V. Sutyrin", "G. Tino", "M. E. Zucco", "F. Levi"]
-  journal: "Applied Physics B"
-  volume: 117
-  pages: "979-986"
-  doi: "10.1007/s00340-014-5917-8"
+  authors:
+  - "D. Calonico"
+  - "E. K. Bertacco"
+  - "C. E. Calosso"
+  - "C. Clivati"
+  - "G. A. Costanzo"
+  - "M. Frittelli"
+  - "A. Godone"
+  - "A. Mura"
+  - "N. Poli"
+  - "D. V. Sutyrin"
+  - "G. M. Tino"
+  - "M. E. Zucco"
+  - "F. Levi"
+  journal: "Applied Physics B-Lasers and Optics"
+  doi: "10.1007/s00340-014-5971-2"
   note: >
     [期刊论文] INRIM + LENS（意大利国家计量院 + 佛罗伦萨大学）。Torino–Firenze–Torino
     642 km × 2 = 1284 km 相干光纤链路（活动 EDFA + 光学相位锁定补偿），σ_y(1000 s)=3×10⁻¹⁹

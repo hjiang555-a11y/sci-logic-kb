@@ -15,9 +15,22 @@ meta:
   title: "Coherent optical clock down-conversion for microwave frequencies with 10⁻¹⁸ instability"
   year: 2020
   first_author: Nakamura
-  authors: ["T. Nakamura", "J. Davila-Rodriguez", "H. Leopardi", "J. A. Sherman", "T. M. Fortier",
-    "X. Xie", "J. C. Campbell", "W. F. McGrew", "X. Zhang", "Y. S. Hassan", "D. Nicolodi",
-    "K. Beloy", "A. D. Ludlow", "S. A. Diddams", "F. Quinlan"]
+  authors:
+  - "T. Nakamura"
+  - "J. Davila-Rodriguez"
+  - "H. Leopardi"
+  - "J. A. Sherman"
+  - "T. M. Fortier"
+  - "X. J. Xie"
+  - "J. C. Campbell"
+  - "W. F. McGrew"
+  - "X. G. Zhang"
+  - "Y. S. Hassan"
+  - "D. Nicolodi"
+  - "K. Beloy"
+  - "A. D. Ludlow"
+  - "S. A. Diddams"
+  - "F. Quinlan"
   journal: "Science"
   volume: 368
   issue: 6493

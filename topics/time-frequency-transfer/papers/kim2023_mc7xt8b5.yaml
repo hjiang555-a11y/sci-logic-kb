@@ -16,9 +16,19 @@ meta:
   title: "Improved interspecies optical clock comparisons through differential spectroscopy"
   year: 2022
   first_author: Kim
-  authors: ["M. E. Kim", "W. F. McGrew", "N. V. Nardelli", "E. R. Clements", "Y. S. Hassan",
-    "X. Zhang", "J. L. Valencia", "H. Leopardi", "D. B. Hume", "T. M. Fortier",
-    "A. D. Ludlow", "D. R. Leibrandt"]
+  authors:
+  - "M. E. Kim"
+  - "W. F. McGrew"
+  - "N. V. Nardelli"
+  - "E. R. Clements"
+  - "Y. S. Hassan"
+  - "X. G. Zhang"
+  - "J. L. Valencia"
+  - "H. Leopardi"
+  - "D. B. Hume"
+  - "T. M. Fortier"
+  - "A. D. Ludlow"
+  - "D. R. Leibrandt"
   journal: "Nature Physics"
   volume: 19
   pages: "25-29"

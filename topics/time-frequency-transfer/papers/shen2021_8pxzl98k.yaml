@@ -16,9 +16,25 @@ meta:
   title: "Experimental simulation of time and frequency transfer via an optical satellite–ground link at 10⁻¹⁸ instability"
   year: 2021
   first_author: Shen
-  authors: ["Q. Shen", "J.-Y. Guan", "T. Zeng", "Q.-M. Lu", "L. Huang", "Y. Cao", "J.-P. Chen",
-    "T.-Q. Tao", "J.-C. Wu", "L. Hou", "S.-K. Liao", "J.-G. Ren", "J. Yin", "J.-J. Jia",
-    "H.-F. Jiang", "C.-Z. Peng", "Q. Zhang", "J.-W. Pan"]
+  authors:
+  - "Qi Shen"
+  - "Jian-Yu Guan"
+  - "Ting Zeng"
+  - "Qi-Ming Lu"
+  - "Liang Huang"
+  - "Yuan Cao"
+  - "Jiu-Peng Chen"
+  - "Tian-Qi Tao"
+  - "Jin-Cai Wu"
+  - "Lei Hou"
+  - "Sheng-Kai Liao"
+  - "Ji-Gang Ren"
+  - "Juan Yin"
+  - "Jian-Jun Jia"
+  - "Hai-Feng Jiang"
+  - "Cheng-Zhi Peng"
+  - "Qiang Zhang"
+  - "Jian-Wei Pan"
   journal: "Optica"
   volume: 8
   issue: 4

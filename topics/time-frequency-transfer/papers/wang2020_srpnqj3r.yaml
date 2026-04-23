@@ -16,13 +16,19 @@ meta:
   title: "Fiber-optic joint time and frequency transfer with the same wavelength"
   year: 2020
   first_author: Wang
-  authors: ["J. Wang", "C. Yue", "Y. Xi", "Y. Sun", "N. Cheng", "F. Yang",
-    "M. Jiang", "J. Sun", "Y. Gui", "H. Cai"]
-  journal: "Optics Letters"
-  volume: 45
-  issue: 1
-  pages: "208-211"
-  doi: "10.1364/OL.45.000208"
+  authors:
+  - "J. L. Wang"
+  - "C. L. Yue"
+  - "Y. L. Xi"
+  - "Y. G. Sun"
+  - "N. Cheng"
+  - "F. Yang"
+  - "M. Y. Jiang"
+  - "J. F. Sun"
+  - "Y. Z. Gui"
+  - "H. W. Cai"
+  journal: "Opt. Lett."
+  doi: "10.1364/ol.45.000208"
   note: >
     [期刊论文] Shanghai Institute of Optics and Fine Mechanics (SIOM). 提出一种"同波长"
     T&F 联合传递方案：单一激光同时承载相位调制 1 GHz RF 信号与强度调制 1 PPS 时间脉冲；

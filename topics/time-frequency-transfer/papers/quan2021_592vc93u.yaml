@@ -14,7 +14,14 @@ meta:
   title: "High-resolution Microwave Frequency Dissemination via 56 km Optical Fiber Based on Microwave Phase Compensation"
   year: 2021
   first_author: Quan
-  authors: ["H. Quan", "W. Zhao", "W. Xue", "Y. Xing", "H. Jiang", "W. Guo", "S. Zhang"]
+  authors:
+  - "H. L. Quan"
+  - "W. Y. Zhao"
+  - "W. X. Xue"
+  - "Y. Xing"
+  - "H. F. Jiang"
+  - "W. G. Guo"
+  - "S. G. Zhang"
   journal: "Acta Photonica Sinica"
   volume: 50
   issue: 4

@@ -16,9 +16,21 @@ meta:
   title: "Frequency and time transfer for metrology and beyond using telecommunication network fibres"
   year: 2015
   first_author: Lopez
-  authors: ["O. Lopez", "F. Kéfélian", "H. Jiang", "A. Haboucha", "A. Bercy", "F. Stefani",
-    "B. Chanteau", "A. Kanj", "D. Rovera", "J. Achkar", "C. Chardonnet",
-    "P. E. Pottie", "A. Amy-Klein", "G. Santarelli"]
+  authors:
+  - "O. Lopez"
+  - "F. Kefelian"
+  - "H. F. Jiang"
+  - "A. Haboucha"
+  - "A. Bercy"
+  - "F. Stefani"
+  - "B. Chanteau"
+  - "A. Kanj"
+  - "D. Rovera"
+  - "J. Achkar"
+  - "C. Chardonnet"
+  - "P. E. Pottie"
+  - "A. Amy-Klein"
+  - "G. Santarelli"
   journal: "Comptes Rendus Physique"
   volume: 16
   issue: 5

@@ -16,12 +16,14 @@ meta:
   title: "Reciprocity of propagation in optical fiber links demonstrated to 10⁻²¹"
   year: 2019
   first_author: Xu
-  authors: ["D. Xu", "P. Delva", "O. Lopez", "A. Amy-Klein", "P.-E. Pottie"]
-  journal: "Optics Express"
-  volume: 27
-  issue: 25
-  pages: "36965-36975"
-  doi: "10.1364/OE.27.036965"
+  authors:
+  - "D. Xu"
+  - "P. Delva"
+  - "O. Lopez"
+  - "A. Amy-Klein"
+  - "P. E. Pottie"
+  journal: "Opt. Express"
+  doi: "10.1364/oe.27.036965"
   note: >
     [期刊论文] SYRTE + LPL. 用专用链路架构可同时独立检测光纤中正向与反向传播相位噪声，
     证实光学相位演化主导来自 Michelson 干涉仪参考臂的温度；33 天观测 frequency offset

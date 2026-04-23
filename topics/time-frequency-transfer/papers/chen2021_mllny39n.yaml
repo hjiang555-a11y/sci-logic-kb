@@ -16,9 +16,26 @@ meta:
   title: "Twin-field quantum key distribution over a 511 km optical fibre linking two distant metropolitan areas"
   year: 2021
   first_author: Chen
-  authors: ["J.-P. Chen", "C. Zhang", "Y. Liu", "C. Jiang", "W.-J. Zhang", "Z.-Y. Han",
-    "S.-Z. Ma", "X.-L. Hu", "Y.-H. Li", "H. Liu", "F. Zhou", "H.-F. Jiang", "T.-Y. Chen",
-    "H. Li", "L.-X. You", "Z. Wang", "X.-B. Wang", "Q. Zhang", "J.-W. Pan"]
+  authors:
+  - "J. P. Chen"
+  - "C. Zhang"
+  - "Y. Liu"
+  - "C. Jiang"
+  - "W. J. Zhang"
+  - "Z. Y. Han"
+  - "S. Z. Ma"
+  - "X. L. Hu"
+  - "Y. H. Li"
+  - "H. Liu"
+  - "F. Zhou"
+  - "H. F. Jiang"
+  - "T. Y. Chen"
+  - "H. Li"
+  - "L. X. You"
+  - "Z. Wang"
+  - "X. B. Wang"
+  - "Q. Zhang"
+  - "J. W. Pan"
   journal: "Nature Photonics"
   volume: 15
   pages: "570-575"

@@ -15,12 +15,11 @@ meta:
   title: "Chirped Frequency Transfer: A Tool for Synchronization and Time Transfer"
   year: 2014
   first_author: Raupach
-  authors: ["S. M. F. Raupach", "G. Grosche"]
-  journal: "IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control"
-  volume: 61
-  issue: 6
-  pages: "920-929"
-  doi: "10.1109/TUFFC.2014.2988"
+  authors:
+  - "S. M. F. Raupach"
+  - "G. Grosche"
+  journal: "Ieee Transactions on Ultrasonics Ferroelectrics and Frequency Control"
+  doi: "10.1109/tuffc.2014.2988"
   note: >
     [期刊论文] PTB（Braunschweig）。在 149 km 光纤链路上传递"啁啾光载波"（chirp ~240 kHz/s），
     远端频率计数器门由本地 10 MHz 氢脉泽驱动，对称路径延迟（几何 + 共模）被自然压制。

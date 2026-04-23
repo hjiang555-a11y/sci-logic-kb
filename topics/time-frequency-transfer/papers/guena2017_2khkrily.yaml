@@ -15,11 +15,35 @@ meta:
   title: "First international comparison of fountain primary frequency standards via a long distance optical fiber link"
   year: 2017
   first_author: Guena
-  authors: ["J. Guéna", "S. Weyers", "M. Abgrall", "C. Grebing", "V. Gerginov", "P. Rosenbusch",
-    "S. Bize", "B. Lipphardt", "H. Denker", "N. Quintin", "S. M. F. Raupach", "D. Nicolodi",
-    "F. Stefani", "N. Chiodo", "S. Koke", "A. Kuhl", "F. Wiotte", "F. Meynadier", "E. Camisard",
-    "C. Chardonnet", "Y. Le Coq", "M. Lours", "G. Santarelli", "A. Amy-Klein", "R. Le Targat",
-    "O. Lopez", "P. E. Pottie", "G. Grosche"]
+  authors:
+  - "J. Guena"
+  - "S. Weyers"
+  - "M. Abgrall"
+  - "C. Grebing"
+  - "V. Gerginov"
+  - "P. Rosenbusch"
+  - "S. Bize"
+  - "B. Lipphardt"
+  - "H. Denker"
+  - "N. Quintin"
+  - "S. M. F. Raupach"
+  - "D. Nicolodi"
+  - "F. Stefani"
+  - "N. Chiodo"
+  - "S. Koke"
+  - "A. Kuhl"
+  - "F. Wiotte"
+  - "F. Meynadier"
+  - "E. Camisard"
+  - "C. Chardonnet"
+  - "Y. Le Coq"
+  - "M. Lours"
+  - "G. Santarelli"
+  - "A. Amy-Klein"
+  - "R. Le Targat"
+  - "O. Lopez"
+  - "P. E. Pottie"
+  - "G. Grosche"
   journal: "Metrologia"
   volume: 54
   issue: 3

@@ -17,7 +17,9 @@ meta:
   title: "I-SOC Scientific Requirements (ESA Experiment Scientific Requirements document, Issue 1.1 Approved)"
   year: 2017
   first_author: Cacciapuoti
-  authors: ["Luigi Cacciapuoti (ESA SCI-S)", "Stephan Schiller (HHU Düsseldorf)"]
+  authors:
+  - "Luigi Cacciapuoti (ESA SCI-S)"
+  - "Stephan Schiller (HHU Düsseldorf)"
   issuing_body: "European Space Agency (ESA)"
   document_ref: "SCI-ESA-HRE-ESR-ISOC"
   revision: "Issue 1, Revision 1"

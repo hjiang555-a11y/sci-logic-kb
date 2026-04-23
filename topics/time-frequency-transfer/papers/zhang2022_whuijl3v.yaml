@@ -15,8 +15,19 @@ meta:
   title: "Coherent Optical Frequency Transfer via a 490 km Noisy Fiber Link"
   year: 2022
   first_author: Zhang
-  authors: ["X. Zhang", "X. Deng", "Q. Zang", "D. Jiao", "J. Gao", "D. Wang", "Q. Zhou",
-    "J. Liu", "G. Xu", "R. Dong", "T. Liu", "S. Zhang"]
+  authors:
+  - "X. Zhang"
+  - "X. Deng"
+  - "Q. Zang"
+  - "D. D. Jiao"
+  - "J. Gao"
+  - "D. Wang"
+  - "Q. Zhou"
+  - "J. Liu"
+  - "G. J. Xu"
+  - "R. F. Dong"
+  - "T. Liu"
+  - "S. G. Zhang"
   journal: "Chinese Physics Letters"
   volume: 39
   issue: 4
