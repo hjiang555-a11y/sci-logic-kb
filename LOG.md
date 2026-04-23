@@ -611,4 +611,23 @@ Bacon 2021、Guéna 2017）在 note 中标注"可考虑专家审核升 breakthro
 
 ---
 
+## [2026-04-23] ingest | Batch 2：超稳激光专题 6 篇新论文摄入
+
+新增 6 个 YAML 文件（5 篇至 ultrastable-laser，1 篇自由空间时频）：
+
+- `xia2025.yaml`（IUCMUIEI）：Xia et al. 2025 — 全数字 FPGA 多环路 USL 自动锁定
+  1.5×10⁻¹⁵ @1 s（载波锁定），FNC 75 dB 噪声抑制，10 s 内复锁
+- `wang2024a.yaml`（CYS7GEVR）：Wang et al. 2024 — 光频净化中继（NTSC/CAS）
+  8.43×10⁻¹⁹ @10,000 s，106 km 通信光纤，消除相位周期跳变
+- `giunta2020b.yaml`（H7A8L8LT）：Giunta et al. 2020 — 紧凑光子微波振荡器
+  12 GHz，−83 dBc/Hz @1 Hz（腔热噪声限），OFD 残余底 −115 dBc/Hz
+- `kudelin2024.yaml`（AF34FGMU）：Kudelin et al. 2024 — 芯片集成光子微波振荡器
+  20 GHz，−135 dBc/Hz @10 kHz，SiN 微腔梳 + 6.3 mm 微型 F-P 腔
+- `schioppo2021.yaml`（K5JMAYPZ）：Schioppo et al. 2021 — 2220 km 光纤网络 NPL↔PTB 比对
+  合并 MDEV 7×10⁻¹⁷（30–200 s），PTB Si 腔 4×10⁻¹⁷，NPL ULE 腔 6×10⁻¹⁷
+- `shen2022.yaml`（P92ZFIAQ）：Shen et al. 2022 — 113 km 自由空间时频传递
+  < 4×10⁻¹⁹ @10,000 s，双向 OFC + LOS + 自适应光学，Nature 2022
+
+---
+
 *本日志由 AI 自动维护。每次 Ingest/Restructure/Lint 后追加条目。*
