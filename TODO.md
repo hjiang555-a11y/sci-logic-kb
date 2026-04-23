@@ -111,8 +111,9 @@ reports/ingest_plan/
 - [x] 应用 0.1 年份过滤器 + 0.2 质量过滤门，生成 `stage2_candidates_final.csv`（31 篇）
 - [x] 所有被拒候选写入 `rejected.csv`（7 篇：2 重复 / 3 超出主题 / 2 NIST 会议）
 - [x] 生成 `summary.md`（候选总数 / 分桶 / 白名单逐条列出）
-- [ ] **专家勾选白名单 5 篇**（`allan1966` / `allan1987` / `howe1976` / `sullivan1990` / `riley2008`）——见 `summary.md §白名单候选`
-- [ ] **专家审批最终候选池**（31 篇）→ 批准后触发阶段 3
+- [x] **专家勾选白名单 5 篇**（`allan1966` / `allan1987` / `howe1976` / `sullivan1990` / `riley2008`）——见 `summary.md §白名单候选`
+- [x] **专家审批最终候选池**（31 篇 + 1 篇新增 = **32 篇**）→ 阶段 3 已触发
+- [x] **新增 `ludlow2008_thesis`**（Andrew D. Ludlow PhD thesis, JILA 2008）——符合 §0.2 "PhD thesis ✅ 接受"规则，定位 framework 档
 
 ---
 

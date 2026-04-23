@@ -7,6 +7,18 @@
 
 ---
 
+## [2026-04-23] restructure | JILA/NIST 扩库阶段 2 候选池批准（32 篇）
+
+专家一次性批准阶段 2 全部候选进入阶段 3 摄入。
+
+- **批准总量**：32 篇 = 原 31 篇 stage2 候选池 + 新增 `ludlow2008_thesis`（Andrew D. Ludlow PhD thesis, JILA 2008，符合 TODO.md §0.2 "PhD thesis ✅ 接受"规则）
+- **白名单豁免**：5 篇 Allan–Howe 奠基文献（`allan1966` / `allan1987` / `howe1976` / `sullivan1990` / `riley2008`）一并批准
+- **批次分配**：详见 `reports/ingest_plan/batches/README.md`（B1/B2/B5a-c/B7/B8/B9 共 7 个子批次）
+- **推荐摄入顺序**：B9（奠基）→ B1（OFC 综述）→ B5c（Ludlow thesis）→ B5a/B5b（实验主体）→ B2/B7/B8
+- **阻塞点**：PDF 全文 21 篇（`breakthrough` + `evidence`）受沙箱网络限制，需 allowlist 或本地 Zotero 投递
+
+---
+
 ## [2026-04-23] ingest | time-frequency-transfer 专题种子 · `cacciapuoti2017.yaml`（ESA I-SOC 科学需求，framework）
 
 处理 `/pdfs/SCI-ESA-HRE-ESR-ISOC_Iss.1.1_Approved.pdf`（另一 PDF `FreqStable_Si_cavity AlGaAs mirror_PRL2026.pdf`
