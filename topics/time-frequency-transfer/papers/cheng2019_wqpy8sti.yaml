@@ -1,0 +1,26 @@
+# Cheng 2019 — Time transfer through the optical supervisory channel in wavelength division mul...
+# 提取者：AI 草稿，待专家确认
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
+# contribution_type: evidence
+
+meta:
+  zotero_key: "wqpy8sti"
+  topic: time-frequency-transfer
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: medium
+  title: "Time transfer through the optical supervisory channel in wavelength division multiplexing systems"
+  year: 2019
+  first_author: Cheng
+  authors: ["Hanhuang Cheng"
+    "Guiling Wu"
+    "Faxing Zuo"
+    "Liang Hu"
+    "Jianping Chen"]
+  journal: "Opt. Lett."
+  doi: "10.1364/OL.44.005206"
+  note: >
+    [journal_paper]
+    待补充推理链条和知识点提取。

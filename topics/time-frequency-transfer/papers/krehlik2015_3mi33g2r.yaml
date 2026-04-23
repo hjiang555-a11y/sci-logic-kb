@@ -1,0 +1,26 @@
+# Krehlik 2015 — Ultrastable long-distance fibre-optic time transfer: active compensation over a ...
+# 提取者：AI 草稿，待专家确认
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
+# contribution_type: evidence
+
+meta:
+  zotero_key: "3mi33g2r"
+  topic: time-frequency-transfer
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: medium
+  title: "Ultrastable long-distance fibre-optic time transfer: active compensation over a wide range of delays"
+  year: 2015
+  first_author: Krehlik
+  authors: ["P. Krehlik"
+    "L. Sliwczynski"
+    "L. Buczek"
+    "J. Kolodziej"
+    "M. Lipinski"]
+  journal: "Metrologia"
+  doi: "10.1088/0026-1394/52/1/82"
+  note: >
+    [journal_paper]
+    待补充推理链条和知识点提取。

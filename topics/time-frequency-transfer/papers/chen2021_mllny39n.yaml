@@ -1,0 +1,40 @@
+# Chen 2021 — Twin-field quantum key distribution over a 511km optical fibre linking two dista...
+# 提取者：AI 草稿，待专家确认
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
+# contribution_type: evidence
+
+meta:
+  zotero_key: "mllny39n"
+  topic: time-frequency-transfer
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: medium
+  title: "Twin-field quantum key distribution over a 511km optical fibre linking two distant metropolitan areas"
+  year: 2021
+  first_author: Chen
+  authors: ["J. P. Chen"
+    "C. Zhang"
+    "Y. Liu"
+    "C. Jiang"
+    "W. J. Zhang"
+    "Z. Y. Han"
+    "S. Z. Ma"
+    "X. L. Hu"
+    "Y. H. Li"
+    "H. Liu"
+    "F. Zhou"
+    "H. F. Jiang"
+    "T. Y. Chen"
+    "H. Li"
+    "L. X. You"
+    "Z. Wang"
+    "X. B. Wang"
+    "Q. Zhang"
+    "J. W. Pan"]
+  journal: "Nature Photonics"
+  doi: "10.1038/s41566-021-00828-5"
+  note: >
+    [journal_paper]
+    待补充推理链条和知识点提取。

@@ -1,0 +1,28 @@
+# Clivati 2020 — Robust optical frequency dissemination with a dual-polarization coherent receive...
+# 提取者：AI 草稿，待专家确认
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
+# contribution_type: evidence
+
+meta:
+  zotero_key: "ispu4z4x"
+  topic: time-frequency-transfer
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: medium
+  title: "Robust optical frequency dissemination with a dual-polarization coherent receiver"
+  year: 2020
+  first_author: Clivati
+  authors: ["C. Clivati"
+    "P. Savio"
+    "S. Abrate"
+    "V. Curri"
+    "R. Gaudino"
+    "M. Pizzocaro"
+    "D. Calonico"]
+  journal: "Optics Express"
+  doi: "10.1364/oe.378602"
+  note: >
+    [journal_paper]
+    待补充推理链条和知识点提取。

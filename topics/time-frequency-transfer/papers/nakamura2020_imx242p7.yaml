@@ -1,0 +1,36 @@
+# Nakamura 2020 — Coherent optical clock down-conversion for microwave frequencies with 10(-18) in...
+# 提取者：AI 草稿，待专家确认
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
+# contribution_type: evidence
+
+meta:
+  zotero_key: "imx242p7"
+  topic: time-frequency-transfer
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: medium
+  title: "Coherent optical clock down-conversion for microwave frequencies with 10(-18) instability"
+  year: 2020
+  first_author: Nakamura
+  authors: ["T. Nakamura"
+    "J. Davila-Rodriguez"
+    "H. Leopardi"
+    "J. A. Sherman"
+    "T. M. Fortier"
+    "X. J. Xie"
+    "J. C. Campbell"
+    "W. F. McGrew"
+    "X. G. Zhang"
+    "Y. S. Hassan"
+    "D. Nicolodi"
+    "K. Beloy"
+    "A. D. Ludlow"
+    "S. A. Diddams"
+    "F. Quinlan"]
+  journal: "Science"
+  doi: "10.1126/science.abb2473"
+  note: >
+    [journal_paper]
+    待补充推理链条和知识点提取。

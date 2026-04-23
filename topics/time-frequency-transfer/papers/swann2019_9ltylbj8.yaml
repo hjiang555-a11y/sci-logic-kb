@@ -1,0 +1,28 @@
+# Swann 2019 — Measurement of the impact of turbulence anisoplanatism on precision free-space o...
+# 提取者：AI 草稿，待专家确认
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
+# contribution_type: evidence
+
+meta:
+  zotero_key: "9ltylbj8"
+  topic: time-frequency-transfer
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: medium
+  title: "Measurement of the impact of turbulence anisoplanatism on precision free-space optical time transfer"
+  year: 2019
+  first_author: Swann
+  authors: ["W. C. Swann"
+    "M. I. Bodine"
+    "I. Khader"
+    "J. D. Deschenes"
+    "E. Baumann"
+    "L. C. Sinclair"
+    "N. R. Newbury"]
+  journal: "Physical Review A"
+  doi: "10.1103/PhysRevA.99.023855"
+  note: >
+    [journal_paper]
+    待补充推理链条和知识点提取。

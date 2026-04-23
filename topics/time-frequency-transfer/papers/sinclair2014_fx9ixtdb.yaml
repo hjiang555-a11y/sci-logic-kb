@@ -1,0 +1,27 @@
+# Sinclair 2014 — Optical phase noise from atmospheric fluctuations and its impact on optical time...
+# 提取者：AI 草稿，待专家确认
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
+# contribution_type: evidence
+
+meta:
+  zotero_key: "fx9ixtdb"
+  topic: time-frequency-transfer
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: medium
+  title: "Optical phase noise from atmospheric fluctuations and its impact on optical time-frequency transfer"
+  year: 2014
+  first_author: Sinclair
+  authors: ["L. C. Sinclair"
+    "F. R. Giorgetta"
+    "W. C. Swann"
+    "E. Baumann"
+    "I. Coddington"
+    "N. R. Newbury"]
+  journal: "Physical Review A"
+  doi: ""
+  note: >
+    [journal_paper]
+    待补充推理链条和知识点提取。

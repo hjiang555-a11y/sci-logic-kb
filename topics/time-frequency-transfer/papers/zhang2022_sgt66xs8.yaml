@@ -1,0 +1,33 @@
+# Zhang 2022 — All-Passive Cascaded Optical Frequency Transfer
+# 提取者：AI 草稿，待专家确认
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
+# contribution_type: evidence
+
+meta:
+  zotero_key: "sgt66xs8"
+  topic: time-frequency-transfer
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: medium
+  title: "All-Passive Cascaded Optical Frequency Transfer"
+  year: 2022
+  first_author: Zhang
+  authors: ["X. Zhang"
+    "L. Hu"
+    "X. Deng"
+    "Q. Zang"
+    "J. Liu"
+    "D. Jiao"
+    "J. Gao"
+    "R. Dong"
+    "T. Liu"
+    "G. Wu"
+    "J. Chen"
+    "S. Zhang"]
+  journal: "Ieee Photonics Technology Letters"
+  doi: "10.1109/LPT.2022.3164406"
+  note: >
+    [journal_paper]
+    待补充推理链条和知识点提取。

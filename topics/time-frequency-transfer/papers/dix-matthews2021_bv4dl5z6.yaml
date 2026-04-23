@@ -1,0 +1,32 @@
+# Dix-Matthews 2021 — Point-to-point stabilized optical frequency transfer with active optics
+# 提取者：AI 草稿，待专家确认
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
+# contribution_type: evidence
+
+meta:
+  zotero_key: "bv4dl5z6"
+  topic: time-frequency-transfer
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: medium
+  title: "Point-to-point stabilized optical frequency transfer with active optics"
+  year: 2021
+  first_author: Dix-Matthews
+  authors: ["B. P. Dix-Matthews"
+    "S. W. Schediwy"
+    "D. R. Gozzard"
+    "E. Savalle"
+    "F. X. Esnault"
+    "T. Leveque"
+    "C. Gravestock"
+    "D. D'Mello"
+    "S. Karpathakis"
+    "M. Tobar"
+    "P. Wolf"]
+  journal: "Nature Communications"
+  doi: "10.1038/s41467-020-20591-5"
+  note: >
+    [journal_paper]
+    待补充推理链条和知识点提取。

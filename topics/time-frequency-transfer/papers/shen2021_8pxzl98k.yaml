@@ -1,0 +1,39 @@
+# Shen 2021 — Experimental simulation of time and frequency transfer via an optical satellite–...
+# 提取者：AI 草稿，待专家确认
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
+# contribution_type: evidence
+
+meta:
+  zotero_key: "8pxzl98k"
+  topic: time-frequency-transfer
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: medium
+  title: "Experimental simulation of time and frequency transfer via an optical satellite–ground link at 10-18 instability"
+  year: 2021
+  first_author: Shen
+  authors: ["Qi Shen"
+    "Jian-Yu Guan"
+    "Ting Zeng"
+    "Qi-Ming Lu"
+    "Liang Huang"
+    "Yuan Cao"
+    "Jiu-Peng Chen"
+    "Tian-Qi Tao"
+    "Jin-Cai Wu"
+    "Lei Hou"
+    "Sheng-Kai Liao"
+    "Ji-Gang Ren"
+    "Juan Yin"
+    "Jian-Jun Jia"
+    "Hai-Feng Jiang"
+    "Cheng-Zhi Peng"
+    "Qiang Zhang"
+    "Jian-Wei Pan"]
+  journal: "Optica"
+  doi: "10.1364/OPTICA.413114"
+  note: >
+    [journal_paper]
+    待补充推理链条和知识点提取。

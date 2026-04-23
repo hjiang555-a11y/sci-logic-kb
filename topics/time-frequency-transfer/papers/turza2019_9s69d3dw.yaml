@@ -1,0 +1,24 @@
+# Turza 2019 — Compensation of the Fluctuations of Differential Delay for Frequency Transfer in...
+# 提取者：AI 草稿，待专家确认
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
+# contribution_type: evidence
+
+meta:
+  zotero_key: "9s69d3dw"
+  topic: time-frequency-transfer
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: medium
+  title: "Compensation of the Fluctuations of Differential Delay for Frequency Transfer in DWDM Networks"
+  year: 2019
+  first_author: Turza
+  authors: ["K. Turza"
+    "P. Krehlik"
+    "L. Sliwczynski"]
+  journal: "Ieee Transactions on Ultrasonics Ferroelectrics and Frequency Control"
+  doi: "10.1109/tuffc.2019.2890993"
+  note: >
+    [journal_paper]
+    待补充推理链条和知识点提取。

@@ -1,0 +1,26 @@
+# Xu 2019 — Reciprocity of propagation in optical fiber links demonstrated to 10(-21)
+# 提取者：AI 草稿，待专家确认
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
+# contribution_type: evidence
+
+meta:
+  zotero_key: "gzd2byi4"
+  topic: time-frequency-transfer
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: medium
+  title: "Reciprocity of propagation in optical fiber links demonstrated to 10(-21)"
+  year: 2019
+  first_author: Xu
+  authors: ["D. Xu"
+    "P. Delva"
+    "O. Lopez"
+    "A. Amy-Klein"
+    "P. E. Pottie"]
+  journal: "Opt. Express"
+  doi: "10.1364/oe.27.036965"
+  note: >
+    [journal_paper]
+    待补充推理链条和知识点提取。

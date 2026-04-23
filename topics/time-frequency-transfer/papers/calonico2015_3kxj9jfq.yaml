@@ -1,0 +1,34 @@
+# Calonico 2015 — High-accuracy coherent optical frequency transfer over a doubled 642-km fiber li...
+# 提取者：AI 草稿，待专家确认
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
+# contribution_type: evidence
+
+meta:
+  zotero_key: "3kxj9jfq"
+  topic: time-frequency-transfer
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: medium
+  title: "High-accuracy coherent optical frequency transfer over a doubled 642-km fiber link (vol 117, pg 979, 2014)"
+  year: 2015
+  first_author: Calonico
+  authors: ["D. Calonico"
+    "E. K. Bertacco"
+    "C. E. Calosso"
+    "C. Clivati"
+    "G. A. Costanzo"
+    "M. Frittelli"
+    "A. Godone"
+    "A. Mura"
+    "N. Poli"
+    "D. V. Sutyrin"
+    "G. M. Tino"
+    "M. E. Zucco"
+    "F. Levi"]
+  journal: "Applied Physics B-Lasers and Optics"
+  doi: "10.1007/s00340-014-5971-2"
+  note: >
+    [journal_paper]
+    待补充推理链条和知识点提取。

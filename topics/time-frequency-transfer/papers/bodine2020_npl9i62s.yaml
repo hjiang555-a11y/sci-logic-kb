@@ -1,0 +1,30 @@
+# Bodine 2020 — Optical time-frequency transfer across a free-space, three-node network
+# 提取者：AI 草稿，待专家确认
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
+# contribution_type: evidence
+
+meta:
+  zotero_key: "npl9i62s"
+  topic: time-frequency-transfer
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: medium
+  title: "Optical time-frequency transfer across a free-space, three-node network"
+  year: 2020
+  first_author: Bodine
+  authors: ["M. I. Bodine"
+    "J. L. Ellis"
+    "W. C. Swann"
+    "S. A. Stevenson"
+    "J. D. Deschenes"
+    "E. D. Hannah"
+    "P. Manurkar"
+    "N. R. Newbury"
+    "L. C. Sinclair"]
+  journal: "Apl Photonics"
+  doi: "10.1063/5.0010704"
+  note: >
+    [journal_paper]
+    待补充推理链条和知识点提取。

@@ -1,0 +1,33 @@
+# Exertier 2016 — Sub-ns time transfer consistency: a direct comparison between GPS CV and T2L2
+# 提取者：AI 草稿，待专家确认
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
+# contribution_type: evidence
+
+meta:
+  zotero_key: "7t65sn78"
+  topic: time-frequency-transfer
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: medium
+  title: "Sub-ns time transfer consistency: a direct comparison between GPS CV and T2L2"
+  year: 2016
+  first_author: Exertier
+  authors: ["P. Exertier"
+    "E. Samain"
+    "C. Courde"
+    "M. Aimar"
+    "J. M. Torre"
+    "G. D. Rovera"
+    "M. Abgrall"
+    "P. Uhrich"
+    "R. Sherwood"
+    "G. Herold"
+    "U. Schreiber"
+    "P. Guillemot"]
+  journal: "Metrologia"
+  doi: "10.1088/0026-1394/53/6/1395"
+  note: >
+    [journal_paper]
+    待补充推理链条和知识点提取。

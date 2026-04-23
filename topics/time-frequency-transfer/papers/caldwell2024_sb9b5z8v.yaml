@@ -1,0 +1,26 @@
+# Caldwell 2024 — Application of quantum-limited optical time transfer to space-based optical cloc...
+# 提取者：AI 草稿，待专家确认
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
+# contribution_type: evidence
+
+meta:
+  zotero_key: "sb9b5z8v"
+  topic: time-frequency-transfer
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: medium
+  title: "Application of quantum-limited optical time transfer to space-based optical clock comparisons and coherent networks"
+  year: 2024
+  first_author: Caldwell
+  authors: ["Emily D. Caldwell"
+    "Laura C. Sinclair"
+    "Jean-Daniel Deschenes"
+    "Fabrizio Giorgetta"
+    "Nathan R. Newbury"]
+  journal: "Apl Photonics"
+  doi: "10.1063/5.0170107"
+  note: >
+    [journal_paper]
+    待补充推理链条和知识点提取。

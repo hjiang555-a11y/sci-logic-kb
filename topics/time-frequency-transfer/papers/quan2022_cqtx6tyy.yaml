@@ -1,0 +1,28 @@
+# Quan 2022 — Microwave Frequency Dissemination over a 212 km Cascaded Urban Fiber Link with S...
+# 提取者：AI 草稿，待专家确认
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
+# contribution_type: evidence
+
+meta:
+  zotero_key: "cqtx6tyy"
+  topic: time-frequency-transfer
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: medium
+  title: "Microwave Frequency Dissemination over a 212 km Cascaded Urban Fiber Link with Stability at the 10(-18) Level"
+  year: 2022
+  first_author: Quan
+  authors: ["H. L. Quan"
+    "W. X. Xue"
+    "W. Y. Zhao"
+    "Y. Xing"
+    "H. F. Jiang"
+    "W. G. Guo"
+    "S. G. Zhang"]
+  journal: "Photonics"
+  doi: "10.3390/photonics9060399"
+  note: >
+    [journal_paper]
+    待补充推理链条和知识点提取。

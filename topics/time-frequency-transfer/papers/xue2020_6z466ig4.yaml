@@ -1,0 +1,28 @@
+# Xue 2020 — Microwave frequency transfer over a 112-km urban fiber link based on electronic ...
+# 提取者：AI 草稿，待专家确认
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
+# contribution_type: evidence
+
+meta:
+  zotero_key: "6z466ig4"
+  topic: time-frequency-transfer
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: medium
+  title: "Microwave frequency transfer over a 112-km urban fiber link based on electronic phase compensation*"
+  year: 2020
+  first_author: Xue
+  authors: ["W. X. Xue"
+    "W. Y. Zhao"
+    "H. L. Quan"
+    "C. C. Zhao"
+    "Y. Xing"
+    "H. F. Jiang"
+    "S. G. Zhang"]
+  journal: "Chin. Phys. B"
+  doi: "10.1088/1674-1056/ab84d6"
+  note: >
+    [journal_paper]
+    待补充推理链条和知识点提取。

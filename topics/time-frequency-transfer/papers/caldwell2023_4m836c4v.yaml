@@ -1,0 +1,29 @@
+# Caldwell 2023 — Quantum-limited optical time transfer for future geosynchronous links
+# 提取者：AI 草稿，待专家确认
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
+# contribution_type: evidence
+
+meta:
+  zotero_key: "4m836c4v"
+  topic: time-frequency-transfer
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: medium
+  title: "Quantum-limited optical time transfer for future geosynchronous links"
+  year: 2023
+  first_author: Caldwell
+  authors: ["Emily D. Caldwell"
+    "Jean-Daniel Deschenes"
+    "Jennifer Ellis"
+    "William C. Swann"
+    "Benjamin K. Stuhl"
+    "Hugo Bergeron"
+    "Nathan R. Newbury"
+    "Laura C. Sinclair"]
+  journal: "Nature"
+  doi: "10.1038/s41586-023-06032-5"
+  note: >
+    [journal_paper]
+    待补充推理链条和知识点提取。

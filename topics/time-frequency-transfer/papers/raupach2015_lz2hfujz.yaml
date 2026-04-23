@@ -1,0 +1,24 @@
+# Raupach 2015 — Brillouin amplification supports 1 x 10(-20) uncertainty in optical frequency tr...
+# 提取者：AI 草稿，待专家确认
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
+# contribution_type: evidence
+
+meta:
+  zotero_key: "lz2hfujz"
+  topic: time-frequency-transfer
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: medium
+  title: "Brillouin amplification supports 1 x 10(-20) uncertainty in optical frequency transfer over 1400 km of underground fiber"
+  year: 2015
+  first_author: Raupach
+  authors: ["S. M. F. Raupach"
+    "A. Koczwara"
+    "G. Grosche"]
+  journal: "Physical Review A"
+  doi: "10.1103/PhysRevA.92.021801"
+  note: >
+    [journal_paper]
+    待补充推理链条和知识点提取。
