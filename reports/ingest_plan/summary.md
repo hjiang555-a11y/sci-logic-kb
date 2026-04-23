@@ -67,10 +67,12 @@
 
 | 被阻断域名 | 说明 |
 |-----------|------|
-| `jila.colorado.edu` | JILA 主站（Jun Ye group 论文全列表） |
+| `tf.nist.gov` | **NIST T&F 官方 PDF 下载入口** <https://tf.nist.gov/tf-cgi/showpubs.pl>（本轮 B2/B5b/B7/B8 主要 PDF 源） |
+| `jila.colorado.edu` | **JILA Ye group 官方 PDF 下载入口** <https://jila.colorado.edu/yelabs/publications/scientific/year>（本轮 B2/B5a 主要 PDF 源） |
 | `ye.jila.colorado.edu` | Ye group 副域名 |
 | `www.nist.gov` | NIST 主站（T&F Division 论文全列表） |
-| `tf.nist.gov` | NIST 时频老版站 |
+
+> 📌 上述两个 PDF 下载入口由用户在 2026-04-23 明确指定为 B2–B8 批次的权威来源（第三次确认），已同步固化到 `TODO.md §阶段 1`。
 
 **当前 stage1 原始候选为 web_search 代理检索结果（约 40 条），覆盖率有限。**  
 若需完整爬取（预计 300–500 篇）：

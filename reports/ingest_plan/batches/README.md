@@ -59,6 +59,9 @@
 
 ## PDF 可用性备忘（阶段 3 阻塞点）
 
+- **权威 PDF 下载入口**（用户 2026-04-23 三次确认）：
+  - NIST T&F：<https://tf.nist.gov/tf-cgi/showpubs.pl>
+  - JILA Ye group：<https://jila.colorado.edu/yelabs/publications/scientific/year>
 - **可直接做 metadata 级摄入**：`framework` 档 11 篇（综述/路线图/thesis 摘要通常可得）
-- **需 PDF 全文才能摄入**：`breakthrough` + `evidence` 21 篇 —— 需 `journals.aps.org` / `nature.com` / `science.org` / `iopscience.iop.org` allowlist 或本地 Zotero 投递
+- **需 PDF 全文才能摄入**：`breakthrough` + `evidence` 21 篇 —— 需上述两站（`tf.nist.gov` / `jila.colorado.edu`）或 `journals.aps.org` / `nature.com` / `science.org` / `iopscience.iop.org` allowlist，或本地 Zotero 投递
 - **网络限制域**：见 `summary.md §网络访问说明`

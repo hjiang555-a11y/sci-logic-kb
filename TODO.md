@@ -94,8 +94,25 @@ reports/ingest_plan/
 
 ## 阶段 1 · 源爬取（✅ 完成，2026-04-23）
 
-> ⚠️ 沙箱 DNS 屏蔽：`colorado.edu` / `nist.gov` 均 DNS REFUSED，已通过 web_search 代理检索代替直接爬取。
-> 若需完整列表（预计 300–500 篇），需专家将这两个域名加入 Copilot allowlist 后重跑。
+### 📌 官方 PDF 下载源（用户三次指定，2026-04-23 固化）
+
+本轮 B1–B9 批次所用论文 PDF 的**权威下载入口**：
+
+| # | 机构 | URL | 用途 |
+|---|------|-----|------|
+| 1 | NIST Time & Frequency Division | <https://tf.nist.gov/tf-cgi/showpubs.pl> | NIST T&F 全部论文/技术报告的 PDF 列表（覆盖 Allan / Howe / Diddams / Fortier / Ludlow / Rosenband / Heavner / Oskay / Sullivan 等） |
+| 2 | JILA Jun Ye group | <https://jila.colorado.edu/yelabs/publications/scientific/year> | Ye group 按年份排序的科学出版物全列表（覆盖 Cundiff / Ye / Marian / Jones / Adler / Bloom / Nicholson / Ludlow / Bothwell / Oelker / Kim / Aeppli 等） |
+
+**适用批次**：B2（OFC 直接光谱）/ B5a（Sr lattice 主干）/ B5b（NIST 与离子钟）/ B7（频率传递）/ B8（时频数学基础）—— 绝大多数候选论文可在上述两站找到 preprint/postprint PDF。
+
+> ⚠️ 沙箱 DNS 屏蔽：`tf.nist.gov` / `jila.colorado.edu` / `www.nist.gov` / `colorado.edu` 均 DNS REFUSED（已于 2026-04-23 再次确认：`curl` 返回 "Could not resolve host"，`web_fetch` 返回 "fetch failed"）。
+>
+> **→ 直接后果**：Copilot cloud agent 无法从这两个 URL 下载 PDF，B2–B8 摄入在当前沙箱中阻塞。
+>
+> **→ 解除方式（任选其一）**：
+> 1. 专家在仓库 Copilot 设置中将 `tf.nist.gov` 与 `jila.colorado.edu` 加入 allowlist，再重跑本任务
+> 2. 按 `CLAUDE.md §GitHub Copilot 优先原则 §2`，本地 Claude Code + Zotero 投递完成摄入，Copilot 仅负责合并后的索引/说明文件联动
+> 3. 专家直接把目标批次的 PDF 附加到 `pdfs/` 目录再发起任务
 
 - [x] 抓取 JILA Jun Ye group 论文（web_search 代理），落盘 `stage1_raw_candidates_jila.csv`（20 条）
 - [x] 抓取 NIST Time & Frequency Division 论文（web_search 代理），落盘 `stage1_raw_candidates_nist.csv`（20 条）
