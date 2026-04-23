@@ -111,26 +111,29 @@ reports/ingest_plan/
 - [x] 应用 0.1 年份过滤器 + 0.2 质量过滤门，生成 `stage2_candidates_final.csv`（31 篇）
 - [x] 所有被拒候选写入 `rejected.csv`（7 篇：2 重复 / 3 超出主题 / 2 NIST 会议）
 - [x] 生成 `summary.md`（候选总数 / 分桶 / 白名单逐条列出）
-- [ ] **专家勾选白名单 5 篇**（`allan1966` / `allan1987` / `howe1976` / `sullivan1990` / `riley2008`）——见 `summary.md §白名单候选`
-- [ ] **专家审批最终候选池**（31 篇）→ 批准后触发阶段 3
+- [x] **专家勾选白名单 5 篇**（`allan1966` / `allan1987` / `howe1976` / `sullivan1990` / `riley2008`）——见 `summary.md §白名单候选`
+- [x] **专家审批最终候选池**（31 篇 + 1 篇新增 = **32 篇**）→ 阶段 3 已触发
+- [x] **新增 `ludlow2008_thesis`**（Andrew D. Ludlow PhD thesis, JILA 2008）——符合 §0.2 "PhD thesis ✅ 接受"规则，定位 framework 档
 
 ---
 
-## 阶段 3 · 分批摄入（⏳ 待启动，阶段 2 通过后触发）
+## 阶段 3 · 分批摄入（🟡 进行中：B9/B1/B5c 已完成 2026-04-23，B2/B5a/B5b/B7/B8 待启动）
 
 批次编号规则：`B1` ~ `B9`，每批目标 8–15 篇，按子域聚类：
 
-| 批次 | 子域 | 目标篇数 | 说明 |
-|------|------|---------|------|
-| B1 | OFC · 自参考与频率综合 | 8–12 | 衔接现有 OFC 骨架 |
-| B2 | OFC · 双梳光谱 | 8–12 | |
-| B3 | OFC · 微梳平台 | 8–12 | |
-| B4 | 超稳激光 · JILA/NIST 分支补全 | 6–10 | 合并到已有 78 篇 |
-| B5 | 光钟 · Sr / Yb / Al⁺ / Hg | 10–15 | 激活 `topics/frequency-standards/` |
-| B6 | 时间标尺 · UTC/TAI · Kalman 合成 | 6–10 | 激活 `topics/timescales/` |
-| B7 | 时频传递 · 光纤相干 / TWSTFT / GNSS | 8–12 | 激活 `topics/frequency-transfer/` |
-| B8 | 时频计量数学基础 · 非奠基期刊论文 | 4–8 | 归属 `topics/shared/metrics/` 待阶段 2 定 |
-| **B9** | **Allan–Howe 奠基白名单** | **3–5** | **< 1999 白名单专用批次；PR 标题注明 `[foundational-whitelist]`** |
+| 批次 | 子域 | 目标篇数 | 状态 | 说明 |
+|------|------|---------|------|------|
+| **B1** | OFC · 自参考与频率综合 | 4 | **✅ 已完成 2026-04-23（4/4）** | `cundiff2003` / `fortier2019` / `diddams2020b` / `diddams2016` 入库；5 条跨文件节点复用 |
+| B2 | OFC · 双梳光谱 | 8–12 | ⏳ 待启动 | |
+| B3 | OFC · 微梳平台 | 8–12 | ⏳ 待启动 | |
+| B4 | 超稳激光 · JILA/NIST 分支补全 | 6–10 | ⏳ 待启动 | 合并到已有 78 篇 |
+| B5a | 光钟 · Sr / Yb / Al⁺ / Hg 主干 | 8 | ⏳ 待启动 | 激活 `topics/frequency-standards/` 实验主线 |
+| B5b | 光钟 · NIST 与离子钟 · 基石综述 | 7 | ⏳ 待启动 | |
+| **B5c** | **光钟 · Ludlow PhD thesis** | **1** | **✅ 已完成 2026-04-23（1/1）** | `ludlow2008_thesis` 入库；`meth.sr_optical_lattice_clock_stack_l08` 建立供 B5a 复用 |
+| B6 | 时间标尺 · UTC/TAI · Kalman 合成 | 6–10 | ⏳ 待启动 | 激活 `topics/frequency-transfer/` |
+| B7 | 时频传递 · 光纤相干 / TWSTFT / GNSS | 8–12 | ⏳ 待启动 | 激活 `topics/frequency-transfer/` |
+| B8 | 时频计量数学基础 · 非奠基期刊论文 | 4–8 | ⏳ 待启动 | 归属 `topics/shared/` |
+| **B9** | **Allan–Howe 奠基白名单** | **3–5** | **✅ 已完成 2026-04-23（5/5）** | `allan1966` / `allan1987` / `howe1976` / `sullivan1990` / `riley2008` 入库；8 个权威 `meth.*` 节点供全库复用；lint 0 error，build_index 已刷新 |
 
 **每批 PR 必做事项**：
 - PR 描述中列出 `Rejected from this batch: N 篇会议 / M 篇 preprint`，透明化质量过滤动作

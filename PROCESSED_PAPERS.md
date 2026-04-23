@@ -3,7 +3,7 @@
 > **说明**：本文件包含知识库中所有已处理论文的详细列表。从 SCHEMA.md 第八节迁移而来。
 > SCHEMA.md 仅保留统计摘要，本文件承载完整论文记录。
 >
-> **最后更新**：2026-04-23（time-frequency-transfer 专题种子 framework 摄入：+1 篇 → 1 篇；`cacciapuoti2017.yaml` 定义 ent.space_optical_clock_mission 及 MWL / ELT+ / FCOL 子节点，建立跨专题 CONDITIONED-BY 接口至 ultrastable-laser / optical-frequency-combs / frequency-standards）
+> **最后更新**：2026-04-23（B1 OFC 早期综述 + B5c Ludlow PhD thesis 摄入：+5 篇 framework → OFC 专题 101→104 篇 / frequency-standards 专题 1→3 篇；本库总计 187→192 篇）
 
 ---
 
@@ -91,13 +91,16 @@
 | `olson2019.yaml` | CDX3DFQR | Olson 2019 — RB 干涉仪 <2×10⁻¹⁶ | ✅ v4.1 |
 | `huangjc2019b.yaml` | 5DCNFGX4 | Huang 2019b — 双缠绕抗振光纤盘 | ✅ v4.1 |
 
-## 光学频率梳专题（101 篇）
+## 光学频率梳专题（104 篇）
 
 ### 框架型文档
 
 | 文件 | Zotero Key | 论文 | 状态 |
 |------|-----------|------|------|
 | `giunta2019.yaml` | KTHCQRJ2 | Giunta 2019 — 光学频率梳 20 年回顾 | ✅ v4.0 framework |
+| `cundiff2003.yaml` | CUNDIFF2003-RMP | Cundiff & Ye 2003 — Colloquium: Femtosecond Optical Frequency Combs（RMP） | ✅ v4.5 framework |
+| `fortier2019.yaml` | FORTIER2019-COMMPHYS | Fortier & Baumann 2019 — 20 Years of Developments in OFC Tech & Applications（Comm. Phys.） | ✅ v4.5 framework |
+| `diddams2020b.yaml` | DIDDAMS2020-SCIENCE | Diddams/Vahala/Udem 2020 — OFC: Coherently Uniting the Electromagnetic Spectrum（Science） | ✅ v4.5 framework |
 | `picque2020.yaml` | 43TAX2KE | Picqué/Diddams 2020 Science — 光频梳 20 年回顾 | ✅ v4.1 framework |
 | `droste2016.yaml` | 5NSQLZTS | Droste & Newbury 2016 — Er:fiber 梳综述 | ✅ v4.1 framework |
 | `endo2018.yaml` | H93SHF89 | Endo 2018 — 超低噪声光频梳综述 | ✅ v4.1 framework |
@@ -164,11 +167,13 @@
 
 > **备注**：原 Batch 3 清单含 `BL4HI3QI`（Picqué & Hänsch 2019 Nature Photonics 综述），与已处理 `picque2019.yaml`（zotero `RZME5CH8`）为**同一 DOI 的备份键**，不创建重复 YAML。
 
-## 频率标准专题（1 篇）
+## 频率标准专题（3 篇）
 
 | 文件 | Zotero Key | 论文 | 状态 |
 |------|-----------|------|------|
 | `fortier2026.yaml` | BWR7TEZ6 | Fortier 2026 — 光学原子钟综述 | ✅ v4.0 framework |
+| `diddams2016.yaml` | DIDDAMS2016-NATPHOT | Diddams/Fortier/Ludlow 2016 — Optical Atomic Clocks（Nature Photonics） | ✅ v4.5 framework |
+| `ludlow2008_thesis.yaml` | LUDLOW2008-THESIS-JILA | Ludlow 2008 — The Strontium Optical Lattice Clock（PhD thesis, JILA） | ✅ v4.5 framework |
 
 ## 时间标尺专题（1 篇）
 
@@ -181,6 +186,16 @@
 | 文件 | Zotero Key | 论文 | 状态 |
 |------|-----------|------|------|
 | `cacciapuoti2017.yaml` | SCI-ESA-HRE-ESR-ISOC | Cacciapuoti & Schiller 2017 — ESA I-SOC 科学需求（ISS 空间光钟任务，MWL+ELT+ 链路） | ✅ v4.5 framework |
+
+## 时频计量数学基础专题（5 篇，B9 Allan–Howe 奠基白名单）
+
+| 文件 | Zotero Key | 论文 | 状态 |
+|------|-----------|------|------|
+| `allan1966.yaml` | ALLAN1966-PROCIEEE | Allan 1966 — σ_y(τ) 两样本 Allan 方差原始定义（Proc. IEEE） | ✅ v4.5 framework |
+| `allan1987.yaml` | ALLAN1987-TUFFC | Allan 1987 — 经典方差 vs Allan 方差辨析；幂律噪声五类分类（IEEE TUFFC） | ✅ v4.5 framework |
+| `howe1976.yaml` | HOWE1976-NBS-TN679 | Howe 1976 — 频域稳定度测量教程；相位/频率噪声 PSD 对偶（NBS TN 679） | ✅ v4.5 framework |
+| `sullivan1990.yaml` | SULLIVAN1990-NIST-TN1337 | Sullivan/Allan/Howe/Walls 1990 — MDEV/TDEV/HDEV 扩展方差（NIST TN 1337） | ✅ v4.5 framework |
+| `riley2008.yaml` | RILEY2008-NIST-SP1065 | Riley & Howe 2008 — OADEV/TOTDEV/Theo1/TheoH 方差手册（NIST SP 1065） | ✅ v4.5 framework |
 
 ---
 

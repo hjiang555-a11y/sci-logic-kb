@@ -2,7 +2,7 @@
 
 # Frequency Standards — Topic Index
 
-> Auto-generated 2026-04-23 00:33 UTC · 1 papers · 10 nodes · 11 relations
+> Auto-generated 2026-04-23 07:05 UTC · 3 papers · 16 nodes · 18 relations
 
 ## Entities
 
@@ -19,13 +19,18 @@
 |----|------|------|--------|
 | `pri.dick_effect` | Dick 效应（时钟周期死时间噪声混叠） | domain | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
 | `pri.magic_wavelength_lattice` | 魔术波长光晶格原理 | domain | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
+| `pri.magic_wavelength_operational_protocol_l08` | 魔术波长光晶格钟操作协议原理（Ludlow thesis） | domain | [ludlow2008_thesis](topics/frequency-standards/papers/ludlow2008_thesis.yaml) |
+| `pri.optical_clock_ten_minus_eighteen_geoid_bridge` | 光钟 10⁻¹⁸ 分数精度 ↔ 1 cm 大地水准面分辨率桥梁 | domain | [diddams2016](topics/frequency-standards/papers/diddams2016.yaml) |
+| `pri.qpn_dick_two_fundamental_limits_dfl16` | 光钟双重基本极限：量子投影噪声 + Dick 效应 | domain | [diddams2016](topics/frequency-standards/papers/diddams2016.yaml) |
 | `pri.quantum_projection_noise_limit` | 量子投影噪声极限 | domain | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
+| `pri.sr_clock_systematic_budget_framework_l08` | Sr 光晶格钟系统误差预算框架（Ludlow thesis） | domain | [ludlow2008_thesis](topics/frequency-standards/papers/ludlow2008_thesis.yaml) |
 
 ## Methods
 
 | ID | Name | Source |
 |----|------|--------|
 | `meth.ramsey_spectroscopy_clock` | Ramsey 光谱法（光钟频率测量） | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
+| `meth.sr_optical_lattice_clock_stack_l08` | Sr 光晶格钟全栈集成方法（Ludlow thesis） | [ludlow2008_thesis](topics/frequency-standards/papers/ludlow2008_thesis.yaml) |
 
 ## Metrics
 
@@ -37,8 +42,13 @@
 |----|------|------------|--------|
 | `met.optical_clock_fractional_instability` | 光学原子钟分数频率不稳定度 | σ_y(τ) ≈ 5×10⁻¹⁷/√τ（最佳光晶格钟，综述汇总） | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
 | `met.optical_clock_fractional_uncertainty` | 光学原子钟分数频率不确定度（系统效应） | <10⁻¹⁸（多个系统）；5.5×10⁻¹⁹（²⁷Al⁺ NIST，当前最佳，综述汇总） | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
+| `met.optical_clock_fractional_uncertainty_2016_benchmark` | 2016 年光钟最佳分数系统不确定度基准 | Al⁺（NIST）：8.6×10⁻¹⁸；Sr（JILA）：2.1×10⁻¹⁸；Yb（NIST）：1.0×10⁻¹⁸ | [diddams2016](topics/frequency-standards/papers/diddams2016.yaml) |
 
 ## BOUNDED-BY Chains
+
+### `rel.DFL16_02`: `ent.optical_frequency_standard` → `pri.qpn_dick_two_fundamental_limits_dfl16`
+
+- **Source**: diddams2016
 
 ### `rel.F26_04`: `ent.optical_frequency_standard` → `pri.quantum_projection_noise_limit`
 
@@ -52,6 +62,10 @@
 - **Breakthrough paths**:
   - `pri.quantum_projection_noise_limit` — status: in_progress · gain: 更好的超稳激光（10⁻¹⁸ 级）或零死时间操作 → Dick 效应降至 QPN 以下
 
+### `rel.L08T_03`: `ent.optical_lattice_clock` → `pri.sr_clock_systematic_budget_framework_l08`
+
+- **Source**: ludlow2008_thesis
+
 ## Cross-Topic References
 
 Nodes referenced but not defined in this topic:
@@ -60,4 +74,5 @@ Nodes referenced but not defined in this topic:
 |----------|-----------|---------------|--------|
 | `rel.F26_11` | CONDITIONED-BY | `ent.fp_cavity_system` | fortier2026 |
 | `rel.F26_10` | CONDITIONED-BY | `ent.optical_frequency_comb` | fortier2026 |
+| `rel.L08T_04` | OPERATIONALIZED-AS | `meth.allan_deviation_adev` | ludlow2008_thesis |
 

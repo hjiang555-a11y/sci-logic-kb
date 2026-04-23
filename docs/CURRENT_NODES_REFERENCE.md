@@ -4,7 +4,7 @@
 
 > **用途**：处理新论文时，用此文件快速检查是否已有同名/同义节点，避免重复定义。
 > **维护**：本文件由 `scripts/build_index.py` 自动生成，**请勿手工编辑**。
-> **生成时间**：2026-04-23 00:33 UTC
+> **生成时间**：2026-04-23 07:05 UTC
 
 > **使用方式**：
 > - 处理新论文时，`Ctrl+F` 搜索关键词（如 `brownian`, `pdh`, `fiber`）
@@ -28,13 +28,18 @@
 |----|------|------|--------|
 | `pri.dick_effect` | Dick 效应（时钟周期死时间噪声混叠） | domain | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
 | `pri.magic_wavelength_lattice` | 魔术波长光晶格原理 | domain | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
+| `pri.magic_wavelength_operational_protocol_l08` | 魔术波长光晶格钟操作协议原理（Ludlow thesis） | domain | [ludlow2008_thesis](topics/frequency-standards/papers/ludlow2008_thesis.yaml) |
+| `pri.optical_clock_ten_minus_eighteen_geoid_bridge` | 光钟 10⁻¹⁸ 分数精度 ↔ 1 cm 大地水准面分辨率桥梁 | domain | [diddams2016](topics/frequency-standards/papers/diddams2016.yaml) |
+| `pri.qpn_dick_two_fundamental_limits_dfl16` | 光钟双重基本极限：量子投影噪声 + Dick 效应 | domain | [diddams2016](topics/frequency-standards/papers/diddams2016.yaml) |
 | `pri.quantum_projection_noise_limit` | 量子投影噪声极限 | domain | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
+| `pri.sr_clock_systematic_budget_framework_l08` | Sr 光晶格钟系统误差预算框架（Ludlow thesis） | domain | [ludlow2008_thesis](topics/frequency-standards/papers/ludlow2008_thesis.yaml) |
 
 ### Methods
 
 | ID | Name | Source |
 |----|------|--------|
 | `meth.ramsey_spectroscopy_clock` | Ramsey 光谱法（光钟频率测量） | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
+| `meth.sr_optical_lattice_clock_stack_l08` | Sr 光晶格钟全栈集成方法（Ludlow thesis） | [ludlow2008_thesis](topics/frequency-standards/papers/ludlow2008_thesis.yaml) |
 
 ---
 
@@ -80,6 +85,7 @@
 | `pri.cams_fceo_demodulation` | f_CEO 自然载波 + 锁相解调 CEP 信号原理（CAMS） | engineering | [lesko2022](topics/optical-frequency-combs/papers/lesko2022.yaml) |
 | `pri.cavity_enhanced_comb_spectroscopy` | 腔增强频率梳光谱原理 | domain | [picque2019](topics/optical-frequency-combs/papers/picque2019.yaml) |
 | `pri.cavity_enhanced_hhg_comb` | 飞秒增强腔高次谐波产生梳原理 | domain | [zhang2022](topics/optical-frequency-combs/papers/zhang2022.yaml) |
+| `pri.cep_controlled_frequency_comb_time_frequency_duality` | 载波-包络相位控制频率梳时-频域对偶原理 | domain | [cundiff2003](topics/optical-frequency-combs/papers/cundiff2003.yaml) |
 | `pri.chip_comb_platform_tradeoff_space` | 芯片梳平台四维权衡空间原理 | meta | [gaeta2019](topics/optical-frequency-combs/papers/gaeta2019.yaml) |
 | `pri.chip_dispersion_engineering_high_index_contrast` | 高折射率对比波导色散工程原理 | domain | [gaeta2019](topics/optical-frequency-combs/papers/gaeta2019.yaml) |
 | `pri.chirped_qpm_broadband_chi2_sc` | 啁啾准相位匹配实现 χ² 宽带光谱展宽原理 | domain | [wu2024](topics/optical-frequency-combs/papers/wu2024.yaml) |
@@ -92,6 +98,7 @@
 | `pri.comb_driven_stimulated_raman_terahertz` | 飞秒梳驱动的 THz 受激 Raman 转动跃迁原理 | domain | [chou2020](topics/optical-frequency-combs/papers/chou2020.yaml) |
 | `pri.comb_equation` | 光频梳基本方程 f_n = n·f_rep + f_CEO | meta | [droste2016](topics/optical-frequency-combs/papers/droste2016.yaml) |
 | `pri.comb_nonlinear_spectroscopy` | 频率梳非线性光谱原理 | domain | [picque2019](topics/optical-frequency-combs/papers/picque2019.yaml) |
+| `pri.comb_platform_tradeoffs_f19` | OFC 平台选择权衡原理（Ti:sapph / fiber / QCL / 微梳） | domain | [fortier2019](topics/optical-frequency-combs/papers/fortier2019.yaml) |
 | `pri.common_mode_fiber_path_noise_rejection` | 共模光纤路径噪声共模抑制原理 | engineering | [leopardi2017](topics/optical-frequency-combs/papers/leopardi2017.yaml) |
 | `pri.common_path_comb_combining_turbulence_cancellation` | 传前合束共模抵消湍流相位畸变原理 | engineering | [ycas2019](topics/optical-frequency-combs/papers/ycas2019.yaml) |
 | `pri.dark_pulse_normal_dispersion_comb` | 正常色散暗脉冲/platicon 梳原理 | domain | [gaeta2019](topics/optical-frequency-combs/papers/gaeta2019.yaml) |
@@ -187,11 +194,14 @@
 | `pri.normal_dispersion_dark_pulse_s22` | 正常色散 + 避免模交叉下暗脉冲 Kerr 梳生成原理 | domain | [shu2022](topics/optical-frequency-combs/papers/shu2022.yaml) |
 | `pri.npe_nalm_hybrid_mode_locking` | NPE+NALM 混合锁模原理 | engineering | [zhang2017](topics/optical-frequency-combs/papers/zhang2017.yaml) |
 | `pri.octave_self_compression_enables_inline_f2f` | 自压缩倍频程谱使同纤 f-2f 免延迟化 | engineering | [xing2020](topics/optical-frequency-combs/papers/xing2020.yaml) |
+| `pri.octave_span_enables_absolute_referencing_cy03` | 倍频程谱宽使绝对自参考可行（Cundiff & Ye 综述版） | domain | [cundiff2003](topics/optical-frequency-combs/papers/cundiff2003.yaml) |
 | `pri.octave_spanning_enables_f2f_self_reference` | 倍频程谱使 f-2f 自参考成为单激光器方案 | engineering | [diddams2000](topics/optical-frequency-combs/papers/diddams2000.yaml) |
 | `pri.octave_supercontinuum_enables_self_referencing_d10` | 倍频程超连续谱使 f-2f 自参考可行原理（Diddams 2010 综述版） | domain | [diddams2010](topics/optical-frequency-combs/papers/diddams2010.yaml) |
 | `pri.ofc_functional_definition_2010` | 光学频率梳功能性定义原理（Diddams 2010） | meta | [diddams2010](topics/optical-frequency-combs/papers/diddams2010.yaml) |
+| `pri.ofc_nine_application_threads_f19` | OFC 九大应用主线分类框架（Fortier 2019 综述版） | meta | [fortier2019](topics/optical-frequency-combs/papers/fortier2019.yaml) |
 | `pri.ofc_noise_hierarchy` | OFC 噪声层级原理 | domain | [endo2018](topics/optical-frequency-combs/papers/endo2018.yaml) |
 | `pri.ofc_two_dof_stabilization` | OFC 双自由度独立稳定化原理 | meta | [endo2018](topics/optical-frequency-combs/papers/endo2018.yaml) |
+| `pri.ofc_unified_electromagnetic_spectrum_framework` | OFC 作为统一电磁波谱相干标尺框架 | meta | [diddams2020b](topics/optical-frequency-combs/papers/diddams2020b.yaml) |
 | `pri.open_path_dcs_attribution_chain` | 开放路径 DCS 痕量气体溯源推理链原理 | domain | [coburn2018](topics/optical-frequency-combs/papers/coburn2018.yaml) |
 | `pri.optical_clock_higher_frequency_advantage` | 光学钟高频振荡优势原理 | domain | [udem2002](topics/optical-frequency-combs/papers/udem2002.yaml) |
 | `pri.optical_filter_dispersion_suppression` | 光学窄带滤波抑制长距离光纤色散原理 | domain | [leng2016](topics/optical-frequency-combs/papers/leng2016.yaml) |
@@ -237,6 +247,7 @@
 | `pri.thermal_drift_out_of_loop_fiber_noise` | Out-of-loop 光纤热漂移限制原理 | engineering | [zhang2022b](topics/optical-frequency-combs/papers/zhang2022b.yaml) |
 | `pri.thermal_instability_dks_access` | 热效应限制 DKS 接入——微梳核心工程挑战 | domain | [pasquazi2018](topics/optical-frequency-combs/papers/pasquazi2018.yaml) |
 | `pri.thermo_optic_soliton_access_barrier` | 热光效应导致孤子区访问困难原理 | domain | [li2017](topics/optical-frequency-combs/papers/li2017.yaml) |
+| `pri.three_comb_platforms_triumvirate_dvu20` | Ti:sapph / fiber / 微梳 三足鼎立平台生态原理 | domain | [diddams2020b](topics/optical-frequency-combs/papers/diddams2020b.yaml) |
 | `pri.tpfc_digital_coherent_pulse_control_c22` | 时间可编程频率梳数字相干脉冲控制原理（Caldwell 2022） | meta | [caldwell2022](topics/optical-frequency-combs/papers/caldwell2022.yaml) |
 | `pri.tpfc_tracking_oscillator_quantum_limit_c22` | TPFC 追踪振荡器量子限制探测原理（Caldwell 2022） | domain | [caldwell2022](topics/optical-frequency-combs/papers/caldwell2022.yaml) |
 | `pri.transportable_cavity_reference_coupling` | 可移动腔稳激光作为光参考的接口原理 | engineering | [sinclair2014](topics/optical-frequency-combs/papers/sinclair2014.yaml) |
@@ -263,6 +274,7 @@
 | `meth.cavity_enhanced_dcs` | 腔增强双梳光谱方法 | [picque2019](topics/optical-frequency-combs/papers/picque2019.yaml) |
 | `meth.chip_scg_comb_generation_g19` | 芯片波导超连续谱梳生成方法（框架版本） | [gaeta2019](topics/optical-frequency-combs/papers/gaeta2019.yaml) |
 | `meth.comb_calibrated_fmcw_nlos_imaging` | 光梳校准 FMCW NLOS 成像方法 | [huang2024](topics/optical-frequency-combs/papers/huang2024.yaml) |
+| `meth.comb_platform_taxonomy_f19` | OFC 硬件平台分类法（Fortier 2019 综述版） | [fortier2019](topics/optical-frequency-combs/papers/fortier2019.yaml) |
 | `meth.comb_rf_fiber_transfer` | 光频梳编码 RF 光纤传输方法 | [leng2016](topics/optical-frequency-combs/papers/leng2016.yaml) |
 | `meth.comb_transfer_function_measurement` | 光频梳传递函数矩阵测量方法 | [zhang2012c](topics/optical-frequency-combs/papers/zhang2012c.yaml) |
 | `meth.common_comb_differential_rv_test` | 同梳双光纤差分 RV 漂移表征方法 | [metcalf2019](topics/optical-frequency-combs/papers/metcalf2019.yaml) |
@@ -339,6 +351,39 @@
 | `meth.tunable_vuv_comb_generation_cavity_hhg` | 可调 VUV 梳腔增强七次谐波方法 | [zhang2022](topics/optical-frequency-combs/papers/zhang2022.yaml) |
 | `meth.vipa_comb_spectroscopy` | VIPA 交叉色散频率梳光谱方法 | [picque2019](topics/optical-frequency-combs/papers/picque2019.yaml) |
 | `meth.wideband_optical_frequency_synthesis` | 宽带光学频率合成方法（多分支梳+色散外差检测） | [giunta2020](topics/optical-frequency-combs/papers/giunta2020.yaml) |
+
+---
+
+## shared  
+> 详细索引: [`topics/shared/INDEX.md`](topics/shared/INDEX.md)
+
+### Principles
+
+| ID | Name | Tier | Source |
+|----|------|------|--------|
+| `pri.classical_variance_divergence_for_flicker_noise` | 经典方差对 flicker / random-walk 频率噪声发散原理 | meta | [allan1966](topics/shared/papers/allan1966.yaml) |
+| `pri.hadamard_variance_drift_insensitive` | Hadamard 方差对线性漂移不敏感原理 | meta | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
+| `pri.modified_allan_kernel_resolves_pm_noise` | MDEV 相位平均积分核分辨 PM 噪声原理 | meta | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
+| `pri.overlapping_estimator_improves_edf` | 重叠估计量提升等效自由度原理 | meta | [riley2008](topics/shared/papers/riley2008.yaml) |
+| `pri.phase_noise_frequency_noise_psd_duality` | 相位噪声 PSD 与频率噪声 PSD 对偶关系 | meta | [howe1976](topics/shared/papers/howe1976.yaml) |
+| `pri.power_law_noise_taxonomy` | 时频噪声五类幂律分类（white PM / flicker PM / white FM / flicker … | meta | [allan1987](topics/shared/papers/allan1987.yaml) |
+| `pri.sigma_y_slope_identifies_noise_type` | σ_y(τ) 斜率-噪声辨识原理 | meta | [allan1987](topics/shared/papers/allan1987.yaml) |
+| `pri.theo1_long_tau_statistical_efficiency` | Theo1 方差长 τ 统计效率最优原理 | meta | [riley2008](topics/shared/papers/riley2008.yaml) |
+| `pri.time_frequency_domain_transfer_function` | 时-频域稳定度转换传递函数原理（sin⁴ 核） | meta | [howe1976](topics/shared/papers/howe1976.yaml) |
+| `pri.two_sample_variance_converges` | 两样本（Allan）方差对幂律噪声收敛原理 | meta | [allan1966](topics/shared/papers/allan1966.yaml) |
+
+### Methods
+
+| ID | Name | Source |
+|----|------|--------|
+| `meth.allan_deviation_adev` | Allan 偏差（两样本 Allan 方差开方，ADEV / σ_y(τ)） | [allan1966](topics/shared/papers/allan1966.yaml) |
+| `meth.hadamard_deviation_hdev` | Hadamard 偏差 HDEV / H_y(τ) | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
+| `meth.modified_allan_deviation_mdev` | 修正 Allan 偏差 MDEV / mod σ_y(τ) | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
+| `meth.overlapping_allan_deviation_oadev` | 重叠 Allan 偏差 OADEV | [riley2008](topics/shared/papers/riley2008.yaml) |
+| `meth.phase_noise_psd_measurement` | 相位噪声功率谱密度 S_phi(f) 测量方法 | [howe1976](topics/shared/papers/howe1976.yaml) |
+| `meth.theo1_thedev` | Theo1 / TheoBR / TheoH 方差（Howe 族） | [riley2008](topics/shared/papers/riley2008.yaml) |
+| `meth.time_deviation_tdev` | 时偏差 TDEV / σ_x(τ) | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
+| `meth.total_deviation_totdev` | Total 偏差 TOTDEV / σ_Total(τ) | [riley2008](topics/shared/papers/riley2008.yaml) |
 
 ---
 

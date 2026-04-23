@@ -2,7 +2,7 @@
 
 # 📊 Metrics Quick Reference
 
-> Auto-generated 2026-04-23 00:33 UTC
+> Auto-generated 2026-04-23 07:05 UTC
 >
 > Metrics are grouped by **role** (v4.4 σ_y-first convention, see `topics/ultrastable-laser/_meta/scoping_principles.md` v2). Role is taken from the `role` field on the metric node when present, otherwise inferred from ID / name heuristics.
 
@@ -14,6 +14,7 @@
 |----|------|------------|------------|--------|
 | `met.optical_clock_fractional_instability` | 光学原子钟分数频率不稳定度 | σ_y(τ) ≈ 5×10⁻¹⁷/√τ（最佳光晶格钟，综述汇总） | ⁸⁷Sr 或 ¹⁷¹Yb 光晶格钟，~10⁴ 原子，T_m ≈ 1–4 s，超稳腔激光 | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
 | `met.optical_clock_fractional_uncertainty` | 光学原子钟分数频率不确定度（系统效应） | <10⁻¹⁸（多个系统）；5.5×10⁻¹⁹（²⁷Al⁺ NIST，当前最佳，综述汇总） | ²⁷Al⁺ 量子逻辑钟（NIST），完整不确定度预算评估 | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
+| `met.optical_clock_fractional_uncertainty_2016_benchmark` | 2016 年光钟最佳分数系统不确定度基准 | Al⁺（NIST）：8.6×10⁻¹⁸；Sr（JILA）：2.1×10⁻¹⁸；Yb（NIST）：1.0×10⁻¹⁸ | 实验室条件稳态运行；主要系统效应（BBR / Zeeman / AC-Stark / 碰撞）独立评估 | [diddams2016](topics/frequency-standards/papers/diddams2016.yaml) |
 
 ## Optical Frequency Combs
 
@@ -251,6 +252,14 @@
 | `met.wall_plug_power_w17` | Electrical drive power / wall-plug | sub-watt chip-level electrical drive | — | [wang2017](topics/optical-frequency-combs/papers/wang2017.yaml) |
 | `met.xuv_harmonic_power_p18` | XUV 单谐波功率（Porat 2018） | ~2 mW | f_rep = 77 MHz 飞秒增强腔，Ar+He 混合气体（背压温度 T = 800 K）， … | [porat2018](topics/optical-frequency-combs/papers/porat2018.yaml) |
 | `met.yb_fiber_comb_power_cpa_l20` | Yb 光纤梳 CPA 输出功率 | 132 W（180 fs，99% 主峰能量） | Yb:fiber CPA 系统（250 MHz frep）+ grism 压缩器 | [luo2020](topics/optical-frequency-combs/papers/luo2020.yaml) |
+
+## shared
+
+### 🎯 Primary (σ_y 主线)
+
+| ID | Name | Best Value | Conditions | Source |
+|----|------|------------|------------|--------|
+| `met.fractional_frequency_instability_sigma_y` | 分数频率不稳定度 σ_y(τ)（Allan 偏差通用度量，landmark 定义） | N/A（度量定义而非测量实例；具体数值见本库数十个派生 met.*allan_deviation_* 节点） | 跨整个知识库适用；每个实例指标的条件由其所在 paper YAML 给出；度量自身在 tau >=… | [allan1966](topics/shared/papers/allan1966.yaml) |
 
 ## Time-Frequency Transfer
 

@@ -7,6 +7,70 @@
 
 ---
 
+## [2026-04-23] ingest | B1 OFC 早期综述 + B5c Ludlow PhD thesis（5 篇 framework）
+
+按 TODO.md 阶段 3 批次 **B1（OFC 早期综述与原理奠基）** 与 **B5c（Ludlow PhD thesis）**
+合并一次 PR 完成。
+
+- **摄入文件**（5 篇，均 framework 档）：
+  - `topics/optical-frequency-combs/papers/cundiff2003.yaml` — Cundiff & Ye 2003 *Rev. Mod. Phys.* 75:325（`CUNDIFF2003-RMP`）
+  - `topics/optical-frequency-combs/papers/fortier2019.yaml` — Fortier & Baumann 2019 *Commun. Phys.* 2:153（`FORTIER2019-COMMPHYS`）
+  - `topics/optical-frequency-combs/papers/diddams2020b.yaml` — Diddams/Vahala/Udem 2020 *Science* 369:eaay3676（`DIDDAMS2020-SCIENCE`）
+  - `topics/frequency-standards/papers/diddams2016.yaml` — Diddams/Fortier/Ludlow 2016 *Nature Photonics* 10:502（`DIDDAMS2016-NATPHOT`）
+  - `topics/frequency-standards/papers/ludlow2008_thesis.yaml` — Ludlow PhD thesis 2008, JILA（`LUDLOW2008-THESIS-JILA`）
+- **新建框架原理节点**（8 个）：
+  - OFC 专题（6 个）：`pri.cep_controlled_frequency_comb_time_frequency_duality`、`pri.octave_span_enables_absolute_referencing_cy03`、`pri.ofc_nine_application_threads_f19`、`pri.comb_platform_tradeoffs_f19`、`pri.ofc_unified_electromagnetic_spectrum_framework`、`pri.three_comb_platforms_triumvirate_dvu20`
+  - 频率标准专题（4 个）：`pri.optical_clock_ten_minus_eighteen_geoid_bridge`、`pri.qpn_dick_two_fundamental_limits_dfl16`、`pri.magic_wavelength_operational_protocol_l08`、`pri.sr_clock_systematic_budget_framework_l08`
+- **新建框架方法节点**（2 个）：`meth.comb_platform_taxonomy_f19`、`meth.sr_optical_lattice_clock_stack_l08`（后者为 B5a 批次 Sr 系列论文的共同参考底座）
+- **新建指标节点**（1 个）：`met.optical_clock_fractional_uncertainty_2016_benchmark`（2016 年代光钟基准）
+- **跨文件节点复用率**：5 篇新文件共 13 条关系，其中 **4 条复用已有跨专题节点**（`ent.optical_frequency_comb`@giunta2019 · `pri.self_referencing_f2f`@giunta2019 · `ent.optical_frequency_standard`@fortier2026 · `ent.optical_lattice_clock`@fortier2026 · `meth.allan_deviation_adev`@allan1966），未新建重复节点。
+- **validation**：`python scripts/lint.py` 通过（**0 error**，本批 0 new warning；3 warning 为预先存在的 ultrastable-laser 问题）；`python scripts/build_index.py` 刷新：**192 papers / 1029 nodes / 1180 relations / 6 topics**（较 B9 后 187 papers / 1016 nodes 增 +5 papers / +13 nodes / +16 relations）
+- **批次进度**：Stage 3 已完成 B9 + B1 + B5c = 10/32 篇（31%）
+- **PR 元信息备注**：原 batches README 将 `diddams2016` 归 B1（OFC 批次），但其内容是光钟综述（NIST+JILA 光钟领军人物联合署名）；摄入时按内容主题归入 `frequency-standards` 专题，但仍计作 B1 批次完成项（保持批次计数一致）。
+
+---
+
+## [2026-04-23] ingest | B9 Allan–Howe 奠基白名单（shared 专题首批 framework 摄入，5 篇）
+
+按 TODO.md 阶段 3 批次 **B9** 完成时频计量数学基础专题（`topics/shared/`）首批入库。
+
+- **摄入文件**（5 篇，均 framework 档）：
+  - `allan1966.yaml` — Allan 1966 *Proc. IEEE* 54(2):221 — σ_y(τ) 两样本 Allan 方差原始定义（zotero_key `ALLAN1966-PROCIEEE`）
+  - `allan1987.yaml` — Allan 1987 *IEEE TUFFC* IM-36(2):646 — 经典方差 vs Allan 方差辨析；幂律噪声五类分类（`ALLAN1987-TUFFC`）
+  - `howe1976.yaml` — Howe 1976 *NBS Tech Note 679* — 频域稳定度测量教程；相位/频率噪声 PSD 对偶（`HOWE1976-NBS-TN679`）
+  - `sullivan1990.yaml` — Sullivan/Allan/Howe/Walls 1990 *NIST Tech Note 1337* — MDEV/TDEV/HDEV 扩展方差手册（`SULLIVAN1990-NIST-TN1337`）
+  - `riley2008.yaml` — Riley & Howe 2008 *NIST Special Publication 1065* — OADEV/TOTDEV/Theo1/TheoH 方差手册（`RILEY2008-NIST-SP1065`）
+- **新建权威方法节点**（8 个，供全库复用，减少后续 papers YAML 重复定义）：
+  - `meth.allan_deviation_adev` — ADEV / σ_y(τ)
+  - `meth.modified_allan_deviation_mdev` — MDEV / mod σ_y(τ)
+  - `meth.time_deviation_tdev` — TDEV / σ_x(τ)
+  - `meth.hadamard_deviation_hdev` — HDEV（漂移免疫）
+  - `meth.overlapping_allan_deviation_oadev` — OADEV（EDF 提升）
+  - `meth.total_deviation_totdev` — TOTDEV（长 τ 低偏差）
+  - `meth.theo1_thedev` — Theo1 / TheoBR / TheoH（长 τ 统计效率最优）
+  - `meth.phase_noise_psd_measurement` — 相位噪声 S_phi(f) 测量
+- **新建权威原理节点**（7 个）：经典方差发散 / 两样本方差收敛 / 幂律噪声五类分类 / σ_y 斜率辨识噪声 /
+  相位-频率噪声 PSD 对偶 / 时-频域 sin⁴ 传递函数 / MDEV sin⁶ 核 PM 分辨 / HDEV 二阶差分漂移免疫 /
+  重叠估计量 EDF 提升 / Theo1 长 τ 统计效率最优
+- **新建权威指标节点**：`met.fractional_frequency_instability_sigma_y`（role=primary，σ_y(τ) landmark 定义）
+- **专题骨架建立**：`topics/shared/papers/` 目录首次启用（原 `shared/_meta/architecture.md` 中状态 "Not yet populated" 现更新为"已启用"）；`topics/shared/INDEX.md` 经 `scripts/build_index.py` 自动生成
+- **validation**：`python scripts/lint.py` 通过（本批零 error、零 warning）；`python scripts/build_index.py` 全量刷新 INDEX / INDEX_metrics / INDEX_principles / CURRENT_NODES_REFERENCE
+- **后续动作**：后续摄入的 papers 应优先引用这 8 个 `meth.*` 节点而非重复定义本地 Allan/MDEV/OADEV 方法；各 `met.*allan_deviation_*` 实例节点可通过 OPERATIONALIZED-AS 关系绑定到 `met.fractional_frequency_instability_sigma_y`
+
+---
+
+## [2026-04-23] restructure | JILA/NIST 扩库阶段 2 候选池批准（32 篇）
+
+专家一次性批准阶段 2 全部候选进入阶段 3 摄入。
+
+- **批准总量**：32 篇 = 原 31 篇 stage2 候选池 + 新增 `ludlow2008_thesis`（Andrew D. Ludlow PhD thesis, JILA 2008，符合 TODO.md §0.2 "PhD thesis ✅ 接受"规则）
+- **白名单豁免**：5 篇 Allan–Howe 奠基文献（`allan1966` / `allan1987` / `howe1976` / `sullivan1990` / `riley2008`）一并批准
+- **批次分配**：详见 `reports/ingest_plan/batches/README.md`（B1/B2/B5a-c/B7/B8/B9 共 7 个子批次）
+- **推荐摄入顺序**：B9（奠基）→ B1（OFC 综述）→ B5c（Ludlow thesis）→ B5a/B5b（实验主体）→ B2/B7/B8
+- **阻塞点**：PDF 全文 21 篇（`breakthrough` + `evidence`）受沙箱网络限制，需 allowlist 或本地 Zotero 投递
+
+---
+
 ## [2026-04-23] ingest | time-frequency-transfer 专题种子 · `cacciapuoti2017.yaml`（ESA I-SOC 科学需求，framework）
 
 处理 `/pdfs/SCI-ESA-HRE-ESR-ISOC_Iss.1.1_Approved.pdf`（另一 PDF `FreqStable_Si_cavity AlGaAs mirror_PRL2026.pdf`

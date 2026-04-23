@@ -2,19 +2,31 @@
 
 # 🔬 Principles Quick Reference
 
-> Auto-generated 2026-04-23 00:33 UTC
+> Auto-generated 2026-04-23 07:05 UTC
 
 ## Tier: meta
 
 | ID | Name | Topic | Source |
 |----|------|-------|--------|
 | `pri.chip_comb_platform_tradeoff_space` | 芯片梳平台四维权衡空间原理 | Optical Frequency Combs | [gaeta2019](topics/optical-frequency-combs/papers/gaeta2019.yaml) |
+| `pri.classical_variance_divergence_for_flicker_noise` | 经典方差对 flicker / random-walk 频率噪声发散原理 | shared | [allan1966](topics/shared/papers/allan1966.yaml) |
 | `pri.comb_equation` | 光频梳基本方程 f_n = n·f_rep + f_CEO | Optical Frequency Combs | [droste2016](topics/optical-frequency-combs/papers/droste2016.yaml) |
+| `pri.hadamard_variance_drift_insensitive` | Hadamard 方差对线性漂移不敏感原理 | shared | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
 | `pri.microcomb_formation_regime_taxonomy_g19` | Kerr 微梳形成态分类体系 | Optical Frequency Combs | [gaeta2019](topics/optical-frequency-combs/papers/gaeta2019.yaml) |
+| `pri.modified_allan_kernel_resolves_pm_noise` | MDEV 相位平均积分核分辨 PM 噪声原理 | shared | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
 | `pri.ofc_functional_definition_2010` | 光学频率梳功能性定义原理（Diddams 2010） | Optical Frequency Combs | [diddams2010](topics/optical-frequency-combs/papers/diddams2010.yaml) |
+| `pri.ofc_nine_application_threads_f19` | OFC 九大应用主线分类框架（Fortier 2019 综述版） | Optical Frequency Combs | [fortier2019](topics/optical-frequency-combs/papers/fortier2019.yaml) |
 | `pri.ofc_two_dof_stabilization` | OFC 双自由度独立稳定化原理 | Optical Frequency Combs | [endo2018](topics/optical-frequency-combs/papers/endo2018.yaml) |
+| `pri.ofc_unified_electromagnetic_spectrum_framework` | OFC 作为统一电磁波谱相干标尺框架 | Optical Frequency Combs | [diddams2020b](topics/optical-frequency-combs/papers/diddams2020b.yaml) |
 | `pri.optical_microwave_coherent_gearbox` | 光-微波相干齿轮箱原理（Level 0 范式原理） | Optical Frequency Combs | [picque2020](topics/optical-frequency-combs/papers/picque2020.yaml) |
+| `pri.overlapping_estimator_improves_edf` | 重叠估计量提升等效自由度原理 | shared | [riley2008](topics/shared/papers/riley2008.yaml) |
+| `pri.phase_noise_frequency_noise_psd_duality` | 相位噪声 PSD 与频率噪声 PSD 对偶关系 | shared | [howe1976](topics/shared/papers/howe1976.yaml) |
+| `pri.power_law_noise_taxonomy` | 时频噪声五类幂律分类（white PM / flicker PM / white FM / flicker … | shared | [allan1987](topics/shared/papers/allan1987.yaml) |
+| `pri.sigma_y_slope_identifies_noise_type` | σ_y(τ) 斜率-噪声辨识原理 | shared | [allan1987](topics/shared/papers/allan1987.yaml) |
+| `pri.theo1_long_tau_statistical_efficiency` | Theo1 方差长 τ 统计效率最优原理 | shared | [riley2008](topics/shared/papers/riley2008.yaml) |
+| `pri.time_frequency_domain_transfer_function` | 时-频域稳定度转换传递函数原理（sin⁴ 核） | shared | [howe1976](topics/shared/papers/howe1976.yaml) |
 | `pri.tpfc_digital_coherent_pulse_control_c22` | 时间可编程频率梳数字相干脉冲控制原理（Caldwell 2022） | Optical Frequency Combs | [caldwell2022](topics/optical-frequency-combs/papers/caldwell2022.yaml) |
+| `pri.two_sample_variance_converges` | 两样本（Allan）方差对幂律噪声收敛原理 | shared | [allan1966](topics/shared/papers/allan1966.yaml) |
 
 ## Tier: foundational
 
@@ -46,6 +58,7 @@
 | `pri.cavity_deformation_compensation` | 腔体形变补偿——振动不敏感设计原理 | Ultrastable Laser | [webster2007](topics/ultrastable-laser/papers/webster2007.yaml) |
 | `pri.cavity_enhanced_comb_spectroscopy` | 腔增强频率梳光谱原理 | Optical Frequency Combs | [picque2019](topics/optical-frequency-combs/papers/picque2019.yaml) |
 | `pri.cavity_enhanced_hhg_comb` | 飞秒增强腔高次谐波产生梳原理 | Optical Frequency Combs | [zhang2022](topics/optical-frequency-combs/papers/zhang2022.yaml) |
+| `pri.cep_controlled_frequency_comb_time_frequency_duality` | 载波-包络相位控制频率梳时-频域对偶原理 | Optical Frequency Combs | [cundiff2003](topics/optical-frequency-combs/papers/cundiff2003.yaml) |
 | `pri.chip_dispersion_engineering_high_index_contrast` | 高折射率对比波导色散工程原理 | Optical Frequency Combs | [gaeta2019](topics/optical-frequency-combs/papers/gaeta2019.yaml) |
 | `pri.chirped_qpm_broadband_chi2_sc` | 啁啾准相位匹配实现 χ² 宽带光谱展宽原理 | Optical Frequency Combs | [wu2024](topics/optical-frequency-combs/papers/wu2024.yaml) |
 | `pri.co2_laser_rapid_microrod_fabrication_p13b` | CO₂ 激光快速微棒谐振器加工原理（Papp 2013b） | Optical Frequency Combs | [papp2013b](topics/optical-frequency-combs/papers/papp2013b.yaml) |
@@ -54,6 +67,7 @@
 | `pri.comb_actuator_transfer_matrix` | 光频梳三参数三执行器传递函数矩阵表征原理 | Optical Frequency Combs | [zhang2012c](topics/optical-frequency-combs/papers/zhang2012c.yaml) |
 | `pri.comb_driven_stimulated_raman_terahertz` | 飞秒梳驱动的 THz 受激 Raman 转动跃迁原理 | Optical Frequency Combs | [chou2020](topics/optical-frequency-combs/papers/chou2020.yaml) |
 | `pri.comb_nonlinear_spectroscopy` | 频率梳非线性光谱原理 | Optical Frequency Combs | [picque2019](topics/optical-frequency-combs/papers/picque2019.yaml) |
+| `pri.comb_platform_tradeoffs_f19` | OFC 平台选择权衡原理（Ti:sapph / fiber / QCL / 微梳） | Optical Frequency Combs | [fortier2019](topics/optical-frequency-combs/papers/fortier2019.yaml) |
 | `pri.common_view_clock_comparison` | 共视时钟比对原理（common-view comparison） | Time-Frequency Transfer | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
 | `pri.cryogenic_mechanical_q_enhancement` | 低温增强机械品质因子降低热噪声 | Ultrastable Laser | [kessler2012](topics/ultrastable-laser/papers/kessler2012.yaml) |
 | `pri.crystalline_coating_low_brownian_noise` | 单晶镀层低布朗热噪声原理 | Ultrastable Laser | [cole2013](topics/ultrastable-laser/papers/cole2013.yaml) |
@@ -102,6 +116,7 @@
 | `pri.long_cavity_subghz_comb_spacing` | Long extended cavity → sub-GHz comb spacing | Optical Frequency Combs | [wang2017](topics/optical-frequency-combs/papers/wang2017.yaml) |
 | `pri.lugiato_lefever_equation` | Lugiato-Lefever 方程（LLE） | Optical Frequency Combs | [kippenberg2018](topics/optical-frequency-combs/papers/kippenberg2018.yaml) |
 | `pri.magic_wavelength_lattice` | 魔术波长光晶格原理 | Frequency Standards | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
+| `pri.magic_wavelength_operational_protocol_l08` | 魔术波长光晶格钟操作协议原理（Ludlow thesis） | Frequency Standards | [ludlow2008_thesis](topics/frequency-standards/papers/ludlow2008_thesis.yaml) |
 | `pri.mechanical_decoupling_split_plate_z17` | 机械解耦 split-plate 振动隔离原理（Zhang 2017） | Ultrastable Laser | [zhang2017](topics/ultrastable-laser/papers/zhang2017.yaml) |
 | `pri.mechanical_microrod_frep_control_p13b` | 机械力控制微棒谐振器 f_rep 原理（Papp 2013b） | Optical Frequency Combs | [papp2013b](topics/optical-frequency-combs/papers/papp2013b.yaml) |
 | `pri.microcomb_rv_calibration_limit` | 微梳 astrocomb 径向速度定标不确定度极限 | Optical Frequency Combs | [suh2019](topics/optical-frequency-combs/papers/suh2019.yaml) |
@@ -121,11 +136,13 @@
 | `pri.nondeterministic_phase_microcomb` | 非确定性相位关系的等间距微梳态 | Optical Frequency Combs | [delhaye2014](topics/optical-frequency-combs/papers/delhaye2014.yaml) |
 | `pri.nonlinear_frequency_conversion_comb` | 非线性频率转换梳产生原理 | Optical Frequency Combs | [schliesser2012](topics/optical-frequency-combs/papers/schliesser2012.yaml) |
 | `pri.normal_dispersion_dark_pulse_s22` | 正常色散 + 避免模交叉下暗脉冲 Kerr 梳生成原理 | Optical Frequency Combs | [shu2022](topics/optical-frequency-combs/papers/shu2022.yaml) |
+| `pri.octave_span_enables_absolute_referencing_cy03` | 倍频程谱宽使绝对自参考可行（Cundiff & Ye 综述版） | Optical Frequency Combs | [cundiff2003](topics/optical-frequency-combs/papers/cundiff2003.yaml) |
 | `pri.octave_supercontinuum_enables_self_referencing_d10` | 倍频程超连续谱使 f-2f 自参考可行原理（Diddams 2010 综述版） | Optical Frequency Combs | [diddams2010](topics/optical-frequency-combs/papers/diddams2010.yaml) |
 | `pri.ofc_noise_hierarchy` | OFC 噪声层级原理 | Optical Frequency Combs | [endo2018](topics/optical-frequency-combs/papers/endo2018.yaml) |
 | `pri.off_resonance_reference_light` | 非谐振参考光原理（FP 腔误差探测共性原理） | Ultrastable Laser | [shaddock1999](topics/ultrastable-laser/papers/shaddock1999.yaml) |
 | `pri.open_path_dcs_attribution_chain` | 开放路径 DCS 痕量气体溯源推理链原理 | Optical Frequency Combs | [coburn2018](topics/optical-frequency-combs/papers/coburn2018.yaml) |
 | `pri.optical_clock_higher_frequency_advantage` | 光学钟高频振荡优势原理 | Optical Frequency Combs | [udem2002](topics/optical-frequency-combs/papers/udem2002.yaml) |
+| `pri.optical_clock_ten_minus_eighteen_geoid_bridge` | 光钟 10⁻¹⁸ 分数精度 ↔ 1 cm 大地水准面分辨率桥梁 | Frequency Standards | [diddams2016](topics/frequency-standards/papers/diddams2016.yaml) |
 | `pri.optical_filter_dispersion_suppression` | 光学窄带滤波抑制长距离光纤色散原理 | Optical Frequency Combs | [leng2016](topics/optical-frequency-combs/papers/leng2016.yaml) |
 | `pri.optical_frequency_division_microwave` | 光学分频微波合成原理 | Optical Frequency Combs | [giunta2019](topics/optical-frequency-combs/papers/giunta2019.yaml) |
 | `pri.optical_microwave_phase_detection_bom_pd` | 平衡光学-微波相位探测（BOM-PD）原理 | Ultrastable Laser | [kim2008](topics/ultrastable-laser/papers/kim2008.yaml) |
@@ -138,6 +155,7 @@
 | `pri.phase_matching_bandwidth_limit_chi2` | χ² 相位匹配带宽限制原理 | Optical Frequency Combs | [hickstein2017](topics/optical-frequency-combs/papers/hickstein2017.yaml) |
 | `pri.photodetection_shot_noise_limit` | 光电探测散粒噪声光微波相噪极限原理 | Optical Frequency Combs | [kalubovilage2022](topics/optical-frequency-combs/papers/kalubovilage2022.yaml) |
 | `pri.pulse_interleaver_rep_rate_multiplication` | 光纤脉冲交织器重频倍增与光生微波散粒噪声降底原理 | Optical Frequency Combs | [portuondo-campa2015](topics/optical-frequency-combs/papers/portuondo-campa2015.yaml) |
+| `pri.qpn_dick_two_fundamental_limits_dfl16` | 光钟双重基本极限：量子投影噪声 + Dick 效应 | Frequency Standards | [diddams2016](topics/frequency-standards/papers/diddams2016.yaml) |
 | `pri.quantum_projection_noise_limit` | 量子投影噪声极限 | Frequency Standards | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
 | `pri.ram_bias_field_cancellation` | EOM 偏置电场 RAM 主动消除原理 | Ultrastable Laser | [parke2025](topics/ultrastable-laser/papers/parke2025.yaml) |
 | `pri.ram_pdh_frequency_offset` | RAM引起PDH频率偏移原理 | Ultrastable Laser | [zhang2014_ram](topics/ultrastable-laser/papers/zhang2014_ram.yaml) |
@@ -163,6 +181,7 @@
 | `pri.soliton_self_frequency_shift_2um` | 2 µm 孤子自频移原理（Raman SSFS 波段切换） | Optical Frequency Combs | [xing2020](topics/optical-frequency-combs/papers/xing2020.yaml) |
 | `pri.spatial_homodyne_detection` | 空间零差探测（分割探测器） | Ultrastable Laser | [shaddock1999](topics/ultrastable-laser/papers/shaddock1999.yaml) |
 | `pri.spectral_hole_burning_frequency_ref` | 光谱烧孔频率参考原理 | Ultrastable Laser | [leibrandt2013](topics/ultrastable-laser/papers/leibrandt2013.yaml) |
+| `pri.sr_clock_systematic_budget_framework_l08` | Sr 光晶格钟系统误差预算框架（Ludlow thesis） | Frequency Standards | [ludlow2008_thesis](topics/frequency-standards/papers/ludlow2008_thesis.yaml) |
 | `pri.state_prepared_single_ion_spectroscopy` | 单离子纯量子态光谱原理（heralded QLS 制备 + 非破坏读出） | Optical Frequency Combs | [chou2020](topics/optical-frequency-combs/papers/chou2020.yaml) |
 | `pri.steady_state_shb_pattern` | 稳态光谱烧孔模式稳频原理 | Ultrastable Laser | [cook2015](topics/ultrastable-laser/papers/cook2015.yaml) |
 | `pri.supercontinuum_octave_spanning` | 超连续谱倍频程展宽原理（SPM + FWM in ZGVD PCF） | Optical Frequency Combs | [diddams2000](topics/optical-frequency-combs/papers/diddams2000.yaml) |
@@ -170,6 +189,7 @@
 | `pri.thermal_drift_comb_offsets` | Thermal drift of f_rep and f_ceo in fiber combs | Optical Frequency Combs | [lezius2016](topics/optical-frequency-combs/papers/lezius2016.yaml) |
 | `pri.thermal_instability_dks_access` | 热效应限制 DKS 接入——微梳核心工程挑战 | Optical Frequency Combs | [pasquazi2018](topics/optical-frequency-combs/papers/pasquazi2018.yaml) |
 | `pri.thermo_optic_soliton_access_barrier` | 热光效应导致孤子区访问困难原理 | Optical Frequency Combs | [li2017](topics/optical-frequency-combs/papers/li2017.yaml) |
+| `pri.three_comb_platforms_triumvirate_dvu20` | Ti:sapph / fiber / 微梳 三足鼎立平台生态原理 | Optical Frequency Combs | [diddams2020b](topics/optical-frequency-combs/papers/diddams2020b.yaml) |
 | `pri.tpfc_tracking_oscillator_quantum_limit_c22` | TPFC 追踪振荡器量子限制探测原理（Caldwell 2022） | Optical Frequency Combs | [caldwell2022](topics/optical-frequency-combs/papers/caldwell2022.yaml) |
 | `pri.transportable_cavity_design_tradeoff_herbers22` | 可搬运腔设计折中原理（Herbers 2022） | Ultrastable Laser | [herbers2022](topics/ultrastable-laser/papers/herbers2022.yaml) |
 | `pri.turbulence_speckle_freeze_dcs` | 双梳快速采集冻结湍流散斑原理 | Optical Frequency Combs | [han2024](topics/optical-frequency-combs/papers/han2024.yaml) |
