@@ -1,0 +1,135 @@
+# Hati et al. 2013 — 光频除法最先进RF信号生成综合表征 [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
+
+meta:
+  zotero_key: "JNDRRJTZ"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: evidence
+  reliability: high
+  title: "State-of-the-Art RF Signal Generation From Optical Frequency Division"
+  year: 2013
+  first_author: "Hati"
+  authors:
+    - "Archita Hati"
+    - "Craig W. Nelson"
+    - "Tara M. Fortier"
+    - "Norman Locke"
+    - "Jennifer A. Taylor"
+    - "Helen Quinlan"
+    - "John M. Taylor"
+    - "Wes Rippey"
+    - "Aaron Weiss"
+    - "Scott A. Diddams"
+    - "David A. Howe"
+  journal: "IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control"
+  volume: "60"
+  issue: "9"
+  pages: "1796-1803"
+  doi: "10.1109/TUFFC.2013.2782"
+  note: >
+    NIST对光频除法（OFD）光子微波信号的全面表征与对比研究。
+    在100 MHz和1 GHz载波上演示当时最先进性能：绝对时序抖动0.72 fs（1 Hz–100 MHz积分）。
+    与最佳商用RF振荡器比对，OFD方案全面超越。综述多种光子振荡器配置。
+
+entities:
+  - id: ent.ofd_photonic_rf_source_hati2013
+    name: "OFD光子微波信号源（Hati 2013 NIST）"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      通过光频除法（OFD）将超稳光学参考频率转换为高纯度RF信号（100 MHz / 1 GHz），
+      绝对时序抖动0.72 fs（1 Hz–100 MHz），超越当时最佳商用RF振荡器。
+
+principles:
+  - id: pri.optical_frequency_division_rf_generation
+    name: "光频除法RF信号生成原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      通过光频梳将超稳光学振荡器（如ULE腔稳激光，频率~10^14 Hz）的频率稳定度
+      按N²比例缩减至微波频段（~10^9 Hz）。N≈10^5的除频比使相位噪声降低
+      约20·log10(N)≈100 dB，产生远优于任何纯电子振荡器的RF信号。
+    domain: "光子微波生成 / 时频计量"
+    key_insight: >
+      光学频率稳定度的绝对优势（Q因子~10^10更高）可通过OFD直接转化为微波域，
+      突破电子振荡器的热噪声和闪烁噪声基本限制。
+    conditions: "需超稳光学参考（ULE/晶体腔）；光电探测散粒噪声为最终限制"
+    source:
+      zotero_key: "JNDRRJTZ"
+      claim: >
+        "optical frequency division of a cavity-stabilized laser provides
+        state-of-the-art RF signal generation"
+
+methods:
+  - id: meth.ofd_absolute_timing_jitter_measurement
+    name: "OFD微波信号绝对时序抖动测量"
+    status: demonstrated
+    steps_summary: >
+      使用两套独立OFD系统产生相同标称频率（100 MHz或1 GHz）的RF信号，
+      通过双通道互相关相位噪声分析仪测量两路信号差，假设两路贡献相等，
+      推算单路绝对时序抖动。
+    source_claim: >
+      "absolute timing jitter 0.72 fs integrated from 1 Hz to 100 MHz"
+
+metrics:
+  - id: met.absolute_timing_jitter_ofd_hati2013
+    name: "OFD绝对时序抖动（1 Hz–100 MHz）"
+    unit: "femtoseconds (fs)"
+    role: primary
+    description: >
+      OFD光子微波信号（1 GHz载波）在1 Hz到100 MHz积分带宽内的绝对时序抖动，
+      代表2013年当时的SOTA水平。
+    demonstrated_value:
+      value: "0.72"
+      conditions: "OFD光子微波振荡器，1 GHz载波，积分带宽1 Hz–100 MHz，NIST系统"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "JNDRRJTZ"
+        claim: "absolute timing jitter 0.72 fs (1 Hz to 100 MHz)"
+
+  - id: met.phase_noise_ofd_100mhz_hati2013
+    name: "OFD信号相位噪声（100 MHz载波）"
+    unit: "dBc/Hz"
+    role: supporting
+    description: "OFD生成100 MHz RF信号的单边带相位噪声谱密度"
+    demonstrated_value:
+      value: "state-of-the-art (see paper for full spectrum)"
+      conditions: "100 MHz载波，OFD系统，NIST，2013年"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "JNDRRJTZ"
+        claim: "state-of-the-art RF signal generation at 100 MHz and 1 GHz"
+
+relations:
+  - id: rel.H01
+    subject: ent.ofd_photonic_rf_source_hati2013
+    predicate: CHARACTERIZED-BY
+    object: met.absolute_timing_jitter_ofd_hati2013
+    confidence: established
+    source:
+      zotero_key: "JNDRRJTZ"
+      claim: "absolute timing jitter 0.72 fs (1 Hz to 100 MHz)"
+
+  - id: rel.H02
+    subject: ent.ofd_photonic_rf_source_hati2013
+    predicate: IMPLEMENTS
+    object: pri.optical_frequency_division_rf_generation
+    confidence: established
+    source:
+      zotero_key: "JNDRRJTZ"
+      claim: "state-of-the-art RF signal generation from optical frequency division"
+
+  - id: rel.H03
+    subject: meth.ofd_absolute_timing_jitter_measurement
+    predicate: CHARACTERIZES
+    object: ent.ofd_photonic_rf_source_hati2013
+    confidence: established
+    source:
+      zotero_key: "JNDRRJTZ"
+      claim: "comprehensive characterization and comparison of photonic microwave signals"

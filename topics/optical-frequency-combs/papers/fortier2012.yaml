@@ -1,0 +1,139 @@
+# Fortier et al. 2012 — 10 GHz混合光子微波振荡器亚飞秒绝对时序抖动 [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
+
+meta:
+  zotero_key: "PJEYSD8M"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Sub-femtosecond absolute timing jitter with a 10 GHz hybrid photonic-microwave oscillator"
+  year: 2012
+  first_author: "Fortier"
+  authors:
+    - "T.M. Fortier"
+    - "C.W. Nelson"
+    - "A. Hati"
+    - "F. Quinlan"
+    - "J. Taylor"
+    - "H. Jiang"
+    - "C.W. Chou"
+    - "T. Rosenband"
+    - "N. Lemke"
+    - "A. Ludlow"
+    - "D. Howe"
+    - "C.W. Oates"
+    - "S.A. Diddams"
+  journal: "Applied Physics Letters"
+  volume: "100"
+  pages: "231111"
+  doi: "10.1063/1.4726122"
+  note: >
+    在Fortier 2011（Nature Photonics，突破性OFD微波生成）基础上，通过将室温蓝宝石
+    腔振荡器（SLCO）规训至OFD微波信号，构建混合振荡器，实现10 GHz单台振荡器
+    420 as绝对时序抖动（1 Hz–5 GHz积分）。OFD使用1 GHz Ti:sapphire梳，
+    N≈50,000倍频程除频，相位噪声降低N²≈2.5×10⁹倍。
+
+entities:
+  - id: ent.hybrid_photonic_microwave_osc_fortier2012
+    name: "混合光子-微波振荡器（Fortier 2012）"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      将室温蓝宝石腔振荡器（SLCO）相位锁定至Ti:sapphire OFD微波信号，
+      融合OFD接近载波低相位噪声与SLCO远端偏移低热噪声底，
+      实现10 GHz单台420 as绝对时序抖动（1 Hz–5 GHz）。
+
+principles:
+  - id: pri.hybrid_ofd_slco_noise_complementarity
+    name: "OFD+SLCO混合振荡器噪声互补原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      光频除法器（OFD）在接近载波偏移频率处具有极低相位噪声（源自超稳光学腔），
+      但受光电探测散粒噪声限制，远端偏移噪声底约−153 dBc/Hz，难以进一步降低。
+      室温蓝宝石腔振荡器（SLCO）热噪声底可达约−190 dBc/Hz（远端偏移），
+      但接近载波噪声较高。将SLCO锁定至OFD信号可取二者互补，
+      在全谱范围（1 Hz–5 GHz）实现最优噪声性能，单台振荡器时序抖动420 as。
+    domain: "光子微波生成 / 振荡器技术"
+    key_insight: >
+      散粒噪声是OFD在高偏移频率处的基本限制；SLCO提供更低的热噪声底，
+      混合锁定消除了二者各自的缺陷频段。
+    conditions: "SLCO控制带宽需覆盖OFD的散粒噪声超越点（>10 kHz）"
+    source:
+      zotero_key: "PJEYSD8M"
+      claim: >
+        "we circumvent this limit by disciplining a room temperature sapphire loaded cavity
+        oscillator (SLCO) to the microwave signal generated via optical frequency division"
+
+metrics:
+  - id: met.timing_jitter_hybrid_osc_fortier2012
+    name: "10 GHz混合振荡器绝对时序抖动"
+    unit: "attoseconds (as)"
+    role: primary
+    description: >
+      单台10 GHz混合光子-微波振荡器的绝对时序抖动，由两台独立混合系统比对（假设两台
+      等贡献，从测量的305 as联合抖动推算单台）。
+    demonstrated_value:
+      value: "420"
+      conditions: "10 GHz，积分1 Hz–5 GHz，单台混合振荡器（1 GHz Ti:sapphire OFD + SLCO），NIST 2012"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "PJEYSD8M"
+        claim: >
+          "Assuming that both hybrid oscillators contribute equally, the single oscillator
+          timing jitter would be 420 attoseconds."
+
+  - id: met.phase_noise_reduction_factor_ofd
+    name: "OFD相位噪声功率降低因子N²"
+    unit: "无量纲"
+    role: secondary
+    description: "光频除法将光频处相位噪声功率谱密度降低N²倍转移至微波频率，N为光-微波频率比"
+    demonstrated_value:
+      value: "N²≈2.5×10⁹（N≈50,000）"
+      conditions: "500 THz光频 ÷ 10 GHz微波频率，1 GHz Ti:sapphire梳，NIST 2012"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "PJEYSD8M"
+        claim: >
+          "the power spectral density of phase noise on ν_opt is reduced by a factor of N²,
+          where N ≈ 50,000 is the ratio of optical and microwave frequencies"
+
+relations:
+  - id: rel.F01
+    subject: ent.hybrid_photonic_microwave_osc_fortier2012
+    predicate: GOVERNED-BY
+    object: pri.hybrid_ofd_slco_noise_complementarity
+    confidence: established
+    source:
+      zotero_key: "PJEYSD8M"
+      claim: >
+        "we circumvent this limit by disciplining a room temperature sapphire loaded cavity
+        oscillator (SLCO) to the microwave signal generated via optical frequency division"
+
+  - id: rel.F02
+    subject: ent.hybrid_photonic_microwave_osc_fortier2012
+    predicate: CHARACTERIZED-BY
+    object: met.timing_jitter_hybrid_osc_fortier2012
+    confidence: established
+    source:
+      zotero_key: "PJEYSD8M"
+      claim: "the single oscillator timing jitter would be 420 attoseconds"
+
+  - id: rel.F03
+    subject: ent.hybrid_photonic_microwave_osc_fortier2012
+    predicate: USES-METHOD
+    object: meth.optical_frequency_division
+    confidence: established
+    note: "跨文件引用 meth.optical_frequency_division，定义于 topics/optical-frequency-combs/papers/"
+    source:
+      zotero_key: "PJEYSD8M"
+      claim: >
+        "Division from 500 THz to the microwave domain is accomplished with an optical
+        frequency comb divider (OFCD) that is based on a 1 GHz Kerr-lens mode-locked
+        Ti:sapphire laser."

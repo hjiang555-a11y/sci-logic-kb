@@ -1,0 +1,183 @@
+# Leibrandt 2013b — 球形 ULE 腔加速度灵敏度 <10⁻¹² g⁻¹（惯性力前馈）[evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：ultrastable-laser
+
+meta:
+  zotero_key: "H5MYBTXH"
+  topic: ultrastable-laser
+  source_type: technical_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Cavity-stabilized laser with acceleration sensitivity below 10^-12 g^-1"
+  year: 2013
+  first_author: "Leibrandt"
+  authors: ["David R. Leibrandt", "James C. Bergquist", "Till Rosenband"]
+  journal: "Physical Review A"
+  volume: 87
+  pages: "023829"
+  doi: "10.1103/PhysRevA.87.023829"
+  note: >
+    1070 nm 腔稳激光器，球形 ULE 间隔体（Ø50 mm）配熔融石英镜。
+    被动加速度灵敏度 2×10⁻¹¹ g⁻¹，经六轴惯性力（线性加速度、转动加速度、转动角速度）
+    实时前馈降低 50 倍至 <10⁻¹² g⁻¹；温度前馈降低频率漂移 70 倍。
+    Allan 偏差 2×10⁻¹⁵（0.5–10 s）。
+
+entities:
+  - id: ent.spherical_ule_cavity_l13b
+    name: "球形 ULE 腔（Leibrandt 2013b）"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      50 mm 直径球形 ULE 间隔体，两端磨平并光学接触 Ø12.7 mm 熔融石英镜
+      （曲率半径 50 cm，精细度 7.9×10⁵ @ 1070 nm）。
+      球形几何对称性被动降低加速度灵敏度。不锈钢 304 柔性弹簧双点支撑，
+      Torlon 球接触，适合转动测量平台使用。
+    note: "腔体含温控辐射屏蔽，CTE 零点约 −17°C，工作温度 24°C。"
+
+principles:
+  - id: pri.inertial_force_feedforward_l13b
+    name: "惯性力实时前馈（全自由度）"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      用六轴加速度计（四面体排布）和三轴 MEMS 陀螺仪同时测量线加速度、转动加速度与转动角速度，
+      通过 FPGA 数字前馈修正 AOM 频率，可将腔加速度灵敏度从 2×10⁻¹¹ g⁻¹
+      降低约 50 倍至 <10⁻¹² g⁻¹（低频，0–300 Hz）。
+      相比之前仅修正一阶线性/转动加速度（0.06–450 Hz），本文扩展至包含转动角速度
+      的全六自由度惯性力前馈，带宽延伸至零频。
+    domain: "腔稳激光振动抑制"
+    key_insight: "全自由度惯性力前馈可将加速度灵敏度压制至 10⁻¹² g⁻¹ 量级以下"
+    conditions: "低频（0–300 Hz）；被动振动隔离光学平台"
+    source:
+      zotero_key: "H5MYBTXH"
+      claim: "reduced by a factor of 50 to below 10^-12 g^-1 for low-frequency accelerations by real-time feedforward corrections of all of the aforementioned inertial forces"
+
+  - id: pri.temperature_feedforward_cavity_l13b
+    name: "温度前馈频率漂移修正"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      在腔真空腔外壁安装热敏电阻，将温度信号数字前馈至激光 AOM 修正频率，
+      可将温度波动引起的激光频率漂移降低 70 倍。与主动温控（TEC）结合使用。
+    domain: "腔稳激光温度抑制"
+    key_insight: "温度传感器前馈可大幅降低残余温漂，无需提高主动温控精度"
+    conditions: "腔真空腔外壁热敏电阻；24°C 工作温度（ULE CTE 零点远低于此温度）"
+    source:
+      zotero_key: "H5MYBTXH"
+      claim: "laser frequency drift due to temperature fluctuations is reduced by a factor of 70 via real-time feedforward from a temperature sensor located on the outer wall of the cavity vacuum chamber"
+
+methods:
+  - id: meth.six_axis_inertial_feedforward_l13b
+    name: "六轴惯性力前馈方法"
+    status: demonstrated
+    applies_to: ent.spherical_ule_cavity_l13b
+    steps_summary: >
+      六个单轴电容式加速度计（四面体排布）→ 三个单轴 MEMS 陀螺仪 →
+      FPGA 实时数字计算全惯性力 → AOM 频率前馈修正 →
+      加速度灵敏度 <10⁻¹² g⁻¹（0 Hz 延伸）
+    source_claim: >
+      "Linear and rotational accelerations are measured by six one-axis variable-capacitance
+      accelerometers... Rotational velocity is measured by three one-axis MEMS gyroscopes...
+      Feedforward is implemented digitally by use of a second FPGA which controls the
+      frequency of an AOM."
+
+metrics:
+  - id: met.passive_accel_sensitivity_l13b
+    name: "被动加速度灵敏度（最坏方向）"
+    unit: "g⁻¹"
+    role: primary
+    description: "球形 ULE 腔在 0–50 Hz 范围内最坏方向线性加速度灵敏度（无前馈）。"
+    demonstrated_value:
+      value: "2(1)×10⁻¹¹"
+      conditions: "0–50 Hz；无前馈；球形 ULE 腔 Ø50 mm；不锈钢柔性弹簧双点支撑"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "H5MYBTXH"
+        claim: "The worst-direction linear acceleration sensitivity of the cavity is 2(1)×10^-11 g^-1 measured over 0–50 Hz"
+
+  - id: met.feedforward_accel_sensitivity_l13b
+    name: "前馈后加速度灵敏度"
+    unit: "g⁻¹"
+    role: primary
+    description: "应用全六自由度惯性力前馈后的低频线性加速度灵敏度上限。"
+    demonstrated_value:
+      value: "<10⁻¹²"
+      conditions: "低频（0–300 Hz）；六轴前馈开启；被动隔振光学平台"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "H5MYBTXH"
+        claim: "reduced by a factor of 50 to below 10^-12 g^-1 for low-frequency accelerations by real-time feedforward corrections"
+
+  - id: met.allan_dev_l13b
+    name: "Allan 偏差（ADEV）@ 1070 nm"
+    unit: "（无量纲）"
+    role: primary
+    description: "腔稳激光 1070 nm 分数频率 Allan 偏差，前馈开关均达此水平（0.5–10 s）。"
+    demonstrated_value:
+      value: "2×10⁻¹⁵"
+      conditions: "τ = 0.5–10 s；被动隔振光学平台；120 s 数据段，无漂移去除"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "H5MYBTXH"
+        claim: "The Allan deviation of the laser frequency is 2×10^-15 from 0.5 to 10 s both with and without applying the inertial force feedforward corrections"
+
+relations:
+  - id: rel.L01
+    subject: ent.spherical_ule_cavity_l13b
+    predicate: CHARACTERIZED-BY
+    object: met.passive_accel_sensitivity_l13b
+    confidence: established
+    source:
+      zotero_key: "H5MYBTXH"
+      claim: "The worst-direction linear acceleration sensitivity of the cavity is 2(1)×10^-11 g^-1 measured over 0–50 Hz"
+
+  - id: rel.L02
+    subject: meth.six_axis_inertial_feedforward_l13b
+    predicate: ENABLED-BY
+    object: ent.spherical_ule_cavity_l13b
+    confidence: established
+    source:
+      zotero_key: "H5MYBTXH"
+      claim: "we extend this approach to include feedforward that corrects for first- and second-order deformations of the cavity due to all of the (rigid body) inertial forces"
+
+  - id: rel.L03
+    subject: ent.spherical_ule_cavity_l13b
+    predicate: CHARACTERIZED-BY
+    object: met.feedforward_accel_sensitivity_l13b
+    confidence: established
+    source:
+      zotero_key: "H5MYBTXH"
+      claim: "reduced by a factor of 50 to below 10^-12 g^-1 for low-frequency accelerations by real-time feedforward corrections"
+
+  - id: rel.L04
+    subject: ent.spherical_ule_cavity_l13b
+    predicate: CHARACTERIZED-BY
+    object: met.allan_dev_l13b
+    confidence: established
+    source:
+      zotero_key: "H5MYBTXH"
+      claim: "The Allan deviation of the laser frequency is 2×10^-15 from 0.5 to 10 s"
+
+  - id: rel.L05
+    subject: meth.six_axis_inertial_feedforward_l13b
+    predicate: OPERATIONALIZED-AS
+    object: pri.inertial_force_feedforward_l13b
+    confidence: established
+    source:
+      zotero_key: "H5MYBTXH"
+      claim: "feedforward that corrects for first- and second-order deformations of the cavity due to all of the (rigid body) inertial forces, namely rotational velocity as well as linear and rotational acceleration"
+
+  - id: rel.L06
+    subject: ent.spherical_ule_cavity_l13b
+    predicate: ENABLED-BY
+    object: meth.pdh_locking
+    confidence: established
+    note: "跨文件引用，meth.pdh_locking 定义于 topics/ultrastable-laser/papers/drever1983.yaml"
+    source:
+      zotero_key: "H5MYBTXH"
+      claim: "We lock a 1070 nm fiber laser to the cavity by the Pound-Drever-Hall (PDH) method"

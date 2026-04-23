@@ -1,0 +1,163 @@
+# Schioppo 2021 — 跨 2220 km 光纤网络比对超稳激光至 7×10⁻¹⁷ [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：ultrastable-laser
+
+meta:
+  zotero_key: "K5JMAYPZ"
+  topic: ultrastable-laser
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Comparing ultrastable lasers at 7×10⁻¹⁷ fractional frequency instability through a 2220 km optical fibre network"
+  year: 2021
+  first_author: "Schioppo"
+  authors:
+    - "M. Schioppo"
+    - "J. Kronjäger"
+    - "A. Silva"
+    - "R. Ilieva"
+    - "J. W. Paterson"
+    - "C. F. A. Baynham"
+    - "W. Bowden"
+    - "I. R. Hill"
+    - "R. Hobson"
+    - "A. Vianello"
+    - "M. Dovale-Álvarez"
+    - "R. A. Williams"
+    - "G. Marra"
+    - "H. S. Margolis"
+    - "A. Amy-Klein"
+    - "O. Lopez"
+    - "E. Cantin"
+    - "H. Álvarez-Martínez"
+    - "R. Le Targat"
+    - "P. E. Pottie"
+    - "N. Quintin"
+    - "T. Legero"
+    - "S. Häfner"
+    - "U. Sterr"
+    - "R. Schwarz"
+    - "S. Dörscher"
+    - "C. Lisdat"
+    - "S. Koke"
+    - "A. Kuhl"
+    - "T. Waterholter"
+    - "E. Benkler"
+    - "G. Grosche"
+  journal: "Nature Communications"
+  volume: 13
+  pages: "212"
+  doi: "10.1038/s41467-021-27884-3"
+  note: >
+    NPL（英国）与 PTB（德国）两台地理上分离的超稳激光通过 2220 km 欧洲光纤网络比对
+    （NPL: 48.5 cm ULE 腔；PTB: 低温硅腔）。
+    MDEV 合并不稳定度 7×10⁻¹⁷（30–200 s 平均时间）；
+    PTB Si 腔：4×10⁻¹⁷ MDEV 闪烁频率底；NPL ULE 腔：6×10⁻¹⁷ MDEV（7×10⁻¹⁷ ADEV）。
+    首次无环回光纤直接测量 2220 km 完整链路短期噪声。
+    核心贡献：验证超长距离（~10⁶ m）光纤网络超稳激光比对能力及链路噪声特性。
+  # 论文提交/接受 2021，正式发表 2022（Nature Communications 2022, 13:212）
+  # 文件名 schioppo2021 对应 Zotero 年份标注
+
+entities:
+  - id: ent.npl_ule_cavity_laser_sc21
+    name: "NPL 超稳激光（48.5 cm ULE 腔，Schioppo 2021）"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      NPL Teddington 超稳激光系统：48.5 cm 长 ULE 光学腔，
+      振动隔离主动改进后达到腔热噪声极限，
+      MDEV 稳定度 6×10⁻¹⁷（7×10⁻¹⁷ ADEV），室温运行。
+    key_parameters:
+      cavity_length: "48.5 cm"
+      spacer_material: "ULE"
+      instability_mdev: "6×10⁻¹⁷"
+      instability_adev: "7×10⁻¹⁷"
+      location: "NPL Teddington, UK"
+    note: "PART-OF ent.fp_cavity_system；与 PTB 低温 Si 腔比对"
+
+  - id: ent.european_fiber_network_sc21
+    name: "欧洲 2220 km 光纤计量网络（Schioppo 2021）"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      连接 NPL（英国）与 PTB（德国）的 2220 km 光纤频率传输网络，
+      由一条 45 km 城域链路和三条 705/710/760 km 长距离链路级联组成，
+      采用光纤噪声补偿（PNC）技术，支持超稳激光相干传输。
+    key_parameters:
+      total_length: "2220 km"
+      segments: "45 km 城域 + 705 km + 710 km + 760 km 长距离"
+      endpoints: "NPL Teddington ↔ PTB Braunschweig"
+      link_noise_at_1s: "delay-unsuppressed noise dominant"
+    note: "PART-OF ent.fiber_delay_line_reference 类型；跨国计量光纤网络最长记录"
+
+metrics:
+  - id: met.combined_laser_instability_sc21
+    name: "两超稳激光合并不稳定度 2220 km 比对（Schioppo 2021）"
+    unit: "无量纲（MDEV）"
+    role: primary
+    description: "NPL-PTB 两台超稳激光经 2220 km 光纤网络比对的合并 MDEV 闪烁频率噪声底"
+    demonstrated_value:
+      value: "7×10⁻¹⁷"
+      conditions: "NPL ULE 腔 + PTB Si 低温腔；2220 km 光纤网络；平均时间 30–200 s；MDEV（无死时间 Λ 计数）"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "K5JMAYPZ"
+        claim: >
+          "modified Allan deviation (MDEV) of dead-time-free Λ-counted beat frequency measurements
+          revealed a combined flicker frequency noise floor at 7×10⁻¹⁷, from 30 s to 200 s."
+
+  - id: met.ptb_si_cavity_instability_sc21
+    name: "PTB 低温 Si 腔超稳激光不稳定度（Schioppo 2021）"
+    unit: "无量纲（MDEV）"
+    role: supporting
+    description: "PTB 低温硅腔超稳激光本地及远程测量验证的 MDEV 稳定度"
+    demonstrated_value:
+      value: "4×10⁻¹⁷"
+      conditions: "PTB Braunschweig 低温 Si 腔；MDEV 闪烁频率热噪声底；本地 + 远程 Sr 晶格钟验证"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "K5JMAYPZ"
+        claim: >
+          "We have independently verified the performance of the PTB cryogenic laser to be at
+          the expected 4×10⁻¹⁷ MDEV flicker frequency thermal noise floor."
+
+relations:
+  - id: rel.Sc01
+    subject: ent.npl_ule_cavity_laser_sc21
+    predicate: CHARACTERIZED-BY
+    object: met.combined_laser_instability_sc21
+    confidence: established
+    source:
+      zotero_key: "K5JMAYPZ"
+      claim: >
+        "the flicker frequency noise floor of the NPL ultrastable laser is at 6×10⁻¹⁷ MDEV
+        (7×10⁻¹⁷ standard Allan deviation), which is at the estimated thermal noise level for
+        this system."
+
+  - id: rel.Sc02
+    subject: met.combined_laser_instability_sc21
+    predicate: BOUNDED-BY
+    object: pri.thermal_noise_floor_fp_cavity
+    confidence: established
+    source:
+      zotero_key: "K5JMAYPZ"
+      claim: >
+        "The ultimate fractional frequency instability σ_y of a laser, stabilised to an optical
+        reference cavity, is limited by the fundamental flicker frequency noise originating from
+        Brownian thermal-mechanical fluctuations of the cavity mirrors' substrate and coating."
+
+  - id: rel.Sc03
+    subject: ent.npl_ule_cavity_laser_sc21
+    predicate: DEPENDS-ON
+    object: ent.european_fiber_network_sc21
+    confidence: established
+    source:
+      zotero_key: "K5JMAYPZ"
+      claim: >
+        "we report a comparison of two geographically separated lasers, over the longest ever
+        reported metrological optical fibre link network, measuring 2220 km in length, at a
+        state-of-the-art fractional-frequency instability of 7×10⁻¹⁷."

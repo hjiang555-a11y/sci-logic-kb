@@ -1,0 +1,146 @@
+# Jiang 2009a — 1 km 光纤迈克尔逊干涉仪稳频激光（频率噪声 <1 Hz²/Hz，可调谐）[evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：ultrastable-laser
+
+meta:
+  zotero_key: "G2IXLQ3G"
+  topic: ultrastable-laser
+  source_type: conference_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Ultra Low Frequency Noise Laser Stabilized On Optical Fiber Spool"
+  year: 2009
+  first_author: "Jiang"
+  authors: ["Haifeng Jiang", "Pierre Lemonde", "Giorgio Santarelli", "Fabien Kéfélian"]
+  journal: "2009 IEEE International Frequency Control Symposium"
+  doi: ""
+  note: >
+    Er 光纤激光器锁定至 1 km 光纤非平衡迈克尔逊干涉仪（外差探测），
+    频率噪声降低 >40 dB，1 Hz–10 kHz 全范围 <1 Hz²/Hz。
+    30 Hz–10 kHz 与 PDH 超稳腔性能相当。全光纤系统：无需光路准直，可频率调谐（DDS）。
+    版权标注 ©2009 IEEE（ISBN 978-1-4244-3510-4）。
+
+entities:
+  - id: ent.fiber_michelson_1km_j09
+    name: "1 km 光纤非平衡迈克尔逊干涉仪（Jiang 2009a）"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      单模光纤（SMF-28）构成 1 km 长臂非平衡迈克尔逊干涉仪，两臂末端使用法拉第反射镜
+      消除偏振态不确定性（无需偏振控制器）。长臂插入 AOM 产生外差拍频信号（2×f_AOM），
+      避免直流漂移，实现外差探测。铝盒热隔离封装（26 cm×26 cm×16.5 cm），
+      置于商用主动隔振平台。
+    note: "全光纤元件（含 AOM、FM），无需自由空间光路准直；温度系数约 10⁻⁵/°C（SMF-28）。"
+
+principles:
+  - id: pri.fiber_delay_line_frequency_ref
+    name: "光纤延迟线频率参考原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      非平衡光纤干涉仪将激光频率噪声转换为相位噪声，传递函数为
+      T_f(f) = (1 − e^{−i2πτf})/(if)，其中 τ 为延迟时间不平衡量。
+      低频处灵敏度约为 2πτ（正比于延迟长度）；在 1/τ 整数倍频率处响应为零（设计时需回避）。
+      负反馈锁定后，频率噪声由光纤热噪声（Wanser 公式）、电子噪声和误差信号噪声共同决定。
+      1 km SMF-28 热噪声本底远低于 1 Hz²/Hz（室温），且可通过增加光纤长度进一步降低。
+    domain: "光纤延迟线激光稳频"
+    formula: "T_f(f) = (1 − e^{−i2πτf}) / (if)"
+    key_insight: "延迟越长灵敏度越高，但控制带宽与延迟存在折中；外差探测消除偏振噪声"
+    conditions: "非平衡迈克尔逊结构；法拉第反射镜；外差探测（2×f_AOM）"
+    source:
+      zotero_key: "G2IXLQ3G"
+      claim: "It converts the laser frequency noise into the phase noise with transfer function: Tf(f)=(1-e^{-i2πτ})/if"
+    note: "跨文件引用：此原理在 jiang2010.yaml 中有更完整定义，本文为会议版首次报告"
+
+methods:
+  - id: meth.fiber_delay_locking
+    name: "光纤延迟线稳频方法"
+    status: demonstrated
+    applies_to: ent.fiber_michelson_1km_j09
+    steps_summary: >
+      光纤激光器 → AOM1（慢速反馈） + AOM2（快速反馈，70 MHz）→
+      1 km 非平衡迈克尔逊干涉仪（外差检测，2×f_AOM）→
+      PI 控制器 → PZT 慢速修正 + AOM 快速修正 →
+      DDS 调谐（频率可调）→ 频率噪声 <1 Hz²/Hz（1 Hz–10 kHz）
+    source_claim: >
+      "Through negative feedback of the output of the interferometer to the laser control port
+      we can frequency-lock the stabilized laser frequency to the fiber delay."
+    note: "跨文件引用：meth.fiber_delay_locking 在 jiang2010.yaml 中有更完整定义"
+
+metrics:
+  - id: met.fiber_laser_freq_noise_j09
+    name: "光纤稳频激光频率噪声 PSD"
+    unit: "Hz²/Hz"
+    role: primary
+    description: "1 km 光纤干涉仪锁定后激光的频率噪声功率谱密度，反映相对于 PDH 超稳腔激光的性能。"
+    demonstrated_value:
+      value: "<1（全范围 1 Hz–10 kHz）；30 Hz–10 kHz 与超稳腔激光相当"
+      conditions: "1 km SMF-28；室温；非真空；外差迈克尔逊锁定；通过拍频与超稳腔激光比较"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "G2IXLQ3G"
+        claim: "the frequency noise is well below 1 Hz2/Hz over the whole range. Between 30 Hz and 10 kHz, the frequency noise of the laser is shown to be comparable to that obtained by Pound-Drever-Hall locking of the laser to an ultra-stable cavity"
+
+  - id: met.fiber_laser_noise_reduction_j09
+    name: "相对原始噪声降低量"
+    unit: "dB"
+    role: secondary
+    description: "相对于自由运行激光的频率噪声降低量（1 Hz–10 kHz）。"
+    demonstrated_value:
+      value: ">40"
+      conditions: "1 Hz–10 kHz Fourier 频率范围；1 km SMF-28 光纤干涉仪锁定"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "G2IXLQ3G"
+        claim: "The laser frequency noise power spectral density is reduced by more than 40 dB for Fourier frequencies ranging from 1 Hz to 10 kHz"
+
+relations:
+  - id: rel.J01
+    subject: ent.fiber_michelson_1km_j09
+    predicate: CHARACTERIZED-BY
+    object: met.fiber_laser_freq_noise_j09
+    confidence: established
+    source:
+      zotero_key: "G2IXLQ3G"
+      claim: "the frequency noise is well below 1 Hz2/Hz over the whole range"
+
+  - id: rel.J02
+    subject: ent.fiber_michelson_1km_j09
+    predicate: CHARACTERIZED-BY
+    object: met.fiber_laser_noise_reduction_j09
+    confidence: established
+    source:
+      zotero_key: "G2IXLQ3G"
+      claim: "The laser frequency noise power spectral density is reduced by more than 40 dB for Fourier frequencies ranging from 1 Hz to 10 kHz"
+
+  - id: rel.J03
+    subject: meth.fiber_delay_locking
+    predicate: OPERATIONALIZED-AS
+    object: pri.fiber_delay_line_frequency_ref
+    confidence: established
+    source:
+      zotero_key: "G2IXLQ3G"
+      claim: "Through negative feedback of the output of the interferometer to the laser control port we can frequency-lock the stabilized laser frequency to the fiber delay"
+
+  - id: rel.J04
+    subject: ent.fiber_michelson_1km_j09
+    predicate: ENABLED-BY
+    object: meth.fiber_delay_locking
+    confidence: established
+    source:
+      zotero_key: "G2IXLQ3G"
+      claim: "all interferometer components are pigtailed off-the-shelf elements. Therefore we do not need to do any optical alignment and it is simple and robust"
+
+  - id: rel.J05
+    subject: ent.fiber_michelson_1km_j09
+    predicate: COMPETES-WITH
+    object: ent.fp_cavity_system
+    confidence: established
+    note: "跨文件引用，ent.fp_cavity_system 定义于 topics/ultrastable-laser/papers/ 相关文件"
+    source:
+      zotero_key: "G2IXLQ3G"
+      claim: "Between 30 Hz and 10 kHz, the frequency noise of the laser is shown to be comparable to that obtained by Pound-Drever-Hall locking of the laser to an ultra-stable cavity"

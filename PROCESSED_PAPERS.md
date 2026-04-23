@@ -7,7 +7,7 @@
 
 ---
 
-## 超稳激光专题（78 篇）
+## 超稳激光专题（84 篇）
 
 | 文件 | Zotero Key | 论文 | 历史重构状态 |
 |------|-----------|------|---------|
@@ -90,6 +90,12 @@
 | `adhikari2014.yaml` | FTXSM9QC | Adhikari 2014 — GW 探测综述 | ✅ v4.1 |
 | `olson2019.yaml` | CDX3DFQR | Olson 2019 — RB 干涉仪 <2×10⁻¹⁶ | ✅ v4.1 |
 | `huangjc2019b.yaml` | 5DCNFGX4 | Huang 2019b — 双缠绕抗振光纤盘 | ✅ v4.1 |
+| `xia2025.yaml` | IUCMUIEI | Xia 2025 — 全数字 FPGA 多环路（PDH+FNC+LPS）USL 自动锁定，1.5×10⁻¹⁵ @1 s | ✅ v4.5 evidence |
+| `wang2024a.yaml` | CYS7GEVR | Wang 2024a — 赫兹线宽激光光纤光频净化中继，8.43×10⁻¹⁹ @10,000 s（106 km） | ✅ v4.5 evidence |
+| `giunta2020b.yaml` | H7A8L8LT | Giunta 2020b — 紧凑光子微波振荡器（12 GHz，−83 dBc/Hz @1 Hz，ULE 腔+Er:fiber 梳） | ✅ v4.5 evidence |
+| `kudelin2024.yaml` | AF34FGMU | Kudelin 2024 — 芯片集成光子微波振荡器（20 GHz，−135 dBc/Hz @10 kHz，SiN+微型 F-P 腔） | ✅ v4.5 evidence |
+| `schioppo2021.yaml` | K5JMAYPZ | Schioppo 2021/2022 — 2220 km 光纤网络比对 NPL↔PTB 超稳激光至 7×10⁻¹⁷ MDEV | ✅ v4.5 evidence |
+| `shen2022.yaml` | P92ZFIAQ | Shen 2022 — 113 km 自由空间时频传递，< 4×10⁻¹⁹ @10,000 s（Nature 2022） | ✅ v4.5 evidence |
 
 ## 光学频率梳专题（105 篇）
 

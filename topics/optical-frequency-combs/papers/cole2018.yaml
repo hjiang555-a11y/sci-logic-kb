@@ -1,0 +1,191 @@
+# Cole et al. 2018 — 克尔微腔中孤子晶体的发现与表征 [breakthrough]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
+
+meta:
+  zotero_key: "Q7ZYAQMC"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: breakthrough
+  reliability: high
+  title: "Soliton crystals in Kerr resonators"
+  year: 2018
+  first_author: "Cole"
+  authors:
+    - "Daniel C. Cole"
+    - "Erin S. Lamb"
+    - "Pascal Del'Haye"
+    - "Scott A. Diddams"
+    - "Scott B. Papp"
+  journal: "Nature Photonics"
+  volume: "11"
+  doi: "10.1038/s41566-017-0009-z"
+  note: >
+    首次报道并完整表征克尔微腔中的孤子晶体——多个DKS孤子自组织排列成类晶体结构，
+    间距离散化。通过"指纹"光谱（多孤子谱干涉调制）可明确识别。晶体形成机制：
+    腔内模式简并引起长程孤子相互作用，抑制孤子湮灭。n个等间距孤子使
+    梳的有效重复率增为n×f_rep，可提升微腔梳功率效率。
+
+entities:
+  - id: ent.soliton_crystal_microcomb
+    name: "孤子晶体微腔梳"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      克尔微腔中多个DKS孤子以确定性间距周期排列形成的自组织集体态，
+      有效重复频率为单孤子的n倍（n为晶体中孤子数），光谱呈特征性调制"指纹"图案，
+      可通过绝热泵浦激光频率扫描确定性产生。
+
+  - id: ent.silica_wgm_resonator_cole
+    name: "二氧化硅WGM微腔（Cole 2018）"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      用于孤子晶体生成实验的石英WGM微环谐振腔，自由谱范围约26 GHz（高Q腔）
+      和约16.4 GHz，异常色散，通过锥形光纤侧耦合泵浦（~30 mW电信波段）。
+
+principles:
+  - id: pri.soliton_crystal_formation
+    name: "孤子晶体形成原理：模式简并介导的长程相互作用"
+    tier: domain
+    verification_status: observed
+    statement: >
+      在克尔微腔中，腔模式回避交叉（avoided mode crossing）在特定波长处产生局域化增强的
+      四波混频转换效率，形成与泵浦激光干涉的背景波（extended background wave）。
+      该背景波提供长程孤子-孤子相互作用，使多孤子间距离散化为允许的晶体态，
+      抑制了正常情况下的近程吸引力导致的孤子对湮灭，从而使密排孤子晶体在
+      绝热激光频率扫描下自发稳定形成。
+    domain: "非线性光学 / 微腔光学"
+    key_insight: >
+      腔模式简并（avoided mode crossing）是孤子晶体与无序"孤子液体"的本质区别；
+      n孤子晶体的有效FSR增为n×f_rep，光功率转换效率可接近理论上限。
+    conditions: "需要腔体存在谱域局域增强的模式简并；泵浦激光需从蓝失谐绝热扫至红失谐"
+    source:
+      zotero_key: "Q7ZYAQMC"
+      claim: >
+        "Soliton crystallization is explained by long-range soliton interactions mediated
+        by resonator mode degeneracies"
+
+  - id: pri.soliton_crystal_fingerprint_spectrum
+    name: "孤子晶体指纹光谱识别原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      孤子晶体的光学频谱由腔内所有孤子的场叠加形成，不同孤子间的相对相位和间距产生
+      逐模调制的干涉图样（"指纹"），调制深度和周期唯一对应晶体结构（含孤子数、
+      缺陷类型和周期性），可用于明确识别和分类各类孤子晶体态。
+    domain: "微腔光学"
+    key_insight: "光谱指纹图案与时域晶体结构一一对应，无需时域测量即可推断孤子排列"
+    conditions: "适用于腔内多孤子共传播态，需要逐模光谱分辨"
+    source:
+      zotero_key: "Q7ZYAQMC"
+      claim: >
+        "We unambiguously identify and characterize soliton crystals through analysis of
+        their 'fingerprint' optical spectra, which arise from spectral interference between
+        the solitons."
+
+methods:
+  - id: meth.adiabatic_soliton_crystal_generation
+    name: "绝热泵浦扫描孤子晶体生成法"
+    status: demonstrated
+    steps_summary: >
+      1) 将泵浦激光从蓝失谐侧缓慢向红失谐扫描，经过调制不稳定梳→混沌腔场阶段；
+      2) 利用腔内模式简并提供的稳定背景波，孤子晶体在混沌-晶体转变时连续生成，
+         无需快速扫描或复杂控制（甚至可用手动压电调节）；
+      3) 通过传输功率及RF重复频率信号的特征变化（低噪声跃变）确认晶体态的形成；
+      4) 通过光谱"指纹"结合LLE数值模拟确定晶体结构。
+    source_claim: >
+      "we are able to generate soliton crystals by adjusting the pump laser's frequency
+      by tuning the voltage across a piezoelectric crystal by hand over several seconds"
+
+metrics:
+  - id: met.soliton_crystal_rep_rate_enhancement
+    name: "孤子晶体有效重复频率倍增因子"
+    unit: "无量纲（整数倍）"
+    role: primary
+    description: >
+      n个等间距孤子形成的晶体其梳的最小间距（有效重复频率）为单孤子的n倍，
+      微波拍频信号出现在n×f_rep处，可直接用于高效光子微波生成。
+    demonstrated_value:
+      value: "n（n为晶体孤子数，实验中最大n=24，含1个缺陷）"
+      conditions: "26 GHz FSR SiO₂ WGM腔，电信波段泵浦，单空位缺陷孤子晶体"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "Q7ZYAQMC"
+        claim: >
+          "a particular progression from primary comb to chaotic comb to crystal for the
+          prototypical Kerr crystal in the bottom panel, which is composed of a train of
+          24 solitons evenly separated in time with a single vacancy"
+
+  - id: met.soliton_crystal_fsrs
+    name: "孤子晶体实验腔自由谱范围"
+    unit: "GHz"
+    role: secondary
+    description: "孤子晶体实验所用SiO₂ WGM微腔的自由谱范围"
+    demonstrated_value:
+      value: "~26 和 ~16.4"
+      conditions: "石英WGM微腔，电信波段，异常色散"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "Q7ZYAQMC"
+        claim: >
+          "silica Kerr whispering-gallery-mode resonators with free spectral ranges (FSRs)
+          of ~26 GHz and ~16.4 GHz and anomalous dispersion"
+
+relations:
+  - id: rel.C01
+    subject: ent.soliton_crystal_microcomb
+    predicate: GOVERNED-BY
+    object: pri.soliton_crystal_formation
+    confidence: established
+    source:
+      zotero_key: "Q7ZYAQMC"
+      claim: >
+        "Soliton crystallization is explained by long-range soliton interactions mediated
+        by resonator mode degeneracies"
+
+  - id: rel.C02
+    subject: ent.soliton_crystal_microcomb
+    predicate: CHARACTERIZED-BY
+    object: pri.soliton_crystal_fingerprint_spectrum
+    confidence: established
+    source:
+      zotero_key: "Q7ZYAQMC"
+      claim: >
+        "We unambiguously identify and characterize soliton crystals through analysis of
+        their 'fingerprint' optical spectra"
+
+  - id: rel.C03
+    subject: ent.soliton_crystal_microcomb
+    predicate: CHARACTERIZED-BY
+    object: met.soliton_crystal_rep_rate_enhancement
+    confidence: established
+    source:
+      zotero_key: "Q7ZYAQMC"
+      claim: "n solitons → n × f_rep beating; comb lines spaced by 24 resonator FSRs"
+
+  - id: rel.C04
+    subject: ent.silica_wgm_resonator_cole
+    predicate: ENABLES
+    object: ent.soliton_crystal_microcomb
+    confidence: established
+    source:
+      zotero_key: "Q7ZYAQMC"
+      claim: >
+        "We generated soliton crystals in silica Kerr whispering-gallery-mode resonators
+        with free spectral ranges (FSRs) of ~26 GHz and ~16.4 GHz"
+
+  - id: rel.C05
+    subject: ent.soliton_crystal_microcomb
+    predicate: USES-METHOD
+    object: meth.adiabatic_soliton_crystal_generation
+    confidence: established
+    source:
+      zotero_key: "Q7ZYAQMC"
+      claim: >
+        "We formed soliton crystals by using a slowly decreasing pump laser frequency scan
+        from 'blue' to 'red' laser-cavity detuning"

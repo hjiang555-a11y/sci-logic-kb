@@ -1,0 +1,59 @@
+# Li 2024 — Sr lattice clock with stability and uncertainty both below 5×10^-18 [breakthrough]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：frequency-standards
+
+meta:
+  zotero_key: "P6AV3KJW"
+  topic: frequency-standards
+  source_type: journal_paper
+  contribution_type: breakthrough
+  reliability: high
+  title: "A strontium lattice clock with both stability and uncertainty below 5×10^-18"
+  year: 2024
+  first_author: "Li"
+  authors: ["Jie Li"]
+  journal: "Metrologia"
+  doi: "10.1088/1681-7575/ad1a4c"
+  note: "NimSrI Sr光晶格钟：稳定性和不确定度同时低于5×10^-18；短期不稳定性3.3×10^-17/√τ；系统总不确定度4.8×10^-18"
+
+entities:
+  - id: ent.nimsri_sr_clock_cas2024
+    name: "NimSrI Sr光晶格钟（中国科学院国家授时中心，2024）"
+    hierarchy_level: 2
+    status: demonstrated
+    function: "Sr光晶格钟，稳定性与系统不确定度同时达到5×10^-18以下"
+
+metrics:
+  - id: met.systematic_uncertainty_sr_li2024
+    name: "系统频率不确定度（NimSrI，Li 2024）"
+    unit: "无量纲（分数频率）"
+    role: primary
+    description: "总系统不确定度"
+    demonstrated_value:
+      value: "4.8e-18"
+      conditions: "NimSrI Sr光晶格钟，中国科学院国家授时中心，2024"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "P6AV3KJW", claim: "total systematic uncertainty of 4.8 × 10^-18"}
+
+  - id: met.clock_instability_sr_li2024
+    name: "时钟短期不稳定性（NimSrI，Li 2024）"
+    unit: "无量纲（分数频率）/√τ"
+    role: secondary
+    description: "归一化至1秒的Allan偏差"
+    demonstrated_value:
+      value: "3.3e-17"
+      conditions: "NimSrI Sr光晶格钟，归一化至1秒"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "P6AV3KJW", claim: "clock instability of 3.3 × 10^-17 / sqrt(tau)"}
+
+relations:
+  - id: rel.LI01
+    subject: ent.nimsri_sr_clock_cas2024
+    predicate: CHARACTERIZED-BY
+    object: met.systematic_uncertainty_sr_li2024
+    confidence: established
+    source: {zotero_key: "P6AV3KJW", claim: "total systematic uncertainty of 4.8 × 10^-18"}

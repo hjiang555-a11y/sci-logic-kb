@@ -1,0 +1,126 @@
+# Xia 2025 — 全数字多环路超稳激光自动锁定系统 [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：ultrastable-laser
+
+meta:
+  zotero_key: "IUCMUIEI"
+  topic: ultrastable-laser
+  source_type: technical_paper
+  contribution_type: evidence
+  reliability: high
+  title: "A multi-loop auto-locking system with fully digital electronics for ultra-stable laser"
+  year: 2025
+  first_author: "Xia"
+  authors:
+    - "Can Xia"
+    - "DanYang Zhu"
+    - "Yaodong Hu"
+    - "ShaoMao Wang"
+    - "JianYu Guan"
+    - "Lei Hou"
+    - "Qi Shen"
+    - "HaiFeng Jiang"
+  journal: "AIP (preprint, dated 25 June 2025)"
+  doi: "TBD"
+  note: >
+    全数字单 FPGA 实现的超稳激光多环路（PDH + FNC + LPS）自动锁定系统（USTC Qi Shen 组）。
+    快反馈环路开环带宽 1.3 MHz；载波锁定模式分数频率不稳定度 1.5×10⁻¹⁵ @1 s，
+    偏频锁定模式 2.5×10⁻¹⁵ @1 s；数字电路自身噪声贡献 2.9×10⁻¹⁶ @1 s；
+    FNC 环路噪声抑制 75 dB @1 Hz，LPS 环路 40 dB @1 Hz；中断后 10 s 内自动复锁。
+
+entities:
+  - id: ent.fpga_multiloop_autolock_xia25
+    name: "全数字多环路超稳激光自动锁定系统（Xia 2025）"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      基于单片 FPGA 实现的三环路（PDH + FNC + LPS）全数字自动锁定系统，
+      高速高精度 ADC/DAC 与 FPGA 协同，支持载波锁定和偏频锁定两种模式，
+      中断后 10 s 内自动复锁，快反馈环路开环带宽 1.3 MHz。
+    key_parameters:
+      fast_loop_bandwidth: "1.3 MHz"
+      instability_carrier_lock: "1.5×10⁻¹⁵ @ 1 s"
+      instability_offset_lock: "2.5×10⁻¹⁵ @ 1 s"
+      digital_noise_contribution: "2.9×10⁻¹⁶ @ 1 s"
+      fnc_noise_suppression: "75 dB @ 1 Hz"
+      lps_noise_suppression: "40 dB @ 1 Hz"
+      relock_time: "< 10 s"
+    note: "PART-OF ent.ultrastable_laser_system"
+
+methods:
+  - id: meth.fpga_digital_multiloop_locking_xia25
+    name: "FPGA 全数字多环路自动锁定方法"
+    status: demonstrated
+    steps_summary: >
+      FPGA 高速 ADC 采样 PDH/FNC/LPS 误差信号 →
+      数字 PI 控制器分别处理三环路 →
+      高速 DAC 驱动 PZT/EOM/VVA 执行机构 →
+      自动锁定算法检测锁失并在 10 s 内复锁
+    source_claim: >
+      "The auto-locking process is implemented using a field programmable gate array
+      with high-speed and high precision analog-to-digital and digital-to-analog converters."
+
+metrics:
+  - id: met.usl_instability_carrier_xia25
+    name: "超稳激光分数频率不稳定度—载波锁定（Xia 2025）"
+    unit: "无量纲（ADEV）"
+    role: primary
+    description: "全数字多环路锁定系统载波模式下激光频率不稳定度"
+    demonstrated_value:
+      value: "1.5×10⁻¹⁵"
+      conditions: "载波锁定模式；τ = 1 s；FPGA 数字系统（PDH + FNC + LPS 同时工作）"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "IUCMUIEI"
+        claim: >
+          "The frequency instability of the USL's frequency in carrier- and offset-locking modes
+          was measured to be 1.5×10⁻¹⁵ at 1 s and 2.5×10⁻¹⁵ at 1 s, respectively."
+
+  - id: met.digital_noise_contribution_xia25
+    name: "数字电子系统噪声贡献（Xia 2025）"
+    unit: "无量纲"
+    role: supporting
+    description: "数字电路（FPGA + ADC/DAC）本身对超稳激光不稳定度的贡献"
+    demonstrated_value:
+      value: "2.9×10⁻¹⁶"
+      conditions: "载波锁定模式；τ = 1 s；全数字系统单独测试"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "IUCMUIEI"
+        claim: >
+          "The contribution of digital electronics to the instability in carrier-locking mode
+          was 2.9×10⁻¹⁶ at 1 s."
+
+relations:
+  - id: rel.X01
+    subject: ent.fpga_multiloop_autolock_xia25
+    predicate: ENABLED-BY
+    object: meth.pdh_locking
+    confidence: established
+    source:
+      zotero_key: "IUCMUIEI"
+      claim: >
+        "multiple locking loops are required to operate simultaneously, including such as
+        Pound–Drever–Hall (PDH), fiber noise cancellation (FNC), light power stabilization (LPS)."
+
+  - id: rel.X02
+    subject: ent.fpga_multiloop_autolock_xia25
+    predicate: ENABLED-BY
+    object: meth.fiber_noise_cancellation
+    confidence: established
+    source:
+      zotero_key: "IUCMUIEI"
+      claim: "the noise suppression effect of the digital servo inside the FNC and LPS loops reached 75 dB and 40 dB at 1 Hz, respectively."
+
+  - id: rel.X03
+    subject: met.usl_instability_carrier_xia25
+    predicate: CHARACTERIZED-BY
+    object: ent.fpga_multiloop_autolock_xia25
+    confidence: established
+    source:
+      zotero_key: "IUCMUIEI"
+      claim: "The frequency instability of the USL's frequency in carrier- and offset-locking modes was measured to be 1.5×10⁻¹⁵ at 1 s."

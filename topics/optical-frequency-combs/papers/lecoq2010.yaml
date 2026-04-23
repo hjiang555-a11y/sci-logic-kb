@@ -1,0 +1,144 @@
+# Le Coq et al. 2010 — Er:fiber梳超低噪声微波生成与铯喷泉钟应用 [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
+
+meta:
+  zotero_key: "5K2FFLPG"
+  topic: optical-frequency-combs
+  source_type: conference_paper
+  contribution_type: evidence
+  reliability: medium
+  title: "Ultra-low Noise Microwave Generation Using Femtosecond Lasers and Applications to Tests of Fundamental Constants"
+  year: 2010
+  first_author: "Le Coq"
+  authors:
+    - "Y. Le Coq"
+    - "J. Millo"
+    - "W. Zhang"
+    - "M. Abgrall"
+    - "M. Lours"
+    - "H. Jiang"
+    - "E.M.L. English"
+    - "R. Boudot"
+    - "P.Y. Bourgeois"
+    - "M.E. Tobar"
+    - "J. Guena"
+    - "A. Clairon"
+    - "S. Bize"
+    - "A.N. Luiten"
+    - "Y. Kersal"
+    - "G. Santarelli"
+  journal: "CLEO/QELS 2010 (OSA)"
+  doi: ""
+  note: >
+    CLEO/QELS 2010会议论文（LNE-SYRTE）。两台Er:fiber飞秒梳相位锁定于公共超稳激光
+    （1.55 µm），在11.55 GHz提取微波信号，相位噪声 −111 dBc/Hz（@1 Hz，受读出系统限制）。
+    单系统绝对稳定度约1.6×10⁻¹⁶（1s），长期平均至~3×10⁻¹⁹（65536 s）。
+    并演示用于铯喷泉时钟（稳定度3.5×10⁻¹⁴ τ⁻¹/²，投影噪声限）。
+    注：PDF含CID编码字体，部分文字为CID序列，核心数据已从可读段提取。
+
+entities:
+  - id: ent.er_fiber_ofd_lecoq2010
+    name: "LNE-SYRTE Er:fiber光频除法器（Le Coq 2010）"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      两台独立Er:fiber飞秒梳共同锁定至1.55 µm超稳CW激光，分别提取11.55 GHz谐波
+      微波信号并相互比对，用于表征微波提取噪声底，并驱动铯喷泉时钟本地振荡器。
+
+principles:
+  - id: pri.two_comb_microwave_comparison
+    name: "双梳比对法表征微波提取残余噪声"
+    tier: domain
+    verification_status: observed
+    statement: >
+      将两台几乎相同的Er:fiber飞秒梳锁定至同一超稳光学参考，分别独立提取微波信号后
+      进行相互比对，可将共模噪声（光学参考）消除，从而测量微波提取过程本身的残余相位噪声。
+      该方法是表征光频除法器噪声底的标准技术。
+    domain: "光频计量 / 微波生成"
+    key_insight: >
+      双梳比对揭示11.55 GHz处残余相位噪声−111 dBc/Hz（@1 Hz）受读出系统限制，
+      而非Er:fiber梳本身，说明梳的噪声贡献更低。
+    conditions: "两台梳需共享同一超稳光学参考；读出系统需足够低噪声"
+    source:
+      zotero_key: "5K2FFLPG"
+      claim: >
+        "We make use of two erbium fiber mode-locked lasers phase locked to a common ultra
+        stable laser source to generate an 11.55 GHz signal with a relative phase noise of
+        -111 dBc/Hz at 1 Hz from the carrier."
+
+metrics:
+  - id: met.microwave_phase_noise_lecoq2010
+    name: "11.55 GHz微波相位噪声（Le Coq 2010）"
+    unit: "dBc/Hz"
+    role: primary
+    description: "两台Er:fiber梳从同一超稳光学参考提取的11.55 GHz微波信号在1 Hz偏移处的单边带相位噪声"
+    demonstrated_value:
+      value: "-111"
+      conditions: "11.55 GHz载波，1 Hz偏移频率，两梳比对，受读出系统底噪限制，LNE-SYRTE"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "5K2FFLPG"
+        claim: "relative phase noise of -111 dBc/Hz at 1 Hz from the carrier"
+
+  - id: met.microwave_instability_lecoq2010_1s
+    name: "微波分数频率不稳定度（1 s，Le Coq 2010）"
+    unit: "无量纲（ADEV）"
+    role: primary
+    description: "单台Er:fiber梳系统绝对微波稳定度（锁定至超稳腔参考后，1 s平均）"
+    demonstrated_value:
+      value: "~1.6×10⁻¹⁶"
+      conditions: "单台Er:fiber梳，锁定至超稳光学腔，11.55 GHz，τ=1 s，LNE-SYRTE 2010"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "5K2FFLPG"
+        claim: >
+          "The corresponding frequency stability for a single system is about 1.6×10^-16 at 1s."
+
+  - id: met.microwave_instability_lecoq2010_long
+    name: "微波分数频率不稳定度（长期，Le Coq 2010）"
+    unit: "无量纲（ADEV）"
+    role: secondary
+    description: "Er:fiber梳微波提取系统在长时间平均下的频率稳定度"
+    demonstrated_value:
+      value: "~3×10⁻¹⁹"
+      conditions: "单台Er:fiber梳，锁定至超稳光学腔，11.55 GHz，τ=65536 s（~18 h），LNE-SYRTE 2010"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "5K2FFLPG"
+        claim: "It averages down to about 3×10^-19 at 65536 s, with a frequency error compatible with zero"
+
+relations:
+  - id: rel.L01
+    subject: ent.er_fiber_ofd_lecoq2010
+    predicate: CHARACTERIZED-BY
+    object: met.microwave_phase_noise_lecoq2010
+    confidence: established
+    source:
+      zotero_key: "5K2FFLPG"
+      claim: "relative phase noise of -111 dBc/Hz at 1 Hz from the carrier"
+
+  - id: rel.L02
+    subject: ent.er_fiber_ofd_lecoq2010
+    predicate: CHARACTERIZED-BY
+    object: met.microwave_instability_lecoq2010_1s
+    confidence: established
+    source:
+      zotero_key: "5K2FFLPG"
+      claim: "frequency stability for a single system is about 1.6×10^-16 at 1s"
+
+  - id: rel.L03
+    subject: ent.er_fiber_ofd_lecoq2010
+    predicate: USES-METHOD
+    object: pri.two_comb_microwave_comparison
+    confidence: established
+    source:
+      zotero_key: "5K2FFLPG"
+      claim: >
+        "Two separate femto-second fiber lasers are optically-mixed with the same ultra-stable
+        optical reference cw laser at 1.55 µm"

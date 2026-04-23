@@ -1,0 +1,196 @@
+# Spencer et al. 2018 — 集成光子学光频合成器（首次芯片集成OFC合成） [breakthrough]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
+
+meta:
+  zotero_key: "4I37D6SD"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: breakthrough
+  reliability: high
+  title: "An optical-frequency synthesizer using integrated photonics"
+  year: 2018
+  first_author: "Spencer"
+  authors:
+    - "Daryl T. Spencer"
+    - "Tara Drake"
+    - "Travis C. Briles"
+    - "Jordan Stone"
+    - "Laura C. Sinclair"
+    - "Connor Fredrick"
+    - "Qing Li"
+    - "Dario Westly"
+    - "B.R. Ilic"
+    - "Aaron Bluestone"
+    - "Nicolas Volet"
+    - "Tin Komljenovic"
+    - "Lin Chang"
+    - "Seong Hyun Lee"
+    - "Dongyoon Oh"
+    - "Myoung-Gyun Suh"
+    - "Ki Youl Yang"
+    - "Martin H.P. Pfeiffer"
+    - "Tobias J. Kippenberg"
+    - "Erik Norberg"
+    - "Luke Theogarajan"
+    - "Kerry Vahala"
+    - "Nathan R. Newbury"
+    - "Kartik Srinivasan"
+    - "John E. Bowers"
+    - "Scott A. Diddams"
+    - "Scott B. Papp"
+  journal: "Nature"
+  volume: "557"
+  doi: "10.1038/s41586-018-0065-7"
+  note: >
+    首次演示完全基于集成光子学的光频合成器：Si₃N₄微腔梳（1 THz间距，八倍频程）+
+    SiO₂楔形微腔梳（22 GHz间距）+ III-V/Si可调谐激光器，实现微波到光学域
+    的相干倍频链。合成误差 ≤7.7×10⁻¹⁵，覆盖 C 波段 4 THz 范围，1 Hz分辨率编程。
+
+entities:
+  - id: ent.integrated_ofc_synthesizer_spencer2018
+    name: "集成光子学光频合成器（Spencer 2018）"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      基于芯片集成的DKS双梳（Si₃N₄ THz梳 + SiO₂ 22 GHz梳）和III-V/Si可调谐激光器，
+      将10 MHz微波钟相干倍频至光频，输出覆盖C波段4 THz、频率分辨率1 Hz的稳定光信号。
+
+  - id: ent.sin_thz_kerr_comb
+    name: "Si₃N₄ 1 THz间距微腔梳"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      八倍频程展宽的Si₃N₄微腔DKS梳，重复频率约1 THz，用于f-2f自参考锁定载波包络
+      偏频f_ceo，为合成器提供光频刻度锁定。
+
+  - id: ent.sio2_22ghz_kerr_comb
+    name: "SiO₂楔形微腔22 GHz梳"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      SiO₂楔形WGM微腔DKS梳，重复频率22 GHz（Q≈1.8×10⁸），锁定至射频时钟，
+      为C波段可调谐激光器提供密集梳齿参考网格。
+
+  - id: ent.iii_v_si_tunable_laser
+    name: "III-V/Si异质集成可调谐激光器"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      基于III-V增益芯片与硅光波导异质集成的窄线宽可调谐CW激光器，输出C波段
+      1520–1580 nm，被相位锁定至DKS双梳，作为合成器的最终输出端口。
+
+principles:
+  - id: pri.integrated_ofc_synthesis_chain
+    name: "集成光子学微波-光频相干倍频链原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      通过将射频时钟（10 MHz）相位相干地倍增至光频，可在单芯片架构中实现光频合成。
+      具体路径：射频钟 → 锁定DKS梳重复频率(f_rep,GHz) → 锁定DKS梳载波包络偏频(f_ceo,THz)
+      → 锁定可调谐激光输出 → 总倍频因子约19,403,904，覆盖C波段4 THz。
+      集成光子学使毫瓦级泵浦功率即可产生梳，芯片尺寸大幅缩小。
+    domain: "光频计量 / 集成光子学"
+    key_insight: >
+      利用Si₃N₄八倍频程梳实现f-2f自参考，结合SiO₂ 22 GHz梳密集参考网格，无需外置
+      光纤梳即可完成从微波到光频的完整相干链。
+    conditions: "需要octave-spanning DKS梳及低相位噪声射频基准"
+    source:
+      zotero_key: "4I37D6SD"
+      claim: >
+        "we establish the precise factor of 19,403,904 phase-coherent multiplication from
+        10 MHz to the optical domain"
+
+methods:
+  - id: meth.dual_dks_synthesizer
+    name: "DKS双梳光频合成法"
+    status: demonstrated
+    steps_summary: >
+      1) 用泵浦激光器激发Si₃N₄微腔产生1 THz间距DKS梳（八倍频程）；
+      2) 将22 GHz SiO₂梳的f_rep锁定至10 MHz射频钟；
+      3) 利用PPLN倍频+拍频锁定Si₃N₄梳的f_ceo；
+      4) 将III-V/Si可调谐激光器相位锁定至22 GHz梳模式；
+      5) FPGA查找表编程设定输出频率，步进精度1 Hz。
+    source_claim: >
+      "By phase-stabilizing both comb spacings (f_rep,THz and f_rep,GHz) and the silicon
+      nitride comb's offset frequency, f_ceo,THz, we establish the precise factor of
+      19,403,904 phase-coherent multiplication from 10 MHz to the optical domain."
+
+metrics:
+  - id: met.synthesis_fractional_instability
+    name: "光频合成器分数频率不稳定度"
+    unit: "无量纲（分数频率）"
+    role: primary
+    description: >
+      合成器输出光频相对射频时钟基准的分数频率误差，表征微波-光频相干链的忠实度。
+    demonstrated_value:
+      value: "≤7.7×10⁻¹⁵"
+      conditions: "输出频率1520–1580 nm C波段，相对辅助Er:fiber自参考梳，200 s平均"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "4I37D6SD"
+        claim: >
+          "synthesis error of 7.7 × 10^-15 or below"
+
+  - id: met.synthesizer_tuning_range
+    name: "合成器光频调谐范围"
+    unit: "THz"
+    role: secondary
+    description: "合成器可编程输出的光频覆盖范围"
+    demonstrated_value:
+      value: "4"
+      conditions: "C波段1520–1580 nm，中心约193 THz，1 Hz频率分辨率"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "4I37D6SD"
+        claim: >
+          "The laser frequency output of our optical-frequency synthesizer can be programmed
+          by a microwave clock across 4 terahertz near 1,550 nanometres with 1 hertz resolution."
+
+relations:
+  - id: rel.S01
+    subject: ent.integrated_ofc_synthesizer_spencer2018
+    predicate: CHARACTERIZED-BY
+    object: met.synthesis_fractional_instability
+    confidence: established
+    source:
+      zotero_key: "4I37D6SD"
+      claim: "synthesis error of 7.7 × 10^-15 or below"
+
+  - id: rel.S02
+    subject: ent.integrated_ofc_synthesizer_spencer2018
+    predicate: USES-METHOD
+    object: meth.dual_dks_synthesizer
+    confidence: established
+    source:
+      zotero_key: "4I37D6SD"
+      claim: >
+        "We use a heterogeneously integrated III–V/silicon tunable laser, which is guided
+        by nonlinear frequency combs fabricated on separate silicon chips"
+
+  - id: rel.S03
+    subject: ent.sin_thz_kerr_comb
+    predicate: ENABLES
+    object: meth.self_referencing
+    confidence: established
+    note: "跨文件引用 meth.self_referencing，定义于 topics/optical-frequency-combs/papers/giunta2019.yaml 等"
+    source:
+      zotero_key: "4I37D6SD"
+      claim: >
+        "Next, f_ceo locking is achieved by using the octave-spanning relationship of the
+        THz lines at 1,998 nm and dispersive wave peak at 999 nm"
+
+  - id: rel.S04
+    subject: ent.integrated_ofc_synthesizer_spencer2018
+    predicate: CHARACTERIZED-BY
+    object: met.synthesizer_tuning_range
+    confidence: established
+    source:
+      zotero_key: "4I37D6SD"
+      claim: >
+        "can be programmed by a microwave clock across 4 terahertz near 1,550 nanometres
+        with 1 hertz resolution"
