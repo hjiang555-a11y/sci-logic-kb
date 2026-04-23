@@ -9,17 +9,20 @@
 
 ---
 
-## 📌 当前优先级：**阶段 D（专家审阅 + 覆盖扩展）准备中** — v4.5 基线已稳定（2026-04-22）
+## 📌 当前优先级：**阶段 D（专家审阅 + 覆盖扩展）进行中** — v4.5 基线已稳定（2026-04-23 刷新）
 
-> **现状快照（基于 `python scripts/lint.py --summary` / `python scripts/stats.py` / `python scripts/freshness.py --check`）**
+> **现状快照（基于 `python scripts/lint.py --summary` / `python scripts/stats.py` / `python scripts/freshness.py --check`，2026-04-23）**
 >
-> - 库存：**170 篇论文**（超稳激光 78 / 光学频率梳 90 / 频率标准 1 / 时间标尺 1）
-> - 质量基线：**lint 0 error / 3 warning / 188 info**
-> - 推理指标：Reasoning Chain Closure **76.6%**；breakthrough-only **100%**；Evidence Coverage **100%**；Condition Completeness **98.8%**
-> - 结构瓶颈：**Synthesis Coverage 仅 1/4 topic**；Cross-file Reuse **8.7%**
-> - 维护瓶颈：freshness 检查显示**超稳激光 8/8 个 synthesis 页面 stale**
+> - 库存：**181 篇论文**（超稳激光 78 / 光学频率梳 101 / 频率标准 1 / 时间标尺 1）— Batch 4 较 Batch 3 新增 11 篇 OFC
+> - 质量基线：**lint 0 error / 3 warning / 192 info**（3 warning 均为 pre-existing `missing-conditions`）
+> - 推理指标：Reasoning Chain Closure **76.0%**（111/146 BOUNDED-BY）；breakthrough-only **100%** (42/42)；Evidence Coverage **100%**；Condition Completeness **98.9%**；σ_y Linkage (USL) **100%**；Limit Resolution Rate **100%**（但 `resolved` 仅 3 条，`unset` 143 条）
+> - 结构瓶颈：**Synthesis Coverage 仍 1/4 topic**（仅 USL，OFC/频标/时标皆空）；Cross-file Reuse **8.9%**（目标 ≥15%）
+> - 维护瓶颈：freshness 检查超稳激光 8/8 个 synthesis 页面仍 stale（阶段 D 待完成）
 >
-> **建议结论**：超稳激光专题已经从"主线闭环建设"转入"维护收口"；下一轮系统投入应转向**光学频率梳 synthesis 启动**，同时把超稳激光综合页 freshness / 专家签字收尾。
+> **建议结论**：
+> - OFC Batch 4 已将论文量推至 101 篇，**第一梯队重心仍为 OFC synthesis 启动**（首批最小集 4 页：频率综合 / 双梳光谱 / 微梳平台 / 光谱应用）
+> - Batch 4 新加 3 篇 breakthrough（Holzwarth 2000、Koke 2019、Caldwell 2022）为 synthesis 页面提供了 **"OFC 诞生 → 远程传递 → 可编程梳"的里程碑时间线骨架**，可作为"频率综合"与"计量应用"两页的主轴
+> - 超稳激光专题 8 个 synthesis 页面 freshness 与专家签字仍是阶段 D 收口动作
 
 > **v4.4 机制落地进度（2026-04-21）**：按"先形成工作机制再扩展规模"迭代计划：
 >
@@ -86,10 +89,13 @@
 
 ### 光学频率梳（已入库待深化）
 
-> **现状**：已入库 **90 篇**，三层架构与 9 条子域主线已明确，但 `synthesis/` 仍为空，是当前全库最大的读者入口缺口。
+> **现状**：已入库 **101 篇**（Batch 4 新增 11 篇，含 3 篇 breakthrough：Holzwarth 2000 / Koke 2019 / Caldwell 2022），三层架构与 9 条子域主线已明确，但 `synthesis/` 仍为空，是当前全库最大的读者入口缺口。
 - [ ] 建立首批 synthesis 页面（建议最小集：频率综合 / 双梳光谱 / 微梳平台 / 光谱应用）
+  - **"频率综合"页**可以 Holzwarth 2000（诞生）→ Koke 2019（1400 km 传递）→ Caldwell 2022（TPFC 范式）为时间主轴
+  - **"光谱应用"页**可串 Cossel 2017（大气 DCS）· Inaba 2013（钟询问线宽传递）· Rao 2022（CRDS 多分支）
 - [ ] 把 9 条子域主线映射到页面结构，明确"哪个页面服务哪个查询"
-- [ ] 梳理 OFC ↔ USL / 频率标准 的跨专题接口节点，优先提升可复用 `pri.*` / `meth.*`
+- [ ] 梳理 OFC ↔ USL / 频率标准 的跨专题接口节点，优先提升可复用 `pri.*` / `meth.*`（当前 cross-file reuse 仅 8.9%，目标 ≥15%）
+- [ ] Batch 4 新增 5 个 principles 中，`pri.tpfc_digital_coherent_pulse_control_c22`（meta-tier）可能具备跨专题复用潜力，待 synthesis 页搭建时评估是否提炼为 Tier 2 共享节点
 - [ ] 其他 orphan / chain-gap 整固延后到 synthesis 骨架搭起之后
 
 ---

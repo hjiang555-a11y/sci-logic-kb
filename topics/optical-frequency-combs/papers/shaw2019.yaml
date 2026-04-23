@@ -1,0 +1,92 @@
+# Shaw 2019 — FPGA 数字伺服光梳稳定（NIST）
+# 提取者：GitHub Copilot（AI草稿，2026-04-22）
+# 提取日期：2026-04-22
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
+# contribution_type: evidence（开源 FPGA 数字伺服工程演示，未刷新跨平台技术指标）
+
+meta:
+  zotero_key: "ZN7TS37H"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Versatile digital approach to laser frequency comb stabilization"
+  year: 2019
+  first_author: Shaw
+  journal: "OSA Continuum"
+  volume: 2
+  issue: 11
+  pages: "3262-3272"
+  doi: "10.1364/OSAC.2.003262"
+  note: >
+    [技术论文] NIST Boulder + U. Colorado. 开源 FPGA 数字伺服光梳稳定：
+    (1) 低成本 Red Pitaya FPGA（125-14 板）+ 开源软件 → frep / fceo 数字相位锁；
+    (2) 锁定 Er:fiber 梳（250 MHz，Menlo Systems FC1500）：a) frep → 1560 nm CW 激光拍频；b) fceo → f-2f 拍频；
+    (3) 性能：a) 残余相位噪声 ~0.1 rad（< 100 as 时间抖动）；b) 无循环滑动锁定 > 30 h；
+        c) 与商业系统相当性能（Red Pitaya 无显著限制）；
+    (4) 模块化：易适配多种梳平台 / 执行器（慢 / 快反馈）；
+    (5) 优势：低成本（Red Pitaya ~$500）+ 开源（降低技术门槛）。
+    本工作是开源 FPGA 数字伺服工程演示（达到商业系统同级性能），未刷新跨平台技术指标，归 evidence。
+    对齐 v2 子域主线：A-Locking（梳稳定技术）。
+
+entities:
+  - id: ent.fpga_digital_servo_er_comb_s19
+    name: "FPGA 数字伺服 Er:fiber 梳系统（Shaw 2019, NIST）"
+    aliases:
+      - Red Pitaya FPGA comb servo (NIST 2019)
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      低成本 Red Pitaya FPGA（125-14 板）+ 开源软件 → frep / fceo 数字相位锁；
+      Er:fiber 梳（250 MHz，Menlo Systems FC1500）：a) frep → 1560 nm CW 激光拍频；b) fceo → f-2f 拍频；
+      残余相位噪声 ~0.1 rad，无循环滑动 > 30 h；
+      与商业系统相当性能（Red Pitaya 无显著限制）。
+    key_parameters:
+      frep: "250 MHz（Er:fiber 梳）"
+      fpga_platform: "Red Pitaya 125-14（~$500，开源软件）"
+      residual_phase_noise: "~0.1 rad（< 100 as 时间抖动）"
+      cycle_slip_free_duration: "> 30 h"
+      performance_vs_commercial: "相当（Red Pitaya 无显著限制）"
+    note: "Level 2 实例节点，PART-OF ent.er_fiber_frequency_comb（定义于 droste2016.yaml）"
+
+methods:
+  - id: meth.red_pitaya_fpga_comb_servo_s19
+    name: "Red Pitaya FPGA 梳数字伺服方法（Shaw 2019）"
+    status: demonstrated
+    applies_to: ent.fpga_digital_servo_er_comb_s19
+    steps_summary: >
+      1. fceo 探测：f-2f 干涉仪（1560 nm → PPLN 倍频 → 与 780 nm 混频）→ fceo 拍频（~20 MHz）；
+      2. frep 探测：1560 nm CW 激光 + 梳齿拍频 → fbeat（~20 MHz）；
+      3. Red Pitaya FPGA：a) 输入 fceo / fbeat 拍频（125 MS/s ADC）；b) 数字 PLL（相位展开 + PID 滤波）；
+          c) 输出控制信号（125 MS/s DAC）→ a) fceo：泵浦电流（慢执行器）+ EOM（快执行器）；
+              b) frep：PZT 镜（慢执行器）+ intra-cavity EOM（快执行器）；
+      4. 开源软件：PyRPL（Python Red Pitaya Lockbox）。
+    required_hardware:
+      - "Red Pitaya 125-14 FPGA 板（~$500）"
+      - "Er:fiber 梳（250 MHz）"
+      - "1560 nm CW 激光（frep 参考）"
+      - "f-2f 干涉仪（fceo 探测）"
+    advantages:
+      - "低成本（Red Pitaya ~$500 vs 商业系统 $10k+）"
+      - "开源（降低技术门槛）"
+      - "模块化（易适配多种梳平台）"
+    disadvantages:
+      - "ADC/DAC 分辨率 14 bit（商业系统可能 16-18 bit）"
+      - "依赖社区开源软件（长期维护风险）"
+
+relations:
+  - id: rel.Sha19_01
+    subject: ent.fpga_digital_servo_er_comb_s19
+    predicate: PART-OF
+    object: ent.er_fiber_frequency_comb
+    confidence: established
+    source: {zotero_key: "ZN7TS37H", claim: "Er:fiber mode-locked laser frequency comb"}
+    note: "跨文件引用 ent.er_fiber_frequency_comb（定义于 droste2016.yaml）"
+
+  - id: rel.Sha19_02
+    subject: meth.red_pitaya_fpga_comb_servo_s19
+    predicate: OPERATIONALIZED-AS
+    object: ent.fpga_digital_servo_er_comb_s19
+    confidence: established
+    source: {zotero_key: "ZN7TS37H", claim: "Red Pitaya and open-source software as a low-cost digital phase locking system"}

@@ -1,0 +1,143 @@
+# Koke 2019 — Brillouin 放大 + 中继激光站 1400 km 光纤频率传递（PTB + LNE-SYRTE）
+# 提取者：GitHub Copilot（AI草稿，2026-04-22）
+# 提取日期：2026-04-22
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
+# contribution_type: breakthrough（首次 Brillouin 放大 + 中继站组合 1400 km 光纤链路，Continental-scale）
+
+meta:
+  zotero_key: "ZG45BBYV"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: breakthrough
+  reliability: high
+  title: "Combining fiber Brillouin amplification with a repeater laser station for fiber-based optical frequency dissemination over 1400 km"
+  year: 2019
+  first_author: Koke
+  journal: "New Journal of Physics"
+  volume: 21
+  issue: "未明示"
+  pages: "123017"
+  doi: "10.1088/1367-2630/ab5d95"
+  note: >
+    [Breakthrough 论文] PTB（德国联邦物理技术研究院）+ LNE-SYRTE（法国）。首次 Brillouin 放大 + 中继激光站组合 1400 km 光纤频率传递：
+    (1) 1400 km 环形光纤链路（Braunschweig ↔ Strasbourg 地下光纤）：首次结合光纤 Brillouin 放大器（FBA）与中继激光站（RLS）；
+    (2) 相位相干运行 > 5 天（累计 65 天数据）；加权平均分数频率偏移 (-1.1±0.4)×10⁻²⁰；
+    (3) 两根光纤相位噪声相关性 > 98%（双向噪声抵消）；
+    (4) 技术突破：a) Brillouin 放大解决长距离信号衰减（避免 bEDFA 自振荡 / 循环滑动）；
+        b) 中继激光站解决剩余损耗 + 分段稳定；
+        c) 组合方案首次实现 Continental-scale（>1000 km）光纤频率传递。
+    本工作是首次 1400 km Brillouin + RLS 组合链路，判定 breakthrough（首次 Continental-scale Brillouin-amplified link）。
+    对齐 v2 子域主线：C-Transfer（光纤频率传递）。
+
+  primary_metric_exempt_reason: new_method
+  breakthrough_paths:
+    - pri.brillouin_amplification_long_distance_k19
+    - meth.brillouin_rls_hybrid_1400km_k19
+
+entities:
+  - id: ent.brillouin_rls_1400km_link_k19
+    name: "Brillouin 放大 + 中继站 1400 km 光纤频率传递链路（Koke 2019, PTB）"
+    aliases:
+      - 1400 km Brillouin-amplified RLS fiber link (PTB 2019)
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      1400 km 环形光纤链路（Braunschweig ↔ Strasbourg 地下光纤，双向传输）；
+      Brillouin 放大器（FBA）+ 中继激光站（RLS）组合 → 解决长距离衰减 + 分段稳定；
+      相位相干运行 > 5 天，加权平均分数频率偏移 (-1.1±0.4)×10⁻²⁰；
+      两根光纤相位噪声相关性 > 98%（共模抑制）。
+    key_parameters:
+      link_length: "1400 km（环形，地下光纤）"
+      phase_coherent_operation: "> 5 天（累计 65 天数据）"
+      frequency_offset: "(-1.1±0.4)×10⁻²⁰（加权平均）"
+      fiber_correlation: "> 98%（双光纤相位噪声相关性）"
+      amplification: "Brillouin 放大器（FBA）+ 中继激光站（RLS）"
+    note: "Level 2 实例节点（首台 Brillouin + RLS 1400 km 链路）"
+
+principles:
+  - id: pri.brillouin_amplification_long_distance_k19
+    name: "Brillouin 放大长距离光纤频率传递原理（Koke 2019）"
+    tier: domain
+    verification_status: observed
+    statement: >
+      光纤长距离传输（>1000 km）衰减 > 200 dB；bEDFA（双向 EDFA）易自振荡 / 循环滑动（cycle slip）→ 频率不确定度 > 5×10⁻¹⁷（不适合光钟）；
+      Brillouin 放大器（FBA）：窄带（~MHz）泵浦光激发受激 Brillouin 散射（SBS）→ 信号光增益（~15 dB），低噪声（无 ASE 宽带噪声）；
+      优势：a) 窄带 → 低噪声；b) 双向增益对称 → 路径噪声共模抑制；c) 无自振荡（无 bEDFA 反射环路）；
+      与中继激光站（RLS）组合：FBA 补偿大部分损耗，RLS 补偿剩余损耗 + 分段稳定 → 首次 Continental-scale（1400 km）链路。
+    domain: "光纤频率传递；受激 Brillouin 散射"
+    key_insight: >
+      "Brillouin 放大的窄带特性使其天然适合光纤频率传递（MHz 级窄带信号）——
+      这是 bEDFA 无法做到的（宽带 ASE 噪声 + 自振荡风险）"——
+      对 Continental-scale 光钟比对关键（>1000 km，10⁻¹⁸ 级不确定度）。
+    conditions: "光纤链路 > 1000 km；Brillouin 放大器（FBA）；中继激光站（RLS）"
+    source_claim: >
+      "This fiber link is the first to combine fiber Brillouin amplifiers with a repeater laser station."
+
+methods:
+  - id: meth.brillouin_rls_hybrid_1400km_k19
+    name: "Brillouin 放大 + 中继站混合 1400 km 光纤链路方法（Koke 2019）"
+    status: demonstrated
+    applies_to: ent.brillouin_rls_1400km_link_k19
+    steps_summary: >
+      1. 1400 km 环形光纤链路（双向传输）；
+      2. Brillouin 放大器（FBA）沿路分布（~100 km 间隔）→ 补偿大部分衰减（~15 dB / 站）；
+      3. 中继激光站（RLS）补偿剩余损耗（~50 dB 累积）+ 分段稳定（相位锁环 PLL）；
+      4. 双向噪声补偿（phase-coherent bi-directional）→ 路径噪声共模抑制（> 98% 相关性）；
+      5. 相位相干运行 > 5 天（无循环滑动）。
+    required_hardware:
+      - "1400 km 地下光纤（双向）"
+      - "Brillouin 放大器（FBA）"
+      - "中继激光站（RLS）"
+      - "相位锁环（PLL）伺服"
+    advantages:
+      - "首次 Continental-scale Brillouin-amplified link（> 1000 km）"
+      - "低噪声（Brillouin 窄带增益）"
+      - "无循环滑动（FBA 无自振荡）"
+    disadvantages:
+      - "需要沿路 FBA + RLS 站点（基础设施需求）"
+
+metrics:
+  - id: met.brillouin_rls_1400km_frequency_offset_k19
+    name: "1400 km Brillouin + RLS 链路频率偏移"
+    unit: "(dimensionless)"
+    description: "1400 km 光纤链路加权平均分数频率偏移"
+    demonstrated_value:
+      value: "(-1.1±0.4)×10⁻²⁰"
+      conditions: "1400 km 光纤链路（Brillouin + RLS）"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "ZG45BBYV", claim: "weighted mean of the fractional frequency offset ... is (-1.1±0.4)×10⁻²⁰"}
+    historical_landmarks:
+      first_demonstration:
+        value: "(-1.1±0.4)×10⁻²⁰（首次 1400 km Brillouin + RLS 链路，2019）"
+        year: 2019
+        source: {zotero_key: "ZG45BBYV"}
+        note: "首次 Continental-scale Brillouin-amplified link"
+
+relations:
+  - id: rel.Kok19_01
+    subject: ent.brillouin_rls_1400km_link_k19
+    predicate: CHARACTERIZED-BY
+    object: met.brillouin_rls_1400km_frequency_offset_k19
+    confidence: established
+    source: {zotero_key: "ZG45BBYV", claim: "(-1.1±0.4)×10⁻²⁰"}
+
+  - id: rel.Kok19_02
+    subject: met.brillouin_rls_1400km_frequency_offset_k19
+    predicate: BOUNDED-BY
+    object: pri.brillouin_amplification_long_distance_k19
+    confidence: established
+    source: {zotero_key: "ZG45BBYV", claim: "fiber Brillouin amplifiers"}
+    breakthrough_paths:
+      - direction: meth.brillouin_rls_hybrid_1400km_k19
+        expected_gain: "首次 Brillouin + RLS 组合 → 1400 km Continental-scale"
+        status: demonstrated
+        source: {zotero_key: "ZG45BBYV"}
+
+  - id: rel.Kok19_03
+    subject: meth.brillouin_rls_hybrid_1400km_k19
+    predicate: OPERATIONALIZED-AS
+    object: ent.brillouin_rls_1400km_link_k19
+    confidence: established
+    source: {zotero_key: "ZG45BBYV", claim: "combine fiber Brillouin amplifiers with a repeater laser station"}

@@ -1,0 +1,69 @@
+# Cossel 2017 — 飞行器挂载反射镜开放路径双梳光谱（NIST）
+# 提取者：GitHub Copilot（AI草稿，2026-04-22）
+# 提取日期：2026-04-22
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
+# contribution_type: evidence（野外 DCS 应用演示，未刷新跨平台技术指标）
+
+meta:
+  zotero_key: "XHCB4X6R"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Open-path dual-comb spectroscopy to an airborne retroreflector"
+  year: 2017
+  first_author: Cossel
+  journal: "Optica"
+  volume: 4
+  issue: 7
+  pages: "724-728"
+  doi: "10.1364/OPTICA.4.000724"
+  note: >
+    [技术论文] NIST Boulder + U. Colorado. 开放路径 DCS 至飞行反射镜：
+    (1) 双梳 DCS 系统（frep ~ 200 MHz，Δfrep ~ 624 Hz）覆盖 1.57-1.66 µm（CO₂, CH₄, H₂O 吸收带）；
+    (2) 反射镜挂载在多旋翼飞行器（multicopter）上，悬停扫描水平 / 垂直路径；
+    (3) RTK GPS 提供高精度路径长度测量 → 干混合比（dry mixing ratio）空间分布；
+    (4) 精度：2 ppm CO₂ / 16 ppb CH₄ @ 10 s（~50-100 µW 接收功率）；
+    (5) 应用场景：边界层剖面、排放源定位、危险气体探测。
+    本工作是 DCS 野外应用演示（飞行平台首次），未刷新 DCS 本身技术指标（精度 / 灵敏度 / 覆盖），归 evidence。
+    对齐 v2 子域主线：B-DCS（双梳光谱应用）。
+
+entities:
+  - id: ent.airborne_retroreflector_dcs_c17
+    name: "飞行器挂载反射镜开放路径 DCS 系统（Cossel 2017, NIST）"
+    aliases:
+      - Airborne retroreflector DCS (NIST 2017)
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      双梳 DCS 系统（frep ~ 200 MHz，Δfrep ~ 624 Hz，1.57-1.66 µm）
+      → 反射镜挂载在多旋翼飞行器（multicopter）上，悬停扫描水平 / 垂直路径；
+      RTK GPS 提供高精度路径长度测量 → 干混合比空间分布（CO₂, CH₄, H₂O）；
+      精度 2 ppm CO₂ / 16 ppb CH₄ @ 10 s（~50-100 µW 接收功率）。
+    key_parameters:
+      frep: "~200 MHz"
+      delta_frep: "~624 Hz"
+      spectral_coverage: "1.57-1.66 µm（6000-6330 cm⁻¹）"
+      species: "CO₂, CH₄, H₂O, isotopologues"
+      precision_10s: "2 ppm CO₂ / 16 ppb CH₄ @ ~50-100 µW 接收功率"
+      path_length_measurement: "RTK GPS（high-precision differential）"
+      platform: "多旋翼飞行器（multicopter），悬停扫描"
+    note: "Level 2 实例节点，PART-OF ent.dual_comb_spectrometer（定义于 coddington2016.yaml）"
+
+relations:
+  - id: rel.Cos17_01
+    subject: ent.airborne_retroreflector_dcs_c17
+    predicate: PART-OF
+    object: ent.dual_comb_spectrometer
+    confidence: established
+    source: {zotero_key: "XHCB4X6R", claim: "dual-comb spectroscopy"}
+    note: "跨文件引用 ent.dual_comb_spectrometer（定义于 coddington2016.yaml）"
+
+  - id: rel.Cos17_02
+    subject: ent.airborne_retroreflector_dcs_c17
+    predicate: ENABLED-BY
+    object: pri.dual_comb_multiheterodyne_detection
+    confidence: established
+    source: {zotero_key: "XHCB4X6R", claim: "heterodyning them against a second comb"}
+    note: "跨文件引用 pri.dual_comb_multiheterodyne_detection（定义于 coddington2016.yaml）"

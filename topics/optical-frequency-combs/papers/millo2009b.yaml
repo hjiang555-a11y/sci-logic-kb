@@ -1,0 +1,121 @@
+# Millo 2009b — 光纤梳光生微波驱动Cs喷泉钟（法国 LNE-SYRTE）
+# 提取者：GitHub Copilot（AI草稿，2026-04-22）
+# 提取日期：2026-04-22
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
+# contribution_type: evidence（光纤梳光生微波应用演示，达到 Ti:sapph 同级稳定度，未刷新跨平台纪录）
+# 注：本论文作者 Millo 另有一篇 2009 PRA 论文在 ultrastable-laser 专题下，故本文件命名为 millo2009b.yaml
+
+meta:
+  zotero_key: "WHNQC4FV"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Ultralow noise microwave generation with fiber-based optical frequency comb and application to atomic fountain clock"
+  year: 2009
+  first_author: Millo
+  journal: "Applied Physics Letters"
+  volume: 94
+  issue: "未明示"
+  pages: "141105"
+  doi: "10.1063/1.3112574"
+  note: >
+    [技术论文] LNE-SYRTE（法国）+ U. Western Australia. 光纤梳光生微波驱动 Cs 喷泉钟：
+    (1) Er:fiber 梳（frep ~ 250 MHz）锁定至超稳光腔（1542 nm CW 参考激光），frep 倍频程（11.932 GHz）作为喷泉钟询问振荡器；
+    (2) 与钛宝石梳（TSOFC）+ 低温蓝宝石振荡器（CSO）三路比对，光纤梳光生微波稳定度 ~3×10⁻¹⁵ @ 1-10 s（与 Ti:sapph 同级）；
+    (3) 喷泉钟 Ramsey 光谱驱动由光纤梳微波替代 CSO，钟稳定度 3.5×10⁻¹⁴ τ⁻¹/²；
+    (4) 首次将光纤梳光生微波应用于喷泉钟，验证可靠性（CSO 替代方案）。
+    本工作是光纤梳光生微波应用演示（达到 Ti:sapph 同级稳定度，但非首次且未刷新纪录），归 evidence。
+    对齐 v2 子域主线：B-FreqSyn（光学分频到微波）。
+
+entities:
+  - id: ent.fiber_comb_microwave_cs_fountain_m09b
+    name: "光纤梳光生微波驱动 Cs 喷泉钟系统（Millo 2009b）"
+    aliases:
+      - Fiber-based OFC microwave for Cs fountain (LNE-SYRTE 2009)
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      Er:fiber 频率梳（frep ~ 250 MHz，内置 f-2f）+ 超稳光腔（1542 nm CW 参考）→ frep 倍频程（11.932 GHz）
+      光生微波输出 → 驱动 Cs 喷泉钟 Ramsey 光谱询问；
+      与 Ti:sapph 梳 / CSO（低温蓝宝石振荡器）比对，稳定度 ~3×10⁻¹⁵ @ 1-10 s；
+      喷泉钟性能 3.5×10⁻¹⁴ τ⁻¹/²（与 CSO 驱动时相当）。
+    key_parameters:
+      frep: "~250 MHz"
+      microwave_output: "11.932 GHz（~48 次谐波）"
+      optical_reference: "1542 nm 超稳 CW 激光（光腔锁定，<2×10⁻¹⁵ @ 1 s 拍频稳定度）"
+      microwave_stability: "~3×10⁻¹⁵ @ 1-10 s（Allan 偏差，与 Ti:sapph / CSO 三路比对）"
+      fountain_clock_stability: "3.5×10⁻¹⁴ τ⁻¹/²"
+    note: "Level 2 实例节点，PART-OF ent.er_fiber_frequency_comb（定义于 droste2016.yaml）"
+
+methods:
+  - id: meth.fiber_comb_locked_usl_microwave_m09b
+    name: "光纤梳锁超稳激光光生微波方法（Millo 2009b）"
+    status: demonstrated
+    applies_to: ent.fiber_comb_microwave_cs_fountain_m09b
+    steps_summary: >
+      1. Er:fiber 梳振荡器（frep ~ 250 MHz）+ 内置 f-2f 干涉仪测 fceo；
+      2. 1542 nm 超稳 CW 激光（光腔锁定）与梳齿拍频 fbeat = νcw - N·frep - fceo；
+      3. fbeat - fceo 混频产生 νcw - N·frep（fceo 独立）；
+      4. 该信号经跟踪振荡器滤波 + 128 分频 + DDS 合成参考 → 相位误差信号；
+      5. PLL 反馈到梳泵浦功率（frep 控制），伺服带宽 120 kHz；
+      6. 锁定后 frep（及其倍频程）复现超稳激光稳定度；
+      7. frep 的高次谐波（如 11.932 GHz = 48×frep）经高速光电探测输出光生微波；
+      8. 该微波驱动 Cs 喷泉钟 Ramsey 光谱询问，替代 CSO。
+    required_hardware:
+      - "Er:fiber 梳（frep ~ 250 MHz，内置 f-2f）"
+      - "超稳光腔 + 1542 nm CW 激光"
+      - "PLL 伺服（泵浦功率调制）"
+      - "高速光电探测器（frep 倍频程）"
+      - "Cs 喷泉钟"
+    advantages:
+      - "frep 及其谐波复现超稳激光稳定度（~10⁻¹⁵ @ 1 s）"
+      - "光纤梳可靠、低维护，优于 CSO（低温维护）"
+      - "同时提供光学频率综合与微波产生"
+    disadvantages:
+      - "需要超稳光腔（额外系统）"
+      - "微波稳定度受限于超稳激光长期漂移（需 DDS 线性斜坡补偿）"
+
+metrics:
+  - id: met.fiber_comb_microwave_stability_m09b
+    name: "光纤梳光生微波稳定度"
+    unit: "(dimensionless)"
+    description: "frep 倍频程（11.932 GHz）光生微波的 Allan 偏差（ADEV）@ 1-10 s"
+    demonstrated_value:
+      value: "~3×10⁻¹⁵ @ 1-10 s（与 Ti:sapph / CSO 比对）"
+      conditions: "Er:fiber 梳（frep ~ 250 MHz）锁定至 1542 nm 超稳激光"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "WHNQC4FV", claim: "instability of about 3×10⁻¹⁵ between 1 and 10 s"}
+
+relations:
+  - id: rel.Mil09b_01
+    subject: ent.fiber_comb_microwave_cs_fountain_m09b
+    predicate: PART-OF
+    object: ent.er_fiber_frequency_comb
+    confidence: established
+    source: {zotero_key: "WHNQC4FV", claim: "fiber-based optical frequency comb (FOFC)"}
+    note: "跨文件引用 ent.er_fiber_frequency_comb（定义于 droste2016.yaml）"
+
+  - id: rel.Mil09b_02
+    subject: ent.fiber_comb_microwave_cs_fountain_m09b
+    predicate: CHARACTERIZED-BY
+    object: met.fiber_comb_microwave_stability_m09b
+    confidence: established
+    source: {zotero_key: "WHNQC4FV", claim: "3×10⁻¹⁵"}
+
+  - id: rel.Mil09b_03
+    subject: meth.fiber_comb_locked_usl_microwave_m09b
+    predicate: OPERATIONALIZED-AS
+    object: ent.fiber_comb_microwave_cs_fountain_m09b
+    confidence: established
+    source: {zotero_key: "WHNQC4FV", claim: "locked onto one of these reference lasers"}
+
+  - id: rel.Mil09b_04
+    subject: meth.fiber_comb_locked_usl_microwave_m09b
+    predicate: ENABLED-BY
+    object: pri.optical_frequency_division_microwave
+    confidence: established
+    source: {zotero_key: "WHNQC4FV", claim: "repetition rate f_rep ... reproduces its ultrahigh stability, transferred in the microwave domain"}
+    note: "跨文件引用 pri.optical_frequency_division_microwave（定义于 giunta2019.yaml）"

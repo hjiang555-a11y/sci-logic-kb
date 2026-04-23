@@ -3,7 +3,7 @@
 > **说明**：本文件包含知识库中所有已处理论文的详细列表。从 SCHEMA.md 第八节迁移而来。
 > SCHEMA.md 仅保留统计摘要，本文件承载完整论文记录。
 >
-> **最后更新**：2026-04-22（optical-frequency-combs Batch 2+3 摄入：+19 篇 → 90 篇；`BL4HI3QI` 为 `picque2019.yaml` 的 zotero 备份键，跳过）
+> **最后更新**：2026-04-23（optical-frequency-combs Batch 4 摄入：+11 篇 → 101 篇；`8NE7UAUR` / `LB6RJ2MZ` 分别为 `leopardi2017.yaml` / `picque2019.yaml` 的 zotero 备份键，跳过）
 
 ---
 
@@ -91,7 +91,7 @@
 | `olson2019.yaml` | CDX3DFQR | Olson 2019 — RB 干涉仪 <2×10⁻¹⁶ | ✅ v4.1 |
 | `huangjc2019b.yaml` | 5DCNFGX4 | Huang 2019b — 双缠绕抗振光纤盘 | ✅ v4.1 |
 
-## 光学频率梳专题（90 篇）
+## 光学频率梳专题（101 篇）
 
 ### 框架型文档
 
@@ -144,7 +144,23 @@
 | `timmers2018.yaml` | TFUBQQB8 | Timmers 2018 — 脉冲内 DFG + OP-GaP 超八度中红外指纹梳（Optica） | ✅ v4.3 breakthrough（Batch 3） |
 | `diddams2007.yaml` | U9WDX7JI | Diddams 2007 — 首次 VIPA 分辨梳齿分子指纹光谱（Nature） | ✅ v4.3 breakthrough（Batch 3） |
 | `papp2013b.yaml` | SE4C2RWR | Papp 2013b — CO₂ 激光微棒梳 + 机械控制（PRX） | ✅ v4.3 breakthrough（Batch 3） |
-| *（其余 49 篇见 `topics/optical-frequency-combs/papers/` 目录）* | | | |
+| `holzwarth2000.yaml` | ZNCBFZR5 | Holzwarth 2000 PRL — 首台 PCF 八度自参考梳，5.1×10⁻¹⁶ 不确定度（现代 OFC 诞生） | ✅ v4.5 breakthrough（Batch 4） |
+| `millo2009b.yaml` | WHNQC4FV | Millo 2009 APL — 光纤梳光生微波驱动 Cs 喷泉钟（3×10⁻¹⁵ @ 1-10 s） | ✅ v4.5 evidence（Batch 4） |
+| `inaba2013.yaml` | Y7KZ89LA | Inaba 2013 — 窄线宽梳传递 1064 nm USL 线宽至 578 nm 探测 ¹⁷¹Yb 钟跃迁（AIST/NMIJ） | ✅ v4.5 evidence（Batch 4） |
+| `carlson2017.yaml` | WCBMETLH | Carlson 2017 — SiN 波导低功率 f-2f 自参考（11.3 mW 入射） | ✅ v4.5 evidence（Batch 4） |
+| `cossel2017.yaml` | XHCB4X6R | Cossel 2017 — 开放路径双梳光谱至飞行器反射镜（Optica，大气剖面） | ✅ v4.5 evidence（Batch 4） |
+| `manurkar2018.yaml` | XZTNQ8D4 | Manurkar 2018 — 全自参考梳仅 5 W 电功耗（CubeSat 级预算） | ✅ v4.5 evidence（Batch 4） |
+| `shaw2019.yaml` | ZN7TS37H | Shaw 2019 — FPGA 开源数字伺服锁定梳（Red Pitaya，<100 as 抖动） | ✅ v4.5 evidence（Batch 4） |
+| `koke2019.yaml` | ZG45BBYV | Koke 2019 — Brillouin 放大 + 中继站 1400 km 相干光纤传递（(-1.1±0.4)×10⁻²⁰） | ✅ v4.5 breakthrough（Batch 4） |
+| `luo2020.yaml` | X6KNIXMW | Luo 2020 — 130 W 180 fs Yb:fiber CPA 梳（ECNU） | ✅ v4.5 evidence（Batch 4） |
+| `caldwell2022.yaml` | YD2MQC49 | Caldwell 2022 Nature — 时间可编程梳 TPFC + 量子极限测距（5000× 功率降低） | ✅ v4.5 breakthrough（Batch 4） |
+| `rao2022.yaml` | ZSWYS26E | Rao 2022 物理学报 — 8 支路 Er 光纤梳用于 CRDS（国家授时中心） | ✅ v4.5 evidence（Batch 4） |
+| *（其余 60 篇见 `topics/optical-frequency-combs/papers/` 目录）* | | | |
+
+> **Batch 4 备注**：2026-04-23 摄入基于 `/pdfs/` 中超出原 batch_info.json 的 13 个 PDF。去重后 11 篇新入库：
+> - `8NE7UAUR`（Leopardi 2017 Optica，DOI `10.1364/OPTICA.4.000879`）— 与 `leopardi2017.yaml`（zotero `8XUFRL4K`）同 DOI，跳过
+> - `LB6RJ2MZ`（Picqué & Hänsch 2019 Nature Photon，DOI `10.1038/s41566-018-0347-5`）— 与 `picque2019.yaml`（zotero `RZME5CH8`，另一备份键 `BL4HI3QI`）同 DOI，跳过
+> - `millo2009b.yaml` 与 `topics/ultrastable-laser/papers/millo2009.yaml`（zotero `GLXHEIPV`，PRA 2009 振动不敏感腔）为**不同论文**，使用 `b` 后缀区分
 
 > **备注**：原 Batch 3 清单含 `BL4HI3QI`（Picqué & Hänsch 2019 Nature Photonics 综述），与已处理 `picque2019.yaml`（zotero `RZME5CH8`）为**同一 DOI 的备份键**，不创建重复 YAML。
 
