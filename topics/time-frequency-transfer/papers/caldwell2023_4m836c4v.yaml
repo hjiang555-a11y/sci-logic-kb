@@ -1,29 +1,92 @@
-# Caldwell 2023 — Quantum-limited optical time transfer for future geosynchronous links
-# 提取者：AI 草稿，待专家确认
+# Caldwell 2023 — Quantum-limited optical time transfer for future geosynchronous links [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
 # 提取日期：2026-04-23
 # Schema版本：v4.5
 # 专题：time-frequency-transfer
-# contribution_type: evidence
+# contribution_type: evidence — 逼近 breakthrough。10000× 低于以往接收功率、300 km 山顶-山顶
+#   自由空间同步至 320 as，40 µW launched power 支持 102 dB 链路损耗——足以支撑
+#   ground↔geosynchronous orbit 光学 TF。
 
 meta:
   zotero_key: "4m836c4v"
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
-  reliability: medium
+  reliability: high
   title: "Quantum-limited optical time transfer for future geosynchronous links"
   year: 2023
   first_author: Caldwell
-  authors: ["Emily D. Caldwell"
-    "Jean-Daniel Deschenes"
-    "Jennifer Ellis"
-    "William C. Swann"
-    "Benjamin K. Stuhl"
-    "Hugo Bergeron"
-    "Nathan R. Newbury"
-    "Laura C. Sinclair"]
+  authors: ["E. D. Caldwell", "J.-D. Deschênes", "J. Ellis", "W. C. Swann", "B. K. Stuhl",
+    "H. Bergeron", "N. R. Newbury", "L. C. Sinclair"]
   journal: "Nature"
+  volume: 618
+  pages: "721-726"
   doi: "10.1038/s41586-023-06032-5"
   note: >
-    [journal_paper]
-    待补充推理链条和知识点提取。
+    [期刊论文] NIST Boulder + Laval + NOAA. 近量子极限 O-TWTFT：10000× 低于以往最低
+    接收功率，300 km Hawaii 山顶-山顶自由空间同步至 320 as；40 µW launched power 支持
+    102 dB 链路损耗，足以支撑 ground↔geosynchronous orbit 光学时间传递。
+    光钟-时频比对-地球静止轨道链路构成"网络连接大规模光钟"的关键使能。
+    建议专家考虑将此升为 breakthrough。
+
+entities:
+  - id: ent.quantum_limited_ott_hawaii_c23
+    name: "Hawaii 300 km 近量子极限光学时间传递（Caldwell 2023）"
+    hierarchy_level: 2
+    status: demonstrated
+    key_parameters:
+      distance: "300 km (mountaintop to mountaintop)"
+      sync_precision: "320 as"
+      launched_power_demonstrated: "40 µW"
+      supported_link_loss: "102 dB @ 4 mW"
+      received_power_reduction: "10⁴× vs. previous"
+    note: "Level 2 实例，PART-OF ent.free_space_optical_tf_link"
+
+principles:
+  - id: pri.quantum_limited_photon_counted_ott
+    name: "量子极限光子计数光学时间传递原理"
+    tier: domain
+    verification_status: demonstrated
+    statement: >
+      O-TWTFT 时戳精度 σ_t ≈ τ_pulse / (SNR · sqrt(N_det))，N_det 为脉冲时戳探测中参与的
+      光子数；当探测器/处理接近 shot-noise 极限时 σ_t 由 "接收光子数" 标度。
+      Caldwell 2023 通过优化的脉冲采样与去卷积算法使 σ_t 接近量子极限，
+      允许 102 dB 链路损耗仍维持 as 级同步——直接赋能 ground↔geostationary orbit 链路。
+    domain: "光学时间传递基础极限；自由空间链路预算"
+    conditions: "shot-noise-limited detection；脉冲形状与去卷积算法优化"
+    source_claim: "optical time transfer has not operated at the analogous quantum limit set by the number of received photons ... nearly quantum-limited operation"
+
+metrics:
+  - id: met.photon_limited_ott_supported_link_loss
+    name: "量子极限光学时间传递支持的最大链路损耗"
+    role: operating_point
+    unit: "dB"
+    demonstrated_value:
+      value: "102 dB（4.0 mW 发射功率，足以支撑 ground↔geosynchronous orbit）"
+      conditions: "300 km Hawaii mountaintop link, quantum-limited processing"
+      source: "caldwell2023"
+
+relations:
+  - id: rel.Cal23_01
+    subject: ent.quantum_limited_ott_hawaii_c23
+    predicate: PART-OF
+    object: ent.free_space_optical_tf_link
+    source:
+      paper: caldwell2023
+      claim: "300 km between mountaintops in Hawaii"
+
+  - id: rel.Cal23_02
+    subject: ent.quantum_limited_ott_hawaii_c23
+    predicate: OPERATIONALIZED-AS
+    object: pri.quantum_limited_photon_counted_ott
+    source:
+      paper: caldwell2023
+      claim: "near quantum-limited acquisition and timing at 10,000 times lower received power"
+
+  - id: rel.Cal23_03
+    subject: ent.quantum_limited_ott_hawaii_c23
+    predicate: CHARACTERIZED-BY
+    object: met.photon_limited_ott_supported_link_loss
+    source:
+      paper: caldwell2023
+      claim: "at 4.0 mW transmit power, this approach can support 102 dB link loss"

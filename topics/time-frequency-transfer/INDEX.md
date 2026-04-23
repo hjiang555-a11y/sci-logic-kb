@@ -2,27 +2,72 @@
 
 # Time-Frequency Transfer — Topic Index
 
-> Auto-generated 2026-04-23 07:05 UTC · 1 papers · 16 nodes · 21 relations
+> Auto-generated 2026-04-23 13:06 UTC · 31 papers · 69 nodes · 97 relations
 
 ## Entities
 
 | ID | Name | Level | Source |
 |----|------|------:|--------|
+| `ent.anisoplanatism_study_link_sw19` | 双路空间分离 O-TWTFT 湍流 anisoplanatism 测量（Swann 2019） | 2 | [swann2019_9ltylbj8](topics/time-frequency-transfer/papers/swann2019_9ltylbj8.yaml) |
+| `ent.atmospheric_optical_phase_psd_s14` | 大气光学相位噪声 PSD 测量（2 km 水平路径，NIST Boulder） | 2 | [sinclair2014_fx9ixtdb](topics/time-frequency-transfer/papers/sinclair2014_fx9ixtdb.yaml) |
+| `ent.coherent_optical_fiber_link` | 相干光纤时频传递链路（Level 1 总节点） | 1 | [calonico2015_3kxj9jfq](topics/time-frequency-transfer/papers/calonico2015_3kxj9jfq.yaml) |
+| `ent.comb_otwtft_with_motion_s19` | 运动平台 comb-based O-TWTFT（Sinclair 2019） | 2 | [sinclair2019_5xulcnp3](topics/time-frequency-transfer/papers/sinclair2019_5xulcnp3.yaml) |
+| `ent.differential_spectroscopy_interspecies_k23` | 跨种光钟差分光谱协议（Kim 2023） | 2 | [kim2023_mc7xt8b5](topics/time-frequency-transfer/papers/kim2023_mc7xt8b5.yaml) |
+| `ent.dual_polarization_receiver_link_cl20` | 双偏振相干接收光频分发（INRIM Clivati 2020） | 2 | [clivati2020_ispu4z4x](topics/time-frequency-transfer/papers/clivati2020_ispu4z4x.yaml) |
+| `ent.free_space_optical_tf_link` | 自由空间光学时频传递链路（Level 1 总节点） | 1 | [sinclair2019_5xulcnp3](topics/time-frequency-transfer/papers/sinclair2019_5xulcnp3.yaml) |
 | `ent.frequency_comb_optical_link_fcol` | 频率梳光学链路 FCOL（I-SOC 可选链路） | 2 | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `ent.gps_common_view_time_transfer` | GPS 共视时间传递（GPS CV） | 2 | [exertier2016_7t65sn78](topics/time-frequency-transfer/papers/exertier2016_7t65sn78.yaml) |
+| `ent.inrim_642km_single_fiber_link_c15` | INRIM 642 km 单纤双往返相干链路（Calonico 2015） | 2 | [calonico2015_3kxj9jfq](topics/time-frequency-transfer/papers/calonico2015_3kxj9jfq.yaml) |
 | `ent.microwave_link_mwl` | 微波时频传递链路 MWL（I-SOC 空间段 Ku 波段双向链路） | 2 | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `ent.ntsc_112km_urban_rf_link_x20` | NTSC 112 km 城市 RF-over-fiber 链路（Xue 2020） | 2 | [xue2020_6z466ig4](topics/time-frequency-transfer/papers/xue2020_6z466ig4.yaml) |
+| `ent.ntsc_212km_cascaded_rf_link_q22` | NTSC 212 km 级联城市 RF-over-fiber 链路（Quan 2022） | 2 | [quan2022_cqtx6tyy](topics/time-frequency-transfer/papers/quan2022_cqtx6tyy.yaml) |
+| `ent.ntsc_490km_noisy_field_link_z22b` | NTSC 490 km 噪声场地光纤相干链路（Zhang 2022 CPL） | 2 | [zhang2022_whuijl3v](topics/time-frequency-transfer/papers/zhang2022_whuijl3v.yaml) |
+| `ent.ntsc_56km_rf_precompensation_q21` | NTSC 56 km 微波预补偿光纤传递（Quan 2021） | 2 | [quan2021_592vc93u](topics/time-frequency-transfer/papers/quan2021_592vc93u.yaml) |
+| `ent.optical_satellite_ground_link_s21` | 光学卫星-地面时频传递链路（脉冲激光，Shen 2021 模拟） | 2 | [shen2021_8pxzl98k](topics/time-frequency-transfer/papers/shen2021_8pxzl98k.yaml) |
+| `ent.optical_to_microwave_photonic_synth_n20` | 光钟相位→10 GHz 微波相干下转换合成器（Nakamura 2020） | 2 | [nakamura2020_imx242p7](topics/time-frequency-transfer/papers/nakamura2020_imx242p7.yaml) |
+| `ent.osc_subband_time_transfer_cheng19` | OSC 子带时间传递（商用 WDM 系统复用） | 2 | [cheng2019_wqpy8sti](topics/time-frequency-transfer/papers/cheng2019_wqpy8sti.yaml) |
+| `ent.ptb_1400km_brillouin_link_r15` | PTB 1400 km Brillouin 放大光纤链路（Raupach 2015） | 2 | [raupach2015_lz2hfujz](topics/time-frequency-transfer/papers/raupach2015_lz2hfujz.yaml) |
+| `ent.ptb_149km_chirped_link_r14` | PTB 149 km 啁啾光频率时间传递链路（Raupach 2014） | 2 | [raupach2014_2s94vl95](topics/time-frequency-transfer/papers/raupach2014_2s94vl95.yaml) |
 | `ent.pulsed_optical_link_elt_plus` | 脉冲光学时频传递链路 ELT+（I-SOC 空间段） | 2 | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `ent.quantum_limited_ott_hawaii_c23` | Hawaii 300 km 近量子极限光学时间传递（Caldwell 2023） | 2 | [caldwell2023_4m836c4v](topics/time-frequency-transfer/papers/caldwell2023_4m836c4v.yaml) |
+| `ent.rf_over_fiber_time_transfer_link` | RF-over-fiber 时间 / 射频频率传递链路（Level 1） | 1 | [krehlik2015_3mi33g2r](topics/time-frequency-transfer/papers/krehlik2015_3mi33g2r.yaml) |
+| `ent.same_wavelength_tf_joint_link_w20` | 同波长 T&F 联合传递链路（Wang 2020） | 2 | [wang2020_srpnqj3r](topics/time-frequency-transfer/papers/wang2020_srpnqj3r.yaml) |
+| `ent.satellite_microwave_time_transfer_link` | 卫星时间传递链路（Level 1 总节点，含微波与光学） | 1 | [exertier2016_7t65sn78](topics/time-frequency-transfer/papers/exertier2016_7t65sn78.yaml) |
+| `ent.shared_telecom_fiber_metrology_channel` | 电信网络共享暗信道（计量级光纤时频传递载体） | 2 | [lopez2015_ws3xm8ls](topics/time-frequency-transfer/papers/lopez2015_ws3xm8ls.yaml) |
 | `ent.space_frequency_comb_sfc` | 空间频率梳 SFC（I-SOC 光↔微波桥） | 2 | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
 | `ent.space_lattice_optical_clock_sloc` | 空间光学晶格钟 SLOC（I-SOC 空间段 Sr 光钟） | 2 | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
 | `ent.space_optical_clock_mission` | 空间光学原子钟任务（通用 · I-SOC 为代表实例） | 1 | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `ent.syrte_ptb_1415km_link_g17` | SYRTE↔PTB 1415 km 光纤相干国际链路（Guéna 2017） | 2 | [guena2017_2khkrily](topics/time-frequency-transfer/papers/guena2017_2khkrily.yaml) |
+| `ent.t2l2_laser_time_transfer` | T2L2 卫星激光时间传递（Time Transfer by Laser Link） | 2 | [exertier2016_7t65sn78](topics/time-frequency-transfer/papers/exertier2016_7t65sn78.yaml) |
+| `ent.three_node_free_space_network_b20` | 三节点自由空间 O-TWTFT 网络（Bodine 2020） | 2 | [bodine2020_npl9i62s](topics/time-frequency-transfer/papers/bodine2020_npl9i62s.yaml) |
+| `ent.uwa_265m_active_tiptilt_link_dm21` | UWA 265 m 主动 tip-tilt 自由空间光频传递（Dix-Matthews 2021） | 2 | [dix-matthews2021_bv4dl5z6](topics/time-frequency-transfer/papers/dix-matthews2021_bv4dl5z6.yaml) |
 
 ## Principles
 
 | ID | Name | Tier | Source |
 |----|------|------|--------|
+| `pri.active_tiptilt_beam_wander_suppression` | 主动 tip-tilt 光学终端抑制自由空间光束摆动原理 | engineering | [dix-matthews2021_bv4dl5z6](topics/time-frequency-transfer/papers/dix-matthews2021_bv4dl5z6.yaml) |
+| `pri.atmospheric_non_reciprocity_satellite_twtft` | 卫星双向 TWTFT 大气非互易性原理 | domain | [zeng2024_kbzasp75](topics/time-frequency-transfer/papers/zeng2024_kbzasp75.yaml) |
+| `pri.atmospheric_optical_phase_noise_power_law` | 自由空间光路光学相位噪声幂律原理（∝f⁻²·³，无 outer-scale roll-off） | domain | [sinclair2014_fx9ixtdb](topics/time-frequency-transfer/papers/sinclair2014_fx9ixtdb.yaml) |
+| `pri.brillouin_amplified_long_haul_fiber_transfer` | Brillouin 放大长距离光纤频率传递原理 | engineering | [raupach2015_lz2hfujz](topics/time-frequency-transfer/papers/raupach2015_lz2hfujz.yaml) |
+| `pri.cascaded_rf_stages_crosstalk_mitigation` | 级联 RF-over-fiber 分段不同调制频率抑制串扰原理 | engineering | [quan2022_cqtx6tyy](topics/time-frequency-transfer/papers/quan2022_cqtx6tyy.yaml) |
+| `pri.chirped_carrier_symmetric_delay_cancellation` | 啁啾载波对称延迟抵消原理 | engineering | [raupach2014_2s94vl95](topics/time-frequency-transfer/papers/raupach2014_2s94vl95.yaml) |
 | `pri.common_view_clock_comparison` | 共视时钟比对原理（common-view comparison） | domain | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `pri.dcf_induced_differential_delay_temp_compensation` | DCF 模块温度诱发 differential delay 建模补偿原理 | engineering | [turza2019_9s69d3dw](topics/time-frequency-transfer/papers/turza2019_9s69d3dw.yaml) |
+| `pri.differential_spectroscopy_lo_coherence_bypass` | 差分光谱绕过本振相干时间原理 | domain | [kim2023_mc7xt8b5](topics/time-frequency-transfer/papers/kim2023_mc7xt8b5.yaml) |
+| `pri.dual_polarization_coherent_endless_phase_tracking` | 双偏振相干接收无限相位跟踪原理 | engineering | [clivati2020_ispu4z4x](topics/time-frequency-transfer/papers/clivati2020_ispu4z4x.yaml) |
 | `pri.einstein_equivalence_principle` | Einstein 等效原理（EEP） | foundational | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `pri.fiber_propagation_reciprocity` | 光纤传播互易性原理（前向=后向传播延迟） | foundational | [xu2019_gzd2byi4](topics/time-frequency-transfer/papers/xu2019_gzd2byi4.yaml) |
 | `pri.gravitational_time_dilation` | 引力时间膨胀（Einstein 红移） | foundational | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `pri.hybrid_analog_digital_delay_compensation` | 模拟 VDL + 数字跳变的混合延迟补偿原理（Krehlik 2015） | engineering | [krehlik2015_3mi33g2r](topics/time-frequency-transfer/papers/krehlik2015_3mi33g2r.yaml) |
+| `pri.multi_node_tf_network_closure` | 多节点时频网络闭合一致性原理 | engineering | [bodine2020_npl9i62s](topics/time-frequency-transfer/papers/bodine2020_npl9i62s.yaml) |
 | `pri.non_common_view_clock_comparison` | 非共视时钟比对原理（non-common-view comparison） | domain | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `pri.o_twtft_motion_reciprocity_breakdown` | 运动平台 O-TWTFT 互易性破坏与修正原理 | domain | [sinclair2019_5xulcnp3](topics/time-frequency-transfer/papers/sinclair2019_5xulcnp3.yaml) |
+| `pri.passive_reciprocal_fiber_noise_cancellation` | 被动互易光纤相位噪声抵消原理 | engineering | [zhang2022_sgt66xs8](topics/time-frequency-transfer/papers/zhang2022_sgt66xs8.yaml) |
+| `pri.quantum_limited_photon_counted_ott` | 量子极限光子计数光学时间传递原理 | domain | [caldwell2023_4m836c4v](topics/time-frequency-transfer/papers/caldwell2023_4m836c4v.yaml) |
+| `pri.single_fiber_double_round_trip_characterization` | 单纤双往返链路表征原理（Calonico 2015 新提出） | engineering | [calonico2015_3kxj9jfq](topics/time-frequency-transfer/papers/calonico2015_3kxj9jfq.yaml) |
+| `pri.telecom_network_metrology_coexistence` | 电信暗信道共存计量信号传递原理 | domain | [lopez2015_ws3xm8ls](topics/time-frequency-transfer/papers/lopez2015_ws3xm8ls.yaml) |
+| `pri.turbulence_anisoplanatism_tf_degradation` | 湍流 anisoplanatism 对双向 TF 传递互易性的破坏原理 | domain | [swann2019_9ltylbj8](topics/time-frequency-transfer/papers/swann2019_9ltylbj8.yaml) |
 
 ## Methods
 
@@ -45,7 +90,15 @@
 
 | ID | Name | Best Value | Source |
 |----|------|------------|--------|
+| `met.chirped_tf_sync_precision` | 啁啾光传递同步精度 σ(Δt) | ≈ 200 ps @ τ_obs ~18000 s（precision）；总 uncertainty ≈ 500 ps | [raupach2014_2s94vl95](topics/time-frequency-transfer/papers/raupach2014_2s94vl95.yaml) |
+| `met.coherent_optical_fiber_link_accuracy` | 相干光纤链路分数频率准确度（accuracy） | 5×10⁻¹⁹ | [calonico2015_3kxj9jfq](topics/time-frequency-transfer/papers/calonico2015_3kxj9jfq.yaml) |
+| `met.coherent_optical_fiber_link_instability` | 相干光纤链路分数频率不稳定度 σ_y(τ) | 3×10⁻¹⁹ @ τ=1000 s（ADEV, 5 mHz bandwidth） | [calonico2015_3kxj9jfq](topics/time-frequency-transfer/papers/calonico2015_3kxj9jfq.yaml) |
+| `met.coherent_optical_fiber_link_residual_offset_yocto` | 光纤链路残余频率 offset（互易性极限） | (4.4 ± 2.3)×10⁻²¹（raw, 33 d）；(0.5 ± 2.0)×10⁻²¹（温度补偿后） | [xu2019_gzd2byi4](topics/time-frequency-transfer/papers/xu2019_gzd2byi4.yaml) |
+| `met.coherent_optical_fiber_link_uncertainty_long` | 长距离相干光纤链路 fractional uncertainty（长均值） | (1.1 ± 0.4)×10⁻²⁰（3 周加权均值，1400 km Brillouin-only loop） | [raupach2015_lz2hfujz](topics/time-frequency-transfer/papers/raupach2015_lz2hfujz.yaml) |
 | `met.earth_grs_test_uncertainty` | 地球引力红移测试分数不确定度（任务科学目标） | $2\cdot10^{-7}$（目标，vs ACES 约 $2\cdot10^{-6}$，提升因子 ~10×） | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `met.international_fountain_comparison_agreement` | 光纤链路国际初级频标比对一致性 | y(SYRTE−PTB) ≈ 5×10⁻¹⁷（与两边 fountain uncertainty budget 一致） | [guena2017_2khkrily](topics/time-frequency-transfer/papers/guena2017_2khkrily.yaml) |
+| `met.photon_limited_ott_supported_link_loss` | 量子极限光学时间传递支持的最大链路损耗 | 102 dB（4.0 mW 发射功率，足以支撑 ground↔geosynchronous orbit） | [caldwell2023_4m836c4v](topics/time-frequency-transfer/papers/caldwell2023_4m836c4v.yaml) |
+| `met.rf_over_fiber_link_instability` | RF-over-fiber 链路分数频率不稳定度 | 10⁻¹⁶ 级 @ 长平均时间（具体值见正文 Allan plot） | [krehlik2015_3mi33g2r](topics/time-frequency-transfer/papers/krehlik2015_3mi33g2r.yaml) |
 | `met.space_to_ground_link_inaccuracy` | 空间–地面时频链路分数不准确度 | MWL: $5\cdot10^{-19}$（#SR-PL-10，需求目标）；ELT+: $1\cdot10^{-18}… | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
 | `met.space_to_ground_link_instability` | 空间–地面时频链路不稳定度 | MWL（#SR-PL-09，需求目标）：白相位噪声 $1.6\cdot10^{-14}$ @ 10 s；闪烁相位 mo… | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
 
@@ -55,6 +108,22 @@
 
 - **Source**: cacciapuoti2017
 
+### `rel.Sin19_03`: `ent.free_space_optical_tf_link` → `pri.atmospheric_optical_phase_noise_power_law`
+
+- **Source**: sinclair2019_5xulcnp3
+
+### `rel.Swa19_02`: `ent.free_space_optical_tf_link` → `pri.turbulence_anisoplanatism_tf_degradation`
+
+- **Source**: swann2019_9ltylbj8
+
+### `rel.Tur19_01`: `ent.rf_over_fiber_time_transfer_link` → `pri.dcf_induced_differential_delay_temp_compensation`
+
+- **Source**: turza2019_9s69d3dw
+
+### `rel.Zen24_01`: `ent.satellite_microwave_time_transfer_link` → `pri.atmospheric_non_reciprocity_satellite_twtft`
+
+- **Source**: zeng2024_kbzasp75
+
 ## Cross-Topic References
 
 Nodes referenced but not defined in this topic:
@@ -62,6 +131,26 @@ Nodes referenced but not defined in this topic:
 | Relation | Predicate | External Node | Source |
 |----------|-----------|---------------|--------|
 | `rel.C17_21` | CONDITIONED-BY | `ent.fp_cavity_system` | cacciapuoti2017 |
+| `rel.C15_06` | CONDITIONED-BY | `ent.fp_cavity_system` | calonico2015_3kxj9jfq |
+| `rel.Kim23_02` | CONDITIONED-BY | `ent.fp_cavity_system` | kim2023_mc7xt8b5 |
 | `rel.C17_20` | CONDITIONED-BY | `ent.optical_frequency_comb` | cacciapuoti2017 |
+| `rel.G17_04` | CONDITIONED-BY | `ent.optical_frequency_comb` | guena2017_2khkrily |
+| `rel.L15_04` | CONDITIONED-BY | `ent.optical_frequency_comb` | lopez2015_ws3xm8ls |
+| `rel.Nak20_01` | CONDITIONED-BY | `ent.optical_frequency_comb` | nakamura2020_imx242p7 |
+| `rel.Cal24_02` | CONDITIONED-BY | `ent.optical_frequency_standard` | caldwell2024_sb9b5z8v |
+| `rel.Nak20_02` | CONDITIONED-BY | `ent.optical_frequency_standard` | nakamura2020_imx242p7 |
 | `rel.C17_19` | CONDITIONED-BY | `ent.optical_lattice_clock` | cacciapuoti2017 |
+| `rel.Leo17_01` | CONDITIONED-BY | `ent.single_branch_erfiber_comb_l17` | leopardi2017_8ne7uaur |
+| `rel.C15_02` | ENABLED-BY | `pri.noise_cancellation_frequency_transfer` | calonico2015_3kxj9jfq |
+| `rel.DM21_03` | ENABLED-BY | `pri.noise_cancellation_frequency_transfer` | dix-matthews2021_bv4dl5z6 |
+| `rel.G17_03` | ENABLED-BY | `pri.noise_cancellation_frequency_transfer` | guena2017_2khkrily |
+| `rel.L15_03` | ENABLED-BY | `pri.noise_cancellation_frequency_transfer` | lopez2015_ws3xm8ls |
+| `rel.R14_04` | ENABLED-BY | `pri.noise_cancellation_frequency_transfer` | raupach2014_2s94vl95 |
+| `rel.R15_05` | ENABLED-BY | `pri.noise_cancellation_frequency_transfer` | raupach2015_lz2hfujz |
+| `rel.Zha22a_02` | COMPETES-WITH | `pri.noise_cancellation_frequency_transfer` | zhang2022_sgt66xs8 |
+| `rel.Zha22b_02` | ENABLED-BY | `pri.noise_cancellation_frequency_transfer` | zhang2022_whuijl3v |
+| `rel.Kre15_02` | ENABLED-BY | `pri.roundtrip_phase_compensation_rf_transfer` | krehlik2015_3mi33g2r |
+| `rel.Qua21_02` | ENABLED-BY | `pri.roundtrip_phase_compensation_rf_transfer` | quan2021_592vc93u |
+| `rel.Wan20_02` | ENABLED-BY | `pri.roundtrip_phase_compensation_rf_transfer` | wang2020_srpnqj3r |
+| `rel.Xue20_02` | ENABLED-BY | `pri.roundtrip_phase_compensation_rf_transfer` | xue2020_6z466ig4 |
 

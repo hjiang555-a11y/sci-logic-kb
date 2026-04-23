@@ -1,9 +1,11 @@
-# Wang 2020 — Fiber-optic joint time and frequency transfer with the same wavelength
-# 提取者：AI 草稿，待专家确认
+# Wang 2020 — Fiber-optic joint time and frequency transfer with the same wavelength [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
 # 提取日期：2026-04-23
 # Schema版本：v4.5
 # 专题：time-frequency-transfer
-# contribution_type: evidence
+# contribution_type: evidence — SIOM 上海光机所。同一激光波长同时调制相位（1 GHz 频率）
+#   与强度（1 PPS 时间），实现 T&F 联合传递；两方向不同波长抑制 Rayleigh 散射；
+#   光学延迟线在本地主动补偿；110 km 光纤卷。
 
 meta:
   zotero_key: "srpnqj3r"
@@ -14,18 +16,48 @@ meta:
   title: "Fiber-optic joint time and frequency transfer with the same wavelength"
   year: 2020
   first_author: Wang
-  authors: ["J. L. Wang"
-    "C. L. Yue"
-    "Y. L. Xi"
-    "Y. G. Sun"
-    "N. Cheng"
-    "F. Yang"
-    "M. Y. Jiang"
-    "J. F. Sun"
-    "Y. Z. Gui"
-    "H. W. Cai"]
-  journal: "Opt. Lett."
-  doi: "10.1364/ol.45.000208"
+  authors: ["J. Wang", "C. Yue", "Y. Xi", "Y. Sun", "N. Cheng", "F. Yang",
+    "M. Jiang", "J. Sun", "Y. Gui", "H. Cai"]
+  journal: "Optics Letters"
+  volume: 45
+  issue: 1
+  pages: "208-211"
+  doi: "10.1364/OL.45.000208"
   note: >
-    [journal_paper]
-    待补充推理链条和知识点提取。
+    [期刊论文] Shanghai Institute of Optics and Fine Mechanics (SIOM). 提出一种"同波长"
+    T&F 联合传递方案：单一激光同时承载相位调制 1 GHz RF 信号与强度调制 1 PPS 时间脉冲；
+    双向使用略偏移波长以抑制 Rayleigh 背向散射串扰；光学延迟线在本地主动补偿链路噪声。
+    110 km 光纤卷实验验证 RF 与 1 PPS 同时传递。工程集成价值大，为 REFIMEVE+/国家网
+    提供"一根光纤一次部署同时送 T 和 F"的方案。
+
+entities:
+  - id: ent.same_wavelength_tf_joint_link_w20
+    name: "同波长 T&F 联合传递链路（Wang 2020）"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      单一激光 → 相位 EOM 调制（1 GHz RF）+ 强度 EOM 调制（1 PPS），同时承载时间与频率信号；
+      两方向略偏波长抑制 Rayleigh；本地 ODL 主动补偿链路噪声。
+    key_parameters:
+      length: "110 km (fiber spool)"
+      rf_carrier: "1 GHz"
+      time_signal: "1 PPS"
+      direction_asymmetry: "waveleng offset to avoid Rayleigh crosstalk"
+    note: "Level 2 实例，PART-OF ent.rf_over_fiber_time_transfer_link"
+
+relations:
+  - id: rel.Wan20_01
+    subject: ent.same_wavelength_tf_joint_link_w20
+    predicate: PART-OF
+    object: ent.rf_over_fiber_time_transfer_link
+    source:
+      paper: wang2020
+      claim: "time and frequency signals are modulated on the same laser wavelength"
+
+  - id: rel.Wan20_02
+    subject: ent.same_wavelength_tf_joint_link_w20
+    predicate: ENABLED-BY
+    object: pri.roundtrip_phase_compensation_rf_transfer
+    source:
+      paper: wang2020
+      claim: "noise changes ... are actively canceled at the local site by optical delay lines"

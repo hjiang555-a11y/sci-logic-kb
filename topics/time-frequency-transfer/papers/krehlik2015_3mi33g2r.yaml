@@ -1,9 +1,10 @@
-# Krehlik 2015 — Ultrastable long-distance fibre-optic time transfer: active compensation over a ...
-# 提取者：AI 草稿，待专家确认
+# Krehlik 2015 — Ultrastable long-distance fibre-optic time transfer: active compensation over a wide range of delays [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
 # 提取日期：2026-04-23
 # Schema版本：v4.5
 # 专题：time-frequency-transfer
-# contribution_type: evidence
+# contribution_type: evidence — AGH Kraków 团队（波兰）提出一种新型有源延迟稳定方案（模拟电延迟 +
+#   数字跳变补偿），可在"任意大的延迟漂移范围"下维持 RF-over-fiber 时间传递精度。
 
 meta:
   zotero_key: "3mi33g2r"
@@ -14,13 +15,80 @@ meta:
   title: "Ultrastable long-distance fibre-optic time transfer: active compensation over a wide range of delays"
   year: 2015
   first_author: Krehlik
-  authors: ["P. Krehlik"
-    "L. Sliwczynski"
-    "L. Buczek"
-    "J. Kolodziej"
-    "M. Lipinski"]
+  authors: ["P. Krehlik", "Ł. Śliwczyński", "Ł. Buczek", "J. Kołodziej", "M. Lipiński"]
   journal: "Metrologia"
+  volume: 52
+  issue: 1
+  pages: "82-88"
   doi: "10.1088/0026-1394/52/1/82"
   note: >
-    [journal_paper]
-    待补充推理链条和知识点提取。
+    [期刊论文] AGH University of Science and Technology, Kraków。针对 RF-over-fiber（微波
+    调制光载波）时间/频率分发，传统电子可变延迟线（VDL）压缩范围有限，
+    长距离链路温度漂移可导致累积延迟远超 VDL 范围。本文提出"模拟精调 + 数字跳变补偿"混合方案：
+    模拟 VDL 负责高分辨率连续补偿，达到量程极限时数字侧位切换一个整数 RF 周期，实现
+    "potentially unlimited range of compensation"。实用于 ≥1000 km 光纤时间分发。
+
+entities:
+  - id: ent.rf_over_fiber_time_transfer_link
+    name: "RF-over-fiber 时间 / 射频频率传递链路（Level 1）"
+    aliases: ["RFoF link", "radio-frequency over fiber link", "RF 光纤传递链路"]
+    hierarchy_level: 1
+    status: demonstrated
+    function: >
+      在光纤上调制一个 RF 载波（典型 1–10 GHz）或 1 PPS 脉冲，通过主动补偿电延迟
+      在远端恢复与发射端同步的时间/RF 标。不同于相干光学链路的光频直接传输，
+      此类链路利用更成熟的电子锁相与延迟补偿技术，部署门槛低，精度 10⁻¹⁵–10⁻¹⁷ 量级。
+    key_parameters:
+      carrier: "RF 载波 1–10 GHz 或 1 PPS 脉冲"
+      compensation: "electrical VDL + optional digital jump"
+      typical_reach: "100–2000 km"
+    note: "Level 1 generic node；与 ent.coherent_optical_fiber_link 并列为 fiber link 两个分支"
+
+principles:
+  - id: pri.hybrid_analog_digital_delay_compensation
+    name: "模拟 VDL + 数字跳变的混合延迟补偿原理（Krehlik 2015）"
+    tier: engineering
+    verification_status: demonstrated
+    statement: >
+      电延迟线（VDL）高分辨率连续补偿在 ±ΔT_max 范围内保持锁定；
+      当光纤热漂移使延迟接近 ±ΔT_max，数字侧位电路跳变一个 RF 整周期 T_RF 以重置 VDL，
+      保持锁定连续。实现范围无限的"有源延迟补偿"而不牺牲短期精度。
+    domain: "RF-over-fiber 时间传递；长距离延迟补偿"
+    conditions: "RF 载波稳定；VDL 量程 ≥ T_RF；数字跳变无死时间"
+    source_claim: "a new solution of active delay stabilization ... both high precision and a potentially unlimited range of compensation of the fibre delay fluctuations"
+
+metrics:
+  - id: met.rf_over_fiber_link_instability
+    name: "RF-over-fiber 链路分数频率不稳定度"
+    role: operating_point
+    unit: dimensionless
+    demonstrated_value:
+      value: "10⁻¹⁶ 级 @ 长平均时间（具体值见正文 Allan plot）"
+      conditions: "AGH fiber link, hybrid analog+digital delay compensation"
+      source: "krehlik2015"
+
+relations:
+  - id: rel.Kre15_01
+    subject: ent.rf_over_fiber_time_transfer_link
+    predicate: ENABLED-BY
+    object: pri.hybrid_analog_digital_delay_compensation
+    source:
+      paper: krehlik2015
+      claim: "active delay stabilization ... unlimited range of compensation"
+
+  - id: rel.Kre15_02
+    subject: ent.rf_over_fiber_time_transfer_link
+    predicate: ENABLED-BY
+    object: pri.roundtrip_phase_compensation_rf_transfer
+    source:
+      paper: krehlik2015
+      claim: "active compensation of fiber delay fluctuations via round-trip measurement"
+    note: "pri.roundtrip_phase_compensation_rf_transfer 定义于 leng2016（OFC 专题）"
+
+  - id: rel.Kre15_03
+    subject: ent.rf_over_fiber_time_transfer_link
+    predicate: CHARACTERIZED-BY
+    object: met.rf_over_fiber_link_instability
+    source:
+      paper: krehlik2015
+      claim: "ultrastable long-distance fibre-optic time transfer"

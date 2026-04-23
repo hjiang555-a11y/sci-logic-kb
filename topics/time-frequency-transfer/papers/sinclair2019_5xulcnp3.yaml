@@ -1,29 +1,96 @@
-# Sinclair 2019 — Femtosecond optical two-way time-frequency transfer in the presence of motion
-# 提取者：AI 草稿，待专家确认
+# Sinclair 2019 — Femtosecond O-TWTFT in the presence of motion [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
 # 提取日期：2026-04-23
 # Schema版本：v4.5
 # 专题：time-frequency-transfer
 # contribution_type: evidence
+# 本文件同时建立 Level 1 节点 `ent.free_space_optical_tf_link`（自由空间光学时频传递链路总节点）。
 
 meta:
   zotero_key: "5xulcnp3"
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
-  reliability: medium
+  reliability: high
   title: "Femtosecond optical two-way time-frequency transfer in the presence of motion"
   year: 2019
   first_author: Sinclair
-  authors: ["L. C. Sinclair"
-    "H. Bergeron"
-    "W. C. Swann"
-    "I. Khader"
-    "K. C. Cossel"
-    "M. Cermak"
-    "N. R. Newbury"
-    "J. D. Deschenes"]
+  authors: ["L. C. Sinclair", "H. Bergeron", "W. C. Swann", "I. Khader", "K. C. Cossel",
+    "M. Cermak", "N. R. Newbury", "J.-D. Deschênes"]
   journal: "Physical Review A"
+  volume: 99
+  issue: 2
+  pages: "023844"
   doi: "10.1103/PhysRevA.99.023844"
   note: >
-    [journal_paper]
-    待补充推理链条和知识点提取。
+    [期刊论文] NIST Boulder + Université Laval. 给出 comb-based O-TWTFT 在运动平台上的完整
+    理论与实时算法：(1) 相对论引起的发射/接收时刻不在同一参考系；(2) 异步采样时间戳偏移；
+    (3) 光电色散；(4) 速度依赖收发机校准。实验在 ±25 m/s 下同步两站至 <1 fs 时间偏差，
+    速度相关 bias < 330 as (2σ)。为 ground-air / ground-satellite 自由空间链路奠定运动平台基础。
+    本文件建立 time-frequency-transfer 专题 Level 1 节点 ent.free_space_optical_tf_link。
+
+entities:
+  - id: ent.free_space_optical_tf_link
+    name: "自由空间光学时频传递链路（Level 1 总节点）"
+    aliases: ["free-space optical TF link", "O-TWTFT link", "自由空间 O-TWTFT 链路"]
+    hierarchy_level: 1
+    status: demonstrated
+    function: >
+      comb-based 飞秒光脉冲双向穿越大气/真空自由空间；两端独立测量到达脉冲 time-of-arrival
+      与其相对本地梳脉冲时刻的偏移，通过双向互换实现 fs–as 级时间同步与 10⁻¹⁸ 级频率传递。
+      典型结构：收发光终端 + 主动 tip-tilt（抑制光束摆动）+ 自由空间几何；支持地面间、
+      ground-air（无人机/飞机）、ground-satellite 部署。
+    key_parameters:
+      base_technique: "frequency-comb-based two-way time-frequency transfer (O-TWTFT)"
+      range_demonstrated: "100 m – 300 km 地面间（至 2024）"
+      future_extension: "ground-to-geosynchronous orbit（Caldwell 2023）"
+    note: "Level 1 generic；具体实验系统 PART-OF 此节点"
+
+  - id: ent.comb_otwtft_with_motion_s19
+    name: "运动平台 comb-based O-TWTFT（Sinclair 2019）"
+    hierarchy_level: 2
+    status: demonstrated
+    key_parameters:
+      velocity_range: "±25 m/s"
+      residual_sync: "<1 fs time deviation"
+      velocity_bias: "< 330 as (2σ)"
+    note: "Level 2 实例，PART-OF ent.free_space_optical_tf_link"
+
+principles:
+  - id: pri.o_twtft_motion_reciprocity_breakdown
+    name: "运动平台 O-TWTFT 互易性破坏与修正原理"
+    tier: domain
+    verification_status: demonstrated
+    statement: >
+      双向光学时频传递依赖前/后向光程互易；平台运动引入：(1) 相对论效应；
+      (2) 异步采样时间戳偏移；(3) 光电色散残余；(4) 速度依赖收发机标定。
+      给出完整方程与实时算法可把上述效应降到 fs 级以下。
+    domain: "运动平台自由空间 TF 传递"
+    conditions: "相对速度 v ≪ c（非相对论）；异步采样失配 ≤ comb 1/f_rep；速度校准可观测"
+    source_claim: "breakdown in reciprocity due to relativity and due to asynchronous sampling ... active synchronization ... to below-1-fs time deviation"
+
+relations:
+  - id: rel.Sin19_01
+    subject: ent.comb_otwtft_with_motion_s19
+    predicate: PART-OF
+    object: ent.free_space_optical_tf_link
+    source:
+      paper: sinclair2019
+      claim: "comb-based optical two-way time and frequency transfer (O-TWTFT)"
+
+  - id: rel.Sin19_02
+    subject: ent.comb_otwtft_with_motion_s19
+    predicate: OPERATIONALIZED-AS
+    object: pri.o_twtft_motion_reciprocity_breakdown
+    source:
+      paper: sinclair2019
+      claim: "breakdown in reciprocity due to relativity and due to asynchronous sampling"
+
+  - id: rel.Sin19_03
+    subject: ent.free_space_optical_tf_link
+    predicate: BOUNDED-BY
+    object: pri.atmospheric_optical_phase_noise_power_law
+    source:
+      paper: sinclair2019
+      claim: "atmospheric turbulence limits free-space TWTFT precision"
+    note: "pri.atmospheric_optical_phase_noise_power_law 定义于 sinclair2014"

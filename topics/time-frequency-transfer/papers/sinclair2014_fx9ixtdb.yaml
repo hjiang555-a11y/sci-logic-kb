@@ -1,5 +1,5 @@
-# Sinclair 2014 — Optical phase noise from atmospheric fluctuations and its impact on optical time...
-# 提取者：AI 草稿，待专家确认
+# Sinclair 2014 — Optical phase noise from atmospheric fluctuations [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
 # 提取日期：2026-04-23
 # Schema版本：v4.5
 # 专题：time-frequency-transfer
@@ -10,18 +10,52 @@ meta:
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
-  reliability: medium
+  reliability: high
   title: "Optical phase noise from atmospheric fluctuations and its impact on optical time-frequency transfer"
   year: 2014
   first_author: Sinclair
-  authors: ["L. C. Sinclair"
-    "F. R. Giorgetta"
-    "W. C. Swann"
-    "E. Baumann"
-    "I. Coddington"
-    "N. R. Newbury"]
+  authors: ["L. C. Sinclair", "F. R. Giorgetta", "W. C. Swann", "E. Baumann", "I. Coddington", "N. R. Newbury"]
   journal: "Physical Review A"
-  doi: ""
+  volume: 89
+  issue: 2
+  pages: "023805"
+  doi: "10.1103/PhysRevA.89.023805"
   note: >
-    [journal_paper]
-    待补充推理链条和知识点提取。
+    [期刊论文] NIST Boulder. 2 km 水平大气光路相位噪声 PSD 测量：∝f⁻²·³（直至 100 μHz Fourier
+    频率无 low-frequency roll-off），偏离 Kolmogorov-Taylor 湍流外尺度预言，与其他相关实验观测
+    一致。为自由空间光学时频传递的单向精度与稳定度设定大气基础极限。
+
+entities:
+  - id: ent.atmospheric_optical_phase_psd_s14
+    name: "大气光学相位噪声 PSD 测量（2 km 水平路径，NIST Boulder）"
+    hierarchy_level: 2
+    status: demonstrated
+    function: "穿越 2 km 水平大气的光脉冲飞行时间通过线性光学采样连续测量，用于估计大气光相位噪声 PSD。"
+    key_parameters:
+      path_length: "2 km horizontal"
+      psd_scaling: "∝ f^(-2.3) down to 100 μHz"
+      method: "linear optical sampling of comb pulses"
+    note: "Level 2 实例"
+
+principles:
+  - id: pri.atmospheric_optical_phase_noise_power_law
+    name: "自由空间光路光学相位噪声幂律原理（∝f⁻²·³，无 outer-scale roll-off）"
+    tier: domain
+    verification_status: demonstrated
+    statement: >
+      横穿大气的光程长抖动由湍流 + 温度 + 压力 path-averaged 折射率变化主导，其 Fourier 域
+      功率谱在 100 μHz–100 Hz 宽范围内近似 ∝ f⁻²·³，不出现传统 Kolmogorov-Taylor 理论预期的
+      湍流外尺度 low-frequency roll-off。这是单向自由空间光学时频传递的大气基础极限，
+      也是双向链路需要通过 reciprocity 抵消的噪声来源。
+    domain: "自由空间光学时频传递；大气湍流"
+    conditions: "地平/近地平水平路径；典型天气条件"
+    source_claim: "power-law response of ∝f^(-2.3) measured down to Fourier frequencies f of 100 μHz ... no evidence of a roll-off at low frequencies"
+
+relations:
+  - id: rel.Sin14_01
+    subject: ent.atmospheric_optical_phase_psd_s14
+    predicate: OPERATIONALIZED-AS
+    object: pri.atmospheric_optical_phase_noise_power_law
+    source:
+      paper: sinclair2014
+      claim: "We measure these fluctuations by transmitting optical pulses from a frequency comb across a 2-km horizontal path"

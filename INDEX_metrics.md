@@ -2,7 +2,7 @@
 
 # 📊 Metrics Quick Reference
 
-> Auto-generated 2026-04-23 07:05 UTC
+> Auto-generated 2026-04-23 13:06 UTC
 >
 > Metrics are grouped by **role** (v4.4 σ_y-first convention, see `topics/ultrastable-laser/_meta/scoping_principles.md` v2). Role is taken from the `role` field on the metric node when present, otherwise inferred from ID / name heuristics.
 
@@ -273,7 +273,15 @@
 
 | ID | Name | Best Value | Conditions | Source |
 |----|------|------------|------------|--------|
+| `met.chirped_tf_sync_precision` | 啁啾光传递同步精度 σ(Δt) | ≈ 200 ps @ τ_obs ~18000 s（precision）；总 uncertainty ≈ 500 ps | PTB 149 km link, chirp 240 kHz/s, 10 MHz H-maser-… | [raupach2014_2s94vl95](topics/time-frequency-transfer/papers/raupach2014_2s94vl95.yaml) |
+| `met.coherent_optical_fiber_link_accuracy` | 相干光纤链路分数频率准确度（accuracy） | 5×10⁻¹⁹ | 642 km × 2 = 1284 km single-fiber double-round-tr… | [calonico2015_3kxj9jfq](topics/time-frequency-transfer/papers/calonico2015_3kxj9jfq.yaml) |
+| `met.coherent_optical_fiber_link_instability` | 相干光纤链路分数频率不稳定度 σ_y(τ) | 3×10⁻¹⁹ @ τ=1000 s（ADEV, 5 mHz bandwidth） | INRIM Torino–Firenze 642 km 单纤双往返（1284 km 等效），EDF… | [calonico2015_3kxj9jfq](topics/time-frequency-transfer/papers/calonico2015_3kxj9jfq.yaml) |
+| `met.coherent_optical_fiber_link_residual_offset_yocto` | 光纤链路残余频率 offset（互易性极限） | (4.4 ± 2.3)×10⁻²¹（raw, 33 d）；(0.5 ± 2.0)×10⁻²¹（温度补偿后） | SYRTE, dedicated link architecture with forward/b… | [xu2019_gzd2byi4](topics/time-frequency-transfer/papers/xu2019_gzd2byi4.yaml) |
+| `met.coherent_optical_fiber_link_uncertainty_long` | 长距离相干光纤链路 fractional uncertainty（长均值） | (1.1 ± 0.4)×10⁻²⁰（3 周加权均值，1400 km Brillouin-only loop） | underground fiber, Braunschweig↔Strasbourg, FBA-o… | [raupach2015_lz2hfujz](topics/time-frequency-transfer/papers/raupach2015_lz2hfujz.yaml) |
 | `met.earth_grs_test_uncertainty` | 地球引力红移测试分数不确定度（任务科学目标） | $2\cdot10^{-7}$（目标，vs ACES 约 $2\cdot10^{-6}$，提升因子 ~10×） | ≥2 年科学阶段；空间段 SLOC $8\cdot10^{-16}/\sqrt{\tau}$ 不稳… | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `met.international_fountain_comparison_agreement` | 光纤链路国际初级频标比对一致性 | y(SYRTE−PTB) ≈ 5×10⁻¹⁷（与两边 fountain uncertainty budget 一致） | SYRTE↔PTB 1415 km 相干光纤链路 + 光↔微波传递链（光梳） | [guena2017_2khkrily](topics/time-frequency-transfer/papers/guena2017_2khkrily.yaml) |
+| `met.photon_limited_ott_supported_link_loss` | 量子极限光学时间传递支持的最大链路损耗 | 102 dB（4.0 mW 发射功率，足以支撑 ground↔geosynchronous orbit） | 300 km Hawaii mountaintop link, quantum-limited p… | [caldwell2023_4m836c4v](topics/time-frequency-transfer/papers/caldwell2023_4m836c4v.yaml) |
+| `met.rf_over_fiber_link_instability` | RF-over-fiber 链路分数频率不稳定度 | 10⁻¹⁶ 级 @ 长平均时间（具体值见正文 Allan plot） | AGH fiber link, hybrid analog+digital delay compe… | [krehlik2015_3mi33g2r](topics/time-frequency-transfer/papers/krehlik2015_3mi33g2r.yaml) |
 | `met.space_to_ground_link_inaccuracy` | 空间–地面时频链路分数不准确度 | MWL: $5\cdot10^{-19}$（#SR-PL-10，需求目标）；ELT+: $1\cdot10^{-18}… | 正确定标大气延迟、几何光程、本地 SLR 站延迟（ELT+ 单向 $\leq 20\,\text{… | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
 | `met.space_to_ground_link_instability` | 空间–地面时频链路不稳定度 | MWL（#SR-PL-09，需求目标）：白相位噪声 $1.6\cdot10^{-14}$ @ 10 s；闪烁相位 mo… | ISS 过顶（MWL 典型 ≤300 s，ELT+ 典型 ~200 s），空间–地面单次过顶；空间… | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
 

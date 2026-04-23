@@ -1,0 +1,29 @@
+# Adler 2009 — Mid-infrared Fourier transform spectroscopy with a broadband frequency comb [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
+# contribution_type: evidence
+# 注意：PDF 在仓库中损坏不可解析，此条目基于已发表元数据与公开文献记录。
+# Adler 2009 最可能是 JILA Ye 组 "Mid-infrared Fourier transform spectroscopy with a broadband frequency comb"
+# (Optics Express 18, 21861, 2010)，但年份名"adler2009"提示早期会议/arXiv 版本；
+# 若实际论文为其他 "Adler 2009"（如 Adler 等 OFC 会议论文），请专家在 PR 中更正。
+
+meta:
+  zotero_key: "ADLER2009"
+  topic: optical-frequency-combs
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: low
+  title: "(AI 推定) Mid-infrared Fourier transform spectroscopy with a broadband frequency comb — 或其 2009 会议版本"
+  year: 2009
+  first_author: Adler
+  authors: ["F. Adler", "et al."]
+  journal: "(see Zotero record — to be confirmed by expert)"
+  doi: null
+  note: >
+    ⚠ **待专家确认**：pdfs/adler2009.pdf 在仓库中不可解析（文件头正常但 trailer 损坏），
+    无法从 PDF 提取实际内容。基于 "Adler 2009 + OFC 专题" 推定该论文属 mid-IR 光梳
+    相关（可能为 Thorpe/Adler/Ye 组 2009 会议或 Adler 2010 Opt. Express 的早期版本）。
+    该 YAML 仅保留 meta，不新增节点，不建立关系，等专家提供正确 DOI 后重写。
+    `reliability: low` 反映当前信息不足；contribution_type=evidence 作为安全默认。

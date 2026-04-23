@@ -3,7 +3,7 @@
 > **说明**：本文件包含知识库中所有已处理论文的详细列表。从 SCHEMA.md 第八节迁移而来。
 > SCHEMA.md 仅保留统计摘要，本文件承载完整论文记录。
 >
-> **最后更新**：2026-04-23（B1 OFC 早期综述 + B5c Ludlow PhD thesis 摄入：+5 篇 framework → OFC 专题 101→104 篇 / frequency-standards 专题 1→3 篇；本库总计 187→192 篇）
+> **最后更新**：2026-04-23（Copilot cloud agent 批量摄入 `/pdfs` 目录新增 42 篇论文：30 篇时频传递 evidence + 9 篇光钟 evidence + 3 篇 framework/review（Ludlow 2015、Allan 2016、Sullivan 2001）。OFC 专题新增 adler2009 占位条目 1 篇待确认。影响：time-frequency-transfer 1→31 篇；frequency-standards 3→12 篇；shared 5→7 篇；optical-frequency-combs 104→105 篇；本库总计 192→234 篇（含 1 占位）。）
 
 ---
 
@@ -91,7 +91,7 @@
 | `olson2019.yaml` | CDX3DFQR | Olson 2019 — RB 干涉仪 <2×10⁻¹⁶ | ✅ v4.1 |
 | `huangjc2019b.yaml` | 5DCNFGX4 | Huang 2019b — 双缠绕抗振光纤盘 | ✅ v4.1 |
 
-## 光学频率梳专题（104 篇）
+## 光学频率梳专题（105 篇）
 
 ### 框架型文档
 
@@ -108,7 +108,7 @@
 | `sinclair2015.yaml` | LMFFEUFX | Sinclair 2015 — 紧凑全 PM 相干光纤梳技术综合（Rev Sci Instrum） | ✅ v4.3 framework（Batch 2） |
 | `diddams2010.yaml` | VKLU3BG6 | Diddams 2010 — "演化中的光学频率梳"综述（JOSA B） | ✅ v4.3 framework（Batch 3） |
 
-### 技术论文（部分列举，共 83 篇）
+### 技术论文（部分列举，共 84 篇，含 adler2009 待 PDF 修复后完善）
 
 | 文件 | Zotero Key | 论文 | 状态 |
 |------|-----------|------|------|
@@ -167,13 +167,22 @@
 
 > **备注**：原 Batch 3 清单含 `BL4HI3QI`（Picqué & Hänsch 2019 Nature Photonics 综述），与已处理 `picque2019.yaml`（zotero `RZME5CH8`）为**同一 DOI 的备份键**，不创建重复 YAML。
 
-## 频率标准专题（3 篇）
+## 频率标准专题（12 篇）
 
 | 文件 | Zotero Key | 论文 | 状态 |
 |------|-----------|------|------|
 | `fortier2026.yaml` | BWR7TEZ6 | Fortier 2026 — 光学原子钟综述 | ✅ v4.0 framework |
 | `diddams2016.yaml` | DIDDAMS2016-NATPHOT | Diddams/Fortier/Ludlow 2016 — Optical Atomic Clocks（Nature Photonics） | ✅ v4.5 framework |
 | `ludlow2008_thesis.yaml` | LUDLOW2008-THESIS-JILA | Ludlow 2008 — The Strontium Optical Lattice Clock（PhD thesis, JILA） | ✅ v4.5 framework |
+| `ludlow2015.yaml` | LUDLOW2015 | Ludlow & Ye 2015 — Progress on the optical lattice clock（C.R. Physique） | ✅ v4.5 framework |
+| `heavner2005.yaml` | HEAVNER2005 | Heavner 2005 — NIST-F1 Cs 喷泉改进与精度评估 u_B=0.53×10⁻¹⁵ | ✅ v4.5 evidence |
+| `oskay2006.yaml` | OSKAY2006 | Oskay 2006 — 单 Hg⁺ 离子光钟 7.2×10⁻¹⁷（首超 Cs 喷泉） | ✅ v4.5 evidence |
+| `rosenband2008.yaml` | ROSENBAND2008 | Rosenband 2008 — Al⁺/Hg⁺ 频率比 17 位精度（pri.quantum_logic_clock_readout） | ✅ v4.5 evidence |
+| `nicholson2015.yaml` | NICHOLSON2015 | Nicholson 2015 — JILA ⁸⁷Sr 晶格钟 2.1×10⁻¹⁸ 总不确定度 | ✅ v4.5 evidence |
+| `bothwell2019.yaml` | BOTHWELL2019 | Bothwell 2019 — JILA SrI 2.0×10⁻¹⁸ 系统评估 | ✅ v4.5 evidence |
+| `bothwell2022.yaml` | BOTHWELL2022 | Bothwell 2022 — JILA 毫米尺度引力红移分辨（可考虑 breakthrough） | ✅ v4.5 evidence |
+| `oelker2019.yaml` | OELKER2019 | Oelker 2019 — JILA 双 Sr 晶格钟 4.8×10⁻¹⁷ @1 s（Si cavity LO） | ✅ v4.5 evidence |
+| `bacon2021.yaml` | BACON2021 | BACON Collaboration 2021 — Al⁺/Yb/Sr 三钟网络 18 位频率比（可考虑 breakthrough） | ✅ v4.5 evidence |
 
 ## 时间标尺专题（1 篇）
 
@@ -181,13 +190,43 @@
 |------|-----------|------|------|
 | `dimarcq2024.yaml` | SDG6KXNZ | Dimarcq 2024 — SI 秒重定义路线图 | ✅ v4.0 framework |
 
-## 时间频率传递专题（1 篇）
+## 时间频率传递专题（31 篇）
 
 | 文件 | Zotero Key | 论文 | 状态 |
 |------|-----------|------|------|
 | `cacciapuoti2017.yaml` | SCI-ESA-HRE-ESR-ISOC | Cacciapuoti & Schiller 2017 — ESA I-SOC 科学需求（ISS 空间光钟任务，MWL+ELT+ 链路） | ✅ v4.5 framework |
+| `calonico2015_3kxj9jfq.yaml` | 3kxj9jfq | Calonico 2015 — INRIM 642 km 相干光纤链路，σ_y=3×10⁻¹⁹（建立 Level 1 ent.coherent_optical_fiber_link） | ✅ v4.5 evidence |
+| `raupach2014_2s94vl95.yaml` | 2s94vl95 | Raupach 2014 — PTB 149 km chirped carrier time transfer | ✅ v4.5 evidence |
+| `raupach2015_lz2hfujz.yaml` | lz2hfujz | Raupach 2015 — PTB 1400 km Brillouin-only，(1.1±0.4)×10⁻²⁰ | ✅ v4.5 evidence |
+| `lopez2015_ws3xm8ls.yaml` | ws3xm8ls | López 2015 — telecom dark-channel coexistence framework | ✅ v4.5 evidence |
+| `krehlik2015_3mi33g2r.yaml` | 3mi33g2r | Krehlik 2015 — AGH RF-over-fiber + hybrid delay compensation（建立 Level 1 ent.rf_over_fiber_time_transfer_link） | ✅ v4.5 evidence |
+| `guena2017_2khkrily.yaml` | 2khkrily | Guéna 2017 — SYRTE↔PTB 1415 km 首次国际 Cs 喷泉比对 5×10⁻¹⁷ | ✅ v4.5 evidence |
+| `cheng2019_wqpy8sti.yaml` | wqpy8sti | Cheng 2019 — SJTU WDM OSC 子带时间传递 | ✅ v4.5 evidence |
+| `xu2019_gzd2byi4.yaml` | gzd2byi4 | Xu 2019 — SYRTE 光纤互易性测至 10⁻²¹（pri.fiber_propagation_reciprocity） | ✅ v4.5 evidence |
+| `chen2021_mllny39n.yaml` | mllny39n | Chen 2021 — USTC TF-QKD 511 km deployed fiber 辅证 | ✅ v4.5 evidence |
+| `wang2020_srpnqj3r.yaml` | srpnqj3r | Wang 2020 — SIOM 同波长 T&F 联合传递 110 km | ✅ v4.5 evidence |
+| `shen2021_8pxzl98k.yaml` | 8pxzl98k | Shen 2021 — USTC 光学卫星-地面 T&F 地面模拟 10⁻¹⁸ | ✅ v4.5 evidence |
+| `zhang2022_sgt66xs8.yaml` | sgt66xs8 | Zhang 2022 — NTSC 全被动级联光频传递（pri.passive_reciprocal_fiber_noise_cancellation） | ✅ v4.5 evidence |
+| `zhang2022_whuijl3v.yaml` | whuijl3v | Zhang 2022 — NTSC 490 km 噪声场纤相干 OFT | ✅ v4.5 evidence |
+| `sinclair2014_fx9ixtdb.yaml` | fx9ixtdb | Sinclair 2014 — 2 km 大气光相位 PSD ∝f⁻²·³（pri.atmospheric_optical_phase_noise_power_law） | ✅ v4.5 evidence |
+| `sinclair2019_5xulcnp3.yaml` | 5xulcnp3 | Sinclair 2019 — 运动平台 fs O-TWTFT <1 fs sync（建立 Level 1 ent.free_space_optical_tf_link） | ✅ v4.5 evidence |
+| `swann2019_9ltylbj8.yaml` | 9ltylbj8 | Swann 2019 — 湍流 anisoplanatism 对 TF 传递破坏测量 | ✅ v4.5 evidence |
+| `bodine2020_npl9i62s.yaml` | npl9i62s | Bodine 2020 — 三节点自由空间 O-TWTFT 网络 | ✅ v4.5 evidence |
+| `dix-matthews2021_bv4dl5z6.yaml` | bv4dl5z6 | Dix-Matthews 2021 — UWA 265 m 主动 tip-tilt 自由空间 1.6×10⁻¹⁹ @40 s | ✅ v4.5 evidence |
+| `caldwell2023_4m836c4v.yaml` | 4m836c4v | Caldwell 2023 — Hawaii 300 km 近量子极限 O-TT 支持 102 dB 链路损耗（可考虑 breakthrough） | ✅ v4.5 evidence |
+| `caldwell2024_sb9b5z8v.yaml` | sb9b5z8v | Caldwell 2024 — 量子极限 OTT 扩展到 space-based 光钟比对 | ✅ v4.5 evidence |
+| `exertier2016_7t65sn78.yaml` | 7t65sn78 | Exertier 2016 — GPS CV vs T2L2 sub-ns 一致性（建立 Level 1 ent.satellite_microwave_time_transfer_link） | ✅ v4.5 evidence |
+| `nakamura2020_imx242p7.yaml` | imx242p7 | Nakamura 2020 — 光钟→10 GHz 微波相干下转换 10⁻¹⁸ | ✅ v4.5 evidence |
+| `kim2023_mc7xt8b5.yaml` | mc7xt8b5 | Kim 2023 — 跨种光钟差分光谱绕过 LO 相干极限 | ✅ v4.5 evidence |
+| `turza2019_9s69d3dw.yaml` | 9s69d3dw | Turza 2019 — DWDM 网络 DCF 温度诱发 differential delay 补偿 | ✅ v4.5 evidence |
+| `clivati2020_ispu4z4x.yaml` | ispu4z4x | Clivati 2020 — 双偏振相干接收无限相位跟踪 | ✅ v4.5 evidence |
+| `leopardi2017_8ne7uaur.yaml` | 8ne7uaur | Leopardi 2017 — 交叉引用（主记录在 OFC 专题） | ✅ v4.5 evidence |
+| `xue2020_6z466ig4.yaml` | 6z466ig4 | Xue 2020 — NTSC 112 km 城市 RF-over-fiber | ✅ v4.5 evidence |
+| `quan2021_592vc93u.yaml` | 592vc93u | Quan 2021 — NTSC 56 km 微波预补偿 1.8×10⁻¹⁵ @1 s | ✅ v4.5 evidence |
+| `quan2022_cqtx6tyy.yaml` | cqtx6tyy | Quan 2022 — NTSC 212 km 级联城市 RF-over-fiber 10⁻¹⁸ | ✅ v4.5 evidence |
+| `zeng2024_kbzasp75.yaml` | kbzasp75 | Zeng 2024 — 卫星 TWTFT 大气非互易性测量 | ✅ v4.5 evidence |
 
-## 时频计量数学基础专题（5 篇，B9 Allan–Howe 奠基白名单）
+## 时频计量数学基础专题（7 篇，B9 Allan–Howe 奠基白名单 + Allan 2016 + Sullivan 2001）
 
 | 文件 | Zotero Key | 论文 | 状态 |
 |------|-----------|------|------|
@@ -196,6 +235,8 @@
 | `howe1976.yaml` | HOWE1976-NBS-TN679 | Howe 1976 — 频域稳定度测量教程；相位/频率噪声 PSD 对偶（NBS TN 679） | ✅ v4.5 framework |
 | `sullivan1990.yaml` | SULLIVAN1990-NIST-TN1337 | Sullivan/Allan/Howe/Walls 1990 — MDEV/TDEV/HDEV 扩展方差（NIST TN 1337） | ✅ v4.5 framework |
 | `riley2008.yaml` | RILEY2008-NIST-SP1065 | Riley & Howe 2008 — OADEV/TOTDEV/Theo1/TheoH 方差手册（NIST SP 1065） | ✅ v4.5 framework |
+| `allan2016.yaml` | ALLAN2016 | Allan & Levine 2016 — Allan 方差族 50 年发展回顾（IEEE TUFFC） | ✅ v4.5 framework |
+| `sullivan2001.yaml` | SULLIVAN2001 | Sullivan et al. 2001 — NIST 初级原子频率标准综述（NIST JRES） | ✅ v4.5 framework |
 
 ---
 

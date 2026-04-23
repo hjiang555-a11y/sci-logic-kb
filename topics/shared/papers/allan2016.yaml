@@ -1,0 +1,55 @@
+# Allan 2016 — A Historical Perspective on the Development of the Allan Variances [framework]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：shared（时频计量方法论）
+# contribution_type: framework
+
+meta:
+  zotero_key: "ALLAN2016"
+  topic: shared
+  source_type: review
+  contribution_type: framework
+  reliability: high
+  title: "A Historical Perspective on the Development of the Allan Variances and Their Strengths and Weaknesses"
+  year: 2016
+  first_author: Allan
+  authors: ["D. W. Allan", "J. Levine"]
+  journal: "IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control"
+  volume: 63
+  issue: 4
+  pages: "513-519"
+  doi: "10.1109/TUFFC.2016.2524687"
+  note: >
+    [综述论文] Allan 本人 + NIST Levine. 50 年 Allan 方差族（AVAR, MVAR, TVAR）
+    发展历史回顾与各变体强弱比较。是对 allan1966、howe1976、riley2008、sullivan1990
+    等基础文献的综述，并讨论 AVAR 在电信、时间传递等领域的适用条件。
+    作为 shared 专题的方法论 framework 收录。
+
+principles:
+  - id: pri.allan_variance_time_domain_characterization
+    name: "Allan 方差族时域不稳定度刻画原理（综合 AVAR/MVAR/TVAR）"
+    tier: foundational
+    verification_status: accepted
+    statement: >
+      对于非平稳随机过程（含 1/f 闪烁噪声），经典方差发散；Allan 方差（二次差分
+      形式 σ²_y(τ) = ⟨(ȳ_{n+1}−ȳ_n)²⟩/2）及其 Modified/Time variants 在 1960–1980
+      发展完成，成为精密钟/振荡器 short-term/medium-term 不稳定度事实标准。
+      各变体通过不同带限与平均窗对不同噪声类型（白 PM、闪 PM、白 FM、闪 FM、
+      random-walk FM）给出无偏高效估计，强弱各异。
+    domain: "时频计量方法论；振荡器表征"
+    conditions: "数据长度 N ≥ ~10 个 τ 窗；采样周期均匀"
+    source_claim: "variances have been developed for characterizing the instabilities of precision clocks and oscillators"
+
+relations:
+  - id: rel.Alm16_01
+    subject: pri.allan_variance_time_domain_characterization
+    predicate: CHARACTERIZED-BY
+    object: pri.allan_variance_time_domain_characterization
+    source:
+      paper: allan2016
+      claim: "historical perspective on the development of the Allan variances"
+    note: >
+      Allan 2016 是元层综述文献；此关系占位为自引用以反映该 framework 综述对
+      pri.allan_variance_time_domain_characterization 本身的刻画性质。
+      若仓库后续约定了"元综述"关系（如 SURVEYS），请专家替换。

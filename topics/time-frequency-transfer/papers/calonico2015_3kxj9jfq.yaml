@@ -1,34 +1,152 @@
-# Calonico 2015 — High-accuracy coherent optical frequency transfer over a doubled 642-km fiber li...
-# 提取者：AI 草稿，待专家确认
+# Calonico 2015 — High-accuracy coherent optical frequency transfer over doubled 642-km fiber link [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
 # 提取日期：2026-04-23
 # Schema版本：v4.5
 # 专题：time-frequency-transfer
-# contribution_type: evidence
+# contribution_type: evidence — INRIM 642 km → 1284 km 双程单纤相干光频传递，σ_y(1000 s)=3×10⁻¹⁹，
+#   accuracy 5×10⁻¹⁹；提出"单纤双往返"链路表征新方法。本文件同时引入本专题
+#   `ent.coherent_optical_fiber_link`（Level 1 干线光纤相干链路总节点）。
 
 meta:
   zotero_key: "3kxj9jfq"
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
-  reliability: medium
-  title: "High-accuracy coherent optical frequency transfer over a doubled 642-km fiber link (vol 117, pg 979, 2014)"
-  year: 2015
+  reliability: high
+  title: "High-accuracy coherent optical frequency transfer over a doubled 642-km fiber link"
+  year: 2014
   first_author: Calonico
-  authors: ["D. Calonico"
-    "E. K. Bertacco"
-    "C. E. Calosso"
-    "C. Clivati"
-    "G. A. Costanzo"
-    "M. Frittelli"
-    "A. Godone"
-    "A. Mura"
-    "N. Poli"
-    "D. V. Sutyrin"
-    "G. M. Tino"
-    "M. E. Zucco"
-    "F. Levi"]
-  journal: "Applied Physics B-Lasers and Optics"
-  doi: "10.1007/s00340-014-5971-2"
+  authors: ["D. Calonico", "E. K. Bertacco", "C. E. Calosso", "C. Clivati",
+    "G. A. Costanzo", "M. Frittelli", "A. Godone", "A. Mura",
+    "N. Poli", "D. V. Sutyrin", "G. Tino", "M. E. Zucco", "F. Levi"]
+  journal: "Applied Physics B"
+  volume: 117
+  pages: "979-986"
+  doi: "10.1007/s00340-014-5917-8"
   note: >
-    [journal_paper]
-    待补充推理链条和知识点提取。
+    [期刊论文] INRIM + LENS（意大利国家计量院 + 佛罗伦萨大学）。Torino–Firenze–Torino
+    642 km × 2 = 1284 km 相干光纤链路（活动 EDFA + 光学相位锁定补偿），σ_y(1000 s)=3×10⁻¹⁹
+    @5 mHz 测量带宽，accuracy 5×10⁻¹⁹。提出"单纤双往返"（double round trip on single fiber）
+    表征方法，作为传统"平行双纤"配置的替代方案，利于长距离干线节省成本。本文件同时建立
+    time-frequency-transfer 专题的 Level 1 光纤相干链路总节点 `ent.coherent_optical_fiber_link`。
+
+entities:
+  - id: ent.coherent_optical_fiber_link
+    name: "相干光纤时频传递链路（Level 1 总节点）"
+    aliases: ["coherent optical fiber link", "phase-stabilized optical fiber link", "相干光纤链路"]
+    hierarchy_level: 1
+    status: demonstrated
+    function: >
+      在电信级单模光纤（SMF-28，室温地下部署为主）上双向传递超窄线宽光载波，
+      发射端参考与接收端比对信号的相对相位由 Michelson 往返干涉法读出并通过 AOM 反馈修正，
+      实现 σ_y ≲ 10⁻¹⁸–10⁻²⁰（长平均时间）、accuracy 10⁻¹⁹–10⁻²⁰ 的频率传递。
+      部署在 EURAMET/REFIMEVE+/CLONETS 等欧洲国家计量网络，作为光钟远程比对、
+      相对论大地测量、基本常数搜索的物理层。
+    key_parameters:
+      carrier: "1542 nm C 波段（SMF-28 单模光纤）"
+      link_length_typical: "100–2000 km 级"
+      amplification: "bidirectional EDFA（无隔离器，严格双向对称） 或 Brillouin 放大"
+      round_trip_geometry: "parallel two-fiber 或 single-fiber double round trip（本文）"
+      phase_reference: "Michelson 往返干涉 + AOM 反馈"
+    interface_requirements:
+      sending_laser: "ultrastable laser（σ_y ≤ 10⁻¹⁵，线宽 ≤ 1 Hz）（CONDITIONED-BY ultrastable-laser）"
+      fiber_infrastructure: "电信运营商或计量网络专用暗纤"
+    note: "Level 1 generic node; specific-implementation instances PART-OF 此节点"
+
+  - id: ent.inrim_642km_single_fiber_link_c15
+    name: "INRIM 642 km 单纤双往返相干链路（Calonico 2015）"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      Torino–Firenze 单向 642 km，通过单根光纤实现两次往返（1284 km 等效长度）以表征
+      链路性能；EDFA 双向放大，活动相位锁定。
+    key_parameters:
+      length: "642 km × 2 = 1284 km equivalent"
+      edfa_count: "沿途多段 EDFA，bidirectional"
+      measurement_bw: "5 mHz"
+    note: "Level 2 实例，PART-OF ent.coherent_optical_fiber_link"
+
+principles:
+  - id: pri.single_fiber_double_round_trip_characterization
+    name: "单纤双往返链路表征原理（Calonico 2015 新提出）"
+    tier: engineering
+    verification_status: demonstrated
+    statement: >
+      在一根光纤上进行两次连续往返相位测量，可表征链路相位传递不稳定度，
+      与传统"平行双纤"同源噪声测量等效，但仅需一根暗纤，减半 EDFA 与维护成本，
+      适合洲际干线部署。
+    domain: "相干光纤时频传递；长距离链路工程"
+    conditions: "单纤可支持双向传输且 EDFA 两方向增益对称；拍频 SNR 允许双次往返衰减"
+    key_insight: "链路表征不必依赖第二根冗余光纤。"
+    source_claim: "a new characterization technique based on the double round trip on a single fiber ... an alternative to previously demonstrated techniques"
+
+metrics:
+  - id: met.coherent_optical_fiber_link_instability
+    name: "相干光纤链路分数频率不稳定度 σ_y(τ)"
+    role: operating_point
+    unit: dimensionless
+    demonstrated_value:
+      value: "3×10⁻¹⁹ @ τ=1000 s（ADEV, 5 mHz bandwidth）"
+      conditions: "INRIM Torino–Firenze 642 km 单纤双往返（1284 km 等效），EDFA 双向，active phase lock"
+      source: "calonico2015"
+    note: "Level 1 共用指标，跨论文追踪 fiber link 稳定度纪录"
+
+  - id: met.coherent_optical_fiber_link_accuracy
+    name: "相干光纤链路分数频率准确度（accuracy）"
+    role: accuracy
+    unit: dimensionless
+    demonstrated_value:
+      value: "5×10⁻¹⁹"
+      conditions: "642 km × 2 = 1284 km single-fiber double-round-trip characterization"
+      source: "calonico2015"
+
+relations:
+  - id: rel.C15_01
+    subject: ent.inrim_642km_single_fiber_link_c15
+    predicate: PART-OF
+    object: ent.coherent_optical_fiber_link
+    source:
+      paper: calonico2015
+      claim: "a 642 km coherent optical fiber link ... doubling the link to 1284 km"
+
+  - id: rel.C15_02
+    subject: ent.coherent_optical_fiber_link
+    predicate: ENABLED-BY
+    object: pri.noise_cancellation_frequency_transfer
+    source:
+      paper: calonico2015
+      claim: "phase-stabilized coherent optical frequency transfer"
+    note: "pri.noise_cancellation_frequency_transfer 已在 fermann2022 定义（optical-frequency-combs）"
+
+  - id: rel.C15_03
+    subject: ent.inrim_642km_single_fiber_link_c15
+    predicate: CHARACTERIZED-BY
+    object: met.coherent_optical_fiber_link_instability
+    source:
+      paper: calonico2015
+      claim: "frequency instability of 3×10⁻¹⁹ at 1000 s ... on a 5-mHz measurement bandwidth"
+
+  - id: rel.C15_04
+    subject: ent.inrim_642km_single_fiber_link_c15
+    predicate: CHARACTERIZED-BY
+    object: met.coherent_optical_fiber_link_accuracy
+    source:
+      paper: calonico2015
+      claim: "accuracy of 5×10⁻¹⁹"
+
+  - id: rel.C15_05
+    subject: ent.inrim_642km_single_fiber_link_c15
+    predicate: OPERATIONALIZED-AS
+    object: pri.single_fiber_double_round_trip_characterization
+    source:
+      paper: calonico2015
+      claim: "a new characterization technique based on the double round trip on a single fiber"
+
+  - id: rel.C15_06
+    subject: ent.coherent_optical_fiber_link
+    predicate: CONDITIONED-BY
+    object: ent.fp_cavity_system
+    source:
+      paper: calonico2015
+      claim: "stability is limited by the ultrastable laser used as the optical carrier"
+    note: "跨专题引用：ent.fp_cavity_system 定义于 ultrastable-laser 专题"

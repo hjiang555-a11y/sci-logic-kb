@@ -2,12 +2,13 @@
 
 # shared — Topic Index
 
-> Auto-generated 2026-04-23 07:05 UTC · 5 papers · 19 nodes · 15 relations
+> Auto-generated 2026-04-23 13:06 UTC · 7 papers · 20 nodes · 17 relations
 
 ## Principles
 
 | ID | Name | Tier | Source |
 |----|------|------|--------|
+| `pri.allan_variance_time_domain_characterization` | Allan 方差族时域不稳定度刻画原理（综合 AVAR/MVAR/TVAR） | foundational | [allan2016](topics/shared/papers/allan2016.yaml) |
 | `pri.classical_variance_divergence_for_flicker_noise` | 经典方差对 flicker / random-walk 频率噪声发散原理 | meta | [allan1966](topics/shared/papers/allan1966.yaml) |
 | `pri.hadamard_variance_drift_insensitive` | Hadamard 方差对线性漂移不敏感原理 | meta | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
 | `pri.modified_allan_kernel_resolves_pm_noise` | MDEV 相位平均积分核分辨 PM 噪声原理 | meta | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
@@ -41,4 +42,13 @@
 | ID | Name | Best Value | Source |
 |----|------|------------|--------|
 | `met.fractional_frequency_instability_sigma_y` | 分数频率不稳定度 σ_y(τ)（Allan 偏差通用度量，landmark 定义） | N/A（度量定义而非测量实例；具体数值见本库数十个派生 met.*allan_deviation_* 节点） | [allan1966](topics/shared/papers/allan1966.yaml) |
+
+## Cross-Topic References
+
+Nodes referenced but not defined in this topic:
+
+| Relation | Predicate | External Node | Source |
+|----------|-----------|---------------|--------|
+| `rel.Sul01_01` | REALIZES | `ent.microwave_frequency_standard` | sullivan2001 |
+| `rel.Sul01_01` | REALIZES | `pri.si_second_cesium_definition` | sullivan2001 |
 

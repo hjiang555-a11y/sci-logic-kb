@@ -1,9 +1,10 @@
-# Zhang 2022 — Coherent Optical Frequency Transfer via a 490 km Noisy Fiber Link
-# 提取者：AI 草稿，待专家确认
+# Zhang 2022 — Coherent Optical Frequency Transfer via a 490 km Noisy Fiber Link [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
 # 提取日期：2026-04-23
 # Schema版本：v4.5
 # 专题：time-frequency-transfer
-# contribution_type: evidence
+# contribution_type: evidence — NTSC Xi'an. Chinese Physics Letters。在 490 km
+#   实际场地部署光纤（噪声较大）上实现相干光频传递，配合宽动态相位探测器。
 
 meta:
   zotero_key: "whuijl3v"
@@ -14,20 +15,45 @@ meta:
   title: "Coherent Optical Frequency Transfer via a 490 km Noisy Fiber Link"
   year: 2022
   first_author: Zhang
-  authors: ["X. Zhang"
-    "X. Deng"
-    "Q. Zang"
-    "D. D. Jiao"
-    "J. Gao"
-    "D. Wang"
-    "Q. Zhou"
-    "J. Liu"
-    "G. J. Xu"
-    "R. F. Dong"
-    "T. Liu"
-    "S. G. Zhang"]
+  authors: ["X. Zhang", "X. Deng", "Q. Zang", "D. Jiao", "J. Gao", "D. Wang", "Q. Zhou",
+    "J. Liu", "G. Xu", "R. Dong", "T. Liu", "S. Zhang"]
   journal: "Chinese Physics Letters"
-  doi: "10.1088/0256-307x/39/4/044201"
+  volume: 39
+  issue: 4
+  pages: "044201"
+  doi: "10.1088/0256-307X/39/4/044201"
   note: >
-    [journal_paper]
-    待补充推理链条和知识点提取。
+    [期刊论文] NTSC Xi'an. 在 490 km 实际场地部署光纤（高环境噪声）上使用主动噪声抵消
+    + 宽动态范围相位检测器实现相干光频传递。工程示范，证明中国西部噪声场地光纤条件下
+    长距离相干 OFT 的可行性。具体数值见正文。
+
+entities:
+  - id: ent.ntsc_490km_noisy_field_link_z22b
+    name: "NTSC 490 km 噪声场地光纤相干链路（Zhang 2022 CPL）"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      Xi'an 地区 490 km 实际场地部署光纤，active 相位锁定 + 宽范围相位检测器，
+      在环境振动/温度扰动较大条件下实现相干 optical frequency transfer。
+    key_parameters:
+      length: "490 km (deployed field fiber)"
+      environment: "noisy field"
+      approach: "ANC with wide dynamic range phase detector"
+    note: "Level 2 实例，PART-OF ent.coherent_optical_fiber_link"
+
+relations:
+  - id: rel.Zha22b_01
+    subject: ent.ntsc_490km_noisy_field_link_z22b
+    predicate: PART-OF
+    object: ent.coherent_optical_fiber_link
+    source:
+      paper: zhang2022b_cpl
+      claim: "coherent optical frequency transfer via a 490 km noisy fiber link"
+
+  - id: rel.Zha22b_02
+    subject: ent.ntsc_490km_noisy_field_link_z22b
+    predicate: ENABLED-BY
+    object: pri.noise_cancellation_frequency_transfer
+    source:
+      paper: zhang2022b_cpl
+      claim: "active phase noise cancellation with wide dynamic range detector"

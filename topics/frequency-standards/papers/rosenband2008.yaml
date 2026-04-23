@@ -1,0 +1,78 @@
+# Rosenband 2008 — Frequency Ratio of Al+ and Hg+ Single-Ion Optical Clocks: Metrology at the 17th Decimal Place [evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：frequency-standards
+# contribution_type: evidence
+
+meta:
+  zotero_key: "ROSENBAND2008"
+  topic: frequency-standards
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Frequency Ratio of Al⁺ and Hg⁺ Single-Ion Optical Clocks; Metrology at the 17th Decimal Place"
+  year: 2008
+  first_author: Rosenband
+  authors: ["T. Rosenband", "D. B. Hume", "P. O. Schmidt", "C. W. Chou", "A. Brusch", "L. Lorini",
+    "W. H. Oskay", "R. E. Drullinger", "T. M. Fortier", "J. E. Stalnaker", "S. A. Diddams",
+    "W. C. Swann", "N. R. Newbury", "W. M. Itano", "D. J. Wineland", "J. C. Bergquist"]
+  journal: "Science"
+  volume: 319
+  issue: 5871
+  pages: "1808-1812"
+  doi: "10.1126/science.1154622"
+  note: >
+    [期刊论文] NIST Boulder. 首次将 ²⁷Al⁺（量子逻辑钟）与 ¹⁹⁹Hg⁺ 两种离子光钟直接频率比
+    测量到 10⁻¹⁷ 水平，通过年度重复验证精细结构常数 α 的稳定性 dα/dt/α = (-1.6±2.3)×10⁻¹⁷/yr，
+    为基本常数时间稳定性设定当时最严格约束，同时验证了量子逻辑光钟方案。
+
+entities:
+  - id: ent.al_ion_quantum_logic_clock_r08
+    name: "NIST ²⁷Al⁺ 量子逻辑光钟（Rosenband 2008）"
+    hierarchy_level: 2
+    status: demonstrated
+    key_parameters:
+      species: "²⁷Al⁺ (clock) + ⁹Be⁺/²⁵Mg⁺ (logic)"
+      transition: "¹S₀ − ³P₀ at 267 nm"
+      comparison_ratio_uncertainty: "5.2×10⁻¹⁷"
+    note: "Level 2 实例，PART-OF ent.trapped_ion_optical_clock"
+
+principles:
+  - id: pri.quantum_logic_clock_readout
+    name: "量子逻辑光钟读出原理"
+    tier: domain
+    verification_status: demonstrated
+    statement: >
+      光钟离子（如 Al⁺）其冷却与读出跃迁不适合直接激光操作，与一个同时囚禁的
+      "逻辑离子"（如 Be⁺、Mg⁺）共享运动模通过 entangling 门协作实现冷却与
+      状态读出。为无直接冷却路径、但跃迁系统最干净的候选离子（Al⁺、In⁺、Lu⁺ 等）
+      打开光钟工程路线。
+    domain: "囚禁离子光钟架构"
+    conditions: "clock ion 与 logic ion 共囚禁；可寻址 stimulated Raman"
+    source_claim: "quantum logic spectroscopy ... enables high-accuracy Al⁺ optical clock"
+
+relations:
+  - id: rel.Ros08_01
+    subject: ent.al_ion_quantum_logic_clock_r08
+    predicate: PART-OF
+    object: ent.trapped_ion_optical_clock
+    source:
+      paper: rosenband2008
+      claim: "Al⁺ single-ion optical clock"
+
+  - id: rel.Ros08_02
+    subject: ent.al_ion_quantum_logic_clock_r08
+    predicate: OPERATIONALIZED-AS
+    object: pri.quantum_logic_clock_readout
+    source:
+      paper: rosenband2008
+      claim: "quantum logic ... Al⁺ clock"
+
+  - id: rel.Ros08_03
+    subject: ent.al_ion_quantum_logic_clock_r08
+    predicate: CHARACTERIZED-BY
+    object: met.optical_clock_fractional_uncertainty
+    source:
+      paper: rosenband2008
+      claim: "frequency ratio of Al⁺ to Hg⁺ measured to 17th decimal place"
