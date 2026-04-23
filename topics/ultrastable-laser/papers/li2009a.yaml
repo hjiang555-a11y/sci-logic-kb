@@ -1,0 +1,144 @@
+# Li 2009a — 低振动灵敏度钛合金光纤线轴稳频激光（FEM 优化非对称支撑）[evidence]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：ultrastable-laser
+
+meta:
+  zotero_key: "SI2N2B8N"
+  topic: ultrastable-laser
+  source_type: conference_paper
+  contribution_type: evidence
+  reliability: medium
+  title: "Low Vibration Sensitivity Fiber Spools for Laser Stabilization"
+  year: 2009
+  first_author: "Li"
+  authors: ["T. Li", "B. Argence", "C. Nelson", "A. Hati", "E. Burt", "A. Haboucha", "H. Jiang", "J. L. Dornaux", "D. Koné", "A. Clairon", "P. Lemonde", "G. Santarelli"]
+  journal: "2009 IEEE International Frequency Control Symposium"
+  doi: ""
+  note: >
+    钛合金非对称支撑光纤线轴设计，通过 FEM 优化 h₂ 参数使垂直振动灵敏度零点可调。
+    300 m 光纤线轴振动灵敏度约 5×10⁻¹¹/m·s⁻²（沿线轴轴向）。
+    "自由"光纤尾纤约束方式对总振动灵敏度有显著影响。
+    版权标注 ©2009 IEEE（ISBN 978-1-4244-3510-4）。
+
+entities:
+  - id: ent.titanium_fiber_spool_l09
+    name: "钛合金低振动灵敏度光纤线轴（Li 2009a）"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      钛合金（Ti）圆环形线轴，轴对称结构，通过单中心柱非对称支撑。
+      可容纳 >2 km 光纤，首谐振频率约 1.5 kHz。
+      FEM 优化 h₂ 参数（约 5.2 mm）使垂直振动灵敏度在理论上可归零。
+      实际缠绕 300 m SMF-28 光纤，与 1 km 非平衡迈克尔逊干涉仪配合使用。
+    note: "钛合金刚度高、质量轻，优于其他金属材料；线轴振动灵敏度受尾纤约束方式显著影响。"
+
+principles:
+  - id: pri.asymmetric_spool_vibration_nulling
+    name: "非对称支撑线轴振动灵敏度调零原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      通过调整中心柱长度参数 h₂（支撑柱高度），可调节线轴上光纤绕线面的加速度引起的变形分布。
+      存在一个最优 h₂ 值（约 5.2 mm）使得垂直方向（轴向）振动对光纤延迟的贡献理论上归零。
+      其他几何参数（中心宽度 e₁、外径 R）也影响零点位置：增大 e₁ 使零点向 h₂ = 0 靠近，
+      增大 R 使零点向反方向偏移。此设计使振动灵敏度对夹持边界条件不敏感。
+    domain: "光纤延迟线激光稳频振动抑制"
+    key_insight: "FEM 优化单参数 h₂ 可实现特定方向振动灵敏度归零，解耦于夹持边界条件"
+    conditions: "钛合金圆环形线轴；中心柱支撑；SMF-28 光纤；FEM 假设光纤延迟随支撑面变形"
+    source:
+      zotero_key: "SI2N2B8N"
+      claim: "the vertical vibration sensitivity can be zeroed with an optimized value of h2 ≈ 5.2mm"
+
+methods:
+  - id: meth.fiber_spool_vibration_characterization
+    name: "光纤线轴振动灵敏度测量方法"
+    status: demonstrated
+    applies_to: ent.titanium_fiber_spool_l09
+    steps_summary: >
+      光纤激光器（1542.14 nm）→ 锁定至光纤干涉仪 → 测量激光频率噪声基底 →
+      主动隔振平台施加竖向啁啾扫频激励 → HP89410 矢量信号分析仪测传递函数
+      T(f) = (S_ν(f)/S_a(f))^(1/2) → 计算振动灵敏度 Γ(f) = T_r(f)/ν₀ →
+      对不同尾纤约束方式重复测量
+    source_claim: >
+      "The transfer function of frequency noise to vertical acceleration T(f) is measured by a
+      vector signal analyzer HP89410. This instrument generates a chirp modulation signal
+      injected in the active vibration isolation platform and then calculates the transfer
+      function between acceleration noise S(f) and the measured frequency noise S(f)"
+
+metrics:
+  - id: met.fiber_spool_accel_sensitivity_l09
+    name: "光纤线轴轴向振动灵敏度"
+    unit: "m⁻¹·s²"
+    role: primary
+    description: "300 m 光纤线轴沿线轴轴向的振动灵敏度，即单位加速度引起的分数频率变化。"
+    demonstrated_value:
+      value: "~5×10⁻¹¹（中等约束时）"
+      conditions: "300 m SMF-28；钛合金非对称支撑；竖向加速度；20–110 Hz；中等尾纤张力"
+      verification_status: observed
+      confidence: medium
+      source:
+        zotero_key: "SI2N2B8N"
+        claim: "The vibration sensitivity of new-design spool wound with 300 m fiber is around 5×10^-11/ms^-2"
+
+  - id: met.fiber_spool_free_fiber_sensitivity_l09
+    name: "尾纤约束对振动灵敏度的影响"
+    unit: "m⁻¹·s²"
+    role: secondary
+    description: "尾纤（约 0.4 m 裸光纤）不同约束力度下，线轴总振动灵敏度的变化量。"
+    demonstrated_value:
+      value: "在 5×10⁻¹¹ 量级，随约束方式显著变化（高张力可降低至更低值）"
+      conditions: "SMF-28；0.4 m 裸光纤尾纤；低/中/高张力三种约束"
+      verification_status: observed
+      confidence: medium
+      source:
+        zotero_key: "SI2N2B8N"
+        claim: "The vibration sensitivity of new-design spool wound with 300 m fiber is around 5×10^-11/ms^-2. However, it is strongly influenced by the constraints on the 'free' fiber."
+
+relations:
+  - id: rel.Li01
+    subject: ent.titanium_fiber_spool_l09
+    predicate: CHARACTERIZED-BY
+    object: met.fiber_spool_accel_sensitivity_l09
+    confidence: established
+    source:
+      zotero_key: "SI2N2B8N"
+      claim: "The vibration sensitivity of new-design spool wound with 300 m fiber is around 5×10^-11/ms^-2"
+
+  - id: rel.Li02
+    subject: ent.titanium_fiber_spool_l09
+    predicate: ENABLED-BY
+    object: pri.asymmetric_spool_vibration_nulling
+    confidence: established
+    source:
+      zotero_key: "SI2N2B8N"
+      claim: "we develop a spool with asymmetric support configuration that would be independent on the holding constraints... the vertical vibration sensitivity can be zeroed with an optimized value of h2 ≈ 5.2mm"
+
+  - id: rel.Li03
+    subject: ent.titanium_fiber_spool_l09
+    predicate: PART-OF
+    object: ent.fiber_delay_line_reference
+    confidence: established
+    note: "跨文件引用，ent.fiber_delay_line_reference 定义于 topics/ultrastable-laser/ 相关文件"
+    source:
+      zotero_key: "SI2N2B8N"
+      claim: "A radical alternative is to use an optical fiber delay line as a frequency reference to stabilize laser frequency"
+
+  - id: rel.Li04
+    subject: meth.fiber_spool_vibration_characterization
+    predicate: ENABLED-BY
+    object: ent.titanium_fiber_spool_l09
+    confidence: established
+    source:
+      zotero_key: "SI2N2B8N"
+      claim: "We have studied several different structures of spool... Both simulations by Finite Element Modeling (FEM) and vibration sensitivity measurements are presented"
+
+  - id: rel.Li05
+    subject: ent.titanium_fiber_spool_l09
+    predicate: CHARACTERIZED-BY
+    object: met.fiber_spool_free_fiber_sensitivity_l09
+    confidence: established
+    source:
+      zotero_key: "SI2N2B8N"
+      claim: "it is strongly influenced by the constraints on the 'free' fiber. The Young's modulus of SMF-28 fiber is about two orders of magnitude lower than that of spool materials"
