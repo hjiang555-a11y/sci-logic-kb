@@ -2,5 +2,66 @@
 
 # Time-Frequency Transfer — Topic Index
 
-> Auto-generated 2026-04-23 00:09 UTC · 0 papers · 0 nodes · 0 relations
+> Auto-generated 2026-04-23 00:33 UTC · 1 papers · 16 nodes · 21 relations
+
+## Entities
+
+| ID | Name | Level | Source |
+|----|------|------:|--------|
+| `ent.frequency_comb_optical_link_fcol` | 频率梳光学链路 FCOL（I-SOC 可选链路） | 2 | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `ent.microwave_link_mwl` | 微波时频传递链路 MWL（I-SOC 空间段 Ku 波段双向链路） | 2 | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `ent.pulsed_optical_link_elt_plus` | 脉冲光学时频传递链路 ELT+（I-SOC 空间段） | 2 | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `ent.space_frequency_comb_sfc` | 空间频率梳 SFC（I-SOC 光↔微波桥） | 2 | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `ent.space_lattice_optical_clock_sloc` | 空间光学晶格钟 SLOC（I-SOC 空间段 Sr 光钟） | 2 | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `ent.space_optical_clock_mission` | 空间光学原子钟任务（通用 · I-SOC 为代表实例） | 1 | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+
+## Principles
+
+| ID | Name | Tier | Source |
+|----|------|------|--------|
+| `pri.common_view_clock_comparison` | 共视时钟比对原理（common-view comparison） | domain | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `pri.einstein_equivalence_principle` | Einstein 等效原理（EEP） | foundational | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `pri.gravitational_time_dilation` | 引力时间膨胀（Einstein 红移） | foundational | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `pri.non_common_view_clock_comparison` | 非共视时钟比对原理（non-common-view comparison） | domain | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+
+## Methods
+
+| ID | Name | Source |
+|----|------|--------|
+| `meth.elt_plus_pulsed_optical_tf_transfer` | 脉冲激光光学时频传递法（ELT+ 实现） | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `meth.mwl_two_way_tf_transfer` | 双向双频微波时频传递法（MWL 实现） | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+
+## Metrics
+
+> Metrics are grouped by **role** (v4.4 σ_y-first convention). See `topics/ultrastable-laser/_meta/scoping_principles.md` v2.
+
+### 🔧 Engineering (κ/温度/磁场)
+
+| ID | Name | Best Value | Source |
+|----|------|------------|--------|
+| `met.fundamental_constant_drift_search` | 精细结构常数时间变化搜索灵敏度 | 任务目标：相对 ACES 提升 10 000×（1000× 来自更多比对点 + 10× 来自分辨率提升） | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+
+### ❓ Unspecified
+
+| ID | Name | Best Value | Source |
+|----|------|------------|--------|
+| `met.earth_grs_test_uncertainty` | 地球引力红移测试分数不确定度（任务科学目标） | $2\cdot10^{-7}$（目标，vs ACES 约 $2\cdot10^{-6}$，提升因子 ~10×） | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `met.space_to_ground_link_inaccuracy` | 空间–地面时频链路分数不准确度 | MWL: $5\cdot10^{-19}$（#SR-PL-10，需求目标）；ELT+: $1\cdot10^{-18}… | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `met.space_to_ground_link_instability` | 空间–地面时频链路不稳定度 | MWL（#SR-PL-09，需求目标）：白相位噪声 $1.6\cdot10^{-14}$ @ 10 s；闪烁相位 mo… | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+
+## BOUNDED-BY Chains
+
+### `rel.C17_18`: `pri.non_common_view_clock_comparison` → `ent.space_lattice_optical_clock_sloc`
+
+- **Source**: cacciapuoti2017
+
+## Cross-Topic References
+
+Nodes referenced but not defined in this topic:
+
+| Relation | Predicate | External Node | Source |
+|----------|-----------|---------------|--------|
+| `rel.C17_21` | CONDITIONED-BY | `ent.fp_cavity_system` | cacciapuoti2017 |
+| `rel.C17_20` | CONDITIONED-BY | `ent.optical_frequency_comb` | cacciapuoti2017 |
+| `rel.C17_19` | CONDITIONED-BY | `ent.optical_lattice_clock` | cacciapuoti2017 |
 

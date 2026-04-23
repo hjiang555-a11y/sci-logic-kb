@@ -2,7 +2,7 @@
 
 # 📊 Metrics Quick Reference
 
-> Auto-generated 2026-04-23 00:09 UTC
+> Auto-generated 2026-04-23 00:33 UTC
 >
 > Metrics are grouped by **role** (v4.4 σ_y-first convention, see `topics/ultrastable-laser/_meta/scoping_principles.md` v2). Role is taken from the `role` field on the metric node when present, otherwise inferred from ID / name heuristics.
 
@@ -251,6 +251,22 @@
 | `met.wall_plug_power_w17` | Electrical drive power / wall-plug | sub-watt chip-level electrical drive | — | [wang2017](topics/optical-frequency-combs/papers/wang2017.yaml) |
 | `met.xuv_harmonic_power_p18` | XUV 单谐波功率（Porat 2018） | ~2 mW | f_rep = 77 MHz 飞秒增强腔，Ar+He 混合气体（背压温度 T = 800 K）， … | [porat2018](topics/optical-frequency-combs/papers/porat2018.yaml) |
 | `met.yb_fiber_comb_power_cpa_l20` | Yb 光纤梳 CPA 输出功率 | 132 W（180 fs，99% 主峰能量） | Yb:fiber CPA 系统（250 MHz frep）+ grism 压缩器 | [luo2020](topics/optical-frequency-combs/papers/luo2020.yaml) |
+
+## Time-Frequency Transfer
+
+### 🔧 Engineering (κ/温度/磁场)
+
+| ID | Name | Best Value | Conditions | Source |
+|----|------|------------|------------|--------|
+| `met.fundamental_constant_drift_search` | 精细结构常数时间变化搜索灵敏度 | 任务目标：相对 ACES 提升 10 000×（1000× 来自更多比对点 + 10× 来自分辨率提升） | 多台地面光钟（不同跃迁种：Sr / Yb / Al⁺ / Yb⁺ E3 / In⁺ / Lu⁺ /… | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+
+### ❓ Unspecified
+
+| ID | Name | Best Value | Conditions | Source |
+|----|------|------------|------------|--------|
+| `met.earth_grs_test_uncertainty` | 地球引力红移测试分数不确定度（任务科学目标） | $2\cdot10^{-7}$（目标，vs ACES 约 $2\cdot10^{-6}$，提升因子 ~10×） | ≥2 年科学阶段；空间段 SLOC $8\cdot10^{-16}/\sqrt{\tau}$ 不稳… | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `met.space_to_ground_link_inaccuracy` | 空间–地面时频链路分数不准确度 | MWL: $5\cdot10^{-19}$（#SR-PL-10，需求目标）；ELT+: $1\cdot10^{-18}… | 正确定标大气延迟、几何光程、本地 SLR 站延迟（ELT+ 单向 $\leq 20\,\text{… | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `met.space_to_ground_link_instability` | 空间–地面时频链路不稳定度 | MWL（#SR-PL-09，需求目标）：白相位噪声 $1.6\cdot10^{-14}$ @ 10 s；闪烁相位 mo… | ISS 过顶（MWL 典型 ≤300 s，ELT+ 典型 ~200 s），空间–地面单次过顶；空间… | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
 
 ## Timescales
 

@@ -7,6 +7,35 @@
 
 ---
 
+## [2026-04-23] ingest | time-frequency-transfer 专题种子 · `cacciapuoti2017.yaml`（ESA I-SOC 科学需求，framework）
+
+处理 `/pdfs/SCI-ESA-HRE-ESR-ISOC_Iss.1.1_Approved.pdf`（另一 PDF `FreqStable_Si_cavity AlGaAs mirror_PRL2026.pdf`
+已在 2026-04-16 以 `lee2026.yaml` 摄入，本次跳过去重）。
+
+- **专题归属**：`time-frequency-transfer`（此前 0 篇，本文为种子 framework 文档）。
+- **档位**：`framework`（ESA 任务科学需求文档，2017-06-09 Issue 1.1 Approved）。
+- **顶层实体**：`ent.space_optical_clock_mission`（Level 1）——I-SOC 任务通用父节点。
+- **Level 2 子系统节点**：`ent.space_lattice_optical_clock_sloc`（SLOC，Sr 光钟）、
+  `ent.space_frequency_comb_sfc`（SFC）、`ent.microwave_link_mwl`（MWL）、
+  `ent.pulsed_optical_link_elt_plus`（ELT+）、`ent.frequency_comb_optical_link_fcol`（FCOL，可选）。
+- **原理**：`pri.gravitational_time_dilation`、`pri.einstein_equivalence_principle`（foundational）；
+  `pri.common_view_clock_comparison`、`pri.non_common_view_clock_comparison`（domain）。
+- **方法**：`meth.mwl_two_way_tf_transfer`、`meth.elt_plus_pulsed_optical_tf_transfer`。
+- **指标**：`met.space_to_ground_link_instability`、`met.space_to_ground_link_inaccuracy`、
+  `met.earth_grs_test_uncertainty`、`met.fundamental_constant_drift_search`。
+- **关系**（21 条）：任务内部 PART-OF 骨架 + ENABLED-BY（GTD / EEP）+ OPERATIONALIZED-AS（共视/非共视）+
+  链路 CHARACTERIZED-BY 指标 + 非共视比对 BOUNDED-BY SLOC（桥接稳定度系统极限）+
+  **3 条跨专题 CONDITIONED-BY**：SLOC ↔ `ent.optical_lattice_clock`（frequency-standards）、
+  SFC ↔ `ent.optical_frequency_comb`（optical-frequency-combs）、SLOC 询问激光 ↔
+  `ent.fp_cavity_system` / `met.fractional_freq_instability_m17`（ultrastable-laser，Dick 效应接口）。
+- **任务性能目标（入库）**：SLOC σ_y = 8×10⁻¹⁶/√τ，系统不确定度 1×10⁻¹⁷；MWL flicker floor 5×10⁻¹⁹、
+  不准确度 5×10⁻¹⁹；ELT+ TDEV ≤0.5 ps @100 s、≤1 ps 至 10⁶ s，分数不准确度 1×10⁻¹⁸。
+  科学目标：地球 GRS 2×10⁻⁷（vs ACES 10×）、太阳 GRS 1×10⁻⁶、月球 GRS 2×10⁻⁴、精细结构常数漂移搜索 10 000×。
+- **lint / stats**：0 error（沿用基线），chain-gap 从 35 → 36（tier=framework 允许；C17_18 非共视比对受空间钟稳定度限制的缺口为有意保留，留给后续空间光钟专项论文补 breakthrough_paths）。
+- **INDEX / CURRENT_NODES_REFERENCE**：已重建（182 papers / 997 nodes / 1149 relations）。
+
+---
+
 ## [2026-04-23] ingest | optical-frequency-combs Batch 4 · `/pdfs` 增量（11 篇：3 breakthrough + 8 evidence）
 
 承接 Batch 2+3 后，对 `/pdfs/` 中新增的 13 个 PDF 进行处理。去重后 **11 篇新入库**（光频梳 90 → 101）：

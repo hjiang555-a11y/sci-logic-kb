@@ -4,7 +4,7 @@
 
 > **用途**：处理新论文时，用此文件快速检查是否已有同名/同义节点，避免重复定义。
 > **维护**：本文件由 `scripts/build_index.py` 自动生成，**请勿手工编辑**。
-> **生成时间**：2026-04-23 00:09 UTC
+> **生成时间**：2026-04-23 00:33 UTC
 
 > **使用方式**：
 > - 处理新论文时，`Ctrl+F` 搜索关键词（如 `brownian`, `pdh`, `fiber`）
@@ -339,6 +339,33 @@
 | `meth.tunable_vuv_comb_generation_cavity_hhg` | 可调 VUV 梳腔增强七次谐波方法 | [zhang2022](topics/optical-frequency-combs/papers/zhang2022.yaml) |
 | `meth.vipa_comb_spectroscopy` | VIPA 交叉色散频率梳光谱方法 | [picque2019](topics/optical-frequency-combs/papers/picque2019.yaml) |
 | `meth.wideband_optical_frequency_synthesis` | 宽带光学频率合成方法（多分支梳+色散外差检测） | [giunta2020](topics/optical-frequency-combs/papers/giunta2020.yaml) |
+
+---
+
+## Time-Frequency Transfer  
+> 详细索引: [`topics/time-frequency-transfer/INDEX.md`](topics/time-frequency-transfer/INDEX.md)
+
+### Entities (Level 0–1)
+
+| ID | Name | Source |
+|----|------|--------|
+| `ent.space_optical_clock_mission` | 空间光学原子钟任务（通用 · I-SOC 为代表实例） | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+
+### Principles
+
+| ID | Name | Tier | Source |
+|----|------|------|--------|
+| `pri.common_view_clock_comparison` | 共视时钟比对原理（common-view comparison） | domain | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `pri.einstein_equivalence_principle` | Einstein 等效原理（EEP） | foundational | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `pri.gravitational_time_dilation` | 引力时间膨胀（Einstein 红移） | foundational | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `pri.non_common_view_clock_comparison` | 非共视时钟比对原理（non-common-view comparison） | domain | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+
+### Methods
+
+| ID | Name | Source |
+|----|------|--------|
+| `meth.elt_plus_pulsed_optical_tf_transfer` | 脉冲激光光学时频传递法（ELT+ 实现） | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `meth.mwl_two_way_tf_transfer` | 双向双频微波时频传递法（MWL 实现） | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
 
 ---
 

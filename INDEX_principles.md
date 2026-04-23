@@ -2,7 +2,7 @@
 
 # 🔬 Principles Quick Reference
 
-> Auto-generated 2026-04-23 00:09 UTC
+> Auto-generated 2026-04-23 00:33 UTC
 
 ## Tier: meta
 
@@ -20,10 +20,12 @@
 
 | ID | Name | Topic | Source |
 |----|------|-------|--------|
+| `pri.einstein_equivalence_principle` | Einstein 等效原理（EEP） | Time-Frequency Transfer | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
 | `pri.enhanced_shb_dynamics_theory_k95` | 增强空间烧孔动力学理论模型 | Ultrastable Laser | [kartner1995](topics/ultrastable-laser/papers/kartner1995.yaml) |
 | `pri.enhanced_shb_pulse_shortening_b95` | 增强空间烧孔锁模脉冲缩短效应 | Ultrastable Laser | [braun1995](topics/ultrastable-laser/papers/braun1995.yaml) |
 | `pri.fiber_thermal_phase_noise_giant_ifog` | 大型光纤陀螺仪热相位噪声 | Ultrastable Laser | [li2019](topics/ultrastable-laser/papers/li2019.yaml) |
 | `pri.gaussian_beam_resonator_theory` | 高斯光束与谐振腔理论 | Ultrastable Laser | [kogelnik1966](topics/ultrastable-laser/papers/kogelnik1966.yaml) |
+| `pri.gravitational_time_dilation` | 引力时间膨胀（Einstein 红移） | Time-Frequency Transfer | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
 | `pri.squeezed_light_quantum_enhancement` | 压缩光量子增强干涉仪灵敏度 | Ultrastable Laser | [aasi2013](topics/ultrastable-laser/papers/aasi2013.yaml) |
 | `pri.superradiant_emission_narrow_linewidth` | 超辐射集体发射窄线宽原理 | Ultrastable Laser | [meiser2009](topics/ultrastable-laser/papers/meiser2009.yaml) |
 | `pri.ule_hcf_thermal_stability` | ULE 空心光纤热稳定性原理 | Ultrastable Laser | [ding2025](topics/ultrastable-laser/papers/ding2025.yaml) |
@@ -52,6 +54,7 @@
 | `pri.comb_actuator_transfer_matrix` | 光频梳三参数三执行器传递函数矩阵表征原理 | Optical Frequency Combs | [zhang2012c](topics/optical-frequency-combs/papers/zhang2012c.yaml) |
 | `pri.comb_driven_stimulated_raman_terahertz` | 飞秒梳驱动的 THz 受激 Raman 转动跃迁原理 | Optical Frequency Combs | [chou2020](topics/optical-frequency-combs/papers/chou2020.yaml) |
 | `pri.comb_nonlinear_spectroscopy` | 频率梳非线性光谱原理 | Optical Frequency Combs | [picque2019](topics/optical-frequency-combs/papers/picque2019.yaml) |
+| `pri.common_view_clock_comparison` | 共视时钟比对原理（common-view comparison） | Time-Frequency Transfer | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
 | `pri.cryogenic_mechanical_q_enhancement` | 低温增强机械品质因子降低热噪声 | Ultrastable Laser | [kessler2012](topics/ultrastable-laser/papers/kessler2012.yaml) |
 | `pri.crystalline_coating_low_brownian_noise` | 单晶镀层低布朗热噪声原理 | Ultrastable Laser | [cole2013](topics/ultrastable-laser/papers/cole2013.yaml) |
 | `pri.dark_pulse_normal_dispersion_comb` | 正常色散暗脉冲/platicon 梳原理 | Optical Frequency Combs | [gaeta2019](topics/optical-frequency-combs/papers/gaeta2019.yaml) |
@@ -114,6 +117,7 @@
 | `pri.mutual_coherence_requirement` | 双梳互相干要求 | Optical Frequency Combs | [coddington2016](topics/optical-frequency-combs/papers/coddington2016.yaml) |
 | `pri.native_mode_spacing_matching` | 微梳 FSR 与天文光谱仪分辨率原生匹配原理 | Optical Frequency Combs | [suh2019](topics/optical-frequency-combs/papers/suh2019.yaml) |
 | `pri.noise_cancellation_frequency_transfer` | 主动噪声抵消精密频率传递原理 | Optical Frequency Combs | [fermann2022](topics/optical-frequency-combs/papers/fermann2022.yaml) |
+| `pri.non_common_view_clock_comparison` | 非共视时钟比对原理（non-common-view comparison） | Time-Frequency Transfer | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
 | `pri.nondeterministic_phase_microcomb` | 非确定性相位关系的等间距微梳态 | Optical Frequency Combs | [delhaye2014](topics/optical-frequency-combs/papers/delhaye2014.yaml) |
 | `pri.nonlinear_frequency_conversion_comb` | 非线性频率转换梳产生原理 | Optical Frequency Combs | [schliesser2012](topics/optical-frequency-combs/papers/schliesser2012.yaml) |
 | `pri.normal_dispersion_dark_pulse_s22` | 正常色散 + 避免模交叉下暗脉冲 Kerr 梳生成原理 | Optical Frequency Combs | [shu2022](topics/optical-frequency-combs/papers/shu2022.yaml) |

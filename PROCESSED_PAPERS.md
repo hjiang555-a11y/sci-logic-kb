@@ -3,7 +3,7 @@
 > **说明**：本文件包含知识库中所有已处理论文的详细列表。从 SCHEMA.md 第八节迁移而来。
 > SCHEMA.md 仅保留统计摘要，本文件承载完整论文记录。
 >
-> **最后更新**：2026-04-23（optical-frequency-combs Batch 4 摄入：+11 篇 → 101 篇；`8NE7UAUR` / `LB6RJ2MZ` 分别为 `leopardi2017.yaml` / `picque2019.yaml` 的 zotero 备份键，跳过）
+> **最后更新**：2026-04-23（time-frequency-transfer 专题种子 framework 摄入：+1 篇 → 1 篇；`cacciapuoti2017.yaml` 定义 ent.space_optical_clock_mission 及 MWL / ELT+ / FCOL 子节点，建立跨专题 CONDITIONED-BY 接口至 ultrastable-laser / optical-frequency-combs / frequency-standards）
 
 ---
 
@@ -175,6 +175,12 @@
 | 文件 | Zotero Key | 论文 | 状态 |
 |------|-----------|------|------|
 | `dimarcq2024.yaml` | SDG6KXNZ | Dimarcq 2024 — SI 秒重定义路线图 | ✅ v4.0 framework |
+
+## 时间频率传递专题（1 篇）
+
+| 文件 | Zotero Key | 论文 | 状态 |
+|------|-----------|------|------|
+| `cacciapuoti2017.yaml` | SCI-ESA-HRE-ESR-ISOC | Cacciapuoti & Schiller 2017 — ESA I-SOC 科学需求（ISS 空间光钟任务，MWL+ELT+ 链路） | ✅ v4.5 framework |
 
 ---
 
