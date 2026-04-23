@@ -1,0 +1,115 @@
+# Manurkar 2018 — 5 W 全自参考频率梳（NIST）
+# 提取者：GitHub Copilot（AI草稿，2026-04-22）
+# 提取日期：2026-04-22
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
+# contribution_type: evidence（低功率工程优化，5 W 电功率，未刷新跨平台最低功率纪录）
+
+meta:
+  zotero_key: "XZTNQ8D4"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Fully self-referenced frequency comb consuming 5 watts of electrical power"
+  year: 2018
+  first_author: Manurkar
+  journal: "OSA Continuum"
+  volume: 1
+  issue: 1
+  pages: "274-287"
+  doi: "10.1364/OSAC.1.000274"
+  note: >
+    [技术论文] NIST Boulder + U. Colorado. 低功率全自参考 Er:fiber 梳（<5 W 电功率）：
+    (1) SiN 波导超连续谱（200 pJ 脉冲能量，比 HNLF 降低 5×）→ fceo 探测；
+    (2) 低功率被动冷却泵浦二极管（250 mW × 2）+ 低增益线性放大器（避免 高增益非线性放大）；
+    (3) 光纤电阻调制器（fiber resistive modulator）：金-钯镀层光纤电阻加热，温度调谐 frep（±2.1 kHz，时间常数 0.5 s），
+        功耗仅 0.077 W/°C（传统温控腔 2.5 W/°C）；
+    (4) 总电功率 <5 W（含温控 + 泵浦 + 自参考），适用于 CubeSat（~30 W 总功率预算）；
+    (5) 无循环滑动（cycle-slip-free）锁定。
+    本工作是低功率工程优化（5 W 电功率），未刷新跨平台最低电功率纪录（已有更低功率方案报道），归 evidence。
+    对齐 v2 子域主线：B-Space（低功率空间应用）。
+
+entities:
+  - id: ent.low_power_5w_self_ref_comb_m18
+    name: "5 W 全自参考频率梳（Manurkar 2018, NIST）"
+    aliases:
+      - 5 W self-referenced Er:fiber comb (NIST 2018)
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      Er:fiber 振荡器（100 MHz，全反常色散 PM 光纤 + SESAM 锁模）
+      + 低增益 EDFA（45 cm Er 光纤，~12 dB 增益）→ 34 mW 放大；
+      SiN 波导超连续谱（200 pJ 脉冲能量）→ fceo 探测；
+      光纤电阻调制器（金-钯镀层光纤加热）调谐 frep（±2.1 kHz，0.077 W/°C）；
+      总电功率 <5 W（含温控 + 250 mW × 2 被动冷却泵浦二极管 + 自参考）。
+    key_parameters:
+      frep: "100 MHz"
+      pulse_energy: "200 pJ（用于 SiN 波导自参考）"
+      electrical_power: "<5 W（总）"
+      pump_power: "250 mW × 2（被动冷却二极管）"
+      fiber_resistive_modulator_power: "0.077 W/°C（vs 传统温控腔 2.5 W/°C）"
+      frep_tuning_range: "±2.1 kHz（时间常数 0.5 s）"
+      mode_locking: "SESAM（半导体可饱和吸收镜）"
+    note: "Level 2 实例节点，PART-OF ent.er_fiber_frequency_comb（定义于 droste2016.yaml）"
+
+principles:
+  - id: pri.fiber_resistive_modulator_frep_tuning_m18
+    name: "光纤电阻调制器 frep 调谐原理（Manurkar 2018）"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      在 PM 光纤表面镀金-钯（Au-Pd）层 → 通电流加热光纤本体（电阻加热）→ 热折射效应改变光纤群折射率 → 腔长改变 → frep 调谐。
+      仅加热腔内少量光纤（~m 级），热质量极小（相比传统温控腔体 kg 级），
+      因此功耗降低 ~30×（0.077 W/°C vs 2.5 W/°C）且时间常数快（0.5 s，足够抑制环境温度扰动）。
+    domain: "光纤激光器；温度控制"
+    key_insight: >
+      "将温控从'整个腔体'缩小到'腔内光纤本身'——极致的最小化热质量策略，
+      是低功率空间应用的关键"——对 CubeSat 等功率受限平台至关重要。
+    conditions: "PM 光纤镀金-钯层；低电阻涂层；腔内光纤长度 ~m 级"
+    source_claim: >
+      "By direct resistive heating of intra-cavity gold-palladium-coated fiber, which we refer to as a 'fiber resistive modulator,'
+      we demonstrate a simple and low-power temperature tuning solution consuming ~77 mW/°C."
+
+metrics:
+  - id: met.self_ref_comb_electrical_power_m18
+    name: "全自参考梳总电功率"
+    unit: "W"
+    description: "实现全自参考（fceo + frep 锁定）+ 温控所需总电功率"
+    demonstrated_value:
+      value: "<5 W"
+      conditions: "Er:fiber 梳（100 MHz）+ SiN 波导 f-2f + 光纤电阻调制器温控"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "XZTNQ8D4", claim: "less than 5 W of electrical power"}
+
+relations:
+  - id: rel.Man18_01
+    subject: ent.low_power_5w_self_ref_comb_m18
+    predicate: PART-OF
+    object: ent.er_fiber_frequency_comb
+    confidence: established
+    source: {zotero_key: "XZTNQ8D4", claim: "Er-doped fiber oscillator/amplifier"}
+    note: "跨文件引用 ent.er_fiber_frequency_comb（定义于 droste2016.yaml）"
+
+  - id: rel.Man18_02
+    subject: ent.low_power_5w_self_ref_comb_m18
+    predicate: CHARACTERIZED-BY
+    object: met.self_ref_comb_electrical_power_m18
+    confidence: established
+    source: {zotero_key: "XZTNQ8D4", claim: "<5 W"}
+
+  - id: rel.Man18_03
+    subject: met.self_ref_comb_electrical_power_m18
+    predicate: BOUNDED-BY
+    object: pri.fiber_resistive_modulator_frep_tuning_m18
+    confidence: established
+    source: {zotero_key: "XZTNQ8D4", claim: "fiber resistive modulator ... consuming ~77 mW/°C"}
+
+  - id: rel.Man18_04
+    subject: pri.fiber_resistive_modulator_frep_tuning_m18
+    predicate: ENABLED-BY
+    object: pri.sin_waveguide_low_power_f2f_c17
+    confidence: established
+    source: {zotero_key: "XZTNQ8D4", claim: "silicon nitride waveguides, which requires much lower pulse energies (~200 pJ) than with highly nonlinear fiber"}
+    note: "跨文件引用 pri.sin_waveguide_low_power_f2f_c17（定义于 carlson2017.yaml，本批次刚创建）"

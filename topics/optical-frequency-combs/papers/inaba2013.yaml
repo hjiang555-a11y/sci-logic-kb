@@ -1,0 +1,100 @@
+# Inaba 2013 — 光纤梳激光线宽转移至 578 nm 探测 171Yb 钟跃迁（日本 AIST/NMIJ）
+# 提取者：GitHub Copilot（AI草稿，2026-04-22）
+# 提取日期：2026-04-22
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
+# contribution_type: evidence（光纤梳线宽转移应用演示，未刷新跨平台技术指标）
+
+meta:
+  zotero_key: "Y7KZ89LA"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Spectroscopy of 171Yb in an optical lattice based on laser linewidth transfer using a narrow linewidth frequency comb"
+  year: 2013
+  first_author: Inaba
+  journal: "Optics Express"
+  volume: 21
+  issue: 7
+  pages: "7891-7896"
+  doi: "10.1364/OE.21.007891"
+  note: >
+    [技术论文] 日本 AIST/NMIJ（国家计量院）。光纤梳激光线宽转移用于 171Yb 光钟：
+    (1) Er:fiber 梳（frep ~ 250 MHz，腔内 EOM 高带宽控制）锁定至 1064 nm 超稳激光（宽伺服带宽）；
+    (2) 578 nm 从激光（slave laser）直接锁定至梳齿（578 nm）→ 线宽转移（从 1064 nm master → 578 nm slave）；
+    (3) 观测 171Yb 光晶格钟跃迁（¹S₀ → ³P₀）：20 Hz 光谱线宽（Fourier 限制，40 ms 询问时间）；
+    (4) 优势：无需 578 nm 独立超稳腔，简化系统（一个 1064 nm 腔 + 梳 即可驱动多个波长钟激光）；
+    (5) 梳相对线宽 3×10⁻¹⁶ @ 1 s（支持高准确度光钟比对）。
+    本工作是光纤梳线宽转移应用演示（观测到 20 Hz 钟跃迁线宽），未刷新跨平台光钟精度纪录，归 evidence。
+    对齐 v2 子域主线：B-FreqSyn（光学频率综合）。
+
+entities:
+  - id: ent.fiber_comb_linewidth_transfer_yb_clock_i13
+    name: "光纤梳线宽转移驱动 171Yb 光钟系统（Inaba 2013, AIST）"
+    aliases:
+      - Fiber comb linewidth transfer for Yb clock (NMIJ 2013)
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      Er:fiber 梳（frep ~ 250 MHz，腔内 EOM）→ 锁定至 1064 nm 超稳激光（宽伺服带宽）；
+      578 nm 从激光直接锁定至梳齿（578 nm）→ 线宽转移（从 1064 nm master）；
+      578 nm 激光驱动 171Yb 光晶格钟跃迁（¹S₀ → ³P₀）→ 20 Hz 光谱线宽（Fourier 限制）；
+      梳相对线宽 3×10⁻¹⁶ @ 1 s。
+    key_parameters:
+      master_laser: "1064 nm 超稳激光（光腔锁定）"
+      slave_laser: "578 nm（锁至梳齿，线宽转移）"
+      comb_frep: "~250 MHz（腔内 EOM 高带宽控制）"
+      yb_clock_linewidth: "20 Hz（Fourier 限制，40 ms 询问时间）"
+      comb_relative_linewidth: "3×10⁻¹⁶ @ 1 s"
+      advantage: "无需 578 nm 独立超稳腔"
+    note: "Level 2 实例节点，PART-OF ent.er_fiber_frequency_comb（定义于 droste2016.yaml）"
+
+methods:
+  - id: meth.fiber_comb_linewidth_transfer_i13
+    name: "光纤梳激光线宽转移方法（Inaba 2013）"
+    status: demonstrated
+    applies_to: ent.fiber_comb_linewidth_transfer_yb_clock_i13
+    steps_summary: >
+      1. 1064 nm 超稳 CW 激光（光腔锁定）作为 master；
+      2. Er:fiber 梳（frep ~ 250 MHz，腔内 EOM）锁定至 1064 nm master（宽伺服带宽）；
+      3. 578 nm 从激光与梳齿（578 nm）拍频 → PLL 锁定（宽伺服带宽）；
+      4. 578 nm 激光线宽转移自 1064 nm master（经梳桥接）；
+      5. 578 nm 激光驱动 171Yb 光晶格钟跃迁询问（40 ms Ramsey 时间）；
+      6. 观测 20 Hz 光谱线宽（Fourier 限制）。
+    required_hardware:
+      - "1064 nm 超稳激光 + 光腔"
+      - "Er:fiber 梳（腔内 EOM）"
+      - "578 nm 从激光"
+      - "171Yb 光晶格钟"
+    advantages:
+      - "无需 578 nm 独立超稳腔（节省系统复杂度与成本）"
+      - "一个 master 腔可驱动多个波长钟激光（通过梳桥接）"
+      - "支持光钟频率比测量（无需微波标准）"
+    disadvantages:
+      - "需要超稳光腔（1064 nm）"
+      - "梳伺服带宽需足够宽（mHz 级线宽转移）"
+
+relations:
+  - id: rel.Ina13_01
+    subject: ent.fiber_comb_linewidth_transfer_yb_clock_i13
+    predicate: PART-OF
+    object: ent.er_fiber_frequency_comb
+    confidence: established
+    source: {zotero_key: "Y7KZ89LA", claim: "fiber-based frequency comb"}
+    note: "跨文件引用 ent.er_fiber_frequency_comb（定义于 droste2016.yaml）"
+
+  - id: rel.Ina13_02
+    subject: meth.fiber_comb_linewidth_transfer_i13
+    predicate: OPERATIONALIZED-AS
+    object: ent.fiber_comb_linewidth_transfer_yb_clock_i13
+    confidence: established
+    source: {zotero_key: "Y7KZ89LA", claim: "phase locking a comb mode to an ultrastable master laser at 1064 nm"}
+
+  - id: rel.Ina13_03
+    subject: meth.fiber_comb_linewidth_transfer_i13
+    predicate: ENABLED-BY
+    object: pri.frequency_ratio_measurement
+    confidence: established
+    source: {zotero_key: "Y7KZ89LA", claim: "frequency ratios between optical clocks, which do not include the current microwave-based frequency standards"}
+    note: "跨文件引用 pri.frequency_ratio_measurement（定义于 giunta2019.yaml）"

@@ -1,0 +1,167 @@
+# Caldwell 2022 — 时间可编程频率梳（TPFC）+ 量子限制测距（NIST）
+# 提取者：GitHub Copilot（AI草稿，2026-04-22）
+# 提取日期：2026-04-22
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
+# contribution_type: breakthrough（范式转移：可编程梳 + 量子限制灵敏度，5000× 功率降低）
+
+meta:
+  zotero_key: "YD2MQC49"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: breakthrough
+  reliability: high
+  title: "The time-programmable frequency comb and its use in quantum-limited ranging"
+  year: 2022
+  first_author: Caldwell
+  journal: "Nature"
+  volume: 611
+  issue: "未明示"
+  pages: "667-673"
+  doi: "10.1038/s41586-022-05225-8"
+  note: >
+    [Breakthrough 论文] NIST Boulder + U. Colorado. 时间可编程频率梳（TPFC）+ 量子限制测距：
+    (1) TPFC：数字实时相干控制脉冲时间与相位（±2 as 精度）→ 追踪弱回波脉冲序列（tracking optical oscillator in time and phase）；
+    (2) 传统双梳：固定 frep 错位产生"死时间"（dead time）→ 远低于散粒噪声极限；TPFC 消除死时间 → 量子限制灵敏度；
+    (3) 测距演示：a) 精度地板 0.7 nm（4.8 as 飞行时间），超越传统双梳；b) 弱信号检测：平均光子数 1/77 / 脉冲（接近量子极限 2×）；
+        c) 相比传统双梳需 5000× 更强信号才能达到同级性能（37 dB 功率降低）；
+    (4) 范式转移：TPFC 不再是"固定机械齿轮箱"，而是"数字可控相干光源"——适用于多梳传感、时频计量、压缩采样、泵浦-探测；
+    (5) 核心技术：同步数字电子实时操控两相位锁（frep + fceo）→ 脉冲时间 / 相位动态可控（slew-rate 限制下任意范围）。
+    本工作是 **范式转移**（TPFC 首次实现）+ **量子限制灵敏度达成**（双梳测距首次逼近散粒噪声极限），判定 breakthrough。
+    对齐 v2 子域主线：B-Ranging（双梳测距应用）+ A-Noise（量子限制相干探测）。
+
+  primary_metric_exempt_reason: new_method
+  breakthrough_paths:
+    - pri.tpfc_digital_coherent_pulse_control_c22
+    - pri.tpfc_tracking_oscillator_quantum_limit_c22
+
+entities:
+  - id: ent.tpfc_quantum_limited_ranging_c22
+    name: "时间可编程频率梳（TPFC）量子限制测距系统（Caldwell 2022, NIST）"
+    aliases:
+      - Time-programmable frequency comb (NIST 2022)
+      - TPFC quantum-limited ranging
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      自参考光学频率梳 + 同步数字电子实时控制（frep + fceo 相位锁）→ 脉冲时间 / 相位可编程（±2 as 精度）；
+      追踪模式（tracking oscillator）：动态锁定弱回波脉冲序列（时间 / 相位同步）→ 量子限制灵敏度（散粒噪声极限）；
+      测距应用：0.7 nm 精度地板（4.8 as），平均光子数 1/77 / 脉冲检测，5000× 功率降低相比传统双梳。
+    key_parameters:
+      pulse_time_control_accuracy: "±2 as"
+      ranging_precision_floor: "0.7 nm（4.8 as 飞行时间）"
+      photon_per_pulse_min: "1/77（接近量子极限 2×）"
+      power_reduction_vs_conventional_dual_comb: "5000× (37 dB)"
+      digital_control: "同步 FPGA 实时操控 frep + fceo 相位锁"
+    note: "Level 2 实例节点，PART-OF ent.optical_frequency_comb（定义于 giunta2019.yaml）"
+
+principles:
+  - id: pri.tpfc_digital_coherent_pulse_control_c22
+    name: "时间可编程频率梳数字相干脉冲控制原理（Caldwell 2022）"
+    tier: meta
+    verification_status: observed
+    statement: >
+      传统自参考梳锁定 frep + fceo 后，脉冲序列时间 / 相位固定（"机械齿轮箱"）；
+      TPFC 突破：同步数字电子（FPGA）实时动态操控两相位锁 → 脉冲时间 / 相位可编程（±2 as 精度，范围仅受 slew-rate 限制）；
+      应用模式：a) 追踪振荡器（tracking oscillator）：锁定弱回波脉冲序列 → 量子限制相干积分；
+      b) 任意时间偏移（multi-comb 传感：模拟更高 frep 系统但保留低 frep 优势）；
+      c) 任意时间模式（compressive sampling / pump-probe）。
+    domain: "时频计量；数字伺服；量子限制探测"
+    key_insight: >
+      "TPFC 从'固定尺'升级为'可编程时间基准'——这是光频梳二十年来首次范式转移：
+      不再局限于 vernier 错位方案（固定 Δfrep），而是实时数字控制脉冲到达时刻与相位"——
+      使多梳传感摆脱"死时间"惩罚，达到量子限制灵敏度。
+    formula: "脉冲时间偏移 Δt 由 frep / fceo 相位锁动态设定（FPGA 实时计算）"
+    conditions: "自参考梳（frep + fceo 可锁定）；同步数字电子（FPGA）实时控制"
+    source_claim: >
+      "We overlay a self-referenced optical frequency comb with synchronous digital electronics for real-time coherent control
+      of the comb's pulse train output. ... The temporal placement of the comb pulses is set with ±2-attosecond (as) accuracy."
+
+  - id: pri.tpfc_tracking_oscillator_quantum_limit_c22
+    name: "TPFC 追踪振荡器量子限制探测原理（Caldwell 2022）"
+    tier: domain
+    verification_status: observed
+    statement: >
+      传统双梳：固定 Δfrep → 弱回波脉冲与本振梳错位采样（vernier）→ 有效"死时间"（非相干平均周期）→ 灵敏度远低于散粒噪声极限；
+      TPFC 追踪模式：动态调整 frep / fceo → 本振梳脉冲时间 / 相位实时追踪弱回波脉冲（phase-locked tracking）→ 相干积分（无死时间）
+      → 散粒噪声极限灵敏度（仅受光子数限制）。
+      测距场景：TPFC 检测到平均光子数 1/77 / 脉冲（接近量子极限 2×），而传统双梳需 5000× 更强信号达到同级性能。
+    domain: "量子限制探测；双梳传感"
+    key_insight: >
+      "TPFC 追踪振荡器本质上是'时间域相位锁环'——脉冲到达时刻的 PLL，而非传统的频率域 PLL"——
+      这使弱信号检测达到量子极限（散粒噪声地板），而不是被固定 Δfrep 的死时间惩罚淹没。
+    conditions: "TPFC 实时控制；弱回波脉冲序列；相干积分（无 cycle slip）"
+    source_claim: >
+      "This agility enables quantum-limited sensitivity in sensing applications as the programmable comb can be
+      configured to coherently track weak returning pulse trains at the shot-noise limit."
+
+metrics:
+  - id: met.tpfc_ranging_precision_c22
+    name: "TPFC 测距精度地板"
+    unit: "m"
+    description: "TPFC 双梳测距系统的精度地板（散粒噪声限制）"
+    demonstrated_value:
+      value: "0.7 nm（4.8 as 飞行时间）"
+      conditions: "TPFC 追踪双梳测距系统"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "YD2MQC49", claim: "a precision floor of 0.7 nm (4.8 as in time of flight) in ranging"}
+    historical_landmarks:
+      first_demonstration:
+        value: "0.7 nm（量子限制测距首次实现，2022）"
+        year: 2022
+        source: {zotero_key: "YD2MQC49"}
+        note: "首次双梳测距达到散粒噪声极限"
+
+  - id: met.tpfc_photon_per_pulse_c22
+    name: "TPFC 最低平均光子数 / 脉冲（测距可检测）"
+    unit: "(dimensionless)"
+    description: "TPFC 追踪双梳测距可检测的最低平均光子数 / 脉冲"
+    demonstrated_value:
+      value: "1/77（接近量子极限 2×）"
+      conditions: "TPFC 追踪双梳测距"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "YD2MQC49", claim: "a mean photon per pulse number of 1/77 at a sensitivity within a factor of two of the quantum limit"}
+
+relations:
+  - id: rel.Cal22_01
+    subject: ent.tpfc_quantum_limited_ranging_c22
+    predicate: PART-OF
+    object: ent.optical_frequency_comb
+    confidence: established
+    source: {zotero_key: "YD2MQC49", claim: "self-referenced optical frequency comb"}
+    note: "跨文件引用 ent.optical_frequency_comb（定义于 giunta2019.yaml）"
+
+  - id: rel.Cal22_02
+    subject: ent.tpfc_quantum_limited_ranging_c22
+    predicate: CHARACTERIZED-BY
+    object: met.tpfc_ranging_precision_c22
+    confidence: established
+    source: {zotero_key: "YD2MQC49", claim: "0.7 nm"}
+
+  - id: rel.Cal22_03
+    subject: ent.tpfc_quantum_limited_ranging_c22
+    predicate: CHARACTERIZED-BY
+    object: met.tpfc_photon_per_pulse_c22
+    confidence: established
+    source: {zotero_key: "YD2MQC49", claim: "1/77"}
+
+  - id: rel.Cal22_04
+    subject: met.tpfc_ranging_precision_c22
+    predicate: BOUNDED-BY
+    object: pri.tpfc_tracking_oscillator_quantum_limit_c22
+    confidence: established
+    source: {zotero_key: "YD2MQC49", claim: "quantum-limited sensitivity"}
+    breakthrough_paths:
+      - direction: pri.tpfc_digital_coherent_pulse_control_c22
+        expected_gain: "TPFC 实时控制 → 追踪振荡器模式 → 散粒噪声极限"
+        status: demonstrated
+        source: {zotero_key: "YD2MQC49"}
+
+  - id: rel.Cal22_05
+    subject: pri.tpfc_tracking_oscillator_quantum_limit_c22
+    predicate: ENABLED-BY
+    object: pri.tpfc_digital_coherent_pulse_control_c22
+    confidence: established
+    source: {zotero_key: "YD2MQC49", claim: "real-time coherent control of the comb's pulse train output"}

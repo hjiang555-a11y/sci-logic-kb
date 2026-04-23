@@ -1,0 +1,70 @@
+# Rao 2022 — 多支路 Er 光纤梳用于光腔衰荡光谱（中国国家授时中心 NTSC）
+# 提取者：GitHub Copilot（AI草稿，2026-04-22）
+# 提取日期：2026-04-22
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
+# contribution_type: evidence（多支路光纤梳 CRDS 应用演示，未刷新跨平台技术指标）
+
+meta:
+  zotero_key: "ZSWYS26E"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Multi-branch erbium fiber-based femtosecond optical frequency comb for measurement of cavity ring-down spectroscopy"
+  year: 2022
+  first_author: Rao
+  journal: "Acta Physica Sinica"
+  volume: 71
+  issue: 8
+  pages: "084203"
+  doi: "10.7498/aps.71.20212162"
+  note: >
+    [技术论文] 中国科学院国家授时中心（National Time Service Center, NTSC）。多支路 Er 光纤梳用于光腔衰荡光谱（CRDS）：
+    (1) "9"字型全保偏 Er:fiber 锁模激光器（基于 NALM 非线性放大环形镜机制）→ 1500-1600 nm 直接输出；
+    (2) frep / fceo 双锁至外参考（自制 PLL）：稳定度 5.85×10⁻¹³（frep）、4.95×10⁻¹⁸（fceo）@ 1 s；
+    (3) 8 支路光谱扩展（啁啾放大 + 非线性展宽）→ 8 个目标波长（1064, 1083, 1240, 1380, 1500, 1600, 1750, 2100 nm），
+        各波长单模功率 > 300 nW（满足 CRDS 需求）；
+    (4) 应用：CO / CH₄ 等分子吸收光谱测量（CRDS 技术）。
+    本工作是多支路光纤梳 CRDS 应用演示（8 波长并行输出），未刷新跨平台技术指标，归 evidence。
+    对齐 v2 子域主线：B-Spectro（频率梳光谱学应用）。
+
+entities:
+  - id: ent.multi_branch_er_comb_crds_r22
+    name: "多支路 Er 光纤梳 CRDS 系统（Rao 2022, NTSC）"
+    aliases:
+      - Multi-branch Er:fiber comb for CRDS (NTSC 2022)
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      "9"字型全保偏 Er:fiber 锁模激光器（NALM 机制）→ 1500-1600 nm 直接输出；
+      frep / fceo 双锁至外参考（自制 PLL）→ 稳定度 5.85×10⁻¹³ / 4.95×10⁻¹⁸ @ 1 s；
+      8 支路光谱扩展（啁啾放大 + 非线性展宽）→ 8 个目标波长（1064, 1083, 1240, 1380, 1500, 1600, 1750, 2100 nm），
+      各波长单模功率 > 300 nW（满足 CRDS 需求）；
+      应用：CO / CH₄ 等分子吸收光谱测量（CRDS）。
+    key_parameters:
+      mode_locking_mechanism: "NALM（非线性放大环形镜）"
+      direct_output_spectrum: "1500-1600 nm"
+      frep_stability: "5.85×10⁻¹³ @ 1 s"
+      fceo_stability: "4.95×10⁻¹⁸ @ 1 s"
+      branches: "8（目标波长：1064, 1083, 1240, 1380, 1500, 1600, 1750, 2100 nm）"
+      power_per_mode: "> 300 nW（各目标波长）"
+      application: "光腔衰荡光谱（CRDS）测量 CO / CH₄"
+    note: "Level 2 实例节点，PART-OF ent.er_fiber_frequency_comb（定义于 droste2016.yaml）"
+
+relations:
+  - id: rel.Rao22_01
+    subject: ent.multi_branch_er_comb_crds_r22
+    predicate: PART-OF
+    object: ent.er_fiber_frequency_comb
+    confidence: established
+    source: {zotero_key: "ZSWYS26E", claim: "掺铒光纤飞秒光梳"}
+    note: "跨文件引用 ent.er_fiber_frequency_comb（定义于 droste2016.yaml）"
+
+  - id: rel.Rao22_02
+    subject: ent.multi_branch_er_comb_crds_r22
+    predicate: ENABLED-BY
+    object: meth.cavity_enhanced_dcs
+    confidence: moderate
+    source: {zotero_key: "ZSWYS26E", claim: "光腔衰荡光谱技术 (CRDS)"}
+    note: "CRDS 是 cavity-enhanced spectroscopy 的一种，跨文件引用 meth.cavity_enhanced_dcs（定义于 picque2019.yaml）"

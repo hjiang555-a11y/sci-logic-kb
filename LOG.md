@@ -7,6 +7,42 @@
 
 ---
 
+## [2026-04-23] ingest | optical-frequency-combs Batch 4 · `/pdfs` 增量（11 篇：3 breakthrough + 8 evidence）
+
+承接 Batch 2+3 后，对 `/pdfs/` 中新增的 13 个 PDF 进行处理。去重后 **11 篇新入库**（光频梳 90 → 101）：
+
+- **跳过（zotero 备份键，同 DOI 已在库）**：
+  - `8NE7UAUR`（Leopardi 2017 Optica，DOI `10.1364/OPTICA.4.000879`）→ 已有 `leopardi2017.yaml`（zotero `8XUFRL4K`）
+  - `LB6RJ2MZ`（Picqué & Hänsch 2019 Nat Photon，DOI `10.1038/s41566-018-0347-5`）→ 已有 `picque2019.yaml`（zotero `RZME5CH8`；另一备份键 `BL4HI3QI` 已在 Batch 3 记录）
+
+- **Breakthrough 档（3 篇 · 里程碑 / 范式转移）**：
+  - `holzwarth2000.yaml`（ZNCBFZR5，PRL 2000）：首台 PCF 八度自参考飞秒梳作为光频合成器，5.1×10⁻¹⁶ 不确定度——**现代 OFC 诞生标志**（landmark consensus）。
+  - `koke2019.yaml`（ZG45BBYV，NJP 2019）：Brillouin 光纤放大 + 中继激光站 1400 km 相干光频传递，(-1.1±0.4)×10⁻²⁰——**首次 Continental-scale 光纤链路**。
+  - `caldwell2022.yaml`（YD2MQC49，Nature 2022）：时间可编程梳（TPFC）+ 量子极限测距，5000× 功率降低达成 1/77 光子/脉冲测距——**"固定梳 → 可编程梳"范式转移**。
+  - 3 篇均 `primary_metric_exempt_reason: new_principle/new_method/landmark_consensus`（σ_y 主线不适用）。
+
+- **Evidence 档（8 篇）**：
+  - `millo2009b.yaml`（WHNQC4FV，APL 2009）：光纤梳光生微波驱动 Cs 喷泉钟（3×10⁻¹⁵ @ 1-10 s），与 Ti:sapph 梳等效——与 USL 专题 `millo2009.yaml`（PRA 2009 振动不敏感腔）是**同一作者不同论文**，以 `b` 后缀区分。
+  - `inaba2013.yaml`（Y7KZ89LA，Opt Express 2013）：窄线宽梳将 1064 nm USL 线宽传递至 578 nm 从激光，观测 ¹⁷¹Yb 钟跃迁 20 Hz 线宽（AIST/NMIJ）。
+  - `carlson2017.yaml`（WCBMETLH，Opt Lett 2017）：SiN 波导低功率 f-2f 自参考（11.3 mW 入射，10× 低于 HNLF），兼容 f-3f 自参考。
+  - `cossel2017.yaml`（XHCB4X6R，Optica 2017）：开放路径双梳光谱至飞行器反射镜（CO₂/CH₄/H₂O 大气剖面）。
+  - `manurkar2018.yaml`（XZTNQ8D4，OSA Continuum 2018）：全自参考梳仅 5 W 电功耗（光纤电阻调制器 + SiN 波导，CubeSat 级预算）。
+  - `shaw2019.yaml`（ZN7TS37H，OSA Continuum 2019）：Red Pitaya FPGA 开源数字伺服锁定梳（~0.1 rad 相位噪声，>30 h 无循环滑动，低成本普及化）。
+  - `luo2020.yaml`（X6KNIXMW，Opt Express 2020）：130 W 180 fs Yb:fiber 三级 CPA + grism 压缩（ECNU）。
+  - `rao2022.yaml`（ZSWYS26E，物理学报 2022）：8 支路 Er 光纤梳用于 CRDS 多波长并行光谱（国家授时中心）。
+
+- **节点新增**：5 个新 principles（`pri.sin_waveguide_low_power_f2f_c17`、`pri.fiber_resistive_modulator_frep_tuning_m18`、`pri.tpfc_digital_coherent_pulse_control_c22` meta-tier、`pri.tpfc_tracking_oscillator_quantum_limit_c22`、`pri.brillouin_amplification_long_distance_k19`）。其余均复用已有 `pri.*` / `meth.*` / `ent.*`。
+
+- **健康指标（刷新）**：`python scripts/lint.py --summary` → **0 error / 3 warning / 192 info**（baseline 为 3 warning / 188 info，Δ = +4 info，3 warning 不变均属 pre-existing `missing-conditions`）。`python scripts/stats.py`：Reasoning Chain Closure 76.0%，breakthrough-only **100%**，Evidence Coverage **100%**，σ_y Linkage (USL) **100%**，Limit Resolution Rate **100%**。
+
+- **运维文件同步**：
+  - `PROCESSED_PAPERS.md` 添加 11 行新条目 + Batch 4 备注
+  - `TOPICS.md` 光频梳计数 90 → 101
+  - `TODO.md` 阶段 D 快照与第一梯队段落同步更新
+  - `INDEX.md` / `INDEX_metrics.md` / `INDEX_principles.md` / `docs/CURRENT_NODES_REFERENCE.md` / 各专题 `INDEX.md` 由 `scripts/build_index.py` 自动重建（总计 **181 篇 · 981 节点 · 1128 关系**）
+
+---
+
 ## [2026-04-22] restructure | 现状评估 + TODO/说明文档状态对齐
 
 - 基于 `lint.py --summary` / `stats.py` / `freshness.py --check` 刷新当前基线：170 篇论文、0 error / 3 warning / 188 info、Reasoning Chain Closure 76.6%、Synthesis Coverage 1/4、Cross-file Reuse 8.7%、超稳激光 8 个 synthesis 页面 stale。

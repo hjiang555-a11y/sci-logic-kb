@@ -1,0 +1,114 @@
+# Carlson 2017 — SiN 波导低功率自参考梳（NIST）
+# 提取者：GitHub Copilot（AI草稿，2026-04-22）
+# 提取日期：2026-04-22
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
+# contribution_type: evidence（低功率 11.3 mW 实现自参考，10× 功率降低，未刷新跨平台纪录）
+
+meta:
+  zotero_key: "WCBMETLH"
+  topic: optical-frequency-combs
+  source_type: technical_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Self-referenced frequency combs using high-efficiency silicon-nitride waveguides"
+  year: 2017
+  first_author: Carlson
+  journal: "Optics Letters"
+  volume: 42
+  issue: 12
+  pages: "2314-2317"
+  doi: "10.1364/OL.42.002314"
+  note: >
+    [技术论文] NIST Boulder + U. Colorado. SiN 波导低功率自参考 Er 光纤梳：
+    (1) 利用 3400 nm 宽 SiN 波导（700 nm 厚，1 cm 长）实现超连续谱产生，入射光功率仅 11.3 mW（约为传统 HNLF 方案的 1/10）；
+    (2) 两种自参考方案：a) 780 nm 色散波 + 1560 nm 倍频混频（低功率 f-2f）；b) 更高功率下直接 f-3f（同时产生超连续谱与三次谐波，无需外部倍频晶体）；
+    (3) 低耦合损耗（< 2 dB）+ SiN 高非线性（110 pJ 脉冲能量即可产生两倍频程展宽）；
+    (4) 适用于便携式 / 空间应用（低功率预算）。
+    本工作是 SiN 波导 f-2f 方案的工程优化（降低功率门槛），未刷新跨平台自参考功率最低纪录（芯片平台已有更低功率方案），
+    归 evidence。对齐 v2 子域主线：A-WG（芯片波导非线性）、B-Space（低功率适合空间应用）。
+
+entities:
+  - id: ent.sin_waveguide_low_power_f2f_c17
+    name: "SiN 波导低功率 f-2f 自参考系统（Carlson 2017）"
+    aliases:
+      - SiN waveguide self-referencing comb (NIST 2017)
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      Er:fiber 频率梳（未明示 frep，~100-200 MHz 量级）+ SiN 波导超连续谱产生（3400 nm 宽、700 nm 厚、1 cm 长）
+      → 倍频程展宽至 780 nm 色散波 + 1560 nm 基频；
+      低功率方案（11.3 mW 入射芯片）实现 f-2f 自参考（外部 ppKTP 倍频 + 混频），
+      或更高功率下直接 f-3f（同时产生超连续谱与三次谐波）。
+    key_parameters:
+      incident_power: "11.3 mW（入射芯片）"
+      power_reduction: "~10× 相比传统 HNLF f-2f 方案"
+      waveguide_geometry: "SiN, 3400 nm 宽 × 700 nm 厚 × 1 cm 长"
+      coupling_loss: "< 2 dB（输入耦合）"
+      pulse_energy_threshold: "110 pJ（产生两倍频程展宽）"
+      f2f_method: "780 nm 色散波 + 1560 nm 倍频（ppKTP）混频 → fceo"
+      f3f_method: "同步超连续谱 + 三次谐波（直接从波导输出，无需外部晶体）"
+    note: "Level 2 实例节点，PART-OF ent.er_fiber_frequency_comb（定义于 droste2016.yaml）"
+
+principles:
+  - id: pri.sin_waveguide_low_power_f2f_c17
+    name: "SiN 波导低功率 f-2f 自参考原理（Carlson 2017）"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      SiN 波导的高非线性（χ³ + 零色散波长可调）+ 紧约束波导几何（~µm 级模场直径）使脉冲能量门槛降低 10×
+      相比 HNLF：110 pJ 即可产生两倍频程展宽（覆盖 780 nm → 1560 nm）。
+      780 nm 色散波（蓝移端）与 1560 nm 基频（红端）倍频后（ppKTP）混频产生 fceo 拍频，
+      避免了高功率 EDFA 放大需求——对便携式 / 空间应用关键（电功率预算 < 5 W）。
+    domain: "集成光子学；非线性光学"
+    key_insight: >
+      "SiN 波导的低损耗（< 2 dB 耦合）+ 高非线性使自参考功率降至 11.3 mW，
+      这是光纤梳迈向芯片级集成的关键——无需 EDFA，仅振荡器 + 波导即可完成 f-2f"——
+      对电光梳、微梳等低功率系统自参考路径的开拓。
+    conditions: "SiN 波导（~3 µm 宽，700 nm 厚）；Er:fiber 梳（~100-200 MHz frep）；入射功率 > 11 mW"
+    source_claim: >
+      "This is approximately 10 times lower than conventional approaches using nonlinear fibers and
+      is enabled by low-loss (<2 dB) input coupling and the high nonlinearity of silicon nitride."
+
+metrics:
+  - id: met.sin_waveguide_f2f_power_c17
+    name: "SiN 波导 f-2f 自参考入射功率"
+    unit: "W"
+    description: "实现倍频程展宽 + f-2f 自参考所需的芯片入射光功率"
+    demonstrated_value:
+      value: "11.3 mW（入射芯片）"
+      conditions: "SiN 波导（3400 nm 宽 × 700 nm 厚 × 1 cm 长）+ Er:fiber 梳（~100-200 MHz）"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "WCBMETLH", claim: "using 11.3 mW of optical power incident on the chip. This is approximately 10 times lower than conventional approaches"}
+
+relations:
+  - id: rel.Car17_01
+    subject: ent.sin_waveguide_low_power_f2f_c17
+    predicate: PART-OF
+    object: ent.er_fiber_frequency_comb
+    confidence: established
+    source: {zotero_key: "WCBMETLH", claim: "telecom-wavelength fiber frequency comb"}
+    note: "跨文件引用 ent.er_fiber_frequency_comb（定义于 droste2016.yaml）"
+
+  - id: rel.Car17_02
+    subject: ent.sin_waveguide_low_power_f2f_c17
+    predicate: CHARACTERIZED-BY
+    object: met.sin_waveguide_f2f_power_c17
+    confidence: established
+    source: {zotero_key: "WCBMETLH", claim: "11.3 mW of optical power incident on the chip"}
+
+  - id: rel.Car17_03
+    subject: met.sin_waveguide_f2f_power_c17
+    predicate: BOUNDED-BY
+    object: pri.sin_waveguide_low_power_f2f_c17
+    confidence: established
+    source: {zotero_key: "WCBMETLH", claim: "high nonlinearity of silicon nitride, which can provide two octaves of spectral broadening with incident energies of only 110 pJ"}
+
+  - id: rel.Car17_04
+    subject: pri.sin_waveguide_low_power_f2f_c17
+    predicate: ENABLED-BY
+    object: pri.self_referencing_f2f
+    confidence: established
+    source: {zotero_key: "WCBMETLH", claim: "self-referencing is accomplished by mixing 780-nm dispersive-wave light with the frequency-doubled output"}
+    note: "跨文件引用 pri.self_referencing_f2f（定义于 giunta2019.yaml）"

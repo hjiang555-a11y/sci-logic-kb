@@ -2,13 +2,14 @@
 
 # Optical Frequency Combs — Topic Index
 
-> Auto-generated 2026-04-22 08:51 UTC · 90 papers · 600 nodes · 735 relations
+> Auto-generated 2026-04-23 00:09 UTC · 101 papers · 628 nodes · 770 relations
 
 ## Entities
 
 | ID | Name | Level | Source |
 |----|------|------:|--------|
 | `ent.air_silica_microstructure_fiber_d00` | 空气-石英微结构光纤（PCF / air-silica microstructure fiber） | 3 | [diddams2000](topics/optical-frequency-combs/papers/diddams2000.yaml) |
+| `ent.airborne_retroreflector_dcs_c17` | 飞行器挂载反射镜开放路径 DCS 系统（Cossel 2017, NIST） | 2 | [cossel2017](topics/optical-frequency-combs/papers/cossel2017.yaml) |
 | `ent.algaasoi_dark_pulse_microcomb_s22` | AlGaAsOI 暗脉冲 Kerr 微梳源（Shu 2022 系统） | 2 | [shu2022](topics/optical-frequency-combs/papers/shu2022.yaml) |
 | `ent.all_fiber_2um_comb_x20` | 全光纤 2 µm 飞秒频率梳系统（Xing 2020） | 2 | [xing2020](topics/optical-frequency-combs/papers/xing2020.yaml) |
 | `ent.all_pm_er_fiber_comb_k15` | 全保偏 Er 光纤超低相噪梳（Kuse 2015） | 2 | [kuse2015](topics/optical-frequency-combs/papers/kuse2015.yaml) |
@@ -19,6 +20,7 @@
 | `ent.attosecond_erfiber_comb_y15` | 阿秒分辨 Er:fiber 光频梳（Yan 2015，NTSC 系统） | 2 | [yan2015](topics/optical-frequency-combs/papers/yan2015.yaml) |
 | `ent.battery_operated_microcomb_s18` | 电池供电全集成 III–V/Si3N4 Kerr 微梳源（Stern 2018） | 2 | [stern2018](topics/optical-frequency-combs/papers/stern2018.yaml) |
 | `ent.bistatic_two_way_optical_link_h24` | 双站双向自由空间光链路（400 mm 望远镜 + 信标对准） | 3 | [han2024](topics/optical-frequency-combs/papers/han2024.yaml) |
+| `ent.brillouin_rls_1400km_link_k19` | Brillouin 放大 + 中继站 1400 km 光纤频率传递链路（Koke 2019, PTB） | 2 | [koke2019](topics/optical-frequency-combs/papers/koke2019.yaml) |
 | `ent.broadband_1ghz_mir_comb_h22` | 1 GHz 宽带中红外光频梳（Hoghooghi 2022） | 2 | [hoghooghi2022](topics/optical-frequency-combs/papers/hoghooghi2022.yaml) |
 | `ent.bulk_wgm_resonator_platform` | 体材料耳语回廊模（WGM）微谐振器平台 | 1 | [pasquazi2018](topics/optical-frequency-combs/papers/pasquazi2018.yaml) |
 | `ent.cavity_enhanced_yb_comb_h07` | 腔增强型 Yb 光纤频率梳系统（Hartl 2007） | 2 | [hartl2007](topics/optical-frequency-combs/papers/hartl2007.yaml) |
@@ -49,11 +51,15 @@
 | `ent.er_fiber_intracavity_eom_comb_z15` | Er:fiber 腔内 EOM 稳频梳（Zhang 2015） | 2 | [zhang2015](topics/optical-frequency-combs/papers/zhang2015.yaml) |
 | `ent.er_yb_glass_comb_nardelli23` | Er/Yb:glass 500 MHz 频率梳（Nardelli 2023） | 2 | [nardelli2023](topics/optical-frequency-combs/papers/nardelli2023.yaml) |
 | `ent.erfiber_comb_li_d1_r19` | 面向 Li D1 线测量的 Er:fiber 飞秒光纤光梳系统（Rao 2019） | 2 | [rao2019](topics/optical-frequency-combs/papers/rao2019.yaml) |
+| `ent.fiber_comb_linewidth_transfer_yb_clock_i13` | 光纤梳线宽转移驱动 171Yb 光钟系统（Inaba 2013, AIST） | 2 | [inaba2013](topics/optical-frequency-combs/papers/inaba2013.yaml) |
+| `ent.fiber_comb_microwave_cs_fountain_m09b` | 光纤梳光生微波驱动 Cs 喷泉钟系统（Millo 2009b） | 2 | [millo2009b](topics/optical-frequency-combs/papers/millo2009b.yaml) |
 | `ent.field_deployed_dcs_c18` | 野外部署双梳光谱仪系统（Coburn 2018） | 1 | [coburn2018](topics/optical-frequency-combs/papers/coburn2018.yaml) |
 | `ent.filter_driven_fwm_laser` | 滤波驱动四波混频激光器（FD-FWM laser） | 2 | [pasquazi2018](topics/optical-frequency-combs/papers/pasquazi2018.yaml) |
 | `ent.filtered_tisa_astrocomb_y12` | FP 滤波 Ti:Sa 天文光梳（传统方案） | 2 | [suh2019](topics/optical-frequency-combs/papers/suh2019.yaml) |
+| `ent.first_pcf_octave_self_ref_comb_h00` | 首台 PCF 倍频程自参考梳（Holzwarth 2000, MPQ） | 2 | [holzwarth2000](topics/optical-frequency-combs/papers/holzwarth2000.yaml) |
 | `ent.fndc_reference_cw_laser_1542nm_k18` | 1542 nm FNDC 参考 CW 激光（Kashiwagi 2018） | 3 | [kashiwagi2018](topics/optical-frequency-combs/papers/kashiwagi2018.yaml) |
 | `ent.fokus_ii_space_dual_comb_p21` | FOKUS II 空间双光梳系统（Pröbster 2021） | 2 | [probster2021](topics/optical-frequency-combs/papers/probster2021.yaml) |
+| `ent.fpga_digital_servo_er_comb_s19` | FPGA 数字伺服 Er:fiber 梳系统（Shaw 2019, NIST） | 2 | [shaw2019](topics/optical-frequency-combs/papers/shaw2019.yaml) |
 | `ent.ftir_spectrometer` | 傅里叶变换红外光谱仪 | 1 | [coddington2016](topics/optical-frequency-combs/papers/coddington2016.yaml) |
 | `ent.ghz_turnkey_erfiber_comb_l20` | 1 GHz 交钥匙 Er:fiber 光频梳系统（Lesko 2020，1.56 µm） | 2 | [lesko2020](topics/optical-frequency-combs/papers/lesko2020.yaml) |
 | `ent.graphene_modulator_comb_kuse15` | 石墨烯腔内电光调制器（Kuse 2015，用于 Er:fiber 梳） | 3 | [kuse2015](topics/optical-frequency-combs/papers/kuse2015.yaml) |
@@ -76,6 +82,7 @@
 | `ent.line_referenced_eo_comb_y16` | 分子/原子线锁定 EO 调制天文光梳（Yi 2016） | 2 | [yi2016](topics/optical-frequency-combs/papers/yi2016.yaml) |
 | `ent.long_path_dcs_h24` | 113 km 开放大气双站双向双梳光谱系统（Han 2024） | 2 | [han2024](topics/optical-frequency-combs/papers/han2024.yaml) |
 | `ent.low_latency_digital_servo_w25` | 低延迟 FPGA 数字伺服板（Wang 2025） | 2 | [wang2025](topics/optical-frequency-combs/papers/wang2025.yaml) |
+| `ent.low_power_5w_self_ref_comb_m18` | 5 W 全自参考频率梳（Manurkar 2018, NIST） | 2 | [manurkar2018](topics/optical-frequency-combs/papers/manurkar2018.yaml) |
 | `ent.menlo_erfiber_eom_comb_z12` | Menlo 商用掺铒光纤梳 + 自由空间 EOM（Zhang 2012 表征系统） | 2 | [zhang2012c](topics/optical-frequency-combs/papers/zhang2012c.yaml) |
 | `ent.microcomb_driven_siph_system_s22` | 微梳驱动 CMOS 硅光集成系统（Shu 2022 完整链路） | 2 | [shu2022](topics/optical-frequency-combs/papers/shu2022.yaml) |
 | `ent.microresonator_astrocomb_s19` | 微谐振腔天文光梳系统（Suh 2019 @ Keck II/NIRSPEC） | 2 | [suh2019](topics/optical-frequency-combs/papers/suh2019.yaml) |
@@ -85,6 +92,7 @@
 | `ent.monolithic_erglass_comb_e18` | 整体式 Er:glass OFC（Endo 2018） | 1 | [endo2018](topics/optical-frequency-combs/papers/endo2018.yaml) |
 | `ent.monolithic_modelocked_laser_comb_k22` | 单片锁模激光光频梳（Kalubovilage 2022，8 GHz X 波段光微波源） | 2 | [kalubovilage2022](topics/optical-frequency-combs/papers/kalubovilage2022.yaml) |
 | `ent.monolithic_sesam_graphene_device_l15` | 整体式 SESAM+graphene EOM 器件（Lee 2015） | 2 | [lee2015](topics/optical-frequency-combs/papers/lee2015.yaml) |
+| `ent.multi_branch_er_comb_crds_r22` | 多支路 Er 光纤梳 CRDS 系统（Rao 2022, NTSC） | 2 | [rao2022](topics/optical-frequency-combs/papers/rao2022.yaml) |
 | `ent.multi_branch_fiber_comb_k18` | 多分支 Er 光纤梳（NMIJ Kashiwagi 2018，FNDC 增强） | 2 | [kashiwagi2018](topics/optical-frequency-combs/papers/kashiwagi2018.yaml) |
 | `ent.multi_branch_supercontinuum_z22b` | 多支路 CPA + PM-HNLF 超连续/频率扩展模块 | 3 | [zhang2022b](topics/optical-frequency-combs/papers/zhang2022b.yaml) |
 | `ent.nalm_unit_z17` | 非线性放大环镜（NALM）子模块 | 3 | [zhang2017](topics/optical-frequency-combs/papers/zhang2017.yaml) |
@@ -124,6 +132,7 @@
 | `ent.silica_microtoroid_comb` | 二氧化硅微环形腔频率梳 | 2 | [kippenberg2011](topics/optical-frequency-combs/papers/kippenberg2011.yaml) |
 | `ent.silica_wedge_microresonator_s19` | 3 mm 硅基二氧化硅 wedge 微腔（Suh 2019） | 3 | [suh2019](topics/optical-frequency-combs/papers/suh2019.yaml) |
 | `ent.sin_nanophotonic_waveguide_m19` | 氮化硅纳米光子非线性波导（HPF 梳展宽段） | 3 | [metcalf2019](topics/optical-frequency-combs/papers/metcalf2019.yaml) |
+| `ent.sin_waveguide_low_power_f2f_c17` | SiN 波导低功率 f-2f 自参考系统（Carlson 2017） | 2 | [carlson2017](topics/optical-frequency-combs/papers/carlson2017.yaml) |
 | `ent.sind_mi_kerr_comb_c18` | SiN:D 微环 MI Kerr 微梳（Chiles 2018，1 THz FSR，900 nm 带宽） | 3 | [chiles2018](topics/optical-frequency-combs/papers/chiles2018.yaml) |
 | `ent.single_branch_erfiber_comb_l17` | 单分支 Er:fiber 光频梳（Leopardi 2017） | 2 | [leopardi2017](topics/optical-frequency-combs/papers/leopardi2017.yaml) |
 | `ent.single_ion_comb_spectrometer_c20` | 单分子离子 + 飞秒梳 Raman 光谱仪（Chou 2020 系统） | 2 | [chou2020](topics/optical-frequency-combs/papers/chou2020.yaml) |
@@ -133,6 +142,7 @@
 | `ent.tf_lin_uv_vis_comb_w24` | 薄膜铌酸锂纳米波导 UV-VIS 梳（Wu 2024） | 2 | [wu2024](topics/optical-frequency-combs/papers/wu2024.yaml) |
 | `ent.ti_sapph_10ghz_comb_bartels09` | 10 GHz 自参考 Ti:sapph 频率梳（Bartels 2009） | 2 | [bartels2009](topics/optical-frequency-combs/papers/bartels2009.yaml) |
 | `ent.ti_sapphire_frequency_comb` | 钛宝石飞秒频率梳 | 2 | [udem2002](topics/optical-frequency-combs/papers/udem2002.yaml) |
+| `ent.tpfc_quantum_limited_ranging_c22` | 时间可编程频率梳（TPFC）量子限制测距系统（Caldwell 2022, NIST） | 2 | [caldwell2022](topics/optical-frequency-combs/papers/caldwell2022.yaml) |
 | `ent.tunable_vuv_comb_z22` | 可调谐 VUV 光频梳（Zhang 2022，229mTh 核光谱） | 2 | [zhang2022](topics/optical-frequency-combs/papers/zhang2022.yaml) |
 | `ent.two_way_comb_timing_link_c20` | 两向梳定时抖动测量链路（Caldwell 2020 系统） | 2 | [caldwell2020](topics/optical-frequency-combs/papers/caldwell2020.yaml) |
 | `ent.ultra_low_noise_fiber_comb_g20` | 超低噪声掺铒光纤频率梳系统（Giunta 2020） | 1 | [giunta2020](topics/optical-frequency-combs/papers/giunta2020.yaml) |
@@ -142,6 +152,7 @@
 | `ent.vipa_resolved_mode_comb_spectrometer_d07` | VIPA 分辨梳模式光谱仪（Diddams 2007） | 2 | [diddams2007](topics/optical-frequency-combs/papers/diddams2007.yaml) |
 | `ent.yb_fiber_500mhz_comb_wang14` | 500 MHz Yb:ring 光纤梳（无放大，Wang 2014） | 2 | [wang2014](topics/optical-frequency-combs/papers/wang2014.yaml) |
 | `ent.yb_fiber_750mhz_comb_m18` | 750 MHz Yb:fiber 紧锁梳（Ma 2018） | 2 | [ma2018](topics/optical-frequency-combs/papers/ma2018.yaml) |
+| `ent.yb_fiber_comb_130w_cpa_l20` | 130 W Yb 光纤梳 CPA 系统（Luo 2020, ECNU） | 2 | [luo2020](topics/optical-frequency-combs/papers/luo2020.yaml) |
 | `ent.yb_kyw_fs_comb_meyer13` | 光学稳频 Yb:KYW 飞秒频率梳（Meyer 2013） | 2 | [meyer2013](topics/optical-frequency-combs/papers/meyer2013.yaml) |
 | `ent.yb_similariton_cpa_h07` | Yb 光纤相似子振荡器 + CPA 放大器（Hartl 2007） | 3 | [hartl2007](topics/optical-frequency-combs/papers/hartl2007.yaml) |
 
@@ -156,6 +167,7 @@
 | `pri.amplifier_residual_phase_noise_limit` | 微波放大器残余相位噪声限制原理（光微波链路远载波本底） | engineering | [portuondo-campa2015](topics/optical-frequency-combs/papers/portuondo-campa2015.yaml) |
 | `pri.bandwidth_power_tradeoff_long_path_comb` | 长程 DCS 高功率-大带宽权衡原理 | engineering | [han2024](topics/optical-frequency-combs/papers/han2024.yaml) |
 | `pri.bistatic_two_way_dcs_geometry` | 双站双向双梳协议：单程大气穿越+干涉图内嵌时频比对 | engineering | [han2024](topics/optical-frequency-combs/papers/han2024.yaml) |
+| `pri.brillouin_amplification_long_distance_k19` | Brillouin 放大长距离光纤频率传递原理（Koke 2019） | domain | [koke2019](topics/optical-frequency-combs/papers/koke2019.yaml) |
 | `pri.buffer_gas_cooling_spectral_simplification_s16` | 缓冲气体冷却简化复杂分子光谱原理（Spaun 2016） | domain | [spaun2016](topics/optical-frequency-combs/papers/spaun2016.yaml) |
 | `pri.cams_fceo_demodulation` | f_CEO 自然载波 + 锁相解调 CEP 信号原理（CAMS） | engineering | [lesko2022](topics/optical-frequency-combs/papers/lesko2022.yaml) |
 | `pri.cavity_enhanced_comb_spectroscopy` | 腔增强频率梳光谱原理 | domain | [picque2019](topics/optical-frequency-combs/papers/picque2019.yaml) |
@@ -200,6 +212,7 @@
 | `pri.fiber_comb_mimo_feedback_topology` | 光纤梳多自由度反馈拓扑设计原理 | engineering | [newbury2005](topics/optical-frequency-combs/papers/newbury2005.yaml) |
 | `pri.fiber_comb_perturbative_response_theory` | 光纤梳 f_r/f_CEO 对腔参量扰动的微扰响应理论 | domain | [newbury2005](topics/optical-frequency-combs/papers/newbury2005.yaml) |
 | `pri.fiber_modal_noise_nir_rv_limit` | 多模光纤模态噪声对 NIR RV 精度的限制原理 | engineering | [metcalf2019](topics/optical-frequency-combs/papers/metcalf2019.yaml) |
+| `pri.fiber_resistive_modulator_frep_tuning_m18` | 光纤电阻调制器 frep 调谐原理（Manurkar 2018） | engineering | [manurkar2018](topics/optical-frequency-combs/papers/manurkar2018.yaml) |
 | `pri.figure9_nalm_pm_self_starting` | figure-9 NALM + 全保偏 + 非互易 π/2 偏置自启动原理 | engineering | [zhang2022b](topics/optical-frequency-combs/papers/zhang2022b.yaml) |
 | `pri.folded_path_turbulence_correlation_c20` | 折返路径湍流扰动完全相关 → 方差 ×4 | engineering | [caldwell2020](topics/optical-frequency-combs/papers/caldwell2020.yaml) |
 | `pri.frequency_ratio_measurement` | 光学频率比测量原理（无需 SI 秒定义） | domain | [giunta2019](topics/optical-frequency-combs/papers/giunta2019.yaml) |
@@ -304,6 +317,7 @@
 | `pri.shg_sfm_combined_astrocomb_continuous_coverage_c24` | SHG + SFM 组合实现天文光梳连续覆盖原理（Cheng 2024） | domain | [cheng2024](topics/optical-frequency-combs/papers/cheng2024.yaml) |
 | `pri.simultaneous_narrow_broad_voc_retrieval` | 窄线小分子 + 宽带大分子同步反演原理 | engineering | [ycas2019](topics/optical-frequency-combs/papers/ycas2019.yaml) |
 | `pri.sin_low_loss_extended_cavity_low_rep_rate` | SiN 低损耗扩展腔降低集成 MLL 重频原理 | engineering | [cuyvers2021](topics/optical-frequency-combs/papers/cuyvers2021.yaml) |
+| `pri.sin_waveguide_low_power_f2f_c17` | SiN 波导低功率 f-2f 自参考原理（Carlson 2017） | engineering | [carlson2017](topics/optical-frequency-combs/papers/carlson2017.yaml) |
 | `pri.single_fiber_mechanical_actuator` | 单光纤机械执行器大范围调谐原理 | engineering | [cai2020](topics/optical-frequency-combs/papers/cai2020.yaml) |
 | `pri.solid_state_non_perturbative_hhg` | 低带隙固态非微扰高次谐波产生原理 | domain | [lesko2022](topics/optical-frequency-combs/papers/lesko2022.yaml) |
 | `pri.soliton_crystal_multistability` | 孤子晶体多稳态原理 | domain | [gaeta2019](topics/optical-frequency-combs/papers/gaeta2019.yaml) |
@@ -315,6 +329,8 @@
 | `pri.thermal_drift_out_of_loop_fiber_noise` | Out-of-loop 光纤热漂移限制原理 | engineering | [zhang2022b](topics/optical-frequency-combs/papers/zhang2022b.yaml) |
 | `pri.thermal_instability_dks_access` | 热效应限制 DKS 接入——微梳核心工程挑战 | domain | [pasquazi2018](topics/optical-frequency-combs/papers/pasquazi2018.yaml) |
 | `pri.thermo_optic_soliton_access_barrier` | 热光效应导致孤子区访问困难原理 | domain | [li2017](topics/optical-frequency-combs/papers/li2017.yaml) |
+| `pri.tpfc_digital_coherent_pulse_control_c22` | 时间可编程频率梳数字相干脉冲控制原理（Caldwell 2022） | meta | [caldwell2022](topics/optical-frequency-combs/papers/caldwell2022.yaml) |
+| `pri.tpfc_tracking_oscillator_quantum_limit_c22` | TPFC 追踪振荡器量子限制探测原理（Caldwell 2022） | domain | [caldwell2022](topics/optical-frequency-combs/papers/caldwell2022.yaml) |
 | `pri.transportable_cavity_reference_coupling` | 可移动腔稳激光作为光参考的接口原理 | engineering | [sinclair2014](topics/optical-frequency-combs/papers/sinclair2014.yaml) |
 | `pri.trap_rf_field_stark_systematic` | 阱 RF 电场诱导 Stark 移动系统误差原理 | engineering | [chou2020](topics/optical-frequency-combs/papers/chou2020.yaml) |
 | `pri.turbulence_speckle_freeze_dcs` | 双梳快速采集冻结湍流散斑原理 | domain | [han2024](topics/optical-frequency-combs/papers/han2024.yaml) |
@@ -333,6 +349,7 @@
 | `meth.astro_comb_rv_calibration` | 天文光梳径向速度校准方法 | [ycas2012](topics/optical-frequency-combs/papers/ycas2012.yaml) |
 | `meth.balanced_optical_microwave_phase_detector` | 平衡光-微波相位探测器（BOMPD） | [endo2018](topics/optical-frequency-combs/papers/endo2018.yaml) |
 | `meth.bistatic_two_way_dcs_protocol_h24` | 双站双向双梳光谱协议（含干涉图内嵌时频比对） | [han2024](topics/optical-frequency-combs/papers/han2024.yaml) |
+| `meth.brillouin_rls_hybrid_1400km_k19` | Brillouin 放大 + 中继站混合 1400 km 光纤链路方法（Koke 2019） | [koke2019](topics/optical-frequency-combs/papers/koke2019.yaml) |
 | `meth.bulk_eom_pzt_750mhz_yb_lock` | 体晶 EOM + 单级 PZT 在 750 MHz Yb:fiber 梳的紧锁方法 | [ma2018](topics/optical-frequency-combs/papers/ma2018.yaml) |
 | `meth.carrier_envelope_amplitude_modulation_spectroscopy` | 载波包络幅度调制光谱（CAMS）方法 | [lesko2022](topics/optical-frequency-combs/papers/lesko2022.yaml) |
 | `meth.cavity_enhanced_dcs` | 腔增强双梳光谱方法 | [picque2019](topics/optical-frequency-combs/papers/picque2019.yaml) |
@@ -361,6 +378,8 @@
 | `meth.eom_pzt_dual_actuator_frep_lock_z15` | 腔内 EOM + 腔内长程 PZT 双执行器 f_rep 锁定方法（Zhang 2015） | [zhang2015](topics/optical-frequency-combs/papers/zhang2015.yaml) |
 | `meth.eom_pzt_dual_actuator_frep_lock_z17` | EOM + PZT 双执行器梳齿锁定方法 | [zhang2017](topics/optical-frequency-combs/papers/zhang2017.yaml) |
 | `meth.er_fiber_comb_dual_actuator_stabilization` | Er:fiber 梳双执行器稳频方法（EOM + PZT + 泵浦） | [yan2015](topics/optical-frequency-combs/papers/yan2015.yaml) |
+| `meth.fiber_comb_linewidth_transfer_i13` | 光纤梳激光线宽转移方法（Inaba 2013） | [inaba2013](topics/optical-frequency-combs/papers/inaba2013.yaml) |
+| `meth.fiber_comb_locked_usl_microwave_m09b` | 光纤梳锁超稳激光光生微波方法（Millo 2009b） | [millo2009b](topics/optical-frequency-combs/papers/millo2009b.yaml) |
 | `meth.fiber_comb_transfer_function_identification` | 光纤梳传递函数实验辨识方法 | [newbury2005](topics/optical-frequency-combs/papers/newbury2005.yaml) |
 | `meth.fiber_noise_difference_cancellation_k18` | 分支间光纤噪声差分消除法（FNDC，Kashiwagi 2018） | [kashiwagi2018](topics/optical-frequency-combs/papers/kashiwagi2018.yaml) |
 | `meth.flight_operation_protocol_l16` | Sounding-rocket OFC flight operation protocol | [lezius2016](topics/optical-frequency-combs/papers/lezius2016.yaml) |
@@ -397,6 +416,7 @@
 | `meth.pump_current_feedback_fceo_lock` | 泵电流前馈/反馈 fceo 锁相方法（RIN 被动压制 + 快速伺服） | [mcferran2007](topics/optical-frequency-combs/papers/mcferran2007.yaml) |
 | `meth.pump_current_modulation_fceo_lock_z17` | 泵浦电流调制锁定 f_ceo 方法 | [zhang2017](topics/optical-frequency-combs/papers/zhang2017.yaml) |
 | `meth.pump_detuning_scan_dks` | 泵浦失谐扫描产生 DKS 方法 | [pasquazi2018](topics/optical-frequency-combs/papers/pasquazi2018.yaml) |
+| `meth.red_pitaya_fpga_comb_servo_s19` | Red Pitaya FPGA 梳数字伺服方法（Shaw 2019） | [shaw2019](topics/optical-frequency-combs/papers/shaw2019.yaml) |
 | `meth.rf_beatnote_comb_characterization` | RF beatnote / optical spectrum comb characterization | [wang2017](topics/optical-frequency-combs/papers/wang2017.yaml) |
 | `meth.ruggedized_fiber_comb_optical_lock_s14` | 现场化 PM 光纤梳光参考锁定方法（Sinclair 2014） | [sinclair2014](topics/optical-frequency-combs/papers/sinclair2014.yaml) |
 | `meth.scg_stitching_broadband_transfer` | 超连续谱拼接宽带频率传递方法 | [fermann2022](topics/optical-frequency-combs/papers/fermann2022.yaml) |
@@ -476,6 +496,7 @@
 | `met.astro_comb_rv_precision_y12` | 天文光梳径向速度校准精度 | ~10 m/s（~6 MHz @ 1.6 µm） | [ycas2012](topics/optical-frequency-combs/papers/ycas2012.yaml) |
 | `met.astrocomb_continuous_coverage_c24` | 天文光梳连续覆盖范围（Cheng 2024） | 390–520 nm（连续，无谱间隙） | [cheng2024](topics/optical-frequency-combs/papers/cheng2024.yaml) |
 | `met.average_power_2um_comb_x20` | 2 µm 梳平均输出功率 | 327 mW @100 MHz | [xing2020](topics/optical-frequency-combs/papers/xing2020.yaml) |
+| `met.brillouin_rls_1400km_frequency_offset_k19` | 1400 km Brillouin + RLS 链路频率偏移 | (-1.1±0.4)×10⁻²⁰ | [koke2019](topics/optical-frequency-combs/papers/koke2019.yaml) |
 | `met.cams_snr_l22` | CAMS 相位敏感谐波探测 SNR | 85 dB | [lesko2022](topics/optical-frequency-combs/papers/lesko2022.yaml) |
 | `met.channel_loss_dcs_h24` | DCS 信道总衰减（发射到接收光功率比） | 83 dB | [han2024](topics/optical-frequency-combs/papers/han2024.yaml) |
 | `met.chip_comb_system_power_g19` | 集成芯片梳系统电功耗 | <100 mW（RSOA + Si3N4 微梳 + 电池供电演示） | [gaeta2019](topics/optical-frequency-combs/papers/gaeta2019.yaml) |
@@ -525,7 +546,9 @@
 | `met.fceo_snr_r19` | fceo 信号信噪比（Rao 2019） | ~40 dB | [rao2019](topics/optical-frequency-combs/papers/rao2019.yaml) |
 | `met.fceo_snr_x20` | f_ceo 拍频信噪比（2 µm 倍频程自参考） | >30 dB SNR @300 kHz RBW；3 dB 线宽 ~5 kHz @1 kHz RBW | [xing2020](topics/optical-frequency-combs/papers/xing2020.yaml) |
 | `met.fceo_snr_z17` | 自由运行 f_ceo 信噪比与线宽 | SNR 35 dB @300 kHz RBW；线宽 ≤ 200 kHz | [zhang2017](topics/optical-frequency-combs/papers/zhang2017.yaml) |
+| `met.fiber_comb_microwave_stability_m09b` | 光纤梳光生微波稳定度 | ~3×10⁻¹⁵ @ 1-10 s（与 Ti:sapph / CSO 比对） | [millo2009b](topics/optical-frequency-combs/papers/millo2009b.yaml) |
 | `met.fiber_transferred_comb_stability_m12` | 光纤传递光频梳稳定度 | 光学模式 2×10⁻¹⁸ @ 数千秒；f_rep 模间距 4×10⁻¹⁷ @ 同尺度 | [marra2012](topics/optical-frequency-combs/papers/marra2012.yaml) |
+| `met.first_pcf_f2f_frequency_uncertainty_h00` | 首台 PCF 自参考梳频率不确定度 | 5.1×10⁻¹⁶ | [holzwarth2000](topics/optical-frequency-combs/papers/holzwarth2000.yaml) |
 | `met.fmcw_temporal_resolution_h24` | FMCW NLOS 时间分辨 | 652 fs（当前）；70 fs（宽带激光可达） | [huang2024](topics/optical-frequency-combs/papers/huang2024.yaml) |
 | `met.fractional_instability_inloop_m18` | 750 MHz Yb:fiber 梳 in-loop 分数频率不稳定度 @ 1 s | ~10⁻¹⁸ @ 1 s（in-loop） | [ma2018](topics/optical-frequency-combs/papers/ma2018.yaml) |
 | `met.fractional_stability_inloop_yb_pm_li17` | Yb:PM NALM 梳 in-loop 光学分数稳定度 @ 1 s | ~10⁻¹⁹ @ 1 s（in-loop, 尺度到 ν_opt） | [li2017b](topics/optical-frequency-combs/papers/li2017b.yaml) |
@@ -618,7 +641,9 @@
 | `met.rotational_constant_br_c20` | 40CaH+ 转动常数 BR（Chou 2020） | 142 501 777.9 ± 1.7 kHz（相对精度 1.2×10⁻⁸） | [chou2020](topics/optical-frequency-combs/papers/chou2020.yaml) |
 | `met.rotational_transition_frequency_uncertainty_c20` | 转动跃迁绝对频率不确定度（Chou 2020，40CaH+） | ~1 ppb（~1×10⁻⁹）；统计 <100 Hz，系统 2.4–4.5 kHz | [chou2020](topics/optical-frequency-combs/papers/chou2020.yaml) |
 | `met.rv_calibration_uncertainty_s19` | Keck II/NIRSPEC 定标不确定度 | ≤5 | [suh2019](topics/optical-frequency-combs/papers/suh2019.yaml) |
+| `met.self_ref_comb_electrical_power_m18` | 全自参考梳总电功率 | <5 W | [manurkar2018](topics/optical-frequency-combs/papers/manurkar2018.yaml) |
 | `met.servo_bandwidth_m07` | fceo 泵电流伺服带宽（McFerran 2007） | ~80 kHz（从无相位超前的 ~5 kHz 扩展） | [mcferran2007](topics/optical-frequency-combs/papers/mcferran2007.yaml) |
+| `met.sin_waveguide_f2f_power_c17` | SiN 波导 f-2f 自参考入射功率 | 11.3 mW（入射芯片） | [carlson2017](topics/optical-frequency-combs/papers/carlson2017.yaml) |
 | `met.sind_nd_absorption_peak_c18` | SiN:D N-D 吸收峰（Chiles 2018） | — | [chiles2018](topics/optical-frequency-combs/papers/chiles2018.yaml) |
 | `met.sind_propagation_loss_c18` | SiN:D C 波段传播损耗（Chiles 2018） | — | [chiles2018](topics/optical-frequency-combs/papers/chiles2018.yaml) |
 | `met.sind_quality_factor_c18` | SiN:D 微环 Q 因子（Chiles 2018） | — | [chiles2018](topics/optical-frequency-combs/papers/chiles2018.yaml) |
@@ -633,6 +658,8 @@
 | `met.tf_ln_uv_conversion_efficiency_w24` | UV/VIS 段转换效率 | 17%（350–550 nm） | [wu2024](topics/optical-frequency-combs/papers/wu2024.yaml) |
 | `met.timing_jitter_psd_atmospheric_c20` | 大气 timing jitter 功率谱密度 S_jitter(f)（Caldwell 2020） | 时间序列 ~2 ps（169 min 最长段）；PSD 低频 ∝ f^{-6.7/3} | [caldwell2020](topics/optical-frequency-combs/papers/caldwell2020.yaml) |
 | `met.timing_jitter_w17` | Repetition-rate timing jitter | picosecond-class integrated jitter (free-running) | [wang2017](topics/optical-frequency-combs/papers/wang2017.yaml) |
+| `met.tpfc_photon_per_pulse_c22` | TPFC 最低平均光子数 / 脉冲（测距可检测） | 1/77（接近量子极限 2×） | [caldwell2022](topics/optical-frequency-combs/papers/caldwell2022.yaml) |
+| `met.tpfc_ranging_precision_c22` | TPFC 测距精度地板 | 0.7 nm（4.8 as 飞行时间） | [caldwell2022](topics/optical-frequency-combs/papers/caldwell2022.yaml) |
 | `met.trace_gas_sensitivity` | 痕量气体检测灵敏度 | ~1 ppb（H₂O₂ @ ~3.75 μm，腔增强频率梳傅里叶变换光谱） | [schliesser2012](topics/optical-frequency-combs/papers/schliesser2012.yaml) |
 | `met.uv_vis_harmonic_bandwidth_l22` | UV/VIS 谐波光梳带宽 | 200–650 nm | [lesko2022](topics/optical-frequency-combs/papers/lesko2022.yaml) |
 | `met.vibration_qualification_l16` | Qualified vibration / shock levels | 8.1 g_rms random (20–2000 Hz), 25 g shock | [lezius2016](topics/optical-frequency-combs/papers/lezius2016.yaml) |
@@ -642,6 +669,7 @@
 | `met.vuv_comb_tunability_z22` | VUV 梳波长可调谐范围 | ~148–153 nm（对应 1040–1070 nm 基频 × 1/7） | [zhang2022](topics/optical-frequency-combs/papers/zhang2022.yaml) |
 | `met.wall_plug_power_w17` | Electrical drive power / wall-plug | sub-watt chip-level electrical drive | [wang2017](topics/optical-frequency-combs/papers/wang2017.yaml) |
 | `met.xuv_harmonic_power_p18` | XUV 单谐波功率（Porat 2018） | ~2 mW | [porat2018](topics/optical-frequency-combs/papers/porat2018.yaml) |
+| `met.yb_fiber_comb_power_cpa_l20` | Yb 光纤梳 CPA 输出功率 | 132 W（180 fs，99% 主峰能量） | [luo2020](topics/optical-frequency-combs/papers/luo2020.yaml) |
 
 ## BOUNDED-BY Chains
 
@@ -685,6 +713,16 @@
 - **Source**: caldwell2020
 - **Breakthrough paths**:
   - `meth.micrometeorological_cn2_retrieval_c20` — status: proposed · gain: 以水平总风速 U 替代 V⊥ 可缓解 V⊥→0 奇点（U 通常大于 V⊥）
+
+### `rel.Cal22_04`: `met.tpfc_ranging_precision_c22` → `pri.tpfc_tracking_oscillator_quantum_limit_c22`
+
+- **Source**: caldwell2022
+- **Breakthrough paths**:
+  - `pri.tpfc_digital_coherent_pulse_control_c22` — status: demonstrated · gain: TPFC 实时控制 → 追踪振荡器模式 → 散粒噪声极限
+
+### `rel.Car17_03`: `met.sin_waveguide_f2f_power_c17` → `pri.sin_waveguide_low_power_f2f_c17`
+
+- **Source**: carlson2017
 
 ### `rel.Cheng24_01`: `ent.continuous_uv_bluegreen_astrocomb_c24` → `pri.shg_sfm_combined_astrocomb_continuous_coverage_c24`
 
@@ -795,6 +833,12 @@
 
 - **Source**: hisai2021
 
+### `rel.Hol00_03`: `met.first_pcf_f2f_frequency_uncertainty_h00` → `pri.octave_spanning_enables_f2f_self_reference`
+
+- **Source**: holzwarth2000
+- **Breakthrough paths**:
+  - `pri.supercontinuum_octave_spanning` — status: demonstrated · gain: PCF 非线性展宽至 > 1 倍频程 → 首次 f-2f 自参考
+
 ### `rel.Hol01`: `ent.diode_pumped_crlisaf_octave_comb_h01` → `pri.diode_pumped_octave_comb_portability_h01`
 
 - **Source**: holzwarth2001
@@ -853,6 +897,12 @@
 - **Source**: kashiwagi2018
 - **Breakthrough paths**:
   - `meth.fiber_noise_difference_cancellation_k18` — status: proposed · gain: 封装 PZT 段 + 降低电源噪声 → 1-s 稳定度接近估计地板 8×10⁻¹⁷
+
+### `rel.Kok19_02`: `met.brillouin_rls_1400km_frequency_offset_k19` → `pri.brillouin_amplification_long_distance_k19`
+
+- **Source**: koke2019
+- **Breakthrough paths**:
+  - `meth.brillouin_rls_hybrid_1400km_k19` — status: demonstrated · gain: 首次 Brillouin + RLS 组合 → 1400 km Continental-scale
 
 ### `rel.L006`: `ent.ghz_turnkey_erfiber_comb_l20` → `pri.pump_rin_to_fceo_coupling`
 
@@ -917,6 +967,10 @@
 - **Source**: ma2018
 - **Breakthrough paths**:
   - `meth.bulk_eom_pzt_750mhz_yb_lock` — status: demonstrated · gain: 体晶 EOM + 单级 PZT 将高重频 Yb:fiber 梳推入紧锁域
+
+### `rel.Man18_03`: `met.self_ref_comb_electrical_power_m18` → `pri.fiber_resistive_modulator_frep_tuning_m18`
+
+- **Source**: manurkar2018
 
 ### `rel.Mar12_03`: `met.fiber_transferred_comb_stability_m12` → `pri.optical_phase_detection_fiber_link_m12`
 
