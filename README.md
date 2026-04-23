@@ -13,6 +13,7 @@
 | L2 | **建设者 / 摄入者** | 我怎么新增论文、维护 YAML、过质量门？ | [`CONTRIBUTING.md`](CONTRIBUTING.md) |
 | L3 | **Schema / 工具维护者** | 节点、关系、专题体系、模板到底怎么定义？ | [`SCHEMA.md`](SCHEMA.md) |
 | 辅助索引 | 所有人 | 各专题现状、优先级、自动生成索引在哪？ | [`TOPICS.md`](TOPICS.md)、`INDEX*.md`、`topics/*/INDEX.md` |
+| 入库速查 | **摄入者 / 查重者** | 某篇论文是否已入库？（标题 + Zotero Key + DOI 三列快查） | [`paper-inkb.md`](paper-inkb.md) |
 
 ## 最短阅读顺序
 
@@ -32,6 +33,7 @@ sci-logic-kb/
 ├── INDEX.md                     # 自动生成的全局导航
 ├── INDEX_metrics.md             # 自动生成的指标快查
 ├── INDEX_principles.md          # 自动生成的原理快查
+├── paper-inkb.md                # 已入库论文参考索引（标题+ZoteroKey+DOI，手动维护）
 ├── docs/
 │   ├── REVIEW_GUIDE.md          # 审核入口
 │   ├── USAGE.md                 # 读者入口
