@@ -9,7 +9,7 @@
 #   不负责：具体链路电气设计参数、具体光钟系统工程参数（由后续技术论文补充）。
 
 meta:
-  zotero_key: "SCI-ESA-HRE-ESR-ISOC"   # ESA 参考文档编号（本文档无 Zotero 键）
+  zotero_key: "SCI-ESA-HRE-ESR-ISOC"   # 本文档无 Zotero 条目；此处用 ESA 参考文档编号占位（document_ref 冗余保留于下方）
   topic: time-frequency-transfer
   source_type: technical_report
   contribution_type: framework
@@ -66,7 +66,7 @@ entities:
       本任务升级为 $1\cdot10^{-17}$ 光学晶格钟 + MWL + ELT+ 光学链路，
       相对 ACES 科学性能全面提升 10–10 000×。
     open_questions:
-      - "能否在 ISS 振动环境下将 SLOC 的 Allan 偏差达到 $8\\cdot10^{-16}/\\sqrt{\\tau}$ 设计值？"
+      - "SLOC 在 ISS 振动环境下能否达到 $8\\cdot10^{-16}/\\sqrt{\\tau}$ Allan 偏差设计值？"
       - "ELT+ 能否在 $\\tau \\leq 10^{6}\\,\\text{s}$ 量级保持 <1 ps 时偏差（受大气光学湍流限制）？"
 
   # ── Level 2 子节点：任务的 4 大子系统 ────────────────────────────────────────
