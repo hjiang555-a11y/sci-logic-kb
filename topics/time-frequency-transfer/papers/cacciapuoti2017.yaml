@@ -1,0 +1,577 @@
+# Cacciapuoti & Schiller 2017 — ESA I-SOC 科学需求文档（time-frequency-transfer 专题框架种子）
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
+# contribution_type: framework — 本文件为 time-frequency-transfer 专题的首个 framework 种子文档
+#   定义：顶层空间光钟任务实体（ent.space_optical_clock_mission）、三类高性能时频链路子节点（MWL / ELT+ / FCOL）、
+#         引力时间膨胀测量原理（共视 / 非共视比对）、跨专题 CONDITIONED-BY 接口（→ 超稳激光 / 光频梳 / 频率标准）。
+#   不负责：具体链路电气设计参数、具体光钟系统工程参数（由后续技术论文补充）。
+
+meta:
+  zotero_key: "SCI-ESA-HRE-ESR-ISOC"   # ESA 参考文档编号（本文档无 Zotero 键）
+  topic: time-frequency-transfer
+  source_type: technical_report
+  contribution_type: framework
+  reliability: high
+  title: "I-SOC Scientific Requirements (ESA Experiment Scientific Requirements document, Issue 1.1 Approved)"
+  year: 2017
+  first_author: Cacciapuoti
+  authors: ["Luigi Cacciapuoti (ESA SCI-S)", "Stephan Schiller (HHU Düsseldorf)"]
+  issuing_body: "European Space Agency (ESA)"
+  document_ref: "SCI-ESA-HRE-ESR-ISOC"
+  revision: "Issue 1, Revision 1"
+  issue_date: "2017-06-09"
+  doi: null
+  note: >
+    [技术报告 / 任务科学需求] time-frequency-transfer 专题种子 framework 文档。
+    定义 ESA I-SOC 任务（ISS-SOC，基于国际空间站的新一代空间光钟任务）的科学目标与顶层
+    需求。任务由三部分组成：(1) 空间段光学晶格钟 SLOC（Sr 原子，$\sigma_y=8\cdot10^{-16}\tau^{-1/2}$，
+    系统不确定度 $1\cdot10^{-17}$）；(2) 空间频率梳 SFC 作为光↔微波桥；(3) 三套高性能
+    地–空时频传递链路（微波链路 MWL、脉冲光学链路 ELT+、可选频率梳光学链路 FCOL）。
+    关键性能要求：MWL 不准确度 $5\cdot10^{-19}$、flicker floor $5\cdot10^{-19}$；ELT+ 时偏差
+    $\leq 0.5\,\text{ps}$ @ 100 s，$\leq 1\,\text{ps}$ 直至 $10^{6}$ s，对应分数不确定度 $1\cdot10^{-18}$。
+    科学目标（vs ACES）：地球引力红移测量 $2\cdot10^{-7}$（10×）、太阳引力红移 $1\cdot10^{-6}$（100×）、
+    月球引力红移 $2\cdot10^{-4}$（100×）、对 UTC/TAI 贡献 <1e-18 不准确度 + ps 级同步、精细
+    结构常数时间变化搜索（10 000×）、洲际/洲内差分大地水准面高度分辨率 0.05 m²/s²（≈0.5 cm）。
+    本文件建立 time-frequency-transfer 专题的顶层实体骨架与跨专题 CONDITIONED-BY 接口，
+    具体链路技术、光钟工程参数由后续技术论文补充。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+entities:
+  # ── Level 1 顶层：空间光钟任务（I-SOC） ─────────────────────────────────────
+  - id: ent.space_optical_clock_mission
+    name: "空间光学原子钟任务（通用 · I-SOC 为代表实例）"
+    aliases: ["I-SOC", "ISS-SOC", "space optical clock mission", "空间光钟任务"]
+    hierarchy_level: 1
+    status: proposed
+    function: >
+      部署于 ISS（Columbus 外部载荷设施 CEPF）的空间光学原子钟 + 高性能时频传递系统。
+      任务通过将一套紫外性能优于地面最佳光钟的空间光钟与三条地–空时频链路组合，
+      实现：(a) 大空间尺度、大引力势差的引力时间膨胀直接测量；(b) 分布在不同大陆的地面
+      光钟非共视比对（搜索精细结构常数时间变化、SME 参数、暗物质耦合）；(c) 对 TAI/UTC
+      原子时标的超高精度贡献；(d) 厘米级大地水准面差分测量。
+    key_parameters:
+      host_platform: "国际空间站 ISS（Columbus External Payload Facility / CEPF）"
+      orbit: "ISS 近圆低地球轨道，轨道周期 ~92 min，高度 ~400 km"
+      routine_science_duration: "≥ 2 年（#SR-OP-01 / #SR-OP-02）"
+      payload_elements: "空间光钟 SLOC + 空间频率梳 SFC + MicroWave Link (MWL) + ELT+ 脉冲光学链路 + 可选 FCOL 频率梳光学链路"
+      ground_network: "约 10 台固定地面光钟（都灵 / PTB / 巴黎 / NPL / 博尔德 / 东京 等）+ 3–4 台可搬运光钟"
+    note: >
+      Level 1 通用顶层实体。本文件（cacciapuoti2017.yaml）为其权威定义来源。
+      I-SOC 是 ACES 任务的下一代演进——ACES 的 PHARAO 铯钟 $1\cdot10^{-16}$ 与 MWL 链路，
+      本任务升级为 $1\cdot10^{-17}$ 光学晶格钟 + MWL + ELT+ 光学链路，
+      相对 ACES 科学性能全面提升 10–10 000×。
+    open_questions:
+      - "能否在 ISS 振动环境下将 SLOC 的 Allan 偏差达到 $8\\cdot10^{-16}/\\sqrt{\\tau}$ 设计值？"
+      - "ELT+ 能否在 $\\tau \\leq 10^{6}\\,\\text{s}$ 量级保持 <1 ps 时偏差（受大气光学湍流限制）？"
+
+  # ── Level 2 子节点：任务的 4 大子系统 ────────────────────────────────────────
+  - id: ent.space_lattice_optical_clock_sloc
+    name: "空间光学晶格钟 SLOC（I-SOC 空间段 Sr 光钟）"
+    aliases: ["SLOC", "Space Lattice Optical Clock", "I-SOC Sr clock"]
+    hierarchy_level: 2
+    status: proposed
+    function: >
+      基于激光冷却 ⁸⁷Sr 中性原子的魔术波长光晶格钟，作为 I-SOC 的空间频率参考。
+      目标性能（#SR-PL-03 / #SR-PL-04）：分数频率不稳定度 $8\cdot10^{-16}/\sqrt{\tau}$；
+      系统不确定度 $1\cdot10^{-17}$。继承欧洲 SOC → SOC2 → FACT（FP7/H2020 ITN）地面可搬运
+      Sr 光钟研发路径。
+    key_parameters:
+      atomic_species: "⁸⁷Sr"
+      transition_wavelength: "698 nm (¹S₀→³P₀)"
+      target_instability: "$8\\cdot10^{-16}/\\sqrt{\\tau}$（Allan 偏差，#SR-PL-03）"
+      target_systematic_uncertainty: "$1\\cdot10^{-17}$（#SR-PL-04）"
+      clock_laser_requirement: "光学参考振荡器 Allan 偏差 $<3\\cdot10^{-16}$（$0.1\\,\\text{s}$–$100\\,\\text{s}$，线性漂移后；#SR-PL-30）"
+      drift_budget: "分数漂移变化 $<2\\cdot10^{-16}/\\text{s}$ @ 5400 s（ISS 轨道周期；#SR-PL-31）"
+    note: >
+      Level 2 架构子节点，PART-OF ent.space_optical_clock_mission。
+      跨专题引用：ent.optical_lattice_clock（定义于 topics/frequency-standards/papers/fortier2026.yaml）
+      为其通用父类——SLOC 是光学晶格钟在 ISS 微重力环境下的工程实例。
+      询问激光（optical reference oscillator, #SR-PL-30）对应超稳激光专题的 ent.fp_cavity_system 子类。
+
+  - id: ent.space_frequency_comb_sfc
+    name: "空间频率梳 SFC（I-SOC 光↔微波桥）"
+    aliases: ["SFC", "Space Frequency Comb"]
+    hierarchy_level: 2
+    status: proposed
+    function: >
+      飞秒光学频率梳，任务中用于将光学频率（SLOC 的 698 nm 钟跃迁或光学参考腔输出）转换为
+      适合 MWL / ELT+ 传输的微波/光学信号；提供空间段光↔微波桥。
+    key_parameters:
+      stability_requirement: "给定输入光学信号不稳定度 $1\\cdot10^{-13}$ – $5\\cdot10^{-16}\\tau^{-1/2}$，SFC 输出微波信号不稳定度增加因子 $\\leq 1.1$（$20\\,\\text{s}$ – $2\\cdot10^{6}\\,\\text{s}$，#SR-PL-32）"
+      fallback: "USO（超稳石英振荡器）可作 SFC 故障备份（#SR-PL-36 / #SR-PL-37）"
+    note: >
+      Level 2 架构子节点，PART-OF ent.space_optical_clock_mission。
+      跨专题引用：ent.optical_frequency_comb（定义于 topics/optical-frequency-combs/papers/giunta2019.yaml）
+      为其通用父类——SFC 是光学频率梳在空间环境下的工程实例。
+
+  - id: ent.microwave_link_mwl
+    name: "微波时频传递链路 MWL（I-SOC 空间段 Ku 波段双向链路）"
+    aliases: ["MWL", "Microwave Link", "I-SOC microwave link"]
+    hierarchy_level: 2
+    status: proposed
+    function: >
+      继承自 ACES 任务的双向双频微波链路，工作在 Ku 波段；用于空间–地面及地面–地面
+      （共视/非共视）时频比对。最高可用仰角范围覆盖大部分 ISS 过顶时间，不受云层严重影响。
+    key_parameters:
+      geometry: "双向双频 Ku 波段"
+      instability_ground_ground: |
+        白相位噪声 $1.6\cdot10^{-14}$ @ 10 s；
+        闪烁相位噪声 mod $\sigma_y = 1.6\cdot10^{-13}/\tau$；
+        长期 $6\cdot10^{-17}/\sqrt{\tau}$；闪烁地板 $5\cdot10^{-19}$（#SR-PL-09）
+      inaccuracy: "$5\\cdot10^{-19}$（#SR-PL-10）"
+      space_ground_scaling: "$\\sigma_{\\text{s-g}}(\\tau) = \\sigma_{\\text{MWL}}(\\tau)/\\sqrt{2}$"
+      pass_duration: "≤ 300 s / ISS 过顶"
+    note: "Level 2 架构子节点，PART-OF ent.space_optical_clock_mission。"
+
+  - id: ent.pulsed_optical_link_elt_plus
+    name: "脉冲光学时频传递链路 ELT+（I-SOC 空间段）"
+    aliases: ["ELT+", "European Laser Timing Plus", "ESA pulsed optical link"]
+    hierarchy_level: 2
+    status: proposed
+    function: >
+      基于激光测距（SLR）站的脉冲光学时频传递链路，ACES ELT 的升级版。通过地面 SLR
+      站向空间段反射器发射激光脉冲并接收空间段回传脉冲，实现 ps 级空间–地面时间比对。
+    key_parameters:
+      inaccuracy: "$1\\cdot10^{-18}$（空间–地面光钟比对不准确度，#SR-PL-16）"
+      tdev_target: "$\\sigma_x \\leq 0.5\\,\\text{ps}$ @ 100 s；$\\leq 1\\,\\text{ps}$ 直至 $\\tau=10^{6}\\,\\text{s}$（#SR-PL-16）"
+      ss_budget: "$\\sigma_x(10 \\leq \\tau < 300\\,\\text{s})_{\\text{ELT+}(SS)} \\leq 3\\cdot10^{-12}\\tau^{-1/2}\\,\\text{s}$；$\\sigma_x(300 \\leq \\tau \\leq 10^{6}\\,\\text{s})_{\\text{ELT+}(SS)} \\leq 0.5\\cdot10^{-12}\\,\\text{s}$（#SR-PL-20）"
+      elevation_range: "30° – 85°（大气透过率 / 低仰角模型 / 高仰角背景散射 / 跟踪速度共同限制）"
+      pass_duration: "~200 s / ISS 过顶（比 MWL 短 100 s）"
+      calibration_uncertainty: "$\\leq 20\\,\\text{ps}$（目标 15 ps）单向延迟定标（#SR-PL-18）；$\\leq 2\\times 20\\,\\text{ps}$ 差分定标（#SR-PL-19）"
+    note: >
+      Level 2 架构子节点，PART-OF ent.space_optical_clock_mission。
+      ELT+ 对恶劣天气敏感（要求云层透光），其性能优势在于比 MWL 高出一个数量级的分数
+      不确定度（$1\\cdot10^{-18}$ vs $5\\cdot10^{-19}$），但互补性设计即 MWL 全天候、ELT+ 极限精度。
+
+  - id: ent.frequency_comb_optical_link_fcol
+    name: "频率梳光学链路 FCOL（I-SOC 可选链路）"
+    aliases: ["FCOL", "Frequency Comb Optical Link"]
+    hierarchy_level: 2
+    status: proposed
+    function: >
+      可选的基于频率梳的连续光波光学链路，设计用于共视地面光钟比对，其超低不稳定度可
+      大幅缩短达到指定频率不确定度所需的积分时间。有两方面优势：(1) 更精确的太阳/月球
+      时间膨胀测试；(2) 更广泛的大地测量活动。
+    key_parameters:
+      status: "可选（optional），非基线配置"
+      primary_use_case: "共视地面光钟比对（common-view comparisons）"
+    note: >
+      Level 2 架构子节点，PART-OF ent.space_optical_clock_mission。
+      FCOL 在原文中明确为可选链路（"optional link"），不是核心基线需求。
+
+# ═══════════════════════════════════════════════
+#  PRINCIPLES（原理）
+# ═══════════════════════════════════════════════
+
+principles:
+  - id: pri.gravitational_time_dilation
+    name: "引力时间膨胀（Einstein 红移）"
+    tier: foundational
+    verification_status: observed
+    statement: >
+      广义相对论及所有度规引力理论预言：位于不同引力势 $U$ 的相同钟以不同节拍流逝。
+      对两台相同静止钟（$i=1,2$），当位于 $x_1, x_2$，在任意位置 $x'$ 测得的频率比为：
+      $\nu_2(x')/\nu_1(x') = 1 + [U(x_1) - U(x_2)]/c^2$（弱场、静止近似）。
+      对球对称质量 $M$：$U(x) = -GM/|x|$。该比值与钟的物理实现及电磁信号类型无关，
+      仅取决于时空几何——这是 Einstein 等效原理的直接推论。
+    domain: "基础物理 / 相对论测量 / 空间时频计量"
+    formula: "$\\Delta\\nu/\\nu = \\Delta U / c^{2}$；对 ISS vs 地面：$\\Delta\\nu/\\nu \\approx 3\\cdot10^{-10}$"
+    key_insight: >
+      时间膨胀效应与钟的内部结构无关（LPI 局域位置不变性）——通过比较不同原理的钟在
+      不同引力势下的频率比，可以检验该普适性。偏离此普适性即是 EEP 破缺信号。
+    conditions: "弱引力场；钟静止或运动较慢（需修正二阶 Doppler 效应）；需精确的引力势 $U$ 知识"
+    preconditions:
+      - "空间–地面或地面–地面的高精度时频比对（受链路不稳定度 / 不确定度限制）"
+      - "两端钟的位置与速度精确知道（轨道测定误差应可忽略）"
+      - "两端引力势的静态 + 动态分量（潮汐、地壳形变）精确建模"
+    invalidated_when:
+      - "广义相对论在强场 / 早期宇宙等极端条件下失效（本测量条件不涉及）"
+      - "Einstein 等效原理破缺（本测量正是要约束此破缺程度）"
+    source_claim: >
+      "the most fascinating effects predicted by general relativity and other metric theories of
+      gravity is the Einstein's gravitational red-shift or gravitational time dilation effect."
+    note: "foundational tier —— 跨专题通用原理，多个专题可引用（SHARED 候选）。"
+
+  - id: pri.einstein_equivalence_principle
+    name: "Einstein 等效原理（EEP）"
+    tier: foundational
+    verification_status: observed
+    statement: >
+      Einstein 等效原理由三大支柱组成：(I) 弱等效原理 WEP——自由下落测试体的轨迹与其
+      组分 / 结构无关；(II) 局域 Lorentz 不变性 LLI——局域自由下落参考系中，任何非引力
+      实验的结果与参考系速度无关；(III) 局域位置不变性 LPI——局域自由下落参考系中，任何
+      非引力实验的结果与时空位置无关。I-SOC 通过时间膨胀 + 精细结构常数时间变化搜索 +
+      SME 参数约束，直接检验 LPI 与 LLI。
+    domain: "引力基础物理"
+    key_insight: >
+      LPI 要求两台相同物理原理的钟在不同引力势下展现普适的频率比关系（即严格 GR 预言）；
+      若不同原理的钟表现不同，即 LPI 破缺。
+    conditions: "非引力实验、弱引力或可扰动情景、需可比较的独立物理系统"
+    source_claim: >
+      "Weak Equivalence Principle (WEP)... Local Lorentz Invariance (LLI)... Local Position Invariance (LPI)"
+    note: "foundational tier；可在未来由专家提升为 SHARED 原理。"
+
+  - id: pri.common_view_clock_comparison
+    name: "共视时钟比对原理（common-view comparison）"
+    tier: domain
+    verification_status: observed
+    statement: >
+      当两台地面（或空间/地面）钟同时处于空间链路载体（此处为 ISS）的可视范围内，
+      两侧同时测量 $(\nu_{\text{ground}}/\nu_{\text{ISOC}})$ 并相减，空间钟的频率不确定度作为
+      共模项被抵消，链路比对的性能仅受链路自身和两端地面钟的性能限制。
+    domain: "时频传递 / 空间光钟任务"
+    formula: "共视比对不确定度 $\\sim \\sqrt{\\sigma_{\\text{link}}^{2} + \\sigma_{\\text{clock,gnd1}}^{2} + \\sigma_{\\text{clock,gnd2}}^{2}}$；空间钟项共模抵消"
+    key_insight: >
+      共视模式使空间钟的性能要求大幅放宽——I-SOC 地面–地面共视比对可借助甚至仅 USO
+      备份振荡器完成（空间钟的绝对精度对结果无贡献）。这是任务鲁棒性的关键设计冗余。
+    conditions: "两台目标钟在空间载体可视窗口内同时可比对；FCOL / ELT+ 的多用户能力（#SR-PL-23）满足同时双比对"
+    source_claim: >
+      "When two or more clocks are in common-view of the ISS, they can be compared/synchronized
+      directly, since the uncertainties due to the space clock are in common mode in this
+      synchronous measurement, and therefore are rejected."
+
+  - id: pri.non_common_view_clock_comparison
+    name: "非共视时钟比对原理（non-common-view comparison）"
+    tier: domain
+    verification_status: observed
+    statement: >
+      当两台地面钟位置相隔过远、无法同时进入空间链路载体可视窗口时，比对通过载体依次
+      经过各地面站实现：时刻 $t_1$ 记录 $\nu_{\text{gnd1}}/\nu_{\text{ISOC}}(t_1)$，
+      时刻 $t_2$ 记录 $\nu_{\text{gnd2}}/\nu_{\text{ISOC}}(t_2)$，通过空间钟在 $\Delta t = t_2-t_1$ 内的
+      稳定度“桥接”得到 $\nu_{\text{gnd1}}/\nu_{\text{gnd2}}$。
+    domain: "时频传递 / 空间光钟任务"
+    key_insight: >
+      非共视模式对空间钟的短期稳定度（$\\sim 10^{2}$–$10^{4}\\,\\text{s}$ 时间尺度）提出严格要求：
+      空间钟是桥接精度的直接制约。这是 I-SOC SLOC 指定 $8\\cdot10^{-16}/\\sqrt{\\tau}$ 不稳定度
+      的主要驱动——太阳 / 月球引力时间膨胀测量依赖跨洲地面比对，必须非共视。
+    conditions: "两台目标钟不在载体共视窗口内；载体在两次过顶间不经过显著扰动；需要精细建模二阶 Doppler 与轨道引力势"
+    source_claim: >
+      "I-SOC also allows the comparisons of distant ground clocks via non-common-view comparisons.
+      Here, the ISS and the I-SOC instruments are in contact with only one ground clock at a time."
+
+# ═══════════════════════════════════════════════
+#  METHODS（方法）
+# ═══════════════════════════════════════════════
+
+methods:
+  - id: meth.mwl_two_way_tf_transfer
+    name: "双向双频微波时频传递法（MWL 实现）"
+    status: demonstrated
+    applies_to: ent.microwave_link_mwl
+    steps_summary: >
+      1) 空间段与地面段各自产生本地时频信号（锁至各自钟）→
+      2) 同时双向发射 Ku 波段调制微波信号 →
+      3) 两端分别记录到达时间戳 →
+      4) 双向相减消除共模大气延迟与几何路径延迟 →
+      5) 得到空间–地面钟时间差与频率比。
+    required_hardware:
+      - ent.microwave_link_mwl
+    advantages:
+      - "全天候可用（不受云层影响）"
+      - "相对成熟（继承 ACES 任务技术栈）"
+    disadvantages:
+      - "分数不准确度受限于 $5\\cdot10^{-19}$ 量级（#SR-PL-10），弱于 ELT+ 的 $1\\cdot10^{-18}$"
+    conditions: "ISS 仰角 ≥ 最低跟踪仰角；地面 MWL 终端具备多用户能力（#SR-PL-23 含 ELT+；MWL 类似规定）"
+    source_claim: >
+      "The links are similar to those already developed for the ACES mission: the microwave link MWL"
+
+  - id: meth.elt_plus_pulsed_optical_tf_transfer
+    name: "脉冲激光光学时频传递法（ELT+ 实现）"
+    status: proposed
+    applies_to: ent.pulsed_optical_link_elt_plus
+    steps_summary: >
+      1) 地面 SLR 站发射高重频激光脉冲序列 →
+      2) 空间段反射器反射 + 独立探测记录脉冲到达本地时戳 →
+      3) 地面接收反射脉冲记录到达时戳 →
+      4) 双向时间戳差 + 几何/大气/系统延迟定标 → 得到空间–地面同步偏差 →
+      5) 定标与相对位置测量：MWL 天线相位中心与 ELT+ 参考点相对位置需知 1 mm 精度（#SR-PL-46）。
+    required_hardware:
+      - ent.pulsed_optical_link_elt_plus
+    advantages:
+      - "时偏差 $\\leq 0.5\\,\\text{ps}$ @ 100 s，可达 $1\\cdot10^{-18}$ 分数不准确度"
+      - "同一反射器同时支持光学测距（geodesy），#SSO-03 / #SSO-04 支持多技术交叉验证"
+    disadvantages:
+      - "依赖云层透光（<300 s ISS 过顶时长，晴天统计约束）"
+      - "仰角限制 30°–85°"
+    conditions: "SLR 站有效运营；大气透光；地面段每次过顶 $\\sim 200\\,\\text{s}$ 接触时间"
+    source_claim: >
+      "the pulsed optical link ELT+. ... TDEV is specified at 0.5 ps at 100 s, and < 1 ps for longer times up to 1e6 s."
+
+# ═══════════════════════════════════════════════
+#  METRICS（指标）
+# ═══════════════════════════════════════════════
+
+metrics:
+  - id: met.space_to_ground_link_instability
+    name: "空间–地面时频链路不稳定度"
+    unit: "无量纲（分数频率，Allan / mod Allan）或 s（时偏差 TDEV）"
+    description: >
+      空间–地面时频链路在给定积分时间 $\tau$ 下的频率/时间稳定度。I-SOC 的 MWL / ELT+
+      链路有不同的设计目标，两者互补（MWL 全天候，ELT+ 极限精度）。
+    demonstrated_value:
+      value: >-
+        MWL（#SR-PL-09，需求目标）：白相位噪声 $1.6\cdot10^{-14}$ @ 10 s；闪烁相位 mod $\sigma_y = 1.6\cdot10^{-13}/\tau$；
+        长期 $6\cdot10^{-17}/\sqrt{\tau}$；闪烁地板 $5\cdot10^{-19}$；
+        ELT+（#SR-PL-16）：TDEV $\leq 0.5\,\text{ps}$ @ 100 s，$\leq 1\,\text{ps}$ 直至 $10^{6}\,\text{s}$
+      conditions: "ISS 过顶（MWL 典型 ≤300 s，ELT+ 典型 ~200 s），空间–地面单次过顶；空间段 + 地面段共同预算"
+      verification_status: inferred
+      confidence: proposed
+      source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "Requirements #SR-PL-09 and #SR-PL-16 define the fractional frequency instability of the I-SOC microwave and optical links."}
+    theoretical_floor:
+      value: "链路物理下限受大气光学湍流（ELT+）与 Ku 波段电离层/对流层模型残差（MWL）共同决定；文档未给出闭式理论下限"
+      basis: "大气传播介质噪声 + 系统电子噪声"
+
+  - id: met.space_to_ground_link_inaccuracy
+    name: "空间–地面时频链路分数不准确度"
+    unit: "无量纲"
+    description: >
+      链路实现频率/时间比对的系统不准确度（所有已知系统效应预算总和）。
+    demonstrated_value:
+      value: "MWL: $5\\cdot10^{-19}$（#SR-PL-10，需求目标）；ELT+: $1\\cdot10^{-18}$（#SR-PL-16，需求目标）"
+      conditions: "正确定标大气延迟、几何光程、本地 SLR 站延迟（ELT+ 单向 $\\leq 20\\,\\text{ps}$，#SR-PL-18）等"
+      verification_status: inferred
+      confidence: proposed
+      source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "Inaccuracy is 5e-19 [#SR-PL-10]... ELT+... frequency comparison inaccuracy of 1e-18 [#SR-PL-16]"}
+
+  - id: met.earth_grs_test_uncertainty
+    name: "地球引力红移测试分数不确定度（任务科学目标）"
+    unit: "无量纲"
+    description: >
+      #PSO-01：测量地球引力势下的时间膨胀效应，相对 GR 预言值的分数不确定度上限。
+      这是 I-SOC 的首要科学目标之一。
+    demonstrated_value:
+      value: "$2\\cdot10^{-7}$（目标，vs ACES 约 $2\\cdot10^{-6}$，提升因子 ~10×）"
+      conditions: "≥2 年科学阶段；空间段 SLOC $8\\cdot10^{-16}/\\sqrt{\\tau}$ 不稳定度、$1\\cdot10^{-17}$ 不准确度；地面固定钟 $1\\cdot10^{-16}/\\sqrt{\\tau}$、$3\\cdot10^{-19}$ 不准确度；MWL / ELT+ 满足 #SR-PL-09 / 16"
+      verification_status: inferred
+      confidence: proposed
+      source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "#PSO-01 Measurement of the Earth gravitational red-shift effect to a fractional uncertainty of 2e-7. Improvement compared to ACES mission: factor 10."}
+    historical_landmarks:
+      first_demonstration:
+        value: "GP-A（NASA/SAO 1976，氢脉泽，$7\\cdot10^{-5}$）；ACES（~2e-6 目标）"
+        year: 1976
+        note: "GP-A 首次直接测量引力红移；ACES 是 I-SOC 的前代任务"
+      best_demonstration:
+        value: "目前最佳地面实验 $\\sim 3\\cdot10^{-5}$（GPS/Galileo 偏心椭圆轨道分析，2018）"
+        year: 2018
+
+  - id: met.fundamental_constant_drift_search
+    name: "精细结构常数时间变化搜索灵敏度"
+    unit: "1/yr（$\\dot{\\alpha}/\\alpha$）"
+    description: >
+      #PSO-05（提升 10 000× vs ACES）：通过对不同钟跃迁的长基线、高频次比对，搜索精细结构
+      常数 $\alpha$ 在时间上的漂移 $\dot{\alpha}/\alpha$。
+    demonstrated_value:
+      value: "任务目标：相对 ACES 提升 10 000×（1000× 来自更多比对点 + 10× 来自分辨率提升）"
+      conditions: "多台地面光钟（不同跃迁种：Sr / Yb / Al⁺ / Yb⁺ E3 / In⁺ / Lu⁺ / Hg / …）跨洲际周期比对"
+      verification_status: inferred
+      confidence: proposed
+      source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "#PSO-05... Improvement compared to ACES mission: factor 10 000 (factor 1000 from larger number of measurement points and factor 10 from higher resolution)."}
+
+# ═══════════════════════════════════════════════
+#  RELATIONS（关系）
+# ═══════════════════════════════════════════════
+
+relations:
+  # ── 内部 PART-OF 骨架 ────────────────────────────────────────────────────────
+  - id: rel.C17_01
+    subject: ent.space_lattice_optical_clock_sloc
+    predicate: PART-OF
+    object: ent.space_optical_clock_mission
+    confidence: established
+    source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "Space lattice optical clock (SLOC), a frequency standard based on laser-cooled Sr atoms"}
+
+  - id: rel.C17_02
+    subject: ent.space_frequency_comb_sfc
+    predicate: PART-OF
+    object: ent.space_optical_clock_mission
+    confidence: established
+    source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "The clock signal is converted by SFC, a femtosecond frequency comb, into a form suitable for optical and microwave transfer to/from Earth."}
+
+  - id: rel.C17_03
+    subject: ent.microwave_link_mwl
+    predicate: PART-OF
+    object: ent.space_optical_clock_mission
+    confidence: established
+    source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "MicroWave Link (MWL)... the microwave link MWL"}
+
+  - id: rel.C17_04
+    subject: ent.pulsed_optical_link_elt_plus
+    predicate: PART-OF
+    object: ent.space_optical_clock_mission
+    confidence: established
+    source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "the pulsed optical link ELT+"}
+
+  - id: rel.C17_05
+    subject: ent.frequency_comb_optical_link_fcol
+    predicate: PART-OF
+    object: ent.space_optical_clock_mission
+    confidence: established
+    conditions: "可选链路（optional），非基线"
+    source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "we also describe the performance of an optional link, the frequency comb optical link FCOL"}
+
+  # ── ENABLED-BY：任务的物理/方法学基础 ───────────────────────────────────────
+  - id: rel.C17_06
+    subject: ent.space_optical_clock_mission
+    predicate: ENABLED-BY
+    object: pri.gravitational_time_dilation
+    confidence: established
+    source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "the dilation of time by gravity. It is related to the Einstein Equivalence Principle (EEP)."}
+    note: "I-SOC 存在的物理基础：没有引力时间膨胀效应就没有任务目标。"
+
+  - id: rel.C17_07
+    subject: ent.space_optical_clock_mission
+    predicate: ENABLED-BY
+    object: pri.einstein_equivalence_principle
+    confidence: established
+    source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "tests of the Einstein Equivalence Principle"}
+
+  # ── OPERATIONALIZED-AS：测量方法映射 ─────────────────────────────────────────
+  - id: rel.C17_08
+    subject: ent.space_optical_clock_mission
+    predicate: OPERATIONALIZED-AS
+    object: pri.common_view_clock_comparison
+    confidence: established
+    conditions: "两台目标钟在 ISS 共视窗口内"
+    source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "When two or more clocks are in common-view of the ISS, they can be compared/synchronized directly"}
+
+  - id: rel.C17_09
+    subject: ent.space_optical_clock_mission
+    predicate: OPERATIONALIZED-AS
+    object: pri.non_common_view_clock_comparison
+    confidence: established
+    conditions: "两台目标钟跨洲际，太阳/月球 GTD 测量"
+    source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "I-SOC also allows the comparisons of distant ground clocks via non-common-view comparisons"}
+
+  - id: rel.C17_10
+    subject: ent.microwave_link_mwl
+    predicate: OPERATIONALIZED-AS
+    object: meth.mwl_two_way_tf_transfer
+    confidence: established
+    source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "The links are similar to those already developed for the ACES mission: the microwave link MWL"}
+
+  - id: rel.C17_11
+    subject: ent.pulsed_optical_link_elt_plus
+    predicate: OPERATIONALIZED-AS
+    object: meth.elt_plus_pulsed_optical_tf_transfer
+    confidence: established
+    source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "the pulsed optical link ELT+"}
+
+  # ── CHARACTERIZED-BY：指标 ──────────────────────────────────────────────────
+  - id: rel.C17_12
+    subject: ent.microwave_link_mwl
+    predicate: CHARACTERIZED-BY
+    object: met.space_to_ground_link_instability
+    confidence: established
+    source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "the specified fractional frequency instability of the I-SOC microwave link sigma_MWLgg accounts for... flicker floor at the 5.0e-19 level [#SR-PL-09]"}
+
+  - id: rel.C17_13
+    subject: ent.pulsed_optical_link_elt_plus
+    predicate: CHARACTERIZED-BY
+    object: met.space_to_ground_link_instability
+    confidence: established
+    source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "For ELT+, TDEV is specified at 0.5 ps at 100 s, and < 1 ps for longer times up to 1e6 s"}
+
+  - id: rel.C17_14
+    subject: ent.microwave_link_mwl
+    predicate: CHARACTERIZED-BY
+    object: met.space_to_ground_link_inaccuracy
+    confidence: established
+    source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "Inaccuracy is 5e-19 [#SR-PL-10]"}
+
+  - id: rel.C17_15
+    subject: ent.pulsed_optical_link_elt_plus
+    predicate: CHARACTERIZED-BY
+    object: met.space_to_ground_link_inaccuracy
+    confidence: established
+    source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "These values should result in frequency comparison inaccuracy of 1e-18 [#SR-PL-16]"}
+
+  - id: rel.C17_16
+    subject: ent.space_optical_clock_mission
+    predicate: CHARACTERIZED-BY
+    object: met.earth_grs_test_uncertainty
+    confidence: established
+    source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "#PSO-01 Measurement of the Earth gravitational red-shift effect to a fractional uncertainty of 2e-7"}
+
+  - id: rel.C17_17
+    subject: ent.space_optical_clock_mission
+    predicate: CHARACTERIZED-BY
+    object: met.fundamental_constant_drift_search
+    confidence: established
+    source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "#PSO-05... Improvement compared to ACES mission: factor 10 000"}
+
+  # ── BOUNDED-BY：非共视模式受空间钟短期稳定度限制 ────────────────────────────
+  - id: rel.C17_18
+    subject: pri.non_common_view_clock_comparison
+    predicate: BOUNDED-BY
+    object: ent.space_lattice_optical_clock_sloc
+    confidence: established
+    source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "In the non-common-view comparisons, a low instability of the atomic clock is particularly important; the performance of such comparisons will be limited by the on-board clock."}
+    is_system_limit: true
+    regime: short-term
+    verification_status: calculated
+    temporal_role: design
+    quantitative_contribution: "非共视桥接精度 ∝ $\\sigma_y^{SLOC}(\\Delta t)$，其中 $\\Delta t$ 为两次过顶间隔"
+    note: >
+      这是 I-SOC 的关键设计约束：SLOC 的 $8\\cdot10^{-16}/\\sqrt{\\tau}$ 不稳定度需求直接由太阳/月球
+      GTD 的非共视比对需求反推得出；若 SLOC 性能不达标，则跨洲际地面钟比对的有效精度下降。
+
+  # ── 跨专题 CONDITIONED-BY（开放接口） ───────────────────────────────────────
+  - id: rel.C17_19
+    subject: ent.space_lattice_optical_clock_sloc
+    predicate: CONDITIONED-BY
+    object: ent.optical_lattice_clock
+    confidence: established
+    source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "The atomic clock is an optical lattice clock, based on ultracold atoms trapped in a standing-wave of laser light."}
+    note: >
+      跨专题引用：ent.optical_lattice_clock 定义于 topics/frequency-standards/papers/fortier2026.yaml。
+      SLOC 是光学晶格钟的空间工程实例（Sr，698 nm，魔术波长 813.4 nm）。
+
+  - id: rel.C17_20
+    subject: ent.space_frequency_comb_sfc
+    predicate: CONDITIONED-BY
+    object: ent.optical_frequency_comb
+    confidence: established
+    source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "The clock signal is converted by SFC, a femtosecond frequency comb"}
+    note: >
+      跨专题引用：ent.optical_frequency_comb 定义于 topics/optical-frequency-combs/papers/giunta2019.yaml。
+      SFC 是光学频率梳在空间环境下的工程实例。
+
+  - id: rel.C17_21
+    subject: ent.space_lattice_optical_clock_sloc
+    predicate: CONDITIONED-BY
+    object: ent.fp_cavity_system
+    interface_metric: met.fractional_freq_instability_m17
+    coupling_formula: "Dick 效应：SLOC $\\sigma_y$ 受询问激光（光学参考振荡器）$S_y(f)$ 限制"
+    internal_property: "需求 #SR-PL-30：光学参考振荡器 Allan 偏差 $<3\\cdot10^{-16}$（$0.1\\,\\text{s}$ – $100\\,\\text{s}$）"
+    scaling_law: "$\\sigma_y^{Dick}(SLOC) \\propto \\sqrt{\\Sigma_k |g_k|^2 S_y^{laser}(k/T_c)}$"
+    is_system_limit:
+      current: true
+      conditions: "非零死时间工作；Dick 效应当前是光钟短期稳定度的主要限制（参见 fortier2026 rel.F26_05）"
+    confidence: established
+    source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "The Allan deviation of the optical reference oscillator shall be lower than 3e-16 between 0.1 s and 100 s"}
+    note: >
+      跨专题接口：SLOC 稳定度 ← 光学参考腔（超稳激光专题）。
+      跨专题引用：ent.fp_cavity_system 定义于 topics/ultrastable-laser/（多文件），
+      met.fractional_freq_instability_m17 定义于 topics/ultrastable-laser/ 的 matei2017 系列节点。
+      前提：上述跨专题节点须存在于对应文件中，才能使本关系完整可查询。
+
+historical_landmarks:
+  first_demonstration:
+    subject: ent.space_optical_clock_mission
+    value: "I-SOC Scientific Requirements Issue 1.1 Approved（ESA，2017-06-09）——任务顶层科学需求正式冻结版本"
+    year: 2017
+    source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC"}
+    note: >
+      本文档为 I-SOC 任务从 SOC → SOC2 → FACT 研发链条后的首份经批准科学需求基线，
+      是 2017 年起进入 ESA 评估阶段（2017–2019）的入口文档。
+
+open_questions:
+  - "I-SOC 评估阶段（2017–2019）后的实施决定——本文档发布后任务决策路径如何演进？（需后续 ESA 文档补全）"
+  - "SLOC 是否选择 ⁸⁷Sr 单一核素，还是保留多核素 / 多跃迁比对能力？"
+  - "FCOL 是否最终被纳入基线配置？"
+  - "ISS 退役时间表（最新计划 2030 前后）对 I-SOC 科学阶段（≥2 年）的约束——是否需要迁移到 Gateway 或其他平台？"
