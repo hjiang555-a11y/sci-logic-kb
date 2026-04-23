@@ -1,0 +1,149 @@
+# Diddams, Fortier & Ludlow 2016 — Optical Atomic Clocks (Nature Photonics) [framework]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：frequency-standards
+# contribution_type: framework — 2016 年光钟领域权威综述（NIST Diddams + NIST Fortier + 
+#   JILA Ludlow 三人联合署名）。系统整理 2000–2016 年间光学原子钟从概念到 10⁻¹⁸ 量级
+#   精度的演化；本文件作为 frequency-standards 专题早于 fortier2026 的早期框架补全。
+
+meta:
+  zotero_key: "DIDDAMS2016-NATPHOT"
+  topic: frequency-standards
+  source_type: review
+  contribution_type: framework
+  reliability: high
+  title: "Optical atomic clocks"
+  year: 2016
+  first_author: Diddams
+  authors: ["Scott A. Diddams", "Tara M. Fortier", "Andrew D. Ludlow"]
+  journal: "Nature Photonics"
+  volume: 10
+  pages: "502-510"
+  doi: "10.1038/nphoton.2016.107"
+  note: >
+    [综述论文 · B1 OFC 早期综述（归 frequency-standards）] 光钟领域 2016 年权威综述。
+    三位作者覆盖 NIST（Diddams / Fortier）与 JILA（Ludlow）两大光钟重镇——文章同时
+    代表离子钟（NIST ²⁷Al⁺ / ¹⁷¹Yb⁺）与中性原子晶格钟（JILA Sr）两个分支的共同视角。
+    核心贡献：
+    (1) 明确光钟 10⁻¹⁸ 分数系统不确定度对应 1 cm 大地水准面分辨率，将光钟性能转化为
+    地球物理可观测量；
+    (2) 系统阐述五大系统效应（黑体辐射频移 BBR / 碰撞频移 / Zeeman 频移 / AC-Stark
+    频移 / Doppler）及其评估方法；
+    (3) 分析光钟短期稳定度 σ_y(τ) = (1/Q)·sqrt(T_c/(τ·N))·N_loops 的 QPN 极限公式，
+    指出实用钟已接近 QPN 极限，Dick 效应（本地振荡器频率噪声混叠）是进一步降低的
+    主要瓶颈；
+    (4) 预判光钟在 SI 秒重定义（2026 CIPM 建议）、引力红移厘米尺度测量、精细结构
+    常数 α 时间变化搜索中的角色。
+    本文件归入 frequency-standards 专题（内容与 fortier2026.yaml 同主题，但时间早 10 年；
+    是光钟领域概念奠基阶段的里程碑综述），与 fortier2026 形成"早期 + 当前"综述对。
+    B1 批次按原分类归 OFC，但依据论文内容实际归 frequency-standards（与批次 README
+    备注一致）。
+
+entities: []
+
+principles:
+  - id: pri.optical_clock_ten_minus_eighteen_geoid_bridge
+    name: "光钟 10⁻¹⁸ 分数精度 ↔ 1 cm 大地水准面分辨率桥梁"
+    tier: domain
+    verification_status: observed
+    statement: >
+      "广义相对论给出引力时间膨胀 Δν/ν = −ΔU/c² ≈ −1.09×10⁻¹⁶ / m（地表），因此光钟
+      分数系统不确定度 10⁻¹⁸ 对应垂直高度分辨率约 1 cm。光钟网络联网比对可直接
+      测绘大地水准面差异，构成"钟-大地测量"（chronometric geodesy）新范式。"
+      这一桥梁把光钟性能从纯计量指标转化为地球物理可观测量，是 2016 后 10⁻¹⁸ 级
+      光钟建设的最大应用驱动力。
+    domain: "时频计量；广义相对论应用；大地测量学"
+    key_insight: >
+      "1 cm 大地水准面"是"10⁻¹⁸ 光钟"的直觉翻译——非专业听众一句话即懂"为什么要 
+      10⁻¹⁸ 光钟"。这也是 I-SOC / Einstein telescope / 可搬运光钟网络等大型项目的
+      汇报模板。
+    conditions: "已知 ΔU = g·Δh；已知本地重力加速度 g；比对通道相对不确定度 < 光钟不确定度"
+    formula: "Delta_nu / nu = - g * Delta_h / c^2 ~ -1.09e-16 / meter near Earth's surface"
+    source:
+      zotero_key: "DIDDAMS2016-NATPHOT"
+      claim: >
+        "at a fractional frequency uncertainty of 10⁻¹⁸, an optical clock is sensitive to
+        a change in height of only 1 cm on Earth's surface, opening the door to relativistic
+        (chronometric) geodesy."
+
+  - id: pri.qpn_dick_two_fundamental_limits_dfl16
+    name: "光钟双重基本极限：量子投影噪声 + Dick 效应"
+    tier: domain
+    verification_status: observed
+    statement: >
+      "光钟短期分数频率不稳定度由两大基本极限共同决定：
+      (a) 量子投影噪声 QPN 极限 σ_QPN(τ) = (1/(π·Q·sqrt(N·τ/T_c)))，其中 Q = ν_0/Δν
+      是跃迁品质因子、N 是原子数、T_c 是时钟周期、τ 是积分时间；
+      (b) Dick 效应 σ_Dick(τ)，由本地振荡器（询问激光）短期频率噪声通过时钟周期
+      采样混叠到钟输出频率产生，约为 σ_LO(T_c/2) · sqrt(T_c / τ) 量级。
+      任何光钟的实际 σ_y 是这两者的几何和；当 σ_Dick >> σ_QPN 时，改进询问激光线宽
+      比增加原子数更有效。"
+    domain: "光钟稳定度理论"
+    key_insight: >
+      Diddams/Fortier/Ludlow 明确指出：2016 前后的实用光钟大多在 σ_QPN 与 σ_Dick 量级
+      相当的状态；进一步进步主要来自改进询问激光（降 σ_Dick，对接超稳激光专题）
+      或提高钟跃迁 Q（如从 Sr 的 ~10¹⁷ 升到 In⁺/Lu⁺ 更高 Q）。
+    conditions: "询问激光方差已知；Dick 效应积分权重函数已推导；钟周期 T_c 固定"
+    formula: >
+      sigma_y^2(tau) ~ sigma_QPN^2(tau) + sigma_Dick^2(tau);
+      sigma_QPN(tau) = 1 / (pi * Q * sqrt(N * tau / T_c));
+      sigma_Dick(tau) ~ sqrt( sum_{k>=1} |g_k|^2 * S_LO(k/T_c) ) * sqrt(T_c / tau)
+    source:
+      zotero_key: "DIDDAMS2016-NATPHOT"
+      claim: >
+        "optical clock instability is limited in tandem by quantum projection noise and
+        the Dick effect, the latter arising from aliasing of local oscillator phase noise
+        sampled at the clock cycle rate."
+
+methods: []
+
+metrics:
+  - id: met.optical_clock_fractional_uncertainty_2016_benchmark
+    name: "2016 年光钟最佳分数系统不确定度基准"
+    unit: "无量纲（分数频率）"
+    description: >
+      2016 年综述汇总的光钟最佳系统不确定度水平。作为"谁到了哪"的时代基准值，供
+      后续 breakthrough 论文对标。
+    demonstrated_value:
+      value: "Al⁺（NIST）：8.6×10⁻¹⁸；Sr（JILA）：2.1×10⁻¹⁸；Yb（NIST）：1.0×10⁻¹⁸"
+      conditions: "实验室条件稳态运行；主要系统效应（BBR / Zeeman / AC-Stark / 碰撞）独立评估"
+      verification_status: landmark
+      confidence: established
+      source: {zotero_key: "DIDDAMS2016-NATPHOT", claim: "the best optical clocks in 2016 achieved fractional systematic uncertainties in the 1–10×10⁻¹⁸ range."}
+    historical_landmarks:
+      first_demonstration:
+        value: "Cs 喷泉钟 ~10⁻¹⁵ 天花板（1999）→ 光钟 10⁻¹⁷（2008 Ludlow Sr 远程比对）→ 10⁻¹⁸（2015 Nicholson Sr/JILA，2014 Chou Al⁺/NIST）"
+        year: 2008
+        note: "2008 Ludlow 论文是 Sr 钟首次突破 Cs 天花板；2014 左右光钟普遍进入 10⁻¹⁸ 俱乐部。"
+      best_demonstration:
+        value: "Yb 光钟 NIST 1.0×10⁻¹⁸（McGrew 2018 进一步刷新至 1.4×10⁻¹⁸，本综述时间点前预览）"
+        year: 2016
+    theoretical_floor:
+      value: "原则上无硬下限；实际受 BBR 频移零温外推残差、重力势不确定度限制；10⁻²⁰ 量级需超冷环境或可搬运钟跨高度比对"
+      basis: "BBR 频移 + 相对论大地测量 + 原子环境耦合"
+
+relations:
+  - id: rel.DFL16_01
+    subject: pri.optical_clock_ten_minus_eighteen_geoid_bridge
+    predicate: ENABLED-BY
+    object: ent.optical_frequency_standard
+    confidence: established
+    source: {zotero_key: "DIDDAMS2016-NATPHOT", claim: "at a fractional frequency uncertainty of 10⁻¹⁸, an optical clock is sensitive to a change in height of only 1 cm on Earth's surface."}
+    note: "大地测量桥梁原理的物理载体是光钟实体。跨文件引用 ent.optical_frequency_standard（fortier2026.yaml）。"
+
+  - id: rel.DFL16_02
+    subject: ent.optical_frequency_standard
+    predicate: BOUNDED-BY
+    object: pri.qpn_dick_two_fundamental_limits_dfl16
+    confidence: established
+    source: {zotero_key: "DIDDAMS2016-NATPHOT", claim: "optical clock instability is limited in tandem by quantum projection noise and the Dick effect."}
+    note: "光钟短期稳定度由 QPN + Dick 共同限制。"
+
+  - id: rel.DFL16_03
+    subject: met.optical_clock_fractional_uncertainty_2016_benchmark
+    predicate: CHARACTERIZED-BY
+    object: ent.optical_frequency_standard
+    confidence: established
+    source: {zotero_key: "DIDDAMS2016-NATPHOT", claim: "the best optical clocks in 2016 achieved fractional systematic uncertainties in the 1–10×10⁻¹⁸ range."}
+    note: "2016 年光钟性能基准指标刻画光钟实体的时代水平。"

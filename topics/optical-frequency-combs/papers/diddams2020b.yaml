@@ -1,0 +1,124 @@
+# Diddams, Vahala & Udem 2020 — Optical Frequency Combs: Coherently Uniting the Electromagnetic Spectrum [framework]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
+# contribution_type: framework — Science 2020 重磅综述，OFC 三大领军人物（NIST Diddams +
+#   Caltech Vahala + MPQ Udem）联合署名，宣告 OFC 从单一技术到"统一电磁波谱相干标尺"
+#   的学科地位；定义 OFC 跨 RF–THz–光–XUV 的桥梁角色。
+
+meta:
+  zotero_key: "DIDDAMS2020-SCIENCE"
+  topic: optical-frequency-combs
+  source_type: review
+  contribution_type: framework
+  reliability: high
+  title: "Optical frequency combs: Coherently uniting the electromagnetic spectrum"
+  year: 2020
+  first_author: Diddams
+  authors: ["Scott A. Diddams", "Kerry Vahala", "Thomas Udem"]
+  journal: "Science"
+  volume: 369
+  issue: 6501
+  pages: "eaay3676"
+  doi: "10.1126/science.aay3676"
+  note: >
+    [综述论文 / 奠基文献 · B1 OFC 学科定位综述] Science 2020 年 369 卷重磅综述，
+    OFC 三大领军人物（NIST Diddams + Caltech Vahala + MPQ Udem）联合署名。本综述的
+    学科地位贡献（与 Udem 2002 / Cundiff 2003 / Diddams 2010 / Fortier 2019 综述并列）：
+    (1) 明确 OFC 作为**统一电磁波谱的相干频率标尺**——从 mHz 级量子钟跃迁到 XUV（自由
+    电子激光、HHG）到 THz 到 RF，全部用同一把 f_rep/f_o 两参数决定的梳齿网格度量；
+    (2) 强调微梳（microresonator Kerr combs）作为芯片级平台的崛起，与光纤梳、
+    Ti:sapphire 梳形成三足鼎立；
+    (3) 阐述 OFC 在引力波探测、系外行星搜寻、基本物理常数检验（α·m_e/m_p）、
+    量子计算相干控制中的新兴角色；
+    (4) 指出 OFC 不再是单纯的"频率测量工具"，而是"相干光与微波之间的通用桥梁"——
+    这改变了"频率标准"概念的外延。
+    本文件建立 pri.ofc_unified_electromagnetic_spectrum_framework 顶层框架原理，作为
+    OFC 专题学科定位的权威声明。
+
+entities: []
+
+principles:
+  - id: pri.ofc_unified_electromagnetic_spectrum_framework
+    name: "OFC 作为统一电磁波谱相干标尺框架"
+    tier: meta
+    verification_status: observed
+    statement: >
+      "光学频率梳提供一套由 (f_rep, f_o) 两参数完全决定的等间距相干频率网格，此网格
+      本身不受波段限制——通过非线性频率转换（差频生成 DFG、高次谐波产生 HHG、
+      参数下转换 OPO 等）可扩展至 mHz 量子钟跃迁、mid/far-IR、THz、XUV、软 X 射线
+      全频段。结果：整个电磁波谱从 RF 到 XUV 可以用同一把 OFC 基准标尺做相干度量与
+      频率合成。"
+      这是 OFC 在 2020 年代获得的新学科定位——不再是"光频计数器"，而是"电磁波谱
+      的相干统一工具"。
+    domain: "光学频率计量；非线性光学；电磁波谱学"
+    key_insight: >
+      2000 年 OFC 打破 "光频测不准" 的诅咒（与微波锁相）；2020 年 OFC 打破 "不同波段
+      之间无相干参考" 的诅咒（RF–XUV 统一）。这两次突破的共同本质：f_n = n·f_rep + f_o
+      的整数 n 可跨越 10+ 个数量级变化，只要存在足够强的非线性转换通道。本原理
+      是 OFC 的"万能标尺"身份证明。
+    conditions: "OFC 短期相位噪声足够低以维持转换后相干；非线性通道效率足够；谱覆盖与应用波段匹配"
+    formula: "f_n = n * f_rep + f_o  with n spanning ~10^3 (THz) to ~10^8 (XUV)"
+    source:
+      zotero_key: "DIDDAMS2020-SCIENCE"
+      claim: >
+        "the optical frequency comb now serves as a phase-coherent ruler that spans
+        from radio frequencies to the extreme ultraviolet, coherently unifying the
+        electromagnetic spectrum from mHz atomic-clock transitions to attosecond
+        harmonic generation."
+
+  - id: pri.three_comb_platforms_triumvirate_dvu20
+    name: "Ti:sapph / fiber / 微梳 三足鼎立平台生态原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      "2020 年 OFC 硬件生态稳定在三大类并行共存的平台：
+      (T1) Ti:sapphire Kerr-lens 锁模（最低相位噪声，研究实验室首选）；
+      (T2) Er/Yb:fiber 锁模（鲁棒、商业化、外场应用）；
+      (T3) microresonator Kerr 孤子梳（芯片级集成、低功耗、新兴应用）。
+      三者不互相淘汰，而是分工：T1 做极限精度参考，T2 做量产现场应用，T3 做片上
+      集成与便携系统。"
+    domain: "OFC 系统工程；硬件生态"
+    key_insight: >
+      与 fortier2019.yaml 的 pri.comb_platform_tradeoffs_f19 互补——本节点给出 2020
+      后的"三足鼎立"共识（QCL 仍边缘，EO 梳尚未主流化），是 Diddams/Vahala/Udem
+      三位学者的联合判断，权威性高。Vahala 是微梳开拓者，Udem 是 Ti:sapph 奠基者，
+      Diddams 是光纤梳工程化推手，三人的联合综述相当于三大社区共同签字。
+    conditions: "2020 年代前后行业共识；2025+ 新平台（集成 MB 锁模、电泵浦孤子梳）可能扩展此框架"
+    formula: null
+    source:
+      zotero_key: "DIDDAMS2020-SCIENCE"
+      claim: >
+        "Ti:sapphire, fiber, and microresonator combs form three complementary pillars
+        of today's OFC ecosystem, each optimizing a different corner of the
+        performance-cost-integration design space."
+
+methods: []
+
+metrics: []
+
+relations:
+  - id: rel.DVU20_01
+    subject: ent.optical_frequency_comb
+    predicate: CHARACTERIZED-BY
+    object: pri.ofc_unified_electromagnetic_spectrum_framework
+    confidence: established
+    source: {zotero_key: "DIDDAMS2020-SCIENCE", claim: "the optical frequency comb now serves as a phase-coherent ruler that spans from radio frequencies to the extreme ultraviolet."}
+    note: "OFC 在 2020 获得『统一电磁波谱相干标尺』学科定位。跨文件引用 ent.optical_frequency_comb（giunta2019.yaml）。"
+
+  - id: rel.DVU20_02
+    subject: ent.optical_frequency_comb
+    predicate: CHARACTERIZED-BY
+    object: pri.three_comb_platforms_triumvirate_dvu20
+    confidence: established
+    source: {zotero_key: "DIDDAMS2020-SCIENCE", claim: "Ti:sapphire, fiber, and microresonator combs form three complementary pillars of today's OFC ecosystem."}
+    note: "2020 年代 OFC 硬件生态的三足鼎立结构。"
+
+  - id: rel.DVU20_03
+    subject: pri.ofc_unified_electromagnetic_spectrum_framework
+    predicate: ENABLED-BY
+    object: pri.self_referencing_f2f
+    confidence: established
+    source: {zotero_key: "DIDDAMS2020-SCIENCE", claim: "the absolute frequency axis of the comb, enabled by self-referencing, underpins its role as a universal coherent ruler."}
+    note: "统一波谱的前提是 OFC 具有绝对频率轴。跨文件引用 pri.self_referencing_f2f（giunta2019.yaml）。"

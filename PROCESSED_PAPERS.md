@@ -3,7 +3,7 @@
 > **说明**：本文件包含知识库中所有已处理论文的详细列表。从 SCHEMA.md 第八节迁移而来。
 > SCHEMA.md 仅保留统计摘要，本文件承载完整论文记录。
 >
-> **最后更新**：2026-04-23（B9 Allan–Howe 奠基白名单摄入：+5 篇 framework → shared 专题首批入库；建立 `meth.allan_deviation_adev` / `meth.modified_allan_deviation_mdev` / `meth.time_deviation_tdev` / `meth.hadamard_deviation_hdev` / `meth.overlapping_allan_deviation_oadev` / `meth.total_deviation_totdev` / `meth.theo1_thedev` / `meth.phase_noise_psd_measurement` 8 个权威方法节点供全库复用）
+> **最后更新**：2026-04-23（B1 OFC 早期综述 + B5c Ludlow PhD thesis 摄入：+5 篇 framework → OFC 专题 101→104 篇 / frequency-standards 专题 1→3 篇；本库总计 187→192 篇）
 
 ---
 
@@ -91,13 +91,16 @@
 | `olson2019.yaml` | CDX3DFQR | Olson 2019 — RB 干涉仪 <2×10⁻¹⁶ | ✅ v4.1 |
 | `huangjc2019b.yaml` | 5DCNFGX4 | Huang 2019b — 双缠绕抗振光纤盘 | ✅ v4.1 |
 
-## 光学频率梳专题（101 篇）
+## 光学频率梳专题（104 篇）
 
 ### 框架型文档
 
 | 文件 | Zotero Key | 论文 | 状态 |
 |------|-----------|------|------|
 | `giunta2019.yaml` | KTHCQRJ2 | Giunta 2019 — 光学频率梳 20 年回顾 | ✅ v4.0 framework |
+| `cundiff2003.yaml` | CUNDIFF2003-RMP | Cundiff & Ye 2003 — Colloquium: Femtosecond Optical Frequency Combs（RMP） | ✅ v4.5 framework |
+| `fortier2019.yaml` | FORTIER2019-COMMPHYS | Fortier & Baumann 2019 — 20 Years of Developments in OFC Tech & Applications（Comm. Phys.） | ✅ v4.5 framework |
+| `diddams2020b.yaml` | DIDDAMS2020-SCIENCE | Diddams/Vahala/Udem 2020 — OFC: Coherently Uniting the Electromagnetic Spectrum（Science） | ✅ v4.5 framework |
 | `picque2020.yaml` | 43TAX2KE | Picqué/Diddams 2020 Science — 光频梳 20 年回顾 | ✅ v4.1 framework |
 | `droste2016.yaml` | 5NSQLZTS | Droste & Newbury 2016 — Er:fiber 梳综述 | ✅ v4.1 framework |
 | `endo2018.yaml` | H93SHF89 | Endo 2018 — 超低噪声光频梳综述 | ✅ v4.1 framework |
@@ -164,11 +167,13 @@
 
 > **备注**：原 Batch 3 清单含 `BL4HI3QI`（Picqué & Hänsch 2019 Nature Photonics 综述），与已处理 `picque2019.yaml`（zotero `RZME5CH8`）为**同一 DOI 的备份键**，不创建重复 YAML。
 
-## 频率标准专题（1 篇）
+## 频率标准专题（3 篇）
 
 | 文件 | Zotero Key | 论文 | 状态 |
 |------|-----------|------|------|
 | `fortier2026.yaml` | BWR7TEZ6 | Fortier 2026 — 光学原子钟综述 | ✅ v4.0 framework |
+| `diddams2016.yaml` | DIDDAMS2016-NATPHOT | Diddams/Fortier/Ludlow 2016 — Optical Atomic Clocks（Nature Photonics） | ✅ v4.5 framework |
+| `ludlow2008_thesis.yaml` | LUDLOW2008-THESIS-JILA | Ludlow 2008 — The Strontium Optical Lattice Clock（PhD thesis, JILA） | ✅ v4.5 framework |
 
 ## 时间标尺专题（1 篇）
 

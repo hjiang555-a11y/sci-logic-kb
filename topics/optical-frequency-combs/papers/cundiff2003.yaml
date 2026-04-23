@@ -1,0 +1,128 @@
+# Cundiff & Ye 2003 — Colloquium: Femtosecond optical frequency combs (Rev. Mod. Phys.) [framework]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
+# contribution_type: framework — OFC 专题早期权威综述。JILA 团队对 2000–2002 年飞秒光频梳
+#   从时域锁模物理到频域计量标尺的学科奠基性整合；补全 Udem 2002 / Hänsch 2006 Nobel Lecture
+#   之外的美国学派时域-频域对偶视角。
+
+meta:
+  zotero_key: "CUNDIFF2003-RMP"
+  topic: optical-frequency-combs
+  source_type: review
+  contribution_type: framework
+  reliability: high
+  title: "Colloquium: Femtosecond optical frequency combs"
+  year: 2003
+  first_author: Cundiff
+  authors: ["Steven T. Cundiff", "Jun Ye"]
+  journal: "Reviews of Modern Physics"
+  volume: 75
+  issue: 2
+  pages: "325-342"
+  doi: "10.1103/RevModPhys.75.325"
+  note: >
+    [综述论文 / 奠基文献 · B1 OFC 早期综述] JILA 团队（Cundiff & Ye）发表于 Reviews of
+    Modern Physics 的 Colloquium，是 OFC 专题的早期美国学派奠基综述，与 Udem & Hänsch
+    2002 Nature 综述（德国学派）并列构成 OFC 理论奠基的双柱。本综述的独特贡献在于：
+    (1) 系统阐述锁模激光器时域脉冲列与频域梳齿的严格对偶（载波-包络相移 Δφ_ce 与
+    f_o = Δφ_ce · f_rep / (2π) 的严格推导）；
+    (2) 引入"载波-包络相位 (CEP) 控制"作为独立物理自由度，超出简单的 f_rep 锁定；
+    (3) 提出 f-2f 自参考的完整时域解释（包络与载波的群-相延迟差）；
+    (4) 强调 OFC 同时作为"光频计数器"与"超短脉冲合成器"的双重身份；
+    (5) 明确 OFC 是"光学钟"到"绝对光频测量"与"射频-光频分频"的枢纽。
+    本文为 JILA 的光频梳工作（Diddams 2000 首次 f-2f 演示、Ye 2000 频率综合）提供统
+    一理论框架；被 OFC 领域引用 3000+ 次，是入门必读文献。
+
+entities: []
+
+principles:
+  - id: pri.cep_controlled_frequency_comb_time_frequency_duality
+    name: "载波-包络相位控制频率梳时-频域对偶原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      "锁模激光器输出脉冲列 E(t) = Σ_n A(t − nT_rep) · exp(i(ω_c t + n·Δφ_ce))，在频域
+      严格对应一组等间距梳齿 f_n = n·f_rep + f_o，其中 f_rep = 1/T_rep 是重复频率，
+      f_o = Δφ_ce · f_rep / (2π) 是载波-包络偏移频率（CEO）；两个自由度 (f_rep, f_o)
+      完全确定所有梳齿的绝对光学频率。"
+      这是 OFC 作为频率计数器的理论基础：每一梳齿都是已知的微波 × 整数 + 已知偏移的
+      绝对光频参考。
+    domain: "光学频率计量；锁模激光物理"
+    key_insight: >
+      Cundiff & Ye 明确把 Δφ_ce（载波-包络相位的逐脉冲累积）作为独立物理量——这是在
+      Udem 2002 的频域论述之外，从时域物理给出 OFC 原理的第二条独立路径。两条路径
+      汇合在 f_o 的定义上，给物理学家与工程师两种同等权威的理解方式。
+    conditions: "稳定的锁模激光器，脉冲包络形状稳定，光学参考激光器腔长稳定；测量带宽覆盖 f_rep 与 f_o"
+    formula: >
+      f_n = n * f_rep + f_o; f_o = (Delta_phi_ce / (2*pi)) * f_rep;
+      E(t) in time domain <=> f_n comb lines in frequency domain (Fourier pair)
+    source:
+      zotero_key: "CUNDIFF2003-RMP"
+      claim: >
+        "the pulse-to-pulse phase slip Δφ_ce is mapped onto the frequency domain as the
+        carrier-envelope offset frequency f_o = Δφ_ce · f_rep / (2π), and the full comb
+        spectrum is uniquely determined by the two degrees of freedom (f_rep, f_o)."
+
+  - id: pri.octave_span_enables_absolute_referencing_cy03
+    name: "倍频程谱宽使绝对自参考可行（Cundiff & Ye 综述版）"
+    tier: domain
+    verification_status: observed
+    statement: >
+      "实现 f_o 测量不需要外部亚千赫兹光频参考，只需输出谱宽覆盖一倍频程（f_N = 2·f_n
+      中的两端梳齿同时存在），通过对低频端梳齿倍频、与高频端原梳齿拍频，拍频直接
+      等于 f_o。倍频程谱可由光子晶体光纤或高非线性光纤在飞秒脉冲峰值功率驱动下非线性
+      展宽获得。"
+    domain: "非线性光学；自参考计量学"
+    key_insight: >
+      与 diddams2010 的同名原理 (pri.octave_supercontinuum_enables_self_referencing_d10)
+      覆盖同一物理事实，本节点给出 Cundiff & Ye 对"为什么倍频程是必要且充分的"的早期
+      综述性说明：倍频程本身就是"f_o 闭环最低要求"的严格证明。
+    conditions: "谱密度两端（f_n, f_2n）均高于探测噪声；PCF/HNLF 色散平坦；飞秒脉冲峰值功率足够"
+    formula: "2 * f_n - f_2n = 2*(n*f_rep + f_o) - (2n*f_rep + f_o) = f_o"
+    source:
+      zotero_key: "CUNDIFF2003-RMP"
+      claim: >
+        "with an octave-spanning spectrum, f_o can be measured directly by frequency-doubling
+        the low-frequency part of the comb and beating it against the original comb at the
+        high-frequency end: the beat note is precisely f_o."
+
+methods: []
+
+metrics: []
+
+relations:
+  - id: rel.CY03_01
+    subject: ent.optical_frequency_comb
+    predicate: CHARACTERIZED-BY
+    object: pri.cep_controlled_frequency_comb_time_frequency_duality
+    confidence: established
+    source:
+      zotero_key: "CUNDIFF2003-RMP"
+      claim: "the full comb spectrum is uniquely determined by the two degrees of freedom (f_rep, f_o) arising from the time-frequency duality of mode-locked pulse trains."
+    note: >
+      通用光学频率梳实体由 CEP 受控时-频域对偶原理刻画。
+      跨文件引用 ent.optical_frequency_comb（定义于 giunta2019.yaml）。
+
+  - id: rel.CY03_02
+    subject: pri.cep_controlled_frequency_comb_time_frequency_duality
+    predicate: ENABLED-BY
+    object: pri.octave_span_enables_absolute_referencing_cy03
+    confidence: established
+    source:
+      zotero_key: "CUNDIFF2003-RMP"
+      claim: "measurement and control of f_o becomes feasible through self-referencing with an octave-spanning spectrum."
+    note: "两自由度控制需要倍频程谱展宽以闭环 f_o。"
+
+  - id: rel.CY03_03
+    subject: pri.cep_controlled_frequency_comb_time_frequency_duality
+    predicate: DERIVED-FROM
+    object: pri.self_referencing_f2f
+    confidence: established
+    source:
+      zotero_key: "CUNDIFF2003-RMP"
+      claim: "the carrier-envelope offset frequency f_o is obtained through the f-to-2f self-referencing scheme, giving the comb its absolute frequency axis."
+    note: >
+      时-频域对偶原理的工程落地依赖 f-2f 自参考方法。
+      跨文件引用 pri.self_referencing_f2f（定义于 giunta2019.yaml）。

@@ -12,11 +12,11 @@
 
 | 批次 | 子域 / 主题 | 篇数 | 候选 `first_author_year` | 状态 |
 |------|-----------|------|------|------|
-| **B1** | OFC · 早期综述与原理奠基 | 4 | `cundiff2003`, `fortier2019`, `diddams2020b`, `diddams2016` | ⏳ 待启动 |
+| **B1** | OFC · 早期综述与原理奠基 | 4 | `cundiff2003`, `fortier2019`, `diddams2020b`, `diddams2016` | **✅ 已完成 2026-04-23**（lint 0 error；5 条跨文件节点复用，0 重复定义） |
 | **B2** | OFC · 直接光谱与频率综合 | 5 | `ye2000`, `marian2004`, `jones2005`, `adler2009`, `fortier2011` | ⏳ 待启动 |
 | **B5a** | 光钟 · Sr lattice 主干（JILA 分支） | 8 | `ludlow2008`, `bloom2014`, `nicholson2015`, `ludlow2015`, `bothwell2019`, `oelker2019`, `bothwell2022`, `kim2023` | ⏳ 待启动 |
 | **B5b** | 光钟 · NIST 与离子钟 · 基石综述 | 7 | `sullivan2001`, `heavner2005`, `oskay2006`, `rosenband2008`, `diddams2020`, `bacon2021`, `aeppli2022` | ⏳ 待启动 |
-| **B5c** | 光钟 · Ludlow PhD thesis | 1 | `ludlow2008_thesis` ⭐ | ⏳ 待启动 |
+| **B5c** | 光钟 · Ludlow PhD thesis | 1 | `ludlow2008_thesis` ⭐ | **✅ 已完成 2026-04-23**（`meth.sr_optical_lattice_clock_stack_l08` 建立供 B5a 后续论文复用） |
 | **B7** | 频率传递 | 1 | `boyd2005` | ⏳ 待启动 |
 | **B8** | 时频数学基础 · 非奠基期刊 | 1 | `allan2016` | ⏳ 待启动 |
 | **B9** | Allan–Howe 奠基白名单（< 1999） | 5 | `allan1966`, `allan1987`, `howe1976`, `sullivan1990`, `riley2008` | **✅ 已完成 2026-04-23**（lint 0 error，8 个权威 `meth.*` 节点入库） |

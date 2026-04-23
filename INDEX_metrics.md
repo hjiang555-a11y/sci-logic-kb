@@ -2,7 +2,7 @@
 
 # 📊 Metrics Quick Reference
 
-> Auto-generated 2026-04-23 06:37 UTC
+> Auto-generated 2026-04-23 07:05 UTC
 >
 > Metrics are grouped by **role** (v4.4 σ_y-first convention, see `topics/ultrastable-laser/_meta/scoping_principles.md` v2). Role is taken from the `role` field on the metric node when present, otherwise inferred from ID / name heuristics.
 
@@ -14,6 +14,7 @@
 |----|------|------------|------------|--------|
 | `met.optical_clock_fractional_instability` | 光学原子钟分数频率不稳定度 | σ_y(τ) ≈ 5×10⁻¹⁷/√τ（最佳光晶格钟，综述汇总） | ⁸⁷Sr 或 ¹⁷¹Yb 光晶格钟，~10⁴ 原子，T_m ≈ 1–4 s，超稳腔激光 | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
 | `met.optical_clock_fractional_uncertainty` | 光学原子钟分数频率不确定度（系统效应） | <10⁻¹⁸（多个系统）；5.5×10⁻¹⁹（²⁷Al⁺ NIST，当前最佳，综述汇总） | ²⁷Al⁺ 量子逻辑钟（NIST），完整不确定度预算评估 | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
+| `met.optical_clock_fractional_uncertainty_2016_benchmark` | 2016 年光钟最佳分数系统不确定度基准 | Al⁺（NIST）：8.6×10⁻¹⁸；Sr（JILA）：2.1×10⁻¹⁸；Yb（NIST）：1.0×10⁻¹⁸ | 实验室条件稳态运行；主要系统效应（BBR / Zeeman / AC-Stark / 碰撞）独立评估 | [diddams2016](topics/frequency-standards/papers/diddams2016.yaml) |
 
 ## Optical Frequency Combs
 

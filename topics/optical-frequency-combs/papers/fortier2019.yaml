@@ -1,0 +1,160 @@
+# Fortier & Baumann 2019 — 20 Years of Developments in Optical Frequency Comb Technology and Applications [framework]
+# 提取者：GitHub Copilot（AI 草稿，待专家确认）
+# 提取日期：2026-04-23
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
+# contribution_type: framework — OFC 技术与应用 20 年全景综述（1999–2019）。NIST 团队的
+#   系统性总结，覆盖从 Ti:sapphire 奠基到光纤梳主流化、微梳兴起、双梳光谱、天文梳、精密测距
+#   等 9 条应用主线的演化脉络。
+
+meta:
+  zotero_key: "FORTIER2019-COMMPHYS"
+  topic: optical-frequency-combs
+  source_type: review
+  contribution_type: framework
+  reliability: high
+  title: "20 Years of Developments in Optical Frequency Comb Technology and Applications"
+  year: 2019
+  first_author: Fortier
+  authors: ["Tara M. Fortier", "Esther Baumann"]
+  journal: "Communications Physics"
+  volume: 2
+  issue: 1
+  pages: "153"
+  doi: "10.1038/s42005-019-0249-y"
+  note: >
+    [综述论文 / 奠基文献 · B1 OFC 20 年综述] NIST Time & Frequency Division 团队发表于
+    Communications Physics 的 OFC 技术 20 年全景综述。时间跨度 1999（首次 f-2f 演示）
+    至 2019（微梳成熟 + 双梳光谱商业化），系统整理 9 条主线：
+    (1) Ti:sapphire 锁模平台（奠基 → 现有研究主力）；
+    (2) Er:fiber / Yb:fiber 光纤锁模梳（主流化 → 外场应用）；
+    (3) 微梳（MgF₂ / SiN / Kerr 孤子，芯片级集成新兴）；
+    (4) QCL 梳（mid-IR 直接电泵浦）；
+    (5) f-2f 自参考与倍频程展宽技术（PCF → ANDi → waveguide）；
+    (6) 双梳光谱（气相 / 液相 / 固相，高分辨与高通量）；
+    (7) 天文光梳（HARPS / ESPRESSO / 1 cm/s 径向速度 → 行星搜寻）；
+    (8) 精密测距（TOF 与干涉混合，亚微米 → 米量级）；
+    (9) 光钟询问激光 + f_rep 低噪声微波生成。
+    本综述是 OFC 专题"谁做了什么"的权威时间轴，与 diddams2010（演化树）、picque2019
+    （Nature Photonics 应用视角）、fortier2022（NIST 综述）共同构成 OFC 历史层四重奏。
+    本文件建立 L0 级框架节点 pri.ofc_nine_application_threads_f19 与
+    meth.comb_platform_taxonomy_f19，为后续 OFC papers 提供 "应用主线定位" 与
+    "平台分类" 两个顶层路标。
+
+entities: []
+
+principles:
+  - id: pri.ofc_nine_application_threads_f19
+    name: "OFC 九大应用主线分类框架（Fortier 2019 综述版）"
+    tier: meta
+    verification_status: observed
+    statement: >
+      "OFC 在 1999–2019 二十年间发展出九条独立但相互关联的应用主线：
+      (A1) 绝对光频计量（光钟询问），
+      (A2) 光-微波分频与低相噪微波合成，
+      (A3) 双梳光谱（DCS），
+      (A4) 直接梳光谱（气相单线探测），
+      (A5) 天文光谱仪校准（光梳）
+      (A6) 精密激光测距（LIDAR / TOF），
+      (A7) 阿秒脉冲合成与泵浦-探测，
+      (A8) 频率综合与任意波形合成，
+      (A9) 量子信息载体（纠缠光子对、频率梳量子通信）。
+      每条主线对 OFC 关键规格（f_rep 范围、带宽、相位噪声、CEO 稳定度、功率）有独立
+      设计取舍，构成 OFC 选型与子域划分的决策框架。"
+    domain: "光学频率梳应用学；系统工程"
+    key_insight: >
+      本框架是"OFC 是什么用的"的权威清单；后续任何 OFC 论文都可归入 A1–A9 之一或跨多线。
+      本库 OFC 专题现有 101 篇论文的 synthesis/ 子域主线（v2 子域主线）可直接映射到此分类。
+    conditions: "2019 前后行业共识；A9 仍在快速演化（2020 后发展超出本综述）"
+    formula: null
+    source:
+      zotero_key: "FORTIER2019-COMMPHYS"
+      claim: >
+        "frequency combs now underpin at least nine major application areas: optical clock
+        interrogation, microwave synthesis, dual-comb spectroscopy, direct comb spectroscopy,
+        astronomical calibration, precision ranging, attosecond science, frequency synthesis,
+        and quantum photonics."
+
+  - id: pri.comb_platform_tradeoffs_f19
+    name: "OFC 平台选择权衡原理（Ti:sapph / fiber / QCL / 微梳）"
+    tier: domain
+    verification_status: observed
+    statement: >
+      "四类主流 OFC 硬件平台（Ti:sapphire / Er or Yb:fiber / QCL / microring Kerr）在
+      六个关键指标上形成权衡矩阵：(1) 短期相位噪声（Ti:sapph 最低，微梳最高）、
+      (2) f_rep 范围（fiber 几十 MHz – GHz；微梳 10–1000 GHz）、(3) 谱带宽原生
+      （Ti:sapph >100 THz；fiber ~20 THz；QCL ~1 THz；微梳 ~20 THz）、
+      (4) 功率功耗（Ti:sapph 数瓦 + 绿光泵浦；fiber 紧凑低功耗；微梳 mW 级芯片；
+      QCL 电泵 mid-IR）、(5) 中心波长覆盖（Ti:sapph NIR；fiber 1.0/1.55 µm；
+      QCL mid-IR；微梳随材料）、(6) 场外鲁棒性（fiber 与微梳 >> Ti:sapph）。
+      任何 OFC 项目选型都是这六个维度上的加权妥协。"
+    domain: "OFC 系统工程"
+    key_insight: >
+      Fortier 2019 将 20 年间不断涌现的新平台统一到六维权衡矩阵内，给系统工程师
+      "看一眼就能知道适合做什么"的决策工具。后续微梳专题、双梳光谱专题的平台选择
+      讨论都隐式基于此框架。
+    conditions: "2019 年代的商业化/实验室可用组件；未来半导体集成平台可能引入新维度"
+    formula: null
+    source:
+      zotero_key: "FORTIER2019-COMMPHYS"
+      claim: >
+        "Ti:sapphire, fiber, QCL and microresonator combs each occupy a distinct region
+        of the (phase-noise, repetition-rate, bandwidth, power, wavelength, robustness)
+        design space; platform selection is an application-driven compromise."
+
+methods:
+  - id: meth.comb_platform_taxonomy_f19
+    name: "OFC 硬件平台分类法（Fortier 2019 综述版）"
+    purpose: >
+      为 OFC 系统选型与论文归档提供统一的平台分类标签。本方法是"架构标签"而非
+      测量方法，适用于数据库 / 综述论文元数据组织。
+    description: >
+      将任一 OFC 样品按主增益介质 / 腔结构分类为：
+      (P1) Ti:sapphire Kerr-lens mode-locked；
+      (P2) Er:fiber nonlinear polarization / NPR 锁模；
+      (P3) Yb:fiber SESAM 锁模；
+      (P4) Cr:ZnS / Cr:ZnSe mid-IR 锁模；
+      (P5) QCL 直接电泵浦梳；
+      (P6) microring Kerr 孤子（MgF₂ / SiN / LiNbO₃ 等）；
+      (P7) EO 梳（电光调制级联）；
+      (P8) supercontinuum-seeded 次级梳（A0 + 非线性展宽）。
+      每类给定 f_rep / 谱宽 / 相位噪声 / 功率的典型区间。
+    key_steps:
+      - "读论文的 gain medium 和 mode-locking mechanism，定位到 P1–P8"
+      - "按标准六维矩阵填相应平台的 typical specs 区间"
+      - "与应用主线（A1–A9）做交叉比对，判断匹配度"
+    applicable_conditions: "按硬件分类；2020 后新平台（片上锁模二极管等）可扩展新编号"
+    source:
+      zotero_key: "FORTIER2019-COMMPHYS"
+      claim: "comb hardware can be grouped into roughly eight platform families, each with a characteristic operating point in the design space."
+    note: >
+      本方法服务 OFC 专题的 synthesis 子域组织与论文归档。与本库现有平台节点
+      （ent.ti_sapphire_frequency_comb / ent.er_fiber_frequency_comb / 
+      ent.kerr_microring_comb 等）形成 OPERATIONALIZED-AS 关系。
+
+metrics: []
+
+relations:
+  - id: rel.F19_01
+    subject: ent.optical_frequency_comb
+    predicate: CHARACTERIZED-BY
+    object: pri.ofc_nine_application_threads_f19
+    confidence: established
+    source: {zotero_key: "FORTIER2019-COMMPHYS", claim: "frequency combs now underpin at least nine major application areas..."}
+    note: "OFC 作为系统在 20 年间由九条应用主线共同刻画。跨文件引用 ent.optical_frequency_comb（giunta2019.yaml）。"
+
+  - id: rel.F19_02
+    subject: pri.comb_platform_tradeoffs_f19
+    predicate: DERIVED-FROM
+    object: pri.ofc_nine_application_threads_f19
+    confidence: established
+    source: {zotero_key: "FORTIER2019-COMMPHYS", claim: "platform selection is an application-driven compromise."}
+    note: "平台权衡原理由应用主线分类直接驱动：不同应用需要不同平台。"
+
+  - id: rel.F19_03
+    subject: meth.comb_platform_taxonomy_f19
+    predicate: DERIVED-FROM
+    object: pri.comb_platform_tradeoffs_f19
+    confidence: established
+    source: {zotero_key: "FORTIER2019-COMMPHYS", claim: "comb hardware can be grouped into roughly eight platform families."}
+    note: "平台分类方法是权衡原理的结构化落地。"
