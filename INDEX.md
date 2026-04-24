@@ -2,7 +2,7 @@
 
 # 📚 sci-logic-kb — Knowledge Base Index
 
-> Auto-generated 2026-04-24 02:15 UTC
+> Auto-generated 2026-04-24 02:48 UTC
 
 ## 🧭 按研究问题导航
 
@@ -15,7 +15,7 @@
 | 了解某个物理分支的历史演化 | [稳定度时间线](topics/ultrastable-laser/synthesis/stability_record_timeline.md)、[低温工程路线图](topics/ultrastable-laser/synthesis/cryogenic_roadmap.md)、[光纤稳频全景](topics/ultrastable-laser/synthesis/fiber_stabilization_landscape.md) |
 | 快速掌握专题架构 | [`TOPICS.md`](TOPICS.md) · 各专题 `_meta/architecture.md` |
 | 参与建设 / 贡献论文 | [`CONTRIBUTING.md`](CONTRIBUTING.md) · [`SCHEMA.md`](SCHEMA.md) |
-| 查看待处理工作 | [`TODO.md`](TODO.md) · [`reports/chain_gap_ultrastable.md`](reports/chain_gap_ultrastable.md) |
+| 查看待处理工作 | [`TODO.md`](TODO.md) · [`reports/active/chain_gap_ultrastable.md`](reports/active/chain_gap_ultrastable.md) |
 
 ## Topic Overview
 

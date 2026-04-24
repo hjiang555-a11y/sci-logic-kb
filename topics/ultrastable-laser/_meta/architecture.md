@@ -109,7 +109,7 @@
 |  | 自平衡长腔安装 | 工程使能（叠加长腔路径） | Häfner 2015 ✅ |
 | `pri.shot_noise_frequency_limit` | 提高光功率 / 精度检测 | 探测下限（非当前主线瓶颈） | Drever 1983（理论）✅ |
 
-> 🏆 = 当前领域世界纪录。YAML `breakthrough_paths` 逐项补全进度见 [`reports/chain_gap_ultrastable.md`](../../../reports/chain_gap_ultrastable.md)。
+> 🏆 = 当前领域世界纪录。YAML `breakthrough_paths` 逐项补全进度见 [`reports/active/chain_gap_ultrastable.md`](../../../reports/active/chain_gap_ultrastable.md)。
 >
 > **"工程使能"标签含义**：该路径自身不刷新 σ_y 主线纪录，但在合适条件下保护或使能 σ_y 主线路径（典型如振动隔离让热噪声极限能够被观测到；RAM 抑制让 PDH 锁频残余偏移不掩盖热噪声；温度稳定在 CTE 零点让长期漂移不吃掉短期 σ_y 测量窗口）。按 [`scoping_principles.md`](scoping_principles.md) §1.2，单独命中工程使能路径的论文默认为 `evidence`。
 >

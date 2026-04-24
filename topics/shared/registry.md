@@ -18,9 +18,9 @@
 > - 因此 Tier 1 清单中三条规范节点的「使用文件数」各 +1（`dual_comb_multiheterodyne_detection` 4→5、`self_referencing_f2f` 16→17、`dissipative_kerr_soliton` 5→6）——本表下次自动扫描时同步
 >
 > **关联文档**：
-> - 完整分析报告：[`../../reports/shared_node_candidates.md`](../../reports/shared_node_candidates.md)
+> - 完整分析报告：[`../../reports/active/shared_node_candidates.md`](../../reports/active/shared_node_candidates.md)
 > - Tier 2 跨专题桥梁说明：见本文件 §3
-> - Tier 3 合并候选（待专家判断）：[`../../reports/shared_node_candidates.md#4-tier-3`](../../reports/shared_node_candidates.md)
+> - Tier 3 合并候选（待专家判断）：[`../../reports/active/shared_node_candidates.md#4-tier-3`](../../reports/active/shared_node_candidates.md)
 
 ---
 
@@ -98,7 +98,7 @@
 - **Tier 级别**：Tier 2（跨专题公共节点）
 - **Hierarchy level**：0（顶层普适原理）
 - **允许的 SHARED-WITH 主语谓词范围**：`pri.*`（不用于 `meth.*`，因为 FDT 是原理而非方法）
-- **首批试点落地状态**：**infrastructure ready，实际 SHARED-WITH 关系待下一篇在 OFC/频率标准/光纤陀螺专题引入的论文**（该论文需显式定义一个 thermal-noise 局部变体原理作为 SHARED-WITH 主语；见 [reports/shared_node_candidates.md §4](../../reports/shared_node_candidates.md)）
+- **首批试点落地状态**：**infrastructure ready，实际 SHARED-WITH 关系待下一篇在 OFC/频率标准/光纤陀螺专题引入的论文**（该论文需显式定义一个 thermal-noise 局部变体原理作为 SHARED-WITH 主语；见 [reports/active/shared_node_candidates.md §4](../../reports/active/shared_node_candidates.md)）
 
 **未来扩展候选**（待跨专题摄入更多论文后激活）：
 - `meth.pdh_locking`（超稳激光 → 频率标准）
