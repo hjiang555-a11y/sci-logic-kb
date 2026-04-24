@@ -1,8 +1,8 @@
 # Frequency Standards — Topic Architecture
 
-> **Status**: 🟡 `skeleton` — 当前仅 1 篇框架综述 + 10 节点，**暂不作为 Round 1–4 整治重点**。本架构定义顶层骨架，等待后续论文摄入填充 Level 2 实例与具体限制链。
+> **Status**: 🟢 `growing` — 已从 framework 骨架扩展为 ≥10 篇规模（精确数字见 [`INDEX.md`](../INDEX.md) / `python scripts/stats.py`）。本架构定义顶层骨架，后续继续补充 Level 2 实例（Al⁺/Sr/Yb/²²⁹Th 光钟、Cs fountain / H maser / Rb / CSAC 微波标准）与具体限制链。
 >
-> <!-- TODO: 待信息补全 —— 光钟实例、微波标准分支的代表论文、跨专题 CONDITIONED-BY 接口 -->
+> <!-- TODO: 补微波标准分支代表论文、跨专题 CONDITIONED-BY 接口；光钟物种的系统误差预算综述 -->
 >
 > Source of truth: SCHEMA.md §2 (频率标准专题内部架构)
 
@@ -33,9 +33,11 @@
     └── CONDITIONED-BY ent.si_second_definition（秒定义）
 ```
 
-## Status: Initial framework (1 paper: fortier2026.yaml)
+## Status: Growing topic
 
-Needs expansion with:
+> 精确论文数 / 节点数见 [`INDEX.md`](../INDEX.md) / `python scripts/stats.py`。
+
+Next priorities:
 - Individual clock species papers (Al+, Sr, Yb, ²²⁹Th)
 - Microwave standard papers (Cs fountain, H maser)
 - Clock comparison / ratio measurement papers
