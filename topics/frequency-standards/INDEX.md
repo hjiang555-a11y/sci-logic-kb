@@ -2,7 +2,7 @@
 
 # Frequency Standards — Topic Index
 
-> Auto-generated 2026-04-23 13:06 UTC · 12 papers · 29 nodes · 40 relations
+> Auto-generated 2026-04-24 02:15 UTC · 18 papers · 44 nodes · 47 relations
 
 ## Entities
 
@@ -16,11 +16,17 @@
 | `ent.jila_sr_lattice_clock_n15` | JILA ⁸⁷Sr 光晶格钟（Nicholson 2015, 2×10⁻¹⁸） | 2 | [nicholson2015](topics/frequency-standards/papers/nicholson2015.yaml) |
 | `ent.jila_sri_sr_clock_b19` | JILA SrI ⁸⁷Sr 光晶格钟（Bothwell 2019, 2×10⁻¹⁸） | 2 | [bothwell2019](topics/frequency-standards/papers/bothwell2019.yaml) |
 | `ent.microwave_frequency_standard` | 微波频率标准（Level 1 总节点） | 1 | [heavner2005](topics/frequency-standards/papers/heavner2005.yaml) |
+| `ent.nimsri_sr_clock_cas2024` | NimSrI Sr光晶格钟（中国科学院国家授时中心，2024） | 2 | [li2024](topics/frequency-standards/papers/li2024.yaml) |
 | `ent.nist_f1_cs_fountain_h05` | NIST-F1 铯喷泉初级频标（2005 改进版） | 2 | [heavner2005](topics/frequency-standards/papers/heavner2005.yaml) |
 | `ent.nuclear_clock_229th` | ²²⁹Th 核钟（架构子类型） | 2 | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
 | `ent.optical_frequency_standard` | 光学频率标准（通用） | 1 | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
 | `ent.optical_lattice_clock` | 光晶格钟（架构子类型） | 2 | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
+| `ent.sr_optical_lattice_clock_jila2014` | JILA Sr 光晶格原子钟（2014） | 2 | [bloom2014](topics/frequency-standards/papers/bloom2014.yaml) |
+| `ent.transportable_sr_clock_ptb2018` | PTB 可搬运Sr光晶格钟（2018） | 2 | [grotti2018](topics/frequency-standards/papers/grotti2018.yaml) |
 | `ent.trapped_ion_optical_clock` | 囚禁离子光钟（架构子类型） | 2 | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
+| `ent.yb_dual_ensemble_clock_nist2017` | NIST 双Yb原子系综光钟（2017） | 2 | [schioppo2017](topics/frequency-standards/papers/schioppo2017.yaml) |
+| `ent.yb_optical_lattice_clock` | Yb 光晶格原子钟 | 1 | [mcgrew2019](topics/frequency-standards/papers/mcgrew2019.yaml) |
+| `ent.yb_optical_lattice_clock_nist2013` | NIST 171Yb 光晶格原子钟（2013） | 2 | [hinkley2013](topics/frequency-standards/papers/hinkley2013.yaml) |
 
 ## Principles
 
@@ -48,6 +54,25 @@
 ## Metrics
 
 > Metrics are grouped by **role** (v4.4 σ_y-first convention). See `topics/ultrastable-laser/_meta/scoping_principles.md` v2.
+
+### 🎯 Primary (σ_y 主线)
+
+| ID | Name | Best Value | Source |
+|----|------|------------|--------|
+| `met.absolute_freq_ratio_mcgrew2019` | 光钟绝对频率比对精度（McGrew 2019） | 1e-16 | [mcgrew2019](topics/frequency-standards/papers/mcgrew2019.yaml) |
+| `met.clock_instability_yb_hinkley2013` | 时钟不稳定性（Yb，Hinkley 2013） | 1.6e-18 | [hinkley2013](topics/frequency-standards/papers/hinkley2013.yaml) |
+| `met.clock_instability_yb_schioppo2017` | 时钟不稳定性（Yb双系综，Schioppo 2017） | 3e-18 | [schioppo2017](topics/frequency-standards/papers/schioppo2017.yaml) |
+| `met.geodesy_uncertainty_grotti2018` | 大地测量引力势差不确定度（Grotti 2018） | 5e-18 | [grotti2018](topics/frequency-standards/papers/grotti2018.yaml) |
+| `met.systematic_uncertainty_sr_bloom2014` | 系统频率不确定度（Sr，Bloom 2014） | 6.4e-18 | [bloom2014](topics/frequency-standards/papers/bloom2014.yaml) |
+| `met.systematic_uncertainty_sr_li2024` | 系统频率不确定度（NimSrI，Li 2024） | 4.8e-18 | [li2024](topics/frequency-standards/papers/li2024.yaml) |
+
+### 📊 Secondary (线宽/PSD/相干)
+
+| ID | Name | Best Value | Source |
+|----|------|------------|--------|
+| `met.clock_instability_sr_bloom2014` | 时钟短期不稳定性（Sr，Bloom 2014） | 2.2e-16 | [bloom2014](topics/frequency-standards/papers/bloom2014.yaml) |
+| `met.clock_instability_sr_li2024` | 时钟短期不稳定性（NimSrI，Li 2024） | 3.3e-17 | [li2024](topics/frequency-standards/papers/li2024.yaml) |
+| `met.clock_instability_yb_hinkley2013_short` | 时钟短期不稳定性（Yb，Hinkley 2013） | 3.2e-16 | [hinkley2013](topics/frequency-standards/papers/hinkley2013.yaml) |
 
 ### ❓ Unspecified
 
@@ -95,4 +120,5 @@ Nodes referenced but not defined in this topic:
 | `rel.Bac21_02` | CONDITIONED-BY | `ent.free_space_optical_tf_link` | bacon2021 |
 | `rel.F26_10` | CONDITIONED-BY | `ent.optical_frequency_comb` | fortier2026 |
 | `rel.L08T_04` | OPERATIONALIZED-AS | `meth.allan_deviation_adev` | ludlow2008_thesis |
+| `rel.H02` | IMPLEMENTS | `meth.ramsey_spectroscopy` | hinkley2013 |
 
