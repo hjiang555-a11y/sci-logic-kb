@@ -154,6 +154,24 @@ python scripts/build_index.py                      # 重建 INDEX
 
 ---
 
+## 根目录约定（v4.5+ · TODO.md P0）
+
+仓库根目录只保留**长期稳定入口**，不再新增任何一次性报告 / 同步记录 / backup / 临时分析文件。
+
+**根目录允许的文件类型**：
+- 路由文档：`README.md` · `SCHEMA.md` · `CONTRIBUTING.md` · `CLAUDE.md` · `TOPICS.md` · `TODO.md`
+- 自动生成索引：`INDEX.md` · `INDEX_metrics.md` · `INDEX_principles.md`
+- 运维文件：`LOG.md` · `PROCESSED_PAPERS.md` · `paper-inkb.md`
+
+**一次性 / 过程性 / 诊断性文档**一律放入 `reports/` 子目录，分层规则见 [`reports/README.md`](reports/README.md)：
+- `reports/active/`：仍驱动决策
+- `reports/archive/`：已完成使命，仅留可追溯性
+- `reports/generated/`：脚本输出
+
+PR 审核时若发现向根目录新增非入口文件，应在 review 中要求迁入 `reports/` 对应子目录。
+
+---
+
 ## 报告问题 / 请求新功能
 
 - Issue 模板：见 `.github/ISSUE_TEMPLATE/`

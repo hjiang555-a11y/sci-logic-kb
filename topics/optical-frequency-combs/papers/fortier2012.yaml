@@ -128,9 +128,9 @@ relations:
   - id: rel.F03
     subject: ent.hybrid_photonic_microwave_osc_fortier2012
     predicate: USES-METHOD
-    object: meth.optical_frequency_division
+    object: pri.optical_frequency_division_microwave
     confidence: established
-    note: "跨文件引用 meth.optical_frequency_division，定义于 topics/optical-frequency-combs/papers/"
+    note: "跨文件引用 pri.optical_frequency_division_microwave，定义于 topics/optical-frequency-combs/papers/"
     source:
       zotero_key: "PJEYSD8M"
       claim: >

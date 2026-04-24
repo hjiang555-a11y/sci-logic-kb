@@ -23,6 +23,15 @@ meta:
     版权标注 ©2009 IEEE（ISBN 978-1-4244-3510-4）。
 
 entities:
+  - id: ent.fiber_delay_line_reference
+    name: "光纤延迟线参考系统（类级别实体）"
+    hierarchy_level: 1
+    status: established
+    function: >
+      以长光纤为延迟介质的频率参考系统类，以光纤延迟稳定为核心机制，对比 FP 腔参考系统。
+      该节点作为 `ent.titanium_fiber_spool_l09` 等具体光纤线轴/盘绕设计的抽象父类。
+    note: "跨文件 / 跨论文的类级别实体；具体实现见各论文 level-2 节点。"
+
   - id: ent.titanium_fiber_spool_l09
     name: "钛合金低振动灵敏度光纤线轴（Li 2009a）"
     hierarchy_level: 2

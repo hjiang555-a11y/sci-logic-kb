@@ -2,7 +2,7 @@
 
 # Optical Frequency Combs — Topic Index
 
-> Auto-generated 2026-04-24 02:15 UTC · 114 papers · 682 nodes · 812 relations
+> Auto-generated 2026-04-24 02:55 UTC · 114 papers · 682 nodes · 812 relations
 
 ## Entities
 
@@ -1326,8 +1326,4 @@ Nodes referenced but not defined in this topic:
 | `rel.Cho20_12` | CONDITIONED-BY | `ent.optical_frequency_standard` | chou2020 |
 | `rel.H07_10` | CONDITIONED-BY | `ent.vibration_environment` | hartl2007 |
 | `rel.PD20_04` | CHARACTERIZED-BY | `met.fractional_freq_instability_y99` | picque2020 |
-| `rel.Fo05` | USES-METHOD | `meth.optical_frequency_division` | fortier2011 |
-| `rel.F03` | USES-METHOD | `meth.optical_frequency_division` | fortier2012 |
-| `rel.Q04` | USES-METHOD | `meth.optical_frequency_division` | quinlan2011 |
-| `rel.S03` | ENABLES | `meth.self_referencing` | spencer2018 |
 

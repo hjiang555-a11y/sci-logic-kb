@@ -4,7 +4,7 @@
 
 > **用途**：处理新论文时，用此文件快速检查是否已有同名/同义节点，避免重复定义。
 > **维护**：本文件由 `scripts/build_index.py` 自动生成，**请勿手工编辑**。
-> **生成时间**：2026-04-24 02:15 UTC
+> **生成时间**：2026-04-24 02:55 UTC
 
 > **使用方式**：
 > - 处理新论文时，`Ctrl+F` 搜索关键词（如 `brownian`, `pdh`, `fiber`）
@@ -489,6 +489,7 @@
 | ID | Name | Source |
 |----|------|--------|
 | `ent.brillouin_fiber_laser_l19` | 光纤布里渊激光器（Loh 2019） | [loh2019](topics/ultrastable-laser/papers/loh2019.yaml) |
+| `ent.fiber_delay_line_reference` | 光纤延迟线参考系统（类级别实体） | [li2009a](topics/ultrastable-laser/papers/li2009a.yaml) |
 | `ent.fiber_interferometer` | 光纤迈克尔逊干涉仪（频率参考） | [jiang2010](topics/ultrastable-laser/papers/jiang2010.yaml) |
 | `ent.fp_cavity_system` | 刚性 F-P 参考腔系统 | [numata2004](topics/ultrastable-laser/papers/numata2004.yaml) |
 | `ent.rb_atom_interferometer_o19` | Ramsey-Bordé 原子干涉仪稳频（Olson 2019） | [olson2019](topics/ultrastable-laser/papers/olson2019.yaml) |

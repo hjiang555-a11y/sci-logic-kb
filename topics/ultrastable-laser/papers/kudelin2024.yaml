@@ -120,7 +120,7 @@ relations:
   - id: rel.K02
     subject: met.chip_mw_phase_noise_k24
     predicate: BOUNDED-BY
-    object: pri.thermal_noise_floor_fp_cavity
+    object: pri.brownian_thermal_noise_fdt
     confidence: established
     source:
       zotero_key: "AF34FGMU"

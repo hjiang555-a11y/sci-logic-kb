@@ -2,7 +2,7 @@
 
 # 📚 sci-logic-kb — Knowledge Base Index
 
-> Auto-generated 2026-04-24 02:15 UTC
+> Auto-generated 2026-04-24 02:55 UTC
 
 ## 🧭 按研究问题导航
 
@@ -15,7 +15,7 @@
 | 了解某个物理分支的历史演化 | [稳定度时间线](topics/ultrastable-laser/synthesis/stability_record_timeline.md)、[低温工程路线图](topics/ultrastable-laser/synthesis/cryogenic_roadmap.md)、[光纤稳频全景](topics/ultrastable-laser/synthesis/fiber_stabilization_landscape.md) |
 | 快速掌握专题架构 | [`TOPICS.md`](TOPICS.md) · 各专题 `_meta/architecture.md` |
 | 参与建设 / 贡献论文 | [`CONTRIBUTING.md`](CONTRIBUTING.md) · [`SCHEMA.md`](SCHEMA.md) |
-| 查看待处理工作 | [`TODO.md`](TODO.md) · [`reports/chain_gap_ultrastable.md`](reports/chain_gap_ultrastable.md) |
+| 查看待处理工作 | [`TODO.md`](TODO.md) · [`reports/active/chain_gap_ultrastable.md`](reports/active/chain_gap_ultrastable.md) |
 
 ## Topic Overview
 
@@ -26,8 +26,8 @@
 | shared | 7 | 20 | 17 | [→ INDEX](topics/shared/INDEX.md) |
 | Time-Frequency Transfer | 31 | 69 | 97 | [→ INDEX](topics/time-frequency-transfer/INDEX.md) |
 | Timescales | 1 | 6 | 6 | [→ INDEX](topics/timescales/INDEX.md) |
-| Ultrastable Laser | 89 | 389 | 385 | [→ INDEX](topics/ultrastable-laser/INDEX.md) |
-| **Total** | **260** | **1210** | **1364** | |
+| Ultrastable Laser | 89 | 390 | 385 | [→ INDEX](topics/ultrastable-laser/INDEX.md) |
+| **Total** | **260** | **1211** | **1364** | |
 
 ## Cross-Topic Quick References
 
@@ -45,7 +45,7 @@
 | shared | 0 | 11 | 8 | 1 |
 | Time-Frequency Transfer | 33 | 22 | 2 | 12 |
 | Timescales | 1 | 2 | 1 | 2 |
-| Ultrastable Laser | 62 | 86 | 86 | 155 |
+| Ultrastable Laser | 63 | 86 | 86 | 155 |
 
 ## Top BOUNDED-BY Chains
 

@@ -3,7 +3,7 @@
 > **综合页面（synthesis）**：跨论文综合视图，YAML 是 source of truth。
 >
 > **最后更新**：2026-04-21 · 🟡 初稿（draft，阶段 C 后数值复核完成） · Round 3 σ_y-first 增订（新增 §A.2 σ_y 增益矩阵）
-> **来源数据**：`python scripts/graph.py --format json` + `reports/chain_gap_ultrastable.md`
+> **来源数据**：`python scripts/graph.py --format json` + `reports/active/chain_gap_ultrastable.md`
 > **关联综合页**：所有其他 synthesis 页面（本页是它们的"交叉索引"） · [stability_record_timeline.md](stability_record_timeline.md)（顶层导航）
 
 ---
@@ -97,7 +97,7 @@
 
 ## 三、未关闭的限制链（从 chain_gap 报告提取）
 
-截至 2026-04-21，以下限制关系**尚未在 YAML 中显式给出 `breakthrough_paths`**，即"矩阵上有理论可填但 YAML 尚空"的条目。修复目标见 [reports/chain_gap_ultrastable.md](../../../reports/chain_gap_ultrastable.md)：
+截至 2026-04-21，以下限制关系**尚未在 YAML 中显式给出 `breakthrough_paths`**，即"矩阵上有理论可填但 YAML 尚空"的条目。修复目标见 [reports/active/chain_gap_ultrastable.md](../../../reports/active/chain_gap_ultrastable.md)：
 
 | 限制 | 待补条目数 | 状态 |
 |------|-----------|------|
@@ -138,7 +138,7 @@
 
 ## 📋 阶段 C 后刷新日志（2026-04-21）
 
-阶段 C 基于 `reports/chain_gap_ultrastable_v2.md` / `reports/orphans_ultrastable_v2.md` 对 7 条 breakthrough chain-gap 与 15 条 breakthrough orphan 全部闭环：
+阶段 C 基于 `reports/active/chain_gap_ultrastable_v2.md` / `reports/active/orphans_ultrastable_v2.md` 对 7 条 breakthrough chain-gap 与 15 条 breakthrough orphan 全部闭环：
 
 - `chen2025.Che02` · `kedar2023.Ked03` · `numata2004.N04/N05` · `webster2008.We08_01` · `zhang2014_ram.Z14_01/Z14_05` 全部补入 `breakthrough_paths`
 - 15 个 breakthrough orphan 节点（14 methods + 1 principle `pri.ram_bias_field_cancellation`）全部挂关系

@@ -321,7 +321,7 @@ def build_root_index(
     )
     lines.append(
         "| 查看待处理工作 | "
-        "[`TODO.md`](TODO.md) · [`reports/chain_gap_ultrastable.md`](reports/chain_gap_ultrastable.md) |\n"
+        "[`TODO.md`](TODO.md) · [`reports/active/chain_gap_ultrastable.md`](reports/active/chain_gap_ultrastable.md) |\n"
     )
     lines.append("\n")
 

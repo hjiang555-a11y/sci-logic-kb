@@ -61,7 +61,7 @@ relations:
   - id: rel.H02
     subject: ent.yb_optical_lattice_clock_nist2013
     predicate: IMPLEMENTS
-    object: meth.ramsey_spectroscopy
+    object: meth.ramsey_spectroscopy_clock
     confidence: established
-    note: "跨文件引用，meth.ramsey_spectroscopy 定义于其他文件"
+    note: "跨文件引用，meth.ramsey_spectroscopy_clock 定义于 topics/frequency-standards/papers/fortier2026.yaml"
     source: {zotero_key: "TP8JKHW3", claim: "Ramsey spectroscopy with synchronous interrogation of two clocks"}
