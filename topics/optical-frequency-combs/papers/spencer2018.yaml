@@ -175,9 +175,9 @@ relations:
   - id: rel.S03
     subject: ent.sin_thz_kerr_comb
     predicate: ENABLES
-    object: meth.self_referencing
+    object: pri.self_referencing_f2f
     confidence: established
-    note: "跨文件引用 meth.self_referencing，定义于 topics/optical-frequency-combs/papers/giunta2019.yaml 等"
+    note: "跨文件引用 pri.self_referencing_f2f，定义于 topics/optical-frequency-combs/papers/giunta2019.yaml 等"
     source:
       zotero_key: "4I37D6SD"
       claim: >

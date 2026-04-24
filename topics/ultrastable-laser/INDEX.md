@@ -2,7 +2,7 @@
 
 # Ultrastable Laser — Topic Index
 
-> Auto-generated 2026-04-24 02:48 UTC · 89 papers · 389 nodes · 385 relations
+> Auto-generated 2026-04-24 02:55 UTC · 89 papers · 390 nodes · 385 relations
 
 ## Entities
 
@@ -24,6 +24,7 @@
 | `ent.double_winding_fiber_spool_hjc19` | 双缠绕抗振光纤盘（Huang JC 2019b） | 2 | [huangjc2019b](topics/ultrastable-laser/papers/huangjc2019b.yaml) |
 | `ent.eom` | 电光调制器（EOM） | 2 | [drever1983](topics/ultrastable-laser/papers/drever1983.yaml) |
 | `ent.european_fiber_network_sc21` | 欧洲 2220 km 光纤计量网络（Schioppo 2021） | 2 | [schioppo2021](topics/ultrastable-laser/papers/schioppo2021.yaml) |
+| `ent.fiber_delay_line_reference` | 光纤延迟线参考系统（类级别实体） | 1 | [li2009a](topics/ultrastable-laser/papers/li2009a.yaml) |
 | `ent.fiber_interferometer` | 光纤迈克尔逊干涉仪（频率参考） | 1 | [jiang2010](topics/ultrastable-laser/papers/jiang2010.yaml) |
 | `ent.fiber_michelson_1km_j09` | 1 km 光纤非平衡迈克尔逊干涉仪（Jiang 2009a） | 2 | [jiang2009a](topics/ultrastable-laser/papers/jiang2009a.yaml) |
 | `ent.fp_cavity_system` | 刚性 F-P 参考腔系统 | 1 | [numata2004](topics/ultrastable-laser/papers/numata2004.yaml) |
@@ -485,7 +486,7 @@
 - **Breakthrough paths**:
   - `pri.fiber_thermal_noise_wanser` — status: theoretical · gain: 使用空心光纤可大幅降低热折射噪声；低温运行可降低 T² 项
 
-### `rel.G02`: `met.pmo_phase_noise_12ghz_giunta20b` → `pri.thermal_noise_floor_fp_cavity`
+### `rel.G02`: `met.pmo_phase_noise_12ghz_giunta20b` → `pri.brownian_thermal_noise_fdt`
 
 - **Source**: giunta2020b
 
@@ -524,7 +525,7 @@
 - **Breakthrough paths**:
   - `meth.self_homodyne_fiber_locking` — status: demonstrated · gain: 通过自零差平衡探测压低强度噪声与探测电噪声，使 1 km 光纤系统在无真空条件下首次显露热噪声极限
 
-### `rel.K02`: `met.chip_mw_phase_noise_k24` → `pri.thermal_noise_floor_fp_cavity`
+### `rel.K02`: `met.chip_mw_phase_noise_k24` → `pri.brownian_thermal_noise_fdt`
 
 - **Source**: kudelin2024
 
@@ -649,7 +650,7 @@
 - **Breakthrough paths**:
   - `pri.crystalline_coating_low_brownian_noise` — status: demonstrated
 
-### `rel.Sc02`: `met.combined_laser_instability_sc21` → `pri.thermal_noise_floor_fp_cavity`
+### `rel.Sc02`: `met.combined_laser_instability_sc21` → `pri.brownian_thermal_noise_fdt`
 
 - **Source**: schioppo2021
 
@@ -734,11 +735,5 @@ Nodes referenced but not defined in this topic:
 
 | Relation | Predicate | External Node | Source |
 |----------|-----------|---------------|--------|
-| `rel.Li03` | PART-OF | `ent.fiber_delay_line_reference` | li2009a |
-| `rel.W03` | DEPENDS-ON | `meth.fiber_noise_cancellation` | wang2024a |
-| `rel.X02` | ENABLED-BY | `meth.fiber_noise_cancellation` | xia2025 |
 | `rel.LO03` | COMPETES-WITH | `meth.microcomb_self_referencing` | loh2019 |
-| `rel.G02` | BOUNDED-BY | `pri.thermal_noise_floor_fp_cavity` | giunta2020b |
-| `rel.K02` | BOUNDED-BY | `pri.thermal_noise_floor_fp_cavity` | kudelin2024 |
-| `rel.Sc02` | BOUNDED-BY | `pri.thermal_noise_floor_fp_cavity` | schioppo2021 |
 

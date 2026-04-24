@@ -5,11 +5,13 @@
 >
 > **快速查重**：如需以论文标题、Zotero Key 或 DOI 快速核查是否已入库，请使用根目录 [`paper-inkb.md`](paper-inkb.md)（按专题排列，三列一目了然）。
 >
-> **最后更新**：2026-04-23（Copilot cloud agent 批量摄入 `/pdfs` 目录新增 42 篇论文：30 篇时频传递 evidence + 9 篇光钟 evidence + 3 篇 framework/review（Ludlow 2015、Allan 2016、Sullivan 2001）。OFC 专题新增 adler2009 占位条目 1 篇待确认。影响：time-frequency-transfer 1→31 篇；frequency-standards 3→12 篇；shared 5→7 篇；optical-frequency-combs 104→105 篇；本库总计 192→234 篇（含 1 占位）。）
+> **精确计数**：本文件**不**维护"每专题多少篇"的绝对数字（TODO.md P1-3 约定 · 避免手工漂移）。请运行 `python scripts/stats.py` 或查看 [`INDEX.md`](INDEX.md) 的"📚 专题论文清单"。
+>
+> **最新摄入批次**（2026-04-23，保留历史上下文）：Copilot cloud agent 批量摄入 `/pdfs` 目录，新增 30 篇时频传递 evidence + 9 篇光钟 evidence + 3 篇 framework/review（Ludlow 2015、Allan 2016、Sullivan 2001），OFC 专题新增 adler2009 占位。各专题阶段性状态参见 [`TOPICS.md`](TOPICS.md)。
 
 ---
 
-## 超稳激光专题（84 篇）
+## 超稳激光专题
 
 | 文件 | Zotero Key | 论文 | 历史重构状态 |
 |------|-----------|------|---------|
@@ -99,7 +101,7 @@
 | `schioppo2021.yaml` | K5JMAYPZ | Schioppo 2021/2022 — 2220 km 光纤网络比对 NPL↔PTB 超稳激光至 7×10⁻¹⁷ MDEV | ✅ v4.5 evidence |
 | `shen2022.yaml` | P92ZFIAQ | Shen 2022 — 113 km 自由空间时频传递，< 4×10⁻¹⁹ @10,000 s（Nature 2022） | ✅ v4.5 evidence |
 
-## 光学频率梳专题（105 篇）
+## 光学频率梳专题
 
 ### 框架型文档
 
@@ -175,7 +177,7 @@
 
 > **备注**：原 Batch 3 清单含 `BL4HI3QI`（Picqué & Hänsch 2019 Nature Photonics 综述），与已处理 `picque2019.yaml`（zotero `RZME5CH8`）为**同一 DOI 的备份键**，不创建重复 YAML。
 
-## 频率标准专题（12 篇）
+## 频率标准专题
 
 | 文件 | Zotero Key | 论文 | 状态 |
 |------|-----------|------|------|
@@ -192,13 +194,13 @@
 | `oelker2019.yaml` | OELKER2019 | Oelker 2019 — JILA 双 Sr 晶格钟 4.8×10⁻¹⁷ @1 s（Si cavity LO） | ✅ v4.5 evidence |
 | `bacon2021.yaml` | BACON2021 | BACON Collaboration 2021 — Al⁺/Yb/Sr 三钟网络 18 位频率比（可考虑 breakthrough） | ✅ v4.5 evidence |
 
-## 时间标尺专题（1 篇）
+## 时间标尺专题
 
 | 文件 | Zotero Key | 论文 | 状态 |
 |------|-----------|------|------|
 | `dimarcq2024.yaml` | SDG6KXNZ | Dimarcq 2024 — SI 秒重定义路线图 | ✅ v4.0 framework |
 
-## 时间频率传递专题（31 篇）
+## 时间频率传递专题
 
 | 文件 | Zotero Key | 论文 | 状态 |
 |------|-----------|------|------|
@@ -234,7 +236,7 @@
 | `quan2022_cqtx6tyy.yaml` | cqtx6tyy | Quan 2022 — NTSC 212 km 级联城市 RF-over-fiber 10⁻¹⁸ | ✅ v4.5 evidence |
 | `zeng2024_kbzasp75.yaml` | kbzasp75 | Zeng 2024 — 卫星 TWTFT 大气非互易性测量 | ✅ v4.5 evidence |
 
-## 时频计量数学基础专题（7 篇，B9 Allan–Howe 奠基白名单 + Allan 2016 + Sullivan 2001）
+## 时频计量数学基础专题（B9 Allan–Howe 奠基白名单 + Allan 2016 + Sullivan 2001）
 
 | 文件 | Zotero Key | 论文 | 状态 |
 |------|-----------|------|------|

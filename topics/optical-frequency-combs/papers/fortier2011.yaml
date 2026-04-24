@@ -175,9 +175,9 @@ relations:
   - id: rel.Fo05
     subject: ent.ti_sapphire_ofd_photonic_osc_fortier2011
     predicate: USES-METHOD
-    object: meth.optical_frequency_division
+    object: pri.optical_frequency_division_microwave
     confidence: established
-    note: "跨文件引用 meth.optical_frequency_division；本文是OFD微波生成的奠基性里程碑"
+    note: "跨文件引用 pri.optical_frequency_division_microwave；本文是OFD微波生成的奠基性里程碑"
     source:
       zotero_key: "YMWK52FQ"
       claim: >

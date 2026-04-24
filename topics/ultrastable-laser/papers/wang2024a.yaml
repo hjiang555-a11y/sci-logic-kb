@@ -128,7 +128,7 @@ relations:
   - id: rel.W03
     subject: meth.optical_freq_purification_w24
     predicate: DEPENDS-ON
-    object: meth.fiber_noise_cancellation
+    object: meth.fiber_link_phase_noise_cancellation_w16
     confidence: established
     source:
       zotero_key: "CYS7GEVR"

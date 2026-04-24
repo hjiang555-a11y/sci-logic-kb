@@ -2,7 +2,7 @@
 
 # 📚 sci-logic-kb — Knowledge Base Index
 
-> Auto-generated 2026-04-24 02:48 UTC
+> Auto-generated 2026-04-24 02:55 UTC
 
 ## 🧭 按研究问题导航
 
@@ -26,8 +26,8 @@
 | shared | 7 | 20 | 17 | [→ INDEX](topics/shared/INDEX.md) |
 | Time-Frequency Transfer | 31 | 69 | 97 | [→ INDEX](topics/time-frequency-transfer/INDEX.md) |
 | Timescales | 1 | 6 | 6 | [→ INDEX](topics/timescales/INDEX.md) |
-| Ultrastable Laser | 89 | 389 | 385 | [→ INDEX](topics/ultrastable-laser/INDEX.md) |
-| **Total** | **260** | **1210** | **1364** | |
+| Ultrastable Laser | 89 | 390 | 385 | [→ INDEX](topics/ultrastable-laser/INDEX.md) |
+| **Total** | **260** | **1211** | **1364** | |
 
 ## Cross-Topic Quick References
 
@@ -45,7 +45,7 @@
 | shared | 0 | 11 | 8 | 1 |
 | Time-Frequency Transfer | 33 | 22 | 2 | 12 |
 | Timescales | 1 | 2 | 1 | 2 |
-| Ultrastable Laser | 62 | 86 | 86 | 155 |
+| Ultrastable Laser | 63 | 86 | 86 | 155 |
 
 ## Top BOUNDED-BY Chains
 

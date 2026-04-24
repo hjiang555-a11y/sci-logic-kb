@@ -110,7 +110,7 @@ relations:
   - id: rel.X02
     subject: ent.fpga_multiloop_autolock_xia25
     predicate: ENABLED-BY
-    object: meth.fiber_noise_cancellation
+    object: meth.fiber_link_phase_noise_cancellation_w16
     confidence: established
     source:
       zotero_key: "IUCMUIEI"

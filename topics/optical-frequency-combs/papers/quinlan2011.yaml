@@ -132,9 +132,9 @@ relations:
   - id: rel.Q04
     subject: ent.er_fiber_ofd_quinlan2011
     predicate: USES-METHOD
-    object: meth.optical_frequency_division
+    object: pri.optical_frequency_division_microwave
     confidence: established
-    note: "跨文件引用 meth.optical_frequency_division，定义于 topics/optical-frequency-combs/papers/"
+    note: "跨文件引用 pri.optical_frequency_division_microwave，定义于 topics/optical-frequency-combs/papers/"
     source:
       zotero_key: "LMJN9MGA"
       claim: >

@@ -2,7 +2,7 @@
 
 # Frequency Standards — Topic Index
 
-> Auto-generated 2026-04-24 02:48 UTC · 18 papers · 44 nodes · 47 relations
+> Auto-generated 2026-04-24 02:55 UTC · 18 papers · 44 nodes · 47 relations
 
 ## Entities
 
@@ -120,5 +120,4 @@ Nodes referenced but not defined in this topic:
 | `rel.Bac21_02` | CONDITIONED-BY | `ent.free_space_optical_tf_link` | bacon2021 |
 | `rel.F26_10` | CONDITIONED-BY | `ent.optical_frequency_comb` | fortier2026 |
 | `rel.L08T_04` | OPERATIONALIZED-AS | `meth.allan_deviation_adev` | ludlow2008_thesis |
-| `rel.H02` | IMPLEMENTS | `meth.ramsey_spectroscopy` | hinkley2013 |
 

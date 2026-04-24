@@ -125,7 +125,7 @@ relations:
   - id: rel.G02
     subject: met.pmo_phase_noise_12ghz_giunta20b
     predicate: BOUNDED-BY
-    object: pri.thermal_noise_floor_fp_cavity
+    object: pri.brownian_thermal_noise_fdt
     confidence: established
     source:
       zotero_key: "H7A8L8LT"

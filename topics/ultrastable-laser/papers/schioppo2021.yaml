@@ -141,7 +141,7 @@ relations:
   - id: rel.Sc02
     subject: met.combined_laser_instability_sc21
     predicate: BOUNDED-BY
-    object: pri.thermal_noise_floor_fp_cavity
+    object: pri.brownian_thermal_noise_fdt
     confidence: established
     source:
       zotero_key: "K5JMAYPZ"
