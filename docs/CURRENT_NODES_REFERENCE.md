@@ -4,7 +4,7 @@
 
 > **用途**：处理新论文时，用此文件快速检查是否已有同名/同义节点，避免重复定义。
 > **维护**：本文件由 `scripts/build_index.py` 自动生成，**请勿手工编辑**。
-> **生成时间**：2026-04-23 13:06 UTC
+> **生成时间**：2026-04-24 02:15 UTC
 
 > **使用方式**：
 > - 处理新论文时，`Ctrl+F` 搜索关键词（如 `brownian`, `pdh`, `fiber`）
@@ -22,6 +22,7 @@
 |----|------|--------|
 | `ent.microwave_frequency_standard` | 微波频率标准（Level 1 总节点） | [heavner2005](topics/frequency-standards/papers/heavner2005.yaml) |
 | `ent.optical_frequency_standard` | 光学频率标准（通用） | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
+| `ent.yb_optical_lattice_clock` | Yb 光晶格原子钟 | [mcgrew2019](topics/frequency-standards/papers/mcgrew2019.yaml) |
 
 ### Principles
 
@@ -149,10 +150,13 @@
 | `pri.high_frep_bandwidth_power_tradeoff` | 高重频梳带宽-平均功率-单齿功率三角权衡原理 | domain | [bartels2009](topics/optical-frequency-combs/papers/bartels2009.yaml) |
 | `pri.high_frep_dcs_speed_advantage` | 高重频梳 DCS 采集速度优势原理 | domain | [lesko2020](topics/optical-frequency-combs/papers/lesko2020.yaml) |
 | `pri.high_frep_yb_tight_lock_challenges` | 高重频 Yb:fiber 梳紧锁的双重挑战原理 | engineering | [ma2018](topics/optical-frequency-combs/papers/ma2018.yaml) |
+| `pri.high_rep_rate_ofd_low_shot_noise` | 高重复率OFD降低散粒噪声底原理 | domain | [quinlan2011](topics/optical-frequency-combs/papers/quinlan2011.yaml) |
 | `pri.high_temp_gas_suppresses_steady_state_plasma_p18` | 高温气体抑制高重频 HHG 稳态等离子体原理（Porat 2018） | domain | [porat2018](topics/optical-frequency-combs/papers/porat2018.yaml) |
 | `pri.hitran_voigt_declutter_trace_retrieval` | 基于 Hitran Voigt 模型的强吸收解杂原理 | engineering | [ycas2019](topics/optical-frequency-combs/papers/ycas2019.yaml) |
+| `pri.hybrid_ofd_slco_noise_complementarity` | OFD+SLCO混合振荡器噪声互补原理 | domain | [fortier2012](topics/optical-frequency-combs/papers/fortier2012.yaml) |
 | `pri.injection_locked_equidistant_microcomb_p13` | 参量增益竞争下的等间距微梳涌现原理 | engineering | [papp2013](topics/optical-frequency-combs/papers/papp2013.yaml) |
 | `pri.inline_f2f_soliton_shift` | 内联 f-to-2f 孤子自频移供能原理 | engineering | [lesko2020](topics/optical-frequency-combs/papers/lesko2020.yaml) |
+| `pri.integrated_ofc_synthesis_chain` | 集成光子学微波-光频相干倍频链原理 | domain | [spencer2018](topics/optical-frequency-combs/papers/spencer2018.yaml) |
 | `pri.integrated_photonic_supercontinuum_for_microcomb_f2f` | 片上集成 SiN 波导超连续谱使低功率微梳 f-2f 可行 | engineering | [lamb2018](topics/optical-frequency-combs/papers/lamb2018.yaml) |
 | `pri.inter_branch_fiber_noise_degradation` | 多分支光纤梳的支间光纤相噪退化原理 | engineering | [kashiwagi2018](topics/optical-frequency-combs/papers/kashiwagi2018.yaml) |
 | `pri.interferogram_embedded_freq_comparison` | 干涉图内嵌频率比对原理（M = fr/Δfr 放大因子） | engineering | [han2024](topics/optical-frequency-combs/papers/han2024.yaml) |
@@ -205,12 +209,15 @@
 | `pri.ofc_functional_definition_2010` | 光学频率梳功能性定义原理（Diddams 2010） | meta | [diddams2010](topics/optical-frequency-combs/papers/diddams2010.yaml) |
 | `pri.ofc_nine_application_threads_f19` | OFC 九大应用主线分类框架（Fortier 2019 综述版） | meta | [fortier2019](topics/optical-frequency-combs/papers/fortier2019.yaml) |
 | `pri.ofc_noise_hierarchy` | OFC 噪声层级原理 | domain | [endo2018](topics/optical-frequency-combs/papers/endo2018.yaml) |
+| `pri.ofc_spectral_purity_transfer` | 光频梳光谱纯度传递原理 | domain | [nicolodi2014](topics/optical-frequency-combs/papers/nicolodi2014.yaml) |
 | `pri.ofc_two_dof_stabilization` | OFC 双自由度独立稳定化原理 | meta | [endo2018](topics/optical-frequency-combs/papers/endo2018.yaml) |
 | `pri.ofc_unified_electromagnetic_spectrum_framework` | OFC 作为统一电磁波谱相干标尺框架 | meta | [diddams2020b](topics/optical-frequency-combs/papers/diddams2020b.yaml) |
+| `pri.ofd_optical_stability_transfer` | 光频除法将光学稳定性转移至微波域原理 | domain | [fortier2011](topics/optical-frequency-combs/papers/fortier2011.yaml) |
 | `pri.open_path_dcs_attribution_chain` | 开放路径 DCS 痕量气体溯源推理链原理 | domain | [coburn2018](topics/optical-frequency-combs/papers/coburn2018.yaml) |
 | `pri.optical_clock_higher_frequency_advantage` | 光学钟高频振荡优势原理 | domain | [udem2002](topics/optical-frequency-combs/papers/udem2002.yaml) |
 | `pri.optical_filter_dispersion_suppression` | 光学窄带滤波抑制长距离光纤色散原理 | domain | [leng2016](topics/optical-frequency-combs/papers/leng2016.yaml) |
 | `pri.optical_frequency_division_microwave` | 光学分频微波合成原理 | domain | [giunta2019](topics/optical-frequency-combs/papers/giunta2019.yaml) |
+| `pri.optical_frequency_division_rf_generation` | 光频除法RF信号生成原理 | domain | [hati2013](topics/optical-frequency-combs/papers/hati2013.yaml) |
 | `pri.optical_lock_lever_arm_timing_jitter` | 光锁杠杆臂降低脉间时间抖动原理 | engineering | [sinclair2014](topics/optical-frequency-combs/papers/sinclair2014.yaml) |
 | `pri.optical_microwave_coherent_gearbox` | 光-微波相干齿轮箱原理（Level 0 范式原理） | meta | [picque2020](topics/optical-frequency-combs/papers/picque2020.yaml) |
 | `pri.optical_phase_detection_fiber_link_m12` | 光学相位探测光纤链路主动稳定原理（Marra 2012） | engineering | [marra2012](topics/optical-frequency-combs/papers/marra2012.yaml) |
@@ -243,6 +250,8 @@
 | `pri.sin_waveguide_low_power_f2f_c17` | SiN 波导低功率 f-2f 自参考原理（Carlson 2017） | engineering | [carlson2017](topics/optical-frequency-combs/papers/carlson2017.yaml) |
 | `pri.single_fiber_mechanical_actuator` | 单光纤机械执行器大范围调谐原理 | engineering | [cai2020](topics/optical-frequency-combs/papers/cai2020.yaml) |
 | `pri.solid_state_non_perturbative_hhg` | 低带隙固态非微扰高次谐波产生原理 | domain | [lesko2022](topics/optical-frequency-combs/papers/lesko2022.yaml) |
+| `pri.soliton_crystal_fingerprint_spectrum` | 孤子晶体指纹光谱识别原理 | domain | [cole2018](topics/optical-frequency-combs/papers/cole2018.yaml) |
+| `pri.soliton_crystal_formation` | 孤子晶体形成原理：模式简并介导的长程相互作用 | domain | [cole2018](topics/optical-frequency-combs/papers/cole2018.yaml) |
 | `pri.soliton_crystal_multistability` | 孤子晶体多稳态原理 | domain | [gaeta2019](topics/optical-frequency-combs/papers/gaeta2019.yaml) |
 | `pri.soliton_self_frequency_shift_2um` | 2 µm 孤子自频移原理（Raman SSFS 波段切换） | domain | [xing2020](topics/optical-frequency-combs/papers/xing2020.yaml) |
 | `pri.state_prepared_single_ion_spectroscopy` | 单离子纯量子态光谱原理（heralded QLS 制备 + 非破坏读出） | domain | [chou2020](topics/optical-frequency-combs/papers/chou2020.yaml) |
@@ -258,6 +267,7 @@
 | `pri.transportable_cavity_reference_coupling` | 可移动腔稳激光作为光参考的接口原理 | engineering | [sinclair2014](topics/optical-frequency-combs/papers/sinclair2014.yaml) |
 | `pri.trap_rf_field_stark_systematic` | 阱 RF 电场诱导 Stark 移动系统误差原理 | engineering | [chou2020](topics/optical-frequency-combs/papers/chou2020.yaml) |
 | `pri.turbulence_speckle_freeze_dcs` | 双梳快速采集冻结湍流散斑原理 | domain | [han2024](topics/optical-frequency-combs/papers/han2024.yaml) |
+| `pri.two_comb_microwave_comparison` | 双梳比对法表征微波提取残余噪声 | domain | [lecoq2010](topics/optical-frequency-combs/papers/lecoq2010.yaml) |
 | `pri.vibration_cavity_length_coupling` | Vibration-induced oscillator cavity-length modulation | domain | [lezius2016](topics/optical-frequency-combs/papers/lezius2016.yaml) |
 | `pri.vibration_fopt_linear_coupling` | 振动→光学相位（f_opt）线性耦合原理 | engineering | [sinclair2014](topics/optical-frequency-combs/papers/sinclair2014.yaml) |
 | `pri.vipa_spatial_comb_mode_resolution_d07` | VIPA 空间分辨梳模式原理（Diddams 2007） | domain | [diddams2007](topics/optical-frequency-combs/papers/diddams2007.yaml) |
@@ -268,6 +278,7 @@
 | ID | Name | Source |
 |----|------|--------|
 | `meth.adaptive_sampling_correction` | 自适应采样校正方法 | [coddington2016](topics/optical-frequency-combs/papers/coddington2016.yaml) |
+| `meth.adiabatic_soliton_crystal_generation` | 绝热泵浦扫描孤子晶体生成法 | [cole2018](topics/optical-frequency-combs/papers/cole2018.yaml) |
 | `meth.all_pm_yb_nalm_self_reference` | 全 PM Yb NALM 梳 f-2f 自参考 + CW 光学锁定方法 | [li2017b](topics/optical-frequency-combs/papers/li2017b.yaml) |
 | `meth.amplifier_free_high_frep_yb_comb` | 无放大高重频 Yb:fiber 振荡器直驱倍频程展宽方法 | [wang2014](topics/optical-frequency-combs/papers/wang2014.yaml) |
 | `meth.astro_comb_rv_calibration` | 天文光梳径向速度校准方法 | [ycas2012](topics/optical-frequency-combs/papers/ycas2012.yaml) |
@@ -293,11 +304,13 @@
 | `meth.dpssl_interleaver_photonic_microwave_pc15` | DPSSL 梳 + PM 交织器 + PIN 探测的光生 9.6 GHz 微波产生方法 | [portuondo-campa2015](topics/optical-frequency-combs/papers/portuondo-campa2015.yaml) |
 | `meth.dual_branch_fceo_locking_passive_cancellation_r18` | 双分支 fceo 锁定 + 被动混频噪声抵消方法（Rolland 2018） | [rolland2018](topics/optical-frequency-combs/papers/rolland2018.yaml) |
 | `meth.dual_comb_spectroscopy` | 双梳光谱方法 | [coddington2016](topics/optical-frequency-combs/papers/coddington2016.yaml) |
+| `meth.dual_dks_synthesizer` | DKS双梳光频合成法 | [spencer2018](topics/optical-frequency-combs/papers/spencer2018.yaml) |
 | `meth.dual_pll_frep_fceo_rf_reference` | f_r-腔长 + f_0-泵浦双 PLL 锁至 RF 参考方法 | [washburn2004](topics/optical-frequency-combs/papers/washburn2004.yaml) |
 | `meth.dual_usl_locked_er_yb_glass_comb_n23` | Er/Yb:glass 梳双超稳激光锁定方法（Nardelli 2023） | [nardelli2023](topics/optical-frequency-combs/papers/nardelli2023.yaml) |
 | `meth.electrical_soliton_tuning_s18` | 集成微加热器热调谐孤子进入法（Stern 2018） | [stern2018](topics/optical-frequency-combs/papers/stern2018.yaml) |
 | `meth.eo_comb_line_reference_rv_calibration` | 线参考 EO 梳 RV 校准方法 | [yi2016](topics/optical-frequency-combs/papers/yi2016.yaml) |
 | `meth.eo_sin_astrocomb_calibration_m19` | EO + 纳米光子 SiN 天文梳 HPF 实时波长定标方法 | [metcalf2019](topics/optical-frequency-combs/papers/metcalf2019.yaml) |
+| `meth.eom_comb_self_referencing` | EOM梳 f-2f 自参考方法 | [beha2017](topics/optical-frequency-combs/papers/beha2017.yaml) |
 | `meth.eom_pzt_cascade_frep_lock` | EOM+PZT 级联重频锁定方法 | [torcheboeuf2017](topics/optical-frequency-combs/papers/torcheboeuf2017.yaml) |
 | `meth.eom_pzt_cavity_length_frep_lock_r19` | EOM+PZT 双驱动锁定 frep 方法（Rao 2019 实现） | [rao2019](topics/optical-frequency-combs/papers/rao2019.yaml) |
 | `meth.eom_pzt_dual_actuator_frep_lock_z15` | 腔内 EOM + 腔内长程 PZT 双执行器 f_rep 锁定方法（Zhang 2015） | [zhang2015](topics/optical-frequency-combs/papers/zhang2015.yaml) |
@@ -312,6 +325,7 @@
 | `meth.graphene_modulator_comb_stabilization` | 石墨烯 EOM + 腔外 EOM 双伺服梳稳频方法 | [kuse2015](topics/optical-frequency-combs/papers/kuse2015.yaml) |
 | `meth.hnlf_pplc_671nm_comb_extension_r19` | HNLF 展宽 + PPLN 倍频扩展光梳至 671 nm 方法（Rao 2019） | [rao2019](topics/optical-frequency-combs/papers/rao2019.yaml) |
 | `meth.iii_v_sin_heterogeneous_mll_fabrication` | III-V/SiN 异质集成 MLL 制造方法 | [cuyvers2021](topics/optical-frequency-combs/papers/cuyvers2021.yaml) |
+| `meth.intra_cavity_eom_phase_lock` | 腔内EOM快速相位锁定 | [nicolodi2014](topics/optical-frequency-combs/papers/nicolodi2014.yaml) |
 | `meth.intracavity_pdh_frep_lock_h07` | PDH 腔锁频（frep → FSR）与 f_ceo 双路稳频方法（Hartl 2007） | [hartl2007](topics/optical-frequency-combs/papers/hartl2007.yaml) |
 | `meth.klm_10ghz_comb_self_reference` | 10 GHz 紧腔 KLM + 非线性展宽 + f-2f 自参考方法 | [bartels2009](topics/optical-frequency-combs/papers/bartels2009.yaml) |
 | `meth.laser_tuning_soliton_access` | 激光扫频孤子激发方法 | [kippenberg2018](topics/optical-frequency-combs/papers/kippenberg2018.yaml) |
@@ -325,6 +339,7 @@
 | `meth.monolithic_free_running_photonic_microwave` | 自由运行单片梳光微波产生方法 | [kalubovilage2022](topics/optical-frequency-combs/papers/kalubovilage2022.yaml) |
 | `meth.nalm_all_pm_er_comb_stabilization` | 全 PM NALM Er 梳 f_CEO + 时延抖动联合表征方法 | [kuse2016](topics/optical-frequency-combs/papers/kuse2016.yaml) |
 | `meth.octave_f2f_optical_frequency_measurement` | 倍频程 f-2f 光学频率测量方法（Diddams 2000 首次演示） | [diddams2000](topics/optical-frequency-combs/papers/diddams2000.yaml) |
+| `meth.ofd_absolute_timing_jitter_measurement` | OFD微波信号绝对时序抖动测量 | [hati2013](topics/optical-frequency-combs/papers/hati2013.yaml) |
 | `meth.on_chip_f2f_stabilization` | 单片 AlN 波导 f-2f 自参考稳频方法（Hickstein 2017） | [hickstein2017](topics/optical-frequency-combs/papers/hickstein2017.yaml) |
 | `meth.open_path_dcs_field_monitoring` | 开放路径双梳野外监测方法 | [coburn2018](topics/optical-frequency-combs/papers/coburn2018.yaml) |
 | `meth.opo_comb_generation` | 光参量振荡（OPO）中红外梳产生方法 | [schliesser2012](topics/optical-frequency-combs/papers/schliesser2012.yaml) |
@@ -487,6 +502,7 @@
 |----|------|------|--------|
 | `pri.antiresonant_hollow_core_guidance` | 反谐振空心光纤导光原理 | domain | [belardi2015](topics/ultrastable-laser/papers/belardi2015.yaml) |
 | `pri.aom_heterodyne_fiber_detection` | AOM 外差检测（光纤干涉仪误差信号提取） | domain | [jiang2010](topics/ultrastable-laser/papers/jiang2010.yaml) |
+| `pri.asymmetric_spool_vibration_nulling` | 非对称支撑线轴振动灵敏度调零原理 | engineering | [li2009a](topics/ultrastable-laser/papers/li2009a.yaml) |
 | `pri.balanced_optical_cross_correlation` | 平衡光学互相关原理 | domain | [kim2008](topics/ultrastable-laser/papers/kim2008.yaml) |
 | `pri.brewster_angle_ram_suppression` | 布儒斯特角 RAM 被动抑制原理 | engineering | [tai2016](topics/ultrastable-laser/papers/tai2016.yaml) |
 | `pri.broadband_low_noise_pd_design_p16` | 宽带低噪声光电探测器设计原理 | engineering | [potnis2016](topics/ultrastable-laser/papers/potnis2016.yaml) |
@@ -502,6 +518,7 @@
 | `pri.enhanced_shb_dynamics_theory_k95` | 增强空间烧孔动力学理论模型 | foundational | [kartner1995](topics/ultrastable-laser/papers/kartner1995.yaml) |
 | `pri.enhanced_shb_pulse_shortening_b95` | 增强空间烧孔锁模脉冲缩短效应 | foundational | [braun1995](topics/ultrastable-laser/papers/braun1995.yaml) |
 | `pri.fdl_locking_noise_nonlinearity` | 光纤延迟线锁定噪声——鉴频器非线性 | domain | [grabielle2025](topics/ultrastable-laser/papers/grabielle2025.yaml) |
+| `pri.fiber_delay_line_frequency_ref` | 光纤延迟线频率参考原理 | domain | [jiang2009a](topics/ultrastable-laser/papers/jiang2009a.yaml) |
 | `pri.fiber_delay_line_frequency_ref` | 光纤延迟线频率参考原理 | domain | [jiang2010](topics/ultrastable-laser/papers/jiang2010.yaml) |
 | `pri.fiber_thermal_noise_wanser` | 光纤固有热噪声（Wanser 热力学噪声模型） | domain | [dong2015](topics/ultrastable-laser/papers/dong2015.yaml) |
 | `pri.fiber_thermal_phase_noise_giant_ifog` | 大型光纤陀螺仪热相位噪声 | foundational | [li2019](topics/ultrastable-laser/papers/li2019.yaml) |
@@ -518,6 +535,8 @@
 | `pri.hollow_core_fiber_low_backscattering` | 空心光纤低背向散射原理 | domain | [michaudbelleau2021](topics/ultrastable-laser/papers/michaudbelleau2021.yaml) |
 | `pri.hollow_core_fiber_thermal_noise` | 空心光纤热噪声原理 | domain | [michaudbelleau2022](topics/ultrastable-laser/papers/michaudbelleau2022.yaml) |
 | `pri.independent_dof_wire_mounting` | 独立自由度柔性钢丝安装原理 | engineering | [hafner2020](topics/ultrastable-laser/papers/hafner2020.yaml) |
+| `pri.inertial_force_feedforward_l13b` | 惯性力实时前馈（全自由度） | engineering | [leibrandt2013b](topics/ultrastable-laser/papers/leibrandt2013b.yaml) |
+| `pri.large_mode_thermal_noise_reduction_d17` | 大光斑模场热噪声降低原理 | domain | [davilarodriguez2017](topics/ultrastable-laser/papers/davilarodriguez2017.yaml) |
 | `pri.laser_interferometer_gw_detection_a14` | 激光干涉引力波探测原理 | domain | [adhikari2014](topics/ultrastable-laser/papers/adhikari2014.yaml) |
 | `pri.long_cavity_discriminator_enhancement` | 长腔鉴别系数增强原理 | engineering | [parke2025](topics/ultrastable-laser/papers/parke2025.yaml) |
 | `pri.long_cavity_thermal_noise_reduction` | 增长腔长降低热噪声分数贡献 | engineering | [hafner2015](topics/ultrastable-laser/papers/hafner2015.yaml) |
@@ -528,7 +547,9 @@
 | `pri.multi_point_symmetric_clamping` | 多点对称夹持腔体固定原理 | engineering | [tao2018](topics/ultrastable-laser/papers/tao2018.yaml) |
 | `pri.multi_point_symmetric_clamping_20pin_c14` | 20柱多点对称夹持原理 | engineering | [chen2014](topics/ultrastable-laser/papers/chen2014.yaml) |
 | `pri.multistage_thermal_damping_low_temp_z17` | 多级热阻尼低温滤波原理（Zhang 2017） | domain | [zhang2017](topics/ultrastable-laser/papers/zhang2017.yaml) |
+| `pri.nexcera_dimensional_stability` | NEXCERA 陶瓷长期尺寸稳定性 | domain | [kwong2018](topics/ultrastable-laser/papers/kwong2018.yaml) |
 | `pri.off_resonance_reference_light` | 非谐振参考光原理（FP 腔误差探测共性原理） | domain | [shaddock1999](topics/ultrastable-laser/papers/shaddock1999.yaml) |
+| `pri.optical_freq_division_microwave_giunta20b` | 光频分频产生超稳微波原理（OFD） | domain | [giunta2020b](topics/ultrastable-laser/papers/giunta2020b.yaml) |
 | `pri.optical_frequency_averaging` | 多腔光学频率平均 | engineering | [lee2026](topics/ultrastable-laser/papers/lee2026.yaml) |
 | `pri.optical_microwave_phase_detection_bom_pd` | 平衡光学-微波相位探测（BOM-PD）原理 | domain | [kim2008](topics/ultrastable-laser/papers/kim2008.yaml) |
 | `pri.optical_power_cavity_drift` | 光腔内循环功率驱动频率漂移（Robinson 2019 发现） | engineering | [robinson2019](topics/ultrastable-laser/papers/robinson2019.yaml) |
@@ -554,10 +575,12 @@
 | `pri.soft_mount_acceleration_suppression_herbers22` | 软安装加速度抑制原理（Herbers 2022） | domain | [herbers2022](topics/ultrastable-laser/papers/herbers2022.yaml) |
 | `pri.spatial_homodyne_detection` | 空间零差探测（分割探测器） | domain | [shaddock1999](topics/ultrastable-laser/papers/shaddock1999.yaml) |
 | `pri.spectral_hole_burning_frequency_ref` | 光谱烧孔频率参考原理 | domain | [leibrandt2013](topics/ultrastable-laser/papers/leibrandt2013.yaml) |
+| `pri.squeeze_insensitive_cylindrical_cavity` | 圆柱腔挤压不灵敏持腔原理 | engineering | [davilarodriguez2017](topics/ultrastable-laser/papers/davilarodriguez2017.yaml) |
 | `pri.squeezed_light_quantum_enhancement` | 压缩光量子增强干涉仪灵敏度 | foundational | [aasi2013](topics/ultrastable-laser/papers/aasi2013.yaml) |
 | `pri.steady_state_shb_pattern` | 稳态光谱烧孔模式稳频原理 | domain | [cook2015](topics/ultrastable-laser/papers/cook2015.yaml) |
 | `pri.superradiant_emission_narrow_linewidth` | 超辐射集体发射窄线宽原理 | foundational | [meiser2009](topics/ultrastable-laser/papers/meiser2009.yaml) |
 | `pri.symmetric_spool_vibration_cancellation` | 对称光纤盘振动消除原理 | engineering | [hu2015](topics/ultrastable-laser/papers/hu2015.yaml) |
+| `pri.temperature_feedforward_cavity_l13b` | 温度前馈频率漂移修正 | engineering | [leibrandt2013b](topics/ultrastable-laser/papers/leibrandt2013b.yaml) |
 | `pri.transfer_lock_via_frequency_comb` | 光频梳传递锁定原理 | engineering | [didier2019](topics/ultrastable-laser/papers/didier2019.yaml) |
 | `pri.transportable_cavity_design_tradeoff_herbers22` | 可搬运腔设计折中原理（Herbers 2022） | domain | [herbers2022](topics/ultrastable-laser/papers/herbers2022.yaml) |
 | `pri.ule_hcf_thermal_stability` | ULE 空心光纤热稳定性原理 | foundational | [ding2025](topics/ultrastable-laser/papers/ding2025.yaml) |
@@ -592,10 +615,14 @@
 | `meth.eom_bias_field_ram_cancellation_p25` | EOM 偏置电场 RAM 主动消除方法（Parke 2025） | [parke2025](topics/ultrastable-laser/papers/parke2025.yaml) |
 | `meth.eu_yso_spectral_characterization_k03` | Eu³⁺:Y₂SiO₅ 光谱特性表征方法（Könz 2003） | [konz2003](topics/ultrastable-laser/papers/konz2003.yaml) |
 | `meth.fdl_locking_bandwidth_optimization` | 光纤延迟线锁定带宽优化（Grabielle 2025） | [grabielle2025](topics/ultrastable-laser/papers/grabielle2025.yaml) |
+| `meth.fiber_delay_locking` | 光纤延迟线稳频方法 | [jiang2009a](topics/ultrastable-laser/papers/jiang2009a.yaml) |
 | `meth.fiber_delay_locking` | 光纤延迟线锁频（Fiber Delay Line Locking） | [jiang2010](topics/ultrastable-laser/papers/jiang2010.yaml) |
 | `meth.fiber_delay_locking_improved_d15` | 光纤延迟线锁频改进实现（Dong 2015） | [dong2015](topics/ultrastable-laser/papers/dong2015.yaml) |
 | `meth.fiber_link_phase_noise_cancellation_w16` | 光纤链路相位噪声主动消除方法（Wu 2016） | [wu2016](topics/ultrastable-laser/papers/wu2016.yaml) |
 | `meth.fiber_mopa_with_rin_servo_d20` | 全光纤MOPA配RIN伺服（Dixneuf 2020） | [dixneuf2020](topics/ultrastable-laser/papers/dixneuf2020.yaml) |
+| `meth.fiber_spool_vibration_characterization` | 光纤线轴振动灵敏度测量方法 | [li2009a](topics/ultrastable-laser/papers/li2009a.yaml) |
+| `meth.fpga_digital_multiloop_locking_xia25` | FPGA 全数字多环路自动锁定方法 | [xia2025](topics/ultrastable-laser/papers/xia2025.yaml) |
+| `meth.freespace_los_tf_transfer_sh22` | 自由空间双向光频梳线性光学采样时频传递 | [shen2022](topics/ultrastable-laser/papers/shen2022.yaml) |
 | `meth.gaussian_beam_analysis` | 高斯光束分析（Kogelnik 1966） | [kogelnik1966](topics/ultrastable-laser/papers/kogelnik1966.yaml) |
 | `meth.giant_ifog_thermal_noise_analysis_l19` | 大型光纤陀螺仪热相位噪声分析方法 | [li2019](topics/ultrastable-laser/papers/li2019.yaml) |
 | `meth.gw_detector_noise_analysis_a14` | 引力波探测器噪声分析方法 | [adhikari2014](topics/ultrastable-laser/papers/adhikari2014.yaml) |
@@ -615,6 +642,8 @@
 | `meth.multi_stage_locking` | 多级级联稳频策略 | [young1999](topics/ultrastable-laser/papers/young1999.yaml) |
 | `meth.multilayer_thermal_shielding_fdl_h23` | 五层热屏蔽+两级温控的全光纤延迟线稳定方法 | [huang2023](topics/ultrastable-laser/papers/huang2023.yaml) |
 | `meth.multistage_thermal_shield_implementation_z17` | 多级热屏蔽实现方法（Zhang 2017） | [zhang2017](topics/ultrastable-laser/papers/zhang2017.yaml) |
+| `meth.optical_cavity_dimensional_metrology` | 光学谐振腔尺寸稳定性精密测量法 | [kwong2018](topics/ultrastable-laser/papers/kwong2018.yaml) |
+| `meth.optical_freq_purification_w24` | 光频净化中继方法（双级控制 + 周期跳变消除） | [wang2024a](topics/ultrastable-laser/papers/wang2024a.yaml) |
 | `meth.optical_microwave_synchronization_bom_pd` | 基于 BOM-PD 的光-微波同步 | [kim2008](topics/ultrastable-laser/papers/kim2008.yaml) |
 | `meth.optical_optical_synchronization_boc` | 基于平衡互相关的光-光同步 | [kim2008](topics/ultrastable-laser/papers/kim2008.yaml) |
 | `meth.pdh_locking` | PDH 锁频方法 | [drever1983](topics/ultrastable-laser/papers/drever1983.yaml) |
@@ -626,6 +655,7 @@
 | `meth.sbs_thermal_self_referencing_l19` | SBS热自参考窄线宽稳频方法 | [loh2019](topics/ultrastable-laser/papers/loh2019.yaml) |
 | `meth.self_balancing_mount_h15` | 自平衡安装方法（Häfner 2015） | [hafner2015](topics/ultrastable-laser/papers/hafner2015.yaml) |
 | `meth.self_homodyne_fiber_locking` | 自零差光纤延迟线锁频 | [jeon2025](topics/ultrastable-laser/papers/jeon2025.yaml) |
+| `meth.six_axis_inertial_feedforward_l13b` | 六轴惯性力前馈方法 | [leibrandt2013b](topics/ultrastable-laser/papers/leibrandt2013b.yaml) |
 | `meth.space_cavity_design_testing_a12` | 空间应用超稳腔设计-制造-测试方法 | [argence2012](topics/ultrastable-laser/papers/argence2012.yaml) |
 | `meth.spectral_hole_burning_stabilization_l13` | 光谱烧孔稳频方法（Leibrandt 2013） | [leibrandt2013](topics/ultrastable-laser/papers/leibrandt2013.yaml) |
 | `meth.split_plate_vibration_isolation_z17` | split-plate 振动隔离实现方法（Zhang 2017） | [zhang2017](topics/ultrastable-laser/papers/zhang2017.yaml) |
@@ -641,6 +671,7 @@
 | `meth.transportable_cavity_mounting_performance_testing_h20` | 可搬运腔体安装与性能测试方法 | [hafner2020](topics/ultrastable-laser/papers/hafner2020.yaml) |
 | `meth.transportable_clock_laser_integration_herbers22` | 可搬运钟激光系统集成方法（Herbers 2022） | [herbers2022](topics/ultrastable-laser/papers/herbers2022.yaml) |
 | `meth.transportable_ule_cavity_lock_tai17` | 可搬运 ULE 腔 PDH 锁频方法（Tai 2017） | [tai2017](topics/ultrastable-laser/papers/tai2017.yaml) |
+| `meth.two_point_ofd_sin_comb_k24` | 两点光频分频（2P-OFD，SiN 微腔梳） | [kudelin2024](topics/ultrastable-laser/papers/kudelin2024.yaml) |
 | `meth.two_stage_shb_fp_lock_thorpe11` | 两级稳频方法：FP腔预稳 + SHB锁定（Thorpe 2011） | [thorpe2011](topics/ultrastable-laser/papers/thorpe2011.yaml) |
 | `meth.ule_hcf_fabrication_ding25` | ULE玻璃空心光纤制造方法 | [ding2025](topics/ultrastable-laser/papers/ding2025.yaml) |
 | `meth.ultracompact_cavity_integration_testing_d18` | 超紧凑腔体集成与测试方法 | [didier2018](topics/ultrastable-laser/papers/didier2018.yaml) |

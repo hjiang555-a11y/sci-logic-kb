@@ -2,7 +2,7 @@
 
 # Optical Frequency Combs — Topic Index
 
-> Auto-generated 2026-04-23 13:06 UTC · 105 papers · 635 nodes · 779 relations
+> Auto-generated 2026-04-24 02:15 UTC · 114 papers · 682 nodes · 812 relations
 
 ## Entities
 
@@ -46,9 +46,13 @@
 | `ent.electro_optic_frequency_comb` | 电光调制频率梳 | 2 | [picque2019](topics/optical-frequency-combs/papers/picque2019.yaml) |
 | `ent.electromagnetic_spectrum_coherent_bridge` | 电磁谱相干统一桥（Level 0 顶层范式） | 0 | [picque2020](topics/optical-frequency-combs/papers/picque2020.yaml) |
 | `ent.eo_sideband_seed_injector_p13` | EO 调制泵浦边带种子源（MZM 双边带注入模块） | 3 | [papp2013](topics/optical-frequency-combs/papers/papp2013.yaml) |
+| `ent.eom_frequency_comb` | 电光调制频率梳 | 2 | [beha2017](topics/optical-frequency-combs/papers/beha2017.yaml) |
 | `ent.er_fiber_comb_washburn04` | NIST Er:fiber 近红外全锁频率梳（Washburn 2004） | 2 | [washburn2004](topics/optical-frequency-combs/papers/washburn2004.yaml) |
 | `ent.er_fiber_frequency_comb` | Er:fiber 光频梳（Level 1 技术分支总节点） | 1 | [droste2016](topics/optical-frequency-combs/papers/droste2016.yaml) |
 | `ent.er_fiber_intracavity_eom_comb_z15` | Er:fiber 腔内 EOM 稳频梳（Zhang 2015） | 2 | [zhang2015](topics/optical-frequency-combs/papers/zhang2015.yaml) |
+| `ent.er_fiber_ofc_spectral_transfer_nicolodi2014` | Er:fiber光频梳光谱纯度传递系统（Nicolodi 2014） | 2 | [nicolodi2014](topics/optical-frequency-combs/papers/nicolodi2014.yaml) |
+| `ent.er_fiber_ofd_lecoq2010` | LNE-SYRTE Er:fiber光频除法器（Le Coq 2010） | 2 | [lecoq2010](topics/optical-frequency-combs/papers/lecoq2010.yaml) |
+| `ent.er_fiber_ofd_quinlan2011` | 200 MHz Er:fiber光频除法器（Quinlan 2011） | 2 | [quinlan2011](topics/optical-frequency-combs/papers/quinlan2011.yaml) |
 | `ent.er_yb_glass_comb_nardelli23` | Er/Yb:glass 500 MHz 频率梳（Nardelli 2023） | 2 | [nardelli2023](topics/optical-frequency-combs/papers/nardelli2023.yaml) |
 | `ent.erfiber_comb_li_d1_r19` | 面向 Li D1 线测量的 Er:fiber 飞秒光纤光梳系统（Rao 2019） | 2 | [rao2019](topics/optical-frequency-combs/papers/rao2019.yaml) |
 | `ent.fiber_comb_linewidth_transfer_yb_clock_i13` | 光纤梳线宽转移驱动 171Yb 光钟系统（Inaba 2013, AIST） | 2 | [inaba2013](topics/optical-frequency-combs/papers/inaba2013.yaml) |
@@ -73,10 +77,13 @@
 | `ent.hpf_nir_astrocomb_m19` | HPF 30 GHz EO + 纳米光子 NIR 天文梳（Metcalf 2019 系统） | 2 | [metcalf2019](topics/optical-frequency-combs/papers/metcalf2019.yaml) |
 | `ent.hpf_spectrograph_m19` | Habitable Zone Planet Finder (HPF) 低温真空 NIR echelle 光谱仪 | 2 | [metcalf2019](topics/optical-frequency-combs/papers/metcalf2019.yaml) |
 | `ent.hybrid_ml_erfiber_comb_z17` | NPE+NALM 混合锁模 Er:fiber 光学频率梳（Zhang 2017 系统） | 2 | [zhang2017](topics/optical-frequency-combs/papers/zhang2017.yaml) |
+| `ent.hybrid_photonic_microwave_osc_fortier2012` | 混合光子-微波振荡器（Fortier 2012） | 2 | [fortier2012](topics/optical-frequency-combs/papers/fortier2012.yaml) |
 | `ent.iii_v_on_si_ultradense_comb_w17` | III-V-on-Si ultra-dense comb laser (Wang 2017) | — | [wang2017](topics/optical-frequency-combs/papers/wang2017.yaml) |
+| `ent.iii_v_si_tunable_laser` | III-V/Si异质集成可调谐激光器 | 2 | [spencer2018](topics/optical-frequency-combs/papers/spencer2018.yaml) |
 | `ent.iii_v_soa_gain_section_w17` | III-V (InP) SOA gain section | — | [wang2017](topics/optical-frequency-combs/papers/wang2017.yaml) |
 | `ent.inline_ppln_f2f_l20` | 内联 PPLN f-to-2f 干涉仪（Lesko 2020，1 mm） | 3 | [lesko2020](topics/optical-frequency-combs/papers/lesko2020.yaml) |
 | `ent.integrated_iii_v_rsoa_pump_s18` | 片上 III–V 反射型半导体光放大器（RSOA）泵源 | 3 | [stern2018](topics/optical-frequency-combs/papers/stern2018.yaml) |
+| `ent.integrated_ofc_synthesizer_spencer2018` | 集成光子学光频合成器（Spencer 2018） | 2 | [spencer2018](topics/optical-frequency-combs/papers/spencer2018.yaml) |
 | `ent.kerr_microcomb_photonic_chip_sc_l18` | 15 GHz Kerr 微梳 + SiN 片上超连续谱系统（Lamb 2018） | 2 | [lamb2018](topics/optical-frequency-combs/papers/lamb2018.yaml) |
 | `ent.klm_bidirectional_ring_dual_comb_i16` | KLM 单腔双向双梳环形激光器（Ideguchi 2016） | 2 | [ideguchi2016](topics/optical-frequency-combs/papers/ideguchi2016.yaml) |
 | `ent.line_referenced_eo_comb_y16` | 分子/原子线锁定 EO 调制天文光梳（Yi 2016） | 2 | [yi2016](topics/optical-frequency-combs/papers/yi2016.yaml) |
@@ -107,6 +114,7 @@
 | `ent.ntsc_polarization_rotation_eom_comb_z17` | 国家授时中心偏振态旋转 EOM 梳（Zhang Y. 2017） | 2 | [zhang2017b](topics/optical-frequency-combs/papers/zhang2017b.yaml) |
 | `ent.octave_si3n4_microcomb_l17` | 倍频程 Si₃N₄ 微腔梳（Li 2017 系统） | 2 | [li2017](topics/optical-frequency-combs/papers/li2017.yaml) |
 | `ent.octave_spanning_tisa_comb_d00` | 倍频程 Ti:Sa 飞秒梳（Diddams 2000 系统） | 2 | [diddams2000](topics/optical-frequency-combs/papers/diddams2000.yaml) |
+| `ent.ofd_photonic_rf_source_hati2013` | OFD光子微波信号源（Hati 2013 NIST） | 2 | [hati2013](topics/optical-frequency-combs/papers/hati2013.yaml) |
 | `ent.onboard_cavity_reference_laser` | Onboard cavity-stabilized 1560 nm reference laser | — | [lezius2016](topics/optical-frequency-combs/papers/lezius2016.yaml) |
 | `ent.opgap_super_octave_mir_comb_t18` | OP-GaP 超八度中红外频率梳（Timmers 2018） | 2 | [timmers2018](topics/optical-frequency-combs/papers/timmers2018.yaml) |
 | `ent.optical_frequency_comb` | 光学频率梳（通用） | 1 | [giunta2019](topics/optical-frequency-combs/papers/giunta2019.yaml) |
@@ -131,17 +139,22 @@
 | `ent.silica_microrod_comb_d14` | 熔融石英微杆谐振腔频率梳（Del'Haye 2014，自注入锁定实验） | 2 | [delhaye2014](topics/optical-frequency-combs/papers/delhaye2014.yaml) |
 | `ent.silica_microtoroid_comb` | 二氧化硅微环形腔频率梳 | 2 | [kippenberg2011](topics/optical-frequency-combs/papers/kippenberg2011.yaml) |
 | `ent.silica_wedge_microresonator_s19` | 3 mm 硅基二氧化硅 wedge 微腔（Suh 2019） | 3 | [suh2019](topics/optical-frequency-combs/papers/suh2019.yaml) |
+| `ent.silica_wgm_resonator_cole` | 二氧化硅WGM微腔（Cole 2018） | 2 | [cole2018](topics/optical-frequency-combs/papers/cole2018.yaml) |
 | `ent.sin_nanophotonic_waveguide_m19` | 氮化硅纳米光子非线性波导（HPF 梳展宽段） | 3 | [metcalf2019](topics/optical-frequency-combs/papers/metcalf2019.yaml) |
+| `ent.sin_thz_kerr_comb` | Si₃N₄ 1 THz间距微腔梳 | 2 | [spencer2018](topics/optical-frequency-combs/papers/spencer2018.yaml) |
 | `ent.sin_waveguide_low_power_f2f_c17` | SiN 波导低功率 f-2f 自参考系统（Carlson 2017） | 2 | [carlson2017](topics/optical-frequency-combs/papers/carlson2017.yaml) |
 | `ent.sind_mi_kerr_comb_c18` | SiN:D 微环 MI Kerr 微梳（Chiles 2018，1 THz FSR，900 nm 带宽） | 3 | [chiles2018](topics/optical-frequency-combs/papers/chiles2018.yaml) |
 | `ent.single_branch_erfiber_comb_l17` | 单分支 Er:fiber 光频梳（Leopardi 2017） | 2 | [leopardi2017](topics/optical-frequency-combs/papers/leopardi2017.yaml) |
 | `ent.single_ion_comb_spectrometer_c20` | 单分子离子 + 飞秒梳 Raman 光谱仪（Chou 2020 系统） | 2 | [chou2020](topics/optical-frequency-combs/papers/chou2020.yaml) |
+| `ent.sio2_22ghz_kerr_comb` | SiO₂楔形微腔22 GHz梳 | 2 | [spencer2018](topics/optical-frequency-combs/papers/spencer2018.yaml) |
 | `ent.siph_tr_chip_s22` | CMOS 硅光 T/R 处理芯片（Shu 2022） | 3 | [shu2022](topics/optical-frequency-combs/papers/shu2022.yaml) |
+| `ent.soliton_crystal_microcomb` | 孤子晶体微腔梳 | 2 | [cole2018](topics/optical-frequency-combs/papers/cole2018.yaml) |
 | `ent.spaceborne_erfiber_comb_l16` | Space-qualified Er:fiber self-referenced OFC (TEXUS-51) | — | [lezius2016](topics/optical-frequency-combs/papers/lezius2016.yaml) |
 | `ent.texus51_rocket_platform` | TEXUS-51 sounding rocket platform | — | [lezius2016](topics/optical-frequency-combs/papers/lezius2016.yaml) |
 | `ent.tf_lin_uv_vis_comb_w24` | 薄膜铌酸锂纳米波导 UV-VIS 梳（Wu 2024） | 2 | [wu2024](topics/optical-frequency-combs/papers/wu2024.yaml) |
 | `ent.ti_sapph_10ghz_comb_bartels09` | 10 GHz 自参考 Ti:sapph 频率梳（Bartels 2009） | 2 | [bartels2009](topics/optical-frequency-combs/papers/bartels2009.yaml) |
 | `ent.ti_sapphire_frequency_comb` | 钛宝石飞秒频率梳 | 2 | [udem2002](topics/optical-frequency-combs/papers/udem2002.yaml) |
+| `ent.ti_sapphire_ofd_photonic_osc_fortier2011` | Ti:sapphire OFD光子微波振荡器（Fortier 2011） | 2 | [fortier2011](topics/optical-frequency-combs/papers/fortier2011.yaml) |
 | `ent.tpfc_quantum_limited_ranging_c22` | 时间可编程频率梳（TPFC）量子限制测距系统（Caldwell 2022, NIST） | 2 | [caldwell2022](topics/optical-frequency-combs/papers/caldwell2022.yaml) |
 | `ent.tunable_vuv_comb_z22` | 可调谐 VUV 光频梳（Zhang 2022，229mTh 核光谱） | 2 | [zhang2022](topics/optical-frequency-combs/papers/zhang2022.yaml) |
 | `ent.two_way_comb_timing_link_c20` | 两向梳定时抖动测量链路（Caldwell 2020 系统） | 2 | [caldwell2020](topics/optical-frequency-combs/papers/caldwell2020.yaml) |
@@ -231,10 +244,13 @@
 | `pri.high_frep_bandwidth_power_tradeoff` | 高重频梳带宽-平均功率-单齿功率三角权衡原理 | domain | [bartels2009](topics/optical-frequency-combs/papers/bartels2009.yaml) |
 | `pri.high_frep_dcs_speed_advantage` | 高重频梳 DCS 采集速度优势原理 | domain | [lesko2020](topics/optical-frequency-combs/papers/lesko2020.yaml) |
 | `pri.high_frep_yb_tight_lock_challenges` | 高重频 Yb:fiber 梳紧锁的双重挑战原理 | engineering | [ma2018](topics/optical-frequency-combs/papers/ma2018.yaml) |
+| `pri.high_rep_rate_ofd_low_shot_noise` | 高重复率OFD降低散粒噪声底原理 | domain | [quinlan2011](topics/optical-frequency-combs/papers/quinlan2011.yaml) |
 | `pri.high_temp_gas_suppresses_steady_state_plasma_p18` | 高温气体抑制高重频 HHG 稳态等离子体原理（Porat 2018） | domain | [porat2018](topics/optical-frequency-combs/papers/porat2018.yaml) |
 | `pri.hitran_voigt_declutter_trace_retrieval` | 基于 Hitran Voigt 模型的强吸收解杂原理 | engineering | [ycas2019](topics/optical-frequency-combs/papers/ycas2019.yaml) |
+| `pri.hybrid_ofd_slco_noise_complementarity` | OFD+SLCO混合振荡器噪声互补原理 | domain | [fortier2012](topics/optical-frequency-combs/papers/fortier2012.yaml) |
 | `pri.injection_locked_equidistant_microcomb_p13` | 参量增益竞争下的等间距微梳涌现原理 | engineering | [papp2013](topics/optical-frequency-combs/papers/papp2013.yaml) |
 | `pri.inline_f2f_soliton_shift` | 内联 f-to-2f 孤子自频移供能原理 | engineering | [lesko2020](topics/optical-frequency-combs/papers/lesko2020.yaml) |
+| `pri.integrated_ofc_synthesis_chain` | 集成光子学微波-光频相干倍频链原理 | domain | [spencer2018](topics/optical-frequency-combs/papers/spencer2018.yaml) |
 | `pri.integrated_photonic_supercontinuum_for_microcomb_f2f` | 片上集成 SiN 波导超连续谱使低功率微梳 f-2f 可行 | engineering | [lamb2018](topics/optical-frequency-combs/papers/lamb2018.yaml) |
 | `pri.inter_branch_fiber_noise_degradation` | 多分支光纤梳的支间光纤相噪退化原理 | engineering | [kashiwagi2018](topics/optical-frequency-combs/papers/kashiwagi2018.yaml) |
 | `pri.interferogram_embedded_freq_comparison` | 干涉图内嵌频率比对原理（M = fr/Δfr 放大因子） | engineering | [han2024](topics/optical-frequency-combs/papers/han2024.yaml) |
@@ -287,12 +303,15 @@
 | `pri.ofc_functional_definition_2010` | 光学频率梳功能性定义原理（Diddams 2010） | meta | [diddams2010](topics/optical-frequency-combs/papers/diddams2010.yaml) |
 | `pri.ofc_nine_application_threads_f19` | OFC 九大应用主线分类框架（Fortier 2019 综述版） | meta | [fortier2019](topics/optical-frequency-combs/papers/fortier2019.yaml) |
 | `pri.ofc_noise_hierarchy` | OFC 噪声层级原理 | domain | [endo2018](topics/optical-frequency-combs/papers/endo2018.yaml) |
+| `pri.ofc_spectral_purity_transfer` | 光频梳光谱纯度传递原理 | domain | [nicolodi2014](topics/optical-frequency-combs/papers/nicolodi2014.yaml) |
 | `pri.ofc_two_dof_stabilization` | OFC 双自由度独立稳定化原理 | meta | [endo2018](topics/optical-frequency-combs/papers/endo2018.yaml) |
 | `pri.ofc_unified_electromagnetic_spectrum_framework` | OFC 作为统一电磁波谱相干标尺框架 | meta | [diddams2020b](topics/optical-frequency-combs/papers/diddams2020b.yaml) |
+| `pri.ofd_optical_stability_transfer` | 光频除法将光学稳定性转移至微波域原理 | domain | [fortier2011](topics/optical-frequency-combs/papers/fortier2011.yaml) |
 | `pri.open_path_dcs_attribution_chain` | 开放路径 DCS 痕量气体溯源推理链原理 | domain | [coburn2018](topics/optical-frequency-combs/papers/coburn2018.yaml) |
 | `pri.optical_clock_higher_frequency_advantage` | 光学钟高频振荡优势原理 | domain | [udem2002](topics/optical-frequency-combs/papers/udem2002.yaml) |
 | `pri.optical_filter_dispersion_suppression` | 光学窄带滤波抑制长距离光纤色散原理 | domain | [leng2016](topics/optical-frequency-combs/papers/leng2016.yaml) |
 | `pri.optical_frequency_division_microwave` | 光学分频微波合成原理 | domain | [giunta2019](topics/optical-frequency-combs/papers/giunta2019.yaml) |
+| `pri.optical_frequency_division_rf_generation` | 光频除法RF信号生成原理 | domain | [hati2013](topics/optical-frequency-combs/papers/hati2013.yaml) |
 | `pri.optical_lock_lever_arm_timing_jitter` | 光锁杠杆臂降低脉间时间抖动原理 | engineering | [sinclair2014](topics/optical-frequency-combs/papers/sinclair2014.yaml) |
 | `pri.optical_microwave_coherent_gearbox` | 光-微波相干齿轮箱原理（Level 0 范式原理） | meta | [picque2020](topics/optical-frequency-combs/papers/picque2020.yaml) |
 | `pri.optical_phase_detection_fiber_link_m12` | 光学相位探测光纤链路主动稳定原理（Marra 2012） | engineering | [marra2012](topics/optical-frequency-combs/papers/marra2012.yaml) |
@@ -325,6 +344,8 @@
 | `pri.sin_waveguide_low_power_f2f_c17` | SiN 波导低功率 f-2f 自参考原理（Carlson 2017） | engineering | [carlson2017](topics/optical-frequency-combs/papers/carlson2017.yaml) |
 | `pri.single_fiber_mechanical_actuator` | 单光纤机械执行器大范围调谐原理 | engineering | [cai2020](topics/optical-frequency-combs/papers/cai2020.yaml) |
 | `pri.solid_state_non_perturbative_hhg` | 低带隙固态非微扰高次谐波产生原理 | domain | [lesko2022](topics/optical-frequency-combs/papers/lesko2022.yaml) |
+| `pri.soliton_crystal_fingerprint_spectrum` | 孤子晶体指纹光谱识别原理 | domain | [cole2018](topics/optical-frequency-combs/papers/cole2018.yaml) |
+| `pri.soliton_crystal_formation` | 孤子晶体形成原理：模式简并介导的长程相互作用 | domain | [cole2018](topics/optical-frequency-combs/papers/cole2018.yaml) |
 | `pri.soliton_crystal_multistability` | 孤子晶体多稳态原理 | domain | [gaeta2019](topics/optical-frequency-combs/papers/gaeta2019.yaml) |
 | `pri.soliton_self_frequency_shift_2um` | 2 µm 孤子自频移原理（Raman SSFS 波段切换） | domain | [xing2020](topics/optical-frequency-combs/papers/xing2020.yaml) |
 | `pri.state_prepared_single_ion_spectroscopy` | 单离子纯量子态光谱原理（heralded QLS 制备 + 非破坏读出） | domain | [chou2020](topics/optical-frequency-combs/papers/chou2020.yaml) |
@@ -340,6 +361,7 @@
 | `pri.transportable_cavity_reference_coupling` | 可移动腔稳激光作为光参考的接口原理 | engineering | [sinclair2014](topics/optical-frequency-combs/papers/sinclair2014.yaml) |
 | `pri.trap_rf_field_stark_systematic` | 阱 RF 电场诱导 Stark 移动系统误差原理 | engineering | [chou2020](topics/optical-frequency-combs/papers/chou2020.yaml) |
 | `pri.turbulence_speckle_freeze_dcs` | 双梳快速采集冻结湍流散斑原理 | domain | [han2024](topics/optical-frequency-combs/papers/han2024.yaml) |
+| `pri.two_comb_microwave_comparison` | 双梳比对法表征微波提取残余噪声 | domain | [lecoq2010](topics/optical-frequency-combs/papers/lecoq2010.yaml) |
 | `pri.vibration_cavity_length_coupling` | Vibration-induced oscillator cavity-length modulation | domain | [lezius2016](topics/optical-frequency-combs/papers/lezius2016.yaml) |
 | `pri.vibration_fopt_linear_coupling` | 振动→光学相位（f_opt）线性耦合原理 | engineering | [sinclair2014](topics/optical-frequency-combs/papers/sinclair2014.yaml) |
 | `pri.vipa_spatial_comb_mode_resolution_d07` | VIPA 空间分辨梳模式原理（Diddams 2007） | domain | [diddams2007](topics/optical-frequency-combs/papers/diddams2007.yaml) |
@@ -350,6 +372,7 @@
 | ID | Name | Source |
 |----|------|--------|
 | `meth.adaptive_sampling_correction` | 自适应采样校正方法 | [coddington2016](topics/optical-frequency-combs/papers/coddington2016.yaml) |
+| `meth.adiabatic_soliton_crystal_generation` | 绝热泵浦扫描孤子晶体生成法 | [cole2018](topics/optical-frequency-combs/papers/cole2018.yaml) |
 | `meth.all_pm_yb_nalm_self_reference` | 全 PM Yb NALM 梳 f-2f 自参考 + CW 光学锁定方法 | [li2017b](topics/optical-frequency-combs/papers/li2017b.yaml) |
 | `meth.amplifier_free_high_frep_yb_comb` | 无放大高重频 Yb:fiber 振荡器直驱倍频程展宽方法 | [wang2014](topics/optical-frequency-combs/papers/wang2014.yaml) |
 | `meth.astro_comb_rv_calibration` | 天文光梳径向速度校准方法 | [ycas2012](topics/optical-frequency-combs/papers/ycas2012.yaml) |
@@ -375,11 +398,13 @@
 | `meth.dpssl_interleaver_photonic_microwave_pc15` | DPSSL 梳 + PM 交织器 + PIN 探测的光生 9.6 GHz 微波产生方法 | [portuondo-campa2015](topics/optical-frequency-combs/papers/portuondo-campa2015.yaml) |
 | `meth.dual_branch_fceo_locking_passive_cancellation_r18` | 双分支 fceo 锁定 + 被动混频噪声抵消方法（Rolland 2018） | [rolland2018](topics/optical-frequency-combs/papers/rolland2018.yaml) |
 | `meth.dual_comb_spectroscopy` | 双梳光谱方法 | [coddington2016](topics/optical-frequency-combs/papers/coddington2016.yaml) |
+| `meth.dual_dks_synthesizer` | DKS双梳光频合成法 | [spencer2018](topics/optical-frequency-combs/papers/spencer2018.yaml) |
 | `meth.dual_pll_frep_fceo_rf_reference` | f_r-腔长 + f_0-泵浦双 PLL 锁至 RF 参考方法 | [washburn2004](topics/optical-frequency-combs/papers/washburn2004.yaml) |
 | `meth.dual_usl_locked_er_yb_glass_comb_n23` | Er/Yb:glass 梳双超稳激光锁定方法（Nardelli 2023） | [nardelli2023](topics/optical-frequency-combs/papers/nardelli2023.yaml) |
 | `meth.electrical_soliton_tuning_s18` | 集成微加热器热调谐孤子进入法（Stern 2018） | [stern2018](topics/optical-frequency-combs/papers/stern2018.yaml) |
 | `meth.eo_comb_line_reference_rv_calibration` | 线参考 EO 梳 RV 校准方法 | [yi2016](topics/optical-frequency-combs/papers/yi2016.yaml) |
 | `meth.eo_sin_astrocomb_calibration_m19` | EO + 纳米光子 SiN 天文梳 HPF 实时波长定标方法 | [metcalf2019](topics/optical-frequency-combs/papers/metcalf2019.yaml) |
+| `meth.eom_comb_self_referencing` | EOM梳 f-2f 自参考方法 | [beha2017](topics/optical-frequency-combs/papers/beha2017.yaml) |
 | `meth.eom_pzt_cascade_frep_lock` | EOM+PZT 级联重频锁定方法 | [torcheboeuf2017](topics/optical-frequency-combs/papers/torcheboeuf2017.yaml) |
 | `meth.eom_pzt_cavity_length_frep_lock_r19` | EOM+PZT 双驱动锁定 frep 方法（Rao 2019 实现） | [rao2019](topics/optical-frequency-combs/papers/rao2019.yaml) |
 | `meth.eom_pzt_dual_actuator_frep_lock_z15` | 腔内 EOM + 腔内长程 PZT 双执行器 f_rep 锁定方法（Zhang 2015） | [zhang2015](topics/optical-frequency-combs/papers/zhang2015.yaml) |
@@ -394,6 +419,7 @@
 | `meth.graphene_modulator_comb_stabilization` | 石墨烯 EOM + 腔外 EOM 双伺服梳稳频方法 | [kuse2015](topics/optical-frequency-combs/papers/kuse2015.yaml) |
 | `meth.hnlf_pplc_671nm_comb_extension_r19` | HNLF 展宽 + PPLN 倍频扩展光梳至 671 nm 方法（Rao 2019） | [rao2019](topics/optical-frequency-combs/papers/rao2019.yaml) |
 | `meth.iii_v_sin_heterogeneous_mll_fabrication` | III-V/SiN 异质集成 MLL 制造方法 | [cuyvers2021](topics/optical-frequency-combs/papers/cuyvers2021.yaml) |
+| `meth.intra_cavity_eom_phase_lock` | 腔内EOM快速相位锁定 | [nicolodi2014](topics/optical-frequency-combs/papers/nicolodi2014.yaml) |
 | `meth.intracavity_pdh_frep_lock_h07` | PDH 腔锁频（frep → FSR）与 f_ceo 双路稳频方法（Hartl 2007） | [hartl2007](topics/optical-frequency-combs/papers/hartl2007.yaml) |
 | `meth.klm_10ghz_comb_self_reference` | 10 GHz 紧腔 KLM + 非线性展宽 + f-2f 自参考方法 | [bartels2009](topics/optical-frequency-combs/papers/bartels2009.yaml) |
 | `meth.laser_tuning_soliton_access` | 激光扫频孤子激发方法 | [kippenberg2018](topics/optical-frequency-combs/papers/kippenberg2018.yaml) |
@@ -407,6 +433,7 @@
 | `meth.monolithic_free_running_photonic_microwave` | 自由运行单片梳光微波产生方法 | [kalubovilage2022](topics/optical-frequency-combs/papers/kalubovilage2022.yaml) |
 | `meth.nalm_all_pm_er_comb_stabilization` | 全 PM NALM Er 梳 f_CEO + 时延抖动联合表征方法 | [kuse2016](topics/optical-frequency-combs/papers/kuse2016.yaml) |
 | `meth.octave_f2f_optical_frequency_measurement` | 倍频程 f-2f 光学频率测量方法（Diddams 2000 首次演示） | [diddams2000](topics/optical-frequency-combs/papers/diddams2000.yaml) |
+| `meth.ofd_absolute_timing_jitter_measurement` | OFD微波信号绝对时序抖动测量 | [hati2013](topics/optical-frequency-combs/papers/hati2013.yaml) |
 | `meth.on_chip_f2f_stabilization` | 单片 AlN 波导 f-2f 自参考稳频方法（Hickstein 2017） | [hickstein2017](topics/optical-frequency-combs/papers/hickstein2017.yaml) |
 | `meth.open_path_dcs_field_monitoring` | 开放路径双梳野外监测方法 | [coburn2018](topics/optical-frequency-combs/papers/coburn2018.yaml) |
 | `meth.opo_comb_generation` | 光参量振荡（OPO）中红外梳产生方法 | [schliesser2012](topics/optical-frequency-combs/papers/schliesser2012.yaml) |
@@ -447,14 +474,27 @@
 
 | ID | Name | Best Value | Source |
 |----|------|------------|--------|
+| `met.absolute_timing_jitter_ofd_hati2013` | OFD绝对时序抖动（1 Hz–100 MHz） | 0.72 | [hati2013](topics/optical-frequency-combs/papers/hati2013.yaml) |
 | `met.allan_deviation_yb_kyw_comb_m13` | Yb:KYW 稳频梳 Allan 偏差 @ 1 s | <2.6×10⁻¹⁵ @ 1 s（ADEV） | [meyer2013](topics/optical-frequency-combs/papers/meyer2013.yaml) |
+| `met.eom_comb_frequency_accuracy` | EOM梳光学频率精度 | <5×10⁻¹⁴ | [beha2017](topics/optical-frequency-combs/papers/beha2017.yaml) |
+| `met.er_fiber_ofd_phase_noise_1hz` | Er:fiber OFD 10 GHz相位噪声@1 Hz（Quinlan 2011） | ≤−100 | [quinlan2011](topics/optical-frequency-combs/papers/quinlan2011.yaml) |
 | `met.fbeat_mod_allan_deviation_w25` | 锁定梳 fbeat 归一化光载波的 modified Allan 偏差（Wang 2025） | 7.27×10⁻¹⁸ @1 s；1.29×10⁻²² @10 000 s | [wang2025](topics/optical-frequency-combs/papers/wang2025.yaml) |
+| `met.microwave_instability_lecoq2010_1s` | 微波分数频率不稳定度（1 s，Le Coq 2010） | ~1.6×10⁻¹⁶ | [lecoq2010](topics/optical-frequency-combs/papers/lecoq2010.yaml) |
+| `met.microwave_phase_noise_lecoq2010` | 11.55 GHz微波相位噪声（Le Coq 2010） | -111 | [lecoq2010](topics/optical-frequency-combs/papers/lecoq2010.yaml) |
+| `met.ofd_microwave_instability_fortier2011` | OFD 10 GHz微波分数频率不稳定度（Fortier 2011） | ≤8×10⁻¹⁶ | [fortier2011](topics/optical-frequency-combs/papers/fortier2011.yaml) |
+| `met.ofd_phase_noise_1hz_fortier2011` | OFD 10 GHz相位噪声@1 Hz（Fortier 2011） | −104 | [fortier2011](topics/optical-frequency-combs/papers/fortier2011.yaml) |
+| `met.ofd_timing_jitter_fortier2011` | OFD 10 GHz绝对时序抖动（Fortier 2011） | 760 | [fortier2011](topics/optical-frequency-combs/papers/fortier2011.yaml) |
+| `met.soliton_crystal_rep_rate_enhancement` | 孤子晶体有效重复频率倍增因子 | n（n为晶体孤子数，实验中最大n=24，含1个缺陷） | [cole2018](topics/optical-frequency-combs/papers/cole2018.yaml) |
+| `met.spectral_purity_transfer_degradation_nicolodi2014` | OFC光谱纯度传递退化（1 s） | <3e-18 | [nicolodi2014](topics/optical-frequency-combs/papers/nicolodi2014.yaml) |
+| `met.synthesis_fractional_instability` | 光频合成器分数频率不稳定度 | ≤7.7×10⁻¹⁵ | [spencer2018](topics/optical-frequency-combs/papers/spencer2018.yaml) |
+| `met.timing_jitter_hybrid_osc_fortier2012` | 10 GHz混合振荡器绝对时序抖动 | 420 | [fortier2012](topics/optical-frequency-combs/papers/fortier2012.yaml) |
 
 ### 📊 Secondary (线宽/PSD/相干)
 
 | ID | Name | Best Value | Source |
 |----|------|------------|--------|
 | `met.eom_crosstalk_residual_phase_noise_z12` | EOM 交叉耦合残余微波相位噪声预测（Zhang 2012，12 GHz） | — | [zhang2012c](topics/optical-frequency-combs/papers/zhang2012c.yaml) |
+| `met.er_fiber_ofd_shot_noise_floor` | Er:fiber OFD散粒噪声底（Quinlan 2011） | −145 | [quinlan2011](topics/optical-frequency-combs/papers/quinlan2011.yaml) |
 | `met.fbeat_integrated_phase_noise_k15` | 光学拍频积分相位噪声 | 0.11 rad（10 Hz–3 MHz） | [kuse2015](topics/optical-frequency-combs/papers/kuse2015.yaml) |
 | `met.fbeat_phase_noise_integrated_l20` | 光学拍频积分相位噪声（Lesko 2020，压电陶瓷光学锁） | — | [lesko2020](topics/optical-frequency-combs/papers/lesko2020.yaml) |
 | `met.fbeat_residual_integrated_phase_noise_w25` | fbeat 残余积分相位噪声与定时抖动（Wang 2025） | fbeat 积分相噪 168 mrad（1 Hz–1 MHz），定时抖动 139 as；fceo 积分相噪 469 m… | [wang2025](topics/optical-frequency-combs/papers/wang2025.yaml) |
@@ -469,11 +509,17 @@
 | `met.integrated_phase_noise_fopt_s14` | 光学相位环（f_opt）积分相位噪声 | 0.22 rad（实验室，1 Hz–5 MHz）；0.3 rad（车辆）；~0.5 rad @ 低振动 → 0.5 g… | [sinclair2014](topics/optical-frequency-combs/papers/sinclair2014.yaml) |
 | `met.integrated_phase_noise_z17` | 积分相位噪声（f_ceo / f_beat） | f_ceo: 0.53 rad（0.44 fs 抖动）；f_beat: 0.86 rad（0.71 fs 抖动） | [zhang2017](topics/optical-frequency-combs/papers/zhang2017.yaml) |
 | `met.integrated_phase_noise_z22b` | in-loop 积分相位噪声（1 Hz–1 MHz） | f_ceo: 0.99 rad（0.55 fs）；f_beat: 0.14 rad（0.12 fs） | [zhang2022b](topics/optical-frequency-combs/papers/zhang2022b.yaml) |
+| `met.microwave_instability_lecoq2010_long` | 微波分数频率不稳定度（长期，Le Coq 2010） | ~3×10⁻¹⁹ | [lecoq2010](topics/optical-frequency-combs/papers/lecoq2010.yaml) |
 | `met.mwave_phase_noise_10ghz_m13` | 10 GHz 微波相位噪声（1 Hz offset） | -99 dBc/Hz @ 1 Hz offset | [meyer2013](topics/optical-frequency-combs/papers/meyer2013.yaml) |
+| `met.ofd_shot_noise_floor_fortier2011` | OFD散粒噪声底（Fortier 2011） | −157 | [fortier2011](topics/optical-frequency-combs/papers/fortier2011.yaml) |
+| `met.phase_noise_ofd_100mhz_hati2013` | OFD信号相位噪声（100 MHz载波） | state-of-the-art (see paper for full spectrum) | [hati2013](topics/optical-frequency-combs/papers/hati2013.yaml) |
+| `met.phase_noise_reduction_factor_ofd` | OFD相位噪声功率降低因子N² | N²≈2.5×10⁹（N≈50,000） | [fortier2012](topics/optical-frequency-combs/papers/fortier2012.yaml) |
 | `met.photonic_microwave_phase_noise` | 光子微波合成相位噪声 | −171 dBc/Hz @ 1 Hz offset, 9.8 GHz carrier（等效 σ_y ≈ 6.5×10⁻… | [giunta2019](topics/optical-frequency-combs/papers/giunta2019.yaml) |
 | `met.photonic_microwave_phase_noise_k22` | 8 GHz 光生微波相位噪声本底 | <-180 dBc/Hz @ 1 MHz 偏移 | [kalubovilage2022](topics/optical-frequency-combs/papers/kalubovilage2022.yaml) |
 | `met.photonic_microwave_phase_noise_pc15` | 9.6 GHz 光生微波 SSB 相位噪声（Portuondo-Campa 2015） | −100 dBc/Hz @ 1 Hz（近载波）； −148 dBc/Hz（BOC 光学测得 OFC 本征定时抖动等效 … | [portuondo-campa2015](topics/optical-frequency-combs/papers/portuondo-campa2015.yaml) |
 | `met.residual_phase_noise_psd_k18` | FNDC 开启前支间残余相噪 PSD（Kashiwagi 2018） | 0.1 Hz–100 Hz 区间相噪占主导（FNDC 开启后被压；100 Hz–20 kHz 为残余地板） | [kashiwagi2018](topics/optical-frequency-combs/papers/kashiwagi2018.yaml) |
+| `met.soliton_crystal_fsrs` | 孤子晶体实验腔自由谱范围 | ~26 和 ~16.4 | [cole2018](topics/optical-frequency-combs/papers/cole2018.yaml) |
+| `met.synthesizer_tuning_range` | 合成器光频调谐范围 | 4 | [spencer2018](topics/optical-frequency-combs/papers/spencer2018.yaml) |
 
 ### 🔗 Interface (CONDITIONED-BY 耦合)
 
@@ -655,6 +701,7 @@
 | `met.sind_propagation_loss_c18` | SiN:D C 波段传播损耗（Chiles 2018） | — | [chiles2018](topics/optical-frequency-combs/papers/chiles2018.yaml) |
 | `met.sind_quality_factor_c18` | SiN:D 微环 Q 因子（Chiles 2018） | — | [chiles2018](topics/optical-frequency-combs/papers/chiles2018.yaml) |
 | `met.single_branch_transfer_stability_f22` | 单分支 SCG 频率传递稳定度（Fermann 2022 综述） | — | [fermann2022](topics/optical-frequency-combs/papers/fermann2022.yaml) |
+| `met.source_laser_stability_nicolodi2014` | 源激光频率稳定度（1062 nm ULE腔） | 4.5e-16 | [nicolodi2014](topics/optical-frequency-combs/papers/nicolodi2014.yaml) |
 | `met.space_comb_environmental_readiness_p21` | 空间光梳环境成熟度（FOKUS II） | TEXUS 54 通过；280 km 高度，6 分钟零重力运行，锁定保持 | [probster2021](topics/optical-frequency-combs/papers/probster2021.yaml) |
 | `met.spectral_coverage_h24` | 长程 DCS 光谱覆盖范围（3 dB 带宽） | ~50 cm⁻¹（6455.5–6505.5 cm⁻¹，≈7 nm @1545 nm，≈6000 梳齿） | [han2024](topics/optical-frequency-combs/papers/han2024.yaml) |
 | `met.spectral_coverage_s19` | NIRSPEC 可用谱覆盖 | 1471–1620 | [suh2019](topics/optical-frequency-combs/papers/suh2019.yaml) |
@@ -1279,4 +1326,8 @@ Nodes referenced but not defined in this topic:
 | `rel.Cho20_12` | CONDITIONED-BY | `ent.optical_frequency_standard` | chou2020 |
 | `rel.H07_10` | CONDITIONED-BY | `ent.vibration_environment` | hartl2007 |
 | `rel.PD20_04` | CHARACTERIZED-BY | `met.fractional_freq_instability_y99` | picque2020 |
+| `rel.Fo05` | USES-METHOD | `meth.optical_frequency_division` | fortier2011 |
+| `rel.F03` | USES-METHOD | `meth.optical_frequency_division` | fortier2012 |
+| `rel.Q04` | USES-METHOD | `meth.optical_frequency_division` | quinlan2011 |
+| `rel.S03` | ENABLES | `meth.self_referencing` | spencer2018 |
 
