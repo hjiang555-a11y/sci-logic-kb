@@ -118,7 +118,7 @@
 | `sinclair2015.yaml` | LMFFEUFX | Sinclair 2015 — 紧凑全 PM 相干光纤梳技术综合（Rev Sci Instrum） | ✅ v4.3 framework（Batch 2） |
 | `diddams2010.yaml` | VKLU3BG6 | Diddams 2010 — "演化中的光学频率梳"综述（JOSA B） | ✅ v4.3 framework（Batch 3） |
 
-### 技术论文（部分列举，共 84 篇，含 adler2009 待 PDF 修复后完善）
+### 技术论文（部分列举；完整列表见 `topics/optical-frequency-combs/papers/` 目录，精确计数见 [`INDEX.md`](INDEX.md)）
 
 | 文件 | Zotero Key | 论文 | 状态 |
 |------|-----------|------|------|
@@ -168,7 +168,7 @@
 | `luo2020.yaml` | X6KNIXMW | Luo 2020 — 130 W 180 fs Yb:fiber CPA 梳（ECNU） | ✅ v4.5 evidence（Batch 4） |
 | `caldwell2022.yaml` | YD2MQC49 | Caldwell 2022 Nature — 时间可编程梳 TPFC + 量子极限测距（5000× 功率降低） | ✅ v4.5 breakthrough（Batch 4） |
 | `rao2022.yaml` | ZSWYS26E | Rao 2022 物理学报 — 8 支路 Er 光纤梳用于 CRDS（国家授时中心） | ✅ v4.5 evidence（Batch 4） |
-| *（其余 60 篇见 `topics/optical-frequency-combs/papers/` 目录）* | | | |
+| *（其余条目见 `topics/optical-frequency-combs/papers/` 目录）* | | | |
 
 > **Batch 4 备注**：2026-04-23 摄入基于 `/pdfs/` 中超出原 batch_info.json 的 13 个 PDF。去重后 11 篇新入库：
 > - `8NE7UAUR`（Leopardi 2017 Optica，DOI `10.1364/OPTICA.4.000879`）— 与 `leopardi2017.yaml`（zotero `8XUFRL4K`）同 DOI，跳过

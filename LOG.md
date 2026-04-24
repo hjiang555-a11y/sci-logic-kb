@@ -7,7 +7,30 @@
 
 ---
 
-## [2026-04-23] ingest | `/pdfs` 目录批量摄入（42 篇：30 TF-transfer evidence + 9 光钟 evidence + 3 framework/review + 1 占位）
+## [2026-04-24] restructure | 文档一致性整固：去硬编码论文计数 + 精简一次性文档
+
+### 动机
+多份核心文档（`SCHEMA.md`、`topics/*/_meta/architecture.md`、`PROCESSED_PAPERS.md`）保留了历史批次的硬编码论文计数（例如 SCHEMA §1 仍写 "超稳激光 78 篇 / OFC 101 篇"；OFC `_meta/architecture.md` 仍写 "Paper Count: 90"；PROCESSED_PAPERS 仍写 "共 84 篇 / 其余 60 篇"），与实际规模（USL 89 / OFC 114 / FS 18 / TFT 31 / timescales 1 / shared 7，总计 260）全面漂移。同时 `docs/ROOT_FILE_INVENTORY.md` 为 TODO.md P0-2 一次性产物，任务已完成且全库无其他文档引用。本次整治按 TODO.md §4 "减少手填统计" 与 §1.2 "文件系统复杂度" 原则收口。
+
+### 具体变更
+- **SCHEMA.md**：§一定位 / §二系统架构 / §建设优先级 / §演进原则 的硬编码论文数全部去掉，改为链到 [`TOPICS.md`](TOPICS.md) / `python scripts/stats.py` / [`INDEX.md`](INDEX.md)；删除 §专题体系末尾孤立的表片段（L459–463，header 已缺失）。
+- **topics/ultrastable-laser/_meta/architecture.md**：`Paper Count: 78` → 改为 "精确数字见 INDEX.md"。
+- **topics/optical-frequency-combs/_meta/architecture.md**：`Paper Count: 90` + 2026-04-21/22 Batch 1/2/3 明细段 → 精简为 "数字见 INDEX.md / 摄入历史见 LOG.md"。
+- **topics/frequency-standards/_meta/architecture.md**：`Status: skeleton, 仅 1 篇` → `growing, ≥10 篇（见 INDEX.md）`。
+- **topics/time-frequency-transfer/_meta/architecture.md**：去掉 `31 篇论文` 硬编码，保留五大分支叙述。
+- **PROCESSED_PAPERS.md**：`共 84 篇` / `其余 60 篇` → 改为 "见目录 / INDEX.md"。
+- **docs/ROOT_FILE_INVENTORY.md**：删除（TODO.md P0-2 已完成、无反向引用）。
+- 重跑 `python scripts/build_index.py`，自动索引刷新。
+
+### 不变量
+- 未改动任何 YAML 数据节点
+- `python scripts/lint.py --summary`：102 error / 12 warning / 215 info（较 TODO.md 2026-04-24 基线 113/12/216 小幅下降，无新增错误类）
+- `python scripts/stats.py`：260 papers / 1211 nodes / 1364 relations 不变
+
+### 备注
+后续新增论文时，不要再在 architecture.md / SCHEMA.md 里写绝对数字，统一走 `scripts/stats.py` + 自动 INDEX。
+
+
 
 ### 范围
 PDF 批量投放于 `/pdfs/` 目录，共 46 个文件；其中 30 个为 time-frequency-transfer 专题

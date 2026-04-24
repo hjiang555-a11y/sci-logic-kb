@@ -84,7 +84,9 @@
 | 镀层损耗角（AlGaAs） | < 2.3×10⁻⁵ @ 17 K | Lee 2026 | 使能指标 |
 | 精细度 | >3×10⁵ | Cole 2016 | 使能指标 |
 
-## Paper Count: 78
+## Paper Count
+
+> 精确数字以 [`INDEX.md`](../INDEX.md) / `python scripts/stats.py` 为准。本文件不硬编码论文总数，避免漂移。
 
 ---
 

@@ -1,6 +1,6 @@
 # Time-Frequency Transfer — Topic Architecture
 
-> **Status**: 🟢 `growing` — 31 篇论文（1 framework + 30 evidence）；Level 1 骨架已填充 4 个总节点。新增论文覆盖欧洲光纤相干链路（Calonico/Raupach/Lopez/Guéna）、中国光纤链路（Cheng/Xu/Chen/Wang/Shen/Zhang/Xue/Quan）、自由空间（Sinclair/Swann/Bodine/Dix-Matthews/Caldwell）、卫星/微波（Exertier/Nakamura/Kim/Turza/Zeng）五大分支。
+> **Status**: 🟢 `growing` — 已从 framework 骨架扩展为多批 evidence 规模（精确数字见 [`INDEX.md`](../INDEX.md) / `python scripts/stats.py`）；Level 1 骨架已填充 4 个总节点。论文覆盖欧洲光纤相干链路（Calonico/Raupach/Lopez/Guéna）、中国光纤链路（Cheng/Xu/Chen/Wang/Shen/Zhang/Xue/Quan）、自由空间（Sinclair/Swann/Bodine/Dix-Matthews/Caldwell）、卫星/微波（Exertier/Nakamura/Kim/Turza/Zeng）五大分支。
 >
 > Source of truth: SCHEMA.md
 
