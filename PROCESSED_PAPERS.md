@@ -3,6 +3,8 @@
 > **说明**：本文件包含知识库中所有已处理论文的详细列表。从 SCHEMA.md 第八节迁移而来。
 > SCHEMA.md 仅保留统计摘要，本文件承载完整论文记录。
 >
+> **快速查重**：如需以论文标题、Zotero Key 或 DOI 快速核查是否已入库，请使用根目录 [`paper-inkb.md`](paper-inkb.md)（按专题排列，三列一目了然）。
+>
 > **最后更新**：2026-04-23（Copilot cloud agent 批量摄入 `/pdfs` 目录新增 42 篇论文：30 篇时频传递 evidence + 9 篇光钟 evidence + 3 篇 framework/review（Ludlow 2015、Allan 2016、Sullivan 2001）。OFC 专题新增 adler2009 占位条目 1 篇待确认。影响：time-frequency-transfer 1→31 篇；frequency-standards 3→12 篇；shared 5→7 篇；optical-frequency-combs 104→105 篇；本库总计 192→234 篇（含 1 占位）。）
 
 ---
