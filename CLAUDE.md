@@ -33,13 +33,15 @@
    - 使用 GitHub PR 流程管理所有更改
    - 本地处理结果必须通过 GitHub PR 提交
 
-## 单篇论文处理流程
+## 论文摄入流程
 
-### 步骤 1：确定目标论文
+论文摄入的全流程（从选论文到 YAML 提取到 PR 提交）已归档至：
 
-从 `QUEUE.md` 中选取下一篇 `[ ]` 状态的论文，记录其 `ZOTERO_KEY`。
+- **完整流程**：[`CONTRIBUTING.md`](CONTRIBUTING.md)（Step 1–10，v4.4 三档规范）
+- **档位判定规则**：[`docs/CONTRIBUTION_TIER_RULES.md`](docs/CONTRIBUTION_TIER_RULES.md)
+- **PR 提交前检查**：[`.github/PULL_REQUEST_TEMPLATE.md`](.github/PULL_REQUEST_TEMPLATE.md)
 
-### 步骤 2：获取论文 PDF
+### 获取论文 PDF（本文件特有内容）
 
 ```bash
 WINDOWS_IP=$(ip route | grep default | awk '{print $3}')
@@ -64,74 +66,6 @@ for i in items:
         print(f'/mnt/d/Users/hjian/Zotero/storage/{key}/{fn}')
 "
 ```
-
-### 步骤 3：阅读 PDF
-
-使用 `Read` 工具读取 PDF 文件（最多 20 页/次，大论文分批读取）。
-
-### 步骤 4：提取 YAML
-
-按 `SCHEMA.md` 中的模板提取：
-- 识别该论文的**核心贡献**（方法创新/原理解析/实验结果，或专题框架定义）
-- 决定 `meta.contribution_type`（v4.4 三档规范，详见 [SCHEMA.md §9.1](SCHEMA.md)）：
-  - `breakthrough`：打破指标记录 / 提出新原理 / 证伪旧论断
-  - `evidence`：在已有节点上提供新数据点、复现、工程改进（**大多数论文属此档，默认**）
-  - `framework`：综述 / 路线图 / 教科书章节
-- 提取节点（entities/principles/methods/metrics）
-- 建立关系（relations）
-- 检查是否有跨文件引用的已有节点
-
-**超稳激光专题 σ_y-first 规则**（Round 3 起，2026-04-21）：若当前处理论文属 `ultrastable-laser`，档位判定遵循专题专属规则：
-- 优先识别并量化该论文的 **σ_y(τ=1 s)** 值 —— 这是档位判定的第一依据
-- 若论文未直接报告 σ_y，尝试从频噪 PSD 换算；只有线宽时在 note 中声明 `primary-metric missing: linewidth only`（不能升 breakthrough）
-- 报告 σ_y 时**必须**标注 Allan 变体类型（ADEV / MDEV / OADEV / Hadamard）
-- 线宽、频噪 PSD、相干时间、**长期漂移**、加速度灵敏度、镀层损耗角等单独刷新一律归 `evidence`
-- 详见 [`topics/ultrastable-laser/_meta/scoping_principles.md`](topics/ultrastable-laser/_meta/scoping_principles.md) v2
-
-若该论文是综述/路线图，且主要贡献在于建立专题顶层架构而非提供新的具体技术演示：
-- 使用 `meta.contribution_type: framework`
-- 优先定义 Level 0/1 顶层实体、tier: meta/domain 原理、跨专题 `CONDITIONED-BY` 接口
-- 不把具体实验系统的 Level 2 参数实例作为该文件的主职责
-
-若该论文是 `evidence` 档（最常见）：
-- 优先复用已有节点，不强求新增 `pri.*`
-- 允许不填 `breakthrough_paths`，允许产出 orphan 节点
-- 详见 [CONTRIBUTING.md "Evidence 档位最低入库门槛"](CONTRIBUTING.md)
-
-### 步骤 5：写入文件
-
-写入 `topics/<topic>/papers/{first_author_lower}{year}.yaml`，例如 `topics/ultrastable-laser/papers/matei2017.yaml`。
-
-当前默认专题为 `ultrastable-laser`。
-
-### 步骤 6：更新运维文件
-
-- 在 `PROCESSED_PAPERS.md` 中补充论文记录
-- 更新 `INDEX.md`（新节点、新指标最佳值、论文计数）
-- 追加 `LOG.md` 条目（格式：`## [YYYY-MM-DD] ingest | description`）
-- 若新数据与已有声明矛盾，更新相关节点的 `contested_claims` 并在 LOG.md 记录 `contradiction`
-- 若存在相关综合页面（`synthesis/`），检查是否需要标注为"需要更新"
-
-### 步骤 7：提交
-
-```bash
-git add topics/<topic>/papers/{filename}.yaml PROCESSED_PAPERS.md INDEX.md LOG.md
-git commit -m "add {author}{year}: {论文核心贡献一句话}"
-git push
-```
-
----
-
-## 质量检查清单
-
-提交前确认：
-
-- [ ] 每个节点 ID 全局唯一（不与同专题 papers/ 目录及其他专题的文件冲突）
-- [ ] 所有 relation 有 `source.claim`（原文论断）
-- [ ] 所有 metric 的 `demonstrated_value` 有 `conditions`
-- [ ] 原理节点有 `conditions` 或 `applicable_when`
-- [ ] 跨文件引用的节点在 `note` 中注明来源文件
-- [ ] 没有把"方法"建为"实体"（PDH 是 `meth`，不是 `ent`）
 
 ---
 
