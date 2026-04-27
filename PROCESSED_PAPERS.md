@@ -178,6 +178,7 @@
 > **备注**：原 Batch 3 清单含 `BL4HI3QI`（Picqué & Hänsch 2019 Nature Photonics 综述），与已处理 `picque2019.yaml`（zotero `RZME5CH8`）为**同一 DOI 的备份键**，不创建重复 YAML。
 
 ## 频率标准专题
+| `clairon1995.yaml` | | Clairon 1995 — 铯原子喷泉频率标准初步结果 | 🆕 v4.5 |
 
 | 文件 | Zotero Key | 论文 | 状态 |
 |------|-----------|------|------|
@@ -272,3 +273,4 @@
 ---
 
 *本文件由 AI 自动维护。完整论文列表从 SCHEMA.md 第八节迁移而来。*
+| `clairon1995.yaml` | | Clairon 1995 — 铯原子喷泉频率标准初步结果 | 🆕 v4.5 |

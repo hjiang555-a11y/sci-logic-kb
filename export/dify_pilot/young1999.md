@@ -1,0 +1,413 @@
+# Young 1999 — 亚赫兹线宽可见激光
+# 提取者：Claude（AI草稿，待专家确认）
+# 提取日期：2026-04-14
+# Schema版本：v4.1
+
+meta:
+  zotero_key: "EGAZKLXR"
+  source_type: technical_paper
+  contribution_type: breakthrough
+  reliability: medium            # 前沿论文，结果在领域内高度认可
+  title: "Visible Lasers with Subhertz Linewidths"
+  year: 1999
+  first_author: Young
+  journal: "Physical Review Letters"
+  volume: 82
+  pages: "3799-3802"
+  doi: "10.1103/PhysRevLett.82.3799"
+  note: >
+    首次实验证明亚赫兹线宽可见激光（0.6 Hz @ 563 nm）；
+    后经 Numata 2004 确认该结果已在热噪声极限处工作。
+    核心贡献：展示低频弹性悬挂隔振 + 两级 PDH 锁频的组合方案。
+    技术分支：FP参考腔系统（Fabry-Pérot Reference Cavity Systems）。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.vibration_isolation
+    name: "被动隔振系统（Young 1999）"
+    aliases: ["vibrationally isolated optical table", "suspended table", "弹性悬挂隔振台"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: "隔离地面振动，防止 FP 腔谐振频率因机械扰动偏移"
+    key_parameters:
+      suspension: "手术管（surgical tubing）弹性悬挂，拉伸至约 3 m"
+      resonance_frequencies: "约 0.3 Hz（拉伸模和摆动模）"
+      damping: "四角注脂 dashpot，时间常数约 1 s"
+      position_servo: "邻近传感器 + 加热器反馈，时间常数约 100 s"
+      acoustic_isolation: "木箱内衬铅泡沫"
+    note: "ent.fp_cavity_system 的 Level 2 子单元（物理隔振装置）；定义于本文"
+
+  - id: ent.vibration_environment
+    name: "环境振动条件"
+    aliases: ["ambient vibration", "seismic noise", "ground vibration"]
+    hierarchy_level: ext
+    status: demonstrated
+    function: "描述 FP 腔工作环境中的外部地面振动和声振扰动谱"
+    key_parameters:
+      typical_acceleration: "~10⁻⁶ m/s²/√Hz（实验室地面，低频段典型值）"
+      dominant_frequencies: "1–100 Hz（建筑机械振动主频段）"
+    note: "外围条件节点；通过 CONDITIONED-BY 接口连接到 ent.fp_cavity_system"
+
+  - id: ent.laser_source
+    name: "激光源（外围条件）"
+    aliases: ["563 nm dye laser", "可见染料激光"]
+    hierarchy_level: ext
+    status: demonstrated
+    function: >
+      超稳激光系统的光源输入。自由运行激光（线宽 ~MHz 量级）经预稳和
+      锁频后压窄至亚赫兹。不同波长/类型的激光器作为该通用外围条件的实例。
+    key_parameters:
+      free_running_linewidth: "~1–10 MHz（典型自由运行线宽）"
+      tuning_range: "依激光器类型而定（数十 GHz 到 THz）"
+      implementations:
+        young1999_dye: "563 nm 染料激光器（Young 1999，预稳至 ~1 kHz）"
+        kessler2012_fiber: "1542 nm Er 光纤激光器（Kessler 2012/Matei 2017）"
+        hafner2015_diode: "698 nm 激光二极管（Häfner 2015，Sr 钟跃迁）"
+    source: {zotero_key: "EGAZKLXR", claim: "dye laser at 563 nm as the optical source that is locked to this reference cavity"}
+    note: >
+      原 ent.dye_laser_563nm（Level 1），重构后泛化为通用外围条件节点 ent.laser_source（ext）。
+      激光器不属于"频率参考部件"，是系统的输入源。
+
+  - id: ent.two_stage_pdh_lock_young99
+    name: "两级 PDH 锁频系统（Young 1999）"
+    aliases: ["two-stage PDH lock", "级联 PDH 稳频"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: "级联稳频：一级压窄至 kHz 级，二级压窄至亚赫兹"
+    key_parameters:
+      stage_1_target: "低精细度预稳腔（finesse ≈ 800）"
+      stage_1_actuators: "腔内 EOM（高频）+ PZT 反射镜（低频）"
+      stage_1_bandwidth: "≈ 2 MHz"
+      stage_1_linewidth: "≈ 1 kHz"
+      stage_2_target: "ULE 高精细度腔（finesse > 150,000）"
+      stage_2_actuators: "AOM 调频（高频，up to 90 kHz）+ PZT 调整预稳腔（低频）"
+      stage_2_technique: "PDH（同 Drever 1983）"
+    source: {zotero_key: "EGAZKLXR", claim: "first prestabilize it to a cavity with a finesse of ≈800 ... then lock to high-finesse cavity using PDH technique"}
+
+principles:
+  - id: pri.ule_zero_cte
+    name: "ULE 玻璃零热膨胀系数原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      ULE（Ultra-Low Expansion glass, 钛硅酸盐玻璃）的热膨胀系数
+      在特定温度附近（典型值 15–30 °C，材料批次相关）过零点，
+      即存在 dL/dT = 0 的工作温度，此时腔长对温度一阶不敏感。
+    domain: "光学谐振腔稳定性"
+    conditions: "温度控制在 CTE 零点附近（±0.1 K 量级）；ULE 材料批次的零点温度需独立标定"
+    applicable_when: "温度控制在 CTE 零点附近"
+    source_claim: >
+      "The temperature of the vacuum chamber is held at ≈30 °C, which is near the
+       temperature at which the coefficient of thermal expansion for the cavity spacer is zero"
+    note: "Zerodur 也是同类材料，同样在某温度有 CTE 零点"
+
+  - id: pri.mirror_heating_cavity_shift
+    name: "腔镜加热导致谐振频率漂移"
+    tier: domain
+    verification_status: observed
+    statement: >
+      腔内光场加热镜面镀层，引起镜面形变或热膨胀，
+      导致腔长变化进而谐振频率偏移。效应量级约 1 Hz/mW 腔内功率。
+    domain: "高精细度 F-P 腔"
+    conditions: "高精细度 F-P 腔，腔内循环功率 > 100 μW 量级时不可忽略；效应与镀层吸收率成正比"
+    applicable_when: "腔内功率 > 100 μW 量级时不可忽略"
+    quantitative: "≈ 1 Hz/mW（Young 1999 实验结果）"
+    source_claim: >
+      "The intracavity light heats the mirror coatings, thereby shifting the
+       cavity resonance by ≈1 Hz/mW"
+    mitigation: "限制耦合功率（100–200 μW），主动控制腔内循环功率"
+
+  - id: pri.vibration_isolation_pendulum
+    name: "低频弹性悬挂隔振原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      弹性悬挂系统（弹簧或绳索）形成低通力学滤波器：
+      对高于悬挂谐振频率的外部振动，传递函数以 -40 dB/decade 衰减。
+      谐振频率越低（Young 1999 约 0.3 Hz），有效隔振频率范围越宽。
+    domain: "精密仪器隔振"
+    conditions: "悬挂谐振频率远低于待隔离振动频段（f₀ << f_disturbance）；阻尼系数需平衡谐振峰放大与衰减速率"
+    key_parameters:
+      - "悬挂谐振频率 f0（越低越好）"
+      - "阻尼系数（太小会有谐振峰放大）"
+    source_claim: >
+      "reduces the amplitude of the transmitted vibrational noise at frequencies
+       greater than 3 Hz by more than a factor of 50"
+
+metrics:
+  - id: met.laser_linewidth_563nm
+    name: "激光线宽（563 nm，Young 1999）"
+    unit: "Hz"
+    description: "Young 1999 实验测量的 563 nm 激光 FWHM 线宽"
+    demonstrated_value:
+      value: "0.6 Hz"
+      conditions: "563 nm 染料激光，PDH 锁定到 24 cm ULE 高精细度腔（finesse > 150,000），两腔拍频 + FFT 谱分析，平均时间 up to 32 s"
+      averaging_time: "up to 32 s"
+      wavelength: "563 nm"
+      method: "两腔拍频 + FFT 谱分析"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "EGAZKLXR", claim: "linewidth of 0.6 Hz for averaging times up to 32 s"}
+    theoretical_floor:
+      value: "~0.1–0.2 Hz（热噪声极限估算）"
+      basis: "Numata 2004 计算的热噪声频率噪声谱密度 ~0.13 Hz/√Hz @ 1 Hz"
+      gap_note: "Young 1999 已接近热噪声极限（Numata 2004 确认）；未来改进需降低镜底物热噪声"
+
+  - id: met.fractional_freq_instability_y99
+    name: "分数频率不稳定度（Young 1999 腔）"
+    unit: "无量纲（Allan 偏差）"
+    description: "Young 1999 实验测量的分数频率不稳定度 σ_y(τ)"
+    demonstrated_value:
+      value: "≈ 3 × 10⁻¹⁶"
+      conditions: "563 nm 染料激光锁定到 24 cm ULE 腔，两腔拍频测量，τ = 1 s"
+      averaging_time: "1 s"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "EGAZKLXR", claim: "fractional frequency instability ... typically 3×10⁻¹⁶ at 1 s"}
+
+  - id: met.acceleration_sensitivity_y99
+    name: "腔谐振频率对加速度灵敏度（Young 1999）"
+    unit: "kHz/(m/s²)"
+    description: "FP 腔谐振频率随竖直方向加速度的变化率"
+    demonstrated_value:
+      value: "≈ 100 kHz/(m/s²)"
+      conditions: "竖直方向加速，1 Hz 正弦驱动测量，24 cm ULE 腔水平放置"
+      frequency: "1 Hz 驱动"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "EGAZKLXR", claim: "acceleration sensitivity of ≈100 kHz/(m/s²)"}
+    note: "以竖直方向加速为主要限制，与理论估计量级相符"
+
+  - id: met.freq_noise_from_vibration
+    name: "振动引起的频率噪声（接口指标）"
+    unit: "Hz/√Hz"
+    description: "环境振动通过加速度灵敏度耦合进入 FP 腔的等效频率噪声"
+    is_interface_metric: true
+    coupling_formula: "Δν = acceleration_sensitivity × ambient_acceleration"
+    demonstrated_value:
+      value: "残余振动噪声贡献 < 热噪声水平（充分隔振后）"
+      conditions: "Young 1999 悬挂隔振台 + 腔加速度灵敏度 ~100 kHz/(m/s²)"
+      verification_status: inferred
+      confidence: likely
+      source: {zotero_key: "EGAZKLXR", claim: "previous results limited by vibrational noise; improvement from better isolation"}
+
+methods:
+  - id: meth.multi_stage_locking
+    name: "多级级联稳频策略"
+    full_name: "Multi-stage cascade frequency stabilization"
+    status: demonstrated
+    applies_to: ent.fp_cavity_system
+    category: "稳频策略（高级，可叠加于核心误差探测方法之上）"
+    steps_summary: >
+      激光器先锁定到低精细度预稳腔（线宽 ~kHz）→
+      再锁定到高精细度参考腔（线宽 ~亚赫兹）→
+      可选第三级：腔间传递或原子参考。
+    implementations:
+      young1999_two_stage_pdh: >
+        Young 1999：染料激光预稳到 finesse≈800 腔（2 MHz 带宽，~1 kHz 线宽），
+        AOM 偏频锁定到 ULE 高精细度腔（90 kHz 带宽），最终 0.6 Hz 线宽。
+    note: >
+      原 meth.two_stage_pdh_visible 泛化为通用多级稳频策略。
+      不纠缠在 PDH 内部——是独立的"稳频策略"分支。
+      ent.two_stage_pdh_lock_young99 作为其 Young 1999 的具体硬件实现。
+    key_additions:
+      - "预稳级（stage 1）隔离激光器自身宽带噪声"
+      - "AOM 作为高频执行器（90 kHz 带宽）"
+      - "光纤传输含 Doppler 补偿"
+    source_claim: >
+      "first prestabilize it to a cavity with a finesse of ≈800 using a
+       Pound-Drever-Hall frequency modulation (FM) lock"
+
+# ═══════════════════════════════════════════════
+#  RELATIONS（关系）
+# ═══════════════════════════════════════════════
+
+relations:
+  - id: rel.Y01
+    subject: ent.laser_source
+    predicate: CHARACTERIZED-BY
+    object: met.laser_linewidth_563nm
+    confidence: established
+    source: {zotero_key: "EGAZKLXR", claim: "linewidth of 0.6 Hz for averaging times up to 32 s"}
+    conditions: "锁定到 ULE 高精细度腔后；两腔拍频测量"
+
+  - id: rel.Y02
+    subject: ent.laser_source
+    predicate: CHARACTERIZED-BY
+    object: met.fractional_freq_instability_y99
+    confidence: established
+    source: {zotero_key: "EGAZKLXR", claim: "fractional frequency instability typically 3×10⁻¹⁶ at 1 s"}
+    conditions: "锁定到 ULE 腔后"
+
+  - id: rel.Y03
+    subject: ent.two_stage_pdh_lock_young99
+    predicate: OPERATIONALIZED-AS
+    object: meth.multi_stage_locking
+    confidence: established
+    source: {zotero_key: "EGAZKLXR", claim: "first prestabilize to low-finesse cavity ... then PDH lock to high-finesse ULE cavity"}
+    conditions: null
+
+  - id: rel.Y04
+    subject: meth.multi_stage_locking
+    predicate: ENABLED-BY
+    object: pri.pdh_heterodyne_detection
+    confidence: established
+    source: {zotero_key: "EGAZKLXR", claim: "implement the lock using the Pound-Drever-Hall technique [ref 6: Drever 1983]"}
+    conditions: null
+    temporal_role: extends
+    note: "跨文件引用，pri.pdh_heterodyne_detection 定义于 drever1983.yaml"
+
+  - id: rel.Y05
+    subject: ent.fp_cavity_system
+    predicate: ENABLED-BY
+    object: pri.ule_zero_cte
+    confidence: established
+    source: {zotero_key: "EGAZKLXR", claim: "held at ≈30 °C, near temperature at which CTE of cavity spacer is zero"}
+    conditions: "温度控制在 CTE 零点附近"
+    note: "跨文件引用，ent.fp_cavity_system 定义于 numata2004.yaml"
+
+  - id: rel.Y06
+    subject: ent.fp_cavity_system
+    predicate: BOUNDED-BY
+    object: pri.mirror_heating_cavity_shift
+    confidence: established
+    source: {zotero_key: "EGAZKLXR", claim: "intracavity light heats mirror coatings, shifting cavity resonance by ≈1 Hz/mW"}
+    conditions: "腔内功率未被控制时；此论文通过主动控制减轻该效应"
+    is_system_limit: false
+    dominated_by: pri.brownian_thermal_noise_fdt
+    quantitative_contribution: "可达 ~1 Hz/mW，但在本文工作点已被主动功率控制压低至非主导"
+    regime: all
+    verification_status: observed
+    temporal_role: proposes
+    breakthrough_paths:
+      - direction: meth.active_power_control
+        expected_gain: "通过主动功率控制将腔频移压低至非主导水平"
+        status: demonstrated
+        source: {zotero_key: "EGAZKLXR", claim: "intracavity light heats mirror coatings, shifting cavity resonance by ≈1 Hz/mW"}
+        note: "本文通过主动控制减轻该效应"
+    note: "ent.fp_cavity_system 定义于 numata2004.yaml；本限制可通过主动功率控制消除"
+
+  - id: rel.Y07
+    subject: ent.vibration_isolation
+    predicate: ENABLED-BY
+    object: pri.vibration_isolation_pendulum
+    confidence: established
+    source: {zotero_key: "EGAZKLXR", claim: "suspended by vertical strands of surgical tubing stretched to ~3 m"}
+    conditions: null
+
+  - id: rel.Y08
+    subject: ent.fp_cavity_system
+    predicate: CHARACTERIZED-BY
+    object: met.acceleration_sensitivity_y99
+    confidence: established
+    source: {zotero_key: "EGAZKLXR", claim: "acceleration sensitivity of ≈100 kHz/(m/s²)"}
+    conditions: "竖直方向加速为主；1 Hz 外力驱动测量"
+    note: "跨文件引用，ent.fp_cavity_system 定义于 numata2004.yaml"
+
+  - id: rel.Y09
+    subject: ent.vibration_isolation
+    predicate: PART-OF
+    object: ent.fp_cavity_system
+    confidence: established
+    source: {zotero_key: "EGAZKLXR", claim: "protect cavity from vibrational noise by mounting vacuum chamber on passively isolated optical table"}
+    conditions: null
+    note: "隔振台是 FP 腔系统的 Level 2 子单元（物理承载）；ent.fp_cavity_system 定义于 numata2004.yaml"
+
+  - id: rel.Y10
+    subject: ent.fp_cavity_system
+    predicate: BOUNDED-BY
+    object: pri.brownian_thermal_noise_fdt
+    confidence: established
+    source: {zotero_key: "VDXBPUQB", claim: "the results of Young et al. are consistent with being at the thermal noise limit"}
+    conditions: "ULE 腔，L=24 cm，finesse>150,000，T≈300 K；Young 1999 配置"
+    is_system_limit: true
+    dominated_by: null
+    quantitative_contribution: "热噪声主导（由 Numata 2004 跨论文确认）"
+    regime: all
+    verification_status: observed
+    temporal_role: validates
+    breakthrough_paths:
+      - direction: pri.brownian_thermal_noise_fdt
+        expected_gain: "优化 condition_variable φ：用低损耗镜底物替代 ULE，可继续压低该 reference implementation 的热噪声底。"
+        status: demonstrated
+        source: {zotero_key: "VDXBPUQB", claim: "using fused-silica mirrors lowers the thermal noise floor"}
+      - direction: pri.brownian_thermal_noise_fdt
+        expected_gain: "优化 condition_variable w₀：增大镜面光斑半径可在室温架构下继续降低热噪声。"
+        status: demonstrated
+        source: {zotero_key: "VDXBPUQB", claim: "thermal noise can be reduced by increasing the beam spot size on the mirrors"}
+      - direction: pri.cryogenic_mechanical_q_enhancement
+        expected_gain: "采用低温硅腔平台可把底物/间隔物热噪声进一步降到 10⁻¹⁷ 量级。"
+        status: demonstrated
+        source: {zotero_key: "YKPFKDD9", claim: "high mechanical quality factor of silicon reduces thermal noise contribution from spacer and substrates"}
+        note: "YKPFKDD9 提供低温硅腔原理路径；具体 10⁻¹⁷ 量级演示由后续 Matei 2017 / Lee 2026 等工作完成。"
+    note: >
+      跨文件引用，ent.fp_cavity_system 与 pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml。
+      Young 1999 作为该共享节点的 reference implementation，其 0.6 Hz / 3×10⁻¹⁶ 结果
+      后由 Numata 2004 认定为热噪声极限验证案例。
+      本关系及其 breakthrough_paths 使用后续论文（Numata 2004 / Kessler 2012）
+      作为跨论文验证与演进证据，而非 Young 1999 原文自述。
+
+  - id: rel.Y11
+    subject: ent.fp_cavity_system
+    predicate: CONDITIONED-BY
+    object: ent.vibration_environment
+    interface_metric: met.freq_noise_from_vibration
+    coupling_formula: "Δν = acceleration_sensitivity × ambient_acceleration"
+    internal_property: "acceleration_sensitivity: ~100 kHz/(m/s²)（Young 1999 测量值）"
+    confidence: established
+    source: {zotero_key: "EGAZKLXR", claim: "acceleration sensitivity of ≈100 kHz/(m/s²)"}
+    is_system_limit:
+      current: false
+      conditions: "Young 1999 充分隔振后退出限制序列；Webster 2007 等场景下可能主导"
+    note: >
+      ent.fp_cavity_system 定义于 numata2004.yaml；
+      ent.vibration_environment 为外围条件节点，定义于本文。
+
+  - id: rel.Y12
+    subject: ent.fp_cavity_system
+    predicate: COMPETES-WITH
+    object: ent.fiber_interferometer
+    context: "频率参考选择：刚性 FP 腔 vs 光纤迈克尔逊干涉仪"
+    tradeoffs:
+      subject_wins:
+        - "长期稳定度 3×10⁻¹⁶（Young 1999），光纤方案仅 ~10⁻¹⁴（约差 2 个量级）"
+        - "绝对频率参考（可溯源至原子跃迁）"
+        - "热噪声极限更低（经 Numata 2004 量化）"
+      object_wins:
+        - "可捷变扫频（FP 腔大范围扫频困难）"
+        - "无需精密 ULE 腔光学装调，工程化友好"
+        - "成本低"
+    confidence: established
+    source: {zotero_key: "EGAZKLXR", claim: "visible lasers with subhertz linewidths achieved by locking to rigid FP cavity; fiber interferometer offers agile frequency tuning but lower stability"}
+    note: >
+      ent.fp_cavity_system 定义于 numata2004.yaml；
+      ent.fiber_interferometer 定义于 jiang2010.yaml。
+
+  - id: rel.Y13
+    subject: ent.fp_cavity_system
+    predicate: CONDITIONED-BY
+    object: ent.laser_source
+    interface_metric: met.laser_linewidth_563nm
+    coupling_formula: "自由运行线宽 ~MHz → 预稳后 ~kHz → PDH 锁定后 ~0.6 Hz"
+    internal_property: "激光源初始噪声水平决定预稳级的需求；激光器本身不属于频率参考"
+    confidence: established
+    source: {zotero_key: "EGAZKLXR", claim: "first prestabilize to low-finesse cavity, then lock to high-finesse ULE cavity using PDH"}
+    is_system_limit:
+      current: false
+      conditions: "预稳充分后，激光源自身噪声不再主导"
+    note: >
+      原 rel.Y13 为 ent.two_stage_pdh_lock_young99 PART-OF ent.fp_cavity_system。
+      重构后：two_stage_pdh 不再挂在 FP 腔下（是"稳频策略"而非腔子单元），
+      ent.laser_source 作为外围条件通过 CONDITIONED-BY 连接到 FP 腔系统。
+
+  - id: rel.Y14
+    subject: ent.fp_cavity_system
+    predicate: CHARACTERIZED-BY
+    object: met.freq_noise_from_vibration
+    confidence: established
+    source: {zotero_key: "EGAZKLXR", claim: "previous results limited by vibrational noise; improvement from better isolation"}
+    conditions: "接口指标——环境振动通过加速度灵敏度耦合"
+    note: "跨文件引用，ent.fp_cavity_system 定义于 numata2004.yaml"
