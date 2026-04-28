@@ -4,10 +4,13 @@
 
 ## 仓库用途
 
-**时间频率计量科研知识库**（多专题，当前已建超稳激光专题）。
+**时间频率计量科研知识库**（多专题架构）。  
 从 Zotero 管理的论文 PDF 中提取结构化知识，存储为 YAML 节点图。
 
-详细 Schema 见 `SCHEMA.md`，专题体系见 `TOPICS.md`。
+- **操作流程**：[docs/WORKFLOW.md](docs/WORKFLOW.md)
+- **Schema 规范**：[SCHEMA.md](SCHEMA.md)
+- **专题体系**：[TOPICS.md](TOPICS.md)
+- **质量门**：[CONTRIBUTING.md](CONTRIBUTING.md)
 
 ---
 
@@ -15,33 +18,40 @@
 
 **优先使用 GitHub Copilot 完成工作，仅在 GitHub Copilot 无法完成时才使用本地 Claude Code 处理。**
 
-具体实施：
-1. **GitHub Copilot 适用场景**：
-   - 代码生成（YAML 模板、Python 脚本、bash 脚本）
-   - 文档撰写（README、注释、说明）
-   - 代码审查和问题修复
-   - 基于已有模式的重复性工作
+### 分工原则
 
-2. **本地 Claude Code 适用场景**：
-   - 需要读取本地 PDF 文件（Zotero 存储）
-   - 需要调用本地工具（Read、Edit、Bash 等）
-   - 需要交互式探索和决策（如关系提取、节点识别）
-   - GitHub Copilot 无法直接处理的复杂逻辑推理
+| 工具 | 适用场景 |
+|------|----------|
+| **GitHub Copilot** | YAML 模板、脚本生成、文档撰写、代码审查、重复性工作 |
+| **本地 Claude Code** | PDF 阅读、本地工具调用、交互式探索、复杂逻辑推理 |
 
-3. **工作流整合**：
-   - 尽可能将任务分解为可 GitHub Copilot 完成的子任务
-   - 使用 GitHub PR 流程管理所有更改
-   - 本地处理结果必须通过 GitHub PR 提交
+### 工作流整合
+1. 尽可能将任务分解为可 GitHub Copilot 完成的子任务
+2. 使用 GitHub PR 流程管理所有更改
+3. 本地处理结果必须通过 GitHub PR 提交
 
-## 论文摄入流程
+---
 
-论文摄入的全流程（从选论文到 YAML 提取到 PR 提交）已归档至：
+## 单篇论文处理流程
 
-- **完整流程**：[`CONTRIBUTING.md`](CONTRIBUTING.md)（Step 1–10，v4.4 三档规范）
-- **档位判定规则**：[`docs/CONTRIBUTION_TIER_RULES.md`](docs/CONTRIBUTION_TIER_RULES.md)
-- **PR 提交前检查**：[`.github/PULL_REQUEST_TEMPLATE.md`](.github/PULL_REQUEST_TEMPLATE.md)
+> 详细步骤见 [docs/WORKFLOW.md](docs/WORKFLOW.md)，此处仅列核心要点
 
-### 获取论文 PDF（本文件特有内容）
+### 核心要点
+
+1. **贡献类型判定**（v4.4）：
+   - `evidence`: 默认，占大多数
+   - `breakthrough`: 打破指标记录/提出新原理/证伪旧论断
+   - `framework`: 综述/路线图/教科书章节
+
+2. **超稳激光专题**：σ_y-first 规则（见 `topics/ultrastable-laser/_meta/scoping_principles.md`）
+
+3. **节点新建判据**（至少满足一条）：
+   - 能独立回答一类查询
+   - 拥有独立的设计选择空间
+   - 会被多篇论文复用
+   - 拥有独立的限制链/证据链
+
+### 获取论文 PDF
 
 ```bash
 WINDOWS_IP=$(ip route | grep default | awk '{print $3}')
@@ -73,60 +83,45 @@ for i in items:
 
 | 类型 | 格式 | 示例 |
 |------|------|------|
-| 实体 | `ent.{描述词}_{可选后缀}` | `ent.fp_cavity_system` |
-| 原理 | `pri.{描述词}` | `pri.brownian_thermal_noise_fdt` |
+| 实体 | `ent.{描述词}_{后缀}` | `ent.fp_cavity_system` |
+| 原理 | `pri.{描述词}` | `pri.brownian_thermal_noise` |
 | 方法 | `meth.{描述词}` | `meth.pdh_locking` |
-| 指标 | `met.{描述词}_{可选后缀}` | `met.laser_linewidth_563nm` |
-| 关系 | `rel.{文件首字母缩写}{两位序号}` | `rel.N01`（N=Numata） |
+| 指标 | `met.{描述词}_{后缀}` | `met.laser_linewidth_563nm` |
+| 关系 | `rel.{首字母}{序号}` | `rel.M01` |
 
 ---
 
-## 已有节点速查（自动生成）
+## 已有节点速查
 
-> ⚠ **不要在本文件手工维护节点列表**——那是"簿记"，不是行为规范。
->
-> 处理新论文时，通过以下自动生成文件查找已有节点：
->
-> - **跨专题原理/方法速查**：[`INDEX_principles.md`](INDEX_principles.md)
-> - **超稳激光专题节点**：[`topics/ultrastable-laser/INDEX.md`](topics/ultrastable-laser/INDEX.md)
-> - **光学频率梳专题节点**：[`topics/optical-frequency-combs/INDEX.md`](topics/optical-frequency-combs/INDEX.md)
-> - **全专题节点一览（AI 摄入推荐入口）**：[`docs/CURRENT_NODES_REFERENCE.md`](docs/CURRENT_NODES_REFERENCE.md)（由 `scripts/build_index.py` 自动生成）
->
-> 若 `docs/CURRENT_NODES_REFERENCE.md` 不存在，运行 `python scripts/build_index.py` 生成。
+处理新论文时，通过以下文件查找已有节点（避免重复建节点）：
+
+- **全专题节点一览**（AI 摄入推荐）：[`docs/CURRENT_NODES_REFERENCE.md`](docs/CURRENT_NODES_REFERENCE.md)
+- **跨专题原理/方法**：[`INDEX_principles.md`](INDEX_principles.md)
+- **超稳激光专题**：[`topics/ultrastable-laser/INDEX.md`](topics/ultrastable-laser/INDEX.md)
+- **光学频率梳专题**：[`topics/optical-frequency-combs/INDEX.md`](topics/optical-frequency-combs/INDEX.md)
+
+> 若索引文件不存在，运行 `python scripts/build_index.py` 生成
 
 ---
 
-*本文件由 Claude Code 生成，更新日期：2026-04-21*
-*多专题架构升级：v4.0*
-*运维层引入：v4.2（Karpathy LLM Wiki 思想整合）*
-*贡献分级（breakthrough/evidence/framework）：v4.4*
+## 人机协作原则
 
----
-
-## 人机协作原则（v4.2 新增，inspired by Karpathy LLM Wiki）
-
-> **核心理念**：人做策展与提问，AI 做簿记与维护。知识库的价值在于**持久复合知识**的增量构建，而非每次查询时重新发现。
+> **核心理念**：人做策展与提问，AI 做簿记与维护（inspired by Karpathy LLM Wiki）
 
 ### 人类角色（Domain Expert）
-- **选择论文**（sourcing）：决定下一篇处理的论文
-- **确认节点边界**：判断"这是新实体还是参数变体？"
-- **审核争议性论断**：决定 `contested_claims` 的最终判定
-- **提出探索性问题**：如"为什么 17K 比 4K 的镀层损耗更低？"
-- **审核综合页面**：确认 `synthesis/` 目录下页面的准确性
-- **决定 Schema 方向**：Schema 升级由人类主导
+- 选择论文、确认节点边界
+- 审核争议性论断、综合页面
+- 提出探索性问题
+- 决定 Schema 方向
 
 ### AI 角色（Knowledge Engineer）
-- **Ingest**：YAML 节点提取与维护
-- **Cross-referencing**：跨文件交叉引用维护
-- **Bookkeeping**：INDEX.md / LOG.md / PROCESSED_PAPERS.md 自动更新
-- **Synthesis**：综合页面生成与更新
-- **Lint**：健康检查与修复建议
-- **Consistency check**：新论文与已有知识的矛盾检测
-- **Freshness tracking**：新论文入库后标记受影响的综合页面为"需要更新"
+- YAML 节点提取与维护
+- 跨文件交叉引用维护
+- INDEX/LOG/PROCESSED_PAPERS 自动更新
+- 综合页面生成与更新
+- 健康检查与一致性检测
 
-### 运维文件导航
-- **全局导航索引**：[`INDEX.md`](INDEX.md)
-- **演化日志**：[`LOG.md`](LOG.md)
-- **已处理论文列表**：[`PROCESSED_PAPERS.md`](PROCESSED_PAPERS.md)
-- **综合分析页面**：`topics/<topic>/synthesis/`
-- **完整 Schema 规范**：[`SCHEMA.md`](SCHEMA.md)（第十节定义运维操作）
+---
+
+*最后更新：2026-04-28*  
+*版本：v4.5*
