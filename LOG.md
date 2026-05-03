@@ -1,6 +1,12 @@
 # 知识库演化日志
 
 
+## [2026-05-03] ingest | Briles 2010 — high-bandwidth PZT mirror actuator: 180 kHz servo bandwidth for optical cavity length stabilization, enabling PDH laser frequency locking (ultrastable-laser)
+
+## [2026-05-03] classify | USL batch cleanup: 14 papers with pre-existing YAMLs marked done, 10 misclassified papers re-categorized as needs_review (3→OFC topic, 7→other topics), 1 supplement merged (ultrastable-laser)
+
+## [2026-05-03] track | USL topic complete: 26 papers resolved (15 done, 10 needs_review, 1 merged), 0 USL pending (ultrastable-laser)
+
 ## [2026-05-03] ingest | Zhang 2023 — passive phase noise cancellation (PNC) review for noisy field fiber networks: PNC vs ANC tradeoffs, framework synthesis (time-frequency-transfer)
 
 ## [2026-05-03] ingest | Sinclair 2016 — O-TWTFT clock synchronization through 12 km strongly turbulent air over Boulder urban environment: Rytov variance up to 7.5, TDEV ~165 as, confirms reciprocity survives strong turbulence (time-frequency-transfer)

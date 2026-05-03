@@ -2,7 +2,7 @@
 
 # 📊 Metrics Quick Reference
 
-> Auto-generated 2026-05-03 11:05 UTC
+> Auto-generated 2026-05-03 11:58 UTC
 >
 > Metrics are grouped by **role** (v4.4 σ_y-first convention, see `topics/ultrastable-laser/_meta/scoping_principles.md` v2). Role is taken from the `role` field on the metric node when present, otherwise inferred from ID / name heuristics.
 
@@ -447,6 +447,7 @@
 | `met.allan_dev_l13b` | Allan 偏差（ADEV）@ 1070 nm | 2×10⁻¹⁵ | τ = 0.5–10 s；被动隔振光学平台；120 s 数据段，无漂移去除 | [leibrandt2013b](topics/ultrastable-laser/papers/leibrandt2013b.yaml) |
 | `met.allan_deviation_cryo` | 低温硅腔分数频率不稳定度 | 6.5e-17 | 4K, 6cm cavity, Robinson 2019 | [logic_bridge_poc](topics/ultrastable-laser/papers/logic_bridge_poc.yaml) |
 | `met.allan_deviation_fiber` | 分数频率不稳定度（光纤干涉仪，静态） | ~10⁻¹⁴ @ 0.1–1 s | 2.5 km 光纤，静态锁频 | [jiang2010](topics/ultrastable-laser/papers/jiang2010.yaml) |
+| `met.briles2010_pzt_bandwidth` | Briles 2010 PZT 驱动镜伺服带宽 | 180 kHz 单位增益频率；>135° 相位裕度@200 kHz；平坦幅频响应@200 kHz | PZT 驱动镜面（JILA 定制）；自由空间光学路径 | [briles2010](topics/ultrastable-laser/papers/briles2010.yaml) |
 | `met.chip_mw_phase_noise_k24` | 芯片微波振荡器相位噪声 20 GHz（Kudelin 2024） | −96 dBc/Hz @ 100 Hz；−135 dBc/Hz @ 10 kHz | 20 GHz 载波；SiN 芯片 + 微型 F-P 腔 + MUTC 探测器；集成光子系统 | [kudelin2024](topics/ultrastable-laser/papers/kudelin2024.yaml) |
 | `met.combined_laser_instability_sc21` | 两超稳激光合并不稳定度 2220 km 比对（Schioppo 2021） | 7×10⁻¹⁷ | NPL ULE 腔 + PTB Si 低温腔；2220 km 光纤网络；平均时间 30–200 s… | [schioppo2021](topics/ultrastable-laser/papers/schioppo2021.yaml) |
 | `met.feedforward_accel_sensitivity_l13b` | 前馈后加速度灵敏度 | <10⁻¹² | 低频（0–300 Hz）；六轴前馈开启；被动隔振光学平台 | [leibrandt2013b](topics/ultrastable-laser/papers/leibrandt2013b.yaml) |

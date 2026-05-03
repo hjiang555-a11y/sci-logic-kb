@@ -2,7 +2,7 @@
 
 # 🔬 Principles Quick Reference
 
-> Auto-generated 2026-05-03 11:05 UTC
+> Auto-generated 2026-05-03 11:58 UTC
 
 ## Tier: meta
 
@@ -394,6 +394,7 @@
 
 | ID | Name | Topic | Source |
 |----|------|-------|--------|
+| `pri.high_bandwidth_pzt_cavity_servo` | 高带宽 PZT 光腔长度伺服原理 | Ultrastable Laser | [briles2010](topics/ultrastable-laser/papers/briles2010.yaml) |
 | `pri.otwtft_complex_maximum_likelihood_estimation` | O-TWTFT 复杂最大似然时延估计原理 | Time-Frequency Transfer | [fang2026](topics/time-frequency-transfer/papers/fang2026.yaml) |
 
 ## Tier: unspecified

@@ -4,7 +4,7 @@
 
 > **用途**：处理新论文时，用此文件快速检查是否已有同名/同义节点，避免重复定义。
 > **维护**：本文件由 `scripts/build_index.py` 自动生成，**请勿手工编辑**。
-> **生成时间**：2026-05-03 11:05 UTC
+> **生成时间**：2026-05-03 11:58 UTC
 
 > **使用方式**：
 > - 处理新论文时，`Ctrl+F` 搜索关键词（如 `brownian`, `pdh`, `fiber`）
@@ -621,6 +621,7 @@
 | `pri.hcf_coating_thermal_sensitivity` | 空心光纤涂层热灵敏度机制 | domain | [shi2021](topics/ultrastable-laser/papers/shi2021.yaml) |
 | `pri.hcf_coupling_efficiency_limit` | 空心反谐振光纤耦合效率极限 | domain | [zuba2023](topics/ultrastable-laser/papers/zuba2023.yaml) |
 | `pri.hcf_smf_thermal_compensation` | HCF-SMF 热补偿光纤干涉仪原理 | engineering | [shi2022](topics/ultrastable-laser/papers/shi2022.yaml) |
+| `pri.high_bandwidth_pzt_cavity_servo` | 高带宽 PZT 光腔长度伺服原理 | method | [briles2010](topics/ultrastable-laser/papers/briles2010.yaml) |
 | `pri.high_power_low_noise_photodetector_design_g16` | 高功率超低噪声光电探测器设计（Grote 2016） | — | [grote2016](topics/ultrastable-laser/papers/grote2016.yaml) |
 | `pri.high_power_low_rin_fiber_laser_design_d20` | 高功率低RIN光纤激光器设计（Dixneuf 2020） | — | [dixneuf2020](topics/ultrastable-laser/papers/dixneuf2020.yaml) |
 | `pri.hollow_core_fiber_low_backscattering` | 空心光纤低背向散射原理 | domain | [michaudbelleau2021](topics/ultrastable-laser/papers/michaudbelleau2021.yaml) |

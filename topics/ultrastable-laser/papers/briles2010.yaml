@@ -1,0 +1,103 @@
+# Briles 2010 — Simple piezoelectric-actuated mirror with 180 kHz servo bandwidth [evidence]
+# 提取者：Claude Code（AI 草稿，待专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.5
+# 专题：ultrastable-laser（PZT 快反镜 — 180 kHz 伺服带宽 — PDH 稳频使能技术）
+# contribution_type: evidence — 展示当时最大 PZT 伺服带宽 180 kHz，用于光腔长度稳定。
+#   使能超稳激光 PDH 锁频的高带宽反馈路径。
+
+meta:
+  zotero_key: "oe-18-10-9739"
+  topic: ultrastable-laser
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Simple piezoelectric-actuated mirror with 180 kHz servo bandwidth"
+  year: 2010
+  first_author: Briles
+  authors: ["Travis C. Briles", "Dylan C. Yost", "Arman Cingöz", "Jun Ye", "Thomas R. Schibli"]
+  journal: "Optics Express"
+  volume: 18
+  issue: 10
+  pages: "9739"
+  doi: "10.1364/OE.18.009739"
+  note: >
+    [evidence 论文] JILA。展示一种高带宽压电驱动镜面用于光腔长度稳定。
+    PZT 驱动器幅频响应平坦、相位裕度 >135° 达 200 kHz，闭环伺服
+    单位增益频率 180 kHz——当时 PZT 驱动器已知最大的伺服带宽。
+    广泛适用于激光稳频（PDH 锁频快反馈）、光学干涉仪和光通信。
+    无直接 σ_y 报告；贡献在于 PDH 伺服链路的使能技术。
+
+entities:
+  - id: ent.briles2010_high_bw_pzt_mirror
+    name: "Briles 2010 180 kHz 伺服带宽 PZT 驱动镜（JILA）"
+    tier: component
+    domain: "超稳激光；伺服控制；压电驱动"
+    description: >
+      PZT 驱动镜面执行器——平坦幅频响应和 >135° 相位裕度
+      至 200 kHz，闭环单位增益频率 180 kHz。用于光腔长
+      度伺服控制，为 PDH 稳频提供快速反馈路径。
+    verification_status: demonstrated
+    source:
+      zotero_key: "oe-18-10-9739"
+      claim: "the actuator has achieved the largest servo bandwidth for a piezoelectric transducer (PZT)."
+
+principles:
+  - id: pri.high_bandwidth_pzt_cavity_servo
+    name: "高带宽 PZT 光腔长度伺服原理"
+    tier: method
+    verification_status: observed
+    statement: >
+      PDH 稳频需要一个快速执行器（通常为 PZT 驱动腔镜或
+      激光频率调谐）来抑制腔长/激光频率的噪声。执行器的
+      伺服带宽决定了噪声抑制的有效频率范围。传统 PZT 的
+      机械共振通常限制伺服带宽在 ~100 kHz 以下。
+      Briles 2010 通过优化 PZT 元件的机械安装和匹配网络，
+      将平坦幅频响应和 >135° 相位裕度扩展到 200 kHz，
+      允许 180 kHz 单位增益频率——大幅扩展了 PDH 锁频
+      环路的噪声抑制带宽。
+    domain: "超稳激光；伺服控制；压电执行器"
+    key_insight: >
+      伺服带宽瓶颈不在电学（PDH 误差信号可达 MHz），
+      而在执行器力学。PZT + 镜面的结合机械共振决定了
+      相位翻转频率。正确设计可使共振推至 >500 kHz。
+    conditions: "PZT + 镜面机械共振高于所需伺服带宽；相位裕度足够保证稳定性"
+    source:
+      zotero_key: "oe-18-10-9739"
+      claim: "allowing a 180 kHz unity gain frequency to be achieved in a closed servo loop."
+
+metrics:
+  - id: met.briles2010_pzt_bandwidth
+    name: "Briles 2010 PZT 驱动镜伺服带宽"
+    unit: "kHz（单位增益频率）"
+    role: primary
+    description: >
+      PZT 驱动镜闭环伺服带宽达 180 kHz——当时 PZT 最大；
+      平坦幅频响应和 >135° 相位裕度至 200 kHz。
+    demonstrated_value:
+      value: "180 kHz 单位增益频率；>135° 相位裕度@200 kHz；平坦幅频响应@200 kHz"
+      conditions: "PZT 驱动镜面（JILA 定制）；自由空间光学路径"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "oe-18-10-9739"
+        claim: "a 180 kHz unity gain frequency to be achieved in a closed servo loop."
+
+relations:
+  - id: rel.briles2010_01
+    subject: ent.briles2010_high_bw_pzt_mirror
+    predicate: REALIZES
+    object: pri.high_bandwidth_pzt_cavity_servo
+    confidence: established
+    source:
+      zotero_key: "oe-18-10-9739"
+      claim: "We present a high bandwidth piezoelectric-actuated mirror for length stabilization of an optical cavity."
+
+  - id: rel.briles2010_02
+    subject: met.briles2010_pzt_bandwidth
+    predicate: DEMONSTRATES
+    object: pri.high_bandwidth_pzt_cavity_servo
+    confidence: established
+    source:
+      zotero_key: "oe-18-10-9739"
+      claim: "this actuator has achieved the largest servo bandwidth for a piezoelectric transducer (PZT)."

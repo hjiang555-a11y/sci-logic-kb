@@ -100,6 +100,7 @@
 | `kudelin2024.yaml` | AF34FGMU | Kudelin 2024 — 芯片集成光子微波振荡器（20 GHz，−135 dBc/Hz @10 kHz，SiN+微型 F-P 腔） | ✅ v4.5 evidence |
 | `schioppo2021.yaml` | K5JMAYPZ | Schioppo 2021/2022 — 2220 km 光纤网络比对 NPL↔PTB 超稳激光至 7×10⁻¹⁷ MDEV | ✅ v4.5 evidence |
 | `shen2022.yaml` | P92ZFIAQ | Shen 2022 — 113 km 自由空间时频传递，< 4×10⁻¹⁹ @10,000 s（Nature 2022） | ✅ v4.5 evidence |
+| `briles2010.yaml` | oe-18-10-9739 | Briles 2010 — 180 kHz 伺服带宽 PZT 驱动镜，使能 PDH 超稳激光快反馈 | ✅ v4.5 evidence |
 
 ## 光学频率梳专题
 

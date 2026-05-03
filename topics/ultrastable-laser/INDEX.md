@@ -2,7 +2,7 @@
 
 # Ultrastable Laser — Topic Index
 
-> Auto-generated 2026-04-24 03:39 UTC · 89 papers · 390 nodes · 385 relations
+> Auto-generated 2026-05-03 11:58 UTC · 91 papers · 395 nodes · 396 relations
 
 ## Entities
 
@@ -13,11 +13,13 @@
 | `ent.antiresonant_hollow_core_fiber` | 反谐振空心光纤（HC-ARF） | 2 | [belardi2015](topics/ultrastable-laser/papers/belardi2015.yaml) |
 | `ent.boost_cubic_cavity_s19` | BOOST 立方 ULE 参考腔（Sanjuan 2019） | 2 | [sanjuan2019](topics/ultrastable-laser/papers/sanjuan2019.yaml) |
 | `ent.brewster_eom_t16` | 布儒斯特角 EOM（Tai 2016） | 2 | [tai2016](topics/ultrastable-laser/papers/tai2016.yaml) |
+| `ent.briles2010_high_bw_pzt_mirror` | Briles 2010 180 kHz 伺服带宽 PZT 驱动镜（JILA） | — | [briles2010](topics/ultrastable-laser/papers/briles2010.yaml) |
 | `ent.brillouin_fiber_laser_l19` | 光纤布里渊激光器（Loh 2019） | 1 | [loh2019](topics/ultrastable-laser/papers/loh2019.yaml) |
 | `ent.chip_photonic_mw_oscillator_k24` | 芯片光子微波振荡器（Kudelin 2024） | 2 | [kudelin2024](topics/ultrastable-laser/papers/kudelin2024.yaml) |
 | `ent.compact_pmo_giunta20b` | 紧凑光子微波振荡器 PMO（Giunta 2020b） | 2 | [giunta2020b](topics/ultrastable-laser/papers/giunta2020b.yaml) |
 | `ent.compact_transportable_cavity_c14` | STE-QUEST 紧凑可搬运参考腔（Chen 2014） | 2 | [chen2014](topics/ultrastable-laser/papers/chen2014.yaml) |
 | `ent.compact_ule_cavity_25mm_d17` | 25 mm ULE 圆柱参考腔（Davila-Rodriguez 2017） | 2 | [davilarodriguez2017](topics/ultrastable-laser/papers/davilarodriguez2017.yaml) |
+| `ent.cryogenic_silicon_cavity` | 低温单晶硅参考腔 | 1 | [logic_bridge_poc](topics/ultrastable-laser/papers/logic_bridge_poc.yaml) |
 | `ent.cubic_dual_cavity_c20` | 10 cm 立方双 FP 腔（Chen 2020） | 2 | [chen2020](topics/ultrastable-laser/papers/chen2020.yaml) |
 | `ent.cubic_force_insensitive_cavity_w11` | 立方体力不敏感光学腔（Webster 2011） | 2 | [webster2011](topics/ultrastable-laser/papers/webster2011.yaml) |
 | `ent.cutout_cavity_mount_w07` | 切口腔体安装设计（Webster 2007） | 2 | [webster2007](topics/ultrastable-laser/papers/webster2007.yaml) |
@@ -94,7 +96,6 @@
 | `pri.enhanced_shb_dynamics_theory_k95` | 增强空间烧孔动力学理论模型 | foundational | [kartner1995](topics/ultrastable-laser/papers/kartner1995.yaml) |
 | `pri.enhanced_shb_pulse_shortening_b95` | 增强空间烧孔锁模脉冲缩短效应 | foundational | [braun1995](topics/ultrastable-laser/papers/braun1995.yaml) |
 | `pri.fdl_locking_noise_nonlinearity` | 光纤延迟线锁定噪声——鉴频器非线性 | domain | [grabielle2025](topics/ultrastable-laser/papers/grabielle2025.yaml) |
-| `pri.fiber_delay_line_frequency_ref` | 光纤延迟线频率参考原理 | domain | [jiang2009a](topics/ultrastable-laser/papers/jiang2009a.yaml) |
 | `pri.fiber_delay_line_frequency_ref` | 光纤延迟线频率参考原理 | domain | [jiang2010](topics/ultrastable-laser/papers/jiang2010.yaml) |
 | `pri.fiber_thermal_noise_wanser` | 光纤固有热噪声（Wanser 热力学噪声模型） | domain | [dong2015](topics/ultrastable-laser/papers/dong2015.yaml) |
 | `pri.fiber_thermal_phase_noise_giant_ifog` | 大型光纤陀螺仪热相位噪声 | foundational | [li2019](topics/ultrastable-laser/papers/li2019.yaml) |
@@ -106,6 +107,7 @@
 | `pri.hcf_coating_thermal_sensitivity` | 空心光纤涂层热灵敏度机制 | domain | [shi2021](topics/ultrastable-laser/papers/shi2021.yaml) |
 | `pri.hcf_coupling_efficiency_limit` | 空心反谐振光纤耦合效率极限 | domain | [zuba2023](topics/ultrastable-laser/papers/zuba2023.yaml) |
 | `pri.hcf_smf_thermal_compensation` | HCF-SMF 热补偿光纤干涉仪原理 | engineering | [shi2022](topics/ultrastable-laser/papers/shi2022.yaml) |
+| `pri.high_bandwidth_pzt_cavity_servo` | 高带宽 PZT 光腔长度伺服原理 | method | [briles2010](topics/ultrastable-laser/papers/briles2010.yaml) |
 | `pri.high_power_low_noise_photodetector_design_g16` | 高功率超低噪声光电探测器设计（Grote 2016） | — | [grote2016](topics/ultrastable-laser/papers/grote2016.yaml) |
 | `pri.high_power_low_rin_fiber_laser_design_d20` | 高功率低RIN光纤激光器设计（Dixneuf 2020） | — | [dixneuf2020](topics/ultrastable-laser/papers/dixneuf2020.yaml) |
 | `pri.hollow_core_fiber_low_backscattering` | 空心光纤低背向散射原理 | domain | [michaudbelleau2021](topics/ultrastable-laser/papers/michaudbelleau2021.yaml) |
@@ -174,6 +176,8 @@
 | `meth.coating_material_comparative_analysis_s18` | 镀层材料多性能指标比较分析方法 | [steinlechner2018](topics/ultrastable-laser/papers/steinlechner2018.yaml) |
 | `meth.coating_thermal_sensitivity_characterization_shi21` | 空心光纤涂层热灵敏度表征方法 | [shi2021](topics/ultrastable-laser/papers/shi2021.yaml) |
 | `meth.compact_transportable_laser_integration_testing_c14` | 紧凑可搬运激光系统集成与测试方法 | [chen2014](topics/ultrastable-laser/papers/chen2014.yaml) |
+| `meth.cryogenic_silicon_stabilization` | 低温单晶硅稳频法 | [logic_bridge_poc](topics/ultrastable-laser/papers/logic_bridge_poc.yaml) |
+| `meth.crystalline_coating_deposition` | 单晶镀层外延制备法 | [cole2013](topics/ultrastable-laser/papers/cole2013.yaml) |
 | `meth.crystalline_coating_engineering_cole16` | 晶体镀层工程优化方法（Cole 2016） | [cole2016](topics/ultrastable-laser/papers/cole2016.yaml) |
 | `meth.cte_tuning_fs_mirror_leg10` | FS镜CTE调谐方法（Legero 2010） | [legero2010](topics/ultrastable-laser/papers/legero2010.yaml) |
 | `meth.cubic_dual_cavity_rigid_mount_c20` | 立方双腔刚性安装方法 | [chen2020](topics/ultrastable-laser/papers/chen2020.yaml) |
@@ -191,7 +195,6 @@
 | `meth.eom_bias_field_ram_cancellation_p25` | EOM 偏置电场 RAM 主动消除方法（Parke 2025） | [parke2025](topics/ultrastable-laser/papers/parke2025.yaml) |
 | `meth.eu_yso_spectral_characterization_k03` | Eu³⁺:Y₂SiO₅ 光谱特性表征方法（Könz 2003） | [konz2003](topics/ultrastable-laser/papers/konz2003.yaml) |
 | `meth.fdl_locking_bandwidth_optimization` | 光纤延迟线锁定带宽优化（Grabielle 2025） | [grabielle2025](topics/ultrastable-laser/papers/grabielle2025.yaml) |
-| `meth.fiber_delay_locking` | 光纤延迟线稳频方法 | [jiang2009a](topics/ultrastable-laser/papers/jiang2009a.yaml) |
 | `meth.fiber_delay_locking` | 光纤延迟线锁频（Fiber Delay Line Locking） | [jiang2010](topics/ultrastable-laser/papers/jiang2010.yaml) |
 | `meth.fiber_delay_locking_improved_d15` | 光纤延迟线锁频改进实现（Dong 2015） | [dong2015](topics/ultrastable-laser/papers/dong2015.yaml) |
 | `meth.fiber_link_phase_noise_cancellation_w16` | 光纤链路相位噪声主动消除方法（Wu 2016） | [wu2016](topics/ultrastable-laser/papers/wu2016.yaml) |
@@ -264,7 +267,9 @@
 |----|------|------------|--------|
 | `met.allan_dev_d17` | Allan 偏差（ADEV）@ 1070 nm（25 mm 腔） | 2×10⁻¹⁵ | [davilarodriguez2017](topics/ultrastable-laser/papers/davilarodriguez2017.yaml) |
 | `met.allan_dev_l13b` | Allan 偏差（ADEV）@ 1070 nm | 2×10⁻¹⁵ | [leibrandt2013b](topics/ultrastable-laser/papers/leibrandt2013b.yaml) |
+| `met.allan_deviation_cryo` | 低温硅腔分数频率不稳定度 | 6.5e-17 | [logic_bridge_poc](topics/ultrastable-laser/papers/logic_bridge_poc.yaml) |
 | `met.allan_deviation_fiber` | 分数频率不稳定度（光纤干涉仪，静态） | ~10⁻¹⁴ @ 0.1–1 s | [jiang2010](topics/ultrastable-laser/papers/jiang2010.yaml) |
+| `met.briles2010_pzt_bandwidth` | Briles 2010 PZT 驱动镜伺服带宽 | 180 kHz 单位增益频率；>135° 相位裕度@200 kHz；平坦幅频响应@200 kHz | [briles2010](topics/ultrastable-laser/papers/briles2010.yaml) |
 | `met.chip_mw_phase_noise_k24` | 芯片微波振荡器相位噪声 20 GHz（Kudelin 2024） | −96 dBc/Hz @ 100 Hz；−135 dBc/Hz @ 10 kHz | [kudelin2024](topics/ultrastable-laser/papers/kudelin2024.yaml) |
 | `met.combined_laser_instability_sc21` | 两超稳激光合并不稳定度 2220 km 比对（Schioppo 2021） | 7×10⁻¹⁷ | [schioppo2021](topics/ultrastable-laser/papers/schioppo2021.yaml) |
 | `met.feedforward_accel_sensitivity_l13b` | 前馈后加速度灵敏度 | <10⁻¹² | [leibrandt2013b](topics/ultrastable-laser/papers/leibrandt2013b.yaml) |
@@ -445,151 +450,168 @@
 
 ## BOUNDED-BY Chains
 
-### `rel.A03`: `ent.space_cavity_prototype_a12` → `pri.brownian_thermal_noise_fdt`
+### `rel.argence_2012_03`: `ent.space_cavity_prototype_a12` → `pri.brownian_thermal_noise_fdt`
 
 - **Source**: argence2012
 
-### `rel.C05`: `ent.fp_cavity_system` → `pri.brownian_thermal_noise_fdt`
+### `rel.bridge_coat_01`: `ent.mirror_coating` → `pri.brownian_thermal_noise_fdt`
 
 - **Source**: cole2013
 - **Breakthrough paths**:
-  - `pri.crystalline_coating_low_brownian_noise` — status: demonstrated · gain: AlGaAs 晶体镀层 → 镀层噪声降低 10×；室温长腔（48 cm）总热噪声可降至 ~10⁻¹⁷
+  - `pri.crystalline_coating_low_brownian_noise` — status: demonstrated · gain: AlGaAs 晶体镀层替换传统 IBS 镀层，机械损耗角降低 ≥10×，镀层热噪声贡献同比例下降
 
-### `rel.CH02`: `ent.cubic_dual_cavity_c20` → `pri.brownian_thermal_noise_fdt`
+### `rel.bridge_cryo_01`: `ent.fp_cavity_system` → `pri.brownian_thermal_noise_fdt`
 
-- **Source**: chen2020
+- **Source**: robinson2019
+- **Breakthrough paths**:
+  - `pri.crystalline_coating_low_brownian_noise` — status: proposed · gain: AlGaAs 晶体镀层（4 K 下损耗角 ~10⁻⁶）替换 IBS 镀层 → 镀层热噪声降低 10–100×
+  - `pri.silicon_cte_zero_crossing_17k` — status: demonstrated · gain: Si 腔 17 K CTE 第二零点 + AlGaAs 镀层 → mod σ_y 可达 10⁻¹⁸ 量级
 
-### `rel.CHF03`: `ent.compact_transportable_cavity_c14` → `pri.brownian_thermal_noise_fdt`
+### `rel.chen_2014_HF03`: `ent.compact_transportable_cavity_c14` → `pri.brownian_thermal_noise_fdt`
 
 - **Source**: chen2014
 
-### `rel.Che02`: `ent.si_crystal_fp_cavity_sub5k_c25` → `pri.brownian_thermal_noise_fdt`
+### `rel.chen_2020_H02`: `ent.cubic_dual_cavity_c20` → `pri.brownian_thermal_noise_fdt`
+
+- **Source**: chen2020
+
+### `rel.chen_2025_he02`: `ent.si_crystal_fp_cavity_sub5k_c25` → `pri.brownian_thermal_noise_fdt`
 
 - **Source**: chen2025
 - **Breakthrough paths**:
   - `pri.crystalline_coating_low_brownian_noise` — status: proposed · gain: 当前 Si1 使用 IBS 介质镀层；替换为 AlGaAs 晶体镀层可将镀层热噪声进一步降低 ~10×，逼近热噪声理论…
   - `pri.cryogenic_mechanical_q_enhancement` — status: demonstrated · gain: sub-5 K 温区 Si 的 CTE→0 与机械 Q 提升，使间隔物/底物热噪声降至低于镀层贡献；本文已演示 ≈(4…
 
-### `rel.D04`: `meth.pdh_locking` → `pri.shot_noise_frequency_limit`
+### `rel.cole_2013_05`: `ent.fp_cavity_system` → `pri.brownian_thermal_noise_fdt`
 
-- **Source**: drever1983
+- **Source**: cole2013
 - **Breakthrough paths**:
-  - `pri.shot_noise_frequency_limit` — status: demonstrated · gain: 优化 engineering_optimization：提高注入功率 Po、透射效率 T 和量子效率 η，可按 δν_…
+  - `pri.crystalline_coating_low_brownian_noise` — status: demonstrated · gain: AlGaAs 晶体镀层 → 镀层噪声降低 10×；室温长腔（48 cm）总热噪声可降至 ~10⁻¹⁷
 
-### `rel.DD02`: `ent.ultracompact_pyramid_cavity_d18` → `pri.brownian_thermal_noise_fdt`
+### `rel.didier_2018_D02`: `ent.ultracompact_pyramid_cavity_d18` → `pri.brownian_thermal_noise_fdt`
 
 - **Source**: didier2018
 
-### `rel.Do04`: `ent.fiber_interferometer` → `pri.fiber_thermal_noise_wanser`
+### `rel.dong_2010_o04`: `ent.fiber_interferometer` → `pri.fiber_thermal_noise_wanser`
 
 - **Source**: dong2015
 - **Breakthrough paths**:
   - `pri.fiber_thermal_noise_wanser` — status: theoretical · gain: 使用空心光纤可大幅降低热折射噪声；低温运行可降低 T² 项
 
-### `rel.G02`: `met.pmo_phase_noise_12ghz_giunta20b` → `pri.brownian_thermal_noise_fdt`
+### `rel.drever_1983_04`: `meth.pdh_locking` → `pri.shot_noise_frequency_limit`
+
+- **Source**: drever1983
+- **Breakthrough paths**:
+  - `pri.shot_noise_frequency_limit` — status: demonstrated · gain: 优化 engineering_optimization：提高注入功率 Po、透射效率 T 和量子效率 η，可按 δν_…
+
+### `rel.giunta_2020_02`: `met.pmo_phase_noise_12ghz_giunta20b` → `pri.brownian_thermal_noise_fdt`
 
 - **Source**: giunta2020b
 
-### `rel.GR01`: `ent.fiber_interferometer` → `pri.fdl_locking_noise_nonlinearity`
+### `rel.grabielle_2025_R01`: `ent.fiber_interferometer` → `pri.fdl_locking_noise_nonlinearity`
 
 - **Source**: grabielle2025
 
-### `rel.H05`: `ent.fp_cavity_system` → `pri.brownian_thermal_noise_fdt`
+### `rel.häfner_2015_05`: `ent.fp_cavity_system` → `pri.brownian_thermal_noise_fdt`
 
 - **Source**: hafner2015
 - **Breakthrough paths**:
   - `pri.long_cavity_thermal_noise_reduction` — status: demonstrated · gain: 48 cm 腔使室温热噪声分数贡献降低约 2–5× vs 典型 10–25 cm 腔，达到 ~8×10⁻¹⁷
   - `pri.crystalline_coating_low_brownian_noise` — status: demonstrated · gain: AlGaAs 晶体镀层（φ ~ 2.5×10⁻⁵）替代 IBS → 镀层噪声降低 10× → 室温长腔可接近 10⁻¹⁷
 
-### `rel.HF20_03`: `ent.transportable_12cm_cavity_h20` → `pri.brownian_thermal_noise_fdt`
+### `rel.häfner_2020_F20_03`: `ent.transportable_12cm_cavity_h20` → `pri.brownian_thermal_noise_fdt`
 
 - **Source**: hafner2020
 
-### `rel.J07`: `ent.fiber_interferometer` → `pri.rayleigh_backscattering_noise`
-
-- **Source**: jiang2010
-- **Breakthrough paths**:
-  - `pri.rayleigh_backscattering_noise` — status: demonstrated · gain: 围绕光纤延迟线锁频链路优化 RBS 抑制策略（缩短光纤/降低功率/偏振分集），可改善可捷变扫频性能边界（见 engin…
-
-### `rel.JI02`: `ent.low_thermal_noise_cavity_j11` → `pri.brownian_thermal_noise_fdt`
-
-- **Source**: jiang2011
-
-### `rel.JN02`: `ent.ule_cavity_30cm_578nm_j18` → `pri.brownian_thermal_noise_fdt`
-
-- **Source**: jin2018
-
-### `rel.Je08`: `ent.fiber_interferometer` → `pri.fiber_thermal_noise_wanser`
+### `rel.jeon_2025_e08`: `ent.fiber_interferometer` → `pri.fiber_thermal_noise_wanser`
 
 - **Source**: jeon2025
 - **Breakthrough paths**:
   - `meth.self_homodyne_fiber_locking` — status: demonstrated · gain: 通过自零差平衡探测压低强度噪声与探测电噪声，使 1 km 光纤系统在无真空条件下首次显露热噪声极限
 
-### `rel.K02`: `met.chip_mw_phase_noise_k24` → `pri.brownian_thermal_noise_fdt`
+### `rel.jiang_2010_07`: `ent.fiber_interferometer` → `pri.rayleigh_backscattering_noise`
 
-- **Source**: kudelin2024
+- **Source**: jiang2010
+- **Breakthrough paths**:
+  - `pri.rayleigh_backscattering_noise` — status: demonstrated · gain: 围绕光纤延迟线锁频链路优化 RBS 抑制策略（缩短光纤/降低功率/偏振分集），可改善可捷变扫频性能边界（见 engin…
 
-### `rel.K06`: `ent.si_crystal_fp_cavity_k12` → `pri.brownian_thermal_noise_fdt`
+### `rel.jiang_2011_I02`: `ent.low_thermal_noise_cavity_j11` → `pri.brownian_thermal_noise_fdt`
+
+- **Source**: jiang2011
+
+### `rel.jin_2018_N02`: `ent.ule_cavity_30cm_578nm_j18` → `pri.brownian_thermal_noise_fdt`
+
+- **Source**: jin2018
+
+### `rel.kedar_2023_ed03`: `ent.si_crystal_fp_cavity_k12` → `pri.brownian_thermal_noise_fdt`
+
+- **Source**: kedar2023
+- **Breakthrough paths**:
+  - `pri.crystalline_coating_low_brownian_noise` — status: demonstrated · gain: AlGaAs 晶体镀层将镀层损耗角从 IBS 水平（φ~2×10⁻⁴）降至 ~2.5×10⁻⁵，镀层布朗热噪声降低 ~…
+
+### `rel.kessler_2012_06`: `ent.si_crystal_fp_cavity_k12` → `pri.brownian_thermal_noise_fdt`
 
 - **Source**: kessler2012
 - **Breakthrough paths**:
   - `pri.crystalline_coating_low_brownian_noise` — status: demonstrated · gain: AlGaAs 晶体镀层 φ ~ 2.5×10⁻⁵（10× 低于 IBS）→ 镀层热噪声降低 10×，理论下限约 10⁻…
   - `pri.silicon_cte_zero_crossing_17k` — status: demonstrated · gain: 进一步降温至 17 K（Si CTE 第二零点）+ AlGaAs 晶体镀层（2023 批次）→ mod σ_y = 2…
 
-### `rel.Ked03`: `ent.si_crystal_fp_cavity_k12` → `pri.brownian_thermal_noise_fdt`
+### `rel.kudelin_2024_02`: `met.chip_mw_phase_noise_k24` → `pri.brownian_thermal_noise_fdt`
 
-- **Source**: kedar2023
-- **Breakthrough paths**:
-  - `pri.crystalline_coating_low_brownian_noise` — status: demonstrated · gain: AlGaAs 晶体镀层将镀层损耗角从 IBS 水平（φ~2×10⁻⁴）降至 ~2.5×10⁻⁵，镀层布朗热噪声降低 ~…
+- **Source**: kudelin2024
 
-### `rel.L02`: `ent.si_crystal_17k_fp_cavity_l26` → `pri.brownian_thermal_noise_fdt`
+### `rel.lee_2026_02`: `ent.si_crystal_17k_fp_cavity_l26` → `pri.brownian_thermal_noise_fdt`
 
 - **Source**: lee2026
 - **Breakthrough paths**:
   - `pri.optical_frequency_averaging` — status: demonstrated · gain: 两腔平均 → √2 稳定度提升；实现约 1.8×10⁻¹⁷（短时受 Dick 噪声限制） · σ_y gain: mod σ_y(1 s): 2.5×10⁻¹⁷ → 1.8×10⁻¹⁷（√2 改善，两腔不相关噪声平均）
   - `pri.silicon_cte_zero_crossing_17k` — status: theoretical · gain: 降温至更低零点（如 < 4K）→ k_B T 进一步降低；目前 17K 已是已知方便零点中较低的 · σ_y gain: mod σ_y(1 s): 2.5×10⁻¹⁷ → ~10⁻¹⁸ 级（热噪声 ∝ √T，4K 相对 17K 降低约 2…
 
-### `rel.LI02`: `ent.ule_cavity_30cm_sr_l18` → `pri.brownian_thermal_noise_fdt`
-
-- **Source**: li2018
-
-### `rel.LIG01`: `ent.fiber_interferometer` → `pri.fiber_thermal_phase_noise_giant_ifog`
-
-- **Source**: li2019
-
-### `rel.Leg02`: `ent.fp_cavity_system` → `pri.brownian_thermal_noise_fdt`
+### `rel.legero_2010_eg02`: `ent.fp_cavity_system` → `pri.brownian_thermal_noise_fdt`
 
 - **Source**: legero2010
 
-### `rel.M03`: `ent.si_crystal_fp_cavity_k12` → `pri.brownian_thermal_noise_fdt`
+### `rel.li_2018_I02`: `ent.ule_cavity_30cm_sr_l18` → `pri.brownian_thermal_noise_fdt`
+
+- **Source**: li2018
+
+### `rel.li_2019_IG01`: `ent.fiber_interferometer` → `pri.fiber_thermal_phase_noise_giant_ifog`
+
+- **Source**: li2019
+
+### `rel.logic_bridge_01`: `ent.fp_cavity_system` → `pri.brownian_thermal_noise_fdt`
+
+- **Source**: logic_bridge_poc
+
+### `rel.matei_2017_03`: `ent.si_crystal_fp_cavity_k12` → `pri.brownian_thermal_noise_fdt`
 
 - **Source**: matei2017
 - **Breakthrough paths**:
   - `pri.crystalline_coating_low_brownian_noise` — status: demonstrated · gain: AlGaAs 晶体镀层（φ ~ 2.5×10⁻⁵）→ 镀层热噪声降低 10×；理论下限约 4×10⁻¹⁸ · σ_y gain: mod σ_y(1 s): 4×10⁻¹⁷ → ~1×10⁻¹⁷ (预期 4× 改善，已被 Lee 2026 验证达 …
 
-### `rel.M04`: `ent.si_crystal_fp_cavity_k12` → `pri.flicker_noise_linewidth_divergence`
+### `rel.matei_2017_04`: `ent.si_crystal_fp_cavity_k12` → `pri.flicker_noise_linewidth_divergence`
 
 - **Source**: matei2017
 - **Breakthrough paths**:
   - `pri.flicker_noise_linewidth_divergence` — status: open · gain: 尚无已知解决方案可消除flicker噪声对线宽定义的发散性限制
 
-### `rel.MB21_01`: `ent.fiber_interferometer` → `pri.rayleigh_backscattering_noise`
+### `rel.michaud_belleau_2021_B21_01`: `ent.fiber_interferometer` → `pri.rayleigh_backscattering_noise`
 
 - **Source**: michaudbelleau2021
 - **Breakthrough paths**:
   - `pri.hollow_core_fiber_low_backscattering` — status: demonstrated
 
-### `rel.MB22_01`: `ent.fiber_interferometer` → `pri.hollow_core_fiber_thermal_noise`
+### `rel.michaud_belleau_2022_B22_01`: `ent.fiber_interferometer` → `pri.hollow_core_fiber_thermal_noise`
 
 - **Source**: michaudbelleau2022
 - **Breakthrough paths**:
   - `pri.hollow_core_fiber_thermal_noise` — status: demonstrated
 
-### `rel.Mil01`: `ent.fp_cavity_system` → `pri.brownian_thermal_noise_fdt`
+### `rel.millo_2009_il01`: `ent.fp_cavity_system` → `pri.brownian_thermal_noise_fdt`
 
 - **Source**: millo2009
 
-### `rel.N01`: `ent.fp_cavity_system` → `pri.brownian_thermal_noise_fdt`
+### `rel.numata_2017_01`: `ent.fp_cavity_system` → `pri.brownian_thermal_noise_fdt`
 
 - **Source**: numata2004
 - **Breakthrough paths**:
@@ -597,26 +619,26 @@
   - `pri.long_cavity_thermal_noise_reduction` — status: demonstrated · gain: L/w₀ 方向：增长腔至 48 cm → σ_y ∝ 1/L，室温实现 <1×10⁻¹⁶（Häfner 2015）；在…
   - `pri.cryogenic_mechanical_q_enhancement` — status: demonstrated · gain: T 方向：124 K Si 单晶腔 Q>10⁷，间隔物+底物热噪声降低约 1000×；总热噪声极限降至 ~4×10⁻¹…
 
-### `rel.N03`: `ent.mirror_substrate` → `pri.brownian_thermal_noise_fdt`
+### `rel.numata_2017_03`: `ent.mirror_substrate` → `pri.brownian_thermal_noise_fdt`
 
 - **Source**: numata2004
 - **Breakthrough paths**:
   - `pri.brownian_thermal_noise_fdt` — status: demonstrated · gain: 优化 condition_variable φ：用低损耗镜底物（熔融石英 φ~10⁻⁷、单晶硅 φ~10⁻⁸）替代 U…
   - `pri.brownian_thermal_noise_fdt` — status: demonstrated · gain: 优化 condition_variable w₀：增大镜面光斑半径可进一步降低底物热噪声（S_ν ∝ 1/w₀）。
 
-### `rel.N04`: `ent.mirror_coating` → `pri.brownian_thermal_noise_fdt`
+### `rel.numata_2017_04`: `ent.mirror_coating` → `pri.brownian_thermal_noise_fdt`
 
 - **Source**: numata2004
 - **Breakthrough paths**:
   - `pri.crystalline_coating_low_brownian_noise` — status: demonstrated · gain: AlGaAs 晶体镀层损耗角 φ~2.5×10⁻⁵（较 IBS 介质膜 φ~4×10⁻⁴ 低 ~16×）→ 镀层分量降…
 
-### `rel.N05`: `ent.spacer_ule` → `pri.brownian_thermal_noise_fdt`
+### `rel.numata_2017_05`: `ent.spacer_ule` → `pri.brownian_thermal_noise_fdt`
 
 - **Source**: numata2004
 - **Breakthrough paths**:
   - `pri.long_cavity_thermal_noise_reduction` — status: demonstrated · gain: Numata 2004 已证明 ULE 间隔物仅贡献总热噪声的 ~1%，不是主动瓶颈；长腔（如 Häfner 2015…
 
-### `rel.N07`: `ent.fp_cavity_system` → `pri.brownian_thermal_noise_fdt`
+### `rel.numata_2017_07`: `ent.fp_cavity_system` → `pri.brownian_thermal_noise_fdt`
 
 - **Source**: numata2004
 - **Breakthrough paths**:
@@ -624,67 +646,52 @@
   - `pri.brownian_thermal_noise_fdt` — status: demonstrated · gain: 优化 condition_variable w₀：增大镜面光斑半径可在保留室温平台的同时继续降低热噪声。
   - `pri.cryogenic_mechanical_q_enhancement` — status: demonstrated · gain: 采用低温单晶硅平台可将底物/间隔物热噪声进一步降低至 10⁻¹⁷ 量级。
 
-### `rel.P05`: `ent.long_cavity_68cm_p25` → `pri.brownian_thermal_noise_fdt`
+### `rel.parke_2025_05`: `ent.long_cavity_68cm_p25` → `pri.brownian_thermal_noise_fdt`
 
 - **Source**: parke2025
 - **Breakthrough paths**:
   - `pri.crystalline_coating_low_brownian_noise` — status: demonstrated
   - `pri.long_cavity_thermal_noise_reduction` — status: demonstrated
 
-### `rel.R07`: `ent.si_crystal_fp_cavity_4k_r19` → `pri.brownian_thermal_noise_fdt`
+### `rel.robinson_2019_07`: `ent.si_crystal_fp_cavity_4k_r19` → `pri.brownian_thermal_noise_fdt`
 
 - **Source**: robinson2019
 - **Breakthrough paths**:
   - `pri.crystalline_coating_low_brownian_noise` — status: proposed · gain: AlGaAs 晶体镀层（室温 φ ~ 2.5×10⁻⁵，4 K 下预期更低）替换 IBS 镀层 → 镀层热噪声降低 1…
   - `pri.silicon_cte_zero_crossing_17k` — status: demonstrated · gain: 17 K（Si CTE 严格第二零点）+ AlGaAs 晶体镀层（4 K 损耗更低）路线， Lee 2026 实现 m…
 
-### `rel.R08`: `ent.si_crystal_fp_cavity_4k_r19` → `pri.optical_power_cavity_drift`
+### `rel.robinson_2019_08`: `ent.si_crystal_fp_cavity_4k_r19` → `pri.optical_power_cavity_drift`
 
 - **Source**: robinson2019
 - **Breakthrough paths**:
   - `pri.silicon_cte_asymptotic_zero_4k` — status: proposed · gain: 进一步降低腔内循环功率（<40 nW 传输）或采用偶发扫描方案（无持续锁定光） → 漂移外推趋向零，有望作为时间尺度使用
 
-### `rel.ST01`: `ent.mirror_coating` → `pri.coating_thermal_noise_material_comparison`
+### `rel.schioppo_2021_c02`: `met.combined_laser_instability_sc21` → `pri.brownian_thermal_noise_fdt`
+
+- **Source**: schioppo2021
+
+### `rel.steinlechner_2018_T01`: `ent.mirror_coating` → `pri.coating_thermal_noise_material_comparison`
 
 - **Source**: steinlechner2018
 - **Breakthrough paths**:
   - `pri.crystalline_coating_low_brownian_noise` — status: demonstrated
 
-### `rel.Sc02`: `met.combined_laser_instability_sc21` → `pri.brownian_thermal_noise_fdt`
-
-- **Source**: schioppo2021
-
-### `rel.T05`: `ent.robust_cuboid_cavity_t18` → `pri.brownian_thermal_noise_fdt`
-
-- **Source**: tao2018
-
-### `rel.Tai01`: `ent.fp_cavity_system` → `pri.brownian_thermal_noise_fdt`
+### `rel.tai_2017_ai01`: `ent.fp_cavity_system` → `pri.brownian_thermal_noise_fdt`
 
 - **Source**: tai2017
 
-### `rel.W05`: `ent.fp_cavity_system` → `pri.brownian_thermal_noise_fdt`
+### `rel.tao_2018_05`: `ent.robust_cuboid_cavity_t18` → `pri.brownian_thermal_noise_fdt`
+
+- **Source**: tao2018
+
+### `rel.webster_2007_05`: `ent.fp_cavity_system` → `pri.brownian_thermal_noise_fdt`
 
 - **Source**: webster2007
 - **Breakthrough paths**:
   - `pri.long_cavity_thermal_noise_reduction` — status: demonstrated · gain: 增长腔（如 48 cm）→ σ_y ∝ 1/L，同时光斑随腔长增大；Häfner 2015 实现 ~8×10⁻¹⁷
   - `pri.crystalline_coating_low_brownian_noise` — status: demonstrated · gain: AlGaAs 晶体镀层（φ ~ 2.5×10⁻⁵）→ 镀层热噪声降低 10×（Cole 2013）
 
-### `rel.W11_05`: `ent.fp_cavity_system` → `pri.brownian_thermal_noise_fdt`
-
-- **Source**: webster2011
-- **Breakthrough paths**:
-  - `pri.crystalline_coating_low_brownian_noise` — status: demonstrated · gain: 晶体镀层降低镀层热噪声 ~10×（Cole 2013）
-  - `pri.long_cavity_thermal_noise_reduction` — status: demonstrated · gain: 增长腔至 48 cm 降低热噪声分数贡献（Häfner 2015）
-
-### `rel.WU03`: `ent.ule_cavity_10cm_w16` → `pri.brownian_thermal_noise_fdt`
-
-- **Source**: wu2016
-- **Breakthrough paths**:
-  - `pri.crystalline_coating_low_brownian_noise` — status: demonstrated
-  - `pri.long_cavity_thermal_noise_reduction` — status: demonstrated
-  - `pri.cryogenic_mechanical_q_enhancement` — status: demonstrated
-
-### `rel.We08_01`: `ent.fp_cavity_system` → `pri.brownian_thermal_noise_fdt`
+### `rel.webster_2008_e08_01`: `ent.fp_cavity_system` → `pri.brownian_thermal_noise_fdt`
 
 - **Source**: webster2008
 - **Breakthrough paths**:
@@ -692,13 +699,28 @@
   - `pri.long_cavity_thermal_noise_reduction` — status: demonstrated · gain: 长腔（≥ 48 cm）使总热噪声极限 σ_y ∝ 1/L 降低约 5×，Webster 2008 10 cm ULE …
   - `pri.cryogenic_mechanical_q_enhancement` — status: demonstrated · gain: 低温单晶 Si 腔（124 K/4 K）使底物/间隔物 Q 提升 ~1000×，底物贡献被抑制；总热噪声极限进入 10…
 
-### `rel.Y06`: `ent.fp_cavity_system` → `pri.mirror_heating_cavity_shift`
+### `rel.webster_2011_11_05`: `ent.fp_cavity_system` → `pri.brownian_thermal_noise_fdt`
+
+- **Source**: webster2011
+- **Breakthrough paths**:
+  - `pri.crystalline_coating_low_brownian_noise` — status: demonstrated · gain: 晶体镀层降低镀层热噪声 ~10×（Cole 2013）
+  - `pri.long_cavity_thermal_noise_reduction` — status: demonstrated · gain: 增长腔至 48 cm 降低热噪声分数贡献（Häfner 2015）
+
+### `rel.wu_2016_U03`: `ent.ule_cavity_10cm_w16` → `pri.brownian_thermal_noise_fdt`
+
+- **Source**: wu2016
+- **Breakthrough paths**:
+  - `pri.crystalline_coating_low_brownian_noise` — status: demonstrated
+  - `pri.long_cavity_thermal_noise_reduction` — status: demonstrated
+  - `pri.cryogenic_mechanical_q_enhancement` — status: demonstrated
+
+### `rel.young_1999_06`: `ent.fp_cavity_system` → `pri.mirror_heating_cavity_shift`
 
 - **Source**: young1999
 - **Breakthrough paths**:
   - `meth.active_power_control` — status: demonstrated · gain: 通过主动功率控制将腔频移压低至非主导水平
 
-### `rel.Y10`: `ent.fp_cavity_system` → `pri.brownian_thermal_noise_fdt`
+### `rel.young_1999_10`: `ent.fp_cavity_system` → `pri.brownian_thermal_noise_fdt`
 
 - **Source**: young1999
 - **Breakthrough paths**:
@@ -706,7 +728,7 @@
   - `pri.brownian_thermal_noise_fdt` — status: demonstrated · gain: 优化 condition_variable w₀：增大镜面光斑半径可在室温架构下继续降低热噪声。
   - `pri.cryogenic_mechanical_q_enhancement` — status: demonstrated · gain: 采用低温硅腔平台可把底物/间隔物热噪声进一步降到 10⁻¹⁷ 量级。
 
-### `rel.Z14_01`: `meth.pdh_locking` → `pri.ram_pdh_frequency_offset`
+### `rel.zhang_2014_14_01`: `meth.pdh_locking` → `pri.ram_pdh_frequency_offset`
 
 - **Source**: zhang2014_ram
 - **Breakthrough paths**:
@@ -714,7 +736,7 @@
   - `pri.ram_active_cancellation` — status: demonstrated · gain: 本文双通道伺服（同相 DC 电场 + 正交温度反馈）将 RAM 抑制至 1 ppm，对应 σ_y ≤ 1×10⁻¹⁶（…
   - `pri.ram_bias_field_cancellation` — status: demonstrated · gain: Parke 2025 在 APE 铌酸锂波导 EOM 上用偏置电场闭环将 RAM 降至 10⁻⁷，等效 σ_y 贡献 …
 
-### `rel.Z14_05`: `met.ram_fractional_instability` → `pri.ram_pdh_frequency_offset`
+### `rel.zhang_2014_14_05`: `met.ram_fractional_instability` → `pri.ram_pdh_frequency_offset`
 
 - **Source**: zhang2014_ram
 - **Breakthrough paths**:
@@ -722,7 +744,7 @@
   - `pri.brewster_angle_ram_suppression` — status: demonstrated · gain: 被动几何方案无需伺服，适用于不便加偏置电场的 EOM 场景
   - `pri.ram_bias_field_cancellation` — status: demonstrated · gain: APE 波导 EOM + 偏置电场闭环将 σ_y(RAM) 进一步降至 3×10⁻¹⁹ @ 10–100 s（Park…
 
-### `rel.Z17_04`: `ent.si_crystal_fp_cavity_4k_r19` → `pri.brownian_thermal_noise_fdt`
+### `rel.zhang_2019_17_04`: `ent.si_crystal_fp_cavity_4k_r19` → `pri.brownian_thermal_noise_fdt`
 
 - **Source**: zhang2017
 - **Breakthrough paths**:
@@ -735,5 +757,5 @@ Nodes referenced but not defined in this topic:
 
 | Relation | Predicate | External Node | Source |
 |----------|-----------|---------------|--------|
-| `rel.LO03` | COMPETES-WITH | `meth.microcomb_self_referencing` | loh2019 |
+| `rel.loh_2019_O03` | COMPETES-WITH | `meth.microcomb_self_referencing` | loh2019 |
 
