@@ -1,0 +1,196 @@
+# Giorgetta 2013 — Optical two-way time and frequency transfer over free space [breakthrough]
+# 提取者：Claude Code（AI 草稿，供专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.5
+# 专题：time-frequency-transfer（自由空间光学双向时间频率传递 — 首次飞秒级 O-TWTFT）
+# contribution_type: breakthrough — 首次利用相干频率梳+线性光学采样实现自由空间
+#   光学双向时间频率传递（O-TWTFT），达到 1 fs 时偏、<10⁻¹⁸@1000 s 残余不稳定度、
+#   <4×10⁻¹⁹ 偏差，为卫星光学时频传递和时钟大地测量铺路。
+
+meta:
+  zotero_key: "Nature Photonics 2013 7（6） 435-439"
+  topic: time-frequency-transfer
+  source_type: journal_paper
+  contribution_type: breakthrough
+  reliability: high
+  title: "Optical two-way time and frequency transfer over free space"
+  year: 2013
+  first_author: Giorgetta
+  authors: ["Fabrizio R. Giorgetta", "William C. Swann", "Laura C. Sinclair", "Esther Baumann", "Ian Coddington", "Nathan R. Newbury"]
+  journal: "Nature Photonics"
+  volume: 7
+  issue: 6
+  pages: "434-438"
+  doi: "10.1038/nphoton.2013.69"
+  note: >
+    [breakthrough 论文] 首次实现自由空间光学双向时间频率传递（O-TWTFT）。
+    利用两套相干的 fs 光纤频率梳（各锁定至本地光学振荡器，重频差 Δf_r ~3 kHz），
+    通过线性光学采样（LOS）在 2 km 自由空间+500 m 光纤链路上实现：1 fs 残余
+    时偏（TDEV），<1×10⁻¹⁸@1000 s 残余分数频率不稳定度（MDEV），
+    系统偏差 <4×10⁻¹⁹。双向交换脉冲自动抵消大气路径波动至 ~300 nm 残余。
+    与光纤频率传递互补——自由空间 O-TWTFT 不要求连续链路且不受地理布线限制，
+    为未来卫星光学时频传递和全球时钟大地测量提供关键使能技术。
+
+entities:
+  - id: ent.giorgetta2013_otwtft_setup
+    name: "Giorgetta 2013 自由空间 O-TWTFT 实验设置（NIST）"
+    tier: system
+    domain: "自由空间光学时频传递；双梳计量；超快光学"
+    description: >
+      2 km 水平自由空间路径 + 500 m 光纤 O-TWTFT 系统。A 和 B 两端各有一套
+      100 MHz Er 光纤 fs 频率梳，均相位锁定至共享的连续波光学振荡器
+      （192.1 + 195.3 THz，线宽 ~1 Hz 腔稳定）。两套梳齿间距差 Δf_r ~3 kHz
+      （A: 31,846 齿，B: 31,847 齿），使干涉图重复周期 1/Δf_r ~333 μs。
+      线性光学采样（LOS）提取每对干涉图的子飞秒级到达时间差。
+      双向脉冲交换通过自由空间单模（tip-tilt 主动稳态）保证路径互易性。
+      测量覆盖 24 h 11 个数据集（每个 1-4 小时）。
+    verification_status: demonstrated
+    source:
+      zotero_key: "Nature Photonics 2013 7（6） 435-439"
+      claim: "we demonstrate optical time-frequency transfer over free space via two-way exchange between coherent frequency combs."
+
+principles:
+  - id: pri.otwtft_dual_comb_los_timing
+    name: "双梳线性光学采样（LOS）O-TWTFT 飞秒时序原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      两套相干频率梳（重复率 f_r，重频差 Δf_r）分别位于链路两端。
+      每个干涉图（脉冲碰撞事件）给出 A 和 B 梳的瞬时相对到达时间。
+      第 0 和 第 n 个干涉图的时间间隔 Δn·T + ΔT_A(t)，其中 ΔT_A(t)
+      包含路径变化 ΔT_path(t) 和钟差 ΔT_AB(t)。
+      由于双向交换的脉冲在同一路径上互易传播，ΔT_path(t) 通过对称差
+      [ΔT_A(t) − ΔT_B(t)]/2 抵消至 ~300 nm 残余，
+      提取的 ΔT_AB(t) 即为地-地时钟时差。
+      LOS 子飞秒精度来自在光学带宽（~1 THz）上提取光谱相位斜率，
+      而非直接探测脉冲包络到达时间（皮秒级噪声）。
+    domain: "双梳光谱/计量；自由空间光学时频传递；相干探测"
+    key_insight: >
+      与传统光电脉冲探测（皮秒级）不同，LOS 利用频率梳的多纵模相位
+      相干性，在 THz 光学带宽上提取到达时间的斜率信息——本质上是对
+      所有载波相位的联合估计，因而可实现亚飞秒分辨率和 ~10⁻²¹ 量级的不稳定度本底。
+    conditions: "两梳齿必须相干（各锁定至稳定 CW 振荡器）；重频差 Δf_r 非零但稳定；
+      链路单模往返互易（自由空间 tip-tilt 主动对准；大气对称性约成立）"
+    source:
+      zotero_key: "Nature Photonics 2013 7（6） 435-439"
+      claim: "we implement linear optical sampling (LOS) between pulse trains of optical frequency combs to obtain the femtosecond-level timing."
+
+  - id: pri.free_space_optical_reciprocity_otwtft
+    name: "自由空间单模链路光路互易性原理（O-TWTFT 大气噪声抵消）"
+    tier: domain
+    verification_status: observed
+    statement: >
+      通过自由空间单模光纤耦合实现收发对称，双向交换的脉冲经历完全
+      相同的光学路径（由于自由空间 Maxwell 方程互易性），路径长度起伏
+      （大气湍流、温度/压力慢变）在双向差分中被精确抵消。
+      Giorgetta 2013 实验验证了无论毫秒级湍流闪烁还是数小时级天气慢漂，
+      残余路径噪声 <300 nm（光程），证明互易性条件在 2 km 湍流大气中
+      在飞秒级精度上成立。
+    domain: "大气光学；自由空间光通信；光学互易性"
+    key_insight: >
+      自由空间单模传输的互易性是 O-TWTFT 能与光纤频率传递的互易性
+      （前/后向同纤）媲美的关键——两者都依赖双向信号的对称抵消，
+      只是链路介质从光纤变为大气。
+    conditions: "单模自由空间耦合（孔径+光纤终端前后均单模）；tip-tilt 主动稳态维持对准；收发终端不因热畸变导致非对称性；大气路径在短时间内保持静止（Taylor 冻结假设）"
+    source:
+      zotero_key: "Nature Photonics 2013 7（6） 435-439"
+      claim: "Through the fundamental reciprocity of free-space single-mode links, this two-way exchange allows us to cancel path-length variations to within 300 nm over timescales from milliseconds to hours."
+
+methods:
+  - id: meth.dual_comb_otwtft_over_free_space
+    name: "双梳自由空间 O-TWTFT 时间频率传递方法"
+    purpose: >
+      在非连续链路（湍流间断、障碍物遮挡、平台运动）条件下实现
+      飞秒级时频传递——弥补光纤频率传递必须部署双向专用光纤的限制，
+      面向移动平台、卫星链路、远程大地测量应用。
+    description: >
+      1. 两端各备一 fs 光纤频率梳（100 MHz 重频），两梳锁至共享
+         超稳 CW 激光器（通过不同的锁频方案实现 Δf_r 差频）。
+      2. 梳 A → 自由空间 → 梳 B（终端 tip-tilt 稳态镜保持单模耦合），
+         同时梳 B → 自由空间 → 梳 A。（双向同时交换）
+      3. 每端探测器获得干涉图序列（重频 1/Δf_r）。对每个干涉图
+         FFT 提取光谱相位 u(ν, t) 的斜率 → 到达时间。
+      4. 双向差分：ΔT_AB(t) = [ΔT_A(t) − ΔT_B(t)]/2 = 钟差；ΔT_path 抵消。
+      5. 在 1-4 h 数据集中计算 MDEV/TDEV 和平均偏移。
+    key_steps:
+      - "两套 fs 梳锁至同一超稳 CW 激光器（保证相互相干）"
+      - "双向脉冲自由空间交换（tip-tilt 主动稳态，单模耦合）"
+      - "平衡探测器记录干涉图（low-pass 50 MHz, 12-bit 数字化）"
+      - "每个干涉图 FFT → 光谱相位 u(ν,t) → 斜率 = 到达时间"
+      - "双向差分抵消极性路径变化，提取真实钟差"
+      - "MDEV/TDEV 和分数频率偏移评估"
+    applicable_conditions: "两端梳齿相干（共享超稳参考或互锁）；自由空间单模传输可维持（适度湍流 C_n² ≤ 10⁻¹⁴ m⁻²/³）；脉冲交换速率 ~kHz 以支持亚秒采样"
+    source:
+      zotero_key: "Nature Photonics 2013 7（6） 435-439"
+      claim: "we implement a two-way exchange of pulses from frequency combs located at each site."
+
+metrics:
+  - id: met.giorgetta2013_otwtft_timing_deviation
+    name: "Giorgetta 2013 O-TWTFT 残余时偏（TDEV）"
+    unit: "fs（时间偏差）"
+    role: primary
+    description: >
+      2 km 自由空间 O-TWTFT 的残余 TDEV，由 11 个 1-4 小时数据集
+      （覆盖 24 h）汇总得出。TDEV 从 0.1 ms 至 1000 s 维持 ~1 fs
+      平台——证明双向交换在湍流闪烁和天气慢漂全范围内有效抵消路径噪声。
+    demonstrated_value:
+      value: "~1 fs TDEV（0.1 ms → 1000 s 平台），MDEV < 1×10⁻¹⁸ @ 1000 s"
+      conditions: "2 km 水平自由空间路径 + 500 m 光纤；共享超稳 CW 振荡器（共钟模式）；24 小时 11 个数据集"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "Nature Photonics 2013 7（6） 435-439"
+        claim: "our optical TWTFT achieves residual timing deviations of 1 fs, and residual uncertainties and bias below 1 × 10^−18."
+
+  - id: met.giorgetta2013_otwtft_fractional_offset
+    name: "Giorgetta 2013 O-TWTFT 分数频率偏差"
+    unit: "无量纲（分数频率）"
+    role: secondary
+    description: >
+      11 个数据集的加权平均分数频率偏移。在共钟模式下期望值为零，
+      测量值一致于零——证明了 O-TWTFT 在 2 km 自由空间路径上无显著系统偏差。
+    demonstrated_value:
+      value: "(1.8 ± 2.1)×10⁻¹⁹（weighted mean, k=1）"
+      conditions: "共钟模式（两端锁至同一超稳腔）；11 数据集 24 h 总时长；加权平均"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "Nature Photonics 2013 7（6） 435-439"
+        claim: "The fractional offset, or bias, across 11 data sets has a weighted average of 1.8 × 10^−19 + 2.1 × 10^−19, consistent with zero."
+
+relations:
+  - id: rel.giorgetta2013_01
+    subject: meth.dual_comb_otwtft_over_free_space
+    predicate: DERIVED-FROM
+    object: pri.otwtft_dual_comb_los_timing
+    confidence: established
+    source:
+      zotero_key: "Nature Photonics 2013 7（6） 435-439"
+      claim: "This free-space transfer can enable terrestrial links to support clock-based geodesy."
+
+  - id: rel.giorgetta2013_02
+    subject: pri.free_space_optical_reciprocity_otwtft
+    predicate: ENABLES
+    object: meth.dual_comb_otwtft_over_free_space
+    confidence: established
+    source:
+      zotero_key: "Nature Photonics 2013 7（6） 435-439"
+      claim: "Through the fundamental reciprocity of free-space single-mode links, this two-way exchange allows us to cancel path-length variations to within 300 nm."
+
+  - id: rel.giorgetta2013_03
+    subject: met.giorgetta2013_otwtft_timing_deviation
+    predicate: DEMONSTRATES
+    object: pri.free_space_optical_reciprocity_otwtft
+    confidence: established
+    source:
+      zotero_key: "Nature Photonics 2013 7（6） 435-439"
+      claim: "our optical TWTFT achieves residual timing deviations of 1 fs, and residual uncertainties and bias below 1 × 10^−18."
+
+  - id: rel.giorgetta2013_04
+    subject: ent.giorgetta2013_otwtft_setup
+    predicate: REALIZES
+    object: meth.dual_comb_otwtft_over_free_space
+    confidence: established
+    source:
+      zotero_key: "Nature Photonics 2013 7（6） 435-439"
+      claim: "The optical TWTFT is demonstrated over a link consisting of 2 km of free space and 500 m of optical fibre."

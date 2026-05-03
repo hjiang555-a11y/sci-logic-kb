@@ -2,7 +2,7 @@
 
 # 📊 Metrics Quick Reference
 
-> Auto-generated 2026-05-03 09:41 UTC
+> Auto-generated 2026-05-03 09:48 UTC
 >
 > Metrics are grouped by **role** (v4.4 σ_y-first convention, see `topics/ultrastable-laser/_meta/scoping_principles.md` v2). Role is taken from the `role` field on the metric node when present, otherwise inferred from ID / name heuristics.
 
@@ -329,6 +329,10 @@
 
 | ID | Name | Best Value | Conditions | Source |
 |----|------|------------|------------|--------|
+| `met.bercy2014_2wb_instability` | Bercy 2014 2WB 方案（100 km 单纤双向）光频比对不稳定度 | 7×10⁻¹⁸ @ 1 s; 5×10⁻²¹ @ 4,000 s; 分数不确定度 2×10⁻²⁰ | 单纤 100 km 双向（WDM 分前/后向）；无放大器；Λ 型无死区计数器 | [bercy2014](topics/time-frequency-transfer/papers/bercy2014.yaml) |
+| `met.bercy2014_2wu_instability` | Bercy 2014 2WU 方案（100 km 平行光纤）光频比对不稳定度 | 10⁻¹⁵ @ 1 s; ~10⁻¹⁶ @ 10 s; 2×10⁻¹⁷ @ 40,000 s | 巴黎 100 km 城市光纤环路；2WU 无放大器两纤反平行；Λ 型无死区计数器；同时承载数字数据 | [bercy2014](topics/time-frequency-transfer/papers/bercy2014.yaml) |
+| `met.giorgetta2013_otwtft_timing_deviation` | Giorgetta 2013 O-TWTFT 残余时偏（TDEV） | ~1 fs TDEV（0.1 ms → 1000 s 平台），MDEV < 1×10⁻¹⁸ @ 1000 s | 2 km 水平自由空间路径 + 500 m 光纤；共享超稳 CW 振荡器（共钟模式）；24 小时 … | [giorgetta2013](topics/time-frequency-transfer/papers/giorgetta2013.yaml) |
+| `met.predehl2012_920km_link_stability` | Predehl 2012 920 km 光纤链路分数频率不稳定度 | MDEV = 5×10⁻¹⁵ @ 1 s; 4×10⁻¹⁷ @ 100 s; 1×10⁻¹⁸ @ <1000 s; 本… | 两条独立反平行 920 km 光纤（F1+F2）；腔稳定激光器 ~1 Hz 线宽；无死区 Π 型计… | [predehl2012](topics/time-frequency-transfer/papers/predehl2012.yaml) |
 | `met.t2l2_ground_space_tdev_ps_exertier2014` | T2L2 地面-空间时间传递最佳 TDEV（Exertier 2014） | ~50–60 ps @ 0.1 s；τ^(-1/2) 改善；~6–8 ps @ 75 s（最小值），回升至数 10 p… | H-Maser 参考 SLR 站（Grasse/Herstmonceux）；Jason-2 单个 … | [exertier2014](topics/time-frequency-transfer/papers/exertier2014.yaml) |
 | `met.t2l2_time_stability_wettzell_exertier2010` | T2L2 Wettzell 站地面-空间时间传递稳定性（Exertier 2010） | ~40 ps @ 1 s；~7 ps @ 30 s | Wettzell H-Maser 参考；Jason-2 pass ~650 s；SLR 数据经 1… | [exertier2010](topics/time-frequency-transfer/papers/exertier2010.yaml) |
 
@@ -336,6 +340,8 @@
 
 | ID | Name | Best Value | Conditions | Source |
 |----|------|------------|------------|--------|
+| `met.giorgetta2013_otwtft_fractional_offset` | Giorgetta 2013 O-TWTFT 分数频率偏差 | (1.8 ± 2.1)×10⁻¹⁹（weighted mean, k=1） | 共钟模式（两端锁至同一超稳腔）；11 数据集 24 h 总时长；加权平均 | [giorgetta2013](topics/time-frequency-transfer/papers/giorgetta2013.yaml) |
+| `met.predehl2012_920km_fractional_offset` | Predehl 2012 920 km 链路分数频率偏移 | (0.7 ± 3.7)×10⁻¹⁹（weighted mean of 21 measurements of 10,00… | 21 个独立 10,000 s 测量；加权平均；K=1 不确定度 | [predehl2012](topics/time-frequency-transfer/papers/predehl2012.yaml) |
 | `met.t2l2_ground_space_rms_error_exertier2010` | T2L2 地面-空间时间传递初步误差预算（Exertier 2010） | 25–57 ps RMS（综合 SLR + T2L2 + 修正） | 单次测量噪声；SLR 站 RMS 测距 (LAGEOS) 同时列入评估 | [exertier2010](topics/time-frequency-transfer/papers/exertier2010.yaml) |
 | `met.t2l2_slr_station_classification_exertier2014` | T2L2 SLR 站地面-空间时间传递精度分类（Exertier 2014） | H-Maser 站 ~50–150 ps std；100 ns 分辨率站 ~2–60 ns std | 2008 年下半年和 2013 年下半年统计；包括不同 SLR 系统（MOBLAS、固定站、移动站） | [exertier2014](topics/time-frequency-transfer/papers/exertier2014.yaml) |
 

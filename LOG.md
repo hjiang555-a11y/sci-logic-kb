@@ -2,6 +2,14 @@
 
 
 
+## [2026-05-03] ingest | Predehl 2012 — 920 km phase-stabilized optical fiber frequency transfer: MDEV 5e-15@1s, 10^-18<1000s, first continental-scale optical clock link (time-frequency-transfer)
+
+## [2026-05-03] ingest | Giorgetta 2013 — first free-space optical two-way time-frequency transfer (O-TWTFT): 1 fs TDEV, <10^-18@1000s via dual-comb LOS (time-frequency-transfer)
+
+## [2026-05-03] ingest | Bercy 2014 — 100-km telecom fiber two-way frequency comparison: 2WU 2e-17@40ks, 2WB 5e-21@4ks without active compensation (time-frequency-transfer)
+
+
+
 ## [2026-05-03] ingest | Exertier 2014 — T2L2 data reduction pipeline and ps-level validation: best ground-to-space TDEV 6-8 ps@75 s, noise/signal separation model (time-frequency-transfer)
 
 ## [2026-05-03] ingest | Exertier 2010 — T2L2/Jason2 experiment status after first year on orbit: 7 ps TDEV at 30 s with Wettzell H-Maser, total RMS 25-57 ps (time-frequency-transfer)

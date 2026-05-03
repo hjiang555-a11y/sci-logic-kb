@@ -245,6 +245,9 @@
 | `zeng2024_kbzasp75.yaml` | kbzasp75 | Zeng 2024 — 卫星 TWTFT 大气非互易性测量 | ✅ v4.5 evidence |
 | `exertier2010.yaml` | 1-s2.0-S0273117710004278-main | Exertier 2010 — T2L2/Jason2 在轨一年状态报告，星地时间稳定性 7 ps@30 s | ✅ v4.5 evidence |
 | `exertier2014.yaml` | 1-s2.0-S0273117714005274-main | Exertier 2014 — T2L2 数据处理管线与 ps 级验证，最佳 TDEV 6–8 ps@75 s | ✅ v4.5 evidence |
+| `predehl2012.yaml` | 2012 Science 336,441 920-Kilometer Optical Fiber Link | Predehl 2012 — 920 km 相位稳定光纤链路，MDEV 5×10⁻¹⁵@1 s, 10⁻¹⁸<1000 s | ✅ v4.5 breakthrough |
+| `giorgetta2013.yaml` | Nature Photonics 2013 7（6） 435-439 | Giorgetta 2013 — 自由空间光学双向时频传递（O-TWTFT），1 fs 残余时偏，<10⁻¹⁸@1000 s | ✅ v4.5 breakthrough |
+| `bercy2014.yaml` | PhysRevA.90.061802 | Bercy 2014 — 100 km 电信光纤双向光频比对，2WU 2×10⁻¹⁷ / 2WB 5×10⁻²¹ | ✅ v4.5 evidence |
 
 ## 时频计量数学基础专题（B9 Allan–Howe 奠基白名单 + Allan 2016 + Sullivan 2001）
 

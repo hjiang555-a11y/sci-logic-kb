@@ -1,0 +1,172 @@
+# Bercy 2014 — Two-way optical frequency comparisons at 5×10⁻²¹ relative stability over 100-km telecommunication network fibers [evidence]
+# 提取者：Claude Code（AI 草稿，供专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.5
+# 专题：time-frequency-transfer（光纤双向频率比对 — 公共电信光纤中的 10⁻²¹ 级光频比对）
+# contribution_type: evidence — 实验演示两种双向光频比对方案（2WU/2WB）在 100 km 城市
+#   公共电信光纤上的卓越表现；验证无需主动噪声补偿即可达 5×10⁻²¹@4000 s 的不稳定度。
+
+meta:
+  zotero_key: "PhysRevA.90.061802"
+  topic: time-frequency-transfer
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Two-way optical frequency comparisons at 5×10⁻²¹ relative stability over 100-km telecommunication network fibers"
+  year: 2014
+  first_author: Bercy
+  authors: ["Anthony Bercy", "Fabio Stefani", "Olivier Lopez", "Christian Chardonnet", "Paul-Eric Pottie", "Anne Amy-Klein"]
+  journal: "Physical Review A"
+  volume: 90
+  issue: 6
+  pages: "061802(R)"
+  doi: "10.1103/PhysRevA.90.061802"
+  note: >
+    [evidence 论文] 在巴黎城市 100 km 光纤环路上实验演示两种双向光频比对方案：
+    (1) 2WU（two-way unidirectional）——使用两条平行光纤，每纤单向传输，1 s 不稳定度
+    10⁻¹⁵，40,000 s 积分至 2×10⁻¹⁷（比单向光纤噪声低三个量级）；
+    (2) 2WB（two-way bidirectional）——单根光纤双向传输，1 s 不稳定度
+    7×10⁻¹⁸，4000 s 积分至 5×10⁻²¹，分数不确定度 2×10⁻²⁰。
+    2WU 不需要改动现有电信网络基础设施（保持单向 EDFA），而 2WB 提供最高
+    分辨率。两种方案均无需往返主动噪声补偿，仅依赖对称传播抵消。
+
+entities:
+  - id: ent.bercy2014_100km_two_way_comparison
+    name: "Bercy 2014 巴黎 100 km 城市光纤环路双向光频比对实验"
+    tier: system
+    domain: "光纤光学频率比对；电信网络计量"
+    description: >
+      巴黎城区 100 km 光纤环路（LPL 起止），由 6 段光纤组成。
+      提供两套平行光纤用于 2WU 方案，和一根光纤用于 2WB 方案。
+      两端各一超稳激光器（~1 Hz 线宽），2WU 中两路独立传输
+      （A→B 经纤 1，B→A 经纤 2），2WB 中同纤双向传输
+      （WDM 区分前后向）。彼此独立的本地-远程拍频信号经同步
+      记录和数据后处理（减法 ÷2）消除传播噪声。
+      同时传输数字数据（DWDM 暗信道技术）验证与通信服务的共存性。
+    verification_status: demonstrated
+    source:
+      zotero_key: "PhysRevA.90.061802"
+      claim: "we implement a real-time frequency comparison over a unidirectional telecommunication network of 100 km using a pair of parallel fibers with simultaneous digital data transfer."
+
+principles:
+  - id: pri.two_way_frequency_comparison_noise_rejection
+    name: "双向光频比对传播噪声被动抵消原理（无需主动补偿）"
+    tier: domain
+    verification_status: observed
+    statement: >
+      与主动补偿方案（往返干涉仪+AOM 反馈）不同，双向光频比对
+      无论采用 2WU（两纤反平行）或 2WB（单纤双向），均通过
+      被动后处理消除传播噪声：
+      每端分别记录本地激光与远端到达激光的拍频 f_A(t) 和 f_B(t)。
+      在传播噪声满足对称性假设下（δν_forward(t) ≈ δν_backward(t)），
+      半差 Δν_AB(t) = [f_A(t) − f_B(t)]/2 给出真实光频差，
+      共模偏移 (f_A+f_B)/2 为传播噪声的残余度量。
+      此方案无需复杂伺服系统，对 DWDM 网络友好。
+    domain: "光纤光学频率比对；双向时频传递；噪声抵消"
+    key_insight: >
+      后处理抵消的核心优势是避免了延迟限制的伺服带宽——
+      2WU 方案可在现有单向 EDFA 电信网络上直接实现而不改造放大器。
+      Δf_AB 的不稳定度下限仅由双向传播噪声的残余非对称性决定。
+    conditions: "两条光纤（2WU）或前/后向 WDM 信道（2WB）经历近似相同的光纤路径；两端超稳激光器频率漂移被独立跟踪或建模消除"
+    formula: "Δν_AB(t) = [f_A(t) − f_B(t)]/2"
+    source:
+      zotero_key: "PhysRevA.90.061802"
+      claim: "Assuming that the propagation frequency noise is equal for the two directions of propagation, one can efficiently reject the propagation contributions by synchronizing and postprocessing the data."
+
+methods:
+  - id: meth.two_way_unidirectional_frequency_comparison
+    name: "双向单纤（2WU/2WB）光频比对方法"
+    purpose: >
+      在公共电信光纤网络上实现高分辨率光学频率比对——2WU 方案
+      保持现有单向 EDFA 基础设施不改动，2WB 方案提供最高分辨率。
+      替代或补充 GPS/TWSTFT 等传统卫星微波比对技术。
+    description: >
+      2WU（Two-Way Unidirectional）：使用同一光缆中两根平行光纤，
+      纤 1 传输 A→B，纤 2 传输 B→A。每纤正常电信方向，无需改造 EDFA。
+      在 A 端：记录本地激光 ↔ 经纤 2 到达的 B 激光拍频 f_A(t)。
+      在 B 端：记录本地激光 ↔ 经纤 1 到达的 A 激光拍频 f_B(t)。
+      后处理：Δν_AB = (f_A−f_B)/2。不稳定度：10⁻¹⁵@1 s → 2×10⁻¹⁷@40,000 s。
+      2WB（Two-Way Bidirectional）：单纤双向传输（WDM 区分前/后向）。
+      无需 AOM 反馈，直接计算半差。不稳定度：7×10⁻¹⁸@1 s → 5×10⁻²¹@4,000 s。
+    key_steps:
+      - "每端超稳激光器（~1 Hz 线宽）经光纤发送至远端"
+      - "每端光电探测器检测本地-远端拍频信号"
+      - "两个拍频 ⨁ GPS 时间戳同步记录（'数字锁相'替代模拟锁相）"
+      - "后处理同步 → 半差 = 频率偏移；和的一半 = 传播噪声诊断"
+      - "Λ 型无死区频率计数器记录，计算 OADEV/MDEV"
+    applicable_conditions: "2WU：两条平行光纤部署在同一光缆中（对称路径）；2WB：双向 EDFA 或无放大器短链路（~100 km 可无放大器）；两端激光器频率漂移已表征或可通过长时段建模消除"
+    source:
+      zotero_key: "PhysRevA.90.061802"
+      claim: "We consider in this Rapid Communication two alternative two-way schemes which can be practically implemented between distant laboratories and we demonstrate them over a 100-km urban link."
+
+metrics:
+  - id: met.bercy2014_2wu_instability
+    name: "Bercy 2014 2WU 方案（100 km 平行光纤）光频比对不稳定度"
+    unit: "无量纲（分数频率）"
+    role: primary
+    description: >
+      2WU（两条平行 100 km 光纤，无放大器）光频比对的不稳定度。
+      短稳（<10 s）受限于检测器散粒噪声，中稳（10–1000 s）按 τ⁻¹
+      改善，长稳（>1000 s）达到本底 ~2×10⁻¹⁷。
+    demonstrated_value:
+      value: "10⁻¹⁵ @ 1 s; ~10⁻¹⁶ @ 10 s; 2×10⁻¹⁷ @ 40,000 s"
+      conditions: "巴黎 100 km 城市光纤环路；2WU 无放大器两纤反平行；Λ 型无死区计数器；同时承载数字数据"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "PhysRevA.90.061802"
+        claim: "The relative frequency stability is 10^−15 at 1-s integration time and reaches 2×10^−17 at 40 000 s, three orders of magnitude below the one-way fiber instability."
+
+  - id: met.bercy2014_2wb_instability
+    name: "Bercy 2014 2WB 方案（100 km 单纤双向）光频比对不稳定度"
+    unit: "无量纲（分数频率）"
+    role: primary
+    description: >
+      2WB（单根 100 km 光纤双向传输）光频比对的不稳定度。
+      由于前/后向共纤抵消更彻底，1 s 不稳定度比 2WU 高两个量级，
+      长稳达到 5×10⁻²¹——与主动噪声补偿链路的最佳结果相当。
+    demonstrated_value:
+      value: "7×10⁻¹⁸ @ 1 s; 5×10⁻²¹ @ 4,000 s; 分数不确定度 2×10⁻²⁰"
+      conditions: "单纤 100 km 双向（WDM 分前/后向）；无放大器；Λ 型无死区计数器"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "PhysRevA.90.061802"
+        claim: "We show that the relative stability at 1-s integration time is 7×10^−18 and scales down to 5×10^−21. The fractional uncertainty of the frequency comparisons was evaluated for the best case to 2×10^−20."
+
+relations:
+  - id: rel.bercy2014_01
+    subject: meth.two_way_unidirectional_frequency_comparison
+    predicate: DERIVED-FROM
+    object: pri.two_way_frequency_comparison_noise_rejection
+    confidence: established
+    source:
+      zotero_key: "PhysRevA.90.061802"
+      claim: "one can efficiently reject the propagation contributions by synchronizing and postprocessing the data, simply subtracting and dividing by 2 the two data sets recorded at each end."
+
+  - id: rel.bercy2014_02
+    subject: met.bercy2014_2wb_instability
+    predicate: DEMONSTRATES
+    object: pri.two_way_frequency_comparison_noise_rejection
+    confidence: established
+    source:
+      zotero_key: "PhysRevA.90.061802"
+      claim: "We show that the relative stability at 1-s integration time is 7×10^−18 and scales down to 5×10^−21."
+
+  - id: rel.bercy2014_03
+    subject: ent.bercy2014_100km_two_way_comparison
+    predicate: REALIZES
+    object: meth.two_way_unidirectional_frequency_comparison
+    confidence: established
+    source:
+      zotero_key: "PhysRevA.90.061802"
+      claim: "we used a pair of optical fibers forming two parallel loops of 100 km in the Paris area."
+
+  - id: rel.bercy2014_04
+    subject: met.bercy2014_2wu_instability
+    predicate: DEMONSTRATES
+    object: meth.two_way_unidirectional_frequency_comparison
+    confidence: established
+    source:
+      zotero_key: "PhysRevA.90.061802"
+      claim: "The relative frequency stability is 10^−15 at 1-s integration time and reaches 2×10^−17 at 40 000 s."

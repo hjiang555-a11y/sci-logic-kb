@@ -2,7 +2,7 @@
 
 # Time-Frequency Transfer — Topic Index
 
-> Auto-generated 2026-05-03 09:41 UTC · 33 papers · 81 nodes · 105 relations
+> Auto-generated 2026-05-03 09:48 UTC · 36 papers · 98 nodes · 117 relations
 
 ## Entities
 
@@ -10,12 +10,14 @@
 |----|------|------:|--------|
 | `ent.anisoplanatism_study_link_sw19` | 双路空间分离 O-TWTFT 湍流 anisoplanatism 测量（Swann 2019） | 2 | [swann2019_9ltylbj8](topics/time-frequency-transfer/papers/swann2019_9ltylbj8.yaml) |
 | `ent.atmospheric_optical_phase_psd_s14` | 大气光学相位噪声 PSD 测量（2 km 水平路径，NIST Boulder） | 2 | [sinclair2014_fx9ixtdb](topics/time-frequency-transfer/papers/sinclair2014_fx9ixtdb.yaml) |
+| `ent.bercy2014_100km_two_way_comparison` | Bercy 2014 巴黎 100 km 城市光纤环路双向光频比对实验 | — | [bercy2014](topics/time-frequency-transfer/papers/bercy2014.yaml) |
 | `ent.coherent_optical_fiber_link` | 相干光纤时频传递链路（Level 1 总节点） | 1 | [calonico2015_3kxj9jfq](topics/time-frequency-transfer/papers/calonico2015_3kxj9jfq.yaml) |
 | `ent.comb_otwtft_with_motion_s19` | 运动平台 comb-based O-TWTFT（Sinclair 2019） | 2 | [sinclair2019_5xulcnp3](topics/time-frequency-transfer/papers/sinclair2019_5xulcnp3.yaml) |
 | `ent.differential_spectroscopy_interspecies_k23` | 跨种光钟差分光谱协议（Kim 2023） | 2 | [kim2023_mc7xt8b5](topics/time-frequency-transfer/papers/kim2023_mc7xt8b5.yaml) |
 | `ent.dual_polarization_receiver_link_cl20` | 双偏振相干接收光频分发（INRIM Clivati 2020） | 2 | [clivati2020_ispu4z4x](topics/time-frequency-transfer/papers/clivati2020_ispu4z4x.yaml) |
 | `ent.free_space_optical_tf_link` | 自由空间光学时频传递链路（Level 1 总节点） | 1 | [sinclair2019_5xulcnp3](topics/time-frequency-transfer/papers/sinclair2019_5xulcnp3.yaml) |
 | `ent.frequency_comb_optical_link_fcol` | 频率梳光学链路 FCOL（I-SOC 可选链路） | 2 | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `ent.giorgetta2013_otwtft_setup` | Giorgetta 2013 自由空间 O-TWTFT 实验设置（NIST） | — | [giorgetta2013](topics/time-frequency-transfer/papers/giorgetta2013.yaml) |
 | `ent.gps_common_view_time_transfer` | GPS 共视时间传递（GPS CV） | 2 | [exertier2016_7t65sn78](topics/time-frequency-transfer/papers/exertier2016_7t65sn78.yaml) |
 | `ent.inrim_642km_single_fiber_link_c15` | INRIM 642 km 单纤双往返相干链路（Calonico 2015） | 2 | [calonico2015_3kxj9jfq](topics/time-frequency-transfer/papers/calonico2015_3kxj9jfq.yaml) |
 | `ent.microwave_link_mwl` | 微波时频传递链路 MWL（I-SOC 空间段 Ku 波段双向链路） | 2 | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
@@ -26,6 +28,7 @@
 | `ent.optical_satellite_ground_link_s21` | 光学卫星-地面时频传递链路（脉冲激光，Shen 2021 模拟） | 2 | [shen2021_8pxzl98k](topics/time-frequency-transfer/papers/shen2021_8pxzl98k.yaml) |
 | `ent.optical_to_microwave_photonic_synth_n20` | 光钟相位→10 GHz 微波相干下转换合成器（Nakamura 2020） | 2 | [nakamura2020_imx242p7](topics/time-frequency-transfer/papers/nakamura2020_imx242p7.yaml) |
 | `ent.osc_subband_time_transfer_cheng19` | OSC 子带时间传递（商用 WDM 系统复用） | 2 | [cheng2019_wqpy8sti](topics/time-frequency-transfer/papers/cheng2019_wqpy8sti.yaml) |
+| `ent.predehl2012_920km_fiber_link` | Predehl 2012 920 km 反平行光纤频率传递链路（PTB↔MPQ） | — | [predehl2012](topics/time-frequency-transfer/papers/predehl2012.yaml) |
 | `ent.ptb_1400km_brillouin_link_r15` | PTB 1400 km Brillouin 放大光纤链路（Raupach 2015） | 2 | [raupach2015_lz2hfujz](topics/time-frequency-transfer/papers/raupach2015_lz2hfujz.yaml) |
 | `ent.ptb_149km_chirped_link_r14` | PTB 149 km 啁啾光频率时间传递链路（Raupach 2014） | 2 | [raupach2014_2s94vl95](topics/time-frequency-transfer/papers/raupach2014_2s94vl95.yaml) |
 | `ent.pulsed_optical_link_elt_plus` | 脉冲光学时频传递链路 ELT+（I-SOC 空间段） | 2 | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
@@ -51,6 +54,7 @@
 | `pri.active_tiptilt_beam_wander_suppression` | 主动 tip-tilt 光学终端抑制自由空间光束摆动原理 | engineering | [dix-matthews2021_bv4dl5z6](topics/time-frequency-transfer/papers/dix-matthews2021_bv4dl5z6.yaml) |
 | `pri.atmospheric_non_reciprocity_satellite_twtft` | 卫星双向 TWTFT 大气非互易性原理 | domain | [zeng2024_kbzasp75](topics/time-frequency-transfer/papers/zeng2024_kbzasp75.yaml) |
 | `pri.atmospheric_optical_phase_noise_power_law` | 自由空间光路光学相位噪声幂律原理（∝f⁻²·³，无 outer-scale roll-off） | domain | [sinclair2014_fx9ixtdb](topics/time-frequency-transfer/papers/sinclair2014_fx9ixtdb.yaml) |
+| `pri.bidirectional_edfa_amplified_long_haul_fiber` | 双向掺铒光纤放大器（BEFA）支持长距离光纤频率传递原理 | engineering | [predehl2012](topics/time-frequency-transfer/papers/predehl2012.yaml) |
 | `pri.brillouin_amplified_long_haul_fiber_transfer` | Brillouin 放大长距离光纤频率传递原理 | engineering | [raupach2015_lz2hfujz](topics/time-frequency-transfer/papers/raupach2015_lz2hfujz.yaml) |
 | `pri.cascaded_rf_stages_crosstalk_mitigation` | 级联 RF-over-fiber 分段不同调制频率抑制串扰原理 | engineering | [quan2022_cqtx6tyy](topics/time-frequency-transfer/papers/quan2022_cqtx6tyy.yaml) |
 | `pri.chirped_carrier_symmetric_delay_cancellation` | 啁啾载波对称延迟抵消原理 | engineering | [raupach2014_2s94vl95](topics/time-frequency-transfer/papers/raupach2014_2s94vl95.yaml) |
@@ -61,11 +65,14 @@
 | `pri.dual_polarization_coherent_endless_phase_tracking` | 双偏振相干接收无限相位跟踪原理 | engineering | [clivati2020_ispu4z4x](topics/time-frequency-transfer/papers/clivati2020_ispu4z4x.yaml) |
 | `pri.einstein_equivalence_principle` | Einstein 等效原理（EEP） | foundational | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
 | `pri.fiber_propagation_reciprocity` | 光纤传播互易性原理（前向=后向传播延迟） | foundational | [xu2019_gzd2byi4](topics/time-frequency-transfer/papers/xu2019_gzd2byi4.yaml) |
+| `pri.free_space_optical_reciprocity_otwtft` | 自由空间单模链路光路互易性原理（O-TWTFT 大气噪声抵消） | domain | [giorgetta2013](topics/time-frequency-transfer/papers/giorgetta2013.yaml) |
 | `pri.gravitational_time_dilation` | 引力时间膨胀（Einstein 红移） | foundational | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
 | `pri.hybrid_analog_digital_delay_compensation` | 模拟 VDL + 数字跳变的混合延迟补偿原理（Krehlik 2015） | engineering | [krehlik2015_3mi33g2r](topics/time-frequency-transfer/papers/krehlik2015_3mi33g2r.yaml) |
+| `pri.long_haul_fiber_phase_noise_compensation_round_trip` | 长距离光纤往返相位噪声主动补偿原理（Predehl 2012 方案） | domain | [predehl2012](topics/time-frequency-transfer/papers/predehl2012.yaml) |
 | `pri.multi_node_tf_network_closure` | 多节点时频网络闭合一致性原理 | engineering | [bodine2020_npl9i62s](topics/time-frequency-transfer/papers/bodine2020_npl9i62s.yaml) |
 | `pri.non_common_view_clock_comparison` | 非共视时钟比对原理（non-common-view comparison） | domain | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
 | `pri.o_twtft_motion_reciprocity_breakdown` | 运动平台 O-TWTFT 互易性破坏与修正原理 | domain | [sinclair2019_5xulcnp3](topics/time-frequency-transfer/papers/sinclair2019_5xulcnp3.yaml) |
+| `pri.otwtft_dual_comb_los_timing` | 双梳线性光学采样（LOS）O-TWTFT 飞秒时序原理 | domain | [giorgetta2013](topics/time-frequency-transfer/papers/giorgetta2013.yaml) |
 | `pri.passive_reciprocal_fiber_noise_cancellation` | 被动互易光纤相位噪声抵消原理 | engineering | [zhang2022_sgt66xs8](topics/time-frequency-transfer/papers/zhang2022_sgt66xs8.yaml) |
 | `pri.quantum_limited_photon_counted_ott` | 量子极限光子计数光学时间传递原理 | domain | [caldwell2023_4m836c4v](topics/time-frequency-transfer/papers/caldwell2023_4m836c4v.yaml) |
 | `pri.single_fiber_double_round_trip_characterization` | 单纤双往返链路表征原理（Calonico 2015 新提出） | engineering | [calonico2015_3kxj9jfq](topics/time-frequency-transfer/papers/calonico2015_3kxj9jfq.yaml) |
@@ -74,15 +81,19 @@
 | `pri.t2l2_two_way_time_transfer_equation` | T2L2 星地双向激光时间传递方程原理 | domain | [exertier2010](topics/time-frequency-transfer/papers/exertier2010.yaml) |
 | `pri.telecom_network_metrology_coexistence` | 电信暗信道共存计量信号传递原理 | domain | [lopez2015_ws3xm8ls](topics/time-frequency-transfer/papers/lopez2015_ws3xm8ls.yaml) |
 | `pri.turbulence_anisoplanatism_tf_degradation` | 湍流 anisoplanatism 对双向 TF 传递互易性的破坏原理 | domain | [swann2019_9ltylbj8](topics/time-frequency-transfer/papers/swann2019_9ltylbj8.yaml) |
+| `pri.two_way_frequency_comparison_noise_rejection` | 双向光频比对传播噪声被动抵消原理（无需主动补偿） | domain | [bercy2014](topics/time-frequency-transfer/papers/bercy2014.yaml) |
 
 ## Methods
 
 | ID | Name | Source |
 |----|------|--------|
+| `meth.antiparallel_fiber_frequency_dissemination` | 反平行光纤链路光学频率分发与比较方法 | [predehl2012](topics/time-frequency-transfer/papers/predehl2012.yaml) |
+| `meth.dual_comb_otwtft_over_free_space` | 双梳自由空间 O-TWTFT 时间频率传递方法 | [giorgetta2013](topics/time-frequency-transfer/papers/giorgetta2013.yaml) |
 | `meth.elt_plus_pulsed_optical_tf_transfer` | 脉冲激光光学时频传递法（ELT+ 实现） | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
 | `meth.mwl_two_way_tf_transfer` | 双向双频微波时频传递法（MWL 实现） | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
 | `meth.t2l2_data_reduction_triplet_identification` | T2L2 数据约化与三重态识别方法（Exertier 2014 管线） | [exertier2014](topics/time-frequency-transfer/papers/exertier2014.yaml) |
 | `meth.t2l2_ground_to_space_time_transfer` | T2L2 地面-空间激光时间传递方法 | [exertier2010](topics/time-frequency-transfer/papers/exertier2010.yaml) |
+| `meth.two_way_unidirectional_frequency_comparison` | 双向单纤（2WU/2WB）光频比对方法 | [bercy2014](topics/time-frequency-transfer/papers/bercy2014.yaml) |
 
 ## Metrics
 
@@ -92,6 +103,10 @@
 
 | ID | Name | Best Value | Source |
 |----|------|------------|--------|
+| `met.bercy2014_2wb_instability` | Bercy 2014 2WB 方案（100 km 单纤双向）光频比对不稳定度 | 7×10⁻¹⁸ @ 1 s; 5×10⁻²¹ @ 4,000 s; 分数不确定度 2×10⁻²⁰ | [bercy2014](topics/time-frequency-transfer/papers/bercy2014.yaml) |
+| `met.bercy2014_2wu_instability` | Bercy 2014 2WU 方案（100 km 平行光纤）光频比对不稳定度 | 10⁻¹⁵ @ 1 s; ~10⁻¹⁶ @ 10 s; 2×10⁻¹⁷ @ 40,000 s | [bercy2014](topics/time-frequency-transfer/papers/bercy2014.yaml) |
+| `met.giorgetta2013_otwtft_timing_deviation` | Giorgetta 2013 O-TWTFT 残余时偏（TDEV） | ~1 fs TDEV（0.1 ms → 1000 s 平台），MDEV < 1×10⁻¹⁸ @ 1000 s | [giorgetta2013](topics/time-frequency-transfer/papers/giorgetta2013.yaml) |
+| `met.predehl2012_920km_link_stability` | Predehl 2012 920 km 光纤链路分数频率不稳定度 | MDEV = 5×10⁻¹⁵ @ 1 s; 4×10⁻¹⁷ @ 100 s; 1×10⁻¹⁸ @ <1000 s; 本… | [predehl2012](topics/time-frequency-transfer/papers/predehl2012.yaml) |
 | `met.t2l2_ground_space_tdev_ps_exertier2014` | T2L2 地面-空间时间传递最佳 TDEV（Exertier 2014） | ~50–60 ps @ 0.1 s；τ^(-1/2) 改善；~6–8 ps @ 75 s（最小值），回升至数 10 p… | [exertier2014](topics/time-frequency-transfer/papers/exertier2014.yaml) |
 | `met.t2l2_time_stability_wettzell_exertier2010` | T2L2 Wettzell 站地面-空间时间传递稳定性（Exertier 2010） | ~40 ps @ 1 s；~7 ps @ 30 s | [exertier2010](topics/time-frequency-transfer/papers/exertier2010.yaml) |
 
@@ -99,6 +114,8 @@
 
 | ID | Name | Best Value | Source |
 |----|------|------------|--------|
+| `met.giorgetta2013_otwtft_fractional_offset` | Giorgetta 2013 O-TWTFT 分数频率偏差 | (1.8 ± 2.1)×10⁻¹⁹（weighted mean, k=1） | [giorgetta2013](topics/time-frequency-transfer/papers/giorgetta2013.yaml) |
+| `met.predehl2012_920km_fractional_offset` | Predehl 2012 920 km 链路分数频率偏移 | (0.7 ± 3.7)×10⁻¹⁹（weighted mean of 21 measurements of 10,00… | [predehl2012](topics/time-frequency-transfer/papers/predehl2012.yaml) |
 | `met.t2l2_ground_space_rms_error_exertier2010` | T2L2 地面-空间时间传递初步误差预算（Exertier 2010） | 25–57 ps RMS（综合 SLR + T2L2 + 修正） | [exertier2010](topics/time-frequency-transfer/papers/exertier2010.yaml) |
 | `met.t2l2_slr_station_classification_exertier2014` | T2L2 SLR 站地面-空间时间传递精度分类（Exertier 2014） | H-Maser 站 ~50–150 ps std；100 ns 分辨率站 ~2–60 ns std | [exertier2014](topics/time-frequency-transfer/papers/exertier2014.yaml) |
 

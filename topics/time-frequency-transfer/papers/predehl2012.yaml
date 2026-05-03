@@ -1,0 +1,187 @@
+# Predehl 2012 — A 920-Kilometer Optical Fiber Link for Frequency Metrology at the 19th Decimal Place [breakthrough]
+# 提取者：Claude Code（AI 草稿，待专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.5
+# 专题：time-frequency-transfer（光纤频率传递 — 首次 920 km 相位稳定化光纤链路）
+# contribution_type: breakthrough — 首次将相位相干光纤频率传递扩展至近 1000 km 实用距离，
+#   以两条反平行光纤链路实现 10⁻¹⁸ 级不稳定度，开创欧洲大陆光纤时钟比对网络。
+
+meta:
+  zotero_key: "2012 Science 336,441 920-Kilometer Optical Fiber Link"
+  topic: time-frequency-transfer
+  source_type: journal_paper
+  contribution_type: breakthrough
+  reliability: high
+  title: "A 920-Kilometer Optical Fiber Link for Frequency Metrology at the 19th Decimal Place"
+  year: 2012
+  first_author: Predehl
+  authors: ["K. Predehl", "G. Grosche", "S. M. F. Raupach", "S. Droste", "O. Terra", "J. Alnis", "Th. Legero", "T. W. Hänsch", "Th. Udem", "R. Holzwarth", "H. Schnatz"]
+  journal: "Science"
+  volume: 336
+  issue: 6080
+  pages: "441-444"
+  doi: "10.1126/science.1218442"
+  note: >
+    [breakthrough 论文] 首次将相位稳定化光纤频率传递扩展至 920 km（两条反平行
+    电信光纤链路连接 PTB Braunschweig 和 MPQ Garching）。利用往返相位噪声补偿
+    和双向光纤放大器（BEFA）中继再生，实现 MDEV = 5×10⁻¹⁵@1 s，
+    10⁻¹⁸ <1000 s，分数频率偏差约束至 (0.7 ± 3.7)×10⁻¹⁹。
+    这是当时最长的相位相干光纤频率传递距离——将光纤光学频率传递从百公里级
+    推进至千公里级，直接支持欧洲大陆尺度光学时钟比对网络。
+
+entities:
+  - id: ent.predehl2012_920km_fiber_link
+    name: "Predehl 2012 920 km 反平行光纤频率传递链路（PTB↔MPQ）"
+    tier: system
+    domain: "光纤频率传递；光学时钟比对；电信光纤计量"
+    description: >
+      两条 920 km 反平行部署的电信光纤链路（F1 和 F2），连接 PTB（Braunschweig）
+      和 MPQ（Garching），沿德国 A7/A9 高速公路部署。每条链路在 77 个
+      EDFA 站点中继（间距 ~12 km），其中 7 个站点放置双向光纤放大器（BEFA）
+      进行相干放大。在输入/输出端使用两台腔稳定窄线宽激光器（~1 Hz 线宽）
+      作为频率载体。往返相位噪声经光电探测器检测后反馈至声光调制器（AOM）
+      进行实时噪声补偿。MDEV: 5×10⁻¹⁵@1 s, ~τ⁻³/² 积分至 10⁻¹⁸ <1000 s;
+      分数频率偏差 (0.7±3.7)×10⁻¹⁹。链路不引入明显噪声至 10⁻¹⁹ 水平。
+    verification_status: demonstrated
+    source:
+      zotero_key: "2012 Science 336,441 920-Kilometer Optical Fiber Link"
+      claim: "we present phase-stabilized distribution of an optical frequency over 920 kilometers of telecommunication fiber."
+
+principles:
+  - id: pri.long_haul_fiber_phase_noise_compensation_round_trip
+    name: "长距离光纤往返相位噪声主动补偿原理（Predehl 2012 方案）"
+    tier: domain
+    verification_status: observed
+    statement: >
+      超稳光学载波在光纤链路中往返传输，在输入端比较往返信号相位差
+      （等于双向光纤链路相位噪声之和），利用 AOM（声光调制器）施加
+      相位共轭预补偿——使前向传输的信号在光纤输出端看起来如同经过了
+      完美稳定链路。往返噪声检测和补偿带宽受限于光纤延迟 τ（对 920 km
+      单程 ~4.6 ms，往返 ~9.2 ms），实际伺服带宽 ~100 Hz。
+      补偿后残余噪声 PSD ∝ τ²(2πf)² × 自由链路噪声 PSD。
+    domain: "光纤光学频率传递；相位噪声补偿；控制理论"
+    key_insight: >
+      往返噪声补偿在概念上等同于让光信号"先走一次体验噪声→回家报告→
+      下次带着修正走"的过程。修正精度受限于往返延迟：对于 ~1000 km 链路，
+      τ ~5 ms 量级，f < 100 Hz 的噪声被有效抑制，更高频噪声因因果性
+      （去程噪声已经离开，回程报告到达时噪声已变）而无法补偿。
+    conditions: "光纤链路双向互易性成立；前向/后向光路完全同纤（经同一 EDFA）；往返延迟 τ ~ L·n/c；伺服带宽 < 1/(6τ)"
+    source:
+      zotero_key: "2012 Science 336,441 920-Kilometer Optical Fiber Link"
+      claim: "We used two antiparallel fiber links to determine their fractional frequency instability"
+
+  - id: pri.bidirectional_edfa_amplified_long_haul_fiber
+    name: "双向掺铒光纤放大器（BEFA）支持长距离光纤频率传递原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      商用单向 EDFA 通过两侧加入光环行器（optical circulator）和窄带
+      滤波器改造为 BEFA，使光信号在前向和后向两个方向均能以相同增益
+      放大而保持前向-后向对称性（互易性）。BEFA 增益 ~20 dB@站点，
+      77 个 EDFA 站点中 7 个部署 BEFA。BEFA 自身引入的附加相位噪声
+      远小于光纤噪声，不成为补偿精度的限制因素。
+    domain: "光纤放大；双向光放大；相位相干链路"
+    key_insight: >
+      长距离光纤频率传递的根本挑战是光损耗积累（~0.2 dB/km × 920 km
+      ≈ 184 dB），远超单次激光功率和探测器灵敏度范围。BEFA 以级联方式
+      在保持互易性前提下提供光增益——使千公里级相干链路成为实际可能。
+    conditions: "BEFA 站点间距 ~100 km（对应 ~20 dB 损耗）；光环行器+窄带滤波器确保单纵模放大；增益 < 激光起振阈值"
+    source:
+      zotero_key: "2012 Science 336,441 920-Kilometer Optical Fiber Link"
+      claim: "Bidirectional Erbium-doped Fiber Amplifiers (BEFA), built from standard unidirectional telecom EDFAs and optical circulators, provide bidirectional amplification."
+
+methods:
+  - id: meth.antiparallel_fiber_frequency_dissemination
+    name: "反平行光纤链路光学频率分发与比较方法"
+    purpose: >
+      利用两条独立反平行光纤链路实现远程频率实验室之间的光学频率比对，
+      替代传统卫星微波链路（GPS CV/TWSTFT），支持 10⁻¹⁸ 级光学时钟比对。
+    description: >
+      1. 两端各有一台超窄线宽激光器（~1 Hz 线宽，腔稳定）。
+      2. 激光器 A → 光纤 1 → 远端 B（920 km），同时远端激光器 B → 光纤 2 → 近端 A。
+      3. 每端测量本地激光与远端到达激光之间的拍频：ν_A − ν_B'（远程频率经链路传递）。
+      4. 往返相位噪声补偿在每个光纤链路独立运行（AOM 反馈）。
+      5. 对两条反平行链路计算差频，消除共模偏差，提取真实频率偏移。
+      6. 使用无死区 Π 型或 Λ 型频率计数器记录 Allen 方差和 MDEV。
+    key_steps:
+      - "部署两条反平行光纤链路（如沿公路不同光缆或同一光缆不同光纤对）"
+      - "各端腔稳定窄线宽激光器（~1 Hz 线宽）作为频率载体"
+      - "每链路独立执行往返相位噪声补偿（干涉仪→AOM 反馈）"
+      - "测量各端本地-远程拍频，差频解算相对频率偏移"
+      - "无死区频率计数器记录（Π/Λ 型），计算 MDEV"
+    applicable_conditions: "两条光纤链路沿近似相同物理路径（地理互易性）；两端频率参考均具备 10⁻¹⁶ 以上稳定性；BEFA 或等效双向放大可实现"
+    source:
+      zotero_key: "2012 Science 336,441 920-Kilometer Optical Fiber Link"
+      claim: "The active noise compensation for the two fiber links F1 and F2 are entirely independent."
+
+metrics:
+  - id: met.predehl2012_920km_link_stability
+    name: "Predehl 2012 920 km 光纤链路分数频率不稳定度"
+    unit: "无量纲（分数频率）"
+    role: primary
+    description: >
+      两条反平行 920 km 电信光纤链路（F1+F2，PTB↔MPQ）的分数频率不稳定度。
+      以无死区 Π 型计数器记录，35,000 s 数据。短稳遵循 τ⁻³/² 改善
+      （受限于光纤往返噪声补偿带宽 ~100 Hz），长稳受限于探测噪声本底
+      ~1.5×10⁻¹⁹。
+    demonstrated_value:
+      value: "MDEV = 5×10⁻¹⁵ @ 1 s; 4×10⁻¹⁷ @ 100 s; 1×10⁻¹⁸ @ <1000 s; 本底 ~1.5×10⁻¹⁹"
+      conditions: "两条独立反平行 920 km 光纤（F1+F2）；腔稳定激光器 ~1 Hz 线宽；无死区 Π 型计数器；35,000 s 连续数据集"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "2012 Science 336,441 920-Kilometer Optical Fiber Link"
+        claim: "The fractional instability of the two-link setup yields 5 × 10^−15 at 1 s, and averages down to 1 × 10^−18 in 1000 s."
+
+  - id: met.predehl2012_920km_fractional_offset
+    name: "Predehl 2012 920 km 链路分数频率偏移"
+    unit: "无量纲（分数频率）"
+    role: secondary
+    description: >
+      两条反平行链路的平均分数频率偏移，从 21 个独立测量（各 10,000 s
+      即 ~2.8 h）汇总得出。由差频数据加权平均估计，置信区间为统计不确定度。
+    demonstrated_value:
+      value: "(0.7 ± 3.7)×10⁻¹⁹（weighted mean of 21 measurements of 10,000 s each）"
+      conditions: "21 个独立 10,000 s 测量；加权平均；K=1 不确定度"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "2012 Science 336,441 920-Kilometer Optical Fiber Link"
+        claim: "The weighted mean of the 21 independent determinations of the fractional frequency offset is (−0.04 ± 3.7) × 10^−19, where we used only data from the 10,000-s-long measurements."
+
+relations:
+  - id: rel.predehl2012_01
+    subject: ent.predehl2012_920km_fiber_link
+    predicate: REALIZES
+    object: meth.antiparallel_fiber_frequency_dissemination
+    confidence: established
+    source:
+      zotero_key: "2012 Science 336,441 920-Kilometer Optical Fiber Link"
+      claim: "We present phase-stabilized distribution of an optical frequency over 920 kilometers of telecommunication fiber."
+
+  - id: rel.predehl2012_02
+    subject: meth.antiparallel_fiber_frequency_dissemination
+    predicate: DERIVED-FROM
+    object: pri.long_haul_fiber_phase_noise_compensation_round_trip
+    confidence: established
+    source:
+      zotero_key: "2012 Science 336,441 920-Kilometer Optical Fiber Link"
+      claim: "The active noise compensation for the two fiber links F1 and F2 are entirely independent."
+
+  - id: rel.predehl2012_03
+    subject: met.predehl2012_920km_link_stability
+    predicate: DEMONSTRATES
+    object: pri.long_haul_fiber_phase_noise_compensation_round_trip
+    confidence: established
+    source:
+      zotero_key: "2012 Science 336,441 920-Kilometer Optical Fiber Link"
+      claim: "we present phase-stabilized distribution of an optical frequency over 920 kilometers...modified Allan deviation to 5×10^−15 in a 1-second integration time, reaching 10^−18 in less than 1000 seconds."
+
+  - id: rel.predehl2012_04
+    subject: pri.bidirectional_edfa_amplified_long_haul_fiber
+    predicate: ENABLES
+    object: meth.antiparallel_fiber_frequency_dissemination
+    confidence: established
+    source:
+      zotero_key: "2012 Science 336,441 920-Kilometer Optical Fiber Link"
+      claim: "Bidirectional Erbium-doped Fiber Amplifiers (BEFA) provide bidirectional amplification."

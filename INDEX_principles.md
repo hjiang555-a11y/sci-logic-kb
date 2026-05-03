@@ -2,7 +2,7 @@
 
 # 🔬 Principles Quick Reference
 
-> Auto-generated 2026-05-03 09:41 UTC
+> Auto-generated 2026-05-03 09:48 UTC
 
 ## Tier: meta
 
@@ -109,6 +109,7 @@
 | `pri.fibre_delay_line_sweep_stability_maintained` | 光纤延迟线稳频下大动态扫频稳定度保持原理 | shared | [chiodo2013](topics/shared/papers/chiodo2013.yaml) |
 | `pri.force_insensitive_tetrahedral_symmetry` | 四面体对称——力不敏感腔设计原理 | Ultrastable Laser | [webster2011](topics/ultrastable-laser/papers/webster2011.yaml) |
 | `pri.free_core_boundary_reduces_mode_coupling` | 自由芯边界降低基模-包层模耦合原理 | shared | [belardi2015](topics/shared/papers/belardi2015.yaml) |
+| `pri.free_space_optical_reciprocity_otwtft` | 自由空间单模链路光路互易性原理（O-TWTFT 大气噪声抵消） | Time-Frequency Transfer | [giorgetta2013](topics/time-frequency-transfer/papers/giorgetta2013.yaml) |
 | `pri.frequency_ratio_measurement` | 光学频率比测量原理（无需 SI 秒定义） | Optical Frequency Combs | [giunta2019](topics/optical-frequency-combs/papers/giunta2019.yaml) |
 | `pri.fundamental_ch_stretch_enhancement_mir` | 基频 C-H 伸缩吸收相对 NIR 倍频带增益原理 | Optical Frequency Combs | [ycas2019](topics/optical-frequency-combs/papers/ycas2019.yaml) |
 | `pri.gouy_phase_discrimination` | Gouy 相位横模鉴别原理 | Ultrastable Laser | [shaddock1999](topics/ultrastable-laser/papers/shaddock1999.yaml) |
@@ -139,6 +140,7 @@
 | `pri.line_referenced_eo_comb` | 分子/原子线锁定 EO 梳绝对频率溯源原理 | Optical Frequency Combs | [yi2016](topics/optical-frequency-combs/papers/yi2016.yaml) |
 | `pri.linewidth_enhancement_factor_limit` | Henry linewidth enhancement factor (α) broadening | Optical Frequency Combs | [wang2017](topics/optical-frequency-combs/papers/wang2017.yaml) |
 | `pri.long_cavity_subghz_comb_spacing` | Long extended cavity → sub-GHz comb spacing | Optical Frequency Combs | [wang2017](topics/optical-frequency-combs/papers/wang2017.yaml) |
+| `pri.long_haul_fiber_phase_noise_compensation_round_trip` | 长距离光纤往返相位噪声主动补偿原理（Predehl 2012 方案） | Time-Frequency Transfer | [predehl2012](topics/time-frequency-transfer/papers/predehl2012.yaml) |
 | `pri.lugiato_lefever_equation` | Lugiato-Lefever 方程（LLE） | Optical Frequency Combs | [kippenberg2018](topics/optical-frequency-combs/papers/kippenberg2018.yaml) |
 | `pri.magic_wavelength_lattice` | 魔术波长光晶格原理 | Frequency Standards | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
 | `pri.magic_wavelength_operational_protocol_l08` | 魔术波长光晶格钟操作协议原理（Ludlow thesis） | Frequency Standards | [ludlow2008_thesis](topics/frequency-standards/papers/ludlow2008_thesis.yaml) |
@@ -179,6 +181,7 @@
 | `pri.optical_frequency_division_rf_generation` | 光频除法RF信号生成原理 | Optical Frequency Combs | [hati2013](topics/optical-frequency-combs/papers/hati2013.yaml) |
 | `pri.optical_microwave_phase_detection_bom_pd` | 平衡光学-微波相位探测（BOM-PD）原理 | Ultrastable Laser | [kim2008](topics/ultrastable-laser/papers/kim2008.yaml) |
 | `pri.optical_phase_tracking` | 实时光学相位追踪原理 | Optical Frequency Combs | [giunta2020](topics/optical-frequency-combs/papers/giunta2020.yaml) |
+| `pri.otwtft_dual_comb_los_timing` | 双梳线性光学采样（LOS）O-TWTFT 飞秒时序原理 | Time-Frequency Transfer | [giorgetta2013](topics/time-frequency-transfer/papers/giorgetta2013.yaml) |
 | `pri.parabolic_pulse_self_similar_propagation_passive_fiber` | 抛物线脉冲在无源正常色散光纤中自相似传播原理 | shared | [fermann2000](topics/shared/papers/fermann2000.yaml) |
 | `pri.parametric_four_wave_mixing_comb` | 参量四波混频梳产生原理 | Optical Frequency Combs | [kippenberg2011](topics/optical-frequency-combs/papers/kippenberg2011.yaml) |
 | `pri.parametric_seeding_microcomb_spacing_control` | 参量种子注入实现微梳模间距射频可控原理 | Optical Frequency Combs | [papp2013](topics/optical-frequency-combs/papers/papp2013.yaml) |
@@ -237,6 +240,7 @@
 | `pri.turbulence_anisoplanatism_tf_degradation` | 湍流 anisoplanatism 对双向 TF 传递互易性的破坏原理 | Time-Frequency Transfer | [swann2019_9ltylbj8](topics/time-frequency-transfer/papers/swann2019_9ltylbj8.yaml) |
 | `pri.turbulence_speckle_freeze_dcs` | 双梳快速采集冻结湍流散斑原理 | Optical Frequency Combs | [han2024](topics/optical-frequency-combs/papers/han2024.yaml) |
 | `pri.two_comb_microwave_comparison` | 双梳比对法表征微波提取残余噪声 | Optical Frequency Combs | [lecoq2010](topics/optical-frequency-combs/papers/lecoq2010.yaml) |
+| `pri.two_way_frequency_comparison_noise_rejection` | 双向光频比对传播噪声被动抵消原理（无需主动补偿） | Time-Frequency Transfer | [bercy2014](topics/time-frequency-transfer/papers/bercy2014.yaml) |
 | `pri.ule_zero_cte` | ULE 玻璃零热膨胀系数原理 | Ultrastable Laser | [young1999](topics/ultrastable-laser/papers/young1999.yaml) |
 | `pri.vibration_cavity_length_coupling` | Vibration-induced oscillator cavity-length modulation | Optical Frequency Combs | [lezius2016](topics/optical-frequency-combs/papers/lezius2016.yaml) |
 | `pri.vibration_isolation_pendulum` | 低频弹性悬挂隔振原理 | Ultrastable Laser | [young1999](topics/ultrastable-laser/papers/young1999.yaml) |
@@ -253,6 +257,7 @@
 | `pri.amplifier_residual_phase_noise_limit` | 微波放大器残余相位噪声限制原理（光微波链路远载波本底） | Optical Frequency Combs | [portuondo-campa2015](topics/optical-frequency-combs/papers/portuondo-campa2015.yaml) |
 | `pri.asymmetric_spool_vibration_nulling` | 非对称支撑线轴振动灵敏度调零原理 | Ultrastable Laser | [li2009a](topics/ultrastable-laser/papers/li2009a.yaml) |
 | `pri.bandwidth_power_tradeoff_long_path_comb` | 长程 DCS 高功率-大带宽权衡原理 | Optical Frequency Combs | [han2024](topics/optical-frequency-combs/papers/han2024.yaml) |
+| `pri.bidirectional_edfa_amplified_long_haul_fiber` | 双向掺铒光纤放大器（BEFA）支持长距离光纤频率传递原理 | Time-Frequency Transfer | [predehl2012](topics/time-frequency-transfer/papers/predehl2012.yaml) |
 | `pri.bistatic_two_way_dcs_geometry` | 双站双向双梳协议：单程大气穿越+干涉图内嵌时频比对 | Optical Frequency Combs | [han2024](topics/optical-frequency-combs/papers/han2024.yaml) |
 | `pri.brewster_angle_ram_suppression` | 布儒斯特角 RAM 被动抑制原理 | Ultrastable Laser | [tai2016](topics/ultrastable-laser/papers/tai2016.yaml) |
 | `pri.brillouin_amplified_long_haul_fiber_transfer` | Brillouin 放大长距离光纤频率传递原理 | Time-Frequency Transfer | [raupach2015_lz2hfujz](topics/time-frequency-transfer/papers/raupach2015_lz2hfujz.yaml) |
