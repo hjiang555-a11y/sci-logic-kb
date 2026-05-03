@@ -1,0 +1,112 @@
+# Xie 2016 — Photonic microwave signals with zeptosecond-level absolute timing noise [evidence]
+# 提取者：Claude Code（AI 草稿，待专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.5
+# 专题：optical-frequency-combs（光频分频微波生成 — zeptosecond 定时噪声）
+# contribution_type: evidence — 实现 zeptosecond 级绝对定时噪声的微波信号；
+#   通过低噪声光纤频率梳 + 高线性度光电二极管实现创纪录的微波纯度。
+
+meta:
+  zotero_key: "Xiaopeng Xie 2016"
+  topic: optical-frequency-combs
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Photonic microwave signals with zeptosecond-level absolute timing noise"
+  year: 2016
+  first_author: Xie
+  authors: ["Xiaopeng Xie", "Romain Bouchand", "Daniele Nicolodi", "Michele Giunta", "Wolfgang Hansel", "Matthias Lezius", "Abhay Joshi", "Shubhashish Datta", "Christophe Alexandre", "Michel Lours", "Pierre-Alain Tremblin", "Giorgio Santarelli", "Ronald Holzwarth", "Yann Le Coq"]
+  journal: "Nature Photonics"
+  volume: 11
+  pages: "44-47"
+  doi: "10.1038/nphoton.2016.215"
+  note: >
+    LNE-SYRTE/Menlo Systems 联合团队实现最低相位噪声的
+    光生微波信号：频率稳定度 < 6.5×10⁻¹⁶ @1 s，
+    定时噪声 floor < 41 zs Hz⁻¹/²（相位噪声 < −173 dBc/Hz
+    @12 GHz 载波）。关键创新：高线性度光电二极管（flicker
+    相位噪声 < −140 f⁻¹ dBc Hz⁻¹）+ 低噪声 Er 光纤频率梳。
+
+entities:
+  - id: ent.xie2016_zeptosecond_microwave_generation
+    name: "Xie 2016 zeptosecond 定时噪声光生微波（LNE-SYRTE/Menlo）"
+    tier: system
+    domain: "光频分频；微波生成；相位噪声；光频梳"
+    description: >
+      LNE-SYRTE 和 Menlo Systems 联合实现创纪录纯度的光生微波：
+      利用低噪声 Er 光纤频率梳（250 MHz 重频）+ 定制高线性度
+      光电二极管，将超稳 CW 激光（1542 nm，5.5×10⁻¹⁶ @1 s）
+      的频率稳定度通过 OFD 传递至 12 GHz 微波载波。
+      定时噪声 floor < 41 zs Hz⁻¹/² 是当时的最好结果。
+    verification_status: demonstrated
+    source:
+      zotero_key: "Xiaopeng Xie 2016"
+      claim: "We demonstrate the generation of the purest microwave signal with a fractional frequency stability below 6.5×10^-16 at 1 s."
+
+principles:
+  - id: pri.high_linearity_photodiode_ofd_noise_floor
+    name: "高线性度光电二极管 OFD 噪声 floor 原理"
+    tier: method
+    verification_status: demonstrated
+    statement: >
+      光频分频（OFD）微波生成的噪声 floor 最终受限于
+      光电二极管的 AM-to-PM 转换和 flicker 相位噪声。
+      传统 PIN 光电二极管的 flicker 噪声 floor 限制了
+      OFD 微波在傅里叶频率 < 1 kHz 的相位噪声性能。
+      高线性度 MUTC（Modified Uni-Traveling Carrier）
+      光电二极管的 flicker 相位噪声可低至
+      < −140 f⁻¹ dBc Hz⁻¹，使 OFD 微波的相位噪声 floor
+      突破 −170 dBc/Hz 大关。
+    domain: "微波光子学；光电二极管；相位噪声；光频分频"
+    key_insight: >
+      光电二极管不是"理想的光-微波转换器"——它是 OFD
+      微波链的噪声 floor 决定者，其线性度直接决定系统
+      的终极性能。
+    conditions: "高线性度 MUTC 光电二极管；低 RIN 频率梳；光电二极管工作在高光功率（~10 mW）"
+    source:
+      zotero_key: "Xiaopeng Xie 2016"
+      claim: "The high-linearity photodiode with flicker phase noise below −140 f⁻¹ dBc Hz⁻¹ enables the ultralow noise performance."
+
+metrics:
+  - id: met.xie2016_zeptosecond_timing_noise
+    name: "Xie 2016 zeptosecond 微波定时噪声"
+    unit: "zs Hz⁻¹/²（绝对定时噪声谱密度）；dBc/Hz（相位噪声）"
+    role: primary
+    description: >
+      光生 12 GHz 微波信号的绝对定时噪声和相位噪声性能。
+    demonstrated_value:
+      value: "频率稳定度 < 6.5×10⁻¹⁶ @1 s；定时噪声 floor < 41 zs Hz⁻¹/²；相位噪声 < −173 dBc/Hz @12 GHz 载波"
+      conditions: "Er 光纤频率梳（250 MHz）；超稳 CW 激光参考（1542 nm，5.5×10⁻¹⁶）；定制 MUTC 高线性度光电二极管"
+      verification_status: demonstrated
+      confidence: established
+      source:
+        zotero_key: "Xiaopeng Xie 2016"
+        claim: "Fractional frequency stability below 6.5×10^-16 at 1 s and a timing noise floor below 41 zs Hz^-1/2."
+
+relations:
+  - id: rel.xie2016_01
+    subject: ent.xie2016_zeptosecond_microwave_generation
+    predicate: REALIZES
+    object: pri.high_linearity_photodiode_ofd_noise_floor
+    confidence: established
+    source:
+      zotero_key: "Xiaopeng Xie 2016"
+      claim: "The specially designed high-linearity photodiode enables the ultralow noise microwave generation."
+
+  - id: rel.xie2016_02
+    subject: met.xie2016_zeptosecond_timing_noise
+    predicate: DEMONSTRATES
+    object: pri.high_linearity_photodiode_ofd_noise_floor
+    confidence: established
+    source:
+      zotero_key: "Xiaopeng Xie 2016"
+      claim: "Timing noise floor below 41 zs Hz^-1/2, phase noise below −173 dBc Hz^-1 for a 12 GHz carrier."
+
+  - id: rel.xie2016_03
+    subject: pri.high_linearity_photodiode_ofd_noise_floor
+    predicate: CHARACTERIZES
+    object: pri.integrated_photonic_optical_frequency_division
+    confidence: established
+    source:
+      zotero_key: "Xiaopeng Xie 2016"
+      claim: "The high-linearity photodiode is critical for achieving the ultimate noise floor in optical frequency division."

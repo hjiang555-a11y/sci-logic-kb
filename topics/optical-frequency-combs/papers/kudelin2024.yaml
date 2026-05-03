@@ -1,0 +1,72 @@
+# Kudelin 2024 — Photonic chip-based low-noise microwave oscillator [evidence]
+# 提取者：Claude Code（AI 草稿，待专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.5
+# 专题：optical-frequency-combs（集成光子芯片光频分频微波生成）
+# contribution_type: evidence — 利用集成光子芯片实现光频分频低噪声微波生成；
+#   替代体光学/光纤分立元件，大幅减小系统体积和功耗。
+
+meta:
+  zotero_key: "3250 (1)"
+  topic: optical-frequency-combs
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Photonic chip-based low-noise microwave oscillator"
+  year: 2024
+  first_author: Kudelin
+  authors: ["Igor Kudelin", "William Groman", "Qing-Xin Ji", "Joel Guo", "Megan L. Kelleher", "Dahyeon Lee", "Takuma Nakamura", "Charles A. McLemore", "Pedram Shirmohammadi", "Samin Hanifi", "Haotian Cheng", "Naijun Jin", "Lue Wu", "Samuel Halladay", "Yizhi Luo", "Zhaowei Dai", "Warren Jin", "Junwu Bai", "Yifan Liu", "Wei Zhang", "Chao Xiang", "Lin Chang", "Vladimir Iltchenko", "Owen Miller", "Andrey Matsko", "Steven M. Bowers", "Peter T. Rakich", "Joe C. Campbell", "John E. Bowers", "Kerry J. Vahala", "Franklyn Quinlan", "Scott A. Diddams"]
+  journal: "Nature"
+  volume: 627
+  pages: "534-539"
+  doi: "10.1038/s41586-024-07058-z"
+  note: >
+    NIST/Caltech/UVA 联合团队利用集成光子芯片（SiN 微腔 soliton 频率梳 +
+    集成光电二极管）实现两点光频分频（OFD）低噪声微波生成。
+    替代传统体光学/光纤 OFD 系统，大幅减小体积和功耗——
+    是光频分频微波源从实验室走向工程化的关键一步。
+
+entities:
+  - id: ent.kudelin2024_photonic_chip_ofd_microwave
+    name: "Kudelin 2024 集成光子芯片光频分频微波振荡器（NIST/Caltech）"
+    tier: system
+    domain: "光频分频；集成光子学；微波生成；光频梳"
+    description: >
+      利用集成 SiN 微腔 soliton 频率梳和集成光电二极管实现
+      两点光频分频（OFD）——通过两个锁相点将超稳光频参考的
+      稳定度传递至微波域。集成光子平台将传统需要数平方米
+      光学平台的 OFD 系统压缩至芯片尺寸。
+    verification_status: demonstrated
+    source:
+      zotero_key: "3250 (1)"
+      claim: "We leverage advances in integrated photonics to demonstrate low-noise microwave generation via two-point optical frequency division."
+
+principles:
+  - id: pri.integrated_photonic_optical_frequency_division
+    name: "集成光子光频分频原理"
+    tier: method
+    verification_status: demonstrated
+    statement: >
+      光频分频（OFD）将超稳光频参考（~10¹⁴ Hz）分频至微波域
+      （~10¹⁰ Hz），利用频率分频比的平方（M² ≈ 10⁸）天然抑制
+      相位噪声。传统 OFD 使用体光学/光纤频率梳和光电二极管——
+      系统复杂、体积大。集成光子 OFD 将频率梳（微腔 soliton 梳）
+      和光电转换集成在单个芯片上，实现紧凑型低噪声微波源。
+    domain: "光频分频；集成光子学；微波光子学"
+    key_insight: >
+      光频分频的真正工程瓶颈不是物理原理而是系统集成——
+      芯片化使 OFD 微波源从"光学实验"变成"微波器件"。
+    conditions: "集成 soliton 微腔频率梳；高速集成光电二极管；超稳 CW 激光参考"
+    source:
+      zotero_key: "3250 (1)"
+      claim: "Two-point optical frequency division leverages the frequency ratio to suppress phase noise."
+
+relations:
+  - id: rel.kudelin2024_01
+    subject: ent.kudelin2024_photonic_chip_ofd_microwave
+    predicate: REALIZES
+    object: pri.integrated_photonic_optical_frequency_division
+    confidence: established
+    source:
+      zotero_key: "3250 (1)"
+      claim: "We demonstrate low-noise microwave generation via two-point optical frequency division on a photonic chip."

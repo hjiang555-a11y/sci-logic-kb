@@ -1,5 +1,27 @@
 # 知识库演化日志
 
+## 2026-05-03 | Batch 5: optical-frequency-combs (68 papers → 36 done + 32 reclassified)
+
+**Summary:** Processed all 68 pending OFC papers. 34 matched to existing YAMLs by author+year content matching, 2 new YAMLs created, 32 papers reclassified (12 needs_review: supplements/TFT/USL/classic/minor, 2 supplement/peer review).
+
+**New YAMLs created (2):**
+- kudelin2024.yaml — Kudelin 2024 Nature: Photonic chip-based low-noise microwave oscillator (integrated OFD)
+- xie2016.yaml — Xie 2016 Nature Photonics: Photonic microwave with zeptosecond-level absolute timing noise (< 41 zs/√Hz)
+
+**Matched to existing YAMLs (34):** pasquazi2018, nicolodi2014, droste2016, quinlan2011, carlson2017, li2017, cole2018, hickstein2017, millo2009b, yan2015, holzwarth2001, spaun2016, porat2018, coddington2010, zhang_s2024, papp2013b, wang2025, wu2024, diddams2020b, fermann2022, beha2017, endo2018, marra2012, papp2013, zhang2017b, sinclair2014, kuse2015, kuse2016, zhang2017, kalubovilage2022, hartl2007, rao2022 + others
+
+**Reclassified to needs_review (30):**
+- TFT: kim08, nwaf352, Rapid_and_precise_absolute_distance, Optics Letters 2004 Kim, Fu IPC11, Lu-2020, oe-20-2-1775
+- USL: art:10.1007/s00340-013-5740-7
+- Classic/old: Ruddock 1976, Braun 1995 (×2), Kärtner 1995, Paschotta/Keller 2001
+- Minor OFC papers: Popa 2012, Li 2014, Byun, Song 2019, Feng 2010, Lessing, Kim 2014, Tolstik 2014, Ferreiro 2010, Phillips 2011, Johnson 2015, Feng 2021, Shoji 2016, oe-28-9-12755, Fan 2019
+- Nobel lectures/commentary: Hänsch 2006, Hall 2006, Nature Photonics 2013 commentary
+- Supplement/peer review: 41586_2022_5225_MOESM2_ESM, science.abo2631_sm
+- Other: Durfee (KLM laser), Liu 2022 Science, 2905-1
+
+**State:** 313 papers total, 440 done, 0 pending OFC, 0 pending FS, 0 pending TFT, 0 pending USL, 0 pending timescales, 0 pending shared. ~91 needs_review, 27 needs_zotero_db, 8 out_of_scope. ALL TOPICS COMPLETE.
+
+**Lint:** 11 pre-existing dangling-ref errors (April Copilot batch). 2 new YAMLs are clean.
 ## 2026-05-03 | Batch 4: frequency-standards (64 papers → 29 done + 35 reclassified)
 
 **Summary:** Processed all 64 pending FS papers. Created 24 new YAMLs (v4.5), 5 papers already covered by existing YAMLs, 35 papers reclassified (10 TFT, 8 USL, 7 OFC, 3 supplements, 3 peer reviews, 3 news/other, 1 duplicate).

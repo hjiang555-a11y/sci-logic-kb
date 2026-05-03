@@ -2,7 +2,7 @@
 
 # Optical Frequency Combs — Topic Index
 
-> Auto-generated 2026-04-24 03:39 UTC · 114 papers · 682 nodes · 812 relations
+> Auto-generated 2026-05-03 13:23 UTC · 117 papers · 698 nodes · 822 relations
 
 ## Entities
 
@@ -43,6 +43,7 @@
 | `ent.dual_branch_er_comb_rolland18` | 双分支 Er:fiber 频率梳系统（Rolland 2018） | 2 | [rolland2018](topics/optical-frequency-combs/papers/rolland2018.yaml) |
 | `ent.dual_comb_spectrometer` | 双梳光谱仪 | 1 | [coddington2016](topics/optical-frequency-combs/papers/coddington2016.yaml) |
 | `ent.dynamic_fiber_scrambler_m19` | 动态光纤搅动器 + 积分球模态扰动系统 | 3 | [metcalf2019](topics/optical-frequency-combs/papers/metcalf2019.yaml) |
+| `ent.edfl_ring_laser` | Erbium-doped fibre laser in a ring configuration | 1 | [matsas1992](topics/optical-frequency-combs/papers/matsas1992.yaml) |
 | `ent.electro_optic_frequency_comb` | 电光调制频率梳 | 2 | [picque2019](topics/optical-frequency-combs/papers/picque2019.yaml) |
 | `ent.electromagnetic_spectrum_coherent_bridge` | 电磁谱相干统一桥（Level 0 顶层范式） | 0 | [picque2020](topics/optical-frequency-combs/papers/picque2020.yaml) |
 | `ent.eo_sideband_seed_injector_p13` | EO 调制泵浦边带种子源（MZM 双边带注入模块） | 3 | [papp2013](topics/optical-frequency-combs/papers/papp2013.yaml) |
@@ -86,8 +87,10 @@
 | `ent.integrated_ofc_synthesizer_spencer2018` | 集成光子学光频合成器（Spencer 2018） | 2 | [spencer2018](topics/optical-frequency-combs/papers/spencer2018.yaml) |
 | `ent.kerr_microcomb_photonic_chip_sc_l18` | 15 GHz Kerr 微梳 + SiN 片上超连续谱系统（Lamb 2018） | 2 | [lamb2018](topics/optical-frequency-combs/papers/lamb2018.yaml) |
 | `ent.klm_bidirectional_ring_dual_comb_i16` | KLM 单腔双向双梳环形激光器（Ideguchi 2016） | 2 | [ideguchi2016](topics/optical-frequency-combs/papers/ideguchi2016.yaml) |
+| `ent.kudelin2024_photonic_chip_ofd_microwave` | Kudelin 2024 集成光子芯片光频分频微波振荡器（NIST/Caltech） | — | [kudelin2024](topics/optical-frequency-combs/papers/kudelin2024.yaml) |
 | `ent.line_referenced_eo_comb_y16` | 分子/原子线锁定 EO 调制天文光梳（Yi 2016） | 2 | [yi2016](topics/optical-frequency-combs/papers/yi2016.yaml) |
 | `ent.long_path_dcs_h24` | 113 km 开放大气双站双向双梳光谱系统（Han 2024） | 2 | [han2024](topics/optical-frequency-combs/papers/han2024.yaml) |
+| `ent.low_bi_spun_fibre` | Passive low-birefringence spun fibre used in the cavity | 2 | [matsas1992](topics/optical-frequency-combs/papers/matsas1992.yaml) |
 | `ent.low_latency_digital_servo_w25` | 低延迟 FPGA 数字伺服板（Wang 2025） | 2 | [wang2025](topics/optical-frequency-combs/papers/wang2025.yaml) |
 | `ent.low_power_5w_self_ref_comb_m18` | 5 W 全自参考频率梳（Manurkar 2018, NIST） | 2 | [manurkar2018](topics/optical-frequency-combs/papers/manurkar2018.yaml) |
 | `ent.menlo_erfiber_eom_comb_z12` | Menlo 商用掺铒光纤梳 + 自由空间 EOM（Zhang 2012 表征系统） | 2 | [zhang2012c](topics/optical-frequency-combs/papers/zhang2012c.yaml) |
@@ -108,6 +111,7 @@
 | `ent.nmij_8branch_er_comb_h21` | NMIJ 8分支 Er:fiber 频率梳（Hisai 2021） | 2 | [hisai2021](topics/optical-frequency-combs/papers/hisai2021.yaml) |
 | `ent.nonlinear_broadening_stage_s19` | 孤子梳非线性展宽级（Suh 2019） | 3 | [suh2019](topics/optical-frequency-combs/papers/suh2019.yaml) |
 | `ent.nonlinear_microring_dual_role_s18` | 双用非线性 Si3N4 微环（激光输出镜 + Kerr 梳腔） | 3 | [stern2018](topics/optical-frequency-combs/papers/stern2018.yaml) |
+| `ent.nonlinear_polarisation_rotation` | Nonlinear birefringence effects used for passive modelocking | 1 | [matsas1992](topics/optical-frequency-combs/papers/matsas1992.yaml) |
 | `ent.npe_unit_z17` | 非线性偏振演化（NPE）主谐振腔单元 | 3 | [zhang2017](topics/optical-frequency-combs/papers/zhang2017.yaml) |
 | `ent.npl_fiber_comb_transfer_system_m12` | NPL 光频梳结构光纤传递系统（Marra 2012） | 2 | [marra2012](topics/optical-frequency-combs/papers/marra2012.yaml) |
 | `ent.ntsc_all_pm_5branch_comb_n20` | 国家授时中心全 PM 5分支 NALM Er:fiber 梳（Ning 2020） | 2 | [ning2020](topics/optical-frequency-combs/papers/ning2020.yaml) |
@@ -127,6 +131,7 @@
 | `ent.pm_dispersion_managed_amplifier_l20` | PM 色散管理光纤放大器（Lesko 2020） | 3 | [lesko2020](topics/optical-frequency-combs/papers/lesko2020.yaml) |
 | `ent.pm_fiber_pulse_interleaver_pc15` | 保偏 6 级光纤脉冲交织器（Portuondo-Campa 2015） | 3 | [portuondo-campa2015](topics/optical-frequency-combs/papers/portuondo-campa2015.yaml) |
 | `ent.pm_inline_f2f_interferometer_s14` | PM 光纤在线 f-2f 干涉仪（Sinclair 2014） | 3 | [sinclair2014](topics/optical-frequency-combs/papers/sinclair2014.yaml) |
+| `ent.polarisation_controller` | PCs used to control the polarisation state and system loss | 2 | [matsas1992](topics/optical-frequency-combs/papers/matsas1992.yaml) |
 | `ent.precision_frequency_transfer_system_f22` | 光纤梳精密频率传递系统框架（Fermann 2022） | 1 | [fermann2022](topics/optical-frequency-combs/papers/fermann2022.yaml) |
 | `ent.pump_noise_suppressed_erfiber_comb_m07` | 低泵噪 Er:fiber 频率梳（McFerran 2007 系统） | 2 | [mcferran2007](topics/optical-frequency-combs/papers/mcferran2007.yaml) |
 | `ent.pzt_fiber_stretcher_k18` | 鼓型 PZT 光纤拉伸器（Kashiwagi 2018，FNDC 执行元件） | 3 | [kashiwagi2018](topics/optical-frequency-combs/papers/kashiwagi2018.yaml) |
@@ -149,6 +154,7 @@
 | `ent.sio2_22ghz_kerr_comb` | SiO₂楔形微腔22 GHz梳 | 2 | [spencer2018](topics/optical-frequency-combs/papers/spencer2018.yaml) |
 | `ent.siph_tr_chip_s22` | CMOS 硅光 T/R 处理芯片（Shu 2022） | 3 | [shu2022](topics/optical-frequency-combs/papers/shu2022.yaml) |
 | `ent.soliton_crystal_microcomb` | 孤子晶体微腔梳 | 2 | [cole2018](topics/optical-frequency-combs/papers/cole2018.yaml) |
+| `ent.soliton_pulse` | Fundamental soliton pulses with 1.55 um wavelength | 2 | [matsas1992](topics/optical-frequency-combs/papers/matsas1992.yaml) |
 | `ent.spaceborne_erfiber_comb_l16` | Space-qualified Er:fiber self-referenced OFC (TEXUS-51) | — | [lezius2016](topics/optical-frequency-combs/papers/lezius2016.yaml) |
 | `ent.texus51_rocket_platform` | TEXUS-51 sounding rocket platform | — | [lezius2016](topics/optical-frequency-combs/papers/lezius2016.yaml) |
 | `ent.tf_lin_uv_vis_comb_w24` | 薄膜铌酸锂纳米波导 UV-VIS 梳（Wu 2024） | 2 | [wu2024](topics/optical-frequency-combs/papers/wu2024.yaml) |
@@ -163,6 +169,7 @@
 | `ent.vernier_microring_filter_pair_s18` | Si3N4 双微环 Vernier 单纵模选择滤波器 | 3 | [stern2018](topics/optical-frequency-combs/papers/stern2018.yaml) |
 | `ent.vibration_environment_mobile` | 地面移动平台振动环境（外部条件节点） | 1 | [sinclair2014](topics/optical-frequency-combs/papers/sinclair2014.yaml) |
 | `ent.vipa_resolved_mode_comb_spectrometer_d07` | VIPA 分辨梳模式光谱仪（Diddams 2007） | 2 | [diddams2007](topics/optical-frequency-combs/papers/diddams2007.yaml) |
+| `ent.xie2016_zeptosecond_microwave_generation` | Xie 2016 zeptosecond 定时噪声光生微波（LNE-SYRTE/Menlo） | — | [xie2016](topics/optical-frequency-combs/papers/xie2016.yaml) |
 | `ent.yb_fiber_500mhz_comb_wang14` | 500 MHz Yb:ring 光纤梳（无放大，Wang 2014） | 2 | [wang2014](topics/optical-frequency-combs/papers/wang2014.yaml) |
 | `ent.yb_fiber_750mhz_comb_m18` | 750 MHz Yb:fiber 紧锁梳（Ma 2018） | 2 | [ma2018](topics/optical-frequency-combs/papers/ma2018.yaml) |
 | `ent.yb_fiber_comb_130w_cpa_l20` | 130 W Yb 光纤梳 CPA 系统（Luo 2020, ECNU） | 2 | [luo2020](topics/optical-frequency-combs/papers/luo2020.yaml) |
@@ -244,6 +251,7 @@
 | `pri.high_frep_bandwidth_power_tradeoff` | 高重频梳带宽-平均功率-单齿功率三角权衡原理 | domain | [bartels2009](topics/optical-frequency-combs/papers/bartels2009.yaml) |
 | `pri.high_frep_dcs_speed_advantage` | 高重频梳 DCS 采集速度优势原理 | domain | [lesko2020](topics/optical-frequency-combs/papers/lesko2020.yaml) |
 | `pri.high_frep_yb_tight_lock_challenges` | 高重频 Yb:fiber 梳紧锁的双重挑战原理 | engineering | [ma2018](topics/optical-frequency-combs/papers/ma2018.yaml) |
+| `pri.high_linearity_photodiode_ofd_noise_floor` | 高线性度光电二极管 OFD 噪声 floor 原理 | method | [xie2016](topics/optical-frequency-combs/papers/xie2016.yaml) |
 | `pri.high_rep_rate_ofd_low_shot_noise` | 高重复率OFD降低散粒噪声底原理 | domain | [quinlan2011](topics/optical-frequency-combs/papers/quinlan2011.yaml) |
 | `pri.high_temp_gas_suppresses_steady_state_plasma_p18` | 高温气体抑制高重频 HHG 稳态等离子体原理（Porat 2018） | domain | [porat2018](topics/optical-frequency-combs/papers/porat2018.yaml) |
 | `pri.hitran_voigt_declutter_trace_retrieval` | 基于 Hitran Voigt 模型的强吸收解杂原理 | engineering | [ycas2019](topics/optical-frequency-combs/papers/ycas2019.yaml) |
@@ -251,6 +259,7 @@
 | `pri.injection_locked_equidistant_microcomb_p13` | 参量增益竞争下的等间距微梳涌现原理 | engineering | [papp2013](topics/optical-frequency-combs/papers/papp2013.yaml) |
 | `pri.inline_f2f_soliton_shift` | 内联 f-to-2f 孤子自频移供能原理 | engineering | [lesko2020](topics/optical-frequency-combs/papers/lesko2020.yaml) |
 | `pri.integrated_ofc_synthesis_chain` | 集成光子学微波-光频相干倍频链原理 | domain | [spencer2018](topics/optical-frequency-combs/papers/spencer2018.yaml) |
+| `pri.integrated_photonic_optical_frequency_division` | 集成光子光频分频原理 | method | [kudelin2024](topics/optical-frequency-combs/papers/kudelin2024.yaml) |
 | `pri.integrated_photonic_supercontinuum_for_microcomb_f2f` | 片上集成 SiN 波导超连续谱使低功率微梳 f-2f 可行 | engineering | [lamb2018](topics/optical-frequency-combs/papers/lamb2018.yaml) |
 | `pri.inter_branch_fiber_noise_degradation` | 多分支光纤梳的支间光纤相噪退化原理 | engineering | [kashiwagi2018](topics/optical-frequency-combs/papers/kashiwagi2018.yaml) |
 | `pri.interferogram_embedded_freq_comparison` | 干涉图内嵌频率比对原理（M = fr/Δfr 放大因子） | engineering | [han2024](topics/optical-frequency-combs/papers/han2024.yaml) |
@@ -293,6 +302,7 @@
 | `pri.nir_to_visible_shg_comb_link_r19` | 红外飞秒梳经 HNLF 展宽 + PPLN 倍频链接至可见光原子跃迁线原理 | engineering | [rao2019](topics/optical-frequency-combs/papers/rao2019.yaml) |
 | `pri.noise_cancellation_frequency_transfer` | 主动噪声抵消精密频率传递原理 | domain | [fermann2022](topics/optical-frequency-combs/papers/fermann2022.yaml) |
 | `pri.nondeterministic_phase_microcomb` | 非确定性相位关系的等间距微梳态 | domain | [delhaye2014](topics/optical-frequency-combs/papers/delhaye2014.yaml) |
+| `pri.nonlinear_birefringence_modelocking` | Using nonlinear birefringence to initiate and sustain passi… | domain | [matsas1992](topics/optical-frequency-combs/papers/matsas1992.yaml) |
 | `pri.nonlinear_frequency_conversion_comb` | 非线性频率转换梳产生原理 | domain | [schliesser2012](topics/optical-frequency-combs/papers/schliesser2012.yaml) |
 | `pri.normal_dispersion_dark_pulse_s22` | 正常色散 + 避免模交叉下暗脉冲 Kerr 梳生成原理 | domain | [shu2022](topics/optical-frequency-combs/papers/shu2022.yaml) |
 | `pri.npe_nalm_hybrid_mode_locking` | NPE+NALM 混合锁模原理 | engineering | [zhang2017](topics/optical-frequency-combs/papers/zhang2017.yaml) |
@@ -347,6 +357,7 @@
 | `pri.soliton_crystal_fingerprint_spectrum` | 孤子晶体指纹光谱识别原理 | domain | [cole2018](topics/optical-frequency-combs/papers/cole2018.yaml) |
 | `pri.soliton_crystal_formation` | 孤子晶体形成原理：模式简并介导的长程相互作用 | domain | [cole2018](topics/optical-frequency-combs/papers/cole2018.yaml) |
 | `pri.soliton_crystal_multistability` | 孤子晶体多稳态原理 | domain | [gaeta2019](topics/optical-frequency-combs/papers/gaeta2019.yaml) |
+| `pri.soliton_generation_in_fibre` | Formation of fundamental solitons in the anomalous dispersi… | domain | [matsas1992](topics/optical-frequency-combs/papers/matsas1992.yaml) |
 | `pri.soliton_self_frequency_shift_2um` | 2 µm 孤子自频移原理（Raman SSFS 波段切换） | domain | [xing2020](topics/optical-frequency-combs/papers/xing2020.yaml) |
 | `pri.state_prepared_single_ion_spectroscopy` | 单离子纯量子态光谱原理（heralded QLS 制备 + 非破坏读出） | domain | [chou2020](topics/optical-frequency-combs/papers/chou2020.yaml) |
 | `pri.supercontinuum_octave_spanning` | 超连续谱倍频程展宽原理（SPM + FWM in ZGVD PCF） | domain | [diddams2000](topics/optical-frequency-combs/papers/diddams2000.yaml) |
@@ -442,6 +453,7 @@
 | `meth.oscat_dual_comb` | OSCAT 扫描重频单梳双梳干涉方法 | [carlson2018](topics/optical-frequency-combs/papers/carlson2018.yaml) |
 | `meth.parametric_seeding_microcomb_p13` | 参量种子注入微梳产生方法（Papp 2013） | [papp2013](topics/optical-frequency-combs/papers/papp2013.yaml) |
 | `meth.passive_mode_locking_iii_v_si` | Passive mode-locking of III-V-on-Si extended-cavity laser | [wang2017](topics/optical-frequency-combs/papers/wang2017.yaml) |
+| `meth.passive_modelocking_via_npr` | Mode-locking achieved through nonlinear polarisation rotati… | [matsas1992](topics/optical-frequency-combs/papers/matsas1992.yaml) |
 | `meth.phire_absolute_distance` | PHIRE Vernier 绝对距离测量方法 | [carlson2018](topics/optical-frequency-combs/papers/carlson2018.yaml) |
 | `meth.phire_dual_comb` | PHIRE 重频切换双梳干涉方法 | [carlson2018](topics/optical-frequency-combs/papers/carlson2018.yaml) |
 | `meth.photonic_microwave_synthesis` | 光子微波合成方法 | [giunta2019](topics/optical-frequency-combs/papers/giunta2019.yaml) |
@@ -488,6 +500,7 @@
 | `met.spectral_purity_transfer_degradation_nicolodi2014` | OFC光谱纯度传递退化（1 s） | <3e-18 | [nicolodi2014](topics/optical-frequency-combs/papers/nicolodi2014.yaml) |
 | `met.synthesis_fractional_instability` | 光频合成器分数频率不稳定度 | ≤7.7×10⁻¹⁵ | [spencer2018](topics/optical-frequency-combs/papers/spencer2018.yaml) |
 | `met.timing_jitter_hybrid_osc_fortier2012` | 10 GHz混合振荡器绝对时序抖动 | 420 | [fortier2012](topics/optical-frequency-combs/papers/fortier2012.yaml) |
+| `met.xie2016_zeptosecond_timing_noise` | Xie 2016 zeptosecond 微波定时噪声 | 频率稳定度 < 6.5×10⁻¹⁶ @1 s；定时噪声 floor < 41 zs Hz⁻¹/²；相位噪声 < −17… | [xie2016](topics/optical-frequency-combs/papers/xie2016.yaml) |
 
 ### 📊 Secondary (线宽/PSD/相干)
 
@@ -626,7 +639,9 @@
 | `met.intracavity_avg_power_h07` | 腔内平均功率（Hartl 2007） | 3 kW（增强因子 ~230×） | [hartl2007](topics/optical-frequency-combs/papers/hartl2007.yaml) |
 | `met.intracavity_peak_intensity_h07` | 腔内聚焦峰值强度（Hartl 2007） | 3×10^14 W/cm² | [hartl2007](topics/optical-frequency-combs/papers/hartl2007.yaml) |
 | `met.intracavity_peak_power_h07` | 腔内峰值功率（Hartl 2007） | 230 MW | [hartl2007](topics/optical-frequency-combs/papers/hartl2007.yaml) |
+| `met.intracavity_pulse_energy` | Intracavity pulse energy | 48 | [matsas1992](topics/optical-frequency-combs/papers/matsas1992.yaml) |
 | `met.ir_power_before_hhg_z22` | HHG 前基频脉冲平均功率与脉宽 | >50 W 平均 / <150 fs | [zhang2022](topics/optical-frequency-combs/papers/zhang2022.yaml) |
+| `met.lasing_wavelength` | Lasing wavelength | 1.55 | [matsas1992](topics/optical-frequency-combs/papers/matsas1992.yaml) |
 | `met.li_d1_measurement_uncertainty_r19` | Li 原子 D1 线频率测量应用的可达测量不确定度（Rao 2019 目标） | ~10 Hz @ 100 s（对应 kHz 量级绝对准确度需求） | [rao2019](topics/optical-frequency-combs/papers/rao2019.yaml) |
 | `met.lock_uptime_s14` | 连续无相位滑移锁定时间 | >35 h 连续无相位滑移（实验室，1 s 门时计数 f_ceo σ = 0.62 mHz / f_opt σ = 0… | [sinclair2014](topics/optical-frequency-combs/papers/sinclair2014.yaml) |
 | `met.microcomb_30dB_bandwidth_s18` | 集成微梳 30-dB 光谱带宽 | 8.6 THz (72 nm) 单孤子；13.4 THz (105 nm) 双孤子 | [stern2018](topics/optical-frequency-combs/papers/stern2018.yaml) |
@@ -675,6 +690,7 @@
 | `met.phire_distance_precision_averaged_c18` | PHIRE 距离测量精度（平均后，Carlson 2018） | — | [carlson2018](topics/optical-frequency-combs/papers/carlson2018.yaml) |
 | `met.phire_distance_precision_c18` | PHIRE 距离测量精度（Carlson 2018） | — | [carlson2018](topics/optical-frequency-combs/papers/carlson2018.yaml) |
 | `met.phire_nar_extended_c18` | PHIRE 扩展非模糊距离范围（Carlson 2018） | — | [carlson2018](topics/optical-frequency-combs/papers/carlson2018.yaml) |
+| `met.pulse_duration` | Pulse duration of the generated solitons | 1.55 | [matsas1992](topics/optical-frequency-combs/papers/matsas1992.yaml) |
 | `met.pulse_duration_cycles_x20` | 2 µm 脉冲持续时间（以光周期计） | 9.5 fs（1.4 光周期 @2 µm） | [xing2020](topics/optical-frequency-combs/papers/xing2020.yaml) |
 | `met.pulse_duration_intracavity_h07` | 腔内脉冲宽度（Hartl 2007） | 95 fs | [hartl2007](topics/optical-frequency-combs/papers/hartl2007.yaml) |
 | `met.pulse_to_pulse_timing_jitter_s14` | 脉间时间抖动（Sinclair 2014） | 2.4 fs（实验室）；5 fs（车辆 & 振动台 0.5 g rms）；~3.1 fs/g 随加速度线性 | [sinclair2014](topics/optical-frequency-combs/papers/sinclair2014.yaml) |
@@ -727,30 +743,13 @@
 
 ## BOUNDED-BY Chains
 
-### `rel.Bar09_04`: `met.frep_10ghz_self_referenced_b09` → `pri.high_frep_bandwidth_power_tradeoff`
+### `rel.bartels_2009_ar09_04`: `met.frep_10ghz_self_referenced_b09` → `pri.high_frep_bandwidth_power_tradeoff`
 
 - **Source**: bartels2009
 - **Breakthrough paths**:
   - `meth.klm_10ghz_comb_self_reference` — status: demonstrated · gain: 同时满足 10 GHz + 自参考 + 单齿可分辨
 
-### `rel.C10_06`: `met.dcs_snr_coherent` → `pri.dual_comb_coherent_averaging_snr_scaling`
-
-- **Source**: coddington2010
-- **Breakthrough paths**:
-  - `meth.adaptive_sampling_correction` — status: demonstrated · gain: 在部分相干或自由运行梳条件下恢复相干平均能力，延长有效相干时间
-  - `meth.cavity_enhanced_dcs` — status: demonstrated · gain: 样品腔增强吸收灵敏度 10²–10⁴ 倍
-
-### `rel.C16_09`: `ent.dual_comb_spectrometer` → `pri.mutual_coherence_requirement`
-
-- **Source**: coddington2016
-- **Breakthrough paths**:
-  - `meth.adaptive_sampling_correction` — status: demonstrated
-
-### `rel.C18_07`: `ent.deuterated_sin_photonic_platform_c18` → `pri.isotope_substitution_absorption_shift`
-
-- **Source**: chiles2018
-
-### `rel.C20_06`: `met.timing_jitter_psd_atmospheric_c20` → `pri.kolmogorov_turbulence_timing_jitter`
+### `rel.caldwell_2020_20_06`: `met.timing_jitter_psd_atmospheric_c20` → `pri.kolmogorov_turbulence_timing_jitter`
 
 - **Source**: caldwell2020
 - **Breakthrough paths**:
@@ -758,27 +757,27 @@
   - `pri.taylor_frozen_turbulence_hypothesis` — status: demonstrated · gain: 高风速下 Taylor 假设成立 → 模型预测残差可进一步降低
   - `pri.greenwood_tarazano_outer_scale_rolloff` — status: demonstrated · gain: 采用 G-T 谱而非 von Kármán 谱避免低频 timing 方差低估
 
-### `rel.C20_07`: `met.timing_jitter_psd_atmospheric_c20` → `pri.taylor_frozen_turbulence_hypothesis`
+### `rel.caldwell_2020_20_07`: `met.timing_jitter_psd_atmospheric_c20` → `pri.taylor_frozen_turbulence_hypothesis`
 
 - **Source**: caldwell2020
 
-### `rel.C20_10`: `met.cn2_cross_validation_c20` → `pri.taylor_frozen_turbulence_hypothesis`
+### `rel.caldwell_2020_20_10`: `met.cn2_cross_validation_c20` → `pri.taylor_frozen_turbulence_hypothesis`
 
 - **Source**: caldwell2020
 - **Breakthrough paths**:
   - `meth.micrometeorological_cn2_retrieval_c20` — status: proposed · gain: 以水平总风速 U 替代 V⊥ 可缓解 V⊥→0 奇点（U 通常大于 V⊥）
 
-### `rel.Cal22_04`: `met.tpfc_ranging_precision_c22` → `pri.tpfc_tracking_oscillator_quantum_limit_c22`
+### `rel.caldwell_2022_al22_04`: `met.tpfc_ranging_precision_c22` → `pri.tpfc_tracking_oscillator_quantum_limit_c22`
 
 - **Source**: caldwell2022
 - **Breakthrough paths**:
   - `pri.tpfc_digital_coherent_pulse_control_c22` — status: demonstrated · gain: TPFC 实时控制 → 追踪振荡器模式 → 散粒噪声极限
 
-### `rel.Car17_03`: `met.sin_waveguide_f2f_power_c17` → `pri.sin_waveguide_low_power_f2f_c17`
+### `rel.carlson_2017_ar17_03`: `met.sin_waveguide_f2f_power_c17` → `pri.sin_waveguide_low_power_f2f_c17`
 
 - **Source**: carlson2017
 
-### `rel.Cheng24_01`: `ent.continuous_uv_bluegreen_astrocomb_c24` → `pri.shg_sfm_combined_astrocomb_continuous_coverage_c24`
+### `rel.cheng_2024_heng24_01`: `ent.continuous_uv_bluegreen_astrocomb_c24` → `pri.shg_sfm_combined_astrocomb_continuous_coverage_c24`
 
 - **Source**: cheng2024
 - **Breakthrough paths**:
@@ -786,26 +785,43 @@
   - `?` — status: ?
   - `?` — status: ?
 
-### `rel.Cho20_10`: `met.comb_raman_line_fwhm_c20` → `pri.microwave_referenced_comb_coherence_limit`
+### `rel.chiles_2018_18_07`: `ent.deuterated_sin_photonic_platform_c18` → `pri.isotope_substitution_absorption_shift`
+
+- **Source**: chiles2018
+
+### `rel.chou_2020_ho20_10`: `met.comb_raman_line_fwhm_c20` → `pri.microwave_referenced_comb_coherence_limit`
 
 - **Source**: chou2020
 - **Breakthrough paths**:
   - `meth.wideband_optical_frequency_synthesis` — status: proposed · gain: 将 OFC 锁至超稳激光 / 光钟 → sub-Hz 线宽（>10³ 倍提升）
 
-### `rel.Cho20_11`: `met.rotational_transition_frequency_uncertainty_c20` → `pri.trap_rf_field_stark_systematic`
+### `rel.chou_2020_ho20_11`: `met.rotational_transition_frequency_uncertainty_c20` → `pri.trap_rf_field_stark_systematic`
 
 - **Source**: chou2020
 - **Breakthrough paths**:
   - `pri.state_prepared_single_ion_spectroscopy` — status: proposed · gain: 迁移至对阱 RF 场不敏感的分子物种 → sub-Hz / <10⁻¹² 绝对精度
   - `meth.single_ion_ofc_quantum_logic_spectroscopy_c20` — status: proposed · gain: 改进阱场控制与补偿电极对准 → kHz → 百 Hz 级系统
 
-### `rel.D00_08`: `met.optical_frequency_measurement_uncertainty_d00` → `pri.microwave_reference_noise_limit`
+### `rel.coddington_2010_10_06`: `met.dcs_snr_coherent` → `pri.dual_comb_coherent_averaging_snr_scaling`
+
+- **Source**: coddington2010
+- **Breakthrough paths**:
+  - `meth.adaptive_sampling_correction` — status: demonstrated · gain: 在部分相干或自由运行梳条件下恢复相干平均能力，延长有效相干时间
+  - `meth.cavity_enhanced_dcs` — status: demonstrated · gain: 样品腔增强吸收灵敏度 10²–10⁴ 倍
+
+### `rel.coddington_2014_16_09`: `ent.dual_comb_spectrometer` → `pri.mutual_coherence_requirement`
+
+- **Source**: coddington2016
+- **Breakthrough paths**:
+  - `meth.adaptive_sampling_correction` — status: demonstrated
+
+### `rel.diddams_2000_00_08`: `met.optical_frequency_measurement_uncertainty_d00` → `pri.microwave_reference_noise_limit`
 
 - **Source**: diddams2000
 - **Breakthrough paths**:
   - `meth.wideband_optical_frequency_synthesis` — status: demonstrated · gain: 使用超稳激光作为光频参考 + 光相位追踪，达到 10⁻²⁰
 
-### `rel.Did07_01`: `ent.vipa_resolved_mode_comb_spectrometer_d07` → `pri.vipa_spatial_comb_mode_resolution_d07`
+### `rel.diddams_2007_id07_01`: `ent.vipa_resolved_mode_comb_spectrometer_d07` → `pri.vipa_spatial_comb_mode_resolution_d07`
 
 - **Source**: diddams2007
 - **Breakthrough paths**:
@@ -813,57 +829,39 @@
   - `?` — status: ?
   - `?` — status: ?
 
-### `rel.E18_03`: `ent.optical_frequency_comb` → `pri.ofc_noise_hierarchy`
+### `rel.endo_2018_18_03`: `ent.optical_frequency_comb` → `pri.ofc_noise_hierarchy`
 
 - **Source**: endo2018
 - **Breakthrough paths**:
   - `pri.monolithic_cavity_intrinsic_noise_reduction` — status: demonstrated · gain: 自由运转不稳定度从 ~10⁻¹³（光纤梳）提升至 ~10⁻¹⁹（整体式固态腔）
   - `meth.balanced_optical_microwave_phase_detector` — status: demonstrated · gain: 锁定后定时抖动 <1 fs（sub-attosecond 目标）
 
-### `rel.F22_03`: `ent.precision_frequency_transfer_system_f22` → `pri.scg_added_noise_in_frequency_transfer`
+### `rel.fermann_2022_22_03`: `ent.precision_frequency_transfer_system_f22` → `pri.scg_added_noise_in_frequency_transfer`
 
 - **Source**: fermann2022
 
-### `rel.Gae19_12`: `ent.microresonator_frequency_comb` → `pri.raman_limits_min_fsr_microcomb`
+### `rel.gaeta_2019_ae19_12`: `ent.microresonator_frequency_comb` → `pri.raman_limits_min_fsr_microcomb`
 
 - **Source**: gaeta2019
 - **Breakthrough paths**:
   - `pri.microresonator_anomalous_dispersion` — status: demonstrated · gain: 采用 g_K ≥ g_R 的平台（Si3N4、SiO2、CaF2）绕开该限制
   - `pri.chip_dispersion_engineering_high_index_contrast` — status: demonstrated · gain: 通过色散工程将 FSR 提升到 Raman 增益峰之间（如金刚石 FSR>454 GHz）
 
-### `rel.Gae19_13`: `ent.microresonator_frequency_comb` → `pri.chip_comb_platform_tradeoff_space`
+### `rel.gaeta_2019_ae19_13`: `ent.microresonator_frequency_comb` → `pri.chip_comb_platform_tradeoff_space`
 
 - **Source**: gaeta2019
 - **Breakthrough paths**:
   - `meth.cw_pumped_microcomb_generation` — status: proposed · gain: 在同一平台上通过异构集成（如 LiNbO3 键合 Si3N4）兼顾 χ(2)、高 Q 与 CMOS 兼容
   - `pri.chip_dispersion_engineering_high_index_contrast` — status: demonstrated · gain: 通过 Damascene reflow + 亚埃级表面粗糙度使 Si3N4 Q>37M，同时保持色散工程自由度
 
-### `rel.Gae19_18`: `met.microcomb_conversion_efficiency_g19` → `pri.dissipative_kerr_soliton`
+### `rel.gaeta_2019_ae19_18`: `met.microcomb_conversion_efficiency_g19` → `pri.dissipative_kerr_soliton`
 
 - **Source**: gaeta2019
 - **Breakthrough paths**:
   - `pri.dark_pulse_normal_dispersion_comb` — status: demonstrated · gain: 正常 GVD 暗脉冲/platicon 提供显著更高的转换效率
   - `pri.soliton_crystal_multistability` — status: demonstrated · gain: 多孤子/孤子晶体态效率 ∝ N
 
-### `rel.H07_08`: `ent.cavity_enhanced_yb_comb_h07` → `pri.mirror_damage_threshold_limit`
-
-- **Source**: hartl2007
-- **Breakthrough paths**:
-  - `pri.coherent_pulse_addition_passive_cavity` — status: proposed · gain: 新型高损伤阈值低色散宽带介质镀层可在同等精细度下推高强度上限
-
-### `rel.H17_11`: `met.fceo_snr_on_chip_h17` → `pri.mode_overlap_limits_fceo_snr`
-
-- **Source**: hickstein2017
-- **Breakthrough paths**:
-  - `meth.on_chip_f2f_stabilization` — status: proposed · gain: 加入 on-chip 模式转换器，使相位匹配 SHG 回到 TM00，SNR 预期 >37 dB
-
-### `rel.H17_12`: `meth.on_chip_f2f_stabilization` → `pri.phase_matching_bandwidth_limit_chi2`
-
-- **Source**: hickstein2017
-- **Breakthrough paths**:
-  - `pri.nonlinear_frequency_conversion_comb` — status: proposed · gain: 周期极化（PPLN/PP-LiNbO3-on-insulator）或 chirped QPM 扩展相位匹配带宽到数十–…
-
-### `rel.Han17`: `met.open_path_length_dcs_h24` → `pri.photon_starved_open_path_dcs_limit`
+### `rel.han_2024_an17`: `met.open_path_length_dcs_h24` → `pri.photon_starved_open_path_dcs_limit`
 
 - **Source**: han2024
 - **Breakthrough paths**:
@@ -871,29 +869,47 @@
   - `pri.coherent_averaging_background_noise_suppression` — status: demonstrated · gain: √N 压低散粒/探测器噪声，直达 nW 回波下的可测灵敏度
   - `pri.bandwidth_power_tradeoff_long_path_comb` — status: demonstrated · gain: 发射功率 1 W + 窄 7 nm 带宽 → 足够梳齿功率密度穿透 83 dB
 
-### `rel.Han18`: `met.open_path_length_dcs_h24` → `pri.turbulence_speckle_freeze_dcs`
+### `rel.han_2024_an18`: `met.open_path_length_dcs_h24` → `pri.turbulence_speckle_freeze_dcs`
 
 - **Source**: han2024
 - **Breakthrough paths**:
   - `meth.adaptive_sampling_correction` — status: proposed · gain: 进一步把湍流相位抖动折算进实时相位校正，延长相干窗口
 
-### `rel.Han19`: `met.spectral_coverage_h24` → `pri.bandwidth_power_tradeoff_long_path_comb`
+### `rel.han_2024_an19`: `met.spectral_coverage_h24` → `pri.bandwidth_power_tradeoff_long_path_comb`
 
 - **Source**: han2024
 - **Breakthrough paths**:
   - `pri.nonlinear_frequency_conversion_comb` — status: proposed · gain: 孤子自频移等非线性方案可在保持高功率同时展宽至 1.6–1.7 μm，覆盖 CH₄ 带
 
-### `rel.His21_03`: `met.8branch_beat_snr_h21` → `pri.inter_branch_fiber_noise_degradation`
+### `rel.hartl_2007_07_08`: `ent.cavity_enhanced_yb_comb_h07` → `pri.mirror_damage_threshold_limit`
+
+- **Source**: hartl2007
+- **Breakthrough paths**:
+  - `pri.coherent_pulse_addition_passive_cavity` — status: proposed · gain: 新型高损伤阈值低色散宽带介质镀层可在同等精细度下推高强度上限
+
+### `rel.hickstein_2017_17_11`: `met.fceo_snr_on_chip_h17` → `pri.mode_overlap_limits_fceo_snr`
+
+- **Source**: hickstein2017
+- **Breakthrough paths**:
+  - `meth.on_chip_f2f_stabilization` — status: proposed · gain: 加入 on-chip 模式转换器，使相位匹配 SHG 回到 TM00，SNR 预期 >37 dB
+
+### `rel.hickstein_2017_17_12`: `meth.on_chip_f2f_stabilization` → `pri.phase_matching_bandwidth_limit_chi2`
+
+- **Source**: hickstein2017
+- **Breakthrough paths**:
+  - `pri.nonlinear_frequency_conversion_comb` — status: proposed · gain: 周期极化（PPLN/PP-LiNbO3-on-insulator）或 chirped QPM 扩展相位匹配带宽到数十–…
+
+### `rel.hisai_2021_is21_03`: `met.8branch_beat_snr_h21` → `pri.inter_branch_fiber_noise_degradation`
 
 - **Source**: hisai2021
 
-### `rel.Hol00_03`: `met.first_pcf_f2f_frequency_uncertainty_h00` → `pri.octave_spanning_enables_f2f_self_reference`
+### `rel.holzwarth_2000_ol00_03`: `met.first_pcf_f2f_frequency_uncertainty_h00` → `pri.octave_spanning_enables_f2f_self_reference`
 
 - **Source**: holzwarth2000
 - **Breakthrough paths**:
   - `pri.supercontinuum_octave_spanning` — status: demonstrated · gain: PCF 非线性展宽至 > 1 倍频程 → 首次 f-2f 自参考
 
-### `rel.Hol01`: `ent.diode_pumped_crlisaf_octave_comb_h01` → `pri.diode_pumped_octave_comb_portability_h01`
+### `rel.holzwarth_2001_ol01`: `ent.diode_pumped_crlisaf_octave_comb_h01` → `pri.diode_pumped_octave_comb_portability_h01`
 
 - **Source**: holzwarth2001
 - **Breakthrough paths**:
@@ -901,7 +917,7 @@
   - `?` — status: ?
   - `?` — status: ?
 
-### `rel.Ide01`: `ent.klm_bidirectional_ring_dual_comb_i16` → `pri.kerr_asymmetry_induced_frep_difference_i16`
+### `rel.ideguchi_2016_de01`: `ent.klm_bidirectional_ring_dual_comb_i16` → `pri.kerr_asymmetry_induced_frep_difference_i16`
 
 - **Source**: ideguchi2016
 - **Breakthrough paths**:
@@ -909,172 +925,151 @@
   - `?` — status: ?
   - `?` — status: ?
 
-### `rel.K11_07`: `ent.microresonator_frequency_comb` → `pri.microresonator_anomalous_dispersion`
-
-- **Source**: kippenberg2011
-- **Breakthrough paths**:
-  - `pri.microresonator_anomalous_dispersion` — status: ?
-
-### `rel.K15_06`: `met.fceo_integrated_phase_noise_k15` → `pri.gain_lifetime_servo_bandwidth_limit`
-
-- **Source**: kuse2015
-- **Breakthrough paths**:
-  - `pri.intracavity_graphene_fast_modulation` — status: demonstrated · gain: 绕过增益寿命限制，带宽达 MHz
-
-### `rel.K18_07`: `ent.microresonator_frequency_comb` → `pri.microresonator_anomalous_dispersion`
-
-- **Source**: kippenberg2018
-- **Breakthrough paths**:
-  - `pri.dispersive_wave_generation` — status: ?
-
-### `rel.KB22_03`: `met.photonic_microwave_phase_noise_k22` → `pri.photodetection_shot_noise_limit`
+### `rel.kalubovilage_2022_B22_03`: `met.photonic_microwave_phase_noise_k22` → `pri.photodetection_shot_noise_limit`
 
 - **Source**: kalubovilage2022
 - **Breakthrough paths**:
   - `meth.monolithic_free_running_photonic_microwave` — status: proposed · gain: 提高光平均功率 P_avg 或改善光电探测器量子效率降低散粒噪声本底
 
-### `rel.Kas18_10`: `ent.multi_branch_fiber_comb_k18` → `pri.inter_branch_fiber_noise_degradation`
+### `rel.kashiwagi_2018_as18_10`: `ent.multi_branch_fiber_comb_k18` → `pri.inter_branch_fiber_noise_degradation`
 
 - **Source**: kashiwagi2018
 - **Breakthrough paths**:
   - `meth.fiber_noise_difference_cancellation_k18` — status: demonstrated · gain: 支间相对不确定度从 >10⁻¹⁸ 降至 10⁻²⁰ 级
 
-### `rel.Kas18_11`: `met.relative_frequency_uncertainty_modallan_k18` → `pri.residual_free_space_path_noise_floor`
+### `rel.kashiwagi_2018_as18_11`: `met.relative_frequency_uncertainty_modallan_k18` → `pri.residual_free_space_path_noise_floor`
 
 - **Source**: kashiwagi2018
 - **Breakthrough paths**:
   - `meth.fiber_noise_difference_cancellation_k18` — status: proposed · gain: 延长 FNDC 覆盖范围至 f_CEO 探测路径 & FNDC 探测自由空间段（封装/真空化或全光纤化）→ 进入 10…
   - `meth.wideband_optical_frequency_synthesis` — status: demonstrated · gain: 以超稳激光 + 光相位追踪替代 1542 nm 松锁 CW 参考，进一步压低短期 1-s 地板
 
-### `rel.Kas18_12`: `met.relative_frequency_instability_allan_k18` → `pri.residual_free_space_path_noise_floor`
+### `rel.kashiwagi_2018_as18_12`: `met.relative_frequency_instability_allan_k18` → `pri.residual_free_space_path_noise_floor`
 
 - **Source**: kashiwagi2018
 - **Breakthrough paths**:
   - `meth.fiber_noise_difference_cancellation_k18` — status: proposed · gain: 封装 PZT 段 + 降低电源噪声 → 1-s 稳定度接近估计地板 8×10⁻¹⁷
 
-### `rel.Kok19_02`: `met.brillouin_rls_1400km_frequency_offset_k19` → `pri.brillouin_amplification_long_distance_k19`
+### `rel.kippenberg_2007_11_07`: `ent.microresonator_frequency_comb` → `pri.microresonator_anomalous_dispersion`
+
+- **Source**: kippenberg2011
+- **Breakthrough paths**:
+  - `pri.microresonator_anomalous_dispersion` — status: ?
+
+### `rel.kippenberg_2017_18_07`: `ent.microresonator_frequency_comb` → `pri.microresonator_anomalous_dispersion`
+
+- **Source**: kippenberg2018
+- **Breakthrough paths**:
+  - `pri.dispersive_wave_generation` — status: ?
+
+### `rel.koke_2019_ok19_02`: `met.brillouin_rls_1400km_frequency_offset_k19` → `pri.brillouin_amplification_long_distance_k19`
 
 - **Source**: koke2019
 - **Breakthrough paths**:
   - `meth.brillouin_rls_hybrid_1400km_k19` — status: demonstrated · gain: 首次 Brillouin + RLS 组合 → 1400 km Continental-scale
 
-### `rel.L006`: `ent.ghz_turnkey_erfiber_comb_l20` → `pri.pump_rin_to_fceo_coupling`
+### `rel.kuse_2015_15_06`: `met.fceo_integrated_phase_noise_k15` → `pri.gain_lifetime_servo_bandwidth_limit`
 
-- **Source**: lesko2020
+- **Source**: kuse2015
 - **Breakthrough paths**:
-  - `meth.aom_feedforward_fceo` — status: proposed · gain: AOM 前馈可将 f_CEO 伺服带宽从 20 kHz 扩展至 >100 kHz， 预期将积分相位噪声从 438 mr…
+  - `pri.intracavity_graphene_fast_modulation` — status: demonstrated · gain: 绕过增益寿命限制，带宽达 MHz
 
-### `rel.L17_05`: `ent.octave_si3n4_microcomb_l17` → `pri.thermo_optic_soliton_access_barrier`
-
-- **Source**: li2017
-- **Breakthrough paths**:
-  - `pri.adjacent_mode_thermal_stabilization` — status: demonstrated · gain: 无需快反馈即可稳定访问单孤子态，降低系统复杂度
-  - `meth.laser_tuning_soliton_access` — status: demonstrated · gain: 简化控制硬件到只用 CW 激光慢调谐
-
-### `rel.Lee15_03`: `pri.monolithic_sesam_graphene_bypass_gain_lifetime_l15` → `pri.gain_lifetime_servo_bandwidth_limit`
+### `rel.lee_2015_ee15_03`: `pri.monolithic_sesam_graphene_bypass_gain_lifetime_l15` → `pri.gain_lifetime_servo_bandwidth_limit`
 
 - **Source**: lee2015
 - **Breakthrough paths**:
   - `ent.monolithic_sesam_graphene_device_l15` — status: demonstrated · gain: 单片集成 SESAM+graphene → >5 MHz 稳频带宽（超越增益寿命限制）
 
-### `rel.Lez11`: `ent.spaceborne_erfiber_comb_l16` → `pri.vibration_cavity_length_coupling`
+### `rel.lesko_2020_006`: `ent.ghz_turnkey_erfiber_comb_l20` → `pri.pump_rin_to_fceo_coupling`
+
+- **Source**: lesko2020
+- **Breakthrough paths**:
+  - `meth.aom_feedforward_fceo` — status: proposed · gain: AOM 前馈可将 f_CEO 伺服带宽从 20 kHz 扩展至 >100 kHz， 预期将积分相位噪声从 438 mr…
+
+### `rel.lezius_2016_ez11`: `ent.spaceborne_erfiber_comb_l16` → `pri.vibration_cavity_length_coupling`
 
 - **Source**: lezius2016
 - **Breakthrough paths**:
   - `pri.ruggedized_erfiber_comb_space_qualification` — status: demonstrated · gain: Monolithic packaging + potted fiber spools suppress vibrati…
   - `meth.flight_operation_protocol_l16` — status: demonstrated · gain: Wide-capture-range servos absorb residual launch-induced ex…
 
-### `rel.Lez12`: `ent.spaceborne_erfiber_comb_l16` → `pri.thermal_drift_comb_offsets`
+### `rel.lezius_2016_ez12`: `ent.spaceborne_erfiber_comb_l16` → `pri.thermal_drift_comb_offsets`
 
 - **Source**: lezius2016
 - **Breakthrough paths**:
   - `pri.ruggedized_erfiber_comb_space_qualification` — status: demonstrated · gain: Active baseplate thermal control keeps f_rep/f_ceo servos w…
 
-### `rel.M07_10`: `met.fceo_integrated_phase_noise_m07` → `pri.pump_rin_to_fceo_coupling`
+### `rel.li_2017_17_05`: `ent.octave_si3n4_microcomb_l17` → `pri.thermo_optic_soliton_access_barrier`
+
+- **Source**: li2017
+- **Breakthrough paths**:
+  - `pri.adjacent_mode_thermal_stabilization` — status: demonstrated · gain: 无需快反馈即可稳定访问单孤子态，降低系统复杂度
+  - `meth.laser_tuning_soliton_access` — status: demonstrated · gain: 简化控制硬件到只用 CW 激光慢调谐
+
+### `rel.ma_2018_a18_06`: `met.integrated_phase_noise_750mhz_yb_m18` → `pri.high_frep_bandwidth_power_tradeoff`
+
+- **Source**: ma2018
+- **Breakthrough paths**:
+  - `meth.bulk_eom_pzt_750mhz_yb_lock` — status: demonstrated · gain: 体晶 EOM + 单级 PZT 将高重频 Yb:fiber 梳推入紧锁域
+
+### `rel.manurkar_2018_an18_03`: `met.self_ref_comb_electrical_power_m18` → `pri.fiber_resistive_modulator_frep_tuning_m18`
+
+- **Source**: manurkar2018
+
+### `rel.marra_2012_ar12_03`: `met.fiber_transferred_comb_stability_m12` → `pri.optical_phase_detection_fiber_link_m12`
+
+- **Source**: marra2012
+- **Breakthrough paths**:
+  - `meth.optical_phase_detection_comb_transfer_m12` — status: demonstrated · gain: 达到与单频超稳激光传递同级稳定度，但覆盖整个梳结构
+
+### `rel.mcferran_2007_07_10`: `met.fceo_integrated_phase_noise_m07` → `pri.pump_rin_to_fceo_coupling`
 
 - **Source**: mcferran2007
 - **Breakthrough paths**:
   - `meth.pump_current_feedback_fceo_lock` — status: proposed · gain: 用更低 RIN 的 DFB 泵二极管（若适配功率）可进一步压低白底
   - `meth.pump_current_feedback_fceo_lock` — status: proposed · gain: 更激进的相位超前补偿可进一步推高伺服带宽并压积分相噪
 
-### `rel.M07_11`: `met.servo_bandwidth_m07` → `pri.pump_rin_to_fceo_coupling`
+### `rel.mcferran_2007_07_11`: `met.servo_bandwidth_m07` → `pri.pump_rin_to_fceo_coupling`
 
 - **Source**: mcferran2007
 - **Breakthrough paths**:
   - `meth.pump_current_feedback_fceo_lock` — status: proposed · gain: 改进电流调制电路降低累积相移，或引入外腔光强调制通道
 
-### `rel.M19_12`: `met.stellar_rv_precision_nir_m19` → `pri.fiber_modal_noise_nir_rv_limit`
+### `rel.metcalf_2019_19_12`: `met.stellar_rv_precision_nir_m19` → `pri.fiber_modal_noise_nir_rv_limit`
 
 - **Source**: metcalf2019
 - **Breakthrough paths**:
   - `meth.common_comb_differential_rv_test` — status: demonstrated · gain: 把差分仪器漂移降到 <10 cm/s（仪器端非瓶颈）， 暴露模态噪声残差为主导项
   - `pri.nanophotonic_supercontinuum_low_power` — status: proposed · gain: 片上单模 SC 替代多模光纤段，减少模态干涉源
 
-### `rel.M19_13`: `met.hpf_instrumental_rv_precision_m19` → `pri.fiber_modal_noise_nir_rv_limit`
+### `rel.metcalf_2019_19_13`: `met.hpf_instrumental_rv_precision_m19` → `pri.fiber_modal_noise_nir_rv_limit`
 
 - **Source**: metcalf2019
 - **Breakthrough paths**:
   - `meth.astro_comb_rv_calibration` — status: proposed · gain: 更激进的扰模 + 探测器定标改进，接近 3.7 cm/s 光子极限
 
-### `rel.Ma18_06`: `met.integrated_phase_noise_750mhz_yb_m18` → `pri.high_frep_bandwidth_power_tradeoff`
-
-- **Source**: ma2018
-- **Breakthrough paths**:
-  - `meth.bulk_eom_pzt_750mhz_yb_lock` — status: demonstrated · gain: 体晶 EOM + 单级 PZT 将高重频 Yb:fiber 梳推入紧锁域
-
-### `rel.Man18_03`: `met.self_ref_comb_electrical_power_m18` → `pri.fiber_resistive_modulator_frep_tuning_m18`
-
-- **Source**: manurkar2018
-
-### `rel.Mar12_03`: `met.fiber_transferred_comb_stability_m12` → `pri.optical_phase_detection_fiber_link_m12`
-
-- **Source**: marra2012
-- **Breakthrough paths**:
-  - `meth.optical_phase_detection_comb_transfer_m12` — status: demonstrated · gain: 达到与单频超稳激光传递同级稳定度，但覆盖整个梳结构
-
-### `rel.Nar23_03`: `met.er_yb_glass_comb_beat_stability_n23` → `pri.er_yb_co_doping_pump_noise_suppression_n23`
+### `rel.nardelli_2023_ar23_03`: `met.er_yb_glass_comb_beat_stability_n23` → `pri.er_yb_co_doping_pump_noise_suppression_n23`
 
 - **Source**: nardelli2023
 
-### `rel.Newb05_02`: `pri.fiber_comb_perturbative_response_theory` → `pri.gain_lifetime_servo_bandwidth_limit`
+### `rel.newbury_2005_ewb05_02`: `pri.fiber_comb_perturbative_response_theory` → `pri.gain_lifetime_servo_bandwidth_limit`
 
 - **Source**: newbury2005
 
-### `rel.P13_14`: `met.microcomb_equidistance_offset_p13` → `pri.microcomb_subcomb_offset_p13`
+### `rel.papp_2013_13_14`: `met.microcomb_equidistance_offset_p13` → `pri.microcomb_subcomb_offset_p13`
 
 - **Source**: papp2013
 - **Breakthrough paths**:
   - `pri.injection_locked_equidistant_microcomb_p13` — status: demonstrated · gain: 通过 pump-seed FWM 注入锁定主导子梳，跨 >54 模等间距偏差 ≤2 Hz
   - `meth.laser_tuning_soliton_access` — status: demonstrated · gain: 以耗散 Kerr 孤子机制直接给出确定性、严格等间距的单态梳，打破 subcomb 族竞争
 
-### `rel.P13_15`: `met.microcomb_linespacing_tuning_range_p13` → `pri.parametric_seeding_microcomb_spacing_control`
+### `rel.papp_2013_13_15`: `met.microcomb_linespacing_tuning_range_p13` → `pri.parametric_seeding_microcomb_spacing_control`
 
 - **Source**: papp2013
 - **Breakthrough paths**:
   - `meth.laser_tuning_soliton_access` — status: demonstrated · gain: 孤子态下 Δν 由孤子重复率决定，可通过泵失谐/热控连续大范围调
 
-### `rel.P18_03`: `ent.microresonator_frequency_comb` → `pri.thermal_instability_dks_access`
-
-- **Source**: pasquazi2018
-
-### `rel.P18_08`: `ent.microresonator_frequency_comb` → `pri.microcomb_self_injection_locking`
-
-- **Source**: pasquazi2018
-
-### `rel.PC15_09`: `met.photonic_microwave_phase_noise_pc15` → `pri.photodetection_shot_noise_limit`
-
-- **Source**: portuondo-campa2015
-- **Breakthrough paths**:
-  - `pri.pulse_interleaver_rep_rate_multiplication` — status: demonstrated · gain: 将 f_rep 倍增至接近 f_µw 提升探测器饱和电流与目标谐波功率，使 L_shot(f) 按 ī·P_RF 下压…
-  - `meth.dpssl_interleaver_photonic_microwave_pc15` — status: proposed · gain: 替换 PIN InGaAs 为 mUTC 光电探测器（线性工作光功率 >100 mW，无放大输出 >10 dBm @ …
-
-### `rel.PC15_10`: `met.photonic_microwave_phase_noise_pc15` → `pri.amplifier_residual_phase_noise_limit`
-
-- **Source**: portuondo-campa2015
-- **Breakthrough paths**:
-  - `meth.dpssl_interleaver_photonic_microwave_pc15` — status: proposed · gain: 采用 mUTC 高饱和光电探测器提供足够 RF 功率直驱混频器，去除放大器 → 远载波本底直接降至 cw 散粒极限乃至…
-
-### `rel.Pap13b_01`: `ent.co2_machined_microrod_comb_p13b` → `pri.mechanical_microrod_frep_control_p13b`
+### `rel.papp_2013_ap13b_01`: `ent.co2_machined_microrod_comb_p13b` → `pri.mechanical_microrod_frep_control_p13b`
 
 - **Source**: papp2013b
 - **Breakthrough paths**:
@@ -1083,7 +1078,15 @@
   - `?` — status: ?
   - `?` — status: ?
 
-### `rel.Por01`: `ent.high_temp_gas_mixture_hhg_p18` → `pri.high_temp_gas_suppresses_steady_state_plasma_p18`
+### `rel.pasquazi_2016_18_03`: `ent.microresonator_frequency_comb` → `pri.thermal_instability_dks_access`
+
+- **Source**: pasquazi2018
+
+### `rel.pasquazi_2016_18_08`: `ent.microresonator_frequency_comb` → `pri.microcomb_self_injection_locking`
+
+- **Source**: pasquazi2018
+
+### `rel.porat_2018_or01`: `ent.high_temp_gas_mixture_hhg_p18` → `pri.high_temp_gas_suppresses_steady_state_plasma_p18`
 
 - **Source**: porat2018
 - **Breakthrough paths**:
@@ -1091,77 +1094,72 @@
   - `?` — status: ?
   - `?` — status: ?
 
-### `rel.R19_17`: `met.frep_inloop_instability_r19` → `pri.microwave_reference_transfer_to_optical_comb`
+### `rel.portuondo_campa_2015_C15_09`: `met.photonic_microwave_phase_noise_pc15` → `pri.photodetection_shot_noise_limit`
+
+- **Source**: portuondo-campa2015
+- **Breakthrough paths**:
+  - `pri.pulse_interleaver_rep_rate_multiplication` — status: demonstrated · gain: 将 f_rep 倍增至接近 f_µw 提升探测器饱和电流与目标谐波功率，使 L_shot(f) 按 ī·P_RF 下压…
+  - `meth.dpssl_interleaver_photonic_microwave_pc15` — status: proposed · gain: 替换 PIN InGaAs 为 mUTC 光电探测器（线性工作光功率 >100 mW，无放大输出 >10 dBm @ …
+
+### `rel.portuondo_campa_2015_C15_10`: `met.photonic_microwave_phase_noise_pc15` → `pri.amplifier_residual_phase_noise_limit`
+
+- **Source**: portuondo-campa2015
+- **Breakthrough paths**:
+  - `meth.dpssl_interleaver_photonic_microwave_pc15` — status: proposed · gain: 采用 mUTC 高饱和光电探测器提供足够 RF 功率直驱混频器，去除放大器 → 远载波本底直接降至 cw 散粒极限乃至…
+
+### `rel.rao_2019_19_17`: `met.frep_inloop_instability_r19` → `pri.microwave_reference_transfer_to_optical_comb`
 
 - **Source**: rao2019
 - **Breakthrough paths**:
   - `meth.wideband_optical_frequency_synthesis` — status: demonstrated · gain: 引入超稳激光 + 光相位追踪作为光频参考，绕过微波参考相噪天花板，达 10⁻¹⁷ 量级
 
-### `rel.R19_18`: `met.li_d1_measurement_uncertainty_r19` → `pri.microwave_reference_transfer_to_optical_comb`
+### `rel.rao_2019_19_18`: `met.li_d1_measurement_uncertainty_r19` → `pri.microwave_reference_transfer_to_optical_comb`
 
 - **Source**: rao2019
 - **Breakthrough paths**:
   - `meth.optical_frequency_counting` — status: proposed · gain: 若把梳锁定至光频标准（如 Sr/Yb 光钟）而非微波，可将 D1 绝对频率测量推进到 < 1 Hz
 
-### `rel.R19_19`: `met.beat_snr_li_d1_r19` → `pri.nir_to_visible_shg_comb_link_r19`
+### `rel.rao_2019_19_19`: `met.beat_snr_li_d1_r19` → `pri.nir_to_visible_shg_comb_link_r19`
 
 - **Source**: rao2019
 - **Breakthrough paths**:
   - `pri.nonlinear_frequency_conversion_comb` — status: proposed · gain: 改用 PM-HNLF、色散工程设计的硅基波导 SC 源或多级 PPLN 级联，进一步把 671 nm 单模功率推向 µ…
 
-### `rel.Rol18_03`: `met.dual_branch_transfer_stability_r18` → `pri.dual_branch_differential_phase_noise_cancellation_r18`
+### `rel.rolland_2018_ol18_03`: `met.dual_branch_transfer_stability_r18` → `pri.dual_branch_differential_phase_noise_cancellation_r18`
 
 - **Source**: rolland2018
 - **Breakthrough paths**:
   - `meth.dual_branch_fceo_locking_passive_cancellation_r18` — status: demonstrated · gain: 将双支路劣化从 10⁻¹⁶ 降至 10⁻¹⁸（首次）
 
-### `rel.S12_09`: `met.mid_ir_spectral_coverage` → `pri.nonlinear_frequency_conversion_comb`
+### `rel.schliesser_2011_12_09`: `met.mid_ir_spectral_coverage` → `pri.nonlinear_frequency_conversion_comb`
 
 - **Source**: schliesser2012
 
-### `rel.S12_10`: `met.trace_gas_sensitivity` → `met.mid_ir_spectral_coverage`
+### `rel.schliesser_2011_12_10`: `met.trace_gas_sensitivity` → `met.mid_ir_spectral_coverage`
 
 - **Source**: schliesser2012
 
-### `rel.S14_17`: `ent.ruggedized_field_comb_s14` → `pri.vibration_fopt_linear_coupling`
-
-- **Source**: sinclair2014
-- **Breakthrough paths**:
-  - `pri.transportable_cavity_reference_coupling` — status: proposed · gain: 采用车载低加速度灵敏度的腔稳参考（如 Leibrandt 2011/2013，<10⁻¹² /g）以消除 f_opt …
-  - `pri.pm_fiber_splice_vibration_immunity` — status: demonstrated · gain: 改进机械封装 + 加气动隔振（2.5 Hz air-mount）可映射到船/卡车/C-5 等平台振动谱内
-
-### `rel.S14_18`: `ent.ruggedized_field_comb_s14` → `pri.vibration_cavity_length_coupling`
-
-- **Source**: sinclair2014
-- **Breakthrough paths**:
-  - `pri.pm_fiber_splice_vibration_immunity` — status: demonstrated · gain: 全 PM 光纤 + 灌胶 + 光纤组件环氧固定，压制 f_ceo 对振动的敏感度至不可测水平
-
-### `rel.S18_18`: `met.microcomb_wallplug_electrical_power_s18` → `pri.packaging_loss_limits_wallplug_efficiency_s18`
-
-- **Source**: stern2018
-- **Breakthrough paths**:
-  - `pri.pump_comb_copackaging_swap_reduction_s18` — status: proposed · gain: 被动对准/键合封装，将 Pelec 再压 2–5×，释放余量供 f-2f 链路
-
-### `rel.S18_19`: `met.microcomb_laser_pump_power_s18` → `pri.high_Q_si3n4_low_threshold_soliton_s18`
-
-- **Source**: stern2018
-- **Breakthrough paths**:
-  - `pri.high_Q_si3n4_low_threshold_soliton_s18` — status: proposed · gain: Si3N4 Q 从 8×10⁶ 提升至 3×10⁷，阈值 Popt 再降一个量级至 ~100 µW
-
-### `rel.S18_20`: `met.microcomb_wallplug_electrical_power_s18` → `pri.pump_comb_copackaging_swap_reduction_s18`
-
-- **Source**: stern2018
-- **Breakthrough paths**:
-  - `meth.cw_pumped_microcomb_generation` — status: proposed · gain: 引入更高效率 III–V 增益材料 + 直接片上集成，进一步降低泵电功耗
-
-### `rel.S22_16`: `met.microcomb_aggregate_data_rate_s22` → `pri.microcomb_replaces_laser_array_for_wdm_s22`
+### `rel.shu_2022_22_16`: `met.microcomb_aggregate_data_rate_s22` → `pri.microcomb_replaces_laser_array_for_wdm_s22`
 
 - **Source**: shu2022
 - **Breakthrough paths**:
   - `meth.laser_tuning_soliton_access` — status: proposed · gain: 通过更强泵浦 + 更高 Q 微腔，让 DFB 激励下全部 20 通道进入 FEC 余量 → 回到 2 Tbit/s 级
   - `pri.normal_dispersion_dark_pulse_s22` — status: proposed · gain: 进一步定量化 avoided mode-crossing 设计，提升单齿功率与平坦度，扩展可用通道数至 >30
 
-### `rel.Spa01`: `ent.cedcs_cold_molecule_system_s16` → `pri.buffer_gas_cooling_spectral_simplification_s16`
+### `rel.sinclair_2014_14_17`: `ent.ruggedized_field_comb_s14` → `pri.vibration_fopt_linear_coupling`
+
+- **Source**: sinclair2014
+- **Breakthrough paths**:
+  - `pri.transportable_cavity_reference_coupling` — status: proposed · gain: 采用车载低加速度灵敏度的腔稳参考（如 Leibrandt 2011/2013，<10⁻¹² /g）以消除 f_opt …
+  - `pri.pm_fiber_splice_vibration_immunity` — status: demonstrated · gain: 改进机械封装 + 加气动隔振（2.5 Hz air-mount）可映射到船/卡车/C-5 等平台振动谱内
+
+### `rel.sinclair_2014_14_18`: `ent.ruggedized_field_comb_s14` → `pri.vibration_cavity_length_coupling`
+
+- **Source**: sinclair2014
+- **Breakthrough paths**:
+  - `pri.pm_fiber_splice_vibration_immunity` — status: demonstrated · gain: 全 PM 光纤 + 灌胶 + 光纤组件环氧固定，压制 f_ceo 对振动的敏感度至不可测水平
+
+### `rel.spaun_2016_pa01`: `ent.cedcs_cold_molecule_system_s16` → `pri.buffer_gas_cooling_spectral_simplification_s16`
 
 - **Source**: spaun2016
 - **Breakthrough paths**:
@@ -1169,24 +1167,38 @@
   - `?` — status: ?
   - `?` — status: ?
 
-### `rel.Suh14`: `ent.microresonator_astrocomb_s19` → `pri.microcomb_rv_calibration_limit`
+### `rel.stern_2018_18_18`: `met.microcomb_wallplug_electrical_power_s18` → `pri.packaging_loss_limits_wallplug_efficiency_s18`
+
+- **Source**: stern2018
+- **Breakthrough paths**:
+  - `pri.pump_comb_copackaging_swap_reduction_s18` — status: proposed · gain: 被动对准/键合封装，将 Pelec 再压 2–5×，释放余量供 f-2f 链路
+
+### `rel.stern_2018_18_19`: `met.microcomb_laser_pump_power_s18` → `pri.high_Q_si3n4_low_threshold_soliton_s18`
+
+- **Source**: stern2018
+- **Breakthrough paths**:
+  - `pri.high_Q_si3n4_low_threshold_soliton_s18` — status: proposed · gain: Si3N4 Q 从 8×10⁶ 提升至 3×10⁷，阈值 Popt 再降一个量级至 ~100 µW
+
+### `rel.stern_2018_18_20`: `met.microcomb_wallplug_electrical_power_s18` → `pri.pump_comb_copackaging_swap_reduction_s18`
+
+- **Source**: stern2018
+- **Breakthrough paths**:
+  - `meth.cw_pumped_microcomb_generation` — status: proposed · gain: 引入更高效率 III–V 增益材料 + 直接片上集成，进一步降低泵电功耗
+
+### `rel.suh_2019_uh14`: `ent.microresonator_astrocomb_s19` → `pri.microcomb_rv_calibration_limit`
 
 - **Source**: suh2019
 - **Breakthrough paths**:
   - `pri.microcomb_to_astrocomb_adaptation` — status: proposed · gain: 若 f0 参考升级为光钟/光纤链路稳定的光学参考，可将 f0 抖动从 ~1 MHz 降至 <<1 kHz，RV 等效 …
   - `meth.laser_tuning_soliton_access` — status: proposed · gain: 更稳定的孤子泵浦伺服与包络稳定，降低梳线幅度扰动对质心提取的影响。
 
-### `rel.Suh15`: `ent.microresonator_astrocomb_s19` → `pri.native_mode_spacing_matching`
+### `rel.suh_2019_uh15`: `ent.microresonator_astrocomb_s19` → `pri.native_mode_spacing_matching`
 
 - **Source**: suh2019
 - **Breakthrough paths**:
   - `pri.microcomb_to_astrocomb_adaptation` — status: proposed · gain: 采用更高效的非线性芯片（Si3N4, AlGaAs）展宽至可见/近紫外，覆盖 HIRES/HARPS 工作带。
 
-### `rel.T17_06`: `pri.intracavity_eom_group_delay_modulation` → `pri.eom_acoustic_resonance_limit_t17`
-
-- **Source**: torcheboeuf2017
-
-### `rel.Tim01`: `ent.opgap_super_octave_mir_comb_t18` → `pri.intra_pulse_dfg_super_octave_mir_t18`
+### `rel.timmers_2018_im01`: `ent.opgap_super_octave_mir_comb_t18` → `pri.intra_pulse_dfg_super_octave_mir_t18`
 
 - **Source**: timmers2018
 - **Breakthrough paths**:
@@ -1194,120 +1206,124 @@
   - `?` — status: ?
   - `?` — status: ?
 
-### `rel.W14_06`: `met.frep_500mhz_no_amp_w14` → `pri.high_frep_bandwidth_power_tradeoff`
+### `rel.torcheboeuf_2017_17_06`: `pri.intracavity_eom_group_delay_modulation` → `pri.eom_acoustic_resonance_limit_t17`
+
+- **Source**: torcheboeuf2017
+
+### `rel.wang_2014_14_06`: `met.frep_500mhz_no_amp_w14` → `pri.high_frep_bandwidth_power_tradeoff`
 
 - **Source**: wang2014
 
-### `rel.W25_10`: `met.digital_servo_control_bandwidth_w25` → `pri.digital_servo_latency_bandwidth_tradeoff`
+### `rel.wang_2017_an11`: `ent.iii_v_on_si_ultradense_comb_w17` → `pri.waveguide_loss_comb_limit`
+
+- **Source**: wang2017
+
+### `rel.wang_2017_an12`: `ent.iii_v_on_si_ultradense_comb_w17` → `pri.group_velocity_dispersion_comb_limit`
+
+- **Source**: wang2017
+
+### `rel.wang_2017_an13`: `ent.iii_v_on_si_ultradense_comb_w17` → `pri.linewidth_enhancement_factor_limit`
+
+- **Source**: wang2017
+
+### `rel.wang_2025_25_10`: `met.digital_servo_control_bandwidth_w25` → `pri.digital_servo_latency_bandwidth_tradeoff`
 
 - **Source**: wang2025
 - **Breakthrough paths**:
   - `meth.low_latency_iq_phase_detection_w25` — status: demonstrated · gain: IQ 解调 50 ns → 带宽从 ~100 kHz 级提升到 1.1 MHz
   - `pri.digital_servo_latency_bandwidth_tradeoff` — status: proposed · gain: ASIC / 更高时钟 FPGA 把 τ_total 压至 <50 ns，原则上支持 >5 MHz；需同步改善 ADC…
 
-### `rel.W25_11`: `met.fbeat_mod_allan_deviation_w25` → `pri.digital_servo_latency_bandwidth_tradeoff`
+### `rel.wang_2025_25_11`: `met.fbeat_mod_allan_deviation_w25` → `pri.digital_servo_latency_bandwidth_tradeoff`
 
 - **Source**: wang2025
 - **Breakthrough paths**:
   - `meth.low_latency_iq_phase_detection_w25` — status: demonstrated · gain: 把 fbeat modσ_y@1 s 从典型数字方案的 ~10⁻¹⁷ 改进到 7.27×10⁻¹⁸
 
-### `rel.Wan11`: `ent.iii_v_on_si_ultradense_comb_w17` → `pri.waveguide_loss_comb_limit`
-
-- **Source**: wang2017
-
-### `rel.Wan12`: `ent.iii_v_on_si_ultradense_comb_w17` → `pri.group_velocity_dispersion_comb_limit`
-
-- **Source**: wang2017
-
-### `rel.Wan13`: `ent.iii_v_on_si_ultradense_comb_w17` → `pri.linewidth_enhancement_factor_limit`
-
-- **Source**: wang2017
-
-### `rel.X15`: `met.pulse_duration_cycles_x20` → `pri.all_fiber_nonlinear_self_compression_2um`
+### `rel.xing_2020_15`: `met.pulse_duration_cycles_x20` → `pri.all_fiber_nonlinear_self_compression_2um`
 
 - **Source**: xing2020
 - **Breakthrough paths**:
   - `meth.ssfs_tdf_cpa_self_compression_comb_x20` — status: proposed · gain: 改善一级压缩脉冲质量（例如 L-band EDFA + 高掺杂 TDF），提高主峰能量比与峰值功率
   - `pri.all_fiber_nonlinear_self_compression_2um` — status: proposed · gain: 末级 PCF 替代 HNLF2，可在 100 MHz 下达到 mW 级峰值能量并进一步压缩
 
-### `rel.Y19_17`: `met.voc_path_integrated_sensitivity_y19` → `pri.dfg_power_atmospheric_window_tradeoff`
-
-- **Source**: ycas2019
-- **Breakthrough paths**:
-  - `meth.dfg_comb_generation` — status: proposed · gain: 更高泵浦功率（>10 W PM Er 光纤梳）或腔内增强 DFG， 将单梳 MIR 功率由 5 mW 提升至 50–1…
-
-### `rel.Y19_18`: `met.voc_path_integrated_sensitivity_y19` → `pri.photon_starved_open_path_dcs_limit`
-
-- **Source**: ycas2019
-- **Breakthrough paths**:
-  - `meth.midir_dcs_vocs_protocol_y19` — status: proposed · gain: 更大回射器口径（127 mm → 多元阵列）+ 更均匀望远镜照明设计， 可降低残余基线并在 1 km 以上保持 ppb…
-
-### `rel.Y19_19`: `met.voc_path_integrated_sensitivity_y19` → `pri.hitran_voigt_declutter_trace_retrieval`
-
-- **Source**: ycas2019
-- **Breakthrough paths**:
-  - `pri.hitran_voigt_declutter_trace_retrieval` — status: proposed · gain: 引入 Speed-Dependent Voigt / Hartmann–Tran 线型（HTP）， 加上 H₂O 连续…
-
-### `rel.Y19_20`: `ent.midir_dcs_vocs_y19` → `pri.fundamental_ch_stretch_enhancement_mir`
-
-- **Source**: ycas2019
-- **Breakthrough paths**:
-  - `meth.dfg_comb_generation` — status: proposed · gain: 级联 DFG 或 OPO/OPA 向 5–12 µm 指纹区延拓， 将可探测 VOC 从 C-H 基频扩展到 C=O、…
-
-### `rel.YC12_04`: `met.astro_comb_rv_precision_y12` → `pri.fabry_perot_mode_filter_astro_comb`
+### `rel.ycas_2012_C12_04`: `met.astro_comb_rv_precision_y12` → `pri.fabry_perot_mode_filter_astro_comb`
 
 - **Source**: ycas2012
 - **Breakthrough paths**:
   - `meth.astro_comb_rv_calibration` — status: proposed · gain: 联合光谱仪稳定化 → cm/s 级 RV（未来目标）
 
-### `rel.Z12_05`: `ent.menlo_erfiber_eom_comb_z12` → `pri.eom_acoustic_resonance_limit_t17`
+### `rel.ycas_2019_19_17`: `met.voc_path_integrated_sensitivity_y19` → `pri.dfg_power_atmospheric_window_tradeoff`
+
+- **Source**: ycas2019
+- **Breakthrough paths**:
+  - `meth.dfg_comb_generation` — status: proposed · gain: 更高泵浦功率（>10 W PM Er 光纤梳）或腔内增强 DFG， 将单梳 MIR 功率由 5 mW 提升至 50–1…
+
+### `rel.ycas_2019_19_18`: `met.voc_path_integrated_sensitivity_y19` → `pri.photon_starved_open_path_dcs_limit`
+
+- **Source**: ycas2019
+- **Breakthrough paths**:
+  - `meth.midir_dcs_vocs_protocol_y19` — status: proposed · gain: 更大回射器口径（127 mm → 多元阵列）+ 更均匀望远镜照明设计， 可降低残余基线并在 1 km 以上保持 ppb…
+
+### `rel.ycas_2019_19_19`: `met.voc_path_integrated_sensitivity_y19` → `pri.hitran_voigt_declutter_trace_retrieval`
+
+- **Source**: ycas2019
+- **Breakthrough paths**:
+  - `pri.hitran_voigt_declutter_trace_retrieval` — status: proposed · gain: 引入 Speed-Dependent Voigt / Hartmann–Tran 线型（HTP）， 加上 H₂O 连续…
+
+### `rel.ycas_2019_19_20`: `ent.midir_dcs_vocs_y19` → `pri.fundamental_ch_stretch_enhancement_mir`
+
+- **Source**: ycas2019
+- **Breakthrough paths**:
+  - `meth.dfg_comb_generation` — status: proposed · gain: 级联 DFG 或 OPO/OPA 向 5–12 µm 指纹区延拓， 将可探测 VOC 从 C-H 基频扩展到 C=O、…
+
+### `rel.zhang_2012_12_05`: `ent.menlo_erfiber_eom_comb_z12` → `pri.eom_acoustic_resonance_limit_t17`
 
 - **Source**: zhang2012c
 
-### `rel.Z12_06`: `ent.menlo_erfiber_eom_comb_z12` → `pri.am_pm_conversion_photodetection`
+### `rel.zhang_2012_12_06`: `ent.menlo_erfiber_eom_comb_z12` → `pri.am_pm_conversion_photodetection`
 
 - **Source**: zhang2012c
 
-### `rel.Z15_06`: `met.frep_servo_bandwidth_z15` → `pri.gain_lifetime_servo_bandwidth_limit`
+### `rel.zhang_2015_15_06`: `met.frep_servo_bandwidth_z15` → `pri.gain_lifetime_servo_bandwidth_limit`
 
 - **Source**: zhang2015
 - **Breakthrough paths**:
   - `pri.intracavity_eom_frep_wideband_feedback` — status: demonstrated · gain: 腔内 EOM 绕过增益寿命限制
 
-### `rel.Z22B_11`: `met.out_of_loop_instability_z22b` → `pri.thermal_drift_out_of_loop_fiber_noise`
+### `rel.zhang_2017_hOFC17_14`: `met.fceo_instability_z17` → `pri.servo_bandwidth_limited_comb_locking`
+
+- **Source**: zhang2017
+- **Breakthrough paths**:
+  - `meth.eom_pzt_dual_actuator_frep_lock_z17` — status: proposed · gain: 改用腔内 EOM 等快执行器作为 f_ceo 高速通道，突破泵浦调制带宽限制
+
+### `rel.zhang_2017_hOFC17_15`: `met.fceo_instability_z17` → `pri.am_to_pm_conversion_in_comb`
+
+- **Source**: zhang2017
+- **Breakthrough paths**:
+  - `pri.npe_nalm_hybrid_mode_locking` — status: demonstrated · gain: 通过 NPE 快饱和吸收降低 RIN → 降低 AM-PM 转换带来的 f_ceo 残余相噪
+
+### `rel.zhang_2017_ha17_03`: `pri.polarization_rotation_cavity_loss_frequency_control_z17` → `pri.gain_lifetime_servo_bandwidth_limit`
+
+- **Source**: zhang2017b
+
+### `rel.zhang_2022_22B_11`: `met.out_of_loop_instability_z22b` → `pri.thermal_drift_out_of_loop_fiber_noise`
 
 - **Source**: zhang2022b
 - **Breakthrough paths**:
   - `meth.temperature_matched_multibranch_stabilization` — status: demonstrated · gain: 支路长度 ±1 cm + 温度 ±0.2 °C → out-of-loop 5.5×10⁻¹⁹ @4000 s
   - `meth.wideband_optical_frequency_synthesis` — status: demonstrated · gain: out-of-loop 可进一步压到 ~10⁻²⁰
 
-### `rel.Z22B_12`: `met.out_of_loop_instability_z22b` → `pri.multibranch_vs_single_branch_tradeoff`
+### `rel.zhang_2022_22B_12`: `met.out_of_loop_instability_z22b` → `pri.multibranch_vs_single_branch_tradeoff`
 
 - **Source**: zhang2022b
 - **Breakthrough paths**:
   - `meth.temperature_matched_multibranch_stabilization` — status: demonstrated · gain: 保留多支路 SNR 优势的同时将 OOL 压到 5.5×10⁻¹⁹
 
-### `rel.Z22_06`: `met.vuv_comb_tunability_z22` → `pri.cavity_enhanced_hhg_comb`
+### `rel.zhang_2022_22_06`: `met.vuv_comb_tunability_z22` → `pri.cavity_enhanced_hhg_comb`
 
 - **Source**: zhang2022
 - **Breakthrough paths**:
   - `meth.tunable_vuv_comb_generation_cavity_hhg` — status: demonstrated · gain: 通过调谐基频中心波长覆盖 229mTh 不确定度全部区间
-
-### `rel.ZhOFC17_14`: `met.fceo_instability_z17` → `pri.servo_bandwidth_limited_comb_locking`
-
-- **Source**: zhang2017
-- **Breakthrough paths**:
-  - `meth.eom_pzt_dual_actuator_frep_lock_z17` — status: proposed · gain: 改用腔内 EOM 等快执行器作为 f_ceo 高速通道，突破泵浦调制带宽限制
-
-### `rel.ZhOFC17_15`: `met.fceo_instability_z17` → `pri.am_to_pm_conversion_in_comb`
-
-- **Source**: zhang2017
-- **Breakthrough paths**:
-  - `pri.npe_nalm_hybrid_mode_locking` — status: demonstrated · gain: 通过 NPE 快饱和吸收降低 RIN → 降低 AM-PM 转换带来的 f_ceo 残余相噪
-
-### `rel.Zha17_03`: `pri.polarization_rotation_cavity_loss_frequency_control_z17` → `pri.gain_lifetime_servo_bandwidth_limit`
-
-- **Source**: zhang2017b
 
 ## Cross-Topic References
 
@@ -1315,15 +1331,15 @@ Nodes referenced but not defined in this topic:
 
 | Relation | Predicate | External Node | Source |
 |----------|-----------|---------------|--------|
-| `rel.G19_06` | CONDITIONED-BY | `ent.fp_cavity_system` | giunta2019 |
-| `rel.LM18_05` | CONDITIONED-BY | `ent.fp_cavity_system` | lamb2018 |
-| `rel.L17F_06` | CONDITIONED-BY | `ent.fp_cavity_system` | leopardi2017 |
-| `rel.PC15_11` | CONDITIONED-BY | `ent.fp_cavity_system` | portuondo-campa2015 |
-| `rel.S14_16` | CONDITIONED-BY | `ent.fp_cavity_system` | sinclair2014 |
-| `rel.W25_02` | CONDITIONED-BY | `ent.fp_cavity_system` | wang2025 |
-| `rel.Z22_05` | CONDITIONED-BY | `ent.fp_cavity_system` | zhang2022 |
-| `rel.Z22B_14` | CONDITIONED-BY | `ent.fp_cavity_system` | zhang2022b |
-| `rel.Cho20_12` | CONDITIONED-BY | `ent.optical_frequency_standard` | chou2020 |
-| `rel.H07_10` | CONDITIONED-BY | `ent.vibration_environment` | hartl2007 |
-| `rel.PD20_04` | CHARACTERIZED-BY | `met.fractional_freq_instability_y99` | picque2020 |
+| `rel.giunta_2004_19_06` | CONDITIONED-BY | `ent.fp_cavity_system` | giunta2019 |
+| `rel.lamb_2018_M18_05` | CONDITIONED-BY | `ent.fp_cavity_system` | lamb2018 |
+| `rel.leopardi_2017_17F_06` | CONDITIONED-BY | `ent.fp_cavity_system` | leopardi2017 |
+| `rel.portuondo_campa_2015_C15_11` | CONDITIONED-BY | `ent.fp_cavity_system` | portuondo-campa2015 |
+| `rel.sinclair_2014_14_16` | CONDITIONED-BY | `ent.fp_cavity_system` | sinclair2014 |
+| `rel.wang_2025_25_02` | CONDITIONED-BY | `ent.fp_cavity_system` | wang2025 |
+| `rel.zhang_2022_22_05` | CONDITIONED-BY | `ent.fp_cavity_system` | zhang2022 |
+| `rel.zhang_2022_22B_14` | CONDITIONED-BY | `ent.fp_cavity_system` | zhang2022b |
+| `rel.chou_2020_ho20_12` | CONDITIONED-BY | `ent.optical_frequency_standard` | chou2020 |
+| `rel.hartl_2007_07_10` | CONDITIONED-BY | `ent.vibration_environment` | hartl2007 |
+| `rel.diddams_2020_D20_04` | CHARACTERIZED-BY | `met.fractional_freq_instability_y99` | picque2020 |
 

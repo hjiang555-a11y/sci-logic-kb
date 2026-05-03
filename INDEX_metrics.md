@@ -2,7 +2,7 @@
 
 # 📊 Metrics Quick Reference
 
-> Auto-generated 2026-05-03 12:49 UTC
+> Auto-generated 2026-05-03 13:23 UTC
 >
 > Metrics are grouped by **role** (v4.4 σ_y-first convention, see `topics/ultrastable-laser/_meta/scoping_principles.md` v2). Role is taken from the `role` field on the metric node when present, otherwise inferred from ID / name heuristics.
 
@@ -77,6 +77,7 @@
 | `met.spectral_purity_transfer_degradation_nicolodi2014` | OFC光谱纯度传递退化（1 s） | <3e-18 | Er:fiber OFC，腔内EOM相位锁定，积分时间1 s，1062 nm→1542 nm传递 | [nicolodi2014](topics/optical-frequency-combs/papers/nicolodi2014.yaml) |
 | `met.synthesis_fractional_instability` | 光频合成器分数频率不稳定度 | ≤7.7×10⁻¹⁵ | 输出频率1520–1580 nm C波段，相对辅助Er:fiber自参考梳，200 s平均 | [spencer2018](topics/optical-frequency-combs/papers/spencer2018.yaml) |
 | `met.timing_jitter_hybrid_osc_fortier2012` | 10 GHz混合振荡器绝对时序抖动 | 420 | 10 GHz，积分1 Hz–5 GHz，单台混合振荡器（1 GHz Ti:sapphire OFD… | [fortier2012](topics/optical-frequency-combs/papers/fortier2012.yaml) |
+| `met.xie2016_zeptosecond_timing_noise` | Xie 2016 zeptosecond 微波定时噪声 | 频率稳定度 < 6.5×10⁻¹⁶ @1 s；定时噪声 floor < 41 zs Hz⁻¹/²；相位噪声 < −17… | Er 光纤频率梳（250 MHz）；超稳 CW 激光参考（1542 nm，5.5×10⁻¹⁶）；定… | [xie2016](topics/optical-frequency-combs/papers/xie2016.yaml) |
 
 ### 📊 Secondary (线宽/PSD/相干)
 

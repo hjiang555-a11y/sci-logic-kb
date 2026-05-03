@@ -2,7 +2,7 @@
 
 # 🔬 Principles Quick Reference
 
-> Auto-generated 2026-05-03 12:49 UTC
+> Auto-generated 2026-05-03 13:23 UTC
 
 ## Tier: meta
 
@@ -410,8 +410,10 @@
 | `pri.correlation_spectroscopy_clock_comparison` | 关联谱光钟比对原理 | Frequency Standards | [zhang2023_lu](topics/frequency-standards/papers/zhang2023_lu.yaml) |
 | `pri.good_bad_cavity_active_clock` | Good-bad-cavity 主动光钟原理 | Frequency Standards | [shi2019](topics/frequency-standards/papers/shi2019.yaml) |
 | `pri.high_bandwidth_pzt_cavity_servo` | 高带宽 PZT 光腔长度伺服原理 | Ultrastable Laser | [briles2010](topics/ultrastable-laser/papers/briles2010.yaml) |
+| `pri.high_linearity_photodiode_ofd_noise_floor` | 高线性度光电二极管 OFD 噪声 floor 原理 | Optical Frequency Combs | [xie2016](topics/optical-frequency-combs/papers/xie2016.yaml) |
 | `pri.highly_charged_ion_optical_clock` | 高电荷离子光钟原理 | Frequency Standards | [king2022](topics/frequency-standards/papers/king2022.yaml) |
 | `pri.hyperpolarizability_in_optical_lattice_clocks` | 光晶格钟 hyperpolarizability 原理 | Frequency Standards | [brown2017](topics/frequency-standards/papers/brown2017.yaml) |
+| `pri.integrated_photonic_optical_frequency_division` | 集成光子光频分频原理 | Optical Frequency Combs | [kudelin2024](topics/optical-frequency-combs/papers/kudelin2024.yaml) |
 | `pri.otwtft_complex_maximum_likelihood_estimation` | O-TWTFT 复杂最大似然时延估计原理 | Time-Frequency Transfer | [fang2026](topics/time-frequency-transfer/papers/fang2026.yaml) |
 | `pri.solid_state_nuclear_clock_frequency_reproducibility` | 固态核光钟频率复现性原理 | Frequency Standards | [ooi2025](topics/frequency-standards/papers/ooi2025.yaml) |
 | `pri.th229_ion_nuclear_clock_scheme` | ²²⁹Th 离子核光钟方案原理 | Frequency Standards | [campbell2012](topics/frequency-standards/papers/campbell2012.yaml) |

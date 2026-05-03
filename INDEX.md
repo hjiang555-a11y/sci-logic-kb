@@ -2,7 +2,7 @@
 
 # 📚 sci-logic-kb — Knowledge Base Index
 
-> Auto-generated 2026-05-03 12:49 UTC
+> Auto-generated 2026-05-03 13:23 UTC
 
 ## 🧭 按研究问题导航
 
@@ -22,12 +22,12 @@
 | Topic | Papers | Nodes | Relations | Index |
 |-------|-------:|------:|----------:|-------|
 | Frequency Standards | 43 | 109 | 89 | [→ INDEX](topics/frequency-standards/INDEX.md) |
-| Optical Frequency Combs | 115 | 693 | 818 | [→ INDEX](topics/optical-frequency-combs/INDEX.md) |
+| Optical Frequency Combs | 117 | 698 | 822 | [→ INDEX](topics/optical-frequency-combs/INDEX.md) |
 | shared | 10 | 39 | 29 | [→ INDEX](topics/shared/INDEX.md) |
 | Time-Frequency Transfer | 44 | 131 | 149 | [→ INDEX](topics/time-frequency-transfer/INDEX.md) |
 | Timescales | 8 | 92 | 62 | [→ INDEX](topics/timescales/INDEX.md) |
 | Ultrastable Laser | 91 | 395 | 396 | [→ INDEX](topics/ultrastable-laser/INDEX.md) |
-| **Total** | **311** | **1459** | **1543** | |
+| **Total** | **313** | **1464** | **1547** | |
 
 ## Cross-Topic Quick References
 
@@ -41,7 +41,7 @@
 | Topic | Entities | Principles | Methods | Metrics |
 |-------|--------:|-----------:|--------:|--------:|
 | Frequency Standards | 44 | 32 | 4 | 29 |
-| Optical Frequency Combs | 165 | 195 | 95 | 238 |
+| Optical Frequency Combs | 167 | 197 | 95 | 239 |
 | shared | 3 | 17 | 11 | 8 |
 | Time-Frequency Transfer | 46 | 39 | 15 | 31 |
 | Timescales | 15 | 21 | 17 | 39 |

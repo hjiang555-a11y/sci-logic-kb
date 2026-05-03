@@ -220,6 +220,9 @@
 | `bowden2019.yaml` | s41598-019-48168-3 | Bowden 2019 — 集成光腔金字塔 MOT | ✅ v4.5 evidence |
 | `barwood2012.yaml` | MST 2012 | Barwood 2012 — ⁸⁸Sr⁺ 光频标自动激光控制 | ✅ v4.5 evidence |
 
+| `kudelin2024.yaml` | 3250 (1) | Kudelin 2024 — 集成光子芯片光频分频低噪声微波振荡器 | ✅ v4.5 evidence |
+| `xie2016.yaml` | Xiaopeng Xie 2016 | Xie 2016 — zeptosecond 定时噪声光生微波（< 41 zs Hz⁻¹/²） | ✅ v4.5 evidence |
+
 ## 时间标尺专题
 
 | 文件 | Zotero Key | 论文 | 状态 |

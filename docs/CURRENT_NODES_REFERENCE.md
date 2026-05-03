@@ -4,7 +4,7 @@
 
 > **用途**：处理新论文时，用此文件快速检查是否已有同名/同义节点，避免重复定义。
 > **维护**：本文件由 `scripts/build_index.py` 自动生成，**请勿手工编辑**。
-> **生成时间**：2026-05-03 12:49 UTC
+> **生成时间**：2026-05-03 13:23 UTC
 
 > **使用方式**：
 > - 处理新论文时，`Ctrl+F` 搜索关键词（如 `brownian`, `pdh`, `fiber`）
@@ -175,6 +175,7 @@
 | `pri.high_frep_bandwidth_power_tradeoff` | 高重频梳带宽-平均功率-单齿功率三角权衡原理 | domain | [bartels2009](topics/optical-frequency-combs/papers/bartels2009.yaml) |
 | `pri.high_frep_dcs_speed_advantage` | 高重频梳 DCS 采集速度优势原理 | domain | [lesko2020](topics/optical-frequency-combs/papers/lesko2020.yaml) |
 | `pri.high_frep_yb_tight_lock_challenges` | 高重频 Yb:fiber 梳紧锁的双重挑战原理 | engineering | [ma2018](topics/optical-frequency-combs/papers/ma2018.yaml) |
+| `pri.high_linearity_photodiode_ofd_noise_floor` | 高线性度光电二极管 OFD 噪声 floor 原理 | method | [xie2016](topics/optical-frequency-combs/papers/xie2016.yaml) |
 | `pri.high_rep_rate_ofd_low_shot_noise` | 高重复率OFD降低散粒噪声底原理 | domain | [quinlan2011](topics/optical-frequency-combs/papers/quinlan2011.yaml) |
 | `pri.high_temp_gas_suppresses_steady_state_plasma_p18` | 高温气体抑制高重频 HHG 稳态等离子体原理（Porat 2018） | domain | [porat2018](topics/optical-frequency-combs/papers/porat2018.yaml) |
 | `pri.hitran_voigt_declutter_trace_retrieval` | 基于 Hitran Voigt 模型的强吸收解杂原理 | engineering | [ycas2019](topics/optical-frequency-combs/papers/ycas2019.yaml) |
@@ -182,6 +183,7 @@
 | `pri.injection_locked_equidistant_microcomb_p13` | 参量增益竞争下的等间距微梳涌现原理 | engineering | [papp2013](topics/optical-frequency-combs/papers/papp2013.yaml) |
 | `pri.inline_f2f_soliton_shift` | 内联 f-to-2f 孤子自频移供能原理 | engineering | [lesko2020](topics/optical-frequency-combs/papers/lesko2020.yaml) |
 | `pri.integrated_ofc_synthesis_chain` | 集成光子学微波-光频相干倍频链原理 | domain | [spencer2018](topics/optical-frequency-combs/papers/spencer2018.yaml) |
+| `pri.integrated_photonic_optical_frequency_division` | 集成光子光频分频原理 | method | [kudelin2024](topics/optical-frequency-combs/papers/kudelin2024.yaml) |
 | `pri.integrated_photonic_supercontinuum_for_microcomb_f2f` | 片上集成 SiN 波导超连续谱使低功率微梳 f-2f 可行 | engineering | [lamb2018](topics/optical-frequency-combs/papers/lamb2018.yaml) |
 | `pri.inter_branch_fiber_noise_degradation` | 多分支光纤梳的支间光纤相噪退化原理 | engineering | [kashiwagi2018](topics/optical-frequency-combs/papers/kashiwagi2018.yaml) |
 | `pri.interferogram_embedded_freq_comparison` | 干涉图内嵌频率比对原理（M = fr/Δfr 放大因子） | engineering | [han2024](topics/optical-frequency-combs/papers/han2024.yaml) |
