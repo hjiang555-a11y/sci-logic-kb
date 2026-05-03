@@ -2,7 +2,7 @@
 
 # 🔬 Principles Quick Reference
 
-> Auto-generated 2026-05-03 05:47 UTC
+> Auto-generated 2026-05-03 05:53 UTC
 
 ## Tier: meta
 
@@ -41,7 +41,9 @@
 | `pri.gaussian_beam_resonator_theory` | 高斯光束与谐振腔理论 | Ultrastable Laser | [kogelnik1966](topics/ultrastable-laser/papers/kogelnik1966.yaml) |
 | `pri.gravitational_blueshift_clock_rate` | 引力蓝移对时钟频率的影响——Δf/f ≈ gΔh/c² | Timescales | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 | `pri.gravitational_time_dilation` | 引力时间膨胀（Einstein 红移） | Time-Frequency Transfer | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `pri.gravitational_time_dilation_clock_shift` | 引力时间膨胀——地球表面高度差引发的时钟频率偏移 | Timescales | [chou2010](topics/timescales/papers/chou2010.yaml) |
 | `pri.nlse_gain_self_similar_parabolic_solution` | 含增益 NLSE 自相似抛物线脉冲渐近解原理（Similariton） | shared | [fermann2000](topics/shared/papers/fermann2000.yaml) |
+| `pri.relativistic_time_dilation_motion` | 狭义相对论时间膨胀——低速度下的运动时钟变慢 | Timescales | [chou2010](topics/timescales/papers/chou2010.yaml) |
 | `pri.si_second_cesium_definition` | SI 秒的 Cs 超精细跃迁定义 | Frequency Standards | [heavner2005](topics/frequency-standards/papers/heavner2005.yaml) |
 | `pri.squeezed_light_quantum_enhancement` | 压缩光量子增强干涉仪灵敏度 | Ultrastable Laser | [aasi2013](topics/ultrastable-laser/papers/aasi2013.yaml) |
 | `pri.superradiant_emission_narrow_linewidth` | 超辐射集体发射窄线宽原理 | Ultrastable Laser | [meiser2009](topics/ultrastable-laser/papers/meiser2009.yaml) |

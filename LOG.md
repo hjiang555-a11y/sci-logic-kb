@@ -1,6 +1,14 @@
 # 知识库演化日志
 
 
+## [2026-05-03] ingest | Chou 2010 — 用 ²⁷Al⁺ 量子逻辑光钟在人类日常尺度（<10 m/s、33 cm）验证狭义和广义相对论时间膨胀效应（timescales）
+
+### 摄入内容
+- 文件：topics/timescales/papers/chou2010.yaml
+- 贡献类型：evidence
+- 核心贡献：首次用光学原子钟检测 <10 m/s 速度引发的狭义相对论时间膨胀和 33 cm 高度差引发的引力红移，提出"钟基测地学"概念
+- 新增节点：2 entities, 2 principles, 1 method, 4 metrics, 6 relations
+
 ## [2026-05-03] ingest | Fortier 2013 — 高功率 MUTC 光电二极管光子微波生成 (timescales, evidence)
 
 ### 摄入内容

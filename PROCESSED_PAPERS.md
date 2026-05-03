@@ -202,6 +202,7 @@
 | `dimarcq2024.yaml` | SDG6KXNZ | Dimarcq 2024 — SI 秒重定义路线图 | ✅ v4.0 framework |
 | `kleppner2006.yaml` | 1.2195297 | Kleppner 2006 — 引力红移对分布式原子时标比较的终极限制 | ✅ v4.0 framework |
 | `fortier2013.yaml` | 1302.5927 | Fortier 2013 — 高功率 MUTC 光电二极管光子微波生成 | ✅ v4.0 evidence |
+| `chou2010.yaml` | 1630.full (1) | Chou 2010 — 光钟相对论验证（<10 m/s 时间膨胀、33 cm 引力红移） | ✅ v4.4 evidence |
 
 ## 时间频率传递专题
 

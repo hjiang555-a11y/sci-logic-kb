@@ -1,0 +1,276 @@
+# Chou 2010 — Optical Clocks and Relativity [时间标尺专题 实验论文]
+# 提取者：Claude Code（AI草稿，待专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.4
+# 专题：timescales
+# contribution_type: evidence — 首次在人类日常尺度（<10 m/s 速度、33 cm 高度差）用光钟检测相对论时间膨胀和引力红移
+
+meta:
+  zotero_key: "1630.full (1)"
+  topic: timescales
+  source_type: research_article
+  contribution_type: evidence
+  reliability: high
+  title: "Optical Clocks and Relativity"
+  year: 2010
+  first_author: chou
+  authors:
+    - "C. W. Chou"
+    - "D. B. Hume"
+    - "T. Rosenband"
+    - "D. J. Wineland"
+  journal: "Science"
+  volume: 329
+  pages: "1630-1633"
+  doi: "10.1126/science.1192720"
+  note: >
+    [实验] NIST 用两台 ²⁷Al⁺ 量子逻辑光钟（分别以 Be⁺ 和 Mg⁺ 为逻辑离子）通过 75 m 相位稳定光纤比较，
+    检测到 <10 m/s 速度引发的狭义相对论时间膨胀、33 cm 高度差引发的引力红移。
+    首次将相对论验证从宇宙尺度/高速带入人类日常尺度，并提出光钟测地学（clock-based geodesy）概念。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.al_plus_ion_optical_clock
+    name: "²⁷Al⁺ 离子量子逻辑光钟（NIST 实验系统）"
+    aliases: ["Al+ optical clock", "aluminum ion clock", "quantum logic clock"]
+    hierarchy_level: 1
+    status: demonstrated
+    function: >
+      基于单个 ²⁷Al⁺ 离子的光学原子钟，利用 ¹S₀↔³P₀ 跃迁（f₀ ≈ 1.121 PHz，自然线宽 Δf = 8 mHz，
+      本征 Q = 1.4×10¹⁷）作为频率参考。由于 ²⁷Al⁺ 缺乏直接激光冷却和态探测的光学跃迁，
+      采用量子逻辑协议：通过库仑相互作用与辅助"逻辑离子"（Be⁺ 或 Mg⁺）进行 sympathetic cooling
+      和态读出。两台 Al⁺ 钟分别以 ⁹Be⁺（Al-Be 钟）和 ²⁵Mg⁺（Al-Mg 钟）作为逻辑离子。
+    key_parameters:
+      clock_transition: "¹S₀↔³P₀ @ 267.4 nm (1.121 PHz)"
+      natural_linewidth: "Δf = 8 mHz"
+      intrinsic_q: "f₀/Δf = 1.4×10¹⁷"
+      achieved_q_300ms_probe: "4.2×10¹⁴（300 ms 探针，傅里叶变换受限）"
+      systematic_uncertainty_al_mg: "8.6×10⁻¹⁸（2010 年文献引用值）"
+      systematic_uncertainty_al_be: "2.3×10⁻¹⁷（2010 年文献引用值）"
+    note: >
+      Level 1 实验系统级实体。此节点表示 Chou et al. 2010 使用的具体实验装置，
+      包括子赫兹线宽探针激光（参考高精细度光学腔）、75 m 相位稳定光纤链路。
+
+  - id: ent.phase_stabilized_fiber_clock_link
+    name: "相位稳定光纤时钟比较链路（NIST 2010，75 m）"
+    aliases: ["phase-stabilized optical fiber", "noise-canceled fiber link"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      连接 NIST 两个分立实验室中两台 Al⁺ 光钟的 75 m 相位稳定光纤链路，
+      用于传输和比较光钟信号。采用主动相位噪声补偿技术维持光频信号在
+      传输过程中的相干性，使两台独立光钟的远程比较成为可能。
+    key_parameters:
+      fiber_length: "75 m"
+      link_type: "phase-stabilized noise-canceled optical fiber"
+      connecting_labs: "两个分立实验室（NIST Boulder）"
+    note: >
+      Level 2 子系统级实体。此链路是光钟比较和相对论效应检测的关键基础设施。
+
+principles:
+  - id: pri.relativistic_time_dilation_motion
+    name: "狭义相对论时间膨胀——低速度下的运动时钟变慢"
+    tier: foundational
+    verification_status: observed
+    statement: >
+      根据狭义相对论，相对于实验室参考系以速度 v 运动的时钟，其本征频率 f₀ 与观测到的
+      实验室帧频率 f₀ + δf 之间存在关系 δf/f₀ = ⟨1/γ(1 - v∥/c)⟩ − 1。
+      在低速近似 v ≪ c 下简化为 δf/f₀ ≈ −⟨v²⟩/2c²。
+      该效应导致运动时钟比静止时钟走得慢。
+    domain: "狭义相对论，时间频率计量"
+    formula:
+      expression: "δf / f₀ ≈ -⟨v²⟩ / (2c²)  (for v ≪ c)"
+      description: "v 为离子相对于实验室参考系的速度，c 为光速，⟨·⟩ 表示时间平均"
+    key_insight: >
+      该效应的检测无需高速环境——只要时钟精度足够（亚 10⁻¹⁶ 分数频率灵敏度），
+      <10 m/s 的日常速度即可产生可测频移（~10⁻¹⁶ 量级）。
+    conditions: "离子 / 时钟运动幅度可控且可测量；需要抵消 / 平均化一阶多普勒效应"
+    preconditions:
+      - "时钟频率灵敏度达到 ~10⁻¹⁶ 或更好"
+      - "离子平均线性速度 ⟨v∥⟩ 可被消除（通过 counter-propagating 探针光束平均）"
+    invalidated_when:
+      - "时钟本征频率在运动中发生非相对论性偏移（系统效应未被排除）"
+    source_claim: >
+      "the ion's transition frequency is due to a change in γ and corresponds to relativistic time dilation"
+
+  - id: pri.gravitational_time_dilation_clock_shift
+    name: "引力时间膨胀——地球表面高度差引发的时钟频率偏移"
+    tier: foundational
+    verification_status: observed
+    statement: >
+      根据广义相对论，在地球表面附近小高度差 Δh 下，两个时钟之间的引力红移
+      导致分数频率差为 δf/f₀ = gΔh/c²，其中 g ≈ 9.80 m/s² 为当地重力加速度。
+      海拔更高的时钟走得更快，每米高度差对应约 1.1×10⁻¹⁶ 的频率偏移。
+    domain: "广义相对论，大地测量学，时间频率计量"
+    formula:
+      expression: "δf / f₀ = gΔh / c²"
+      description: "g ≈ 9.80 m/s²（当地重力加速度），Δh 为高度差，c 为光速"
+    key_insight: >
+      光钟将引力红移从一个需要天文学尺度才能观察的效应转化为可在实验室桌面
+      高度尺度上精密测量的技术——为"钟基测地学"（clock-based geodesy）奠定物理基础。
+    conditions: "高度差精确已知（激光水平仪测量）；重力加速度 g 的局部值已知"
+    preconditions:
+      - "两台时钟在同一时间进行频率比较"
+      - "高度差通过独立方法（激光水平仪）校准"
+      - "其他系统频移（如运动时间膨胀）被控制在远小于测量信号的水平"
+    invalidated_when:
+      - "局部重力场不满足 gΔh/c² 的一阶近似（需要更高阶引力势模型）"
+    source_claim: >
+      "For small height changes on the surface of Earth, a clock that is higher by a distance Δh runs faster by δf/f₀ = gΔh/c² where g ≈ 9.80 m/s² is the local acceleration due to gravity"
+    note: >
+      此原理与 kleppner2006 的 pri.gravitational_blueshift_clock_rate 表述相同物理定律，
+      但聚焦于亚米级高度差的实验验证，而非分布式时钟比较的系统极限。
+
+methods:
+  - id: meth.ion_motion_induced_time_dilation
+    name: "离子运动诱导时间膨胀测量方法"
+    status: demonstrated
+    steps_summary: >
+      1. 在 RF Paul 阱中通过施加小静态电场使离子位移偏离 RF 零点 →
+      2. 离子受 RF 电场作用（fRF = 59 MHz）产生简谐运动 →
+      3. 调节静态电场幅度改变离子速度 →
+      4. 使用 counter-propagating 探针光束消除一阶多普勒效应（⟨v∥⟩ 平均为零）→
+      5. 测量两台 Al⁺ 钟（一台离子运动、一台静止）的频率差 δf/f₀ →
+      6. 验证 δf/f₀ 与 ⟨v²⟩ 的关系是否符合 −⟨v²⟩/2c² 理论预测
+    required_hardware:
+      - ent.al_plus_ion_optical_clock
+      - ent.phase_stabilized_fiber_clock_link
+    advantages:
+      - "速度可精密控制（静态电场调节）"
+      - "counter-propagating 探针实现一阶多普勒效应自消除"
+      - "简谐运动 → ⟨v∥⟩ ≡ 0，确保测到的是纯时间膨胀而非多普勒频移"
+    disadvantages:
+      - "缓慢的电荷积累可能导致微量线性速度残留"
+      - "RF 电场引起的 micromotion 可能引入额外的系统效应"
+    conditions:
+      - "离子位于 RF Paul 阱中"
+      - "RF 频率 fRF = 59 MHz"
+      - "探针激光束两方向交替或同时使用以抵消一阶多普勒效应"
+    source_claim: >
+      "the induced Al⁺ ion motion is harmonic, its contribution to ⟨v∥⟩ averages to zero;
+      therefore, any observed change in the ion's transition frequency is due to a change in γ
+      and corresponds to relativistic time dilation"
+
+metrics:
+  - id: met.al_plus_clock_q_factor_2010
+    name: "²⁷Al⁺ 光钟 300 ms 探针 Q 因子"
+    unit: "无量纲"
+    description: >
+      Al⁺ 光钟在 300 ms 探针脉冲下实现的傅里叶变换受限线宽和对应 Q 因子。
+      Q = f₀/Δf = 1.121×10¹⁵ Hz / 2.7 Hz = 4.2×10¹⁴。
+    demonstrated_value:
+      value: "4.2×10¹⁴"
+      conditions: "Al-Mg 钟，300 ms 探针脉冲，傅里叶变换受限线宽 FWHM = 2.7 Hz，对比度 ~80%"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "1630.full (1)", claim: "a Fourier transform–limited spectrum ... the Fourier limit corresponds to a linewidth (FWHM) of 2.7 Hz and a Q factor of 4.2 × 10¹⁴"}
+
+  - id: met.gravitational_redshift_33cm_detection_2010
+    name: "33 cm 高度差引力红移测量"
+    unit: "无量纲（分数频率差异）"
+    description: >
+      两台 Al⁺ 光钟在低高度（Δh = −17 cm）和高高度（Δh = +16 cm，通过提升 Al-Mg 钟实验台 33 cm 实现）
+      下的频率比较结果。净相对频移归因于 33 cm 高度改变的引力红移。
+    demonstrated_value:
+      value: "(4.1 ± 1.6) × 10⁻¹⁷"
+      conditions: "约 100,000 s 低高度数据 + 40,000 s 高高度数据；Al-Mg 钟台面提升 33 cm；初始高度差 −17 cm（Mg-Al 低于 Be-Al）；激光水平仪测量高度"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "1630.full (1)", claim: "a fractional frequency change of (4.1 ± 1.6) × 10⁻¹⁷"}
+    note: "频移对应的高度测量结果为 37 ± 15 cm，与已知值 33 cm 在误差范围内一致"
+
+  - id: met.time_dilation_detection_velocity_2010
+    name: "<10 m/s 速度时间膨胀检测"
+    unit: "m/s（速度）"
+    description: >
+      通过测量运动 Al⁺ 离子时钟与静止参考时钟的频率差，
+      检测到 <10 m/s 速度下的狭义相对论时间膨胀效应。
+      实验覆盖了从静至 ~10 m/s 的多个速度点，验证了 δf/f₀ = −⟨v²⟩/2c² 关系。
+    demonstrated_value:
+      value: "检测到 <10 m/s 速度引发的时间膨胀（对应分数频率偏移约 5×10⁻¹⁶）"
+      conditions: "Al-Mg 钟离子通过静态电场位移产生简谐运动；RF 频率 59 MHz；速度均方根 vrms < 10 m/s；counter-propagating 探针消除一阶多普勒效应"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "1630.full (1)", claim: "We observed time dilation from relative speeds of less than 10 meters per second"}
+
+  - id: met.residual_ion_doppler_velocity_2010
+    name: "Al-Mg 钟离子残余多普勒速度"
+    unit: "nm/s"
+    description: >
+      通过比较两个 counter-propagating 探针光束方向测得的 Al⁺ 跃迁频率差，
+      推算出离子的残余线性运动速度，用于验证一阶多普勒效应已被有效消除。
+      该残余速度对应的分数频移（~10⁻¹⁷）远小于时间膨胀测量信号（~10⁻¹⁶）。
+    demonstrated_value:
+      value: "(1.8 ± 1.1) nm/s（对应分数频率差 (1.2 ± 0.7) × 10⁻¹⁷）"
+      conditions: "Al-Mg 钟，counter-propagating 探针激光比较测量；钟频率由两方向平均得出从而消除一阶多普勒效应"
+      verification_status: observed
+      confidence: established
+      source: {zotero_key: "1630.full (1)", claim: "we observed a fractional frequency difference of (1.2 ± 0.7) × 10⁻¹⁷ between the two probe directions, which corresponds to the ion moving at a speed of (1.8 ± 1.1) nm/s in the lab frame"}
+
+# ═══════════════════════════════════════════════
+#  RELATIONS（关系）
+# ═══════════════════════════════════════════════
+
+relations:
+  - id: rel.chou_2010_01
+    subject: ent.al_plus_ion_optical_clock
+    predicate: CHARACTERIZED-BY
+    object: met.al_plus_clock_q_factor_2010
+    confidence: established
+    source: {zotero_key: "1630.full (1)", claim: "a Fourier transform–limited linewidth, realizing a Q factor of 4.2 × 10¹⁴ with nearly 80% contrast"}
+    verification_status: observed
+    temporal_role: documents
+    note: "Al⁺ 光钟性能通过 Q 因子的光谱测量表征"
+
+  - id: rel.chou_2010_02
+    subject: met.time_dilation_detection_velocity_2010
+    predicate: DEMONSTRATES
+    object: pri.relativistic_time_dilation_motion
+    confidence: established
+    source: {zotero_key: "1630.full (1)", claim: "The experimental results, which confirm the prediction of Eq. 1, are plotted in Fig. 2"}
+    verification_status: observed
+    temporal_role: documents
+    note: "低速时间膨胀测量验证了狭义相对论的时间膨胀原理"
+
+  - id: rel.chou_2010_03
+    subject: met.gravitational_redshift_33cm_detection_2010
+    predicate: DEMONSTRATES
+    object: pri.gravitational_time_dilation_clock_shift
+    confidence: established
+    source: {zotero_key: "1630.full (1)", claim: "When this shift is interpreted as a measurement of the change in height of the Al-Mg clock, the result of 37 ± 15 cm agrees well with the known value of 33 cm"}
+    verification_status: observed
+    temporal_role: documents
+    note: "33 cm 高度差引力红移测量验证了广义相对论的引力时间膨胀原理"
+
+  - id: rel.chou_2010_04
+    subject: met.residual_ion_doppler_velocity_2010
+    predicate: CONSTRAINS
+    object: met.time_dilation_detection_velocity_2010
+    confidence: established
+    source: {zotero_key: "1630.full (1)", claim: "the clock rate is not significantly affected by a velocity of this magnitude, because it is derived from an average of the two opposite laser-probe directions"}
+    verification_status: observed
+    temporal_role: documents
+    note: "残余多普勒速度测量验证了一阶多普勒效应已被有效排除，确保时间膨胀测量的纯度"
+
+  - id: rel.chou_2010_05
+    subject: ent.al_plus_ion_optical_clock
+    predicate: IMPLEMENTED-BY
+    object: meth.ion_motion_induced_time_dilation
+    confidence: established
+    source: {zotero_key: "1630.full (1)", claim: "we set the Al+ ion in the Al-Mg clock in motion by applying a small static electric field that shifts the position of the ion slightly away from the null of the confining RF field"}
+    verification_status: observed
+    temporal_role: documents
+    note: "Al⁺ 光钟通过离子运动诱导时间膨胀测量方法实现相对论效应检测"
+
+  - id: rel.chou_2010_06
+    subject: ent.al_plus_ion_optical_clock
+    predicate: CONNECTED-BY
+    object: ent.phase_stabilized_fiber_clock_link
+    confidence: established
+    source: {zotero_key: "1630.full (1)", claim: "The two Al+ optical clocks were located in separate laboratories and were compared by transmitting the stable clock signal through a 75-m length of phase-stabilized optical fiber"}
+    verification_status: observed
+    temporal_role: documents
+    note: "两台分立实验室的 Al⁺ 光钟通过 75 m 相位稳定光纤链路连接以进行频率比较"

@@ -2,14 +2,16 @@
 
 # Timescales — Topic Index
 
-> Auto-generated 2026-05-03 05:47 UTC · 3 papers · 28 nodes · 18 relations
+> Auto-generated 2026-05-03 05:53 UTC · 4 papers · 37 nodes · 24 relations
 
 ## Entities
 
 | ID | Name | Level | Source |
 |----|------|------:|--------|
+| `ent.al_plus_ion_optical_clock` | ²⁷Al⁺ 离子量子逻辑光钟（NIST 实验系统） | 1 | [chou2010](topics/timescales/papers/chou2010.yaml) |
 | `ent.geoid` | 大地水准面（地球重力等势面——时间频率计量的高程参考） | 1 | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 | `ent.mutc_photonic_microwave_generator` | MUTC 光电二极管光子微波发生器（基于光频率分频的低噪声 10GHz 微波源） | 1 | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
+| `ent.phase_stabilized_fiber_clock_link` | 相位稳定光纤时钟比较链路（NIST 2010，75 m） | 2 | [chou2010](topics/timescales/papers/chou2010.yaml) |
 | `ent.si_second_definition` | SI 秒定义（当前基于铯，面向光学重定义） | 0 | [dimarcq2024](topics/timescales/papers/dimarcq2024.yaml) |
 | `ent.utc_leap_seconds` | UTC 闰秒机制（协调世界时的闰秒插入管理） | 0 | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 
@@ -20,9 +22,11 @@
 | `pri.am_pm_conversion_couples_rin_to_phase_noise` | 光电检测中的 AM-PM 转换将光脉冲 RIN 耦合为微波相位噪声 | engineering | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 | `pri.geoid_uncertainty_clock_comparison_limit` | 大地水准面不确定度对时钟比较的终极限制 | engineering | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 | `pri.gravitational_blueshift_clock_rate` | 引力蓝移对时钟频率的影响——Δf/f ≈ gΔh/c² | foundational | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
+| `pri.gravitational_time_dilation_clock_shift` | 引力时间膨胀——地球表面高度差引发的时钟频率偏移 | foundational | [chou2010](topics/timescales/papers/chou2010.yaml) |
 | `pri.mutc_structure_suppresses_space_charge` | MUTC 光电二极管结构通过预畸变电场设计抑制空间电荷非线性效应 | engineering | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 | `pri.ofd_transfers_optical_stability_to_microwave` | 光频率分频（OFD）将光学参考稳定度无噪声传递至微波域 | engineering | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 | `pri.redefinition_criteria_second` | SI 秒重定义强制性标准体系 | engineering | [dimarcq2024](topics/timescales/papers/dimarcq2024.yaml) |
+| `pri.relativistic_time_dilation_motion` | 狭义相对论时间膨胀——低速度下的运动时钟变慢 | foundational | [chou2010](topics/timescales/papers/chou2010.yaml) |
 | `pri.secondary_representation_si_second` | SI 秒次级表示（Secondary Representations of the SI Second, SRS） | engineering | [dimarcq2024](topics/timescales/papers/dimarcq2024.yaml) |
 | `pri.time_entangled_with_gravity` | 引力与时间本质纠缠——分布式超精密时间失去意义 | foundational | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 
@@ -33,6 +37,7 @@
 | `meth.am_pm_coefficient_measurement` | AM-PM 转换系数 α 测量方法 | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 | `meth.cross_correlation_phase_noise_measurement` | 互相关频谱分析残余相位噪声测量方法 | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 | `meth.gps_satellite_clock_comparison` | GPS 卫星原子钟远程比较方法 | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
+| `meth.ion_motion_induced_time_dilation` | 离子运动诱导时间膨胀测量方法 | [chou2010](topics/timescales/papers/chou2010.yaml) |
 | `meth.mutc_pd_photonic_microwave_generation` | MUTC 光电二极管光子微波生成方法（OFD + 脉冲交织 + MUTC 检测） | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 | `meth.optical_clock_comparison` | 光钟比较方法（本地与远程） | [dimarcq2024](topics/timescales/papers/dimarcq2024.yaml) |
 
@@ -50,16 +55,20 @@
 
 | ID | Name | Best Value | Source |
 |----|------|------------|--------|
+| `met.al_plus_clock_q_factor_2010` | ²⁷Al⁺ 光钟 300 ms 探针 Q 因子 | 4.2×10¹⁴ | [chou2010](topics/timescales/papers/chou2010.yaml) |
 | `met.frequency_ratio_agreement_cross_lab` | 跨实验室光钟频率比一致性 | 部分频率比已在 ~10⁻¹⁷ 水平一致，但多数尚未达到 5×10⁻¹⁸ 目标 | [dimarcq2024](topics/timescales/papers/dimarcq2024.yaml) |
 | `met.geoid_height_uncertainty` | 大地水准面高程典型不确定度 | 30–50 cm | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 | `met.gps_clock_comparison_accuracy_2006` | GPS 卫星时钟远程比较精度（2006 年水平） | ~1×10⁻¹⁵ | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
+| `met.gravitational_redshift_33cm_detection_2010` | 33 cm 高度差引力红移测量 | (4.1 ± 1.6) × 10⁻¹⁷ | [chou2010](topics/timescales/papers/chou2010.yaml) |
 | `met.leap_seconds_count_1972_2006` | UTC 闰秒累计插入次数（1972–2006） | 23 | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 | `met.mutc_10ghz_integrated_timing_jitter` | MUTC PD 光子微波 10 GHz 绝对集成定时抖动 | <500 as（单台振荡器；两台合成测量值为 700 as） | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 | `met.mutc_10ghz_signal_power` | MUTC PD 10 GHz 微波载波最大功率 | +14 dBm | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 | `met.mutc_am_pm_coefficient` | MUTC PD AM-PM 转换系数 | <0.1 rad | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 | `met.mutc_residual_flicker_noise` | MUTC PD 光检测残余 flicker（f⁻¹）相位噪声 | –122 f⁻¹ dBc/Hz | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 | `met.optical_clock_systematic_uncertainty` | 光学频率标准系统不确定度 | 9.4×10⁻¹⁹（²⁷Al⁺ 量子逻辑钟，NIST，路线图汇总） | [dimarcq2024](topics/timescales/papers/dimarcq2024.yaml) |
+| `met.residual_ion_doppler_velocity_2010` | Al-Mg 钟离子残余多普勒速度 | (1.8 ± 1.1) nm/s（对应分数频率差 (1.2 ± 0.7) × 10⁻¹⁷） | [chou2010](topics/timescales/papers/chou2010.yaml) |
 | `met.solid_earth_tide_frequency_fluctuation` | 固体潮引起的大地水准面起伏及派生频率波动 | ~2×10⁻¹⁷ | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
+| `met.time_dilation_detection_velocity_2010` | <10 m/s 速度时间膨胀检测 | 检测到 <10 m/s 速度引发的时间膨胀（对应分数频率偏移约 5×10⁻¹⁶） | [chou2010](topics/timescales/papers/chou2010.yaml) |
 
 ## BOUNDED-BY Chains
 
