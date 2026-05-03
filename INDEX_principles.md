@@ -2,7 +2,7 @@
 
 # 🔬 Principles Quick Reference
 
-> Auto-generated 2026-05-03 07:55 UTC
+> Auto-generated 2026-05-03 08:04 UTC
 
 ## Tier: meta
 
@@ -263,7 +263,9 @@
 | `pri.comb_calibrated_fmcw_frequency_linearity` | 光频梳实时校准 FMCW 调频线性度原理 | Optical Frequency Combs | [huang2024](topics/optical-frequency-combs/papers/huang2024.yaml) |
 | `pri.common_mode_fiber_path_noise_rejection` | 共模光纤路径噪声共模抑制原理 | Optical Frequency Combs | [leopardi2017](topics/optical-frequency-combs/papers/leopardi2017.yaml) |
 | `pri.common_path_comb_combining_turbulence_cancellation` | 传前合束共模抵消湍流相位畸变原理 | Optical Frequency Combs | [ycas2019](topics/optical-frequency-combs/papers/ycas2019.yaml) |
+| `pri.cso_ultralow_phase_noise_reference` | 低温蓝宝石振荡器（CSO）超低相位噪声参考信号与慢锁氢钟方案 | Timescales | [guena2012](topics/timescales/papers/guena2012.yaml) |
 | `pri.dcf_induced_differential_delay_temp_compensation` | DCF 模块温度诱发 differential delay 建模补偿原理 | Time-Frequency Transfer | [turza2019_9s69d3dw](topics/time-frequency-transfer/papers/turza2019_9s69d3dw.yaml) |
+| `pri.dcp_azimuthal_decomposition` | 分布式腔相位频移的方位角傅里叶分解评估原理 | Timescales | [guena2012](topics/timescales/papers/guena2012.yaml) |
 | `pri.dfg_power_atmospheric_window_tradeoff` | DFG 中红外功率 × 大气透明窗口折中原理 | Optical Frequency Combs | [ycas2019](topics/optical-frequency-combs/papers/ycas2019.yaml) |
 | `pri.dichroic_heterodyne_detection` | 色散外差检测（Dichroic Heterodyne Detection）相位漂移补偿原理 | Optical Frequency Combs | [giunta2020](topics/optical-frequency-combs/papers/giunta2020.yaml) |
 | `pri.digital_servo_latency_bandwidth_tradeoff` | 数字伺服延迟-带宽权衡原理 | Optical Frequency Combs | [wang2025](topics/optical-frequency-combs/papers/wang2025.yaml) |
@@ -310,6 +312,7 @@
 | `pri.long_cavity_discriminator_enhancement` | 长腔鉴别系数增强原理 | Ultrastable Laser | [parke2025](topics/ultrastable-laser/papers/parke2025.yaml) |
 | `pri.long_cavity_thermal_noise_reduction` | 增长腔长降低热噪声分数贡献 | Ultrastable Laser | [hafner2015](topics/ultrastable-laser/papers/hafner2015.yaml) |
 | `pri.microcomb_replaces_laser_array_for_wdm_s22` | 相干微梳等效替代 WDM DFB 激光阵列原理 | Optical Frequency Combs | [shu2022](topics/optical-frequency-combs/papers/shu2022.yaml) |
+| `pri.microwave_lensing_frequency_shift` | 微波透镜频移原理——微波驻波场径向磁偶极力的原子波包透镜效应 | Timescales | [guena2012](topics/timescales/papers/guena2012.yaml) |
 | `pri.microwave_reference_noise_limit` | 微波参考相噪限制原理（飞秒梳 f-2f 频率测量场景） | Optical Frequency Combs | [diddams2000](topics/optical-frequency-combs/papers/diddams2000.yaml) |
 | `pri.microwave_reference_transfer_to_optical_comb` | 微波参考频率源通过 frep/fceo 锁定传递稳定度给光梳原理 | Optical Frequency Combs | [rao2019](topics/optical-frequency-combs/papers/rao2019.yaml) |
 | `pri.microwave_referenced_comb_coherence_limit` | 微波参考飞秒梳相干性限制原理（分子光谱场景） | Optical Frequency Combs | [chou2020](topics/optical-frequency-combs/papers/chou2020.yaml) |

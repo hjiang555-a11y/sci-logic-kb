@@ -1,0 +1,508 @@
+# Guena 2012 — Progress in atomic fountains at LNE-SYRTE
+# 提取者：Claude Code（AI草稿，待专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.0
+# 专题：timescales
+# contribution_type: framework — 对 LNE-SYRTE 喷泉钟组五年进展的系统性概述，
+#   涵盖系统效应评估（DCP、微波透镜、BBR、微波泄漏）、时频计量应用、
+#   基本物理检验和 PHARAO 空间钟研制。
+
+meta:
+  zotero_key: "Syrte 2012"
+  topic: timescales
+  source_type: review
+  contribution_type: framework
+  reliability: high
+  title: "Progress in atomic fountains at LNE-SYRTE"
+  year: 2012
+  first_author: guena
+  authors:
+    - "J. Guena"
+    - "M. Abgrall"
+    - "D. Rovera"
+    - "P. Laurent"
+    - "B. Chupin"
+    - "M. Lours"
+    - "G. Santarelli"
+    - "P. Rosenbusch"
+    - "M.E. Tobar"
+    - "R. Li"
+    - "K. Gibble"
+    - "A. Clairon"
+    - "S. Bize"
+  journal: "IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control"
+  doi: "10.1109/TUFFC.2012.2208"
+  note: >
+    [综述/框架] 系统概述 LNE-SYRTE 原子喷泉钟组（FO1、FO2、FOM）在 2007–2011 年的进展。
+    覆盖三种喷泉钟配置：FO1（¹³³Cs，2DMOT 装载）、FO2（⁸⁷Rb/¹³³Cs 双喷泉）、FOM（可搬运喷泉）。
+    核心贡献：(1) 分布式腔相位（DCP）频移的方位角傅里叶分解评估方法，
+    在 FO2-Cs 上将 DCP 不确定度从 3×10⁻¹⁶ 降至 8.4×10⁻¹⁷；
+    (2) 四台喷泉钟的微波透镜频移理论计算；
+    (3) 黑体辐射频移标量 Stark 系数修订值 k₀ = −2.282(4)×10⁻¹⁰ Hz·V⁻²·m²；
+    (4) 可切换微波合成器方案评估和控制微波泄漏频移；
+    (5) 系统精度预算：FO1 3.5×10⁻¹⁶、FO2-Cs 2.1×10⁻¹⁶、FOM 6.9×10⁻¹⁶、FO2-Rb 3.3×10⁻¹⁶；
+    (6) TAI 校准贡献（2007–2010 年全球近 50% 报告来自 SYRTE），喷泉钟数据月度驾驭 TA(F)；
+    (7) 基本物理检验：Rb/Cs 频率比时间变化约束、Lorentz 不变性 SME 约束（4 个新参数首次受限）；
+    (8) PHARAO 工程模型地面测试，总不确定度 1.9×10⁻¹⁵，与 FOM 比对一致性 <2×10⁻¹⁵。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.lne_syrte_fountain_ensemble_2012
+    name: "LNE-SYRTE 原子喷泉钟组（FO1、FO2 Rb/Cs 双喷泉、FOM 可搬运喷泉，2012 年水平）"
+    aliases: ["LNE-SYRTE fountain ensemble", "SYRTE fountain clocks"]
+    hierarchy_level: 1
+    status: demonstrated
+    function: >
+      LNE-SYRTE（巴黎天文台）运行的三台原子喷泉钟组成的钟组：
+      FO1 — ¹³³Cs 喷泉（1994 年起运行），2D-MOT 慢原子源装载；
+      FO2 — ⁸⁷Rb/¹³³Cs 双喷泉（2009 年起同时运行），独立 2D-MOT 源，
+      双物种共用同一询问区，Rb/Cs 微波腔为单一铜组件；
+      FOM — 可搬运 ¹³³Cs 喷泉（PHARAO 原型改进），可车载运输，到异地后 <2 天恢复运行。
+      三台喷泉共用一台低温蓝宝石振荡器（CSO）作为超低相位噪声参考信号，
+      通过主动补偿光纤链路分发信号。钟组 2012 年精度水平：
+      FO1 3.5×10⁻¹⁶, FO2-Cs 2.1×10⁻¹⁶, FOM 6.9×10⁻¹⁶, FO2-Rb 3.3×10⁻¹⁶。
+    key_parameters:
+      fo1_type: "¹³³Cs，2D-MOT 装载，TE011 铜腔 QL=14000"
+      fo2_type: "⁸⁷Rb/¹³³Cs 双喷泉，Cs 腔 QL=7000，Rb 腔 QL=6000"
+      fom_type: "¹³³Cs 可搬运，TE011 铜腔 QL=21000，可自主运行"
+      common_reference: "CSO @ 11.98 GHz，慢锁 H-maser（τ~1000 s）"
+      short_term_stability: "σ_y = 1.6×10⁻¹⁴ τ⁻¹/²（最佳，FO2-Cs 高原子数）"
+    note: >
+      与 bize2005 描述的 2005 年 BNM-SYRTE 钟组相比，本节点反映 2012 年配置：
+      增加了 FO2 Rb/Cs 双喷泉运行、DCP/微波透镜/微波泄漏的系统评估、
+      精度预算全面更新，以及 PHARAO 工程模型测试结果。
+
+  - id: ent.fo2_dual_rb_cs_fountain_2012
+    name: "FO2 ⁸⁷Rb/¹³³Cs 双喷泉钟（LNE-SYRTE，2012）"
+    aliases: ["FO2 dual fountain", "FO2 Rb/Cs fountain"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      LNE-SYRTE 的双物种原子喷泉钟，同时运行 ⁸⁷Rb 和 ¹³³Cs 时钟。
+      Rb 和 Cs 的冷却光（780 nm 和 852 nm）通过二向色合束器叠加到同一套准直器中。
+      询问区包含 Rb 和 Cs 两个微波腔（单一铜组件加工，机械调谐至各自跃迁频率）。
+      名义配置下 Rb 和 Cs 原子云几乎同时上抛但速度不同，使得询问时间同步，
+      两种原子云在询问过程中不相互作用（避免种间碰撞），下落至探测区时分离检测。
+      2009 年起例行同时运行。
+    key_parameters:
+      cs_cavity_size: "Φ50.00 mm × 26.87 mm"
+      rb_cavity_size: "Φ67.25 mm × 36.01 mm"
+      cs_loaded_Q: 7000
+      rb_loaded_Q: 6000
+      cycle_time: "1.6 s"
+      launch_velocity: "~4 m·s⁻¹, ~1 µK"
+    note: >
+      实现首次双碱金属喷泉钟同时运行。为 Rb/Cs 频率比测量、
+      Lorentz 不变性检验（SME 约束）提供独特平台。
+
+  - id: ent.pharao_engineering_model_2012
+    name: "PHARAO 冷原子空间钟工程模型（PHARAO-EM，CNES/SYRTE，2012）"
+    aliases: ["PHARAO-EM", "PHARAO engineering model"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      PHARAO（Projet d'Horloge Atomique par Refroidissement d'Atomes en Orbite）
+      是 ESA ACES 任务的核心冷原子空间钟，由法国 CNES 和 SYRTE 研制。
+      工程模型（PHARAO-EM）于 2007–2009 年在 CNES Toulouse 完成地面测试。
+      地球重力下：Ramsey 中心条纹线宽 5.6 Hz，10⁶ 探测原子，对比度仅 93%
+      （重力导致两次腔作用时间不对称）。钟周期 790 ms，微波询问时间 90 ms。
+      与可搬运喷泉 FOM 进行比对，系统修正后频率差 <2×10⁻¹⁵（分辨率 5×10⁻¹⁶）。
+    key_parameters:
+      ground_stability: "3.3×10⁻¹³ τ⁻¹/²（地面受微波相位噪声限制）"
+      central_fringe_linewidth: "5.6 Hz"
+      detected_atoms: "10⁶"
+      cycle_duration: "790 ms"
+      interrogation_time: "90 ms"
+      total_systematic_uncertainty: "1.9×10⁻¹⁵（地面，2009 测试）"
+    note: >
+      飞行模型于 2012 年交付组装。发射日期为所有仪器交付后 2 年。
+      ACES 目标：时间稳定度 10 ps / 10 天，频率准确度优于 3×10⁻¹⁶（微重力）。
+
+principles:
+  - id: pri.dcp_azimuthal_decomposition
+    name: "分布式腔相位频移的方位角傅里叶分解评估原理"
+    tier: engineering
+    verification_status: calculated
+    statement: >
+      微波腔内空间相位分布表示为轴对称大驻波场 H₀(r) 与
+      小扰动场 g(r) = Σ gₘ(ρ,z) cos(mφ) 的叠加，
+      其中仅 m=0, m=1, m=2 三个最低方位角项相关。
+      m=1 项对应水平功率流（通过测量喷泉频率随上抛方向倾斜角度的变化探测）；
+      m=0 和 m=2 项由腔壁损耗和耦合孔导致的相位分布数值计算与喷泉几何响应得出。
+      各方位角项的修正和不确定度独立评估后组合为总 DCP 修正。
+    domain: "原子喷泉钟，微波腔电磁场理论"
+    key_insight: >
+      将复杂的全三维腔场计算问题约化为三个独立方位角项的独立实验和数值评估，
+      首次实现了 DCP 频移的理论与实验定量一致。
+    conditions: "需要精确测量喷泉倾角灵敏度（m=1），以及原子云尺寸、温度、探测几何 (m=0, m=2)"
+    source_claim: >
+      "the field, represented explicitly as the sum of a large standing wave H₀(r) and of a small field, g(r) = Σ gₘ(ρ,z) cos(mφ), that describes the effects of wall losses and cavity feeds"
+    open_questions:
+      - "Can the DCP uncertainty be pushed below 5×10⁻¹⁷ in future cavity designs with suppressed m=1 and m=2 terms?"
+
+  - id: pri.microwave_lensing_frequency_shift
+    name: "微波透镜频移原理——微波驻波场径向磁偶极力的原子波包透镜效应"
+    tier: engineering
+    verification_status: calculated
+    statement: >
+      原子在微波腔内与空间非均匀驻波场相互作用时，
+      径向磁偶极力对原子波包产生聚焦/散焦效应（类似透镜），
+      导致 Ram-sey 询问中上下行路径的原子运动不对称，
+      从而引起微波透镜频移。正确计算需考虑：
+      (1) 腔孔径对下行原子云的截断（上下行 dressed state 受透镜偏转的差异）；
+      (2) 超越 ρ² 的全阶偶极力；
+      (3) Rabi 倾角变化和探测非均匀性。
+    domain: "原子喷泉钟，原子干涉测量"
+    key_insight: >
+      腔孔径截断效应是微波透镜频移计算中不可忽略的关键因素——
+      忽略上行孔径会高估频移（因为包含了被孔径截去、远离轴线的原子贡献）。
+    formula: null
+    conditions: "需要精确的喷泉几何参数（原子云尺寸、温度、腔孔径尺寸、Rabi 倾角、探测非均匀性）"
+    source_claim: >
+      "The microwave standing wave and its spatially varying field amplitude produces a radial magnetic dipole force which acts as a lens to focus (or defocus) the atomic wave packets, hence the name microwave lensing frequency shift"
+    open_questions:
+      - "Independent experimental verification of the microwave lensing shift is still lacking; the uncertainty is conservatively taken equal to the calculated value."
+
+  - id: pri.cso_ultralow_phase_noise_reference
+    name: "低温蓝宝石振荡器（CSO）超低相位噪声参考信号与慢锁氢钟方案"
+    tier: engineering
+    verification_status: demonstrated
+    statement: >
+      自由运行的低温蓝宝石振荡器（CSO，约 11.932 GHz）提供超低相位噪声信号。
+      从中导出的可调谐 11.98 GHz 微波信号经分频至 100 MHz，
+      与氢钟（H1）输出通过计算机驱动的数字锁相环（时间常数 ~1000 s）
+      进行慢相位锁定。结果：短于 ~1000 s 时间尺度具有 CSO 的极致相位噪声特性，
+      中长稳由氢钟保障，同时提供了与地方时标、TAI 和卫星时间传递系统（GPS, TWSTFT）的连接。
+    domain: "时频计量，低噪声微波信号生成"
+    key_insight: >
+      慢锁方案将 CSO 的短期卓越噪声性能与氢钟的中长期稳定度解耦组合，
+      避免了直接锁定 CSO 频率导致的中长期频率漂移问题。
+    conditions: "需要定期液氦补充（每 26 天），每次补充老化数小时降级半天"
+    source_claim: >
+      "This 11.98 GHz reference has the exquisite phase noise properties of the CSO for time scales less than ~1000 s and the mid and long-term frequency stability of the hydrogen maser, while providing the connection to LNE-SYRTE timescales, to TAI and to other laboratories via GPS and TWSTFT"
+
+methods:
+  - id: meth.dcp_uncertainty_evaluation_tilt_method
+    name: "分布式腔相位频移不确定度评估方法——倾角灵敏度测量与数值场计算结合"
+    status: demonstrated
+    applies_to: ent.lne_syrte_fountain_ensemble_2012
+    steps_summary: >
+      1. m=1 项：测量喷泉频率随上抛方向倾角的变化（倾角灵敏度）→
+         调节双馈入功率平衡使倾角灵敏度归零 → 倾角不确定度（馈入方向 ~1–0.2 mrad，
+         垂直方向 ~0.7 mrad）决定 m=1 残差不确度度 →
+      2. m=0 和 m=2 项：由腔壁损耗分布和馈入结构的相位分布数值计算
+         ([37][38] 方法) → 输入喷泉几何参数（云尺寸、温度、Rabi 振荡对比度、
+         探测几何）计算原子响应 →
+      3. 各方位角项修正和不确定度独立评估后组合为总 DCP 修正。
+    required_hardware:
+      - "可调节微波馈入功率平衡的双端口 TE011 腔"
+      - "喷泉上抛方向倾角控制装置"
+      - "Rabi 振荡对比度表征（上下行分别测量）"
+    advantages:
+      - "将三维全波电磁问题约化为三个独立可测/可算的方位角项"
+      - "FO2-Cs DCP 不确定度从 3×10⁻¹⁶ 降至 8.4×10⁻¹⁷"
+    disadvantages:
+      - "需精确测量倾角灵敏度（对喷泉几何公差敏感）"
+      - "垂直馈入方向的倾角灵敏度尚未在 FO1 和 FOM 上完全测量"
+    source_claim: >
+      "These measurements lowered the DCP shift uncertainty for FO2-Cs clock from 3×10⁻¹⁶ to 8.4×10⁻¹⁷ and defined a set of measurements to establish the DCP uncertainty of a fountain"
+
+  - id: meth.switchable_microwave_synthesizer_leakage_test
+    name: "可切换微波合成器方案——Mach-Zehnder 干涉型开关用于微波泄漏频移评估"
+    status: demonstrated
+    applies_to: ent.lne_syrte_fountain_ensemble_2012
+    steps_summary: >
+      1. 合成器架构：9.192 GHz 由高功率 8.992 GHz + 少量 200 MHz 混频产生
+         （仅产生所需最小功率）→
+      2. Mach-Zehnder 干涉开关：衰减器和移相器调节使 PIN 开关闭合时
+         干涉暗条纹（破坏性干涉），开关断开时信号经直通通道无瞬态扰动 →
+      3. 外差相位瞬态分析仪（灵敏度 1 µrad·s⁻¹ @ 9.192 GHz）
+         选出组件并确定关键参数 →
+      4. 开关微波测试：测量开关微波接通/断开时的钟频率差来评估泄漏频移 →
+      5. 同步扰动搜索：用外差分析仪周期性地搜索与喷泉周期同步的杂散相位扰动。
+    required_hardware:
+      - "Mach-Zehnder 干涉型 PIN 二极管微波开关"
+      - "外差相位瞬态分析仪（灵敏度 1 µrad·s⁻¹ @ 9.192 GHz）"
+      - "独立参考合成器 + 主动补偿光纤链路（6–9 GHz，用于其他目的）"
+    source_claim: >
+      "With a suitably characterized switchable synthesizer, it becomes possible to test for a putative microwave leakage by measuring the clock frequency with and without switched microwaves"
+
+  - id: meth.fountain_fountain_comparison_data_processing
+    name: "多喷泉钟比较的统一数据处理与自动化流程"
+    status: demonstrated
+    applies_to: ent.lne_syrte_fountain_ensemble_2012
+    steps_summary: >
+      1. 每台喷泉各周期产生一个系统修正后的频率测量值 →
+         冷碰撞频移系数从交错高低密度测量中提取并修正 →
+      2. 以 864 s（1/100 天）为窗口平均，剔除无效周期
+         （磁场校验中、激光失锁、CSO 输出跳变、光纤链路故障等） →
+      3. 两喷泉同步验证数据频率差消除共模参考信号频率 →
+      4. 全自动化流程，每日更新喷泉比较结果，准实时（每小时）更新系统参数概览。
+    required_hardware:
+      - "共用超低噪声 CSO 参考信号"
+      - "计算机自动控制与监控系统"
+    source_claim: >
+      "Fountain comparisons following the above data processing scheme are now performed regularly at LNE-SYRTE. It was recently incorporated into a fully automated procedure."
+
+  - id: meth.fountain_steering_timescale
+    name: "原子喷泉钟数据月度驾驭地方原子时方法"
+    status: demonstrated
+    applies_to: ent.lne_syrte_fountain_ensemble_2012
+    steps_summary: >
+      1. 喷泉钟连续测量氢钟频率 → TAI 校准报告（每 20–30 天一个点，
+         统计不确定度 ~3×10⁻¹⁶，加死时间不确定度 ~1.5×10⁻¹⁶） →
+      2. 喷泉钟数据（含 FO2-Rb）用于月度驾驭 TA(F)
+         （基于法国境内商业铯钟组的时标）→
+      3. 重力红移修正（FO1: −69.3×10⁻¹⁶, FO2: −65.4×10⁻¹⁶,
+         FOM: −68.7×10⁻¹⁶，不确定度 1.0×10⁻¹⁶ 对应 1 m 大地水准面高程不确定度）。
+    source_claim: >
+      "Since mid-2006, fountain data, including from FO2-Rb, are used to steer the French Atomic Time TA(F) on a monthly basis. TA(F) is a timescale based on an ensemble of commercial Cs clocks located in France and elaborated at LNE-SYRTE. This steering has improved the long-term stability of the timescale with respect to TAI."
+
+metrics:
+  - id: met.lne_syrte_fountain_best_stability_2012
+    name: "LNE-SYRTE 喷泉钟最佳短期频率稳定度（2012）"
+    unit: "无量纲（σ_y 分数频率 Allan 偏差）"
+    demonstrated_value:
+      value: "σ_y(τ) = 1.6×10⁻¹⁴ τ⁻¹/²"
+      conditions: "FO2-Cs，高原子数 N_at = 5×10⁶ 探测原子，CSO 作为参考信号，量子投影噪声极限运行"
+      verification_status: demonstrated
+      confidence: established
+      source: {zotero_key: "Syrte 2012", claim: "The best short-term stability to date for the operation of an atomic fountain with a high atom number is 1.6 × 10⁻¹⁴ τ⁻¹/²"}
+    note: "与 bize2005 中报告的值相同，因该值已是量子投影噪声极限，在这期间未进一步改善。"
+
+  - id: met.fo2_cs_total_accuracy_2012
+    name: "FO2-Cs 喷泉钟总系统不确定度（2012）"
+    unit: "无量纲（分数频率不确定度）"
+    demonstrated_value:
+      value: "2.1×10⁻¹⁶"
+      conditions: >
+        更新 DCP（表 I: −9.2±8.9×10⁻¹⁷）和微波透镜（表 II: 7.3×10⁻¹⁷）评估后。
+        总修正 −1637.5×10⁻¹⁶。主要分量：BBR +168.0±0.6×10⁻¹⁶，
+        冷碰撞 +112.0±1.2×10⁻¹⁶，二次 Zeeman −1915.9±0.3×10⁻¹⁶。
+      verification_status: demonstrated
+      confidence: established
+      source: {zotero_key: "Syrte 2012", claim: "The accuracy budget for the LNE-SYRTE fountains is given in Table III. We give the most recent status, taking into account the latest evaluations of the distributed cavity phase shift and microwave lensing frequency shifts as reported in Table I and II."}
+
+  - id: met.fo1_total_accuracy_2012
+    name: "FO1 喷泉钟总系统不确定度（2012）"
+    unit: "无量纲（分数频率不确定度）"
+    demonstrated_value:
+      value: "3.5×10⁻¹⁶"
+      conditions: >
+        更新 DCP（表 I: −9.7±27×10⁻¹⁷）和微波透镜评估后。
+        总修正 −1033.1×10⁻¹⁶。FO1 使用 2D-MOT 源装载。
+      verification_status: demonstrated
+      confidence: established
+      source: {zotero_key: "Syrte 2012", claim: "The accuracy budget for the LNE-SYRTE fountains is given in Table III."}
+
+  - id: met.fom_total_accuracy_2012
+    name: "FOM 可搬运喷泉钟总系统不确定度（2012）"
+    unit: "无量纲（分数频率不确定度）"
+    demonstrated_value:
+      value: "6.9×10⁻¹⁶"
+      conditions: >
+        更新 DCP（表 I: −7.1±16×10⁻¹⁷）和微波透镜评估后。
+        总修正 −113.0×10⁻¹⁶。FOM 原子数较低，冷碰撞频移较小（+28.6±5.0×10⁻¹⁶）。
+      verification_status: demonstrated
+      confidence: established
+      source: {zotero_key: "Syrte 2012", claim: "The accuracy budget for the LNE-SYRTE fountains is given in Table III."}
+
+  - id: met.fo2_rb_total_accuracy_2012
+    name: "FO2-Rb 喷泉钟总系统不确定度（2012）"
+    unit: "无量纲（分数频率不确定度）"
+    demonstrated_value:
+      value: "3.3×10⁻¹⁶"
+      conditions: >
+        更新 DCP（表 I: +3.7±9.9×10⁻¹⁷）和微波透镜评估后。
+        总修正 −3341.0×10⁻¹⁶。⁸⁷Rb 冷碰撞频移远小于 ¹³³Cs（+2.0±2.5×10⁻¹⁶）。
+      verification_status: demonstrated
+      confidence: established
+      source: {zotero_key: "Syrte 2012", claim: "The accuracy budget for the LNE-SYRTE fountains is given in Table III."}
+
+  - id: met.fom_fo2_frequency_agreement_2012
+    name: "FOM 与 FO2-Cs 喷泉钟频率一致性（2006–2011）"
+    unit: "无量纲（分数频率差 D 和总不确定度 U）"
+    demonstrated_value:
+      value: "D = −3.0×10⁻¹⁶, U = 9.1×10⁻¹⁶, |D/U| = 0.33"
+      conditions: "320 天有效比较数据（MJD 54000–55600），favorable goodness-of-fit Q_0 = 0.983"
+      verification_status: demonstrated
+      confidence: established
+      source: {zotero_key: "Syrte 2012", claim: "Table IV: Summary of Cs fountain comparisons over the November 2006 to April 2011 period. FOM-FO2 D = −3.0, U = 9.1, |D/U| = 0.33"}
+    note: "Q_0 = 0.983 表明 FOM 与 FO2 在总不确定度内完全一致。FO1-FO2 比较显示微小偏差（D = −5.7×10⁻¹⁶, U = 6.2×10⁻¹⁶, Q_0 = 0.001），暗示可能低估了几倍 10⁻¹⁶ 的系统效应，尚在调查中。"
+
+  - id: met.bb_r_cs_stark_coefficient_2012
+    name: "¹³³Cs 基态超精细跃迁黑体辐射标量 Stark 系数（2012 修订值）"
+    unit: "Hz·V⁻²·m²"
+    demonstrated_value:
+      value: "k₀ = −2.282(4)×10⁻¹⁰ Hz·V⁻²·m²"
+      conditions: >
+        在 1.5–25 kV·m⁻¹ 低电场范围重新测量，与早期 [47] 高场测量（50–150 kV·m⁻¹）一致。
+        张量部分理论符号修正 [52] 导致 BBR 分数频率修正变化 6.8×10⁻¹⁷（80% 来自符号修正）。
+        与最新理论计算 [56][57][58] 一致。
+      verification_status: confirmed
+      confidence: established
+      source: {zotero_key: "Syrte 2012", claim: "we get a corrected value for the scalar Stark coefficient: k₀ = −2.282(4) × 10⁻¹⁰ Hz·V⁻²·m²"}
+    note: "不确定度仍由施加电场的铜极板几何不确定度主导。直接 BBR 管测量（300–440 K）与此一致但不确定度大 22 倍。"
+
+  - id: met.rb_cs_frequency_ratio_drift_2012
+    name: "⁸⁷Rb/¹³³Cs 超精细频率比时间变化约束（2008–2012，LNE-SYRTE）"
+    unit: "yr⁻¹"
+    demonstrated_value:
+      value: "d ln(ν_Rb/ν_Cs)/dt = (−3.2 ± 2.3)×10⁻¹⁶ yr⁻¹"
+      conditions: "FO2 双喷泉 Rb/Cs 频率比对（2008 年报告），对应 d ln(α^−0.49 [g_Rb/g_Cs])/dt 约束"
+      verification_status: demonstrated
+      confidence: established
+      source: {zotero_key: "Syrte 2012", claim: "a putative time variation of the ratio of the two hyperfine frequencies is constrained to d ln(ν_Rb/ν_Cs)/dt = (−3.2 ± 2.3)×10⁻¹⁶ yr⁻¹"}
+    note: "纳入 Standard Model 参数后等价于 d ln(α^−0.49 [m_q/Λ_QCD]^−0.025)/dt。FO2 双喷泉配置的更新分析预期将显著改善此约束。"
+
+  - id: met.tai_fountain_calibration_contribution_2012
+    name: "LNE-SYRTE 喷泉钟对 TAI 校准的贡献份额（2007–2010）"
+    unit: "报告数/占比"
+    demonstrated_value:
+      value: "78/161 ≈ 48%（全球近一半的正式 TAI 喷泉钟校准报告来自 LNE-SYRTE）"
+      conditions: "2007–2010 年期间，每 20–30 天一个校准点，统计不确定度 ~3×10⁻¹⁶，加死时间不确定度 ~1.5×10⁻¹⁶"
+      verification_status: demonstrated
+      confidence: established
+      source: {zotero_key: "Syrte 2012", claim: "LNE-SYRTE reported 78 formal evaluations to BIPM, out of a total of 161 fountain reports worldwide, i.e. LNE-SYRTE has contributed almost 50% of all reports since 2007"}
+
+  - id: met.pharao_em_total_uncertainty_2012
+    name: "PHARAO 工程模型（PHARAO-EM）地面测试总系统不确定度（2009）"
+    unit: "无量纲（分数频率不确定度）"
+    demonstrated_value:
+      value: "1.9×10⁻¹⁵"
+      conditions: >
+        地面测试（CNES Toulouse, 2009）。最大贡献：二次 Zeeman 效应 ±14×10⁻¹⁶
+        （因最内层磁屏蔽问题导致沿原子轨迹磁场不均匀），
+        冷碰撞频移 ±11×10⁻¹⁶（仅两周测量，统计受限），
+        一阶 Doppler ±5×10⁻¹⁶（地面重力导致上下行腔作用时间不对称）。
+      verification_status: demonstrated
+      confidence: likely
+      source: {zotero_key: "Syrte 2012", claim: "The total frequency uncertainty is 1.9 × 10⁻¹⁵"}
+
+  - id: met.fountain_comparison_instability_2012
+    name: "LNE-SYRTE 喷泉钟之间频率比较稳定度（2012）"
+    unit: "无量纲（σ_y 分数频率 Allan 偏差）"
+    demonstrated_value:
+      value: "σ_y(τ) = 1.3×10⁻¹³ τ⁻¹/²，分辨率 ~2×10⁻¹⁶ @ 4.5 天"
+      conditions: "FOM 与 FO2-Cs 比较，50 有效天数据（MJD 55551–55663），CSO 共模参考消除"
+      verification_status: demonstrated
+      confidence: established
+      source: {zotero_key: "Syrte 2012", claim: "Here, the overall short-term instability is 1.3×10⁻¹³ τ⁻¹/² and the measurement resolution is ~2 part in 10¹⁶ after averaging for 4.5 days."}
+
+  - id: met.cso_h_maser_kennedy_thorndike_2012
+    name: "CSO-H maser 长期比较对 Kennedy-Thorndike 检验的约束（2012）"
+    unit: "无量纲（Lorentz 不变性违逆参数约束倍数）"
+    demonstrated_value:
+      value: "比既往最佳约束提高 500 倍（光子扇区 Lorentz 局域不变性检验，持续时间超 10 年）"
+      conditions: "CSO（11.932 GHz）与氢钟长期比较，利用地球公转效应"
+      verification_status: demonstrated
+      confidence: established
+      source: {zotero_key: "Syrte 2012", claim: "This experiment is to date the most stringent Kennedy-Thorndike test by a factor of 500."}
+
+# ═══════════════════════════════════════════════
+#  RELATIONS（关系）
+# ═══════════════════════════════════════════════
+
+relations:
+  - id: rel.guena_2012_01
+    subject: ent.lne_syrte_fountain_ensemble_2012
+    predicate: CHARACTERIZED-BY
+    object: pri.dcp_azimuthal_decomposition
+    confidence: established
+    source: {zotero_key: "Syrte 2012", claim: "We have recently published measurements of the DCP shift performed with ¹³³Cs in FO2 where, for the first time, quantitative agreement between theory and experiment is found."}
+
+  - id: rel.guena_2012_02
+    subject: ent.lne_syrte_fountain_ensemble_2012
+    predicate: CHARACTERIZED-BY
+    object: pri.microwave_lensing_frequency_shift
+    confidence: likely
+    source: {zotero_key: "Syrte 2012", claim: "In the absence of an independent calculation and/or experimental investigation, the uncertainty for the microwave lensing is conservatively taken to be equal to the calculated value."}
+
+  - id: rel.guena_2012_03
+    subject: ent.lne_syrte_fountain_ensemble_2012
+    predicate: CHARACTERIZED-BY
+    object: pri.cso_ultralow_phase_noise_reference
+    confidence: established
+    source: {zotero_key: "Syrte 2012", claim: "A Cryogenic Sapphire Oscillator (CSO) is the local oscillator for all of the atomic fountains. Its ultra-low phase noise allows the fountains to operate at the quantum projection noise limit, producing short-term instabilities as low as 1.6 × 10⁻¹⁴ at 1 s"}
+
+  - id: rel.guena_2012_04
+    subject: ent.lne_syrte_fountain_ensemble_2012
+    predicate: HAS-SUBSYSTEM
+    object: ent.fo2_dual_rb_cs_fountain_2012
+    confidence: established
+    source: {zotero_key: "Syrte 2012", claim: "The Rb and Cs clocks in FO2 routinely operate simultaneously since 2009"}
+
+  - id: rel.guena_2012_05
+    subject: ent.fo2_dual_rb_cs_fountain_2012
+    predicate: MEASURES
+    object: met.rb_cs_frequency_ratio_drift_2012
+    confidence: established
+    source: {zotero_key: "Syrte 2012", claim: "a putative time variation of the ratio of the two hyperfine frequencies is constrained to d ln(ν_Rb/ν_Cs)/dt = (−3.2 ± 2.3) × 10⁻¹⁶ yr⁻¹"}
+
+  - id: rel.guena_2012_06
+    subject: met.fom_fo2_frequency_agreement_2012
+    predicate: OPERATIONALIZED-AS
+    object: meth.fountain_fountain_comparison_data_processing
+    confidence: established
+    source: {zotero_key: "Syrte 2012", claim: "Fountain comparisons following the above data processing scheme are now performed regularly at LNE-SYRTE. It was recently incorporated into a fully automated procedure."}
+
+  - id: rel.guena_2012_07
+    subject: meth.dcp_uncertainty_evaluation_tilt_method
+    predicate: REALIZES
+    object: pri.dcp_azimuthal_decomposition
+    confidence: established
+    source: {zotero_key: "Syrte 2012", claim: "We apply this approach to evaluate the DCP uncertainty of FO1, FOM and FO2-Rb."}
+
+  - id: rel.guena_2012_08
+    subject: ent.pharao_engineering_model_2012
+    predicate: CHARACTERIZED-BY
+    object: met.pharao_em_total_uncertainty_2012
+    confidence: established
+    source: {zotero_key: "Syrte 2012", claim: "The total frequency uncertainty is 1.9 × 10⁻¹⁵"}
+
+  - id: rel.guena_2012_09
+    subject: ent.lne_syrte_fountain_ensemble_2012
+    predicate: CALIBRATES
+    object: ent.si_second_definition
+    confidence: established
+    source: {zotero_key: "Syrte 2012", claim: "LNE-SYRTE reported 78 formal evaluations to BIPM, out of a total of 161 fountain reports worldwide, i.e. LNE-SYRTE has contributed almost 50% of all reports since 2007"}
+    note: "跨专题引用：ent.si_second_definition 定义于 dimarcq2024.yaml。LNE-SYRTE 喷泉钟组通过 TAI 校准机制为 SI 秒的实现提供贡献。"
+
+  - id: rel.guena_2012_10
+    subject: ent.lne_syrte_fountain_ensemble_2012
+    predicate: BROADENED-BY
+    object: met.tai_fountain_calibration_contribution_2012
+    confidence: established
+    source: {zotero_key: "Syrte 2012", claim: "Since 2007, LNE-SYRTE fountains have measured the frequency of one of LNE-SYRTE H-masers almost continuously. These data are used to calibrate the International Atomic Time (TAI)."}
+
+  - id: rel.guena_2012_11
+    subject: met.bb_r_cs_stark_coefficient_2012
+    predicate: CHARACTERIZED-BY
+    object: met.fo2_cs_total_accuracy_2012
+    confidence: established
+    source: {zotero_key: "Syrte 2012", claim: "we get a corrected value for the scalar Stark coefficient: k₀ = −2.282(4) × 10⁻¹⁰ Hz·V⁻²·m². The change in the BBR fractional frequency correction from the previous value of [47] is 6.8 × 10⁻¹⁷"}
+
+  - id: rel.guena_2012_12
+    subject: met.fo2_cs_total_accuracy_2012
+    predicate: OPERATIONALIZED-AS
+    object: meth.switchable_microwave_synthesizer_leakage_test
+    confidence: established
+    source: {zotero_key: "Syrte 2012", claim: "All the LNE-SYRTE fountains (including FO2-Rb) are now equipped with a switchable synthesizer."}
+
+  - id: rel.guena_2012_13
+    subject: meth.fountain_steering_timescale
+    predicate: APPLIED-TO
+    object: ent.lne_syrte_fountain_ensemble_2012
+    confidence: established
+    source: {zotero_key: "Syrte 2012", claim: "Since mid-2006, fountain data, including from FO2-Rb, are used to steer the French Atomic Time TA(F) on a monthly basis."}
+
+  - id: rel.guena_2012_14
+    subject: ent.pharao_engineering_model_2012
+    predicate: COMPARED-WITH
+    object: ent.lne_syrte_fountain_ensemble_2012
+    confidence: established
+    mode: frequency_comparison
+    source: {zotero_key: "Syrte 2012", claim: "The PHARAO-EM clock, operated in several configurations, was compared to the transportable fountain FOM. After applying all systematic corrections, the frequency differences were smaller than 2 × 10⁻¹⁵, with a resolution of 5 × 10⁻¹⁶."}

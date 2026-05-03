@@ -4,7 +4,7 @@
 
 > **用途**：处理新论文时，用此文件快速检查是否已有同名/同义节点，避免重复定义。
 > **维护**：本文件由 `scripts/build_index.py` 自动生成，**请勿手工编辑**。
-> **生成时间**：2026-05-03 07:55 UTC
+> **生成时间**：2026-05-03 08:04 UTC
 
 > **使用方式**：
 > - 处理新论文时，`Ctrl+F` 搜索关键词（如 `brownian`, `pdh`, `fiber`）
@@ -485,6 +485,7 @@
 | `ent.al_plus_ion_optical_clock` | ²⁷Al⁺ 离子量子逻辑光钟（NIST 实验系统） | [chou2010](topics/timescales/papers/chou2010.yaml) |
 | `ent.bnm_syrte_cs_rb_fountain_ensemble_2005` | BNM-SYRTE 铯/铷原子喷泉钟组（FO1、FO2、FOM，2005 年水平） | [bize2005](topics/timescales/papers/bize2005.yaml) |
 | `ent.geoid` | 大地水准面（地球重力等势面——时间频率计量的高程参考） | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
+| `ent.lne_syrte_fountain_ensemble_2012` | LNE-SYRTE 原子喷泉钟组（FO1、FO2 Rb/Cs 双喷泉、FOM 可搬运喷泉，2012 年水平） | [guena2012](topics/timescales/papers/guena2012.yaml) |
 | `ent.mutc_photonic_microwave_generator` | MUTC 光电二极管光子微波发生器（基于光频率分频的低噪声 10GHz 微波源） | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 | `ent.sf6_molecular_spectrometer_lpl` | SF6 分子 Ramsey 条纹光谱仪（LPL，2009） | [amyklein2009](topics/timescales/papers/amyklein2009.yaml) |
 | `ent.si_second_definition` | SI 秒定义（当前基于铯，面向光学重定义） | [dimarcq2024](topics/timescales/papers/dimarcq2024.yaml) |
@@ -495,6 +496,8 @@
 | ID | Name | Tier | Source |
 |----|------|------|--------|
 | `pri.am_pm_conversion_couples_rin_to_phase_noise` | 光电检测中的 AM-PM 转换将光脉冲 RIN 耦合为微波相位噪声 | engineering | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
+| `pri.cso_ultralow_phase_noise_reference` | 低温蓝宝石振荡器（CSO）超低相位噪声参考信号与慢锁氢钟方案 | engineering | [guena2012](topics/timescales/papers/guena2012.yaml) |
+| `pri.dcp_azimuthal_decomposition` | 分布式腔相位频移的方位角傅里叶分解评估原理 | engineering | [guena2012](topics/timescales/papers/guena2012.yaml) |
 | `pri.dwdm_oadm_metrology_data_coexistence` | DWDM/OADM 计量信号与数据信号共存传输原理 | engineering | [amyklein2009](topics/timescales/papers/amyklein2009.yaml) |
 | `pri.fountain_quantum_projection_noise_limit` | 喷泉钟量子投影噪声极限稳定度 | foundational | [bize2005](topics/timescales/papers/bize2005.yaml) |
 | `pri.geoid_uncertainty_clock_comparison_limit` | 大地水准面不确定度对时钟比较的终极限制 | engineering | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
@@ -502,6 +505,7 @@
 | `pri.gravitational_time_dilation_clock_shift` | 引力时间膨胀——地球表面高度差引发的时钟频率偏移 | foundational | [chou2010](topics/timescales/papers/chou2010.yaml) |
 | `pri.hyperfine_frequency_sensitivity_fundamental_constants` | 超精细跃迁频率对基本常数变化的灵敏度 | foundational | [bize2005](topics/timescales/papers/bize2005.yaml) |
 | `pri.interrupted_adiabatic_passage_density_control` | 中断绝热通道法精确控制原子数密度比 | engineering | [bize2005](topics/timescales/papers/bize2005.yaml) |
+| `pri.microwave_lensing_frequency_shift` | 微波透镜频移原理——微波驻波场径向磁偶极力的原子波包透镜效应 | engineering | [guena2012](topics/timescales/papers/guena2012.yaml) |
 | `pri.molecular_atomic_frequency_ratio_mass_dependence` | 分子/原子跃迁频率比对质子-电子质量比的灵敏度原理 | foundational | [amyklein2009](topics/timescales/papers/amyklein2009.yaml) |
 | `pri.mutc_structure_suppresses_space_charge` | MUTC 光电二极管结构通过预畸变电场设计抑制空间电荷非线性效应 | engineering | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 | `pri.ofd_transfers_optical_stability_to_microwave` | 光频率分频（OFD）将光学参考稳定度无噪声传递至微波域 | engineering | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
@@ -517,8 +521,11 @@
 |----|------|--------|
 | `meth.am_pm_coefficient_measurement` | AM-PM 转换系数 α 测量方法 | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 | `meth.cross_correlation_phase_noise_measurement` | 互相关频谱分析残余相位噪声测量方法 | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
+| `meth.dcp_uncertainty_evaluation_tilt_method` | 分布式腔相位频移不确定度评估方法——倾角灵敏度测量与数值场计算结合 | [guena2012](topics/timescales/papers/guena2012.yaml) |
 | `meth.fountain_cso_interrogation_ensemble` | 共用低温蓝宝石振荡器的多喷泉钟询问与频率比较方法 | [bize2005](topics/timescales/papers/bize2005.yaml) |
+| `meth.fountain_fountain_comparison_data_processing` | 多喷泉钟比较的统一数据处理与自动化流程 | [guena2012](topics/timescales/papers/guena2012.yaml) |
 | `meth.fountain_real_time_differential_collision_shift` | 喷泉钟冷碰撞频移实时差分测量方法 | [bize2005](topics/timescales/papers/bize2005.yaml) |
+| `meth.fountain_steering_timescale` | 原子喷泉钟数据月度驾驭地方原子时方法 | [guena2012](topics/timescales/papers/guena2012.yaml) |
 | `meth.fundamental_constant_variation_rb_cs_ratio` | 通过 ⁸⁷Rb/¹³³Cs 超精细频率比约束基本常数变化 | [bize2005](topics/timescales/papers/bize2005.yaml) |
 | `meth.gps_satellite_clock_comparison` | GPS 卫星原子钟远程比较方法 | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 | `meth.interrupted_adiabatic_passage_density_ratio` | 中断绝热通道精确密度比制备方法 | [bize2005](topics/timescales/papers/bize2005.yaml) |
@@ -527,6 +534,7 @@
 | `meth.optical_clock_comparison` | 光钟比较方法（本地与远程） | [dimarcq2024](topics/timescales/papers/dimarcq2024.yaml) |
 | `meth.round_trip_fiber_phase_noise_correction` | 光纤相位噪声 round-trip 补偿方法 | [amyklein2009](topics/timescales/papers/amyklein2009.yaml) |
 | `meth.sf6_ramsey_fringe_absolute_frequency_measurement` | SF6 分子 Ramsey 条纹绝对频率测量方法 | [amyklein2009](topics/timescales/papers/amyklein2009.yaml) |
+| `meth.switchable_microwave_synthesizer_leakage_test` | 可切换微波合成器方案——Mach-Zehnder 干涉型开关用于微波泄漏频移评估 | [guena2012](topics/timescales/papers/guena2012.yaml) |
 
 ---
 

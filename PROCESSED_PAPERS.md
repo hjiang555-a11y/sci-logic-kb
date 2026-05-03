@@ -205,6 +205,7 @@
 | `chou2010.yaml` | 1630.full (1) | Chou 2010 — 光钟相对论验证（<10 m/s 时间膨胀、33 cm 引力红移） | ✅ v4.4 evidence |
 | `amyklein2009.yaml` | ICOLS09 Amy et al | Amy-Klein 2009 — 分子 SF6/Cs 原子钟频率比对约束 mp/me 变化；108 km 混合光纤链路 | ✅ v4.0 evidence |
 | `bize2005.yaml` | LZ01024172 | Bize 2005 — 冷原子钟进展：量子极限喷泉钟稳定度、绝热通道碰撞频移控制、Rb/Cs 基本常数检验、PHARAO 空间钟 | ✅ v4.0 evidence |
+| `guena2012.yaml` | Syrte 2012 | Guena 2012 — LNE-SYRTE 喷泉钟组五年进展：DCP/微波透镜/微波泄漏系统评估、TAI 校准贡献近 50%、Rb/Cs 双喷泉、PHARAO-EM 测试 | ✅ v4.0 framework |
 
 ## 时间频率传递专题
 

@@ -1,6 +1,14 @@
 # 知识库演化日志
 
 
+## [2026-05-03] ingest | Guena 2012 — LNE-SYRTE fountain ensemble five-year progress: DCP azimuthal decomposition, microwave lensing, BBR Stark coefficient revision, TAI calibration dominance, Rb/Cs dual fountain, PHARAO-EM ground test (timescales)
+
+### 摄入内容
+- 文件：topics/timescales/papers/guena2012.yaml
+- 贡献类型：framework
+- 核心贡献：系统概述LNE-SYRTE三台喷泉钟（FO1/FO2/FOM）五年进展。DCP评估方位角分解法将FO2-Cs不确定度从3×10⁻¹⁶降至8.4×10⁻¹⁷；四喷泉微波透镜频移计算；BBR Stark系数修订k₀=−2.282(4)×10⁻¹⁰ Hz·V⁻²·m²；可切换微波合成器泄漏评估；精度预算FO1 3.5×10⁻¹⁶/FO2-Cs 2.1×10⁻¹⁶/FOM 6.9×10⁻¹⁶/FO2-Rb 3.3×10⁻¹⁶；2007–2010年全球近50% TAI校准报告出自SYRTE；Rb/Cs频率比约束dln(νRb/νCs)/dt=(−3.2±2.3)×10⁻¹⁶ yr⁻¹；Lorentz不变性SME检验首次约束4个新参数；PHARAO-EM地面测试1.9×10⁻¹⁵
+- 新增节点：3 entities, 3 principles, 4 methods, 11 metrics, 14 relations
+
 ## [2026-05-03] ingest | Bize 2005 — BNM-SYRTE Cs/Rb fountain advances: quantum-limited stability, adiabatic collision shift control, Rb/Cs fundamental constant test, PHARAO space clock (timescales)
 
 ### 摄入内容

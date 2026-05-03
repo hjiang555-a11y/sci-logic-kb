@@ -2,7 +2,7 @@
 
 # 📊 Metrics Quick Reference
 
-> Auto-generated 2026-05-03 07:55 UTC
+> Auto-generated 2026-05-03 08:04 UTC
 >
 > Metrics are grouped by **role** (v4.4 σ_y-first convention, see `topics/ultrastable-laser/_meta/scoping_principles.md` v2). Role is taken from the `role` field on the metric node when present, otherwise inferred from ID / name heuristics.
 
@@ -366,25 +366,42 @@
 | `met.fiber_phase_noise_psd_per_length_paris_2009` | 巴黎电信光纤相位噪声功率谱密度（2009） | 14 rad²/(Hz·km) @ 1 Hz（电信 11 km 光纤）；暗光纤低约 10 倍 | 城市电信网络 11 km 光纤（Université Paris 13 ↔ RENATER Aub… | [amyklein2009](topics/timescales/papers/amyklein2009.yaml) |
 | `met.mutc_10ghz_phase_noise_floor` | MUTC PD 光子微波 10 GHz 绝对相位噪声底 | –177 dBc/Hz | 10 GHz 载波，>1 MHz 偏移频率；扣除放大器噪声后，假定两振荡器等贡献 | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 
+### 🔧 Engineering (κ/温度/磁场)
+
+| ID | Name | Best Value | Conditions | Source |
+|----|------|------------|------------|--------|
+| `met.rb_cs_frequency_ratio_drift_2012` | ⁸⁷Rb/¹³³Cs 超精细频率比时间变化约束（2008–2012，LNE-SYRTE） | d ln(ν_Rb/ν_Cs)/dt = (−3.2 ± 2.3)×10⁻¹⁶ yr⁻¹ | FO2 双喷泉 Rb/Cs 频率比对（2008 年报告），对应 d ln(α^−0.49 [g_R… | [guena2012](topics/timescales/papers/guena2012.yaml) |
+
 ### ❓ Unspecified
 
 | ID | Name | Best Value | Conditions | Source |
 |----|------|------------|------------|--------|
 | `met.al_plus_clock_q_factor_2010` | ²⁷Al⁺ 光钟 300 ms 探针 Q 因子 | 4.2×10¹⁴ | Al-Mg 钟，300 ms 探针脉冲，傅里叶变换受限线宽 FWHM = 2.7 Hz，对比度 ~… | [chou2010](topics/timescales/papers/chou2010.yaml) |
+| `met.bb_r_cs_stark_coefficient_2012` | ¹³³Cs 基态超精细跃迁黑体辐射标量 Stark 系数（2012 修订值） | k₀ = −2.282(4)×10⁻¹⁰ Hz·V⁻²·m² | 在 1.5–25 kV·m⁻¹ 低电场范围重新测量，与早期 [47] 高场测量（50–150 kV… | [guena2012](topics/timescales/papers/guena2012.yaml) |
+| `met.cso_h_maser_kennedy_thorndike_2012` | CSO-H maser 长期比较对 Kennedy-Thorndike 检验的约束（20… | 比既往最佳约束提高 500 倍（光子扇区 Lorentz 局域不变性检验，持续时间超 10 年） | CSO（11.932 GHz）与氢钟长期比较，利用地球公转效应 | [guena2012](topics/timescales/papers/guena2012.yaml) |
+| `met.fo1_total_accuracy_2012` | FO1 喷泉钟总系统不确定度（2012） | 3.5×10⁻¹⁶ | 更新 DCP（表 I: −9.7±27×10⁻¹⁷）和微波透镜评估后。 总修正 −1033.1×1… | [guena2012](topics/timescales/papers/guena2012.yaml) |
+| `met.fo2_cs_total_accuracy_2012` | FO2-Cs 喷泉钟总系统不确定度（2012） | 2.1×10⁻¹⁶ | 更新 DCP（表 I: −9.2±8.9×10⁻¹⁷）和微波透镜（表 II: 7.3×10⁻¹⁷）… | [guena2012](topics/timescales/papers/guena2012.yaml) |
+| `met.fo2_rb_total_accuracy_2012` | FO2-Rb 喷泉钟总系统不确定度（2012） | 3.3×10⁻¹⁶ | 更新 DCP（表 I: +3.7±9.9×10⁻¹⁷）和微波透镜评估后。 总修正 −3341.0×… | [guena2012](topics/timescales/papers/guena2012.yaml) |
+| `met.fom_fo2_frequency_agreement_2012` | FOM 与 FO2-Cs 喷泉钟频率一致性（2006–2011） | D = −3.0×10⁻¹⁶, U = 9.1×10⁻¹⁶, \\|D/U\\| = 0.33 | 320 天有效比较数据（MJD 54000–55600），favorable goodness-o… | [guena2012](topics/timescales/papers/guena2012.yaml) |
+| `met.fom_total_accuracy_2012` | FOM 可搬运喷泉钟总系统不确定度（2012） | 6.9×10⁻¹⁶ | 更新 DCP（表 I: −7.1±16×10⁻¹⁷）和微波透镜评估后。 总修正 −113.0×10… | [guena2012](topics/timescales/papers/guena2012.yaml) |
+| `met.fountain_comparison_instability_2012` | LNE-SYRTE 喷泉钟之间频率比较稳定度（2012） | σ_y(τ) = 1.3×10⁻¹³ τ⁻¹/²，分辨率 ~2×10⁻¹⁶ @ 4.5 天 | FOM 与 FO2-Cs 比较，50 有效天数据（MJD 55551–55663），CSO 共模参… | [guena2012](topics/timescales/papers/guena2012.yaml) |
 | `met.frequency_ratio_agreement_cross_lab` | 跨实验室光钟频率比一致性 | 部分频率比已在 ~10⁻¹⁷ 水平一致，但多数尚未达到 5×10⁻¹⁸ 目标 | Sr/Sr、Yb/Yb 同种比较最佳；异种比较和洲际比较仍在进行中 | [dimarcq2024](topics/timescales/papers/dimarcq2024.yaml) |
 | `met.geoid_height_uncertainty` | 大地水准面高程典型不确定度 | 30–50 cm | 通过多年地面重力测量和卫星轨道观测获得；全球平均典型值，局部可能有更大偏差 | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 | `met.gps_clock_comparison_accuracy_2006` | GPS 卫星时钟远程比较精度（2006 年水平） | ~1×10⁻¹⁵ | GPS 卫星共视法（common-view）或商业通信卫星中继；55 个国际实验室参与；需 米级 … | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 | `met.gravitational_redshift_33cm_detection_2010` | 33 cm 高度差引力红移测量 | (4.1 ± 1.6) × 10⁻¹⁷ | 约 100,000 s 低高度数据 + 40,000 s 高高度数据；Al-Mg 钟台面提升 33… | [chou2010](topics/timescales/papers/chou2010.yaml) |
 | `met.leap_seconds_count_1972_2006` | UTC 闰秒累计插入次数（1972–2006） | 23 | 1972 年 1 月至 2006 年 3 月 | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
+| `met.lne_syrte_fountain_best_stability_2012` | LNE-SYRTE 喷泉钟最佳短期频率稳定度（2012） | σ_y(τ) = 1.6×10⁻¹⁴ τ⁻¹/² | FO2-Cs，高原子数 N_at = 5×10⁶ 探测原子，CSO 作为参考信号，量子投影噪声极限… | [guena2012](topics/timescales/papers/guena2012.yaml) |
 | `met.mutc_10ghz_integrated_timing_jitter` | MUTC PD 光子微波 10 GHz 绝对集成定时抖动 | <500 as（单台振荡器；两台合成测量值为 700 as） | 10 GHz 载波，各 PD 21 V/19 V 偏压，~15 mA 光电流，+8 dBm 微波功… | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 | `met.mutc_10ghz_signal_power` | MUTC PD 10 GHz 微波载波最大功率 | +14 dBm | 56 μm MUTC PD，21 V 偏压，~125 mW 入射的 2 GHz 脉冲序列，37 m… | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 | `met.mutc_am_pm_coefficient` | MUTC PD AM-PM 转换系数 | <0.1 rad | 21 V 偏压，2 GHz 脉冲序列，光电流 <20 mA；1 GHz 脉冲序列和 9 V 偏压下… | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 | `met.mutc_residual_flicker_noise` | MUTC PD 光检测残余 flicker（f⁻¹）相位噪声 | –122 f⁻¹ dBc/Hz | 21 V 偏压，18 mA 光电流/PD，2 GHz 脉冲序列；降低至 10 V/15 mA 可达… | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 | `met.optical_clock_systematic_uncertainty` | 光学频率标准系统不确定度 | 9.4×10⁻¹⁹（²⁷Al⁺ 量子逻辑钟，NIST，路线图汇总） | ²⁷Al⁺ 单离子，量子逻辑探测，NIST Boulder | [dimarcq2024](topics/timescales/papers/dimarcq2024.yaml) |
 | `met.optical_link_instability_108km_hybrid_2009` | 108 km 混合光纤链路频率传递稳定度（2009，巴黎） | σ_y(1 s) = 4×10⁻¹⁶，σ_y(10⁴ s) = 7×10⁻²⁰（floor 值） | 108 km 混合链路（含 2×11 km 城市电信光纤 + 2×43 km 暗光纤）； roun… | [amyklein2009](topics/timescales/papers/amyklein2009.yaml) |
+| `met.pharao_em_total_uncertainty_2012` | PHARAO 工程模型（PHARAO-EM）地面测试总系统不确定度（2009） | 1.9×10⁻¹⁵ | 地面测试（CNES Toulouse, 2009）。最大贡献：二次 Zeeman 效应 ±14×1… | [guena2012](topics/timescales/papers/guena2012.yaml) |
 | `met.proton_electron_mass_ratio_variation_limit_2009` | 质子-电子质量比时间变化上限（2009，SF6/Cs） | (3.8 ± 5.6) × 10⁻¹⁴ yr⁻¹ | SF6 ν₂+ν₃ 带 P(4)E⁰ 双光子跃迁 vs Cs 基态超精细跃迁； 两年测量周期（20… | [amyklein2009](topics/timescales/papers/amyklein2009.yaml) |
 | `met.residual_ion_doppler_velocity_2010` | Al-Mg 钟离子残余多普勒速度 | (1.8 ± 1.1) nm/s（对应分数频率差 (1.2 ± 0.7) × 10⁻¹⁷） | Al-Mg 钟，counter-propagating 探针激光比较测量；钟频率由两方向平均得出从… | [chou2010](topics/timescales/papers/chou2010.yaml) |
 | `met.solid_earth_tide_frequency_fluctuation` | 固体潮引起的大地水准面起伏及派生频率波动 | ~2×10⁻¹⁷ | 全球尺度；与实验室地理位置有关；叠加有海洋潮汐、大气压效应、气候水分重分布等额外波动 | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
+| `met.tai_fountain_calibration_contribution_2012` | LNE-SYRTE 喷泉钟对 TAI 校准的贡献份额（2007–2010） | 78/161 ≈ 48%（全球近一半的正式 TAI 喷泉钟校准报告来自 LNE-SYRTE） | 2007–2010 年期间，每 20–30 天一个校准点，统计不确定度 ~3×10⁻¹⁶，加死时间… | [guena2012](topics/timescales/papers/guena2012.yaml) |
 | `met.time_dilation_detection_velocity_2010` | <10 m/s 速度时间膨胀检测 | 检测到 <10 m/s 速度引发的时间膨胀（对应分数频率偏移约 5×10⁻¹⁶） | Al-Mg 钟离子通过静态电场位移产生简谐运动；RF 频率 59 MHz；速度均方根 vrms <… | [chou2010](topics/timescales/papers/chou2010.yaml) |
 
 ## Ultrastable Laser
