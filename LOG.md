@@ -1,6 +1,14 @@
 # 知识库演化日志
 
 
+## [2026-05-03] ingest | Zhang 2023 — passive phase noise cancellation (PNC) review for noisy field fiber networks: PNC vs ANC tradeoffs, framework synthesis (time-frequency-transfer)
+
+## [2026-05-03] ingest | Sinclair 2016 — O-TWTFT clock synchronization through 12 km strongly turbulent air over Boulder urban environment: Rytov variance up to 7.5, TDEV ~165 as, confirms reciprocity survives strong turbulence (time-frequency-transfer)
+
+## [2026-05-03] ingest | Fang 2026 — complex maximum likelihood estimation (CLS) for O-TWTFT timing extraction: detection sensitivity improved 10× (1 nW→0.1 nW), 113 km Urumqi free-space link (time-frequency-transfer)
+
+## [2026-05-03] track | TFT topic complete: 3 new + 3 duplicates + 1 reclassified (Madej 2012 Sr+→frequency-standards); 7 papers resolved, 0 TFT pending (time-frequency-transfer)
+
 
 ## [2026-05-03] ingest | Pizzocaro 2021 — first VLBI intercontinental optical clock comparison: Italy↔Japan 9000 km, beyond satellite TWSTFT (time-frequency-transfer)
 

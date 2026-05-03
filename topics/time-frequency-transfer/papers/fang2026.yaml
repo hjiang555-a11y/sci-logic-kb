@@ -1,0 +1,149 @@
+# Fang 2026 — Enhanced O-TWTFT timing with complex maximum likelihood estimation [evidence]
+# 提取者：Claude Code（AI 草稿，待专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.5
+# 专题：time-frequency-transfer（O-TWTFT 复杂最小二乘时延提取算法 — 113 km 自由空间链路）
+# contribution_type: evidence — 提出复杂最小二乘（CLS）估计算法替代传统相位解缠+最小二乘，
+#   将 O-TWTFT 检测灵敏度从 ~1 nW 提升至 0.1 nW（一个量级），短稳从 80 fs→50 fs。
+#   不改变硬件——纯软件/数据处理创新。
+
+meta:
+  zotero_key: "fang2026_cpb_ae1120"
+  topic: time-frequency-transfer
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Enhanced timing of a 113 km O-TWTFT link with complex maximum likelihood estimation process"
+  year: 2026
+  first_author: Fang
+  authors: ["Yu-Chen Fang", "Jian-Yu Guan", "Qi Shen", "Jin-Jian Han", "Lei Hou", "Meng-Zhe Lian", "Yong Wang", "Wei-Yue Liu", "Ji-Gang Ren", "Cheng-Zhi Peng", "Qiang Zhang", "Hai-Feng Jiang", "Jian-Wei Pan"]
+  journal: "Chinese Physics B"
+  volume: 35
+  pages: "010602"
+  doi: "10.1088/1674-1056/ae1120"
+  note: >
+    [evidence 论文] 提出复杂最小二乘（CLS）时延提取算法：直接使用互相关干涉图的
+    复数 FFT 数据（幅度+相位）进行最大似然估计，避免传统方法中相位解缠在低 SNR
+    下引入的严重误差。实验在乌鲁木齐 113 km 自由空间链路验证：最小检测功率从 ~1 nW
+    降至 0.1 nW（一个量级提升），短稳 TDEV 从 80 fs 改善至 50 fs。系统等效总损耗
+    可达 100 dB，匹配地月链路水平。
+
+entities:
+  - id: ent.fang2026_cls_otwtft_113km
+    name: "Fang 2026 CLS 增强型 O-TWTFT 113 km 链路（乌鲁木齐南山↔高崖子）"
+    tier: system
+    domain: "O-TWTFT；自由空间时频传递；信号处理；频率梳计量"
+    description: >
+      乌鲁木齐附近南山-高崖子 113 km 自由空间 O-TWTFT 链路，双波长复用
+      （1545 nm + 1563 nm），每波长 1 W EDFA 输出。1545 nm 链路人为增大
+      损耗至 ~90 dB（模拟深空链路），1563 nm 链路 ~75 dB 作为参考。
+      核心创新在数据后处理：CLS 算法（复数域 β·e^{i(kα+γ)} 模型直接拟合
+      FFT 频谱）替代相位解缠+最小二乘。O-TWTFT 硬件与 Shen 2022 Nature
+      基本相同，但通过 CLS 将检测灵敏度提升一个量级。
+    verification_status: demonstrated
+    source:
+      zotero_key: "fang2026_cpb_ae1120"
+      claim: "we propose the complex least squares (CLS) method, which directly employs the full complex FFT data (amplitude and phase), avoiding phase unwrapping entirely."
+
+principles:
+  - id: pri.otwtft_complex_maximum_likelihood_estimation
+    name: "O-TWTFT 复杂最大似然时延估计原理"
+    tier: method
+    verification_status: observed
+    statement: >
+      传统 O-TWTFT 的 LOS 时延提取流程为：干涉图 → FFT → 计算相位差
+      → 一维相位解缠 → 最小二乘拟合相位斜率 → 时延。这丢弃了幅度信息，
+      且在低 SNR 下相位解缠极易引入周跳误差。CLS 方法直接在复数域建模：
+      将参考干涉图频谱 A_k 与当前干涉图频谱 C_k 的关系表示为
+      B_k = A_k·β·e^{i(kα+γ)}，通过最小化 ||B_k - C_k||² 同时估计
+      α（时延，Δτ = -α·Δf_r/(2π·δf·(f_r+Δf_r))）、β（幅度变化）、
+      γ（常数相位偏置）。该过程等价于复 AWGN 下的最大似然估计，
+      天然利用幅度作为权重——幅度大的频率分量贡献更多信息——
+      且完全规避相位解缠。
+    domain: "信号处理；O-TWTFT；估计理论"
+    key_insight: >
+      幅度信息不仅是"噪声权重"——保留复数数据等价于在频域进行
+      匹配滤波，幅度大的 bins 天然获得更高权重。相位解缠的避免
+      消除了低 SNR 下最主要的系统性误差源。
+    conditions: "FFT 有效谱段内 SNR 足够使复数模型 B_k ≈ A_k·β·e^{i(kα+γ)} 成立；参考干涉图相位连续"
+    source:
+      zotero_key: "fang2026_cpb_ae1120"
+      claim: "Minimizing this loss function... is equivalent to a maximum likelihood estimation (MLE) of the parameters (α, β, γ), under the assumption that the noise... is complex additive white Gaussian noise."
+
+methods:
+  - id: meth.otwtft_cls_timing_extraction
+    name: "O-TWTFT CLS 时延提取方法"
+    purpose: >
+      在不改变 O-TWTFT 硬件的前提下，通过纯软件后处理将检测灵敏度
+      提升一个量级（~1 nW → 0.1 nW），使系统级总损耗容忍度达到 ~100 dB
+      （等效地月链路），拓展 O-TWTFT 至深空应用。
+    description: >
+      1. 干涉图 FFT 获得复数频谱（参考 + 当前）。
+      2. 在有效频段内（信号带宽内）构建复数模型 B_k = A_k·β·e^{i(kα+γ)}。
+      3. 非线性最小二乘/最大似然优化估计 (α, β, γ)。
+      4. 从 α 计算单向时延变化 Δτ（无需相位解缠）。
+      5. 双向交换 → 差分消除共同路径波动 → 钟差。
+    key_steps:
+      - "干涉图 FFT → 复数频谱 A_k（参考）和 C_k（当前）"
+      - "定义 loss = Σ|A_k·β·e^{i(kα+γ)} - C_k|²"
+      - "非线性优化求解 (α, β, γ) → α → Δτ"
+      - "双向 Δτ 差分 → 钟差 → TDEV"
+    applicable_conditions: "需参考干涉图（高 SNR 标定）；有效频谱段内 SNR > 阈值；计算资源支持多参数非线性拟合"
+    source:
+      zotero_key: "fang2026_cpb_ae1120"
+      claim: "we propose the complex least squares (CLS) method, which directly employs the full complex FFT data (amplitude and phase), avoiding phase unwrapping entirely."
+
+metrics:
+  - id: met.fang2026_cls_sensitivity_enhancement
+    name: "Fang 2026 CLS 算法 O-TWTFT 检测灵敏度提升"
+    unit: "nW（最小可检测功率）"
+    role: primary
+    description: >
+      CLS 算法将 O-TWTFT 的最小接收功率（99% 数据点在 3σ 范围内）
+      从 ~1 nW 降至 ~0.1 nW——一个量级提升。短稳 TDEV 从 80 fs 改善至 50 fs。
+      系统等效总损耗容忍度达 100 dB，匹配地月光链路水平。
+    demonstrated_value:
+      value: "最小检测功率 ~0.1 nW（CLS）vs ~1 nW（传统相位方法）——一个量级提升；TDEV 从 80 fs 改善至 50 fs@短稳；等效系统总损耗 100 dB"
+      conditions: "113 km 乌鲁木齐南山-高崖子自由空间链路；1545 nm 链路 ~90 dB 损耗；CLS 平均数据率 280 samp/s vs 传统 130 samp/s"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "fang2026_cpb_ae1120"
+        claim: "the minimum received power requirement has been reduced by an order of magnitude, from 1 nW to 0.1 nW. Additionally, the short-term time standard deviation has decreased from 80 fs to 50 fs."
+
+relations:
+  - id: rel.fang2026_01
+    subject: meth.otwtft_cls_timing_extraction
+    predicate: DERIVED-FROM
+    object: pri.otwtft_complex_maximum_likelihood_estimation
+    confidence: established
+    source:
+      zotero_key: "fang2026_cpb_ae1120"
+      claim: "Our innovation eliminates phase unwrapping by directly using complex frequency-domain data for time fitting."
+
+  - id: rel.fang2026_02
+    subject: ent.fang2026_cls_otwtft_113km
+    predicate: REALIZES
+    object: meth.otwtft_cls_timing_extraction
+    confidence: established
+    source:
+      zotero_key: "fang2026_cpb_ae1120"
+      claim: "we conducted time-frequency transfer experiments in Urumqi, Xinjiang, with received power as low as 0.1 nW."
+
+  - id: rel.fang2026_03
+    subject: met.fang2026_cls_sensitivity_enhancement
+    predicate: DEMONSTRATES
+    object: pri.otwtft_complex_maximum_likelihood_estimation
+    confidence: established
+    source:
+      zotero_key: "fang2026_cpb_ae1120"
+      claim: "Experimental results demonstrate that the minimum received power requirement has been reduced by an order of magnitude."
+
+  - id: rel.fang2026_04
+    subject: meth.otwtft_cls_timing_extraction
+    predicate: IMPROVES-ON
+    object: meth.dual_comb_otwtft_over_free_space
+    confidence: established
+    source:
+      zotero_key: "fang2026_cpb_ae1120"
+      claim: "Previous timing algorithms relied exclusively on fitting the unwrapped spectral phase, leading to significant timing errors under low signal-to-noise ratio conditions."

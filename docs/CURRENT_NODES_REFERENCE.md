@@ -4,7 +4,7 @@
 
 > **用途**：处理新论文时，用此文件快速检查是否已有同名/同义节点，避免重复定义。
 > **维护**：本文件由 `scripts/build_index.py` 自动生成，**请勿手工编辑**。
-> **生成时间**：2026-05-03 10:22 UTC
+> **生成时间**：2026-05-03 11:05 UTC
 
 > **使用方式**：
 > - 处理新论文时，`Ctrl+F` 搜索关键词（如 `brownian`, `pdh`, `fiber`）
@@ -468,8 +468,11 @@
 | `pri.multi_node_tf_network_closure` | 多节点时频网络闭合一致性原理 | engineering | [bodine2020_npl9i62s](topics/time-frequency-transfer/papers/bodine2020_npl9i62s.yaml) |
 | `pri.non_common_view_clock_comparison` | 非共视时钟比对原理（non-common-view comparison） | domain | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
 | `pri.o_twtft_motion_reciprocity_breakdown` | 运动平台 O-TWTFT 互易性破坏与修正原理 | domain | [sinclair2019_5xulcnp3](topics/time-frequency-transfer/papers/sinclair2019_5xulcnp3.yaml) |
+| `pri.otwtft_complex_maximum_likelihood_estimation` | O-TWTFT 复杂最大似然时延估计原理 | method | [fang2026](topics/time-frequency-transfer/papers/fang2026.yaml) |
 | `pri.otwtft_dual_comb_los_timing` | 双梳线性光学采样（LOS）O-TWTFT 飞秒时序原理 | domain | [giorgetta2013](topics/time-frequency-transfer/papers/giorgetta2013.yaml) |
+| `pri.otwtft_reciprocity_strong_turbulence` | 强湍流下 O-TWTFT 双向互易性保持原理 | domain | [sinclair2016](topics/time-frequency-transfer/papers/sinclair2016.yaml) |
 | `pri.passive_reciprocal_fiber_noise_cancellation` | 被动互易光纤相位噪声抵消原理 | engineering | [zhang2022_sgt66xs8](topics/time-frequency-transfer/papers/zhang2022_sgt66xs8.yaml) |
+| `pri.passive_vs_active_fiber_phase_cancellation_tradeoff` | 主动 vs 被动光纤相位噪声对消权衡原理 | domain | [zhang2023](topics/time-frequency-transfer/papers/zhang2023.yaml) |
 | `pri.quantum_limited_photon_counted_ott` | 量子极限光子计数光学时间传递原理 | domain | [caldwell2023_4m836c4v](topics/time-frequency-transfer/papers/caldwell2023_4m836c4v.yaml) |
 | `pri.single_fiber_double_round_trip_characterization` | 单纤双往返链路表征原理（Calonico 2015 新提出） | engineering | [calonico2015_3kxj9jfq](topics/time-frequency-transfer/papers/calonico2015_3kxj9jfq.yaml) |
 | `pri.t2l2_common_view_time_transfer_principle` | T2L2 共视模式地-地时间传递原理 | domain | [exertier2014](topics/time-frequency-transfer/papers/exertier2014.yaml) |
@@ -491,6 +494,9 @@
 | `meth.fiber_round_trip_phase_stabilized_dissemination` | 光纤往返相位稳定化频率分发方法（Daussy 2005 方案） | [daussy2005](topics/time-frequency-transfer/papers/daussy2005.yaml) |
 | `meth.motion_resilient_otwtft` | 运动鲁棒型 O-TWTFT 时间频率同步方法 | [bergeron2019](topics/time-frequency-transfer/papers/bergeron2019.yaml) |
 | `meth.mwl_two_way_tf_transfer` | 双向双频微波时频传递法（MWL 实现） | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `meth.otwtft_cls_timing_extraction` | O-TWTFT CLS 时延提取方法 | [fang2026](topics/time-frequency-transfer/papers/fang2026.yaml) |
+| `meth.otwtft_strong_turbulence_synchronization` | 强湍流 O-TWTFT 时钟同步方法 | [sinclair2016](topics/time-frequency-transfer/papers/sinclair2016.yaml) |
+| `meth.passive_noise_cancellation_fiber_transfer` | 被动相位噪声对消光纤光频传递方法 | [zhang2023](topics/time-frequency-transfer/papers/zhang2023.yaml) |
 | `meth.phase_amplitude_tiptilt_free_space_frequency_transfer` | 相位-振幅双稳定自由空间光学频率传递方法 | [gozzard2022](topics/time-frequency-transfer/papers/gozzard2022.yaml) |
 | `meth.t2l2_data_reduction_triplet_identification` | T2L2 数据约化与三重态识别方法（Exertier 2014 管线） | [exertier2014](topics/time-frequency-transfer/papers/exertier2014.yaml) |
 | `meth.t2l2_ground_to_space_time_transfer` | T2L2 地面-空间激光时间传递方法 | [exertier2010](topics/time-frequency-transfer/papers/exertier2010.yaml) |

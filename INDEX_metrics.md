@@ -2,7 +2,7 @@
 
 # 📊 Metrics Quick Reference
 
-> Auto-generated 2026-05-03 10:22 UTC
+> Auto-generated 2026-05-03 11:05 UTC
 >
 > Metrics are grouped by **role** (v4.4 σ_y-first convention, see `topics/ultrastable-laser/_meta/scoping_principles.md` v2). Role is taken from the `role` field on the metric node when present, otherwise inferred from ID / name heuristics.
 
@@ -334,10 +334,12 @@
 | `met.bergeron2019_motion_timing_sync` | Bergeron 2019 运动平台 fs 时间同步性能 | <1 fs TDEV；频率一致性 ~10⁻¹⁸（despite 10⁻⁷ motion-induced Doppler） | 四旋翼飞行器 retroreflector（max 24 m/s）；2 站点 ~4 km 间距（B… | [bergeron2019](topics/time-frequency-transfer/papers/bergeron2019.yaml) |
 | `met.caldwell2020_timing_jitter_validation` | Caldwell 2020 微气象预测-频率梳实测时序抖动对比验证 | 微气象预测与频率梳实测 PSD 在谱形状和绝对水平上相符（multi-condition validation） | NIST Boulder 水平路径；多次昼夜循环；频率梳 LOS + sonic anemomet… | [caldwell2020](topics/time-frequency-transfer/papers/caldwell2020.yaml) |
 | `met.daussy2005_86km_round_trip_allan` | Daussy 2005 86 km 光纤往返链路 Allan 频率偏差 | 8×10⁻¹⁵ @ 1 s; 2×10⁻¹⁵ @ 10 s; ~10⁻¹⁶ @ 1000 s; 10⁻¹⁷ @ 1 d… | 86 km 往返光纤（43 km 单程）；1.55 μm 载波；AOM 往返相位补偿；飞轮振荡器 … | [daussy2005](topics/time-frequency-transfer/papers/daussy2005.yaml) |
+| `met.fang2026_cls_sensitivity_enhancement` | Fang 2026 CLS 算法 O-TWTFT 检测灵敏度提升 | 最小检测功率 ~0.1 nW（CLS）vs ~1 nW（传统相位方法）——一个量级提升；TDEV 从 80 fs 改善… | 113 km 乌鲁木齐南山-高崖子自由空间链路；1545 nm 链路 ~90 dB 损耗；CLS … | [fang2026](topics/time-frequency-transfer/papers/fang2026.yaml) |
 | `met.giorgetta2013_otwtft_timing_deviation` | Giorgetta 2013 O-TWTFT 残余时偏（TDEV） | ~1 fs TDEV（0.1 ms → 1000 s 平台），MDEV < 1×10⁻¹⁸ @ 1000 s | 2 km 水平自由空间路径 + 500 m 光纤；共享超稳 CW 振荡器（共钟模式）；24 小时 … | [giorgetta2013](topics/time-frequency-transfer/papers/giorgetta2013.yaml) |
 | `met.gozzard2022_free_space_instability` | Gozzard 2022 自由空间频率传递不稳定度 | 6.1×10⁻²¹ @ 300 s（MDEV）; 预测地面-LEO: ~1×10⁻²⁰ per satellite p… | 2.4 km 水平城区自由空间链路；1550 nm 载波；tip-tilt 振幅稳定+相位补偿；等… | [gozzard2022](topics/time-frequency-transfer/papers/gozzard2022.yaml) |
 | `met.pizzocaro2021_vlbi_instability` | Pizzocaro 2021 VLBI 洲际光钟比对不稳定度 | ~2–4×10⁻¹⁶ at 1000–10000 s（OADEV） | 意大利 Medicina (Yb) ↔ 日本 Koganei (Sr)；9000 km VLBI … | [pizzocaro2021](topics/time-frequency-transfer/papers/pizzocaro2021.yaml) |
 | `met.predehl2012_920km_link_stability` | Predehl 2012 920 km 光纤链路分数频率不稳定度 | MDEV = 5×10⁻¹⁵ @ 1 s; 4×10⁻¹⁷ @ 100 s; 1×10⁻¹⁸ @ <1000 s; 本… | 两条独立反平行 920 km 光纤（F1+F2）；腔稳定激光器 ~1 Hz 线宽；无死区 Π 型计… | [predehl2012](topics/time-frequency-transfer/papers/predehl2012.yaml) |
+| `met.sinclair2016_strong_turbulence_tdev` | Sinclair 2016 强湍流 12 km O-TWTFT 同步时间偏差 | 光学钟 + tip-tilt：gated TDEV ~165 as @>100 s，<1 fs @>2 s；连续数据 … | 12 km 折返 Boulder→Valmont 路径；Cn² 从 10⁻¹⁶（弱）到 10⁻¹³… | [sinclair2016](topics/time-frequency-transfer/papers/sinclair2016.yaml) |
 | `met.t2l2_ground_space_tdev_ps_exertier2014` | T2L2 地面-空间时间传递最佳 TDEV（Exertier 2014） | ~50–60 ps @ 0.1 s；τ^(-1/2) 改善；~6–8 ps @ 75 s（最小值），回升至数 10 p… | H-Maser 参考 SLR 站（Grasse/Herstmonceux）；Jason-2 单个 … | [exertier2014](topics/time-frequency-transfer/papers/exertier2014.yaml) |
 | `met.t2l2_time_stability_wettzell_exertier2010` | T2L2 Wettzell 站地面-空间时间传递稳定性（Exertier 2010） | ~40 ps @ 1 s；~7 ps @ 30 s | Wettzell H-Maser 参考；Jason-2 pass ~650 s；SLR 数据经 1… | [exertier2010](topics/time-frequency-transfer/papers/exertier2010.yaml) |
 
@@ -350,6 +352,7 @@
 | `met.predehl2012_920km_fractional_offset` | Predehl 2012 920 km 链路分数频率偏移 | (0.7 ± 3.7)×10⁻¹⁹（weighted mean of 21 measurements of 10,00… | 21 个独立 10,000 s 测量；加权平均；K=1 不确定度 | [predehl2012](topics/time-frequency-transfer/papers/predehl2012.yaml) |
 | `met.t2l2_ground_space_rms_error_exertier2010` | T2L2 地面-空间时间传递初步误差预算（Exertier 2010） | 25–57 ps RMS（综合 SLR + T2L2 + 修正） | 单次测量噪声；SLR 站 RMS 测距 (LAGEOS) 同时列入评估 | [exertier2010](topics/time-frequency-transfer/papers/exertier2010.yaml) |
 | `met.t2l2_slr_station_classification_exertier2014` | T2L2 SLR 站地面-空间时间传递精度分类（Exertier 2014） | H-Maser 站 ~50–150 ps std；100 ns 分辨率站 ~2–60 ns std | 2008 年下半年和 2013 年下半年统计；包括不同 SLR 系统（MOBLAS、固定站、移动站） | [exertier2014](topics/time-frequency-transfer/papers/exertier2014.yaml) |
+| `met.zhang2023_pnc_vs_anc_comparison` | Zhang 2023 PNC vs ANC 定性比较框架 | PNC 的定性优势：噪声不敏感、无伺服环路、结构简单。ANC 的定性优势：更高抑制度、更好功率效率。互补方案。 | 嘈杂场地光纤（架空、铁路沿线）适合 PNC；实验室受控光纤适合 ANC | [zhang2023](topics/time-frequency-transfer/papers/zhang2023.yaml) |
 
 ### 🔧 Engineering (κ/温度/磁场)
 

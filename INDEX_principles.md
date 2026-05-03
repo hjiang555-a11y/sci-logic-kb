@@ -2,7 +2,7 @@
 
 # 🔬 Principles Quick Reference
 
-> Auto-generated 2026-05-03 10:22 UTC
+> Auto-generated 2026-05-03 11:05 UTC
 
 ## Tier: meta
 
@@ -186,10 +186,12 @@
 | `pri.optical_microwave_phase_detection_bom_pd` | 平衡光学-微波相位探测（BOM-PD）原理 | Ultrastable Laser | [kim2008](topics/ultrastable-laser/papers/kim2008.yaml) |
 | `pri.optical_phase_tracking` | 实时光学相位追踪原理 | Optical Frequency Combs | [giunta2020](topics/optical-frequency-combs/papers/giunta2020.yaml) |
 | `pri.otwtft_dual_comb_los_timing` | 双梳线性光学采样（LOS）O-TWTFT 飞秒时序原理 | Time-Frequency Transfer | [giorgetta2013](topics/time-frequency-transfer/papers/giorgetta2013.yaml) |
+| `pri.otwtft_reciprocity_strong_turbulence` | 强湍流下 O-TWTFT 双向互易性保持原理 | Time-Frequency Transfer | [sinclair2016](topics/time-frequency-transfer/papers/sinclair2016.yaml) |
 | `pri.parabolic_pulse_self_similar_propagation_passive_fiber` | 抛物线脉冲在无源正常色散光纤中自相似传播原理 | shared | [fermann2000](topics/shared/papers/fermann2000.yaml) |
 | `pri.parametric_four_wave_mixing_comb` | 参量四波混频梳产生原理 | Optical Frequency Combs | [kippenberg2011](topics/optical-frequency-combs/papers/kippenberg2011.yaml) |
 | `pri.parametric_seeding_microcomb_spacing_control` | 参量种子注入实现微梳模间距射频可控原理 | Optical Frequency Combs | [papp2013](topics/optical-frequency-combs/papers/papp2013.yaml) |
 | `pri.passive_mode_locking_soa_sa` | Passive mode-locking via SOA + saturable absorber | Optical Frequency Combs | [wang2017](topics/optical-frequency-combs/papers/wang2017.yaml) |
+| `pri.passive_vs_active_fiber_phase_cancellation_tradeoff` | 主动 vs 被动光纤相位噪声对消权衡原理 | Time-Frequency Transfer | [zhang2023](topics/time-frequency-transfer/papers/zhang2023.yaml) |
 | `pri.pdh_heterodyne_detection` | PDH 射频边带光学外差探测原理 | Ultrastable Laser | [drever1983](topics/ultrastable-laser/papers/drever1983.yaml) |
 | `pri.pdh_high_speed_regime` | PDH 高速相位检测域 | Ultrastable Laser | [drever1983](topics/ultrastable-laser/papers/drever1983.yaml) |
 | `pri.phase_matching_bandwidth_limit_chi2` | χ² 相位匹配带宽限制原理 | Optical Frequency Combs | [hickstein2017](topics/optical-frequency-combs/papers/hickstein2017.yaml) |
@@ -387,6 +389,12 @@
 | `pri.transportable_cavity_reference_coupling` | 可移动腔稳激光作为光参考的接口原理 | Optical Frequency Combs | [sinclair2014](topics/optical-frequency-combs/papers/sinclair2014.yaml) |
 | `pri.trap_rf_field_stark_systematic` | 阱 RF 电场诱导 Stark 移动系统误差原理 | Optical Frequency Combs | [chou2020](topics/optical-frequency-combs/papers/chou2020.yaml) |
 | `pri.vibration_fopt_linear_coupling` | 振动→光学相位（f_opt）线性耦合原理 | Optical Frequency Combs | [sinclair2014](topics/optical-frequency-combs/papers/sinclair2014.yaml) |
+
+## Tier: method
+
+| ID | Name | Topic | Source |
+|----|------|-------|--------|
+| `pri.otwtft_complex_maximum_likelihood_estimation` | O-TWTFT 复杂最大似然时延估计原理 | Time-Frequency Transfer | [fang2026](topics/time-frequency-transfer/papers/fang2026.yaml) |
 
 ## Tier: unspecified
 

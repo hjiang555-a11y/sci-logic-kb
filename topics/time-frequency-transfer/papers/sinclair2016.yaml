@@ -1,0 +1,154 @@
+# Sinclair 2016 — Synchronization of clocks through 12 km strongly turbulent air [evidence]
+# 提取者：Claude Code（AI 草稿，待专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.5
+# 专题：time-frequency-transfer（O-TWTFT 强湍流 12 km 时钟同步 — 城市环境）
+# contribution_type: evidence — 验证 O-TWTFT 在强湍流（Rytov 方差达 7.5，多散射）
+#   下仍维持飞秒级同步；同时验证与自适应光学终端兼容性。
+
+meta:
+  zotero_key: "nihms923383"
+  topic: time-frequency-transfer
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Synchronization of Clocks Through 12 km of Strongly Turbulent Air Over a City"
+  year: 2016
+  first_author: Sinclair
+  authors: ["Laura C. Sinclair", "William C. Swann", "Hugo Bergeron", "Esther Baumann", "Michael Cermak", "Ian Coddington", "Jean-Daniel Deschênes", "Fabrizio R. Giorgetta", "Juan C. Juarez", "Isaac Khader", "Keith G. Petrillo", "Katherine T. Souza", "Michael L. Dennis", "Nathan R. Newbury"]
+  journal: "Applied Physics Letters"
+  volume: 109
+  pages: "151104"
+  doi: "10.1063/1.4963130"
+  note: >
+    [evidence 论文] 在 Boulder 城市上空 12 km 近地面水平路径（海拔 25-50 m）上
+    进行 O-TWTFT 时钟同步，积分湍流进入强湍流区（Rytov 方差 3-7.5，Cn² ~ 10⁻¹³ m⁻²/³，
+    对应多次散射而非单次散射的闪烁饱和）。验证：(a) 双向飞行时间互易性在强湍流下
+    仍维持——支持亚飞秒级同步；(b) O-TWTFT 兼容 tip-tilt 和自适应光学（AO）终端；
+    (c) 信号中断（每秒 100+ 次 dropout）通过 Kalman 滤波和重同步策略应对。
+    TDEV ~165 as@百秒，与短距离弱湍流结果无统计差异——证明湍流不破坏互易性、
+    且 O-TWTFT 可在实用化长距离链路中工作。
+
+entities:
+  - id: ent.sinclair2016_12km_strong_turbulence_otwtft
+    name: "Sinclair 2016 O-TWTFT 强湍流 12 km 城市链路（NIST Boulder↔Valmont Butte）"
+    tier: system
+    domain: "O-TWTFT；大气光学；自由空间时频传递"
+    description: >
+      Boulder, CO 折返式 11.6 km 水平路径（经 Valmont Butte 平面镜折返），
+      近地面（25-50 m 海拔），经历城市上空强积分湍流（Cn² 达 10⁻¹³ m⁻²/³，
+      Rytov 方差达 7.5）。两站点共享收发机，配备 200 MHz fs 频率梳（锁至
+      超稳 CW 激光器或微波 DRO）、相干 cw 调制粗测链路、以及 tip-tilt 或
+      AO 自由空间光学终端。折叠路径几何允许共参考平面的 out-of-loop 时钟
+      比对测量（光纤 heterodyne），消除同步环路伺服误差。
+    verification_status: demonstrated
+    source:
+      zotero_key: "nihms923383"
+      claim: "We demonstrate real-time, femtosecond-level clock synchronization across a low-lying, strongly turbulent, 12-km horizontal air path by optical two-way time transfer."
+
+principles:
+  - id: pri.otwtft_reciprocity_strong_turbulence
+    name: "强湍流下 O-TWTFT 双向互易性保持原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      双向时间传递假设 T_A→B = T_B→A（飞行时间互易性）以抵消路径变化。
+      在弱湍流（单次散射，Rytov 方差 < 1）下互易性已被验证。但当积分湍流
+      进入强区（Rytov 方差 >> 1，多次散射导致闪烁饱和），理论上已离开
+      perturbative 展开的适用范围——互易性是否仍维持是个开放问题。
+      Sinclair 2016 首次实验验证：在 Rytov 方差高达 7.5 的强湍流条件下，
+      O-TWTFT 的残余时钟同步性能与弱湍流短距离链路相当（TDEV ~165 as
+      @数百秒）——证明大气互易性在强湍流区仍适用，为 100 km 级地空链路
+      提供实验支撑。但理论注意到，信号中断（dropout）是另一问题——
+      即使互易性完好，链路不可用也限制系统级性能。
+    domain: "大气光学；O-TWTFT；时间频率计量"
+    key_insight: >
+      强湍流≠互易性破缺。闪烁饱和（Rytov >> 1）是多次散射导致光强统计
+      偏离对数正态——但双向传播的相位互易性（Shapiro 1971）独立于闪烁
+      统计。关键瓶颈不在物理而在工程：强湍流增加 dropout 频率和深度，
+      需要更好的跟踪终端和更智能的 Kalman 滤波/重同步策略。
+    conditions: "单模光纤耦合接收；双向时间分隔 < 湍流相干时间；信号可用性 > 0"
+    source:
+      zotero_key: "nihms923383"
+      claim: "These results confirm that the two-way reciprocity of the free-space time-of-flight is maintained both under strong turbulence and with the use of adaptive optics."
+
+methods:
+  - id: meth.otwtft_strong_turbulence_synchronization
+    name: "强湍流 O-TWTFT 时钟同步方法"
+    purpose: >
+      验证 O-TWTFT 在强湍流下的可行性和性能极限，为地-空、
+      长距离地面自由空间光钟网络链路提供关键证据。
+    description: >
+      1. 两站点经 11.6 km 折返路径交换 fs 频率梳脉冲。
+      2. LOS 检测到达时间（fs 精度），cw 相干调制提供粗测和数据通信。
+      3. 远程站点收集双向时延数据并计算钟差 ΔT_calc。
+      4. Kalman 滤波器（带宽 ~10-100 Hz）输出驱动远程钟伺服。
+      5. Out-of-loop 光纤 heterodyne 比对提供独立性能评估。
+      6. 分"连续"（含 dropout）和"gated"（仅活跃同步期间）两种分析模式。
+    key_steps:
+      - "fs 梳双向脉冲交换（自由空间+tip-tilt/AO 终端）"
+      - "LOS 精测 + cw 粗测 + 数据通信"
+      - "Kalman 滤波伺服同步（含 dropout 时的自由运行+重同步）"
+      - "out-of-loop 光纤 heterodyne 独立评估"
+      - "连续 vs gated 双模式 TDEV 分析"
+    applicable_conditions: "强湍流（Rytov > 1）；高 dropout 率（>100/s）；远程钟自由运行稳定度决定长 drop 恢复质量"
+    source:
+      zotero_key: "nihms923383"
+      claim: "optical two-way time transfer is used to synchronize a remote clock to a master clock with femtosecond-level agreement and with a relative time deviation dropping as low as a few hundred attoseconds."
+
+metrics:
+  - id: met.sinclair2016_strong_turbulence_tdev
+    name: "Sinclair 2016 强湍流 12 km O-TWTFT 同步时间偏差"
+    unit: "fs/attosecond（TDEV）"
+    role: primary
+    description: >
+      光学远程钟（tip-tilt 终端）：gated TDEV < 1 fs @ >2 s，~165 as @数百秒；
+      连续数据（含 dropout）峰峰值 ~21 fs @1 s；强 vs 中等湍流下性能无统计学差异。
+      微波远程钟：gated TDEV ~10× 高于光学钟，连续 ~600 fs pk-pk（因 dropout 期间
+      微波钟自由运行漂移大）。AO 终端受杂散反射干扰（非物理极限），
+      但原理上兼容。
+    demonstrated_value:
+      value: "光学钟 + tip-tilt：gated TDEV ~165 as @>100 s，<1 fs @>2 s；连续数据 pk-pk ~21 fs @1 s（11.5 h 总测）。强 vs 中湍流无差异。"
+      conditions: "12 km 折返 Boulder→Valmont 路径；Cn² 从 10⁻¹⁶（弱）到 10⁻¹³（强，Rytov 7.5）；信号 dropout >100/s（强湍流）；tip-tilt 4 cm 口径"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "nihms923383"
+        claim: "time deviation drops as low as a few hundred attoseconds...There is no observable difference in synchronization between moderate and strong turbulence."
+
+relations:
+  - id: rel.sinclair2016_01
+    subject: meth.otwtft_strong_turbulence_synchronization
+    predicate: DERIVED-FROM
+    object: pri.otwtft_reciprocity_strong_turbulence
+    confidence: established
+    source:
+      zotero_key: "nihms923383"
+      claim: "These results confirm that the two-way reciprocity of the free-space time-of-flight is maintained both under strong turbulence."
+
+  - id: rel.sinclair2016_02
+    subject: ent.sinclair2016_12km_strong_turbulence_otwtft
+    predicate: REALIZES
+    object: meth.otwtft_strong_turbulence_synchronization
+    confidence: established
+    source:
+      zotero_key: "nihms923383"
+      claim: "We implement O-TWTFT over a 12-km horizontal path that is close to the ground (25-50 m elevation) over an urban environment."
+
+  - id: rel.sinclair2016_03
+    subject: met.sinclair2016_strong_turbulence_tdev
+    predicate: DEMONSTRATES
+    object: pri.otwtft_reciprocity_strong_turbulence
+    confidence: established
+    source:
+      zotero_key: "nihms923383"
+      claim: "These results are in good agreement with theoretical treatments that the atmospheric reciprocity should still support O-TWTFT even at 100 km ground-to-space paths."
+
+  - id: rel.sinclair2016_04
+    subject: pri.otwtft_reciprocity_strong_turbulence
+    predicate: CHARACTERIZES
+    object: pri.atmospheric_optical_phase_noise_power_law
+    confidence: established
+    source:
+      zotero_key: "nihms923383"
+      claim: "the integrated turbulence extends well into the strong turbulence regime corresponding to multiple scattering with a Rytov variance up to 7."

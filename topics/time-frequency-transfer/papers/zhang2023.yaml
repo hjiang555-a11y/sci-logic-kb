@@ -1,0 +1,152 @@
+# Zhang 2023 — Passively stable dissemination of ultrastable optical frequency via noisy field fiber [framework]
+# 提取者：Claude Code（AI 草稿，待专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.5
+# 专题：time-frequency-transfer（光纤光频传递 — 被动相位噪声对消综述）
+# contribution_type: framework — 综述被动相位噪声对消（PNC）技术在嘈杂场地光纤网络中
+#   的适用性、优势和限制；对比主动（ANC）和被动方案。
+
+meta:
+  zotero_key: "zhang2023_olt_157_108738"
+  topic: time-frequency-transfer
+  source_type: journal_paper
+  contribution_type: framework
+  reliability: high
+  title: "Passively stable dissemination of ultrastable optical frequency via a noisy field fiber network"
+  year: 2023
+  first_author: Zhang
+  authors: ["Xiang Zhang", "Liang Hu", "Xue Deng", "Qi Zang", "Dongdong Jiao", "Jing Gao", "Dan Wang", "Qian Zhou", "Jie Liu", "Guanjun Xu", "Tao Liu", "Ruifang Dong", "Shougang Zhang"]
+  journal: "Optics and Laser Technology"
+  volume: 157
+  pages: "108738"
+  doi: "10.1016/j.optlastec.2022.108738"
+  note: >
+    [framework/review 论文] NTSC 西安团队综述。对比主动相位噪声对消（ANC）与
+    被动相位噪声对消（PNC）在嘈杂场地光纤（如架空光缆、铁路沿线光缆）中的适用性。
+    ANC 需要高分辨率、无限检测范围的鉴相器处理大噪声，而 PNC 端到端无需鉴相器——
+    通过光域互易补偿实现相位稳定。提出引入光纤尾纤 AOM 避免本地射频时间基串扰。
+    配合 Zhang 2022（CPL, 全被动级联 490 km 场地光纤实验）作为此路线的理论总结。
+
+entities:
+  - id: ent.zhang2023_passive_pnc_fiber_review
+    name: "Zhang 2023 被动相位噪声对消光纤光频传递综述"
+    tier: system
+    domain: "光纤光学频率传递；相位噪声对消；计量基础设施"
+    description: >
+      综述框架——评述两种光纤光频传递的相位噪声抑制范式：
+      (a) 主动噪声对消（ANC）——通过干涉鉴相提取链路相位噪声，
+      反馈控制远端或近端的 AOM 进行实时补偿。需要高分辨率鉴相器
+      和大的伺服带宽，在噪声场地下鉴相器可能饱和。
+      (b) 被动噪声对消（PNC）——完全在光域通过互易路径设计
+      实现相位共轭抵消：远端反射/重传的光信号携带往返相位噪声，
+      在本地与参考信号干涉后自然抵消（无需鉴相、无需伺服）。
+    verification_status: demonstrated
+    source:
+      zotero_key: "zhang2023_olt_157_108738"
+      claim: "the passive phase noise cancellation (PNC) technique without the need of phase detector could be preferable for noisy fiber links."
+
+principles:
+  - id: pri.passive_vs_active_fiber_phase_cancellation_tradeoff
+    name: "主动 vs 被动光纤相位噪声对消权衡原理"
+    tier: domain
+    verification_status: established
+    statement: >
+      光纤相位噪声对消分为两条技术路线：
+      (a) 主动对消（ANC）——干涉鉴相→反馈控制→AOM 补偿。优势是工作带宽内
+      噪声抑制比高；劣势是鉴相器动态范围有限——大噪声下锁相环可能失锁或
+      引入周期滑动。
+      (b) 被动对消（PNC）——光域互易补偿：不需要鉴相器或伺服环路，
+      远端光信号携带往返光纤相位噪声，经本地干涉自然抵消。优势是
+      对大噪声不敏感、无伺服带宽限制；劣势是光功率利用率低
+      （两次穿行光纤的光损耗加倍），且通常需要远端法拉第镜等辅助。
+      定性判据：噪声场地下（架空光缆、铁路/公路沿线）PNC 更鲁棒；
+      实验室受控环境下 ANC 可实现更高的抑制度。
+    domain: "光纤光学计量；相位噪声；控制系统"
+    key_insight: >
+      PNC 将相位噪声控制问题从"反馈控制"转化为"物理对称设计"——
+      像共模抑制一样通过路径互易抵消噪声，而非主动对抗它。
+      这使其天然适合嘈杂、不可预测的场地光纤。
+    conditions: "远端需返回信号（往返穿行光纤）；互易路径需保持（单纤双向或等长双纤）；光功率预算充足以克服往返损耗"
+    source:
+      zotero_key: "zhang2023_olt_157_108738"
+      claim: "the passive phase noise cancellation (PNC) technique without the need of phase detector could be preferable for noisy fiber links."
+
+methods:
+  - id: meth.passive_noise_cancellation_fiber_transfer
+    name: "被动相位噪声对消光纤光频传递方法"
+    purpose: >
+      为嘈杂场地光纤网络（架空、铁路沿线等）提供无需鉴相器
+      和伺服环路的光频传递方案——作为主动方案的互补。
+    description: >
+      1. 本地超稳激光经光纤传输至远端。
+      2. 远端部分光经 AOM 频移后重传回本地。
+      3. 往返光在本地与原始参考光干涉——往返相位噪声
+         自然抵消（互易性），输出直接稳定。
+      4. 引入光纤尾纤 AOM 替代自由空间 AOM 以减少对准敏感度
+         和射频时间基串扰。
+      5. 级联 PNC 可实现多段接力传递。
+    key_steps:
+      - "本地超稳激光 → 光纤 → 远端"
+      - "远端 AOM 频移 + 反射/重传"
+      - "本地光干涉 → 互易相位抵消 → 稳定输出"
+      - "级联多段（每段独立 PNC）"
+    applicable_conditions: "互易路径保持（同纤双向或等长双纤）；光纤环境噪声在互易性假设内；光功率预算 > 往返损耗"
+    source:
+      zotero_key: "zhang2023_olt_157_108738"
+      claim: "we introduce a fiber-pigtailed acousto-optic modulator (AOM) to avoid the effect of the radio frequency (RF) from the time base at the local site in the conventional active or passive phase noise cancellation techniques."
+
+metrics:
+  - id: met.zhang2023_pnc_vs_anc_comparison
+    name: "Zhang 2023 PNC vs ANC 定性比较框架"
+    unit: "定性（框架综述）"
+    role: secondary
+    description: >
+      综述提供的 PNC vs ANC 定性比较：PNC 对光纤噪声幅度不敏感
+      （无穷鉴相范围）、无伺服带宽限制、结构更简单——但光功率效率低。
+      ANC 在噪声适中时抑制度更高、光功率效率好——但需要高性能鉴相器
+      且大噪声下可能失锁。两者互补而非替代。
+    demonstrated_value:
+      value: "PNC 的定性优势：噪声不敏感、无伺服环路、结构简单。ANC 的定性优势：更高抑制度、更好功率效率。互补方案。"
+      conditions: "嘈杂场地光纤（架空、铁路沿线）适合 PNC；实验室受控光纤适合 ANC"
+      verification_status: established
+      confidence: established
+      source:
+        zotero_key: "zhang2023_olt_157_108738"
+        claim: "the PNC technique without the need of phase detector could be preferable for noisy fiber links."
+
+relations:
+  - id: rel.zhang2023_01
+    subject: meth.passive_noise_cancellation_fiber_transfer
+    predicate: DERIVED-FROM
+    object: pri.passive_vs_active_fiber_phase_cancellation_tradeoff
+    confidence: established
+    source:
+      zotero_key: "zhang2023_olt_157_108738"
+      claim: "the PNC technique without the need of phase detector could be preferable for noisy fiber links."
+
+  - id: rel.zhang2023_02
+    subject: ent.zhang2023_passive_pnc_fiber_review
+    predicate: REALIZES
+    object: meth.passive_noise_cancellation_fiber_transfer
+    confidence: established
+    source:
+      zotero_key: "zhang2023_olt_157_108738"
+      claim: "We demonstrate the passive phase noise cancellation (PNC) technique without the need of phase detector."
+
+  - id: rel.zhang2023_03
+    subject: met.zhang2023_pnc_vs_anc_comparison
+    predicate: DEMONSTRATES
+    object: pri.passive_vs_active_fiber_phase_cancellation_tradeoff
+    confidence: established
+    source:
+      zotero_key: "zhang2023_olt_157_108738"
+      claim: "the active phase noise cancellation (ANC) technique has been widely used for suppressing the fiber phase noise... in which an ideal phase detector with high resolution and unlimited detection range is needed."
+
+  - id: rel.zhang2023_04
+    subject: pri.passive_vs_active_fiber_phase_cancellation_tradeoff
+    predicate: CHARACTERIZES
+    object: pri.fiber_round_trip_phase_noise_compensation
+    confidence: established
+    source:
+      zotero_key: "zhang2023_olt_157_108738"
+      claim: "Optical fibers have been recognized as one of the most promising host material for coherent optical frequency transfer over thousands of kilometers."

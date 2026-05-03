@@ -253,6 +253,9 @@
 | `caldwell2020.yaml` | oe-28-18-26661 | Caldwell 2020 — 大气湍流时序抖动实测与微气象预测对比验证 | ✅ v4.5 evidence |
 | `bergeron2019.yaml` | s41467-019-09768-9 | Bergeron 2019 — 四旋翼飞行器 fs 时间同步（O-TWTFT with motion <1 fs） | ✅ v4.5 breakthrough |
 | `pizzocaro2021.yaml` | s41567-020-01038-6 | Pizzocaro 2021 — VLBI 洲际光钟比对（意大利-日本 9000 km）| ✅ v4.5 breakthrough |
+| `fang2026.yaml` | fang2026_cpb_ae1120 | Fang 2026 — CLS 增强 O-TWTFT 灵敏度 0.1 nW（113 km 自由空间链路）| ✅ v4.5 evidence |
+| `sinclair2016.yaml` | nihms923383 | Sinclair 2016 — 12 km 强湍流 O-TWTFT 城市上空时钟同步，TDEV ~165 as | ✅ v4.5 evidence |
+| `zhang2023.yaml` | zhang2023_olt_157_108738 | Zhang 2023 — 被动相位噪声对消光纤光频传递综述（PNC vs ANC）| ✅ v4.5 framework |
 
 ## 时频计量数学基础专题（B9 Allan–Howe 奠基白名单 + Allan 2016 + Sullivan 2001）
 
