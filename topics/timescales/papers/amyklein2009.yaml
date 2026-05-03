@@ -1,0 +1,336 @@
+# Amy-Klein 2009 — 质子-电子质量比稳定性：分子 SF6 经光纤链路比对铯原子钟
+# 提取日期：2026-05-03
+# Schema版本：v4.0
+# 专题：timescales
+# contribution_type: evidence — 实验测量数据 + 工程改进（混合光纤链路）
+
+meta:
+  zotero_key: "ICOLS09 Amy et al"
+  topic: timescales
+  source_type: conference
+  contribution_type: evidence
+  reliability: medium
+  title: "Stability of the Proton-to-Electron Mass Ratio Tested with Molecules Using an Optical Link to Primary Clock"
+  year: 2009
+  first_author: Amy-Klein
+  authors:
+    - A. Amy-Klein
+    - A. Shelkovnikov
+    - R.J. Butcher
+    - A. Goncharov
+    - O. Lopez
+    - C. Daussy
+    - F. Kefelian
+    - C. Chardonnet
+    - H. Jiang
+    - G. Santarelli
+  journal: "Proceedings of the International Conference on Laser Spectroscopy (ICOLS)"
+  doi: null
+  note: >
+    [会议论文] ICOLS 2009。报告两项成果：(1) 通过比较 SF6 分子振动-转动跃迁与 Cs 原子超精细跃迁，
+    获得质子-电子质量比时间变化上限 (3.8 ± 5.6) × 10⁻¹⁴ yr⁻¹，此为当时最精确的分子跃迁绝对频率测量；
+    (2) 演示了 108 km 混合光纤链路（专用暗光纤 + 城市电信网络 DWDM 共存），
+    同时传输计量频率信号和互联网数据，稳定度达到 4×10⁻¹⁶ @ 1 s、7×10⁻²⁰ @ 10⁴ s。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.sf6_molecular_spectrometer_lpl
+    name: "SF6 分子 Ramsey 条纹光谱仪（LPL，2009）"
+    aliases: ["SF6 two-photon rovibrational spectrometer", "SF6 molecular clock"]
+    hierarchy_level: 1
+    status: demonstrated
+    function: >
+      LPL（Laboratoire de Physique des Lasers）搭建的 SF6 分子高分辨率 Ramsey 条纹光谱仪。
+      利用 CO2 激光器探测 SF6 的 ν₂+ν₃ 带 P(4)E⁰ 双光子振动-转动跃迁，
+      分子束在相距 1 m 的两束驻波间干涉，产生周期 200 Hz 的 Ramsey 条纹，
+      对应分数线宽（HWHM）1.7×10⁻¹²。
+      CO2 激光器通过飞秒频率梳与 Cs 喷泉钟参考比较，实现绝对频率测量。
+    key_parameters:
+      molecule: "SF6"
+      transition: "ν₂+ν₃ band P(4)E⁰ two-photon line, CO2 P(16) laser line"
+      ramsey_zone_spacing: "1 m"
+      fringe_periodicity: "200 Hz"
+      fractional_linewidth_hwhm: "1.7×10⁻¹²"
+    note: >
+      Level 1 系统级实体。SF6 分子跃迁频率对质子-电子质量比 (mp/me) 敏感，
+      其对 Cs 超精细跃迁的频率比 ∝ K·α^(2.83)·(mp/me)。
+
+  - id: ent.phase_stabilized_fiber_frequency_link_paris_2009
+    name: "巴黎 43–108 km 相位稳定光纤频率传递链路（LPL–SYRTE，2009）"
+    aliases: ["Paris optical fiber frequency link", "LPL-SYRTE fiber link"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      连接 LPL（Villetaneuse）和 LNE-SYRTE（Observatoire de Paris）的相位稳定光纤频率传递链路。
+      基础段由两根 43 km 并行暗光纤组成（总损耗 10 dB），采用 round-trip 相位噪声补偿方法，
+      近端部分信号通过回传路径与本地参考外差比较得到误差信号，驱动延迟线或声光调制器进行补偿。
+      扩展为 108 km 混合链路（43 km 暗光纤 + 11 km 城市电信网络 + 11 km 回程 + 43 km 暗光纤），
+      使用 OADM 实现计量信号与互联网数字数据在同一光纤上的共存传输。
+    key_parameters:
+      dedicated_fiber_length: "43 km (two parallel fibers)"
+      hybrid_fiber_length: "108 km (four spans)"
+      total_loss: "10 dB (one 43 km fiber)"
+      noise_compensation_method: "round-trip phase comparison, AO modulator or delay line"
+      telecom_coexistence: "OADM, ITU channel 34 (1550.12 nm), 10 Gbit/s data stream"
+    note: >
+      Level 2 子系统实体。关键创新在于将计量级频率信号与互联网数据在同一光纤中共存传输，
+      通过 DWDM 分配不同波长信道。互联网流量在约 3 周的测试期间未受影响。
+
+principles:
+  - id: pri.molecular_atomic_frequency_ratio_mass_dependence
+    name: "分子/原子跃迁频率比对质子-电子质量比的灵敏度原理"
+    tier: foundational
+    verification_status: calculated
+    statement: >
+      分子振动-转动跃迁频率 ν_mol 对质子-电子质量比 μ = mp/me 的依赖关系
+      与原子超精细跃迁频率 ν_at 不同。两者频率比 ν_mol/ν_at ∝ K·α^κ·(mp/me)，
+      其中 κ 依赖于所涉原子跃迁类型（Cs 超精细跃迁 κ ≈ 2.83）。
+      测量该频率比的时间变化可直接约束 mp/me 的时间变化，不需依赖核结构模型（model-free）。
+    domain: "基本物理常数，分子物理，时间频率计量"
+    key_insight: >
+      直接比较分子跃迁与原子跃迁的频率比可绕过核结构模型（如 Schmidt 模型），
+      实现模型无关的 mp/me 变化测试。此前其他实验（表 1）均依赖 Schmidt 模型解释。
+    conditions: "需要高精度绝对频率测量（频率梳 + 原子钟参考）和稳定的分子光谱仪"
+    formula: "ν(SF6) / ν(Cs) ∝ K · α^2.83 · (mp/me)"
+    source_claim: >
+      "the dependence ν(SF6)/ν(Cs) ∝ K·α^2.83·(mp/me) …
+      This conclusion is independent of any model, whereas other laboratory tests of table 1
+      depends on mp/me through the Schmidt model"
+
+  - id: pri.round_trip_phase_noise_compensation_fiber_link
+    name: "光纤链路 round-trip 相位噪声补偿原理"
+    tier: engineering
+    verification_status: demonstrated
+    statement: >
+      光纤传输计量信号时，温度变化和声学扰动导致光程波动，引入相位噪声。
+      Round-trip 补偿方法：将部分传输信号经同一光纤回传至近端，与本地参考信号外差比较
+      得到往返相位差，该差值的一半作为链路单向相位噪声的测量值，用于驱动延迟线或
+      声光调制器进行实时补偿，使远端接收信号保持与本地参考的相干性。
+      补偿后的链路噪声在 1 s 至 ~5000 s 区间以 1/τ 斜率下降（受白相位噪声限制），
+      最终达到补偿系统噪声底。
+    domain: "光频率传递，时间频率计量"
+    key_insight: >
+      相同光纤的往返传输使得相位噪声可实时测量与补偿，
+      补偿环路带宽决定可抑制的噪声频率范围。链路的自由运行噪声决定了补偿前的动态范围需求。
+    conditions: "需要同一光纤的双向传输能力（支持 round-trip）；补偿环路带宽需覆盖主要噪声频率"
+    formula: null
+    source_claim: >
+      "the phase difference gives the error signal for the correction loop.
+      This is the so-called round-trip method for noise compensation."
+
+  - id: pri.dwdm_oadm_metrology_data_coexistence
+    name: "DWDM/OADM 计量信号与数据信号共存传输原理"
+    tier: engineering
+    verification_status: demonstrated
+    statement: >
+      通过密集波分复用（DWDM）和光分插复用器（OADM），在同一光纤中将计量频率信号
+      （窄带、双向、纯光）和数据通信信号（宽带、高速）分配到不同 ITU 波长信道上。
+      OADM 提供 >25 dB（相邻 100 GHz 信道）和 >40 dB（其他信道）的隔离度，
+      保证两信号间的低串扰。计量信道需保持端到端纯光传播（无 O/E 转换），
+      数据信道则使用标准电信收发器。
+    domain: "光纤通信，光频率传递"
+    key_insight: >
+      OADM 双向性的关键在于它使得 round-trip 相位噪声补偿方法可在非专用光纤上实现，
+      无需为计量信号开辟独立物理光纤。DWDM 信道分配将此方案扩展到已有电信网络。
+    conditions: "OADM 信道间隔 ≥ 100 GHz、数据信号使用独立 ITU 信道、计量信号维持纯光路径"
+    formula: null
+    source_claim: >
+      "Such three-port component can insert or extract a specified wavelength from the
+      other wavelengths, with isolation better than 25 dB for an adjacent channel (100 GHz)
+      and better than 40 dB for other channels."
+
+methods:
+  - id: meth.sf6_ramsey_fringe_absolute_frequency_measurement
+    name: "SF6 分子 Ramsey 条纹绝对频率测量方法"
+    status: demonstrated
+    applies_to: ent.sf6_molecular_spectrometer_lpl
+    steps_summary: >
+      1. SF6 超声分子束经旋转冷却后依次通过两束 CO2 激光驻波（间距 D = 1 m）→
+      2. CO2 激光器调谐至 SF6 ν₂+ν₃ 带 P(4)E⁰ 双光子共振 →
+      3. 上能级布居通过第二腔受激发射探测，随两区间渡越时间产生周期 P = u/2D 的 Ramsey 条纹 →
+      4. CO2 激光器偏频锁定至另一台预稳 CO2 激光器 →
+      5. CO2 频率通过飞秒频率梳桥接至来自 LNE-SYRTE 的微波参考（H 脉泽 + 低温振荡器 + Cs 喷泉钟控制）→
+      6. 拍频信号相位锁定 CO2 激光器至频率梳重复频率，误差信号通过伺服回路（带宽 10–100 mHz）反馈
+    required_hardware:
+      - "CO2 laser (two, with offset phase-lock)"
+      - "femtosecond frequency comb"
+      - "SF6 supersonic molecular beam source"
+      - "folded Fabry-Perot cavity (U-configuration, four mirrors)"
+      - "primary frequency reference (Cs fountain + H maser)"
+    advantages:
+      - "Ramsey 条纹周期仅 200 Hz，线宽极窄（HWHM 1.7×10⁻¹²）"
+      - "绝对频率测量精度达到当时分子系统最高水平"
+    disadvantages:
+      - "仅适用于有合适 CO2 激光线重合的分子"
+      - "系统效应贡献显著的不确定度（2.7×10⁻¹⁴ yr⁻¹ 系统误差斜率）"
+      - "分子束通量限制长期信号质量"
+    conditions:
+      - "SF6 超声分子束，旋转冷却 T_rot 低"
+      - "CO2 激光器输出波长需与 SF6 双光子跃迁重合"
+      - "需要 43 km 光纤链路传输 Cs 喷泉钟参考信号"
+    source_claim: >
+      "we use a single folded Fabry-Perot cavity, comprising four mirrors in a U configuration.
+      Fringes in the two-photon absorption are detected by stimulated emission in a separate
+      Fabry-Perot cavity."
+
+  - id: meth.round_trip_fiber_phase_noise_correction
+    name: "光纤相位噪声 round-trip 补偿方法"
+    status: demonstrated
+    applies_to: ent.phase_stabilized_fiber_frequency_link_paris_2009
+    steps_summary: >
+      1. 超稳激光（~1.55 μm）经光纤传输至远端实验室 →
+      2. 远端将部分信号经同一光纤回传至近端 →
+      3. 近端将回传信号与本地参考外差比较，得到往返相位差 →
+      4. 相位差作为误差信号驱动延迟线或声光调制器进行实时补偿 →
+      5. 补偿后的信号在远端输出，频率稳定度通过端到端拍频信号的 Allan 偏差评估
+    required_hardware:
+      - "ultra-stable laser (~1.55 μm)"
+      - "acousto-optic modulator or delay line actuator"
+      - "heterodyne detection and servo electronics"
+      - "bidirectional single-fiber propagation capability"
+    advantages:
+      - "实时补偿、无需预知链路特性"
+      - "可达到 10⁻²⁰ 量级长期频率传递稳定度"
+    disadvantages:
+      - "需要同一光纤双向传输（对非专用光纤需 OADM 支持）"
+      - "补偿环路延迟限制可抑制的最高噪声频率"
+    conditions:
+      - "光纤需支持双向传输"
+      - "补偿环路带宽需覆盖链路主要噪声频率范围"
+    source_claim: >
+      "For noise correction, part of the transferred signal is sent back to the local end
+      and is compared with the local reference signal to get the instability of the link:
+      the phase difference gives the error signal for the correction loop."
+
+metrics:
+  - id: met.proton_electron_mass_ratio_variation_limit_2009
+    name: "质子-电子质量比时间变化上限（2009，SF6/Cs）"
+    unit: "yr⁻¹（每年相对变化）"
+    description: >
+      通过两年内重复测量 SF6 振动-转动跃迁相对于 Cs 超精细跃迁的绝对频率，
+      获得原子-分子频率比的时间变化率。结果对质子-电子质量比 μ = mp/me 的时间变化
+      给出直接且模型无关的上限约束。
+    demonstrated_value:
+      value: "(3.8 ± 5.6) × 10⁻¹⁴ yr⁻¹"
+      conditions: >
+        SF6 ν₂+ν₃ 带 P(4)E⁰ 双光子跃迁 vs Cs 基态超精细跃迁；
+        两年测量周期（2004-2006）；线性拟合斜率 (1.88 ± 0.12) × 10⁻¹⁴ yr⁻¹；
+        系统效应贡献附加误差 2.7 × 10⁻¹⁴ yr⁻¹；
+        SF6/Cs 频率比变化上限 (1.9 ± 2.8) × 10⁻¹⁴ yr⁻¹
+      verification_status: reported
+      confidence: tentative
+      source: {claim: "(3.8 ± 5.6) × 10⁻¹⁴ yr⁻¹ … This conclusion is independent of any model"}
+    historical_landmarks:
+      best_demonstration:
+        value: "与零变化一致（上限级）"
+        year: 2009
+        note: "当时唯一的模型无关 mp/me 变化直接约束"
+    open_questions:
+      - "Could longer measurement baselines distinguish between statistical fluctuations and a real signal?"
+      - "Can other molecular species provide complementary sensitivity to mp/me?"
+
+  - id: met.optical_link_instability_108km_hybrid_2009
+    name: "108 km 混合光纤链路频率传递稳定度（2009，巴黎）"
+    unit: "无量纲（分数频率 Allan 偏差 σ_y(τ)）"
+    description: >
+      108 km 混合光纤链路（43 km 暗光纤 + 11 km 电信网络 + 11 km 回程 + 43 km 暗光纤）
+      经过 round-trip 噪声补偿后的端到端频率传递稳定度。
+      链路同时承载 10 Gbit/s 互联网数据流量和计量频率信号（OADM/DWDM 共存）。
+    demonstrated_value:
+      value: "σ_y(1 s) = 4×10⁻¹⁶，σ_y(10⁴ s) = 7×10⁻²⁰（floor 值）"
+      conditions: >
+        108 km 混合链路（含 2×11 km 城市电信光纤 + 2×43 km 暗光纤）；
+        round-trip 噪声补偿激活；Λ-type 频率计数器；
+        约 4 天连续运行；互联网数据流量共存（ITU ch. 34, 1550.12 nm, 10 Gbit/s）
+      verification_status: demonstrated
+      confidence: established
+      source: {claim: "The Allan deviation is 4×10⁻¹⁶ at 1 s averaging time and scales down as
+        1/τ from 1 s to 5000 s. After 10000 s, it reaches a floor at about 7×10⁻²⁰."}
+    historical_landmarks:
+      best_demonstration:
+        value: "7×10⁻²⁰ @ 10⁴ s"
+        year: 2009
+        note: "混合链路（含运行中的电信网络）的端到端稳定度 floor"
+    open_questions:
+      - "What limits the 7×10⁻²⁰ floor — compensation servo noise or residual thermal variations?"
+
+  - id: met.fiber_phase_noise_psd_per_length_paris_2009
+    name: "巴黎电信光纤相位噪声功率谱密度（2009）"
+    unit: "rad²/(Hz·km) @ 1 Hz"
+    description: >
+      城市电信网络光纤的相位噪声功率谱密度（单位长度），
+      是表征光纤链路环境噪声源的核心指标。
+    demonstrated_value:
+      value: "14 rad²/(Hz·km) @ 1 Hz（电信 11 km 光纤）；暗光纤低约 10 倍"
+      conditions: >
+        城市电信网络 11 km 光纤（Université Paris 13 ↔ RENATER Aubervilliers 节点）；
+        在自由运行（无 compensation）条件下测量；
+        与 86 km 专用暗光纤对比（暗光纤噪声低约 10 倍）
+      verification_status: reported
+      confidence: likely
+      source: {claim: "The free running phase noise power spectral density (per unit of length)
+        of the two 11 km fibers at 1 Hz (14 rad²/Hz/km) is 10 times higher than that of the 86 km fiber"}
+
+# ═══════════════════════════════════════════════
+#  RELATIONS（关系）
+# ═══════════════════════════════════════════════
+
+relations:
+  - id: rel.amyklein_2009_01
+    subject: ent.sf6_molecular_spectrometer_lpl
+    predicate: CHARACTERIZED-BY
+    object: met.proton_electron_mass_ratio_variation_limit_2009
+    confidence: likely
+    source: {claim: "we place the upper limit on any variation of the ratio of SF6 and Cs frequencies
+      as (1.9 ± 2.8) × 10⁻¹⁴ yr⁻¹ … implying a limit of mp/me variation of (3.8 ± 5.6) × 10⁻¹⁴ yr⁻¹"}
+    note: >
+      SF6 分子光谱仪的核心科学产出：获得当时唯一模型无关的 mp/me 变化上限约束。
+
+  - id: rel.amyklein_2009_02
+    subject: ent.phase_stabilized_fiber_frequency_link_paris_2009
+    predicate: CHARACTERIZED-BY
+    object: met.optical_link_instability_108km_hybrid_2009
+    confidence: established
+    source: {claim: "The Allan deviation is 4×10⁻¹⁶ at 1 s averaging time … reaches a floor at
+      about 7×10⁻²⁰"}
+
+  - id: rel.amyklein_2009_03
+    subject: pri.molecular_atomic_frequency_ratio_mass_dependence
+    predicate: GOVERNS
+    object: ent.sf6_molecular_spectrometer_lpl
+    confidence: established
+    source: {claim: "the dependence ν(SF6)/ν(Cs) ∝ K·α^2.83·(mp/me)"}
+    note: >
+      分子-原子频率比对 mp/me 的依赖性是 SF6 光谱仪进行基本常数测试的物理基础。
+
+  - id: rel.amyklein_2009_04
+    subject: pri.round_trip_phase_noise_compensation_fiber_link
+    predicate: REALIZED-BY
+    object: meth.round_trip_fiber_phase_noise_correction
+    confidence: established
+    source: {claim: "the phase difference gives the error signal for the correction loop.
+      This is the so-called round-trip method for noise compensation."}
+
+  - id: rel.amyklein_2009_05
+    subject: meth.sf6_ramsey_fringe_absolute_frequency_measurement
+    predicate: DEPENDS-ON
+    object: ent.phase_stabilized_fiber_frequency_link_paris_2009
+    confidence: established
+    source: {claim: "The reference is generated at LNE-SYRTE … It is transferred to the LPL
+      laboratory via an optical link"}
+    note: >
+      SF6 绝对频率测量的 Cs 参考信号通过 43 km 光纤链路从 LNE-SYRTE 传输至 LPL。
+      没有此链路，分子跃迁的绝对频率测量精度将受限于本地参考。
+
+  - id: rel.amyklein_2009_06
+    subject: pri.dwdm_oadm_metrology_data_coexistence
+    predicate: ENABLED
+    object: ent.phase_stabilized_fiber_frequency_link_paris_2009
+    confidence: likely
+    source: {claim: "The ultra-stable signal is travelling through a network node at Aubervilliers …
+      The Internet traffic was unaffected during the whole period of the test (about 3 weeks)"}
+    note: >
+      OADM/DWDM 原理使得 108 km 混合链路段能够使用已承载互联网数据的电信光纤传输计量信号。

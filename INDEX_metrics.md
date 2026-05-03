@@ -2,7 +2,7 @@
 
 # 📊 Metrics Quick Reference
 
-> Auto-generated 2026-05-03 05:53 UTC
+> Auto-generated 2026-05-03 07:46 UTC
 >
 > Metrics are grouped by **role** (v4.4 σ_y-first convention, see `topics/ultrastable-laser/_meta/scoping_principles.md` v2). Role is taken from the `role` field on the metric node when present, otherwise inferred from ID / name heuristics.
 
@@ -353,6 +353,7 @@
 
 | ID | Name | Best Value | Conditions | Source |
 |----|------|------------|------------|--------|
+| `met.fiber_phase_noise_psd_per_length_paris_2009` | 巴黎电信光纤相位噪声功率谱密度（2009） | 14 rad²/(Hz·km) @ 1 Hz（电信 11 km 光纤）；暗光纤低约 10 倍 | 城市电信网络 11 km 光纤（Université Paris 13 ↔ RENATER Aub… | [amyklein2009](topics/timescales/papers/amyklein2009.yaml) |
 | `met.mutc_10ghz_phase_noise_floor` | MUTC PD 光子微波 10 GHz 绝对相位噪声底 | –177 dBc/Hz | 10 GHz 载波，>1 MHz 偏移频率；扣除放大器噪声后，假定两振荡器等贡献 | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 
 ### ❓ Unspecified
@@ -370,6 +371,8 @@
 | `met.mutc_am_pm_coefficient` | MUTC PD AM-PM 转换系数 | <0.1 rad | 21 V 偏压，2 GHz 脉冲序列，光电流 <20 mA；1 GHz 脉冲序列和 9 V 偏压下… | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 | `met.mutc_residual_flicker_noise` | MUTC PD 光检测残余 flicker（f⁻¹）相位噪声 | –122 f⁻¹ dBc/Hz | 21 V 偏压，18 mA 光电流/PD，2 GHz 脉冲序列；降低至 10 V/15 mA 可达… | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 | `met.optical_clock_systematic_uncertainty` | 光学频率标准系统不确定度 | 9.4×10⁻¹⁹（²⁷Al⁺ 量子逻辑钟，NIST，路线图汇总） | ²⁷Al⁺ 单离子，量子逻辑探测，NIST Boulder | [dimarcq2024](topics/timescales/papers/dimarcq2024.yaml) |
+| `met.optical_link_instability_108km_hybrid_2009` | 108 km 混合光纤链路频率传递稳定度（2009，巴黎） | σ_y(1 s) = 4×10⁻¹⁶，σ_y(10⁴ s) = 7×10⁻²⁰（floor 值） | 108 km 混合链路（含 2×11 km 城市电信光纤 + 2×43 km 暗光纤）； roun… | [amyklein2009](topics/timescales/papers/amyklein2009.yaml) |
+| `met.proton_electron_mass_ratio_variation_limit_2009` | 质子-电子质量比时间变化上限（2009，SF6/Cs） | (3.8 ± 5.6) × 10⁻¹⁴ yr⁻¹ | SF6 ν₂+ν₃ 带 P(4)E⁰ 双光子跃迁 vs Cs 基态超精细跃迁； 两年测量周期（20… | [amyklein2009](topics/timescales/papers/amyklein2009.yaml) |
 | `met.residual_ion_doppler_velocity_2010` | Al-Mg 钟离子残余多普勒速度 | (1.8 ± 1.1) nm/s（对应分数频率差 (1.2 ± 0.7) × 10⁻¹⁷） | Al-Mg 钟，counter-propagating 探针激光比较测量；钟频率由两方向平均得出从… | [chou2010](topics/timescales/papers/chou2010.yaml) |
 | `met.solid_earth_tide_frequency_fluctuation` | 固体潮引起的大地水准面起伏及派生频率波动 | ~2×10⁻¹⁷ | 全球尺度；与实验室地理位置有关；叠加有海洋潮汐、大气压效应、气候水分重分布等额外波动 | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 | `met.time_dilation_detection_velocity_2010` | <10 m/s 速度时间膨胀检测 | 检测到 <10 m/s 速度引发的时间膨胀（对应分数频率偏移约 5×10⁻¹⁶） | Al-Mg 钟离子通过静态电场位移产生简谐运动；RF 频率 59 MHz；速度均方根 vrms <… | [chou2010](topics/timescales/papers/chou2010.yaml) |

@@ -1,6 +1,14 @@
 # 知识库演化日志
 
 
+## [2026-05-03] ingest | Amy-Klein 2009 — SF6/Cs 频率比约束质子-电子质量比变化；108 km 混合光纤链路同时传输计量信号与互联网数据（timescales）
+
+### 摄入内容
+- 文件：topics/timescales/papers/amyklein2009.yaml
+- 贡献类型：evidence
+- 核心贡献：(1) 通过 SF6 分子跃迁与 Cs 原子钟频率比对，获得模型无关的 mp/me 时间变化上限 (3.8 ± 5.6) × 10⁻¹⁴ yr⁻¹；(2) 演示 108 km 混合光纤链路（暗光纤+电信网络 DWDM），4×10⁻¹⁶ @ 1s，7×10⁻²⁰ floor
+- 新增节点：2 entities + 3 principles + 2 methods + 3 metrics + 6 relations
+
 ## [2026-05-03] ingest | Chou 2010 — 用 ²⁷Al⁺ 量子逻辑光钟在人类日常尺度（<10 m/s、33 cm）验证狭义和广义相对论时间膨胀效应（timescales）
 
 ### 摄入内容

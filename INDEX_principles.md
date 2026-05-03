@@ -2,7 +2,7 @@
 
 # 🔬 Principles Quick Reference
 
-> Auto-generated 2026-05-03 05:53 UTC
+> Auto-generated 2026-05-03 07:46 UTC
 
 ## Tier: meta
 
@@ -42,6 +42,7 @@
 | `pri.gravitational_blueshift_clock_rate` | 引力蓝移对时钟频率的影响——Δf/f ≈ gΔh/c² | Timescales | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 | `pri.gravitational_time_dilation` | 引力时间膨胀（Einstein 红移） | Time-Frequency Transfer | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
 | `pri.gravitational_time_dilation_clock_shift` | 引力时间膨胀——地球表面高度差引发的时钟频率偏移 | Timescales | [chou2010](topics/timescales/papers/chou2010.yaml) |
+| `pri.molecular_atomic_frequency_ratio_mass_dependence` | 分子/原子跃迁频率比对质子-电子质量比的灵敏度原理 | Timescales | [amyklein2009](topics/timescales/papers/amyklein2009.yaml) |
 | `pri.nlse_gain_self_similar_parabolic_solution` | 含增益 NLSE 自相似抛物线脉冲渐近解原理（Similariton） | shared | [fermann2000](topics/shared/papers/fermann2000.yaml) |
 | `pri.relativistic_time_dilation_motion` | 狭义相对论时间膨胀——低速度下的运动时钟变慢 | Timescales | [chou2010](topics/timescales/papers/chou2010.yaml) |
 | `pri.si_second_cesium_definition` | SI 秒的 Cs 超精细跃迁定义 | Frequency Standards | [heavner2005](topics/frequency-standards/papers/heavner2005.yaml) |
@@ -272,6 +273,7 @@
 | `pri.dual_comb_coherent_averaging_snr_scaling` | 双梳相干平均 SNR 标度原理 | Optical Frequency Combs | [coddington2010](topics/optical-frequency-combs/papers/coddington2010.yaml) |
 | `pri.dual_comb_mode_number_self_determination` | 双梳自主模式数确定原理 | Optical Frequency Combs | [probster2021](topics/optical-frequency-combs/papers/probster2021.yaml) |
 | `pri.dual_polarization_coherent_endless_phase_tracking` | 双偏振相干接收无限相位跟踪原理 | Time-Frequency Transfer | [clivati2020_ispu4z4x](topics/time-frequency-transfer/papers/clivati2020_ispu4z4x.yaml) |
+| `pri.dwdm_oadm_metrology_data_coexistence` | DWDM/OADM 计量信号与数据信号共存传输原理 | Timescales | [amyklein2009](topics/timescales/papers/amyklein2009.yaml) |
 | `pri.envelope_phase_time_ceo_free_sync_c24` | 脉冲包络相位时间同步免 CEO 依赖原理（Chen Z. 2024） | Optical Frequency Combs | [chen_z2024](topics/optical-frequency-combs/papers/chen_z2024.yaml) |
 | `pri.er_yb_co_doping_pump_noise_suppression_n23` | Er/Yb 共掺杂抑制泵浦强度噪声耦合原理（Nardelli 2023） | Optical Frequency Combs | [nardelli2023](topics/optical-frequency-combs/papers/nardelli2023.yaml) |
 | `pri.fceo_frep_decoupling_via_beat_subtraction` | fbeat − fceo 合成实现 n·f_rep 独立锁定原理 | Optical Frequency Combs | [kuse2015](topics/optical-frequency-combs/papers/kuse2015.yaml) |
@@ -346,6 +348,7 @@
 | `pri.redefinition_criteria_second` | SI 秒重定义强制性标准体系 | Timescales | [dimarcq2024](topics/timescales/papers/dimarcq2024.yaml) |
 | `pri.residual_free_space_path_noise_floor` | 残余自由空间路径相噪地板原理（FNDC 应用后主导长期不稳定） | Optical Frequency Combs | [kashiwagi2018](topics/optical-frequency-combs/papers/kashiwagi2018.yaml) |
 | `pri.rin_suppression_reuse_modulator` | 利用已有调制器的 RIN 抑制原理 | Ultrastable Laser | [nelson2008](topics/ultrastable-laser/papers/nelson2008.yaml) |
+| `pri.round_trip_phase_noise_compensation_fiber_link` | 光纤链路 round-trip 相位噪声补偿原理 | Timescales | [amyklein2009](topics/timescales/papers/amyklein2009.yaml) |
 | `pri.ruggedized_erfiber_comb_space_qualification` | Ruggedization principles for space-qualified Er:fiber … | Optical Frequency Combs | [lezius2016](topics/optical-frequency-combs/papers/lezius2016.yaml) |
 | `pri.secondary_representation_si_second` | SI 秒次级表示（Secondary Representations of the SI Second, S… | Timescales | [dimarcq2024](topics/timescales/papers/dimarcq2024.yaml) |
 | `pri.servo_bandwidth_limited_comb_locking` | 伺服带宽限制原理（泵浦调制锁 f_ceo） | Optical Frequency Combs | [zhang2017](topics/optical-frequency-combs/papers/zhang2017.yaml) |
