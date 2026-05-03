@@ -1,6 +1,14 @@
 # 知识库演化日志
 
 
+## [2026-05-03] ingest | Fortier 2013 — 高功率 MUTC 光电二极管光子微波生成 (timescales, evidence)
+
+### 摄入内容
+- 文件：topics/timescales/papers/fortier2013.yaml
+- 贡献类型：evidence（工程改进）
+- 核心贡献：利用高功率、高线性度 MUTC 光电二极管通过光频率分频（OFD）实现低相位噪声光子微波生成。10 GHz 载波功率 +14 dBm、绝对集成定时抖动 <500 as (1 Hz–10 MHz)、相位噪声底 –177 dBc/Hz。MUTC 结构通过预畸变电场抑制空间电荷效应，将 AM-PM 系数压制至 <0.1 rad。OFD 是光钟→微波时标的关键技术桥接。
+- 新增节点：1 实体 + 3 原理 + 3 方法 + 5 指标 + 6 关系
+
 ## [2026-05-03] ingest | Kleppner 2006 — 引力红移对分布式原子时标比较的终极限制 (timescales, framework)
 
 ### 摄入内容

@@ -1,0 +1,459 @@
+# Fortier 2013 — 高功率 MUTC 光电二极管光子微波生成 [时间标尺专题]
+# 提取者：Claude Code
+# 提取日期：2026-05-03
+# Schema版本：v4.0
+# 专题：timescales
+# contribution_type: evidence — 工程改进：利用 MUTC PD 实现更低附加噪声的 OFD 微波生成。
+#   Fortier 2013 报告了利用高功率、高线性度 MUTC 光电二极管进行光频率分频（OFD）
+#   光子微波生成的系统表征。实现了 10 GHz 微波绝对定时抖动 <500 as 和相位噪声底 –177 dBc/Hz。
+#   本文是光频率分频（OFD）微波生成技术的工程优化，不提出新物理原理，
+#   但大幅提升了从光学频率标准到微波域的转换性能——这对时标生成有直接意义。
+
+meta:
+  zotero_key: "1302.5927"
+  topic: timescales
+  source_type: paper
+  contribution_type: evidence
+  reliability: high
+  title: "Photonic microwave generation with high-power photodiodes"
+  year: 2013
+  first_author: fortier
+  authors:
+    - "Tara M. Fortier"
+    - "Franklyn Quinlan"
+    - "Archita Hati"
+    - "Craig Nelson"
+    - "Jennifer A. Taylor"
+    - "Yang Fu"
+    - "Joe Campbell"
+    - "Scott A. Diddams"
+  journal: "Optics Letters"
+  volume: 38
+  pages: "1712"
+  doi: "10.1364/OL.38.001712"
+  note: >
+    [实验/工程改进] timescales 专题工程证据文档。
+    利用高功率、高线性度 MUTC（modified uni-traveling carrier）光电二极管，
+    通过光频率分频（OFD）技术从飞秒激光频率梳生成低相位噪声 10 GHz 微波信号。
+    核心成果：10 GHz 载波功率 +14 dBm、绝对集成定时抖动 <500 as (1 Hz–10 MHz)、
+    相位噪声底 –177 dBc/Hz、AM-PM 系数 <0.1 rad（<20 mA 光电流）。
+    OFD 是光钟→微波时标的关键技术桥梁——MUTC PD 在此转换中实现了当时最低的附加噪声，
+    将光学标准稳定度以最小退化传递至微波域，为时标生成和光钟比较提供高纯度参考信号。
+    本文不重新定义 OFD 原理，而是通过 MUTC 结构优化光电检测环节的性能。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+entities:
+  - id: ent.mutc_photonic_microwave_generator
+    name: "MUTC 光电二极管光子微波发生器（基于光频率分频的低噪声 10GHz 微波源）"
+    aliases: ["photonic microwave generator", "MUTC PD microwave source", "光子微波发生器", "MUTC OFD microwave generator"]
+    hierarchy_level: 1
+    status: demonstrated
+    function: >
+      利用高功率、高线性度 MUTC（modified uni-traveling carrier）光电二极管，
+      结合光频率分频（OFD）技术，将飞秒 Ti:sapphire 锁模激光器 ~1 ps 脉冲序列的
+      稳定定时转换为低相位噪声 10 GHz 微波载波。
+      MUTC 结构通过三个关键设计抑制空间电荷效应：(1) 掺杂 InP 收集区预畸变内建电场、
+      (2) 部分未耗尽吸收区维持异质结高电场、(3) 电荷"cliff"层定制电场剖面。
+      采用 Mach-Zehnder 脉冲交织器将入射重复频率从 1 GHz 加倍至 2 GHz，
+      进一步提高线性度。该系统在 10 GHz 实现了当时最低的 OFD 微波相位噪声。
+    key_parameters:
+      carrier_frequency: "10 GHz"
+      max_signal_power: "+14 dBm @ 37 mA 光电流，21 V 偏压，2 GHz 脉冲序列"
+      am_pm_coefficient_range: "<0.1 rad (I_ph < 20 mA, 21 V 偏压, 2 GHz 脉冲序列)"
+      residual_flicker_noise: "–122 f⁻¹ dBc/Hz（21 V/18 mA）；可降至 –127 f⁻¹ dBc/Hz（10 V/15 mA）"
+      residual_noise_floor: "–174 dBc/Hz @ 1 MHz offset（21 V/18 mA）"
+      responsivity: "~0.3 A/W @ 980 nm（抗反射涂层，自由空间入射）"
+      pd_diameter: "56 μm"
+    note: >
+      Level 1 子系统实体——光频率分频（OFD）微波生成链中的光→电转换环节。
+      OFD 是连接光学频率标准（光钟）与微波时标的关键技术：光学稳定度通过除法
+      传递到微波域而不引入额外分数不稳定度（除光电检测噪声外）。MUTC PD 在此环节
+      以最小化附加噪声（AM-PM、flicker、热噪声）为目标，直接影响最终微波信号纯度。
+      与 meth.mutc_pd_photonic_microwave_generation 方法配对，
+      构成时标生成链路中"光参考→实用微波信号"的核心转换节点。
+
+principles:
+  - id: pri.ofd_transfers_optical_stability_to_microwave
+    name: "光频率分频（OFD）将光学参考稳定度无噪声传递至微波域"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      光频率分频（OFD）利用飞秒激光频率梳将稳定光学参考的相位信息
+      编码到脉冲序列定时中。光电检测该稳定光脉冲序列产生电子脉冲序列，
+      其频谱由高光谱纯度谐波组成（延伸至光电二极管截止带宽）。
+      频率下转换过程——光频 ν_opt（~10¹⁴–10¹⁵ Hz）除以梳模数 N（~10⁴–10⁵）
+      得到微波频率 f_rep（~10¹⁰ Hz）——在保留相对频率稳定度（σ_y）
+      的同时引入光电检测附加噪声。OFD 实现噪声底的关键瓶颈在光→电转换环节，
+      其中光电二极管的非线性（AM-PM）和固有噪声决定了最终微波信号纯度。
+    domain: "光子学，时间频率计量"
+    key_insight: >
+      OFD 是光钟→微波时标的核心技术桥梁。光频 ν_opt 和微波频率 f_rep 的
+      分数稳定度理论上相同（σ_y 在除法中不变），但实际性能受限于光电检测噪声。
+      降低光电二极管的 AM-PM 转换、flicker 噪声和热噪声是提升 OFD 性能的关键。
+    formula: "f_rep = ν_opt / N，其中 N 为梳模数（~10⁴–10⁵）；σ_y(f_rep) ≈ σ_y(ν_opt)（忽略检测噪声）"
+    conditions: "需要稳定光学参考 + 锁模飞秒激光器 + 低噪声光电检测；OFD 自身不引入分数频率不稳定度，但光电检测引入加性相位噪声"
+    source_claim: >
+      "In optical frequency division (OFD), the stability of the optical reference is
+      transferred to the timing in the pulse train of a modelocked laser. Photodetection
+      of this stable optical pulse train generates an electronic pulse train with a spectrum
+      composed of high spectral purity harmonics of the pulse repetition rate, up to the
+      cut-off bandwidth of the photodiodes (PD)."
+
+  - id: pri.am_pm_conversion_couples_rin_to_phase_noise
+    name: "光电检测中的 AM-PM 转换将光脉冲 RIN 耦合为微波相位噪声"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      在脉冲照明条件下，峰值光功率可比平均功率高 >1000 倍，产生极高密度的
+      光生载流子。受限于有限载流子迁移率，空间电荷产生与外加反向偏压对抗的
+      电场，减慢光电二极管响应时间并引入与光电流强度相关的相位延迟（AM-PM 转换）。
+      AM-PM 对单边带相位噪声的贡献为 L_RIN(f) = RIN + 20 log(α) – 3 dB，
+      其中 α = Δφ_rms / (ΔI/I)（RMS 相位变化 / 光电流分数变化）。
+      α < 0.1 rad 时 AM-PM 贡献的相噪比 RIN 低 23 dB——使其不构成主导噪声源。
+    domain: "光电检测，微波光子学"
+    formula: "L_RIN(f) = RIN + 20 log(α) – 3 dB；α = Δφ_rms / (ΔI/I)"
+    key_insight: >
+      AM-PM 转换是脉冲 OFD 微波生成中相位噪声退化的首要机制之一。
+      线性度足够高时（α < 0.1 rad），RIN 的相噪贡献可被压制在底噪之下。
+      提高偏压、增加有效重复频率（脉冲交织）和使用 MUTC 结构均可降低 α。
+    conditions: "脉冲照明下显著于 CW 照明（峰值功率 ~1000 倍）；低偏压时更严重；光电流接近饱和区时 α 急剧增大"
+    source_claim: >
+      "the AM-PM contribution to the single sideband phase noise being,
+      L_RIN (f) = RIN + 20 log (α) – 3 dB, a value of α < 0.1 rad would result in
+      phase noise 23 dB lower than the RIN on the optical pulse train."
+
+  - id: pri.mutc_structure_suppresses_space_charge
+    name: "MUTC 光电二极管结构通过预畸变电场设计抑制空间电荷非线性效应"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      MUTC 光电二极管设计包含三个关键特征以抑制空间电荷效应：
+      (1) 掺杂 InP 收集区——预畸变静态内部电场，防止高电流下异质结界面电场崩塌；
+      (2) 部分未耗尽吸收区——维持异质结界面高电场；
+      (3) 电荷"cliff"层——定制电场剖面，防止高光电流下耗尽吸收区电场崩塌。
+      这三项特征共同作用，使 MUTC PD 在高光电流下保持高速响应和低非线性，
+      此前已在 1550 nm 振幅调制 CW 光照下实现 15 GHz 近 1W 微波功率输出。
+      在本工作中，该结构使 980 nm 脉冲照明下 AM-PM 系数 <0.1 rad（<20 mA）。
+    domain: "半导体物理，光电探测器设计"
+    key_insight: >
+      传统 PIN 光电二极管通过减薄吸收区缓解空间电荷效应（牺牲响应度）。
+      MUTC 设计采取不同策略：通过内建电场工程主动抵消空间电荷——
+      如同预加载弹性力对抗已知负载。这实现了高光电流下线性度与响应度的兼顾，
+      是 OFD 微波生成中光电检测噪声最小化的物理基础。
+    conditions: "需有效散热——高偏压 + 高光电流造成显著热负载；热效应可能影响长期稳定性和 flicker 噪声水平"
+    source_claim: >
+      "the MUTC PDs employ an InP collector that is doped to predistort the static
+      internal electric field; this prevents field collapse at the heterojunction
+      interface at high current. A portion of the absorber is undepleted in order
+      to maintain high field across the heterojunctions. The structure also has a
+      charge or 'cliff' layer that tailors the electric field profile to prevent the
+      field in the depleted absorber from collapsing at high photocurrent."
+
+methods:
+  - id: meth.mutc_pd_photonic_microwave_generation
+    name: "MUTC 光电二极管光子微波生成方法（OFD + 脉冲交织 + MUTC 检测）"
+    status: demonstrated
+    applies_to: ent.mutc_photonic_microwave_generator
+    steps_summary: >
+      1. 飞秒 Ti:sapphire 锁模激光器产生 ~1 ps 啁啾脉冲序列（1 GHz 基频重复频率）→
+      2. 自由空间 Mach-Zehnder 脉冲交织器将重复频率加倍至 2 GHz（提高有效重复频率以增强线性度）→
+      3. 交织后的脉冲序列以 980 nm 自由空间入射至 MUTC PD（抗反射涂层，56 μm 直径，响应度 ~0.3 A/W）→
+      4. 通过微波探针（GSG probe）+ bias-T 施加反向偏压（9–21 V）并提取 10 GHz 微波信号→
+      5. 在 21 V 偏压、~125 mW 入射的 2 GHz 脉冲条件下获得最佳性能（+14 dBm, α < 0.1 rad）
+    required_hardware:
+      - "飞秒 Ti:sapphire 锁模激光器（1 GHz 重复频率，~1 ps 脉宽，980 nm 中心波长）"
+      - "自由空间 Mach-Zehnder 脉冲交织器（类似光纤实现 [15,16]，但为自由空间）"
+      - "MUTC 光电二极管（56 μm 直径，抗反射涂层 980 nm，响应度 ~0.3 A/W）"
+      - "GSG 微波探针 + bias-T（用于偏压施加和微波提取）"
+      - "稳定 CW 激光器（作为 OFD 光频参考，非本文重点描述）"
+    advantages:
+      - "10 GHz 载波功率 +14 dBm——比此前 PIN PD 结果高 >30 倍（此前约 –10 dBm [1,9,10]）"
+      - "AM-PM 系数 <0.1 rad @ <20 mA——RIN→相噪耦合被降低至非主导水平"
+      - "绝对集成定时抖动 <500 as (1 Hz–10 MHz)——单台振荡器"
+    disadvantages:
+      - "高偏压 + 高光电流产生显著热负载，可能影响长期稳定性和 flicker 噪声"
+      - "AM-PM 零点的位置对工作条件敏感，可能随时间漂移"
+      - "微波放大器噪声（~–178 dBc/Hz）成为相噪底的实际限制——而非 PD 自身"
+    conditions:
+      - "21 V 偏压 + 2 GHz 脉冲序列实现最佳线性度"
+      - "1 GHz 脉冲序列和低偏压（9 V）下 α 更大且随光电流变化更剧烈"
+      - "最终微波相噪底受限于测量系统中的放大器噪声（–178 dBc/Hz）和热噪声"
+    source_claim: >
+      "With 21 V bias and approximately 125 mW of the 2 GHz pulse train incident,
+      the MUTC PD generated a 10 GHz carrier with +14 dBm at 37 mA of average photocurrent."
+
+  - id: meth.am_pm_coefficient_measurement
+    name: "AM-PM 转换系数 α 测量方法"
+    status: demonstrated
+    applies_to: pri.am_pm_conversion_couples_rin_to_phase_noise
+    steps_summary: >
+      1. 对光脉冲序列施加已知幅度的强度调制（产生已知 ΔI/I）→
+      2. 测量 10 GHz 微波载波上由此产生的相位调制（Δφ_rms）→
+      3. 计算 α = Δφ_rms / (ΔI/I) → 4. 在不同偏压（9 V/21 V）、
+      不同脉冲重复频率（1 GHz/2 GHz）、不同平均光电流下重复测量获得 α 曲线
+    required_hardware:
+      - "光强度调制器"
+      - "相位噪声测量系统"
+      - "MUTC PD + bias-T + 微波探针"
+    advantages:
+      - "直接定量表征 AM-PM 转换强度"
+      - "可识别 α 过零点作为低噪声运行的最优工作点"
+    disadvantages:
+      - "α 零点位置对偏压、温度、光功率等工作条件敏感"
+    conditions:
+      - "测量方法与 Ref. [14] (Zhang et al., Appl. Phys. B, 2012) 类似"
+    source_claim: >
+      "We measured α for the MUTC PD in a manner similar to that in Ref. [14]."
+
+  - id: meth.cross_correlation_phase_noise_measurement
+    name: "互相关频谱分析残余相位噪声测量方法"
+    status: demonstrated
+    applies_to: ent.mutc_photonic_microwave_generator
+    steps_summary: >
+      1. 从单个 OFD 系统（经 MZ 交织器后）分束光脉冲序列 → 2. 分别照射两个独立
+      MUTC PD（相同工作条件）→ 3. 两路 10 GHz 输出馈入互相关频谱分析仪 →
+      4. 通过长时间互相关平均消除非相关噪声（OFD 自身噪声、独立 PD 噪声），
+      提取两路共享的共模残余噪声（反映 PD 固有噪声：AM-PM flicker + 热噪声 + 散粒噪声）
+    required_hardware:
+      - "光分束器"
+      - "两个独立 MUTC PD"
+      - "互相关频谱分析仪（cross-correlation spectral analyzer）[20,21]"
+      - "10 dB 微波放大器（驱动混频器用）"
+    advantages:
+      - "消除 OFD 共模噪声，仅测量光电检测附加噪声"
+      - "互相关增益使测量本底噪声低于单通道系统噪声底"
+    disadvantages:
+      - "放大器贡献的非共模噪声需单独估算和扣除"
+      - "两路对称性偏差可能引入系统误差"
+      - "散粒噪声贡献计算值 <–200 dBc/Hz，远低于测量本底——不构成实际限制"
+    conditions:
+      - "18 mA 光电流 / PD，21 V 偏压，每路 ~+10 dBm @ 10 GHz"
+      - "电损耗约 –4 dB 后馈入相关器；其中一路需额外 10 dB 放大"
+    source_claim: >
+      "The residual measurement was obtained by splitting the pulse train from a single OFD,
+      after the Mach-Zehnder interleaver, and illuminating two separate photodiodes.
+      The generated 10 GHz signals were then compared using cross-correlation spectral
+      analysis to determine the phase noise [20, 21]."
+
+# ═══════════════════════════════════════════════
+#  METRICS（指标）
+# ═══════════════════════════════════════════════
+
+metrics:
+  - id: met.mutc_10ghz_integrated_timing_jitter
+    name: "MUTC PD 光子微波 10 GHz 绝对集成定时抖动"
+    unit: "秒（s）"
+    description: >
+      从 1 Hz 到 10 MHz 积分区间内的 10 GHz 微波载波绝对定时抖动。
+      通过互相关法测量两台独立光子振荡器的合成噪声（trace 3(b)），
+      假定两振荡器等贡献后推算单台值。是 OFD 微波生成的最直接时域性能指标，
+      直接关联到时标生成中微波参考信号的定时精度。
+    demonstrated_value:
+      value: "<500 as（单台振荡器；两台合成测量值为 700 as）"
+      conditions: "10 GHz 载波，各 PD 21 V/19 V 偏压，~15 mA 光电流，+8 dBm 微波功率；积分区间 1 Hz–10 MHz"
+      verification_status: inferred
+      confidence: established
+      source:
+        zotero_key: "1302.5927"
+        claim: "The integrated timing jitter of the combined oscillators [trace 3(b)] is only
+        700 attoseconds (1 Hz to 10 MHz), or about 500 as for a single oscillator, assuming
+        both oscillators are equal."
+
+  - id: met.mutc_10ghz_phase_noise_floor
+    name: "MUTC PD 光子微波 10 GHz 绝对相位噪声底"
+    unit: "dBc/Hz"
+    description: >
+      单台光子振荡器 10 GHz 载波的绝对相位噪声底（偏移频率 >1 MHz）。
+      通过互相关法测量两台振荡器合成噪声（trace 3(b)），扣除放大器噪声贡献
+      （~–178 dBc/Hz，独立测量），并假定两振荡器等贡献后得到单台值。
+      与残余噪声测量（trace 3(a)）的 –174 dBc/Hz 底一致——残余测量反映
+      纯光电检测噪声，绝对测量还包含 OFD 自身噪声。
+    demonstrated_value:
+      value: "–177 dBc/Hz"
+      conditions: "10 GHz 载波，>1 MHz 偏移频率；扣除放大器噪声后，假定两振荡器等贡献"
+      verification_status: inferred
+      confidence: established
+      source:
+        zotero_key: "1302.5927"
+        claim: "After accounting for the noise contributed by the amplifier, and assuming
+        equal contribution of noise for each OFD, we arrive at a single oscillator phase
+        noise floor of –177 dBc/Hz."
+
+  - id: met.mutc_10ghz_signal_power
+    name: "MUTC PD 10 GHz 微波载波最大功率"
+    unit: "dBm"
+    description: >
+      MUTC PD 在 980 nm ~1 ps 脉冲照明下生成的 10 GHz 微波信号功率。
+      相比此前 PIN 或其他类型光电二极管 ~–10 dBm 的结果 [1,9,10]，
+      功率提高 >30 倍（>15 dB），是高功率微波驱动应用的关键性能指标。
+    demonstrated_value:
+      value: "+14 dBm"
+      conditions: "56 μm MUTC PD，21 V 偏压，~125 mW 入射的 2 GHz 脉冲序列，37 mA 平均光电流"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "1302.5927"
+        claim: "With 21 V bias and approximately 125 mW of the 2 GHz pulse train incident,
+        the MUTC PD generated a 10 GHz carrier with +14 dBm at 37 mA of average photocurrent."
+
+  - id: met.mutc_am_pm_coefficient
+    name: "MUTC PD AM-PM 转换系数"
+    unit: "rad（无量纲）"
+    description: >
+      AM-PM 转换系数 α = Δφ_rms / (ΔI/I)，定量表征光电流分数波动
+      （即相对强度噪声 RIN）通过光电检测非线性耦合为 10 GHz 微波相位噪声的强度。
+      是 OFD 微波生成中 RIN→相噪污染的关键控制参数。
+    demonstrated_value:
+      value: "<0.1 rad"
+      conditions: "21 V 偏压，2 GHz 脉冲序列，光电流 <20 mA；1 GHz 脉冲序列和 9 V 偏压下 α 更大且变化更快"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "1302.5927"
+        claim: "with the MUTC PDs operated at 21 V and a 2 GHz pulse train, α is < 0.1 rad
+        for all photocurrents less than 20 mA"
+
+  - id: met.mutc_residual_flicker_noise
+    name: "MUTC PD 光检测残余 flicker（f⁻¹）相位噪声"
+    unit: "dBc/Hz"
+    description: >
+      通过互相关法测量的 MUTC PD 对在光检测过程中的残余 flicker（f⁻¹）相位噪声水平。
+      Flicker 噪声表征光电二极管的低频固有噪声，可通过降低偏压和光电流进一步优化
+      （10 V/15 mA 时达 –127 f⁻¹ dBc/Hz），但这是以增加高频噪声底为代价的权衡。
+    demonstrated_value:
+      value: "–122 f⁻¹ dBc/Hz"
+      conditions: "21 V 偏压，18 mA 光电流/PD，2 GHz 脉冲序列；降低至 10 V/15 mA 可达 –127 f⁻¹ dBc/Hz（但高频噪声底升至 –170 dBc/Hz @ 1 MHz）"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "1302.5927"
+        claim: "The most important features in the residual phase noise measurement are flicker
+        noise of approximately -122 f⁻¹ dBc/Hz, and the high-frequency noise floor of -174 dBc/Hz
+        at 1 MHz offset frequency"
+
+# ═══════════════════════════════════════════════
+#  RELATIONS（关系）
+# ═══════════════════════════════════════════════
+
+relations:
+  - id: rel.fortier_2013_01
+    subject: ent.mutc_photonic_microwave_generator
+    predicate: REALIZED-BY
+    object: meth.mutc_pd_photonic_microwave_generation
+    confidence: established
+    source:
+      zotero_key: "1302.5927"
+      claim: "We utilize and characterize high-power, high-linearity modified uni-traveling
+      carrier (MUTC) photodiodes for low-phase-noise photonic microwave generation based
+      on optical frequency division."
+    is_system_limit: false
+    dominated_by: null
+    quantitative_contribution: null
+    regime: all
+    verification_status: observed
+    temporal_role: realizes
+    note: >
+      MUTC PD 光子微波发生器的具体实现方法——包括 OFD 架构、Mach-Zehnder 脉冲交织、
+      MUTC PD 偏压与光照条件优化。
+
+  - id: rel.fortier_2013_02
+    subject: pri.ofd_transfers_optical_stability_to_microwave
+    predicate: UNDERLIES
+    object: ent.mutc_photonic_microwave_generator
+    confidence: established
+    source:
+      zotero_key: "1302.5927"
+      claim: "In optical frequency division (OFD), the stability of the optical reference is
+      transferred to the timing in the pulse train of a modelocked laser."
+    is_system_limit: false
+    dominated_by: null
+    quantitative_contribution: null
+    regime: all
+    verification_status: observed
+    temporal_role: determines
+    note: >
+      OFD 原理是 MUTC 光子微波发生器的工作基础——发生器本身是 OFD 原理
+      在光电检测环节的具体工程实现。
+
+  - id: rel.fortier_2013_03
+    subject: ent.mutc_photonic_microwave_generator
+    predicate: CHARACTERIZED-BY
+    object: met.mutc_10ghz_integrated_timing_jitter
+    confidence: established
+    source:
+      zotero_key: "1302.5927"
+      claim: "a 10 GHz microwave tone is generated with less than 500 attoseconds absolute
+      integrated timing jitter (1 Hz – 10 MHz)"
+    is_system_limit: false
+    dominated_by: null
+    quantitative_contribution:
+      formula: "<500 as (1 Hz–10 MHz), single oscillator"
+      fractional: null
+    regime: all
+    verification_status: inferred
+    temporal_role: reports
+    note: "定时抖动是 OFD 微波生成的最直接时域性能指标，直接关联时标精度。"
+
+  - id: rel.fortier_2013_04
+    subject: ent.mutc_photonic_microwave_generator
+    predicate: CHARACTERIZED-BY
+    object: met.mutc_10ghz_phase_noise_floor
+    confidence: established
+    source:
+      zotero_key: "1302.5927"
+      claim: "After accounting for the noise contributed by the amplifier, and assuming
+      equal contribution of noise for each OFD, we arrive at a single oscillator phase
+      noise floor of –177 dBc/Hz."
+    is_system_limit: false
+    dominated_by: null
+    quantitative_contribution:
+      formula: "–177 dBc/Hz, single oscillator, >1 MHz offset"
+      fractional: null
+    regime: ">1 MHz offset"
+    verification_status: inferred
+    temporal_role: reports
+    note: "相噪底 ~18 个数量级低于载波——与当时最佳电子振荡器竞争。"
+
+  - id: rel.fortier_2013_05
+    subject: pri.mutc_structure_suppresses_space_charge
+    predicate: MITIGATES
+    object: pri.am_pm_conversion_couples_rin_to_phase_noise
+    confidence: established
+    source:
+      zotero_key: "1302.5927"
+      claim: "the MUTC photodiode structure [is used] to effectively suppress the space
+      charge effect [17]"
+    is_system_limit: false
+    dominated_by: null
+    quantitative_contribution:
+      formula: "α < 0.1 rad for I_ph < 20 mA, 21 V bias, 2 GHz pulse train"
+      fractional: null
+    regime: "I_ph < 20 mA"
+    verification_status: observed
+    temporal_role: suppresses
+    note: >
+      MUTC 结构设计的核心价值——通过预畸变电场抑制空间电荷效应，
+      从根本上降低 AM-PM 转换（α 从其他 PD 的大于零点几 rad 降至 <0.1 rad）。
+      这是实现 ~10⁻¹⁸ 级相噪底（~–177 dBc/Hz）的物理前提。
+
+  - id: rel.fortier_2013_06
+    subject: pri.am_pm_conversion_couples_rin_to_phase_noise
+    predicate: DEMONSTRATED-BY
+    object: met.mutc_am_pm_coefficient
+    confidence: established
+    source:
+      zotero_key: "1302.5927"
+      claim: "In Fig. 1(b), we present the AM-PM coefficient, α, which is a conversion
+      factor between phase noise on the 10 GHz carrier and RIN on the optical pulse train [12]."
+    is_system_limit: false
+    dominated_by: null
+    quantitative_contribution:
+      formula: "α = Δφ_rms / (ΔI/I)"
+      fractional: null
+    regime: all
+    verification_status: observed
+    temporal_role: reports
+    note: "α 的定量测量直接验证了 AM-PM 转换的存在和量级。"

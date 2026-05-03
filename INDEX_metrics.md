@@ -2,7 +2,7 @@
 
 # 📊 Metrics Quick Reference
 
-> Auto-generated 2026-05-03 05:35 UTC
+> Auto-generated 2026-05-03 05:47 UTC
 >
 > Metrics are grouped by **role** (v4.4 σ_y-first convention, see `topics/ultrastable-laser/_meta/scoping_principles.md` v2). Role is taken from the `role` field on the metric node when present, otherwise inferred from ID / name heuristics.
 
@@ -349,6 +349,12 @@
 
 ## Timescales
 
+### 📊 Secondary (线宽/PSD/相干)
+
+| ID | Name | Best Value | Conditions | Source |
+|----|------|------------|------------|--------|
+| `met.mutc_10ghz_phase_noise_floor` | MUTC PD 光子微波 10 GHz 绝对相位噪声底 | –177 dBc/Hz | 10 GHz 载波，>1 MHz 偏移频率；扣除放大器噪声后，假定两振荡器等贡献 | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
+
 ### ❓ Unspecified
 
 | ID | Name | Best Value | Conditions | Source |
@@ -357,6 +363,10 @@
 | `met.geoid_height_uncertainty` | 大地水准面高程典型不确定度 | 30–50 cm | 通过多年地面重力测量和卫星轨道观测获得；全球平均典型值，局部可能有更大偏差 | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 | `met.gps_clock_comparison_accuracy_2006` | GPS 卫星时钟远程比较精度（2006 年水平） | ~1×10⁻¹⁵ | GPS 卫星共视法（common-view）或商业通信卫星中继；55 个国际实验室参与；需 米级 … | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 | `met.leap_seconds_count_1972_2006` | UTC 闰秒累计插入次数（1972–2006） | 23 | 1972 年 1 月至 2006 年 3 月 | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
+| `met.mutc_10ghz_integrated_timing_jitter` | MUTC PD 光子微波 10 GHz 绝对集成定时抖动 | <500 as（单台振荡器；两台合成测量值为 700 as） | 10 GHz 载波，各 PD 21 V/19 V 偏压，~15 mA 光电流，+8 dBm 微波功… | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
+| `met.mutc_10ghz_signal_power` | MUTC PD 10 GHz 微波载波最大功率 | +14 dBm | 56 μm MUTC PD，21 V 偏压，~125 mW 入射的 2 GHz 脉冲序列，37 m… | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
+| `met.mutc_am_pm_coefficient` | MUTC PD AM-PM 转换系数 | <0.1 rad | 21 V 偏压，2 GHz 脉冲序列，光电流 <20 mA；1 GHz 脉冲序列和 9 V 偏压下… | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
+| `met.mutc_residual_flicker_noise` | MUTC PD 光检测残余 flicker（f⁻¹）相位噪声 | –122 f⁻¹ dBc/Hz | 21 V 偏压，18 mA 光电流/PD，2 GHz 脉冲序列；降低至 10 V/15 mA 可达… | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 | `met.optical_clock_systematic_uncertainty` | 光学频率标准系统不确定度 | 9.4×10⁻¹⁹（²⁷Al⁺ 量子逻辑钟，NIST，路线图汇总） | ²⁷Al⁺ 单离子，量子逻辑探测，NIST Boulder | [dimarcq2024](topics/timescales/papers/dimarcq2024.yaml) |
 | `met.solid_earth_tide_frequency_fluctuation` | 固体潮引起的大地水准面起伏及派生频率波动 | ~2×10⁻¹⁷ | 全球尺度；与实验室地理位置有关；叠加有海洋潮汐、大气压效应、气候水分重分布等额外波动 | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 

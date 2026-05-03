@@ -2,13 +2,14 @@
 
 # Timescales — Topic Index
 
-> Auto-generated 2026-05-03 05:35 UTC · 2 papers · 16 nodes · 12 relations
+> Auto-generated 2026-05-03 05:47 UTC · 3 papers · 28 nodes · 18 relations
 
 ## Entities
 
 | ID | Name | Level | Source |
 |----|------|------:|--------|
 | `ent.geoid` | 大地水准面（地球重力等势面——时间频率计量的高程参考） | 1 | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
+| `ent.mutc_photonic_microwave_generator` | MUTC 光电二极管光子微波发生器（基于光频率分频的低噪声 10GHz 微波源） | 1 | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 | `ent.si_second_definition` | SI 秒定义（当前基于铯，面向光学重定义） | 0 | [dimarcq2024](topics/timescales/papers/dimarcq2024.yaml) |
 | `ent.utc_leap_seconds` | UTC 闰秒机制（协调世界时的闰秒插入管理） | 0 | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 
@@ -16,8 +17,11 @@
 
 | ID | Name | Tier | Source |
 |----|------|------|--------|
+| `pri.am_pm_conversion_couples_rin_to_phase_noise` | 光电检测中的 AM-PM 转换将光脉冲 RIN 耦合为微波相位噪声 | engineering | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 | `pri.geoid_uncertainty_clock_comparison_limit` | 大地水准面不确定度对时钟比较的终极限制 | engineering | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 | `pri.gravitational_blueshift_clock_rate` | 引力蓝移对时钟频率的影响——Δf/f ≈ gΔh/c² | foundational | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
+| `pri.mutc_structure_suppresses_space_charge` | MUTC 光电二极管结构通过预畸变电场设计抑制空间电荷非线性效应 | engineering | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
+| `pri.ofd_transfers_optical_stability_to_microwave` | 光频率分频（OFD）将光学参考稳定度无噪声传递至微波域 | engineering | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 | `pri.redefinition_criteria_second` | SI 秒重定义强制性标准体系 | engineering | [dimarcq2024](topics/timescales/papers/dimarcq2024.yaml) |
 | `pri.secondary_representation_si_second` | SI 秒次级表示（Secondary Representations of the SI Second, SRS） | engineering | [dimarcq2024](topics/timescales/papers/dimarcq2024.yaml) |
 | `pri.time_entangled_with_gravity` | 引力与时间本质纠缠——分布式超精密时间失去意义 | foundational | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
@@ -26,12 +30,21 @@
 
 | ID | Name | Source |
 |----|------|--------|
+| `meth.am_pm_coefficient_measurement` | AM-PM 转换系数 α 测量方法 | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
+| `meth.cross_correlation_phase_noise_measurement` | 互相关频谱分析残余相位噪声测量方法 | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 | `meth.gps_satellite_clock_comparison` | GPS 卫星原子钟远程比较方法 | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
+| `meth.mutc_pd_photonic_microwave_generation` | MUTC 光电二极管光子微波生成方法（OFD + 脉冲交织 + MUTC 检测） | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 | `meth.optical_clock_comparison` | 光钟比较方法（本地与远程） | [dimarcq2024](topics/timescales/papers/dimarcq2024.yaml) |
 
 ## Metrics
 
 > Metrics are grouped by **role** (v4.4 σ_y-first convention). See `topics/ultrastable-laser/_meta/scoping_principles.md` v2.
+
+### 📊 Secondary (线宽/PSD/相干)
+
+| ID | Name | Best Value | Source |
+|----|------|------------|--------|
+| `met.mutc_10ghz_phase_noise_floor` | MUTC PD 光子微波 10 GHz 绝对相位噪声底 | –177 dBc/Hz | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 
 ### ❓ Unspecified
 
@@ -41,6 +54,10 @@
 | `met.geoid_height_uncertainty` | 大地水准面高程典型不确定度 | 30–50 cm | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 | `met.gps_clock_comparison_accuracy_2006` | GPS 卫星时钟远程比较精度（2006 年水平） | ~1×10⁻¹⁵ | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 | `met.leap_seconds_count_1972_2006` | UTC 闰秒累计插入次数（1972–2006） | 23 | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
+| `met.mutc_10ghz_integrated_timing_jitter` | MUTC PD 光子微波 10 GHz 绝对集成定时抖动 | <500 as（单台振荡器；两台合成测量值为 700 as） | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
+| `met.mutc_10ghz_signal_power` | MUTC PD 10 GHz 微波载波最大功率 | +14 dBm | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
+| `met.mutc_am_pm_coefficient` | MUTC PD AM-PM 转换系数 | <0.1 rad | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
+| `met.mutc_residual_flicker_noise` | MUTC PD 光检测残余 flicker（f⁻¹）相位噪声 | –122 f⁻¹ dBc/Hz | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 | `met.optical_clock_systematic_uncertainty` | 光学频率标准系统不确定度 | 9.4×10⁻¹⁹（²⁷Al⁺ 量子逻辑钟，NIST，路线图汇总） | [dimarcq2024](topics/timescales/papers/dimarcq2024.yaml) |
 | `met.solid_earth_tide_frequency_fluctuation` | 固体潮引起的大地水准面起伏及派生频率波动 | ~2×10⁻¹⁷ | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 

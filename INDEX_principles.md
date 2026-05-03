@@ -2,7 +2,7 @@
 
 # 🔬 Principles Quick Reference
 
-> Auto-generated 2026-05-03 05:35 UTC
+> Auto-generated 2026-05-03 05:47 UTC
 
 ## Tier: meta
 
@@ -242,6 +242,7 @@
 |----|------|-------|--------|
 | `pri.active_tiptilt_beam_wander_suppression` | 主动 tip-tilt 光学终端抑制自由空间光束摆动原理 | Time-Frequency Transfer | [dix-matthews2021_bv4dl5z6](topics/time-frequency-transfer/papers/dix-matthews2021_bv4dl5z6.yaml) |
 | `pri.adjacent_mode_thermal_stabilization` | 邻近模族被动热稳定原理（Li 2017 新提出） | Optical Frequency Combs | [li2017](topics/optical-frequency-combs/papers/li2017.yaml) |
+| `pri.am_pm_conversion_couples_rin_to_phase_noise` | 光电检测中的 AM-PM 转换将光脉冲 RIN 耦合为微波相位噪声 | Timescales | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 | `pri.amplifier_residual_phase_noise_limit` | 微波放大器残余相位噪声限制原理（光微波链路远载波本底） | Optical Frequency Combs | [portuondo-campa2015](topics/optical-frequency-combs/papers/portuondo-campa2015.yaml) |
 | `pri.asymmetric_spool_vibration_nulling` | 非对称支撑线轴振动灵敏度调零原理 | Ultrastable Laser | [li2009a](topics/ultrastable-laser/papers/li2009a.yaml) |
 | `pri.bandwidth_power_tradeoff_long_path_comb` | 长程 DCS 高功率-大带宽权衡原理 | Optical Frequency Combs | [han2024](topics/optical-frequency-combs/papers/han2024.yaml) |
@@ -316,11 +317,13 @@
 | `pri.multi_point_symmetric_clamping` | 多点对称夹持腔体固定原理 | Ultrastable Laser | [tao2018](topics/ultrastable-laser/papers/tao2018.yaml) |
 | `pri.multi_point_symmetric_clamping_20pin_c14` | 20柱多点对称夹持原理 | Ultrastable Laser | [chen2014](topics/ultrastable-laser/papers/chen2014.yaml) |
 | `pri.multibranch_vs_single_branch_tradeoff` | 多支路 vs 单支路超连续架构权衡原理 | Optical Frequency Combs | [zhang2022b](topics/optical-frequency-combs/papers/zhang2022b.yaml) |
+| `pri.mutc_structure_suppresses_space_charge` | MUTC 光电二极管结构通过预畸变电场设计抑制空间电荷非线性效应 | Timescales | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 | `pri.nanophotonic_supercontinuum_low_power` | 纳米光子波导低功率超连续展宽原理 | Optical Frequency Combs | [metcalf2019](topics/optical-frequency-combs/papers/metcalf2019.yaml) |
 | `pri.nir_to_visible_shg_comb_link_r19` | 红外飞秒梳经 HNLF 展宽 + PPLN 倍频链接至可见光原子跃迁线原理 | Optical Frequency Combs | [rao2019](topics/optical-frequency-combs/papers/rao2019.yaml) |
 | `pri.npe_nalm_hybrid_mode_locking` | NPE+NALM 混合锁模原理 | Optical Frequency Combs | [zhang2017](topics/optical-frequency-combs/papers/zhang2017.yaml) |
 | `pri.octave_self_compression_enables_inline_f2f` | 自压缩倍频程谱使同纤 f-2f 免延迟化 | Optical Frequency Combs | [xing2020](topics/optical-frequency-combs/papers/xing2020.yaml) |
 | `pri.octave_spanning_enables_f2f_self_reference` | 倍频程谱使 f-2f 自参考成为单激光器方案 | Optical Frequency Combs | [diddams2000](topics/optical-frequency-combs/papers/diddams2000.yaml) |
+| `pri.ofd_transfers_optical_stability_to_microwave` | 光频率分频（OFD）将光学参考稳定度无噪声传递至微波域 | Timescales | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 | `pri.optical_frequency_averaging` | 多腔光学频率平均 | Ultrastable Laser | [lee2026](topics/ultrastable-laser/papers/lee2026.yaml) |
 | `pri.optical_lock_lever_arm_timing_jitter` | 光锁杠杆臂降低脉间时间抖动原理 | Optical Frequency Combs | [sinclair2014](topics/optical-frequency-combs/papers/sinclair2014.yaml) |
 | `pri.optical_phase_detection_fiber_link_m12` | 光学相位探测光纤链路主动稳定原理（Marra 2012） | Optical Frequency Combs | [marra2012](topics/optical-frequency-combs/papers/marra2012.yaml) |
