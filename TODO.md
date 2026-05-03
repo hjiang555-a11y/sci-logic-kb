@@ -1,3 +1,45 @@
+## 暂停恢复点：sci-logic-kb 下一步建设讨论
+
+> 记录时间：2026-05-03。当前状态：ingestion 追踪修复 + 论文筛选完成，191 篇待入库已分类。Health 7/7，Synthesis 6/6。
+>
+> **2026-05-03 会话完成**: ingestion_status.json 全面修复 + 191 篇论文专题筛选。
+> - ingestion_status: 505 全 pending 虚假状态 → 612 条精准分类 (335 done / 191 topic-pending / 46 needs_review / 27 needs_zotero_db / 8 out_of_scope)
+> - 四轮匹配: zotero_key 提取 + DOI/CrossRef API + arXiv API + PDF 内容批量提取 (pdfplumber)
+> - synthesis 6/6 (补 timescales + shared)
+> - health 7/7, lint 0 errors
+> - 长期约定: 沿用 CLAUDE.md Step 1-7，不引入新方法，每次入库后更新 ingestion_status.json
+
+### 当前判断
+
+论文追踪基础设施已就绪。下一阶段：**逐篇摄入 191 篇待入库论文**，按 CLAUDE.md Step 1-7 流程执行。不需要新工具或新方法。
+
+### 恢复方向
+
+**E. 论文逐篇入库 (191 篇)** — 🔴 主要任务
+按专题优先级（小专题优先，快速收口）:
+1. `shared` (3 篇) — 数学基础，快速收口
+2. `timescales` (7 篇) — 时间标尺
+3. `time-frequency-transfer` (23 篇)
+4. `ultrastable-laser` (26 篇)
+5. `frequency-standards` (64 篇)
+6. `optical-frequency-combs` (68 篇)
+
+每篇流程: CLAUDE.md Step 1-7（读PDF→提取YAML→运维更新→commit）
+质量门: commit 前 `lint.py` 0 error；入库后更新 `ingestion_status.json` 对应 key 为 done
+
+**F. needs_review 清理 (46 篇)** — 🟡 PDF 内容不足以自动分类，需人工逐篇读 PDF 判断
+**G. needs_zotero_db (27 篇)** — 🟡 纯数字 Zotero 存储键，连接 Zotero 后可解析
+
+### 已完成方向
+
+A. 超稳激光 / metric chains 样板区 — ✅ 2026-05-02
+B. 光频梳 topic 样板区 — ✅ 2026-05-02
+C. 全库健康指标与质量检查脚本 — ✅ 2026-05-02
+D. 知识 schema / claim-evidence 标准 — ✅ 2026-05-02
+E. ingestion 追踪修复 + 论文筛选 — ✅ 2026-05-03
+
+---
+
 # TODO — repository alignment, filesystem simplification, and usage/deployment plan
 
 > 更新日期：2026-04-24  
@@ -21,13 +63,13 @@
 - 手工维护文档中的统计数字存在漂移风险；当前自动索引与部分手工文档的计数已经不完全一致。
 
 ### 1.3 当前知识库运行状态
-- 自动统计（2026-04-24）：
-  - 260 papers
-  - 1210 nodes
-  - 1364 relations
-  - 6 topics
-- `stats.py` 主指标整体可用，但 **synthesis coverage = 1/6 topics**，仍是当前最明显结构缺口。
-- `lint.py --summary` 当前基线：**113 errors / 12 warnings / 216 info**。这说明“知识内容规模”已形成，但“全库一致性”尚未收口。
+- 自动统计（2026-05-03，`scripts/health.py`）：
+  - 335 papers（done，有 YAML）
+  - 191 papers（pending，PDF 已确认专题，待入库）
+  - 1232 nodes / 1382 relations / 6 topics
+- Health: 7/7 ✅（synthesis 6/6，chain_closure 70.2%，evidence_coverage 99.0%）
+- `lint.py --summary`：**0 errors / 31 warnings**。全库一致性已达到可维护基线。
+- `ingestion_status.json`：612 条分类追踪
 
 ---
 
@@ -139,16 +181,16 @@
 
 ## 6. 下一步建议（按优先级）
 
-- [ ] **P0** 新增 `reports/README.md`，按 active / archive / generated 三类建立报告索引
-- [ ] **P0** 清点所有根目录一次性文件，列出“保留 / 迁移 / 删除”清单
-- [ ] **P0** 统一约定：根目录只保留稳定入口，不再新增一次性报告
-- [ ] **P1** 将根目录 `SYNC_REPORT*` 文件迁入 `reports/archive/obsidian-sync/`
-- [ ] **P1** 将 `reports/*.backup` 与一次性 JSON 迁入 `reports/archive/`
-- [ ] **P1** 对 `TOPICS.md`、`PROCESSED_PAPERS.md` 做一次“去高频数字化”整理，降低后续漂移
-- [ ] **P1** 针对 `optical-frequency-combs` 优先补首批 synthesis 页面，解决 1/6 topics coverage 的主要缺口
-- [ ] **P1** 选择一个 lint 大类（建议从 `duplicate-rel-id` 或 `dangling-ref` 开始）做专项收口
-- [ ] **P2** 评估 GitHub Pages 只读发布方案，把 `docs/graph/` 与索引页面作为第一批可视化入口
-- [ ] **P2** 若后续读者增多，再考虑增加“面向查询者”的单页总入口，而不是继续增加根目录文档
+- [x] **P0** 新增 `reports/README.md`，按 active / archive / generated 三类建立报告索引 ✅ 已完成
+- [x] **P0** 清点所有根目录一次性文件，列出”保留 / 迁移 / 删除”清单 ✅ 已完成（根目录已干净，15 个文件均为长期入口）
+- [x] **P0** 统一约定：根目录只保留稳定入口，不再新增一次性报告 ✅ 已确立
+- [x] **P1** 将根目录 `SYNC_REPORT*` 文件迁入 `reports/archive/obsidian-sync/` ✅ 已完成
+- [x] **P1** 将 `reports/*.backup` 与一次性 JSON 迁入 `reports/archive/` ✅ 已完成
+- [x] **P1** 对 `TOPICS.md`、`PROCESSED_PAPERS.md` 做一次”去高频数字化”整理，降低后续漂移 ✅ 已完成 (2026-05-02)
+- [x] **P1** 针对 `optical-frequency-combs` 优先补首批 synthesis 页面，解决 1/6 topics coverage 的主要缺口 ✅ 已完成（B-1: metric_chains, B-2: 3 synthesis 页）
+- [x] **P1** 选择一个 lint 大类（建议从 `duplicate-def` 或 `dangling-ref` 开始）做专项收口 ✅ 已完成 (2026-05-02): duplicate-def 4→0, invalid-predicate 4→0; lint errors 8→0
+- [x] **P2** 评估 GitHub Pages 只读发布方案，把 `docs/graph/` 与索引页面作为第一批可视化入口 ✅ 已完成 (2026-05-02): `.nojekyll` + `.github/workflows/pages.yml` + README badge; 需管理员在 GitHub Settings → Pages 选 Actions 源即可激活
+- [ ] **P2** 若后续读者增多，再考虑增加”面向查询者”的单页总入口，而不是继续增加根目录文档
 
 ---
 
