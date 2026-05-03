@@ -4,7 +4,7 @@
 
 > **用途**：处理新论文时，用此文件快速检查是否已有同名/同义节点，避免重复定义。
 > **维护**：本文件由 `scripts/build_index.py` 自动生成，**请勿手工编辑**。
-> **生成时间**：2026-05-03 05:20 UTC
+> **生成时间**：2026-05-03 05:23 UTC
 
 > **使用方式**：
 > - 处理新论文时，`Ctrl+F` 搜索关键词（如 `brownian`, `pdh`, `fiber`）
@@ -398,7 +398,9 @@
 | `pri.hadamard_variance_drift_insensitive` | Hadamard 方差对线性漂移不敏感原理 | meta | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
 | `pri.laser_stability_requirement_from_atmospheric_turbulence` | 从大气湍流噪声推导激光器频率稳定度要求原理 | domain | [chiodo2013](topics/shared/papers/chiodo2013.yaml) |
 | `pri.modified_allan_kernel_resolves_pm_noise` | MDEV 相位平均积分核分辨 PM 噪声原理 | meta | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
+| `pri.nlse_gain_self_similar_parabolic_solution` | 含增益 NLSE 自相似抛物线脉冲渐近解原理（Similariton） | foundational | [fermann2000](topics/shared/papers/fermann2000.yaml) |
 | `pri.overlapping_estimator_improves_edf` | 重叠估计量提升等效自由度原理 | meta | [riley2008](topics/shared/papers/riley2008.yaml) |
+| `pri.parabolic_pulse_self_similar_propagation_passive_fiber` | 抛物线脉冲在无源正常色散光纤中自相似传播原理 | domain | [fermann2000](topics/shared/papers/fermann2000.yaml) |
 | `pri.phase_noise_frequency_noise_psd_duality` | 相位噪声 PSD 与频率噪声 PSD 对偶关系 | meta | [howe1976](topics/shared/papers/howe1976.yaml) |
 | `pri.power_law_noise_taxonomy` | 时频噪声五类幂律分类（white PM / flicker PM / white FM / flicker … | meta | [allan1987](topics/shared/papers/allan1987.yaml) |
 | `pri.sigma_y_slope_identifies_noise_type` | σ_y(τ) 斜率-噪声辨识原理 | meta | [allan1987](topics/shared/papers/allan1987.yaml) |
@@ -417,6 +419,7 @@
 | `meth.modified_allan_deviation_mdev` | 修正 Allan 偏差 MDEV / mod σ_y(τ) | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
 | `meth.overlapping_allan_deviation_oadev` | 重叠 Allan 偏差 OADEV | [riley2008](topics/shared/papers/riley2008.yaml) |
 | `meth.phase_noise_psd_measurement` | 相位噪声功率谱密度 S_phi(f) 测量方法 | [howe1976](topics/shared/papers/howe1976.yaml) |
+| `meth.similariton_parabolic_pulse_amplification` | Similariton 抛物线脉冲光纤放大方法 | [fermann2000](topics/shared/papers/fermann2000.yaml) |
 | `meth.theo1_thedev` | Theo1 / TheoBR / TheoH 方差（Howe 族） | [riley2008](topics/shared/papers/riley2008.yaml) |
 | `meth.time_deviation_tdev` | 时偏差 TDEV / σ_x(τ) | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
 | `meth.total_deviation_totdev` | Total 偏差 TOTDEV / σ_Total(τ) | [riley2008](topics/shared/papers/riley2008.yaml) |

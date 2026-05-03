@@ -250,6 +250,7 @@
 | `sullivan2001.yaml` | SULLIVAN2001 | Sullivan et al. 2001 — NIST 初级原子频率标准综述（NIST JRES） | ✅ v4.5 framework |
 | `chiodo2013.yaml` | 1305.3026 | Chiodo et al. 2013 — 相干光星地链路大动态扫频激光系统（Appl. Opt.） | ✅ v4.5 evidence |
 | `belardi2015.yaml` | Design_and_Properties_of_Hollow_Antiresonant_F | Belardi 2015 — 空芯反共振光纤设计与可见/近红外特性（JLT） | ✅ v4.5 evidence |
+| `fermann2000.yaml` | PhysRevLett.84.6010 | Fermann et al. 2000 — 自相似抛物线脉冲（similariton）光纤放大（PRL） | ✅ v4.5 breakthrough |
 
 ---
 

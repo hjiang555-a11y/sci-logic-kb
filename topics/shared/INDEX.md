@@ -2,7 +2,7 @@
 
 # shared — Topic Index
 
-> Auto-generated 2026-05-03 05:20 UTC · 9 papers · 33 nodes · 25 relations
+> Auto-generated 2026-05-03 05:23 UTC · 10 papers · 39 nodes · 29 relations
 
 ## Entities
 
@@ -10,6 +10,7 @@
 |----|------|------:|--------|
 | `ent.belardi2015_hc_arf_fibers` | Belardi 2015 空芯反共振光纤（HC-ARF）系列设计与实验原型 | — | [belardi2015](topics/shared/papers/belardi2015.yaml) |
 | `ent.chiodo2013_laser_system` | Mini-DOLL 相干光星地链路激光系统（Chiodo 2013） | — | [chiodo2013](topics/shared/papers/chiodo2013.yaml) |
+| `ent.fermann2000_parabolic_amplifier` | Fermann 2000 Yb 掺杂光纤抛物线脉冲放大器 | — | [fermann2000](topics/shared/papers/fermann2000.yaml) |
 
 ## Principles
 
@@ -23,7 +24,9 @@
 | `pri.hadamard_variance_drift_insensitive` | Hadamard 方差对线性漂移不敏感原理 | meta | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
 | `pri.laser_stability_requirement_from_atmospheric_turbulence` | 从大气湍流噪声推导激光器频率稳定度要求原理 | domain | [chiodo2013](topics/shared/papers/chiodo2013.yaml) |
 | `pri.modified_allan_kernel_resolves_pm_noise` | MDEV 相位平均积分核分辨 PM 噪声原理 | meta | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
+| `pri.nlse_gain_self_similar_parabolic_solution` | 含增益 NLSE 自相似抛物线脉冲渐近解原理（Similariton） | foundational | [fermann2000](topics/shared/papers/fermann2000.yaml) |
 | `pri.overlapping_estimator_improves_edf` | 重叠估计量提升等效自由度原理 | meta | [riley2008](topics/shared/papers/riley2008.yaml) |
+| `pri.parabolic_pulse_self_similar_propagation_passive_fiber` | 抛物线脉冲在无源正常色散光纤中自相似传播原理 | domain | [fermann2000](topics/shared/papers/fermann2000.yaml) |
 | `pri.phase_noise_frequency_noise_psd_duality` | 相位噪声 PSD 与频率噪声 PSD 对偶关系 | meta | [howe1976](topics/shared/papers/howe1976.yaml) |
 | `pri.power_law_noise_taxonomy` | 时频噪声五类幂律分类（white PM / flicker PM / white FM / flicker FM / … | meta | [allan1987](topics/shared/papers/allan1987.yaml) |
 | `pri.sigma_y_slope_identifies_noise_type` | σ_y(τ) 斜率-噪声辨识原理 | meta | [allan1987](topics/shared/papers/allan1987.yaml) |
@@ -42,6 +45,7 @@
 | `meth.modified_allan_deviation_mdev` | 修正 Allan 偏差 MDEV / mod σ_y(τ) | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
 | `meth.overlapping_allan_deviation_oadev` | 重叠 Allan 偏差 OADEV | [riley2008](topics/shared/papers/riley2008.yaml) |
 | `meth.phase_noise_psd_measurement` | 相位噪声功率谱密度 S_phi(f) 测量方法 | [howe1976](topics/shared/papers/howe1976.yaml) |
+| `meth.similariton_parabolic_pulse_amplification` | Similariton 抛物线脉冲光纤放大方法 | [fermann2000](topics/shared/papers/fermann2000.yaml) |
 | `meth.theo1_thedev` | Theo1 / TheoBR / TheoH 方差（Howe 族） | [riley2008](topics/shared/papers/riley2008.yaml) |
 | `meth.time_deviation_tdev` | 时偏差 TDEV / σ_x(τ) | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
 | `meth.total_deviation_totdev` | Total 偏差 TOTDEV / σ_Total(τ) | [riley2008](topics/shared/papers/riley2008.yaml) |
@@ -57,6 +61,7 @@
 | `met.allan_deviation_chiodo2013_laser_to_laser` | Chiodo 2013 双激光器互比 Allan 偏差 σ_y(τ) | σ_y(0.2 s) ≈ 1×10⁻¹⁴（双激光器互比）；σ_y(1 s) ≈ 5×10⁻¹⁴（vs 独立参考源） | [chiodo2013](topics/shared/papers/chiodo2013.yaml) |
 | `met.fractional_frequency_instability_sigma_y` | 分数频率不稳定度 σ_y(τ)（Allan 偏差通用度量，landmark 定义） | N/A（度量定义而非测量实例；具体数值见本库数十个派生 met.*allan_deviation_* 节点） | [allan1966](topics/shared/papers/allan1966.yaml) |
 | `met.hc_arf_attenuation_480nm_belardi2015` | Belardi 2015 HC-ARF 可见光波段最低损耗 @ 480 nm | 175 dB/km @ 480 nm | [belardi2015](topics/shared/papers/belardi2015.yaml) |
+| `met.similariton_compressed_pulse_fermann2000` | Fermann 2000 Similariton 压缩脉冲性能 | 68 fs 脉宽，80 kW 峰值功率（压缩比 ~38×） | [fermann2000](topics/shared/papers/fermann2000.yaml) |
 
 ### 📊 Secondary (线宽/PSD/相干)
 
@@ -65,6 +70,7 @@
 | `met.fibre_amplifier_added_phase_noise_chiodo2013` | Chiodo 2013 光纤放大器附加相位噪声 | S_y(f) ≤ 10⁻³¹ Hz⁻¹（分数），10Hz–10kHz；等效线宽增宽 ≤25 mHz | [chiodo2013](topics/shared/papers/chiodo2013.yaml) |
 | `met.frequency_sweep_range_chiodo2013` | Chiodo 2013 光纤延迟线稳频激光器扫频范围与速率 | 线性扫频：>25 GHz，≤1 GHz/s 无稳定度退化；非线性模拟：24.8 GHz / 652 s，残余 ≈ 本征… | [chiodo2013](topics/shared/papers/chiodo2013.yaml) |
 | `met.hc_arf_bandwidth_first_ar_window_belardi2015` | Belardi 2015 HC-ARF 第一反共振窗传输带宽 | 0.75–1.6 μm（实测）；0.65–2.5 μm（理论 DARfbf，泄漏损耗 <1 dB/m） | [belardi2015](topics/shared/papers/belardi2015.yaml) |
+| `met.similariton_output_pulse_fermann2000` | Fermann 2000 Similariton 放大器输出脉冲参数 | Δt = 2.6 ps, Δλ = 32 nm, E_out = 12 nJ, ΔτΔν ≈ 22 | [fermann2000](topics/shared/papers/fermann2000.yaml) |
 
 ## Cross-Topic References
 

@@ -2,7 +2,7 @@
 
 # 🔬 Principles Quick Reference
 
-> Auto-generated 2026-05-03 05:20 UTC
+> Auto-generated 2026-05-03 05:23 UTC
 
 ## Tier: meta
 
@@ -40,6 +40,7 @@
 | `pri.fiber_thermal_phase_noise_giant_ifog` | 大型光纤陀螺仪热相位噪声 | Ultrastable Laser | [li2019](topics/ultrastable-laser/papers/li2019.yaml) |
 | `pri.gaussian_beam_resonator_theory` | 高斯光束与谐振腔理论 | Ultrastable Laser | [kogelnik1966](topics/ultrastable-laser/papers/kogelnik1966.yaml) |
 | `pri.gravitational_time_dilation` | 引力时间膨胀（Einstein 红移） | Time-Frequency Transfer | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `pri.nlse_gain_self_similar_parabolic_solution` | 含增益 NLSE 自相似抛物线脉冲渐近解原理（Similariton） | shared | [fermann2000](topics/shared/papers/fermann2000.yaml) |
 | `pri.si_second_cesium_definition` | SI 秒的 Cs 超精细跃迁定义 | Frequency Standards | [heavner2005](topics/frequency-standards/papers/heavner2005.yaml) |
 | `pri.squeezed_light_quantum_enhancement` | 压缩光量子增强干涉仪灵敏度 | Ultrastable Laser | [aasi2013](topics/ultrastable-laser/papers/aasi2013.yaml) |
 | `pri.superradiant_emission_narrow_linewidth` | 超辐射集体发射窄线宽原理 | Ultrastable Laser | [meiser2009](topics/ultrastable-laser/papers/meiser2009.yaml) |
@@ -171,6 +172,7 @@
 | `pri.optical_frequency_division_rf_generation` | 光频除法RF信号生成原理 | Optical Frequency Combs | [hati2013](topics/optical-frequency-combs/papers/hati2013.yaml) |
 | `pri.optical_microwave_phase_detection_bom_pd` | 平衡光学-微波相位探测（BOM-PD）原理 | Ultrastable Laser | [kim2008](topics/ultrastable-laser/papers/kim2008.yaml) |
 | `pri.optical_phase_tracking` | 实时光学相位追踪原理 | Optical Frequency Combs | [giunta2020](topics/optical-frequency-combs/papers/giunta2020.yaml) |
+| `pri.parabolic_pulse_self_similar_propagation_passive_fiber` | 抛物线脉冲在无源正常色散光纤中自相似传播原理 | shared | [fermann2000](topics/shared/papers/fermann2000.yaml) |
 | `pri.parametric_four_wave_mixing_comb` | 参量四波混频梳产生原理 | Optical Frequency Combs | [kippenberg2011](topics/optical-frequency-combs/papers/kippenberg2011.yaml) |
 | `pri.parametric_seeding_microcomb_spacing_control` | 参量种子注入实现微梳模间距射频可控原理 | Optical Frequency Combs | [papp2013](topics/optical-frequency-combs/papers/papp2013.yaml) |
 | `pri.passive_mode_locking_soa_sa` | Passive mode-locking via SOA + saturable absorber | Optical Frequency Combs | [wang2017](topics/optical-frequency-combs/papers/wang2017.yaml) |

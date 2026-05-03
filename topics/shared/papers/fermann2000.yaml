@@ -1,0 +1,227 @@
+# Fermann 2000 — Self-Similar Propagation and Amplification of Parabolic Pulses in Optical Fibers [breakthrough]
+# 提取者：Claude Code（AI 草稿，待专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.5
+# 专题：shared（非线性光纤光学基础 — 自相似抛物线脉冲）
+# contribution_type: breakthrough — 首次理论推导并实验证实 NLSE 含增益项的自相似渐近解
+#   （抛物线脉冲 / similariton），开创光纤放大器中自相似脉冲传播新范式。
+
+meta:
+  zotero_key: "PhysRevLett.84.6010"
+  topic: shared
+  source_type: journal_paper
+  contribution_type: breakthrough
+  reliability: high
+  title: "Self-Similar Propagation and Amplification of Parabolic Pulses in Optical Fibers"
+  year: 2000
+  first_author: Fermann
+  authors: ["M. E. Fermann", "V. I. Kruglov", "B. C. Thomsen", "J. M. Dudley", "J. D. Harvey"]
+  journal: "Physical Review Letters"
+  volume: 84
+  issue: 26
+  pages: "6010-6013"
+  doi: "10.1103/PhysRevLett.84.6010"
+  note: >
+    [breakthrough 论文] 首次将自相似分析方法应用于含增益 NLSE，找到严格的渐近
+    自相似解——抛物线强度包络 + 严格线性啁啾脉冲（后称 similariton）。该解在
+    正常色散高增益光纤放大器中自相似传播，仅由输入脉冲能量和放大器参数决定，
+    与输入脉冲形状无关。实验在 Yb 掺杂光纤放大器（30 dB 增益）中以 FROG 表征
+    验证；压缩后获 68 fs / 80 kW 峰值功率脉冲。抛物线脉冲传播已成为光纤光学中
+    与孤子并列的基础范式。跨专题关联：光频梳脉冲放大、超稳激光种子源、时频传递
+    光纤链路脉冲传输。
+
+entities:
+  - id: ent.fermann2000_parabolic_amplifier
+    name: "Fermann 2000 Yb 掺杂光纤抛物线脉冲放大器"
+    tier: system
+    domain: "非线性光纤光学；超快脉冲放大"
+    description: >
+      3.6 m Yb 掺杂光纤放大器（正常色散 β₂ = +25×10⁻³ ps²/m，非线性系数
+      γ = 5.8×10⁻³ W⁻¹m⁻¹，分布增益 g = 1.9 m⁻¹），以 200 fs / 12 pJ
+      Gaussian 脉冲种子，30 dB 增益下输出 2.6 ps / 12 nJ 抛物线脉冲，
+      线性啁啾，ΔτΔν ≈ 22。经光栅对压缩至 68 fs / 80 kW 峰值功率。
+      之后 2 m 标准单模光纤传播中保持抛物线形状——证实自相似传播。
+    verification_status: demonstrated
+    source:
+      zotero_key: "PhysRevLett.84.6010"
+      claim: "To experimentally verify that parabolic pulses are indeed generated in fiber amplifiers, we injected femtosecond pulses into a high gain Yb-doped fiber amplifier, and carried out FROG characterization."
+
+principles:
+  - id: pri.nlse_gain_self_similar_parabolic_solution
+    name: "含增益 NLSE 自相似抛物线脉冲渐近解原理（Similariton）"
+    tier: foundational
+    verification_status: observed
+    statement: >
+      对含增益的 nonlinear Schrödinger 方程 i·∂A/∂z = (β₂/2)·∂²A/∂T²
+      − γ|A|²A + i(g/2)·A（β₂ > 0 正常色散，g > 0 增益，gβ₂ > 0），
+      在 z → ∞ 渐近极限下存在严格自相似解：A(z,T) = A₀(z)·[1−(T/T₀(z))²]¹ᐟ²
+      ·exp[iφ(z,T)]，|T| ≤ T₀(z)。该解具有抛物线强度包络、严格线性啁啾
+      δω(T) = g(3β₂)⁻¹T，且幅度 A₀ 和宽度 T₀ 仅由输入脉冲能量 E_IN 与
+      放大器参数决定——与输入脉冲形状无关。
+    domain: "非线性光纤光学；自相似性；超快光学"
+    key_insight: >
+      含增益 NLSE 可通过对称约化（symmetry reduction）得到渐近自相似解。
+      与无增益 NLSE 的孤子解（需精确控制能量、多余能量散逸为连续谱）形成
+      根本对比：抛物线脉冲放大器将所有输入能量汇聚到输出抛物线脉冲中，
+      且对输入畸变具有鲁棒性——这是光放大领域的"吸引子"行为。
+    conditions: "正常色散 β₂ > 0；正增益 g > 0（保证 gβ₂ > 0）；无增益饱和；
+      脉冲带宽 < 放大器增益带宽；传播距离足够长使渐近极限成立"
+    formula: >
+      A(z,T) = A₀(z)·[1 − (T/T₀(z))²]¹ᐟ² exp[iφ(z,T)], |T| ≤ T₀(z)
+      A₀(z) = 0.5(gE_IN)¹ᐟ³(gβ₂/2)⁻¹ᐟ⁶ exp(gz/3)
+      T₀(z) = 3g⁻²ᐟ³(gβ₂/2)¹ᐟ³ E_IN¹ᐟ³ exp(gz/3)
+      δω(T) = −∂φ/∂T = g(3β₂)⁻¹T
+    source:
+      zotero_key: "PhysRevLett.84.6010"
+      claim: >
+        "For the NLSE with gain in Eq. (1), this technique yields an asymptotic
+        self-similar solution in the limit z → ∞... This corresponds to a compactly
+        supported pulse with a parabolic intensity profile... the pulses possess a
+        strictly linear chirp."
+
+  - id: pri.parabolic_pulse_self_similar_propagation_passive_fiber
+    name: "抛物线脉冲在无源正常色散光纤中自相似传播原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      高功率抛物线脉冲在正常色散无源光纤中传播时，保持抛物线形状和线性啁啾
+      特性，同时发生时间和光谱展宽——即在高度非线性传播中不发生光波破碎
+      （optical wave breaking）。这是自相似传播的直接推论：抛物线脉冲是
+      无增益 NLSE 在正常色散区的天然传播模式。
+    domain: "非线性光纤光学；脉冲传播"
+    key_insight: >
+      普通高斯或双曲正割脉冲在正常色散光纤中非线性传播会发生波破碎（脉冲
+      前沿-后沿干涉导致光谱边带），而抛物线脉冲因其自相似性可避免此效应——
+      可传输远超其他脉冲形状的非线性相移而无畸变，对高功率脉冲传输与压缩
+      具有根本意义。
+    conditions: "正常色散光纤；输入脉冲已为抛物线形状（例如从抛物线放大器输出）；峰值功率在材料损伤阈值以下"
+    source:
+      zotero_key: "PhysRevLett.84.6010"
+      claim: >
+        "an attractive feature of high power parabolic pulses is that they propagate
+        self-similarly in normally dispersive fiber, allowing for highly nonlinear
+        propagation over substantial fiber lengths without optical wave breaking."
+
+methods:
+  - id: meth.similariton_parabolic_pulse_amplification
+    name: "Similariton 抛物线脉冲光纤放大方法"
+    purpose: >
+      利用正常色散高增益光纤放大器将任意形状飞秒脉冲转化为具有严格线性啁啾的
+      抛物线脉冲（similariton）。输出脉冲可直接用光栅对高效压缩至近变换极限，
+      广泛用于超快光纤激光器、光频梳脉冲放大、高功率超快光源。
+    description: >
+      将飞秒种子脉冲（fs 级，pJ–nJ 能量）注入正常色散（β₂ > 0）高增益
+      掺杂光纤放大器（Yb/Er/Tm 掺杂，增益 ≥ 20 dB）。在非线性-色散-增益
+      三者共同作用下，脉冲在传播中渐近演化至抛物线包络 + 线性啁啾的自相似
+      吸引子状态。输出脉冲特征仅取决于输入脉冲能量和放大器参数，
+      对输入脉冲形状/啁啾畸变具有鲁棒性。输出可直接经光栅对/棱镜对压缩
+      至近变换极限（压缩比典型 ~30–50×）。
+    key_steps:
+      - "准备飞秒种子脉冲（~100–500 fs，~pJ–nJ），波长匹配放大器增益峰"
+      - "注入正常色散掺杂光纤放大器（β₂ > 0，g > 0，保证 gβ₂ > 0）"
+      - "放大器长度足够使渐近极限成立（通常 L ≥ 1/g，增益 ≥ 20 dB）"
+      - "以 FROG/GRENOUILLE 表征输出脉冲，验证抛物线包络 + 线性啁啾"
+      - "压缩：光栅对提供反常 GDD，匹配线性啁啾量 → transform-limit 附近"
+    applicable_conditions: "β₂ > 0（正常色散）；g > 0（正增益，gβ₂ > 0）；无增益饱和区；脉冲带宽 < 放大器增益带宽"
+    source:
+      zotero_key: "PhysRevLett.84.6010"
+      claim: >
+        "Parabolic fiber amplifiers therefore have potential wide-ranging applications...
+        allowing the generation of well-defined linearly chirped output pulses from an
+        optical amplifier, even in the presence of input pulse distortions."
+    note: >
+      Similariton 放大与 CPA（啁啾脉冲放大）的关键区别：similariton 利用非线性
+      自组织产生线性啁啾而非被动展宽器产生。其输出啁啾天然线性，压缩质量优于
+      同等条件下的高斯/超高斯脉冲放大。
+
+metrics:
+  - id: met.similariton_compressed_pulse_fermann2000
+    name: "Fermann 2000 Similariton 压缩脉冲性能"
+    unit: "fs（脉宽）；kW（峰值功率）"
+    role: primary
+    description: >
+      抛物线脉冲经光栅对压缩后的最短脉宽和峰值功率。输入 200 fs/12 pJ，
+      Yb 放大器 30 dB 增益输出 2.6 ps/12 nJ 抛物线脉冲，经光栅对压缩至
+      68 fs/80 kW。未达 30 fs 变换极限的原因归因于体光栅压缩器三阶色散。
+    demonstrated_value:
+      value: "68 fs 脉宽，80 kW 峰值功率（压缩比 ~38×）"
+      conditions: "Yb 放大器 30 dB 增益；光栅对压缩器；受三阶色散限制（改进设计可达 ~30 fs 变换极限）"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "PhysRevLett.84.6010"
+        claim: >
+          "we used a simple dispersive grating pair to compress these parabolic pulses,
+          obtaining a minimum pulse duration of 68 fs with a corresponding peak power
+          of 80 kW."
+    theoretical_floor:
+      value: "~30 fs（变换极限，由输出光谱 Δλ = 32 nm 估算）"
+      basis: "光栅压缩器三阶色散为当前限制因素"
+
+  - id: met.similariton_output_pulse_fermann2000
+    name: "Fermann 2000 Similariton 放大器输出脉冲参数"
+    unit: "ps（脉宽）；nm（光谱宽度）；nJ（能量）"
+    role: secondary
+    description: >
+      Yb 掺杂光纤放大器在 30 dB 增益下输出的抛物线脉冲特征参数。
+      FROG 测量确认强度包络与抛物线函数在 2 个数量级范围内一致（优于 sech²
+      拟合），啁啾严格线性。ΔτΔν ≈ 22，远超变换极限——证明脉冲携带大量
+      线性啁啾，适合压缩。
+    demonstrated_value:
+      value: "Δt = 2.6 ps, Δλ = 32 nm, E_out = 12 nJ, ΔτΔν ≈ 22"
+      conditions: "种子 200 fs / 12 pJ；3.6 m Yb 光纤；g = 1.9 m⁻¹（30 dB）；976 nm 同向泵浦；63 MHz 重频"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "PhysRevLett.84.6010"
+        claim: >
+          "the output pulse energy was 12 nJ, the temporal FWHM was 2.6 ps,
+          the spectral FWHM was 32 nm, and the corresponding duration bandwidth
+          product was ~22"
+
+relations:
+  - id: rel.fermann2000_01
+    subject: meth.similariton_parabolic_pulse_amplification
+    predicate: DERIVED-FROM
+    object: pri.nlse_gain_self_similar_parabolic_solution
+    confidence: established
+    source:
+      zotero_key: "PhysRevLett.84.6010"
+      claim: >
+        "These calculations show that parabolic pulses are, in fact, exact asymptotic
+        solutions of the NLSE with gain, and propagate in the amplifier self-similarly."
+
+  - id: rel.fermann2000_02
+    subject: ent.fermann2000_parabolic_amplifier
+    predicate: REALIZES
+    object: meth.similariton_parabolic_pulse_amplification
+    confidence: established
+    source:
+      zotero_key: "PhysRevLett.84.6010"
+      claim: >
+        "we injected femtosecond pulses into a high gain Yb-doped fiber amplifier,
+        and carried out FROG characterization of the amplified pulses."
+
+  - id: rel.fermann2000_03
+    subject: met.similariton_compressed_pulse_fermann2000
+    predicate: DEMONSTRATES
+    object: pri.nlse_gain_self_similar_parabolic_solution
+    confidence: established
+    source:
+      zotero_key: "PhysRevLett.84.6010"
+      claim: >
+        "we used a simple dispersive grating pair to compress these parabolic pulses,
+        obtaining a minimum pulse duration of 68 fs with a corresponding peak power
+        of 80 kW."
+
+  - id: rel.fermann2000_04
+    subject: pri.parabolic_pulse_self_similar_propagation_passive_fiber
+    predicate: DERIVED-FROM
+    object: pri.nlse_gain_self_similar_parabolic_solution
+    confidence: established
+    source:
+      zotero_key: "PhysRevLett.84.6010"
+      claim: >
+        "the pulses remain parabolic in profile during propagation in normally
+        dispersive fiber, confirming the self-similar nature of propagation in
+        this regime."

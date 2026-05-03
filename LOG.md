@@ -1,6 +1,15 @@
 # 知识库演化日志
 
 
+## [2026-05-03] ingest | Fermann 2000 — 自相似抛物线脉冲（similariton）光纤放大理论 & 实验 (shared, breakthrough)
+
+### 摄入内容
+- 文件：topics/shared/papers/fermann2000.yaml
+- 贡献类型：breakthrough（首次理论推导并实验证实 NLSE 含增益自相似抛物线脉冲解）
+- 核心贡献：发现含增益 NLSE 渐近自相似解——抛物线包络 + 线性啁啾脉冲（similariton）；
+  实验在 Yb 光纤放大器中以 FROG 确证；压缩获 68 fs/80 kW 脉冲。开创光纤放大新范式。
+- 新增节点：1 实体 + 2 原理（含 1 foundational）+ 1 方法 + 2 指标 + 4 关系
+
 ## [2026-05-03] ingest | Belardi 2015 — HC-ARF 空芯反共振光纤设计与可见/近红外特性 (shared)
 
 ### 摄入内容
