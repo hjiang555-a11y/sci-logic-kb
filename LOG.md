@@ -1,6 +1,14 @@
 # 知识库演化日志
 
 
+## [2026-05-03] ingest | Bize 2005 — BNM-SYRTE Cs/Rb fountain advances: quantum-limited stability, adiabatic collision shift control, Rb/Cs fundamental constant test, PHARAO space clock (timescales)
+
+### 摄入内容
+- 文件：topics/timescales/papers/bize2005.yaml
+- 贡献类型：evidence
+- 核心贡献：冷原子喷泉钟量子极限稳定度（1.6×10⁻¹⁴ τ⁻¹/²），中断绝热通道法精确控制冷碰撞频移（0.1%精度），首次实现基准频标2×10⁻¹⁶@50000s长期稳定度，6年Rb/Cs频率比约束基本常数dα/dt～7×10⁻¹⁷ yr⁻¹，PHARAO空间钟研制进展
+- 新增节点：4 entities, 3 principles, 4 methods, 5 metrics, 13 relations
+
 ## [2026-05-03] ingest | Amy-Klein 2009 — SF6/Cs 频率比约束质子-电子质量比变化；108 km 混合光纤链路同时传输计量信号与互联网数据（timescales）
 
 ### 摄入内容

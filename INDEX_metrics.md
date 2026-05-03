@@ -2,7 +2,7 @@
 
 # 📊 Metrics Quick Reference
 
-> Auto-generated 2026-05-03 07:46 UTC
+> Auto-generated 2026-05-03 07:55 UTC
 >
 > Metrics are grouped by **role** (v4.4 σ_y-first convention, see `topics/ultrastable-laser/_meta/scoping_principles.md` v2). Role is taken from the `role` field on the metric node when present, otherwise inferred from ID / name heuristics.
 
@@ -348,6 +348,16 @@
 | `met.space_to_ground_link_instability` | 空间–地面时频链路不稳定度 | MWL（#SR-PL-09，需求目标）：白相位噪声 $1.6\cdot10^{-14}$ @ 10 s；闪烁相位 mo… | ISS 过顶（MWL 典型 ≤300 s，ELT+ 典型 ~200 s），空间–地面单次过顶；空间… | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
 
 ## Timescales
+
+### 🎯 Primary (σ_y 主线)
+
+| ID | Name | Best Value | Conditions | Source |
+|----|------|------------|------------|--------|
+| `met.cs_fountain_accuracy_syrte_2005` | BNM-SYRTE 铯喷泉钟系统不确定度（2005） | FO1: 7.5×10⁻¹⁶, FO2: 6.5×10⁻¹⁶, FOM: 8.0×10⁻¹⁶（¹³³Cs）；比未冷却装… | ¹³³Cs 超精细跃迁，包括二阶 Zeeman、黑体辐射、冷碰撞、微波谱纯度/泄漏、一阶 Dopp… | [bize2005](topics/timescales/papers/bize2005.yaml) |
+| `met.cs_fountain_best_short_term_stability_syrte_2005` | BNM-SYRTE 铯喷泉钟最佳短期频率稳定度（2005） | σ_y(τ) = 1.6×10⁻¹⁴ τ⁻¹/² | FO2 喷泉钟，~10⁷ 探测原子，CSO 作为询问振荡器，Ramsey π/2 脉冲 | [bize2005](topics/timescales/papers/bize2005.yaml) |
+| `met.fountain_to_fountain_stability_50000s_syrte_2005` | BNM-SYRTE 喷泉钟之间频率比较长期稳定度（2005） | σ_y(50000 s) = 2.2×10⁻¹⁶（首次在基准频标上实现此水平的长期稳定度） | FO1 与 FO2 均使用 CSO 作为共用本地振荡器，采用实时密度差分法消除冷碰撞频移，后处理消… | [bize2005](topics/timescales/papers/bize2005.yaml) |
+| `met.pharao_target_performance_2005` | PHARAO 空间冷原子钟目标性能（2005 年设计指标） | 稳定度 σ_y(τ) = 7×10⁻¹⁴ τ⁻¹/²，准确度 10⁻¹⁶（微重力） | 微重力环境（ISS 轨道），双区 Ramsey 环形腔，原子共振线宽 110 mHz（微重力）vs… | [bize2005](topics/timescales/papers/bize2005.yaml) |
+| `met.rb_cs_frequency_ratio_drift_2005` | ⁸⁷Rb/¹³³Cs 超精细频率比时间导数约束（1998–2004） | d/dt ln(ν_Rb/ν_Cs) = (−0.5 ± 5.3)×10⁻¹⁶ yr⁻¹ | BNM-SYRTE FO1/FO2/FOM 铯铷喷泉钟组，1998–2004 共 6 年数据，每次… | [bize2005](topics/timescales/papers/bize2005.yaml) |
 
 ### 📊 Secondary (线宽/PSD/相干)
 

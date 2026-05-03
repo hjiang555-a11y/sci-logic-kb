@@ -1,0 +1,476 @@
+# Bize 2005 — Cold atom clocks and applications (BNM-SYRTE fountain advances & PHARAO)
+# 提取者：Claude Code（AI草稿，待专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.0
+# 专题：timescales
+# contribution_type: evidence — 报告 BNM-SYRTE 喷泉钟组的最佳性能数据和工程改进
+
+meta:
+  zotero_key: "LZ01024172"
+  topic: timescales
+  source_type: review
+  contribution_type: evidence
+  reliability: high
+  title: "Cold atom clocks and applications"
+  year: 2005
+  first_author: Bize
+  authors:
+    - "S. Bize"
+    - "P. Laurent"
+    - "M. Abgrall"
+    - "H. Marion"
+    - "I. Maksimovic"
+    - "L. Cacciapuoti"
+    - "J. Grunert"
+    - "C. Vian"
+    - "F. Pereira dos Santos"
+    - "P. Rosenbusch"
+    - "P. Lemonde"
+    - "G. Santarelli"
+    - "P. Wolf"
+    - "A. Clairon"
+    - "A. Luiten"
+    - "M. Tobar"
+    - "C. Salomon"
+  journal: "Journal of Physics B: Atomic, Molecular and Optical Physics"
+  volume: 38
+  pages: "S449–S468"
+  doi: "10.1088/0953-4075/38/9/002"
+  note: >
+    [实验进展/综述] 报告 BNM-SYRTE 冷原子喷泉钟在 2005 年前的最新进展。
+    核心贡献：(1) 利用低温蓝宝石振荡器（CSO）实现喷泉钟量子极限稳定度 1.6×10⁻¹⁴ τ⁻¹/²；
+    (2) 中断绝热通道方法控制冷碰撞频移至 0.1% 精度；
+    (3) 首次实现基准频标 2×10⁻¹⁶ @ 50000 s 的长期稳定度；
+    (4) 6年 ⁸⁷Rb/¹³³Cs 频率比比对约束基本常数变化；
+    (5) PHARAO 空间冷原子钟研制进展（ACES 任务）。
+
+# ═══════════════════════════════════════════════
+#  NODES（节点）
+# ═══════════════════════════════════════════════
+
+entities:
+  # ── 冷原子喷泉钟实体 ─────────────────────────────────────────────────────────
+  - id: ent.bnm_syrte_cs_rb_fountain_ensemble_2005
+    name: "BNM-SYRTE 铯/铷原子喷泉钟组（FO1、FO2、FOM，2005 年水平）"
+    aliases: ["BNM-SYRTE fountain ensemble", "SYRTE fountain clocks", "巴黎天文台喷泉钟组"]
+    hierarchy_level: 1
+    status: demonstrated
+    function: >
+      BNM-SYRTE（巴黎天文台）的三台激光冷却原子喷泉钟组成的频率标准系统：
+      FO1（1994 起运行）、FO2（铷/铯双喷泉钟）、FOM（可搬运喷泉钟，PHARAO 原型）。
+      三台钟共用一台低温蓝宝石振荡器（CSO）作为本地参考源，通过氢钟锁相降低漂移。
+      该钟组是国际原子时（TAI）的主要贡献者，喷泉钟的系统不确定度达到 6.5–7.5×10⁻¹⁶。
+    key_parameters:
+      fountain_count: 3
+      clock_transitions: "¹³³Cs |F=3,mF=0⟩→|F=4,mF=0⟩ @ 9.192 GHz; ⁸⁷Rb @ 6.834 GHz"
+      best_short_term_stability: "σ_y(τ) = 1.6×10⁻¹⁴ τ⁻¹/² (FO2，接近量子极限)"
+      best_accuracy: "6.5×10⁻¹⁶ (FO2, ¹³³Cs)"
+      interrogation_scheme: "Ramsey 分离振荡场法（TE₀₁₁ 模铜腔，Q ≈ 6600–10000）"
+      atom_launch_velocity: "4 m/s"
+      atom_temperature: "~1 μK"
+      detection_efficiency: "~0.5% of captured atoms"
+    note: >
+      喷泉钟组直接实现 SI 秒定义，是微波频标时代的最高精度代表。
+      与 later works (kleppner2006, dimarcq2024) 讨论的光学频标形成技术对比。
+
+  - id: ent.cryogenic_sapphire_oscillator_uwa_2005
+    name: "低温蓝宝石谐振器振荡器（CSO，UWA 研制，2005 年 BNM-SYRTE 使用）"
+    aliases: ["cryogenic sapphire oscillator", "CSO", "低温蓝宝石振荡器"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      由西澳大学（UWA）Mann, Chang, Luiten 研制的低温蓝宝石谐振器微波振荡器（~11.932 GHz），
+      作为 BNM-SYRTE 三台喷泉钟的共用本地参考振荡器（interrogation oscillator）。
+      CSO 通过弱锁相环（τ ~ 1–1000 s）锁定至氢钟以降低长期漂移。
+      CSO 的极低相位噪声使喷泉钟的短期稳定度比使用石英振荡器时提升一个数量级，
+      达到 1.6×10⁻¹⁴ τ⁻¹/²（接近量子极限）。
+    key_parameters:
+      output_frequency: "~11.932 GHz"
+      synthesized_intermediate: "11.98 GHz 和 100 MHz（相位相干于氢钟）"
+      phase_lock_loop_time_constant: "1–1000 s（弱锁相至氢钟）"
+    note: "CSO 的极低相位噪声是喷泉钟达到量子极限短期稳定度的关键使能技术。"
+
+  - id: ent.pharao_cold_atom_space_clock_2005
+    name: "PHARAO 冷原子空间钟（CNES/ESA ACES 任务，2005 年研制状态）"
+    aliases: ["PHARAO", "Projet d'Horloge Atomique par Refroidissement d'Atomes en Orbite"]
+    hierarchy_level: 2
+    status: under_development
+    function: >
+      PHARAO（轨道冷原子冷却原子钟计划）是 CNES 与 ESA 联合研制的空间冷原子铯钟，
+      计划搭载于国际空间站（ISS）上的 ACES（Atomic Clock Ensemble in Space）任务平台（2008–2009 发射）。
+      PHARAO 利用微重力环境将原子共振线宽从 11 Hz 压缩至 110 mHz，
+      目标稳定度 7×10⁻¹⁴ τ⁻¹/²、准确度 10⁻¹⁶。
+      由激光源、铯管、微波链和星载数据处理单元四个子系统组成。
+    key_parameters:
+      target_stability: "σ_y(τ) = 7×10⁻¹⁴ τ⁻¹/²"
+      target_accuracy: "10⁻¹⁶（微重力环境）、10⁻¹⁵（地面测试）"
+      resonance_linewidth_range: "11 Hz（地面）→ 110 mHz（微重力）"
+      interrogation_scheme: "双区 Ramsey 环行谐振腔"
+      mass: "91 kg"
+      volume: "~200 L"
+      power: "114 W"
+      launch_vehicle: "国际空间站（ISS），轨道高度 ~400 km，倾角 51.6°"
+      companion_clock: "空间氢钟 SHM（Neuchatel 天文台研制）"
+    note: >
+      本论文发表时 PHARAO 处于工程模型研制阶段，尚未发射。
+
+principles:
+  - id: pri.fountain_quantum_projection_noise_limit
+    name: "喷泉钟量子投影噪声极限稳定度"
+    tier: foundational
+    verification_status: derived
+    statement: >
+      冷原子喷泉钟的短期频率稳定度受量子投影噪声限制，其理论下界为
+      σ_y(τ) = (1 / π Q_at) · √(T_c / N / τ)，其中 Q_at ≈ 10¹⁰ 为原子品质因子，
+      T_c 为单次测量周期时长，N 为探测原子数，τ 为平均时间。
+      FO2 以 ~10⁷ 个探测原子运行，实现 σ_y(τ) = 1.6×10⁻¹⁴ τ⁻¹/²，
+      达到量子极限的 ~80% 以内。
+    domain: "原子频标，量子计量学，噪声分析"
+    formula:
+      expression: "σ_y(τ) = (1 / π Q_at) · √(T_c / Nτ)"
+      variables:
+        - symbol: "Q_at"
+          description: "原子跃迁品质因子，~ν₀/Δν，喷泉钟约 10¹⁰"
+        - symbol: "T_c"
+          description: "单次测量周期时长（s）"
+        - symbol: "N"
+          description: "单次探测原子数"
+        - symbol: "τ"
+          description: "平均时间（s）"
+    key_insight: >
+      喷泉钟的稳定度极限由海森堡不确定性原理决定的量子投影噪声设定。
+      达到该极限需要：(1) 探测系统信噪比足够高；(2) 本地振荡器相位噪声低于原子噪声。
+      在 BNM-SYRTE，CSO 的相位噪声足够低，使原子量子噪声成为主导噪声源。
+    conditions: "需要超低相位噪声本地振荡器（CSO）作为询问信号源；原子数 ~10⁷ 以上"
+    source_claim: >
+      "the fractional instabilities of FO1 and FO2 are σ_y(τ) = 2.9×10⁻¹⁴ τ⁻¹/² and
+      1.6×10⁻¹⁴ τ⁻¹/² respectively, within ~20% of the standard quantum limit"
+
+  - id: pri.interrupted_adiabatic_passage_density_control
+    name: "中断绝热通道法精确控制原子数密度比"
+    tier: engineering
+    verification_status: demonstrated
+    statement: >
+      通过中断绝热通道（interrupted adiabatic passage）从 |F=4,mF=0⟩ 向 |F=3,mF=0⟩
+      转移原子，可以精确控制转移效率为 100%（高密度 HD）或 50%（低密度 LD）。
+      该方法的 HD/LD 原子数比为精确的 1/2（优于 10⁻³），且不改变原子的速度分布和位置分布。
+      这使得冷碰撞频移可以通过 HD-LD 差分测量外推至零密度，精度达到 0.1% 水平。
+    domain: "原子频标，相干操控，系统效应"
+    key_insight: >
+      传统微波选态方法会扭曲原子的速度和位置分布，导致线性外推失效（5-10% 误差）。
+      中断绝热通道通过保持速度和位置分布不变，仅改变密度，从根本上解决了这个问题。
+    conditions: "需要精确控制微波频率合成用于绝热通道；需在荧光探测区域验证 LD/HD 比值"
+    source_claim: >
+      "With this method, the atom number is changed without affecting either the velocity
+      or the position distributions. Therefore, the density ratio LD/HD is equal to the
+      atom number ratio and is 1/2 at the 10⁻³ level"
+
+  - id: pri.hyperfine_frequency_sensitivity_fundamental_constants
+    name: "超精细跃迁频率对基本常数变化的灵敏度"
+    tier: foundational
+    verification_status: derived
+    statement: >
+      碱金属原子的超精细跃迁频率可表示为 ν_hfs ≃ R∞ c × A_hfs × g × (m_e/m_p) × α² × F_hfs(α)，
+      其中 R∞ 为里德伯常数，g 为核 g 因子，m_e/m_p 为电子-质子质量比，α 为精细结构常数。
+      通过比较不同原子种类（如 ⁸⁷Rb 和 ¹³³Cs）的超精细频率比，可以约束 α、m_q/Λ_QCD、
+      m_s/Λ_QCD 和 m_e/Λ_QCD 等基本常数的时间变化。
+      ⁸⁷Rb/¹³³Cs 频率比对 α 的灵敏度为 α^0.49。
+    domain: "基本物理，计量学，等效原理检验"
+    formula:
+      expression: "ν_hfs^(i) ≃ R∞ c × A_hfs^(i) × g^(i) × (m_e/m_p) × α² × F_hfs^(i)(α)"
+      variables:
+        - symbol: "R∞"
+          description: "里德伯常数"
+        - symbol: "A_hfs^(i)"
+          description: "原子种类依赖的数值因子"
+        - symbol: "g^(i)"
+          description: "核 g 因子"
+        - symbol: "m_e/m_p"
+          description: "电子-质子质量比"
+        - symbol: "α"
+          description: "精细结构常数"
+        - symbol: "F_hfs^(i)(α)"
+          description: "相对论修正因子（重核中贡献主导）"
+    key_insight: >
+      不同原子种类的超精细跃迁对不同基本常数的灵敏度不同，因此通过比较两种以上
+      原子钟的频率比可以分离各基本常数的独立约束。⁸⁷Rb/¹³³Cs 比主要对 α 和 m_q/Λ_QCD 敏感。
+    conditions: "需要精确知道灵敏度系数（1-10% 精度）；需要长时间连续测量以消除统计噪声"
+    source_claim: >
+      "any measurement of the ratio between atomic frequencies can be interpreted as
+      testing the stability of four dimensionless fundamental constants: α, m_q/Λ_QCD,
+      m_s/Λ_QCD and m_e/Λ_QCD"
+
+methods:
+  - id: meth.interrupted_adiabatic_passage_density_ratio
+    name: "中断绝热通道精确密度比制备方法"
+    status: demonstrated
+    purpose: "精确控制喷泉钟原子样品密度比，使冷碰撞频移可外推至零密度"
+    description: >
+      使用微波绝热通道将原子从 |F=4,mF=0⟩ 转移至 |F=3,mF=0⟩，
+      通过控制绝热扫描参数实现 100%（HD）或 50%（LD）的转移效率。
+      由于转移过程不改变原子速度和位置分布，HD/LD 密度比精确等于原子数比 1/2（优于 10⁻³）。
+    key_steps:
+      - "1. 激光冷却和发射原子 →"
+      - "2. 使用中断绝热通道制备 |F=3,mF=0⟩ 态原子（HD: 100% 效率；LD: 50% 效率）→"
+      - "3. Ramsey 微波询问（π/2 脉冲序列）→"
+      - "4. 荧光探测 |F=3⟩ 和 |F=4⟩ 的布居数 →"
+      - "5. 交替运行 HD（60 s）和 LD（60 s）配置 →"
+      - "6. 通过原子数比实时监测 LD/HD 密度比 ≈ 1/2 →"
+      - "7. 从 HD-LD 频率差外推冷碰撞频移至零密度"
+    applicable_conditions:
+      - "需要对微波绝热通道频率合成有精确控制（<10⁻³ 精度）"
+      - "需要交替测量以消除本地振荡器慢漂移"
+      - "需验证荧光探测无光学厚度偏置（optical thickness bias < 0.1%）"
+    advantage: "避免了传统微波选态对速度和位置分布的扭曲，使线密度外推精度从 5-10% 提升至 0.1%"
+    source_claim: >
+      "With this method, the atom number is changed without affecting either the velocity
+      or the position distributions... the collisional shift can be extrapolated to zero
+      density with this accuracy [10⁻³ level]"
+
+  - id: meth.fountain_real_time_differential_collision_shift
+    name: "喷泉钟冷碰撞频移实时差分测量方法"
+    status: demonstrated
+    purpose: "在喷泉钟常规运行中实时测量并消除冷碰撞频移"
+    description: >
+      喷泉钟交替运行于高密度（HD，60 s）和低密度（LD，60 s）配置，
+      利用中断绝热通道法保持密度比精确为 1/2。
+      在 120 s 交替周期内，CSO 频率波动被差分测量有效抑制，
+      同时对数小时内 10-20% 的缓慢密度漂移也实现共模消除。
+      从 HD 和 LD 的频率差外推至零密度，实时获得无碰撞频移的钟频。
+    key_steps:
+      - "1. 采用中断绝热通道制备 HD 和 LD 原子样品 →"
+      - "2. 交替运行：HD 配置 60 s，LD 配置 60 s（120 s 周期匹配 CSO 极值稳定度）→"
+      - "3. 分别记录 HD 和 LD 配置下 |F=3⟩ 和 |F=4⟩ 布居数 →"
+      - "4. 计算差分频率 Δf_HD-LD（对 CSO 噪声有效共模抑制）→"
+      - "5. 外推 Δf → 0 得到无碰撞频移的钟频输出"
+    applicable_conditions:
+      - "LD/HD 密度比精确为 1/2（中断绝热通道法保证）"
+      - "交替周期需匹配本地振荡器噪声特性（120 s 窗口 CSO 波动 < 1%）"
+      - "长期密度变化 < 10-20%/天"
+    source_claim: >
+      "This differential method efficiently cancels these slow daily density variations...
+      the collisional shift at LD is the frequency difference between HD and LD and is
+      obtained with a resolution close to 2 parts in 10⁻¹⁶ and stable at the 0.5% level
+      over 20 000 s"
+
+  - id: meth.fountain_cso_interrogation_ensemble
+    name: "共用低温蓝宝石振荡器的多喷泉钟询问与频率比较方法"
+    status: demonstrated
+    purpose: "利用单一超低噪声 CSO 实现多台喷泉钟的本地频率比较"
+    description: >
+      BNM-SYRTE 三台喷泉钟（FO1、FO2、FOM）共用一个低温蓝宝石振荡器（CSO，~11.932 GHz）
+      作为 Ramsey 询问微波信号的合成参考。
+      CSO 通过弱锁相环（τ ~ 1–1000 s）锁定至氢钟以抑制长期漂移。
+      FO2 使用直接下变频方案（11.98 → 9.192 GHz，全微波域合成，稳定性 3×10⁻¹⁵ @ 1 s），
+      FO1/FOM 通过 100 MHz 电缆 + 远距离合成方案获取询问信号。
+      两台钟的 CSO 共模噪声在后处理中消除，使两台喷泉钟之间的频率比较达到 2.2×10⁻¹⁶ @ 50000 s。
+    key_steps:
+      - "1. CSO 产生 ~11.932 GHz 超低噪声微波信号 →"
+      - "2. 直接近距：11.98 GHz → 9.192 GHz（FO2，全微波域，最低附加噪声）→"
+      - "3. 远距离：100 MHz 信号经 RF 电缆传输至 150 m 外的 FO1/FOM →"
+      - "4. 各钟独立进行 Ramsey 询问和密度差分测量 →"
+      - "5. 后处理中消除 CSO 共模，提取钟间频率差"
+    applicable_conditions:
+      - "需要 CSO 锁相至氢钟以抑制长期漂移"
+      - "远距离方案（100 MHz 电缆）会引入额外相位噪声（FO1/FOM 稳定度约 2×10⁻¹⁴ @ 1 s vs FO2 的 1.6×10⁻¹⁴）"
+      - "多钟同时运行时需管理微波分配和同步"
+    source_claim: >
+      "the three fountains use the same CSO oscillator to synthesize the microwave signals
+      probing the atomic transition... the combined stability between these two clocks
+      reaches 2.2 × 10⁻¹⁶ at 50 000 s"
+
+  - id: meth.fundamental_constant_variation_rb_cs_ratio
+    name: "通过 ⁸⁷Rb/¹³³Cs 超精细频率比约束基本常数变化"
+    status: demonstrated
+    purpose: "利用铷和铯喷泉钟的长期频率比测量，检验基本常数的时间稳定性"
+    description: >
+      在 6 年期间（1998–2004），定期测量 ⁸⁷Rb 超精细频率相对于 ¹³³Cs 喷泉钟的比值。
+      每次测量周期为 1–2 个月，包含所有已知系统效应的完整评估。
+      对测量数据进行加权线性拟合，获得 d/dt ln(ν_Rb/ν_Cs) = (−0.5 ± 5.3)×10⁻¹⁶ yr⁻¹ 的约束。
+      利用核理论计算的灵敏度系数，将频率比漂移转换为对 α、m_q/Λ_QCD 等基本常数的约束。
+      结合统一场论框架 dα/α ~ 35 × d(m_q/Λ_QCD)/(m_q/Λ_QCD)，得到 dα/dt 约束 7×10⁻¹⁷ yr⁻¹。
+    key_steps:
+      - "1. 使用铯喷泉钟（FO1/FO2/FOM）作为基准频率参考 →"
+      - "2. 独立运行铷喷泉钟，测量 ν_Rb 相对于 Cs 的绝对频率比 →"
+      - "3. 每次测量包含完整的系统效应评估（表 1 中的各项）→"
+      - "4. 在 6 年跨度内重复测量，覆盖可能的年周期效应 →"
+      - "5. 加权线性拟合提取频率比的时间导数 →"
+      - "6. 利用 d/dt ln(ν_Rb/ν_Cs) → d/dt ln(α^0.49 [m_q/Λ_QCD]^0.174 ...) 的灵敏度系数链转换"
+    applicable_conditions:
+      - "每次测量需完整评估所有系统效应（Zeeman、黑体辐射、碰撞频移等）"
+      - "需避免与测量时间段相关的系统漂移"
+      - "灵敏度系数的精度需达到 1-10%"
+    source_claim: >
+      "A weighted linear fit to the data... determines how these measurements constrain
+      a possible time variation of ν_Rb/ν_Cs. We find d/dt ln(ν_Rb/ν_Cs) =
+      (−0.5 ± 5.3) × 10⁻¹⁶ yr⁻¹, which represents a 100-fold improvement over the
+      Hg⁺–H hyperfine energy comparison"
+
+metrics:
+  - id: met.cs_fountain_best_short_term_stability_syrte_2005
+    name: "BNM-SYRTE 铯喷泉钟最佳短期频率稳定度（2005）"
+    unit: "σ_y(τ)"
+    role: primary
+    description: "FO2 铯喷泉钟相对于低温蓝宝石振荡器（CSO）的分数频率稳定度"
+    demonstrated_value:
+      value: "σ_y(τ) = 1.6×10⁻¹⁴ τ⁻¹/²"
+      conditions: "FO2 喷泉钟，~10⁷ 探测原子，CSO 作为询问振荡器，Ramsey π/2 脉冲"
+      verification_status: demonstrated
+      confidence: established
+      source: {zotero_key: "LZ01024172", claim: "fractional instabilities of FO1 and FO2 are σ_y(τ) = 2.9×10⁻¹⁴ τ⁻¹/² and 1.6×10⁻¹⁴ τ⁻¹/² respectively, within ~20% of the standard quantum limit"}
+
+  - id: met.cs_fountain_accuracy_syrte_2005
+    name: "BNM-SYRTE 铯喷泉钟系统不确定度（2005）"
+    unit: "无量纲（分数频率不确定度）"
+    role: primary
+    description: "三台 BNM-SYRTE 铯喷泉钟的总系统不确定度（所有已知系统效应的平方和根）"
+    demonstrated_value:
+      value: "FO1: 7.5×10⁻¹⁶, FO2: 6.5×10⁻¹⁶, FOM: 8.0×10⁻¹⁶（¹³³Cs）；比未冷却装置提升一个数量级"
+      conditions: "¹³³Cs 超精细跃迁，包括二阶 Zeeman、黑体辐射、冷碰撞、微波谱纯度/泄漏、一阶 Doppler、Ramsey/Rabi pulling、微波反冲、二阶 Doppler、背景碰撞等所有已知系统效应的评估"
+      verification_status: demonstrated
+      confidence: established
+      source: {zotero_key: "LZ01024172", claim: "the overall uncertainty... is 7.5 × 10⁻¹⁶ for FO1, 6.5 × 10⁻¹⁶ for FO2 and 8 × 10⁻¹⁶ for FOM"}
+    note: "代表性系统效应分解见表 1（论文）：Quadratic Zeeman 1199.7±4.5 (FO1), Blackbody −162.8±2.5, Collisions/cavity pulling −197.9±2.4"
+
+  - id: met.fountain_to_fountain_stability_50000s_syrte_2005
+    name: "BNM-SYRTE 喷泉钟之间频率比较长期稳定度（2005）"
+    unit: "σ_y(50000 s)"
+    role: primary
+    description: "两台独立铯喷泉钟（FO1 和 FO2）之间直接频率差的 Allan 偏差"
+    demonstrated_value:
+      value: "σ_y(50000 s) = 2.2×10⁻¹⁶（首次在基准频标上实现此水平的长期稳定度）"
+      conditions: "FO1 与 FO2 均使用 CSO 作为共用本地振荡器，采用实时密度差分法消除冷碰撞频移，后处理消除 CSO 共模噪声"
+      verification_status: demonstrated
+      confidence: established
+      source: {zotero_key: "LZ01024172", claim: "the combined stability between these two clocks reaches 2.2 × 10⁻¹⁶ at 50 000 s, a previously unattained long term stability"}
+
+  - id: met.rb_cs_frequency_ratio_drift_2005
+    name: "⁸⁷Rb/¹³³Cs 超精细频率比时间导数约束（1998–2004）"
+    unit: "yr⁻¹"
+    role: primary
+    description: "6 年期间 ⁸⁷Rb 与 ¹³³Cs 超精细频率比的时间变化约束，用于检验基本常数的时间稳定性"
+    demonstrated_value:
+      value: "d/dt ln(ν_Rb/ν_Cs) = (−0.5 ± 5.3)×10⁻¹⁶ yr⁻¹"
+      conditions: "BNM-SYRTE FO1/FO2/FOM 铯铷喷泉钟组，1998–2004 共 6 年数据，每次测量 1-2 个月含完整系统效应评估"
+      verification_status: demonstrated
+      confidence: established
+      source: {zotero_key: "LZ01024172", claim: "d/dt ln(ν_Rb/ν_Cs) = (−0.5 ± 5.3) × 10⁻¹⁶ yr⁻¹, which represents a 100-fold improvement over the Hg⁺–H hyperfine energy comparison"}
+    derived_constraint:
+      alpha_variation: "dα/dt 约束 ~7×10⁻¹⁷ yr⁻¹（基于统一场论框架 dα/α ~ 35 × d(m_q/Λ_QCD)/(m_q/Λ_QCD)）"
+
+  - id: met.pharao_target_performance_2005
+    name: "PHARAO 空间冷原子钟目标性能（2005 年设计指标）"
+    unit: "σ_y(τ) 和分数频率不确定度"
+    role: primary
+    description: "PHARAO 空间冷原子钟的设计目标性能参数"
+    demonstrated_value:
+      value: "稳定度 σ_y(τ) = 7×10⁻¹⁴ τ⁻¹/²，准确度 10⁻¹⁶（微重力）"
+      conditions: "微重力环境（ISS 轨道），双区 Ramsey 环形腔，原子共振线宽 110 mHz（微重力）vs 11 Hz（地面），激光冷却铯原子源"
+      verification_status: projected
+      confidence: likely
+      source: {zotero_key: "LZ01024172", claim: "The target performance is 7 × 10⁻¹⁴ τ⁻¹/² for the frequency stability and 10⁻¹⁶ for the frequency accuracy"}
+
+# ═══════════════════════════════════════════════
+#  RELATIONS（关系）
+# ═══════════════════════════════════════════════
+
+relations:
+  - id: rel.bize_2005_01
+    subject: ent.bnm_syrte_cs_rb_fountain_ensemble_2005
+    predicate: REALIZES
+    object: ent.si_second_definition
+    confidence: established
+    source: {zotero_key: "LZ01024172", claim: "atomic fountains are used as primary frequency standard to calibrate TAI... fountains are the dominant contributors to the accuracy of TAI"}
+    note: "BNM-SYRTE 铯喷泉钟组以 6.5–7.5×10⁻¹⁶ 的不确定度直接实现 SI 秒定义。"
+
+  - id: rel.bize_2005_02
+    subject: ent.cryogenic_sapphire_oscillator_uwa_2005
+    predicate: INTERROGATES
+    object: ent.bnm_syrte_cs_rb_fountain_ensemble_2005
+    confidence: established
+    source: {zotero_key: "LZ01024172", claim: "the three fountains use the same CSO oscillator to synthesize the microwave signals probing the atomic transition"}
+    note: "CSO 作为三台喷泉钟的共用 Ramsey 询问振荡器，其超低相位噪声使稳定度比石英振荡器提升一个量级。"
+
+  - id: rel.bize_2005_03
+    subject: pri.interrupted_adiabatic_passage_density_control
+    predicate: ENABLES
+    object: meth.interrupted_adiabatic_passage_density_ratio
+    confidence: established
+    source: {zotero_key: "LZ01024172", claim: "this method, the atom number is changed without affecting either the velocity or the position distributions"}
+    note: "中断绝热通道原理直接使能密度比控制方法。"
+
+  - id: rel.bize_2005_04
+    subject: meth.interrupted_adiabatic_passage_density_ratio
+    predicate: ENABLES
+    object: meth.fountain_real_time_differential_collision_shift
+    confidence: established
+    source: {zotero_key: "LZ01024172", claim: "we recently developed a new method based on interrupted adiabatic passage to select atoms... this method enables the collisional shift to be extrapolated to zero density with this accuracy"}
+    note: "密度比制备方法是实时差分碰撞频移测量的前提。"
+
+  - id: rel.bize_2005_05
+    subject: ent.bnm_syrte_cs_rb_fountain_ensemble_2005
+    predicate: CHARACTERIZED-BY
+    object: met.cs_fountain_best_short_term_stability_syrte_2005
+    confidence: established
+    source: {zotero_key: "LZ01024172", claim: "fractional instabilities of FO1 and FO2 are σ_y(τ) = 2.9×10⁻¹⁴ τ⁻¹/² and 1.6×10⁻¹⁴ τ⁻¹/² respectively"}
+
+  - id: rel.bize_2005_06
+    subject: ent.bnm_syrte_cs_rb_fountain_ensemble_2005
+    predicate: CHARACTERIZED-BY
+    object: met.cs_fountain_accuracy_syrte_2005
+    confidence: established
+    source: {zotero_key: "LZ01024172", claim: "The total accuracy currently reaches 7.5 parts in 10¹⁶ for FO1, 6.5 parts in 10¹⁶ for FO2, and 8.0 parts in 10¹⁶ for FOM"}
+
+  - id: rel.bize_2005_07
+    subject: ent.bnm_syrte_cs_rb_fountain_ensemble_2005
+    predicate: CHARACTERIZED-BY
+    object: met.fountain_to_fountain_stability_50000s_syrte_2005
+    confidence: established
+    source: {zotero_key: "LZ01024172", claim: "the combined stability between these two clocks reaches 2.2 × 10⁻¹⁶ at 50 000 s"}
+
+  - id: rel.bize_2005_08
+    subject: ent.bnm_syrte_cs_rb_fountain_ensemble_2005
+    predicate: MEASURES
+    object: met.rb_cs_frequency_ratio_drift_2005
+    confidence: established
+    source: {zotero_key: "LZ01024172", claim: "A weighted linear fit to the data... determines how these measurements constrain a possible time variation of ν_Rb/ν_Cs"}
+    note: "通过 6 年 Rb/Cs 频率比测量约束基本常数变化。约束比 199Hg⁺–H 比较提升 100 倍。"
+
+  - id: rel.bize_2005_09
+    subject: ent.pharao_cold_atom_space_clock_2005
+    predicate: DERIVED-FROM
+    object: ent.bnm_syrte_cs_rb_fountain_ensemble_2005
+    confidence: established
+    source: {zotero_key: "LZ01024172", claim: "FOM, a transportable fountain, is derived from the PHARAO space clock prototype"}
+    note: "PHARAO 是喷泉钟技术的空间延伸，利用微重力环境将性能提升一个量级。"
+
+  - id: rel.bize_2005_10
+    subject: ent.pharao_cold_atom_space_clock_2005
+    predicate: CHARACTERIZED-BY
+    object: met.pharao_target_performance_2005
+    confidence: projected
+    source: {zotero_key: "LZ01024172", claim: "The target performance is 7 × 10⁻¹⁴ τ⁻¹/² for the frequency stability and 10⁻¹⁶ for the frequency accuracy"}
+
+  - id: rel.bize_2005_11
+    subject: pri.fountain_quantum_projection_noise_limit
+    predicate: MANIFESTS-AS
+    object: met.cs_fountain_best_short_term_stability_syrte_2005
+    confidence: established
+    source: {zotero_key: "LZ01024172", claim: "the fractional instabilities... are within ~20% of the standard quantum limit"}
+    note: "FO2 的 1.6×10⁻¹⁴ τ⁻¹/² 达到量子投影噪声极限的 80% 以内。"
+
+  - id: rel.bize_2005_12
+    subject: pri.hyperfine_frequency_sensitivity_fundamental_constants
+    predicate: ENABLES
+    object: meth.fundamental_constant_variation_rb_cs_ratio
+    confidence: established
+    source: {zotero_key: "LZ01024172", claim: "any measurement of the ratio between atomic frequencies can be interpreted as testing the stability of four dimensionless fundamental constants"}
+    note: "超精细频率对基本常数的可计算灵敏度是 Rb/Cs 比检验的理论基础。"
+
+  - id: rel.bize_2005_13
+    subject: meth.fundamental_constant_variation_rb_cs_ratio
+    predicate: VALIDATES
+    object: pri.hyperfine_frequency_sensitivity_fundamental_constants
+    confidence: established
+    source: {zotero_key: "LZ01024172", claim: "Using the calculated link between g-factors and m_q, m_s and Λ_QCD... we find the constraint to the variation of fundamental constants"}
+    note: "6 年 Rb/Cs 频率比数据验证了超精细频率-基本常数灵敏度关系。"

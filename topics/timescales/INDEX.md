@@ -2,15 +2,18 @@
 
 # Timescales — Topic Index
 
-> Auto-generated 2026-05-03 07:46 UTC · 5 papers · 47 nodes · 30 relations
+> Auto-generated 2026-05-03 07:55 UTC · 6 papers · 62 nodes · 43 relations
 
 ## Entities
 
 | ID | Name | Level | Source |
 |----|------|------:|--------|
 | `ent.al_plus_ion_optical_clock` | ²⁷Al⁺ 离子量子逻辑光钟（NIST 实验系统） | 1 | [chou2010](topics/timescales/papers/chou2010.yaml) |
+| `ent.bnm_syrte_cs_rb_fountain_ensemble_2005` | BNM-SYRTE 铯/铷原子喷泉钟组（FO1、FO2、FOM，2005 年水平） | 1 | [bize2005](topics/timescales/papers/bize2005.yaml) |
+| `ent.cryogenic_sapphire_oscillator_uwa_2005` | 低温蓝宝石谐振器振荡器（CSO，UWA 研制，2005 年 BNM-SYRTE 使用） | 2 | [bize2005](topics/timescales/papers/bize2005.yaml) |
 | `ent.geoid` | 大地水准面（地球重力等势面——时间频率计量的高程参考） | 1 | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 | `ent.mutc_photonic_microwave_generator` | MUTC 光电二极管光子微波发生器（基于光频率分频的低噪声 10GHz 微波源） | 1 | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
+| `ent.pharao_cold_atom_space_clock_2005` | PHARAO 冷原子空间钟（CNES/ESA ACES 任务，2005 年研制状态） | 2 | [bize2005](topics/timescales/papers/bize2005.yaml) |
 | `ent.phase_stabilized_fiber_clock_link` | 相位稳定光纤时钟比较链路（NIST 2010，75 m） | 2 | [chou2010](topics/timescales/papers/chou2010.yaml) |
 | `ent.phase_stabilized_fiber_frequency_link_paris_2009` | 巴黎 43–108 km 相位稳定光纤频率传递链路（LPL–SYRTE，2009） | 2 | [amyklein2009](topics/timescales/papers/amyklein2009.yaml) |
 | `ent.sf6_molecular_spectrometer_lpl` | SF6 分子 Ramsey 条纹光谱仪（LPL，2009） | 1 | [amyklein2009](topics/timescales/papers/amyklein2009.yaml) |
@@ -23,9 +26,12 @@
 |----|------|------|--------|
 | `pri.am_pm_conversion_couples_rin_to_phase_noise` | 光电检测中的 AM-PM 转换将光脉冲 RIN 耦合为微波相位噪声 | engineering | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 | `pri.dwdm_oadm_metrology_data_coexistence` | DWDM/OADM 计量信号与数据信号共存传输原理 | engineering | [amyklein2009](topics/timescales/papers/amyklein2009.yaml) |
+| `pri.fountain_quantum_projection_noise_limit` | 喷泉钟量子投影噪声极限稳定度 | foundational | [bize2005](topics/timescales/papers/bize2005.yaml) |
 | `pri.geoid_uncertainty_clock_comparison_limit` | 大地水准面不确定度对时钟比较的终极限制 | engineering | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 | `pri.gravitational_blueshift_clock_rate` | 引力蓝移对时钟频率的影响——Δf/f ≈ gΔh/c² | foundational | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 | `pri.gravitational_time_dilation_clock_shift` | 引力时间膨胀——地球表面高度差引发的时钟频率偏移 | foundational | [chou2010](topics/timescales/papers/chou2010.yaml) |
+| `pri.hyperfine_frequency_sensitivity_fundamental_constants` | 超精细跃迁频率对基本常数变化的灵敏度 | foundational | [bize2005](topics/timescales/papers/bize2005.yaml) |
+| `pri.interrupted_adiabatic_passage_density_control` | 中断绝热通道法精确控制原子数密度比 | engineering | [bize2005](topics/timescales/papers/bize2005.yaml) |
 | `pri.molecular_atomic_frequency_ratio_mass_dependence` | 分子/原子跃迁频率比对质子-电子质量比的灵敏度原理 | foundational | [amyklein2009](topics/timescales/papers/amyklein2009.yaml) |
 | `pri.mutc_structure_suppresses_space_charge` | MUTC 光电二极管结构通过预畸变电场设计抑制空间电荷非线性效应 | engineering | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 | `pri.ofd_transfers_optical_stability_to_microwave` | 光频率分频（OFD）将光学参考稳定度无噪声传递至微波域 | engineering | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
@@ -41,7 +47,11 @@
 |----|------|--------|
 | `meth.am_pm_coefficient_measurement` | AM-PM 转换系数 α 测量方法 | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 | `meth.cross_correlation_phase_noise_measurement` | 互相关频谱分析残余相位噪声测量方法 | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
+| `meth.fountain_cso_interrogation_ensemble` | 共用低温蓝宝石振荡器的多喷泉钟询问与频率比较方法 | [bize2005](topics/timescales/papers/bize2005.yaml) |
+| `meth.fountain_real_time_differential_collision_shift` | 喷泉钟冷碰撞频移实时差分测量方法 | [bize2005](topics/timescales/papers/bize2005.yaml) |
+| `meth.fundamental_constant_variation_rb_cs_ratio` | 通过 ⁸⁷Rb/¹³³Cs 超精细频率比约束基本常数变化 | [bize2005](topics/timescales/papers/bize2005.yaml) |
 | `meth.gps_satellite_clock_comparison` | GPS 卫星原子钟远程比较方法 | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
+| `meth.interrupted_adiabatic_passage_density_ratio` | 中断绝热通道精确密度比制备方法 | [bize2005](topics/timescales/papers/bize2005.yaml) |
 | `meth.ion_motion_induced_time_dilation` | 离子运动诱导时间膨胀测量方法 | [chou2010](topics/timescales/papers/chou2010.yaml) |
 | `meth.mutc_pd_photonic_microwave_generation` | MUTC 光电二极管光子微波生成方法（OFD + 脉冲交织 + MUTC 检测） | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 | `meth.optical_clock_comparison` | 光钟比较方法（本地与远程） | [dimarcq2024](topics/timescales/papers/dimarcq2024.yaml) |
@@ -51,6 +61,16 @@
 ## Metrics
 
 > Metrics are grouped by **role** (v4.4 σ_y-first convention). See `topics/ultrastable-laser/_meta/scoping_principles.md` v2.
+
+### 🎯 Primary (σ_y 主线)
+
+| ID | Name | Best Value | Source |
+|----|------|------------|--------|
+| `met.cs_fountain_accuracy_syrte_2005` | BNM-SYRTE 铯喷泉钟系统不确定度（2005） | FO1: 7.5×10⁻¹⁶, FO2: 6.5×10⁻¹⁶, FOM: 8.0×10⁻¹⁶（¹³³Cs）；比未冷却装… | [bize2005](topics/timescales/papers/bize2005.yaml) |
+| `met.cs_fountain_best_short_term_stability_syrte_2005` | BNM-SYRTE 铯喷泉钟最佳短期频率稳定度（2005） | σ_y(τ) = 1.6×10⁻¹⁴ τ⁻¹/² | [bize2005](topics/timescales/papers/bize2005.yaml) |
+| `met.fountain_to_fountain_stability_50000s_syrte_2005` | BNM-SYRTE 喷泉钟之间频率比较长期稳定度（2005） | σ_y(50000 s) = 2.2×10⁻¹⁶（首次在基准频标上实现此水平的长期稳定度） | [bize2005](topics/timescales/papers/bize2005.yaml) |
+| `met.pharao_target_performance_2005` | PHARAO 空间冷原子钟目标性能（2005 年设计指标） | 稳定度 σ_y(τ) = 7×10⁻¹⁴ τ⁻¹/²，准确度 10⁻¹⁶（微重力） | [bize2005](topics/timescales/papers/bize2005.yaml) |
+| `met.rb_cs_frequency_ratio_drift_2005` | ⁸⁷Rb/¹³³Cs 超精细频率比时间导数约束（1998–2004） | d/dt ln(ν_Rb/ν_Cs) = (−0.5 ± 5.3)×10⁻¹⁶ yr⁻¹ | [bize2005](topics/timescales/papers/bize2005.yaml) |
 
 ### 📊 Secondary (线宽/PSD/相干)
 

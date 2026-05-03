@@ -2,7 +2,7 @@
 
 # 🔬 Principles Quick Reference
 
-> Auto-generated 2026-05-03 07:46 UTC
+> Auto-generated 2026-05-03 07:55 UTC
 
 ## Tier: meta
 
@@ -38,10 +38,12 @@
 | `pri.enhanced_shb_pulse_shortening_b95` | 增强空间烧孔锁模脉冲缩短效应 | Ultrastable Laser | [braun1995](topics/ultrastable-laser/papers/braun1995.yaml) |
 | `pri.fiber_propagation_reciprocity` | 光纤传播互易性原理（前向=后向传播延迟） | Time-Frequency Transfer | [xu2019_gzd2byi4](topics/time-frequency-transfer/papers/xu2019_gzd2byi4.yaml) |
 | `pri.fiber_thermal_phase_noise_giant_ifog` | 大型光纤陀螺仪热相位噪声 | Ultrastable Laser | [li2019](topics/ultrastable-laser/papers/li2019.yaml) |
+| `pri.fountain_quantum_projection_noise_limit` | 喷泉钟量子投影噪声极限稳定度 | Timescales | [bize2005](topics/timescales/papers/bize2005.yaml) |
 | `pri.gaussian_beam_resonator_theory` | 高斯光束与谐振腔理论 | Ultrastable Laser | [kogelnik1966](topics/ultrastable-laser/papers/kogelnik1966.yaml) |
 | `pri.gravitational_blueshift_clock_rate` | 引力蓝移对时钟频率的影响——Δf/f ≈ gΔh/c² | Timescales | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 | `pri.gravitational_time_dilation` | 引力时间膨胀（Einstein 红移） | Time-Frequency Transfer | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
 | `pri.gravitational_time_dilation_clock_shift` | 引力时间膨胀——地球表面高度差引发的时钟频率偏移 | Timescales | [chou2010](topics/timescales/papers/chou2010.yaml) |
+| `pri.hyperfine_frequency_sensitivity_fundamental_constants` | 超精细跃迁频率对基本常数变化的灵敏度 | Timescales | [bize2005](topics/timescales/papers/bize2005.yaml) |
 | `pri.molecular_atomic_frequency_ratio_mass_dependence` | 分子/原子跃迁频率比对质子-电子质量比的灵敏度原理 | Timescales | [amyklein2009](topics/timescales/papers/amyklein2009.yaml) |
 | `pri.nlse_gain_self_similar_parabolic_solution` | 含增益 NLSE 自相似抛物线脉冲渐近解原理（Similariton） | shared | [fermann2000](topics/shared/papers/fermann2000.yaml) |
 | `pri.relativistic_time_dilation_motion` | 狭义相对论时间膨胀——低速度下的运动时钟变慢 | Timescales | [chou2010](topics/timescales/papers/chou2010.yaml) |
@@ -301,6 +303,7 @@
 | `pri.integrated_photonic_supercontinuum_for_microcomb_f2f` | 片上集成 SiN 波导超连续谱使低功率微梳 f-2f 可行 | Optical Frequency Combs | [lamb2018](topics/optical-frequency-combs/papers/lamb2018.yaml) |
 | `pri.inter_branch_fiber_noise_degradation` | 多分支光纤梳的支间光纤相噪退化原理 | Optical Frequency Combs | [kashiwagi2018](topics/optical-frequency-combs/papers/kashiwagi2018.yaml) |
 | `pri.interferogram_embedded_freq_comparison` | 干涉图内嵌频率比对原理（M = fr/Δfr 放大因子） | Optical Frequency Combs | [han2024](topics/optical-frequency-combs/papers/han2024.yaml) |
+| `pri.interrupted_adiabatic_passage_density_control` | 中断绝热通道法精确控制原子数密度比 | Timescales | [bize2005](topics/timescales/papers/bize2005.yaml) |
 | `pri.intracavity_eom_fast_rep_rate_control` | 腔内 EOM 快速重频伺服原理 | Optical Frequency Combs | [yan2015](topics/optical-frequency-combs/papers/yan2015.yaml) |
 | `pri.intracavity_eom_frep_wideband_feedback` | 光纤腔内 EOM 实现宽带 f_rep 伺服原理 | Optical Frequency Combs | [zhang2015](topics/optical-frequency-combs/papers/zhang2015.yaml) |
 | `pri.intracavity_graphene_fast_modulation` | 腔内石墨烯 EOM 高速反馈原理 | Optical Frequency Combs | [kuse2015](topics/optical-frequency-combs/papers/kuse2015.yaml) |
