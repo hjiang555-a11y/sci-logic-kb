@@ -71,7 +71,7 @@ principles:
     source_claim: "public telecommunication network carrying Internet data can be used to compare and distribute ultra-stable metrological signals over long distances"
 
 relations:
-  - id: rel.L15_01
+  - id: rel.lopez_2015_15_01
     subject: ent.shared_telecom_fiber_metrology_channel
     predicate: PART-OF
     object: ent.coherent_optical_fiber_link
@@ -79,7 +79,7 @@ relations:
       paper: lopez2015
       claim: "frequency and time transfer ... using telecommunication network fibres"
 
-  - id: rel.L15_02
+  - id: rel.lopez_2015_15_02
     subject: ent.shared_telecom_fiber_metrology_channel
     predicate: OPERATIONALIZED-AS
     object: pri.telecom_network_metrology_coexistence
@@ -87,7 +87,7 @@ relations:
       paper: lopez2015
       claim: "public telecommunication network ... used to compare and distribute ultra-stable metrological signals"
 
-  - id: rel.L15_03
+  - id: rel.lopez_2015_15_03
     subject: ent.shared_telecom_fiber_metrology_channel
     predicate: ENABLED-BY
     object: pri.noise_cancellation_frequency_transfer
@@ -95,7 +95,7 @@ relations:
       paper: lopez2015
       claim: "actively stabilized phase of the transferred optical signal"
 
-  - id: rel.L15_04
+  - id: rel.lopez_2015_15_04
     subject: ent.coherent_optical_fiber_link
     predicate: CONDITIONED-BY
     object: ent.optical_frequency_comb

@@ -1,99 +1,101 @@
-# Olson 2019 — Ramsey-Bordé 物质波干涉仪稳频 <2×10⁻¹⁶
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-16
-# Schema版本：v4.1
-
 meta:
-  zotero_key: "CDX3DFQR"
+  zotero_key: CDX3DFQR
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: "Ramsey-Bordé Matter-Wave Interferometry for Laser Frequency Stabilization at 10⁻¹⁶ Frequency Instability and Below"
+  title: Ramsey-Bordé Matter-Wave Interferometry for Laser Frequency Stabilization
+    at 10⁻¹⁶ Frequency Instability and Below
   year: 2019
   first_author: Olson
-  journal: "Physical Review Letters"
+  journal: Physical Review Letters
   volume: 123
-  pages: "073202"
-  doi: "10.1103/PhysRevLett.123.073202"
-  note: >
-    Ramsey-Bordé 原子干涉仪稳频演示，
-    两束对射 ⁴⁰Ca 热原子束在 657 nm（¹S₀-³P₁）实现 1.6 kHz 干涉条纹，
-    分数频率不稳定度 <2×10⁻¹⁶ @ 10–1000 s。
-    核心贡献：原子干涉仪作为替代 FP 腔的稳频方案，可避免热噪声限制。
+  pages: '073202'
+  doi: 10.1103/PhysRevLett.123.073202
+  note: 'Ramsey-Bordé 原子干涉仪稳频演示， 两束对射 ⁴⁰Ca 热原子束在 657 nm（¹S₀-³P₁）实现 1.6 kHz 干涉条纹， 分数频率不稳定度
+    <2×10⁻¹⁶ @ 10–1000 s。 核心贡献：原子干涉仪作为替代 FP 腔的稳频方案，可避免热噪声限制。
 
+    '
 entities:
-  - id: ent.rb_atom_interferometer_o19
-    name: "Ramsey-Bordé 原子干涉仪稳频（Olson 2019）"
-    aliases: ["RB atom interferometer", "Ca beam interferometer"]
-    hierarchy_level: 1
-    status: demonstrated
-    function: >
-      两束对射 ⁴⁰Ca 热原子束，在 ¹S₀-³P₁ (657 nm) 跃迁上
-      进行 Ramsey-Bordé 四脉冲干涉，1.6 kHz 干涉条纹，
-      荧光探测激发态布居。无 FP 腔的热噪声限制。
-    key_parameters:
-      atom: "⁴⁰Ca"
-      transition: "¹S₀ → ³P₁ (657 nm)"
-      fringe_linewidth: "1.6 kHz"
-      frequency_instability: "<2×10⁻¹⁶ @ 10–1000 s"
-    note: "COMPETES-WITH ent.fp_cavity_system——原子干涉仪替代方案。"
+- id: ent.rb_atom_interferometer_o19
+  name: Ramsey-Bordé 原子干涉仪稳频（Olson 2019）
+  aliases:
+  - RB atom interferometer
+  - Ca beam interferometer
+  hierarchy_level: 1
+  status: demonstrated
+  function: '两束对射 ⁴⁰Ca 热原子束，在 ¹S₀-³P₁ (657 nm) 跃迁上 进行 Ramsey-Bordé 四脉冲干涉，1.6 kHz 干涉条纹，
+    荧光探测激发态布居。无 FP 腔的热噪声限制。
 
+    '
+  key_parameters:
+    atom: ⁴⁰Ca
+    transition: ¹S₀ → ³P₁ (657 nm)
+    fringe_linewidth: 1.6 kHz
+    frequency_instability: <2×10⁻¹⁶ @ 10–1000 s
+  note: COMPETES-WITH ent.fp_cavity_system——原子干涉仪替代方案。
 principles:
-  - id: pri.ramsey_borde_atom_interferometry_stabilization
-    name: "Ramsey-Bordé 原子干涉仪稳频原理"
-    tier: domain
-    verification_status: observed
-    statement: >
-      利用原子物质波的 Ramsey-Bordé 四脉冲干涉方案，
-      激光频率锁定到原子跃迁的干涉条纹中心。
-      频率参考锚定于原子跃迁频率，不受 FP 腔的机械热噪声限制。
-      对射原子束消除一阶多普勒效应。
-    domain: "原子干涉仪 / 频率稳定化"
-    key_insight: "原子跃迁频率参考避免了 FP 腔热噪声这一基本限制。"
-    conditions: "需要稳定的热原子束源和低噪声激光预稳定"
-    source_claim: "Ramsey-Bordé atom interferometry for high performance laser stabilization with fractional frequency instability <2×10⁻¹⁶"
+- id: pri.ramsey_borde_atom_interferometry_stabilization
+  name: Ramsey-Bordé 原子干涉仪稳频原理
+  tier: domain
+  verification_status: observed
+  statement: '利用原子物质波的 Ramsey-Bordé 四脉冲干涉方案， 激光频率锁定到原子跃迁的干涉条纹中心。 频率参考锚定于原子跃迁频率，不受
+    FP 腔的机械热噪声限制。 对射原子束消除一阶多普勒效应。
 
+    '
+  domain: 原子干涉仪 / 频率稳定化
+  key_insight: 原子跃迁频率参考避免了 FP 腔热噪声这一基本限制。
+  conditions: 需要稳定的热原子束源和低噪声激光预稳定
+  source_claim: Ramsey-Bordé atom interferometry for high performance laser stabilization
+    with fractional frequency instability <2×10⁻¹⁶
 methods:
-  - id: meth.ramsey_borde_stabilization
-    name: "Ramsey-Bordé 物质波干涉仪稳频方法"
-    aliases: ["RB原子干涉仪稳频", "Ca原子束稳频"]
-    purpose: "利用Ramsey-Bordé四脉冲原子干涉仪将激光频率锁定到原子跃迁，避免FP腔的热噪声限制"
-    implementation:
-      - "使用两束对射的⁴⁰Ca热原子束"
-      - "在657 nm (¹S₀-³P₁)跃迁上实现四脉冲Ramsey-Bordé干涉"
-      - "激光频率锁定到1.6 kHz干涉条纹中心"
-      - "荧光探测激发态布居作为误差信号"
-    key_parameters:
-      atom: "⁴⁰Ca"
-      transition: "¹S₀ → ³P₁ (657 nm)"
-      fringe_linewidth: "1.6 kHz"
-      instability: "<2×10⁻¹⁶ @ 10–1000 s"
-    applicable_when: "需要避免FP腔热噪声限制，追求长期频率稳定性的应用"
-    note: "与 ent.fp_cavity_system 的PDH锁频方法竞争，提供基于原子跃迁的频率参考"
-
+- id: meth.ramsey_borde_stabilization
+  name: Ramsey-Bordé 物质波干涉仪稳频方法
+  aliases:
+  - RB原子干涉仪稳频
+  - Ca原子束稳频
+  purpose: 利用Ramsey-Bordé四脉冲原子干涉仪将激光频率锁定到原子跃迁，避免FP腔的热噪声限制
+  implementation:
+  - 使用两束对射的⁴⁰Ca热原子束
+  - 在657 nm (¹S₀-³P₁)跃迁上实现四脉冲Ramsey-Bordé干涉
+  - 激光频率锁定到1.6 kHz干涉条纹中心
+  - 荧光探测激发态布居作为误差信号
+  key_parameters:
+    atom: ⁴⁰Ca
+    transition: ¹S₀ → ³P₁ (657 nm)
+    fringe_linewidth: 1.6 kHz
+    instability: <2×10⁻¹⁶ @ 10–1000 s
+  applicable_when: 需要避免FP腔热噪声限制，追求长期频率稳定性的应用
+  note: 与 ent.fp_cavity_system 的PDH锁频方法竞争，提供基于原子跃迁的频率参考
 metrics:
-  - id: met.rb_interferometer_stability_o19
-    name: "RB 干涉仪稳频不稳定度（Olson 2019）"
-    unit: "无量纲"
-    demonstrated_value:
-      value: "<2×10⁻¹⁶ @ 10–1000 s"
-      conditions: "⁴⁰Ca 热原子束，657 nm，Ramsey-Bordé"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "CDX3DFQR", claim: "fractional frequency instability <2×10⁻¹⁶ for timescales between 10 and 1000 s"}
-
+- id: met.rb_interferometer_stability_o19
+  name: RB 干涉仪稳频不稳定度（Olson 2019）
+  unit: 无量纲
+  demonstrated_value:
+    value: <2×10⁻¹⁶ @ 10–1000 s
+    conditions: ⁴⁰Ca 热原子束，657 nm，Ramsey-Bordé
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: CDX3DFQR
+      claim: fractional frequency instability <2×10⁻¹⁶ for timescales between 10 and
+        1000 s
 relations:
-  - id: rel.OL01
-    subject: ent.rb_atom_interferometer_o19
-    predicate: COMPETES-WITH
-    object: ent.fp_cavity_system
-    confidence: established
-    source: {zotero_key: "CDX3DFQR", claim: "laser frequency stabilization at 10⁻¹⁶ and below"}
-    note: "原子干涉仪与 FP 腔作为频率参考的竞争方案"
-
-  - id: rel.OL02
-    subject: ent.rb_atom_interferometer_o19
-    predicate: ENABLED-BY
-    object: pri.ramsey_borde_atom_interferometry_stabilization
-    confidence: established
-    source: {zotero_key: "CDX3DFQR", claim: "Ramsey-Bordé atom interferometry for laser stabilization"}
+- id: rel.olson_2019_L01
+  subject: ent.rb_atom_interferometer_o19
+  predicate: COMPETES-WITH
+  object: ent.fp_cavity_system
+  confidence: established
+  source:
+    zotero_key: CDX3DFQR
+    claim: laser frequency stabilization at 10⁻¹⁶ and below
+  note: 原子干涉仪与 FP 腔作为频率参考的竞争方案
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/olson2019.yaml
+- id: rel.olson_2019_L02
+  subject: ent.rb_atom_interferometer_o19
+  predicate: ENABLED-BY
+  object: pri.ramsey_borde_atom_interferometry_stabilization
+  confidence: established
+  source:
+    zotero_key: CDX3DFQR
+    claim: Ramsey-Bordé atom interferometry for laser stabilization
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/olson2019.yaml

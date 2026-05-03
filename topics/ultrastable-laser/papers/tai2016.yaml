@@ -1,83 +1,80 @@
-# Tai 2016 — 超低 RAM 布儒斯特角 EOM
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-16
-# Schema版本：v4.1
-
 meta:
-  zotero_key: "FIJXUVZV"
+  zotero_key: FIJXUVZV
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: "Electro-optic modulator with ultra-low residual amplitude modulation for frequency modulation and laser stabilization"
+  title: Electro-optic modulator with ultra-low residual amplitude modulation for
+    frequency modulation and laser stabilization
   year: 2016
   first_author: Tai
-  journal: "Optics Letters"
+  journal: Optics Letters
   volume: 41
   issue: 23
-  pages: "5584-5587"
-  doi: "10.1364/OL.41.005584"
-  note: >
-    布儒斯特角切割 EOM，被动实现 ppm 级 RAM（无需主动温控和偏压控制），
-    RAM 引起的频率不稳定度 <3×10⁻¹⁷ @ 1–1000s。
+  pages: 5584-5587
+  doi: 10.1364/OL.41.005584
+  note: '布儒斯特角切割 EOM，被动实现 ppm 级 RAM（无需主动温控和偏压控制）， RAM 引起的频率不稳定度 <3×10⁻¹⁷ @ 1–1000s。
     核心贡献：简化 EOM RAM 抑制方案，为超稳激光系统降低技术噪声。
 
+    '
 entities:
-  - id: ent.brewster_eom_t16
-    name: "布儒斯特角 EOM（Tai 2016）"
-    aliases: ["Brewster-angle EOM", "ultra-low RAM EOM"]
-    hierarchy_level: 2
-    status: demonstrated
-    function: >
-      布儒斯特角切割的电光调制器，利用布儒斯特角入射
-      消除晶体界面的双折射效应，被动实现 ppm 级 RAM。
-      无需主动温度控制和偏压反馈。
-    key_parameters:
-      ram_level: "few ppm"
-      ram_freq_instability: "<3×10⁻¹⁷ @ 1–1000 s"
-      approach: "passive (Brewster-angle cut)"
-    note: "PART-OF 超稳激光 PDH 调制系统。"
+- id: ent.brewster_eom_t16
+  name: 布儒斯特角 EOM（Tai 2016）
+  aliases:
+  - Brewster-angle EOM
+  - ultra-low RAM EOM
+  hierarchy_level: 2
+  status: demonstrated
+  function: '布儒斯特角切割的电光调制器，利用布儒斯特角入射 消除晶体界面的双折射效应，被动实现 ppm 级 RAM。 无需主动温度控制和偏压反馈。
 
+    '
+  key_parameters:
+    ram_level: few ppm
+    ram_freq_instability: <3×10⁻¹⁷ @ 1–1000 s
+    approach: passive (Brewster-angle cut)
+  note: PART-OF 超稳激光 PDH 调制系统。
 principles:
-  - id: pri.brewster_angle_ram_suppression
-    name: "布儒斯特角 RAM 被动抑制原理"
-    tier: engineering
-    verification_status: observed
-    statement: >
-      在布儒斯特角入射时，p 偏振光在晶体界面无反射，
-      消除了界面双折射造成的残余振幅调制（RAM）。
-      与传统方法（主动温控 + 偏压控制）相比，
-      布儒斯特角方案是纯被动的，简化了系统复杂度。
-    domain: "电光调制 / PDH 稳频"
-    key_insight: "布儒斯特角消除界面反射引起的双折射 RAM。"
-    conditions: "EOM 晶体需要按布儒斯特角精密切割和抛光"
-    source_claim: "a simple passive approach employing an EOM cut at Brewster's angle... RAM of a few parts per million"
+- id: pri.brewster_angle_ram_suppression
+  name: 布儒斯特角 RAM 被动抑制原理
+  tier: engineering
+  verification_status: observed
+  statement: '在布儒斯特角入射时，p 偏振光在晶体界面无反射， 消除了界面双折射造成的残余振幅调制（RAM）。 与传统方法（主动温控 + 偏压控制）相比，
+    布儒斯特角方案是纯被动的，简化了系统复杂度。
 
+    '
+  domain: 电光调制 / PDH 稳频
+  key_insight: 布儒斯特角消除界面反射引起的双折射 RAM。
+  conditions: EOM 晶体需要按布儒斯特角精密切割和抛光
+  source_claim: a simple passive approach employing an EOM cut at Brewster's angle...
+    RAM of a few parts per million
 methods:
-  - id: meth.brewster_eom_design_t16
-    name: "布儒斯特角 EOM 设计与实现方法"
-    type: design_and_fabrication
-    purpose: >
-      设计并制造布儒斯特角切割的电光调制器，被动实现 ppm 级残余振幅调制（RAM）
-    steps:
-      - "计算所需波长下 LiNbO₃ 晶体的布儒斯特角"
-      - "按布儒斯特角精密切割和抛光晶体"
-      - "在晶体表面镀抗反射膜"
-      - "设计电极结构以提供相位调制"
-      - "将晶体封装到温度控制外壳中"
-    key_parameters:
-      ram_level: "few ppm"
-      approach: "passive (Brewster-angle cut)"
-    connects:
-      - ent.brewster_eom_t16
-      - pri.brewster_angle_ram_suppression
-    source_claim: "a simple passive approach employing an EOM cut at Brewster's angle... RAM of a few parts per million"
+- id: meth.brewster_eom_design_t16
+  name: 布儒斯特角 EOM 设计与实现方法
+  type: design_and_fabrication
+  purpose: '设计并制造布儒斯特角切割的电光调制器，被动实现 ppm 级残余振幅调制（RAM）
 
+    '
+  steps:
+  - 计算所需波长下 LiNbO₃ 晶体的布儒斯特角
+  - 按布儒斯特角精密切割和抛光晶体
+  - 在晶体表面镀抗反射膜
+  - 设计电极结构以提供相位调制
+  - 将晶体封装到温度控制外壳中
+  key_parameters:
+    ram_level: few ppm
+    approach: passive (Brewster-angle cut)
+  connects:
+  - ent.brewster_eom_t16
+  - pri.brewster_angle_ram_suppression
+  source_claim: a simple passive approach employing an EOM cut at Brewster's angle...
+    RAM of a few parts per million
 metrics: []
-
 relations:
-  - id: rel.TA01
-    subject: ent.brewster_eom_t16
-    predicate: ENABLED-BY
-    object: pri.brewster_angle_ram_suppression
-    confidence: established
-    source: {zotero_key: "FIJXUVZV", claim: "Brewster's angle... RAM of a few parts per million"}
+- id: rel.tai_2016_A01
+  subject: ent.brewster_eom_t16
+  predicate: ENABLED-BY
+  object: pri.brewster_angle_ram_suppression
+  confidence: established
+  source:
+    zotero_key: FIJXUVZV
+    claim: Brewster's angle... RAM of a few parts per million
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/tai2016.yaml

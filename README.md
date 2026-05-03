@@ -1,7 +1,8 @@
 # sci-logic-kb
 
-> 时间频率计量领域的结构化科研知识库  
-> **核心问题**：当前性能极限在哪、为什么卡在这里、怎样突破
+[![GitHub Pages](https://img.shields.io/badge/%F0%9F%8C%90-在线浏览-4285F4?style=flat)](https://hjiang555-a11y.github.io/sci-logic-kb/) [![Graph Viewer](https://img.shields.io/badge/%F0%9F%94%97-交互式图谱-e15759?style=flat)](https://hjiang555-a11y.github.io/sci-logic-kb/docs/graph/)
+
+> 时间频率计量领域的结构化科研知识库。核心问题只有三类：**当前性能极限在哪、为什么卡在这里、怎样突破。**
 
 ---
 

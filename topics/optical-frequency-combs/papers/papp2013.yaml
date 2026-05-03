@@ -251,14 +251,14 @@ metrics:
 # ═══════════════════════════════════════════════
 
 relations:
-  - id: rel.P13_01
+  - id: rel.papp_2013_13_01
     subject: ent.eo_sideband_seed_injector_p13
     predicate: PART-OF
     object: ent.parametrically_seeded_microcomb_p13
     confidence: established
     source: {zotero_key: "BG93PZPK", claim: "a CW laser's intensity is modulated at frequency feo with a standard Mach-Zehnder electro-optic modulator"}
 
-  - id: rel.P13_02
+  - id: rel.papp_2013_13_02
     subject: ent.parametrically_seeded_microcomb_p13
     predicate: PART-OF
     object: ent.microresonator_frequency_comb
@@ -266,14 +266,14 @@ relations:
     source: {zotero_key: "BG93PZPK", claim: "parametric seeding of a microresonator frequency comb (microcomb)"}
     note: "跨文件引用：ent.microresonator_frequency_comb 定义于 kippenberg2011.yaml / kippenberg2018.yaml"
 
-  - id: rel.P13_03
+  - id: rel.papp_2013_13_03
     subject: ent.parametrically_seeded_microcomb_p13
     predicate: ENABLED-BY
     object: pri.parametric_seeding_microcomb_spacing_control
     confidence: established
     source: {zotero_key: "BG93PZPK", claim: "pump-sideband spacing is passed onto the comb via nonlinear optical interactions"}
 
-  - id: rel.P13_04
+  - id: rel.papp_2013_13_04
     subject: pri.parametric_seeding_microcomb_spacing_control
     predicate: DERIVED-FROM
     object: pri.parametric_four_wave_mixing_comb
@@ -281,7 +281,7 @@ relations:
     source: {zotero_key: "BG93PZPK", claim: "comb generation based on parametric oscillation and FWM"}
     note: "pri.parametric_four_wave_mixing_comb 定义于 kippenberg2011.yaml（跨文件引用）"
 
-  - id: rel.P13_05
+  - id: rel.papp_2013_13_05
     subject: ent.parametrically_seeded_microcomb_p13
     predicate: CONDITIONED-BY
     object: pri.microresonator_anomalous_dispersion
@@ -289,7 +289,7 @@ relations:
     source: {zotero_key: "BG93PZPK", claim: "Parametric phase matching depends on numerous parameters … the dispersion of disk resonators is described in [26]"}
     note: "跨文件引用：pri.microresonator_anomalous_dispersion 定义于 kippenberg2011.yaml"
 
-  - id: rel.P13_06
+  - id: rel.papp_2013_13_06
     subject: ent.parametrically_seeded_microcomb_p13
     predicate: CHARACTERIZED-BY
     object: met.microcomb_linespacing_stability_p13
@@ -297,42 +297,42 @@ relations:
     source: {zotero_key: "BG93PZPK", claim: "1.6 × 10⁻¹³ stability we achieve exceeds by 10x previous results"}
     temporal_role: validates
 
-  - id: rel.P13_07
+  - id: rel.papp_2013_13_07
     subject: ent.parametrically_seeded_microcomb_p13
     predicate: CHARACTERIZED-BY
     object: met.microcomb_linespacing_tuning_range_p13
     confidence: established
     source: {zotero_key: "BG93PZPK", claim: "Δν can be varied over a range of ∼10 MHz"}
 
-  - id: rel.P13_08
+  - id: rel.papp_2013_13_08
     subject: ent.parametrically_seeded_microcomb_p13
     predicate: CHARACTERIZED-BY
     object: met.microcomb_equidistance_offset_p13
     confidence: established
     source: {zotero_key: "BG93PZPK", claim: "offset from equidistance can be as low as 10⁻¹²"}
 
-  - id: rel.P13_09
+  - id: rel.papp_2013_13_09
     subject: ent.parametrically_seeded_microcomb_p13
     predicate: CHARACTERIZED-BY
     object: met.microcomb_linewidth_transfer_p13
     confidence: provisional
     source: {zotero_key: "BG93PZPK", claim: "pump laser frequency noise is common mode to both the equidistant microcomb and the reference comb"}
 
-  - id: rel.P13_10
+  - id: rel.papp_2013_13_10
     subject: met.microcomb_linespacing_stability_p13
     predicate: OPERATIONALIZED-AS
     object: meth.parametric_seeding_microcomb_p13
     confidence: established
     source: {zotero_key: "BG93PZPK", claim: "absolute Allan deviation of Δν by comparing it to an independent hydrogen maser reference"}
 
-  - id: rel.P13_11
+  - id: rel.papp_2013_13_11
     subject: meth.parametric_seeding_microcomb_p13
     predicate: ENABLED-BY
     object: pri.parametric_seeding_microcomb_spacing_control
     confidence: established
     source: {zotero_key: "BG93PZPK", claim: "parametric seeding … controls microcomb line spacing"}
 
-  - id: rel.P13_12
+  - id: rel.papp_2013_13_12
     subject: meth.parametric_seeding_microcomb_p13
     predicate: COMPETES-WITH
     object: meth.cw_pumped_microcomb_generation
@@ -342,14 +342,14 @@ relations:
       同层级方法对比：无种子的 CW 泵浦微梳（meth.cw_pumped_microcomb_generation，定义于 kippenberg2011.yaml）
       Δν 由 mi·FSR 随机决定；参量种子将 Δν 锁定至射频 feo。
 
-  - id: rel.P13_13
+  - id: rel.papp_2013_13_13
     subject: pri.microcomb_subcomb_offset_p13
     predicate: DERIVED-FROM
     object: pri.parametric_four_wave_mixing_comb
     confidence: established
     source: {zotero_key: "BG93PZPK", claim: "multiple independent parametric oscillation processes are active"}
 
-  - id: rel.P13_14
+  - id: rel.papp_2013_13_14
     subject: met.microcomb_equidistance_offset_p13
     predicate: BOUNDED-BY
     object: pri.microcomb_subcomb_offset_p13
@@ -366,7 +366,7 @@ relations:
         source: {zotero_key: "BG93PZPK", claim: "a number of interesting microcomb operating regimes have been reported including … the generation of soliton waveforms"}
         note: "跨文件引用：meth.laser_tuning_soliton_access 定义于 topics/optical-frequency-combs/papers/yi2016.yaml（Yi 2016 soliton access via thermal tuning）。该路径要求稳定的热双稳 + 红失谐软着陆。"
 
-  - id: rel.P13_15
+  - id: rel.papp_2013_13_15
     subject: met.microcomb_linespacing_tuning_range_p13
     predicate: BOUNDED-BY
     object: pri.parametric_seeding_microcomb_spacing_control
@@ -380,7 +380,7 @@ relations:
         source: {zotero_key: "BG93PZPK", claim: "future experiments will focus on … ∼picosecond optical waveforms associated with the microcomb spectra"}
         note: "跨文件引用：meth.laser_tuning_soliton_access 定义于 yi2016.yaml"
 
-  - id: rel.P13_16
+  - id: rel.papp_2013_13_16
     subject: ent.parametrically_seeded_microcomb_p13
     predicate: CONDITIONED-BY
     object: pri.microcomb_subcomb_offset_p13

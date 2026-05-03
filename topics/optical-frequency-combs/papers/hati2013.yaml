@@ -107,7 +107,7 @@ metrics:
         claim: "state-of-the-art RF signal generation at 100 MHz and 1 GHz"
 
 relations:
-  - id: rel.H01
+  - id: rel.hati_2013_01
     subject: ent.ofd_photonic_rf_source_hati2013
     predicate: CHARACTERIZED-BY
     object: met.absolute_timing_jitter_ofd_hati2013
@@ -116,7 +116,7 @@ relations:
       zotero_key: "JNDRRJTZ"
       claim: "absolute timing jitter 0.72 fs (1 Hz to 100 MHz)"
 
-  - id: rel.H02
+  - id: rel.hati_2013_02
     subject: ent.ofd_photonic_rf_source_hati2013
     predicate: IMPLEMENTS
     object: pri.optical_frequency_division_rf_generation
@@ -125,7 +125,7 @@ relations:
       zotero_key: "JNDRRJTZ"
       claim: "state-of-the-art RF signal generation from optical frequency division"
 
-  - id: rel.H03
+  - id: rel.hati_2013_03
     subject: meth.ofd_absolute_timing_jitter_measurement
     predicate: CHARACTERIZES
     object: ent.ofd_photonic_rf_source_hati2013

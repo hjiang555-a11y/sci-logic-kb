@@ -104,7 +104,7 @@ principles:
         context: "应用该原理实现首个二极管泵浦倍频程梳（115 mW, 93 MHz, >1 倍频程，电池供电），开创便携式 OFC 路线"
 
 relations:
-  - id: rel.Hol01
+  - id: rel.holzwarth_2001_ol01
     predicate: BOUNDED-BY
     subject: ent.diode_pumped_crlisaf_octave_comb_h01
     object: pri.diode_pumped_octave_comb_portability_h01
@@ -129,7 +129,7 @@ relations:
       BOUNDED-BY 关系：便携式倍频程梳的可行性受"泵浦激光器体积/功耗"限制，
       通过二极管泵浦 Cr:LiSAF 突破该限制。补 breakthrough_paths（breakthrough tier）。
 
-  - id: rel.Hol02
+  - id: rel.holzwarth_2001_ol02
     predicate: CHARACTERIZED-BY
     subject: ent.diode_pumped_crlisaf_octave_comb_h01
     object: met.diode_pumped_comb_slope_efficiency_h01

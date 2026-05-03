@@ -1,99 +1,100 @@
-# Loh 2019 — 超窄线宽布里渊激光
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-16
-# Schema版本：v4.1
-
 meta:
-  zotero_key: "UP2Q8F9Y"
+  zotero_key: UP2Q8F9Y
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: "Ultra-narrow linewidth Brillouin laser with nanokelvin temperature self-referencing"
+  title: Ultra-narrow linewidth Brillouin laser with nanokelvin temperature self-referencing
   year: 2019
   first_author: Loh
-  journal: "Optica"
+  journal: Optica
   volume: 6
   issue: 2
-  pages: "152-159"
-  doi: "10.1364/OPTICA.6.000152"
-  note: >
-    基于 2 m 光纤大模体积谐振器的受激布里渊散射（SBS）激光，
-    利用光纤的长时间常数抑制快速热波动，
-    纳开尔文级温度自参考实现超窄线宽。
-    核心贡献：SBS 激光作为紧凑超稳激光的替代方案。
+  pages: 152-159
+  doi: 10.1364/OPTICA.6.000152
+  note: '基于 2 m 光纤大模体积谐振器的受激布里渊散射（SBS）激光， 利用光纤的长时间常数抑制快速热波动， 纳开尔文级温度自参考实现超窄线宽。 核心贡献：SBS
+    激光作为紧凑超稳激光的替代方案。
 
+    '
 entities:
-  - id: ent.brillouin_fiber_laser_l19
-    name: "光纤布里渊激光器（Loh 2019）"
-    aliases: ["Brillouin laser", "SBS fiber laser"]
-    hierarchy_level: 1
-    status: demonstrated
-    function: >
-      大模体积光纤谐振器（2 m 光纤），受激布里渊散射（SBS）提供增益，
-      光纤的大热容量抑制快速温度波动（纳开尔文级自参考），
-      实现超窄线宽输出。紧凑便携。
-    key_parameters:
-      fiber_length: "2 m"
-      mechanism: "stimulated Brillouin scattering"
-      temperature_self_reference: "nanokelvin level"
-    practical_limitations:
-      - description: "长期稳定度受光纤热膨胀和应力松弛限制"
-        impact: "需要温度控制或校准"
-    note: "与 ent.fp_cavity_system COMPETES-WITH——紧凑替代方案。"
+- id: ent.brillouin_fiber_laser_l19
+  name: 光纤布里渊激光器（Loh 2019）
+  aliases:
+  - Brillouin laser
+  - SBS fiber laser
+  hierarchy_level: 1
+  status: demonstrated
+  function: '大模体积光纤谐振器（2 m 光纤），受激布里渊散射（SBS）提供增益， 光纤的大热容量抑制快速温度波动（纳开尔文级自参考）， 实现超窄线宽输出。紧凑便携。
 
+    '
+  key_parameters:
+    fiber_length: 2 m
+    mechanism: stimulated Brillouin scattering
+    temperature_self_reference: nanokelvin level
+  practical_limitations:
+  - description: 长期稳定度受光纤热膨胀和应力松弛限制
+    impact: 需要温度控制或校准
+  note: 与 ent.fp_cavity_system COMPETES-WITH——紧凑替代方案。
 principles:
-  - id: pri.sbs_thermal_self_referencing
-    name: "SBS 热自参考窄线宽原理"
-    tier: domain
-    verification_status: observed
-    statement: >
-      大模体积光纤谐振器的大热容量使温度波动以纳开尔文级
-      缓慢变化，谐振器频率在短时间尺度上极为稳定。
-      SBS 增益线宽（~MHz）远窄于腔 FSR，自然选择单频运行。
-      两者结合实现超窄线宽激光输出。
-    domain: "受激布里渊散射 / 窄线宽激光"
-    key_insight: "大模体积谐振器的热惯性提供天然的频率稳定性。"
-    conditions: "需要大模体积光纤谐振器和足够的泵浦功率"
-    source_claim: "large mode-volume optical resonator... suppress the resonator's fast thermal fluctuations, together with SBS nonlinearity"
+- id: pri.sbs_thermal_self_referencing
+  name: SBS 热自参考窄线宽原理
+  tier: domain
+  verification_status: observed
+  statement: '大模体积光纤谐振器的大热容量使温度波动以纳开尔文级 缓慢变化，谐振器频率在短时间尺度上极为稳定。 SBS 增益线宽（~MHz）远窄于腔
+    FSR，自然选择单频运行。 两者结合实现超窄线宽激光输出。
 
+    '
+  domain: 受激布里渊散射 / 窄线宽激光
+  key_insight: 大模体积谐振器的热惯性提供天然的频率稳定性。
+  conditions: 需要大模体积光纤谐振器和足够的泵浦功率
+  source_claim: large mode-volume optical resonator... suppress the resonator's fast
+    thermal fluctuations, together with SBS nonlinearity
 methods:
-  - id: meth.sbs_thermal_self_referencing_l19
-    name: "SBS热自参考窄线宽稳频方法"
-    aliases: ["布里渊激光稳频", "光纤大模体积谐振器稳频"]
-    purpose: "利用光纤大模体积谐振器的热惯性和SBS增益自然窄线宽特性实现超窄线宽激光输出"
-    implementation:
-      - "使用2米长光纤形成大模体积谐振器"
-      - "通过受激布里渊散射提供窄线宽增益"
-      - "依靠光纤的大热容量抑制快速热波动"
-      - "实现纳开尔文级温度自参考"
-    key_parameters:
-      fiber_length: "2 m"
-      thermal_self_reference_level: "nanokelvin"
-    applicable_when: "需要紧凑型超稳激光源，对长期稳定度要求不高但追求短期超窄线宽"
-    note: "与 ent.fp_cavity_system 的PDH锁频方法竞争，提供更紧凑的解决方案"
-
+- id: meth.sbs_thermal_self_referencing_l19
+  name: SBS热自参考窄线宽稳频方法
+  aliases:
+  - 布里渊激光稳频
+  - 光纤大模体积谐振器稳频
+  purpose: 利用光纤大模体积谐振器的热惯性和SBS增益自然窄线宽特性实现超窄线宽激光输出
+  implementation:
+  - 使用2米长光纤形成大模体积谐振器
+  - 通过受激布里渊散射提供窄线宽增益
+  - 依靠光纤的大热容量抑制快速热波动
+  - 实现纳开尔文级温度自参考
+  key_parameters:
+    fiber_length: 2 m
+    thermal_self_reference_level: nanokelvin
+  applicable_when: 需要紧凑型超稳激光源，对长期稳定度要求不高但追求短期超窄线宽
+  note: 与 ent.fp_cavity_system 的PDH锁频方法竞争，提供更紧凑的解决方案
 metrics: []
-
 relations:
-  - id: rel.LO01
-    subject: ent.brillouin_fiber_laser_l19
-    predicate: COMPETES-WITH
-    object: ent.fp_cavity_system
-    confidence: likely
-    source: {zotero_key: "UP2Q8F9Y", claim: "sufficiently compact and portable for field use"}
-    note: "布里渊激光器作为紧凑超稳激光替代方案"
-
-  - id: rel.LO02
-    subject: ent.brillouin_fiber_laser_l19
-    predicate: ENABLED-BY
-    object: pri.sbs_thermal_self_referencing
-    confidence: established
-    source: {zotero_key: "UP2Q8F9Y", claim: "large mode-volume resonator suppresses fast thermal fluctuations"}
-
-  - id: rel.LO03
-    subject: meth.sbs_thermal_self_referencing_l19
-    predicate: COMPETES-WITH
-    object: meth.microcomb_self_referencing
-    confidence: likely
-    source: {zotero_key: "UP2Q8F9Y", claim: "a chip-scale alternative to cavity-stabilized reference lasers for integrated timing and metrology"}
-    note: "SBS 自参考是紧凑超稳激光→自参考路径的独立工程方案，与光梳路径的 DKS 微梳自参考形成并列选项；meth.microcomb_self_referencing 定义于 kippenberg2018.yaml（跨专题引用）"
+- id: rel.loh_2019_O01
+  subject: ent.brillouin_fiber_laser_l19
+  predicate: COMPETES-WITH
+  object: ent.fp_cavity_system
+  confidence: likely
+  source:
+    zotero_key: UP2Q8F9Y
+    claim: sufficiently compact and portable for field use
+  note: 布里渊激光器作为紧凑超稳激光替代方案
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/loh2019.yaml
+- id: rel.loh_2019_O02
+  subject: ent.brillouin_fiber_laser_l19
+  predicate: ENABLED-BY
+  object: pri.sbs_thermal_self_referencing
+  confidence: established
+  source:
+    zotero_key: UP2Q8F9Y
+    claim: large mode-volume resonator suppresses fast thermal fluctuations
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/loh2019.yaml
+- id: rel.loh_2019_O03
+  subject: meth.sbs_thermal_self_referencing_l19
+  predicate: COMPETES-WITH
+  object: meth.microcomb_self_referencing
+  confidence: likely
+  source:
+    zotero_key: UP2Q8F9Y
+    claim: a chip-scale alternative to cavity-stabilized reference lasers for integrated
+      timing and metrology
+  note: SBS 自参考是紧凑超稳激光→自参考路径的独立工程方案，与光梳路径的 DKS 微梳自参考形成并列选项；meth.microcomb_self_referencing
+    定义于 kippenberg2018.yaml（跨专题引用）
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/loh2019.yaml

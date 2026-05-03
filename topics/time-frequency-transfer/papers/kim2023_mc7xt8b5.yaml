@@ -66,7 +66,7 @@ principles:
     source_claim: "differential spectroscopy, a comparison protocol that enables interrogating ... beyond the single-clock coherence time"
 
 relations:
-  - id: rel.Kim23_01
+  - id: rel.kim_2022_im23_01
     subject: ent.differential_spectroscopy_interspecies_k23
     predicate: OPERATIONALIZED-AS
     object: pri.differential_spectroscopy_lo_coherence_bypass
@@ -74,7 +74,7 @@ relations:
       paper: kim2023
       claim: "differential spectroscopy ... enables interrogating ... beyond the single-clock coherence time"
 
-  - id: rel.Kim23_02
+  - id: rel.kim_2022_im23_02
     subject: ent.differential_spectroscopy_interspecies_k23
     predicate: CONDITIONED-BY
     object: ent.fp_cavity_system

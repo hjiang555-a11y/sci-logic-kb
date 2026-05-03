@@ -231,14 +231,14 @@ metrics:
 # ═══════════════════════════════════════════════
 
 relations:
-  - id: rel.D00_01
+  - id: rel.diddams_2000_00_01
     subject: ent.air_silica_microstructure_fiber_d00
     predicate: PART-OF
     object: ent.octave_spanning_tisa_comb_d00
     confidence: established
     source: {zotero_key: "9BV3WBSH", claim: "approximately 40 mW of the fs laser light is coupled into a 5 or 10 cm piece of an air-silica microstructure fiber"}
 
-  - id: rel.D00_02
+  - id: rel.diddams_2000_00_02
     subject: ent.octave_spanning_tisa_comb_d00
     predicate: CHARACTERIZED-BY
     object: met.comb_spectral_bandwidth
@@ -246,7 +246,7 @@ relations:
     source: {zotero_key: "9BV3WBSH", claim: "the spectral output of the fiber covers more than an octave in the optical domain"}
     temporal_role: validates
 
-  - id: rel.D00_03
+  - id: rel.diddams_2000_00_03
     subject: ent.octave_spanning_tisa_comb_d00
     predicate: CHARACTERIZED-BY
     object: met.optical_frequency_measurement_uncertainty_d00
@@ -254,21 +254,21 @@ relations:
     source: {zotero_key: "9BV3WBSH", claim: "statistical uncertainty of about 50 Hz, or 2 × 10⁻¹³"}
     conditions: "2500 s 积分，I₂-Nd:YAG@1064 nm"
 
-  - id: rel.D00_04
+  - id: rel.diddams_2000_00_04
     subject: meth.octave_f2f_optical_frequency_measurement
     predicate: ENABLED-BY
     object: pri.supercontinuum_octave_spanning
     confidence: established
     source: {zotero_key: "9BV3WBSH", claim: "an air-silica microstructure optical fiber broadens the frequency comb ... to span the optical octave"}
 
-  - id: rel.D00_05
+  - id: rel.diddams_2000_00_05
     subject: meth.octave_f2f_optical_frequency_measurement
     predicate: ENABLED-BY
     object: pri.octave_spanning_enables_f2f_self_reference
     confidence: established
     source: {zotero_key: "9BV3WBSH", claim: "obviates the need for even the single divider stage"}
 
-  - id: rel.D00_06
+  - id: rel.diddams_2000_00_06
     subject: pri.octave_spanning_enables_f2f_self_reference
     predicate: DERIVED-FROM
     object: pri.self_referencing_f2f
@@ -276,14 +276,14 @@ relations:
     source: {zotero_key: "9BV3WBSH", claim: "phase-coherently bridge the gap between the fundamental and its second harmonic"}
     note: "pri.self_referencing_f2f 定义于 giunta2019.yaml / udem2002.yaml（跨文件引用）"
 
-  - id: rel.D00_07
+  - id: rel.diddams_2000_00_07
     subject: met.optical_frequency_measurement_uncertainty_d00
     predicate: OPERATIONALIZED-AS
     object: meth.octave_f2f_optical_frequency_measurement
     confidence: established
     source: {zotero_key: "9BV3WBSH", claim: "optical frequency determined with statistical uncertainty of about 50 Hz via femtosecond comb measurement"}
 
-  - id: rel.D00_08
+  - id: rel.diddams_2000_00_08
     subject: met.optical_frequency_measurement_uncertainty_d00
     predicate: BOUNDED-BY
     object: pri.microwave_reference_noise_limit

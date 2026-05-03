@@ -62,7 +62,7 @@ entities:
     note: "Level 2 实例，PART-OF ent.pulsed_optical_link_elt_plus（已定义于 cacciapuoti2017）"
 
 relations:
-  - id: rel.She21_01
+  - id: rel.shen_2021_he21_01
     subject: ent.optical_satellite_ground_link_s21
     predicate: PART-OF
     object: ent.pulsed_optical_link_elt_plus
@@ -71,7 +71,7 @@ relations:
       claim: "optical-based satellite–ground link, where the transferred carriers are pulsed lasers"
     note: "ent.pulsed_optical_link_elt_plus 定义于 cacciapuoti2017"
 
-  - id: rel.She21_02
+  - id: rel.shen_2021_he21_02
     subject: ent.optical_satellite_ground_link_s21
     predicate: CHARACTERIZED-BY
     object: met.space_to_ground_link_instability

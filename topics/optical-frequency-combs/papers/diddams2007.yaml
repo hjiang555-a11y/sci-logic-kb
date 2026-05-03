@@ -97,7 +97,7 @@ principles:
         context: "应用该原理实现首个分辨梳模式分子指纹光谱仪（世界首次，2007），演示碘分子蒸气高分辨吸收谱，采集时间数毫秒"
 
 relations:
-  - id: rel.Did07_01
+  - id: rel.diddams_2007_id07_01
     predicate: BOUNDED-BY
     subject: ent.vipa_resolved_mode_comb_spectrometer_d07
     object: pri.vipa_spatial_comb_mode_resolution_d07

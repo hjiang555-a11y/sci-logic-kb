@@ -132,28 +132,28 @@ metrics:
         source: {zotero_key: "6JY7ZNWX"}
 
 relations:
-  - id: rel.L17_01
+  - id: rel.li_2017_17_01
     subject: ent.octave_si3n4_microcomb_l17
     predicate: CHARACTERIZED-BY
     object: met.microcomb_soliton_pump_power_threshold
     confidence: established
     source: {zotero_key: "6JY7ZNWX", claim: "The octave-spanning Si₃N₄ microcomb requires ~120 mW pump power for single-soliton and ~40 mW for multi-soliton states."}
 
-  - id: rel.L17_02
+  - id: rel.li_2017_17_02
     subject: ent.octave_si3n4_microcomb_l17
     predicate: CHARACTERIZED-BY
     object: met.microcomb_spectral_bandwidth
     confidence: established
     source: {zotero_key: "6JY7ZNWX", claim: "octave-spanning soliton frequency combs in Si3N4"}
 
-  - id: rel.L17_03
+  - id: rel.li_2017_17_03
     subject: meth.laser_tuning_soliton_access
     predicate: ENABLED-BY
     object: pri.adjacent_mode_thermal_stabilization
     confidence: established
     source: {zotero_key: "6JY7ZNWX", claim: "adjacent mode family member ... helps stabilize the thermal dynamics during soliton formation"}
 
-  - id: rel.L17_04
+  - id: rel.li_2017_17_04
     subject: meth.laser_tuning_soliton_access
     predicate: ENABLED-BY
     object: pri.dissipative_kerr_soliton
@@ -161,7 +161,7 @@ relations:
     source: {zotero_key: "6JY7ZNWX", claim: "Soliton states in Kerr microcavities represent a path to low-noise comb formation"}
     note: "pri.dissipative_kerr_soliton 定义于 kippenberg2018.yaml"
 
-  - id: rel.L17_05
+  - id: rel.li_2017_17_05
     subject: ent.octave_si3n4_microcomb_l17
     predicate: BOUNDED-BY
     object: pri.thermo_optic_soliton_access_barrier
@@ -177,7 +177,7 @@ relations:
         status: demonstrated
         source: {zotero_key: "6JY7ZNWX"}
 
-  - id: rel.L17_06
+  - id: rel.li_2017_17_06
     subject: ent.octave_si3n4_microcomb_l17
     predicate: PART-OF
     object: ent.microresonator_frequency_comb
@@ -185,7 +185,7 @@ relations:
     source: {zotero_key: "6JY7ZNWX", claim: "The octave-spanning Si₃N₄ microcomb is an instance of the microresonator frequency comb platform."}
     note: "ent.microresonator_frequency_comb 定义于 kippenberg2011.yaml"
 
-  - id: rel.L17_07
+  - id: rel.li_2017_17_07
     subject: ent.octave_si3n4_microcomb_l17
     predicate: COMPETES-WITH
     object: ent.optical_frequency_comb

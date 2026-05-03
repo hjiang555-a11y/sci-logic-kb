@@ -68,7 +68,7 @@ metrics:
       source: "raupach2014"
 
 relations:
-  - id: rel.R14_01
+  - id: rel.raupach_2014_14_01
     subject: ent.ptb_149km_chirped_link_r14
     predicate: PART-OF
     object: ent.coherent_optical_fiber_link
@@ -77,7 +77,7 @@ relations:
       claim: "phase-stabilized transfer ... fiber link of around 149 km"
     note: "ent.coherent_optical_fiber_link 定义于 calonico2015"
 
-  - id: rel.R14_02
+  - id: rel.raupach_2014_14_02
     subject: ent.ptb_149km_chirped_link_r14
     predicate: OPERATIONALIZED-AS
     object: pri.chirped_carrier_symmetric_delay_cancellation
@@ -85,7 +85,7 @@ relations:
       paper: raupach2014
       claim: "transfer of a chirped frequency as a tool for synchronization and time transfer"
 
-  - id: rel.R14_03
+  - id: rel.raupach_2014_14_03
     subject: ent.ptb_149km_chirped_link_r14
     predicate: CHARACTERIZED-BY
     object: met.chirped_tf_sync_precision
@@ -93,7 +93,7 @@ relations:
       paper: raupach2014
       claim: "precision of around 200 ps at an estimated overall uncertainty of around 500 ps"
 
-  - id: rel.R14_04
+  - id: rel.raupach_2014_14_04
     subject: ent.ptb_149km_chirped_link_r14
     predicate: ENABLED-BY
     object: pri.noise_cancellation_frequency_transfer

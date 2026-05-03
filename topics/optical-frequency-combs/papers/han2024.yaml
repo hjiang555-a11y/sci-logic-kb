@@ -442,7 +442,7 @@ metrics:
 # ═══════════════════════════════════════════════
 
 relations:
-  - id: rel.Han01
+  - id: rel.han_2024_an01
     subject: ent.long_path_dcs_h24
     predicate: PART-OF
     object: ent.dual_comb_spectrometer
@@ -452,7 +452,7 @@ relations:
     temporal_role: extends
     note: "跨文件引用：ent.dual_comb_spectrometer 权威定义于 coddington2016.yaml。"
 
-  - id: rel.Han02
+  - id: rel.han_2024_an02
     subject: ent.high_power_erbium_comb_h24
     predicate: PART-OF
     object: ent.long_path_dcs_h24
@@ -462,7 +462,7 @@ relations:
     temporal_role: validates
     note: null
 
-  - id: rel.Han03
+  - id: rel.han_2024_an03
     subject: ent.bistatic_two_way_optical_link_h24
     predicate: PART-OF
     object: ent.long_path_dcs_h24
@@ -472,7 +472,7 @@ relations:
     temporal_role: validates
     note: null
 
-  - id: rel.Han04
+  - id: rel.han_2024_an04
     subject: ent.long_path_dcs_h24
     predicate: CHARACTERIZED-BY
     object: met.open_path_length_dcs_h24
@@ -482,7 +482,7 @@ relations:
     temporal_role: validates
     note: "世界纪录级长度。"
 
-  - id: rel.Han05
+  - id: rel.han_2024_an05
     subject: ent.long_path_dcs_h24
     predicate: CHARACTERIZED-BY
     object: met.channel_loss_dcs_h24
@@ -492,7 +492,7 @@ relations:
     temporal_role: validates
     note: null
 
-  - id: rel.Han06
+  - id: rel.han_2024_an06
     subject: ent.long_path_dcs_h24
     predicate: CHARACTERIZED-BY
     object: met.freq_accuracy_dcs_h24
@@ -502,7 +502,7 @@ relations:
     temporal_role: validates
     note: null
 
-  - id: rel.Han07
+  - id: rel.han_2024_an07
     subject: ent.long_path_dcs_h24
     predicate: CHARACTERIZED-BY
     object: met.co2_precision_allan_h24
@@ -512,7 +512,7 @@ relations:
     temporal_role: validates
     note: null
 
-  - id: rel.Han08
+  - id: rel.han_2024_an08
     subject: ent.long_path_dcs_h24
     predicate: CHARACTERIZED-BY
     object: met.spectral_coverage_h24
@@ -522,7 +522,7 @@ relations:
     temporal_role: validates
     note: null
 
-  - id: rel.Han09
+  - id: rel.han_2024_an09
     subject: ent.long_path_dcs_h24
     predicate: CHARACTERIZED-BY
     object: met.freq_resolution_dcs_h24
@@ -532,7 +532,7 @@ relations:
     temporal_role: validates
     note: null
 
-  - id: rel.Han10
+  - id: rel.han_2024_an10
     subject: meth.bistatic_two_way_dcs_protocol_h24
     predicate: ENABLED-BY
     object: pri.bistatic_two_way_dcs_geometry
@@ -542,7 +542,7 @@ relations:
     temporal_role: proposes
     note: null
 
-  - id: rel.Han11
+  - id: rel.han_2024_an11
     subject: meth.bistatic_two_way_dcs_protocol_h24
     predicate: ENABLED-BY
     object: pri.interferogram_embedded_freq_comparison
@@ -552,7 +552,7 @@ relations:
     temporal_role: proposes
     note: null
 
-  - id: rel.Han12
+  - id: rel.han_2024_an12
     subject: meth.bistatic_two_way_dcs_protocol_h24
     predicate: ENABLED-BY
     object: pri.turbulence_speckle_freeze_dcs
@@ -562,7 +562,7 @@ relations:
     temporal_role: validates
     note: null
 
-  - id: rel.Han13
+  - id: rel.han_2024_an13
     subject: meth.bistatic_two_way_dcs_protocol_h24
     predicate: ENABLED-BY
     object: pri.coherent_averaging_background_noise_suppression
@@ -572,7 +572,7 @@ relations:
     temporal_role: validates
     note: null
 
-  - id: rel.Han14
+  - id: rel.han_2024_an14
     subject: meth.bistatic_two_way_dcs_protocol_h24
     predicate: ENABLED-BY
     object: pri.dual_comb_multiheterodyne_detection
@@ -582,7 +582,7 @@ relations:
     temporal_role: extends
     note: "跨文件：pri.dual_comb_multiheterodyne_detection 定义于 coddington2016.yaml。"
 
-  - id: rel.Han15
+  - id: rel.han_2024_an15
     subject: meth.threshold_triggered_ifg_acquisition_h24
     predicate: PART-OF
     object: meth.bistatic_two_way_dcs_protocol_h24
@@ -592,7 +592,7 @@ relations:
     temporal_role: proposes
     note: null
 
-  - id: rel.Han16
+  - id: rel.han_2024_an16
     subject: ent.long_path_dcs_h24
     predicate: CONDITIONED-BY
     object: ent.atmospheric_turbulence_channel
@@ -602,7 +602,7 @@ relations:
     temporal_role: validates
     note: "外围条件接口节点。"
 
-  - id: rel.Han17
+  - id: rel.han_2024_an17
     subject: met.open_path_length_dcs_h24
     predicate: BOUNDED-BY
     object: pri.photon_starved_open_path_dcs_limit
@@ -625,7 +625,7 @@ relations:
         source: {zotero_key: "AZ25GQE3", claim: "we develop high-power optical combs and ultrasensitive detection set-up to cope with the large loss of the link"}
         note: null
 
-  - id: rel.Han18
+  - id: rel.han_2024_an18
     subject: met.open_path_length_dcs_h24
     predicate: BOUNDED-BY
     object: pri.turbulence_speckle_freeze_dcs
@@ -641,7 +641,7 @@ relations:
     temporal_role: validates
     note: null
 
-  - id: rel.Han19
+  - id: rel.han_2024_an19
     subject: met.spectral_coverage_h24
     predicate: BOUNDED-BY
     object: pri.bandwidth_power_tradeoff_long_path_comb
@@ -657,7 +657,7 @@ relations:
     temporal_role: validates
     note: null
 
-  - id: rel.Han20
+  - id: rel.han_2024_an20
     subject: met.freq_accuracy_dcs_h24
     predicate: OPERATIONALIZED-AS
     object: meth.bistatic_two_way_dcs_protocol_h24
@@ -667,7 +667,7 @@ relations:
     temporal_role: validates
     note: null
 
-  - id: rel.Han21
+  - id: rel.han_2024_an21
     subject: meth.bistatic_two_way_dcs_protocol_h24
     predicate: COMPETES-WITH
     object: meth.dual_comb_spectroscopy

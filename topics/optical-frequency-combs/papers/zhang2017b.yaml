@@ -72,7 +72,7 @@ principles:
       "Our experimental results show that frequency control dynamic ranges are at least one order of magnitude larger than those of the previous ultra-fast frequency control techniques, reaching hundreds of hertz and hundreds of megahertz for repetition rate (fr) and carrier-envelope-offset frequency (fceo), respectively."
 
 relations:
-  - id: rel.Zha17_01
+  - id: rel.zhang_2017_ha17_01
     subject: ent.ntsc_polarization_rotation_eom_comb_z17
     predicate: PART-OF
     object: ent.er_fiber_frequency_comb
@@ -80,14 +80,14 @@ relations:
     source: {zotero_key: "V7MNFM68", claim: "nonlinear polarization-rotation mode-locked laser"}
     note: "跨文件引用 ent.er_fiber_frequency_comb（定义于 droste2016.yaml）"
 
-  - id: rel.Zha17_02
+  - id: rel.zhang_2017_ha17_02
     subject: ent.ntsc_polarization_rotation_eom_comb_z17
     predicate: CHARACTERIZED-BY
     object: pri.polarization_rotation_cavity_loss_frequency_control_z17
     confidence: established
     source: {zotero_key: "V7MNFM68", claim: "intracavity electro-optic modulator tunes the polarization state ... dynamic ranges ... at least one order of magnitude larger"}
 
-  - id: rel.Zha17_03
+  - id: rel.zhang_2017_ha17_03
     subject: pri.polarization_rotation_cavity_loss_frequency_control_z17
     predicate: BOUNDED-BY
     object: pri.gain_lifetime_servo_bandwidth_limit

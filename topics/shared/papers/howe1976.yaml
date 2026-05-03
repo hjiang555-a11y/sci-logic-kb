@@ -115,7 +115,7 @@ methods:
 metrics: []
 
 relations:
-  - id: rel.H76_01
+  - id: rel.howe_1976_76_01
     subject: meth.phase_noise_psd_measurement
     predicate: OPERATIONALIZED-AS
     object: pri.phase_noise_frequency_noise_psd_duality
@@ -123,7 +123,7 @@ relations:
     source: {zotero_key: "HOWE1976-NBS-TN679", claim: "S_phi(f) is measured directly and converted to S_y(f) via the duality relation S_y(f) = (f/ν₀)² S_phi(f)."}
     note: "相位噪声测量方法承载相位-频率噪声 PSD 对偶的原理。"
 
-  - id: rel.H76_02
+  - id: rel.howe_1976_76_02
     subject: meth.allan_deviation_adev
     predicate: CONDITIONED-BY
     object: pri.time_frequency_domain_transfer_function

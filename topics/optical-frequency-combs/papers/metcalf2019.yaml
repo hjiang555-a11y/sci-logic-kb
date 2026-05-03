@@ -377,21 +377,21 @@ metrics:
 # ═══════════════════════════════════════════════
 
 relations:
-  - id: rel.M19_01
+  - id: rel.metcalf_2019_19_01
     subject: ent.sin_nanophotonic_waveguide_m19
     predicate: PART-OF
     object: ent.hpf_nir_astrocomb_m19
     confidence: established
     source: {zotero_key: "9YYDT9H4", claim: "focused into a 25 mm long nonlinear silicon nitride (SiN) waveguide"}
 
-  - id: rel.M19_02
+  - id: rel.metcalf_2019_19_02
     subject: ent.dynamic_fiber_scrambler_m19
     predicate: PART-OF
     object: ent.hpf_nir_astrocomb_m19
     confidence: established
     source: {zotero_key: "9YYDT9H4", claim: "a 300 μm dynamic fiber agitator, which is coupled to one port of a 2 inch integrating sphere"}
 
-  - id: rel.M19_03
+  - id: rel.metcalf_2019_19_03
     subject: ent.hpf_nir_astrocomb_m19
     predicate: CHARACTERIZED-BY
     object: met.astrocomb_mode_spacing_m19
@@ -399,7 +399,7 @@ relations:
     source: {zotero_key: "9YYDT9H4", claim: "teeth spaced exactly by the microwave drive frequency"}
     temporal_role: validates
 
-  - id: rel.M19_04
+  - id: rel.metcalf_2019_19_04
     subject: ent.hpf_nir_astrocomb_m19
     predicate: CHARACTERIZED-BY
     object: met.astrocomb_spectral_coverage_m19
@@ -407,7 +407,7 @@ relations:
     source: {zotero_key: "9YYDT9H4", claim: "supercontinuum spectrum spanning 700–1600 nm"}
     temporal_role: validates
 
-  - id: rel.M19_05
+  - id: rel.metcalf_2019_19_05
     subject: ent.hpf_nir_astrocomb_m19
     predicate: CHARACTERIZED-BY
     object: met.comb_fractional_stability_m19
@@ -415,7 +415,7 @@ relations:
     source: {zotero_key: "9YYDT9H4", claim: "stability of the comb matches that of the GPS-disciplined clock"}
     temporal_role: validates
 
-  - id: rel.M19_06
+  - id: rel.metcalf_2019_19_06
     subject: ent.hpf_spectrograph_m19
     predicate: CHARACTERIZED-BY
     object: met.hpf_instrumental_rv_precision_m19
@@ -423,7 +423,7 @@ relations:
     source: {zotero_key: "9YYDT9H4", claim: "comb-calibrated HPF has the intrinsic stability to support infrared spectroscopy with precision below 10 cm/s"}
     temporal_role: validates
 
-  - id: rel.M19_07
+  - id: rel.metcalf_2019_19_07
     subject: meth.eo_sin_astrocomb_calibration_m19
     predicate: CHARACTERIZED-BY
     object: met.stellar_rv_precision_nir_m19
@@ -431,35 +431,35 @@ relations:
     source: {zotero_key: "9YYDT9H4", claim: "stellar RVs approaching 1 m/s"}
     temporal_role: validates
 
-  - id: rel.M19_08
+  - id: rel.metcalf_2019_19_08
     subject: meth.eo_sin_astrocomb_calibration_m19
     predicate: ENABLED-BY
     object: pri.eo_comb_direct_ghz_spacing
     confidence: established
     source: {zotero_key: "9YYDT9H4", claim: "a comb of approximately 100 teeth spaced exactly by the microwave drive frequency"}
 
-  - id: rel.M19_09
+  - id: rel.metcalf_2019_19_09
     subject: meth.eo_sin_astrocomb_calibration_m19
     predicate: ENABLED-BY
     object: pri.nanophotonic_supercontinuum_low_power
     confidence: established
     source: {zotero_key: "9YYDT9H4", claim: "supercontinuum spectrum spanning 700–1600 nm with only 525 mW of incident average power"}
 
-  - id: rel.M19_10
+  - id: rel.metcalf_2019_19_10
     subject: meth.eo_sin_astrocomb_calibration_m19
     predicate: ENABLED-BY
     object: pri.gps_disciplined_si_traceability
     confidence: established
     source: {zotero_key: "9YYDT9H4", claim: "referenced to a GPS-disciplined clock that provides absolute traceability to the SI second"}
 
-  - id: rel.M19_11
+  - id: rel.metcalf_2019_19_11
     subject: met.hpf_instrumental_rv_precision_m19
     predicate: OPERATIONALIZED-AS
     object: meth.common_comb_differential_rv_test
     confidence: established
     source: {zotero_key: "9YYDT9H4", claim: "The difference of the RVs of the two channels is shown in Fig. 4(c)"}
 
-  - id: rel.M19_12
+  - id: rel.metcalf_2019_19_12
     subject: met.stellar_rv_precision_nir_m19
     predicate: BOUNDED-BY
     object: pri.fiber_modal_noise_nir_rv_limit
@@ -477,7 +477,7 @@ relations:
         source: {zotero_key: "9YYDT9H4", claim: "Further improvements ... should be possible with algorithmic improvements, better characterization of the NIR detectors, and better modal scrambling"}
         note: "本文未完成，仅指明路径；需结合全单模光路工程化"
 
-  - id: rel.M19_13
+  - id: rel.metcalf_2019_19_13
     subject: met.hpf_instrumental_rv_precision_m19
     predicate: BOUNDED-BY
     object: pri.fiber_modal_noise_nir_rv_limit
@@ -490,7 +490,7 @@ relations:
         source: {zotero_key: "9YYDT9H4", claim: "Further improvements towards the photon-limited precision should be possible with algorithmic improvements, better characterization of the NIR detectors, and better modal scrambling"}
         note: "meth.astro_comb_rv_calibration 定义于 topics/optical-frequency-combs/papers/ycas2012.yaml；这里引用其定标范式作为后续优化方向的通用框架。"
 
-  - id: rel.M19_14
+  - id: rel.metcalf_2019_19_14
     subject: ent.hpf_nir_astrocomb_m19
     predicate: COMPETES-WITH
     object: ent.near_ir_astro_comb_y12
@@ -501,7 +501,7 @@ relations:
       Metcalf 2019 采用 EO 直接 30 GHz + 纳米光子 SC，免去模式过滤滤波链。
       二者同在 NIR 天文梳层面解同一问题，工程路径不同，长期稳定性取舍不同。
 
-  - id: rel.M19_15
+  - id: rel.metcalf_2019_19_15
     subject: ent.hpf_nir_astrocomb_m19
     predicate: CONDITIONED-BY
     object: ent.hpf_spectrograph_m19

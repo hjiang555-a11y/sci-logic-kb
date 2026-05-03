@@ -76,7 +76,7 @@ methods:
       - "梳伺服带宽需足够宽（mHz 级线宽转移）"
 
 relations:
-  - id: rel.Ina13_01
+  - id: rel.inaba_2013_na13_01
     subject: ent.fiber_comb_linewidth_transfer_yb_clock_i13
     predicate: PART-OF
     object: ent.er_fiber_frequency_comb
@@ -84,14 +84,14 @@ relations:
     source: {zotero_key: "Y7KZ89LA", claim: "fiber-based frequency comb"}
     note: "跨文件引用 ent.er_fiber_frequency_comb（定义于 droste2016.yaml）"
 
-  - id: rel.Ina13_02
+  - id: rel.inaba_2013_na13_02
     subject: meth.fiber_comb_linewidth_transfer_i13
     predicate: OPERATIONALIZED-AS
     object: ent.fiber_comb_linewidth_transfer_yb_clock_i13
     confidence: established
     source: {zotero_key: "Y7KZ89LA", claim: "phase locking a comb mode to an ultrastable master laser at 1064 nm"}
 
-  - id: rel.Ina13_03
+  - id: rel.inaba_2013_na13_03
     subject: meth.fiber_comb_linewidth_transfer_i13
     predicate: ENABLED-BY
     object: pri.frequency_ratio_measurement

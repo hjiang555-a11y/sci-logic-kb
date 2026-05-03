@@ -206,7 +206,7 @@ metrics:
 # ═══════════════════════════════════════════════
 
 relations:
-  - id: rel.P18_01
+  - id: rel.pasquazi_2016_18_01
     subject: ent.bulk_wgm_resonator_platform
     predicate: COMPETES-WITH
     object: ent.cmos_integrated_resonator_platform
@@ -214,7 +214,7 @@ relations:
       claim: "bulk resonators possess the best Q-factors demonstrated thus far, as well as silicon nitride... for their potential as on-chip optical sources"
       section: "Conclusions (Section 9)"
 
-  - id: rel.P18_02
+  - id: rel.pasquazi_2016_18_02
     subject: ent.cmos_integrated_resonator_platform
     predicate: CHARACTERIZED-BY
     object: met.microcomb_q_factor_record_p18
@@ -222,7 +222,7 @@ relations:
       claim: "extensive review of Q-factors across platforms"
       section: "Section 2"
 
-  - id: rel.P18_03
+  - id: rel.pasquazi_2016_18_03
     subject: ent.microresonator_frequency_comb
     predicate: BOUNDED-BY
     object: pri.thermal_instability_dks_access
@@ -231,7 +231,7 @@ relations:
       section: "Section 6.1.1"
     note: "跨文件引用，ent.microresonator_frequency_comb 定义于 kippenberg2011.yaml"
 
-  - id: rel.P18_04
+  - id: rel.pasquazi_2016_18_04
     subject: pri.dissipative_kerr_soliton
     predicate: DERIVED-FROM
     object: pri.lugiato_lefever_equation
@@ -240,7 +240,7 @@ relations:
       section: "Conclusions (Section 9)"
     note: "pasquazi2018 综述对已有 kippenberg2018 canonical DKS↔LLE 关系的 corroborative 引用；原 subject pri.temporal_cavity_soliton_dks 于 2026-04-21 P2.2 合并到 pri.dissipative_kerr_soliton"
 
-  - id: rel.P18_05
+  - id: rel.pasquazi_2016_18_05
     subject: pri.dissipative_kerr_soliton
     predicate: DERIVED-FROM
     object: pri.parametric_four_wave_mixing_comb
@@ -249,7 +249,7 @@ relations:
       section: "Conclusions (Section 9)"
     note: "原 subject pri.temporal_cavity_soliton_dks 于 2026-04-21 P2.2 合并到 pri.dissipative_kerr_soliton"
 
-  - id: rel.P18_06
+  - id: rel.pasquazi_2016_18_06
     subject: ent.filter_driven_fwm_laser
     predicate: PART-OF
     object: ent.microresonator_frequency_comb
@@ -257,7 +257,7 @@ relations:
       claim: "alternative techniques for micro-comb generation, such as... filter-driven four-wave mixing"
       section: "Conclusions (Section 9)"
 
-  - id: rel.P18_07
+  - id: rel.pasquazi_2016_18_07
     subject: pri.mode_interaction_comb_generation
     predicate: ENABLES
     object: ent.microresonator_frequency_comb
@@ -265,7 +265,7 @@ relations:
       claim: "mode interactions are very useful for comb generation in the normal dispersion region"
       section: "Section 6.2.1"
 
-  - id: rel.P18_08
+  - id: rel.pasquazi_2016_18_08
     subject: ent.microresonator_frequency_comb
     predicate: BOUNDED-BY
     object: pri.microcomb_self_injection_locking

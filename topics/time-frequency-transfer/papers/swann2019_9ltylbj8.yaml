@@ -58,7 +58,7 @@ principles:
     source_claim: "transverse platform motion coupled with spatial variations in atmospheric optical turbulence will lead to a breakdown in the time-of-flight reciprocity"
 
 relations:
-  - id: rel.Swa19_01
+  - id: rel.swann_2019_wa19_01
     subject: ent.anisoplanatism_study_link_sw19
     predicate: PART-OF
     object: ent.free_space_optical_tf_link
@@ -66,7 +66,7 @@ relations:
       paper: swann2019
       claim: "comb-based optical two-way time-frequency transfer over two spatially separated optical links"
 
-  - id: rel.Swa19_02
+  - id: rel.swann_2019_wa19_02
     subject: ent.free_space_optical_tf_link
     predicate: BOUNDED-BY
     object: pri.turbulence_anisoplanatism_tf_degradation
@@ -74,7 +74,7 @@ relations:
       paper: swann2019
       claim: "breakdown in the time-of-flight reciprocity"
 
-  - id: rel.Swa19_03
+  - id: rel.swann_2019_wa19_03
     subject: ent.anisoplanatism_study_link_sw19
     predicate: OPERATIONALIZED-AS
     object: pri.turbulence_anisoplanatism_tf_degradation

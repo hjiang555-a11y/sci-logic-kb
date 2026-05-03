@@ -110,7 +110,7 @@ metrics:
       - "与 Williams 2008 / Jiang 2008 先前梳传递 10⁻¹⁵ 级比：本工作提升 3 个数量级"
 
 relations:
-  - id: rel.Mar12_01
+  - id: rel.marra_2012_ar12_01
     subject: ent.npl_fiber_comb_transfer_system_m12
     predicate: PART-OF
     object: ent.precision_frequency_transfer_system_f22
@@ -120,7 +120,7 @@ relations:
       claim: "dissemination of an optical frequency comb over fiber with 3×10⁻¹⁸ fractional accuracy"
     note: "跨文件引用 ent.precision_frequency_transfer_system_f22（定义于 fermann2022.yaml）"
 
-  - id: rel.Mar12_02
+  - id: rel.marra_2012_ar12_02
     subject: ent.npl_fiber_comb_transfer_system_m12
     predicate: CHARACTERIZED-BY
     object: met.fiber_transferred_comb_stability_m12
@@ -129,7 +129,7 @@ relations:
       zotero_key: "P7A5Z647"
       claim: "2×10⁻¹⁸ at a few thousand seconds"
 
-  - id: rel.Mar12_03
+  - id: rel.marra_2012_ar12_03
     subject: met.fiber_transferred_comb_stability_m12
     predicate: BOUNDED-BY
     object: pri.optical_phase_detection_fiber_link_m12
@@ -143,7 +143,7 @@ relations:
         status: demonstrated
         source: {zotero_key: "P7A5Z647"}
 
-  - id: rel.Mar12_04
+  - id: rel.marra_2012_ar12_04
     subject: meth.optical_phase_detection_comb_transfer_m12
     predicate: ENABLED-BY
     object: pri.optical_phase_detection_fiber_link_m12
@@ -152,7 +152,7 @@ relations:
       zotero_key: "P7A5Z647"
       claim: "optical phase detection technique"
 
-  - id: rel.Mar12_05
+  - id: rel.marra_2012_ar12_05
     subject: meth.optical_phase_detection_comb_transfer_m12
     predicate: ENABLED-BY
     object: pri.self_referencing_f2f

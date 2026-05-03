@@ -172,7 +172,7 @@ metrics:
     note: "预测表明 EOM 交叉耦合限制微波相位噪声至约 −155 dBc/Hz 量级（10 kHz 偏移），需改进 EOM 设计"
 
 relations:
-  - id: rel.Z12_01
+  - id: rel.zhang_2012_12_01
     subject: ent.menlo_erfiber_eom_comb_z12
     predicate: PART-OF
     object: ent.er_fiber_frequency_comb
@@ -181,7 +181,7 @@ relations:
       section: "Section II"
     note: "跨文件引用，ent.er_fiber_frequency_comb 定义于 giunta2019.yaml"
 
-  - id: rel.Z12_02
+  - id: rel.zhang_2012_12_02
     subject: ent.menlo_erfiber_eom_comb_z12
     predicate: CHARACTERIZED-BY
     object: met.eom_frep_transfer_bandwidth_z12
@@ -189,7 +189,7 @@ relations:
       claim: "EOM bandwidth limited by sharp resonances around 900 kHz"
       section: "Section IV"
 
-  - id: rel.Z12_03
+  - id: rel.zhang_2012_12_03
     subject: met.eom_frep_transfer_bandwidth_z12
     predicate: OPERATIONALIZED-AS
     object: meth.comb_transfer_function_measurement
@@ -197,7 +197,7 @@ relations:
       claim: "we use a two-channel vector signal analyzer to measure transfer functions"
       section: "Section III"
 
-  - id: rel.Z12_04
+  - id: rel.zhang_2012_12_04
     subject: meth.comb_transfer_function_measurement
     predicate: ENABLED-BY
     object: pri.comb_actuator_transfer_matrix
@@ -205,7 +205,7 @@ relations:
       claim: "A full characterization requires the measurement of the nine transfer function matrix elements"
       section: "Section II"
 
-  - id: rel.Z12_05
+  - id: rel.zhang_2012_12_05
     subject: ent.menlo_erfiber_eom_comb_z12
     predicate: BOUNDED-BY
     object: pri.eom_acoustic_resonance_limit_t17
@@ -214,7 +214,7 @@ relations:
       section: "Section IV"
     note: "跨文件引用 pri 节点来自 torcheboeuf2017.yaml（同一物理限制机制）"
 
-  - id: rel.Z12_06
+  - id: rel.zhang_2012_12_06
     subject: ent.menlo_erfiber_eom_comb_z12
     predicate: BOUNDED-BY
     object: pri.am_pm_conversion_photodetection

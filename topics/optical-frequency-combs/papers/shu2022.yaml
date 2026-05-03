@@ -349,7 +349,7 @@ metrics:
 # ═══════════════════════════════════════════════
 
 relations:
-  - id: rel.S22_01
+  - id: rel.shu_2022_22_01
     subject: ent.algaasoi_dark_pulse_microcomb_s22
     predicate: PART-OF
     object: ent.microresonator_frequency_comb
@@ -357,21 +357,21 @@ relations:
     source: {zotero_key: "AT5ZTB9M", claim: "Kerr comb generation from the AlGaAsOI microresonators"}
     note: "跨文件引用：ent.microresonator_frequency_comb 定义于 kippenberg2011.yaml / kippenberg2018.yaml"
 
-  - id: rel.S22_02
+  - id: rel.shu_2022_22_02
     subject: ent.siph_tr_chip_s22
     predicate: PART-OF
     object: ent.microcomb_driven_siph_system_s22
     confidence: established
     source: {zotero_key: "AT5ZTB9M", claim: "A monolithic SiPh circuit is used to process the generated comb lines for diverse optoelectronics systems"}
 
-  - id: rel.S22_03
+  - id: rel.shu_2022_22_03
     subject: ent.algaasoi_dark_pulse_microcomb_s22
     predicate: PART-OF
     object: ent.microcomb_driven_siph_system_s22
     confidence: established
     source: {zotero_key: "AT5ZTB9M", claim: "Such a coherent comb is used to drive CMOS-foundry-based SiPh engines"}
 
-  - id: rel.S22_04
+  - id: rel.shu_2022_22_04
     subject: ent.algaasoi_dark_pulse_microcomb_s22
     predicate: COMPETES-WITH
     object: ent.si3n4_integrated_comb
@@ -379,7 +379,7 @@ relations:
     source: {zotero_key: "AT5ZTB9M", claim: "record-low parametric oscillation threshold down to tens of microwatts ... which can be satisfied by a commercial InP DFB laser chip"}
     note: "AlGaAsOI 与 Si₃N₄ 是集成 Kerr 梳两大竞争平台：AlGaAsOI 阈值更低（~10× 优势）但工艺非纯 CMOS；Si₃N₄ 阈值较高但与 CMOS 兼容性更好。ent.si3n4_integrated_comb 定义于 huang2024.yaml / kippenberg2018.yaml。"
 
-  - id: rel.S22_05
+  - id: rel.shu_2022_22_05
     subject: ent.microcomb_driven_siph_system_s22
     predicate: CHARACTERIZED-BY
     object: met.microcomb_aggregate_data_rate_s22
@@ -387,35 +387,35 @@ relations:
     source: {zotero_key: "AT5ZTB9M", claim: "aggregate bit rate of 2 Tbit s⁻¹ (1.65 Tbit s⁻¹ net rate after FEC overhead subtraction)"}
     temporal_role: validates
 
-  - id: rel.S22_06
+  - id: rel.shu_2022_22_06
     subject: ent.algaasoi_dark_pulse_microcomb_s22
     predicate: CHARACTERIZED-BY
     object: met.microcomb_parametric_oscillation_threshold_s22
     confidence: established
     source: {zotero_key: "AT5ZTB9M", claim: "a record-low parametric oscillation threshold down to tens of microwatts"}
 
-  - id: rel.S22_07
+  - id: rel.shu_2022_22_07
     subject: ent.algaasoi_dark_pulse_microcomb_s22
     predicate: CHARACTERIZED-BY
     object: met.coherent_comb_access_window_s22
     confidence: established
     source: {zotero_key: "AT5ZTB9M", claim: "accessible frequency range of the dark pulse to tens of gigahertz"}
 
-  - id: rel.S22_08
+  - id: rel.shu_2022_22_08
     subject: ent.microcomb_driven_siph_system_s22
     predicate: CHARACTERIZED-BY
     object: met.mpf_reconfiguration_time_s22
     confidence: established
     source: {zotero_key: "AT5ZTB9M", claim: "reconfiguration speed (about 53 μs)"}
 
-  - id: rel.S22_09
+  - id: rel.shu_2022_22_09
     subject: meth.dfb_pumped_turnkey_dark_pulse_generation_s22
     predicate: ENABLED-BY
     object: pri.normal_dispersion_dark_pulse_s22
     confidence: established
     source: {zotero_key: "AT5ZTB9M", claim: "a dark-pulse state is used to achieve coherent microcombs. This state works in the normal dispersion regime with the assistance of the avoided mode-crossing effect"}
 
-  - id: rel.S22_10
+  - id: rel.shu_2022_22_10
     subject: meth.dfb_pumped_turnkey_dark_pulse_generation_s22
     predicate: ENABLED-BY
     object: meth.cw_pumped_microcomb_generation
@@ -423,7 +423,7 @@ relations:
     source: {zotero_key: "AT5ZTB9M", claim: "coherent comb-state generation under pump power at the few-milliwatts level"}
     note: "跨文件引用：meth.cw_pumped_microcomb_generation 定义于 kippenberg2018.yaml"
 
-  - id: rel.S22_11
+  - id: rel.shu_2022_22_11
     subject: pri.normal_dispersion_dark_pulse_s22
     predicate: DERIVED-FROM
     object: pri.lugiato_lefever_equation
@@ -431,28 +431,28 @@ relations:
     source: {zotero_key: "AT5ZTB9M", claim: "This state works in the normal dispersion regime with the assistance of the avoided mode-crossing effect"}
     note: "跨文件引用：pri.lugiato_lefever_equation 与 pri.dissipative_kerr_soliton 均定义于 kippenberg2018.yaml；暗脉冲是 LLE 正常色散解支。"
 
-  - id: rel.S22_12
+  - id: rel.shu_2022_22_12
     subject: meth.microcomb_parallel_pam4_wdm_link_s22
     predicate: ENABLED-BY
     object: pri.microcomb_replaces_laser_array_for_wdm_s22
     confidence: established
     source: {zotero_key: "AT5ZTB9M", claim: "20 comb lines in the C-band are used as the source ... aggregate bit rate of 2 Tbit s⁻¹"}
 
-  - id: rel.S22_13
+  - id: rel.shu_2022_22_13
     subject: met.microcomb_aggregate_data_rate_s22
     predicate: OPERATIONALIZED-AS
     object: meth.microcomb_parallel_pam4_wdm_link_s22
     confidence: established
     source: {zotero_key: "AT5ZTB9M", claim: "pulse-amplitude four-level modulation scheme with a two-terabit-per-second aggregate rate"}
 
-  - id: rel.S22_14
+  - id: rel.shu_2022_22_14
     subject: met.mpf_reconfiguration_time_s22
     predicate: OPERATIONALIZED-AS
     object: meth.microcomb_reconfigurable_mpf_s22
     confidence: established
     source: {zotero_key: "AT5ZTB9M", claim: "a highly reconfigurable microwave photonic filter with a high level of integration is constructed using a time-stretch approach"}
 
-  - id: rel.S22_15
+  - id: rel.shu_2022_22_15
     subject: ent.algaasoi_dark_pulse_microcomb_s22
     predicate: CONDITIONED-BY
     object: ent.siph_tr_chip_s22
@@ -460,7 +460,7 @@ relations:
     source: {zotero_key: "AT5ZTB9M", claim: "Such a coherent comb is used to drive CMOS-foundry-based SiPh engines containing versatile functionality"}
     note: "微梳的系统级价值条件于下游 CMOS 硅光处理链路的可用性（调制、解复用、探测、控制）。"
 
-  - id: rel.S22_16
+  - id: rel.shu_2022_22_16
     subject: met.microcomb_aggregate_data_rate_s22
     predicate: BOUNDED-BY
     object: pri.microcomb_replaces_laser_array_for_wdm_s22

@@ -1,138 +1,134 @@
-# Wang 2024a — 赫兹线宽激光光纤光频净化中继技术 [evidence]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：ultrastable-laser
-
 meta:
-  zotero_key: "CYS7GEVR"
+  zotero_key: CYS7GEVR
   topic: ultrastable-laser
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
-  title: "Purification technique with a hertz-linewidth laser for fiber-based optical frequency coherence dissemination"
+  title: Purification technique with a hertz-linewidth laser for fiber-based optical
+    frequency coherence dissemination
   year: 2024
-  first_author: "Wang"
+  first_author: Wang
   authors:
-    - "Dan Wang"
-    - "Jie Liu"
-    - "Dongdong Jiao"
-    - "Qi Zang"
-    - "Xiang Zhang"
-    - "Qian Zhou"
-    - "Yucan Zhang"
-    - "Guanjun Xu"
-    - "Ruifang Dong"
-    - "Tao Liu"
-    - "Shougang Zhang"
-  journal: "Optical Fiber Technology"
+  - Dan Wang
+  - Jie Liu
+  - Dongdong Jiao
+  - Qi Zang
+  - Xiang Zhang
+  - Qian Zhou
+  - Yucan Zhang
+  - Guanjun Xu
+  - Ruifang Dong
+  - Tao Liu
+  - Shougang Zhang
+  journal: Optical Fiber Technology
   volume: 87
-  pages: "103923"
-  doi: "10.1016/j.yofte.2024.103923"
-  note: >
-    提出并验证光频净化中继站方案（NTSC/CAS）：本地赫兹线宽超稳激光（50 mm 腔，精细度~450,000）
-    在 10 Hz 带宽内相位锁定至上游传输光频，10 Hz 以上跟随本地激光低噪声。
-    FPGA 实时消除相位周期跳变。应用于 106 km 通信光纤链路：
-    1 s 不稳定度提升 3 倍（4.50×10⁻¹⁵ vs 1.57×10⁻¹⁴），
-    10,000 s 达 8.43×10⁻¹⁹（提升约 2 个量级）。
+  pages: '103923'
+  doi: 10.1016/j.yofte.2024.103923
+  note: '提出并验证光频净化中继站方案（NTSC/CAS）：本地赫兹线宽超稳激光（50 mm 腔，精细度~450,000） 在 10 Hz 带宽内相位锁定至上游传输光频，10
+    Hz 以上跟随本地激光低噪声。 FPGA 实时消除相位周期跳变。应用于 106 km 通信光纤链路： 1 s 不稳定度提升 3 倍（4.50×10⁻¹⁵ vs
+    1.57×10⁻¹⁴）， 10,000 s 达 8.43×10⁻¹⁹（提升约 2 个量级）。
 
+    '
 entities:
-  - id: ent.optical_freq_purification_station_w24
-    name: "光频净化中继站（Wang 2024a）"
-    hierarchy_level: 2
-    status: demonstrated
-    function: >
-      基于本地赫兹线宽超稳激光（1550.12 nm，线宽 2 Hz，50 mm 腔，精细度~450,000）
-      的光频净化中继装置：双级控制系统，第一级开环补偿大频率漂移（~2 MHz/day），
-      第二级闭环锁相（10 Hz 带宽）并消除相位周期跳变。
-      FPGA（Xilinx Zynq7000）实现数字处理，AOM 执行频率/相位补偿。
-    key_parameters:
-      local_laser_wavelength: "1550.12 nm"
-      local_laser_linewidth: "2 Hz"
-      cavity_length: "50 mm"
-      cavity_finesse: "~450,000"
-      lock_bandwidth: "10 Hz"
-      freq_drift: "~2 MHz/day"
-      applied_link: "106 km communication fiber"
-    note: "本地超稳激光同时属于 ent.fp_cavity_system 的具体实例"
+- id: ent.optical_freq_purification_station_w24
+  name: 光频净化中继站（Wang 2024a）
+  hierarchy_level: 2
+  status: demonstrated
+  function: '基于本地赫兹线宽超稳激光（1550.12 nm，线宽 2 Hz，50 mm 腔，精细度~450,000） 的光频净化中继装置：双级控制系统，第一级开环补偿大频率漂移（~2
+    MHz/day）， 第二级闭环锁相（10 Hz 带宽）并消除相位周期跳变。 FPGA（Xilinx Zynq7000）实现数字处理，AOM 执行频率/相位补偿。
 
+    '
+  key_parameters:
+    local_laser_wavelength: 1550.12 nm
+    local_laser_linewidth: 2 Hz
+    cavity_length: 50 mm
+    cavity_finesse: ~450,000
+    lock_bandwidth: 10 Hz
+    freq_drift: ~2 MHz/day
+    applied_link: 106 km communication fiber
+  note: 本地超稳激光同时属于 ent.fp_cavity_system 的具体实例
 methods:
-  - id: meth.optical_freq_purification_w24
-    name: "光频净化中继方法（双级控制 + 周期跳变消除）"
-    status: demonstrated
-    steps_summary: >
-      本地超稳激光锁定至参考腔（PDH）→
-      第一级：开环频率补偿消除大频率漂移 →
-      第二级：10 Hz 带宽闭环相位锁定至上游传输光频 →
-      FPGA 实时检测并消除相位周期跳变 →
-      净化光频输出供后续传输
-    source_claim: >
-      "Utilizing a cavity-stabilized hertz-linewidth laser, we synchronized the phase noise
-      with that of the signal received from the previous link within a 10 Hz bandwidth."
+- id: meth.optical_freq_purification_w24
+  name: 光频净化中继方法（双级控制 + 周期跳变消除）
+  status: demonstrated
+  steps_summary: '本地超稳激光锁定至参考腔（PDH）→ 第一级：开环频率补偿消除大频率漂移 → 第二级：10 Hz 带宽闭环相位锁定至上游传输光频
+    → FPGA 实时检测并消除相位周期跳变 → 净化光频输出供后续传输
 
+    '
+  source_claim: '"Utilizing a cavity-stabilized hertz-linewidth laser, we synchronized
+    the phase noise with that of the signal received from the previous link within
+    a 10 Hz bandwidth."
+
+    '
 metrics:
-  - id: met.purified_freq_instability_1s_w24
-    name: "净化光频分数频率不稳定度 @1 s（Wang 2024a）"
-    unit: "无量纲"
-    role: primary
-    description: "光频净化后 1 s 平均时间分数频率不稳定度，较净化前提升 3 倍"
-    demonstrated_value:
-      value: "4.50×10⁻¹⁵"
-      conditions: "106 km 通信光纤链路净化输出；τ = 1 s；未净化参考值 1.57×10⁻¹⁴"
-      verification_status: observed
-      confidence: established
-      source:
-        zotero_key: "CYS7GEVR"
-        claim: >
-          "The instabilities of the disseminated and purified optical frequency are 1.57×10⁻¹⁴
-          and 4.50×10⁻¹⁵, respectively, at an averaging time of 1 s."
+- id: met.purified_freq_instability_1s_w24
+  name: 净化光频分数频率不稳定度 @1 s（Wang 2024a）
+  unit: 无量纲
+  role: primary
+  description: 光频净化后 1 s 平均时间分数频率不稳定度，较净化前提升 3 倍
+  demonstrated_value:
+    value: 4.50×10⁻¹⁵
+    conditions: 106 km 通信光纤链路净化输出；τ = 1 s；未净化参考值 1.57×10⁻¹⁴
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: CYS7GEVR
+      claim: '"The instabilities of the disseminated and purified optical frequency
+        are 1.57×10⁻¹⁴ and 4.50×10⁻¹⁵, respectively, at an averaging time of 1 s."
 
-  - id: met.purified_freq_instability_10ks_w24
-    name: "净化光频分数频率不稳定度 @10,000 s（Wang 2024a）"
-    unit: "无量纲"
-    role: primary
-    description: "消除相位周期跳变后 10,000 s 平均时间不稳定度，较净化前提升约 2 个量级"
-    demonstrated_value:
-      value: "8.43×10⁻¹⁹"
-      conditions: "106 km 通信光纤；τ = 10,000 s；相位周期跳变已消除；1/√τ 标度律"
-      verification_status: observed
-      confidence: established
-      source:
-        zotero_key: "CYS7GEVR"
-        claim: >
-          "At a 10,000 s averaging time, the purified optical frequency achieves a stability of
-          8.43×10⁻¹⁹, representing a reduction of two orders of magnitude compared to that of
-          the previously disseminated optical frequency."
+        '
+- id: met.purified_freq_instability_10ks_w24
+  name: 净化光频分数频率不稳定度 @10,000 s（Wang 2024a）
+  unit: 无量纲
+  role: primary
+  description: 消除相位周期跳变后 10,000 s 平均时间不稳定度，较净化前提升约 2 个量级
+  demonstrated_value:
+    value: 8.43×10⁻¹⁹
+    conditions: 106 km 通信光纤；τ = 10,000 s；相位周期跳变已消除；1/√τ 标度律
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: CYS7GEVR
+      claim: '"At a 10,000 s averaging time, the purified optical frequency achieves
+        a stability of 8.43×10⁻¹⁹, representing a reduction of two orders of magnitude
+        compared to that of the previously disseminated optical frequency."
 
+        '
 relations:
-  - id: rel.W01
-    subject: ent.optical_freq_purification_station_w24
-    predicate: ENABLED-BY
-    object: meth.pdh_locking
-    confidence: established
-    source:
-      zotero_key: "CYS7GEVR"
-      claim: >
-        "The local narrow linewidth laser is an ultrastable laser (wavelength 1550.12 nm,
-        linewidth 2 Hz) stabilized in an optical cavity ... using the Pound-Drever-Hall (PDH) method."
+- id: rel.wang_2024_01
+  subject: ent.optical_freq_purification_station_w24
+  predicate: ENABLED-BY
+  object: meth.pdh_locking
+  confidence: established
+  source:
+    zotero_key: CYS7GEVR
+    claim: '"The local narrow linewidth laser is an ultrastable laser (wavelength
+      1550.12 nm, linewidth 2 Hz) stabilized in an optical cavity ... using the Pound-Drever-Hall
+      (PDH) method."
 
-  - id: rel.W02
-    subject: met.purified_freq_instability_10ks_w24
-    predicate: CHARACTERIZED-BY
-    object: ent.optical_freq_purification_station_w24
-    confidence: established
-    source:
-      zotero_key: "CYS7GEVR"
-      claim: "At a 10,000 s averaging time, the purified optical frequency achieves a stability of 8.43×10⁻¹⁹."
+      '
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/wang2024a.yaml
+- id: rel.wang_2024_02
+  subject: met.purified_freq_instability_10ks_w24
+  predicate: CHARACTERIZED-BY
+  object: ent.optical_freq_purification_station_w24
+  confidence: established
+  source:
+    zotero_key: CYS7GEVR
+    claim: At a 10,000 s averaging time, the purified optical frequency achieves a
+      stability of 8.43×10⁻¹⁹.
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/wang2024a.yaml
+- id: rel.wang_2024_03
+  subject: meth.optical_freq_purification_w24
+  predicate: DEPENDS-ON
+  object: meth.fiber_link_phase_noise_cancellation_w16
+  confidence: established
+  source:
+    zotero_key: CYS7GEVR
+    claim: '"the phase noise followed the hertz-linewidth laser, decreasing from 20
+      rad to 6 rad. Furthermore, to ensure continuous coherence and stability of the
+      disseminated laser, the data processing based on FPGA was employed to eliminate
+      phase cycle slips."
 
-  - id: rel.W03
-    subject: meth.optical_freq_purification_w24
-    predicate: DEPENDS-ON
-    object: meth.fiber_link_phase_noise_cancellation_w16
-    confidence: established
-    source:
-      zotero_key: "CYS7GEVR"
-      claim: >
-        "the phase noise followed the hertz-linewidth laser, decreasing from 20 rad to 6 rad.
-        Furthermore, to ensure continuous coherence and stability of the disseminated laser,
-        the data processing based on FPGA was employed to eliminate phase cycle slips."
+      '
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/wang2024a.yaml

@@ -1,108 +1,107 @@
-# Cole 2016 — 高性能近红外/中红外晶体镀层
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-15
-# Schema版本：v4.1
-
 meta:
-  zotero_key: "4GUXEM2C"
+  zotero_key: 4GUXEM2C
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: "High-performance near- and mid-infrared crystalline coatings"
+  title: High-performance near- and mid-infrared crystalline coatings
   year: 2016
   first_author: Cole
-  journal: "Optica"
+  journal: Optica
   volume: 3
-  pages: "647"
-  doi: "10.1364/OPTICA.3.000647"
-  note: >
-    AlGaAs 晶体镀层工程性能大幅提升：近红外超额损耗降至 3 ppm（1064-1560 nm），
-    1550 nm 精细度 >3×10⁵，1064 nm 吸收 <1 ppm。首次展示中红外（3.3/3.7 μm）性能。
-    光学损耗已完全可比 IBS 镀层，同时保持最低布朗噪声和最高热导率。
-    CMS/JILA（Cole/Ye组）+ Stanford。Cole 2013 的工程延伸。
+  pages: '647'
+  doi: 10.1364/OPTICA.3.000647
+  note: 'AlGaAs 晶体镀层工程性能大幅提升：近红外超额损耗降至 3 ppm（1064-1560 nm）， 1550 nm 精细度 >3×10⁵，1064
+    nm 吸收 <1 ppm。首次展示中红外（3.3/3.7 μm）性能。 光学损耗已完全可比 IBS 镀层，同时保持最低布朗噪声和最高热导率。 CMS/JILA（Cole/Ye组）+
+    Stanford。Cole 2013 的工程延伸。
 
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
-# 不重复定义 ent.algaas_crystalline_mirror_c13（cole2013.yaml）
-# 本文为已有晶体镀层节点增加工程性能指标
-
+    '
 methods:
-  - id: meth.crystalline_coating_engineering_cole16
-    name: "晶体镀层工程优化方法（Cole 2016）"
-    description: >-
-      AlGaAs晶体镀层的工程优化流程，包括基底转移技术、退火工艺和光学损耗控制，
-      实现近红外超额损耗降至3 ppm，中红外波段性能表征。
-    note: "工程扩展Cole 2013的晶体镀层技术，实现与IBS镀层可比的光学性能"
-
+- id: meth.crystalline_coating_engineering_cole16
+  name: 晶体镀层工程优化方法（Cole 2016）
+  description: AlGaAs晶体镀层的工程优化流程，包括基底转移技术、退火工艺和光学损耗控制， 实现近红外超额损耗降至3 ppm，中红外波段性能表征。
+  note: 工程扩展Cole 2013的晶体镀层技术，实现与IBS镀层可比的光学性能
 metrics:
-  - id: met.algaas_optical_loss_cole16
-    name: "AlGaAs 晶体镀层超额光学损耗（Cole 2016）"
-    unit: "ppm"
-    description: "散射+吸收总超额损耗"
-    demonstrated_value:
-      value: "3 ppm (scatter + absorption, NIR 1064-1560 nm)"
-      conditions: "GaAs/AlGaAs 基底转移晶体镀层, 近红外"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "4GUXEM2C", claim: "reduced the excess optical losses (scatter + absorption) to levels as low as 3 ppm"}
-    historical_landmarks:
-      best_demonstration:
-        value: "3 ppm"
-        year: 2016
-        source: {zotero_key: "4GUXEM2C"}
-        note: "晶体镀层光学损耗首次达到 IBS 可比水平"
-
-  - id: met.algaas_finesse_cole16
-    name: "AlGaAs 晶体镀层腔精细度（Cole 2016）"
-    unit: "无量纲"
-    description: "1550 nm 晶体镀层腔的精细度"
-    demonstrated_value:
-      value: ">3×10⁵"
-      conditions: "1550 nm, GaAs/AlGaAs 晶体镀层"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "4GUXEM2C", claim: "cavity finesse exceeding 3×10⁵ at the telecom-relevant wavelength range near 1550 nm"}
-    historical_landmarks:
-      best_demonstration:
-        value: ">3×10⁵"
-        year: 2016
-        source: {zotero_key: "4GUXEM2C"}
-        note: "晶体镀层在 1550 nm 的首次高精细度演示"
-
-  - id: met.algaas_absorption_1064_cole16
-    name: "AlGaAs 晶体镀层 1064 nm 吸收（Cole 2016）"
-    unit: "ppm"
-    description: "1064 nm 波长下的光学吸收"
-    demonstrated_value:
-      value: "<1 ppm"
-      conditions: "1064 nm, PTS 测量"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "4GUXEM2C", claim: "demonstrate the direct measurement of sub-ppm optical absorption at 1064 nm"}
-
+- id: met.algaas_optical_loss_cole16
+  name: AlGaAs 晶体镀层超额光学损耗（Cole 2016）
+  unit: ppm
+  description: 散射+吸收总超额损耗
+  demonstrated_value:
+    value: 3 ppm (scatter + absorption, NIR 1064-1560 nm)
+    conditions: GaAs/AlGaAs 基底转移晶体镀层, 近红外
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: 4GUXEM2C
+      claim: reduced the excess optical losses (scatter + absorption) to levels as
+        low as 3 ppm
+  historical_landmarks:
+    best_demonstration:
+      value: 3 ppm
+      year: 2016
+      source:
+        zotero_key: 4GUXEM2C
+      note: 晶体镀层光学损耗首次达到 IBS 可比水平
+- id: met.algaas_finesse_cole16
+  name: AlGaAs 晶体镀层腔精细度（Cole 2016）
+  unit: 无量纲
+  description: 1550 nm 晶体镀层腔的精细度
+  demonstrated_value:
+    value: '>3×10⁵'
+    conditions: 1550 nm, GaAs/AlGaAs 晶体镀层
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: 4GUXEM2C
+      claim: cavity finesse exceeding 3×10⁵ at the telecom-relevant wavelength range
+        near 1550 nm
+  historical_landmarks:
+    best_demonstration:
+      value: '>3×10⁵'
+      year: 2016
+      source:
+        zotero_key: 4GUXEM2C
+      note: 晶体镀层在 1550 nm 的首次高精细度演示
+- id: met.algaas_absorption_1064_cole16
+  name: AlGaAs 晶体镀层 1064 nm 吸收（Cole 2016）
+  unit: ppm
+  description: 1064 nm 波长下的光学吸收
+  demonstrated_value:
+    value: <1 ppm
+    conditions: 1064 nm, PTS 测量
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: 4GUXEM2C
+      claim: demonstrate the direct measurement of sub-ppm optical absorption at 1064
+        nm
 relations:
-  - id: rel.Col16_01
-    subject: ent.algaas_crystalline_mirror_c13
-    predicate: CHARACTERIZED-BY
-    object: met.algaas_optical_loss_cole16
-    confidence: established
-    source: {zotero_key: "4GUXEM2C", claim: "excess optical losses to levels as low as 3 ppm"}
-    note: "跨文件引用 cole2013.yaml; 工程改进使光学损耗可比 IBS"
-
-  - id: rel.Col16_02
-    subject: ent.algaas_crystalline_mirror_c13
-    predicate: CHARACTERIZED-BY
-    object: met.algaas_finesse_cole16
-    confidence: established
-    source: {zotero_key: "4GUXEM2C", claim: "cavity finesse exceeding 3×10⁵ at 1550 nm"}
-    note: "跨文件引用 cole2013.yaml"
-
-  - id: rel.Col16_03
-    subject: ent.algaas_crystalline_mirror_c13
-    predicate: CHARACTERIZED-BY
-    object: met.algaas_absorption_1064_cole16
-    confidence: established
-    source: {zotero_key: "4GUXEM2C", claim: "sub-ppm optical absorption at 1064 nm"}
-    note: "跨文件引用 cole2013.yaml"
+- id: rel.cole_2016_ol16_01
+  subject: ent.algaas_crystalline_mirror_c13
+  predicate: CHARACTERIZED-BY
+  object: met.algaas_optical_loss_cole16
+  confidence: established
+  source:
+    zotero_key: 4GUXEM2C
+    claim: excess optical losses to levels as low as 3 ppm
+  note: 跨文件引用 cole2013.yaml; 工程改进使光学损耗可比 IBS
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/cole2016.yaml
+- id: rel.cole_2016_ol16_02
+  subject: ent.algaas_crystalline_mirror_c13
+  predicate: CHARACTERIZED-BY
+  object: met.algaas_finesse_cole16
+  confidence: established
+  source:
+    zotero_key: 4GUXEM2C
+    claim: cavity finesse exceeding 3×10⁵ at 1550 nm
+  note: 跨文件引用 cole2013.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/cole2016.yaml
+- id: rel.cole_2016_ol16_03
+  subject: ent.algaas_crystalline_mirror_c13
+  predicate: CHARACTERIZED-BY
+  object: met.algaas_absorption_1064_cole16
+  confidence: established
+  source:
+    zotero_key: 4GUXEM2C
+    claim: sub-ppm optical absorption at 1064 nm
+  note: 跨文件引用 cole2013.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/cole2016.yaml

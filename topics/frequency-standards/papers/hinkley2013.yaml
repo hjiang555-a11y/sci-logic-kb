@@ -51,14 +51,14 @@ metrics:
       source: {zotero_key: "TP8JKHW3", claim: "quantum-projection-noise-limited instability of 3.2 × 10^-16 / sqrt(tau)"}
 
 relations:
-  - id: rel.H01
+  - id: rel.hinkley_2013_01
     subject: ent.yb_optical_lattice_clock_nist2013
     predicate: CHARACTERIZED-BY
     object: met.clock_instability_yb_hinkley2013
     confidence: established
     source: {zotero_key: "TP8JKHW3", claim: "an instability of 1.6 × 10^-18 after only 7 hours of averaging"}
 
-  - id: rel.H02
+  - id: rel.hinkley_2013_02
     subject: ent.yb_optical_lattice_clock_nist2013
     predicate: IMPLEMENTS
     object: meth.ramsey_spectroscopy_clock

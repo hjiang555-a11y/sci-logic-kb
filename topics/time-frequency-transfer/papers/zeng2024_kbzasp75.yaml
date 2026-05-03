@@ -56,7 +56,7 @@ principles:
     source_claim: "measurement of atmospheric non-reciprocity effects for satellite-based two-way time-frequency transfer"
 
 relations:
-  - id: rel.Zen24_01
+  - id: rel.zeng_2024_en24_01
     subject: ent.satellite_microwave_time_transfer_link
     predicate: BOUNDED-BY
     object: pri.atmospheric_non_reciprocity_satellite_twtft

@@ -1,148 +1,154 @@
-# Argence 2012 — 空间应用超稳腔原型
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-16
-# Schema版本：v4.1
-
 meta:
-  zotero_key: "RP8Q44RZ"
+  zotero_key: RP8Q44RZ
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: "Prototype of an ultra-stable optical cavity for space applications"
+  title: Prototype of an ultra-stable optical cavity for space applications
   year: 2012
   first_author: Argence
-  journal: "Optics Express"
+  journal: Optics Express
   volume: 20
-  pages: "25409"
-  doi: "10.1364/OE.20.025409"
-  note: >
-    面向空间任务设计的 100 mm ULE 圆柱腔原型，中平面刚性固定，
-    工业级制造（SODERN），轴向振动灵敏度 4×10⁻¹¹/(m/s²)，
-    横向 <1×10⁻¹¹/(m/s²)，分数频率不稳定度 5–6×10⁻¹⁶ @ 1s。
-    可承受数 g 加速度，工作温度范围 -33°C 至 73°C。
-    核心贡献：首个由工业界制造的空间级超稳腔原型，兼顾鲁棒性和性能。
+  pages: '25409'
+  doi: 10.1364/OE.20.025409
+  note: '面向空间任务设计的 100 mm ULE 圆柱腔原型，中平面刚性固定， 工业级制造（SODERN），轴向振动灵敏度 4×10⁻¹¹/(m/s²)，
+    横向 <1×10⁻¹¹/(m/s²)，分数频率不稳定度 5–6×10⁻¹⁶ @ 1s。 可承受数 g 加速度，工作温度范围 -33°C 至 73°C。 核心贡献：首个由工业界制造的空间级超稳腔原型，兼顾鲁棒性和性能。
 
+    '
 entities:
-  - id: ent.space_cavity_prototype_a12
-    name: "空间超稳腔原型（Argence 2012）"
-    aliases: ["BOOST prototype cavity", "space cavity Argence"]
-    hierarchy_level: 2
-    status: demonstrated
-    function: >
-      100 mm ULE 圆柱腔，中平面环形法兰刚性固定于 Invar 腔体紧固装置（CFD），
-      双悬臂梁解耦热和振动扰动。FS 镜基底降低热噪声，
-      五层热屏蔽确保长期温度稳定。1542 nm 工作波长。
-    key_parameters:
-      cavity_length: "100 mm"
-      spacer_material: "ULE"
-      mirror_material: "fused silica"
-      fsr: "1.5 GHz"
-      mirror_config: "plano-concave (ROC = 500 mm)"
-      wavelength: "1542 nm"
-      thermal_noise_floor: "~4×10⁻¹⁶"
-      vibration_sensitivity_axial: "(4 ± 0.5) × 10⁻¹¹/(m/s²)"
-      vibration_sensitivity_transverse: "<1 × 10⁻¹¹/(m/s²)"
-      temperature_range: "-33°C to 73°C"
-      first_resonance: "~300 Hz"
-      total_mass: "~40 kg (with enclosure)"
-    note: "PART-OF ent.fp_cavity_system（定义于 numata2004.yaml）。空间应用腔设计。"
+- id: ent.space_cavity_prototype_a12
+  name: 空间超稳腔原型（Argence 2012）
+  aliases:
+  - BOOST prototype cavity
+  - space cavity Argence
+  hierarchy_level: 2
+  status: demonstrated
+  function: '100 mm ULE 圆柱腔，中平面环形法兰刚性固定于 Invar 腔体紧固装置（CFD）， 双悬臂梁解耦热和振动扰动。FS 镜基底降低热噪声，
+    五层热屏蔽确保长期温度稳定。1542 nm 工作波长。
 
+    '
+  key_parameters:
+    cavity_length: 100 mm
+    spacer_material: ULE
+    mirror_material: fused silica
+    fsr: 1.5 GHz
+    mirror_config: plano-concave (ROC = 500 mm)
+    wavelength: 1542 nm
+    thermal_noise_floor: ~4×10⁻¹⁶
+    vibration_sensitivity_axial: (4 ± 0.5) × 10⁻¹¹/(m/s²)
+    vibration_sensitivity_transverse: <1 × 10⁻¹¹/(m/s²)
+    temperature_range: -33°C to 73°C
+    first_resonance: ~300 Hz
+    total_mass: ~40 kg (with enclosure)
+  note: PART-OF ent.fp_cavity_system（定义于 numata2004.yaml）。空间应用腔设计。
 principles:
-  - id: pri.midplane_rigid_mounting_space
-    name: "中平面刚性固定空间腔安装原理"
-    tier: engineering
-    verification_status: observed
-    statement: >
-      将腔体在其轴向对称的中平面通过环形法兰刚性固定，
-      利用 Invar CFD 的双悬臂梁结构解耦热膨胀差异和机械应力。
-      中平面固定确保轴向加速度对腔长的影响因对称性而消失，
-      同时提供足够刚度承受空间发射振动（数 g）。
-    domain: "空间/可搬运参考腔设计"
-    key_insight: "中平面对称固定 + 双悬臂梁解耦，可同时满足低振动灵敏度和高机械鲁棒性。"
-    conditions: "适用于圆柱形腔体，需要精密 FEM 优化加工公差"
-    preconditions:
-      - "腔体和 CFD 的加工公差控制在 FEM 分析允许范围内"
-      - "悬臂梁材料（Invar）CTE 与 ULE 差异需在设计中补偿"
-    invalidated_when:
-      - "加工偏差超出 FEM 容差（如环偏心 >1 mm 导致灵敏度恶化 1×10⁻¹¹）"
-    source_claim: >
-      "A ring in the midplane of the cylinder allows rigid attachment of the cavity...
-      the axial vibration sensitivity was evaluated at (4 ± 0.5) × 10⁻¹¹/(m.s⁻²)"
+- id: pri.midplane_rigid_mounting_space
+  name: 中平面刚性固定空间腔安装原理
+  tier: engineering
+  verification_status: observed
+  statement: '将腔体在其轴向对称的中平面通过环形法兰刚性固定， 利用 Invar CFD 的双悬臂梁结构解耦热膨胀差异和机械应力。 中平面固定确保轴向加速度对腔长的影响因对称性而消失，
+    同时提供足够刚度承受空间发射振动（数 g）。
 
+    '
+  domain: 空间/可搬运参考腔设计
+  key_insight: 中平面对称固定 + 双悬臂梁解耦，可同时满足低振动灵敏度和高机械鲁棒性。
+  conditions: 适用于圆柱形腔体，需要精密 FEM 优化加工公差
+  preconditions:
+  - 腔体和 CFD 的加工公差控制在 FEM 分析允许范围内
+  - 悬臂梁材料（Invar）CTE 与 ULE 差异需在设计中补偿
+  invalidated_when:
+  - 加工偏差超出 FEM 容差（如环偏心 >1 mm 导致灵敏度恶化 1×10⁻¹¹）
+  source_claim: '"A ring in the midplane of the cylinder allows rigid attachment of
+    the cavity... the axial vibration sensitivity was evaluated at (4 ± 0.5) × 10⁻¹¹/(m.s⁻²)"
+
+    '
 methods:
-  - id: meth.space_cavity_design_testing_a12
-    name: "空间应用超稳腔设计-制造-测试方法"
-    description: >
-      面向空间任务的超稳腔原型设计方法：采用中平面刚性固定（CFD）实现低振动灵敏度与高机械鲁棒性；
-      结合有限元分析优化加工公差；在宽温区（-33°C至73°C）验证频率稳定性；
-      测量轴向/横向振动灵敏度以确认对称固定有效性。
-    verification_status: observed
-    implementation_details:
-      - "中平面环形法兰固定于 Invar 双悬臂梁结构（CFD）"
-      - "FEM 优化腔体和 CFD 加工公差"
-      - "五层热屏蔽确保长期温度稳定"
-      - "振动灵敏度测量采用抖动台激励+PDH 误差信号解调"
-      - "频率不稳定度测量基于双腔拍频或传递锁定"
-    enables: ent.space_cavity_prototype_a12
-    source_claim: "A ring in the midplane of the cylinder allows rigid attachment... the cavity is designed to be acceleration tolerant, with a total mass ~40 kg."
+- id: meth.space_cavity_design_testing_a12
+  name: 空间应用超稳腔设计-制造-测试方法
+  description: '面向空间任务的超稳腔原型设计方法：采用中平面刚性固定（CFD）实现低振动灵敏度与高机械鲁棒性； 结合有限元分析优化加工公差；在宽温区（-33°C至73°C）验证频率稳定性；
+    测量轴向/横向振动灵敏度以确认对称固定有效性。
 
+    '
+  verification_status: observed
+  implementation_details:
+  - 中平面环形法兰固定于 Invar 双悬臂梁结构（CFD）
+  - FEM 优化腔体和 CFD 加工公差
+  - 五层热屏蔽确保长期温度稳定
+  - 振动灵敏度测量采用抖动台激励+PDH 误差信号解调
+  - 频率不稳定度测量基于双腔拍频或传递锁定
+  enables: ent.space_cavity_prototype_a12
+  source_claim: A ring in the midplane of the cylinder allows rigid attachment...
+    the cavity is designed to be acceleration tolerant, with a total mass ~40 kg.
 metrics:
-  - id: met.fractional_freq_instability_a12
-    name: "分数频率不稳定度（Argence 2012）"
-    unit: "无量纲"
-    demonstrated_value:
-      value: "5–6×10⁻¹⁶ @ 1 s"
-      conditions: "100 mm ULE 腔，FS 镜，1542 nm，实验室环境"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "RP8Q44RZ", claim: "fractional frequency instability is ≲1×10⁻¹⁵ from 0.1 to a few seconds and reaches 5–6×10⁻¹⁶ at 1s"}
-
-  - id: met.vibration_sensitivity_a12
-    name: "振动灵敏度（Argence 2012）"
-    unit: "/(m/s²)"
-    demonstrated_value:
-      value: "axial: (4±0.5)×10⁻¹¹; transverse: <1×10⁻¹¹"
-      conditions: "100 mm ULE 腔，中平面 CFD 固定"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "RP8Q44RZ", claim: "axial vibration sensitivity (4 ± 0.5) × 10⁻¹¹/(m.s⁻²), transverse <1 × 10⁻¹¹"}
-
+- id: met.fractional_freq_instability_a12
+  name: 分数频率不稳定度（Argence 2012）
+  unit: 无量纲
+  demonstrated_value:
+    value: 5–6×10⁻¹⁶ @ 1 s
+    conditions: 100 mm ULE 腔，FS 镜，1542 nm，实验室环境
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: RP8Q44RZ
+      claim: fractional frequency instability is ≲1×10⁻¹⁵ from 0.1 to a few seconds
+        and reaches 5–6×10⁻¹⁶ at 1s
+- id: met.vibration_sensitivity_a12
+  name: 振动灵敏度（Argence 2012）
+  unit: /(m/s²)
+  demonstrated_value:
+    value: 'axial: (4±0.5)×10⁻¹¹; transverse: <1×10⁻¹¹'
+    conditions: 100 mm ULE 腔，中平面 CFD 固定
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: RP8Q44RZ
+      claim: axial vibration sensitivity (4 ± 0.5) × 10⁻¹¹/(m.s⁻²), transverse <1
+        × 10⁻¹¹
 relations:
-  - id: rel.A01
-    subject: ent.space_cavity_prototype_a12
-    predicate: PART-OF
-    object: ent.fp_cavity_system
-    confidence: established
-    source: {zotero_key: "RP8Q44RZ", claim: "ultra-stable Fabry-Perot cavity for space applications"}
-    note: "跨文件引用，ent.fp_cavity_system 定义于 numata2004.yaml"
-
-  - id: rel.A02
-    subject: ent.space_cavity_prototype_a12
-    predicate: ENABLED-BY
-    object: pri.midplane_rigid_mounting_space
-    confidence: established
-    source: {zotero_key: "RP8Q44RZ", claim: "ring in the midplane allows rigid attachment"}
-
-  - id: rel.A03
-    subject: ent.space_cavity_prototype_a12
-    predicate: BOUNDED-BY
-    object: pri.brownian_thermal_noise_fdt
-    confidence: established
-    source: {zotero_key: "RP8Q44RZ", claim: "estimated flicker thermal noise is ~4×10⁻¹⁶, dominated by the mechanical quality factor of the coatings"}
-    is_system_limit: true
-    regime: short-term
-    verification_status: calculated
-    note: "跨文件引用，pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml"
-    breakthrough_paths: []
-
-  - id: rel.A04
-    subject: ent.space_cavity_prototype_a12
-    predicate: CONDITIONED-BY
-    object: ent.vibration_environment
-    confidence: established
-    source: {zotero_key: "RP8Q44RZ", claim: "vibration perturbations... designed to be acceleration tolerant"}
-    interface_metric: met.vibration_sensitivity_a12
-    is_system_limit:
-      current: false
-      conditions: "刚性固定 + FEM 优化已将振动退出限制序列"
-    note: "跨文件引用，ent.vibration_environment 定义于 webster2007.yaml"
+- id: rel.argence_2012_01
+  subject: ent.space_cavity_prototype_a12
+  predicate: PART-OF
+  object: ent.fp_cavity_system
+  confidence: established
+  source:
+    zotero_key: RP8Q44RZ
+    claim: ultra-stable Fabry-Perot cavity for space applications
+  note: 跨文件引用，ent.fp_cavity_system 定义于 numata2004.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/argence2012.yaml
+- id: rel.argence_2012_02
+  subject: ent.space_cavity_prototype_a12
+  predicate: ENABLED-BY
+  object: pri.midplane_rigid_mounting_space
+  confidence: established
+  source:
+    zotero_key: RP8Q44RZ
+    claim: ring in the midplane allows rigid attachment
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/argence2012.yaml
+- id: rel.argence_2012_03
+  subject: ent.space_cavity_prototype_a12
+  predicate: BOUNDED-BY
+  object: pri.brownian_thermal_noise_fdt
+  confidence: established
+  source:
+    zotero_key: RP8Q44RZ
+    claim: estimated flicker thermal noise is ~4×10⁻¹⁶, dominated by the mechanical
+      quality factor of the coatings
+  is_system_limit: true
+  regime: short-term
+  verification_status: calculated
+  note: 跨文件引用，pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml
+  breakthrough_paths: []
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/argence2012.yaml
+- id: rel.argence_2012_04
+  subject: ent.space_cavity_prototype_a12
+  predicate: CONDITIONED-BY
+  object: ent.vibration_environment
+  confidence: established
+  source:
+    zotero_key: RP8Q44RZ
+    claim: vibration perturbations... designed to be acceleration tolerant
+  interface_metric: met.vibration_sensitivity_a12
+  is_system_limit:
+    current: false
+    conditions: 刚性固定 + FEM 优化已将振动退出限制序列
+  note: 跨文件引用，ent.vibration_environment 定义于 webster2007.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/argence2012.yaml

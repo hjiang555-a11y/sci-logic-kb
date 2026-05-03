@@ -40,7 +40,7 @@ entities:
     note: "Level 2 实例，PART-OF ent.optical_lattice_clock"
 
 relations:
-  - id: rel.Nic15_01
+  - id: rel.nicholson_2015_ic15_01
     subject: ent.jila_sr_lattice_clock_n15
     predicate: PART-OF
     object: ent.optical_lattice_clock
@@ -48,7 +48,7 @@ relations:
       paper: nicholson2015
       claim: "⁸⁷Sr optical lattice clock"
 
-  - id: rel.Nic15_02
+  - id: rel.nicholson_2015_ic15_02
     subject: ent.jila_sr_lattice_clock_n15
     predicate: CHARACTERIZED-BY
     object: met.optical_clock_fractional_uncertainty
@@ -56,7 +56,7 @@ relations:
       paper: nicholson2015
       claim: "total uncertainty of the JILA Sr clock to 2.1×10⁻¹⁸"
 
-  - id: rel.Nic15_03
+  - id: rel.nicholson_2015_ic15_03
     subject: ent.jila_sr_lattice_clock_n15
     predicate: CHARACTERIZED-BY
     object: met.optical_clock_fractional_instability

@@ -99,7 +99,7 @@ principles:
         context: "应用该组合原理实现首个连续冷分子腔增强梳光谱（世界首次，2016），演示硝基甲烷/萘等复杂分子高分辨红外谱"
 
 relations:
-  - id: rel.Spa01
+  - id: rel.spaun_2016_pa01
     predicate: BOUNDED-BY
     subject: ent.cedcs_cold_molecule_system_s16
     object: pri.buffer_gas_cooling_spectral_simplification_s16

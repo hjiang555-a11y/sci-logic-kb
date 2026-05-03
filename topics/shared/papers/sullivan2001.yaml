@@ -32,7 +32,7 @@ meta:
     仅保留关系指向已有节点，不新增节点。
 
 relations:
-  - id: rel.Sul01_01
+  - id: rel.sullivan_2001_ul01_01
     subject: ent.microwave_frequency_standard
     predicate: REALIZES
     object: pri.si_second_cesium_definition

@@ -138,7 +138,7 @@ metrics:
     note: "锁定范围随泵浦功率增加而增大——更多子梳模式重叠"
 
 relations:
-  - id: rel.D14_01
+  - id: rel.del_2014_14_01
     subject: ent.silica_microrod_comb_d14
     predicate: PART-OF
     object: ent.microresonator_frequency_comb
@@ -147,7 +147,7 @@ relations:
       section: "Experimental setup"
     note: "跨文件引用，ent.microresonator_frequency_comb 定义于 kippenberg2011.yaml"
 
-  - id: rel.D14_02
+  - id: rel.del_2014_14_02
     subject: ent.silica_microrod_comb_d14
     predicate: CHARACTERIZED-BY
     object: met.microcomb_offset_precision_d14
@@ -155,7 +155,7 @@ relations:
       claim: "offset locks to zero in a characteristic injection-locking way"
       section: "Injection locking"
 
-  - id: rel.D14_03
+  - id: rel.del_2014_14_03
     subject: pri.microcomb_self_injection_locking
     predicate: DERIVED-FROM
     object: pri.parametric_four_wave_mixing_comb
@@ -164,7 +164,7 @@ relations:
       section: "Introduction"
     note: "跨文件引用，pri.parametric_four_wave_mixing_comb 定义于 kippenberg2011.yaml"
 
-  - id: rel.D14_04
+  - id: rel.del_2014_14_04
     subject: ent.silica_microrod_comb_d14
     predicate: CONDITIONED-BY
     object: pri.microresonator_anomalous_dispersion
@@ -173,7 +173,7 @@ relations:
       section: "Experimental setup"
     note: "跨文件引用，pri.microresonator_anomalous_dispersion 定义于 kippenberg2011.yaml；反常色散是使能条件而非性能限制"
 
-  - id: rel.D14_05
+  - id: rel.del_2014_14_05
     subject: pri.nondeterministic_phase_microcomb
     predicate: DERIVED-FROM
     object: pri.microcomb_self_injection_locking

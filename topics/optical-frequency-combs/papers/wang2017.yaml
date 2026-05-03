@@ -161,98 +161,98 @@ metrics:
     demonstrated_value: "sub-watt chip-level electrical drive"
 
 relations:
-  - id: rel.Wan01
+  - id: rel.wang_2017_an01
     subject: ent.iii_v_soa_gain_section_w17
     predicate: PART-OF
     object: ent.iii_v_on_si_ultradense_comb_w17
     source:
       claim: "III-V SOA gain section is heterogeneously bonded onto the Si photonic chip as part of the comb laser"
 
-  - id: rel.Wan02
+  - id: rel.wang_2017_an02
     subject: ent.saturable_absorber_w17
     predicate: PART-OF
     object: ent.iii_v_on_si_ultradense_comb_w17
     source:
       claim: "Reverse-biased saturable absorber section integrated on-chip enables passive mode-locking"
 
-  - id: rel.Wan03
+  - id: rel.wang_2017_an03
     subject: ent.si_extended_cavity_waveguide_w17
     predicate: PART-OF
     object: ent.iii_v_on_si_ultradense_comb_w17
     source:
       claim: "Long low-loss silicon waveguide extends the cavity to set the sub-GHz repetition rate"
 
-  - id: rel.Wan04
+  - id: rel.wang_2017_an04
     subject: ent.iii_v_on_si_ultradense_comb_w17
     predicate: CHARACTERIZED-BY
     object: met.comb_line_spacing_w17
     source:
       claim: "Comb line spacing of ~1 GHz measured via RF beatnote, ultra-dense compared to monolithic III-V lasers"
 
-  - id: rel.Wan05
+  - id: rel.wang_2017_an05
     subject: ent.iii_v_on_si_ultradense_comb_w17
     predicate: CHARACTERIZED-BY
     object: met.number_of_comb_lines_w17
     source:
       claim: "Thousands of equidistant comb lines generated across the C-band"
 
-  - id: rel.Wan06
+  - id: rel.wang_2017_an06
     subject: ent.iii_v_on_si_ultradense_comb_w17
     predicate: CHARACTERIZED-BY
     object: met.per_line_linewidth_w17
     source:
       claim: "Per-tooth optical linewidth is sub-MHz, limited by semiconductor amplitude-phase coupling"
 
-  - id: rel.Wan07
+  - id: rel.wang_2017_an07
     subject: met.comb_line_spacing_w17
     predicate: OPERATIONALIZED-AS
     object: meth.rf_beatnote_comb_characterization
     source:
       claim: "Comb line spacing verified by measuring the RF repetition-rate beatnote"
 
-  - id: rel.Wan08
+  - id: rel.wang_2017_an08
     subject: meth.passive_mode_locking_iii_v_si
     predicate: ENABLED-BY
     object: pri.passive_mode_locking_soa_sa
     source:
       claim: "Passive mode-locking achieved via combined fast saturable absorption and gain saturation in III-V sections"
 
-  - id: rel.Wan09
+  - id: rel.wang_2017_an09
     subject: meth.passive_mode_locking_iii_v_si
     predicate: ENABLED-BY
     object: pri.heterogeneous_iii_v_on_si_integration
     source:
       claim: "Heterogeneous III-V-on-Si integration enables co-integration of gain with low-loss Si passive waveguides"
 
-  - id: rel.Wan10
+  - id: rel.wang_2017_an10
     subject: ent.iii_v_on_si_ultradense_comb_w17
     predicate: ENABLED-BY
     object: pri.long_cavity_subghz_comb_spacing
     source:
       claim: "Sub-GHz mode spacing arises from the cm-scale Si extended cavity round-trip time."
 
-  - id: rel.Wan11
+  - id: rel.wang_2017_an11
     subject: ent.iii_v_on_si_ultradense_comb_w17
     predicate: BOUNDED-BY
     object: pri.waveguide_loss_comb_limit
     source:
       claim: "Si waveguide propagation loss limits how long the extended cavity (and hence how dense the comb) can be made while preserving mode-locking."
 
-  - id: rel.Wan12
+  - id: rel.wang_2017_an12
     subject: ent.iii_v_on_si_ultradense_comb_w17
     predicate: BOUNDED-BY
     object: pri.group_velocity_dispersion_comb_limit
     source:
       claim: "Residual GVD in the composite cavity limits comb bandwidth and equidistance."
 
-  - id: rel.Wan13
+  - id: rel.wang_2017_an13
     subject: ent.iii_v_on_si_ultradense_comb_w17
     predicate: BOUNDED-BY
     object: pri.linewidth_enhancement_factor_limit
     source:
       claim: "Per-tooth linewidth is set by semiconductor amplitude-phase coupling (α-factor)."
 
-  - id: rel.Wan14
+  - id: rel.wang_2017_an14
     subject: ent.iii_v_on_si_ultradense_comb_w17
     predicate: COMPETES-WITH
     object: ent.microresonator_frequency_comb
@@ -260,7 +260,7 @@ relations:
       claim: "III-V-on-Si ultra-dense comb operates in sub-GHz spacing regime, complementary to 10–100 GHz Kerr microcombs"
     note: "Opposite spacing regimes: sub-GHz dense comb (semiconductor MLL) vs 10–100 GHz Kerr microcomb."
 
-  - id: rel.Wan15
+  - id: rel.wang_2017_an15
     subject: ent.iii_v_on_si_ultradense_comb_w17
     predicate: PART-OF
     object: ent.optical_frequency_comb

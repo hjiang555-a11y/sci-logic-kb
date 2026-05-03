@@ -114,7 +114,7 @@ metrics:
         claim: "It averages down to about 3×10^-19 at 65536 s, with a frequency error compatible with zero"
 
 relations:
-  - id: rel.L01
+  - id: rel.le_coq_2010_01
     subject: ent.er_fiber_ofd_lecoq2010
     predicate: CHARACTERIZED-BY
     object: met.microwave_phase_noise_lecoq2010
@@ -123,7 +123,7 @@ relations:
       zotero_key: "5K2FFLPG"
       claim: "relative phase noise of -111 dBc/Hz at 1 Hz from the carrier"
 
-  - id: rel.L02
+  - id: rel.le_coq_2010_02
     subject: ent.er_fiber_ofd_lecoq2010
     predicate: CHARACTERIZED-BY
     object: met.microwave_instability_lecoq2010_1s
@@ -132,7 +132,7 @@ relations:
       zotero_key: "5K2FFLPG"
       claim: "frequency stability for a single system is about 1.6×10^-16 at 1s"
 
-  - id: rel.L03
+  - id: rel.le_coq_2010_03
     subject: ent.er_fiber_ofd_lecoq2010
     predicate: USES-METHOD
     object: pri.two_comb_microwave_comparison

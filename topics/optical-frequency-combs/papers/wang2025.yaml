@@ -224,7 +224,7 @@ metrics:
 # ═══════════════════════════════════════════════
 
 relations:
-  - id: rel.W25_01
+  - id: rel.wang_2025_25_01
     subject: ent.low_latency_digital_servo_w25
     predicate: PART-OF
     object: ent.optical_frequency_comb
@@ -232,7 +232,7 @@ relations:
     source: {zotero_key: "CEB7L6EM", claim: "a low-latency digital servo system designed for optical frequency comb stabilization ... implemented on a custom-designed FPGA-based digital board"}
     note: "ent.optical_frequency_comb 定义于 udem2002.yaml；本数字伺服板是锁相电子学子系统。"
 
-  - id: rel.W25_02
+  - id: rel.wang_2025_25_02
     subject: ent.low_latency_digital_servo_w25
     predicate: CONDITIONED-BY
     object: ent.fp_cavity_system
@@ -243,7 +243,7 @@ relations:
       topics/ultrastable-laser/papers/numata2004.yaml 的 ent.fp_cavity_system）。
       该伺服的 fbeat 路径稳定度上限由 USL 自身决定。
 
-  - id: rel.W25_03
+  - id: rel.wang_2025_25_03
     subject: ent.low_latency_digital_servo_w25
     predicate: CHARACTERIZED-BY
     object: met.digital_servo_control_bandwidth_w25
@@ -251,49 +251,49 @@ relations:
     source: {zotero_key: "CEB7L6EM", claim: "enabling a control bandwidth of 1.1 MHz"}
     temporal_role: validates
 
-  - id: rel.W25_04
+  - id: rel.wang_2025_25_04
     subject: ent.low_latency_digital_servo_w25
     predicate: CHARACTERIZED-BY
     object: met.digital_servo_total_latency_w25
     confidence: established
     source: {zotero_key: "CEB7L6EM", claim: "total board latency of less than 250 ns"}
 
-  - id: rel.W25_05
+  - id: rel.wang_2025_25_05
     subject: meth.digital_comb_frep_to_usl_locking_w25
     predicate: CHARACTERIZED-BY
     object: met.fbeat_mod_allan_deviation_w25
     confidence: established
     source: {zotero_key: "CEB7L6EM", claim: "modified Allan deviation of the measured beat signal, normalized to the optical frequency, is 7.27 × 10⁻¹⁸ at 1 second"}
 
-  - id: rel.W25_06
+  - id: rel.wang_2025_25_06
     subject: meth.digital_comb_frep_to_usl_locking_w25
     predicate: CHARACTERIZED-BY
     object: met.fbeat_residual_integrated_phase_noise_w25
     confidence: established
     source: {zotero_key: "CEB7L6EM", claim: "168 mrad for fbeat, corresponding to timing jitter of 139 attoseconds"}
 
-  - id: rel.W25_07
+  - id: rel.wang_2025_25_07
     subject: met.digital_servo_control_bandwidth_w25
     predicate: OPERATIONALIZED-AS
     object: meth.low_latency_iq_phase_detection_w25
     confidence: established
     source: {zotero_key: "CEB7L6EM", claim: "Through the optimization of filtering and phase detection algorithms, computational latency is reduced while maintaining precision"}
 
-  - id: rel.W25_08
+  - id: rel.wang_2025_25_08
     subject: meth.low_latency_iq_phase_detection_w25
     predicate: ENABLED-BY
     object: pri.digital_servo_latency_bandwidth_tradeoff
     confidence: established
     source: {zotero_key: "CEB7L6EM", claim: "a trade-off must therefore be made among precision, latency, [and resources]"}
 
-  - id: rel.W25_09
+  - id: rel.wang_2025_25_09
     subject: meth.digital_comb_frep_to_usl_locking_w25
     predicate: ENABLED-BY
     object: meth.low_latency_iq_phase_detection_w25
     confidence: established
     source: {zotero_key: "CEB7L6EM", claim: "The digital board comprises three main components: ADC, FPGA, and DAC ... phase detector ... PID controller processes the phase information to generate a feedback signal"}
 
-  - id: rel.W25_10
+  - id: rel.wang_2025_25_10
     subject: met.digital_servo_control_bandwidth_w25
     predicate: BOUNDED-BY
     object: pri.digital_servo_latency_bandwidth_tradeoff
@@ -313,7 +313,7 @@ relations:
         source: {zotero_key: "CEB7L6EM", claim: "latency ... from intrinsic delays of hardware components"}
         note: "ASIC 路线为工程演进常识；本文未做实验，但明确把器件延迟列为剩余瓶颈。"
 
-  - id: rel.W25_11
+  - id: rel.wang_2025_25_11
     subject: met.fbeat_mod_allan_deviation_w25
     predicate: BOUNDED-BY
     object: pri.digital_servo_latency_bandwidth_tradeoff

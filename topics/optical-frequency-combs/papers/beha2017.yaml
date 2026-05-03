@@ -72,7 +72,7 @@ metrics:
           and they achieve <5×10⁻¹⁴ fractional accuracy and stability"
 
 relations:
-  - id: rel.B01
+  - id: rel.beha_2017_01
     subject: ent.eom_frequency_comb
     predicate: OPERATIONALIZED-AS
     object: meth.eom_comb_self_referencing
@@ -82,7 +82,7 @@ relations:
       claim: "we demonstrate electro-optic generation of a 160 THz bandwidth supercontinuum and
         realize f-2f self-referencing"
 
-  - id: rel.B02
+  - id: rel.beha_2017_02
     subject: met.eom_comb_frequency_accuracy
     predicate: CHARACTERIZED-BY
     object: ent.eom_frequency_comb
@@ -92,7 +92,7 @@ relations:
       claim: "they achieve <5×10⁻¹⁴ fractional accuracy and stability, which opens a novel regime
         for tunable combs with wide mode spacing"
 
-  - id: rel.B03
+  - id: rel.beha_2017_03
     subject: ent.eom_frequency_comb
     predicate: COMPETES-WITH
     object: ent.optical_frequency_comb

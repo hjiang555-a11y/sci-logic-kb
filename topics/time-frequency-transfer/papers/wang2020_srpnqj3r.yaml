@@ -52,7 +52,7 @@ entities:
     note: "Level 2 实例，PART-OF ent.rf_over_fiber_time_transfer_link"
 
 relations:
-  - id: rel.Wan20_01
+  - id: rel.wang_2020_an20_01
     subject: ent.same_wavelength_tf_joint_link_w20
     predicate: PART-OF
     object: ent.rf_over_fiber_time_transfer_link
@@ -60,7 +60,7 @@ relations:
       paper: wang2020
       claim: "time and frequency signals are modulated on the same laser wavelength"
 
-  - id: rel.Wan20_02
+  - id: rel.wang_2020_an20_02
     subject: ent.same_wavelength_tf_joint_link_w20
     predicate: ENABLED-BY
     object: pri.roundtrip_phase_compensation_rf_transfer

@@ -259,7 +259,7 @@ metrics:
 # ═══════════════════════════════════════════════
 
 relations:
-  - id: rel.H07_01
+  - id: rel.hartl_2007_07_01
     subject: ent.cavity_enhanced_yb_comb_h07
     predicate: PART-OF
     object: ent.optical_frequency_comb
@@ -267,49 +267,49 @@ relations:
     source: {zotero_key: "H4DKWZWF", claim: "cavity-enhanced similariton Yb-fiber laser frequency comb"}
     note: "ent.optical_frequency_comb 定义于 udem2002.yaml（跨文件引用）"
 
-  - id: rel.H07_02
+  - id: rel.hartl_2007_07_02
     subject: ent.passive_buildup_cavity_h07
     predicate: PART-OF
     object: ent.cavity_enhanced_yb_comb_h07
     confidence: established
     source: {zotero_key: "H4DKWZWF", claim: "passive high-finesse bow-tie enhancement cavity with a finesse of ~230"}
 
-  - id: rel.H07_03
+  - id: rel.hartl_2007_07_03
     subject: ent.yb_similariton_cpa_h07
     predicate: PART-OF
     object: ent.cavity_enhanced_yb_comb_h07
     confidence: established
     source: {zotero_key: "H4DKWZWF", claim: "Yb-fiber similariton oscillator with frep=136 MHz ... cladding-pumped chirped-pulse fiber amplifier"}
 
-  - id: rel.H07_04
+  - id: rel.hartl_2007_07_04
     subject: ent.cavity_enhanced_yb_comb_h07
     predicate: CHARACTERIZED-BY
     object: met.intracavity_peak_intensity_h07
     confidence: established
     source: {zotero_key: "H4DKWZWF", claim: "3×10^14 W/cm² peak intensity at 136 MHz"}
 
-  - id: rel.H07_05
+  - id: rel.hartl_2007_07_05
     subject: ent.cavity_enhanced_yb_comb_h07
     predicate: CHARACTERIZED-BY
     object: met.intracavity_avg_power_h07
     confidence: established
     source: {zotero_key: "H4DKWZWF", claim: "intracavity average power of 3 kW"}
 
-  - id: rel.H07_06
+  - id: rel.hartl_2007_07_06
     subject: ent.cavity_enhanced_yb_comb_h07
     predicate: ENABLED-BY
     object: pri.coherent_pulse_addition_passive_cavity
     confidence: established
     source: {zotero_key: "H4DKWZWF", claim: "coherently coupled into a passive high-finesse enhancement cavity"}
 
-  - id: rel.H07_07
+  - id: rel.hartl_2007_07_07
     subject: pri.coherent_pulse_addition_passive_cavity
     predicate: ENABLED-BY
     object: meth.intracavity_pdh_frep_lock_h07
     confidence: established
     source: {zotero_key: "H4DKWZWF", claim: "frep is phase-locked to the cavity FSR via a piezo and a fiber stretcher"}
 
-  - id: rel.H07_08
+  - id: rel.hartl_2007_07_08
     subject: ent.cavity_enhanced_yb_comb_h07
     predicate: BOUNDED-BY
     object: pri.mirror_damage_threshold_limit
@@ -321,7 +321,7 @@ relations:
         status: proposed
         source: {zotero_key: "H4DKWZWF", claim: "high-damage-threshold, low-dispersion mirror coatings"}
 
-  - id: rel.H07_09
+  - id: rel.hartl_2007_07_09
     subject: pri.hhg_comb_vuv_extension
     predicate: DERIVED-FROM
     object: pri.self_referencing_f2f
@@ -329,7 +329,7 @@ relations:
     source: {zotero_key: "H4DKWZWF", claim: "frequency comb extending from the VUV to the visible spectral range"}
     note: "pri.self_referencing_f2f 定义于 udem2002.yaml / giunta2019.yaml（跨文件引用）"
 
-  - id: rel.H07_10
+  - id: rel.hartl_2007_07_10
     subject: ent.cavity_enhanced_yb_comb_h07
     predicate: CONDITIONED-BY
     object: ent.vibration_environment

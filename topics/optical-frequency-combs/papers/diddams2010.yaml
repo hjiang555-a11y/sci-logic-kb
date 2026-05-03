@@ -107,7 +107,7 @@ principles:
     breakthrough_paths: []  # framework tier 不要求补
 
 relations:
-  - id: rel.Did10_01
+  - id: rel.diddams_2010_id10_01
     predicate: ENABLED-BY
     subject: ent.optical_frequency_comb_diddams2010
     object: pri.octave_supercontinuum_enables_self_referencing_d10
@@ -123,7 +123,7 @@ relations:
       ENABLED-BY 关系：倍频程超连续谱原理使 OFC 从"部分可知"升级到"完全可知"。
       本关系承接 Diddams 2000（第一篇完整 f-2f 演示，已在 Batch 1 摄入）与本综述之间的历史逻辑。
 
-  - id: rel.Did10_02
+  - id: rel.diddams_2010_id10_02
     predicate: CHARACTERIZED-BY
     subject: ent.optical_frequency_comb_diddams2010
     object: pri.ofc_functional_definition_2010

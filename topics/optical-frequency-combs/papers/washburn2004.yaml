@@ -112,7 +112,7 @@ metrics:
         note: "Er:fiber 平台首次覆盖倍频程以支撑 f-2f 自参考"
 
 relations:
-  - id: rel.Wash04_01
+  - id: rel.washburn_2004_ash04_01
     subject: ent.er_fiber_comb_washburn04
     predicate: PART-OF
     object: ent.optical_frequency_comb
@@ -122,7 +122,7 @@ relations:
       claim: "A phase-locked frequency comb in the near infrared is demonstrated with a mode-locked, erbium-doped, fiber laser"
     note: "跨文件引用 ent.optical_frequency_comb（定义于 giunta2019.yaml）"
 
-  - id: rel.Wash04_02
+  - id: rel.washburn_2004_ash04_02
     subject: ent.er_fiber_comb_washburn04
     predicate: CHARACTERIZED-BY
     object: met.er_fiber_comb_nir_octave_span_w04
@@ -131,7 +131,7 @@ relations:
       zotero_key: "TP9NSD4F"
       claim: "supercontinuum output comprises a frequency comb ... to span from 1100 to ~2200 nm"
 
-  - id: rel.Wash04_03
+  - id: rel.washburn_2004_ash04_03
     subject: meth.dual_pll_frep_fceo_rf_reference
     predicate: OPERATIONALIZED-AS
     object: ent.er_fiber_comb_washburn04
@@ -140,7 +140,7 @@ relations:
       zotero_key: "TP9NSD4F"
       claim: "The comb spacing and offset frequency are phase locked to a stable rf signal with a fiber stretcher in the laser cavity and by control of the pump laser power, respectively."
 
-  - id: rel.Wash04_04
+  - id: rel.washburn_2004_ash04_04
     subject: meth.dual_pll_frep_fceo_rf_reference
     predicate: ENABLED-BY
     object: pri.self_referencing_f2f
@@ -150,7 +150,7 @@ relations:
       claim: "f0 ... detected with the standard f-to-2f heterodyne technique"
     note: "跨文件引用 pri.self_referencing_f2f（定义于 giunta2019.yaml）"
 
-  - id: rel.Wash04_05
+  - id: rel.washburn_2004_ash04_05
     subject: meth.dual_pll_frep_fceo_rf_reference
     predicate: ENABLED-BY
     object: pri.dispersion_flattened_hnlf_octave_broadening
@@ -159,7 +159,7 @@ relations:
       zotero_key: "TP9NSD4F"
       claim: "supercontinuum ... in dispersion-flattened, highly nonlinear optical fiber to span ... octave"
 
-  - id: rel.Wash04_06
+  - id: rel.washburn_2004_ash04_06
     subject: ent.er_fiber_comb_washburn04
     predicate: CHARACTERIZED-BY
     object: pri.comb_equation

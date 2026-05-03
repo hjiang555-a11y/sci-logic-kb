@@ -137,9 +137,9 @@ metrics:
           of ~26 GHz and ~16.4 GHz and anomalous dispersion"
 
 relations:
-  - id: rel.C01
+  - id: rel.cole_2018_01
     subject: ent.soliton_crystal_microcomb
-    predicate: GOVERNED-BY
+    predicate: ENABLED-BY
     object: pri.soliton_crystal_formation
     confidence: established
     source:
@@ -148,7 +148,7 @@ relations:
         "Soliton crystallization is explained by long-range soliton interactions mediated
         by resonator mode degeneracies"
 
-  - id: rel.C02
+  - id: rel.cole_2018_02
     subject: ent.soliton_crystal_microcomb
     predicate: CHARACTERIZED-BY
     object: pri.soliton_crystal_fingerprint_spectrum
@@ -159,7 +159,7 @@ relations:
         "We unambiguously identify and characterize soliton crystals through analysis of
         their 'fingerprint' optical spectra"
 
-  - id: rel.C03
+  - id: rel.cole_2018_03
     subject: ent.soliton_crystal_microcomb
     predicate: CHARACTERIZED-BY
     object: met.soliton_crystal_rep_rate_enhancement
@@ -168,7 +168,7 @@ relations:
       zotero_key: "Q7ZYAQMC"
       claim: "n solitons → n × f_rep beating; comb lines spaced by 24 resonator FSRs"
 
-  - id: rel.C04
+  - id: rel.cole_2018_04
     subject: ent.silica_wgm_resonator_cole
     predicate: ENABLES
     object: ent.soliton_crystal_microcomb
@@ -179,7 +179,7 @@ relations:
         "We generated soliton crystals in silica Kerr whispering-gallery-mode resonators
         with free spectral ranges (FSRs) of ~26 GHz and ~16.4 GHz"
 
-  - id: rel.C05
+  - id: rel.cole_2018_05
     subject: ent.soliton_crystal_microcomb
     predicate: USES-METHOD
     object: meth.adiabatic_soliton_crystal_generation

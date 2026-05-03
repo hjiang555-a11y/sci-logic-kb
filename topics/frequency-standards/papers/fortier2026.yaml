@@ -281,28 +281,28 @@ metrics:
 # ═══════════════════════════════════════════════
 
 relations:
-  - id: rel.F26_01
+  - id: rel.fortier_2025_26_01
     subject: ent.trapped_ion_optical_clock
     predicate: PART-OF
     object: ent.optical_frequency_standard
     confidence: established
     source: {zotero_key: "BWR7TEZ6", claim: "Single-ion clocks typically excel in accuracy due to minimal motional effects"}
 
-  - id: rel.F26_02
+  - id: rel.fortier_2025_26_02
     subject: ent.optical_lattice_clock
     predicate: PART-OF
     object: ent.optical_frequency_standard
     confidence: established
     source: {zotero_key: "BWR7TEZ6", claim: "optical lattice clocks leverage large ensembles of neutral atoms"}
 
-  - id: rel.F26_03
+  - id: rel.fortier_2025_26_03
     subject: ent.nuclear_clock_229th
     predicate: PART-OF
     object: ent.optical_frequency_standard
     confidence: established
     source: {zotero_key: "BWR7TEZ6", claim: "nuclear clocks represent an emerging class of frequency standards"}
 
-  - id: rel.F26_04
+  - id: rel.fortier_2025_26_04
     subject: ent.optical_frequency_standard
     predicate: BOUNDED-BY
     object: pri.quantum_projection_noise_limit
@@ -320,7 +320,7 @@ relations:
         status: in_progress
         source: {zotero_key: "BWR7TEZ6", claim: "Mitigation therefore requires minimizing the Dick effect"}
 
-  - id: rel.F26_05
+  - id: rel.fortier_2025_26_05
     subject: ent.optical_frequency_standard
     predicate: BOUNDED-BY
     object: pri.dick_effect
@@ -342,7 +342,7 @@ relations:
       更好的超稳激光 → 更长 T_m → 更小 Dick 效应 → 更好的光钟稳定度。
       跨专题引用：超稳激光专题的 met.fractional_freq_instability 系列指标直接影响此处。
 
-  - id: rel.F26_06
+  - id: rel.fortier_2025_26_06
     subject: ent.optical_lattice_clock
     predicate: ENABLED-BY
     object: pri.magic_wavelength_lattice
@@ -350,28 +350,28 @@ relations:
     source: {zotero_key: "BWR7TEZ6", claim: "the proposal of a 'magic wavelength'"}
     conditions: "晶格激光波长精确调谐至魔术波长"
 
-  - id: rel.F26_07
+  - id: rel.fortier_2025_26_07
     subject: ent.optical_frequency_standard
     predicate: CHARACTERIZED-BY
     object: met.optical_clock_fractional_instability
     confidence: established
     source: {zotero_key: "BWR7TEZ6", claim: "fractional instabilities approaching 5 × 10⁻¹⁷τ⁻¹/²"}
 
-  - id: rel.F26_08
+  - id: rel.fortier_2025_26_08
     subject: ent.optical_frequency_standard
     predicate: CHARACTERIZED-BY
     object: met.optical_clock_fractional_uncertainty
     confidence: established
     source: {zotero_key: "BWR7TEZ6", claim: "fractional frequency uncertainties now surpassing 10⁻¹⁸"}
 
-  - id: rel.F26_09
+  - id: rel.fortier_2025_26_09
     subject: met.optical_clock_fractional_instability
     predicate: OPERATIONALIZED-AS
     object: meth.ramsey_spectroscopy_clock
     confidence: established
     source: {zotero_key: "BWR7TEZ6", claim: "Ramsey spectroscopy... a commonly used interferometric method"}
 
-  - id: rel.F26_10
+  - id: rel.fortier_2025_26_10
     subject: ent.optical_frequency_standard
     predicate: CONDITIONED-BY
     object: ent.optical_frequency_comb
@@ -388,7 +388,7 @@ relations:
       光学频率梳是连接光钟与 SI 秒的必要工具。
       前提：上述跨专题节点须存在于对应文件中，才能使本关系完整可查询。
 
-  - id: rel.F26_11
+  - id: rel.fortier_2025_26_11
     subject: ent.optical_frequency_standard
     predicate: CONDITIONED-BY
     object: ent.fp_cavity_system

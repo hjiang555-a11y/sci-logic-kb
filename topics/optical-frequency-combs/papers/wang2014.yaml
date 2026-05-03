@@ -105,7 +105,7 @@ metrics:
       光学 σ_y；评价严格度低于 out-of-loop 超稳光学比对。
 
 relations:
-  - id: rel.W14_01
+  - id: rel.wang_2014_14_01
     subject: ent.yb_fiber_500mhz_comb_wang14
     predicate: PART-OF
     object: ent.optical_frequency_comb
@@ -113,28 +113,28 @@ relations:
     source: {zotero_key: "VATLBIAD", claim: "An optical frequency comb based on Yb:ring fiber laser was demonstrated."}
     note: "跨文件引用 ent.optical_frequency_comb（giunta2019.yaml）"
 
-  - id: rel.W14_02
+  - id: rel.wang_2014_14_02
     subject: ent.yb_fiber_500mhz_comb_wang14
     predicate: CHARACTERIZED-BY
     object: met.frep_500mhz_no_amp_w14
     confidence: established
     source: {zotero_key: "VATLBIAD", claim: "500 MHz ytterbium fiber laser comb without amplifiers"}
 
-  - id: rel.W14_03
+  - id: rel.wang_2014_14_03
     subject: ent.yb_fiber_500mhz_comb_wang14
     predicate: CHARACTERIZED-BY
     object: met.frep_inloop_tracking_w14
     confidence: established
     source: {zotero_key: "VATLBIAD", claim: "in-loop tracking stability of 4.46 × 10−13/τ1/2"}
 
-  - id: rel.W14_04
+  - id: rel.wang_2014_14_04
     subject: meth.amplifier_free_high_frep_yb_comb
     predicate: OPERATIONALIZED-AS
     object: ent.yb_fiber_500mhz_comb_wang14
     confidence: established
     source: {zotero_key: "VATLBIAD", claim: "we demonstrate a 500 MHz ytterbium fiber laser comb without amplifiers"}
 
-  - id: rel.W14_05
+  - id: rel.wang_2014_14_05
     subject: meth.amplifier_free_high_frep_yb_comb
     predicate: ENABLED-BY
     object: pri.self_referencing_f2f
@@ -142,7 +142,7 @@ relations:
     source: {zotero_key: "VATLBIAD", claim: "f-2f interferometer" }
     note: "跨文件引用 pri.self_referencing_f2f（giunta2019.yaml）"
 
-  - id: rel.W14_06
+  - id: rel.wang_2014_14_06
     subject: met.frep_500mhz_no_amp_w14
     predicate: BOUNDED-BY
     object: pri.high_frep_bandwidth_power_tradeoff

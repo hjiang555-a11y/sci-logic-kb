@@ -109,7 +109,7 @@ metrics:
       source: {zotero_key: "R9HNIBTE", claim: "We validate ... high-stability frequency synthesis using two ultra-stable optical references at 1157 nm and 1070 nm ... instability at the 10⁻¹⁸ level."}
 
 relations:
-  - id: rel.Nar23_01
+  - id: rel.nardelli_2023_ar23_01
     subject: ent.er_yb_glass_comb_nardelli23
     predicate: PART-OF
     object: ent.optical_frequency_comb
@@ -117,28 +117,28 @@ relations:
     source: {zotero_key: "R9HNIBTE", claim: "optical frequency comb based on a 500 MHz free-space laser with an Er/Yb co-doped phosphate glass gain medium"}
     note: "跨文件引用 ent.optical_frequency_comb（定义于 giunta2019.yaml）"
 
-  - id: rel.Nar23_02
+  - id: rel.nardelli_2023_ar23_02
     subject: ent.er_yb_glass_comb_nardelli23
     predicate: CHARACTERIZED-BY
     object: met.er_yb_glass_comb_beat_stability_n23
     confidence: established
     source: {zotero_key: "R9HNIBTE", claim: "10⁻¹⁸ level"}
 
-  - id: rel.Nar23_03
+  - id: rel.nardelli_2023_ar23_03
     subject: met.er_yb_glass_comb_beat_stability_n23
     predicate: BOUNDED-BY
     object: pri.er_yb_co_doping_pump_noise_suppression_n23
     confidence: established
     source: {zotero_key: "R9HNIBTE", claim: "low intrinsic noise ... co-doping of Er and Yb that suppresses high-frequency pump intensity noise"}
 
-  - id: rel.Nar23_04
+  - id: rel.nardelli_2023_ar23_04
     subject: meth.dual_usl_locked_er_yb_glass_comb_n23
     predicate: OPERATIONALIZED-AS
     object: ent.er_yb_glass_comb_nardelli23
     confidence: established
     source: {zotero_key: "R9HNIBTE", claim: "two ultra-stable optical references ... optical-to-optical synthesis"}
 
-  - id: rel.Nar23_05
+  - id: rel.nardelli_2023_ar23_05
     subject: meth.dual_usl_locked_er_yb_glass_comb_n23
     predicate: ENABLED-BY
     object: pri.self_referencing_f2f
@@ -146,7 +146,7 @@ relations:
     source: {zotero_key: "R9HNIBTE", claim: "f-2f interferometer ... fceo detection"}
     note: "跨文件引用 pri.self_referencing_f2f（定义于 giunta2019.yaml）"
 
-  - id: rel.Nar23_06
+  - id: rel.nardelli_2023_ar23_06
     subject: meth.dual_usl_locked_er_yb_glass_comb_n23
     predicate: ENABLED-BY
     object: pri.optical_frequency_division_microwave

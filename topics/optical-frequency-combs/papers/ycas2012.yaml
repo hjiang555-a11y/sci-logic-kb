@@ -113,28 +113,28 @@ metrics:
         source: {zotero_key: "3JN2PBKX"}
 
 relations:
-  - id: rel.YC12_01
+  - id: rel.ycas_2012_C12_01
     subject: ent.near_ir_astro_comb_y12
     predicate: CHARACTERIZED-BY
     object: met.astro_comb_rv_precision_y12
     confidence: established
     source: {zotero_key: "3JN2PBKX", claim: "radial velocity precision of ~10 m/s (~6 MHz) was achieved from the comb-calibrated spectra"}
 
-  - id: rel.YC12_02
+  - id: rel.ycas_2012_C12_02
     subject: meth.astro_comb_rv_calibration
     predicate: ENABLED-BY
     object: pri.fabry_perot_mode_filter_astro_comb
     confidence: established
     source: {zotero_key: "3JN2PBKX", claim: "a 25 GHz laser frequency comb based on a cavity-filtered erbium fiber mode-locked laser"}
 
-  - id: rel.YC12_03
+  - id: rel.ycas_2012_C12_03
     subject: ent.near_ir_astro_comb_y12
     predicate: PART-OF
     object: ent.optical_frequency_comb
     confidence: established
     source: {zotero_key: "3JN2PBKX", claim: "near-IR laser frequency comb deployed for on-sky calibration of astronomical spectra"}
 
-  - id: rel.YC12_04
+  - id: rel.ycas_2012_C12_04
     subject: met.astro_comb_rv_precision_y12
     predicate: BOUNDED-BY
     object: pri.fabry_perot_mode_filter_astro_comb

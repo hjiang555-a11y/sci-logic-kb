@@ -127,7 +127,7 @@ metrics:
       source: {zotero_key: "RDBWYLKJ", claim: "a power level exceeding 1 nW per mode ... currently unachievable with existing mode-filtering approaches"}
 
 relations:
-  - id: rel.Bar09_01
+  - id: rel.bartels_2009_ar09_01
     subject: ent.ti_sapph_10ghz_comb_bartels09
     predicate: PART-OF
     object: ent.optical_frequency_comb
@@ -137,7 +137,7 @@ relations:
       claim: "a 10-GHz self-referenced optical frequency comb"
     note: "跨文件引用 ent.optical_frequency_comb（giunta2019.yaml）"
 
-  - id: rel.Bar09_02
+  - id: rel.bartels_2009_ar09_02
     subject: ent.ti_sapph_10ghz_comb_bartels09
     predicate: CHARACTERIZED-BY
     object: met.frep_10ghz_self_referenced_b09
@@ -146,7 +146,7 @@ relations:
       zotero_key: "RDBWYLKJ"
       claim: "frequency comb spacing of fR = 10 GHz"
 
-  - id: rel.Bar09_03
+  - id: rel.bartels_2009_ar09_03
     subject: ent.ti_sapph_10ghz_comb_bartels09
     predicate: CHARACTERIZED-BY
     object: met.per_mode_power_high_frep_b09
@@ -155,7 +155,7 @@ relations:
       zotero_key: "RDBWYLKJ"
       claim: ">1 nW per mode ... unachievable with existing mode-filtering approaches"
 
-  - id: rel.Bar09_04
+  - id: rel.bartels_2009_ar09_04
     subject: met.frep_10ghz_self_referenced_b09
     predicate: BOUNDED-BY
     object: pri.high_frep_bandwidth_power_tradeoff
@@ -169,7 +169,7 @@ relations:
         status: demonstrated
         source: {zotero_key: "RDBWYLKJ"}
 
-  - id: rel.Bar09_05
+  - id: rel.bartels_2009_ar09_05
     subject: meth.klm_10ghz_comb_self_reference
     predicate: ENABLED-BY
     object: pri.self_referencing_f2f
@@ -179,7 +179,7 @@ relations:
       claim: "f0 is measured with a nonlinear f-2f interferometer"
     note: "跨文件引用 pri.self_referencing_f2f（giunta2019.yaml）"
 
-  - id: rel.Bar09_06
+  - id: rel.bartels_2009_ar09_06
     subject: meth.klm_10ghz_comb_self_reference
     predicate: ENABLED-BY
     object: pri.supercontinuum_octave_spanning

@@ -1,171 +1,179 @@
-# Möhle 2013 — 高稳定压电可调谐参考腔
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-16
-# Schema版本：v4.1
-
 meta:
-  zotero_key: "8MNIBZEW"
+  zotero_key: 8MNIBZEW
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: "Highly stable piezoelectrically tunable optical cavities"
+  title: Highly stable piezoelectrically tunable optical cavities
   year: 2013
   first_author: Möhle
-  journal: "Applied Physics B"
+  journal: Applied Physics B
   volume: 111
-  pages: "suppl"
-  doi: "10.1007/s00340-013-5394-3"
-  note: >
-    系统评估了四种压电材料（PZT 叠层、PZT 管、石英、PZN-PT 单晶）
-    在 10 cm Zerodur 高精细度腔中的频率稳定度和调谐能力。
-    短路压电时相对频率稳定度优于 1×10⁻¹⁴，可电调谐超过 1 个 FSR（>1.5 GHz）。
-    为 LISA 等空间任务的可调预稳定提供了技术基础。
-    核心贡献：证明内置压电驱动器不是频率稳定度的限制因素。
+  pages: suppl
+  doi: 10.1007/s00340-013-5394-3
+  note: '系统评估了四种压电材料（PZT 叠层、PZT 管、石英、PZN-PT 单晶） 在 10 cm Zerodur 高精细度腔中的频率稳定度和调谐能力。
+    短路压电时相对频率稳定度优于 1×10⁻¹⁴，可电调谐超过 1 个 FSR（>1.5 GHz）。 为 LISA 等空间任务的可调预稳定提供了技术基础。 核心贡献：证明内置压电驱动器不是频率稳定度的限制因素。
 
+    '
 entities:
-  - id: ent.piezo_tunable_cavity_m13
-    name: "压电可调谐高精细度参考腔"
-    aliases: ["piezo cavity", "tunable reference cavity"]
-    hierarchy_level: 2
-    status: demonstrated
-    function: >
-      在高精细度参考腔中集成压电驱动器（PZT/石英/PZN-PT），
-      实现任意频率处的频率稳定化（可调谐超过 1 FSR），
-      同时保持接近固定腔的频率稳定度（<1×10⁻¹⁴）。
-    key_parameters:
-      cavity_length: "10 cm"
-      spacer_material: "Zerodur"
-      target_finesse: "300,000"
-      wavelength: "1064 nm"
-      tuning_range_pzt_stack: ">1 FSR (>1.5 GHz)"
-      tuning_range_pzn_pt: ">1 FSR"
-      tuning_coefficient_pzt_stack: "1.8 MHz/V"
-      tuning_coefficient_pzn_pt: "19.1 MHz/V"
-      piezo_attachment: "3-point epoxy (Eccobond 285) on each side"
-    practical_limitations:
-      - description: "环氧树脂（Eccobond 285）固化时间过长，需数周达到最佳稳定度"
-        source_claim: "10–12 weeks were necessary to reach the noise levels presented in this paper"
-        impact: "制造周期长，影响快速原型迭代"
-      - description: "压电驱动电压噪声直接耦合到腔长噪声"
-        source_claim: "noise in the voltage driving the piezo actuator could decrease the stability"
-        impact: "高调谐系数材料（如 PZN-PT）对驱动电压噪声更敏感"
-    note: "PART-OF ent.fp_cavity_system（定义于 numata2004.yaml）。提供频率连续可调能力。"
+- id: ent.piezo_tunable_cavity_m13
+  name: 压电可调谐高精细度参考腔
+  aliases:
+  - piezo cavity
+  - tunable reference cavity
+  hierarchy_level: 2
+  status: demonstrated
+  function: '在高精细度参考腔中集成压电驱动器（PZT/石英/PZN-PT）， 实现任意频率处的频率稳定化（可调谐超过 1 FSR）， 同时保持接近固定腔的频率稳定度（<1×10⁻¹⁴）。
 
+    '
+  key_parameters:
+    cavity_length: 10 cm
+    spacer_material: Zerodur
+    target_finesse: 300,000
+    wavelength: 1064 nm
+    tuning_range_pzt_stack: '>1 FSR (>1.5 GHz)'
+    tuning_range_pzn_pt: '>1 FSR'
+    tuning_coefficient_pzt_stack: 1.8 MHz/V
+    tuning_coefficient_pzn_pt: 19.1 MHz/V
+    piezo_attachment: 3-point epoxy (Eccobond 285) on each side
+  practical_limitations:
+  - description: 环氧树脂（Eccobond 285）固化时间过长，需数周达到最佳稳定度
+    source_claim: 10–12 weeks were necessary to reach the noise levels presented in
+      this paper
+    impact: 制造周期长，影响快速原型迭代
+  - description: 压电驱动电压噪声直接耦合到腔长噪声
+    source_claim: noise in the voltage driving the piezo actuator could decrease the
+      stability
+    impact: 高调谐系数材料（如 PZN-PT）对驱动电压噪声更敏感
+  note: PART-OF ent.fp_cavity_system（定义于 numata2004.yaml）。提供频率连续可调能力。
 principles:
-  - id: pri.piezo_tuning_stability_tradeoff
-    name: "压电调谐范围与频率稳定度的权衡"
-    tier: engineering
-    verification_status: observed
-    statement: >
-      压电驱动器的调谐系数（MHz/V）决定了给定电压范围内的调谐范围，
-      但同时也决定了驱动电压噪声到频率噪声的转换增益。
-      高调谐系数意味着：(1) 更低驱动电压可覆盖整个 FSR，
-      (2) 但驱动器电压噪声的频率等效贡献更大。
-      实验表明，在短路或低噪声驱动条件下，压电驱动器不是频率稳定度的限制因素。
-      PZN-PT 单晶的调谐系数（19.1 MHz/V）比 PZT 叠层（1.8 MHz/V）高 10 倍。
-    domain: "参考腔频率调谐"
-    key_insight: "压电驱动器本身不限制频率稳定度；限制来自实验环境（振动、倾斜、强度噪声）。"
-    conditions: "适用于内置压电驱动器的 FP 参考腔"
-    preconditions:
-      - "压电驱动器与腔镜之间的胶合充分固化"
-      - "驱动电压源的噪声足够低"
-    invalidated_when:
-      - "驱动电压噪声谱密度超过目标频率稳定度对应的等效电压噪声"
-    source_claim: >
-      "the frequency stability of the piezo cavities is not limited by the piezo actuator
-      but by the experimental setup"
+- id: pri.piezo_tuning_stability_tradeoff
+  name: 压电调谐范围与频率稳定度的权衡
+  tier: engineering
+  verification_status: observed
+  statement: '压电驱动器的调谐系数（MHz/V）决定了给定电压范围内的调谐范围， 但同时也决定了驱动电压噪声到频率噪声的转换增益。 高调谐系数意味着：(1)
+    更低驱动电压可覆盖整个 FSR， (2) 但驱动器电压噪声的频率等效贡献更大。 实验表明，在短路或低噪声驱动条件下，压电驱动器不是频率稳定度的限制因素。 PZN-PT
+    单晶的调谐系数（19.1 MHz/V）比 PZT 叠层（1.8 MHz/V）高 10 倍。
 
+    '
+  domain: 参考腔频率调谐
+  key_insight: 压电驱动器本身不限制频率稳定度；限制来自实验环境（振动、倾斜、强度噪声）。
+  conditions: 适用于内置压电驱动器的 FP 参考腔
+  preconditions:
+  - 压电驱动器与腔镜之间的胶合充分固化
+  - 驱动电压源的噪声足够低
+  invalidated_when:
+  - 驱动电压噪声谱密度超过目标频率稳定度对应的等效电压噪声
+  source_claim: '"the frequency stability of the piezo cavities is not limited by
+    the piezo actuator but by the experimental setup"
+
+    '
 methods:
-  - id: meth.piezo_cavity_integration_characterization_m13
-    name: "压电可调谐腔集成与表征方法"
-    description: >
-      系统评估四种压电材料（PZT叠层、PZT管、石英、PZN-PT单晶）在10 cm Zerodur高精细度腔中的性能。
-      方法包括：(1) 压电驱动器三点环氧树脂（Eccobond 285）胶合到腔镜，(2) 电学短路条件下的频率稳定度测量，
-      (3) 调谐系数和范围测量，(4) 频率噪声谱分析，识别噪声来源。
-      通过对比相同腔体不同压电材料的性能，分离压电驱动器本身贡献与环境噪声。
-    inputs:
-      - "10 cm Zerodur高精细度腔"
-      - "四种压电驱动器（PZT叠层、PZT管、石英、PZN-PT）"
-      - "Eccobond 285环氧树脂"
-      - "低噪声电压源和测量系统"
-    outputs:
-      - "各压电材料的调谐系数（MHz/V）"
-      - "调谐范围（>1 FSR）"
-      - "短路条件下的频率稳定度（<1×10⁻¹⁴）"
-      - "噪声来源分析"
-    verification_status: observed
-    evidence: "Table 1: Characteristics of the piezo actuators; Fig. 3: Frequency noise spectra"
-    limitations:
-      - "环氧树脂固化需要10-12周达到最佳稳定度"
-      - "高调谐系数材料对驱动电压噪声更敏感"
+- id: meth.piezo_cavity_integration_characterization_m13
+  name: 压电可调谐腔集成与表征方法
+  description: '系统评估四种压电材料（PZT叠层、PZT管、石英、PZN-PT单晶）在10 cm Zerodur高精细度腔中的性能。 方法包括：(1)
+    压电驱动器三点环氧树脂（Eccobond 285）胶合到腔镜，(2) 电学短路条件下的频率稳定度测量， (3) 调谐系数和范围测量，(4) 频率噪声谱分析，识别噪声来源。
+    通过对比相同腔体不同压电材料的性能，分离压电驱动器本身贡献与环境噪声。
 
+    '
+  inputs:
+  - 10 cm Zerodur高精细度腔
+  - 四种压电驱动器（PZT叠层、PZT管、石英、PZN-PT）
+  - Eccobond 285环氧树脂
+  - 低噪声电压源和测量系统
+  outputs:
+  - 各压电材料的调谐系数（MHz/V）
+  - 调谐范围（>1 FSR）
+  - 短路条件下的频率稳定度（<1×10⁻¹⁴）
+  - 噪声来源分析
+  verification_status: observed
+  evidence: 'Table 1: Characteristics of the piezo actuators; Fig. 3: Frequency noise
+    spectra'
+  limitations:
+  - 环氧树脂固化需要10-12周达到最佳稳定度
+  - 高调谐系数材料对驱动电压噪声更敏感
 metrics:
-  - id: met.freq_stability_piezo_cavity_m13
-    name: "压电腔频率稳定度（Möhle 2013）"
-    unit: "无量纲"
-    description: "压电腔短路时的相对 Allan 偏差"
-    demonstrated_value:
-      value: "<1×10⁻¹⁴ (short-circuited piezo)"
-      conditions: "10 cm Zerodur 腔，PZT 叠层/管/PZN-PT，1064 nm，vs ULE 参考腔"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "8MNIBZEW", claim: "relative frequency stability better than 1×10⁻¹⁴"}
-
-  - id: met.piezo_tuning_range_m13
-    name: "压电调谐范围"
-    unit: "GHz"
-    description: "压电驱动器可实现的频率连续调谐范围"
-    demonstrated_value:
-      value: ">1.5 GHz (>1 FSR)"
-      conditions: "10 cm Zerodur 腔，PZT 叠层或 PZN-PT 驱动"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "8MNIBZEW", claim: "tuned over more than one free spectral range (>1.5 GHz)"}
-
+- id: met.freq_stability_piezo_cavity_m13
+  name: 压电腔频率稳定度（Möhle 2013）
+  unit: 无量纲
+  description: 压电腔短路时的相对 Allan 偏差
+  demonstrated_value:
+    value: <1×10⁻¹⁴ (short-circuited piezo)
+    conditions: 10 cm Zerodur 腔，PZT 叠层/管/PZN-PT，1064 nm，vs ULE 参考腔
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: 8MNIBZEW
+      claim: relative frequency stability better than 1×10⁻¹⁴
+- id: met.piezo_tuning_range_m13
+  name: 压电调谐范围
+  unit: GHz
+  description: 压电驱动器可实现的频率连续调谐范围
+  demonstrated_value:
+    value: '>1.5 GHz (>1 FSR)'
+    conditions: 10 cm Zerodur 腔，PZT 叠层或 PZN-PT 驱动
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: 8MNIBZEW
+      claim: tuned over more than one free spectral range (>1.5 GHz)
 relations:
-  - id: rel.Mo01
-    subject: ent.piezo_tunable_cavity_m13
-    predicate: PART-OF
-    object: ent.fp_cavity_system
-    confidence: established
-    source: {zotero_key: "8MNIBZEW", claim: "highly stable and tunable frequency references using optical high finesse cavities"}
-    note: "跨文件引用，ent.fp_cavity_system 定义于 numata2004.yaml"
-
-  - id: rel.Mo02
-    subject: ent.piezo_tunable_cavity_m13
-    predicate: CHARACTERIZED-BY
-    object: met.freq_stability_piezo_cavity_m13
-    confidence: established
-    source: {zotero_key: "8MNIBZEW", claim: "relative frequency stability better than 1×10⁻¹⁴"}
-
-  - id: rel.Mo03
-    subject: ent.piezo_tunable_cavity_m13
-    predicate: CHARACTERIZED-BY
-    object: met.piezo_tuning_range_m13
-    confidence: established
-    source: {zotero_key: "8MNIBZEW", claim: "electrically tuned over more than one free spectral range"}
-
-  - id: rel.Mo04
-    subject: ent.piezo_tunable_cavity_m13
-    predicate: ENABLED-BY
-    object: pri.piezo_tuning_stability_tradeoff
-    confidence: established
-    source: {zotero_key: "8MNIBZEW", claim: "frequency stability of the piezo cavities is not limited by the piezo actuator"}
-
-  - id: rel.Mo05
-    subject: meth.piezo_cavity_integration_characterization_m13
-    predicate: IMPLEMENTS
-    object: pri.piezo_tuning_stability_tradeoff
-    confidence: established
-    source: {zotero_key: "8MNIBZEW", claim: "we present a systematic study of four different piezoelectric materials..."}
-    verification_status: observed
-    note: "集成与表征方法实现了压电调谐范围与稳定度权衡原理"
-
-  - id: rel.Mo06
-    subject: met.freq_stability_piezo_cavity_m13
-    predicate: CHARACTERIZES
-    object: meth.piezo_cavity_integration_characterization_m13
-    confidence: established
-    source: {zotero_key: "8MNIBZEW", claim: "relative frequency stability better than 1×10⁻¹⁴"}
-    verification_status: observed
-    note: "频率稳定度指标表征了集成方法的输出性能"
+- id: rel.möhle_2013_o01
+  subject: ent.piezo_tunable_cavity_m13
+  predicate: PART-OF
+  object: ent.fp_cavity_system
+  confidence: established
+  source:
+    zotero_key: 8MNIBZEW
+    claim: highly stable and tunable frequency references using optical high finesse
+      cavities
+  note: 跨文件引用，ent.fp_cavity_system 定义于 numata2004.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/mohle2013.yaml
+- id: rel.möhle_2013_o02
+  subject: ent.piezo_tunable_cavity_m13
+  predicate: CHARACTERIZED-BY
+  object: met.freq_stability_piezo_cavity_m13
+  confidence: established
+  source:
+    zotero_key: 8MNIBZEW
+    claim: relative frequency stability better than 1×10⁻¹⁴
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/mohle2013.yaml
+- id: rel.möhle_2013_o03
+  subject: ent.piezo_tunable_cavity_m13
+  predicate: CHARACTERIZED-BY
+  object: met.piezo_tuning_range_m13
+  confidence: established
+  source:
+    zotero_key: 8MNIBZEW
+    claim: electrically tuned over more than one free spectral range
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/mohle2013.yaml
+- id: rel.möhle_2013_o04
+  subject: ent.piezo_tunable_cavity_m13
+  predicate: ENABLED-BY
+  object: pri.piezo_tuning_stability_tradeoff
+  confidence: established
+  source:
+    zotero_key: 8MNIBZEW
+    claim: frequency stability of the piezo cavities is not limited by the piezo actuator
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/mohle2013.yaml
+- id: rel.möhle_2013_o05
+  subject: meth.piezo_cavity_integration_characterization_m13
+  predicate: IMPLEMENTS
+  object: pri.piezo_tuning_stability_tradeoff
+  confidence: established
+  source:
+    zotero_key: 8MNIBZEW
+    claim: we present a systematic study of four different piezoelectric materials...
+  verification_status: observed
+  note: 集成与表征方法实现了压电调谐范围与稳定度权衡原理
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/mohle2013.yaml
+- id: rel.möhle_2013_o06
+  subject: met.freq_stability_piezo_cavity_m13
+  predicate: CHARACTERIZES
+  object: meth.piezo_cavity_integration_characterization_m13
+  confidence: established
+  source:
+    zotero_key: 8MNIBZEW
+    claim: relative frequency stability better than 1×10⁻¹⁴
+  verification_status: observed
+  note: 频率稳定度指标表征了集成方法的输出性能
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/mohle2013.yaml

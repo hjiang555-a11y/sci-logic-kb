@@ -72,7 +72,7 @@ principles:
       "Digital control enables phase coherent operation for over 90 h, critical for phase-sensitive applications such as timekeeping. We show that this phase-slip free operation follows the fundamental limit set by the SNR of the control signals."
 
 relations:
-  - id: rel.Sin15_01
+  - id: rel.sinclair_2015_in15_01
     subject: ent.nist_compact_pm_fiber_comb_s15
     predicate: PART-OF
     object: ent.er_fiber_frequency_comb
@@ -80,14 +80,14 @@ relations:
     source: {zotero_key: "LMFFEUFX", claim: "fiber-frequency comb ... based on polarization-maintaining fiber"}
     note: "跨文件引用 ent.er_fiber_frequency_comb（定义于 droste2016.yaml）"
 
-  - id: rel.Sin15_02
+  - id: rel.sinclair_2015_in15_02
     subject: ent.nist_compact_pm_fiber_comb_s15
     predicate: CHARACTERIZED-BY
     object: pri.pm_fiber_digital_feedback_phase_slip_free_s15
     confidence: established
     source: {zotero_key: "LMFFEUFX", claim: "> 90 h phase-slip free operation"}
 
-  - id: rel.Sin15_03
+  - id: rel.sinclair_2015_in15_03
     subject: pri.pm_fiber_digital_feedback_phase_slip_free_s15
     predicate: ENABLED-BY
     object: pri.self_referencing_f2f

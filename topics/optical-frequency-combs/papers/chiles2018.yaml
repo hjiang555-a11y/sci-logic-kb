@@ -150,7 +150,7 @@ metrics:
       at a wavelength of 2.04 μm"
 
 relations:
-  - id: rel.C18_01
+  - id: rel.chiles_2018_18_01
     subject: ent.deuterated_sin_photonic_platform_c18
     predicate: COMPETES-WITH
     object: ent.si3n4_integrated_comb
@@ -159,7 +159,7 @@ relations:
       section: "Introduction"
     note: "跨文件引用，ent.si3n4_integrated_comb 定义于 kippenberg2011.yaml"
 
-  - id: rel.C18_02
+  - id: rel.chiles_2018_18_02
     subject: ent.deuterated_sin_photonic_platform_c18
     predicate: CHARACTERIZED-BY
     object: met.sind_propagation_loss_c18
@@ -167,7 +167,7 @@ relations:
       claim: "worst-case propagation loss of 0.31 dB/cm"
       section: "Results"
 
-  - id: rel.C18_03
+  - id: rel.chiles_2018_18_03
     subject: ent.deuterated_sin_photonic_platform_c18
     predicate: CHARACTERIZED-BY
     object: met.sind_quality_factor_c18
@@ -175,7 +175,7 @@ relations:
       claim: "peak quality factor of 1.6 × 10^6 at 1552 nm"
       section: "Results"
 
-  - id: rel.C18_04
+  - id: rel.chiles_2018_18_04
     subject: ent.sind_mi_kerr_comb_c18
     predicate: PART-OF
     object: ent.deuterated_sin_photonic_platform_c18
@@ -183,7 +183,7 @@ relations:
       claim: "MI Kerr comb generated in SiN:D microring resonator fabricated on the deuterated silicon nitride platform"
       section: "Results"
 
-  - id: rel.C18_05
+  - id: rel.chiles_2018_18_05
     subject: ent.sind_mi_kerr_comb_c18
     predicate: ENABLED-BY
     object: pri.parametric_four_wave_mixing_comb
@@ -192,7 +192,7 @@ relations:
       section: "Results"
     note: "跨文件引用，pri.parametric_four_wave_mixing_comb 定义于 kippenberg2011.yaml"
 
-  - id: rel.C18_06
+  - id: rel.chiles_2018_18_06
     subject: ent.deuterated_sin_photonic_platform_c18
     predicate: ENABLED-BY
     object: pri.isotope_substitution_absorption_shift
@@ -200,7 +200,7 @@ relations:
       claim: "isotopically substituted precursors to modify the N-H overtone"
       section: "Introduction"
 
-  - id: rel.C18_07
+  - id: rel.chiles_2018_18_07
     subject: ent.deuterated_sin_photonic_platform_c18
     predicate: BOUNDED-BY
     object: pri.isotope_substitution_absorption_shift

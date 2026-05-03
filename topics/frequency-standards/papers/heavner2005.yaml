@@ -46,7 +46,7 @@ entities:
     note: "Level 1 generic node；占位至微波分支完整展开"
 
 relations:
-  - id: rel.Hea05_01
+  - id: rel.heavner_2005_ea05_01
     subject: ent.nist_f1_cs_fountain_h05
     predicate: PART-OF
     object: ent.microwave_frequency_standard
@@ -54,7 +54,7 @@ relations:
       paper: heavner2005
       claim: "NIST-F1 ... laser-cooled Cs fountain primary frequency standard"
 
-  - id: rel.Hea05_02
+  - id: rel.heavner_2005_ea05_02
     subject: ent.nist_f1_cs_fountain_h05
     predicate: REALIZES
     object: pri.si_second_cesium_definition

@@ -105,9 +105,9 @@ metrics:
           where N ≈ 50,000 is the ratio of optical and microwave frequencies"
 
 relations:
-  - id: rel.F01
+  - id: rel.fortier_2012_01
     subject: ent.hybrid_photonic_microwave_osc_fortier2012
-    predicate: GOVERNED-BY
+    predicate: ENABLED-BY
     object: pri.hybrid_ofd_slco_noise_complementarity
     confidence: established
     source:
@@ -116,7 +116,7 @@ relations:
         "we circumvent this limit by disciplining a room temperature sapphire loaded cavity
         oscillator (SLCO) to the microwave signal generated via optical frequency division"
 
-  - id: rel.F02
+  - id: rel.fortier_2012_02
     subject: ent.hybrid_photonic_microwave_osc_fortier2012
     predicate: CHARACTERIZED-BY
     object: met.timing_jitter_hybrid_osc_fortier2012
@@ -125,7 +125,7 @@ relations:
       zotero_key: "PJEYSD8M"
       claim: "the single oscillator timing jitter would be 420 attoseconds"
 
-  - id: rel.F03
+  - id: rel.fortier_2012_03
     subject: ent.hybrid_photonic_microwave_osc_fortier2012
     predicate: USES-METHOD
     object: pri.optical_frequency_division_microwave

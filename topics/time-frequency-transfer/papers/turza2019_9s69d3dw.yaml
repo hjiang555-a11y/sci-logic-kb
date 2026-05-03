@@ -41,7 +41,7 @@ principles:
     source_claim: "dispersion compensation fibers (DCFs) ... cause substantial differential delay, whose temperature-induced fluctuations have the most significant impact"
 
 relations:
-  - id: rel.Tur19_01
+  - id: rel.turza_2019_ur19_01
     subject: ent.rf_over_fiber_time_transfer_link
     predicate: BOUNDED-BY
     object: pri.dcf_induced_differential_delay_temp_compensation
@@ -50,7 +50,7 @@ relations:
       claim: "DCFs cause substantial differential delay"
     note: "ent.rf_over_fiber_time_transfer_link 定义于 krehlik2015"
 
-  - id: rel.Tur19_02
+  - id: rel.turza_2019_ur19_02
     subject: ent.rf_over_fiber_time_transfer_link
     predicate: ENABLED-BY
     object: pri.dcf_induced_differential_delay_temp_compensation

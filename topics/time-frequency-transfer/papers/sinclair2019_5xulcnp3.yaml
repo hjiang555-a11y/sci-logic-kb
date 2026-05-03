@@ -77,7 +77,7 @@ principles:
     source_claim: "breakdown in reciprocity due to relativity and due to asynchronous sampling ... active synchronization ... to below-1-fs time deviation"
 
 relations:
-  - id: rel.Sin19_01
+  - id: rel.sinclair_2019_in19_01
     subject: ent.comb_otwtft_with_motion_s19
     predicate: PART-OF
     object: ent.free_space_optical_tf_link
@@ -85,7 +85,7 @@ relations:
       paper: sinclair2019
       claim: "comb-based optical two-way time and frequency transfer (O-TWTFT)"
 
-  - id: rel.Sin19_02
+  - id: rel.sinclair_2019_in19_02
     subject: ent.comb_otwtft_with_motion_s19
     predicate: OPERATIONALIZED-AS
     object: pri.o_twtft_motion_reciprocity_breakdown
@@ -93,7 +93,7 @@ relations:
       paper: sinclair2019
       claim: "breakdown in reciprocity due to relativity and due to asynchronous sampling"
 
-  - id: rel.Sin19_03
+  - id: rel.sinclair_2019_in19_03
     subject: ent.free_space_optical_tf_link
     predicate: BOUNDED-BY
     object: pri.atmospheric_optical_phase_noise_power_law

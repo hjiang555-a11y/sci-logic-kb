@@ -1,82 +1,74 @@
-# Ding 2025 — 超低膨胀玻璃空心光纤
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-16
-# Schema版本：v4.1
-
 meta:
-  zotero_key: "QGLVTMB7"
+  zotero_key: QGLVTMB7
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: "Hollow-core fiber made of ultralow expansion glass: Toward the ultimate stability for room-temperature fiber optics"
+  title: 'Hollow-core fiber made of ultralow expansion glass: Toward the ultimate
+    stability for room-temperature fiber optics'
   year: 2025
   first_author: Ding
-  journal: "Science Advances"
+  journal: Science Advances
   volume: 11
-  pages: "eads7529"
-  doi: "10.1126/sciadv.ads7529"
-  note: >
-    首次使用超低膨胀（ULE）玻璃制造空心光纤（HCF），
-    热延迟系数比传统光纤低三个数量级。
-    结合 HCF 的低光-玻璃交互特性，为室温光纤应用提供极端稳定性。
+  pages: eads7529
+  doi: 10.1126/sciadv.ads7529
+  note: '首次使用超低膨胀（ULE）玻璃制造空心光纤（HCF）， 热延迟系数比传统光纤低三个数量级。 结合 HCF 的低光-玻璃交互特性，为室温光纤应用提供极端稳定性。
     核心贡献：材料创新（ULE HCF）开启光纤稳频的新极限。
 
+    '
 entities:
-  - id: ent.ule_hollow_core_fiber_d25
-    name: "ULE 玻璃空心光纤（Ding 2025）"
-    aliases: ["ULE HCF", "ultralow expansion hollow core fiber"]
-    hierarchy_level: 2
-    status: demonstrated
-    function: >
-      使用超低膨胀（ULE）玻璃替代传统硅玻璃制造空心光纤，
-      热延迟系数降低三个数量级。光在空心中传播避免了
-      大部分光-玻璃交互引起的传输劣化。
-    key_parameters:
-      material: "ultralow expansion glass"
-      thermal_delay_improvement: "~1000× over conventional fiber"
-    note: "为 ent.fiber_interferometer 提供下一代光纤介质。"
+- id: ent.ule_hollow_core_fiber_d25
+  name: ULE 玻璃空心光纤（Ding 2025）
+  aliases:
+  - ULE HCF
+  - ultralow expansion hollow core fiber
+  hierarchy_level: 2
+  status: demonstrated
+  function: '使用超低膨胀（ULE）玻璃替代传统硅玻璃制造空心光纤， 热延迟系数降低三个数量级。光在空心中传播避免了 大部分光-玻璃交互引起的传输劣化。
 
+    '
+  key_parameters:
+    material: ultralow expansion glass
+    thermal_delay_improvement: ~1000× over conventional fiber
+  note: 为 ent.fiber_interferometer 提供下一代光纤介质。
 principles:
-  - id: pri.ule_hcf_thermal_stability
-    name: "ULE 空心光纤热稳定性原理"
-    tier: foundational
-    verification_status: observed
-    statement: >
-      将 ULE 玻璃用于 HCF 制造，结合 HCF 的低光-玻璃交互
-      和 ULE 的极低热膨胀系数，实现热延迟系数三个数量级降低。
-      光在空心中传播进一步消除了折射率温度效应。
-    domain: "空心光纤 / 材料科学"
-    key_insight: "ULE 玻璃 + 空心导光的双重优势实现光纤热稳定性的质变。"
-    conditions: "ULE 玻璃可加工为空心光纤结构"
-    source_claim: "HCF made from an ultralow expansion glass exhibits three orders of magnitude lower coefficient of thermal delay than traditional fibers"
-    open_questions:
-      - "ULE HCF 的长期可靠性和批量制造一致性？"
-      - "ULE HCF 能否用于长距离（km 级）延迟线？"
+- id: pri.ule_hcf_thermal_stability
+  name: ULE 空心光纤热稳定性原理
+  tier: foundational
+  verification_status: observed
+  statement: '将 ULE 玻璃用于 HCF 制造，结合 HCF 的低光-玻璃交互 和 ULE 的极低热膨胀系数，实现热延迟系数三个数量级降低。 光在空心中传播进一步消除了折射率温度效应。
 
+    '
+  domain: 空心光纤 / 材料科学
+  key_insight: ULE 玻璃 + 空心导光的双重优势实现光纤热稳定性的质变。
+  conditions: ULE 玻璃可加工为空心光纤结构
+  source_claim: HCF made from an ultralow expansion glass exhibits three orders of
+    magnitude lower coefficient of thermal delay than traditional fibers
+  open_questions:
+  - ULE HCF 的长期可靠性和批量制造一致性？
+  - ULE HCF 能否用于长距离（km 级）延迟线？
 methods:
-  - id: meth.ule_hcf_fabrication_ding25
-    name: "ULE玻璃空心光纤制造方法"
-    description: >
-      使用超低膨胀（ULE）玻璃材料制造空心光纤，结合堆叠拉制技术，
-      实现热延迟系数比传统光纤低三个数量级的突破性性能。
-      优化玻璃组成和加工参数以保持低损耗和机械强度。
-    applicable_when: "需要极端热稳定性的光纤延迟线应用，尤其是室温环境"
-    implementation_hints: >
-      选择合适的热膨胀系数ULE玻璃组成；
-      采用毛细管堆叠法构建反谐振空心结构；
-      控制拉制温度曲线以保持玻璃低膨胀特性。
-    relationships:
-      - type: based_on
-        target: pri.ule_hcf_thermal_stability
-      - type: implements
-        target: ent.ule_hollow_core_fiber_d25
+- id: meth.ule_hcf_fabrication_ding25
+  name: ULE玻璃空心光纤制造方法
+  description: '使用超低膨胀（ULE）玻璃材料制造空心光纤，结合堆叠拉制技术， 实现热延迟系数比传统光纤低三个数量级的突破性性能。 优化玻璃组成和加工参数以保持低损耗和机械强度。
 
+    '
+  applicable_when: 需要极端热稳定性的光纤延迟线应用，尤其是室温环境
+  implementation_hints: '选择合适的热膨胀系数ULE玻璃组成； 采用毛细管堆叠法构建反谐振空心结构； 控制拉制温度曲线以保持玻璃低膨胀特性。
+
+    '
+  relationships:
+  - type: based_on
+    target: pri.ule_hcf_thermal_stability
+  - type: implements
+    target: ent.ule_hollow_core_fiber_d25
 metrics: []
-
 relations:
-  - id: rel.DG01
-    subject: ent.ule_hollow_core_fiber_d25
-    predicate: ENABLED-BY
-    object: pri.ule_hcf_thermal_stability
-    confidence: established
-    source: {zotero_key: "QGLVTMB7", claim: "ULE glass HCF exhibits three orders of magnitude lower thermal delay"}
+- id: rel.ding_2025_G01
+  subject: ent.ule_hollow_core_fiber_d25
+  predicate: ENABLED-BY
+  object: pri.ule_hcf_thermal_stability
+  confidence: established
+  source:
+    zotero_key: QGLVTMB7
+    claim: ULE glass HCF exhibits three orders of magnitude lower thermal delay
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/ding2025.yaml

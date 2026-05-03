@@ -195,7 +195,7 @@ metrics:
 # ═══════════════════════════════════════════════
 
 relations:
-  - id: rel.G20_01
+  - id: rel.giunta_2020_20_01
     subject: ent.ultra_low_noise_fiber_comb_g20
     predicate: CHARACTERIZED-BY
     object: met.comb_frequency_synthesis_accuracy_g20
@@ -203,14 +203,14 @@ relations:
     source: {zotero_key: "UFWLAXMA", claim: "measuring an offset between two combs of (5.4 ± 5.3) × 10⁻²¹"}
     conditions: "多分支架构 + 色散外差检测 + 实时相位追踪"
 
-  - id: rel.G20_02
+  - id: rel.giunta_2020_20_02
     subject: ent.ultra_low_noise_fiber_comb_g20
     predicate: CHARACTERIZED-BY
     object: met.comb_transfer_stability_g20
     confidence: established
     source: {zotero_key: "UFWLAXMA", claim: "stability and accuracy at the 20th decimal place within a measurement time of <100 s"}
 
-  - id: rel.G20_03
+  - id: rel.giunta_2020_20_03
     subject: meth.wideband_optical_frequency_synthesis
     predicate: ENABLED-BY
     object: pri.dichroic_heterodyne_detection
@@ -218,14 +218,14 @@ relations:
     source: {zotero_key: "UFWLAXMA", claim: "dichroic heterodyne detection is used to compensate phase drifts occurring in the generation and dissemination of widely spaced optical frequencies"}
     conditions: "多分支非线性展宽架构中光纤相位漂移为主要误差来源"
 
-  - id: rel.G20_04
+  - id: rel.giunta_2020_20_04
     subject: meth.wideband_optical_frequency_synthesis
     predicate: ENABLED-BY
     object: pri.optical_phase_tracking
     confidence: established
     source: {zotero_key: "UFWLAXMA", claim: "real-time optical phase tracking with ultra-low-noise frequency combs as a fundamental means to constantly monitor frequency offsets"}
 
-  - id: rel.G20_05
+  - id: rel.giunta_2020_20_05
     subject: met.comb_frequency_synthesis_accuracy_g20
     predicate: OPERATIONALIZED-AS
     object: meth.wideband_optical_frequency_synthesis

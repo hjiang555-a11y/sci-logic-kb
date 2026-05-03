@@ -1,200 +1,212 @@
-# Matei 2017 — 5–10 mHz 线宽 Si 腔激光，mod σ_y = 4×10⁻¹⁷
-# 提取者：Claude（AI草稿，待专家确认）
-# 提取日期：2026-04-14
-# Schema版本：v4.1
-
 meta:
-  zotero_key: "TVY7T59A"
+  zotero_key: TVY7T59A
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
-  title: "1.5 μm Lasers with Sub-10 mHz Linewidth"
+  title: 1.5 μm Lasers with Sub-10 mHz Linewidth
   year: 2017
   first_author: Matei
-  journal: "Physical Review Letters"
+  journal: Physical Review Letters
   volume: 118
-  pages: "263202"
-  doi: "10.1103/PhysRevLett.118.263202"
-  note: >
-    首次从实验确认两套独立 PTB Si 腔（Si2, Si3）同时在 mod σ_y = 4×10⁻¹⁷ 镀层热噪声极限运行；
-    个体激光线宽 5–10 mHz，光学相干时间 11–55 s（取决于应用场景定义）。
-    核心贡献：（1）实验确认 Si 腔已达到镀层布朗噪声极限（间隔物+底物热噪声可忽略）；
-    （2）严格处理 flicker 频率噪声主导时的线宽/相干时间定义问题（发散问题及实用定义）；
-    （3）提供迄今最高频率稳定度激光的完整相位噪声谱和相干时间分析。
-    PTB（Matei/Legero/Sterr 组）+ JILA（Ye 组）合作。
-    技术分支：FP参考腔系统（Fabry-Pérot Reference Cavity Systems）。
+  pages: '263202'
+  doi: 10.1103/PhysRevLett.118.263202
+  note: '首次从实验确认两套独立 PTB Si 腔（Si2, Si3）同时在 mod σ_y = 4×10⁻¹⁷ 镀层热噪声极限运行； 个体激光线宽 5–10
+    mHz，光学相干时间 11–55 s（取决于应用场景定义）。 核心贡献：（1）实验确认 Si 腔已达到镀层布朗噪声极限（间隔物+底物热噪声可忽略）； （2）严格处理
+    flicker 频率噪声主导时的线宽/相干时间定义问题（发散问题及实用定义）； （3）提供迄今最高频率稳定度激光的完整相位噪声谱和相干时间分析。 PTB（Matei/Legero/Sterr
+    组）+ JILA（Ye 组）合作。 技术分支：FP参考腔系统（Fabry-Pérot Reference Cavity Systems）。
 
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
-# 主体实体沿用 kessler2012.yaml 中的 ent.si_crystal_fp_cavity_k12
-# 本文新增指标节点和一个工程原理节点
-
+    '
 principles:
-  - id: pri.flicker_noise_linewidth_divergence
-    name: "闪变频率噪声线宽发散问题与实用线宽定义"
-    tier: engineering
-    verification_status: calculated
-    statement: >
-      超稳激光的主要噪声为 flicker 频率噪声（S_y(f) ∝ 1/f），
-      导致场自相关函数 R_E(τ) 发散，不存在唯一定义的稳态线宽。
-      实用定义：（1）最小线宽 Δν_FWHM_min ≈ 7 mHz（测量时间 T₀=170 s，
-      截断 f < 1/T₀ 的低频贡献）；（2）长时平均线宽 ~13 mHz（T₀=150 s 平均谱中心对齐后）；
-      （3）相干时间：Δφ_rms 增长至 1 rad 的时刻定义，11 s（Ramsey 场景）至 55 s（回溯估计场景）。
-    domain: "超稳激光噪声表征，精密光谱"
-    formula: >
-      S_y(f) = h_{-1}/f（flicker）；
-      R_E(τ) = E₀²·exp(2πiν₀τ)·exp(−2∫₀^∞ S_φ(f)·sin²(πfτ)df)（发散）；
-      Δν_FWHM_min = 7 mHz @ T₀=170 s
-    key_insight: >
-      对 flicker 频率噪声主导的激光，"线宽"本质上与观测时间相关；
-      引用线宽时必须说明测量时间 T₀，否则无物理意义。
-      coherence time 的意义依赖于应用场景（Ramsey vs. 单脉冲 Rabi vs. 回溯估计）。
-    conditions: "flicker 频率噪声主导（S_y ∝ 1/f），不适用于白色频率噪声主导的激光"
-    applicable_when: "热噪声极限超稳激光（mod σ_y flicker floor），特别是 Si 腔激光"
-    source_claim: >
-      "Flicker frequency noise and random walk frequency noise are the dominant noise processes
-       in our lasers. In this case, the laser frequency ν(t) is nonstationary and R_E(τ) is
-       divergent so that no unique coherence function can be assigned"
-    open_questions:
-      - "Can a measurement-time-independent linewidth definition be constructed for flicker-dominated lasers that is physically meaningful and universally accepted?"
-      - "What is the fundamental lower bound on flicker frequency noise for crystalline coatings (AlGaAs) — will it follow the same 1/f spectral shape, or could structural differences in single-crystal materials alter the noise spectrum?"
-      - "How does the coherence time scale with further reductions in thermal noise (e.g., at 10⁻¹⁸ stability) — is the Ramsey coherence time strictly proportional to 1/h₋₁, or do higher-order noise terms become relevant?"
-      - "Can real-time frequency estimation algorithms (Kalman filtering, predictive tracking) effectively extend the usable coherence time beyond the bare Ramsey limit for precision spectroscopy applications?"
+- id: pri.flicker_noise_linewidth_divergence
+  name: 闪变频率噪声线宽发散问题与实用线宽定义
+  tier: engineering
+  verification_status: calculated
+  statement: '超稳激光的主要噪声为 flicker 频率噪声（S_y(f) ∝ 1/f）， 导致场自相关函数 R_E(τ) 发散，不存在唯一定义的稳态线宽。
+    实用定义：（1）最小线宽 Δν_FWHM_min ≈ 7 mHz（测量时间 T₀=170 s， 截断 f < 1/T₀ 的低频贡献）；（2）长时平均线宽 ~13
+    mHz（T₀=150 s 平均谱中心对齐后）； （3）相干时间：Δφ_rms 增长至 1 rad 的时刻定义，11 s（Ramsey 场景）至 55 s（回溯估计场景）。
 
+    '
+  domain: 超稳激光噪声表征，精密光谱
+  formula: 'S_y(f) = h_{-1}/f（flicker）； R_E(τ) = E₀²·exp(2πiν₀τ)·exp(−2∫₀^∞ S_φ(f)·sin²(πfτ)df)（发散）；
+    Δν_FWHM_min = 7 mHz @ T₀=170 s
+
+    '
+  key_insight: '对 flicker 频率噪声主导的激光，"线宽"本质上与观测时间相关； 引用线宽时必须说明测量时间 T₀，否则无物理意义。 coherence
+    time 的意义依赖于应用场景（Ramsey vs. 单脉冲 Rabi vs. 回溯估计）。
+
+    '
+  conditions: flicker 频率噪声主导（S_y ∝ 1/f），不适用于白色频率噪声主导的激光
+  applicable_when: 热噪声极限超稳激光（mod σ_y flicker floor），特别是 Si 腔激光
+  source_claim: "\"Flicker frequency noise and random walk frequency noise are the\
+    \ dominant noise processes\n in our lasers. In this case, the laser frequency\
+    \ ν(t) is nonstationary and R_E(τ) is\n divergent so that no unique coherence\
+    \ function can be assigned\"\n"
+  open_questions:
+  - Can a measurement-time-independent linewidth definition be constructed for flicker-dominated
+    lasers that is physically meaningful and universally accepted?
+  - What is the fundamental lower bound on flicker frequency noise for crystalline
+    coatings (AlGaAs) — will it follow the same 1/f spectral shape, or could structural
+    differences in single-crystal materials alter the noise spectrum?
+  - How does the coherence time scale with further reductions in thermal noise (e.g.,
+    at 10⁻¹⁸ stability) — is the Ramsey coherence time strictly proportional to 1/h₋₁,
+    or do higher-order noise terms become relevant?
+  - Can real-time frequency estimation algorithms (Kalman filtering, predictive tracking)
+    effectively extend the usable coherence time beyond the bare Ramsey limit for
+    precision spectroscopy applications?
 metrics:
-  - id: met.fractional_freq_instability_m17
-    name: "分数频率不稳定度（Matei 2017，Si 腔镀层极限）"
-    unit: "无量纲（修正 Allan 偏差 mod σ_y(τ)）"
-    role: primary                       # v4.4 σ_y 主线（见 scoping_principles.md v2）
-    description: "PTB 两套独立 Si 腔（Si2, Si3）三角帽法提取的个体分数频率不稳定度，镀层热噪声限制"
-    demonstrated_value:
-      value: "mod σ_y = 4×10⁻¹⁷（0.8–10 s flicker floor）；标准 Allan σ_y ≈ 5×10⁻¹⁷"
-      conditions: "1.5 μm（1542 nm），T=124 K，Si2 + Si3 两台独立 Si 腔 + PTB 48cm ULE 腔（Häfner 2015）三角帽"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "TVY7T59A", claim: "instability of each Si-based laser system is at the expected thermal noise flicker floor of mod σ_y = 4×10⁻¹⁷"}
-    theoretical_floor:
-      value: "mod σ_y ≈ 4×10⁻¹⁷（与实测吻合，镀层 IBS 布朗噪声决定）"
-      basis: "FDT 计算：Si 腔间隔物+底物 φ_Si ~ 10⁻⁸ at 124K，镀层 φ_IBS ~ 4×10⁻⁴ 主导"
-      gap_note: "已达理论极限；改善需晶体镀层（Cole 2013，AlGaAs 可降低 10×）或更低温"
-    open_questions:
-      - "Is the 4×10⁻¹⁷ flicker floor truly the irreducible coating thermal noise limit, or could unknown excess technical noise (e.g., coating structural relaxation, surface contamination drift) contribute at this level?"
-      - "Can next-generation crystalline coatings (AlGaAs) push the Si cavity flicker floor below 10⁻¹⁷ as predicted by FDT calculations?"
-
-  - id: met.laser_linewidth_m17
-    name: "激光线宽（Matei 2017，Si2–Si3 拍频）"
-    unit: "mHz（FWHM）"
-    role: secondary
-    description: "Si2–Si3 拍频 FFT 谱 FWHM；个体激光线宽 = 拍频线宽 / √2（假设相等贡献）"
-    demonstrated_value:
-      value: "拍频 FWHM: 7–14 mHz（43% 样本）；单激光 FWHM: 5–10 mHz"
-      conditions: "1.5 μm，200 s 测量时间，FFT 分析，37 h 相位数据集"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "TVY7T59A", claim: "obtain FWHM linewidths of the beat signal between 7 mHz and 14 mHz... individual linewidths between 5 mHz to 10 mHz"}
-    theoretical_floor:
-      value: "Δν_min = 7 mHz（T₀=170 s 下理论最小线宽）"
-      basis: "flicker 噪声分析：Δν_min 由测量时间 T₀ 和噪声功率谱决定（Bishof 方法）"
-      gap_note: "实测与理论最小值相符；无进一步改善空间，除非降低热噪声本身"
-
-  - id: met.optical_coherence_time_m17
-    name: "光学相干时间（Matei 2017，Si 腔激光）"
-    unit: "秒"
-    role: secondary
-    description: "超稳 Si 腔激光的实用相干时间，不同场景下定义不同"
-    demonstrated_value:
-      value: "11 s（Ramsey 询问，Δφ_rms 至 1 rad）；55 s（回溯频率估计，Δφ_rms 至 1 rad）"
-      conditions: "Si2 vs Si3 相位数据（1 天），Δφ_rms 分析；20,750 个样本统计"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "TVY7T59A", claim: "coherence time of 11 s (Ramsey scenario) to 55 s (retrospective frequency estimation)"}
-
-# ═══════════════════════════════════════════════
-#  RELATIONS（关系）
-# ═══════════════════════════════════════════════
-
-relations:
-  - id: rel.M01
-    subject: ent.si_crystal_fp_cavity_k12
-    predicate: CHARACTERIZED-BY
-    object: met.fractional_freq_instability_m17
-    confidence: established
-    source: {zotero_key: "TVY7T59A", claim: "mod σ_y = 4×10⁻¹⁷ for integration times between 0.8 s and a few tens of seconds"}
-    conditions: "PTB 两台 Si 腔（Si2, Si3），124 K，1.5 μm，主动隔振，RAM 主动消除"
-    note: "ent.si_crystal_fp_cavity_k12 定义于 kessler2012.yaml"
-
-  - id: rel.M02
-    subject: ent.si_crystal_fp_cavity_k12
-    predicate: CHARACTERIZED-BY
-    object: met.laser_linewidth_m17
-    confidence: established
-    source: {zotero_key: "TVY7T59A", claim: "individual laser linewidth... can be as small as 5 mHz at 194 THz"}
-    conditions: "200 s 测量时间，FFT 分析"
-    note: "ent.si_crystal_fp_cavity_k12 定义于 kessler2012.yaml"
-
-  - id: rel.M03
-    subject: ent.si_crystal_fp_cavity_k12
-    predicate: BOUNDED-BY
-    object: pri.brownian_thermal_noise_fdt
-    confidence: established
-    source: {zotero_key: "TVY7T59A", claim: "fractional frequency instability of each laser is completely determined by the fundamental thermal Brownian noise of the mirror coatings"}
-    conditions: "124 K，Si 单晶间隔物+底物，标准 IBS 介质镀层；间隔物+底物热噪声可忽略"
-    is_system_limit: true
-    dominated_by: null
-    quantitative_contribution: "100%（间隔物+底物热噪声完全被 Si 高 Q 抑制，仅镀层贡献）"
-    regime: all
+- id: met.fractional_freq_instability_m17
+  name: 分数频率不稳定度（Matei 2017，Si 腔镀层极限）
+  unit: 无量纲（修正 Allan 偏差 mod σ_y(τ)）
+  role: primary
+  description: PTB 两套独立 Si 腔（Si2, Si3）三角帽法提取的个体分数频率不稳定度，镀层热噪声限制
+  demonstrated_value:
+    value: mod σ_y = 4×10⁻¹⁷（0.8–10 s flicker floor）；标准 Allan σ_y ≈ 5×10⁻¹⁷
+    conditions: 1.5 μm（1542 nm），T=124 K，Si2 + Si3 两台独立 Si 腔 + PTB 48cm ULE 腔（Häfner
+      2015）三角帽
     verification_status: observed
-    temporal_role: validates
-    breakthrough_paths:
-      - direction: pri.crystalline_coating_low_brownian_noise
-        expected_gain: "AlGaAs 晶体镀层（φ ~ 2.5×10⁻⁵）→ 镀层热噪声降低 10×；理论下限约 4×10⁻¹⁸"
-        expected_σy_gain: "mod σ_y(1 s): 4×10⁻¹⁷ → ~1×10⁻¹⁷ (预期 4× 改善，已被 Lee 2026 验证达 2.5×10⁻¹⁷)"
-        status: demonstrated
-        source: {zotero_key: "CWIHQRJD", claim: "tenfold reduction in mechanical damping when compared with the best dielectric multilayers"}
-    note: >
-      pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml；
-      ent.si_crystal_fp_cavity_k12 定义于 kessler2012.yaml；
-      ent.algaas_crystalline_mirror_c13 定义于 cole2013.yaml。
-      Matei 2017 从实验确认 Kessler 2012 的预测：4×10⁻¹⁷ 处完全由镀层热噪声主导，
-      这是 Cole 2013 晶体镀层方案最有力的实验动机。temporal_role: validates。
-
-  - id: rel.M04
-    subject: ent.si_crystal_fp_cavity_k12
-    predicate: BOUNDED-BY
-    object: pri.flicker_noise_linewidth_divergence
     confidence: established
-    source: {zotero_key: "TVY7T59A", claim: "the linewidth and implicitly the coherence time are mostly determined by the thermal noise level"}
-    conditions: "flicker 频率噪声主导（S_y ∝ 1/f），测量时间 T₀ = 200 s；无唯一稳态线宽定义"
-    is_system_limit: true
-    dominated_by: null
-    regime: all
-    verification_status: calculated
-    temporal_role: proposes
-    breakthrough_paths:
-      - direction: pri.flicker_noise_linewidth_divergence
-        expected_gain: "尚无已知解决方案可消除flicker噪声对线宽定义的发散性限制"
-        status: open
-        source: {zotero_key: "TVY7T59A", claim: "the linewidth and implicitly the coherence time are mostly determined by the thermal noise level"}
-        note: "flicker噪声是低频噪声，其1/f特性导致线宽定义依赖于测量时间"
-    note: >
-      原 subject 为 met.laser_linewidth_m17（指标节点），语义有误——指标是测量结果，
-      不是被限制的系统。改为 ent.si_crystal_fp_cavity_k12（被限制的腔/激光系统）。
-      含义：Si 腔激光系统的线宽定义受 flicker 噪声发散原理限制，
-      无法给出不依赖测量时间 T₀ 的唯一线宽值。
-      met.laser_linewidth_m17 通过 rel.M02 (CHARACTERIZED-BY) 刻画这一受限状态。
-      ent.si_crystal_fp_cavity_k12 定义于 kessler2012.yaml。
-
-  - id: rel.M05
-    subject: ent.si_crystal_fp_cavity_k12
-    predicate: CHARACTERIZED-BY
-    object: met.optical_coherence_time_m17
+    source:
+      zotero_key: TVY7T59A
+      claim: instability of each Si-based laser system is at the expected thermal
+        noise flicker floor of mod σ_y = 4×10⁻¹⁷
+  theoretical_floor:
+    value: mod σ_y ≈ 4×10⁻¹⁷（与实测吻合，镀层 IBS 布朗噪声决定）
+    basis: FDT 计算：Si 腔间隔物+底物 φ_Si ~ 10⁻⁸ at 124K，镀层 φ_IBS ~ 4×10⁻⁴ 主导
+    gap_note: 已达理论极限；改善需晶体镀层（Cole 2013，AlGaAs 可降低 10×）或更低温
+  open_questions:
+  - Is the 4×10⁻¹⁷ flicker floor truly the irreducible coating thermal noise limit,
+    or could unknown excess technical noise (e.g., coating structural relaxation,
+    surface contamination drift) contribute at this level?
+  - Can next-generation crystalline coatings (AlGaAs) push the Si cavity flicker floor
+    below 10⁻¹⁷ as predicted by FDT calculations?
+- id: met.laser_linewidth_m17
+  name: 激光线宽（Matei 2017，Si2–Si3 拍频）
+  unit: mHz（FWHM）
+  role: secondary
+  description: Si2–Si3 拍频 FFT 谱 FWHM；个体激光线宽 = 拍频线宽 / √2（假设相等贡献）
+  demonstrated_value:
+    value: '拍频 FWHM: 7–14 mHz（43% 样本）；单激光 FWHM: 5–10 mHz'
+    conditions: 1.5 μm，200 s 测量时间，FFT 分析，37 h 相位数据集
+    verification_status: observed
     confidence: established
-    source: {zotero_key: "TVY7T59A", claim: "coherence time of 11 s (Ramsey scenario) to 55 s (retrospective frequency estimation)"}
-    conditions: "Si2 vs Si3 相位数据；1 天数据集"
-    note: "跨文件引用，ent.si_crystal_fp_cavity_k12 定义于 kessler2012.yaml"
+    source:
+      zotero_key: TVY7T59A
+      claim: obtain FWHM linewidths of the beat signal between 7 mHz and 14 mHz...
+        individual linewidths between 5 mHz to 10 mHz
+  theoretical_floor:
+    value: Δν_min = 7 mHz（T₀=170 s 下理论最小线宽）
+    basis: flicker 噪声分析：Δν_min 由测量时间 T₀ 和噪声功率谱决定（Bishof 方法）
+    gap_note: 实测与理论最小值相符；无进一步改善空间，除非降低热噪声本身
+- id: met.optical_coherence_time_m17
+  name: 光学相干时间（Matei 2017，Si 腔激光）
+  unit: 秒
+  role: secondary
+  description: 超稳 Si 腔激光的实用相干时间，不同场景下定义不同
+  demonstrated_value:
+    value: 11 s（Ramsey 询问，Δφ_rms 至 1 rad）；55 s（回溯频率估计，Δφ_rms 至 1 rad）
+    conditions: Si2 vs Si3 相位数据（1 天），Δφ_rms 分析；20,750 个样本统计
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: TVY7T59A
+      claim: coherence time of 11 s (Ramsey scenario) to 55 s (retrospective frequency
+        estimation)
+relations:
+- id: rel.matei_2017_01
+  subject: ent.si_crystal_fp_cavity_k12
+  predicate: CHARACTERIZED-BY
+  object: met.fractional_freq_instability_m17
+  confidence: established
+  source:
+    zotero_key: TVY7T59A
+    claim: mod σ_y = 4×10⁻¹⁷ for integration times between 0.8 s and a few tens of
+      seconds
+  conditions: PTB 两台 Si 腔（Si2, Si3），124 K，1.5 μm，主动隔振，RAM 主动消除
+  note: ent.si_crystal_fp_cavity_k12 定义于 kessler2012.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/matei2017.yaml
+- id: rel.matei_2017_02
+  subject: ent.si_crystal_fp_cavity_k12
+  predicate: CHARACTERIZED-BY
+  object: met.laser_linewidth_m17
+  confidence: established
+  source:
+    zotero_key: TVY7T59A
+    claim: individual laser linewidth... can be as small as 5 mHz at 194 THz
+  conditions: 200 s 测量时间，FFT 分析
+  note: ent.si_crystal_fp_cavity_k12 定义于 kessler2012.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/matei2017.yaml
+- id: rel.matei_2017_03
+  subject: ent.si_crystal_fp_cavity_k12
+  predicate: BOUNDED-BY
+  object: pri.brownian_thermal_noise_fdt
+  confidence: established
+  source:
+    zotero_key: TVY7T59A
+    claim: fractional frequency instability of each laser is completely determined
+      by the fundamental thermal Brownian noise of the mirror coatings
+  conditions: 124 K，Si 单晶间隔物+底物，标准 IBS 介质镀层；间隔物+底物热噪声可忽略
+  is_system_limit: true
+  dominated_by: null
+  quantitative_contribution: 100%（间隔物+底物热噪声完全被 Si 高 Q 抑制，仅镀层贡献）
+  regime: all
+  verification_status: observed
+  temporal_role: validates
+  breakthrough_paths:
+  - direction: pri.crystalline_coating_low_brownian_noise
+    expected_gain: AlGaAs 晶体镀层（φ ~ 2.5×10⁻⁵）→ 镀层热噪声降低 10×；理论下限约 4×10⁻¹⁸
+    expected_σy_gain: 'mod σ_y(1 s): 4×10⁻¹⁷ → ~1×10⁻¹⁷ (预期 4× 改善，已被 Lee 2026 验证达
+      2.5×10⁻¹⁷)'
+    status: demonstrated
+    source:
+      zotero_key: CWIHQRJD
+      claim: tenfold reduction in mechanical damping when compared with the best dielectric
+        multilayers
+  note: 'pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml； ent.si_crystal_fp_cavity_k12
+    定义于 kessler2012.yaml； ent.algaas_crystalline_mirror_c13 定义于 cole2013.yaml。 Matei
+    2017 从实验确认 Kessler 2012 的预测：4×10⁻¹⁷ 处完全由镀层热噪声主导， 这是 Cole 2013 晶体镀层方案最有力的实验动机。temporal_role:
+    validates。
 
-  # rel.M06 已废弃（原 COMPETES-WITH ent.fp_cavity_system）——
-  # 重构后 ent.si_crystal_fp_cavity_k12 为 Level 2 实例（PART-OF ent.fp_cavity_system），
-  # 同级实例不再用 COMPETES-WITH。性能对比保留在指标的 comparison 字段中。
+    '
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/matei2017.yaml
+- id: rel.matei_2017_04
+  subject: ent.si_crystal_fp_cavity_k12
+  predicate: BOUNDED-BY
+  object: pri.flicker_noise_linewidth_divergence
+  confidence: established
+  source:
+    zotero_key: TVY7T59A
+    claim: the linewidth and implicitly the coherence time are mostly determined by
+      the thermal noise level
+  conditions: flicker 频率噪声主导（S_y ∝ 1/f），测量时间 T₀ = 200 s；无唯一稳态线宽定义
+  is_system_limit: true
+  dominated_by: null
+  regime: all
+  verification_status: calculated
+  temporal_role: proposes
+  breakthrough_paths:
+  - direction: pri.flicker_noise_linewidth_divergence
+    expected_gain: 尚无已知解决方案可消除flicker噪声对线宽定义的发散性限制
+    status: open
+    source:
+      zotero_key: TVY7T59A
+      claim: the linewidth and implicitly the coherence time are mostly determined
+        by the thermal noise level
+    note: flicker噪声是低频噪声，其1/f特性导致线宽定义依赖于测量时间
+  note: '原 subject 为 met.laser_linewidth_m17（指标节点），语义有误——指标是测量结果， 不是被限制的系统。改为 ent.si_crystal_fp_cavity_k12（被限制的腔/激光系统）。
+    含义：Si 腔激光系统的线宽定义受 flicker 噪声发散原理限制， 无法给出不依赖测量时间 T₀ 的唯一线宽值。 met.laser_linewidth_m17
+    通过 rel.M02 (CHARACTERIZED-BY) 刻画这一受限状态。 ent.si_crystal_fp_cavity_k12 定义于 kessler2012.yaml。
+
+    '
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/matei2017.yaml
+- id: rel.matei_2017_05
+  subject: ent.si_crystal_fp_cavity_k12
+  predicate: CHARACTERIZED-BY
+  object: met.optical_coherence_time_m17
+  confidence: established
+  source:
+    zotero_key: TVY7T59A
+    claim: coherence time of 11 s (Ramsey scenario) to 55 s (retrospective frequency
+      estimation)
+  conditions: Si2 vs Si3 相位数据；1 天数据集
+  note: 跨文件引用，ent.si_crystal_fp_cavity_k12 定义于 kessler2012.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/matei2017.yaml

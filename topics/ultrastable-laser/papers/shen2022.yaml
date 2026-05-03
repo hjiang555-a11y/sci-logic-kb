@@ -1,150 +1,144 @@
-# Shen 2022 — 113 km 自由空间时频传递达 10⁻¹⁹ 不稳定度 [evidence]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：ultrastable-laser（内容涉及自由空间时频传递，归类于超稳激光专题）
-
 meta:
-  zotero_key: "P92ZFIAQ"
+  zotero_key: P92ZFIAQ
   topic: ultrastable-laser
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
-  title: "Free-space dissemination of time and frequency with 10⁻¹⁹ instability over 113 km"
+  title: Free-space dissemination of time and frequency with 10⁻¹⁹ instability over
+    113 km
   year: 2022
-  first_author: "Shen"
+  first_author: Shen
   authors:
-    - "Qi Shen"
-    - "Jian-Yu Guan"
-    - "Ji-Gang Ren"
-    - "Ting Zeng"
-    - "Lei Hou"
-    - "Min Li"
-    - "Yuan Cao"
-    - "Jin-Jian Han"
-    - "Meng-Zhe Lian"
-    - "Yan-Wei Chen"
-    - "Xin-Xin Peng"
-    - "Shao-Mao Wang"
-    - "Dan-Yang Zhu"
-    - "Chao-Yang Lu"
-    - "Sheng-Kai Liao"
-    - "Juan Yin"
-    - "Jian-Jun Jia"
-    - "Cheng-Zhi Peng"
-    - "Hai-Feng Jiang"
-    - "Qiang Zhang"
-    - "Jian-Wei Pan"
-  journal: "Nature"
-  doi: "10.1038/s41586-022-05228-5"
-  note: >
-    首次实现 113 km 自由空间光学时频传递达 10⁻¹⁹ 稳定度（USTC/CAS，新疆乌鲁木齐）。
-    每端配备超稳激光（USL，1550.12 nm，3×10⁻¹⁵ @1 s）作为时钟源，
-    两路高功率光频梳（1545 nm 和 1563 nm，各 1 W 输出）双向传输，
-    线性光学采样（LOS）实现飞秒精度相位探测，
-    自适应光学（可变形镜）补偿大气波前畸变。
-    链路不稳定度 < 4×10⁻¹⁹ @10,000 s；时间偏移 6.3×10⁻²⁰ ± 3.4×10⁻¹⁹。
+  - Qi Shen
+  - Jian-Yu Guan
+  - Ji-Gang Ren
+  - Ting Zeng
+  - Lei Hou
+  - Min Li
+  - Yuan Cao
+  - Jin-Jian Han
+  - Meng-Zhe Lian
+  - Yan-Wei Chen
+  - Xin-Xin Peng
+  - Shao-Mao Wang
+  - Dan-Yang Zhu
+  - Chao-Yang Lu
+  - Sheng-Kai Liao
+  - Juan Yin
+  - Jian-Jun Jia
+  - Cheng-Zhi Peng
+  - Hai-Feng Jiang
+  - Qiang Zhang
+  - Jian-Wei Pan
+  journal: Nature
+  doi: 10.1038/s41586-022-05228-5
+  note: '首次实现 113 km 自由空间光学时频传递达 10⁻¹⁹ 稳定度（USTC/CAS，新疆乌鲁木齐）。 每端配备超稳激光（USL，1550.12
+    nm，3×10⁻¹⁵ @1 s）作为时钟源， 两路高功率光频梳（1545 nm 和 1563 nm，各 1 W 输出）双向传输， 线性光学采样（LOS）实现飞秒精度相位探测，
+    自适应光学（可变形镜）补偿大气波前畸变。 链路不稳定度 < 4×10⁻¹⁹ @10,000 s；时间偏移 6.3×10⁻²⁰ ± 3.4×10⁻¹⁹。
 
+    '
 entities:
-  - id: ent.freespace_tf_link_113km_sh22
-    name: "113 km 自由空间时频传递链路（Shen 2022）"
-    hierarchy_level: 2
-    status: demonstrated
-    function: >
-      跨 113 km 自由空间双向光学时频传递系统：两端（南山实验室↔高崖子实验室，海拔差 327 m）
-      各配超稳激光 + 两路高功率光频梳（250 MHz @1545 nm；200 MHz @1563 nm，均 1 W）
-      + 线性光学采样（LOS）模块 + 400 mm 卡塞格林望远镜（含快速导星、自适应光学）。
-      正交偏振分离双向光路，可变形镜补偿大气波前畸变。
-    key_parameters:
-      link_distance: "113 km"
-      locations: "南山（43°28'N, 87°10'E, 2109 m）↔ 高崖子（43°31'N, 88°34'E, 1782 m）"
-      usl_wavelength: "1550.12 nm"
-      usl_instability: "3×10⁻¹⁵ @ 1 s"
-      comb_wavelengths: "1545 nm (250 MHz), 1563 nm (200 MHz)"
-      comb_power: "1 W each"
-      telescope_aperture: "400 mm"
-      instability_10ks: "< 4×10⁻¹⁹"
-      time_offset: "6.3×10⁻²⁰ ± 3.4×10⁻¹⁹"
-    note: "超稳激光（ent.ultrastable_laser_system）作为每端时钟源；光频梳为 ent.fiber_delay_line_reference 关联技术"
+- id: ent.freespace_tf_link_113km_sh22
+  name: 113 km 自由空间时频传递链路（Shen 2022）
+  hierarchy_level: 2
+  status: demonstrated
+  function: '跨 113 km 自由空间双向光学时频传递系统：两端（南山实验室↔高崖子实验室，海拔差 327 m） 各配超稳激光 + 两路高功率光频梳（250
+    MHz @1545 nm；200 MHz @1563 nm，均 1 W） + 线性光学采样（LOS）模块 + 400 mm 卡塞格林望远镜（含快速导星、自适应光学）。
+    正交偏振分离双向光路，可变形镜补偿大气波前畸变。
 
+    '
+  key_parameters:
+    link_distance: 113 km
+    locations: 南山（43°28'N, 87°10'E, 2109 m）↔ 高崖子（43°31'N, 88°34'E, 1782 m）
+    usl_wavelength: 1550.12 nm
+    usl_instability: 3×10⁻¹⁵ @ 1 s
+    comb_wavelengths: 1545 nm (250 MHz), 1563 nm (200 MHz)
+    comb_power: 1 W each
+    telescope_aperture: 400 mm
+    instability_10ks: < 4×10⁻¹⁹
+    time_offset: 6.3×10⁻²⁰ ± 3.4×10⁻¹⁹
+  note: 超稳激光（ent.ultrastable_laser_system）作为每端时钟源；光频梳为 ent.fiber_delay_line_reference
+    关联技术
 methods:
-  - id: meth.freespace_los_tf_transfer_sh22
-    name: "自由空间双向光频梳线性光学采样时频传递"
-    status: demonstrated
-    steps_summary: >
-      超稳激光（USL）锁定参考腔 →
-      光频梳（OFC）锁相至 USL →
-      双向高功率（1 W）啁啾脉冲发射至 113 km 自由空间信道 →
-      线性光学采样（LOS）飞秒精度相位探测 →
-      自适应光学 + 快速导星补偿大气湍流 →
-      双向互相关消除公共模噪声 →
-      提取时间偏移和频率不稳定度
-    source_claim: >
-      "we develop here an optical frequency comb (OFC)-based link, which combines features of
-      high-precision optical phase detection and a large ambiguous range."
+- id: meth.freespace_los_tf_transfer_sh22
+  name: 自由空间双向光频梳线性光学采样时频传递
+  status: demonstrated
+  steps_summary: '超稳激光（USL）锁定参考腔 → 光频梳（OFC）锁相至 USL → 双向高功率（1 W）啁啾脉冲发射至 113 km 自由空间信道
+    → 线性光学采样（LOS）飞秒精度相位探测 → 自适应光学 + 快速导星补偿大气湍流 → 双向互相关消除公共模噪声 → 提取时间偏移和频率不稳定度
 
+    '
+  source_claim: '"we develop here an optical frequency comb (OFC)-based link, which
+    combines features of high-precision optical phase detection and a large ambiguous
+    range."
+
+    '
 metrics:
-  - id: met.freespace_link_instability_sh22
-    name: "113 km 自由空间时频链路不稳定度（Shen 2022）"
-    unit: "无量纲（ADEV）"
-    role: primary
-    description: "自由空间 OFC 双向传输链路分数频率不稳定度，代表自由空间时频传递记录"
-    demonstrated_value:
-      value: "< 4×10⁻¹⁹"
-      conditions: "113 km 自由空间；τ = 10,000 s；双向 OFC（1545+1563 nm）；LOS 相位探测；自适应光学"
-      verification_status: observed
-      confidence: established
-      source:
-        zotero_key: "P92ZFIAQ"
-        claim: >
-          "we achieved a time–frequency dissemination over a free-space link of 113 km and
-          obtained a stability of below 4×10⁻¹⁹ at 10,000 s."
+- id: met.freespace_link_instability_sh22
+  name: 113 km 自由空间时频链路不稳定度（Shen 2022）
+  unit: 无量纲（ADEV）
+  role: primary
+  description: 自由空间 OFC 双向传输链路分数频率不稳定度，代表自由空间时频传递记录
+  demonstrated_value:
+    value: < 4×10⁻¹⁹
+    conditions: 113 km 自由空间；τ = 10,000 s；双向 OFC（1545+1563 nm）；LOS 相位探测；自适应光学
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: P92ZFIAQ
+      claim: '"we achieved a time–frequency dissemination over a free-space link of
+        113 km and obtained a stability of below 4×10⁻¹⁹ at 10,000 s."
 
-  - id: met.freespace_time_offset_sh22
-    name: "113 km 自由空间时间传递偏移（Shen 2022）"
-    unit: "无量纲（分数偏移）"
-    role: supporting
-    description: "113 km 自由空间双向时间传递的时间偏移（精度代表）"
-    demonstrated_value:
-      value: "6.3×10⁻²⁰ ± 3.4×10⁻¹⁹"
-      conditions: "113 km 自由空间；双向 OFC 传输；LOS 互相关"
-      verification_status: observed
-      confidence: established
-      source:
-        zotero_key: "P92ZFIAQ"
-        claim: >
-          "Here we report time–frequency dissemination with an offset of 6.3×10⁻²⁰ ± 3.4×10⁻¹⁹
-          and an instability of less than 4×10⁻¹⁹ at 10,000 s through a free-space link of 113 km."
+        '
+- id: met.freespace_time_offset_sh22
+  name: 113 km 自由空间时间传递偏移（Shen 2022）
+  unit: 无量纲（分数偏移）
+  role: supporting
+  description: 113 km 自由空间双向时间传递的时间偏移（精度代表）
+  demonstrated_value:
+    value: 6.3×10⁻²⁰ ± 3.4×10⁻¹⁹
+    conditions: 113 km 自由空间；双向 OFC 传输；LOS 互相关
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: P92ZFIAQ
+      claim: '"Here we report time–frequency dissemination with an offset of 6.3×10⁻²⁰
+        ± 3.4×10⁻¹⁹ and an instability of less than 4×10⁻¹⁹ at 10,000 s through a
+        free-space link of 113 km."
 
+        '
 relations:
-  - id: rel.Sh01
-    subject: ent.freespace_tf_link_113km_sh22
-    predicate: ENABLED-BY
-    object: meth.freespace_los_tf_transfer_sh22
-    confidence: established
-    source:
-      zotero_key: "P92ZFIAQ"
-      claim: >
-        "Using 1 W OFCs and nanowatt-level LOS modules, we achieved a time–frequency dissemination
-        over a free-space link of 113 km."
+- id: rel.shen_2022_h01
+  subject: ent.freespace_tf_link_113km_sh22
+  predicate: ENABLED-BY
+  object: meth.freespace_los_tf_transfer_sh22
+  confidence: established
+  source:
+    zotero_key: P92ZFIAQ
+    claim: '"Using 1 W OFCs and nanowatt-level LOS modules, we achieved a time–frequency
+      dissemination over a free-space link of 113 km."
 
-  - id: rel.Sh02
-    subject: met.freespace_link_instability_sh22
-    predicate: CHARACTERIZED-BY
-    object: ent.freespace_tf_link_113km_sh22
-    confidence: established
-    source:
-      zotero_key: "P92ZFIAQ"
-      claim: "obtained a stability of below 4×10⁻¹⁹ at 10,000 s."
+      '
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/shen2022.yaml
+- id: rel.shen_2022_h02
+  subject: met.freespace_link_instability_sh22
+  predicate: CHARACTERIZED-BY
+  object: ent.freespace_tf_link_113km_sh22
+  confidence: established
+  source:
+    zotero_key: P92ZFIAQ
+    claim: obtained a stability of below 4×10⁻¹⁹ at 10,000 s.
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/shen2022.yaml
+- id: rel.shen_2022_h03
+  subject: ent.freespace_tf_link_113km_sh22
+  predicate: DEPENDS-ON
+  object: meth.pdh_locking
+  confidence: established
+  source:
+    zotero_key: P92ZFIAQ
+    claim: '"An USL with a 3×10⁻¹⁵ frequency instability at 1 s at a wavelength (λ)
+      of 1,550.12 nm is used as the reference clock source. The OFC optical phase
+      locked to the USL is used as the carrier and reference signals of the local
+      sampling."
 
-  - id: rel.Sh03
-    subject: ent.freespace_tf_link_113km_sh22
-    predicate: DEPENDS-ON
-    object: meth.pdh_locking
-    confidence: established
-    source:
-      zotero_key: "P92ZFIAQ"
-      claim: >
-        "An USL with a 3×10⁻¹⁵ frequency instability at 1 s at a wavelength (λ) of 1,550.12 nm
-        is used as the reference clock source. The OFC optical phase locked to the USL is used
-        as the carrier and reference signals of the local sampling."
+      '
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/shen2022.yaml

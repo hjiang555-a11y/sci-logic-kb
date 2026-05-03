@@ -92,7 +92,7 @@ methods: []
 metrics: []
 
 relations:
-  - id: rel.A87_01
+  - id: rel.allan_1987_87_01
     subject: pri.sigma_y_slope_identifies_noise_type
     predicate: DERIVED-FROM
     object: pri.power_law_noise_taxonomy
@@ -100,7 +100,7 @@ relations:
     source: {zotero_key: "ALLAN1987-TUFFC", claim: "the slope of σ_y(τ) on a log-log plot serves as a diagnostic of the dominant noise type, with each of the five power-law processes producing a characteristic slope."}
     note: "斜率辨识原理从幂律噪声分类直接派生：每一 α 对应固定斜率 μ。"
 
-  - id: rel.A87_02
+  - id: rel.allan_1987_87_02
     subject: meth.allan_deviation_adev
     predicate: CHARACTERIZED-BY
     object: pri.sigma_y_slope_identifies_noise_type

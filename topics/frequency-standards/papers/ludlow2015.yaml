@@ -30,7 +30,7 @@ meta:
     Sr/Yb 光晶格钟当时（2015）的 state-of-the-art。
 
 relations:
-  - id: rel.Lud15_01
+  - id: rel.ludlow_2015_ud15_01
     subject: ent.optical_lattice_clock
     predicate: CHARACTERIZED-BY
     object: met.optical_clock_fractional_instability
@@ -38,7 +38,7 @@ relations:
       paper: ludlow2015
       claim: "advances in frequency instability of optical lattice clocks"
 
-  - id: rel.Lud15_02
+  - id: rel.ludlow_2015_ud15_02
     subject: ent.optical_lattice_clock
     predicate: BOUNDED-BY
     object: pri.blackbody_radiation_stark_shift

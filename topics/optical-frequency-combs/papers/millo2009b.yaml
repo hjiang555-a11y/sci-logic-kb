@@ -90,7 +90,7 @@ metrics:
       source: {zotero_key: "WHNQC4FV", claim: "instability of about 3×10⁻¹⁵ between 1 and 10 s"}
 
 relations:
-  - id: rel.Mil09b_01
+  - id: rel.millo_2009_il09b_01
     subject: ent.fiber_comb_microwave_cs_fountain_m09b
     predicate: PART-OF
     object: ent.er_fiber_frequency_comb
@@ -98,21 +98,21 @@ relations:
     source: {zotero_key: "WHNQC4FV", claim: "fiber-based optical frequency comb (FOFC)"}
     note: "跨文件引用 ent.er_fiber_frequency_comb（定义于 droste2016.yaml）"
 
-  - id: rel.Mil09b_02
+  - id: rel.millo_2009_il09b_02
     subject: ent.fiber_comb_microwave_cs_fountain_m09b
     predicate: CHARACTERIZED-BY
     object: met.fiber_comb_microwave_stability_m09b
     confidence: established
     source: {zotero_key: "WHNQC4FV", claim: "3×10⁻¹⁵"}
 
-  - id: rel.Mil09b_03
+  - id: rel.millo_2009_il09b_03
     subject: meth.fiber_comb_locked_usl_microwave_m09b
     predicate: OPERATIONALIZED-AS
     object: ent.fiber_comb_microwave_cs_fountain_m09b
     confidence: established
     source: {zotero_key: "WHNQC4FV", claim: "locked onto one of these reference lasers"}
 
-  - id: rel.Mil09b_04
+  - id: rel.millo_2009_il09b_04
     subject: meth.fiber_comb_locked_usl_microwave_m09b
     predicate: ENABLED-BY
     object: pri.optical_frequency_division_microwave

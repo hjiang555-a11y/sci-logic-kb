@@ -1,114 +1,127 @@
-# Gobron 2017 — 色散外差探测光谱烧孔稳频
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-16
-# Schema版本：v4.1
-
 meta:
-  zotero_key: "HKYLIW8U"
+  zotero_key: HKYLIW8U
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: "Dispersive heterodyne probing method for laser frequency stabilization based on spectral hole burning in rare-earth doped crystals"
+  title: Dispersive heterodyne probing method for laser frequency stabilization based
+    on spectral hole burning in rare-earth doped crystals
   year: 2017
   first_author: Gobron
-  journal: "Optics Express"
+  journal: Optics Express
   volume: 25
-  pages: "15539"
-  doi: "10.1364/OE.25.015539"
-  note: >
-    基于稀土掺杂晶体光谱烧孔的色散外差探测稳频新方法。
-    主激光和从激光产生外差拍频，通过色散信号锁定频率。
-    核心贡献：SHB 稳频的新探测方案，互补 Leibrandt 2013 的方法。
+  pages: '15539'
+  doi: 10.1364/OE.25.015539
+  note: '基于稀土掺杂晶体光谱烧孔的色散外差探测稳频新方法。 主激光和从激光产生外差拍频，通过色散信号锁定频率。 核心贡献：SHB 稳频的新探测方案，互补
+    Leibrandt 2013 的方法。
 
+    '
 entities: []
-
 principles:
-  - id: pri.dispersive_heterodyne_shb
-    name: "色散外差探测光谱烧孔稳频原理"
-    tier: domain
-    verification_status: observed
-    statement: >
-      利用主激光与从激光在光谱烧孔处产生的色散信号
-      进行外差探测，获取频率误差信号进行锁定。
-      与传统调频光谱（FMS）相比，外差方案信噪比更高，
-      且不受烧孔功率引起的光谱畸变影响。
-    domain: "光谱烧孔 / 频率稳定化"
-    key_insight: "色散外差探测可获得更干净的 SHB 误差信号。"
-    conditions: "需要两个频率可调的窄线宽激光"
-    source_claim: "a novel technique... based on generating a heterodyne beat-note between a master laser and a slave laser"
+- id: pri.dispersive_heterodyne_shb
+  name: 色散外差探测光谱烧孔稳频原理
+  tier: domain
+  verification_status: observed
+  statement: '利用主激光与从激光在光谱烧孔处产生的色散信号 进行外差探测，获取频率误差信号进行锁定。 与传统调频光谱（FMS）相比，外差方案信噪比更高，
+    且不受烧孔功率引起的光谱畸变影响。
 
+    '
+  domain: 光谱烧孔 / 频率稳定化
+  key_insight: 色散外差探测可获得更干净的 SHB 误差信号。
+  conditions: 需要两个频率可调的窄线宽激光
+  source_claim: a novel technique... based on generating a heterodyne beat-note between
+    a master laser and a slave laser
 methods:
-  - id: meth.dispersive_heterodyne_shb_locking
-    name: "色散外差 SHB 稳频方法"
-    type: frequency_stabilization
-    status: demonstrated
-    description: >
-      主激光锁定到 FP 腔，从激光通过 AOM 移频后探测光谱烧孔的色散特征，
-      外差拍频信号提供频率误差信号。
-    source: {zotero_key: "HKYLIW8U"}
+- id: meth.dispersive_heterodyne_shb_locking
+  name: 色散外差 SHB 稳频方法
+  type: frequency_stabilization
+  status: demonstrated
+  description: '主激光锁定到 FP 腔，从激光通过 AOM 移频后探测光谱烧孔的色散特征， 外差拍频信号提供频率误差信号。
 
+    '
+  source:
+    zotero_key: HKYLIW8U
 metrics:
-  - id: met.frequency_stability_g17
-    name: "频率稳定度（Gobron 2017）"
-    quantity: "frequency_stability"
-    unit: ""
-    demonstrated_value: "与标准FMS方法相当或更好"
-    conditions: "光谱烧孔稳频，Eu:YSO晶体，1.6 K"
-    measurement_method: "艾伦方差测量，对比传统调频光谱（FMS）方法"
-    significance: "验证色散外差方法在性能上至少与传统方法相当。"
-    source_claim: {zotero_key: "HKYLIW8U", claim: "performance similar to or better than standard FMS"}
-  - id: met.snr_improvement_g17
-    name: "信噪比提升（Gobron 2017）"
-    quantity: "signal_to_noise_ratio_improvement"
-    unit: "dB"
-    demonstrated_value: "具体数值未给出，但理论上更优"
-    conditions: "光谱烧孔稳频，避免烧孔功率引起的光谱畸变"
-    measurement_method: "外差信号与直接探测信号对比"
-    significance: "外差方案提供更干净的SHB误差信号，信噪比更高。"
-    source_claim: {zotero_key: "HKYLIW8U", claim: "higher SNR than FMS, cleaner error signal"}
-  - id: met.spectral_distortion_immunity_g17
-    name: "光谱畸变免疫性（Gobron 2017）"
-    quantity: "immunity_to_spectral_distortion"
-    unit: ""
-    demonstrated_value: "不受烧孔功率引起的畸变影响"
-    conditions: "高烧孔功率下"
-    measurement_method: "对比FMS方法在不同烧孔功率下的信号质量"
-    significance: "外差方法对烧孔功率引起的光谱畸变不敏感。"
-    source_claim: {zotero_key: "HKYLIW8U", claim: "immune to spectral distortion caused by hole‑burning power"}
-
+- id: met.frequency_stability_g17
+  name: 频率稳定度（Gobron 2017）
+  quantity: frequency_stability
+  unit: ''
+  demonstrated_value: 与标准FMS方法相当或更好
+  conditions: 光谱烧孔稳频，Eu:YSO晶体，1.6 K
+  measurement_method: 艾伦方差测量，对比传统调频光谱（FMS）方法
+  significance: 验证色散外差方法在性能上至少与传统方法相当。
+  source_claim:
+    zotero_key: HKYLIW8U
+    claim: performance similar to or better than standard FMS
+- id: met.snr_improvement_g17
+  name: 信噪比提升（Gobron 2017）
+  quantity: signal_to_noise_ratio_improvement
+  unit: dB
+  demonstrated_value: 具体数值未给出，但理论上更优
+  conditions: 光谱烧孔稳频，避免烧孔功率引起的光谱畸变
+  measurement_method: 外差信号与直接探测信号对比
+  significance: 外差方案提供更干净的SHB误差信号，信噪比更高。
+  source_claim:
+    zotero_key: HKYLIW8U
+    claim: higher SNR than FMS, cleaner error signal
+- id: met.spectral_distortion_immunity_g17
+  name: 光谱畸变免疫性（Gobron 2017）
+  quantity: immunity_to_spectral_distortion
+  unit: ''
+  demonstrated_value: 不受烧孔功率引起的畸变影响
+  conditions: 高烧孔功率下
+  measurement_method: 对比FMS方法在不同烧孔功率下的信号质量
+  significance: 外差方法对烧孔功率引起的光谱畸变不敏感。
+  source_claim:
+    zotero_key: HKYLIW8U
+    claim: immune to spectral distortion caused by hole‑burning power
 relations:
-  - id: rel.GO01
-    subject: ent.shb_eu_yso_reference_l13
-    predicate: OPERATIONALIZED-AS
-    object: meth.dispersive_heterodyne_shb_locking
-    confidence: established
-    source: {zotero_key: "HKYLIW8U", claim: "frequency-locking a laser to a spectral hole"}
-    note: "跨文件引用，ent.shb_eu_yso_reference_l13 定义于 leibrandt2013.yaml"
-  - id: rel.GO02
-    subject: meth.dispersive_heterodyne_shb_locking
-    predicate: IMPLEMENTS
-    object: pri.dispersive_heterodyne_shb
-    confidence: established
-    source: {zotero_key: "HKYLIW8U", claim: "novel technique based on heterodyne beat-note"}
-    note: "色散外差SHB稳频方法实现了该原理。"
-  - id: rel.GO03
-    subject: met.frequency_stability_g17
-    predicate: CHARACTERIZES
-    object: meth.dispersive_heterodyne_shb_locking
-    confidence: established
-    source: {zotero_key: "HKYLIW8U", claim: "performance similar to or better than standard FMS"}
-    note: "频率稳定度表征该方法的稳频性能。"
-  - id: rel.GO04
-    subject: met.snr_improvement_g17
-    predicate: CHARACTERIZES
-    object: meth.dispersive_heterodyne_shb_locking
-    confidence: established
-    source: {zotero_key: "HKYLIW8U", claim: "higher SNR than FMS, cleaner error signal"}
-    note: "信噪比提升是该方法的优势之一。"
-  - id: rel.GO05
-    subject: met.spectral_distortion_immunity_g17
-    predicate: CHARACTERIZES
-    object: meth.dispersive_heterodyne_shb_locking
-    confidence: established
-    source: {zotero_key: "HKYLIW8U", claim: "immune to spectral distortion caused by hole‑burning power"}
-    note: "对光谱畸变的免疫性是该方法的独特优势。"
+- id: rel.gobron_2017_O01
+  subject: ent.shb_eu_yso_reference_l13
+  predicate: OPERATIONALIZED-AS
+  object: meth.dispersive_heterodyne_shb_locking
+  confidence: established
+  source:
+    zotero_key: HKYLIW8U
+    claim: frequency-locking a laser to a spectral hole
+  note: 跨文件引用，ent.shb_eu_yso_reference_l13 定义于 leibrandt2013.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/gobron2017.yaml
+- id: rel.gobron_2017_O02
+  subject: meth.dispersive_heterodyne_shb_locking
+  predicate: IMPLEMENTS
+  object: pri.dispersive_heterodyne_shb
+  confidence: established
+  source:
+    zotero_key: HKYLIW8U
+    claim: novel technique based on heterodyne beat-note
+  note: 色散外差SHB稳频方法实现了该原理。
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/gobron2017.yaml
+- id: rel.gobron_2017_O03
+  subject: met.frequency_stability_g17
+  predicate: CHARACTERIZES
+  object: meth.dispersive_heterodyne_shb_locking
+  confidence: established
+  source:
+    zotero_key: HKYLIW8U
+    claim: performance similar to or better than standard FMS
+  note: 频率稳定度表征该方法的稳频性能。
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/gobron2017.yaml
+- id: rel.gobron_2017_O04
+  subject: met.snr_improvement_g17
+  predicate: CHARACTERIZES
+  object: meth.dispersive_heterodyne_shb_locking
+  confidence: established
+  source:
+    zotero_key: HKYLIW8U
+    claim: higher SNR than FMS, cleaner error signal
+  note: 信噪比提升是该方法的优势之一。
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/gobron2017.yaml
+- id: rel.gobron_2017_O05
+  subject: met.spectral_distortion_immunity_g17
+  predicate: CHARACTERIZES
+  object: meth.dispersive_heterodyne_shb_locking
+  confidence: established
+  source:
+    zotero_key: HKYLIW8U
+    claim: immune to spectral distortion caused by hole‑burning power
+  note: 对光谱畸变的免疫性是该方法的独特优势。
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/gobron2017.yaml

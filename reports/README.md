@@ -27,6 +27,7 @@
 | [`active/orphans_ultrastable.md`](active/orphans_ultrastable.md) | Orphan 节点收敛清单（Round 1） |
 | [`active/orphans_ultrastable_v2.md`](active/orphans_ultrastable_v2.md) | Orphan 节点（v2，档位感知重估） |
 | [`active/contribution_tier_draft_ultrastable.md`](active/contribution_tier_draft_ultrastable.md) | contribution_type 档位草案 |
+| [`active/metric_chains_ultrastable-laser.md`](active/metric_chains_ultrastable-laser.md) | **Curated metric chains**（样板报告，按限制链分组，非组合生成） |
 
 ### 1.2 跨专题
 
@@ -41,6 +42,16 @@
 | 路径 | 说明 |
 |------|------|
 | [`active/ingest_plan/`](active/ingest_plan/) | Stage-1/2 候选筛选表、批次切分 |
+
+### 1.4 光频梳专题（optical-frequency-combs）
+
+| 文件 | 说明 |
+|------|------|
+| [`active/metric_chains_optical-frequency-combs.md`](active/metric_chains_optical-frequency-combs.md) | **Curated metric chains**（多轨道报告，9 条独立子域轨道） |
+| [`../topics/optical-frequency-combs/synthesis/a1_femtosecond_comb_platforms_timeline.md`](../topics/optical-frequency-combs/synthesis/a1_femtosecond_comb_platforms_timeline.md) | A1 锁模梳平台演进时间线 |
+| [`../topics/optical-frequency-combs/synthesis/b_dcs_dual_comb_spectroscopy.md`](../topics/optical-frequency-combs/synthesis/b_dcs_dual_comb_spectroscopy.md) | B-DCS 双梳光谱技术与应用 |
+| [`../topics/optical-frequency-combs/synthesis/b_freqsyn_frequency_synthesis.md`](../topics/optical-frequency-combs/synthesis/b_freqsyn_frequency_synthesis.md) | B-FreqSyn 频率综合与微波链路 |
+| [`../topics/optical-frequency-combs/synthesis/a2_dks_microcombs.md`](../topics/optical-frequency-combs/synthesis/a2_dks_microcombs.md) | A2-DKS 耗散 Kerr 孤子微梳 |
 
 ---
 
@@ -76,6 +87,7 @@
 - `test_tasks_1.md` / `test_batch_v1.json` / `batch_upgrade_tasks.json`（测试批次）
 - `OPTICAL_COMB_RESTRUCTURING_SUMMARY.md`（重构已合并，归档）
 - `REORGANIZATION_PLAN.md`（阶段性计划已落地）
+- `metric_chains_ultrastable-laser_v1_auto.md`（v1 自动生成版，591 组合链，已被 curated 版取代）
 
 ### 2.3 一次性 JSON
 

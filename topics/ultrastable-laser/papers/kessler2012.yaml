@@ -1,257 +1,279 @@
-# Kessler 2012 — 硅单晶腔亚40毫赫兹线宽激光
-# 提取者：Claude（AI草稿，待专家确认）
-# 提取日期：2026-04-14
-# Schema版本：v4.1
-
 meta:
-  zotero_key: "YKPFKDD9"
+  zotero_key: YKPFKDD9
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
-  title: "A sub-40-mHz-linewidth laser based on a silicon single-crystal optical cavity"
+  title: A sub-40-mHz-linewidth laser based on a silicon single-crystal optical cavity
   year: 2012
   first_author: Kessler
-  journal: "Nature Photonics"
+  journal: Nature Photonics
   volume: 6
-  pages: "687-692"
-  doi: "10.1038/nphoton.2012.192"
-  note: >
-    首次实验演示硅单晶 FP 腔（间隔物+镜底物均为 Si），工作于 124 K（Si CTE 零点），
-    实现当时最窄激光线宽 <40 mHz（拍频 49(4) mHz）及最佳频率稳定度 ~1×10⁻¹⁶。
-    核心创新：（1）利用硅单晶机械 Q > 10⁷ 将热噪声降低约一个数量级；
-    （2）沿 ⟨110⟩ 方向三点对称安装，竖轴配置，全向振动灵敏度 < 10⁻¹⁰/g；
-    （3）实验确认 Si 腔 CTE 零点在 124.2 K，dα/dT = 1.71×10⁻⁸ K⁻²。
-    PTB（Sterr/Riehle 组）+ JILA（Ye 组）合作；Si 腔热噪声理论下限 mod σ_y ≈ 5×10⁻¹⁷，
-    但镀层（IBS 介质膜）成为唯一瓶颈，指向 Cole 2013 晶体镀层方案。
-    技术分支：FP参考腔系统（Fabry-Pérot Reference Cavity Systems）。
+  pages: 687-692
+  doi: 10.1038/nphoton.2012.192
+  note: '首次实验演示硅单晶 FP 腔（间隔物+镜底物均为 Si），工作于 124 K（Si CTE 零点）， 实现当时最窄激光线宽 <40 mHz（拍频
+    49(4) mHz）及最佳频率稳定度 ~1×10⁻¹⁶。 核心创新：（1）利用硅单晶机械 Q > 10⁷ 将热噪声降低约一个数量级； （2）沿 ⟨110⟩
+    方向三点对称安装，竖轴配置，全向振动灵敏度 < 10⁻¹⁰/g； （3）实验确认 Si 腔 CTE 零点在 124.2 K，dα/dT = 1.71×10⁻⁸
+    K⁻²。 PTB（Sterr/Riehle 组）+ JILA（Ye 组）合作；Si 腔热噪声理论下限 mod σ_y ≈ 5×10⁻¹⁷， 但镀层（IBS
+    介质膜）成为唯一瓶颈，指向 Cole 2013 晶体镀层方案。 技术分支：FP参考腔系统（Fabry-Pérot Reference Cavity Systems）。
 
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
+    '
 entities:
-  - id: ent.si_crystal_fp_cavity_k12
-    name: "硅单晶低温 FP 参考腔"
-    aliases: ["silicon single-crystal optical cavity", "cryogenic silicon cavity", "Si cavity 124K", "Si 腔"]
-    hierarchy_level: 2
-    status: demonstrated
-    function: >
-      以硅单晶为间隔物和镜底物，工作于 124 K（Si CTE 零点），
-      同时利用硅的高机械 Q（>10⁷）和大杨氏模量（E≈130 GPa，沿 ⟨100⟩）
-      将热噪声极限降低至理论值 mod σ_y ≈ 5×10⁻¹⁷，实验达到 ~1×10⁻¹⁶，激光线宽 <40 mHz，
-      较室温 ULE 腔（~2×10⁻¹⁶，Numata 2004 极限）热噪声降低约一个数量级。
-    key_parameters:
-      spacer_material: "硅单晶（low-impurity, ~30 kΩ·cm，⟨100⟩ 方向为光轴）"
-      substrate_material: "硅单晶（与间隔物同方向、同一晶棒加工）"
-      cavity_length: "210 mm（21 cm，竖轴，vertical optical axis）"
-      orientation: "竖轴（vertical optical axis）"
-      operating_temperature: "124 K（Si CTE 零点 124.2±0.1 K）"
-      mechanical_Q: "> 10⁷（硅单晶，低温下尤佳）"
-      youngs_modulus: "E ≈ 130 GPa（沿 ⟨100⟩）；比刚度 E/ρ ≈ 80×10⁶ m²/s²（ULE 约 30×10⁶）"
-      laser_wavelength: "1542 nm（1.5 μm，Er 光纤激光）"
-      predicted_noise_floor: "mod σ_y ≈ 5×10⁻¹⁷（热噪声理论下限，镀层主导）"
-      mounting: "三点 ⟨110⟩ 方向对称安装（轴对称 120°）"
-      frequency_drift: "~0.2 mHz/s（线性漂移，源于镀层热膨胀/蠕变）"
-      finesse: "未具体给出；PDH 锁定，AOM 反馈带宽 ~200 kHz"
-    interface_requirements:
-      temperature: "124 K ± 1 mK（低温恒温器+被动隔热屏，热时间常数 10 天）"
-      vibration: "低频振动需主动隔振；低温恒温器自身引入加速度噪声 few 0.1 mg/√Hz（1–100 Hz）"
-    note: "Level 2 PART-OF ent.fp_cavity_system；124 K Si 腔实例（参数变体）"
+- id: ent.si_crystal_fp_cavity_k12
+  name: 硅单晶低温 FP 参考腔
+  aliases:
+  - silicon single-crystal optical cavity
+  - cryogenic silicon cavity
+  - Si cavity 124K
+  - Si 腔
+  hierarchy_level: 2
+  status: demonstrated
+  function: '以硅单晶为间隔物和镜底物，工作于 124 K（Si CTE 零点）， 同时利用硅的高机械 Q（>10⁷）和大杨氏模量（E≈130 GPa，沿
+    ⟨100⟩） 将热噪声极限降低至理论值 mod σ_y ≈ 5×10⁻¹⁷，实验达到 ~1×10⁻¹⁶，激光线宽 <40 mHz， 较室温 ULE 腔（~2×10⁻¹⁶，Numata
+    2004 极限）热噪声降低约一个数量级。
 
+    '
+  key_parameters:
+    spacer_material: 硅单晶（low-impurity, ~30 kΩ·cm，⟨100⟩ 方向为光轴）
+    substrate_material: 硅单晶（与间隔物同方向、同一晶棒加工）
+    cavity_length: 210 mm（21 cm，竖轴，vertical optical axis）
+    orientation: 竖轴（vertical optical axis）
+    operating_temperature: 124 K（Si CTE 零点 124.2±0.1 K）
+    mechanical_Q: '> 10⁷（硅单晶，低温下尤佳）'
+    youngs_modulus: E ≈ 130 GPa（沿 ⟨100⟩）；比刚度 E/ρ ≈ 80×10⁶ m²/s²（ULE 约 30×10⁶）
+    laser_wavelength: 1542 nm（1.5 μm，Er 光纤激光）
+    predicted_noise_floor: mod σ_y ≈ 5×10⁻¹⁷（热噪声理论下限，镀层主导）
+    mounting: 三点 ⟨110⟩ 方向对称安装（轴对称 120°）
+    frequency_drift: ~0.2 mHz/s（线性漂移，源于镀层热膨胀/蠕变）
+    finesse: 未具体给出；PDH 锁定，AOM 反馈带宽 ~200 kHz
+  interface_requirements:
+    temperature: 124 K ± 1 mK（低温恒温器+被动隔热屏，热时间常数 10 天）
+    vibration: 低频振动需主动隔振；低温恒温器自身引入加速度噪声 few 0.1 mg/√Hz（1–100 Hz）
+  note: Level 2 PART-OF ent.fp_cavity_system；124 K Si 腔实例（参数变体）
 principles:
-  - id: pri.silicon_cte_zero_crossing_124k
-    name: "硅单晶 124 K 热膨胀系数零点原理"
-    tier: domain
-    verification_status: observed
-    statement: >
-      硅单晶的线热膨胀系数 α(T) 在 124 K 附近过零，
-      即存在 T₀ ≈ 124.2 K 使得 dL/dT = 0，腔长对温度一阶不敏感。
-      零点二次灵敏度 dα/dT = 1.71(1)×10⁻⁸ K⁻²（沿 ⟨100⟩）；
-      相比 ULE（dα/dT ≈ 1.8×10⁻⁹ K⁻²）约大 10×，
-      因此在 T₀ 附近运行需要更精密温控（mK 量级）。
-    domain: "低温光学谐振腔"
-    formula: "α(T) ≈ (dα/dT)·(T − T₀)；T₀ = 124.2(1) K，dα/dT = 1.71(1)×10⁻⁸ K⁻²"
-    key_insight: >
-      硅与 ULE 都有 CTE 零点，但硅在低温（124 K），
-      使其能同时利用低温增强机械 Q 效应降低热噪声。
-    conditions: "单晶硅，光轴沿 ⟨100⟩ 方向"
-    applicable_when: "温度控制在 T₀ 附近（通常需 |ΔT| < 10 mK 量级）"
-    source_claim: >
-      "The minimum cavity length was found at a temperature of 124.2(1) K,
-       with da/dT = 1.71(1)×10⁻⁸ K⁻²"
+- id: pri.silicon_cte_zero_crossing_124k
+  name: 硅单晶 124 K 热膨胀系数零点原理
+  tier: domain
+  verification_status: observed
+  statement: '硅单晶的线热膨胀系数 α(T) 在 124 K 附近过零， 即存在 T₀ ≈ 124.2 K 使得 dL/dT = 0，腔长对温度一阶不敏感。
+    零点二次灵敏度 dα/dT = 1.71(1)×10⁻⁸ K⁻²（沿 ⟨100⟩）； 相比 ULE（dα/dT ≈ 1.8×10⁻⁹ K⁻²）约大 10×，
+    因此在 T₀ 附近运行需要更精密温控（mK 量级）。
 
-  - id: pri.cryogenic_mechanical_q_enhancement
-    name: "低温增强机械品质因子降低热噪声"
-    tier: domain
-    verification_status: observed
-    statement: >
-      根据涨落耗散定理（FDT），材料布朗热噪声与机械损耗角 φ（= 1/Q）成正比。
-      硅单晶在低温（124 K）下 Q > 10⁷，远高于室温非晶玻璃（ULE Q ~ 10³–10⁴），
-      直接将间隔物和镜底物的热噪声贡献降低约 3–4 个数量级。
-      此外，硅更大的杨氏模量（~130 GPa vs. ULE ~67 GPa）降低外力对腔长的耦合，
-      使振动灵敏度优于同尺寸 ULE 腔约 3×。
-    domain: "精密光学谐振腔，低温固体物理"
-    formula: "S_x,spacer(f) ∝ φ·k_B·T / (π·f·k_eff)；φ_Si(124K) << φ_ULE(300K)"
-    key_insight: >
-      选择低损耗单晶材料（Si）在 CTE 零点温度下运行，
-      同时利用高 Q 和零热膨胀，是将 FP 腔热噪声降低一个数量级的关键路径。
-    conditions: "T = 124 K，单晶结构（无晶界，无内应力散射），⟨110⟩ 方向安装"
-    applicable_when: "单晶半导体或绝缘体材料，T << 室温"
-    source_claim: >
-      "the high mechanical quality factor of silicon (Q > 10⁷) directly reduces
-       the noise contribution from the spacer and the mirror substrates"
+    '
+  domain: 低温光学谐振腔
+  formula: α(T) ≈ (dα/dT)·(T − T₀)；T₀ = 124.2(1) K，dα/dT = 1.71(1)×10⁻⁸ K⁻²
+  key_insight: '硅与 ULE 都有 CTE 零点，但硅在低温（124 K）， 使其能同时利用低温增强机械 Q 效应降低热噪声。
 
+    '
+  conditions: 单晶硅，光轴沿 ⟨100⟩ 方向
+  applicable_when: 温度控制在 T₀ 附近（通常需 |ΔT| < 10 mK 量级）
+  source_claim: "\"The minimum cavity length was found at a temperature of 124.2(1)\
+    \ K,\n with da/dT = 1.71(1)×10⁻⁸ K⁻²\"\n"
+- id: pri.cryogenic_mechanical_q_enhancement
+  name: 低温增强机械品质因子降低热噪声
+  tier: domain
+  verification_status: observed
+  statement: '根据涨落耗散定理（FDT），材料布朗热噪声与机械损耗角 φ（= 1/Q）成正比。 硅单晶在低温（124 K）下 Q > 10⁷，远高于室温非晶玻璃（ULE
+    Q ~ 10³–10⁴）， 直接将间隔物和镜底物的热噪声贡献降低约 3–4 个数量级。 此外，硅更大的杨氏模量（~130 GPa vs. ULE ~67 GPa）降低外力对腔长的耦合，
+    使振动灵敏度优于同尺寸 ULE 腔约 3×。
+
+    '
+  domain: 精密光学谐振腔，低温固体物理
+  formula: S_x,spacer(f) ∝ φ·k_B·T / (π·f·k_eff)；φ_Si(124K) << φ_ULE(300K)
+  key_insight: '选择低损耗单晶材料（Si）在 CTE 零点温度下运行， 同时利用高 Q 和零热膨胀，是将 FP 腔热噪声降低一个数量级的关键路径。
+
+    '
+  conditions: T = 124 K，单晶结构（无晶界，无内应力散射），⟨110⟩ 方向安装
+  applicable_when: 单晶半导体或绝缘体材料，T << 室温
+  source_claim: "\"the high mechanical quality factor of silicon (Q > 10⁷) directly\
+    \ reduces\n the noise contribution from the spacer and the mirror substrates\"\
+    \n"
 metrics:
-  - id: met.fractional_freq_instability_k12
-    name: "分数频率不稳定度（Kessler 2012，Si 腔）"
-    unit: "无量纲（修正 Allan 偏差 mod σ_y(τ)）"
-    role: primary                       # v4.4 σ_y 主线
-    description: "硅单晶腔稳频激光三角帽法提取的个体分数频率不稳定度"
-    demonstrated_value:
-      value: "~1×10⁻¹⁶（0.1–10 s 平均时间；受低温恒温器振动和 RAM 限制）"
-      conditions: "1.5 μm，T=124 K，三角帽比较（Si 腔 + PTB REF.1 10cm ULE + JILA REF.2 ULE）"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "YKPFKDD9", claim: "silicon system demonstrates a fractional frequency instability of 1×10⁻¹⁶ at short timescales"}
-    theoretical_floor:
-      value: "mod σ_y ≈ 5×10⁻¹⁷（FDT 理论下限，由镀层 IBS 噪声主导）"
-      basis: "FDT 计算：间隔物+底物 φ_Si ~ 10⁻⁸ at 124K，镀层 φ_IBS ~ 4×10⁻⁴ 主导"
-      gap_note: "受低温恒温器振动和 RAM 误差限制，未达理论极限；进一步改善需晶体镀层（Cole 2013）"
-
-  - id: met.laser_linewidth_k12
-    name: "激光线宽（Kessler 2012，Si 腔拍频）"
-    unit: "mHz（FWHM）"
-    role: secondary
-    description: "Si 腔与 JILA REF.2 拍频测量的联合 FWHM 线宽；单激光线宽 < 35 mHz"
-    demonstrated_value:
-      value: "拍频 FWHM: 49(4) mHz；单激光 < 35 mHz"
-      conditions: "Si 腔激光 vs. JILA REF.2（ULE 腔），1.5 μm，FFT 分析"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "YKPFKDD9", claim: "typical FWHM of 49(4) mHz... linewidth is below 35 mHz"}
-
-  - id: met.vibration_sensitivity_k12
-    name: "全向振动灵敏度（Kessler 2012 Si 腔）"
-    unit: "10⁻¹¹/g（分数频率变化 per 重力加速度）"
-    role: engineering
-    description: "硅单晶腔 ⟨110⟩ 三点最优安装后的三轴分数振动灵敏度"
-    demonstrated_value:
-      value: "κx=6.7(3)×10⁻¹¹/g，κy=8.4(4)×10⁻¹¹/g，κz=5.5(3)×10⁻¹¹/g"
-      conditions: "竖轴 21 cm Si 腔，⟨110⟩ 三点对称安装，有限元优化"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "YKPFKDD9", claim: "kx=6.7(3)×10⁻¹¹/g, ky=8.4(4)×10⁻¹¹/g, kz=5.5(3)×10⁻¹¹/g"}
-    comparison:
-      ule_vertical_best: "~2.45/0.21/0.01×10⁻¹¹/g（轴向/两横向，Webster 2011 同类 ULE 竖轴腔）"
-      silicon_advantage: "Si 更大杨氏模量 → 镜面倾斜噪声 65 nrad/g vs 180 nrad/g（ULE）"
-
-# ═══════════════════════════════════════════════
-#  RELATIONS（关系）
-# ═══════════════════════════════════════════════
-
+- id: met.fractional_freq_instability_k12
+  name: 分数频率不稳定度（Kessler 2012，Si 腔）
+  unit: 无量纲（修正 Allan 偏差 mod σ_y(τ)）
+  role: primary
+  description: 硅单晶腔稳频激光三角帽法提取的个体分数频率不稳定度
+  demonstrated_value:
+    value: ~1×10⁻¹⁶（0.1–10 s 平均时间；受低温恒温器振动和 RAM 限制）
+    conditions: 1.5 μm，T=124 K，三角帽比较（Si 腔 + PTB REF.1 10cm ULE + JILA REF.2 ULE）
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: YKPFKDD9
+      claim: silicon system demonstrates a fractional frequency instability of 1×10⁻¹⁶
+        at short timescales
+  theoretical_floor:
+    value: mod σ_y ≈ 5×10⁻¹⁷（FDT 理论下限，由镀层 IBS 噪声主导）
+    basis: FDT 计算：间隔物+底物 φ_Si ~ 10⁻⁸ at 124K，镀层 φ_IBS ~ 4×10⁻⁴ 主导
+    gap_note: 受低温恒温器振动和 RAM 误差限制，未达理论极限；进一步改善需晶体镀层（Cole 2013）
+- id: met.laser_linewidth_k12
+  name: 激光线宽（Kessler 2012，Si 腔拍频）
+  unit: mHz（FWHM）
+  role: secondary
+  description: Si 腔与 JILA REF.2 拍频测量的联合 FWHM 线宽；单激光线宽 < 35 mHz
+  demonstrated_value:
+    value: '拍频 FWHM: 49(4) mHz；单激光 < 35 mHz'
+    conditions: Si 腔激光 vs. JILA REF.2（ULE 腔），1.5 μm，FFT 分析
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: YKPFKDD9
+      claim: typical FWHM of 49(4) mHz... linewidth is below 35 mHz
+- id: met.vibration_sensitivity_k12
+  name: 全向振动灵敏度（Kessler 2012 Si 腔）
+  unit: 10⁻¹¹/g（分数频率变化 per 重力加速度）
+  role: engineering
+  description: 硅单晶腔 ⟨110⟩ 三点最优安装后的三轴分数振动灵敏度
+  demonstrated_value:
+    value: κx=6.7(3)×10⁻¹¹/g，κy=8.4(4)×10⁻¹¹/g，κz=5.5(3)×10⁻¹¹/g
+    conditions: 竖轴 21 cm Si 腔，⟨110⟩ 三点对称安装，有限元优化
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: YKPFKDD9
+      claim: kx=6.7(3)×10⁻¹¹/g, ky=8.4(4)×10⁻¹¹/g, kz=5.5(3)×10⁻¹¹/g
+  comparison:
+    ule_vertical_best: ~2.45/0.21/0.01×10⁻¹¹/g（轴向/两横向，Webster 2011 同类 ULE 竖轴腔）
+    silicon_advantage: Si 更大杨氏模量 → 镜面倾斜噪声 65 nrad/g vs 180 nrad/g（ULE）
 relations:
-  - id: rel.K01
-    subject: ent.si_crystal_fp_cavity_k12
-    predicate: PART-OF
-    object: ent.fp_cavity_system
-    confidence: established
-    source: {zotero_key: "YKPFKDD9", claim: "silicon single-crystal optical cavity... reduces this thermal noise limit by an order of magnitude"}
-    conditions: null
-    note: >
-      原为 COMPETES-WITH（Level 1 vs Level 1），重构后降级为 Level 2 实例（PART-OF）。
-      Si 腔是 FP 腔系统的参数变体（材料=Si，T=124K），不是独立竞争方案。
-      ent.fp_cavity_system 定义于 numata2004.yaml。
+- id: rel.kessler_2012_01
+  subject: ent.si_crystal_fp_cavity_k12
+  predicate: PART-OF
+  object: ent.fp_cavity_system
+  confidence: established
+  source:
+    zotero_key: YKPFKDD9
+    claim: silicon single-crystal optical cavity... reduces this thermal noise limit
+      by an order of magnitude
+  conditions: null
+  note: '原为 COMPETES-WITH（Level 1 vs Level 1），重构后降级为 Level 2 实例（PART-OF）。 Si 腔是 FP
+    腔系统的参数变体（材料=Si，T=124K），不是独立竞争方案。 ent.fp_cavity_system 定义于 numata2004.yaml。
 
-  - id: rel.K02
-    subject: ent.si_crystal_fp_cavity_k12
-    predicate: ENABLED-BY
-    object: pri.silicon_cte_zero_crossing_124k
-    confidence: established
-    source: {zotero_key: "YKPFKDD9", claim: "silicon single crystal... insensitive to temperature fluctuations... minimum cavity length at 124.2 K"}
-    conditions: "温度控制在 124.2 K ± 1 mK"
-    temporal_role: proposes
+    '
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/kessler2012.yaml
+- id: rel.kessler_2012_02
+  subject: ent.si_crystal_fp_cavity_k12
+  predicate: ENABLED-BY
+  object: pri.silicon_cte_zero_crossing_124k
+  confidence: established
+  source:
+    zotero_key: YKPFKDD9
+    claim: silicon single crystal... insensitive to temperature fluctuations... minimum
+      cavity length at 124.2 K
+  conditions: 温度控制在 124.2 K ± 1 mK
+  temporal_role: proposes
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/kessler2012.yaml
+- id: rel.kessler_2012_03
+  subject: ent.si_crystal_fp_cavity_k12
+  predicate: ENABLED-BY
+  object: pri.cryogenic_mechanical_q_enhancement
+  confidence: established
+  source:
+    zotero_key: YKPFKDD9
+    claim: high mechanical quality factor of silicon (Q > 10⁷) directly reduces the
+      noise contribution
+  conditions: T = 124 K
+  temporal_role: proposes
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/kessler2012.yaml
+- id: rel.kessler_2012_04
+  subject: ent.si_crystal_fp_cavity_k12
+  predicate: CHARACTERIZED-BY
+  object: met.fractional_freq_instability_k12
+  confidence: established
+  source:
+    zotero_key: YKPFKDD9
+    claim: fractional frequency instability of 1×10⁻¹⁶ at short timescales
+  conditions: 1.5 μm，124 K，三角帽比较
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/kessler2012.yaml
+- id: rel.kessler_2012_05
+  subject: ent.si_crystal_fp_cavity_k12
+  predicate: CHARACTERIZED-BY
+  object: met.laser_linewidth_k12
+  confidence: established
+  source:
+    zotero_key: YKPFKDD9
+    claim: FWHM of 49(4) mHz... linewidth is below 35 mHz
+  conditions: Si 腔 vs JILA REF.2 拍频，FFT 分析
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/kessler2012.yaml
+- id: rel.kessler_2012_06
+  subject: ent.si_crystal_fp_cavity_k12
+  predicate: BOUNDED-BY
+  object: pri.brownian_thermal_noise_fdt
+  confidence: established
+  source:
+    zotero_key: YKPFKDD9
+    claim: the thermal noise limit of an optical cavity based on single-crystal silicon
+      is currently set by the optical coating
+  conditions: 124 K，Si 单晶间隔物+底物，标准 IBS 介质镀层（φ_IBS ~ 4×10⁻⁴）
+  is_system_limit: true
+  dominated_by: null
+  quantitative_contribution: 镀层主导（φ_Si_spacer ~ 10⁻⁸，φ_IBS_coating ~ 4×10⁻⁴，镀层贡献约
+    >99%）
+  regime: all
+  verification_status: calculated
+  temporal_role: proposes
+  breakthrough_paths:
+  - direction: pri.crystalline_coating_low_brownian_noise
+    expected_gain: AlGaAs 晶体镀层 φ ~ 2.5×10⁻⁵（10× 低于 IBS）→ 镀层热噪声降低 10×，理论下限约 10⁻¹⁷
+    status: demonstrated
+    source:
+      zotero_key: CWIHQRJD
+      claim: tenfold reduction in mechanical damping when compared with the best dielectric
+        multilayers
+  - direction: pri.silicon_cte_zero_crossing_17k
+    expected_gain: 进一步降温至 17 K（Si CTE 第二零点）+ AlGaAs 晶体镀层（2023 批次）→ mod σ_y = 2.5×10⁻¹⁷（Lee
+      2026，世界纪录）
+    status: demonstrated
+    source:
+      zotero_key: 4QVEXY63
+      claim: fractional frequency stability of 2.5×10⁻¹⁷ at 10 s is four times better
+        than expected for dielectric mirrors
+  note: 'pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml； Kessler 2012 明确指出：Si
+    间隔物+底物热噪声被抑制后， 镀层（IBS 介质膜）成为唯一主要极限，指向 Cole 2013 晶体镀层。
 
-  - id: rel.K03
-    subject: ent.si_crystal_fp_cavity_k12
-    predicate: ENABLED-BY
-    object: pri.cryogenic_mechanical_q_enhancement
-    confidence: established
-    source: {zotero_key: "YKPFKDD9", claim: "high mechanical quality factor of silicon (Q > 10⁷) directly reduces the noise contribution"}
-    conditions: "T = 124 K"
-    temporal_role: proposes
+    '
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/kessler2012.yaml
+- id: rel.kessler_2012_07
+  subject: ent.si_crystal_fp_cavity_k12
+  predicate: CHARACTERIZED-BY
+  object: met.vibration_sensitivity_k12
+  confidence: established
+  source:
+    zotero_key: YKPFKDD9
+    claim: kx=6.7(3)×10⁻¹¹/g, ky=8.4(4)×10⁻¹¹/g, kz=5.5(3)×10⁻¹¹/g
+  conditions: ⟨110⟩ 三点对称安装，有限元模拟优化
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/kessler2012.yaml
+- id: rel.kessler_2012_08
+  subject: pri.cryogenic_mechanical_q_enhancement
+  predicate: DERIVED-FROM
+  object: pri.brownian_thermal_noise_fdt
+  confidence: established
+  source:
+    zotero_key: YKPFKDD9
+    claim: As a result of the fluctuation-dissipation theorem, the thermal noise of
+      an interferometer made of a crystalline material with a high mechanical quality
+      factor Q can be reduced significantly
+  conditions: null
+  note: pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/kessler2012.yaml
+- id: rel.kessler_2012_09
+  subject: ent.si_crystal_fp_cavity_k12
+  predicate: CONDITIONED-BY
+  object: ent.thermal_environment
+  interface_metric: met.fractional_freq_instability_k12
+  coupling_formula: Δν/ν ≈ (1/2) × (d²α/dT²)_124K × (T − 124.2K)² × ΔT
+  internal_property: Si α(124.2K) = 0；dα/dT|_124K = 1.71×10⁻⁸ K⁻²；需温度稳定度约 ±100 μK
+    量级
+  confidence: established
+  source:
+    zotero_key: YKPFKDD9
+    claim: temperature coefficient of the silicon used in the cavity... CTE has a
+      zero crossing at T₀=124.2 K
+  is_system_limit:
+    current: false
+    conditions: 在 CTE 零点操作且温控充足时，温度噪声不主导；布朗热噪声为主要极限
+  note: 'ent.thermal_environment 定义于 jiang2010.yaml； pri.silicon_cte_zero_crossing_124k
+    描述该零点的物理原理（本文件内定义）。
 
-  - id: rel.K04
-    subject: ent.si_crystal_fp_cavity_k12
-    predicate: CHARACTERIZED-BY
-    object: met.fractional_freq_instability_k12
-    confidence: established
-    source: {zotero_key: "YKPFKDD9", claim: "fractional frequency instability of 1×10⁻¹⁶ at short timescales"}
-    conditions: "1.5 μm，124 K，三角帽比较"
-
-  - id: rel.K05
-    subject: ent.si_crystal_fp_cavity_k12
-    predicate: CHARACTERIZED-BY
-    object: met.laser_linewidth_k12
-    confidence: established
-    source: {zotero_key: "YKPFKDD9", claim: "FWHM of 49(4) mHz... linewidth is below 35 mHz"}
-    conditions: "Si 腔 vs JILA REF.2 拍频，FFT 分析"
-
-  - id: rel.K06
-    subject: ent.si_crystal_fp_cavity_k12
-    predicate: BOUNDED-BY
-    object: pri.brownian_thermal_noise_fdt
-    confidence: established
-    source: {zotero_key: "YKPFKDD9", claim: "the thermal noise limit of an optical cavity based on single-crystal silicon is currently set by the optical coating"}
-    conditions: "124 K，Si 单晶间隔物+底物，标准 IBS 介质镀层（φ_IBS ~ 4×10⁻⁴）"
-    is_system_limit: true
-    dominated_by: null
-    quantitative_contribution: "镀层主导（φ_Si_spacer ~ 10⁻⁸，φ_IBS_coating ~ 4×10⁻⁴，镀层贡献约 >99%）"
-    regime: all
-    verification_status: calculated
-    temporal_role: proposes
-    breakthrough_paths:
-      - direction: pri.crystalline_coating_low_brownian_noise
-        expected_gain: "AlGaAs 晶体镀层 φ ~ 2.5×10⁻⁵（10× 低于 IBS）→ 镀层热噪声降低 10×，理论下限约 10⁻¹⁷"
-        status: demonstrated
-        source: {zotero_key: "CWIHQRJD", claim: "tenfold reduction in mechanical damping when compared with the best dielectric multilayers"}
-      - direction: pri.silicon_cte_zero_crossing_17k
-        expected_gain: "进一步降温至 17 K（Si CTE 第二零点）+ AlGaAs 晶体镀层（2023 批次）→ mod σ_y = 2.5×10⁻¹⁷（Lee 2026，世界纪录）"
-        status: demonstrated
-        source: {zotero_key: "4QVEXY63", claim: "fractional frequency stability of 2.5×10⁻¹⁷ at 10 s is four times better than expected for dielectric mirrors"}
-    note: >
-      pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml；
-      Kessler 2012 明确指出：Si 间隔物+底物热噪声被抑制后，
-      镀层（IBS 介质膜）成为唯一主要极限，指向 Cole 2013 晶体镀层。
-
-  - id: rel.K07
-    subject: ent.si_crystal_fp_cavity_k12
-    predicate: CHARACTERIZED-BY
-    object: met.vibration_sensitivity_k12
-    confidence: established
-    source: {zotero_key: "YKPFKDD9", claim: "kx=6.7(3)×10⁻¹¹/g, ky=8.4(4)×10⁻¹¹/g, kz=5.5(3)×10⁻¹¹/g"}
-    conditions: "⟨110⟩ 三点对称安装，有限元模拟优化"
-
-  - id: rel.K08
-    subject: pri.cryogenic_mechanical_q_enhancement
-    predicate: DERIVED-FROM
-    object: pri.brownian_thermal_noise_fdt
-    confidence: established
-    source: {zotero_key: "YKPFKDD9", claim: "As a result of the fluctuation-dissipation theorem, the thermal noise of an interferometer made of a crystalline material with a high mechanical quality factor Q can be reduced significantly"}
-    conditions: null
-    note: "pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml"
-
-  - id: rel.K09
-    subject: ent.si_crystal_fp_cavity_k12
-    predicate: CONDITIONED-BY
-    object: ent.thermal_environment
-    interface_metric: met.fractional_freq_instability_k12
-    coupling_formula: "Δν/ν ≈ (1/2) × (d²α/dT²)_124K × (T − 124.2K)² × ΔT"
-    internal_property: "Si α(124.2K) = 0；dα/dT|_124K = 1.71×10⁻⁸ K⁻²；需温度稳定度约 ±100 μK 量级"
-    confidence: established
-    source: {zotero_key: "YKPFKDD9", claim: "temperature coefficient of the silicon used in the cavity... CTE has a zero crossing at T₀=124.2 K"}
-    is_system_limit:
-      current: false
-      conditions: "在 CTE 零点操作且温控充足时，温度噪声不主导；布朗热噪声为主要极限"
-    note: >
-      ent.thermal_environment 定义于 jiang2010.yaml；
-      pri.silicon_cte_zero_crossing_124k 描述该零点的物理原理（本文件内定义）。
+    '
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/kessler2012.yaml

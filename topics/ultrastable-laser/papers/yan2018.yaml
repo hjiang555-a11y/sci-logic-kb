@@ -1,84 +1,84 @@
-# Yan 2018 — 多腔稳定合成超稳激光
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-16
-# Schema版本：v4.1
-
 meta:
-  zotero_key: "XWBUNX3P"
+  zotero_key: XWBUNX3P
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
-  title: "Multi-cavity-stabilized ultrastable laser"
+  title: Multi-cavity-stabilized ultrastable laser
   year: 2018
   first_author: Yan
-  journal: "Chinese Optics Letters"
+  journal: Chinese Optics Letters
   volume: 16
-  pages: "121403"
-  doi: "10.3788/COL201816.121403"
-  note: >
-    演示多腔频率平均的超稳激光方案：两台独立超稳激光的频率通过
-    AOM 实时合成，等效降低热噪声 √n 倍（n 为腔数）。
-    实验用两台 10 cm 腔实现 5×10⁻¹⁶ 合成激光不稳定度（√2 改善）。
-    核心贡献：验证 pri.optical_frequency_averaging 的实验方案。
+  pages: '121403'
+  doi: 10.3788/COL201816.121403
+  note: '演示多腔频率平均的超稳激光方案：两台独立超稳激光的频率通过 AOM 实时合成，等效降低热噪声 √n 倍（n 为腔数）。 实验用两台 10 cm 腔实现
+    5×10⁻¹⁶ 合成激光不稳定度（√2 改善）。 核心贡献：验证 pri.optical_frequency_averaging 的实验方案。
 
+    '
 entities: []
-  # 复用已有节点，不新建实体
-
 principles: []
-  # 复用 pri.optical_frequency_averaging（定义于 lee2026.yaml）
-
 methods:
-  - id: meth.multi_cavity_frequency_averaging_y18
-    name: "多腔频率平均方法（Yan 2018）"
-    status: demonstrated
-    applies_to: ent.fp_cavity_system
-    steps_summary: >
-      1. 使用两台独立的10cm ULE FP腔分别锁定两台激光器
-      2. 通过声光调制器（AOM）将两台激光器的频率实时合成
-      3. 合成激光的频率为两腔频率的平均值，等效降低热噪声√2倍
-    required_hardware:
-      - ent.fp_cavity_system
-      - ent.ultrastable_laser
-      - ent.aom_frequency_shifter
-    advantages:
-      - "通过多腔平均降低热噪声极限，理论改善因子为√n（n为腔数）"
-      - "不改变单个腔的设计，通过合成提升系统性能"
-      - "实验验证了光学频率平均原理的可行性"
-    disadvantages:
-      - "需要多个独立的参考腔系统，增加系统复杂性和成本"
-      - "合成过程引入额外的相位噪声和漂移"
-    conditions:
-      - "需要多个独立的超稳激光系统"
-      - "需要精密的频率合成和相位控制"
-    source_claim: >
-      "averaging the lengths of these cavities... the equivalent beam size is then enlarged n times, and the thermal-noise-limited frequency instability is reduced by a factor of √n"
+- id: meth.multi_cavity_frequency_averaging_y18
+  name: 多腔频率平均方法（Yan 2018）
+  status: demonstrated
+  applies_to: ent.fp_cavity_system
+  steps_summary: '1. 使用两台独立的10cm ULE FP腔分别锁定两台激光器 2. 通过声光调制器（AOM）将两台激光器的频率实时合成 3.
+    合成激光的频率为两腔频率的平均值，等效降低热噪声√2倍
 
+    '
+  required_hardware:
+  - ent.fp_cavity_system
+  - ent.ultrastable_laser
+  - ent.aom_frequency_shifter
+  advantages:
+  - 通过多腔平均降低热噪声极限，理论改善因子为√n（n为腔数）
+  - 不改变单个腔的设计，通过合成提升系统性能
+  - 实验验证了光学频率平均原理的可行性
+  disadvantages:
+  - 需要多个独立的参考腔系统，增加系统复杂性和成本
+  - 合成过程引入额外的相位噪声和漂移
+  conditions:
+  - 需要多个独立的超稳激光系统
+  - 需要精密的频率合成和相位控制
+  source_claim: '"averaging the lengths of these cavities... the equivalent beam size
+    is then enlarged n times, and the thermal-noise-limited frequency instability
+    is reduced by a factor of √n"
+
+    '
 metrics:
-  - id: met.synthesized_laser_instability_y18
-    name: "合成激光不稳定度（Yan 2018）"
-    unit: "无量纲"
-    role: primary   # σ_y @ 1–20 s；多腔合成后激光 σ_y 主线指标
-    demonstrated_value:
-      value: "5×10⁻¹⁶ @ 1–20 s"
-      conditions: "两台独立 10 cm ULE 腔，AOM 频率合成"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "XWBUNX3P", claim: "relative frequency instability of the synthesized laser is 5×10⁻¹⁶, improved by a factor of √2"}
-
+- id: met.synthesized_laser_instability_y18
+  name: 合成激光不稳定度（Yan 2018）
+  unit: 无量纲
+  role: primary
+  demonstrated_value:
+    value: 5×10⁻¹⁶ @ 1–20 s
+    conditions: 两台独立 10 cm ULE 腔，AOM 频率合成
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: XWBUNX3P
+      claim: relative frequency instability of the synthesized laser is 5×10⁻¹⁶, improved
+        by a factor of √2
 relations:
-  - id: rel.YA01
-    subject: met.synthesized_laser_instability_y18
-    predicate: OPERATIONALIZED-AS
-    object: meth.multi_cavity_averaging
-    confidence: established
-    source: {zotero_key: "XWBUNX3P", claim: "averaging the lengths of these cavities... the equivalent beam size is then enlarged n times"}
-    note: "跨文件引用，meth.multi_cavity_averaging 为已知方法"
-
-  - id: rel.YA02
-    subject: met.synthesized_laser_instability_y18
-    predicate: OPERATIONALIZED-AS
-    object: meth.multi_cavity_frequency_averaging_y18
-    confidence: established
-    source: {zotero_key: "XWBUNX3P", claim: "relative frequency instability of the synthesized laser is 5×10⁻¹⁶, improved by a factor of √2"}
-    conditions: "两台独立 10 cm ULE 腔 + AOM 实时频率合成"
-    note: "Yan 2018 本文特定的双腔 AOM 合成方案；将本文方法挂到其输出指标"
+- id: rel.yan_2018_A01
+  subject: met.synthesized_laser_instability_y18
+  predicate: OPERATIONALIZED-AS
+  object: meth.multi_cavity_averaging
+  confidence: established
+  source:
+    zotero_key: XWBUNX3P
+    claim: averaging the lengths of these cavities... the equivalent beam size is
+      then enlarged n times
+  note: 跨文件引用，meth.multi_cavity_averaging 为已知方法
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/yan2018.yaml
+- id: rel.yan_2018_A02
+  subject: met.synthesized_laser_instability_y18
+  predicate: OPERATIONALIZED-AS
+  object: meth.multi_cavity_frequency_averaging_y18
+  confidence: established
+  source:
+    zotero_key: XWBUNX3P
+    claim: relative frequency instability of the synthesized laser is 5×10⁻¹⁶, improved
+      by a factor of √2
+  conditions: 两台独立 10 cm ULE 腔 + AOM 实时频率合成
+  note: Yan 2018 本文特定的双腔 AOM 合成方案；将本文方法挂到其输出指标
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/yan2018.yaml

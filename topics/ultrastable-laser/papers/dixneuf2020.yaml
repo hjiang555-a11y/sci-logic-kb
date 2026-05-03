@@ -1,165 +1,199 @@
-# Dixneuf 2020 — 超低强度噪声 365 W 单频光纤激光
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-16
-# Schema版本：v4.1
-
 meta:
-  zotero_key: "HJZ6BVYE"
+  zotero_key: HJZ6BVYE
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: "Ultra-low intensity noise, all fiber 365 W linearly polarized single frequency laser at 1064 nm"
+  title: Ultra-low intensity noise, all fiber 365 W linearly polarized single frequency
+    laser at 1064 nm
   year: 2020
   first_author: Dixneuf
-  journal: "Optics Express"
+  journal: Optics Express
   volume: 28
   issue: 8
-  pages: "10960"
-  doi: "10.1364/OE.28.010960"
-  note: >
-    全光纤 365 W 线偏振单频 1064 nm MOPA，
-    RIN 降至 -160 dBc/Hz @ 2–10 kHz（1 MHz 带宽伺服），
-    350 W 隔离输出，功率稳定性 <0.7% RMS / 1100 小时。
-    核心贡献：引力波探测和精密测量所需的高功率低噪声激光源。
+  pages: '10960'
+  doi: 10.1364/OE.28.010960
+  note: '全光纤 365 W 线偏振单频 1064 nm MOPA， RIN 降至 -160 dBc/Hz @ 2–10 kHz（1 MHz 带宽伺服），
+    350 W 隔离输出，功率稳定性 <0.7% RMS / 1100 小时。 核心贡献：引力波探测和精密测量所需的高功率低噪声激光源。
 
+    '
 entities:
-  - id: ent.high_power_low_rin_fiber_laser_d20
-    name: "365 W 超低 RIN 全光纤单频激光（Dixneuf 2020）"
-    aliases: ["365 W fiber MOPA", "ultra-low RIN fiber laser"]
-    hierarchy_level: 2
-    status: demonstrated
-    function: >
-      全光纤主振荡器-功率放大器（MOPA），1064 nm，365 W 输出，
-      定制大模面积光纤（MFD = 30 μm），RIN 伺服 1 MHz 带宽。
-      无 SBS 或模式不稳定。
-    key_parameters:
-      output_power: "365 W (350 W isolated)"
-      wavelength: "1064 nm"
-      rin: "-160 dBc/Hz @ 2–10 kHz"
-      servo_bandwidth: "1 MHz"
-      power_stability: "<0.7% RMS over 1100 hours"
-      beam_quality: "M² < 1.1"
-    note: "高功率激光源，服务引力波探测和精密光谱。"
+- id: ent.high_power_low_rin_fiber_laser_d20
+  name: 365 W 超低 RIN 全光纤单频激光（Dixneuf 2020）
+  aliases:
+  - 365 W fiber MOPA
+  - ultra-low RIN fiber laser
+  hierarchy_level: 2
+  status: demonstrated
+  function: '全光纤主振荡器-功率放大器（MOPA），1064 nm，365 W 输出， 定制大模面积光纤（MFD = 30 μm），RIN 伺服 1
+    MHz 带宽。 无 SBS 或模式不稳定。
 
+    '
+  key_parameters:
+    output_power: 365 W (350 W isolated)
+    wavelength: 1064 nm
+    rin: -160 dBc/Hz @ 2–10 kHz
+    servo_bandwidth: 1 MHz
+    power_stability: <0.7% RMS over 1100 hours
+    beam_quality: M² < 1.1
+  note: 高功率激光源，服务引力波探测和精密光谱。
 principles:
-  - id: pri.high_power_low_rin_fiber_laser_design_d20
-    name: "高功率低RIN光纤激光器设计（Dixneuf 2020）"
-    statement: >
-      通过全光纤主振荡器-功率放大器（MOPA）架构，结合高带宽（1 MHz）RIN伺服反馈，可在单频1064 nm激光中实现365 W输出，同时将相对强度噪声（RIN）降至-160 dBc/Hz（2–10 kHz），并维持超过1100小时的功率稳定性（<0.7% RMS）。
-    domain: laser_design
-    subdomain: high_power_fiber_laser
-    foundation: known_physics
-    evidence: experimental
-    note: "该设计解决了高功率与低噪声之间的权衡，适用于引力波探测和精密光谱等对噪声极度敏感的应用。"
-methods:
-  - id: meth.fiber_mopa_with_rin_servo_d20
-    name: "全光纤MOPA配RIN伺服（Dixneuf 2020）"
-    procedure:
-      - "搭建1064 nm单频主振荡器（窄线宽种子源）。"
-      - "使用定制大模面积光纤（模场直径30 μm）构建多级掺镱光纤放大器。"
-      - "实现全光纤化（无空间光学元件），减少反射和寄生振荡。"
-      - "集成高带宽（1 MHz）RIN伺服反馈：探测部分输出功率，与参考比较，驱动强度调制器抑制强度噪声。"
-      - "在2–10 kHz频段将RIN降至-160 dBc/Hz。"
-      - "监测输出功率长期稳定性（1100小时，RMS <0.7%）。"
-    domain: laser_engineering
-    subdomain: fiber_laser_amplification
-    inputs: ["seed_laser", "pump_diodes", "fibers", "modulator"]
-    outputs: ["high_power_low_rin_beam"]
-    note: "该方案实现了高功率（365 W）与超低RIN的兼容，为引力波探测提供了理想的激光源。"
-metrics:
-  - id: met.output_power_d20
-    name: "输出功率（Dixneuf 2020）"
-    quantity: "optical_power"
-    unit: "W"
-    demonstrated_value: "365 W (350 W isolated)"
-    conditions: "1064 nm，单频，线偏振，全光纤MOPA"
-    measurement_method: "功率计测量输出端功率，扣除隔离器损耗后得350 W隔离输出。"
-    significance: "高功率是引力波探测等应用的关键需求。"
-    source_claim: {zotero_key: "HJZ6BVYE", claim: "Ultra-low intensity noise, all fiber 365 W linearly polarized single frequency laser at 1064 nm"}
-  - id: met.rin_level_d20
-    name: "相对强度噪声（Dixneuf 2020）"
-    quantity: "relative_intensity_noise"
-    unit: "dBc/Hz"
-    demonstrated_value: "-160 dBc/Hz @ 2–10 kHz"
-    conditions: "1 MHz带宽RIN伺服激活，1064 nm单频激光"
-    measurement_method: "光电探测器配合频谱分析仪，参考底噪校准。"
-    significance: "低RIN是精密测量的关键指标，直接影响信噪比。"
-    source_claim: {zotero_key: "HJZ6BVYE", claim: "RIN reduced to -160 dBc/Hz @ 2–10 kHz (1 MHz bandwidth servo)"}
-  - id: met.servo_bandwidth_d20
-    name: "RIN伺服带宽（Dixneuf 2020）"
-    quantity: "servo_bandwidth"
-    unit: "MHz"
-    demonstrated_value: "1 MHz"
-    conditions: "反馈回路包含光电探测、电子处理、强度调制器驱动"
-    measurement_method: "测量伺服传递函数-3 dB点。"
-    significance: "高带宽伺服可抑制更宽频段的强度噪声。"
-    source_claim: {zotero_key: "HJZ6BVYE", claim: "1 MHz bandwidth servo"}
-  - id: met.power_stability_d20
-    name: "功率长期稳定性（Dixneuf 2020）"
-    quantity: "power_stability"
-    unit: "% RMS"
-    demonstrated_value: "<0.7% RMS"
-    conditions: "连续运行1100小时，环境温度控制"
-    measurement_method: "长期记录输出功率，计算RMS波动。"
-    significance: "长期稳定性决定系统可靠性和测量重复性。"
-    source_claim: {zotero_key: "HJZ6BVYE", claim: "power stability <0.7% RMS over 1100 hours"}
-  - id: met.beam_quality_d20
-    name: "光束质量M²（Dixneuf 2020）"
-    quantity: "beam_quality_factor"
-    unit: "M²"
-    demonstrated_value: "<1.1"
-    conditions: "输出光束经过准直，1064 nm"
-    measurement_method: "刀口法或光束分析仪测量光束宽度随传播距离变化。"
-    significance: "近衍射极限光束有利于后续光学系统耦合。"
-    source_claim: {zotero_key: "HJZ6BVYE", claim: "beam quality M² < 1.1"}
+- id: pri.high_power_low_rin_fiber_laser_design_d20
+  name: 高功率低RIN光纤激光器设计（Dixneuf 2020）
+  statement: '通过全光纤主振荡器-功率放大器（MOPA）架构，结合高带宽（1 MHz）RIN伺服反馈，可在单频1064 nm激光中实现365 W输出，同时将相对强度噪声（RIN）降至-160
+    dBc/Hz（2–10 kHz），并维持超过1100小时的功率稳定性（<0.7% RMS）。
 
+    '
+  domain: laser_design
+  subdomain: high_power_fiber_laser
+  foundation: known_physics
+  evidence: experimental
+  note: 该设计解决了高功率与低噪声之间的权衡，适用于引力波探测和精密光谱等对噪声极度敏感的应用。
+methods:
+- id: meth.fiber_mopa_with_rin_servo_d20
+  name: 全光纤MOPA配RIN伺服（Dixneuf 2020）
+  procedure:
+  - 搭建1064 nm单频主振荡器（窄线宽种子源）。
+  - 使用定制大模面积光纤（模场直径30 μm）构建多级掺镱光纤放大器。
+  - 实现全光纤化（无空间光学元件），减少反射和寄生振荡。
+  - 集成高带宽（1 MHz）RIN伺服反馈：探测部分输出功率，与参考比较，驱动强度调制器抑制强度噪声。
+  - 在2–10 kHz频段将RIN降至-160 dBc/Hz。
+  - 监测输出功率长期稳定性（1100小时，RMS <0.7%）。
+  domain: laser_engineering
+  subdomain: fiber_laser_amplification
+  inputs:
+  - seed_laser
+  - pump_diodes
+  - fibers
+  - modulator
+  outputs:
+  - high_power_low_rin_beam
+  note: 该方案实现了高功率（365 W）与超低RIN的兼容，为引力波探测提供了理想的激光源。
+metrics:
+- id: met.output_power_d20
+  name: 输出功率（Dixneuf 2020）
+  quantity: optical_power
+  unit: W
+  demonstrated_value: 365 W (350 W isolated)
+  conditions: 1064 nm，单频，线偏振，全光纤MOPA
+  measurement_method: 功率计测量输出端功率，扣除隔离器损耗后得350 W隔离输出。
+  significance: 高功率是引力波探测等应用的关键需求。
+  source_claim:
+    zotero_key: HJZ6BVYE
+    claim: Ultra-low intensity noise, all fiber 365 W linearly polarized single frequency
+      laser at 1064 nm
+- id: met.rin_level_d20
+  name: 相对强度噪声（Dixneuf 2020）
+  quantity: relative_intensity_noise
+  unit: dBc/Hz
+  demonstrated_value: -160 dBc/Hz @ 2–10 kHz
+  conditions: 1 MHz带宽RIN伺服激活，1064 nm单频激光
+  measurement_method: 光电探测器配合频谱分析仪，参考底噪校准。
+  significance: 低RIN是精密测量的关键指标，直接影响信噪比。
+  source_claim:
+    zotero_key: HJZ6BVYE
+    claim: RIN reduced to -160 dBc/Hz @ 2–10 kHz (1 MHz bandwidth servo)
+- id: met.servo_bandwidth_d20
+  name: RIN伺服带宽（Dixneuf 2020）
+  quantity: servo_bandwidth
+  unit: MHz
+  demonstrated_value: 1 MHz
+  conditions: 反馈回路包含光电探测、电子处理、强度调制器驱动
+  measurement_method: 测量伺服传递函数-3 dB点。
+  significance: 高带宽伺服可抑制更宽频段的强度噪声。
+  source_claim:
+    zotero_key: HJZ6BVYE
+    claim: 1 MHz bandwidth servo
+- id: met.power_stability_d20
+  name: 功率长期稳定性（Dixneuf 2020）
+  quantity: power_stability
+  unit: '% RMS'
+  demonstrated_value: <0.7% RMS
+  conditions: 连续运行1100小时，环境温度控制
+  measurement_method: 长期记录输出功率，计算RMS波动。
+  significance: 长期稳定性决定系统可靠性和测量重复性。
+  source_claim:
+    zotero_key: HJZ6BVYE
+    claim: power stability <0.7% RMS over 1100 hours
+- id: met.beam_quality_d20
+  name: 光束质量M²（Dixneuf 2020）
+  quantity: beam_quality_factor
+  unit: M²
+  demonstrated_value: <1.1
+  conditions: 输出光束经过准直，1064 nm
+  measurement_method: 刀口法或光束分析仪测量光束宽度随传播距离变化。
+  significance: 近衍射极限光束有利于后续光学系统耦合。
+  source_claim:
+    zotero_key: HJZ6BVYE
+    claim: beam quality M² < 1.1
 relations:
-  - id: rel.Dix01
-    subject: ent.high_power_low_rin_fiber_laser_d20
-    predicate: IMPLEMENTS
-    object: pri.high_power_low_rin_fiber_laser_design_d20
-    confidence: established
-    source: {zotero_key: "HJZ6BVYE", claim: "Ultra-low intensity noise, all fiber 365 W linearly polarized single frequency laser at 1064 nm"}
-    note: "该激光器实体实现了高功率低RIN设计原理。"
-  - id: rel.Dix02
-    subject: meth.fiber_mopa_with_rin_servo_d20
-    predicate: IMPLEMENTS
-    object: pri.high_power_low_rin_fiber_laser_design_d20
-    confidence: established
-    source: {zotero_key: "HJZ6BVYE", claim: "全光纤MOPA配RIN伺服"}
-    note: "该方法具体实现了设计原理。"
-  - id: rel.Dix03
-    subject: met.output_power_d20
-    predicate: CHARACTERIZES
-    object: ent.high_power_low_rin_fiber_laser_d20
-    confidence: established
-    source: {zotero_key: "HJZ6BVYE", claim: "365 W (350 W isolated)"}
-    note: "输出功率表征激光器性能。"
-  - id: rel.Dix04
-    subject: met.rin_level_d20
-    predicate: CHARACTERIZES
-    object: ent.high_power_low_rin_fiber_laser_d20
-    confidence: established
-    source: {zotero_key: "HJZ6BVYE", claim: "RIN reduced to -160 dBc/Hz @ 2–10 kHz"}
-    note: "RIN水平是核心噪声指标。"
-  - id: rel.Dix05
-    subject: met.servo_bandwidth_d20
-    predicate: CHARACTERIZES
-    object: meth.fiber_mopa_with_rin_servo_d20
-    confidence: established
-    source: {zotero_key: "HJZ6BVYE", claim: "1 MHz bandwidth servo"}
-    note: "伺服带宽表征RIN抑制方法的能力。"
-  - id: rel.Dix06
-    subject: met.power_stability_d20
-    predicate: CHARACTERIZES
-    object: ent.high_power_low_rin_fiber_laser_d20
-    confidence: established
-    source: {zotero_key: "HJZ6BVYE", claim: "power stability <0.7% RMS over 1100 hours"}
-    note: "功率长期稳定性表征激光器可靠性。"
-  - id: rel.Dix07
-    subject: met.beam_quality_d20
-    predicate: CHARACTERIZES
-    object: ent.high_power_low_rin_fiber_laser_d20
-    confidence: established
-    source: {zotero_key: "HJZ6BVYE", claim: "beam quality M² < 1.1"}
-    note: "光束质量表征输出光束的空间特性。"
+- id: rel.dixneuf_2020_ix01
+  subject: ent.high_power_low_rin_fiber_laser_d20
+  predicate: IMPLEMENTS
+  object: pri.high_power_low_rin_fiber_laser_design_d20
+  confidence: established
+  source:
+    zotero_key: HJZ6BVYE
+    claim: Ultra-low intensity noise, all fiber 365 W linearly polarized single frequency
+      laser at 1064 nm
+  note: 该激光器实体实现了高功率低RIN设计原理。
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/dixneuf2020.yaml
+- id: rel.dixneuf_2020_ix02
+  subject: meth.fiber_mopa_with_rin_servo_d20
+  predicate: IMPLEMENTS
+  object: pri.high_power_low_rin_fiber_laser_design_d20
+  confidence: established
+  source:
+    zotero_key: HJZ6BVYE
+    claim: 全光纤MOPA配RIN伺服
+  note: 该方法具体实现了设计原理。
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/dixneuf2020.yaml
+- id: rel.dixneuf_2020_ix03
+  subject: met.output_power_d20
+  predicate: CHARACTERIZES
+  object: ent.high_power_low_rin_fiber_laser_d20
+  confidence: established
+  source:
+    zotero_key: HJZ6BVYE
+    claim: 365 W (350 W isolated)
+  note: 输出功率表征激光器性能。
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/dixneuf2020.yaml
+- id: rel.dixneuf_2020_ix04
+  subject: met.rin_level_d20
+  predicate: CHARACTERIZES
+  object: ent.high_power_low_rin_fiber_laser_d20
+  confidence: established
+  source:
+    zotero_key: HJZ6BVYE
+    claim: RIN reduced to -160 dBc/Hz @ 2–10 kHz
+  note: RIN水平是核心噪声指标。
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/dixneuf2020.yaml
+- id: rel.dixneuf_2020_ix05
+  subject: met.servo_bandwidth_d20
+  predicate: CHARACTERIZES
+  object: meth.fiber_mopa_with_rin_servo_d20
+  confidence: established
+  source:
+    zotero_key: HJZ6BVYE
+    claim: 1 MHz bandwidth servo
+  note: 伺服带宽表征RIN抑制方法的能力。
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/dixneuf2020.yaml
+- id: rel.dixneuf_2020_ix06
+  subject: met.power_stability_d20
+  predicate: CHARACTERIZES
+  object: ent.high_power_low_rin_fiber_laser_d20
+  confidence: established
+  source:
+    zotero_key: HJZ6BVYE
+    claim: power stability <0.7% RMS over 1100 hours
+  note: 功率长期稳定性表征激光器可靠性。
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/dixneuf2020.yaml
+- id: rel.dixneuf_2020_ix07
+  subject: met.beam_quality_d20
+  predicate: CHARACTERIZES
+  object: ent.high_power_low_rin_fiber_laser_d20
+  confidence: established
+  source:
+    zotero_key: HJZ6BVYE
+    claim: beam quality M² < 1.1
+  note: 光束质量表征输出光束的空间特性。
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/dixneuf2020.yaml

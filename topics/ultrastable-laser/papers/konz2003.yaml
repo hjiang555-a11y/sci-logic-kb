@@ -1,79 +1,77 @@
-# Könz 2003 — Eu³⁺:Y₂SiO₅ 光学退相、光谱孔寿命和各向异性吸收
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-16
-# Schema版本：v4.1
-
 meta:
-  zotero_key: "MNIZVIMG"
+  zotero_key: MNIZVIMG
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: "Temperature and concentration dependence of optical dephasing, spectral-hole lifetime, and anisotropic absorption in Eu³⁺:Y₂SiO₅"
+  title: Temperature and concentration dependence of optical dephasing, spectral-hole
+    lifetime, and anisotropic absorption in Eu³⁺:Y₂SiO₅
   year: 2003
   first_author: Könz
-  journal: "Physical Review B"
+  journal: Physical Review B
   volume: 68
-  pages: "085109"
-  doi: "10.1103/PhysRevB.68.085109"
-  note: >
-    Eu³⁺:Y₂SiO₅ 的系统性光谱表征：
-    T₂ 达 2.6 ms（接近荧光寿命极限），
-    光谱孔寿命从 18 K 的 1 s 到 2 K 的 >20 天，
-    浓度从 0.02% 到 7% 时非均匀线宽从 0.5 GHz 增至 ~150 GHz。
-    核心贡献：SHB 稳频的材料基础参数参考。
+  pages: 085109
+  doi: 10.1103/PhysRevB.68.085109
+  note: 'Eu³⁺:Y₂SiO₅ 的系统性光谱表征： T₂ 达 2.6 ms（接近荧光寿命极限）， 光谱孔寿命从 18 K 的 1 s 到 2 K 的 >20
+    天， 浓度从 0.02% 到 7% 时非均匀线宽从 0.5 GHz 增至 ~150 GHz。 核心贡献：SHB 稳频的材料基础参数参考。
 
+    '
 entities: []
-
 principles: []
-
 methods:
-  - id: meth.eu_yso_spectral_characterization_k03
-    name: "Eu³⁺:Y₂SiO₅ 光谱特性表征方法（Könz 2003）"
-    type: material_characterization
-    purpose: >
-      系统性表征 Eu³⁺:Y₂SiO₅ 晶体的光学退相时间、光谱孔寿命
-      和各向异性吸收特性，为光谱烧孔稳频提供材料基础参数
-    steps:
-      - "制备不同浓度（0.02% 到 7%）的 Eu³⁺:Y₂SiO₅ 晶体样品"
-      - "在不同温度（2 K 到 18 K）下测量光学退相时间 T₂"
-      - "测量光谱孔寿命随温度的变化关系"
-      - "表征非均匀线宽随浓度的变化"
-      - "分析各向异性吸收特性"
-    key_parameters:
-      temperature_range: "2 K to 18 K"
-      concentration_range: "0.02% to 7%"
-      measurement_techniques: "spectral hole burning, photon echo"
-    connects:
-      - met.eu_yso_t2_k03
-      - met.spectral_hole_lifetime_k03
-    source_claim: "Temperature and concentration dependence of optical dephasing, spectral-hole lifetime, and anisotropic absorption in Eu³⁺:Y₂SiO₅"
+- id: meth.eu_yso_spectral_characterization_k03
+  name: Eu³⁺:Y₂SiO₅ 光谱特性表征方法（Könz 2003）
+  type: material_characterization
+  purpose: '系统性表征 Eu³⁺:Y₂SiO₅ 晶体的光学退相时间、光谱孔寿命 和各向异性吸收特性，为光谱烧孔稳频提供材料基础参数
 
+    '
+  steps:
+  - 制备不同浓度（0.02% 到 7%）的 Eu³⁺:Y₂SiO₅ 晶体样品
+  - 在不同温度（2 K 到 18 K）下测量光学退相时间 T₂
+  - 测量光谱孔寿命随温度的变化关系
+  - 表征非均匀线宽随浓度的变化
+  - 分析各向异性吸收特性
+  key_parameters:
+    temperature_range: 2 K to 18 K
+    concentration_range: 0.02% to 7%
+    measurement_techniques: spectral hole burning, photon echo
+  connects:
+  - met.eu_yso_t2_k03
+  - met.spectral_hole_lifetime_k03
+  source_claim: Temperature and concentration dependence of optical dephasing, spectral-hole
+    lifetime, and anisotropic absorption in Eu³⁺:Y₂SiO₅
 metrics:
-  - id: met.eu_yso_t2_k03
-    name: "Eu³⁺:Y₂SiO₅ 光学退相时间（Könz 2003）"
-    unit: "ms"
-    demonstrated_value:
-      value: "T₂ up to 2.6 ms"
-      conditions: "Eu³⁺:Y₂SiO₅, low concentration, ~2 K"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "MNIZVIMG", claim: "T₂ values as long as 2.6 ms, approaching the limit set by the fluorescence decay time"}
-
-  - id: met.spectral_hole_lifetime_k03
-    name: "光谱孔寿命（Könz 2003）"
-    unit: "various"
-    demonstrated_value:
-      value: "1 s @ 18 K to >20 days @ 2 K"
-      conditions: "Eu³⁺:Y₂SiO₅, various concentrations"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "MNIZVIMG", claim: "lifetimes varying from 1 s at 18 K to an estimated value of greater than 20 days at 2 K"}
-
-relations:
-  - id: rel.KZ01
-    subject: ent.shb_eu_yso_reference_l13
-    predicate: CONDITIONED-BY
-    object: met.spectral_hole_lifetime_k03
+- id: met.eu_yso_t2_k03
+  name: Eu³⁺:Y₂SiO₅ 光学退相时间（Könz 2003）
+  unit: ms
+  demonstrated_value:
+    value: T₂ up to 2.6 ms
+    conditions: Eu³⁺:Y₂SiO₅, low concentration, ~2 K
+    verification_status: observed
     confidence: established
-    source: {zotero_key: "MNIZVIMG", claim: "spectral hole lifetimes for temperatures from 2 K to 18 K"}
-    note: "光谱孔寿命决定 SHB 频率参考的长期性能"
+    source:
+      zotero_key: MNIZVIMG
+      claim: T₂ values as long as 2.6 ms, approaching the limit set by the fluorescence
+        decay time
+- id: met.spectral_hole_lifetime_k03
+  name: 光谱孔寿命（Könz 2003）
+  unit: various
+  demonstrated_value:
+    value: 1 s @ 18 K to >20 days @ 2 K
+    conditions: Eu³⁺:Y₂SiO₅, various concentrations
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: MNIZVIMG
+      claim: lifetimes varying from 1 s at 18 K to an estimated value of greater than
+        20 days at 2 K
+relations:
+- id: rel.könz_2003_Z01
+  subject: ent.shb_eu_yso_reference_l13
+  predicate: CONDITIONED-BY
+  object: met.spectral_hole_lifetime_k03
+  confidence: established
+  source:
+    zotero_key: MNIZVIMG
+    claim: spectral hole lifetimes for temperatures from 2 K to 18 K
+  note: 光谱孔寿命决定 SHB 频率参考的长期性能
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/konz2003.yaml

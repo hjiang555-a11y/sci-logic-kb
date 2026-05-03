@@ -1,121 +1,135 @@
-# Webster 2008 — 热噪声极限光学腔
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-15
-# Schema版本：v4.1
-# ⚠ 年份注意：QUEUE.md 标 "Webster 2003?"，PDF 文件名含 webster2004，实际发表 2008
-
 meta:
-  zotero_key: "VU2V2PTX"
+  zotero_key: VU2V2PTX
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
-  title: "Thermal-noise-limited optical cavity"
+  title: Thermal-noise-limited optical cavity
   year: 2008
   first_author: Webster
-  journal: "Physical Review A"
+  journal: Physical Review A
   volume: 77
-  pages: "033847"
-  doi: "10.1103/PhysRevA.77.033847"
-  note: >
-    实验首次直接展示一对光学腔在排除振动和温度扰动后达到热噪声极限。
-    稳定度 ≈2×10⁻¹⁵（0.5–100 s），归因于镜基底和镀层的布朗运动，
-    与 Numata 2004 理论预测定量一致。是该理论的首次全面实验验证。
-    NPL（Gill组）+ SYRTE（Millo），1064 nm 双 ULE 腔拍频。
-    ⚠ 年份注意：QUEUE.md 标注 "Webster 2003?"，PDF 文件名为 webster2004.pdf，
-    实际 Received 31 Oct 2007, Published 27 Mar 2008 (Phys. Rev. A 77, 033847)。
+  pages: 033847
+  doi: 10.1103/PhysRevA.77.033847
+  note: '实验首次直接展示一对光学腔在排除振动和温度扰动后达到热噪声极限。 稳定度 ≈2×10⁻¹⁵（0.5–100 s），归因于镜基底和镀层的布朗运动，
+    与 Numata 2004 理论预测定量一致。是该理论的首次全面实验验证。 NPL（Gill组）+ SYRTE（Millo），1064 nm 双 ULE 腔拍频。
+    ⚠ 年份注意：QUEUE.md 标注 "Webster 2003?"，PDF 文件名为 webster2004.pdf， 实际 Received 31 Oct
+    2007, Published 27 Mar 2008 (Phys. Rev. A 77, 033847)。
 
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
-# 不新增实体节点——本文使用的是标准 10 cm ULE 腔，复用 ent.fp_cavity_system
-
+    '
 methods:
-  - id: meth.vibration_insensitive_cavity_lock_w08
-    name: "振动不敏感 ULE 腔 PDH 锁频方法（Webster 2008）"
-    description: "通过振动不敏感设计和温度稳定实现热噪声极限的 ULE 腔 PDH 锁频"
-    core_principle: pri.pdh_heterodyne_detection
-    key_entity: ent.fp_cavity_system
-    reliability: established
-    verification_status: observed
-    source: {zotero_key: "VU2V2PTX", claim: "The laser is stabilized to a vibration-insensitive ULE cavity using PDH locking"}
-
+- id: meth.vibration_insensitive_cavity_lock_w08
+  name: 振动不敏感 ULE 腔 PDH 锁频方法（Webster 2008）
+  description: 通过振动不敏感设计和温度稳定实现热噪声极限的 ULE 腔 PDH 锁频
+  core_principle: pri.pdh_heterodyne_detection
+  key_entity: ent.fp_cavity_system
+  reliability: established
+  verification_status: observed
+  source:
+    zotero_key: VU2V2PTX
+    claim: The laser is stabilized to a vibration-insensitive ULE cavity using PDH
+      locking
 metrics:
-  - id: met.fractional_freq_instability_w08
-    name: "分数频率不稳定度（Webster 2008，ULE 腔热噪声极限）"
-    unit: "无量纲"
-    description: >
-      一对 10 cm ULE 腔锁定激光的相对频率稳定度，达到热噪声极限 floor ≈2×10⁻¹⁵。
-    demonstrated_value:
-      value: "≈2×10⁻¹⁵ (0.5-100 s averaging)"
-      conditions: "双 ULE 腔, 10 cm, 1064 nm, 振动不敏感设计, 温度稳定在 CTE 零点"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "VU2V2PTX", claim: "The stability of a laser locked to the cavity reaches a floor ≈2×10⁻¹⁵ for averaging times in the range 0.5–100 s. This limit is attributed to Brownian motion of the mirror substrates and coatings."}
-    theoretical_floor:
-      value: "≈2×10⁻¹⁵"
-      basis: "Numata 2004 布朗热噪声计算 with ULE substrate φ=1/6×10⁴, beam radius 220 μm"
-      gap_note: "实测值与理论一致——首次验证 Numata 模型"
-    historical_landmarks:
-      first_demonstration:
-        value: "≈2×10⁻¹⁵"
-        year: 2008
-        source: {zotero_key: "VU2V2PTX"}
-        note: "首次全面实验验证 ULE 腔热噪声极限"
+- id: met.fractional_freq_instability_w08
+  name: 分数频率不稳定度（Webster 2008，ULE 腔热噪声极限）
+  unit: 无量纲
+  description: '一对 10 cm ULE 腔锁定激光的相对频率稳定度，达到热噪声极限 floor ≈2×10⁻¹⁵。
 
-relations:
-  - id: rel.We08_01
-    subject: ent.fp_cavity_system
-    predicate: BOUNDED-BY
-    object: pri.brownian_thermal_noise_fdt
-    confidence: established
-    source: {zotero_key: "VU2V2PTX", claim: "This limit is attributed to Brownian motion of the mirror substrates and coatings"}
-    is_system_limit: true
-    dominated_by: null
+    '
+  demonstrated_value:
+    value: ≈2×10⁻¹⁵ (0.5-100 s averaging)
+    conditions: 双 ULE 腔, 10 cm, 1064 nm, 振动不敏感设计, 温度稳定在 CTE 零点
     verification_status: observed
-    temporal_role: validates
-    breakthrough_paths:
-      - direction: pri.crystalline_coating_low_brownian_noise
-        expected_gain: "AlGaAs 晶体镀层直接针对 Webster 2008 观测到的镀层 + 底物布朗噪声中的镀层分量（Numata 2004 预算中的 ~15%），降低约 10×"
-        status: demonstrated
-        source: {zotero_key: "CWIHQRJD", claim: "tenfold reduction in mechanical damping when compared with the best dielectric multilayers"}
-        note: "pri.crystalline_coating_low_brownian_noise 定义于 cole2013.yaml"
-      - direction: pri.long_cavity_thermal_noise_reduction
-        expected_gain: "长腔（≥ 48 cm）使总热噪声极限 σ_y ∝ 1/L 降低约 5×，Webster 2008 10 cm ULE 腔的 2×10⁻¹⁵ → 室温长腔可进入 10⁻¹⁶ 量级"
-        status: demonstrated
-        source: {zotero_key: "UV6S5FFL", claim: "instability of below 1×10⁻¹⁶ at averaging times from 1 to 1000 s is revealed"}
-        note: "pri.long_cavity_thermal_noise_reduction 定义于 hafner2015.yaml"
-      - direction: pri.cryogenic_mechanical_q_enhancement
-        expected_gain: "低温单晶 Si 腔（124 K/4 K）使底物/间隔物 Q 提升 ~1000×，底物贡献被抑制；总热噪声极限进入 10⁻¹⁷"
-        status: demonstrated
-        source: {zotero_key: "YKPFKDD9", claim: "high mechanical quality factor of silicon reduces thermal noise contribution from spacer and substrates"}
-        note: "pri.cryogenic_mechanical_q_enhancement 定义于 kessler2012.yaml"
-    note: "跨文件引用 numata2004.yaml; 首次全面实验验证 ULE 腔热噪声极限"
-
-  - id: rel.We08_02
-    subject: ent.fp_cavity_system
-    predicate: CHARACTERIZED-BY
-    object: met.fractional_freq_instability_w08
     confidence: established
-    source: {zotero_key: "VU2V2PTX", claim: "floor ≈2×10⁻¹⁵ for averaging times in the range 0.5–100 s"}
-
-  - id: rel.We08_03
-    subject: ent.fp_cavity_system
-    predicate: CONDITIONED-BY
-    object: ent.vibration_environment
-    confidence: established
-    source: {zotero_key: "VU2V2PTX", claim: "vibrations, entering through supports, cause the cavity to deform"}
-    interface_metric: met.fractional_freq_instability_w08
-    is_system_limit:
-      current: false
-      conditions: "Webster 2007/2008 设计充分抑制振动后退出限制序列"
-    note: "跨文件引用 young1999.yaml"
-
-  - id: rel.We08_04
-    subject: met.fractional_freq_instability_w08
-    predicate: OPERATIONALIZED-AS
-    object: meth.vibration_insensitive_cavity_lock_w08
-    confidence: established
-    source: {zotero_key: "VU2V2PTX", claim: "The laser is stabilized to a vibration-insensitive ULE cavity using PDH locking"}
-    conditions: "10 cm ULE 腔，振动不敏感几何 + 温度 CTE 零点稳定 + PDH 锁频"
-    note: "2×10⁻¹⁵ 热噪声极限稳定度通过振动不敏感 ULE 腔 PDH 锁频方法实现"
+    source:
+      zotero_key: VU2V2PTX
+      claim: The stability of a laser locked to the cavity reaches a floor ≈2×10⁻¹⁵
+        for averaging times in the range 0.5–100 s. This limit is attributed to Brownian
+        motion of the mirror substrates and coatings.
+  theoretical_floor:
+    value: ≈2×10⁻¹⁵
+    basis: Numata 2004 布朗热噪声计算 with ULE substrate φ=1/6×10⁴, beam radius 220 μm
+    gap_note: 实测值与理论一致——首次验证 Numata 模型
+  historical_landmarks:
+    first_demonstration:
+      value: ≈2×10⁻¹⁵
+      year: 2008
+      source:
+        zotero_key: VU2V2PTX
+      note: 首次全面实验验证 ULE 腔热噪声极限
+relations:
+- id: rel.webster_2008_e08_01
+  subject: ent.fp_cavity_system
+  predicate: BOUNDED-BY
+  object: pri.brownian_thermal_noise_fdt
+  confidence: established
+  source:
+    zotero_key: VU2V2PTX
+    claim: This limit is attributed to Brownian motion of the mirror substrates and
+      coatings
+  is_system_limit: true
+  dominated_by: null
+  verification_status: observed
+  temporal_role: validates
+  breakthrough_paths:
+  - direction: pri.crystalline_coating_low_brownian_noise
+    expected_gain: AlGaAs 晶体镀层直接针对 Webster 2008 观测到的镀层 + 底物布朗噪声中的镀层分量（Numata 2004
+      预算中的 ~15%），降低约 10×
+    status: demonstrated
+    source:
+      zotero_key: CWIHQRJD
+      claim: tenfold reduction in mechanical damping when compared with the best dielectric
+        multilayers
+    note: pri.crystalline_coating_low_brownian_noise 定义于 cole2013.yaml
+  - direction: pri.long_cavity_thermal_noise_reduction
+    expected_gain: 长腔（≥ 48 cm）使总热噪声极限 σ_y ∝ 1/L 降低约 5×，Webster 2008 10 cm ULE 腔的 2×10⁻¹⁵
+      → 室温长腔可进入 10⁻¹⁶ 量级
+    status: demonstrated
+    source:
+      zotero_key: UV6S5FFL
+      claim: instability of below 1×10⁻¹⁶ at averaging times from 1 to 1000 s is revealed
+    note: pri.long_cavity_thermal_noise_reduction 定义于 hafner2015.yaml
+  - direction: pri.cryogenic_mechanical_q_enhancement
+    expected_gain: 低温单晶 Si 腔（124 K/4 K）使底物/间隔物 Q 提升 ~1000×，底物贡献被抑制；总热噪声极限进入 10⁻¹⁷
+    status: demonstrated
+    source:
+      zotero_key: YKPFKDD9
+      claim: high mechanical quality factor of silicon reduces thermal noise contribution
+        from spacer and substrates
+    note: pri.cryogenic_mechanical_q_enhancement 定义于 kessler2012.yaml
+  note: 跨文件引用 numata2004.yaml; 首次全面实验验证 ULE 腔热噪声极限
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/webster2008.yaml
+- id: rel.webster_2008_e08_02
+  subject: ent.fp_cavity_system
+  predicate: CHARACTERIZED-BY
+  object: met.fractional_freq_instability_w08
+  confidence: established
+  source:
+    zotero_key: VU2V2PTX
+    claim: floor ≈2×10⁻¹⁵ for averaging times in the range 0.5–100 s
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/webster2008.yaml
+- id: rel.webster_2008_e08_03
+  subject: ent.fp_cavity_system
+  predicate: CONDITIONED-BY
+  object: ent.vibration_environment
+  confidence: established
+  source:
+    zotero_key: VU2V2PTX
+    claim: vibrations, entering through supports, cause the cavity to deform
+  interface_metric: met.fractional_freq_instability_w08
+  is_system_limit:
+    current: false
+    conditions: Webster 2007/2008 设计充分抑制振动后退出限制序列
+  note: 跨文件引用 young1999.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/webster2008.yaml
+- id: rel.webster_2008_e08_04
+  subject: met.fractional_freq_instability_w08
+  predicate: OPERATIONALIZED-AS
+  object: meth.vibration_insensitive_cavity_lock_w08
+  confidence: established
+  source:
+    zotero_key: VU2V2PTX
+    claim: The laser is stabilized to a vibration-insensitive ULE cavity using PDH
+      locking
+  conditions: 10 cm ULE 腔，振动不敏感几何 + 温度 CTE 零点稳定 + PDH 锁频
+  note: 2×10⁻¹⁵ 热噪声极限稳定度通过振动不敏感 ULE 腔 PDH 锁频方法实现
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/webster2008.yaml

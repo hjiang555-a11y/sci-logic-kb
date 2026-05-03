@@ -55,7 +55,7 @@ entities:
     note: "Level 2 实例，PART-OF ent.coherent_optical_fiber_link"
 
 relations:
-  - id: rel.Cli20_01
+  - id: rel.clivati_2020_li20_01
     subject: ent.dual_polarization_receiver_link_cl20
     predicate: PART-OF
     object: ent.coherent_optical_fiber_link
@@ -63,7 +63,7 @@ relations:
       paper: clivati2020
       claim: "frequency dissemination over optical fiber links"
 
-  - id: rel.Cli20_02
+  - id: rel.clivati_2020_li20_02
     subject: ent.dual_polarization_receiver_link_cl20
     predicate: OPERATIONALIZED-AS
     object: pri.dual_polarization_coherent_endless_phase_tracking

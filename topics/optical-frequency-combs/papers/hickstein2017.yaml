@@ -259,7 +259,7 @@ metrics:
 # ═══════════════════════════════════════════════
 
 relations:
-  - id: rel.H17_01
+  - id: rel.hickstein_2017_17_01
     subject: ent.chi2_chi3_waveguide_fceo_h17
     predicate: PART-OF
     object: ent.optical_frequency_comb
@@ -267,42 +267,42 @@ relations:
     source: {zotero_key: "CML5935T", claim: "stabilization of a compact laser frequency comb"}
     note: "ent.optical_frequency_comb 定义于 udem2002.yaml（跨文件引用）"
 
-  - id: rel.H17_02
+  - id: rel.hickstein_2017_17_02
     subject: ent.chi2_chi3_waveguide_fceo_h17
     predicate: CHARACTERIZED-BY
     object: met.on_chip_sc_span_h17
     confidence: established
     source: {zotero_key: "CML5935T", claim: "supercontinuum spanning from 500 to 4000 nm"}
 
-  - id: rel.H17_03
+  - id: rel.hickstein_2017_17_03
     subject: ent.chi2_chi3_waveguide_fceo_h17
     predicate: CHARACTERIZED-BY
     object: met.fceo_snr_on_chip_h17
     confidence: established
     source: {zotero_key: "CML5935T", claim: "37-dB SNR for the f_CEO peak"}
 
-  - id: rel.H17_04
+  - id: rel.hickstein_2017_17_04
     subject: ent.chi2_chi3_waveguide_fceo_h17
     predicate: CHARACTERIZED-BY
     object: met.pump_pulse_energy_threshold_h17
     confidence: established
     source: {zotero_key: "CML5935T", claim: "Broadband light ... with only about 80 mW (0.8 nJ) of 1560-nm pump power"}
 
-  - id: rel.H17_05
+  - id: rel.hickstein_2017_17_05
     subject: ent.chi2_chi3_waveguide_fceo_h17
     predicate: CHARACTERIZED-BY
     object: met.on_chip_mid_ir_power_h17
     confidence: likely
     source: {zotero_key: "CML5935T", claim: "about 0.3 mW in the 3500- to 4000-nm spectral region"}
 
-  - id: rel.H17_06
+  - id: rel.hickstein_2017_17_06
     subject: meth.on_chip_f2f_stabilization
     predicate: ENABLED-BY
     object: pri.dual_chi2_chi3_integrated_f2f
     confidence: established
     source: {zotero_key: "CML5935T", claim: "simultaneous SHG and SCG ... no interferometer is needed"}
 
-  - id: rel.H17_07
+  - id: rel.hickstein_2017_17_07
     subject: meth.on_chip_f2f_stabilization
     predicate: ENABLED-BY
     object: pri.supercontinuum_octave_spanning
@@ -310,7 +310,7 @@ relations:
     source: {zotero_key: "CML5935T", claim: "octave-spanning bandwidth allows the carrier-envelope-offset frequency (f_CEO) of the frequency comb to be measured"}
     note: "pri.supercontinuum_octave_spanning 定义于 diddams2000.yaml（跨文件引用）"
 
-  - id: rel.H17_08
+  - id: rel.hickstein_2017_17_08
     subject: pri.dual_chi2_chi3_integrated_f2f
     predicate: DERIVED-FROM
     object: pri.self_referencing_f2f
@@ -318,7 +318,7 @@ relations:
     source: {zotero_key: "CML5935T", claim: "In the f-2f scheme, the low-frequency portion of the spectrum undergoes second-harmonic generation ... and interferes with the high-frequency portion"}
     note: "pri.self_referencing_f2f 定义于 udem2002.yaml / giunta2019.yaml（跨文件引用）"
 
-  - id: rel.H17_09
+  - id: rel.hickstein_2017_17_09
     subject: pri.dual_chi2_chi3_integrated_f2f
     predicate: DERIVED-FROM
     object: pri.nonlinear_frequency_conversion_comb
@@ -326,7 +326,7 @@ relations:
     source: {zotero_key: "CML5935T", claim: "supercontinuum generation ... difference-frequency generation, second-harmonic generation, and third-harmonic generation"}
     note: "pri.nonlinear_frequency_conversion_comb 为仓库顶层节点（跨文件引用）"
 
-  - id: rel.H17_10
+  - id: rel.hickstein_2017_17_10
     subject: met.fceo_snr_on_chip_h17
     predicate: OPERATIONALIZED-AS
     object: meth.on_chip_f2f_stabilization
@@ -335,7 +335,7 @@ relations:
       claim: "The on-chip f_CEO signal-to-noise ratio is measured and optimized through the on-chip χ²+χ³ self-referencing stabilization method, achieving 37 dB SNR."
       zotero_key: "CML5935T"
 
-  - id: rel.H17_11
+  - id: rel.hickstein_2017_17_11
     subject: met.fceo_snr_on_chip_h17
     predicate: BOUNDED-BY
     object: pri.mode_overlap_limits_fceo_snr
@@ -347,7 +347,7 @@ relations:
         status: proposed
         source: {zotero_key: "CML5935T", claim: "on-chip mode converters could be used to provide both phase-matched SHG and mode overlap"}
 
-  - id: rel.H17_12
+  - id: rel.hickstein_2017_17_12
     subject: meth.on_chip_f2f_stabilization
     predicate: BOUNDED-BY
     object: pri.phase_matching_bandwidth_limit_chi2
@@ -360,14 +360,14 @@ relations:
         source: {zotero_key: "CML5935T", claim: "periodically poled LiNbO3 (PPLN) have demonstrated supercontinuum generation via cascaded χ(2) processes"}
         note: "AlN 为多晶无 QPM；PPLN-on-insulator 是该方向的工程路径。"
 
-  - id: rel.H17_13
+  - id: rel.hickstein_2017_17_13
     subject: meth.on_chip_f2f_stabilization
     predicate: CONDITIONED-BY
     object: ent.chi2_chi3_waveguide_fceo_h17
     confidence: established
     source: {zotero_key: "CML5935T", claim: "The only equipment required to detect f_CEO is a 780-nm bandpass filter and a photodetector"}
 
-  - id: rel.H17_14
+  - id: rel.hickstein_2017_17_14
     subject: ent.chi2_chi3_waveguide_fceo_h17
     predicate: COMPETES-WITH
     object: ent.air_silica_microstructure_fiber_d00

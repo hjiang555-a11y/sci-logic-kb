@@ -103,7 +103,7 @@ principles:
         context: "应用该原理实现首个桌面超八度分子指纹梳（世界首次，2018），演示甲醇/乙醇双梳光谱，分辨率 100 MHz，采集速率 20 ms"
 
 relations:
-  - id: rel.Tim01
+  - id: rel.timmers_2018_im01
     predicate: BOUNDED-BY
     subject: ent.opgap_super_octave_mir_comb_t18
     object: pri.intra_pulse_dfg_super_octave_mir_t18

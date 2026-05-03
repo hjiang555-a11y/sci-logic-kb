@@ -1,158 +1,139 @@
-# Kéfélian 2009 — 光纤延迟线锁频首次实现超低频率噪声（首篇全光纤外差稳频）
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-15
-# Schema版本：v4.1
-
 meta:
-  zotero_key: "MN54T4F3"
+  zotero_key: MN54T4F3
   source_type: technical_paper
   contribution_type: breakthrough
-  # 专题 σ_y-first 规则豁免：论文仅给出频噪 PSD 与线宽，未直接报告 σ_y(1 s)；
-  # 所建立的 FDL 光纤延迟线稳频原理（1 km 光纤）开辟光纤干涉仪子分支，属 new_principle。
   primary_metric_exempt_reason: psd_only
   reliability: medium
-  title: "Ultralow-frequency-noise stabilization of a laser by locking to an optical fiber-delay line"
+  title: Ultralow-frequency-noise stabilization of a laser by locking to an optical
+    fiber-delay line
   year: 2009
   first_author: Kéfélian
-  journal: "Optics Letters"
+  journal: Optics Letters
   volume: 34
   issue: 7
-  pages: "914-916"
-  doi: "10.1364/OL.34.000914"
-  note: >
-    首次演示全光纤迈克尔逊干涉仪 AOM 外差锁频将 DFB EDFL 频率噪声降低超 40 dB，
-    在 40 Hz–30 kHz 频段达到与高精细度 FP 腔 PDH 锁定可比的水平。
-    核心贡献：验证了光纤延迟线外差方案作为 FP 腔替代的可行性（首次 40 dB 级降噪）。
-    在知识图谱中填补 ent.fiber_interferometer 的首次高性能演示时间点。
+  pages: 914-916
+  doi: 10.1364/OL.34.000914
+  note: '首次演示全光纤迈克尔逊干涉仪 AOM 外差锁频将 DFB EDFL 频率噪声降低超 40 dB， 在 40 Hz–30 kHz 频段达到与高精细度
+    FP 腔 PDH 锁定可比的水平。 核心贡献：验证了光纤延迟线外差方案作为 FP 腔替代的可行性（首次 40 dB 级降噪）。 在知识图谱中填补 ent.fiber_interferometer
+    的首次高性能演示时间点。
 
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
-# 实体节点：复用 ent.fiber_interferometer（定义于 jiang2010.yaml），本文不重复定义。
-# 本文使用 1 km 光纤（Jiang 2010 使用 2.5 km），结构相同但参数不同。
-
+    '
 entities: []
-  # 无新实体节点。ent.fiber_interferometer 已在 jiang2010.yaml 定义。
-
 principles: []
-  # 无新原理节点。
-  # pri.fiber_delay_line_frequency_ref（定义于 jiang2010.yaml）——本文首次高性能验证
-  # pri.aom_heterodyne_fiber_detection（定义于 jiang2010.yaml）——本文首次使用
-  # 本文的核心物理原理（光纤延迟线频率鉴别 + AOM 外差检测）已在 jiang2010.yaml 中完整表达。
-
 methods: []
-  # meth.fiber_delay_locking（定义于 jiang2010.yaml）——本文为该方法的首次高性能实现
-
 metrics:
-  - id: met.freq_noise_psd_fiber_kef09
-    name: "频率噪声谱密度（Kéfélian 2009，1 km 光纤）"
-    unit: "Hz²/Hz"
-    description: >
-      首次全光纤外差迈克尔逊干涉仪锁频的频率噪声 PSD。
-      在 1 Hz–10 kHz 全频段低于 1 Hz²/Hz；1 kHz 处达到 10⁻² Hz²/Hz。
-      40 Hz–30 kHz 频段与高精细度 FP 腔 PDH 锁定可比（受参考激光测量限制为上限）。
-    demonstrated_value:
-      value: "< 1 Hz²/Hz (1 Hz–10 kHz)；10⁻² Hz²/Hz @ 1 kHz"
-      conditions: "1 km SMF-28 光纤，DFB EDFL 1550 nm，AOM 外差检测，隔振台+隔声箱"
-      verification_status: observed
-      confidence: established
+- id: met.freq_noise_psd_fiber_kef09
+  name: 频率噪声谱密度（Kéfélian 2009，1 km 光纤）
+  unit: Hz²/Hz
+  description: '首次全光纤外差迈克尔逊干涉仪锁频的频率噪声 PSD。 在 1 Hz–10 kHz 全频段低于 1 Hz²/Hz；1 kHz 处达到
+    10⁻² Hz²/Hz。 40 Hz–30 kHz 频段与高精细度 FP 腔 PDH 锁定可比（受参考激光测量限制为上限）。
+
+    '
+  demonstrated_value:
+    value: < 1 Hz²/Hz (1 Hz–10 kHz)；10⁻² Hz²/Hz @ 1 kHz
+    conditions: 1 km SMF-28 光纤，DFB EDFL 1550 nm，AOM 外差检测，隔振台+隔声箱
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: MN54T4F3
+      claim: frequency-noise PSD reduced by more than 40 dB for 1 Hz to 10 kHz; reaches
+        10⁻² Hz²/Hz at 1 kHz
+  theoretical_floor:
+    value: 热力学噪声极限（Wanser 模型，1 km SMF-28）
+    basis: Wanser thermodynamic noise model for fiber interferometers
+    gap_note: 40 Hz 以下受光纤光路长度漂移限制，未达热噪声极限
+  historical_landmarks:
+    first_demonstration:
+      value: < 1 Hz²/Hz (1 Hz–10 kHz)
+      year: 2009
       source:
-        zotero_key: "MN54T4F3"
-        claim: "frequency-noise PSD reduced by more than 40 dB for 1 Hz to 10 kHz; reaches 10⁻² Hz²/Hz at 1 kHz"
-    theoretical_floor:
-      value: "热力学噪声极限（Wanser 模型，1 km SMF-28）"
-      basis: "Wanser thermodynamic noise model for fiber interferometers"
-      gap_note: "40 Hz 以下受光纤光路长度漂移限制，未达热噪声极限"
-    historical_landmarks:
-      first_demonstration:
-        value: "< 1 Hz²/Hz (1 Hz–10 kHz)"
-        year: 2009
-        source: {zotero_key: "MN54T4F3"}
-        note: "首次全光纤外差方案达到 FP 腔可比水平——光纤延迟线锁频的里程碑"
-
-  - id: met.laser_linewidth_kef09
-    name: "激光线宽（Kéfélian 2009，光纤锁定）"
-    unit: "Hz"
-    description: "光纤延迟线锁频后的 DFB EDFL 线宽（由频率噪声 PSD 数值积分得到）"
-    demonstrated_value:
-      value: "8 Hz @ 1 s 测量时间（隔振台开启）；17 Hz（隔振台关闭）"
-      conditions: "1 km SMF-28，频率噪声 PSD 100 mHz–100 kHz 数值积分"
-      verification_status: observed
-      confidence: established
+        zotero_key: MN54T4F3
+      note: 首次全光纤外差方案达到 FP 腔可比水平——光纤延迟线锁频的里程碑
+- id: met.laser_linewidth_kef09
+  name: 激光线宽（Kéfélian 2009，光纤锁定）
+  unit: Hz
+  description: 光纤延迟线锁频后的 DFB EDFL 线宽（由频率噪声 PSD 数值积分得到）
+  demonstrated_value:
+    value: 8 Hz @ 1 s 测量时间（隔振台开启）；17 Hz（隔振台关闭）
+    conditions: 1 km SMF-28，频率噪声 PSD 100 mHz–100 kHz 数值积分
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: MN54T4F3
+      claim: 3 dB linewidth of 8 Hz for 1 s measurement time; 17 Hz without isolation
+        platform
+  note: 自由运行线宽 8 kHz → 锁定后 8 Hz，降低 3 个数量级
+  historical_landmarks:
+    first_demonstration:
+      value: 8 Hz
+      year: 2009
       source:
-        zotero_key: "MN54T4F3"
-        claim: "3 dB linewidth of 8 Hz for 1 s measurement time; 17 Hz without isolation platform"
-    note: "自由运行线宽 8 kHz → 锁定后 8 Hz，降低 3 个数量级"
-    historical_landmarks:
-      first_demonstration:
-        value: "8 Hz"
-        year: 2009
-        source: {zotero_key: "MN54T4F3"}
-        note: "全光纤外差方案首次实现的最窄线宽"
-
-# ═══════════════════════════════════════════════
-#  RELATIONS（关系）
-# ═══════════════════════════════════════════════
-
+        zotero_key: MN54T4F3
+      note: 全光纤外差方案首次实现的最窄线宽
 relations:
-  - id: rel.Kef01
-    subject: ent.fiber_interferometer
-    predicate: CHARACTERIZED-BY
-    object: met.freq_noise_psd_fiber_kef09
-    confidence: established
-    source:
-      zotero_key: "MN54T4F3"
-      claim: "frequency noise of the fiber-stabilized laser below 1 Hz²/Hz over 1 Hz to 10 kHz"
-    conditions: "1 km SMF-28 光纤，静态锁频"
-    note: "ent.fiber_interferometer 定义于 jiang2010.yaml"
-
-  - id: rel.Kef02
-    subject: ent.fiber_interferometer
-    predicate: CHARACTERIZED-BY
-    object: met.laser_linewidth_kef09
-    confidence: established
-    source:
-      zotero_key: "MN54T4F3"
-      claim: "3 dB linewidth of the optical spectrum is 8 Hz for 1 s measurement time"
-    conditions: "1 km SMF-28，隔振台开启"
-    note: "ent.fiber_interferometer 定义于 jiang2010.yaml"
-
-  - id: rel.Kef03
-    subject: met.freq_noise_psd_fiber_kef09
-    predicate: OPERATIONALIZED-AS
-    object: meth.fiber_delay_locking
-    confidence: established
-    source:
-      zotero_key: "MN54T4F3"
-      claim: "fiber-stabilized laser noise comparable to high-finesse Fabry-Perot cavity stabilized laser"
-    conditions: "AOM 外差检测方案"
-    note: "meth.fiber_delay_locking 定义于 jiang2010.yaml"
-
-  - id: rel.Kef04
-    subject: meth.fiber_delay_locking
-    predicate: ENABLED-BY
-    object: pri.aom_heterodyne_fiber_detection
-    confidence: established
-    source:
-      zotero_key: "MN54T4F3"
-      claim: "improvement is most likely due to the use of rf heterodyne detection at a frequency where technical issues such as laser intensity noise and detection noise are totally negligible"
-    conditions: null
-    temporal_role: proposes
-    note: "pri.aom_heterodyne_fiber_detection 定义于 jiang2010.yaml；本文是该原理的首次高性能验证"
-
-  - id: rel.Kef05
-    subject: ent.fiber_interferometer
-    predicate: CONDITIONED-BY
-    object: ent.vibration_environment
-    interface_metric: met.freq_noise_from_vibration
-    coupling_formula: "隔振台影响 5 Hz–100 Hz 频段噪声；无隔振台线宽从 8 Hz 恶化到 17 Hz"
-    internal_property: "紧凑隔振台（310×310×170 mm）+ 隔声箱（0.125 m³）"
-    confidence: established
-    source:
-      zotero_key: "MN54T4F3"
-      claim: "effect of the antivibration table is notable between 5 Hz and 100 Hz; even without table noise reduction better than 30 dB"
-    is_system_limit:
-      current: false
-      conditions: "Kéfélian 2009 隔振后 5–100 Hz 频段不再主导；低于 40 Hz 受热漂移限制"
-    note: "ent.vibration_environment 定义于 webster2007.yaml/jiang2010.yaml"
+- id: rel.kéfélian_2009_ef01
+  subject: ent.fiber_interferometer
+  predicate: CHARACTERIZED-BY
+  object: met.freq_noise_psd_fiber_kef09
+  confidence: established
+  source:
+    zotero_key: MN54T4F3
+    claim: frequency noise of the fiber-stabilized laser below 1 Hz²/Hz over 1 Hz
+      to 10 kHz
+  conditions: 1 km SMF-28 光纤，静态锁频
+  note: ent.fiber_interferometer 定义于 jiang2010.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/kefelian2009.yaml
+- id: rel.kéfélian_2009_ef02
+  subject: ent.fiber_interferometer
+  predicate: CHARACTERIZED-BY
+  object: met.laser_linewidth_kef09
+  confidence: established
+  source:
+    zotero_key: MN54T4F3
+    claim: 3 dB linewidth of the optical spectrum is 8 Hz for 1 s measurement time
+  conditions: 1 km SMF-28，隔振台开启
+  note: ent.fiber_interferometer 定义于 jiang2010.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/kefelian2009.yaml
+- id: rel.kéfélian_2009_ef03
+  subject: met.freq_noise_psd_fiber_kef09
+  predicate: OPERATIONALIZED-AS
+  object: meth.fiber_delay_locking
+  confidence: established
+  source:
+    zotero_key: MN54T4F3
+    claim: fiber-stabilized laser noise comparable to high-finesse Fabry-Perot cavity
+      stabilized laser
+  conditions: AOM 外差检测方案
+  note: meth.fiber_delay_locking 定义于 jiang2010.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/kefelian2009.yaml
+- id: rel.kéfélian_2009_ef04
+  subject: meth.fiber_delay_locking
+  predicate: ENABLED-BY
+  object: pri.aom_heterodyne_fiber_detection
+  confidence: established
+  source:
+    zotero_key: MN54T4F3
+    claim: improvement is most likely due to the use of rf heterodyne detection at
+      a frequency where technical issues such as laser intensity noise and detection
+      noise are totally negligible
+  conditions: null
+  temporal_role: proposes
+  note: pri.aom_heterodyne_fiber_detection 定义于 jiang2010.yaml；本文是该原理的首次高性能验证
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/kefelian2009.yaml
+- id: rel.kéfélian_2009_ef05
+  subject: ent.fiber_interferometer
+  predicate: CONDITIONED-BY
+  object: ent.vibration_environment
+  interface_metric: met.freq_noise_from_vibration
+  coupling_formula: 隔振台影响 5 Hz–100 Hz 频段噪声；无隔振台线宽从 8 Hz 恶化到 17 Hz
+  internal_property: 紧凑隔振台（310×310×170 mm）+ 隔声箱（0.125 m³）
+  confidence: established
+  source:
+    zotero_key: MN54T4F3
+    claim: effect of the antivibration table is notable between 5 Hz and 100 Hz; even
+      without table noise reduction better than 30 dB
+  is_system_limit:
+    current: false
+    conditions: Kéfélian 2009 隔振后 5–100 Hz 频段不再主导；低于 40 Hz 受热漂移限制
+  note: ent.vibration_environment 定义于 webster2007.yaml/jiang2010.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/kefelian2009.yaml

@@ -94,7 +94,7 @@ metrics:
       - "与 Sinclair 2015（紧凑全 PM 梳）同级 SNR，但本工作支路数更多（8 vs 单/双支路）"
 
 relations:
-  - id: rel.His21_01
+  - id: rel.hisai_2021_is21_01
     subject: ent.nmij_8branch_er_comb_h21
     predicate: PART-OF
     object: ent.er_fiber_frequency_comb
@@ -102,14 +102,14 @@ relations:
     source: {zotero_key: "SZL4V3W8", claim: "8-branch Er:fiber frequency comb"}
     note: "跨文件引用 ent.er_fiber_frequency_comb（定义于 droste2016.yaml）"
 
-  - id: rel.His21_02
+  - id: rel.hisai_2021_is21_02
     subject: ent.nmij_8branch_er_comb_h21
     predicate: CHARACTERIZED-BY
     object: met.8branch_beat_snr_h21
     confidence: established
     source: {zotero_key: "SZL4V3W8", claim: "> 30 dB @ 300 kHz"}
 
-  - id: rel.His21_03
+  - id: rel.hisai_2021_is21_03
     subject: met.8branch_beat_snr_h21
     predicate: BOUNDED-BY
     object: pri.inter_branch_fiber_noise_degradation
@@ -117,14 +117,14 @@ relations:
     source: {zotero_key: "SZL4V3W8", claim: "each branch is individually optimized"}
     note: "跨文件引用 pri.inter_branch_fiber_noise_degradation（定义于 kashiwagi2018.yaml），虽本文未定量报告相噪劣化"
 
-  - id: rel.His21_04
+  - id: rel.hisai_2021_is21_04
     subject: meth.triple_stage_1to1_splitter_8branch_h21
     predicate: OPERATIONALIZED-AS
     object: ent.nmij_8branch_er_comb_h21
     confidence: established
     source: {zotero_key: "SZL4V3W8", claim: "a frequency comb with 8 branches using 3 stages consisting of 1:1 fiber couplers"}
 
-  - id: rel.His21_05
+  - id: rel.hisai_2021_is21_05
     subject: meth.triple_stage_1to1_splitter_8branch_h21
     predicate: ENABLED-BY
     object: pri.self_referencing_f2f

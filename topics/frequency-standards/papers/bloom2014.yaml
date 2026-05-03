@@ -51,7 +51,7 @@ metrics:
       source: {zotero_key: "4NS3HJGP", claim: "stability of 2.2 × 10^-16 / sqrt(tau)"}
 
 relations:
-  - id: rel.BL01
+  - id: rel.bloom_2014_L01
     subject: ent.sr_optical_lattice_clock_jila2014
     predicate: CHARACTERIZED-BY
     object: met.systematic_uncertainty_sr_bloom2014

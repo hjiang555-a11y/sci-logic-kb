@@ -53,7 +53,7 @@ entities:
     note: "Level 2 实例，PART-OF ent.coherent_optical_fiber_link"
 
 relations:
-  - id: rel.Zha22b_01
+  - id: rel.zhang_2022_ha22b_01
     subject: ent.ntsc_490km_noisy_field_link_z22b
     predicate: PART-OF
     object: ent.coherent_optical_fiber_link
@@ -61,7 +61,7 @@ relations:
       paper: zhang2022b_cpl
       claim: "coherent optical frequency transfer via a 490 km noisy fiber link"
 
-  - id: rel.Zha22b_02
+  - id: rel.zhang_2022_ha22b_02
     subject: ent.ntsc_490km_noisy_field_link_z22b
     predicate: ENABLED-BY
     object: pri.noise_cancellation_frequency_transfer

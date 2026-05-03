@@ -153,7 +153,7 @@ metrics:
       "4.7 × 10⁻¹⁸ at 16400 s"
 
 relations:
-  - id: rel.L16_01
+  - id: rel.leng_2016_16_01
     subject: ent.rf_transfer_via_comb_50km_l16
     predicate: CHARACTERIZED-BY
     object: met.rf_transfer_instability_1s_l16
@@ -161,7 +161,7 @@ relations:
       claim: "1.9 × 10⁻¹⁴ at 1 s"
       section: "Abstract"
 
-  - id: rel.L16_02
+  - id: rel.leng_2016_16_02
     subject: ent.rf_transfer_via_comb_50km_l16
     predicate: CHARACTERIZED-BY
     object: met.rf_transfer_instability_16400s_l16
@@ -169,7 +169,7 @@ relations:
       claim: "4.7 × 10⁻¹⁸ at 16400 s"
       section: "Abstract"
 
-  - id: rel.L16_03
+  - id: rel.leng_2016_16_03
     subject: meth.comb_rf_fiber_transfer
     predicate: ENABLED-BY
     object: pri.optical_filter_dispersion_suppression
@@ -177,7 +177,7 @@ relations:
       claim: "optical filter is utilized to suppress the dispersion influence"
       section: "Abstract"
 
-  - id: rel.L16_04
+  - id: rel.leng_2016_16_04
     subject: meth.comb_rf_fiber_transfer
     predicate: ENABLED-BY
     object: pri.roundtrip_phase_compensation_rf_transfer
@@ -185,7 +185,7 @@ relations:
       claim: "compensation scheme cancels the phase fluctuation"
       section: "Abstract"
 
-  - id: rel.L16_05
+  - id: rel.leng_2016_16_05
     subject: met.rf_transfer_instability_1s_l16
     predicate: OPERATIONALIZED-AS
     object: meth.comb_rf_fiber_transfer

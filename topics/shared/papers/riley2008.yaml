@@ -146,7 +146,7 @@ methods:
 metrics: []
 
 relations:
-  - id: rel.R08_01
+  - id: rel.riley_2008_08_01
     subject: meth.overlapping_allan_deviation_oadev
     predicate: DERIVED-FROM
     object: pri.overlapping_estimator_improves_edf
@@ -154,7 +154,7 @@ relations:
     source: {zotero_key: "RILEY2008-NIST-SP1065", claim: "the overlapping Allan deviation uses all possible pairs of samples, thereby improving the estimation confidence."}
     note: "OADEV 方法从重叠估计量 EDF 提升原理派生。"
 
-  - id: rel.R08_02
+  - id: rel.riley_2008_08_02
     subject: meth.overlapping_allan_deviation_oadev
     predicate: DERIVED-FROM
     object: meth.allan_deviation_adev
@@ -162,7 +162,7 @@ relations:
     source: {zotero_key: "RILEY2008-NIST-SP1065", claim: "the overlapping Allan deviation has the same expected value as the Allan deviation but with improved confidence."}
     note: "OADEV 是 ADEV 的统计效率增强版，期望值相同。跨文件引用 meth.allan_deviation_adev（allan1966.yaml）。"
 
-  - id: rel.R08_03
+  - id: rel.riley_2008_08_03
     subject: meth.theo1_thedev
     predicate: DERIVED-FROM
     object: pri.theo1_long_tau_statistical_efficiency
@@ -170,7 +170,7 @@ relations:
     source: {zotero_key: "RILEY2008-NIST-SP1065", claim: "Theo1 extends the maximum τ to about 75 % of Nτ_0, beyond the N τ_0/3 limit of ADEV."}
     note: "Theo1 方法从其长 τ 统计效率原理派生。"
 
-  - id: rel.R08_04
+  - id: rel.riley_2008_08_04
     subject: meth.total_deviation_totdev
     predicate: DERIVED-FROM
     object: meth.allan_deviation_adev

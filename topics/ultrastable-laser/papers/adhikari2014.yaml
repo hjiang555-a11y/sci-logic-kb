@@ -1,54 +1,52 @@
-# Adhikari 2014 — 激光干涉引力波探测综述
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-16
-# Schema版本：v4.1
-
 meta:
-  zotero_key: "FTXSM9QC"
+  zotero_key: FTXSM9QC
   source_type: review_paper
   contribution_type: framework
   reliability: high
-  title: "Gravitational radiation detection with laser interferometry"
+  title: Gravitational radiation detection with laser interferometry
   year: 2014
   first_author: Adhikari
-  journal: "Reviews of Modern Physics"
+  journal: Reviews of Modern Physics
   volume: 86
-  pages: "121-151"
-  doi: "10.1103/RevModPhys.86.121"
-  note: >
-    激光干涉引力波探测综述：涵盖探测器设计、噪声源、
-    量子噪声限制、压缩光增强、未来发展方向。
-    超稳激光和 FP 腔技术在引力波探测中的核心应用参考。
+  pages: 121-151
+  doi: 10.1103/RevModPhys.86.121
+  note: '激光干涉引力波探测综述：涵盖探测器设计、噪声源、 量子噪声限制、压缩光增强、未来发展方向。 超稳激光和 FP 腔技术在引力波探测中的核心应用参考。
 
+    '
 entities: []
 principles:
-  - id: pri.laser_interferometer_gw_detection_a14
-    name: "激光干涉引力波探测原理"
-    tier: domain
-    verification_status: established
-    statement: >
-      使用激光干涉仪探测引力波引起的微小长度变化（~10⁻¹⁸ m）。
-      迈克尔逊干涉仪通过测量两臂长度差变化来检测引力波信号，
-      需要超稳激光源和低噪声光学系统。
-    domain: "引力波探测 / 激光干涉测量"
-    key_insight: "超稳激光和FP腔技术在引力波探测中起核心作用，提供所需的频率稳定性和低噪声"
-    conditions: "需要超稳激光源、高真空、振动隔离、量子噪声抑制"
-    source_claim: "laser interferometry is the method of choice for gravitational wave detection"
+- id: pri.laser_interferometer_gw_detection_a14
+  name: 激光干涉引力波探测原理
+  tier: domain
+  verification_status: established
+  statement: '使用激光干涉仪探测引力波引起的微小长度变化（~10⁻¹⁸ m）。 迈克尔逊干涉仪通过测量两臂长度差变化来检测引力波信号， 需要超稳激光源和低噪声光学系统。
 
+    '
+  domain: 引力波探测 / 激光干涉测量
+  key_insight: 超稳激光和FP腔技术在引力波探测中起核心作用，提供所需的频率稳定性和低噪声
+  conditions: 需要超稳激光源、高真空、振动隔离、量子噪声抑制
+  source_claim: laser interferometry is the method of choice for gravitational wave
+    detection
 methods:
-  - id: meth.gw_detector_noise_analysis_a14
-    name: "引力波探测器噪声分析方法"
-    aliases: ["GW探测器噪声评估", "干涉仪噪声源分析"]
-    purpose: "系统分析激光干涉引力波探测器中的各种噪声源及其影响"
-    implementation:
-      - "识别主要噪声源：量子噪声、热噪声、地震噪声、辐射压噪声"
-      - "分析噪声谱密度及其对探测灵敏度的影响"
-      - "评估压缩光技术对量子噪声的抑制效果"
-      - "优化探测器设计以最小化总噪声"
-    key_parameters:
-      noise_sources: ["量子噪声", "热噪声", "地震噪声", "辐射压噪声"]
-      detection_bandwidth: "关键频段（~10 Hz - 10 kHz）"
-    applicable_when: "设计或分析激光干涉引力波探测器系统"
-    note: "综述论文，提供引力波探测器噪声分析的系统框架"
+- id: meth.gw_detector_noise_analysis_a14
+  name: 引力波探测器噪声分析方法
+  aliases:
+  - GW探测器噪声评估
+  - 干涉仪噪声源分析
+  purpose: 系统分析激光干涉引力波探测器中的各种噪声源及其影响
+  implementation:
+  - 识别主要噪声源：量子噪声、热噪声、地震噪声、辐射压噪声
+  - 分析噪声谱密度及其对探测灵敏度的影响
+  - 评估压缩光技术对量子噪声的抑制效果
+  - 优化探测器设计以最小化总噪声
+  key_parameters:
+    noise_sources:
+    - 量子噪声
+    - 热噪声
+    - 地震噪声
+    - 辐射压噪声
+    detection_bandwidth: 关键频段（~10 Hz - 10 kHz）
+  applicable_when: 设计或分析激光干涉引力波探测器系统
+  note: 综述论文，提供引力波探测器噪声分析的系统框架
 metrics: []
 relations: []

@@ -41,7 +41,7 @@ entities:
     note: "Level 2 实例，PART-OF ent.optical_lattice_clock"
 
 relations:
-  - id: rel.Oel19_01
+  - id: rel.oelker_2019_el19_01
     subject: ent.jila_dual_sr_clock_si_lo_o19
     predicate: PART-OF
     object: ent.optical_lattice_clock
@@ -49,7 +49,7 @@ relations:
       paper: oelker2019
       claim: "two independent Sr optical lattice clocks"
 
-  - id: rel.Oel19_02
+  - id: rel.oelker_2019_el19_02
     subject: ent.jila_dual_sr_clock_si_lo_o19
     predicate: CONDITIONED-BY
     object: ent.fp_cavity_system
@@ -58,7 +58,7 @@ relations:
       claim: "silicon cavity laser as the local oscillator"
     note: "跨专题：ent.fp_cavity_system 定义于 ultrastable-laser"
 
-  - id: rel.Oel19_03
+  - id: rel.oelker_2019_el19_03
     subject: ent.jila_dual_sr_clock_si_lo_o19
     predicate: CHARACTERIZED-BY
     object: met.optical_clock_fractional_instability

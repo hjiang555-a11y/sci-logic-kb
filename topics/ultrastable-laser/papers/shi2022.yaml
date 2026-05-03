@@ -1,72 +1,64 @@
-# Shi 2022 — 温度不敏感光纤延迟线干涉仪
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-16
-# Schema版本：v4.1
-
 meta:
-  zotero_key: "UKBFZLXG"
+  zotero_key: UKBFZLXG
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: "Temperature Insensitive Delay-Line Fiber Interferometer Operating at Room Temperature"
+  title: Temperature Insensitive Delay-Line Fiber Interferometer Operating at Room
+    Temperature
   year: 2022
   first_author: Shi
-  journal: "Journal of Lightwave Technology"
+  journal: Journal of Lightwave Technology
   volume: 40
   issue: 16
-  pages: "5716"
-  doi: "10.1109/JLT.2022.3183060"
-  note: >
-    热不敏感光纤 MZI：HCF（低热灵敏度）和 SMF（高热灵敏度 ~25×）
-    以 25:1 长度比组合，使两臂热相位变化相互抵消。
-    零灵敏度温度可通过调节光纤长度比控制。
+  pages: '5716'
+  doi: 10.1109/JLT.2022.3183060
+  note: '热不敏感光纤 MZI：HCF（低热灵敏度）和 SMF（高热灵敏度 ~25×） 以 25:1 长度比组合，使两臂热相位变化相互抵消。 零灵敏度温度可通过调节光纤长度比控制。
     核心贡献：无需恒温的温度不敏感光纤干涉仪方案。
 
+    '
 entities: []
-
 principles:
-  - id: pri.hcf_smf_thermal_compensation
-    name: "HCF-SMF 热补偿光纤干涉仪原理"
-    tier: engineering
-    verification_status: observed
-    statement: >
-      将 HCF（低热灵敏度系数）和 SMF（高热灵敏度系数，~25×）
-      分别放在干涉仪两臂，长度比设为约 25:1。
-      温度变化时两臂光程变化量相等，干涉相位差对温度不敏感。
-      精确零点温度可通过微调长度比控制。
-    domain: "光纤干涉仪 / 热补偿"
-    key_insight: "利用 HCF 和 SMF 热灵敏度系数的巨大差异（~25×）实现自补偿。"
-    conditions: "HCF 和 SMF 的热灵敏度比必须已知且稳定"
-    preconditions:
-      - "HCF 热灵敏度系数约为 SMF 的 1/25"
-      - "两种光纤在工作温度范围内热灵敏度系数稳定"
-    source_claim: "by setting their associated length ratio to approximately 25:1, the optical phase difference is insensitive to temperature"
+- id: pri.hcf_smf_thermal_compensation
+  name: HCF-SMF 热补偿光纤干涉仪原理
+  tier: engineering
+  verification_status: observed
+  statement: '将 HCF（低热灵敏度系数）和 SMF（高热灵敏度系数，~25×） 分别放在干涉仪两臂，长度比设为约 25:1。 温度变化时两臂光程变化量相等，干涉相位差对温度不敏感。
+    精确零点温度可通过微调长度比控制。
 
+    '
+  domain: 光纤干涉仪 / 热补偿
+  key_insight: 利用 HCF 和 SMF 热灵敏度系数的巨大差异（~25×）实现自补偿。
+  conditions: HCF 和 SMF 的热灵敏度比必须已知且稳定
+  preconditions:
+  - HCF 热灵敏度系数约为 SMF 的 1/25
+  - 两种光纤在工作温度范围内热灵敏度系数稳定
+  source_claim: by setting their associated length ratio to approximately 25:1, the
+    optical phase difference is insensitive to temperature
 methods:
-  - id: meth.hcf_smf_thermal_compensation_design_shi22
-    name: "HCF-SMF热补偿干涉仪设计方法"
-    description: >
-      设计温度不敏感光纤马赫-曾德尔干涉仪：将HCF（低热灵敏度）和SMF（高热灵敏度）
-      分别置于两臂，按照约25:1的长度比配置，使温度变化时两臂光程变化相互抵消。
-      通过微调长度比精确控制零灵敏度温度点。
-    applicable_when: "需要在室温环境下实现温度不敏感的光纤延迟线系统"
-    implementation_hints: >
-      测量HCF和SMF的热灵敏度系数，确定精确长度比；
-      使用光纤熔接机构建不对称臂长干涉仪；
-      通过温控实验验证相位差对温度的不敏感性。
-    relationships:
-      - type: based_on
-        target: pri.hcf_smf_thermal_compensation
-      - type: used_for
-        target: ent.fiber_interferometer
+- id: meth.hcf_smf_thermal_compensation_design_shi22
+  name: HCF-SMF热补偿干涉仪设计方法
+  description: '设计温度不敏感光纤马赫-曾德尔干涉仪：将HCF（低热灵敏度）和SMF（高热灵敏度） 分别置于两臂，按照约25:1的长度比配置，使温度变化时两臂光程变化相互抵消。
+    通过微调长度比精确控制零灵敏度温度点。
 
+    '
+  applicable_when: 需要在室温环境下实现温度不敏感的光纤延迟线系统
+  implementation_hints: '测量HCF和SMF的热灵敏度系数，确定精确长度比； 使用光纤熔接机构建不对称臂长干涉仪； 通过温控实验验证相位差对温度的不敏感性。
+
+    '
+  relationships:
+  - type: based_on
+    target: pri.hcf_smf_thermal_compensation
+  - type: used_for
+    target: ent.fiber_interferometer
 metrics: []
-
 relations:
-  - id: rel.SHI01
-    subject: ent.fiber_interferometer
-    predicate: ENABLED-BY
-    object: pri.hcf_smf_thermal_compensation
-    confidence: established
-    source: {zotero_key: "UKBFZLXG", claim: "thermally-insensitive fiber Mach-Zehnder interferometer"}
-    note: "为光纤延迟线稳频提供温度不敏感解决方案"
+- id: rel.shi_2022_HI01
+  subject: ent.fiber_interferometer
+  predicate: ENABLED-BY
+  object: pri.hcf_smf_thermal_compensation
+  confidence: established
+  source:
+    zotero_key: UKBFZLXG
+    claim: thermally-insensitive fiber Mach-Zehnder interferometer
+  note: 为光纤延迟线稳频提供温度不敏感解决方案
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/shi2022.yaml

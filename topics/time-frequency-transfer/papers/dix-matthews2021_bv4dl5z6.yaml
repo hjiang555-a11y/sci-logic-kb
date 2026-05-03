@@ -63,7 +63,7 @@ principles:
     source_claim: "active tip-tilt mirrors to suppress beam wander ... continuous, cycle-slip free, coherent transmission over periods longer than an hour"
 
 relations:
-  - id: rel.DM21_01
+  - id: rel.dix_matthews_2021_M21_01
     subject: ent.uwa_265m_active_tiptilt_link_dm21
     predicate: PART-OF
     object: ent.free_space_optical_tf_link
@@ -71,7 +71,7 @@ relations:
       paper: dix-matthews2021
       claim: "phase-stabilized optical frequency transfer over a ... free-space link"
 
-  - id: rel.DM21_02
+  - id: rel.dix_matthews_2021_M21_02
     subject: ent.uwa_265m_active_tiptilt_link_dm21
     predicate: OPERATIONALIZED-AS
     object: pri.active_tiptilt_beam_wander_suppression
@@ -79,7 +79,7 @@ relations:
       paper: dix-matthews2021
       claim: "optical terminals with active tip-tilt mirrors to suppress beam wander"
 
-  - id: rel.DM21_03
+  - id: rel.dix_matthews_2021_M21_03
     subject: ent.uwa_265m_active_tiptilt_link_dm21
     predicate: ENABLED-BY
     object: pri.noise_cancellation_frequency_transfer

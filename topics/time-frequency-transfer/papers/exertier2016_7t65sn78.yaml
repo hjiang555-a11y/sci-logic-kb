@@ -76,7 +76,7 @@ entities:
     note: "Level 1 generic；含 ent.microwave_link_mwl 等 I-SOC 空间段链路作为 future 分支"
 
 relations:
-  - id: rel.Exe16_01
+  - id: rel.exertier_2016_xe16_01
     subject: ent.t2l2_laser_time_transfer
     predicate: PART-OF
     object: ent.satellite_microwave_time_transfer_link
@@ -84,7 +84,7 @@ relations:
       paper: exertier2016
       claim: "T2L2 ... time transfer by laser link"
 
-  - id: rel.Exe16_02
+  - id: rel.exertier_2016_xe16_02
     subject: ent.gps_common_view_time_transfer
     predicate: PART-OF
     object: ent.satellite_microwave_time_transfer_link
@@ -92,7 +92,7 @@ relations:
       paper: exertier2016
       claim: "GPS common-view time transfer"
 
-  - id: rel.Exe16_03
+  - id: rel.exertier_2016_xe16_03
     subject: ent.gps_common_view_time_transfer
     predicate: ENABLED-BY
     object: pri.common_view_clock_comparison

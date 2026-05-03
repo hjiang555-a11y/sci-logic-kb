@@ -40,7 +40,7 @@ entities:
     note: "Level 2 实例；跨专题节点（frequency-standards + time-frequency-transfer 证据）"
 
 relations:
-  - id: rel.Bac21_01
+  - id: rel.bacon_2021_ac21_01
     subject: ent.bacon_three_clock_network_b21
     predicate: CONDITIONED-BY
     object: ent.coherent_optical_fiber_link
@@ -49,7 +49,7 @@ relations:
       claim: "fiber-optic link ... for clock frequency ratio measurement"
     note: "跨专题引用：ent.coherent_optical_fiber_link 定义于 time-frequency-transfer/calonico2015"
 
-  - id: rel.Bac21_02
+  - id: rel.bacon_2021_ac21_02
     subject: ent.bacon_three_clock_network_b21
     predicate: CONDITIONED-BY
     object: ent.free_space_optical_tf_link
@@ -58,7 +58,7 @@ relations:
       claim: "free-space optical link ... for Yb-Sr ratio"
     note: "跨专题引用：ent.free_space_optical_tf_link 定义于 time-frequency-transfer/sinclair2019"
 
-  - id: rel.Bac21_03
+  - id: rel.bacon_2021_ac21_03
     subject: ent.bacon_three_clock_network_b21
     predicate: CHARACTERIZED-BY
     object: met.optical_clock_fractional_uncertainty

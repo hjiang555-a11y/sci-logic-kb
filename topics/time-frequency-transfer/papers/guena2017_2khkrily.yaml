@@ -81,7 +81,7 @@ metrics:
       source: "guena2017"
 
 relations:
-  - id: rel.G17_01
+  - id: rel.guena_2017_17_01
     subject: ent.syrte_ptb_1415km_link_g17
     predicate: PART-OF
     object: ent.coherent_optical_fiber_link
@@ -89,7 +89,7 @@ relations:
       paper: guena2017
       claim: "long distance optical fiber link"
 
-  - id: rel.G17_02
+  - id: rel.guena_2017_17_02
     subject: ent.syrte_ptb_1415km_link_g17
     predicate: CHARACTERIZED-BY
     object: met.international_fountain_comparison_agreement
@@ -97,7 +97,7 @@ relations:
       paper: guena2017
       claim: "first international comparison of fountain primary frequency standards"
 
-  - id: rel.G17_03
+  - id: rel.guena_2017_17_03
     subject: ent.syrte_ptb_1415km_link_g17
     predicate: ENABLED-BY
     object: pri.noise_cancellation_frequency_transfer
@@ -105,7 +105,7 @@ relations:
       paper: guena2017
       claim: "actively phase-stabilized long-distance fiber link"
 
-  - id: rel.G17_04
+  - id: rel.guena_2017_17_04
     subject: ent.syrte_ptb_1415km_link_g17
     predicate: CONDITIONED-BY
     object: ent.optical_frequency_comb

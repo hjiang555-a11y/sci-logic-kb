@@ -209,7 +209,7 @@ metrics:
 # ═══════════════════════════════════════════════
 
 relations:
-  - id: rel.D24_01
+  - id: rel.dimarcq_2021_24_01
     subject: ent.si_second_definition
     predicate: BOUNDED-BY
     object: pri.redefinition_criteria_second
@@ -223,7 +223,7 @@ relations:
     temporal_role: proposes
     note: "秒定义的更新受限于 CCTF 路线图中定义的 15 条强制性标准和辅助条件"
 
-  - id: rel.D24_02
+  - id: rel.dimarcq_2021_24_02
     subject: ent.optical_frequency_standard
     predicate: CHARACTERIZED-BY
     object: met.optical_clock_systematic_uncertainty
@@ -233,7 +233,7 @@ relations:
       跨专题引用：ent.optical_frequency_standard 定义于 topics/frequency-standards/papers/fortier2026.yaml。
       本文件（dimarcq2024.yaml）只引用该节点，不重复定义。
 
-  - id: rel.D24_03
+  - id: rel.dimarcq_2021_24_03
     subject: ent.optical_frequency_standard
     predicate: CHARACTERIZED-BY
     object: met.frequency_ratio_agreement_cross_lab
@@ -242,7 +242,7 @@ relations:
     note: >
       跨专题引用：ent.optical_frequency_standard 定义于 topics/frequency-standards/papers/fortier2026.yaml。
 
-  - id: rel.D24_04
+  - id: rel.dimarcq_2021_24_04
     subject: met.optical_clock_systematic_uncertainty
     predicate: OPERATIONALIZED-AS
     object: meth.optical_clock_comparison
@@ -252,7 +252,7 @@ relations:
       光钟不确定度通过频率比比较方法验证。
       跨专题引用：meth.optical_clock_comparison 定义于 topics/frequency-standards/papers/fortier2026.yaml（通过 dimarcq2024 补充定义）。
 
-  - id: rel.D24_05
+  - id: rel.dimarcq_2021_24_05
     subject: ent.si_second_definition
     predicate: CONDITIONED-BY
     object: ent.optical_frequency_standard
@@ -268,7 +268,7 @@ relations:
       ent.optical_frequency_standard 定义于 topics/frequency-standards/papers/fortier2026.yaml。
       光学频率标准的性能（系统不确定度）是 SI 秒重定义的首要技术条件。
 
-  - id: rel.D24_06
+  - id: rel.dimarcq_2021_24_06
     subject: ent.si_second_definition
     predicate: CONDITIONED-BY
     object: ent.optical_frequency_comb

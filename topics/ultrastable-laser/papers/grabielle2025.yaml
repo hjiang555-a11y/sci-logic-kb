@@ -1,106 +1,114 @@
-# Grabielle 2025 — 光纤延迟线锁定噪声分析
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-16
-# Schema版本：v4.1
-
 meta:
-  zotero_key: "XSMPRNT3"
+  zotero_key: XSMPRNT3
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: "Locking noise in laser frequency stabilization to an optical fiber delay line"
+  title: Locking noise in laser frequency stabilization to an optical fiber delay
+    line
   year: 2025
   first_author: Grabielle
-  journal: "Optics Express"
+  journal: Optics Express
   volume: 33
   issue: 16
-  pages: "35028"
-  doi: "10.1364/OE.33.035028"
-  note: >
-    研究光纤延迟线 PDH 锁频中的锁定过程噪声。
-    白频率噪声底限来自频率鉴频器非线性。
-    通过增大锁定带宽降低此噪声至非线性不再限制的水平。
-    核心贡献：识别并解决光纤延迟线锁频的锁定噪声限制。
+  pages: '35028'
+  doi: 10.1364/OE.33.035028
+  note: '研究光纤延迟线 PDH 锁频中的锁定过程噪声。 白频率噪声底限来自频率鉴频器非线性。 通过增大锁定带宽降低此噪声至非线性不再限制的水平。 核心贡献：识别并解决光纤延迟线锁频的锁定噪声限制。
 
+    '
 entities: []
-
 principles:
-  - id: pri.fdl_locking_noise_nonlinearity
-    name: "光纤延迟线锁定噪声——鉴频器非线性"
-    tier: domain
-    verification_status: observed
-    statement: >
-      光纤延迟线 PDH 频率稳定中，频率鉴频器的非线性
-      将残余频率波动转换为白频率噪声底限。
-      增大锁定带宽可降低残余频率波动，从而降低非线性噪声贡献。
-    domain: "光纤延迟线稳频"
-    key_insight: "鉴频器非线性是 FDL 锁定的一个重要噪声源，可通过增大带宽解决。"
-    conditions: "适用于 PDH 锁定到光纤延迟线的配置"
-    source_claim: "white frequency noise floor... focusing on the role of frequency discriminator nonlinearity"
+- id: pri.fdl_locking_noise_nonlinearity
+  name: 光纤延迟线锁定噪声——鉴频器非线性
+  tier: domain
+  verification_status: observed
+  statement: '光纤延迟线 PDH 频率稳定中，频率鉴频器的非线性 将残余频率波动转换为白频率噪声底限。 增大锁定带宽可降低残余频率波动，从而降低非线性噪声贡献。
 
+    '
+  domain: 光纤延迟线稳频
+  key_insight: 鉴频器非线性是 FDL 锁定的一个重要噪声源，可通过增大带宽解决。
+  conditions: 适用于 PDH 锁定到光纤延迟线的配置
+  source_claim: white frequency noise floor... focusing on the role of frequency discriminator
+    nonlinearity
 methods:
-  - id: meth.fdl_locking_bandwidth_optimization
-    name: "光纤延迟线锁定带宽优化（Grabielle 2025）"
-    procedure:
-      - "分析光纤延迟线PDH锁定系统中的频率鉴频器非线性。"
-      - "测量不同锁定带宽下的频率噪声谱。"
-      - "确定非线性引起的白频率噪声底限。"
-      - "增大锁定带宽以减少残余频率波动，从而降低非线性噪声贡献。"
-    domain: laser_stabilization
-    subdomain: noise_analysis
-    inputs: ["fiber_interferometer", "pdh_system"]
-    outputs: ["optimized_locking_bandwidth"]
-    note: "该方法识别并解决了光纤延迟线锁定的一个关键噪声源。"
-
+- id: meth.fdl_locking_bandwidth_optimization
+  name: 光纤延迟线锁定带宽优化（Grabielle 2025）
+  procedure:
+  - 分析光纤延迟线PDH锁定系统中的频率鉴频器非线性。
+  - 测量不同锁定带宽下的频率噪声谱。
+  - 确定非线性引起的白频率噪声底限。
+  - 增大锁定带宽以减少残余频率波动，从而降低非线性噪声贡献。
+  domain: laser_stabilization
+  subdomain: noise_analysis
+  inputs:
+  - fiber_interferometer
+  - pdh_system
+  outputs:
+  - optimized_locking_bandwidth
+  note: 该方法识别并解决了光纤延迟线锁定的一个关键噪声源。
 metrics:
-  - id: met.locking_noise_floor_g25
-    name: "锁定噪声底限（Grabielle 2025）"
-    quantity: "frequency_noise_floor"
-    unit: "Hz/√Hz"
-    demonstrated_value: "white frequency noise floor (具体值未给出)"
-    conditions: "光纤延迟线PDH锁定，鉴频器非线性主导"
-    measurement_method: "测量锁定后的频率噪声谱，提取白噪声区域。"
-    significance: "该噪声底限限制了锁定性能，是系统优化的关键指标。"
-    source_claim: {zotero_key: "XSMPRNT3", claim: "white frequency noise floor that limited the locking performance"}
-  - id: met.locking_bandwidth_g25
-    name: "锁定带宽（Grabielle 2025）"
-    quantity: "locking_bandwidth"
-    unit: "Hz"
-    demonstrated_value: "增大后的带宽（具体值未给出）"
-    conditions: "优化后的锁定回路"
-    measurement_method: "测量伺服传递函数-3 dB点。"
-    significance: "增大带宽可降低残余频率波动，从而减轻非线性噪声。"
-    source_claim: {zotero_key: "XSMPRNT3", claim: "increasing the locking bandwidth reduces the residual frequency fluctuations"}
-
+- id: met.locking_noise_floor_g25
+  name: 锁定噪声底限（Grabielle 2025）
+  quantity: frequency_noise_floor
+  unit: Hz/√Hz
+  demonstrated_value: white frequency noise floor (具体值未给出)
+  conditions: 光纤延迟线PDH锁定，鉴频器非线性主导
+  measurement_method: 测量锁定后的频率噪声谱，提取白噪声区域。
+  significance: 该噪声底限限制了锁定性能，是系统优化的关键指标。
+  source_claim:
+    zotero_key: XSMPRNT3
+    claim: white frequency noise floor that limited the locking performance
+- id: met.locking_bandwidth_g25
+  name: 锁定带宽（Grabielle 2025）
+  quantity: locking_bandwidth
+  unit: Hz
+  demonstrated_value: 增大后的带宽（具体值未给出）
+  conditions: 优化后的锁定回路
+  measurement_method: 测量伺服传递函数-3 dB点。
+  significance: 增大带宽可降低残余频率波动，从而减轻非线性噪声。
+  source_claim:
+    zotero_key: XSMPRNT3
+    claim: increasing the locking bandwidth reduces the residual frequency fluctuations
 relations:
-  - id: rel.GR01
-    subject: ent.fiber_interferometer
-    predicate: BOUNDED-BY
-    object: pri.fdl_locking_noise_nonlinearity
-    confidence: established
-    source: {zotero_key: "XSMPRNT3", claim: "white frequency noise floor that limited the locking performance"}
-    is_system_limit: false
-    regime: short-term
-    note: "跨文件引用，ent.fiber_interferometer 定义于 jiang2010.yaml"
-    breakthrough_paths: []
-  - id: rel.GR02
-    subject: meth.fdl_locking_bandwidth_optimization
-    predicate: IMPLEMENTS
-    object: pri.fdl_locking_noise_nonlinearity
-    confidence: established
-    source: {zotero_key: "XSMPRNT3", claim: "increasing the locking bandwidth reduces the residual frequency fluctuations"}
-    note: "方法实现了该原理的优化策略。"
-  - id: rel.GR03
-    subject: met.locking_noise_floor_g25
-    predicate: CHARACTERIZES
-    object: pri.fdl_locking_noise_nonlinearity
-    confidence: established
-    source: {zotero_key: "XSMPRNT3", claim: "white frequency noise floor that limited the locking performance"}
-    note: "噪声底限表征该原理的负面影响。"
-  - id: rel.GR04
-    subject: met.locking_bandwidth_g25
-    predicate: CHARACTERIZES
-    object: meth.fdl_locking_bandwidth_optimization
-    confidence: established
-    source: {zotero_key: "XSMPRNT3", claim: "increasing the locking bandwidth reduces the residual frequency fluctuations"}
-    note: "锁定带宽表征方法的关键参数。"
+- id: rel.grabielle_2025_R01
+  subject: ent.fiber_interferometer
+  predicate: BOUNDED-BY
+  object: pri.fdl_locking_noise_nonlinearity
+  confidence: established
+  source:
+    zotero_key: XSMPRNT3
+    claim: white frequency noise floor that limited the locking performance
+  is_system_limit: false
+  regime: short-term
+  note: 跨文件引用，ent.fiber_interferometer 定义于 jiang2010.yaml
+  breakthrough_paths: []
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/grabielle2025.yaml
+- id: rel.grabielle_2025_R02
+  subject: meth.fdl_locking_bandwidth_optimization
+  predicate: IMPLEMENTS
+  object: pri.fdl_locking_noise_nonlinearity
+  confidence: established
+  source:
+    zotero_key: XSMPRNT3
+    claim: increasing the locking bandwidth reduces the residual frequency fluctuations
+  note: 方法实现了该原理的优化策略。
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/grabielle2025.yaml
+- id: rel.grabielle_2025_R03
+  subject: met.locking_noise_floor_g25
+  predicate: CHARACTERIZES
+  object: pri.fdl_locking_noise_nonlinearity
+  confidence: established
+  source:
+    zotero_key: XSMPRNT3
+    claim: white frequency noise floor that limited the locking performance
+  note: 噪声底限表征该原理的负面影响。
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/grabielle2025.yaml
+- id: rel.grabielle_2025_R04
+  subject: met.locking_bandwidth_g25
+  predicate: CHARACTERIZES
+  object: meth.fdl_locking_bandwidth_optimization
+  confidence: established
+  source:
+    zotero_key: XSMPRNT3
+    claim: increasing the locking bandwidth reduces the residual frequency fluctuations
+  note: 锁定带宽表征方法的关键参数。
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/grabielle2025.yaml

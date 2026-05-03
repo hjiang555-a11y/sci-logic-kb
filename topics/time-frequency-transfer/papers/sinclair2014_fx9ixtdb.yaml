@@ -58,7 +58,7 @@ principles:
     source_claim: "power-law response of ∝f^(-2.3) measured down to Fourier frequencies f of 100 μHz ... no evidence of a roll-off at low frequencies"
 
 relations:
-  - id: rel.Sin14_01
+  - id: rel.sinclair_2014_in14_01
     subject: ent.atmospheric_optical_phase_psd_s14
     predicate: OPERATIONALIZED-AS
     object: pri.atmospheric_optical_phase_noise_power_law

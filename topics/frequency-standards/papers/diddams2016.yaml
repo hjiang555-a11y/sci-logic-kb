@@ -124,7 +124,7 @@ metrics:
       basis: "BBR 频移 + 相对论大地测量 + 原子环境耦合"
 
 relations:
-  - id: rel.DFL16_01
+  - id: rel.diddams_2016_FL16_01
     subject: pri.optical_clock_ten_minus_eighteen_geoid_bridge
     predicate: ENABLED-BY
     object: ent.optical_frequency_standard
@@ -132,7 +132,7 @@ relations:
     source: {zotero_key: "DIDDAMS2016-NATPHOT", claim: "at a fractional frequency uncertainty of 10⁻¹⁸, an optical clock is sensitive to a change in height of only 1 cm on Earth's surface."}
     note: "大地测量桥梁原理的物理载体是光钟实体。跨文件引用 ent.optical_frequency_standard（fortier2026.yaml）。"
 
-  - id: rel.DFL16_02
+  - id: rel.diddams_2016_FL16_02
     subject: ent.optical_frequency_standard
     predicate: BOUNDED-BY
     object: pri.qpn_dick_two_fundamental_limits_dfl16
@@ -140,7 +140,7 @@ relations:
     source: {zotero_key: "DIDDAMS2016-NATPHOT", claim: "optical clock instability is limited in tandem by quantum projection noise and the Dick effect."}
     note: "光钟短期稳定度由 QPN + Dick 共同限制。"
 
-  - id: rel.DFL16_03
+  - id: rel.diddams_2016_FL16_03
     subject: met.optical_clock_fractional_uncertainty_2016_benchmark
     predicate: CHARACTERIZED-BY
     object: ent.optical_frequency_standard

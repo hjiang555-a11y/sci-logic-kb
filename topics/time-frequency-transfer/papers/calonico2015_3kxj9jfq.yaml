@@ -110,7 +110,7 @@ metrics:
       source: "calonico2015"
 
 relations:
-  - id: rel.C15_01
+  - id: rel.calonico_2014_15_01
     subject: ent.inrim_642km_single_fiber_link_c15
     predicate: PART-OF
     object: ent.coherent_optical_fiber_link
@@ -118,7 +118,7 @@ relations:
       paper: calonico2015
       claim: "a 642 km coherent optical fiber link ... doubling the link to 1284 km"
 
-  - id: rel.C15_02
+  - id: rel.calonico_2014_15_02
     subject: ent.coherent_optical_fiber_link
     predicate: ENABLED-BY
     object: pri.noise_cancellation_frequency_transfer
@@ -127,7 +127,7 @@ relations:
       claim: "phase-stabilized coherent optical frequency transfer"
     note: "pri.noise_cancellation_frequency_transfer 已在 fermann2022 定义（optical-frequency-combs）"
 
-  - id: rel.C15_03
+  - id: rel.calonico_2014_15_03
     subject: ent.inrim_642km_single_fiber_link_c15
     predicate: CHARACTERIZED-BY
     object: met.coherent_optical_fiber_link_instability
@@ -135,7 +135,7 @@ relations:
       paper: calonico2015
       claim: "frequency instability of 3×10⁻¹⁹ at 1000 s ... on a 5-mHz measurement bandwidth"
 
-  - id: rel.C15_04
+  - id: rel.calonico_2014_15_04
     subject: ent.inrim_642km_single_fiber_link_c15
     predicate: CHARACTERIZED-BY
     object: met.coherent_optical_fiber_link_accuracy
@@ -143,7 +143,7 @@ relations:
       paper: calonico2015
       claim: "accuracy of 5×10⁻¹⁹"
 
-  - id: rel.C15_05
+  - id: rel.calonico_2014_15_05
     subject: ent.inrim_642km_single_fiber_link_c15
     predicate: OPERATIONALIZED-AS
     object: pri.single_fiber_double_round_trip_characterization
@@ -151,7 +151,7 @@ relations:
       paper: calonico2015
       claim: "a new characterization technique based on the double round trip on a single fiber"
 
-  - id: rel.C15_06
+  - id: rel.calonico_2014_15_06
     subject: ent.coherent_optical_fiber_link
     predicate: CONDITIONED-BY
     object: ent.fp_cavity_system

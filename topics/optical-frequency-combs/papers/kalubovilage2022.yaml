@@ -129,7 +129,7 @@ metrics:
         note: "在不使用 OFD / 超稳腔情况下的记录"
 
 relations:
-  - id: rel.KB22_01
+  - id: rel.kalubovilage_2022_B22_01
     subject: ent.monolithic_modelocked_laser_comb_k22
     predicate: CHARACTERIZED-BY
     object: met.photonic_microwave_phase_noise_k22
@@ -138,7 +138,7 @@ relations:
       claim: "The free-running monolithic mode-locked laser comb achieves X-band photonic microwave phase noise below −180 dBc/Hz at offsets below 1 MHz."
       zotero_key: "3VF89TBF"
 
-  - id: rel.KB22_02
+  - id: rel.kalubovilage_2022_B22_02
     subject: meth.monolithic_free_running_photonic_microwave
     predicate: ENABLED-BY
     object: pri.monolithic_free_running_comb_low_noise
@@ -147,7 +147,7 @@ relations:
       claim: "The monolithic cavity design with ultra-low intracavity loss, near-zero net dispersion, and alignment-free construction enables free-running phase noise approaching quantum limits without active stabilization."
       zotero_key: "3VF89TBF"
 
-  - id: rel.KB22_03
+  - id: rel.kalubovilage_2022_B22_03
     subject: met.photonic_microwave_phase_noise_k22
     predicate: BOUNDED-BY
     object: pri.photodetection_shot_noise_limit
@@ -162,7 +162,7 @@ relations:
         source: {zotero_key: "3VF89TBF"}
         note: '通过工程方法提高 P_avg 或 η 可在"散粒噪声 ∝ 1/P_avg"关系下进一步压低本底'
 
-  - id: rel.KB22_04
+  - id: rel.kalubovilage_2022_B22_04
     subject: ent.monolithic_modelocked_laser_comb_k22
     predicate: COMPETES-WITH
     object: ent.optical_frequency_comb
@@ -170,7 +170,7 @@ relations:
     source: {zotero_key: "3VF89TBF", claim: "a compact and simple alternative to complicated optical frequency division schemes"}
     conditions: "紧凑微波源应用中，自由运行单片梳 vs 完整 OFD（OFC + 超稳腔 + 伺服）"
 
-  - id: rel.KB22_05
+  - id: rel.kalubovilage_2022_B22_05
     subject: ent.monolithic_modelocked_laser_comb_k22
     predicate: PART-OF
     object: ent.optical_frequency_comb

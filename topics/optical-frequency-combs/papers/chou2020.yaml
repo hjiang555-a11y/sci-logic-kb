@@ -274,7 +274,7 @@ metrics:
 # ═══════════════════════════════════════════════
 
 relations:
-  - id: rel.Cho20_01
+  - id: rel.chou_2020_ho20_01
     subject: ent.single_ion_comb_spectrometer_c20
     predicate: PART-OF
     object: ent.optical_frequency_comb
@@ -282,35 +282,35 @@ relations:
     source: {zotero_key: "DUJ8VXBR", claim: "Ti:S OFC is divided into two Raman beams ... drive two-photon SRTs in the molecule"}
     note: "ent.optical_frequency_comb 权威定义于 topics/optical-frequency-combs/papers/udem2002.yaml"
 
-  - id: rel.Cho20_02
+  - id: rel.chou_2020_ho20_02
     subject: ent.single_ion_comb_spectrometer_c20
     predicate: ENABLED-BY
     object: pri.comb_driven_stimulated_raman_terahertz
     confidence: established
     source: {zotero_key: "DUJ8VXBR", claim: "comb teeth in one beam together with the corresponding ones in the other beam collectively drive a stimulated Raman transition of frequency fRaman = |N·frep − 2·fAOM|"}
 
-  - id: rel.Cho20_03
+  - id: rel.chou_2020_ho20_03
     subject: ent.single_ion_comb_spectrometer_c20
     predicate: ENABLED-BY
     object: pri.state_prepared_single_ion_spectroscopy
     confidence: established
     source: {zotero_key: "DUJ8VXBR", claim: "a trapped molecular ion in a single quantum state ... read out the final state nondestructively"}
 
-  - id: rel.Cho20_04
+  - id: rel.chou_2020_ho20_04
     subject: meth.single_ion_ofc_quantum_logic_spectroscopy_c20
     predicate: ENABLED-BY
     object: pri.comb_driven_stimulated_raman_terahertz
     confidence: established
     source: {zotero_key: "DUJ8VXBR", claim: "interrogated by a CRPT (comb Raman pulse train)"}
 
-  - id: rel.Cho20_05
+  - id: rel.chou_2020_ho20_05
     subject: meth.single_ion_ofc_quantum_logic_spectroscopy_c20
     predicate: ENABLED-BY
     object: pri.state_prepared_single_ion_spectroscopy
     confidence: established
     source: {zotero_key: "DUJ8VXBR", claim: "heralded projective molecular state preparation ... sequentially detecting the |J″⟩ and |J′⟩ states"}
 
-  - id: rel.Cho20_06
+  - id: rel.chou_2020_ho20_06
     subject: ent.single_ion_comb_spectrometer_c20
     predicate: CHARACTERIZED-BY
     object: met.rotational_transition_frequency_uncertainty_c20
@@ -319,28 +319,28 @@ relations:
     temporal_role: proposes
     conditions: "40CaH+ J=1–4 → J+2；B=0.357(1) mT"
 
-  - id: rel.Cho20_07
+  - id: rel.chou_2020_ho20_07
     subject: ent.single_ion_comb_spectrometer_c20
     predicate: CHARACTERIZED-BY
     object: met.comb_raman_line_fwhm_c20
     confidence: established
     source: {zotero_key: "DUJ8VXBR", claim: "<1 kHz FWHM Fourier-limited spectroscopic line shapes"}
 
-  - id: rel.Cho20_08
+  - id: rel.chou_2020_ho20_08
     subject: meth.single_ion_ofc_quantum_logic_spectroscopy_c20
     predicate: CHARACTERIZED-BY
     object: met.rotational_constant_br_c20
     confidence: established
     source: {zotero_key: "DUJ8VXBR", claim: "BR = 142 501 777.9(1.7) kHz"}
 
-  - id: rel.Cho20_09
+  - id: rel.chou_2020_ho20_09
     subject: met.rotational_transition_frequency_uncertainty_c20
     predicate: OPERATIONALIZED-AS
     object: meth.single_ion_ofc_quantum_logic_spectroscopy_c20
     confidence: established
     source: {zotero_key: "DUJ8VXBR", claim: "rotational transition frequencies measured via quantum-logic spectroscopy with OFC-referenced probe laser"}
 
-  - id: rel.Cho20_10
+  - id: rel.chou_2020_ho20_10
     subject: met.comb_raman_line_fwhm_c20
     predicate: BOUNDED-BY
     object: pri.microwave_referenced_comb_coherence_limit
@@ -354,7 +354,7 @@ relations:
         source: {zotero_key: "DUJ8VXBR", claim: "can be further improved to the sub-hertz level (Bartels et al. 2004)"}
         note: "meth.wideband_optical_frequency_synthesis 定义于 topics/optical-frequency-combs/papers/giunta2020.yaml"
 
-  - id: rel.Cho20_11
+  - id: rel.chou_2020_ho20_11
     subject: met.rotational_transition_frequency_uncertainty_c20
     predicate: BOUNDED-BY
     object: pri.trap_rf_field_stark_systematic
@@ -371,7 +371,7 @@ relations:
         status: proposed
         source: {zotero_key: "DUJ8VXBR", claim: "A more detailed study of these effects is ongoing, and we expect that they can be better controlled in future experiments"}
 
-  - id: rel.Cho20_12
+  - id: rel.chou_2020_ho20_12
     subject: meth.single_ion_ofc_quantum_logic_spectroscopy_c20
     predicate: CONDITIONED-BY
     object: ent.optical_frequency_standard
@@ -382,7 +382,7 @@ relations:
       pri.microwave_referenced_comb_coherence_limit。ent.optical_frequency_standard
       为跨主题接口节点。
 
-  - id: rel.Cho20_13
+  - id: rel.chou_2020_ho20_13
     subject: pri.comb_driven_stimulated_raman_terahertz
     predicate: DERIVED-FROM
     object: meth.direct_two_photon_comb_spectroscopy
@@ -392,7 +392,7 @@ relations:
       概念血缘：本方法的两光子 Raman 由两束梳齿对协同产生，与直接两光子梳光谱（picque2019.yaml）
       共享"多对梳齿相干累加"核心思想，但在单分子离子纯态上以 AOM 差频精确控制目标频率。
 
-  - id: rel.Cho20_14
+  - id: rel.chou_2020_ho20_14
     subject: pri.comb_driven_stimulated_raman_terahertz
     predicate: COMPETES-WITH
     object: pri.ramsey_comb_spectroscopy

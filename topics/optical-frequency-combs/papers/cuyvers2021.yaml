@@ -113,7 +113,7 @@ metrics:
       source: {zotero_key: "5R8PUBX7"}
 
 relations:
-  - id: rel.CV21_01
+  - id: rel.cuyvers_2021_V21_01
     subject: ent.hetero_iii_v_sin_mll_comb_c21
     predicate: CHARACTERIZED-BY
     object: met.mll_rf_linewidth_c21
@@ -122,7 +122,7 @@ relations:
       claim: "The heterogeneous III-V-on-SiN mode-locked laser achieves a radio frequency linewidth of 1 Hz at 755 MHz repetition rate."
       zotero_key: "5R8PUBX7"
 
-  - id: rel.CV21_02
+  - id: rel.cuyvers_2021_V21_02
     subject: ent.hetero_iii_v_sin_mll_comb_c21
     predicate: CHARACTERIZED-BY
     object: met.mll_optical_linewidth_c21
@@ -131,7 +131,7 @@ relations:
       claim: "The heterogeneous III-V-on-SiN MLL demonstrates an optical linewidth below 200 kHz."
       zotero_key: "5R8PUBX7"
 
-  - id: rel.CV21_03
+  - id: rel.cuyvers_2021_V21_03
     subject: meth.iii_v_sin_heterogeneous_mll_fabrication
     predicate: ENABLED-BY
     object: pri.sin_low_loss_extended_cavity_low_rep_rate
@@ -140,7 +140,7 @@ relations:
       claim: "Ultra-low loss SiN waveguides enable extended cavity lengths that reduce the repetition rate to 755 MHz while suppressing phase noise through longer photon lifetimes."
       zotero_key: "5R8PUBX7"
 
-  - id: rel.CV21_04
+  - id: rel.cuyvers_2021_V21_04
     subject: ent.hetero_iii_v_sin_mll_comb_c21
     predicate: COMPETES-WITH
     object: ent.microresonator_frequency_comb
@@ -150,7 +150,7 @@ relations:
       zotero_key: "5R8PUBX7"
     conditions: "集成片上梳两大路线：电泵 III-V/SiN MLL（Cuyvers 2021）vs 光泵 Kerr 微梳；前者电泵、后者 Kerr 非线性"
 
-  - id: rel.CV21_05
+  - id: rel.cuyvers_2021_V21_05
     subject: ent.hetero_iii_v_sin_mll_comb_c21
     predicate: PART-OF
     object: ent.optical_frequency_comb

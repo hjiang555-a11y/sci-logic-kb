@@ -1,217 +1,222 @@
-# Zhang 2014 — RAM主动消除至1×10⁻⁶
-# 提取者：Claude（AI草稿，待专家确认）
-# 提取日期：2026-04-14
-# Schema版本：v4.1
-
 meta:
-  zotero_key: "S5GJNVG8"
+  zotero_key: S5GJNVG8
   source_type: technical_paper
   contribution_type: breakthrough
-  # 专题 σ_y-first 规则豁免：主动 RAM 抑制方法原创（1×10⁻⁶ RAM），
-  # 论文报告 RAM 引起的 σ_y 上限（≤1×10⁻¹⁶ @ 35 mm 腔）而非整机 σ_y(1 s) 纪录。
   primary_metric_exempt_reason: new_method
   reliability: high
-  title: "Reduction of residual amplitude modulation to 1×10⁻⁶ for frequency modulation and laser stabilization"
+  title: Reduction of residual amplitude modulation to 1×10⁻⁶ for frequency modulation
+    and laser stabilization
   year: 2014
   first_author: Zhang
-  journal: "Optics Letters"
+  journal: Optics Letters
   volume: 39
-  pages: "1980-1983"
-  doi: "10.1364/OL.39.001980"
-  note: >
-    首次将PDH锁频中的残余幅度调制（RAM）主动抑制至1 ppm量级（1×10⁻⁶），
-    同时消除同相分量（DC电场反馈）和正交分量（EOM温度反馈），
-    实现56 dB RAM抑制，长达2小时无明显漂移。
-    在35 mm AlGaAs晶体镀层腔（κ=28 kHz）中，1 ppm RAM对应σ_y=1×10⁻¹⁶；
-    在210 mm Si单晶腔（κ=3 kHz）中，5 ppm RAM对应σ_y=8×10⁻¹⁷（接近热噪声极限）。
-    JILA（Ye/Hall组）+ PTB + 维也纳大学合作。
+  pages: 1980-1983
+  doi: 10.1364/OL.39.001980
+  note: '首次将PDH锁频中的残余幅度调制（RAM）主动抑制至1 ppm量级（1×10⁻⁶）， 同时消除同相分量（DC电场反馈）和正交分量（EOM温度反馈），
+    实现56 dB RAM抑制，长达2小时无明显漂移。 在35 mm AlGaAs晶体镀层腔（κ=28 kHz）中，1 ppm RAM对应σ_y=1×10⁻¹⁶；
+    在210 mm Si单晶腔（κ=3 kHz）中，5 ppm RAM对应σ_y=8×10⁻¹⁷（接近热噪声极限）。 JILA（Ye/Hall组）+ PTB +
+    维也纳大学合作。
 
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
-entities:
-  # ent.waveguide_eom_z14 已合并到 ent.eom（定义于 drever1983.yaml）的 implementations.waveguide 字段中。
-  # Zhang 2014 的波导 EOM 是通用 EOM 概念的低 RAM 特化实现。
-  # 原 meth.ram_cancellation_z14 已并入 ent.eom（drever1983.yaml）的
-  # key_parameters.ram_suppression_interfaces.zhang2014_dual_servo 字段。
-  # RAM 相关参数保留在 ent.eom 的 ram_properties 和 ram_suppression_interfaces 字段中。
-
+    '
+entities: null
 principles:
-  - id: pri.ram_pdh_frequency_offset
-    name: "RAM引起PDH频率偏移原理"
-    tier: domain
-    verification_status: observed
-    statement: >
-      在PDH锁频中，EOM产生的残余幅度调制（RAM）在调制频率ωm处产生
-      与锁定信号叠加的虚假信号，导致锁定点偏离腔谐振中心，
-      产生频率偏移。RAM引起的分数频率不稳定度为：
-        σ_y = σ_RAM × κ / ν
-      其中κ为腔线宽，ν为光学频率。
-      对固定RAM幅度σ_RAM（ppm量级），腔越窄（κ越小）或光频越高（ν越大），
-      RAM引起的σ_y越小，故更长（窄线宽）的腔或更高光频对RAM更不敏感。
-    domain: "激光频率稳定，PDH锁频"
-    formula: "σ_y = σ_RAM × (κ / ν)"
-    key_insight: >
-      RAM是PDH锁频中除热噪声和振动外的第三类系统误差来源；
-      在腔热噪声极限处于10⁻¹⁶–10⁻¹⁷时，RAM抑制至ppm量级是必要条件。
-    conditions: "PDH锁频工作状态，RAM < 腔线宽"
-    source_claim: >
-      "RAM introduces frequency offset noise to the servo error signal and
-       thus degrades the laser frequency stability"
+- id: pri.ram_pdh_frequency_offset
+  name: RAM引起PDH频率偏移原理
+  tier: domain
+  verification_status: observed
+  statement: "在PDH锁频中，EOM产生的残余幅度调制（RAM）在调制频率ωm处产生 与锁定信号叠加的虚假信号，导致锁定点偏离腔谐振中心， 产生频率偏移。RAM引起的分数频率不稳定度为：\n\
+    \  σ_y = σ_RAM × κ / ν\n其中κ为腔线宽，ν为光学频率。 对固定RAM幅度σ_RAM（ppm量级），腔越窄（κ越小）或光频越高（ν越大），\
+    \ RAM引起的σ_y越小，故更长（窄线宽）的腔或更高光频对RAM更不敏感。\n"
+  domain: 激光频率稳定，PDH锁频
+  formula: σ_y = σ_RAM × (κ / ν)
+  key_insight: 'RAM是PDH锁频中除热噪声和振动外的第三类系统误差来源； 在腔热噪声极限处于10⁻¹⁶–10⁻¹⁷时，RAM抑制至ppm量级是必要条件。
 
-  - id: pri.ram_active_cancellation
-    name: "RAM双通道主动消除原理"
-    tier: engineering
-    verification_status: observed
-    statement: >
-      EOM产生的RAM包含两个分量：
-        同相分量：由EOM晶体自然双折射引起，DC电场可直接补偿（sin(Δφ+ΔφDC)=0）；
-        正交分量：由EOM压电致弹光效应和光束不均匀性引起，需温度反馈抑制。
-      DC电场对同相响应比正交响应大20倍；温度反馈对正交响应比同相响应大5倍。
-      两路并行伺服分别抑制两分量，实现综合56 dB RAM抑制（至~30 ppm残余，
-      受光路中残余标具效应限制）。
-    domain: "激光频率稳定，EOM控制"
-    key_advantage: >
-      同时消除RAM的长期漂移（正交伺服带宽<0.1 Hz，由EOM热响应时间限制），
-      是相较于仅使用DC场反馈的以往方法的关键改进。
-    conditions: >
-      波导型EOM（减少光束位置变化引起的RAM相位漂移）；
-      同相伺服带宽~200 kHz；正交伺服带宽<0.1 Hz
-    source_claim: >
-      "The DC electric field affects the in-phase response 20 times larger
-       than the quadrature response ... working in tandem, suppress both
-       the in-phase and quadrature components of the RAM to the 1 ppm level"
+    '
+  conditions: PDH锁频工作状态，RAM < 腔线宽
+  source_claim: "\"RAM introduces frequency offset noise to the servo error signal\
+    \ and\n thus degrades the laser frequency stability\"\n"
+- id: pri.ram_active_cancellation
+  name: RAM双通道主动消除原理
+  tier: engineering
+  verification_status: observed
+  statement: "EOM产生的RAM包含两个分量：\n  同相分量：由EOM晶体自然双折射引起，DC电场可直接补偿（sin(Δφ+ΔφDC)=0）；\n\
+    \  正交分量：由EOM压电致弹光效应和光束不均匀性引起，需温度反馈抑制。\nDC电场对同相响应比正交响应大20倍；温度反馈对正交响应比同相响应大5倍。 两路并行伺服分别抑制两分量，实现综合56\
+    \ dB RAM抑制（至~30 ppm残余， 受光路中残余标具效应限制）。\n"
+  domain: 激光频率稳定，EOM控制
+  key_advantage: '同时消除RAM的长期漂移（正交伺服带宽<0.1 Hz，由EOM热响应时间限制）， 是相较于仅使用DC场反馈的以往方法的关键改进。
 
+    '
+  conditions: '波导型EOM（减少光束位置变化引起的RAM相位漂移）； 同相伺服带宽~200 kHz；正交伺服带宽<0.1 Hz
+
+    '
+  source_claim: "\"The DC electric field affects the in-phase response 20 times larger\n\
+    \ than the quadrature response ... working in tandem, suppress both\n the in-phase\
+    \ and quadrature components of the RAM to the 1 ppm level\"\n"
 methods:
-  - id: meth.dual_channel_ram_cancellation_z14
-    name: "双通道 RAM 主动消除方法（Zhang 2014）"
-    description: "通过同相DC电场和正交温度反馈双通道伺服将RAM抑制至1 ppm的方法"
-    core_principle: pri.ram_active_cancellation
-    key_entity: ent.eom
-    reliability: established
-    verification_status: observed
-    source: {zotero_key: "S5GJNVG8", claim: "active servo comprising in-phase and quadrature RAM corrections allows frequency stabilization comparable to fundamental thermal noise limit"}
-
+- id: meth.dual_channel_ram_cancellation_z14
+  name: 双通道 RAM 主动消除方法（Zhang 2014）
+  description: 通过同相DC电场和正交温度反馈双通道伺服将RAM抑制至1 ppm的方法
+  core_principle: pri.ram_active_cancellation
+  key_entity: ent.eom
+  reliability: established
+  verification_status: observed
+  source:
+    zotero_key: S5GJNVG8
+    claim: active servo comprising in-phase and quadrature RAM corrections allows
+      frequency stabilization comparable to fundamental thermal noise limit
 metrics:
-  - id: met.ram_fractional_instability
-    name: "RAM引起的分数频率不稳定度"
-    unit: "无量纲（Allan偏差）"
-    description: "因RAM导致的PDH锁频系统分数频率不稳定度上限"
-    demonstrated_value:
-      value: "σ_y ≤ 1×10⁻¹⁶（35 mm腔，κ=28 kHz，σ_RAM=1 ppm）"
-      conditions: "波导EOM + 双通道主动RAM消除伺服；1 ppm RAM稳定度，1–1000 s"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "S5GJNVG8", claim: "σ_RAM at 1 ppm corresponds to σ_y of 1×10⁻¹⁶ for 35 mm cavity"}
-    note: >
-      对210 mm Si腔（κ=3 kHz），5 ppm RAM → σ_y=8×10⁻¹⁷，接近Si腔热噪声极限。
-      RAM不再是限制因素（贡献低于腔热噪声极限）。
+- id: met.ram_fractional_instability
+  name: RAM引起的分数频率不稳定度
+  unit: 无量纲（Allan偏差）
+  description: 因RAM导致的PDH锁频系统分数频率不稳定度上限
+  demonstrated_value:
+    value: σ_y ≤ 1×10⁻¹⁶（35 mm腔，κ=28 kHz，σ_RAM=1 ppm）
+    conditions: 波导EOM + 双通道主动RAM消除伺服；1 ppm RAM稳定度，1–1000 s
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: S5GJNVG8
+      claim: σ_RAM at 1 ppm corresponds to σ_y of 1×10⁻¹⁶ for 35 mm cavity
+  note: '对210 mm Si腔（κ=3 kHz），5 ppm RAM → σ_y=8×10⁻¹⁷，接近Si腔热噪声极限。 RAM不再是限制因素（贡献低于腔热噪声极限）。
 
-# ═══════════════════════════════════════════════
-#  RELATIONS（关系）
-# ═══════════════════════════════════════════════
-
+    '
 relations:
-  - id: rel.Z14_01
-    subject: meth.pdh_locking
-    predicate: BOUNDED-BY
-    object: pri.ram_pdh_frequency_offset
-    confidence: established
-    source: {zotero_key: "S5GJNVG8", claim: "RAM introduces frequency offset noise to the servo error signal, degrading laser frequency stability"}
-    conditions: "EOM RAM未充分抑制时，RAM成为PDH锁频精度的系统性限制"
-    is_system_limit: true
-    dominated_by: null
-    regime: "RAM未被充分消除时"
-    verification_status: observed
-    temporal_role: proposes
-    breakthrough_paths:
-      - direction: pri.brewster_angle_ram_suppression
-        expected_gain: "布儒斯特角 EOM 几何被动抑制 RAM（无需有源伺服），Tai 2016 演示 RAM < 10⁻⁶ 量级"
-        status: demonstrated
-        source: {zotero_key: "S5GJNVG8", claim: "RAM introduces frequency offset noise to the servo error signal"}
-        note: "pri.brewster_angle_ram_suppression 定义于 tai2016.yaml；几何方案，与本文伺服方案互补"
-      - direction: pri.ram_active_cancellation
-        expected_gain: "本文双通道伺服（同相 DC 电场 + 正交温度反馈）将 RAM 抑制至 1 ppm，对应 σ_y ≤ 1×10⁻¹⁶（35 mm 腔）"
-        status: demonstrated
-        source: {zotero_key: "S5GJNVG8", claim: "working in tandem, suppress both the in-phase and quadrature components of the RAM to the 1 ppm level"}
-      - direction: pri.ram_bias_field_cancellation
-        expected_gain: "Parke 2025 在 APE 铌酸锂波导 EOM 上用偏置电场闭环将 RAM 降至 10⁻⁷，等效 σ_y 贡献 3×10⁻¹⁹ @ 10–100 s"
-        status: demonstrated
-        source: {zotero_key: "U2LXSU62", claim: "actively cancel residual amplitude modulation (RAM) at the 10⁻⁷ level"}
-        note: "pri.ram_bias_field_cancellation 定义于 parke2025.yaml"
+- id: rel.zhang_2014_14_01
+  subject: meth.pdh_locking
+  predicate: BOUNDED-BY
+  object: pri.ram_pdh_frequency_offset
+  confidence: established
+  source:
+    zotero_key: S5GJNVG8
+    claim: RAM introduces frequency offset noise to the servo error signal, degrading
+      laser frequency stability
+  conditions: EOM RAM未充分抑制时，RAM成为PDH锁频精度的系统性限制
+  is_system_limit: true
+  dominated_by: null
+  regime: RAM未被充分消除时
+  verification_status: observed
+  temporal_role: proposes
+  breakthrough_paths:
+  - direction: pri.brewster_angle_ram_suppression
+    expected_gain: 布儒斯特角 EOM 几何被动抑制 RAM（无需有源伺服），Tai 2016 演示 RAM < 10⁻⁶ 量级
+    status: demonstrated
+    source:
+      zotero_key: S5GJNVG8
+      claim: RAM introduces frequency offset noise to the servo error signal
+    note: pri.brewster_angle_ram_suppression 定义于 tai2016.yaml；几何方案，与本文伺服方案互补
+  - direction: pri.ram_active_cancellation
+    expected_gain: 本文双通道伺服（同相 DC 电场 + 正交温度反馈）将 RAM 抑制至 1 ppm，对应 σ_y ≤ 1×10⁻¹⁶（35 mm
+      腔）
+    status: demonstrated
+    source:
+      zotero_key: S5GJNVG8
+      claim: working in tandem, suppress both the in-phase and quadrature components
+        of the RAM to the 1 ppm level
+  - direction: pri.ram_bias_field_cancellation
+    expected_gain: Parke 2025 在 APE 铌酸锂波导 EOM 上用偏置电场闭环将 RAM 降至 10⁻⁷，等效 σ_y 贡献 3×10⁻¹⁹
+      @ 10–100 s
+    status: demonstrated
+    source:
+      zotero_key: U2LXSU62
+      claim: actively cancel residual amplitude modulation (RAM) at the 10⁻⁷ level
+    note: pri.ram_bias_field_cancellation 定义于 parke2025.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/zhang2014_ram.yaml
+- id: rel.zhang_2014_14_02
+  subject: meth.pdh_locking
+  predicate: ENABLED-BY
+  object: pri.ram_active_cancellation
+  confidence: established
+  source:
+    zotero_key: S5GJNVG8
+    claim: active servo comprising in-phase and quadrature RAM corrections allows
+      frequency stabilization comparable to fundamental thermal noise limit
+  conditions: RAM需抑制至ppm量级以达到腔热噪声极限性能
+  temporal_role: proposes
+  note: 双通道伺服实现细节已并入 ent.eom.key_parameters.ram_suppression_interfaces.zhang2014_dual_servo
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/zhang2014_ram.yaml
+- id: rel.zhang_2014_14_03
+  subject: meth.pdh_locking
+  predicate: CHARACTERIZED-BY
+  object: met.ram_fractional_instability
+  confidence: established
+  source:
+    zotero_key: S5GJNVG8
+    claim: σ_RAM at 1 ppm corresponds to σ_y of 1×10⁻¹⁶ for 35mm cavity
+  conditions: 波导 EOM + 双通道 RAM 主动消除下，PDH 锁频的 RAM 等效分数不稳定度
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/zhang2014_ram.yaml
+- id: rel.zhang_2014_14_04
+  subject: ent.eom
+  predicate: PART-OF
+  object: ent.fp_cavity_system
+  confidence: established
+  source:
+    zotero_key: S5GJNVG8
+    claim: waveguide-based EOM provides phase modulation for cavity-stabilized laser
+      system
+  conditions: null
+  note: 'ent.fp_cavity_system 定义于 numata2004.yaml；ent.eom 定义于 drever1983.yaml（合并节点）。
+    原 ent.waveguide_eom_z14 已合并到 ent.eom；此关系确认 EOM 作为 FP 腔系统子单元。
 
-  - id: rel.Z14_02
-    subject: meth.pdh_locking
-    predicate: ENABLED-BY
-    object: pri.ram_active_cancellation
-    confidence: established
-    source: {zotero_key: "S5GJNVG8", claim: "active servo comprising in-phase and quadrature RAM corrections allows frequency stabilization comparable to fundamental thermal noise limit"}
-    conditions: "RAM需抑制至ppm量级以达到腔热噪声极限性能"
-    temporal_role: proposes
-    note: "双通道伺服实现细节已并入 ent.eom.key_parameters.ram_suppression_interfaces.zhang2014_dual_servo"
-
-  - id: rel.Z14_03
-    subject: meth.pdh_locking
-    predicate: CHARACTERIZED-BY
-    object: met.ram_fractional_instability
-    confidence: established
-    source: {zotero_key: "S5GJNVG8", claim: "σ_RAM at 1 ppm corresponds to σ_y of 1×10⁻¹⁶ for 35mm cavity"}
-    conditions: "波导 EOM + 双通道 RAM 主动消除下，PDH 锁频的 RAM 等效分数不稳定度"
-
-  - id: rel.Z14_04
-    subject: ent.eom
-    predicate: PART-OF
-    object: ent.fp_cavity_system
-    confidence: established
-    source: {zotero_key: "S5GJNVG8", claim: "waveguide-based EOM provides phase modulation for cavity-stabilized laser system"}
-    conditions: null
-    note: >
-      ent.fp_cavity_system 定义于 numata2004.yaml；ent.eom 定义于 drever1983.yaml（合并节点）。
-      原 ent.waveguide_eom_z14 已合并到 ent.eom；此关系确认 EOM 作为 FP 腔系统子单元。
-
-  - id: rel.Z14_04a
-    subject: meth.dual_channel_ram_cancellation_z14
-    predicate: ENABLED-BY
-    object: pri.ram_active_cancellation
-    confidence: established
-    source: {zotero_key: "S5GJNVG8", claim: "active servo comprising in-phase and quadrature RAM corrections allows frequency stabilization comparable to fundamental thermal noise limit"}
-    conditions: "EOM 同相 DC 电场伺服 + 正交温度伺服并行"
-    temporal_role: proposes
-    note: "双通道 RAM 主动消除方法由 RAM 双通道主动消除原理使能"
-
-  - id: rel.Z14_04b
-    subject: meth.dual_channel_ram_cancellation_z14
-    predicate: IMPLEMENTS
-    object: meth.pdh_locking
-    confidence: established
-    source: {zotero_key: "S5GJNVG8", claim: "laser frequency stabilization"}
-    conditions: "作为 PDH 锁频链路中 EOM 的 RAM 抑制子方法"
-    note: "meth.pdh_locking 定义于 drever1983.yaml"
-
-  - id: rel.Z14_05
-    subject: met.ram_fractional_instability
-    predicate: BOUNDED-BY
-    object: pri.ram_pdh_frequency_offset
-    confidence: established
-    source: {zotero_key: "S5GJNVG8", claim: "σ_y = σ_RAM × κ/ν, for 35mm cavity κ=28kHz, σ_RAM=1ppm → σ_y=1×10⁻¹⁶"}
-    conditions: "1 ppm RAM稳定度，给定腔线宽κ和光频ν"
-    is_system_limit: false
-    dominated_by: pri.brownian_thermal_noise_fdt
-    regime: "RAM充分抑制后，热噪声重新成为主导"
-    verification_status: observed
-    breakthrough_paths:
-      - direction: pri.ram_active_cancellation
-        expected_gain: "双通道主动消除使 σ_RAM ~ 1 ppm → σ_y(RAM) ≤ 1×10⁻¹⁶（35 mm 腔）；对 210 mm Si 腔 5 ppm 对应 8×10⁻¹⁷，已降至腔热噪声极限之下"
-        status: demonstrated
-        source: {zotero_key: "S5GJNVG8", claim: "active servo comprising in-phase and quadrature RAM corrections allows frequency stabilization comparable to fundamental thermal noise limit"}
-      - direction: pri.brewster_angle_ram_suppression
-        expected_gain: "被动几何方案无需伺服，适用于不便加偏置电场的 EOM 场景"
-        status: demonstrated
-        source: {zotero_key: "S5GJNVG8", claim: "σ_y = σ_RAM × κ/ν"}
-        note: "pri.brewster_angle_ram_suppression 定义于 tai2016.yaml"
-      - direction: pri.ram_bias_field_cancellation
-        expected_gain: "APE 波导 EOM + 偏置电场闭环将 σ_y(RAM) 进一步降至 3×10⁻¹⁹ @ 10–100 s（Parke 2025）"
-        status: demonstrated
-        source: {zotero_key: "U2LXSU62", claim: "RAM-induced fractional instability... 3×10⁻¹⁹ at 10–100 s"}
-        note: "pri.ram_bias_field_cancellation 定义于 parke2025.yaml"
+    '
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/zhang2014_ram.yaml
+- id: rel.zhang_2014_14_04a
+  subject: meth.dual_channel_ram_cancellation_z14
+  predicate: ENABLED-BY
+  object: pri.ram_active_cancellation
+  confidence: established
+  source:
+    zotero_key: S5GJNVG8
+    claim: active servo comprising in-phase and quadrature RAM corrections allows
+      frequency stabilization comparable to fundamental thermal noise limit
+  conditions: EOM 同相 DC 电场伺服 + 正交温度伺服并行
+  temporal_role: proposes
+  note: 双通道 RAM 主动消除方法由 RAM 双通道主动消除原理使能
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/zhang2014_ram.yaml
+- id: rel.zhang_2014_14_04b
+  subject: meth.dual_channel_ram_cancellation_z14
+  predicate: IMPLEMENTS
+  object: meth.pdh_locking
+  confidence: established
+  source:
+    zotero_key: S5GJNVG8
+    claim: laser frequency stabilization
+  conditions: 作为 PDH 锁频链路中 EOM 的 RAM 抑制子方法
+  note: meth.pdh_locking 定义于 drever1983.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/zhang2014_ram.yaml
+- id: rel.zhang_2014_14_05
+  subject: met.ram_fractional_instability
+  predicate: BOUNDED-BY
+  object: pri.ram_pdh_frequency_offset
+  confidence: established
+  source:
+    zotero_key: S5GJNVG8
+    claim: σ_y = σ_RAM × κ/ν, for 35mm cavity κ=28kHz, σ_RAM=1ppm → σ_y=1×10⁻¹⁶
+  conditions: 1 ppm RAM稳定度，给定腔线宽κ和光频ν
+  is_system_limit: false
+  dominated_by: pri.brownian_thermal_noise_fdt
+  regime: RAM充分抑制后，热噪声重新成为主导
+  verification_status: observed
+  breakthrough_paths:
+  - direction: pri.ram_active_cancellation
+    expected_gain: 双通道主动消除使 σ_RAM ~ 1 ppm → σ_y(RAM) ≤ 1×10⁻¹⁶（35 mm 腔）；对 210 mm Si
+      腔 5 ppm 对应 8×10⁻¹⁷，已降至腔热噪声极限之下
+    status: demonstrated
+    source:
+      zotero_key: S5GJNVG8
+      claim: active servo comprising in-phase and quadrature RAM corrections allows
+        frequency stabilization comparable to fundamental thermal noise limit
+  - direction: pri.brewster_angle_ram_suppression
+    expected_gain: 被动几何方案无需伺服，适用于不便加偏置电场的 EOM 场景
+    status: demonstrated
+    source:
+      zotero_key: S5GJNVG8
+      claim: σ_y = σ_RAM × κ/ν
+    note: pri.brewster_angle_ram_suppression 定义于 tai2016.yaml
+  - direction: pri.ram_bias_field_cancellation
+    expected_gain: APE 波导 EOM + 偏置电场闭环将 σ_y(RAM) 进一步降至 3×10⁻¹⁹ @ 10–100 s（Parke 2025）
+    status: demonstrated
+    source:
+      zotero_key: U2LXSU62
+      claim: RAM-induced fractional instability... 3×10⁻¹⁹ at 10–100 s
+    note: pri.ram_bias_field_cancellation 定义于 parke2025.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/zhang2014_ram.yaml

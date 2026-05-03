@@ -243,21 +243,21 @@ metrics:
 # ═══════════════════════════════════════════════
 
 relations:
-  - id: rel.X01
+  - id: rel.xing_2020_01
     subject: ent.hnlf_ssfs_stage_x20
     predicate: PART-OF
     object: ent.all_fiber_2um_comb_x20
     confidence: established
     source: {zotero_key: "BDY8JHA4", claim: "The amplified light is then sent into a 30 cm PM HNLF1 ... to generate a 2 µm pulse by a Raman soliton self-frequency shift"}
 
-  - id: rel.X02
+  - id: rel.xing_2020_02
     subject: ent.hnlf_self_compression_stage_x20
     predicate: PART-OF
     object: ent.all_fiber_2um_comb_x20
     confidence: established
     source: {zotero_key: "BDY8JHA4", claim: "The second compression stage utilizes nonlinear self-compression inside an elliptical core PM-HNLF from OFS (HNLF2 in Fig. 1)"}
 
-  - id: rel.X03
+  - id: rel.xing_2020_03
     subject: ent.all_fiber_2um_comb_x20
     predicate: PART-OF
     object: ent.optical_frequency_comb
@@ -265,7 +265,7 @@ relations:
     source: {zotero_key: "BDY8JHA4", claim: "an all-fiber 2 µm frequency comb that outputs 9.5 fs (1.4-cycle) pulses"}
     note: "ent.optical_frequency_comb 权威定义于 udem2002.yaml（跨文件引用）"
 
-  - id: rel.X04
+  - id: rel.xing_2020_04
     subject: ent.all_fiber_2um_comb_x20
     predicate: CHARACTERIZED-BY
     object: met.pulse_duration_cycles_x20
@@ -273,56 +273,56 @@ relations:
     source: {zotero_key: "BDY8JHA4", claim: "reconstructed pulse of 9.5 fs"}
     temporal_role: validates
 
-  - id: rel.X05
+  - id: rel.xing_2020_05
     subject: ent.all_fiber_2um_comb_x20
     predicate: CHARACTERIZED-BY
     object: met.optical_bandwidth_2um_x20
     confidence: established
     source: {zotero_key: "BDY8JHA4", claim: "spectrum ... spans from 1 to beyond 2.4 µm"}
 
-  - id: rel.X06
+  - id: rel.xing_2020_06
     subject: ent.all_fiber_2um_comb_x20
     predicate: CHARACTERIZED-BY
     object: met.average_power_2um_comb_x20
     confidence: established
     source: {zotero_key: "BDY8JHA4", claim: "327 mW average power at a 100 MHz repetition rate"}
 
-  - id: rel.X07
+  - id: rel.xing_2020_07
     subject: ent.all_fiber_2um_comb_x20
     predicate: CHARACTERIZED-BY
     object: met.peak_power_2um_comb_x20
     confidence: established
     source: {zotero_key: "BDY8JHA4", claim: "104 kW in the peak"}
 
-  - id: rel.X08
+  - id: rel.xing_2020_08
     subject: ent.all_fiber_2um_comb_x20
     predicate: CHARACTERIZED-BY
     object: met.fceo_snr_x20
     confidence: established
     source: {zotero_key: "BDY8JHA4", claim: "30 dB signal-to-noise ratio (SNR) at a 300 kHz resolution bandwidth"}
 
-  - id: rel.X09
+  - id: rel.xing_2020_09
     subject: meth.ssfs_tdf_cpa_self_compression_comb_x20
     predicate: ENABLED-BY
     object: pri.soliton_self_frequency_shift_2um
     confidence: established
     source: {zotero_key: "BDY8JHA4", claim: "soliton self-frequency shift in highly nonlinear fiber (HNLF), the seed laser converts the commercially available low noise 1.56 µm frequency comb to 2 µm"}
 
-  - id: rel.X10
+  - id: rel.xing_2020_10
     subject: meth.ssfs_tdf_cpa_self_compression_comb_x20
     predicate: ENABLED-BY
     object: pri.all_fiber_nonlinear_self_compression_2um
     confidence: established
     source: {zotero_key: "BDY8JHA4", claim: "nonlinear self-compression method combines spectral broadening and compression in one single fiber"}
 
-  - id: rel.X11
+  - id: rel.xing_2020_11
     subject: meth.ssfs_tdf_cpa_self_compression_comb_x20
     predicate: ENABLED-BY
     object: pri.octave_self_compression_enables_inline_f2f
     confidence: established
     source: {zotero_key: "BDY8JHA4", claim: "the SHG of the 2 µm pulse falls right on the DW pulse peak ... using no extra pulse delay control"}
 
-  - id: rel.X12
+  - id: rel.xing_2020_12
     subject: pri.octave_self_compression_enables_inline_f2f
     predicate: DERIVED-FROM
     object: pri.self_referencing_f2f
@@ -330,7 +330,7 @@ relations:
     source: {zotero_key: "BDY8JHA4", claim: "With an octave-spanning spectrum available from the soliton self-compression, it is possible to retrieve the f_ceo in a straightforward manner"}
     note: "pri.self_referencing_f2f 定义于 udem2002.yaml / giunta2019.yaml"
 
-  - id: rel.X13
+  - id: rel.xing_2020_13
     subject: pri.all_fiber_nonlinear_self_compression_2um
     predicate: DERIVED-FROM
     object: pri.supercontinuum_octave_spanning
@@ -338,14 +338,14 @@ relations:
     source: {zotero_key: "BDY8JHA4", claim: "structured central region of the spectrum with smooth wings covering about one octave is a general indication of successful self-compression"}
     note: "pri.supercontinuum_octave_spanning 定义于 diddams2000.yaml"
 
-  - id: rel.X14
+  - id: rel.xing_2020_14
     subject: met.pulse_duration_cycles_x20
     predicate: OPERATIONALIZED-AS
     object: meth.ssfs_tdf_cpa_self_compression_comb_x20
     confidence: established
     source: {zotero_key: "BDY8JHA4", claim: "a two-stage self-compression scheme reduces the pulse duration to 9.5 fs"}
 
-  - id: rel.X15
+  - id: rel.xing_2020_15
     subject: met.pulse_duration_cycles_x20
     predicate: BOUNDED-BY
     object: pri.all_fiber_nonlinear_self_compression_2um
@@ -363,7 +363,7 @@ relations:
         status: proposed
         source: {zotero_key: "BDY8JHA4", claim: "milliwatt-level peak powers at a 100 MHz repetition rate should be feasible with a photonic crystal fiber at the last compression stage"}
 
-  - id: rel.X16
+  - id: rel.xing_2020_16
     subject: ent.all_fiber_2um_comb_x20
     predicate: COMPETES-WITH
     object: ent.octave_spanning_tisa_comb_d00
@@ -373,7 +373,7 @@ relations:
       工程层面的竞争：Ti:Sa + air-silica PCF（800 nm，diddams2000.yaml）与 Tm:fiber + HNLF（2 µm）
       同属 "单激光倍频程飞秒梳" 方案；两者在波段选择、全光纤化、MIR 泵浦适配性上各有取舍。
 
-  - id: rel.X17
+  - id: rel.xing_2020_17
     subject: ent.all_fiber_2um_comb_x20
     predicate: CONDITIONED-BY
     object: ent.photonic_crystal_fiber

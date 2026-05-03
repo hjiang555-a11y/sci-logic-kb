@@ -1,104 +1,111 @@
-# Kogelnik 1966 — 激光光束与谐振腔理论综述
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-16
-# Schema版本：v4.1
-
 meta:
-  zotero_key: "UQL6FYN7"
+  zotero_key: UQL6FYN7
   source_type: review_paper
   contribution_type: framework
   reliability: high
-  title: "Laser Beams and Resonators"
+  title: Laser Beams and Resonators
   year: 1966
   first_author: Kogelnik
-  journal: "Applied Optics"
+  journal: Applied Optics
   volume: 5
   issue: 10
-  pages: "1550-1567"
-  doi: "10.1364/AO.5.001550"
-  note: >
-    经典综述论文：激光光束传播和谐振腔理论。
-    涵盖高斯光束、ABCD 矩阵、腔模式、稳定性条件等。
-    超稳激光 FP 腔设计的基础理论参考。
+  pages: 1550-1567
+  doi: 10.1364/AO.5.001550
+  note: '经典综述论文：激光光束传播和谐振腔理论。 涵盖高斯光束、ABCD 矩阵、腔模式、稳定性条件等。 超稳激光 FP 腔设计的基础理论参考。
 
+    '
 entities: []
-
 principles:
-  - id: pri.gaussian_beam_resonator_theory
-    name: "高斯光束与谐振腔理论"
-    tier: foundational
-    verification_status: established
-    statement: >
-      激光谐振腔中的光场以高斯光束模式为基础，
-      光斑大小由腔镜曲率半径和腔长决定。
-      腔的稳定性条件为 0 ≤ g₁g₂ ≤ 1（g = 1 - L/R）。
-      这些关系决定了 FP 腔中光斑在镜面上的大小，
-      直接影响热噪声水平。
-    domain: "激光物理 / 谐振腔"
-    key_insight: "光斑大小 w₀ 由腔几何确定，是热噪声的关键参数。"
-    conditions: "适用于稳定球面镜 FP 腔"
-    source_claim: "theory of laser beams and resonators"
+- id: pri.gaussian_beam_resonator_theory
+  name: 高斯光束与谐振腔理论
+  tier: foundational
+  verification_status: established
+  statement: '激光谐振腔中的光场以高斯光束模式为基础， 光斑大小由腔镜曲率半径和腔长决定。 腔的稳定性条件为 0 ≤ g₁g₂ ≤ 1（g = 1 -
+    L/R）。 这些关系决定了 FP 腔中光斑在镜面上的大小， 直接影响热噪声水平。
 
+    '
+  domain: 激光物理 / 谐振腔
+  key_insight: 光斑大小 w₀ 由腔几何确定，是热噪声的关键参数。
+  conditions: 适用于稳定球面镜 FP 腔
+  source_claim: theory of laser beams and resonators
 methods:
-  - id: meth.gaussian_beam_analysis
-    name: "高斯光束分析（Kogelnik 1966）"
-    procedure:
-      - "使用ABCD矩阵描述光学元件对高斯光束的变换。"
-      - "求解谐振腔自洽条件，得到高斯光束参数（光斑大小、曲率半径）。"
-      - "计算腔的稳定性条件：g₁g₂ ∈ [0,1]。"
-      - "推导光斑在镜面上的大小，评估热噪声极限。"
-    domain: laser_theory
-    subdomain: resonator_design
-    inputs: ["cavity_geometry", "mirror_curvatures"]
-    outputs: ["beam_parameters", "stability_condition"]
-    note: "该方法为FP腔设计提供了理论基础。"
+- id: meth.gaussian_beam_analysis
+  name: 高斯光束分析（Kogelnik 1966）
+  procedure:
+  - 使用ABCD矩阵描述光学元件对高斯光束的变换。
+  - 求解谐振腔自洽条件，得到高斯光束参数（光斑大小、曲率半径）。
+  - 计算腔的稳定性条件：g₁g₂ ∈ [0,1]。
+  - 推导光斑在镜面上的大小，评估热噪声极限。
+  domain: laser_theory
+  subdomain: resonator_design
+  inputs:
+  - cavity_geometry
+  - mirror_curvatures
+  outputs:
+  - beam_parameters
+  - stability_condition
+  note: 该方法为FP腔设计提供了理论基础。
 metrics:
-  # 注：Kogelnik 1966 是理论综述，未提供具体实验指标
-  # 以下为理论参数示例，非论文中测量值
-  - id: met.beam_waist_parameter_k66
-    name: "光束腰斑参数（理论）"
-    quantity: "beam_waist"
-    unit: "μm"
-    demonstrated_value: "由腔参数决定"
-    conditions: "稳定球面镜谐振腔"
-    measurement_method: "理论计算：w₀ = √(λ/π)√[L(R₁-L)(R₂-L)(R₁+R₂-L)/(R₁+R₂-2L)]¹ᐟ⁴"
-    significance: "光束腰斑大小影响腔模体积和热噪声。"
-    source_claim: {zotero_key: "UQL6FYN7", claim: "theory of laser beams and resonators"}
-  - id: met.rayleigh_range_k66
-    name: "瑞利范围（理论）"
-    quantity: "Rayleigh_range"
-    unit: "m"
-    demonstrated_value: "z_R = πw₀²/λ"
-    conditions: "高斯光束传播"
-    measurement_method: "理论计算"
-    significance: "表征高斯光束的准直范围。"
-    source_claim: {zotero_key: "UQL6FYN7", claim: "theory of laser beams and resonators"}
+- id: met.beam_waist_parameter_k66
+  name: 光束腰斑参数（理论）
+  quantity: beam_waist
+  unit: μm
+  demonstrated_value: 由腔参数决定
+  conditions: 稳定球面镜谐振腔
+  measurement_method: 理论计算：w₀ = √(λ/π)√[L(R₁-L)(R₂-L)(R₁+R₂-L)/(R₁+R₂-2L)]¹ᐟ⁴
+  significance: 光束腰斑大小影响腔模体积和热噪声。
+  source_claim:
+    zotero_key: UQL6FYN7
+    claim: theory of laser beams and resonators
+- id: met.rayleigh_range_k66
+  name: 瑞利范围（理论）
+  quantity: Rayleigh_range
+  unit: m
+  demonstrated_value: z_R = πw₀²/λ
+  conditions: 高斯光束传播
+  measurement_method: 理论计算
+  significance: 表征高斯光束的准直范围。
+  source_claim:
+    zotero_key: UQL6FYN7
+    claim: theory of laser beams and resonators
 relations:
-  - id: rel.KG01
-    subject: ent.fp_cavity_system
-    predicate: ENABLED-BY
-    object: pri.gaussian_beam_resonator_theory
-    confidence: established
-    source: {zotero_key: "UQL6FYN7", claim: "laser beams and resonators"}
-    note: "基础理论，定义了 FP 腔光斑大小等关键参数"
-  - id: rel.KG02
-    subject: meth.gaussian_beam_analysis
-    predicate: IMPLEMENTS
-    object: pri.gaussian_beam_resonator_theory
-    confidence: established
-    source: {zotero_key: "UQL6FYN7", claim: "theory of laser beams and resonators"}
-    note: "分析方法实现了该理论原理。"
-  - id: rel.KG03
-    subject: met.beam_waist_parameter_k66
-    predicate: CHARACTERIZES
-    object: pri.gaussian_beam_resonator_theory
-    confidence: established
-    source: {zotero_key: "UQL6FYN7", claim: "theory of laser beams and resonators"}
-    note: "光束腰斑参数是理论的关键输出之一。"
-  - id: rel.KG04
-    subject: met.rayleigh_range_k66
-    predicate: CHARACTERIZES
-    object: pri.gaussian_beam_resonator_theory
-    confidence: established
-    source: {zotero_key: "UQL6FYN7", claim: "theory of laser beams and resonators"}
-    note: "瑞利范围是高斯光束理论的重要参数。"
+- id: rel.kogelnik_1966_G01
+  subject: ent.fp_cavity_system
+  predicate: ENABLED-BY
+  object: pri.gaussian_beam_resonator_theory
+  confidence: established
+  source:
+    zotero_key: UQL6FYN7
+    claim: laser beams and resonators
+  note: 基础理论，定义了 FP 腔光斑大小等关键参数
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/kogelnik1966.yaml
+- id: rel.kogelnik_1966_G02
+  subject: meth.gaussian_beam_analysis
+  predicate: IMPLEMENTS
+  object: pri.gaussian_beam_resonator_theory
+  confidence: established
+  source:
+    zotero_key: UQL6FYN7
+    claim: theory of laser beams and resonators
+  note: 分析方法实现了该理论原理。
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/kogelnik1966.yaml
+- id: rel.kogelnik_1966_G03
+  subject: met.beam_waist_parameter_k66
+  predicate: CHARACTERIZES
+  object: pri.gaussian_beam_resonator_theory
+  confidence: established
+  source:
+    zotero_key: UQL6FYN7
+    claim: theory of laser beams and resonators
+  note: 光束腰斑参数是理论的关键输出之一。
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/kogelnik1966.yaml
+- id: rel.kogelnik_1966_G04
+  subject: met.rayleigh_range_k66
+  predicate: CHARACTERIZES
+  object: pri.gaussian_beam_resonator_theory
+  confidence: established
+  source:
+    zotero_key: UQL6FYN7
+    claim: theory of laser beams and resonators
+  note: 瑞利范围是高斯光束理论的重要参数。
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/kogelnik1966.yaml

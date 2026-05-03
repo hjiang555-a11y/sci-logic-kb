@@ -121,7 +121,7 @@ metrics:
       source: {zotero_key: "P4TCLWW2", claim: "Both combs exhibit in-loop fractional frequency instabilities of ~10−18 at 1 s"}
 
 relations:
-  - id: rel.Ma18_01
+  - id: rel.ma_2018_a18_01
     subject: ent.yb_fiber_750mhz_comb_m18
     predicate: PART-OF
     object: ent.optical_frequency_comb
@@ -129,35 +129,35 @@ relations:
     source: {zotero_key: "P4TCLWW2", claim: "750 MHz ytterbium fiber frequency combs"}
     note: "跨文件引用 ent.optical_frequency_comb（giunta2019.yaml）"
 
-  - id: rel.Ma18_02
+  - id: rel.ma_2018_a18_02
     subject: ent.yb_fiber_750mhz_comb_m18
     predicate: CHARACTERIZED-BY
     object: met.integrated_phase_noise_750mhz_yb_m18
     confidence: established
     source: {zotero_key: "P4TCLWW2", claim: "<1 rad root mean square phase noise integrated from 0.1 Hz to 10 MHz"}
 
-  - id: rel.Ma18_03
+  - id: rel.ma_2018_a18_03
     subject: ent.yb_fiber_750mhz_comb_m18
     predicate: CHARACTERIZED-BY
     object: met.fractional_instability_inloop_m18
     confidence: established
     source: {zotero_key: "P4TCLWW2", claim: "in-loop fractional frequency instabilities of ~10−18 at 1 s"}
 
-  - id: rel.Ma18_04
+  - id: rel.ma_2018_a18_04
     subject: meth.bulk_eom_pzt_750mhz_yb_lock
     predicate: OPERATIONALIZED-AS
     object: ent.yb_fiber_750mhz_comb_m18
     confidence: established
     source: {zotero_key: "P4TCLWW2", claim: "A bulk electro-optic modulator and a single-stack piezo-electric transducer are employed as fast actuators"}
 
-  - id: rel.Ma18_05
+  - id: rel.ma_2018_a18_05
     subject: meth.bulk_eom_pzt_750mhz_yb_lock
     predicate: ENABLED-BY
     object: pri.high_frep_yb_tight_lock_challenges
     confidence: established
     source: {zotero_key: "P4TCLWW2", claim: "tight phase locking in high-repetition-rate Yb:fiber frequency combs involves two issues"}
 
-  - id: rel.Ma18_06
+  - id: rel.ma_2018_a18_06
     subject: met.integrated_phase_noise_750mhz_yb_m18
     predicate: BOUNDED-BY
     object: pri.high_frep_bandwidth_power_tradeoff

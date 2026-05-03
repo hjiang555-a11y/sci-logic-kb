@@ -1,136 +1,136 @@
-# Kwong 2018 — NEXCERA 陶瓷间隔体长期尺寸稳定性光学腔测量 [evidence]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：ultrastable-laser
-
 meta:
-  zotero_key: "JP6J4EQD"
+  zotero_key: JP6J4EQD
   topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: "Characterization of the long-term dimensional stability of a NEXCERA block using the optical resonator technique"
+  title: Characterization of the long-term dimensional stability of a NEXCERA block
+    using the optical resonator technique
   year: 2018
-  first_author: "Kwong"
-  authors: ["Chang Jian Kwong", "Michael G. Hansen", "Jun Sugawara", "Stephan Schiller"]
-  journal: "Measurement Science and Technology"
+  first_author: Kwong
+  authors:
+  - Chang Jian Kwong
+  - Michael G. Hansen
+  - Jun Sugawara
+  - Stephan Schiller
+  journal: Measurement Science and Technology
   volume: 29
-  pages: "075011"
-  doi: "10.1088/1361-6501/aac3b0"
-  note: >
-    首次对 NEXCERA N118C 陶瓷腔进行精确长期漂移测量，发现分数长度漂移率
-    L⁻¹dΔL/dt = −(1.74±0.01)×10⁻⁸ yr⁻¹（室温），介于 ULE 与 Zerodur 之间。
-    CTE 零点温度约 22.9°C，与室温兼容。
+  pages: '075011'
+  doi: 10.1088/1361-6501/aac3b0
+  note: '首次对 NEXCERA N118C 陶瓷腔进行精确长期漂移测量，发现分数长度漂移率 L⁻¹dΔL/dt = −(1.74±0.01)×10⁻⁸ yr⁻¹（室温），介于
+    ULE 与 Zerodur 之间。 CTE 零点温度约 22.9°C，与室温兼容。
 
+    '
 entities:
-  - id: ent.nexcera_optical_cavity_k18
-    name: "NEXCERA N118C 光学谐振腔"
-    hierarchy_level: 2
-    status: demonstrated
-    function: >
-      120 mm 长双锥形 NEXCERA N118C 陶瓷间隔体（中心凸缘直径 90 mm，端面直径 30 mm），
-      两端光学接触 ULE 凹面镜（R = 0.5 m，1064 nm 高反）。
-      精细度 6.2×10⁴，线宽 20 kHz（FWHM）。
-      竖直放置于真空腔中，硅橡胶阻尼缓冲支撑，热屏蔽 + PID 温控。
-    note: "NEXCERA 由日本 Krosaki Harima 公司开发烧制，样品 N118C 于 2015-12 烧结，2016-03 机械加工。"
+- id: ent.nexcera_optical_cavity_k18
+  name: NEXCERA N118C 光学谐振腔
+  hierarchy_level: 2
+  status: demonstrated
+  function: '120 mm 长双锥形 NEXCERA N118C 陶瓷间隔体（中心凸缘直径 90 mm，端面直径 30 mm）， 两端光学接触 ULE
+    凹面镜（R = 0.5 m，1064 nm 高反）。 精细度 6.2×10⁴，线宽 20 kHz（FWHM）。 竖直放置于真空腔中，硅橡胶阻尼缓冲支撑，热屏蔽
+    + PID 温控。
 
+    '
+  note: NEXCERA 由日本 Krosaki Harima 公司开发烧制，样品 N118C 于 2015-12 烧结，2016-03 机械加工。
 principles:
-  - id: pri.nexcera_dimensional_stability
-    name: "NEXCERA 陶瓷长期尺寸稳定性"
-    tier: domain
-    verification_status: observed
-    statement: >
-      NEXCERA 是一种可机械加工的超低热膨胀陶瓷，CTE 在室温（约 23°C）附近过零，
-      |α| < 0.03×10⁻⁶ K⁻¹（23°C）。本文首次精确测量其长期分数长度漂移率为
-      −(1.74±0.01)×10⁻⁸ yr⁻¹，优于 Zerodur（约 10⁻⁷ yr⁻¹），
-      但比最优 ULE（~0.4×10⁻⁸ yr⁻¹）稍大，约为 ULE 较差值（~2.5×10⁻⁸ yr⁻¹）的量级。
-      杨氏模量 140 GPa 高于 ULE（67.6 GPa）和 Zerodur（90.3 GPa），力学刚度更强。
-    domain: "精密光学腔间隔体材料"
-    formula: "L⁻¹dΔL/dt = −(1.74±0.01)×10⁻⁸ yr⁻¹"
-    key_insight: "NEXCERA CTE 零点在室温附近，无需低温运行，但长期漂移仍大于最优 ULE"
-    conditions: "室温（约 22.9°C CTE 零点）；N118C 批次；光学腔法精密测量"
-    source:
-      zotero_key: "JP6J4EQD"
-      claim: "At room temperature, we found a fractional length drift rate L^-1 d∆L/dt = −(1.74±0.01)×10^-8 yr^-1"
+- id: pri.nexcera_dimensional_stability
+  name: NEXCERA 陶瓷长期尺寸稳定性
+  tier: domain
+  verification_status: observed
+  statement: 'NEXCERA 是一种可机械加工的超低热膨胀陶瓷，CTE 在室温（约 23°C）附近过零， |α| < 0.03×10⁻⁶ K⁻¹（23°C）。本文首次精确测量其长期分数长度漂移率为
+    −(1.74±0.01)×10⁻⁸ yr⁻¹，优于 Zerodur（约 10⁻⁷ yr⁻¹）， 但比最优 ULE（~0.4×10⁻⁸ yr⁻¹）稍大，约为
+    ULE 较差值（~2.5×10⁻⁸ yr⁻¹）的量级。 杨氏模量 140 GPa 高于 ULE（67.6 GPa）和 Zerodur（90.3 GPa），力学刚度更强。
 
+    '
+  domain: 精密光学腔间隔体材料
+  formula: L⁻¹dΔL/dt = −(1.74±0.01)×10⁻⁸ yr⁻¹
+  key_insight: NEXCERA CTE 零点在室温附近，无需低温运行，但长期漂移仍大于最优 ULE
+  conditions: 室温（约 22.9°C CTE 零点）；N118C 批次；光学腔法精密测量
+  source:
+    zotero_key: JP6J4EQD
+    claim: At room temperature, we found a fractional length drift rate L^-1 d∆L/dt
+      = −(1.74±0.01)×10^-8 yr^-1
 methods:
-  - id: meth.optical_cavity_dimensional_metrology
-    name: "光学谐振腔尺寸稳定性精密测量法"
-    status: demonstrated
-    applies_to: ent.nexcera_optical_cavity_k18
-    steps_summary: >
-      将待测材料制成光学腔间隔体 → Nd:YAG 参考激光（锁定至超稳 ULE 腔）注入待测腔 →
-      光频梳（氢钟参考）测量激光绝对频率 → EOM 边带扫描确定腔模频率 →
-      长期（数月）重复测量腔频率变化 → 提取分数长度漂移率
-    source_claim: >
-      "An extremely sensitive method for determining the long-term dimensional stability of a
-      material consists of manufacturing the material into a spacer for an optical cavity.
-      One of the mode frequencies of such a cavity is then measured repeatedly against
-      an atomic frequency standard."
+- id: meth.optical_cavity_dimensional_metrology
+  name: 光学谐振腔尺寸稳定性精密测量法
+  status: demonstrated
+  applies_to: ent.nexcera_optical_cavity_k18
+  steps_summary: '将待测材料制成光学腔间隔体 → Nd:YAG 参考激光（锁定至超稳 ULE 腔）注入待测腔 → 光频梳（氢钟参考）测量激光绝对频率
+    → EOM 边带扫描确定腔模频率 → 长期（数月）重复测量腔频率变化 → 提取分数长度漂移率
 
+    '
+  source_claim: '"An extremely sensitive method for determining the long-term dimensional
+    stability of a material consists of manufacturing the material into a spacer for
+    an optical cavity. One of the mode frequencies of such a cavity is then measured
+    repeatedly against an atomic frequency standard."
+
+    '
 metrics:
-  - id: met.nexcera_length_drift_rate_k18
-    name: "NEXCERA 分数长度漂移率"
-    unit: "yr⁻¹"
-    role: primary
-    description: "NEXCERA N118C 腔间隔体在室温下的长期分数长度变化速率，反映材料尺寸稳定性。"
-    demonstrated_value:
-      value: "−(1.74±0.01)×10⁻⁸"
-      conditions: "室温（22.9°C 附近）；N118C 批次；测量周期约 67 天；光学接触后 125 天开始测量"
-      verification_status: observed
-      confidence: established
-      source:
-        zotero_key: "JP6J4EQD"
-        claim: "At room temperature, we found a fractional length drift rate L^-1 d∆L/dt = −(1.74±0.01)×10^-8 yr^-1"
-
-  - id: met.nexcera_cte_zero_temperature_k18
-    name: "NEXCERA CTE 零点温度"
-    unit: "°C"
-    role: secondary
-    description: "NEXCERA N118C 腔的热膨胀系数 CTE 过零温度，在此温度下腔长对温度一阶不灵敏。"
-    demonstrated_value:
-      value: "22.9±0.2"
-      conditions: "N118C 批次；12 cm 腔长；光学腔法"
-      verification_status: observed
-      confidence: established
-      source:
-        zotero_key: "JP6J4EQD"
-        claim: "The zero-CTE temperature is found to be at T_0 = 22.9±0.2°C"
-
+- id: met.nexcera_length_drift_rate_k18
+  name: NEXCERA 分数长度漂移率
+  unit: yr⁻¹
+  role: primary
+  description: NEXCERA N118C 腔间隔体在室温下的长期分数长度变化速率，反映材料尺寸稳定性。
+  demonstrated_value:
+    value: −(1.74±0.01)×10⁻⁸
+    conditions: 室温（22.9°C 附近）；N118C 批次；测量周期约 67 天；光学接触后 125 天开始测量
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: JP6J4EQD
+      claim: At room temperature, we found a fractional length drift rate L^-1 d∆L/dt
+        = −(1.74±0.01)×10^-8 yr^-1
+- id: met.nexcera_cte_zero_temperature_k18
+  name: NEXCERA CTE 零点温度
+  unit: °C
+  role: secondary
+  description: NEXCERA N118C 腔的热膨胀系数 CTE 过零温度，在此温度下腔长对温度一阶不灵敏。
+  demonstrated_value:
+    value: 22.9±0.2
+    conditions: N118C 批次；12 cm 腔长；光学腔法
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: JP6J4EQD
+      claim: The zero-CTE temperature is found to be at T_0 = 22.9±0.2°C
 relations:
-  - id: rel.K01
-    subject: ent.nexcera_optical_cavity_k18
-    predicate: CHARACTERIZED-BY
-    object: met.nexcera_length_drift_rate_k18
-    confidence: established
-    source:
-      zotero_key: "JP6J4EQD"
-      claim: "At room temperature, we found a fractional length drift rate L^-1 d∆L/dt = −(1.74±0.01)×10^-8 yr^-1"
-
-  - id: rel.K02
-    subject: ent.nexcera_optical_cavity_k18
-    predicate: CHARACTERIZED-BY
-    object: met.nexcera_cte_zero_temperature_k18
-    confidence: established
-    source:
-      zotero_key: "JP6J4EQD"
-      claim: "The zero-CTE temperature is found to be at T_0 = 22.9±0.2°C"
-
-  - id: rel.K03
-    subject: meth.optical_cavity_dimensional_metrology
-    predicate: ENABLED-BY
-    object: ent.nexcera_optical_cavity_k18
-    confidence: established
-    source:
-      zotero_key: "JP6J4EQD"
-      claim: "manufacturing the material into a spacer for an optical cavity. One of the mode frequencies of such a cavity is then measured repeatedly against an atomic frequency standard"
-
-  - id: rel.K04
-    subject: pri.nexcera_dimensional_stability
-    predicate: OPERATIONALIZED-AS
-    object: met.nexcera_length_drift_rate_k18
-    confidence: established
-    source:
-      zotero_key: "JP6J4EQD"
-      claim: "At room temperature, we found a fractional length drift rate L^-1 d∆L/dt = −(1.74±0.01)×10^-8 yr^-1"
+- id: rel.kwong_2018_01
+  subject: ent.nexcera_optical_cavity_k18
+  predicate: CHARACTERIZED-BY
+  object: met.nexcera_length_drift_rate_k18
+  confidence: established
+  source:
+    zotero_key: JP6J4EQD
+    claim: At room temperature, we found a fractional length drift rate L^-1 d∆L/dt
+      = −(1.74±0.01)×10^-8 yr^-1
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/kwong2018.yaml
+- id: rel.kwong_2018_02
+  subject: ent.nexcera_optical_cavity_k18
+  predicate: CHARACTERIZED-BY
+  object: met.nexcera_cte_zero_temperature_k18
+  confidence: established
+  source:
+    zotero_key: JP6J4EQD
+    claim: The zero-CTE temperature is found to be at T_0 = 22.9±0.2°C
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/kwong2018.yaml
+- id: rel.kwong_2018_03
+  subject: meth.optical_cavity_dimensional_metrology
+  predicate: ENABLED-BY
+  object: ent.nexcera_optical_cavity_k18
+  confidence: established
+  source:
+    zotero_key: JP6J4EQD
+    claim: manufacturing the material into a spacer for an optical cavity. One of
+      the mode frequencies of such a cavity is then measured repeatedly against an
+      atomic frequency standard
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/kwong2018.yaml
+- id: rel.kwong_2018_04
+  subject: pri.nexcera_dimensional_stability
+  predicate: OPERATIONALIZED-AS
+  object: met.nexcera_length_drift_rate_k18
+  confidence: established
+  source:
+    zotero_key: JP6J4EQD
+    claim: At room temperature, we found a fractional length drift rate L^-1 d∆L/dt
+      = −(1.74±0.01)×10^-8 yr^-1
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/kwong2018.yaml

@@ -39,7 +39,7 @@ metrics:
       source: {zotero_key: "QQ6FRH2U", claim: "gravitational potential differences with an uncertainty of 5 × 10^-18"}
 
 relations:
-  - id: rel.GR01
+  - id: rel.grotti_2018_R01
     subject: ent.transportable_sr_clock_ptb2018
     predicate: CHARACTERIZED-BY
     object: met.geodesy_uncertainty_grotti2018

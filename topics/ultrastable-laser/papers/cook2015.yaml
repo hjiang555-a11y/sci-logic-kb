@@ -1,82 +1,79 @@
-# Cook 2015 — 稳态光谱烧孔稳频方法
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-16
-# Schema版本：v4.1
-
 meta:
-  zotero_key: "KZJHGH3N"
+  zotero_key: KZJHGH3N
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: "Laser-Frequency Stabilization Based on Steady-State Spectral-Hole Burning in Eu³⁺:Y₂SiO₅"
+  title: Laser-Frequency Stabilization Based on Steady-State Spectral-Hole Burning
+    in Eu³⁺:Y₂SiO₅
   year: 2015
   first_author: Cook
-  journal: "Physical Review Letters"
+  journal: Physical Review Letters
   volume: 114
-  pages: "253902"
-  doi: "10.1103/PhysRevLett.114.253902"
-  note: >
-    基于稳态光谱烧孔模式的稳频方法——三区域光谱孔（间隔为基态超精细分裂），
-    烧孔模式数天不退化。与腔稳激光和 Yb 光钟比较，
-    SHB 分数频率不稳定度 1.0×10⁻¹⁵/√τ，平均至 8.5×10⁻¹⁷ @ 73 s。
-    核心贡献：稳态 SHB 方法——无需周期性重新烧孔。
+  pages: '253902'
+  doi: 10.1103/PhysRevLett.114.253902
+  note: '基于稳态光谱烧孔模式的稳频方法——三区域光谱孔（间隔为基态超精细分裂）， 烧孔模式数天不退化。与腔稳激光和 Yb 光钟比较， SHB 分数频率不稳定度
+    1.0×10⁻¹⁵/√τ，平均至 8.5×10⁻¹⁷ @ 73 s。 核心贡献：稳态 SHB 方法——无需周期性重新烧孔。
 
+    '
 entities: []
-
 principles:
-  - id: pri.steady_state_shb_pattern
-    name: "稳态光谱烧孔模式稳频原理"
-    tier: domain
-    verification_status: observed
-    statement: >
-      在 Eu³⁺:Y₂SiO₅ 中烧制三组光谱孔，频率间隔为 ¹⁵¹Eu³⁺ 的
-      基态超精细分裂。探测激光同时维持和探测烧孔模式，
-      实现稳态运行——烧孔模式数天不退化，无需周期性重新烧制。
-      RAM 通过主动伺服和数字除法降至 <1×10⁻⁶。
-    domain: "光谱烧孔 / 频率稳定化"
-    key_insight: "稳态烧孔消除了周期性重新烧制的需求，简化了长期运行。"
-    conditions: "需要三组匹配超精细分裂的光谱孔"
-    source_claim: "steady-state patterns of spectral holes... absorption pattern does not degrade after days"
+- id: pri.steady_state_shb_pattern
+  name: 稳态光谱烧孔模式稳频原理
+  tier: domain
+  verification_status: observed
+  statement: '在 Eu³⁺:Y₂SiO₅ 中烧制三组光谱孔，频率间隔为 ¹⁵¹Eu³⁺ 的 基态超精细分裂。探测激光同时维持和探测烧孔模式， 实现稳态运行——烧孔模式数天不退化，无需周期性重新烧制。
+    RAM 通过主动伺服和数字除法降至 <1×10⁻⁶。
 
+    '
+  domain: 光谱烧孔 / 频率稳定化
+  key_insight: 稳态烧孔消除了周期性重新烧制的需求，简化了长期运行。
+  conditions: 需要三组匹配超精细分裂的光谱孔
+  source_claim: steady-state patterns of spectral holes... absorption pattern does
+    not degrade after days
 methods:
-  - id: meth.steady_state_shb_stabilization_c15
-    name: "稳态光谱烧孔稳频方法（Cook 2015）"
-    type: stabilization_technique
-    purpose: >
-      通过三区域稳态光谱烧孔模式实现长期稳定的激光频率锁定，
-      无需周期性重新烧制光谱孔
-    steps:
-      - "在Eu³⁺:Y₂SiO₅晶体中烧制三组光谱孔，频率间隔匹配¹⁵¹Eu³⁺基态超精细分裂"
-      - "使用探测激光同时维持和监测烧孔模式"
-      - "实施主动伺服系统将残余振幅调制（RAM）降至<1×10⁻⁶"
-      - "将激光频率锁定到稳态烧孔模式"
-      - "与Yb光钟比较以验证稳定度"
-    key_parameters:
-      pattern_type: "三区域稳态烧孔"
-      ram_suppression: "<1×10⁻⁶"
-      hole_degradation: "数天不退化"
-    connects:
-      - pri.steady_state_shb_pattern
-      - met.steady_state_shb_stability_c15
-      - ent.shb_eu_yso_reference_l13
-    source_claim: "steady-state patterns of spectral holes... absorption pattern does not degrade after days"
+- id: meth.steady_state_shb_stabilization_c15
+  name: 稳态光谱烧孔稳频方法（Cook 2015）
+  type: stabilization_technique
+  purpose: '通过三区域稳态光谱烧孔模式实现长期稳定的激光频率锁定， 无需周期性重新烧制光谱孔
 
+    '
+  steps:
+  - 在Eu³⁺:Y₂SiO₅晶体中烧制三组光谱孔，频率间隔匹配¹⁵¹Eu³⁺基态超精细分裂
+  - 使用探测激光同时维持和监测烧孔模式
+  - 实施主动伺服系统将残余振幅调制（RAM）降至<1×10⁻⁶
+  - 将激光频率锁定到稳态烧孔模式
+  - 与Yb光钟比较以验证稳定度
+  key_parameters:
+    pattern_type: 三区域稳态烧孔
+    ram_suppression: <1×10⁻⁶
+    hole_degradation: 数天不退化
+  connects:
+  - pri.steady_state_shb_pattern
+  - met.steady_state_shb_stability_c15
+  - ent.shb_eu_yso_reference_l13
+  source_claim: steady-state patterns of spectral holes... absorption pattern does
+    not degrade after days
 metrics:
-  - id: met.steady_state_shb_stability_c15
-    name: "稳态 SHB 稳频稳定度（Cook 2015）"
-    unit: "无量纲"
-    demonstrated_value:
-      value: "1.0×10⁻¹⁵/√τ → 8.5×10⁻¹⁷ @ 73 s"
-      conditions: "Eu³⁺:Y₂SiO₅, 稳态三区域烧孔, vs Yb 光钟"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "KZJHGH3N", claim: "spectral-hole fractional frequency instability of 1.0×10⁻¹⁵τ⁻¹/² that averages to 8.5×10⁻¹⁷ at τ=73 s"}
-
-relations:
-  - id: rel.CO01
-    subject: ent.shb_eu_yso_reference_l13
-    predicate: CHARACTERIZED-BY
-    object: met.steady_state_shb_stability_c15
+- id: met.steady_state_shb_stability_c15
+  name: 稳态 SHB 稳频稳定度（Cook 2015）
+  unit: 无量纲
+  demonstrated_value:
+    value: 1.0×10⁻¹⁵/√τ → 8.5×10⁻¹⁷ @ 73 s
+    conditions: Eu³⁺:Y₂SiO₅, 稳态三区域烧孔, vs Yb 光钟
+    verification_status: observed
     confidence: established
-    source: {zotero_key: "KZJHGH3N", claim: "laser-frequency stabilization via steady-state spectral-hole burning"}
-    note: "跨文件引用，ent.shb_eu_yso_reference_l13 定义于 leibrandt2013.yaml"
+    source:
+      zotero_key: KZJHGH3N
+      claim: spectral-hole fractional frequency instability of 1.0×10⁻¹⁵τ⁻¹/² that
+        averages to 8.5×10⁻¹⁷ at τ=73 s
+relations:
+- id: rel.cook_2015_O01
+  subject: ent.shb_eu_yso_reference_l13
+  predicate: CHARACTERIZED-BY
+  object: met.steady_state_shb_stability_c15
+  confidence: established
+  source:
+    zotero_key: KZJHGH3N
+    claim: laser-frequency stabilization via steady-state spectral-hole burning
+  note: 跨文件引用，ent.shb_eu_yso_reference_l13 定义于 leibrandt2013.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/cook2015.yaml

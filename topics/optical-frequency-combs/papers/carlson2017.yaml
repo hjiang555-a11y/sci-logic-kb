@@ -83,7 +83,7 @@ metrics:
       source: {zotero_key: "WCBMETLH", claim: "using 11.3 mW of optical power incident on the chip. This is approximately 10 times lower than conventional approaches"}
 
 relations:
-  - id: rel.Car17_01
+  - id: rel.carlson_2017_ar17_01
     subject: ent.sin_waveguide_low_power_f2f_c17
     predicate: PART-OF
     object: ent.er_fiber_frequency_comb
@@ -91,21 +91,21 @@ relations:
     source: {zotero_key: "WCBMETLH", claim: "telecom-wavelength fiber frequency comb"}
     note: "跨文件引用 ent.er_fiber_frequency_comb（定义于 droste2016.yaml）"
 
-  - id: rel.Car17_02
+  - id: rel.carlson_2017_ar17_02
     subject: ent.sin_waveguide_low_power_f2f_c17
     predicate: CHARACTERIZED-BY
     object: met.sin_waveguide_f2f_power_c17
     confidence: established
     source: {zotero_key: "WCBMETLH", claim: "11.3 mW of optical power incident on the chip"}
 
-  - id: rel.Car17_03
+  - id: rel.carlson_2017_ar17_03
     subject: met.sin_waveguide_f2f_power_c17
     predicate: BOUNDED-BY
     object: pri.sin_waveguide_low_power_f2f_c17
     confidence: established
     source: {zotero_key: "WCBMETLH", claim: "high nonlinearity of silicon nitride, which can provide two octaves of spectral broadening with incident energies of only 110 pJ"}
 
-  - id: rel.Car17_04
+  - id: rel.carlson_2017_ar17_04
     subject: pri.sin_waveguide_low_power_f2f_c17
     predicate: ENABLED-BY
     object: pri.self_referencing_f2f

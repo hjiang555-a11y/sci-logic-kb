@@ -1,109 +1,109 @@
-# Thorpe 2011 — 光谱烧孔稳频 6×10⁻¹⁶
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-16
-# Schema版本：v4.1
-
 meta:
-  zotero_key: "Q2MRB267"
+  zotero_key: Q2MRB267
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
-  title: "Frequency stabilization to 6×10⁻¹⁶ via spectral-hole burning"
+  title: Frequency stabilization to 6×10⁻¹⁶ via spectral-hole burning
   year: 2011
   first_author: Thorpe
-  journal: "Nature Photonics"
+  journal: Nature Photonics
   volume: 5
-  pages: "688-693"
-  doi: "10.1038/nphoton.2011.215"
-  note: >
-    技术分支：光谱烧孔稳频（Spectral Hole Burning Frequency Reference）
-    首次演示 FP 腔 + SHB 两级稳频方案，
-    激光先预稳定至 FP 腔（σ_y < 1×10⁻¹³），
-    再锁定至 Eu³⁺:Y₂SiO₅ 光谱烧孔模式达 σ_y ≤ 6×10⁻¹⁶ @ 2–8 s。
-    测量光谱孔对温度（16 kHz/K²）、压力（-11.4 Hz/Pa）和加速度（7×10⁻¹²/g）的灵敏度。
-    核心贡献：SHB 稳频的里程碑——首次达到 10⁻¹⁶ 级。
+  pages: 688-693
+  doi: 10.1038/nphoton.2011.215
+  note: '技术分支：光谱烧孔稳频（Spectral Hole Burning Frequency Reference） 首次演示 FP 腔 + SHB 两级稳频方案，
+    激光先预稳定至 FP 腔（σ_y < 1×10⁻¹³）， 再锁定至 Eu³⁺:Y₂SiO₅ 光谱烧孔模式达 σ_y ≤ 6×10⁻¹⁶ @ 2–8 s。 测量光谱孔对温度（16
+    kHz/K²）、压力（-11.4 Hz/Pa）和加速度（7×10⁻¹²/g）的灵敏度。 核心贡献：SHB 稳频的里程碑——首次达到 10⁻¹⁶ 级。
 
+    '
 entities: []
-  # 复用 ent.shb_eu_yso_reference_l13（定义于 leibrandt2013.yaml）
-
 principles: []
-  # 复用 pri.spectral_hole_burning_frequency_ref
-
 methods:
-  - id: meth.two_stage_shb_fp_lock_thorpe11
-    name: "两级稳频方法：FP腔预稳 + SHB锁定（Thorpe 2011）"
-    type: stabilization_technique
-    purpose: >
-      通过两级锁定方案实现超稳激光：先将激光预稳定到FP腔，
-      再将预稳激光锁定到Eu³⁺:Y₂SiO₅光谱烧孔模式
-    steps:
-      - "将激光锁定到FP参考腔实现预稳定（σ_y < 1×10⁻¹³）"
-      - "在Eu³⁺:Y₂SiO₅晶体中烧制光谱孔"
-      - "使用预稳激光作为探针检测光谱孔频率"
-      - "将激光频率锁定到光谱孔中心"
-      - "测量环境灵敏度（温度、压力、加速度）"
-    key_parameters:
-      fp_prestability: "σ_y < 1×10⁻¹³"
-      shb_stability: "σ_y ≤ 6×10⁻¹⁶ @ 2–8 s"
-      temperature: "4 K"
-    connects:
-      - ent.shb_eu_yso_reference_l13
-      - met.shb_stability_thorpe11
-      - met.shb_environmental_sensitivity_thorpe11
-    source_claim: "stabilize the laser to σ_y ≤ 6×10⁻¹⁶ for 2 s ≤ τ ≤ 8 s via spectral-hole burning"
+- id: meth.two_stage_shb_fp_lock_thorpe11
+  name: 两级稳频方法：FP腔预稳 + SHB锁定（Thorpe 2011）
+  type: stabilization_technique
+  purpose: '通过两级锁定方案实现超稳激光：先将激光预稳定到FP腔， 再将预稳激光锁定到Eu³⁺:Y₂SiO₅光谱烧孔模式
 
+    '
+  steps:
+  - 将激光锁定到FP参考腔实现预稳定（σ_y < 1×10⁻¹³）
+  - 在Eu³⁺:Y₂SiO₅晶体中烧制光谱孔
+  - 使用预稳激光作为探针检测光谱孔频率
+  - 将激光频率锁定到光谱孔中心
+  - 测量环境灵敏度（温度、压力、加速度）
+  key_parameters:
+    fp_prestability: σ_y < 1×10⁻¹³
+    shb_stability: σ_y ≤ 6×10⁻¹⁶ @ 2–8 s
+    temperature: 4 K
+  connects:
+  - ent.shb_eu_yso_reference_l13
+  - met.shb_stability_thorpe11
+  - met.shb_environmental_sensitivity_thorpe11
+  source_claim: stabilize the laser to σ_y ≤ 6×10⁻¹⁶ for 2 s ≤ τ ≤ 8 s via spectral-hole
+    burning
 metrics:
-  - id: met.shb_stability_thorpe11
-    name: "SHB 稳频稳定度（Thorpe 2011）"
-    unit: "无量纲"
-    role: primary   # σ_y（ADEV）@ 2–8 s；SHB 子分支 σ_y 主线指标
-    demonstrated_value:
-      value: "σ_y ≤ 6×10⁻¹⁶ @ 2–8 s"
-      conditions: "Eu³⁺:Y₂SiO₅，两级稳频（FP预稳+SHB），4 K"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "Q2MRB267", claim: "stabilize the laser to σ_y ≤ 6×10⁻¹⁶ for 2 s ≤ τ ≤ 8 s"}
-
-  - id: met.shb_environmental_sensitivity_thorpe11
-    name: "SHB 环境灵敏度（Thorpe 2011）"
-    unit: "various"
-    demonstrated_value:
-      value: "temperature: 16 kHz/K²; pressure: -11.4 Hz/Pa; acceleration: 7×10⁻¹²/g"
-      conditions: "Eu³⁺:Y₂SiO₅, 4 K"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "Q2MRB267", claim: "temperature (16 kHz K⁻²), pressure (-11.4 Hz Pa⁻¹) and acceleration (7×10⁻¹² g⁻¹)"}
-    note: "每个参数均低于对应的 FP 腔参数"
-
+- id: met.shb_stability_thorpe11
+  name: SHB 稳频稳定度（Thorpe 2011）
+  unit: 无量纲
+  role: primary
+  demonstrated_value:
+    value: σ_y ≤ 6×10⁻¹⁶ @ 2–8 s
+    conditions: Eu³⁺:Y₂SiO₅，两级稳频（FP预稳+SHB），4 K
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Q2MRB267
+      claim: stabilize the laser to σ_y ≤ 6×10⁻¹⁶ for 2 s ≤ τ ≤ 8 s
+- id: met.shb_environmental_sensitivity_thorpe11
+  name: SHB 环境灵敏度（Thorpe 2011）
+  unit: various
+  demonstrated_value:
+    value: 'temperature: 16 kHz/K²; pressure: -11.4 Hz/Pa; acceleration: 7×10⁻¹²/g'
+    conditions: Eu³⁺:Y₂SiO₅, 4 K
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Q2MRB267
+      claim: temperature (16 kHz K⁻²), pressure (-11.4 Hz Pa⁻¹) and acceleration (7×10⁻¹²
+        g⁻¹)
+  note: 每个参数均低于对应的 FP 腔参数
 relations:
-  - id: rel.TH01
-    subject: ent.shb_eu_yso_reference_l13
-    predicate: CHARACTERIZED-BY
-    object: met.shb_stability_thorpe11
-    confidence: established
-    source: {zotero_key: "Q2MRB267", claim: "6×10⁻¹⁶ via spectral-hole burning"}
-    note: "跨文件引用，ent.shb_eu_yso_reference_l13 定义于 leibrandt2013.yaml"
-
-  - id: rel.TH02
-    subject: ent.shb_eu_yso_reference_l13
-    predicate: CHARACTERIZED-BY
-    object: met.shb_environmental_sensitivity_thorpe11
-    confidence: established
-    source: {zotero_key: "Q2MRB267", claim: "temperature (16 kHz K⁻²), pressure (-11.4 Hz Pa⁻¹) and acceleration (7×10⁻¹² g⁻¹)"}
-    conditions: "Eu³⁺:Y₂SiO₅，4 K"
-    note: "SHB 频率参考系统的环境灵敏度表征（温度/压力/加速度）；ent.shb_eu_yso_reference_l13 定义于 leibrandt2013.yaml"
-
-  - id: rel.TH03
-    subject: met.shb_stability_thorpe11
-    predicate: OPERATIONALIZED-AS
-    object: meth.two_stage_shb_fp_lock_thorpe11
-    confidence: established
-    source: {zotero_key: "Q2MRB267", claim: "stabilize the laser to σ_y ≤ 6×10⁻¹⁶ for 2 s ≤ τ ≤ 8 s via spectral-hole burning"}
-    conditions: "Eu³⁺:Y₂SiO₅，4 K，FP 腔预稳（σ_y<1×10⁻¹³）+ SHB 二次锁定"
-    note: "SHB 稳频稳定度通过两级锁定方法（FP 预稳 + SHB 锁定）实现"
-
+- id: rel.thorpe_2011_H01
+  subject: ent.shb_eu_yso_reference_l13
+  predicate: CHARACTERIZED-BY
+  object: met.shb_stability_thorpe11
+  confidence: established
+  source:
+    zotero_key: Q2MRB267
+    claim: 6×10⁻¹⁶ via spectral-hole burning
+  note: 跨文件引用，ent.shb_eu_yso_reference_l13 定义于 leibrandt2013.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/thorpe2011.yaml
+- id: rel.thorpe_2011_H02
+  subject: ent.shb_eu_yso_reference_l13
+  predicate: CHARACTERIZED-BY
+  object: met.shb_environmental_sensitivity_thorpe11
+  confidence: established
+  source:
+    zotero_key: Q2MRB267
+    claim: temperature (16 kHz K⁻²), pressure (-11.4 Hz Pa⁻¹) and acceleration (7×10⁻¹²
+      g⁻¹)
+  conditions: Eu³⁺:Y₂SiO₅，4 K
+  note: SHB 频率参考系统的环境灵敏度表征（温度/压力/加速度）；ent.shb_eu_yso_reference_l13 定义于 leibrandt2013.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/thorpe2011.yaml
+- id: rel.thorpe_2011_H03
+  subject: met.shb_stability_thorpe11
+  predicate: OPERATIONALIZED-AS
+  object: meth.two_stage_shb_fp_lock_thorpe11
+  confidence: established
+  source:
+    zotero_key: Q2MRB267
+    claim: stabilize the laser to σ_y ≤ 6×10⁻¹⁶ for 2 s ≤ τ ≤ 8 s via spectral-hole
+      burning
+  conditions: Eu³⁺:Y₂SiO₅，4 K，FP 腔预稳（σ_y<1×10⁻¹³）+ SHB 二次锁定
+  note: SHB 稳频稳定度通过两级锁定方法（FP 预稳 + SHB 锁定）实现
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/thorpe2011.yaml
 historical_landmarks:
   first_demonstration:
-    event: "SHB 稳频首次达到 10⁻¹⁶ 级"
+    event: SHB 稳频首次达到 10⁻¹⁶ 级
     year: 2011
-    source: {zotero_key: "Q2MRB267"}
+    source:
+      zotero_key: Q2MRB267

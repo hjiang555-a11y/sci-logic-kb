@@ -97,7 +97,7 @@ metrics:
       source: {zotero_key: "QXC7FSMC", claim: "below 0.2 rad carrier-envelope-offset frequency phase noise"}
 
 relations:
-  - id: rel.Kuse16_01
+  - id: rel.kuse_2016_use16_01
     subject: ent.all_pm_er_nalm_comb_k16
     predicate: PART-OF
     object: ent.er_fiber_frequency_comb
@@ -105,28 +105,28 @@ relations:
     source: {zotero_key: "QXC7FSMC", claim: "A fully stabilized all polarization-maintaining Er frequency comb with a nonlinear amplifying loop mirror"}
     note: "跨文件引用 ent.er_fiber_frequency_comb（droste2016.yaml）"
 
-  - id: rel.Kuse16_02
+  - id: rel.kuse_2016_use16_02
     subject: ent.all_pm_er_nalm_comb_k16
     predicate: CHARACTERIZED-BY
     object: met.er_fiber_comb_timing_jitter_k16
     confidence: established
     source: {zotero_key: "QXC7FSMC", claim: "40 attosecond from 10 kHz to 10 MHz, which is the lowest value of any Er fiber frequency comb to date"}
 
-  - id: rel.Kuse16_03
+  - id: rel.kuse_2016_use16_03
     subject: ent.all_pm_er_nalm_comb_k16
     predicate: CHARACTERIZED-BY
     object: met.fceo_phase_noise_k16
     confidence: established
     source: {zotero_key: "QXC7FSMC", claim: "below 0.2 rad carrier-envelope-offset frequency phase noise"}
 
-  - id: rel.Kuse16_04
+  - id: rel.kuse_2016_use16_04
     subject: meth.nalm_all_pm_er_comb_stabilization
     predicate: OPERATIONALIZED-AS
     object: ent.all_pm_er_nalm_comb_k16
     confidence: established
     source: {zotero_key: "QXC7FSMC", claim: "A fully stabilized all polarization-maintaining Er frequency comb with a nonlinear amplifying loop mirror is demonstrated"}
 
-  - id: rel.Kuse16_05
+  - id: rel.kuse_2016_use16_05
     subject: meth.nalm_all_pm_er_comb_stabilization
     predicate: ENABLED-BY
     object: pri.figure9_nalm_pm_self_starting
@@ -134,7 +134,7 @@ relations:
     source: {zotero_key: "QXC7FSMC", claim: "nonlinear amplifying loop mirror ... self-starting in all-PM configuration"}
     note: "跨文件引用 pri.figure9_nalm_pm_self_starting"
 
-  - id: rel.Kuse16_06
+  - id: rel.kuse_2016_use16_06
     subject: meth.nalm_all_pm_er_comb_stabilization
     predicate: ENABLED-BY
     object: pri.self_referencing_f2f
@@ -142,7 +142,7 @@ relations:
     source: {zotero_key: "QXC7FSMC", claim: "f-2f self-referencing for fceo stabilization"}
     note: "跨文件引用 pri.self_referencing_f2f（giunta2019.yaml）"
 
-  - id: rel.Kuse16_07
+  - id: rel.kuse_2016_use16_07
     subject: ent.all_pm_er_nalm_comb_k16
     predicate: COMPETES-WITH
     object: ent.all_pm_er_fiber_comb_k15

@@ -71,7 +71,7 @@ principles:
       "We demonstrate a device that integrates a III-V semiconductor saturable absorber mirror with a graphene electro-optic modulator, which provides a monolithic solution to modelocking and noise suppression in a frequency comb. The device offers a pure loss modulation bandwidth exceeding 5 MHz and only requires a low voltage driver."
 
 relations:
-  - id: rel.Lee15_01
+  - id: rel.lee_2015_ee15_01
     subject: ent.monolithic_sesam_graphene_device_l15
     predicate: PART-OF
     object: ent.er_fiber_frequency_comb
@@ -79,14 +79,14 @@ relations:
     source: {zotero_key: "L6ZZII7R", claim: "fiber-based systems ... all polarization-maintaining (PM) oscillator"}
     note: "跨文件引用 ent.er_fiber_frequency_comb（定义于 droste2016.yaml）"
 
-  - id: rel.Lee15_02
+  - id: rel.lee_2015_ee15_02
     subject: ent.monolithic_sesam_graphene_device_l15
     predicate: CHARACTERIZED-BY
     object: pri.monolithic_sesam_graphene_bypass_gain_lifetime_l15
     confidence: established
     source: {zotero_key: "L6ZZII7R", claim: "pure loss modulation bandwidth exceeding 5 MHz"}
 
-  - id: rel.Lee15_03
+  - id: rel.lee_2015_ee15_03
     subject: pri.monolithic_sesam_graphene_bypass_gain_lifetime_l15
     predicate: BOUNDED-BY
     object: pri.gain_lifetime_servo_bandwidth_limit
@@ -99,7 +99,7 @@ relations:
         source: {zotero_key: "L6ZZII7R"}
     note: "跨文件引用 pri.gain_lifetime_servo_bandwidth_limit（定义于 kuse2015.yaml）——本方法通过 graphene 损耗调制绕过此限制"
 
-  - id: rel.Lee15_04
+  - id: rel.lee_2015_ee15_04
     subject: pri.monolithic_sesam_graphene_bypass_gain_lifetime_l15
     predicate: ENABLED-BY
     object: pri.intracavity_graphene_fast_modulation

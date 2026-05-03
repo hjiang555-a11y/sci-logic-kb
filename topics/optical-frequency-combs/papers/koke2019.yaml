@@ -116,14 +116,14 @@ metrics:
         note: "首次 Continental-scale Brillouin-amplified link"
 
 relations:
-  - id: rel.Kok19_01
+  - id: rel.koke_2019_ok19_01
     subject: ent.brillouin_rls_1400km_link_k19
     predicate: CHARACTERIZED-BY
     object: met.brillouin_rls_1400km_frequency_offset_k19
     confidence: established
     source: {zotero_key: "ZG45BBYV", claim: "(-1.1±0.4)×10⁻²⁰"}
 
-  - id: rel.Kok19_02
+  - id: rel.koke_2019_ok19_02
     subject: met.brillouin_rls_1400km_frequency_offset_k19
     predicate: BOUNDED-BY
     object: pri.brillouin_amplification_long_distance_k19
@@ -135,7 +135,7 @@ relations:
         status: demonstrated
         source: {zotero_key: "ZG45BBYV"}
 
-  - id: rel.Kok19_03
+  - id: rel.koke_2019_ok19_03
     subject: meth.brillouin_rls_hybrid_1400km_k19
     predicate: OPERATIONALIZED-AS
     object: ent.brillouin_rls_1400km_link_k19

@@ -1,172 +1,179 @@
-# Davila-Rodriguez 2017 — 25 mm ULE 腔紧凑热噪声极限参考腔（微波生成）[evidence]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：ultrastable-laser
-
 meta:
-  zotero_key: "NHG79KDA"
+  zotero_key: NHG79KDA
   topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: "Compact, thermal-noise-limited reference cavity for ultra-low-noise microwave generation"
+  title: Compact, thermal-noise-limited reference cavity for ultra-low-noise microwave
+    generation
   year: 2017
-  first_author: "Davila-Rodriguez"
-  authors: ["J. Davila-Rodriguez", "F. N. Baynes", "A. D. Ludlow", "T. M. Fortier", "H. Leopardi", "S. A. Diddams", "F. Quinlan"]
-  journal: "Optics Letters"
+  first_author: Davila-Rodriguez
+  authors:
+  - J. Davila-Rodriguez
+  - F. N. Baynes
+  - A. D. Ludlow
+  - T. M. Fortier
+  - H. Leopardi
+  - S. A. Diddams
+  - F. Quinlan
+  journal: Optics Letters
   volume: 42
   issue: 7
-  pages: "1277"
-  doi: "10.1364/OL.42.001277"
-  note: >
-    25 mm 长 ULE 圆柱腔（直径 50 mm），熔融石英镜配 ULE 衬环（调节 CTE 零点），
-    刚性夹持（Invar 板 + 弹性体球）对挤压力一阶不灵敏。
-    室温热噪声极限运行，1 Hz–1 kHz 内激光相位噪声接近热噪声极限。
-    Allan 偏差 2×10⁻¹⁵（τ = 0.1 s）；10 GHz 相位噪声 −97 dBc/Hz @ 1 Hz 偏移。
+  pages: '1277'
+  doi: 10.1364/OL.42.001277
+  note: '25 mm 长 ULE 圆柱腔（直径 50 mm），熔融石英镜配 ULE 衬环（调节 CTE 零点）， 刚性夹持（Invar 板 + 弹性体球）对挤压力一阶不灵敏。
+    室温热噪声极限运行，1 Hz–1 kHz 内激光相位噪声接近热噪声极限。 Allan 偏差 2×10⁻¹⁵（τ = 0.1 s）；10 GHz 相位噪声 −97
+    dBc/Hz @ 1 Hz 偏移。
 
+    '
 entities:
-  - id: ent.compact_ule_cavity_25mm_d17
-    name: "25 mm ULE 圆柱参考腔（Davila-Rodriguez 2017）"
-    hierarchy_level: 2
-    status: demonstrated
-    function: >
-      25 mm 长、50 mm 直径 ULE 圆柱腔，大径长比设计在圆周方向存在挤压力不灵敏点（约 22 mm）。
-      低损耗熔融石英镜基板（平面 + R=10.2 m 凹面）光学接触于 ULE 间隔体，
-      外侧附加 ULE 衬环将 CTE 零点调至室温附近。
-      总腔组件长约 50 mm，体积 61 mL。Invar 平行板通过三对弹性体球（3.2 mm）夹持。
-      精细度约 400,000 @ 1070 nm，光模场直径约 490 μm（FWHM）。
-    note: "腔体置于真空腔中，无主动温控；EOM 温控但无 RAM 主动抑制。"
+- id: ent.compact_ule_cavity_25mm_d17
+  name: 25 mm ULE 圆柱参考腔（Davila-Rodriguez 2017）
+  hierarchy_level: 2
+  status: demonstrated
+  function: '25 mm 长、50 mm 直径 ULE 圆柱腔，大径长比设计在圆周方向存在挤压力不灵敏点（约 22 mm）。 低损耗熔融石英镜基板（平面
+    + R=10.2 m 凹面）光学接触于 ULE 间隔体， 外侧附加 ULE 衬环将 CTE 零点调至室温附近。 总腔组件长约 50 mm，体积 61 mL。Invar
+    平行板通过三对弹性体球（3.2 mm）夹持。 精细度约 400,000 @ 1070 nm，光模场直径约 490 μm（FWHM）。
 
+    '
+  note: 腔体置于真空腔中，无主动温控；EOM 温控但无 RAM 主动抑制。
 principles:
-  - id: pri.squeeze_insensitive_cylindrical_cavity
-    name: "圆柱腔挤压不灵敏持腔原理"
-    tier: engineering
-    verification_status: observed
-    statement: >
-      有限泊松比圆柱体在轴向挤压时轴缩短、在径向（圆周）挤压时轴伸长，
-      存在一个特定的直径-长度比使两效应抵消，腔长对挤压力一阶不灵敏。
-      FEM 仿真表明 25 mm 长腔的挤压不灵敏直径 >40 mm，本文选 50 mm。
-      实测最大加速度灵敏度约 4.5×10⁻¹⁰ g⁻¹（腔轴方向，持腔半径 24.5 mm 最小化），
-      仍高于预期，可能受装配非对称性主导。
-    domain: "紧凑型腔稳激光振动抑制"
-    key_insight: "大径长比圆柱腔在圆周方向存在挤压力零点，无需复杂几何即可实现刚性夹持"
-    conditions: "圆柱 ULE 腔；有限弹性（泊松比 > 0）；FEM 计算；25 mm 长，50 mm 直径"
-    source:
-      zotero_key: "NHG79KDA"
-      claim: "For a 25-mm-long spacer, we find that the zero crossing of the holding force sensitivity exists for spacer diameters larger than ~40 mm"
+- id: pri.squeeze_insensitive_cylindrical_cavity
+  name: 圆柱腔挤压不灵敏持腔原理
+  tier: engineering
+  verification_status: observed
+  statement: '有限泊松比圆柱体在轴向挤压时轴缩短、在径向（圆周）挤压时轴伸长， 存在一个特定的直径-长度比使两效应抵消，腔长对挤压力一阶不灵敏。 FEM
+    仿真表明 25 mm 长腔的挤压不灵敏直径 >40 mm，本文选 50 mm。 实测最大加速度灵敏度约 4.5×10⁻¹⁰ g⁻¹（腔轴方向，持腔半径 24.5
+    mm 最小化）， 仍高于预期，可能受装配非对称性主导。
 
-  - id: pri.large_mode_thermal_noise_reduction_d17
-    name: "大光斑模场热噪声降低原理"
-    tier: domain
-    verification_status: observed
-    statement: >
-      增大腔镜上的光斑尺寸可降低镜面涂层和基板的热噪声（Brownian、热弹性、热折射）。
-      通过选择接近不稳定腔的曲率半径（近平凹腔，R → ∞ 方向）可显著增大光斑。
-      本文选 R = 10.2 m（平面 + 凹面），在 25 mm 短腔中实现 490 μm FWHM 光模，
-      使热噪声极限降至约 −9 dBrad²/Hz @ 1 Hz（与 40 mm 腔用标准 50 cm ROC 镜等效）。
-    domain: "热噪声极限光学腔"
-    key_insight: "接近不稳定腔设计用大曲率半径镜在短腔内获得大光斑，抑制热噪声"
-    conditions: "近平凹腔设计；R = 10.2 m；腔长 25 mm；室温"
-    source:
-      zotero_key: "NHG79KDA"
-      claim: "Increasing the spot size can be achieved either by increasing the ROC of the mirrors or by adopting a near-concentric cavity. We have chosen a plano-10.2m ROC design, yielding an optical mode with intensity full width at half-maximum of ~490 μm"
+    '
+  domain: 紧凑型腔稳激光振动抑制
+  key_insight: 大径长比圆柱腔在圆周方向存在挤压力零点，无需复杂几何即可实现刚性夹持
+  conditions: 圆柱 ULE 腔；有限弹性（泊松比 > 0）；FEM 计算；25 mm 长，50 mm 直径
+  source:
+    zotero_key: NHG79KDA
+    claim: For a 25-mm-long spacer, we find that the zero crossing of the holding
+      force sensitivity exists for spacer diameters larger than ~40 mm
+- id: pri.large_mode_thermal_noise_reduction_d17
+  name: 大光斑模场热噪声降低原理
+  tier: domain
+  verification_status: observed
+  statement: '增大腔镜上的光斑尺寸可降低镜面涂层和基板的热噪声（Brownian、热弹性、热折射）。 通过选择接近不稳定腔的曲率半径（近平凹腔，R →
+    ∞ 方向）可显著增大光斑。 本文选 R = 10.2 m（平面 + 凹面），在 25 mm 短腔中实现 490 μm FWHM 光模， 使热噪声极限降至约
+    −9 dBrad²/Hz @ 1 Hz（与 40 mm 腔用标准 50 cm ROC 镜等效）。
 
+    '
+  domain: 热噪声极限光学腔
+  key_insight: 接近不稳定腔设计用大曲率半径镜在短腔内获得大光斑，抑制热噪声
+  conditions: 近平凹腔设计；R = 10.2 m；腔长 25 mm；室温
+  source:
+    zotero_key: NHG79KDA
+    claim: Increasing the spot size can be achieved either by increasing the ROC of
+      the mirrors or by adopting a near-concentric cavity. We have chosen a plano-10.2m
+      ROC design, yielding an optical mode with intensity full width at half-maximum
+      of ~490 μm
 metrics:
-  - id: met.allan_dev_d17
-    name: "Allan 偏差（ADEV）@ 1070 nm（25 mm 腔）"
-    unit: "（无量纲）"
-    role: primary
-    description: "25 mm 紧凑 ULE 腔稳激光器在短平均时间内的分数频率 Allan 偏差，由相位噪声积分推算。"
-    demonstrated_value:
-      value: "2×10⁻¹⁵"
-      conditions: "τ = 0.1 s；1070 nm；室温；无主动温控；从相位噪声谱积分求得"
-      verification_status: observed
-      confidence: established
-      source:
-        zotero_key: "NHG79KDA"
-        claim: "our cavity reaches ~2×10^-15 Allan deviation at 0.1 s of averaging"
-
-  - id: met.microwave_phase_noise_10ghz_d17
-    name: "10 GHz 微波相位噪声（OFD 输出）"
-    unit: "dBc/Hz"
-    role: primary
-    description: "通过光频分频（OFD）将 25 mm 腔稳激光分频至 10 GHz 的单边带相位噪声。"
-    demonstrated_value:
-      value: "−97 dBc/Hz @ 1 Hz 偏移；<−173 dBc/Hz（>600 Hz 偏移）"
-      conditions: "10 GHz 载波；1 Hz 偏移；室温；无主动温控；OFD 方案"
-      verification_status: observed
-      confidence: established
-      source:
-        zotero_key: "NHG79KDA"
-        claim: "supports 10 GHz generation with phase noise near −100 dBc/Hz at 1 Hz offset and <−173 dBc/Hz for all offsets >600 Hz"
-
-  - id: met.accel_sensitivity_d17
-    name: "腔轴方向加速度灵敏度（最小化后）"
-    unit: "g⁻¹"
-    role: secondary
-    description: "25 mm ULE 圆柱腔沿腔轴方向加速度灵敏度，在挤压半径 24.5 mm 处最小化。"
-    demonstrated_value:
-      value: "~4.5×10⁻¹⁰"
-      conditions: "腔轴方向；持腔半径 24.5 mm（最优）；主动隔振平台上"
-      verification_status: observed
-      confidence: medium
-      source:
-        zotero_key: "NHG79KDA"
-        claim: "We find the largest acceleration sensitivity to be along the cavity axis at ~4.5×10^-10 g^-1, minimized at a holding radius of 24.5 mm"
-
+- id: met.allan_dev_d17
+  name: Allan 偏差（ADEV）@ 1070 nm（25 mm 腔）
+  unit: （无量纲）
+  role: primary
+  description: 25 mm 紧凑 ULE 腔稳激光器在短平均时间内的分数频率 Allan 偏差，由相位噪声积分推算。
+  demonstrated_value:
+    value: 2×10⁻¹⁵
+    conditions: τ = 0.1 s；1070 nm；室温；无主动温控；从相位噪声谱积分求得
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: NHG79KDA
+      claim: our cavity reaches ~2×10^-15 Allan deviation at 0.1 s of averaging
+- id: met.microwave_phase_noise_10ghz_d17
+  name: 10 GHz 微波相位噪声（OFD 输出）
+  unit: dBc/Hz
+  role: primary
+  description: 通过光频分频（OFD）将 25 mm 腔稳激光分频至 10 GHz 的单边带相位噪声。
+  demonstrated_value:
+    value: −97 dBc/Hz @ 1 Hz 偏移；<−173 dBc/Hz（>600 Hz 偏移）
+    conditions: 10 GHz 载波；1 Hz 偏移；室温；无主动温控；OFD 方案
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: NHG79KDA
+      claim: supports 10 GHz generation with phase noise near −100 dBc/Hz at 1 Hz
+        offset and <−173 dBc/Hz for all offsets >600 Hz
+- id: met.accel_sensitivity_d17
+  name: 腔轴方向加速度灵敏度（最小化后）
+  unit: g⁻¹
+  role: secondary
+  description: 25 mm ULE 圆柱腔沿腔轴方向加速度灵敏度，在挤压半径 24.5 mm 处最小化。
+  demonstrated_value:
+    value: ~4.5×10⁻¹⁰
+    conditions: 腔轴方向；持腔半径 24.5 mm（最优）；主动隔振平台上
+    verification_status: observed
+    confidence: medium
+    source:
+      zotero_key: NHG79KDA
+      claim: We find the largest acceleration sensitivity to be along the cavity axis
+        at ~4.5×10^-10 g^-1, minimized at a holding radius of 24.5 mm
 relations:
-  - id: rel.D01
-    subject: ent.compact_ule_cavity_25mm_d17
-    predicate: CHARACTERIZED-BY
-    object: met.allan_dev_d17
-    confidence: established
-    source:
-      zotero_key: "NHG79KDA"
-      claim: "our cavity reaches ~2×10^-15 Allan deviation at 0.1 s of averaging"
-
-  - id: rel.D02
-    subject: ent.compact_ule_cavity_25mm_d17
-    predicate: CHARACTERIZED-BY
-    object: met.microwave_phase_noise_10ghz_d17
-    confidence: established
-    source:
-      zotero_key: "NHG79KDA"
-      claim: "supports 10 GHz generation with phase noise near −100 dBc/Hz at 1 Hz offset and <−173 dBc/Hz for all offsets >600 Hz"
-
-  - id: rel.D03
-    subject: ent.compact_ule_cavity_25mm_d17
-    predicate: CHARACTERIZED-BY
-    object: met.accel_sensitivity_d17
-    confidence: established
-    source:
-      zotero_key: "NHG79KDA"
-      claim: "We find the largest acceleration sensitivity to be along the cavity axis at ~4.5×10^-10 g^-1, minimized at a holding radius of 24.5 mm"
-
-  - id: rel.D04
-    subject: ent.compact_ule_cavity_25mm_d17
-    predicate: ENABLED-BY
-    object: pri.squeeze_insensitive_cylindrical_cavity
-    confidence: established
-    source:
-      zotero_key: "NHG79KDA"
-      claim: "we have chosen a simple cylindrical spacer with a large diameter-to-length ratio. This cavity geometry allows for the existence of a holding location where the cavity can be squeezed without affecting its length to first order"
-
-  - id: rel.D05
-    subject: ent.compact_ule_cavity_25mm_d17
-    predicate: ENABLED-BY
-    object: pri.large_mode_thermal_noise_reduction_d17
-    confidence: established
-    source:
-      zotero_key: "NHG79KDA"
-      claim: "We have chosen a plano-10.2m ROC design, yielding an optical mode with intensity full width at half-maximum of ~490 μm. This leads to a predicted thermal noise limit for our 25-mm-long cavity to be ~−9 dBrad2/Hz at 1 Hz offset"
-
-  - id: rel.D06
-    subject: ent.compact_ule_cavity_25mm_d17
-    predicate: ENABLED-BY
-    object: meth.pdh_locking
-    confidence: established
-    note: "跨文件引用，meth.pdh_locking 定义于 topics/ultrastable-laser/papers/drever1983.yaml"
-    source:
-      zotero_key: "NHG79KDA"
-      claim: "The reflected sidebands are demodulated to obtain a Pound-Drever-Hall (PDH) error signal"
+- id: rel.davila_rodriguez_2017_01
+  subject: ent.compact_ule_cavity_25mm_d17
+  predicate: CHARACTERIZED-BY
+  object: met.allan_dev_d17
+  confidence: established
+  source:
+    zotero_key: NHG79KDA
+    claim: our cavity reaches ~2×10^-15 Allan deviation at 0.1 s of averaging
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/davilarodriguez2017.yaml
+- id: rel.davila_rodriguez_2017_02
+  subject: ent.compact_ule_cavity_25mm_d17
+  predicate: CHARACTERIZED-BY
+  object: met.microwave_phase_noise_10ghz_d17
+  confidence: established
+  source:
+    zotero_key: NHG79KDA
+    claim: supports 10 GHz generation with phase noise near −100 dBc/Hz at 1 Hz offset
+      and <−173 dBc/Hz for all offsets >600 Hz
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/davilarodriguez2017.yaml
+- id: rel.davila_rodriguez_2017_03
+  subject: ent.compact_ule_cavity_25mm_d17
+  predicate: CHARACTERIZED-BY
+  object: met.accel_sensitivity_d17
+  confidence: established
+  source:
+    zotero_key: NHG79KDA
+    claim: We find the largest acceleration sensitivity to be along the cavity axis
+      at ~4.5×10^-10 g^-1, minimized at a holding radius of 24.5 mm
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/davilarodriguez2017.yaml
+- id: rel.davila_rodriguez_2017_04
+  subject: ent.compact_ule_cavity_25mm_d17
+  predicate: ENABLED-BY
+  object: pri.squeeze_insensitive_cylindrical_cavity
+  confidence: established
+  source:
+    zotero_key: NHG79KDA
+    claim: we have chosen a simple cylindrical spacer with a large diameter-to-length
+      ratio. This cavity geometry allows for the existence of a holding location where
+      the cavity can be squeezed without affecting its length to first order
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/davilarodriguez2017.yaml
+- id: rel.davila_rodriguez_2017_05
+  subject: ent.compact_ule_cavity_25mm_d17
+  predicate: ENABLED-BY
+  object: pri.large_mode_thermal_noise_reduction_d17
+  confidence: established
+  source:
+    zotero_key: NHG79KDA
+    claim: We have chosen a plano-10.2m ROC design, yielding an optical mode with
+      intensity full width at half-maximum of ~490 μm. This leads to a predicted thermal
+      noise limit for our 25-mm-long cavity to be ~−9 dBrad2/Hz at 1 Hz offset
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/davilarodriguez2017.yaml
+- id: rel.davila_rodriguez_2017_06
+  subject: ent.compact_ule_cavity_25mm_d17
+  predicate: ENABLED-BY
+  object: meth.pdh_locking
+  confidence: established
+  note: 跨文件引用，meth.pdh_locking 定义于 topics/ultrastable-laser/papers/drever1983.yaml
+  source:
+    zotero_key: NHG79KDA
+    claim: The reflected sidebands are demodulated to obtain a Pound-Drever-Hall (PDH)
+      error signal
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/davilarodriguez2017.yaml

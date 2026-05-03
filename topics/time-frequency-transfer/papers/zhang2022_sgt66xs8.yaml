@@ -57,7 +57,7 @@ principles:
     source_claim: "We demonstrate the passive phase noise cancellation ... in noisy fiber links"
 
 relations:
-  - id: rel.Zha22a_01
+  - id: rel.zhang_2022_ha22a_01
     subject: ent.coherent_optical_fiber_link
     predicate: ENABLED-BY
     object: pri.passive_reciprocal_fiber_noise_cancellation
@@ -65,7 +65,7 @@ relations:
       paper: zhang2022a
       claim: "all-passive cascaded optical frequency transfer"
 
-  - id: rel.Zha22a_02
+  - id: rel.zhang_2022_ha22a_02
     subject: pri.passive_reciprocal_fiber_noise_cancellation
     predicate: COMPETES-WITH
     object: pri.noise_cancellation_frequency_transfer

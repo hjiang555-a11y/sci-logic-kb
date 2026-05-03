@@ -99,7 +99,7 @@ methods: []
 metrics: []
 
 relations:
-  - id: rel.DVU20_01
+  - id: rel.diddams_2020_VU20_01
     subject: ent.optical_frequency_comb
     predicate: CHARACTERIZED-BY
     object: pri.ofc_unified_electromagnetic_spectrum_framework
@@ -107,7 +107,7 @@ relations:
     source: {zotero_key: "DIDDAMS2020-SCIENCE", claim: "the optical frequency comb now serves as a phase-coherent ruler that spans from radio frequencies to the extreme ultraviolet."}
     note: "OFC 在 2020 获得『统一电磁波谱相干标尺』学科定位。跨文件引用 ent.optical_frequency_comb（giunta2019.yaml）。"
 
-  - id: rel.DVU20_02
+  - id: rel.diddams_2020_VU20_02
     subject: ent.optical_frequency_comb
     predicate: CHARACTERIZED-BY
     object: pri.three_comb_platforms_triumvirate_dvu20
@@ -115,7 +115,7 @@ relations:
     source: {zotero_key: "DIDDAMS2020-SCIENCE", claim: "Ti:sapphire, fiber, and microresonator combs form three complementary pillars of today's OFC ecosystem."}
     note: "2020 年代 OFC 硬件生态的三足鼎立结构。"
 
-  - id: rel.DVU20_03
+  - id: rel.diddams_2020_VU20_03
     subject: pri.ofc_unified_electromagnetic_spectrum_framework
     predicate: ENABLED-BY
     object: pri.self_referencing_f2f

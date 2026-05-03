@@ -211,7 +211,7 @@ metrics:
 # ═══════════════════════════════════════════════
 
 relations:
-  - id: rel.G19_01
+  - id: rel.giunta_2004_19_01
     subject: ent.optical_frequency_comb
     predicate: ENABLED-BY
     object: pri.self_referencing_f2f
@@ -220,7 +220,7 @@ relations:
     conditions: "频谱覆盖至少一个 octave"
     note: "f-2f 自参考是频率梳作为绝对频率标尺的基础"
 
-  - id: rel.G19_02
+  - id: rel.giunta_2004_19_02
     subject: meth.photonic_microwave_synthesis
     predicate: ENABLED-BY
     object: pri.optical_frequency_division_microwave
@@ -228,14 +228,14 @@ relations:
     source: {zotero_key: "KTHCQRJ2", claim: "photonic microwave synthesis... −171 dBc/Hz"}
     conditions: "梳锁定至超稳光学参考"
 
-  - id: rel.G19_03
+  - id: rel.giunta_2004_19_03
     subject: ent.optical_frequency_comb
     predicate: CHARACTERIZED-BY
     object: met.photonic_microwave_phase_noise
     confidence: established
     source: {zotero_key: "KTHCQRJ2", claim: "−171 dBc/Hz at 1 Hz offset frequency from the 9.8 GHz carrier"}
 
-  - id: rel.G19_04
+  - id: rel.giunta_2004_19_04
     subject: ent.optical_frequency_comb
     predicate: CHARACTERIZED-BY
     object: met.hydrogen_1s2s_frequency_accuracy
@@ -243,7 +243,7 @@ relations:
     source: {zotero_key: "KTHCQRJ2", claim: "4.2 parts in 10¹⁵ relative accuracy in 2013"}
     note: "氢 1S-2S 测量是频率梳在基础物理中的标志性应用"
 
-  - id: rel.G19_05
+  - id: rel.giunta_2004_19_05
     subject: met.hydrogen_1s2s_frequency_accuracy
     predicate: OPERATIONALIZED-AS
     object: meth.photonic_microwave_synthesis
@@ -251,7 +251,7 @@ relations:
     source: {zotero_key: "KTHCQRJ2", claim: "the OFC permits to count the fast cycles of optical transition frequencies in atomic systems"}
     note: "氢 1S-2S 频率通过频率梳桥接至 SI 秒定义（铯喷泉钟）"
 
-  - id: rel.G19_06
+  - id: rel.giunta_2004_19_06
     subject: ent.optical_frequency_comb
     predicate: CONDITIONED-BY
     object: ent.fp_cavity_system

@@ -1,146 +1,149 @@
-# Leibrandt 2013 — Eu³⁺:Y₂SiO₅ 光谱烧孔频率参考
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-16
-# Schema版本：v4.1
-
 meta:
-  zotero_key: "WK9QLCGF"
+  zotero_key: WK9QLCGF
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: "Absolute and Relative Stability of an Optical Frequency Reference Based on Spectral Hole Burning in Eu³⁺:Y₂SiO₅"
+  title: Absolute and Relative Stability of an Optical Frequency Reference Based on
+    Spectral Hole Burning in Eu³⁺:Y₂SiO₅
   year: 2013
   first_author: Leibrandt
-  journal: "Physical Review Letters"
+  journal: Physical Review Letters
   volume: 111
-  pages: "237402"
-  doi: "10.1103/PhysRevLett.111.237402"
-  note: >
-    基于 Eu³⁺:Y₂SiO₅ 光谱烧孔（SHB）的光学频率参考。
-    短期稳定度 1×10⁻¹⁵/√τ（vs FP 腔），
-    双晶体比较达 5.5×10⁻¹⁷ @ 204 s，频率漂移率 5×10⁻¹⁸/s。
-    核心贡献：SHB 作为替代 FP 腔频率参考的里程碑验证。
+  pages: '237402'
+  doi: 10.1103/PhysRevLett.111.237402
+  note: '基于 Eu³⁺:Y₂SiO₅ 光谱烧孔（SHB）的光学频率参考。 短期稳定度 1×10⁻¹⁵/√τ（vs FP 腔）， 双晶体比较达 5.5×10⁻¹⁷
+    @ 204 s，频率漂移率 5×10⁻¹⁸/s。 核心贡献：SHB 作为替代 FP 腔频率参考的里程碑验证。
 
+    '
 entities:
-  - id: ent.shb_eu_yso_reference_l13
-    name: "Eu³⁺:Y₂SiO₅ 光谱烧孔频率参考"
-    aliases: ["SHB reference", "Eu:YSO spectral hole"]
-    hierarchy_level: 1
-    status: demonstrated
-    function: >
-      利用稀土离子 Eu³⁺ 掺杂 Y₂SiO₅ 晶体中的光谱烧孔作为频率参考。
-      低温（4 K）工作，光谱孔寿命长（kHz 线宽），
-      提供与 FP 腔互补的频率参考方案。
-    key_parameters:
-      material: "Eu³⁺:Y₂SiO₅"
-      temperature: "4 K"
-      wavelength: "580 nm (⁷F₀ → ⁵D₀)"
-      hole_lifetime: "long (hours to days)"
-      drift_rate: "5×10⁻¹⁸ /s"
-    practical_limitations:
-      - description: "需要低温（4 K）环境"
-        impact: "增加系统复杂度和成本"
-      - description: "频率漂移需要周期性校准"
-        impact: "长期稳定度受漂移率限制"
-    note: >
-      替代 FP 腔的频率参考方案，与 ent.fp_cavity_system COMPETES-WITH。
-      在当前超稳激光知识库中保留为并列频率参考分支；
-      若未来扩展到更广义的时频体系，可与光钟跃迁参考共同提升到更高层“光学频率参考”父类。
+- id: ent.shb_eu_yso_reference_l13
+  name: Eu³⁺:Y₂SiO₅ 光谱烧孔频率参考
+  aliases:
+  - SHB reference
+  - Eu:YSO spectral hole
+  hierarchy_level: 1
+  status: demonstrated
+  function: '利用稀土离子 Eu³⁺ 掺杂 Y₂SiO₅ 晶体中的光谱烧孔作为频率参考。 低温（4 K）工作，光谱孔寿命长（kHz 线宽）， 提供与 FP
+    腔互补的频率参考方案。
 
+    '
+  key_parameters:
+    material: Eu³⁺:Y₂SiO₅
+    temperature: 4 K
+    wavelength: 580 nm (⁷F₀ → ⁵D₀)
+    hole_lifetime: long (hours to days)
+    drift_rate: 5×10⁻¹⁸ /s
+  practical_limitations:
+  - description: 需要低温（4 K）环境
+    impact: 增加系统复杂度和成本
+  - description: 频率漂移需要周期性校准
+    impact: 长期稳定度受漂移率限制
+  note: '替代 FP 腔的频率参考方案，与 ent.fp_cavity_system COMPETES-WITH。 在当前超稳激光知识库中保留为并列频率参考分支；
+    若未来扩展到更广义的时频体系，可与光钟跃迁参考共同提升到更高层“光学频率参考”父类。
+
+    '
 principles:
-  - id: pri.spectral_hole_burning_frequency_ref
-    name: "光谱烧孔频率参考原理"
-    tier: domain
-    verification_status: observed
-    statement: >
-      在低温稀土离子晶体中，窄带激光可在非均匀展宽吸收线中烧出
-      频率精确的光谱孔，孔的中心频率由离子跃迁频率决定，
-      对外部扰动（振动、温度）敏感度极低。
-      光谱孔可作为长期稳定的频率参考，其漂移主要来自晶体应力变化。
-      该原理依赖稀土掺杂晶体中的持久光谱孔形成与读取，
-      因而是 SHB 参考特有的工作原理，而非适用于其他频率参考分支的通用基础定律。
-    domain: "替代频率参考 / 固态光谱"
-    key_insight: "SHB 将频率参考锚定在原子跃迁上，避免了 FP 腔的机械热噪声限制。"
-    conditions: "低温（<10 K），稀土离子晶体，窄线宽激光激发"
-    preconditions:
-      - "晶体质量高，Eu³⁺ 浓度适当"
-      - "低温恒温器温度稳定"
-    source_claim: >
-      "optical frequency reference based on spectral hole burning in Eu³⁺:Y₂SiO₅"
-    note: "按当前 schema 归为 domain：该原理只描述 SHB 参考中的烧孔—探测—锁定分支机制，不适用于 FP 腔、光纤延迟线或未来光钟跃迁参考等其他频率参考类型。"
-    open_questions:
-      - "SHB 频率参考能否在不需要外部校准的情况下达到 10⁻¹⁸ 级绝对精度？"
-      - "频率漂移的物理机制是否可以进一步抑制？"
+- id: pri.spectral_hole_burning_frequency_ref
+  name: 光谱烧孔频率参考原理
+  tier: domain
+  verification_status: observed
+  statement: '在低温稀土离子晶体中，窄带激光可在非均匀展宽吸收线中烧出 频率精确的光谱孔，孔的中心频率由离子跃迁频率决定， 对外部扰动（振动、温度）敏感度极低。
+    光谱孔可作为长期稳定的频率参考，其漂移主要来自晶体应力变化。 该原理依赖稀土掺杂晶体中的持久光谱孔形成与读取， 因而是 SHB 参考特有的工作原理，而非适用于其他频率参考分支的通用基础定律。
 
+    '
+  domain: 替代频率参考 / 固态光谱
+  key_insight: SHB 将频率参考锚定在原子跃迁上，避免了 FP 腔的机械热噪声限制。
+  conditions: 低温（<10 K），稀土离子晶体，窄线宽激光激发
+  preconditions:
+  - 晶体质量高，Eu³⁺ 浓度适当
+  - 低温恒温器温度稳定
+  source_claim: '"optical frequency reference based on spectral hole burning in Eu³⁺:Y₂SiO₅"
+
+    '
+  note: 按当前 schema 归为 domain：该原理只描述 SHB 参考中的烧孔—探测—锁定分支机制，不适用于 FP 腔、光纤延迟线或未来光钟跃迁参考等其他频率参考类型。
+  open_questions:
+  - SHB 频率参考能否在不需要外部校准的情况下达到 10⁻¹⁸ 级绝对精度？
+  - 频率漂移的物理机制是否可以进一步抑制？
 methods:
-  - id: meth.spectral_hole_burning_stabilization_l13
-    name: "光谱烧孔稳频方法（Leibrandt 2013）"
-    status: demonstrated
-    applies_to: ent.shb_eu_yso_reference_l13
-    steps_summary: >
-      1. 在Eu³⁺:Y₂SiO₅晶体中通过窄线宽激光烧制光谱孔
-      2. 使用调频光谱（FMS）技术探测光谱孔的色散/吸收信号
-      3. 提取误差信号并将激光频率锁定到光谱孔中心
-      4. 监测频率漂移并进行周期性校准
-    required_hardware:
-      - ent.shb_eu_yso_reference_l13
-      - ent.narrow_linewidth_laser
-      - ent.low_temperature_cryostat
-    advantages:
-      - "频率参考锚定在原子跃迁上，避免FP腔的机械热噪声限制"
-      - "对外部振动和温度扰动敏感度极低"
-      - "长期频率漂移率低（5×10⁻¹⁸/s）"
-    disadvantages:
-      - "需要低温环境（4 K），增加系统复杂性"
-      - "光谱孔需要周期性重新烧制，存在频率漂移"
-      - "短期稳定度（1×10⁻¹⁵/√τ）目前低于最佳FP腔"
-    conditions:
-      - "需要低温恒温器（<10 K）"
-      - "需要高质量的Eu³⁺:Y₂SiO₅晶体"
-      - "需要窄线宽激光器"
-    source_claim: >
-      "optical frequency reference based on spectral hole burning in Eu³⁺:Y₂SiO₅, using frequency-modulation spectroscopy to lock the laser to the spectral hole"
+- id: meth.spectral_hole_burning_stabilization_l13
+  name: 光谱烧孔稳频方法（Leibrandt 2013）
+  status: demonstrated
+  applies_to: ent.shb_eu_yso_reference_l13
+  steps_summary: '1. 在Eu³⁺:Y₂SiO₅晶体中通过窄线宽激光烧制光谱孔 2. 使用调频光谱（FMS）技术探测光谱孔的色散/吸收信号 3.
+    提取误差信号并将激光频率锁定到光谱孔中心 4. 监测频率漂移并进行周期性校准
 
+    '
+  required_hardware:
+  - ent.shb_eu_yso_reference_l13
+  - ent.narrow_linewidth_laser
+  - ent.low_temperature_cryostat
+  advantages:
+  - 频率参考锚定在原子跃迁上，避免FP腔的机械热噪声限制
+  - 对外部振动和温度扰动敏感度极低
+  - 长期频率漂移率低（5×10⁻¹⁸/s）
+  disadvantages:
+  - 需要低温环境（4 K），增加系统复杂性
+  - 光谱孔需要周期性重新烧制，存在频率漂移
+  - 短期稳定度（1×10⁻¹⁵/√τ）目前低于最佳FP腔
+  conditions:
+  - 需要低温恒温器（<10 K）
+  - 需要高质量的Eu³⁺:Y₂SiO₅晶体
+  - 需要窄线宽激光器
+  source_claim: '"optical frequency reference based on spectral hole burning in Eu³⁺:Y₂SiO₅,
+    using frequency-modulation spectroscopy to lock the laser to the spectral hole"
+
+    '
 metrics:
-  - id: met.shb_relative_stability_l13
-    name: "SHB 双晶体相对稳定度（Leibrandt 2013）"
-    unit: "无量纲"
-    demonstrated_value:
-      value: "5.5×10⁻¹⁷ @ 204 s (quadratic drift removed)"
-      conditions: "两块 Eu³⁺:Y₂SiO₅ 晶体，同一低温容器，4 K"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "WK9QLCGF", claim: "short-term stability of 7×10⁻¹⁶/√τ that averages down to 5.5×10⁻¹⁷ at τ = 204 s"}
-
-  - id: met.shb_absolute_stability_l13
-    name: "SHB 绝对稳定度（vs H-maser, Leibrandt 2013）"
-    unit: "无量纲"
-    demonstrated_value:
-      value: "1×10⁻¹⁵/√τ, drift 5×10⁻¹⁸/s"
-      conditions: "单个光谱孔 vs 氢钟"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "WK9QLCGF", claim: "fractional frequency drift rate of 5×10⁻¹⁸ s⁻¹"}
-
+- id: met.shb_relative_stability_l13
+  name: SHB 双晶体相对稳定度（Leibrandt 2013）
+  unit: 无量纲
+  demonstrated_value:
+    value: 5.5×10⁻¹⁷ @ 204 s (quadratic drift removed)
+    conditions: 两块 Eu³⁺:Y₂SiO₅ 晶体，同一低温容器，4 K
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: WK9QLCGF
+      claim: short-term stability of 7×10⁻¹⁶/√τ that averages down to 5.5×10⁻¹⁷ at
+        τ = 204 s
+- id: met.shb_absolute_stability_l13
+  name: SHB 绝对稳定度（vs H-maser, Leibrandt 2013）
+  unit: 无量纲
+  demonstrated_value:
+    value: 1×10⁻¹⁵/√τ, drift 5×10⁻¹⁸/s
+    conditions: 单个光谱孔 vs 氢钟
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: WK9QLCGF
+      claim: fractional frequency drift rate of 5×10⁻¹⁸ s⁻¹
 relations:
-  - id: rel.LB01
-    subject: ent.shb_eu_yso_reference_l13
-    predicate: COMPETES-WITH
-    object: ent.fp_cavity_system
-    confidence: established
-    source: {zotero_key: "WK9QLCGF", claim: "optical frequency reference based on spectral hole burning... compared to a Fabry-Pérot cavity"}
-    note: "SHB 与 FP 腔作为频率参考的竞争方案"
-
-  - id: rel.LB02
-    subject: ent.shb_eu_yso_reference_l13
-    predicate: CHARACTERIZED-BY
-    object: met.shb_relative_stability_l13
-    confidence: established
-    source: {zotero_key: "WK9QLCGF", claim: "5.5×10⁻¹⁷ at τ = 204 s"}
-
-  - id: rel.LB03
-    subject: ent.shb_eu_yso_reference_l13
-    predicate: ENABLED-BY
-    object: pri.spectral_hole_burning_frequency_ref
-    confidence: established
-    source: {zotero_key: "WK9QLCGF", claim: "spectral hole burning in Eu³⁺:Y₂SiO₅"}
+- id: rel.leibrandt_2013_B01
+  subject: ent.shb_eu_yso_reference_l13
+  predicate: COMPETES-WITH
+  object: ent.fp_cavity_system
+  confidence: established
+  source:
+    zotero_key: WK9QLCGF
+    claim: optical frequency reference based on spectral hole burning... compared
+      to a Fabry-Pérot cavity
+  note: SHB 与 FP 腔作为频率参考的竞争方案
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/leibrandt2013.yaml
+- id: rel.leibrandt_2013_B02
+  subject: ent.shb_eu_yso_reference_l13
+  predicate: CHARACTERIZED-BY
+  object: met.shb_relative_stability_l13
+  confidence: established
+  source:
+    zotero_key: WK9QLCGF
+    claim: 5.5×10⁻¹⁷ at τ = 204 s
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/leibrandt2013.yaml
+- id: rel.leibrandt_2013_B03
+  subject: ent.shb_eu_yso_reference_l13
+  predicate: ENABLED-BY
+  object: pri.spectral_hole_burning_frequency_ref
+  confidence: established
+  source:
+    zotero_key: WK9QLCGF
+    claim: spectral hole burning in Eu³⁺:Y₂SiO₅
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/leibrandt2013.yaml

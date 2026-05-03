@@ -298,7 +298,7 @@ metrics:
         zotero_key: ''
       note: 近红外完整 HCN 转动带演示
 relations:
-- id: rel.C16_01
+- id: rel.coddington_2014_16_01
   subject: ent.dual_comb_spectrometer
   predicate: PART-OF
   object: ent.optical_frequency_comb
@@ -312,7 +312,7 @@ relations:
   note: 'DCS 系统以两个光学频率梳为核心组件。 ent.optical_frequency_comb 定义于 topics/optical-frequency-combs/papers/giunta2019.yaml。
 
     '
-- id: rel.C16_02
+- id: rel.coddington_2014_16_02
   subject: meth.dual_comb_spectroscopy
   predicate: ENABLED-BY
   object: pri.dual_comb_multiheterodyne_detection
@@ -325,7 +325,7 @@ relations:
 
       '
   conditions: 两梳重复频率须有可控差值 Δf_rep
-- id: rel.C16_03
+- id: rel.coddington_2014_16_03
   subject: meth.dual_comb_spectroscopy
   predicate: ENABLED-BY
   object: pri.mutual_coherence_requirement
@@ -337,7 +337,7 @@ relations:
 
       '
   conditions: 适用于高分辨率、高 SNR DCS 测量
-- id: rel.C16_04
+- id: rel.coddington_2014_16_04
   subject: meth.adaptive_sampling_correction
   predicate: ENABLED-BY
   object: pri.mutual_coherence_requirement
@@ -349,7 +349,7 @@ relations:
 
       '
   note: 自适应采样校正是实现互相干的实用途径之一
-- id: rel.C16_05
+- id: rel.coddington_2014_16_05
   subject: ent.dual_comb_spectrometer
   predicate: CHARACTERIZED-BY
   object: met.dcs_acquisition_speed
@@ -360,7 +360,7 @@ relations:
       in milliseconds"
 
       '
-- id: rel.C16_06
+- id: rel.coddington_2014_16_06
   subject: ent.dual_comb_spectrometer
   predicate: CHARACTERIZED-BY
   object: met.dcs_frequency_resolution
@@ -371,7 +371,7 @@ relations:
       the instrument"
 
       '
-- id: rel.C16_07
+- id: rel.coddington_2014_16_07
   subject: ent.dual_comb_spectrometer
   predicate: CHARACTERIZED-BY
   object: met.dcs_snr_per_tooth
@@ -381,7 +381,7 @@ relations:
     claim: '"In the ideal shot-noise limit, the SNR ≈ √(τ·n_comb)/M"
 
       '
-- id: rel.C16_08
+- id: rel.coddington_2014_16_08
   subject: met.dcs_snr_per_tooth
   predicate: OPERATIONALIZED-AS
   object: meth.adaptive_sampling_correction
@@ -393,7 +393,7 @@ relations:
 
       '
   note: 自适应采样/数字校正是提升 SNR 至极限的关键方法
-- id: rel.C16_09
+- id: rel.coddington_2014_16_09
   subject: ent.dual_comb_spectrometer
   predicate: BOUNDED-BY
   object: pri.mutual_coherence_requirement
@@ -420,7 +420,7 @@ relations:
       zotero_key: ''
       claim: real-time, continuous coherent averaging for 24 h with record levels
         of SNRs
-- id: rel.C16_10
+- id: rel.coddington_2014_16_10
   subject: ent.dual_comb_spectrometer
   predicate: COMPETES-WITH
   object: ent.ftir_spectrometer
@@ -465,7 +465,7 @@ relations:
       broader spectral coverage."
 
       '
-- id: rel.C16_11
+- id: rel.coddington_2014_16_11
   subject: ent.dual_comb_spectrometer
   predicate: CONDITIONED-BY
   object: ent.optical_frequency_comb

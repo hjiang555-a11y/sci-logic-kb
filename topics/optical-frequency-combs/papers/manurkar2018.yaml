@@ -84,7 +84,7 @@ metrics:
       source: {zotero_key: "XZTNQ8D4", claim: "less than 5 W of electrical power"}
 
 relations:
-  - id: rel.Man18_01
+  - id: rel.manurkar_2018_an18_01
     subject: ent.low_power_5w_self_ref_comb_m18
     predicate: PART-OF
     object: ent.er_fiber_frequency_comb
@@ -92,21 +92,21 @@ relations:
     source: {zotero_key: "XZTNQ8D4", claim: "Er-doped fiber oscillator/amplifier"}
     note: "跨文件引用 ent.er_fiber_frequency_comb（定义于 droste2016.yaml）"
 
-  - id: rel.Man18_02
+  - id: rel.manurkar_2018_an18_02
     subject: ent.low_power_5w_self_ref_comb_m18
     predicate: CHARACTERIZED-BY
     object: met.self_ref_comb_electrical_power_m18
     confidence: established
     source: {zotero_key: "XZTNQ8D4", claim: "<5 W"}
 
-  - id: rel.Man18_03
+  - id: rel.manurkar_2018_an18_03
     subject: met.self_ref_comb_electrical_power_m18
     predicate: BOUNDED-BY
     object: pri.fiber_resistive_modulator_frep_tuning_m18
     confidence: established
     source: {zotero_key: "XZTNQ8D4", claim: "fiber resistive modulator ... consuming ~77 mW/°C"}
 
-  - id: rel.Man18_04
+  - id: rel.manurkar_2018_an18_04
     subject: pri.fiber_resistive_modulator_frep_tuning_m18
     predicate: ENABLED-BY
     object: pri.sin_waveguide_low_power_f2f_c17

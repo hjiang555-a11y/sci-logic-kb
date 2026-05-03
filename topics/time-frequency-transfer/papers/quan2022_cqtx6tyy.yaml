@@ -57,7 +57,7 @@ principles:
     source_claim: "two adjacent frequency dissemination systems used different frequency transmitted signals, preventing the influence of signal crosstalk"
 
 relations:
-  - id: rel.Qua22_01
+  - id: rel.quan_2022_ua22_01
     subject: ent.ntsc_212km_cascaded_rf_link_q22
     predicate: PART-OF
     object: ent.rf_over_fiber_time_transfer_link
@@ -65,7 +65,7 @@ relations:
       paper: quan2022
       claim: "212 km cascaded urban fiber link"
 
-  - id: rel.Qua22_02
+  - id: rel.quan_2022_ua22_02
     subject: ent.ntsc_212km_cascaded_rf_link_q22
     predicate: OPERATIONALIZED-AS
     object: pri.cascaded_rf_stages_crosstalk_mitigation

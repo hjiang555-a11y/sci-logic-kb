@@ -238,7 +238,7 @@ metrics:
     basis: 参量振荡阈值缩放关系
     gap_note: 阈值功率可极低，但 DKS 态维持需要高于阈值的泵浦以建立失谐
 relations:
-- id: rel.K18_01
+- id: rel.kippenberg_2017_18_01
   subject: ent.microresonator_frequency_comb
   predicate: ENABLED-BY
   object: pri.dissipative_kerr_soliton
@@ -253,7 +253,7 @@ relations:
   conditions: 反常色散，红失谐泵浦
   temporal_role: validates
   note: DKS 是微梳从混沌态走向相干态的关键机制
-- id: rel.K18_02
+- id: rel.kippenberg_2017_18_02
   subject: pri.dissipative_kerr_soliton
   predicate: DERIVED-FROM
   object: pri.lugiato_lefever_equation
@@ -265,7 +265,7 @@ relations:
 
       '
   note: DKS 是 LLE 的定态局域解
-- id: rel.K18_03
+- id: rel.kippenberg_2017_18_03
   subject: meth.laser_tuning_soliton_access
   predicate: ENABLED-BY
   object: pri.dissipative_kerr_soliton
@@ -279,7 +279,7 @@ relations:
 
       '
   conditions: 需克服热不稳定性
-- id: rel.K18_04
+- id: rel.kippenberg_2017_18_04
   subject: met.dks_comb_bandwidth
   predicate: OPERATIONALIZED-AS
   object: pri.dispersive_wave_generation
@@ -293,7 +293,7 @@ relations:
 
       '
   note: 色散波是实现倍频程 DKS 梳的关键物理机制
-- id: rel.K18_05
+- id: rel.kippenberg_2017_18_05
   subject: meth.microcomb_self_referencing
   predicate: ENABLED-BY
   object: pri.self_referencing_f2f
@@ -306,7 +306,7 @@ relations:
       '
   conditions: 梳光谱覆盖至少一个倍频程
   note: pri.self_referencing_f2f 定义于 giunta2019.yaml
-- id: rel.K18_06
+- id: rel.kippenberg_2017_18_06
   subject: pri.dissipative_kerr_soliton
   predicate: DERIVED-FROM
   object: pri.parametric_four_wave_mixing_comb
@@ -320,7 +320,7 @@ relations:
 
       '
   note: DKS 是参量 FWM 梳的自组织相干态。pri.parametric_four_wave_mixing_comb 定义于 kippenberg2011.yaml
-- id: rel.K18_07
+- id: rel.kippenberg_2017_18_07
   subject: ent.microresonator_frequency_comb
   predicate: BOUNDED-BY
   object: pri.microresonator_anomalous_dispersion
@@ -344,7 +344,7 @@ relations:
       zotero_key: ''
       claim: DKSs with two dispersive waves that can cover a full octave
   note: 对 kippenberg2011.yaml rel.K11_07 的扩展——DKS 色散波提供了突破色散限制的路径
-- id: rel.K18_08
+- id: rel.kippenberg_2017_18_08
   subject: ent.microresonator_frequency_comb
   predicate: CHARACTERIZED-BY
   object: met.dks_comb_bandwidth
@@ -353,7 +353,7 @@ relations:
     zotero_key: ''
     claim: octave-spanning frequency combs, with microwave to terahertz repetition
       rates, at low pump power
-- id: rel.K18_09
+- id: rel.kippenberg_2017_18_09
   subject: ent.microresonator_frequency_comb
   predicate: CHARACTERIZED-BY
   object: met.microcomb_power_consumption
@@ -361,7 +361,7 @@ relations:
   source:
     zotero_key: ''
     claim: tens of milliwatts have been reported for octave spanning spectra
-- id: rel.K18_10
+- id: rel.kippenberg_2017_18_10
   subject: ent.si3n4_integrated_comb
   predicate: ENABLED-BY
   object: pri.dissipative_kerr_soliton
@@ -374,7 +374,7 @@ relations:
       '
   conditions: 色散工程优化、克服热效应（power kicking / 快速调谐 / 加热器）
   note: ent.si3n4_integrated_comb 定义于 kippenberg2011.yaml
-- id: rel.K18_11
+- id: rel.kippenberg_2017_18_11
   subject: pri.dispersive_wave_generation
   predicate: DERIVED-FROM
   object: pri.lugiato_lefever_equation

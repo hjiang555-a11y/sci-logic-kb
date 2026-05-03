@@ -328,7 +328,7 @@ metrics:
 # ═══════════════════════════════════════════════
 
 relations:
-  - id: rel.S14_01
+  - id: rel.sinclair_2014_14_01
     subject: ent.ruggedized_field_comb_s14
     predicate: PART-OF
     object: ent.optical_frequency_comb
@@ -336,63 +336,63 @@ relations:
     source: {zotero_key: "D9ANIZW6", claim: "a self-referenced fiber frequency comb that can operate outside the well-controlled optical laboratory"}
     note: "ent.optical_frequency_comb 权威定义于 udem2002.yaml（跨文件引用）"
 
-  - id: rel.S14_02
+  - id: rel.sinclair_2014_14_02
     subject: ent.pm_inline_f2f_interferometer_s14
     predicate: PART-OF
     object: ent.ruggedized_field_comb_s14
     confidence: established
     source: {zotero_key: "D9ANIZW6", claim: "we implement an \"in-line\" PM-fiber interferometer after the waveguide PPLN that exploits the differential delay between fast and slow PM-fiber axes"}
 
-  - id: rel.S14_03
+  - id: rel.sinclair_2014_14_03
     subject: ent.ruggedized_field_comb_s14
     predicate: CHARACTERIZED-BY
     object: met.residual_optical_linewidth_s14
     confidence: established
     source: {zotero_key: "D9ANIZW6", claim: "residual optical linewidths of < 1 Hz"}
 
-  - id: rel.S14_04
+  - id: rel.sinclair_2014_14_04
     subject: ent.ruggedized_field_comb_s14
     predicate: CHARACTERIZED-BY
     object: met.integrated_phase_noise_fopt_s14
     confidence: established
     source: {zotero_key: "D9ANIZW6", claim: "0.22 rad for fopt ... 0.3 rad ... 3.8 rad/g"}
 
-  - id: rel.S14_05
+  - id: rel.sinclair_2014_14_05
     subject: ent.ruggedized_field_comb_s14
     predicate: CHARACTERIZED-BY
     object: met.integrated_phase_noise_fceo_s14
     confidence: established
     source: {zotero_key: "D9ANIZW6", claim: "integrated phase noise is 2.9 rad for fceo"}
 
-  - id: rel.S14_06
+  - id: rel.sinclair_2014_14_06
     subject: ent.ruggedized_field_comb_s14
     predicate: CHARACTERIZED-BY
     object: met.pulse_to_pulse_timing_jitter_s14
     confidence: established
     source: {zotero_key: "D9ANIZW6", claim: "residual pulse-to-pulse timing jitter of 2.4 - 5 fs"}
 
-  - id: rel.S14_07
+  - id: rel.sinclair_2014_14_07
     subject: ent.ruggedized_field_comb_s14
     predicate: CHARACTERIZED-BY
     object: met.vibration_tolerance_s14
     confidence: established
     source: {zotero_key: "D9ANIZW6", claim: "0.5 g rms integrated acceleration ... 0.5 g peak accelerations"}
 
-  - id: rel.S14_08
+  - id: rel.sinclair_2014_14_08
     subject: ent.ruggedized_field_comb_s14
     predicate: CHARACTERIZED-BY
     object: met.lock_uptime_s14
     confidence: established
     source: {zotero_key: "D9ANIZW6", claim: "both fceo and fopt are free of phase slips for over 35 hours"}
 
-  - id: rel.S14_09
+  - id: rel.sinclair_2014_14_09
     subject: ent.ruggedized_field_comb_s14
     predicate: CHARACTERIZED-BY
     object: met.coherent_spectral_bandwidth_s14
     confidence: established
     source: {zotero_key: "D9ANIZW6", claim: "projected coherence across a comb spectrum of ~140 THz"}
 
-  - id: rel.S14_10
+  - id: rel.sinclair_2014_14_10
     subject: ent.ruggedized_field_comb_s14
     predicate: ENABLED-BY
     object: pri.self_referencing_f2f
@@ -400,42 +400,42 @@ relations:
     source: {zotero_key: "D9ANIZW6", claim: "fceo is detected via the f-to-2f approach"}
     note: "pri.self_referencing_f2f 定义于 udem2002.yaml（跨文件引用）"
 
-  - id: rel.S14_11
+  - id: rel.sinclair_2014_14_11
     subject: ent.ruggedized_field_comb_s14
     predicate: ENABLED-BY
     object: pri.pm_fiber_splice_vibration_immunity
     confidence: established
     source: {zotero_key: "D9ANIZW6", claim: "completely based on PM fiber ... no free-space sections, reducing sensitivity to vibration and alignment drift"}
 
-  - id: rel.S14_12
+  - id: rel.sinclair_2014_14_12
     subject: meth.ruggedized_fiber_comb_optical_lock_s14
     predicate: ENABLED-BY
     object: pri.optical_lock_lever_arm_timing_jitter
     confidence: established
     source: {zotero_key: "D9ANIZW6", claim: "optical lock to a single comb mode rather than direct stabilization of the repetition rate provides the large lever arm"}
 
-  - id: rel.S14_13
+  - id: rel.sinclair_2014_14_13
     subject: meth.ruggedized_fiber_comb_optical_lock_s14
     predicate: ENABLED-BY
     object: pri.self_referencing_f2f
     confidence: established
     source: {zotero_key: "D9ANIZW6", claim: "The ruggedized field comb optical lock relies on f-2f self-referencing for carrier-envelope offset frequency stabilization."}
 
-  - id: rel.S14_14
+  - id: rel.sinclair_2014_14_14
     subject: met.pulse_to_pulse_timing_jitter_s14
     predicate: OPERATIONALIZED-AS
     object: meth.ruggedized_fiber_comb_optical_lock_s14
     confidence: established
     source: {zotero_key: "D9ANIZW6", claim: "The 2.4–5 fs pulse-to-pulse timing jitter is achieved through the all-PM fiber comb with optical lock under mobile vibration conditions."}
 
-  - id: rel.S14_15
+  - id: rel.sinclair_2014_14_15
     subject: ent.ruggedized_field_comb_s14
     predicate: CONDITIONED-BY
     object: ent.vibration_environment_mobile
     confidence: established
     source: {zotero_key: "D9ANIZW6", claim: "operated in the strong vibrational environments typical of terrestrial platforms"}
 
-  - id: rel.S14_16
+  - id: rel.sinclair_2014_14_16
     subject: ent.ruggedized_field_comb_s14
     predicate: CONDITIONED-BY
     object: ent.fp_cavity_system
@@ -445,7 +445,7 @@ relations:
       ent.fp_cavity_system 定义于 topics/ultrastable-laser/papers/numata2004.yaml（跨专题接口）。
       梳的绝对光学相干最终由其所锁的 FP 腔稳 cw 参考决定。
 
-  - id: rel.S14_17
+  - id: rel.sinclair_2014_14_17
     subject: ent.ruggedized_field_comb_s14
     predicate: BOUNDED-BY
     object: pri.vibration_fopt_linear_coupling
@@ -463,7 +463,7 @@ relations:
         status: demonstrated
         source: {zotero_key: "D9ANIZW6", claim: "the frequency comb so mounted should maintain successful operation on a ship, in a truck traveling across U.S. highways, and in a C-5 aircraft"}
 
-  - id: rel.S14_18
+  - id: rel.sinclair_2014_14_18
     subject: ent.ruggedized_field_comb_s14
     predicate: BOUNDED-BY
     object: pri.vibration_cavity_length_coupling
@@ -478,7 +478,7 @@ relations:
         status: demonstrated
         source: {zotero_key: "D9ANIZW6", claim: "as the vibration was increased beyond 1g, the fceo phase noise was unchanged"}
 
-  - id: rel.S14_19
+  - id: rel.sinclair_2014_14_19
     subject: ent.ruggedized_field_comb_s14
     predicate: COMPETES-WITH
     object: ent.octave_spanning_tisa_comb_d00
@@ -488,7 +488,7 @@ relations:
       实验室级 Ti:Sa 梳（diddams2000.yaml）vs. 现场化 Er:fiber 梳：性能相近但后者鲁棒性/成本显著占优，
       代表"实验室"与"出实验室"两条路线的直接竞争。
 
-  - id: rel.S14_20
+  - id: rel.sinclair_2014_14_20
     subject: ent.ruggedized_field_comb_s14
     predicate: COMPETES-WITH
     object: ent.spaceborne_erfiber_comb_l16

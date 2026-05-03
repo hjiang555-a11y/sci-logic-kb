@@ -1,106 +1,110 @@
-# Didier 2018 — 超紧凑 25 mm 金字塔形参考腔
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-16
-# Schema版本：v4.1
-
 meta:
-  zotero_key: "PHRXF4IL"
+  zotero_key: PHRXF4IL
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: "Ultracompact reference ultralow expansion glass cavity"
+  title: Ultracompact reference ultralow expansion glass cavity
   year: 2018
   first_author: Didier
-  journal: "Applied Optics"
+  journal: Applied Optics
   volume: 57
   issue: 22
-  pages: "6470-6473"
-  doi: "10.1364/AO.57.006470"
-  note: >
-    首次实验表征 25 mm 金字塔形 ULE 参考腔，配备 AlGaAs 晶体镀层，
-    含真空腔室和光学组件总体积仅 30 L。
-    σ_y(1s) ≈ 7.5×10⁻¹⁵，主要受限于腔体尺寸（热噪声）和技术噪声。
-    核心贡献：极端紧凑化方向的探索，适合嵌入式和空间应用。
+  pages: 6470-6473
+  doi: 10.1364/AO.57.006470
+  note: '首次实验表征 25 mm 金字塔形 ULE 参考腔，配备 AlGaAs 晶体镀层， 含真空腔室和光学组件总体积仅 30 L。 σ_y(1s) ≈
+    7.5×10⁻¹⁵，主要受限于腔体尺寸（热噪声）和技术噪声。 核心贡献：极端紧凑化方向的探索，适合嵌入式和空间应用。
 
+    '
 entities:
-  - id: ent.ultracompact_pyramid_cavity_d18
-    name: "超紧凑金字塔形 ULE 参考腔（Didier 2018）"
-    aliases: ["25 mm pyramid cavity", "ultracompact cavity Didier"]
-    hierarchy_level: 2
-    status: demonstrated
-    function: >
-      25 mm 长金字塔形 ULE 腔体，配备 AlGaAs 晶体镀层降低热噪声。
-      紧凑真空腔室（立方形）允许光学元件直接安装在腔壁上，总体积 30 L。
-      被动不锈钢热屏蔽 + 主动铜屏蔽（Peltier）温度控制。
-    key_parameters:
-      cavity_length: "25 mm"
-      spacer_material: "ULE"
-      geometry: "pyramidal"
-      coating: "AlGaAs crystalline"
-      total_volume: "30 L"
-    note: "PART-OF ent.fp_cavity_system。极端紧凑方案，性能受限于短腔长。"
+- id: ent.ultracompact_pyramid_cavity_d18
+  name: 超紧凑金字塔形 ULE 参考腔（Didier 2018）
+  aliases:
+  - 25 mm pyramid cavity
+  - ultracompact cavity Didier
+  hierarchy_level: 2
+  status: demonstrated
+  function: '25 mm 长金字塔形 ULE 腔体，配备 AlGaAs 晶体镀层降低热噪声。 紧凑真空腔室（立方形）允许光学元件直接安装在腔壁上，总体积
+    30 L。 被动不锈钢热屏蔽 + 主动铜屏蔽（Peltier）温度控制。
 
+    '
+  key_parameters:
+    cavity_length: 25 mm
+    spacer_material: ULE
+    geometry: pyramidal
+    coating: AlGaAs crystalline
+    total_volume: 30 L
+  note: PART-OF ent.fp_cavity_system。极端紧凑方案，性能受限于短腔长。
 principles:
-  - id: pri.pyramidal_compact_cavity_design_d18
-    name: "金字塔形紧凑腔体设计原理"
-    tier: engineering
-    verification_status: observed
-    statement: >
-      采用金字塔形腔体几何（四侧面倾斜）允许光学元件（窗口、光电探测器）直接安装在腔壁上，
-      无需额外光学支架，极大缩减总体积（30 L）。短腔长（25 mm）导致热噪声极限较高，
-      但适合对体积、重量极端敏感的嵌入式和空间应用。
-    domain: "紧凑参考腔设计"
-    key_insight: "金字塔形几何 + 腔壁集成光学元件 = 极端紧凑化；短腔长与热噪声的折衷已知且可接受。"
-    conditions: "需要精密加工确保四侧面平行度和镜面准直；真空兼容安装设计。"
-    invalidated_when: "若需要亚 10⁻¹⁶ 性能，则短腔长成为瓶颈。"
-    source_claim: "The pyramid geometry of the cavity (four tilted sides) enables to mount optical elements directly onto the cavity walls, leading to a total volume of 30 L."
+- id: pri.pyramidal_compact_cavity_design_d18
+  name: 金字塔形紧凑腔体设计原理
+  tier: engineering
+  verification_status: observed
+  statement: '采用金字塔形腔体几何（四侧面倾斜）允许光学元件（窗口、光电探测器）直接安装在腔壁上， 无需额外光学支架，极大缩减总体积（30 L）。短腔长（25 mm）导致热噪声极限较高，
+    但适合对体积、重量极端敏感的嵌入式和空间应用。
 
+    '
+  domain: 紧凑参考腔设计
+  key_insight: 金字塔形几何 + 腔壁集成光学元件 = 极端紧凑化；短腔长与热噪声的折衷已知且可接受。
+  conditions: 需要精密加工确保四侧面平行度和镜面准直；真空兼容安装设计。
+  invalidated_when: 若需要亚 10⁻¹⁶ 性能，则短腔长成为瓶颈。
+  source_claim: The pyramid geometry of the cavity (four tilted sides) enables to
+    mount optical elements directly onto the cavity walls, leading to a total volume
+    of 30 L.
 methods:
-  - id: meth.ultracompact_cavity_integration_testing_d18
-    name: "超紧凑腔体集成与测试方法"
-    description: >
-      金字塔形 ULE 腔体与真空腔室、光学元件一体化集成方法：将光学窗口、光电探测器直接安装在腔壁倾斜面上；
-      采用双层热屏蔽（被动不锈钢 + 主动 Peltier 铜屏蔽）实现紧凑温控；
-      通过 PDH 锁频测量频率不稳定度，评估短腔长下的热噪声极限与技术噪声。
-    verification_status: observed
-    implementation_details:
-      - "金字塔形 ULE 腔体加工（四侧面倾斜 45°）"
-      - "AlGaAs 晶体镀层降低热噪声"
-      - "光学元件直接安装在腔壁，无需额外支架"
-      - "紧凑真空腔室（30 L 总体积）设计"
-      - "被动 + 主动双层热屏蔽"
-      - "频率不稳定度测量（σ_y ≈ 7.5×10⁻¹⁵ @ 1 s）"
-    enables: ent.ultracompact_pyramid_cavity_d18
-    source_claim: "The cavity is placed inside a compact vacuum chamber; optical elements are mounted directly onto the cavity walls; frequency instability measured via PDH locking."
+- id: meth.ultracompact_cavity_integration_testing_d18
+  name: 超紧凑腔体集成与测试方法
+  description: '金字塔形 ULE 腔体与真空腔室、光学元件一体化集成方法：将光学窗口、光电探测器直接安装在腔壁倾斜面上； 采用双层热屏蔽（被动不锈钢
+    + 主动 Peltier 铜屏蔽）实现紧凑温控； 通过 PDH 锁频测量频率不稳定度，评估短腔长下的热噪声极限与技术噪声。
 
+    '
+  verification_status: observed
+  implementation_details:
+  - 金字塔形 ULE 腔体加工（四侧面倾斜 45°）
+  - AlGaAs 晶体镀层降低热噪声
+  - 光学元件直接安装在腔壁，无需额外支架
+  - 紧凑真空腔室（30 L 总体积）设计
+  - 被动 + 主动双层热屏蔽
+  - 频率不稳定度测量（σ_y ≈ 7.5×10⁻¹⁵ @ 1 s）
+  enables: ent.ultracompact_pyramid_cavity_d18
+  source_claim: The cavity is placed inside a compact vacuum chamber; optical elements
+    are mounted directly onto the cavity walls; frequency instability measured via
+    PDH locking.
 metrics:
-  - id: met.fractional_freq_instability_d18
-    name: "分数频率不稳定度（Didier 2018）"
-    unit: "无量纲"
-    demonstrated_value:
-      value: "~7.5×10⁻¹⁵ @ 1 s"
-      conditions: "25 mm ULE 金字塔腔，晶体镀层，30 L 体积"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "PHRXF4IL", claim: "first estimation of the cavity fractional frequency instability at σy(1s) ≈ 7.5×10⁻¹⁵"}
-
+- id: met.fractional_freq_instability_d18
+  name: 分数频率不稳定度（Didier 2018）
+  unit: 无量纲
+  demonstrated_value:
+    value: ~7.5×10⁻¹⁵ @ 1 s
+    conditions: 25 mm ULE 金字塔腔，晶体镀层，30 L 体积
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: PHRXF4IL
+      claim: first estimation of the cavity fractional frequency instability at σy(1s)
+        ≈ 7.5×10⁻¹⁵
 relations:
-  - id: rel.DD01
-    subject: ent.ultracompact_pyramid_cavity_d18
-    predicate: PART-OF
-    object: ent.fp_cavity_system
-    confidence: established
-    source: {zotero_key: "PHRXF4IL", claim: "original Fabry-Perot cavity with 25 mm length and pyramidal geometry"}
-    note: "跨文件引用，ent.fp_cavity_system 定义于 numata2004.yaml"
-
-  - id: rel.DD02
-    subject: ent.ultracompact_pyramid_cavity_d18
-    predicate: BOUNDED-BY
-    object: pri.brownian_thermal_noise_fdt
-    confidence: established
-    source: {zotero_key: "PHRXF4IL", claim: "thermal noise of cavities, which now reaches the 10⁻¹⁷ decade, at the cost of complex systems"}
-    is_system_limit: false
-    regime: short-term
-    verification_status: calculated
-    note: "短腔长使热噪声极限较高，但当前性能可能还受技术噪声限制"
-    breakthrough_paths: []
+- id: rel.didier_2018_D01
+  subject: ent.ultracompact_pyramid_cavity_d18
+  predicate: PART-OF
+  object: ent.fp_cavity_system
+  confidence: established
+  source:
+    zotero_key: PHRXF4IL
+    claim: original Fabry-Perot cavity with 25 mm length and pyramidal geometry
+  note: 跨文件引用，ent.fp_cavity_system 定义于 numata2004.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/didier2018.yaml
+- id: rel.didier_2018_D02
+  subject: ent.ultracompact_pyramid_cavity_d18
+  predicate: BOUNDED-BY
+  object: pri.brownian_thermal_noise_fdt
+  confidence: established
+  source:
+    zotero_key: PHRXF4IL
+    claim: thermal noise of cavities, which now reaches the 10⁻¹⁷ decade, at the cost
+      of complex systems
+  is_system_limit: false
+  regime: short-term
+  verification_status: calculated
+  note: 短腔长使热噪声极限较高，但当前性能可能还受技术噪声限制
+  breakthrough_paths: []
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/didier2018.yaml

@@ -38,7 +38,7 @@ entities:
     note: "Level 2 实例，PART-OF ent.optical_lattice_clock"
 
 relations:
-  - id: rel.Bot19_01
+  - id: rel.bothwell_2019_ot19_01
     subject: ent.jila_sri_sr_clock_b19
     predicate: PART-OF
     object: ent.optical_lattice_clock
@@ -46,7 +46,7 @@ relations:
       paper: bothwell2019
       claim: "JILA SrI optical lattice clock"
 
-  - id: rel.Bot19_02
+  - id: rel.bothwell_2019_ot19_02
     subject: ent.jila_sri_sr_clock_b19
     predicate: CHARACTERIZED-BY
     object: met.optical_clock_fractional_uncertainty

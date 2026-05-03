@@ -42,7 +42,7 @@ principles:
     source_claim: "variances have been developed for characterizing the instabilities of precision clocks and oscillators"
 
 relations:
-  - id: rel.Alm16_01
+  - id: rel.allan_2016_lm16_01
     subject: pri.allan_variance_time_domain_characterization
     predicate: CHARACTERIZED-BY
     object: pri.allan_variance_time_domain_characterization

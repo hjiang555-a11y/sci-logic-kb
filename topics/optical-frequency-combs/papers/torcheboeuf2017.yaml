@@ -164,7 +164,7 @@ metrics:
       "An in-loop integrated phase noise of 133 mrad has been measured"
 
 relations:
-  - id: rel.T17_01
+  - id: rel.torcheboeuf_2017_17_01
     subject: ent.dpssl_eryb_eom_comb_t17
     predicate: PART-OF
     object: ent.optical_frequency_comb
@@ -173,7 +173,7 @@ relations:
       section: "Introduction"
     note: "跨文件引用，ent.optical_frequency_comb 定义于 giunta2019.yaml"
 
-  - id: rel.T17_02
+  - id: rel.torcheboeuf_2017_17_02
     subject: ent.dpssl_eryb_eom_comb_t17
     predicate: CHARACTERIZED-BY
     object: met.frep_lock_bandwidth_t17
@@ -181,7 +181,7 @@ relations:
       claim: "locking bandwidth up to 700 kHz"
       section: "Results"
 
-  - id: rel.T17_03
+  - id: rel.torcheboeuf_2017_17_03
     subject: ent.dpssl_eryb_eom_comb_t17
     predicate: CHARACTERIZED-BY
     object: met.frep_integrated_phase_noise_t17
@@ -189,7 +189,7 @@ relations:
       claim: "in-loop integrated phase noise of 133 mrad [10 Hz; 1 MHz]"
       section: "Results"
 
-  - id: rel.T17_04
+  - id: rel.torcheboeuf_2017_17_04
     subject: meth.eom_pzt_cascade_frep_lock
     predicate: ENABLED-BY
     object: pri.intracavity_eom_group_delay_modulation
@@ -197,7 +197,7 @@ relations:
       claim: "EOM operates mainly as a very fast voltage-controlled group delay element"
       section: "Introduction"
 
-  - id: rel.T17_05
+  - id: rel.torcheboeuf_2017_17_05
     subject: met.frep_lock_bandwidth_t17
     predicate: OPERATIONALIZED-AS
     object: meth.eom_pzt_cascade_frep_lock
@@ -205,7 +205,7 @@ relations:
       claim: "EOM-based repetition rate stabilization of a DPSSL is presented"
       section: "Introduction"
 
-  - id: rel.T17_06
+  - id: rel.torcheboeuf_2017_17_06
     subject: pri.intracavity_eom_group_delay_modulation
     predicate: BOUNDED-BY
     object: pri.eom_acoustic_resonance_limit_t17
@@ -213,7 +213,7 @@ relations:
       claim: "limited by sharp resonances observed around 900 kHz"
       section: "Results"
 
-  - id: rel.T17_07
+  - id: rel.torcheboeuf_2017_17_07
     subject: ent.dpssl_eryb_eom_comb_t17
     predicate: COMPETES-WITH
     object: ent.er_fiber_frequency_comb

@@ -101,7 +101,7 @@ metrics:
         claim: "source laser stability 4.5×10^-16 at 1 s (ULE cavity-stabilized at 1062 nm)"
 
 relations:
-  - id: rel.N01
+  - id: rel.nicolodi_2014_01
     subject: ent.er_fiber_ofc_spectral_transfer_nicolodi2014
     predicate: CHARACTERIZED-BY
     object: met.spectral_purity_transfer_degradation_nicolodi2014
@@ -110,7 +110,7 @@ relations:
       zotero_key: "JBIG86N9"
       claim: "degradation below 3×10^-18 at 1 s"
 
-  - id: rel.N02
+  - id: rel.nicolodi_2014_02
     subject: meth.intra_cavity_eom_phase_lock
     predicate: ENABLES
     object: met.spectral_purity_transfer_degradation_nicolodi2014
@@ -119,7 +119,7 @@ relations:
       zotero_key: "JBIG86N9"
       claim: "fast intra-cavity electro-optic modulator for tight phase locking"
 
-  - id: rel.N03
+  - id: rel.nicolodi_2014_03
     subject: ent.er_fiber_ofc_spectral_transfer_nicolodi2014
     predicate: IMPLEMENTS
     object: pri.ofc_spectral_purity_transfer

@@ -1,251 +1,259 @@
-# Webster 2007 — 振动不敏感光学谐振腔
-# 提取者：Claude（AI草稿，待专家确认）
-# 提取日期：2026-04-14
-# Schema版本：v4.1
-
 meta:
-  zotero_key: "UCNS7EM7"
+  zotero_key: UCNS7EM7
   source_type: technical_paper
   contribution_type: breakthrough
-  # 专题 σ_y-first 规则豁免：切口腔振动不敏感几何（新原理，vibration-insensitive notched cavity），
-  # 论文主指标为加速度灵敏度（工程指标），σ_y 刷新由后续论文（Webster 2008 等）承担。
   primary_metric_exempt_reason: new_principle
   reliability: high
-  title: "Vibration insensitive optical cavity"
+  title: Vibration insensitive optical cavity
   year: 2007
   first_author: Webster
-  journal: "Physical Review A"
+  journal: Physical Review A
   volume: 75
-  pages: "011801(R)"
-  doi: "10.1103/PhysRevA.75.011801"
-  note: >
-    技术分支：FP参考腔系统（Fabry-Pérot Reference Cavity Systems）
-    首次实验证明全向振动不敏感 FP 腔（Rapid Communication，NPL）；
-    竖直加速度灵敏度 <0.1 kHz/ms⁻²（较典型值 ~100 kHz/ms⁻² 改善 >1000×）；
-    水平灵敏度 3.7 kHz/ms⁻²（改善 ~27×）。
-    核心方法：底部方形切口 + 四点橡胶球对称支撑 + 有限元设计，
-    使加速度引起的两腔镜面中心位移等大反向，净腔长变化为零。
-    论文明确指出振动压制后热噪声（Numata 2004）成为下一极限，
-    并指出增长腔长可同时维持振动不敏感性且降低热噪声影响。
+  pages: 011801(R)
+  doi: 10.1103/PhysRevA.75.011801
+  note: '技术分支：FP参考腔系统（Fabry-Pérot Reference Cavity Systems） 首次实验证明全向振动不敏感 FP 腔（Rapid
+    Communication，NPL）； 竖直加速度灵敏度 <0.1 kHz/ms⁻²（较典型值 ~100 kHz/ms⁻² 改善 >1000×）； 水平灵敏度
+    3.7 kHz/ms⁻²（改善 ~27×）。 核心方法：底部方形切口 + 四点橡胶球对称支撑 + 有限元设计， 使加速度引起的两腔镜面中心位移等大反向，净腔长变化为零。
+    论文明确指出振动压制后热噪声（Numata 2004）成为下一极限， 并指出增长腔长可同时维持振动不敏感性且降低热噪声影响。
 
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
+    '
 entities:
-  - id: ent.cutout_cavity_mount_w07
-    name: "切口腔体安装设计（Webster 2007）"
-    aliases: ["cutout cavity", "vibration insensitive optical cavity", "cutout spacer with 4-point mount"]
-    hierarchy_level: 2
-    status: demonstrated
-    function: >
-      通过底部方形切口（补偿竖直加速度引起的腔体不对称形变）
-      和四点对称橡胶球支撑（保证水平方向力学对称），
-      使腔镜面中心间距在外部加速度作用下保持不变，
-      从而实现全向振动不敏感性，替代依赖被动隔振来降低振动影响的传统方案。
-    key_parameters:
-      spacer_length: "99.8 mm（水平卧式）"
-      spacer_diameter: "60 mm，ULE 玻璃（E=67.6 GPa，ν=0.17）"
-      mirror_spec: "31 mm 直径，8 mm 厚，R=350 mm，反射率 0.99998，ULE 玻璃，光学接触"
-      cutout_geometry: "底部方形切口，设计参数 c（切深）/ x（支撑横坐标）/ z（轴向坐标）"
-      optimal_design: "c=18.45 mm, x=22 mm, z≈20.3 mm（实验最优竖直零点）"
-      contact_type: "Case B：3 mm 橡胶球，四点均匀支撑（力学对称性最佳）"
-      cavity_orientation: "光轴水平（卧式）"
-      structural_resonance: "~10 kHz（第一结构谐振）"
-    design_rationale: >
-      切口参数存在一个"零点面"（zero locus plane in x,z,c space），
-      支撑位置 z 可在实验中连续调节以找到竖直零点；
-      设计对单参数误差有内在稳健性。
-      水平不敏感性依赖四点安装的几何对称和橡胶球的力学均匀性。
-    interface_requirements:
-      vibration: "有效频段：DC 至 ~10 kHz（结构谐振前）；>10 Hz 段主动隔振平台提供额外 35 dB 衰减"
-    note: >
-      Level 2 PART-OF ent.fp_cavity_system（定义于 numata2004.yaml）。
-      与 ent.vibration_isolation（young1999.yaml）为同一 L1 下不同振动抑制策略（非 COMPETES-WITH 关系）：
-      几何补偿在 DC–10 kHz 有效，灵敏度降低 >1000×，与增长腔兼容；
-      被动隔振在 >2 Hz 衰减好、实现简单；最优方案两者结合。
+- id: ent.cutout_cavity_mount_w07
+  name: 切口腔体安装设计（Webster 2007）
+  aliases:
+  - cutout cavity
+  - vibration insensitive optical cavity
+  - cutout spacer with 4-point mount
+  hierarchy_level: 2
+  status: demonstrated
+  function: '通过底部方形切口（补偿竖直加速度引起的腔体不对称形变） 和四点对称橡胶球支撑（保证水平方向力学对称）， 使腔镜面中心间距在外部加速度作用下保持不变，
+    从而实现全向振动不敏感性，替代依赖被动隔振来降低振动影响的传统方案。
 
+    '
+  key_parameters:
+    spacer_length: 99.8 mm（水平卧式）
+    spacer_diameter: 60 mm，ULE 玻璃（E=67.6 GPa，ν=0.17）
+    mirror_spec: 31 mm 直径，8 mm 厚，R=350 mm，反射率 0.99998，ULE 玻璃，光学接触
+    cutout_geometry: 底部方形切口，设计参数 c（切深）/ x（支撑横坐标）/ z（轴向坐标）
+    optimal_design: c=18.45 mm, x=22 mm, z≈20.3 mm（实验最优竖直零点）
+    contact_type: Case B：3 mm 橡胶球，四点均匀支撑（力学对称性最佳）
+    cavity_orientation: 光轴水平（卧式）
+    structural_resonance: ~10 kHz（第一结构谐振）
+  design_rationale: '切口参数存在一个"零点面"（zero locus plane in x,z,c space）， 支撑位置 z 可在实验中连续调节以找到竖直零点；
+    设计对单参数误差有内在稳健性。 水平不敏感性依赖四点安装的几何对称和橡胶球的力学均匀性。
+
+    '
+  interface_requirements:
+    vibration: 有效频段：DC 至 ~10 kHz（结构谐振前）；>10 Hz 段主动隔振平台提供额外 35 dB 衰减
+  note: 'Level 2 PART-OF ent.fp_cavity_system（定义于 numata2004.yaml）。 与 ent.vibration_isolation（young1999.yaml）为同一
+    L1 下不同振动抑制策略（非 COMPETES-WITH 关系）： 几何补偿在 DC–10 kHz 有效，灵敏度降低 >1000×，与增长腔兼容； 被动隔振在
+    >2 Hz 衰减好、实现简单；最优方案两者结合。
+
+    '
 principles:
-  - id: pri.cavity_deformation_compensation
-    name: "腔体形变补偿——振动不敏感设计原理"
-    tier: domain
-    verification_status: observed
-    statement: >
-      水平卧式 FP 腔在外部加速度作用下发生结构形变，但通过腔体几何优化
-      （底部切口 + 支撑位置选择），可使两腔镜面中心点的轴向位移量等大、符号相反，
-      从而使光学路径长度（腔长 L）保持不变，即 ΔL = 0，Δν = 0。
-      零点条件在参数空间（x, z, c）中构成一个面（zero locus plane），
-      支撑位置 z 可在实验中连续调节找到零点，设计对参数误差有稳健性。
-    domain: "精密光学谐振腔，超稳激光振动噪声抑制"
-    formula:
-      null_condition: "w_O(x, z, c) = 0，w_O 为腔镜面中心轴向位移"
-      zero_locus: "零点在 (x, z, c) 三维参数空间中构成一个面（非唯一解）"
-    key_insight: >
-      振动不敏感不依赖"减少振动传入"（隔振），
-      而是"减少腔对振动的响应系数"（几何补偿）；
-      与被动隔振互补：隔振在 >2 Hz 有效，几何补偿从 DC 到结构谐振均有效。
-    conditions: >
-      振动频率 << 腔体第一结构谐振频率（~10 kHz），可视为准静态；
-      四点支撑力学对称（橡胶球优于刚性触头）；
-      腔体材料均匀（ULE 等低膨胀玻璃）。
-    source_claim: >
-      "ensure that the distance between the two points at the centers of the
-       mirror surfaces remains invariant when a force is applied to the support"
-    applicable_when: "水平轴腔，低频加速度（< 腔体结构谐振频率）"
-    condition_variables:
-      - symbol: "c, x, z"
-        name: "腔体几何参数（切深/支撑横坐标/轴坐标）"
-        analytical_relation: "零点在 (x,z,c) 参数空间内构成一个面；z 为可实验调节参数"
-        current_value: "c=18.45 mm, x=22 mm, z≈20.3 mm（Webster 2007 最优值）"
-        best_demonstrated:
-          value: "<0.1 kHz/ms⁻²（竖直）；3.7 kHz/ms⁻²（水平）"
-          source: {zotero_key: "UCNS7EM7", claim: "minimum response of 0.1 (3.7) kHz/ms⁻² for vertical (horizontal)"}
-        constraints: "水平对称性要求四接触点支撑力均匀；刚性接触难以实现，橡胶球更优"
+- id: pri.cavity_deformation_compensation
+  name: 腔体形变补偿——振动不敏感设计原理
+  tier: domain
+  verification_status: observed
+  statement: '水平卧式 FP 腔在外部加速度作用下发生结构形变，但通过腔体几何优化 （底部切口 + 支撑位置选择），可使两腔镜面中心点的轴向位移量等大、符号相反，
+    从而使光学路径长度（腔长 L）保持不变，即 ΔL = 0，Δν = 0。 零点条件在参数空间（x, z, c）中构成一个面（zero locus plane），
+    支撑位置 z 可在实验中连续调节找到零点，设计对参数误差有稳健性。
 
+    '
+  domain: 精密光学谐振腔，超稳激光振动噪声抑制
+  formula:
+    null_condition: w_O(x, z, c) = 0，w_O 为腔镜面中心轴向位移
+    zero_locus: 零点在 (x, z, c) 三维参数空间中构成一个面（非唯一解）
+  key_insight: '振动不敏感不依赖"减少振动传入"（隔振）， 而是"减少腔对振动的响应系数"（几何补偿）； 与被动隔振互补：隔振在 >2 Hz 有效，几何补偿从
+    DC 到结构谐振均有效。
+
+    '
+  conditions: '振动频率 << 腔体第一结构谐振频率（~10 kHz），可视为准静态； 四点支撑力学对称（橡胶球优于刚性触头）； 腔体材料均匀（ULE
+    等低膨胀玻璃）。
+
+    '
+  source_claim: "\"ensure that the distance between the two points at the centers\
+    \ of the\n mirror surfaces remains invariant when a force is applied to the support\"\
+    \n"
+  applicable_when: 水平轴腔，低频加速度（< 腔体结构谐振频率）
+  condition_variables:
+  - symbol: c, x, z
+    name: 腔体几何参数（切深/支撑横坐标/轴坐标）
+    analytical_relation: 零点在 (x,z,c) 参数空间内构成一个面；z 为可实验调节参数
+    current_value: c=18.45 mm, x=22 mm, z≈20.3 mm（Webster 2007 最优值）
+    best_demonstrated:
+      value: <0.1 kHz/ms⁻²（竖直）；3.7 kHz/ms⁻²（水平）
+      source:
+        zotero_key: UCNS7EM7
+        claim: minimum response of 0.1 (3.7) kHz/ms⁻² for vertical (horizontal)
+    constraints: 水平对称性要求四接触点支撑力均匀；刚性接触难以实现，橡胶球更优
 methods:
-  - id: meth.cutout_cavity_design_fem_optimization_w07
-    name: "切口腔体设计与有限元优化方法（Webster 2007）"
-    description: >
-      通过有限元分析（FEM）优化FP腔的几何设计，实现全向振动不敏感性。
-      核心步骤：1）在腔体底部加工方形切口（cutout），补偿竖直加速度引起的腔体不对称形变；
-      2）采用四点橡胶球对称支撑（Case B），保证水平方向的力学对称性；
-      3）在参数空间（切口深度c、支撑横坐标x、轴坐标z）中寻找零点面（zero locus plane），
-      使加速度引起的两腔镜面中心位移等大反向，净腔长变化为零。
-      支撑位置z可在实验中连续调节以找到最优零点。
-    inputs: ["cavity_geometry", "acceleration_vector", "material_properties"]
-    outputs: ["optimized_cutout_parameters", "acceleration_sensitivity", "zero_locus_surface"]
-    note: "该方法实现了振动不敏感不依赖隔振，而是通过几何补偿降低腔对振动的响应系数。"
+- id: meth.cutout_cavity_design_fem_optimization_w07
+  name: 切口腔体设计与有限元优化方法（Webster 2007）
+  description: '通过有限元分析（FEM）优化FP腔的几何设计，实现全向振动不敏感性。 核心步骤：1）在腔体底部加工方形切口（cutout），补偿竖直加速度引起的腔体不对称形变；
+    2）采用四点橡胶球对称支撑（Case B），保证水平方向的力学对称性； 3）在参数空间（切口深度c、支撑横坐标x、轴坐标z）中寻找零点面（zero locus
+    plane）， 使加速度引起的两腔镜面中心位移等大反向，净腔长变化为零。 支撑位置z可在实验中连续调节以找到最优零点。
 
+    '
+  inputs:
+  - cavity_geometry
+  - acceleration_vector
+  - material_properties
+  outputs:
+  - optimized_cutout_parameters
+  - acceleration_sensitivity
+  - zero_locus_surface
+  note: 该方法实现了振动不敏感不依赖隔振，而是通过几何补偿降低腔对振动的响应系数。
 metrics:
-  - id: met.acceleration_sensitivity_vertical_w07
-    name: "竖直加速度灵敏度（切口腔，Webster 2007）"
-    unit: "kHz/ms⁻²"
-    description: >
-      切口腔（Case B 橡胶球支撑）在最优支撑位置（z≈20.3 mm）处测量的
-      竖直方向加速度引起的腔谐振频率响应系数，15 Hz 正弦激励。
-    demonstrated_value:
-      value: "< 0.1 kHz/ms⁻²"
-      conditions: "Case B（3 mm 橡胶球），z≈20.3 mm，c=18.45 mm，x=22 mm，15 Hz 正弦激励"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "UCNS7EM7", claim: "vertical response is <0.1 kHz/ms⁻²"}
-    comparison:
-      young1999_typical: "~100 kHz/ms⁻²（Young 1999，未优化安装）"
-      notcutt2005: "10 kHz/ms⁻²（Notcutt 2005，竖轴腔对称安装）"
-      nazarova2006: "1.5 kHz/ms⁻²（Nazarova 2006，水平腔支撑位置优化）"
-      improvement_vs_young99: ">1000×"
+- id: met.acceleration_sensitivity_vertical_w07
+  name: 竖直加速度灵敏度（切口腔，Webster 2007）
+  unit: kHz/ms⁻²
+  description: '切口腔（Case B 橡胶球支撑）在最优支撑位置（z≈20.3 mm）处测量的 竖直方向加速度引起的腔谐振频率响应系数，15 Hz
+    正弦激励。
 
-  - id: met.acceleration_sensitivity_horizontal_w07
-    name: "水平加速度灵敏度（切口腔，Webster 2007）"
-    unit: "kHz/ms⁻²"
-    description: "切口腔（Case B）水平方向（垂直于腔轴）加速度灵敏度"
-    demonstrated_value:
-      value: "3.7 ± 0.9 kHz/ms⁻²"
-      conditions: "Case B（橡胶球），水平方向垂直于腔轴；沿腔轴方向仍为 3.7 kHz/ms⁻²"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "UCNS7EM7", claim: "horizontal response 3.7 (0.9) kHz/ms⁻² in line with (perpendicular to) cavity axis"}
-    comparison:
-      young1999_typical: "~100 kHz/ms⁻²（量级）"
-      improvement_vs_young99: "~27×"
-
-# ═══════════════════════════════════════════════
-#  RELATIONS（关系）
-# ═══════════════════════════════════════════════
-
+    '
+  demonstrated_value:
+    value: < 0.1 kHz/ms⁻²
+    conditions: Case B（3 mm 橡胶球），z≈20.3 mm，c=18.45 mm，x=22 mm，15 Hz 正弦激励
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: UCNS7EM7
+      claim: vertical response is <0.1 kHz/ms⁻²
+  comparison:
+    young1999_typical: ~100 kHz/ms⁻²（Young 1999，未优化安装）
+    notcutt2005: 10 kHz/ms⁻²（Notcutt 2005，竖轴腔对称安装）
+    nazarova2006: 1.5 kHz/ms⁻²（Nazarova 2006，水平腔支撑位置优化）
+    improvement_vs_young99: '>1000×'
+- id: met.acceleration_sensitivity_horizontal_w07
+  name: 水平加速度灵敏度（切口腔，Webster 2007）
+  unit: kHz/ms⁻²
+  description: 切口腔（Case B）水平方向（垂直于腔轴）加速度灵敏度
+  demonstrated_value:
+    value: 3.7 ± 0.9 kHz/ms⁻²
+    conditions: Case B（橡胶球），水平方向垂直于腔轴；沿腔轴方向仍为 3.7 kHz/ms⁻²
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: UCNS7EM7
+      claim: horizontal response 3.7 (0.9) kHz/ms⁻² in line with (perpendicular to)
+        cavity axis
+  comparison:
+    young1999_typical: ~100 kHz/ms⁻²（量级）
+    improvement_vs_young99: ~27×
 relations:
-  - id: rel.W01
-    subject: ent.cutout_cavity_mount_w07
-    predicate: PART-OF
-    object: ent.fp_cavity_system
-    confidence: established
-    source: {zotero_key: "UCNS7EM7", claim: "optical cavity designed to be insensitive to vibration in all directions"}
-    conditions: null
-    note: "ent.fp_cavity_system 定义于 numata2004.yaml"
+- id: rel.webster_2007_01
+  subject: ent.cutout_cavity_mount_w07
+  predicate: PART-OF
+  object: ent.fp_cavity_system
+  confidence: established
+  source:
+    zotero_key: UCNS7EM7
+    claim: optical cavity designed to be insensitive to vibration in all directions
+  conditions: null
+  note: ent.fp_cavity_system 定义于 numata2004.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/webster2007.yaml
+- id: rel.webster_2007_02
+  subject: ent.cutout_cavity_mount_w07
+  predicate: ENABLED-BY
+  object: pri.cavity_deformation_compensation
+  confidence: established
+  source:
+    zotero_key: UCNS7EM7
+    claim: ensure distance between centers of mirror surfaces remains invariant when
+      force is applied
+  conditions: 竖直：靠切口几何补偿；水平：靠四点对称安装
+  temporal_role: proposes
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/webster2007.yaml
+- id: rel.webster_2007_03
+  subject: ent.cutout_cavity_mount_w07
+  predicate: CHARACTERIZED-BY
+  object: met.acceleration_sensitivity_vertical_w07
+  confidence: established
+  source:
+    zotero_key: UCNS7EM7
+    claim: vertical response <0.1 kHz/ms⁻²
+  conditions: 最优支撑位置 z≈20.3 mm，Case B
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/webster2007.yaml
+- id: rel.webster_2007_04
+  subject: ent.cutout_cavity_mount_w07
+  predicate: CHARACTERIZED-BY
+  object: met.acceleration_sensitivity_horizontal_w07
+  confidence: established
+  source:
+    zotero_key: UCNS7EM7
+    claim: horizontal response 3.7 (0.9) kHz/ms⁻²
+  conditions: Case B（橡胶球）
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/webster2007.yaml
+- id: rel.webster_2007_05
+  subject: ent.fp_cavity_system
+  predicate: BOUNDED-BY
+  object: pri.brownian_thermal_noise_fdt
+  confidence: established
+  source:
+    zotero_key: UCNS7EM7
+    claim: frequency stability will become limited by thermal fluctuations of mirror
+      substrates and coatings [Numata 2004]
+  conditions: 振动被充分压制后（Webster 2007 设计实现后）
+  is_system_limit: true
+  dominated_by: null
+  regime: all
+  verification_status: inferred
+  temporal_role: validates
+  breakthrough_paths:
+  - direction: pri.long_cavity_thermal_noise_reduction
+    expected_gain: 增长腔（如 48 cm）→ σ_y ∝ 1/L，同时光斑随腔长增大；Häfner 2015 实现 ~8×10⁻¹⁷
+    status: demonstrated
+    source:
+      zotero_key: UV6S5FFL
+      claim: cavity length may be increased while maintaining vibration insensitivity;
+        thermal fluctuations reduced
+    note: pri.long_cavity_thermal_noise_reduction 定义于 hafner2015.yaml
+  - direction: pri.crystalline_coating_low_brownian_noise
+    expected_gain: AlGaAs 晶体镀层（φ ~ 2.5×10⁻⁵）→ 镀层热噪声降低 10×（Cole 2013）
+    status: demonstrated
+    source:
+      zotero_key: CWIHQRJD
+      claim: tenfold reduction in mechanical damping when compared with the best dielectric
+        multilayers
+    note: ent.algaas_crystalline_mirror_c13 定义于 cole2013.yaml
+  note: 'pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml； Webster 2007 明确以 Numata
+    2004 为引用，确认热噪声为下一极限， 为 Numata 2004 理论在工程场景中的验证。 （原 breakthrough_paths 引用了已删除节点
+    pri.beam_radius_scaling 和 pri.low_loss_substrate_improvement， 已更新为实际实现这两个突破的有效节点
+    ID。）
 
-  - id: rel.W02
-    subject: ent.cutout_cavity_mount_w07
-    predicate: ENABLED-BY
-    object: pri.cavity_deformation_compensation
-    confidence: established
-    source: {zotero_key: "UCNS7EM7", claim: "ensure distance between centers of mirror surfaces remains invariant when force is applied"}
-    conditions: "竖直：靠切口几何补偿；水平：靠四点对称安装"
-    temporal_role: proposes
+    '
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/webster2007.yaml
+- id: rel.webster_2007_07
+  subject: ent.fp_cavity_system
+  predicate: CONDITIONED-BY
+  object: ent.vibration_environment
+  interface_metric: met.acceleration_sensitivity_vertical_w07
+  coupling_formula: Δν = acceleration_sensitivity × ambient_acceleration
+  internal_property: 'acceleration_sensitivity_vertical: <0.1 kHz/ms⁻²（Webster 2007
+    最优设计，较 Young 1999 改善 >1000×）'
+  confidence: established
+  source:
+    zotero_key: UCNS7EM7
+    claim: vibration insensitive design reduces coupling of environmental accelerations
+      to cavity frequency
+  is_system_limit:
+    current: false
+    conditions: Webster 2007 设计实现后，热噪声（Numata 2004）成为主要极限；Webster 设计使振动退出限制序列
+  note: 'ent.vibration_environment 定义于 young1999.yaml；ent.fp_cavity_system 定义于 numata2004.yaml。
+    本关系扩充了 young1999 rel.Y11 中的 internal_property： Webster 2007 将竖直加速度灵敏度从 ~100 kHz/ms⁻²
+    降至 <0.1 kHz/ms⁻²。
 
-  - id: rel.W03
-    subject: ent.cutout_cavity_mount_w07
-    predicate: CHARACTERIZED-BY
-    object: met.acceleration_sensitivity_vertical_w07
-    confidence: established
-    source: {zotero_key: "UCNS7EM7", claim: "vertical response <0.1 kHz/ms⁻²"}
-    conditions: "最优支撑位置 z≈20.3 mm，Case B"
-
-  - id: rel.W04
-    subject: ent.cutout_cavity_mount_w07
-    predicate: CHARACTERIZED-BY
-    object: met.acceleration_sensitivity_horizontal_w07
-    confidence: established
-    source: {zotero_key: "UCNS7EM7", claim: "horizontal response 3.7 (0.9) kHz/ms⁻²"}
-    conditions: "Case B（橡胶球）"
-
-  - id: rel.W05
-    subject: ent.fp_cavity_system
-    predicate: BOUNDED-BY
-    object: pri.brownian_thermal_noise_fdt
-    confidence: established
-    source: {zotero_key: "UCNS7EM7", claim: "frequency stability will become limited by thermal fluctuations of mirror substrates and coatings [Numata 2004]"}
-    conditions: "振动被充分压制后（Webster 2007 设计实现后）"
-    is_system_limit: true
-    dominated_by: null
-    regime: all
-    verification_status: inferred
-    temporal_role: validates
-    breakthrough_paths:
-      - direction: pri.long_cavity_thermal_noise_reduction
-        expected_gain: "增长腔（如 48 cm）→ σ_y ∝ 1/L，同时光斑随腔长增大；Häfner 2015 实现 ~8×10⁻¹⁷"
-        status: demonstrated
-        source: {zotero_key: "UV6S5FFL", claim: "cavity length may be increased while maintaining vibration insensitivity; thermal fluctuations reduced"}
-        note: "pri.long_cavity_thermal_noise_reduction 定义于 hafner2015.yaml"
-      - direction: pri.crystalline_coating_low_brownian_noise
-        expected_gain: "AlGaAs 晶体镀层（φ ~ 2.5×10⁻⁵）→ 镀层热噪声降低 10×（Cole 2013）"
-        status: demonstrated
-        source: {zotero_key: "CWIHQRJD", claim: "tenfold reduction in mechanical damping when compared with the best dielectric multilayers"}
-        note: "ent.algaas_crystalline_mirror_c13 定义于 cole2013.yaml"
-    note: >
-      pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml；
-      Webster 2007 明确以 Numata 2004 为引用，确认热噪声为下一极限，
-      为 Numata 2004 理论在工程场景中的验证。
-      （原 breakthrough_paths 引用了已删除节点 pri.beam_radius_scaling 和 pri.low_loss_substrate_improvement，
-      已更新为实际实现这两个突破的有效节点 ID。）
-
-  # rel.W06 已删除：原为 ent.cutout_cavity_mount_w07 COMPETES-WITH ent.vibration_isolation，
-  # 违反 Schema 规则（L2 实体之间不使用 COMPETES-WITH）。
-  # 两者均为 ent.fp_cavity_system 的 L2 子单元，tradeoff 信息已迁移至
-  # ent.cutout_cavity_mount_w07 的 design_rationale 和 note 中。
-  # 原文对比摘要：几何补偿在 DC–10kHz 有效且与增长腔兼容；
-  # 被动隔振在 >2 Hz 衰减好且实现简单；最优方案两者结合。
-
-  - id: rel.W07
-    subject: ent.fp_cavity_system
-    predicate: CONDITIONED-BY
-    object: ent.vibration_environment
-    interface_metric: met.acceleration_sensitivity_vertical_w07
-    coupling_formula: "Δν = acceleration_sensitivity × ambient_acceleration"
-    internal_property: "acceleration_sensitivity_vertical: <0.1 kHz/ms⁻²（Webster 2007 最优设计，较 Young 1999 改善 >1000×）"
-    confidence: established
-    source: {zotero_key: "UCNS7EM7", claim: "vibration insensitive design reduces coupling of environmental accelerations to cavity frequency"}
-    is_system_limit:
-      current: false
-      conditions: "Webster 2007 设计实现后，热噪声（Numata 2004）成为主要极限；Webster 设计使振动退出限制序列"
-    note: >
-      ent.vibration_environment 定义于 young1999.yaml；ent.fp_cavity_system 定义于 numata2004.yaml。
-      本关系扩充了 young1999 rel.Y11 中的 internal_property：
-      Webster 2007 将竖直加速度灵敏度从 ~100 kHz/ms⁻² 降至 <0.1 kHz/ms⁻²。
-
-  - id: rel.W08
-    subject: meth.cutout_cavity_design_fem_optimization_w07
-    predicate: IMPLEMENTS
-    object: pri.cavity_deformation_compensation
-    confidence: established
-    source: {zotero_key: "UCNS7EM7", claim: "ensure distance between centers of mirror surfaces remains invariant when force is applied"}
-    note: "切口腔体设计与有限元优化方法实现了腔体形变补偿原理。"
+    '
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/webster2007.yaml
+- id: rel.webster_2007_08
+  subject: meth.cutout_cavity_design_fem_optimization_w07
+  predicate: IMPLEMENTS
+  object: pri.cavity_deformation_compensation
+  confidence: established
+  source:
+    zotero_key: UCNS7EM7
+    claim: ensure distance between centers of mirror surfaces remains invariant when
+      force is applied
+  note: 切口腔体设计与有限元优化方法实现了腔体形变补偿原理。
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/webster2007.yaml

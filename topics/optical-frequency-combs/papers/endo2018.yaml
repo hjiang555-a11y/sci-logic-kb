@@ -280,7 +280,7 @@ metrics:
     '
 
 relations:
-- id: rel.E18_01
+- id: rel.endo_2018_18_01
   subject: ent.monolithic_erglass_comb_e18
   predicate: CHARACTERIZED-BY
   object: met.free_running_freq_instability_e18
@@ -291,7 +291,7 @@ relations:
       1 s gate time
   note: 本文核心实验结论。ent.monolithic_erglass_comb_e18 定义于本文件。
 
-- id: rel.E18_02
+- id: rel.endo_2018_18_02
   subject: ent.monolithic_erglass_comb_e18
   predicate: ENABLED-BY
   object: pri.monolithic_cavity_intrinsic_noise_reduction
@@ -302,7 +302,7 @@ relations:
       reduces round-trip loss, enabling 10^-19 free-running stability
   note: 物理机制→性能的使能关系。
 
-- id: rel.E18_03
+- id: rel.endo_2018_18_03
   subject: ent.optical_frequency_comb
   predicate: BOUNDED-BY
   object: pri.ofc_noise_hierarchy
@@ -323,7 +323,7 @@ relations:
     source: 'Endo 2018: BOMPD sub-fs residual jitter'
   note: ent.optical_frequency_comb 定义于 giunta2019.yaml。
 
-- id: rel.E18_04
+- id: rel.endo_2018_18_04
   subject: ent.optical_frequency_comb
   predicate: CHARACTERIZED-BY
   object: met.ofc_timing_jitter_floor
@@ -334,7 +334,7 @@ relations:
       distinguishing free-running from actively stabilized operation
   note: 通用关系，适用于所有 OFC 类型。ent.optical_frequency_comb 定义于 giunta2019.yaml。
 
-- id: rel.E18_05
+- id: rel.endo_2018_18_05
   subject: ent.optical_frequency_comb
   predicate: ENABLED-BY
   object: pri.ofc_two_dof_stabilization
@@ -345,7 +345,7 @@ relations:
       of freedom can be independently referenced to optical or microwave standard
   note: 元原理→OFC 系统存在的使能关系。ent.optical_frequency_comb 定义于 giunta2019.yaml。
 
-- id: rel.E18_06
+- id: rel.endo_2018_18_06
   subject: ent.monolithic_erglass_comb_e18
   predicate: COMPETES-WITH
   object: ent.er_fiber_frequency_comb
@@ -360,7 +360,7 @@ relations:
 
     '
 
-- id: rel.E18_07
+- id: rel.endo_2018_18_07
   subject: ent.monolithic_erglass_comb_e18
   predicate: COMPETES-WITH
   object: ent.ti_sapphire_frequency_comb
@@ -376,7 +376,7 @@ relations:
 
     '
 
-- id: rel.E18_08
+- id: rel.endo_2018_18_08
   subject: meth.balanced_optical_microwave_phase_detector
   predicate: ENABLED-BY
   object: pri.ofc_two_dof_stabilization

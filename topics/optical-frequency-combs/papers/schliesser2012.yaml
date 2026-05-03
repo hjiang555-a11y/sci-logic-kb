@@ -224,7 +224,7 @@ metrics:
   open_questions:
   - 能否在 8–13 μm 第二大气窗口实现同等水平的腔增强痕量气体检测？
 relations:
-- id: rel.S12_01
+- id: rel.schliesser_2011_12_01
   subject: ent.mid_ir_frequency_comb
   predicate: PART-OF
   object: ent.optical_frequency_comb
@@ -237,7 +237,7 @@ relations:
   note: '中红外频率梳是光学频率梳向 2–20 μm 波段的功能扩展。 ent.optical_frequency_comb 定义于 giunta2019.yaml。
 
     '
-- id: rel.S12_02
+- id: rel.schliesser_2011_12_02
   subject: meth.dfg_comb_generation
   predicate: ENABLED-BY
   object: pri.nonlinear_frequency_conversion_comb
@@ -247,7 +247,7 @@ relations:
     claim: all modes of a near-infrared frequency comb can simultaneously be subjected
       to difference-frequency generation
   conditions: 需要合适的 χ⁽²⁾ 非线性晶体和宽带相位匹配
-- id: rel.S12_03
+- id: rel.schliesser_2011_12_03
   subject: meth.opo_comb_generation
   predicate: ENABLED-BY
   object: pri.nonlinear_frequency_conversion_comb
@@ -258,7 +258,7 @@ relations:
       resonator in an OPO can simultaneously experience gain that exceeds the threshold
       for parametric oscillation
   conditions: 需要同步泵浦和 OPO 腔色散管理
-- id: rel.S12_04
+- id: rel.schliesser_2011_12_04
   subject: ent.mid_ir_frequency_comb
   predicate: ENABLED-BY
   object: pri.molecular_rovibrational_fingerprint
@@ -268,7 +268,7 @@ relations:
     claim: The mid-infrared domain, with its strong molecular fingerprints, attracts
       considerable interest.
   note: 分子振转指纹光谱是中红外频率梳的核心科学驱动力
-- id: rel.S12_05
+- id: rel.schliesser_2011_12_05
   subject: ent.mid_ir_frequency_comb
   predicate: CHARACTERIZED-BY
   object: met.mid_ir_spectral_coverage
@@ -277,7 +277,7 @@ relations:
     zotero_key: ''
     claim: wide (>100 cm⁻¹) spectra that are tunable over a range of 2–4 μm... spectra
       spanning 900 cm⁻¹
-- id: rel.S12_06
+- id: rel.schliesser_2011_12_06
   subject: ent.mid_ir_frequency_comb
   predicate: CHARACTERIZED-BY
   object: met.trace_gas_sensitivity
@@ -286,7 +286,7 @@ relations:
     zotero_key: ''
     claim: detection levels as low as one part per billion for H₂O₂
   note: 腔增强中红外梳光谱系统的痕量气体检测灵敏度
-- id: rel.S12_07
+- id: rel.schliesser_2011_12_07
   subject: met.mid_ir_spectral_coverage
   predicate: OPERATIONALIZED-AS
   object: meth.dfg_comb_generation
@@ -295,7 +295,7 @@ relations:
     zotero_key: ''
     claim: spectra that span 3–5 μm with a width of more than 500 cm⁻¹
   note: DFG 是实现中红外光谱覆盖的主要方法之一
-- id: rel.S12_08
+- id: rel.schliesser_2011_12_08
   subject: met.mid_ir_spectral_coverage
   predicate: OPERATIONALIZED-AS
   object: meth.opo_comb_generation
@@ -305,7 +305,7 @@ relations:
     claim: ultra-broad mid-infrared spectra spanning 900 cm⁻¹... with an impressive
       power of 200 nW per mode
   note: OPO 提供最宽带的中红外光谱覆盖
-- id: rel.S12_09
+- id: rel.schliesser_2011_12_09
   subject: met.mid_ir_spectral_coverage
   predicate: BOUNDED-BY
   object: pri.nonlinear_frequency_conversion_comb
@@ -316,7 +316,7 @@ relations:
       bandwidth because the poling period is optimized for only part of the comb spectrum
   conditions: 相位匹配带宽是当前光谱覆盖的主要限制因素
   note: 非线性晶体的相位匹配带宽和透明范围直接限制中红外梳光谱覆盖
-- id: rel.S12_10
+- id: rel.schliesser_2011_12_10
   subject: met.trace_gas_sensitivity
   predicate: BOUNDED-BY
   object: met.mid_ir_spectral_coverage
@@ -326,7 +326,7 @@ relations:
     claim: the spectral span is limited only by the spectral bandwidths of the source
       and detector
   note: 痕量气体检测灵敏度部分受限于光谱覆盖范围（决定可探测分子种类数）
-- id: rel.S12_11
+- id: rel.schliesser_2011_12_11
   subject: meth.dfg_comb_generation
   predicate: COMPETES-WITH
   object: meth.opo_comb_generation
@@ -340,7 +340,7 @@ relations:
     谐振增强、功率高（~μW/mode），但系统复杂、需额外 f_CEO 锁定。
 
     '
-- id: rel.S12_12
+- id: rel.schliesser_2011_12_12
   subject: ent.mid_ir_frequency_comb
   predicate: CONDITIONED-BY
   object: ent.optical_frequency_comb
@@ -361,7 +361,7 @@ relations:
   note: '跨方案核心接口：近红外频率梳→中红外频率梳。 ent.optical_frequency_comb 定义于 giunta2019.yaml。
 
     '
-- id: rel.S12_13
+- id: rel.schliesser_2011_12_13
   subject: ent.mid_ir_frequency_comb
   predicate: CONDITIONED-BY
   object: ent.microresonator_frequency_comb

@@ -119,7 +119,7 @@ metrics:
         source: {zotero_key: "U5C8AJYM"}
 
 relations:
-  - id: rel.Rol18_01
+  - id: rel.rolland_2018_ol18_01
     subject: ent.dual_branch_er_comb_rolland18
     predicate: PART-OF
     object: ent.er_fiber_frequency_comb
@@ -127,14 +127,14 @@ relations:
     source: {zotero_key: "U5C8AJYM", claim: "dual-branch Er-fiber based optical frequency comb"}
     note: "跨文件引用 ent.er_fiber_frequency_comb（定义于 droste2016.yaml）"
 
-  - id: rel.Rol18_02
+  - id: rel.rolland_2018_ol18_02
     subject: ent.dual_branch_er_comb_rolland18
     predicate: CHARACTERIZED-BY
     object: met.dual_branch_transfer_stability_r18
     confidence: established
     source: {zotero_key: "U5C8AJYM", claim: "3×10⁻¹⁸ at 1 s"}
 
-  - id: rel.Rol18_03
+  - id: rel.rolland_2018_ol18_03
     subject: met.dual_branch_transfer_stability_r18
     predicate: BOUNDED-BY
     object: pri.dual_branch_differential_phase_noise_cancellation_r18
@@ -146,14 +146,14 @@ relations:
         status: demonstrated
         source: {zotero_key: "U5C8AJYM"}
 
-  - id: rel.Rol18_04
+  - id: rel.rolland_2018_ol18_04
     subject: meth.dual_branch_fceo_locking_passive_cancellation_r18
     predicate: OPERATIONALIZED-AS
     object: ent.dual_branch_er_comb_rolland18
     confidence: established
     source: {zotero_key: "U5C8AJYM", claim: "detect and stabilize f_ceo while simultaneously correlating differential phase noise"}
 
-  - id: rel.Rol18_05
+  - id: rel.rolland_2018_ol18_05
     subject: meth.dual_branch_fceo_locking_passive_cancellation_r18
     predicate: ENABLED-BY
     object: pri.self_referencing_f2f

@@ -66,21 +66,19 @@
 | 时间 | 动作 | 触发条件 |
 |------|------|----------|
 | 当前 | 保持 GitHub 原生浏览 | — |
-| 近期（本季度） | 方案 A-1：启用 Pages + `.nojekyll`，发布 `docs/graph/` 交互式图谱 | 若审阅者 / 读者要求图谱可交互 |
+| 近期（本季度） | 方案 A-1：启用 Pages + `.nojekyll`，发布 `docs/graph/` 交互式图谱 | ✅ 已实现 (2026-05-02): `.nojekyll` + Workflow + README badge |
 | 中期 | 方案 B：MkDocs Material | 若外部读者数 >10，或内部协作者反馈 GitHub 原生导航吃力 |
 | 长期 | 不建议走方案 C | 本库的核心价值就是 YAML 源 |
 
 ---
 
-## 4. 近期最小动作清单（方案 A-1 预备）
+## 4. 近期最小动作清单（方案 A-1）
 
-以下清单只在决定启用 Pages 时再执行，本 PR 不实施：
-
-- [ ] 在仓库根添加空 `.nojekyll` 文件（禁止 Jekyll 二次处理，防止 `_` 开头目录被隐藏）
-- [ ] `Settings → Pages` 选 `branch: main, folder: /`
-- [ ] 在 `README.md` 顶部加 "🌐 在线阅读：<url>" 链接
-- [ ] 确认 `docs/graph/index.html` 使用相对路径加载 `graph.json`（避免 Pages 路由问题）
-- [ ] 首次发布后人工检查：（a）Mermaid 图是否可渲染（Pages 默认不渲染，需嵌入 JS）；（b）内部相对链接跳转是否正常
+- [x] 在仓库根添加空 `.nojekyll` 文件 ✅ 已完成 (2026-05-02)
+- [x] 创建 `.github/workflows/pages.yml` GitHub Actions 自动部署 ✅ 已完成 (2026-05-02)
+- [ ] `Settings → Pages` 选 `Actions` 为部署源（需仓库管理员在 GitHub UI 操作一次）
+- [x] 在 `README.md` 顶部加 "🌐 在线阅读" badge ✅ 已完成 (2026-05-02)
+- [x] 确认 `docs/graph/index.html` 使用相对路径加载 `graph.json` ✅ 已验证（`fetch("graph.json")` + `src="viewer.js"`）
 
 ---
 

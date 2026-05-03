@@ -246,7 +246,7 @@ metrics:
 
     '
 relations:
-- id: rel.U02_01
+- id: rel.udem_2001_02_01
   subject: ent.ti_sapphire_frequency_comb
   predicate: PART-OF
   object: ent.optical_frequency_comb
@@ -257,7 +257,7 @@ relations:
       of the 1990s, and we have shown conclusively that such lasers can be crucial
       in this field
   note: Level 2 实例 → Level 1 通用实体。ent.optical_frequency_comb 定义于 giunta2019.yaml
-- id: rel.U02_02
+- id: rel.udem_2001_02_02
   subject: ent.photonic_crystal_fiber
   predicate: PART-OF
   object: ent.optical_frequency_comb
@@ -268,7 +268,7 @@ relations:
       spectral broadening is so pronounced that the resulting frequency comb can span
       more than an optical octave
   note: PCF 是频率梳系统的使能组件，PART-OF 整体梳系统。ent.optical_frequency_comb 定义于 giunta2019.yaml
-- id: rel.U02_03
+- id: rel.udem_2001_02_03
   subject: ent.optical_frequency_comb
   predicate: ENABLED-BY
   object: pri.femtosecond_comb_frequency_ruler
@@ -278,7 +278,7 @@ relations:
     claim: the modes of a mode-locked femtosecond laser can be used as a precise ruler
       in frequency space
   note: 频率梳存在的物理基础。跨文件引用：ent.optical_frequency_comb 定义于 giunta2019.yaml
-- id: rel.U02_04
+- id: rel.udem_2001_02_04
   subject: pri.self_referencing_f2f
   predicate: ENABLED-BY
   object: pri.supercontinuum_octave_spanning
@@ -291,7 +291,7 @@ relations:
       be the interval between an optical frequency f and its own second harmonic 2f
   conditions: 频谱须覆盖至少一个倍频程以实现 f 与 2f 的同时访问
   note: 超连续谱展宽是 f-2f 自参考的使能技术。pri.self_referencing_f2f 定义于 giunta2019.yaml
-- id: rel.U02_05
+- id: rel.udem_2001_02_05
   subject: meth.optical_frequency_counting
   predicate: ENABLED-BY
   object: pri.femtosecond_comb_frequency_ruler
@@ -301,7 +301,7 @@ relations:
     claim: a compact and reliable all-solid-state optical frequency synthesizer that
       requires only a single mode-locked laser
   note: 梳齿等间距特性是光频计数方法的物理基础
-- id: rel.U02_06
+- id: rel.udem_2001_02_06
   subject: meth.optical_frequency_counting
   predicate: ENABLED-BY
   object: pri.self_referencing_f2f
@@ -313,7 +313,7 @@ relations:
       and f_CEO is derived as explained
   conditions: 需同时稳定 f_rep 和 f_CEO
   note: f-2f 自参考提供 f_CEO 的检测，是绝对光频计数的关键。pri.self_referencing_f2f 定义于 giunta2019.yaml
-- id: rel.U02_07
+- id: rel.udem_2001_02_07
   subject: ent.optical_frequency_comb
   predicate: CHARACTERIZED-BY
   object: met.optical_frequency_measurement_accuracy_u02
@@ -322,7 +322,7 @@ relations:
     zotero_key: ''
     claim: a transition frequency value as accurate as 1.9 parts in 10¹⁴
   note: 跨文件引用：ent.optical_frequency_comb 定义于 giunta2019.yaml
-- id: rel.U02_08
+- id: rel.udem_2001_02_08
   subject: ent.optical_frequency_comb
   predicate: CHARACTERIZED-BY
   object: met.comb_mode_equidistancy_u02
@@ -331,7 +331,7 @@ relations:
     zotero_key: ''
     claim: no deviation from the perfect regular grid larger than 3 parts in 10¹⁷
   note: 梳齿等间距性是频率梳的核心性能指标。ent.optical_frequency_comb 定义于 giunta2019.yaml
-- id: rel.U02_09
+- id: rel.udem_2001_02_09
   subject: met.optical_frequency_measurement_accuracy_u02
   predicate: OPERATIONALIZED-AS
   object: meth.optical_frequency_counting
@@ -340,7 +340,7 @@ relations:
     zotero_key: ''
     claim: This work has now culminated in a compact and reliable all-solid-state
       optical frequency synthesizer
-- id: rel.U02_10
+- id: rel.udem_2001_02_10
   subject: ent.optical_frequency_comb
   predicate: COMPETES-WITH
   object: ent.harmonic_frequency_chain
@@ -361,7 +361,7 @@ relations:
       laboratory introduced a revolutionary new approach that vastly simplifies optical
       frequency measurements
   note: 频率梳完全取代了谐波频率链。ent.optical_frequency_comb 定义于 giunta2019.yaml
-- id: rel.U02_11
+- id: rel.udem_2001_02_11
   subject: pri.optical_clock_higher_frequency_advantage
   predicate: ENABLED-BY
   object: pri.femtosecond_comb_frequency_ruler

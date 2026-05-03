@@ -1,328 +1,332 @@
-# Kim 2008 — 远程光学/微波源漂移自由飞秒同步
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-16
-# Schema版本：v4.1
-
 meta:
-  zotero_key: "H5YVF5AR"
+  zotero_key: H5YVF5AR
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
-  title: "Drift-free femtosecond timing synchronization of remote optical and microwave sources"
+  title: Drift-free femtosecond timing synchronization of remote optical and microwave
+    sources
   year: 2008
   first_author: Kim
-  journal: "Nature Photonics"
+  journal: Nature Photonics
   volume: 2
-  pages: "733-736"
-  doi: "10.1038/nphoton.2008.225"
-  note: >
-    首次系统演示基于锁模激光光脉冲列的远程时序网络：通过定时稳定光纤链路分发主时钟，
-    并在远端分别实现光-光与光-微波同步，在超过 10 h 的时间内保持亚 10 fs 漂移自由精度。
-    核心贡献：把传统“光电探测 + 微波混频”方案替换为平衡光学互相关与 BOM-PD，
-    解决长期热漂移与幅度-相位转换问题。
+  pages: 733-736
+  doi: 10.1038/nphoton.2008.225
+  note: '首次系统演示基于锁模激光光脉冲列的远程时序网络：通过定时稳定光纤链路分发主时钟， 并在远端分别实现光-光与光-微波同步，在超过 10 h 的时间内保持亚
+    10 fs 漂移自由精度。 核心贡献：把传统“光电探测 + 微波混频”方案替换为平衡光学互相关与 BOM-PD， 解决长期热漂移与幅度-相位转换问题。
 
+    '
 entities:
-  - id: ent.remote_timing_synchronization_network
-    name: "远程飞秒时序同步网络"
-    aliases: ["remote femtosecond timing synchronization network", "mode-locked-laser timing network"]
-    hierarchy_level: 1
-    status: demonstrated
-    function: >
-      以低噪声锁模激光输出的光脉冲列作为统一主时基，经定时稳定光纤链路分发到远端站点，
-      再在各端站将到达的脉冲列分别与远端锁模激光或微波振荡器同步，
-      从而实现大尺度设施内的统一飞秒级时序控制。
-    key_parameters:
-      master_pulse_train: "200.5 MHz 锁模激光脉冲列（光学主振荡器）"
-      distribution_distance: "数百米量级；本文演示两条独立 ~300 m 光纤链路"
-      link_stabilization: "单晶平衡光学互相关器 + PZT 快反馈 + 电机平移台慢反馈"
-      optical_optical_demo: "Ti:sapphire 激光与 Cr:forsterite 激光远程同步"
-      optical_microwave_demo: "从 200.5 MHz 脉冲列再生 10.225 GHz 微波并锁相"
-    practical_limitations:
-      - description: "光纤链路稳定环路的补偿带宽受链路往返传播时间限制"
-        source_claim: "timing stabilization of fibre links has an intrinsic bandwidth limitation due to the link travel time of the pulse"
-        impact: "快于链路往返时间的时序扰动无法被链路伺服完全补偿"
-    note: >
-      新 Level 1 实体，表示“时序分发/同步网络”而非传统频率参考部件；
-      节点边界待专家审核。
+- id: ent.remote_timing_synchronization_network
+  name: 远程飞秒时序同步网络
+  aliases:
+  - remote femtosecond timing synchronization network
+  - mode-locked-laser timing network
+  hierarchy_level: 1
+  status: demonstrated
+  function: '以低噪声锁模激光输出的光脉冲列作为统一主时基，经定时稳定光纤链路分发到远端站点， 再在各端站将到达的脉冲列分别与远端锁模激光或微波振荡器同步，
+    从而实现大尺度设施内的统一飞秒级时序控制。
 
+    '
+  key_parameters:
+    master_pulse_train: 200.5 MHz 锁模激光脉冲列（光学主振荡器）
+    distribution_distance: 数百米量级；本文演示两条独立 ~300 m 光纤链路
+    link_stabilization: 单晶平衡光学互相关器 + PZT 快反馈 + 电机平移台慢反馈
+    optical_optical_demo: Ti:sapphire 激光与 Cr:forsterite 激光远程同步
+    optical_microwave_demo: 从 200.5 MHz 脉冲列再生 10.225 GHz 微波并锁相
+  practical_limitations:
+  - description: 光纤链路稳定环路的补偿带宽受链路往返传播时间限制
+    source_claim: timing stabilization of fibre links has an intrinsic bandwidth limitation
+      due to the link travel time of the pulse
+    impact: 快于链路往返时间的时序扰动无法被链路伺服完全补偿
+  note: '新 Level 1 实体，表示“时序分发/同步网络”而非传统频率参考部件； 节点边界待专家审核。
+
+    '
 principles:
-  - id: pri.balanced_optical_cross_correlation
-    name: "平衡光学互相关原理"
-    tier: domain
-    verification_status: observed
-    statement: >
-      通过非线性光学互相关比较两列超短脉冲的到达时差，
-      再对两条只相差固定延迟的互相关支路做平衡探测，
-      可在零交叉附近直接输出与时序偏差近似线性的误差信号。
-      该原理利用全光学互相关的高时间灵敏度，同时借助温度不敏感延迟元件与平衡探测，
-      显著抑制热漂移和幅度噪声耦合。
-    domain: "飞秒时序分发与同步"
-    formula: "V_err ∝ C(Δt+τ) - C(Δt-τ) ≈ (dC/dt)·2τ·Δt（零交叉附近）"
-    key_insight: "把时差检测保留在光域并做平衡差分，可同时获得高灵敏度与长期低漂移。"
-    conditions: "适用于两个超短脉冲列具有良好时空重合且非线性互相关信号足够强的情形"
-    preconditions:
-      - "两输入脉冲列保持相干定时参考关系，并能稳定重合到互相关线性区"
-      - "非线性晶体与时延元件的温漂低于目标飞秒级误差预算"
-      - "平衡探测两路增益匹配，以抑制共模幅度噪声"
-    invalidated_when:
-      - "脉冲时差超出互相关线性捕获范围，零交叉误差信号失真"
-      - "非线性信号过弱或平衡失配严重，幅度噪声重新主导读出"
-    source_claim: >
-      "the device leverages the high timing sensitivity of nonlinear optic processes
-      while suppressing the influence of thermal effects and amplitude noise"
-    note: "新原理节点，服务于链路稳时与光-光同步两条方法链；边界待专家审核。"
+- id: pri.balanced_optical_cross_correlation
+  name: 平衡光学互相关原理
+  tier: domain
+  verification_status: observed
+  statement: '通过非线性光学互相关比较两列超短脉冲的到达时差， 再对两条只相差固定延迟的互相关支路做平衡探测， 可在零交叉附近直接输出与时序偏差近似线性的误差信号。
+    该原理利用全光学互相关的高时间灵敏度，同时借助温度不敏感延迟元件与平衡探测， 显著抑制热漂移和幅度噪声耦合。
 
-  - id: pri.optical_microwave_phase_detection_bom_pd
-    name: "平衡光学-微波相位探测（BOM-PD）原理"
-    tier: domain
-    verification_status: observed
-    statement: >
-      先在光域中把微波信号与光脉冲列之间的相位误差转换为强度不平衡或调制度变化，
-      再经平衡读出得到不受传统光电探测过量噪声污染的相位误差信号，
-      用于驱动高品质压控微波振荡器锁定到光脉冲列零交叉。
-      本文采用基于电光采样的差分偏置 Sagnac 环干涉结构实现该读出。
-    domain: "光-微波同步"
-    key_insight: "先在光域完成相位比较，再做电子反馈，可绕开直接光电探测的长期漂移瓶颈。"
-    conditions: "适用于锁模光脉冲列与目标微波信号之间的高稳定相位锁定"
-    preconditions:
-      - "光脉冲列与微波信号在 BOM-PD 中保持稳定时序重合"
-      - "VCO 相位噪声与环路带宽足以跟随 BOM-PD 输出"
-      - "Sagnac 环偏置点稳定在高灵敏度工作区"
-    invalidated_when:
-      - "BOM-PD 偏置漂移或失衡导致相位误差重新耦合到强度噪声"
-      - "微波源近端噪声高于锁定环路可校正范围，无法维持飞秒级锁定"
-    source_claim: >
-      "we convert the phase error between the pulse train and the microwave signal
-      into an optical quantity ... robust against photodetection excess noise"
-    note: "新原理节点，代表 BOM-PD 的核心工作机理；边界待专家审核。"
+    '
+  domain: 飞秒时序分发与同步
+  formula: V_err ∝ C(Δt+τ) - C(Δt-τ) ≈ (dC/dt)·2τ·Δt（零交叉附近）
+  key_insight: 把时差检测保留在光域并做平衡差分，可同时获得高灵敏度与长期低漂移。
+  conditions: 适用于两个超短脉冲列具有良好时空重合且非线性互相关信号足够强的情形
+  preconditions:
+  - 两输入脉冲列保持相干定时参考关系，并能稳定重合到互相关线性区
+  - 非线性晶体与时延元件的温漂低于目标飞秒级误差预算
+  - 平衡探测两路增益匹配，以抑制共模幅度噪声
+  invalidated_when:
+  - 脉冲时差超出互相关线性捕获范围，零交叉误差信号失真
+  - 非线性信号过弱或平衡失配严重，幅度噪声重新主导读出
+  source_claim: '"the device leverages the high timing sensitivity of nonlinear optic
+    processes while suppressing the influence of thermal effects and amplitude noise"
 
+    '
+  note: 新原理节点，服务于链路稳时与光-光同步两条方法链；边界待专家审核。
+- id: pri.optical_microwave_phase_detection_bom_pd
+  name: 平衡光学-微波相位探测（BOM-PD）原理
+  tier: domain
+  verification_status: observed
+  statement: '先在光域中把微波信号与光脉冲列之间的相位误差转换为强度不平衡或调制度变化， 再经平衡读出得到不受传统光电探测过量噪声污染的相位误差信号，
+    用于驱动高品质压控微波振荡器锁定到光脉冲列零交叉。 本文采用基于电光采样的差分偏置 Sagnac 环干涉结构实现该读出。
+
+    '
+  domain: 光-微波同步
+  key_insight: 先在光域完成相位比较，再做电子反馈，可绕开直接光电探测的长期漂移瓶颈。
+  conditions: 适用于锁模光脉冲列与目标微波信号之间的高稳定相位锁定
+  preconditions:
+  - 光脉冲列与微波信号在 BOM-PD 中保持稳定时序重合
+  - VCO 相位噪声与环路带宽足以跟随 BOM-PD 输出
+  - Sagnac 环偏置点稳定在高灵敏度工作区
+  invalidated_when:
+  - BOM-PD 偏置漂移或失衡导致相位误差重新耦合到强度噪声
+  - 微波源近端噪声高于锁定环路可校正范围，无法维持飞秒级锁定
+  source_claim: '"we convert the phase error between the pulse train and the microwave
+    signal into an optical quantity ... robust against photodetection excess noise"
+
+    '
+  note: 新原理节点，代表 BOM-PD 的核心工作机理；边界待专家审核。
 methods:
-  - id: meth.timing_stabilized_fiber_linking
-    name: "平衡互相关定时稳定光纤链路"
-    status: demonstrated
-    applies_to: ent.remote_timing_synchronization_network
-    steps_summary: >
-      主锁模激光脉冲列进入光纤链路 → 末端分出一部分作为定时输出，剩余脉冲经 FRM 反射返回 →
-      返回脉冲与新入射脉冲在单晶平衡互相关器中比较得到时差误差信号 →
-      快反馈驱动 PZT、慢反馈驱动电机平移台补偿链路快慢漂移。
-    required_hardware:
-      - ent.laser_source
-    advantages:
-      - "把 300 m 实验室光纤链路的皮秒级环境漂移压低到数飞秒量级"
-      - "利用全光学时差检测，避免传统高速光电探测与微波混频的热漂移问题"
-      - "快慢双执行器分工，兼顾高速扰动与长时间漂移"
-    disadvantages:
-      - "补偿带宽受链路往返传播时间限制"
-      - "需要非线性晶体、色散补偿和较精细的脉冲时空重合"
-    conditions:
-      - "链路采用色散补偿并维持脉冲宽度"
-      - "环境声振和热漂移不能大到使回波脉冲脱离互相关捕获范围"
-    source_claim: >
-      "the time-of-flight of each link should be stabilized with a feedback loop"
-    note: "新方法节点；作为 Kim 2008 时序网络的基础分发手段，边界待专家审核。"
+- id: meth.timing_stabilized_fiber_linking
+  name: 平衡互相关定时稳定光纤链路
+  status: demonstrated
+  applies_to: ent.remote_timing_synchronization_network
+  steps_summary: '主锁模激光脉冲列进入光纤链路 → 末端分出一部分作为定时输出，剩余脉冲经 FRM 反射返回 → 返回脉冲与新入射脉冲在单晶平衡互相关器中比较得到时差误差信号
+    → 快反馈驱动 PZT、慢反馈驱动电机平移台补偿链路快慢漂移。
 
-  - id: meth.optical_optical_synchronization_boc
-    name: "基于平衡互相关的光-光同步"
-    status: demonstrated
-    applies_to: ent.remote_timing_synchronization_network
-    steps_summary: >
-      远端链路输出脉冲与待同步锁模激光脉冲在平衡光学互相关器中比较 →
-      输出零交叉误差信号反馈到远端锁模激光 PZT →
-      使远端激光脉冲列与分发到站的主时钟脉冲列保持飞秒级同步。
-    required_hardware:
-      - ent.laser_source
-    advantages:
-      - "可对不同中心波长的超快激光实现长期亚飞秒级同步"
-      - "对幅度噪声和热漂移不敏感，适合多小时持续运行"
-    disadvantages:
-      - "需要针对同色/异色脉冲分别设计单晶或双色互相关器"
-      - "锁定范围受互相关线性区和脉冲重合条件限制"
-    conditions:
-      - "两列脉冲可在互相关器中实现稳定的时空重合"
-      - "远端激光具有可用的 PZT 或等效时序执行器"
-    source_claim: >
-      "mode-locked lasers can be directly synchronized with the delivered pulse trains"
-    note: "新方法节点；对应论文中的 Ti:sapphire/Cr:forsterite 远端同步演示。"
+    '
+  required_hardware:
+  - ent.laser_source
+  advantages:
+  - 把 300 m 实验室光纤链路的皮秒级环境漂移压低到数飞秒量级
+  - 利用全光学时差检测，避免传统高速光电探测与微波混频的热漂移问题
+  - 快慢双执行器分工，兼顾高速扰动与长时间漂移
+  disadvantages:
+  - 补偿带宽受链路往返传播时间限制
+  - 需要非线性晶体、色散补偿和较精细的脉冲时空重合
+  conditions:
+  - 链路采用色散补偿并维持脉冲宽度
+  - 环境声振和热漂移不能大到使回波脉冲脱离互相关捕获范围
+  source_claim: '"the time-of-flight of each link should be stabilized with a feedback
+    loop"
 
-  - id: meth.optical_microwave_synchronization_bom_pd
-    name: "基于 BOM-PD 的光-微波同步"
-    status: demonstrated
-    applies_to: ent.remote_timing_synchronization_network
-    steps_summary: >
-      到达端站的光脉冲列进入 BOM-PD →
-      与目标微波信号比较得到低漂移相位误差信号 →
-      误差信号驱动 VCO 构成光电锁相环 →
-      输出与光脉冲列零交叉严格对齐的低噪声微波。
-    required_hardware:
-      - ent.laser_source
-    advantages:
-      - "避免传统直接光电探测读出中的长期相位漂移和过量噪声"
-      - "把光脉冲列的高稳定度有效转移到 10 GHz 级微波信号"
-    disadvantages:
-      - "需要高品质 VCO 与精细偏置的 BOM-PD 器件"
-      - "最终性能仍受环路带宽和器件偏置稳定性约束"
-    conditions:
-      - "光脉冲列和微波源在 BOM-PD 中稳定耦合"
-      - "锁相环带宽足以覆盖目标微波源的主导相位噪声"
-    source_claim: >
-      "we have implemented an optoelectronic phase-locked loop ... using a balanced
-      optical–microwave phase detector (BOM-PD)"
-    note: "新方法节点；对应远端 10.225 GHz 微波再生与锁相演示。"
+    '
+  note: 新方法节点；作为 Kim 2008 时序网络的基础分发手段，边界待专家审核。
+- id: meth.optical_optical_synchronization_boc
+  name: 基于平衡互相关的光-光同步
+  status: demonstrated
+  applies_to: ent.remote_timing_synchronization_network
+  steps_summary: '远端链路输出脉冲与待同步锁模激光脉冲在平衡光学互相关器中比较 → 输出零交叉误差信号反馈到远端锁模激光 PZT → 使远端激光脉冲列与分发到站的主时钟脉冲列保持飞秒级同步。
 
+    '
+  required_hardware:
+  - ent.laser_source
+  advantages:
+  - 可对不同中心波长的超快激光实现长期亚飞秒级同步
+  - 对幅度噪声和热漂移不敏感，适合多小时持续运行
+  disadvantages:
+  - 需要针对同色/异色脉冲分别设计单晶或双色互相关器
+  - 锁定范围受互相关线性区和脉冲重合条件限制
+  conditions:
+  - 两列脉冲可在互相关器中实现稳定的时空重合
+  - 远端激光具有可用的 PZT 或等效时序执行器
+  source_claim: '"mode-locked lasers can be directly synchronized with the delivered
+    pulse trains"
+
+    '
+  note: 新方法节点；对应论文中的 Ti:sapphire/Cr:forsterite 远端同步演示。
+- id: meth.optical_microwave_synchronization_bom_pd
+  name: 基于 BOM-PD 的光-微波同步
+  status: demonstrated
+  applies_to: ent.remote_timing_synchronization_network
+  steps_summary: '到达端站的光脉冲列进入 BOM-PD → 与目标微波信号比较得到低漂移相位误差信号 → 误差信号驱动 VCO 构成光电锁相环 →
+    输出与光脉冲列零交叉严格对齐的低噪声微波。
+
+    '
+  required_hardware:
+  - ent.laser_source
+  advantages:
+  - 避免传统直接光电探测读出中的长期相位漂移和过量噪声
+  - 把光脉冲列的高稳定度有效转移到 10 GHz 级微波信号
+  disadvantages:
+  - 需要高品质 VCO 与精细偏置的 BOM-PD 器件
+  - 最终性能仍受环路带宽和器件偏置稳定性约束
+  conditions:
+  - 光脉冲列和微波源在 BOM-PD 中稳定耦合
+  - 锁相环带宽足以覆盖目标微波源的主导相位噪声
+  source_claim: '"we have implemented an optoelectronic phase-locked loop ... using
+    a balanced optical–microwave phase detector (BOM-PD)"
+
+    '
+  note: 新方法节点；对应远端 10.225 GHz 微波再生与锁相演示。
 metrics:
-  - id: met.timing_link_stability_k08
-    name: "定时稳定光纤链路残余时差（Kim 2008）"
-    unit: "fs"
-    description: >
-      两条独立 300 m 级定时稳定光纤链路输出之间的残余时差。
-      反映链路分发层本身的长期漂移和短期抖动水平。
-    demonstrated_value:
-      value: "6.4 fs r.m.s. @ 72 h；0.36 fs r.m.s. @ 10 ms–1 s"
-      conditions: "两条独立 ~300 m 色散补偿定时稳定光纤链路，out-of-loop 平衡互相关测量"
-      verification_status: observed
-      confidence: established
-      source:
-        zotero_key: "H5YVF5AR"
-        claim: "Over a 72-h period ... we observed 6.4 fs (r.m.s.) residual timing error ... on a short-term timescale (10 ms–1 s), we observed only 0.36 fs (r.m.s.) timing jitter"
-    historical_landmarks:
-      first_demonstration:
-        value: "6.4 fs r.m.s. @ 72 h"
-        year: 2008
-        source: {zotero_key: "H5YVF5AR"}
-        note: "首次在多天连续运行中把数百米级光纤定时链路残余漂移压到数飞秒"
+- id: met.timing_link_stability_k08
+  name: 定时稳定光纤链路残余时差（Kim 2008）
+  unit: fs
+  description: '两条独立 300 m 级定时稳定光纤链路输出之间的残余时差。 反映链路分发层本身的长期漂移和短期抖动水平。
 
-  - id: met.optical_optical_sync_jitter_k08
-    name: "远程光-光同步时序抖动（Kim 2008）"
-    unit: "fs"
-    description: >
-      远端 Ti:sapphire 与 Cr:forsterite 锁模激光在 out-of-loop 双色平衡互相关测量中的残余时序抖动。
-    demonstrated_value:
-      value: "0.4 fs r.m.s.（22 mHz–2.3 MHz）"
-      conditions: "Ti:sapphire 激光与 Cr:forsterite 激光远程同步，连续运行 >12 h，out-of-loop 双色平衡互相关测量"
-      verification_status: observed
-      confidence: established
+    '
+  demonstrated_value:
+    value: 6.4 fs r.m.s. @ 72 h；0.36 fs r.m.s. @ 10 ms–1 s
+    conditions: 两条独立 ~300 m 色散补偿定时稳定光纤链路，out-of-loop 平衡互相关测量
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: H5YVF5AR
+      claim: Over a 72-h period ... we observed 6.4 fs (r.m.s.) residual timing error
+        ... on a short-term timescale (10 ms–1 s), we observed only 0.36 fs (r.m.s.)
+        timing jitter
+  historical_landmarks:
+    first_demonstration:
+      value: 6.4 fs r.m.s. @ 72 h
+      year: 2008
       source:
-        zotero_key: "H5YVF5AR"
-        claim: "The integrated timing jitter is 0.4 fs (r.m.s.) in the 22 mHz–2.3 MHz range"
-    historical_landmarks:
-      first_demonstration:
-        value: "0.4 fs r.m.s.（>12 h）"
-        year: 2008
-        source: {zotero_key: "H5YVF5AR"}
-        note: "首次在多小时尺度上实现远程异色锁模激光亚飞秒同步"
+        zotero_key: H5YVF5AR
+      note: 首次在多天连续运行中把数百米级光纤定时链路残余漂移压到数飞秒
+- id: met.optical_optical_sync_jitter_k08
+  name: 远程光-光同步时序抖动（Kim 2008）
+  unit: fs
+  description: '远端 Ti:sapphire 与 Cr:forsterite 锁模激光在 out-of-loop 双色平衡互相关测量中的残余时序抖动。
 
-  - id: met.optical_microwave_sync_jitter_k08
-    name: "远程光-微波同步时序抖动（Kim 2008）"
-    unit: "fs"
-    role: primary   # 相对时序稳定度 = 1.9×10⁻¹⁹（σ_y 等价），本论文的 σ_y 主线指标
-    description: >
-      由 200.5 MHz 光脉冲列再生的 10.225 GHz 微波与原光时基之间的残余时序抖动，
-      反映光稳定度向电子域转移后的长期保持能力。
-    demonstrated_value:
-      value: "6.8 fs r.m.s.（1 MHz 带宽，10 h）；相对时序稳定度 1.9×10⁻¹⁹"
-      conditions: "一个 BOM-PD 用于 10.225 GHz 微波再生，另一 BOM-PD 进行 out-of-loop 监测"
-      verification_status: observed
-      confidence: established
+    '
+  demonstrated_value:
+    value: 0.4 fs r.m.s.（22 mHz–2.3 MHz）
+    conditions: Ti:sapphire 激光与 Cr:forsterite 激光远程同步，连续运行 >12 h，out-of-loop 双色平衡互相关测量
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: H5YVF5AR
+      claim: The integrated timing jitter is 0.4 fs (r.m.s.) in the 22 mHz–2.3 MHz
+        range
+  historical_landmarks:
+    first_demonstration:
+      value: 0.4 fs r.m.s.（>12 h）
+      year: 2008
       source:
-        zotero_key: "H5YVF5AR"
-        claim: "the timing jitter in a 1 MHz bandwidth integrated over 10 h is 6.8 fs (r.m.s.). This corresponds to 1.9 × 10−19 relative timing stability"
-    historical_landmarks:
-      first_demonstration:
-        value: "6.8 fs r.m.s.（10 h）"
-        year: 2008
-        source: {zotero_key: "H5YVF5AR"}
-        note: "首次实现远程光-微波多小时漂移自由亚 10 fs 同步"
+        zotero_key: H5YVF5AR
+      note: 首次在多小时尺度上实现远程异色锁模激光亚飞秒同步
+- id: met.optical_microwave_sync_jitter_k08
+  name: 远程光-微波同步时序抖动（Kim 2008）
+  unit: fs
+  role: primary
+  description: '由 200.5 MHz 光脉冲列再生的 10.225 GHz 微波与原光时基之间的残余时序抖动， 反映光稳定度向电子域转移后的长期保持能力。
 
+    '
+  demonstrated_value:
+    value: 6.8 fs r.m.s.（1 MHz 带宽，10 h）；相对时序稳定度 1.9×10⁻¹⁹
+    conditions: 一个 BOM-PD 用于 10.225 GHz 微波再生，另一 BOM-PD 进行 out-of-loop 监测
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: H5YVF5AR
+      claim: the timing jitter in a 1 MHz bandwidth integrated over 10 h is 6.8 fs
+        (r.m.s.). This corresponds to 1.9 × 10−19 relative timing stability
+  historical_landmarks:
+    first_demonstration:
+      value: 6.8 fs r.m.s.（10 h）
+      year: 2008
+      source:
+        zotero_key: H5YVF5AR
+      note: 首次实现远程光-微波多小时漂移自由亚 10 fs 同步
 relations:
-  - id: rel.Ki01
-    subject: ent.remote_timing_synchronization_network
-    predicate: CHARACTERIZED-BY
-    object: met.timing_link_stability_k08
-    confidence: established
-    source:
-      zotero_key: "H5YVF5AR"
-      claim: "we observed 6.4 fs (r.m.s.) residual timing error between the link outputs"
-    conditions: "两条独立 ~300 m 定时稳定光纤链路的 out-of-loop 比较"
-
-  - id: rel.Ki02
-    subject: met.timing_link_stability_k08
-    predicate: OPERATIONALIZED-AS
-    object: meth.timing_stabilized_fiber_linking
-    confidence: established
-    source:
-      zotero_key: "H5YVF5AR"
-      claim: "the time-of-flight of each link should be stabilized with a feedback loop"
-    conditions: "单晶平衡互相关读出 + PZT/电机双执行器补偿"
-
-  - id: rel.Ki03
-    subject: meth.timing_stabilized_fiber_linking
-    predicate: ENABLED-BY
-    object: pri.balanced_optical_cross_correlation
-    confidence: established
-    source:
-      zotero_key: "H5YVF5AR"
-      claim: "we developed a single-crystal balanced cross-correlator to measure the timing offset"
-    conditions: "返回脉冲与新入射脉冲在 PPKTP 单晶互相关器中比较"
-    temporal_role: proposes
-
-  - id: rel.Ki04
-    subject: ent.remote_timing_synchronization_network
-    predicate: CHARACTERIZED-BY
-    object: met.optical_optical_sync_jitter_k08
-    confidence: established
-    source:
-      zotero_key: "H5YVF5AR"
-      claim: "The integrated timing jitter is 0.4 fs (r.m.s.) in the 22 mHz–2.3 MHz range"
-    conditions: "Ti:sapphire 与 Cr:forsterite 远程同步，连续运行 >12 h"
-
-  - id: rel.Ki05
-    subject: met.optical_optical_sync_jitter_k08
-    predicate: OPERATIONALIZED-AS
-    object: meth.optical_optical_synchronization_boc
-    confidence: established
-    source:
-      zotero_key: "H5YVF5AR"
-      claim: "we synchronized a Ti:sapphire laser and a Cr:forsterite laser using the two-colour balanced cross-correlator"
-    conditions: "双色平衡互相关，out-of-loop 光学互相关测量"
-
-  - id: rel.Ki06
-    subject: meth.optical_optical_synchronization_boc
-    predicate: ENABLED-BY
-    object: pri.balanced_optical_cross_correlation
-    confidence: established
-    source:
-      zotero_key: "H5YVF5AR"
-      claim: "for this optical–optical synchronization ... we can use balanced optical cross-correlation"
-    conditions: "同色或异色脉冲均可通过相应互相关器实现"
-    temporal_role: validates
-
-  - id: rel.Ki07
-    subject: ent.remote_timing_synchronization_network
-    predicate: CHARACTERIZED-BY
-    object: met.optical_microwave_sync_jitter_k08
-    confidence: established
-    source:
-      zotero_key: "H5YVF5AR"
-      claim: "the timing jitter in a 1 MHz bandwidth integrated over 10 h is 6.8 fs (r.m.s.)"
-    conditions: "10.225 GHz 微波与 200.5 MHz 光脉冲列远程同步"
-
-  - id: rel.Ki08
-    subject: met.optical_microwave_sync_jitter_k08
-    predicate: OPERATIONALIZED-AS
-    object: meth.optical_microwave_synchronization_bom_pd
-    confidence: established
-    source:
-      zotero_key: "H5YVF5AR"
-      claim: "One BOM-PD is used to regenerate a 10.225 GHz microwave signal from a 200.5 MHz optical pulse train"
-    conditions: "另一个 BOM-PD 做 out-of-loop 监测"
-
-  - id: rel.Ki09
-    subject: meth.optical_microwave_synchronization_bom_pd
-    predicate: ENABLED-BY
-    object: pri.optical_microwave_phase_detection_bom_pd
-    confidence: established
-    source:
-      zotero_key: "H5YVF5AR"
-      claim: "we implemented this technique by using ... a balanced optical–microwave phase detector (BOM-PD)"
-    conditions: "基于电光采样的差分偏置 Sagnac 环干涉结构"
-    temporal_role: proposes
+- id: rel.kim_2008_i01
+  subject: ent.remote_timing_synchronization_network
+  predicate: CHARACTERIZED-BY
+  object: met.timing_link_stability_k08
+  confidence: established
+  source:
+    zotero_key: H5YVF5AR
+    claim: we observed 6.4 fs (r.m.s.) residual timing error between the link outputs
+  conditions: 两条独立 ~300 m 定时稳定光纤链路的 out-of-loop 比较
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/kim2008.yaml
+- id: rel.kim_2008_i02
+  subject: met.timing_link_stability_k08
+  predicate: OPERATIONALIZED-AS
+  object: meth.timing_stabilized_fiber_linking
+  confidence: established
+  source:
+    zotero_key: H5YVF5AR
+    claim: the time-of-flight of each link should be stabilized with a feedback loop
+  conditions: 单晶平衡互相关读出 + PZT/电机双执行器补偿
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/kim2008.yaml
+- id: rel.kim_2008_i03
+  subject: meth.timing_stabilized_fiber_linking
+  predicate: ENABLED-BY
+  object: pri.balanced_optical_cross_correlation
+  confidence: established
+  source:
+    zotero_key: H5YVF5AR
+    claim: we developed a single-crystal balanced cross-correlator to measure the
+      timing offset
+  conditions: 返回脉冲与新入射脉冲在 PPKTP 单晶互相关器中比较
+  temporal_role: proposes
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/kim2008.yaml
+- id: rel.kim_2008_i04
+  subject: ent.remote_timing_synchronization_network
+  predicate: CHARACTERIZED-BY
+  object: met.optical_optical_sync_jitter_k08
+  confidence: established
+  source:
+    zotero_key: H5YVF5AR
+    claim: The integrated timing jitter is 0.4 fs (r.m.s.) in the 22 mHz–2.3 MHz range
+  conditions: Ti:sapphire 与 Cr:forsterite 远程同步，连续运行 >12 h
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/kim2008.yaml
+- id: rel.kim_2008_i05
+  subject: met.optical_optical_sync_jitter_k08
+  predicate: OPERATIONALIZED-AS
+  object: meth.optical_optical_synchronization_boc
+  confidence: established
+  source:
+    zotero_key: H5YVF5AR
+    claim: we synchronized a Ti:sapphire laser and a Cr:forsterite laser using the
+      two-colour balanced cross-correlator
+  conditions: 双色平衡互相关，out-of-loop 光学互相关测量
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/kim2008.yaml
+- id: rel.kim_2008_i06
+  subject: meth.optical_optical_synchronization_boc
+  predicate: ENABLED-BY
+  object: pri.balanced_optical_cross_correlation
+  confidence: established
+  source:
+    zotero_key: H5YVF5AR
+    claim: for this optical–optical synchronization ... we can use balanced optical
+      cross-correlation
+  conditions: 同色或异色脉冲均可通过相应互相关器实现
+  temporal_role: validates
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/kim2008.yaml
+- id: rel.kim_2008_i07
+  subject: ent.remote_timing_synchronization_network
+  predicate: CHARACTERIZED-BY
+  object: met.optical_microwave_sync_jitter_k08
+  confidence: established
+  source:
+    zotero_key: H5YVF5AR
+    claim: the timing jitter in a 1 MHz bandwidth integrated over 10 h is 6.8 fs (r.m.s.)
+  conditions: 10.225 GHz 微波与 200.5 MHz 光脉冲列远程同步
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/kim2008.yaml
+- id: rel.kim_2008_i08
+  subject: met.optical_microwave_sync_jitter_k08
+  predicate: OPERATIONALIZED-AS
+  object: meth.optical_microwave_synchronization_bom_pd
+  confidence: established
+  source:
+    zotero_key: H5YVF5AR
+    claim: One BOM-PD is used to regenerate a 10.225 GHz microwave signal from a 200.5
+      MHz optical pulse train
+  conditions: 另一个 BOM-PD 做 out-of-loop 监测
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/kim2008.yaml
+- id: rel.kim_2008_i09
+  subject: meth.optical_microwave_synchronization_bom_pd
+  predicate: ENABLED-BY
+  object: pri.optical_microwave_phase_detection_bom_pd
+  confidence: established
+  source:
+    zotero_key: H5YVF5AR
+    claim: we implemented this technique by using ... a balanced optical–microwave
+      phase detector (BOM-PD)
+  conditions: 基于电光采样的差分偏置 Sagnac 环干涉结构
+  temporal_role: proposes
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/kim2008.yaml

@@ -143,7 +143,7 @@ methods:
 metrics: []
 
 relations:
-  - id: rel.L08T_01
+  - id: rel.ludlow_2008_08T_01
     subject: meth.sr_optical_lattice_clock_stack_l08
     predicate: OPERATIONALIZED-AS
     object: ent.optical_lattice_clock
@@ -151,7 +151,7 @@ relations:
     source: {zotero_key: "LUDLOW2008-THESIS-JILA", claim: "the complete JILA Sr clock system integrates Zeeman slowing, blue/red MOTs, magic-wavelength lattice trapping..."}
     note: "Sr 光晶格钟全栈方法承载光晶格钟架构子节点的具体实现。跨文件引用 ent.optical_lattice_clock（fortier2026.yaml）。"
 
-  - id: rel.L08T_02
+  - id: rel.ludlow_2008_08T_02
     subject: meth.sr_optical_lattice_clock_stack_l08
     predicate: CONDITIONED-BY
     object: pri.magic_wavelength_operational_protocol_l08
@@ -159,7 +159,7 @@ relations:
     source: {zotero_key: "LUDLOW2008-THESIS-JILA", claim: "the magic-wavelength protocol is a prerequisite for 10⁻¹⁶ fractional uncertainty in the Sr lattice clock."}
     note: "Sr 钟全栈依赖魔术波长操作协议作为 AC-Stark 消除的前提。"
 
-  - id: rel.L08T_03
+  - id: rel.ludlow_2008_08T_03
     subject: ent.optical_lattice_clock
     predicate: BOUNDED-BY
     object: pri.sr_clock_systematic_budget_framework_l08
@@ -167,7 +167,7 @@ relations:
     source: {zotero_key: "LUDLOW2008-THESIS-JILA", claim: "the total systematic uncertainty budget of the JILA Sr clock is constructed as the quadrature sum of eight independently evaluated contributions."}
     note: "光晶格钟的不确定度由八项系统效应预算合成限制。跨文件引用 ent.optical_lattice_clock（fortier2026.yaml）。"
 
-  - id: rel.L08T_04
+  - id: rel.ludlow_2008_08T_04
     subject: meth.sr_optical_lattice_clock_stack_l08
     predicate: OPERATIONALIZED-AS
     object: meth.allan_deviation_adev

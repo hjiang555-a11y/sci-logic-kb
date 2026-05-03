@@ -99,7 +99,7 @@ principles:
         context: "实现 77 MHz 相位匹配 XUV 梳产生，单谐波功率 ~2 mW（先前纪录 <100 μW，提升 20 倍），为 XUV 频率梳光谱学提供实用化光源"
 
 relations:
-  - id: rel.Por01
+  - id: rel.porat_2018_or01
     predicate: BOUNDED-BY
     subject: ent.high_temp_gas_mixture_hhg_p18
     object: pri.high_temp_gas_suppresses_steady_state_plasma_p18
@@ -124,7 +124,7 @@ relations:
       BOUNDED-BY 关系：高重频相位匹配 HHG 的可行性受"稳态等离子体积累"限制，
       通过高温气体（提升 v_gas）突破该限制。补 breakthrough_paths（本论文为 breakthrough tier）。
 
-  - id: rel.Por02
+  - id: rel.porat_2018_or02
     predicate: CHARACTERIZED-BY
     subject: ent.high_temp_gas_mixture_hhg_p18
     object: met.xuv_harmonic_power_p18

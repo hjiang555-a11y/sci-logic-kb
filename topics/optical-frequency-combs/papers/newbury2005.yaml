@@ -79,7 +79,7 @@ methods:
       - "可直接定标激发态寿命、色散等内部参数"
 
 relations:
-  - id: rel.Newb05_01
+  - id: rel.newbury_2005_ewb05_01
     subject: pri.fiber_comb_perturbative_response_theory
     predicate: DERIVED-FROM
     object: pri.comb_equation
@@ -89,7 +89,7 @@ relations:
       claim: "the Fourier transform of ... a pulse train ... comb with spacing set by the repetition rate ... offset frequency set by the CEO frequency"
     note: "跨文件引用 pri.comb_equation"
 
-  - id: rel.Newb05_02
+  - id: rel.newbury_2005_ewb05_02
     subject: pri.fiber_comb_perturbative_response_theory
     predicate: BOUNDED-BY
     object: pri.gain_lifetime_servo_bandwidth_limit
@@ -99,7 +99,7 @@ relations:
       claim: "the feedback bandwidth for the phase-lock of the offset frequency has been limited by the laser gain lifetime"
     note: "跨文件引用 pri.gain_lifetime_servo_bandwidth_limit（定义于 kuse2015.yaml）"
 
-  - id: rel.Newb05_03
+  - id: rel.newbury_2005_ewb05_03
     subject: pri.fiber_comb_mimo_feedback_topology
     predicate: ENABLED-BY
     object: pri.fiber_comb_perturbative_response_theory
@@ -108,7 +108,7 @@ relations:
       zotero_key: "NHJ84W8G"
       claim: "The mechanisms by which the pump power, cavity length and cavity loss control the frequency comb spacing and offset are identified."
 
-  - id: rel.Newb05_04
+  - id: rel.newbury_2005_ewb05_04
     subject: meth.fiber_comb_transfer_function_identification
     predicate: OPERATIONALIZED-AS
     object: pri.fiber_comb_perturbative_response_theory

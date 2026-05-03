@@ -41,7 +41,7 @@ entities:
     note: "Level 2 实例，PART-OF ent.trapped_ion_optical_clock"
 
 relations:
-  - id: rel.Osk06_01
+  - id: rel.oskay_2006_sk06_01
     subject: ent.hg_ion_optical_clock_nist_o06
     predicate: PART-OF
     object: ent.trapped_ion_optical_clock
@@ -49,7 +49,7 @@ relations:
       paper: oskay2006
       claim: "optical frequency standard based on an ultraviolet transition in a single, laser-cooled mercury ion"
 
-  - id: rel.Osk06_02
+  - id: rel.oskay_2006_sk06_02
     subject: ent.hg_ion_optical_clock_nist_o06
     predicate: CHARACTERIZED-BY
     object: met.optical_clock_fractional_uncertainty

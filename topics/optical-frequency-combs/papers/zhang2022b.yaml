@@ -278,7 +278,7 @@ metrics:
 # ═══════════════════════════════════════════════
 
 relations:
-  - id: rel.Z22B_01
+  - id: rel.zhang_2022_22B_01
     subject: ent.all_pm_erfiber_comb_z22b
     predicate: PART-OF
     object: ent.optical_frequency_comb
@@ -286,14 +286,14 @@ relations:
     source: {zotero_key: "BPQDL4DN", claim: "a turnkey erbium fiber laser-based OFC with multi-branch architecture"}
     note: "ent.optical_frequency_comb 权威定义于 udem2002.yaml"
 
-  - id: rel.Z22B_02
+  - id: rel.zhang_2022_22B_02
     subject: ent.multi_branch_supercontinuum_z22b
     predicate: PART-OF
     object: ent.all_pm_erfiber_comb_z22b
     confidence: established
     source: {zotero_key: "BPQDL4DN", claim: "four branches for application ... each branch produces a particular wavelength separately at 698 nm, 729 nm, 1068 nm, and 1156 nm"}
 
-  - id: rel.Z22B_03
+  - id: rel.zhang_2022_22B_03
     subject: ent.all_pm_erfiber_comb_z22b
     predicate: COMPETES-WITH
     object: ent.hybrid_ml_erfiber_comb_z17
@@ -301,14 +301,14 @@ relations:
     source: {zotero_key: "BPQDL4DN", claim: "NALM systems have exhibited outstanding robustness and low noise features; consequently, this technique is preferred for applications in scenarios outside the laboratory"}
     note: "同研究组的架构演进（NPE+NALM hybrid → 纯 NALM + 全 PM）；ent.hybrid_ml_erfiber_comb_z17 定义于 zhang2017.yaml"
 
-  - id: rel.Z22B_04
+  - id: rel.zhang_2022_22B_04
     subject: ent.all_pm_erfiber_comb_z22b
     predicate: ENABLED-BY
     object: pri.figure9_nalm_pm_self_starting
     confidence: established
     source: {zotero_key: "BPQDL4DN", claim: "non-reciprocal phase device ... to ensure the self-starting operation by introducing a phase bias of π/2"}
 
-  - id: rel.Z22B_05
+  - id: rel.zhang_2022_22B_05
     subject: ent.all_pm_erfiber_comb_z22b
     predicate: ENABLED-BY
     object: pri.self_referencing_f2f
@@ -316,7 +316,7 @@ relations:
     source: {zotero_key: "BPQDL4DN", claim: "A standard f-to-2f interferometer following the PM HNLF is used to obtain the fceo signal"}
     note: "pri.self_referencing_f2f 定义于 udem2002.yaml / giunta2019.yaml"
 
-  - id: rel.Z22B_06
+  - id: rel.zhang_2022_22B_06
     subject: ent.all_pm_erfiber_comb_z22b
     predicate: CHARACTERIZED-BY
     object: met.fceo_allan_inloop_z22b
@@ -324,7 +324,7 @@ relations:
     source: {zotero_key: "BPQDL4DN", claim: "7.4 × 10⁻¹⁸/τ^{1/2} ... for fceo"}
     temporal_role: validates
 
-  - id: rel.Z22B_07
+  - id: rel.zhang_2022_22B_07
     subject: ent.all_pm_erfiber_comb_z22b
     predicate: CHARACTERIZED-BY
     object: met.fbeat_allan_inloop_z22b
@@ -332,7 +332,7 @@ relations:
     source: {zotero_key: "BPQDL4DN", claim: "8.5×10⁻¹⁸/τ^{1/2} for fbeat"}
     temporal_role: validates
 
-  - id: rel.Z22B_08
+  - id: rel.zhang_2022_22B_08
     subject: ent.all_pm_erfiber_comb_z22b
     predicate: CHARACTERIZED-BY
     object: met.out_of_loop_instability_z22b
@@ -340,21 +340,21 @@ relations:
     source: {zotero_key: "BPQDL4DN", claim: "The relative instability is 9×10⁻¹⁷ at an averaging time of 1 s, and decreases to 5.5×10⁻¹⁹ ... 4000 s"}
     temporal_role: validates
 
-  - id: rel.Z22B_09
+  - id: rel.zhang_2022_22B_09
     subject: ent.multi_branch_supercontinuum_z22b
     predicate: CHARACTERIZED-BY
     object: met.clock_beatnote_snr_z22b
     confidence: established
     source: {zotero_key: "BPQDL4DN", claim: "the SNR of each beat signal is greater than 30 dB at an RBW of 300 kHz"}
 
-  - id: rel.Z22B_10
+  - id: rel.zhang_2022_22B_10
     subject: ent.all_pm_erfiber_comb_z22b
     predicate: CHARACTERIZED-BY
     object: met.integrated_phase_noise_z22b
     confidence: established
     source: {zotero_key: "BPQDL4DN", claim: "integrated phase noise of 0.99 rad from 1 Hz to 1 MHz ... 0.14 rad"}
 
-  - id: rel.Z22B_11
+  - id: rel.zhang_2022_22B_11
     subject: met.out_of_loop_instability_z22b
     predicate: BOUNDED-BY
     object: pri.thermal_drift_out_of_loop_fiber_noise
@@ -372,7 +372,7 @@ relations:
         source: {zotero_key: "BPQDL4DN", claim: "Real-time phase tracking technology can be used to compensate for optical phase drift due to thermal drift, which improves an OFC's relative instability at a low level of 10⁻²⁰"}
         note: "Nicolodi 2014 / Giunta 2020 方案（meth.wideband_optical_frequency_synthesis 定义于 giunta2020.yaml）；代价是电子/光学系统复杂度"
 
-  - id: rel.Z22B_12
+  - id: rel.zhang_2022_22B_12
     subject: met.out_of_loop_instability_z22b
     predicate: BOUNDED-BY
     object: pri.multibranch_vs_single_branch_tradeoff
@@ -384,7 +384,7 @@ relations:
         status: demonstrated
         source: {zotero_key: "BPQDL4DN", claim: "we adopt a simple and effective method. That is done to ensure that the length and temperature between the different branch fibers are coincident"}
 
-  - id: rel.Z22B_13
+  - id: rel.zhang_2022_22B_13
     subject: met.fbeat_allan_inloop_z22b
     predicate: OPERATIONALIZED-AS
     object: meth.temperature_matched_multibranch_stabilization
@@ -392,7 +392,7 @@ relations:
     source: {zotero_key: "BPQDL4DN", claim: "hydrogen maser provides a frequency reference for fceo locking, fbeat locking, and out-of-loop frequency stability counting"}
     note: "in-loop f_beat 锁定 + 多支路热匹配共同支撑 out-of-loop 指标"
 
-  - id: rel.Z22B_14
+  - id: rel.zhang_2022_22B_14
     subject: ent.all_pm_erfiber_comb_z22b
     predicate: CONDITIONED-BY
     object: ent.fp_cavity_system

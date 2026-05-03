@@ -1,139 +1,135 @@
-# Kudelin 2024 — 光子芯片集成低噪声微波振荡器（20 GHz，SiN 梳 + 微型 F-P 腔） [evidence]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：ultrastable-laser
-
 meta:
-  zotero_key: "AF34FGMU"
+  zotero_key: AF34FGMU
   topic: ultrastable-laser
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
-  title: "Photonic chip-based low-noise microwave oscillator"
+  title: Photonic chip-based low-noise microwave oscillator
   year: 2024
-  first_author: "Kudelin"
+  first_author: Kudelin
   authors:
-    - "Igor Kudelin"
-    - "William Groman"
-    - "Qing-Xin Ji"
-    - "Joel Guo"
-    - "Megan L. Kelleher"
-    - "Dahyeon Lee"
-    - "Takuma Nakamura"
-    - "Charles A. McLemore"
-    - "Franklyn Quinlan"
-    - "Scott A. Diddams"
-  journal: "Nature"
-  doi: "10.1038/s41586-024-07058-z"
-  note: >
-    芯片集成光子微波振荡器（NIST/CU Boulder/Caltech 等）：两路 SiN 螺旋谐振器
-    自注入锁定 DFB 激光，PDH 锁定至 6.3 mm 微型 F-P 腔（精细度~900,000），
-    暗孤子 SiN 双环微腔梳（~20 GHz 重复率）实现两点光频分频（2P-OFD），
-    MUTC 光电探测器输出 20 GHz 微波，相位噪声 −96 dBc/Hz @100 Hz、−135 dBc/Hz @10 kHz，
-    为集成光子系统的前所未有水平；系统分数频率不稳定度 1.7×10⁻¹⁵ @1 s。
+  - Igor Kudelin
+  - William Groman
+  - Qing-Xin Ji
+  - Joel Guo
+  - Megan L. Kelleher
+  - Dahyeon Lee
+  - Takuma Nakamura
+  - Charles A. McLemore
+  - Franklyn Quinlan
+  - Scott A. Diddams
+  journal: Nature
+  doi: 10.1038/s41586-024-07058-z
+  note: '芯片集成光子微波振荡器（NIST/CU Boulder/Caltech 等）：两路 SiN 螺旋谐振器 自注入锁定 DFB 激光，PDH 锁定至
+    6.3 mm 微型 F-P 腔（精细度~900,000）， 暗孤子 SiN 双环微腔梳（~20 GHz 重复率）实现两点光频分频（2P-OFD）， MUTC
+    光电探测器输出 20 GHz 微波，相位噪声 −96 dBc/Hz @100 Hz、−135 dBc/Hz @10 kHz， 为集成光子系统的前所未有水平；系统分数频率不稳定度
+    1.7×10⁻¹⁵ @1 s。
 
+    '
 entities:
-  - id: ent.chip_photonic_mw_oscillator_k24
-    name: "芯片光子微波振荡器（Kudelin 2024）"
-    hierarchy_level: 2
-    status: demonstrated
-    function: >
-      全集成光子微波振荡器：SiN 螺旋谐振器（Q ~1.6×10⁸）预稳 DFB 激光
-      → 微型 F-P 腔（6.3 mm，精细度~900,000，ULE，体积 <9 cm³）PDH 锁定
-      → SiN 双环微腔暗孤子梳（~20 GHz）两点 OFD 相位锁定
-      → MUTC 芯片探测器输出 20 GHz 微波。
-      全部光子元件可异质集成于单芯片，体积从数十升压缩至毫升量级。
-    key_parameters:
-      output_frequency: "20 GHz"
-      phase_noise_100Hz: "−96 dBc/Hz"
-      phase_noise_10kHz: "−135 dBc/Hz"
-      fp_cavity_length: "6.3 mm"
-      fp_cavity_finesse: "~900,000"
-      fp_cavity_volume: "<9 cm³"
-      sin_resonator_Q: "~1.64×10⁸ (intrinsic), ~1.26×10⁸ (loaded)"
-      laser_wavelengths: "1,557.3 nm 和 1,562.5 nm"
-      instability_1s: "1.7×10⁻¹⁵"
-    note: >
-      微型 F-P 腔热噪声限制稳定度 10⁻¹⁴ 量级（非低温腔），
-      与 ent.fp_cavity_system 类型相同但尺寸极度缩小。
+- id: ent.chip_photonic_mw_oscillator_k24
+  name: 芯片光子微波振荡器（Kudelin 2024）
+  hierarchy_level: 2
+  status: demonstrated
+  function: '全集成光子微波振荡器：SiN 螺旋谐振器（Q ~1.6×10⁸）预稳 DFB 激光 → 微型 F-P 腔（6.3 mm，精细度~900,000，ULE，体积
+    <9 cm³）PDH 锁定 → SiN 双环微腔暗孤子梳（~20 GHz）两点 OFD 相位锁定 → MUTC 芯片探测器输出 20 GHz 微波。 全部光子元件可异质集成于单芯片，体积从数十升压缩至毫升量级。
 
+    '
+  key_parameters:
+    output_frequency: 20 GHz
+    phase_noise_100Hz: −96 dBc/Hz
+    phase_noise_10kHz: −135 dBc/Hz
+    fp_cavity_length: 6.3 mm
+    fp_cavity_finesse: ~900,000
+    fp_cavity_volume: <9 cm³
+    sin_resonator_Q: ~1.64×10⁸ (intrinsic), ~1.26×10⁸ (loaded)
+    laser_wavelengths: 1,557.3 nm 和 1,562.5 nm
+    instability_1s: 1.7×10⁻¹⁵
+  note: '微型 F-P 腔热噪声限制稳定度 10⁻¹⁴ 量级（非低温腔）， 与 ent.fp_cavity_system 类型相同但尺寸极度缩小。
+
+    '
 methods:
-  - id: meth.two_point_ofd_sin_comb_k24
-    name: "两点光频分频（2P-OFD，SiN 微腔梳）"
-    status: demonstrated
-    steps_summary: >
-      两路 SIL DFB 激光 PDH 锁定至微型 F-P 腔 →
-      暗孤子 SiN 双环微腔产生 ~20 GHz 梳 →
-      两路 SIL 激光分别与最近梳齿拍频 →
-      混频得中间频率 f_IF = f_b1 + f_b2（与梳中心无关）→
-      锁定 f_IF 实现 2P-OFD 噪声压制 →
-      MUTC 探测器提取 20 GHz 低噪声微波
-    source_claim: >
-      "We address this challenge by leveraging advances in integrated photonics to demonstrate
-      low-noise microwave generation via two-point optical frequency division."
+- id: meth.two_point_ofd_sin_comb_k24
+  name: 两点光频分频（2P-OFD，SiN 微腔梳）
+  status: demonstrated
+  steps_summary: '两路 SIL DFB 激光 PDH 锁定至微型 F-P 腔 → 暗孤子 SiN 双环微腔产生 ~20 GHz 梳 → 两路 SIL
+    激光分别与最近梳齿拍频 → 混频得中间频率 f_IF = f_b1 + f_b2（与梳中心无关）→ 锁定 f_IF 实现 2P-OFD 噪声压制 → MUTC
+    探测器提取 20 GHz 低噪声微波
 
+    '
+  source_claim: '"We address this challenge by leveraging advances in integrated photonics
+    to demonstrate low-noise microwave generation via two-point optical frequency
+    division."
+
+    '
 metrics:
-  - id: met.chip_mw_phase_noise_k24
-    name: "芯片微波振荡器相位噪声 20 GHz（Kudelin 2024）"
-    unit: "dBc/Hz"
-    role: primary
-    description: "芯片集成 2P-OFD 系统产生的 20 GHz 微波信号相位噪声"
-    demonstrated_value:
-      value: "−96 dBc/Hz @ 100 Hz；−135 dBc/Hz @ 10 kHz"
-      conditions: "20 GHz 载波；SiN 芯片 + 微型 F-P 腔 + MUTC 探测器；集成光子系统"
-      verification_status: observed
-      confidence: established
-      source:
-        zotero_key: "AF34FGMU"
-        claim: >
-          "a microwave signal at 20 GHz with phase noise of −96 dBc Hz⁻¹ at 100 Hz offset
-          frequency that decreases to −135 dBc Hz⁻¹ at 10 kHz offset—values that are
-          unprecedented for an integrated photonic system."
+- id: met.chip_mw_phase_noise_k24
+  name: 芯片微波振荡器相位噪声 20 GHz（Kudelin 2024）
+  unit: dBc/Hz
+  role: primary
+  description: 芯片集成 2P-OFD 系统产生的 20 GHz 微波信号相位噪声
+  demonstrated_value:
+    value: −96 dBc/Hz @ 100 Hz；−135 dBc/Hz @ 10 kHz
+    conditions: 20 GHz 载波；SiN 芯片 + 微型 F-P 腔 + MUTC 探测器；集成光子系统
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: AF34FGMU
+      claim: '"a microwave signal at 20 GHz with phase noise of −96 dBc Hz⁻¹ at 100
+        Hz offset frequency that decreases to −135 dBc Hz⁻¹ at 10 kHz offset—values
+        that are unprecedented for an integrated photonic system."
 
-  - id: met.chip_mw_instability_k24
-    name: "芯片微波振荡器分数频率不稳定度（Kudelin 2024）"
-    unit: "无量纲"
-    role: supporting
-    description: "20 GHz 芯片光子微波振荡器在 1 s 平均时间的分数频率不稳定度"
-    demonstrated_value:
-      value: "1.7×10⁻¹⁵"
-      conditions: "τ = 1 s；20 GHz 输出；芯片集成 2P-OFD 系统"
-      verification_status: observed
-      confidence: established
-      source:
-        zotero_key: "AF34FGMU"
-        claim: "All photonic components can be heterogeneously integrated on a single chip, providing a significant advance for the application of photonics to high-precision navigation, communication and timing systems."
-
+        '
+- id: met.chip_mw_instability_k24
+  name: 芯片微波振荡器分数频率不稳定度（Kudelin 2024）
+  unit: 无量纲
+  role: supporting
+  description: 20 GHz 芯片光子微波振荡器在 1 s 平均时间的分数频率不稳定度
+  demonstrated_value:
+    value: 1.7×10⁻¹⁵
+    conditions: τ = 1 s；20 GHz 输出；芯片集成 2P-OFD 系统
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: AF34FGMU
+      claim: All photonic components can be heterogeneously integrated on a single
+        chip, providing a significant advance for the application of photonics to
+        high-precision navigation, communication and timing systems.
 relations:
-  - id: rel.K01
-    subject: ent.chip_photonic_mw_oscillator_k24
-    predicate: ENABLED-BY
-    object: meth.pdh_locking
-    confidence: established
-    source:
-      zotero_key: "AF34FGMU"
-      claim: >
-        "self-injection-locked integrated lasers are stabilized to a miniature Fabry–Pérot cavity,
-        and the frequency gap between the lasers is divided with an efficient dark soliton frequency comb."
+- id: rel.kudelin_2024_01
+  subject: ent.chip_photonic_mw_oscillator_k24
+  predicate: ENABLED-BY
+  object: meth.pdh_locking
+  confidence: established
+  source:
+    zotero_key: AF34FGMU
+    claim: '"self-injection-locked integrated lasers are stabilized to a miniature
+      Fabry–Pérot cavity, and the frequency gap between the lasers is divided with
+      an efficient dark soliton frequency comb."
 
-  - id: rel.K02
-    subject: met.chip_mw_phase_noise_k24
-    predicate: BOUNDED-BY
-    object: pri.brownian_thermal_noise_fdt
-    confidence: established
-    source:
-      zotero_key: "AF34FGMU"
-      claim: >
-        "The cavity is thermal noise limited for offset frequencies ranging from 1 Hz to 10 kHz.
-        Moreover, the relative phase noise between two reference lasers locked to the same cavity
-        takes advantage of large common-mode rejection (CMR), reaching 40 dB rejection."
+      '
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/kudelin2024.yaml
+- id: rel.kudelin_2024_02
+  subject: met.chip_mw_phase_noise_k24
+  predicate: BOUNDED-BY
+  object: pri.brownian_thermal_noise_fdt
+  confidence: established
+  source:
+    zotero_key: AF34FGMU
+    claim: '"The cavity is thermal noise limited for offset frequencies ranging from
+      1 Hz to 10 kHz. Moreover, the relative phase noise between two reference lasers
+      locked to the same cavity takes advantage of large common-mode rejection (CMR),
+      reaching 40 dB rejection."
 
-  - id: rel.K03
-    subject: ent.chip_photonic_mw_oscillator_k24
-    predicate: CHARACTERIZED-BY
-    object: met.chip_mw_phase_noise_k24
-    confidence: established
-    source:
-      zotero_key: "AF34FGMU"
-      claim: "phase noise of −96 dBc Hz⁻¹ at 100 Hz offset frequency that decreases to −135 dBc Hz⁻¹ at 10 kHz offset."
+      '
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/kudelin2024.yaml
+- id: rel.kudelin_2024_03
+  subject: ent.chip_photonic_mw_oscillator_k24
+  predicate: CHARACTERIZED-BY
+  object: met.chip_mw_phase_noise_k24
+  confidence: established
+  source:
+    zotero_key: AF34FGMU
+    claim: phase noise of −96 dBc Hz⁻¹ at 100 Hz offset frequency that decreases to
+      −135 dBc Hz⁻¹ at 10 kHz offset.
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/kudelin2024.yaml

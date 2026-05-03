@@ -113,21 +113,21 @@ metrics:
         note: "Coddington 2010：该工作是 DCS 高 SNR 基础范式论文"
 
 relations:
-  - id: rel.C10_01
+  - id: rel.coddington_2010_10_01
     subject: ent.coherent_dual_comb_spectrometer_c10
     predicate: CHARACTERIZED-BY
     object: met.dcs_frequency_resolution
     confidence: established
     source: {zotero_key: "7PDY5FDM", claim: "9 THz bandwidth at 220 MHz frequency resolution"}
 
-  - id: rel.C10_02
+  - id: rel.coddington_2010_10_02
     subject: ent.coherent_dual_comb_spectrometer_c10
     predicate: CHARACTERIZED-BY
     object: met.dcs_snr_coherent
     confidence: established
     source: {zotero_key: "7PDY5FDM", claim: "average spectral signal-to-noise ratio (SNR) over the 9 THz bandwidth is 2500"}
 
-  - id: rel.C10_03
+  - id: rel.coddington_2010_10_03
     subject: meth.dual_comb_spectroscopy
     predicate: ENABLED-BY
     object: pri.dual_comb_multiheterodyne_detection
@@ -135,21 +135,21 @@ relations:
     source: {zotero_key: "7PDY5FDM", claim: "multiheterodyne laser spectrometer"}
     note: "合并自原 pri.dual_comb_multiheterodyne_mapping（定义与 pri.dual_comb_multiheterodyne_detection 复述同一物理，于 2026-04-21 P2.2 合并）；Tier 1 规范节点定义于 coddington2016.yaml"
 
-  - id: rel.C10_04
+  - id: rel.coddington_2010_10_04
     subject: meth.dual_comb_spectroscopy
     predicate: ENABLED-BY
     object: pri.dual_comb_coherent_averaging_snr_scaling
     confidence: established
     source: {zotero_key: "7PDY5FDM", claim: "coherent real-time averaging"}
 
-  - id: rel.C10_05
+  - id: rel.coddington_2010_10_05
     subject: met.dcs_frequency_resolution
     predicate: OPERATIONALIZED-AS
     object: meth.dual_comb_spectroscopy
     confidence: established
     source: {zotero_key: "7PDY5FDM", claim: "frequency resolution equals the comb mode spacing of 220 MHz"}
 
-  - id: rel.C10_06
+  - id: rel.coddington_2010_10_06
     subject: met.dcs_snr_coherent
     predicate: BOUNDED-BY
     object: pri.dual_comb_coherent_averaging_snr_scaling
@@ -166,7 +166,7 @@ relations:
         status: demonstrated
         source: {zotero_key: "RZME5CH8", claim: "cavity-enhanced DCS"}
 
-  - id: rel.C10_07
+  - id: rel.coddington_2010_10_07
     subject: ent.coherent_dual_comb_spectrometer_c10
     predicate: PART-OF
     object: ent.dual_comb_spectrometer

@@ -66,7 +66,7 @@ metrics:
       source: {zotero_key: "X6KNIXMW", claim: "132-W, 180-fs pulse train"}
 
 relations:
-  - id: rel.Luo20_01
+  - id: rel.luo_2020_uo20_01
     subject: ent.yb_fiber_comb_130w_cpa_l20
     predicate: PART-OF
     object: ent.optical_frequency_comb
@@ -74,7 +74,7 @@ relations:
     source: {zotero_key: "X6KNIXMW", claim: "high-power fiber optical frequency comb"}
     note: "跨文件引用 ent.optical_frequency_comb（定义于 giunta2019.yaml）"
 
-  - id: rel.Luo20_02
+  - id: rel.luo_2020_uo20_02
     subject: ent.yb_fiber_comb_130w_cpa_l20
     predicate: CHARACTERIZED-BY
     object: met.yb_fiber_comb_power_cpa_l20

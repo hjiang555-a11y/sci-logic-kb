@@ -1,99 +1,100 @@
-# Chen 2020 — 10 cm 立方腔 6×10⁻¹⁶ 可搬运超稳激光
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-16
-# Schema版本：v4.1
-
 meta:
-  zotero_key: "Z37PT8RC"
+  zotero_key: Z37PT8RC
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: "Laser frequency instability of 6×10⁻¹⁶ using 10-cm-long cavities on a cubic spacer"
+  title: Laser frequency instability of 6×10⁻¹⁶ using 10-cm-long cavities on a cubic
+    spacer
   year: 2020
   first_author: Chen
-  journal: "Chinese Optics Letters"
+  journal: Chinese Optics Letters
   volume: 18
-  pages: "030201"
-  doi: "10.3788/COL202018.030201"
-  note: >
-    10 cm 立方 ULE 腔（两对正交 FP 腔共享同一间隔物），
-    刚性安装可搬运，1064 nm，频率不稳定度 6×10⁻¹⁶ @ 1s。
-    核心贡献：立方几何双腔方案，兼顾紧凑、可搬运和低振动灵敏度。
+  pages: '030201'
+  doi: 10.3788/COL202018.030201
+  note: '10 cm 立方 ULE 腔（两对正交 FP 腔共享同一间隔物）， 刚性安装可搬运，1064 nm，频率不稳定度 6×10⁻¹⁶ @ 1s。 核心贡献：立方几何双腔方案，兼顾紧凑、可搬运和低振动灵敏度。
 
+    '
 entities:
-  - id: ent.cubic_dual_cavity_c20
-    name: "10 cm 立方双 FP 腔（Chen 2020）"
-    aliases: ["cubic spacer dual cavity", "Chen 2020 cubic cavity"]
-    hierarchy_level: 2
-    instance_of: ent.fp_cavity_system   # v4.5+ Level 2 参数变体锚定（立方间隔物）
-    status: demonstrated
-    function: >
-      10 cm 立方 ULE 间隔物，两对正交 FP 腔共享同一间隔物，
-      四点硅球刚性支撑于铝笼中，可搬运设计。
-      FS 镜（热噪声极限 4.3×10⁻¹⁶），1064 nm。
-    key_parameters:
-      cavity_length: "100 mm"
-      spacer_material: "ULE (cubic, 100×100×100 mm³)"
-      mirror_material: "fused silica"
-      wavelength: "1064 nm"
-      thermal_noise_floor: "4.3×10⁻¹⁶"
-      vacuum: "5×10⁻⁸ Torr"
-      thermal_time_constant: "58 hours"
-    note: "PART-OF ent.fp_cavity_system。立方双腔共享间隔物设计。"
+- id: ent.cubic_dual_cavity_c20
+  name: 10 cm 立方双 FP 腔（Chen 2020）
+  aliases:
+  - cubic spacer dual cavity
+  - Chen 2020 cubic cavity
+  hierarchy_level: 2
+  instance_of: ent.fp_cavity_system
+  status: demonstrated
+  function: '10 cm 立方 ULE 间隔物，两对正交 FP 腔共享同一间隔物， 四点硅球刚性支撑于铝笼中，可搬运设计。 FS 镜（热噪声极限 4.3×10⁻¹⁶），1064
+    nm。
 
+    '
+  key_parameters:
+    cavity_length: 100 mm
+    spacer_material: ULE (cubic, 100×100×100 mm³)
+    mirror_material: fused silica
+    wavelength: 1064 nm
+    thermal_noise_floor: 4.3×10⁻¹⁶
+    vacuum: 5×10⁻⁸ Torr
+    thermal_time_constant: 58 hours
+  note: PART-OF ent.fp_cavity_system。立方双腔共享间隔物设计。
 principles: []
-
 methods:
-  - id: meth.cubic_dual_cavity_rigid_mount_c20
-    name: "立方双腔刚性安装方法"
-    status: demonstrated
-    applies_to: ent.fp_cavity_system
-    steps_summary: >
-      1. 使用10cm立方ULE间隔物，设计两对正交FP腔共享同一间隔物
-      2. 采用四点硅球支撑将间隔物刚性安装于铝笼中
-      3. 将激光锁定到立方双腔系统，实现低振动灵敏度可搬运超稳激光
-    required_hardware:
-      - ent.cubic_dual_cavity_c20
-    advantages:
-      - "立方几何提供各向同性机械刚度，降低振动灵敏度"
-      - "双腔共享间隔物减小系统体积，提高可搬运性"
-      - "四点硅球刚性支撑提供稳定的机械安装"
-    disadvantages:
-      - "热时间常数较长（58小时），温度稳定需要时间"
-      - "立方加工比圆柱间隔物更复杂"
-    conditions:
-      - "需要真空环境（5×10⁻⁸ Torr）"
-      - "需要温度稳定性控制"
-    source_claim: >
-      "10-cm-long Fabry-Pérot cavities on a cubic spacer, rigidly mounted via four silicon balls in an aluminum cage, providing transportable ultrastable laser with 6×10⁻¹⁶ instability"
+- id: meth.cubic_dual_cavity_rigid_mount_c20
+  name: 立方双腔刚性安装方法
+  status: demonstrated
+  applies_to: ent.fp_cavity_system
+  steps_summary: '1. 使用10cm立方ULE间隔物，设计两对正交FP腔共享同一间隔物 2. 采用四点硅球支撑将间隔物刚性安装于铝笼中 3. 将激光锁定到立方双腔系统，实现低振动灵敏度可搬运超稳激光
 
+    '
+  required_hardware:
+  - ent.cubic_dual_cavity_c20
+  advantages:
+  - 立方几何提供各向同性机械刚度，降低振动灵敏度
+  - 双腔共享间隔物减小系统体积，提高可搬运性
+  - 四点硅球刚性支撑提供稳定的机械安装
+  disadvantages:
+  - 热时间常数较长（58小时），温度稳定需要时间
+  - 立方加工比圆柱间隔物更复杂
+  conditions:
+  - 需要真空环境（5×10⁻⁸ Torr）
+  - 需要温度稳定性控制
+  source_claim: '"10-cm-long Fabry-Pérot cavities on a cubic spacer, rigidly mounted
+    via four silicon balls in an aluminum cage, providing transportable ultrastable
+    laser with 6×10⁻¹⁶ instability"
+
+    '
 metrics:
-  - id: met.fractional_freq_instability_c20
-    name: "分数频率不稳定度（Chen 2020）"
-    unit: "无量纲"
-    demonstrated_value:
-      value: "6×10⁻¹⁶ @ 1 s"
-      conditions: "10 cm 立方 ULE 腔，1064 nm，vs 578 nm 参考腔通过光频梳"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "Z37PT8RC", claim: "frequency instabilities of 6×10⁻¹⁶ at 1 s averaging time"}
-
-relations:
-  - id: rel.CH01
-    subject: ent.cubic_dual_cavity_c20
-    predicate: PART-OF
-    object: ent.fp_cavity_system
+- id: met.fractional_freq_instability_c20
+  name: 分数频率不稳定度（Chen 2020）
+  unit: 无量纲
+  demonstrated_value:
+    value: 6×10⁻¹⁶ @ 1 s
+    conditions: 10 cm 立方 ULE 腔，1064 nm，vs 578 nm 参考腔通过光频梳
+    verification_status: observed
     confidence: established
-    source: {zotero_key: "Z37PT8RC", claim: "10-cm-long Fabry-Pérot cavities on a cubic spacer"}
-
-  - id: rel.CH02
-    subject: ent.cubic_dual_cavity_c20
-    predicate: BOUNDED-BY
-    object: pri.brownian_thermal_noise_fdt
-    confidence: likely
-    source: {zotero_key: "Z37PT8RC", claim: "cavity thermal noise-limited laser frequency instability... 4.3×10⁻¹⁶"}
-    is_system_limit: false
-    regime: short-term
-    verification_status: calculated
-    note: "当前 6×10⁻¹⁶ 尚未达到热噪声极限 4.3×10⁻¹⁶"
-    breakthrough_paths: []
+    source:
+      zotero_key: Z37PT8RC
+      claim: frequency instabilities of 6×10⁻¹⁶ at 1 s averaging time
+relations:
+- id: rel.chen_2020_H01
+  subject: ent.cubic_dual_cavity_c20
+  predicate: PART-OF
+  object: ent.fp_cavity_system
+  confidence: established
+  source:
+    zotero_key: Z37PT8RC
+    claim: 10-cm-long Fabry-Pérot cavities on a cubic spacer
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/chen2020.yaml
+- id: rel.chen_2020_H02
+  subject: ent.cubic_dual_cavity_c20
+  predicate: BOUNDED-BY
+  object: pri.brownian_thermal_noise_fdt
+  confidence: likely
+  source:
+    zotero_key: Z37PT8RC
+    claim: cavity thermal noise-limited laser frequency instability... 4.3×10⁻¹⁶
+  is_system_limit: false
+  regime: short-term
+  verification_status: calculated
+  note: 当前 6×10⁻¹⁶ 尚未达到热噪声极限 4.3×10⁻¹⁶
+  breakthrough_paths: []
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/chen2020.yaml

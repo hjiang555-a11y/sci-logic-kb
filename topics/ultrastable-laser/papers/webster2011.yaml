@@ -1,192 +1,183 @@
-# Webster 2011 — 力不敏感光学谐振腔
-# 提取者：Claude（AI草稿，待专家确认）
-# 提取日期：2026-04-14
-# Schema版本：v4.1
-
 meta:
-  zotero_key: "A96XGR82"
+  zotero_key: A96XGR82
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: "Force-insensitive optical cavity"
+  title: Force-insensitive optical cavity
   year: 2011
   first_author: Webster
-  journal: "Optics Letters"
+  journal: Optics Letters
   volume: 36
   issue: 18
-  pages: "3572-3574"
-  doi: "10.1364/OL.36.003572"
-  note: >
-    NPL Webster & Gill 2011；在 Webster 2007（振动不敏感）基础上进一步实现"力不敏感"。
-    区别：2007 是水平腔+切口+四点橡胶球，依赖重力方向固定、腔体自重压支撑点；
-    2011 是立方体腔+四点四面体支撑+顶点截断，腔体刚性约束在全方向，
-    对所有惯性力（含支撑压力、重力）均不敏感——适用于失重/非实验室环境（卫星、机载）。
-    最大加速度灵敏度 2.5×10⁻¹¹/g（全向被动），为当时光学腔最低被动灵敏度。
-    目标稳定度 10⁻¹⁵ 量级，用于非实验室环境光频标。
+  pages: 3572-3574
+  doi: 10.1364/OL.36.003572
+  note: 'NPL Webster & Gill 2011；在 Webster 2007（振动不敏感）基础上进一步实现"力不敏感"。 区别：2007 是水平腔+切口+四点橡胶球，依赖重力方向固定、腔体自重压支撑点；
+    2011 是立方体腔+四点四面体支撑+顶点截断，腔体刚性约束在全方向， 对所有惯性力（含支撑压力、重力）均不敏感——适用于失重/非实验室环境（卫星、机载）。
+    最大加速度灵敏度 2.5×10⁻¹¹/g（全向被动），为当时光学腔最低被动灵敏度。 目标稳定度 10⁻¹⁵ 量级，用于非实验室环境光频标。
 
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
+    '
 entities:
-  - id: ent.cubic_force_insensitive_cavity_w11
-    name: "立方体力不敏感光学腔（Webster 2011）"
-    aliases: ["cubic cavity", "force-insensitive optical cavity", "tetrahedral support cavity"]
-    hierarchy_level: 2
-    status: demonstrated
-    function: >
-      以立方体几何间隔物配合四点四面体支撑，使腔体在任意惯性力（加速度、支撑压力）
-      作用下两腔镜面中心轴向位移为零或相消，实现全向力不敏感性。
-      顶点截断设计使支撑压力引起的腔长变化为零。
-      允许在任意方向（含倒置）工作，激光在反转过程中保持锁定，
-      适用于卫星、飞机等非实验室平台。
-    key_parameters:
-      spacer_material: "超低膨胀玻璃（ULE），E=67.6 GPa，ρ=2210 kg/m³"
-      spacer_geometry: "立方体，棱长 50 mm"
-      vertex_truncation_depth: "6.7 mm（朝腔体中心方向截深，FEM 确定零点）"
-      bore_diameter: "3 个圆柱通孔，直径 5.1 mm，穿过立方体面中心，用于抽真空"
-      mirror_spec: "12.7 mm 直径，4.0 mm 厚，R=0.5 m 曲率半径，熔融石英，光学接触"
-      finesse: "> 300,000"
-      wavelength: "1064 nm（Nd:YAG 激光）"
-      support_type: "尼龙半球，直径 12.7 mm，四点四面体（刚性固定于腔室顶点法兰）"
-      compressive_force: "最大 100 N（拧紧法兰螺栓施加）"
-      cavity_orientation: "任意（已在三轴正交方向验证，含倒置）"
-    design_rationale: >
-      立方体几何与四面体四点支撑的对称性保证：光轴方向任意加速度引起的两腔镜
-      轴向位移等大反向，净腔长变化为零。顶点截断使沿立方体棱方向的差动力和
-      沿腔轴的压力均不改变腔长。尼龙半球（球面接触）保证力学对称和转动约束。
-      残余灵敏度来源于腔体相对支撑点的位置偏差（~100 μm 对应约 3.2×10⁻¹¹/g）。
-    interface_requirements:
-      vibration: "被动全向不敏感（DC 至结构谐振）；配合主动前馈可进一步降低残余敏感度"
-      orientation: "任意方向，含失重环境；不依赖重力方向"
-    note: >
-      Level 2 PART-OF ent.fp_cavity_system（定义于 numata2004.yaml）。
-      与 ent.cutout_cavity_mount_w07（webster2007.yaml）为同一 L1 下的技术演进（非 COMPETES-WITH 关系）：
-      立方体腔全约束、全向不敏感（含失重环境）、被动最大灵敏度 2.5×10⁻¹¹/g；
-      切口腔支撑点可调谐、腔长更长（有利于降低热噪声）、已被多组实验室验证。
+- id: ent.cubic_force_insensitive_cavity_w11
+  name: 立方体力不敏感光学腔（Webster 2011）
+  aliases:
+  - cubic cavity
+  - force-insensitive optical cavity
+  - tetrahedral support cavity
+  hierarchy_level: 2
+  status: demonstrated
+  function: '以立方体几何间隔物配合四点四面体支撑，使腔体在任意惯性力（加速度、支撑压力） 作用下两腔镜面中心轴向位移为零或相消，实现全向力不敏感性。
+    顶点截断设计使支撑压力引起的腔长变化为零。 允许在任意方向（含倒置）工作，激光在反转过程中保持锁定， 适用于卫星、飞机等非实验室平台。
 
+    '
+  key_parameters:
+    spacer_material: 超低膨胀玻璃（ULE），E=67.6 GPa，ρ=2210 kg/m³
+    spacer_geometry: 立方体，棱长 50 mm
+    vertex_truncation_depth: 6.7 mm（朝腔体中心方向截深，FEM 确定零点）
+    bore_diameter: 3 个圆柱通孔，直径 5.1 mm，穿过立方体面中心，用于抽真空
+    mirror_spec: 12.7 mm 直径，4.0 mm 厚，R=0.5 m 曲率半径，熔融石英，光学接触
+    finesse: '> 300,000'
+    wavelength: 1064 nm（Nd:YAG 激光）
+    support_type: 尼龙半球，直径 12.7 mm，四点四面体（刚性固定于腔室顶点法兰）
+    compressive_force: 最大 100 N（拧紧法兰螺栓施加）
+    cavity_orientation: 任意（已在三轴正交方向验证，含倒置）
+  design_rationale: '立方体几何与四面体四点支撑的对称性保证：光轴方向任意加速度引起的两腔镜 轴向位移等大反向，净腔长变化为零。顶点截断使沿立方体棱方向的差动力和
+    沿腔轴的压力均不改变腔长。尼龙半球（球面接触）保证力学对称和转动约束。 残余灵敏度来源于腔体相对支撑点的位置偏差（~100 μm 对应约 3.2×10⁻¹¹/g）。
+
+    '
+  interface_requirements:
+    vibration: 被动全向不敏感（DC 至结构谐振）；配合主动前馈可进一步降低残余敏感度
+    orientation: 任意方向，含失重环境；不依赖重力方向
+  note: 'Level 2 PART-OF ent.fp_cavity_system（定义于 numata2004.yaml）。 与 ent.cutout_cavity_mount_w07（webster2007.yaml）为同一
+    L1 下的技术演进（非 COMPETES-WITH 关系）： 立方体腔全约束、全向不敏感（含失重环境）、被动最大灵敏度 2.5×10⁻¹¹/g； 切口腔支撑点可调谐、腔长更长（有利于降低热噪声）、已被多组实验室验证。
+
+    '
 principles:
-  - id: pri.force_insensitive_tetrahedral_symmetry
-    name: "四面体对称——力不敏感腔设计原理"
-    tier: domain
-    verification_status: observed
-    statement: >
-      四个相同支撑点以四面体排列关于光轴对称，构成刚体三维约束的充要且对称条件。
-      在此对称性下，任意线性或转动惯性力引起的两腔镜面中心轴向位移或为零、
-      或等大反向相消，净腔长变化 ΔL=0。
-      额外：立方体顶点截断使支撑压力（指向腔体中心的压缩力）引起的
-      腔长变化同样为零（FEM 确定截深参数）。
-      二阶残余灵敏度：均匀旋转产生的离心力（∼10⁻¹² s² 量级）。
-    domain: "精密光学谐振腔，非实验室/空间环境稳频"
-    formula:
-      null_condition: "ΔL = Σ(δ_mirror_i · ẑ) = 0，对任意惯性力方向成立"
-      centrifugal_residual: "−5.3(+7.6)×10⁻¹² s²（绕光轴旋转/绕垂直光轴旋转）"
-      alignment_sensitivity: "κ_align = (ρε/E)×9.81 ≈ 3.2×10⁻¹¹/g（ε=100 μm 偏心）"
-    key_insight: >
-      "振动不敏感"（Webster 2007）依赖重力方向固定，支撑点可调谐、
-      腔体处于半约束状态；"力不敏感"（Webster 2011）实现刚性全约束，
-      对支撑压力本身也不敏感，残余灵敏度仅由加工对称性精度决定。
-    conditions: >
-      腔体相对支撑点定位精度 ≤100 μm；
-      振动频率 << 结构谐振频率；
-      支撑力学均匀（尼龙球面接触）。
-    source_claim: >
-      "by symmetry, the cavity is insensitive to inertial forces due to acceleration
-       in all degrees of freedom (linear and rotational): axial displacements at the
-       mirror centers are either zero or cancel out so that there is no net change of
-       length on axis"
-    applicable_when: "刚性约束腔，任意方向加速度，包括失重或强惯性力环境"
+- id: pri.force_insensitive_tetrahedral_symmetry
+  name: 四面体对称——力不敏感腔设计原理
+  tier: domain
+  verification_status: observed
+  statement: '四个相同支撑点以四面体排列关于光轴对称，构成刚体三维约束的充要且对称条件。 在此对称性下，任意线性或转动惯性力引起的两腔镜面中心轴向位移或为零、
+    或等大反向相消，净腔长变化 ΔL=0。 额外：立方体顶点截断使支撑压力（指向腔体中心的压缩力）引起的 腔长变化同样为零（FEM 确定截深参数）。 二阶残余灵敏度：均匀旋转产生的离心力（∼10⁻¹²
+    s² 量级）。
 
+    '
+  domain: 精密光学谐振腔，非实验室/空间环境稳频
+  formula:
+    null_condition: ΔL = Σ(δ_mirror_i · ẑ) = 0，对任意惯性力方向成立
+    centrifugal_residual: −5.3(+7.6)×10⁻¹² s²（绕光轴旋转/绕垂直光轴旋转）
+    alignment_sensitivity: κ_align = (ρε/E)×9.81 ≈ 3.2×10⁻¹¹/g（ε=100 μm 偏心）
+  key_insight: '"振动不敏感"（Webster 2007）依赖重力方向固定，支撑点可调谐、 腔体处于半约束状态；"力不敏感"（Webster 2011）实现刚性全约束，
+    对支撑压力本身也不敏感，残余灵敏度仅由加工对称性精度决定。
+
+    '
+  conditions: '腔体相对支撑点定位精度 ≤100 μm； 振动频率 << 结构谐振频率； 支撑力学均匀（尼龙球面接触）。
+
+    '
+  source_claim: "\"by symmetry, the cavity is insensitive to inertial forces due to\
+    \ acceleration\n in all degrees of freedom (linear and rotational): axial displacements\
+    \ at the\n mirror centers are either zero or cancel out so that there is no net\
+    \ change of\n length on axis\"\n"
+  applicable_when: 刚性约束腔，任意方向加速度，包括失重或强惯性力环境
 methods:
-  - id: meth.cubic_force_insensitive_cavity_lock_w11
-    name: "立方体力不敏感腔 PDH 锁频方法（Webster 2011）"
-    description: "通过立方体几何和四面体支撑实现全向力不敏感的腔 PDH 锁频"
-    core_principle: pri.pdh_heterodyne_detection
-    key_entity: ent.cubic_force_insensitive_cavity_w11
-    reliability: established
-    verification_status: observed
-    source: {zotero_key: "A96XGR82", claim: "The laser is locked to the cubic force-insensitive cavity using PDH technique"}
-
+- id: meth.cubic_force_insensitive_cavity_lock_w11
+  name: 立方体力不敏感腔 PDH 锁频方法（Webster 2011）
+  description: 通过立方体几何和四面体支撑实现全向力不敏感的腔 PDH 锁频
+  core_principle: pri.pdh_heterodyne_detection
+  key_entity: ent.cubic_force_insensitive_cavity_w11
+  reliability: established
+  verification_status: observed
+  source:
+    zotero_key: A96XGR82
+    claim: The laser is locked to the cubic force-insensitive cavity using PDH technique
 metrics:
-  - id: met.acceleration_sensitivity_w11
-    name: "加速度灵敏度（立方体腔，Webster 2011）"
-    unit: "无量纲（per g，g=9.81 m/s²）"
-    description: >
-      立方体腔在三轴正交方向反转测试中测得的腔谐振频率加速度响应系数，
-      通过锁频激光与参考腔拍频随重力反转的频率阶跃确定。
-    demonstrated_value:
-      value: "2.45(3) / 0.21(4) / 0.01(1) ×10⁻¹¹/g（轴向/横向1/横向2）"
-      conditions: "被动灵敏度，1064 nm Nd:YAG，立方体 ULE 腔，尼龙半球支撑，腔室对称放置（偏心 ≤100 μm）"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "A96XGR82", claim: "sensitivities are 2.45(3)/0.21(4)/0.01(1) ×10⁻¹¹/g in the axial and two transverse directions"}
-    max_passive_sensitivity:
-      value: "2.5×10⁻¹¹/g（最大轴向，三轴中最差方向）"
-      note: "当时所有光学腔中最低的被动加速度灵敏度（世界纪录）"
-    comparison:
-      webster2007_vertical: "< 0.1 kHz/ms⁻²（约 1×10⁻⁸/g）——Webster 2007 是振动不敏感，但非全约束；数值意义不同"
-      leibrandt2011_passive: "4.0/16/31 ×10⁻¹¹/g（被动），1.1/0.6/0.4 ×10⁻¹¹/g（+主动前馈）"
-      improvement_note: "Webster 2011 被动最大灵敏度 2.5×10⁻¹¹/g 低于 Leibrandt 被动最差值，为当时被动最优"
+- id: met.acceleration_sensitivity_w11
+  name: 加速度灵敏度（立方体腔，Webster 2011）
+  unit: 无量纲（per g，g=9.81 m/s²）
+  description: '立方体腔在三轴正交方向反转测试中测得的腔谐振频率加速度响应系数， 通过锁频激光与参考腔拍频随重力反转的频率阶跃确定。
 
-# ═══════════════════════════════════════════════
-#  RELATIONS（关系）
-# ═══════════════════════════════════════════════
-
+    '
+  demonstrated_value:
+    value: 2.45(3) / 0.21(4) / 0.01(1) ×10⁻¹¹/g（轴向/横向1/横向2）
+    conditions: 被动灵敏度，1064 nm Nd:YAG，立方体 ULE 腔，尼龙半球支撑，腔室对称放置（偏心 ≤100 μm）
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: A96XGR82
+      claim: sensitivities are 2.45(3)/0.21(4)/0.01(1) ×10⁻¹¹/g in the axial and two
+        transverse directions
+  max_passive_sensitivity:
+    value: 2.5×10⁻¹¹/g（最大轴向，三轴中最差方向）
+    note: 当时所有光学腔中最低的被动加速度灵敏度（世界纪录）
+  comparison:
+    webster2007_vertical: < 0.1 kHz/ms⁻²（约 1×10⁻⁸/g）——Webster 2007 是振动不敏感，但非全约束；数值意义不同
+    leibrandt2011_passive: 4.0/16/31 ×10⁻¹¹/g（被动），1.1/0.6/0.4 ×10⁻¹¹/g（+主动前馈）
+    improvement_note: Webster 2011 被动最大灵敏度 2.5×10⁻¹¹/g 低于 Leibrandt 被动最差值，为当时被动最优
 relations:
-  - id: rel.W11_01
-    subject: ent.cubic_force_insensitive_cavity_w11
-    predicate: PART-OF
-    object: ent.fp_cavity_system
-    confidence: established
-    source: {zotero_key: "A96XGR82", claim: "optical cavity consisting of two highly reflective mirrors contacted to a glass spacer"}
-    conditions: null
-    note: "ent.fp_cavity_system 定义于 numata2004.yaml"
-
-  - id: rel.W11_02
-    subject: ent.cubic_force_insensitive_cavity_w11
-    predicate: ENABLED-BY
-    object: pri.force_insensitive_tetrahedral_symmetry
-    confidence: established
-    source: {zotero_key: "A96XGR82", claim: "four identical supports in a tetrahedral arrangement constitute a sufficient and symmetric constraint"}
-    conditions: "顶点截深 6.7 mm（FEM 确定），腔体定位偏心 ≤100 μm"
-    temporal_role: proposes
-
-  - id: rel.W11_03
-    subject: ent.cubic_force_insensitive_cavity_w11
-    predicate: CHARACTERIZED-BY
-    object: met.acceleration_sensitivity_w11
-    confidence: established
-    source: {zotero_key: "A96XGR82", claim: "maximum acceleration sensitivity is 2.5×10⁻¹¹/g, the lowest passive sensitivity to be reported for an optical cavity"}
-    conditions: "被动灵敏度，三轴反转测试"
-
-  # rel.W11_04 已删除：原为 ent.cubic_force_insensitive_cavity_w11 COMPETES-WITH ent.cutout_cavity_mount_w07，
-  # 违反 Schema 规则（L2 实体之间不使用 COMPETES-WITH）。
-  # 两者均为 ent.fp_cavity_system 的 L2 子单元，代表同一问题（振动/力不敏感安装）的技术演进。
-  # 原文对比摘要：立方体腔全约束、全向不敏感（含失重）、最大灵敏度 2.5×10⁻¹¹/g（被动最优）；
-  # 切口腔可调谐、腔长更长（热噪声更低）、已被多组验证。
-
-  - id: rel.W11_05
-    subject: ent.fp_cavity_system
-    predicate: BOUNDED-BY
-    object: pri.brownian_thermal_noise_fdt
-    confidence: established
-    source: {zotero_key: "A96XGR82", claim: "having suppressed the effects of technical noise a fundamental limit is reached, that due to thermal noise"}
-    conditions: "力不敏感设计消除振动噪声后，热噪声成为基本极限；目标稳定度 10⁻¹⁵ 量级"
-    is_system_limit: true
-    dominated_by: null
-    quantitative_contribution: "100%（技术噪声抑制后）"
-    regime: all
-    verification_status: inferred
-    temporal_role: validates
-    breakthrough_paths:
-      - direction: pri.crystalline_coating_low_brownian_noise
-        expected_gain: "晶体镀层降低镀层热噪声 ~10×（Cole 2013）"
-        status: demonstrated
-        source: {zotero_key: "CWIHQRJD", claim: "tenfold reduction in mechanical damping"}
-        note: "ent.algaas_crystalline_mirror_c13 定义于 cole2013.yaml"
-      - direction: pri.long_cavity_thermal_noise_reduction
-        expected_gain: "增长腔至 48 cm 降低热噪声分数贡献（Häfner 2015）"
-        status: demonstrated
-        source: {zotero_key: "UV6S5FFL", claim: "frequency instability below 1×10⁻¹⁶"}
-        note: "pri.long_cavity_thermal_noise_reduction 定义于 hafner2015.yaml"
-    note: "pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml"
+- id: rel.webster_2011_11_01
+  subject: ent.cubic_force_insensitive_cavity_w11
+  predicate: PART-OF
+  object: ent.fp_cavity_system
+  confidence: established
+  source:
+    zotero_key: A96XGR82
+    claim: optical cavity consisting of two highly reflective mirrors contacted to
+      a glass spacer
+  conditions: null
+  note: ent.fp_cavity_system 定义于 numata2004.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/webster2011.yaml
+- id: rel.webster_2011_11_02
+  subject: ent.cubic_force_insensitive_cavity_w11
+  predicate: ENABLED-BY
+  object: pri.force_insensitive_tetrahedral_symmetry
+  confidence: established
+  source:
+    zotero_key: A96XGR82
+    claim: four identical supports in a tetrahedral arrangement constitute a sufficient
+      and symmetric constraint
+  conditions: 顶点截深 6.7 mm（FEM 确定），腔体定位偏心 ≤100 μm
+  temporal_role: proposes
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/webster2011.yaml
+- id: rel.webster_2011_11_03
+  subject: ent.cubic_force_insensitive_cavity_w11
+  predicate: CHARACTERIZED-BY
+  object: met.acceleration_sensitivity_w11
+  confidence: established
+  source:
+    zotero_key: A96XGR82
+    claim: maximum acceleration sensitivity is 2.5×10⁻¹¹/g, the lowest passive sensitivity
+      to be reported for an optical cavity
+  conditions: 被动灵敏度，三轴反转测试
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/webster2011.yaml
+- id: rel.webster_2011_11_05
+  subject: ent.fp_cavity_system
+  predicate: BOUNDED-BY
+  object: pri.brownian_thermal_noise_fdt
+  confidence: established
+  source:
+    zotero_key: A96XGR82
+    claim: having suppressed the effects of technical noise a fundamental limit is
+      reached, that due to thermal noise
+  conditions: 力不敏感设计消除振动噪声后，热噪声成为基本极限；目标稳定度 10⁻¹⁵ 量级
+  is_system_limit: true
+  dominated_by: null
+  quantitative_contribution: 100%（技术噪声抑制后）
+  regime: all
+  verification_status: inferred
+  temporal_role: validates
+  breakthrough_paths:
+  - direction: pri.crystalline_coating_low_brownian_noise
+    expected_gain: 晶体镀层降低镀层热噪声 ~10×（Cole 2013）
+    status: demonstrated
+    source:
+      zotero_key: CWIHQRJD
+      claim: tenfold reduction in mechanical damping
+    note: ent.algaas_crystalline_mirror_c13 定义于 cole2013.yaml
+  - direction: pri.long_cavity_thermal_noise_reduction
+    expected_gain: 增长腔至 48 cm 降低热噪声分数贡献（Häfner 2015）
+    status: demonstrated
+    source:
+      zotero_key: UV6S5FFL
+      claim: frequency instability below 1×10⁻¹⁶
+    note: pri.long_cavity_thermal_noise_reduction 定义于 hafner2015.yaml
+  note: pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/webster2011.yaml

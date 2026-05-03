@@ -55,7 +55,7 @@ principles:
     source_claim: "three-node network"
 
 relations:
-  - id: rel.Bod20_01
+  - id: rel.bodine_2020_od20_01
     subject: ent.three_node_free_space_network_b20
     predicate: PART-OF
     object: ent.free_space_optical_tf_link
@@ -63,7 +63,7 @@ relations:
       paper: bodine2020
       claim: "free-space three-node network optical time-frequency transfer"
 
-  - id: rel.Bod20_02
+  - id: rel.bodine_2020_od20_02
     subject: ent.three_node_free_space_network_b20
     predicate: OPERATIONALIZED-AS
     object: pri.multi_node_tf_network_closure

@@ -95,21 +95,21 @@ metrics:
       source: {zotero_key: "59ULFL9Y"}
 
 relations:
-  - id: rel.YI16_01
+  - id: rel.yi_2016_I16_01
     subject: ent.line_referenced_eo_comb_y16
     predicate: CHARACTERIZED-BY
     object: met.eo_comb_spectral_span_y16
     confidence: established
     source: {zotero_key: "59ULFL9Y", claim: "electro-optical laser frequency comb spanning ~100 nm centered near 1560 nm in the H band"}
 
-  - id: rel.YI16_02
+  - id: rel.yi_2016_I16_02
     subject: meth.eo_comb_line_reference_rv_calibration
     predicate: ENABLED-BY
     object: pri.line_referenced_eo_comb
     confidence: established
     source: {zotero_key: "59ULFL9Y", claim: "carrier frequency stabilized to a molecular/atomic absorption line provides absolute frequency reference without f-2f self-referencing"}
 
-  - id: rel.YI16_03
+  - id: rel.yi_2016_I16_03
     subject: ent.line_referenced_eo_comb_y16
     predicate: PART-OF
     object: ent.electro_optic_frequency_comb
@@ -117,7 +117,7 @@ relations:
     source: {zotero_key: "59ULFL9Y", claim: "near-IR line-referenced electro-optical laser frequency comb for precision radial velocity measurements"}
     note: "ent.electro_optic_frequency_comb 定义于上游光梳架构文件"
 
-  - id: rel.YI16_04
+  - id: rel.yi_2016_I16_04
     subject: ent.line_referenced_eo_comb_y16
     predicate: COMPETES-WITH
     object: ent.near_ir_astro_comb_y12
@@ -125,7 +125,7 @@ relations:
     source: {zotero_key: "59ULFL9Y", claim: "line spacing is readily resolvable using typical astronomical grating spectrographs"}
     conditions: "天文梳两路线：EOFC 直接宽间距（Yi 2016）vs 锁模梳 + F-P 滤波（Ycas 2012）"
 
-  - id: rel.YI16_05
+  - id: rel.yi_2016_I16_05
     subject: ent.line_referenced_eo_comb_y16
     predicate: CONDITIONED-BY
     object: pri.molecular_rovibrational_fingerprint

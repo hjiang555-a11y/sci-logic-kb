@@ -76,7 +76,7 @@ methods:
       - "依赖社区开源软件（长期维护风险）"
 
 relations:
-  - id: rel.Sha19_01
+  - id: rel.shaw_2019_ha19_01
     subject: ent.fpga_digital_servo_er_comb_s19
     predicate: PART-OF
     object: ent.er_fiber_frequency_comb
@@ -84,7 +84,7 @@ relations:
     source: {zotero_key: "ZN7TS37H", claim: "Er:fiber mode-locked laser frequency comb"}
     note: "跨文件引用 ent.er_fiber_frequency_comb（定义于 droste2016.yaml）"
 
-  - id: rel.Sha19_02
+  - id: rel.shaw_2019_ha19_02
     subject: meth.red_pitaya_fpga_comb_servo_s19
     predicate: OPERATIONALIZED-AS
     object: ent.fpga_digital_servo_er_comb_s19

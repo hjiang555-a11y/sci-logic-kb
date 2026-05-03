@@ -356,7 +356,7 @@ metrics:
 
     '
 relations:
-- id: rel.P19_01
+- id: rel.picqué_2019_19_01
   subject: ent.electro_optic_frequency_comb
   predicate: PART-OF
   object: ent.optical_frequency_comb
@@ -372,7 +372,7 @@ relations:
   note: 'EO 梳是光学频率梳的 Level 2 子类（非锁模激光器梳源类别）。 ent.optical_frequency_comb 定义于 giunta2019.yaml。
 
     '
-- id: rel.P19_02
+- id: rel.picqué_2019_19_02
   subject: meth.dual_comb_spectroscopy
   predicate: ENABLED-BY
   object: ent.electro_optic_frequency_comb
@@ -390,7 +390,7 @@ relations:
   note: 'EO 梳简化了双梳光谱的互相干要求。 meth.dual_comb_spectroscopy 定义于 coddington2016.yaml。
 
     '
-- id: rel.P19_03
+- id: rel.picqué_2019_19_03
   subject: meth.cavity_enhanced_dcs
   predicate: ENABLED-BY
   object: pri.cavity_enhanced_comb_spectroscopy
@@ -402,7 +402,7 @@ relations:
 
       '
   conditions: 梳齿间距须与增强腔 FSR 精确匹配
-- id: rel.P19_04
+- id: rel.picqué_2019_19_04
   subject: met.comb_spectroscopy_molecular_sensitivity
   predicate: OPERATIONALIZED-AS
   object: meth.vipa_comb_spectroscopy
@@ -416,7 +416,7 @@ relations:
 
       '
   note: VIPA + 增强腔方案是实现高灵敏度宽带分子光谱的代表性方法之一
-- id: rel.P19_05
+- id: rel.picqué_2019_19_05
   subject: meth.vipa_comb_spectroscopy
   predicate: CHARACTERIZED-BY
   object: met.vipa_spectral_resolution
@@ -426,7 +426,7 @@ relations:
     claim: '"With a crossed disperser, resolutions as high as 600 MHz have been reported."
 
       '
-- id: rel.P19_06
+- id: rel.picqué_2019_19_06
   subject: meth.direct_two_photon_comb_spectroscopy
   predicate: ENABLED-BY
   object: pri.ramsey_comb_spectroscopy
@@ -439,7 +439,7 @@ relations:
 
       '
   note: Ramsey-comb 技术是直接频率梳光谱的扩展，共享双光子激发平台
-- id: rel.P19_07
+- id: rel.picqué_2019_19_07
   subject: meth.direct_two_photon_comb_spectroscopy
   predicate: CHARACTERIZED-BY
   object: met.ramsey_comb_fractional_accuracy
@@ -451,7 +451,7 @@ relations:
       for precision spectroscopy in the ultraviolet region."
 
       '
-- id: rel.P19_08
+- id: rel.picqué_2019_19_08
   subject: ent.dual_comb_spectrometer
   predicate: CHARACTERIZED-BY
   object: met.comb_spectroscopy_spectral_coverage
@@ -465,7 +465,7 @@ relations:
   note: 'Fig. 6 汇总了截至 2019 年双梳光谱的全波段覆盖情况。 ent.dual_comb_spectrometer 定义于 coddington2016.yaml。
 
     '
-- id: rel.P19_09
+- id: rel.picqué_2019_19_09
   subject: meth.dual_comb_spectroscopy
   predicate: ENABLED-BY
   object: ent.microresonator_frequency_comb
@@ -482,7 +482,7 @@ relations:
   note: 'ent.microresonator_frequency_comb 定义于 kippenberg2011.yaml。 微腔梳的大线间距适合凝聚态样品光谱测量，但单齿功率变化大可能限制动态范围。
 
     '
-- id: rel.P19_10
+- id: rel.picqué_2019_19_10
   subject: ent.mid_ir_frequency_comb
   predicate: CHARACTERIZED-BY
   object: met.comb_spectroscopy_spectral_coverage
@@ -497,7 +497,7 @@ relations:
   note: 'ent.mid_ir_frequency_comb 定义于 schliesser2012.yaml。 中红外波段是频率梳光谱的核心应用方向之一。
 
     '
-- id: rel.P19_11
+- id: rel.picqué_2019_19_11
   subject: meth.cavity_enhanced_dcs
   predicate: CHARACTERIZED-BY
   object: met.comb_spectroscopy_molecular_sensitivity
@@ -508,7 +508,7 @@ relations:
       enhancement cavities."
 
       '
-- id: rel.P19_12
+- id: rel.picqué_2019_19_12
   subject: meth.dual_comb_spectroscopy
   predicate: ENABLED-BY
   object: pri.comb_nonlinear_spectroscopy
@@ -523,7 +523,7 @@ relations:
   note: '非线性梳光谱（CARS、SRS、双光子激发、泵浦-探测）是双梳光谱的重要扩展方向。
 
     '
-- id: rel.P19_13
+- id: rel.picqué_2019_19_13
   subject: ent.optical_frequency_comb
   predicate: CHARACTERIZED-BY
   object: met.comb_spectroscopy_spectral_coverage

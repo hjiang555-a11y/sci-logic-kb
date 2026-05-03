@@ -1,143 +1,139 @@
-# Giunta 2020b — 紧凑型光子微波振荡器（12 GHz，ULE 腔 + Er:fiber 梳） [evidence]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：ultrastable-laser
-# 注意：OFC 专题已有 giunta2020.yaml（不同论文），本文归超稳激光专题
-
 meta:
-  zotero_key: "H7A8L8LT"
+  zotero_key: H7A8L8LT
   topic: ultrastable-laser
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
-  title: "Compact and ultrastable photonic microwave oscillator"
+  title: Compact and ultrastable photonic microwave oscillator
   year: 2020
-  first_author: "Giunta"
+  first_author: Giunta
   authors:
-    - "Michele Giunta"
-    - "Jialiang Yu"
-    - "Maurice Lessing"
-    - "Marc Fischer"
-    - "Matthias Lezius"
-    - "Xiaopeng Xie"
-    - "Giorgio Santarelli"
-    - "Yann Le Coq"
-    - "Ronald Holzwarth"
-  journal: "Optics Letters"
+  - Michele Giunta
+  - Jialiang Yu
+  - Maurice Lessing
+  - Marc Fischer
+  - Matthias Lezius
+  - Xiaopeng Xie
+  - Giorgio Santarelli
+  - Yann Le Coq
+  - Ronald Holzwarth
+  journal: Optics Letters
   volume: 45
   issue: 5
-  pages: "1140"
-  doi: "10.1364/OL.385503"
-  note: >
-    可搬运光子微波振荡器（Menlo Systems + MPQ + LNE-SYRTE + LP2N）：
-    5 cm ULE 立方参考腔（精细度~2.5×10⁵，热噪声底 ~2×10⁻¹⁵）+ Er:fiber 梳分频器，
-    产生 12 GHz 信号，绝对相位噪声 −83 dBc/Hz @1 Hz（腔热噪声限制），
-    分频/探测残余噪声底 −115 dBc/Hz @1 Hz。
-    系统紧凑可搬运（OFD：3U，35 L，20 kg；OFR：8U，72 L，80 kg），
-    实现室温蓝宝石腔振荡器级别性能而无需低温系统。
+  pages: '1140'
+  doi: 10.1364/OL.385503
+  note: '可搬运光子微波振荡器（Menlo Systems + MPQ + LNE-SYRTE + LP2N）： 5 cm ULE 立方参考腔（精细度~2.5×10⁵，热噪声底
+    ~2×10⁻¹⁵）+ Er:fiber 梳分频器， 产生 12 GHz 信号，绝对相位噪声 −83 dBc/Hz @1 Hz（腔热噪声限制）， 分频/探测残余噪声底
+    −115 dBc/Hz @1 Hz。 系统紧凑可搬运（OFD：3U，35 L，20 kg；OFR：8U，72 L，80 kg）， 实现室温蓝宝石腔振荡器级别性能而无需低温系统。
 
+    '
 entities:
-  - id: ent.compact_pmo_giunta20b
-    name: "紧凑光子微波振荡器 PMO（Giunta 2020b）"
-    hierarchy_level: 2
-    status: demonstrated
-    function: >
-      可搬运光子微波振荡器：8U 光学频率参考（5 cm ULE 立方腔，IBS SiO₂/Ta₂O₅ 镜，
-      精细度~2.5×10⁵，CW 激光 1542.14 nm）+ 3U Er:fiber 频率梳分频器（250 MHz，
-      图九型光纤激光）协同产生 12 GHz 低相噪微波信号。OFR 整体尺寸 48×43×35 cm³，80 kg。
-    key_parameters:
-      output_frequency: "12 GHz"
-      phase_noise_at_1Hz: "−83 dBc/Hz (absolute)"
-      residual_noise_floor: "−115 dBc/Hz @ 1 Hz"
-      ule_cavity_length: "50 mm (5 cm cube)"
-      finesse: "~2.5×10⁵"
-      thermal_noise_floor: "~2×10⁻¹⁵"
-      wavelength: "1542.14 nm"
-      ofr_volume: "72 L"
-      ofd_volume: "35 L"
-    note: "使用 pri.thermal_noise_floor_fp_cavity（腔热噪声限制性能）"
+- id: ent.compact_pmo_giunta20b
+  name: 紧凑光子微波振荡器 PMO（Giunta 2020b）
+  hierarchy_level: 2
+  status: demonstrated
+  function: '可搬运光子微波振荡器：8U 光学频率参考（5 cm ULE 立方腔，IBS SiO₂/Ta₂O₅ 镜， 精细度~2.5×10⁵，CW 激光
+    1542.14 nm）+ 3U Er:fiber 频率梳分频器（250 MHz， 图九型光纤激光）协同产生 12 GHz 低相噪微波信号。OFR 整体尺寸
+    48×43×35 cm³，80 kg。
 
+    '
+  key_parameters:
+    output_frequency: 12 GHz
+    phase_noise_at_1Hz: −83 dBc/Hz (absolute)
+    residual_noise_floor: −115 dBc/Hz @ 1 Hz
+    ule_cavity_length: 50 mm (5 cm cube)
+    finesse: ~2.5×10⁵
+    thermal_noise_floor: ~2×10⁻¹⁵
+    wavelength: 1542.14 nm
+    ofr_volume: 72 L
+    ofd_volume: 35 L
+  note: 使用 pri.thermal_noise_floor_fp_cavity（腔热噪声限制性能）
 principles:
-  - id: pri.optical_freq_division_microwave_giunta20b
-    name: "光频分频产生超稳微波原理（OFD）"
-    tier: domain
-    verification_status: observed
-    statement: >
-      光学频率参考（~194 THz）经 Er:fiber 频率梳相干分频至微波频率（12 GHz），
-      分频比 n ≈ 194 THz / 12 GHz ≈ 1.6×10⁴，微波相位噪声理想情况下压低
-      Sφ,μ = Sφ,ν / n²，实现约 84 dB 噪声压制。
-      实际限制来自参考腔热噪声（Brownian）和梳分频/探测残余噪声。
-    domain: "光子微波振荡器"
-    formula: "S_φ,μ = S_φ,ν / n²，n = ν_optical / f_microwave"
-    key_insight: "光频分频将腔热噪声限制的光学相位噪声转移至微波，获得远优于电子振荡器的相噪。"
-    conditions: "Er:fiber 梳完全相锁至超稳光学参考，脉冲宽度压缩至 ~120 fs 以降低振幅-相位转换噪声"
-    source:
-      zotero_key: "H7A8L8LT"
-      claim: >
-        "For an ideal optical frequency divider (OFD), the phase noise of the OFR is reduced to
-        Sϕ,μ = Sϕ,ν/n², where ... n is the ratio (~10⁴) between the optical (ν) and microwave
-        carrier (μ) signals."
+- id: pri.optical_freq_division_microwave_giunta20b
+  name: 光频分频产生超稳微波原理（OFD）
+  tier: domain
+  verification_status: observed
+  statement: '光学频率参考（~194 THz）经 Er:fiber 频率梳相干分频至微波频率（12 GHz）， 分频比 n ≈ 194 THz / 12
+    GHz ≈ 1.6×10⁴，微波相位噪声理想情况下压低 Sφ,μ = Sφ,ν / n²，实现约 84 dB 噪声压制。 实际限制来自参考腔热噪声（Brownian）和梳分频/探测残余噪声。
 
+    '
+  domain: 光子微波振荡器
+  formula: S_φ,μ = S_φ,ν / n²，n = ν_optical / f_microwave
+  key_insight: 光频分频将腔热噪声限制的光学相位噪声转移至微波，获得远优于电子振荡器的相噪。
+  conditions: Er:fiber 梳完全相锁至超稳光学参考，脉冲宽度压缩至 ~120 fs 以降低振幅-相位转换噪声
+  source:
+    zotero_key: H7A8L8LT
+    claim: '"For an ideal optical frequency divider (OFD), the phase noise of the
+      OFR is reduced to Sϕ,μ = Sϕ,ν/n², where ... n is the ratio (~10⁴) between the
+      optical (ν) and microwave carrier (μ) signals."
+
+      '
 metrics:
-  - id: met.pmo_phase_noise_12ghz_giunta20b
-    name: "12 GHz 光子微波振荡器绝对相位噪声（Giunta 2020b）"
-    unit: "dBc/Hz"
-    role: primary
-    description: "紧凑 PMO 12 GHz 输出信号绝对相位噪声功率谱密度"
-    demonstrated_value:
-      value: "−83 dBc/Hz @ 1 Hz offset（~−83 dBc/Hz·f⁻³ 斜率至 1 kHz）"
-      conditions: "12 GHz 载波；偏移频率 1 Hz；ULE 腔热噪声限制；三路数字互相关测量"
-      verification_status: observed
-      confidence: established
-      source:
-        zotero_key: "H7A8L8LT"
-        claim: >
-          "obtaining −83 dBc/Hz at 1 Hz and <−166 dBc/Hz for offsets greater than 5 kHz."
+- id: met.pmo_phase_noise_12ghz_giunta20b
+  name: 12 GHz 光子微波振荡器绝对相位噪声（Giunta 2020b）
+  unit: dBc/Hz
+  role: primary
+  description: 紧凑 PMO 12 GHz 输出信号绝对相位噪声功率谱密度
+  demonstrated_value:
+    value: −83 dBc/Hz @ 1 Hz offset（~−83 dBc/Hz·f⁻³ 斜率至 1 kHz）
+    conditions: 12 GHz 载波；偏移频率 1 Hz；ULE 腔热噪声限制；三路数字互相关测量
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: H7A8L8LT
+      claim: '"obtaining −83 dBc/Hz at 1 Hz and <−166 dBc/Hz for offsets greater than
+        5 kHz."
 
-  - id: met.pmo_residual_noise_giunta20b
-    name: "12 GHz PMO 分频/探测残余噪声底（Giunta 2020b）"
-    unit: "dBc/Hz"
-    role: supporting
-    description: "Er:fiber 梳 OFD + 光电探测过程的残余相位噪声底，代表系统分频保真度极限"
-    demonstrated_value:
-      value: "−115 dBc/Hz @ 1 Hz"
-      conditions: "三路 OFD 互相关；12 GHz 载波；OFR 为 CrystallineMirror（AlGaAs）腔时可支持此水平"
-      verification_status: observed
-      confidence: established
-      source:
-        zotero_key: "H7A8L8LT"
-        claim: >
-          "Employing semiconductor coating mirrors for the same type of transportable optical
-          frequency reference, we show that −105 dBc/Hz at 1 Hz is supported by demonstrating
-          a residual noise limit of division and detection process of −115 dBc/Hz at 1 Hz."
+        '
+- id: met.pmo_residual_noise_giunta20b
+  name: 12 GHz PMO 分频/探测残余噪声底（Giunta 2020b）
+  unit: dBc/Hz
+  role: supporting
+  description: Er:fiber 梳 OFD + 光电探测过程的残余相位噪声底，代表系统分频保真度极限
+  demonstrated_value:
+    value: −115 dBc/Hz @ 1 Hz
+    conditions: 三路 OFD 互相关；12 GHz 载波；OFR 为 CrystallineMirror（AlGaAs）腔时可支持此水平
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: H7A8L8LT
+      claim: '"Employing semiconductor coating mirrors for the same type of transportable
+        optical frequency reference, we show that −105 dBc/Hz at 1 Hz is supported
+        by demonstrating a residual noise limit of division and detection process
+        of −115 dBc/Hz at 1 Hz."
 
+        '
 relations:
-  - id: rel.G01
-    subject: ent.compact_pmo_giunta20b
-    predicate: ENABLED-BY
-    object: meth.pdh_locking
-    confidence: established
-    source:
-      zotero_key: "H7A8L8LT"
-      claim: "A standard Pound–Drever–Hall locking scheme is implemented by generating 20 MHz sidebands on the injected cavity light."
+- id: rel.giunta_2020_01
+  subject: ent.compact_pmo_giunta20b
+  predicate: ENABLED-BY
+  object: meth.pdh_locking
+  confidence: established
+  source:
+    zotero_key: H7A8L8LT
+    claim: A standard Pound–Drever–Hall locking scheme is implemented by generating
+      20 MHz sidebands on the injected cavity light.
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/giunta2020b.yaml
+- id: rel.giunta_2020_02
+  subject: met.pmo_phase_noise_12ghz_giunta20b
+  predicate: BOUNDED-BY
+  object: pri.brownian_thermal_noise_fdt
+  confidence: established
+  source:
+    zotero_key: H7A8L8LT
+    claim: '"The absolute phase noise of the 12 GHz carrier ... shows perfect agreement
+      with the limit inferred by the optical phase noise measurement ... clearly limiting
+      up to 1 kHz offset."
 
-  - id: rel.G02
-    subject: met.pmo_phase_noise_12ghz_giunta20b
-    predicate: BOUNDED-BY
-    object: pri.brownian_thermal_noise_fdt
-    confidence: established
-    source:
-      zotero_key: "H7A8L8LT"
-      claim: >
-        "The absolute phase noise of the 12 GHz carrier ... shows perfect agreement with the
-        limit inferred by the optical phase noise measurement ... clearly limiting up to 1 kHz offset."
-
-  - id: rel.G03
-    subject: ent.compact_pmo_giunta20b
-    predicate: CHARACTERIZED-BY
-    object: met.pmo_phase_noise_12ghz_giunta20b
-    confidence: established
-    source:
-      zotero_key: "H7A8L8LT"
-      claim: "obtaining −83 dBc/Hz at 1 Hz and <−166 dBc/Hz for offsets greater than 5 kHz."
+      '
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/giunta2020b.yaml
+- id: rel.giunta_2020_03
+  subject: ent.compact_pmo_giunta20b
+  predicate: CHARACTERIZED-BY
+  object: met.pmo_phase_noise_12ghz_giunta20b
+  confidence: established
+  source:
+    zotero_key: H7A8L8LT
+    claim: obtaining −83 dBc/Hz at 1 Hz and <−166 dBc/Hz for offsets greater than
+      5 kHz.
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/giunta2020b.yaml

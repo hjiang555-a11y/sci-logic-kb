@@ -46,9 +46,9 @@ principles:
       原子在抛射过程中两次穿过微波腔，两次相互作用之间的时间间隔 $\tau$ 远大于热原子束，
       导致共振线宽 $\Delta \nu \approx 1/(2\tau)$ 显著降低。
     domain: "原子频率标准"
-    formula: "$\Delta \nu_{FWHM} \approx 1/(2\tau)$"
+    formula: '$\Delta \nu_{FWHM} \approx 1/(2\tau)$'
     key_insight: "利用激光冷却降低原子速度并增加相互作用时间，将线宽降低至 sub-Hertz 量级。"
-    conditions: "极低温度（$\mu 级别）且高真空环境下"
+    conditions: '极低温度（$\mu 级别）且高真空环境下'
     source_claim: "The long time between the two interactions leads to a sub-Hertz Ramsey resonance, two orders of magnitude narrower than in classical thermal beam devices."
 
   - id: pri.cold_collisional_shift_cesium
@@ -58,7 +58,7 @@ principles:
     statement: >
       在极低温度下，铯原子间的 s-波散射导致频率偏移，该偏移与原子的平均密度 $\rho$ 成正比。
     domain: "系统误差"
-    formula: "$\Delta \nu / \nu \propto \rho$"
+    formula: '$\Delta \nu / \nu \propto \rho$'
     key_insight: "冷碰撞是喷泉钟长期稳定度和准确度的主要限制因素。"
     conditions: "s-wave scattering regime"
     source_claim: "A preliminary evaluation of some systematic effects shows that cold collisions will be the limiting effect for long-term stability and accuracy."
@@ -94,7 +94,7 @@ metrics:
       source: {zotero_key: "", claim: "the central fringe... is less than 700 mHz wide (FWHM)"}
 
   - id: met.fractional_frequency_stability_clairon1995
-    name: "分数频率不稳定度 $\sigma_y(\tau)$"
+    name: '分数频率不稳定度 $\sigma_y(\tau)$'
     unit: "无量纲 (Allan deviation)"
     role: primary
     description: "相对于 H-maser 的短期频率稳定性"
@@ -106,7 +106,7 @@ metrics:
       source: {zotero_key: "", claim: "The short-term frequency stability, measured against an H-maser, is 3 * 10^-13 tau^-1/2"}
 
   - id: met.cold_collisional_shift_value_clairon1995
-    name: "冷碰撞频移 $\Delta \nu / \nu$"
+    name: '冷碰撞频移 $\Delta \nu / \nu$'
     unit: "无量纲"
     role: engineering
     description: "由于原子间碰撞导致的频率偏移"
@@ -118,21 +118,21 @@ metrics:
       source: {zotero_key: "", claim: "the relative collisional shift can be estimated to be 3 * 10^-15 under typical conditions"}
 
 relations:
-  - id: rel.clairon1995_01
+  - id: rel.clairon_1995_lairon1995_01
     subject: ent.cesium_fountain_standard_clairon1995
     predicate: CHARACTERIZED-BY
     object: met.ramsey_linewidth_clairon1995
     confidence: established
     source: {zotero_key: "", claim: "Ramsey fringes as narrow as 0.7 Hz have been obtained."}
 
-  - id: rel.clairon1995_02
+  - id: rel.clairon_1995_lairon1995_02
     subject: ent.cesium_fountain_standard_clairon1995
     predicate: CHARACTERIZED-BY
     object: met.fractional_frequency_stability_clairon1995
     confidence: established
     source: {zotero_key: "", claim: "The short-term frequency stability, measured against an H-maser, is 3 * 10^-13 tau^-1/2"}
 
-  - id: rel.clairon1995_03
+  - id: rel.clairon_1995_lairon1995_03
     subject: ent.cesium_fountain_standard_clairon1995
     predicate: BOUNDED-BY
     object: pri.cold_collisional_shift_cesium

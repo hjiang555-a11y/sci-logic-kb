@@ -52,7 +52,7 @@ entities:
     note: "Level 2 实例节点，PART-OF ent.dual_comb_spectrometer（定义于 coddington2016.yaml）"
 
 relations:
-  - id: rel.Cos17_01
+  - id: rel.cossel_2017_os17_01
     subject: ent.airborne_retroreflector_dcs_c17
     predicate: PART-OF
     object: ent.dual_comb_spectrometer
@@ -60,7 +60,7 @@ relations:
     source: {zotero_key: "XHCB4X6R", claim: "dual-comb spectroscopy"}
     note: "跨文件引用 ent.dual_comb_spectrometer（定义于 coddington2016.yaml）"
 
-  - id: rel.Cos17_02
+  - id: rel.cossel_2017_os17_02
     subject: ent.airborne_retroreflector_dcs_c17
     predicate: ENABLED-BY
     object: pri.dual_comb_multiheterodyne_detection

@@ -57,7 +57,7 @@ metrics:
       source: "xu2019"
 
 relations:
-  - id: rel.Xu19_01
+  - id: rel.xu_2019_u19_01
     subject: ent.coherent_optical_fiber_link
     predicate: ENABLED-BY
     object: pri.fiber_propagation_reciprocity
@@ -66,7 +66,7 @@ relations:
       claim: "test of the reciprocity of the propagation delay in an optical fiber"
     note: "ent.coherent_optical_fiber_link 定义于 calonico2015"
 
-  - id: rel.Xu19_02
+  - id: rel.xu_2019_u19_02
     subject: ent.coherent_optical_fiber_link
     predicate: CHARACTERIZED-BY
     object: met.coherent_optical_fiber_link_residual_offset_yocto

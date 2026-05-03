@@ -93,7 +93,7 @@ methods: []
 metrics: []
 
 relations:
-  - id: rel.CY03_01
+  - id: rel.cundiff_2003_Y03_01
     subject: ent.optical_frequency_comb
     predicate: CHARACTERIZED-BY
     object: pri.cep_controlled_frequency_comb_time_frequency_duality
@@ -105,7 +105,7 @@ relations:
       通用光学频率梳实体由 CEP 受控时-频域对偶原理刻画。
       跨文件引用 ent.optical_frequency_comb（定义于 giunta2019.yaml）。
 
-  - id: rel.CY03_02
+  - id: rel.cundiff_2003_Y03_02
     subject: pri.cep_controlled_frequency_comb_time_frequency_duality
     predicate: ENABLED-BY
     object: pri.octave_span_enables_absolute_referencing_cy03
@@ -115,7 +115,7 @@ relations:
       claim: "measurement and control of f_o becomes feasible through self-referencing with an octave-spanning spectrum."
     note: "两自由度控制需要倍频程谱展宽以闭环 f_o。"
 
-  - id: rel.CY03_03
+  - id: rel.cundiff_2003_Y03_03
     subject: pri.cep_controlled_frequency_comb_time_frequency_duality
     predicate: DERIVED-FROM
     object: pri.self_referencing_f2f

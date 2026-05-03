@@ -73,7 +73,7 @@ metrics:
       source: "krehlik2015"
 
 relations:
-  - id: rel.Kre15_01
+  - id: rel.krehlik_2015_re15_01
     subject: ent.rf_over_fiber_time_transfer_link
     predicate: ENABLED-BY
     object: pri.hybrid_analog_digital_delay_compensation
@@ -81,7 +81,7 @@ relations:
       paper: krehlik2015
       claim: "active delay stabilization ... unlimited range of compensation"
 
-  - id: rel.Kre15_02
+  - id: rel.krehlik_2015_re15_02
     subject: ent.rf_over_fiber_time_transfer_link
     predicate: ENABLED-BY
     object: pri.roundtrip_phase_compensation_rf_transfer
@@ -90,7 +90,7 @@ relations:
       claim: "active compensation of fiber delay fluctuations via round-trip measurement"
     note: "pri.roundtrip_phase_compensation_rf_transfer 定义于 leng2016（OFC 专题）"
 
-  - id: rel.Kre15_03
+  - id: rel.krehlik_2015_re15_03
     subject: ent.rf_over_fiber_time_transfer_link
     predicate: CHARACTERIZED-BY
     object: met.rf_over_fiber_link_instability

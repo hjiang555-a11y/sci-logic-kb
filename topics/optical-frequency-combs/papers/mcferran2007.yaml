@@ -244,7 +244,7 @@ metrics:
 # ═══════════════════════════════════════════════
 
 relations:
-  - id: rel.M07_01
+  - id: rel.mcferran_2007_07_01
     subject: ent.pump_noise_suppressed_erfiber_comb_m07
     predicate: PART-OF
     object: ent.optical_frequency_comb
@@ -252,7 +252,7 @@ relations:
     source: {zotero_key: "CNSSF9YY", claim: "fiber-based frequency combs ... one drawback of fiber combs compared to solid-state systems"}
     note: "ent.optical_frequency_comb 定义于 topics/optical-frequency-combs/papers/udem2002.yaml（跨文件引用）"
 
-  - id: rel.M07_02
+  - id: rel.mcferran_2007_07_02
     subject: ent.pump_noise_suppressed_erfiber_comb_m07
     predicate: ENABLED-BY
     object: pri.self_referencing_f2f
@@ -260,7 +260,7 @@ relations:
     source: {zotero_key: "CNSSF9YY", claim: "octave-spanning comb then allows for photodetector extraction of the offset frequency signal"}
     note: "pri.self_referencing_f2f 定义于 topics/optical-frequency-combs/papers/udem2002.yaml（跨文件引用）"
 
-  - id: rel.M07_03
+  - id: rel.mcferran_2007_07_03
     subject: ent.pump_noise_suppressed_erfiber_comb_m07
     predicate: CHARACTERIZED-BY
     object: met.fceo_integrated_phase_noise_m07
@@ -268,21 +268,21 @@ relations:
     source: {zotero_key: "CNSSF9YY", claim: "integrated phase noise ... 0.99 rad²"}
     temporal_role: validates
 
-  - id: rel.M07_04
+  - id: rel.mcferran_2007_07_04
     subject: ent.pump_noise_suppressed_erfiber_comb_m07
     predicate: CHARACTERIZED-BY
     object: met.fceo_linewidth_m07
     confidence: established
     source: {zotero_key: "CNSSF9YY", claim: "field spectrum linewidth ... lowered from several hundred kHz to ~60 kHz ... instrument-limited"}
 
-  - id: rel.M07_05
+  - id: rel.mcferran_2007_07_05
     subject: met.fceo_integrated_phase_noise_m07
     predicate: OPERATIONALIZED-AS
     object: meth.pump_current_feedback_fceo_lock
     confidence: established
     source: {zotero_key: "CNSSF9YY", claim: "using pump current feedback with a servo bandwidth of ~80 kHz"}
 
-  - id: rel.M07_06
+  - id: rel.mcferran_2007_07_06
     subject: meth.pump_current_feedback_fceo_lock
     predicate: ENABLED-BY
     object: pri.pump_rin_to_fceo_coupling
@@ -290,21 +290,21 @@ relations:
     source: {zotero_key: "CNSSF9YY", claim: "the primary cause of frequency noise associated with the offset frequency is the relative intensity noise of the pump laser"}
     note: "抑制方法的有效性根植于 RIN→fceo 确定性耦合机理；反过来利用该机理闭环"
 
-  - id: rel.M07_07
+  - id: rel.mcferran_2007_07_07
     subject: meth.pump_current_feedback_fceo_lock
     predicate: CHARACTERIZED-BY
     object: met.servo_bandwidth_m07
     confidence: established
     source: {zotero_key: "CNSSF9YY", claim: "servo bumps occur approximately 80 kHz from the carrier"}
 
-  - id: rel.M07_08
+  - id: rel.mcferran_2007_07_08
     subject: pri.pump_rin_to_fceo_coupling
     predicate: DERIVED-FROM
     object: pri.comb_breathing_fixed_point
     confidence: established
     source: {zotero_key: "CNSSF9YY", claim: "the comb will perform breathing motion about this fixed point ... S_ceo/S_λ = n_fix²/(n_fix − n_λ)²"}
 
-  - id: rel.M07_09
+  - id: rel.mcferran_2007_07_09
     subject: ent.pump_noise_suppressed_erfiber_comb_m07
     predicate: CONDITIONED-BY
     object: met.pump_laser_rin_m07
@@ -312,7 +312,7 @@ relations:
     source: {zotero_key: "CNSSF9YY", claim: "noise on the pump power will lead to linearly correlated noise on fceo and fr"}
     note: "外围条件接口指标：泵二极管 RIN 直接决定该系统 fceo 噪声水平"
 
-  - id: rel.M07_10
+  - id: rel.mcferran_2007_07_10
     subject: met.fceo_integrated_phase_noise_m07
     predicate: BOUNDED-BY
     object: pri.pump_rin_to_fceo_coupling
@@ -330,7 +330,7 @@ relations:
         status: proposed
         source: {zotero_key: "CNSSF9YY", claim: "Further decreases in the pump RIN and even more aggressive phase-lead compensation could reduce this phase jitter even further"}
 
-  - id: rel.M07_11
+  - id: rel.mcferran_2007_07_11
     subject: met.servo_bandwidth_m07
     predicate: BOUNDED-BY
     object: pri.pump_rin_to_fceo_coupling

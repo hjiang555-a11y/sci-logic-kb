@@ -85,7 +85,7 @@ metrics:
         source: {zotero_key: "7HSU6V7Q"}
 
 relations:
-  - id: rel.H22_01
+  - id: rel.hoghooghi_2022_22_01
     subject: ent.broadband_1ghz_mir_comb_h22
     predicate: CHARACTERIZED-BY
     object: met.mir_comb_spectral_coverage_h22
@@ -94,7 +94,7 @@ relations:
       claim: "The 1 GHz MIR comb achieves spectral coverage from 3 to 13 µm through IP-DFG in χ² nonlinear crystals."
       zotero_key: "7HSU6V7Q"
 
-  - id: rel.H22_02
+  - id: rel.hoghooghi_2022_22_02
     subject: meth.dfg_comb_generation
     predicate: ENABLED-BY
     object: pri.intra_pulse_dfg_comb_generation
@@ -103,7 +103,7 @@ relations:
       claim: "Intra-pulse difference frequency generation of few-cycle pulses in χ² crystals inherently produces a MIR comb with f_CEO = 0, eliminating the need for active CEO stabilization."
       zotero_key: "7HSU6V7Q"
 
-  - id: rel.H22_03
+  - id: rel.hoghooghi_2022_22_03
     subject: meth.dfg_comb_generation
     predicate: ENABLED-BY
     object: pri.nonlinear_frequency_conversion_comb
@@ -113,7 +113,7 @@ relations:
       zotero_key: "7HSU6V7Q"
     note: "pri.nonlinear_frequency_conversion_comb 跨文件引用（picque2019.yaml）"
 
-  - id: rel.H22_04
+  - id: rel.hoghooghi_2022_22_04
     subject: ent.broadband_1ghz_mir_comb_h22
     predicate: CONDITIONED-BY
     object: pri.molecular_rovibrational_fingerprint
@@ -121,7 +121,7 @@ relations:
     source: {zotero_key: "7HSU6V7Q", claim: "Mid-infrared (MIR) spectrometers are invaluable tools for molecular fingerprinting"}
     note: "应用层接口原理（picque2019.yaml / 框架）"
 
-  - id: rel.H22_05
+  - id: rel.hoghooghi_2022_22_05
     subject: meth.dfg_comb_generation
     predicate: COMPETES-WITH
     object: meth.opo_comb_generation
@@ -129,7 +129,7 @@ relations:
     source: {zotero_key: "7HSU6V7Q", claim: "through nonlinear down-conversion of near-infrared frequency combs, either through parametric oscillation or difference frequency generation"}
     conditions: "MIR 梳产生路线：DFG/IP-DFG 单通道 vs OPO 共振增强"
 
-  - id: rel.H22_06
+  - id: rel.hoghooghi_2022_22_06
     subject: ent.broadband_1ghz_mir_comb_h22
     predicate: PART-OF
     object: ent.mid_ir_frequency_comb
@@ -139,7 +139,7 @@ relations:
       zotero_key: "7HSU6V7Q"
     note: "跨文件引用（picque2019.yaml 应用层架构）"
 
-  - id: rel.H22_07
+  - id: rel.hoghooghi_2022_22_07
     subject: met.dcs_acquisition_speed
     predicate: OPERATIONALIZED-AS
     object: meth.dual_comb_spectroscopy

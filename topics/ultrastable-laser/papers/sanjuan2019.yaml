@@ -1,113 +1,116 @@
-# Sanjuan 2019 — 空间狭义相对论检验用长期稳定光学腔
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-16
-# Schema版本：v4.1
-
 meta:
-  zotero_key: "H3HYK5D3"
+  zotero_key: H3HYK5D3
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: "Long-term stable optical cavity for special relativity tests in space"
+  title: Long-term stable optical cavity for special relativity tests in space
   year: 2019
   first_author: Sanjuan
-  journal: "Optics Express"
+  journal: Optics Express
   volume: 27
   issue: 25
-  pages: "36206"
-  doi: "10.1364/OE.27.036206"
-  note: >
-    为 BOOST 空间任务设计的 8.7 cm 立方 ULE 腔，目标检验洛伦兹不变性。
-    五层铝热屏蔽（PEEK 隔热柱）实现 0.18 mHz 处 ~10⁻¹⁴ Allan 偏差。
-    详细噪声分解表明强度波动是亚毫赫兹频段的主要噪声源。
-    核心贡献：系统级频域热屏蔽表征和亚毫赫兹噪声分解。
+  pages: '36206'
+  doi: 10.1364/OE.27.036206
+  note: '为 BOOST 空间任务设计的 8.7 cm 立方 ULE 腔，目标检验洛伦兹不变性。 五层铝热屏蔽（PEEK 隔热柱）实现 0.18 mHz 处
+    ~10⁻¹⁴ Allan 偏差。 详细噪声分解表明强度波动是亚毫赫兹频段的主要噪声源。 核心贡献：系统级频域热屏蔽表征和亚毫赫兹噪声分解。
 
+    '
 entities:
-  - id: ent.boost_cubic_cavity_s19
-    name: "BOOST 立方 ULE 参考腔（Sanjuan 2019）"
-    aliases: ["BOOST cavity", "8.7 cm cubic cavity"]
-    hierarchy_level: 2
-    status: demonstrated
-    function: >
-      8.7 cm 立方 ULE 腔，四面体安装，五层铝热屏蔽（PEEK 隔热柱），
-      Peltier + 热管温控，FPGA 数字伺服实现 PDH 锁频和强度稳定。
-      针对 0.18 mHz（轨道周期 5400 s）优化长期稳定性。
-    key_parameters:
-      cavity_length: "8.7 cm"
-      spacer_material: "ULE"
-      geometry: "cubic"
-      mounting: "tetrahedral"
-      thermal_shields: "5 layers (Al + PEEK)"
-      wavelength: "1064 nm"
-      target_frequency: "0.18 mHz (orbit period)"
-    note: "PART-OF ent.fp_cavity_system。空间任务优化的长期稳定性设计。"
+- id: ent.boost_cubic_cavity_s19
+  name: BOOST 立方 ULE 参考腔（Sanjuan 2019）
+  aliases:
+  - BOOST cavity
+  - 8.7 cm cubic cavity
+  hierarchy_level: 2
+  status: demonstrated
+  function: '8.7 cm 立方 ULE 腔，四面体安装，五层铝热屏蔽（PEEK 隔热柱）， Peltier + 热管温控，FPGA 数字伺服实现 PDH
+    锁频和强度稳定。 针对 0.18 mHz（轨道周期 5400 s）优化长期稳定性。
 
+    '
+  key_parameters:
+    cavity_length: 8.7 cm
+    spacer_material: ULE
+    geometry: cubic
+    mounting: tetrahedral
+    thermal_shields: 5 layers (Al + PEEK)
+    wavelength: 1064 nm
+    target_frequency: 0.18 mHz (orbit period)
+  note: PART-OF ent.fp_cavity_system。空间任务优化的长期稳定性设计。
 principles:
-  - id: pri.multi_layer_thermal_shielding_frequency_domain
-    name: "多层热屏蔽频域传递函数设计"
-    tier: engineering
-    verification_status: observed
-    statement: >
-      通过五层铝热屏蔽（3 mm 厚）和 PEEK 隔热柱（10 mm 长）的级联低通滤波，
-      在 0.18 mHz 处实现 >10⁵ 的温度衰减。
-      频域正弦扫描法直接测量各层间传递函数，比时域阶跃响应更精确。
-      最外层 Peltier 主动温控提供 1 mK/√Hz 输入稳定度。
-    domain: "热管理 / 长期频率稳定度"
-    key_insight: "频域传递函数测量比时域阶跃响应更直接地评估亚毫赫兹频段热屏蔽性能。"
-    conditions: "适用于需要在 sub-mHz 频段达到极高频率稳定度的应用"
-    source_claim: >
-      "thermal shields were characterized in the frequency domain by applying sine sweep signals"
-    open_questions:
-      - "空间环境中（微重力、辐射）热屏蔽传递函数是否与地面测量一致？"
+- id: pri.multi_layer_thermal_shielding_frequency_domain
+  name: 多层热屏蔽频域传递函数设计
+  tier: engineering
+  verification_status: observed
+  statement: '通过五层铝热屏蔽（3 mm 厚）和 PEEK 隔热柱（10 mm 长）的级联低通滤波， 在 0.18 mHz 处实现 >10⁵ 的温度衰减。
+    频域正弦扫描法直接测量各层间传递函数，比时域阶跃响应更精确。 最外层 Peltier 主动温控提供 1 mK/√Hz 输入稳定度。
 
+    '
+  domain: 热管理 / 长期频率稳定度
+  key_insight: 频域传递函数测量比时域阶跃响应更直接地评估亚毫赫兹频段热屏蔽性能。
+  conditions: 适用于需要在 sub-mHz 频段达到极高频率稳定度的应用
+  source_claim: '"thermal shields were characterized in the frequency domain by applying
+    sine sweep signals"
+
+    '
+  open_questions:
+  - 空间环境中（微重力、辐射）热屏蔽传递函数是否与地面测量一致？
 methods:
-  - id: meth.thermal_shield_frequency_domain_testing_s19
-    name: "多层热屏蔽频域表征与长期稳定性测试方法"
-    description: >
-      针对亚毫赫兹（0.18 mHz）长期稳定性的热屏蔽设计方法：采用五层铝热屏蔽 + PEEK 隔热柱级联低通滤波；
-      通过频域正弦扫描直接测量各层间传递函数（优于时域阶跃响应）；
-      结合 FPGA 数字伺服实现 PDH 锁频和强度稳定，并分解强度波动、温度波动等噪声源。
-    verification_status: observed
-    implementation_details:
-      - "五层铝热屏蔽（3 mm 厚），PEEK 隔热柱（10 mm 长）"
-      - "频域正弦扫描测量传递函数（0.01–10 mHz）"
-      - "Peltier + 热管主动温控（外层 1 mK/√Hz 稳定度）"
-      - "四面体安装立方 ULE 腔（8.7 cm）"
-      - "FPGA 数字伺服（PDH 锁频 + 强度稳定）"
-      - "噪声分解：强度波动主导 0.18 mHz 频段"
-    enables: ent.boost_cubic_cavity_s19
-    source_claim: "The thermal shields were characterized in the frequency domain by applying sine sweep signals; the system achieved 10⁻¹⁴ Allan deviation at 5400 s."
+- id: meth.thermal_shield_frequency_domain_testing_s19
+  name: 多层热屏蔽频域表征与长期稳定性测试方法
+  description: '针对亚毫赫兹（0.18 mHz）长期稳定性的热屏蔽设计方法：采用五层铝热屏蔽 + PEEK 隔热柱级联低通滤波； 通过频域正弦扫描直接测量各层间传递函数（优于时域阶跃响应）；
+    结合 FPGA 数字伺服实现 PDH 锁频和强度稳定，并分解强度波动、温度波动等噪声源。
 
+    '
+  verification_status: observed
+  implementation_details:
+  - 五层铝热屏蔽（3 mm 厚），PEEK 隔热柱（10 mm 长）
+  - 频域正弦扫描测量传递函数（0.01–10 mHz）
+  - Peltier + 热管主动温控（外层 1 mK/√Hz 稳定度）
+  - 四面体安装立方 ULE 腔（8.7 cm）
+  - FPGA 数字伺服（PDH 锁频 + 强度稳定）
+  - 噪声分解：强度波动主导 0.18 mHz 频段
+  enables: ent.boost_cubic_cavity_s19
+  source_claim: The thermal shields were characterized in the frequency domain by
+    applying sine sweep signals; the system achieved 10⁻¹⁴ Allan deviation at 5400 s.
 metrics:
-  - id: met.long_term_instability_s19
-    name: "长期频率不稳定度（Sanjuan 2019）"
-    unit: "无量纲"
-    demonstrated_value:
-      value: "~10⁻¹⁴ @ 5400 s (Allan deviation)"
-      conditions: "8.7 cm ULE 立方腔，五层热屏蔽，1064 nm"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "H3HYK5D3", claim: "frequency stability of (9 ± 3) × 10⁻¹⁴ Hz⁻¹/² at 0.18 mHz, corresponding to Allan deviation of 10⁻¹⁴ at 5400 s"}
-
+- id: met.long_term_instability_s19
+  name: 长期频率不稳定度（Sanjuan 2019）
+  unit: 无量纲
+  demonstrated_value:
+    value: ~10⁻¹⁴ @ 5400 s (Allan deviation)
+    conditions: 8.7 cm ULE 立方腔，五层热屏蔽，1064 nm
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: H3HYK5D3
+      claim: frequency stability of (9 ± 3) × 10⁻¹⁴ Hz⁻¹/² at 0.18 mHz, corresponding
+        to Allan deviation of 10⁻¹⁴ at 5400 s
 relations:
-  - id: rel.SJ01
-    subject: ent.boost_cubic_cavity_s19
-    predicate: PART-OF
-    object: ent.fp_cavity_system
-    confidence: established
-    source: {zotero_key: "H3HYK5D3", claim: "high-finesse optical cavity"}
-    note: "跨文件引用，ent.fp_cavity_system 定义于 numata2004.yaml"
-
-  - id: rel.SJ02
-    subject: ent.boost_cubic_cavity_s19
-    predicate: ENABLED-BY
-    object: pri.multi_layer_thermal_shielding_frequency_domain
-    confidence: established
-    source: {zotero_key: "H3HYK5D3", claim: "five-layer thermal shield... temperature fluctuations strongly attenuated"}
-
-  - id: rel.SJ03
-    subject: ent.boost_cubic_cavity_s19
-    predicate: CHARACTERIZED-BY
-    object: met.long_term_instability_s19
-    confidence: established
-    source: {zotero_key: "H3HYK5D3", claim: "Allan deviation of 10⁻¹⁴ at 5400 s"}
+- id: rel.sanjuan_2019_J01
+  subject: ent.boost_cubic_cavity_s19
+  predicate: PART-OF
+  object: ent.fp_cavity_system
+  confidence: established
+  source:
+    zotero_key: H3HYK5D3
+    claim: high-finesse optical cavity
+  note: 跨文件引用，ent.fp_cavity_system 定义于 numata2004.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/sanjuan2019.yaml
+- id: rel.sanjuan_2019_J02
+  subject: ent.boost_cubic_cavity_s19
+  predicate: ENABLED-BY
+  object: pri.multi_layer_thermal_shielding_frequency_domain
+  confidence: established
+  source:
+    zotero_key: H3HYK5D3
+    claim: five-layer thermal shield... temperature fluctuations strongly attenuated
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/sanjuan2019.yaml
+- id: rel.sanjuan_2019_J03
+  subject: ent.boost_cubic_cavity_s19
+  predicate: CHARACTERIZED-BY
+  object: met.long_term_instability_s19
+  confidence: established
+  source:
+    zotero_key: H3HYK5D3
+    claim: Allan deviation of 10⁻¹⁴ at 5400 s
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/sanjuan2019.yaml

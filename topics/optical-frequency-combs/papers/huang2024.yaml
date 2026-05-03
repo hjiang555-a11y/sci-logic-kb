@@ -113,7 +113,7 @@ metrics:
       source: {zotero_key: "2QUW2P6D"}
 
 relations:
-  - id: rel.HU24_01
+  - id: rel.huang_2024_U24_01
     subject: ent.comb_calibrated_fmcw_nlos_sensor_h24
     predicate: CHARACTERIZED-BY
     object: met.fmcw_temporal_resolution_h24
@@ -122,7 +122,7 @@ relations:
       claim: "The comb-calibrated FMCW sensor achieves 652 fs temporal resolution, with potential to reach 70 fs using broadband lasers."
       zotero_key: "2QUW2P6D"
 
-  - id: rel.HU24_02
+  - id: rel.huang_2024_U24_02
     subject: ent.comb_calibrated_fmcw_nlos_sensor_h24
     predicate: CHARACTERIZED-BY
     object: met.nlos_vibrometry_accuracy_h24
@@ -131,7 +131,7 @@ relations:
       claim: "The comb-calibrated FMCW coherent sensor achieves NLOS vibrometry accuracy at the tens-of-Hz level through multi-frame phase tracking."
       zotero_key: "2QUW2P6D"
 
-  - id: rel.HU24_03
+  - id: rel.huang_2024_U24_03
     subject: meth.comb_calibrated_fmcw_nlos_imaging
     predicate: ENABLED-BY
     object: pri.comb_calibrated_fmcw_frequency_linearity
@@ -140,7 +140,7 @@ relations:
       claim: "Optical frequency comb calibration corrects FMCW tuning nonlinearity in real time, improving effective bandwidth utilization and SNR by ~5 dB."
       zotero_key: "2QUW2P6D"
 
-  - id: rel.HU24_04
+  - id: rel.huang_2024_U24_04
     subject: ent.comb_calibrated_fmcw_nlos_sensor_h24
     predicate: PART-OF
     object: ent.optical_frequency_comb
@@ -149,7 +149,7 @@ relations:
       claim: "The comb-calibrated FMCW sensor uses an optical frequency comb as a precision frequency ruler for LIDAR/imaging applications."
       zotero_key: "2QUW2P6D"
 
-  - id: rel.HU24_05
+  - id: rel.huang_2024_U24_05
     subject: meth.comb_calibrated_fmcw_nlos_imaging
     predicate: COMPETES-WITH
     object: meth.dual_comb_spectroscopy

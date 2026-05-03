@@ -1,238 +1,243 @@
-# Belardi 2015 — 反谐振空心光纤在可见/近红外的宽带设计与低损耗特性
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-16
-# Schema版本：v4.1
-
 meta:
-  zotero_key: "2F3PD62T"
+  zotero_key: 2F3PD62T
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: "Design and Properties of Hollow Antiresonant Fibers for the Visible and Near Infrared Spectral Range"
+  title: Design and Properties of Hollow Antiresonant Fibers for the Visible and Near
+    Infrared Spectral Range
   year: 2015
   first_author: Belardi
-  journal: "Journal of Lightwave Technology"
+  journal: Journal of Lightwave Technology
   volume: 33
   issue: 21
-  pages: "4497-4503"
-  doi: "10.1109/JLT.2015.2477775"
-  note: >
-    系统讨论反谐振空心光纤（HC-ARF）在可见/近红外的设计自由度。
-    论文给出第一反谐振窗口由壁厚决定的基础设计规则，展示 free core boundary
-    结构可减弱包层模耦合，并实验实现 0.75–1.6 μm 的一阶反谐振传输与
-    480 nm 处 175 dB/km 的可见光低损耗。对本知识库的意义：为后续
-    空心光纤低背向散射（Michaud-Belleau 2021）与热噪声（Michaud-Belleau 2022）
-    条目提供可复用的基础设计节点。
+  pages: 4497-4503
+  doi: 10.1109/JLT.2015.2477775
+  note: '系统讨论反谐振空心光纤（HC-ARF）在可见/近红外的设计自由度。 论文给出第一反谐振窗口由壁厚决定的基础设计规则，展示 free core boundary
+    结构可减弱包层模耦合，并实验实现 0.75–1.6 μm 的一阶反谐振传输与 480 nm 处 175 dB/km 的可见光低损耗。对本知识库的意义：为后续
+    空心光纤低背向散射（Michaud-Belleau 2021）与热噪声（Michaud-Belleau 2022） 条目提供可复用的基础设计节点。
 
+    '
 entities:
-  - id: ent.antiresonant_hollow_core_fiber
-    name: "反谐振空心光纤（HC-ARF）"
-    aliases: ["hollow antiresonant fiber", "HC-ARF", "negative-curvature hollow-core fiber"]
-    hierarchy_level: 2
-    status: demonstrated
-    verification_status: observed
-    function: >
-      以薄壁反谐振包层将光主要约束在空气核心中，尽量减小光场与玻璃的重叠，
-      以获得宽传输带宽、低材料散射耦合和可用于气体填充/长延迟线的空心导光平台。
-    key_parameters:
-      core_structure: "单环/双环/三环 antiresonant tubes；可采用 nested tubes 或 free core boundary"
-      spectral_control: "反谐振窗口由包层壁厚 t 控制，第一窗口带宽最大"
-      first_window_example: "23 μm core, t = 0.34 ± 0.02 μm, transmission 0.75–1.6 μm"
-      visible_example: "51 μm core, t1 ≈ 1.27 ± 0.06 μm, attenuation 175 dB/km @ 480 nm"
-    key_advantage: "在可见/近红外可同时获得较宽、较平滑的透射谱和较低玻璃重叠"
-    note: >
-      新 Level 2 实体节点，挂接在 ent.fiber_interferometer 分支下，
-      供后续空心光纤稳频/传感论文复用；节点边界待专家审核。
+- id: ent.antiresonant_hollow_core_fiber
+  name: 反谐振空心光纤（HC-ARF）
+  aliases:
+  - hollow antiresonant fiber
+  - HC-ARF
+  - negative-curvature hollow-core fiber
+  hierarchy_level: 2
+  status: demonstrated
+  verification_status: observed
+  function: '以薄壁反谐振包层将光主要约束在空气核心中，尽量减小光场与玻璃的重叠， 以获得宽传输带宽、低材料散射耦合和可用于气体填充/长延迟线的空心导光平台。
 
+    '
+  key_parameters:
+    core_structure: 单环/双环/三环 antiresonant tubes；可采用 nested tubes 或 free core boundary
+    spectral_control: 反谐振窗口由包层壁厚 t 控制，第一窗口带宽最大
+    first_window_example: 23 μm core, t = 0.34 ± 0.02 μm, transmission 0.75–1.6 μm
+    visible_example: 51 μm core, t1 ≈ 1.27 ± 0.06 μm, attenuation 175 dB/km @ 480
+      nm
+  key_advantage: 在可见/近红外可同时获得较宽、较平滑的透射谱和较低玻璃重叠
+  note: '新 Level 2 实体节点，挂接在 ent.fiber_interferometer 分支下， 供后续空心光纤稳频/传感论文复用；节点边界待专家审核。
+
+    '
 principles:
-  - id: pri.antiresonant_hollow_core_guidance
-    name: "反谐振空心光纤导光原理"
-    tier: domain
-    verification_status: observed
-    statement: >
-      反谐振空心光纤利用薄壁玻璃包层元件形成反谐振传输窗口，使导模主要局域于空气核心。
-      最大透射波长近似满足 λ_k = 4t / (√(n² - 1) · (2k + 1))；
-      因此减小包层壁厚 t 可把第一反谐振窗口推到可见/近红外，并获得最大的传输带宽。
-    domain: "空心光纤 / 反谐振导光"
-    formula: "λ_k = 4t / (√(n² - 1) · (2k + 1))"
-    key_insight: "包层壁厚 t 是 HC-ARF 光谱窗口的一级设计旋钮；第一反谐振窗口提供最大带宽。"
-    conditions: "适用于以薄壁硅石反谐振元件围成空心核心的 HC-ARF / NANF"
-    preconditions:
-      - "核心区保持中空，导模与玻璃模式耦合较弱"
-      - "包层壁厚在圆周方向足够均匀，使反谐振窗口不被局部共振严重破坏"
-    invalidated_when:
-      - "导光机制转为光子带隙主导而非反谐振主导"
-      - "壁厚起伏、节点接触或强模式耦合导致泄漏损耗不再由简单反谐振窗口描述"
-    open_questions:
-      - "如何在保持第一反谐振大带宽的同时进一步压低可见波段散射/泄漏损耗？"
-      - "这种几何自由度在超稳激光延迟线中能否同时兼顾低背向散射与低热噪声？"
-    source_claim: >
-      "the wavelengths λk of maximum optical transmission ('antiresonance wavelengths')
-      are given by the formula ... The first antiresonance window is the one that
-      allows a larger transmission bandwidth"
-    condition_variables:
-      - symbol: "t"
-        name: "包层玻璃壁厚"
-        analytical_relation: "λ_k ∝ t；减小 t 将第一反谐振窗口移向更短波长"
-        current_value: "0.3 μm（理论宽带设计）；0.34 ± 0.02 μm（首个一阶反谐振实验样品）"
-        best_demonstrated:
-          value: "t = 0.34 ± 0.02 μm, 0.75–1.6 μm experimental transmission"
-          source: {zotero_key: "2F3PD62T"}
-        constraints: "壁厚过薄时制造难度和结构均匀性要求显著提高"
+- id: pri.antiresonant_hollow_core_guidance
+  name: 反谐振空心光纤导光原理
+  tier: domain
+  verification_status: observed
+  statement: '反谐振空心光纤利用薄壁玻璃包层元件形成反谐振传输窗口，使导模主要局域于空气核心。 最大透射波长近似满足 λ_k = 4t / (√(n²
+    - 1) · (2k + 1))； 因此减小包层壁厚 t 可把第一反谐振窗口推到可见/近红外，并获得最大的传输带宽。
 
-  - id: pri.free_core_boundary_mode_decoupling
-    name: "自由核心边界降低包层模耦合原理"
-    tier: engineering
-    verification_status: observed
-    statement: >
-      在 free core boundary 结构中，相邻包层管彼此分离，包层模与基模的耦合减弱，
-      因而低泄漏损耗区更平滑、更宽。代价是最低泄漏损耗通常高于更紧凑的双反谐振结构。
-    domain: "空心光纤工程设计"
-    key_insight: "把包层接触点从核心边界移开，可用更平滑带宽交换部分最低损耗。"
-    conditions: "适用于采用 free core boundary 的 DARfbf / 类似 HC-ARF 设计"
-    preconditions:
-      - "相邻 cladding tubes 保持分离而非互相接触"
-      - "核心边界附近不存在显著制造塌陷或节点靠近核心的缺陷"
-    invalidated_when:
-      - "接触点向核心移动，重新增强包层模与基模耦合"
-    source_claim: >
-      "the adoption of a 'free' core boundary ... presents the advantage of reducing
-      the coupling between cladding and fundamental modes"
+    '
+  domain: 空心光纤 / 反谐振导光
+  formula: λ_k = 4t / (√(n² - 1) · (2k + 1))
+  key_insight: 包层壁厚 t 是 HC-ARF 光谱窗口的一级设计旋钮；第一反谐振窗口提供最大带宽。
+  conditions: 适用于以薄壁硅石反谐振元件围成空心核心的 HC-ARF / NANF
+  preconditions:
+  - 核心区保持中空，导模与玻璃模式耦合较弱
+  - 包层壁厚在圆周方向足够均匀，使反谐振窗口不被局部共振严重破坏
+  invalidated_when:
+  - 导光机制转为光子带隙主导而非反谐振主导
+  - 壁厚起伏、节点接触或强模式耦合导致泄漏损耗不再由简单反谐振窗口描述
+  open_questions:
+  - 如何在保持第一反谐振大带宽的同时进一步压低可见波段散射/泄漏损耗？
+  - 这种几何自由度在超稳激光延迟线中能否同时兼顾低背向散射与低热噪声？
+  source_claim: '"the wavelengths λk of maximum optical transmission (''antiresonance
+    wavelengths'') are given by the formula ... The first antiresonance window is
+    the one that allows a larger transmission bandwidth"
 
+    '
+  condition_variables:
+  - symbol: t
+    name: 包层玻璃壁厚
+    analytical_relation: λ_k ∝ t；减小 t 将第一反谐振窗口移向更短波长
+    current_value: 0.3 μm（理论宽带设计）；0.34 ± 0.02 μm（首个一阶反谐振实验样品）
+    best_demonstrated:
+      value: t = 0.34 ± 0.02 μm, 0.75–1.6 μm experimental transmission
+      source:
+        zotero_key: 2F3PD62T
+    constraints: 壁厚过薄时制造难度和结构均匀性要求显著提高
+- id: pri.free_core_boundary_mode_decoupling
+  name: 自由核心边界降低包层模耦合原理
+  tier: engineering
+  verification_status: observed
+  statement: '在 free core boundary 结构中，相邻包层管彼此分离，包层模与基模的耦合减弱， 因而低泄漏损耗区更平滑、更宽。代价是最低泄漏损耗通常高于更紧凑的双反谐振结构。
+
+    '
+  domain: 空心光纤工程设计
+  key_insight: 把包层接触点从核心边界移开，可用更平滑带宽交换部分最低损耗。
+  conditions: 适用于采用 free core boundary 的 DARfbf / 类似 HC-ARF 设计
+  preconditions:
+  - 相邻 cladding tubes 保持分离而非互相接触
+  - 核心边界附近不存在显著制造塌陷或节点靠近核心的缺陷
+  invalidated_when:
+  - 接触点向核心移动，重新增强包层模与基模耦合
+  source_claim: '"the adoption of a ''free'' core boundary ... presents the advantage
+    of reducing the coupling between cladding and fundamental modes"
+
+    '
 methods:
-  - id: meth.hcarf_design_fabrication_b15
-    name: "反谐振空心光纤设计与制备方法（Belardi 2015）"
-    status: demonstrated
-    applies_to: ent.antiresonant_hollow_core_fiber
-    steps_summary: >
-      1) 根据目标波长范围确定壁厚 t：第一反谐振窗口 λ ≈ 4t/√(n²-1)；
-      2) 选择核心直径（典型 20–50 μm）与包层管数目（6–8 管）；
-      3) 可选采用 free core boundary 设计（DARfbf），将相邻包层管分离以降低包层模耦合；
-      4) 通过堆叠-拉制工艺制备预成型棒并拉制成光纤；
-      5) 通过 cutback 法测量透射谱与衰减，验证反谐振窗口位置与带宽。
-    required_hardware:
-      - "光纤拉丝塔"
-      - "光谱分析系统"
-    advantages:
-      - "设计自由度大：通过壁厚 t 可在可见到近红外灵活调谐反谐振窗口"
-      - "制造相对简单：相比光子带隙空心光纤，对结构周期性要求较低"
-      - "传输带宽宽：第一反谐振窗口可达 ~1 μm 以上"
-    disadvantages:
-      - "最低衰减通常高于优化后的光子带隙光纤（尤其近红外）"
-      - "free core boundary 设计可能牺牲部分最低损耗以换取更平滑带宽"
-      - "壁厚均匀性对反谐振窗口形状影响显著"
-    conditions:
-      - "适用于石英基空心光纤；目标波长在可见至近红外（0.4–2.5 μm）"
-      - "制造工艺需保证壁厚均匀性（偏差 < ±0.02 μm）"
-    source_claim: >
-      "the design and fabrication of HC‑ARF rely on the antiresonance guidance principle...
-      The fiber presented in this paper was fabricated by the stack‑and‑draw technique."
-    note: >
-      本文方法提供 HC‑ARF 设计的系统性流程，特别强调壁厚作为一级设计参数的作用。
+- id: meth.hcarf_design_fabrication_b15
+  name: 反谐振空心光纤设计与制备方法（Belardi 2015）
+  status: demonstrated
+  applies_to: ent.antiresonant_hollow_core_fiber
+  steps_summary: '1) 根据目标波长范围确定壁厚 t：第一反谐振窗口 λ ≈ 4t/√(n²-1)； 2) 选择核心直径（典型 20–50 μm）与包层管数目（6–8
+    管）； 3) 可选采用 free core boundary 设计（DARfbf），将相邻包层管分离以降低包层模耦合； 4) 通过堆叠-拉制工艺制备预成型棒并拉制成光纤；
+    5) 通过 cutback 法测量透射谱与衰减，验证反谐振窗口位置与带宽。
 
+    '
+  required_hardware:
+  - 光纤拉丝塔
+  - 光谱分析系统
+  advantages:
+  - 设计自由度大：通过壁厚 t 可在可见到近红外灵活调谐反谐振窗口
+  - 制造相对简单：相比光子带隙空心光纤，对结构周期性要求较低
+  - 传输带宽宽：第一反谐振窗口可达 ~1 μm 以上
+  disadvantages:
+  - 最低衰减通常高于优化后的光子带隙光纤（尤其近红外）
+  - free core boundary 设计可能牺牲部分最低损耗以换取更平滑带宽
+  - 壁厚均匀性对反谐振窗口形状影响显著
+  conditions:
+  - 适用于石英基空心光纤；目标波长在可见至近红外（0.4–2.5 μm）
+  - 制造工艺需保证壁厚均匀性（偏差 < ±0.02 μm）
+  source_claim: '"the design and fabrication of HC‑ARF rely on the antiresonance guidance
+    principle... The fiber presented in this paper was fabricated by the stack‑and‑draw
+    technique."
+
+    '
+  note: '本文方法提供 HC‑ARF 设计的系统性流程，特别强调壁厚作为一级设计参数的作用。
+
+    '
 metrics:
-  - id: met.transmission_bandwidth_hcarf_b15
-    name: "传输带宽（Belardi 2015，HC-ARF）"
-    unit: "μm"
-    description: >
-      反谐振空心光纤在第一反谐振窗口中的实验透射带宽。
-      论文同时给出更宽的理论设计空间：薄壁 HC-ARF 家族可在 0.65–2.5 μm
-      范围内实现导光，而 free core boundary 的 DARfbf 设计可在约 0.8–1.85 μm
-      内保持 <1 dB/km 泄漏损耗。
-    demonstrated_value:
-      value: "0.75–1.6 μm"
-      conditions: "2 m fabricated HC-ARF, 23 μm core, t = 0.34 ± 0.02 μm, first antiresonance window"
-      verification_status: observed
-      confidence: established
-      source:
-        zotero_key: "2F3PD62T"
-        claim: "The transmission spectrum is spanning from 750 to 1600 nm"
-    historical_landmarks:
-      first_demonstration:
-        value: "0.75–1.6 μm"
-        year: 2015
-        source: {zotero_key: "2F3PD62T"}
-        note: "首次实验展示工作于第一反谐振窗口的 HC-ARF 大带宽透射"
+- id: met.transmission_bandwidth_hcarf_b15
+  name: 传输带宽（Belardi 2015，HC-ARF）
+  unit: μm
+  description: '反谐振空心光纤在第一反谐振窗口中的实验透射带宽。 论文同时给出更宽的理论设计空间：薄壁 HC-ARF 家族可在 0.65–2.5 μm
+    范围内实现导光，而 free core boundary 的 DARfbf 设计可在约 0.8–1.85 μm 内保持 <1 dB/km 泄漏损耗。
 
-  - id: met.visible_attenuation_hcarf_b15
-    name: "可见光最小衰减（Belardi 2015，HC-ARF）"
-    unit: "dB/km"
-    description: "反谐振空心光纤在可见光波段的最小测量衰减"
-    demonstrated_value:
-      value: "175 dB/km @ 480 nm"
-      conditions: "cutback measurement, 51 μm core, t1 ≈ 1.27 ± 0.06 μm, visible higher-order antiresonance window"
-      verification_status: observed
-      confidence: established
+    '
+  demonstrated_value:
+    value: 0.75–1.6 μm
+    conditions: 2 m fabricated HC-ARF, 23 μm core, t = 0.34 ± 0.02 μm, first antiresonance
+      window
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: 2F3PD62T
+      claim: The transmission spectrum is spanning from 750 to 1600 nm
+  historical_landmarks:
+    first_demonstration:
+      value: 0.75–1.6 μm
+      year: 2015
       source:
-        zotero_key: "2F3PD62T"
-        claim: "showing a minimum attenuation of 175 dB/km at λ = 480 nm"
-    historical_landmarks:
-      first_demonstration:
-        value: "175 dB/km @ 480 nm"
-        year: 2015
-        source: {zotero_key: "2F3PD62T"}
-        note: "首次系统表征 HC-ARF 在可见波段的低损耗传输"
-
+        zotero_key: 2F3PD62T
+      note: 首次实验展示工作于第一反谐振窗口的 HC-ARF 大带宽透射
+- id: met.visible_attenuation_hcarf_b15
+  name: 可见光最小衰减（Belardi 2015，HC-ARF）
+  unit: dB/km
+  description: 反谐振空心光纤在可见光波段的最小测量衰减
+  demonstrated_value:
+    value: 175 dB/km @ 480 nm
+    conditions: cutback measurement, 51 μm core, t1 ≈ 1.27 ± 0.06 μm, visible higher-order
+      antiresonance window
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: 2F3PD62T
+      claim: showing a minimum attenuation of 175 dB/km at λ = 480 nm
+  historical_landmarks:
+    first_demonstration:
+      value: 175 dB/km @ 480 nm
+      year: 2015
+      source:
+        zotero_key: 2F3PD62T
+      note: 首次系统表征 HC-ARF 在可见波段的低损耗传输
 relations:
-  - id: rel.Be01
-    subject: ent.antiresonant_hollow_core_fiber
-    predicate: PART-OF
-    object: ent.fiber_interferometer
-    confidence: likely
-    source:
-      zotero_key: "2F3PD62T"
-      claim: "Hollow core antiresonant fibers offer new possibilities in the near infrared and visible spectral range"
-    note: >
-      按本库架构作为 ent.fiber_interferometer 分支下的 Level 2 光纤实现节点复用；
-      跨文件引用，ent.fiber_interferometer 定义于 jiang2010.yaml。
+- id: rel.belardi_2015_e01
+  subject: ent.antiresonant_hollow_core_fiber
+  predicate: PART-OF
+  object: ent.fiber_interferometer
+  confidence: likely
+  source:
+    zotero_key: 2F3PD62T
+    claim: Hollow core antiresonant fibers offer new possibilities in the near infrared
+      and visible spectral range
+  note: '按本库架构作为 ent.fiber_interferometer 分支下的 Level 2 光纤实现节点复用； 跨文件引用，ent.fiber_interferometer
+    定义于 jiang2010.yaml。
 
-  - id: rel.Be02
-    subject: ent.antiresonant_hollow_core_fiber
-    predicate: ENABLED-BY
-    object: pri.antiresonant_hollow_core_guidance
-    confidence: established
-    source:
-      zotero_key: "2F3PD62T"
-      claim: "the wavelengths λk of maximum optical transmission ('antiresonance wavelengths') are given by the formula"
-    temporal_role: validates
-
-  - id: rel.Be03
-    subject: pri.free_core_boundary_mode_decoupling
-    predicate: DERIVED-FROM
-    object: pri.antiresonant_hollow_core_guidance
-    confidence: established
-    source:
-      zotero_key: "2F3PD62T"
-      claim: "the adoption of a 'free' core boundary ... reducing the coupling between cladding and fundamental modes"
-    temporal_role: extends
-
-  - id: rel.Be04
-    subject: ent.antiresonant_hollow_core_fiber
-    predicate: ENABLED-BY
-    object: pri.free_core_boundary_mode_decoupling
-    confidence: established
-    source:
-      zotero_key: "2F3PD62T"
-      claim: "the use of the DARfbf design ... shows the advantage of having a leakage loss of less than 1 dB/km over a larger bandwidth"
-    conditions: "当采用 free core boundary / DARfbf 设计时"
-    temporal_role: validates
-
-  - id: rel.Be05
-    subject: ent.antiresonant_hollow_core_fiber
-    predicate: CHARACTERIZED-BY
-    object: met.transmission_bandwidth_hcarf_b15
-    confidence: established
-    source:
-      zotero_key: "2F3PD62T"
-      claim: "The transmission spectrum is spanning from 750 to 1600 nm"
-    conditions: "first-window fabricated HC-ARF"
-
-  - id: rel.Be06
-    subject: ent.antiresonant_hollow_core_fiber
-    predicate: CHARACTERIZED-BY
-    object: met.visible_attenuation_hcarf_b15
-    confidence: established
-    source:
-      zotero_key: "2F3PD62T"
-      claim: "showing a minimum attenuation of 175 dB/km at λ = 480 nm"
-    conditions: "visible-range cutback measurement"
+    '
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/belardi2015.yaml
+- id: rel.belardi_2015_e02
+  subject: ent.antiresonant_hollow_core_fiber
+  predicate: ENABLED-BY
+  object: pri.antiresonant_hollow_core_guidance
+  confidence: established
+  source:
+    zotero_key: 2F3PD62T
+    claim: the wavelengths λk of maximum optical transmission ('antiresonance wavelengths')
+      are given by the formula
+  temporal_role: validates
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/belardi2015.yaml
+- id: rel.belardi_2015_e03
+  subject: pri.free_core_boundary_mode_decoupling
+  predicate: DERIVED-FROM
+  object: pri.antiresonant_hollow_core_guidance
+  confidence: established
+  source:
+    zotero_key: 2F3PD62T
+    claim: the adoption of a 'free' core boundary ... reducing the coupling between
+      cladding and fundamental modes
+  temporal_role: extends
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/belardi2015.yaml
+- id: rel.belardi_2015_e04
+  subject: ent.antiresonant_hollow_core_fiber
+  predicate: ENABLED-BY
+  object: pri.free_core_boundary_mode_decoupling
+  confidence: established
+  source:
+    zotero_key: 2F3PD62T
+    claim: the use of the DARfbf design ... shows the advantage of having a leakage
+      loss of less than 1 dB/km over a larger bandwidth
+  conditions: 当采用 free core boundary / DARfbf 设计时
+  temporal_role: validates
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/belardi2015.yaml
+- id: rel.belardi_2015_e05
+  subject: ent.antiresonant_hollow_core_fiber
+  predicate: CHARACTERIZED-BY
+  object: met.transmission_bandwidth_hcarf_b15
+  confidence: established
+  source:
+    zotero_key: 2F3PD62T
+    claim: The transmission spectrum is spanning from 750 to 1600 nm
+  conditions: first-window fabricated HC-ARF
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/belardi2015.yaml
+- id: rel.belardi_2015_e06
+  subject: ent.antiresonant_hollow_core_fiber
+  predicate: CHARACTERIZED-BY
+  object: met.visible_attenuation_hcarf_b15
+  confidence: established
+  source:
+    zotero_key: 2F3PD62T
+    claim: showing a minimum attenuation of 175 dB/km at λ = 480 nm
+  conditions: visible-range cutback measurement
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/belardi2015.yaml

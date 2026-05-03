@@ -81,21 +81,21 @@ metrics:
       source: {zotero_key: "52N4T2DE", claim: "microcomb-mediated comparison of two ultrastable optical-reference cavities"}
 
 relations:
-  - id: rel.LM18_01
+  - id: rel.lamb_2018_M18_01
     subject: ent.kerr_microcomb_photonic_chip_sc_l18
     predicate: CHARACTERIZED-BY
     object: met.microcomb_sc_spectral_span
     confidence: established
     source: {zotero_key: "52N4T2DE", claim: "The 15 GHz Kerr microcomb with SiN photonic-chip supercontinuum spans 700–2100 nm (one octave)."}
 
-  - id: rel.LM18_02
+  - id: rel.lamb_2018_M18_02
     subject: meth.microcomb_self_referencing
     predicate: ENABLED-BY
     object: pri.integrated_photonic_supercontinuum_for_microcomb_f2f
     confidence: established
     source: {zotero_key: "52N4T2DE", claim: "Integrated SiN waveguide supercontinuum generation enables f-2f self-referencing of the low-pulse-energy microcomb."}
 
-  - id: rel.LM18_03
+  - id: rel.lamb_2018_M18_03
     subject: meth.microcomb_self_referencing
     predicate: ENABLED-BY
     object: pri.self_referencing_f2f
@@ -103,14 +103,14 @@ relations:
     source: {zotero_key: "52N4T2DE", claim: "Microcomb self-referencing relies on the f-2f technique to detect and stabilize the carrier-envelope offset frequency."}
     note: "pri.self_referencing_f2f 定义于 giunta2019.yaml"
 
-  - id: rel.LM18_04
+  - id: rel.lamb_2018_M18_04
     subject: ent.kerr_microcomb_photonic_chip_sc_l18
     predicate: PART-OF
     object: ent.microresonator_frequency_comb
     confidence: established
     source: {zotero_key: "52N4T2DE", claim: "The 15 GHz SiO₂ microdisk comb with photonic-chip supercontinuum is an instance of the microresonator frequency comb platform."}
 
-  - id: rel.LM18_05
+  - id: rel.lamb_2018_M18_05
     subject: ent.kerr_microcomb_photonic_chip_sc_l18
     predicate: CONDITIONED-BY
     object: ent.fp_cavity_system

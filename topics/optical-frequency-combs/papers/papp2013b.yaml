@@ -125,7 +125,7 @@ principles:
     breakthrough_paths: []  # 已在上层 pri 补充
 
 relations:
-  - id: rel.Pap13b_01
+  - id: rel.papp_2013_ap13b_01
     predicate: BOUNDED-BY
     subject: ent.co2_machined_microrod_comb_p13b
     object: pri.mechanical_microrod_frep_control_p13b
@@ -149,7 +149,7 @@ relations:
       - step: 4
         entity: ent.co2_machined_microrod_comb_p13b
         context: "应用该组合实现首个 CO₂ 激光加工微棒梳 + 机械控制（世界首次，2013），达到支持光学频率标准的稳定度门槛"
-  - id: rel.Pap13b_02
+  - id: rel.papp_2013_ap13b_02
     predicate: ENABLED-BY
     subject: ent.co2_machined_microrod_comb_p13b
     object: pri.co2_laser_rapid_microrod_fabrication_p13b

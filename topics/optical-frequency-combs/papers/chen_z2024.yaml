@@ -75,7 +75,7 @@ principles:
       "We used the phase time of the pulse envelope instead of the carrier phase for time synchronization to remove the limit of the carrier envelope offset (CEO) frequency, since the stable carrier phase is vulnerable to fluctuations in independent sources and fiber transmission."
 
 relations:
-  - id: rel.Che24_01
+  - id: rel.chen_2024_he24_01
     subject: ent.pku_dual_comb_microwave_sync_c24
     predicate: PART-OF
     object: ent.dual_comb_spectrometer
@@ -83,14 +83,14 @@ relations:
     source: {zotero_key: "QIFVVUIH", claim: "dual-comb-enhanced OTWTT"}
     note: "跨文件引用 ent.dual_comb_spectrometer（定义于 coddington2016.yaml）——架构同源但应用不同"
 
-  - id: rel.Che24_02
+  - id: rel.chen_2024_he24_02
     subject: ent.pku_dual_comb_microwave_sync_c24
     predicate: CHARACTERIZED-BY
     object: pri.envelope_phase_time_ceo_free_sync_c24
     confidence: established
     source: {zotero_key: "QIFVVUIH", claim: "phase time of the pulse envelope instead of the carrier phase"}
 
-  - id: rel.Che24_03
+  - id: rel.chen_2024_he24_03
     subject: pri.envelope_phase_time_ceo_free_sync_c24
     predicate: ENABLED-BY
     object: pri.dual_comb_multiheterodyne_detection

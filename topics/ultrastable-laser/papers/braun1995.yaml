@@ -1,54 +1,50 @@
-# Braun 1995 — 增强空间烧孔的连续锁模固态激光（实验）
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-16
-# Schema版本：v4.1
-
 meta:
-  zotero_key: "LY9I8I9I"
+  zotero_key: LY9I8I9I
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: "Continuous-wave mode-locked solid-state lasers with enhanced spatial hole burning, Part I: Experiments"
+  title: 'Continuous-wave mode-locked solid-state lasers with enhanced spatial hole
+    burning, Part I: Experiments'
   year: 1995
   first_author: Braun
-  journal: "Applied Physics B"
+  journal: Applied Physics B
   volume: 61
-  pages: "429-437"
-  doi: "10.1007/BF01081271"
-  note: >
-    系统研究增强空间烧孔对连续锁模固态激光的影响。
-    增益在端部（GE）比增益在中间（GM）产生约 3 倍更短脉冲。
-    核心贡献：空间烧孔增强增益带宽平坦化的实验验证。
+  pages: 429-437
+  doi: 10.1007/BF01081271
+  note: '系统研究增强空间烧孔对连续锁模固态激光的影响。 增益在端部（GE）比增益在中间（GM）产生约 3 倍更短脉冲。 核心贡献：空间烧孔增强增益带宽平坦化的实验验证。
     与超稳激光主题关系较远，属激光物理基础。
 
+    '
 entities: []
 principles:
-  - id: pri.enhanced_shb_pulse_shortening_b95
-    name: "增强空间烧孔锁模脉冲缩短效应"
-    tier: foundational
-    verification_status: observed
-    statement: >
-      在连续锁模固态激光器中，增强空间烧孔（SHB）通过改变增益介质中的增益分布，
-      可以显著缩短输出脉冲宽度。增益在端部（GE）配置相比增益在中间（GM）配置
-      可产生约3倍更短的脉冲。
-    domain: "锁模激光物理"
-    key_insight: "空间烧孔增强增益带宽平坦化，从而缩短锁模脉冲宽度"
-    conditions: "连续锁模固态激光器，需要特定的增益介质空间配置"
-    source_claim: "gain-at-end (GE) configuration yields approximately three times shorter pulses than gain-in-middle (GM)"
+- id: pri.enhanced_shb_pulse_shortening_b95
+  name: 增强空间烧孔锁模脉冲缩短效应
+  tier: foundational
+  verification_status: observed
+  statement: '在连续锁模固态激光器中，增强空间烧孔（SHB）通过改变增益介质中的增益分布， 可以显著缩短输出脉冲宽度。增益在端部（GE）配置相比增益在中间（GM）配置
+    可产生约3倍更短的脉冲。
 
+    '
+  domain: 锁模激光物理
+  key_insight: 空间烧孔增强增益带宽平坦化，从而缩短锁模脉冲宽度
+  conditions: 连续锁模固态激光器，需要特定的增益介质空间配置
+  source_claim: gain-at-end (GE) configuration yields approximately three times shorter
+    pulses than gain-in-middle (GM)
 methods:
-  - id: meth.enhanced_shb_cw_mode_locking_b95
-    name: "增强空间烧孔连续锁模激光方法"
-    aliases: ["GE配置锁模方法", "空间烧孔增强锁模"]
-    purpose: "利用增强空间烧孔效应实现更短脉冲宽度的连续锁模固态激光"
-    implementation:
-      - "采用增益在端部（GE）的激光谐振腔配置"
-      - "增强空间烧孔以平坦化增益带宽"
-      - "优化增益介质位置以最大化空间烧孔效应"
-    key_parameters:
-      gain_configuration: "gain-at-end (GE) vs gain-in-middle (GM)"
-      pulse_shortening_factor: "~3x"
-    applicable_when: "需要从连续锁模固态激光器获得更短脉冲宽度"
-    note: "实验验证增强空间烧孔对锁模激光性能的影响"
+- id: meth.enhanced_shb_cw_mode_locking_b95
+  name: 增强空间烧孔连续锁模激光方法
+  aliases:
+  - GE配置锁模方法
+  - 空间烧孔增强锁模
+  purpose: 利用增强空间烧孔效应实现更短脉冲宽度的连续锁模固态激光
+  implementation:
+  - 采用增益在端部（GE）的激光谐振腔配置
+  - 增强空间烧孔以平坦化增益带宽
+  - 优化增益介质位置以最大化空间烧孔效应
+  key_parameters:
+    gain_configuration: gain-at-end (GE) vs gain-in-middle (GM)
+    pulse_shortening_factor: ~3x
+  applicable_when: 需要从连续锁模固态激光器获得更短脉冲宽度
+  note: 实验验证增强空间烧孔对锁模激光性能的影响
 metrics: []
 relations: []

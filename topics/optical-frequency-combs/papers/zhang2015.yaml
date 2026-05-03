@@ -110,7 +110,7 @@ metrics:
       source: {zotero_key: "R4M8SE4F", claim: "Stabilized carrier envelope offset frequency exhibits a deviation of 0.6 mHz in an integration time of 1 s"}
 
 relations:
-  - id: rel.Z15_01
+  - id: rel.zhang_2015_15_01
     subject: ent.er_fiber_intracavity_eom_comb_z15
     predicate: PART-OF
     object: ent.er_fiber_frequency_comb
@@ -118,35 +118,35 @@ relations:
     source: {zotero_key: "R4M8SE4F", claim: "erbium-fiber-laser-based optical frequency comb with an intra-cavity electro-optic modulator"}
     note: "跨文件引用 ent.er_fiber_frequency_comb（droste2016.yaml）"
 
-  - id: rel.Z15_02
+  - id: rel.zhang_2015_15_02
     subject: ent.er_fiber_intracavity_eom_comb_z15
     predicate: CHARACTERIZED-BY
     object: met.frep_servo_bandwidth_z15
     confidence: established
     source: {zotero_key: "R4M8SE4F", claim: "fast servo of the repetition rate (~230 kHz)"}
 
-  - id: rel.Z15_03
+  - id: rel.zhang_2015_15_03
     subject: ent.er_fiber_intracavity_eom_comb_z15
     predicate: CHARACTERIZED-BY
     object: met.fceo_1s_deviation_z15
     confidence: established
     source: {zotero_key: "R4M8SE4F", claim: "deviation of 0.6 mHz in an integration time of 1 s"}
 
-  - id: rel.Z15_04
+  - id: rel.zhang_2015_15_04
     subject: meth.eom_pzt_dual_actuator_frep_lock_z15
     predicate: OPERATIONALIZED-AS
     object: ent.er_fiber_intracavity_eom_comb_z15
     confidence: established
     source: {zotero_key: "R4M8SE4F", claim: "an intra-cavity EOM and a long-range PZT are used as the feedback terminals simultaneously"}
 
-  - id: rel.Z15_05
+  - id: rel.zhang_2015_15_05
     subject: meth.eom_pzt_dual_actuator_frep_lock_z15
     predicate: ENABLED-BY
     object: pri.intracavity_eom_frep_wideband_feedback
     confidence: established
     source: {zotero_key: "R4M8SE4F", claim: "high-bandwidth servo in a frequency range of 3 kHz"}
 
-  - id: rel.Z15_06
+  - id: rel.zhang_2015_15_06
     subject: met.frep_servo_bandwidth_z15
     predicate: BOUNDED-BY
     object: pri.gain_lifetime_servo_bandwidth_limit

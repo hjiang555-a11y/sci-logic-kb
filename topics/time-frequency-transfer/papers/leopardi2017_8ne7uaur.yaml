@@ -37,7 +37,7 @@ meta:
     可直接服务于光纤/自由空间链路远端的光钟比对、光↔微波桥接读出。
 
 relations:
-  - id: rel.Leo17_01
+  - id: rel.leopardi_2017_eo17_01
     subject: ent.coherent_optical_fiber_link
     predicate: CONDITIONED-BY
     object: ent.single_branch_erfiber_comb_l17

@@ -1,92 +1,97 @@
-# Huang 2023 — 全光纤超稳激光长期稳定度 1.1×10⁻¹⁴
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-16
-# Schema版本：v4.1
-
 meta:
-  zotero_key: "JYGVFJBN"
+  zotero_key: JYGVFJBN
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
-  title: "All-fiber-based ultrastable laser with long-term frequency stability of 1.1×10⁻¹⁴"
+  title: All-fiber-based ultrastable laser with long-term frequency stability of 1.1×10⁻¹⁴
   year: 2023
   first_author: Huang
-  journal: "Chinese Optics Letters"
+  journal: Chinese Optics Letters
   volume: 21
-  pages: "011403"
-  doi: "10.3788/COL202321.011403"
-  note: >
-    1550 nm 全光纤超稳激光，锁定到光纤延迟线（FDL），
-    五层热屏蔽 + 两级主动温控 + 光功率/RF 功率稳定，
-    3.2×10⁻¹⁵ @ 1s，1.1×10⁻¹⁴ @ 1000s（全光纤最佳长期稳定度）。
-    核心贡献：全光纤方案长期稳定度的最佳记录。
+  pages: '011403'
+  doi: 10.3788/COL202321.011403
+  note: '1550 nm 全光纤超稳激光，锁定到光纤延迟线（FDL）， 五层热屏蔽 + 两级主动温控 + 光功率/RF 功率稳定， 3.2×10⁻¹⁵ @
+    1s，1.1×10⁻¹⁴ @ 1000s（全光纤最佳长期稳定度）。 核心贡献：全光纤方案长期稳定度的最佳记录。
 
+    '
 entities: []
-  # 复用 ent.fiber_interferometer（定义于 jiang2010.yaml）
-
 principles: []
-  # 复用 pri.fiber_delay_line_frequency_ref
-
 methods:
-  - id: meth.multilayer_thermal_shielding_fdl_h23
-    name: "五层热屏蔽+两级温控的全光纤延迟线稳定方法"
-    description: >
-      全光纤延迟线锁频系统的多层热屏蔽与主动温控方案。
-      包含真空腔内的五层热屏蔽结构、两级主动温度控制（腔体+光学平台）、
-      光功率稳定和RF功率稳定，以抑制长期热漂移。
-    applicable_context: "全光纤延迟线（FDL）锁频系统，追求长期稳定度"
-    key_steps:
-      - "构建五层热屏蔽真空腔，减小环境温度波动影响"
-      - "实施两级主动温控：第一级控制腔体温度，第二级控制光学平台"
-      - "稳定输入光功率和PDH误差信号RF功率"
-    note: "Huang 2023报道的全光纤系统温度稳定方案，实现1.1×10⁻¹⁴的长期稳定度"
+- id: meth.multilayer_thermal_shielding_fdl_h23
+  name: 五层热屏蔽+两级温控的全光纤延迟线稳定方法
+  description: '全光纤延迟线锁频系统的多层热屏蔽与主动温控方案。 包含真空腔内的五层热屏蔽结构、两级主动温度控制（腔体+光学平台）、 光功率稳定和RF功率稳定，以抑制长期热漂移。
 
+    '
+  applicable_context: 全光纤延迟线（FDL）锁频系统，追求长期稳定度
+  key_steps:
+  - 构建五层热屏蔽真空腔，减小环境温度波动影响
+  - 实施两级主动温控：第一级控制腔体温度，第二级控制光学平台
+  - 稳定输入光功率和PDH误差信号RF功率
+  note: Huang 2023报道的全光纤系统温度稳定方案，实现1.1×10⁻¹⁴的长期稳定度
 metrics:
-  - id: met.fiber_long_term_stability_h23
-    name: "全光纤超稳激光长期稳定度（Huang 2023）"
-    unit: "无量纲"
-    role: primary   # σ_y(τ)；超稳激光专题主线指标（含 τ=1 s 与长期段）
-    demonstrated_value:
-      value: "3.2×10⁻¹⁵ @ 1s; 1.1×10⁻¹⁴ @ 1000s"
-      conditions: "全光纤 FDL，真空腔五层热屏蔽，两级温控"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "JYGVFJBN", claim: "fractional frequency stability of better than 3.2×10⁻¹⁵ at 1 s and 1.1×10⁻¹⁴ at 1000 s"}
-    note: "全光纤方案的最佳长期稳定度记录"
-
+- id: met.fiber_long_term_stability_h23
+  name: 全光纤超稳激光长期稳定度（Huang 2023）
+  unit: 无量纲
+  role: primary
+  demonstrated_value:
+    value: 3.2×10⁻¹⁵ @ 1s; 1.1×10⁻¹⁴ @ 1000s
+    conditions: 全光纤 FDL，真空腔五层热屏蔽，两级温控
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: JYGVFJBN
+      claim: fractional frequency stability of better than 3.2×10⁻¹⁵ at 1 s and 1.1×10⁻¹⁴
+        at 1000 s
+  note: 全光纤方案的最佳长期稳定度记录
 relations:
-  - id: rel.HU01
-    subject: ent.fiber_interferometer
-    predicate: CHARACTERIZED-BY
-    object: met.fiber_long_term_stability_h23
-    confidence: established
-    source: {zotero_key: "JYGVFJBN", claim: "best long-term frequency stability of an all-fiber-based ultrastable laser"}
-    note: "跨文件引用，ent.fiber_interferometer 定义于 jiang2010.yaml"
-  - id: rel.HU02
-    subject: ent.fiber_interferometer
-    predicate: IMPLEMENTS
-    object: pri.fiber_delay_line_frequency_ref
-    confidence: established
-    source: {zotero_key: "JYGVFJBN", claim: "All-fiber-based ultrastable laser locked to fiber delay line"}
-    note: "跨文件引用，pri.fiber_delay_line_frequency_ref 定义于 jiang2010.yaml"
-  - id: rel.HU03
-    subject: meth.fiber_delay_locking
-    predicate: IMPLEMENTS
-    object: pri.fiber_delay_line_frequency_ref
-    confidence: established
-    source: {zotero_key: "JYGVFJBN", claim: "锁定到光纤延迟线"}
-    note: "跨文件引用，meth.fiber_delay_locking 定义于 jiang2010.yaml"
-  - id: rel.HU04
-    subject: met.fiber_long_term_stability_h23
-    predicate: CHARACTERIZES
-    object: pri.fiber_delay_line_frequency_ref
-    confidence: established
-    source: {zotero_key: "JYGVFJBN", claim: "fractional frequency stability of better than 3.2×10⁻¹⁵ at 1 s and 1.1×10⁻¹⁴ at 1000 s"}
-    note: "稳定度指标表征该原理的性能。"
-  - id: rel.HU05
-    subject: ent.fiber_interferometer
-    predicate: IMPLEMENTS
-    object: meth.multilayer_thermal_shielding_fdl_h23
-    confidence: established
-    source: {zotero_key: "JYGVFJBN", claim: "five-layer thermal shielding and two-stage active temperature control"}
-    note: "全光纤延迟线干涉仪通过五层热屏蔽+两级温控方法实现长期稳定度；ent.fiber_interferometer 定义于 jiang2010.yaml"
+- id: rel.huang_2023_U01
+  subject: ent.fiber_interferometer
+  predicate: CHARACTERIZED-BY
+  object: met.fiber_long_term_stability_h23
+  confidence: established
+  source:
+    zotero_key: JYGVFJBN
+    claim: best long-term frequency stability of an all-fiber-based ultrastable laser
+  note: 跨文件引用，ent.fiber_interferometer 定义于 jiang2010.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/huang2023.yaml
+- id: rel.huang_2023_U02
+  subject: ent.fiber_interferometer
+  predicate: IMPLEMENTS
+  object: pri.fiber_delay_line_frequency_ref
+  confidence: established
+  source:
+    zotero_key: JYGVFJBN
+    claim: All-fiber-based ultrastable laser locked to fiber delay line
+  note: 跨文件引用，pri.fiber_delay_line_frequency_ref 定义于 jiang2010.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/huang2023.yaml
+- id: rel.huang_2023_U03
+  subject: meth.fiber_delay_locking
+  predicate: IMPLEMENTS
+  object: pri.fiber_delay_line_frequency_ref
+  confidence: established
+  source:
+    zotero_key: JYGVFJBN
+    claim: 锁定到光纤延迟线
+  note: 跨文件引用，meth.fiber_delay_locking 定义于 jiang2010.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/huang2023.yaml
+- id: rel.huang_2023_U04
+  subject: met.fiber_long_term_stability_h23
+  predicate: CHARACTERIZES
+  object: pri.fiber_delay_line_frequency_ref
+  confidence: established
+  source:
+    zotero_key: JYGVFJBN
+    claim: fractional frequency stability of better than 3.2×10⁻¹⁵ at 1 s and 1.1×10⁻¹⁴
+      at 1000 s
+  note: 稳定度指标表征该原理的性能。
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/huang2023.yaml
+- id: rel.huang_2023_U05
+  subject: ent.fiber_interferometer
+  predicate: IMPLEMENTS
+  object: meth.multilayer_thermal_shielding_fdl_h23
+  confidence: established
+  source:
+    zotero_key: JYGVFJBN
+    claim: five-layer thermal shielding and two-stage active temperature control
+  note: 全光纤延迟线干涉仪通过五层热屏蔽+两级温控方法实现长期稳定度；ent.fiber_interferometer 定义于 jiang2010.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/huang2023.yaml

@@ -133,9 +133,9 @@ metrics:
         claim: "The integrated timing jitter over this bandwidth is 760 as."
 
 relations:
-  - id: rel.Fo01
+  - id: rel.fortier_2011_o01
     subject: ent.ti_sapphire_ofd_photonic_osc_fortier2011
-    predicate: GOVERNED-BY
+    predicate: ENABLED-BY
     object: pri.ofd_optical_stability_transfer
     confidence: established
     source:
@@ -145,7 +145,7 @@ relations:
         preserves the fractional frequency instability, while reducing the phase
         fluctuations by a factor of ~5×10^4"
 
-  - id: rel.Fo02
+  - id: rel.fortier_2011_o02
     subject: ent.ti_sapphire_ofd_photonic_osc_fortier2011
     predicate: CHARACTERIZED-BY
     object: met.ofd_microwave_instability_fortier2011
@@ -154,7 +154,7 @@ relations:
       zotero_key: "YMWK52FQ"
       claim: "absolute instability of ≤8×10^-16 at 1s"
 
-  - id: rel.Fo03
+  - id: rel.fortier_2011_o03
     subject: ent.ti_sapphire_ofd_photonic_osc_fortier2011
     predicate: CHARACTERIZED-BY
     object: met.ofd_phase_noise_1hz_fortier2011
@@ -163,7 +163,7 @@ relations:
       zotero_key: "YMWK52FQ"
       claim: "L(f) = −104 dBc Hz⁻¹ at 1 Hz offset from the carrier"
 
-  - id: rel.Fo04
+  - id: rel.fortier_2011_o04
     subject: ent.ti_sapphire_ofd_photonic_osc_fortier2011
     predicate: CHARACTERIZED-BY
     object: met.ofd_timing_jitter_fortier2011
@@ -172,7 +172,7 @@ relations:
       zotero_key: "YMWK52FQ"
       claim: "The integrated timing jitter over this bandwidth is 760 as."
 
-  - id: rel.Fo05
+  - id: rel.fortier_2011_o05
     subject: ent.ti_sapphire_ofd_photonic_osc_fortier2011
     predicate: USES-METHOD
     object: pri.optical_frequency_division_microwave

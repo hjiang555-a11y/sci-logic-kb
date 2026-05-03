@@ -269,7 +269,7 @@ metrics:
 # ═══════════════════════════════════════════════
 
 relations:
-  - id: rel.C20_01
+  - id: rel.caldwell_2020_20_01
     subject: ent.two_way_comb_timing_link_c20
     predicate: PART-OF
     object: ent.optical_frequency_comb
@@ -277,7 +277,7 @@ relations:
     source: {zotero_key: "EB5IM2K9", claim: "two self-referenced optical frequency comb lasers ... phase-locked to a field-deployable cavity stabilized laser"}
     note: "ent.optical_frequency_comb 权威定义于 udem2002.yaml（跨文件引用）。"
 
-  - id: rel.C20_02
+  - id: rel.caldwell_2020_20_02
     subject: ent.two_way_comb_timing_link_c20
     predicate: CONDITIONED-BY
     object: ent.atmospheric_turbulence_channel
@@ -285,7 +285,7 @@ relations:
     source: {zotero_key: "EB5IM2K9", claim: "variations in the refractive index of air cause fluctuations in the time-of-flight of laser light"}
     note: "ent.atmospheric_turbulence_channel 定义于 han2024.yaml（zotero_key AZ25GQE3）；外围条件接口节点。"
 
-  - id: rel.C20_03
+  - id: rel.caldwell_2020_20_03
     subject: ent.two_way_comb_timing_link_c20
     predicate: CHARACTERIZED-BY
     object: met.timing_jitter_psd_atmospheric_c20
@@ -293,21 +293,21 @@ relations:
     source: {zotero_key: "EB5IM2K9", claim: "we present power spectral densities from the δT_atmosphere time series using Welch's method"}
     temporal_role: validates
 
-  - id: rel.C20_04
+  - id: rel.caldwell_2020_20_04
     subject: met.timing_jitter_psd_atmospheric_c20
     predicate: OPERATIONALIZED-AS
     object: meth.linear_optical_sampling_timing_jitter_c20
     confidence: established
     source: {zotero_key: "EB5IM2K9", claim: "linear optical sampling measures timing jitter power spectral density of atmospheric-perturbed comb link"}
 
-  - id: rel.C20_05
+  - id: rel.caldwell_2020_20_05
     subject: meth.linear_optical_sampling_timing_jitter_c20
     predicate: ENABLED-BY
     object: pri.folded_path_turbulence_correlation_c20
     confidence: established
     source: {zotero_key: "EB5IM2K9", claim: "we can multiply the one-way temporal spectrum by 4 to get the two-way temporal spectrum"}
 
-  - id: rel.C20_06
+  - id: rel.caldwell_2020_20_06
     subject: met.timing_jitter_psd_atmospheric_c20
     predicate: BOUNDED-BY
     object: pri.kolmogorov_turbulence_timing_jitter
@@ -330,7 +330,7 @@ relations:
         status: demonstrated
         source: {zotero_key: "EB5IM2K9", claim: "the gradual rolloff of the Greenwood-Tarazano better fits the data than the more dramatic von Kármán model"}
 
-  - id: rel.C20_07
+  - id: rel.caldwell_2020_20_07
     subject: met.timing_jitter_psd_atmospheric_c20
     predicate: BOUNDED-BY
     object: pri.taylor_frozen_turbulence_hypothesis
@@ -338,21 +338,21 @@ relations:
     source: {zotero_key: "EB5IM2K9", claim: "a breakdown of Taylor's frozen-turbulence hypothesis which might be possible for our measurements due to the low perpendicular wind speeds"}
     note: "低风速下 σ_V⊥/⟨V⊥⟩=1.09 远超 0.33 阈值，是实测 -6.7/3 缓坡与 V⊥→0 时 Cn² 比值发散的主因。"
 
-  - id: rel.C20_08
+  - id: rel.caldwell_2020_20_08
     subject: pri.greenwood_tarazano_outer_scale_rolloff
     predicate: DERIVED-FROM
     object: pri.kolmogorov_turbulence_timing_jitter
     confidence: established
     source: {zotero_key: "EB5IM2K9", claim: "Greenwood et al. to propose a new, empirically-derived spectrum ... exhibits a more gradual rolloff below κ=1/L0 than the von Kármán spectrum"}
 
-  - id: rel.C20_09
+  - id: rel.caldwell_2020_20_09
     subject: met.cn2_cross_validation_c20
     predicate: OPERATIONALIZED-AS
     object: meth.micrometeorological_cn2_retrieval_c20
     confidence: established
     source: {zotero_key: "EB5IM2K9", claim: "we extract and compare the refractive index structure parameter, Cn², from both systems"}
 
-  - id: rel.C20_10
+  - id: rel.caldwell_2020_20_10
     subject: met.cn2_cross_validation_c20
     predicate: BOUNDED-BY
     object: pri.taylor_frozen_turbulence_hypothesis
@@ -364,7 +364,7 @@ relations:
         status: proposed
         source: {zotero_key: "EB5IM2K9", claim: "U was greater than ⟨V⊥⟩ 98% of the time ... would cause the zero-wind-speed asymptotic behavior less frequently"}
 
-  - id: rel.C20_11
+  - id: rel.caldwell_2020_20_11
     subject: ent.two_way_comb_timing_link_c20
     predicate: COMPETES-WITH
     object: ent.bistatic_two_way_optical_link_h24
@@ -374,7 +374,7 @@ relations:
       折返反射器方案（本文）与双站两向方案（han2024）在长路径自由空间 timing 应用上是竞争性几何：
       前者部署简单但 piston 噪声 ×4 放大；后者需双端终端但 piston 互易抵消。
 
-  - id: rel.C20_12
+  - id: rel.caldwell_2020_20_12
     subject: ent.two_way_comb_timing_link_c20
     predicate: CHARACTERIZED-BY
     object: met.outer_scale_length_c20

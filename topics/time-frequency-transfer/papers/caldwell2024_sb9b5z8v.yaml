@@ -28,7 +28,7 @@ meta:
     量子极限 OTT 可达到的时间 + 频率传递性能。
 
 relations:
-  - id: rel.Cal24_01
+  - id: rel.caldwell_2024_al24_01
     subject: ent.free_space_optical_tf_link
     predicate: CHARACTERIZED-BY
     object: met.photon_limited_ott_supported_link_loss
@@ -37,7 +37,7 @@ relations:
       claim: "application of quantum-limited optical time transfer to space-based optical clock comparisons"
     note: "met.photon_limited_ott_supported_link_loss 定义于 caldwell2023；本文将其扩展到 coherent 网络与空间光钟场景"
 
-  - id: rel.Cal24_02
+  - id: rel.caldwell_2024_al24_02
     subject: ent.free_space_optical_tf_link
     predicate: CONDITIONED-BY
     object: ent.optical_frequency_standard

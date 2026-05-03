@@ -44,7 +44,7 @@ entities:
     note: "Level 2 实例，PART-OF ent.rf_over_fiber_time_transfer_link（子带承载 1 PPS 时间信号）"
 
 relations:
-  - id: rel.Che19_01
+  - id: rel.cheng_2019_he19_01
     subject: ent.osc_subband_time_transfer_cheng19
     predicate: PART-OF
     object: ent.rf_over_fiber_time_transfer_link
@@ -53,7 +53,7 @@ relations:
       claim: "optical fiber time transfer scheme through the optical supervisory channel ... in WDM systems"
     note: "ent.rf_over_fiber_time_transfer_link 定义于 krehlik2015"
 
-  - id: rel.Che19_02
+  - id: rel.cheng_2019_he19_02
     subject: ent.osc_subband_time_transfer_cheng19
     predicate: OPERATIONALIZED-AS
     object: pri.telecom_network_metrology_coexistence

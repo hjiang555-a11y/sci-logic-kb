@@ -1,131 +1,144 @@
-# Marchio 2018 — 大面积晶体镀层光学性能表征
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-16
-# Schema版本：v4.1
-
 meta:
-  zotero_key: "LCMWCIWB"
+  zotero_key: LCMWCIWB
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: "Optical performance of large-area crystalline coatings"
+  title: Optical performance of large-area crystalline coatings
   year: 2018
   first_author: Marchio
-  journal: "Optics Express"
+  journal: Optics Express
   volume: 26
   issue: 5
-  pages: "6114-6125"
-  doi: "10.1364/OE.26.006114"
-  note: >
-    首次系统表征 50.8 mm（2 英寸）直径 GaAs/AlGaAs 晶体镀层的光学性能，
-    包括透射（6 ppm）、吸收（≤0.8 ppm）、散射（6–9.5 ppm）和缺陷密度（0.85/mm²）。
-    验证大面积晶体镀层可达到与 IBS 非晶镀层相当的光学品质，
-    为引力波探测器和超稳激光参考腔的应用铺平道路。
+  pages: 6114-6125
+  doi: 10.1364/OE.26.006114
+  note: '首次系统表征 50.8 mm（2 英寸）直径 GaAs/AlGaAs 晶体镀层的光学性能， 包括透射（6 ppm）、吸收（≤0.8 ppm）、散射（6–9.5
+    ppm）和缺陷密度（0.85/mm²）。 验证大面积晶体镀层可达到与 IBS 非晶镀层相当的光学品质， 为引力波探测器和超稳激光参考腔的应用铺平道路。
 
+    '
 entities:
-  - id: ent.large_area_crystalline_coating_m18
-    name: "大面积 GaAs/AlGaAs 晶体镀层（2 英寸）"
-    aliases: ["large-area crystalline coating", "50.8 mm AlGaAs coating"]
-    hierarchy_level: 2
-    status: demonstrated
-    function: >
-      将基底转移法制备的 GaAs/Al₀.₉₂Ga₀.₀₈As 多层晶体镀层扩展到 2 英寸直径，
-      在熔融石英和蓝宝石基底上实现引力波探测器级的光学品质。
-      35.5 周期结构设计在 1064 nm 实现 6 ppm 透射率和极低吸收。
-    key_parameters:
-      diameter: "50.8 mm (2 inch)"
-      coating_structure: "35.5-period GaAs/Al₀.₉₂Ga₀.₀₈As"
-      design_wavelength: "1064 nm"
-      transmission_at_1064nm: "6 ppm (both substrates)"
-      absorption_fused_silica: "≤0.8 ppm"
-      absorption_sapphire: "below noise floor"
-      tis_fused_silica: "9.5 ppm"
-      tis_sapphire: "6 ppm"
-      defect_density: "0.85 defects/mm²"
-      roughness_fused_silica: "0.4 nm rms (1 μm–1 mm)"
-      roughness_sapphire: "0.15 nm rms (1 μm–1 mm)"
-    practical_limitations:
-      - description: "早期原型的缺陷密度仍高于目标，大尺寸缺陷（>100 μm）需改善"
-        source_claim: "total number of large defects (at the 100 μm or greater size scale) is higher than that of the test masses of Virgo"
-        impact: "散射损耗可能限制高功率引力波探测器应用"
-      - description: "蓝宝石基底表面质量不理想导致粘合界面缺陷"
-        source_claim: "sapphire samples had an excessively poor surface figure"
-        impact: "限制蓝宝石基底的良率和光学品质"
-    note: "与 ent.algaas_crystalline_mirror_c13（定义于 cole2013.yaml）相关，本文聚焦大面积制造。"
+- id: ent.large_area_crystalline_coating_m18
+  name: 大面积 GaAs/AlGaAs 晶体镀层（2 英寸）
+  aliases:
+  - large-area crystalline coating
+  - 50.8 mm AlGaAs coating
+  hierarchy_level: 2
+  status: demonstrated
+  function: '将基底转移法制备的 GaAs/Al₀.₉₂Ga₀.₀₈As 多层晶体镀层扩展到 2 英寸直径， 在熔融石英和蓝宝石基底上实现引力波探测器级的光学品质。
+    35.5 周期结构设计在 1064 nm 实现 6 ppm 透射率和极低吸收。
 
+    '
+  key_parameters:
+    diameter: 50.8 mm (2 inch)
+    coating_structure: 35.5-period GaAs/Al₀.₉₂Ga₀.₀₈As
+    design_wavelength: 1064 nm
+    transmission_at_1064nm: 6 ppm (both substrates)
+    absorption_fused_silica: ≤0.8 ppm
+    absorption_sapphire: below noise floor
+    tis_fused_silica: 9.5 ppm
+    tis_sapphire: 6 ppm
+    defect_density: 0.85 defects/mm²
+    roughness_fused_silica: 0.4 nm rms (1 μm–1 mm)
+    roughness_sapphire: 0.15 nm rms (1 μm–1 mm)
+  practical_limitations:
+  - description: 早期原型的缺陷密度仍高于目标，大尺寸缺陷（>100 μm）需改善
+    source_claim: total number of large defects (at the 100 μm or greater size scale)
+      is higher than that of the test masses of Virgo
+    impact: 散射损耗可能限制高功率引力波探测器应用
+  - description: 蓝宝石基底表面质量不理想导致粘合界面缺陷
+    source_claim: sapphire samples had an excessively poor surface figure
+    impact: 限制蓝宝石基底的良率和光学品质
+  note: 与 ent.algaas_crystalline_mirror_c13（定义于 cole2013.yaml）相关，本文聚焦大面积制造。
 principles:
-  - id: pri.comprehensive_optical_characterization_large_area_coatings_m18
-    name: "大面积晶体镀层光学性能综合表征原理"
-    description: >
-      大面积（≥50 mm）晶体镀层的光学性能需通过透射、吸收、散射、缺陷密度等多个独立参数进行综合表征，
-      任何单一参数不足以评估其整体光学品质。镀层在引力波探测器等精密应用中的适用性取决于这些参数的同时达标。
-    domain: optics, coating_characterization
-    core_idea: multi‑parameter characterization ensures coating suitability for high‑precision applications
-    source: {zotero_key: "LCMWCIWB", claim: "We present a full optical characterization of the large‑area crystalline coatings, including transmission, absorption, total integrated scatter (TIS) and defect density"}
-    note: "针对大面积 GaAs/AlGaAs 晶体镀层，首次系统测量了全部四个关键光学参数，验证其与 IBS 非晶镀层相当的性能。"
+- id: pri.comprehensive_optical_characterization_large_area_coatings_m18
+  name: 大面积晶体镀层光学性能综合表征原理
+  description: '大面积（≥50 mm）晶体镀层的光学性能需通过透射、吸收、散射、缺陷密度等多个独立参数进行综合表征， 任何单一参数不足以评估其整体光学品质。镀层在引力波探测器等精密应用中的适用性取决于这些参数的同时达标。
 
+    '
+  domain: optics, coating_characterization
+  core_idea: multi‑parameter characterization ensures coating suitability for high‑precision
+    applications
+  source:
+    zotero_key: LCMWCIWB
+    claim: We present a full optical characterization of the large‑area crystalline
+      coatings, including transmission, absorption, total integrated scatter (TIS)
+      and defect density
+  note: 针对大面积 GaAs/AlGaAs 晶体镀层，首次系统测量了全部四个关键光学参数，验证其与 IBS 非晶镀层相当的性能。
 methods:
-  - id: meth.large_area_coating_optical_characterization_m18
-    name: "大面积晶体镀层光学性能表征方法"
-    description: >
-      采用多种互补测量技术对大面积（50.8 mm）GaAs/AlGaAs 晶体镀层进行全面光学表征：
-      1) 光热偏转法（photothermal deflection）测量吸收率（≤0.8 ppm），
-      2) CASI 散射仪（CASI scatterometer）测量总积分散射（TIS, 6–9.5 ppm），
-      3) 透射测量（6 ppm），
-      4) 缺陷密度统计（0.85 defects/mm²）。该方法首次实现了对大面积晶体镀层全部关键光学参数的实验评估。
-    domain: optics, metrology
-    key_steps:
-      - "样品准备：GaAs/AlGaAs 晶体镀层转移到 2 英寸熔融石英和蓝宝石基底"
-      - "吸收测量：光热偏转法，激光波长 1064 nm，探测极限约 0.8 ppm"
-      - "散射测量：CASI 散射仪，测量 4π 立体角内的积分散射"
-      - "透射测量：标准分光光度计"
-      - "缺陷检测：显微镜图像分析，统计直径 ≥100 μm 的缺陷"
-    source: {zotero_key: "LCMWCIWB", claim: "The characterization consists of four main measurements: transmission, absorption, total integrated scatter (TIS) and defect density"}
-    note: "该方法验证了大面积晶体镀层的光学性能与 IBS 非晶镀层相当，为引力波探测器等应用提供关键数据。"
+- id: meth.large_area_coating_optical_characterization_m18
+  name: 大面积晶体镀层光学性能表征方法
+  description: '采用多种互补测量技术对大面积（50.8 mm）GaAs/AlGaAs 晶体镀层进行全面光学表征： 1) 光热偏转法（photothermal
+    deflection）测量吸收率（≤0.8 ppm）， 2) CASI 散射仪（CASI scatterometer）测量总积分散射（TIS, 6–9.5
+    ppm）， 3) 透射测量（6 ppm）， 4) 缺陷密度统计（0.85 defects/mm²）。该方法首次实现了对大面积晶体镀层全部关键光学参数的实验评估。
 
+    '
+  domain: optics, metrology
+  key_steps:
+  - 样品准备：GaAs/AlGaAs 晶体镀层转移到 2 英寸熔融石英和蓝宝石基底
+  - 吸收测量：光热偏转法，激光波长 1064 nm，探测极限约 0.8 ppm
+  - 散射测量：CASI 散射仪，测量 4π 立体角内的积分散射
+  - 透射测量：标准分光光度计
+  - 缺陷检测：显微镜图像分析，统计直径 ≥100 μm 的缺陷
+  source:
+    zotero_key: LCMWCIWB
+    claim: 'The characterization consists of four main measurements: transmission,
+      absorption, total integrated scatter (TIS) and defect density'
+  note: 该方法验证了大面积晶体镀层的光学性能与 IBS 非晶镀层相当，为引力波探测器等应用提供关键数据。
 metrics:
-  - id: met.crystalline_coating_tis_m18
-    name: "晶体镀层总积分散射（TIS）"
-    unit: "ppm"
-    description: "镀层表面的总积分散射，反映表面质量和缺陷水平"
-    demonstrated_value:
-      value: "6–9.5 ppm"
-      conditions: "2 英寸 GaAs/AlGaAs 镀层，1064 nm，CASI 散射仪，FS 9.5 ppm / 蓝宝石 6 ppm"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "LCMWCIWB", claim: "TIS averages on the maps are 9.5 ppm for the fused silica sample and 6 ppm for the sapphire sample"}
-
-  - id: met.crystalline_coating_absorption_m18
-    name: "晶体镀层光学吸收"
-    unit: "ppm"
-    description: "镀层在 1064 nm 的光学吸收率"
-    demonstrated_value:
-      value: "≤0.8 ppm (fused silica substrate)"
-      conditions: "2 英寸 GaAs/AlGaAs 镀层，1064 nm，光热偏转法"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "LCMWCIWB", claim: "absorption is very low... the signal is ≤0.8 ppm which is comparable to the setup sensitivity"}
-
+- id: met.crystalline_coating_tis_m18
+  name: 晶体镀层总积分散射（TIS）
+  unit: ppm
+  description: 镀层表面的总积分散射，反映表面质量和缺陷水平
+  demonstrated_value:
+    value: 6–9.5 ppm
+    conditions: 2 英寸 GaAs/AlGaAs 镀层，1064 nm，CASI 散射仪，FS 9.5 ppm / 蓝宝石 6 ppm
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: LCMWCIWB
+      claim: TIS averages on the maps are 9.5 ppm for the fused silica sample and
+        6 ppm for the sapphire sample
+- id: met.crystalline_coating_absorption_m18
+  name: 晶体镀层光学吸收
+  unit: ppm
+  description: 镀层在 1064 nm 的光学吸收率
+  demonstrated_value:
+    value: ≤0.8 ppm (fused silica substrate)
+    conditions: 2 英寸 GaAs/AlGaAs 镀层，1064 nm，光热偏转法
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: LCMWCIWB
+      claim: absorption is very low... the signal is ≤0.8 ppm which is comparable
+        to the setup sensitivity
 relations:
-  - id: rel.MA01
-    subject: ent.large_area_crystalline_coating_m18
-    predicate: PART-OF
-    object: ent.mirror_coating
-    confidence: established
-    source: {zotero_key: "LCMWCIWB", claim: "crystalline coatings transferred to 50.8-mm diameter fused silica and sapphire substrates"}
-    note: "跨文件引用，ent.mirror_coating 定义于 numata2004.yaml；本文是大面积晶体镀层工艺验证"
-
-  - id: rel.MA02
-    subject: ent.large_area_crystalline_coating_m18
-    predicate: CHARACTERIZED-BY
-    object: met.crystalline_coating_tis_m18
-    confidence: established
-    source: {zotero_key: "LCMWCIWB", claim: "TIS comparable with currently used amorphous coatings"}
-
-  - id: rel.MA03
-    subject: ent.large_area_crystalline_coating_m18
-    predicate: ENABLED-BY
-    object: pri.crystalline_coating_low_brownian_noise
-    confidence: established
-    source: {zotero_key: "LCMWCIWB", claim: "high mechanical quality factor of these single-crystal interference coatings reduces the limiting thermal noise"}
-    note: "跨文件引用，pri.crystalline_coating_low_brownian_noise 定义于 cole2013.yaml"
+- id: rel.marchio_2018_A01
+  subject: ent.large_area_crystalline_coating_m18
+  predicate: PART-OF
+  object: ent.mirror_coating
+  confidence: established
+  source:
+    zotero_key: LCMWCIWB
+    claim: crystalline coatings transferred to 50.8-mm diameter fused silica and sapphire
+      substrates
+  note: 跨文件引用，ent.mirror_coating 定义于 numata2004.yaml；本文是大面积晶体镀层工艺验证
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/marchio2018.yaml
+- id: rel.marchio_2018_A02
+  subject: ent.large_area_crystalline_coating_m18
+  predicate: CHARACTERIZED-BY
+  object: met.crystalline_coating_tis_m18
+  confidence: established
+  source:
+    zotero_key: LCMWCIWB
+    claim: TIS comparable with currently used amorphous coatings
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/marchio2018.yaml
+- id: rel.marchio_2018_A03
+  subject: ent.large_area_crystalline_coating_m18
+  predicate: ENABLED-BY
+  object: pri.crystalline_coating_low_brownian_noise
+  confidence: established
+  source:
+    zotero_key: LCMWCIWB
+    claim: high mechanical quality factor of these single-crystal interference coatings
+      reduces the limiting thermal noise
+  note: 跨文件引用，pri.crystalline_coating_low_brownian_noise 定义于 cole2013.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/marchio2018.yaml

@@ -334,7 +334,7 @@ metrics:
 # ═══════════════════════════════════════════════
 
 relations:
-  - id: rel.Y19_01
+  - id: rel.ycas_2019_19_01
     subject: ent.midir_dcs_vocs_y19
     predicate: PART-OF
     object: ent.dual_comb_spectrometer
@@ -342,7 +342,7 @@ relations:
     source: {zotero_key: "FQ4KYV38", claim: "includes the MIR dual-comb spectrometer"}
     note: "ent.dual_comb_spectrometer 定义于 coddington2016.yaml（跨文件引用）"
 
-  - id: rel.Y19_02
+  - id: rel.ycas_2019_19_02
     subject: ent.midir_dcs_vocs_y19
     predicate: PART-OF
     object: ent.mid_ir_frequency_comb
@@ -350,7 +350,7 @@ relations:
     source: {zotero_key: "FQ4KYV38", claim: "two MIR frequency combs are generated with a dual-branch difference frequency generation scheme"}
     note: "ent.mid_ir_frequency_comb 跨文件引用（TOPICS.md）"
 
-  - id: rel.Y19_03
+  - id: rel.ycas_2019_19_03
     subject: ent.midir_dcs_vocs_y19
     predicate: ENABLED-BY
     object: meth.dfg_comb_generation
@@ -358,7 +358,7 @@ relations:
     source: {zotero_key: "FQ4KYV38", claim: "each generated using difference-frequency generation in a bulk periodically poled lithium niobate (PPLN) crystal from a polarization-maintaining erbium fiber frequency comb"}
     note: "meth.dfg_comb_generation 跨文件引用"
 
-  - id: rel.Y19_04
+  - id: rel.ycas_2019_19_04
     subject: ent.midir_dcs_vocs_y19
     predicate: CONDITIONED-BY
     object: ent.atmospheric_turbulence_channel
@@ -366,7 +366,7 @@ relations:
     source: {zotero_key: "FQ4KYV38", claim: "turbulence-driven phase front distortions are common mode"}
     note: "ent.atmospheric_turbulence_channel 定义于 han2024.yaml（跨文件引用）"
 
-  - id: rel.Y19_05
+  - id: rel.ycas_2019_19_05
     subject: meth.midir_dcs_vocs_protocol_y19
     predicate: ENABLED-BY
     object: pri.dual_comb_multiheterodyne_detection
@@ -374,28 +374,28 @@ relations:
     source: {zotero_key: "FQ4KYV38", claim: "Thermoelectrically cooled 100 MHz bandwidth HgCdTe detectors record the light (interferograms)"}
     note: "pri.dual_comb_multiheterodyne_detection 定义于 coddington2016.yaml"
 
-  - id: rel.Y19_06
+  - id: rel.ycas_2019_19_06
     subject: meth.midir_dcs_vocs_protocol_y19
     predicate: ENABLED-BY
     object: pri.common_path_comb_combining_turbulence_cancellation
     confidence: established
     source: {zotero_key: "FQ4KYV38", claim: "combine both combs before propagation across the turbulent air path so that turbulence-driven phase front distortions are common mode"}
 
-  - id: rel.Y19_07
+  - id: rel.ycas_2019_19_07
     subject: meth.midir_dcs_vocs_protocol_y19
     predicate: ENABLED-BY
     object: pri.hitran_voigt_declutter_trace_retrieval
     confidence: established
     source: {zotero_key: "FQ4KYV38", claim: "an atmospheric transmission model using Voigt line-shape parameters from the Hitran 2016 database is fitted to and then divided from the ratio spectrum"}
 
-  - id: rel.Y19_08
+  - id: rel.ycas_2019_19_08
     subject: meth.midir_dcs_vocs_protocol_y19
     predicate: ENABLED-BY
     object: pri.simultaneous_narrow_broad_voc_retrieval
     confidence: established
     source: {zotero_key: "FQ4KYV38", claim: "detection not only of small molecules but also of larger, more broadly absorbing VOCs"}
 
-  - id: rel.Y19_09
+  - id: rel.ycas_2019_19_09
     subject: meth.midir_dcs_vocs_protocol_y19
     predicate: ENABLED-BY
     object: pri.molecular_rovibrational_fingerprint
@@ -403,7 +403,7 @@ relations:
     source: {zotero_key: "FQ4KYV38", claim: "probe the fundamental mid-infrared C-H stretch modes of volatile organic compounds"}
     note: "pri.molecular_rovibrational_fingerprint 跨文件引用"
 
-  - id: rel.Y19_10
+  - id: rel.ycas_2019_19_10
     subject: meth.midir_dcs_vocs_protocol_y19
     predicate: COMPETES-WITH
     object: meth.dual_comb_spectroscopy
@@ -413,49 +413,49 @@ relations:
       与 NIR 开阔路径 DCS（meth.dual_comb_spectroscopy 定义于 coddington2016.yaml）形成同层竞争：
       NIR 功率/探测器更成熟但吸收弱；MIR 本文方案灵敏度提升 ~1000× 但硬件链复杂。
 
-  - id: rel.Y19_11
+  - id: rel.ycas_2019_19_11
     subject: ent.midir_dcs_vocs_y19
     predicate: CHARACTERIZED-BY
     object: met.midir_spectral_coverage_y19
     confidence: established
     source: {zotero_key: "FQ4KYV38", claim: "broad comb spectrum spanning from 2750 cm⁻¹ to 3150 cm⁻¹"}
 
-  - id: rel.Y19_12
+  - id: rel.ycas_2019_19_12
     subject: ent.midir_dcs_vocs_y19
     predicate: CHARACTERIZED-BY
     object: met.midir_dcs_resolution_y19
     confidence: established
     source: {zotero_key: "FQ4KYV38", claim: "0.0067 cm⁻¹ (200 MHz) resolution"}
 
-  - id: rel.Y19_13
+  - id: rel.ycas_2019_19_13
     subject: ent.midir_dcs_vocs_y19
     predicate: CHARACTERIZED-BY
     object: met.open_path_length_midir_dcs_y19
     confidence: established
     source: {zotero_key: "FQ4KYV38", claim: "up to 1 km long open-air paths"}
 
-  - id: rel.Y19_14
+  - id: rel.ycas_2019_19_14
     subject: ent.midir_dcs_vocs_y19
     predicate: CHARACTERIZED-BY
     object: met.voc_path_integrated_sensitivity_y19
     confidence: established
     source: {zotero_key: "FQ4KYV38", claim: "1-σ sensitivity of 5.7 ppm·m and 2.4 ppm·m... atmospheric ethane with a 1-σ sensitivity of 0.4 ppb"}
 
-  - id: rel.Y19_15
+  - id: rel.ycas_2019_19_15
     subject: ent.midir_dcs_vocs_y19
     predicate: CHARACTERIZED-BY
     object: met.dcs_figure_of_merit_y19
     confidence: established
     source: {zotero_key: "FQ4KYV38", claim: "The achieved DCS figure of merit is 1.2 × 10^6 √Hz"}
 
-  - id: rel.Y19_16
+  - id: rel.ycas_2019_19_16
     subject: met.voc_path_integrated_sensitivity_y19
     predicate: OPERATIONALIZED-AS
     object: meth.midir_dcs_vocs_protocol_y19
     confidence: established
     source: {zotero_key: "FQ4KYV38", claim: "DCS sensitivity is estimated as the standard deviation of concentration levels"}
 
-  - id: rel.Y19_17
+  - id: rel.ycas_2019_19_17
     subject: met.voc_path_integrated_sensitivity_y19
     predicate: BOUNDED-BY
     object: pri.dfg_power_atmospheric_window_tradeoff
@@ -470,7 +470,7 @@ relations:
         status: proposed
         source: {zotero_key: "FQ4KYV38", claim: "With even broader spectral coverage, similar performance should be achievable for other important hazardous pollutants such as BTEX"}
 
-  - id: rel.Y19_18
+  - id: rel.ycas_2019_19_18
     subject: met.voc_path_integrated_sensitivity_y19
     predicate: BOUNDED-BY
     object: pri.photon_starved_open_path_dcs_limit
@@ -485,7 +485,7 @@ relations:
         status: proposed
         source: {zotero_key: "FQ4KYV38", claim: "Future work should consider more sophisticated telescope designs for more uniform detector illumination"}
 
-  - id: rel.Y19_19
+  - id: rel.ycas_2019_19_19
     subject: met.voc_path_integrated_sensitivity_y19
     predicate: BOUNDED-BY
     object: pri.hitran_voigt_declutter_trace_retrieval
@@ -502,7 +502,7 @@ relations:
         status: proposed
         source: {zotero_key: "FQ4KYV38", claim: "deviations from the Voigt line shape that are relevant for the saturated lines observed"}
 
-  - id: rel.Y19_20
+  - id: rel.ycas_2019_19_20
     subject: ent.midir_dcs_vocs_y19
     predicate: BOUNDED-BY
     object: pri.fundamental_ch_stretch_enhancement_mir

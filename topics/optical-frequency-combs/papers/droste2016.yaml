@@ -83,7 +83,7 @@ principles:
       "the entire comb mode structure follows the comb equation f_n = n·f_rep + f_ceo"
 
 relations:
-  - id: rel.DR16_01
+  - id: rel.droste_2016_R16_01
     subject: ent.er_fiber_frequency_comb
     predicate: PART-OF
     object: ent.optical_frequency_comb
@@ -92,7 +92,7 @@ relations:
       claim: "Er:fiber frequency combs are the most commonly deployed optical frequency comb platform due to telecom-compatible wavelength, commercial fiber components, and field robustness."
       zotero_key: "5NSQLZTS"
 
-  - id: rel.DR16_02
+  - id: rel.droste_2016_R16_02
     subject: ent.er_fiber_frequency_comb
     predicate: CONDITIONED-BY
     object: pri.er_fiber_comb_design_space
@@ -101,7 +101,7 @@ relations:
       claim: "Er:fiber comb performance is conditioned by four orthogonal design modules: mode-locked oscillator, amplifier, supercontinuum broadening, and servo actuators."
       zotero_key: "5NSQLZTS"
 
-  - id: rel.DR16_03
+  - id: rel.droste_2016_R16_03
     subject: ent.optical_frequency_comb
     predicate: ENABLED-BY
     object: pri.comb_equation
@@ -110,7 +110,7 @@ relations:
       claim: "The entire comb mode structure follows the comb equation f_n = n·f_rep + f_ceo, enabling absolute optical frequency measurement by stabilizing just two radio frequencies."
       zotero_key: "5NSQLZTS"
 
-  - id: rel.DR16_04
+  - id: rel.droste_2016_R16_04
     subject: ent.er_fiber_frequency_comb
     predicate: COMPETES-WITH
     object: ent.microresonator_frequency_comb
@@ -120,7 +120,7 @@ relations:
       zotero_key: "5NSQLZTS"
     conditions: "主力光频梳路线竞争：Er:fiber 光纤梳（成熟、商用、1550 nm）vs 微腔梳（紧凑、光泵、高重频）"
 
-  - id: rel.DR16_05
+  - id: rel.droste_2016_R16_05
     subject: ent.er_fiber_frequency_comb
     predicate: COMPETES-WITH
     object: ent.electro_optic_frequency_comb

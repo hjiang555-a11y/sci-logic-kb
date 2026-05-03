@@ -1,93 +1,99 @@
-# Didier 2019 — 946 nm Nd:YAG 数字锁定超稳激光
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-16
-# Schema版本：v4.1
-
 meta:
-  zotero_key: "MIAVJSIK"
+  zotero_key: MIAVJSIK
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: "946-nm Nd:YAG digital-locked laser at 1.1×10⁻¹⁶ in 1 s and transfer-locked to a cryogenic silicon cavity"
+  title: 946-nm Nd:YAG digital-locked laser at 1.1×10⁻¹⁶ in 1 s and transfer-locked
+    to a cryogenic silicon cavity
   year: 2019
   first_author: Didier
-  journal: "Optics Letters"
+  journal: Optics Letters
   volume: 44
   issue: 7
-  pages: "1781-1784"
-  doi: "10.1364/OL.44.001781"
-  note: >
-    946 nm Nd:YAG 超稳激光，预稳定至 30 cm ULE 腔达 1.1×10⁻¹⁶ @ 1s，
-    通过光频梳传递锁定至低温硅腔（4×10⁻¹⁷）获得更低不稳定度。
-    全数字 FPGA 伺服取代模拟电子学。用于 In⁺ 多离子钟。
-    核心贡献：数字 PDH 锁频 + 跨腔传递锁定方案。
+  pages: 1781-1784
+  doi: 10.1364/OL.44.001781
+  note: '946 nm Nd:YAG 超稳激光，预稳定至 30 cm ULE 腔达 1.1×10⁻¹⁶ @ 1s， 通过光频梳传递锁定至低温硅腔（4×10⁻¹⁷）获得更低不稳定度。
+    全数字 FPGA 伺服取代模拟电子学。用于 In⁺ 多离子钟。 核心贡献：数字 PDH 锁频 + 跨腔传递锁定方案。
 
+    '
 entities:
-  - id: ent.ndyag_946nm_laser_d19
-    name: "946 nm Nd:YAG 数字锁定超稳激光"
-    aliases: ["Didier 946 nm laser", "PTB 946 nm system"]
-    hierarchy_level: 2
-    status: demonstrated
-    function: >
-      946 nm Nd:YAG 激光，腔内 KTP 晶体同时用作 EOM 和双折射滤波器，
-      FPGA 数字伺服实现 400 kHz 锁频带宽，
-      预稳定至 30 cm ULE 室温腔，再通过光频梳传递锁定至 1542 nm 低温硅腔。
-    key_parameters:
-      wavelength: "946 nm"
-      output_power: "~200 mW"
-      frequency_tuning_range: "120 GHz (via KTP temperature)"
-      servo_bandwidth: "400 kHz (intracavity KTP EOM)"
-      pre_stabilization_cavity: "30 cm ULE room-temperature"
-      transfer_lock_reference: "1542 nm cryogenic Si cavity"
-    note: "为 In⁺ 多离子钟设计的询问激光。"
+- id: ent.ndyag_946nm_laser_d19
+  name: 946 nm Nd:YAG 数字锁定超稳激光
+  aliases:
+  - Didier 946 nm laser
+  - PTB 946 nm system
+  hierarchy_level: 2
+  status: demonstrated
+  function: '946 nm Nd:YAG 激光，腔内 KTP 晶体同时用作 EOM 和双折射滤波器， FPGA 数字伺服实现 400 kHz 锁频带宽，
+    预稳定至 30 cm ULE 室温腔，再通过光频梳传递锁定至 1542 nm 低温硅腔。
 
+    '
+  key_parameters:
+    wavelength: 946 nm
+    output_power: ~200 mW
+    frequency_tuning_range: 120 GHz (via KTP temperature)
+    servo_bandwidth: 400 kHz (intracavity KTP EOM)
+    pre_stabilization_cavity: 30 cm ULE room-temperature
+    transfer_lock_reference: 1542 nm cryogenic Si cavity
+  note: 为 In⁺ 多离子钟设计的询问激光。
 principles:
-  - id: pri.transfer_lock_via_frequency_comb
-    name: "光频梳传递锁定原理"
-    tier: engineering
-    verification_status: observed
-    statement: >
-      通过光学频率梳的传递振荡器（transfer oscillator）技术，
-      将低温硅腔在 1542 nm 的超高稳定度（4×10⁻¹⁷）
-      传递到 946 nm 激光上，消除梳的载波包络偏移和重复频率噪声。
-      传递精度受限于共模抑制比和光电探测信噪比。
-    domain: "超稳激光 / 光频梳"
-    key_insight: "传递振荡器技术允许在不同波长间无损传递频率稳定度。"
-    conditions: "需要光频梳覆盖两个波长，足够的拍频信噪比"
-    source_claim: >
-      "we transfer the stability of a 1542 nm laser stabilized to a cryogenic silicon cavity
-      exhibiting a fractional frequency instability of 4×10⁻¹⁷ at 1 s to the laser at 946 nm"
+- id: pri.transfer_lock_via_frequency_comb
+  name: 光频梳传递锁定原理
+  tier: engineering
+  verification_status: observed
+  statement: '通过光学频率梳的传递振荡器（transfer oscillator）技术， 将低温硅腔在 1542 nm 的超高稳定度（4×10⁻¹⁷）
+    传递到 946 nm 激光上，消除梳的载波包络偏移和重复频率噪声。 传递精度受限于共模抑制比和光电探测信噪比。
 
+    '
+  domain: 超稳激光 / 光频梳
+  key_insight: 传递振荡器技术允许在不同波长间无损传递频率稳定度。
+  conditions: 需要光频梳覆盖两个波长，足够的拍频信噪比
+  source_claim: '"we transfer the stability of a 1542 nm laser stabilized to a cryogenic
+    silicon cavity exhibiting a fractional frequency instability of 4×10⁻¹⁷ at 1 s
+    to the laser at 946 nm"
+
+    '
 methods:
-  - id: meth.digital_pdh_transfer_lock_d19
-    name: "数字 PDH 锁频 + 光频梳传递锁定"
-    description: >
-      946 nm Nd:YAG 激光采用腔内 KTP 晶体同时作为 EOM 和双折射滤波器，
-      FPGA 数字伺服实现 400 kHz 锁频带宽，预稳定至 30 cm ULE 室温腔达 1.1×10⁻¹⁶ @ 1 s。
-      再通过光学频率梳传递锁定到 1542 nm 低温硅腔（4×10⁻¹⁷），
-      实现 <10⁻¹⁶ 不稳定度，用于 In⁺ 多离子钟询问。
-    status: demonstrated
-    source_claim: >
-      "946-nm Nd:YAG digital-locked laser at 1.1×10⁻¹⁶ in 1 s and transfer-locked to a cryogenic silicon cavity"
-    implements: [meth.pdh_locking, pri.transfer_lock_via_frequency_comb]
-    characterizes: [met.fractional_freq_instability_d19]
-    used_with: [ent.ndyag_946nm_laser_d19]
+- id: meth.digital_pdh_transfer_lock_d19
+  name: 数字 PDH 锁频 + 光频梳传递锁定
+  description: '946 nm Nd:YAG 激光采用腔内 KTP 晶体同时作为 EOM 和双折射滤波器， FPGA 数字伺服实现 400 kHz 锁频带宽，预稳定至
+    30 cm ULE 室温腔达 1.1×10⁻¹⁶ @ 1 s。 再通过光学频率梳传递锁定到 1542 nm 低温硅腔（4×10⁻¹⁷）， 实现 <10⁻¹⁶
+    不稳定度，用于 In⁺ 多离子钟询问。
 
+    '
+  status: demonstrated
+  source_claim: '"946-nm Nd:YAG digital-locked laser at 1.1×10⁻¹⁶ in 1 s and transfer-locked
+    to a cryogenic silicon cavity"
+
+    '
+  implements:
+  - meth.pdh_locking
+  - pri.transfer_lock_via_frequency_comb
+  characterizes:
+  - met.fractional_freq_instability_d19
+  used_with:
+  - ent.ndyag_946nm_laser_d19
 metrics:
-  - id: met.fractional_freq_instability_d19
-    name: "分数频率不稳定度（Didier 2019, 946 nm）"
-    unit: "无量纲"
-    demonstrated_value:
-      value: "1.1×10⁻¹⁶ @ 1 s (pre-stabilized to 30 cm ULE); <10⁻¹⁶ (transfer-locked to Si cavity)"
-      conditions: "946 nm Nd:YAG，FPGA 数字伺服，30 cm ULE 腔 / 低温 Si 腔"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "MIAVJSIK", claim: "fractional frequency instability of 1.1×10⁻¹⁶ at 1 s... transfer the stability of a 1542 nm laser stabilized to a cryogenic silicon cavity"}
-
-relations:
-  - id: rel.DI19_01
-    subject: ent.ndyag_946nm_laser_d19
-    predicate: ENABLED-BY
-    object: pri.transfer_lock_via_frequency_comb
+- id: met.fractional_freq_instability_d19
+  name: 分数频率不稳定度（Didier 2019, 946 nm）
+  unit: 无量纲
+  demonstrated_value:
+    value: 1.1×10⁻¹⁶ @ 1 s (pre-stabilized to 30 cm ULE); <10⁻¹⁶ (transfer-locked
+      to Si cavity)
+    conditions: 946 nm Nd:YAG，FPGA 数字伺服，30 cm ULE 腔 / 低温 Si 腔
+    verification_status: observed
     confidence: established
-    source: {zotero_key: "MIAVJSIK", claim: "transfer-locked to a cryogenic silicon cavity via frequency comb"}
+    source:
+      zotero_key: MIAVJSIK
+      claim: fractional frequency instability of 1.1×10⁻¹⁶ at 1 s... transfer the
+        stability of a 1542 nm laser stabilized to a cryogenic silicon cavity
+relations:
+- id: rel.didier_2019_I19_01
+  subject: ent.ndyag_946nm_laser_d19
+  predicate: ENABLED-BY
+  object: pri.transfer_lock_via_frequency_comb
+  confidence: established
+  source:
+    zotero_key: MIAVJSIK
+    claim: transfer-locked to a cryogenic silicon cavity via frequency comb
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/didier2019.yaml

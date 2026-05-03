@@ -93,28 +93,28 @@ metrics:
       source: {zotero_key: "2SMDS6NY"}
 
 relations:
-  - id: rel.PR21_01
+  - id: rel.pröbster_2021_R21_01
     subject: ent.fokus_ii_space_dual_comb_p21
     predicate: CHARACTERIZED-BY
     object: met.space_comb_environmental_readiness_p21
     confidence: established
     source: {zotero_key: "2SMDS6NY", claim: "FOKUS II demonstrated vacuum-compatible dual-comb operation during TEXUS 54 sounding rocket zero-gravity flight."}
 
-  - id: rel.PR21_02
+  - id: rel.pröbster_2021_R21_02
     subject: meth.space_qualified_comb_integration
     predicate: ENABLED-BY
     object: pri.dual_comb_mode_number_self_determination
     confidence: established
     source: {zotero_key: "2SMDS6NY", claim: "The dual-comb geometry enables autonomous optical mode number determination without requiring a wavemeter in space."}
 
-  - id: rel.PR21_03
+  - id: rel.pröbster_2021_R21_03
     subject: ent.fokus_ii_space_dual_comb_p21
     predicate: PART-OF
     object: ent.optical_frequency_comb
     confidence: established
     source: {zotero_key: "2SMDS6NY", claim: "FOKUS II is a space-qualified instance of the optical frequency comb platform."}
 
-  - id: rel.PR21_04
+  - id: rel.pröbster_2021_R21_04
     subject: ent.fokus_ii_space_dual_comb_p21
     predicate: CONDITIONED-BY
     object: pri.molecular_rovibrational_fingerprint

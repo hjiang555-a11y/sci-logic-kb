@@ -140,7 +140,7 @@ metrics:
       ≈2 × 10⁻¹⁸ in 1 s can be achieved"
 
 relations:
-  - id: rel.F22_01
+  - id: rel.fermann_2022_22_01
     subject: ent.precision_frequency_transfer_system_f22
     predicate: CHARACTERIZED-BY
     object: met.single_branch_transfer_stability_f22
@@ -148,7 +148,7 @@ relations:
       claim: "<1 × 10⁻¹⁷ in 1 s across an octave"
       section: "Abstract"
 
-  - id: rel.F22_02
+  - id: rel.fermann_2022_22_02
     subject: ent.precision_frequency_transfer_system_f22
     predicate: CHARACTERIZED-BY
     object: met.noise_cancelled_transfer_stability_f22
@@ -156,7 +156,7 @@ relations:
       claim: "≈2 × 10⁻¹⁸ in 1 s"
       section: "Abstract"
 
-  - id: rel.F22_03
+  - id: rel.fermann_2022_22_03
     subject: ent.precision_frequency_transfer_system_f22
     predicate: BOUNDED-BY
     object: pri.scg_added_noise_in_frequency_transfer
@@ -164,7 +164,7 @@ relations:
       claim: "Additional noise arises from fiber amplifiers, nonlinear fibers"
       section: "Introduction"
 
-  - id: rel.F22_04
+  - id: rel.fermann_2022_22_04
     subject: met.noise_cancelled_transfer_stability_f22
     predicate: OPERATIONALIZED-AS
     object: pri.noise_cancellation_frequency_transfer
@@ -172,7 +172,7 @@ relations:
       claim: "noise cancellation techniques achieve ≈2 × 10⁻¹⁸"
       section: "Abstract"
 
-  - id: rel.F22_05
+  - id: rel.fermann_2022_22_05
     subject: ent.precision_frequency_transfer_system_f22
     predicate: PART-OF
     object: ent.er_fiber_frequency_comb

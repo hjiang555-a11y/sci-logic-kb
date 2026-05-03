@@ -135,7 +135,7 @@ methods:
 metrics: []
 
 relations:
-  - id: rel.F19_01
+  - id: rel.fortier_2019_19_01
     subject: ent.optical_frequency_comb
     predicate: CHARACTERIZED-BY
     object: pri.ofc_nine_application_threads_f19
@@ -143,7 +143,7 @@ relations:
     source: {zotero_key: "FORTIER2019-COMMPHYS", claim: "frequency combs now underpin at least nine major application areas..."}
     note: "OFC 作为系统在 20 年间由九条应用主线共同刻画。跨文件引用 ent.optical_frequency_comb（giunta2019.yaml）。"
 
-  - id: rel.F19_02
+  - id: rel.fortier_2019_19_02
     subject: pri.comb_platform_tradeoffs_f19
     predicate: DERIVED-FROM
     object: pri.ofc_nine_application_threads_f19
@@ -151,7 +151,7 @@ relations:
     source: {zotero_key: "FORTIER2019-COMMPHYS", claim: "platform selection is an application-driven compromise."}
     note: "平台权衡原理由应用主线分类直接驱动：不同应用需要不同平台。"
 
-  - id: rel.F19_03
+  - id: rel.fortier_2019_19_03
     subject: meth.comb_platform_taxonomy_f19
     predicate: DERIVED-FROM
     object: pri.comb_platform_tradeoffs_f19

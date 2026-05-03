@@ -265,7 +265,7 @@ metrics:
 # ═══════════════════════════════════════════════
 
 relations:
-  - id: rel.L001
+  - id: rel.lesko_2020_001
     subject: ent.ghz_turnkey_erfiber_comb_l20
     predicate: PART-OF
     object: ent.optical_frequency_comb
@@ -274,7 +274,7 @@ relations:
       paper: "Lesko et al. 2020, OSA Continuum 3(8), 2070–2079"
     note: "ent.optical_frequency_comb 权威定义于 udem2002.yaml/giunta2019.yaml（跨文件引用）"
 
-  - id: rel.L002
+  - id: rel.lesko_2020_002
     subject: ent.ghz_turnkey_erfiber_comb_l20
     predicate: ENABLED-BY
     object: pri.self_referencing_f2f
@@ -283,7 +283,7 @@ relations:
       paper: "Lesko et al. 2020, OSA Continuum 3(8), 2070–2079"
     note: "pri.self_referencing_f2f 权威定义于 udem2002.yaml（跨文件引用）"
 
-  - id: rel.L003
+  - id: rel.lesko_2020_003
     subject: ent.ghz_turnkey_erfiber_comb_l20
     predicate: ENABLED-BY
     object: pri.inline_f2f_soliton_shift
@@ -293,7 +293,7 @@ relations:
          for inline f-to-2f without bulk optics"
       paper: "Lesko et al. 2020, OSA Continuum 3(8), 2070–2079"
 
-  - id: rel.L004
+  - id: rel.lesko_2020_004
     subject: ent.ghz_turnkey_erfiber_comb_l20
     predicate: CHARACTERIZED-BY
     object: met.fceo_phase_noise_integrated_l20
@@ -301,7 +301,7 @@ relations:
       claim: "438 mrad integrated f_CEO phase noise (100 Hz–10 MHz)"
       paper: "Lesko et al. 2020, OSA Continuum 3(8), 2070–2079"
 
-  - id: rel.L005
+  - id: rel.lesko_2020_005
     subject: ent.ghz_turnkey_erfiber_comb_l20
     predicate: CHARACTERIZED-BY
     object: met.fbeat_phase_noise_integrated_l20
@@ -309,7 +309,7 @@ relations:
       claim: "40.6 mrad integrated optical beat phase noise (100 Hz–10 MHz)"
       paper: "Lesko et al. 2020, OSA Continuum 3(8), 2070–2079"
 
-  - id: rel.L006
+  - id: rel.lesko_2020_006
     subject: ent.ghz_turnkey_erfiber_comb_l20
     predicate: BOUNDED-BY
     object: pri.pump_rin_to_fceo_coupling
@@ -332,7 +332,7 @@ relations:
           paper: "Lesko et al. 2020, OSA Continuum 3(8), 2070–2079"
         note: "AOM 前馈宽带抑制已在其他 Er:fiber 梳中演示（参见 sinclair2014.yaml）"
 
-  - id: rel.L007
+  - id: rel.lesko_2020_007
     subject: ent.ghz_turnkey_erfiber_comb_l20
     predicate: COMPETES-WITH
     object: ent.ruggedized_field_comb_s14
@@ -347,7 +347,7 @@ relations:
       竞争维度：Lesko 2020 优势在高重频（DCS 速度）和交钥匙便利性；
       Sinclair 2014 优势在机械鲁棒性（振动、冲击环境）。
 
-  - id: rel.L008
+  - id: rel.lesko_2020_008
     subject: pri.high_frep_dcs_speed_advantage
     predicate: CONDITIONED-BY
     object: ent.dual_comb_spectrometer
@@ -358,7 +358,7 @@ relations:
       paper: "Lesko et al. 2020, OSA Continuum 3(8), 2070–2079"
     note: "ent.dual_comb_spectrometer 定义于 coddington2016.yaml（跨文件引用）"
 
-  - id: rel.L009
+  - id: rel.lesko_2020_009
     subject: ent.pm_dispersion_managed_amplifier_l20
     predicate: PART-OF
     object: ent.ghz_turnkey_erfiber_comb_l20
@@ -366,7 +366,7 @@ relations:
       claim: "PM dispersion-managed amplifier is integral subsystem of the 1 GHz comb"
       paper: "Lesko et al. 2020, OSA Continuum 3(8), 2070–2079"
 
-  - id: rel.L010
+  - id: rel.lesko_2020_010
     subject: ent.inline_ppln_f2f_l20
     predicate: PART-OF
     object: ent.ghz_turnkey_erfiber_comb_l20

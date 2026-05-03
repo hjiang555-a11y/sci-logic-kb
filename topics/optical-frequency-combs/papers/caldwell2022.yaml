@@ -125,7 +125,7 @@ metrics:
       source: {zotero_key: "YD2MQC49", claim: "a mean photon per pulse number of 1/77 at a sensitivity within a factor of two of the quantum limit"}
 
 relations:
-  - id: rel.Cal22_01
+  - id: rel.caldwell_2022_al22_01
     subject: ent.tpfc_quantum_limited_ranging_c22
     predicate: PART-OF
     object: ent.optical_frequency_comb
@@ -133,21 +133,21 @@ relations:
     source: {zotero_key: "YD2MQC49", claim: "self-referenced optical frequency comb"}
     note: "跨文件引用 ent.optical_frequency_comb（定义于 giunta2019.yaml）"
 
-  - id: rel.Cal22_02
+  - id: rel.caldwell_2022_al22_02
     subject: ent.tpfc_quantum_limited_ranging_c22
     predicate: CHARACTERIZED-BY
     object: met.tpfc_ranging_precision_c22
     confidence: established
     source: {zotero_key: "YD2MQC49", claim: "0.7 nm"}
 
-  - id: rel.Cal22_03
+  - id: rel.caldwell_2022_al22_03
     subject: ent.tpfc_quantum_limited_ranging_c22
     predicate: CHARACTERIZED-BY
     object: met.tpfc_photon_per_pulse_c22
     confidence: established
     source: {zotero_key: "YD2MQC49", claim: "1/77"}
 
-  - id: rel.Cal22_04
+  - id: rel.caldwell_2022_al22_04
     subject: met.tpfc_ranging_precision_c22
     predicate: BOUNDED-BY
     object: pri.tpfc_tracking_oscillator_quantum_limit_c22
@@ -159,7 +159,7 @@ relations:
         status: demonstrated
         source: {zotero_key: "YD2MQC49"}
 
-  - id: rel.Cal22_05
+  - id: rel.caldwell_2022_al22_05
     subject: pri.tpfc_tracking_oscillator_quantum_limit_c22
     predicate: ENABLED-BY
     object: pri.tpfc_digital_coherent_pulse_control_c22

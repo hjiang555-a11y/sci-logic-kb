@@ -333,7 +333,7 @@ metrics:
 # ═══════════════════════════════════════════════
 
 relations:
-  - id: rel.R19_01
+  - id: rel.rao_2019_19_01
     subject: ent.erfiber_comb_li_d1_r19
     predicate: PART-OF
     object: ent.optical_frequency_comb
@@ -341,84 +341,84 @@ relations:
     source: {zotero_key: "CA55MEKS", claim: "本文报道了一套完整的面向 Li 原子 D1 线频率测量应用的掺铒飞秒光纤光梳系统"}
     note: "ent.optical_frequency_comb 顶层定义于 udem2002.yaml（跨文件引用）"
 
-  - id: rel.R19_02
+  - id: rel.rao_2019_19_02
     subject: ent.erfiber_comb_li_d1_r19
     predicate: CHARACTERIZED-BY
     object: met.comb_linewidth_1572nm_r19
     confidence: established
     source: {zotero_key: "CA55MEKS", claim: "中心波长为 1572 nm，光谱的 3 dB 带宽为 35 nm…脉冲宽度为 59 fs"}
 
-  - id: rel.R19_03
+  - id: rel.rao_2019_19_03
     subject: ent.erfiber_comb_li_d1_r19
     predicate: CHARACTERIZED-BY
     object: met.fceo_snr_r19
     confidence: established
     source: {zotero_key: "CA55MEKS", claim: "fceo 信号信噪比约为 40 dB（RBW=300 kHz）"}
 
-  - id: rel.R19_04
+  - id: rel.rao_2019_19_04
     subject: ent.erfiber_comb_li_d1_r19
     predicate: CHARACTERIZED-BY
     object: met.fceo_inloop_instability_r19
     confidence: established
     source: {zotero_key: "CA55MEKS", claim: "fceo 频率稳定度 3.74×10⁻¹⁸/τ¹ᐟ²"}
 
-  - id: rel.R19_05
+  - id: rel.rao_2019_19_05
     subject: ent.erfiber_comb_li_d1_r19
     predicate: CHARACTERIZED-BY
     object: met.frep_inloop_instability_r19
     confidence: established
     source: {zotero_key: "CA55MEKS", claim: "frep 频率稳定度为 1.75×10⁻¹³/τ¹ᐟ²"}
 
-  - id: rel.R19_06
+  - id: rel.rao_2019_19_06
     subject: ent.erfiber_comb_li_d1_r19
     predicate: CHARACTERIZED-BY
     object: met.free_running_fceo_instability_r19
     confidence: established
     source: {zotero_key: "CA55MEKS", claim: "自由运转情况下 fceo 的秒级频率稳定度为 1.52×10⁻⁷"}
 
-  - id: rel.R19_07
+  - id: rel.rao_2019_19_07
     subject: ent.erfiber_comb_li_d1_r19
     predicate: CHARACTERIZED-BY
     object: met.free_running_frep_instability_r19
     confidence: established
     source: {zotero_key: "CA55MEKS", claim: "自由运转情况下 frep 的秒级频率稳定度为 2.65×10⁻¹⁰"}
 
-  - id: rel.R19_08
+  - id: rel.rao_2019_19_08
     subject: ent.erfiber_comb_li_d1_r19
     predicate: CHARACTERIZED-BY
     object: met.beat_snr_li_d1_r19
     confidence: established
     source: {zotero_key: "CA55MEKS", claim: "与 671 nm 单频激光拍频产生约为 60 dB（RBW=1 Hz）信号"}
 
-  - id: rel.R19_09
+  - id: rel.rao_2019_19_09
     subject: ent.erfiber_comb_li_d1_r19
     predicate: CHARACTERIZED-BY
     object: met.li_d1_measurement_uncertainty_r19
     confidence: suggestive
     source: {zotero_key: "CA55MEKS", claim: "可以为 Li 原子 D1 线频率测量提供 10 Hz 量级的频率测量"}
 
-  - id: rel.R19_10
+  - id: rel.rao_2019_19_10
     subject: met.fceo_snr_r19
     predicate: OPERATIONALIZED-AS
     object: meth.pump_current_fceo_lock_r19
     confidence: established
     source: {zotero_key: "CA55MEKS", claim: "The f_CEO SNR of ~40 dB is achieved and stabilized via pump current modulation locking."}
 
-  - id: rel.R19_11
+  - id: rel.rao_2019_19_11
     subject: met.frep_inloop_instability_r19
     predicate: OPERATIONALIZED-AS
     object: meth.eom_pzt_cavity_length_frep_lock_r19
     confidence: established
     source: {zotero_key: "CA55MEKS", claim: "The repetition rate in-loop instability is controlled through EOM fast + PZT slow dual-actuator cavity length feedback."}
 
-  - id: rel.R19_12
+  - id: rel.rao_2019_19_12
     subject: met.beat_snr_li_d1_r19
     predicate: OPERATIONALIZED-AS
     object: meth.hnlf_pplc_671nm_comb_extension_r19
     confidence: established
     source: {zotero_key: "CA55MEKS", claim: "The ~60 dB beat note SNR at 671 nm for Li D1 line measurement is achieved via HNLF spectral broadening and MgO:PPLN frequency doubling."}
 
-  - id: rel.R19_13
+  - id: rel.rao_2019_19_13
     subject: meth.pump_current_fceo_lock_r19
     predicate: ENABLED-BY
     object: pri.self_referencing_f2f
@@ -426,28 +426,28 @@ relations:
     source: {zotero_key: "CA55MEKS", claim: "fceo 一般利用 f-2f 自参考技术得到…利用 PPLN1 将 2 µm 的波长成分倍频至 1 µm"}
     note: "pri.self_referencing_f2f 定义于 udem2002.yaml（跨文件引用）"
 
-  - id: rel.R19_14
+  - id: rel.rao_2019_19_14
     subject: meth.eom_pzt_cavity_length_frep_lock_r19
     predicate: ENABLED-BY
     object: pri.dual_actuator_eom_pzt_frep_control
     confidence: established
     source: {zotero_key: "CA55MEKS", claim: "通过电光晶体和压电陶瓷改变飞秒激光光源腔长来控制重复频率 frep"}
 
-  - id: rel.R19_15
+  - id: rel.rao_2019_19_15
     subject: meth.hnlf_pplc_671nm_comb_extension_r19
     predicate: ENABLED-BY
     object: pri.nir_to_visible_shg_comb_link_r19
     confidence: established
     source: {zotero_key: "CA55MEKS", claim: "利用高非线性光纤和倍频晶体将光纤光梳直接输出光谱由 1520~1607 nm 扩展到 671 nm"}
 
-  - id: rel.R19_16
+  - id: rel.rao_2019_19_16
     subject: ent.erfiber_comb_li_d1_r19
     predicate: ENABLED-BY
     object: pri.microwave_reference_transfer_to_optical_comb
     confidence: established
     source: {zotero_key: "CA55MEKS", claim: "将外部参考源的稳定度传递给光梳"}
 
-  - id: rel.R19_17
+  - id: rel.rao_2019_19_17
     subject: met.frep_inloop_instability_r19
     predicate: BOUNDED-BY
     object: pri.microwave_reference_transfer_to_optical_comb
@@ -462,7 +462,7 @@ relations:
         source: {zotero_key: "CA55MEKS", claim: "重复频率稳定度受限于测量计数器的噪声水平"}
         note: "meth.wideband_optical_frequency_synthesis 定义于 giunta2020.yaml（跨文件引用）"
 
-  - id: rel.R19_18
+  - id: rel.rao_2019_19_18
     subject: met.li_d1_measurement_uncertainty_r19
     predicate: BOUNDED-BY
     object: pri.microwave_reference_transfer_to_optical_comb
@@ -475,7 +475,7 @@ relations:
         source: {zotero_key: "CA55MEKS", claim: "满足其千赫兹频率测量准确度的需要"}
         note: "meth.optical_frequency_counting 为通用框架方法，见 giunta2019/giunta2020 等。"
 
-  - id: rel.R19_19
+  - id: rel.rao_2019_19_19
     subject: met.beat_snr_li_d1_r19
     predicate: BOUNDED-BY
     object: pri.nir_to_visible_shg_comb_link_r19
@@ -489,7 +489,7 @@ relations:
         source: {zotero_key: "CA55MEKS"}
         note: "pri.nonlinear_frequency_conversion_comb 为顶层原理节点（udem2002.yaml 框架定义）。"
 
-  - id: rel.R19_20
+  - id: rel.rao_2019_19_20
     subject: ent.erfiber_comb_li_d1_r19
     predicate: COMPETES-WITH
     object: ent.octave_spanning_tisa_comb_d00

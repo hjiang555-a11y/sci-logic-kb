@@ -309,7 +309,7 @@ metrics:
         zotero_key: ''
       note: Del'Haye et al. 2007 验证梳齿等间距性
 relations:
-- id: rel.K11_01
+- id: rel.kippenberg_2007_11_01
   subject: ent.silica_microtoroid_comb
   predicate: PART-OF
   object: ent.microresonator_frequency_comb
@@ -319,7 +319,7 @@ relations:
     claim: Toroidal microresonators were the first system in which optical frequency
       comb generation was demonstrated
   note: Level 2 实例 → Level 1 父实体
-- id: rel.K11_02
+- id: rel.kippenberg_2007_11_02
   subject: ent.crystalline_resonator_comb
   predicate: PART-OF
   object: ent.microresonator_frequency_comb
@@ -329,7 +329,7 @@ relations:
     claim: A different class of resonators amenable to optical frequency comb generation
       are crystalline resonators
   note: Level 2 实例 → Level 1 父实体
-- id: rel.K11_03
+- id: rel.kippenberg_2007_11_03
   subject: ent.si3n4_integrated_comb
   predicate: PART-OF
   object: ent.microresonator_frequency_comb
@@ -340,7 +340,7 @@ relations:
       fabricated using approaches compatible with widespread complementary metal-oxide
       semiconductor (CMOS) technology
   note: Level 2 实例 → Level 1 父实体；芯片级集成核心平台
-- id: rel.K11_04
+- id: rel.kippenberg_2007_11_04
   subject: ent.microresonator_frequency_comb
   predicate: COMPETES-WITH
   object: ent.optical_frequency_comb
@@ -385,7 +385,7 @@ relations:
     定义于 giunta2019.yaml。
 
     '
-- id: rel.K11_05
+- id: rel.kippenberg_2007_11_05
   subject: meth.cw_pumped_microcomb_generation
   predicate: ENABLED-BY
   object: pri.parametric_four_wave_mixing_comb
@@ -395,7 +395,7 @@ relations:
     claim: Combs can also be produced from a continuous wave (CW) laser through the
       nonlinear optical process of parametric frequency conversion in optical microresonators
   conditions: 泵浦功率超过参量振荡阈值，腔具有反常色散
-- id: rel.K11_06
+- id: rel.kippenberg_2007_11_06
   subject: ent.microresonator_frequency_comb
   predicate: ENABLED-BY
   object: pri.parametric_four_wave_mixing_comb
@@ -405,7 +405,7 @@ relations:
     claim: parametric frequency conversion will annihilate two pump photons and create
       a new pair of photons
   note: 参量 FWM 是微梳的核心产生机制
-- id: rel.K11_07
+- id: rel.kippenberg_2007_11_07
   subject: ent.microresonator_frequency_comb
   predicate: BOUNDED-BY
   object: pri.microresonator_anomalous_dispersion
@@ -427,7 +427,7 @@ relations:
       zotero_key: ''
       claim: dispersion engineering through suitable resonator coatings
   note: 色散是微梳带宽的主要限制因素，但可通过工程设计优化
-- id: rel.K11_08
+- id: rel.kippenberg_2007_11_08
   subject: ent.microresonator_frequency_comb
   predicate: CHARACTERIZED-BY
   object: met.microcomb_repetition_rate_range
@@ -435,7 +435,7 @@ relations:
   source:
     zotero_key: ''
     claim: high repetition rates in the range of 10 to 1000 gigahertz
-- id: rel.K11_09
+- id: rel.kippenberg_2007_11_09
   subject: ent.microresonator_frequency_comb
   predicate: CHARACTERIZED-BY
   object: met.parametric_oscillation_threshold
@@ -444,7 +444,7 @@ relations:
     zotero_key: ''
     claim: the threshold scales with the inverse Q factor squared, implying that high
       Q can give a dramatic reduction in required optical power
-- id: rel.K11_10
+- id: rel.kippenberg_2007_11_10
   subject: ent.microresonator_frequency_comb
   predicate: CHARACTERIZED-BY
   object: met.microcomb_mode_spacing_uniformity
@@ -453,7 +453,7 @@ relations:
     zotero_key: ''
     claim: The uniformity of the mode spacing was shown to be better than 1 part in
       10¹⁷
-- id: rel.K11_11
+- id: rel.kippenberg_2007_11_11
   subject: met.microcomb_repetition_rate_range
   predicate: OPERATIONALIZED-AS
   object: meth.cw_pumped_microcomb_generation

@@ -51,7 +51,7 @@ principles:
     conditions: "梳自参考锁定；f_rep 有稳定参考源"
 
 relations:
-  - id: rel.PD20_01
+  - id: rel.diddams_2020_D20_01
     subject: ent.optical_frequency_comb
     predicate: ENABLED-BY
     object: pri.self_referencing_f2f
@@ -59,14 +59,14 @@ relations:
     source: {zotero_key: "43TAX2KE", claim: "Self-referencing is the foundational technique enabling optical frequency combs to provide absolute optical frequency measurement."}
     note: "合并自原 pri.self_referencing_f2f_framework（框架档位复述同一原理，2026-04-21 P2.2 合并）；Tier 1 规范节点定义于 giunta2019.yaml"
 
-  - id: rel.PD20_02
+  - id: rel.diddams_2020_D20_02
     subject: ent.optical_frequency_comb
     predicate: PART-OF
     object: ent.electromagnetic_spectrum_coherent_bridge
     confidence: established
     source: {zotero_key: "43TAX2KE", claim: "The optical frequency comb serves as the central element coherently uniting the electromagnetic spectrum from RF to UV."}
 
-  - id: rel.PD20_03
+  - id: rel.diddams_2020_D20_03
     subject: pri.self_referencing_f2f
     predicate: DERIVED-FROM
     object: pri.optical_microwave_coherent_gearbox
@@ -74,7 +74,7 @@ relations:
     source: {zotero_key: "43TAX2KE", claim: "The f-2f self-referencing principle is a specific realization of the broader optical-microwave coherent gearbox paradigm."}
     note: "picque2020 综述将 f-2f 自参考纳入光-微波相干齿轮箱更高层框架；subject 已重定向到 Tier 1 规范节点（原 pri.self_referencing_f2f_framework 于 2026-04-21 合并）"
 
-  - id: rel.PD20_04
+  - id: rel.diddams_2020_D20_04
     subject: ent.electromagnetic_spectrum_coherent_bridge
     predicate: CHARACTERIZED-BY
     object: met.fractional_freq_instability_y99

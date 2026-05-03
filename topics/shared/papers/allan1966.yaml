@@ -136,7 +136,7 @@ metrics:
       basis: "噪声源特定；σ_y 本身是度量工具，下限取决于被测对象"
 
 relations:
-  - id: rel.A66_01
+  - id: rel.allan_1966_66_01
     subject: meth.allan_deviation_adev
     predicate: DERIVED-FROM
     object: pri.two_sample_variance_converges
@@ -144,7 +144,7 @@ relations:
     source: {zotero_key: "ALLAN1966-PROCIEEE", claim: "σ²(2, τ, τ) = ⟨(ȳ_{k+1} − ȳ_k)²⟩/2 ... is used as a standard measure of frequency stability because it converges for all power-law noises commonly encountered."}
     note: "ADEV 作为方法从'两样本方差收敛'的数学原理派生而来。"
 
-  - id: rel.A66_02
+  - id: rel.allan_1966_66_02
     subject: pri.two_sample_variance_converges
     predicate: DERIVED-FROM
     object: pri.classical_variance_divergence_for_flicker_noise
@@ -152,7 +152,7 @@ relations:
     source: {zotero_key: "ALLAN1966-PROCIEEE", claim: "for flicker and random-walk noise modulations, the classical variance ... does not converge. ... a two-sample variance is proposed that does converge."}
     note: "两样本方差的提出直接动因：经典方差在 flicker / RW 噪声下发散。"
 
-  - id: rel.A66_03
+  - id: rel.allan_1966_66_03
     subject: met.fractional_frequency_instability_sigma_y
     predicate: OPERATIONALIZED-AS
     object: meth.allan_deviation_adev

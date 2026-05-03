@@ -55,7 +55,7 @@ entities:
     note: "Level 2 实例节点，PART-OF ent.er_fiber_frequency_comb（定义于 droste2016.yaml）"
 
 relations:
-  - id: rel.Nin20_01
+  - id: rel.ning_2020_in20_01
     subject: ent.ntsc_all_pm_5branch_comb_n20
     predicate: PART-OF
     object: ent.er_fiber_frequency_comb
@@ -63,7 +63,7 @@ relations:
     source: {zotero_key: "ST825B59", claim: "multi-branch all polarization-maintaining Er:fiber frequency comb"}
     note: "跨文件引用 ent.er_fiber_frequency_comb（定义于 droste2016.yaml）"
 
-  - id: rel.Nin20_02
+  - id: rel.ning_2020_in20_02
     subject: ent.ntsc_all_pm_5branch_comb_n20
     predicate: ENABLED-BY
     object: pri.self_referencing_f2f

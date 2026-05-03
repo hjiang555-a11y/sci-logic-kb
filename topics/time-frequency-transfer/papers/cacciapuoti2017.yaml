@@ -380,35 +380,35 @@ metrics:
 
 relations:
   # ── 内部 PART-OF 骨架 ────────────────────────────────────────────────────────
-  - id: rel.C17_01
+  - id: rel.cacciapuoti_2017_17_01
     subject: ent.space_lattice_optical_clock_sloc
     predicate: PART-OF
     object: ent.space_optical_clock_mission
     confidence: established
     source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "Space lattice optical clock (SLOC), a frequency standard based on laser-cooled Sr atoms"}
 
-  - id: rel.C17_02
+  - id: rel.cacciapuoti_2017_17_02
     subject: ent.space_frequency_comb_sfc
     predicate: PART-OF
     object: ent.space_optical_clock_mission
     confidence: established
     source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "The clock signal is converted by SFC, a femtosecond frequency comb, into a form suitable for optical and microwave transfer to/from Earth."}
 
-  - id: rel.C17_03
+  - id: rel.cacciapuoti_2017_17_03
     subject: ent.microwave_link_mwl
     predicate: PART-OF
     object: ent.space_optical_clock_mission
     confidence: established
     source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "MicroWave Link (MWL)... the microwave link MWL"}
 
-  - id: rel.C17_04
+  - id: rel.cacciapuoti_2017_17_04
     subject: ent.pulsed_optical_link_elt_plus
     predicate: PART-OF
     object: ent.space_optical_clock_mission
     confidence: established
     source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "the pulsed optical link ELT+"}
 
-  - id: rel.C17_05
+  - id: rel.cacciapuoti_2017_17_05
     subject: ent.frequency_comb_optical_link_fcol
     predicate: PART-OF
     object: ent.space_optical_clock_mission
@@ -417,7 +417,7 @@ relations:
     source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "we also describe the performance of an optional link, the frequency comb optical link FCOL"}
 
   # ── ENABLED-BY：任务的物理/方法学基础 ───────────────────────────────────────
-  - id: rel.C17_06
+  - id: rel.cacciapuoti_2017_17_06
     subject: ent.space_optical_clock_mission
     predicate: ENABLED-BY
     object: pri.gravitational_time_dilation
@@ -425,7 +425,7 @@ relations:
     source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "the dilation of time by gravity. It is related to the Einstein Equivalence Principle (EEP)."}
     note: "I-SOC 存在的物理基础：没有引力时间膨胀效应就没有任务目标。"
 
-  - id: rel.C17_07
+  - id: rel.cacciapuoti_2017_17_07
     subject: ent.space_optical_clock_mission
     predicate: ENABLED-BY
     object: pri.einstein_equivalence_principle
@@ -433,7 +433,7 @@ relations:
     source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "tests of the Einstein Equivalence Principle"}
 
   # ── OPERATIONALIZED-AS：测量方法映射 ─────────────────────────────────────────
-  - id: rel.C17_08
+  - id: rel.cacciapuoti_2017_17_08
     subject: ent.space_optical_clock_mission
     predicate: OPERATIONALIZED-AS
     object: pri.common_view_clock_comparison
@@ -441,7 +441,7 @@ relations:
     conditions: "两台目标钟在 ISS 共视窗口内"
     source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "When two or more clocks are in common-view of the ISS, they can be compared/synchronized directly"}
 
-  - id: rel.C17_09
+  - id: rel.cacciapuoti_2017_17_09
     subject: ent.space_optical_clock_mission
     predicate: OPERATIONALIZED-AS
     object: pri.non_common_view_clock_comparison
@@ -449,14 +449,14 @@ relations:
     conditions: "两台目标钟跨洲际，太阳/月球 GTD 测量"
     source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "I-SOC also allows the comparisons of distant ground clocks via non-common-view comparisons"}
 
-  - id: rel.C17_10
+  - id: rel.cacciapuoti_2017_17_10
     subject: ent.microwave_link_mwl
     predicate: OPERATIONALIZED-AS
     object: meth.mwl_two_way_tf_transfer
     confidence: established
     source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "The links are similar to those already developed for the ACES mission: the microwave link MWL"}
 
-  - id: rel.C17_11
+  - id: rel.cacciapuoti_2017_17_11
     subject: ent.pulsed_optical_link_elt_plus
     predicate: OPERATIONALIZED-AS
     object: meth.elt_plus_pulsed_optical_tf_transfer
@@ -464,42 +464,42 @@ relations:
     source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "the pulsed optical link ELT+"}
 
   # ── CHARACTERIZED-BY：指标 ──────────────────────────────────────────────────
-  - id: rel.C17_12
+  - id: rel.cacciapuoti_2017_17_12
     subject: ent.microwave_link_mwl
     predicate: CHARACTERIZED-BY
     object: met.space_to_ground_link_instability
     confidence: established
     source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "the specified fractional frequency instability of the I-SOC microwave link sigma_MWLgg accounts for... flicker floor at the 5.0e-19 level [#SR-PL-09]"}
 
-  - id: rel.C17_13
+  - id: rel.cacciapuoti_2017_17_13
     subject: ent.pulsed_optical_link_elt_plus
     predicate: CHARACTERIZED-BY
     object: met.space_to_ground_link_instability
     confidence: established
     source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "For ELT+, TDEV is specified at 0.5 ps at 100 s, and < 1 ps for longer times up to 1e6 s"}
 
-  - id: rel.C17_14
+  - id: rel.cacciapuoti_2017_17_14
     subject: ent.microwave_link_mwl
     predicate: CHARACTERIZED-BY
     object: met.space_to_ground_link_inaccuracy
     confidence: established
     source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "Inaccuracy is 5e-19 [#SR-PL-10]"}
 
-  - id: rel.C17_15
+  - id: rel.cacciapuoti_2017_17_15
     subject: ent.pulsed_optical_link_elt_plus
     predicate: CHARACTERIZED-BY
     object: met.space_to_ground_link_inaccuracy
     confidence: established
     source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "These values should result in frequency comparison inaccuracy of 1e-18 [#SR-PL-16]"}
 
-  - id: rel.C17_16
+  - id: rel.cacciapuoti_2017_17_16
     subject: ent.space_optical_clock_mission
     predicate: CHARACTERIZED-BY
     object: met.earth_grs_test_uncertainty
     confidence: established
     source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "#PSO-01 Measurement of the Earth gravitational red-shift effect to a fractional uncertainty of 2e-7"}
 
-  - id: rel.C17_17
+  - id: rel.cacciapuoti_2017_17_17
     subject: ent.space_optical_clock_mission
     predicate: CHARACTERIZED-BY
     object: met.fundamental_constant_drift_search
@@ -507,7 +507,7 @@ relations:
     source: {zotero_key: "SCI-ESA-HRE-ESR-ISOC", claim: "#PSO-05... Improvement compared to ACES mission: factor 10 000"}
 
   # ── BOUNDED-BY：非共视模式受空间钟短期稳定度限制 ────────────────────────────
-  - id: rel.C17_18
+  - id: rel.cacciapuoti_2017_17_18
     subject: pri.non_common_view_clock_comparison
     predicate: BOUNDED-BY
     object: ent.space_lattice_optical_clock_sloc
@@ -523,7 +523,7 @@ relations:
       GTD 的非共视比对需求反推得出；若 SLOC 性能不达标，则跨洲际地面钟比对的有效精度下降。
 
   # ── 跨专题 CONDITIONED-BY（开放接口） ───────────────────────────────────────
-  - id: rel.C17_19
+  - id: rel.cacciapuoti_2017_17_19
     subject: ent.space_lattice_optical_clock_sloc
     predicate: CONDITIONED-BY
     object: ent.optical_lattice_clock
@@ -533,7 +533,7 @@ relations:
       跨专题引用：ent.optical_lattice_clock 定义于 topics/frequency-standards/papers/fortier2026.yaml。
       SLOC 是光学晶格钟的空间工程实例（Sr，698 nm，魔术波长 813.4 nm）。
 
-  - id: rel.C17_20
+  - id: rel.cacciapuoti_2017_17_20
     subject: ent.space_frequency_comb_sfc
     predicate: CONDITIONED-BY
     object: ent.optical_frequency_comb
@@ -543,7 +543,7 @@ relations:
       跨专题引用：ent.optical_frequency_comb 定义于 topics/optical-frequency-combs/papers/giunta2019.yaml。
       SFC 是光学频率梳在空间环境下的工程实例。
 
-  - id: rel.C17_21
+  - id: rel.cacciapuoti_2017_17_21
     subject: ent.space_lattice_optical_clock_sloc
     predicate: CONDITIONED-BY
     object: ent.fp_cavity_system

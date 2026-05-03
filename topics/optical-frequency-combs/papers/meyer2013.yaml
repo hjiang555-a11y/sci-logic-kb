@@ -92,7 +92,7 @@ metrics:
       source: {zotero_key: "T6AF6HJF", claim: "the corresponding Allen deviation was <2.6 × 10-15 at 1 s, measured by comparison to an independently stabilized Ti:sapphire frequency comb"}
 
 relations:
-  - id: rel.Mey13_01
+  - id: rel.meyer_2013_ey13_01
     subject: ent.yb_kyw_fs_comb_meyer13
     predicate: PART-OF
     object: ent.optical_frequency_comb
@@ -100,28 +100,28 @@ relations:
     source: {zotero_key: "T6AF6HJF", claim: "We present an optically stabilized Yb:KYW fs-laser frequency comb."}
     note: "跨文件引用 ent.optical_frequency_comb（giunta2019.yaml）"
 
-  - id: rel.Mey13_02
+  - id: rel.meyer_2013_ey13_02
     subject: ent.yb_kyw_fs_comb_meyer13
     predicate: CHARACTERIZED-BY
     object: met.mwave_phase_noise_10ghz_m13
     confidence: established
     source: {zotero_key: "T6AF6HJF", claim: "The phase noise of the resulting 10 GHz microwaves was -99 dBc/Hz at 1 Hz"}
 
-  - id: rel.Mey13_03
+  - id: rel.meyer_2013_ey13_03
     subject: ent.yb_kyw_fs_comb_meyer13
     predicate: CHARACTERIZED-BY
     object: met.allan_deviation_yb_kyw_comb_m13
     confidence: established
     source: {zotero_key: "T6AF6HJF", claim: "Allen deviation was <2.6 × 10-15 at 1 s"}
 
-  - id: rel.Mey13_04
+  - id: rel.meyer_2013_ey13_04
     subject: meth.frep_lock_to_cw_reference_m13
     predicate: OPERATIONALIZED-AS
     object: ent.yb_kyw_fs_comb_meyer13
     confidence: established
     source: {zotero_key: "T6AF6HJF", claim: "we build upon previous work by stabilizing the second degree of freedom of the comb, frep, to obtain the first optically stabilized Yb:KYW frequency comb. We locked frep to a cavity-stabilized CW laser."}
 
-  - id: rel.Mey13_05
+  - id: rel.meyer_2013_ey13_05
     subject: meth.frep_lock_to_cw_reference_m13
     predicate: ENABLED-BY
     object: pri.self_referencing_f2f

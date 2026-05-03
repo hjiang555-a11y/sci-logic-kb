@@ -1,236 +1,218 @@
-# Dong 2015 — 光纤延迟线锁频首次亚赫兹线宽（0.67 Hz）
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-15
-# Schema版本：v4.1
-
 meta:
-  zotero_key: "W8K5GLK6"
+  zotero_key: W8K5GLK6
   source_type: technical_paper
   contribution_type: evidence
   reliability: medium
-  title: "Subhertz linewidth laser by locking to a fiber delay line"
+  title: Subhertz linewidth laser by locking to a fiber delay line
   year: 2015
   first_author: Dong
-  journal: "Applied Optics"
+  journal: Applied Optics
   volume: 54
   issue: 5
-  pages: "1152-1156"
-  doi: "10.1364/AO.54.001152"
-  note: >
-    首次实现光纤延迟线锁频的亚赫兹线宽（0.67 Hz 拍频线宽，单激光 < 0.5 Hz），
-    分数频率不稳定度 5×10⁻¹⁵ @ 0.1–1 s。
-    核心贡献：将 Kéfélian 2009 方案推进到亚赫兹线宽里程碑。
-    频率噪声在 200 Hz–1 kHz 由光纤热噪声和射频放大器热噪声联合主导。
-    在知识图谱中填补光纤稳频链路的亚赫兹线宽首次实现。
+  pages: 1152-1156
+  doi: 10.1364/AO.54.001152
+  note: '首次实现光纤延迟线锁频的亚赫兹线宽（0.67 Hz 拍频线宽，单激光 < 0.5 Hz）， 分数频率不稳定度 5×10⁻¹⁵ @ 0.1–1 s。
+    核心贡献：将 Kéfélian 2009 方案推进到亚赫兹线宽里程碑。 频率噪声在 200 Hz–1 kHz 由光纤热噪声和射频放大器热噪声联合主导。 在知识图谱中填补光纤稳频链路的亚赫兹线宽首次实现。
 
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
-# 实体节点：复用 ent.fiber_interferometer（定义于 jiang2010.yaml），本文不重复定义。
-# 本文使用 500 m SMF-28 光纤（比 Kéfélian 2009 的 1 km 更短，
-# 比 Jiang 2010 的 2.5 km 更短），但通过改进控温/隔振实现更好性能。
-
+    '
 entities: []
-
 principles:
-  - id: pri.fiber_thermal_noise_wanser
-    name: "光纤固有热噪声（Wanser 热力学噪声模型）"
-    tier: domain
-    verification_status: calculated
-    statement: >
-      标准单模光纤（SMF-28）中折射率的热涨落产生固有的相位噪声，
-      Wanser (1992) 给出解析模型。热噪声功率谱密度与温度 T²、
-      光纤长度 L、热折射系数 (dn/dT)² 成正比，与光纤有效面积 A_eff
-      和导热系数 κ 的乘积成反比。
-      本文实验证实高傅里叶频率段（200 Hz–1 kHz）噪声与 Wanser 理论一致。
-      Duan (2010) 基于涨落耗散定理（FDT）的一维模型在低频段（< 3.6 Hz）
-      也与实验吻合，但中间频段（3.6–100 Hz）的 1/f 噪声成因尚有争议。
-    domain: "光纤干涉仪稳频"
-    formula: "S_φ(f) ∝ k_B T² × (dn/dT)² × L / (A_eff × κ × f²) — Wanser model"
-    key_insight: >
-      光纤热噪声是光纤延迟线频率参考的内在物理极限，
-      类似于 FP 腔中的布朗热噪声（pri.brownian_thermal_noise_fdt）。
-      与 FP 腔热噪声的关键区别：主导机制是热折射噪声（体效应），
-      而非镜面布朗运动（表面效应）。
-    conditions: "实心石英光纤（SMF-28 或类似），Fourier 频率在声波传播时间范围内"
-    preconditions:
-      - "光纤为实心二氧化硅纤芯（SMF-28 或类似材料）"
-      - "工作温度范围内 dn/dT ≈ 1.1×10⁻⁵/K 基本恒定"
-      - "所有技术噪声（振动、强度噪声、RAM）已被抑制到热噪声地板以下"
-    invalidated_when:
-      - "使用空心反谐振光纤——热折射噪声大幅减小，噪声机制改变"
-      - "极低温运行——dn/dT 随温度下降可能改变噪声缩放关系"
-    open_questions:
-      - "Dong 2015 中间频段 3.6–100 Hz 的 1/f 噪声似与 Duan FDT 模型一致但超出该模型理论频率限制（f < 1/τ_l），这一矛盾是否意味着需要新的理论框架？"
-    source_claim: >
-      "the frequency noise from 200 Hz to 1 kHz is dominated by the combination of
-       thermal noise and RF amplifier thermal noise with only about 2 dB discrepancy
-       with the measured result"
+- id: pri.fiber_thermal_noise_wanser
+  name: 光纤固有热噪声（Wanser 热力学噪声模型）
+  tier: domain
+  verification_status: calculated
+  statement: '标准单模光纤（SMF-28）中折射率的热涨落产生固有的相位噪声， Wanser (1992) 给出解析模型。热噪声功率谱密度与温度 T²、
+    光纤长度 L、热折射系数 (dn/dT)² 成正比，与光纤有效面积 A_eff 和导热系数 κ 的乘积成反比。 本文实验证实高傅里叶频率段（200 Hz–1
+    kHz）噪声与 Wanser 理论一致。 Duan (2010) 基于涨落耗散定理（FDT）的一维模型在低频段（< 3.6 Hz） 也与实验吻合，但中间频段（3.6–100
+    Hz）的 1/f 噪声成因尚有争议。
 
+    '
+  domain: 光纤干涉仪稳频
+  formula: S_φ(f) ∝ k_B T² × (dn/dT)² × L / (A_eff × κ × f²) — Wanser model
+  key_insight: '光纤热噪声是光纤延迟线频率参考的内在物理极限， 类似于 FP 腔中的布朗热噪声（pri.brownian_thermal_noise_fdt）。
+    与 FP 腔热噪声的关键区别：主导机制是热折射噪声（体效应）， 而非镜面布朗运动（表面效应）。
+
+    '
+  conditions: 实心石英光纤（SMF-28 或类似），Fourier 频率在声波传播时间范围内
+  preconditions:
+  - 光纤为实心二氧化硅纤芯（SMF-28 或类似材料）
+  - 工作温度范围内 dn/dT ≈ 1.1×10⁻⁵/K 基本恒定
+  - 所有技术噪声（振动、强度噪声、RAM）已被抑制到热噪声地板以下
+  invalidated_when:
+  - 使用空心反谐振光纤——热折射噪声大幅减小，噪声机制改变
+  - 极低温运行——dn/dT 随温度下降可能改变噪声缩放关系
+  open_questions:
+  - Dong 2015 中间频段 3.6–100 Hz 的 1/f 噪声似与 Duan FDT 模型一致但超出该模型理论频率限制（f < 1/τ_l），这一矛盾是否意味着需要新的理论框架？
+  source_claim: "\"the frequency noise from 200 Hz to 1 kHz is dominated by the combination\
+    \ of\n thermal noise and RF amplifier thermal noise with only about 2 dB discrepancy\n\
+    \ with the measured result\"\n"
 methods:
-  - id: meth.fiber_delay_locking_improved_d15
-    name: "光纤延迟线锁频改进实现（Dong 2015）"
-    category: frequency_stabilization
-    description: >
-      在 jiang2010 提出的光纤延迟线锁频方案基础上的改进实现，首次达到亚赫兹线宽（<0.5 Hz）。
-      关键改进：500 m SMF-28×2 光纤延迟线、主动热补偿、低噪声 RF 放大器、激光器 RIN 抑制。
-    verification_status: demonstrated
-    reference_implementation: "Dong 2015 实验系统：两台相同光纤锁定激光器拍频线宽 0.67 Hz"
-    note: >
-      基于 meth.fiber_delay_locking（定义于 jiang2010.yaml），本文首次实现亚赫兹线宽，
-      验证了光纤延迟线方案在热噪声极限下的性能潜力。
+- id: meth.fiber_delay_locking_improved_d15
+  name: 光纤延迟线锁频改进实现（Dong 2015）
+  category: frequency_stabilization
+  description: '在 jiang2010 提出的光纤延迟线锁频方案基础上的改进实现，首次达到亚赫兹线宽（<0.5 Hz）。 关键改进：500 m SMF-28×2
+    光纤延迟线、主动热补偿、低噪声 RF 放大器、激光器 RIN 抑制。
 
+    '
+  verification_status: demonstrated
+  reference_implementation: Dong 2015 实验系统：两台相同光纤锁定激光器拍频线宽 0.67 Hz
+  note: '基于 meth.fiber_delay_locking（定义于 jiang2010.yaml），本文首次实现亚赫兹线宽， 验证了光纤延迟线方案在热噪声极限下的性能潜力。
+
+    '
 metrics:
-  - id: met.laser_linewidth_dong15
-    name: "激光线宽（Dong 2015，500 m 光纤，亚赫兹）"
-    unit: "Hz"
-    description: >
-      两台相同光纤锁定激光器拍频线宽 0.67 Hz（±0.21 Hz），
-      单激光线宽 < 0.5 Hz。在 0.25 Hz 分辨率带宽下测量。
-      这是光纤延迟线锁频方案的首次亚赫兹线宽实现。
-    demonstrated_value:
-      value: "0.67 Hz 拍频（单激光 < 0.5 Hz）"
-      conditions: "500 m SMF-28×2 系统拍频，0.25 Hz RBW，线性漂移已消除"
-      verification_status: observed
-      confidence: established
-      source:
-        zotero_key: "W8K5GLK6"
-        claim: "a linewidth of 0.67 (0.21) Hz can be observed at 0.25 Hz RBW"
-    historical_landmarks:
-      first_demonstration:
-        value: "0.67 Hz（拍频）"
-        year: 2015
-        source: {zotero_key: "W8K5GLK6"}
-        note: "光纤延迟线锁频方案的首次亚赫兹线宽——里程碑"
-      selected_milestones:
-        - year: 2009
-          value: "8 Hz"
-          source: {zotero_key: "MN54T4F3"}
-          note: "Kéfélian 2009 首次全光纤外差方案 8 Hz 线宽"
+- id: met.laser_linewidth_dong15
+  name: 激光线宽（Dong 2015，500 m 光纤，亚赫兹）
+  unit: Hz
+  description: '两台相同光纤锁定激光器拍频线宽 0.67 Hz（±0.21 Hz）， 单激光线宽 < 0.5 Hz。在 0.25 Hz 分辨率带宽下测量。
+    这是光纤延迟线锁频方案的首次亚赫兹线宽实现。
 
-  - id: met.fractional_freq_instability_dong15
-    name: "分数频率不稳定度（Dong 2015，光纤延迟线）"
-    unit: "无量纲（Allan 偏差 σ_y(τ)）"
-    description: "两台相同光纤锁定激光器拍频测量的 Allan 偏差"
-    demonstrated_value:
-      value: "7×10⁻¹⁵ @ 0.1–1 s（双激光拍频）；单激光 < 5×10⁻¹⁵"
-      conditions: "500 m SMF-28，双 AOM 外差，线性漂移未去除"
-      verification_status: observed
-      confidence: established
-      source:
-        zotero_key: "W8K5GLK6"
-        claim: "fractional frequency instability of 7×10⁻¹⁵ at short timescales (0.1–1 s)"
-    historical_landmarks:
-      first_demonstration:
-        value: "5×10⁻¹⁵（单激光）"
-        year: 2015
-        source: {zotero_key: "W8K5GLK6"}
-        note: "光纤延迟线方案首次达到 10⁻¹⁵ 量级"
-      selected_milestones:
-        - year: 2010
-          value: "~10⁻¹⁴"
-          source: {zotero_key: "T8JR8IJ7"}
-          note: "Jiang 2010 首次光纤方案 ~10⁻¹⁴ @ 0.1–1 s"
-
-  - id: met.freq_noise_psd_fiber_dong15
-    name: "频率噪声谱密度（Dong 2015，500 m 光纤）"
-    unit: "Hz²/Hz"
-    description: "光纤延迟线锁频的频率噪声 PSD"
-    demonstrated_value:
-      value: "< 0.8 Hz²/Hz (−1 dB) @ 1 Hz；0.016 Hz²/Hz (−18 dB) @ 200 Hz–1 kHz"
-      conditions: "500 m SMF-28，双激光拍频（单激光减 3 dB）"
-      verification_status: observed
-      confidence: established
-      source:
-        zotero_key: "W8K5GLK6"
-        claim: "frequency noise less than 0.8 Hz²/Hz at 1 Hz; 0.016 Hz²/Hz from 200 Hz to 1 kHz"
-    note: "略优于 Kéfélian 2009（1 km）和 Jiang 2010（2.5 km），说明控温隔振改进比单纯加长光纤更有效"
-
-# ═══════════════════════════════════════════════
-#  RELATIONS（关系）
-# ═══════════════════════════════════════════════
-
-relations:
-  - id: rel.Do01
-    subject: ent.fiber_interferometer
-    predicate: CHARACTERIZED-BY
-    object: met.laser_linewidth_dong15
-    confidence: established
-    source:
-      zotero_key: "W8K5GLK6"
-      claim: "subhertz linewidth laser by locking to a fiber delay line"
-    conditions: "500 m SMF-28，静态锁频，主动温控 ~301 K"
-    note: "ent.fiber_interferometer 定义于 jiang2010.yaml"
-
-  - id: rel.Do02
-    subject: ent.fiber_interferometer
-    predicate: CHARACTERIZED-BY
-    object: met.fractional_freq_instability_dong15
-    confidence: established
-    source:
-      zotero_key: "W8K5GLK6"
-      claim: "fractional frequency instability of 7×10⁻¹⁵ at short timescales"
-    conditions: "500 m SMF-28，0.1–1 s 平均"
-    note: "ent.fiber_interferometer 定义于 jiang2010.yaml"
-
-  - id: rel.Do03
-    subject: ent.fiber_interferometer
-    predicate: CHARACTERIZED-BY
-    object: met.freq_noise_psd_fiber_dong15
-    confidence: established
-    source:
-      zotero_key: "W8K5GLK6"
-      claim: "frequency noise below −1 dB Hz²/Hz at 1 Hz"
-    conditions: "500 m SMF-28，静态锁频"
-    note: "ent.fiber_interferometer 定义于 jiang2010.yaml"
-
-  - id: rel.Do04
-    subject: ent.fiber_interferometer
-    predicate: BOUNDED-BY
-    object: pri.fiber_thermal_noise_wanser
-    confidence: established
-    source:
-      zotero_key: "W8K5GLK6"
-      claim: "200 Hz to 1 kHz dominated by combination of thermal noise and RF amplifier thermal noise"
-    conditions: "静态锁频，200 Hz–1 kHz 频段"
-    is_system_limit: true
-    dominated_by: null
-    quantitative_contribution: "热噪声 + RF 放大器热噪声联合主导（与实测差约 2 dB）"
-    regime: short-term
+    '
+  demonstrated_value:
+    value: 0.67 Hz 拍频（单激光 < 0.5 Hz）
+    conditions: 500 m SMF-28×2 系统拍频，0.25 Hz RBW，线性漂移已消除
     verification_status: observed
-    temporal_role: validates
-    breakthrough_paths:
-      - direction: pri.fiber_thermal_noise_wanser
-        expected_gain: "使用空心光纤可大幅降低热折射噪声；低温运行可降低 T² 项"
-        status: theoretical
-        source:
-          zotero_key: "W8K5GLK6"
-          claim: "theoretical simulation of the thermal noise limit for two 1 km length fibers"
-
-  - id: rel.Do05
-    subject: met.freq_noise_psd_fiber_dong15
-    predicate: OPERATIONALIZED-AS
-    object: meth.fiber_delay_locking
     confidence: established
     source:
-      zotero_key: "W8K5GLK6"
-      claim: "laser frequency stabilization system based on all-fiber Michelson interferometer with heterodyne detection"
-    conditions: "AOM 外差检测，PZT+VCO 双执行器"
-    note: "meth.fiber_delay_locking 定义于 jiang2010.yaml"
-
-  - id: rel.Do06
-    subject: ent.fiber_interferometer
-    predicate: CONDITIONED-BY
-    object: ent.thermal_environment
-    interface_metric: met.freq_noise_from_temperature_fiber
-    coupling_formula: "Δν = ν₀ × (α + β) × ΔT，α = 1.1×10⁻⁵/K, β = 5.5×10⁻⁷/K"
-    internal_property: "单点主动温控 ~301 K，铝密封罐+真空袋+隔热泡沫，总温度波动 < 2 mK/day"
+      zotero_key: W8K5GLK6
+      claim: a linewidth of 0.67 (0.21) Hz can be observed at 0.25 Hz RBW
+  historical_landmarks:
+    first_demonstration:
+      value: 0.67 Hz（拍频）
+      year: 2015
+      source:
+        zotero_key: W8K5GLK6
+      note: 光纤延迟线锁频方案的首次亚赫兹线宽——里程碑
+    selected_milestones:
+    - year: 2009
+      value: 8 Hz
+      source:
+        zotero_key: MN54T4F3
+      note: Kéfélian 2009 首次全光纤外差方案 8 Hz 线宽
+- id: met.fractional_freq_instability_dong15
+  name: 分数频率不稳定度（Dong 2015，光纤延迟线）
+  unit: 无量纲（Allan 偏差 σ_y(τ)）
+  description: 两台相同光纤锁定激光器拍频测量的 Allan 偏差
+  demonstrated_value:
+    value: 7×10⁻¹⁵ @ 0.1–1 s（双激光拍频）；单激光 < 5×10⁻¹⁵
+    conditions: 500 m SMF-28，双 AOM 外差，线性漂移未去除
+    verification_status: observed
     confidence: established
     source:
-      zotero_key: "W8K5GLK6"
-      claim: "total temperature fluctuation is stabilized within 2 mK over a 24 h period; drift about 1-2 Hz/s"
-    is_system_limit:
-      current: true
-      conditions: "低频段（< 3.6 Hz）频率噪声由温度漂移主导（1/f 噪声特征）"
-    note: "ent.thermal_environment 定义于 jiang2010.yaml"
+      zotero_key: W8K5GLK6
+      claim: fractional frequency instability of 7×10⁻¹⁵ at short timescales (0.1–1
+        s)
+  historical_landmarks:
+    first_demonstration:
+      value: 5×10⁻¹⁵（单激光）
+      year: 2015
+      source:
+        zotero_key: W8K5GLK6
+      note: 光纤延迟线方案首次达到 10⁻¹⁵ 量级
+    selected_milestones:
+    - year: 2010
+      value: ~10⁻¹⁴
+      source:
+        zotero_key: T8JR8IJ7
+      note: Jiang 2010 首次光纤方案 ~10⁻¹⁴ @ 0.1–1 s
+- id: met.freq_noise_psd_fiber_dong15
+  name: 频率噪声谱密度（Dong 2015，500 m 光纤）
+  unit: Hz²/Hz
+  description: 光纤延迟线锁频的频率噪声 PSD
+  demonstrated_value:
+    value: < 0.8 Hz²/Hz (−1 dB) @ 1 Hz；0.016 Hz²/Hz (−18 dB) @ 200 Hz–1 kHz
+    conditions: 500 m SMF-28，双激光拍频（单激光减 3 dB）
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: W8K5GLK6
+      claim: frequency noise less than 0.8 Hz²/Hz at 1 Hz; 0.016 Hz²/Hz from 200 Hz
+        to 1 kHz
+  note: 略优于 Kéfélian 2009（1 km）和 Jiang 2010（2.5 km），说明控温隔振改进比单纯加长光纤更有效
+relations:
+- id: rel.dong_2010_o01
+  subject: ent.fiber_interferometer
+  predicate: CHARACTERIZED-BY
+  object: met.laser_linewidth_dong15
+  confidence: established
+  source:
+    zotero_key: W8K5GLK6
+    claim: subhertz linewidth laser by locking to a fiber delay line
+  conditions: 500 m SMF-28，静态锁频，主动温控 ~301 K
+  note: ent.fiber_interferometer 定义于 jiang2010.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/dong2015.yaml
+- id: rel.dong_2010_o02
+  subject: ent.fiber_interferometer
+  predicate: CHARACTERIZED-BY
+  object: met.fractional_freq_instability_dong15
+  confidence: established
+  source:
+    zotero_key: W8K5GLK6
+    claim: fractional frequency instability of 7×10⁻¹⁵ at short timescales
+  conditions: 500 m SMF-28，0.1–1 s 平均
+  note: ent.fiber_interferometer 定义于 jiang2010.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/dong2015.yaml
+- id: rel.dong_2010_o03
+  subject: ent.fiber_interferometer
+  predicate: CHARACTERIZED-BY
+  object: met.freq_noise_psd_fiber_dong15
+  confidence: established
+  source:
+    zotero_key: W8K5GLK6
+    claim: frequency noise below −1 dB Hz²/Hz at 1 Hz
+  conditions: 500 m SMF-28，静态锁频
+  note: ent.fiber_interferometer 定义于 jiang2010.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/dong2015.yaml
+- id: rel.dong_2010_o04
+  subject: ent.fiber_interferometer
+  predicate: BOUNDED-BY
+  object: pri.fiber_thermal_noise_wanser
+  confidence: established
+  source:
+    zotero_key: W8K5GLK6
+    claim: 200 Hz to 1 kHz dominated by combination of thermal noise and RF amplifier
+      thermal noise
+  conditions: 静态锁频，200 Hz–1 kHz 频段
+  is_system_limit: true
+  dominated_by: null
+  quantitative_contribution: 热噪声 + RF 放大器热噪声联合主导（与实测差约 2 dB）
+  regime: short-term
+  verification_status: observed
+  temporal_role: validates
+  breakthrough_paths:
+  - direction: pri.fiber_thermal_noise_wanser
+    expected_gain: 使用空心光纤可大幅降低热折射噪声；低温运行可降低 T² 项
+    status: theoretical
+    source:
+      zotero_key: W8K5GLK6
+      claim: theoretical simulation of the thermal noise limit for two 1 km length
+        fibers
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/dong2015.yaml
+- id: rel.dong_2010_o05
+  subject: met.freq_noise_psd_fiber_dong15
+  predicate: OPERATIONALIZED-AS
+  object: meth.fiber_delay_locking
+  confidence: established
+  source:
+    zotero_key: W8K5GLK6
+    claim: laser frequency stabilization system based on all-fiber Michelson interferometer
+      with heterodyne detection
+  conditions: AOM 外差检测，PZT+VCO 双执行器
+  note: meth.fiber_delay_locking 定义于 jiang2010.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/dong2015.yaml
+- id: rel.dong_2010_o06
+  subject: ent.fiber_interferometer
+  predicate: CONDITIONED-BY
+  object: ent.thermal_environment
+  interface_metric: met.freq_noise_from_temperature_fiber
+  coupling_formula: Δν = ν₀ × (α + β) × ΔT，α = 1.1×10⁻⁵/K, β = 5.5×10⁻⁷/K
+  internal_property: 单点主动温控 ~301 K，铝密封罐+真空袋+隔热泡沫，总温度波动 < 2 mK/day
+  confidence: established
+  source:
+    zotero_key: W8K5GLK6
+    claim: total temperature fluctuation is stabilized within 2 mK over a 24 h period;
+      drift about 1-2 Hz/s
+  is_system_limit:
+    current: true
+    conditions: 低频段（< 3.6 Hz）频率噪声由温度漂移主导（1/f 噪声特征）
+  note: ent.thermal_environment 定义于 jiang2010.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/dong2015.yaml

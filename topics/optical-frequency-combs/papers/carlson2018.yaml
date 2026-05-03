@@ -152,7 +152,7 @@ metrics:
       "NAR can be extended from 1.5 cm to NAR_ext = vg/(2Δfrep) = 45.7 m"
 
 relations:
-  - id: rel.JTI_01
+  - id: rel.carlson_2018_TI_01
     subject: meth.phire_dual_comb
     predicate: DERIVED-FROM
     object: pri.dual_comb_multiheterodyne_detection
@@ -161,7 +161,7 @@ relations:
       section: "Abstract"
     note: "跨文件引用，pri.dual_comb_multiheterodyne_detection 定义于 coddington2016.yaml"
 
-  - id: rel.JTI_02
+  - id: rel.carlson_2018_TI_02
     subject: ent.phire_single_comb_dual_comb_c18
     predicate: CHARACTERIZED-BY
     object: met.phire_distance_precision_c18
@@ -169,7 +169,7 @@ relations:
       claim: "precision of 1 μm after a single half-period"
       section: "Results"
 
-  - id: rel.JTI_03
+  - id: rel.carlson_2018_TI_03
     subject: ent.phire_single_comb_dual_comb_c18
     predicate: CHARACTERIZED-BY
     object: met.phire_nar_extended_c18
@@ -177,7 +177,7 @@ relations:
       claim: "NAR extended to 45.7 m"
       section: "Results"
 
-  - id: rel.JTI_04
+  - id: rel.carlson_2018_TI_04
     subject: met.phire_distance_precision_c18
     predicate: OPERATIONALIZED-AS
     object: meth.phire_absolute_distance
@@ -185,7 +185,7 @@ relations:
       claim: "PHIRE has a unique advantage for absolute distance metrology"
       section: "Distance metrology"
 
-  - id: rel.JTI_05
+  - id: rel.carlson_2018_TI_05
     subject: meth.phire_dual_comb
     predicate: COMPETES-WITH
     object: meth.oscat_dual_comb

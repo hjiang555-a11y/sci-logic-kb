@@ -90,21 +90,21 @@ metrics:
       source: {zotero_key: "9BEBKUGG", claim: "In-loop relative frequency stabilities of the comb are below 1 × 10⁻¹⁶ at 1 s, and integrate down to low 10⁻²⁰ level at 10⁴ s. The corresponding timing uncertainties are 100–200 as"}
 
 relations:
-  - id: rel.Y15_01
+  - id: rel.yan_2015_15_01
     subject: ent.attosecond_erfiber_comb_y15
     predicate: CHARACTERIZED-BY
     object: met.erfiber_timing_uncertainty_y15
     confidence: established
     source: {zotero_key: "9BEBKUGG", claim: "timing uncertainties are 100–200 as with in-loop relative frequency stabilities below 1 × 10⁻¹⁶ at 1 s"}
 
-  - id: rel.Y15_02
+  - id: rel.yan_2015_15_02
     subject: meth.er_fiber_comb_dual_actuator_stabilization
     predicate: ENABLED-BY
     object: pri.intracavity_eom_fast_rep_rate_control
     confidence: established
     source: {zotero_key: "9BEBKUGG", claim: "repetition rate is phase-stabilized to a continuous-wave laser with both an intra-cavity electro-optic modulator and a piezo-transducer"}
 
-  - id: rel.Y15_03
+  - id: rel.yan_2015_15_03
     subject: ent.attosecond_erfiber_comb_y15
     predicate: COMPETES-WITH
     object: ent.all_pm_er_fiber_comb_k15
@@ -112,7 +112,7 @@ relations:
     source: {zotero_key: "9BEBKUGG", claim: "232 MHz Er:fiber comb with intracavity EOM achieves attosecond-level timing resolution"}
     note: "同期 Er:fiber 梳稳频路线竞争：块状腔内 EOM（Yan 2015） vs 石墨烯 EOM（Kuse 2015，定义于 kuse2015.yaml）"
 
-  - id: rel.Y15_04
+  - id: rel.yan_2015_15_04
     subject: ent.attosecond_erfiber_comb_y15
     predicate: PART-OF
     object: ent.optical_frequency_comb

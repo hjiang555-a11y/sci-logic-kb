@@ -127,7 +127,7 @@ metrics:
       source: {zotero_key: "LBSZCU7P", claim: "residual integrated timing jitter of 418 fs [3 Hz to 1 MHz] when referenced to a hydrogen maser"}
 
 relations:
-  - id: rel.Cai20_01
+  - id: rel.cai_2020_ai20_01
     subject: ent.compact_pm_er_comb_cai20
     predicate: PART-OF
     object: ent.er_fiber_frequency_comb
@@ -135,42 +135,42 @@ relations:
     source: {zotero_key: "LBSZCU7P", claim: "All-Polarization-Maintaining Er:Fiber Frequency Comb With Single Fiber Actuator"}
     note: "跨文件引用 ent.er_fiber_frequency_comb（droste2016.yaml）"
 
-  - id: rel.Cai20_02
+  - id: rel.cai_2020_ai20_02
     subject: ent.compact_pm_er_comb_cai20
     predicate: CHARACTERIZED-BY
     object: met.frep_allan_vs_hmaser_c20
     confidence: established
     source: {zotero_key: "LBSZCU7P", claim: "Allan deviation of 330 μHz at a gate time of 1 s"}
 
-  - id: rel.Cai20_03
+  - id: rel.cai_2020_ai20_03
     subject: ent.compact_pm_er_comb_cai20
     predicate: CHARACTERIZED-BY
     object: met.residual_integrated_timing_jitter_c20
     confidence: established
     source: {zotero_key: "LBSZCU7P", claim: "residual integrated timing jitter of 418 fs [3 Hz to 1 MHz]"}
 
-  - id: rel.Cai20_04
+  - id: rel.cai_2020_ai20_04
     subject: meth.compact_single_actuator_er_comb_lock
     predicate: OPERATIONALIZED-AS
     object: ent.compact_pm_er_comb_cai20
     confidence: established
     source: {zotero_key: "LBSZCU7P", claim: "compact, high-performance all-PM Er:fiber frequency comb with single fiber actuator"}
 
-  - id: rel.Cai20_05
+  - id: rel.cai_2020_ai20_05
     subject: meth.compact_single_actuator_er_comb_lock
     predicate: ENABLED-BY
     object: pri.grin_lens_compact_f2f
     confidence: established
     source: {zotero_key: "LBSZCU7P", claim: "f-to-2f interferometer based on gradient index (GRIN) lenses"}
 
-  - id: rel.Cai20_06
+  - id: rel.cai_2020_ai20_06
     subject: meth.compact_single_actuator_er_comb_lock
     predicate: ENABLED-BY
     object: pri.single_fiber_mechanical_actuator
     confidence: established
     source: {zotero_key: "LBSZCU7P", claim: "fiber actuator with a large tuning range and a high control bandwidth"}
 
-  - id: rel.Cai20_07
+  - id: rel.cai_2020_ai20_07
     subject: meth.compact_single_actuator_er_comb_lock
     predicate: ENABLED-BY
     object: pri.self_referencing_f2f

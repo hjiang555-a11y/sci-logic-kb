@@ -145,7 +145,7 @@ methods:
 metrics: []
 
 relations:
-  - id: rel.S90_01
+  - id: rel.sullivan_1990_90_01
     subject: meth.modified_allan_deviation_mdev
     predicate: DERIVED-FROM
     object: pri.modified_allan_kernel_resolves_pm_noise
@@ -153,7 +153,7 @@ relations:
     source: {zotero_key: "SULLIVAN1990-NIST-TN1337", claim: "Modified Allan variance replaces the sin⁴ transfer function kernel with sin⁶ by phase-averaging over n samples."}
     note: "MDEV 方法从 sin⁶ 积分核原理派生。"
 
-  - id: rel.S90_02
+  - id: rel.sullivan_1990_90_02
     subject: meth.time_deviation_tdev
     predicate: DERIVED-FROM
     object: meth.modified_allan_deviation_mdev
@@ -161,7 +161,7 @@ relations:
     source: {zotero_key: "SULLIVAN1990-NIST-TN1337", claim: "σ_x(τ) = τ · mod σ_y(τ) / √3 defines the Time Deviation."}
     note: "TDEV 由 MDEV 经量纲换算直接派生：σ_x = τ · mod σ_y / √3。"
 
-  - id: rel.S90_03
+  - id: rel.sullivan_1990_90_03
     subject: meth.hadamard_deviation_hdev
     predicate: DERIVED-FROM
     object: pri.hadamard_variance_drift_insensitive
@@ -169,7 +169,7 @@ relations:
     source: {zotero_key: "SULLIVAN1990-NIST-TN1337", claim: "the Hadamard variance uses three-sample second differences, which eliminate linear frequency drift."}
     note: "HDEV 方法从二阶差分漂移免疫原理派生。"
 
-  - id: rel.S90_04
+  - id: rel.sullivan_1990_90_04
     subject: meth.modified_allan_deviation_mdev
     predicate: DERIVED-FROM
     object: meth.allan_deviation_adev

@@ -365,7 +365,7 @@ metrics:
 # ═══════════════════════════════════════════════
 
 relations:
-  - id: rel.S18_01
+  - id: rel.stern_2018_18_01
     subject: ent.battery_operated_microcomb_s18
     predicate: PART-OF
     object: ent.microresonator_frequency_comb
@@ -373,28 +373,28 @@ relations:
     source: {zotero_key: "EBNL35EE", claim: "a laser-integrated Kerr frequency comb generator"}
     note: "ent.microresonator_frequency_comb 权威定义于 kippenberg2018.yaml（跨文件引用）"
 
-  - id: rel.S18_02
+  - id: rel.stern_2018_18_02
     subject: ent.integrated_iii_v_rsoa_pump_s18
     predicate: PART-OF
     object: ent.battery_operated_microcomb_s18
     confidence: established
     source: {zotero_key: "EBNL35EE", claim: "a gain section based on a III–V reflective semiconductor optical amplifier (RSOA) is coupled to a Si3N4 laser cavity"}
 
-  - id: rel.S18_03
+  - id: rel.stern_2018_18_03
     subject: ent.vernier_microring_filter_pair_s18
     predicate: PART-OF
     object: ent.battery_operated_microcomb_s18
     confidence: established
     source: {zotero_key: "EBNL35EE", claim: "two Vernier microring filters for wavelength tunability"}
 
-  - id: rel.S18_04
+  - id: rel.stern_2018_18_04
     subject: ent.nonlinear_microring_dual_role_s18
     predicate: PART-OF
     object: ent.battery_operated_microcomb_s18
     confidence: established
     source: {zotero_key: "EBNL35EE", claim: "a high-Q nonlinear microresonator ... serves two purposes ... back-reflection ... and ... generates a frequency comb through parametric FWM"}
 
-  - id: rel.S18_05
+  - id: rel.stern_2018_18_05
     subject: ent.battery_operated_microcomb_s18
     predicate: ENABLED-BY
     object: pri.dissipative_kerr_soliton
@@ -402,7 +402,7 @@ relations:
     source: {zotero_key: "EBNL35EE", claim: "stable combs with smooth spectral envelopes characteristic of temporal cavity solitons"}
     note: "pri.dissipative_kerr_soliton 定义于 kippenberg2018.yaml"
 
-  - id: rel.S18_06
+  - id: rel.stern_2018_18_06
     subject: ent.battery_operated_microcomb_s18
     predicate: ENABLED-BY
     object: pri.microresonator_anomalous_dispersion
@@ -410,21 +410,21 @@ relations:
     source: {zotero_key: "EBNL35EE", claim: "Based on this Q and the anomalous group-velocity dispersion for the 730 nm×1,800 nm waveguide, simulations indicate that a soliton-state frequency comb can be generated"}
     note: "pri.microresonator_anomalous_dispersion 定义于 kippenberg2018.yaml"
 
-  - id: rel.S18_07
+  - id: rel.stern_2018_18_07
     subject: ent.battery_operated_microcomb_s18
     predicate: ENABLED-BY
     object: pri.rayleigh_backscatter_self_injection_lock_s18
     confidence: established
     source: {zotero_key: "EBNL35EE", claim: "narrowband back-reflection due to coupling between counter-propagating circulating beams resulting from Rayleigh scattering ... effectively serving as an output mirror of the pump laser cavity"}
 
-  - id: rel.S18_08
+  - id: rel.stern_2018_18_08
     subject: ent.battery_operated_microcomb_s18
     predicate: ENABLED-BY
     object: pri.pump_comb_copackaging_swap_reduction_s18
     confidence: established
     source: {zotero_key: "EBNL35EE", claim: "the flexibility afforded by close integration of these components, and together with the ultra low power consumption should enable production of highly portable and robust frequency and timing references"}
 
-  - id: rel.S18_09
+  - id: rel.stern_2018_18_09
     subject: meth.electrical_soliton_tuning_s18
     predicate: DERIVED-FROM
     object: meth.laser_tuning_soliton_access
@@ -432,7 +432,7 @@ relations:
     source: {zotero_key: "EBNL35EE", claim: "comb formation as the microresonator is tuned using its integrated microheater"}
     note: "meth.laser_tuning_soliton_access 定义于 li2017.yaml / kippenberg2018.yaml；本工作将激光扫描变为微环热扫描。"
 
-  - id: rel.S18_10
+  - id: rel.stern_2018_18_10
     subject: meth.electrical_soliton_tuning_s18
     predicate: ENABLED-BY
     object: meth.cw_pumped_microcomb_generation
@@ -440,7 +440,7 @@ relations:
     source: {zotero_key: "EBNL35EE", claim: "pumping the microresonator with a single-frequency pump laser, additional discrete, equidistant frequencies are generated through parametric four-wave mixing"}
     note: "meth.cw_pumped_microcomb_generation 定义于 kippenberg2018.yaml"
 
-  - id: rel.S18_11
+  - id: rel.stern_2018_18_11
     subject: ent.battery_operated_microcomb_s18
     predicate: CHARACTERIZED-BY
     object: met.microcomb_wallplug_electrical_power_s18
@@ -448,49 +448,49 @@ relations:
     source: {zotero_key: "EBNL35EE", claim: "Pelec less than 100 mW, enabling battery-operation applications"}
     temporal_role: validates
 
-  - id: rel.S18_12
+  - id: rel.stern_2018_18_12
     subject: ent.battery_operated_microcomb_s18
     predicate: CHARACTERIZED-BY
     object: met.microcomb_laser_pump_power_s18
     confidence: established
     source: {zotero_key: "EBNL35EE", claim: "Popt reaches a threshold of 1.1 mW at Pelec = 78 mW"}
 
-  - id: rel.S18_13
+  - id: rel.stern_2018_18_13
     subject: ent.battery_operated_microcomb_s18
     predicate: CHARACTERIZED-BY
     object: met.microcomb_repetition_rate_s18
     confidence: established
     source: {zotero_key: "EBNL35EE", claim: "repetition rate of 194 gigahertz"}
 
-  - id: rel.S18_14
+  - id: rel.stern_2018_18_14
     subject: ent.battery_operated_microcomb_s18
     predicate: CHARACTERIZED-BY
     object: met.microcomb_30dB_bandwidth_s18
     confidence: established
     source: {zotero_key: "EBNL35EE", claim: "8.6 THz (72 nm) 30-dB bandwidth"}
 
-  - id: rel.S18_15
+  - id: rel.stern_2018_18_15
     subject: ent.battery_operated_microcomb_s18
     predicate: CHARACTERIZED-BY
     object: met.microcomb_comb_line_power_s18
     confidence: established
     source: {zotero_key: "EBNL35EE", claim: "The power of the comb lines totals 0.24 mW"}
 
-  - id: rel.S18_16
+  - id: rel.stern_2018_18_16
     subject: ent.integrated_iii_v_rsoa_pump_s18
     predicate: CHARACTERIZED-BY
     object: met.integrated_laser_linewidth_s18
     confidence: established
     source: {zotero_key: "EBNL35EE", claim: "we measure a narrow laser linewidth of 40 kHz"}
 
-  - id: rel.S18_17
+  - id: rel.stern_2018_18_17
     subject: met.microcomb_wallplug_electrical_power_s18
     predicate: OPERATIONALIZED-AS
     object: meth.electrical_soliton_tuning_s18
     confidence: established
     source: {zotero_key: "EBNL35EE", claim: "The 78–130 mW wall-plug electrical power for soliton generation is controlled via electrical pump current tuning of the hybrid III-V/Si₃N₄ laser."}
 
-  - id: rel.S18_18
+  - id: rel.stern_2018_18_18
     subject: met.microcomb_wallplug_electrical_power_s18
     predicate: BOUNDED-BY
     object: pri.packaging_loss_limits_wallplug_efficiency_s18
@@ -503,7 +503,7 @@ relations:
         status: proposed
         source: {zotero_key: "EBNL35EE", claim: "passively aligned mounting or material bonding, taking advantage of the infrastructure for assembly and packaging of III–V and silicon chips"}
 
-  - id: rel.S18_19
+  - id: rel.stern_2018_18_19
     subject: met.microcomb_laser_pump_power_s18
     predicate: BOUNDED-BY
     object: pri.high_Q_si3n4_low_threshold_soliton_s18
@@ -516,7 +516,7 @@ relations:
         status: proposed
         source: {zotero_key: "EBNL35EE", claim: "Si3N4 microresonators were recently demonstrated with record low parametric oscillation thresholds due to the high quality factors (Q > 3 × 10⁷)"}
 
-  - id: rel.S18_20
+  - id: rel.stern_2018_18_20
     subject: met.microcomb_wallplug_electrical_power_s18
     predicate: BOUNDED-BY
     object: pri.pump_comb_copackaging_swap_reduction_s18
@@ -531,7 +531,7 @@ relations:
         status: proposed
         source: {zotero_key: "EBNL35EE"}
 
-  - id: rel.S18_21
+  - id: rel.stern_2018_18_21
     subject: ent.battery_operated_microcomb_s18
     predicate: COMPETES-WITH
     object: ent.si3n4_integrated_comb

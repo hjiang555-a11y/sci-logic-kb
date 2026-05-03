@@ -1,222 +1,239 @@
-# Tao 2018 — 抗 100g 冲击的振动不敏感参考腔设计
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-16
-# Schema版本：v4.1
-
 meta:
-  zotero_key: "U4Z95559"
+  zotero_key: U4Z95559
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: "A vibration-insensitive-cavity design holds impact of higher than 100g"
+  title: A vibration-insensitive-cavity design holds impact of higher than 100g
   year: 2018
   first_author: Tao
-  journal: "Applied Physics B"
+  journal: Applied Physics B
   volume: 124
-  pages: "228"
-  doi: "10.1007/s00340-018-7096-5"
-  note: >
-    报道一种坚固的振动不敏感 10 cm ULE 方形截面腔设计，
-    铝合金支撑框架通过 12 点对称夹持固定腔体，
-    实验验证可承受超过 100g 的冲击加速度（铝模型 250 mm 跌落，ULE 腔 20 mm 跌落）。
-    三轴振动灵敏度 0.8–2.5×10⁻¹⁰/g，接近热噪声极限 ~4.2×10⁻¹⁶。
-    核心贡献：在保持低振动灵敏度的同时实现极高的机械鲁棒性，适合可搬运和空间应用。
+  pages: '228'
+  doi: 10.1007/s00340-018-7096-5
+  note: '报道一种坚固的振动不敏感 10 cm ULE 方形截面腔设计， 铝合金支撑框架通过 12 点对称夹持固定腔体， 实验验证可承受超过 100g 的冲击加速度（铝模型
+    250 mm 跌落，ULE 腔 20 mm 跌落）。 三轴振动灵敏度 0.8–2.5×10⁻¹⁰/g，接近热噪声极限 ~4.2×10⁻¹⁶。 核心贡献：在保持低振动灵敏度的同时实现极高的机械鲁棒性，适合可搬运和空间应用。
 
+    '
 entities:
-  - id: ent.robust_cuboid_cavity_t18
-    name: "抗冲击方形 ULE 参考腔（Tao 2018）"
-    aliases: ["robust cavity Tao 2018", "100g-impact-resistant cavity"]
-    hierarchy_level: 2
-    status: demonstrated
-    function: >
-      10 cm 方形截面 ULE 腔，铝合金（7075）支撑框架通过 12 个细柱在三个正交
-      对称面上夹持腔体，Viton 球缓冲。设计兼顾低振动灵敏度和极高机械鲁棒性。
-      平面-凹面镜配置（凹面 ROC = 1 m），熔融石英镜面 + ULE 补偿环。
-    key_parameters:
-      cavity_length: "10 cm"
-      spacer_material: "ULE"
-      spacer_shape: "cuboid 100×60×60 mm³"
-      mirror_material: "fused silica with ULE compensation rings"
-      mirror_config: "plano-concave (ROC = 1 m)"
-      finesse: "440,000"
-      linewidth: "~3.4 kHz"
-      decay_time: "46.3 μs"
-      wavelength: "1064 nm"
-      frame_material: "7075 Aluminum alloy"
-      support_points: "12 (3 groups × 4)"
-      damping: "Viton balls at both ends of support posts"
-    practical_limitations:
-      - description: "夹持力控制通过螺丝实现，可能引入永久腔长变形"
-        source_claim: "The squeezing of the cavity would introduce a permanent deformation on the cavity length"
-        impact: "需要精确控制夹持力以平衡鲁棒性和腔长稳定性"
-    feasibility_assessment:
-      engineering_complexity: "medium"
-      cost_estimate: "$$"
-      space_requirements: "compact (10 cm cavity + Al frame)"
-      vibration_management_difficulty: "low (inherent robustness)"
-    note: "PART-OF ent.fp_cavity_system（定义于 numata2004.yaml）。与 ent.cubic_force_insensitive_cavity_w11（Webster 2011）同属防振腔设计路线。"
+- id: ent.robust_cuboid_cavity_t18
+  name: 抗冲击方形 ULE 参考腔（Tao 2018）
+  aliases:
+  - robust cavity Tao 2018
+  - 100g-impact-resistant cavity
+  hierarchy_level: 2
+  status: demonstrated
+  function: '10 cm 方形截面 ULE 腔，铝合金（7075）支撑框架通过 12 个细柱在三个正交 对称面上夹持腔体，Viton 球缓冲。设计兼顾低振动灵敏度和极高机械鲁棒性。
+    平面-凹面镜配置（凹面 ROC = 1 m），熔融石英镜面 + ULE 补偿环。
 
+    '
+  key_parameters:
+    cavity_length: 10 cm
+    spacer_material: ULE
+    spacer_shape: cuboid 100×60×60 mm³
+    mirror_material: fused silica with ULE compensation rings
+    mirror_config: plano-concave (ROC = 1 m)
+    finesse: 440,000
+    linewidth: ~3.4 kHz
+    decay_time: 46.3 μs
+    wavelength: 1064 nm
+    frame_material: 7075 Aluminum alloy
+    support_points: 12 (3 groups × 4)
+    damping: Viton balls at both ends of support posts
+  practical_limitations:
+  - description: 夹持力控制通过螺丝实现，可能引入永久腔长变形
+    source_claim: The squeezing of the cavity would introduce a permanent deformation
+      on the cavity length
+    impact: 需要精确控制夹持力以平衡鲁棒性和腔长稳定性
+  feasibility_assessment:
+    engineering_complexity: medium
+    cost_estimate: $$
+    space_requirements: compact (10 cm cavity + Al frame)
+    vibration_management_difficulty: low (inherent robustness)
+  note: PART-OF ent.fp_cavity_system（定义于 numata2004.yaml）。与 ent.cubic_force_insensitive_cavity_w11（Webster
+    2011）同属防振腔设计路线。
 principles:
-  - id: pri.multi_point_symmetric_clamping
-    name: "多点对称夹持腔体固定原理"
-    tier: engineering
-    verification_status: observed
-    statement: >
-      通过在腔体三个正交对称面上各设置一组夹持点（4 个细柱），
-      将腔体固定在支撑框架中。每组限制一个方向的运动，
-      对另外两个方向影响较弱。各组协同约束腔体六自由度运动。
-      Viton 球缓冲使支撑区域位移对腔长变化的影响降至 10⁻⁵ 量级。
-      FEA 模拟证实该设计可同时实现低振动灵敏度和高机械鲁棒性。
-    domain: "参考腔防振设计"
-    key_insight: "12 点对称夹持 + Viton 缓冲可同时实现 <3×10⁻¹⁰/g 灵敏度和 >100g 抗冲击。"
-    conditions: "适用于方形截面腔体，需要精确的 FEA 优化夹持位置"
-    preconditions:
-      - "腔体几何对称性良好"
-      - "支撑框架刚度远高于 Viton 缓冲"
-      - "夹持力适度，既不过松（跌落脱落）也不过紧（永久变形）"
-    invalidated_when:
-      - "腔体为圆柱形且无法提供多面对称夹持接口"
-      - "振动频率超出 Viton 缓冲的有效范围"
-    source_claim: >
-      "The cavity was mounted by squeezing at 12 points on the symmetric planes of the cavity with slim posts...
-      the vibration sensitivities of the cavity in three orthogonal directions were measured to be
-      0.8×10⁻¹⁰/g, 2.5×10⁻¹⁰/g and 1.5×10⁻¹⁰/g"
+- id: pri.multi_point_symmetric_clamping
+  name: 多点对称夹持腔体固定原理
+  tier: engineering
+  verification_status: observed
+  statement: '通过在腔体三个正交对称面上各设置一组夹持点（4 个细柱）， 将腔体固定在支撑框架中。每组限制一个方向的运动， 对另外两个方向影响较弱。各组协同约束腔体六自由度运动。
+    Viton 球缓冲使支撑区域位移对腔长变化的影响降至 10⁻⁵ 量级。 FEA 模拟证实该设计可同时实现低振动灵敏度和高机械鲁棒性。
 
+    '
+  domain: 参考腔防振设计
+  key_insight: 12 点对称夹持 + Viton 缓冲可同时实现 <3×10⁻¹⁰/g 灵敏度和 >100g 抗冲击。
+  conditions: 适用于方形截面腔体，需要精确的 FEA 优化夹持位置
+  preconditions:
+  - 腔体几何对称性良好
+  - 支撑框架刚度远高于 Viton 缓冲
+  - 夹持力适度，既不过松（跌落脱落）也不过紧（永久变形）
+  invalidated_when:
+  - 腔体为圆柱形且无法提供多面对称夹持接口
+  - 振动频率超出 Viton 缓冲的有效范围
+  source_claim: '"The cavity was mounted by squeezing at 12 points on the symmetric
+    planes of the cavity with slim posts... the vibration sensitivities of the cavity
+    in three orthogonal directions were measured to be 0.8×10⁻¹⁰/g, 2.5×10⁻¹⁰/g and
+    1.5×10⁻¹⁰/g"
+
+    '
 methods:
-  - id: meth.multi_point_cavity_mounting_t18
-    name: "多点对称夹持腔体安装方法"
-    description: >
-      通过12个细柱在腔体三个正交对称面上进行多点对称夹持的安装方法。
-      每个方向4个夹持点，通过Viton球缓冲提供弹性支撑，限制腔体六自由度运动。
-      夹持力通过螺丝精确控制，平衡机械鲁棒性与腔长稳定性。
-      该方法在有限元分析(FEA)优化后进行实验验证。
-    inputs:
-      - "方形截面ULE腔体"
-      - "7075铝合金支撑框架"
-      - "Viton缓冲球"
-      - "精密螺丝和夹持柱"
-    outputs:
-      - "抗冲击>100g的腔体安装"
-      - "低振动灵敏度（<3×10⁻¹⁰/g）"
-      - "稳定的腔长参考"
-    verification_status: observed
-    evidence: "Fig. 1: CAD design of the cavity mounting; Fig. 3: FEA simulation results"
-    limitations:
-      - "夹持力控制需要经验，过紧会导致腔长永久变形"
-      - "Viton缓冲在极端温度下性能可能变化"
+- id: meth.multi_point_cavity_mounting_t18
+  name: 多点对称夹持腔体安装方法
+  description: '通过12个细柱在腔体三个正交对称面上进行多点对称夹持的安装方法。 每个方向4个夹持点，通过Viton球缓冲提供弹性支撑，限制腔体六自由度运动。
+    夹持力通过螺丝精确控制，平衡机械鲁棒性与腔长稳定性。 该方法在有限元分析(FEA)优化后进行实验验证。
 
+    '
+  inputs:
+  - 方形截面ULE腔体
+  - 7075铝合金支撑框架
+  - Viton缓冲球
+  - 精密螺丝和夹持柱
+  outputs:
+  - 抗冲击>100g的腔体安装
+  - 低振动灵敏度（<3×10⁻¹⁰/g）
+  - 稳定的腔长参考
+  verification_status: observed
+  evidence: 'Fig. 1: CAD design of the cavity mounting; Fig. 3: FEA simulation results'
+  limitations:
+  - 夹持力控制需要经验，过紧会导致腔长永久变形
+  - Viton缓冲在极端温度下性能可能变化
 metrics:
-  - id: met.acceleration_sensitivity_t18
-    name: "加速度灵敏度（Tao 2018）"
-    unit: "/g"
-    description: "三轴振动灵敏度"
-    demonstrated_value:
-      value: "0.8×10⁻¹⁰/g (vertical), 2.5×10⁻¹⁰/g (along axis), 1.5×10⁻¹⁰/g (horizontal cross)"
-      conditions: "10 cm ULE 方形腔，12 点夹持，1064 nm"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "U4Z95559", claim: "vibration sensitivities... 0.8×10⁻¹⁰/g, 2.5×10⁻¹⁰/g and 1.5×10⁻¹⁰/g"}
-
-  - id: met.impact_resistance_t18
-    name: "抗冲击加速度（Tao 2018）"
-    unit: "g"
-    description: "腔体在支撑框架中可承受的最大冲击加速度"
-    demonstrated_value:
-      value: ">100g (ULE cavity, 20 mm drop); >250g (Al model, 250 mm drop)"
-      conditions: "7075 铝合金框架，12 点 Viton 球缓冲夹持，跌落至光学平台"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "U4Z95559", claim: "the ULE cavity could hold the impacts of higher than 100g when mounted in its frame"}
-    historical_landmarks:
-      best_demonstration:
-        value: ">100g (ULE cavity intact)"
-        year: 2018
-        source: {zotero_key: "U4Z95559"}
-        note: "已知最高参考腔抗冲击能力"
-
-  - id: met.fractional_freq_instability_t18
-    name: "分数频率不稳定度（Tao 2018）"
-    unit: "无量纲"
-    description: "腔稳定激光与 30 cm 参考腔拍频的修正 Allan 偏差"
-    demonstrated_value:
-      value: "~4.2×10⁻¹⁶"
-      conditions: "10 cm ULE 腔，1064 nm，与 30 cm 参考腔拍频"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "U4Z95559", claim: "minimal of the Allan deviation is about 4.2×10⁻¹⁶, which is closed to the estimated thermal noise limit"}
-
+- id: met.acceleration_sensitivity_t18
+  name: 加速度灵敏度（Tao 2018）
+  unit: /g
+  description: 三轴振动灵敏度
+  demonstrated_value:
+    value: 0.8×10⁻¹⁰/g (vertical), 2.5×10⁻¹⁰/g (along axis), 1.5×10⁻¹⁰/g (horizontal
+      cross)
+    conditions: 10 cm ULE 方形腔，12 点夹持，1064 nm
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: U4Z95559
+      claim: vibration sensitivities... 0.8×10⁻¹⁰/g, 2.5×10⁻¹⁰/g and 1.5×10⁻¹⁰/g
+- id: met.impact_resistance_t18
+  name: 抗冲击加速度（Tao 2018）
+  unit: g
+  description: 腔体在支撑框架中可承受的最大冲击加速度
+  demonstrated_value:
+    value: '>100g (ULE cavity, 20 mm drop); >250g (Al model, 250 mm drop)'
+    conditions: 7075 铝合金框架，12 点 Viton 球缓冲夹持，跌落至光学平台
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: U4Z95559
+      claim: the ULE cavity could hold the impacts of higher than 100g when mounted
+        in its frame
+  historical_landmarks:
+    best_demonstration:
+      value: '>100g (ULE cavity intact)'
+      year: 2018
+      source:
+        zotero_key: U4Z95559
+      note: 已知最高参考腔抗冲击能力
+- id: met.fractional_freq_instability_t18
+  name: 分数频率不稳定度（Tao 2018）
+  unit: 无量纲
+  description: 腔稳定激光与 30 cm 参考腔拍频的修正 Allan 偏差
+  demonstrated_value:
+    value: ~4.2×10⁻¹⁶
+    conditions: 10 cm ULE 腔，1064 nm，与 30 cm 参考腔拍频
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: U4Z95559
+      claim: minimal of the Allan deviation is about 4.2×10⁻¹⁶, which is closed to
+        the estimated thermal noise limit
 relations:
-  - id: rel.TO01
-    subject: ent.robust_cuboid_cavity_t18
-    predicate: PART-OF
-    object: ent.fp_cavity_system
-    confidence: established
-    source: {zotero_key: "U4Z95559", claim: "ultra-stable optical cavities... Fabry-Pérot"}
-    note: "跨文件引用，ent.fp_cavity_system 定义于 numata2004.yaml"
-
-  - id: rel.T02
-    subject: ent.robust_cuboid_cavity_t18
-    predicate: CHARACTERIZED-BY
-    object: met.acceleration_sensitivity_t18
-    confidence: established
-    source: {zotero_key: "U4Z95559", claim: "vibration sensitivities... 0.8×10⁻¹⁰/g, 2.5×10⁻¹⁰/g and 1.5×10⁻¹⁰/g"}
-
-  - id: rel.T03
-    subject: ent.robust_cuboid_cavity_t18
-    predicate: CHARACTERIZED-BY
-    object: met.impact_resistance_t18
-    confidence: established
-    source: {zotero_key: "U4Z95559", claim: "the design holds impact of higher than 100g"}
-
-  - id: rel.T04
-    subject: ent.robust_cuboid_cavity_t18
-    predicate: ENABLED-BY
-    object: pri.multi_point_symmetric_clamping
-    confidence: established
-    source: {zotero_key: "U4Z95559", claim: "12 points on the symmetric planes... corporately restricted the movement"}
-
-  - id: rel.T05
-    subject: ent.robust_cuboid_cavity_t18
-    predicate: BOUNDED-BY
-    object: pri.brownian_thermal_noise_fdt
-    confidence: established
-    source: {zotero_key: "U4Z95559", claim: "closed to the estimated thermal noise limit of the 10 cm long cavity"}
-    is_system_limit: true
-    dominated_by: null
-    regime: short-term
-    verification_status: observed
-    temporal_role: validates
-    breakthrough_paths: []
-    note: "跨文件引用，pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml"
-
-  - id: rel.T06
-    subject: ent.robust_cuboid_cavity_t18
-    predicate: CONDITIONED-BY
-    object: ent.vibration_environment
-    confidence: established
-    source: {zotero_key: "U4Z95559", claim: "active-vibration-isolation system... accelerometer was fixed to the optical breadboard"}
-    interface_metric: met.freq_noise_from_vibration
-    coupling_formula: "Δν/ν = κ × a"
-    internal_property: "κ = 0.8–2.5×10⁻¹⁰/g"
-    is_system_limit:
-      current: false
-      conditions: "主动隔振台上工作，振动退出限制序列"
-    note: "跨文件引用，ent.vibration_environment 定义于 webster2007.yaml"
-
-  - id: rel.T07
-    subject: meth.multi_point_cavity_mounting_t18
-    predicate: IMPLEMENTS
-    object: pri.multi_point_symmetric_clamping
-    confidence: established
-    source: {zotero_key: "U4Z95559", claim: "12 points on the symmetric planes... corporately restricted the movement"}
-    verification_status: observed
-    note: "安装方法实现了多点对称夹持原理"
-
-  - id: rel.T08
-    subject: ent.robust_cuboid_cavity_t18
-    predicate: OPERATIONALIZED-AS
-    object: meth.multi_point_cavity_mounting_t18
-    confidence: established
-    source: {zotero_key: "U4Z95559", claim: "The cavity was mounted by squeezing at 12 points..."}
-    verification_status: observed
-    note: "实体通过安装方法进行操作"
+- id: rel.tao_2018_O01
+  subject: ent.robust_cuboid_cavity_t18
+  predicate: PART-OF
+  object: ent.fp_cavity_system
+  confidence: established
+  source:
+    zotero_key: U4Z95559
+    claim: ultra-stable optical cavities... Fabry-Pérot
+  note: 跨文件引用，ent.fp_cavity_system 定义于 numata2004.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/tao2018.yaml
+- id: rel.tao_2018_02
+  subject: ent.robust_cuboid_cavity_t18
+  predicate: CHARACTERIZED-BY
+  object: met.acceleration_sensitivity_t18
+  confidence: established
+  source:
+    zotero_key: U4Z95559
+    claim: vibration sensitivities... 0.8×10⁻¹⁰/g, 2.5×10⁻¹⁰/g and 1.5×10⁻¹⁰/g
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/tao2018.yaml
+- id: rel.tao_2018_03
+  subject: ent.robust_cuboid_cavity_t18
+  predicate: CHARACTERIZED-BY
+  object: met.impact_resistance_t18
+  confidence: established
+  source:
+    zotero_key: U4Z95559
+    claim: the design holds impact of higher than 100g
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/tao2018.yaml
+- id: rel.tao_2018_04
+  subject: ent.robust_cuboid_cavity_t18
+  predicate: ENABLED-BY
+  object: pri.multi_point_symmetric_clamping
+  confidence: established
+  source:
+    zotero_key: U4Z95559
+    claim: 12 points on the symmetric planes... corporately restricted the movement
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/tao2018.yaml
+- id: rel.tao_2018_05
+  subject: ent.robust_cuboid_cavity_t18
+  predicate: BOUNDED-BY
+  object: pri.brownian_thermal_noise_fdt
+  confidence: established
+  source:
+    zotero_key: U4Z95559
+    claim: closed to the estimated thermal noise limit of the 10 cm long cavity
+  is_system_limit: true
+  dominated_by: null
+  regime: short-term
+  verification_status: observed
+  temporal_role: validates
+  breakthrough_paths: []
+  note: 跨文件引用，pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/tao2018.yaml
+- id: rel.tao_2018_06
+  subject: ent.robust_cuboid_cavity_t18
+  predicate: CONDITIONED-BY
+  object: ent.vibration_environment
+  confidence: established
+  source:
+    zotero_key: U4Z95559
+    claim: active-vibration-isolation system... accelerometer was fixed to the optical
+      breadboard
+  interface_metric: met.freq_noise_from_vibration
+  coupling_formula: Δν/ν = κ × a
+  internal_property: κ = 0.8–2.5×10⁻¹⁰/g
+  is_system_limit:
+    current: false
+    conditions: 主动隔振台上工作，振动退出限制序列
+  note: 跨文件引用，ent.vibration_environment 定义于 webster2007.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/tao2018.yaml
+- id: rel.tao_2018_07
+  subject: meth.multi_point_cavity_mounting_t18
+  predicate: IMPLEMENTS
+  object: pri.multi_point_symmetric_clamping
+  confidence: established
+  source:
+    zotero_key: U4Z95559
+    claim: 12 points on the symmetric planes... corporately restricted the movement
+  verification_status: observed
+  note: 安装方法实现了多点对称夹持原理
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/tao2018.yaml
+- id: rel.tao_2018_08
+  subject: ent.robust_cuboid_cavity_t18
+  predicate: OPERATIONALIZED-AS
+  object: meth.multi_point_cavity_mounting_t18
+  confidence: established
+  source:
+    zotero_key: U4Z95559
+    claim: The cavity was mounted by squeezing at 12 points...
+  verification_status: observed
+  note: 实体通过安装方法进行操作
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/tao2018.yaml

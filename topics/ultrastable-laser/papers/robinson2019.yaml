@@ -1,402 +1,486 @@
-# Robinson 2019 — 4 K 晶体硅腔热噪声极限稳定度
-# 提取者：Claude（AI草稿，待专家确认）
-# 提取日期：2026-04-14
-# Schema版本：v4.1
-
 meta:
-  zotero_key: "JIZCUZLY"
+  zotero_key: JIZCUZLY
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
-  title: "Crystalline optical cavity at 4 K with thermal-noise-limited instability and ultralow drift"
+  title: Crystalline optical cavity at 4 K with thermal-noise-limited instability
+    and ultralow drift
   year: 2019
   first_author: Robinson
-  journal: "Optica"
+  journal: Optica
   volume: 6
-  pages: "240-243"
-  doi: "10.1364/OPTICA.6.000240"
-  note: >
-    首次在 4 K 操作的硅单晶 FP 腔（Si4，JILA）达到热噪声极限稳定度。
-    4 K 非 Si CTE 严格零点（零点在 124 K 和 ~17 K），但 CTE 在 4 K 渐近趋近零
-    （α → 0 as T → 0），利用材料物理使腔长温度敏感度极低。
-    核心贡献：（1）首次演示 4 K Si 腔热噪声极限 mod σ_y = 6.5×10⁻¹⁷（0.8–80 s）；
-    （2）发现光功率驱动的频率漂移线性依赖：斜率约 -7×10⁻²¹/s/nW，40 nW 时最低漂移
-    -3×10⁻¹⁹/s；（3）激光线宽中位值 16 mHz（100 次 FFT 测量）。
-    系统（Si4）为 6 cm 长 Si 腔，三层低温热屏（4 K 内屏 + 40 K 外屏），IBS 镀层。
-    JILA（Ye 组）+ PTB（Sterr/Riehle 组）合作；Si3（124 K，Matei 2017）用作参考。
+  pages: 240-243
+  doi: 10.1364/OPTICA.6.000240
+  note: '首次在 4 K 操作的硅单晶 FP 腔（Si4，JILA）达到热噪声极限稳定度。 4 K 非 Si CTE 严格零点（零点在 124 K 和 ~17
+    K），但 CTE 在 4 K 渐近趋近零 （α → 0 as T → 0），利用材料物理使腔长温度敏感度极低。 核心贡献：（1）首次演示 4 K Si 腔热噪声极限
+    mod σ_y = 6.5×10⁻¹⁷（0.8–80 s）； （2）发现光功率驱动的频率漂移线性依赖：斜率约 -7×10⁻²¹/s/nW，40 nW 时最低漂移
+    -3×10⁻¹⁹/s；（3）激光线宽中位值 16 mHz（100 次 FFT 测量）。 系统（Si4）为 6 cm 长 Si 腔，三层低温热屏（4 K 内屏
+    + 40 K 外屏），IBS 镀层。 JILA（Ye 组）+ PTB（Sterr/Riehle 组）合作；Si3（124 K，Matei 2017）用作参考。
     本文指明下一步：晶体镀层（AlGaAs）替换 IBS 可降低热噪声 10×，进一步降温亦可受益。
 
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
+    '
 entities:
-  - id: ent.si_crystal_fp_cavity_4k_r19
-    name: "4 K 硅单晶 FP 参考腔（Robinson 2019，Si4）"
-    aliases: ["Si4", "4K silicon cavity", "4 K cryogenic silicon cavity", "Si4 cavity"]
-    hierarchy_level: 2
-    status: demonstrated
-    function: >
-      以硅单晶为间隔物（6 cm），工作于 4 K（CTE 渐近零，α → 0 as T → 0，
-      非严格零点但热膨胀极小），配合三层低温热屏（内两层 ~4 K，外层 ~40 K，铜材料+
-      主动温控）及优化振动隔离（垂向灵敏度 5±2×10⁻¹²/g @ 9.5 Hz，水平 2±1×10⁻¹⁰/g），
-      首次达到 4 K 腔的热噪声极限 mod σ_y = 6.5×10⁻¹⁷（0.8–80 s）。
-      揭示光功率驱动的腔长漂移机制，指明超低漂移方向（低功率+晶体镀层）。
-    key_parameters:
-      spacer_material: "硅单晶（Si）"
-      cavity_length: "6 cm（60 mm，水平轴）"
-      operating_temperature: "4 K（脉冲管制冷机，非 Si CTE 零点；CTE 在 4 K 渐近零）"
-      laser_wavelength: "1542 nm（1.5 μm，Er 光纤激光）"
-      mirror_coating: "IBS 介质膜（SiO₂/Ta₂O₅），提取损耗角 φ = 5.15×10⁻⁴"
-      finesse: "F = 500,000（5×10⁵）"
-      transmission: "T = 2 ppm（单镜），总透射 2 ppm"
-      total_loss: "A = 4 ppm（总损耗）"
-      circulating_power_40nW: "40 nW 传输功率对应腔内循环功率 ~2 mW"
-      vibration_sensitivity_vertical: "5±2×10⁻¹² /g（9.5 Hz 驱动频率，各向异性硅晶体优化）"
-      vibration_sensitivity_horizontal: "2±1×10⁻¹⁰ /g（每方向）"
-      thermal_shield_material: "外屏铜（热导率约 100× 铝在 40 K），内两屏铜 ~4 K，外屏主动温控"
-      temperature_coupling: "4 Hz/K（室温 → 腔频率耦合，优化后；原先 200 Hz/K）"
-      power_drift_slope: "约 -7×10⁻²¹ /s/nW（漂移率对传输功率的斜率）"
-      min_drift: "-3×10⁻¹⁹ /s（40 nW 传输功率时，功率相关漂移最低点）"
-    interface_requirements:
-      temperature: "4 K，内屏主动温控；室温外壳控制 mK 量级"
-      vibration: "脉冲管制冷机引入低频振动（1 Hz 及谐波），精细调节腔与制冷机相对位置"
-      optical_power: "传输功率需稳定至 pW 量级（AOM 功率稳定反馈），以消除强度耦合和漂移"
-    note: >
-      Level 2 PART-OF ent.fp_cavity_system；4 K Si 腔实例（参数变体）。
-      与 ent.si_crystal_fp_cavity_k12（124 K，kessler2012.yaml）和
-      ent.si_crystal_17k_fp_cavity_l26（17 K，lee2026.yaml）构成
-      4K/17K/124K 三种操作温度方案的参数演进序列。
+- id: ent.si_crystal_fp_cavity_4k_r19
+  name: 4 K 硅单晶 FP 参考腔（Robinson 2019，Si4）
+  aliases:
+  - Si4
+  - 4K silicon cavity
+  - 4 K cryogenic silicon cavity
+  - Si4 cavity
+  hierarchy_level: 2
+  status: demonstrated
+  function: '以硅单晶为间隔物（6 cm），工作于 4 K（CTE 渐近零，α → 0 as T → 0， 非严格零点但热膨胀极小），配合三层低温热屏（内两层
+    ~4 K，外层 ~40 K，铜材料+ 主动温控）及优化振动隔离（垂向灵敏度 5±2×10⁻¹²/g @ 9.5 Hz，水平 2±1×10⁻¹⁰/g）， 首次达到
+    4 K 腔的热噪声极限 mod σ_y = 6.5×10⁻¹⁷（0.8–80 s）。 揭示光功率驱动的腔长漂移机制，指明超低漂移方向（低功率+晶体镀层）。
 
+    '
+  key_parameters:
+    spacer_material: 硅单晶（Si）
+    cavity_length: 6 cm（60 mm，水平轴）
+    operating_temperature: 4 K（脉冲管制冷机，非 Si CTE 零点；CTE 在 4 K 渐近零）
+    laser_wavelength: 1542 nm（1.5 μm，Er 光纤激光）
+    mirror_coating: IBS 介质膜（SiO₂/Ta₂O₅），提取损耗角 φ = 5.15×10⁻⁴
+    finesse: F = 500,000（5×10⁵）
+    transmission: T = 2 ppm（单镜），总透射 2 ppm
+    total_loss: A = 4 ppm（总损耗）
+    circulating_power_40nW: 40 nW 传输功率对应腔内循环功率 ~2 mW
+    vibration_sensitivity_vertical: 5±2×10⁻¹² /g（9.5 Hz 驱动频率，各向异性硅晶体优化）
+    vibration_sensitivity_horizontal: 2±1×10⁻¹⁰ /g（每方向）
+    thermal_shield_material: 外屏铜（热导率约 100× 铝在 40 K），内两屏铜 ~4 K，外屏主动温控
+    temperature_coupling: 4 Hz/K（室温 → 腔频率耦合，优化后；原先 200 Hz/K）
+    power_drift_slope: 约 -7×10⁻²¹ /s/nW（漂移率对传输功率的斜率）
+    min_drift: -3×10⁻¹⁹ /s（40 nW 传输功率时，功率相关漂移最低点）
+  interface_requirements:
+    temperature: 4 K，内屏主动温控；室温外壳控制 mK 量级
+    vibration: 脉冲管制冷机引入低频振动（1 Hz 及谐波），精细调节腔与制冷机相对位置
+    optical_power: 传输功率需稳定至 pW 量级（AOM 功率稳定反馈），以消除强度耦合和漂移
+  note: 'Level 2 PART-OF ent.fp_cavity_system；4 K Si 腔实例（参数变体）。 与 ent.si_crystal_fp_cavity_k12（124
+    K，kessler2012.yaml）和 ent.si_crystal_17k_fp_cavity_l26（17 K，lee2026.yaml）构成 4K/17K/124K
+    三种操作温度方案的参数演进序列。
+
+    '
 principles:
-  - id: pri.silicon_cte_asymptotic_zero_4k
-    name: "硅单晶 4 K 热膨胀系数渐近零（热力学第三定律）"
-    tier: domain
-    verification_status: observed
-    statement: >
-      根据热力学第三定律，固体在 T → 0 时熵趋于零，热容 C_p → 0，
-      线热膨胀系数 α(T) → 0（非零点处的过零，而是渐近趋向零）。
-      硅单晶在 ~124 K 和 ~17 K 存在两个 CTE 严格零点（α=0 并过零变号），
-      而在 4 K 以下 α(T) 趋近于零但不严格过零（严格意义已无负值区域，
-      量级 |α(4K)| << |α(124K)|）。
-      因此 4 K Si 腔对温度波动的一阶敏感度（∂ν/∂T = ν₀·α(T)）极低，
-      但二阶或技术耦合仍可存在（见 Robinson 2019 中的 4 Hz/K 室温耦合）。
-    domain: "低温光学谐振腔，固体物理"
-    formula: "α(T) → 0 as T → 0（热力学第三定律）；|α(4K)| << |α(124K)| ≈ 0（严格零点处）"
-    key_insight: >
-      4 K 操作不依赖于精确定位 CTE 零点温度（不同于 124 K 操作需控制在 ±mK 量级），
-      而是依赖于 α(T) 在极低温度下自然趋近于零的物理规律，
-      对绝对温度的敏感度天然降低，但技术噪声（振动、光功率）相对重要性提升。
-    conditions: "单晶硅，T < 10 K；忽略杂质和应力导致的偏差"
-    applicable_when: "4 K 附近操作的 Si 腔，无需精确定位 CTE 零点"
-    source_claim: >
-      "Using a closed-cycle cryocooler to reach 4 K where the silicon thermal expansion
-       asymptotically approaches zero, a cryogenic 6 cm long silicon cavity has already
-       demonstrated fractional frequency instability of 1×10⁻¹⁶"
+- id: pri.silicon_cte_asymptotic_zero_4k
+  name: 硅单晶 4 K 热膨胀系数渐近零（热力学第三定律）
+  tier: domain
+  verification_status: observed
+  statement: '根据热力学第三定律，固体在 T → 0 时熵趋于零，热容 C_p → 0， 线热膨胀系数 α(T) → 0（非零点处的过零，而是渐近趋向零）。
+    硅单晶在 ~124 K 和 ~17 K 存在两个 CTE 严格零点（α=0 并过零变号）， 而在 4 K 以下 α(T) 趋近于零但不严格过零（严格意义已无负值区域，
+    量级 |α(4K)| << |α(124K)|）。 因此 4 K Si 腔对温度波动的一阶敏感度（∂ν/∂T = ν₀·α(T)）极低， 但二阶或技术耦合仍可存在（见
+    Robinson 2019 中的 4 Hz/K 室温耦合）。
 
-  - id: pri.optical_power_cavity_drift
-    name: "光腔内循环功率驱动频率漂移（Robinson 2019 发现）"
-    tier: engineering
-    verification_status: observed
-    statement: >
-      低温光学腔的长期频率漂移（线性分量）与腔内循环光功率成线性关系。
-      在 Robinson 2019 Si4（4 K，6 cm Si 腔）中，漂移率 ∝ -7×10⁻²¹/s/nW（传输功率），
-      漂移方向始终为负（腔变长），指向镀层热膨胀/蠕变机制（镀层与基底 CTE 失配
-      → 功率吸收 → 温度相关蠕变）。
-      功率突变后出现特征时间常数 1–2 天的频率瞬变，需等待数个时间常数后再拟合线性漂移。
-      零功率外推漂移接近零，表明辐照消除后可达极低漂移。
-    domain: "精密光学腔，低温激光稳频"
-    formula: >
-      df/dt = a × P_trans + b；a ≈ -7×10⁻²¹ /s/nW（Robinson 2019 Si4）；
-      b ≈ 0（零功率外推）；
-      特征时间常数 τ_transient ≈ 1–2 天
-    key_insight: >
-      腔频率漂移不仅来自材料蠕变和温度漂移，还受激光照射功率直接驱动。
-      降低腔内循环功率是减小低温腔漂移的关键实用方法，
-      指向"偶发扫描"测腔频率方案（Wiens et al., 2016）。
-    conditions: >
-      低温光学腔（Si，4 K），IBS 或类似镀层，腔内功率 mW 量级（40 nW 传输 → 2 mW 腔内）；
-      镀层与基底 CTE 失配假设成立
-    applicable_when: "功率变化后需等待 5× 时间常数（~10 天）才能测量稳态漂移率"
-    source_claim: >
-      "We present the first rigorous characterization of a power-dependent frequency drift
-       in an optical cavity. The slope of the power dependence is roughly −7×10⁻²¹/s/nW."
+    '
+  domain: 低温光学谐振腔，固体物理
+  formula: α(T) → 0 as T → 0（热力学第三定律）；|α(4K)| << |α(124K)| ≈ 0（严格零点处）
+  key_insight: '4 K 操作不依赖于精确定位 CTE 零点温度（不同于 124 K 操作需控制在 ±mK 量级）， 而是依赖于 α(T) 在极低温度下自然趋近于零的物理规律，
+    对绝对温度的敏感度天然降低，但技术噪声（振动、光功率）相对重要性提升。
 
+    '
+  conditions: 单晶硅，T < 10 K；忽略杂质和应力导致的偏差
+  applicable_when: 4 K 附近操作的 Si 腔，无需精确定位 CTE 零点
+  source_claim: "\"Using a closed-cycle cryocooler to reach 4 K where the silicon\
+    \ thermal expansion\n asymptotically approaches zero, a cryogenic 6 cm long silicon\
+    \ cavity has already\n demonstrated fractional frequency instability of 1×10⁻¹⁶\"\
+    \n"
+- id: pri.optical_power_cavity_drift
+  name: 光腔内循环功率驱动频率漂移（Robinson 2019 发现）
+  tier: engineering
+  verification_status: observed
+  statement: '低温光学腔的长期频率漂移（线性分量）与腔内循环光功率成线性关系。 在 Robinson 2019 Si4（4 K，6 cm Si 腔）中，漂移率
+    ∝ -7×10⁻²¹/s/nW（传输功率）， 漂移方向始终为负（腔变长），指向镀层热膨胀/蠕变机制（镀层与基底 CTE 失配 → 功率吸收 → 温度相关蠕变）。
+    功率突变后出现特征时间常数 1–2 天的频率瞬变，需等待数个时间常数后再拟合线性漂移。 零功率外推漂移接近零，表明辐照消除后可达极低漂移。
+
+    '
+  domain: 精密光学腔，低温激光稳频
+  formula: 'df/dt = a × P_trans + b；a ≈ -7×10⁻²¹ /s/nW（Robinson 2019 Si4）； b ≈ 0（零功率外推）；
+    特征时间常数 τ_transient ≈ 1–2 天
+
+    '
+  key_insight: '腔频率漂移不仅来自材料蠕变和温度漂移，还受激光照射功率直接驱动。 降低腔内循环功率是减小低温腔漂移的关键实用方法， 指向"偶发扫描"测腔频率方案（Wiens
+    et al., 2016）。
+
+    '
+  conditions: '低温光学腔（Si，4 K），IBS 或类似镀层，腔内功率 mW 量级（40 nW 传输 → 2 mW 腔内）； 镀层与基底 CTE 失配假设成立
+
+    '
+  applicable_when: 功率变化后需等待 5× 时间常数（~10 天）才能测量稳态漂移率
+  source_claim: "\"We present the first rigorous characterization of a power-dependent\
+    \ frequency drift\n in an optical cavity. The slope of the power dependence is\
+    \ roughly −7×10⁻²¹/s/nW.\"\n"
 methods:
-  - id: meth.low_power_cavity_drift_characterization_r19
-    name: "低功率腔漂移表征方法（Robinson 2019）"
-    full_name: "Low-power cavity drift characterization method"
-    status: demonstrated
-    category: "表征方法"
-    applies_to: ent.fp_cavity_system
-    steps_summary: >
-      通过扫描腔内循环功率（~40 nW 传输功率），测量腔频率漂移率与功率的线性关系。
-      在功率突变后等待1–2天特征瞬态时间，再提取稳态漂移率；外推至零功率获得本征漂移极限。
-    advantages:
-      - "定量分离功率依赖漂移与材料蠕变"
-      - "外推获得零功率漂移极限（理论上接近零）"
-    disadvantages:
-      - "测量周期长（需数天等待瞬态）"
-      - "仅适用于低温腔"
-    note: >
-      Robinson 2019首次严格表征光功率驱动的腔频率漂移，为低漂移腔设计提供关键方法。
-    source_claim: >
-      "We present the first rigorous characterization of a power-dependent frequency drift in an optical cavity. The slope of the power dependence is roughly −7×10⁻²¹/s/nW."
+- id: meth.low_power_cavity_drift_characterization_r19
+  name: 低功率腔漂移表征方法（Robinson 2019）
+  full_name: Low-power cavity drift characterization method
+  status: demonstrated
+  category: 表征方法
+  applies_to: ent.fp_cavity_system
+  steps_summary: '通过扫描腔内循环功率（~40 nW 传输功率），测量腔频率漂移率与功率的线性关系。 在功率突变后等待1–2天特征瞬态时间，再提取稳态漂移率；外推至零功率获得本征漂移极限。
 
+    '
+  advantages:
+  - 定量分离功率依赖漂移与材料蠕变
+  - 外推获得零功率漂移极限（理论上接近零）
+  disadvantages:
+  - 测量周期长（需数天等待瞬态）
+  - 仅适用于低温腔
+  note: 'Robinson 2019首次严格表征光功率驱动的腔频率漂移，为低漂移腔设计提供关键方法。
+
+    '
+  source_claim: '"We present the first rigorous characterization of a power-dependent
+    frequency drift in an optical cavity. The slope of the power dependence is roughly
+    −7×10⁻²¹/s/nW."
+
+    '
 metrics:
-  - id: met.fractional_freq_instability_r19
-    name: "分数频率不稳定度（Robinson 2019，4 K Si 腔，热噪声极限）"
-    unit: "无量纲（修正 Allan 偏差 mod σ_y(τ)）"
-    description: >
-      Si4（4 K）与 Si3（124 K，Matei 2017）拍频，正交减去 Si3 贡献（4×10⁻¹⁷）后，
-      提取 Si4 个体分数频率不稳定度；首次证明 4 K 腔达到热噪声极限。
-    demonstrated_value:
-      value: "mod σ_y = 6.5×10⁻¹⁷（0.8 s ≤ τ ≤ 80 s，热噪声 flicker floor）"
-      conditions: >
-        1.5 μm（1542 nm），T = 4 K，Si4 6 cm 腔；
-        参考 Si3（124 K，PTB，mod σ_y = 4×10⁻¹⁷）拍频三角帽法；
-        24,000 s 测量记录，dead-time free λ 型计数器；
-        线性漂移（~3×10⁻¹⁸/s）去除后计算
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "JIZCUZLY", claim: "Si4 instability reaches 6.5×10⁻¹⁷ for averaging times of 0.8 < τ < 80 s, which is consistent with the predicted thermal noise floor"}
-    theoretical_floor:
-      value: "mod σ_y（预测值，由 IBS 镀层 φ=5.15×10⁻⁴ 决定，文中与实测吻合）"
-      basis: >
-        FDT 计算：6 cm Si 腔，IBS 镀层 φ_IBS = 5.15×10⁻⁴（从频率噪声 PSD 拟合提取），
-        Si 基底和间隔物低温高 Q 使基底热噪声可忽略，仅镀层主导
-      gap_note: "已达镀层热噪声极限；提升需晶体镀层（AlGaAs，φ~2.5×10⁻⁵，降低 10×）或更低损耗设计"
-    comparison:
-      si3_124k_matei2017: "mod σ_y = 4×10⁻¹⁷（Si3，124 K，IBS，Matei 2017）——Si4 6.5×10⁻¹⁷ 较 Si3 高约 1.6×，因 Si4 腔长更短（6 cm vs ~21 cm equiv.）"
-      zhang2017_4k_prev: "~1×10⁻¹⁶（Zhang 2017，同一系统前身，未达热噪声极限）"
+- id: met.fractional_freq_instability_r19
+  name: 分数频率不稳定度（Robinson 2019，4 K Si 腔，热噪声极限）
+  unit: 无量纲（修正 Allan 偏差 mod σ_y(τ)）
+  description: 'Si4（4 K）与 Si3（124 K，Matei 2017）拍频，正交减去 Si3 贡献（4×10⁻¹⁷）后， 提取 Si4 个体分数频率不稳定度；首次证明
+    4 K 腔达到热噪声极限。
 
-  - id: met.laser_linewidth_r19
-    name: "激光线宽（Robinson 2019，Si4 4 K 腔）"
-    unit: "mHz（FWHM）"
-    description: >
-      Si3–Si4 拍频 FFT 分析（1542 nm，混频降至 10 Hz，ADC 数字化），
-      128 s 测量时间，Hanning 窗（Fourier 极限 10.9 mHz），重复 100 次测量统计分布。
-      Si4 对拍频线宽的相对贡献因子 0.85（由热噪声比 σ_Si4/√(σ²_Si3+σ²_Si4) 决定）。
-    demonstrated_value:
-      value: "Si4 个体线宽中位值 16 mHz（100 次测量统计）"
-      conditions: >
-        1.5 μm（1542 nm），Si3（124 K）与 Si4（4 K）拍频，
-        128 s 记录，Hanning 窗，Lorentzian 拟合 FWHM，100 次重复
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "JIZCUZLY", claim: "The median laser linewidth for the distribution in Fig. 3B is 16 mHz, representing the lowest observed to date for a laser locked to an optical cavity placed inside a closed-cycle cryocooler."}
-    note: "16 mHz 为当时封闭循环制冷机腔激光的最低线宽纪录；与 Matei 2017 Si3 激光 5–10 mHz 相差约 2×"
+    '
+  demonstrated_value:
+    value: mod σ_y = 6.5×10⁻¹⁷（0.8 s ≤ τ ≤ 80 s，热噪声 flicker floor）
+    conditions: '1.5 μm（1542 nm），T = 4 K，Si4 6 cm 腔； 参考 Si3（124 K，PTB，mod σ_y = 4×10⁻¹⁷）拍频三角帽法；
+      24,000 s 测量记录，dead-time free λ 型计数器； 线性漂移（~3×10⁻¹⁸/s）去除后计算
 
-  - id: met.algaas_coating_loss_angle_ibs_4k_r19
-    name: "IBS 镀层损耗角（Robinson 2019，4 K Si 腔提取）"
-    unit: "无量纲（损耗角 φ = 1/Q_mech）"
-    description: >
-      从 Si4 频率噪声功率谱密度 PSD 拟合（Sy = a·f⁻¹，a = 4.125×10⁻³³）提取的 IBS 镀层损耗角，
-      使用 Kessler 2012 / Matei 2017 的 FDT 全表达式，结合硅的 Young 模量和 Poisson 比。
-    demonstrated_value:
-      value: "φ_IBS(4K) = 5.15×10⁻⁴（SiO₂/Ta₂O₅ IBS 镀层）"
-      conditions: >
-        6 cm Si4 腔，4 K，PSD 拟合范围 5 mHz – 2 Hz，Sy = a·f⁻¹ 模型；
-        Young 模量和 Poisson 比取自 Si 文献值
-      verification_status: calculated
-      confidence: moderate
-      source: {zotero_key: "JIZCUZLY", claim: "we extract a loss angle for the SiO₂/Ta₂O₅ mirror coatings to be ϕ = 5.15×10⁻⁴"}
-    comparison:
-      ibs_room_temp_standard: "φ_IBS ~ 4×10⁻⁴（室温标准 SiO₂/Ta₂O₅，Numata 2004）"
-      algaas_4k_estimate: "φ_AlGaAs(4K) 尚未在此系统测量；cole2013 报告 10 K 约 4.5×10⁻⁶（自由谐振器）"
-    note: >
-      φ_IBS(4K) = 5.15×10⁻⁴ 与室温 IBS 值（~4×10⁻⁴）同量级，
-      说明降温至 4 K 对 IBS 镀层损耗改善有限；
-      关键路径是换用 AlGaAs 晶体镀层（φ 降低 10–100×），而非继续降温保持 IBS。
+      '
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: JIZCUZLY
+      claim: Si4 instability reaches 6.5×10⁻¹⁷ for averaging times of 0.8 < τ < 80
+        s, which is consistent with the predicted thermal noise floor
+  theoretical_floor:
+    value: mod σ_y（预测值，由 IBS 镀层 φ=5.15×10⁻⁴ 决定，文中与实测吻合）
+    basis: 'FDT 计算：6 cm Si 腔，IBS 镀层 φ_IBS = 5.15×10⁻⁴（从频率噪声 PSD 拟合提取）， Si 基底和间隔物低温高
+      Q 使基底热噪声可忽略，仅镀层主导
 
-  - id: met.cavity_frequency_drift_r19
-    name: "腔频率漂移率（Robinson 2019，功率相关，Si4 4 K）"
-    unit: "无量纲分数频率漂移率（/s）"
-    description: >
-      Si4 腔长期线性频率漂移率，是传输光功率的线性函数；
-      最低漂移在 40 nW 传输功率时实现。
-    demonstrated_value:
-      value: "-3×10⁻¹⁹ /s（40 nW 传输功率，最低漂移测量点）"
-      conditions: >
-        40 nW 传输（对应 2 mW 腔内循环功率，F=500,000，T=2 ppm），
-        等待 5 个时间常数（~10 天）后拟合线性漂移；
-        Si3 漂移（-3×10⁻¹⁹/s，2.8 μW 传输）已从拍频去除
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "JIZCUZLY", claim: "The lowest drift is attained at a transmitted power of 40 nW, giving a fractional frequency drift of −3×10⁻¹⁹/s."}
-    comparison:
-      si3_drift: "-3×10⁻¹⁹/s（Si3，124 K，2.8 μW 传输，Hagemann 2014）——与 Si4@40nW 相当，但功率差 ~70×"
-      higher_power_drift: ">10⁻¹⁸/s（较高光功率下，线性外推）"
+      '
+    gap_note: 已达镀层热噪声极限；提升需晶体镀层（AlGaAs，φ~2.5×10⁻⁵，降低 10×）或更低损耗设计
+  comparison:
+    si3_124k_matei2017: mod σ_y = 4×10⁻¹⁷（Si3，124 K，IBS，Matei 2017）——Si4 6.5×10⁻¹⁷
+      较 Si3 高约 1.6×，因 Si4 腔长更短（6 cm vs ~21 cm equiv.）
+    zhang2017_4k_prev: ~1×10⁻¹⁶（Zhang 2017，同一系统前身，未达热噪声极限）
+- id: met.laser_linewidth_r19
+  name: 激光线宽（Robinson 2019，Si4 4 K 腔）
+  unit: mHz（FWHM）
+  description: 'Si3–Si4 拍频 FFT 分析（1542 nm，混频降至 10 Hz，ADC 数字化）， 128 s 测量时间，Hanning
+    窗（Fourier 极限 10.9 mHz），重复 100 次测量统计分布。 Si4 对拍频线宽的相对贡献因子 0.85（由热噪声比 σ_Si4/√(σ²_Si3+σ²_Si4)
+    决定）。
 
-# ═══════════════════════════════════════════════
-#  RELATIONS（关系）
-# ═══════════════════════════════════════════════
+    '
+  demonstrated_value:
+    value: Si4 个体线宽中位值 16 mHz（100 次测量统计）
+    conditions: '1.5 μm（1542 nm），Si3（124 K）与 Si4（4 K）拍频， 128 s 记录，Hanning 窗，Lorentzian
+      拟合 FWHM，100 次重复
 
+      '
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: JIZCUZLY
+      claim: The median laser linewidth for the distribution in Fig. 3B is 16 mHz,
+        representing the lowest observed to date for a laser locked to an optical
+        cavity placed inside a closed-cycle cryocooler.
+  note: 16 mHz 为当时封闭循环制冷机腔激光的最低线宽纪录；与 Matei 2017 Si3 激光 5–10 mHz 相差约 2×
+- id: met.algaas_coating_loss_angle_ibs_4k_r19
+  name: IBS 镀层损耗角（Robinson 2019，4 K Si 腔提取）
+  unit: 无量纲（损耗角 φ = 1/Q_mech）
+  description: '从 Si4 频率噪声功率谱密度 PSD 拟合（Sy = a·f⁻¹，a = 4.125×10⁻³³）提取的 IBS 镀层损耗角， 使用
+    Kessler 2012 / Matei 2017 的 FDT 全表达式，结合硅的 Young 模量和 Poisson 比。
+
+    '
+  demonstrated_value:
+    value: φ_IBS(4K) = 5.15×10⁻⁴（SiO₂/Ta₂O₅ IBS 镀层）
+    conditions: '6 cm Si4 腔，4 K，PSD 拟合范围 5 mHz – 2 Hz，Sy = a·f⁻¹ 模型； Young 模量和 Poisson
+      比取自 Si 文献值
+
+      '
+    verification_status: calculated
+    confidence: moderate
+    source:
+      zotero_key: JIZCUZLY
+      claim: we extract a loss angle for the SiO₂/Ta₂O₅ mirror coatings to be ϕ =
+        5.15×10⁻⁴
+  comparison:
+    ibs_room_temp_standard: φ_IBS ~ 4×10⁻⁴（室温标准 SiO₂/Ta₂O₅，Numata 2004）
+    algaas_4k_estimate: φ_AlGaAs(4K) 尚未在此系统测量；cole2013 报告 10 K 约 4.5×10⁻⁶（自由谐振器）
+  note: 'φ_IBS(4K) = 5.15×10⁻⁴ 与室温 IBS 值（~4×10⁻⁴）同量级， 说明降温至 4 K 对 IBS 镀层损耗改善有限； 关键路径是换用
+    AlGaAs 晶体镀层（φ 降低 10–100×），而非继续降温保持 IBS。
+
+    '
+- id: met.cavity_frequency_drift_r19
+  name: 腔频率漂移率（Robinson 2019，功率相关，Si4 4 K）
+  unit: 无量纲分数频率漂移率（/s）
+  description: 'Si4 腔长期线性频率漂移率，是传输光功率的线性函数； 最低漂移在 40 nW 传输功率时实现。
+
+    '
+  demonstrated_value:
+    value: -3×10⁻¹⁹ /s（40 nW 传输功率，最低漂移测量点）
+    conditions: '40 nW 传输（对应 2 mW 腔内循环功率，F=500,000，T=2 ppm）， 等待 5 个时间常数（~10 天）后拟合线性漂移；
+      Si3 漂移（-3×10⁻¹⁹/s，2.8 μW 传输）已从拍频去除
+
+      '
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: JIZCUZLY
+      claim: The lowest drift is attained at a transmitted power of 40 nW, giving
+        a fractional frequency drift of −3×10⁻¹⁹/s.
+  comparison:
+    si3_drift: -3×10⁻¹⁹/s（Si3，124 K，2.8 μW 传输，Hagemann 2014）——与 Si4@40nW 相当，但功率差 ~70×
+    higher_power_drift: '>10⁻¹⁸/s（较高光功率下，线性外推）'
 relations:
-  - id: rel.R01
-    subject: ent.si_crystal_fp_cavity_4k_r19
-    predicate: PART-OF
-    object: ent.fp_cavity_system
-    confidence: established
-    source: {zotero_key: "JIZCUZLY", claim: "crystalline optical cavity at 4 K... demonstrates fractional frequency instability of 6.5×10⁻¹⁷"}
-    conditions: null
-    note: >
-      原为 COMPETES-WITH ent.si_crystal_fp_cavity_k12（Level 1 vs Level 1），
-      重构后所有 FP 腔实例降级为 Level 2（PART-OF ent.fp_cavity_system）。
-      4 K vs 124 K 性能对比保留在各自指标的 comparison 字段中。
-      ent.fp_cavity_system 定义于 numata2004.yaml。
+- id: rel.robinson_2019_01
+  subject: ent.si_crystal_fp_cavity_4k_r19
+  predicate: PART-OF
+  object: ent.fp_cavity_system
+  confidence: established
+  source:
+    zotero_key: JIZCUZLY
+    claim: crystalline optical cavity at 4 K... demonstrates fractional frequency
+      instability of 6.5×10⁻¹⁷
+  conditions: null
+  note: '原为 COMPETES-WITH ent.si_crystal_fp_cavity_k12（Level 1 vs Level 1）， 重构后所有
+    FP 腔实例降级为 Level 2（PART-OF ent.fp_cavity_system）。 4 K vs 124 K 性能对比保留在各自指标的 comparison
+    字段中。 ent.fp_cavity_system 定义于 numata2004.yaml。
 
-  - id: rel.R02
-    subject: ent.si_crystal_fp_cavity_4k_r19
-    predicate: ENABLED-BY
-    object: pri.silicon_cte_asymptotic_zero_4k
-    confidence: established
-    source: {zotero_key: "JIZCUZLY", claim: "at 4 K where the silicon thermal expansion asymptotically approaches zero"}
-    conditions: "T = 4 K，Si 单晶；无需精确温控到 CTE 零点，但需减小技术噪声"
-    temporal_role: proposes
+    '
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/robinson2019.yaml
+- id: rel.robinson_2019_02
+  subject: ent.si_crystal_fp_cavity_4k_r19
+  predicate: ENABLED-BY
+  object: pri.silicon_cte_asymptotic_zero_4k
+  confidence: established
+  source:
+    zotero_key: JIZCUZLY
+    claim: at 4 K where the silicon thermal expansion asymptotically approaches zero
+  conditions: T = 4 K，Si 单晶；无需精确温控到 CTE 零点，但需减小技术噪声
+  temporal_role: proposes
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/robinson2019.yaml
+- id: rel.robinson_2019_03
+  subject: ent.si_crystal_fp_cavity_4k_r19
+  predicate: ENABLED-BY
+  object: pri.cryogenic_mechanical_q_enhancement
+  confidence: established
+  source:
+    zotero_key: JIZCUZLY
+    claim: Building on our previous silicon cavity effort, we now achieve the fundamental
+      thermal-noise-limited stability for a 6 cm long silicon cavity cooled to 4 K
+  conditions: T = 4 K，Si 单晶；Q 进一步高于 124 K 的 > 10⁷
+  temporal_role: proposes
+  note: pri.cryogenic_mechanical_q_enhancement 定义于 kessler2012.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/robinson2019.yaml
+- id: rel.robinson_2019_04
+  subject: ent.si_crystal_fp_cavity_4k_r19
+  predicate: CHARACTERIZED-BY
+  object: met.fractional_freq_instability_r19
+  confidence: established
+  source:
+    zotero_key: JIZCUZLY
+    claim: Si4 instability reaches 6.5×10⁻¹⁷ for averaging times of 0.8 < τ < 80 s
+  conditions: 4 K，6 cm Si 腔，IBS 镀层，Si3 参考（正交减去），24000 s 数据
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/robinson2019.yaml
+- id: rel.robinson_2019_05
+  subject: ent.si_crystal_fp_cavity_4k_r19
+  predicate: CHARACTERIZED-BY
+  object: met.laser_linewidth_r19
+  confidence: established
+  source:
+    zotero_key: JIZCUZLY
+    claim: The median laser linewidth for the distribution in Fig. 3B is 16 mHz
+  conditions: Si3–Si4 拍频，128 s 窗口，100 次重复，Lorentzian 拟合
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/robinson2019.yaml
+- id: rel.robinson_2019_06
+  subject: ent.si_crystal_fp_cavity_4k_r19
+  predicate: CHARACTERIZED-BY
+  object: met.cavity_frequency_drift_r19
+  confidence: established
+  source:
+    zotero_key: JIZCUZLY
+    claim: The lowest drift is attained at a transmitted power of 40 nW, giving a
+      fractional frequency drift of −3×10⁻¹⁹/s
+  conditions: 40 nW 传输功率，4 K，等待 ~10 天稳定后
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/robinson2019.yaml
+- id: rel.robinson_2019_07
+  subject: ent.si_crystal_fp_cavity_4k_r19
+  predicate: BOUNDED-BY
+  object: pri.brownian_thermal_noise_fdt
+  confidence: established
+  source:
+    zotero_key: JIZCUZLY
+    claim: we extract a loss angle for the SiO₂/Ta₂O₅ mirror coatings to be ϕ = 5.15×10⁻⁴
+      [from PSD fit consistent with thermal noise floor]
+  conditions: 4 K，6 cm Si 腔，IBS 镀层（φ = 5.15×10⁻⁴）；Si 基底热噪声被 4 K 高 Q 抑制
+  is_system_limit: true
+  dominated_by: null
+  quantitative_contribution: 'IBS 镀层主导（φ_IBS = 5.15×10⁻⁴ >> φ_Si_substrate at 4K）；
+    PSD 拟合系数 a = 4.125×10⁻³³ 与镀层热噪声预测一致
 
-  - id: rel.R03
-    subject: ent.si_crystal_fp_cavity_4k_r19
-    predicate: ENABLED-BY
-    object: pri.cryogenic_mechanical_q_enhancement
-    confidence: established
-    source: {zotero_key: "JIZCUZLY", claim: "Building on our previous silicon cavity effort, we now achieve the fundamental thermal-noise-limited stability for a 6 cm long silicon cavity cooled to 4 K"}
-    conditions: "T = 4 K，Si 单晶；Q 进一步高于 124 K 的 > 10⁷"
-    temporal_role: proposes
-    note: "pri.cryogenic_mechanical_q_enhancement 定义于 kessler2012.yaml"
+    '
+  regime: all
+  verification_status: observed
+  temporal_role: validates
+  breakthrough_paths:
+  - direction: pri.crystalline_coating_low_brownian_noise
+    expected_gain: 'AlGaAs 晶体镀层（室温 φ ~ 2.5×10⁻⁵，4 K 下预期更低）替换 IBS 镀层 → 镀层热噪声降低 10–100×；理论下限
+      mod σ_y 可达 ~10⁻¹⁸ 量级（6 cm 腔）
 
-  - id: rel.R04
-    subject: ent.si_crystal_fp_cavity_4k_r19
-    predicate: CHARACTERIZED-BY
-    object: met.fractional_freq_instability_r19
-    confidence: established
-    source: {zotero_key: "JIZCUZLY", claim: "Si4 instability reaches 6.5×10⁻¹⁷ for averaging times of 0.8 < τ < 80 s"}
-    conditions: "4 K，6 cm Si 腔，IBS 镀层，Si3 参考（正交减去），24000 s 数据"
+      '
+    status: proposed
+    source:
+      zotero_key: JIZCUZLY
+      claim: Reduction of the thermal noise will be possible by replacing the conventional
+        SiO₂/Ta₂O₅ mirrors with crystalline mirrors. Such crystalline mirrors have
+        been shown to exhibit a factor of 10 lower loss angle at room temperature
+  - direction: pri.silicon_cte_zero_crossing_17k
+    expected_gain: '17 K（Si CTE 严格第二零点）+ AlGaAs 晶体镀层（4 K 损耗更低）路线， Lee 2026 实现 mod
+      σ_y = 2.5×10⁻¹⁷ 世界纪录
 
-  - id: rel.R05
-    subject: ent.si_crystal_fp_cavity_4k_r19
-    predicate: CHARACTERIZED-BY
-    object: met.laser_linewidth_r19
-    confidence: established
-    source: {zotero_key: "JIZCUZLY", claim: "The median laser linewidth for the distribution in Fig. 3B is 16 mHz"}
-    conditions: "Si3–Si4 拍频，128 s 窗口，100 次重复，Lorentzian 拟合"
+      '
+    status: demonstrated
+    source:
+      zotero_key: 4QVEXY63
+      claim: fractional frequency stability of 2.5×10⁻¹⁷ at 10 s is four times better
+        than expected for dielectric mirrors
+    note: ent.si_crystal_17k_fp_cavity_l26 定义于 lee2026.yaml
+  note: 'pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml； ent.algaas_crystalline_mirror_c13
+    定义于 cole2013.yaml； Robinson 2019 首次明确：4 K Si 腔即便已在热噪声极限，该极限仍由 IBS 镀层主导， 与 124
+    K 情形（Matei 2017）结构相同，共同指向 AlGaAs 晶体镀层替换方案。
 
-  - id: rel.R06
-    subject: ent.si_crystal_fp_cavity_4k_r19
-    predicate: CHARACTERIZED-BY
-    object: met.cavity_frequency_drift_r19
-    confidence: established
-    source: {zotero_key: "JIZCUZLY", claim: "The lowest drift is attained at a transmitted power of 40 nW, giving a fractional frequency drift of −3×10⁻¹⁹/s"}
-    conditions: "40 nW 传输功率，4 K，等待 ~10 天稳定后"
+    '
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/robinson2019.yaml
+- id: rel.robinson_2019_08
+  subject: ent.si_crystal_fp_cavity_4k_r19
+  predicate: BOUNDED-BY
+  object: pri.optical_power_cavity_drift
+  confidence: established
+  source:
+    zotero_key: JIZCUZLY
+    claim: we make the discovery that frequency drift depends linearly on the incident
+      power. The drift decreases as the circulating optical power is reduced, extrapolating
+      to a zero drift when the incident power is zero.
+  conditions: 长期（>10 天稳定），传输功率 40 nW – 数百 nW 范围
+  is_system_limit: true
+  dominated_by: pri.optical_power_cavity_drift
+  quantitative_contribution: 线性漂移 = -7×10⁻²¹/s/nW × P_trans；@40 nW → -3×10⁻¹⁹/s
+  regime: long_term
+  verification_status: observed
+  temporal_role: proposes
+  breakthrough_paths:
+  - direction: pri.silicon_cte_asymptotic_zero_4k
+    expected_gain: '进一步降低腔内循环功率（<40 nW 传输）或采用偶发扫描方案（无持续锁定光） → 漂移外推趋向零，有望作为时间尺度使用
 
-  - id: rel.R07
-    subject: ent.si_crystal_fp_cavity_4k_r19
-    predicate: BOUNDED-BY
-    object: pri.brownian_thermal_noise_fdt
-    confidence: established
-    source: {zotero_key: "JIZCUZLY", claim: "we extract a loss angle for the SiO₂/Ta₂O₅ mirror coatings to be ϕ = 5.15×10⁻⁴ [from PSD fit consistent with thermal noise floor]"}
-    conditions: "4 K，6 cm Si 腔，IBS 镀层（φ = 5.15×10⁻⁴）；Si 基底热噪声被 4 K 高 Q 抑制"
-    is_system_limit: true
-    dominated_by: null
-    quantitative_contribution: >
-      IBS 镀层主导（φ_IBS = 5.15×10⁻⁴ >> φ_Si_substrate at 4K）；
-      PSD 拟合系数 a = 4.125×10⁻³³ 与镀层热噪声预测一致
-    regime: all
-    verification_status: observed
-    temporal_role: validates
-    breakthrough_paths:
-      - direction: pri.crystalline_coating_low_brownian_noise
-        expected_gain: >
-          AlGaAs 晶体镀层（室温 φ ~ 2.5×10⁻⁵，4 K 下预期更低）替换 IBS 镀层
-          → 镀层热噪声降低 10–100×；理论下限 mod σ_y 可达 ~10⁻¹⁸ 量级（6 cm 腔）
-        status: proposed
-        source: {zotero_key: "JIZCUZLY", claim: "Reduction of the thermal noise will be possible by replacing the conventional SiO₂/Ta₂O₅ mirrors with crystalline mirrors. Such crystalline mirrors have been shown to exhibit a factor of 10 lower loss angle at room temperature"}
-      - direction: pri.silicon_cte_zero_crossing_17k
-        expected_gain: >
-          17 K（Si CTE 严格第二零点）+ AlGaAs 晶体镀层（4 K 损耗更低）路线，
-          Lee 2026 实现 mod σ_y = 2.5×10⁻¹⁷ 世界纪录
-        status: demonstrated
-        source: {zotero_key: "4QVEXY63", claim: "fractional frequency stability of 2.5×10⁻¹⁷ at 10 s is four times better than expected for dielectric mirrors"}
-        note: "ent.si_crystal_17k_fp_cavity_l26 定义于 lee2026.yaml"
-    note: >
-      pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml；
-      ent.algaas_crystalline_mirror_c13 定义于 cole2013.yaml；
-      Robinson 2019 首次明确：4 K Si 腔即便已在热噪声极限，该极限仍由 IBS 镀层主导，
-      与 124 K 情形（Matei 2017）结构相同，共同指向 AlGaAs 晶体镀层替换方案。
+      '
+    status: proposed
+    source:
+      zotero_key: JIZCUZLY
+      claim: as we continue to reduce the incident power, we can access an extremely
+        low value of cavity drift, making it possible that such a cavity alone could
+        be useful as a potential time scale
+  note: pri.optical_power_cavity_drift 由本文（Robinson 2019）首次提出
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/robinson2019.yaml
+- id: rel.robinson_2019_09
+  subject: ent.si_crystal_fp_cavity_4k_r19
+  predicate: CONDITIONED-BY
+  object: ent.vibration_environment
+  interface_metric: met.fractional_freq_instability_r19
+  coupling_formula: '垂向：Δν/ν ≈ (5±2)×10⁻¹² × a_z /g（@ 9.5 Hz）； 水平：Δν/ν ≈ (2±1)×10⁻¹⁰
+    × a_horiz /g（每方向）
 
-  - id: rel.R08
-    subject: ent.si_crystal_fp_cavity_4k_r19
-    predicate: BOUNDED-BY
-    object: pri.optical_power_cavity_drift
-    confidence: established
-    source: {zotero_key: "JIZCUZLY", claim: "we make the discovery that frequency drift depends linearly on the incident power. The drift decreases as the circulating optical power is reduced, extrapolating to a zero drift when the incident power is zero."}
-    conditions: "长期（>10 天稳定），传输功率 40 nW – 数百 nW 范围"
-    is_system_limit: true
-    dominated_by: pri.optical_power_cavity_drift
-    quantitative_contribution: "线性漂移 = -7×10⁻²¹/s/nW × P_trans；@40 nW → -3×10⁻¹⁹/s"
-    regime: long_term
-    verification_status: observed
-    temporal_role: proposes
-    breakthrough_paths:
-      - direction: pri.silicon_cte_asymptotic_zero_4k
-        expected_gain: >
-          进一步降低腔内循环功率（<40 nW 传输）或采用偶发扫描方案（无持续锁定光）
-          → 漂移外推趋向零，有望作为时间尺度使用
-        status: proposed
-        source: {zotero_key: "JIZCUZLY", claim: "as we continue to reduce the incident power, we can access an extremely low value of cavity drift, making it possible that such a cavity alone could be useful as a potential time scale"}
-    note: "pri.optical_power_cavity_drift 由本文（Robinson 2019）首次提出"
+    '
+  internal_property: 各向异性 Si 晶体振动灵敏度，垂向灵敏度较水平低 ~20× 可利用晶体各向异性优化
+  confidence: established
+  source:
+    zotero_key: JIZCUZLY
+    claim: vertical vibration sensitivity to 5±2×10⁻¹²/g at a driving frequency of
+      9.5 Hz. The horizontal vibration sensitivity in each direction was measured
+      to be 2±1×10⁻¹⁰/g
+  is_system_limit:
+    current: false
+    conditions: '经优化后振动噪声已低于热噪声极限（达到 6.5×10⁻¹⁷）， 但仍是 <0.8 s 和 >80 s 平均时间之外的主要限制
 
-  - id: rel.R09
-    subject: ent.si_crystal_fp_cavity_4k_r19
-    predicate: CONDITIONED-BY
-    object: ent.vibration_environment
-    interface_metric: met.fractional_freq_instability_r19
-    coupling_formula: >
-      垂向：Δν/ν ≈ (5±2)×10⁻¹² × a_z /g（@ 9.5 Hz）；
-      水平：Δν/ν ≈ (2±1)×10⁻¹⁰ × a_horiz /g（每方向）
-    internal_property: "各向异性 Si 晶体振动灵敏度，垂向灵敏度较水平低 ~20× 可利用晶体各向异性优化"
-    confidence: established
-    source: {zotero_key: "JIZCUZLY", claim: "vertical vibration sensitivity to 5±2×10⁻¹²/g at a driving frequency of 9.5 Hz. The horizontal vibration sensitivity in each direction was measured to be 2±1×10⁻¹⁰/g"}
-    is_system_limit:
-      current: false
-      conditions: >
-        经优化后振动噪声已低于热噪声极限（达到 6.5×10⁻¹⁷），
-        但仍是 <0.8 s 和 >80 s 平均时间之外的主要限制
-    note: "ent.vibration_environment 定义于 young1999.yaml 或 webster2007.yaml"
+      '
+  note: ent.vibration_environment 定义于 young1999.yaml 或 webster2007.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/robinson2019.yaml
+- id: rel.robinson_2019_10
+  subject: ent.si_crystal_fp_cavity_4k_r19
+  predicate: PART-OF
+  object: ent.si_crystal_fp_cavity_k12
+  confidence: low
+  source:
+    zotero_key: JIZCUZLY
+    claim: Building on our previous silicon cavity effort [ref 15, Zhang 2017]
+  conditions: null
+  note: '此 PART-OF 描述系统演化关系而非物理包含：Si4 是在 Zhang 2017 基础上改进的版本 （4 K 系统前身；其早期性能指标现已记录于
+    zhang2017.yaml），并非 Si3 （Kessler/Matei 系统）的子单元。 建议改用 DERIVED-FROM 语义（若 Schema 支持）。
+    暂时保留 PART-OF 以标记谱系关系，待专家审核后调整。 ent.si_crystal_fp_cavity_k12 定义于 kessler2012.yaml（描述
+    PTB Si3 124K 腔， 非直接前身）；Si4 的直接前身为 JILA Zhang 2017（PRL 119:243601）。
 
-  - id: rel.R10
-    subject: ent.si_crystal_fp_cavity_4k_r19
-    predicate: PART-OF
-    object: ent.si_crystal_fp_cavity_k12
-    confidence: low
-    source: {zotero_key: "JIZCUZLY", claim: "Building on our previous silicon cavity effort [ref 15, Zhang 2017]"}
-    conditions: null
-    note: >
-      此 PART-OF 描述系统演化关系而非物理包含：Si4 是在 Zhang 2017 基础上改进的版本
-      （4 K 系统前身；其早期性能指标现已记录于 zhang2017.yaml），并非 Si3
-      （Kessler/Matei 系统）的子单元。
-      建议改用 DERIVED-FROM 语义（若 Schema 支持）。
-      暂时保留 PART-OF 以标记谱系关系，待专家审核后调整。
-      ent.si_crystal_fp_cavity_k12 定义于 kessler2012.yaml（描述 PTB Si3 124K 腔，
-      非直接前身）；Si4 的直接前身为 JILA Zhang 2017（PRL 119:243601）。
+    '
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/robinson2019.yaml
+- id: rel.robinson_2019_11
+  subject: met.algaas_coating_loss_angle_ibs_4k_r19
+  predicate: DERIVED-FROM
+  object: met.fractional_freq_instability_r19
+  confidence: established
+  source:
+    zotero_key: JIZCUZLY
+    claim: we extract a loss angle for the SiO₂/Ta₂O₅ mirror coatings to be ϕ = 5.15×10⁻⁴
+  conditions: 从 PSD 拟合 Sy = a·f⁻¹（a = 4.125×10⁻³³）反推，使用 FDT 全表达式
+  note: '指标之间的派生关系：损耗角由频率不稳定度谱推算得出。 此节点用于与 cole2013（ent.algaas_crystalline_mirror_c13，φ≤2.5×10⁻⁵）对比，
+    说明 IBS 镀层在 4 K 的损耗与室温相近，支持晶体镀层路线的必要性。
 
-  - id: rel.R11
-    subject: met.algaas_coating_loss_angle_ibs_4k_r19
-    predicate: DERIVED-FROM
-    object: met.fractional_freq_instability_r19
-    confidence: established
-    source: {zotero_key: "JIZCUZLY", claim: "we extract a loss angle for the SiO₂/Ta₂O₅ mirror coatings to be ϕ = 5.15×10⁻⁴"}
-    conditions: "从 PSD 拟合 Sy = a·f⁻¹（a = 4.125×10⁻³³）反推，使用 FDT 全表达式"
-    note: >
-      指标之间的派生关系：损耗角由频率不稳定度谱推算得出。
-      此节点用于与 cole2013（ent.algaas_crystalline_mirror_c13，φ≤2.5×10⁻⁵）对比，
-      说明 IBS 镀层在 4 K 的损耗与室温相近，支持晶体镀层路线的必要性。
-
-  - id: rel.R12
-    subject: met.cavity_frequency_drift_r19
-    predicate: OPERATIONALIZED-AS
-    object: meth.low_power_cavity_drift_characterization_r19
-    confidence: established
-    source: {zotero_key: "JIZCUZLY", claim: "The lowest drift is attained at a transmitted power of 40 nW, giving a fractional frequency drift of −3×10⁻¹⁹/s"}
-    conditions: "Si4 4 K 腔，传输功率 40 nW – 数百 nW；等待 >10 天瞬态稳态后外推"
-    note: "光功率相关漂移通过低功率漂移表征方法（功率扫描 + 稳态外推）获得"
+    '
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/robinson2019.yaml
+- id: rel.robinson_2019_12
+  subject: met.cavity_frequency_drift_r19
+  predicate: OPERATIONALIZED-AS
+  object: meth.low_power_cavity_drift_characterization_r19
+  confidence: established
+  source:
+    zotero_key: JIZCUZLY
+    claim: The lowest drift is attained at a transmitted power of 40 nW, giving a
+      fractional frequency drift of −3×10⁻¹⁹/s
+  conditions: Si4 4 K 腔，传输功率 40 nW – 数百 nW；等待 >10 天瞬态稳态后外推
+  note: 光功率相关漂移通过低功率漂移表征方法（功率扫描 + 稳态外推）获得
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/robinson2019.yaml
+- id: rel.bridge_brownian_thermal_noise_fdt_cryogenic_silicon_stabilization
+  subject: pri.brownian_thermal_noise_fdt
+  predicate: RESOLVED-BY
+  object: meth.cryogenic_silicon_stabilization
+  confidence: established
+  source:
+    note: Bridge injected to establish reasoning chain for Metric Chain Automation
+- id: rel.bridge_cryogenic_silicon_stabilization_allan_deviation_cryo
+  subject: meth.cryogenic_silicon_stabilization
+  predicate: PRODUCES
+  object: met.allan_deviation_cryo
+  confidence: established
+  source:
+    note: Bridge injected to establish reasoning chain for Metric Chain Automation
+- id: rel.bridge_cryogenic_silicon_cavity_allan_deviation_cryo
+  subject: ent.cryogenic_silicon_cavity
+  predicate: CHARACTERIZED-BY
+  object: met.allan_deviation_cryo
+  confidence: established
+  source:
+    note: Bridge injected to establish reasoning chain for Metric Chain Automation
+- id: rel.bridge_cryo_01
+  subject: ent.fp_cavity_system
+  predicate: BOUNDED-BY
+  object: pri.brownian_thermal_noise_fdt
+  breakthrough_paths:
+  - direction: pri.crystalline_coating_low_brownian_noise
+    expected_gain: AlGaAs 晶体镀层（4 K 下损耗角 ~10⁻⁶）替换 IBS 镀层 → 镀层热噪声降低 10–100×
+    status: proposed
+    source:
+      zotero_key: JIZCUZLY
+      claim: Reduction of the thermal noise will be possible by replacing the conventional SiO₂/Ta₂O₅ mirrors with crystalline mirrors.
+  - direction: pri.silicon_cte_zero_crossing_17k
+    expected_gain: Si 腔 17 K CTE 第二零点 + AlGaAs 镀层 → mod σ_y 可达 10⁻¹⁸ 量级
+    status: demonstrated
+    source:
+      zotero_key: 4QVEXY63
+      claim: fractional frequency stability of 2.5×10⁻¹⁷ at 10 s is four times better than expected for dielectric mirrors

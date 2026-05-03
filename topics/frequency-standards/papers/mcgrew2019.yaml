@@ -40,7 +40,7 @@ metrics:
       source: {zotero_key: "A58NXQWU", claim: "1 × 10^-16 accuracy for optical clock ratios"}
 
 relations:
-  - id: rel.MG01
+  - id: rel.mcgrew_2019_G01
     subject: ent.yb_optical_lattice_clock
     predicate: CHARACTERIZED-BY
     object: met.absolute_freq_ratio_mcgrew2019

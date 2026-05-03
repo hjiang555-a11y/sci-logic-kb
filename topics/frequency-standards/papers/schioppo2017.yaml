@@ -39,7 +39,7 @@ metrics:
       source: {zotero_key: "PSN8LTP5", claim: "clock instability of 3 × 10^-18 in 1 hour"}
 
 relations:
-  - id: rel.SC01
+  - id: rel.schioppo_2017_C01
     subject: ent.yb_dual_ensemble_clock_nist2017
     predicate: CHARACTERIZED-BY
     object: met.clock_instability_yb_schioppo2017

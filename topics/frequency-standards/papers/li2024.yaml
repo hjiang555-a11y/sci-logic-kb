@@ -51,7 +51,7 @@ metrics:
       source: {zotero_key: "P6AV3KJW", claim: "clock instability of 3.3 × 10^-17 / sqrt(tau)"}
 
 relations:
-  - id: rel.LI01
+  - id: rel.li_2024_I01
     subject: ent.nimsri_sr_clock_cas2024
     predicate: CHARACTERIZED-BY
     object: met.systematic_uncertainty_sr_li2024

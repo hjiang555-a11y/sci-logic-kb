@@ -1,259 +1,272 @@
-# Häfner 2015 — 8×10⁻¹⁷ 分数频率不稳定度，48 cm ULE 室温腔
-# 提取者：Claude（AI草稿，待专家确认）
-# 提取日期：2026-04-14
-# Schema版本：v4.1
-
 meta:
-  zotero_key: "UV6S5FFL"
+  zotero_key: UV6S5FFL
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
-  title: "8×10⁻¹⁷ fractional laser frequency instability with a long room-temperature cavity"
+  title: 8×10⁻¹⁷ fractional laser frequency instability with a long room-temperature
+    cavity
   year: 2015
   first_author: Häfner
-  journal: "Optics Letters"
+  journal: Optics Letters
   volume: 40
-  pages: "2112-2115"
-  doi: "10.1364/OL.40.002112"
-  note: >
-    首次展示 48 cm ULE 室温腔达到 σ_y < 1×10⁻¹⁶（1–1000 s），
-    证明长腔策略可使室温腔稳定度接近低温 Si 腔水平。
-    核心创新：自平衡安装（self-balancing mount）——腔体一端铝夹具绕单玻璃球可旋转，
-    自动均衡四点 Viton/Teflon 支撑受力，使 ~1.8 kg 长腔全向加速度灵敏度 < 2×10⁻¹⁰/g。
-    另一创新：从激光二极管侧公共参考镜到腔镜及用户端（Sr 钟、频率梳）全链路光纤相位噪声消除。
+  pages: 2112-2115
+  doi: 10.1364/OL.40.002112
+  note: '首次展示 48 cm ULE 室温腔达到 σ_y < 1×10⁻¹⁶（1–1000 s）， 证明长腔策略可使室温腔稳定度接近低温 Si 腔水平。
+    核心创新：自平衡安装（self-balancing mount）——腔体一端铝夹具绕单玻璃球可旋转， 自动均衡四点 Viton/Teflon 支撑受力，使
+    ~1.8 kg 长腔全向加速度灵敏度 < 2×10⁻¹⁰/g。 另一创新：从激光二极管侧公共参考镜到腔镜及用户端（Sr 钟、频率梳）全链路光纤相位噪声消除。
     PTB（德国），698 nm，与 Si 腔（Kessler 2012/Matei 2017）和可搬运腔三角帽比较。
 
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
+    '
 entities:
-  - id: ent.self_balancing_long_cavity_h15
-    name: "自平衡安装长 ULE 腔（Häfner 2015）"
-    aliases: ["48 cm ULE cavity PTB", "self-balancing mount cavity", "long room-temperature cavity 2015"]
-    hierarchy_level: 2
-    instance_of: ent.fp_cavity_system   # v4.5+ 长腔（48 cm）+ 自平衡安装参数变体
-    status: demonstrated
-    function: >
-      48 cm 长 ULE 间隔物 FP 腔，采用自平衡安装（self-balancing mount）：
-      腔一端的两个 Teflon 柱装在铝夹具上，夹具通过单个玻璃球可绕轴旋转，
-      另一端两个玻璃球防止旋转，从而自动均衡四支撑点受力，
-      消除 Teflon 柱高度误差（加工精度）引起的支撑弹性不均匀，
-      实现 ~1.8 kg 长腔全向加速度灵敏度 < 2×10⁻¹⁰/g。
-    key_parameters:
-      spacer_length: "480 mm（ULE 玻璃间隔物）"
-      spacer_mass: "≈1.8 kg（长重腔，支撑力需均衡至 100 nN 精度量级）"
-      mirror_substrate: "熔融石英（fused silica，低机械损耗，较 ULE 底物热噪声更低）"
-      wavelength: "698 nm（Sr 光钟跃迁）"
-      cte_zero_crossing: "T₀ = −0.24°C（ULE 零膨胀温度，本文实测）"
-      cte_quadratic: "α(T) = 2×10⁻⁹ K⁻² × (T − T₀)"
-      mount_type: "自平衡四点支撑（Viton 球 + Teflon 柱 + 铝夹具 + 玻璃球）"
-      thermal_control: "两级温控：真空室 TEC（近环境温度）+ 腔体直接温控；需 < 1 μK 稳定度"
-      fiber_noise_cancel: "从公共参考镜到腔镜及用户端（Sr 钟、频梳）全链路相位噪声消除"
-      orientation: "水平（horizontal）"
-    design_rationale: >
-      长腔（48 cm）分数热噪声贡献成比例降低（∝ 1/L），
-      但腔重 ~1.8 kg 使支撑力均衡问题严峻：沿光轴 100 nN 的支撑力差
-      导致相对长度变化 1.3×10⁻¹⁶，与目标稳定度量级相当。
-      自平衡安装通过机械自由度自动均衡受力，无需精密加工每个支撑点高度。
-    interface_requirements:
-      temperature: "工作于 CTE 零点 −0.24°C 附近 50 mK 内；需温度稳定度 < 1 μK"
-      vibration: "主动隔振台抑制高频振动（>3 Hz）；自平衡安装解决低频和 DC 加速度灵敏度"
-    note: "Level 2 PART-OF ent.fp_cavity_system（定义于 numata2004.yaml）"
+- id: ent.self_balancing_long_cavity_h15
+  name: 自平衡安装长 ULE 腔（Häfner 2015）
+  aliases:
+  - 48 cm ULE cavity PTB
+  - self-balancing mount cavity
+  - long room-temperature cavity 2015
+  hierarchy_level: 2
+  instance_of: ent.fp_cavity_system
+  status: demonstrated
+  function: '48 cm 长 ULE 间隔物 FP 腔，采用自平衡安装（self-balancing mount）： 腔一端的两个 Teflon 柱装在铝夹具上，夹具通过单个玻璃球可绕轴旋转，
+    另一端两个玻璃球防止旋转，从而自动均衡四支撑点受力， 消除 Teflon 柱高度误差（加工精度）引起的支撑弹性不均匀， 实现 ~1.8 kg 长腔全向加速度灵敏度
+    < 2×10⁻¹⁰/g。
 
+    '
+  key_parameters:
+    spacer_length: 480 mm（ULE 玻璃间隔物）
+    spacer_mass: ≈1.8 kg（长重腔，支撑力需均衡至 100 nN 精度量级）
+    mirror_substrate: 熔融石英（fused silica，低机械损耗，较 ULE 底物热噪声更低）
+    wavelength: 698 nm（Sr 光钟跃迁）
+    cte_zero_crossing: T₀ = −0.24°C（ULE 零膨胀温度，本文实测）
+    cte_quadratic: α(T) = 2×10⁻⁹ K⁻² × (T − T₀)
+    mount_type: 自平衡四点支撑（Viton 球 + Teflon 柱 + 铝夹具 + 玻璃球）
+    thermal_control: 两级温控：真空室 TEC（近环境温度）+ 腔体直接温控；需 < 1 μK 稳定度
+    fiber_noise_cancel: 从公共参考镜到腔镜及用户端（Sr 钟、频梳）全链路相位噪声消除
+    orientation: 水平（horizontal）
+  design_rationale: '长腔（48 cm）分数热噪声贡献成比例降低（∝ 1/L）， 但腔重 ~1.8 kg 使支撑力均衡问题严峻：沿光轴 100
+    nN 的支撑力差 导致相对长度变化 1.3×10⁻¹⁶，与目标稳定度量级相当。 自平衡安装通过机械自由度自动均衡受力，无需精密加工每个支撑点高度。
+
+    '
+  interface_requirements:
+    temperature: 工作于 CTE 零点 −0.24°C 附近 50 mK 内；需温度稳定度 < 1 μK
+    vibration: 主动隔振台抑制高频振动（>3 Hz）；自平衡安装解决低频和 DC 加速度灵敏度
+  note: Level 2 PART-OF ent.fp_cavity_system（定义于 numata2004.yaml）
 principles:
-  - id: pri.long_cavity_thermal_noise_reduction
-    name: "增长腔长降低热噪声分数贡献"
-    tier: engineering
-    verification_status: observed
-    statement: >
-      FP 腔分数频率不稳定度（由热噪声引起）正比于 1/L：
-      热噪声绝对位移谱 √S_x(f) 基本不变（与 L 无关），
-      而分数频率变化 δν/ν = δx/L，故 σ_y(thermal) ∝ 1/L。
-      增长腔长 L 可线性降低分数热噪声，代价是腔体更重，需专门设计振动不敏感安装。
-      Häfner 2015 将腔长从典型 10–25 cm 增至 48 cm，
-      使室温 ULE+熔融石英腔达到 σ_y ~ 8×10⁻¹⁷，接近同期低温 Si 腔（Matei 2017：4×10⁻¹⁷）。
-    domain: "超稳 FP 腔工程设计"
-    formula: "σ_y(thermal) ∝ √(S_x(f)) / (L × ν₀)；S_x 与 L 无关 → σ_y ∝ 1/L"
-    key_insight: >
-      长腔是室温下降低热噪声分数贡献的最直接工程路径，
-      无需低温和特殊材料，代价是更复杂的振动不敏感安装设计（自平衡安装）。
-    conditions: "振动不敏感安装保证长腔不因重力引入额外噪声；腔长增加不显著改变绝对热噪声"
-    applicable_when: "室温 ULE 腔，热噪声为主要限制，腔长增加不受空间约束"
-    source_claim: >
-      "we employ the last approach and report on the design and evaluation of a
-       48 cm long room temperature resonator... instability of below 1×10⁻¹⁶"
+- id: pri.long_cavity_thermal_noise_reduction
+  name: 增长腔长降低热噪声分数贡献
+  tier: engineering
+  verification_status: observed
+  statement: 'FP 腔分数频率不稳定度（由热噪声引起）正比于 1/L： 热噪声绝对位移谱 √S_x(f) 基本不变（与 L 无关）， 而分数频率变化
+    δν/ν = δx/L，故 σ_y(thermal) ∝ 1/L。 增长腔长 L 可线性降低分数热噪声，代价是腔体更重，需专门设计振动不敏感安装。 Häfner
+    2015 将腔长从典型 10–25 cm 增至 48 cm， 使室温 ULE+熔融石英腔达到 σ_y ~ 8×10⁻¹⁷，接近同期低温 Si 腔（Matei
+    2017：4×10⁻¹⁷）。
 
+    '
+  domain: 超稳 FP 腔工程设计
+  formula: σ_y(thermal) ∝ √(S_x(f)) / (L × ν₀)；S_x 与 L 无关 → σ_y ∝ 1/L
+  key_insight: '长腔是室温下降低热噪声分数贡献的最直接工程路径， 无需低温和特殊材料，代价是更复杂的振动不敏感安装设计（自平衡安装）。
+
+    '
+  conditions: 振动不敏感安装保证长腔不因重力引入额外噪声；腔长增加不显著改变绝对热噪声
+  applicable_when: 室温 ULE 腔，热噪声为主要限制，腔长增加不受空间约束
+  source_claim: "\"we employ the last approach and report on the design and evaluation\
+    \ of a\n 48 cm long room temperature resonator... instability of below 1×10⁻¹⁶\"\
+    \n"
 methods:
-  - id: meth.self_balancing_mount_h15
-    name: "自平衡安装方法（Häfner 2015）"
-    type: mechanical_design
-    status: demonstrated
-    description: >
-      为长腔（48 cm ULE，~1.8 kg）设计的自平衡安装方法：腔一端的两个 Teflon 柱装在铝夹具上，
-      夹具通过单个玻璃球可绕轴旋转，另一端两个玻璃球防止旋转，从而自动均衡四支撑点受力，
-      消除 Teflon 柱高度误差（加工精度）引起的支撑弹性不均匀。
-    key_steps:
-      - "将腔体一端置于铝夹具上，通过单个玻璃球提供旋转自由度"
-      - "另一端使用两个玻璃球固定以防止旋转"
-      - "利用腔体自身重量自动均衡四个支撑点（Viton 球 + Teflon 柱）的受力"
-      - "通过实验优化 Viton 球间距以最小化加速度灵敏度"
-    source: {zotero_key: "UV6S5FFL"}
-    note: "该方法解决了长腔特有的支撑力均衡问题，实现全向加速度灵敏度 < 2×10⁻¹⁰/g"
+- id: meth.self_balancing_mount_h15
+  name: 自平衡安装方法（Häfner 2015）
+  type: mechanical_design
+  status: demonstrated
+  description: '为长腔（48 cm ULE，~1.8 kg）设计的自平衡安装方法：腔一端的两个 Teflon 柱装在铝夹具上， 夹具通过单个玻璃球可绕轴旋转，另一端两个玻璃球防止旋转，从而自动均衡四支撑点受力，
+    消除 Teflon 柱高度误差（加工精度）引起的支撑弹性不均匀。
 
+    '
+  key_steps:
+  - 将腔体一端置于铝夹具上，通过单个玻璃球提供旋转自由度
+  - 另一端使用两个玻璃球固定以防止旋转
+  - 利用腔体自身重量自动均衡四个支撑点（Viton 球 + Teflon 柱）的受力
+  - 通过实验优化 Viton 球间距以最小化加速度灵敏度
+  source:
+    zotero_key: UV6S5FFL
+  note: 该方法解决了长腔特有的支撑力均衡问题，实现全向加速度灵敏度 < 2×10⁻¹⁰/g
 metrics:
-  - id: met.fractional_freq_instability_h15
-    name: "分数频率不稳定度（Häfner 2015，48 cm ULE 室温腔）"
-    unit: "无量纲（Allan 偏差 σ_y(τ)）"
-    description: "PTB 48 cm ULE 室温腔稳频激光（698 nm）的分数频率不稳定度"
-    demonstrated_value:
-      value: "< 1×10⁻¹⁶（1 s–1000 s 全域）；热噪声下限约 8×10⁻¹⁷"
-      conditions: "698 nm，室温（CTE 零点 −0.24°C 附近），与 Kessler 2012 Si 腔（1.5 μm，经频率梳）\n        及 12 cm 可搬运 ULE 腔三角帽比较"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "UV6S5FFL", claim: "instability of below 1×10⁻¹⁶ at averaging times from 1 to 1000 s is revealed"}
-    theoretical_floor:
-      value: "~8×10⁻¹⁷（热噪声下限，48 cm 腔 + 熔融石英镜底物）"
-      basis: "Numata 2004 FDT 框架：48 cm 腔长 + 熔融石英底物（低损耗）缩放估算"
-      gap_note: "Matei 2017（Si 腔）仍约 2× 更好；需低温+晶体镀层才能进一步超越"
-
-  - id: met.acceleration_sensitivity_h15
-    name: "全向加速度灵敏度（Häfner 2015 自平衡安装）"
-    unit: "10⁻¹⁰/g（分数频率变化 per 重力加速度）"
-    description: "自平衡安装优化后，48 cm ULE 腔三轴加速度灵敏度（0.7 Hz 正弦激励）"
-    demonstrated_value:
-      value: "κz=1.7×10⁻¹⁰/g，κy=0.5×10⁻¹⁰/g，κx=1.5×10⁻¹⁰/g（全向 < 2×10⁻¹⁰/g）"
-      conditions: "自平衡安装，Viton 球间距实验优化；0.7 Hz 正弦激励；初始未优化约 4×10⁻⁸/g"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "UV6S5FFL", claim: "κz=1.7×10⁻¹⁰/g, κy=0.5×10⁻¹⁰/g, κx=1.5×10⁻¹⁰/g, all measured at 0.7 Hz"}
-    comparison:
-      without_balancing: "~4×10⁻⁸/g（未优化初始值）；改善约 200×"
-      kessler2012_si: "κ ~ 5–8×10⁻¹¹/g（Si 腔，杨氏模量更大，振动灵敏度天然更低）"
-
-# ═══════════════════════════════════════════════
-#  RELATIONS（关系）
-# ═══════════════════════════════════════════════
-
-relations:
-  - id: rel.H01
-    subject: ent.self_balancing_long_cavity_h15
-    predicate: PART-OF
-    object: ent.fp_cavity_system
-    confidence: established
-    source: {zotero_key: "UV6S5FFL", claim: "48 cm long room temperature resonator achieves instability below 1×10⁻¹⁶"}
-    conditions: null
-    note: >
-      原为 COMPETES-WITH（Level 1 vs Level 1），重构后降级为 Level 2 实例（PART-OF）。
-      48 cm 长腔是 FP 腔系统的参数变体（材料=ULE，L=48cm），不是独立竞争方案。
-      ent.fp_cavity_system 定义于 numata2004.yaml。
-
-  - id: rel.H02
-    subject: ent.self_balancing_long_cavity_h15
-    predicate: ENABLED-BY
-    object: pri.cavity_deformation_compensation
-    confidence: established
-    source: {zotero_key: "UV6S5FFL", claim: "self-balancing mount was essential to reliably reach sensitivities to acceleration of below 2×10⁻¹⁰/g in all directions"}
-    conditions: "自平衡安装自动均衡四点受力，使两腔镜中心位移补偿条件成立"
-    temporal_role: extends
-    note: >
-      pri.cavity_deformation_compensation 定义于 webster2007.yaml；
-      Häfner 2015 将该原理扩展至长腔（48 cm，~1.8 kg）场景，
-      通过自平衡安装解决长腔特有的支撑力均衡问题。
-
-  - id: rel.H03
-    subject: ent.self_balancing_long_cavity_h15
-    predicate: CHARACTERIZED-BY
-    object: met.fractional_freq_instability_h15
-    confidence: established
-    source: {zotero_key: "UV6S5FFL", claim: "instability of below 1×10⁻¹⁶ at averaging times from 1 to 1000 s"}
-    conditions: "48 cm ULE 腔，自平衡安装，698 nm，室温"
-
-  - id: rel.H04
-    subject: ent.self_balancing_long_cavity_h15
-    predicate: CHARACTERIZED-BY
-    object: met.acceleration_sensitivity_h15
-    confidence: established
-    source: {zotero_key: "UV6S5FFL", claim: "κz=1.7×10⁻¹⁰/g, κy=0.5×10⁻¹⁰/g, κx=1.5×10⁻¹⁰/g"}
-    conditions: "0.7 Hz 正弦激励，自平衡安装 Viton 球间距优化后"
-
-  - id: rel.H04a
-    subject: ent.self_balancing_long_cavity_h15
-    predicate: IMPLEMENTS
-    object: meth.self_balancing_mount_h15
-    confidence: established
-    source: {zotero_key: "UV6S5FFL", claim: "self-balancing mount was essential to reliably reach sensitivities to acceleration of below 2×10⁻¹⁰/g in all directions"}
-    conditions: "腔端铝夹具 + 单玻璃球旋转自由度 + Viton/Teflon 四点支撑"
-    note: "48 cm 长腔实体由自平衡安装方法实现"
-
-  - id: rel.H05
-    subject: ent.fp_cavity_system
-    predicate: BOUNDED-BY
-    object: pri.brownian_thermal_noise_fdt
-    confidence: established
-    source: {zotero_key: "UV6S5FFL", claim: "best present room temperature resonators provide fractional laser instabilities of 1×10⁻¹⁶–2×10⁻¹⁶, limited by thermal Brownian noise, with the biggest contributions from mirror coatings"}
-    conditions: "室温 ULE 腔（48 cm），充分振动隔离，熔融石英镜底物"
-    is_system_limit: true
-    dominated_by: null
-    quantitative_contribution: "镀层主导（与 Numata 2004、Cole 2013 结论一致）"
-    regime: all
-    # v4.5+ limit_status：Hafner 本文通过 48 cm 长腔（pri.long_cavity_thermal_noise_reduction）
-    # 演示达到 8×10⁻¹⁷，并引用 Cole 2013 AlGaAs 晶体镀层路径共同压制；
-    # 因此 Brownian FDT 的室温瓶颈已被工程组合路径"突破"。
-    limit_status: resolved
-    resolved_by:
-      - pri.long_cavity_thermal_noise_reduction
-      - pri.crystalline_coating_low_brownian_noise
-    resolution_source: {zotero_key: "UV6S5FFL", claim: "instability of below 1×10⁻¹⁶ at averaging times from 1 to 1000 s"}
+- id: met.fractional_freq_instability_h15
+  name: 分数频率不稳定度（Häfner 2015，48 cm ULE 室温腔）
+  unit: 无量纲（Allan 偏差 σ_y(τ)）
+  description: PTB 48 cm ULE 室温腔稳频激光（698 nm）的分数频率不稳定度
+  demonstrated_value:
+    value: < 1×10⁻¹⁶（1 s–1000 s 全域）；热噪声下限约 8×10⁻¹⁷
+    conditions: "698 nm，室温（CTE 零点 −0.24°C 附近），与 Kessler 2012 Si 腔（1.5 μm，经频率梳）\n \
+      \       及 12 cm 可搬运 ULE 腔三角帽比较"
     verification_status: observed
-    temporal_role: validates
-    breakthrough_paths:
-      - direction: pri.long_cavity_thermal_noise_reduction
-        expected_gain: "48 cm 腔使室温热噪声分数贡献降低约 2–5× vs 典型 10–25 cm 腔，达到 ~8×10⁻¹⁷"
-        status: demonstrated
-        source: {zotero_key: "UV6S5FFL", claim: "instability of below 1×10⁻¹⁶ at averaging times from 1 to 1000 s"}
-      - direction: pri.crystalline_coating_low_brownian_noise
-        expected_gain: "AlGaAs 晶体镀层（φ ~ 2.5×10⁻⁵）替代 IBS → 镀层噪声降低 10× → 室温长腔可接近 10⁻¹⁷"
-        status: demonstrated
-        source: {zotero_key: "CWIHQRJD", claim: "tenfold reduction in mechanical damping"}
-    note: >
-      pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml；
-      ent.algaas_crystalline_mirror_c13 定义于 cole2013.yaml。
-
-  - id: rel.H06
-    subject: pri.long_cavity_thermal_noise_reduction
-    predicate: DERIVED-FROM
-    object: pri.brownian_thermal_noise_fdt
     confidence: established
-    source: {zotero_key: "UV6S5FFL", claim: "This noise can be reduced by... using a longer cavity"}
-    conditions: null
-    note: "pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml"
-
-  # rel.H07 已废弃（原 COMPETES-WITH ent.si_crystal_fp_cavity_k12）——
-  # 两者均为 Level 2 实例（PART-OF ent.fp_cavity_system），同级实例之间
-  # 不再用 COMPETES-WITH（参数演进而非竞争），性能对比保留在各自指标的 comparison 字段中。
-
-  - id: rel.H08
-    subject: ent.self_balancing_long_cavity_h15
-    predicate: CONDITIONED-BY
-    object: ent.thermal_environment
-    interface_metric: met.fractional_freq_instability_h15
-    coupling_formula: "Δν/ν = (1/2) × (dα/dT) × (T − T₀)² × ΔT"
-    internal_property: "ULE α(T) = 2×10⁻⁹ K⁻² × (T − T₀)；T₀ = −0.24°C；需 |T−T₀| < 50 mK，ΔT < 1 μK"
+    source:
+      zotero_key: UV6S5FFL
+      claim: instability of below 1×10⁻¹⁶ at averaging times from 1 to 1000 s is revealed
+  theoretical_floor:
+    value: ~8×10⁻¹⁷（热噪声下限，48 cm 腔 + 熔融石英镜底物）
+    basis: Numata 2004 FDT 框架：48 cm 腔长 + 熔融石英底物（低损耗）缩放估算
+    gap_note: Matei 2017（Si 腔）仍约 2× 更好；需低温+晶体镀层才能进一步超越
+- id: met.acceleration_sensitivity_h15
+  name: 全向加速度灵敏度（Häfner 2015 自平衡安装）
+  unit: 10⁻¹⁰/g（分数频率变化 per 重力加速度）
+  description: 自平衡安装优化后，48 cm ULE 腔三轴加速度灵敏度（0.7 Hz 正弦激励）
+  demonstrated_value:
+    value: κz=1.7×10⁻¹⁰/g，κy=0.5×10⁻¹⁰/g，κx=1.5×10⁻¹⁰/g（全向 < 2×10⁻¹⁰/g）
+    conditions: 自平衡安装，Viton 球间距实验优化；0.7 Hz 正弦激励；初始未优化约 4×10⁻⁸/g
+    verification_status: observed
     confidence: established
-    source: {zotero_key: "UV6S5FFL", claim: "if operated within 50 mK of T₀, a temperature stability of better than 1 μK is required to reach a fractional frequency instability of below 10⁻¹⁶"}
-    is_system_limit:
-      current: false
-      conditions: "温控满足 < 1 μK 时布朗热噪声为主要极限；温控不足时温度噪声可能主导"
-    note: >
-      ent.thermal_environment 定义于 jiang2010.yaml；
-      Häfner 2015 精确测量 ULE 腔 CTE 零点（−0.24°C）和二次系数（2×10⁻⁹ K⁻²），
-      为温度灵敏度定量计算提供实测数据。
+    source:
+      zotero_key: UV6S5FFL
+      claim: κz=1.7×10⁻¹⁰/g, κy=0.5×10⁻¹⁰/g, κx=1.5×10⁻¹⁰/g, all measured at 0.7 Hz
+  comparison:
+    without_balancing: ~4×10⁻⁸/g（未优化初始值）；改善约 200×
+    kessler2012_si: κ ~ 5–8×10⁻¹¹/g（Si 腔，杨氏模量更大，振动灵敏度天然更低）
+relations:
+- id: rel.häfner_2015_01
+  subject: ent.self_balancing_long_cavity_h15
+  predicate: PART-OF
+  object: ent.fp_cavity_system
+  confidence: established
+  source:
+    zotero_key: UV6S5FFL
+    claim: 48 cm long room temperature resonator achieves instability below 1×10⁻¹⁶
+  conditions: null
+  note: '原为 COMPETES-WITH（Level 1 vs Level 1），重构后降级为 Level 2 实例（PART-OF）。 48 cm 长腔是
+    FP 腔系统的参数变体（材料=ULE，L=48cm），不是独立竞争方案。 ent.fp_cavity_system 定义于 numata2004.yaml。
 
-  - id: rel.H09
-    subject: pri.long_cavity_thermal_noise_reduction
-    predicate: DERIVED-FROM
-    object: pri.brownian_thermal_noise_fdt
-    confidence: established
-    source: {zotero_key: "UV6S5FFL", claim: "thermal noise floor scales as 1/L with cavity length; increasing L reduces the FDT-limited displacement noise"}
-    note: "长腔降噪策略是 FDT 位移噪声与腔长 L 的解析依赖关系的工程特化；pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml（跨文件共用节点）"
+    '
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/hafner2015.yaml
+- id: rel.häfner_2015_02
+  subject: ent.self_balancing_long_cavity_h15
+  predicate: ENABLED-BY
+  object: pri.cavity_deformation_compensation
+  confidence: established
+  source:
+    zotero_key: UV6S5FFL
+    claim: self-balancing mount was essential to reliably reach sensitivities to acceleration
+      of below 2×10⁻¹⁰/g in all directions
+  conditions: 自平衡安装自动均衡四点受力，使两腔镜中心位移补偿条件成立
+  temporal_role: extends
+  note: 'pri.cavity_deformation_compensation 定义于 webster2007.yaml； Häfner 2015 将该原理扩展至长腔（48
+    cm，~1.8 kg）场景， 通过自平衡安装解决长腔特有的支撑力均衡问题。
+
+    '
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/hafner2015.yaml
+- id: rel.häfner_2015_03
+  subject: ent.self_balancing_long_cavity_h15
+  predicate: CHARACTERIZED-BY
+  object: met.fractional_freq_instability_h15
+  confidence: established
+  source:
+    zotero_key: UV6S5FFL
+    claim: instability of below 1×10⁻¹⁶ at averaging times from 1 to 1000 s
+  conditions: 48 cm ULE 腔，自平衡安装，698 nm，室温
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/hafner2015.yaml
+- id: rel.häfner_2015_04
+  subject: ent.self_balancing_long_cavity_h15
+  predicate: CHARACTERIZED-BY
+  object: met.acceleration_sensitivity_h15
+  confidence: established
+  source:
+    zotero_key: UV6S5FFL
+    claim: κz=1.7×10⁻¹⁰/g, κy=0.5×10⁻¹⁰/g, κx=1.5×10⁻¹⁰/g
+  conditions: 0.7 Hz 正弦激励，自平衡安装 Viton 球间距优化后
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/hafner2015.yaml
+- id: rel.häfner_2015_04a
+  subject: ent.self_balancing_long_cavity_h15
+  predicate: IMPLEMENTS
+  object: meth.self_balancing_mount_h15
+  confidence: established
+  source:
+    zotero_key: UV6S5FFL
+    claim: self-balancing mount was essential to reliably reach sensitivities to acceleration
+      of below 2×10⁻¹⁰/g in all directions
+  conditions: 腔端铝夹具 + 单玻璃球旋转自由度 + Viton/Teflon 四点支撑
+  note: 48 cm 长腔实体由自平衡安装方法实现
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/hafner2015.yaml
+- id: rel.häfner_2015_05
+  subject: ent.fp_cavity_system
+  predicate: BOUNDED-BY
+  object: pri.brownian_thermal_noise_fdt
+  confidence: established
+  source:
+    zotero_key: UV6S5FFL
+    claim: best present room temperature resonators provide fractional laser instabilities
+      of 1×10⁻¹⁶–2×10⁻¹⁶, limited by thermal Brownian noise, with the biggest contributions
+      from mirror coatings
+  conditions: 室温 ULE 腔（48 cm），充分振动隔离，熔融石英镜底物
+  is_system_limit: true
+  dominated_by: null
+  quantitative_contribution: 镀层主导（与 Numata 2004、Cole 2013 结论一致）
+  regime: all
+  limit_status: resolved
+  resolved_by:
+  - pri.long_cavity_thermal_noise_reduction
+  - pri.crystalline_coating_low_brownian_noise
+  resolution_source:
+    zotero_key: UV6S5FFL
+    claim: instability of below 1×10⁻¹⁶ at averaging times from 1 to 1000 s
+  verification_status: observed
+  temporal_role: validates
+  breakthrough_paths:
+  - direction: pri.long_cavity_thermal_noise_reduction
+    expected_gain: 48 cm 腔使室温热噪声分数贡献降低约 2–5× vs 典型 10–25 cm 腔，达到 ~8×10⁻¹⁷
+    status: demonstrated
+    source:
+      zotero_key: UV6S5FFL
+      claim: instability of below 1×10⁻¹⁶ at averaging times from 1 to 1000 s
+  - direction: pri.crystalline_coating_low_brownian_noise
+    expected_gain: AlGaAs 晶体镀层（φ ~ 2.5×10⁻⁵）替代 IBS → 镀层噪声降低 10× → 室温长腔可接近 10⁻¹⁷
+    status: demonstrated
+    source:
+      zotero_key: CWIHQRJD
+      claim: tenfold reduction in mechanical damping
+  note: 'pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml； ent.algaas_crystalline_mirror_c13
+    定义于 cole2013.yaml。
+
+    '
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/hafner2015.yaml
+- id: rel.häfner_2015_06
+  subject: pri.long_cavity_thermal_noise_reduction
+  predicate: DERIVED-FROM
+  object: pri.brownian_thermal_noise_fdt
+  confidence: established
+  source:
+    zotero_key: UV6S5FFL
+    claim: This noise can be reduced by... using a longer cavity
+  conditions: null
+  note: pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/hafner2015.yaml
+- id: rel.häfner_2015_08
+  subject: ent.self_balancing_long_cavity_h15
+  predicate: CONDITIONED-BY
+  object: ent.thermal_environment
+  interface_metric: met.fractional_freq_instability_h15
+  coupling_formula: Δν/ν = (1/2) × (dα/dT) × (T − T₀)² × ΔT
+  internal_property: ULE α(T) = 2×10⁻⁹ K⁻² × (T − T₀)；T₀ = −0.24°C；需 |T−T₀| < 50 mK，ΔT
+    < 1 μK
+  confidence: established
+  source:
+    zotero_key: UV6S5FFL
+    claim: if operated within 50 mK of T₀, a temperature stability of better than
+      1 μK is required to reach a fractional frequency instability of below 10⁻¹⁶
+  is_system_limit:
+    current: false
+    conditions: 温控满足 < 1 μK 时布朗热噪声为主要极限；温控不足时温度噪声可能主导
+  note: 'ent.thermal_environment 定义于 jiang2010.yaml； Häfner 2015 精确测量 ULE 腔 CTE 零点（−0.24°C）和二次系数（2×10⁻⁹
+    K⁻²）， 为温度灵敏度定量计算提供实测数据。
+
+    '
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/hafner2015.yaml
+- id: rel.häfner_2015_09
+  subject: pri.long_cavity_thermal_noise_reduction
+  predicate: DERIVED-FROM
+  object: pri.brownian_thermal_noise_fdt
+  confidence: established
+  source:
+    zotero_key: UV6S5FFL
+    claim: thermal noise floor scales as 1/L with cavity length; increasing L reduces
+      the FDT-limited displacement noise
+  note: 长腔降噪策略是 FDT 位移噪声与腔长 L 的解析依赖关系的工程特化；pri.brownian_thermal_noise_fdt 定义于 numata2004.yaml（跨文件共用节点）
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/hafner2015.yaml

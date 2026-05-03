@@ -104,7 +104,7 @@ principles:
         context: "应用该原理实现 390–520 nm 连续天文光梳，梳齿均匀度 <5 dB，适配 HARPS/ESPRESSO/ANDES 蓝光 RV 仪器（目标 <10 cm/s 精度）"
 
 relations:
-  - id: rel.Cheng24_01
+  - id: rel.cheng_2024_heng24_01
     predicate: BOUNDED-BY
     subject: ent.continuous_uv_bluegreen_astrocomb_c24
     object: pri.shg_sfm_combined_astrocomb_continuous_coverage_c24
@@ -129,7 +129,7 @@ relations:
       BOUNDED-BY 关系：蓝光天文光梳的连续覆盖能力受"单 SHG 谱宽不足"限制，
       通过 SHG + SFM 组合突破该限制。补 breakthrough_paths（breakthrough tier）。
 
-  - id: rel.Cheng24_02
+  - id: rel.cheng_2024_heng24_02
     predicate: CHARACTERIZED-BY
     subject: ent.continuous_uv_bluegreen_astrocomb_c24
     object: met.astrocomb_continuous_coverage_c24

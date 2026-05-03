@@ -1,126 +1,132 @@
-# Millo 2009 — 基于振动不敏感腔的超稳激光
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-15
-# Schema版本：v4.1
-
 meta:
-  zotero_key: "GLXHEIPV"
+  zotero_key: GLXHEIPV
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: "Ultra-stable lasers based on vibration insensitive cavities"
+  title: Ultra-stable lasers based on vibration insensitive cavities
   year: 2009
   first_author: Millo
-  journal: "Physical Review A"
+  journal: Physical Review A
   volume: 79
-  pages: "053829"
-  doi: "10.1103/PhysRevA.79.053829"
-  note: >
-    两台使用 FS（熔融石英）镜基底的振动不敏感腔超稳激光：竖直光轴+水平光轴两种设计。
-    振动灵敏度 ≤1.5×10⁻¹¹ per m/s²（各方向），支撑点位置依赖极低（无需精细调谐）。
-    稳定度 5.6×10⁻¹⁶ @1s（单腔推断），为该腔长（10cm）最佳结果。
-    首次使用 FS 镜降低热噪声（较全 ULE 腔提升 ~2×）。
-    LNE-SYRTE（Santarelli/Lemonde 组），1064 nm。
+  pages: 053829
+  doi: 10.1103/PhysRevA.79.053829
+  note: '两台使用 FS（熔融石英）镜基底的振动不敏感腔超稳激光：竖直光轴+水平光轴两种设计。 振动灵敏度 ≤1.5×10⁻¹¹ per m/s²（各方向），支撑点位置依赖极低（无需精细调谐）。
+    稳定度 5.6×10⁻¹⁶ @1s（单腔推断），为该腔长（10cm）最佳结果。 首次使用 FS 镜降低热噪声（较全 ULE 腔提升 ~2×）。 LNE-SYRTE（Santarelli/Lemonde
+    组），1064 nm。
 
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
-# 不新增实体/原理节点——FS 镜材料选择记录在指标 conditions 中
-
+    '
 methods:
-  - id: meth.vibration_insensitive_cavity_design_m09
-    name: "振动不敏感腔设计（Millo 2009）"
-    full_name: "Vibration-insensitive cavity design with low support-point sensitivity"
-    status: demonstrated
-    category: "腔体设计方法"
-    applies_to: ent.fp_cavity_system
-    steps_summary: >
-      设计竖直和水平光轴两种10 cm FP腔，采用FS镜基底降低热噪声，通过对称支撑点设计和优化几何形状，
-      使振动灵敏度对各方向≤1.5×10⁻¹¹ per m/s²，且支撑点位置依赖性极低，无需精细调谐。
-    advantages:
-      - "低振动灵敏度（各方向≤1.5×10⁻¹¹ per m/s²）"
-      - "支撑点位置依赖低，易于安装"
-      - "FS镜降低热噪声（相比全ULE腔）"
-    disadvantages:
-      - "FS镜CTE不为零，需温控"
-      - "仅10 cm腔长，热噪声极限相对较高"
-    note: >
-      Millo 2009首次演示FS镜腔，振动灵敏度达到当时最佳水平。
-    source_claim: >
-      "Vibration sensitivity components measured are equal to or better than 1.5×10⁻¹¹ per m/s² for each spatial direction"
+- id: meth.vibration_insensitive_cavity_design_m09
+  name: 振动不敏感腔设计（Millo 2009）
+  full_name: Vibration-insensitive cavity design with low support-point sensitivity
+  status: demonstrated
+  category: 腔体设计方法
+  applies_to: ent.fp_cavity_system
+  steps_summary: '设计竖直和水平光轴两种10 cm FP腔，采用FS镜基底降低热噪声，通过对称支撑点设计和优化几何形状， 使振动灵敏度对各方向≤1.5×10⁻¹¹
+    per m/s²，且支撑点位置依赖性极低，无需精细调谐。
 
+    '
+  advantages:
+  - 低振动灵敏度（各方向≤1.5×10⁻¹¹ per m/s²）
+  - 支撑点位置依赖低，易于安装
+  - FS镜降低热噪声（相比全ULE腔）
+  disadvantages:
+  - FS镜CTE不为零，需温控
+  - 仅10 cm腔长，热噪声极限相对较高
+  note: 'Millo 2009首次演示FS镜腔，振动灵敏度达到当时最佳水平。
+
+    '
+  source_claim: '"Vibration sensitivity components measured are equal to or better
+    than 1.5×10⁻¹¹ per m/s² for each spatial direction"
+
+    '
 metrics:
-  - id: met.fractional_freq_instability_millo09
-    name: "分数频率不稳定度（Millo 2009，FS 镜腔）"
-    unit: "无量纲"
-    description: "使用 FS 镜降低热噪声后的单腔推断稳定度"
-    demonstrated_value:
-      value: "5.6×10⁻¹⁶ @1s (单腔推断); 7.9×10⁻¹⁶ @1s (双腔拍频)"
-      conditions: "10 cm ULE 间隔物 + FS 镜, 1064 nm, 振动不敏感设计, 温度稳定"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "GLXHEIPV", claim: "at least one of the stabilized lasers has a stability better than 5.6×10⁻¹⁶ at 1 second"}
-    theoretical_floor:
-      value: "~5×10⁻¹⁶"
-      basis: "FS 镜热噪声极限（低于全 ULE 腔的 ~1×10⁻¹⁵）"
-      gap_note: "接近热噪声极限"
-    historical_landmarks:
-      best_demonstration:
-        value: "5.6×10⁻¹⁶ @1s"
-        year: 2009
-        source: {zotero_key: "GLXHEIPV"}
-        note: "10 cm 紧凑型腔的当时最佳稳定度，首次 FS 镜腔演示"
-
-  - id: met.acceleration_sensitivity_millo09
-    name: "振动灵敏度（Millo 2009，竖直腔/水平腔）"
-    unit: "(m/s²)⁻¹"
-    description: "两种腔设计的三轴振动灵敏度"
-    demonstrated_value:
-      value: "≤1.5×10⁻¹¹ per m/s² (每方向); 竖直腔最低 3.5×10⁻¹² (竖直方向); 水平腔最低 5×10⁻¹² (竖直方向)"
-      conditions: "竖直/水平两种设计, 10 cm 腔, 无需精细调谐支撑点"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "GLXHEIPV", claim: "Vibration sensitivity components measured are equal to or better than 1.5×10⁻¹¹ per m/s² for each spatial direction"}
-
-relations:
-  - id: rel.Mil01
-    subject: ent.fp_cavity_system
-    predicate: BOUNDED-BY
-    object: pri.brownian_thermal_noise_fdt
-    confidence: established
-    source: {zotero_key: "GLXHEIPV", claim: "best result achieved for a cavity of this length... lower than the noise floor of an all ULE cavity"}
-    is_system_limit: true
-    dominated_by: null
+- id: met.fractional_freq_instability_millo09
+  name: 分数频率不稳定度（Millo 2009，FS 镜腔）
+  unit: 无量纲
+  description: 使用 FS 镜降低热噪声后的单腔推断稳定度
+  demonstrated_value:
+    value: 5.6×10⁻¹⁶ @1s (单腔推断); 7.9×10⁻¹⁶ @1s (双腔拍频)
+    conditions: 10 cm ULE 间隔物 + FS 镜, 1064 nm, 振动不敏感设计, 温度稳定
     verification_status: observed
-    temporal_role: validates
-    breakthrough_paths: []
-    note: "跨文件引用 numata2004.yaml; FS 镜使热噪声极限低于全 ULE 腔"
-
-  - id: rel.Mil02
-    subject: ent.fp_cavity_system
-    predicate: CONDITIONED-BY
-    object: ent.vibration_environment
     confidence: established
-    source: {zotero_key: "GLXHEIPV", claim: "minimize the effects of residual vibration"}
-    interface_metric: met.acceleration_sensitivity_millo09
-    is_system_limit:
-      current: false
-      conditions: "本文设计充分抑制后退出限制序列"
-    note: "跨文件引用 young1999.yaml"
-
-  - id: rel.Mil03
-    subject: ent.fp_cavity_system
-    predicate: CHARACTERIZED-BY
-    object: met.fractional_freq_instability_millo09
+    source:
+      zotero_key: GLXHEIPV
+      claim: at least one of the stabilized lasers has a stability better than 5.6×10⁻¹⁶
+        at 1 second
+  theoretical_floor:
+    value: ~5×10⁻¹⁶
+    basis: FS 镜热噪声极限（低于全 ULE 腔的 ~1×10⁻¹⁵）
+    gap_note: 接近热噪声极限
+  historical_landmarks:
+    best_demonstration:
+      value: 5.6×10⁻¹⁶ @1s
+      year: 2009
+      source:
+        zotero_key: GLXHEIPV
+      note: 10 cm 紧凑型腔的当时最佳稳定度，首次 FS 镜腔演示
+- id: met.acceleration_sensitivity_millo09
+  name: 振动灵敏度（Millo 2009，竖直腔/水平腔）
+  unit: (m/s²)⁻¹
+  description: 两种腔设计的三轴振动灵敏度
+  demonstrated_value:
+    value: ≤1.5×10⁻¹¹ per m/s² (每方向); 竖直腔最低 3.5×10⁻¹² (竖直方向); 水平腔最低 5×10⁻¹² (竖直方向)
+    conditions: 竖直/水平两种设计, 10 cm 腔, 无需精细调谐支撑点
+    verification_status: observed
     confidence: established
-    source: {zotero_key: "GLXHEIPV", claim: "stability better than 5.6×10⁻¹⁶ at 1 second"}
-
-  - id: rel.Mil04
-    subject: ent.fp_cavity_system
-    predicate: CHARACTERIZED-BY
-    object: met.acceleration_sensitivity_millo09
-    confidence: established
-    source: {zotero_key: "GLXHEIPV", claim: "Vibration sensitivity components measured are equal to or better than 1.5×10⁻¹¹ per m/s² for each spatial direction"}
-    conditions: "竖直/水平两种设计, 10 cm 腔"
-    note: "跨文件引用，ent.fp_cavity_system 定义于 numata2004.yaml"
+    source:
+      zotero_key: GLXHEIPV
+      claim: Vibration sensitivity components measured are equal to or better than
+        1.5×10⁻¹¹ per m/s² for each spatial direction
+relations:
+- id: rel.millo_2009_il01
+  subject: ent.fp_cavity_system
+  predicate: BOUNDED-BY
+  object: pri.brownian_thermal_noise_fdt
+  confidence: established
+  source:
+    zotero_key: GLXHEIPV
+    claim: best result achieved for a cavity of this length... lower than the noise
+      floor of an all ULE cavity
+  is_system_limit: true
+  dominated_by: null
+  verification_status: observed
+  temporal_role: validates
+  breakthrough_paths: []
+  note: 跨文件引用 numata2004.yaml; FS 镜使热噪声极限低于全 ULE 腔
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/millo2009.yaml
+- id: rel.millo_2009_il02
+  subject: ent.fp_cavity_system
+  predicate: CONDITIONED-BY
+  object: ent.vibration_environment
+  confidence: established
+  source:
+    zotero_key: GLXHEIPV
+    claim: minimize the effects of residual vibration
+  interface_metric: met.acceleration_sensitivity_millo09
+  is_system_limit:
+    current: false
+    conditions: 本文设计充分抑制后退出限制序列
+  note: 跨文件引用 young1999.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/millo2009.yaml
+- id: rel.millo_2009_il03
+  subject: ent.fp_cavity_system
+  predicate: CHARACTERIZED-BY
+  object: met.fractional_freq_instability_millo09
+  confidence: established
+  source:
+    zotero_key: GLXHEIPV
+    claim: stability better than 5.6×10⁻¹⁶ at 1 second
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/millo2009.yaml
+- id: rel.millo_2009_il04
+  subject: ent.fp_cavity_system
+  predicate: CHARACTERIZED-BY
+  object: met.acceleration_sensitivity_millo09
+  confidence: established
+  source:
+    zotero_key: GLXHEIPV
+    claim: Vibration sensitivity components measured are equal to or better than 1.5×10⁻¹¹
+      per m/s² for each spatial direction
+  conditions: 竖直/水平两种设计, 10 cm 腔
+  note: 跨文件引用，ent.fp_cavity_system 定义于 numata2004.yaml
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/millo2009.yaml

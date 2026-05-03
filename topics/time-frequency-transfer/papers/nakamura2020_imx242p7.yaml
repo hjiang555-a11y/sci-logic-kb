@@ -55,7 +55,7 @@ entities:
     note: "Level 2 实例，使能节点；跨专题（OFC + TF transfer 电学域）"
 
 relations:
-  - id: rel.Nak20_01
+  - id: rel.nakamura_2020_ak20_01
     subject: ent.optical_to_microwave_photonic_synth_n20
     predicate: CONDITIONED-BY
     object: ent.optical_frequency_comb
@@ -64,7 +64,7 @@ relations:
       claim: "mediated by an optical frequency comb"
     note: "跨专题：ent.optical_frequency_comb（OFC）"
 
-  - id: rel.Nak20_02
+  - id: rel.nakamura_2020_ak20_02
     subject: ent.optical_to_microwave_photonic_synth_n20
     predicate: CONDITIONED-BY
     object: ent.optical_frequency_standard
@@ -73,7 +73,7 @@ relations:
       claim: "microwave signal ... tracks the optical clock phase"
     note: "跨专题：ent.optical_frequency_standard（frequency-standards）"
 
-  - id: rel.Nak20_03
+  - id: rel.nakamura_2020_ak20_03
     subject: ent.optical_to_microwave_photonic_synth_n20
     predicate: CHARACTERIZED-BY
     object: met.coherent_optical_fiber_link_instability

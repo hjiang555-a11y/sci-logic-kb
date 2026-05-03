@@ -97,7 +97,7 @@ principles:
         context: "应用该原理实现单腔双梳光谱（世界首次，2016），互相干时间 >10 s（无主动锁相），简化传统双梳系统"
 
 relations:
-  - id: rel.Ide01
+  - id: rel.ideguchi_2016_de01
     predicate: BOUNDED-BY
     subject: ent.klm_bidirectional_ring_dual_comb_i16
     object: pri.kerr_asymmetry_induced_frep_difference_i16
@@ -122,7 +122,7 @@ relations:
       BOUNDED-BY 关系：单腔双梳的相对相干性被动稳定能力受"共享腔长→共模抑制"限制，
       通过 Kerr 非线性不对称原理实现该能力。补 breakthrough_paths（breakthrough tier）。
 
-  - id: rel.Ide02
+  - id: rel.ideguchi_2016_de02
     predicate: ENABLED-BY
     subject: meth.single_cavity_dual_comb_spectroscopy_i16
     object: ent.klm_bidirectional_ring_dual_comb_i16

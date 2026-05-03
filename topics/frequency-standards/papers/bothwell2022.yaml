@@ -53,7 +53,7 @@ principles:
     source_claim: "resolving the gravitational redshift across a millimeter-scale atomic sample"
 
 relations:
-  - id: rel.Bot22_01
+  - id: rel.bothwell_2022_ot22_01
     subject: ent.jila_mm_scale_redshift_sr_clock_b22
     predicate: PART-OF
     object: ent.optical_lattice_clock
@@ -61,7 +61,7 @@ relations:
       paper: bothwell2022
       claim: "Sr optical lattice clock"
 
-  - id: rel.Bot22_02
+  - id: rel.bothwell_2022_ot22_02
     subject: ent.jila_mm_scale_redshift_sr_clock_b22
     predicate: OPERATIONALIZED-AS
     object: pri.gravitational_redshift_within_atomic_sample
