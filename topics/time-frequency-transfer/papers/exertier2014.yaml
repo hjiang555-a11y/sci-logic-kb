@@ -1,0 +1,201 @@
+# Exertier 2014 — Time Transfer by Laser Link: Data analysis and validation to the ps level [evidence]
+# 提取者：Claude Code（AI 草稿，待专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.5
+# 专题：time-frequency-transfer（卫星激光时间传递 — T2L2 数据处理与 ps 级验证）
+# contribution_type: evidence — 开发 T2L2 完整数据处理管线，将原始测量转化为地-地时钟同步产品；
+#   建立噪声/信号分离模型，通过 5 年数据验证共视和非共视模式的时间稳定性。
+
+meta:
+  zotero_key: "1-s2.0-S0273117714005274-main"
+  topic: time-frequency-transfer
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Time Transfer by Laser Link: Data analysis and validation to the ps level"
+  year: 2014
+  first_author: Exertier
+  authors: ["P. Exertier", "E. Samain", "N. Martin", "C. Courde", "M. Laas-Bourez", "C. Foussard", "Ph. Guillemot"]
+  journal: "Advances in Space Research"
+  volume: 54
+  issue: 11
+  pages: "2371-2385"
+  doi: "10.1016/j.asr.2014.08.015"
+  note: >
+    [evidence 论文] T2L2/Jason-2 数据处理方法学与 5 年（2008–2013）数据验证。
+    建立从原始 SLR+T2L2 数据到地-地时钟同步的完整数据处理管线：三重态识别、
+    仪器修正（时间游走 30–150 ps、LRA-T2L2 几何 ~0.2 ns、相对论频率偏移~
+    40–100 ps/pass、地面站校准）、噪声/信号分离模型、共视与非共视模式分析。
+    配备 H-Maser 的 SLR 站最佳地-空 TDEV ~6–8 ps@75 s；非共视模式受限于
+    DORIS USO 长期频率建模精度。突出 SLR 站校准缺失是当前准确度瓶颈。
+
+entities:
+  - id: ent.t2l2_data_pipeline_exertier2014
+    name: "T2L2/Jason-2 数据处理管线与分析中心（Exertier 2014）"
+    tier: system
+    domain: "卫星激光时间传递；时间频率计量数据处理"
+    description: >
+      T2L2 分析中心（法国 Grasse）自 2008 年起开发的端到端数据处理管线，
+      将 SLR 全速率数据和 T2L2 星上数据联合处理为地-地和地-空时间传递产品。
+      核心组件：(i) 三重态识别引擎——通过星地时间戳互相关（μs 级）在无歧义下
+      匹配 t_start、t_return 和 t_board；(ii) 仪器修正链——时间游走补偿模型
+      （30–150 ps，依赖接收能量和姿态）、LRA-T2L2 几何修正（~200 ps，依赖姿控四元数）、
+      Sagnac 效应（~30 ns）、Schwarzschild 相对论频移（40–100 ps/pass）；
+      (iii) 噪声/信号分离模型 d_s(t) = N(t) + S_nl(t) + E_d；(iv) CV/非CV 模式
+      时间传递产品。截至 2013 年，20–25 个 SLR 站持续参与，8 站配备超稳钟。
+    verification_status: demonstrated
+    source:
+      zotero_key: "1-s2.0-S0273117714005274-main"
+      claim: "This paper focuses on the data reduction process which was developed specifically to transform the raw information given by both space instrument and ground network."
+
+principles:
+  - id: pri.t2l2_noise_signal_separation_model
+    name: "T2L2 噪声/信号分离模型原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      T2L2 地面-空间时间传递残差 d_s(t) 可分解为三部分：
+      d_s(t) = N(t) + S_nl(t) + E_d，
+      其中 N(t) 为白噪声（探测噪声 ~几十 ps、测时噪声 5–10 ps + 3 ps），
+      S_nl(t) 为剩余低频非线性信号（几何修正残余、USO 长期漂移、Sagnac 残余、
+      相对论残余——各 ~1–3 ps），E_d 为常数偏差（5–10 ps，来自校准和模型系统差）。
+      此分解是分离计量信号与仪器/轨道系统效应、在 Allan 方差图上识别不同噪声域
+      （s^(-1/2) 白噪声→USO 慢漂主导）的分析基础。
+    domain: "时频传递；计量数据处理；噪声分析"
+    key_insight: >
+      将时间传递残差从单一 RMS 数字分解为 N/S/E 三组分，允许在 Allan 方差图上
+      （τ=0.1s→τ=600s）追踪噪声形态转变——短稳受限于白噪声（~50 ps@0.1 s，
+      按 τ^(-1/2) 改善至 ~6–8 ps@75 s），长稳被 USO 随机游走类噪声主导
+      （>100 s 后回升至数 10 ps）。
+    conditions: "配备 H-Maser/Cs 钟 + 1 ps 分辨率计时器的 SLR 站；精确 1 天轨道（3–5 cm）；ITRF2008 站坐标（1–2 cm）"
+    formula: "d_s(t) = N(t) + S_nl(t) + E_d"
+    source:
+      zotero_key: "1-s2.0-S0273117714005274-main"
+      claim: "ds(t) = N(t) + S_nl(t) + E_d where: N(t) are white noise, S_nl(t) are remaining nonlinear signals, and E_d are constant errors."
+
+  - id: pri.t2l2_common_view_time_transfer_principle
+    name: "T2L2 共视模式地-地时间传递原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      当两 SLR 站同时位于 Jason-2 视场内（距离 <5000 km，脉冲间延迟 ~0.1 s 至
+      几十秒），T2L2 以共视模式工作：两站分别进行地-空时间传递，取其差分得到
+      地-地时间同步。在此模式下，DORIS USO 的短稳噪声在两站差分中抵消
+      （USO 在 ~10 s 尺度上极稳定），地-地时间传递仅受限于两站 SLR/T2L2
+      白噪声联合贡献——而无需精确建模 USO 长期行为。
+    domain: "时间传递；共视比对；卫星时频计量"
+    key_insight: >
+      CV 模式通过差分消去共享的星上参考噪声（DORIS USO），将地-地传递性能
+      从 USO 长期漂移的约束中解放出来——这就是为何 T2L2 CV 传递可达 ps 级而
+      非 CV 传递仍受限于 USO 建模精度。
+    conditions: "两 SLR 站在 Jason-2 共视区内（<5000 km 距离）；两站均配备超稳参考钟（H-Maser/Cs）和 1 ps 计时器"
+    source:
+      zotero_key: "1-s2.0-S0273117714005274-main"
+      claim: "the best performance of the T2L2 time transfer is expected rather in the Common View (CV) mode, both in terms of time stability and accuracy."
+
+methods:
+  - id: meth.t2l2_data_reduction_triplet_identification
+    name: "T2L2 数据约化与三重态识别方法（Exertier 2014 管线）"
+    purpose: >
+      将 SLR 全速率数据和 T2L2 星上原始事件数据转化为计量精度的地-空
+      时间传递序列，支持 CV 和 non-CV 模式的地-地时钟比对。
+    description: >
+      完整数据约化流程：(1) 从 EDC/CDDIS 下载各站 SLR CRD 全速率文件，
+      从 CNES 下载每日 T2L2 星上数据；(2) 通过星载 GPS PPS 将 DORIS 本地
+      计数器（秒 + 皮秒）转为 UTC 时刻（精度 ~0.1 μs）；(3) 三重态 (tof, te, tb)
+      识别——以 Jason-2 精密 1 天轨道估计 |D(te)| 为参考，在 μs 级模糊度下
+      匹配星地事件；(4) 施加仪器修正链：时间游走补偿（模型精度 3–35 ps）、
+      LRA-T2L2 几何修正（~200 ps，基于姿控四元数）、Sagnac 效应（~30 ns）、
+      Schwarzschild 相对论频移（40–100 ps/pass 积分）；(5) 按站/按 pass 输出
+      D_bs(t) 序列；(6) 通过共视差分计算地-地时间传递。
+    key_steps:
+      - "下载 SLR CRD 数据和 T2L2 日数据文件"
+      - "星载时间刻度 → UTC 转换（PPS 校准，精度 ~0.1 μs）"
+      - "三重态匹配：以精密轨道 |D(te)| 为参考进行星地时间戳互相关"
+      - "时间游走修正（能量+姿态依赖，振幅 30–150 ps）"
+      - "LRA-T2L2 几何修正（依赖姿控四元数，精度 2–3 ps）"
+      - "Sagnac 效应计算（1–2 ps 精度）"
+      - "相对论频移积分（Schwarzschild，1–2 ps 残余）"
+      - "线性拟合去频率偏差 → 残差分析 → 噪声/信号分离"
+      - "CV 模式：两站差分 → 地-地时间同步"
+    applicable_conditions: "SLR 站提供 CRD 全速率数据（1 ps 或 100 ns 分辨率）；
+      星上 GPS PPS 可用；精密 1 天轨道和 ITRF2008 站坐标可用；
+      时间游走模型覆盖单光子→多光子探测区间"
+    source:
+      zotero_key: "1-s2.0-S0273117714005274-main"
+      claim: "the data reduction process which was developed specifically to transform the raw information given by both space instrument and ground network: first to identify the triplets, second to estimate a usable product in terms of ground-to-space time transfer (including instrumental corrections), and thirdly to produce synchronization between any pair of remote ground clocks."
+
+metrics:
+  - id: met.t2l2_ground_space_tdev_ps_exertier2014
+    name: "T2L2 地面-空间时间传递最佳 TDEV（Exertier 2014）"
+    unit: "ps（TDEV）"
+    role: primary
+    description: >
+      以配备 H-Maser 的 SLR 站（Grasse、Herstmonceux）统计得到的
+      地面-空间时间传递最佳时间偏差。短稳（τ<100 s）按 τ^(-1/2) 改善
+      至最低 ~6–8 ps@75 s，之后被 DORIS USO 长期不稳定性回升
+      （~几十 ps@600 s）。覆盖 1 年数据的统计最小值包络。
+    demonstrated_value:
+      value: "~50–60 ps @ 0.1 s；τ^(-1/2) 改善；~6–8 ps @ 75 s（最小值），回升至数 10 ps @ >100 s"
+      conditions: "H-Maser 参考 SLR 站（Grasse/Herstmonceux）；Jason-2 单个 pass ~600–700 s；线性拟合后 Allan 方差"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "1-s2.0-S0273117714005274-main"
+        claim: "the best time stability of ground to space time transfer is a few ps at s = 75 s, provided the ground time system of the transmitting laser station is ultra-stable."
+
+  - id: met.t2l2_slr_station_classification_exertier2014
+    name: "T2L2 SLR 站地面-空间时间传递精度分类（Exertier 2014）"
+    unit: "ps RMS（std deviation）"
+    role: secondary
+    description: >
+      根据 2008 年和 2013 年两个半年数据统计，将参与 SLR 站分为两大类：
+      (a) 超稳钟站（H-Maser/Cs/原子喷泉）：地-空时间传递 std ~50–150 ps，
+      经过低通滤波达 4–50 ps；(b) 100 ns 分辨率计时站：std ~2–60 ns。
+      技术改进（Wettzell 2009 升级 H-Maser、Zimmerwald 2009 升级 H-Maser、
+      长春 2008 底升级）直接改善时间传递质量，证明地面参考钟是决定性因素。
+    demonstrated_value:
+      value: "H-Maser 站 ~50–150 ps std；100 ns 分辨率站 ~2–60 ns std"
+      conditions: "2008 年下半年和 2013 年下半年统计；包括不同 SLR 系统（MOBLAS、固定站、移动站）"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "1-s2.0-S0273117714005274-main"
+        claim: "SLR stations which use an ultra-stable clock are clearly at the sub-ns level... SLR systems that provide measurement epochs at 100 ns cannot be competitive."
+
+relations:
+  - id: rel.exertier2014_01
+    subject: meth.t2l2_data_reduction_triplet_identification
+    predicate: DERIVED-FROM
+    object: pri.t2l2_two_way_time_transfer_equation
+    confidence: established
+    source:
+      zotero_key: "1-s2.0-S0273117714005274-main"
+      claim: "The principle is based on the Satellite Laser Ranging (SLR) technology; it uses the input of 20–25 SLR stations of the international laser network which participate in the tracking."
+
+  - id: rel.exertier2014_02
+    subject: pri.t2l2_noise_signal_separation_model
+    predicate: DERIVED-FROM
+    object: meth.t2l2_data_reduction_triplet_identification
+    confidence: established
+    source:
+      zotero_key: "1-s2.0-S0273117714005274-main"
+      claim: "This study was needed to shed light on certain issues and answer some questions such as: the role and efficiency of the laser technique, some aspects about time and frequency metrology on board and at ground level."
+
+  - id: rel.exertier2014_03
+    subject: met.t2l2_ground_space_tdev_ps_exertier2014
+    predicate: DEMONSTRATES
+    object: meth.t2l2_data_reduction_triplet_identification
+    confidence: established
+    source:
+      zotero_key: "1-s2.0-S0273117714005274-main"
+      claim: "Fig. 5 is a typical example of the time deviation (TDEV) plot for a ground-to-space time transfer of around 600–700 s duration."
+
+  - id: rel.exertier2014_04
+    subject: pri.t2l2_common_view_time_transfer_principle
+    predicate: ENABLED-BY
+    object: meth.t2l2_data_reduction_triplet_identification
+    confidence: established
+    source:
+      zotero_key: "1-s2.0-S0273117714005274-main"
+      claim: "the best performance of the T2L2 time transfer is expected rather in the Common View (CV) mode, both in terms of time stability and accuracy."

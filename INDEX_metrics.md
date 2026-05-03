@@ -2,7 +2,7 @@
 
 # 📊 Metrics Quick Reference
 
-> Auto-generated 2026-05-03 08:10 UTC
+> Auto-generated 2026-05-03 09:41 UTC
 >
 > Metrics are grouped by **role** (v4.4 σ_y-first convention, see `topics/ultrastable-laser/_meta/scoping_principles.md` v2). Role is taken from the `role` field on the metric node when present, otherwise inferred from ID / name heuristics.
 
@@ -324,6 +324,20 @@
 | `met.similariton_output_pulse_fermann2000` | Fermann 2000 Similariton 放大器输出脉冲参数 | Δt = 2.6 ps, Δλ = 32 nm, E_out = 12 nJ, ΔτΔν ≈ 22 | 种子 200 fs / 12 pJ；3.6 m Yb 光纤；g = 1.9 m⁻¹（30 dB）；… | [fermann2000](topics/shared/papers/fermann2000.yaml) |
 
 ## Time-Frequency Transfer
+
+### 🎯 Primary (σ_y 主线)
+
+| ID | Name | Best Value | Conditions | Source |
+|----|------|------------|------------|--------|
+| `met.t2l2_ground_space_tdev_ps_exertier2014` | T2L2 地面-空间时间传递最佳 TDEV（Exertier 2014） | ~50–60 ps @ 0.1 s；τ^(-1/2) 改善；~6–8 ps @ 75 s（最小值），回升至数 10 p… | H-Maser 参考 SLR 站（Grasse/Herstmonceux）；Jason-2 单个 … | [exertier2014](topics/time-frequency-transfer/papers/exertier2014.yaml) |
+| `met.t2l2_time_stability_wettzell_exertier2010` | T2L2 Wettzell 站地面-空间时间传递稳定性（Exertier 2010） | ~40 ps @ 1 s；~7 ps @ 30 s | Wettzell H-Maser 参考；Jason-2 pass ~650 s；SLR 数据经 1… | [exertier2010](topics/time-frequency-transfer/papers/exertier2010.yaml) |
+
+### 📊 Secondary (线宽/PSD/相干)
+
+| ID | Name | Best Value | Conditions | Source |
+|----|------|------------|------------|--------|
+| `met.t2l2_ground_space_rms_error_exertier2010` | T2L2 地面-空间时间传递初步误差预算（Exertier 2010） | 25–57 ps RMS（综合 SLR + T2L2 + 修正） | 单次测量噪声；SLR 站 RMS 测距 (LAGEOS) 同时列入评估 | [exertier2010](topics/time-frequency-transfer/papers/exertier2010.yaml) |
+| `met.t2l2_slr_station_classification_exertier2014` | T2L2 SLR 站地面-空间时间传递精度分类（Exertier 2014） | H-Maser 站 ~50–150 ps std；100 ns 分辨率站 ~2–60 ns std | 2008 年下半年和 2013 年下半年统计；包括不同 SLR 系统（MOBLAS、固定站、移动站） | [exertier2014](topics/time-frequency-transfer/papers/exertier2014.yaml) |
 
 ### 🔧 Engineering (κ/温度/磁场)
 

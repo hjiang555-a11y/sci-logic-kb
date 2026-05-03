@@ -243,6 +243,8 @@
 | `quan2021_592vc93u.yaml` | 592vc93u | Quan 2021 — NTSC 56 km 微波预补偿 1.8×10⁻¹⁵ @1 s | ✅ v4.5 evidence |
 | `quan2022_cqtx6tyy.yaml` | cqtx6tyy | Quan 2022 — NTSC 212 km 级联城市 RF-over-fiber 10⁻¹⁸ | ✅ v4.5 evidence |
 | `zeng2024_kbzasp75.yaml` | kbzasp75 | Zeng 2024 — 卫星 TWTFT 大气非互易性测量 | ✅ v4.5 evidence |
+| `exertier2010.yaml` | 1-s2.0-S0273117710004278-main | Exertier 2010 — T2L2/Jason2 在轨一年状态报告，星地时间稳定性 7 ps@30 s | ✅ v4.5 evidence |
+| `exertier2014.yaml` | 1-s2.0-S0273117714005274-main | Exertier 2014 — T2L2 数据处理管线与 ps 级验证，最佳 TDEV 6–8 ps@75 s | ✅ v4.5 evidence |
 
 ## 时频计量数学基础专题（B9 Allan–Howe 奠基白名单 + Allan 2016 + Sullivan 2001）
 

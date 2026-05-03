@@ -4,7 +4,7 @@
 
 > **用途**：处理新论文时，用此文件快速检查是否已有同名/同义节点，避免重复定义。
 > **维护**：本文件由 `scripts/build_index.py` 自动生成，**请勿手工编辑**。
-> **生成时间**：2026-05-03 08:10 UTC
+> **生成时间**：2026-05-03 09:41 UTC
 
 > **使用方式**：
 > - 处理新论文时，`Ctrl+F` 搜索关键词（如 `brownian`, `pdh`, `fiber`）
@@ -452,6 +452,7 @@
 | `pri.common_view_clock_comparison` | 共视时钟比对原理（common-view comparison） | domain | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
 | `pri.dcf_induced_differential_delay_temp_compensation` | DCF 模块温度诱发 differential delay 建模补偿原理 | engineering | [turza2019_9s69d3dw](topics/time-frequency-transfer/papers/turza2019_9s69d3dw.yaml) |
 | `pri.differential_spectroscopy_lo_coherence_bypass` | 差分光谱绕过本振相干时间原理 | domain | [kim2023_mc7xt8b5](topics/time-frequency-transfer/papers/kim2023_mc7xt8b5.yaml) |
+| `pri.doris_uso_frequency_offset_monitoring_t2l2` | T2L2 监测 DORIS USO 频率偏移原理 | engineering | [exertier2010](topics/time-frequency-transfer/papers/exertier2010.yaml) |
 | `pri.dual_polarization_coherent_endless_phase_tracking` | 双偏振相干接收无限相位跟踪原理 | engineering | [clivati2020_ispu4z4x](topics/time-frequency-transfer/papers/clivati2020_ispu4z4x.yaml) |
 | `pri.einstein_equivalence_principle` | Einstein 等效原理（EEP） | foundational | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
 | `pri.fiber_propagation_reciprocity` | 光纤传播互易性原理（前向=后向传播延迟） | foundational | [xu2019_gzd2byi4](topics/time-frequency-transfer/papers/xu2019_gzd2byi4.yaml) |
@@ -463,6 +464,9 @@
 | `pri.passive_reciprocal_fiber_noise_cancellation` | 被动互易光纤相位噪声抵消原理 | engineering | [zhang2022_sgt66xs8](topics/time-frequency-transfer/papers/zhang2022_sgt66xs8.yaml) |
 | `pri.quantum_limited_photon_counted_ott` | 量子极限光子计数光学时间传递原理 | domain | [caldwell2023_4m836c4v](topics/time-frequency-transfer/papers/caldwell2023_4m836c4v.yaml) |
 | `pri.single_fiber_double_round_trip_characterization` | 单纤双往返链路表征原理（Calonico 2015 新提出） | engineering | [calonico2015_3kxj9jfq](topics/time-frequency-transfer/papers/calonico2015_3kxj9jfq.yaml) |
+| `pri.t2l2_common_view_time_transfer_principle` | T2L2 共视模式地-地时间传递原理 | domain | [exertier2014](topics/time-frequency-transfer/papers/exertier2014.yaml) |
+| `pri.t2l2_noise_signal_separation_model` | T2L2 噪声/信号分离模型原理 | engineering | [exertier2014](topics/time-frequency-transfer/papers/exertier2014.yaml) |
+| `pri.t2l2_two_way_time_transfer_equation` | T2L2 星地双向激光时间传递方程原理 | domain | [exertier2010](topics/time-frequency-transfer/papers/exertier2010.yaml) |
 | `pri.telecom_network_metrology_coexistence` | 电信暗信道共存计量信号传递原理 | domain | [lopez2015_ws3xm8ls](topics/time-frequency-transfer/papers/lopez2015_ws3xm8ls.yaml) |
 | `pri.turbulence_anisoplanatism_tf_degradation` | 湍流 anisoplanatism 对双向 TF 传递互易性的破坏原理 | domain | [swann2019_9ltylbj8](topics/time-frequency-transfer/papers/swann2019_9ltylbj8.yaml) |
 
@@ -472,6 +476,8 @@
 |----|------|--------|
 | `meth.elt_plus_pulsed_optical_tf_transfer` | 脉冲激光光学时频传递法（ELT+ 实现） | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
 | `meth.mwl_two_way_tf_transfer` | 双向双频微波时频传递法（MWL 实现） | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `meth.t2l2_data_reduction_triplet_identification` | T2L2 数据约化与三重态识别方法（Exertier 2014 管线） | [exertier2014](topics/time-frequency-transfer/papers/exertier2014.yaml) |
+| `meth.t2l2_ground_to_space_time_transfer` | T2L2 地面-空间激光时间传递方法 | [exertier2010](topics/time-frequency-transfer/papers/exertier2010.yaml) |
 
 ---
 

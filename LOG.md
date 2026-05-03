@@ -1,6 +1,12 @@
 # 知识库演化日志
 
 
+
+## [2026-05-03] ingest | Exertier 2014 — T2L2 data reduction pipeline and ps-level validation: best ground-to-space TDEV 6-8 ps@75 s, noise/signal separation model (time-frequency-transfer)
+
+## [2026-05-03] ingest | Exertier 2010 — T2L2/Jason2 experiment status after first year on orbit: 7 ps TDEV at 30 s with Wettzell H-Maser, total RMS 25-57 ps (time-frequency-transfer)
+
+
 ## [2026-05-03] ingest | Peng 2020 — CC-MUTC photodiode pulsed microwave generation in X/Ku/K bands with record peak powers 44.2/41.6/40.6 dBm; impulse response 38.3 V, 30 ps FWHM (timescales)
 
 ### 摄入内容

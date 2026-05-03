@@ -1,0 +1,193 @@
+# Exertier 2010 — Status of the T2L2/Jason2 Experiment [evidence]
+# 提取者：Claude Code（AI 草稿，待专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.5
+# 专题：time-frequency-transfer（卫星激光时间传递 — T2L2/Jason2 实验状态与初期数据）
+# contribution_type: evidence — T2L2 在轨一年后的状态报告；初步验证仪器灵敏度、噪声来源、
+#   误差预算和时间稳定性，为后续高精度时频比对奠定操作基础。
+
+meta:
+  zotero_key: "1-s2.0-S0273117710004278-main"
+  topic: time-frequency-transfer
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Status of the T2L2/Jason2 Experiment"
+  year: 2010
+  first_author: Exertier
+  authors: ["Pierre Exertier", "Etienne Samain", "Pascal Bonnefond", "Philippe Guillemot"]
+  journal: "Advances in Space Research"
+  volume: 46
+  issue: 12
+  pages: "1559-1565"
+  doi: "10.1016/j.asr.2010.06.028"
+  note: >
+    [evidence 论文] T2L2（Time Transfer by Laser Link）在轨运行一年（2008.06–2009.06）后的
+    状态与初期数据分析。验证了仪器对脉冲能量（单光子—多光子探测模式）的灵敏度、SLR和T2L2
+    数据噪声来源、初步误差预算及地面-空间时间传递的时间稳定性。利用配备 H-Maser 或
+    Cs 钟作为参考的 SLR 站，地面-空间时间传递 TDEV 约 40 ps@1 s、7 ps@30 s（Wettzell H-Maser）。
+    T2L2 仪器本身期望达到 10–12 ps@1 s、<1 ps@1000 s 的时间稳定性。
+
+entities:
+  - id: ent.t2l2_jason2_experiment
+    name: "T2L2/Jason2 时间传递实验（初始在轨阶段 2008–2009）"
+    tier: system
+    domain: "卫星激光时间传递；空间时频计量"
+    description: >
+      T2L2（Time Transfer by Laser Link）作为 Jason-2 高度计卫星搭载实验（2008.06.20 发射），
+      利用国际卫星激光测距（SLR）网络实现地面站与空间段之间的双向时间传递。
+      空间仪器包含线性和非线性两个光电探测通道、一台 1 ps 分辨率的事件计时器，
+      与 DORIS 超稳晶振（USO）同步。地面 LRA 反射器（JPL 提供）实现双向测距。
+      实验质量：电子模块 8 kg，光电探测模块 1.5 kg。Jason-2 轨道 1336 km/66°倾角，
+      单站最大 pass 时长 ~1000 s。截至 2009.09 已有 22 个 SLR 站参与，
+      其中 6 站配备 H-Maser 或 Cs 钟并提供 CRD 格式数据。
+    verification_status: demonstrated
+    source:
+      zotero_key: "1-s2.0-S0273117710004278-main"
+      claim: "The T2L2 (Time Transfer by Laser Link) project, developed by CNES and OCA will permit the synchronization of remote ultra stable clocks and the determination of their performances over intercontinental distances."
+
+principles:
+  - id: pri.t2l2_two_way_time_transfer_equation
+    name: "T2L2 星地双向激光时间传递方程原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      T2L2 星地时间传递利用 SLR 的双向测距能力：地面站记录激光脉冲发射时刻 t_start
+      和返回时刻 t_return，星上 T2L2 记录到达时刻 t_board（分辨率 1 ps）。
+      地钟 G 与星钟 S 的时间偏移 T_GS 由测量三重态 (t_start, t_return, t_board) 导出：
+      T_GS = (t_start + t_return)/2 - t_board + ε，
+      其中 ε 包含几何修正（LRA–T2L2 光学间距）、相对论效应（Sagnac）、
+      仪器修正（线性/非线性探测方案）和地面站校准偏移。
+      该方案的两大优势：(i) 无需从卫星-地面坐标估算单向飞行时间的噪声，
+      (ii) 无需估算大气延迟修正（大气贡献在双向测距中互相抵消）。
+    domain: "卫星时频传递；SLR 测距；双向时间传递"
+    key_insight: >
+      T2L2 方案通过 SLR 直接测量来回飞行时间而非通过轨道模型估算单向延迟，
+      从根本上规避了轨道确定误差对时间传递精度的限制——单向测距部分直接由
+      双向 SLR 测距结果推出。
+    conditions: "SLR 站以 CRD 格式（1 ps 分辨率）记录发射/返回时间；星上参考钟（DORIS USO）
+      在 ~10 s 时间尺度上稳定（Allan 方差短稳极佳）；地面站配备高性能原子钟（H-Maser/Cs）"
+    formula: "T_GS = (t_start + t_return)/2 - t_board + ε"
+    source:
+      zotero_key: "1-s2.0-S0273117710004278-main"
+      claim: "For a given laser pulse transmitted from the ground, the time offset T_GS between the ground clock G and the space clock S is deduced from the measurement triplet (t_start, t_return, t_board) with the following time equation: T_GS = (t_start + t_return)/2 - t_board + ε"
+
+  - id: pri.doris_uso_frequency_offset_monitoring_t2l2
+    name: "T2L2 监测 DORIS USO 频率偏移原理"
+    tier: engineering
+    verification_status: observed
+    statement: >
+      T2L2 空间段的事件计时器经由 DORIS USO（石英振荡器）驱动，通过记录 Jason-2
+      平台上 GPS 接收器输出的 PPS 信号（精度 ±1 μs），可在 ~0.1 μs 精度下建立
+      本地 DORIS 时间尺度与 UTC 之间的相位联系。由此可在数日-数月时间尺度上
+      监测 DORIS USO 的频率偏移（绝对频率偏差 ~2–3×10⁻¹¹），其短期（~10 s）稳定极佳
+      但长期随 τ^(3/2) 恶化至数百 ps@1000 s（~10⁻¹³）。
+    domain: "空间频率参考；USO 监测；时频计量"
+    key_insight: >
+      石英 USO 的长期频率漂移使得非共视模式（non-Common View）的时间传递
+      受限于星载参考的建模精度——必须通过高质量 SLR 站时钟来表征和监测 USO 行为。
+    conditions: "星上 GPS 接收器持续可用并输出 PPS；地面站在 ~1000 s pass 内持续跟踪"
+    source:
+      zotero_key: "1-s2.0-S0273117710004278-main"
+      claim: "its Allan variance is increasing rapidly (rule in s^(3/2)) to reach hundreds of ps at 1000 s, which roughly corresponds to a few 10^-13 in term of stability"
+
+methods:
+  - id: meth.t2l2_ground_to_space_time_transfer
+    name: "T2L2 地面-空间激光时间传递方法"
+    purpose: >
+      利用 SLR 网络实现对 Jason-2 卫星 T2L2 载荷的星地时间传递，为地-地时钟
+      比对和远程时间同步提供计量级精度（目标 1 ps@1000 s 的稳定性，<100 ps 的准确度）。
+    description: >
+      1. 参与 SLR 站以 532 nm 激光脉冲（~10 Hz–kHz 重频，~几十 ps 脉宽）照射 Jason-2 卫星。
+      2. 星上 LRA 反射部分光子回地面（SLR 双向测距），同时 T2L2 的非线性光电探测器
+         （雪崩光电二极管 Geiger 模式）检测脉冲并记录到达时间。
+      3. 数据处理：由各站 CRD 全速率数据和 T2L2 下行数据同时提取测量三重态
+         (t_start, t_return, t_board)；根据精确 1 天轨道和 ITRF2005 站坐标计算飞行时间；
+         施以 Sagnac 效应、LRA-T2L2 几何和探测时间游走（time-walk）修正。
+      4. 在共视模式（距离 <5000 km，时间延迟 <0.1 s）下，地-地时间传递由
+         两站地-空时间传递的差分得出，DORIS USO 短稳噪声抵消。
+    key_steps:
+      - "SLR 站以 1 ps CRD 格式记录并传输全速率数据至欧洲数据中心（EDC）"
+      - "T2L2 科学任务中心（法国 Grasse）每日下载 CNES 提供的一日 T2L2 数据"
+      - "数据选择：按站、按 pass 联合 SLR+T2L2 数据"
+      - "三重态匹配：直接比较地面和星上时间戳识别对应激光事件"
+      - "施加修正：Sagnac（最大 ~30 ns）、LRA-T2L2 几何（~200 ps）、探测器时间游走"
+      - "计算地-空 T_GS 时间偏移"
+      - "差分两站 T_GS 得地-地时间传递"
+    applicable_conditions: "SLR 站提供 CRD 格式数据（1 ps 分辨率）；星上 GPS PPS 可用；
+      站参考钟优选 H-Maser 或 Cs 钟；Jason-2 精确 1 天轨道可用"
+    source:
+      zotero_key: "1-s2.0-S0273117710004278-main"
+      claim: "The system uses the ultra-stable quartz oscillator of DORIS as on-board reference clock on one hand, and the Laser Reflector Array, making T2L2 a real two-way time transfer system on the other hand."
+
+metrics:
+  - id: met.t2l2_time_stability_wettzell_exertier2010
+    name: "T2L2 Wettzell 站地面-空间时间传递稳定性（Exertier 2010）"
+    unit: "ps（时间偏差 TDEV）"
+    role: primary
+    description: >
+      以 Wettzell SLR 站 H-Maser 为地面参考，T2L2/Jason-2 地面-空间时间传递
+      的时间稳定性（Allan 方差）。短稳主要受 SLR 和 T2L2 联合噪声限制，
+      长稳受 DORIS USO 稳定性限制。
+    demonstrated_value:
+      value: "~40 ps @ 1 s；~7 ps @ 30 s"
+      conditions: "Wettzell H-Maser 参考；Jason-2 pass ~650 s；SLR 数据经 15 s 间隔正常点平滑后计算 Allan 方差"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "1-s2.0-S0273117710004278-main"
+        claim: "the time stability of the Wettzell's Hydrogen Maser compared to the DORIS oscillator is of 40 ps at 1 s and is of 7 ps at 30 s."
+
+  - id: met.t2l2_ground_space_rms_error_exertier2010
+    name: "T2L2 地面-空间时间传递初步误差预算（Exertier 2010）"
+    unit: "ps RMS"
+    role: secondary
+    description: >
+      T2L2 地面-空间时间传递的综合误差预算。SLR 部分（激光脉宽、探测、计时、
+      目标特征、校准、大气）合计 25–45 ps RMS；T2L2 部分（事件计时器 + 探测
+      单光子 35 ps → 千光子 3 ps）合计 4–35 ps；修正项（Sagnac、几何）2–8 ps。
+    demonstrated_value:
+      value: "25–57 ps RMS（综合 SLR + T2L2 + 修正）"
+      conditions: "单次测量噪声；SLR 站 RMS 测距 (LAGEOS) 同时列入评估"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "1-s2.0-S0273117710004278-main"
+        claim: "the total error budget of the ground to space time transfer should be at the level of 25–57 ps."
+
+relations:
+  - id: rel.exertier2010_01
+    subject: meth.t2l2_ground_to_space_time_transfer
+    predicate: DERIVED-FROM
+    object: pri.t2l2_two_way_time_transfer_equation
+    confidence: established
+    source:
+      zotero_key: "1-s2.0-S0273117710004278-main"
+      claim: "the principle of the T2L2 experiment is particularly powerful, because it permits to deduce the one-way ranging part of the time transfer experiment simply and directly from the two-way SLR ranging measurement itself."
+
+  - id: rel.exertier2010_02
+    subject: ent.t2l2_jason2_experiment
+    predicate: REALIZES
+    object: meth.t2l2_ground_to_space_time_transfer
+    confidence: established
+    source:
+      zotero_key: "1-s2.0-S0273117710004278-main"
+      claim: "T2L2 realizes a ground to space time transfer between a ground clock linked to a SLR station and a space clock on board the satellite."
+
+  - id: rel.exertier2010_03
+    subject: met.t2l2_time_stability_wettzell_exertier2010
+    predicate: DEMONSTRATES
+    object: meth.t2l2_ground_to_space_time_transfer
+    confidence: established
+    source:
+      zotero_key: "1-s2.0-S0273117710004278-main"
+      claim: "the time stability of the Wettzell's Hydrogen Maser compared to the DORIS oscillator is of 40 ps at 1 s and is of 7 ps at 30 s."
+
+  - id: rel.exertier2010_04
+    subject: pri.doris_uso_frequency_offset_monitoring_t2l2
+    predicate: CHARACTERIZES
+    object: ent.t2l2_jason2_experiment
+    confidence: established
+    source:
+      zotero_key: "1-s2.0-S0273117710004278-main"
+      claim: "we are able to locally determine an absolute frequency offset of the space clock at 2–3 × 10^−11."

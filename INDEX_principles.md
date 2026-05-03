@@ -2,7 +2,7 @@
 
 # 🔬 Principles Quick Reference
 
-> Auto-generated 2026-05-03 08:10 UTC
+> Auto-generated 2026-05-03 09:41 UTC
 
 ## Tier: meta
 
@@ -224,6 +224,8 @@
 | `pri.state_prepared_single_ion_spectroscopy` | 单离子纯量子态光谱原理（heralded QLS 制备 + 非破坏读出） | Optical Frequency Combs | [chou2020](topics/optical-frequency-combs/papers/chou2020.yaml) |
 | `pri.steady_state_shb_pattern` | 稳态光谱烧孔模式稳频原理 | Ultrastable Laser | [cook2015](topics/ultrastable-laser/papers/cook2015.yaml) |
 | `pri.supercontinuum_octave_spanning` | 超连续谱倍频程展宽原理（SPM + FWM in ZGVD PCF） | Optical Frequency Combs | [diddams2000](topics/optical-frequency-combs/papers/diddams2000.yaml) |
+| `pri.t2l2_common_view_time_transfer_principle` | T2L2 共视模式地-地时间传递原理 | Time-Frequency Transfer | [exertier2014](topics/time-frequency-transfer/papers/exertier2014.yaml) |
+| `pri.t2l2_two_way_time_transfer_equation` | T2L2 星地双向激光时间传递方程原理 | Time-Frequency Transfer | [exertier2010](topics/time-frequency-transfer/papers/exertier2010.yaml) |
 | `pri.taylor_frozen_turbulence_hypothesis` | Taylor 冻结湍流假设（时间↔空间谱等价） | Optical Frequency Combs | [caldwell2020](topics/optical-frequency-combs/papers/caldwell2020.yaml) |
 | `pri.telecom_network_metrology_coexistence` | 电信暗信道共存计量信号传递原理 | Time-Frequency Transfer | [lopez2015_ws3xm8ls](topics/time-frequency-transfer/papers/lopez2015_ws3xm8ls.yaml) |
 | `pri.thermal_drift_comb_offsets` | Thermal drift of f_rep and f_ceo in fiber combs | Optical Frequency Combs | [lezius2016](topics/optical-frequency-combs/papers/lezius2016.yaml) |
@@ -270,6 +272,7 @@
 | `pri.dichroic_heterodyne_detection` | 色散外差检测（Dichroic Heterodyne Detection）相位漂移补偿原理 | Optical Frequency Combs | [giunta2020](topics/optical-frequency-combs/papers/giunta2020.yaml) |
 | `pri.digital_servo_latency_bandwidth_tradeoff` | 数字伺服延迟-带宽权衡原理 | Optical Frequency Combs | [wang2025](topics/optical-frequency-combs/papers/wang2025.yaml) |
 | `pri.dispersion_flattened_hnlf_octave_broadening` | 色散平坦高非线性光纤倍频程展宽原理 | Optical Frequency Combs | [washburn2004](topics/optical-frequency-combs/papers/washburn2004.yaml) |
+| `pri.doris_uso_frequency_offset_monitoring_t2l2` | T2L2 监测 DORIS USO 频率偏移原理 | Time-Frequency Transfer | [exertier2010](topics/time-frequency-transfer/papers/exertier2010.yaml) |
 | `pri.double_heterodyne_shb_probing` | 双外差探测 SHB 方案 | Ultrastable Laser | [galland2020](topics/ultrastable-laser/papers/galland2020.yaml) |
 | `pri.dual_actuator_eom_pzt_frep_control` | EOM + PZT 双驱动 frep 控制原理（高频相位 + 低频慢调） | Optical Frequency Combs | [rao2019](topics/optical-frequency-combs/papers/rao2019.yaml) |
 | `pri.dual_branch_differential_phase_noise_cancellation_r18` | 双分支差分相位噪声主动相关抵消原理（Rolland 2018） | Optical Frequency Combs | [rolland2018](topics/optical-frequency-combs/papers/rolland2018.yaml) |
@@ -367,6 +370,7 @@
 | `pri.space_charge_compensation_pre_distort_field` | 空间电荷补偿层预畸变电场实现高光电流下平坦场分布 | Timescales | [peng2020](topics/timescales/papers/peng2020.yaml) |
 | `pri.squeeze_insensitive_cylindrical_cavity` | 圆柱腔挤压不灵敏持腔原理 | Ultrastable Laser | [davilarodriguez2017](topics/ultrastable-laser/papers/davilarodriguez2017.yaml) |
 | `pri.symmetric_spool_vibration_cancellation` | 对称光纤盘振动消除原理 | Ultrastable Laser | [hu2015](topics/ultrastable-laser/papers/hu2015.yaml) |
+| `pri.t2l2_noise_signal_separation_model` | T2L2 噪声/信号分离模型原理 | Time-Frequency Transfer | [exertier2014](topics/time-frequency-transfer/papers/exertier2014.yaml) |
 | `pri.temperature_feedforward_cavity_l13b` | 温度前馈频率漂移修正 | Ultrastable Laser | [leibrandt2013b](topics/ultrastable-laser/papers/leibrandt2013b.yaml) |
 | `pri.thermal_drift_out_of_loop_fiber_noise` | Out-of-loop 光纤热漂移限制原理 | Optical Frequency Combs | [zhang2022b](topics/optical-frequency-combs/papers/zhang2022b.yaml) |
 | `pri.transfer_lock_via_frequency_comb` | 光频梳传递锁定原理 | Ultrastable Laser | [didier2019](topics/ultrastable-laser/papers/didier2019.yaml) |
