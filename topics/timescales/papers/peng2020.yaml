@@ -1,0 +1,246 @@
+# Peng 2020 — 电荷补偿MUTC光电二极管光子脉冲微波生成 [X/Ku/K波段，纪录峰值功率]
+# 提取日期：2026-05-03
+# Schema版本：v4.0
+# 专题：timescales
+# contribution_type: evidence — 工程改进，刷新MUTC光电二极管脉冲微波峰值功率纪录。
+#   与 timescales 专题的关联：光子微波生成是光钟/光频梳参考信号向微波域传递的关键技术通道；
+#   高功率光电二极管是此通道的核心器件。本文的 CC-MUTC PD 是 fortier2013 中 MUTC PD
+#   的后续工程优化（更高的反向偏压、更优的脉冲峰值功率）。
+#   核心贡献在微波光子学器件层面，与时间标尺的直接关系较弱，
+#   列入 timescales 专题主要作为光子微波生成技术链的器件进展记录。
+
+meta:
+  zotero_key: "oe-28-19-28563"
+  topic: timescales
+  source_type: experiment
+  contribution_type: evidence
+  reliability: high
+  title: "Photonic generation of pulsed microwave signals in the X-, Ku- and K-band"
+  year: 2020
+  first_author: peng
+  authors:
+    - "Yiwei Peng"
+    - "Keye Sun"
+    - "Yang Shen"
+    - "Andreas Beling"
+    - "Joe C. Campbell"
+  journal: "Optics Express"
+  volume: 28
+  pages: "28563–28572"
+  doi: "10.1364/OE.399102"
+  note: >
+    [实验/工程改进] 电荷补偿 MUTC (CC-MUTC) 光电二极管在 X (10 GHz)、Ku (17 GHz)、
+    K (22 GHz) 波段的高功率脉冲微波信号生成。
+    核心成果：脉冲微波峰值功率 44.2 dBm (26.3 W) @ 10 GHz、41.6 dBm (14.5 W) @ 17 GHz、
+    40.6 dBm (11.5 W) @ 22 GHz，均为当时已报道最高脉冲 RF 功率水平。
+    脉冲光响应峰值电压 38.3 V，FWHM 30 ps。
+    与 timescales 专题关联：光子微波生成链中的高功率 PD 器件进展（fortier2013 的后继优化）。
+
+entities:
+  - id: ent.cc_mutc_pd_pulsed_microwave_source
+    name: "CC-MUTC 光电二极管脉冲微波源（Peng 2020，X/Ku/K 波段）"
+    aliases:
+      - "charge-compensated MUTC photodiode pulsed microwave source"
+      - "CC-MUTC PD 脉冲微波发生器"
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      基于电荷补偿型改进单行载流子 (CC-MUTC) InGaAs/InP 光电二极管的脉冲微波信号源。
+      三个直径版本：50 μm（3-dB BW 16 GHz，X 波段用）、40 μm（20 GHz，Ku 波段用）、
+      34 μm（27 GHz，K 波段用）。通过倒装焊到金刚石基板改善散热，
+      利用脉冲光照抑制热效应，使偏置电压可推至 -32 V 以上（CW 操作远不可及）。
+      在 -10°C 冷却条件下实现 X/Ku/K 波段脉冲微波峰值功率纪录。
+    key_parameters:
+      device_diameters: "50 μm / 40 μm / 34 μm"
+      device_3db_bandwidths: "16 GHz / 20 GHz / 27 GHz"
+      epitaxial_structure: "InGaAs/InP，350 nm 耗尽吸收层 + 800 nm 轻 n 掺杂 InP 漂移层"
+      responsivity_1550nm: "0.69 A/W"
+      substrate: "半绝缘 InP，倒装焊至金刚石基板（共面波导）"
+      breakdown_voltage_simulated: "-44 V"
+      absorber_thickness_optimized: "350 nm"
+
+principles:
+  - id: pri.space_charge_compensation_pre_distort_field
+    name: "空间电荷补偿层预畸变电场实现高光电流下平坦场分布"
+    tier: engineering
+    verification_status: calculated
+    statement: >
+      在 InGaAs 耗尽吸收层与 n 型 InP 接触层之间插入轻 n 掺杂 (800 nm) InP 漂移层
+      作为空间电荷补偿层。该层在高光电流下预畸变内部电场分布，抵消光生载流子堆积
+      造成的电场塌陷，使耗尽区电场维持在载流子饱和速度所需的最低值以上，
+      从而抑制空间电荷效应（space-charge effect）导致的功率饱和。
+    domain: "半导体器件物理，光电二极管设计"
+    key_insight: >
+      空间电荷效应是限制高功率光电二极管的核心非线性机制。
+      通过设计漂移层掺杂与厚度预先塑造电场分布，可在高注入条件下
+      主动对抗电场塌陷，而非被动承受。
+    conditions: "需要 Crosslight 仿真优化漂移层厚度与掺杂；吸收层厚度存在最优值（350 nm），过厚则雪崩击穿电压降低，过薄则空间电荷效应过早饱和"
+    formula: "最小维持电场 E_min 使电子保持饱和漂移速度 v_sat；当光生电流超过临界值导致 E < E_min 时，响应时间骤增，功率饱和"
+    source_claim: >
+      "An 800 nm lightly n-doped drift layer acts as a space charge compensation layer
+      that pre-distorts the electric field in order to achieve a flat electric field profile
+      at high photocurrent"
+
+  - id: pri.pulsed_illumination_mitigates_thermal_limit
+    name: "脉冲光照抑制热退化机制，使光电二极管超越 CW 偏置电压与功率极限"
+    tier: engineering
+    verification_status: demonstrated
+    statement: >
+      脉冲光照显著降低光电二极管的有效热负载：在一个脉冲周期内产生的焦耳热
+      来不及在结区积累即被传导至金刚石基板散出，脉冲间隔内结温恢复。
+      因此器件可在远高于 CW 操作电压下工作（脉冲 -32 V vs CW -14.7 V 失效），
+      获得更高的峰值功率输出。器件的最终失效模式为热退化而非雪崩击穿。
+    domain: "光电二极管热管理，脉冲功率电子学"
+    key_insight: >
+      热退化（非雪崩击穿）是 CC-MUTC PD 在 5% 占空比脉冲操作下的实际限制因素。
+      降低占空比（100% → 5%）可使最大偏压从 ~15 V 提升至 ~32 V，
+      峰值功率提升 ~11.3 dB。
+    conditions: "占空比 ≤ 5%、重复率 ≥ 30 MHz（短脉冲宽度有利于散热）；低温操作（-10°C）进一步提升功率"
+    source_claim: >
+      "photodiodes under pulsed-illumination can handle higher bias voltage and achieve
+      higher output peak voltage pulses since the generated heat does not have enough
+      time to build up"
+
+methods:
+  - id: meth.cc_mutc_pd_pulsed_microwave_generation
+    name: "CC-MUTC 光电二极管脉冲微波信号生成方法"
+    status: demonstrated
+    applies_to: ent.cc_mutc_pd_pulsed_microwave_source
+    steps_summary: >
+      1. 1550 nm 窄线宽 CW 光纤激光器作为光源 →
+      2. 第一级 Mach-Zehnder 调制器（MZM）由 17 dBm RF 信号驱动，偏置于正交工作点，生成 RF 调制光载波 →
+      3. 第二级 MZM 由脉冲模式发生器驱动，偏置锁定于 null 点，将 RF 信号门控为脉冲包络 →
+      4. EDFA 放大脉冲光信号，数字光衰减器控制光功率 →
+      5. CC-MUTC 光电二极管将脉冲调制光信号转换为脉冲微波电信号 →
+      6. Bias tee 分离 DC 偏置与 RF 输出，频谱仪 + 示波器同时测量 →
+      7. 峰值功率由频谱主线功率按 P_peak = P_in − 20log(τ/T) 换算，也可从示波器峰值电压计算
+    required_hardware:
+      - "1550 nm 窄线宽 CW 光纤激光器"
+      - "两个 Mach-Zehnder 调制器（RF + 脉冲门控）"
+      - "MZM 偏置控制器（自动锁定 null 点）"
+      - "EDFA 光放大器"
+      - "数字可调光衰减器"
+      - "CC-MUTC 光电二极管（flip-chip 至金刚石基板 + CPW 电极）"
+      - "频谱分析仪 + 高速示波器"
+      - "热电冷却器（可选，用于低温测试）"
+    advantages:
+      - "100% 光调制深度，RF 信号完全限制于门控脉冲内"
+      - "偏置控制器消除 null 点漂移和关态信号振荡"
+      - "峰值功率可从频谱或示波器独立验证"
+    disadvantages:
+      - "EDFA 增益饱和导致脉冲畸变"
+      - "脉冲模式发生器自身波形畸变限制输出质量"
+      - "器件最终受限于热退化而非雪崩击穿（占空比 5%）"
+    conditions:
+      - "脉冲重复率 1–30 MHz，占空比 5%（或其他设定值）"
+      - "反向偏压 −8 V 至 −39.5 V（脉冲模式取决于占空比）"
+      - "室温或 −10°C 热电冷却"
+    source_claim: >
+      "A high power and narrow linewidth CW fiber laser working at 1550 nm was used as the source.
+      The first Mach Zehnder modulator (MZM) was driven by an RF signal with power of 17 dBm.
+      The modulator was biased at quadrature bias point. The gated RF signal was modulated by
+      the second modulator."
+
+metrics:
+  - id: met.cc_mutc_pd_peak_power_10ghz_pulsed
+    name: "CC-MUTC PD 脉冲微波峰值功率 @ 10 GHz (X-band)"
+    unit: "dBm / W"
+    description: >
+      50 μm 直径 CC-MUTC 光电二极管在 10 GHz、30 MHz 重复率、5% 占空比、-10°C 条件下
+      的脉冲微波峰值输出功率。
+    demonstrated_value:
+      value: "44.2 dBm (26.3 W)"
+      conditions: "50 μm 器件，10 GHz RF 载波，30 MHz 重复率，5% 占空比，反向偏压 ~-32 V，TEC 冷却 -10°C"
+      verification_status: claimed
+      confidence: likely
+      source: {zotero_key: "oe-28-19-28563", claim: "The photodiodes with 50 µm, 40 µm and 34 µm diameter achieved peak powers of 44.2 dBm (26.3 W), 41.6 dBm (14.5 W) and 40.6 dBm (11.5 W) at 10, 17 and 22 GHz, respectively"}
+
+  - id: met.cc_mutc_pd_peak_power_17ghz_pulsed
+    name: "CC-MUTC PD 脉冲微波峰值功率 @ 17 GHz (Ku-band)"
+    unit: "dBm / W"
+    description: >
+      40 μm 直径 CC-MUTC 光电二极管在 17 GHz、30 MHz 重复率、5% 占空比、-10°C 条件下
+      的脉冲微波峰值输出功率。
+    demonstrated_value:
+      value: "41.6 dBm (14.5 W)"
+      conditions: "40 μm 器件，17 GHz RF 载波，30 MHz 重复率，5% 占空比，反向偏压 ~-32 V，TEC 冷却 -10°C"
+      verification_status: claimed
+      confidence: likely
+      source: {zotero_key: "oe-28-19-28563", claim: "The photodiodes with 50 µm, 40 µm and 34 µm diameter achieved peak powers of 44.2 dBm (26.3 W), 41.6 dBm (14.5 W) and 40.6 dBm (11.5 W) at 10, 17 and 22 GHz, respectively"}
+
+  - id: met.cc_mutc_pd_peak_power_22ghz_pulsed
+    name: "CC-MUTC PD 脉冲微波峰值功率 @ 22 GHz (K-band)"
+    unit: "dBm / W"
+    description: >
+      34 μm 直径 CC-MUTC 光电二极管在 22 GHz、30 MHz 重复率、5% 占空比、-10°C 条件下
+      的脉冲微波峰值输出功率。
+    demonstrated_value:
+      value: "40.6 dBm (11.5 W)"
+      conditions: "34 μm 器件，22 GHz RF 载波，30 MHz 重复率，5% 占空比，反向偏压 ~-32 V，TEC 冷却 -10°C"
+      verification_status: claimed
+      confidence: likely
+      source: {zotero_key: "oe-28-19-28563", claim: "The photodiodes with 50 µm, 40 µm and 34 µm diameter achieved peak powers of 44.2 dBm (26.3 W), 41.6 dBm (14.5 W) and 40.6 dBm (11.5 W) at 10, 17 and 22 GHz, respectively"}
+
+  - id: met.cc_mutc_pd_impulse_peak_voltage
+    name: "CC-MUTC PD 脉冲光响应峰值电压与 FWHM"
+    unit: "V / ps"
+    description: >
+      50 μm 直径 CC-MUTC 光电二极管在飞秒脉冲（<50 fs，100 MHz 重复率）光照下的
+      脉冲光响应峰值电压与半高全宽。
+    demonstrated_value:
+      value: "38.3 V 峰值电压，30 ps FWHM"
+      conditions: "50 μm 器件，~-39.5 V 反向偏压，平均光电流 4.6 mA，飞秒激光脉冲（<50 fs, 100 MHz rep rate），室温"
+      verification_status: claimed
+      confidence: likely
+      source: {zotero_key: "oe-28-19-28563", claim: "The peak voltage reaches 38.3 V at average photocurrent of 4.6 mA, while the FWHM stays at 30 ps"}
+
+relations:
+  - id: rel.peng_2021_20_01
+    subject: ent.cc_mutc_pd_pulsed_microwave_source
+    predicate: IMPROVES-ON
+    object: ent.mutc_photonic_microwave_generator
+    confidence: likely
+    source: {zotero_key: "oe-28-19-28563", claim: "The peak voltage is 6 V higher than the previous reported MUTC photodiodes [12]"}
+    quantitative_contribution: "峰值电压从 ~32.3 V 提升至 38.3 V（+6 V）；脉冲峰值功率从 10 W (10 GHz, ref [12]) 提升至 26.3 W"
+    verification_status: claimed
+    temporal_role: after
+    note: "[12] = Xie et al. 2015 (J. Lightwave Technol. 33, 3808)"
+
+  - id: rel.peng_2021_20_02
+    subject: ent.cc_mutc_pd_pulsed_microwave_source
+    predicate: IS-LIMITED-BY
+    object: pri.pulsed_illumination_mitigates_thermal_limit
+    confidence: likely
+    is_system_limit: true
+    source: {zotero_key: "oe-28-19-28563", claim: "we concluded that the devices are limited by the thermal degradation rather than avalanche phenomena at 5% duty cycle"}
+    quantitative_contribution: "占空比从 100% 降至 5% 时，最大偏压从 ~15 V 升至 ~32 V，峰值功率提高 11.3 dB"
+    verification_status: claimed
+    temporal_role: describes
+
+  - id: rel.peng_2021_20_03
+    subject: ent.cc_mutc_pd_pulsed_microwave_source
+    predicate: REALIZES
+    object: pri.space_charge_compensation_pre_distort_field
+    confidence: likely
+    source: {zotero_key: "oe-28-19-28563", claim: "An 800 nm lightly n-doped drift layer acts as a space charge compensation layer that pre-distorts the electric field in order to achieve a flat electric field profile at high photocurrent"}
+    verification_status: calculated
+    temporal_role: realizes
+
+  - id: rel.peng_2021_20_04
+    subject: ent.cc_mutc_pd_pulsed_microwave_source
+    predicate: CHARACTERIZED-BY
+    object: met.cc_mutc_pd_peak_power_10ghz_pulsed
+    confidence: established
+    source: {zotero_key: "oe-28-19-28563", claim: "These are the highest pulsed RF power levels reported to date"}
+    verification_status: claimed
+    temporal_role: characterizes
+
+  - id: rel.peng_2021_20_05
+    subject: ent.cc_mutc_pd_pulsed_microwave_source
+    predicate: ENHANCED-BY
+    object: pri.pulsed_illumination_mitigates_thermal_limit
+    confidence: likely
+    source: {zotero_key: "oe-28-19-28563", claim: "As duty cycle increases from 5% to 100%, the maximum peak power decreases by 11.3 dB and the maximum bias voltage decreases by 17.3 V. It can be concluded that thermal degradation is mitigated and the peak power is enhanced with decreasing duty cycle"}
+    quantitative_contribution: "5% vs 100% duty cycle → peak power +11.3 dB, bias voltage +17.3 V"
+    verification_status: claimed
+    temporal_role: enables

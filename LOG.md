@@ -1,6 +1,14 @@
 # 知识库演化日志
 
 
+## [2026-05-03] ingest | Peng 2020 — CC-MUTC photodiode pulsed microwave generation in X/Ku/K bands with record peak powers 44.2/41.6/40.6 dBm; impulse response 38.3 V, 30 ps FWHM (timescales)
+
+### 摄入内容
+- 文件：topics/timescales/papers/peng2020.yaml
+- 贡献类型：evidence
+- 核心贡献：电荷补偿 MUTC 光电二极管在 X (10 GHz)、Ku (17 GHz)、K (22 GHz) 波段实现纪录脉冲微波峰值功率 44.2 dBm (26.3 W) / 41.6 dBm (14.5 W) / 40.6 dBm (11.5 W)。脉冲光响应峰值电压 38.3 V，FWHM 30 ps。通过空间电荷补偿漂移层设计抑制电场塌陷；脉冲光照模式让器件超越 CW 热极限，占空比从 100% 降至 5% 时峰值功率提升 11.3 dB。
+- 新增节点：1 entity, 2 principles, 1 method, 4 metrics, 5 relations
+
 ## [2026-05-03] ingest | Guena 2012 — LNE-SYRTE fountain ensemble five-year progress: DCP azimuthal decomposition, microwave lensing, BBR Stark coefficient revision, TAI calibration dominance, Rb/Cs dual fountain, PHARAO-EM ground test (timescales)
 
 ### 摄入内容

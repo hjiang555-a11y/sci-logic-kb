@@ -2,7 +2,7 @@
 
 # 📊 Metrics Quick Reference
 
-> Auto-generated 2026-05-03 08:04 UTC
+> Auto-generated 2026-05-03 08:10 UTC
 >
 > Metrics are grouped by **role** (v4.4 σ_y-first convention, see `topics/ultrastable-laser/_meta/scoping_principles.md` v2). Role is taken from the `role` field on the metric node when present, otherwise inferred from ID / name heuristics.
 
@@ -378,6 +378,10 @@
 |----|------|------------|------------|--------|
 | `met.al_plus_clock_q_factor_2010` | ²⁷Al⁺ 光钟 300 ms 探针 Q 因子 | 4.2×10¹⁴ | Al-Mg 钟，300 ms 探针脉冲，傅里叶变换受限线宽 FWHM = 2.7 Hz，对比度 ~… | [chou2010](topics/timescales/papers/chou2010.yaml) |
 | `met.bb_r_cs_stark_coefficient_2012` | ¹³³Cs 基态超精细跃迁黑体辐射标量 Stark 系数（2012 修订值） | k₀ = −2.282(4)×10⁻¹⁰ Hz·V⁻²·m² | 在 1.5–25 kV·m⁻¹ 低电场范围重新测量，与早期 [47] 高场测量（50–150 kV… | [guena2012](topics/timescales/papers/guena2012.yaml) |
+| `met.cc_mutc_pd_impulse_peak_voltage` | CC-MUTC PD 脉冲光响应峰值电压与 FWHM | 38.3 V 峰值电压，30 ps FWHM | 50 μm 器件，~-39.5 V 反向偏压，平均光电流 4.6 mA，飞秒激光脉冲（<50 fs… | [peng2020](topics/timescales/papers/peng2020.yaml) |
+| `met.cc_mutc_pd_peak_power_10ghz_pulsed` | CC-MUTC PD 脉冲微波峰值功率 @ 10 GHz (X-band) | 44.2 dBm (26.3 W) | 50 μm 器件，10 GHz RF 载波，30 MHz 重复率，5% 占空比，反向偏压 ~-32… | [peng2020](topics/timescales/papers/peng2020.yaml) |
+| `met.cc_mutc_pd_peak_power_17ghz_pulsed` | CC-MUTC PD 脉冲微波峰值功率 @ 17 GHz (Ku-band) | 41.6 dBm (14.5 W) | 40 μm 器件，17 GHz RF 载波，30 MHz 重复率，5% 占空比，反向偏压 ~-32… | [peng2020](topics/timescales/papers/peng2020.yaml) |
+| `met.cc_mutc_pd_peak_power_22ghz_pulsed` | CC-MUTC PD 脉冲微波峰值功率 @ 22 GHz (K-band) | 40.6 dBm (11.5 W) | 34 μm 器件，22 GHz RF 载波，30 MHz 重复率，5% 占空比，反向偏压 ~-32… | [peng2020](topics/timescales/papers/peng2020.yaml) |
 | `met.cso_h_maser_kennedy_thorndike_2012` | CSO-H maser 长期比较对 Kennedy-Thorndike 检验的约束（20… | 比既往最佳约束提高 500 倍（光子扇区 Lorentz 局域不变性检验，持续时间超 10 年） | CSO（11.932 GHz）与氢钟长期比较，利用地球公转效应 | [guena2012](topics/timescales/papers/guena2012.yaml) |
 | `met.fo1_total_accuracy_2012` | FO1 喷泉钟总系统不确定度（2012） | 3.5×10⁻¹⁶ | 更新 DCP（表 I: −9.7±27×10⁻¹⁷）和微波透镜评估后。 总修正 −1033.1×1… | [guena2012](topics/timescales/papers/guena2012.yaml) |
 | `met.fo2_cs_total_accuracy_2012` | FO2-Cs 喷泉钟总系统不确定度（2012） | 2.1×10⁻¹⁶ | 更新 DCP（表 I: −9.2±8.9×10⁻¹⁷）和微波透镜（表 II: 7.3×10⁻¹⁷）… | [guena2012](topics/timescales/papers/guena2012.yaml) |

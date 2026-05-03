@@ -2,7 +2,7 @@
 
 # Timescales — Topic Index
 
-> Auto-generated 2026-05-03 08:04 UTC · 7 papers · 84 nodes · 57 relations
+> Auto-generated 2026-05-03 08:10 UTC · 8 papers · 92 nodes · 62 relations
 
 ## Entities
 
@@ -10,6 +10,7 @@
 |----|------|------:|--------|
 | `ent.al_plus_ion_optical_clock` | ²⁷Al⁺ 离子量子逻辑光钟（NIST 实验系统） | 1 | [chou2010](topics/timescales/papers/chou2010.yaml) |
 | `ent.bnm_syrte_cs_rb_fountain_ensemble_2005` | BNM-SYRTE 铯/铷原子喷泉钟组（FO1、FO2、FOM，2005 年水平） | 1 | [bize2005](topics/timescales/papers/bize2005.yaml) |
+| `ent.cc_mutc_pd_pulsed_microwave_source` | CC-MUTC 光电二极管脉冲微波源（Peng 2020，X/Ku/K 波段） | 2 | [peng2020](topics/timescales/papers/peng2020.yaml) |
 | `ent.cryogenic_sapphire_oscillator_uwa_2005` | 低温蓝宝石谐振器振荡器（CSO，UWA 研制，2005 年 BNM-SYRTE 使用） | 2 | [bize2005](topics/timescales/papers/bize2005.yaml) |
 | `ent.fo2_dual_rb_cs_fountain_2012` | FO2 ⁸⁷Rb/¹³³Cs 双喷泉钟（LNE-SYRTE，2012） | 2 | [guena2012](topics/timescales/papers/guena2012.yaml) |
 | `ent.geoid` | 大地水准面（地球重力等势面——时间频率计量的高程参考） | 1 | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
@@ -41,10 +42,12 @@
 | `pri.molecular_atomic_frequency_ratio_mass_dependence` | 分子/原子跃迁频率比对质子-电子质量比的灵敏度原理 | foundational | [amyklein2009](topics/timescales/papers/amyklein2009.yaml) |
 | `pri.mutc_structure_suppresses_space_charge` | MUTC 光电二极管结构通过预畸变电场设计抑制空间电荷非线性效应 | engineering | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 | `pri.ofd_transfers_optical_stability_to_microwave` | 光频率分频（OFD）将光学参考稳定度无噪声传递至微波域 | engineering | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
+| `pri.pulsed_illumination_mitigates_thermal_limit` | 脉冲光照抑制热退化机制，使光电二极管超越 CW 偏置电压与功率极限 | engineering | [peng2020](topics/timescales/papers/peng2020.yaml) |
 | `pri.redefinition_criteria_second` | SI 秒重定义强制性标准体系 | engineering | [dimarcq2024](topics/timescales/papers/dimarcq2024.yaml) |
 | `pri.relativistic_time_dilation_motion` | 狭义相对论时间膨胀——低速度下的运动时钟变慢 | foundational | [chou2010](topics/timescales/papers/chou2010.yaml) |
 | `pri.round_trip_phase_noise_compensation_fiber_link` | 光纤链路 round-trip 相位噪声补偿原理 | engineering | [amyklein2009](topics/timescales/papers/amyklein2009.yaml) |
 | `pri.secondary_representation_si_second` | SI 秒次级表示（Secondary Representations of the SI Second, SRS） | engineering | [dimarcq2024](topics/timescales/papers/dimarcq2024.yaml) |
+| `pri.space_charge_compensation_pre_distort_field` | 空间电荷补偿层预畸变电场实现高光电流下平坦场分布 | engineering | [peng2020](topics/timescales/papers/peng2020.yaml) |
 | `pri.time_entangled_with_gravity` | 引力与时间本质纠缠——分布式超精密时间失去意义 | foundational | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 
 ## Methods
@@ -52,6 +55,7 @@
 | ID | Name | Source |
 |----|------|--------|
 | `meth.am_pm_coefficient_measurement` | AM-PM 转换系数 α 测量方法 | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
+| `meth.cc_mutc_pd_pulsed_microwave_generation` | CC-MUTC 光电二极管脉冲微波信号生成方法 | [peng2020](topics/timescales/papers/peng2020.yaml) |
 | `meth.cross_correlation_phase_noise_measurement` | 互相关频谱分析残余相位噪声测量方法 | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 | `meth.dcp_uncertainty_evaluation_tilt_method` | 分布式腔相位频移不确定度评估方法——倾角灵敏度测量与数值场计算结合 | [guena2012](topics/timescales/papers/guena2012.yaml) |
 | `meth.fountain_cso_interrogation_ensemble` | 共用低温蓝宝石振荡器的多喷泉钟询问与频率比较方法 | [bize2005](topics/timescales/papers/bize2005.yaml) |
@@ -101,6 +105,10 @@
 |----|------|------------|--------|
 | `met.al_plus_clock_q_factor_2010` | ²⁷Al⁺ 光钟 300 ms 探针 Q 因子 | 4.2×10¹⁴ | [chou2010](topics/timescales/papers/chou2010.yaml) |
 | `met.bb_r_cs_stark_coefficient_2012` | ¹³³Cs 基态超精细跃迁黑体辐射标量 Stark 系数（2012 修订值） | k₀ = −2.282(4)×10⁻¹⁰ Hz·V⁻²·m² | [guena2012](topics/timescales/papers/guena2012.yaml) |
+| `met.cc_mutc_pd_impulse_peak_voltage` | CC-MUTC PD 脉冲光响应峰值电压与 FWHM | 38.3 V 峰值电压，30 ps FWHM | [peng2020](topics/timescales/papers/peng2020.yaml) |
+| `met.cc_mutc_pd_peak_power_10ghz_pulsed` | CC-MUTC PD 脉冲微波峰值功率 @ 10 GHz (X-band) | 44.2 dBm (26.3 W) | [peng2020](topics/timescales/papers/peng2020.yaml) |
+| `met.cc_mutc_pd_peak_power_17ghz_pulsed` | CC-MUTC PD 脉冲微波峰值功率 @ 17 GHz (Ku-band) | 41.6 dBm (14.5 W) | [peng2020](topics/timescales/papers/peng2020.yaml) |
+| `met.cc_mutc_pd_peak_power_22ghz_pulsed` | CC-MUTC PD 脉冲微波峰值功率 @ 22 GHz (K-band) | 40.6 dBm (11.5 W) | [peng2020](topics/timescales/papers/peng2020.yaml) |
 | `met.cso_h_maser_kennedy_thorndike_2012` | CSO-H maser 长期比较对 Kennedy-Thorndike 检验的约束（2012） | 比既往最佳约束提高 500 倍（光子扇区 Lorentz 局域不变性检验，持续时间超 10 年） | [guena2012](topics/timescales/papers/guena2012.yaml) |
 | `met.fo1_total_accuracy_2012` | FO1 喷泉钟总系统不确定度（2012） | 3.5×10⁻¹⁶ | [guena2012](topics/timescales/papers/guena2012.yaml) |
 | `met.fo2_cs_total_accuracy_2012` | FO2-Cs 喷泉钟总系统不确定度（2012） | 2.1×10⁻¹⁶ | [guena2012](topics/timescales/papers/guena2012.yaml) |

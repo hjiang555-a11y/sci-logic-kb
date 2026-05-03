@@ -4,7 +4,7 @@
 
 > **用途**：处理新论文时，用此文件快速检查是否已有同名/同义节点，避免重复定义。
 > **维护**：本文件由 `scripts/build_index.py` 自动生成，**请勿手工编辑**。
-> **生成时间**：2026-05-03 08:04 UTC
+> **生成时间**：2026-05-03 08:10 UTC
 
 > **使用方式**：
 > - 处理新论文时，`Ctrl+F` 搜索关键词（如 `brownian`, `pdh`, `fiber`）
@@ -509,10 +509,12 @@
 | `pri.molecular_atomic_frequency_ratio_mass_dependence` | 分子/原子跃迁频率比对质子-电子质量比的灵敏度原理 | foundational | [amyklein2009](topics/timescales/papers/amyklein2009.yaml) |
 | `pri.mutc_structure_suppresses_space_charge` | MUTC 光电二极管结构通过预畸变电场设计抑制空间电荷非线性效应 | engineering | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 | `pri.ofd_transfers_optical_stability_to_microwave` | 光频率分频（OFD）将光学参考稳定度无噪声传递至微波域 | engineering | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
+| `pri.pulsed_illumination_mitigates_thermal_limit` | 脉冲光照抑制热退化机制，使光电二极管超越 CW 偏置电压与功率极限 | engineering | [peng2020](topics/timescales/papers/peng2020.yaml) |
 | `pri.redefinition_criteria_second` | SI 秒重定义强制性标准体系 | engineering | [dimarcq2024](topics/timescales/papers/dimarcq2024.yaml) |
 | `pri.relativistic_time_dilation_motion` | 狭义相对论时间膨胀——低速度下的运动时钟变慢 | foundational | [chou2010](topics/timescales/papers/chou2010.yaml) |
 | `pri.round_trip_phase_noise_compensation_fiber_link` | 光纤链路 round-trip 相位噪声补偿原理 | engineering | [amyklein2009](topics/timescales/papers/amyklein2009.yaml) |
 | `pri.secondary_representation_si_second` | SI 秒次级表示（Secondary Representations of the SI Second, S… | engineering | [dimarcq2024](topics/timescales/papers/dimarcq2024.yaml) |
+| `pri.space_charge_compensation_pre_distort_field` | 空间电荷补偿层预畸变电场实现高光电流下平坦场分布 | engineering | [peng2020](topics/timescales/papers/peng2020.yaml) |
 | `pri.time_entangled_with_gravity` | 引力与时间本质纠缠——分布式超精密时间失去意义 | foundational | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 
 ### Methods
@@ -520,6 +522,7 @@
 | ID | Name | Source |
 |----|------|--------|
 | `meth.am_pm_coefficient_measurement` | AM-PM 转换系数 α 测量方法 | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
+| `meth.cc_mutc_pd_pulsed_microwave_generation` | CC-MUTC 光电二极管脉冲微波信号生成方法 | [peng2020](topics/timescales/papers/peng2020.yaml) |
 | `meth.cross_correlation_phase_noise_measurement` | 互相关频谱分析残余相位噪声测量方法 | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
 | `meth.dcp_uncertainty_evaluation_tilt_method` | 分布式腔相位频移不确定度评估方法——倾角灵敏度测量与数值场计算结合 | [guena2012](topics/timescales/papers/guena2012.yaml) |
 | `meth.fountain_cso_interrogation_ensemble` | 共用低温蓝宝石振荡器的多喷泉钟询问与频率比较方法 | [bize2005](topics/timescales/papers/bize2005.yaml) |

@@ -2,7 +2,7 @@
 
 # 🔬 Principles Quick Reference
 
-> Auto-generated 2026-05-03 08:04 UTC
+> Auto-generated 2026-05-03 08:10 UTC
 
 ## Tier: meta
 
@@ -346,6 +346,7 @@
 | `pri.pm_fiber_digital_feedback_phase_slip_free_s15` | 全 PM 光纤 + 数字反馈实现长期无相位滑动原理（Sinclair 2015） | Optical Frequency Combs | [sinclair2015](topics/optical-frequency-combs/papers/sinclair2015.yaml) |
 | `pri.pm_fiber_splice_vibration_immunity` | 全 PM 光纤拼接免调校振动免疫原理 | Optical Frequency Combs | [sinclair2014](topics/optical-frequency-combs/papers/sinclair2014.yaml) |
 | `pri.polarization_rotation_cavity_loss_frequency_control_z17` | 偏振态旋转调制腔损驱动梳频率控制原理（Zhang Y. 2017） | Optical Frequency Combs | [zhang2017b](topics/optical-frequency-combs/papers/zhang2017b.yaml) |
+| `pri.pulsed_illumination_mitigates_thermal_limit` | 脉冲光照抑制热退化机制，使光电二极管超越 CW 偏置电压与功率极限 | Timescales | [peng2020](topics/timescales/papers/peng2020.yaml) |
 | `pri.pump_comb_copackaging_swap_reduction_s18` | 泵源-梳腔同芯片集成的 SWaP 降低原理 | Optical Frequency Combs | [stern2018](topics/optical-frequency-combs/papers/stern2018.yaml) |
 | `pri.pump_rin_to_fceo_coupling` | 泵浦 RIN→fceo 频率噪声耦合原理（Er:fiber 梳固定点呼吸模型） | Optical Frequency Combs | [mcferran2007](topics/optical-frequency-combs/papers/mcferran2007.yaml) |
 | `pri.pyramidal_compact_cavity_design_d18` | 金字塔形紧凑腔体设计原理 | Ultrastable Laser | [didier2018](topics/ultrastable-laser/papers/didier2018.yaml) |
@@ -363,6 +364,7 @@
 | `pri.sin_waveguide_low_power_f2f_c17` | SiN 波导低功率 f-2f 自参考原理（Carlson 2017） | Optical Frequency Combs | [carlson2017](topics/optical-frequency-combs/papers/carlson2017.yaml) |
 | `pri.single_fiber_double_round_trip_characterization` | 单纤双往返链路表征原理（Calonico 2015 新提出） | Time-Frequency Transfer | [calonico2015_3kxj9jfq](topics/time-frequency-transfer/papers/calonico2015_3kxj9jfq.yaml) |
 | `pri.single_fiber_mechanical_actuator` | 单光纤机械执行器大范围调谐原理 | Optical Frequency Combs | [cai2020](topics/optical-frequency-combs/papers/cai2020.yaml) |
+| `pri.space_charge_compensation_pre_distort_field` | 空间电荷补偿层预畸变电场实现高光电流下平坦场分布 | Timescales | [peng2020](topics/timescales/papers/peng2020.yaml) |
 | `pri.squeeze_insensitive_cylindrical_cavity` | 圆柱腔挤压不灵敏持腔原理 | Ultrastable Laser | [davilarodriguez2017](topics/ultrastable-laser/papers/davilarodriguez2017.yaml) |
 | `pri.symmetric_spool_vibration_cancellation` | 对称光纤盘振动消除原理 | Ultrastable Laser | [hu2015](topics/ultrastable-laser/papers/hu2015.yaml) |
 | `pri.temperature_feedforward_cavity_l13b` | 温度前馈频率漂移修正 | Ultrastable Laser | [leibrandt2013b](topics/ultrastable-laser/papers/leibrandt2013b.yaml) |

@@ -2,7 +2,7 @@
 
 # 📚 sci-logic-kb — Knowledge Base Index
 
-> Auto-generated 2026-05-03 08:04 UTC
+> Auto-generated 2026-05-03 08:10 UTC
 
 ## 🧭 按研究问题导航
 
@@ -25,9 +25,9 @@
 | Optical Frequency Combs | 115 | 693 | 818 | [→ INDEX](topics/optical-frequency-combs/INDEX.md) |
 | shared | 10 | 39 | 29 | [→ INDEX](topics/shared/INDEX.md) |
 | Time-Frequency Transfer | 31 | 69 | 97 | [→ INDEX](topics/time-frequency-transfer/INDEX.md) |
-| Timescales | 7 | 84 | 57 | [→ INDEX](topics/timescales/INDEX.md) |
+| Timescales | 8 | 92 | 62 | [→ INDEX](topics/timescales/INDEX.md) |
 | Ultrastable Laser | 90 | 392 | 394 | [→ INDEX](topics/ultrastable-laser/INDEX.md) |
-| **Total** | **272** | **1329** | **1445** | |
+| **Total** | **273** | **1337** | **1450** | |
 
 ## Cross-Topic Quick References
 
@@ -44,7 +44,7 @@
 | Optical Frequency Combs | 165 | 195 | 95 | 238 |
 | shared | 3 | 17 | 11 | 8 |
 | Time-Frequency Transfer | 33 | 22 | 2 | 12 |
-| Timescales | 14 | 19 | 16 | 35 |
+| Timescales | 15 | 21 | 17 | 39 |
 | Ultrastable Laser | 64 | 85 | 87 | 156 |
 
 ## Top BOUNDED-BY Chains
