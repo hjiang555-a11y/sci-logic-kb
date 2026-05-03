@@ -200,6 +200,7 @@
 | 文件 | Zotero Key | 论文 | 状态 |
 |------|-----------|------|------|
 | `dimarcq2024.yaml` | SDG6KXNZ | Dimarcq 2024 — SI 秒重定义路线图 | ✅ v4.0 framework |
+| `kleppner2006.yaml` | 1.2195297 | Kleppner 2006 — 引力红移对分布式原子时标比较的终极限制 | ✅ v4.0 framework |
 
 ## 时间频率传递专题
 

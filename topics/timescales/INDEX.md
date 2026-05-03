@@ -2,25 +2,31 @@
 
 # Timescales — Topic Index
 
-> Auto-generated 2026-04-24 03:39 UTC · 1 papers · 6 nodes · 6 relations
+> Auto-generated 2026-05-03 05:35 UTC · 2 papers · 16 nodes · 12 relations
 
 ## Entities
 
 | ID | Name | Level | Source |
 |----|------|------:|--------|
+| `ent.geoid` | 大地水准面（地球重力等势面——时间频率计量的高程参考） | 1 | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 | `ent.si_second_definition` | SI 秒定义（当前基于铯，面向光学重定义） | 0 | [dimarcq2024](topics/timescales/papers/dimarcq2024.yaml) |
+| `ent.utc_leap_seconds` | UTC 闰秒机制（协调世界时的闰秒插入管理） | 0 | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 
 ## Principles
 
 | ID | Name | Tier | Source |
 |----|------|------|--------|
+| `pri.geoid_uncertainty_clock_comparison_limit` | 大地水准面不确定度对时钟比较的终极限制 | engineering | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
+| `pri.gravitational_blueshift_clock_rate` | 引力蓝移对时钟频率的影响——Δf/f ≈ gΔh/c² | foundational | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 | `pri.redefinition_criteria_second` | SI 秒重定义强制性标准体系 | engineering | [dimarcq2024](topics/timescales/papers/dimarcq2024.yaml) |
 | `pri.secondary_representation_si_second` | SI 秒次级表示（Secondary Representations of the SI Second, SRS） | engineering | [dimarcq2024](topics/timescales/papers/dimarcq2024.yaml) |
+| `pri.time_entangled_with_gravity` | 引力与时间本质纠缠——分布式超精密时间失去意义 | foundational | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 
 ## Methods
 
 | ID | Name | Source |
 |----|------|--------|
+| `meth.gps_satellite_clock_comparison` | GPS 卫星原子钟远程比较方法 | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 | `meth.optical_clock_comparison` | 光钟比较方法（本地与远程） | [dimarcq2024](topics/timescales/papers/dimarcq2024.yaml) |
 
 ## Metrics
@@ -32,11 +38,15 @@
 | ID | Name | Best Value | Source |
 |----|------|------------|--------|
 | `met.frequency_ratio_agreement_cross_lab` | 跨实验室光钟频率比一致性 | 部分频率比已在 ~10⁻¹⁷ 水平一致，但多数尚未达到 5×10⁻¹⁸ 目标 | [dimarcq2024](topics/timescales/papers/dimarcq2024.yaml) |
+| `met.geoid_height_uncertainty` | 大地水准面高程典型不确定度 | 30–50 cm | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
+| `met.gps_clock_comparison_accuracy_2006` | GPS 卫星时钟远程比较精度（2006 年水平） | ~1×10⁻¹⁵ | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
+| `met.leap_seconds_count_1972_2006` | UTC 闰秒累计插入次数（1972–2006） | 23 | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 | `met.optical_clock_systematic_uncertainty` | 光学频率标准系统不确定度 | 9.4×10⁻¹⁹（²⁷Al⁺ 量子逻辑钟，NIST，路线图汇总） | [dimarcq2024](topics/timescales/papers/dimarcq2024.yaml) |
+| `met.solid_earth_tide_frequency_fluctuation` | 固体潮引起的大地水准面起伏及派生频率波动 | ~2×10⁻¹⁷ | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 
 ## BOUNDED-BY Chains
 
-### `rel.D24_01`: `ent.si_second_definition` → `pri.redefinition_criteria_second`
+### `rel.dimarcq_2021_24_01`: `ent.si_second_definition` → `pri.redefinition_criteria_second`
 
 - **Source**: dimarcq2024
 
@@ -46,7 +56,7 @@ Nodes referenced but not defined in this topic:
 
 | Relation | Predicate | External Node | Source |
 |----------|-----------|---------------|--------|
-| `rel.D24_06` | CONDITIONED-BY | `ent.optical_frequency_comb` | dimarcq2024 |
-| `rel.D24_02` | CHARACTERIZED-BY | `ent.optical_frequency_standard` | dimarcq2024 |
-| `rel.D24_05` | CONDITIONED-BY | `ent.optical_frequency_standard` | dimarcq2024 |
+| `rel.dimarcq_2021_24_06` | CONDITIONED-BY | `ent.optical_frequency_comb` | dimarcq2024 |
+| `rel.dimarcq_2021_24_02` | CHARACTERIZED-BY | `ent.optical_frequency_standard` | dimarcq2024 |
+| `rel.dimarcq_2021_24_05` | CONDITIONED-BY | `ent.optical_frequency_standard` | dimarcq2024 |
 

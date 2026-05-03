@@ -2,7 +2,7 @@
 
 # 🔬 Principles Quick Reference
 
-> Auto-generated 2026-05-03 05:23 UTC
+> Auto-generated 2026-05-03 05:35 UTC
 
 ## Tier: meta
 
@@ -39,11 +39,13 @@
 | `pri.fiber_propagation_reciprocity` | 光纤传播互易性原理（前向=后向传播延迟） | Time-Frequency Transfer | [xu2019_gzd2byi4](topics/time-frequency-transfer/papers/xu2019_gzd2byi4.yaml) |
 | `pri.fiber_thermal_phase_noise_giant_ifog` | 大型光纤陀螺仪热相位噪声 | Ultrastable Laser | [li2019](topics/ultrastable-laser/papers/li2019.yaml) |
 | `pri.gaussian_beam_resonator_theory` | 高斯光束与谐振腔理论 | Ultrastable Laser | [kogelnik1966](topics/ultrastable-laser/papers/kogelnik1966.yaml) |
+| `pri.gravitational_blueshift_clock_rate` | 引力蓝移对时钟频率的影响——Δf/f ≈ gΔh/c² | Timescales | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 | `pri.gravitational_time_dilation` | 引力时间膨胀（Einstein 红移） | Time-Frequency Transfer | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
 | `pri.nlse_gain_self_similar_parabolic_solution` | 含增益 NLSE 自相似抛物线脉冲渐近解原理（Similariton） | shared | [fermann2000](topics/shared/papers/fermann2000.yaml) |
 | `pri.si_second_cesium_definition` | SI 秒的 Cs 超精细跃迁定义 | Frequency Standards | [heavner2005](topics/frequency-standards/papers/heavner2005.yaml) |
 | `pri.squeezed_light_quantum_enhancement` | 压缩光量子增强干涉仪灵敏度 | Ultrastable Laser | [aasi2013](topics/ultrastable-laser/papers/aasi2013.yaml) |
 | `pri.superradiant_emission_narrow_linewidth` | 超辐射集体发射窄线宽原理 | Ultrastable Laser | [meiser2009](topics/ultrastable-laser/papers/meiser2009.yaml) |
+| `pri.time_entangled_with_gravity` | 引力与时间本质纠缠——分布式超精密时间失去意义 | Timescales | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 | `pri.ule_hcf_thermal_stability` | ULE 空心光纤热稳定性原理 | Ultrastable Laser | [ding2025](topics/ultrastable-laser/papers/ding2025.yaml) |
 
 ## Tier: domain
@@ -279,6 +281,7 @@
 | `pri.free_core_boundary_mode_decoupling` | 自由核心边界降低包层模耦合原理 | Ultrastable Laser | [belardi2015](topics/ultrastable-laser/papers/belardi2015.yaml) |
 | `pri.gain_lifetime_servo_bandwidth_limit` | 增益介质寿命限制伺服带宽原理 | Optical Frequency Combs | [kuse2015](topics/optical-frequency-combs/papers/kuse2015.yaml) |
 | `pri.gated_detection_phase_coherent_snr_enhancement_z24` | 门控探测利用梳齿相位相干性增强 SNR 原理（Zhang S. 2024） | Optical Frequency Combs | [zhang_s2024](topics/optical-frequency-combs/papers/zhang_s2024.yaml) |
+| `pri.geoid_uncertainty_clock_comparison_limit` | 大地水准面不确定度对时钟比较的终极限制 | Timescales | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 | `pri.gps_disciplined_si_traceability` | GPS-驯服时钟提供梳 SI-秒溯源原理（天文梳场景） | Optical Frequency Combs | [metcalf2019](topics/optical-frequency-combs/papers/metcalf2019.yaml) |
 | `pri.grin_lens_compact_f2f` | GRIN 透镜微型化 f-2f 干涉仪原理 | Optical Frequency Combs | [cai2020](topics/optical-frequency-combs/papers/cai2020.yaml) |
 | `pri.hcf_smf_thermal_compensation` | HCF-SMF 热补偿光纤干涉仪原理 | Ultrastable Laser | [shi2022](topics/ultrastable-laser/papers/shi2022.yaml) |

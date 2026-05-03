@@ -4,7 +4,7 @@
 
 > **用途**：处理新论文时，用此文件快速检查是否已有同名/同义节点，避免重复定义。
 > **维护**：本文件由 `scripts/build_index.py` 自动生成，**请勿手工编辑**。
-> **生成时间**：2026-05-03 05:23 UTC
+> **生成时间**：2026-05-03 05:35 UTC
 
 > **使用方式**：
 > - 处理新论文时，`Ctrl+F` 搜索关键词（如 `brownian`, `pdh`, `fiber`）
@@ -482,19 +482,25 @@
 
 | ID | Name | Source |
 |----|------|--------|
+| `ent.geoid` | 大地水准面（地球重力等势面——时间频率计量的高程参考） | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 | `ent.si_second_definition` | SI 秒定义（当前基于铯，面向光学重定义） | [dimarcq2024](topics/timescales/papers/dimarcq2024.yaml) |
+| `ent.utc_leap_seconds` | UTC 闰秒机制（协调世界时的闰秒插入管理） | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 
 ### Principles
 
 | ID | Name | Tier | Source |
 |----|------|------|--------|
+| `pri.geoid_uncertainty_clock_comparison_limit` | 大地水准面不确定度对时钟比较的终极限制 | engineering | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
+| `pri.gravitational_blueshift_clock_rate` | 引力蓝移对时钟频率的影响——Δf/f ≈ gΔh/c² | foundational | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 | `pri.redefinition_criteria_second` | SI 秒重定义强制性标准体系 | engineering | [dimarcq2024](topics/timescales/papers/dimarcq2024.yaml) |
 | `pri.secondary_representation_si_second` | SI 秒次级表示（Secondary Representations of the SI Second, S… | engineering | [dimarcq2024](topics/timescales/papers/dimarcq2024.yaml) |
+| `pri.time_entangled_with_gravity` | 引力与时间本质纠缠——分布式超精密时间失去意义 | foundational | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 
 ### Methods
 
 | ID | Name | Source |
 |----|------|--------|
+| `meth.gps_satellite_clock_comparison` | GPS 卫星原子钟远程比较方法 | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
 | `meth.optical_clock_comparison` | 光钟比较方法（本地与远程） | [dimarcq2024](topics/timescales/papers/dimarcq2024.yaml) |
 
 ---
