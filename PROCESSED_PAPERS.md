@@ -250,6 +250,9 @@
 | `bercy2014.yaml` | PhysRevA.90.061802 | Bercy 2014 — 100 km 电信光纤双向光频比对，2WU 2×10⁻¹⁷ / 2WB 5×10⁻²¹ | ✅ v4.5 evidence |
 | `gozzard2022.yaml` | PhysRevLett.128.020801 | Gozzard 2022 — 自由空间相位-振幅双稳定频率传递，6.1×10⁻²¹@300 s | ✅ v4.5 breakthrough |
 | `daussy2005.yaml` | PhysRevLett.94.203904 | Daussy 2005 — 首次电信光纤频率分发演示，86 km 往返 10⁻¹⁷@1 天 | ✅ v4.5 breakthrough |
+| `caldwell2020.yaml` | oe-28-18-26661 | Caldwell 2020 — 大气湍流时序抖动实测与微气象预测对比验证 | ✅ v4.5 evidence |
+| `bergeron2019.yaml` | s41467-019-09768-9 | Bergeron 2019 — 四旋翼飞行器 fs 时间同步（O-TWTFT with motion <1 fs） | ✅ v4.5 breakthrough |
+| `pizzocaro2021.yaml` | s41567-020-01038-6 | Pizzocaro 2021 — VLBI 洲际光钟比对（意大利-日本 9000 km）| ✅ v4.5 breakthrough |
 
 ## 时频计量数学基础专题（B9 Allan–Howe 奠基白名单 + Allan 2016 + Sullivan 2001）
 

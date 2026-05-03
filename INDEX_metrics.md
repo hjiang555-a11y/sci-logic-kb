@@ -2,7 +2,7 @@
 
 # 📊 Metrics Quick Reference
 
-> Auto-generated 2026-05-03 09:59 UTC
+> Auto-generated 2026-05-03 10:22 UTC
 >
 > Metrics are grouped by **role** (v4.4 σ_y-first convention, see `topics/ultrastable-laser/_meta/scoping_principles.md` v2). Role is taken from the `role` field on the metric node when present, otherwise inferred from ID / name heuristics.
 
@@ -331,9 +331,12 @@
 |----|------|------------|------------|--------|
 | `met.bercy2014_2wb_instability` | Bercy 2014 2WB 方案（100 km 单纤双向）光频比对不稳定度 | 7×10⁻¹⁸ @ 1 s; 5×10⁻²¹ @ 4,000 s; 分数不确定度 2×10⁻²⁰ | 单纤 100 km 双向（WDM 分前/后向）；无放大器；Λ 型无死区计数器 | [bercy2014](topics/time-frequency-transfer/papers/bercy2014.yaml) |
 | `met.bercy2014_2wu_instability` | Bercy 2014 2WU 方案（100 km 平行光纤）光频比对不稳定度 | 10⁻¹⁵ @ 1 s; ~10⁻¹⁶ @ 10 s; 2×10⁻¹⁷ @ 40,000 s | 巴黎 100 km 城市光纤环路；2WU 无放大器两纤反平行；Λ 型无死区计数器；同时承载数字数据 | [bercy2014](topics/time-frequency-transfer/papers/bercy2014.yaml) |
+| `met.bergeron2019_motion_timing_sync` | Bergeron 2019 运动平台 fs 时间同步性能 | <1 fs TDEV；频率一致性 ~10⁻¹⁸（despite 10⁻⁷ motion-induced Doppler） | 四旋翼飞行器 retroreflector（max 24 m/s）；2 站点 ~4 km 间距（B… | [bergeron2019](topics/time-frequency-transfer/papers/bergeron2019.yaml) |
+| `met.caldwell2020_timing_jitter_validation` | Caldwell 2020 微气象预测-频率梳实测时序抖动对比验证 | 微气象预测与频率梳实测 PSD 在谱形状和绝对水平上相符（multi-condition validation） | NIST Boulder 水平路径；多次昼夜循环；频率梳 LOS + sonic anemomet… | [caldwell2020](topics/time-frequency-transfer/papers/caldwell2020.yaml) |
 | `met.daussy2005_86km_round_trip_allan` | Daussy 2005 86 km 光纤往返链路 Allan 频率偏差 | 8×10⁻¹⁵ @ 1 s; 2×10⁻¹⁵ @ 10 s; ~10⁻¹⁶ @ 1000 s; 10⁻¹⁷ @ 1 d… | 86 km 往返光纤（43 km 单程）；1.55 μm 载波；AOM 往返相位补偿；飞轮振荡器 … | [daussy2005](topics/time-frequency-transfer/papers/daussy2005.yaml) |
 | `met.giorgetta2013_otwtft_timing_deviation` | Giorgetta 2013 O-TWTFT 残余时偏（TDEV） | ~1 fs TDEV（0.1 ms → 1000 s 平台），MDEV < 1×10⁻¹⁸ @ 1000 s | 2 km 水平自由空间路径 + 500 m 光纤；共享超稳 CW 振荡器（共钟模式）；24 小时 … | [giorgetta2013](topics/time-frequency-transfer/papers/giorgetta2013.yaml) |
 | `met.gozzard2022_free_space_instability` | Gozzard 2022 自由空间频率传递不稳定度 | 6.1×10⁻²¹ @ 300 s（MDEV）; 预测地面-LEO: ~1×10⁻²⁰ per satellite p… | 2.4 km 水平城区自由空间链路；1550 nm 载波；tip-tilt 振幅稳定+相位补偿；等… | [gozzard2022](topics/time-frequency-transfer/papers/gozzard2022.yaml) |
+| `met.pizzocaro2021_vlbi_instability` | Pizzocaro 2021 VLBI 洲际光钟比对不稳定度 | ~2–4×10⁻¹⁶ at 1000–10000 s（OADEV） | 意大利 Medicina (Yb) ↔ 日本 Koganei (Sr)；9000 km VLBI … | [pizzocaro2021](topics/time-frequency-transfer/papers/pizzocaro2021.yaml) |
 | `met.predehl2012_920km_link_stability` | Predehl 2012 920 km 光纤链路分数频率不稳定度 | MDEV = 5×10⁻¹⁵ @ 1 s; 4×10⁻¹⁷ @ 100 s; 1×10⁻¹⁸ @ <1000 s; 本… | 两条独立反平行 920 km 光纤（F1+F2）；腔稳定激光器 ~1 Hz 线宽；无死区 Π 型计… | [predehl2012](topics/time-frequency-transfer/papers/predehl2012.yaml) |
 | `met.t2l2_ground_space_tdev_ps_exertier2014` | T2L2 地面-空间时间传递最佳 TDEV（Exertier 2014） | ~50–60 ps @ 0.1 s；τ^(-1/2) 改善；~6–8 ps @ 75 s（最小值），回升至数 10 p… | H-Maser 参考 SLR 站（Grasse/Herstmonceux）；Jason-2 单个 … | [exertier2014](topics/time-frequency-transfer/papers/exertier2014.yaml) |
 | `met.t2l2_time_stability_wettzell_exertier2010` | T2L2 Wettzell 站地面-空间时间传递稳定性（Exertier 2010） | ~40 ps @ 1 s；~7 ps @ 30 s | Wettzell H-Maser 参考；Jason-2 pass ~650 s；SLR 数据经 1… | [exertier2010](topics/time-frequency-transfer/papers/exertier2010.yaml) |

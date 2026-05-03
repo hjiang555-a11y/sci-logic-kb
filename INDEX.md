@@ -2,7 +2,7 @@
 
 # 📚 sci-logic-kb — Knowledge Base Index
 
-> Auto-generated 2026-05-03 09:59 UTC
+> Auto-generated 2026-05-03 10:22 UTC
 
 ## 🧭 按研究问题导航
 
@@ -24,10 +24,10 @@
 | Frequency Standards | 19 | 52 | 50 | [→ INDEX](topics/frequency-standards/INDEX.md) |
 | Optical Frequency Combs | 115 | 693 | 818 | [→ INDEX](topics/optical-frequency-combs/INDEX.md) |
 | shared | 10 | 39 | 29 | [→ INDEX](topics/shared/INDEX.md) |
-| Time-Frequency Transfer | 38 | 107 | 125 | [→ INDEX](topics/time-frequency-transfer/INDEX.md) |
+| Time-Frequency Transfer | 41 | 119 | 137 | [→ INDEX](topics/time-frequency-transfer/INDEX.md) |
 | Timescales | 8 | 92 | 62 | [→ INDEX](topics/timescales/INDEX.md) |
 | Ultrastable Laser | 90 | 392 | 394 | [→ INDEX](topics/ultrastable-laser/INDEX.md) |
-| **Total** | **280** | **1375** | **1478** | |
+| **Total** | **283** | **1387** | **1490** | |
 
 ## Cross-Topic Quick References
 
@@ -43,7 +43,7 @@
 | Frequency Standards | 20 | 13 | 4 | 15 |
 | Optical Frequency Combs | 165 | 195 | 95 | 238 |
 | shared | 3 | 17 | 11 | 8 |
-| Time-Frequency Transfer | 40 | 33 | 9 | 25 |
+| Time-Frequency Transfer | 43 | 36 | 12 | 28 |
 | Timescales | 15 | 21 | 17 | 39 |
 | Ultrastable Laser | 64 | 85 | 87 | 156 |
 

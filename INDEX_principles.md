@@ -2,7 +2,7 @@
 
 # 🔬 Principles Quick Reference
 
-> Auto-generated 2026-05-03 09:59 UTC
+> Auto-generated 2026-05-03 10:22 UTC
 
 ## Tier: meta
 
@@ -156,7 +156,9 @@
 | `pri.mirror_heating_cavity_shift` | 腔镜加热导致谐振频率漂移 | Ultrastable Laser | [young1999](topics/ultrastable-laser/papers/young1999.yaml) |
 | `pri.mode_interaction_comb_generation` | 模式交互辅助微梳产生原理 | Optical Frequency Combs | [pasquazi2018](topics/optical-frequency-combs/papers/pasquazi2018.yaml) |
 | `pri.molecular_rovibrational_fingerprint` | 分子振转指纹光谱原理 | Optical Frequency Combs | [schliesser2012](topics/optical-frequency-combs/papers/schliesser2012.yaml) |
+| `pri.monin_obukhov_timing_jitter_prediction` | Monin-Obukhov 相似性理论预测大气湍流光学时序抖动原理 | Time-Frequency Transfer | [caldwell2020](topics/time-frequency-transfer/papers/caldwell2020.yaml) |
 | `pri.monolithic_cavity_intrinsic_noise_reduction` | 整体式全固态腔 OFC 内禀噪声压制原理 | Optical Frequency Combs | [endo2018](topics/optical-frequency-combs/papers/endo2018.yaml) |
+| `pri.motion_compensated_otwtft` | 运动补偿光学双向时间频率传递原理（O-TWTFT with motion） | Time-Frequency Transfer | [bergeron2019](topics/time-frequency-transfer/papers/bergeron2019.yaml) |
 | `pri.multistage_thermal_damping_low_temp_z17` | 多级热阻尼低温滤波原理（Zhang 2017） | Ultrastable Laser | [zhang2017](topics/ultrastable-laser/papers/zhang2017.yaml) |
 | `pri.mutual_coherence_requirement` | 双梳互相干要求 | Optical Frequency Combs | [coddington2016](topics/optical-frequency-combs/papers/coddington2016.yaml) |
 | `pri.native_mode_spacing_matching` | 微梳 FSR 与天文光谱仪分辨率原生匹配原理 | Optical Frequency Combs | [suh2019](topics/optical-frequency-combs/papers/suh2019.yaml) |
@@ -247,6 +249,7 @@
 | `pri.vibration_cavity_length_coupling` | Vibration-induced oscillator cavity-length modulation | Optical Frequency Combs | [lezius2016](topics/optical-frequency-combs/papers/lezius2016.yaml) |
 | `pri.vibration_isolation_pendulum` | 低频弹性悬挂隔振原理 | Ultrastable Laser | [young1999](topics/ultrastable-laser/papers/young1999.yaml) |
 | `pri.vipa_spatial_comb_mode_resolution_d07` | VIPA 空间分辨梳模式原理（Diddams 2007） | Optical Frequency Combs | [diddams2007](topics/optical-frequency-combs/papers/diddams2007.yaml) |
+| `pri.vlbi_clock_comparison_broadband` | 宽带 VLBI 光钟频率比对原理 | Time-Frequency Transfer | [pizzocaro2021](topics/time-frequency-transfer/papers/pizzocaro2021.yaml) |
 | `pri.waveguide_loss_comb_limit` | Si waveguide propagation loss as cavity-Q / efficiency… | Optical Frequency Combs | [wang2017](topics/optical-frequency-combs/papers/wang2017.yaml) |
 
 ## Tier: engineering

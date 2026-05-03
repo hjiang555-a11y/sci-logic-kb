@@ -4,7 +4,7 @@
 
 > **用途**：处理新论文时，用此文件快速检查是否已有同名/同义节点，避免重复定义。
 > **维护**：本文件由 `scripts/build_index.py` 自动生成，**请勿手工编辑**。
-> **生成时间**：2026-05-03 09:59 UTC
+> **生成时间**：2026-05-03 10:22 UTC
 
 > **使用方式**：
 > - 处理新论文时，`Ctrl+F` 搜索关键词（如 `brownian`, `pdh`, `fiber`）
@@ -463,6 +463,8 @@
 | `pri.gravitational_time_dilation` | 引力时间膨胀（Einstein 红移） | foundational | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
 | `pri.hybrid_analog_digital_delay_compensation` | 模拟 VDL + 数字跳变的混合延迟补偿原理（Krehlik 2015） | engineering | [krehlik2015_3mi33g2r](topics/time-frequency-transfer/papers/krehlik2015_3mi33g2r.yaml) |
 | `pri.long_haul_fiber_phase_noise_compensation_round_trip` | 长距离光纤往返相位噪声主动补偿原理（Predehl 2012 方案） | domain | [predehl2012](topics/time-frequency-transfer/papers/predehl2012.yaml) |
+| `pri.monin_obukhov_timing_jitter_prediction` | Monin-Obukhov 相似性理论预测大气湍流光学时序抖动原理 | domain | [caldwell2020](topics/time-frequency-transfer/papers/caldwell2020.yaml) |
+| `pri.motion_compensated_otwtft` | 运动补偿光学双向时间频率传递原理（O-TWTFT with motion） | domain | [bergeron2019](topics/time-frequency-transfer/papers/bergeron2019.yaml) |
 | `pri.multi_node_tf_network_closure` | 多节点时频网络闭合一致性原理 | engineering | [bodine2020_npl9i62s](topics/time-frequency-transfer/papers/bodine2020_npl9i62s.yaml) |
 | `pri.non_common_view_clock_comparison` | 非共视时钟比对原理（non-common-view comparison） | domain | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
 | `pri.o_twtft_motion_reciprocity_breakdown` | 运动平台 O-TWTFT 互易性破坏与修正原理 | domain | [sinclair2019_5xulcnp3](topics/time-frequency-transfer/papers/sinclair2019_5xulcnp3.yaml) |
@@ -476,20 +478,24 @@
 | `pri.telecom_network_metrology_coexistence` | 电信暗信道共存计量信号传递原理 | domain | [lopez2015_ws3xm8ls](topics/time-frequency-transfer/papers/lopez2015_ws3xm8ls.yaml) |
 | `pri.turbulence_anisoplanatism_tf_degradation` | 湍流 anisoplanatism 对双向 TF 传递互易性的破坏原理 | domain | [swann2019_9ltylbj8](topics/time-frequency-transfer/papers/swann2019_9ltylbj8.yaml) |
 | `pri.two_way_frequency_comparison_noise_rejection` | 双向光频比对传播噪声被动抵消原理（无需主动补偿） | domain | [bercy2014](topics/time-frequency-transfer/papers/bercy2014.yaml) |
+| `pri.vlbi_clock_comparison_broadband` | 宽带 VLBI 光钟频率比对原理 | domain | [pizzocaro2021](topics/time-frequency-transfer/papers/pizzocaro2021.yaml) |
 
 ### Methods
 
 | ID | Name | Source |
 |----|------|--------|
 | `meth.antiparallel_fiber_frequency_dissemination` | 反平行光纤链路光学频率分发与比较方法 | [predehl2012](topics/time-frequency-transfer/papers/predehl2012.yaml) |
+| `meth.comb_timing_jitter_vs_micromet_comparison` | 频率梳时序抖动测量与微气象传感器对比方法 | [caldwell2020](topics/time-frequency-transfer/papers/caldwell2020.yaml) |
 | `meth.dual_comb_otwtft_over_free_space` | 双梳自由空间 O-TWTFT 时间频率传递方法 | [giorgetta2013](topics/time-frequency-transfer/papers/giorgetta2013.yaml) |
 | `meth.elt_plus_pulsed_optical_tf_transfer` | 脉冲激光光学时频传递法（ELT+ 实现） | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
 | `meth.fiber_round_trip_phase_stabilized_dissemination` | 光纤往返相位稳定化频率分发方法（Daussy 2005 方案） | [daussy2005](topics/time-frequency-transfer/papers/daussy2005.yaml) |
+| `meth.motion_resilient_otwtft` | 运动鲁棒型 O-TWTFT 时间频率同步方法 | [bergeron2019](topics/time-frequency-transfer/papers/bergeron2019.yaml) |
 | `meth.mwl_two_way_tf_transfer` | 双向双频微波时频传递法（MWL 实现） | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
 | `meth.phase_amplitude_tiptilt_free_space_frequency_transfer` | 相位-振幅双稳定自由空间光学频率传递方法 | [gozzard2022](topics/time-frequency-transfer/papers/gozzard2022.yaml) |
 | `meth.t2l2_data_reduction_triplet_identification` | T2L2 数据约化与三重态识别方法（Exertier 2014 管线） | [exertier2014](topics/time-frequency-transfer/papers/exertier2014.yaml) |
 | `meth.t2l2_ground_to_space_time_transfer` | T2L2 地面-空间激光时间传递方法 | [exertier2010](topics/time-frequency-transfer/papers/exertier2010.yaml) |
 | `meth.two_way_unidirectional_frequency_comparison` | 双向单纤（2WU/2WB）光频比对方法 | [bercy2014](topics/time-frequency-transfer/papers/bercy2014.yaml) |
+| `meth.vlbi_frequency_transfer_clock_comparison` | VLBI 频率传递光学时钟洲际比对方法 | [pizzocaro2021](topics/time-frequency-transfer/papers/pizzocaro2021.yaml) |
 
 ---
 

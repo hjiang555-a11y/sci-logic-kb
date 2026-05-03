@@ -1,0 +1,150 @@
+# Pizzocaro 2021 — Intercontinental comparison of optical atomic clocks through VLBI [breakthrough]
+# 提取者：Claude Code（AI 草稿，待专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.5
+# 专题：time-frequency-transfer（VLBI 光钟洲际比对 — 9000 km 意大利-日本）
+# contribution_type: breakthrough — 首次利用甚长基线干涉测量（VLBI）实现洲际光学原子钟
+#   比对（意大利-日本 9000 km），性能超越卫星双向时间频率传递（TWSTFT）。
+
+meta:
+  zotero_key: "s41567-020-01038-6"
+  topic: time-frequency-transfer
+  source_type: journal_paper
+  contribution_type: breakthrough
+  reliability: high
+  title: "Intercontinental comparison of optical atomic clocks through very long baseline interferometry"
+  year: 2021
+  first_author: Pizzocaro
+  authors: ["Marco Pizzocaro", "Mamoru Sekido", "Kazuhiro Takefuji", "Hideki Ujihara", "Hidekazu Hachisu", "Nils Nemitz", "Masanori Tsutsumi", "Tetsuro Kondo", "Eiji Kawai", "Ryuichi Ichikawa", "Kunitaka Namba", "Yoshihiro Okamoto", "Rumi Takahashi", "Junichi Komuro", "Cecilia Clivati", "Filippo Bregolin", "Piero Barbieri", "Alberto Mura", "Elena Cantoni", "Giancarlo Cerretto", "Filippo Levi", "Giuseppe Maccaferri", "Mauro Roma", "Claudio Bortolotti", "Monia Negusini", "Roberto Ricci", "Giampaolo Zacchiroli", "Juri Roda", "Julia Leute", "Gérard Petit", "Federico Perini", "Davide Calonico", "Tetsuya Ido"]
+  journal: "Nature Physics"
+  volume: 17
+  pages: "223-227"
+  doi: "10.1038/s41567-020-01038-6"
+  note: >
+    [breakthrough 论文] 首次以 VLBI 技术实现洲际光钟比对。在意大利 Medicina 和
+    日本 Koganei（~9000 km 基线）各部署专用可搬运 VLBI 站（宽带检测），
+    观测河外射电源实现两地光钟（意大利 Yb 光晶格钟、日本 Sr 光晶格钟）
+    的频率比对。分数频率不稳定度 ~2×10⁻¹⁶@1000 s——超越卫星 TWSTFT
+    和 GPS PPP 技术——为未来跨洋光学时钟比对和国际时间尺度构建提供
+    替代或补充卫星技术的独立方案。
+
+entities:
+  - id: ent.pizzocaro2021_vlbi_clock_comparison
+    name: "Pizzocaro 2021 VLBI 洲际光钟比对系统（Medicina↔Koganei 9000 km）"
+    tier: system
+    domain: "VLBI；光学原子钟比对；国际时间频率计量"
+    description: >
+      两套专用可搬运 VLBI 站：意大利 Medicina（INRIM Yb 光晶格钟）
+      和日本 Koganei（NICT Sr 光晶格钟），基线 ~9000 km。
+      宽带 VLBI 接收机（~GHz 带宽）观测河外射电源，通过宽带检测
+      提高信噪比和测量精度。观测数据经高速互联网传输至 Kashima（日本）
+      相关中心进行联合处理。与传统 VLBI 核心任务（UT1/天球参考架）
+      不同，此系统专门针对频率传递优化（短切换周期、宽带检测）。
+    verification_status: demonstrated
+    source:
+      zotero_key: "s41567-020-01038-6"
+      claim: "we show that very long baseline interferometry (VLBI), although originally developed for radio astronomy and geodesy, can overcome this limit and compare remote clocks through the observation of extragalactic radio sources."
+
+principles:
+  - id: pri.vlbi_clock_comparison_broadband
+    name: "宽带 VLBI 光钟频率比对原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      VLBI 通过两地同时观测同一河外射电源（类星体），将两地记录的射电信号
+      （经本地原子钟时间戳标记）进行互相关处理。互相关峰值位置给出两站钟差，
+      相关相位斜率给出频率差。与传统窄带 VLBI 不同，专用宽带检测（~GHz 量级
+      瞬时带宽）显著提高信噪比和频率测量精度，使频率传递不稳定度超越卫星
+      TWSTFT（~10⁻¹⁵@1 天）——进入 10⁻¹⁶ 域。
+      方案的核心优势：不依赖卫星（替代 TWSTFT/PPP），也不要求光纤互连——
+      通过观测自然天体（河外射电源）即可实现跨洋任意两点的时钟比对。
+    domain: "VLBI 时间频率传递；测地 VLBI；射电天文计量"
+    key_insight: >
+      河外射电源作为无限远处的被动"信标"提供了天然的双向时间传递路径——
+      两地接收到同一波前，各自以本地钟标记到达时间，差分即得钟差。
+      这与双向卫星时间传递（TWSTFT）在数学上同构，但不需要发射主动信号，
+      不受卫星可用性和站数量的限制。
+    conditions: "两 VLBI 站同时观测同一射电源（共视）；观测频率 S/X/K 波段（2–30 GHz）；钟稳定度足够支持数分钟至小时量级的观测切换周期"
+    source:
+      zotero_key: "s41567-020-01038-6"
+      claim: "we developed dedicated transportable VLBI stations that use broadband detection and demonstrate the comparison of two optical clocks located in Italy and Japan separated by 9,000 km."
+
+methods:
+  - id: meth.vlbi_frequency_transfer_clock_comparison
+    name: "VLBI 频率传递光学时钟洲际比对方法"
+    purpose: >
+      替代卫星 TWSTFT/GPS PPP 实现洲际（>5000 km，光纤不可达距离）的
+      光学原子钟频率比对——支持国际 TAI 时间尺度构建和基本物理测试。
+    description: >
+      1. 两套可搬运 VLBI 站（意大利 + 日本）配备宽带接收机（~GHz 带宽）。
+      2. 同时观测河外射电源（类星体），接收信号经本地钟（光钟经 fs 光频梳
+         桥接至 VLBI 微波本振）标记时间戳并记录。
+      3. 数据经高速互联网传输至相关中心（如 Kashima）进行互相关处理。
+      4. 多个射电源 + 多 scan（防止天-钟模糊度）联合解算两站钟频率差。
+      5. 分数频率不稳定度评估：OADEV 与卫星 TWSTFT/GPS PPP 对比。
+    key_steps:
+      - "可搬运 VLBI 站部署（含宽带接收机+高稳微波本振）"
+      - "光钟 → fs 梳 → VLBI 微波本振（频率桥接）"
+      - "共同观测河外射电源（共视 scan schedule）"
+      - "互相关处理 → 载波相位提取 → 频率差解算"
+      - "OADEV 评估并与卫星技术对比"
+    applicable_conditions: "两站可视共天区（射电源在两地 horizon 以上）；宽带检测（~GHz BW）优于窄带 VLBI；光钟稳定度高于 VLBI 频率传递噪声"
+    source:
+      zotero_key: "s41567-020-01038-6"
+      claim: "we developed dedicated transportable VLBI stations that use broadband detection and demonstrate the comparison of two optical clocks located in Italy and Japan."
+
+metrics:
+  - id: met.pizzocaro2021_vlbi_instability
+    name: "Pizzocaro 2021 VLBI 洲际光钟比对不稳定度"
+    unit: "无量纲（分数频率 OADEV）"
+    role: primary
+    description: >
+      意大利 Yb ↔ 日本 Sr 光晶格钟，9000 km VLBI 频率比对的不稳定度。
+      短稳受限于 VLBI 信噪比（射电源流量），长稳受限于大气和对流层残余。
+      性能超越卫星 TWSTFT 和 GPS PPP——展示了 VLBI 作为独立于卫星
+      基础设施的洲际光钟比对替代方案。
+    demonstrated_value:
+      value: "~2–4×10⁻¹⁶ at 1000–10000 s（OADEV）"
+      conditions: "意大利 Medicina (Yb) ↔ 日本 Koganei (Sr)；9000 km VLBI 基线；S/X 波段宽带检测；河外射电源（class QSO）"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "s41567-020-01038-6"
+        claim: "This system demonstrates performance beyond satellite techniques and can pave the way for future long-term stable international clock comparisons."
+
+relations:
+  - id: rel.pizzocaro2021_01
+    subject: meth.vlbi_frequency_transfer_clock_comparison
+    predicate: DERIVED-FROM
+    object: pri.vlbi_clock_comparison_broadband
+    confidence: established
+    source:
+      zotero_key: "s41567-020-01038-6"
+      claim: "very long baseline interferometry (VLBI) can overcome this limit and compare remote clocks through the observation of extragalactic radio sources."
+
+  - id: rel.pizzocaro2021_02
+    subject: ent.pizzocaro2021_vlbi_clock_comparison
+    predicate: REALIZES
+    object: meth.vlbi_frequency_transfer_clock_comparison
+    confidence: established
+    source:
+      zotero_key: "s41567-020-01038-6"
+      claim: "we developed dedicated transportable VLBI stations that use broadband detection."
+
+  - id: rel.pizzocaro2021_03
+    subject: met.pizzocaro2021_vlbi_instability
+    predicate: DEMONSTRATES
+    object: pri.vlbi_clock_comparison_broadband
+    confidence: established
+    source:
+      zotero_key: "s41567-020-01038-6"
+      claim: "This system demonstrates performance beyond satellite techniques."
+
+  - id: rel.pizzocaro2021_04
+    subject: meth.vlbi_frequency_transfer_clock_comparison
+    predicate: COMPETES-WITH
+    object: meth.t2l2_ground_to_space_time_transfer
+    confidence: established
+    source:
+      zotero_key: "s41567-020-01038-6"
+      claim: "Optical-fibre links allow the most precise optical clocks to be compared, without degradation, over intracontinental distances up to thousands of kilometres, but intercontinental comparisons remain limited by the performance of satellite transfer techniques."

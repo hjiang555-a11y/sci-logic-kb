@@ -1,0 +1,148 @@
+# Bergeron 2019 — Femtosecond time synchronization of optical clocks off of a flying quadcopter [breakthrough]
+# 提取者：Claude Code（AI 草稿，待专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.5
+# 专题：time-frequency-transfer（运动平台光学时间同步 — 四旋翼飞行器 O-TWTFT <1 fs）
+# contribution_type: breakthrough — 首次在运动平台（四旋翼无人机+24 m/s 模拟速度）上实现
+#   fs 级 O-TWTFT 时钟同步，克服了运动导致的双向时间传递互易性破缺问题。
+
+meta:
+  zotero_key: "s41467-019-09768-9"
+  topic: time-frequency-transfer
+  source_type: journal_paper
+  contribution_type: breakthrough
+  reliability: high
+  title: "Femtosecond time synchronization of optical clocks off of a flying quadcopter"
+  year: 2019
+  first_author: Bergeron
+  authors: ["Hugo Bergeron", "Laura C. Sinclair", "William C. Swann", "Isaac Khader", "Kevin C. Cossel", "Michael Cermak", "Jean-Daniel Deschênes", "Nathan R. Newbury"]
+  journal: "Nature Communications"
+  volume: 10
+  pages: "1819"
+  doi: "10.1038/s41467-019-09768-9"
+  note: >
+    [breakthrough 论文] 首次在运动平台（四旋翼无人机携 retroreflector，最大 ~24 m/s
+    有效闭合速度）上实现频率梳 O-TWTFT 飞秒级时钟同步。核心创新：解决运动导致
+    的双向飞行时间互易性破缺问题——在 50 ps 量级的非互易路径变化下，通过
+    改进的时间-频率传递解算（同时估计钟差和速度诱导的线性 chirp），仍实现
+    <1 fs 时钟同步时间偏差（TDEV）和 ~10⁻¹⁸ 频率一致性（尽管存在 10⁻⁷ 量级 Doppler
+    偏移）。为未来机载/星载光学时钟的空中-地面和星间自由空间同步铺路。
+
+entities:
+  - id: ent.bergeron2019_quadcopter_otwtft
+    name: "Bergeron 2019 四旋翼飞行器 O-TWTFT 运动平台实验系统"
+    tier: system
+    domain: "自由空间光学时频传递；运动平台同步；频率梳计量"
+    description: >
+      2 个相距 ~4 km 的 NIST 站点（A/B），通过 O-TWTFT 在自由空间链路
+      （经四旋翼飞行器携带 2.5 cm retroreflector 反射或可控延迟线 swept delay
+      测试）交换 fs 频率梳脉冲。线性光学采样（LOS）同时提取到达时间和频率偏移。
+      在 24 m/s 有效闭合速度下（对应 10⁻⁷ Doppler 偏移、~50 ps 飞行时间非互易性），
+      改进的 T&F 解算算法从双向码和载波相位测量中分离钟差、多普勒和路径波动。
+      TDEV <1 fs 同步；频率一致性 ~10⁻¹⁸。
+    verification_status: demonstrated
+    source:
+      zotero_key: "s41467-019-09768-9"
+      claim: "we demonstrate an advanced, frequency comb-based optical two-way time-frequency transfer (O-TWTFT) that can successfully synchronize the optical timescales at two sites connected via a time-varying turbulent air path."
+
+principles:
+  - id: pri.motion_compensated_otwtft
+    name: "运动补偿光学双向时间频率传递原理（O-TWTFT with motion）"
+    tier: domain
+    verification_status: observed
+    statement: >
+      传统 O-TWTFT 依赖双向飞行时间互易性（T_A→B = T_B→A）来抵消路径变化。
+      但运动平台引入闭合速度 v 使路径长度随时间线性变化 L(t) = L₀ ± vt，
+      导致非互易性 ΔT = (L_A→B − L_B→A)/c ~ 2v·Δt/c（Δt 为双向交换时间差），
+      在 24 m/s 速度下 1 ms 交换间隔即产生 ~50 ps 的不可抵消偏差。
+      改进方案通过同时求解双向的码相位和载波相位测量，分别估计
+      (a) 钟差 Δτ、(b) 瞬时距离 R、(c) 距离变化率 v（Doppler），
+      从而在运动诱导的非互易性下仍可提取真实时钟同步。
+    domain: "自由空间时频传递；运动平台；频率梳计量"
+    key_insight: >
+      运动引入了额外的观测量（载波 Doppler），但这反而是可利用的信息——通过联立
+      求解码相位和载波相位，运动参数（v）和钟差（Δτ）可以同时分离。
+      "运动不是敌人，是额外约束条件。"
+    conditions: "双向交换脉冲间隔 Δt 足够短（≤1 ms）以保证 v 在间隔内恒定；载波相位连续可追踪（无周跳）；LOS 相位斜率可分辨 ps→fs 量级"
+    source:
+      zotero_key: "s41467-019-09768-9"
+      claim: "simple one-way or standard two-way time transfer between flying clocks will completely break down because of the time-of-flight variations and Doppler shifts"
+
+methods:
+  - id: meth.motion_resilient_otwtft
+    name: "运动鲁棒型 O-TWTFT 时间频率同步方法"
+    purpose: >
+      实现运动平台（无人机、车辆、航天器）携带时钟与地面站之间的飞秒级
+      时间同步和 10⁻¹⁸ 级频率比对——支持未来空间光学时钟网络的
+      机载/星载段连接。
+    description: >
+      1. 两套 fs 频率梳锁至各自本地超稳 CW 振荡器（或共用腔稳定）。
+      2. 双向脉冲交换（自由空间 LOS，retroreflector 或 tip-tilt 跟踪终端）。
+      3. 从每个干涉图提取：(a) 码相位 → 粗飞行时间；(b) 载波相位斜率 → 精细到达时间；(c) 瞬时 Doppler 偏移。
+      4. 联立双向测量：建立含 Δτ（钟差）、R（距离）、v（闭合速度）的非线性方程组。
+      5. 解算提取 Δτ → 时间同步 → TDEV；Δν → 频率比对 → MDEV。
+    key_steps:
+      - "两端 fs 梳锁至超稳 CW（同腔或独立腔均可）"
+      - "双向脉冲交换（自由空间+运动 retroreflector/swept delay line）"
+      - "干涉图提取：码相位+光谱相位斜率+Doppler 偏移"
+      - "联立双向求解 Δτ, R(t), v(t)"
+      - "TDEV 和 MDEV 评估"
+    applicable_conditions: "运动速度 ≤ ~100 m/s（低速轨道 LEO 范围）；双向交换间隔 ≤ 1 ms；载波相位连续（LOS 无频繁衰落）"
+    source:
+      zotero_key: "s41467-019-09768-9"
+      claim: "we demonstrate an advanced, frequency comb-based optical two-way time-frequency transfer (O-TWTFT) that can successfully synchronize the optical timescales at two sites connected via a time-varying turbulent air path."
+
+metrics:
+  - id: met.bergeron2019_motion_timing_sync
+    name: "Bergeron 2019 运动平台 fs 时间同步性能"
+    unit: "fs（TDEV）"
+    role: primary
+    description: >
+      四旋翼飞行器（最大 24 m/s 有效闭合速度）O-TWTFT 残余 TDEV。
+      尽管运动诱导 ~50 ps 非互易飞行时间差和 ~10⁻⁷ Doppler 偏移，
+      先进解算仍恢复 <1 fs 同步精度。
+    demonstrated_value:
+      value: "<1 fs TDEV；频率一致性 ~10⁻¹⁸（despite 10⁻⁷ motion-induced Doppler）"
+      conditions: "四旋翼飞行器 retroreflector（max 24 m/s）；2 站点 ~4 km 间距（Boulder）；频率梳 LOS + 双向交换"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "s41467-019-09768-9"
+        claim: "Despite 50-ps breakdown in time-of-flight reciprocity, the sites' timescales are synchronized to <1 fs in time deviation. The corresponding sites' frequencies agree to ~10^−18 despite 10^−7 Doppler shifts."
+
+relations:
+  - id: rel.bergeron2019_01
+    subject: meth.motion_resilient_otwtft
+    predicate: DERIVED-FROM
+    object: pri.motion_compensated_otwtft
+    confidence: established
+    source:
+      zotero_key: "s41467-019-09768-9"
+      claim: "simple one-way or standard two-way time transfer between flying clocks will completely break down because of the time-of-flight variations and Doppler shifts"
+
+  - id: rel.bergeron2019_02
+    subject: ent.bergeron2019_quadcopter_otwtft
+    predicate: REALIZES
+    object: meth.motion_resilient_otwtft
+    confidence: established
+    source:
+      zotero_key: "s41467-019-09768-9"
+      claim: "The link between the two sites is established using either a quadcopter-mounted retroreflector or a swept delay line at speeds up to 24 m/s."
+
+  - id: rel.bergeron2019_03
+    subject: met.bergeron2019_motion_timing_sync
+    predicate: DEMONSTRATES
+    object: pri.motion_compensated_otwtft
+    confidence: established
+    source:
+      zotero_key: "s41467-019-09768-9"
+      claim: "Despite 50-ps breakdown in time-of-flight reciprocity, the sites' timescales are synchronized to <1 fs in time deviation."
+
+  - id: rel.bergeron2019_04
+    subject: meth.motion_resilient_otwtft
+    predicate: IMPROVES-ON
+    object: meth.dual_comb_otwtft_over_free_space
+    confidence: established
+    source:
+      zotero_key: "s41467-019-09768-9"
+      claim: "current comb-based optical two-way time-frequency transfer (O-TWTFT) cannot support femtosecond clock synchronization in the presence of motion. Here, we demonstrate an advanced comb-based O-TWTFT."

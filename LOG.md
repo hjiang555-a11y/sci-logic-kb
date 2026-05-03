@@ -2,6 +2,14 @@
 
 
 
+## [2026-05-03] ingest | Pizzocaro 2021 — first VLBI intercontinental optical clock comparison: Italy↔Japan 9000 km, beyond satellite TWSTFT (time-frequency-transfer)
+
+## [2026-05-03] ingest | Bergeron 2019 — femtosecond time sync of optical clocks from flying quadcopter: <1 fs TDEV despite 24 m/s motion (time-frequency-transfer)
+
+## [2026-05-03] ingest | Caldwell 2020 — atmospheric timing jitter: comb measurements vs micrometeorological model validation (time-frequency-transfer)
+
+
+
 ## [2026-05-03] ingest | Gozzard 2022 — phase+amplitude stabilized free-space frequency transfer: 6.1e-21@300s over 2.4 km atmospheric link (time-frequency-transfer)
 
 ## [2026-05-03] ingest | Daussy 2005 — first long-distance telecom fiber frequency dissemination: 86 km round-trip 10^-17@1 day, foundational (time-frequency-transfer)

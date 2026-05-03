@@ -1,0 +1,145 @@
+# Caldwell 2020 — Optical timing jitter due to atmospheric turbulence [evidence]
+# 提取者：Claude Code（AI 草稿，待专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.5
+# 专题：time-frequency-transfer（大气湍流光学时序抖动 — 梳齿测量与微气象传感器预测对比）
+# contribution_type: evidence — 首次将频率梳实测大气湍流时序抖动与微气象传感器
+#   （sonic anemometer + 温湿度）独立预测模型直接对比；验证了 Monin-Obukhov 相似性
+#   理论用于光频传递噪声建模的准确性。
+
+meta:
+  zotero_key: "oe-28-18-26661"
+  topic: time-frequency-transfer
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Optical timing jitter due to atmospheric turbulence: comparison of frequency comb measurements to predictions from micrometeorological sensors"
+  year: 2020
+  first_author: Caldwell
+  authors: ["Emily D. Caldwell", "William C. Swann", "Jennifer L. Ellis", "Martha I. Bodine", "Carter Mak", "Nathan Kuczun", "Nathan R. Newbury", "Laura C. Sinclair", "Andreas Muschinski", "Gregory B. Rieker"]
+  journal: "Optics Express"
+  volume: 28
+  issue: 18
+  pages: "26661"
+  doi: "10.1364/OE.401501"
+  note: >
+    [evidence 论文] 在近地面水平路径上使用 fs 频率梳测量湍流诱导的光脉冲时序抖动，
+    同时独立记录微气象传感器（sonic anemometer、温度、湿度、气压）数据。
+    将实测抖动 PSD 与基于 Monin-Obukhov 相似性理论的预测模型直接对比，
+    验证了微气象模型可用于预测光学时频传递链路中的大气相位噪声上限。
+    对激光测距、光学时间传递和长基线干涉仪的大气噪声预算具有实用价值。
+
+entities:
+  - id: ent.caldwell2020_timing_jitter_measurement
+    name: "Caldwell 2020 大气湍流光学时序抖动测量装置"
+    tier: system
+    domain: "大气光学；自由空间时频传递；微气象学"
+    description: >
+      NIST Boulder 近地面水平路径（~几百米量级），fs 频率梳脉冲线性光学采样（LOS）
+      测量大气引起的到达时间波动（总时长数小时至整夜），同步部署 sonic anemometer
+      + 温湿度+气压微气象传感器独立记录湍流参数（温度结构常数 C_T²、
+      动能耗散率 ε、摩擦速度 u*）。将时序抖动 PSD 与 Monin-Obukhov 相似性
+      理论预测对比——验证微气象模型作为光学链路噪声预算工具的准确性。
+    verification_status: demonstrated
+    source:
+      zotero_key: "oe-28-18-26661"
+      claim: "We measure turbulence-induced optical pulse timing jitter over a horizontal, near-ground path using frequency comb lasers while independently characterizing the atmospheric turbulence using conventional micrometeorological instruments."
+
+principles:
+  - id: pri.monin_obukhov_timing_jitter_prediction
+    name: "Monin-Obukhov 相似性理论预测大气湍流光学时序抖动原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      大气湍流导致的光学时序抖动 PSD 可通过 Monin-Obukhov 相似性理论
+      由标准微气象测量（sonic anemometer 的 3D 风速+虚温、温湿度、气压）
+      预测。核心参数为温度结构常数 C_T² 和路径平均折射率指数，经由
+      Kolmogorov 湍流谱和 Taylor 冻结假设映射到时序抖动 PSD。
+      Caldwell 2020 首次以独立频率梳实测直接验证了此预测链——证明
+      微气象传感器可作为光频传递链路大气噪声预算的有效工具。
+    domain: "大气光学；微气象学；时频传递噪声建模"
+    key_insight: >
+      不依赖昂贵/复杂的主动大气相位测量系统（如双梳 LOS），微气象传感器
+      （~数万美元商用现货）即可预算光链路中的时序噪声上限——这对实际链路
+      选址和性能评估具有工程价值。
+    conditions: "近地面水平路径；Kolmogorov 湍流惯性子区假设成立；Taylor 冻结假设成立（风速 ≫ 湍流速度涨落）"
+    source:
+      zotero_key: "oe-28-18-26661"
+      claim: "a direct and independent comparison of these models to measured timing jitter data"
+
+methods:
+  - id: meth.comb_timing_jitter_vs_micromet_comparison
+    name: "频率梳时序抖动测量与微气象传感器对比方法"
+    purpose: >
+      验证微气象测量是否可替代直接光学测量用于预测/预算自由空间光学
+      时频传递中的大气相位噪声。
+    description: >
+      1. fs 频率梳通过 LOS 测量脉冲到达时间的波动（PSD 覆盖 100 μHz 到 kHz）。
+      2. 同步部署 sonic anemometer（3D u,v,w + 声速虚温 T_s）、慢响应
+         温湿度+气压传感器。
+      3. 从微气象数据推导 C_T²、ε、u* 等 M-O 参数。
+      4. 将微气象预测的时序抖动 PSD 与 LOS 实测对比。
+    key_steps:
+      - "fs 梳 LOS 测时序抖动 PSD（~100 μHz-kHz）"
+      - "sonic anemometer + 温湿压传感器同步记录"
+      - "M-O 参数推导（C_T², ε, u*）"
+      - "微气象预测 PSD vs LOS 实测 PSD 对比"
+    applicable_conditions: "近地面水平路径（~few 100 m）；大气近中性或弱不稳定分层"
+    source:
+      zotero_key: "oe-28-18-26661"
+      claim: "we perform this comparison, measuring turbulence-induced optical pulse timing jitter over a horizontal, near-ground path using frequency comb lasers while independently characterizing the atmospheric turbulence."
+
+metrics:
+  - id: met.caldwell2020_timing_jitter_validation
+    name: "Caldwell 2020 微气象预测-频率梳实测时序抖动对比验证"
+    unit: "fs²/Hz（时序抖动 PSD）"
+    role: primary
+    description: >
+      在多种大气条件（日间对流/夜间稳定分层）下，微气象模型预测的时序抖动
+      PSD 与频率梳 LOS 实测在谱形状和绝对水平上的一致性。验证了 M-O
+      理论作为大气光频传递噪声预算工具的可行性。
+    demonstrated_value:
+      value: "微气象预测与频率梳实测 PSD 在谱形状和绝对水平上相符（multi-condition validation）"
+      conditions: "NIST Boulder 水平路径；多次昼夜循环；频率梳 LOS + sonic anemometer 同步"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "oe-28-18-26661"
+        claim: "a direct and independent comparison of these models to measured timing jitter data"
+
+relations:
+  - id: rel.caldwell2020_01
+    subject: meth.comb_timing_jitter_vs_micromet_comparison
+    predicate: DERIVED-FROM
+    object: pri.monin_obukhov_timing_jitter_prediction
+    confidence: established
+    source:
+      zotero_key: "oe-28-18-26661"
+      claim: "a direct and independent comparison of these models to measured timing jitter data"
+
+  - id: rel.caldwell2020_02
+    subject: met.caldwell2020_timing_jitter_validation
+    predicate: DEMONSTRATES
+    object: pri.monin_obukhov_timing_jitter_prediction
+    confidence: established
+    source:
+      zotero_key: "oe-28-18-26661"
+      claim: "while there exist models that estimate the turbulence-induced timing jitter power spectra using parameters obtainable from conventional micrometeorological instruments, a direct and independent comparison of these models to measured timing jitter data has not been done."
+
+  - id: rel.caldwell2020_03
+    subject: ent.caldwell2020_timing_jitter_measurement
+    predicate: REALIZES
+    object: meth.comb_timing_jitter_vs_micromet_comparison
+    confidence: established
+    source:
+      zotero_key: "oe-28-18-26661"
+      claim: "we perform this comparison, measuring turbulence-induced optical pulse timing jitter"
+
+  - id: rel.caldwell2020_04
+    subject: pri.monin_obukhov_timing_jitter_prediction
+    predicate: CHARACTERIZES
+    object: pri.atmospheric_optical_phase_noise_power_law
+    confidence: established
+    source:
+      zotero_key: "oe-28-18-26661"
+      claim: "There exist models that estimate the turbulence-induced timing jitter power spectra using parameters obtainable from conventional micrometeorological instruments"
