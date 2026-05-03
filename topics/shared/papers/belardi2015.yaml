@@ -1,0 +1,208 @@
+# Belardi 2015 — Design and Properties of Hollow Antiresonant Fibers for Visible and NIR [evidence]
+# 提取者：Claude Code（AI 草稿，待专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.5
+# 专题：shared（跨专题使能技术 — 空芯光纤设计与表征）
+# contribution_type: evidence — 演示 HC-ARF 多种结构设计及其在可见/近红外的带宽与损耗性能；
+#   首次实现第一反共振窗工作的 HC-ARF；报告 175 dB/km@480nm 最低损耗。工程实现级贡献。
+
+meta:
+  zotero_key: "Design_and_Properties_of_Hollow_Antiresonant_F"
+  topic: shared
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Design and Properties of Hollow Antiresonant Fibers for the Visible and Near Infrared Spectral Range"
+  year: 2015
+  first_author: Belardi
+  authors: ["Walter Belardi"]
+  journal: "Journal of Lightwave Technology"
+  volume: 33
+  issue: 21
+  pages: "4497-4503"
+  doi: "10.1109/JLT.2015.2477775"
+  note: >
+    系统研究空芯反共振光纤（HC-ARF）在可见至近红外波段的设计灵活性与实验性能。
+    提出 SAR/DAR/TAR/DARfbf 四种结构对比，理论带宽 0.65–2.5 μm；首次实现工作于
+    第一反共振窗的 HC-ARF 实验演示（0.75–1.6 μm）；报告 175 dB/km@480 nm 最低损耗；
+    提出侧切 HC-ARF 快速气体传感方案。空芯光纤是超稳激光（光参考腔耦合）、
+    光频梳（飞秒脉冲传输）、时频传递（光纤链路）等多专题的交叉使能技术。
+
+entities:
+  - id: ent.belardi2015_hc_arf_fibers
+    name: "Belardi 2015 空芯反共振光纤（HC-ARF）系列设计与实验原型"
+    tier: system
+    domain: "空芯光纤；反共振导光；光纤设计与制备"
+    description: >
+      研究并对比四种 HC-ARF 结构：SAR（单反共振）、DAR（双反共振）、TAR（三反共振）、
+      DARfbf（自由芯边界双反共振），以及两种混合厚度变体 DARm1/DARm2。
+      实验制备了第一反共振窗工作的 DARfbf 原型（纤芯 23 μm，芯边界玻璃厚度 0.34 μm，
+      传输带宽 750–1600 nm）和第十反共振窗工作的可见光 DAR 原型（纤芯 51 μm，
+      t₁ ≈ 1.27 μm，最低损耗 175 dB/km @ 480 nm）。所有光纤由"堆叠-拉丝"法
+      经三级拉制制备。
+    verification_status: demonstrated
+    source:
+      zotero_key: "Design_and_Properties_of_Hollow_Antiresonant_F"
+      claim: "The fiber shown in Fig. 5(A) is the first reported case of HC-ARF that transmits light in the first window of antiresonance."
+
+principles:
+  - id: pri.antiresonance_wavelength_condition
+    name: "空芯反共振光纤反共振波长条件原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      空芯反共振光纤中，最大光传输波长（反共振波长 λκ）由玻璃壁厚度 t、
+      玻璃折射率 n 和阶数 k 决定：λκ = 4t·√(n²−1)/(2k+1)，k = 0,1,2,…。
+      第一反共振窗（k=0）提供最大传输带宽。通过选择 t 可将反共振窗定位到
+      目标波段（可见 / 近红外 / 中红外），且可通过嵌套管（DAR/TAR）进一步
+      降低泄漏损耗。
+    domain: "空芯光纤光学；反共振导光机理"
+    key_insight: >
+      反共振条件将光纤的传输窗口完全由单一几何参数 t 决定，使设计极为灵活——
+      改变 t 即可平移整个透射窗。嵌套结构（DAR/TAR）在不改变透射窗位置的前提下
+      进一步抑制泄漏损耗，实现带宽-损耗独立优化。
+    conditions: "玻璃壁厚度 t 在光纤横截面上均匀；折射率 n 为体材料值（忽略应力双折射）；波长远离材料吸收峰"
+    formula: "λκ = 4t·√(n²−1)/(2k+1), k = 0,1,2,…"
+    source:
+      zotero_key: "Design_and_Properties_of_Hollow_Antiresonant_F"
+      claim: >
+        "in HC-ARFs the wavelengths λκ of maximum optical transmission
+        ('antiresonance wavelengths') are given by the formula:
+        λκ = 4t·√(n²−1)/(2k+1) where n is the glass refractive index,
+        t is the glass thickness and k is an integer which defines the order
+        of the considered transmission window."
+
+  - id: pri.free_core_boundary_reduces_mode_coupling
+    name: "自由芯边界降低基模-包层模耦合原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      在空芯反共振光纤中，使包层管彼此分离（"自由芯边界" / free core boundary）
+      而非相互接触，可显著减弱基模与包层模之间的光学耦合。这使透射谱平滑
+      （消除窄带损耗峰），但代价是最低泄漏损耗略有升高。该原理适用于 SAR/DAR/
+      TAR 所有结构层级。
+    domain: "空芯光纤；模耦合；光纤设计"
+    key_insight: >
+      包层管接触点为基模与包层模提供耦合通道；使管分离（fbf 设计）阻断该通道，
+      以适度牺牲最低损耗换取更宽、更平滑的可用带宽——对飞秒脉冲传输、
+      宽带光谱等应用是净收益。
+    conditions: "包层管间间隙大于模场衰减长度；管数 ≥ 6 以维持近似圆对称芯边界"
+    source:
+      zotero_key: "Design_and_Properties_of_Hollow_Antiresonant_F"
+      claim: >
+        "The adoption of a 'free' core boundary (in which the cladding tubes are
+        separated by each other) presents the advantage of reducing the coupling
+        between cladding and fundamental modes... this comes at the expense of
+        an increased minimum leakage loss."
+
+methods:
+  - id: meth.hc_arf_stack_and_draw_fabrication
+    name: "HC-ARF 三级堆叠-拉丝制备方法"
+    purpose: >
+      制备具有嵌套反共振管（DAR 结构）的空芯光纤，适用于可见至中红外波段的
+      低损耗导光。该方法通过三级拉制实现亚微米精度的玻璃壁厚控制。
+    description: >
+      第一级：将一根小硅管固定于外径为其两倍的大硅管（同壁厚）内，拉制成
+      ~3 mm 外径的预制棒（cane）。第二级：将多根 cane 按目标结构排列在
+      外套管内形成"堆叠"（stack），拉制成最终 cane。第三级：最终 cane 拉制成
+      100–数百 μm 直径的光纤，同时对纤芯和包层管施加气压差以维持结构。
+      t（芯边界玻璃厚度）由各级拉制比精确控制，可实现 0.3 μm 量级。
+    key_steps:
+      - "第一级：内管+外管嵌套拉制成 cane（~3 mm OD）"
+      - "第二级：cane 排列堆叠 + 外套管 → 拉制成最终 cane"
+      - "第三级：最终 cane 拉制成光纤（100–数百 μm），芯与包层管施加差压"
+      - "SEM 检测横截面：验证 t、D、管形状、α 角等几何参数"
+    applicable_conditions: "硅玻璃体系（F300 级低 OH 含量）；管壁厚 t ≥ ~0.2 μm（当前堆叠-拉丝工艺极限）；气压控制精度 ~mbar 级"
+    source:
+      zotero_key: "Design_and_Properties_of_Hollow_Antiresonant_F"
+      claim: >
+        "The technique that I have used to fabricate the first prototypes of the
+        DAR structure consists in a modification of the original 'stack and draw'
+        technique... In a first fabrication stage one silica tube is fixed inside
+        a second silica tube... In the second fabrication stage, an assembly of
+        the obtained canes is made... In the third and final fabrication stage,
+        the final cane is drawn."
+
+metrics:
+  - id: met.hc_arf_attenuation_480nm_belardi2015
+    name: "Belardi 2015 HC-ARF 可见光波段最低损耗 @ 480 nm"
+    unit: "dB/km"
+    role: primary
+    description: >
+      DAR 结构（自由芯边界）HC-ARF 在 480 nm 波长处的实测光衰减。
+      光纤纤芯 51 μm，芯边界壁厚 t₁ ≈ 1.27 μm，工作于第十反共振窗。
+      14.9 m 截断法测量。这是当时 HC-ARF 在可见光波段报告的最低损耗。
+    demonstrated_value:
+      value: "175 dB/km @ 480 nm"
+      conditions: "DAR 自由芯边界结构；纤芯 ~51 μm；t₁ ≈ 1.27 μm；截断法 20m→5.1m；测量误差 <5%"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "Design_and_Properties_of_Hollow_Antiresonant_F"
+        claim: "showing a minimum attenuation of 175 dB/km at λ = 480 nm (with an estimated maximum error of the measurement that was less than 5%)"
+
+  - id: met.hc_arf_bandwidth_first_ar_window_belardi2015
+    name: "Belardi 2015 HC-ARF 第一反共振窗传输带宽"
+    unit: "μm（波长范围）"
+    role: secondary
+    description: >
+      第一反共振窗（k=0）工作的 HC-ARF（DARfbf 变体，t = 0.34 μm，
+      纤芯 23 μm）实测传输带宽。传输谱平滑无窄带峰——归因于自由芯边界设计
+      抑制了基模-包层模耦合。
+    demonstrated_value:
+      value: "0.75–1.6 μm（实测）；0.65–2.5 μm（理论 DARfbf，泄漏损耗 <1 dB/m）"
+      conditions: "2 m 光纤；钨卤素宽带光源 + 光谱分析仪；t = 0.34 ± 0.02 μm"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "Design_and_Properties_of_Hollow_Antiresonant_F"
+        claim: "The transmission spectrum is spanning from 750 to 1600 nm, and beats the performances of all reported HC-PBGFs [23]."
+
+relations:
+  - id: rel.belardi2015_01
+    subject: meth.hc_arf_stack_and_draw_fabrication
+    predicate: DERIVED-FROM
+    object: pri.antiresonance_wavelength_condition
+    confidence: established
+    source:
+      zotero_key: "Design_and_Properties_of_Hollow_Antiresonant_F"
+      claim: >
+        "my choice of a thin silica core boundary t = 0.3 μm sets the first
+        antiresonance transmission window to be located in the visible and
+        near-infrared regime."
+
+  - id: rel.belardi2015_02
+    subject: ent.belardi2015_hc_arf_fibers
+    predicate: REALIZES
+    object: meth.hc_arf_stack_and_draw_fabrication
+    confidence: established
+    source:
+      zotero_key: "Design_and_Properties_of_Hollow_Antiresonant_F"
+      claim: >
+        "Some of the proposed designs for HC-ARFs have been investigated
+        experimentally."
+
+  - id: rel.belardi2015_03
+    subject: met.hc_arf_attenuation_480nm_belardi2015
+    predicate: OPERATIONALIZED-AS
+    object: meth.hc_arf_stack_and_draw_fabrication
+    confidence: established
+    source:
+      zotero_key: "Design_and_Properties_of_Hollow_Antiresonant_F"
+      claim: >
+        "The fabricated antiresonant fiber... has a core diameter of 51 μm and
+        an average core boundary thickness t₁ of about 1.27 ± 0.06 μm.
+        The attenuation measurement has been made by cutting a length of 14.9 m
+        of the fiber."
+
+  - id: rel.belardi2015_04
+    subject: met.hc_arf_bandwidth_first_ar_window_belardi2015
+    predicate: DEMONSTRATES
+    object: pri.free_core_boundary_reduces_mode_coupling
+    confidence: established
+    source:
+      zotero_key: "Design_and_Properties_of_Hollow_Antiresonant_F"
+      claim: >
+        "the smoothness of the large optical spectrum reported here is related
+        to the use of a 'Free Boundary Fibre,' which allows a strong reduction
+        of the optical coupling between the fundamental and cladding modes."

@@ -2,7 +2,7 @@
 
 # 📊 Metrics Quick Reference
 
-> Auto-generated 2026-05-03 05:17 UTC
+> Auto-generated 2026-05-03 05:20 UTC
 >
 > Metrics are grouped by **role** (v4.4 σ_y-first convention, see `topics/ultrastable-laser/_meta/scoping_principles.md` v2). Role is taken from the `role` field on the metric node when present, otherwise inferred from ID / name heuristics.
 
@@ -311,6 +311,7 @@
 |----|------|------------|------------|--------|
 | `met.allan_deviation_chiodo2013_laser_to_laser` | Chiodo 2013 双激光器互比 Allan 偏差 σ_y(τ) | σ_y(0.2 s) ≈ 1×10⁻¹⁴（双激光器互比）；σ_y(1 s) ≈ 5×10⁻¹⁴（vs 独立参考源） | τ=0.2 s 最优；无扫频静态锁定；Calern 台址（海拔 1270m，气压低）；采样时间 1… | [chiodo2013](topics/shared/papers/chiodo2013.yaml) |
 | `met.fractional_frequency_instability_sigma_y` | 分数频率不稳定度 σ_y(τ)（Allan 偏差通用度量，landmark 定义） | N/A（度量定义而非测量实例；具体数值见本库数十个派生 met.*allan_deviation_* 节点） | 跨整个知识库适用；每个实例指标的条件由其所在 paper YAML 给出；度量自身在 tau >=… | [allan1966](topics/shared/papers/allan1966.yaml) |
+| `met.hc_arf_attenuation_480nm_belardi2015` | Belardi 2015 HC-ARF 可见光波段最低损耗 @ 480 nm | 175 dB/km @ 480 nm | DAR 自由芯边界结构；纤芯 ~51 μm；t₁ ≈ 1.27 μm；截断法 20m→5.1m；测… | [belardi2015](topics/shared/papers/belardi2015.yaml) |
 
 ### 📊 Secondary (线宽/PSD/相干)
 
@@ -318,6 +319,7 @@
 |----|------|------------|------------|--------|
 | `met.fibre_amplifier_added_phase_noise_chiodo2013` | Chiodo 2013 光纤放大器附加相位噪声 | S_y(f) ≤ 10⁻³¹ Hz⁻¹（分数），10Hz–10kHz；等效线宽增宽 ≤25 mHz | Mach-Zehnder 干涉仪比对（AOM 移频 80 MHz）；种子激光器为 Nd:YAG 稳… | [chiodo2013](topics/shared/papers/chiodo2013.yaml) |
 | `met.frequency_sweep_range_chiodo2013` | Chiodo 2013 光纤延迟线稳频激光器扫频范围与速率 | 线性扫频：>25 GHz，≤1 GHz/s 无稳定度退化；非线性模拟：24.8 GHz / 652 s，残余 ≈ 本征… | FBG 光纤激光器 PZT 宽调谐模式（~106 GHz 范围）；DDS 1ms 刷新；τ=9.5… | [chiodo2013](topics/shared/papers/chiodo2013.yaml) |
+| `met.hc_arf_bandwidth_first_ar_window_belardi2015` | Belardi 2015 HC-ARF 第一反共振窗传输带宽 | 0.75–1.6 μm（实测）；0.65–2.5 μm（理论 DARfbf，泄漏损耗 <1 dB/m） | 2 m 光纤；钨卤素宽带光源 + 光谱分析仪；t = 0.34 ± 0.02 μm | [belardi2015](topics/shared/papers/belardi2015.yaml) |
 
 ## Time-Frequency Transfer
 

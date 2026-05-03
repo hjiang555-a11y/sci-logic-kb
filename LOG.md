@@ -1,6 +1,14 @@
 # 知识库演化日志
 
 
+## [2026-05-03] ingest | Belardi 2015 — HC-ARF 空芯反共振光纤设计与可见/近红外特性 (shared)
+
+### 摄入内容
+- 文件：topics/shared/papers/belardi2015.yaml
+- 贡献类型：evidence
+- 核心贡献：系统研究 HC-ARF 四种结构设计与传输特性；首次实验实现第一反共振窗 HC-ARF；报告 175 dB/km@480nm 最低损耗；提出侧切气体传感方案。
+- 新增节点：1 实体 + 2 原理 + 1 方法 + 2 指标 + 4 关系
+
 ## [2026-05-03] ingest | Chiodo 2013 — Mini-DOLL 星地相干光链路大动态扫频激光系统 (shared)
 
 ### 摄入内容

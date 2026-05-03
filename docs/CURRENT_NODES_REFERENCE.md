@@ -4,7 +4,7 @@
 
 > **用途**：处理新论文时，用此文件快速检查是否已有同名/同义节点，避免重复定义。
 > **维护**：本文件由 `scripts/build_index.py` 自动生成，**请勿手工编辑**。
-> **生成时间**：2026-05-03 05:17 UTC
+> **生成时间**：2026-05-03 05:20 UTC
 
 > **使用方式**：
 > - 处理新论文时，`Ctrl+F` 搜索关键词（如 `brownian`, `pdh`, `fiber`）
@@ -391,8 +391,10 @@
 | ID | Name | Tier | Source |
 |----|------|------|--------|
 | `pri.allan_variance_time_domain_characterization` | Allan 方差族时域不稳定度刻画原理（综合 AVAR/MVAR/TVAR） | foundational | [allan2016](topics/shared/papers/allan2016.yaml) |
+| `pri.antiresonance_wavelength_condition` | 空芯反共振光纤反共振波长条件原理 | domain | [belardi2015](topics/shared/papers/belardi2015.yaml) |
 | `pri.classical_variance_divergence_for_flicker_noise` | 经典方差对 flicker / random-walk 频率噪声发散原理 | meta | [allan1966](topics/shared/papers/allan1966.yaml) |
 | `pri.fibre_delay_line_sweep_stability_maintained` | 光纤延迟线稳频下大动态扫频稳定度保持原理 | domain | [chiodo2013](topics/shared/papers/chiodo2013.yaml) |
+| `pri.free_core_boundary_reduces_mode_coupling` | 自由芯边界降低基模-包层模耦合原理 | domain | [belardi2015](topics/shared/papers/belardi2015.yaml) |
 | `pri.hadamard_variance_drift_insensitive` | Hadamard 方差对线性漂移不敏感原理 | meta | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
 | `pri.laser_stability_requirement_from_atmospheric_turbulence` | 从大气湍流噪声推导激光器频率稳定度要求原理 | domain | [chiodo2013](topics/shared/papers/chiodo2013.yaml) |
 | `pri.modified_allan_kernel_resolves_pm_noise` | MDEV 相位平均积分核分辨 PM 噪声原理 | meta | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
@@ -411,6 +413,7 @@
 | `meth.allan_deviation_adev` | Allan 偏差（两样本 Allan 方差开方，ADEV / σ_y(τ)） | [allan1966](topics/shared/papers/allan1966.yaml) |
 | `meth.fibre_delay_line_stabilization_with_dds_sweep` | 光纤延迟线稳频 + DDS 编程扫频方法 | [chiodo2013](topics/shared/papers/chiodo2013.yaml) |
 | `meth.hadamard_deviation_hdev` | Hadamard 偏差 HDEV / H_y(τ) | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
+| `meth.hc_arf_stack_and_draw_fabrication` | HC-ARF 三级堆叠-拉丝制备方法 | [belardi2015](topics/shared/papers/belardi2015.yaml) |
 | `meth.modified_allan_deviation_mdev` | 修正 Allan 偏差 MDEV / mod σ_y(τ) | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
 | `meth.overlapping_allan_deviation_oadev` | 重叠 Allan 偏差 OADEV | [riley2008](topics/shared/papers/riley2008.yaml) |
 | `meth.phase_noise_psd_measurement` | 相位噪声功率谱密度 S_phi(f) 测量方法 | [howe1976](topics/shared/papers/howe1976.yaml) |

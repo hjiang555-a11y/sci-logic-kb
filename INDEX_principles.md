@@ -2,7 +2,7 @@
 
 # 🔬 Principles Quick Reference
 
-> Auto-generated 2026-05-03 05:17 UTC
+> Auto-generated 2026-05-03 05:20 UTC
 
 ## Tier: meta
 
@@ -52,6 +52,7 @@
 | `pri.all_fiber_nonlinear_self_compression_2um` | 2 µm 全光纤非线性自压缩原理（反常色散 HNLF 中 SPM + 孤子压缩） | Optical Frequency Combs | [xing2020](topics/optical-frequency-combs/papers/xing2020.yaml) |
 | `pri.am_pm_conversion_photodetection` | 光电探测 AM-PM 转换噪声原理 | Optical Frequency Combs | [zhang2012c](topics/optical-frequency-combs/papers/zhang2012c.yaml) |
 | `pri.am_to_pm_conversion_in_comb` | 梳中 RIN→PM 幅相转换限制原理 | Optical Frequency Combs | [zhang2017](topics/optical-frequency-combs/papers/zhang2017.yaml) |
+| `pri.antiresonance_wavelength_condition` | 空芯反共振光纤反共振波长条件原理 | shared | [belardi2015](topics/shared/papers/belardi2015.yaml) |
 | `pri.antiresonant_hollow_core_guidance` | 反谐振空心光纤导光原理 | Ultrastable Laser | [belardi2015](topics/ultrastable-laser/papers/belardi2015.yaml) |
 | `pri.aom_heterodyne_fiber_detection` | AOM 外差检测（光纤干涉仪误差信号提取） | Ultrastable Laser | [jiang2010](topics/ultrastable-laser/papers/jiang2010.yaml) |
 | `pri.atmospheric_non_reciprocity_satellite_twtft` | 卫星双向 TWTFT 大气非互易性原理 | Time-Frequency Transfer | [zeng2024_kbzasp75](topics/time-frequency-transfer/papers/zeng2024_kbzasp75.yaml) |
@@ -99,6 +100,7 @@
 | `pri.fiber_thermal_noise_wanser` | 光纤固有热噪声（Wanser 热力学噪声模型） | Ultrastable Laser | [dong2015](topics/ultrastable-laser/papers/dong2015.yaml) |
 | `pri.fibre_delay_line_sweep_stability_maintained` | 光纤延迟线稳频下大动态扫频稳定度保持原理 | shared | [chiodo2013](topics/shared/papers/chiodo2013.yaml) |
 | `pri.force_insensitive_tetrahedral_symmetry` | 四面体对称——力不敏感腔设计原理 | Ultrastable Laser | [webster2011](topics/ultrastable-laser/papers/webster2011.yaml) |
+| `pri.free_core_boundary_reduces_mode_coupling` | 自由芯边界降低基模-包层模耦合原理 | shared | [belardi2015](topics/shared/papers/belardi2015.yaml) |
 | `pri.frequency_ratio_measurement` | 光学频率比测量原理（无需 SI 秒定义） | Optical Frequency Combs | [giunta2019](topics/optical-frequency-combs/papers/giunta2019.yaml) |
 | `pri.fundamental_ch_stretch_enhancement_mir` | 基频 C-H 伸缩吸收相对 NIR 倍频带增益原理 | Optical Frequency Combs | [ycas2019](topics/optical-frequency-combs/papers/ycas2019.yaml) |
 | `pri.gouy_phase_discrimination` | Gouy 相位横模鉴别原理 | Ultrastable Laser | [shaddock1999](topics/ultrastable-laser/papers/shaddock1999.yaml) |

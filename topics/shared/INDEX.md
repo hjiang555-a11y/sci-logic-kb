@@ -2,12 +2,13 @@
 
 # shared — Topic Index
 
-> Auto-generated 2026-05-03 05:17 UTC · 8 papers · 27 nodes · 21 relations
+> Auto-generated 2026-05-03 05:20 UTC · 9 papers · 33 nodes · 25 relations
 
 ## Entities
 
 | ID | Name | Level | Source |
 |----|------|------:|--------|
+| `ent.belardi2015_hc_arf_fibers` | Belardi 2015 空芯反共振光纤（HC-ARF）系列设计与实验原型 | — | [belardi2015](topics/shared/papers/belardi2015.yaml) |
 | `ent.chiodo2013_laser_system` | Mini-DOLL 相干光星地链路激光系统（Chiodo 2013） | — | [chiodo2013](topics/shared/papers/chiodo2013.yaml) |
 
 ## Principles
@@ -15,8 +16,10 @@
 | ID | Name | Tier | Source |
 |----|------|------|--------|
 | `pri.allan_variance_time_domain_characterization` | Allan 方差族时域不稳定度刻画原理（综合 AVAR/MVAR/TVAR） | foundational | [allan2016](topics/shared/papers/allan2016.yaml) |
+| `pri.antiresonance_wavelength_condition` | 空芯反共振光纤反共振波长条件原理 | domain | [belardi2015](topics/shared/papers/belardi2015.yaml) |
 | `pri.classical_variance_divergence_for_flicker_noise` | 经典方差对 flicker / random-walk 频率噪声发散原理 | meta | [allan1966](topics/shared/papers/allan1966.yaml) |
 | `pri.fibre_delay_line_sweep_stability_maintained` | 光纤延迟线稳频下大动态扫频稳定度保持原理 | domain | [chiodo2013](topics/shared/papers/chiodo2013.yaml) |
+| `pri.free_core_boundary_reduces_mode_coupling` | 自由芯边界降低基模-包层模耦合原理 | domain | [belardi2015](topics/shared/papers/belardi2015.yaml) |
 | `pri.hadamard_variance_drift_insensitive` | Hadamard 方差对线性漂移不敏感原理 | meta | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
 | `pri.laser_stability_requirement_from_atmospheric_turbulence` | 从大气湍流噪声推导激光器频率稳定度要求原理 | domain | [chiodo2013](topics/shared/papers/chiodo2013.yaml) |
 | `pri.modified_allan_kernel_resolves_pm_noise` | MDEV 相位平均积分核分辨 PM 噪声原理 | meta | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
@@ -35,6 +38,7 @@
 | `meth.allan_deviation_adev` | Allan 偏差（两样本 Allan 方差开方，ADEV / σ_y(τ)） | [allan1966](topics/shared/papers/allan1966.yaml) |
 | `meth.fibre_delay_line_stabilization_with_dds_sweep` | 光纤延迟线稳频 + DDS 编程扫频方法 | [chiodo2013](topics/shared/papers/chiodo2013.yaml) |
 | `meth.hadamard_deviation_hdev` | Hadamard 偏差 HDEV / H_y(τ) | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
+| `meth.hc_arf_stack_and_draw_fabrication` | HC-ARF 三级堆叠-拉丝制备方法 | [belardi2015](topics/shared/papers/belardi2015.yaml) |
 | `meth.modified_allan_deviation_mdev` | 修正 Allan 偏差 MDEV / mod σ_y(τ) | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
 | `meth.overlapping_allan_deviation_oadev` | 重叠 Allan 偏差 OADEV | [riley2008](topics/shared/papers/riley2008.yaml) |
 | `meth.phase_noise_psd_measurement` | 相位噪声功率谱密度 S_phi(f) 测量方法 | [howe1976](topics/shared/papers/howe1976.yaml) |
@@ -52,6 +56,7 @@
 |----|------|------------|--------|
 | `met.allan_deviation_chiodo2013_laser_to_laser` | Chiodo 2013 双激光器互比 Allan 偏差 σ_y(τ) | σ_y(0.2 s) ≈ 1×10⁻¹⁴（双激光器互比）；σ_y(1 s) ≈ 5×10⁻¹⁴（vs 独立参考源） | [chiodo2013](topics/shared/papers/chiodo2013.yaml) |
 | `met.fractional_frequency_instability_sigma_y` | 分数频率不稳定度 σ_y(τ)（Allan 偏差通用度量，landmark 定义） | N/A（度量定义而非测量实例；具体数值见本库数十个派生 met.*allan_deviation_* 节点） | [allan1966](topics/shared/papers/allan1966.yaml) |
+| `met.hc_arf_attenuation_480nm_belardi2015` | Belardi 2015 HC-ARF 可见光波段最低损耗 @ 480 nm | 175 dB/km @ 480 nm | [belardi2015](topics/shared/papers/belardi2015.yaml) |
 
 ### 📊 Secondary (线宽/PSD/相干)
 
@@ -59,6 +64,7 @@
 |----|------|------------|--------|
 | `met.fibre_amplifier_added_phase_noise_chiodo2013` | Chiodo 2013 光纤放大器附加相位噪声 | S_y(f) ≤ 10⁻³¹ Hz⁻¹（分数），10Hz–10kHz；等效线宽增宽 ≤25 mHz | [chiodo2013](topics/shared/papers/chiodo2013.yaml) |
 | `met.frequency_sweep_range_chiodo2013` | Chiodo 2013 光纤延迟线稳频激光器扫频范围与速率 | 线性扫频：>25 GHz，≤1 GHz/s 无稳定度退化；非线性模拟：24.8 GHz / 652 s，残余 ≈ 本征… | [chiodo2013](topics/shared/papers/chiodo2013.yaml) |
+| `met.hc_arf_bandwidth_first_ar_window_belardi2015` | Belardi 2015 HC-ARF 第一反共振窗传输带宽 | 0.75–1.6 μm（实测）；0.65–2.5 μm（理论 DARfbf，泄漏损耗 <1 dB/m） | [belardi2015](topics/shared/papers/belardi2015.yaml) |
 
 ## Cross-Topic References
 
