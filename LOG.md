@@ -1,5 +1,14 @@
 # 知识库演化日志
 
+
+## [2026-05-03] ingest | Chiodo 2013 — Mini-DOLL 星地相干光链路大动态扫频激光系统 (shared)
+
+### 摄入内容
+- 文件：topics/shared/papers/chiodo2013.yaml
+- 贡献类型：evidence
+- 核心贡献：演示光纤延迟线稳频 + DDS 编程扫频方法，在保持 10⁻¹⁴ 级 ADEV 的同时实现 >25 GHz / 1 GHz/s 线性扫频，满足低轨卫星多普勒补偿需求。
+- 新增节点：1 实体 + 2 原理 + 1 方法 + 3 指标 + 4 关系
+- 跨文件引用：meth.allan_deviation_adev (allan1966)
 > **格式约定**：每条日志以 `## [YYYY-MM-DD] type | description` 开头。
 > 支持的类型：`ingest`（摄入）、`restructure`（重组）、`lint`（健康检查）、`query`（查询反哺）、`contradiction`（矛盾发现）、`schema`（Schema 升级）、`synthesis`（综合页面）
 >

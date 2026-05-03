@@ -1,0 +1,236 @@
+# Chiodo 2013 — Lasers for coherent optical satellite links with large dynamics [evidence]
+# 提取者：Claude Code（AI 草稿，待专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.5
+# 专题：shared（时频计量数学基础）
+# contribution_type: evidence — 演示了一套满足大气湍流极限相干光链路需求的激光系统，
+#   结合了光纤延迟线稳频与大动态扫频能力。未打破 σ_y 纪录，属工程实现级贡献。
+
+meta:
+  zotero_key: "1305.3026"
+  topic: shared
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Lasers for coherent optical satellite links with large dynamics"
+  year: 2013
+  first_author: Chiodo
+  authors: ["Nicola Chiodo", "Khelifa Djerroud", "Ouali Acef", "André Clairon", "Peter Wolf"]
+  journal: "Applied Optics"
+  doi: "10.1364/AO.52.008642"
+  note: >
+    基于光纤不等臂干涉仪稳频 + DDS 控制扫频的激光系统工程实现。两个激光器
+    （Nd:YAG + 光纤放大器发射，FBG 光纤激光器本振）分别锁定在 2km/1km 光纤延迟线，
+    通过直接数字合成器编程控制本振扫频以补偿低轨卫星多普勒效应（±12 GHz，
+    最大速率 120 MHz/s）。系统已从巴黎搬运至 Calern 天文台 1.5m 测月/测卫望远镜测试。
+
+entities:
+  - id: ent.chiodo2013_laser_system
+    name: "Mini-DOLL 相干光星地链路激光系统（Chiodo 2013）"
+    tier: system
+    domain: "激光稳频；星地相干光链路；多普勒测距"
+    description: >
+      双激光器系统：发射激光器为 Nd:YAG（1064nm, 1kHz 线宽）+ Er:Yb 多级光纤放大器
+      （最大 50W 输出），本振为 DFB Yb 光纤激光器（1064nm, <10kHz 线宽，PZT 调谐范围
+      ~106 GHz）。两激光器分别锁定在 2km 和 1km 单模光纤不等臂 Michelson-Morley
+      干涉仪上（τ≈20μs / 10μs），通过 DDS 编程控制 Δν_rf(t) 实现本振激光器频率扫频
+      （ν̇_laser(t) = Δν_rf(t)/τ）。光纤线轴封装在四级热-声-震隔离箱内。
+    verification_status: demonstrated
+    source:
+      zotero_key: "1305.3026"
+      claim: "Our system is comprised of two lasers each stabilized on an unequal arm fibre interferometer closely inspired by [5]."
+
+principles:
+  - id: pri.fibre_delay_line_sweep_stability_maintained
+    name: "光纤延迟线稳频下大动态扫频稳定度保持原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      在光纤不等臂干涉仪稳频闭环中，通过在解调信号上叠加可编程射频偏置 Δν_rf(t)，
+      可以控制激光器频率扫频速率 ν̇_laser(t) = Δν_rf(t)/τ（τ 为光纤延迟），
+      使激光器在扫频范围 >20 GHz、速率 ≤1 GHz/s 的条件下保持与不扫频时相当的分数频率
+      稳定度（Allan 偏差无显著退化）。
+    domain: "激光稳频；星地相干光链路；动态扫频"
+    key_insight: >
+      传统腔稳或原子/分子稳频难以同时达到大范围高速扫频与高稳定度；光纤延迟线稳频
+      的闭环中，误差信号本身对 ν̇ 敏感——通过主动控制 Δν_rf 而非被动抑制 ν̇，
+      可将扫频作为闭环运行模式使用，而不需切换至开环扫频然后重新锁定。
+    conditions: "光纤延迟 τ 经精确标定（ps 级不确定度）；Δν_rf 由高速 DDS 提供（ms 刷新）；温度/压力/振动隔离充分"
+    formula: "ν̇_laser(t) = Δν_rf(t)/τ"
+    source:
+      zotero_key: "1305.3026"
+      claim: >
+        "by adding a frequency ∆ν_rf(t) to the demodulation signal of the fibre laser,
+        in closed loop operation (error signal = 0), its frequency is varied (swept)
+        according to the condition ν̇_laser(t) = ∆ν_rf(t)/τ."
+
+  - id: pri.laser_stability_requirement_from_atmospheric_turbulence
+    name: "从大气湍流噪声推导激光器频率稳定度要求原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      对地面-卫星相干光链路，激光频率噪声需满足 (1−cos(2πf T₁₃)) S_laser(f)
+      ≤ (1+cos(2πf T₁₃)) S_atm(f)，其中 T₁₃ 为光信号地-星-地往返时间（~6.6ms
+      对 1000km 轨道），S_atm(f) 为大气湍流相位噪声 PSD。由此可从前人实测的
+      大气湍流噪声水平反推出激光器稳定度需求，无需对湍流做先验建模。
+    domain: "星地相干光链路；大气光学；频率计量"
+    key_insight: >
+      该不等式将"足以使测量达到湍流极限"的激光器要求形式化为仅依赖 T₁₃ 和
+      已知湍流 PSD 的条件，避免了对湍流的理论建模不确定性。
+    conditions: "往返时间 T₁₃ 已知（由轨道高度决定）；S_atm(f) 由独立实验（如 5km 水平链路）标定"
+    formula: "(1 − cos(2πf T₁₃)) S_laser(f) ≤ (1 + cos(2πf T₁₃)) S_atm(f)"
+    source:
+      zotero_key: "1305.3026"
+      claim: >
+        "The aim is to determine the satellite motion limited only by atmospheric turbulence...
+        For the laser stability this implies y_l(t₃) − y_l(t₁) ≤ y_atm(t₁) + y_atm(t₃)
+        which in terms of power spectral densities becomes
+        (1 − cos(2πf T₁₃)) S_laser(f) ≤ (1 + cos(2πf T₁₃)) S_atm(f)."
+
+methods:
+  - id: meth.fibre_delay_line_stabilization_with_dds_sweep
+    name: "光纤延迟线稳频 + DDS 编程扫频方法"
+    purpose: >
+      在保持闭环稳频的条件下实现激光器频率的大范围（>20 GHz）高速（≤1 GHz/s）
+      可控扫频，用于补偿低轨卫星多普勒频移。
+    description: >
+      在光纤不等臂 Michelson-Morley 干涉仪稳频方案（详见 [5] Jiang 2010）的闭环中，
+      向解调信号注入直接数字合成器（DDS）产生的可编程射频信号 Δν_rf(t)。
+      闭环强制误差信号为零时，激光器频率导数满足 ν̇_laser(t) = Δν_rf(t)/τ。
+      DDS 每毫秒输出新频率值，按预载的卫星轨道预报文件生成扫频序列，
+      同时支持手动实时微调以补偿轨道预报残差。对扫频残余做 Allan 偏差分析
+      验证稳定度未退化。
+    key_steps:
+      - "精确标定光纤延迟 τ（通过正负交替扫频 + 线性拟合，不确定度 ~2 ps）"
+      - "按卫星轨道预报生成 Δν_rf(t) 时间序列，上传至 DDS"
+      - "闭环运行激光器，DDS 按序列产生 Δν_rf(t)，误差信号强制归零"
+      - "测定扫频中拍频残余的 PSD 与 Allan 偏差，比较未扫频基线"
+      - "若需修正轨道预报偏差，手动插入 Δν_rf 修正值（值与时戳记录至日志）"
+    applicable_conditions: "光纤延迟 τ 标定至 ps 级精度；DDS 刷新率 ≥ 1kHz；光纤色散效应在远端扫频可忽略（低速区 τ 误差影响小）"
+    source:
+      zotero_key: "1305.3026"
+      claim: >
+        "by adding a frequency ∆ν_rf(t) to the demodulation signal of the fibre laser,
+        in closed loop operation the error signal is zero and its frequency is swept
+        according to ν̇_laser(t) = ∆ν_rf(t)/τ."
+    note: >
+      本方法是对 Jiang 2010 (meth.agile_laser_fiber_interferometer) 的扩展——核心
+      区别在于将 DDS 扫频从线性演示扩展到卫星轨道预报驱动的非线性大动态补偿。
+      光纤色散效应（dτ/dν ≈ −1.36×10⁻²² s²/km at 1060nm 对 Corning HI1060）
+      在工程上可忽略，因为最大扫频速率出现在频率中心附近，而远端扫频速率低至
+      τ 误差影响小于本征频率漂移。
+
+metrics:
+  - id: met.allan_deviation_chiodo2013_laser_to_laser
+    name: "Chiodo 2013 双激光器互比 Allan 偏差 σ_y(τ)"
+    unit: "无量纲（分数频率）"
+    role: primary
+    description: >
+      Mini-DOLL 两台稳频激光器（Nd:YAG 发射激光器 vs FBG 光纤激光器本振）
+      之间的分数频率 Allan 偏差。τ=0.2s 处 ~1×10⁻¹⁴。注意该值是两台共用同一
+      稳频平台（同箱体光纤线轴/AOM/光电管）的激光器互比，系统误差相关——
+      与独立参考源（低温蓝宝石振荡器 + 光频梳）比对时恶化约 5 倍。
+    demonstrated_value:
+      value: "σ_y(0.2 s) ≈ 1×10⁻¹⁴（双激光器互比）；σ_y(1 s) ≈ 5×10⁻¹⁴（vs 独立参考源）"
+      conditions: "τ=0.2 s 最优；无扫频静态锁定；Calern 台址（海拔 1270m，气压低）；采样时间 1μs/10μs/1ms 三档"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "1305.3026"
+        claim: >
+          "From figure 7 we see that for optimum integration times (∼0.2 s) the level of
+          the noise of the stabilized laser is ∼5 times worse when compared to an independent
+          source than when the two lasers are compared between them."
+    theoretical_floor:
+      value: "大气湍流限（由方程 (3) 取等号定义）"
+      basis: "图 6 显示 PSD 在傅里叶频率 <10 Hz 低于湍流×传递函数加权噪声"
+
+  - id: met.frequency_sweep_range_chiodo2013
+    name: "Chiodo 2013 光纤延迟线稳频激光器扫频范围与速率"
+    unit: "GHz（范围）；MHz/s（速率）"
+    role: secondary
+    description: >
+      通过 DDS 编程驱动 FBG 光纤激光器 PZT 实现的频率扫频能力指标。
+      线性扫频可覆盖 >25 GHz 范围，速率 ≤1 GHz/s 时 PSD/ADEV 无显著退化。
+      非线性扫频模拟 800km 太阳同步轨道卫星过境（652 秒，最大速率 120 MHz/s，
+      总频移 24.8 GHz），残余仅为激光器本征漂移（~5.76 Hz/s）。
+    demonstrated_value:
+      value: "线性扫频：>25 GHz，≤1 GHz/s 无稳定度退化；非线性模拟：24.8 GHz / 652 s，残余 ≈ 本征漂移"
+      conditions: "FBG 光纤激光器 PZT 宽调谐模式（~106 GHz 范围）；DDS 1ms 刷新；τ=9.5761890718608 μs"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "1305.3026"
+        claim: >
+          "Fig. 9 shows the PSD of the fractional frequency difference between the 2 lasers,
+          after subtraction of the applied linear sweep. The figure shows that it is possible
+          to linearly sweep the laser up to 1 GHz/s without significantly degrading the stability."
+
+  - id: met.fibre_amplifier_added_phase_noise_chiodo2013
+    name: "Chiodo 2013 光纤放大器附加相位噪声"
+    unit: "Hz²/Hz（绝对频率噪声 PSD）；无量纲（分数频率 PSD）"
+    role: secondary
+    description: >
+      Nufern 光纤放大器（10W 型号验证，后续升级至 50W）附加的频率噪声 PSD。
+      在 10Hz–10kHz 频段位于或低于 10⁻³¹ Hz⁻¹（分数频率），即 <8×10⁻³ Hz²/Hz
+      绝对频率噪声。对应白频率噪声平台上，线宽增宽 ≤25 mHz——即放大器对稳频
+      种子激光器的线宽不构成可测量退化。
+    demonstrated_value:
+      value: "S_y(f) ≤ 10⁻³¹ Hz⁻¹（分数），10Hz–10kHz；等效线宽增宽 ≤25 mHz"
+      conditions: "Mach-Zehnder 干涉仪比对（AOM 移频 80 MHz）；种子激光器为 Nd:YAG 稳频激光器；放大器型号 Nufern 多级 Er:Yb"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "1305.3026"
+        claim: >
+          "the PSD of the frequency noise added by the amplifier is at or below 10⁻³¹ Hz⁻¹
+          in fractional frequency (< 8×10⁻³ Hz²/Hz in absolute frequency) for 10 Hz < f < 10 kHz...
+          a flat PSD at 8×10⁻³ Hz²/Hz corresponds to a line-width of 25 mHz."
+
+relations:
+  - id: rel.chiodo2013_01
+    subject: meth.fibre_delay_line_stabilization_with_dds_sweep
+    predicate: DERIVED-FROM
+    object: pri.fibre_delay_line_sweep_stability_maintained
+    confidence: established
+    source:
+      zotero_key: "1305.3026"
+      claim: >
+        "The stabilization and sweep control are based on the method described in [5]...
+        by adding a frequency ∆ν_rf(t) to the demodulation signal of the fibre laser,
+        in closed loop operation (error signal = 0), its frequency is varied according
+        to ν̇_laser(t) = ∆ν_rf(t)/τ."
+
+  - id: rel.chiodo2013_02
+    subject: met.allan_deviation_chiodo2013_laser_to_laser
+    predicate: OPERATIONALIZED-AS
+    object: meth.allan_deviation_adev
+    confidence: established
+    source:
+      zotero_key: "1305.3026"
+      claim: >
+        "The lasers are characterized in terms of power spectral density and Allan deviation
+        of the fractional frequency fluctuations."
+
+  - id: rel.chiodo2013_03
+    subject: pri.laser_stability_requirement_from_atmospheric_turbulence
+    predicate: APPLIED-TO
+    object: ent.chiodo2013_laser_system
+    confidence: established
+    source:
+      zotero_key: "1305.3026"
+      claim: >
+        "Equation (3) defines our requirements on laser stability, from an assumption on
+        the noise induced by atmospheric turbulence and from a knowledge of the ground
+        to satellite distance."
+
+  - id: rel.chiodo2013_04
+    subject: ent.chiodo2013_laser_system
+    predicate: REALIZES
+    object: meth.fibre_delay_line_stabilization_with_dds_sweep
+    confidence: established
+    source:
+      zotero_key: "1305.3026"
+      claim: >
+        "We present the experimental realization of a laser system for ground to satellite
+        optical Doppler ranging at the atmospheric turbulence limit."

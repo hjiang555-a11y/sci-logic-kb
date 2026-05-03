@@ -2,7 +2,7 @@
 
 # 📊 Metrics Quick Reference
 
-> Auto-generated 2026-04-24 03:39 UTC
+> Auto-generated 2026-05-03 05:17 UTC
 >
 > Metrics are grouped by **role** (v4.4 σ_y-first convention, see `topics/ultrastable-laser/_meta/scoping_principles.md` v2). Role is taken from the `role` field on the metric node when present, otherwise inferred from ID / name heuristics.
 
@@ -15,6 +15,7 @@
 | `met.absolute_freq_ratio_mcgrew2019` | 光钟绝对频率比对精度（McGrew 2019） | 1e-16 | Yb和Sr光晶格钟相对Cs喷泉钟，NIST 2019，多路独立比对 | [mcgrew2019](topics/frequency-standards/papers/mcgrew2019.yaml) |
 | `met.clock_instability_yb_hinkley2013` | 时钟不稳定性（Yb，Hinkley 2013） | 1.6e-18 | 两台Yb光晶格钟同步interrogation，积分时间约7小时，578 nm跃迁，自旋极化超冷1… | [hinkley2013](topics/frequency-standards/papers/hinkley2013.yaml) |
 | `met.clock_instability_yb_schioppo2017` | 时钟不稳定性（Yb双系综，Schioppo 2017） | 3e-18 | 双Yb冷原子系综同步interrogation，积分时间1小时，NIST 2017 | [schioppo2017](topics/frequency-standards/papers/schioppo2017.yaml) |
+| `met.fractional_frequency_stability_clairon1995` | 分数频率不稳定度 $\sigma_y(\tau)$ | 3 * 10^-13 / sqrt(tau) | measured against an H-maser, cycle duration 1.1 s | [clairon1995](topics/frequency-standards/papers/clairon1995.yaml) |
 | `met.geodesy_uncertainty_grotti2018` | 大地测量引力势差不确定度（Grotti 2018） | 5e-18 | 可搬运Sr光晶格钟，PTB至意大利INRIM站点，光纤链路频率传输 | [grotti2018](topics/frequency-standards/papers/grotti2018.yaml) |
 | `met.systematic_uncertainty_sr_bloom2014` | 系统频率不确定度（Sr，Bloom 2014） | 6.4e-18 | Sr光晶格钟，原位BBR温度探测，JILA 2014 | [bloom2014](topics/frequency-standards/papers/bloom2014.yaml) |
 | `met.systematic_uncertainty_sr_li2024` | 系统频率不确定度（NimSrI，Li 2024） | 4.8e-18 | NimSrI Sr光晶格钟，中国科学院国家授时中心，2024 | [li2024](topics/frequency-standards/papers/li2024.yaml) |
@@ -26,6 +27,13 @@
 | `met.clock_instability_sr_bloom2014` | 时钟短期不稳定性（Sr，Bloom 2014） | 2.2e-16 | Sr光晶格钟，归一化至1秒 | [bloom2014](topics/frequency-standards/papers/bloom2014.yaml) |
 | `met.clock_instability_sr_li2024` | 时钟短期不稳定性（NimSrI，Li 2024） | 3.3e-17 | NimSrI Sr光晶格钟，归一化至1秒 | [li2024](topics/frequency-standards/papers/li2024.yaml) |
 | `met.clock_instability_yb_hinkley2013_short` | 时钟短期不稳定性（Yb，Hinkley 2013） | 3.2e-16 | 每秒归一化，QPN极限，578 nm Yb光晶格钟 | [hinkley2013](topics/frequency-standards/papers/hinkley2013.yaml) |
+| `met.ramsey_linewidth_clairon1995` | Ramsey 共振线宽 | < 700 mHz | flight time above the cavity of 500 ms | [clairon1995](topics/frequency-standards/papers/clairon1995.yaml) |
+
+### 🔧 Engineering (κ/温度/磁场)
+
+| ID | Name | Best Value | Conditions | Source |
+|----|------|------------|------------|--------|
+| `met.cold_collisional_shift_value_clairon1995` | 冷碰撞频移 $\Delta \nu / \nu$ | 10^-15 (typical conditions) | 10^5 atoms at the detection in mF=0 and 5 muK | [clairon1995](topics/frequency-standards/papers/clairon1995.yaml) |
 
 ### ❓ Unspecified
 
@@ -193,7 +201,9 @@
 | `met.intracavity_avg_power_h07` | 腔内平均功率（Hartl 2007） | 3 kW（增强因子 ~230×） | CPA 注入 13.1 W；精细度 ~230×；阻抗匹配条件下 | [hartl2007](topics/optical-frequency-combs/papers/hartl2007.yaml) |
 | `met.intracavity_peak_intensity_h07` | 腔内聚焦峰值强度（Hartl 2007） | 3×10^14 W/cm² | 精细度 ~230×；焦斑面积 150 µm²；腔内峰值功率 230 MW；frep=136 MHz | [hartl2007](topics/optical-frequency-combs/papers/hartl2007.yaml) |
 | `met.intracavity_peak_power_h07` | 腔内峰值功率（Hartl 2007） | 230 MW | 腔内平均功率 3 kW；腔内脉宽 95 fs；frep=136 MHz | [hartl2007](topics/optical-frequency-combs/papers/hartl2007.yaml) |
+| `met.intracavity_pulse_energy` | Intracavity pulse energy | 48 | EDFL ring laser | [matsas1992](topics/optical-frequency-combs/papers/matsas1992.yaml) |
 | `met.ir_power_before_hhg_z22` | HHG 前基频脉冲平均功率与脉宽 | >50 W 平均 / <150 fs | Yb:fiber LMF 功率放大器输出 | [zhang2022](topics/optical-frequency-combs/papers/zhang2022.yaml) |
+| `met.lasing_wavelength` | Lasing wavelength | 1.55 | EDFL | [matsas1992](topics/optical-frequency-combs/papers/matsas1992.yaml) |
 | `met.li_d1_measurement_uncertainty_r19` | Li 原子 D1 线频率测量应用的可达测量不确定度（Rao 2019 目标） | ~10 Hz @ 100 s（对应 kHz 量级绝对准确度需求） | 梳锁定到外部微波参考；100 s 积分；Li D1 ~447 THz | [rao2019](topics/optical-frequency-combs/papers/rao2019.yaml) |
 | `met.lock_uptime_s14` | 连续无相位滑移锁定时间 | >35 h 连续无相位滑移（实验室，1 s 门时计数 f_ceo σ = 0.62 mHz / f_opt σ = 0… | 实验室环境；最终受限于致动器动态范围或偶发电气瞬态 | [sinclair2014](topics/optical-frequency-combs/papers/sinclair2014.yaml) |
 | `met.microcomb_30dB_bandwidth_s18` | 集成微梳 30-dB 光谱带宽 | 8.6 THz (72 nm) 单孤子；13.4 THz (105 nm) 双孤子 | 近 1550 nm 泵浦；Pelec = 130 / 162 mW 两种拓扑 | [stern2018](topics/optical-frequency-combs/papers/stern2018.yaml) |
@@ -242,6 +252,7 @@
 | `met.phire_distance_precision_averaged_c18` | PHIRE 距离测量精度（平均后，Carlson 2018） | — | — | [carlson2018](topics/optical-frequency-combs/papers/carlson2018.yaml) |
 | `met.phire_distance_precision_c18` | PHIRE 距离测量精度（Carlson 2018） | — | — | [carlson2018](topics/optical-frequency-combs/papers/carlson2018.yaml) |
 | `met.phire_nar_extended_c18` | PHIRE 扩展非模糊距离范围（Carlson 2018） | — | — | [carlson2018](topics/optical-frequency-combs/papers/carlson2018.yaml) |
+| `met.pulse_duration` | Pulse duration of the generated solitons | 1.55 | EDFL ring laser with NPR | [matsas1992](topics/optical-frequency-combs/papers/matsas1992.yaml) |
 | `met.pulse_duration_cycles_x20` | 2 µm 脉冲持续时间（以光周期计） | 9.5 fs（1.4 光周期 @2 µm） | 327 mW 输出，1.94 W C-band 泵浦，SHG-FROG 重建误差 1.1%，±1.… | [xing2020](topics/optical-frequency-combs/papers/xing2020.yaml) |
 | `met.pulse_duration_intracavity_h07` | 腔内脉冲宽度（Hartl 2007） | 95 fs | 腔内色散补偿后；CPA 输出 75 fs（注入前） | [hartl2007](topics/optical-frequency-combs/papers/hartl2007.yaml) |
 | `met.pulse_to_pulse_timing_jitter_s14` | 脉间时间抖动（Sinclair 2014） | 2.4 fs（实验室）；5 fs（车辆 & 振动台 0.5 g rms）；~3.1 fs/g 随加速度线性 | 锁至 cw 参考，积分 1 Hz–5 MHz | [sinclair2014](topics/optical-frequency-combs/papers/sinclair2014.yaml) |
@@ -298,7 +309,15 @@
 
 | ID | Name | Best Value | Conditions | Source |
 |----|------|------------|------------|--------|
+| `met.allan_deviation_chiodo2013_laser_to_laser` | Chiodo 2013 双激光器互比 Allan 偏差 σ_y(τ) | σ_y(0.2 s) ≈ 1×10⁻¹⁴（双激光器互比）；σ_y(1 s) ≈ 5×10⁻¹⁴（vs 独立参考源） | τ=0.2 s 最优；无扫频静态锁定；Calern 台址（海拔 1270m，气压低）；采样时间 1… | [chiodo2013](topics/shared/papers/chiodo2013.yaml) |
 | `met.fractional_frequency_instability_sigma_y` | 分数频率不稳定度 σ_y(τ)（Allan 偏差通用度量，landmark 定义） | N/A（度量定义而非测量实例；具体数值见本库数十个派生 met.*allan_deviation_* 节点） | 跨整个知识库适用；每个实例指标的条件由其所在 paper YAML 给出；度量自身在 tau >=… | [allan1966](topics/shared/papers/allan1966.yaml) |
+
+### 📊 Secondary (线宽/PSD/相干)
+
+| ID | Name | Best Value | Conditions | Source |
+|----|------|------------|------------|--------|
+| `met.fibre_amplifier_added_phase_noise_chiodo2013` | Chiodo 2013 光纤放大器附加相位噪声 | S_y(f) ≤ 10⁻³¹ Hz⁻¹（分数），10Hz–10kHz；等效线宽增宽 ≤25 mHz | Mach-Zehnder 干涉仪比对（AOM 移频 80 MHz）；种子激光器为 Nd:YAG 稳… | [chiodo2013](topics/shared/papers/chiodo2013.yaml) |
+| `met.frequency_sweep_range_chiodo2013` | Chiodo 2013 光纤延迟线稳频激光器扫频范围与速率 | 线性扫频：>25 GHz，≤1 GHz/s 无稳定度退化；非线性模拟：24.8 GHz / 652 s，残余 ≈ 本征… | FBG 光纤激光器 PZT 宽调谐模式（~106 GHz 范围）；DDS 1ms 刷新；τ=9.5… | [chiodo2013](topics/shared/papers/chiodo2013.yaml) |
 
 ## Time-Frequency Transfer
 
@@ -341,6 +360,7 @@
 |----|------|------------|------------|--------|
 | `met.allan_dev_d17` | Allan 偏差（ADEV）@ 1070 nm（25 mm 腔） | 2×10⁻¹⁵ | τ = 0.1 s；1070 nm；室温；无主动温控；从相位噪声谱积分求得 | [davilarodriguez2017](topics/ultrastable-laser/papers/davilarodriguez2017.yaml) |
 | `met.allan_dev_l13b` | Allan 偏差（ADEV）@ 1070 nm | 2×10⁻¹⁵ | τ = 0.5–10 s；被动隔振光学平台；120 s 数据段，无漂移去除 | [leibrandt2013b](topics/ultrastable-laser/papers/leibrandt2013b.yaml) |
+| `met.allan_deviation_cryo` | 低温硅腔分数频率不稳定度 | 6.5e-17 | 4K, 6cm cavity, Robinson 2019 | [logic_bridge_poc](topics/ultrastable-laser/papers/logic_bridge_poc.yaml) |
 | `met.allan_deviation_fiber` | 分数频率不稳定度（光纤干涉仪，静态） | ~10⁻¹⁴ @ 0.1–1 s | 2.5 km 光纤，静态锁频 | [jiang2010](topics/ultrastable-laser/papers/jiang2010.yaml) |
 | `met.chip_mw_phase_noise_k24` | 芯片微波振荡器相位噪声 20 GHz（Kudelin 2024） | −96 dBc/Hz @ 100 Hz；−135 dBc/Hz @ 10 kHz | 20 GHz 载波；SiN 芯片 + 微型 F-P 腔 + MUTC 探测器；集成光子系统 | [kudelin2024](topics/ultrastable-laser/papers/kudelin2024.yaml) |
 | `met.combined_laser_instability_sc21` | 两超稳激光合并不稳定度 2220 km 比对（Schioppo 2021） | 7×10⁻¹⁷ | NPL ULE 腔 + PTB Si 低温腔；2220 km 光纤网络；平均时间 30–200 s… | [schioppo2021](topics/ultrastable-laser/papers/schioppo2021.yaml) |

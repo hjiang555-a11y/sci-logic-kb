@@ -178,10 +178,10 @@
 > **备注**：原 Batch 3 清单含 `BL4HI3QI`（Picqué & Hänsch 2019 Nature Photonics 综述），与已处理 `picque2019.yaml`（zotero `RZME5CH8`）为**同一 DOI 的备份键**，不创建重复 YAML。
 
 ## 频率标准专题
-| `clairon1995.yaml` | | Clairon 1995 — 铯原子喷泉频率标准初步结果 | 🆕 v4.5 |
 
 | 文件 | Zotero Key | 论文 | 状态 |
 |------|-----------|------|------|
+| `clairon1995.yaml` | | Clairon 1995 — 铯原子喷泉频率标准初步结果 | 🆕 v4.5 |
 | `fortier2026.yaml` | BWR7TEZ6 | Fortier 2026 — 光学原子钟综述 | ✅ v4.0 framework |
 | `diddams2016.yaml` | DIDDAMS2016-NATPHOT | Diddams/Fortier/Ludlow 2016 — Optical Atomic Clocks（Nature Photonics） | ✅ v4.5 framework |
 | `ludlow2008_thesis.yaml` | LUDLOW2008-THESIS-JILA | Ludlow 2008 — The Strontium Optical Lattice Clock（PhD thesis, JILA） | ✅ v4.5 framework |
@@ -248,6 +248,7 @@
 | `riley2008.yaml` | RILEY2008-NIST-SP1065 | Riley & Howe 2008 — OADEV/TOTDEV/Theo1/TheoH 方差手册（NIST SP 1065） | ✅ v4.5 framework |
 | `allan2016.yaml` | ALLAN2016 | Allan & Levine 2016 — Allan 方差族 50 年发展回顾（IEEE TUFFC） | ✅ v4.5 framework |
 | `sullivan2001.yaml` | SULLIVAN2001 | Sullivan et al. 2001 — NIST 初级原子频率标准综述（NIST JRES） | ✅ v4.5 framework |
+| `chiodo2013.yaml` | 1305.3026 | Chiodo et al. 2013 — 相干光星地链路大动态扫频激光系统（Appl. Opt.） | ✅ v4.5 evidence |
 
 ---
 
@@ -273,4 +274,3 @@
 ---
 
 *本文件由 AI 自动维护。完整论文列表从 SCHEMA.md 第八节迁移而来。*
-| `clairon1995.yaml` | | Clairon 1995 — 铯原子喷泉频率标准初步结果 | 🆕 v4.5 |
