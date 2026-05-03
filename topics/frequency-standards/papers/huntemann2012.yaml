@@ -1,0 +1,97 @@
+# Huntemann 2012 — Yb⁺ single-ion optical clock [evidence]
+# 提取者：Claude Code（AI 草稿，待专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.5
+# 专题：frequency-standards（¹⁷¹Yb⁺ 单离子光钟 — 电八极跃迁）
+# contribution_type: evidence — PTB ¹⁷¹Yb⁺ 单离子光钟；
+#   利用 E3 电八极跃迁实现高 Q 值钟跃迁。
+
+meta:
+  zotero_key: "Yb ion Huntermann PRL 2012"
+  topic: frequency-standards
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Improved Limit on a Temporal Variation of the Proton-to-Electron Mass Ratio from Comparisons of Yb+ and Cs Atomic Clocks"
+  year: 2012
+  first_author: Huntemann
+  authors: ["N. Huntemann", "B. Lipphardt", "Chr. Tamm", "V. Gerginov", "S. Weyers", "E. Peik"]
+  journal: "Physical Review Letters"
+  volume: 108
+  pages: "090801"
+  doi: "10.1103/PhysRevLett.108.090801"
+  note: >
+    PTB 团队利用 ¹⁷¹Yb⁺ 电八极（E3）跃迁光钟与 Cs 喷泉钟的
+    长期比对，约束质子-电子质量比 μ = m_p/m_e 的时间变化。
+    同时也演示了 Yb⁺ E3 光钟的性能。
+
+entities:
+  - id: ent.huntemann2012_yb_e3_ion_clock
+    name: "Huntemann 2012 ¹⁷¹Yb⁺ E3 单离子光钟（PTB）"
+    tier: system
+    domain: "单离子光钟；¹⁷¹Yb⁺；电八极跃迁；基本常数检验"
+    description: >
+      PTB 的 ¹⁷¹Yb⁺ 单离子光钟，利用 ²S₁/₂(F=0) → ²F₇/₂(F=3)
+      电八极（E3）跃迁（~467 nm，自然线宽 ~3 nHz，Q ~ 10²²）。
+      E3 跃迁对 Stark 频移的敏感度极低，但同时 Rabi 频率也极低，
+      需要极长的探询脉冲。该工作同时用于基本常数时间变化检验。
+    verification_status: demonstrated
+    source:
+      zotero_key: "Yb ion Huntermann PRL 2012"
+      claim: "The Yb+ E3 optical clock transition provides a highly sensitive probe for tests of fundamental physics."
+
+principles:
+  - id: pri.e3_octupole_transition_optical_clock
+    name: "电八极（E3）跃迁光钟原理"
+    tier: domain
+    verification_status: established
+    statement: >
+      单离子光钟的钟跃迁类型决定其性能特征：E2（电四极）
+      跃迁天然线宽 ~Hz，E3（电八极）跃迁天然线宽 ~nHz。
+      E3 对 Stark 频移的灵敏度比 E2 更低，但跃迁概率也更低
+      （探询时间更长、死时间更大→Dick 效应更强）。
+      Yb⁺ 和 Lu⁺ 是 E3 跃迁光钟的两个主要体系。
+    domain: "单离子光钟；E3 跃迁；量子计量"
+    key_insight: >
+      E3 跃迁是"用时间换精度"——极低的天然线宽换取
+      极低的系统频移敏感度，但代价是需要超长的探询时间。
+    conditions: "单离子囚禁（Paul 阱）；467 nm 超稳钟激光；长探询脉冲（~100 ms-1 s）"
+    source:
+      zotero_key: "Yb ion Huntermann PRL 2012"
+      claim: "The Yb+ E3 transition offers a Q-factor of 10^22 with exceptional insensitivity to external perturbations."
+
+metrics:
+  - id: met.huntemann2012_yb_e3_frequency_ratio
+    name: "Huntemann 2012 Yb⁺ E3/Cs 频率比和 μ 变化约束"
+    unit: "无量纲（频率比）；yr⁻¹（μ 变化率）"
+    role: primary
+    description: >
+      Yb⁺ E3 光钟与 Cs 喷泉钟的长期频率比对，
+      约束质子-电子质量比的变化。
+    demonstrated_value:
+      value: "Yb⁺/Cs 频率比长期测量；约束 d(ln μ)/dt"
+      conditions: "PTB Yb⁺ E3 光钟 + Cs 喷泉钟；数年基线"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "Yb ion Huntermann PRL 2012"
+        claim: "We set an improved limit on a temporal variation of the proton-to-electron mass ratio."
+
+relations:
+  - id: rel.huntemann2012_01
+    subject: ent.huntemann2012_yb_e3_ion_clock
+    predicate: REALIZES
+    object: pri.e3_octupole_transition_optical_clock
+    confidence: established
+    source:
+      zotero_key: "Yb ion Huntermann PRL 2012"
+      claim: "We present measurements using the Yb+ E3 optical clock."
+
+  - id: rel.huntemann2012_02
+    subject: met.huntemann2012_yb_e3_frequency_ratio
+    predicate: DEMONSTRATES
+    object: pri.e3_octupole_transition_optical_clock
+    confidence: established
+    source:
+      zotero_key: "Yb ion Huntermann PRL 2012"
+      claim: "Comparisons of Yb+ and Cs atomic clocks provide a limit on the temporal variation of the proton-to-electron mass ratio."

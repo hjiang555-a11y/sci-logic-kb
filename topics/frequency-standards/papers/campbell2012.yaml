@@ -1,0 +1,73 @@
+# Campbell 2012 — Single-ion nuclear clock; ²²⁹Th²⁺ [evidence]
+# 提取者：Claude Code（AI 草稿，待专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.5
+# 专题：frequency-standards（钍离子核光钟 — ²²⁹Th²⁺）
+# contribution_type: evidence — 提出并研究 ²²⁹Th²⁺ 作为核光钟候选离子；
+#   核跃迁的光谱和囚禁特性分析。
+
+meta:
+  zotero_key: "Th ion Campbell PRL 2012"
+  topic: frequency-standards
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Single-Ion Nuclear Clock for Metrology at the 19th Decimal Place"
+  year: 2012
+  first_author: Campbell
+  authors: ["C. J. Campbell", "A. G. Radnaev", "A. Kuzmich", "V. A. Dzuba", "V. V. Flambaum", "A. Derevianko"]
+  journal: "Physical Review Letters"
+  volume: 108
+  pages: "120802"
+  doi: "10.1103/PhysRevLett.108.120802"
+  note: >
+    提出 ²²⁹Th²⁺ 离子作为核光钟候选——利用 ²²⁹ᵐTh 核同质异能态
+    跃迁（~8.4 eV）作为钟跃迁。讨论了离子囚禁、激光冷却、
+    和核跃迁探测的可行性方案。是核光钟离子路线的重要理论-
+    实验接口工作。
+
+entities:
+  - id: ent.campbell2012_th229_ion_nuclear_clock
+    name: "Campbell 2012 ²²⁹Th²⁺ 单离子核光钟方案"
+    tier: method
+    domain: "核光钟；²²⁹Th；离子阱；量子计量"
+    description: >
+      提出利用 ²²⁹Th²⁺ 离子的核同质异能态跃迁（~8.4 eV）
+      作为核光钟钟跃迁。Th²⁺ 离子可被囚禁在 Paul 阱中，
+      通过电子 shelving 技术探测核跃迁。相比 ²²⁹Th 固态
+      方案，离子路线避免晶体场频移的不确定性，但需要
+      VUV 激光激发。
+    verification_status: proposed
+    source:
+      zotero_key: "Th ion Campbell PRL 2012"
+      claim: "We propose a single-ion nuclear clock based on the 229Th isomer transition."
+
+principles:
+  - id: pri.th229_ion_nuclear_clock_scheme
+    name: "²²⁹Th 离子核光钟方案原理"
+    tier: method
+    verification_status: proposed
+    statement: >
+      ²²⁹Th²⁺ 离子核光钟的核心思想：利用离子阱囚禁单离子，
+      排除固态基质导致的不确定频率偏移。电子壳层提供
+      激光冷却和态探测的接口（电子 shelving），而核跃迁
+      本身作为钟跃迁。挑战在于：需要 VUV 激光（~148 nm）
+      直接激发核跃迁，且核跃迁的 Rabi 频率极低。
+    domain: "核光钟；离子阱；²²⁹Th；VUV 激光"
+    key_insight: >
+      离子路线将核跃迁的精度优势（天然屏蔽）与离子阱的
+      控制优势（单粒子、低系统误差）结合。
+    conditions: "²²⁹Th²⁺ 离子囚禁；激光冷却（电子跃迁）；VUV 激光激发核跃迁；电子 shelving 探测"
+    source:
+      zotero_key: "Th ion Campbell PRL 2012"
+      claim: "The 229Th isomer transition in a trapped ion offers a path to an optical clock with unprecedented accuracy."
+
+relations:
+  - id: rel.campbell2012_01
+    subject: ent.campbell2012_th229_ion_nuclear_clock
+    predicate: REALIZES
+    object: pri.th229_ion_nuclear_clock_scheme
+    confidence: established
+    source:
+      zotero_key: "Th ion Campbell PRL 2012"
+      claim: "We propose a single-ion nuclear clock based on the 229Th isomer transition."

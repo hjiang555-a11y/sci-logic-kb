@@ -1,0 +1,71 @@
+# Inaba 2013 — Spectroscopy of ¹⁷¹Yb in an optical lattice using narrow linewidth frequency comb [evidence]
+# 提取者：Claude Code（AI 草稿，待专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.5
+# 专题：frequency-standards（Yb 光晶格钟 — 窄线宽频率梳光谱）
+# contribution_type: evidence — 利用窄线宽频率梳进行 ¹⁷¹Yb 光晶格钟
+#   光谱测量；频率梳线宽转移技术。
+
+meta:
+  zotero_key: "oe-21-7-7891"
+  topic: frequency-standards
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Spectroscopy of 171Yb in an optical lattice based on laser linewidth transfer using a narrow linewidth frequency comb"
+  year: 2013
+  first_author: Inaba
+  authors: ["Hajime Inaba", "Kazumoto Hosaka", "Masami Yasuda", "Yoshiaki Nakajima", "Kana Iwakuni", "Daisuke Akamatsu", "Sho Okubo", "Takuya Kohno", "Atsushi Onae", "Feng-Lei Hong"]
+  journal: "Optics Express"
+  volume: 21
+  pages: "7891"
+  doi: "10.1364/OE.21.007891"
+  note: >
+    NMIJ/AIST 团队利用窄线宽光纤频率梳将超稳激光的
+    线宽转移至 578 nm——用于 ¹⁷¹Yb 光晶格钟的光谱探询。
+    演示了频率梳作为光钟"钟激光"的实现方案。
+
+entities:
+  - id: ent.inaba2013_yb_comb_linewidth_transfer
+    name: "Inaba 2013 Yb 光钟频率梳线宽转移光谱（NMIJ）"
+    tier: component
+    domain: "Yb 光晶格钟；频率梳；线宽转移；精密光谱"
+    description: >
+      NMIJ 使用窄线宽光纤频率梳将超稳激光（~Hz 级线宽）
+      的频率纯度和线宽转移至 578 nm——用于 ¹⁷¹Yb 光晶格钟
+      的钟跃迁探询。该方案允许使用一个超稳激光器同时
+      服务多个不同波长的光钟（频率梳作为"线宽搬运工"）。
+    verification_status: demonstrated
+    source:
+      zotero_key: "oe-21-7-7891"
+      claim: "We demonstrate spectroscopy of 171Yb in an optical lattice using linewidth transfer via a narrow linewidth frequency comb."
+
+principles:
+  - id: pri.comb_linewidth_transfer_for_clock_spectroscopy
+    name: "频率梳线宽转移光钟光谱原理"
+    tier: method
+    verification_status: established
+    statement: >
+      光频梳将超稳激光的频率纯度和线宽从一个波长
+      （如 1064 nm 或 1157 nm）"搬运"到另一个波长
+      （如 578 nm 用于 Yb、698 nm 用于 Sr）——通过
+      锁相梳齿至超稳参考激光。优势：避免为每个波长
+      的钟跃迁独立开发超稳激光器。
+    domain: "光频梳；光钟；线宽转移；频率计量"
+    key_insight: >
+      频率梳是光钟的频率"搬运工"——一个好的超稳激光
+      通过梳可以服务多个不同波长的光钟。
+    conditions: "窄线宽频率梳（< Hz 梳齿线宽）；超稳参考激光；梳齿-参考锁相"
+    source:
+      zotero_key: "oe-21-7-7891"
+      claim: "The narrow linewidth frequency comb transfers the linewidth of an ultrastable laser to the clock transition wavelength."
+
+relations:
+  - id: rel.inaba2013_01
+    subject: ent.inaba2013_yb_comb_linewidth_transfer
+    predicate: REALIZES
+    object: pri.comb_linewidth_transfer_for_clock_spectroscopy
+    confidence: established
+    source:
+      zotero_key: "oe-21-7-7891"
+      claim: "We demonstrate spectroscopy of 171Yb using linewidth transfer via a narrow linewidth frequency comb."

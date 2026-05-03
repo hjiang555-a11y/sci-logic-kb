@@ -195,6 +195,30 @@
 | `bothwell2022.yaml` | BOTHWELL2022 | Bothwell 2022 — JILA 毫米尺度引力红移分辨（可考虑 breakthrough） | ✅ v4.5 evidence |
 | `oelker2019.yaml` | OELKER2019 | Oelker 2019 — JILA 双 Sr 晶格钟 4.8×10⁻¹⁷ @1 s（Si cavity LO） | ✅ v4.5 evidence |
 | `bacon2021.yaml` | BACON2021 | BACON Collaboration 2021 — Al⁺/Yb/Sr 三钟网络 18 位频率比（可考虑 breakthrough） | ✅ v4.5 evidence |
+| `king2022.yaml` | s41586-022-05245-4 | King 2022 — 高电荷离子 Ar¹³⁺ 光钟首次实验实现 | ✅ v4.5 evidence |
+| `roslund2024.yaml` | s41586-024-07225-2 | Roslund 2024 — 舰载光钟海上运行演示 | ✅ v4.5 evidence |
+| `zhang2024_th_nuclear.yaml` | s41586-024-07839-6 | Zhang 2024 — ²²⁹ᵐTh 核跃迁频率比直接测量 | ✅ v4.5 evidence |
+| `ooi2025.yaml` | s41586-025-09999-5 | Ooi 2025 — 固态核光钟频率复现性 | ✅ v4.5 evidence |
+| `burt2021.yaml` | s41586-021-03571-7 | Burt 2021 — 空间汞离子钟 DSAC 在轨演示 | ✅ v4.5 evidence |
+| `takamoto2020.yaml` | s41566-020-0619-8 | Takamoto 2020 — 可搬运 Sr 光晶格钟广义相对论检验 | ✅ v4.5 evidence |
+| `aeppli2024.yaml` | Sr accuracy_PRL | Aeppli 2024 — Sr 钟 8×10⁻¹⁹ 系统不确定度 | ✅ v4.5 evidence |
+| `barber2008.yaml` | PhysRevLett.100.103002 | Barber 2008 — Yb 钟晶格诱导光频移 | ✅ v4.5 evidence |
+| `huang2016.yaml` | PhysRevLett.116.013001 | Huang 2016 — 两台 ⁴⁰Ca⁺ 光钟 10⁻¹⁷ 级比对 | ✅ v4.5 evidence |
+| `norcia2018.yaml` | PhysRevX.8.021036 | Norcia 2018 — Sr 钟跃迁超辐射频率测量 | ✅ v4.5 evidence |
+| `campbell2012.yaml` | Th ion Campbell PRL 2012 | Campbell 2012 — ²²⁹Th 单离子核光钟方案 | ✅ v4.5 evidence |
+| `kazakov2012.yaml` | Th ion Kazakov NJP 2012 | Kazakov 2012 — ²²⁹Th 核光钟理论框架 | ✅ v4.5 framework |
+| `huntemann2012.yaml` | Yb ion Huntemann PRL 2012 | Huntemann 2012 — Yb⁺ E3 光钟 μ 变化约束 | ✅ v4.5 evidence |
+| `beloy2020.yaml` | PhysRevLett.125.173002 | Beloy 2020 — Ba⁴⁺ 高精度光钟候选 | ✅ v4.5 evidence |
+| `weyers2009.yaml` | 2009 Weyers PRA | Weyers 2009 — Cs 喷泉钟量子极限 | ✅ v4.5 evidence |
+| `brown2017.yaml` | 2923-1 | Brown 2017 — Sr 钟 hyperpolarizability 和 magic wavelength | ✅ v4.5 evidence |
+| `kolkowitz2016.yaml` | ClockGW PRD | Kolkowitz 2016 — 光钟引力波探测方案 | ✅ v4.5 framework |
+| `zhang2023_lu.yaml` | sciadv.adg1971 | Zhang 2023 — ¹⁷⁶Lu⁺ 关联谱 10⁻¹⁸ 比对 | ✅ v4.5 evidence |
+| `takamoto2022_perspective.yaml` | 5.0087894 | Takamoto 2022 — 可搬运光晶格钟前景综述 | ✅ v4.5 framework |
+| `si_second_redefinition_roadmap2021.yaml` | CCTF roadmap | Dimarcq 2021 — SI 秒重定义路线图 | ✅ v4.5 framework |
+| `shi2019.yaml` | oe-27-16-22040 | Shi 2019 — good-bad-cavity 主动光钟锁相 | ✅ v4.5 evidence |
+| `inaba2013.yaml` | oe-21-7-7891 | Inaba 2013 — Yb 光钟频率梳线宽转移光谱 | ✅ v4.5 evidence |
+| `bowden2019.yaml` | s41598-019-48168-3 | Bowden 2019 — 集成光腔金字塔 MOT | ✅ v4.5 evidence |
+| `barwood2012.yaml` | MST 2012 | Barwood 2012 — ⁸⁸Sr⁺ 光频标自动激光控制 | ✅ v4.5 evidence |
 
 ## 时间标尺专题
 

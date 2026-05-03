@@ -1,0 +1,100 @@
+# Norcia 2018 — Frequency measurements of superradiance from the Sr clock transition [evidence]
+# 提取者：Claude Code（AI 草稿，待专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.5
+# 专题：frequency-standards（Sr 超辐射 — 主动光钟新范式）
+# contribution_type: evidence — 首次测量 Sr 钟跃迁超辐射的频率特性；
+#   探索基于超辐射的"主动"光钟（active optical clock）新方案。
+
+meta:
+  zotero_key: "PhysRevX.8.021036"
+  topic: frequency-standards
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Frequency Measurements of Superradiance from the Strontium Clock Transition"
+  year: 2018
+  first_author: Norcia
+  authors: ["Matthew A. Norcia", "Julia R. K. Cline", "Juan A. Muniz", "John M. Robinson", "Ross B. Hutson", "Akihisa Goban", "G. Edward Marti", "Jun Ye", "James K. Thompson"]
+  journal: "Physical Review X"
+  volume: 8
+  pages: "021036"
+  doi: "10.1103/PhysRevX.8.021036"
+  note: >
+    JILA 团队在 Sr 钟跃迁（¹S₀→³P₀）上观测超辐射并测量其频率。
+    超辐射是具有集体偶极相干（dipole coherence）的多原子
+    协同自发辐射——将被动光钟（探测→反馈）概念转变为
+    主动光钟（超辐射直接输出稳定光频）。该工作是主动
+    光钟路径的重要实验验证。
+
+entities:
+  - id: ent.norcia2018_sr_superradiance_clock
+    name: "Norcia 2018 Sr 钟跃迁超辐射频率测量（JILA）"
+    tier: system
+    domain: "超辐射；主动光钟；Sr 钟跃迁；量子协同效应"
+    description: >
+      JILA 在光晶格中的 Sr 原子上实现钟跃迁超辐射——
+      多原子系统的协同自发辐射产生窄线宽光频输出。
+      将超辐射频率与参考钟比对，评估其作为主动光钟
+      本振的潜力。与传统被动光钟（需要低噪声探询激光器）
+      不同，主动光钟利用超辐射直接产生频率稳定的光输出。
+    verification_status: demonstrated
+    source:
+      zotero_key: "PhysRevX.8.021036"
+      claim: "We perform frequency measurements of superradiance from the strontium clock transition."
+
+principles:
+  - id: pri.superradiant_active_optical_clock
+    name: "超辐射主动光钟原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      主动光钟（active optical clock）利用原子系统的集体
+      协同辐射（超辐射）直接产生频率稳定的光输出——
+      而不像传统被动光钟那样需要超稳激光探询→反馈。
+      超辐射的频率由原子跃迁频率本身决定，不受探询激光
+      噪声限制。这可能导致结构更简单、性能更能突破
+      Dick 效应限制的新一代光钟。
+    domain: "主动光钟；超辐射；量子光学；原子物理"
+    key_insight: >
+      被动光钟是被动的"滤波器"——需要外部本振；主动光钟是
+      主动的"源"——原子自己产生频率稳定的光。
+    conditions: "原子系统实现粒子数反转或集体偶极相干；超辐射线宽 < 跃迁自然线宽；光腔增强协同性"
+    source:
+      zotero_key: "PhysRevX.8.021036"
+      claim: "Superradiance offers a route to active optical clocks where the atoms themselves serve as the frequency reference and source."
+
+metrics:
+  - id: met.norcia2018_sr_superradiance_frequency
+    name: "Norcia 2018 Sr 超辐射频率测量"
+    unit: "Hz（超辐射频率与绝对频率的偏移）"
+    role: primary
+    description: >
+      Sr 钟跃迁超辐射的频率测量及其与参考钟的比对。
+    demonstrated_value:
+      value: "Sr 钟跃迁超辐射频率测量；演示超辐射作为主动光钟本振的可行性"
+      conditions: "Sr 光晶格；光学腔增强；超辐射脉冲模式"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "PhysRevX.8.021036"
+        claim: "We measure the frequency of the superradiant emission relative to a reference clock."
+
+relations:
+  - id: rel.norcia2018_01
+    subject: ent.norcia2018_sr_superradiance_clock
+    predicate: REALIZES
+    object: pri.superradiant_active_optical_clock
+    confidence: established
+    source:
+      zotero_key: "PhysRevX.8.021036"
+      claim: "Superradiance offers a route to active optical clocks where the atoms themselves serve as the frequency reference."
+
+  - id: rel.norcia2018_02
+    subject: met.norcia2018_sr_superradiance_frequency
+    predicate: DEMONSTRATES
+    object: pri.superradiant_active_optical_clock
+    confidence: established
+    source:
+      zotero_key: "PhysRevX.8.021036"
+      claim: "We measure the frequency of the superradiant emission relative to a reference clock."

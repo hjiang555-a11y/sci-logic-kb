@@ -1,0 +1,83 @@
+# Shi 2019 — Realization of phase locking in good-bad-cavity active optical clock [evidence]
+# 提取者：Claude Code（AI 草稿，待专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.5
+# 专题：frequency-standards（主动光钟 — good-bad-cavity 锁相）
+# contribution_type: evidence — 实现 good-bad-cavity 主动光钟的相位锁定；
+#   探索主动光钟的一种工程实现方案。
+
+meta:
+  zotero_key: "oe-27-16-22040"
+  topic: frequency-standards
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Realization of phase locking in good-bad-cavity active optical clock"
+  year: 2019
+  first_author: Shi
+  authors: ["Tiantian Shi", "et al."]
+  journal: "Optics Express"
+  volume: 27
+  pages: "22040"
+  doi: "10.1364/OE.27.022040"
+  note: >
+    实现 good-bad-cavity 主动光钟的相位锁定方案。
+    Good-bad-cavity 是指使用两个耦合光腔——一个
+    高 Q 腔（good cavity）提供频率参考，一个低 Q 腔
+    （bad cavity）容纳增益介质并输出光。
+    是主动光钟的工程实现路径之一。
+
+entities:
+  - id: ent.shi2019_good_bad_cavity_active_clock
+    name: "Shi 2019 good-bad-cavity 主动光钟锁相（中科院）"
+    tier: component
+    domain: "主动光钟；光学腔；相位锁定"
+    description: >
+      实现 good-bad-cavity 主动光钟方案：good cavity（高 Q）
+      提供频率稳定参考，bad cavity（低 Q）容纳增益介质
+      （如热原子蒸汽）并产生光输出。双腔之间的相位
+      锁定是实现主动光钟稳定输出的关键。
+    verification_status: demonstrated
+    source:
+      zotero_key: "oe-27-16-22040"
+      claim: "We realize phase locking in a good-bad-cavity active optical clock."
+
+principles:
+  - id: pri.good_bad_cavity_active_clock
+    name: "Good-bad-cavity 主动光钟原理"
+    tier: method
+    verification_status: demonstrated
+    statement: >
+      主动光钟的核心挑战：增益介质（原子）所在的腔需要
+      容纳足够多的原子以获得超辐射增益（bad cavity），
+      但腔本身的频率稳定性（good cavity）决定了输出频率
+      的长期稳定度。Good-bad-cavity 方案将两个功能分离：
+      good cavity 提供频率参考，bad cavity 提供增益——
+      两者通过相位锁定的激光连接。
+    domain: "主动光钟；光学腔；原子-腔耦合"
+    key_insight: >
+      Good-bad-cavity 方案是"分而治之"的主动光钟路线——
+      将频率稳定性和增益两个功能解耦到两个物理腔中。
+    conditions: "双腔耦合；相位锁定环路；增益介质（热原子/冷原子）"
+    source:
+      zotero_key: "oe-27-16-22040"
+      claim: "The good-bad-cavity scheme separates the frequency reference and gain functions."
+
+relations:
+  - id: rel.shi2019_01
+    subject: ent.shi2019_good_bad_cavity_active_clock
+    predicate: REALIZES
+    object: pri.good_bad_cavity_active_clock
+    confidence: established
+    source:
+      zotero_key: "oe-27-16-22040"
+      claim: "We realize phase locking in a good-bad-cavity active optical clock."
+
+  - id: rel.shi2019_02
+    subject: pri.good_bad_cavity_active_clock
+    predicate: CHARACTERIZES
+    object: pri.superradiant_active_optical_clock
+    confidence: established
+    source:
+      zotero_key: "oe-27-16-22040"
+      claim: "The good-bad-cavity approach addresses the key challenge of active optical clocks."

@@ -1,0 +1,52 @@
+# Kazakov 2012 — Prospects of ²²⁹Th ion nuclear clock [framework]
+# 提取者：Claude Code（AI 草稿，待专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.5
+# 专题：frequency-standards（钍离子核光钟 — 理论框架和前景分析）
+# contribution_type: framework — 系统分析 ²²⁹Th 离子核光钟的理论前景、
+#   关键系统效应和潜在性能。
+
+meta:
+  zotero_key: "Th ion Kazakov NJP 2012"
+  topic: frequency-standards
+  source_type: journal_paper
+  contribution_type: framework
+  reliability: high
+  title: "Prospects for a nuclear optical clock based on the 229Th isomer transition"
+  year: 2012
+  first_author: Kazakov
+  authors: ["G. A. Kazakov", "A. N. Litvinov", "V. I. Romanenko", "L. P. Yatsenko", "A. V. Romanenko", "M. Schreitl", "G. Winkler", "T. Schumm"]
+  journal: "New Journal of Physics"
+  volume: 14
+  pages: "083019"
+  doi: "10.1088/1367-2630/14/8/083019"
+  note: >
+    系统分析 ²²⁹Th 核光钟的理论框架——包括核跃迁的系统效应
+    （晶体场、磁场、电场）、激发方案（直接 VUV 激发 vs
+    双光子激发）、和潜在性能极限。是对核光钟发展路线的
+    理论 roadmap 贡献。
+
+entities:
+  - id: ent.kazakov2012_th_nuclear_clock_theory
+    name: "Kazakov 2012 ²²⁹Th 核光钟理论框架"
+    tier: method
+    domain: "核光钟；²²⁹Th；理论分析；系统效应"
+    description: >
+      系统分析 ²²⁹Th 核光钟的理论基础：讨论核跃迁对外场的
+      敏感性（Stark 效应、Zeeman 效应、晶体场分裂）、
+      激发方案选择（直接 VUV 激发 vs 电子 bridge 方案）、
+      以及核光钟可能达到的性能极限（~10⁻¹⁹ 系统不确定度）。
+    verification_status: proposed
+    source:
+      zotero_key: "Th ion Kazakov NJP 2012"
+      claim: "We present a detailed theoretical analysis of the 229Th nuclear clock concept."
+
+relations:
+  - id: rel.kazakov2012_01
+    subject: ent.kazakov2012_th_nuclear_clock_theory
+    predicate: APPRAISES
+    object: pri.th229_ion_nuclear_clock_scheme
+    confidence: established
+    source:
+      zotero_key: "Th ion Kazakov NJP 2012"
+      claim: "We analyze the systematics and achievable accuracy of a 229Th nuclear clock."

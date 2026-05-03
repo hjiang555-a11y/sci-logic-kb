@@ -1,0 +1,101 @@
+# Burt 2021 — Demonstration of a trapped-ion atomic clock in space [evidence]
+# 提取者：Claude Code（AI 草稿，待专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.5
+# 专题：frequency-standards（空间离子钟 — DSAC 深空原子钟在轨演示）
+# contribution_type: evidence — 首台在轨运行的高性能离子钟；
+#   验证空间环境下离子钟的长稳性能，为深空导航提供星载时频。
+
+meta:
+  zotero_key: "s41586-021-03571-7"
+  topic: frequency-standards
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Demonstration of a trapped-ion atomic clock in space"
+  year: 2021
+  first_author: Burt
+  authors: ["E. A. Burt", "J. D. Prestage", "R. L. Tjoelker", "D. G. Enzer", "D. Kuang", "D. W. Murphy", "D. E. Robison", "J. M. Seubert", "R. T. Wang", "T. A. Ely"]
+  journal: "Nature"
+  volume: 595
+  pages: "43-47"
+  doi: "10.1038/s41586-021-03571-7"
+  note: >
+    NASA/JPL 的深空原子钟（DSAC）——首台在轨运行的高性能
+    汞离子（¹⁹⁹Hg⁺）微波钟。DSAC 在低地球轨道（LEO）运行
+    一年，演示了空间环境下离子钟的长稳性能。
+    主要应用：深空导航（单向测距替代双向测距）、GNSS 增强、
+    空间基础物理实验。
+
+entities:
+  - id: ent.burt2021_dsac_space_ion_clock
+    name: "Burt 2021 DSAC 空间汞离子微波钟（NASA/JPL）"
+    tier: system
+    domain: "空间钟；汞离子微波钟；深空导航"
+    description: >
+      NASA/JPL 的深空原子钟（DSAC）——首台在轨运行的高性能
+      汞离子微波钟。¹⁹⁹Hg⁺ 离子囚禁在密封式线性四极阱中，
+      微波跃迁频率 ~40.5 GHz。与传统星载原子钟（Rb、Cs）
+      相比，离子钟的长期稳定度更高，可实现自主单向测距导航
+      （不依赖地面双向测距），大幅降低深空任务的通信延迟。
+    verification_status: demonstrated
+    source:
+      zotero_key: "s41586-021-03571-7"
+      claim: "Here we demonstrate a trapped-ion atomic clock operating in space."
+
+principles:
+  - id: pri.space_ion_clock_for_deep_space_navigation
+    name: "空间离子钟深空导航原理"
+    tier: domain
+    verification_status: demonstrated
+    statement: >
+      传统深空导航依赖双向测距（地面→探测器→地面）——
+      通信延迟长（数小时至数天），且需要地面站持续跟踪。
+      星载高性能原子钟使单向测距成为可能：探测器接收
+      GNSS/地面信号并自行计算位置。这需要星载钟具有
+      足够低的长期频率漂移（~10⁻¹⁵ 量级 @数天至数周）。
+      离子阱（Hg⁺）天然具有低漂移特性——无缓冲气体碰撞、
+      无壁碰撞，频率主要由原子物理决定而非工程参数。
+    domain: "空间钟；深空导航；离子阱物理"
+    key_insight: >
+      空间钟的考核指标不同于地面钟——不是追求最低 σ_y(τ=1 s)，
+      而是追求最低长期漂移和最简化的系统集成。
+    conditions: "密封式离子阱；星载激光器和电子学；空间环境（真空/微重力/辐射）"
+    source:
+      zotero_key: "s41586-021-03571-7"
+      claim: "Atomic clocks operating in space are essential for deep-space navigation."
+
+metrics:
+  - id: met.burt2021_dsac_orbit_performance
+    name: "Burt 2021 DSAC 在轨频率稳定度"
+    unit: "σ_y(τ)（Allan 偏差）"
+    role: primary
+    description: >
+      DSAC 在低地球轨道一年运行期间的频率稳定度。
+    demonstrated_value:
+      value: "DSAC 在轨一年运行；长期频率稳定度优于现有星载钟"
+      conditions: "LEO 轨道（~500 km）；一年在轨运行；密封式 Hg⁺ 离子阱"
+      verification_status: demonstrated
+      confidence: established
+      source:
+        zotero_key: "s41586-021-03571-7"
+        claim: "The DSAC mission demonstrated long-term clock stability in the space environment."
+
+relations:
+  - id: rel.burt2021_01
+    subject: ent.burt2021_dsac_space_ion_clock
+    predicate: REALIZES
+    object: pri.space_ion_clock_for_deep_space_navigation
+    confidence: established
+    source:
+      zotero_key: "s41586-021-03571-7"
+      claim: "Here we demonstrate a trapped-ion atomic clock operating in space."
+
+  - id: rel.burt2021_02
+    subject: met.burt2021_dsac_orbit_performance
+    predicate: DEMONSTRATES
+    object: pri.space_ion_clock_for_deep_space_navigation
+    confidence: established
+    source:
+      zotero_key: "s41586-021-03571-7"
+      claim: "The DSAC mission demonstrated long-term clock stability in the space environment."

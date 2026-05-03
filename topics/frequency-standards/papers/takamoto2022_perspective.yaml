@@ -1,0 +1,53 @@
+# Takamoto 2022 — A perspective on the future of transportable optical lattice clocks [framework]
+# 提取者：Claude Code（AI 草稿，待专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.5
+# 专题：frequency-standards（可搬运光晶格钟 — 前景综述）
+# contribution_type: framework — 展望可搬运 Sr 光晶格钟的技术发展和应用前景；
+#   涵盖相对论测高、大地测量和基础物理测试。
+
+meta:
+  zotero_key: "5.0087894"
+  topic: frequency-standards
+  source_type: journal_paper
+  contribution_type: framework
+  reliability: high
+  title: "A perspective on the future of transportable optical lattice clocks"
+  year: 2022
+  first_author: Takamoto
+  authors: ["M. Takamoto", "Y. Tanaka", "H. Katori"]
+  journal: "Applied Physics Letters"
+  volume: 120
+  pages: "140502"
+  doi: "10.1063/5.0087894"
+  note: >
+    RIKEN/东京大学团队（Katori 组）关于可搬运光晶格钟的
+    发展前景综述。讨论可搬运 Sr 钟的技术路线、关键瓶颈
+    （体积、功耗、自动化、长稳）和潜在应用（相对论测高、
+    大地测量、GNSS 增强、基础物理测试）。
+
+entities:
+  - id: ent.takamoto2022_transportable_clock_perspective
+    name: "Takamoto 2022 可搬运光晶格钟前景综述（RIKEN）"
+    tier: system
+    domain: "可搬运光钟；Sr 光晶格钟；工程化"
+    description: >
+      Katori 组关于可搬运光晶格钟的发展和应用的展望综述。
+      讨论从实验室到现场的关键技术挑战：紧凑化（~1 m³）、
+      低功耗（~100 W）、自动化和远程操作、以及在不同
+      环境下维持钟性能。展望可搬运光钟用于厘米级大地
+      测量、GNSS 时间基准增强、和基础物理常数检验。
+    verification_status: proposed
+    source:
+      zotero_key: "5.0087894"
+      claim: "We provide a perspective on the future development and applications of transportable optical lattice clocks."
+
+relations:
+  - id: rel.takamoto2022_01
+    subject: ent.takamoto2022_transportable_clock_perspective
+    predicate: APPRAISES
+    object: pri.transportable_optical_clock_engineering
+    confidence: established
+    source:
+      zotero_key: "5.0087894"
+      claim: "Transportable optical lattice clocks are poised to revolutionize geodesy and fundamental physics tests."

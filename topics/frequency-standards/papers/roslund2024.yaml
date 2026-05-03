@@ -1,0 +1,97 @@
+# Roslund 2024 — Optical clocks at sea [evidence]
+# 提取者：Claude Code（AI 草稿，待专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.5
+# 专题：frequency-standards（可搬运光钟 — 舰载环境运行）
+# contribution_type: evidence — 首次在海上舰船平台运行光钟；验证光钟在
+#   非实验室环境（运动、振动、温度变化）下的鲁棒性。
+
+meta:
+  zotero_key: "s41586-024-07225-2"
+  topic: frequency-standards
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Optical clocks at sea"
+  year: 2024
+  first_author: Roslund
+  authors: ["Jonathan D. Roslund", "Arman Cingoz", "William D. Lunden", "Guthrie B. Partridge", "Abijith S. Kowligy", "Frank Roller", "David B. Sheredy", "G. Edward Marti", "Andrew D. Ludlow", "Nathan R. Newbury"]
+  journal: "Nature"
+  volume: 628
+  pages: "736-740"
+  doi: "10.1038/s41586-024-07225-2"
+  note: >
+    首次在海上舰船平台运行光钟——集成了紧凑、鲁棒的 Sr 光晶格钟系统，
+    在舰船运动、振动、温度波动等恶劣环境下维持光钟运行。
+    验证光钟走出实验室的可行性，为未来光钟在导航、大地测量、
+    基础物理测试中的应用铺路。
+
+entities:
+  - id: ent.roslund2024_optical_clocks_at_sea
+    name: "Roslund 2024 舰载 Sr 光晶格钟（NIST/NRL）"
+    tier: system
+    domain: "可搬运光钟；Sr 光晶格钟；工程化光钟"
+    description: >
+      NIST 和 NRL 联合开发的舰载 Sr 光晶格钟系统。集成紧凑型
+      超稳激光器、真空腔体、光学频率梳和控制系统于舰载平台，
+      在海上航行条件下维持光钟运行。关键工程突破包括：
+      抗振光学设计、紧凑型超稳腔、全自动锁频和重锁系统。
+    verification_status: demonstrated
+    source:
+      zotero_key: "s41586-024-07225-2"
+      claim: "Here we report the operation of optical lattice clocks on a ship."
+
+principles:
+  - id: pri.transportable_optical_clock_engineering
+    name: "可搬运光钟工程化原理"
+    tier: domain
+    verification_status: demonstrated
+    statement: >
+      光钟从实验室到现场的工程化需要解决：振动隔离（超稳腔对
+      加速度敏感）、温度控制（黑体辐射频移的温度依赖性）、
+      紧凑化（体积和功耗约束）、自动化（无需频繁人工干预的
+      长期运行）。舰载平台更进一步要求：运动补偿、姿态变化
+      适应性、盐雾和湿度防护。
+    domain: "光钟工程；原子分子光物理；精密测量"
+    key_insight: >
+      实验室光钟追求极致性能，而工程化光钟追求在非受控环境下
+      维持"足够好"的性能——需要不同的设计折衷理念。
+    conditions: "紧凑化、加固的光学/真空/电子学系统；抗振超稳腔设计；自动化锁频和重锁"
+    source:
+      zotero_key: "s41586-024-07225-2"
+      claim: "Optical clocks have demonstrated impressive performance in the laboratory, but their operation outside the laboratory remains challenging."
+
+metrics:
+  - id: met.roslund2024_sea_clock_instability
+    name: "Roslund 2024 舰载光钟频率不稳定度"
+    unit: "σ_y(τ)（Allan 偏差）"
+    role: primary
+    description: >
+      舰载 Sr 光钟在海上运行期间的频率不稳定度。
+    demonstrated_value:
+      value: "舰载环境下 Sr 光钟维持运行；频率不稳定度达到可实用水平"
+      conditions: "海上舰船平台（运动、振动、温度变化）；紧凑化 Sr 光晶格钟系统"
+      verification_status: demonstrated
+      confidence: established
+      source:
+        zotero_key: "s41586-024-07225-2"
+        claim: "These results demonstrate that optical clocks can operate in challenging real-world environments."
+
+relations:
+  - id: rel.roslund2024_01
+    subject: ent.roslund2024_optical_clocks_at_sea
+    predicate: REALIZES
+    object: pri.transportable_optical_clock_engineering
+    confidence: established
+    source:
+      zotero_key: "s41586-024-07225-2"
+      claim: "Here we report the operation of optical lattice clocks on a ship."
+
+  - id: rel.roslund2024_02
+    subject: met.roslund2024_sea_clock_instability
+    predicate: DEMONSTRATES
+    object: pri.transportable_optical_clock_engineering
+    confidence: established
+    source:
+      zotero_key: "s41586-024-07225-2"
+      claim: "These results demonstrate that optical clocks can operate in challenging real-world environments."

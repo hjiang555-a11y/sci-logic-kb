@@ -1,0 +1,97 @@
+# Aeppli 2024 — Clock with 8×10⁻¹⁹ systematic uncertainty [evidence]
+# 提取者：Claude Code（AI 草稿，待专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.5
+# 专题：frequency-standards（Sr 光晶格钟 — 8×10⁻¹⁹ 系统不确定度）
+# contribution_type: evidence — JILA Sr 光晶格钟实现 8×10⁻¹⁹ 系统不确定度；
+#   是目前精度最高的光钟系统不确定度之一。
+
+meta:
+  zotero_key: "Sr accuracy_PRL.133.023401.2024_0"
+  topic: frequency-standards
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Clock with 8×10^-19 Systematic Uncertainty"
+  year: 2024
+  first_author: Aeppli
+  authors: ["Alexander Aeppli", "Kyungtae Kim", "William Warfield", "Marianna S. Safronova", "Jun Ye"]
+  journal: "Physical Review Letters"
+  volume: 133
+  pages: "023401"
+  doi: "10.1103/PhysRevLett.133.023401"
+  note: >
+    JILA 团队将 Sr 光晶格钟的系统不确定度推进至 8×10⁻¹⁹——
+    当前光钟系统不确定度的最低值之一。关键改进包括
+    黑体辐射频移的更精确评估、晶格光频移的精确控制、
+    以及密度频移的系统测量。为光钟重新定义 SI 秒提供基准。
+
+entities:
+  - id: ent.aeppli2024_sr_clock_8e19
+    name: "Aeppli 2024 JILA Sr 光晶格钟 — 8×10⁻¹⁹ 系统不确定度"
+    tier: system
+    domain: "Sr 光晶格钟；系统不确定度评估；光钟计量"
+    description: >
+      JILA 的三维光晶格 Sr 钟实现 8×10⁻¹⁹ 系统不确定度。
+      通过精确控制黑体辐射环境、magic wavelength 晶格光频移、
+      density shift 等关键系统误差源，将总不确定度推进至
+      亚 10⁻¹⁸ 量级。该精度已满足 SI 秒重新定义的技术要求。
+    verification_status: demonstrated
+    source:
+      zotero_key: "Sr accuracy_PRL.133.023401.2024_0"
+      claim: "We report an optical lattice clock with a systematic uncertainty of 8×10^-19."
+
+principles:
+  - id: pri.sr_clock_systematic_uncertainty_budget
+    name: "Sr 光钟系统不确定度评估原理"
+    tier: domain
+    verification_status: established
+    statement: >
+      Sr 光钟系统不确定度的主要贡献源包括：黑体辐射（BBR）频移
+      （环境温度不确定导致 ~10⁻¹⁸）、晶格光频移（magic wavelength
+      的精确标定）、密度频移（冷原子碰撞）、quadrupole 频移
+      （晶格光场梯度）、以及 Doppler 频移。将总不确定度降至
+      10⁻¹⁹ 级需对每一个系统效应进行独立评估和精确控制。
+    domain: "光钟；不确定度评估；精密光谱"
+    key_insight: >
+      系统不确定度的降低不是一个"突破"而是一系列"完善"——
+      每项系统效应都需要独立的评估方案和控制策略。
+    conditions: "低温 BBR 屏蔽/精确温度监测；magic wavelength 精确标定；超稳钟激光"
+    source:
+      zotero_key: "Sr accuracy_PRL.133.023401.2024_0"
+      claim: "We evaluate the systematic shifts with an uncertainty of 8×10^-19."
+
+metrics:
+  - id: met.aeppli2024_sr_8e19_uncertainty
+    name: "Aeppli 2024 Sr 光钟 8×10⁻¹⁹ 系统不确定度"
+    unit: "无量纲（相对系统不确定度）"
+    role: primary
+    description: >
+      JILA Sr 光晶格钟的总系统不确定度。
+    demonstrated_value:
+      value: "8×10⁻¹⁹ 系统不确定度"
+      conditions: "JILA 三维光晶格 Sr 钟；低温 BBR 环境；超稳钟激光"
+      verification_status: demonstrated
+      confidence: established
+      source:
+        zotero_key: "Sr accuracy_PRL.133.023401.2024_0"
+        claim: "We report an optical lattice clock with a systematic uncertainty of 8×10^-19."
+
+relations:
+  - id: rel.aeppli2024_01
+    subject: ent.aeppli2024_sr_clock_8e19
+    predicate: REALIZES
+    object: pri.sr_clock_systematic_uncertainty_budget
+    confidence: established
+    source:
+      zotero_key: "Sr accuracy_PRL.133.023401.2024_0"
+      claim: "We report an optical lattice clock with a systematic uncertainty of 8×10^-19."
+
+  - id: rel.aeppli2024_02
+    subject: met.aeppli2024_sr_8e19_uncertainty
+    predicate: DEMONSTRATES
+    object: pri.sr_clock_systematic_uncertainty_budget
+    confidence: established
+    source:
+      zotero_key: "Sr accuracy_PRL.133.023401.2024_0"
+      claim: "We evaluate the systematic shifts with an uncertainty of 8×10^-19."

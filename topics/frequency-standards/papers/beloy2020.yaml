@@ -1,0 +1,51 @@
+# Beloy 2020 — Quadruply ionized barium as optical clock candidate [evidence]
+# 提取者：Claude Code（AI 草稿，待专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.5
+# 专题：frequency-standards（Ba⁴⁺ 光钟候选 — 理论评估）
+# contribution_type: evidence — 理论评估 Ba⁴⁺ 作为高精度光钟候选；
+#   高电荷态离子的光钟潜力分析。
+
+meta:
+  zotero_key: "PhysRevLett.125.173002"
+  topic: frequency-standards
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Quadruply Ionized Barium as a Candidate for a High-Accuracy Optical Clock"
+  year: 2020
+  first_author: Beloy
+  authors: ["K. Beloy", "V. A. Dzuba", "S. M. Brewer"]
+  journal: "Physical Review Letters"
+  volume: 125
+  pages: "173002"
+  doi: "10.1103/PhysRevLett.125.173002"
+  note: >
+    NIST 理论工作，评估 Ba⁴⁺ 作为光钟候选的系统效应和预期性能。
+    Ba⁴⁺ 的钟跃迁具有极低的黑体辐射频移系数，在高电荷态离子
+    光钟路线（与 King 2022 Ar¹³⁺ 实验对应）中提供理论支持。
+
+entities:
+  - id: ent.beloy2020_ba4_optical_clock_candidate
+    name: "Beloy 2020 Ba⁴⁺ 光钟候选理论评估（NIST）"
+    tier: method
+    domain: "高电荷态离子；光钟候选评估；原子理论"
+    description: >
+      NIST 团队通过原子结构计算评估 Ba⁴⁺ 作为高精度光钟候选的潜力。
+      Ba⁴⁺ 具有类似 Ar¹³⁺ 的高电荷态，对外场敏感性低，
+      且存在适合激光探测的光学钟跃迁。该工作为高电荷态离子
+      光钟路线（King 2022 实验实现）提供理论选型依据。
+    verification_status: proposed
+    source:
+      zotero_key: "PhysRevLett.125.173002"
+      claim: "We propose quadruply ionized barium as a candidate for a high-accuracy optical clock."
+
+relations:
+  - id: rel.beloy2020_01
+    subject: ent.beloy2020_ba4_optical_clock_candidate
+    predicate: APPRAISES
+    object: pri.highly_charged_ion_optical_clock
+    confidence: established
+    source:
+      zotero_key: "PhysRevLett.125.173002"
+      claim: "Quadruply ionized barium is identified as a promising candidate for a high-accuracy optical clock."

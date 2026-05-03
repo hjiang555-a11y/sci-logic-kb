@@ -1,0 +1,98 @@
+# Huang 2016 — Frequency comparison of two 40Ca+ optical clocks with uncertainty at 10⁻¹⁷ [evidence]
+# 提取者：Claude Code（AI 草稿，待专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.5
+# 专题：frequency-standards（⁴⁰Ca⁺ 单离子光钟 — 10⁻¹⁷ 级比对）
+# contribution_type: evidence — 两台 ⁴⁰Ca⁺ 光钟以 10⁻¹⁷ 不确定度比对；
+#   是中国科学院武汉物数所离子光钟的里程碑。
+
+meta:
+  zotero_key: "PhysRevLett.116.013001"
+  topic: frequency-standards
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Frequency Comparison of Two 40Ca+ Optical Clocks with an Uncertainty at the 10^-17 Level"
+  year: 2016
+  first_author: Huang
+  authors: ["Y. Huang", "H. Guan", "P. Liu", "W. Bian", "L. Ma", "K. Liang", "T. Li", "K. Gao"]
+  journal: "Physical Review Letters"
+  volume: 116
+  pages: "013001"
+  doi: "10.1103/PhysRevLett.116.013001"
+  note: >
+    中国科学院武汉物数所（WIPM）团队实现两台 ⁴⁰Ca⁺ 单离子光钟的
+    频率比对，比对不确定度达 10⁻¹⁷ 量级。⁴⁰Ca⁺ 钟跃迁 ~729 nm
+    （电四极矩跃迁 4s ²S₁/₂→3d ²D₅/₂），是中国离子光钟路线的
+    代表性工作。
+
+entities:
+  - id: ent.huang2016_ca40_ion_clock_comparison
+    name: "Huang 2016 两台 ⁴⁰Ca⁺ 光钟 10⁻¹⁷ 级比对（WIPM）"
+    tier: system
+    domain: "单离子光钟；⁴⁰Ca⁺；频率比对"
+    description: >
+      中科院武汉物数所构建了两台独立的 ⁴⁰Ca⁺ 单离子光钟，
+      通过频率比对评估系统不确定度达 10⁻¹⁷。两台钟的比对
+      可消除共模系统误差，验证钟的独立性能。是中国离子
+      光钟路线的标志性进展。
+    verification_status: demonstrated
+    source:
+      zotero_key: "PhysRevLett.116.013001"
+      claim: "We report the frequency comparison of two 40Ca+ optical clocks with an uncertainty at the 10^-17 level."
+
+principles:
+  - id: pri.ca40_single_ion_optical_clock
+    name: "⁴⁰Ca⁺ 单离子光钟原理"
+    tier: method
+    verification_status: established
+    statement: >
+      ⁴⁰Ca⁺ 的钟跃迁为 4s ²S₁/₂ → 3d ²D₅/₂（~729 nm），
+      自然线宽 ~0.14 Hz（Q ~ 4×10¹⁴）。相比 Sr⁺ 和 Yb⁺，
+      Ca⁺ 质量更轻、极化率更小——对黑体辐射和电场的敏感性
+      天然更低。但 729 nm 钟激光的实现比 674 nm（Sr⁺）和
+      467 nm（Yb⁺ quadrupole）/ 436 nm（Yb⁺ octupole）更具
+      技术挑战。
+    domain: "单离子光钟；⁴⁰Ca⁺；量子计量"
+    key_insight: >
+      Ca⁺ 的低极化率是天然优势——但需要克服 729 nm 窄线宽
+      激光器的技术门槛。
+    conditions: "⁴⁰Ca⁺ 离子囚禁（Paul 阱）；729 nm 超稳钟激光；量子逻辑谱或电子 shelving 读出"
+    source:
+      zotero_key: "PhysRevLett.116.013001"
+      claim: "40Ca+ is a promising candidate for optical clocks due to its relatively small electric quadrupole moment."
+
+metrics:
+  - id: met.huang2016_ca40_comparison_uncertainty
+    name: "Huang 2016 ⁴⁰Ca⁺ 光钟比对不确定度"
+    unit: "无量纲（相对比对不确定度）"
+    role: primary
+    description: >
+      两台 ⁴⁰Ca⁺ 光钟的频率比对总不确定度。
+    demonstrated_value:
+      value: "10⁻¹⁷ 级比对不确定度"
+      conditions: "两台独立 ⁴⁰Ca⁺ 光钟；WIPM 实验室"
+      verification_status: demonstrated
+      confidence: established
+      source:
+        zotero_key: "PhysRevLett.116.013001"
+        claim: "The total uncertainty of the comparison is at the 10^-17 level."
+
+relations:
+  - id: rel.huang2016_01
+    subject: ent.huang2016_ca40_ion_clock_comparison
+    predicate: REALIZES
+    object: pri.ca40_single_ion_optical_clock
+    confidence: established
+    source:
+      zotero_key: "PhysRevLett.116.013001"
+      claim: "We report the frequency comparison of two 40Ca+ optical clocks."
+
+  - id: rel.huang2016_02
+    subject: met.huang2016_ca40_comparison_uncertainty
+    predicate: DEMONSTRATES
+    object: pri.ca40_single_ion_optical_clock
+    confidence: established
+    source:
+      zotero_key: "PhysRevLett.116.013001"
+      claim: "The total uncertainty of the comparison is at the 10^-17 level."

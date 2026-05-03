@@ -1,0 +1,96 @@
+# Barber 2008 — Optical lattice induced light shifts in an Yb atomic clock [evidence]
+# 提取者：Claude Code（AI 草稿，待专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.5
+# 专题：frequency-standards（Yb 光晶格钟 — 光频移评估）
+# contribution_type: evidence — 系统评估 Yb 光晶格钟的晶格诱导光频移，
+#   是 Yb 光钟发展的基础性系统效应研究。
+
+meta:
+  zotero_key: "PhysRevLett.100.103002"
+  topic: frequency-standards
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Optical Lattice Induced Light Shifts in an Yb Atomic Clock"
+  year: 2008
+  first_author: Barber
+  authors: ["Z. W. Barber", "J. E. Stalnaker", "N. D. Lemke", "N. Poli", "C. W. Oates", "T. M. Fortier", "S. A. Diddams", "L. Hollberg", "C. W. Hoyt"]
+  journal: "Physical Review Letters"
+  volume: 100
+  pages: "103002"
+  doi: "10.1103/PhysRevLett.100.103002"
+  note: >
+    NIST 团队系统测量和评估 ¹⁷¹Yb 光晶格钟的晶格诱导光频移——
+    包括 scalar、tensor 和 vector 光频移分量。确定了 Yb 的
+    magic wavelength 条件，为后续 Yb 光钟精度提升奠定基础。
+
+entities:
+  - id: ent.barber2008_yb_lattice_light_shift
+    name: "Barber 2008 Yb 光晶格钟光频移评估（NIST）"
+    tier: method
+    domain: "Yb 光晶格钟；光频移；magic wavelength"
+    description: >
+      NIST 对 ¹⁷¹Yb 光晶格钟中晶格激光引起的光频移进行系统
+      实验表征——测量 scalar、tensor 和 vector Stark 频移的
+      波长依赖性，确定 magic wavelength 位置。
+    verification_status: demonstrated
+    source:
+      zotero_key: "PhysRevLett.100.103002"
+      claim: "We present measurements of the lattice-induced light shifts in an Yb optical lattice clock."
+
+principles:
+  - id: pri.optical_lattice_light_shift_engineering
+    name: "光晶格光频移控制原理"
+    tier: domain
+    verification_status: established
+    statement: >
+      光晶格钟的 magic wavelength 条件是：钟跃迁上下能级的
+      scalar 极化率相等——使得晶格光引起的 differential Stark
+      频移为零。然而 tensor 和 vector 分量（对非 J=0 能级）以及
+      高阶效应（hyperpolarizability、multipolar 耦合）仍会导致
+      残余光频移。精确的 magic wavelength 标定是光钟系统不确定度
+      评估的核心。
+    domain: "光晶格钟；Stark 频移；精密光谱"
+    key_insight: >
+      Magic wavelength 不是"一个波长"，而是一个需要精确标定的
+      工作点——剩余光频移的评估直接决定光钟的准确度天花板。
+    conditions: "晶格激光波长精确可调；钟跃迁线宽窄；足够长的探测时间"
+    source:
+      zotero_key: "PhysRevLett.100.103002"
+      claim: "The lattice-induced light shifts are a key systematic effect in optical lattice clocks."
+
+metrics:
+  - id: met.barber2008_yb_light_shift
+    name: "Barber 2008 Yb magic wavelength 光频移表征"
+    unit: "Hz（频率偏移）"
+    role: primary
+    description: >
+      Yb 光晶格钟的晶格诱导光频移测量和 magic wavelength 确定。
+    demonstrated_value:
+      value: "Yb magic wavelength ~759 nm 附近光频移精确测量"
+      conditions: "¹⁷¹Yb 冷原子；一维光晶格；钟激光探测"
+      verification_status: demonstrated
+      confidence: established
+      source:
+        zotero_key: "PhysRevLett.100.103002"
+        claim: "We measure the lattice-induced light shifts and determine the magic wavelength."
+
+relations:
+  - id: rel.barber2008_01
+    subject: ent.barber2008_yb_lattice_light_shift
+    predicate: REALIZES
+    object: pri.optical_lattice_light_shift_engineering
+    confidence: established
+    source:
+      zotero_key: "PhysRevLett.100.103002"
+      claim: "We present measurements of the lattice-induced light shifts in an Yb optical lattice clock."
+
+  - id: rel.barber2008_02
+    subject: met.barber2008_yb_light_shift
+    predicate: DEMONSTRATES
+    object: pri.optical_lattice_light_shift_engineering
+    confidence: established
+    source:
+      zotero_key: "PhysRevLett.100.103002"
+      claim: "We measure the lattice-induced light shifts and determine the magic wavelength."

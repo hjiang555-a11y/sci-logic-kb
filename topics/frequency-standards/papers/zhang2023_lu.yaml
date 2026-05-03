@@ -1,0 +1,98 @@
+# Zhang 2023 — ¹⁷⁶Lu⁺ clock comparison at 10⁻¹⁸ via correlation spectroscopy [evidence]
+# 提取者：Claude Code（AI 草稿，待专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.5
+# 专题：frequency-standards（¹⁷⁶Lu⁺ 离子光钟 — 关联谱比对）
+# contribution_type: evidence — 通过关联谱技术实现 ¹⁷⁶Lu⁺ 光钟 10⁻¹⁸ 级比对；
+#   演示 E3 跃迁光钟的高精度。
+
+meta:
+  zotero_key: "sciadv.adg1971"
+  topic: frequency-standards
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "176Lu+ clock comparison at the 10^-18 level via correlation spectroscopy"
+  year: 2023
+  first_author: Zhang
+  authors: ["Zhiqiang Zhang", "Kyle J. Arnold", "Rattakorn Kaewuam", "Murray D. Barrett"]
+  journal: "Science Advances"
+  volume: 9
+  doi: "10.1126/sciadv.adg1971"
+  note: >
+    新加坡国立大学（NUS）团队利用关联谱（correlation spectroscopy）
+    技术实现两台 ¹⁷⁶Lu⁺ 光钟的 10⁻¹⁸ 级频率比对。
+    ¹⁷⁶Lu⁺ 的 ¹S₀→³D₁ 钟跃迁具有极低的系统频移灵敏度。
+    关联谱可抑制共模噪声，提高比对灵敏度。
+
+entities:
+  - id: ent.zhang2023_lu176_correlation_spectroscopy
+    name: "Zhang 2023 ¹⁷⁶Lu⁺ 光钟关联谱 10⁻¹⁸ 比对（NUS）"
+    tier: system
+    domain: "单离子光钟；¹⁷⁶Lu⁺；关联谱；频率比对"
+    description: >
+      NUS 团队使用关联谱技术对两台 ¹⁷⁶Lu⁺ 光钟进行频率比对，
+      比对不确定度达 10⁻¹⁸ 量级。关联谱通过同时探询两个离子
+      并对它们的响应进行关联处理，抑制共模探询激光噪声——
+      从而在不需要超低噪声本振的情况下实现高精度比对。
+    verification_status: demonstrated
+    source:
+      zotero_key: "sciadv.adg1971"
+      claim: "We demonstrate a 176Lu+ clock comparison at the 10^-18 level via correlation spectroscopy."
+
+principles:
+  - id: pri.correlation_spectroscopy_clock_comparison
+    name: "关联谱光钟比对原理"
+    tier: method
+    verification_status: demonstrated
+    statement: >
+      关联谱（correlation spectroscopy）通过同时探询两个原子/离子
+      并测量它们的 correlated 响应（如 parity 或 population），
+      可以提取它们的频率差而不需要高精度地知道探询激光的
+      绝对频率——探询激光的共模相位噪声在关联信号中被抑制。
+      这项技术特别适合多离子/多钟系统中突破探询激光噪声的
+      瓶颈。
+    domain: "光钟比对；关联谱；量子测量"
+    key_insight: >
+      关联谱将频率比对从"分别测量再相减"转变为"同步
+      测量差频"——共模噪声天然抵消，降低对探询激光的
+      技术要求。
+    conditions: "两个离子同时探询；共模探询激光；关联信号检测"
+    source:
+      zotero_key: "sciadv.adg1971"
+      claim: "Correlation spectroscopy suppresses common-mode probe laser noise, enabling high-precision clock comparisons."
+
+metrics:
+  - id: met.zhang2023_lu_correlation_tdev
+    name: "Zhang 2023 ¹⁷⁶Lu⁺ 关联谱比对稳定度"
+    unit: "无量纲（相对频率不稳定度）"
+    role: primary
+    description: >
+      两台 ¹⁷⁶Lu⁺ 光钟关联谱比对的频率不稳定度。
+    demonstrated_value:
+      value: "10⁻¹⁸ 级比对不确定度"
+      conditions: "两台 ¹⁷⁶Lu⁺ 离子阱；关联谱技术；NUS 实验室"
+      verification_status: demonstrated
+      confidence: established
+      source:
+        zotero_key: "sciadv.adg1971"
+        claim: "176Lu+ clock comparison at the 10^-18 level."
+
+relations:
+  - id: rel.zhang2023_lu_01
+    subject: ent.zhang2023_lu176_correlation_spectroscopy
+    predicate: REALIZES
+    object: pri.correlation_spectroscopy_clock_comparison
+    confidence: established
+    source:
+      zotero_key: "sciadv.adg1971"
+      claim: "We demonstrate a 176Lu+ clock comparison via correlation spectroscopy."
+
+  - id: rel.zhang2023_lu_02
+    subject: met.zhang2023_lu_correlation_tdev
+    predicate: DEMONSTRATES
+    object: pri.correlation_spectroscopy_clock_comparison
+    confidence: established
+    source:
+      zotero_key: "sciadv.adg1971"
+      claim: "176Lu+ clock comparison at the 10^-18 level."

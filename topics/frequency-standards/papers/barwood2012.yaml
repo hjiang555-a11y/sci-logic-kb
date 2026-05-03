@@ -1,0 +1,51 @@
+# Barwood 2012 — Automatic laser control for a ⁸⁸Sr⁺ optical frequency standard [evidence]
+# 提取者：Claude Code（AI 草稿，待专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.5
+# 专题：frequency-standards（⁸⁸Sr⁺ 光频标 — 自动激光控制）
+# contribution_type: evidence — 开发 ⁸⁸Sr⁺ 单离子光频标的自动激光
+#   控制系统；实现长期无人值守运行。
+
+meta:
+  zotero_key: "Measurement Science & Technology 2012 23（5）055201"
+  topic: frequency-standards
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Automatic laser control for a 88Sr+ optical frequency standard"
+  year: 2012
+  first_author: Barwood
+  authors: ["G. P. Barwood", "P. Gill", "G. Huang", "H. A. Klein"]
+  journal: "Measurement Science and Technology"
+  volume: 23
+  pages: "055201"
+  doi: "10.1088/0957-0233/23/5/055201"
+  note: >
+    NPL 团队为 ⁸⁸Sr⁺ 单离子光频标开发自动激光控制系统——
+    包括自动锁频、自动重锁和长期频率稳定运行。
+    是离子光钟工程化和自动化的基础性技术贡献。
+
+entities:
+  - id: ent.barwood2012_sr88_auto_laser_control
+    name: "Barwood 2012 ⁸⁸Sr⁺ 光频标自动激光控制（NPL）"
+    tier: component
+    domain: "单离子光频标；⁸⁸Sr⁺；自动控制；激光稳频"
+    description: >
+      NPL 开发的 ⁸⁸Sr⁺ 离子光频标自动激光控制系统——
+      实现冷却激光、repumper 激光和钟激光的自动锁频
+      和故障恢复（自动重锁），使离子光钟可长期
+      无人值守运行——这是光钟工程化的核心技术。
+    verification_status: demonstrated
+    source:
+      zotero_key: "Measurement Science & Technology 2012 23（5）055201"
+      claim: "We present an automatic laser control system for a 88Sr+ optical frequency standard."
+
+relations:
+  - id: rel.barwood2012_01
+    subject: ent.barwood2012_sr88_auto_laser_control
+    predicate: REALIZES
+    object: pri.transportable_optical_clock_engineering
+    confidence: established
+    source:
+      zotero_key: "Measurement Science & Technology 2012 23（5）055201"
+      claim: "The automatic control system enables long-term unattended operation of the 88Sr+ optical frequency standard."

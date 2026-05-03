@@ -2,7 +2,7 @@
 
 # 📊 Metrics Quick Reference
 
-> Auto-generated 2026-05-03 11:58 UTC
+> Auto-generated 2026-05-03 12:49 UTC
 >
 > Metrics are grouped by **role** (v4.4 σ_y-first convention, see `topics/ultrastable-laser/_meta/scoping_principles.md` v2). Role is taken from the `role` field on the metric node when present, otherwise inferred from ID / name heuristics.
 
@@ -13,12 +13,26 @@
 | ID | Name | Best Value | Conditions | Source |
 |----|------|------------|------------|--------|
 | `met.absolute_freq_ratio_mcgrew2019` | 光钟绝对频率比对精度（McGrew 2019） | 1e-16 | Yb和Sr光晶格钟相对Cs喷泉钟，NIST 2019，多路独立比对 | [mcgrew2019](topics/frequency-standards/papers/mcgrew2019.yaml) |
+| `met.aeppli2024_sr_8e19_uncertainty` | Aeppli 2024 Sr 光钟 8×10⁻¹⁹ 系统不确定度 | 8×10⁻¹⁹ 系统不确定度 | JILA 三维光晶格 Sr 钟；低温 BBR 环境；超稳钟激光 | [aeppli2024](topics/frequency-standards/papers/aeppli2024.yaml) |
+| `met.barber2008_yb_light_shift` | Barber 2008 Yb magic wavelength 光频移表征 | Yb magic wavelength ~759 nm 附近光频移精确测量 | ¹⁷¹Yb 冷原子；一维光晶格；钟激光探测 | [barber2008](topics/frequency-standards/papers/barber2008.yaml) |
+| `met.brown2017_hyperpolarizability_coefficient` | Brown 2017 Sr hyperpolarizability 系数 | Sr 钟跃迁 hyperpolarizability 系数精确测量 | NIST/JILA Sr 光晶格钟；可变晶格深度 | [brown2017](topics/frequency-standards/papers/brown2017.yaml) |
+| `met.burt2021_dsac_orbit_performance` | Burt 2021 DSAC 在轨频率稳定度 | DSAC 在轨一年运行；长期频率稳定度优于现有星载钟 | LEO 轨道（~500 km）；一年在轨运行；密封式 Hg⁺ 离子阱 | [burt2021](topics/frequency-standards/papers/burt2021.yaml) |
 | `met.clock_instability_yb_hinkley2013` | 时钟不稳定性（Yb，Hinkley 2013） | 1.6e-18 | 两台Yb光晶格钟同步interrogation，积分时间约7小时，578 nm跃迁，自旋极化超冷1… | [hinkley2013](topics/frequency-standards/papers/hinkley2013.yaml) |
 | `met.clock_instability_yb_schioppo2017` | 时钟不稳定性（Yb双系综，Schioppo 2017） | 3e-18 | 双Yb冷原子系综同步interrogation，积分时间1小时，NIST 2017 | [schioppo2017](topics/frequency-standards/papers/schioppo2017.yaml) |
 | `met.fractional_frequency_stability_clairon1995` | 分数频率不稳定度 $\sigma_y(\tau)$ | 3 * 10^-13 / sqrt(tau) | measured against an H-maser, cycle duration 1.1 s | [clairon1995](topics/frequency-standards/papers/clairon1995.yaml) |
 | `met.geodesy_uncertainty_grotti2018` | 大地测量引力势差不确定度（Grotti 2018） | 5e-18 | 可搬运Sr光晶格钟，PTB至意大利INRIM站点，光纤链路频率传输 | [grotti2018](topics/frequency-standards/papers/grotti2018.yaml) |
+| `met.huang2016_ca40_comparison_uncertainty` | Huang 2016 ⁴⁰Ca⁺ 光钟比对不确定度 | 10⁻¹⁷ 级比对不确定度 | 两台独立 ⁴⁰Ca⁺ 光钟；WIPM 实验室 | [huang2016](topics/frequency-standards/papers/huang2016.yaml) |
+| `met.huntemann2012_yb_e3_frequency_ratio` | Huntemann 2012 Yb⁺ E3/Cs 频率比和 μ 变化约束 | Yb⁺/Cs 频率比长期测量；约束 d(ln μ)/dt | PTB Yb⁺ E3 光钟 + Cs 喷泉钟；数年基线 | [huntemann2012](topics/frequency-standards/papers/huntemann2012.yaml) |
+| `met.king2022_hci_clock_performance` | King 2022 HCI 光钟初步性能 | HCI 光钟概念验证；初步频率锁定演示 | Ar¹³⁺ 离子囚禁在 Paul 阱中；量子逻辑谱读出 | [king2022](topics/frequency-standards/papers/king2022.yaml) |
+| `met.norcia2018_sr_superradiance_frequency` | Norcia 2018 Sr 超辐射频率测量 | Sr 钟跃迁超辐射频率测量；演示超辐射作为主动光钟本振的可行性 | Sr 光晶格；光学腔增强；超辐射脉冲模式 | [norcia2018](topics/frequency-standards/papers/norcia2018.yaml) |
+| `met.ooi2025_solid_state_reproducibility` | Ooi 2025 固态核光钟频率复现性 | 固态 ²²⁹ᵐTh 核跃迁频率复现性评估 | 掺杂晶体样品（低温）；VUV 频率梳激 | [ooi2025](topics/frequency-standards/papers/ooi2025.yaml) |
+| `met.roslund2024_sea_clock_instability` | Roslund 2024 舰载光钟频率不稳定度 | 舰载环境下 Sr 光钟维持运行；频率不稳定度达到可实用水平 | 海上舰船平台（运动、振动、温度变化）；紧凑化 Sr 光晶格钟系统 | [roslund2024](topics/frequency-standards/papers/roslund2024.yaml) |
 | `met.systematic_uncertainty_sr_bloom2014` | 系统频率不确定度（Sr，Bloom 2014） | 6.4e-18 | Sr光晶格钟，原位BBR温度探测，JILA 2014 | [bloom2014](topics/frequency-standards/papers/bloom2014.yaml) |
 | `met.systematic_uncertainty_sr_li2024` | 系统频率不确定度（NimSrI，Li 2024） | 4.8e-18 | NimSrI Sr光晶格钟，中国科学院国家授时中心，2024 | [li2024](topics/frequency-standards/papers/li2024.yaml) |
+| `met.takamoto2020_gr_redshift_test` | Takamoto 2020 引力红移检验性能 | 可搬运 Sr 光钟引力红移测量；验证相对论红移与高度差关系 | 东京晴空塔（~450 m 高差）；两台可搬运 Sr 光晶格钟 | [takamoto2020](topics/frequency-standards/papers/takamoto2020.yaml) |
+| `met.weyers2009_cs_fountain_qpn` | Weyers 2009 Cs 喷泉钟 QPN 极限性能 | Cs 喷泉钟短稳达 QPN 极限（~10⁻¹⁴ @1 s） | PTB-CSF1 Cs 喷泉钟；微波源锁相至超稳激光器 | [weyers2009](topics/frequency-standards/papers/weyers2009.yaml) |
+| `met.zhang2023_lu_correlation_tdev` | Zhang 2023 ¹⁷⁶Lu⁺ 关联谱比对稳定度 | 10⁻¹⁸ 级比对不确定度 | 两台 ¹⁷⁶Lu⁺ 离子阱；关联谱技术；NUS 实验室 | [zhang2023_lu](topics/frequency-standards/papers/zhang2023_lu.yaml) |
+| `met.zhang2024_th229m_frequency_ratio` | Zhang 2024 ²²⁹ᵐTh 核跃迁频率与 ⁸⁷Sr 频率比 | 首次直接激发 ²²⁹ᵐTh 核跃迁并测量其与 ⁸⁷Sr 的频率比 | VUV 频率梳（~148 nm）；JILA Sr 光钟参考 | [zhang2024_th_nuclear](topics/frequency-standards/papers/zhang2024_th_nuclear.yaml) |
 
 ### 📊 Secondary (线宽/PSD/相干)
 

@@ -1,5 +1,47 @@
 # 知识库演化日志
 
+## 2026-05-03 | Batch 4: frequency-standards (64 papers → 29 done + 35 reclassified)
+
+**Summary:** Processed all 64 pending FS papers. Created 24 new YAMLs (v4.5), 5 papers already covered by existing YAMLs, 35 papers reclassified (10 TFT, 8 USL, 7 OFC, 3 supplements, 3 peer reviews, 3 news/other, 1 duplicate).
+
+**New YAMLs created (24):**
+- king2022.yaml — King 2022 Nature: Ar¹³⁺ highly charged ion optical clock (first experimental realization)
+- roslund2024.yaml — Roslund 2024 Nature: Optical clocks at sea (first shipboard operation of Sr lattice clock)
+- zhang2024_th_nuclear.yaml — Zhang 2024 Nature: ²²⁹ᵐTh nuclear transition frequency ratio vs ⁸⁷Sr
+- ooi2025.yaml — Ooi 2025 Nature: Solid-state nuclear clock frequency reproducibility
+- burt2021.yaml — Burt 2021 Nature: DSAC trapped-ion clock in space (LEO orbit demo)
+- takamoto2020.yaml — Takamoto 2020 Nature Photonics: Transportable Sr clocks test GR (Tokyo Skytree)
+- aeppli2024.yaml — Aeppli 2024 PRL: Sr clock 8×10⁻¹⁹ systematic uncertainty
+- barber2008.yaml — Barber 2008 PRL: Yb optical lattice light shifts (magic wavelength)
+- huang2016.yaml — Huang 2016 PRL: Two ⁴⁰Ca⁺ optical clocks comparison at 10⁻¹⁷ (WIPM)
+- norcia2018.yaml — Norcia 2018 PRX: Sr superradiance frequency measurements (active clock path)
+- campbell2012.yaml — Campbell 2012 PRL: ²²⁹Th single-ion nuclear clock proposal
+- kazakov2012.yaml — Kazakov 2012 NJP: ²²⁹Th nuclear clock theoretical framework
+- huntemann2012.yaml — Huntemann 2012 PRL: Yb⁺ E3 clock, μ variation constraint
+- beloy2020.yaml — Beloy 2020 PRL: Ba⁴⁺ optical clock candidate (HCI theory)
+- weyers2009.yaml — Weyers 2009 PRA: Cs fountain reaches quantum projection noise limit
+- brown2017.yaml — Brown 2017 PRL: Sr hyperpolarizability and operational magic wavelength
+- kolkowitz2016.yaml — Kolkowitz 2016 PRD: GW detection with optical lattice atomic clocks
+- zhang2023_lu.yaml — Zhang 2023 SciAdv: ¹⁷⁶Lu⁺ correlation spectroscopy at 10⁻¹⁸ (NUS)
+- takamoto2022_perspective.yaml — Takamoto 2022 APL: Transportable optical lattice clocks perspective
+- si_second_redefinition_roadmap2021.yaml — CCTF roadmap for SI second redefinition
+- shi2019.yaml — Shi 2019 OE: Good-bad-cavity active optical clock phase locking
+- inaba2013.yaml — Inaba 2013 OE: Yb spectroscopy via comb linewidth transfer (NMIJ)
+- bowden2019.yaml — Bowden 2019 SciRep: Pyramid MOT with integrated optical cavities (NPL)
+- barwood2012.yaml — Barwood 2012 MST: Automatic laser control for ⁸⁸Sr⁺ optical frequency standard
+
+**Reclassified to needs_review (32):**
+- TFT: 119970G, 1367-2630_14_1_013045, Characterization long-term2018, Denker2018, FSM2008 Crane, OL Fefelian, PhysRevX.6.021016, art:10.1007/s00340, oe-27-25-36965, ol-32-9-1044
+- USL: COL-18-0476, LZ01028367, OL Kefelian, OL Vol36, PhysRevLett.102.163601, PhysRevLett.114.253902, PhysRevLett.93.250602, josab-27-5-914, ol-47-20-5441
+- OFC: 2905-3, Photonic generation RF, PhysRevLett.76.18, PhysRevLett.85.2264, josab-38-3-932, ol-47-21-5591, optica-11-9-1268
+- Supplement: 1-1, 1-2, 41586_2022_5245_MOESM1_ESM
+- Peer review: 41586_2022_5245_MOESM2_ESM, 41586_2024_7225_MOESM2_ESM, RSI25-AR-00618
+
+**Out of scope (3):** 2307.14141v1 (CCTF strategy doc), d41586-022-03297-0 (news), d41586-023-01937-7 (news)
+
+**State:** 311 papers total, 406 done, 0 pending FS, 68 pending OFC, 59 needs_review
+
+**Lint:** 6 pre-existing errors (all from April Copilot batch — cross-topic dangling refs). 24 new YAMLs are clean.
 
 ## [2026-05-03] ingest | Briles 2010 — high-bandwidth PZT mirror actuator: 180 kHz servo bandwidth for optical cavity length stabilization, enabling PDH laser frequency locking (ultrastable-laser)
 

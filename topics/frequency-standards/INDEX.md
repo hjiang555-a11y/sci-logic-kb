@@ -2,54 +2,102 @@
 
 # Frequency Standards — Topic Index
 
-> Auto-generated 2026-04-24 03:39 UTC · 18 papers · 44 nodes · 47 relations
+> Auto-generated 2026-05-03 12:49 UTC · 43 papers · 109 nodes · 89 relations
 
 ## Entities
 
 | ID | Name | Level | Source |
 |----|------|------:|--------|
+| `ent.aeppli2024_sr_clock_8e19` | Aeppli 2024 JILA Sr 光晶格钟 — 8×10⁻¹⁹ 系统不确定度 | — | [aeppli2024](topics/frequency-standards/papers/aeppli2024.yaml) |
 | `ent.al_ion_quantum_logic_clock_r08` | NIST ²⁷Al⁺ 量子逻辑光钟（Rosenband 2008） | 2 | [rosenband2008](topics/frequency-standards/papers/rosenband2008.yaml) |
 | `ent.bacon_three_clock_network_b21` | Boulder BACON 三光钟网络比对（Bacon 2021） | 2 | [bacon2021](topics/frequency-standards/papers/bacon2021.yaml) |
+| `ent.barber2008_yb_lattice_light_shift` | Barber 2008 Yb 光晶格钟光频移评估（NIST） | — | [barber2008](topics/frequency-standards/papers/barber2008.yaml) |
+| `ent.barwood2012_sr88_auto_laser_control` | Barwood 2012 ⁸⁸Sr⁺ 光频标自动激光控制（NPL） | — | [barwood2012](topics/frequency-standards/papers/barwood2012.yaml) |
+| `ent.beloy2020_ba4_optical_clock_candidate` | Beloy 2020 Ba⁴⁺ 光钟候选理论评估（NIST） | — | [beloy2020](topics/frequency-standards/papers/beloy2020.yaml) |
+| `ent.bowden2019_pyramid_mot_optical_clock` | Bowden 2019 集成光腔金字塔 MOT 光钟平台（NPL） | — | [bowden2019](topics/frequency-standards/papers/bowden2019.yaml) |
+| `ent.brown2017_hyperpolarizability_sr` | Brown 2017 Sr 光钟 hyperpolarizability 和 operational magic wa… | — | [brown2017](topics/frequency-standards/papers/brown2017.yaml) |
+| `ent.burt2021_dsac_space_ion_clock` | Burt 2021 DSAC 空间汞离子微波钟（NASA/JPL） | — | [burt2021](topics/frequency-standards/papers/burt2021.yaml) |
+| `ent.campbell2012_th229_ion_nuclear_clock` | Campbell 2012 ²²⁹Th²⁺ 单离子核光钟方案 | — | [campbell2012](topics/frequency-standards/papers/campbell2012.yaml) |
+| `ent.cesium_fountain_standard_clairon1995` | 铯原子喷泉频率标准 (Clairon 1995) | 2 | [clairon1995](topics/frequency-standards/papers/clairon1995.yaml) |
 | `ent.hg_ion_optical_clock_nist_o06` | NIST ²⁰³Hg⁺ 单离子光钟（Oskay 2006） | 2 | [oskay2006](topics/frequency-standards/papers/oskay2006.yaml) |
+| `ent.huang2016_ca40_ion_clock_comparison` | Huang 2016 两台 ⁴⁰Ca⁺ 光钟 10⁻¹⁷ 级比对（WIPM） | — | [huang2016](topics/frequency-standards/papers/huang2016.yaml) |
+| `ent.huntemann2012_yb_e3_ion_clock` | Huntemann 2012 ¹⁷¹Yb⁺ E3 单离子光钟（PTB） | — | [huntemann2012](topics/frequency-standards/papers/huntemann2012.yaml) |
+| `ent.inaba2013_yb_comb_linewidth_transfer` | Inaba 2013 Yb 光钟频率梳线宽转移光谱（NMIJ） | — | [inaba2013](topics/frequency-standards/papers/inaba2013.yaml) |
 | `ent.jila_dual_sr_clock_si_lo_o19` | JILA 双 ⁸⁷Sr 光晶格钟 + Si cavity LO（Oelker 2019） | 2 | [oelker2019](topics/frequency-standards/papers/oelker2019.yaml) |
 | `ent.jila_mm_scale_redshift_sr_clock_b22` | JILA 毫米尺度引力红移 Sr 晶格钟实验（Bothwell 2022） | 2 | [bothwell2022](topics/frequency-standards/papers/bothwell2022.yaml) |
 | `ent.jila_sr_lattice_clock_n15` | JILA ⁸⁷Sr 光晶格钟（Nicholson 2015, 2×10⁻¹⁸） | 2 | [nicholson2015](topics/frequency-standards/papers/nicholson2015.yaml) |
 | `ent.jila_sri_sr_clock_b19` | JILA SrI ⁸⁷Sr 光晶格钟（Bothwell 2019, 2×10⁻¹⁸） | 2 | [bothwell2019](topics/frequency-standards/papers/bothwell2019.yaml) |
+| `ent.kazakov2012_th_nuclear_clock_theory` | Kazakov 2012 ²²⁹Th 核光钟理论框架 | — | [kazakov2012](topics/frequency-standards/papers/kazakov2012.yaml) |
+| `ent.king2022_hci_ar13_optical_clock` | King 2022 高电荷离子 Ar¹³⁺ 光钟（PTB） | — | [king2022](topics/frequency-standards/papers/king2022.yaml) |
+| `ent.kolkowitz2016_clock_gw_detector` | Kolkowitz 2016 光钟引力波探测方案（JILA/Harvard） | — | [kolkowitz2016](topics/frequency-standards/papers/kolkowitz2016.yaml) |
 | `ent.microwave_frequency_standard` | 微波频率标准（Level 1 总节点） | 1 | [heavner2005](topics/frequency-standards/papers/heavner2005.yaml) |
 | `ent.nimsri_sr_clock_cas2024` | NimSrI Sr光晶格钟（中国科学院国家授时中心，2024） | 2 | [li2024](topics/frequency-standards/papers/li2024.yaml) |
 | `ent.nist_f1_cs_fountain_h05` | NIST-F1 铯喷泉初级频标（2005 改进版） | 2 | [heavner2005](topics/frequency-standards/papers/heavner2005.yaml) |
+| `ent.norcia2018_sr_superradiance_clock` | Norcia 2018 Sr 钟跃迁超辐射频率测量（JILA） | — | [norcia2018](topics/frequency-standards/papers/norcia2018.yaml) |
 | `ent.nuclear_clock_229th` | ²²⁹Th 核钟（架构子类型） | 2 | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
+| `ent.ooi2025_solid_state_nuclear_clock_reproducibility` | Ooi 2025 固态 ²²⁹ᵐTh 核光钟频率复现性（JILA） | — | [ooi2025](topics/frequency-standards/papers/ooi2025.yaml) |
 | `ent.optical_frequency_standard` | 光学频率标准（通用） | 1 | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
 | `ent.optical_lattice_clock` | 光晶格钟（架构子类型） | 2 | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
+| `ent.roslund2024_optical_clocks_at_sea` | Roslund 2024 舰载 Sr 光晶格钟（NIST/NRL） | — | [roslund2024](topics/frequency-standards/papers/roslund2024.yaml) |
+| `ent.shi2019_good_bad_cavity_active_clock` | Shi 2019 good-bad-cavity 主动光钟锁相（中科院） | — | [shi2019](topics/frequency-standards/papers/shi2019.yaml) |
+| `ent.si_second_redefinition_roadmap_2021` | SI 秒重新定义路线图（2021 CCTF） | — | [si_second_redefinition_roadmap2021](topics/frequency-standards/papers/si_second_redefinition_roadmap2021.yaml) |
 | `ent.sr_optical_lattice_clock_jila2014` | JILA Sr 光晶格原子钟（2014） | 2 | [bloom2014](topics/frequency-standards/papers/bloom2014.yaml) |
+| `ent.takamoto2020_transportable_sr_clock_gr_test` | Takamoto 2020 可搬运 Sr 光晶格钟广义相对论检验（RIKEN） | — | [takamoto2020](topics/frequency-standards/papers/takamoto2020.yaml) |
+| `ent.takamoto2022_transportable_clock_perspective` | Takamoto 2022 可搬运光晶格钟前景综述（RIKEN） | — | [takamoto2022_perspective](topics/frequency-standards/papers/takamoto2022_perspective.yaml) |
 | `ent.transportable_sr_clock_ptb2018` | PTB 可搬运Sr光晶格钟（2018） | 2 | [grotti2018](topics/frequency-standards/papers/grotti2018.yaml) |
 | `ent.trapped_ion_optical_clock` | 囚禁离子光钟（架构子类型） | 2 | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
+| `ent.weyers2009_cs_fountain_quantum_limit` | Weyers 2009 Cs 喷泉钟量子极限（PTB） | — | [weyers2009](topics/frequency-standards/papers/weyers2009.yaml) |
 | `ent.yb_dual_ensemble_clock_nist2017` | NIST 双Yb原子系综光钟（2017） | 2 | [schioppo2017](topics/frequency-standards/papers/schioppo2017.yaml) |
 | `ent.yb_optical_lattice_clock` | Yb 光晶格原子钟 | 1 | [mcgrew2019](topics/frequency-standards/papers/mcgrew2019.yaml) |
 | `ent.yb_optical_lattice_clock_nist2013` | NIST 171Yb 光晶格原子钟（2013） | 2 | [hinkley2013](topics/frequency-standards/papers/hinkley2013.yaml) |
+| `ent.zhang2023_lu176_correlation_spectroscopy` | Zhang 2023 ¹⁷⁶Lu⁺ 光钟关联谱 10⁻¹⁸ 比对（NUS） | — | [zhang2023_lu](topics/frequency-standards/papers/zhang2023_lu.yaml) |
+| `ent.zhang2024_th229m_nuclear_clock_freq_ratio` | Zhang 2024 ²²⁹ᵐTh 核跃迁频率比测量（JILA） | — | [zhang2024_th_nuclear](topics/frequency-standards/papers/zhang2024_th_nuclear.yaml) |
 
 ## Principles
 
 | ID | Name | Tier | Source |
 |----|------|------|--------|
 | `pri.blackbody_radiation_stark_shift` | 室温黑体辐射 Stark 频移原理 | domain | [ludlow2015](topics/frequency-standards/papers/ludlow2015.yaml) |
+| `pri.ca40_single_ion_optical_clock` | ⁴⁰Ca⁺ 单离子光钟原理 | method | [huang2016](topics/frequency-standards/papers/huang2016.yaml) |
+| `pri.cold_collisional_shift_cesium` | 冷铯原子碰撞频移 | domain | [clairon1995](topics/frequency-standards/papers/clairon1995.yaml) |
+| `pri.comb_linewidth_transfer_for_clock_spectroscopy` | 频率梳线宽转移光钟光谱原理 | method | [inaba2013](topics/frequency-standards/papers/inaba2013.yaml) |
+| `pri.correlation_spectroscopy_clock_comparison` | 关联谱光钟比对原理 | method | [zhang2023_lu](topics/frequency-standards/papers/zhang2023_lu.yaml) |
 | `pri.dick_effect` | Dick 效应（时钟周期死时间噪声混叠） | domain | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
+| `pri.e3_octupole_transition_optical_clock` | 电八极（E3）跃迁光钟原理 | domain | [huntemann2012](topics/frequency-standards/papers/huntemann2012.yaml) |
+| `pri.good_bad_cavity_active_clock` | Good-bad-cavity 主动光钟原理 | method | [shi2019](topics/frequency-standards/papers/shi2019.yaml) |
 | `pri.gravitational_redshift_within_atomic_sample` | 原子样品内部引力红移可分辨原理 | domain | [bothwell2022](topics/frequency-standards/papers/bothwell2022.yaml) |
+| `pri.highly_charged_ion_optical_clock` | 高电荷离子光钟原理 | method | [king2022](topics/frequency-standards/papers/king2022.yaml) |
+| `pri.hyperpolarizability_in_optical_lattice_clocks` | 光晶格钟 hyperpolarizability 原理 | method | [brown2017](topics/frequency-standards/papers/brown2017.yaml) |
 | `pri.magic_wavelength_lattice` | 魔术波长光晶格原理 | domain | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
 | `pri.magic_wavelength_operational_protocol_l08` | 魔术波长光晶格钟操作协议原理（Ludlow thesis） | domain | [ludlow2008_thesis](topics/frequency-standards/papers/ludlow2008_thesis.yaml) |
+| `pri.microwave_clock_quantum_projection_noise_limit` | 微波钟量子投影噪声极限原理 | domain | [weyers2009](topics/frequency-standards/papers/weyers2009.yaml) |
+| `pri.optical_clock_gravitational_redshift_geodesy` | 光钟引力红移大地测量原理 | domain | [takamoto2020](topics/frequency-standards/papers/takamoto2020.yaml) |
+| `pri.optical_clock_gravitational_wave_detection` | 光钟引力波探测原理 | domain | [kolkowitz2016](topics/frequency-standards/papers/kolkowitz2016.yaml) |
 | `pri.optical_clock_ten_minus_eighteen_geoid_bridge` | 光钟 10⁻¹⁸ 分数精度 ↔ 1 cm 大地水准面分辨率桥梁 | domain | [diddams2016](topics/frequency-standards/papers/diddams2016.yaml) |
+| `pri.optical_lattice_light_shift_engineering` | 光晶格光频移控制原理 | domain | [barber2008](topics/frequency-standards/papers/barber2008.yaml) |
 | `pri.qpn_dick_two_fundamental_limits_dfl16` | 光钟双重基本极限：量子投影噪声 + Dick 效应 | domain | [diddams2016](topics/frequency-standards/papers/diddams2016.yaml) |
 | `pri.quantum_logic_clock_readout` | 量子逻辑光钟读出原理 | domain | [rosenband2008](topics/frequency-standards/papers/rosenband2008.yaml) |
 | `pri.quantum_projection_noise_limit` | 量子投影噪声极限 | domain | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
+| `pri.ramsey_separated_oscillatory_fields_fountain` | 喷泉式 Ramsey 分离振荡场原理 | domain | [clairon1995](topics/frequency-standards/papers/clairon1995.yaml) |
 | `pri.si_second_cesium_definition` | SI 秒的 Cs 超精细跃迁定义 | foundational | [heavner2005](topics/frequency-standards/papers/heavner2005.yaml) |
+| `pri.si_second_redefinition_criteria` | SI 秒重新定义判据原理 | domain | [si_second_redefinition_roadmap2021](topics/frequency-standards/papers/si_second_redefinition_roadmap2021.yaml) |
+| `pri.solid_state_nuclear_clock_frequency_reproducibility` | 固态核光钟频率复现性原理 | method | [ooi2025](topics/frequency-standards/papers/ooi2025.yaml) |
+| `pri.space_ion_clock_for_deep_space_navigation` | 空间离子钟深空导航原理 | domain | [burt2021](topics/frequency-standards/papers/burt2021.yaml) |
 | `pri.sr_clock_systematic_budget_framework_l08` | Sr 光晶格钟系统误差预算框架（Ludlow thesis） | domain | [ludlow2008_thesis](topics/frequency-standards/papers/ludlow2008_thesis.yaml) |
+| `pri.sr_clock_systematic_uncertainty_budget` | Sr 光钟系统不确定度评估原理 | domain | [aeppli2024](topics/frequency-standards/papers/aeppli2024.yaml) |
+| `pri.superradiant_active_optical_clock` | 超辐射主动光钟原理 | domain | [norcia2018](topics/frequency-standards/papers/norcia2018.yaml) |
+| `pri.th229_ion_nuclear_clock_scheme` | ²²⁹Th 离子核光钟方案原理 | method | [campbell2012](topics/frequency-standards/papers/campbell2012.yaml) |
+| `pri.th229m_nuclear_clock_principle` | ²²⁹ᵐTh 核光钟原理 | domain | [zhang2024_th_nuclear](topics/frequency-standards/papers/zhang2024_th_nuclear.yaml) |
+| `pri.transportable_optical_clock_engineering` | 可搬运光钟工程化原理 | domain | [roslund2024](topics/frequency-standards/papers/roslund2024.yaml) |
 
 ## Methods
 
 | ID | Name | Source |
 |----|------|--------|
+| `meth.cesium_fountain_operation_cycle` | 铯原子喷泉运行周期 | [clairon1995](topics/frequency-standards/papers/clairon1995.yaml) |
 | `meth.ramsey_spectroscopy_clock` | Ramsey 光谱法（光钟频率测量） | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
 | `meth.sr_optical_lattice_clock_stack_l08` | Sr 光晶格钟全栈集成方法（Ludlow thesis） | [ludlow2008_thesis](topics/frequency-standards/papers/ludlow2008_thesis.yaml) |
+| `meth.time_of_flight_velocity_distribution` | 飞行时间法测速 | [clairon1995](topics/frequency-standards/papers/clairon1995.yaml) |
 
 ## Metrics
 
@@ -60,11 +108,26 @@
 | ID | Name | Best Value | Source |
 |----|------|------------|--------|
 | `met.absolute_freq_ratio_mcgrew2019` | 光钟绝对频率比对精度（McGrew 2019） | 1e-16 | [mcgrew2019](topics/frequency-standards/papers/mcgrew2019.yaml) |
+| `met.aeppli2024_sr_8e19_uncertainty` | Aeppli 2024 Sr 光钟 8×10⁻¹⁹ 系统不确定度 | 8×10⁻¹⁹ 系统不确定度 | [aeppli2024](topics/frequency-standards/papers/aeppli2024.yaml) |
+| `met.barber2008_yb_light_shift` | Barber 2008 Yb magic wavelength 光频移表征 | Yb magic wavelength ~759 nm 附近光频移精确测量 | [barber2008](topics/frequency-standards/papers/barber2008.yaml) |
+| `met.brown2017_hyperpolarizability_coefficient` | Brown 2017 Sr hyperpolarizability 系数 | Sr 钟跃迁 hyperpolarizability 系数精确测量 | [brown2017](topics/frequency-standards/papers/brown2017.yaml) |
+| `met.burt2021_dsac_orbit_performance` | Burt 2021 DSAC 在轨频率稳定度 | DSAC 在轨一年运行；长期频率稳定度优于现有星载钟 | [burt2021](topics/frequency-standards/papers/burt2021.yaml) |
 | `met.clock_instability_yb_hinkley2013` | 时钟不稳定性（Yb，Hinkley 2013） | 1.6e-18 | [hinkley2013](topics/frequency-standards/papers/hinkley2013.yaml) |
 | `met.clock_instability_yb_schioppo2017` | 时钟不稳定性（Yb双系综，Schioppo 2017） | 3e-18 | [schioppo2017](topics/frequency-standards/papers/schioppo2017.yaml) |
+| `met.fractional_frequency_stability_clairon1995` | 分数频率不稳定度 $\sigma_y(\tau)$ | 3 * 10^-13 / sqrt(tau) | [clairon1995](topics/frequency-standards/papers/clairon1995.yaml) |
 | `met.geodesy_uncertainty_grotti2018` | 大地测量引力势差不确定度（Grotti 2018） | 5e-18 | [grotti2018](topics/frequency-standards/papers/grotti2018.yaml) |
+| `met.huang2016_ca40_comparison_uncertainty` | Huang 2016 ⁴⁰Ca⁺ 光钟比对不确定度 | 10⁻¹⁷ 级比对不确定度 | [huang2016](topics/frequency-standards/papers/huang2016.yaml) |
+| `met.huntemann2012_yb_e3_frequency_ratio` | Huntemann 2012 Yb⁺ E3/Cs 频率比和 μ 变化约束 | Yb⁺/Cs 频率比长期测量；约束 d(ln μ)/dt | [huntemann2012](topics/frequency-standards/papers/huntemann2012.yaml) |
+| `met.king2022_hci_clock_performance` | King 2022 HCI 光钟初步性能 | HCI 光钟概念验证；初步频率锁定演示 | [king2022](topics/frequency-standards/papers/king2022.yaml) |
+| `met.norcia2018_sr_superradiance_frequency` | Norcia 2018 Sr 超辐射频率测量 | Sr 钟跃迁超辐射频率测量；演示超辐射作为主动光钟本振的可行性 | [norcia2018](topics/frequency-standards/papers/norcia2018.yaml) |
+| `met.ooi2025_solid_state_reproducibility` | Ooi 2025 固态核光钟频率复现性 | 固态 ²²⁹ᵐTh 核跃迁频率复现性评估 | [ooi2025](topics/frequency-standards/papers/ooi2025.yaml) |
+| `met.roslund2024_sea_clock_instability` | Roslund 2024 舰载光钟频率不稳定度 | 舰载环境下 Sr 光钟维持运行；频率不稳定度达到可实用水平 | [roslund2024](topics/frequency-standards/papers/roslund2024.yaml) |
 | `met.systematic_uncertainty_sr_bloom2014` | 系统频率不确定度（Sr，Bloom 2014） | 6.4e-18 | [bloom2014](topics/frequency-standards/papers/bloom2014.yaml) |
 | `met.systematic_uncertainty_sr_li2024` | 系统频率不确定度（NimSrI，Li 2024） | 4.8e-18 | [li2024](topics/frequency-standards/papers/li2024.yaml) |
+| `met.takamoto2020_gr_redshift_test` | Takamoto 2020 引力红移检验性能 | 可搬运 Sr 光钟引力红移测量；验证相对论红移与高度差关系 | [takamoto2020](topics/frequency-standards/papers/takamoto2020.yaml) |
+| `met.weyers2009_cs_fountain_qpn` | Weyers 2009 Cs 喷泉钟 QPN 极限性能 | Cs 喷泉钟短稳达 QPN 极限（~10⁻¹⁴ @1 s） | [weyers2009](topics/frequency-standards/papers/weyers2009.yaml) |
+| `met.zhang2023_lu_correlation_tdev` | Zhang 2023 ¹⁷⁶Lu⁺ 关联谱比对稳定度 | 10⁻¹⁸ 级比对不确定度 | [zhang2023_lu](topics/frequency-standards/papers/zhang2023_lu.yaml) |
+| `met.zhang2024_th229m_frequency_ratio` | Zhang 2024 ²²⁹ᵐTh 核跃迁频率与 ⁸⁷Sr 频率比 | 首次直接激发 ²²⁹ᵐTh 核跃迁并测量其与 ⁸⁷Sr 的频率比 | [zhang2024_th_nuclear](topics/frequency-standards/papers/zhang2024_th_nuclear.yaml) |
 
 ### 📊 Secondary (线宽/PSD/相干)
 
@@ -73,6 +136,13 @@
 | `met.clock_instability_sr_bloom2014` | 时钟短期不稳定性（Sr，Bloom 2014） | 2.2e-16 | [bloom2014](topics/frequency-standards/papers/bloom2014.yaml) |
 | `met.clock_instability_sr_li2024` | 时钟短期不稳定性（NimSrI，Li 2024） | 3.3e-17 | [li2024](topics/frequency-standards/papers/li2024.yaml) |
 | `met.clock_instability_yb_hinkley2013_short` | 时钟短期不稳定性（Yb，Hinkley 2013） | 3.2e-16 | [hinkley2013](topics/frequency-standards/papers/hinkley2013.yaml) |
+| `met.ramsey_linewidth_clairon1995` | Ramsey 共振线宽 | < 700 mHz | [clairon1995](topics/frequency-standards/papers/clairon1995.yaml) |
+
+### 🔧 Engineering (κ/温度/磁场)
+
+| ID | Name | Best Value | Source |
+|----|------|------------|--------|
+| `met.cold_collisional_shift_value_clairon1995` | 冷碰撞频移 $\Delta \nu / \nu$ | 10^-15 (typical conditions) | [clairon1995](topics/frequency-standards/papers/clairon1995.yaml) |
 
 ### ❓ Unspecified
 
@@ -84,27 +154,31 @@
 
 ## BOUNDED-BY Chains
 
-### `rel.DFL16_02`: `ent.optical_frequency_standard` → `pri.qpn_dick_two_fundamental_limits_dfl16`
+### `rel.clairon_1995_lairon1995_03`: `ent.cesium_fountain_standard_clairon1995` → `pri.cold_collisional_shift_cesium`
+
+- **Source**: clairon1995
+
+### `rel.diddams_2016_FL16_02`: `ent.optical_frequency_standard` → `pri.qpn_dick_two_fundamental_limits_dfl16`
 
 - **Source**: diddams2016
 
-### `rel.F26_04`: `ent.optical_frequency_standard` → `pri.quantum_projection_noise_limit`
+### `rel.fortier_2025_26_04`: `ent.optical_frequency_standard` → `pri.quantum_projection_noise_limit`
 
 - **Source**: fortier2026
 - **Breakthrough paths**:
   - `pri.dick_effect` — status: in_progress · gain: 消除 Dick 效应（零死时间操作或 10⁻¹⁸ 超稳激光）→ 直接达到 QPN 极限
 
-### `rel.F26_05`: `ent.optical_frequency_standard` → `pri.dick_effect`
+### `rel.fortier_2025_26_05`: `ent.optical_frequency_standard` → `pri.dick_effect`
 
 - **Source**: fortier2026
 - **Breakthrough paths**:
   - `pri.quantum_projection_noise_limit` — status: in_progress · gain: 更好的超稳激光（10⁻¹⁸ 级）或零死时间操作 → Dick 效应降至 QPN 以下
 
-### `rel.L08T_03`: `ent.optical_lattice_clock` → `pri.sr_clock_systematic_budget_framework_l08`
+### `rel.ludlow_2008_08T_03`: `ent.optical_lattice_clock` → `pri.sr_clock_systematic_budget_framework_l08`
 
 - **Source**: ludlow2008_thesis
 
-### `rel.Lud15_02`: `ent.optical_lattice_clock` → `pri.blackbody_radiation_stark_shift`
+### `rel.ludlow_2015_ud15_02`: `ent.optical_lattice_clock` → `pri.blackbody_radiation_stark_shift`
 
 - **Source**: ludlow2015
 
@@ -114,10 +188,10 @@ Nodes referenced but not defined in this topic:
 
 | Relation | Predicate | External Node | Source |
 |----------|-----------|---------------|--------|
-| `rel.Bac21_01` | CONDITIONED-BY | `ent.coherent_optical_fiber_link` | bacon2021 |
-| `rel.F26_11` | CONDITIONED-BY | `ent.fp_cavity_system` | fortier2026 |
-| `rel.Oel19_02` | CONDITIONED-BY | `ent.fp_cavity_system` | oelker2019 |
-| `rel.Bac21_02` | CONDITIONED-BY | `ent.free_space_optical_tf_link` | bacon2021 |
-| `rel.F26_10` | CONDITIONED-BY | `ent.optical_frequency_comb` | fortier2026 |
-| `rel.L08T_04` | OPERATIONALIZED-AS | `meth.allan_deviation_adev` | ludlow2008_thesis |
+| `rel.bacon_2021_ac21_01` | CONDITIONED-BY | `ent.coherent_optical_fiber_link` | bacon2021 |
+| `rel.fortier_2025_26_11` | CONDITIONED-BY | `ent.fp_cavity_system` | fortier2026 |
+| `rel.oelker_2019_el19_02` | CONDITIONED-BY | `ent.fp_cavity_system` | oelker2019 |
+| `rel.bacon_2021_ac21_02` | CONDITIONED-BY | `ent.free_space_optical_tf_link` | bacon2021 |
+| `rel.fortier_2025_26_10` | CONDITIONED-BY | `ent.optical_frequency_comb` | fortier2026 |
+| `rel.ludlow_2008_08T_04` | OPERATIONALIZED-AS | `meth.allan_deviation_adev` | ludlow2008_thesis |
 

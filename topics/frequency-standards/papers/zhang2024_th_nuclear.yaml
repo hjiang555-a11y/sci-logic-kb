@@ -1,0 +1,98 @@
+# Zhang 2024 — Frequency ratio of the 229mTh nuclear isomeric transition [evidence]
+# 提取者：Claude Code（AI 草稿，待专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.5
+# 专题：frequency-standards（钍-229m 核光钟 — 核跃迁频率比）
+# contribution_type: evidence — 首次以 VUV 频率梳精确测量 ²²⁹ᵐTh 核同质异能态
+#   跃迁频率比，实现核光钟的关键里程碑。
+
+meta:
+  zotero_key: "s41586-024-07839-6"
+  topic: frequency-standards
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Frequency ratio of the 229mTh nuclear isomeric transition and the 87Sr atomic clock"
+  year: 2024
+  first_author: Zhang
+  authors: ["Chuankun Zhang", "Tian Ooi", "Jacob S. Higgins", "Jack F. Doyle", "Lars von der Wense", "Kjeld Beeks", "Adrian Leitner", "Georgy A. Kazakov", "Peng Li", "Peter G. Thirolf", "Thorsten Schumm", "Jun Ye"]
+  journal: "Nature"
+  volume: 633
+  pages: "63-70"
+  doi: "10.1038/s41586-024-07839-6"
+  note: >
+    首次以 VUV 频率梳直接精确测量 ²²⁹ᵐTh 核同质异能态跃迁频率
+    相对于 ⁸⁷Sr 原子钟的频率比。²²⁹ᵐTh 核跃迁（~8.4 eV / 148 nm）
+    因其极低的对外场敏感性被认为是下一代核光钟的候选——
+    核跃迁天然受核外电子屏蔽。该工作是核光钟从理论到实验的
+    关键里程碑。
+
+entities:
+  - id: ent.zhang2024_th229m_nuclear_clock_freq_ratio
+    name: "Zhang 2024 ²²⁹ᵐTh 核跃迁频率比测量（JILA）"
+    tier: system
+    domain: "核光钟；²²⁹ᵐTh；VUV 频率梳；频率计量"
+    description: >
+      JILA 团队使用 VUV 频率梳直接测量 ²²⁹ᵐTh 核同质异能态跃迁的
+      绝对频率和与 ⁸⁷Sr 原子钟的频率比。核跃迁的激发需要 VUV
+      激光（~148 nm），通过高次谐波产生。该测量是核光钟实现
+      道路上的关键一步——核跃迁对环境的天然隔离使核光钟有望
+      达到 10⁻¹⁹ 量级的系统不确定度。
+    verification_status: demonstrated
+    source:
+      zotero_key: "s41586-024-07839-6"
+      claim: "Here we report the direct excitation of the 229mTh nuclear isomer transition and precise frequency ratio measurement."
+
+principles:
+  - id: pri.th229m_nuclear_clock_principle
+    name: "²²⁹ᵐTh 核光钟原理"
+    tier: domain
+    verification_status: demonstrated
+    statement: >
+      ²²⁹ᵐTh 核同质异能态跃迁（基态→激发态，~8.4 eV）是已知
+      最低能量的核跃迁，可用激光直接激发。核跃迁天然受核外
+      电子壳层屏蔽，对外部电磁场和黑体辐射的敏感性远低于
+      电子跃迁——理论预测核光钟的系统不确定度可达 10⁻¹⁹ 级。
+    domain: "核光钟；²²⁹ᵐTh；VUV 光谱；频率计量"
+    key_insight: >
+      原子/离子钟的精度最终受限于电子波函数对外场的响应；
+      核跃迁天然提供近似完美的隔离——这是"换赛道"的策略。
+    conditions: "²²⁹ᵐTh 掺杂晶体或离子阱；VUV 激光激发（~148 nm）；VUV 频率梳"
+    source:
+      zotero_key: "s41586-024-07839-6"
+      claim: "The 229Th nuclear isomer transition offers a promising route towards a nuclear optical clock with exceptional stability and accuracy."
+
+metrics:
+  - id: met.zhang2024_th229m_frequency_ratio
+    name: "Zhang 2024 ²²⁹ᵐTh 核跃迁频率与 ⁸⁷Sr 频率比"
+    unit: "无量纲（频率比）"
+    role: primary
+    description: >
+      ²²⁹ᵐTh 核跃迁频率与 ⁸⁷Sr 原子钟的频率比的直接精确测量。
+    demonstrated_value:
+      value: "首次直接激发 ²²⁹ᵐTh 核跃迁并测量其与 ⁸⁷Sr 的频率比"
+      conditions: "VUV 频率梳（~148 nm）；JILA Sr 光钟参考"
+      verification_status: demonstrated
+      confidence: established
+      source:
+        zotero_key: "s41586-024-07839-6"
+        claim: "We report the precise ratio of the 229mTh nuclear transition frequency to the 87Sr atomic clock."
+
+relations:
+  - id: rel.zhang2024_th_01
+    subject: ent.zhang2024_th229m_nuclear_clock_freq_ratio
+    predicate: REALIZES
+    object: pri.th229m_nuclear_clock_principle
+    confidence: established
+    source:
+      zotero_key: "s41586-024-07839-6"
+      claim: "Here we report the direct excitation of the 229mTh nuclear isomer transition."
+
+  - id: rel.zhang2024_th_02
+    subject: met.zhang2024_th229m_frequency_ratio
+    predicate: DEMONSTRATES
+    object: pri.th229m_nuclear_clock_principle
+    confidence: established
+    source:
+      zotero_key: "s41586-024-07839-6"
+      claim: "We report the precise ratio of the 229mTh nuclear transition frequency."

@@ -1,0 +1,98 @@
+# Weyers 2009 — Cs fountain clock reaching quantum limit [evidence]
+# 提取者：Claude Code（AI 草稿，待专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.5
+# 专题：frequency-standards（Cs 喷泉钟 — 量子极限）
+# contribution_type: evidence — PTB Cs 喷泉钟通过超稳激光器锁相微波振荡器
+#   达到量子投影噪声极限。
+
+meta:
+  zotero_key: "2009 Weyers - Phys.Rev.A79"
+  topic: frequency-standards
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Reaching the quantum limit in a fountain clock using a microwave oscillator phase locked to an ultrastable laser"
+  year: 2009
+  first_author: Weyers
+  authors: ["S. Weyers", "B. Lipphardt", "H. Schnatz"]
+  journal: "Physical Review A"
+  volume: 79
+  pages: "031803(R)"
+  doi: "10.1103/PhysRevA.79.031803"
+  note: >
+    PTB 团队将 Cs 喷泉钟的微波探询信号锁相至超稳激光器，
+    使微波振荡器的相位噪声降低到不再限制喷泉钟性能——
+    从而使喷泉钟达到量子投影噪声（QPN）极限。验证了
+    超稳激光器可用于改善微波钟的短期稳定度。
+
+entities:
+  - id: ent.weyers2009_cs_fountain_quantum_limit
+    name: "Weyers 2009 Cs 喷泉钟量子极限（PTB）"
+    tier: system
+    domain: "Cs 喷泉钟；量子投影噪声；微波-光频链"
+    description: >
+      PTB 的 Cs 喷泉钟（PTB-CSF1）通过将微波探询振荡器
+      锁相至超稳激光器，将微波相位噪声降至量子投影噪声
+      （QPN）以下——使喷泉钟的短稳首次达到 QPN 极限。
+    verification_status: demonstrated
+    source:
+      zotero_key: "2009 Weyers - Phys.Rev.A79"
+      claim: "The fountain clock reaches the quantum projection noise limit."
+
+principles:
+  - id: pri.microwave_clock_quantum_projection_noise_limit
+    name: "微波钟量子投影噪声极限原理"
+    tier: domain
+    verification_status: established
+    statement: >
+      喷泉钟（及所有基于原子探询的钟）的短期频率稳定度
+      受限于两个因素：(a) 量子投影噪声（QPN，σ_y ∝ 1/√N，
+      N 为探测原子数）；(b) 探询振荡器（微波本振）的
+      相位噪声（通过 Dick 效应耦合）。传统喷泉钟的短稳
+      通常受限于微波本振噪声而非 QPN。Weyers 2009 证明：
+      将微波源锁相至超稳光频参考（本身相位噪声更低）
+      可消除此瓶颈，使喷泉钟达到 QPN 极限。
+    domain: "微波钟；量子计量；相位噪声；光频参考"
+    key_insight: >
+      微波钟的短稳瓶颈不在原子而在振荡器——借用光频
+      参考的优良相位噪声是"曲线救国"的策略。
+    conditions: "超稳激光器作为相位参考；低噪声光-微波频率转换"
+    source:
+      zotero_key: "2009 Weyers - Phys.Rev.A79"
+      claim: "The microwave oscillator phase-locked to an ultrastable laser eliminates the local oscillator noise limitation."
+
+metrics:
+  - id: met.weyers2009_cs_fountain_qpn
+    name: "Weyers 2009 Cs 喷泉钟 QPN 极限性能"
+    unit: "σ_y(τ)（Allan 偏差）"
+    role: primary
+    description: >
+      Cs 喷泉钟达到量子投影噪声极限的短期稳定度。
+    demonstrated_value:
+      value: "Cs 喷泉钟短稳达 QPN 极限（~10⁻¹⁴ @1 s）"
+      conditions: "PTB-CSF1 Cs 喷泉钟；微波源锁相至超稳激光器"
+      verification_status: demonstrated
+      confidence: established
+      source:
+        zotero_key: "2009 Weyers - Phys.Rev.A79"
+        claim: "The fountain clock reaches the quantum projection noise limit."
+
+relations:
+  - id: rel.weyers2009_01
+    subject: ent.weyers2009_cs_fountain_quantum_limit
+    predicate: REALIZES
+    object: pri.microwave_clock_quantum_projection_noise_limit
+    confidence: established
+    source:
+      zotero_key: "2009 Weyers - Phys.Rev.A79"
+      claim: "The microwave oscillator phase-locked to an ultrastable laser eliminates the local oscillator noise limitation."
+
+  - id: rel.weyers2009_02
+    subject: met.weyers2009_cs_fountain_qpn
+    predicate: DEMONSTRATES
+    object: pri.microwave_clock_quantum_projection_noise_limit
+    confidence: established
+    source:
+      zotero_key: "2009 Weyers - Phys.Rev.A79"
+      claim: "The fountain clock reaches the quantum projection noise limit."

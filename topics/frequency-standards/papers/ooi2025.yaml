@@ -1,0 +1,95 @@
+# Ooi 2025 — Frequency reproducibility of solid-state nuclear clock [evidence]
+# 提取者：Claude Code（AI 草稿，待专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.5
+# 专题：frequency-standards（固态核光钟 — ²²⁹ᵐTh 掺杂晶体频率复现性）
+# contribution_type: evidence — 验证 ²²⁹ᵐTh 固态核光钟的频率复现性；
+#   核跃迁在固态环境中的计量性能评估。
+
+meta:
+  zotero_key: "s41586-025-09999-5"
+  topic: frequency-standards
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Frequency reproducibility of solid-state nuclear clock transitions"
+  year: 2025
+  first_author: Ooi
+  authors: ["Tian Ooi", "Jack F. Doyle", "Chuankun Zhang", "Jacob S. Higgins", "Jun Ye", "Kjeld Beeks", "Adrian Leitner", "Georgy A. Kazakov", "Thorsten Schumm"]
+  journal: "Nature"
+  doi: "10.1038/s41586-025-09999-5"
+  note: >
+    验证 ²²⁹ᵐTh 掺杂晶体中核跃迁的频率复现性——
+    固态基质对核跃迁频率的影响是核光钟实用化的关键问题。
+    该工作评估了不同晶体样品之间 ²²⁹ᵐTh 核跃迁频率的一致性，
+    为固态核光钟作为实用化频率标准提供实验基础。
+
+entities:
+  - id: ent.ooi2025_solid_state_nuclear_clock_reproducibility
+    name: "Ooi 2025 固态 ²²⁹ᵐTh 核光钟频率复现性（JILA）"
+    tier: system
+    domain: "核光钟；固态物理；²²⁹ᵐTh；频率复现性"
+    description: >
+      JILA 团队评估掺杂在晶体中的 ²²⁹ᵐTh 核跃迁的频率复现性——
+      比较不同晶体样品、不同掺杂条件下的核跃迁频率一致性。
+      固态核光钟（无需离子阱和激光冷却）如果核跃迁频率
+      在固态环境中能复现，将极大简化核光钟的工程实现。
+    verification_status: demonstrated
+    source:
+      zotero_key: "s41586-025-09999-5"
+      claim: "Here we investigate the frequency reproducibility of the 229mTh nuclear transition in a solid-state host."
+
+principles:
+  - id: pri.solid_state_nuclear_clock_frequency_reproducibility
+    name: "固态核光钟频率复现性原理"
+    tier: method
+    verification_status: observed
+    statement: >
+      固态基质（如 CaF₂、LiSrAlF₆ 等晶体）掺杂 ²²⁹ᵐTh 是实现
+      核光钟的实用化路线——无需复杂的离子阱和激光冷却系统。
+      但晶体场会通过 Stark 效应、quadrupole 相互作用等对核跃迁
+      频率产生偏移。频率复现性（不同样品之间频率一致程度）
+      是固态核光钟是否可以作为频率标准的关键判据。
+    domain: "核光钟；固态物理；频率计量"
+    key_insight: >
+      固态路线代表了截然不同的核光钟实现哲学：牺牲一些
+      准确度（因晶体场不确定性），换取极大的工程简化。
+    conditions: "²²⁹ᵐTh 掺杂晶体（ppm 级掺杂浓度）；VUV 激光激发；低温环境（~10 K）"
+    source:
+      zotero_key: "s41586-025-09999-5"
+      claim: "The reproducibility of the nuclear transition frequency in solid-state hosts is essential for the development of practical nuclear clocks."
+
+metrics:
+  - id: met.ooi2025_solid_state_reproducibility
+    name: "Ooi 2025 固态核光钟频率复现性"
+    unit: "无量纲（频率复现性）"
+    role: primary
+    description: >
+      不同晶体样品中 ²²⁹ᵐTh 核跃迁频率的复现性评估。
+    demonstrated_value:
+      value: "固态 ²²⁹ᵐTh 核跃迁频率复现性评估"
+      conditions: "掺杂晶体样品（低温）；VUV 频率梳激"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "s41586-025-09999-5"
+        claim: "We measure the frequency reproducibility across multiple solid-state samples."
+
+relations:
+  - id: rel.ooi2025_01
+    subject: ent.ooi2025_solid_state_nuclear_clock_reproducibility
+    predicate: REALIZES
+    object: pri.solid_state_nuclear_clock_frequency_reproducibility
+    confidence: established
+    source:
+      zotero_key: "s41586-025-09999-5"
+      claim: "Here we investigate the frequency reproducibility of the 229mTh nuclear transition in a solid-state host."
+
+  - id: rel.ooi2025_02
+    subject: met.ooi2025_solid_state_reproducibility
+    predicate: DEMONSTRATES
+    object: pri.solid_state_nuclear_clock_frequency_reproducibility
+    confidence: established
+    source:
+      zotero_key: "s41586-025-09999-5"
+      claim: "We measure the frequency reproducibility across multiple solid-state samples."

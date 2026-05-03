@@ -4,7 +4,7 @@
 
 > **用途**：处理新论文时，用此文件快速检查是否已有同名/同义节点，避免重复定义。
 > **维护**：本文件由 `scripts/build_index.py` 自动生成，**请勿手工编辑**。
-> **生成时间**：2026-05-03 11:58 UTC
+> **生成时间**：2026-05-03 12:49 UTC
 
 > **使用方式**：
 > - 处理新论文时，`Ctrl+F` 搜索关键词（如 `brownian`, `pdh`, `fiber`）
@@ -29,18 +29,37 @@
 | ID | Name | Tier | Source |
 |----|------|------|--------|
 | `pri.blackbody_radiation_stark_shift` | 室温黑体辐射 Stark 频移原理 | domain | [ludlow2015](topics/frequency-standards/papers/ludlow2015.yaml) |
+| `pri.ca40_single_ion_optical_clock` | ⁴⁰Ca⁺ 单离子光钟原理 | method | [huang2016](topics/frequency-standards/papers/huang2016.yaml) |
 | `pri.cold_collisional_shift_cesium` | 冷铯原子碰撞频移 | domain | [clairon1995](topics/frequency-standards/papers/clairon1995.yaml) |
+| `pri.comb_linewidth_transfer_for_clock_spectroscopy` | 频率梳线宽转移光钟光谱原理 | method | [inaba2013](topics/frequency-standards/papers/inaba2013.yaml) |
+| `pri.correlation_spectroscopy_clock_comparison` | 关联谱光钟比对原理 | method | [zhang2023_lu](topics/frequency-standards/papers/zhang2023_lu.yaml) |
 | `pri.dick_effect` | Dick 效应（时钟周期死时间噪声混叠） | domain | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
+| `pri.e3_octupole_transition_optical_clock` | 电八极（E3）跃迁光钟原理 | domain | [huntemann2012](topics/frequency-standards/papers/huntemann2012.yaml) |
+| `pri.good_bad_cavity_active_clock` | Good-bad-cavity 主动光钟原理 | method | [shi2019](topics/frequency-standards/papers/shi2019.yaml) |
 | `pri.gravitational_redshift_within_atomic_sample` | 原子样品内部引力红移可分辨原理 | domain | [bothwell2022](topics/frequency-standards/papers/bothwell2022.yaml) |
+| `pri.highly_charged_ion_optical_clock` | 高电荷离子光钟原理 | method | [king2022](topics/frequency-standards/papers/king2022.yaml) |
+| `pri.hyperpolarizability_in_optical_lattice_clocks` | 光晶格钟 hyperpolarizability 原理 | method | [brown2017](topics/frequency-standards/papers/brown2017.yaml) |
 | `pri.magic_wavelength_lattice` | 魔术波长光晶格原理 | domain | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
 | `pri.magic_wavelength_operational_protocol_l08` | 魔术波长光晶格钟操作协议原理（Ludlow thesis） | domain | [ludlow2008_thesis](topics/frequency-standards/papers/ludlow2008_thesis.yaml) |
+| `pri.microwave_clock_quantum_projection_noise_limit` | 微波钟量子投影噪声极限原理 | domain | [weyers2009](topics/frequency-standards/papers/weyers2009.yaml) |
+| `pri.optical_clock_gravitational_redshift_geodesy` | 光钟引力红移大地测量原理 | domain | [takamoto2020](topics/frequency-standards/papers/takamoto2020.yaml) |
+| `pri.optical_clock_gravitational_wave_detection` | 光钟引力波探测原理 | domain | [kolkowitz2016](topics/frequency-standards/papers/kolkowitz2016.yaml) |
 | `pri.optical_clock_ten_minus_eighteen_geoid_bridge` | 光钟 10⁻¹⁸ 分数精度 ↔ 1 cm 大地水准面分辨率桥梁 | domain | [diddams2016](topics/frequency-standards/papers/diddams2016.yaml) |
+| `pri.optical_lattice_light_shift_engineering` | 光晶格光频移控制原理 | domain | [barber2008](topics/frequency-standards/papers/barber2008.yaml) |
 | `pri.qpn_dick_two_fundamental_limits_dfl16` | 光钟双重基本极限：量子投影噪声 + Dick 效应 | domain | [diddams2016](topics/frequency-standards/papers/diddams2016.yaml) |
 | `pri.quantum_logic_clock_readout` | 量子逻辑光钟读出原理 | domain | [rosenband2008](topics/frequency-standards/papers/rosenband2008.yaml) |
 | `pri.quantum_projection_noise_limit` | 量子投影噪声极限 | domain | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
 | `pri.ramsey_separated_oscillatory_fields_fountain` | 喷泉式 Ramsey 分离振荡场原理 | domain | [clairon1995](topics/frequency-standards/papers/clairon1995.yaml) |
 | `pri.si_second_cesium_definition` | SI 秒的 Cs 超精细跃迁定义 | foundational | [heavner2005](topics/frequency-standards/papers/heavner2005.yaml) |
+| `pri.si_second_redefinition_criteria` | SI 秒重新定义判据原理 | domain | [si_second_redefinition_roadmap2021](topics/frequency-standards/papers/si_second_redefinition_roadmap2021.yaml) |
+| `pri.solid_state_nuclear_clock_frequency_reproducibility` | 固态核光钟频率复现性原理 | method | [ooi2025](topics/frequency-standards/papers/ooi2025.yaml) |
+| `pri.space_ion_clock_for_deep_space_navigation` | 空间离子钟深空导航原理 | domain | [burt2021](topics/frequency-standards/papers/burt2021.yaml) |
 | `pri.sr_clock_systematic_budget_framework_l08` | Sr 光晶格钟系统误差预算框架（Ludlow thesis） | domain | [ludlow2008_thesis](topics/frequency-standards/papers/ludlow2008_thesis.yaml) |
+| `pri.sr_clock_systematic_uncertainty_budget` | Sr 光钟系统不确定度评估原理 | domain | [aeppli2024](topics/frequency-standards/papers/aeppli2024.yaml) |
+| `pri.superradiant_active_optical_clock` | 超辐射主动光钟原理 | domain | [norcia2018](topics/frequency-standards/papers/norcia2018.yaml) |
+| `pri.th229_ion_nuclear_clock_scheme` | ²²⁹Th 离子核光钟方案原理 | method | [campbell2012](topics/frequency-standards/papers/campbell2012.yaml) |
+| `pri.th229m_nuclear_clock_principle` | ²²⁹ᵐTh 核光钟原理 | domain | [zhang2024_th_nuclear](topics/frequency-standards/papers/zhang2024_th_nuclear.yaml) |
+| `pri.transportable_optical_clock_engineering` | 可搬运光钟工程化原理 | domain | [roslund2024](topics/frequency-standards/papers/roslund2024.yaml) |
 
 ### Methods
 
