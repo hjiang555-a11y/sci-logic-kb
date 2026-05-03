@@ -248,6 +248,8 @@
 | `predehl2012.yaml` | 2012 Science 336,441 920-Kilometer Optical Fiber Link | Predehl 2012 — 920 km 相位稳定光纤链路，MDEV 5×10⁻¹⁵@1 s, 10⁻¹⁸<1000 s | ✅ v4.5 breakthrough |
 | `giorgetta2013.yaml` | Nature Photonics 2013 7（6） 435-439 | Giorgetta 2013 — 自由空间光学双向时频传递（O-TWTFT），1 fs 残余时偏，<10⁻¹⁸@1000 s | ✅ v4.5 breakthrough |
 | `bercy2014.yaml` | PhysRevA.90.061802 | Bercy 2014 — 100 km 电信光纤双向光频比对，2WU 2×10⁻¹⁷ / 2WB 5×10⁻²¹ | ✅ v4.5 evidence |
+| `gozzard2022.yaml` | PhysRevLett.128.020801 | Gozzard 2022 — 自由空间相位-振幅双稳定频率传递，6.1×10⁻²¹@300 s | ✅ v4.5 breakthrough |
+| `daussy2005.yaml` | PhysRevLett.94.203904 | Daussy 2005 — 首次电信光纤频率分发演示，86 km 往返 10⁻¹⁷@1 天 | ✅ v4.5 breakthrough |
 
 ## 时频计量数学基础专题（B9 Allan–Howe 奠基白名单 + Allan 2016 + Sullivan 2001）
 

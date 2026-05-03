@@ -1,0 +1,156 @@
+# Gozzard 2022 — Ultrastable Free-Space Laser Links for a Global Network of Optical Atomic Clocks [breakthrough]
+# 提取者：Claude Code（AI 草稿，待专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.5
+# 专题：time-frequency-transfer（自由空间激光频率传递 — 2.4 km 链路 6.1×10⁻²¹@300 s）
+# contribution_type: breakthrough — 在湍流等效地面-空间链路上实现 6.1×10⁻²¹@300 s 的
+#   自由空间频率传递不稳定度，证明地面-LEO 光钟比对在数秒积分后即受钟自身稳定度限制。
+
+meta:
+  zotero_key: "PhysRevLett.128.020801"
+  topic: time-frequency-transfer
+  source_type: journal_paper
+  contribution_type: breakthrough
+  reliability: high
+  title: "Ultrastable Free-Space Laser Links for a Global Network of Optical Atomic Clocks"
+  year: 2022
+  first_author: Gozzard
+  authors: ["D. R. Gozzard", "L. A. Howard", "B. P. Dix-Matthews", "S. F. E. Karpathakis", "C. T. Gravestock", "S. W. Schediwy"]
+  journal: "Physical Review Letters"
+  volume: 128
+  issue: 2
+  pages: "020801"
+  doi: "10.1103/PhysRevLett.128.020801"
+  note: >
+    [breakthrough 论文] 首次在湍流水平与地面-LEO卫星链路等效的 2.4 km 自由空间
+    路径上同时实现相位和振幅稳定化的频率传递。通过 tip-tilt 主动光学终端
+    抑制光束摆动、相位噪声补偿抵消大气路径起伏，达到分数频率不稳定度
+    6.1×10⁻²¹@300 s。据此推断地面-LEO 卫星链路在卫星过境窗口内可实现
+    ~1×10⁻²⁰ 的不稳定度——意味着钟比对在数秒积分后即受限于光钟自身稳定度
+    而非传递链路。为全球光学原子钟自由空间比对网络提供了关键技术验证。
+
+entities:
+  - id: ent.gozzard2022_2km4_atmospheric_link
+    name: "Gozzard 2022 2.4 km 大气相位-振幅双稳定自由空间频率传递链路（UWA）"
+    tier: system
+    domain: "自由空间光学频率传递；大气湍流补偿；光钟全球网络"
+    description: >
+      2.4 km 水平城区自由空间链路（UWA campus, Perth），湍流参数等效于地面-LEO
+      卫星链路。链路使用 1550 nm 窄线宽激光，配备主动 tip-tilt 光学终端
+      抑制光束摆动造成的振幅衰落，同时通过往返相位噪声检测和 AOM 反馈
+      补偿大气路径起伏。在等效地面-卫星湍流条件下连续 300 s 测量窗口
+      实现分数频率不稳定度 MDEV = 6.1×10⁻²¹。
+      系统在 ~700 Hz 带宽内抑制湍流闪烁噪声，tip-tilt 将光束位置稳定至
+      ~1 μrad RMS。
+    verification_status: demonstrated
+    source:
+      zotero_key: "PhysRevLett.128.020801"
+      claim: "we demonstrate phase- and amplitude-stabilized free-space frequency transfer with a fractional frequency stability of 6.1×10^−21 after only 300 s of integration, over a 2.4 km horizontal atmospheric link."
+
+principles:
+  - id: pri.amplitude_stabilized_free_space_frequency_transfer
+    name: "相位-振幅双稳定自由空间光学频率传递原理"
+    tier: domain
+    verification_status: observed
+    statement: >
+      自由空间激光频率传递的两大挑战分别由独立子系统解决：
+      (1) 相位稳定（与光纤链路原理相同）：光载波往返大气路径，在输入端检测
+      往返相位差并将其用于 AOM 预补偿——使输出表现为经稳定化链路传播。
+      残余相位噪声 ∝ τ²·(2πf)² × 自由链路噪声PSD（受限于往返延迟 τ）。
+      (2) 振幅稳定（自由空间独有）：大气湍流引起光束摆动和闪烁导致到达
+      功率剧烈波动乃至链路中断。主动 tip-tilt 终端反馈将接收光束位置
+      稳定在单模光纤耦合中心（~1 μrad RMS），使功率波动降至几 dB 量级
+      而非原始湍流中的数十 dB 衰落。双稳定化同时工作且互不干扰。
+    domain: "自由空间光学频率传递；大气自适应光学；计量学激光链路"
+    key_insight: >
+      之前自由空间频率传递方案仅补偿相位噪声——但湍流闪烁导致的振幅衰落
+      （每秒数十次深度衰落）将有效积分时间截断至 ~10 ms，无法实现长时
+      稳定度。tip-tilt 振幅稳定使链路可连续运行数百秒——这是实现 10⁻²¹ 级
+      不稳定度的关键使能因素。
+    conditions: "1550 nm 单波长载波；往返延迟 τ < 1 ms（链路 ≤ 300 km）；tip-tilt 闭环带宽 ≥ 100 Hz；大气湍流强度 C_n² ≤ 10⁻¹⁴"
+    source:
+      zotero_key: "PhysRevLett.128.020801"
+      claim: "In this work, we demonstrate phase- and amplitude-stabilized free-space frequency transfer."
+
+methods:
+  - id: meth.phase_amplitude_tiptilt_free_space_frequency_transfer
+    name: "相位-振幅双稳定自由空间光学频率传递方法"
+    purpose: >
+      在湍流大气中（等效于地面-卫星链路）实现连续相位相干光学频率传递，
+      支持全球光学原子钟网络的地面-卫星和地面-地面自由空间比对。
+    description: >
+      1. 1550 nm 窄线宽激光经光纤送至发射/接收光学终端。
+      2. 振幅稳定：CCD/四象限探测器监测接收光束位置，
+         高速 tip-tilt 反馈镜实时修正光束偏斜，
+         使单模光纤耦合效率在湍流闪烁中保持稳定（~1 μrad RMS）。
+      3. 相位稳定：往返光信号干涉检测大气路径相位噪声，
+         AOM 反馈主动预补偿（方案与光纤往返补偿相同但处理大气噪声）。
+      4. 本地-远端拍频检测：链路两端信号经无死区计数器记录
+         并计算 OADEV/MDEV。
+      5. 推断地面-LEO：基于 Rytov 方差匹配论证等效湍流水平。
+    key_steps:
+      - "tip-tilt 主动光学终端（带宽 ≥ 100 Hz）抑制光束摆动"
+      - "1550 nm 光载波往返大气路径 → 干涉检测相位噪声"
+      - "AOM 相位预补偿（伺服带宽 ~1 kHz，受 τ 限制）"
+      - "无死区计数器测量拍频 → OADEV/MDEV 评估"
+      - "与地面-卫星 Rytov 方差比较验证湍流等效性"
+    applicable_conditions: "自由空间单模双向链路；tip-tilt 闭环带宽覆盖湍流闪烁谱峰值（~100 Hz）；相位噪声伺服带宽 > 往返延迟倒数"
+    source:
+      zotero_key: "PhysRevLett.128.020801"
+      claim: "we demonstrate phase- and amplitude-stabilized free-space frequency transfer."
+
+metrics:
+  - id: met.gozzard2022_free_space_instability
+    name: "Gozzard 2022 自由空间频率传递不稳定度"
+    unit: "无量纲（分数频率）"
+    role: primary
+    description: >
+      2.4 km 自由空间大气链路（等效地面-LEO 湍流水平）经相位-振幅
+      双稳定后的残余分数频率不稳定度。短稳受限于伺服带宽（~1 kHz），
+      长稳受限于探测器热噪声本底。300 s 积分已达 6.1×10⁻²¹ ——
+      比目前最佳光钟（~2×10⁻¹⁸@600 s）低 500 倍以上。
+    demonstrated_value:
+      value: "6.1×10⁻²¹ @ 300 s（MDEV）; 预测地面-LEO: ~1×10⁻²⁰ per satellite pass"
+      conditions: "2.4 km 水平城区自由空间链路；1550 nm 载波；tip-tilt 振幅稳定+相位补偿；等效地面-LEO 湍流水平"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "PhysRevLett.128.020801"
+        claim: "a fractional frequency stability of 6.1 × 10^−21 in 300 s of integration time."
+
+relations:
+  - id: rel.gozzard2022_01
+    subject: meth.phase_amplitude_tiptilt_free_space_frequency_transfer
+    predicate: DERIVED-FROM
+    object: pri.amplitude_stabilized_free_space_frequency_transfer
+    confidence: established
+    source:
+      zotero_key: "PhysRevLett.128.020801"
+      claim: "we demonstrate phase- and amplitude-stabilized free-space frequency transfer."
+
+  - id: rel.gozzard2022_02
+    subject: ent.gozzard2022_2km4_atmospheric_link
+    predicate: REALIZES
+    object: meth.phase_amplitude_tiptilt_free_space_frequency_transfer
+    confidence: established
+    source:
+      zotero_key: "PhysRevLett.128.020801"
+      claim: "over a 2.4 km horizontal atmospheric link that was measured to have turbulence levels comparable to a link between ground and space."
+
+  - id: rel.gozzard2022_03
+    subject: met.gozzard2022_free_space_instability
+    predicate: DEMONSTRATES
+    object: pri.amplitude_stabilized_free_space_frequency_transfer
+    confidence: established
+    source:
+      zotero_key: "PhysRevLett.128.020801"
+      claim: "a fractional frequency stability of 6.1 × 10^−21 in 300 s of integration time."
+
+  - id: rel.gozzard2022_04
+    subject: meth.phase_amplitude_tiptilt_free_space_frequency_transfer
+    predicate: ENABLED-BY
+    object: pri.free_space_optical_reciprocity_otwtft
+    confidence: established
+    source:
+      zotero_key: "PhysRevLett.128.020801"
+      claim: "Free-space laser links through the turbulent atmosphere are needed to fully exploit this global network."

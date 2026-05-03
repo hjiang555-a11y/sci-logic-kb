@@ -2,6 +2,12 @@
 
 
 
+## [2026-05-03] ingest | Gozzard 2022 — phase+amplitude stabilized free-space frequency transfer: 6.1e-21@300s over 2.4 km atmospheric link (time-frequency-transfer)
+
+## [2026-05-03] ingest | Daussy 2005 — first long-distance telecom fiber frequency dissemination: 86 km round-trip 10^-17@1 day, foundational (time-frequency-transfer)
+
+
+
 ## [2026-05-03] ingest | Predehl 2012 — 920 km phase-stabilized optical fiber frequency transfer: MDEV 5e-15@1s, 10^-18<1000s, first continental-scale optical clock link (time-frequency-transfer)
 
 ## [2026-05-03] ingest | Giorgetta 2013 — first free-space optical two-way time-frequency transfer (O-TWTFT): 1 fs TDEV, <10^-18@1000s via dual-comb LOS (time-frequency-transfer)

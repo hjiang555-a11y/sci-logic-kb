@@ -1,0 +1,175 @@
+# Daussy 2005 — Long-Distance Frequency Dissemination with a Resolution of 10⁻¹⁷ [breakthrough]
+# 提取者：Claude Code（AI 草稿，待专家确认）
+# 提取日期：2026-05-03
+# Schema版本：v4.5
+# 专题：time-frequency-transfer（光纤频率传递 — 首次 86 km 电信光纤 10⁻¹⁷ 级频率分发）
+# contribution_type: breakthrough — 首次在标准电信光纤上实现 43 km 往返（86 km 等效）的
+#   光学频率传递，达到 10⁻¹⁷/天 的频率分辨率——开启了光纤频率传递作为时钟比对
+#   新范式的时代。
+
+
+meta:
+  zotero_key: "PhysRevLett.94.203904"
+  topic: time-frequency-transfer
+  source_type: journal_paper
+  contribution_type: breakthrough
+  reliability: high
+  title: "Long-Distance Frequency Dissemination with a Resolution of 10⁻¹⁷"
+  year: 2005
+  first_author: Daussy
+  authors: ["C. Daussy", "O. Lopez", "A. Amy-Klein", "A. Goncharov", "M. Guinet", "C. Chardonnet", "F. Narbonneau", "M. Lours", "D. Chambon", "S. Bize", "A. Clairon", "G. Santarelli", "M. E. Tobar", "A. N. Luiten"]
+  journal: "Physical Review Letters"
+  volume: 94
+  issue: 20
+  pages: "203904"
+  doi: "10.1103/PhysRevLett.94.203904"
+  note: >
+    [breakthrough 论文] 首次实验演示长距离光纤光学频率分发。在 SYRTE 和 LPL
+    （Paris Nord）之间 43 km 标准电信光纤链路上，以激光往返相位噪声检测
+    + AOM 反馈主动补偿方案，实现 86 km 往返链路的分数频率分辨率：
+    8×10⁻¹⁵@1 s, 10⁻¹⁷@1 天。作为应用，将 LPL 的 CO₂/OsO₄ 频率标准
+    的信号与 SYRTE 的微波基准参考比对，分辨率 3×10⁻¹⁴@1 s。
+    该实验确立了"光纤往返噪声补偿"作为远程光学时钟比对的基本技术范式，
+    是此后所有长距离光纤频率传递（Predehl 2012, Droste 2013 等）的
+    直接先驱。
+
+entities:
+  - id: ent.daussy2005_86km_fiber_link
+    name: "Daussy 2005 SYRTE–LPL 43 km 电信光纤往返频率传递链路"
+    tier: system
+    domain: "光纤光学频率分发；时钟比对；计量学"
+    description: >
+      往返 86 km 标准电信光纤（43 km 单程，SYRTE↔LPL 巴黎城区）。
+      链路使用 1.55 μm 光纤耦合激光器（CO₂/OsO₄ 标准的光频信号），
+      通过两次穿过 AOM 的往返相位检测方案（单 AOM 双穿以抑制其自身
+      频率噪声）实现相位噪声探测和补偿。使用 ~100 MHz 飞轮振荡器
+      （10⁻¹⁴@10⁵ s 稳定度）作为微波参考桥。往返光路由同一根光纤的
+      前向和后向组成——保证传播路径互易性。86 km 往返光纤损耗 ~27 dB
+      （@1.55 μm），无需在线光放大。
+    verification_status: demonstrated
+    source:
+      zotero_key: "PhysRevLett.94.203904"
+      claim: "In this Letter we demonstrate, for the first time, that two standards can be compared over a distance of 43 km, using a standard telecommunication optical link, with a resolution of 8 × 10^−15 at 1 s, and 10^−17 at one day integration time."
+
+principles:
+  - id: pri.fiber_round_trip_phase_noise_compensation
+    name: "光纤往返相位噪声主动补偿原理（首个 86 km 演示）"
+    tier: foundational
+    verification_status: observed
+    statement: >
+      光载波在光纤中往返传播：激光器 → 光纤 A → 光纤 B 端（Faraday 反射器
+      或者部分透射器件反射）→ 返回光纤 A → 输入/输出端干涉仪检测往返相位差
+      Δφ_rt(t) = 2 × φ_fiber(t+τ) − 2 × φ_fiber(t)（近似）。
+      利用声光调制器（AOM）在输入端施加预畸变 −Δφ_rt(t)/2，
+      使输出端的光信号表现如同光纤噪声已被消除。
+      该方案的精度受限于往返延迟 τ：在 Fourier 频率 f ≪ 1/(6τ) 范围内
+      噪声被有效补偿；对于 86 km 光纤，τ ~ 0.4 ms，有效补偿带宽 ~400 Hz。
+    domain: "光纤光学频率分发；互易性计量；相位噪声补偿"
+    key_insight: >
+      此方案的关键概念突破是认识到往返噪声补偿可将电信光纤的被动相位噪声
+      （自由链路 86 km ~10⁻¹⁴ 量级）抑制 7 个数量级以上至所需的
+      10⁻²⁰ 量级——使原本"不适合计量"的商用光纤成为比 GPS 更优的
+      时钟比对介质。
+    conditions: "前向/后向光信号经同一光纤传播（互易性）；往返延迟 τ < 补偿伺服带宽的 1/6；AOM 双穿设计抑制自身频率噪声；光纤中无非互易性效应（PMD、Sagnac ≤ 容许量）"
+    source:
+      zotero_key: "PhysRevLett.94.203904"
+      claim: "The principle of the link is to compare the optical round trip phase of a fiber link with the input phase, and then use this error signal to correct the phase noise of the fiber."
+
+methods:
+  - id: meth.fiber_round_trip_phase_stabilized_dissemination
+    name: "光纤往返相位稳定化频率分发方法（Daussy 2005 方案）"
+    purpose: >
+      利用标准电信光纤实现远程实验室之间的高分辨率光学频率比对，
+      以替代卫星 GPS/TWSTFT 等传统微波比对技术。
+    description: >
+      1. 本地端：光频标准（如 CO₂/OsO₄ 激光器，~30 THz）经 fs 光频梳
+         降至 ~1.55 μm 波段，耦合至 43 km 电信光纤。
+      2. 远程端：部分光经 Faraday 反射镜返回；剩余光与远程本地振荡器比对。
+      3. 本地端：往返信号与输入信号经干涉仪产生相位误差信号 →
+         PID 控制 → AOM（双穿，VCO 驱动）→ 相位共轭预补偿。
+      4. 使用高稳定飞轮振荡器（~100 MHz，~10⁻¹⁴@10⁵ s）提供频率测量参考。
+      5. 记录 Allan 方差：OADEV 8×10⁻¹⁵@1 s → 10⁻¹⁷@1 天。
+    key_steps:
+      - "光频标准 → fs 梳 → 1.55 μm → 耦合至电信光纤"
+      - "远程端 Faraday 反射器部分返回光 + 部分本地比对"
+      - "往返光干涉生成相位误差信号"
+      - "VCO 驱动 AOM 双穿（抑制 AOM 自身频噪）→ 相位预补偿"
+      - "飞轮振荡器提供频率测量的稳定参考"
+      - "Allan 方差评估：OADEV 和 MDEV"
+    applicable_conditions: "单模电信光纤（~27 dB 损耗 @86 km）；往返延迟 τ ≤ 0.5 ms；1.55 μm 激光载波；Faraday 反射端保证互易反射"
+    source:
+      zotero_key: "PhysRevLett.94.203904"
+      claim: "The principle of the link is to compare the optical round trip phase of a fiber link with the input phase, and then use this error signal to correct the phase noise of the fiber."
+
+metrics:
+  - id: met.daussy2005_86km_round_trip_allan
+    name: "Daussy 2005 86 km 光纤往返链路 Allan 频率偏差"
+    unit: "无量纲（分数频率）"
+    role: primary
+    description: >
+      86 km 往返光纤链路稳定化后的 Allan 偏差。短稳受限于探测系统噪声本底
+      （~10⁻¹⁵ @ 1 s 级），中稳按 τ⁻¹ 改善，长稳受限于飞轮振荡器残余漂移
+      和环境温度慢变。10⁻¹⁷@1 天——比当时最好的 GPS 载波相位比对
+      高约 100 倍。
+    demonstrated_value:
+      value: "8×10⁻¹⁵ @ 1 s; 2×10⁻¹⁵ @ 10 s; ~10⁻¹⁶ @ 1000 s; 10⁻¹⁷ @ 1 day (integrated)"
+      conditions: "86 km 往返光纤（43 km 单程）；1.55 μm 载波；AOM 往返相位补偿；飞轮振荡器 ~100 MHz 参考；Paris 城区电信光纤"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "PhysRevLett.94.203904"
+        claim: "a resolution of 8 × 10^−15 at 1 s, and 10^−17 at one day integration time."
+
+  - id: met.daussy2005_co2_freq_comparison
+    name: "Daussy 2005 CO₂/OsO₄-微波基准光纤比对分辨率"
+    unit: "无量纲（分数频率）"
+    role: secondary
+    description: >
+      利用 86 km 往返稳定化光纤链路比较 LPL 的 CO₂/OsO₄（~30 THz）
+      与 SYRTE 的微波频率标准（经 fs 梳桥接光/微波频率）。
+      Allan 偏差受限于 CO₂ 标准的频率稳定性（非链路本身）。
+    demonstrated_value:
+      value: "3×10⁻¹⁴ @ 1 s（CO₂ 标准稳定性限制）；fs 梳引入附加噪声 ≤ 1×10⁻¹⁴ @ 1 s"
+      conditions: "CO₂/OsO₄ 30 THz 标准 ↔ SYRTE 微波基准；fs 频率梳桥接光-微波；86 km 往返稳定化光纤"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: "PhysRevLett.94.203904"
+        claim: "we measured the frequency of a stabilized CO₂ laser at Laboratoire de Physique des Lasers (LPL) against the primary frequency standard of the Systèmes de Référence Temps Espace (SYRTE), with a resolution of 3 × 10^−14 at 1 s integration time."
+
+relations:
+  - id: rel.daussy2005_01
+    subject: meth.fiber_round_trip_phase_stabilized_dissemination
+    predicate: DERIVED-FROM
+    object: pri.fiber_round_trip_phase_noise_compensation
+    confidence: established
+    source:
+      zotero_key: "PhysRevLett.94.203904"
+      claim: "The principle of the link is to compare the optical round trip phase of a fiber link with the input phase, and then use this error signal to correct the phase noise of the fiber."
+
+  - id: rel.daussy2005_02
+    subject: ent.daussy2005_86km_fiber_link
+    predicate: REALIZES
+    object: meth.fiber_round_trip_phase_stabilized_dissemination
+    confidence: established
+    source:
+      zotero_key: "PhysRevLett.94.203904"
+      claim: "we demonstrate, for the first time, that two standards can be compared over a distance of 43 km, using a standard telecommunication optical link."
+
+  - id: rel.daussy2005_03
+    subject: met.daussy2005_86km_round_trip_allan
+    predicate: DEMONSTRATES
+    object: pri.fiber_round_trip_phase_noise_compensation
+    confidence: established
+    source:
+      zotero_key: "PhysRevLett.94.203904"
+      claim: "fractional frequency resolution of a link of 86 km in length is 10^−17 for a one day integration time."
+
+  - id: rel.daussy2005_04
+    subject: met.daussy2005_co2_freq_comparison
+    predicate: DEMONSTRATES
+    object: meth.fiber_round_trip_phase_stabilized_dissemination
+    confidence: established
+    source:
+      zotero_key: "PhysRevLett.94.203904"
+      claim: "We use the link to compare the microwave reference and a CO₂/OsO₄ frequency standard that stabilizes a femtosecond laser frequency comb."

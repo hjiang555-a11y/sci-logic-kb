@@ -2,7 +2,7 @@
 
 # 🔬 Principles Quick Reference
 
-> Auto-generated 2026-05-03 09:48 UTC
+> Auto-generated 2026-05-03 09:59 UTC
 
 ## Tier: meta
 
@@ -37,6 +37,7 @@
 | `pri.enhanced_shb_dynamics_theory_k95` | 增强空间烧孔动力学理论模型 | Ultrastable Laser | [kartner1995](topics/ultrastable-laser/papers/kartner1995.yaml) |
 | `pri.enhanced_shb_pulse_shortening_b95` | 增强空间烧孔锁模脉冲缩短效应 | Ultrastable Laser | [braun1995](topics/ultrastable-laser/papers/braun1995.yaml) |
 | `pri.fiber_propagation_reciprocity` | 光纤传播互易性原理（前向=后向传播延迟） | Time-Frequency Transfer | [xu2019_gzd2byi4](topics/time-frequency-transfer/papers/xu2019_gzd2byi4.yaml) |
+| `pri.fiber_round_trip_phase_noise_compensation` | 光纤往返相位噪声主动补偿原理（首个 86 km 演示） | Time-Frequency Transfer | [daussy2005](topics/time-frequency-transfer/papers/daussy2005.yaml) |
 | `pri.fiber_thermal_phase_noise_giant_ifog` | 大型光纤陀螺仪热相位噪声 | Ultrastable Laser | [li2019](topics/ultrastable-laser/papers/li2019.yaml) |
 | `pri.fountain_quantum_projection_noise_limit` | 喷泉钟量子投影噪声极限稳定度 | Timescales | [bize2005](topics/timescales/papers/bize2005.yaml) |
 | `pri.gaussian_beam_resonator_theory` | 高斯光束与谐振腔理论 | Ultrastable Laser | [kogelnik1966](topics/ultrastable-laser/papers/kogelnik1966.yaml) |
@@ -60,6 +61,7 @@
 | `pri.all_fiber_nonlinear_self_compression_2um` | 2 µm 全光纤非线性自压缩原理（反常色散 HNLF 中 SPM + 孤子压缩） | Optical Frequency Combs | [xing2020](topics/optical-frequency-combs/papers/xing2020.yaml) |
 | `pri.am_pm_conversion_photodetection` | 光电探测 AM-PM 转换噪声原理 | Optical Frequency Combs | [zhang2012c](topics/optical-frequency-combs/papers/zhang2012c.yaml) |
 | `pri.am_to_pm_conversion_in_comb` | 梳中 RIN→PM 幅相转换限制原理 | Optical Frequency Combs | [zhang2017](topics/optical-frequency-combs/papers/zhang2017.yaml) |
+| `pri.amplitude_stabilized_free_space_frequency_transfer` | 相位-振幅双稳定自由空间光学频率传递原理 | Time-Frequency Transfer | [gozzard2022](topics/time-frequency-transfer/papers/gozzard2022.yaml) |
 | `pri.antiresonance_wavelength_condition` | 空芯反共振光纤反共振波长条件原理 | shared | [belardi2015](topics/shared/papers/belardi2015.yaml) |
 | `pri.antiresonant_hollow_core_guidance` | 反谐振空心光纤导光原理 | Ultrastable Laser | [belardi2015](topics/ultrastable-laser/papers/belardi2015.yaml) |
 | `pri.aom_heterodyne_fiber_detection` | AOM 外差检测（光纤干涉仪误差信号提取） | Ultrastable Laser | [jiang2010](topics/ultrastable-laser/papers/jiang2010.yaml) |
