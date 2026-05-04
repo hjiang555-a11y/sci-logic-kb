@@ -1,0 +1,9 @@
+evidence: an intra-cavity EOM and a long-range PZT are used as the feedback terminals
+  simultaneously
+id: evrel_R4M8SE4F_rel.zhang_2015_15_04
+metadata:
+  source_paper: zhang2015
+  zotero_key: R4M8SE4F
+object: ent.er_fiber_intracavity_eom_comb_z15
+predicate: OPERATIONALIZED-AS
+subject: meth.eom_pzt_dual_actuator_frep_lock_z15

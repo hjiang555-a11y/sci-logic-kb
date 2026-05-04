@@ -1,0 +1,8 @@
+evidence: spectral broadening ... more than an octave
+id: evrel_RDBWYLKJ_rel.bartels_2009_ar09_06
+metadata:
+  source_paper: bartels2009
+  zotero_key: RDBWYLKJ
+object: pri.supercontinuum_octave_spanning
+predicate: ENABLED-BY
+subject: meth.klm_10ghz_comb_self_reference

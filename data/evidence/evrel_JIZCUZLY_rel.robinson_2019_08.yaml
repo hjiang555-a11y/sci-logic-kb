@@ -1,0 +1,10 @@
+evidence: we make the discovery that frequency drift depends linearly on the incident
+  power. The drift decreases as the circulating optical power is reduced, extrapolating
+  to a zero drift when the incident power is zero.
+id: evrel_JIZCUZLY_rel.robinson_2019_08
+metadata:
+  source_paper: robinson2019
+  zotero_key: JIZCUZLY
+object: pri.optical_power_cavity_drift
+predicate: BOUNDED-BY
+subject: ent.si_crystal_fp_cavity_4k_r19

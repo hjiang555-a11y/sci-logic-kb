@@ -1,0 +1,8 @@
+evidence: fundamentally limited by the Brownian thermal noise
+id: evrel_N6HILT6B_rel.chen_2025_he02
+metadata:
+  source_paper: chen2025
+  zotero_key: N6HILT6B
+object: pri.brownian_thermal_noise_fdt
+predicate: BOUNDED-BY
+subject: ent.si_crystal_fp_cavity_sub5k_c25

@@ -1,0 +1,8 @@
+evidence: showing a minimum attenuation of 175 dB/km at λ = 480 nm
+id: evrel_2F3PD62T_rel.belardi_2015_e06
+metadata:
+  source_paper: belardi2015
+  zotero_key: 2F3PD62T
+object: met.visible_attenuation_hcarf_b15
+predicate: CHARACTERIZED-BY
+subject: ent.antiresonant_hollow_core_fiber

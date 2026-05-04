@@ -1,0 +1,9 @@
+evidence: Comb performance conditioned by launch vibration and shock environment up
+  to 12.8 g peak acceleration
+id: evrel_BWX8NI2P_rel.lezius_2016_ez09
+metadata:
+  source_paper: lezius2016
+  zotero_key: BWX8NI2P
+object: ent.rocket_vibration_shock_environment
+predicate: CONDITIONED-BY
+subject: ent.spaceborne_erfiber_comb_l16

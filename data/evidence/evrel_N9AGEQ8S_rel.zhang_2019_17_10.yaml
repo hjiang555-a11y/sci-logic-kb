@@ -1,0 +1,10 @@
+evidence: The mechanical design isolates the cavity from the vibrations of the cryocooler...
+  All other mechanical connections are eliminated by placing the vacuum chamber on
+  a split plate
+id: evrel_N9AGEQ8S_rel.zhang_2019_17_10
+metadata:
+  source_paper: zhang2017
+  zotero_key: N9AGEQ8S
+object: pri.mechanical_decoupling_split_plate_z17
+predicate: IMPLEMENTS
+subject: meth.split_plate_vibration_isolation_z17

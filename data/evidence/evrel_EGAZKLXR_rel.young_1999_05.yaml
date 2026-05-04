@@ -1,0 +1,8 @@
+evidence: held at ≈30 °C, near temperature at which CTE of cavity spacer is zero
+id: evrel_EGAZKLXR_rel.young_1999_05
+metadata:
+  source_paper: young1999
+  zotero_key: EGAZKLXR
+object: pri.ule_zero_cte
+predicate: ENABLED-BY
+subject: ent.fp_cavity_system

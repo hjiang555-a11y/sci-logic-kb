@@ -1,0 +1,9 @@
+evidence: The 1 GHz MIR comb achieves spectral coverage from 3 to 13 µm through IP-DFG
+  in χ² nonlinear crystals.
+id: evrel_7HSU6V7Q_rel.hoghooghi_2022_22_01
+metadata:
+  source_paper: hoghooghi2022
+  zotero_key: 7HSU6V7Q
+object: met.mir_comb_spectral_coverage_h22
+predicate: CHARACTERIZED-BY
+subject: ent.broadband_1ghz_mir_comb_h22

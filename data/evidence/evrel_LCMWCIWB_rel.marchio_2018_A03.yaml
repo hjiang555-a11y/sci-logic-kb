@@ -1,0 +1,9 @@
+evidence: high mechanical quality factor of these single-crystal interference coatings
+  reduces the limiting thermal noise
+id: evrel_LCMWCIWB_rel.marchio_2018_A03
+metadata:
+  source_paper: marchio2018
+  zotero_key: LCMWCIWB
+object: pri.crystalline_coating_low_brownian_noise
+predicate: ENABLED-BY
+subject: ent.large_area_crystalline_coating_m18

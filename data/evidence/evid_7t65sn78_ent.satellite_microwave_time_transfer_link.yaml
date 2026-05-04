@@ -1,0 +1,15 @@
+definition: '以人造卫星为中继，借助微波（GNSS 单向/双向）或光学（T2L2、未来光学链路） 信号实现地面站间全球时间同步；TAI 构建的基础技术。
+
+  '
+id: evid_7t65sn78_ent.satellite_microwave_time_transfer_link
+metadata:
+  original_file: /data/sci-logic-kb/topics/time-frequency-transfer/papers/exertier2016_7t65sn78.yaml
+  source_paper: exertier2016_7t65sn78
+  zotero_key: 7t65sn78
+name: 卫星时间传递链路（Level 1 总节点，含微波与光学）
+original_id: ent.satellite_microwave_time_transfer_link
+properties:
+  techniques: GPS CV, TWSTFT, T2L2, future optical satellite links
+  typical_uncertainty: sub-ns (T2L2) to few ns (GPS CV)
+status: Determined
+type: Entity/Factor

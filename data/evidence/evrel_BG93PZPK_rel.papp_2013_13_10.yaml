@@ -1,0 +1,9 @@
+evidence: absolute Allan deviation of Δν by comparing it to an independent hydrogen
+  maser reference
+id: evrel_BG93PZPK_rel.papp_2013_13_10
+metadata:
+  source_paper: papp2013
+  zotero_key: BG93PZPK
+object: meth.parametric_seeding_microcomb_p13
+predicate: OPERATIONALIZED-AS
+subject: met.microcomb_linespacing_stability_p13

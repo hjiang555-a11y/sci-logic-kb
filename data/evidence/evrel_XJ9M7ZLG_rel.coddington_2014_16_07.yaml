@@ -1,0 +1,10 @@
+evidence: '"In the ideal shot-noise limit, the SNR ≈ √(τ·n_comb)/M"
+
+  '
+id: evrel_XJ9M7ZLG_rel.coddington_2014_16_07
+metadata:
+  source_paper: coddington2016
+  zotero_key: XJ9M7ZLG
+object: met.dcs_snr_per_tooth
+predicate: CHARACTERIZED-BY
+subject: ent.dual_comb_spectrometer

@@ -1,0 +1,20 @@
+definition: '30 cm ULE 凹口圆柱腔（D = 15 cm），FS 镜 + ULE 补偿环， Finesse ~314,000（ringdown
+  测量），水平放置于 Zerodur 基板 + 4 个硅球，用于 ⁸⁷Sr 光晶格钟。
+
+  '
+id: evid_AFFU5KGB_ent.ule_cavity_30cm_sr_l18
+metadata:
+  original_file: /data/sci-logic-kb/topics/ultrastable-laser/papers/li2018.yaml
+  source_paper: li2018
+  zotero_key: AFFU5KGB
+name: 30 cm ULE 参考腔（Li 2018, Sr 钟）
+original_id: ent.ule_cavity_30cm_sr_l18
+properties:
+  cavity_length: 30 cm
+  diameter: 15 cm
+  finesse: ~314,000
+  mirror_material: fused silica + ULE compensation rings
+  servo_bandwidth: ~1.5 MHz
+  spacer_material: ULE (notched cylinder)
+status: Determined
+type: Entity/Factor

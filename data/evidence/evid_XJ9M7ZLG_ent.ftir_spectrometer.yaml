@@ -1,0 +1,18 @@
+definition: '基于迈克尔逊干涉仪的经典宽带光谱仪。通过机械移动反射镜扫描光程差， 记录干涉图后傅里叶变换获得光谱。使用热光源（黑体辐射）， 光谱覆盖范围极宽（近红外到远红外），是分析化学和分子光谱的标准工具。
+
+  '
+id: evid_XJ9M7ZLG_ent.ftir_spectrometer
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/coddington2016.yaml
+  source_paper: coddington2016
+  zotero_key: XJ9M7ZLG
+name: 傅里叶变换红外光谱仪
+original_id: ent.ftir_spectrometer
+properties:
+  frequency_accuracy: 受仪器标定限制
+  light_source: 热光源（黑体辐射，非相干）
+  moving_parts: 需要精密扫描反射镜（机械干涉仪）
+  resolution_limit: 由最大光程差决定，典型 0.001–1 cm⁻¹
+  spectral_coverage: 极宽（近红外至远红外全覆盖）
+status: Determined
+type: Entity/Factor

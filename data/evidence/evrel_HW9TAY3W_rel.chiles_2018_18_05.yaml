@@ -1,0 +1,9 @@
+evidence: CW-pumped parametric oscillation and frequency comb generation via four-wave
+  mixing in the SiN:D microring
+id: evrel_HW9TAY3W_rel.chiles_2018_18_05
+metadata:
+  source_paper: chiles2018
+  zotero_key: HW9TAY3W
+object: pri.parametric_four_wave_mixing_comb
+predicate: ENABLED-BY
+subject: ent.sind_mi_kerr_comb_c18

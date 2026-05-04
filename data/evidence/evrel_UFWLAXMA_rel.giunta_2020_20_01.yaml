@@ -1,0 +1,8 @@
+evidence: measuring an offset between two combs of (5.4 ± 5.3) × 10⁻²¹
+id: evrel_UFWLAXMA_rel.giunta_2020_20_01
+metadata:
+  source_paper: giunta2020
+  zotero_key: UFWLAXMA
+object: met.comb_frequency_synthesis_accuracy_g20
+predicate: CHARACTERIZED-BY
+subject: ent.ultra_low_noise_fiber_comb_g20

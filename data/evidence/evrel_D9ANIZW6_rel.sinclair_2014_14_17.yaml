@@ -1,0 +1,9 @@
+evidence: integrated phase noise on fopt increased roughly linearly with vibration
+  level at 3.8 rad/g
+id: evrel_D9ANIZW6_rel.sinclair_2014_14_17
+metadata:
+  source_paper: sinclair2014
+  zotero_key: D9ANIZW6
+object: pri.vibration_fopt_linear_coupling
+predicate: BOUNDED-BY
+subject: ent.ruggedized_field_comb_s14

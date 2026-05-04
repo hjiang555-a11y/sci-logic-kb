@@ -1,0 +1,8 @@
+evidence: silicon cavity laser as the local oscillator
+id: evrel_OELKER2019_rel.oelker_2019_el19_02
+metadata:
+  source_paper: oelker2019
+  zotero_key: OELKER2019
+object: ent.fp_cavity_system
+predicate: CONDITIONED-BY
+subject: ent.jila_dual_sr_clock_si_lo_o19

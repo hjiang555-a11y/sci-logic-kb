@@ -1,0 +1,8 @@
+evidence: simultaneous SHG and SCG ... no interferometer is needed
+id: evrel_CML5935T_rel.hickstein_2017_17_06
+metadata:
+  source_paper: hickstein2017
+  zotero_key: CML5935T
+object: pri.dual_chi2_chi3_integrated_f2f
+predicate: ENABLED-BY
+subject: meth.on_chip_f2f_stabilization

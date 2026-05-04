@@ -1,0 +1,17 @@
+definition: '以薄壁反谐振包层将光主要约束在空气核心中，尽量减小光场与玻璃的重叠， 以获得宽传输带宽、低材料散射耦合和可用于气体填充/长延迟线的空心导光平台。
+
+  '
+id: evid_2F3PD62T_ent.antiresonant_hollow_core_fiber
+metadata:
+  original_file: /data/sci-logic-kb/topics/ultrastable-laser/papers/belardi2015.yaml
+  source_paper: belardi2015
+  zotero_key: 2F3PD62T
+name: 反谐振空心光纤（HC-ARF）
+original_id: ent.antiresonant_hollow_core_fiber
+properties:
+  core_structure: 单环/双环/三环 antiresonant tubes；可采用 nested tubes 或 free core boundary
+  first_window_example: 23 μm core, t = 0.34 ± 0.02 μm, transmission 0.75–1.6 μm
+  spectral_control: 反谐振窗口由包层壁厚 t 控制，第一窗口带宽最大
+  visible_example: 51 μm core, t1 ≈ 1.27 ± 0.06 μm, attenuation 175 dB/km @ 480 nm
+status: Determined
+type: Entity/Factor

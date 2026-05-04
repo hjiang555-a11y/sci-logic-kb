@@ -1,0 +1,8 @@
+evidence: 利用高非线性光纤和倍频晶体将光纤光梳直接输出光谱由 1520~1607 nm 扩展到 671 nm
+id: evrel_CA55MEKS_rel.rao_2019_19_15
+metadata:
+  source_paper: rao2019
+  zotero_key: CA55MEKS
+object: pri.nir_to_visible_shg_comb_link_r19
+predicate: ENABLED-BY
+subject: meth.hnlf_pplc_671nm_comb_extension_r19

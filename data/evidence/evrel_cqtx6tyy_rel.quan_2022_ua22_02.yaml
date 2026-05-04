@@ -1,0 +1,9 @@
+evidence: two adjacent frequency dissemination systems used different frequency transmitted
+  signals
+id: evrel_cqtx6tyy_rel.quan_2022_ua22_02
+metadata:
+  source_paper: quan2022_cqtx6tyy
+  zotero_key: cqtx6tyy
+object: pri.cascaded_rf_stages_crosstalk_mitigation
+predicate: OPERATIONALIZED-AS
+subject: ent.ntsc_212km_cascaded_rf_link_q22

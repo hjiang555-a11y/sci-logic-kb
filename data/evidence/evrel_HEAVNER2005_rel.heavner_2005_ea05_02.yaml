@@ -1,0 +1,8 @@
+evidence: realization of the SI second
+id: evrel_HEAVNER2005_rel.heavner_2005_ea05_02
+metadata:
+  source_paper: heavner2005
+  zotero_key: HEAVNER2005
+object: pri.si_second_cesium_definition
+predicate: REALIZES
+subject: ent.nist_f1_cs_fountain_h05

@@ -1,0 +1,21 @@
+definition: 'NPL Teddington 超稳激光系统：48.5 cm 长 ULE 光学腔， 振动隔离主动改进后达到腔热噪声极限， MDEV 稳定度
+  6×10⁻¹⁷（7×10⁻¹⁷ ADEV），室温运行。
+
+  '
+id: evid_K5JMAYPZ_ent.npl_ule_cavity_laser_sc21
+metadata:
+  original_file: /data/sci-logic-kb/topics/ultrastable-laser/papers/schioppo2021.yaml
+  source_paper: schioppo2021
+  zotero_key: K5JMAYPZ
+name: NPL 超稳激光（48.5 cm ULE 腔，Schioppo 2021）
+original_id: ent.npl_ule_cavity_laser_sc21
+properties:
+  cavity_length: 48.5 cm
+  demonstrated_value: 60000000000.0
+  instability_adev: 7×10⁻¹⁷
+  instability_mdev: 6×10⁻¹⁷
+  location: NPL Teddington, UK
+  spacer_material: ULE
+  value_type: quantitative
+status: Determined
+type: Entity/Factor

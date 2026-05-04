@@ -1,0 +1,8 @@
+evidence: fast intra-cavity electro-optic modulator for tight phase locking
+id: evrel_JBIG86N9_rel.nicolodi_2014_02
+metadata:
+  source_paper: nicolodi2014
+  zotero_key: JBIG86N9
+object: met.spectral_purity_transfer_degradation_nicolodi2014
+predicate: ENABLES
+subject: meth.intra_cavity_eom_phase_lock

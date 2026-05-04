@@ -1,0 +1,18 @@
+definition: 级联稳频：一级压窄至 kHz 级，二级压窄至亚赫兹
+id: evid_EGAZKLXR_ent.two_stage_pdh_lock_young99
+metadata:
+  original_file: /data/sci-logic-kb/topics/ultrastable-laser/papers/young1999.yaml
+  source_paper: young1999
+  zotero_key: EGAZKLXR
+name: 两级 PDH 锁频系统（Young 1999）
+original_id: ent.two_stage_pdh_lock_young99
+properties:
+  stage_1_actuators: 腔内 EOM（高频）+ PZT 反射镜（低频）
+  stage_1_bandwidth: ≈ 2 MHz
+  stage_1_linewidth: ≈ 1 kHz
+  stage_1_target: 低精细度预稳腔（finesse ≈ 800）
+  stage_2_actuators: AOM 调频（高频，up to 90 kHz）+ PZT 调整预稳腔（低频）
+  stage_2_target: ULE 高精细度腔（finesse > 150,000）
+  stage_2_technique: PDH（同 Drever 1983）
+status: Determined
+type: Entity/Factor

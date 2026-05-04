@@ -1,0 +1,8 @@
+evidence: observing the interference between the carrier and the spatial mode
+id: evrel_S5PX7GHC_rel.shaddock_1999_04
+metadata:
+  source_paper: shaddock1999
+  zotero_key: S5PX7GHC
+object: pri.spatial_homodyne_detection
+predicate: ENABLED-BY
+subject: meth.tilt_locking

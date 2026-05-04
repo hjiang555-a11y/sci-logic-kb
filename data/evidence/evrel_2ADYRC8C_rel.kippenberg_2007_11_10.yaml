@@ -1,0 +1,9 @@
+evidence: The uniformity of the mode spacing was shown to be better than 1 part in
+  10¹⁷
+id: evrel_2ADYRC8C_rel.kippenberg_2007_11_10
+metadata:
+  source_paper: kippenberg2011
+  zotero_key: 2ADYRC8C
+object: met.microcomb_mode_spacing_uniformity
+predicate: CHARACTERIZED-BY
+subject: ent.microresonator_frequency_comb

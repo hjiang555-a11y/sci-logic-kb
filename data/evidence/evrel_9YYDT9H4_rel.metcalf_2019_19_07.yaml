@@ -1,0 +1,8 @@
+evidence: stellar RVs approaching 1 m/s
+id: evrel_9YYDT9H4_rel.metcalf_2019_19_07
+metadata:
+  source_paper: metcalf2019
+  zotero_key: 9YYDT9H4
+object: met.stellar_rv_precision_nir_m19
+predicate: CHARACTERIZED-BY
+subject: meth.eo_sin_astrocomb_calibration_m19

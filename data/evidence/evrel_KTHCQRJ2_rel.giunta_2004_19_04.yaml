@@ -1,0 +1,8 @@
+evidence: 4.2 parts in 10¹⁵ relative accuracy in 2013
+id: evrel_KTHCQRJ2_rel.giunta_2004_19_04
+metadata:
+  source_paper: giunta2019
+  zotero_key: KTHCQRJ2
+object: met.hydrogen_1s2s_frequency_accuracy
+predicate: CHARACTERIZED-BY
+subject: ent.optical_frequency_comb

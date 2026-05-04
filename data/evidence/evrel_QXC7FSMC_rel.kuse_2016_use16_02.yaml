@@ -1,0 +1,9 @@
+evidence: 40 attosecond from 10 kHz to 10 MHz, which is the lowest value of any Er
+  fiber frequency comb to date
+id: evrel_QXC7FSMC_rel.kuse_2016_use16_02
+metadata:
+  source_paper: kuse2016
+  zotero_key: QXC7FSMC
+object: met.er_fiber_comb_timing_jitter_k16
+predicate: CHARACTERIZED-BY
+subject: ent.all_pm_er_nalm_comb_k16

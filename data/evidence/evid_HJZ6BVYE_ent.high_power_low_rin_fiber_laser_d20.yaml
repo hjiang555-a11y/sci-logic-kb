@@ -1,0 +1,20 @@
+definition: '全光纤主振荡器-功率放大器（MOPA），1064 nm，365 W 输出， 定制大模面积光纤（MFD = 30 μm），RIN 伺服 1
+  MHz 带宽。 无 SBS 或模式不稳定。
+
+  '
+id: evid_HJZ6BVYE_ent.high_power_low_rin_fiber_laser_d20
+metadata:
+  original_file: /data/sci-logic-kb/topics/ultrastable-laser/papers/dixneuf2020.yaml
+  source_paper: dixneuf2020
+  zotero_key: HJZ6BVYE
+name: 365 W 超低 RIN 全光纤单频激光（Dixneuf 2020）
+original_id: ent.high_power_low_rin_fiber_laser_d20
+properties:
+  beam_quality: M² < 1.1
+  output_power: 365 W (350 W isolated)
+  power_stability: <0.7% RMS over 1100 hours
+  rin: -160 dBc/Hz @ 2–10 kHz
+  servo_bandwidth: 1 MHz
+  wavelength: 1064 nm
+status: Determined
+type: Entity/Factor

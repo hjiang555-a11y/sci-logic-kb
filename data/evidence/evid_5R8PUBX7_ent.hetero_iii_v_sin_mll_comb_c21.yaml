@@ -1,0 +1,21 @@
+definition: 'III-V 增益剖面（QW 增益 + 可饱和吸收器）通过键合集成到 Si₃N₄ 低损耗波导平台上， 构成扩展腔环形 colliding-pulse
+  被动锁模激光器；利用 SiN 的超低线性/非线性损耗 大幅延长腔长，使重频降至 755 MHz（远低于纯 III-V MLL 的 GHz-THz 级）， 同时保持
+  RF 线宽 1 Hz、光学线宽 <200 kHz。晶圆级工艺 → 可低成本批量制造。
+
+  '
+id: evid_5R8PUBX7_ent.hetero_iii_v_sin_mll_comb_c21
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/cuyvers2021.yaml
+  source_paper: cuyvers2021
+  zotero_key: 5R8PUBX7
+name: 异质集成 III-V / SiN 被动锁模激光梳（Cuyvers 2021）
+original_id: ent.hetero_iii_v_sin_mll_comb_c21
+properties:
+  optical_linewidth: <200 kHz
+  platform: III-V on Si₃N₄（heterogeneous integration, wafer-scale）
+  pumping: 电泵浦（无需外部光泵）
+  repetition_rate: 755 MHz
+  rf_linewidth: 1 Hz
+  topology: ring-type extended cavity, colliding-pulse MLL
+status: Determined
+type: Entity/Factor

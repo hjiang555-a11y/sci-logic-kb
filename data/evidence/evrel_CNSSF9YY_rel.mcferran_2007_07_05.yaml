@@ -1,0 +1,8 @@
+evidence: using pump current feedback with a servo bandwidth of ~80 kHz
+id: evrel_CNSSF9YY_rel.mcferran_2007_07_05
+metadata:
+  source_paper: mcferran2007
+  zotero_key: CNSSF9YY
+object: meth.pump_current_feedback_fceo_lock
+predicate: OPERATIONALIZED-AS
+subject: met.fceo_integrated_phase_noise_m07

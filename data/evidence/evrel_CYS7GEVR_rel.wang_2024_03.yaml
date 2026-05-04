@@ -1,0 +1,12 @@
+evidence: '"the phase noise followed the hertz-linewidth laser, decreasing from 20
+  rad to 6 rad. Furthermore, to ensure continuous coherence and stability of the disseminated
+  laser, the data processing based on FPGA was employed to eliminate phase cycle slips."
+
+  '
+id: evrel_CYS7GEVR_rel.wang_2024_03
+metadata:
+  source_paper: wang2024a
+  zotero_key: CYS7GEVR
+object: meth.fiber_link_phase_noise_cancellation_w16
+predicate: DEPENDS-ON
+subject: meth.optical_freq_purification_w24

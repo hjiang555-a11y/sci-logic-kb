@@ -1,0 +1,13 @@
+evidence: '"DCS will never usurp FTIR for many applications until it has much broader
+  spectral coverage into the mid-IR (3–5 μm) and far-IR (6–13 μm)... for all its advantages,
+  DCS will never usurp FTIR for many applications until it has much broader spectral
+  coverage."
+
+  '
+id: evrel_XJ9M7ZLG_rel.coddington_2014_16_10
+metadata:
+  source_paper: coddington2016
+  zotero_key: XJ9M7ZLG
+object: ent.ftir_spectrometer
+predicate: COMPETES-WITH
+subject: ent.dual_comb_spectrometer

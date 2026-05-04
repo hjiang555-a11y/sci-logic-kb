@@ -1,0 +1,8 @@
+evidence: finite coherence time of the optical local oscillator
+id: evrel_mc7xt8b5_rel.kim_2022_im23_02
+metadata:
+  source_paper: kim2023_mc7xt8b5
+  zotero_key: mc7xt8b5
+object: ent.fp_cavity_system
+predicate: CONDITIONED-BY
+subject: ent.differential_spectroscopy_interspecies_k23

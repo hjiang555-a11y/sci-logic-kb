@@ -1,0 +1,9 @@
+evidence: Transfer functions are derived for the comb response to change in cavity
+  length, pump power or cavity loss.
+id: evrel_NHJ84W8G_rel.newbury_2005_ewb05_04
+metadata:
+  source_paper: newbury2005
+  zotero_key: NHJ84W8G
+object: pri.fiber_comb_perturbative_response_theory
+predicate: OPERATIONALIZED-AS
+subject: meth.fiber_comb_transfer_function_identification

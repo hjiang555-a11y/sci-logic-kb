@@ -1,0 +1,14 @@
+definition: '50 mm 直径球形 ULE 间隔体，两端磨平并光学接触 Ø12.7 mm 熔融石英镜 （曲率半径 50 cm，精细度 7.9×10⁵ @
+  1070 nm）。 球形几何对称性被动降低加速度灵敏度。不锈钢 304 柔性弹簧双点支撑， Torlon 球接触，适合转动测量平台使用。
+
+  '
+id: evid_H5MYBTXH_ent.spherical_ule_cavity_l13b
+metadata:
+  original_file: /data/sci-logic-kb/topics/ultrastable-laser/papers/leibrandt2013b.yaml
+  source_paper: leibrandt2013b
+  zotero_key: H5MYBTXH
+name: 球形 ULE 腔（Leibrandt 2013b）
+original_id: ent.spherical_ule_cavity_l13b
+properties: {}
+status: Determined
+type: Entity/Factor

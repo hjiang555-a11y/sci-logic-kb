@@ -1,0 +1,9 @@
+evidence: fiber-stabilized laser noise comparable to high-finesse Fabry-Perot cavity
+  stabilized laser
+id: evrel_MN54T4F3_rel.kéfélian_2009_ef03
+metadata:
+  source_paper: kefelian2009
+  zotero_key: MN54T4F3
+object: meth.fiber_delay_locking
+predicate: OPERATIONALIZED-AS
+subject: met.freq_noise_psd_fiber_kef09

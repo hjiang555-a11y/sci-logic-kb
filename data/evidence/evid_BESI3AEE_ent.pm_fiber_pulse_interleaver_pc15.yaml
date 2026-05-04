@@ -1,0 +1,25 @@
+definition: '由 5 级级联 PM 50/50 熔接光纤分束/合束器（分光比误差 <1%）实现脉冲重频 2⁵ = 32 倍增 （100 MHz → 3.2
+  GHz），第 6 级延时 104.2 ps 增强 9.6 GHz（第 3 谐波）幅度， 末端用保偏偏振合束器（PBC）将两输入通道以正交偏振合并到单一光纤输出，
+  输出脉冲对具备交替正交偏振；由于光电探测对偏振不敏感，单端口功率 比非偏振 50/50 合束器高近 3 dB。使用快速采样示波器（0.2 ps 分辨率） 保证
+  6 级延时误差 ≤1.5 ps，无需主动温度稳定。
+
+  '
+id: evid_BESI3AEE_ent.pm_fiber_pulse_interleaver_pc15
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/portuondo-campa2015.yaml
+  source_paper: portuondo-campa2015
+  zotero_key: BESI3AEE
+name: 保偏 6 级光纤脉冲交织器（Portuondo-Campa 2015）
+original_id: ent.pm_fiber_pulse_interleaver_pc15
+properties:
+  delay_error_all_stages: ≤1.5 ps
+  insertion_loss: 1–1.5 dB
+  multiplication_factor: 2⁵ = 32（前 5 级）
+  output_polarization: 交替正交（两入经 PBC 合一出）
+  output_rep_rate: 3.2 GHz（前 5 级后）
+  sixth_stage_delay: 104.2 ps（= 1/9.6 GHz）
+  splice_ratio_error: <1%
+  stage_count: 6
+  thermal_stabilization: 无（被动）
+status: Determined
+type: Entity/Factor

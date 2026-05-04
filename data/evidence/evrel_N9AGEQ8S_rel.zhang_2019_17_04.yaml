@@ -1,0 +1,9 @@
+evidence: the thermal noise floor of 6 × 10−17... is computed taking into account
+  the operating temperature, the cavity length, and the beam spot size
+id: evrel_N9AGEQ8S_rel.zhang_2019_17_04
+metadata:
+  source_paper: zhang2017
+  zotero_key: N9AGEQ8S
+object: pri.brownian_thermal_noise_fdt
+predicate: BOUNDED-BY
+subject: ent.si_crystal_fp_cavity_4k_r19

@@ -1,0 +1,8 @@
+evidence: multiple independent parametric oscillation processes are active
+id: evrel_BG93PZPK_rel.papp_2013_13_13
+metadata:
+  source_paper: papp2013
+  zotero_key: BG93PZPK
+object: pri.parametric_four_wave_mixing_comb
+predicate: DERIVED-FROM
+subject: pri.microcomb_subcomb_offset_p13

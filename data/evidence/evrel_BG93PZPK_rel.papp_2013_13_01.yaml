@@ -1,0 +1,9 @@
+evidence: a CW laser's intensity is modulated at frequency feo with a standard Mach-Zehnder
+  electro-optic modulator
+id: evrel_BG93PZPK_rel.papp_2013_13_01
+metadata:
+  source_paper: papp2013
+  zotero_key: BG93PZPK
+object: ent.parametrically_seeded_microcomb_p13
+predicate: PART-OF
+subject: ent.eo_sideband_seed_injector_p13

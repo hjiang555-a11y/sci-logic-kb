@@ -1,0 +1,8 @@
+evidence: two Vernier microring filters for wavelength tunability
+id: evrel_EBNL35EE_rel.stern_2018_18_03
+metadata:
+  source_paper: stern2018
+  zotero_key: EBNL35EE
+object: ent.battery_operated_microcomb_s18
+predicate: PART-OF
+subject: ent.vernier_microring_filter_pair_s18

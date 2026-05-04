@@ -1,0 +1,8 @@
+evidence: f-2f interferometer
+id: evrel_VATLBIAD_rel.wang_2014_14_05
+metadata:
+  source_paper: wang2014
+  zotero_key: VATLBIAD
+object: pri.self_referencing_f2f
+predicate: ENABLED-BY
+subject: meth.amplifier_free_high_frep_yb_comb

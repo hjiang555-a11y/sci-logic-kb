@@ -1,0 +1,9 @@
+evidence: rotational transition frequencies measured via quantum-logic spectroscopy
+  with OFC-referenced probe laser
+id: evrel_DUJ8VXBR_rel.chou_2020_ho20_09
+metadata:
+  source_paper: chou2020
+  zotero_key: DUJ8VXBR
+object: meth.single_ion_ofc_quantum_logic_spectroscopy_c20
+predicate: OPERATIONALIZED-AS
+subject: met.rotational_transition_frequency_uncertainty_c20

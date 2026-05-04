@@ -1,0 +1,9 @@
+evidence: the typical bandwidth of a VUV comb is smaller than the uncertainty range
+  of the 229mTh transition
+id: evrel_25EY6V8L_rel.zhang_2022_22_06
+metadata:
+  source_paper: zhang2022
+  zotero_key: 25EY6V8L
+object: pri.cavity_enhanced_hhg_comb
+predicate: BOUNDED-BY
+subject: met.vuv_comb_tunability_z22

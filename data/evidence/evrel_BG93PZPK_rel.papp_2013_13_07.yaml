@@ -1,0 +1,8 @@
+evidence: Δν can be varied over a range of ∼10 MHz
+id: evrel_BG93PZPK_rel.papp_2013_13_07
+metadata:
+  source_paper: papp2013
+  zotero_key: BG93PZPK
+object: met.microcomb_linespacing_tuning_range_p13
+predicate: CHARACTERIZED-BY
+subject: ent.parametrically_seeded_microcomb_p13

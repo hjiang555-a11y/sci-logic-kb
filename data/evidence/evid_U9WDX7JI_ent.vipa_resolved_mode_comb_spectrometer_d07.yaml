@@ -1,0 +1,22 @@
+definition: '用 VIPA 高分辨色散器（FSR ~50 GHz）+ 衍射光栅（覆盖 THz 范围）将稳定 Ti:sapph 梳（1 GHz 间距） 空间分辨为二维阵列：x
+  方向（VIPA 色散）分辨单个梳齿（3 GHz 经 Fabry-Pérot 滤波后）， y 方向（光栅色散）覆盖宽带（>6 THz）；CCD 成像并行读出数千梳齿的振幅（分子吸收调制），
+  采集时间数毫秒（vs. 扫描单齿需数分钟），实现高速分子指纹图谱二维成像。
+
+  '
+id: evid_U9WDX7JI_ent.vipa_resolved_mode_comb_spectrometer_d07
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/diddams2007.yaml
+  source_paper: diddams2007
+  zotero_key: U9WDX7JI
+name: VIPA 分辨梳模式光谱仪（Diddams 2007）
+original_id: ent.vipa_resolved_mode_comb_spectrometer_d07
+properties:
+  acquisition_time: 数毫秒（CCD 并行读出，vs. 扫描单齿需分钟）
+  demonstrated_molecule: 碘分子蒸气（I₂）高分辨吸收谱
+  grating_dispersion: 覆盖 THz 范围（y 方向）
+  source_comb: Ti:sapph 梳 1 GHz（经 Fabry-Pérot 滤波至 3 GHz 间距）
+  spatial_resolution: 每个梳齿对应二维阵列中一个"点"（x-y 坐标唯一）
+  spectral_coverage: '>6 THz（633 ± 5 nm 区域）'
+  vipa_fsr: ~50 GHz（自由光谱范围）
+status: Determined
+type: Entity/Factor

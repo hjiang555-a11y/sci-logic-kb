@@ -1,0 +1,9 @@
+evidence: limited in performance by the Brownian thermal noise associated with the
+  mechanical dissipation of the mirror coatings
+id: evrel_8YK6EH22_rel.kedar_2023_ed03
+metadata:
+  source_paper: kedar2023
+  zotero_key: 8YK6EH22
+object: pri.brownian_thermal_noise_fdt
+predicate: BOUNDED-BY
+subject: ent.si_crystal_fp_cavity_k12

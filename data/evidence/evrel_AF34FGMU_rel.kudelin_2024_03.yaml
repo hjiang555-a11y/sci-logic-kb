@@ -1,0 +1,9 @@
+evidence: phase noise of −96 dBc Hz⁻¹ at 100 Hz offset frequency that decreases to
+  −135 dBc Hz⁻¹ at 10 kHz offset.
+id: evrel_AF34FGMU_rel.kudelin_2024_03
+metadata:
+  source_paper: kudelin2024
+  zotero_key: AF34FGMU
+object: met.chip_mw_phase_noise_k24
+predicate: CHARACTERIZED-BY
+subject: ent.chip_photonic_mw_oscillator_k24

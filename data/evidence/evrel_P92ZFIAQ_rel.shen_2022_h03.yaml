@@ -1,0 +1,12 @@
+evidence: '"An USL with a 3×10⁻¹⁵ frequency instability at 1 s at a wavelength (λ)
+  of 1,550.12 nm is used as the reference clock source. The OFC optical phase locked
+  to the USL is used as the carrier and reference signals of the local sampling."
+
+  '
+id: evrel_P92ZFIAQ_rel.shen_2022_h03
+metadata:
+  source_paper: shen2022
+  zotero_key: P92ZFIAQ
+object: meth.pdh_locking
+predicate: DEPENDS-ON
+subject: ent.freespace_tf_link_113km_sh22

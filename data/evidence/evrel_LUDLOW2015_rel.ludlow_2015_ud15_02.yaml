@@ -1,0 +1,8 @@
+evidence: atomic response to room-temperature blackbody radiation
+id: evrel_LUDLOW2015_rel.ludlow_2015_ud15_02
+metadata:
+  source_paper: ludlow2015
+  zotero_key: LUDLOW2015
+object: pri.blackbody_radiation_stark_shift
+predicate: BOUNDED-BY
+subject: ent.optical_lattice_clock

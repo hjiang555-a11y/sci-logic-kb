@@ -1,0 +1,9 @@
+evidence: pulse-amplitude four-level modulation scheme with a two-terabit-per-second
+  aggregate rate
+id: evrel_AT5ZTB9M_rel.shu_2022_22_13
+metadata:
+  source_paper: shu2022
+  zotero_key: AT5ZTB9M
+object: meth.microcomb_parallel_pam4_wdm_link_s22
+predicate: OPERATIONALIZED-AS
+subject: met.microcomb_aggregate_data_rate_s22

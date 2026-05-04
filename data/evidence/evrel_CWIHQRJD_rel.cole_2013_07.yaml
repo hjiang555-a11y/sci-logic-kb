@@ -1,0 +1,9 @@
+evidence: substrate-transferred crystalline coatings... employing these crystalline
+  coatings as end mirrors in a Fabry-Perot cavity
+id: evrel_CWIHQRJD_rel.cole_2013_07
+metadata:
+  source_paper: cole2013
+  zotero_key: CWIHQRJD
+object: meth.substrate_transferred_crystalline_coating_c13
+predicate: IMPLEMENTS
+subject: ent.algaas_crystalline_mirror_c13

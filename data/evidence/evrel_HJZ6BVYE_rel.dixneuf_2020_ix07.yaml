@@ -1,0 +1,8 @@
+evidence: beam quality M² < 1.1
+id: evrel_HJZ6BVYE_rel.dixneuf_2020_ix07
+metadata:
+  source_paper: dixneuf2020
+  zotero_key: HJZ6BVYE
+object: ent.high_power_low_rin_fiber_laser_d20
+predicate: CHARACTERIZES
+subject: met.beam_quality_d20

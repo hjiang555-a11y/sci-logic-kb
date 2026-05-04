@@ -1,0 +1,9 @@
+evidence: Vibration sensitivity components measured are equal to or better than 1.5×10⁻¹¹
+  per m/s² for each spatial direction
+id: evrel_GLXHEIPV_rel.millo_2009_il04
+metadata:
+  source_paper: millo2009
+  zotero_key: GLXHEIPV
+object: met.acceleration_sensitivity_millo09
+predicate: CHARACTERIZED-BY
+subject: ent.fp_cavity_system

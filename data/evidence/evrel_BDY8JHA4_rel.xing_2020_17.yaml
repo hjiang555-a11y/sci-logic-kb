@@ -1,0 +1,9 @@
+evidence: milliwatt-level peak powers at a 100 MHz repetition rate should be feasible
+  with a photonic crystal fiber at the last compression stage
+id: evrel_BDY8JHA4_rel.xing_2020_17
+metadata:
+  source_paper: xing2020
+  zotero_key: BDY8JHA4
+object: ent.photonic_crystal_fiber
+predicate: CONDITIONED-BY
+subject: ent.all_fiber_2um_comb_x20

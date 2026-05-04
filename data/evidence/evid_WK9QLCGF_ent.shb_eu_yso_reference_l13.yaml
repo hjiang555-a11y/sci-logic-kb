@@ -1,0 +1,19 @@
+definition: '利用稀土离子 Eu³⁺ 掺杂 Y₂SiO₅ 晶体中的光谱烧孔作为频率参考。 低温（4 K）工作，光谱孔寿命长（kHz 线宽）， 提供与 FP
+  腔互补的频率参考方案。
+
+  '
+id: evid_WK9QLCGF_ent.shb_eu_yso_reference_l13
+metadata:
+  original_file: /data/sci-logic-kb/topics/ultrastable-laser/papers/leibrandt2013.yaml
+  source_paper: leibrandt2013
+  zotero_key: WK9QLCGF
+name: Eu³⁺:Y₂SiO₅ 光谱烧孔频率参考
+original_id: ent.shb_eu_yso_reference_l13
+properties:
+  drift_rate: 5×10⁻¹⁸ /s
+  hole_lifetime: long (hours to days)
+  material: Eu³⁺:Y₂SiO₅
+  temperature: 4 K
+  wavelength: 580 nm (⁷F₀ → ⁵D₀)
+status: Determined
+type: Entity/Factor

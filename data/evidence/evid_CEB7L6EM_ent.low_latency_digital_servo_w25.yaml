@@ -1,0 +1,23 @@
+definition: '光频梳 fceo 与 fbeat 的同时数字锁相电子学。板载 2×16-bit/100 MSPS ADC、2×DAC、 Xilinx Kintex-7
+  7k325t FPGA（400 MHz 主时钟）；外部参考信号缓冲做 FPGA 时钟以实现全板同步。 Channel 1 → fceo 环（驱动泵浦电流）；Channel
+  2 → fbeat 环（快 EOM + 慢 PZT）。 数字链路：IIR 一阶高通 → 低阶 FIR + 陷波 → DDS 混频 IQ 解调 → 改进 atan2（非
+  CORDIC）→ 快慢级联 PID → DAC。
+
+  '
+id: evid_CEB7L6EM_ent.low_latency_digital_servo_w25
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/wang2025.yaml
+  source_paper: wang2025
+  zotero_key: CEB7L6EM
+name: 低延迟 FPGA 数字伺服板（Wang 2025）
+original_id: ent.low_latency_digital_servo_w25
+properties:
+  adc_dac: 2×16-bit 100 MSPS ADC (SNR 73.9 dB @50 MHz BW, ENOB 12.2 bit) + 2 路 DAC
+  control_bandwidth: 1.1 MHz
+  diagnostics: 内建频率计数器、频谱分析、VNA 环路传函测量
+  fpga: Xilinx Kintex-7 7k325t, 400 MHz 主时钟（部分链路降至 200 MHz 以单周期化 DSP）
+  iq_demod_latency: ~50 ns
+  pid_architecture: 快 PID 级联慢 PID（扩展频率范围）
+  total_board_latency: <250 ns
+status: Determined
+type: Entity/Factor

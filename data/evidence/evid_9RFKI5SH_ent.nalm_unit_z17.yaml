@@ -1,0 +1,16 @@
+definition: '通过 50:50 光纤耦合器形成的环路，利用两束反向传播光的非线性相位差产生等效强度依赖反射率， 在本文方案中负责启动锁模、整形较宽脉冲。包含偏振控制器用于调节光纤双折射以优化相位差关系。
+
+  '
+id: evid_9RFKI5SH_ent.nalm_unit_z17
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/zhang2017.yaml
+  source_paper: zhang2017
+  zotero_key: 9RFKI5SH
+name: 非线性放大环镜（NALM）子模块
+original_id: ent.nalm_unit_z17
+properties:
+  coupler_ratio: '50:50'
+  pulse_energy_limit: soliton fission 出现 → 单脉冲能量上限 ~0.75 nJ
+  role: 启动锁模 + 宽脉冲整形
+status: Determined
+type: Entity/Factor

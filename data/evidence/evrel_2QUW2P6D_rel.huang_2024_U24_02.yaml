@@ -1,0 +1,9 @@
+evidence: The comb-calibrated FMCW coherent sensor achieves NLOS vibrometry accuracy
+  at the tens-of-Hz level through multi-frame phase tracking.
+id: evrel_2QUW2P6D_rel.huang_2024_U24_02
+metadata:
+  source_paper: huang2024
+  zotero_key: 2QUW2P6D
+object: met.nlos_vibrometry_accuracy_h24
+predicate: CHARACTERIZED-BY
+subject: ent.comb_calibrated_fmcw_nlos_sensor_h24

@@ -1,0 +1,9 @@
+evidence: access to high repetition rates in the range of 10 to 1000 gigahertz through
+  compact, chip-scale integration
+id: evrel_2ADYRC8C_rel.kippenberg_2007_11_11
+metadata:
+  source_paper: kippenberg2011
+  zotero_key: 2ADYRC8C
+object: meth.cw_pumped_microcomb_generation
+predicate: OPERATIONALIZED-AS
+subject: met.microcomb_repetition_rate_range

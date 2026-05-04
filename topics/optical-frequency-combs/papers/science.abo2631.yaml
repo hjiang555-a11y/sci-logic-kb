@@ -1,4 +1,4 @@
-# Liu ???? — A photonic integrated circuit–based erbium-doped amplifier [evidence]
+#  ???? — A photonic integrated circuit–based erbium-doped amplifier [evidence]
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
@@ -6,16 +6,11 @@ meta:
   topic: optical-frequency-combs
   source_type: journal_paper
   contribution_type: evidence
-  reliability: high
+  reliability: medium
   title: "A photonic integrated circuit–based erbium-doped amplifier"
-  first_author: "Liu"
-  authors: ["Yang Liu", "Zheru Qiu", "Xinru Ji", "Anton Lukashchuk", "Jijun He", "Johann Riemensberger", "Martin Hafermann", "Rui Ning Wang", "Junqiu Liu", "Carsten Ronning", "Tobias J. Kippenberg"]
-  journal: "Science"
-  volume: 376
-  pages: 1309-1313
-  doi: 10.1126/science.abo2631
+  first_author: ""
   note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+    [批量提取] 元数据来源：PDF metadata。内容待专家提取。
 entities: []
 principles: []
 methods: []

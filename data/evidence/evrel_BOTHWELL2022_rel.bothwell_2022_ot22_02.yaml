@@ -1,0 +1,8 @@
+evidence: resolving the gravitational redshift
+id: evrel_BOTHWELL2022_rel.bothwell_2022_ot22_02
+metadata:
+  source_paper: bothwell2022
+  zotero_key: BOTHWELL2022
+object: pri.gravitational_redshift_within_atomic_sample
+predicate: OPERATIONALIZED-AS
+subject: ent.jila_mm_scale_redshift_sr_clock_b22

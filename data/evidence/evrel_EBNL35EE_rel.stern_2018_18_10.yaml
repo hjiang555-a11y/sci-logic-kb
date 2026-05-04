@@ -1,0 +1,9 @@
+evidence: pumping the microresonator with a single-frequency pump laser, additional
+  discrete, equidistant frequencies are generated through parametric four-wave mixing
+id: evrel_EBNL35EE_rel.stern_2018_18_10
+metadata:
+  source_paper: stern2018
+  zotero_key: EBNL35EE
+object: meth.cw_pumped_microcomb_generation
+predicate: ENABLED-BY
+subject: meth.electrical_soliton_tuning_s18

@@ -1,0 +1,8 @@
+evidence: 3 dB linewidth of the optical spectrum is 8 Hz for 1 s measurement time
+id: evrel_MN54T4F3_rel.kéfélian_2009_ef02
+metadata:
+  source_paper: kefelian2009
+  zotero_key: MN54T4F3
+object: met.laser_linewidth_kef09
+predicate: CHARACTERIZED-BY
+subject: ent.fiber_interferometer

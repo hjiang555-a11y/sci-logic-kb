@@ -1,0 +1,9 @@
+evidence: Er:fiber combs (mature, broadband, telecom wavelength) compete with microresonator
+  Kerr combs (compact, high repetition rate, chip-integrated) as leading OFC platforms.
+id: evrel_5NSQLZTS_rel.droste_2016_R16_04
+metadata:
+  source_paper: droste2016
+  zotero_key: 5NSQLZTS
+object: ent.microresonator_frequency_comb
+predicate: COMPETES-WITH
+subject: ent.er_fiber_frequency_comb

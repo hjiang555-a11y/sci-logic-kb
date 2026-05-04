@@ -1,0 +1,24 @@
+definition: '原生 Er:fiber 250 MHz 锁模梳 → Fabry-Perot 腔滤波（FSR = 25 GHz）得到 25 GHz 间距梳齿阵列（匹配
+  R=50000 级 echelle 光谱仪分辨本征）， HNLF 展宽至 1450–1700 nm；GPS-driven Rb/Cs 频标稳 f_rep 与 f_CEO；
+  通过单模光纤送入 Pathfinder NIR 光谱仪做波长校准， 实现恒星径向速度 6 MHz (10 m/s) 级精度。
+
+  '
+id: evid_3JN2PBKX_ent.near_ir_astro_comb_y12
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/ycas2012.yaml
+  source_paper: ycas2012
+  zotero_key: 3JN2PBKX
+name: 25 GHz 近红外天文光梳（Ycas 2012，HET/Pathfinder 系统）
+original_id: ent.near_ir_astro_comb_y12
+properties:
+  base_comb_rep_rate: 250 MHz Er:fiber MLL
+  deployed_at: Hobby-Eberly 9.2 m / McDonald Observatory
+  filter_spacing: 25 GHz（F-P 腔滤波）
+  metric_coverage_range: !!python/tuple
+  - 1450.0
+  - 1700.0
+  reference: GPS-referenced 原子钟
+  rv_precision: ~10 m/s（~6 MHz）
+  spectral_coverage: 1450–1700 nm
+status: Determined
+type: Entity/Factor

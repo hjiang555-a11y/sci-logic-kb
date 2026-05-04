@@ -1,0 +1,9 @@
+evidence: the ratio of the power in the comb to the input pump power is typically
+  1–3%
+id: evrel_BRKZG9H2_rel.gaeta_2019_ae19_17
+metadata:
+  source_paper: gaeta2019
+  zotero_key: BRKZG9H2
+object: met.microcomb_conversion_efficiency_g19
+predicate: CHARACTERIZED-BY
+subject: ent.microresonator_frequency_comb

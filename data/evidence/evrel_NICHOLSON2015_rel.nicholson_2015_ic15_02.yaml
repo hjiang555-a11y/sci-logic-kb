@@ -1,0 +1,8 @@
+evidence: total uncertainty of the JILA Sr clock to 2.1×10⁻¹⁸
+id: evrel_NICHOLSON2015_rel.nicholson_2015_ic15_02
+metadata:
+  source_paper: nicholson2015
+  zotero_key: NICHOLSON2015
+object: met.optical_clock_fractional_uncertainty
+predicate: CHARACTERIZED-BY
+subject: ent.jila_sr_lattice_clock_n15

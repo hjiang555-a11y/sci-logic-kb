@@ -1,0 +1,8 @@
+evidence: fiber resistive modulator ... consuming ~77 mW/°C
+id: evrel_XZTNQ8D4_rel.manurkar_2018_an18_03
+metadata:
+  source_paper: manurkar2018
+  zotero_key: XZTNQ8D4
+object: pri.fiber_resistive_modulator_frep_tuning_m18
+predicate: BOUNDED-BY
+subject: met.self_ref_comb_electrical_power_m18

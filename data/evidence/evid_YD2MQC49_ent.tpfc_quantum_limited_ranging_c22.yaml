@@ -1,0 +1,20 @@
+definition: '自参考光学频率梳 + 同步数字电子实时控制（frep + fceo 相位锁）→ 脉冲时间 / 相位可编程（±2 as 精度）； 追踪模式（tracking
+  oscillator）：动态锁定弱回波脉冲序列（时间 / 相位同步）→ 量子限制灵敏度（散粒噪声极限）； 测距应用：0.7 nm 精度地板（4.8 as），平均光子数
+  1/77 / 脉冲检测，5000× 功率降低相比传统双梳。
+
+  '
+id: evid_YD2MQC49_ent.tpfc_quantum_limited_ranging_c22
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/caldwell2022.yaml
+  source_paper: caldwell2022
+  zotero_key: YD2MQC49
+name: 时间可编程频率梳（TPFC）量子限制测距系统（Caldwell 2022, NIST）
+original_id: ent.tpfc_quantum_limited_ranging_c22
+properties:
+  digital_control: 同步 FPGA 实时操控 frep + fceo 相位锁
+  photon_per_pulse_min: 1/77（接近量子极限 2×）
+  power_reduction_vs_conventional_dual_comb: 5000× (37 dB)
+  pulse_time_control_accuracy: ±2 as
+  ranging_precision_floor: 0.7 nm（4.8 as 飞行时间）
+status: Determined
+type: Entity/Factor

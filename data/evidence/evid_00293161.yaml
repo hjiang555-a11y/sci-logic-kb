@@ -1,0 +1,10 @@
+definition: Automatic extraction from 00293161. Details pending deep scan.
+id: evid_00293161
+metadata:
+  source_paper: 00293161
+  status: processed_auto
+name: Evidence from 00293161
+properties:
+  source_pdf: 00293161
+  status: unverified
+type: Entity/Factor

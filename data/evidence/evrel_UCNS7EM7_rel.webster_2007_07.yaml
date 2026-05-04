@@ -1,0 +1,9 @@
+evidence: vibration insensitive design reduces coupling of environmental accelerations
+  to cavity frequency
+id: evrel_UCNS7EM7_rel.webster_2007_07
+metadata:
+  source_paper: webster2007
+  zotero_key: UCNS7EM7
+object: ent.vibration_environment
+predicate: CONDITIONED-BY
+subject: ent.fp_cavity_system

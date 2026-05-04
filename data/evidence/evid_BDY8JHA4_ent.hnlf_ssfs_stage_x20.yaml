@@ -1,0 +1,15 @@
+definition: '30 cm PM-HNLF（β₂=-7.82 ps²/km, γ=10 (W·km)⁻¹ @1550 nm）承接 50 fs 1.56 µm
+  脉冲， 脉冲内 Raman 散射把孤子红移到 1928 nm / 45 fs / 40 mW， 单级实现"波段切换+种子成形"，连接 Er:fiber 与 Tm:fiber
+  放大窗口。
+
+  '
+id: evid_BDY8JHA4_ent.hnlf_ssfs_stage_x20
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/xing2020.yaml
+  source_paper: xing2020
+  zotero_key: BDY8JHA4
+name: HNLF 孤子自频移级（Xing 2020）
+original_id: ent.hnlf_ssfs_stage_x20
+properties: {}
+status: Determined
+type: Entity/Factor

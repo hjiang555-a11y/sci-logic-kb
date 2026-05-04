@@ -1,0 +1,8 @@
+evidence: f_ceo is locked to an external reference by modulating the pump laser current
+id: evrel_9RFKI5SH_rel.zhang_2017_hOFC17_11
+metadata:
+  source_paper: zhang2017
+  zotero_key: 9RFKI5SH
+object: meth.pump_current_modulation_fceo_lock_z17
+predicate: OPERATIONALIZED-AS
+subject: met.fceo_instability_z17

@@ -1,0 +1,8 @@
+evidence: enabling a record generated power of ~2 mW in a single harmonic order
+id: evrel_L88UAAEQ_rel.porat_2018_or02
+metadata:
+  source_paper: porat2018
+  zotero_key: L88UAAEQ
+object: met.xuv_harmonic_power_p18
+predicate: CHARACTERIZED-BY
+subject: ent.high_temp_gas_mixture_hhg_p18

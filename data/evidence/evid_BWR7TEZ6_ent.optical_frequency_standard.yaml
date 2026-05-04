@@ -1,0 +1,20 @@
+definition: '基于激光冷却囚禁原子/离子的窄线宽光学跃迁的频率标准。 分为三大类：（1）单离子钟（精度优先）；（2）光晶格钟（稳定度优先）；（3）核钟（新兴）。
+  当前最佳系统不确定度 ~10⁻¹⁹，分数频率不稳定度 ~10⁻¹⁷/√τ。 光钟的性能直接依赖询问激光的线宽和稳定度（跨专题接口到超稳激光专题）。
+
+  '
+id: evid_BWR7TEZ6_ent.optical_frequency_standard
+metadata:
+  original_file: /data/sci-logic-kb/topics/frequency-standards/papers/fortier2026.yaml
+  source_paper: fortier2026
+  zotero_key: BWR7TEZ6
+name: 光学频率标准（通用）
+original_id: ent.optical_frequency_standard
+properties:
+  best_instability: ~5×10⁻¹⁷/√τ（最佳光晶格钟，综述汇总）
+  best_systematic_uncertainty: <10⁻¹⁸（多个系统）；5.5×10⁻¹⁹（²⁷Al⁺ NIST，综述汇总）
+  clock_laser_requirement: 线宽 <1 Hz；分数频率不稳定度 ~10⁻¹⁶–10⁻¹⁷ @ 1 s（跨专题引用，参见 topics/ultrastable-laser/papers/
+    中各技术论文）
+  demonstrated_value: 50000000000.0
+  value_type: quantitative
+status: Determined
+type: Entity/Factor

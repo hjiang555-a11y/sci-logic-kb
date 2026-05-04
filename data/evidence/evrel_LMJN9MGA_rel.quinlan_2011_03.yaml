@@ -1,0 +1,11 @@
+evidence: '"key to our demonstration of low phase noise is a 200 MHz repetition rate
+  laser, with a high-speed intracavity modulator"
+
+  '
+id: evrel_LMJN9MGA_rel.quinlan_2011_03
+metadata:
+  source_paper: quinlan2011
+  zotero_key: LMJN9MGA
+object: pri.high_rep_rate_ofd_low_shot_noise
+predicate: GOVERNED-BY
+subject: ent.er_fiber_ofd_quinlan2011

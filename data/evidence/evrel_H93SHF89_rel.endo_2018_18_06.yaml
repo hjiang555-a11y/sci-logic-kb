@@ -1,0 +1,9 @@
+evidence: solid-state monolithic OFC achieves superior free-running noise floor compared
+  to fiber-based OFCs due to lower round-trip loss and absence of nonlinear fiber
+id: evrel_H93SHF89_rel.endo_2018_18_06
+metadata:
+  source_paper: endo2018
+  zotero_key: H93SHF89
+object: ent.er_fiber_frequency_comb
+predicate: COMPETES-WITH
+subject: ent.monolithic_erglass_comb_e18

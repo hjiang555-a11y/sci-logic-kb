@@ -1,0 +1,23 @@
+definition: 'NPR 锁模 Er:fiber 振荡器（frep ≈ 192 MHz）→ 腔内紧邻 PBS 插入 LiNbO₃ EOM（3mm 厚，~0.12
+  mrad/V）； 外加高压（-200 to +200 V）旋转偏振态 → 改变 PBS 透射/反射比例 → 调制腔损 → 驱动 frep / fceo； frep
+  控制动态范围数百 Hz（比传统 EOM 方法大 >10×），fceo 控制动态范围数百 MHz（比传统泵浦调制大 >10×）； 带宽与传统腔内 EOM 相当（~MHz
+  量级）。
+
+  '
+id: evid_V7MNFM68_ent.ntsc_polarization_rotation_eom_comb_z17
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/zhang2017b.yaml
+  source_paper: zhang2017b
+  zotero_key: V7MNFM68
+name: 国家授时中心偏振态旋转 EOM 梳（Zhang Y. 2017）
+original_id: ent.ntsc_polarization_rotation_eom_comb_z17
+properties:
+  bandwidth: ~kHz–MHz（与传统腔内 EOM 同级）
+  eom_type: LiNbO₃（3mm 厚，~0.12 mrad/V 偏振旋转系数）
+  eom_voltage_range: -200 to +200 V
+  fceo_dynamic_range: 数百 MHz（>10× 传统泵浦调制）
+  frep_dynamic_range: 数百 Hz（>10× 传统 EOM）
+  mode_locking: NPR（非线性偏振旋转）
+  repetition_rate: 192 MHz（基频）
+status: Determined
+type: Entity/Factor

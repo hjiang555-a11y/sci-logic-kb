@@ -1,0 +1,8 @@
+evidence: degradation below 3×10^-18 at 1 s
+id: evrel_JBIG86N9_rel.nicolodi_2014_01
+metadata:
+  source_paper: nicolodi2014
+  zotero_key: JBIG86N9
+object: met.spectral_purity_transfer_degradation_nicolodi2014
+predicate: CHARACTERIZED-BY
+subject: ent.er_fiber_ofc_spectral_transfer_nicolodi2014

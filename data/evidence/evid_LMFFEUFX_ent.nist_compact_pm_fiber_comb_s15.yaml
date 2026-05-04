@@ -1,0 +1,23 @@
+definition: '全 PM 光纤架构 + SESAM 锁模 + 数字反馈控制的紧凑型 Er:fiber 频率梳（体积 < 1 liter，笔记本大小）： frep
+  ≈ 200 MHz, 倍频程展宽 → f-2f 自参考；数字 PLL 锁 frep + fceo 至 RF 参考，>90 小时无相位滑动； 脉间时间抖动 < 3
+  fs（适用于时频传递 / LADAR / 双梳光谱等应用）； 三台近似相同的梳性能指标一致，证明可重复性；设计针对移动平台（地面车辆 / 飞机 / 空间站）振动环境。
+
+  '
+id: evid_LMFFEUFX_ent.nist_compact_pm_fiber_comb_s15
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/sinclair2015.yaml
+  source_paper: sinclair2015
+  zotero_key: LMFFEUFX
+name: NIST 紧凑全 PM 光纤频率梳（Sinclair 2015）
+original_id: ent.nist_compact_pm_fiber_comb_s15
+properties:
+  control: 数字反馈（高 SNR 控制信号）
+  fiber_type: 全 PM（polarization-maintaining）
+  mode_locking: SESAM（半导体可饱和吸收镜）
+  phase_coherent_time: '> 90 hours (phase-slip free)'
+  pulse_jitter: < 3 fs (residual pulse-to-pulse timing jitter)
+  repetition_rate: ~200 MHz
+  target_environment: 移动平台（振动、温度变化、无专家维护）
+  volume: < 1 liter (laptop-sized)
+status: Determined
+type: Entity/Factor

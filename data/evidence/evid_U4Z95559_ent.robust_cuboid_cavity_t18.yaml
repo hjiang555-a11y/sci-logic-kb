@@ -1,0 +1,26 @@
+definition: '10 cm 方形截面 ULE 腔，铝合金（7075）支撑框架通过 12 个细柱在三个正交 对称面上夹持腔体，Viton 球缓冲。设计兼顾低振动灵敏度和极高机械鲁棒性。
+  平面-凹面镜配置（凹面 ROC = 1 m），熔融石英镜面 + ULE 补偿环。
+
+  '
+id: evid_U4Z95559_ent.robust_cuboid_cavity_t18
+metadata:
+  original_file: /data/sci-logic-kb/topics/ultrastable-laser/papers/tao2018.yaml
+  source_paper: tao2018
+  zotero_key: U4Z95559
+name: 抗冲击方形 ULE 参考腔（Tao 2018）
+original_id: ent.robust_cuboid_cavity_t18
+properties:
+  cavity_length: 10 cm
+  damping: Viton balls at both ends of support posts
+  decay_time: 46.3 μs
+  finesse: 440,000
+  frame_material: 7075 Aluminum alloy
+  linewidth: ~3.4 kHz
+  mirror_config: plano-concave (ROC = 1 m)
+  mirror_material: fused silica with ULE compensation rings
+  spacer_material: ULE
+  spacer_shape: cuboid 100×60×60 mm³
+  support_points: 12 (3 groups × 4)
+  wavelength: 1064 nm
+status: Determined
+type: Entity/Factor

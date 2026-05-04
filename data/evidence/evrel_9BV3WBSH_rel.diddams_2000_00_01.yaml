@@ -1,0 +1,9 @@
+evidence: approximately 40 mW of the fs laser light is coupled into a 5 or 10 cm piece
+  of an air-silica microstructure fiber
+id: evrel_9BV3WBSH_rel.diddams_2000_00_01
+metadata:
+  source_paper: diddams2000
+  zotero_key: 9BV3WBSH
+object: ent.octave_spanning_tisa_comb_d00
+predicate: PART-OF
+subject: ent.air_silica_microstructure_fiber_d00

@@ -1,0 +1,8 @@
+evidence: power stability <0.7% RMS over 1100 hours
+id: evrel_HJZ6BVYE_rel.dixneuf_2020_ix06
+metadata:
+  source_paper: dixneuf2020
+  zotero_key: HJZ6BVYE
+object: ent.high_power_low_rin_fiber_laser_d20
+predicate: CHARACTERIZES
+subject: met.power_stability_d20

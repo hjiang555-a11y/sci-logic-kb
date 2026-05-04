@@ -1,0 +1,10 @@
+evidence: '''As a cross-check, the functionality of the soliton microcomb was compared
+  with a previously demonstrated line-referenced EO-astrocomb''; 背景讨论对比 Ti:Sa 需 FP
+  滤波的传统 astrocomb 路线。'
+id: evrel_BYUPFGJY_rel.suh_2019_uh17
+metadata:
+  source_paper: suh2019
+  zotero_key: BYUPFGJY
+object: ent.filtered_tisa_astrocomb_y12
+predicate: COMPETES-WITH
+subject: ent.microresonator_astrocomb_s19

@@ -1,0 +1,10 @@
+evidence: fractional frequency stability of 2.5 × 10⁻¹⁷ at 10 s is four times better
+  than expected for dielectric mirrors and corresponds to more than a tenfold reduction
+  in the coating mechanical loss factor
+id: evrel_4QVEXY63_rel.lee_2026_02
+metadata:
+  source_paper: lee2026
+  zotero_key: 4QVEXY63
+object: pri.brownian_thermal_noise_fdt
+predicate: BOUNDED-BY
+subject: ent.si_crystal_17k_fp_cavity_l26

@@ -1,0 +1,13 @@
+evidence: '"Although Ti:sapphire lasers are convenient laboratory workhorses, they
+  cannot be directly diode pumped;  instead, costly large-frame Ar-ion or frequency-doubled
+  Nd:YAG lasers are needed for pumping.  ...Cr:LiSAF can be directly pumped by laser
+  diodes at 670 nm, offering low-cost high-performance alternatives."
+
+  '
+id: evrel_UNL7SSP3_rel.holzwarth_2001_ol01
+metadata:
+  source_paper: holzwarth2001
+  zotero_key: UNL7SSP3
+object: pri.diode_pumped_octave_comb_portability_h01
+predicate: BOUNDED-BY
+subject: ent.diode_pumped_crlisaf_octave_comb_h01

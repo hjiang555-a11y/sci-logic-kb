@@ -1,0 +1,9 @@
+evidence: The optimized pumping scheme and the low losses produced an overall optical
+  slope efficiency of 39%.
+id: evrel_UNL7SSP3_rel.holzwarth_2001_ol02
+metadata:
+  source_paper: holzwarth2001
+  zotero_key: UNL7SSP3
+object: met.diode_pumped_comb_slope_efficiency_h01
+predicate: CHARACTERIZED-BY
+subject: ent.diode_pumped_crlisaf_octave_comb_h01

@@ -1,0 +1,8 @@
+evidence: '>1 nW per mode ... unachievable with existing mode-filtering approaches'
+id: evrel_RDBWYLKJ_rel.bartels_2009_ar09_03
+metadata:
+  source_paper: bartels2009
+  zotero_key: RDBWYLKJ
+object: met.per_mode_power_high_frep_b09
+predicate: CHARACTERIZED-BY
+subject: ent.ti_sapph_10ghz_comb_bartels09

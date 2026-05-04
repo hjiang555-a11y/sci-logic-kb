@@ -1,0 +1,8 @@
+evidence: both fceo and fopt are free of phase slips for over 35 hours
+id: evrel_D9ANIZW6_rel.sinclair_2014_14_08
+metadata:
+  source_paper: sinclair2014
+  zotero_key: D9ANIZW6
+object: met.lock_uptime_s14
+predicate: CHARACTERIZED-BY
+subject: ent.ruggedized_field_comb_s14

@@ -1,0 +1,9 @@
+evidence: tilt locking ... simple implementation with demonstrated servo bandwidth
+  ~230 Hz
+id: evrel_S5PX7GHC_rel.shaddock_1999_09
+metadata:
+  source_paper: shaddock1999
+  zotero_key: S5PX7GHC
+object: met.servo_bandwidth
+predicate: CHARACTERIZED-BY
+subject: meth.tilt_locking

@@ -1,0 +1,9 @@
+evidence: current bounds of stability and sensitivity are dictated by the excess mechanical
+  damping of the high-reflectivity coatings
+id: evrel_CWIHQRJD_rel.cole_2013_05
+metadata:
+  source_paper: cole2013
+  zotero_key: CWIHQRJD
+object: pri.brownian_thermal_noise_fdt
+predicate: BOUNDED-BY
+subject: ent.fp_cavity_system

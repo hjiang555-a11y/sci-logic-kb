@@ -1,0 +1,8 @@
+evidence: in-loop fractional frequency instabilities of ~10−18 at 1 s
+id: evrel_P4TCLWW2_rel.ma_2018_a18_03
+metadata:
+  source_paper: ma2018
+  zotero_key: P4TCLWW2
+object: met.fractional_instability_inloop_m18
+predicate: CHARACTERIZED-BY
+subject: ent.yb_fiber_750mhz_comb_m18

@@ -1,0 +1,8 @@
+evidence: integrated phase noise ... 0.99 rad²
+id: evrel_CNSSF9YY_rel.mcferran_2007_07_03
+metadata:
+  source_paper: mcferran2007
+  zotero_key: CNSSF9YY
+object: met.fceo_integrated_phase_noise_m07
+predicate: CHARACTERIZED-BY
+subject: ent.pump_noise_suppressed_erfiber_comb_m07

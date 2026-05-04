@@ -1,0 +1,9 @@
+evidence: we demonstrate a self-homodyne detection method to stabilize a continuous-wave
+  1550-nm laser to a 1-km optical fiber delay line
+id: evrel_SBPRDKPV_rel.jeon_2025_e01
+metadata:
+  source_paper: jeon2025
+  zotero_key: SBPRDKPV
+object: meth.self_homodyne_fiber_locking
+predicate: OPERATIONALIZED-AS
+subject: met.fractional_freq_instability_jeon25

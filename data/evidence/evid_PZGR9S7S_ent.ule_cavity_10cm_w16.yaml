@@ -1,0 +1,24 @@
+definition: '室温 10 cm ULE 水平放置参考腔，采用四点半球橡胶支撑 在 U 形熔融石英块上，通过 FEA 优化支撑位置使振动灵敏度最小化。 配合两级热屏蔽实现长期
+  1×10⁻¹⁵ 不稳定度。
+
+  '
+id: evid_PZGR9S7S_ent.ule_cavity_10cm_w16
+metadata:
+  original_file: /data/sci-logic-kb/topics/ultrastable-laser/papers/wu2016.yaml
+  source_paper: wu2016
+  zotero_key: PZGR9S7S
+name: 10 cm ULE 参考腔（Wu 2016）
+original_id: ent.ule_cavity_10cm_w16
+properties:
+  cavity_length: 10 cm
+  finesse_cav1: ~270,000
+  finesse_cav2: ~250,000
+  linewidth_cav1: ~5.6 kHz
+  linewidth_cav2: ~6 kHz
+  mirror_material: fused silica
+  spacer_material: ULE
+  thermal_shields: two layers between FP cavity and vacuum chamber
+  vibration_sensitivity_simulated: 5.5×10⁻¹³/g (z-axis, at optimum support position)
+  wavelength: 1557 nm
+status: Determined
+type: Entity/Factor

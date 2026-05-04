@@ -1,0 +1,17 @@
+definition: Level 2 实例，PART-OF ent.optical_lattice_clock
+id: evid_NICHOLSON2015_ent.jila_sr_lattice_clock_n15
+metadata:
+  original_file: /data/sci-logic-kb/topics/frequency-standards/papers/nicholson2015.yaml
+  source_paper: nicholson2015
+  zotero_key: NICHOLSON2015
+name: JILA ⁸⁷Sr 光晶格钟（Nicholson 2015, 2×10⁻¹⁸）
+original_id: ent.jila_sr_lattice_clock_n15
+properties:
+  demonstrated_value: 2.2e-16
+  instability_1s: 2.2×10⁻¹⁶
+  key_improvements: lattice ac Stark; BBR; thermal environment
+  species: ⁸⁷Sr optical lattice clock
+  total_uncertainty: 2.1×10⁻¹⁸
+  value_type: quantitative
+status: Determined
+type: Entity/Factor

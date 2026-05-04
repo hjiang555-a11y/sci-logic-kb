@@ -1,0 +1,9 @@
+evidence: mode interactions are very useful for comb generation in the normal dispersion
+  region
+id: evrel_HPCYUSLJ_rel.pasquazi_2016_18_07
+metadata:
+  source_paper: pasquazi2018
+  zotero_key: HPCYUSLJ
+object: ent.microresonator_frequency_comb
+predicate: ENABLES
+subject: pri.mode_interaction_comb_generation

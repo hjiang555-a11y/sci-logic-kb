@@ -1,0 +1,10 @@
+evidence: the microwave oscillator controlling Δ provides the current noise limitation,
+  as the observed 6×10⁻¹²/√τ instability is nearly equal to that specified for our
+  microwave standard
+id: evrel_9BV3WBSH_rel.diddams_2000_00_08
+metadata:
+  source_paper: diddams2000
+  zotero_key: 9BV3WBSH
+object: pri.microwave_reference_noise_limit
+predicate: BOUNDED-BY
+subject: met.optical_frequency_measurement_uncertainty_d00

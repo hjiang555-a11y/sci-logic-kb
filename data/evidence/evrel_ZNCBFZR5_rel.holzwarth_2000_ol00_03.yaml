@@ -1,0 +1,8 @@
+evidence: broadened to more than an optical octave
+id: evrel_ZNCBFZR5_rel.holzwarth_2000_ol00_03
+metadata:
+  source_paper: holzwarth2000
+  zotero_key: ZNCBFZR5
+object: pri.octave_spanning_enables_f2f_self_reference
+predicate: BOUNDED-BY
+subject: met.first_pcf_f2f_frequency_uncertainty_h00

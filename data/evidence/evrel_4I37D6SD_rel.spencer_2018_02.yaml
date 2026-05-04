@@ -1,0 +1,11 @@
+evidence: '"We use a heterogeneously integrated III–V/silicon tunable laser, which
+  is guided by nonlinear frequency combs fabricated on separate silicon chips"
+
+  '
+id: evrel_4I37D6SD_rel.spencer_2018_02
+metadata:
+  source_paper: spencer2018
+  zotero_key: 4I37D6SD
+object: meth.dual_dks_synthesizer
+predicate: USES-METHOD
+subject: ent.integrated_ofc_synthesizer_spencer2018

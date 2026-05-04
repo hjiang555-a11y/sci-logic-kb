@@ -1,0 +1,8 @@
+evidence: average frequency instability of (4±1)×10⁻¹⁷
+id: evrel_N6HILT6B_rel.chen_2025_he04
+metadata:
+  source_paper: chen2025
+  zotero_key: N6HILT6B
+object: met.fractional_freq_instability_c25
+predicate: CHARACTERIZED-BY
+subject: ent.si_crystal_fp_cavity_sub5k_c25

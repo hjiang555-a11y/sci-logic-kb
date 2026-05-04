@@ -1,0 +1,10 @@
+evidence: The dynamics of comb generation in microresonators is well described by
+  the Lugiato–Lefever equation in which higher-order GVD terms and stimulated Raman
+  scattering are included
+id: evrel_BRKZG9H2_rel.gaeta_2019_ae19_09
+metadata:
+  source_paper: gaeta2019
+  zotero_key: BRKZG9H2
+object: pri.lugiato_lefever_equation
+predicate: DERIVED-FROM
+subject: pri.microcomb_formation_regime_taxonomy_g19

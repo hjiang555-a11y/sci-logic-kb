@@ -1,0 +1,8 @@
+evidence: real-time coherent control of the comb's pulse train output
+id: evrel_YD2MQC49_rel.caldwell_2022_al22_05
+metadata:
+  source_paper: caldwell2022
+  zotero_key: YD2MQC49
+object: pri.tpfc_digital_coherent_pulse_control_c22
+predicate: ENABLED-BY
+subject: pri.tpfc_tracking_oscillator_quantum_limit_c22

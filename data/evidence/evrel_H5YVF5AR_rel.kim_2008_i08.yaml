@@ -1,0 +1,9 @@
+evidence: One BOM-PD is used to regenerate a 10.225 GHz microwave signal from a 200.5
+  MHz optical pulse train
+id: evrel_H5YVF5AR_rel.kim_2008_i08
+metadata:
+  source_paper: kim2008
+  zotero_key: H5YVF5AR
+object: meth.optical_microwave_synchronization_bom_pd
+predicate: OPERATIONALIZED-AS
+subject: met.optical_microwave_sync_jitter_k08

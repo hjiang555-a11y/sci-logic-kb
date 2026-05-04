@@ -1,0 +1,9 @@
+evidence: The frequency comb is fully stabilized by phase-locking both fCEO and frep
+  to a RF reference traceable to the Cs atomic clock
+id: evrel_P7A5Z647_rel.marra_2012_ar12_05
+metadata:
+  source_paper: marra2012
+  zotero_key: P7A5Z647
+object: pri.self_referencing_f2f
+predicate: ENABLED-BY
+subject: meth.optical_phase_detection_comb_transfer_m12

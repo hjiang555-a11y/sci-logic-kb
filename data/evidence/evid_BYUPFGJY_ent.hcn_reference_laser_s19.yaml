@@ -1,0 +1,13 @@
+definition: '参考激光锁至 H¹³C¹⁴N 分子 P(16) 吸收线，作为绝对光学频率锚点， 与微梳相邻梳齿拍频测定 f0，1 MHz 级不确定度。
+
+  '
+id: evid_BYUPFGJY_ent.hcn_reference_laser_s19
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/suh2019.yaml
+  source_paper: suh2019
+  zotero_key: BYUPFGJY
+name: HCN-锁定参考激光（f0 检测锚点）
+original_id: ent.hcn_reference_laser_s19
+properties: {}
+status: Determined
+type: Entity/Factor

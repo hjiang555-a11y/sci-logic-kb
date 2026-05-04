@@ -1,0 +1,9 @@
+evidence: alternative techniques for micro-comb generation, such as... filter-driven
+  four-wave mixing
+id: evrel_HPCYUSLJ_rel.pasquazi_2016_18_06
+metadata:
+  source_paper: pasquazi2018
+  zotero_key: HPCYUSLJ
+object: ent.microresonator_frequency_comb
+predicate: PART-OF
+subject: ent.filter_driven_fwm_laser

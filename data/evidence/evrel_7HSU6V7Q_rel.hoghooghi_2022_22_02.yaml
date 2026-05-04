@@ -1,0 +1,10 @@
+evidence: Intra-pulse difference frequency generation of few-cycle pulses in χ² crystals
+  inherently produces a MIR comb with f_CEO = 0, eliminating the need for active CEO
+  stabilization.
+id: evrel_7HSU6V7Q_rel.hoghooghi_2022_22_02
+metadata:
+  source_paper: hoghooghi2022
+  zotero_key: 7HSU6V7Q
+object: pri.intra_pulse_dfg_comb_generation
+predicate: ENABLED-BY
+subject: meth.dfg_comb_generation

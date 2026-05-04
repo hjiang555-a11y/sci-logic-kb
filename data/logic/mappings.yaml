@@ -1,0 +1,13 @@
+mappings:
+  - evidence_id: "evid_SOTA_P1"
+    logic_node: "la.substrate_thermal_noise"
+    weight: 1.0
+    contribution: "primary_value"
+  - evidence_id: "evid_SOTA_P2"
+    logic_node: "la.cavity_geometry_factor"
+    weight: 1.0
+    contribution: "primary_value"
+  - evidence_id: "evid_SOTA_P3"
+    logic_node: "la.mirror_coating_noise"
+    weight: 1.0
+    contribution: "primary_value"

@@ -1,0 +1,13 @@
+evidence: '"the sources and nonlinear fiber optics progressed to the point where optical
+  spectra exceeding one octave  could be readily generated... This was a key requirement
+  for the measurement and control of f_o,  and a defining moment in the development
+  of the optical frequency comb"
+
+  '
+id: evrel_VKLU3BG6_rel.diddams_2010_id10_01
+metadata:
+  source_paper: diddams2010
+  zotero_key: VKLU3BG6
+object: pri.octave_supercontinuum_enables_self_referencing_d10
+predicate: ENABLED-BY
+subject: ent.optical_frequency_comb_diddams2010

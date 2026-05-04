@@ -1,0 +1,9 @@
+evidence: the short-term stability of optical clocks is determined by the frequency
+  noise of the local oscillator (clock laser)
+id: evrel_BWR7TEZ6_rel.fortier_2025_26_11
+metadata:
+  source_paper: fortier2026
+  zotero_key: BWR7TEZ6
+object: ent.fp_cavity_system
+predicate: CONDITIONED-BY
+subject: ent.optical_frequency_standard

@@ -1,0 +1,9 @@
+evidence: collinear f-to-2f interferometer ... detect the carrier envelope offset
+  (CEO) signal
+id: evrel_LBSZCU7P_rel.cai_2020_ai20_07
+metadata:
+  source_paper: cai2020
+  zotero_key: LBSZCU7P
+object: pri.self_referencing_f2f
+predicate: ENABLED-BY
+subject: meth.compact_single_actuator_er_comb_lock

@@ -1,0 +1,9 @@
+evidence: high mechanical quality factor of silicon (Q > 10⁷) directly reduces the
+  noise contribution
+id: evrel_YKPFKDD9_rel.kessler_2012_03
+metadata:
+  source_paper: kessler2012
+  zotero_key: YKPFKDD9
+object: pri.cryogenic_mechanical_q_enhancement
+predicate: ENABLED-BY
+subject: ent.si_crystal_fp_cavity_k12

@@ -1,0 +1,9 @@
+evidence: '''the soliton microcomb is spectrally broadened and sent to the integrating
+  sphere of NIRSPEC'''
+id: evrel_BYUPFGJY_rel.suh_2019_uh03
+metadata:
+  source_paper: suh2019
+  zotero_key: BYUPFGJY
+object: ent.microresonator_astrocomb_s19
+predicate: PART-OF
+subject: ent.nonlinear_broadening_stage_s19

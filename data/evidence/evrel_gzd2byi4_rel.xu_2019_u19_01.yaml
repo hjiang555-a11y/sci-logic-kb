@@ -1,0 +1,8 @@
+evidence: test of the reciprocity of the propagation delay in an optical fiber
+id: evrel_gzd2byi4_rel.xu_2019_u19_01
+metadata:
+  source_paper: xu2019_gzd2byi4
+  zotero_key: gzd2byi4
+object: pri.fiber_propagation_reciprocity
+predicate: ENABLED-BY
+subject: ent.coherent_optical_fiber_link

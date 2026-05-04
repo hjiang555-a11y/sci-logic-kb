@@ -1,0 +1,8 @@
+evidence: each branch is individually optimized
+id: evrel_SZL4V3W8_rel.hisai_2021_is21_03
+metadata:
+  source_paper: hisai2021
+  zotero_key: SZL4V3W8
+object: pri.inter_branch_fiber_noise_degradation
+predicate: BOUNDED-BY
+subject: met.8branch_beat_snr_h21

@@ -1,0 +1,8 @@
+evidence: We use both the intra-cavity EOM and PZT to stabilize a comb tooth.
+id: evrel_9RFKI5SH_rel.zhang_2017_hOFC17_12
+metadata:
+  source_paper: zhang2017
+  zotero_key: 9RFKI5SH
+object: meth.eom_pzt_dual_actuator_frep_lock_z17
+predicate: OPERATIONALIZED-AS
+subject: met.fbeat_instability_z17

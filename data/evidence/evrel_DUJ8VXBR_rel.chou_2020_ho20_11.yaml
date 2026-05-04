@@ -1,0 +1,10 @@
+evidence: uncertainty in the trap radio-frequency electric field in our current setup
+  limits uncertainties in extrapolation of line centers to zero electric field to
+  hundreds of hertz
+id: evrel_DUJ8VXBR_rel.chou_2020_ho20_11
+metadata:
+  source_paper: chou2020
+  zotero_key: DUJ8VXBR
+object: pri.trap_rf_field_stark_systematic
+predicate: BOUNDED-BY
+subject: met.rotational_transition_frequency_uncertainty_c20

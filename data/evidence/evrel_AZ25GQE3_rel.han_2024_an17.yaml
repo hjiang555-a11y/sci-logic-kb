@@ -1,0 +1,9 @@
+evidence: The main obstacle to the longer distance of DCS is the low signal-to-noise
+  ratio
+id: evrel_AZ25GQE3_rel.han_2024_an17
+metadata:
+  source_paper: han2024
+  zotero_key: AZ25GQE3
+object: pri.photon_starved_open_path_dcs_limit
+predicate: BOUNDED-BY
+subject: met.open_path_length_dcs_h24

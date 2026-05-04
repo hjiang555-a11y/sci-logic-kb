@@ -1,0 +1,8 @@
+evidence: The integrated timing jitter over this bandwidth is 760 as.
+id: evrel_YMWK52FQ_rel.fortier_2011_o04
+metadata:
+  source_paper: fortier2011
+  zotero_key: YMWK52FQ
+object: met.ofd_timing_jitter_fortier2011
+predicate: CHARACTERIZED-BY
+subject: ent.ti_sapphire_ofd_photonic_osc_fortier2011

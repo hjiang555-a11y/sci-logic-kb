@@ -1,0 +1,8 @@
+evidence: multiheterodyne laser spectrometer
+id: evrel_7PDY5FDM_rel.coddington_2010_10_03
+metadata:
+  source_paper: coddington2010
+  zotero_key: 7PDY5FDM
+object: pri.dual_comb_multiheterodyne_detection
+predicate: ENABLED-BY
+subject: meth.dual_comb_spectroscopy

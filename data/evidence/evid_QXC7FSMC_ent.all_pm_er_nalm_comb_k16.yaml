@@ -1,0 +1,20 @@
+definition: '全保偏（all-PM）Er:fiber 光纤激光器，采用非线性放大环镜（NALM）实现被动锁模； f-2f 自参考锁 f_CEO（积分相噪
+  <0.2 rad）；高带宽光电探测脉冲序列测时延抖动。 全 PM 设计使系统对环境扰动不敏感，自启动稳定性远胜 NPR 锁模梳。
+
+  '
+id: evid_QXC7FSMC_ent.all_pm_er_nalm_comb_k16
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/kuse2016.yaml
+  source_paper: kuse2016
+  zotero_key: QXC7FSMC
+name: 全保偏 Er:fiber NALM 梳（Kuse 2016）
+original_id: ent.all_pm_er_nalm_comb_k16
+properties:
+  cavity_type: 全保偏线性腔 + NALM 锁模
+  fceo_integrated_phase_noise: <0.2 rad
+  gain_medium: Er:fiber
+  mode_locking_mechanism: NALM（非线性放大环镜）
+  self_starting: 是
+  timing_jitter_integrated: 40 as（10 kHz–10 MHz）
+status: Determined
+type: Entity/Factor

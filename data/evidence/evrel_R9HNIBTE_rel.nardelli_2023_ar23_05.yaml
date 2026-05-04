@@ -1,0 +1,8 @@
+evidence: f-2f interferometer ... fceo detection
+id: evrel_R9HNIBTE_rel.nardelli_2023_ar23_05
+metadata:
+  source_paper: nardelli2023
+  zotero_key: R9HNIBTE
+object: pri.self_referencing_f2f
+predicate: ENABLED-BY
+subject: meth.dual_usl_locked_er_yb_glass_comb_n23

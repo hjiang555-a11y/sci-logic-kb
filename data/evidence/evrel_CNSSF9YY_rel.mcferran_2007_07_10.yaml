@@ -1,0 +1,10 @@
+evidence: the observed level of white noise appears higher than expected ... presumably
+  responsible for the lower limit on the linewidth observed in Fig. 4 at high pump
+  currents
+id: evrel_CNSSF9YY_rel.mcferran_2007_07_10
+metadata:
+  source_paper: mcferran2007
+  zotero_key: CNSSF9YY
+object: pri.pump_rin_to_fceo_coupling
+predicate: BOUNDED-BY
+subject: met.fceo_integrated_phase_noise_m07

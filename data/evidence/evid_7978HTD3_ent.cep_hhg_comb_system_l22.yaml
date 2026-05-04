@@ -1,0 +1,25 @@
+definition: 'Er:fiber 锁模梳（100 MHz）+ 非线性放大器 → 12 nJ / 20 fs / 1550 nm 脉冲； 聚焦到 500 µm
+  ZnO 晶体达 TW/cm² 峰值强度；单程驱动低带隙固态 HHG， 谐波谱覆盖 200–650 nm；f_CEO 作为自然"CEP 旋转信号"， 通过锁相放大在
+  f_CEO 及谐波处解调获得 CEP 相敏信号（CAMS）。
+
+  '
+id: evid_7978HTD3_ent.cep_hhg_comb_system_l22
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/lesko2022.yaml
+  source_paper: lesko2022
+  zotero_key: 7978HTD3
+name: 100 MHz Er:fiber + 固态 HHG CEP 计量系统（Lesko 2022）
+original_id: ent.cep_hhg_comb_system_l22
+properties:
+  base_comb: Er:fiber 100 MHz
+  detection_snr: 85 dB（CAMS 技术）
+  harmonic_output: 200–650 nm 连续
+  metric_coverage_range: !!python/tuple
+  - 200.0
+  - 650.0
+  nonlinear_crystal: ZnO 500 µm
+  peak_intensity: ~TW/cm²
+  pulse_energy: 12 nJ
+  pulse_width: ~20 fs
+status: Determined
+type: Entity/Factor

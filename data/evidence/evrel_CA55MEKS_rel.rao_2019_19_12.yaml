@@ -1,0 +1,9 @@
+evidence: The ~60 dB beat note SNR at 671 nm for Li D1 line measurement is achieved
+  via HNLF spectral broadening and MgO:PPLN frequency doubling.
+id: evrel_CA55MEKS_rel.rao_2019_19_12
+metadata:
+  source_paper: rao2019
+  zotero_key: CA55MEKS
+object: meth.hnlf_pplc_671nm_comb_extension_r19
+predicate: OPERATIONALIZED-AS
+subject: met.beat_snr_li_d1_r19

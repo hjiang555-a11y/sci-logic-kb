@@ -1,0 +1,10 @@
+evidence: the single-soliton state, the ratio of the power in the comb to the input
+  pump power is typically 1–3%. This efficiency can be increased roughly linearly
+  with the number of cavity solitons
+id: evrel_BRKZG9H2_rel.gaeta_2019_ae19_18
+metadata:
+  source_paper: gaeta2019
+  zotero_key: BRKZG9H2
+object: pri.dissipative_kerr_soliton
+predicate: BOUNDED-BY
+subject: met.microcomb_conversion_efficiency_g19

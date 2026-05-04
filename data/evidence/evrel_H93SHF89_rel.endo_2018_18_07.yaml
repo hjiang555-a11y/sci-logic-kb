@@ -1,0 +1,9 @@
+evidence: Er:glass monolithic OFC at 1.56 µm competes with Ti:sapphire combs in low-noise
+  performance while offering advantages in compactness and eye-safe wavelength
+id: evrel_H93SHF89_rel.endo_2018_18_07
+metadata:
+  source_paper: endo2018
+  zotero_key: H93SHF89
+object: ent.ti_sapphire_frequency_comb
+predicate: COMPETES-WITH
+subject: ent.monolithic_erglass_comb_e18

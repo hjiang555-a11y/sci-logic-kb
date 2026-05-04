@@ -1,0 +1,8 @@
+evidence: 11.3 mW of optical power incident on the chip
+id: evrel_WCBMETLH_rel.carlson_2017_ar17_02
+metadata:
+  source_paper: carlson2017
+  zotero_key: WCBMETLH
+object: met.sin_waveguide_f2f_power_c17
+predicate: CHARACTERIZED-BY
+subject: ent.sin_waveguide_low_power_f2f_c17

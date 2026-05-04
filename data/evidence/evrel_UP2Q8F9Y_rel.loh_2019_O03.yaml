@@ -1,0 +1,9 @@
+evidence: a chip-scale alternative to cavity-stabilized reference lasers for integrated
+  timing and metrology
+id: evrel_UP2Q8F9Y_rel.loh_2019_O03
+metadata:
+  source_paper: loh2019
+  zotero_key: UP2Q8F9Y
+object: meth.microcomb_self_referencing
+predicate: COMPETES-WITH
+subject: meth.sbs_thermal_self_referencing_l19

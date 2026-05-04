@@ -1,0 +1,9 @@
+evidence: the Dick effect... can exceed the QPN limit when the clock laser noise is
+  significant
+id: evrel_BWR7TEZ6_rel.fortier_2025_26_05
+metadata:
+  source_paper: fortier2026
+  zotero_key: BWR7TEZ6
+object: pri.dick_effect
+predicate: BOUNDED-BY
+subject: ent.optical_frequency_standard

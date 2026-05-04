@@ -1,0 +1,8 @@
+evidence: DCFs cause substantial differential delay
+id: evrel_9s69d3dw_rel.turza_2019_ur19_01
+metadata:
+  source_paper: turza2019_9s69d3dw
+  zotero_key: 9s69d3dw
+object: pri.dcf_induced_differential_delay_temp_compensation
+predicate: BOUNDED-BY
+subject: ent.rf_over_fiber_time_transfer_link

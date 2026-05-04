@@ -1,0 +1,9 @@
+evidence: the transmitter achieves a total data transmission rate of 448 Gbit s⁻¹,
+  with 7 channels under the FEC threshold
+id: evrel_AT5ZTB9M_rel.shu_2022_22_16
+metadata:
+  source_paper: shu2022
+  zotero_key: AT5ZTB9M
+object: pri.microcomb_replaces_laser_array_for_wdm_s22
+predicate: BOUNDED-BY
+subject: met.microcomb_aggregate_data_rate_s22

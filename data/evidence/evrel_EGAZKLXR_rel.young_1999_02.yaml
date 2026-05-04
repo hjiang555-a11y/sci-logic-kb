@@ -1,0 +1,8 @@
+evidence: fractional frequency instability typically 3×10⁻¹⁶ at 1 s
+id: evrel_EGAZKLXR_rel.young_1999_02
+metadata:
+  source_paper: young1999
+  zotero_key: EGAZKLXR
+object: met.fractional_freq_instability_y99
+predicate: CHARACTERIZED-BY
+subject: ent.laser_source

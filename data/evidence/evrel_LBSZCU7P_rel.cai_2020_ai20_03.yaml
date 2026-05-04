@@ -1,0 +1,8 @@
+evidence: residual integrated timing jitter of 418 fs [3 Hz to 1 MHz]
+id: evrel_LBSZCU7P_rel.cai_2020_ai20_03
+metadata:
+  source_paper: cai2020
+  zotero_key: LBSZCU7P
+object: met.residual_integrated_timing_jitter_c20
+predicate: CHARACTERIZED-BY
+subject: ent.compact_pm_er_comb_cai20

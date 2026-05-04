@@ -1,0 +1,8 @@
+evidence: frequency instability consistent with thermal noise limit at ~10⁻¹⁶ level
+id: evrel_VDXBPUQB_rel.numata_2017_14
+metadata:
+  source_paper: numata2004
+  zotero_key: VDXBPUQB
+object: met.fractional_freq_instability_thermal
+predicate: CHARACTERIZED-BY
+subject: ent.fp_cavity_system

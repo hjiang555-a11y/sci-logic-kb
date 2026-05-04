@@ -1,0 +1,8 @@
+evidence: beat signal of the two lasers reveals a remarkable linewidth of 185 mHz
+id: evrel_AHUZI4A7_rel.tai_2017_ai03
+metadata:
+  source_paper: tai2017
+  zotero_key: AHUZI4A7
+object: met.laser_linewidth_tai17
+predicate: CHARACTERIZED-BY
+subject: ent.fp_cavity_system

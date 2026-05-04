@@ -1,0 +1,9 @@
+evidence: σ²(2, τ, τ) = ⟨(ȳ_{k+1} − ȳ_k)²⟩/2 ... is used as a standard measure of
+  frequency stability because it converges for all power-law noises commonly encountered.
+id: evrel_ALLAN1966-PROCIEEE_rel.allan_1966_66_01
+metadata:
+  source_paper: allan1966
+  zotero_key: ALLAN1966-PROCIEEE
+object: pri.two_sample_variance_converges
+predicate: DERIVED-FROM
+subject: meth.allan_deviation_adev

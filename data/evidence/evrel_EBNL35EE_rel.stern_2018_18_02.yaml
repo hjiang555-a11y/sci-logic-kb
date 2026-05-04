@@ -1,0 +1,9 @@
+evidence: a gain section based on a III–V reflective semiconductor optical amplifier
+  (RSOA) is coupled to a Si3N4 laser cavity
+id: evrel_EBNL35EE_rel.stern_2018_18_02
+metadata:
+  source_paper: stern2018
+  zotero_key: EBNL35EE
+object: ent.battery_operated_microcomb_s18
+predicate: PART-OF
+subject: ent.integrated_iii_v_rsoa_pump_s18

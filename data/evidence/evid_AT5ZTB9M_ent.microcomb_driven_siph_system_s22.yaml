@@ -1,0 +1,29 @@
+definition: '以 AlGaAsOI 暗脉冲微梳（ent.algaasoi_dark_pulse_microcomb_s22）作为片上多波长光源， 驱动一体化
+  CMOS 代工厂 SOI 硅光引擎（>33 GHz 带宽 PN-depletion MZM、TiN 微加热器、 自适应螺旋波导延迟线、180 GHz 通道可选微环滤波阵列、垂直外延
+  Ge PD、CMOS MZM 驱动）。 同一光源下可配置成两种系统：(1) 20-通道 PAM4 WDM T/R 链路；(2) 基于 tap delay line
+  的可重构 MPF。
+
+  '
+id: evid_AT5ZTB9M_ent.microcomb_driven_siph_system_s22
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/shu2022.yaml
+  source_paper: shu2022
+  zotero_key: AT5ZTB9M
+name: 微梳驱动 CMOS 硅光集成系统（Shu 2022 完整链路）
+original_id: ent.microcomb_driven_siph_system_s22
+properties:
+  aggregate_line_rate: 2 Tbit/s（20 × 50 Gbaud PAM4，ECL 泵浦）
+  aggregate_net_rate: 1.65 Tbit/s（扣除 7% HD-FEC / 20% SD-FEC 开销）
+  dfb_pumped_rate: 448 Gbit/s（7 通道通过 FEC 阈值）
+  ge_photodetector_responsivity: 0.5–0.8 A/W，饱和 ~20 mW
+  metric_engineering: 2.0e+51
+  microring_tuning_range: 180 GHz（2 FSR），20 mW 加热功率
+  modulator_EO_bandwidth: '>33 GHz（PN-depletion MZM）'
+  mpf_FSR_set: 1.8 / 3.6 / 7.2 GHz（对应梳齿间距 5.6/2.8/1.4 nm）
+  mpf_passband_BW_tuning: 0.9–1.1 GHz（非色散）至亚 GHz（色散方案）
+  mpf_reconfiguration_time: ~53 μs
+  mpf_sidelobe_suppression: ~10 dB（非色散）/ >20 dB（色散）
+  num_wdm_channels: 20（C 波段）
+  per_channel_baud_rate: 50 Gbaud PAM4（ECL 泵浦）/ 32 Gbaud PAM4（DFB 泵浦）
+status: Determined
+type: Entity/Factor

@@ -1,0 +1,16 @@
+definition: '可选的基于频率梳的连续光波光学链路，设计用于共视地面光钟比对，其超低不稳定度可 大幅缩短达到指定频率不确定度所需的积分时间。有两方面优势：(1)
+  更精确的太阳/月球 时间膨胀测试；(2) 更广泛的大地测量活动。
+
+  '
+id: evid_SCI-ESA-HRE-ESR-ISOC_ent.frequency_comb_optical_link_fcol
+metadata:
+  original_file: /data/sci-logic-kb/topics/time-frequency-transfer/papers/cacciapuoti2017.yaml
+  source_paper: cacciapuoti2017
+  zotero_key: SCI-ESA-HRE-ESR-ISOC
+name: 频率梳光学链路 FCOL（I-SOC 可选链路）
+original_id: ent.frequency_comb_optical_link_fcol
+properties:
+  primary_use_case: 共视地面光钟比对（common-view comparisons）
+  status: 可选（optional），非基线配置
+status: Determined
+type: Entity/Factor

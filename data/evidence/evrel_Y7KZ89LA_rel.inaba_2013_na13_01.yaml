@@ -1,0 +1,8 @@
+evidence: fiber-based frequency comb
+id: evrel_Y7KZ89LA_rel.inaba_2013_na13_01
+metadata:
+  source_paper: inaba2013
+  zotero_key: Y7KZ89LA
+object: ent.er_fiber_frequency_comb
+predicate: PART-OF
+subject: ent.fiber_comb_linewidth_transfer_yb_clock_i13

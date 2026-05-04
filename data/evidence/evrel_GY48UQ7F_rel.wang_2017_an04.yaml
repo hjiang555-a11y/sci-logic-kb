@@ -1,0 +1,9 @@
+evidence: Comb line spacing of ~1 GHz measured via RF beatnote, ultra-dense compared
+  to monolithic III-V lasers
+id: evrel_GY48UQ7F_rel.wang_2017_an04
+metadata:
+  source_paper: wang2017
+  zotero_key: GY48UQ7F
+object: met.comb_line_spacing_w17
+predicate: CHARACTERIZED-BY
+subject: ent.iii_v_on_si_ultradense_comb_w17

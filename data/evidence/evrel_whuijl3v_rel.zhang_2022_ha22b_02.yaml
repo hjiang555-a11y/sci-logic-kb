@@ -1,0 +1,8 @@
+evidence: active phase noise cancellation with wide dynamic range detector
+id: evrel_whuijl3v_rel.zhang_2022_ha22b_02
+metadata:
+  source_paper: zhang2022_whuijl3v
+  zotero_key: whuijl3v
+object: pri.noise_cancellation_frequency_transfer
+predicate: ENABLED-BY
+subject: ent.ntsc_490km_noisy_field_link_z22b

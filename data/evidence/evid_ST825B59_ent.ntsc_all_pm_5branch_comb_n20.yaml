@@ -1,0 +1,26 @@
+definition: '全 PM 光纤架构 NALM 锁模 Er:fiber 振荡器（frep 未明示，~50-100 MHz 量级）→ NALM 自启锁模 +
+  低噪声； 输出经分支器 → 5 个应用端口，各自 PM-EDFA + 非线性展宽至目标波段（1064/1083/1380/1637/1750 nm）； fceo
+  锁至 RF 合成器，frep 锁至 UTC 溯源 RF； 各端口与 CW 激光拍频（SNR > 30 dB @ 100 kHz RBW）→ 驱动 CRDS 光谱系统（sub-kHz
+  分辨率）。
+
+  '
+id: evid_ST825B59_ent.ntsc_all_pm_5branch_comb_n20
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/ning2020.yaml
+  source_paper: ning2020
+  zotero_key: ST825B59
+name: 国家授时中心全 PM 5分支 NALM Er:fiber 梳（Ning 2020）
+original_id: ent.ntsc_all_pm_5branch_comb_n20
+properties:
+  application_wavelengths: 1064, 1083, 1380, 1637, 1750 nm
+  beat_snr: '> 30 dB @ 100 kHz RBW'
+  branch_count: 5 application ports
+  demonstrated_value: 56000000000.0
+  fceo_stability: 5.6×10⁻¹⁸ @ 1 s (in-loop)
+  fiber_type: 全 PM（polarization-maintaining）光纤
+  frep_stability: < 1.8×10⁻¹² @ 1 s (limited by counter noise floor)
+  mode_locking: NALM（非线性放大环镜）
+  target_application: CRDS 分子光谱（O₂, CO, 等）
+  value_type: quantitative
+status: Determined
+type: Entity/Factor

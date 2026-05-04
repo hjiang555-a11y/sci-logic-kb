@@ -1,0 +1,9 @@
+evidence: two self-referenced optical frequency comb lasers ... phase-locked to a
+  field-deployable cavity stabilized laser
+id: evrel_EB5IM2K9_rel.caldwell_2020_20_01
+metadata:
+  source_paper: caldwell2020
+  zotero_key: EB5IM2K9
+object: ent.optical_frequency_comb
+predicate: PART-OF
+subject: ent.two_way_comb_timing_link_c20

@@ -1,0 +1,8 @@
+evidence: frequency resolution equals the comb mode spacing of 220 MHz
+id: evrel_7PDY5FDM_rel.coddington_2010_10_05
+metadata:
+  source_paper: coddington2010
+  zotero_key: 7PDY5FDM
+object: meth.dual_comb_spectroscopy
+predicate: OPERATIONALIZED-AS
+subject: met.dcs_frequency_resolution

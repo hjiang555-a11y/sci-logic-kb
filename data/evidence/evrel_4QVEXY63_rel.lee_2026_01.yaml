@@ -1,0 +1,8 @@
+evidence: fractional frequency stability of 2.5 × 10⁻¹⁷ at 10 s
+id: evrel_4QVEXY63_rel.lee_2026_01
+metadata:
+  source_paper: lee2026
+  zotero_key: 4QVEXY63
+object: met.fractional_freq_instability_l26
+predicate: CHARACTERIZED-BY
+subject: ent.si_crystal_17k_fp_cavity_l26

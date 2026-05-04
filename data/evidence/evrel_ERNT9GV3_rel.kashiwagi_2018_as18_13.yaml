@@ -1,0 +1,9 @@
+evidence: The laser was loosely locked to the comb by using the reference signal to
+  stably obtain the signal
+id: evrel_ERNT9GV3_rel.kashiwagi_2018_as18_13
+metadata:
+  source_paper: kashiwagi2018
+  zotero_key: ERNT9GV3
+object: ent.fndc_reference_cw_laser_1542nm_k18
+predicate: CONDITIONED-BY
+subject: meth.fiber_noise_difference_cancellation_k18

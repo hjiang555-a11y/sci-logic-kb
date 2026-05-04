@@ -1,0 +1,16 @@
+definition: '飞秒光学频率梳，任务中用于将光学频率（SLOC 的 698 nm 钟跃迁或光学参考腔输出）转换为 适合 MWL / ELT+ 传输的微波/光学信号；提供空间段光↔微波桥。
+
+  '
+id: evid_SCI-ESA-HRE-ESR-ISOC_ent.space_frequency_comb_sfc
+metadata:
+  original_file: /data/sci-logic-kb/topics/time-frequency-transfer/papers/cacciapuoti2017.yaml
+  source_paper: cacciapuoti2017
+  zotero_key: SCI-ESA-HRE-ESR-ISOC
+name: 空间频率梳 SFC（I-SOC 光↔微波桥）
+original_id: ent.space_frequency_comb_sfc
+properties:
+  fallback: 'USO（超稳石英振荡器）可作 SFC 故障备份（#SR-PL-36 / #SR-PL-37）'
+  stability_requirement: 给定输入光学信号不稳定度 $1\cdot10^{-13}$ – $5\cdot10^{-16}\tau^{-1/2}$，SFC
+    输出微波信号不稳定度增加因子 $\leq 1.1$（$20\,\text{s}$ – $2\cdot10^{6}\,\text{s}$，#SR-PL-32）
+status: Determined
+type: Entity/Factor

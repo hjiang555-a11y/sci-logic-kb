@@ -1,0 +1,15 @@
+definition: '25 mm 长、50 mm 直径 ULE 圆柱腔，大径长比设计在圆周方向存在挤压力不灵敏点（约 22 mm）。 低损耗熔融石英镜基板（平面
+  + R=10.2 m 凹面）光学接触于 ULE 间隔体， 外侧附加 ULE 衬环将 CTE 零点调至室温附近。 总腔组件长约 50 mm，体积 61 mL。Invar
+  平行板通过三对弹性体球（3.2 mm）夹持。 精细度约 400,000 @ 1070 nm，光模场直径约 490 μm（FWHM）。
+
+  '
+id: evid_NHG79KDA_ent.compact_ule_cavity_25mm_d17
+metadata:
+  original_file: /data/sci-logic-kb/topics/ultrastable-laser/papers/davilarodriguez2017.yaml
+  source_paper: davilarodriguez2017
+  zotero_key: NHG79KDA
+name: 25 mm ULE 圆柱参考腔（Davila-Rodriguez 2017）
+original_id: ent.compact_ule_cavity_25mm_d17
+properties: {}
+status: Determined
+type: Entity/Factor

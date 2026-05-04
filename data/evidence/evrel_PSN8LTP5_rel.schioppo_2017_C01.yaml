@@ -1,0 +1,8 @@
+evidence: clock instability of 3 × 10^-18 in 1 hour
+id: evrel_PSN8LTP5_rel.schioppo_2017_C01
+metadata:
+  source_paper: schioppo2017
+  zotero_key: PSN8LTP5
+object: met.clock_instability_yb_schioppo2017
+predicate: CHARACTERIZED-BY
+subject: ent.yb_dual_ensemble_clock_nist2017

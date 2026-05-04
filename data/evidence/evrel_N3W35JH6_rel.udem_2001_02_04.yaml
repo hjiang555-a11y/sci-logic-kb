@@ -1,0 +1,11 @@
+evidence: to reference the comb directly to a precisely known radio frequency an absolute
+  optical frequency could be mapped onto a frequency difference between harmonics
+  or sub-harmonics of the same laser. In the simplest case this would be the interval
+  between an optical frequency f and its own second harmonic 2f
+id: evrel_N3W35JH6_rel.udem_2001_02_04
+metadata:
+  source_paper: udem2002
+  zotero_key: N3W35JH6
+object: pri.supercontinuum_octave_spanning
+predicate: ENABLED-BY
+subject: pri.self_referencing_f2f

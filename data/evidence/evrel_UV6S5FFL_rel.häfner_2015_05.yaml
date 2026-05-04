@@ -1,0 +1,10 @@
+evidence: best present room temperature resonators provide fractional laser instabilities
+  of 1×10⁻¹⁶–2×10⁻¹⁶, limited by thermal Brownian noise, with the biggest contributions
+  from mirror coatings
+id: evrel_UV6S5FFL_rel.häfner_2015_05
+metadata:
+  source_paper: hafner2015
+  zotero_key: UV6S5FFL
+object: pri.brownian_thermal_noise_fdt
+predicate: BOUNDED-BY
+subject: ent.fp_cavity_system

@@ -1,0 +1,8 @@
+evidence: 钛宝石光梳同样存在一些不足，如体积较大，不利于后续商品化发展…光纤光梳体积小，功耗低，可以实现系统的微型化和集成化
+id: evrel_CA55MEKS_rel.rao_2019_19_20
+metadata:
+  source_paper: rao2019
+  zotero_key: CA55MEKS
+object: ent.octave_spanning_tisa_comb_d00
+predicate: COMPETES-WITH
+subject: ent.erfiber_comb_li_d1_r19

@@ -1,0 +1,10 @@
+evidence: Such normal-GVD combs offer a number of advantages over soliton-mode-locked
+  combs including higher conversion efficiency from the pump to the comb and flatter
+  comb spectra
+id: evrel_BRKZG9H2_rel.gaeta_2019_ae19_10
+metadata:
+  source_paper: gaeta2019
+  zotero_key: BRKZG9H2
+object: pri.dissipative_kerr_soliton
+predicate: COMPETES-WITH
+subject: pri.dark_pulse_normal_dispersion_comb

@@ -1,0 +1,20 @@
+definition: '209 MHz Er:fiber NPE 锁模激光器 + 腔内 LiNbO₃ 电光调制器（EOM）+ 2 cm 长程 PZT 构成 f_rep
+  双执行器伺服环； common-path f-2f 干涉仪探测 f_CEO；HNLF 展宽。 EOM 提供高频补偿（服务带宽 ~230 kHz），PZT 提供低频大行程补偿，组合后可长期连续锁定。
+
+  '
+id: evid_R4M8SE4F_ent.er_fiber_intracavity_eom_comb_z15
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/zhang2015.yaml
+  source_paper: zhang2015
+  zotero_key: R4M8SE4F
+name: Er:fiber 腔内 EOM 稳频梳（Zhang 2015）
+original_id: ent.er_fiber_intracavity_eom_comb_z15
+properties:
+  fceo_1s_deviation: 0.6 mHz @ 1 s
+  fceo_detection: common-path f-2f 干涉仪，SNR 40 dB @ 3 MHz RBW
+  frep_actuators: 腔内 LiNbO₃ EOM（高频）+ 2 cm PZT 拉伸器（低频）
+  frep_servo_bandwidth: ~230 kHz（EOM 通道）, 闭环 3 kHz（综合）
+  gain_medium: Er-doped 光纤（39 cm Liekki ER110-4/125）
+  repetition_rate: ~209 MHz
+status: Determined
+type: Entity/Factor

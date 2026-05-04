@@ -1,0 +1,12 @@
+evidence: '"Division from 500 THz to the microwave domain is accomplished with an
+  optical frequency comb divider (OFCD) that is based on a 1 GHz Kerr-lens mode-locked
+  Ti:sapphire laser."
+
+  '
+id: evrel_PJEYSD8M_rel.fortier_2012_03
+metadata:
+  source_paper: fortier2012
+  zotero_key: PJEYSD8M
+object: pri.optical_frequency_division_microwave
+predicate: USES-METHOD
+subject: ent.hybrid_photonic_microwave_osc_fortier2012

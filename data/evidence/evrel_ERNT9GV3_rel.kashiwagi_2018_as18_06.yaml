@@ -1,0 +1,9 @@
+evidence: a practical multi-branch fiber-comb with a relative uncertainty at the 10⁻²⁰
+  level
+id: evrel_ERNT9GV3_rel.kashiwagi_2018_as18_06
+metadata:
+  source_paper: kashiwagi2018
+  zotero_key: ERNT9GV3
+object: met.relative_frequency_uncertainty_modallan_k18
+predicate: CHARACTERIZED-BY
+subject: ent.multi_branch_fiber_comb_k18

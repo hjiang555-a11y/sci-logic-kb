@@ -1,0 +1,8 @@
+evidence: fractional systematic frequency uncertainty was below 7.2×10⁻¹⁷
+id: evrel_OSKAY2006_rel.oskay_2006_sk06_02
+metadata:
+  source_paper: oskay2006
+  zotero_key: OSKAY2006
+object: met.optical_clock_fractional_uncertainty
+predicate: CHARACTERIZED-BY
+subject: ent.hg_ion_optical_clock_nist_o06

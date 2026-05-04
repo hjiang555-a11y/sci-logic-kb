@@ -1,0 +1,24 @@
+definition: '以立方体几何间隔物配合四点四面体支撑，使腔体在任意惯性力（加速度、支撑压力） 作用下两腔镜面中心轴向位移为零或相消，实现全向力不敏感性。
+  顶点截断设计使支撑压力引起的腔长变化为零。 允许在任意方向（含倒置）工作，激光在反转过程中保持锁定， 适用于卫星、飞机等非实验室平台。
+
+  '
+id: evid_A96XGR82_ent.cubic_force_insensitive_cavity_w11
+metadata:
+  original_file: /data/sci-logic-kb/topics/ultrastable-laser/papers/webster2011.yaml
+  source_paper: webster2011
+  zotero_key: A96XGR82
+name: 立方体力不敏感光学腔（Webster 2011）
+original_id: ent.cubic_force_insensitive_cavity_w11
+properties:
+  bore_diameter: 3 个圆柱通孔，直径 5.1 mm，穿过立方体面中心，用于抽真空
+  cavity_orientation: 任意（已在三轴正交方向验证，含倒置）
+  compressive_force: 最大 100 N（拧紧法兰螺栓施加）
+  finesse: '> 300,000'
+  mirror_spec: 12.7 mm 直径，4.0 mm 厚，R=0.5 m 曲率半径，熔融石英，光学接触
+  spacer_geometry: 立方体，棱长 50 mm
+  spacer_material: 超低膨胀玻璃（ULE），E=67.6 GPa，ρ=2210 kg/m³
+  support_type: 尼龙半球，直径 12.7 mm，四点四面体（刚性固定于腔室顶点法兰）
+  vertex_truncation_depth: 6.7 mm（朝腔体中心方向截深，FEM 确定零点）
+  wavelength: 1064 nm（Nd:YAG 激光）
+status: Determined
+type: Entity/Factor

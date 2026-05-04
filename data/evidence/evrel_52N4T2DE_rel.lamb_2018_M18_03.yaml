@@ -1,0 +1,9 @@
+evidence: Microcomb self-referencing relies on the f-2f technique to detect and stabilize
+  the carrier-envelope offset frequency.
+id: evrel_52N4T2DE_rel.lamb_2018_M18_03
+metadata:
+  source_paper: lamb2018
+  zotero_key: 52N4T2DE
+object: pri.self_referencing_f2f
+predicate: ENABLED-BY
+subject: meth.microcomb_self_referencing

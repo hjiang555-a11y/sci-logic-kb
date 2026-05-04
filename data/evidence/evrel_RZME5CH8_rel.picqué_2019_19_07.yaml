@@ -1,0 +1,12 @@
+evidence: '"As already demonstrated in the deep ultraviolet with two-photon transitions
+  of H₂ around 202 nm (1,485 THz), Ramsey-comb spectroscopy holds particular promise
+  for precision spectroscopy in the ultraviolet region."
+
+  '
+id: evrel_RZME5CH8_rel.picqué_2019_19_07
+metadata:
+  source_paper: picque2019
+  zotero_key: RZME5CH8
+object: met.ramsey_comb_fractional_accuracy
+predicate: CHARACTERIZED-BY
+subject: meth.direct_two_photon_comb_spectroscopy

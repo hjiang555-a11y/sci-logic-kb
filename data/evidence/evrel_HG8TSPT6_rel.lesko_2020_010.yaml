@@ -1,0 +1,8 @@
+evidence: inline 1 mm PPLN f-to-2f interferometer is integral subsystem
+id: evrel_HG8TSPT6_rel.lesko_2020_010
+metadata:
+  source_paper: lesko2020
+  zotero_key: HG8TSPT6
+object: ent.ghz_turnkey_erfiber_comb_l20
+predicate: PART-OF
+subject: ent.inline_ppln_f2f_l20

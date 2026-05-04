@@ -1,0 +1,9 @@
+evidence: the limitation will be optical path length fluctuation of the uncancelled
+  free-space parts caused by the environmental change
+id: evrel_ERNT9GV3_rel.kashiwagi_2018_as18_11
+metadata:
+  source_paper: kashiwagi2018
+  zotero_key: ERNT9GV3
+object: pri.residual_free_space_path_noise_floor
+predicate: BOUNDED-BY
+subject: met.relative_frequency_uncertainty_modallan_k18

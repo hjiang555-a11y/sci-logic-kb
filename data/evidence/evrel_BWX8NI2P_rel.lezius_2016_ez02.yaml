@@ -1,0 +1,8 @@
+evidence: Space-qualified comb payload fits within 22 L, 22 kg, 70 W SWaP envelope
+id: evrel_BWX8NI2P_rel.lezius_2016_ez02
+metadata:
+  source_paper: lezius2016
+  zotero_key: BWX8NI2P
+object: met.swap_budget_l16
+predicate: CHARACTERIZED-BY
+subject: ent.spaceborne_erfiber_comb_l16

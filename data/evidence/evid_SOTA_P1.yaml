@@ -1,0 +1,12 @@
+definition: Representative SOTA for standard room-temperature ULE cavities (~10-20cm).
+id: evid_SOTA_P1
+metadata:
+  source_paper: general_consensus
+  status: Determined
+name: 'SOTA: Standard ULE Cavity (Room Temp)'
+properties:
+  condition: Room temperature, ULE material
+  demonstrated_value: 1.0e-16
+  unit: sigma_y(1s)
+  value_type: quantitative
+type: Entity/Factor

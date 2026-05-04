@@ -1,0 +1,23 @@
+definition: '通过 km 级光纤传递 Er:fiber 频率梳的完整结构（所有梳齿 fn = n·f_rep + f_CEO）， 接收端解调出与发射端完全相位相干的梳齿频率：
+  (1) 发射端 Er:fiber 梳（100 MHz f_rep）+ f-2f 自参考； (2) 光学相位探测（参考光 vs 光纤传输光）驱动 AOM + 光纤拉伸器主动噪声抵消；
+  (3) 接收端光电探测 f_rep、f_beat 拍频，Allan 偏差 <3×10⁻¹⁸ @ 1000 s（锁至 Cs 原子钟溯源 RF）。
+
+  '
+id: evid_P7A5Z647_ent.npl_fiber_comb_transfer_system_m12
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/marra2012.yaml
+  source_paper: marra2012
+  zotero_key: P7A5Z647
+name: NPL 光频梳结构光纤传递系统（Marra 2012）
+original_id: ent.npl_fiber_comb_transfer_system_m12
+properties:
+  demonstrated_value: 30000000000.0
+  fiber_length: 数 km（主论文未明示具体值，文中提 50 km/86 km 参考报道）
+  link_stability: 光学模式稳定度 2×10⁻¹⁸ @ 数千秒；f_rep 稳定度 4×10⁻¹⁷
+  metric_structure: 30000000000.0
+  noise_cancellation: 光学相位探测 + AOM/光纤拉伸双执行器
+  reference: 梳齿锁至 Cs 原子钟溯源 RF（SI-s 溯源）
+  repetition_rate: 100 MHz（传递前后完整保留）
+  value_type: quantitative
+status: Determined
+type: Entity/Factor

@@ -1,0 +1,9 @@
+evidence: Frequency combs are now becoming enabling tools for an increasing number
+  of applications... The extension of frequency comb techniques to new spectral regions
+id: evrel_YYXGH9X3_rel.schliesser_2011_12_01
+metadata:
+  source_paper: schliesser2012
+  zotero_key: YYXGH9X3
+object: ent.optical_frequency_comb
+predicate: PART-OF
+subject: ent.mid_ir_frequency_comb

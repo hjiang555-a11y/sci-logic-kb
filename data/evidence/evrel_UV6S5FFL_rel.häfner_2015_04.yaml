@@ -1,0 +1,8 @@
+evidence: κz=1.7×10⁻¹⁰/g, κy=0.5×10⁻¹⁰/g, κx=1.5×10⁻¹⁰/g
+id: evrel_UV6S5FFL_rel.häfner_2015_04
+metadata:
+  source_paper: hafner2015
+  zotero_key: UV6S5FFL
+object: met.acceleration_sensitivity_h15
+predicate: CHARACTERIZED-BY
+subject: ent.self_balancing_long_cavity_h15

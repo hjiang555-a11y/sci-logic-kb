@@ -1,0 +1,8 @@
+evidence: frequency comb extending from the VUV to the visible spectral range
+id: evrel_H4DKWZWF_rel.hartl_2007_07_09
+metadata:
+  source_paper: hartl2007
+  zotero_key: H4DKWZWF
+object: pri.self_referencing_f2f
+predicate: DERIVED-FROM
+subject: pri.hhg_comb_vuv_extension

@@ -1,0 +1,9 @@
+evidence: The single-branch common-mode architecture competes with the multi-branch
+  dispersive-heterodyne approach for ultra-low-noise fiber comb performance.
+id: evrel_8XUFRL4K_rel.leopardi_2017_17F_04
+metadata:
+  source_paper: leopardi2017
+  zotero_key: 8XUFRL4K
+object: ent.ultra_low_noise_fiber_comb_g20
+predicate: COMPETES-WITH
+subject: ent.single_branch_erfiber_comb_l17

@@ -1,0 +1,9 @@
+evidence: The reflected sidebands are demodulated to obtain a Pound-Drever-Hall (PDH)
+  error signal
+id: evrel_NHG79KDA_rel.davila_rodriguez_2017_06
+metadata:
+  source_paper: davilarodriguez2017
+  zotero_key: NHG79KDA
+object: meth.pdh_locking
+predicate: ENABLED-BY
+subject: ent.compact_ule_cavity_25mm_d17

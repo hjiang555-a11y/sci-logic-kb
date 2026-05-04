@@ -1,0 +1,8 @@
+evidence: These values should result in frequency comparison inaccuracy of 1e-18 [#SR-PL-16]
+id: evrel_SCI-ESA-HRE-ESR-ISOC_rel.cacciapuoti_2017_17_15
+metadata:
+  source_paper: cacciapuoti2017
+  zotero_key: SCI-ESA-HRE-ESR-ISOC
+object: met.space_to_ground_link_inaccuracy
+predicate: CHARACTERIZED-BY
+subject: ent.pulsed_optical_link_elt_plus

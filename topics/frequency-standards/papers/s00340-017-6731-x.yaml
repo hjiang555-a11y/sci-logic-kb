@@ -1,0 +1,23 @@
+# Huang 2017 — A comparison of two 40Ca+ single-ion optical frequency standards at the 5 × 1... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: s00340-017-6731-x
+  topic: frequency-standards
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "A comparison of two 40Ca+ single-ion optical frequency standards at the 5 × 10−17 level and an evaluation of systematic shifts"
+  year: 2017
+  first_author: "Huang"
+  authors: ["Y. Huang", "H. Guan", "W. Bian", "L. Ma", "K. Liang", "T. Li", "K. Gao"]
+  journal: "Applied Physics B"
+  volume: 123
+  doi: 10.1007/s00340-017-6731-x
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

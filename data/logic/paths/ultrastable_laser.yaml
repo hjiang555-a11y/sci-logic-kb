@@ -1,0 +1,62 @@
+# Implementation Paths: Ultrastable Lasers (Stability @ 1s)
+
+> **ID**: paths.ultrastable_laser
+> **Purpose**: Maps a set of physical atomic nodes (from la.sigma_y_atomic) into a cohesive engineering strategy.
+> **Dimensions**:
+> - `perf_tier`: Performance level (1: Low -> 5: World Record)
+> - `effort_tier`: Implementation complexity/cost (1: Simple -> 5: Extreme)
+
+---
+
+## 1. Path Definitions (Strategy Library)
+
+### Path P1: Standard Room-Temperature ULE
+- **Description**: The workhorse of precision metrology. Uses ULE/Zerodur spacers in vacuum, operating at the zero-expansion temperature.
+- **Composition**:
+    - `la.substrate_thermal_noise` $\to$ `mat.ule_glass` @ `cond.room_temp`
+    - `la.mirror_coating_noise` $\to$ `mat.amorphous_coating`
+    - `la.cavity_geometry_factor` $\to$ `param.cavity_length` ($\sim$10-20 cm)
+    - `la.pdh_locking_error` $\to$ `meth.pdh_locking`
+- **Trade-offs**:
+    - `perf_tier`: 3
+    - `effort_tier`: 2
+- **Bottleneck**: Mirror coating thermal noise (Amorphous).
+
+### Path P2: High-Performance Long-Cavity (Room Temp)
+- **Description**: Pushing the limits of room-temp stability by scaling length $L$ to reduce the relative impact of thermal noise.
+- **Composition**:
+    - `la.substrate_thermal_noise` $\to$ `mat.ule_glass` @ `cond.room_temp`
+    - `la.cavity_geometry_factor` $\to$ `param.cavity_length` ($\sim$40-70 cm)
+    - `la.vibration_sensitivity` $\to$ `meth.self-balancing_mount` (Required due to length)
+- **Trade-offs**:
+    - `perf_tier`: 4
+    - `effort_tier`: 3 (Significant engineering for length/symmetry)
+- **Bottleneck**: Mechanical stability and vibration sensitivity.
+
+### Path P3: Cryogenic Silicon (The New Frontier)
+- **Description**: Using single-crystal silicon at cryogenic temperatures (e.g., 124K or 4K) to drastically reduce thermal noise.
+- **Composition**:
+    - `la.substrate_thermal_noise` $\to$ `mat.crystalline_silicon` @ `cond.cryogenic_temp`
+    - `la.mirror_coating_noise` $\to$ `mat.crystalline_coating` (SOTA)
+    - `la.environmental_noise` $\to$ `meth.cryostat_isolation`
+- **Trade-offs**:
+    - `perf_tier`: 5
+    - `effort_tier`: 5 (Vacuum + Cryogenics + Material growth)
+- **Bottleneck**: Coating thermal noise (even in Cryo) and cryostat vibrations.
+
+---
+
+## 2. Path Comparison Matrix
+
+| Path | Target $\sigma_y$ | Complexity | Primary Bottleneck | Primary Material |
+| :--- | :--- | :--- | :--- | :--- |
+| **P1** | $10^{-15} - 10^{-16}$ | Low | Amorphous Coating | ULE |
+| **P2** | $5\cdot10^{-17} - 10^{-16}$ | Medium | Vibration/Symmetry | ULE (Long) |
+| **P3** | $< 10^{-17}$ | Extreme | Crystalline Coating | Si-Cryo |
+
+---
+
+## 3. Inter-Path Transitions (Upgrade Logic)
+
+- **P1 $\to$ P2**: Increase $L \to$ requires `meth.self-balancing` $\to$ improves $\sigma_y$ via scaling law.
+- **P1 $\to$ P3**: Material swap (ULE $\to$ Si) + Temperature drop $\to$ massive reduction in `la.substrate_thermal_noise`, shifts bottleneck to `la.mirror_coating_noise`.

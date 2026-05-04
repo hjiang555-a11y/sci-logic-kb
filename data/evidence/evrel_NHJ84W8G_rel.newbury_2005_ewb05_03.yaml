@@ -1,0 +1,9 @@
+evidence: The mechanisms by which the pump power, cavity length and cavity loss control
+  the frequency comb spacing and offset are identified.
+id: evrel_NHJ84W8G_rel.newbury_2005_ewb05_03
+metadata:
+  source_paper: newbury2005
+  zotero_key: NHJ84W8G
+object: pri.fiber_comb_perturbative_response_theory
+predicate: ENABLED-BY
+subject: pri.fiber_comb_mimo_feedback_topology

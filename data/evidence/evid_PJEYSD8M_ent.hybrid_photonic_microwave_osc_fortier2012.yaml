@@ -1,0 +1,14 @@
+definition: '将室温蓝宝石腔振荡器（SLCO）相位锁定至Ti:sapphire OFD微波信号， 融合OFD接近载波低相位噪声与SLCO远端偏移低热噪声底，
+  实现10 GHz单台420 as绝对时序抖动（1 Hz–5 GHz）。
+
+  '
+id: evid_PJEYSD8M_ent.hybrid_photonic_microwave_osc_fortier2012
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/fortier2012.yaml
+  source_paper: fortier2012
+  zotero_key: PJEYSD8M
+name: 混合光子-微波振荡器（Fortier 2012）
+original_id: ent.hybrid_photonic_microwave_osc_fortier2012
+properties: {}
+status: Determined
+type: Entity/Factor

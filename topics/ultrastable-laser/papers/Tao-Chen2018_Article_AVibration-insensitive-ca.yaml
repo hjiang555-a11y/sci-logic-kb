@@ -1,4 +1,8 @@
-# Tao 2018 — A vibration-insensitive-cavity design holds impact of higher than 100g [evidence]
+# Tao 2018 — A vibration-insensitive-cavity design holds impact of higher than
+
+
+$$100g$$
+... [evidence]
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
@@ -7,9 +11,20 @@ meta:
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
-  title: "A vibration-insensitive-cavity design holds impact of higher than 100g"
+  title: >
+    A vibration-insensitive-cavity design holds impact of higher than
+
+
+$$100g$$
+
+
+100 g
   year: 2018
   first_author: "Tao"
+  authors: ["Bin-Kai Tao", "Qun-Feng Chen"]
+  journal: "Applied Physics B"
+  volume: 124
+  doi: 10.1007/s00340-018-7096-5
   note: >
     [批量提取] 元数据来源：CrossRef。内容待专家提取。
 entities: []

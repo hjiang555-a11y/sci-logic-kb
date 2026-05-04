@@ -1,0 +1,9 @@
+evidence: total temperature fluctuation is stabilized within 2 mK over a 24 h period;
+  drift about 1-2 Hz/s
+id: evrel_W8K5GLK6_rel.dong_2010_o06
+metadata:
+  source_paper: dong2015
+  zotero_key: W8K5GLK6
+object: ent.thermal_environment
+predicate: CONDITIONED-BY
+subject: ent.fiber_interferometer

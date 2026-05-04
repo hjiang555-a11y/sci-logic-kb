@@ -1,0 +1,11 @@
+evidence: '"mid-infrared frequency comb sensing technology will increase the number
+  of detectable molecules, as well as the detection sensitivity."
+
+  '
+id: evrel_RZME5CH8_rel.picqué_2019_19_10
+metadata:
+  source_paper: picque2019
+  zotero_key: RZME5CH8
+object: met.comb_spectroscopy_spectral_coverage
+predicate: CHARACTERIZED-BY
+subject: ent.mid_ir_frequency_comb

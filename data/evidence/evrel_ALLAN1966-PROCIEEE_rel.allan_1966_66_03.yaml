@@ -1,0 +1,9 @@
+evidence: σ_y(τ) is recommended as the standard measure of fractional frequency stability
+  in the time domain.
+id: evrel_ALLAN1966-PROCIEEE_rel.allan_1966_66_03
+metadata:
+  source_paper: allan1966
+  zotero_key: ALLAN1966-PROCIEEE
+object: meth.allan_deviation_adev
+predicate: OPERATIONALIZED-AS
+subject: met.fractional_frequency_instability_sigma_y

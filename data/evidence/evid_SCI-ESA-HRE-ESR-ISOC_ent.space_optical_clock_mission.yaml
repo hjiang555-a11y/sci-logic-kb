@@ -1,0 +1,21 @@
+definition: '部署于 ISS（Columbus 外部载荷设施 CEPF）的空间光学原子钟 + 高性能时频传递系统。 任务通过将一套紫外性能优于地面最佳光钟的空间光钟与三条地–空时频链路组合，
+  实现：(a) 大空间尺度、大引力势差的引力时间膨胀直接测量；(b) 分布在不同大陆的地面 光钟非共视比对（搜索精细结构常数时间变化、SME 参数、暗物质耦合）；(c)
+  对 TAI/UTC 原子时标的超高精度贡献；(d) 厘米级大地水准面差分测量。
+
+  '
+id: evid_SCI-ESA-HRE-ESR-ISOC_ent.space_optical_clock_mission
+metadata:
+  original_file: /data/sci-logic-kb/topics/time-frequency-transfer/papers/cacciapuoti2017.yaml
+  source_paper: cacciapuoti2017
+  zotero_key: SCI-ESA-HRE-ESR-ISOC
+name: 空间光学原子钟任务（通用 · I-SOC 为代表实例）
+original_id: ent.space_optical_clock_mission
+properties:
+  ground_network: 约 10 台固定地面光钟（都灵 / PTB / 巴黎 / NPL / 博尔德 / 东京 等）+ 3–4 台可搬运光钟
+  host_platform: 国际空间站 ISS（Columbus External Payload Facility / CEPF）
+  orbit: ISS 近圆低地球轨道，轨道周期 ~92 min，高度 ~400 km
+  payload_elements: 空间光钟 SLOC + 空间频率梳 SFC + MicroWave Link (MWL) + ELT+ 脉冲光学链路 + 可选
+    FCOL 频率梳光学链路
+  routine_science_duration: '≥ 2 年（#SR-OP-01 / #SR-OP-02）'
+status: Determined
+type: Entity/Factor

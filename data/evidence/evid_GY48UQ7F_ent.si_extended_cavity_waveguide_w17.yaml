@@ -1,0 +1,11 @@
+definition: ''
+id: evid_GY48UQ7F_ent.si_extended_cavity_waveguide_w17
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/wang2017.yaml
+  source_paper: wang2017
+  zotero_key: GY48UQ7F
+name: Long low-loss silicon extended-cavity waveguide
+original_id: ent.si_extended_cavity_waveguide_w17
+properties: {}
+status: Determined
+type: Entity/Factor

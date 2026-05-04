@@ -1,0 +1,32 @@
+definition: '非线性偏振旋转（NPR）锁模 Er:fiber 环形腔（拉伸脉冲区，β₂ 近零略正）+ EDFA 放大 + 锗硅 HNLF 展宽至倍频程（~960–2200
+  nm），以 2060 nm 二倍频 f-2f 提取 fceo；通过（i）将 1480 nm Bragg-grating 稳定 FP 泵浦二极管工作电流推至 ~1
+  A 以进入低白 RIN 区、（ii）带相位超前补偿的快速伺服反馈至泵流， 实现 fceo 仪器极限线宽与积分相噪 ~1 rad。
+
+  '
+id: evid_CNSSF9YY_ent.pump_noise_suppressed_erfiber_comb_m07
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/mcferran2007.yaml
+  source_paper: mcferran2007
+  zotero_key: CNSSF9YY
+name: 低泵噪 Er:fiber 频率梳（McFerran 2007 系统）
+original_id: ent.pump_noise_suppressed_erfiber_comb_m07
+properties:
+  edfa_pump_power: ~250 mW（反向泵浦）
+  f2f_wavelength: 2060 nm SHG
+  fixed_point_wavelength: 1.48 µm ± 2%（n_fix ≈ 4.1×10⁶）
+  hnlf_mean_power: ~80 mW（峰值 ~25 kW）
+  laser_type: NPR 锁模 Er:fiber 拉伸脉冲激光器
+  mean_output_power: ~8 mW
+  metric_coverage_range: !!python/tuple
+  - 960.0
+  - 2200.0
+  metric_engineering: 41000000000.0
+  pulse_width_intracavity: ~45 fs（变换极限）
+  pulse_width_pre_hnlf: ~55 fs
+  pump_current_optimal: 1 A（低 RIN 工作点）
+  pump_wavelength: 1480 nm
+  repetition_rate: 49.3–50.1 MHz
+  servo_bandwidth: ~80 kHz
+  supercontinuum_span: ~960 nm 到 ~2200 nm（倍频程）
+status: Determined
+type: Entity/Factor

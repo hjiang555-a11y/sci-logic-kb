@@ -1,0 +1,9 @@
+evidence: This state works in the normal dispersion regime with the assistance of
+  the avoided mode-crossing effect
+id: evrel_AT5ZTB9M_rel.shu_2022_22_11
+metadata:
+  source_paper: shu2022
+  zotero_key: AT5ZTB9M
+object: pri.lugiato_lefever_equation
+predicate: DERIVED-FROM
+subject: pri.normal_dispersion_dark_pulse_s22

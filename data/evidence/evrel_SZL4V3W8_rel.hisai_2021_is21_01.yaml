@@ -1,0 +1,8 @@
+evidence: 8-branch Er:fiber frequency comb
+id: evrel_SZL4V3W8_rel.hisai_2021_is21_01
+metadata:
+  source_paper: hisai2021
+  zotero_key: SZL4V3W8
+object: ent.er_fiber_frequency_comb
+predicate: PART-OF
+subject: ent.nmij_8branch_er_comb_h21

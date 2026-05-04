@@ -1,0 +1,11 @@
+evidence: '"the frequency resolution and accuracy is set by the laser rather than
+  the instrument"
+
+  '
+id: evrel_XJ9M7ZLG_rel.coddington_2014_16_11
+metadata:
+  source_paper: coddington2016
+  zotero_key: XJ9M7ZLG
+object: ent.optical_frequency_comb
+predicate: CONDITIONED-BY
+subject: ent.dual_comb_spectrometer

@@ -1,0 +1,20 @@
+definition: 'CaF₂ 单片腔（GTI 镀层补偿三阶色散）+ 直接贴附 Er 玻璃增益介质的锁模激光器； 腔内损耗 <1%、净色散 50–100 fs²、热接触好、免对准。
+  自由运行输出 8 GHz 重频脉冲串，用低温冷却功分器探测 → X 波段光生微波， 相噪本底 < −180 dBc/Hz @ 1 MHz。
+
+  '
+id: evid_3VF89TBF_ent.monolithic_modelocked_laser_comb_k22
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/kalubovilage2022.yaml
+  source_paper: kalubovilage2022
+  zotero_key: 3VF89TBF
+name: 单片锁模激光光频梳（Kalubovilage 2022，8 GHz X 波段光微波源）
+original_id: ent.monolithic_modelocked_laser_comb_k22
+properties:
+  cavity: CaF₂ 单片腔 + GTI 镀层
+  net_dispersion: 50–100 fs²
+  noise_floor: <-180 dBc/Hz @ 1 MHz 偏移
+  repetition_rate: 8 GHz (X-band)
+  round_trip_loss: <1%
+  stabilization: 自由运行（无主动锁定）
+status: Determined
+type: Entity/Factor

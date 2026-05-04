@@ -1,0 +1,8 @@
+evidence: up to 1 km long open-air paths
+id: evrel_FQ4KYV38_rel.ycas_2019_19_13
+metadata:
+  source_paper: ycas2019
+  zotero_key: FQ4KYV38
+object: met.open_path_length_midir_dcs_y19
+predicate: CHARACTERIZED-BY
+subject: ent.midir_dcs_vocs_y19

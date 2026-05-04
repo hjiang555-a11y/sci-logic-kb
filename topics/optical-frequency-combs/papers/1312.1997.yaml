@@ -1,4 +1,4 @@
-# Quinlan ???? — Optical amplification and pulse interleaving for low-noise photonic microwave... [evidence]
+# Quinlan ???? — Microsoft Word - Er_OA_Int_ver7_ArXiv.docx [evidence]
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
@@ -6,16 +6,12 @@ meta:
   topic: optical-frequency-combs
   source_type: journal_paper
   contribution_type: evidence
-  reliability: high
-  title: "Optical amplification and pulse interleaving for low-noise photonic microwave generation"
+  reliability: medium
+  title: "Microsoft Word - Er_OA_Int_ver7_ArXiv.docx"
   first_author: "Quinlan"
-  authors: ["Franklyn Quinlan", "Fred N. Baynes", "Tara M. Fortier", "Qiugui Zhou", "Allen Cross", "Joe C. Campbell", "Scott A. Diddams"]
-  journal: "Optics Letters"
-  volume: 39
-  pages: 1581
-  doi: 10.1364/OL.39.001581
+  authors: ["Quinlan, Franklyn J."]
   note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+    [批量提取] 元数据来源：PDF metadata。内容待专家提取。
 entities: []
 principles: []
 methods: []

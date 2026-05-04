@@ -1,0 +1,9 @@
+evidence: fundamental dynamics of micro-comb sources are based on the interplay of
+  Kerr nonlinearity and optical dispersion
+id: evrel_HPCYUSLJ_rel.pasquazi_2016_18_05
+metadata:
+  source_paper: pasquazi2018
+  zotero_key: HPCYUSLJ
+object: pri.parametric_four_wave_mixing_comb
+predicate: DERIVED-FROM
+subject: pri.dissipative_kerr_soliton

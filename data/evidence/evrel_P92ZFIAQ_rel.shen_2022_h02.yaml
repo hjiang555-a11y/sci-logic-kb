@@ -1,0 +1,8 @@
+evidence: obtained a stability of below 4×10⁻¹⁹ at 10,000 s.
+id: evrel_P92ZFIAQ_rel.shen_2022_h02
+metadata:
+  source_paper: shen2022
+  zotero_key: P92ZFIAQ
+object: ent.freespace_tf_link_113km_sh22
+predicate: CHARACTERIZED-BY
+subject: met.freespace_link_instability_sh22

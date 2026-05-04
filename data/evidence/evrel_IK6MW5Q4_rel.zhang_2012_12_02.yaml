@@ -1,0 +1,8 @@
+evidence: EOM bandwidth limited by sharp resonances around 900 kHz
+id: evrel_IK6MW5Q4_rel.zhang_2012_12_02
+metadata:
+  source_paper: zhang2012c
+  zotero_key: IK6MW5Q4
+object: met.eom_frep_transfer_bandwidth_z12
+predicate: CHARACTERIZED-BY
+subject: ent.menlo_erfiber_eom_comb_z12

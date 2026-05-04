@@ -1,0 +1,8 @@
+evidence: optical fiber spool for laser stabilization
+id: evrel_KH82PQJ2_rel.hu_2015_U15_01
+metadata:
+  source_paper: hu2015
+  zotero_key: KH82PQJ2
+object: ent.fiber_interferometer
+predicate: PART-OF
+subject: ent.ultralow_accel_fiber_spool_h15

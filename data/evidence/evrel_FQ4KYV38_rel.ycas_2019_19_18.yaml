@@ -1,0 +1,9 @@
+evidence: path length was extended to 1 km... improving sensitivity to ambient gases
+  at the cost of increased spectral clutter
+id: evrel_FQ4KYV38_rel.ycas_2019_19_18
+metadata:
+  source_paper: ycas2019
+  zotero_key: FQ4KYV38
+object: pri.photon_starved_open_path_dcs_limit
+predicate: BOUNDED-BY
+subject: met.voc_path_integrated_sensitivity_y19

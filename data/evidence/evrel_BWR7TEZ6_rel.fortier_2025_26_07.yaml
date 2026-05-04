@@ -1,0 +1,8 @@
+evidence: fractional instabilities approaching 5 × 10⁻¹⁷τ⁻¹/²
+id: evrel_BWR7TEZ6_rel.fortier_2025_26_07
+metadata:
+  source_paper: fortier2026
+  zotero_key: BWR7TEZ6
+object: met.optical_clock_fractional_instability
+predicate: CHARACTERIZED-BY
+subject: ent.optical_frequency_standard

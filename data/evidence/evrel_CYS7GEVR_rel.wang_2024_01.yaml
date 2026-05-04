@@ -1,0 +1,12 @@
+evidence: '"The local narrow linewidth laser is an ultrastable laser (wavelength 1550.12
+  nm, linewidth 2 Hz) stabilized in an optical cavity ... using the Pound-Drever-Hall
+  (PDH) method."
+
+  '
+id: evrel_CYS7GEVR_rel.wang_2024_01
+metadata:
+  source_paper: wang2024a
+  zotero_key: CYS7GEVR
+object: meth.pdh_locking
+predicate: ENABLED-BY
+subject: ent.optical_freq_purification_station_w24

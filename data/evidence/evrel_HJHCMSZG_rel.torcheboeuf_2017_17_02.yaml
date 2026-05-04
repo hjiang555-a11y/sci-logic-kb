@@ -1,0 +1,8 @@
+evidence: locking bandwidth up to 700 kHz
+id: evrel_HJHCMSZG_rel.torcheboeuf_2017_17_02
+metadata:
+  source_paper: torcheboeuf2017
+  zotero_key: HJHCMSZG
+object: met.frep_lock_bandwidth_t17
+predicate: CHARACTERIZED-BY
+subject: ent.dpssl_eryb_eom_comb_t17

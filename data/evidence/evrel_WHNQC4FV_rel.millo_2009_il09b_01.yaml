@@ -1,0 +1,8 @@
+evidence: fiber-based optical frequency comb (FOFC)
+id: evrel_WHNQC4FV_rel.millo_2009_il09b_01
+metadata:
+  source_paper: millo2009b
+  zotero_key: WHNQC4FV
+object: ent.er_fiber_frequency_comb
+predicate: PART-OF
+subject: ent.fiber_comb_microwave_cs_fountain_m09b

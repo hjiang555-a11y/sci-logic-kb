@@ -1,0 +1,10 @@
+evidence: The entire comb mode structure follows the comb equation f_n = n·f_rep +
+  f_ceo, enabling absolute optical frequency measurement by stabilizing just two radio
+  frequencies.
+id: evrel_5NSQLZTS_rel.droste_2016_R16_03
+metadata:
+  source_paper: droste2016
+  zotero_key: 5NSQLZTS
+object: pri.comb_equation
+predicate: ENABLED-BY
+subject: ent.optical_frequency_comb

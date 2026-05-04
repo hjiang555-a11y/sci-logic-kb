@@ -1,0 +1,13 @@
+definition: '基于III-V增益芯片与硅光波导异质集成的窄线宽可调谐CW激光器，输出C波段 1520–1580 nm，被相位锁定至DKS双梳，作为合成器的最终输出端口。
+
+  '
+id: evid_4I37D6SD_ent.iii_v_si_tunable_laser
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/spencer2018.yaml
+  source_paper: spencer2018
+  zotero_key: 4I37D6SD
+name: III-V/Si异质集成可调谐激光器
+original_id: ent.iii_v_si_tunable_laser
+properties: {}
+status: Determined
+type: Entity/Factor

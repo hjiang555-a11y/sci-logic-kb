@@ -1,0 +1,10 @@
+definition: Automatic extraction from 00377801. Details pending deep scan.
+id: evid_00377801
+metadata:
+  source_paper: 00377801
+  status: processed_auto
+name: Evidence from 00377801
+properties:
+  source_pdf: 00377801
+  status: unverified
+type: Entity/Factor

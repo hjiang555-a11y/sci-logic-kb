@@ -1,0 +1,8 @@
+evidence: reaching its thermal noise floor of mod σ_y ≈ 3×10⁻¹⁶
+id: evrel_X7XXKXDZ_rel.häfner_2020_F20_03
+metadata:
+  source_paper: hafner2020
+  zotero_key: X7XXKXDZ
+object: pri.brownian_thermal_noise_fdt
+predicate: BOUNDED-BY
+subject: ent.transportable_12cm_cavity_h20

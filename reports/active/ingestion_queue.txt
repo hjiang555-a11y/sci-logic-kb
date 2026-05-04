@@ -1,0 +1,495 @@
+030201 (1)
+031404
+04314362
+044201
+05168298
+05175343
+05500823
+05705533
+06025135
+06174188
+06243659
+06819208
+071407
+07389322
+07389323
+08566003
+08821390
+09145632
+1
+1-1
+1-2
+1-s2.0-S0273117710004278-main
+1-s2.0-S0273117714005274-main
+1-s2.0-S0370157317303253-main
+1-s2.0-S0921452699018633-main
+1-s2.0-S1631070515000754-main
+1-s2.0-S2095927325008813-main
+1-s2.0-S2095927325008813-mmc1
+1.2195297
+1.4898334
+1.4960088
+1.5029859
+10.1364@OL.43.004136
+1111
+119970G
+1302.5927
+1305.3026
+1308.2377v2
+1311.4378
+1312.1997
+1367-2630_14_1_013045
+1425
+1630.full (1)
+163104_1_online
+1823(1)
+186MHz低幅度噪声掺铒光纤飞秒激光器_闫露露
+191.full
+1933
+2009 Weyers - Phys.Rev.A79 
+2012 Science 336,441 920-Kilometer Optical Fiber Link
+2014 Opt Lett(39.9.2534)-ZZG_500--MHz spaced Yb-fiber laser frequency comb without amplifiers
+20143646_flow_toAuthor_Content_1001_609769
+2016 Nanophotonics optical frequency comb generation based on erbium fiber lasers
+2017.03.09.0001-利用模式滤波器产生4.77GHz重复频率飞秒脉冲激光的+实验研究-2017_3_9 22_09_17 (1)
+20170282.full
+2020-The emergence of picokelvin physics-Chen_
+2092
+2184
+2222
+2307.14141v1
+236.full
+2376
+2472
+2479
+2495
+251591 (2)
+2529
+2542(1)
+2587
+2609
+2634
+2646
+2667
+2670
+2688
+2691
+2697
+2704
+2707
+2715
+2785
+2905
+2905-1
+2905-2
+2905-3
+2905-4
+2905-5
+2905-6
+2922
+2923
+2923-1
+2923-2
+2923-3
+2932
+2935
+2938
+2943
+2947
+2959
+2963
+2982
+2984
+2985
+2995
+3
+3011
+3038
+3048
+3067
+3083
+3088
+3103
+3104
+3121
+3180
+32
+3209
+3249
+3250 (1)
+3333
+4
+41586_2022_5225_MOESM1_ESM
+41586_2022_5225_MOESM2_ESM
+41586_2022_5228_MOESM1_ESM
+41586_2022_5228_MOESM2_ESM
+41586_2022_5245_MOESM1_ESM
+41586_2022_5245_MOESM2_ESM
+41586_2024_7225_MOESM2_ESM
+5.0010704
+5.0087894
+554.full
+6057891
+6Li原子跃迁频率和超精细分裂的精密测量
+6aa4cdb5290485275d10e4d2976a14fd_aaddca25ef0b2
+8-20212162
+9_2GHz频率信号50km光纤传递_孟森
+A
+APL mille et al proof
+Al ion Chou CW PRL 2010
+An optical fiber spool for laser stabilization with reduced acceleration sensitivity to 10-12-g
+An_Ultra-Low_Frequency_Noise_Laser_Based_on_Al
+Appl. Phys. Lett. 29 , 296 (1976)
+Applied Physics Letters 2012 Vol.101,No.15 153107(4)
+Argence oe 2012
+Attosecond-Resolution
+Bothwell_2019_Metrologia_56_065004
+COL-18-0476
+COL201816051402
+CPB Zhang 2015
+CPL bian et al 05
+Characterization of the long-term2018
+ClockGW_PhysRevD.94.124043
+Delva2017_Article_ClocksInSpaceForTestsOfFunda
+Denker2018_Article_GeodeticMethodsToDetermineT
+Derevianko_2022_Quantum_Sci._Technol._7_044002
+Design_and_Properties_of_Hollow_Antiresonant_F
+Diddams PRL_2000_05_300THzComb
+Drever 等 - 1983 - Laser phase and frequency stabilization using an optical resonator
+Exertier_2016_Metrologia_53_1395
+FSM2008 Crane et al
+Fu IPC11
+Guo_2021_Chinese_Phys._B_30_060310
+Hansch 06 Reviews of modern phy
+Hg Mcferran PRL 2012
+High-Precision Distribution of Highly Stable Optical Pulse
+Highly stable piezoelectrically tunable optical cavities
+ICOLS09 Amy et al
+In Wang Optics Communication
+Jeon 等 - 2025 - 10-15-level laser stabilization down to fiber thermal noise limit using self-homodyne detection
+Jiang IPC11
+Jiang ieee pj 2011
+Jiang_OE
+LJ15739
+LZ01024172
+LZ01027879
+LZ01028367
+LZ01028841_看图王
+LZ01029465
+LZ01030765
+Laser   Photonics Reviews - 2021 - Cuyvers - L
+Laser Phys. 24 (2014) 015105
+Li 11 EFTF IFCS
+Li_2024_Metrologia_61_015006
+Limits_of_Coupling_Efficiency_Into_Hollow-Core
+Lu-2020-Sensitive-linear-optical-sampling-s
+Measurement Science & Technology 2012 23（5）055201 
+Menlo激光系统专利
+MichaudBelleau_Optica2021_Supplementary_Autor_
+Millo 等 - 2009 - Ultrastable lasers based on vibration insensitive cavities
+Mode-locked double-clad fiber laser with a carbon nanotubes saturable absorber
+Mode-locked fiber laser frequency-controlled with an intracavity electro-optic modulator 2005
+Nature 533, 517–520 (26 May 2016)
+Nature Photonics 2013 7 842-845
+Nature Photonics 2013 7（6） 435-439
+NaturePhoton_XUVcomb phase match 2018
+Nelson1997_Article_Ultrashort-pulseFiberRingLa
+Ning_2020_Chinese_Phys._Lett._37_064202
+OE Lopez 10
+OL 09 Fefelian et al 2009 2
+OL kefelian et al 2009
+OPTICS LETTERS 2014 Vol. 39, No. 6 1553-1556
+Opt. Lett. 39(7), 1980-1983 (2014)
+Optics Letters, Vol. 29, Issue 17, pp. 2076-2078 (2004)
+Optics Letters, Vol. 36 Issue 18, pp.3572-3574 (2011)
+PRXQuantum.4.040346
+Phase
+Photonic generation of RF and microwave signal with relative frequency instability of 10-15
+PhysRevA.106.023501
+PhysRevA.34.4025
+PhysRevA.72.043816
+PhysRevA.80.045803
+PhysRevA.82
+PhysRevA.89.023805
+PhysRevA.90.061802
+PhysRevA.92.021801
+PhysRevApplied.21.034066
+PhysRevB.68.085109 (1)
+PhysRevLett.100.103002
+PhysRevLett.102.163601
+PhysRevLett.111.237402
+PhysRevLett.114.253902
+PhysRevLett.116.013001
+PhysRevLett.118.263202
+PhysRevLett.12.507
+PhysRevLett.123.031101-laser ranging in space
+PhysRevLett.123.033201-quantum logic clock to -19
+PhysRevLett.125.173002
+PhysRevLett.128.020801
+PhysRevLett.132.233802
+PhysRevLett.76.18
+PhysRevLett.84.6010
+PhysRevLett.85.2264
+PhysRevLett.93.250602
+PhysRevLett.94.203904
+PhysRevX.3.031003
+PhysRevX.6.021016
+PhysRevX.8.021036
+Quinlan2013
+Quinlan2013_2
+RSI25-AR-00618
+RSI25-AR-00704
+Rapid_and_precise_absolute_distance_measurements_NIST
+RevModPhys.78.1279
+RevModPhys.84.1527
+RevModPhys.85.1103
+RevModPhys.85.553
+RevModPhys.86.121
+RevModPhys.94.035001
+Schliesser 等 - 2012 - Mid-infrared frequency combs
+Science 2020 Nakamura
+SiliconCavity Xtal Coating noise_Optica 2023
+Sr 88 ion Madej PRL 2012
+Sr accuracy_PRL.133.023401.2024_0
+Sr best clock_Bloom_Nature
+Supercontinuum generation of highly nonlinear fibers pumped by 1.57-μm laser soliton
+Syrte 2012
+Tao-Chen2018_Article_AVibration-insensitive-ca
+Temperature_Insensitive_Delay-Line_Fiber_Inter
+Th ion Campbell PRL 2012
+Th ion Kazakov NJP 2012
+Udem 等 - 2002 - Optical frequency metrology
+Visible-to-ultraviolet_frequency_comb_generati
+Xiaopeng Xie 2016
+Xu_2025_Chinese_Phys._Lett._42_120401
+Yb ion Huntermann PRL 2012
+Zhang yy  IFCS 2014
+Zhang_2022_Chinese_Phys._B_31_054210
+[2022] Passively stable dissemination of ultra
+abb2473_nakamura_sm
+all normal dispersion fs laser
+ao-49-29-5577
+ao-5-10-1550
+ao-50-14-2098
+ao-54-5-1152 (1)
+ao-58-7-1733
+art:10.1007%2FBF01081271
+art:10.1007%2FBF01091215
+art:10.1007%2Fs00340-006-2426-4(1)
+art:10.1007%2Fs00340-009-3832-1
+art:10.1007%2Fs00340-013-5740-7
+art:10.1007%2Fs003400100726
+bartels05
+cpl34-090602-2017-0572w
+d41586-022-03297-0
+d41586-023-01937-7
+d693d15dd1e42383b7b9bd3bf5a5bb43_c96d52a4f5ca0
+e2019-100324-6
+eaay3676.full
+eftf09 jiang et al proceeding
+eftf09 millo et al proceeding
+fig4a
+final 316
+fortier APL 2012
+fphy-10-1005074
+josab jiang et al
+josab-27-5-914
+josab-38-3-932
+kim08
+low noise comb1
+ncomms10436
+newbury07
+nihms923383
+nphoton.2012.217
+nphoton.2013.174
+nphoton.2013.177
+nphys3000 A quantum network of clocks
+nwaf352
+nwaf352_supplemental_file
+oe-18-10-9739
+oe-18-13-13385
+oe-19-24-24387
+oe-20-2-1775
+oe-21-15-17615
+oe-21-22-27057
+oe-21-7-7891
+oe-22-10-11788
+oe-22-5-5564
+oe-22-6-6996(1)
+oe-23-19-24342
+oe-24-18-20107
+oe-24-3-3095
+oe-25-13-15539
+oe-25-18-21719
+oe-27-10-14121
+oe-27-16-22040
+oe-27-25-36965
+oe-28-18-26661
+oe-28-19-28563
+oe-28-8-10960
+oe-28-9-12755
+oe-30-7-11266
+oe-33-16-35028
+ol-32-19-2870
+ol-32-9-1044
+ol-35-10-1668
+ol-36-19-3912
+ol-40-21-5117
+ol-40-9-2112
+ol-46-21-5429
+ol-47-20-5417
+ol-47-20-5441
+ol-47-21-5591
+ol-50-10-3405
+ol-50-14-4490
+optica-11-9-1268
+optica-3-12-1381_看图王
+optica-3-9-995
+optica-8-2-216
+optica-8-4-471
+out
+patent kefelian
+photonics-09-00399
+prj-12-6-1274
+residual phase noise and time jitters of signal-chip digital
+s00340-004-1547-x
+s00340-004-1548-9
+s00340-007-2892-3
+s00340-011-4710-1
+s00340-013-5439-9
+s00340-017-6731-x
+s20180751
+s41377-022-00947-w
+s41467-018-05219-z
+s41467-019-09768-9
+s41467-020-20591-5
+s41467-021-27884-3
+s41467-024-45924-6 (1)
+s41566-018-0347-5
+s41566-019-0358-x
+s41566-019-0493-4
+s41566-019-0520-5
+s41566-020-0619-8
+s41566-021-00828-5
+s41566-024-01525-9
+s41567-017-0042-3
+s41567-020-01038-6
+s41567-022-01794-7
+s41586-018-0598-9
+s41586-019-1157-8
+s41586-020-2346-1_First BEC in space
+s41586-021-03571-7
+s41586-021-04344-y
+s41586-021-04349-7
+s41586-022-04579-3
+s41586-022-05225-8
+s41586-022-05228-5
+s41586-022-05245-4
+s41586-023-05894-z
+s41586-023-06032-5
+s41586-024-07225-2
+s41586-024-07839-6
+s41586-025-09999-5
+s41598-018-26365-w
+s41598-019-48168-3
+sciadv.adg1971
+science.abo2631
+science.abo2631_sm
+sinclair2015
+srep05134-1_看图王
+srep19380
+srep24969 (1)
+thermal noise limited optical cavity webster
+untitled
+untitled-1
+untitled-10
+untitled-11
+untitled-12
+untitled-13
+untitled-14
+untitled-15
+untitled-16
+untitled-17
+untitled-18
+untitled-19
+untitled-2
+untitled-20
+untitled-21
+untitled-22
+untitled-23
+untitled-24
+untitled-25
+untitled-26
+untitled-27
+untitled-28
+untitled-29
+untitled-3
+untitled-30
+untitled-31
+untitled-32
+untitled-33
+untitled-34
+untitled-35
+untitled-36
+untitled-37
+untitled-38
+untitled-39
+untitled-4
+untitled-40
+untitled-41
+untitled-42
+untitled-43
+untitled-44
+untitled-45
+untitled-46
+untitled-47
+untitled-48
+untitled-49
+untitled-5
+untitled-50
+untitled-51
+untitled-52
+untitled-53
+untitled-54
+untitled-55
+untitled-56
+untitled-57
+untitled-58
+untitled-59
+untitled-6
+untitled-60
+untitled-61
+untitled-62
+untitled-63
+untitled-64
+untitled-65
+untitled-66
+untitled-67
+untitled-68
+untitled-69
+untitled-7
+untitled-70
+untitled-71
+untitled-72
+untitled-73
+untitled-74
+untitled-75
+untitled-76
+untitled-8
+untitled-9
+untitled1
+untitled1-1
+untitled2
+washburn_fiberlaser_lock
+净化-授时中心-王丹-Optical Fiber Technology 2024-Purif
+基于光学时延补偿的50 km光纤微波频率传递
+意大利-2014-Appl. Phys. B-1284km -High‑accuracy c
+意大利-2020-OE-2个PBS解决偏振影响拍频电功率问题-Robust optical
+时间频率基准装置的研制现状
+用于锶光钟频率测量的光纤光梳系统研究进展_张颜艳
+电子枪束流截面测量系统_姜海峰
+相干布居囚禁原子钟技术及其进展_郭文阁
+自启动_长期稳定锁模的飞秒掺铒光纤激光源实验研究_张龙
+铯原子喷泉钟低噪声频率综合器的研制_赵文宇
+面向Li原子D1线频率测量应用的掺铒飞秒光纤光梳系统
+高准确度的钙离子光频标

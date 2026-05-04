@@ -1,0 +1,15 @@
+definition: '6 cm 椭圆芯 PM-HNLF（β₂=-13 ps²/km, γ=3.1 (W·km)⁻¹ @1930 nm）同时完成频谱展宽与时域压缩，
+  末端 ~1 cm 内把 ~90 fs 脉冲自压缩到 9.5 fs 并在 1 µm 产生 dispersive wave， 使 2 µm SHG 与 DW 在时域上自然重叠，支撑
+  inline f-2f。长度容差 ±2 mm。
+
+  '
+id: evid_BDY8JHA4_ent.hnlf_self_compression_stage_x20
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/xing2020.yaml
+  source_paper: xing2020
+  zotero_key: BDY8JHA4
+name: HNLF2 非线性自压缩级（Xing 2020）
+original_id: ent.hnlf_self_compression_stage_x20
+properties: {}
+status: Determined
+type: Entity/Factor

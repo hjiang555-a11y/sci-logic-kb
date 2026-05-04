@@ -1,0 +1,8 @@
+evidence: calculated instability flicker floor of σ_y = 4×10⁻¹⁶
+id: evrel_WTUHUAQ7_rel.chen_2014_HF03
+metadata:
+  source_paper: chen2014
+  zotero_key: WTUHUAQ7
+object: pri.brownian_thermal_noise_fdt
+predicate: BOUNDED-BY
+subject: ent.compact_transportable_cavity_c14

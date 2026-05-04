@@ -1,0 +1,8 @@
+evidence: multi-branch all polarization-maintaining Er:fiber frequency comb
+id: evrel_ST825B59_rel.ning_2020_in20_01
+metadata:
+  source_paper: ning2020
+  zotero_key: ST825B59
+object: ent.er_fiber_frequency_comb
+predicate: PART-OF
+subject: ent.ntsc_all_pm_5branch_comb_n20

@@ -1,0 +1,10 @@
+evidence: the adoption of compact frequency-comb sources at gigahertz repetition rates
+  ... is currently hindered by the difficulty of generating octave-spanning spectra
+  using low-peak-power pulses
+id: evrel_CML5935T_rel.hickstein_2017_17_14
+metadata:
+  source_paper: hickstein2017
+  zotero_key: CML5935T
+object: ent.air_silica_microstructure_fiber_d00
+predicate: COMPETES-WITH
+subject: ent.chi2_chi3_waveguide_fceo_h17

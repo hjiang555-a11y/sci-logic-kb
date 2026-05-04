@@ -1,0 +1,9 @@
+evidence: The primary resonator, i.e., the NPE unit, is composed of the SMF-28 fiber
+  and a free-space optical path
+id: evrel_9RFKI5SH_rel.zhang_2017_hOFC17_02
+metadata:
+  source_paper: zhang2017
+  zotero_key: 9RFKI5SH
+object: ent.hybrid_ml_erfiber_comb_z17
+predicate: PART-OF
+subject: ent.npe_unit_z17

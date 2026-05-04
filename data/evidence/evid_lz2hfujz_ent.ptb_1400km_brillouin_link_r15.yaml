@@ -1,0 +1,17 @@
+definition: 'Braunschweig ↔ Strasbourg ↔ Braunschweig 1400 km 地下光纤环；中继放大全部由光纤 Brillouin
+  放大器实现（无 EDFA）；实现数天量级 phase-continuous 频率测量。
+
+  '
+id: evid_lz2hfujz_ent.ptb_1400km_brillouin_link_r15
+metadata:
+  original_file: /data/sci-logic-kb/topics/time-frequency-transfer/papers/raupach2015_lz2hfujz.yaml
+  source_paper: raupach2015_lz2hfujz
+  zotero_key: lz2hfujz
+name: PTB 1400 km Brillouin 放大光纤链路（Raupach 2015）
+original_id: ent.ptb_1400km_brillouin_link_r15
+properties:
+  amplifier: Fiber Brillouin Amplifier (FBA) only
+  length: 1400 km（loop, underground）
+  phase_continuity: up to several days
+status: Determined
+type: Entity/Factor

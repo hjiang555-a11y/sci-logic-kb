@@ -1,0 +1,8 @@
+evidence: an instability of 1.6 × 10^-18 after only 7 hours of averaging
+id: evrel_TP8JKHW3_rel.hinkley_2013_01
+metadata:
+  source_paper: hinkley2013
+  zotero_key: TP8JKHW3
+object: met.clock_instability_yb_hinkley2013
+predicate: CHARACTERIZED-BY
+subject: ent.yb_optical_lattice_clock_nist2013

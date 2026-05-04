@@ -1,0 +1,9 @@
+evidence: the frequency of the nth tooth of the optical frequency comb is simply given
+  by fn = n·fr + f0
+id: evrel_TP9NSD4F_rel.washburn_2004_ash04_06
+metadata:
+  source_paper: washburn2004
+  zotero_key: TP9NSD4F
+object: pri.comb_equation
+predicate: CHARACTERIZED-BY
+subject: ent.er_fiber_comb_washburn04

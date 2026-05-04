@@ -1,0 +1,8 @@
+evidence: heterodyning them against a second comb
+id: evrel_XHCB4X6R_rel.cossel_2017_os17_02
+metadata:
+  source_paper: cossel2017
+  zotero_key: XHCB4X6R
+object: pri.dual_comb_multiheterodyne_detection
+predicate: ENABLED-BY
+subject: ent.airborne_retroreflector_dcs_c17

@@ -1,0 +1,8 @@
+evidence: frequency stability of the piezo cavities is not limited by the piezo actuator
+id: evrel_8MNIBZEW_rel.möhle_2013_o04
+metadata:
+  source_paper: mohle2013
+  zotero_key: 8MNIBZEW
+object: pri.piezo_tuning_stability_tradeoff
+predicate: ENABLED-BY
+subject: ent.piezo_tunable_cavity_m13

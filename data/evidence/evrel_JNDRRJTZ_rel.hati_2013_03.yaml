@@ -1,0 +1,8 @@
+evidence: comprehensive characterization and comparison of photonic microwave signals
+id: evrel_JNDRRJTZ_rel.hati_2013_03
+metadata:
+  source_paper: hati2013
+  zotero_key: JNDRRJTZ
+object: ent.ofd_photonic_rf_source_hati2013
+predicate: CHARACTERIZES
+subject: meth.ofd_absolute_timing_jitter_measurement

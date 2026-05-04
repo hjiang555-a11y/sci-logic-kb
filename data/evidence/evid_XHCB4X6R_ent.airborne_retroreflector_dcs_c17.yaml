@@ -1,0 +1,22 @@
+definition: '双梳 DCS 系统（frep ~ 200 MHz，Δfrep ~ 624 Hz，1.57-1.66 µm） → 反射镜挂载在多旋翼飞行器（multicopter）上，悬停扫描水平
+  / 垂直路径； RTK GPS 提供高精度路径长度测量 → 干混合比空间分布（CO₂, CH₄, H₂O）； 精度 2 ppm CO₂ / 16 ppb CH₄
+  @ 10 s（~50-100 µW 接收功率）。
+
+  '
+id: evid_XHCB4X6R_ent.airborne_retroreflector_dcs_c17
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/cossel2017.yaml
+  source_paper: cossel2017
+  zotero_key: XHCB4X6R
+name: 飞行器挂载反射镜开放路径 DCS 系统（Cossel 2017, NIST）
+original_id: ent.airborne_retroreflector_dcs_c17
+properties:
+  delta_frep: ~624 Hz
+  frep: ~200 MHz
+  path_length_measurement: RTK GPS（high-precision differential）
+  platform: 多旋翼飞行器（multicopter），悬停扫描
+  precision_10s: 2 ppm CO₂ / 16 ppb CH₄ @ ~50-100 µW 接收功率
+  species: CO₂, CH₄, H₂O, isotopologues
+  spectral_coverage: 1.57-1.66 µm（6000-6330 cm⁻¹）
+status: Determined
+type: Entity/Factor

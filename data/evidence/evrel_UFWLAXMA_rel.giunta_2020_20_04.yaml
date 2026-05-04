@@ -1,0 +1,9 @@
+evidence: real-time optical phase tracking with ultra-low-noise frequency combs as
+  a fundamental means to constantly monitor frequency offsets
+id: evrel_UFWLAXMA_rel.giunta_2020_20_04
+metadata:
+  source_paper: giunta2020
+  zotero_key: UFWLAXMA
+object: pri.optical_phase_tracking
+predicate: ENABLED-BY
+subject: meth.wideband_optical_frequency_synthesis

@@ -1,0 +1,8 @@
+evidence: broad comb spectrum spanning from 2750 cm⁻¹ to 3150 cm⁻¹
+id: evrel_FQ4KYV38_rel.ycas_2019_19_11
+metadata:
+  source_paper: ycas2019
+  zotero_key: FQ4KYV38
+object: met.midir_spectral_coverage_y19
+predicate: CHARACTERIZED-BY
+subject: ent.midir_dcs_vocs_y19

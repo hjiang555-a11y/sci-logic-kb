@@ -1,0 +1,8 @@
+evidence: we extract a loss angle for the SiO₂/Ta₂O₅ mirror coatings to be ϕ = 5.15×10⁻⁴
+id: evrel_JIZCUZLY_rel.robinson_2019_11
+metadata:
+  source_paper: robinson2019
+  zotero_key: JIZCUZLY
+object: met.fractional_freq_instability_r19
+predicate: DERIVED-FROM
+subject: met.algaas_coating_loss_angle_ibs_4k_r19

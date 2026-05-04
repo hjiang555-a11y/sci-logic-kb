@@ -1,0 +1,23 @@
+definition: '锁模 Er:fiber 振荡器 + EDFA 放大 + 色散平坦 HNLF 超连续展宽（1100–2200 nm）+ f-2f 自参考干涉仪
+  + 双 PLL（腔内光纤拉伸器锁 f_r，泵浦功率锁 f_0）。 首台 Er:fiber 全相位锁定近红外频率梳，直接将光学频率与 RF 参考相干链接。
+
+  '
+id: evid_TP9NSD4F_ent.er_fiber_comb_washburn04
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/washburn2004.yaml
+  source_paper: washburn2004
+  zotero_key: TP9NSD4F
+name: NIST Er:fiber 近红外全锁频率梳（Washburn 2004）
+original_id: ent.er_fiber_comb_washburn04
+properties:
+  fceo_actuator: 泵浦激光器功率
+  frep_actuator: 腔内光纤拉伸器
+  gain_medium: Er-doped 光纤（EDF）
+  metric_coverage_range: !!python/tuple
+  - 1100.0
+  - 2200.0
+  nonlinear_fiber: 色散平坦高非线性光纤（dispersion-flattened HNLF）
+  repetition_rate_class: ~100 MHz 量级（光纤振荡器）
+  spectral_span_after_hnlf: 1100–2200 nm（覆盖倍频程）
+status: Determined
+type: Entity/Factor

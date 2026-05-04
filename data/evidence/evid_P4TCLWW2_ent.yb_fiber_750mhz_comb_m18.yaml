@@ -1,0 +1,22 @@
+definition: '750 MHz 基频 Yb:fiber 锁模激光器，腔内体晶 EOM + 单级 PZT 为 f_rep 执行器， 泵浦电流调制为 f_CEO
+  执行器；两 DOF 均锁至连续波光学参考。 双台独立梳的 0.1 Hz–10 MHz 积分相噪 <1 rad，in-loop 分数稳定度 ~10⁻¹⁸ @ 1
+  s。
+
+  '
+id: evid_P4TCLWW2_ent.yb_fiber_750mhz_comb_m18
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/ma2018.yaml
+  source_paper: ma2018
+  zotero_key: P4TCLWW2
+name: 750 MHz Yb:fiber 紧锁梳（Ma 2018）
+original_id: ent.yb_fiber_750mhz_comb_m18
+properties:
+  fceo_actuator: 泵浦 LD 电流调制
+  fractional_instability_inloop: ~10⁻¹⁸ @ 1 s
+  frep_actuators: 腔内体晶 EOM（高频）+ 单级 PZT（低频）
+  gain_medium: Yb-doped 光纤
+  integrated_phase_noise: <1 rad（0.1 Hz–10 MHz）
+  number_of_systems: 2 台独立梳
+  repetition_rate: 750 MHz（基频）
+status: Determined
+type: Entity/Factor

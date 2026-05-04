@@ -1,0 +1,8 @@
+evidence: 将外部参考源的稳定度传递给光梳
+id: evrel_CA55MEKS_rel.rao_2019_19_16
+metadata:
+  source_paper: rao2019
+  zotero_key: CA55MEKS
+object: pri.microwave_reference_transfer_to_optical_comb
+predicate: ENABLED-BY
+subject: ent.erfiber_comb_li_d1_r19

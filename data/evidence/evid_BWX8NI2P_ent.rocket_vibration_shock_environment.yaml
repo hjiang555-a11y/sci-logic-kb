@@ -1,0 +1,12 @@
+definition: External environmental condition node (vibration, shock, acoustic, thermal
+  transients).
+id: evid_BWX8NI2P_ent.rocket_vibration_shock_environment
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/lezius2016.yaml
+  source_paper: lezius2016
+  zotero_key: BWX8NI2P
+name: Launch/flight vibration and shock environment
+original_id: ent.rocket_vibration_shock_environment
+properties: {}
+status: Determined
+type: Entity/Factor

@@ -1,4 +1,4 @@
-# Legero ???? — Tuning the thermal expansion properties of optical reference cavities with fu... [evidence]
+#  ???? — josab-27-5-914 [evidence]
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
@@ -6,16 +6,11 @@ meta:
   topic: ultrastable-laser
   source_type: journal_paper
   contribution_type: evidence
-  reliability: high
-  title: "Tuning the thermal expansion properties of optical reference cavities with fused silica mirrors"
-  first_author: "Legero"
-  authors: ["Thomas Legero", "Thomas Kessler", "Uwe Sterr"]
-  journal: "Journal of the Optical Society of America B"
-  volume: 27
-  pages: 914
-  doi: 10.1364/JOSAB.27.000914
+  reliability: low
+  title: "josab-27-5-914"
+  first_author: ""
   note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+    [批量提取] 元数据来源：placeholder (needs expert review)。内容待专家提取。
 entities: []
 principles: []
 methods: []

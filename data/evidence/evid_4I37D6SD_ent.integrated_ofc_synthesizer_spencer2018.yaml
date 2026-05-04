@@ -1,0 +1,14 @@
+definition: '基于芯片集成的DKS双梳（Si₃N₄ THz梳 + SiO₂ 22 GHz梳）和III-V/Si可调谐激光器， 将10 MHz微波钟相干倍频至光频，输出覆盖C波段4
+  THz、频率分辨率1 Hz的稳定光信号。
+
+  '
+id: evid_4I37D6SD_ent.integrated_ofc_synthesizer_spencer2018
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/spencer2018.yaml
+  source_paper: spencer2018
+  zotero_key: 4I37D6SD
+name: 集成光子学光频合成器（Spencer 2018）
+original_id: ent.integrated_ofc_synthesizer_spencer2018
+properties: {}
+status: Determined
+type: Entity/Factor

@@ -1,0 +1,16 @@
+definition: '大模体积光纤谐振器（2 m 光纤），受激布里渊散射（SBS）提供增益， 光纤的大热容量抑制快速温度波动（纳开尔文级自参考）， 实现超窄线宽输出。紧凑便携。
+
+  '
+id: evid_UP2Q8F9Y_ent.brillouin_fiber_laser_l19
+metadata:
+  original_file: /data/sci-logic-kb/topics/ultrastable-laser/papers/loh2019.yaml
+  source_paper: loh2019
+  zotero_key: UP2Q8F9Y
+name: 光纤布里渊激光器（Loh 2019）
+original_id: ent.brillouin_fiber_laser_l19
+properties:
+  fiber_length: 2 m
+  mechanism: stimulated Brillouin scattering
+  temperature_self_reference: nanokelvin level
+status: Determined
+type: Entity/Factor

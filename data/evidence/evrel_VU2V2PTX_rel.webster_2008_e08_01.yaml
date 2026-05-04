@@ -1,0 +1,9 @@
+evidence: This limit is attributed to Brownian motion of the mirror substrates and
+  coatings
+id: evrel_VU2V2PTX_rel.webster_2008_e08_01
+metadata:
+  source_paper: webster2008
+  zotero_key: VU2V2PTX
+object: pri.brownian_thermal_noise_fdt
+predicate: BOUNDED-BY
+subject: ent.fp_cavity_system

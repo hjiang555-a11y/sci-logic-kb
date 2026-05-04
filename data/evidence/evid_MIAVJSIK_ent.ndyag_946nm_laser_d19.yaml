@@ -1,0 +1,20 @@
+definition: '946 nm Nd:YAG 激光，腔内 KTP 晶体同时用作 EOM 和双折射滤波器， FPGA 数字伺服实现 400 kHz 锁频带宽，
+  预稳定至 30 cm ULE 室温腔，再通过光频梳传递锁定至 1542 nm 低温硅腔。
+
+  '
+id: evid_MIAVJSIK_ent.ndyag_946nm_laser_d19
+metadata:
+  original_file: /data/sci-logic-kb/topics/ultrastable-laser/papers/didier2019.yaml
+  source_paper: didier2019
+  zotero_key: MIAVJSIK
+name: 946 nm Nd:YAG 数字锁定超稳激光
+original_id: ent.ndyag_946nm_laser_d19
+properties:
+  frequency_tuning_range: 120 GHz (via KTP temperature)
+  output_power: ~200 mW
+  pre_stabilization_cavity: 30 cm ULE room-temperature
+  servo_bandwidth: 400 kHz (intracavity KTP EOM)
+  transfer_lock_reference: 1542 nm cryogenic Si cavity
+  wavelength: 946 nm
+status: Determined
+type: Entity/Factor

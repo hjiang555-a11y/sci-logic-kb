@@ -1,0 +1,9 @@
+evidence: octave-spanning mid-infrared supercontinuum spectra could be generated that
+  produced coherent beat notes in an f–2f interferometer
+id: evrel_BRKZG9H2_rel.gaeta_2019_ae19_04
+metadata:
+  source_paper: gaeta2019
+  zotero_key: BRKZG9H2
+object: met.chip_scg_octave_span_g19
+predicate: CHARACTERIZED-BY
+subject: ent.chip_scg_waveguide_g19

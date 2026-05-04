@@ -1,0 +1,12 @@
+evidence: Menlo Systems has reported development of an rf-stabilized fiber frequency
+  comb for operation on a sounding rocket [38] ... These systems rely on phase-stabilization
+  to an rf clock ... Here we explore different operational conditions ... tight optical
+  coherence and low timing jitter, achievable only by phase-stabilization to an optical
+  reference
+id: evrel_D9ANIZW6_rel.sinclair_2014_14_20
+metadata:
+  source_paper: sinclair2014
+  zotero_key: D9ANIZW6
+object: ent.spaceborne_erfiber_comb_l16
+predicate: COMPETES-WITH
+subject: ent.ruggedized_field_comb_s14

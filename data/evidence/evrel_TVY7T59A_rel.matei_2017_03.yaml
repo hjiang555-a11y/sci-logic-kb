@@ -1,0 +1,9 @@
+evidence: fractional frequency instability of each laser is completely determined
+  by the fundamental thermal Brownian noise of the mirror coatings
+id: evrel_TVY7T59A_rel.matei_2017_03
+metadata:
+  source_paper: matei2017
+  zotero_key: TVY7T59A
+object: pri.brownian_thermal_noise_fdt
+predicate: BOUNDED-BY
+subject: ent.si_crystal_fp_cavity_k12

@@ -1,0 +1,10 @@
+evidence: The comb spacing and offset frequency are phase locked to a stable rf signal
+  with a fiber stretcher in the laser cavity and by control of the pump laser power,
+  respectively.
+id: evrel_TP9NSD4F_rel.washburn_2004_ash04_03
+metadata:
+  source_paper: washburn2004
+  zotero_key: TP9NSD4F
+object: ent.er_fiber_comb_washburn04
+predicate: OPERATIONALIZED-AS
+subject: meth.dual_pll_frep_fceo_rf_reference

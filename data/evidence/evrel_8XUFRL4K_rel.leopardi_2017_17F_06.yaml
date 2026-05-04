@@ -1,0 +1,9 @@
+evidence: high-fidelity frequency synthesis with these optical frequency references
+  will require optical frequency comb sources with equally good or better performance
+id: evrel_8XUFRL4K_rel.leopardi_2017_17F_06
+metadata:
+  source_paper: leopardi2017
+  zotero_key: 8XUFRL4K
+object: ent.fp_cavity_system
+predicate: CONDITIONED-BY
+subject: ent.single_branch_erfiber_comb_l17

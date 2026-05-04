@@ -1,0 +1,8 @@
+evidence: previous results limited by vibrational noise; improvement from better isolation
+id: evrel_EGAZKLXR_rel.young_1999_14
+metadata:
+  source_paper: young1999
+  zotero_key: EGAZKLXR
+object: met.freq_noise_from_vibration
+predicate: CHARACTERIZED-BY
+subject: ent.fp_cavity_system

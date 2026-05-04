@@ -1,0 +1,8 @@
+evidence: spacer contributes only 1% of total thermal noise
+id: evrel_VDXBPUQB_rel.numata_2017_05
+metadata:
+  source_paper: numata2004
+  zotero_key: VDXBPUQB
+object: pri.brownian_thermal_noise_fdt
+predicate: BOUNDED-BY
+subject: ent.spacer_ule

@@ -1,0 +1,8 @@
+evidence: fundamental performance limit set by photoelectron shot noise
+id: evrel_694DPR5F_rel.drever_1983_04
+metadata:
+  source_paper: drever1983
+  zotero_key: 694DPR5F
+object: pri.shot_noise_frequency_limit
+predicate: BOUNDED-BY
+subject: meth.pdh_locking

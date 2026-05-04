@@ -1,0 +1,11 @@
+evidence: '"Underlying DCS is the frequency comb laser emitting an array of narrow,
+  phase-coherent spectral lines, or ''teeth.''"
+
+  '
+id: evrel_XJ9M7ZLG_rel.coddington_2014_16_01
+metadata:
+  source_paper: coddington2016
+  zotero_key: XJ9M7ZLG
+object: ent.optical_frequency_comb
+predicate: PART-OF
+subject: ent.dual_comb_spectrometer

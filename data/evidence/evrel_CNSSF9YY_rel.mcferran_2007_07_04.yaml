@@ -1,0 +1,9 @@
+evidence: field spectrum linewidth ... lowered from several hundred kHz to ~60 kHz
+  ... instrument-limited
+id: evrel_CNSSF9YY_rel.mcferran_2007_07_04
+metadata:
+  source_paper: mcferran2007
+  zotero_key: CNSSF9YY
+object: met.fceo_linewidth_m07
+predicate: CHARACTERIZED-BY
+subject: ent.pump_noise_suppressed_erfiber_comb_m07

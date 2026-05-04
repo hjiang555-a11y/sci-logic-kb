@@ -1,0 +1,8 @@
+evidence: 750 MHz ytterbium fiber frequency combs
+id: evrel_P4TCLWW2_rel.ma_2018_a18_01
+metadata:
+  source_paper: ma2018
+  zotero_key: P4TCLWW2
+object: ent.optical_frequency_comb
+predicate: PART-OF
+subject: ent.yb_fiber_750mhz_comb_m18

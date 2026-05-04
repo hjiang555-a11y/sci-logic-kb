@@ -1,0 +1,8 @@
+evidence: five-layer thermal shield... temperature fluctuations strongly attenuated
+id: evrel_H3HYK5D3_rel.sanjuan_2019_J02
+metadata:
+  source_paper: sanjuan2019
+  zotero_key: H3HYK5D3
+object: pri.multi_layer_thermal_shielding_frequency_domain
+predicate: ENABLED-BY
+subject: ent.boost_cubic_cavity_s19

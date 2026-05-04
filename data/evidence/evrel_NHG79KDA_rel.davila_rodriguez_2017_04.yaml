@@ -1,0 +1,10 @@
+evidence: we have chosen a simple cylindrical spacer with a large diameter-to-length
+  ratio. This cavity geometry allows for the existence of a holding location where
+  the cavity can be squeezed without affecting its length to first order
+id: evrel_NHG79KDA_rel.davila_rodriguez_2017_04
+metadata:
+  source_paper: davilarodriguez2017
+  zotero_key: NHG79KDA
+object: pri.squeeze_insensitive_cylindrical_cavity
+predicate: ENABLED-BY
+subject: ent.compact_ule_cavity_25mm_d17

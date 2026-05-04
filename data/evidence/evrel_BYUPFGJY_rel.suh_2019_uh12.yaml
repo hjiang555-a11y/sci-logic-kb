@@ -1,0 +1,8 @@
+evidence: Fig. 1/2 整体方案：frep 射频锁 + f0 via HCN 参考激光 + 非线性展宽至 echelle 覆盖。
+id: evrel_BYUPFGJY_rel.suh_2019_uh12
+metadata:
+  source_paper: suh2019
+  zotero_key: BYUPFGJY
+object: pri.microcomb_to_astrocomb_adaptation
+predicate: ENABLED-BY
+subject: ent.microresonator_astrocomb_s19

@@ -1,0 +1,20 @@
+definition: '在电信级单模光纤（SMF-28，室温地下部署为主）上双向传递超窄线宽光载波， 发射端参考与接收端比对信号的相对相位由 Michelson
+  往返干涉法读出并通过 AOM 反馈修正， 实现 σ_y ≲ 10⁻¹⁸–10⁻²⁰（长平均时间）、accuracy 10⁻¹⁹–10⁻²⁰ 的频率传递。 部署在
+  EURAMET/REFIMEVE+/CLONETS 等欧洲国家计量网络，作为光钟远程比对、 相对论大地测量、基本常数搜索的物理层。
+
+  '
+id: evid_3kxj9jfq_ent.coherent_optical_fiber_link
+metadata:
+  original_file: /data/sci-logic-kb/topics/time-frequency-transfer/papers/calonico2015_3kxj9jfq.yaml
+  source_paper: calonico2015_3kxj9jfq
+  zotero_key: 3kxj9jfq
+name: 相干光纤时频传递链路（Level 1 总节点）
+original_id: ent.coherent_optical_fiber_link
+properties:
+  amplification: bidirectional EDFA（无隔离器，严格双向对称） 或 Brillouin 放大
+  carrier: 1542 nm C 波段（SMF-28 单模光纤）
+  link_length_typical: 100–2000 km 级
+  phase_reference: Michelson 往返干涉 + AOM 反馈
+  round_trip_geometry: parallel two-fiber 或 single-fiber double round trip（本文）
+status: Determined
+type: Entity/Factor

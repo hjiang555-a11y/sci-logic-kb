@@ -1,0 +1,8 @@
+evidence: photonic microwave synthesis... −171 dBc/Hz
+id: evrel_KTHCQRJ2_rel.giunta_2004_19_02
+metadata:
+  source_paper: giunta2019
+  zotero_key: KTHCQRJ2
+object: pri.optical_frequency_division_microwave
+predicate: ENABLED-BY
+subject: meth.photonic_microwave_synthesis

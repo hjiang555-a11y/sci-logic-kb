@@ -1,0 +1,8 @@
+evidence: stabilization of a compact laser frequency comb
+id: evrel_CML5935T_rel.hickstein_2017_17_01
+metadata:
+  source_paper: hickstein2017
+  zotero_key: CML5935T
+object: ent.optical_frequency_comb
+predicate: PART-OF
+subject: ent.chi2_chi3_waveguide_fceo_h17

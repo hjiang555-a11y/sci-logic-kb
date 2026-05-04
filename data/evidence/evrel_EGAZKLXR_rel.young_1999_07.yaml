@@ -1,0 +1,8 @@
+evidence: suspended by vertical strands of surgical tubing stretched to ~3 m
+id: evrel_EGAZKLXR_rel.young_1999_07
+metadata:
+  source_paper: young1999
+  zotero_key: EGAZKLXR
+object: pri.vibration_isolation_pendulum
+predicate: ENABLED-BY
+subject: ent.vibration_isolation

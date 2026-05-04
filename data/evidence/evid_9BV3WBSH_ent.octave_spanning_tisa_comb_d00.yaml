@@ -1,0 +1,23 @@
+definition: 'Kerr-lens 锁模 Ti:Sa 激光器（中心波长 ~800 nm，~10 fs 脉宽，重复频率 100 MHz） 输出耦合入空气-石英微结构光纤（air-silica
+  microstructure fiber，~1.7 µm 芯径，5–10 cm 长）， 通过自相位调制与 χ³ 非线性将梳谱展宽至覆盖一个光学八度（1064 nm
+  及 532 nm）， 形成 300 THz 宽带相干光学频率标尺。重频 Δ 通过 PZT 控制腔长锁定至 10 GHz 微波参考。
+
+  '
+id: evid_9BV3WBSH_ent.octave_spanning_tisa_comb_d00
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/diddams2000.yaml
+  source_paper: diddams2000
+  zotero_key: 9BV3WBSH
+name: 倍频程 Ti:Sa 飞秒梳（Diddams 2000 系统）
+original_id: ent.octave_spanning_tisa_comb_d00
+properties:
+  coupled_power: ~40 mW
+  fiber_gvd: 零群速度色散 @ 800 nm
+  laser_type: Kerr-lens 锁模 Ti:sapphire
+  microstructure_fiber: 空气-石英微结构光纤，1.7 µm 芯径，5–10 cm
+  mode_spacing_lock: PZT 锁腔长，100 次谐波锁至 10 GHz 本振
+  pulse_width: ~10 fs
+  repetition_rate: 100 MHz
+  spectral_coverage: '>300 THz（覆盖 1064→532 nm 八度）'
+status: Determined
+type: Entity/Factor

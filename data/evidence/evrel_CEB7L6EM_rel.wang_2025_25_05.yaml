@@ -1,0 +1,9 @@
+evidence: modified Allan deviation of the measured beat signal, normalized to the
+  optical frequency, is 7.27 × 10⁻¹⁸ at 1 second
+id: evrel_CEB7L6EM_rel.wang_2025_25_05
+metadata:
+  source_paper: wang2025
+  zotero_key: CEB7L6EM
+object: met.fbeat_mod_allan_deviation_w25
+predicate: CHARACTERIZED-BY
+subject: meth.digital_comb_frep_to_usl_locking_w25

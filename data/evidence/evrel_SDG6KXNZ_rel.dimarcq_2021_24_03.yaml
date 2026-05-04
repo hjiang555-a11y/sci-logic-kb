@@ -1,0 +1,9 @@
+evidence: 'Mandatory criterion I.2: validation of OFS accuracy budgets through frequency
+  ratios'
+id: evrel_SDG6KXNZ_rel.dimarcq_2021_24_03
+metadata:
+  source_paper: dimarcq2024
+  zotero_key: SDG6KXNZ
+object: met.frequency_ratio_agreement_cross_lab
+predicate: CHARACTERIZED-BY
+subject: ent.optical_frequency_standard

@@ -1,0 +1,8 @@
+evidence: 3×10^14 W/cm² peak intensity at 136 MHz
+id: evrel_H4DKWZWF_rel.hartl_2007_07_04
+metadata:
+  source_paper: hartl2007
+  zotero_key: H4DKWZWF
+object: met.intracavity_peak_intensity_h07
+predicate: CHARACTERIZED-BY
+subject: ent.cavity_enhanced_yb_comb_h07

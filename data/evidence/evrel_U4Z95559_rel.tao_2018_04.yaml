@@ -1,0 +1,8 @@
+evidence: 12 points on the symmetric planes... corporately restricted the movement
+id: evrel_U4Z95559_rel.tao_2018_04
+metadata:
+  source_paper: tao2018
+  zotero_key: U4Z95559
+object: pri.multi_point_symmetric_clamping
+predicate: ENABLED-BY
+subject: ent.robust_cuboid_cavity_t18

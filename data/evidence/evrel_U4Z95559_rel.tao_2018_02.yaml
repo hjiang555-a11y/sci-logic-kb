@@ -1,0 +1,8 @@
+evidence: vibration sensitivities... 0.8×10⁻¹⁰/g, 2.5×10⁻¹⁰/g and 1.5×10⁻¹⁰/g
+id: evrel_U4Z95559_rel.tao_2018_02
+metadata:
+  source_paper: tao2018
+  zotero_key: U4Z95559
+object: met.acceleration_sensitivity_t18
+predicate: CHARACTERIZED-BY
+subject: ent.robust_cuboid_cavity_t18

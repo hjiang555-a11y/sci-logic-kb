@@ -1,0 +1,8 @@
+evidence: 100 MHz transfer signal over 50 km fiber link
+id: evrel_JN8JY9XG_rel.leng_2016_16_05
+metadata:
+  source_paper: leng2016
+  zotero_key: JN8JY9XG
+object: meth.comb_rf_fiber_transfer
+predicate: OPERATIONALIZED-AS
+subject: met.rf_transfer_instability_1s_l16

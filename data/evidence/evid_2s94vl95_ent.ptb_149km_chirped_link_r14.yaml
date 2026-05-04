@@ -1,0 +1,17 @@
+definition: '149 km 光纤链路 + 啁啾光载波 + 远端频率计数器（门由本地 10 MHz 氢脉泽驱动）， 通过远端频率测量数据重建时间标签，实现同步与时间传递。
+
+  '
+id: evid_2s94vl95_ent.ptb_149km_chirped_link_r14
+metadata:
+  original_file: /data/sci-logic-kb/topics/time-frequency-transfer/papers/raupach2014_2s94vl95.yaml
+  source_paper: raupach2014_2s94vl95
+  zotero_key: 2s94vl95
+name: PTB 149 km 啁啾光频率时间传递链路（Raupach 2014）
+original_id: ent.ptb_149km_chirped_link_r14
+properties:
+  carrier: 1.5 µm 光频
+  chirp_rate: ~240 kHz/s
+  link_length: 149 km（PTB Braunschweig 环路）
+  timing_range: ≤ 4 min 无歧义
+status: Determined
+type: Entity/Factor

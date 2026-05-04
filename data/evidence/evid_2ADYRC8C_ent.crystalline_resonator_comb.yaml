@@ -1,0 +1,21 @@
+definition: '基于毫米尺度晶体回音壁模式（WGM）谐振腔（CaF₂、MgF₂ 等）的微梳平台。 通过抛光圆柱坯件制备，Q 因子超过 10¹⁰（光学精细度
+  >10⁷）， 棱镜渐逝波耦合，可实现低至 ~12 GHz 的梳齿间距（可直接光电探测）， 透射窗口覆盖 160 nm–~8 μm，尤其适合中红外梳产生。
+
+  '
+id: evid_2ADYRC8C_ent.crystalline_resonator_comb
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/kippenberg2011.yaml
+  source_paper: kippenberg2011
+  zotero_key: 2ADYRC8C
+name: 晶体微谐振腔频率梳
+original_id: ent.crystalline_resonator_comb
+properties:
+  Q_factor: '>10¹⁰（极高 Q）'
+  coupling_method: 棱镜渐逝波耦合（prismatic coupler）
+  demonstrated_repetition_rate: 低至 ~12 GHz（可直接光电探测）
+  material: CaF₂ 或 MgF₂（反演对称性材料，χ⁽³⁾ 主导）
+  n2: ~10⁻¹⁶ cm²/W（较低非线性系数，由超高 Q 补偿）
+  optical_finesse: '>10⁷'
+  transparency_window: 160 nm – ~8 μm（CaF₂），中红外潜力极大
+status: Determined
+type: Entity/Factor

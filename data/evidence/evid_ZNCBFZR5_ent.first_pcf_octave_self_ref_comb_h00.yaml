@@ -1,0 +1,19 @@
+definition: '飞秒激光（~fs 脉冲，未明示具体平台）+ 光子晶体光纤（PCF）非线性展宽至 > 1 倍频程（覆盖 f → 2f） → f-2f 干涉仪测
+  fceo；fceo + frep 双锁至 10 MHz RF 参考（Cs 溯源）→ 所有梳齿绝对频率可控； 两套独立频率链比对，不确定度上限 5.1×10⁻¹⁶。
+
+  '
+id: evid_ZNCBFZR5_ent.first_pcf_octave_self_ref_comb_h00
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/holzwarth2000.yaml
+  source_paper: holzwarth2000
+  zotero_key: ZNCBFZR5
+name: 首台 PCF 倍频程自参考梳（Holzwarth 2000, MPQ）
+original_id: ent.first_pcf_octave_self_ref_comb_h00
+properties:
+  fceo_detection: f-2f 干涉仪
+  frequency_uncertainty: ≤ 5.1×10⁻¹⁶（两链比对上限）
+  mode_count: ~10⁶ 梳齿可用
+  rf_reference: 10 MHz（Cs 溯源）
+  spectral_broadening: '> 1 倍频程（f → 2f）'
+status: Determined
+type: Entity/Factor

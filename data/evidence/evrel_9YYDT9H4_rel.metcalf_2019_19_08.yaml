@@ -1,0 +1,9 @@
+evidence: a comb of approximately 100 teeth spaced exactly by the microwave drive
+  frequency
+id: evrel_9YYDT9H4_rel.metcalf_2019_19_08
+metadata:
+  source_paper: metcalf2019
+  zotero_key: 9YYDT9H4
+object: pri.eo_comb_direct_ghz_spacing
+predicate: ENABLED-BY
+subject: meth.eo_sin_astrocomb_calibration_m19

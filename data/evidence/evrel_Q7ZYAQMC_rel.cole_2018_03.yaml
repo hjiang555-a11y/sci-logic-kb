@@ -1,0 +1,8 @@
+evidence: n solitons → n × f_rep beating; comb lines spaced by 24 resonator FSRs
+id: evrel_Q7ZYAQMC_rel.cole_2018_03
+metadata:
+  source_paper: cole2018
+  zotero_key: Q7ZYAQMC
+object: met.soliton_crystal_rep_rate_enhancement
+predicate: CHARACTERIZED-BY
+subject: ent.soliton_crystal_microcomb

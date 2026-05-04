@@ -1,0 +1,9 @@
+evidence: utilize the intensity modulator already present in a photonic link... suppression
+  of 10 to 50 dB
+id: evrel_XAKCIXKT_rel.nelson_2008_el03
+metadata:
+  source_paper: nelson2008
+  zotero_key: XAKCIXKT
+object: pri.rin_suppression_reuse_modulator
+predicate: CHARACTERIZES
+subject: met.rin_suppression_bandwidth_n08

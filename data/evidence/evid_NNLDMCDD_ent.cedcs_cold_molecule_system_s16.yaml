@@ -1,0 +1,24 @@
+definition: '将高精细度光学腔（FSR ~100 MHz）与缓冲气体冷却池（~10 K He 背景气）集成， 中红外 OPO 梳（2.8–4.8 μm）锁至腔模实现
+  ~4 个数量级路径长度增强， 连续冷分子样品（T_rot ~ 10 K, T_trans ~ 16 K）Doppler 展宽降低 √30 倍， 振转态数降低 ~10⁵
+  倍 → 谱线分辨、峰值振幅增强，实现复杂分子（>10 原子）高分辨红外光谱。
+
+  '
+id: evid_NNLDMCDD_ent.cedcs_cold_molecule_system_s16
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/spaun2016.yaml
+  source_paper: spaun2016
+  zotero_key: NNLDMCDD
+name: 腔增强梳光谱 + 缓冲气体冷却系统（Spaun 2016）
+original_id: ent.cedcs_cold_molecule_system_s16
+properties:
+  buffer_gas: He（背景气，~10 K，连续流）
+  cavity_finesse: ~10⁴（高精细度腔）
+  cavity_fsr: ~100 MHz（需与梳 f_rep 整数倍匹配）
+  comb_source: Yb:fiber 梳泵浦 OPO，2.8–4.8 μm 可调
+  demonstrated_molecules: 硝基甲烷、萘、金刚烷、六亚甲基四胺（>10 原子复杂分子）
+  doppler_width: FWHM ~ 33 MHz（T_trans ~ 16 K，vs. ~180 MHz @ 300 K）
+  instrument_linewidth: ~50 kHz（受梳稳定度限制）
+  molecular_temperature: T_rot ~ 10 K, T_trans ~ 16 K（缓冲气体热化）
+  sensitivity_gain: ~4 个数量级（腔增强 + 冷却双重）
+status: Determined
+type: Entity/Factor

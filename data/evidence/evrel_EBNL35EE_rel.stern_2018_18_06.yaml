@@ -1,0 +1,10 @@
+evidence: Based on this Q and the anomalous group-velocity dispersion for the 730
+  nm×1,800 nm waveguide, simulations indicate that a soliton-state frequency comb
+  can be generated
+id: evrel_EBNL35EE_rel.stern_2018_18_06
+metadata:
+  source_paper: stern2018
+  zotero_key: EBNL35EE
+object: pri.microresonator_anomalous_dispersion
+predicate: ENABLED-BY
+subject: ent.battery_operated_microcomb_s18

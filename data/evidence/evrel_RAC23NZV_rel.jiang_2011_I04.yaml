@@ -1,0 +1,9 @@
+evidence: the reached 2×10⁻¹⁶ instability is at the thermal noise floor of the long
+  ULE cavity
+id: evrel_RAC23NZV_rel.jiang_2011_I04
+metadata:
+  source_paper: jiang2011
+  zotero_key: RAC23NZV
+object: pri.brownian_thermal_noise_fdt
+predicate: CHARACTERIZED-BY
+subject: meth.low_thermal_noise_cavity_pdh_j11

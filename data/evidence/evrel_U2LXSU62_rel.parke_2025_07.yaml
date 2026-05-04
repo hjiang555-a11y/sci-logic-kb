@@ -1,0 +1,11 @@
+evidence: active servo comprising in-phase and quadrature RAM corrections... a simple
+  and robust scheme to actively cancel residual amplitude modulation (RAM) at the
+  10⁻⁷ level in an annealed-proton-exchanged (APE) lithium-niobate waveguide electro-optic
+  modulator (EOM)
+id: evrel_U2LXSU62_rel.parke_2025_07
+metadata:
+  source_paper: parke2025
+  zotero_key: U2LXSU62
+object: pri.ram_bias_field_cancellation
+predicate: ENABLED-BY
+subject: meth.eom_bias_field_ram_cancellation_p25

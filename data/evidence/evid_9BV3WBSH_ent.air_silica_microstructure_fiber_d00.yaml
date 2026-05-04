@@ -1,0 +1,18 @@
+definition: '通过微结构包层设计实现 800 nm 附近零群速度色散，在小芯径（~1.7 µm）中保持飞秒脉冲 峰值强度（数百 GW/cm²）不色散弥散，使自相位调制与四波混频持续积累，
+  从而将 ~10 fs Ti:Sa 输出的频率梳横跨一个光学八度展宽。
+
+  '
+id: evid_9BV3WBSH_ent.air_silica_microstructure_fiber_d00
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/diddams2000.yaml
+  source_paper: diddams2000
+  zotero_key: 9BV3WBSH
+name: 空气-石英微结构光纤（PCF / air-silica microstructure fiber）
+original_id: ent.air_silica_microstructure_fiber_d00
+properties:
+  broadening_mechanism: 自相位调制 + 四波混频
+  core_diameter: ~1.7 µm
+  length: 5–10 cm
+  zero_gvd_wavelength: ~800 nm（设计值）
+status: Determined
+type: Entity/Factor

@@ -1,0 +1,26 @@
+definition: '多段级联 TF-LN 纳米波导（6.6 mm 长，1.8 µm 宽，350 nm 厚）集成啁啾 QPM 结构 + 色散工程；将 100 MHz
+  Er:fiber 梳 90 pJ 输入脉冲（1550 nm）高效展宽至 330–2400 nm 全光谱；UV/VIS 350–550 nm 段转换效率 17%；
+  同一波导可直接输出 f-2f 自参考信号。
+
+  '
+id: evid_8IPE8B8T_ent.tf_lin_uv_vis_comb_w24
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/wu2024.yaml
+  source_paper: wu2024
+  zotero_key: 8IPE8B8T
+name: 薄膜铌酸锂纳米波导 UV-VIS 梳（Wu 2024）
+original_id: ent.tf_lin_uv_vis_comb_w24
+properties:
+  cross_section: 1800 × 350 nm
+  f_ceo_scheme: 同波导 χ² 倍频 + f-2f，验证于 350 nm
+  input_pulse_energy: 90 pJ @ 1550 nm
+  metric_coverage_range: !!python/tuple
+  - 330.0
+  - 2400.0
+  output_span: 330–2400 nm（gap-free）
+  platform: Thin-film LiNbO₃（X-cut）on SiO₂
+  poling: chirped QPM
+  uv_vis_conversion_efficiency: 17%（350–550 nm）
+  waveguide_length: 6.6 mm
+status: Determined
+type: Entity/Factor

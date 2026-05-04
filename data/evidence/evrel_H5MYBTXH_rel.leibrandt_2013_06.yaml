@@ -1,0 +1,9 @@
+evidence: We lock a 1070 nm fiber laser to the cavity by the Pound-Drever-Hall (PDH)
+  method
+id: evrel_H5MYBTXH_rel.leibrandt_2013_06
+metadata:
+  source_paper: leibrandt2013b
+  zotero_key: H5MYBTXH
+object: meth.pdh_locking
+predicate: ENABLED-BY
+subject: ent.spherical_ule_cavity_l13b

@@ -1,0 +1,9 @@
+evidence: combination of the two channels leads to a substantial reduction in detection
+  noise
+id: evrel_MPWLNUIH_rel.galland_2020_A02
+metadata:
+  source_paper: galland2020
+  zotero_key: MPWLNUIH
+object: pri.double_heterodyne_shb_probing
+predicate: IMPLEMENTS
+subject: meth.double_heterodyne_shb_probing

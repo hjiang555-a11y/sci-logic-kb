@@ -1,0 +1,16 @@
+definition: 'Torino–Firenze 单向 642 km，通过单根光纤实现两次往返（1284 km 等效长度）以表征 链路性能；EDFA 双向放大，活动相位锁定。
+
+  '
+id: evid_3kxj9jfq_ent.inrim_642km_single_fiber_link_c15
+metadata:
+  original_file: /data/sci-logic-kb/topics/time-frequency-transfer/papers/calonico2015_3kxj9jfq.yaml
+  source_paper: calonico2015_3kxj9jfq
+  zotero_key: 3kxj9jfq
+name: INRIM 642 km 单纤双往返相干链路（Calonico 2015）
+original_id: ent.inrim_642km_single_fiber_link_c15
+properties:
+  edfa_count: 沿途多段 EDFA，bidirectional
+  length: 642 km × 2 = 1284 km equivalent
+  measurement_bw: 5 mHz
+status: Determined
+type: Entity/Factor

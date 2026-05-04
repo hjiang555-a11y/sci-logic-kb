@@ -1,0 +1,8 @@
+evidence: LOS [linear optical sampling] ... mutual optical coherence
+id: evrel_QIFVVUIH_rel.chen_2024_he24_03
+metadata:
+  source_paper: chen_z2024
+  zotero_key: QIFVVUIH
+object: pri.dual_comb_multiheterodyne_detection
+predicate: ENABLED-BY
+subject: pri.envelope_phase_time_ceo_free_sync_c24

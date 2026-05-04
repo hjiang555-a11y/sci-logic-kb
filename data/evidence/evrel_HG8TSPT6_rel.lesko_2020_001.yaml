@@ -1,0 +1,8 @@
+evidence: fully phase-stabilized 1 GHz frequency comb at 1.56 µm
+id: evrel_HG8TSPT6_rel.lesko_2020_001
+metadata:
+  source_paper: lesko2020
+  zotero_key: HG8TSPT6
+object: ent.optical_frequency_comb
+predicate: PART-OF
+subject: ent.ghz_turnkey_erfiber_comb_l20

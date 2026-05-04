@@ -1,0 +1,8 @@
+evidence: spectra that span 3–5 μm with a width of more than 500 cm⁻¹
+id: evrel_YYXGH9X3_rel.schliesser_2011_12_07
+metadata:
+  source_paper: schliesser2012
+  zotero_key: YYXGH9X3
+object: meth.dfg_comb_generation
+predicate: OPERATIONALIZED-AS
+subject: met.mid_ir_spectral_coverage

@@ -1,0 +1,8 @@
+evidence: phase noise is shot noise limited at −145 dBc/Hz
+id: evrel_LMJN9MGA_rel.quinlan_2011_02
+metadata:
+  source_paper: quinlan2011
+  zotero_key: LMJN9MGA
+object: met.er_fiber_ofd_shot_noise_floor
+predicate: CHARACTERIZED-BY
+subject: ent.er_fiber_ofd_quinlan2011

@@ -1,0 +1,32 @@
+definition: '线性腔 Er:fiber 飞秒激光（50 cm 腔，~28 cm 高掺 PM Er 光纤 + ~22 cm PM 光纤，净腔色散 ~−0.02
+  ps²）， 用半导体可饱和吸收镜（SESAM，3% 饱和损耗 / 6% 非饱和损耗，20 μm 光斑）实现真自锁模； FC/PC 端面介质膜（90% 反射，980
+  nm 泵浦透射）作输出耦合器。重频 200 MHz，1567 nm 中心、10 nm 带宽、25 pJ/脉冲。 下游 PM Er 光纤放大（1.5 nJ → 70
+  fs 压缩）+ 20 cm PM HNLF 展宽至 1.05–>2.3 μm 倍频程； 波导 PPLN 将 2128 nm 倍频到 1064 nm 后与超连续
+  1064 nm 光干涉，PM "在线"光纤干涉仪（~1.6 m PM 光纤快慢轴差延补偿 0.7 ps） 探测 f_ceo，SNR 35 dB/470 kHz。整机完全基于
+  PM 光纤拼接，无自由空间段， 光纤元件环氧固定于铝壳、飞秒激光灌胶阻尼；铝盒外形 29×42×5 cm。
+
+  '
+id: evid_D9ANIZW6_ent.ruggedized_field_comb_s14
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/sinclair2014.yaml
+  source_paper: sinclair2014
+  zotero_key: D9ANIZW6
+name: 全 PM 光纤 SESAM 自锁模现场化相干飞秒梳（Sinclair 2014）
+original_id: ent.ruggedized_field_comb_s14
+properties:
+  cavity_length: ~50 cm
+  center_wavelength: 1567 nm
+  fceo_lock_bandwidth: 150 kHz（反馈至泵浦功率，52 MHz/mW）
+  fceo_snr: 35 dB @ 470 kHz RBW
+  fopt_lock_bandwidth: 90 kHz（2 mm 立方 PZT 直接贴于光纤腔 + 大行程 PZT 堆栈）
+  hnlf_length: 20 cm PM HNLF
+  laser_type: SESAM 自锁模 PM Er 光纤激光（soliton 锁模）
+  net_cavity_dispersion: ~−0.02 ps²
+  optics_box_size: 29 × 42 × 5 cm
+  pulse_bandwidth: 10 nm
+  pulse_energy: 25 pJ（5 mW 平均输出）
+  repetition_rate: 200 MHz
+  sescs_parameters: SESAM 3% 饱和损耗 / 6% 非饱和 / 20 μm 光斑 / 2× saturation fluence
+  supercontinuum_span: 1.05 μm → >2.3 μm（倍频程）
+status: Determined
+type: Entity/Factor

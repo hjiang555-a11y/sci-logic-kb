@@ -1,0 +1,10 @@
+evidence: The cavity has a cylindrical shape and is mounted at 10 points. Its measured
+  sensitivity of the fractional frequency to acceleration for the three Cartesian
+  directions are 2(1)×10−12 /(ms−2), 3(3)×10−12 /(ms−2), and 3(1) ×10−12 /(ms−2)
+id: evrel_NU79W75P_rel.herbers_2022_er22_02
+metadata:
+  source_paper: herbers2022
+  zotero_key: NU79W75P
+object: met.acceleration_sensitivity_herbers22
+predicate: CHARACTERIZED-BY
+subject: ent.fp_cavity_system

@@ -1,0 +1,9 @@
+evidence: the control bandwidth of the digital servo system is constrained by substantial
+  computational latency
+id: evrel_CEB7L6EM_rel.wang_2025_25_10
+metadata:
+  source_paper: wang2025
+  zotero_key: CEB7L6EM
+object: pri.digital_servo_latency_bandwidth_tradeoff
+predicate: BOUNDED-BY
+subject: met.digital_servo_control_bandwidth_w25

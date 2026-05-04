@@ -1,0 +1,9 @@
+evidence: CAMS requires non-perturbative HHG in low-bandgap solids accessible with
+  nJ-level frequency comb pulses.
+id: evrel_7978HTD3_rel.lesko_2022_K22_04
+metadata:
+  source_paper: lesko2022
+  zotero_key: 7978HTD3
+object: pri.solid_state_non_perturbative_hhg
+predicate: ENABLED-BY
+subject: meth.carrier_envelope_amplitude_modulation_spectroscopy

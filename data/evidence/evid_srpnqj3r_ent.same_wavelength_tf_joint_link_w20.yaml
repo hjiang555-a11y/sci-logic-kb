@@ -1,0 +1,18 @@
+definition: '单一激光 → 相位 EOM 调制（1 GHz RF）+ 强度 EOM 调制（1 PPS），同时承载时间与频率信号； 两方向略偏波长抑制 Rayleigh；本地
+  ODL 主动补偿链路噪声。
+
+  '
+id: evid_srpnqj3r_ent.same_wavelength_tf_joint_link_w20
+metadata:
+  original_file: /data/sci-logic-kb/topics/time-frequency-transfer/papers/wang2020_srpnqj3r.yaml
+  source_paper: wang2020_srpnqj3r
+  zotero_key: srpnqj3r
+name: 同波长 T&F 联合传递链路（Wang 2020）
+original_id: ent.same_wavelength_tf_joint_link_w20
+properties:
+  direction_asymmetry: waveleng offset to avoid Rayleigh crosstalk
+  length: 110 km (fiber spool)
+  rf_carrier: 1 GHz
+  time_signal: 1 PPS
+status: Determined
+type: Entity/Factor

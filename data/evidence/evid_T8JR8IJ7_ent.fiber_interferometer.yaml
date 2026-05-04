@@ -1,0 +1,23 @@
+definition: '以长光纤线轴（2.5 km SMF-28 单模光纤）作为延迟臂， 构成迈克尔逊干涉仪（含法拉第旋转镜 FRM，消除偏振漂移）； 通过 AOM
+  异差探测，提取激光频率相对于光纤延迟线的误差信号， 作为频率参考替代刚性 FP 腔。
+
+  '
+id: evid_T8JR8IJ7_ent.fiber_interferometer
+metadata:
+  original_file: /data/sci-logic-kb/topics/ultrastable-laser/papers/jiang2010.yaml
+  source_paper: jiang2010
+  zotero_key: T8JR8IJ7
+name: 光纤迈克尔逊干涉仪（频率参考）
+original_id: ent.fiber_interferometer
+properties:
+  detection_scheme: AOM heterodyne（AOM3 在参考臂中，移频约 40 MHz）
+  equivalent_q_factor: Q_eff = π·ν₀·τ_delay ≈ 10⁹（远低于 FP 腔的 ~10¹⁰，但无共振增强）
+  fiber_length: 2.5 km SMF-28
+  interferometer_type: Michelson with Faraday Rotation Mirrors (FRM)
+  internal_components:
+    aom_reference: AOM3 在参考臂中，移频约 40 MHz，用于外差检测
+    faraday_rotation_mirror: 法拉第旋转镜（FRM）——将反射光偏振态旋转 90°，补偿光纤双折射引起的偏振漂移，保证干涉信号对比度稳定
+  packaging: 光纤线轴盘绕，放置于隔振箱内
+  temperature_sensitivity: dn/dT ≈ 1.1×10⁻⁵/K（无 CTE 零点，与 FP 腔的 ULE/Si 材料物理不同）
+status: Determined
+type: Entity/Factor

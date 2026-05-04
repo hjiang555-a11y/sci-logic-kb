@@ -1,0 +1,13 @@
+definition: '将1062 nm ULE腔稳定激光的频率稳定度通过Er:fiber OFC传递至1542 nm， 梳传递退化低于3×10^-18（1 s）。腔内EOM用于宽带快速相位锁定。
+
+  '
+id: evid_JBIG86N9_ent.er_fiber_ofc_spectral_transfer_nicolodi2014
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/nicolodi2014.yaml
+  source_paper: nicolodi2014
+  zotero_key: JBIG86N9
+name: Er:fiber光频梳光谱纯度传递系统（Nicolodi 2014）
+original_id: ent.er_fiber_ofc_spectral_transfer_nicolodi2014
+properties: {}
+status: Determined
+type: Entity/Factor

@@ -1,0 +1,27 @@
+definition: '由两台 200 MHz 重频（Δf_rep = 100 Hz）Er 光纤梳经 PPLN 晶体差频产生 2.9–4.2 µm （2750–3150
+  cm⁻¹）中红外双梳，在 50:50 合束后经 ZrF4 单模光纤送入 100 mm 口径 离轴抛物面望远镜，经 162 m 或 1 km 开阔大气链路往返于角锥回射器，
+  返回光由 100 MHz 带宽 HgCdTe 探测器采集，干涉图每 10 ms 重复，FPGA 内相干平均 1 min。 0.0067 cm⁻¹（200 MHz）原生分辨率覆盖基频
+  C-H 伸缩带，使窄线小分子（CH₄、C₂H₆、 H₂O 同位素体）与宽带大分子 VOC（丙酮、异丙醇）同时定量。
+
+  '
+id: evid_FQ4KYV38_ent.midir_dcs_vocs_y19
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/ycas2019.yaml
+  source_paper: ycas2019
+  zotero_key: FQ4KYV38
+name: 公里级开阔路径中红外 VOC 双梳光谱仪（Ycas 2019）
+original_id: ent.midir_dcs_vocs_y19
+properties:
+  comb_platform: 双分支 PPLN-DFG 中红外梳（泵浦：PM Er 光纤梳，Truong 2016）
+  detector: 热电制冷 HgCdTe，100 MHz 带宽
+  figure_of_merit: 1.2×10⁶ √Hz（Coddington 2016 定义）
+  interferogram_rate: 100 Hz（10 ms 间隔），FPGA 内 1 min 相干平均
+  mir_power_per_comb: 5 mW 耦入 ZrF4 单模光纤
+  mir_spectral_coverage: 2750–3150 cm⁻¹（2.9–4.2 µm，覆盖基频 C-H 伸缩带）
+  native_resolution: 0.0067 cm⁻¹（200 MHz）
+  phase_stabilization: 两梳 f_CEO + 1560 nm CW 锁相至公共腔稳 CW 激光
+  repetition_rate: 200 MHz（Δf_rep = 100 Hz）
+  retroreflector: 63.5 mm（162 m 路径）或 127 mm（1 km 路径）
+  telescope_aperture: 100 mm OAP，焦距 179 mm，发射光束 ~75 mm
+status: Determined
+type: Entity/Factor

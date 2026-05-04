@@ -1,0 +1,16 @@
+definition: Level 2 实例，PART-OF ent.free_space_optical_tf_link
+id: evid_4m836c4v_ent.quantum_limited_ott_hawaii_c23
+metadata:
+  original_file: /data/sci-logic-kb/topics/time-frequency-transfer/papers/caldwell2023_4m836c4v.yaml
+  source_paper: caldwell2023_4m836c4v
+  zotero_key: 4m836c4v
+name: Hawaii 300 km 近量子极限光学时间传递（Caldwell 2023）
+original_id: ent.quantum_limited_ott_hawaii_c23
+properties:
+  distance: 300 km (mountaintop to mountaintop)
+  launched_power_demonstrated: 40 µW
+  received_power_reduction: 10⁴× vs. previous
+  supported_link_loss: 102 dB @ 4 mW
+  sync_precision: 320 as
+status: Determined
+type: Entity/Factor

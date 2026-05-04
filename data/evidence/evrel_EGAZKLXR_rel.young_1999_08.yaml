@@ -1,0 +1,8 @@
+evidence: acceleration sensitivity of ≈100 kHz/(m/s²)
+id: evrel_EGAZKLXR_rel.young_1999_08
+metadata:
+  source_paper: young1999
+  zotero_key: EGAZKLXR
+object: met.acceleration_sensitivity_y99
+predicate: CHARACTERIZED-BY
+subject: ent.fp_cavity_system

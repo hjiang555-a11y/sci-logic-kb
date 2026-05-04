@@ -1,0 +1,9 @@
+evidence: Table 1 shows a summary of the linear and nonlinear properties of various
+  platforms... whether KCG or SCG has been observed
+id: evrel_BRKZG9H2_rel.gaeta_2019_ae19_13
+metadata:
+  source_paper: gaeta2019
+  zotero_key: BRKZG9H2
+object: pri.chip_comb_platform_tradeoff_space
+predicate: BOUNDED-BY
+subject: ent.microresonator_frequency_comb

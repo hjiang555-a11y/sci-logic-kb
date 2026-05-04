@@ -1,0 +1,8 @@
+evidence: σ_x(τ) = τ · mod σ_y(τ) / √3 defines the Time Deviation.
+id: evrel_SULLIVAN1990-NIST-TN1337_rel.sullivan_1990_90_02
+metadata:
+  source_paper: sullivan1990
+  zotero_key: SULLIVAN1990-NIST-TN1337
+object: meth.modified_allan_deviation_mdev
+predicate: DERIVED-FROM
+subject: meth.time_deviation_tdev

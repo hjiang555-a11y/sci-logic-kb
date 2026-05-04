@@ -1,0 +1,19 @@
+definition: '25 mm 长金字塔形 ULE 腔体，配备 AlGaAs 晶体镀层降低热噪声。 紧凑真空腔室（立方形）允许光学元件直接安装在腔壁上，总体积
+  30 L。 被动不锈钢热屏蔽 + 主动铜屏蔽（Peltier）温度控制。
+
+  '
+id: evid_PHRXF4IL_ent.ultracompact_pyramid_cavity_d18
+metadata:
+  original_file: /data/sci-logic-kb/topics/ultrastable-laser/papers/didier2018.yaml
+  source_paper: didier2018
+  zotero_key: PHRXF4IL
+name: 超紧凑金字塔形 ULE 参考腔（Didier 2018）
+original_id: ent.ultracompact_pyramid_cavity_d18
+properties:
+  cavity_length: 25 mm
+  coating: AlGaAs crystalline
+  geometry: pyramidal
+  spacer_material: ULE
+  total_volume: 30 L
+status: Determined
+type: Entity/Factor

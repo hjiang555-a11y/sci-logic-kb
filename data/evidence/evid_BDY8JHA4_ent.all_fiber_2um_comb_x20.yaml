@@ -1,0 +1,24 @@
+definition: '以 1.56 µm Er:光纤锁模激光器为种子，经 EDFA 放大到 190 mW / 50 fs， 30 cm HNLF1 通过 Raman
+  孤子自频移（SSFS）产生 1928 nm / 45 fs / 40 mW 2 µm 种子； PM-TDF CPA（2 m PM-TSF-9/125，前向 1550
+  nm 泵浦）放大至 420 mW，两级非线性自压缩 （PM1550XP 64 cm + 椭圆芯 PM-HNLF2 6 cm）将脉冲压缩到 9.5 fs（1.4
+  光周期）， 输出 327 mW 平均功率、104 kW 峰值功率、1–2.4 µm 倍频程谱，直接支持 f-2f 自参考。 整机完全采用商用 PM 光纤器件，35×30
+  cm 立面盒内容纳。
+
+  '
+id: evid_BDY8JHA4_ent.all_fiber_2um_comb_x20
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/xing2020.yaml
+  source_paper: xing2020
+  zotero_key: BDY8JHA4
+name: 全光纤 2 µm 飞秒频率梳系统（Xing 2020）
+original_id: ent.all_fiber_2um_comb_x20
+properties:
+  compressors: PM1550XP 64 cm → ~90 fs；PM-HNLF2 6 cm → 9.5 fs
+  final_output: 327 mW, 9.5 fs, 100 MHz, 1–2.4 µm
+  metric_engineering: 3.5e+31
+  pump_efficiency: ~17% (1.94 W C-band → 327 mW @2 µm)
+  seed: Menlo Figure-9 Er:fiber MLL, 1.56 µm, 100 MHz
+  ssfs_seed: 1928 nm / 45 fs / 40 mW
+  tdf_cpa: Nufern PM-TSF-9/125, 2 m, 前向 1550 nm CW，输出 420 mW
+status: Determined
+type: Entity/Factor

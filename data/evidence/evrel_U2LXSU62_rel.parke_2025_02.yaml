@@ -1,0 +1,8 @@
+evidence: τ_cav = (295 ± 2) μs
+id: evrel_U2LXSU62_rel.parke_2025_02
+metadata:
+  source_paper: parke2025
+  zotero_key: U2LXSU62
+object: met.cavity_storage_time_p25
+predicate: CHARACTERIZED-BY
+subject: ent.long_cavity_68cm_p25

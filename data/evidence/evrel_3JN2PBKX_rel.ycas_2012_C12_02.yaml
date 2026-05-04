@@ -1,0 +1,9 @@
+evidence: a 25 GHz laser frequency comb based on a cavity-filtered erbium fiber mode-locked
+  laser
+id: evrel_3JN2PBKX_rel.ycas_2012_C12_02
+metadata:
+  source_paper: ycas2012
+  zotero_key: 3JN2PBKX
+object: pri.fabry_perot_mode_filter_astro_comb
+predicate: ENABLED-BY
+subject: meth.astro_comb_rv_calibration

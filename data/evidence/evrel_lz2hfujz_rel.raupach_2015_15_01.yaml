@@ -1,0 +1,8 @@
+evidence: optical frequency transfer over a 1400 km loop of underground fiber
+id: evrel_lz2hfujz_rel.raupach_2015_15_01
+metadata:
+  source_paper: raupach2015_lz2hfujz
+  zotero_key: lz2hfujz
+object: ent.coherent_optical_fiber_link
+predicate: PART-OF
+subject: ent.ptb_1400km_brillouin_link_r15

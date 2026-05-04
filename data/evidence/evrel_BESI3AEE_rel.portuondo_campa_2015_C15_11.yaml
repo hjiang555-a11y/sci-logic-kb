@@ -1,0 +1,10 @@
+evidence: a commercial distributed feedback fiber laser, stabilized to a compact high-finesse
+  Fabry-Perot cavity (4 cm long) through a home-made Pound-Drever-Hall setup, providing
+  Hz-level optical linewidth at 1 sec time scale
+id: evrel_BESI3AEE_rel.portuondo_campa_2015_C15_11
+metadata:
+  source_paper: portuondo-campa2015
+  zotero_key: BESI3AEE
+object: ent.fp_cavity_system
+predicate: CONDITIONED-BY
+subject: ent.dpss_comb_interleaver_pc15

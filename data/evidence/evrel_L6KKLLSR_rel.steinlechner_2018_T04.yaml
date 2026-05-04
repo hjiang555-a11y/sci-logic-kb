@@ -1,0 +1,9 @@
+evidence: coating thermal noise is governed by the mechanical loss angle φ via the
+  fluctuation-dissipation theorem
+id: evrel_L6KKLLSR_rel.steinlechner_2018_T04
+metadata:
+  source_paper: steinlechner2018
+  zotero_key: L6KKLLSR
+object: pri.brownian_thermal_noise_fdt
+predicate: DERIVED-FROM
+subject: pri.coating_thermal_noise_material_comparison

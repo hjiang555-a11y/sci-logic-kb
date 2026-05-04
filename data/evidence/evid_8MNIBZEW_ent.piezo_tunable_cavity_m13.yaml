@@ -1,0 +1,22 @@
+definition: '在高精细度参考腔中集成压电驱动器（PZT/石英/PZN-PT）， 实现任意频率处的频率稳定化（可调谐超过 1 FSR）， 同时保持接近固定腔的频率稳定度（<1×10⁻¹⁴）。
+
+  '
+id: evid_8MNIBZEW_ent.piezo_tunable_cavity_m13
+metadata:
+  original_file: /data/sci-logic-kb/topics/ultrastable-laser/papers/mohle2013.yaml
+  source_paper: mohle2013
+  zotero_key: 8MNIBZEW
+name: 压电可调谐高精细度参考腔
+original_id: ent.piezo_tunable_cavity_m13
+properties:
+  cavity_length: 10 cm
+  piezo_attachment: 3-point epoxy (Eccobond 285) on each side
+  spacer_material: Zerodur
+  target_finesse: 300,000
+  tuning_coefficient_pzn_pt: 19.1 MHz/V
+  tuning_coefficient_pzt_stack: 1.8 MHz/V
+  tuning_range_pzn_pt: '>1 FSR'
+  tuning_range_pzt_stack: '>1 FSR (>1.5 GHz)'
+  wavelength: 1064 nm
+status: Determined
+type: Entity/Factor

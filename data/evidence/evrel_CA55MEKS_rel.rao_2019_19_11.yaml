@@ -1,0 +1,9 @@
+evidence: The repetition rate in-loop instability is controlled through EOM fast +
+  PZT slow dual-actuator cavity length feedback.
+id: evrel_CA55MEKS_rel.rao_2019_19_11
+metadata:
+  source_paper: rao2019
+  zotero_key: CA55MEKS
+object: meth.eom_pzt_cavity_length_frep_lock_r19
+predicate: OPERATIONALIZED-AS
+subject: met.frep_inloop_instability_r19

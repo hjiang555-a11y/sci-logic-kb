@@ -1,0 +1,32 @@
+definition: '本综述建立的跨材料平台对比框架，覆盖 Silica/Si/α-Si:H/Si3N4/Hydex/AlN/GaN/GaP/ Diamond/AlGaAs/SiGe/Ge/LiNbO3/As2S3/As2Se3
+  等平台，在 1.55 μm 下列举： 折射率 n、非线性指数 n2（m²/W）、透明窗口（μm）、KCG 是否观察到、SCG 是否观察到、 是否具有体 χ(2)。该表构成芯片梳材料选型的权威参考。
+
+  '
+id: evid_BRKZG9H2_ent.chip_comb_platform_taxonomy_g19
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/gaeta2019.yaml
+  source_paper: gaeta2019
+  zotero_key: BRKZG9H2
+name: 芯片非线性光子学平台分类表（15+ 材料对比）
+original_id: ent.chip_comb_platform_taxonomy_g19
+properties:
+  both_scg_and_kcg_demonstrated:
+  - Silica
+  - Si
+  - Si3N4
+  - Hydex
+  - AlN
+  - Diamond
+  - AlGaAs
+  - LiNbO3
+  chi2_materials:
+  - AlN
+  - GaN
+  - GaP
+  - AlGaAs
+  - LiNbO3
+  nonlinear_index_range: 3×10⁻²⁰ (silica) – 4.4×10⁻¹⁷ (Ge) m²/W（跨 3 个量级）
+  refractive_index_range: 1.45 (silica) – 4.33 (Ge)
+  transparency_window_coverage: 0.2–50 μm 合计（Diamond 最宽）
+status: Determined
+type: Entity/Factor

@@ -1,0 +1,18 @@
+definition: '布儒斯特角切割的电光调制器，利用布儒斯特角入射 消除晶体界面的双折射效应，被动实现 ppm 级 RAM。 无需主动温度控制和偏压反馈。
+
+  '
+id: evid_FIJXUVZV_ent.brewster_eom_t16
+metadata:
+  original_file: /data/sci-logic-kb/topics/ultrastable-laser/papers/tai2016.yaml
+  source_paper: tai2016
+  zotero_key: FIJXUVZV
+name: 布儒斯特角 EOM（Tai 2016）
+original_id: ent.brewster_eom_t16
+properties:
+  approach: passive (Brewster-angle cut)
+  demonstrated_value: 30000000000.0
+  ram_freq_instability: <3×10⁻¹⁷ @ 1–1000 s
+  ram_level: few ppm
+  value_type: quantitative
+status: Determined
+type: Entity/Factor

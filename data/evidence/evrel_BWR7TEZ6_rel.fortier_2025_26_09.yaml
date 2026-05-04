@@ -1,0 +1,8 @@
+evidence: Ramsey spectroscopy... a commonly used interferometric method
+id: evrel_BWR7TEZ6_rel.fortier_2025_26_09
+metadata:
+  source_paper: fortier2026
+  zotero_key: BWR7TEZ6
+object: meth.ramsey_spectroscopy_clock
+predicate: OPERATIONALIZED-AS
+subject: met.optical_clock_fractional_instability

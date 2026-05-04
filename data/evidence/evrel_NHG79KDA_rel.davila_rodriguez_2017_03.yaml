@@ -1,0 +1,9 @@
+evidence: We find the largest acceleration sensitivity to be along the cavity axis
+  at ~4.5×10^-10 g^-1, minimized at a holding radius of 24.5 mm
+id: evrel_NHG79KDA_rel.davila_rodriguez_2017_03
+metadata:
+  source_paper: davilarodriguez2017
+  zotero_key: NHG79KDA
+object: met.accel_sensitivity_d17
+predicate: CHARACTERIZED-BY
+subject: ent.compact_ule_cavity_25mm_d17

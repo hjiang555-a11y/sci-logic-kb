@@ -1,0 +1,8 @@
+evidence: ultra-stable laser system... Fabry-Perot cavity
+id: evrel_WTUHUAQ7_rel.chen_2014_HF01
+metadata:
+  source_paper: chen2014
+  zotero_key: WTUHUAQ7
+object: ent.fp_cavity_system
+predicate: PART-OF
+subject: ent.compact_transportable_cavity_c14

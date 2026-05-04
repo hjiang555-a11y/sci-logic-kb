@@ -1,0 +1,8 @@
+evidence: total systematic uncertainty of 4.8 × 10^-18
+id: evrel_P6AV3KJW_rel.li_2024_I01
+metadata:
+  source_paper: li2024
+  zotero_key: P6AV3KJW
+object: met.systematic_uncertainty_sr_li2024
+predicate: CHARACTERIZED-BY
+subject: ent.nimsri_sr_clock_cas2024

@@ -1,0 +1,9 @@
+evidence: A phase-locked frequency comb in the near infrared is demonstrated with
+  a mode-locked, erbium-doped, fiber laser
+id: evrel_TP9NSD4F_rel.washburn_2004_ash04_01
+metadata:
+  source_paper: washburn2004
+  zotero_key: TP9NSD4F
+object: ent.optical_frequency_comb
+predicate: PART-OF
+subject: ent.er_fiber_comb_washburn04

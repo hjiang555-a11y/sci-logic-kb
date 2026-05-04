@@ -1,0 +1,8 @@
+evidence: All-Polarization-Maintaining Er:Fiber Frequency Comb With Single Fiber Actuator
+id: evrel_LBSZCU7P_rel.cai_2020_ai20_01
+metadata:
+  source_paper: cai2020
+  zotero_key: LBSZCU7P
+object: ent.er_fiber_frequency_comb
+predicate: PART-OF
+subject: ent.compact_pm_er_comb_cai20

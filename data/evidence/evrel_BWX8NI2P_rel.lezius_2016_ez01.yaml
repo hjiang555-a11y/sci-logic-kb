@@ -1,0 +1,9 @@
+evidence: Space-qualified Er:fiber comb is a ruggedized engineering instance of a
+  self-referenced OFC.
+id: evrel_BWX8NI2P_rel.lezius_2016_ez01
+metadata:
+  source_paper: lezius2016
+  zotero_key: BWX8NI2P
+object: ent.optical_frequency_comb
+predicate: PART-OF
+subject: ent.spaceborne_erfiber_comb_l16

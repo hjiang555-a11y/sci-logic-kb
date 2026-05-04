@@ -1,0 +1,9 @@
+evidence: we developed a single-crystal balanced cross-correlator to measure the timing
+  offset
+id: evrel_H5YVF5AR_rel.kim_2008_i03
+metadata:
+  source_paper: kim2008
+  zotero_key: H5YVF5AR
+object: pri.balanced_optical_cross_correlation
+predicate: ENABLED-BY
+subject: meth.timing_stabilized_fiber_linking

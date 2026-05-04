@@ -1,0 +1,14 @@
+definition: '通过对连续波激光施加微波速率电光调制，确定性地产生频率梳。梳齿频率 ν_n = ν_p + n·f_eo，由 CW 激光频率 ν_p 和调制频率
+  f_eo 共同决定。 不依赖锁模机制，模间距可由微波频率灵活调谐。
+
+  '
+id: evid_FU92Y8XG_ent.eom_frequency_comb
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/beha2017.yaml
+  source_paper: beha2017
+  zotero_key: FU92Y8XG
+name: 电光调制频率梳
+original_id: ent.eom_frequency_comb
+properties: {}
+status: Determined
+type: Entity/Factor

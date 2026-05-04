@@ -1,0 +1,25 @@
+definition: '全保偏 Yb:fiber 光纤激光器，NALM 被动锁模，输出谱 1015–1070 nm； HNLF 超连续展宽至 650–1400 nm
+  覆盖倍频程；f-2f 干涉仪首次在全 PM Yb NALM 平台锁 f_CEO；与 1064 nm 超稳 CW 拍频锁 f_rep。in-loop 积分 相噪换算到光学频率得
+  ~10⁻¹⁹ @ 1 s fractional stability。
+
+  '
+id: evid_RWPYUXTB_ent.all_pm_yb_nalm_comb_li17
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/li2017b.yaml
+  source_paper: li2017b
+  zotero_key: RWPYUXTB
+name: 全保偏 Yb:fiber NALM 自参考梳（Li 2017）
+original_id: ent.all_pm_yb_nalm_comb_li17
+properties:
+  cavity_type: 全 PM + NALM 锁模
+  cw_reference: 1064 nm 超稳 CW
+  fractional_stability_inloop_optical: ~10⁻¹⁹ @ 1 s（in-loop, 换算到光学频率）
+  gain_medium: Yb-doped 光纤
+  intensity_noise: 0.18% RIN（1 Hz–1 MHz 积分）
+  metric_coverage_range: !!python/tuple
+  - 1015.0
+  - 1070.0
+  oscillator_spectrum: 1015–1070 nm
+  spectrum_after_hnlf: 650–1400 nm（覆盖倍频程）
+status: Determined
+type: Entity/Factor

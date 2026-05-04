@@ -1,0 +1,8 @@
+evidence: Thermal effects have proved to be an important challenge
+id: evrel_HPCYUSLJ_rel.pasquazi_2016_18_03
+metadata:
+  source_paper: pasquazi2018
+  zotero_key: HPCYUSLJ
+object: pri.thermal_instability_dks_access
+predicate: BOUNDED-BY
+subject: ent.microresonator_frequency_comb

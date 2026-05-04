@@ -1,0 +1,8 @@
+evidence: ''
+id: evrel_JIZCUZLY_rel.bridge_cryo_01
+metadata:
+  source_paper: robinson2019
+  zotero_key: JIZCUZLY
+object: pri.brownian_thermal_noise_fdt
+predicate: BOUNDED-BY
+subject: ent.fp_cavity_system

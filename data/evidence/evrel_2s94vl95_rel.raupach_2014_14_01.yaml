@@ -1,0 +1,8 @@
+evidence: phase-stabilized transfer ... fiber link of around 149 km
+id: evrel_2s94vl95_rel.raupach_2014_14_01
+metadata:
+  source_paper: raupach2014_2s94vl95
+  zotero_key: 2s94vl95
+object: ent.coherent_optical_fiber_link
+predicate: PART-OF
+subject: ent.ptb_149km_chirped_link_r14

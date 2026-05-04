@@ -1,0 +1,8 @@
+evidence: quantum-limited sensitivity
+id: evrel_YD2MQC49_rel.caldwell_2022_al22_04
+metadata:
+  source_paper: caldwell2022
+  zotero_key: YD2MQC49
+object: pri.tpfc_tracking_oscillator_quantum_limit_c22
+predicate: BOUNDED-BY
+subject: met.tpfc_ranging_precision_c22

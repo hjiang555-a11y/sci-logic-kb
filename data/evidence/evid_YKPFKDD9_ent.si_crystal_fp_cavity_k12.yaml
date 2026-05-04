@@ -1,0 +1,27 @@
+definition: '以硅单晶为间隔物和镜底物，工作于 124 K（Si CTE 零点）， 同时利用硅的高机械 Q（>10⁷）和大杨氏模量（E≈130 GPa，沿
+  ⟨100⟩） 将热噪声极限降低至理论值 mod σ_y ≈ 5×10⁻¹⁷，实验达到 ~1×10⁻¹⁶，激光线宽 <40 mHz， 较室温 ULE 腔（~2×10⁻¹⁶，Numata
+  2004 极限）热噪声降低约一个数量级。
+
+  '
+id: evid_YKPFKDD9_ent.si_crystal_fp_cavity_k12
+metadata:
+  original_file: /data/sci-logic-kb/topics/ultrastable-laser/papers/kessler2012.yaml
+  source_paper: kessler2012
+  zotero_key: YKPFKDD9
+name: 硅单晶低温 FP 参考腔
+original_id: ent.si_crystal_fp_cavity_k12
+properties:
+  cavity_length: 210 mm（21 cm，竖轴，vertical optical axis）
+  finesse: 未具体给出；PDH 锁定，AOM 反馈带宽 ~200 kHz
+  frequency_drift: ~0.2 mHz/s（线性漂移，源于镀层热膨胀/蠕变）
+  laser_wavelength: 1542 nm（1.5 μm，Er 光纤激光）
+  mechanical_Q: '> 10⁷（硅单晶，低温下尤佳）'
+  mounting: 三点 ⟨110⟩ 方向对称安装（轴对称 120°）
+  operating_temperature: 124 K（Si CTE 零点 124.2±0.1 K）
+  orientation: 竖轴（vertical optical axis）
+  predicted_noise_floor: mod σ_y ≈ 5×10⁻¹⁷（热噪声理论下限，镀层主导）
+  spacer_material: 硅单晶（low-impurity, ~30 kΩ·cm，⟨100⟩ 方向为光轴）
+  substrate_material: 硅单晶（与间隔物同方向、同一晶棒加工）
+  youngs_modulus: E ≈ 130 GPa（沿 ⟨100⟩）；比刚度 E/ρ ≈ 80×10⁶ m²/s²（ULE 约 30×10⁶）
+status: Determined
+type: Entity/Factor

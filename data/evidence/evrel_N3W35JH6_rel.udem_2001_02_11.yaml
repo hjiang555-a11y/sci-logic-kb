@@ -1,0 +1,9 @@
+evidence: operating at much higher frequencies has now become possible... When it
+  became possible to count these optical oscillations
+id: evrel_N3W35JH6_rel.udem_2001_02_11
+metadata:
+  source_paper: udem2002
+  zotero_key: N3W35JH6
+object: pri.femtosecond_comb_frequency_ruler
+predicate: ENABLED-BY
+subject: pri.optical_clock_higher_frequency_advantage

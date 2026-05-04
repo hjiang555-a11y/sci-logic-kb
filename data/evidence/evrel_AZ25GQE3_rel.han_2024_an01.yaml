@@ -1,0 +1,9 @@
+evidence: we demonstrate a bistatic DCS protocol combining time–frequency transfer
+  technology
+id: evrel_AZ25GQE3_rel.han_2024_an01
+metadata:
+  source_paper: han2024
+  zotero_key: AZ25GQE3
+object: ent.dual_comb_spectrometer
+predicate: PART-OF
+subject: ent.long_path_dcs_h24

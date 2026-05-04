@@ -1,0 +1,8 @@
+evidence: comb generation based on parametric oscillation and FWM
+id: evrel_BG93PZPK_rel.papp_2013_13_04
+metadata:
+  source_paper: papp2013
+  zotero_key: BG93PZPK
+object: pri.parametric_four_wave_mixing_comb
+predicate: DERIVED-FROM
+subject: pri.parametric_seeding_microcomb_spacing_control

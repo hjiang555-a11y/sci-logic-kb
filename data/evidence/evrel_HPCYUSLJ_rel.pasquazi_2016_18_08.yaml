@@ -1,0 +1,8 @@
+evidence: self-injection locking mechanisms for coherence control
+id: evrel_HPCYUSLJ_rel.pasquazi_2016_18_08
+metadata:
+  source_paper: pasquazi2018
+  zotero_key: HPCYUSLJ
+object: pri.microcomb_self_injection_locking
+predicate: BOUNDED-BY
+subject: ent.microresonator_frequency_comb

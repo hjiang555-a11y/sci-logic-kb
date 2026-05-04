@@ -1,0 +1,9 @@
+evidence: the spectral output of the fiber covers more than an octave in the optical
+  domain
+id: evrel_9BV3WBSH_rel.diddams_2000_00_02
+metadata:
+  source_paper: diddams2000
+  zotero_key: 9BV3WBSH
+object: met.comb_spectral_bandwidth
+predicate: CHARACTERIZED-BY
+subject: ent.octave_spanning_tisa_comb_d00

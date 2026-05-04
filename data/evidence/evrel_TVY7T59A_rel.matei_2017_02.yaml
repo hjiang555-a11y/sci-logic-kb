@@ -1,0 +1,8 @@
+evidence: individual laser linewidth... can be as small as 5 mHz at 194 THz
+id: evrel_TVY7T59A_rel.matei_2017_02
+metadata:
+  source_paper: matei2017
+  zotero_key: TVY7T59A
+object: met.laser_linewidth_m17
+predicate: CHARACTERIZED-BY
+subject: ent.si_crystal_fp_cavity_k12

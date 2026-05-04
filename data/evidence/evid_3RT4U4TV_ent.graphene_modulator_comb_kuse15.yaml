@@ -1,0 +1,18 @@
+definition: '腔内集成石墨烯-波导耦合型电光调制器，通过快速调控石墨烯费米能级改变腔内损耗， 从而在 >1 MHz 带宽上调制 f_CEO 与 n·f_rep。
+  兼容可见光到中红外；低损耗、易集成于全保偏 Er:fiber 锁模激光谐振腔。
+
+  '
+id: evid_3RT4U4TV_ent.graphene_modulator_comb_kuse15
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/kuse2015.yaml
+  source_paper: kuse2015
+  zotero_key: 3RT4U4TV
+name: 石墨烯腔内电光调制器（Kuse 2015，用于 Er:fiber 梳）
+original_id: ent.graphene_modulator_comb_kuse15
+properties:
+  insertion: 腔内插入，低损耗
+  mechanism: 石墨烯可调吸收（费米能级控制损耗）
+  modulation_bandwidth: '>1 MHz（远超泵浦电流调制 ~100 kHz 与 AOM ~250 kHz）'
+  wavelength_range: 可见光 → 中红外
+status: Determined
+type: Entity/Factor

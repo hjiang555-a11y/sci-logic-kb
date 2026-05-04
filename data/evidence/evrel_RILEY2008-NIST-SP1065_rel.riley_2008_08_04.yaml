@@ -1,0 +1,9 @@
+evidence: Total deviation extends the original data record by reflection, allowing
+  long-τ stability estimates with reduced bias compared with the Allan variance.
+id: evrel_RILEY2008-NIST-SP1065_rel.riley_2008_08_04
+metadata:
+  source_paper: riley2008
+  zotero_key: RILEY2008-NIST-SP1065
+object: meth.allan_deviation_adev
+predicate: DERIVED-FROM
+subject: meth.total_deviation_totdev

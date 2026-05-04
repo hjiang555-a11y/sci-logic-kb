@@ -1,0 +1,9 @@
+evidence: an air-silica microstructure optical fiber broadens the frequency comb ...
+  to span the optical octave
+id: evrel_9BV3WBSH_rel.diddams_2000_00_04
+metadata:
+  source_paper: diddams2000
+  zotero_key: 9BV3WBSH
+object: pri.supercontinuum_octave_spanning
+predicate: ENABLED-BY
+subject: meth.octave_f2f_optical_frequency_measurement

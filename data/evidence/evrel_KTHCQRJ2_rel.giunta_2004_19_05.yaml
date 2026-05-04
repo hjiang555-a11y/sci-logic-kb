@@ -1,0 +1,9 @@
+evidence: the OFC permits to count the fast cycles of optical transition frequencies
+  in atomic systems
+id: evrel_KTHCQRJ2_rel.giunta_2004_19_05
+metadata:
+  source_paper: giunta2019
+  zotero_key: KTHCQRJ2
+object: meth.photonic_microwave_synthesis
+predicate: OPERATIONALIZED-AS
+subject: met.hydrogen_1s2s_frequency_accuracy

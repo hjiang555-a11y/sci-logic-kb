@@ -1,0 +1,9 @@
+evidence: the absolute frequency axis of the comb, enabled by self-referencing, underpins
+  its role as a universal coherent ruler.
+id: evrel_DIDDAMS2020-SCIENCE_rel.diddams_2020_VU20_03
+metadata:
+  source_paper: diddams2020b
+  zotero_key: DIDDAMS2020-SCIENCE
+object: pri.self_referencing_f2f
+predicate: ENABLED-BY
+subject: pri.ofc_unified_electromagnetic_spectrum_framework

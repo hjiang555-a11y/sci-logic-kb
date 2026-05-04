@@ -1,0 +1,8 @@
+evidence: Sr optical lattice clock
+id: evrel_BOTHWELL2022_rel.bothwell_2022_ot22_01
+metadata:
+  source_paper: bothwell2022
+  zotero_key: BOTHWELL2022
+object: ent.optical_lattice_clock
+predicate: PART-OF
+subject: ent.jila_mm_scale_redshift_sr_clock_b22

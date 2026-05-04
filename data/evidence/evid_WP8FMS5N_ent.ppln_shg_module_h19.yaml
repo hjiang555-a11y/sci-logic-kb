@@ -1,0 +1,17 @@
+definition: '周期极化铌酸锂（PPLN）波导频率倍频器，将 1396 nm 基频光 倍频至 698 nm 用于锶光钟。NTT Electronics 商用模块。
+
+  '
+id: evid_WP8FMS5N_ent.ppln_shg_module_h19
+metadata:
+  original_file: /data/sci-logic-kb/topics/ultrastable-laser/papers/herbers2019.yaml
+  source_paper: herbers2019
+  zotero_key: WP8FMS5N
+name: PPLN 波导二次谐波产生模块
+original_id: ent.ppln_shg_module_h19
+properties:
+  input_wavelength: 1396 nm
+  manufacturer: NTT Electronics
+  output_wavelength: 698 nm
+  type: PPLN waveguide
+status: Determined
+type: Entity/Factor

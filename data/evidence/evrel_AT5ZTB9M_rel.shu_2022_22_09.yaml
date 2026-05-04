@@ -1,0 +1,10 @@
+evidence: a dark-pulse state is used to achieve coherent microcombs. This state works
+  in the normal dispersion regime with the assistance of the avoided mode-crossing
+  effect
+id: evrel_AT5ZTB9M_rel.shu_2022_22_09
+metadata:
+  source_paper: shu2022
+  zotero_key: AT5ZTB9M
+object: pri.normal_dispersion_dark_pulse_s22
+predicate: ENABLED-BY
+subject: meth.dfb_pumped_turnkey_dark_pulse_generation_s22

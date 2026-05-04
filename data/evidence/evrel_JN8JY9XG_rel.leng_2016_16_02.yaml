@@ -1,0 +1,8 @@
+evidence: 4.7 × 10⁻¹⁸ at 16400 s
+id: evrel_JN8JY9XG_rel.leng_2016_16_02
+metadata:
+  source_paper: leng2016
+  zotero_key: JN8JY9XG
+object: met.rf_transfer_instability_16400s_l16
+predicate: CHARACTERIZED-BY
+subject: ent.rf_transfer_via_comb_50km_l16

@@ -1,0 +1,8 @@
+evidence: 30-cm-long ultrahigh finesse optical cavity
+id: evrel_AFFU5KGB_rel.li_2018_I01
+metadata:
+  source_paper: li2018
+  zotero_key: AFFU5KGB
+object: ent.fp_cavity_system
+predicate: PART-OF
+subject: ent.ule_cavity_30cm_sr_l18

@@ -1,0 +1,8 @@
+evidence: 8.6 THz (72 nm) 30-dB bandwidth
+id: evrel_EBNL35EE_rel.stern_2018_18_14
+metadata:
+  source_paper: stern2018
+  zotero_key: EBNL35EE
+object: met.microcomb_30dB_bandwidth_s18
+predicate: CHARACTERIZED-BY
+subject: ent.battery_operated_microcomb_s18

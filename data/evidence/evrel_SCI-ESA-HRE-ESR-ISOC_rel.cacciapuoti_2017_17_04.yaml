@@ -1,0 +1,8 @@
+evidence: the pulsed optical link ELT+
+id: evrel_SCI-ESA-HRE-ESR-ISOC_rel.cacciapuoti_2017_17_04
+metadata:
+  source_paper: cacciapuoti2017
+  zotero_key: SCI-ESA-HRE-ESR-ISOC
+object: ent.space_optical_clock_mission
+predicate: PART-OF
+subject: ent.pulsed_optical_link_elt_plus

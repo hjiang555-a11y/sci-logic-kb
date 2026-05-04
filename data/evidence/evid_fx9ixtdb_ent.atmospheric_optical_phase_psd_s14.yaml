@@ -1,0 +1,14 @@
+definition: 穿越 2 km 水平大气的光脉冲飞行时间通过线性光学采样连续测量，用于估计大气光相位噪声 PSD。
+id: evid_fx9ixtdb_ent.atmospheric_optical_phase_psd_s14
+metadata:
+  original_file: /data/sci-logic-kb/topics/time-frequency-transfer/papers/sinclair2014_fx9ixtdb.yaml
+  source_paper: sinclair2014_fx9ixtdb
+  zotero_key: fx9ixtdb
+name: 大气光学相位噪声 PSD 测量（2 km 水平路径，NIST Boulder）
+original_id: ent.atmospheric_optical_phase_psd_s14
+properties:
+  method: linear optical sampling of comb pulses
+  path_length: 2 km horizontal
+  psd_scaling: ∝ f^(-2.3) down to 100 μHz
+status: Determined
+type: Entity/Factor

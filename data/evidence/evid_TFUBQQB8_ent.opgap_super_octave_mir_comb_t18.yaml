@@ -1,0 +1,25 @@
+definition: '基于 Er:fiber 梳（100 MHz）+ EDFA + 正常色散 HNLF 产生少周期脉冲（~10 fs）， 经 OP-GaP（取向图案化
+  GaP）晶体准相位匹配χ² 脉冲内差频（intra-pulse DFG）， 产生 4–12 μm 超八度中红外频率梳（覆盖分子指纹区 2500–830 cm⁻¹），
+  0.25 mW 总功率，亮度匹敌同步辐射（synchrotron IR beamline）。 用于双梳光谱（DCS）实现甲醇/乙醇高分辨（100 MHz）分子指纹测量。
+
+  '
+id: evid_TFUBQQB8_ent.opgap_super_octave_mir_comb_t18
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/timmers2018.yaml
+  source_paper: timmers2018
+  zotero_key: TFUBQQB8
+name: OP-GaP 超八度中红外频率梳（Timmers 2018）
+original_id: ent.opgap_super_octave_mir_comb_t18
+properties:
+  acquisition_rate: 20 ms（DCS 配置）
+  brightness: 匹敌同步辐射红外光束线
+  frequency_accuracy: <10⁻¹¹（相对微波标准）
+  mode_count: 500,000 梳齿
+  nonlinear_medium: OP-GaP（取向图案化 GaP，准相位匹配 χ²）
+  output_spectrum: 4–12 μm 超八度（2500–830 cm⁻¹，覆盖分子指纹区）
+  pump_pulse: ~10 fs 少周期脉冲（~1.5 μm 中心）
+  source_comb: Er:fiber 梳 100 MHz + EDFA 放大 + 正常色散 HNLF 展宽
+  spectral_resolution: 100 MHz（0.0033 cm⁻¹，受 f_rep 限制）
+  total_power: 0.25 mW（4–12 μm 总功率）
+status: Determined
+type: Entity/Factor

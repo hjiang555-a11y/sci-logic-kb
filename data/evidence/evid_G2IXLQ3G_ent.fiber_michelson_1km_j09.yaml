@@ -1,0 +1,14 @@
+definition: '单模光纤（SMF-28）构成 1 km 长臂非平衡迈克尔逊干涉仪，两臂末端使用法拉第反射镜 消除偏振态不确定性（无需偏振控制器）。长臂插入
+  AOM 产生外差拍频信号（2×f_AOM）， 避免直流漂移，实现外差探测。铝盒热隔离封装（26 cm×26 cm×16.5 cm）， 置于商用主动隔振平台。
+
+  '
+id: evid_G2IXLQ3G_ent.fiber_michelson_1km_j09
+metadata:
+  original_file: /data/sci-logic-kb/topics/ultrastable-laser/papers/jiang2009a.yaml
+  source_paper: jiang2009a
+  zotero_key: G2IXLQ3G
+name: 1 km 光纤非平衡迈克尔逊干涉仪（Jiang 2009a）
+original_id: ent.fiber_michelson_1km_j09
+properties: {}
+status: Determined
+type: Entity/Factor

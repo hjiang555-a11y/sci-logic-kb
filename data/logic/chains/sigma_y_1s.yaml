@@ -1,0 +1,59 @@
+# Metric Chain: Frequency Stability at 1s (sigma_y @ 1s)
+
+> **ID**: chain.sigma_y_1s
+> **Topic**: ultrastable-laser
+> **Status**: Blueprint / Initial Mapping
+> **Description**: Decomposition of the primary performance limit of ultrastable lasers.
+
+---
+
+## 1. Topology Map (Decomposition Graph)
+
+The top-level stability $\sigma_y(1\text{s})$ is an aggregate result. The fundamental limit is defined by the most restrictive of the following branches:
+
+$$\sigma_y(1\text{s}) = f(\text{Thermal Noise}, \text{Environmental Noise}, \text{Measurement Noise})$$
+
+### Branch A: Fundamental Thermal Noise (The Hard Limit)
+$\sigma_y(1\text{s}) \xrightarrow{\text{BOUNDED-BY}}$ **pri.brownian_thermal_noise**
+- **Decomposition**:
+    - $\xrightarrow{\text{DETERMINED-BY}}$ **la.mirror_coating_noise** (Crystalline vs Amorphous)
+    - $\xrightarrow{\text{DETERMINED-BY}}$ **la.substrate_thermal_noise** (Si vs ULE, Cryogenic vs Room Temp)
+    - $\xrightarrow{\text{DETERMINED-BY}}$ **la.cavity_geometry** (Length $L$, Aperture $a$)
+
+### Branch B: Environmental & Technical Noise (The Engineering Layer)
+$\sigma_y(1\text{s}) \xrightarrow{\text{BOUNDED-BY}}$ **la.environmental_noise**
+- **Decomposition**:
+    - $\xrightarrow{\text{DETERMINED-BY}}$ **la.vibration_sensitivity** $\xrightarrow{\text{MITIGATED-BY}}$ (Active Isolation, Symmetry)
+    - $\xrightarrow{\text{DETERMINED-BY}}$ **la.thermal_gradients** $\xrightarrow{\text{MITIGATED-BY}}$ (Thermal Shielding, Vacuum)
+    - $\xrightarrow{\text{DETERMINED-BY}}$ **la.acceleration_noise**
+
+### Branch C: Measurement & Electronic Noise (The Observation Layer)
+$\sigma_y(1\text{s}) \xrightarrow{\text{BOUNDED-BY}}$ **la.measurement_noise**
+- **Decomposition**:
+    - $\xrightarrow{\text{DETERMINED-BY}}$ **la.pdh_locking_error** $\xrightarrow{\text{MITIGATED-BY}}$ (RAM Suppression, High-QE Photodiodes)
+    - $\xrightarrow{\text{DETERMINED-BY}}$ **la.shot_noise_limit** $\xrightarrow{\text{DETERMINED-BY}}$ (Optical Power)
+    - $\xrightarrow{\text{DETERMINED-BY}}$ **la.electronic_drift**
+
+---
+
+## 2. Node Mapping (Evidence Linkage)
+
+This section maps the blueprint above to the actual Evidence Nodes in `/data/sci-logic-kb/data/evidence/`.
+
+| logic_node | evidence_ref (Example) | status |
+| :--- | :--- | :--- |
+| **pri.brownian_thermal_noise** | `evid_..._brownian` | Determined |
+| **la.mirror_coating_noise** | `evid_..._crystalline_coating` | Determined |
+| **la.substrate_thermal_noise** | `evid_..._si_cryo` | Determined |
+| **la.vibration_sensitivity** | `evid_..._vibration_iso` | Needs-Review |
+| **la.pdh_locking_error** | `evid_..._pdh_ram` | Determined |
+
+---
+
+## 3. Bottleneck Analysis (Reasoning Path)
+
+To determine the current technical boundary:
+1. Trace the values from the **Evidence Layer** for each leaf node.
+2. Propagate the values up the **Logic Layer** (Branch A, B, C).
+3. The branch with the highest (worst) value is the **Current Bottleneck**.
+4. Identify which atomic node within that branch is the primary driver.

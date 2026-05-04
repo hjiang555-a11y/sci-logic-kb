@@ -1,0 +1,17 @@
+definition: '利用 1 mm 厚 PPLN（周期 30.80 µm）对 PM-HNLF 输出超连续谱中的 ~1 µm 分量进行倍频， 与孤子自频移产生的
+  ~2 µm 分量在 PPLN 出口处干涉，产生 f_CEO 拍频信号（SNR = 40 dB @300 kHz RBW）， 无需额外体光学元件或延迟级，实现紧凑全光纤路径。
+
+  '
+id: evid_HG8TSPT6_ent.inline_ppln_f2f_l20
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/lesko2020.yaml
+  source_paper: lesko2020
+  zotero_key: HG8TSPT6
+name: 内联 PPLN f-to-2f 干涉仪（Lesko 2020，1 mm）
+original_id: ent.inline_ppln_f2f_l20
+properties:
+  fceo_snr: 40 dB @ 300 kHz RBW
+  ppln_length: 1 mm
+  ppln_period: 30.80 µm
+status: Determined
+type: Entity/Factor

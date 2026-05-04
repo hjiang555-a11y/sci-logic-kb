@@ -1,0 +1,25 @@
+definition: '以 AlGaAs/GaAs 单晶外延多层反射镜（DBR）替代传统 IBS 介质镀层， 利用单晶半导体的本征低机械损耗（φ_AlGaAs ~
+  2.5×10⁻⁵，Q ~ 40,000，室温） 将镀层布朗热噪声在室温下降低约 10×， 同时保持 >99.98% 高反射率和 F = 1.5(1)×10⁵ 腔精细度。
+  开辟室温 10⁻¹⁷ 稳定度路径，并作为 Si 低温腔的镀层升级方案。
+
+  '
+id: evid_CWIHQRJD_ent.algaas_crystalline_mirror_c13
+metadata:
+  original_file: /data/sci-logic-kb/topics/ultrastable-laser/papers/cole2013.yaml
+  source_paper: cole2013
+  zotero_key: CWIHQRJD
+name: AlGaAs/GaAs 晶体镀层腔镜
+original_id: ent.algaas_crystalline_mirror_c13
+properties:
+  birefringence: 双折射劈裂 4.0(4) MHz（各向异性固有应变，远大于腔线宽 29 kHz）
+  design: 标准四分之一波长 DBR，中心波长约 1064 nm（Cole 2013 腔）
+  finesse: 1.5(1)×10⁵（1064 nm，35 mm Zerodur 腔，与理论值 1.53×10⁵ 符合）
+  loss_angle_cryo_10K: φ_AlGaAs ~ 4.5×10⁻⁶（10 K，自由悬挂谐振器测量）
+  loss_angle_room_T: φ_AlGaAs ≤ 2.5×10⁻⁵（室温，FP 腔热噪声测量上限）
+  material: Al₀.₉₂Ga₀.₀₈As（低折射率）/ GaAs（高折射率）交替层，MBE 外延，40.5 周期
+  noise_reduction_room_T: 镀层布朗噪声较标准 IBS 降低 ~10×（1 Hz 处）
+  reflectivity: '> 99.98%（R > 0.9998），散射 4 ppm + 透射 4 ppm + 吸收 12.5 ppm'
+  substrate_transfer: MBE 生长后选择性化学蚀刻去除 GaAs 底板，直接范德华键合到曲面熔融石英底物
+  wavelength_range: 650 nm – ~3 μm（带隙吸收以下至自由载流子吸收以上）
+status: Determined
+type: Entity/Factor

@@ -1,0 +1,11 @@
+definition: 基于原子/脉泽微波跃迁的频率标准；包括 Cs 喷泉初级标准、H 脉泽、Rb 副标准、CSAC 等。
+id: evid_HEAVNER2005_ent.microwave_frequency_standard
+metadata:
+  original_file: /data/sci-logic-kb/topics/frequency-standards/papers/heavner2005.yaml
+  source_paper: heavner2005
+  zotero_key: HEAVNER2005
+name: 微波频率标准（Level 1 总节点）
+original_id: ent.microwave_frequency_standard
+properties: {}
+status: Determined
+type: Entity/Factor

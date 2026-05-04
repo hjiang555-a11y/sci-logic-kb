@@ -1,0 +1,9 @@
+evidence: the system can show rich and complex nonlinear behaviour, including bistability,
+  chaos, single- and multiple-soliton formation, soliton crystals and breather instabilities
+id: evrel_BRKZG9H2_rel.gaeta_2019_ae19_08
+metadata:
+  source_paper: gaeta2019
+  zotero_key: BRKZG9H2
+object: pri.microcomb_formation_regime_taxonomy_g19
+predicate: CHARACTERIZED-BY
+subject: ent.microresonator_frequency_comb

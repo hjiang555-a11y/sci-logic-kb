@@ -1,0 +1,8 @@
+evidence: 环回法比较往返传递的微波信号相位获得链路上的相位扰动量，并实时控制本地发射端的微波发射信号相位实现预补偿
+id: evrel_592vc93u_rel.quan_2021_ua21_02
+metadata:
+  source_paper: quan2021_592vc93u
+  zotero_key: 592vc93u
+object: pri.roundtrip_phase_compensation_rf_transfer
+predicate: ENABLED-BY
+subject: ent.ntsc_56km_rf_precompensation_q21

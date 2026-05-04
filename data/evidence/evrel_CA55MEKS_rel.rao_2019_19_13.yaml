@@ -1,0 +1,8 @@
+evidence: fceo 一般利用 f-2f 自参考技术得到…利用 PPLN1 将 2 µm 的波长成分倍频至 1 µm
+id: evrel_CA55MEKS_rel.rao_2019_19_13
+metadata:
+  source_paper: rao2019
+  zotero_key: CA55MEKS
+object: pri.self_referencing_f2f
+predicate: ENABLED-BY
+subject: meth.pump_current_fceo_lock_r19

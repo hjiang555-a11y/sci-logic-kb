@@ -1,0 +1,8 @@
+evidence: systematic uncertainty of 9.4 × 10⁻¹⁹ for the ²⁷Al⁺ quantum logic clock
+id: evrel_SDG6KXNZ_rel.dimarcq_2021_24_02
+metadata:
+  source_paper: dimarcq2024
+  zotero_key: SDG6KXNZ
+object: met.optical_clock_systematic_uncertainty
+predicate: CHARACTERIZED-BY
+subject: ent.optical_frequency_standard

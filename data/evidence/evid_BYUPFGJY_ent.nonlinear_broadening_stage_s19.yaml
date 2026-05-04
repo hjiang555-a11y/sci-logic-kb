@@ -1,0 +1,16 @@
+definition: '将微腔输出孤子梳（~1550 nm 附近、数十 nm 带宽）经高非线性光纤展宽到覆盖 NIRSPEC echelle 1471–1620
+  nm 的 8 个级次，保留 22.1 GHz 梳齿结构。
+
+  '
+id: evid_BYUPFGJY_ent.nonlinear_broadening_stage_s19
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/suh2019.yaml
+  source_paper: suh2019
+  zotero_key: BYUPFGJY
+name: 孤子梳非线性展宽级（Suh 2019）
+original_id: ent.nonlinear_broadening_stage_s19
+properties:
+  input_center: ~1550 nm
+  output_coverage: 1471–1620 nm
+status: Determined
+type: Entity/Factor

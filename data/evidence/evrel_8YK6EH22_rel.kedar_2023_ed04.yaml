@@ -1,0 +1,9 @@
+evidence: simultaneously probing both orthogonal polarization modes... cancels the
+  polarization-correlated frequency noise
+id: evrel_8YK6EH22_rel.kedar_2023_ed04
+metadata:
+  source_paper: kedar2023
+  zotero_key: 8YK6EH22
+object: meth.dual_polarization_suppression_kedar23
+predicate: OPERATIONALIZED-AS
+subject: met.fractional_freq_instability_kedar23

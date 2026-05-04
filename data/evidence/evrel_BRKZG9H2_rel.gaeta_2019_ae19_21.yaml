@@ -1,0 +1,9 @@
+evidence: Critical properties of these chip-based materials are the strong nonlinearity
+  and the high refractive index contrast
+id: evrel_BRKZG9H2_rel.gaeta_2019_ae19_21
+metadata:
+  source_paper: gaeta2019
+  zotero_key: BRKZG9H2
+object: ent.chip_comb_platform_taxonomy_g19
+predicate: CONDITIONED-BY
+subject: meth.chip_scg_comb_generation_g19

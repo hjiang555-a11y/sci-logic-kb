@@ -1,0 +1,9 @@
+evidence: the SHG of the 2 µm pulse falls right on the DW pulse peak ... using no
+  extra pulse delay control
+id: evrel_BDY8JHA4_rel.xing_2020_11
+metadata:
+  source_paper: xing2020
+  zotero_key: BDY8JHA4
+object: pri.octave_self_compression_enables_inline_f2f
+predicate: ENABLED-BY
+subject: meth.ssfs_tdf_cpa_self_compression_comb_x20

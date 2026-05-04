@@ -1,0 +1,9 @@
+evidence: The mid-infrared domain, with its strong molecular fingerprints, attracts
+  considerable interest.
+id: evrel_YYXGH9X3_rel.schliesser_2011_12_04
+metadata:
+  source_paper: schliesser2012
+  zotero_key: YYXGH9X3
+object: pri.molecular_rovibrational_fingerprint
+predicate: ENABLED-BY
+subject: ent.mid_ir_frequency_comb

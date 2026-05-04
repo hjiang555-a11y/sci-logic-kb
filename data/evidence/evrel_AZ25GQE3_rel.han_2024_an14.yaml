@@ -1,0 +1,8 @@
+evidence: DCS utilizes the change of interference to figure out the atmospheric property
+id: evrel_AZ25GQE3_rel.han_2024_an14
+metadata:
+  source_paper: han2024
+  zotero_key: AZ25GQE3
+object: pri.dual_comb_multiheterodyne_detection
+predicate: ENABLED-BY
+subject: meth.bistatic_two_way_dcs_protocol_h24

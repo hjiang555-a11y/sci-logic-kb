@@ -1,0 +1,13 @@
+evidence: '"Soliton Kerr combs generated in high-quality-factor microresonators, as
+  reviewed in ref. 21, provide convenient access to a range of repetition frequencies,
+  from 10 GHz to 1 THz, which is difficult, or even impossible, to reach with conventional
+  mode-locked lasers."
+
+  '
+id: evrel_RZME5CH8_rel.picqué_2019_19_09
+metadata:
+  source_paper: picque2019
+  zotero_key: RZME5CH8
+object: ent.microresonator_frequency_comb
+predicate: ENABLED-BY
+subject: meth.dual_comb_spectroscopy

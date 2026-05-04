@@ -1,0 +1,9 @@
+evidence: highly stable and tunable frequency references using optical high finesse
+  cavities
+id: evrel_8MNIBZEW_rel.möhle_2013_o01
+metadata:
+  source_paper: mohle2013
+  zotero_key: 8MNIBZEW
+object: ent.fp_cavity_system
+predicate: PART-OF
+subject: ent.piezo_tunable_cavity_m13

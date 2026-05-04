@@ -1,0 +1,8 @@
+evidence: synthesis error of 7.7 × 10^-15 or below
+id: evrel_4I37D6SD_rel.spencer_2018_01
+metadata:
+  source_paper: spencer2018
+  zotero_key: 4I37D6SD
+object: met.synthesis_fractional_instability
+predicate: CHARACTERIZED-BY
+subject: ent.integrated_ofc_synthesizer_spencer2018

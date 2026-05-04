@@ -1,0 +1,8 @@
+evidence: a 10-GHz self-referenced optical frequency comb
+id: evrel_RDBWYLKJ_rel.bartels_2009_ar09_01
+metadata:
+  source_paper: bartels2009
+  zotero_key: RDBWYLKJ
+object: ent.optical_frequency_comb
+predicate: PART-OF
+subject: ent.ti_sapph_10ghz_comb_bartels09

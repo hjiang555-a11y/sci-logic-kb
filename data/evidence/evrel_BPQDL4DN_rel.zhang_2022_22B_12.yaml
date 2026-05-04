@@ -1,0 +1,9 @@
+evidence: multi-branch architecture ... results in more uncompensated fiber paths,
+  which degrades the out-of-loop frequency instability of an OFC
+id: evrel_BPQDL4DN_rel.zhang_2022_22B_12
+metadata:
+  source_paper: zhang2022b
+  zotero_key: BPQDL4DN
+object: pri.multibranch_vs_single_branch_tradeoff
+predicate: BOUNDED-BY
+subject: met.out_of_loop_instability_z22b

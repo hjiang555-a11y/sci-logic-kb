@@ -1,0 +1,14 @@
+definition: '用于孤子晶体生成实验的石英WGM微环谐振腔，自由谱范围约26 GHz（高Q腔） 和约16.4 GHz，异常色散，通过锥形光纤侧耦合泵浦（~30
+  mW电信波段）。
+
+  '
+id: evid_Q7ZYAQMC_ent.silica_wgm_resonator_cole
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/cole2018.yaml
+  source_paper: cole2018
+  zotero_key: Q7ZYAQMC
+name: 二氧化硅WGM微腔（Cole 2018）
+original_id: ent.silica_wgm_resonator_cole
+properties: {}
+status: Determined
+type: Entity/Factor

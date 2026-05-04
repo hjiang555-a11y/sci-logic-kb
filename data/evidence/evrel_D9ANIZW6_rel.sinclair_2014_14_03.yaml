@@ -1,0 +1,8 @@
+evidence: residual optical linewidths of < 1 Hz
+id: evrel_D9ANIZW6_rel.sinclair_2014_14_03
+metadata:
+  source_paper: sinclair2014
+  zotero_key: D9ANIZW6
+object: met.residual_optical_linewidth_s14
+predicate: CHARACTERIZED-BY
+subject: ent.ruggedized_field_comb_s14

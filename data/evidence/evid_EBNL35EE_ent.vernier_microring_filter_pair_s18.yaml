@@ -1,0 +1,14 @@
+definition: 'R = 20 µm / 22 µm 双 Si3N4 微环，FSR 分别 1.18 / 1.07 THz，只有在对齐位置才 合成单一透射峰（Vernier
+  选择），FWHM 15 GHz；通过集成电阻式微加热器宽范围 热调谐，与 120 µm 大微环的某个模式对齐以确定泵浦波长。
+
+  '
+id: evid_EBNL35EE_ent.vernier_microring_filter_pair_s18
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/stern2018.yaml
+  source_paper: stern2018
+  zotero_key: EBNL35EE
+name: Si3N4 双微环 Vernier 单纵模选择滤波器
+original_id: ent.vernier_microring_filter_pair_s18
+properties: {}
+status: Determined
+type: Entity/Factor

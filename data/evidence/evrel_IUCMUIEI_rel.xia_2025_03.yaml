@@ -1,0 +1,9 @@
+evidence: The frequency instability of the USL's frequency in carrier- and offset-locking
+  modes was measured to be 1.5×10⁻¹⁵ at 1 s.
+id: evrel_IUCMUIEI_rel.xia_2025_03
+metadata:
+  source_paper: xia2025
+  zotero_key: IUCMUIEI
+object: ent.fpga_multiloop_autolock_xia25
+predicate: CHARACTERIZED-BY
+subject: met.usl_instability_carrier_xia25

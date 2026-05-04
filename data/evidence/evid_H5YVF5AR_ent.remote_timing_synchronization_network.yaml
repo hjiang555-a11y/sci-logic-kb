@@ -1,0 +1,19 @@
+definition: '以低噪声锁模激光输出的光脉冲列作为统一主时基，经定时稳定光纤链路分发到远端站点， 再在各端站将到达的脉冲列分别与远端锁模激光或微波振荡器同步，
+  从而实现大尺度设施内的统一飞秒级时序控制。
+
+  '
+id: evid_H5YVF5AR_ent.remote_timing_synchronization_network
+metadata:
+  original_file: /data/sci-logic-kb/topics/ultrastable-laser/papers/kim2008.yaml
+  source_paper: kim2008
+  zotero_key: H5YVF5AR
+name: 远程飞秒时序同步网络
+original_id: ent.remote_timing_synchronization_network
+properties:
+  distribution_distance: 数百米量级；本文演示两条独立 ~300 m 光纤链路
+  link_stabilization: 单晶平衡光学互相关器 + PZT 快反馈 + 电机平移台慢反馈
+  master_pulse_train: 200.5 MHz 锁模激光脉冲列（光学主振荡器）
+  optical_microwave_demo: 从 200.5 MHz 脉冲列再生 10.225 GHz 微波并锁相
+  optical_optical_demo: Ti:sapphire 激光与 Cr:forsterite 激光远程同步
+status: Determined
+type: Entity/Factor

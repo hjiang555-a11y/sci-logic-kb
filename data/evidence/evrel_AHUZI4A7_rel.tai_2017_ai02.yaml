@@ -1,0 +1,8 @@
+evidence: thermal noise limit 7×10⁻¹⁶ at 1-10 s
+id: evrel_AHUZI4A7_rel.tai_2017_ai02
+metadata:
+  source_paper: tai2017
+  zotero_key: AHUZI4A7
+object: met.fractional_freq_instability_tai17
+predicate: CHARACTERIZED-BY
+subject: ent.fp_cavity_system

@@ -1,0 +1,8 @@
+evidence: 365 W (350 W isolated)
+id: evrel_HJZ6BVYE_rel.dixneuf_2020_ix03
+metadata:
+  source_paper: dixneuf2020
+  zotero_key: HJZ6BVYE
+object: ent.high_power_low_rin_fiber_laser_d20
+predicate: CHARACTERIZES
+subject: met.output_power_d20

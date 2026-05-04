@@ -1,0 +1,8 @@
+evidence: phase noise is below −100 dBc/Hz, limited by the optical reference
+id: evrel_LMJN9MGA_rel.quinlan_2011_01
+metadata:
+  source_paper: quinlan2011
+  zotero_key: LMJN9MGA
+object: met.er_fiber_ofd_phase_noise_1hz
+predicate: CHARACTERIZED-BY
+subject: ent.er_fiber_ofd_quinlan2011

@@ -1,0 +1,9 @@
+evidence: With an octave-spanning spectrum available from the soliton self-compression,
+  it is possible to retrieve the f_ceo in a straightforward manner
+id: evrel_BDY8JHA4_rel.xing_2020_12
+metadata:
+  source_paper: xing2020
+  zotero_key: BDY8JHA4
+object: pri.self_referencing_f2f
+predicate: DERIVED-FROM
+subject: pri.octave_self_compression_enables_inline_f2f

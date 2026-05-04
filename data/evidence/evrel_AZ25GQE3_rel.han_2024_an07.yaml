@@ -1,0 +1,8 @@
+evidence: <2 ppm in 5 min and <0.6 ppm in 36 min
+id: evrel_AZ25GQE3_rel.han_2024_an07
+metadata:
+  source_paper: han2024
+  zotero_key: AZ25GQE3
+object: met.co2_precision_allan_h24
+predicate: CHARACTERIZED-BY
+subject: ent.long_path_dcs_h24

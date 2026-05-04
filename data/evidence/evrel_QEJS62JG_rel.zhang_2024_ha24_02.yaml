@@ -1,0 +1,8 @@
+evidence: 20-dB improvement ... achieve a beat-note SNR of more than 60 dB
+id: evrel_QEJS62JG_rel.zhang_2024_ha24_02
+metadata:
+  source_paper: zhang_s2024
+  zotero_key: QEJS62JG
+object: pri.gated_detection_phase_coherent_snr_enhancement_z24
+predicate: CHARACTERIZED-BY
+subject: ent.ustc_gated_balanced_detection_comb_z24

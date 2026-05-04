@@ -1,0 +1,9 @@
+evidence: extracted a loss angle of 0(4)×10⁻⁵ for the substrate-transferred crystalline
+  coatings
+id: evrel_CWIHQRJD_rel.cole_2013_06
+metadata:
+  source_paper: cole2013
+  zotero_key: CWIHQRJD
+object: met.algaas_coating_loss_angle_c13
+predicate: CHARACTERIZED-BY
+subject: ent.algaas_crystalline_mirror_c13

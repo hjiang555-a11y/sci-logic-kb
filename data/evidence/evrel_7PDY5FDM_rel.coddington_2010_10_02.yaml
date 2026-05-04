@@ -1,0 +1,9 @@
+evidence: average spectral signal-to-noise ratio (SNR) over the 9 THz bandwidth is
+  2500
+id: evrel_7PDY5FDM_rel.coddington_2010_10_02
+metadata:
+  source_paper: coddington2010
+  zotero_key: 7PDY5FDM
+object: met.dcs_snr_coherent
+predicate: CHARACTERIZED-BY
+subject: ent.coherent_dual_comb_spectrometer_c10

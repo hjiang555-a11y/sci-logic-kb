@@ -1,0 +1,14 @@
+definition: '1542 nm 连续波激光，松锁至 CEO-锁定支梳线以稳定其输出；与三支的最近梳齿各自拍频： 与 CEO-锁定支的拍频作为 FNDC 伺服参考，与其余两支的拍频作为误差信号。
+  光源本身不必超稳，只要在 FNDC 带宽内稳定即可（"loosely locked to the comb"）。
+
+  '
+id: evid_ERNT9GV3_ent.fndc_reference_cw_laser_1542nm_k18
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/kashiwagi2018.yaml
+  source_paper: kashiwagi2018
+  zotero_key: ERNT9GV3
+name: 1542 nm FNDC 参考 CW 激光（Kashiwagi 2018）
+original_id: ent.fndc_reference_cw_laser_1542nm_k18
+properties: {}
+status: Determined
+type: Entity/Factor

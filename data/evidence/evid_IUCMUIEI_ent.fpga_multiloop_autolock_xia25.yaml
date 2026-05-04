@@ -1,0 +1,23 @@
+definition: '基于单片 FPGA 实现的三环路（PDH + FNC + LPS）全数字自动锁定系统， 高速高精度 ADC/DAC 与 FPGA 协同，支持载波锁定和偏频锁定两种模式，
+  中断后 10 s 内自动复锁，快反馈环路开环带宽 1.3 MHz。
+
+  '
+id: evid_IUCMUIEI_ent.fpga_multiloop_autolock_xia25
+metadata:
+  original_file: /data/sci-logic-kb/topics/ultrastable-laser/papers/xia2025.yaml
+  source_paper: xia2025
+  zotero_key: IUCMUIEI
+name: 全数字多环路超稳激光自动锁定系统（Xia 2025）
+original_id: ent.fpga_multiloop_autolock_xia25
+properties:
+  demonstrated_value: 29000000000.0
+  digital_noise_contribution: 2.9×10⁻¹⁶ @ 1 s
+  fast_loop_bandwidth: 1.3 MHz
+  fnc_noise_suppression: 75 dB @ 1 Hz
+  instability_carrier_lock: 1.5×10⁻¹⁵ @ 1 s
+  instability_offset_lock: 2.5×10⁻¹⁵ @ 1 s
+  lps_noise_suppression: 40 dB @ 1 Hz
+  relock_time: < 10 s
+  value_type: quantitative
+status: Determined
+type: Entity/Factor

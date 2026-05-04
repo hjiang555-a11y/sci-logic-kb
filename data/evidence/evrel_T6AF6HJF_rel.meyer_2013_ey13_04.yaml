@@ -1,0 +1,10 @@
+evidence: we build upon previous work by stabilizing the second degree of freedom
+  of the comb, frep, to obtain the first optically stabilized Yb:KYW frequency comb.
+  We locked frep to a cavity-stabilized CW laser.
+id: evrel_T6AF6HJF_rel.meyer_2013_ey13_04
+metadata:
+  source_paper: meyer2013
+  zotero_key: T6AF6HJF
+object: ent.yb_kyw_fs_comb_meyer13
+predicate: OPERATIONALIZED-AS
+subject: meth.frep_lock_to_cw_reference_m13

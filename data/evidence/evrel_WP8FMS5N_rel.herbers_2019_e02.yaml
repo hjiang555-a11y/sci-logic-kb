@@ -1,0 +1,8 @@
+evidence: characterize excess phase noise and chirps introduced by the SHG module
+id: evrel_WP8FMS5N_rel.herbers_2019_e02
+metadata:
+  source_paper: herbers2019
+  zotero_key: WP8FMS5N
+object: pri.shg_excess_phase_noise_limit
+predicate: ENABLED-BY
+subject: ent.ppln_shg_module_h19

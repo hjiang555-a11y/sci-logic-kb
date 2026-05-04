@@ -1,0 +1,8 @@
+evidence: telecom-wavelength fiber frequency comb
+id: evrel_WCBMETLH_rel.carlson_2017_ar17_01
+metadata:
+  source_paper: carlson2017
+  zotero_key: WCBMETLH
+object: ent.er_fiber_frequency_comb
+predicate: PART-OF
+subject: ent.sin_waveguide_low_power_f2f_c17

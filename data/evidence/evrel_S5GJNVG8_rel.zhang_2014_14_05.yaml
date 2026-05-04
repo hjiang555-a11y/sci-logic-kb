@@ -1,0 +1,8 @@
+evidence: σ_y = σ_RAM × κ/ν, for 35mm cavity κ=28kHz, σ_RAM=1ppm → σ_y=1×10⁻¹⁶
+id: evrel_S5GJNVG8_rel.zhang_2014_14_05
+metadata:
+  source_paper: zhang2014_ram
+  zotero_key: S5GJNVG8
+object: pri.ram_pdh_frequency_offset
+predicate: BOUNDED-BY
+subject: met.ram_fractional_instability

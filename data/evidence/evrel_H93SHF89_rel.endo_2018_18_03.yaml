@@ -1,0 +1,10 @@
+evidence: noise sources ranked from quantum (Schawlow-Townes) to technical (pump RIN,
+  vibration, temperature, ASE, nonlinear phase noise); fiber OFCs have larger technical
+  noise than solid-state
+id: evrel_H93SHF89_rel.endo_2018_18_03
+metadata:
+  source_paper: endo2018
+  zotero_key: H93SHF89
+object: pri.ofc_noise_hierarchy
+predicate: BOUNDED-BY
+subject: ent.optical_frequency_comb

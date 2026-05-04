@@ -1,0 +1,8 @@
+evidence: 37-dB SNR for the f_CEO peak
+id: evrel_CML5935T_rel.hickstein_2017_17_03
+metadata:
+  source_paper: hickstein2017
+  zotero_key: CML5935T
+object: met.fceo_snr_on_chip_h17
+predicate: CHARACTERIZED-BY
+subject: ent.chi2_chi3_waveguide_fceo_h17

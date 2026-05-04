@@ -1,0 +1,8 @@
+evidence: free-space three-node network optical time-frequency transfer
+id: evrel_npl9i62s_rel.bodine_2020_od20_01
+metadata:
+  source_paper: bodine2020_npl9i62s
+  zotero_key: npl9i62s
+object: ent.free_space_optical_tf_link
+predicate: PART-OF
+subject: ent.three_node_free_space_network_b20

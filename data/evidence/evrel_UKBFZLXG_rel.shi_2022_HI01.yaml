@@ -1,0 +1,8 @@
+evidence: thermally-insensitive fiber Mach-Zehnder interferometer
+id: evrel_UKBFZLXG_rel.shi_2022_HI01
+metadata:
+  source_paper: shi2022
+  zotero_key: UKBFZLXG
+object: pri.hcf_smf_thermal_compensation
+predicate: ENABLED-BY
+subject: ent.fiber_interferometer

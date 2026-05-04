@@ -1,0 +1,9 @@
+evidence: our measurements are in good agreement with the adapted thermoconductive
+  noise model
+id: evrel_4GT5VD54_rel.michaud_belleau_2022_B22_03
+metadata:
+  source_paper: michaudbelleau2022
+  zotero_key: 4GT5VD54
+object: meth.hcf_thermal_noise_characterization_mb22
+predicate: OPERATIONALIZED-AS
+subject: met.thermal_noise_psd_hcf_mb22

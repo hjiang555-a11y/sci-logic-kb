@@ -1,0 +1,9 @@
+evidence: wide (>100 cm⁻¹) spectra that are tunable over a range of 2–4 μm... spectra
+  spanning 900 cm⁻¹
+id: evrel_YYXGH9X3_rel.schliesser_2011_12_05
+metadata:
+  source_paper: schliesser2012
+  zotero_key: YYXGH9X3
+object: met.mid_ir_spectral_coverage
+predicate: CHARACTERIZED-BY
+subject: ent.mid_ir_frequency_comb

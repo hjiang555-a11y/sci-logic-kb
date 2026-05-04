@@ -1,0 +1,8 @@
+evidence: we place constraints on the maximum value of the coating loss angle
+id: evrel_8YK6EH22_rel.kedar_2023_ed02
+metadata:
+  source_paper: kedar2023
+  zotero_key: 8YK6EH22
+object: met.algaas_coating_loss_angle_kedar23
+predicate: CHARACTERIZED-BY
+subject: ent.algaas_crystalline_mirror_c13

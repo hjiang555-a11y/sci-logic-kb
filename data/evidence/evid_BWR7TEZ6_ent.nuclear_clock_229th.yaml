@@ -1,0 +1,17 @@
+definition: '基于钍-229 同核异能态（isomeric state）核跃迁（~148 nm，~2 PHz）的新型频率标准。 核跃迁发生在原子核内部，被电子云屏蔽，对外部电磁场扰动免疫力极强。
+  2024 年首次实现激光光谱（TU Wien），作为频率标准尚处于早期演示阶段。
+
+  '
+id: evid_BWR7TEZ6_ent.nuclear_clock_229th
+metadata:
+  original_file: /data/sci-logic-kb/topics/frequency-standards/papers/fortier2026.yaml
+  source_paper: fortier2026
+  zotero_key: BWR7TEZ6
+name: ²²⁹Th 核钟（架构子类型）
+original_id: ent.nuclear_clock_229th
+properties:
+  current_status: 2024 年首次激光激发（TU Wien），作为频率标准处于早期演示阶段
+  isomer_energy: ~8.36 eV（核跃迁，极窄线宽）
+  transition_wavelength: ~148 nm（VUV，~2.02 PHz）
+status: Determined
+type: Entity/Factor

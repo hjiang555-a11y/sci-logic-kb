@@ -1,0 +1,9 @@
+evidence: a compact and reliable all-solid-state optical frequency synthesizer that
+  requires only a single mode-locked laser
+id: evrel_N3W35JH6_rel.udem_2001_02_05
+metadata:
+  source_paper: udem2002
+  zotero_key: N3W35JH6
+object: pri.femtosecond_comb_frequency_ruler
+predicate: ENABLED-BY
+subject: meth.optical_frequency_counting

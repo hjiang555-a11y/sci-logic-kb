@@ -1,0 +1,8 @@
+evidence: the frequency noise is well below 1 Hz2/Hz over the whole range
+id: evrel_G2IXLQ3G_rel.jiang_2009_01
+metadata:
+  source_paper: jiang2009a
+  zotero_key: G2IXLQ3G
+object: met.fiber_laser_freq_noise_j09
+predicate: CHARACTERIZED-BY
+subject: ent.fiber_michelson_1km_j09

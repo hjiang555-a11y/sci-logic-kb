@@ -1,0 +1,9 @@
+evidence: an atmospheric transmission model using Voigt line-shape parameters from
+  the Hitran 2016 database is fitted to and then divided from the ratio spectrum
+id: evrel_FQ4KYV38_rel.ycas_2019_19_07
+metadata:
+  source_paper: ycas2019
+  zotero_key: FQ4KYV38
+object: pri.hitran_voigt_declutter_trace_retrieval
+predicate: ENABLED-BY
+subject: meth.midir_dcs_vocs_protocol_y19

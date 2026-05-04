@@ -1,0 +1,9 @@
+evidence: fundamental limit... Brownian thermal mechanical fluctuations of the FP
+  cavity
+id: evrel_RAC23NZV_rel.jiang_2011_I02
+metadata:
+  source_paper: jiang2011
+  zotero_key: RAC23NZV
+object: pri.brownian_thermal_noise_fdt
+predicate: BOUNDED-BY
+subject: ent.low_thermal_noise_cavity_j11

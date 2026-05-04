@@ -1,0 +1,9 @@
+evidence: crystalline optical cavity at 4 K... demonstrates fractional frequency instability
+  of 6.5×10⁻¹⁷
+id: evrel_JIZCUZLY_rel.robinson_2019_01
+metadata:
+  source_paper: robinson2019
+  zotero_key: JIZCUZLY
+object: ent.fp_cavity_system
+predicate: PART-OF
+subject: ent.si_crystal_fp_cavity_4k_r19

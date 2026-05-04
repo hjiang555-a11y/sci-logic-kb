@@ -1,0 +1,9 @@
+evidence: the thermal noise limit of an optical cavity based on single-crystal silicon
+  is currently set by the optical coating
+id: evrel_YKPFKDD9_rel.kessler_2012_06
+metadata:
+  source_paper: kessler2012
+  zotero_key: YKPFKDD9
+object: pri.brownian_thermal_noise_fdt
+predicate: BOUNDED-BY
+subject: ent.si_crystal_fp_cavity_k12

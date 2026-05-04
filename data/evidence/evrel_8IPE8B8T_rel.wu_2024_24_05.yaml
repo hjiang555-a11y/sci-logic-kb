@@ -1,0 +1,9 @@
+evidence: reach and reference the multiple trapping, cooling and state preparation
+  transitions of atoms and ions in the UV/VIS range
+id: evrel_8IPE8B8T_rel.wu_2024_24_05
+metadata:
+  source_paper: wu2024
+  zotero_key: 8IPE8B8T
+object: meth.carrier_envelope_amplitude_modulation_spectroscopy
+predicate: COMPETES-WITH
+subject: meth.tf_ln_uv_vis_comb_generation

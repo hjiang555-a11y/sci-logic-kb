@@ -1,0 +1,8 @@
+evidence: total thermal noise ~0.13×(1Hz/f)^0.5 Hz/√Hz for ULE 24cm cavity
+id: evrel_VDXBPUQB_rel.numata_2017_02
+metadata:
+  source_paper: numata2004
+  zotero_key: VDXBPUQB
+object: met.thermal_noise_freq_psd
+predicate: CHARACTERIZED-BY
+subject: ent.fp_cavity_system

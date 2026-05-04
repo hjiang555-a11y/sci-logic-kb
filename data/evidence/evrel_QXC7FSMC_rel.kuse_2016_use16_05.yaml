@@ -1,0 +1,8 @@
+evidence: nonlinear amplifying loop mirror ... self-starting in all-PM configuration
+id: evrel_QXC7FSMC_rel.kuse_2016_use16_05
+metadata:
+  source_paper: kuse2016
+  zotero_key: QXC7FSMC
+object: pri.figure9_nalm_pm_self_starting
+predicate: ENABLED-BY
+subject: meth.nalm_all_pm_er_comb_stabilization

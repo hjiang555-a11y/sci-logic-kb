@@ -1,0 +1,8 @@
+evidence: focused into a 25 mm long nonlinear silicon nitride (SiN) waveguide
+id: evrel_9YYDT9H4_rel.metcalf_2019_19_01
+metadata:
+  source_paper: metcalf2019
+  zotero_key: 9YYDT9H4
+object: ent.hpf_nir_astrocomb_m19
+predicate: PART-OF
+subject: ent.sin_nanophotonic_waveguide_m19

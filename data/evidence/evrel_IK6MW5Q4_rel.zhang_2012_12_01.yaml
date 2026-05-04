@@ -1,0 +1,9 @@
+evidence: a fiber-based frequency comb (Menlo Systems) with an intracavity electro-optic
+  modulator
+id: evrel_IK6MW5Q4_rel.zhang_2012_12_01
+metadata:
+  source_paper: zhang2012c
+  zotero_key: IK6MW5Q4
+object: ent.er_fiber_frequency_comb
+predicate: PART-OF
+subject: ent.menlo_erfiber_eom_comb_z12

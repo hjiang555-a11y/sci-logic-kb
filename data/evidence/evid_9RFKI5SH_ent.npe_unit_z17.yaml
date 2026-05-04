@@ -1,0 +1,18 @@
+definition: '主谐振腔，含 SMF-28 光纤、42 cm EDF（Liekki ER110/125，1530 nm 处 110 dB/m 吸收）、 自由空间波片
+  + PBS + 偏振无关隔离器、PZT（HR 镜漂移补偿）、腔内 EOM（f_rep 高速控制）。 作为快饱和吸收机制，通过偏振非线性变换实现脉冲幅度窄化，得到超短脉冲。
+
+  '
+id: evid_9RFKI5SH_ent.npe_unit_z17
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/zhang2017.yaml
+  source_paper: zhang2017
+  zotero_key: 9RFKI5SH
+name: 非线性偏振演化（NPE）主谐振腔单元
+original_id: ent.npe_unit_z17
+properties:
+  eom_dispersion: 8 mm EOM（~100 fs²/mm）
+  free_space_length: 14 cm
+  gain_fiber: 42 cm Liekki ER110/125（色散 ~12 fs²/mm）
+  smf28: 50 cm（色散 ~-22 fs²/mm）
+status: Determined
+type: Entity/Factor

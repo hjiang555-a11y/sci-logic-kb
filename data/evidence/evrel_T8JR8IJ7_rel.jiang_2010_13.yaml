@@ -1,0 +1,9 @@
+evidence: fiber interferometer placed in thermally isolated enclosure to reduce temperature-induced
+  drift
+id: evrel_T8JR8IJ7_rel.jiang_2010_13
+metadata:
+  source_paper: jiang2010
+  zotero_key: T8JR8IJ7
+object: met.freq_noise_from_temperature_fiber
+predicate: CHARACTERIZED-BY
+subject: ent.fiber_interferometer

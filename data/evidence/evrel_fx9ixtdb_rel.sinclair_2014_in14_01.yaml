@@ -1,0 +1,9 @@
+evidence: We measure these fluctuations by transmitting optical pulses from a frequency
+  comb across a 2-km horizontal path
+id: evrel_fx9ixtdb_rel.sinclair_2014_in14_01
+metadata:
+  source_paper: sinclair2014_fx9ixtdb
+  zotero_key: fx9ixtdb
+object: pri.atmospheric_optical_phase_noise_power_law
+predicate: OPERATIONALIZED-AS
+subject: ent.atmospheric_optical_phase_psd_s14

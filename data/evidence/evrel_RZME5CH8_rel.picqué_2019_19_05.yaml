@@ -1,0 +1,10 @@
+evidence: '"With a crossed disperser, resolutions as high as 600 MHz have been reported."
+
+  '
+id: evrel_RZME5CH8_rel.picqué_2019_19_05
+metadata:
+  source_paper: picque2019
+  zotero_key: RZME5CH8
+object: met.vipa_spectral_resolution
+predicate: CHARACTERIZED-BY
+subject: meth.vipa_comb_spectroscopy

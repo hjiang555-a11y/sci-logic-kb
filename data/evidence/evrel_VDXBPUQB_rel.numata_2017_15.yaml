@@ -1,0 +1,8 @@
+evidence: total thermal noise ... 0.13×(1Hz/f)^0.5 Hz/√Hz
+id: evrel_VDXBPUQB_rel.numata_2017_15
+metadata:
+  source_paper: numata2004
+  zotero_key: VDXBPUQB
+object: meth.thermal_noise_analysis_fp_cavity_num04
+predicate: OPERATIONALIZED-AS
+subject: met.thermal_noise_freq_psd

@@ -1,0 +1,8 @@
+evidence: at 4.0 mW transmit power, this approach can support 102 dB link loss
+id: evrel_4m836c4v_rel.caldwell_2023_al23_03
+metadata:
+  source_paper: caldwell2023_4m836c4v
+  zotero_key: 4m836c4v
+object: met.photon_limited_ott_supported_link_loss
+predicate: CHARACTERIZED-BY
+subject: ent.quantum_limited_ott_hawaii_c23

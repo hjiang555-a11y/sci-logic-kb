@@ -1,0 +1,8 @@
+evidence: Building on our previous silicon cavity effort [ref 15, Zhang 2017]
+id: evrel_JIZCUZLY_rel.robinson_2019_10
+metadata:
+  source_paper: robinson2019
+  zotero_key: JIZCUZLY
+object: ent.si_crystal_fp_cavity_k12
+predicate: PART-OF
+subject: ent.si_crystal_fp_cavity_4k_r19

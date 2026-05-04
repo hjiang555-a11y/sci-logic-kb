@@ -1,0 +1,18 @@
+definition: '单片 SOI 硅光集成，包含：depletion-mode PN MZM（>33 GHz 带宽）、TiN 加热器通道对齐、 螺旋波导延迟线（60
+  ps，<3 ps 偏差）、180 GHz 调谐范围微环滤波阵列、垂直外延 Ge PD、 CMOS MZM 驱动电路。标准 CMOS 流片工艺制造。
+
+  '
+id: evid_AT5ZTB9M_ent.siph_tr_chip_s22
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/shu2022.yaml
+  source_paper: shu2022
+  zotero_key: AT5ZTB9M
+name: CMOS 硅光 T/R 处理芯片（Shu 2022）
+original_id: ent.siph_tr_chip_s22
+properties:
+  delay_line_delay: 60 ps（偏差 <3 ps）
+  ge_pd_responsivity: 0.5–0.8 A/W，saturation ~20 mW
+  mzm_bandwidth: '>33 GHz'
+  platform: CMOS 代工厂 SOI 硅光
+status: Determined
+type: Entity/Factor

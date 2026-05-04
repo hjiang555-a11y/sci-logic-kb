@@ -1,0 +1,9 @@
+evidence: frequency-stabilizing to the resonance of 10-cm-long ultrastable Fabry-Pérot
+  cavities
+id: evrel_PZGR9S7S_rel.wu_2016_U01
+metadata:
+  source_paper: wu2016
+  zotero_key: PZGR9S7S
+object: ent.fp_cavity_system
+predicate: PART-OF
+subject: ent.ule_cavity_10cm_w16

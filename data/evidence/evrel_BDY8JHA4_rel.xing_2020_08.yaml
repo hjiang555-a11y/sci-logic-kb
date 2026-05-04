@@ -1,0 +1,8 @@
+evidence: 30 dB signal-to-noise ratio (SNR) at a 300 kHz resolution bandwidth
+id: evrel_BDY8JHA4_rel.xing_2020_08
+metadata:
+  source_paper: xing2020
+  zotero_key: BDY8JHA4
+object: met.fceo_snr_x20
+predicate: CHARACTERIZED-BY
+subject: ent.all_fiber_2um_comb_x20

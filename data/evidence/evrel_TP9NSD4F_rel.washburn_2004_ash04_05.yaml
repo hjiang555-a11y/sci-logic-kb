@@ -1,0 +1,9 @@
+evidence: supercontinuum ... in dispersion-flattened, highly nonlinear optical fiber
+  to span ... octave
+id: evrel_TP9NSD4F_rel.washburn_2004_ash04_05
+metadata:
+  source_paper: washburn2004
+  zotero_key: TP9NSD4F
+object: pri.dispersion_flattened_hnlf_octave_broadening
+predicate: ENABLED-BY
+subject: meth.dual_pll_frep_fceo_rf_reference

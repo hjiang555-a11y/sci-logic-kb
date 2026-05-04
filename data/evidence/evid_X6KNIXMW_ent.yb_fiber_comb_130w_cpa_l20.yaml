@@ -1,0 +1,26 @@
+definition: 'Yb:fiber NPR 锁模振荡器（250 MHz）+ 光纤展宽器 + 三级 CPA 放大（LMA DC Yb-PCF） → 132 W
+  平均功率、180 fs 脉冲；grism 压缩器补偿 GVD + TOD； frep / fceo 双锁至 Rb 钟（长期稳定度 8.3×10⁻¹³ / 1.35×10⁻¹⁹
+  @ 1000 s）； 低噪声特性（高功率下相位噪声仍低）； 目标应用：UV / 中红外梳产生、双梳光谱。
+
+  '
+id: evid_X6KNIXMW_ent.yb_fiber_comb_130w_cpa_l20
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/luo2020.yaml
+  source_paper: luo2020
+  zotero_key: X6KNIXMW
+name: 130 W Yb 光纤梳 CPA 系统（Luo 2020, ECNU）
+original_id: ent.yb_fiber_comb_130w_cpa_l20
+properties:
+  average_power: 132 W（压缩后）
+  compressor: grism（GVD + TOD 补偿）
+  cpa_stages: 三级（LMA DC Yb-PCF 放大器）
+  demonstrated_value: 83000000000.0
+  fceo_stability: 1.35×10⁻¹⁹ @ 1000 s
+  frep: 250 MHz
+  frep_stability: 8.3×10⁻¹³ @ 1000 s（锁至 Rb 钟）
+  main_peak_energy_fraction: ~99%
+  metric_engineering: 83000000000.0
+  pulse_duration: 180 fs
+  value_type: quantitative
+status: Determined
+type: Entity/Factor

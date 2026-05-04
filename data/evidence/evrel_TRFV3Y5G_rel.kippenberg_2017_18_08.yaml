@@ -1,0 +1,9 @@
+evidence: octave-spanning frequency combs, with microwave to terahertz repetition
+  rates, at low pump power
+id: evrel_TRFV3Y5G_rel.kippenberg_2017_18_08
+metadata:
+  source_paper: kippenberg2018
+  zotero_key: TRFV3Y5G
+object: met.dks_comb_bandwidth
+predicate: CHARACTERIZED-BY
+subject: ent.microresonator_frequency_comb

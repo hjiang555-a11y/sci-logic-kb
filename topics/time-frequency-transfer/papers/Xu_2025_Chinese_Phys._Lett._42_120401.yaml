@@ -1,4 +1,4 @@
-# 徐 ???? — Realization of Highly Reliable 10 <sup>−20</sup> -Level Instability Optical P... [evidence]
+# Changepdfauthor ???? — Changepdftitle [evidence]
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
@@ -6,16 +6,12 @@ meta:
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
-  reliability: high
-  title: "Realization of Highly Reliable 10 <sup>−20</sup> -Level Instability Optical Phase Transmission over a 1402-Kilometer Commercial Fiber-Optic Network"
-  first_author: "徐"
-  authors: ["Yang 洋 Xu 徐", "Libo 立波 Li 李", "Kan 侃 Zhao 赵", "Pingan 平安 Ma 马", "Zhiwei 志伟 Zhang 张", "Qi 奇 Shen 沈", "Faxi 法喜 Chen 陈", "Haifeng 海峰 Jiang 姜"]
-  journal: "Chinese Physics Letters"
-  volume: 42
-  pages: 120401
-  doi: 10.1088/0256-307X/42/12/120401
+  reliability: medium
+  title: "Changepdftitle"
+  first_author: "Changepdfauthor"
+  authors: ["Changepdfauthor"]
   note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+    [批量提取] 元数据来源：PDF metadata。内容待专家提取。
 entities: []
 principles: []
 methods: []

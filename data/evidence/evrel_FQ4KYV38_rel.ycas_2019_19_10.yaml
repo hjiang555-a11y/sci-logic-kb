@@ -1,0 +1,9 @@
+evidence: open-path NIR spectroscopy has been limited to quantifying molecules with
+  part-per-million (ppm) level concentrations
+id: evrel_FQ4KYV38_rel.ycas_2019_19_10
+metadata:
+  source_paper: ycas2019
+  zotero_key: FQ4KYV38
+object: meth.dual_comb_spectroscopy
+predicate: COMPETES-WITH
+subject: meth.midir_dcs_vocs_protocol_y19

@@ -1,0 +1,9 @@
+evidence: noise changes ... are actively canceled at the local site by optical delay
+  lines
+id: evrel_srpnqj3r_rel.wang_2020_an20_02
+metadata:
+  source_paper: wang2020_srpnqj3r
+  zotero_key: srpnqj3r
+object: pri.roundtrip_phase_compensation_rf_transfer
+predicate: ENABLED-BY
+subject: ent.same_wavelength_tf_joint_link_w20

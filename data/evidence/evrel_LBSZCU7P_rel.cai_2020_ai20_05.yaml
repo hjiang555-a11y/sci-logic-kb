@@ -1,0 +1,8 @@
+evidence: f-to-2f interferometer based on gradient index (GRIN) lenses
+id: evrel_LBSZCU7P_rel.cai_2020_ai20_05
+metadata:
+  source_paper: cai2020
+  zotero_key: LBSZCU7P
+object: pri.grin_lens_compact_f2f
+predicate: ENABLED-BY
+subject: meth.compact_single_actuator_er_comb_lock

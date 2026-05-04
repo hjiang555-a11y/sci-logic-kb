@@ -1,0 +1,9 @@
+evidence: Optical frequency combs provide the essential bridge between optical clock
+  frequencies and the SI second, with synthesis accuracy at the 10⁻²¹ level
+id: evrel_SDG6KXNZ_rel.dimarcq_2021_24_06
+metadata:
+  source_paper: dimarcq2024
+  zotero_key: SDG6KXNZ
+object: ent.optical_frequency_comb
+predicate: CONDITIONED-BY
+subject: ent.si_second_definition

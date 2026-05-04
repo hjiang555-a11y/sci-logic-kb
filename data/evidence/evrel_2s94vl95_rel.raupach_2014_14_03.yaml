@@ -1,0 +1,9 @@
+evidence: precision of around 200 ps at an estimated overall uncertainty of around
+  500 ps
+id: evrel_2s94vl95_rel.raupach_2014_14_03
+metadata:
+  source_paper: raupach2014_2s94vl95
+  zotero_key: 2s94vl95
+object: met.chirped_tf_sync_precision
+predicate: CHARACTERIZED-BY
+subject: ent.ptb_149km_chirped_link_r14

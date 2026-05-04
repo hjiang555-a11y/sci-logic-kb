@@ -1,0 +1,8 @@
+evidence: theory of laser beams and resonators
+id: evrel_UQL6FYN7_rel.kogelnik_1966_G03
+metadata:
+  source_paper: kogelnik1966
+  zotero_key: UQL6FYN7
+object: pri.gaussian_beam_resonator_theory
+predicate: CHARACTERIZES
+subject: met.beam_waist_parameter_k66

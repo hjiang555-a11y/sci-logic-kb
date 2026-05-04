@@ -1,0 +1,9 @@
+evidence: the dilation of time by gravity. It is related to the Einstein Equivalence
+  Principle (EEP).
+id: evrel_SCI-ESA-HRE-ESR-ISOC_rel.cacciapuoti_2017_17_06
+metadata:
+  source_paper: cacciapuoti2017
+  zotero_key: SCI-ESA-HRE-ESR-ISOC
+object: pri.gravitational_time_dilation
+predicate: ENABLED-BY
+subject: ent.space_optical_clock_mission

@@ -1,0 +1,19 @@
+definition: '基于 CMOS 兼容工艺（Si₃N₄、SiO₂、SiON、Si）的片上微环谐振器或微盘， 通过光刻定义几何形状，总线波导渐逝波耦合。优势：可批量制造、可集成、
+  适合商业化；劣势：Q 因子通常低于体 WGM（10⁵–10⁷），需要精密工艺控制。 Si₃N₄ 是当前最成熟的材料（Kerr 非线性 + 低双光子吸收 + 宽透明窗口）。
+  Si 因 C 波段双光子吸收限制，主要用于中红外。
+
+  '
+id: evid_HPCYUSLJ_ent.cmos_integrated_resonator_platform
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/pasquazi2018.yaml
+  source_paper: pasquazi2018
+  zotero_key: HPCYUSLJ
+name: CMOS 兼容集成微谐振器平台
+original_id: ent.cmos_integrated_resonator_platform
+properties:
+  fabrication: 标准 CMOS 光刻 + 刻蚀
+  integration_advantage: 可与电子芯片、泵浦激光器、探测器单片集成
+  material_examples: Si₃N₄, SiO₂ (Hydex), SiON, Si
+  q_factor_range: 10⁵–10⁷（Si₃N₄ 可达 ~10⁷–10⁸）
+status: Determined
+type: Entity/Factor

@@ -1,0 +1,9 @@
+evidence: MI Kerr comb generated in SiN:D microring resonator fabricated on the deuterated
+  silicon nitride platform
+id: evrel_HW9TAY3W_rel.chiles_2018_18_04
+metadata:
+  source_paper: chiles2018
+  zotero_key: HW9TAY3W
+object: ent.deuterated_sin_photonic_platform_c18
+predicate: PART-OF
+subject: ent.sind_mi_kerr_comb_c18

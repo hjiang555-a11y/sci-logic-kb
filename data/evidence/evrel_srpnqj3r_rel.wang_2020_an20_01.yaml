@@ -1,0 +1,8 @@
+evidence: time and frequency signals are modulated on the same laser wavelength
+id: evrel_srpnqj3r_rel.wang_2020_an20_01
+metadata:
+  source_paper: wang2020_srpnqj3r
+  zotero_key: srpnqj3r
+object: ent.rf_over_fiber_time_transfer_link
+predicate: PART-OF
+subject: ent.same_wavelength_tf_joint_link_w20

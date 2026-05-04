@@ -1,0 +1,8 @@
+evidence: Si4 instability reaches 6.5×10⁻¹⁷ for averaging times of 0.8 < τ < 80 s
+id: evrel_JIZCUZLY_rel.robinson_2019_04
+metadata:
+  source_paper: robinson2019
+  zotero_key: JIZCUZLY
+object: met.fractional_freq_instability_r19
+predicate: CHARACTERIZED-BY
+subject: ent.si_crystal_fp_cavity_4k_r19

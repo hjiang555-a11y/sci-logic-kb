@@ -1,0 +1,9 @@
+evidence: fiber-based frequency combs ... one drawback of fiber combs compared to
+  solid-state systems
+id: evrel_CNSSF9YY_rel.mcferran_2007_07_01
+metadata:
+  source_paper: mcferran2007
+  zotero_key: CNSSF9YY
+object: ent.optical_frequency_comb
+predicate: PART-OF
+subject: ent.pump_noise_suppressed_erfiber_comb_m07

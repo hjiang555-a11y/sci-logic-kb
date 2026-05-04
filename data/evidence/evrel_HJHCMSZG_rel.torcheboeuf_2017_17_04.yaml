@@ -1,0 +1,8 @@
+evidence: EOM operates mainly as a very fast voltage-controlled group delay element
+id: evrel_HJHCMSZG_rel.torcheboeuf_2017_17_04
+metadata:
+  source_paper: torcheboeuf2017
+  zotero_key: HJHCMSZG
+object: pri.intracavity_eom_group_delay_modulation
+predicate: ENABLED-BY
+subject: meth.eom_pzt_cascade_frep_lock

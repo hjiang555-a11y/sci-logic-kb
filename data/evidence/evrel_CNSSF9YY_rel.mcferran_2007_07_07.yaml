@@ -1,0 +1,8 @@
+evidence: servo bumps occur approximately 80 kHz from the carrier
+id: evrel_CNSSF9YY_rel.mcferran_2007_07_07
+metadata:
+  source_paper: mcferran2007
+  zotero_key: CNSSF9YY
+object: met.servo_bandwidth_m07
+predicate: CHARACTERIZED-BY
+subject: meth.pump_current_feedback_fceo_lock

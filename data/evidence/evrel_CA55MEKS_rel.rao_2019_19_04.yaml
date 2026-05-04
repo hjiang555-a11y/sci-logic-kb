@@ -1,0 +1,8 @@
+evidence: fceo 频率稳定度 3.74×10⁻¹⁸/τ¹ᐟ²
+id: evrel_CA55MEKS_rel.rao_2019_19_04
+metadata:
+  source_paper: rao2019
+  zotero_key: CA55MEKS
+object: met.fceo_inloop_instability_r19
+predicate: CHARACTERIZED-BY
+subject: ent.erfiber_comb_li_d1_r19

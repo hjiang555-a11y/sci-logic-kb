@@ -1,0 +1,9 @@
+evidence: all three plateaus exceed the corresponding calculated cw shot-noise limits
+  by about 3 dB
+id: evrel_BESI3AEE_rel.portuondo_campa_2015_C15_09
+metadata:
+  source_paper: portuondo-campa2015
+  zotero_key: BESI3AEE
+object: pri.photodetection_shot_noise_limit
+predicate: BOUNDED-BY
+subject: met.photonic_microwave_phase_noise_pc15

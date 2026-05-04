@@ -1,0 +1,12 @@
+evidence: '"multiple locking loops are required to operate simultaneously, including
+  such as Pound–Drever–Hall (PDH), fiber noise cancellation (FNC), light power stabilization
+  (LPS)."
+
+  '
+id: evrel_IUCMUIEI_rel.xia_2025_01
+metadata:
+  source_paper: xia2025
+  zotero_key: IUCMUIEI
+object: meth.pdh_locking
+predicate: ENABLED-BY
+subject: ent.fpga_multiloop_autolock_xia25

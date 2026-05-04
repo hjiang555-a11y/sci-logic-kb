@@ -1,0 +1,9 @@
+evidence: simulations indicate that a soliton-state frequency comb can be generated
+  with 700 µW of pump power in the bus waveguide just before the microresonator
+id: evrel_EBNL35EE_rel.stern_2018_18_19
+metadata:
+  source_paper: stern2018
+  zotero_key: EBNL35EE
+object: pri.high_Q_si3n4_low_threshold_soliton_s18
+predicate: BOUNDED-BY
+subject: met.microcomb_laser_pump_power_s18

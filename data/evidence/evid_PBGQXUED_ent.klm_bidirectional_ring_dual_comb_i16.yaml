@@ -1,0 +1,26 @@
+definition: '基于单个 Ti:sapph KLM 环形腔，顺时针（CW）与逆时针（CCW）方向同时产生锁模脉冲； 因 Kerr 非线性不对称（CW 与
+  CCW 光路中非线性相移不同），两方向脉冲重频略有差异（Δf_rep ~ kHz，可调）； 形成天然"双梳"配置，相对相干性被动稳定（共享同一腔长），无需主动锁相系统（f-2f
+  或外部参考腔+伺服反馈）。 实现宽带双梳光谱（~700–1000 nm），互相干时间 >10 s（自由运行），简化传统双梳系统。
+
+  '
+id: evid_PBGQXUED_ent.klm_bidirectional_ring_dual_comb_i16
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/ideguchi2016.yaml
+  source_paper: ideguchi2016
+  zotero_key: PBGQXUED
+name: KLM 单腔双向双梳环形激光器（Ideguchi 2016）
+original_id: ent.klm_bidirectional_ring_dual_comb_i16
+properties:
+  cavity_type: Ti:sapph KLM 环形腔（单腔，双向锁模）
+  cw_ccw_frep_difference: Δf_rep ~ kHz（可通过腔内元件位置微调）
+  locking_mechanism: Kerr 透镜锁模（KLM，软孔径）
+  metric_coverage_range: !!python/tuple
+  - 700.0
+  - 1000.0
+  mutual_coherence_time: '>10 s（自由运行，无主动稳定）'
+  no_active_locking: 无需 f-2f 干涉仪、外部参考腔或伺服反馈系统
+  passive_stability: 相对相干性被动稳定（共享同一腔长）
+  repetition_rate: f_rep ~ 100 MHz（典型 Ti:sapph 环形腔）
+  spectral_coverage: ~700–1000 nm（宽带，Ti:sapph 增益带宽限制）
+status: Determined
+type: Entity/Factor

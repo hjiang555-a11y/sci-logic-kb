@@ -1,0 +1,8 @@
+evidence: Er:fiber mode-locked laser frequency comb
+id: evrel_ZN7TS37H_rel.shaw_2019_ha19_01
+metadata:
+  source_paper: shaw2019
+  zotero_key: ZN7TS37H
+object: ent.er_fiber_frequency_comb
+predicate: PART-OF
+subject: ent.fpga_digital_servo_er_comb_s19

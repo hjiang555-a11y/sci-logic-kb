@@ -1,0 +1,8 @@
+evidence: For τ < 0.06 s, the instability is limited by vibrations
+id: evrel_N9AGEQ8S_rel.zhang_2019_17_05
+metadata:
+  source_paper: zhang2017
+  zotero_key: N9AGEQ8S
+object: ent.vibration_environment
+predicate: CONDITIONED-BY
+subject: ent.si_crystal_fp_cavity_4k_r19

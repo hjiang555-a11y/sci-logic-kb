@@ -1,0 +1,9 @@
+evidence: femtosecond fiber lasers have attracted widespread attention because they
+  are compact and widely compatible for long-term operation
+id: evrel_9RFKI5SH_rel.zhang_2017_hOFC17_16
+metadata:
+  source_paper: zhang2017
+  zotero_key: 9RFKI5SH
+object: ent.optical_frequency_comb
+predicate: COMPETES-WITH
+subject: ent.hybrid_ml_erfiber_comb_z17

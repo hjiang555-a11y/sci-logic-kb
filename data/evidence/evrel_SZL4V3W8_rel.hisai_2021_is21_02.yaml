@@ -1,0 +1,8 @@
+evidence: '> 30 dB @ 300 kHz'
+id: evrel_SZL4V3W8_rel.hisai_2021_is21_02
+metadata:
+  source_paper: hisai2021
+  zotero_key: SZL4V3W8
+object: met.8branch_beat_snr_h21
+predicate: CHARACTERIZED-BY
+subject: ent.nmij_8branch_er_comb_h21

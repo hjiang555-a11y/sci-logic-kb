@@ -1,0 +1,10 @@
+evidence: we assume simple proportionality between fractional frequency change and
+  the active heat shield’s temperature and get a conversion factor of 3(2) ×10−12
+  K−1
+id: evrel_NU79W75P_rel.herbers_2022_er22_04
+metadata:
+  source_paper: herbers2022
+  zotero_key: NU79W75P
+object: ent.thermal_environment
+predicate: CONDITIONED-BY
+subject: ent.fp_cavity_system

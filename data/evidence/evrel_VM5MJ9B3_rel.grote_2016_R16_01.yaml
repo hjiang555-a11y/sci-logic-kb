@@ -1,0 +1,8 @@
+evidence: electronic noise of the photodetection circuit in the audio band
+id: evrel_VM5MJ9B3_rel.grote_2016_R16_01
+metadata:
+  source_paper: grote2016
+  zotero_key: VM5MJ9B3
+object: met.servo_bandwidth
+predicate: CHARACTERIZED-BY
+subject: ent.gw_photodetector_g16

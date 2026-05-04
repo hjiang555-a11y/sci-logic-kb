@@ -1,0 +1,10 @@
+evidence: We have chosen a plano-10.2m ROC design, yielding an optical mode with intensity
+  full width at half-maximum of ~490 μm. This leads to a predicted thermal noise limit
+  for our 25-mm-long cavity to be ~−9 dBrad2/Hz at 1 Hz offset
+id: evrel_NHG79KDA_rel.davila_rodriguez_2017_05
+metadata:
+  source_paper: davilarodriguez2017
+  zotero_key: NHG79KDA
+object: pri.large_mode_thermal_noise_reduction_d17
+predicate: ENABLED-BY
+subject: ent.compact_ule_cavity_25mm_d17

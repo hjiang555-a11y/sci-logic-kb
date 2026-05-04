@@ -1,0 +1,8 @@
+evidence: 10⁻¹⁸ instability
+id: evrel_8pxzl98k_rel.shen_2021_he21_02
+metadata:
+  source_paper: shen2021_8pxzl98k
+  zotero_key: 8pxzl98k
+object: met.space_to_ground_link_instability
+predicate: CHARACTERIZED-BY
+subject: ent.optical_satellite_ground_link_s21

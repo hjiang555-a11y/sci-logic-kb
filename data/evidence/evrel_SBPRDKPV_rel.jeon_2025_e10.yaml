@@ -1,0 +1,10 @@
+evidence: Unlike self-heterodyne interferometers, which require acousto-optic modulators
+  and additional RF components, this system uses only a few passive optical components
+  and a single balanced photodetector
+id: evrel_SBPRDKPV_rel.jeon_2025_e10
+metadata:
+  source_paper: jeon2025
+  zotero_key: SBPRDKPV
+object: meth.fiber_delay_locking
+predicate: COMPETES-WITH
+subject: meth.self_homodyne_fiber_locking

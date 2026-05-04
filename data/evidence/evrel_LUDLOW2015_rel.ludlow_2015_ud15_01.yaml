@@ -1,0 +1,8 @@
+evidence: advances in frequency instability of optical lattice clocks
+id: evrel_LUDLOW2015_rel.ludlow_2015_ud15_01
+metadata:
+  source_paper: ludlow2015
+  zotero_key: LUDLOW2015
+object: met.optical_clock_fractional_instability
+predicate: CHARACTERIZED-BY
+subject: ent.optical_lattice_clock

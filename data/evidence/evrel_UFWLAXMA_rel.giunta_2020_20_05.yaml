@@ -1,0 +1,8 @@
+evidence: we significantly push the limits of such frequency measurements
+id: evrel_UFWLAXMA_rel.giunta_2020_20_05
+metadata:
+  source_paper: giunta2020
+  zotero_key: UFWLAXMA
+object: meth.wideband_optical_frequency_synthesis
+predicate: OPERATIONALIZED-AS
+subject: met.comb_frequency_synthesis_accuracy_g20

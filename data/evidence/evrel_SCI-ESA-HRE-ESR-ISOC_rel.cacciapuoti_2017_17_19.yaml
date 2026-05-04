@@ -1,0 +1,9 @@
+evidence: The atomic clock is an optical lattice clock, based on ultracold atoms trapped
+  in a standing-wave of laser light.
+id: evrel_SCI-ESA-HRE-ESR-ISOC_rel.cacciapuoti_2017_17_19
+metadata:
+  source_paper: cacciapuoti2017
+  zotero_key: SCI-ESA-HRE-ESR-ISOC
+object: ent.optical_lattice_clock
+predicate: CONDITIONED-BY
+subject: ent.space_lattice_optical_clock_sloc

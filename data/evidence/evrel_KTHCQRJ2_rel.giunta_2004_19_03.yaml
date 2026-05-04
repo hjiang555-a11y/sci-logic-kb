@@ -1,0 +1,8 @@
+evidence: −171 dBc/Hz at 1 Hz offset frequency from the 9.8 GHz carrier
+id: evrel_KTHCQRJ2_rel.giunta_2004_19_03
+metadata:
+  source_paper: giunta2019
+  zotero_key: KTHCQRJ2
+object: met.photonic_microwave_phase_noise
+predicate: CHARACTERIZED-BY
+subject: ent.optical_frequency_comb

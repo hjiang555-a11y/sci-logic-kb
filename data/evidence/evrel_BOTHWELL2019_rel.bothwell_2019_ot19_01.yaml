@@ -1,0 +1,8 @@
+evidence: JILA SrI optical lattice clock
+id: evrel_BOTHWELL2019_rel.bothwell_2019_ot19_01
+metadata:
+  source_paper: bothwell2019
+  zotero_key: BOTHWELL2019
+object: ent.optical_lattice_clock
+predicate: PART-OF
+subject: ent.jila_sri_sr_clock_b19

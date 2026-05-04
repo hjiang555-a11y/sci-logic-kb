@@ -1,0 +1,8 @@
+evidence: novel technique to frequency lock a laser to an optical cavity
+id: evrel_S5PX7GHC_rel.shaddock_1999_01
+metadata:
+  source_paper: shaddock1999
+  zotero_key: S5PX7GHC
+object: meth.tilt_locking
+predicate: OPERATIONALIZED-AS
+subject: met.laser_linewidth

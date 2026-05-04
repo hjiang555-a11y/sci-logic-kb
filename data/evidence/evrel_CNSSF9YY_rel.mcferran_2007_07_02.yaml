@@ -1,0 +1,9 @@
+evidence: octave-spanning comb then allows for photodetector extraction of the offset
+  frequency signal
+id: evrel_CNSSF9YY_rel.mcferran_2007_07_02
+metadata:
+  source_paper: mcferran2007
+  zotero_key: CNSSF9YY
+object: pri.self_referencing_f2f
+predicate: ENABLED-BY
+subject: ent.pump_noise_suppressed_erfiber_comb_m07

@@ -1,0 +1,9 @@
+evidence: the linewidth and implicitly the coherence time are mostly determined by
+  the thermal noise level
+id: evrel_TVY7T59A_rel.matei_2017_04
+metadata:
+  source_paper: matei2017
+  zotero_key: TVY7T59A
+object: pri.flicker_noise_linewidth_divergence
+predicate: BOUNDED-BY
+subject: ent.si_crystal_fp_cavity_k12

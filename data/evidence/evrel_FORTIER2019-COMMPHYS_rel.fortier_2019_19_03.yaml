@@ -1,0 +1,8 @@
+evidence: comb hardware can be grouped into roughly eight platform families.
+id: evrel_FORTIER2019-COMMPHYS_rel.fortier_2019_19_03
+metadata:
+  source_paper: fortier2019
+  zotero_key: FORTIER2019-COMMPHYS
+object: pri.comb_platform_tradeoffs_f19
+predicate: DERIVED-FROM
+subject: meth.comb_platform_taxonomy_f19

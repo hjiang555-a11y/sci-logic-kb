@@ -1,0 +1,8 @@
+evidence: spatial mode ... non-resonant ... interference ... frequency discriminator
+id: evrel_S5PX7GHC_rel.shaddock_1999_02
+metadata:
+  source_paper: shaddock1999
+  zotero_key: S5PX7GHC
+object: pri.off_resonance_reference_light
+predicate: ENABLED-BY
+subject: meth.tilt_locking

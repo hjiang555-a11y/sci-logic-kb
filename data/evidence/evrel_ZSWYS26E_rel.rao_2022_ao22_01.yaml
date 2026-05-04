@@ -1,0 +1,8 @@
+evidence: 掺铒光纤飞秒光梳
+id: evrel_ZSWYS26E_rel.rao_2022_ao22_01
+metadata:
+  source_paper: rao2022
+  zotero_key: ZSWYS26E
+object: ent.er_fiber_frequency_comb
+predicate: PART-OF
+subject: ent.multi_branch_er_comb_crds_r22

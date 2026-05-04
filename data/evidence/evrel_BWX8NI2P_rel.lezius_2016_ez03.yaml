@@ -1,0 +1,9 @@
+evidence: Comb qualified to 8.1 g_rms random vibration (20–2000 Hz) and 25 g sinusoidal
+  shock
+id: evrel_BWX8NI2P_rel.lezius_2016_ez03
+metadata:
+  source_paper: lezius2016
+  zotero_key: BWX8NI2P
+object: met.vibration_qualification_l16
+predicate: CHARACTERIZED-BY
+subject: ent.spaceborne_erfiber_comb_l16

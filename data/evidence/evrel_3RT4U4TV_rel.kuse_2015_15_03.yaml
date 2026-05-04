@@ -1,0 +1,9 @@
+evidence: The all-PM Er:fiber comb achieves optical beat note integrated phase noise
+  of 0.11 rad (10 Hz–3 MHz) when locked to a CW reference.
+id: evrel_3RT4U4TV_rel.kuse_2015_15_03
+metadata:
+  source_paper: kuse2015
+  zotero_key: 3RT4U4TV
+object: met.fbeat_integrated_phase_noise_k15
+predicate: CHARACTERIZED-BY
+subject: ent.all_pm_er_fiber_comb_k15

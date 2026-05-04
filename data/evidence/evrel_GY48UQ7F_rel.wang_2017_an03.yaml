@@ -1,0 +1,9 @@
+evidence: Long low-loss silicon waveguide extends the cavity to set the sub-GHz repetition
+  rate
+id: evrel_GY48UQ7F_rel.wang_2017_an03
+metadata:
+  source_paper: wang2017
+  zotero_key: GY48UQ7F
+object: ent.iii_v_on_si_ultradense_comb_w17
+predicate: PART-OF
+subject: ent.si_extended_cavity_waveguide_w17

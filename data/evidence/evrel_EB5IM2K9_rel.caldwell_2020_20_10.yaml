@@ -1,0 +1,9 @@
+evidence: The ratio of comb-retrieved Cn² to sonic-retrieved Cn² is asymptotically
+  high at ⟨V⊥⟩ = 0 m/s
+id: evrel_EB5IM2K9_rel.caldwell_2020_20_10
+metadata:
+  source_paper: caldwell2020
+  zotero_key: EB5IM2K9
+object: pri.taylor_frozen_turbulence_hypothesis
+predicate: BOUNDED-BY
+subject: met.cn2_cross_validation_c20

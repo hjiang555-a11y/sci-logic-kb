@@ -1,0 +1,18 @@
+definition: '硅晶圆上加工的 silica wedge 微盘谐振腔，直径 3 mm，对应 FSR ≈ 22.1 GHz， unloaded Q≈3×10^8，支持
+  1550 nm 附近连续波泵浦下的单孤子 DKS 态。
+
+  '
+id: evid_BYUPFGJY_ent.silica_wedge_microresonator_s19
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/suh2019.yaml
+  source_paper: suh2019
+  zotero_key: BYUPFGJY
+name: 3 mm 硅基二氧化硅 wedge 微腔（Suh 2019）
+original_id: ent.silica_wedge_microresonator_s19
+properties:
+  FSR: 22.1 GHz
+  Q_unloaded: 3×10^8
+  diameter: 3 mm
+  material_platform: silica wedge on silicon
+status: Determined
+type: Entity/Factor

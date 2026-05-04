@@ -1,0 +1,16 @@
+definition: '碱土金属原子（如 Sr, Ca）在光晶格中被泵浦到钟跃迁激发态， 集体超辐射发射至高 Q 腔模。线宽可达 mHz 级—— 远窄于单原子自然线宽，因为集体效应压缩相位扩散。
+
+  '
+id: evid_WW9ESVMK_ent.superradiant_laser_m09
+metadata:
+  original_file: /data/sci-logic-kb/topics/ultrastable-laser/papers/meiser2009.yaml
+  source_paper: meiser2009
+  zotero_key: WW9ESVMK
+name: 超辐射激光（Meiser 2009 理论）
+original_id: ent.superradiant_laser_m09
+properties:
+  improvement_over_cavity: 2 orders of magnitude in clock stability
+  output_power: ~10⁻¹² W
+  predicted_linewidth: mHz range
+status: Determined
+type: Entity/Factor

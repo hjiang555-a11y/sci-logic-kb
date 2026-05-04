@@ -1,0 +1,9 @@
+evidence: median linewidth of 9.6(3) mHz... empirically determined linewidth of 5.7(3)
+  mHz
+id: evrel_N6HILT6B_rel.chen_2025_he05
+metadata:
+  source_paper: chen2025
+  zotero_key: N6HILT6B
+object: met.laser_linewidth_c25
+predicate: CHARACTERIZED-BY
+subject: ent.si_crystal_fp_cavity_sub5k_c25

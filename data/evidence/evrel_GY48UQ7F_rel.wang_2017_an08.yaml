@@ -1,0 +1,9 @@
+evidence: Passive mode-locking achieved via combined fast saturable absorption and
+  gain saturation in III-V sections
+id: evrel_GY48UQ7F_rel.wang_2017_an08
+metadata:
+  source_paper: wang2017
+  zotero_key: GY48UQ7F
+object: pri.passive_mode_locking_soa_sa
+predicate: ENABLED-BY
+subject: meth.passive_mode_locking_iii_v_si

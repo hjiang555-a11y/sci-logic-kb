@@ -1,0 +1,9 @@
+evidence: S_phi(f) is measured directly and converted to S_y(f) via the duality relation
+  S_y(f) = (f/ν₀)² S_phi(f).
+id: evrel_HOWE1976-NBS-TN679_rel.howe_1976_76_01
+metadata:
+  source_paper: howe1976
+  zotero_key: HOWE1976-NBS-TN679
+object: pri.phase_noise_frequency_noise_psd_duality
+predicate: OPERATIONALIZED-AS
+subject: meth.phase_noise_psd_measurement

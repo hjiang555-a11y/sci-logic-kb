@@ -1,0 +1,9 @@
+evidence: Fig. 2; 方法节 'Soliton generation uses a silica microresonator fabricated
+  on a silicon wafer.'
+id: evrel_BYUPFGJY_rel.suh_2019_uh01
+metadata:
+  source_paper: suh2019
+  zotero_key: BYUPFGJY
+object: ent.microresonator_frequency_comb
+predicate: PART-OF
+subject: ent.microresonator_astrocomb_s19

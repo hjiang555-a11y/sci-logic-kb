@@ -1,0 +1,8 @@
+evidence: alternative to active noise cancellation for noisy field links
+id: evrel_sgt66xs8_rel.zhang_2022_ha22a_02
+metadata:
+  source_paper: zhang2022_sgt66xs8
+  zotero_key: sgt66xs8
+object: pri.noise_cancellation_frequency_transfer
+predicate: COMPETES-WITH
+subject: pri.passive_reciprocal_fiber_noise_cancellation

@@ -1,0 +1,8 @@
+evidence: no deviation from the perfect regular grid larger than 3 parts in 10¹⁷
+id: evrel_N3W35JH6_rel.udem_2001_02_08
+metadata:
+  source_paper: udem2002
+  zotero_key: N3W35JH6
+object: met.comb_mode_equidistancy_u02
+predicate: CHARACTERIZED-BY
+subject: ent.optical_frequency_comb

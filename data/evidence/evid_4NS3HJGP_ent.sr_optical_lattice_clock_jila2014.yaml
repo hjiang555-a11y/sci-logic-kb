@@ -1,0 +1,11 @@
+definition: 多原子Sr光晶格钟，原位BBR温度探测，实现10^-18量级精度
+id: evid_4NS3HJGP_ent.sr_optical_lattice_clock_jila2014
+metadata:
+  original_file: /data/sci-logic-kb/topics/frequency-standards/papers/bloom2014.yaml
+  source_paper: bloom2014
+  zotero_key: 4NS3HJGP
+name: JILA Sr 光晶格原子钟（2014）
+original_id: ent.sr_optical_lattice_clock_jila2014
+properties: {}
+status: Determined
+type: Entity/Factor

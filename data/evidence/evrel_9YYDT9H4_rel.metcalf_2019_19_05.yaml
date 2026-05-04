@@ -1,0 +1,8 @@
+evidence: stability of the comb matches that of the GPS-disciplined clock
+id: evrel_9YYDT9H4_rel.metcalf_2019_19_05
+metadata:
+  source_paper: metcalf2019
+  zotero_key: 9YYDT9H4
+object: met.comb_fractional_stability_m19
+predicate: CHARACTERIZED-BY
+subject: ent.hpf_nir_astrocomb_m19

@@ -1,0 +1,22 @@
+definition: '两台 Er:fiber 锁模梳（重频 ~100 MHz，Δf_r ≈ 几 kHz），通过 f-2f 自参考稳 f_CEO， 并将两台梳各自的一个梳齿相位锁至独立
+  cw 参考激光（1550 nm 附近），实现跨两台梳的完整相干性。 一台梳作为"信号梳"通过样品，另一台作为"本振梳"与其外差，光电探测器输出 RF 多外差拍频谱，
+  经快速 ADC 数字化并相干实时平均恢复样品复透过函数 H̃(ν)。
+
+  '
+id: evid_7PDY5FDM_ent.coherent_dual_comb_spectrometer_c10
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/coddington2010.yaml
+  source_paper: coddington2010
+  zotero_key: 7PDY5FDM
+name: 相干双梳光谱仪（Coddington 2010 系统）
+original_id: ent.coherent_dual_comb_spectrometer_c10
+properties:
+  ceo_stabilization: f-2f 自参考
+  comb_type: Er:fiber 锁模激光梳，~100 MHz 重频
+  cw_reference: 两路 cw 激光（1550 nm），光学相位锁定
+  data_acquisition: 数字实时相干平均，SNR ∝ √T
+  spectral_coverage: 9 THz（实测，展宽后）
+  spectral_resolution: 220 MHz（等于梳重频）
+  Δf_r: ~几 kHz（失谐重频差）
+status: Determined
+type: Entity/Factor

@@ -1,0 +1,16 @@
+definition: '在运营中的电信 DWDM 光纤网络中，选择一个未使用/低占用的 ITU 信道 承载计量级超稳光信号；与数据通道共用光放大器与色散补偿模块。
+
+  '
+id: evid_ws3xm8ls_ent.shared_telecom_fiber_metrology_channel
+metadata:
+  original_file: /data/sci-logic-kb/topics/time-frequency-transfer/papers/lopez2015_ws3xm8ls.yaml
+  source_paper: lopez2015_ws3xm8ls
+  zotero_key: ws3xm8ls
+name: 电信网络共享暗信道（计量级光纤时频传递载体）
+original_id: ent.shared_telecom_fiber_metrology_channel
+properties:
+  advantage: no dedicated dark fiber needed; national scalability
+  channel_grid: ITU 100/50 GHz grid
+  coexistence: with live internet data traffic
+status: Determined
+type: Entity/Factor

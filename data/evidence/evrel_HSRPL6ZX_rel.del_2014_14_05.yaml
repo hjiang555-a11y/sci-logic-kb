@@ -1,0 +1,9 @@
+evidence: phase stable microcombs with uniform mode spacing but a nondeterministic
+  phase relationship
+id: evrel_HSRPL6ZX_rel.del_2014_14_05
+metadata:
+  source_paper: delhaye2014
+  zotero_key: HSRPL6ZX
+object: pri.microcomb_self_injection_locking
+predicate: DERIVED-FROM
+subject: pri.nondeterministic_phase_microcomb

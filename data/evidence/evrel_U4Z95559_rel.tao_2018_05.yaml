@@ -1,0 +1,8 @@
+evidence: closed to the estimated thermal noise limit of the 10 cm long cavity
+id: evrel_U4Z95559_rel.tao_2018_05
+metadata:
+  source_paper: tao2018
+  zotero_key: U4Z95559
+object: pri.brownian_thermal_noise_fdt
+predicate: BOUNDED-BY
+subject: ent.robust_cuboid_cavity_t18

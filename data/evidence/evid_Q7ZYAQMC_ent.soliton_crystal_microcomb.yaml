@@ -1,0 +1,14 @@
+definition: '克尔微腔中多个DKS孤子以确定性间距周期排列形成的自组织集体态， 有效重复频率为单孤子的n倍（n为晶体中孤子数），光谱呈特征性调制"指纹"图案，
+  可通过绝热泵浦激光频率扫描确定性产生。
+
+  '
+id: evid_Q7ZYAQMC_ent.soliton_crystal_microcomb
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/cole2018.yaml
+  source_paper: cole2018
+  zotero_key: Q7ZYAQMC
+name: 孤子晶体微腔梳
+original_id: ent.soliton_crystal_microcomb
+properties: {}
+status: Determined
+type: Entity/Factor

@@ -1,0 +1,21 @@
+definition: '10 cm 硅单晶 FP 腔，工作于 sub-5 K（利用 Si CTE 在低温趋近零的特性，α→0 as T→0）， IBS 介质镀层，闭循环低温机。增长腔长路线降低热噪声分数贡献（σ_y
+  ∝ 1/L）。 实现低温机连续冷却下 ≈(4±1)×10⁻¹⁷ 稳定度。
+
+  '
+id: evid_N6HILT6B_ent.si_crystal_fp_cavity_sub5k_c25
+metadata:
+  original_file: /data/sci-logic-kb/topics/ultrastable-laser/papers/chen2025.yaml
+  source_paper: chen2025
+  zotero_key: N6HILT6B
+name: Sub-5K 10 cm 硅单晶 FP 腔（Chen 2025，Si1）
+original_id: ent.si_crystal_fp_cavity_sub5k_c25
+properties:
+  cavity_length: 10 cm
+  cryostat_type: closed-cycle cryocooler
+  mirror_coating: IBS dielectric (SiO₂/Ta₂O₅)
+  operating_temperature: sub-5 K (typical 4.9 K)
+  spacer_material: Si single crystal
+  vibration_suppression: 刚性安装+低温机振动抑制（改进1-6）
+  wavelength: 1397 nm
+status: Determined
+type: Entity/Factor

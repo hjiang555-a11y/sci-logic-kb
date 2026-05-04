@@ -1,0 +1,9 @@
+evidence: A fully stabilized Er:fiber frequency comb with a nonlinear amplifying loop
+  mirror is achieved.
+id: evrel_ST825B59_rel.ning_2020_in20_02
+metadata:
+  source_paper: ning2020
+  zotero_key: ST825B59
+object: pri.self_referencing_f2f
+predicate: ENABLED-BY
+subject: ent.ntsc_all_pm_5branch_comb_n20

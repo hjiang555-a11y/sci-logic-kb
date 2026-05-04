@@ -1,0 +1,8 @@
+evidence: The zero-CTE temperature is found to be at T_0 = 22.9±0.2°C
+id: evrel_JP6J4EQD_rel.kwong_2018_02
+metadata:
+  source_paper: kwong2018
+  zotero_key: JP6J4EQD
+object: met.nexcera_cte_zero_temperature_k18
+predicate: CHARACTERIZED-BY
+subject: ent.nexcera_optical_cavity_k18

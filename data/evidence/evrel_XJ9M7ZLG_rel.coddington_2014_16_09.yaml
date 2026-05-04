@@ -1,0 +1,11 @@
+evidence: '"the importance of a long coherent averaging time, or equivalently a long
+  effective mutual coherence time between combs, which sets the maximum possible τ"
+
+  '
+id: evrel_XJ9M7ZLG_rel.coddington_2014_16_09
+metadata:
+  source_paper: coddington2016
+  zotero_key: XJ9M7ZLG
+object: pri.mutual_coherence_requirement
+predicate: BOUNDED-BY
+subject: ent.dual_comb_spectrometer

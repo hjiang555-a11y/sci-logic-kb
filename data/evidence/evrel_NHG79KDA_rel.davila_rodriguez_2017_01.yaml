@@ -1,0 +1,8 @@
+evidence: our cavity reaches ~2×10^-15 Allan deviation at 0.1 s of averaging
+id: evrel_NHG79KDA_rel.davila_rodriguez_2017_01
+metadata:
+  source_paper: davilarodriguez2017
+  zotero_key: NHG79KDA
+object: met.allan_dev_d17
+predicate: CHARACTERIZED-BY
+subject: ent.compact_ule_cavity_25mm_d17

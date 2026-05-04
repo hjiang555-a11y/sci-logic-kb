@@ -1,0 +1,19 @@
+definition: '由飞秒锁模激光器脉冲串注入的高非线性集成波导，通过 χ(3) 参量四波混频、自相位调制、 孤子裂变与色散波辐射，将初始光谱展宽至倍频程以上，产生
+  CEO 可检测的相干频率梳。 相较光子晶体光纤，芯片波导具有更高有效非线性 γ、更强色散工程自由度以及批量制造潜力。
+
+  '
+id: evid_BRKZG9H2_ent.chip_scg_waveguide_g19
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/gaeta2019.yaml
+  source_paper: gaeta2019
+  zotero_key: BRKZG9H2
+name: 芯片基超连续谱波导（SCG 平台）
+original_id: ent.chip_scg_waveguide_g19
+properties:
+  coherence_criterion: N_soliton < 10 且 SPM 主导
+  input_pulse_duration: <100 fs（保持相干性）
+  input_pulse_energy: pJ 至数十 pJ 量级（例如 Si 纳米线：16 pJ/pulse @ 2.29 μm）
+  typical_spectral_span: ≥1 octave（0.6–2.6 μm 或更宽）
+  typical_waveguide_length: ≤5 cm
+status: Determined
+type: Entity/Factor

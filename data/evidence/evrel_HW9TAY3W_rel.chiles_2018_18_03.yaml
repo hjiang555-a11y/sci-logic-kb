@@ -1,0 +1,8 @@
+evidence: peak quality factor of 1.6 × 10^6 at 1552 nm
+id: evrel_HW9TAY3W_rel.chiles_2018_18_03
+metadata:
+  source_paper: chiles2018
+  zotero_key: HW9TAY3W
+object: met.sind_quality_factor_c18
+predicate: CHARACTERIZED-BY
+subject: ent.deuterated_sin_photonic_platform_c18

@@ -1,0 +1,9 @@
+evidence: The integral phase noises are both less than 1 rad from 1 Hz to 100 kHz,
+  corresponding to residual time jitter of less than 1 fs
+id: evrel_9RFKI5SH_rel.zhang_2017_hOFC17_09
+metadata:
+  source_paper: zhang2017
+  zotero_key: 9RFKI5SH
+object: met.integrated_phase_noise_z17
+predicate: CHARACTERIZED-BY
+subject: ent.hybrid_ml_erfiber_comb_z17

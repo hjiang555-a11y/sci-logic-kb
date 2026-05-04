@@ -1,0 +1,8 @@
+evidence: a turnkey erbium fiber laser-based OFC with multi-branch architecture
+id: evrel_BPQDL4DN_rel.zhang_2022_22B_01
+metadata:
+  source_paper: zhang2022b
+  zotero_key: BPQDL4DN
+object: ent.optical_frequency_comb
+predicate: PART-OF
+subject: ent.all_pm_erfiber_comb_z22b

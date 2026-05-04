@@ -1,0 +1,8 @@
+evidence: laser stabilization system ... observed sub-100 Hz beat line width
+id: evrel_694DPR5F_rel.drever_1983_01
+metadata:
+  source_paper: drever1983
+  zotero_key: 694DPR5F
+object: meth.pdh_locking
+predicate: OPERATIONALIZED-AS
+subject: met.laser_linewidth

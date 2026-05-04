@@ -1,0 +1,11 @@
+definition: Level 2 实例，PART-OF ent.coherent_optical_fiber_link
+id: evid_ispu4z4x_ent.dual_polarization_receiver_link_cl20
+metadata:
+  original_file: /data/sci-logic-kb/topics/time-frequency-transfer/papers/clivati2020_ispu4z4x.yaml
+  source_paper: clivati2020_ispu4z4x
+  zotero_key: ispu4z4x
+name: 双偏振相干接收光频分发（INRIM Clivati 2020）
+original_id: ent.dual_polarization_receiver_link_cl20
+properties: {}
+status: Determined
+type: Entity/Factor

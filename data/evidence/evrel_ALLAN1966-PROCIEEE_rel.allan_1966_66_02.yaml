@@ -1,0 +1,9 @@
+evidence: for flicker and random-walk noise modulations, the classical variance ...
+  does not converge. ... a two-sample variance is proposed that does converge.
+id: evrel_ALLAN1966-PROCIEEE_rel.allan_1966_66_02
+metadata:
+  source_paper: allan1966
+  zotero_key: ALLAN1966-PROCIEEE
+object: pri.classical_variance_divergence_for_flicker_noise
+predicate: DERIVED-FROM
+subject: pri.two_sample_variance_converges

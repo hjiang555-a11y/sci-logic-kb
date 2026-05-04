@@ -1,0 +1,24 @@
+definition: '基于掺铒光纤锁模激光器的光学频率梳系统，重复频率 ~250 MHz， 通过 f-2f 自参考锁定 f_CEO，并将一个梳齿相位锁定至超稳激光器（USL）。
+  采用多分支非线性光纤展宽架构，同时产生 1063 nm、1157 nm、1397 nm 和 1543 nm 光学频率。 配合色散外差检测技术实时补偿非线性展宽链路中的相位漂移，
+  实现宽带光学频率合成精度达 10⁻²⁰ 水平。
+
+  '
+id: evid_UFWLAXMA_ent.ultra_low_noise_fiber_comb_g20
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/giunta2020.yaml
+  source_paper: giunta2020
+  zotero_key: UFWLAXMA
+name: 超低噪声掺铒光纤频率梳系统（Giunta 2020）
+original_id: ent.ultra_low_noise_fiber_comb_g20
+properties:
+  ceo_stabilization: f-2f 自参考（fceo→相位锁定至 RF 参考）
+  comb_type: 掺铒光纤锁模激光器（Er:fiber mode-locked laser）
+  dichroic_heterodyne_detection: 1543 nm 辅助拍频用于实时相位漂移补偿
+  integrated_phase_noise: <200 mrad（1 Hz – 1 MHz，所有频段）
+  multi_branch_architecture: 分立非线性展宽臂：1063 nm、1157 nm、1397 nm 各含 EDFA+HNLF
+  optical_lock: 梳齿 n=777,445 相位锁定至 1542 nm USL
+  phase_noise_floor: SSB 相噪 < -130 dBc/Hz @ 1 Hz offset（1397 nm, 1157 nm）
+  repetition_rate: ~250 MHz（梳齿间距）
+  spectral_coverage: 1063 nm – 1543 nm（覆盖 ~90 THz 光学间隔）
+status: Determined
+type: Entity/Factor

@@ -1,0 +1,9 @@
+evidence: The single-branch Er:fiber comb achieves fractional frequency instability
+  of 3×10⁻¹⁸ at 1 s.
+id: evrel_8XUFRL4K_rel.leopardi_2017_17F_01
+metadata:
+  source_paper: leopardi2017
+  zotero_key: 8XUFRL4K
+object: met.erfiber_comb_synthesis_instability_l17
+predicate: CHARACTERIZED-BY
+subject: ent.single_branch_erfiber_comb_l17

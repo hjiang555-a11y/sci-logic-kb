@@ -1,0 +1,10 @@
+evidence: optical parametric oscillator... many longitudinal signal modes of the resonator
+  in an OPO can simultaneously experience gain that exceeds the threshold for parametric
+  oscillation
+id: evrel_YYXGH9X3_rel.schliesser_2011_12_03
+metadata:
+  source_paper: schliesser2012
+  zotero_key: YYXGH9X3
+object: pri.nonlinear_frequency_conversion_comb
+predicate: ENABLED-BY
+subject: meth.opo_comb_generation

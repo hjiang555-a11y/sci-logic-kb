@@ -1,0 +1,9 @@
+evidence: Combs with large mode spacings ... have required compromises both in terms
+  of bandwidth and average power
+id: evrel_RDBWYLKJ_rel.bartels_2009_ar09_04
+metadata:
+  source_paper: bartels2009
+  zotero_key: RDBWYLKJ
+object: pri.high_frep_bandwidth_power_tradeoff
+predicate: BOUNDED-BY
+subject: met.frep_10ghz_self_referenced_b09

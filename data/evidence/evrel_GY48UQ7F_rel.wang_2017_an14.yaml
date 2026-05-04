@@ -1,0 +1,9 @@
+evidence: III-V-on-Si ultra-dense comb operates in sub-GHz spacing regime, complementary
+  to 10–100 GHz Kerr microcombs
+id: evrel_GY48UQ7F_rel.wang_2017_an14
+metadata:
+  source_paper: wang2017
+  zotero_key: GY48UQ7F
+object: ent.microresonator_frequency_comb
+predicate: COMPETES-WITH
+subject: ent.iii_v_on_si_ultradense_comb_w17

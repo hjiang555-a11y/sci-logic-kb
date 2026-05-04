@@ -1,0 +1,10 @@
+evidence: To suppress temperature fluctuations from the cryocooler, we use a custom,
+  multistage thermal damping system... The corresponding temperature-induced frequency
+  fluctuations are below the expected thermal noise floor
+id: evrel_N9AGEQ8S_rel.zhang_2019_17_07
+metadata:
+  source_paper: zhang2017
+  zotero_key: N9AGEQ8S
+object: pri.multistage_thermal_damping_low_temp_z17
+predicate: ENABLED-BY
+subject: ent.si_crystal_fp_cavity_4k_r19

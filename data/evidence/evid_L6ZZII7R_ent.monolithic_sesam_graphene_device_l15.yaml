@@ -1,0 +1,22 @@
+definition: 'III-V 半导体 SESAM（InGaAs 量子阱，饱和吸收提供锁模）+ 单层石墨烯 EOM（电压调制 Fermi 能级 → 调制吸收损耗）
+  异质集成在单一镜片上（graphene 直接转移到 SESAM 表面）； 插入 Er:fiber 梳腔内作为端镜 → 同时提供自启锁模 + 高带宽 fceo 稳频（>
+  5 MHz，超越增益寿命限制）； 低电压驱动（graphene 栅极调制）+ 低插入损耗（graphene 单层透射率 ~97.7%）→ 紧凑鲁棒梳设计。
+
+  '
+id: evid_L6ZZII7R_ent.monolithic_sesam_graphene_device_l15
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/lee2015.yaml
+  source_paper: lee2015
+  zotero_key: L6ZZII7R
+name: 整体式 SESAM+graphene EOM 器件（Lee 2015）
+original_id: ent.monolithic_sesam_graphene_device_l15
+properties:
+  graphene_layers: 单层石墨烯（电光调制器）
+  insertion_loss: graphene 单层 ~2.3%（额外损耗小）
+  integration: 单片集成（graphene 直接转移到 SESAM 表面）
+  modulation_bandwidth: '> 5 MHz（纯损耗调制）'
+  sesam_material: InGaAs 量子阱（饱和吸收镜）
+  target_application: 全 PM 光纤梳 + 野外部署
+  voltage_requirement: 低电压驱动（栅极调制 Fermi 能级）
+status: Determined
+type: Entity/Factor

@@ -1,0 +1,21 @@
+definition: '全保偏（all-PM）Er:fiber 锁模激光谐振腔 + SA 被动锁模； 腔内石墨烯 EOM 做 f_CEO 高速伺服，腔外块状 EOM
+  做 f_rep 伺服； f-2f 自参考 + 单 cw 参考光拍频锁定； HNLF 展宽至覆盖 1050–2100 nm；打破全 PM 梳相噪 >1 rad 的历史瓶颈。
+
+  '
+id: evid_3RT4U4TV_ent.all_pm_er_fiber_comb_k15
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/kuse2015.yaml
+  source_paper: kuse2015
+  zotero_key: 3RT4U4TV
+name: 全保偏 Er 光纤超低相噪梳（Kuse 2015）
+original_id: ent.all_pm_er_fiber_comb_k15
+properties:
+  cavity_type: 全保偏线性腔 + SA 锁模
+  f_beat_integrated_phase_noise: 0.11 rad (10 Hz – 3 MHz)
+  f_ceo_integrated_phase_noise: 0.25 rad (10 Hz – 3 MHz)
+  metric_coverage_range: !!python/tuple
+  - 1050.0
+  - 2100.0
+  repetition_rate: '>200 MHz'
+status: Determined
+type: Entity/Factor

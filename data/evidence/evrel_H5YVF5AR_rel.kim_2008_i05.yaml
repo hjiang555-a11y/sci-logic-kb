@@ -1,0 +1,9 @@
+evidence: we synchronized a Ti:sapphire laser and a Cr:forsterite laser using the
+  two-colour balanced cross-correlator
+id: evrel_H5YVF5AR_rel.kim_2008_i05
+metadata:
+  source_paper: kim2008
+  zotero_key: H5YVF5AR
+object: meth.optical_optical_synchronization_boc
+predicate: OPERATIONALIZED-AS
+subject: met.optical_optical_sync_jitter_k08

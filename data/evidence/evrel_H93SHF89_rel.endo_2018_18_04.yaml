@@ -1,0 +1,9 @@
+evidence: timing jitter floor is a key performance metric for all OFC platforms, distinguishing
+  free-running from actively stabilized operation
+id: evrel_H93SHF89_rel.endo_2018_18_04
+metadata:
+  source_paper: endo2018
+  zotero_key: H93SHF89
+object: met.ofc_timing_jitter_floor
+predicate: CHARACTERIZED-BY
+subject: ent.optical_frequency_comb

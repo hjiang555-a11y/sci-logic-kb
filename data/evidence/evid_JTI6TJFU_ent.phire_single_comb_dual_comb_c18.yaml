@@ -1,0 +1,25 @@
+definition: '仅使用单个频率梳（EOM 梳，10.1 GHz），通过二进制重频切换（f_mod = 164 kHz， 在 frep 和 frep'' 之间交替，Δfrep
+  = 3.28 MHz）产生时分复用频率梳。 分光后一臂经光纤延迟线（Ldelay = vg/2f_mod ≈ 600 m），另一臂经 AOM （250 MHz
+  频移，避免基带混叠）。重组后在每个 f_mod 半周期内产生干涉图序列， 等效于标准双梳干涉。关键优势：(1) 成本降低 ~50%（仅需单梳）； (2) 无需双梳相位锁定——两"梳"来自同一源，本征互相干；
+  (3) 适用于任何可快速切换重频的脉冲源（EOM、半导体、微腔梳）。
+
+  '
+id: evid_JTI6TJFU_ent.phire_single_comb_dual_comb_c18
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/carlson2018.yaml
+  source_paper: carlson2018
+  zotero_key: JTI6TJFU
+name: PHIRE 单梳双梳干涉系统（Carlson 2018）
+original_id: ent.phire_single_comb_dual_comb_c18
+properties:
+  acquisition_speed: 单干涉图 ~2.8 μs
+  aom_frequency: 250 MHz
+  comb_type: 电光调制梳（EOM comb，3 个相位调制器 + 1 个强度调制器）
+  delta_frep: 3.28 MHz
+  fiber_delay: ~600 m SMF（标准配置）/ 3 km（宽带展宽配置）
+  nominal_frep: 10.1 GHz
+  spectroscopy_osnr: '>25 dB/√N（N 为平均次数）'
+  switching_rate: f_mod = 164 kHz
+  switching_speed: ~10 ns
+status: Determined
+type: Entity/Factor

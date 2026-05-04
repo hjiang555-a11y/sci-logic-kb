@@ -1,0 +1,8 @@
+evidence: in-loop tracking stability of 4.46 × 10−13/τ1/2
+id: evrel_VATLBIAD_rel.wang_2014_14_03
+metadata:
+  source_paper: wang2014
+  zotero_key: VATLBIAD
+object: met.frep_inloop_tracking_w14
+predicate: CHARACTERIZED-BY
+subject: ent.yb_fiber_500mhz_comb_wang14

@@ -1,0 +1,9 @@
+evidence: self-referencing is accomplished by mixing 780-nm dispersive-wave light
+  with the frequency-doubled output
+id: evrel_WCBMETLH_rel.carlson_2017_ar17_04
+metadata:
+  source_paper: carlson2017
+  zotero_key: WCBMETLH
+object: pri.self_referencing_f2f
+predicate: ENABLED-BY
+subject: pri.sin_waveguide_low_power_f2f_c17

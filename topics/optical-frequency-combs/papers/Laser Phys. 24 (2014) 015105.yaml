@@ -6,16 +6,12 @@ meta:
   topic: optical-frequency-combs
   source_type: journal_paper
   contribution_type: evidence
-  reliability: high
+  reliability: medium
   title: "A 66 fs highly stable single wall carbon nanotube mode locked fiber laser"
   first_author: "Yu"
-  authors: ["Zhenhua Yu", "Yonggang Wang", "Xiao Zhang", "Xinzheng Dong", "Jinrong Tian", "Yanrong Song"]
-  journal: "Laser Physics"
-  volume: 24
-  pages: 6725
-  doi: 10.1088/1054-660X/24/1/015105
+  authors: ["Zhenhua Yu, Yonggang Wang, Xiao Zhang, Xinzheng Dong, Jinrong Tian, Yanrong Song"]
   note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+    [批量提取] 元数据来源：PDF metadata。内容待专家提取。
 entities: []
 principles: []
 methods: []

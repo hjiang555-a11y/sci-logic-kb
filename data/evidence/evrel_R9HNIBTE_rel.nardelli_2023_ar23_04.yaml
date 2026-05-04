@@ -1,0 +1,8 @@
+evidence: two ultra-stable optical references ... optical-to-optical synthesis
+id: evrel_R9HNIBTE_rel.nardelli_2023_ar23_04
+metadata:
+  source_paper: nardelli2023
+  zotero_key: R9HNIBTE
+object: ent.er_yb_glass_comb_nardelli23
+predicate: OPERATIONALIZED-AS
+subject: meth.dual_usl_locked_er_yb_glass_comb_n23

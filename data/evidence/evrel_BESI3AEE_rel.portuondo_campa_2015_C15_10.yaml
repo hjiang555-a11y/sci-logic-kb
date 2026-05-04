@@ -1,0 +1,9 @@
+evidence: the residual phase-noise of the amplifiers limits the achieved phase-noise
+  floor far from the carrier
+id: evrel_BESI3AEE_rel.portuondo_campa_2015_C15_10
+metadata:
+  source_paper: portuondo-campa2015
+  zotero_key: BESI3AEE
+object: pri.amplifier_residual_phase_noise_limit
+predicate: BOUNDED-BY
+subject: met.photonic_microwave_phase_noise_pc15

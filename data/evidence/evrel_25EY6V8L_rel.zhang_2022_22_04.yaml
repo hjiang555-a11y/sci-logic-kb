@@ -1,0 +1,9 @@
+evidence: VUV frequency comb generated via cavity-enhanced 7th harmonic of Yb:fiber
+  laser comb
+id: evrel_25EY6V8L_rel.zhang_2022_22_04
+metadata:
+  source_paper: zhang2022
+  zotero_key: 25EY6V8L
+object: ent.optical_frequency_comb
+predicate: PART-OF
+subject: ent.tunable_vuv_comb_z22

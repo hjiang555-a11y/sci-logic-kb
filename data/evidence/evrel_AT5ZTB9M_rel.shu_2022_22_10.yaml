@@ -1,0 +1,8 @@
+evidence: coherent comb-state generation under pump power at the few-milliwatts level
+id: evrel_AT5ZTB9M_rel.shu_2022_22_10
+metadata:
+  source_paper: shu2022
+  zotero_key: AT5ZTB9M
+object: meth.cw_pumped_microcomb_generation
+predicate: ENABLED-BY
+subject: meth.dfb_pumped_turnkey_dark_pulse_generation_s22

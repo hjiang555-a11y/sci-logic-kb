@@ -1,0 +1,26 @@
+definition: '跨 113 km 自由空间双向光学时频传递系统：两端（南山实验室↔高崖子实验室，海拔差 327 m） 各配超稳激光 + 两路高功率光频梳（250
+  MHz @1545 nm；200 MHz @1563 nm，均 1 W） + 线性光学采样（LOS）模块 + 400 mm 卡塞格林望远镜（含快速导星、自适应光学）。
+  正交偏振分离双向光路，可变形镜补偿大气波前畸变。
+
+  '
+id: evid_P92ZFIAQ_ent.freespace_tf_link_113km_sh22
+metadata:
+  original_file: /data/sci-logic-kb/topics/ultrastable-laser/papers/shen2022.yaml
+  source_paper: shen2022
+  zotero_key: P92ZFIAQ
+name: 113 km 自由空间时频传递链路（Shen 2022）
+original_id: ent.freespace_tf_link_113km_sh22
+properties:
+  comb_power: 1 W each
+  comb_wavelengths: 1545 nm (250 MHz), 1563 nm (200 MHz)
+  demonstrated_value: 3.0e-17
+  instability_10ks: < 4×10⁻¹⁹
+  link_distance: 113 km
+  locations: 南山（43°28'N, 87°10'E, 2109 m）↔ 高崖子（43°31'N, 88°34'E, 1782 m）
+  telescope_aperture: 400 mm
+  time_offset: 6.3×10⁻²⁰ ± 3.4×10⁻¹⁹
+  usl_instability: 3×10⁻¹⁵ @ 1 s
+  usl_wavelength: 1550.12 nm
+  value_type: quantitative
+status: Determined
+type: Entity/Factor

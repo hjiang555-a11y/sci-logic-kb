@@ -1,0 +1,8 @@
+evidence: statistical uncertainty of about 50 Hz, or 2 × 10⁻¹³
+id: evrel_9BV3WBSH_rel.diddams_2000_00_03
+metadata:
+  source_paper: diddams2000
+  zotero_key: 9BV3WBSH
+object: met.optical_frequency_measurement_uncertainty_d00
+predicate: CHARACTERIZED-BY
+subject: ent.octave_spanning_tisa_comb_d00

@@ -1,0 +1,9 @@
+evidence: silicon nitride waveguides, which requires much lower pulse energies (~200
+  pJ) than with highly nonlinear fiber
+id: evrel_XZTNQ8D4_rel.manurkar_2018_an18_04
+metadata:
+  source_paper: manurkar2018
+  zotero_key: XZTNQ8D4
+object: pri.sin_waveguide_low_power_f2f_c17
+predicate: ENABLED-BY
+subject: pri.fiber_resistive_modulator_frep_tuning_m18

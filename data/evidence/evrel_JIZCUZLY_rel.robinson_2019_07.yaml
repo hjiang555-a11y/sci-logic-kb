@@ -1,0 +1,9 @@
+evidence: we extract a loss angle for the SiO₂/Ta₂O₅ mirror coatings to be ϕ = 5.15×10⁻⁴
+  [from PSD fit consistent with thermal noise floor]
+id: evrel_JIZCUZLY_rel.robinson_2019_07
+metadata:
+  source_paper: robinson2019
+  zotero_key: JIZCUZLY
+object: pri.brownian_thermal_noise_fdt
+predicate: BOUNDED-BY
+subject: ent.si_crystal_fp_cavity_4k_r19

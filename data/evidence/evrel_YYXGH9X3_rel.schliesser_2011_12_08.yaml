@@ -1,0 +1,9 @@
+evidence: ultra-broad mid-infrared spectra spanning 900 cm⁻¹... with an impressive
+  power of 200 nW per mode
+id: evrel_YYXGH9X3_rel.schliesser_2011_12_08
+metadata:
+  source_paper: schliesser2012
+  zotero_key: YYXGH9X3
+object: meth.opo_comb_generation
+predicate: OPERATIONALIZED-AS
+subject: met.mid_ir_spectral_coverage

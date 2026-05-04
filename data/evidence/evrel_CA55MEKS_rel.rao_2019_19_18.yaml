@@ -1,0 +1,8 @@
+evidence: 百秒 2×10⁻¹⁴ 的稳定度可以为 Li 原子 D1 线频率测量提供 10 Hz 量级的频率测量
+id: evrel_CA55MEKS_rel.rao_2019_19_18
+metadata:
+  source_paper: rao2019
+  zotero_key: CA55MEKS
+object: pri.microwave_reference_transfer_to_optical_comb
+predicate: BOUNDED-BY
+subject: met.li_d1_measurement_uncertainty_r19

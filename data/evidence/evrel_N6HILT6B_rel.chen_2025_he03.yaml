@@ -1,0 +1,8 @@
+evidence: substantially larger frequency noise induced by the cryostat vibration
+id: evrel_N6HILT6B_rel.chen_2025_he03
+metadata:
+  source_paper: chen2025
+  zotero_key: N6HILT6B
+object: ent.vibration_environment
+predicate: CONDITIONED-BY
+subject: ent.si_crystal_fp_cavity_sub5k_c25

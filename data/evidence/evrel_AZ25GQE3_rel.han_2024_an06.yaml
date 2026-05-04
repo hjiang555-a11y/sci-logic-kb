@@ -1,0 +1,8 @@
+evidence: which is 1 GHz before and 10 kHz after the frequency comparison
+id: evrel_AZ25GQE3_rel.han_2024_an06
+metadata:
+  source_paper: han2024
+  zotero_key: AZ25GQE3
+object: met.freq_accuracy_dcs_h24
+predicate: CHARACTERIZED-BY
+subject: ent.long_path_dcs_h24

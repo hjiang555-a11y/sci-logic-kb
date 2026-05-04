@@ -1,0 +1,18 @@
+definition: '基于体材料（MgF₂、CaF₂、fused silica、石英）加工的毫米至厘米级微谐振腔， 利用耳语回廊模（WGM）的全内反射实现极高
+  Q 因子（>10⁹–10¹¹）。 通过锥形光纤或棱镜渐逝波耦合泵浦。优势：最高 Q 因子、最低阈值； 劣势：体材料难以批量集成、需要精密机械加工和抛光。
+
+  '
+id: evid_HPCYUSLJ_ent.bulk_wgm_resonator_platform
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/pasquazi2018.yaml
+  source_paper: pasquazi2018
+  zotero_key: HPCYUSLJ
+name: 体材料耳语回廊模（WGM）微谐振器平台
+original_id: ent.bulk_wgm_resonator_platform
+properties:
+  coupling_methods: 锥形光纤、棱镜耦合
+  fsr_range: 10–100 GHz（取决于尺寸）
+  material_examples: MgF₂, CaF₂, fused silica, crystalline quartz
+  q_factor_range: 10⁹–10¹¹
+status: Determined
+type: Entity/Factor

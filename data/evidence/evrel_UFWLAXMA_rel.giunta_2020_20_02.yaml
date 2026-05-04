@@ -1,0 +1,9 @@
+evidence: stability and accuracy at the 20th decimal place within a measurement time
+  of <100 s
+id: evrel_UFWLAXMA_rel.giunta_2020_20_02
+metadata:
+  source_paper: giunta2020
+  zotero_key: UFWLAXMA
+object: met.comb_transfer_stability_g20
+predicate: CHARACTERIZED-BY
+subject: ent.ultra_low_noise_fiber_comb_g20

@@ -1,0 +1,8 @@
+evidence: Allan deviation of 330 μHz at a gate time of 1 s
+id: evrel_LBSZCU7P_rel.cai_2020_ai20_02
+metadata:
+  source_paper: cai2020
+  zotero_key: LBSZCU7P
+object: met.frep_allan_vs_hmaser_c20
+predicate: CHARACTERIZED-BY
+subject: ent.compact_pm_er_comb_cai20

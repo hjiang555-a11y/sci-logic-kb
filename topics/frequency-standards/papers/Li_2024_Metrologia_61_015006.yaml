@@ -1,4 +1,5 @@
-# Li 2024 — A strontium lattice clock with both stability and uncertainty below 5e-18 [evidence]
+# Li 2024 — A strontium lattice clock with both stability and uncertainty below
+<mml:math... [evidence]
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
@@ -7,13 +8,16 @@ meta:
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
-  title: "A strontium lattice clock with both stability and uncertainty below 5e-18"
+  title: >
+    A strontium lattice clock with both stability and uncertainty below
+<mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML"> <mml:mn>5</mml:mn> <mml:mo>×</mml:mo> <mml:msup> <mml:mn>10</mml:mn> <mml:mrow> <mml:mo>−</mml:mo> <mml:mn>18</mml:mn> </mml:mrow> </mml:msup> </mml:math>
   year: 2024
   first_author: "Li"
+  authors: ["Jie Li", "Xing-Yang Cui", "Zhi-Peng Jia", "De-Quan Kong", "Hai-Wei Yu", "Xian-Qing Zhu", "Xiao-Yong Liu", "De-Zhong Wang", "Xiang Zhang", "Xin-Yun Huang", "Ming-Yi Zhu", "Yu-Meng Yang", "Yi Hu", "Xiang-Pei Liu", "Xiao-Min Zhai", "Peng Liu", "Xiao Jiang", "Ping Xu", "Han-Ning Dai", "Yu-Ao Chen", "Jian-Wei Pan"]
   journal: "Metrologia"
   volume: 61
   pages: 6662
-  doi: 10.1088/1681-7575/ad10c6
+  doi: 10.1088/1681-7575/ad1a4c
   note: >
     [批量提取] 元数据来源：CrossRef。内容待专家提取。
 entities: []

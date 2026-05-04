@@ -1,0 +1,9 @@
+evidence: double-heterodyne probing for ultra-stable laser based on spectral hole
+  burning
+id: evrel_MPWLNUIH_rel.galland_2020_A01
+metadata:
+  source_paper: galland2020
+  zotero_key: MPWLNUIH
+object: pri.double_heterodyne_shb_probing
+predicate: OPERATIONALIZED-AS
+subject: ent.shb_eu_yso_reference_l13

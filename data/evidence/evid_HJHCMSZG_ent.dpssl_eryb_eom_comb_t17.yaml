@@ -1,0 +1,30 @@
+definition: '基于 Er:Yb:glass 增益介质 + SESAM 被动锁模的 DPSSL 光频梳（1546 nm，220 fs，100.05 MHz），
+  首次在固态激光器中引入腔内电光调制器（EOM）作为 frep 高速执行器。EOM 通过电压调制 晶体折射率改变腔内群延迟，从而快速调制重复频率。相比 PZT（典型带宽
+  ~10 kHz）， EOM 提供带宽达 700 kHz 的 frep 控制，为当时所有执行器类型的最佳记录。 frep 锁定至 PDH 稳 CW 激光（1560
+  nm，1 Hz 线宽），fCEO 通过 f-2f 自参考锁定至氢钟参考合成器。
+
+  '
+id: evid_HJHCMSZG_ent.dpssl_eryb_eom_comb_t17
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/torcheboeuf2017.yaml
+  source_paper: torcheboeuf2017
+  zotero_key: HJHCMSZG
+name: DPSSL Er:Yb:glass 腔内 EOM 光频梳（Torcheboeuf 2017，700 kHz frep 锁定带宽）
+original_id: ent.dpssl_eryb_eom_comb_t17
+properties:
+  beat_note_snr: 40 dB（91 kHz RBW）
+  center_wavelength: 1546 nm
+  fceo_integrated_phase_noise: 286 mrad [10 Hz; 1 MHz]
+  fceo_lock_bandwidth: 45 kHz（泵浦电流反馈）
+  fceo_snr: 50 dB（91 kHz RBW）
+  frep_integrated_phase_noise: 133 mrad [10 Hz; 1 MHz]（环路内）
+  frep_integrated_phase_noise_corrected: 115 mrad [10 Hz; 1 MHz]（扣除 CW 参考贡献）
+  frep_lock_bandwidth: 700 kHz（EOM，当时所有执行器最佳记录）
+  gain_medium: Er:Yb:glass（掺铒铒镱玻璃）
+  mode_locking: SESAM 被动锁模
+  pulse_width: 220 fs（变换极限孤子）
+  pump_power: ≤600 mW
+  pump_wavelength: 976 nm
+  repetition_rate: 100.05 MHz
+status: Determined
+type: Entity/Factor

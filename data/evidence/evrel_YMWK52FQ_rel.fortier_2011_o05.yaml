@@ -1,0 +1,11 @@
+evidence: '"a microwave generator based on a high-quality-factor (Q) optical resonator
+  and a frequency comb functioning as an optical-to-microwave divider"
+
+  '
+id: evrel_YMWK52FQ_rel.fortier_2011_o05
+metadata:
+  source_paper: fortier2011
+  zotero_key: YMWK52FQ
+object: pri.optical_frequency_division_microwave
+predicate: USES-METHOD
+subject: ent.ti_sapphire_ofd_photonic_osc_fortier2011

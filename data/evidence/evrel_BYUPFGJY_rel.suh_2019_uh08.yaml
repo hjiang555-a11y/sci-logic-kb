@@ -1,0 +1,9 @@
+evidence: '''standard deviation less than 1 MHz … equivalent to about 1 m s⁻¹ of RV
+  imprecision'''
+id: evrel_BYUPFGJY_rel.suh_2019_uh08
+metadata:
+  source_paper: suh2019
+  zotero_key: BYUPFGJY
+object: met.f0_imprecision_s19
+predicate: CHARACTERIZED-BY
+subject: ent.microresonator_astrocomb_s19

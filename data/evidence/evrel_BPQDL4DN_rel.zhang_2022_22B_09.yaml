@@ -1,0 +1,8 @@
+evidence: the SNR of each beat signal is greater than 30 dB at an RBW of 300 kHz
+id: evrel_BPQDL4DN_rel.zhang_2022_22B_09
+metadata:
+  source_paper: zhang2022b
+  zotero_key: BPQDL4DN
+object: met.clock_beatnote_snr_z22b
+predicate: CHARACTERIZED-BY
+subject: ent.multi_branch_supercontinuum_z22b

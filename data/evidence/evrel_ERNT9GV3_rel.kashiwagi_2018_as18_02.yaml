@@ -1,0 +1,9 @@
+evidence: a piezo-electric transducer-based fiber stretcher was installed in each
+  branch except for the branch used as the cancellation reference
+id: evrel_ERNT9GV3_rel.kashiwagi_2018_as18_02
+metadata:
+  source_paper: kashiwagi2018
+  zotero_key: ERNT9GV3
+object: ent.multi_branch_fiber_comb_k18
+predicate: PART-OF
+subject: ent.pzt_fiber_stretcher_k18

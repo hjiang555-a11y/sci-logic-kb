@@ -1,0 +1,24 @@
+definition: '在飞秒增强腔焦点引入高温（T ≤ 800 K）Ar+He 混合气体，通过提升气体平动速度降低稳态等离子体积累， 实现 f_rep = 77
+  MHz、相位匹配的 XUV 高次谐波频率梳产生。 背压加热使原子热运动速度 v_gas = √(RT/M_avg) 提升 √8 倍（300 K → 800 K），
+  束流逗留参数 ξ_beam 从 >>1 降至 <1 → 稳态等离子体密度降低两个数量级 → 中性气体色散恢复主导 → 相位匹配可达成。
+
+  '
+id: evid_L88UAAEQ_ent.high_temp_gas_mixture_hhg_p18
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/porat2018.yaml
+  source_paper: porat2018
+  zotero_key: L88UAAEQ
+name: 高温混合气体 HHG 系统（Porat 2018）
+original_id: ent.high_temp_gas_mixture_hhg_p18
+properties:
+  backing_temperature: T ≤ 800 K（背压加热）
+  beam_dwell_parameter: ξ_beam = σ_FWHM/(v_gas·τ_rep) < 1（稳态等离子体抑制条件）
+  gas_mixture: Ar + He（可变摩尔比）
+  phase_matching: 通过平衡中性气体色散 + Gouy 相移 + HHG 内禀相位实现
+  repetition_rate: 77 MHz（高重频飞秒增强腔，腔内功率 ~10 kW）
+  steady_state_ionization: η_steady ~ 10⁻²（T=800 K），vs. ~1（T=300 K）
+  translational_velocity: v_gas = √(RT/M_avg)，T=800 K 时 v_gas ≈ 500 m/s（Ar 主导）
+  xuv_photon_flux: ~10¹⁴ photons/s（单谐波）
+  xuv_power_per_harmonic: ~2 mW（单谐波，~100 nm 波段）
+status: Determined
+type: Entity/Factor

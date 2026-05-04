@@ -1,0 +1,13 @@
+evidence: '"cavity-enhanced frequency comb spectroscopy with a virtual imaging phase
+  array has proven a powerful tool for monitoring (with a time resolution of 10 μs)
+  the kinetics of the gas-phase reaction between carbon monoxide and the hydroxyl
+  radical"
+
+  '
+id: evrel_RZME5CH8_rel.picqué_2019_19_04
+metadata:
+  source_paper: picque2019
+  zotero_key: RZME5CH8
+object: meth.vipa_comb_spectroscopy
+predicate: OPERATIONALIZED-AS
+subject: met.comb_spectroscopy_molecular_sensitivity

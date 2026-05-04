@@ -1,0 +1,17 @@
+definition: '在光纤上调制一个 RF 载波（典型 1–10 GHz）或 1 PPS 脉冲，通过主动补偿电延迟 在远端恢复与发射端同步的时间/RF 标。不同于相干光学链路的光频直接传输，
+  此类链路利用更成熟的电子锁相与延迟补偿技术，部署门槛低，精度 10⁻¹⁵–10⁻¹⁷ 量级。
+
+  '
+id: evid_3mi33g2r_ent.rf_over_fiber_time_transfer_link
+metadata:
+  original_file: /data/sci-logic-kb/topics/time-frequency-transfer/papers/krehlik2015_3mi33g2r.yaml
+  source_paper: krehlik2015_3mi33g2r
+  zotero_key: 3mi33g2r
+name: RF-over-fiber 时间 / 射频频率传递链路（Level 1）
+original_id: ent.rf_over_fiber_time_transfer_link
+properties:
+  carrier: RF 载波 1–10 GHz 或 1 PPS 脉冲
+  compensation: electrical VDL + optional digital jump
+  typical_reach: 100–2000 km
+status: Determined
+type: Entity/Factor

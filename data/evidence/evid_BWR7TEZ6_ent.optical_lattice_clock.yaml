@@ -1,0 +1,22 @@
+definition: '利用"魔术波长"光晶格囚禁约 10⁴ 个激光冷却中性原子， 探测 ¹S₀→³P₀ 窄跃迁。大原子数使统计灵敏度极高（σ_y ∝ 1/√N_a），
+  短期不稳定度可达 ~10⁻¹⁷/√τ。代表系统：⁸⁷Sr（698 nm）、¹⁷¹Yb（578 nm）。
+
+  '
+id: evid_BWR7TEZ6_ent.optical_lattice_clock
+metadata:
+  original_file: /data/sci-logic-kb/topics/frequency-standards/papers/fortier2026.yaml
+  source_paper: fortier2026
+  zotero_key: BWR7TEZ6
+name: 光晶格钟（架构子类型）
+original_id: ent.optical_lattice_clock
+properties:
+  atom_number: ~10⁴
+  best_systematic_uncertainty: ~1×10⁻¹⁸（Sr 和 Yb 钟，综述汇总）
+  demonstrated_value: 1.0e-17
+  key_systematics: 黑体辐射频移（BBR）、格子光频移、碰撞频移
+  magic_wavelength: 813.4 nm（Sr）、759.4 nm（Yb）
+  representative_species: ⁸⁷Sr（698 nm）、¹⁷¹Yb（578 nm）
+  stability: ~5×10⁻¹⁷/√τ（最佳演示，综述汇总）
+  value_type: quantitative
+status: Determined
+type: Entity/Factor

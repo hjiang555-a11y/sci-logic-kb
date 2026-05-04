@@ -1,0 +1,11 @@
+evidence: '"DKSs... represent self-enforcing, stationary, and localized solutions
+  of a damped,  driven, and detuned nonlinear Schrödinger equation"
+
+  '
+id: evrel_TRFV3Y5G_rel.kippenberg_2017_18_02
+metadata:
+  source_paper: kippenberg2018
+  zotero_key: TRFV3Y5G
+object: pri.lugiato_lefever_equation
+predicate: DERIVED-FROM
+subject: pri.dissipative_kerr_soliton

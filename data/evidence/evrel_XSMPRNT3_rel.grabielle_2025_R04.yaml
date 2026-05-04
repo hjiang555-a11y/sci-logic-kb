@@ -1,0 +1,8 @@
+evidence: increasing the locking bandwidth reduces the residual frequency fluctuations
+id: evrel_XSMPRNT3_rel.grabielle_2025_R04
+metadata:
+  source_paper: grabielle2025
+  zotero_key: XSMPRNT3
+object: meth.fdl_locking_bandwidth_optimization
+predicate: CHARACTERIZES
+subject: met.locking_bandwidth_g25

@@ -1,0 +1,8 @@
+evidence: five-layer thermal shielding and two-stage active temperature control
+id: evrel_JYGVFJBN_rel.huang_2023_U05
+metadata:
+  source_paper: huang2023
+  zotero_key: JYGVFJBN
+object: meth.multilayer_thermal_shielding_fdl_h23
+predicate: IMPLEMENTS
+subject: ent.fiber_interferometer

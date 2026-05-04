@@ -1,0 +1,9 @@
+evidence: The comb-calibrated FMCW sensor uses an optical frequency comb as a precision
+  frequency ruler for LIDAR/imaging applications.
+id: evrel_2QUW2P6D_rel.huang_2024_U24_04
+metadata:
+  source_paper: huang2024
+  zotero_key: 2QUW2P6D
+object: ent.optical_frequency_comb
+predicate: PART-OF
+subject: ent.comb_calibrated_fmcw_nlos_sensor_h24

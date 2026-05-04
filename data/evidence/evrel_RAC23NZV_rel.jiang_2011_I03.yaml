@@ -1,0 +1,8 @@
+evidence: PDH stabilization to a high-finesse cavity
+id: evrel_RAC23NZV_rel.jiang_2011_I03
+metadata:
+  source_paper: jiang2011
+  zotero_key: RAC23NZV
+object: meth.pdh_locking
+predicate: IMPLEMENTS
+subject: meth.low_thermal_noise_cavity_pdh_j11

@@ -1,0 +1,8 @@
+evidence: vibration-insensitive fiber spool for laser stabilization
+id: evrel_5DCNFGX4_rel.huang_2019_JC19B_01
+metadata:
+  source_paper: huangjc2019b
+  zotero_key: 5DCNFGX4
+object: ent.fiber_interferometer
+predicate: PART-OF
+subject: ent.double_winding_fiber_spool_hjc19

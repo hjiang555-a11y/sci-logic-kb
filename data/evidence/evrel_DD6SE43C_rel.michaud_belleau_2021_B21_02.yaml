@@ -1,0 +1,8 @@
+evidence: −118 dB/m measured with our custom-built OFDR
+id: evrel_DD6SE43C_rel.michaud_belleau_2021_B21_02
+metadata:
+  source_paper: michaudbelleau2021
+  zotero_key: DD6SE43C
+object: met.backscattering_coefficient_hcf_mb21
+predicate: CHARACTERIZED-BY
+subject: ent.fiber_interferometer

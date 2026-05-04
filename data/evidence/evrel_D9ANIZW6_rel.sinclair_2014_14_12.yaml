@@ -1,0 +1,9 @@
+evidence: optical lock to a single comb mode rather than direct stabilization of the
+  repetition rate provides the large lever arm
+id: evrel_D9ANIZW6_rel.sinclair_2014_14_12
+metadata:
+  source_paper: sinclair2014
+  zotero_key: D9ANIZW6
+object: pri.optical_lock_lever_arm_timing_jitter
+predicate: ENABLED-BY
+subject: meth.ruggedized_fiber_comb_optical_lock_s14

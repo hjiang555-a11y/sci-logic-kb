@@ -1,0 +1,10 @@
+definition: Automatic extraction from 00831023(1). Details pending deep scan.
+id: evid_00831023(1)
+metadata:
+  source_paper: 00831023(1)
+  status: processed_auto
+name: Evidence from 00831023(1)
+properties:
+  source_pdf: 00831023(1)
+  status: unverified
+type: Entity/Factor

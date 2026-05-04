@@ -1,0 +1,25 @@
+definition: '75 MHz Yb:fiber 梳 → 相似子（similariton）放大 + 大模面积光纤功率放大 → >50 W <150 fs 近红外脉冲；耦合进飞秒增强腔（enhancement
+  factor ~100）驱动七次谐波产生 （HHG in gas），获得 150 nm 附近 VUV 梳；通过中间可调带通滤波器实现 1040–1070 nm
+  基频波长调谐 → VUV 输出可扫过 229mTh 跃迁全部不确定度范围。
+
+  '
+id: evid_25EY6V8L_ent.tunable_vuv_comb_z22
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/zhang2022.yaml
+  source_paper: zhang2022
+  zotero_key: 25EY6V8L
+name: 可调谐 VUV 光频梳（Zhang 2022，229mTh 核光谱）
+original_id: ent.tunable_vuv_comb_z22
+properties:
+  amplified_ir_power: '>50 W @ <150 fs'
+  base_comb: Yb:fiber 锁模 75 MHz
+  enhancement_factor: ~100
+  harmonic_order: 7 (λ ≈ 150 nm, VUV)
+  metric_coverage_range: !!python/tuple
+  - 1040.0
+  - 1070.0
+  outcoupling_method: 非共线几何（~30% 效率，VUV 七次谐波）
+  stabilization: f-2f 自参考 + Sr 698 nm 光钟激光相位锁
+  tunable_range_ir: 1040–1070 nm
+status: Determined
+type: Entity/Factor

@@ -1,0 +1,9 @@
+evidence: a low-latency digital servo system designed for optical frequency comb stabilization
+  ... implemented on a custom-designed FPGA-based digital board
+id: evrel_CEB7L6EM_rel.wang_2025_25_01
+metadata:
+  source_paper: wang2025
+  zotero_key: CEB7L6EM
+object: ent.optical_frequency_comb
+predicate: PART-OF
+subject: ent.low_latency_digital_servo_w25

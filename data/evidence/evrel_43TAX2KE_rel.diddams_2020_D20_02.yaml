@@ -1,0 +1,9 @@
+evidence: The optical frequency comb serves as the central element coherently uniting
+  the electromagnetic spectrum from RF to UV.
+id: evrel_43TAX2KE_rel.diddams_2020_D20_02
+metadata:
+  source_paper: picque2020
+  zotero_key: 43TAX2KE
+object: ent.electromagnetic_spectrum_coherent_bridge
+predicate: PART-OF
+subject: ent.optical_frequency_comb

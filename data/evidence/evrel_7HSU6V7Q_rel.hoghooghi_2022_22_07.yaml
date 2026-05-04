@@ -1,0 +1,9 @@
+evidence: The 1 GHz repetition rate enables microsecond-level time-resolved dual-comb
+  spectroscopy acquisition speed for transient combustion and chemical dynamics.
+id: evrel_7HSU6V7Q_rel.hoghooghi_2022_22_07
+metadata:
+  source_paper: hoghooghi2022
+  zotero_key: 7HSU6V7Q
+object: meth.dual_comb_spectroscopy
+predicate: OPERATIONALIZED-AS
+subject: met.dcs_acquisition_speed

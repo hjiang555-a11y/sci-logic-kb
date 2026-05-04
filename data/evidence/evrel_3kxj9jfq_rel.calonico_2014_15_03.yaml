@@ -1,0 +1,8 @@
+evidence: frequency instability of 3×10⁻¹⁹ at 1000 s ... on a 5-mHz measurement bandwidth
+id: evrel_3kxj9jfq_rel.calonico_2014_15_03
+metadata:
+  source_paper: calonico2015_3kxj9jfq
+  zotero_key: 3kxj9jfq
+object: met.coherent_optical_fiber_link_instability
+predicate: CHARACTERIZED-BY
+subject: ent.inrim_642km_single_fiber_link_c15

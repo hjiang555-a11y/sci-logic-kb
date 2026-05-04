@@ -1,4 +1,4 @@
-# Feng ???? — Dark pulse quantum dot diode laser [evidence]
+# Society ???? — Title: font: times; size: 18 point; style: plain; justified: center; capitali... [evidence]
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
@@ -6,16 +6,12 @@ meta:
   topic: optical-frequency-combs
   source_type: journal_paper
   contribution_type: evidence
-  reliability: high
-  title: "Dark pulse quantum dot diode laser"
-  first_author: "Feng"
-  authors: ["Mingming Feng", "Kevin L. Silverman", "Richard P. Mirin", "Steven T. Cundiff"]
-  journal: "Optics Express"
-  volume: 18
-  pages: 13385
-  doi: 10.1364/OE.18.013385
+  reliability: medium
+  title: "Title: font: times; size: 18 point; style: plain; justified: center; capitalization: first word and Names only"
+  first_author: "Society"
+  authors: ["Optical Society"]
   note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+    [批量提取] 元数据来源：PDF metadata。内容待专家提取。
 entities: []
 principles: []
 methods: []

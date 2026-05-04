@@ -1,0 +1,30 @@
+definition: '基于 Cr:LiSAF（colquirite 晶体）的 Kerr 透镜锁模飞秒激光器，670 nm 激光二极管直接泵浦（2×350 mW），
+  电池供电，输出 115 mW @ 93 MHz、894 nm 中心、24 nm FWHM 带宽（脉冲 40 fs）； 经光子晶体光纤（PCF）超连续谱展宽至覆盖
+  >1 倍频程（保留梳齿结构）， 适用于光学频率计量（f-2f 自参考可行）。 首次证明"二极管泵浦"路线可实现倍频程梳，打破 Ti:sapph 垄断（后者需 Ar⁺
+  或倍频 Nd:YAG 泵浦）。
+
+  '
+id: evid_UNL7SSP3_ent.diode_pumped_crlisaf_octave_comb_h01
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/holzwarth2001.yaml
+  source_paper: holzwarth2001
+  zotero_key: UNL7SSP3
+name: 二极管泵浦 Cr:LiSAF 倍频程频率梳（Holzwarth 2001）
+original_id: ent.diode_pumped_crlisaf_octave_comb_h01
+properties:
+  center_wavelength: 894 nm（可调 835–895 nm）
+  gain_medium: Cr:LiSAF（colquirite 晶体，增益带宽略小于 Ti:sapph，饱和强度低 2 倍）
+  metric_coverage_range: !!python/tuple
+  - 835.0
+  - 895.0
+  mode_locking: Kerr 透镜锁模（软孔径，紧聚焦增强非线性）
+  output_power: 115 mW（锁模态）
+  pcf_broadening: 覆盖 >1 倍频程（保留梳齿结构）
+  portability: 电池供电，紧凑腔设计（Z-fold 腔 + chirped mirror 色散补偿）
+  pulse_duration: 40 fs（FWHM，变换极限附近）
+  pump_source: 2×350 mW 激光二极管 @ 670 nm（电池供电，M² ~ 3×8 光束质量）
+  repetition_rate: 93 MHz
+  slope_efficiency: 39%（光学斜率效率）
+  spectral_bandwidth: 24 nm FWHM（支持 40 fs 脉冲）
+status: Determined
+type: Entity/Factor

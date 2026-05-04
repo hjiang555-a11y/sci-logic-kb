@@ -1,0 +1,8 @@
+evidence: 本文报道了一套完整的面向 Li 原子 D1 线频率测量应用的掺铒飞秒光纤光梳系统
+id: evrel_CA55MEKS_rel.rao_2019_19_01
+metadata:
+  source_paper: rao2019
+  zotero_key: CA55MEKS
+object: ent.optical_frequency_comb
+predicate: PART-OF
+subject: ent.erfiber_comb_li_d1_r19

@@ -1,0 +1,9 @@
+evidence: a self-referenced fiber frequency comb that can operate outside the well-controlled
+  optical laboratory
+id: evrel_D9ANIZW6_rel.sinclair_2014_14_01
+metadata:
+  source_paper: sinclair2014
+  zotero_key: D9ANIZW6
+object: ent.optical_frequency_comb
+predicate: PART-OF
+subject: ent.ruggedized_field_comb_s14

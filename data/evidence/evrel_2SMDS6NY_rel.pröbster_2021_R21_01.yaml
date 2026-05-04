@@ -1,0 +1,9 @@
+evidence: FOKUS II demonstrated vacuum-compatible dual-comb operation during TEXUS
+  54 sounding rocket zero-gravity flight.
+id: evrel_2SMDS6NY_rel.pröbster_2021_R21_01
+metadata:
+  source_paper: probster2021
+  zotero_key: 2SMDS6NY
+object: met.space_comb_environmental_readiness_p21
+predicate: CHARACTERIZED-BY
+subject: ent.fokus_ii_space_dual_comb_p21

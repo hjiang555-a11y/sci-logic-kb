@@ -1,0 +1,10 @@
+evidence: the transfer function relating S_y(f) to σ_y²(τ) contains a sin⁴(π f τ)
+  factor which causes Allan variance to depend on measurement bandwidth for white
+  phase noise.
+id: evrel_HOWE1976-NBS-TN679_rel.howe_1976_76_02
+metadata:
+  source_paper: howe1976
+  zotero_key: HOWE1976-NBS-TN679
+object: pri.time_frequency_domain_transfer_function
+predicate: CONDITIONED-BY
+subject: meth.allan_deviation_adev

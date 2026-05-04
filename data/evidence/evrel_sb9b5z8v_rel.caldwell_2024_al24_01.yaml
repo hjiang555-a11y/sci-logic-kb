@@ -1,0 +1,9 @@
+evidence: application of quantum-limited optical time transfer to space-based optical
+  clock comparisons
+id: evrel_sb9b5z8v_rel.caldwell_2024_al24_01
+metadata:
+  source_paper: caldwell2024_sb9b5z8v
+  zotero_key: sb9b5z8v
+object: met.photon_limited_ott_supported_link_loss
+predicate: CHARACTERIZED-BY
+subject: ent.free_space_optical_tf_link

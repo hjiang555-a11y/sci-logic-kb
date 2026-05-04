@@ -1,8 +1,8 @@
-# Zhang 2022 — Passively stable dissemination of ultrastable optical frequency via a noisy f... [evidence]
-# 提取者：AI（待专家确认）
+# Zhang 2022 — Passively stable dissemination of ultrastable optical frequency via a noisy fiel [evidence]
+# 提取者：AI 批量提取（待专家确认）
 # 提取日期：2026-05-04
 meta:
-  zotero_key: "[2022] Passively stable dissemination of ultra"
+  zotero_key: [2022] Passively stable dissemination of ultra
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
@@ -10,8 +10,14 @@ meta:
   title: "Passively stable dissemination of ultrastable optical frequency via a noisy field fiber network"
   year: 2022
   first_author: "Zhang"
+  authors: ["Xiang Zhang", "Liang Hu", "Xue Deng", "Qi Zang", "Dongdong Jiao", "Jing Gao", "Dan Wang", "Qian Zhou", "Jie Liu", "Guanjun Xu", "Tao Liu", "Ruifang Dong", "Shougang Zhang"]
+  journal: "Optics &amp; Laser Technology"
+  volume: 157
+  pages: 108738
+  doi: 10.1016/j.optlastec.2022.108738
   note: >
     [批量提取] 元数据来源：CrossRef。内容待专家提取。
+
 entities: []
 principles: []
 methods: []

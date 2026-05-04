@@ -1,0 +1,8 @@
+evidence: Single-ion clocks typically excel in accuracy due to minimal motional effects
+id: evrel_BWR7TEZ6_rel.fortier_2025_26_01
+metadata:
+  source_paper: fortier2026
+  zotero_key: BWR7TEZ6
+object: ent.optical_frequency_standard
+predicate: PART-OF
+subject: ent.trapped_ion_optical_clock

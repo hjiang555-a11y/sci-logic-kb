@@ -1,0 +1,8 @@
+evidence: limited by sharp resonances observed around 900 kHz
+id: evrel_HJHCMSZG_rel.torcheboeuf_2017_17_06
+metadata:
+  source_paper: torcheboeuf2017
+  zotero_key: HJHCMSZG
+object: pri.eom_acoustic_resonance_limit_t17
+predicate: BOUNDED-BY
+subject: pri.intracavity_eom_group_delay_modulation

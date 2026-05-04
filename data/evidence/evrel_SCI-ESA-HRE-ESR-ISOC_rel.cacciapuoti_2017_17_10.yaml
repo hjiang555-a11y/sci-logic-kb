@@ -1,0 +1,9 @@
+evidence: 'The links are similar to those already developed for the ACES mission:
+  the microwave link MWL'
+id: evrel_SCI-ESA-HRE-ESR-ISOC_rel.cacciapuoti_2017_17_10
+metadata:
+  source_paper: cacciapuoti2017
+  zotero_key: SCI-ESA-HRE-ESR-ISOC
+object: meth.mwl_two_way_tf_transfer
+predicate: OPERATIONALIZED-AS
+subject: ent.microwave_link_mwl

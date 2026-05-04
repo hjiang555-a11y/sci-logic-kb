@@ -1,0 +1,9 @@
+evidence: RAM-induced fractional instability... almost two orders of magnitude below
+  our cavity thermal noise limit
+id: evrel_U2LXSU62_rel.parke_2025_05
+metadata:
+  source_paper: parke2025
+  zotero_key: U2LXSU62
+object: pri.brownian_thermal_noise_fdt
+predicate: BOUNDED-BY
+subject: ent.long_cavity_68cm_p25

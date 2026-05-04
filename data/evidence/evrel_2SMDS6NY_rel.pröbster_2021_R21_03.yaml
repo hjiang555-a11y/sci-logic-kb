@@ -1,0 +1,8 @@
+evidence: FOKUS II is a space-qualified instance of the optical frequency comb platform.
+id: evrel_2SMDS6NY_rel.pröbster_2021_R21_03
+metadata:
+  source_paper: probster2021
+  zotero_key: 2SMDS6NY
+object: ent.optical_frequency_comb
+predicate: PART-OF
+subject: ent.fokus_ii_space_dual_comb_p21

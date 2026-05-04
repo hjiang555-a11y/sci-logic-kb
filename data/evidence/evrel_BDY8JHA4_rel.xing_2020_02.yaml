@@ -1,0 +1,9 @@
+evidence: The second compression stage utilizes nonlinear self-compression inside
+  an elliptical core PM-HNLF from OFS (HNLF2 in Fig. 1)
+id: evrel_BDY8JHA4_rel.xing_2020_02
+metadata:
+  source_paper: xing2020
+  zotero_key: BDY8JHA4
+object: ent.all_fiber_2um_comb_x20
+predicate: PART-OF
+subject: ent.hnlf_self_compression_stage_x20

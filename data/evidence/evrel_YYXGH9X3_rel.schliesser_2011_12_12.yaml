@@ -1,0 +1,10 @@
+evidence: In most cases, a different route is taken to access the spectral region
+  beyond 3 μm, in which nonlinear optical effects are harnessed to transfer electromagnetic
+  energy from the visible or near-infrared domain into the mid-infrared
+id: evrel_YYXGH9X3_rel.schliesser_2011_12_12
+metadata:
+  source_paper: schliesser2012
+  zotero_key: YYXGH9X3
+object: ent.optical_frequency_comb
+predicate: CONDITIONED-BY
+subject: ent.mid_ir_frequency_comb

@@ -1,0 +1,18 @@
+definition: 'comb-based 飞秒光脉冲双向穿越大气/真空自由空间；两端独立测量到达脉冲 time-of-arrival 与其相对本地梳脉冲时刻的偏移，通过双向互换实现
+  fs–as 级时间同步与 10⁻¹⁸ 级频率传递。 典型结构：收发光终端 + 主动 tip-tilt（抑制光束摆动）+ 自由空间几何；支持地面间、 ground-air（无人机/飞机）、ground-satellite
+  部署。
+
+  '
+id: evid_5xulcnp3_ent.free_space_optical_tf_link
+metadata:
+  original_file: /data/sci-logic-kb/topics/time-frequency-transfer/papers/sinclair2019_5xulcnp3.yaml
+  source_paper: sinclair2019_5xulcnp3
+  zotero_key: 5xulcnp3
+name: 自由空间光学时频传递链路（Level 1 总节点）
+original_id: ent.free_space_optical_tf_link
+properties:
+  base_technique: frequency-comb-based two-way time-frequency transfer (O-TWTFT)
+  future_extension: ground-to-geosynchronous orbit（Caldwell 2023）
+  range_demonstrated: 100 m – 300 km 地面间（至 2024）
+status: Determined
+type: Entity/Factor

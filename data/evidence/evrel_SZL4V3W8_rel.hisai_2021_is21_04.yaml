@@ -1,0 +1,9 @@
+evidence: a frequency comb with 8 branches using 3 stages consisting of 1:1 fiber
+  couplers
+id: evrel_SZL4V3W8_rel.hisai_2021_is21_04
+metadata:
+  source_paper: hisai2021
+  zotero_key: SZL4V3W8
+object: ent.nmij_8branch_er_comb_h21
+predicate: OPERATIONALIZED-AS
+subject: meth.triple_stage_1to1_splitter_8branch_h21

@@ -1,0 +1,8 @@
+evidence: The clock signal is converted by SFC, a femtosecond frequency comb
+id: evrel_SCI-ESA-HRE-ESR-ISOC_rel.cacciapuoti_2017_17_20
+metadata:
+  source_paper: cacciapuoti2017
+  zotero_key: SCI-ESA-HRE-ESR-ISOC
+object: ent.optical_frequency_comb
+predicate: CONDITIONED-BY
+subject: ent.space_frequency_comb_sfc

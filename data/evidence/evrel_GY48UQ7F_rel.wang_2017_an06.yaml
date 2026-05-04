@@ -1,0 +1,9 @@
+evidence: Per-tooth optical linewidth is sub-MHz, limited by semiconductor amplitude-phase
+  coupling
+id: evrel_GY48UQ7F_rel.wang_2017_an06
+metadata:
+  source_paper: wang2017
+  zotero_key: GY48UQ7F
+object: met.per_line_linewidth_w17
+predicate: CHARACTERIZED-BY
+subject: ent.iii_v_on_si_ultradense_comb_w17

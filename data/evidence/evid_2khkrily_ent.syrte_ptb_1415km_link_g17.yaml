@@ -1,0 +1,17 @@
+definition: 'Paris↔Strasbourg↔Braunschweig 1415 km 级联相干光纤链路； 用于两国 Cs 喷泉 PFS 的直接频率比对与
+  TAI 校准。
+
+  '
+id: evid_2khkrily_ent.syrte_ptb_1415km_link_g17
+metadata:
+  original_file: /data/sci-logic-kb/topics/time-frequency-transfer/papers/guena2017_2khkrily.yaml
+  source_paper: guena2017_2khkrily
+  zotero_key: 2khkrily
+name: SYRTE↔PTB 1415 km 光纤相干国际链路（Guéna 2017）
+original_id: ent.syrte_ptb_1415km_link_g17
+properties:
+  length: 1415 km
+  link_inaccuracy: <<5×10⁻¹⁷（链路不构成比对瓶颈）
+  span: SYRTE Paris ↔ PTB Braunschweig
+status: Determined
+type: Entity/Factor

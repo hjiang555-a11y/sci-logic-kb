@@ -1,0 +1,9 @@
+evidence: '''soliton mode-locking … ensures highly stable mode-locking and reproducible
+  spectral envelopes'''
+id: evrel_BYUPFGJY_rel.suh_2019_uh10
+metadata:
+  source_paper: suh2019
+  zotero_key: BYUPFGJY
+object: pri.dissipative_kerr_soliton
+predicate: ENABLED-BY
+subject: ent.microresonator_astrocomb_s19

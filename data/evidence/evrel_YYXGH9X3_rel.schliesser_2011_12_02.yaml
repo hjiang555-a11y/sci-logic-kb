@@ -1,0 +1,9 @@
+evidence: all modes of a near-infrared frequency comb can simultaneously be subjected
+  to difference-frequency generation
+id: evrel_YYXGH9X3_rel.schliesser_2011_12_02
+metadata:
+  source_paper: schliesser2012
+  zotero_key: YYXGH9X3
+object: pri.nonlinear_frequency_conversion_comb
+predicate: ENABLED-BY
+subject: meth.dfg_comb_generation

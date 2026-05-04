@@ -1,0 +1,9 @@
+evidence: The Allan deviation of the optical reference oscillator shall be lower than
+  3e-16 between 0.1 s and 100 s
+id: evrel_SCI-ESA-HRE-ESR-ISOC_rel.cacciapuoti_2017_17_21
+metadata:
+  source_paper: cacciapuoti2017
+  zotero_key: SCI-ESA-HRE-ESR-ISOC
+object: ent.fp_cavity_system
+predicate: CONDITIONED-BY
+subject: ent.space_lattice_optical_clock_sloc

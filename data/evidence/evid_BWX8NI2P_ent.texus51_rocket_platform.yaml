@@ -1,0 +1,11 @@
+definition: External flight platform; ~6 min ballistic microgravity, apogee 254 km.
+id: evid_BWX8NI2P_ent.texus51_rocket_platform
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/lezius2016.yaml
+  source_paper: lezius2016
+  zotero_key: BWX8NI2P
+name: TEXUS-51 sounding rocket platform
+original_id: ent.texus51_rocket_platform
+properties: {}
+status: Determined
+type: Entity/Factor

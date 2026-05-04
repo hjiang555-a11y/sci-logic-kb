@@ -1,0 +1,9 @@
+evidence: the spectral span is limited only by the spectral bandwidths of the source
+  and detector
+id: evrel_YYXGH9X3_rel.schliesser_2011_12_10
+metadata:
+  source_paper: schliesser2012
+  zotero_key: YYXGH9X3
+object: met.mid_ir_spectral_coverage
+predicate: BOUNDED-BY
+subject: met.trace_gas_sensitivity

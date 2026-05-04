@@ -1,0 +1,10 @@
+evidence: manufacturing the material into a spacer for an optical cavity. One of the
+  mode frequencies of such a cavity is then measured repeatedly against an atomic
+  frequency standard
+id: evrel_JP6J4EQD_rel.kwong_2018_03
+metadata:
+  source_paper: kwong2018
+  zotero_key: JP6J4EQD
+object: ent.nexcera_optical_cavity_k18
+predicate: ENABLED-BY
+subject: meth.optical_cavity_dimensional_metrology

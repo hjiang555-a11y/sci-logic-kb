@@ -1,0 +1,13 @@
+definition: 'SiO₂楔形WGM微腔DKS梳，重复频率22 GHz（Q≈1.8×10⁸），锁定至射频时钟， 为C波段可调谐激光器提供密集梳齿参考网格。
+
+  '
+id: evid_4I37D6SD_ent.sio2_22ghz_kerr_comb
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/spencer2018.yaml
+  source_paper: spencer2018
+  zotero_key: 4I37D6SD
+name: SiO₂楔形微腔22 GHz梳
+original_id: ent.sio2_22ghz_kerr_comb
+properties: {}
+status: Determined
+type: Entity/Factor

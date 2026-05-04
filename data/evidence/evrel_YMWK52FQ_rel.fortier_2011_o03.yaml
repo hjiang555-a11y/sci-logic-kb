@@ -1,0 +1,8 @@
+evidence: L(f) = −104 dBc Hz⁻¹ at 1 Hz offset from the carrier
+id: evrel_YMWK52FQ_rel.fortier_2011_o03
+metadata:
+  source_paper: fortier2011
+  zotero_key: YMWK52FQ
+object: met.ofd_phase_noise_1hz_fortier2011
+predicate: CHARACTERIZED-BY
+subject: ent.ti_sapphire_ofd_photonic_osc_fortier2011

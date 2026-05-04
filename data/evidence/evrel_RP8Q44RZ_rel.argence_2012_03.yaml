@@ -1,0 +1,9 @@
+evidence: estimated flicker thermal noise is ~4×10⁻¹⁶, dominated by the mechanical
+  quality factor of the coatings
+id: evrel_RP8Q44RZ_rel.argence_2012_03
+metadata:
+  source_paper: argence2012
+  zotero_key: RP8Q44RZ
+object: pri.brownian_thermal_noise_fdt
+predicate: BOUNDED-BY
+subject: ent.space_cavity_prototype_a12

@@ -1,0 +1,9 @@
+evidence: The laser frequency noise power spectral density is reduced by more than
+  40 dB for Fourier frequencies ranging from 1 Hz to 10 kHz
+id: evrel_G2IXLQ3G_rel.jiang_2009_02
+metadata:
+  source_paper: jiang2009a
+  zotero_key: G2IXLQ3G
+object: met.fiber_laser_noise_reduction_j09
+predicate: CHARACTERIZED-BY
+subject: ent.fiber_michelson_1km_j09

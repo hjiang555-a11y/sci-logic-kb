@@ -1,0 +1,9 @@
+evidence: hydrogen maser provides a frequency reference for fceo locking, fbeat locking,
+  and out-of-loop frequency stability counting
+id: evrel_BPQDL4DN_rel.zhang_2022_22B_13
+metadata:
+  source_paper: zhang2022b
+  zotero_key: BPQDL4DN
+object: meth.temperature_matched_multibranch_stabilization
+predicate: OPERATIONALIZED-AS
+subject: met.fbeat_allan_inloop_z22b

@@ -1,4 +1,4 @@
-# Chong ???? — All-normal-dispersion femtosecond fiber laser [evidence]
+#  ???? — all normal dispersion fs laser [evidence]
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
@@ -6,16 +6,11 @@ meta:
   topic: optical-frequency-combs
   source_type: journal_paper
   contribution_type: evidence
-  reliability: high
-  title: "All-normal-dispersion femtosecond fiber laser"
-  first_author: "Chong"
-  authors: ["Andy Chong", "Joel Buckley", "Will Renninger", "Frank Wise"]
-  journal: "Optics Express"
-  volume: 14
-  pages: 10095
-  doi: 10.1364/oe.14.010095
+  reliability: low
+  title: "all normal dispersion fs laser"
+  first_author: ""
   note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+    [批量提取] 元数据来源：placeholder (needs expert review)。内容待专家提取。
 entities: []
 principles: []
 methods: []

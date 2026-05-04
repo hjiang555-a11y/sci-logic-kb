@@ -1,0 +1,9 @@
+evidence: '''devices require additional optical or microwave filtering … until recently
+  micro[-combs] … 22 GHz native spacing is suited for astronomical calibration'''
+id: evrel_BYUPFGJY_rel.suh_2019_uh13
+metadata:
+  source_paper: suh2019
+  zotero_key: BYUPFGJY
+object: pri.native_mode_spacing_matching
+predicate: ENABLED-BY
+subject: ent.microresonator_astrocomb_s19

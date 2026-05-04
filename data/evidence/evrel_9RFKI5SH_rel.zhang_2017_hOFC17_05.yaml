@@ -1,0 +1,8 @@
+evidence: The narrowest direct output pulse is approximately 49 fs
+id: evrel_9RFKI5SH_rel.zhang_2017_hOFC17_05
+metadata:
+  source_paper: zhang2017
+  zotero_key: 9RFKI5SH
+object: met.pulse_width_erfiber_z17
+predicate: CHARACTERIZED-BY
+subject: ent.hybrid_ml_erfiber_comb_z17

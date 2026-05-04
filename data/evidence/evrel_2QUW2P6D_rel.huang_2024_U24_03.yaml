@@ -1,0 +1,9 @@
+evidence: Optical frequency comb calibration corrects FMCW tuning nonlinearity in
+  real time, improving effective bandwidth utilization and SNR by ~5 dB.
+id: evrel_2QUW2P6D_rel.huang_2024_U24_03
+metadata:
+  source_paper: huang2024
+  zotero_key: 2QUW2P6D
+object: pri.comb_calibrated_fmcw_frequency_linearity
+predicate: ENABLED-BY
+subject: meth.comb_calibrated_fmcw_nlos_imaging

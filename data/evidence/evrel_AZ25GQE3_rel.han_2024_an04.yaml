@@ -1,0 +1,8 @@
+evidence: we implement DCS over a 113 km turbulent horizontal open-air path
+id: evrel_AZ25GQE3_rel.han_2024_an04
+metadata:
+  source_paper: han2024
+  zotero_key: AZ25GQE3
+object: met.open_path_length_dcs_h24
+predicate: CHARACTERIZED-BY
+subject: ent.long_path_dcs_h24

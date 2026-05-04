@@ -1,0 +1,9 @@
+evidence: the optical frequency comb needs to be stabilized to a suitable optical
+  reference for the synthesis of ultra-stable frequencies
+id: evrel_KTHCQRJ2_rel.giunta_2004_19_06
+metadata:
+  source_paper: giunta2019
+  zotero_key: KTHCQRJ2
+object: ent.fp_cavity_system
+predicate: CONDITIONED-BY
+subject: ent.optical_frequency_comb

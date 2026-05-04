@@ -1,0 +1,8 @@
+evidence: gravitational potential differences with an uncertainty of 5 × 10^-18
+id: evrel_QQ6FRH2U_rel.grotti_2018_R01
+metadata:
+  source_paper: grotti2018
+  zotero_key: QQ6FRH2U
+object: met.geodesy_uncertainty_grotti2018
+predicate: CHARACTERIZED-BY
+subject: ent.transportable_sr_clock_ptb2018

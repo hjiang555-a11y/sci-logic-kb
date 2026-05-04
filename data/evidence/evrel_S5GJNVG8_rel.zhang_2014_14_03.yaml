@@ -1,0 +1,8 @@
+evidence: σ_RAM at 1 ppm corresponds to σ_y of 1×10⁻¹⁶ for 35mm cavity
+id: evrel_S5GJNVG8_rel.zhang_2014_14_03
+metadata:
+  source_paper: zhang2014_ram
+  zotero_key: S5GJNVG8
+object: met.ram_fractional_instability
+predicate: CHARACTERIZED-BY
+subject: meth.pdh_locking

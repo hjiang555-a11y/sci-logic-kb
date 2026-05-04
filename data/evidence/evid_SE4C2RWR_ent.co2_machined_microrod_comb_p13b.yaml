@@ -1,0 +1,29 @@
+definition: '用 CO₂ 激光（10.6 μm）熔融蒸发 fused-quartz 棒（直径 2 mm）快速加工成球状微谐振器（Q ~ 5×10⁸，<1
+  分钟加工，近 100% 良率）； 通过压电执行器施加机械力改变谐振器形状 → 调谐 FSR（即微梳梳齿间距 f_rep）； CW 泵浦产生 32.6 GHz 间距参量微梳（1510–1620
+  nm 谱跨度）， 锁至微波频率标准后梳齿间距稳定度达 **5×10⁻¹⁵ @ 1 s**（vs. 先前微梳 ~10⁻¹³，提升 200 倍）。
+
+  '
+id: evid_SE4C2RWR_ent.co2_machined_microrod_comb_p13b
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/papp2013b.yaml
+  source_paper: papp2013b
+  zotero_key: SE4C2RWR
+name: CO₂ 激光加工微棒谐振器梳（Papp 2013b）
+original_id: ent.co2_machined_microrod_comb_p13b
+properties:
+  Q_factor: ~5×10⁸（光学品质因子）
+  control_method: 压电执行器机械力调谐（改变谐振器形状）
+  demonstrated_value: 50000000000.0
+  fabrication: CO₂ 激光加工（<1 分钟，近 100% 良率）
+  frep_stability: 5×10⁻¹⁵ @ 1 s（残余涨落，锁至微波标准）
+  fsr: 32.6 GHz（微梳梳齿间距）
+  inter_line_variation: <0.5 mHz（140 根梳齿间频率变化，跨 4.5 THz）
+  material: fused-quartz（熔融石英）
+  metric_coverage_range: !!python/tuple
+  - 1510.0
+  - 1620.0
+  metric_structure: 50000000000.0
+  spectral_span: 1510–1620 nm（~4.5 THz）
+  value_type: quantitative
+status: Determined
+type: Entity/Factor

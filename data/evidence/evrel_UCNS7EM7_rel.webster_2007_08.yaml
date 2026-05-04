@@ -1,0 +1,9 @@
+evidence: ensure distance between centers of mirror surfaces remains invariant when
+  force is applied
+id: evrel_UCNS7EM7_rel.webster_2007_08
+metadata:
+  source_paper: webster2007
+  zotero_key: UCNS7EM7
+object: pri.cavity_deformation_compensation
+predicate: IMPLEMENTS
+subject: meth.cutout_cavity_design_fem_optimization_w07

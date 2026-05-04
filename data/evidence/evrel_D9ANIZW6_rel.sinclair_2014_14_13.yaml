@@ -1,0 +1,9 @@
+evidence: The ruggedized field comb optical lock relies on f-2f self-referencing for
+  carrier-envelope offset frequency stabilization.
+id: evrel_D9ANIZW6_rel.sinclair_2014_14_13
+metadata:
+  source_paper: sinclair2014
+  zotero_key: D9ANIZW6
+object: pri.self_referencing_f2f
+predicate: ENABLED-BY
+subject: meth.ruggedized_fiber_comb_optical_lock_s14

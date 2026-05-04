@@ -1,0 +1,9 @@
+evidence: OFC requires simultaneous stabilization of frep and f_CEO; each degree of
+  freedom can be independently referenced to optical or microwave standard
+id: evrel_H93SHF89_rel.endo_2018_18_05
+metadata:
+  source_paper: endo2018
+  zotero_key: H93SHF89
+object: pri.ofc_two_dof_stabilization
+predicate: ENABLED-BY
+subject: ent.optical_frequency_comb

@@ -1,0 +1,10 @@
+evidence: spectral structure at the 3% level remains... incomplete baseline removal...
+  small inaccuracies in the Hitran 2016 line-shape parameters... deviations from the
+  Voigt line shape
+id: evrel_FQ4KYV38_rel.ycas_2019_19_19
+metadata:
+  source_paper: ycas2019
+  zotero_key: FQ4KYV38
+object: pri.hitran_voigt_declutter_trace_retrieval
+predicate: BOUNDED-BY
+subject: met.voc_path_integrated_sensitivity_y19

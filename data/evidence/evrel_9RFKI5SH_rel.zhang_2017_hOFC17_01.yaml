@@ -1,0 +1,9 @@
+evidence: 'Two loops are connected by a fiber coupler (50:50): the left one is a primary
+  resonator and the other is a typical NALM.'
+id: evrel_9RFKI5SH_rel.zhang_2017_hOFC17_01
+metadata:
+  source_paper: zhang2017
+  zotero_key: 9RFKI5SH
+object: ent.hybrid_ml_erfiber_comb_z17
+predicate: PART-OF
+subject: ent.nalm_unit_z17

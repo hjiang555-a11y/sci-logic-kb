@@ -1,0 +1,11 @@
+evidence: '"Using 1 W OFCs and nanowatt-level LOS modules, we achieved a time–frequency
+  dissemination over a free-space link of 113 km."
+
+  '
+id: evrel_P92ZFIAQ_rel.shen_2022_h01
+metadata:
+  source_paper: shen2022
+  zotero_key: P92ZFIAQ
+object: meth.freespace_los_tf_transfer_sh22
+predicate: ENABLED-BY
+subject: ent.freespace_tf_link_113km_sh22

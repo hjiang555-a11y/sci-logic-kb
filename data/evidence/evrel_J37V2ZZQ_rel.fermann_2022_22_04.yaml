@@ -1,0 +1,8 @@
+evidence: noise cancellation techniques achieve ≈2 × 10⁻¹⁸
+id: evrel_J37V2ZZQ_rel.fermann_2022_22_04
+metadata:
+  source_paper: fermann2022
+  zotero_key: J37V2ZZQ
+object: pri.noise_cancellation_frequency_transfer
+predicate: OPERATIONALIZED-AS
+subject: met.noise_cancelled_transfer_stability_f22

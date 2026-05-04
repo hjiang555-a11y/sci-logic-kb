@@ -1,0 +1,9 @@
+evidence: '''the offset frequency imprecision was the principal source of instability
+  in the comb calibration'''
+id: evrel_BYUPFGJY_rel.suh_2019_uh14
+metadata:
+  source_paper: suh2019
+  zotero_key: BYUPFGJY
+object: pri.microcomb_rv_calibration_limit
+predicate: BOUNDED-BY
+subject: ent.microresonator_astrocomb_s19

@@ -1,0 +1,8 @@
+evidence: ''
+id: evrel_CWIHQRJD_rel.bridge_coat_03
+metadata:
+  source_paper: cole2013
+  zotero_key: CWIHQRJD
+object: met.algaas_coating_loss_angle_c13
+predicate: PRODUCES
+subject: meth.crystalline_coating_deposition

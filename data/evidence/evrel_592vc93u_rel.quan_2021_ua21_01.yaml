@@ -1,0 +1,8 @@
+evidence: 56 km 光纤微波频率传递
+id: evrel_592vc93u_rel.quan_2021_ua21_01
+metadata:
+  source_paper: quan2021_592vc93u
+  zotero_key: 592vc93u
+object: ent.rf_over_fiber_time_transfer_link
+predicate: PART-OF
+subject: ent.ntsc_56km_rf_precompensation_q21

@@ -1,0 +1,8 @@
+evidence: but at the cost of a bandwidth of only 50 cm⁻¹ ... cannot measure CH4
+id: evrel_AZ25GQE3_rel.han_2024_an19
+metadata:
+  source_paper: han2024
+  zotero_key: AZ25GQE3
+object: pri.bandwidth_power_tradeoff_long_path_comb
+predicate: BOUNDED-BY
+subject: met.spectral_coverage_h24

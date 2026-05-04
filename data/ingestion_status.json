@@ -558,12 +558,12 @@
   "photonics-09-00399": "duplicate",
   "prj-12-6-1274": "duplicate",
   "residual phase noise and time jitters of signal-chip digital": "out_of_scope",
-  "s00340-004-1547-x": "pending_uncertain",
-  "s00340-004-1548-9": "pending_uncertain",
-  "s00340-007-2892-3": "pending_uncertain",
-  "s00340-011-4710-1": "pending_uncertain",
+  "s00340-004-1547-x": "done",
+  "s00340-004-1548-9": "done",
+  "s00340-007-2892-3": "out_of_scope",
+  "s00340-011-4710-1": "done",
   "s00340-013-5439-9": "done",
-  "s00340-017-6731-x": "pending_uncertain",
+  "s00340-017-6731-x": "done",
   "s20180751": "done",
   "s41377-022-00947-w": "done",
   "s41467-018-05219-z": "done",
@@ -829,5 +829,9 @@
   "_topic_thermal noise limited optical cavity webster": "ultrastable-laser",
   "_topic_washburn_fiberlaser_lock": "optical-frequency-combs",
   "_topic_1-s2.0-S0370157317303253-main": "optical-frequency-combs",
-  "_topic_2020-The emergence of picokelvin physics-Chen_": "frequency-standards"
+  "_topic_2020-The emergence of picokelvin physics-Chen_": "frequency-standards",
+  "_topic_s00340-004-1547-x": "optical-frequency-combs",
+  "_topic_s00340-004-1548-9": "optical-frequency-combs",
+  "_topic_s00340-011-4710-1": "shared",
+  "_topic_s00340-017-6731-x": "frequency-standards"
 }

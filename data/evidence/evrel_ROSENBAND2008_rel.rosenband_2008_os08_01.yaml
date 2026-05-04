@@ -1,0 +1,8 @@
+evidence: Al⁺ single-ion optical clock
+id: evrel_ROSENBAND2008_rel.rosenband_2008_os08_01
+metadata:
+  source_paper: rosenband2008
+  zotero_key: ROSENBAND2008
+object: ent.trapped_ion_optical_clock
+predicate: PART-OF
+subject: ent.al_ion_quantum_logic_clock_r08

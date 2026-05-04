@@ -1,0 +1,8 @@
+evidence: absolute timing jitter 0.72 fs (1 Hz to 100 MHz)
+id: evrel_JNDRRJTZ_rel.hati_2013_01
+metadata:
+  source_paper: hati2013
+  zotero_key: JNDRRJTZ
+object: met.absolute_timing_jitter_ofd_hati2013
+predicate: CHARACTERIZED-BY
+subject: ent.ofd_photonic_rf_source_hati2013

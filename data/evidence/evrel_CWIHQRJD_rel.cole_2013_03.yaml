@@ -1,0 +1,9 @@
+evidence: According to the fluctuation-dissipation theorem, this motion is directly
+  linked to mechanical damping in the constituent materials
+id: evrel_CWIHQRJD_rel.cole_2013_03
+metadata:
+  source_paper: cole2013
+  zotero_key: CWIHQRJD
+object: pri.brownian_thermal_noise_fdt
+predicate: DERIVED-FROM
+subject: pri.crystalline_coating_low_brownian_noise

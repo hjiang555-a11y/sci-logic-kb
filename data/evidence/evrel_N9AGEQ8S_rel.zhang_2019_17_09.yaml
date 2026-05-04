@@ -1,0 +1,10 @@
+evidence: We use a custom, multistage thermal damping system... The shields are designed
+  to maximize their heat capacity, while the connections between the shields have
+  a low thermal conductance
+id: evrel_N9AGEQ8S_rel.zhang_2019_17_09
+metadata:
+  source_paper: zhang2017
+  zotero_key: N9AGEQ8S
+object: pri.multistage_thermal_damping_low_temp_z17
+predicate: IMPLEMENTS
+subject: meth.multistage_thermal_shield_implementation_z17

@@ -1,0 +1,8 @@
+evidence: electrically tuned over more than one free spectral range
+id: evrel_8MNIBZEW_rel.möhle_2013_o03
+metadata:
+  source_paper: mohle2013
+  zotero_key: 8MNIBZEW
+object: met.piezo_tuning_range_m13
+predicate: CHARACTERIZED-BY
+subject: ent.piezo_tunable_cavity_m13

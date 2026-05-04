@@ -1,0 +1,9 @@
+evidence: first prestabilize to low-finesse cavity, then lock to high-finesse ULE
+  cavity using PDH
+id: evrel_EGAZKLXR_rel.young_1999_13
+metadata:
+  source_paper: young1999
+  zotero_key: EGAZKLXR
+object: ent.laser_source
+predicate: CONDITIONED-BY
+subject: ent.fp_cavity_system

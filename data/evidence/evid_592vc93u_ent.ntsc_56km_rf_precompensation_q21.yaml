@@ -1,0 +1,16 @@
+definition: Level 2 实例，PART-OF ent.rf_over_fiber_time_transfer_link
+id: evid_592vc93u_ent.ntsc_56km_rf_precompensation_q21
+metadata:
+  original_file: /data/sci-logic-kb/topics/time-frequency-transfer/papers/quan2021_592vc93u.yaml
+  source_paper: quan2021_592vc93u
+  zotero_key: 592vc93u
+name: NTSC 56 km 微波预补偿光纤传递（Quan 2021）
+original_id: ent.ntsc_56km_rf_precompensation_q21
+properties:
+  crosstalk_mitigation: forward/backward use different microwave frequencies
+  demonstrated_value: 18000000000.0
+  instability: 1.8×10⁻¹⁵ @1 s, 4×10⁻¹⁸ @10⁴ s
+  length: 56 km
+  value_type: quantitative
+status: Determined
+type: Entity/Factor

@@ -1,0 +1,8 @@
+evidence: worst-case propagation loss of 0.31 dB/cm
+id: evrel_HW9TAY3W_rel.chiles_2018_18_02
+metadata:
+  source_paper: chiles2018
+  zotero_key: HW9TAY3W
+object: met.sind_propagation_loss_c18
+predicate: CHARACTERIZED-BY
+subject: ent.deuterated_sin_photonic_platform_c18

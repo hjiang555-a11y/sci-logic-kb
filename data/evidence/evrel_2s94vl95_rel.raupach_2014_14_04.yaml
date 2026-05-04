@@ -1,0 +1,8 @@
+evidence: phase-stabilized transfer of a chirped frequency
+id: evrel_2s94vl95_rel.raupach_2014_14_04
+metadata:
+  source_paper: raupach2014_2s94vl95
+  zotero_key: 2s94vl95
+object: pri.noise_cancellation_frequency_transfer
+predicate: ENABLED-BY
+subject: ent.ptb_149km_chirped_link_r14

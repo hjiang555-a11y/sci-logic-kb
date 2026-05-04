@@ -1,0 +1,8 @@
+evidence: optical phase detection technique
+id: evrel_P7A5Z647_rel.marra_2012_ar12_04
+metadata:
+  source_paper: marra2012
+  zotero_key: P7A5Z647
+object: pri.optical_phase_detection_fiber_link_m12
+predicate: ENABLED-BY
+subject: meth.optical_phase_detection_comb_transfer_m12

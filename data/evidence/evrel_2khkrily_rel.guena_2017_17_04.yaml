@@ -1,0 +1,8 @@
+evidence: optical-to-microwave link via frequency comb at both ends
+id: evrel_2khkrily_rel.guena_2017_17_04
+metadata:
+  source_paper: guena2017_2khkrily
+  zotero_key: 2khkrily
+object: ent.optical_frequency_comb
+predicate: CONDITIONED-BY
+subject: ent.syrte_ptb_1415km_link_g17

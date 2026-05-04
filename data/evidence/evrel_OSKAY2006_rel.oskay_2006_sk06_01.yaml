@@ -1,0 +1,9 @@
+evidence: optical frequency standard based on an ultraviolet transition in a single,
+  laser-cooled mercury ion
+id: evrel_OSKAY2006_rel.oskay_2006_sk06_01
+metadata:
+  source_paper: oskay2006
+  zotero_key: OSKAY2006
+object: ent.trapped_ion_optical_clock
+predicate: PART-OF
+subject: ent.hg_ion_optical_clock_nist_o06

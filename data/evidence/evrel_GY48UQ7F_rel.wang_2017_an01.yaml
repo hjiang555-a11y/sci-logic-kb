@@ -1,0 +1,9 @@
+evidence: III-V SOA gain section is heterogeneously bonded onto the Si photonic chip
+  as part of the comb laser
+id: evrel_GY48UQ7F_rel.wang_2017_an01
+metadata:
+  source_paper: wang2017
+  zotero_key: GY48UQ7F
+object: ent.iii_v_on_si_ultradense_comb_w17
+predicate: PART-OF
+subject: ent.iii_v_soa_gain_section_w17

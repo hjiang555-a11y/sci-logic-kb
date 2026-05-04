@@ -1,0 +1,9 @@
+evidence: The lowest drift is attained at a transmitted power of 40 nW, giving a fractional
+  frequency drift of −3×10⁻¹⁹/s
+id: evrel_JIZCUZLY_rel.robinson_2019_06
+metadata:
+  source_paper: robinson2019
+  zotero_key: JIZCUZLY
+object: met.cavity_frequency_drift_r19
+predicate: CHARACTERIZED-BY
+subject: ent.si_crystal_fp_cavity_4k_r19

@@ -1,0 +1,8 @@
+evidence: <1 rad root mean square phase noise integrated from 0.1 Hz to 10 MHz
+id: evrel_P4TCLWW2_rel.ma_2018_a18_02
+metadata:
+  source_paper: ma2018
+  zotero_key: P4TCLWW2
+object: met.integrated_phase_noise_750mhz_yb_m18
+predicate: CHARACTERIZED-BY
+subject: ent.yb_fiber_750mhz_comb_m18

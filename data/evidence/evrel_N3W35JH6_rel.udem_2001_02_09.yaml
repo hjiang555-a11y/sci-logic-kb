@@ -1,0 +1,9 @@
+evidence: This work has now culminated in a compact and reliable all-solid-state optical
+  frequency synthesizer
+id: evrel_N3W35JH6_rel.udem_2001_02_09
+metadata:
+  source_paper: udem2002
+  zotero_key: N3W35JH6
+object: meth.optical_frequency_counting
+predicate: OPERATIONALIZED-AS
+subject: met.optical_frequency_measurement_accuracy_u02

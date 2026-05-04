@@ -1,0 +1,12 @@
+definition: ULE cavity-stabilized diode laser used as optical frequency reference;
+  comb locked to it during flight.
+id: evid_BWX8NI2P_ent.onboard_cavity_reference_laser
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/lezius2016.yaml
+  source_paper: lezius2016
+  zotero_key: BWX8NI2P
+name: Onboard cavity-stabilized 1560 nm reference laser
+original_id: ent.onboard_cavity_reference_laser
+properties: {}
+status: Determined
+type: Entity/Factor

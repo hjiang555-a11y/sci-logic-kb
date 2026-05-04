@@ -1,0 +1,9 @@
+evidence: At room temperature, we found a fractional length drift rate L^-1 d∆L/dt
+  = −(1.74±0.01)×10^-8 yr^-1
+id: evrel_JP6J4EQD_rel.kwong_2018_04
+metadata:
+  source_paper: kwong2018
+  zotero_key: JP6J4EQD
+object: met.nexcera_length_drift_rate_k18
+predicate: OPERATIONALIZED-AS
+subject: pri.nexcera_dimensional_stability

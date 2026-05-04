@@ -1,0 +1,10 @@
+evidence: In the non-common-view comparisons, a low instability of the atomic clock
+  is particularly important; the performance of such comparisons will be limited by
+  the on-board clock.
+id: evrel_SCI-ESA-HRE-ESR-ISOC_rel.cacciapuoti_2017_17_18
+metadata:
+  source_paper: cacciapuoti2017
+  zotero_key: SCI-ESA-HRE-ESR-ISOC
+object: ent.space_lattice_optical_clock_sloc
+predicate: BOUNDED-BY
+subject: pri.non_common_view_clock_comparison

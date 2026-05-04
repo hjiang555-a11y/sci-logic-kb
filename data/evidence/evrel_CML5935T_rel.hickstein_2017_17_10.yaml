@@ -1,0 +1,9 @@
+evidence: The on-chip f_CEO signal-to-noise ratio is measured and optimized through
+  the on-chip χ²+χ³ self-referencing stabilization method, achieving 37 dB SNR.
+id: evrel_CML5935T_rel.hickstein_2017_17_10
+metadata:
+  source_paper: hickstein2017
+  zotero_key: CML5935T
+object: meth.on_chip_f2f_stabilization
+predicate: OPERATIONALIZED-AS
+subject: met.fceo_snr_on_chip_h17

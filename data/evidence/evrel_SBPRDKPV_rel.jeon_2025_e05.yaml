@@ -1,0 +1,8 @@
+evidence: achieving a frequency instability of 6.3×10−15 at a 16-ms averaging time
+id: evrel_SBPRDKPV_rel.jeon_2025_e05
+metadata:
+  source_paper: jeon2025
+  zotero_key: SBPRDKPV
+object: met.fractional_freq_instability_jeon25
+predicate: CHARACTERIZED-BY
+subject: ent.fiber_interferometer

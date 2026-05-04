@@ -1,0 +1,11 @@
+evidence: '"Overview of the spectral regions where experiments of dual-comb spectroscopy
+  have been reported."
+
+  '
+id: evrel_RZME5CH8_rel.picqué_2019_19_08
+metadata:
+  source_paper: picque2019
+  zotero_key: RZME5CH8
+object: met.comb_spectroscopy_spectral_coverage
+predicate: CHARACTERIZED-BY
+subject: ent.dual_comb_spectrometer

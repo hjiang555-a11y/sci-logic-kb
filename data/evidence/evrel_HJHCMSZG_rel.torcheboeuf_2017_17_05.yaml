@@ -1,0 +1,8 @@
+evidence: EOM-based repetition rate stabilization of a DPSSL is presented
+id: evrel_HJHCMSZG_rel.torcheboeuf_2017_17_05
+metadata:
+  source_paper: torcheboeuf2017
+  zotero_key: HJHCMSZG
+object: meth.eom_pzt_cascade_frep_lock
+predicate: OPERATIONALIZED-AS
+subject: met.frep_lock_bandwidth_t17

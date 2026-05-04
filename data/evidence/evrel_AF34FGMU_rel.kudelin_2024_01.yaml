@@ -1,0 +1,12 @@
+evidence: '"self-injection-locked integrated lasers are stabilized to a miniature
+  Fabry–Pérot cavity, and the frequency gap between the lasers is divided with an
+  efficient dark soliton frequency comb."
+
+  '
+id: evrel_AF34FGMU_rel.kudelin_2024_01
+metadata:
+  source_paper: kudelin2024
+  zotero_key: AF34FGMU
+object: meth.pdh_locking
+predicate: ENABLED-BY
+subject: ent.chip_photonic_mw_oscillator_k24

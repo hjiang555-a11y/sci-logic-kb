@@ -1,0 +1,17 @@
+definition: '卫星与地面站之间以脉冲激光承载时间（脉冲到达时刻）与频率（脉冲 train 重频）， 高时间分辨（~ps）+ 大非模糊区间；地面模拟 link
+  budget + 动态多普勒， 端到端 instability 达到 10⁻¹⁸ 级。
+
+  '
+id: evid_8pxzl98k_ent.optical_satellite_ground_link_s21
+metadata:
+  original_file: /data/sci-logic-kb/topics/time-frequency-transfer/papers/shen2021_8pxzl98k.yaml
+  source_paper: shen2021_8pxzl98k
+  zotero_key: 8pxzl98k
+name: 光学卫星-地面时频传递链路（脉冲激光，Shen 2021 模拟）
+original_id: ent.optical_satellite_ground_link_s21
+properties:
+  carrier: pulsed laser (fs–ps)
+  demonstrated_instability: 10⁻¹⁸ level
+  orbit_conclusion: high orbits favored
+status: Determined
+type: Entity/Factor

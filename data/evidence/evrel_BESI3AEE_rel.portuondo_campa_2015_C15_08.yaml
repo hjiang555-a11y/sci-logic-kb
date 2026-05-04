@@ -1,0 +1,9 @@
+evidence: The −171 dBc/Hz single-source phase noise floor at 9.6 GHz is achieved through
+  the DPSSL comb with PM pulse interleaver architecture.
+id: evrel_BESI3AEE_rel.portuondo_campa_2015_C15_08
+metadata:
+  source_paper: portuondo-campa2015
+  zotero_key: BESI3AEE
+object: meth.dpssl_interleaver_photonic_microwave_pc15
+predicate: OPERATIONALIZED-AS
+subject: met.photonic_microwave_phase_noise_pc15

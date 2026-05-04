@@ -1,0 +1,9 @@
+evidence: fiber interferometer approach suited for agile lasers; trade-off vs FP cavity
+  stability
+id: evrel_T8JR8IJ7_rel.jiang_2010_11
+metadata:
+  source_paper: jiang2010
+  zotero_key: T8JR8IJ7
+object: ent.fp_cavity_system
+predicate: COMPETES-WITH
+subject: ent.fiber_interferometer

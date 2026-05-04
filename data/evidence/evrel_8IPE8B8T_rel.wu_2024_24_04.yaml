@@ -1,0 +1,9 @@
+evidence: visible-to-ultraviolet frequency comb generation in lithium niobate nanophotonic
+  waveguides
+id: evrel_8IPE8B8T_rel.wu_2024_24_04
+metadata:
+  source_paper: wu2024
+  zotero_key: 8IPE8B8T
+object: ent.optical_frequency_comb
+predicate: PART-OF
+subject: ent.tf_lin_uv_vis_comb_w24

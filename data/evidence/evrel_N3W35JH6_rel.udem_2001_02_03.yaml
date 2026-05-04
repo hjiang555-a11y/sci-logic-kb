@@ -1,0 +1,9 @@
+evidence: the modes of a mode-locked femtosecond laser can be used as a precise ruler
+  in frequency space
+id: evrel_N3W35JH6_rel.udem_2001_02_03
+metadata:
+  source_paper: udem2002
+  zotero_key: N3W35JH6
+object: pri.femtosecond_comb_frequency_ruler
+predicate: ENABLED-BY
+subject: ent.optical_frequency_comb

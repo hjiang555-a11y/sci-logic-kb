@@ -1,0 +1,8 @@
+evidence: high repetition rates in the range of 10 to 1000 gigahertz
+id: evrel_2ADYRC8C_rel.kippenberg_2007_11_08
+metadata:
+  source_paper: kippenberg2011
+  zotero_key: 2ADYRC8C
+object: met.microcomb_repetition_rate_range
+predicate: CHARACTERIZED-BY
+subject: ent.microresonator_frequency_comb

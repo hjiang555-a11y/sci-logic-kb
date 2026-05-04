@@ -1,0 +1,9 @@
+evidence: four branches for application ... each branch produces a particular wavelength
+  separately at 698 nm, 729 nm, 1068 nm, and 1156 nm
+id: evrel_BPQDL4DN_rel.zhang_2022_22B_02
+metadata:
+  source_paper: zhang2022b
+  zotero_key: BPQDL4DN
+object: ent.all_pm_erfiber_comb_z22b
+predicate: PART-OF
+subject: ent.multi_branch_supercontinuum_z22b

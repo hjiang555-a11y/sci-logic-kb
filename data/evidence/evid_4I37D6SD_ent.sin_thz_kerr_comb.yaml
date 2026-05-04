@@ -1,0 +1,13 @@
+definition: '八倍频程展宽的Si₃N₄微腔DKS梳，重复频率约1 THz，用于f-2f自参考锁定载波包络 偏频f_ceo，为合成器提供光频刻度锁定。
+
+  '
+id: evid_4I37D6SD_ent.sin_thz_kerr_comb
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/spencer2018.yaml
+  source_paper: spencer2018
+  zotero_key: 4I37D6SD
+name: Si₃N₄ 1 THz间距微腔梳
+original_id: ent.sin_thz_kerr_comb
+properties: {}
+status: Determined
+type: Entity/Factor

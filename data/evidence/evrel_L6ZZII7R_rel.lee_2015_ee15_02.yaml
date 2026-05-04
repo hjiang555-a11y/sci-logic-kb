@@ -1,0 +1,8 @@
+evidence: pure loss modulation bandwidth exceeding 5 MHz
+id: evrel_L6ZZII7R_rel.lee_2015_ee15_02
+metadata:
+  source_paper: lee2015
+  zotero_key: L6ZZII7R
+object: pri.monolithic_sesam_graphene_bypass_gain_lifetime_l15
+predicate: CHARACTERIZED-BY
+subject: ent.monolithic_sesam_graphene_device_l15

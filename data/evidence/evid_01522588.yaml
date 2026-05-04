@@ -1,0 +1,10 @@
+definition: Automatic extraction from 01522588. Details pending deep scan.
+id: evid_01522588
+metadata:
+  source_paper: 01522588
+  status: processed_auto
+name: Evidence from 01522588
+properties:
+  source_pdf: 01522588
+  status: unverified
+type: Entity/Factor

@@ -1,0 +1,10 @@
+evidence: The demonstration that pulses from a mode-locked oscillator could be spectrally
+  broadened to beyond an octave of bandwidth using photonic crystal fibre represented
+  a revolution in OFCs
+id: evrel_BRKZG9H2_rel.gaeta_2019_ae19_02
+metadata:
+  source_paper: gaeta2019
+  zotero_key: BRKZG9H2
+object: pri.supercontinuum_octave_spanning
+predicate: ENABLED-BY
+subject: ent.chip_scg_waveguide_g19

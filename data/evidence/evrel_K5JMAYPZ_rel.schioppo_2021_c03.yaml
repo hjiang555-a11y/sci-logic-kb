@@ -1,0 +1,12 @@
+evidence: '"we report a comparison of two geographically separated lasers, over the
+  longest ever reported metrological optical fibre link network, measuring 2220 km
+  in length, at a state-of-the-art fractional-frequency instability of 7×10⁻¹⁷."
+
+  '
+id: evrel_K5JMAYPZ_rel.schioppo_2021_c03
+metadata:
+  source_paper: schioppo2021
+  zotero_key: K5JMAYPZ
+object: ent.european_fiber_network_sc21
+predicate: DEPENDS-ON
+subject: ent.npl_ule_cavity_laser_sc21

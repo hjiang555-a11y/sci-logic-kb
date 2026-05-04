@@ -1,0 +1,14 @@
+evidence: '"The two combs of electro-optic-modulator-based systems can share a number
+  of components. With some of these set-ups, the mutual-coherence time exceeds 1 s.
+  Such designs without any stabilization electronics greatly facilitate dual-comb
+  spectroscopy and hold promise for transportable or even portable compact and easy-to-use
+  interferometers."
+
+  '
+id: evrel_RZME5CH8_rel.picqué_2019_19_02
+metadata:
+  source_paper: picque2019
+  zotero_key: RZME5CH8
+object: ent.electro_optic_frequency_comb
+predicate: ENABLED-BY
+subject: meth.dual_comb_spectroscopy

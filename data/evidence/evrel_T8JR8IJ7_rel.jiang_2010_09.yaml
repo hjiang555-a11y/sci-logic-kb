@@ -1,0 +1,8 @@
+evidence: servo bandwidth ~20 kHz
+id: evrel_T8JR8IJ7_rel.jiang_2010_09
+metadata:
+  source_paper: jiang2010
+  zotero_key: T8JR8IJ7
+object: met.servo_bandwidth_fiber
+predicate: CHARACTERIZED-BY
+subject: ent.agile_laser_system

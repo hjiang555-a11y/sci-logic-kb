@@ -1,0 +1,8 @@
+evidence: fiber-frequency comb ... based on polarization-maintaining fiber
+id: evrel_LMFFEUFX_rel.sinclair_2015_in15_01
+metadata:
+  source_paper: sinclair2015
+  zotero_key: LMFFEUFX
+object: ent.er_fiber_frequency_comb
+predicate: PART-OF
+subject: ent.nist_compact_pm_fiber_comb_s15

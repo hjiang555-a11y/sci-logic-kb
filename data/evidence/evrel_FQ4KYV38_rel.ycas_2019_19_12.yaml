@@ -1,0 +1,8 @@
+evidence: 0.0067 cm⁻¹ (200 MHz) resolution
+id: evrel_FQ4KYV38_rel.ycas_2019_19_12
+metadata:
+  source_paper: ycas2019
+  zotero_key: FQ4KYV38
+object: met.midir_dcs_resolution_y19
+predicate: CHARACTERIZED-BY
+subject: ent.midir_dcs_vocs_y19

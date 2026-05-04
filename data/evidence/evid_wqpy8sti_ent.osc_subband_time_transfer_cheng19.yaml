@@ -1,0 +1,16 @@
+definition: '在商用 WDM 系统的 OSC（光监控信道）内开辟一子带，仅加装 sub-OSC 滤波器即可 共传时间信号，与现有 OSC 及数据业务不冲突；双向同波长最大化对称。
+
+  '
+id: evid_wqpy8sti_ent.osc_subband_time_transfer_cheng19
+metadata:
+  original_file: /data/sci-logic-kb/topics/time-frequency-transfer/papers/cheng2019_wqpy8sti.yaml
+  source_paper: cheng2019_wqpy8sti
+  zotero_key: wqpy8sti
+name: OSC 子带时间传递（商用 WDM 系统复用）
+original_id: ent.osc_subband_time_transfer_cheng19
+properties:
+  bidir_symmetry: same or near-identical wavelengths both directions
+  host: commercial WDM + OSC
+  length: 100 km (laboratory)
+status: Determined
+type: Entity/Factor

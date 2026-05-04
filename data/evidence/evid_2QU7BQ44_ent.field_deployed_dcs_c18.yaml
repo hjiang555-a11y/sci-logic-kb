@@ -1,0 +1,20 @@
+definition: '集装箱/拖车式自主运行平台，发射稀疏分布的 km 尺度光束阵列覆盖多平方公里区域， Er:fiber 双梳光源 + 开放路径探测 + 大气反演模型实现：
+  (1) 连续时间分辨的痕量气体浓度监测； (2) 空间多点反演定位气体源位置与流量； (3) 自动化 24/7 运行，应用于油气设施排放监管。
+
+  '
+id: evid_2QU7BQ44_ent.field_deployed_dcs_c18
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/coburn2018.yaml
+  source_paper: coburn2018
+  zotero_key: 2QU7BQ44
+name: 野外部署双梳光谱仪系统（Coburn 2018）
+original_id: ent.field_deployed_dcs_c18
+properties:
+  beam_range: ~1 km 开放路径
+  detection_limit: 1.6 g/min @ 1 km（CH₄）
+  platform: 移动集装箱 + 可自主运行
+  region_coverage: 数平方公里
+  spectral_coverage: ~1550–1700 nm（Er:fiber 梳波段 + CH₄ 2ν₃ 带）
+  target_species: CH₄（主），CO₂ / H₂O / 其他 HITRAN 物种
+status: Determined
+type: Entity/Factor

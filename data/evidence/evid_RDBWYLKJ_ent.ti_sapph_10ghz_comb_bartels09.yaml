@@ -1,0 +1,24 @@
+definition: '紧凑腔长钛宝石 Kerr 透镜锁模（KLM）飞秒激光器，f_rep = 10 GHz 基频， <40 fs 脉冲、>350 THz 光谱宽度、>50
+  000 梳齿、1.2 W 平均功率。 经非线性光纤展宽至覆盖倍频程后进入 f-2f 干涉仪 → f_0 自参考锁定。 单个 10-GHz 模可经衍射光栅直接空间分辨，单齿功率
+  >1 nW（光谱仪校准可用）。
+
+  '
+id: evid_RDBWYLKJ_ent.ti_sapph_10ghz_comb_bartels09
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/bartels2009.yaml
+  source_paper: bartels2009
+  zotero_key: RDBWYLKJ
+name: 10 GHz 自参考 Ti:sapph 频率梳（Bartels 2009）
+original_id: ent.ti_sapph_10ghz_comb_bartels09
+properties:
+  average_power: 1.2 W
+  mode_count: '>50 000'
+  mode_count_fwhm: ~1200（FWHM 内）
+  mode_locking: Kerr 透镜锁模（KLM），紧聚焦 + 色散平衡
+  per_mode_power: '>0.5 mW/齿（FWHM 内）、经空间分辨后 >1 nW'
+  pulse_duration: <40 fs
+  repetition_rate: 10 GHz（基频，非谐波放大）
+  self_reference: f-2f 自参考，锁至 Cs 溯源 RF
+  spectral_span: ~350 THz
+status: Determined
+type: Entity/Factor

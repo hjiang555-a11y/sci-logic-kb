@@ -1,0 +1,8 @@
+evidence: quantum logic ... Al⁺ clock
+id: evrel_ROSENBAND2008_rel.rosenband_2008_os08_02
+metadata:
+  source_paper: rosenband2008
+  zotero_key: ROSENBAND2008
+object: pri.quantum_logic_clock_readout
+predicate: OPERATIONALIZED-AS
+subject: ent.al_ion_quantum_logic_clock_r08

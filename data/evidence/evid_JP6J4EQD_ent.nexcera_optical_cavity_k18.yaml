@@ -1,0 +1,15 @@
+definition: '120 mm 长双锥形 NEXCERA N118C 陶瓷间隔体（中心凸缘直径 90 mm，端面直径 30 mm）， 两端光学接触 ULE
+  凹面镜（R = 0.5 m，1064 nm 高反）。 精细度 6.2×10⁴，线宽 20 kHz（FWHM）。 竖直放置于真空腔中，硅橡胶阻尼缓冲支撑，热屏蔽
+  + PID 温控。
+
+  '
+id: evid_JP6J4EQD_ent.nexcera_optical_cavity_k18
+metadata:
+  original_file: /data/sci-logic-kb/topics/ultrastable-laser/papers/kwong2018.yaml
+  source_paper: kwong2018
+  zotero_key: JP6J4EQD
+name: NEXCERA N118C 光学谐振腔
+original_id: ent.nexcera_optical_cavity_k18
+properties: {}
+status: Determined
+type: Entity/Factor

@@ -1,0 +1,9 @@
+evidence: "\"f_CEO servo bandwidth limited to 20 kHz by pump current modulation actuator;\n\
+  \ pump RIN coupling to f_CEO sets residual phase noise floor at 438 mrad\"\n"
+id: evrel_HG8TSPT6_rel.lesko_2020_006
+metadata:
+  source_paper: lesko2020
+  zotero_key: HG8TSPT6
+object: pri.pump_rin_to_fceo_coupling
+predicate: BOUNDED-BY
+subject: ent.ghz_turnkey_erfiber_comb_l20

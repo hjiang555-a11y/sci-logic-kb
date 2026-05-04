@@ -1,0 +1,8 @@
+evidence: 光腔衰荡光谱技术 (CRDS)
+id: evrel_ZSWYS26E_rel.rao_2022_ao22_02
+metadata:
+  source_paper: rao2022
+  zotero_key: ZSWYS26E
+object: meth.cavity_enhanced_dcs
+predicate: ENABLED-BY
+subject: ent.multi_branch_er_comb_crds_r22

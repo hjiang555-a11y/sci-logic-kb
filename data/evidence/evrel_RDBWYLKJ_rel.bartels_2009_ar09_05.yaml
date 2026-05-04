@@ -1,0 +1,8 @@
+evidence: f0 is measured with a nonlinear f-2f interferometer
+id: evrel_RDBWYLKJ_rel.bartels_2009_ar09_05
+metadata:
+  source_paper: bartels2009
+  zotero_key: RDBWYLKJ
+object: pri.self_referencing_f2f
+predicate: ENABLED-BY
+subject: meth.klm_10ghz_comb_self_reference

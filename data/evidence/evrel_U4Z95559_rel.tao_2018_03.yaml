@@ -1,0 +1,8 @@
+evidence: the design holds impact of higher than 100g
+id: evrel_U4Z95559_rel.tao_2018_03
+metadata:
+  source_paper: tao2018
+  zotero_key: U4Z95559
+object: met.impact_resistance_t18
+predicate: CHARACTERIZED-BY
+subject: ent.robust_cuboid_cavity_t18

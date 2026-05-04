@@ -1,0 +1,9 @@
+evidence: without feo the line spacing at threshold would be 60×FSR and undetectable
+  electronically
+id: evrel_BG93PZPK_rel.papp_2013_13_12
+metadata:
+  source_paper: papp2013
+  zotero_key: BG93PZPK
+object: meth.cw_pumped_microcomb_generation
+predicate: COMPETES-WITH
+subject: meth.parametric_seeding_microcomb_p13

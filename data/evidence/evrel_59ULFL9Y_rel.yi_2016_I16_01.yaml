@@ -1,0 +1,9 @@
+evidence: electro-optical laser frequency comb spanning ~100 nm centered near 1560
+  nm in the H band
+id: evrel_59ULFL9Y_rel.yi_2016_I16_01
+metadata:
+  source_paper: yi2016
+  zotero_key: 59ULFL9Y
+object: met.eo_comb_spectral_span_y16
+predicate: CHARACTERIZED-BY
+subject: ent.line_referenced_eo_comb_y16

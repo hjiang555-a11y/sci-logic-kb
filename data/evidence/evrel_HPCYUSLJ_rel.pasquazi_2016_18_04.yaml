@@ -1,0 +1,9 @@
+evidence: The Lugiato-Lefever equation has proved to be an effective tool for micro-comb
+  modelling which has pushed the field towards demonstration of temporal cavity solitons
+id: evrel_HPCYUSLJ_rel.pasquazi_2016_18_04
+metadata:
+  source_paper: pasquazi2018
+  zotero_key: HPCYUSLJ
+object: pri.lugiato_lefever_equation
+predicate: DERIVED-FROM
+subject: pri.dissipative_kerr_soliton

@@ -1,0 +1,10 @@
+evidence: the subcomb offset from equidistance can be tuned through zero by changing
+  the line spacing … simply tuning the subcomb offset to zero with Δν does not necessarily
+  yield the type of equidistant comb
+id: evrel_BG93PZPK_rel.papp_2013_13_14
+metadata:
+  source_paper: papp2013
+  zotero_key: BG93PZPK
+object: pri.microcomb_subcomb_offset_p13
+predicate: BOUNDED-BY
+subject: met.microcomb_equidistance_offset_p13

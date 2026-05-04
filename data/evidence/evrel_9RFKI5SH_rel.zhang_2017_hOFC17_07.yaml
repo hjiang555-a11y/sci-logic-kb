@@ -1,0 +1,9 @@
+evidence: resulting in-loop frequency instability is about 9.1 × 10⁻¹⁸ with an average
+  time of 1 s
+id: evrel_9RFKI5SH_rel.zhang_2017_hOFC17_07
+metadata:
+  source_paper: zhang2017
+  zotero_key: 9RFKI5SH
+object: met.fceo_instability_z17
+predicate: CHARACTERIZED-BY
+subject: ent.hybrid_ml_erfiber_comb_z17

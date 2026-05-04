@@ -1,0 +1,9 @@
+evidence: Yb-fiber similariton oscillator with frep=136 MHz ... cladding-pumped chirped-pulse
+  fiber amplifier
+id: evrel_H4DKWZWF_rel.hartl_2007_07_03
+metadata:
+  source_paper: hartl2007
+  zotero_key: H4DKWZWF
+object: ent.cavity_enhanced_yb_comb_h07
+predicate: PART-OF
+subject: ent.yb_similariton_cpa_h07

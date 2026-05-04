@@ -1,0 +1,9 @@
+evidence: we demonstrate electro-optic generation of a 160 THz bandwidth supercontinuum
+  and realize f-2f self-referencing
+id: evrel_FU92Y8XG_rel.beha_2017_01
+metadata:
+  source_paper: beha2017
+  zotero_key: FU92Y8XG
+object: meth.eom_comb_self_referencing
+predicate: OPERATIONALIZED-AS
+subject: ent.eom_frequency_comb

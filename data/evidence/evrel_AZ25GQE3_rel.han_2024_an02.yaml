@@ -1,0 +1,9 @@
+evidence: The output power of each comb can reach 1 W after amplification in a two-stage
+  high-power erbium-doped fibre amplifier
+id: evrel_AZ25GQE3_rel.han_2024_an02
+metadata:
+  source_paper: han2024
+  zotero_key: AZ25GQE3
+object: ent.long_path_dcs_h24
+predicate: PART-OF
+subject: ent.high_power_erbium_comb_h24

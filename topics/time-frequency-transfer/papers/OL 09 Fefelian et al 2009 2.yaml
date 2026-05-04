@@ -1,4 +1,4 @@
-# Kéfélian ???? — High-resolution optical frequency dissemination on a telecommunications netwo... [evidence]
+#  ???? — OL 09 Fefelian et al 2009 2 [evidence]
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
@@ -6,16 +6,11 @@ meta:
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
-  reliability: high
-  title: "High-resolution optical frequency dissemination on a telecommunications network with data traffic"
-  first_author: "Kéfélian"
-  authors: ["Fabien Kéfélian", "Olivier Lopez", "Haifeng Jiang", "Christian Chardonnet", "Anne Amy-Klein", "Giorgio Santarelli"]
-  journal: "Optics Letters"
-  volume: 34
-  pages: 1573
-  doi: 10.1364/OL.34.001573
+  reliability: low
+  title: "OL 09 Fefelian et al 2009 2"
+  first_author: ""
   note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+    [批量提取] 元数据来源：placeholder (needs expert review)。内容待专家提取。
 entities: []
 principles: []
 methods: []

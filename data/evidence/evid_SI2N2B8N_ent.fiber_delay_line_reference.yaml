@@ -1,0 +1,14 @@
+definition: '以长光纤为延迟介质的频率参考系统类，以光纤延迟稳定为核心机制，对比 FP 腔参考系统。 该节点作为 `ent.titanium_fiber_spool_l09`
+  等具体光纤线轴/盘绕设计的抽象父类。
+
+  '
+id: evid_SI2N2B8N_ent.fiber_delay_line_reference
+metadata:
+  original_file: /data/sci-logic-kb/topics/ultrastable-laser/papers/li2009a.yaml
+  source_paper: li2009a
+  zotero_key: SI2N2B8N
+name: 光纤延迟线参考系统（类级别实体）
+original_id: ent.fiber_delay_line_reference
+properties: {}
+status: Determined
+type: Entity/Factor

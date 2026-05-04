@@ -1,0 +1,25 @@
+definition: "由 SiO2 包覆、800 nm 厚的 AlN 薄膜刻蚀而成的矩形波导，宽度可调 400–5100 nm， 入/出端渐变至 150 nm\
+  \ 宽以改善耦合。波导强限域把 1560 nm 泵浦场压缩至亚波长模面， 显著提升有效非线性系数 γ；同时 AlN 薄膜保留 c 轴竖直取向的六角柱结构，使 竖直（TM）方向存在强\
+  \ χ² 张量分量。单根波导内同时发生：\n  · χ³ 主导的 SPM + 四波混频 → 超连续展宽 500–4000 nm；\n  · 模式交叉（TE00↔TM10）导致局部相位匹配\
+  \ → 800–1200 nm 强度增强 ~20 dB；\n  · χ² 主导的 SHG → 780 nm 附近倍频光与超连续谱天然时域重叠；\n  · 泵浦展宽区与长波色散波的\
+  \ DFG → 3500–5500 nm 中红外宽带光。\n输出光经 780 nm 带通滤波后单片光电探测即可得到 f_CEO 拍频。\n"
+id: evid_CML5935T_ent.chi2_chi3_waveguide_fceo_h17
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/hickstein2017.yaml
+  source_paper: hickstein2017
+  zotero_key: CML5935T
+name: AlN 片上 χ²+χ³ 双非线性超连续波导（Hickstein 2017 系统）
+original_id: ent.chi2_chi3_waveguide_fceo_h17
+properties:
+  coupling: aspheric NA=0.6 耦入；微物镜 NA=0.85 / InF3 多模光纤 butt 耦出
+  facet_taper_width: 150 nm（改善耦合）
+  fceo_detection: 780 nm 带通 + 光电二极管（无干涉仪、无延迟线）
+  fceo_feedback: FPGA 数字伺服 → Er 梳泵浦二极管电流
+  material: AlN 薄膜（c 轴竖直；六角柱多晶）on SiO2（全 SiO2 包覆）
+  material_n2: 2.3×10⁻¹⁹ m²/W（与 Si3N4 相当）
+  pump_coupled_power: ~80 mW → 0.8 nJ/脉冲（波导内）
+  pump_laser: turnkey Er 光纤频率梳，1560 nm，~80 fs，100 MHz 重频
+  thickness: 800 nm
+  width: 400–5100 nm（工艺扫描）
+status: Determined
+type: Entity/Factor

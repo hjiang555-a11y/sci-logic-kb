@@ -1,0 +1,25 @@
+definition: '基于 SiO₂ 微环形谐振腔（silicon chip 上热回流成型）的微梳平台。 Q 因子 >10⁸（超高 Q），利用 SiO₂ 在 ~1550
+  nm 附近材料色散与几何色散补偿 实现反常色散，可产生超过一个倍频程的频率梳（1000–2200 nm）。 首次微梳演示平台（Del''Haye et al.
+  2007）。
+
+  '
+id: evid_2ADYRC8C_ent.silica_microtoroid_comb
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/kippenberg2011.yaml
+  source_paper: kippenberg2011
+  zotero_key: 2ADYRC8C
+name: 二氧化硅微环形腔频率梳
+original_id: ent.silica_microtoroid_comb
+properties:
+  Q_factor: '>10⁸（超高 Q）'
+  coupling_method: 锥形光纤渐逝波耦合（tapered fiber）
+  demonstrated_bandwidth: '>1 octave（1000–2200 nm）'
+  demonstrated_repetition_rate: 86 GHz（首次演示）、375 GHz
+  dispersion_engineering: 材料色散补偿几何色散，~1550 nm 附近零色散
+  material: 熔融石英（fused silica）
+  metric_coverage_octaves: 1.0
+  metric_coverage_range: !!python/tuple
+  - 1000.0
+  - 2200.0
+status: Determined
+type: Entity/Factor

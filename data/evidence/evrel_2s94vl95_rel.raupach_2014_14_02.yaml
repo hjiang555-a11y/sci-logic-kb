@@ -1,0 +1,8 @@
+evidence: transfer of a chirped frequency as a tool for synchronization and time transfer
+id: evrel_2s94vl95_rel.raupach_2014_14_02
+metadata:
+  source_paper: raupach2014_2s94vl95
+  zotero_key: 2s94vl95
+object: pri.chirped_carrier_symmetric_delay_cancellation
+predicate: OPERATIONALIZED-AS
+subject: ent.ptb_149km_chirped_link_r14

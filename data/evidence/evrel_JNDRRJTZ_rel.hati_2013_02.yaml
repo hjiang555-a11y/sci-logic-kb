@@ -1,0 +1,8 @@
+evidence: state-of-the-art RF signal generation from optical frequency division
+id: evrel_JNDRRJTZ_rel.hati_2013_02
+metadata:
+  source_paper: hati2013
+  zotero_key: JNDRRJTZ
+object: pri.optical_frequency_division_rf_generation
+predicate: IMPLEMENTS
+subject: ent.ofd_photonic_rf_source_hati2013

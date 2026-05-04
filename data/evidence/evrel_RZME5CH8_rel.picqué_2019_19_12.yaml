@@ -1,0 +1,11 @@
+evidence: '"As dual-comb interferometers often harness ultrashort-pulse lasers, they
+  enable novel nonlinear broadband spectroscopy."
+
+  '
+id: evrel_RZME5CH8_rel.picqué_2019_19_12
+metadata:
+  source_paper: picque2019
+  zotero_key: RZME5CH8
+object: pri.comb_nonlinear_spectroscopy
+predicate: ENABLED-BY
+subject: meth.dual_comb_spectroscopy

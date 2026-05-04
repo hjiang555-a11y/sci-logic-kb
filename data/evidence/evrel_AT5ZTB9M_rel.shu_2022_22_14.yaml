@@ -1,0 +1,9 @@
+evidence: a highly reconfigurable microwave photonic filter with a high level of integration
+  is constructed using a time-stretch approach
+id: evrel_AT5ZTB9M_rel.shu_2022_22_14
+metadata:
+  source_paper: shu2022
+  zotero_key: AT5ZTB9M
+object: meth.microcomb_reconfigurable_mpf_s22
+predicate: OPERATIONALIZED-AS
+subject: met.mpf_reconfiguration_time_s22

@@ -1,0 +1,8 @@
+evidence: single- and multiple-soliton formation, soliton crystals and breather instabilities
+id: evrel_BRKZG9H2_rel.gaeta_2019_ae19_11
+metadata:
+  source_paper: gaeta2019
+  zotero_key: BRKZG9H2
+object: pri.dissipative_kerr_soliton
+predicate: DERIVED-FROM
+subject: pri.soliton_crystal_multistability

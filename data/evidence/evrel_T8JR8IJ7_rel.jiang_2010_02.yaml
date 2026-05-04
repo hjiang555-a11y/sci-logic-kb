@@ -1,0 +1,8 @@
+evidence: Allan deviation ~10^-14 at 0.1-1 s
+id: evrel_T8JR8IJ7_rel.jiang_2010_02
+metadata:
+  source_paper: jiang2010
+  zotero_key: T8JR8IJ7
+object: met.allan_deviation_fiber
+predicate: CHARACTERIZED-BY
+subject: ent.agile_laser_system

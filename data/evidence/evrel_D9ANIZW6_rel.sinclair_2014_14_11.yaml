@@ -1,0 +1,9 @@
+evidence: completely based on PM fiber ... no free-space sections, reducing sensitivity
+  to vibration and alignment drift
+id: evrel_D9ANIZW6_rel.sinclair_2014_14_11
+metadata:
+  source_paper: sinclair2014
+  zotero_key: D9ANIZW6
+object: pri.pm_fiber_splice_vibration_immunity
+predicate: ENABLED-BY
+subject: ent.ruggedized_field_comb_s14

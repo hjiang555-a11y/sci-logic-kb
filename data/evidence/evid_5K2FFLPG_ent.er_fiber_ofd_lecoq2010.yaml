@@ -1,0 +1,13 @@
+definition: '两台独立Er:fiber飞秒梳共同锁定至1.55 µm超稳CW激光，分别提取11.55 GHz谐波 微波信号并相互比对，用于表征微波提取噪声底，并驱动铯喷泉时钟本地振荡器。
+
+  '
+id: evid_5K2FFLPG_ent.er_fiber_ofd_lecoq2010
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/lecoq2010.yaml
+  source_paper: lecoq2010
+  zotero_key: 5K2FFLPG
+name: LNE-SYRTE Er:fiber光频除法器（Le Coq 2010）
+original_id: ent.er_fiber_ofd_lecoq2010
+properties: {}
+status: Determined
+type: Entity/Factor

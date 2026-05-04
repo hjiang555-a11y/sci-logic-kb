@@ -1,0 +1,8 @@
+evidence: high-power fiber optical frequency comb
+id: evrel_X6KNIXMW_rel.luo_2020_uo20_01
+metadata:
+  source_paper: luo2020
+  zotero_key: X6KNIXMW
+object: ent.optical_frequency_comb
+predicate: PART-OF
+subject: ent.yb_fiber_comb_130w_cpa_l20

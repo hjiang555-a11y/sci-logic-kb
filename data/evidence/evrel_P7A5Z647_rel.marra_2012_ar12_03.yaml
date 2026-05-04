@@ -1,0 +1,9 @@
+evidence: Using an optical phase detection technique we measure the noise introduced
+  by the fiber link and suppress it
+id: evrel_P7A5Z647_rel.marra_2012_ar12_03
+metadata:
+  source_paper: marra2012
+  zotero_key: P7A5Z647
+object: pri.optical_phase_detection_fiber_link_m12
+predicate: BOUNDED-BY
+subject: met.fiber_transferred_comb_stability_m12

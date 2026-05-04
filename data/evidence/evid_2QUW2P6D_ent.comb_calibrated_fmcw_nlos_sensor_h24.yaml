@@ -1,0 +1,21 @@
+definition: 'FMCW 激光器连续调频输出 + 干涉式探测（本振 + 散射信号干涉）构成相干 LIDAR； 光频梳作为调频线性度实时参考（fringe-counting/频率坐标校准）；
+  针对 NLOS 场景（光漫反射混叠）用梳校准获得 ~5 dB SNR 提升； 兼顾成像（652 fs → ~200 µm 距离分辨）、测速、测振（数十 Hz 精度）。
+
+  '
+id: evid_2QUW2P6D_ent.comb_calibrated_fmcw_nlos_sensor_h24
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/huang2024.yaml
+  source_paper: huang2024
+  zotero_key: 2QUW2P6D
+name: 光梳校准 FMCW 相干 NLOS 传感系统（Huang 2024）
+original_id: ent.comb_calibrated_fmcw_nlos_sensor_h24
+properties:
+  ambient_light_tolerance: 强环境光下 NLOS 重建仍有效
+  calibration: 光频梳齿阵列作频率坐标参考
+  coherent_scheme: FMCW 相干 LIDAR
+  localization_precision: 150 µm（NLOS 隐藏物体）
+  snr_gain: ~5 dB（相对未校准 FMCW）
+  temporal_resolution: 652 fs（可达 70 fs）
+  vibration_accuracy: ~数十 Hz
+status: Determined
+type: Entity/Factor

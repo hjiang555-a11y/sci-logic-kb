@@ -1,0 +1,9 @@
+evidence: the magic-wavelength protocol is a prerequisite for 10⁻¹⁶ fractional uncertainty
+  in the Sr lattice clock.
+id: evrel_LUDLOW2008-THESIS-JILA_rel.ludlow_2008_08T_02
+metadata:
+  source_paper: ludlow2008_thesis
+  zotero_key: LUDLOW2008-THESIS-JILA
+object: pri.magic_wavelength_operational_protocol_l08
+predicate: CONDITIONED-BY
+subject: meth.sr_optical_lattice_clock_stack_l08

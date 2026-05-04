@@ -1,0 +1,23 @@
+definition: '232 MHz 重频 Er:fiber 锁模激光器；腔内 8 mm LiNbO₃ 电光晶体做快速腔长伺服， PZT 做慢漂移补偿；梳齿相位锁定至
+  1550 nm cw 参考（in-loop 测量）； f-2f 共路 f_CEO 探测，锁至 RF 参考（通过泵浦功率控制）。 HNLF 展宽至覆盖 1–2 µm
+  八度。
+
+  '
+id: evid_9BEBKUGG_ent.attosecond_erfiber_comb_y15
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/yan2015.yaml
+  source_paper: yan2015
+  zotero_key: 9BEBKUGG
+name: 阿秒分辨 Er:fiber 光频梳（Yan 2015，NTSC 系统）
+original_id: ent.attosecond_erfiber_comb_y15
+properties:
+  f_ceo_actuator: 泵浦功率调制
+  f_r_actuator: 腔内 EOM（快） + PZT（慢）
+  gain_medium: Er:fiber（110 dB/m）
+  intracavity_modulator: LiNbO₃ EOM（8×3.2 mm）+ PZT
+  metric_engineering: 8000.0
+  output_power: ~180 mW @ 1 W 泵浦
+  repetition_rate: 232 MHz
+  sc_span: 1–2 µm（HNLF 展宽）
+status: Determined
+type: Entity/Factor

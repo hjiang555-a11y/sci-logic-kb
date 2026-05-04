@@ -1,0 +1,8 @@
+evidence: Er:fiber-based optical frequency comb operating at 232 MHz repetition rate
+id: evrel_9BEBKUGG_rel.yan_2015_15_04
+metadata:
+  source_paper: yan2015
+  zotero_key: 9BEBKUGG
+object: ent.optical_frequency_comb
+predicate: PART-OF
+subject: ent.attosecond_erfiber_comb_y15

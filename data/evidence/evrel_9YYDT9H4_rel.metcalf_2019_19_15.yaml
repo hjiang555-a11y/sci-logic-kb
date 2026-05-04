@@ -1,0 +1,9 @@
+evidence: This comb-based calibrator provides tailored light to the stable Habitable
+  Zone Planet Finder (HPF) spectrograph
+id: evrel_9YYDT9H4_rel.metcalf_2019_19_15
+metadata:
+  source_paper: metcalf2019
+  zotero_key: 9YYDT9H4
+object: ent.hpf_spectrograph_m19
+predicate: CONDITIONED-BY
+subject: ent.hpf_nir_astrocomb_m19

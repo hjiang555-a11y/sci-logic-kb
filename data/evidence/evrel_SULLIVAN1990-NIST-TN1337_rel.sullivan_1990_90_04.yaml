@@ -1,0 +1,9 @@
+evidence: Modified Allan deviation is a refinement of the Allan deviation obtained
+  by phase-averaging before differencing.
+id: evrel_SULLIVAN1990-NIST-TN1337_rel.sullivan_1990_90_04
+metadata:
+  source_paper: sullivan1990
+  zotero_key: SULLIVAN1990-NIST-TN1337
+object: meth.allan_deviation_adev
+predicate: DERIVED-FROM
+subject: meth.modified_allan_deviation_mdev

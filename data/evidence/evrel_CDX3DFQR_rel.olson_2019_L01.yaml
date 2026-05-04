@@ -1,0 +1,8 @@
+evidence: laser frequency stabilization at 10⁻¹⁶ and below
+id: evrel_CDX3DFQR_rel.olson_2019_L01
+metadata:
+  source_paper: olson2019
+  zotero_key: CDX3DFQR
+object: ent.fp_cavity_system
+predicate: COMPETES-WITH
+subject: ent.rb_atom_interferometer_o19

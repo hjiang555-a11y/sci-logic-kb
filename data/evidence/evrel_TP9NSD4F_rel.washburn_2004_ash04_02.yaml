@@ -1,0 +1,9 @@
+evidence: supercontinuum output comprises a frequency comb ... to span from 1100 to
+  ~2200 nm
+id: evrel_TP9NSD4F_rel.washburn_2004_ash04_02
+metadata:
+  source_paper: washburn2004
+  zotero_key: TP9NSD4F
+object: met.er_fiber_comb_nir_octave_span_w04
+predicate: CHARACTERIZED-BY
+subject: ent.er_fiber_comb_washburn04

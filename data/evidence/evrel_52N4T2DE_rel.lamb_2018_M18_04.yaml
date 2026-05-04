@@ -1,0 +1,9 @@
+evidence: The 15 GHz SiO₂ microdisk comb with photonic-chip supercontinuum is an instance
+  of the microresonator frequency comb platform.
+id: evrel_52N4T2DE_rel.lamb_2018_M18_04
+metadata:
+  source_paper: lamb2018
+  zotero_key: 52N4T2DE
+object: ent.microresonator_frequency_comb
+predicate: PART-OF
+subject: ent.kerr_microcomb_photonic_chip_sc_l18

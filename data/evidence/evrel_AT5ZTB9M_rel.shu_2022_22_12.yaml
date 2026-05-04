@@ -1,0 +1,9 @@
+evidence: 20 comb lines in the C-band are used as the source ... aggregate bit rate
+  of 2 Tbit s⁻¹
+id: evrel_AT5ZTB9M_rel.shu_2022_22_12
+metadata:
+  source_paper: shu2022
+  zotero_key: AT5ZTB9M
+object: pri.microcomb_replaces_laser_array_for_wdm_s22
+predicate: ENABLED-BY
+subject: meth.microcomb_parallel_pam4_wdm_link_s22

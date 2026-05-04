@@ -1,0 +1,11 @@
+evidence: silicon nitride has proven to be an exceptional platform for generating
+  microresonator combs due to its relatively high index contrast and nonlinearity
+  and the highest quality (Q) factors (>10 million) demonstrated in a non-silica-based
+  chip platform
+id: evrel_BRKZG9H2_rel.gaeta_2019_ae19_19
+metadata:
+  source_paper: gaeta2019
+  zotero_key: BRKZG9H2
+object: ent.chip_comb_platform_taxonomy_g19
+predicate: PART-OF
+subject: ent.si3n4_integrated_comb

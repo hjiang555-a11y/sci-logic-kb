@@ -1,0 +1,8 @@
+evidence: high-bandwidth servo in a frequency range of 3 kHz
+id: evrel_R4M8SE4F_rel.zhang_2015_15_05
+metadata:
+  source_paper: zhang2015
+  zotero_key: R4M8SE4F
+object: pri.intracavity_eom_frep_wideband_feedback
+predicate: ENABLED-BY
+subject: meth.eom_pzt_dual_actuator_frep_lock_z15

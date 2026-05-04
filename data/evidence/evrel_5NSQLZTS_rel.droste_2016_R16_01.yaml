@@ -1,0 +1,10 @@
+evidence: Er:fiber frequency combs are the most commonly deployed optical frequency
+  comb platform due to telecom-compatible wavelength, commercial fiber components,
+  and field robustness.
+id: evrel_5NSQLZTS_rel.droste_2016_R16_01
+metadata:
+  source_paper: droste2016
+  zotero_key: 5NSQLZTS
+object: ent.optical_frequency_comb
+predicate: PART-OF
+subject: ent.er_fiber_frequency_comb

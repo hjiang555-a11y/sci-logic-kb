@@ -1,0 +1,9 @@
+evidence: The common-mode servo method relies on co-routing all critical fiber paths
+  to reject non-common-mode phase noise.
+id: evrel_8XUFRL4K_rel.leopardi_2017_17F_02
+metadata:
+  source_paper: leopardi2017
+  zotero_key: 8XUFRL4K
+object: pri.common_mode_fiber_path_noise_rejection
+predicate: ENABLED-BY
+subject: meth.common_mode_fiber_comb_servo

@@ -1,0 +1,8 @@
+evidence: optical spectrum spans from 650 nm to 1400 nm
+id: evrel_RWPYUXTB_rel.li_2017_i17_03
+metadata:
+  source_paper: li2017b
+  zotero_key: RWPYUXTB
+object: met.spectrum_after_hnlf_li17
+predicate: CHARACTERIZED-BY
+subject: ent.all_pm_yb_nalm_comb_li17

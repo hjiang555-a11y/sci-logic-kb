@@ -1,0 +1,8 @@
+evidence: SNR is about 35 dB with a resolution bandwidth of 300 kHz
+id: evrel_9RFKI5SH_rel.zhang_2017_hOFC17_10
+metadata:
+  source_paper: zhang2017
+  zotero_key: 9RFKI5SH
+object: met.fceo_snr_z17
+predicate: CHARACTERIZED-BY
+subject: ent.hybrid_ml_erfiber_comb_z17

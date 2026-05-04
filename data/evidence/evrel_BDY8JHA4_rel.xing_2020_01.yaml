@@ -1,0 +1,9 @@
+evidence: The amplified light is then sent into a 30 cm PM HNLF1 ... to generate a
+  2 µm pulse by a Raman soliton self-frequency shift
+id: evrel_BDY8JHA4_rel.xing_2020_01
+metadata:
+  source_paper: xing2020
+  zotero_key: BDY8JHA4
+object: ent.all_fiber_2um_comb_x20
+predicate: PART-OF
+subject: ent.hnlf_ssfs_stage_x20

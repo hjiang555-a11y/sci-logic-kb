@@ -1,0 +1,33 @@
+definition: '以 figure-9 结构的 NALM（非线性放大环镜）作为唯一锁模机制，所有腔内及支路光纤均采用保偏（PM）光纤， 并以 Faraday
+  旋转器 + λ/8 波片构成非互易相位偏置器件（π/2）实现自启动锁模。腔净色散近零； 基频重频 200 MHz，光谱 FWHM 75 nm（变换极限 46 fs）。
+  主输出端 6 mW 平均分配给五支路：一支用于 PM-HNLF 单支路超连续展宽（倍频程）+ 共光程 f-2f 干涉仪产生 f_ceo； 四支应用支路分别通过
+  CPA（EDFA + PM 色散管理 + PM-HNLF + 可选 PPLN 倍频）在 698/729/1068/1156 nm 处 生成目标波长供 Sr、Ca+、Al+（1064
+  nm 四倍频自 Al+ 钟方案）、Yb（1156 nm 倍频）光钟比对。
+
+  '
+id: evid_BPQDL4DN_ent.all_pm_erfiber_comb_z22b
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/zhang2022b.yaml
+  source_paper: zhang2022b
+  zotero_key: BPQDL4DN
+name: 全保偏 figure-9 NALM Er:fiber 光学频率梳（Zhang 2022b 系统）
+original_id: ent.all_pm_erfiber_comb_z22b
+properties:
+  application_branches: 698 nm (Sr) / 729 nm (Ca+) / 1068 nm (Al+) / 1156 nm (Yb)
+  branch_snr: '>30 dB @ 300 kHz RBW（全部四路）'
+  fbeat_control: 腔内 EOM（~300 kHz 带宽，快）+ PZT（慢，大范围）
+  fbeat_feedback_bandwidth: ~300 kHz（f_beat），~40 kHz（f_ceo）
+  fceo_control: 调泵浦电流（一支路专用 EDFA + PM-HNLF）
+  fceo_snr: 38 dB @ 300 kHz RBW
+  fiber_length_match: 支路光纤长度差 ±1 cm
+  ftl_pulse_duration: 46 fs
+  mode_locking_scheme: figure-9 NALM（纯 NALM，不含 NPE）
+  output1_power: 6 mW（平均分配给 5 支路）
+  polarization_architecture: 全保偏（all-PM）光纤
+  pump_threshold: 泵浦 >900 mW 自启动
+  repetition_rate: 200 MHz（基频）
+  self_start_mechanism: Faraday 旋转器 + λ/8 WP 产生 π/2 非互易相位偏置
+  spectrum_fwhm: 75 nm @ 0.1 nm RBW（1550 nm 中心，该类锁模激光已知最宽）
+  temperature_control: ±0.2 °C（支路控温箱）
+status: Determined
+type: Entity/Factor

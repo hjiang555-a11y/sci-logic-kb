@@ -1,0 +1,8 @@
+evidence: fiber combs with multiple outputs (multi-branch fiber combs)
+id: evrel_ERNT9GV3_rel.kashiwagi_2018_as18_01
+metadata:
+  source_paper: kashiwagi2018
+  zotero_key: ERNT9GV3
+object: ent.optical_frequency_comb
+predicate: PART-OF
+subject: ent.multi_branch_fiber_comb_k18

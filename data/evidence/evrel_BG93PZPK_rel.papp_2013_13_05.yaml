@@ -1,0 +1,9 @@
+evidence: Parametric phase matching depends on numerous parameters … the dispersion
+  of disk resonators is described in [26]
+id: evrel_BG93PZPK_rel.papp_2013_13_05
+metadata:
+  source_paper: papp2013
+  zotero_key: BG93PZPK
+object: pri.microresonator_anomalous_dispersion
+predicate: CONDITIONED-BY
+subject: ent.parametrically_seeded_microcomb_p13

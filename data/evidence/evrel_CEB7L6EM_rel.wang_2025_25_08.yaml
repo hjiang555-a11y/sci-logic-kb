@@ -1,0 +1,8 @@
+evidence: a trade-off must therefore be made among precision, latency, [and resources]
+id: evrel_CEB7L6EM_rel.wang_2025_25_08
+metadata:
+  source_paper: wang2025
+  zotero_key: CEB7L6EM
+object: pri.digital_servo_latency_bandwidth_tradeoff
+predicate: ENABLED-BY
+subject: meth.low_latency_iq_phase_detection_w25

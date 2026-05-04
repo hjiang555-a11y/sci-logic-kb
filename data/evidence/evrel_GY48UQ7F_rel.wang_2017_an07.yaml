@@ -1,0 +1,8 @@
+evidence: Comb line spacing verified by measuring the RF repetition-rate beatnote
+id: evrel_GY48UQ7F_rel.wang_2017_an07
+metadata:
+  source_paper: wang2017
+  zotero_key: GY48UQ7F
+object: meth.rf_beatnote_comb_characterization
+predicate: OPERATIONALIZED-AS
+subject: met.comb_line_spacing_w17

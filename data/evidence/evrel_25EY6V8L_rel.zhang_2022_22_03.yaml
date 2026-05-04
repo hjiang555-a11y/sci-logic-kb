@@ -1,0 +1,9 @@
+evidence: cavity-enhanced high-harmonic generation at the 7th harmonic produces VUV
+  comb output near 150 nm
+id: evrel_25EY6V8L_rel.zhang_2022_22_03
+metadata:
+  source_paper: zhang2022
+  zotero_key: 25EY6V8L
+object: pri.cavity_enhanced_hhg_comb
+predicate: ENABLED-BY
+subject: meth.tunable_vuv_comb_generation_cavity_hhg

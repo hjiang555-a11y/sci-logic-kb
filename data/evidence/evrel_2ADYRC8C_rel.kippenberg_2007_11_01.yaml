@@ -1,0 +1,9 @@
+evidence: Toroidal microresonators were the first system in which optical frequency
+  comb generation was demonstrated
+id: evrel_2ADYRC8C_rel.kippenberg_2007_11_01
+metadata:
+  source_paper: kippenberg2011
+  zotero_key: 2ADYRC8C
+object: ent.microresonator_frequency_comb
+predicate: PART-OF
+subject: ent.silica_microtoroid_comb

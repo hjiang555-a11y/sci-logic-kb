@@ -1,0 +1,9 @@
+evidence: phase locked one of the comb lines in the supercontinuum to the Sr clock
+  laser at 698 nm
+id: evrel_25EY6V8L_rel.zhang_2022_22_05
+metadata:
+  source_paper: zhang2022
+  zotero_key: 25EY6V8L
+object: ent.fp_cavity_system
+predicate: CONDITIONED-BY
+subject: ent.tunable_vuv_comb_z22

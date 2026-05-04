@@ -1,0 +1,9 @@
+evidence: A standard f-to-2f interferometer following the PM HNLF is used to obtain
+  the fceo signal
+id: evrel_BPQDL4DN_rel.zhang_2022_22B_05
+metadata:
+  source_paper: zhang2022b
+  zotero_key: BPQDL4DN
+object: pri.self_referencing_f2f
+predicate: ENABLED-BY
+subject: ent.all_pm_erfiber_comb_z22b

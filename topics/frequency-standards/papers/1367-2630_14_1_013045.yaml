@@ -1,4 +1,4 @@
-# King ???? — Absolute frequency measurement of the<sup>2</sup>S<sub>1/2</sub>–<sup>2</sup>... [evidence]
+#  ???? — 1367-2630_14_1_013045 [evidence]
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
@@ -6,16 +6,11 @@ meta:
   topic: frequency-standards
   source_type: journal_paper
   contribution_type: evidence
-  reliability: high
-  title: "Absolute frequency measurement of the<sup>2</sup>S<sub>1/2</sub>–<sup>2</sup>F<sub>7/2</sub>electric octupole transition in a single ion of<sup>171</sup>Yb<sup>+</sup>with 10<sup>−15</sup>fractional uncertainty"
-  first_author: "King"
-  authors: ["S A King", "R M Godun", "S A Webster", "H S Margolis", "L A M Johnson", "K Szymaniec", "P E G Baird", "P Gill"]
-  journal: "New Journal of Physics"
-  volume: 14
-  pages: 5669
-  doi: 10.1088/1367-2630/14/1/013045
+  reliability: low
+  title: "1367-2630_14_1_013045"
+  first_author: ""
   note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+    [批量提取] 元数据来源：placeholder (needs expert review)。内容待专家提取。
 entities: []
 principles: []
 methods: []

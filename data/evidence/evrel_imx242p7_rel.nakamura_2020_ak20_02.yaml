@@ -1,0 +1,8 @@
+evidence: microwave signal ... tracks the optical clock phase
+id: evrel_imx242p7_rel.nakamura_2020_ak20_02
+metadata:
+  source_paper: nakamura2020_imx242p7
+  zotero_key: imx242p7
+object: ent.optical_frequency_standard
+predicate: CONDITIONED-BY
+subject: ent.optical_to_microwave_photonic_synth_n20

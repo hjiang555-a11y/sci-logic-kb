@@ -1,0 +1,9 @@
+evidence: we implement an "in-line" PM-fiber interferometer after the waveguide PPLN
+  that exploits the differential delay between fast and slow PM-fiber axes
+id: evrel_D9ANIZW6_rel.sinclair_2014_14_02
+metadata:
+  source_paper: sinclair2014
+  zotero_key: D9ANIZW6
+object: ent.ruggedized_field_comb_s14
+predicate: PART-OF
+subject: ent.pm_inline_f2f_interferometer_s14

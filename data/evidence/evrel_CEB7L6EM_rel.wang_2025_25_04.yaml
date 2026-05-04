@@ -1,0 +1,8 @@
+evidence: total board latency of less than 250 ns
+id: evrel_CEB7L6EM_rel.wang_2025_25_04
+metadata:
+  source_paper: wang2025
+  zotero_key: CEB7L6EM
+object: met.digital_servo_total_latency_w25
+predicate: CHARACTERIZED-BY
+subject: ent.low_latency_digital_servo_w25

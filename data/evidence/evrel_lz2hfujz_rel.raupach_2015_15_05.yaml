@@ -1,0 +1,8 @@
+evidence: actively stabilizing the phase of the transferred signal
+id: evrel_lz2hfujz_rel.raupach_2015_15_05
+metadata:
+  source_paper: raupach2015_lz2hfujz
+  zotero_key: lz2hfujz
+object: pri.noise_cancellation_frequency_transfer
+predicate: ENABLED-BY
+subject: ent.ptb_1400km_brillouin_link_r15

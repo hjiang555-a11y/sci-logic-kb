@@ -1,0 +1,9 @@
+evidence: four identical supports in a tetrahedral arrangement constitute a sufficient
+  and symmetric constraint
+id: evrel_A96XGR82_rel.webster_2011_11_02
+metadata:
+  source_paper: webster2011
+  zotero_key: A96XGR82
+object: pri.force_insensitive_tetrahedral_symmetry
+predicate: ENABLED-BY
+subject: ent.cubic_force_insensitive_cavity_w11

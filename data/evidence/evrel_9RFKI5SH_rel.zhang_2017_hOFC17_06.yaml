@@ -1,0 +1,8 @@
+evidence: The noise level is approximately -135 dBc/Hz from 10 Hz to 1 kHz
+id: evrel_9RFKI5SH_rel.zhang_2017_hOFC17_06
+metadata:
+  source_paper: zhang2017
+  zotero_key: 9RFKI5SH
+object: met.rin_erfiber_z17
+predicate: CHARACTERIZED-BY
+subject: ent.hybrid_ml_erfiber_comb_z17

@@ -1,0 +1,8 @@
+evidence: 单模能量为 208 nW…满足后续与单频激光拍频所需的能量（一般来说，单模能量为 100 nW 的激光信号拍频后可以产生 30 dB 的信号）
+id: evrel_CA55MEKS_rel.rao_2019_19_19
+metadata:
+  source_paper: rao2019
+  zotero_key: CA55MEKS
+object: pri.nir_to_visible_shg_comb_link_r19
+predicate: BOUNDED-BY
+subject: met.beat_snr_li_d1_r19

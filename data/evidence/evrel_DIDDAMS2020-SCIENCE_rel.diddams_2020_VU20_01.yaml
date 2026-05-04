@@ -1,0 +1,9 @@
+evidence: the optical frequency comb now serves as a phase-coherent ruler that spans
+  from radio frequencies to the extreme ultraviolet.
+id: evrel_DIDDAMS2020-SCIENCE_rel.diddams_2020_VU20_01
+metadata:
+  source_paper: diddams2020b
+  zotero_key: DIDDAMS2020-SCIENCE
+object: pri.ofc_unified_electromagnetic_spectrum_framework
+predicate: CHARACTERIZED-BY
+subject: ent.optical_frequency_comb

@@ -1,0 +1,9 @@
+evidence: OSCAT, which shares a similar self-delayed construction, acquires interferograms
+  at the sweeping speed
+id: evrel_JTI6TJFU_rel.carlson_2018_TI_05
+metadata:
+  source_paper: carlson2018
+  zotero_key: JTI6TJFU
+object: meth.oscat_dual_comb
+predicate: COMPETES-WITH
+subject: meth.phire_dual_comb

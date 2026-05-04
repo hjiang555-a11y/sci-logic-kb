@@ -1,0 +1,8 @@
+evidence: isotopically substituted precursors to modify the N-H overtone
+id: evrel_HW9TAY3W_rel.chiles_2018_18_06
+metadata:
+  source_paper: chiles2018
+  zotero_key: HW9TAY3W
+object: pri.isotope_substitution_absorption_shift
+predicate: ENABLED-BY
+subject: ent.deuterated_sin_photonic_platform_c18

@@ -1,0 +1,9 @@
+evidence: self-injection locking mechanism within the resonator that is mediated via
+  the parametric gain
+id: evrel_HSRPL6ZX_rel.del_2014_14_03
+metadata:
+  source_paper: delhaye2014
+  zotero_key: HSRPL6ZX
+object: pri.parametric_four_wave_mixing_comb
+predicate: DERIVED-FROM
+subject: pri.microcomb_self_injection_locking

@@ -1,0 +1,13 @@
+definition: 支撑镀层并决定腔端面形变；热噪声贡献最大（约 84%）
+id: evid_VDXBPUQB_ent.mirror_substrate
+metadata:
+  original_file: /data/sci-logic-kb/topics/ultrastable-laser/papers/numata2004.yaml
+  source_paper: numata2004
+  zotero_key: VDXBPUQB
+name: 腔镜基底（底物）
+original_id: ent.mirror_substrate
+properties:
+  material_examples: ULE（超低膨胀玻璃）、熔融石英（fused silica）、Zerodur
+  thermal_noise_contribution: 约 84%（最主要贡献来源）
+status: Determined
+type: Entity/Factor

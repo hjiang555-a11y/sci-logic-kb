@@ -1,0 +1,8 @@
+evidence: fractional frequency uncertainties now surpassing 10⁻¹⁸
+id: evrel_BWR7TEZ6_rel.fortier_2025_26_08
+metadata:
+  source_paper: fortier2026
+  zotero_key: BWR7TEZ6
+object: met.optical_clock_fractional_uncertainty
+predicate: CHARACTERIZED-BY
+subject: ent.optical_frequency_standard

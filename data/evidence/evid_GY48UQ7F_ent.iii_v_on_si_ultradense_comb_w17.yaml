@@ -1,0 +1,11 @@
+definition: Novel Level-1 entity; COMPETES-WITH microresonator combs in spacing regime.
+id: evid_GY48UQ7F_ent.iii_v_on_si_ultradense_comb_w17
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/wang2017.yaml
+  source_paper: wang2017
+  zotero_key: GY48UQ7F
+name: III-V-on-Si ultra-dense comb laser (Wang 2017)
+original_id: ent.iii_v_on_si_ultradense_comb_w17
+properties: {}
+status: Determined
+type: Entity/Factor

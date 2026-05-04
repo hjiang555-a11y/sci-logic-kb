@@ -1,0 +1,9 @@
+evidence: The corresponding temperature-induced frequency fluctuations are below the
+  expected thermal noise floor for averaging times up to 100 s
+id: evrel_N9AGEQ8S_rel.zhang_2019_17_06
+metadata:
+  source_paper: zhang2017
+  zotero_key: N9AGEQ8S
+object: ent.thermal_environment
+predicate: CONDITIONED-BY
+subject: ent.si_crystal_fp_cavity_4k_r19

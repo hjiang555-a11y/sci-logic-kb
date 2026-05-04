@@ -1,0 +1,8 @@
+evidence: the quantum projection noise limit to stability
+id: evrel_BWR7TEZ6_rel.fortier_2025_26_04
+metadata:
+  source_paper: fortier2026
+  zotero_key: BWR7TEZ6
+object: pri.quantum_projection_noise_limit
+predicate: BOUNDED-BY
+subject: ent.optical_frequency_standard

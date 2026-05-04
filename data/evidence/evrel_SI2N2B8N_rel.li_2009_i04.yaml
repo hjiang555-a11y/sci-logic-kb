@@ -1,0 +1,9 @@
+evidence: We have studied several different structures of spool... Both simulations
+  by Finite Element Modeling (FEM) and vibration sensitivity measurements are presented
+id: evrel_SI2N2B8N_rel.li_2009_i04
+metadata:
+  source_paper: li2009a
+  zotero_key: SI2N2B8N
+object: ent.titanium_fiber_spool_l09
+predicate: ENABLED-BY
+subject: meth.fiber_spool_vibration_characterization

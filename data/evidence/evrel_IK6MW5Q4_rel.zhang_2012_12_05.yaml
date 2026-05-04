@@ -1,0 +1,8 @@
+evidence: limited by sharp resonances observed around 900 kHz
+id: evrel_IK6MW5Q4_rel.zhang_2012_12_05
+metadata:
+  source_paper: zhang2012c
+  zotero_key: IK6MW5Q4
+object: pri.eom_acoustic_resonance_limit_t17
+predicate: BOUNDED-BY
+subject: ent.menlo_erfiber_eom_comb_z12

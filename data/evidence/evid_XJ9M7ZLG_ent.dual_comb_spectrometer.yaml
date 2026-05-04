@@ -1,0 +1,26 @@
+definition: '基于两个重复频率略不同（Δf_rep）的光学频率梳的宽带光谱测量系统。 两梳干涉在单个光电探测器上产生 RF 梳，将光学频谱以压缩因子 m
+  = f_rep/Δf_rep （典型值 3×10⁴–10⁶）映射至射频域，实现无需色散光谱仪或机械干涉仪的 宽带高分辨率光谱测量。频率分辨率由单根梳齿线宽（kHz–MHz）决定，
+  频率精度继承梳齿的绝对频率标定（Hz 级），采集速度可达微秒量级。
+
+  '
+id: evid_XJ9M7ZLG_ent.dual_comb_spectrometer
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/coddington2016.yaml
+  source_paper: coddington2016
+  zotero_key: XJ9M7ZLG
+name: 双梳光谱仪
+original_id: ent.dual_comb_spectrometer
+properties:
+  acquisition_time: 单次干涉图 ~1/Δf_rep（ms 量级），窄带可达 <1 μs
+  compression_factor: m = f_rep/Δf_rep，典型 3×10⁴–10⁶
+  configurations: 色散型（单梳过样品）或对称型（双梳过样品）
+  detection: 单光电探测器 + RF 电子学
+  metric_engineering: 30000000000.0
+  metric_structure: 30000000000.0
+  nyquist_constraint: Δν ≤ f_rep²/(2·Δf_rep)
+  operating_principle: 多外差拍频：两梳光学齿逐对拍频生成 RF 梳
+  rf_comb_spacing: Δf_rep（典型 100 Hz–1 kHz，可变）
+  spectral_coverage: 近红外覆盖 >100 THz（展宽后），中红外/远红外持续扩展
+  spectral_elements: '>10⁵ 同时测量的光谱通道'
+status: Determined
+type: Entity/Factor

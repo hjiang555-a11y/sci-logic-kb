@@ -1,0 +1,8 @@
+evidence: original Fabry-Perot cavity with 25 mm length and pyramidal geometry
+id: evrel_PHRXF4IL_rel.didier_2018_D01
+metadata:
+  source_paper: didier2018
+  zotero_key: PHRXF4IL
+object: ent.fp_cavity_system
+predicate: PART-OF
+subject: ent.ultracompact_pyramid_cavity_d18

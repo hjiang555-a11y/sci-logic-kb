@@ -1,0 +1,9 @@
+evidence: high nonlinearity of silicon nitride, which can provide two octaves of spectral
+  broadening with incident energies of only 110 pJ
+id: evrel_WCBMETLH_rel.carlson_2017_ar17_03
+metadata:
+  source_paper: carlson2017
+  zotero_key: WCBMETLH
+object: pri.sin_waveguide_low_power_f2f_c17
+predicate: BOUNDED-BY
+subject: met.sin_waveguide_f2f_power_c17

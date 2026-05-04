@@ -1,0 +1,10 @@
+evidence: "\"both systems are Er:fiber combs targeting field-deployable / low-complexity\
+  \ operation;\n Lesko 2020 prioritizes 1 GHz rep rate for DCS speed; Sinclair 2014\
+  \ prioritizes\n mechanical ruggedization for field deployment\"\n"
+id: evrel_HG8TSPT6_rel.lesko_2020_007
+metadata:
+  source_paper: lesko2020
+  zotero_key: HG8TSPT6
+object: ent.ruggedized_field_comb_s14
+predicate: COMPETES-WITH
+subject: ent.ghz_turnkey_erfiber_comb_l20

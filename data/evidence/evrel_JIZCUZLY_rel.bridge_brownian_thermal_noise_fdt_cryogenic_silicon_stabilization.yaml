@@ -1,0 +1,8 @@
+evidence: ''
+id: evrel_JIZCUZLY_rel.bridge_brownian_thermal_noise_fdt_cryogenic_silicon_stabilization
+metadata:
+  source_paper: robinson2019
+  zotero_key: JIZCUZLY
+object: meth.cryogenic_silicon_stabilization
+predicate: RESOLVED-BY
+subject: pri.brownian_thermal_noise_fdt

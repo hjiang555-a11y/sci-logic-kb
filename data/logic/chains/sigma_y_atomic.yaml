@@ -1,0 +1,65 @@
+# Atomic Topology: Frequency Stability @ 1s (sigma_y_1s)
+
+> **ID**: chain.sigma_y_atomic
+> **Status**: Blueprint
+> **Purpose**: Pure physics-based decomposition of the frequency stability limit.
+> **Logic**: This file defines the CAUSAL structure. It does not contain specific paper values, but defines WHERE those values should be plugged in.
+
+---
+
+## 1. Root Metric
+- **Target**: `met.sigma_y_1s` (Fractional Frequency Stability at 1s)
+- **Primary Cause**: $\sigma_y(1\text{s}) = \sqrt{\sum \sigma_{i}^2}$ (Root-sum-square of independent noise sources)
+
+---
+
+## 2. Decomposition Branches
+
+### Branch A: Fundamental Thermal Noise (The Hard Limit)
+$\text{met.sigma\_y\_1s} \xrightarrow{\text{BOUNDED-BY}} \text{la.thermal_noise_floor}$
+
+**Atomic Decomposition of `la.thermal_noise_floor`**:
+1.  **$\text{la.substrate_thermal_noise}$** (Substrate/Cavity Body)
+    - $\xrightarrow{\text{SENSITIVE-TO}}$ `pri.brownian_thermal_noise_fdt`
+    - $\xrightarrow{\text{CONTRIBUTORS}}$ [`mat.ule_glass`, `mat.silicon`, `mat.crystalline_silicon`]
+    - $\xrightarrow{\text{MODIFIERS}}$ [`cond.cryogenic_temp`, `cond.room_temp`]
+2.  **$\text{la.mirror_coating_noise}$** (Mirror Layers)
+    - $\xrightarrow{\text{SENSITIVE-TO}}$ `pri.coating_thermal_noise`
+    - $\xrightarrow{\text{CONTRIBUTORS}}$ [`mat.amorphous_coating`, `mat.crystalline_coating`]
+3.  **$\text{la.cavity_geometry_factor}$** (Geometry)
+    - $\xrightarrow{\text{DETERMINES}}$ $\text{scaling\_law: } \sigma_y \propto \frac{1}{L}$
+    - $\xrightarrow{\text{CONTRIBUTORS}}$ [`param.cavity_length`, `param.mirror_radius`]
+
+### Branch B: Environmental & External Noise (The Engineering Layer)
+$\text{met.sigma\_y\_1s} \xrightarrow{\text{BOUNDED-BY}} \text{la.environmental_noise}$
+
+**Atomic Decomposition of `la.environmental_noise`**:
+1.  **$\text{la.vibration_sensitivity}$** (Seismic/Mechanical)
+    - $\xrightarrow{\text{MITIGATED-BY}}$ [`meth.active_isolation`, `meth.passive_isolation`]
+    - $\xrightarrow{\text{CONTRIBUTORS}}$ [`env.seismic_noise`, `env.acoustic_noise`]
+2.  **$\text{la.thermal_gradients}$** (Temperature Fluctuations)
+    - $\xrightarrow{\text{MITIGATED-BY}}$ [`meth.thermal_shielding`, `meth.vacuum_encapsulation`]
+    - $\xrightarrow{\text{CONTRIBUTORS}}$ [`env.temp_stability`, `env.thermal_drift`]
+3.  **$\text{la.acceleration_noise}$**
+    - $\xrightarrow{\text{MITIGATED-BY}}$ [`meth.symmetric_mounting`, `meth.force_insensitive_design`]
+
+### Branch C: Measurement & System Noise (The Observational Layer)
+$\text{met.sigma\_y\_1s} \xrightarrow{\text{BOUNDED-BY}} \text{la.measurement_noise}$
+
+**Atomic Decomposition of `la.measurement_noise`**:
+1.  **$\text{la.pdh_locking_error}$** (Electronic Offset)
+    - $\xrightarrow{\text{MITIGATED-BY}}$ [`meth.ram_suppression`, `meth.high_gain_servo`]
+    - $\xrightarrow{\text{CONTRIBUTORS}}$ [`pri.ram_frequency_offset`]
+2.  **$\text{la.shot_noise_limit}$** (Quantum Floor)
+    - $\xrightarrow{\text{DETERMINED-BY}}$ `param.optical_power` $\to$ `param.photodiode_efficiency`
+3.  **$\text{la.electronic_drift}$** (Systematic)
+    - $\xrightarrow{\text{CONTRIBUTORS}}$ [`ent.adc_precision`, `ent.dac_stability`]
+
+---
+
+## 3. Logic-to-Evidence Interface (Mapping Points)
+
+When mapping EvidenceNodes (from papers) to this chain, the following rules apply:
+- **Values** $\to$ Must be mapped to the leaf nodes (e.g., `mat.ule_glass` $\to$ $\text{value: } \alpha=...$).
+- **Claims** $\to$ Must be mapped to the Relation predicates (e.g., "Cryogenic Si reduces noise by 10x" $\to$ `la.substrate_thermal_noise` $\xrightarrow{\text{SENSITIVE-TO}}$ `cond.cryogenic_temp`).
+- ** la.SOTA** $\to$ The current world record for $\sigma_y(1\text{s})$ is the result of the path that minimizes the Sum of Squares across all three branches.

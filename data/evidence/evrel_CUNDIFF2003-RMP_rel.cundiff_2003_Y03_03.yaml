@@ -1,0 +1,9 @@
+evidence: the carrier-envelope offset frequency f_o is obtained through the f-to-2f
+  self-referencing scheme, giving the comb its absolute frequency axis.
+id: evrel_CUNDIFF2003-RMP_rel.cundiff_2003_Y03_03
+metadata:
+  source_paper: cundiff2003
+  zotero_key: CUNDIFF2003-RMP
+object: pri.self_referencing_f2f
+predicate: DERIVED-FROM
+subject: pri.cep_controlled_frequency_comb_time_frequency_duality

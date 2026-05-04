@@ -1,0 +1,9 @@
+evidence: 'implement the lock using the Pound-Drever-Hall technique [ref 6: Drever
+  1983]'
+id: evrel_EGAZKLXR_rel.young_1999_04
+metadata:
+  source_paper: young1999
+  zotero_key: EGAZKLXR
+object: pri.pdh_heterodyne_detection
+predicate: ENABLED-BY
+subject: meth.multi_stage_locking

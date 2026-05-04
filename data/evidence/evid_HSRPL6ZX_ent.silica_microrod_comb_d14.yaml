@@ -1,0 +1,24 @@
+definition: '熔融石英微杆谐振腔（直径 2.6 mm，FSR ~25.6 GHz，加载 Q = 1.85×10⁸）， 通过锥形光纤渐逝波耦合泵浦。可调二极管激光器从蓝侧调谐入腔谐振，
+  通过热锁定稳定在谐振位置。梳产生经历：(1) 阈值以上首先产生束状梳 （bunched comb，由不同模式族的色散决定各子梳偏移）；(2) 增加泵浦/调谐 使子梳重叠时，自注入锁定使偏移归零，形成连续等间距梳。
+
+  '
+id: evid_HSRPL6ZX_ent.silica_microrod_comb_d14
+metadata:
+  original_file: /data/sci-logic-kb/topics/optical-frequency-combs/papers/delhaye2014.yaml
+  source_paper: delhaye2014
+  zotero_key: HSRPL6ZX
+name: 熔融石英微杆谐振腔频率梳（Del'Haye 2014，自注入锁定实验）
+original_id: ent.silica_microrod_comb_d14
+properties:
+  coupling: 锥形光纤渐逝波耦合
+  diameter: 2.6 mm
+  dispersion_regime: anomalous
+  fsr: ~25.6 GHz
+  gvd: β₂ = −14.5 ps²/km
+  loaded_Q: 1.85 × 10⁸
+  metric_structure: 18500000000.0
+  pump_type: 可调 CW 二极管激光器 + EDFA
+  resonator_geometry: microrod（圆柱微杆）
+  resonator_material: fused silica
+status: Determined
+type: Entity/Factor

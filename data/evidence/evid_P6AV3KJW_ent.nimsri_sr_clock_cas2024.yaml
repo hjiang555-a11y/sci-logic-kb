@@ -1,0 +1,11 @@
+definition: Sr光晶格钟，稳定性与系统不确定度同时达到5×10^-18以下
+id: evid_P6AV3KJW_ent.nimsri_sr_clock_cas2024
+metadata:
+  original_file: /data/sci-logic-kb/topics/frequency-standards/papers/li2024.yaml
+  source_paper: li2024
+  zotero_key: P6AV3KJW
+name: NimSrI Sr光晶格钟（中国科学院国家授时中心，2024）
+original_id: ent.nimsri_sr_clock_cas2024
+properties: {}
+status: Determined
+type: Entity/Factor

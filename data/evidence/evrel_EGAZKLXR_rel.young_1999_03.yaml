@@ -1,0 +1,9 @@
+evidence: first prestabilize to low-finesse cavity ... then PDH lock to high-finesse
+  ULE cavity
+id: evrel_EGAZKLXR_rel.young_1999_03
+metadata:
+  source_paper: young1999
+  zotero_key: EGAZKLXR
+object: meth.multi_stage_locking
+predicate: OPERATIONALIZED-AS
+subject: ent.two_stage_pdh_lock_young99

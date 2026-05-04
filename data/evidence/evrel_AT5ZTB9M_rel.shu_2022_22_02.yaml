@@ -1,0 +1,9 @@
+evidence: A monolithic SiPh circuit is used to process the generated comb lines for
+  diverse optoelectronics systems
+id: evrel_AT5ZTB9M_rel.shu_2022_22_02
+metadata:
+  source_paper: shu2022
+  zotero_key: AT5ZTB9M
+object: ent.microcomb_driven_siph_system_s22
+predicate: PART-OF
+subject: ent.siph_tr_chip_s22

@@ -1,0 +1,10 @@
+definition: Automatic extraction from 021406. Details pending deep scan.
+id: evid_021406
+metadata:
+  source_paper: '021406'
+  status: processed_auto
+name: Evidence from 021406
+properties:
+  source_pdf: '021406'
+  status: unverified
+type: Entity/Factor

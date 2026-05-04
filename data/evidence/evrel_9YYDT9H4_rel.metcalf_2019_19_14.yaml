@@ -1,0 +1,9 @@
+evidence: Multiple frequency comb approaches targeting astronomical spectrograph calibration
+  have been explored, including mode filtering, EO generation, and microresonators
+id: evrel_9YYDT9H4_rel.metcalf_2019_19_14
+metadata:
+  source_paper: metcalf2019
+  zotero_key: 9YYDT9H4
+object: ent.near_ir_astro_comb_y12
+predicate: COMPETES-WITH
+subject: ent.hpf_nir_astrocomb_m19

@@ -1,0 +1,8 @@
+evidence: white frequency noise floor that limited the locking performance
+id: evrel_XSMPRNT3_rel.grabielle_2025_R01
+metadata:
+  source_paper: grabielle2025
+  zotero_key: XSMPRNT3
+object: pri.fdl_locking_noise_nonlinearity
+predicate: BOUNDED-BY
+subject: ent.fiber_interferometer

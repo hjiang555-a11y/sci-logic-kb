@@ -1,0 +1,9 @@
+evidence: coherence time of 11 s (Ramsey scenario) to 55 s (retrospective frequency
+  estimation)
+id: evrel_TVY7T59A_rel.matei_2017_05
+metadata:
+  source_paper: matei2017
+  zotero_key: TVY7T59A
+object: met.optical_coherence_time_m17
+predicate: CHARACTERIZED-BY
+subject: ent.si_crystal_fp_cavity_k12

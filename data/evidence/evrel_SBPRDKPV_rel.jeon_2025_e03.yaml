@@ -1,0 +1,9 @@
+evidence: The 1-km fiber delay with the Michelson interferometer offers a Q factor
+  of four billion
+id: evrel_SBPRDKPV_rel.jeon_2025_e03
+metadata:
+  source_paper: jeon2025
+  zotero_key: SBPRDKPV
+object: pri.fiber_delay_line_frequency_ref
+predicate: ENABLED-BY
+subject: meth.self_homodyne_fiber_locking

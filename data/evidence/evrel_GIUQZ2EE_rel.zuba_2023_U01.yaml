@@ -1,0 +1,9 @@
+evidence: coupling loss into the fibre will dominate the overall power loss in applications
+  requiring relatively short fibre lengths
+id: evrel_GIUQZ2EE_rel.zuba_2023_U01
+metadata:
+  source_paper: zuba2023
+  zotero_key: GIUQZ2EE
+object: pri.hcf_coupling_efficiency_limit
+predicate: CONDITIONED-BY
+subject: ent.fiber_interferometer

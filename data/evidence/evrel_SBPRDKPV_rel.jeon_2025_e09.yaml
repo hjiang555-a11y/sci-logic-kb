@@ -1,0 +1,9 @@
+evidence: The spool ... demonstrates a vibration sensitivity of approximately 10−10
+  [1/g]
+id: evrel_SBPRDKPV_rel.jeon_2025_e09
+metadata:
+  source_paper: jeon2025
+  zotero_key: SBPRDKPV
+object: ent.vibration_environment
+predicate: CONDITIONED-BY
+subject: ent.fiber_interferometer

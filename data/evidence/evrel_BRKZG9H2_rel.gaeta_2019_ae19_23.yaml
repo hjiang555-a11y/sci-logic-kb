@@ -1,0 +1,9 @@
+evidence: an integrated comb generator that draws less than 100 mW of electrical power
+  and can be operated with an AAA battery
+id: evrel_BRKZG9H2_rel.gaeta_2019_ae19_23
+metadata:
+  source_paper: gaeta2019
+  zotero_key: BRKZG9H2
+object: met.chip_comb_system_power_g19
+predicate: CHARACTERIZED-BY
+subject: ent.chip_scg_waveguide_g19

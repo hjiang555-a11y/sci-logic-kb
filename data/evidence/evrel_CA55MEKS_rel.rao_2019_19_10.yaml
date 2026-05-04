@@ -1,0 +1,9 @@
+evidence: The f_CEO SNR of ~40 dB is achieved and stabilized via pump current modulation
+  locking.
+id: evrel_CA55MEKS_rel.rao_2019_19_10
+metadata:
+  source_paper: rao2019
+  zotero_key: CA55MEKS
+object: meth.pump_current_fceo_lock_r19
+predicate: OPERATIONALIZED-AS
+subject: met.fceo_snr_r19
