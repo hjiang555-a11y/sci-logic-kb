@@ -1,4 +1,4 @@
-#  ???? — Continuous-wave mode-locked solid-state lasers with enhanced spatial hole bur... [evidence]
+# Braun ???? — Continuous-wave mode-locked solid-state lasers with enhanced spatial hole bur... [evidence]
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
@@ -6,11 +6,16 @@ meta:
   topic: ultrastable-laser
   source_type: journal_paper
   contribution_type: evidence
-  reliability: medium
+  reliability: high
   title: "Continuous-wave mode-locked solid-state lasers with enhanced spatial hole burning"
-  first_author: ""
+  first_author: "Braun"
+  authors: ["B. Braun", "K. J. Weingarten", "F. X. K�rtner", "U. Keller"]
+  journal: "Applied Physics B Lasers and Optics"
+  volume: 61
+  pages: 429-437
+  doi: 10.1007/BF01081271
   note: >
-    [批量提取] 元数据来源：PDF metadata。内容待专家提取。
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
 entities: []
 principles: []
 methods: []

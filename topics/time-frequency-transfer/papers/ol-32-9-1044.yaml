@@ -6,12 +6,16 @@ meta:
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
-  reliability: medium
+  reliability: high
   title: "Long-term femtosecond timing link stabilization using a single-crystal balanced cross correlator"
   first_author: "Kim"
-  authors: ["J. Kim, J. Chen, Z. Zhang, F. N. C. Wong, F. X. Kärtner, F. Loehl, H. Schlarb"]
+  authors: ["J. Kim", "J. Chen", "Z. Zhang", "F. N. C. Wong", "F. X. Kärtner", "F. Loehl", "H. Schlarb"]
+  journal: "Optics Letters"
+  volume: 32
+  pages: 1044
+  doi: 10.1364/OL.32.001044
   note: >
-    [批量提取] 元数据来源：PDF metadata。内容待专家提取。
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
 entities: []
 principles: []
 methods: []

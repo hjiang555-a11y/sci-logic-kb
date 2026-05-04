@@ -1,4 +1,4 @@
-#  ???? — untitled [evidence]
+# Webster ???? — Force-insensitive optical cavity [evidence]
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
@@ -6,11 +6,16 @@ meta:
   topic: ultrastable-laser
   source_type: journal_paper
   contribution_type: evidence
-  reliability: medium
-  title: "untitled"
-  first_author: ""
+  reliability: high
+  title: "Force-insensitive optical cavity"
+  first_author: "Webster"
+  authors: ["Stephen Webster", "Patrick Gill"]
+  journal: "Optics Letters"
+  volume: 36
+  pages: 3572
+  doi: 10.1364/OL.36.003572
   note: >
-    [批量提取] 元数据来源：PDF metadata。内容待专家提取。
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
 entities: []
 principles: []
 methods: []

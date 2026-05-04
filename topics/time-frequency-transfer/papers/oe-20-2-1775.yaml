@@ -1,4 +1,4 @@
-#  ???? — untitled [evidence]
+# Marra ???? — Dissemination of an optical frequency comb over fiber with 3 × 10^−18 fractio... [evidence]
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
@@ -6,11 +6,16 @@ meta:
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
-  reliability: medium
-  title: "untitled"
-  first_author: ""
+  reliability: high
+  title: "Dissemination of an optical frequency comb over fiber with 3 × 10^−18 fractional accuracy"
+  first_author: "Marra"
+  authors: ["Giuseppe Marra", "Helen S. Margolis", "David J. Richardson"]
+  journal: "Optics Express"
+  volume: 20
+  pages: 1775
+  doi: 10.1364/OE.20.001775
   note: >
-    [批量提取] 元数据来源：PDF metadata。内容待专家提取。
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
 entities: []
 principles: []
 methods: []

@@ -1,4 +1,4 @@
-#  ???? — untitled [evidence]
+# Byun ???? — Compact, stable 1 GHz femtosecond Er-doped fiber lasers [evidence]
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
@@ -6,11 +6,16 @@ meta:
   topic: optical-frequency-combs
   source_type: journal_paper
   contribution_type: evidence
-  reliability: medium
-  title: "untitled"
-  first_author: ""
+  reliability: high
+  title: "Compact, stable 1 GHz femtosecond Er-doped fiber lasers"
+  first_author: "Byun"
+  authors: ["Hyunil Byun", "Michelle Y. Sander", "Ali Motamedi", "Hanfei Shen", "Gale S. Petrich", "Leslie A. Kolodziejski", "Erich P. Ippen", "Franz X. Kärtner"]
+  journal: "Applied Optics"
+  volume: 49
+  pages: 5577
+  doi: 10.1364/AO.49.005577
   note: >
-    [批量提取] 元数据来源：PDF metadata。内容待专家提取。
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
 entities: []
 principles: []
 methods: []

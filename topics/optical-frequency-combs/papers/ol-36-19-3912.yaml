@@ -1,4 +1,4 @@
-#  ???? — untitled [evidence]
+# Phillips ???? — Supercontinuum generation in quasi-phase-matched LiNbO_3 waveguide pumped by ... [evidence]
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
@@ -6,11 +6,16 @@ meta:
   topic: optical-frequency-combs
   source_type: journal_paper
   contribution_type: evidence
-  reliability: medium
-  title: "untitled"
-  first_author: ""
+  reliability: high
+  title: "Supercontinuum generation in quasi-phase-matched LiNbO_3 waveguide pumped by a Tm-doped fiber laser system"
+  first_author: "Phillips"
+  authors: ["C. R. Phillips", "Carsten Langrock", "J. S. Pelc", "M. M. Fejer", "J. Jiang", "Martin E. Fermann", "I. Hartl"]
+  journal: "Optics Letters"
+  volume: 36
+  pages: 3912
+  doi: 10.1364/OL.36.003912
   note: >
-    [批量提取] 元数据来源：PDF metadata。内容待专家提取。
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
 entities: []
 principles: []
 methods: []
