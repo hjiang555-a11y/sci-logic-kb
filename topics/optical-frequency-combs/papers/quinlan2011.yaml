@@ -14,7 +14,6 @@ meta:
   journal: "Optics Letters"
   volume: 36
   pages: 3260
-  doi: 
   note: >
     首次演示Er:fiber OFD（200 MHz重复率）在10 GHz处绝对相位噪声低于−100 dBc/Hz（@1 Hz）， 等于或优于深冷微波振荡器。关键：200 MHz重复率+高速腔内LiNbO₃调制器降低本底相位噪声。 散粒噪声限：−145 dBc/Hz（>10 kHz偏移）。分析Er:fiber残余噪声贡献， 证明Er:fiber与Ti:sapphire OFD性能相当，为便携式低成本低噪声微波源奠定基础。
 entities:

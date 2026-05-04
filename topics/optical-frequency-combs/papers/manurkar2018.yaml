@@ -15,9 +15,7 @@ meta:
   pages: 274-287
   doi: 10.1364/OSAC.1.000274
   note: >
-    [技术论文] NIST Boulder + U. Colorado. 低功率全自参考 Er:fiber 梳（<5 W 电功率）： (1) SiN 波导超连续谱（200 pJ 脉冲能量，比 HNLF 降低 5×）→ fceo 探测； (2) 低功率被动冷却泵浦二极管（250 mW × 2）+ 低增益线性放大器（避免 高增益非线性放大）； (3) 光纤电阻调制器（fiber resistive modulator）：金-钯镀层光纤电阻加热，温度调谐 frep（±2.1 kHz，时间常数 0.5 s），
-    功耗仅 0.077 W/°C（传统温控腔 2.5 W/°C）；
-    (4) 总电功率 <5 W（含温控 + 泵浦 + 自参考），适用于 CubeSat（~30 W 总功率预算）； (5) 无循环滑动（cycle-slip-free）锁定。 本工作是低功率工程优化（5 W 电功率），未刷新跨平台最低电功率纪录（已有更低功率方案报道），归 evidence。 对齐 v2 子域主线：B-Space（低功率空间应用）。
+    [技术论文] NIST Boulder + U. Colorado. 低功率全自参考 Er:fiber 梳（<5 W 电功率）： (1) SiN 波导超连续谱（200 pJ 脉冲能量，比 HNLF 降低 5×）→ fceo 探测； (2) 低功率被动冷却泵浦二极管（250 mW × 2）+ 低增益线性放大器（避免 高增益非线性放大）； (3) 光纤电阻调制器（fiber resistive modulator）：金-钯镀层光纤电阻加热，温度调谐 frep（±2.1 kHz，时间常数 0.5 s）， 功耗仅 0.077 W/°C（传统温控腔 2.5 W/°C）； (4) 总电功率 <5 W（含温控 + 泵浦 + 自参考），适用于 CubeSat（~30 W 总功率预算）； (5) 无循环滑动（cycle-slip-free）锁定。 本工作是低功率工程优化（5 W 电功率），未刷新跨平台最低电功率纪录（已有更低功率方案报道），归 evidence。 对齐 v2 子域主线：B-Space（低功率空间应用）。
 entities:
   - id: ent.low_power_5w_self_ref_comb_m18
     name: "5 W 全自参考频率梳（Manurkar 2018, NIST）"

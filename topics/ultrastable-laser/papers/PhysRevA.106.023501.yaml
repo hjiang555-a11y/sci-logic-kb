@@ -1,0 +1,23 @@
+# Michaud-Belleau 2022 — Fundamental thermal noise in antiresonant hollow-core fibers [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: PhysRevA.106.023501
+  topic: ultrastable-laser
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Fundamental thermal noise in antiresonant hollow-core fibers"
+  year: 2022
+  first_author: "Michaud-Belleau"
+  authors: ["Vincent Michaud-Belleau", "Eric R. Numkam Fokoua", "Peter Horak", "Natalie V. Wheeler", "Shuichiro Rikimi", "Thomas D. Bradley", "David J. Richardson", "Francesco Poletti", "Jérôme Genest", "Radan Slavík"]
+  journal: "Physical Review A"
+  volume: 106
+  doi: 10.1103/PhysRevA.106.023501
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

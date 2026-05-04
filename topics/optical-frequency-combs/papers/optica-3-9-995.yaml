@@ -1,0 +1,24 @@
+# Shoji 2016 — Ultra-low-noise monolithic mode-locked solid-state laser [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: optica-3-9-995
+  topic: optical-frequency-combs
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Ultra-low-noise monolithic mode-locked solid-state laser"
+  year: 2016
+  first_author: "Shoji"
+  authors: ["Tyko D. Shoji", "Wanyan Xie", "Kevin L. Silverman", "Ari Feldman", "Todd Harvey", "Richard P. Mirin", "Thomas R. Schibli"]
+  journal: "Optica"
+  volume: 3
+  pages: 995
+  doi: 10.1364/OPTICA.3.000995
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

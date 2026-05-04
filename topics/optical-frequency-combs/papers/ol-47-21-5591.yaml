@@ -1,0 +1,24 @@
+# Zhang 2022 — Tunable VUV frequency comb for <sup>229m</sup>Th nuclear spectroscopy [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: ol-47-21-5591
+  topic: optical-frequency-combs
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Tunable VUV frequency comb for <sup>229m</sup>Th nuclear spectroscopy"
+  year: 2022
+  first_author: "Zhang"
+  authors: ["Chuankun Zhang", "Peng Li", "Jie Jiang", "Lars von der Wense", "John F. Doyle", "Martin E. Fermann", "Jun Ye"]
+  journal: "Optics Letters"
+  volume: 47
+  pages: 5591
+  doi: 10.1364/OL.473006
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

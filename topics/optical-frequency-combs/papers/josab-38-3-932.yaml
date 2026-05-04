@@ -1,0 +1,24 @@
+# Pröbster 2021 — FOKUS II—Space flight of a compact and vacuum compatible dual frequency comb ... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: josab-38-3-932
+  topic: optical-frequency-combs
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "FOKUS II—Space flight of a compact and vacuum compatible dual frequency comb system"
+  year: 2021
+  first_author: "Pröbster"
+  authors: ["Benjamin J. Pröbster", "Matthias Lezius", "Olaf Mandel", "Claus Braxmaier", "Ronald Holzwarth"]
+  journal: "Journal of the Optical Society of America B"
+  volume: 38
+  pages: 932
+  doi: 10.1364/JOSAB.413929
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

@@ -15,11 +15,7 @@ meta:
   pages: 7201011
   doi: 10.1109/JPHOT.2020.3010558
   note: >
-    [技术论文 / A1-Robust 工程化] 中科院西光所。200 MHz 全 PM Er:fiber 梳 面向场外应用的工程化集成： (1) 基于 GRIN 光纤耦合透镜自研微型 f-2f 干涉仪（替代四片非球面镜方案），
-    f_CEO SNR 40 dB；
-    (2) 自研"光纤执行器"替代腔内 EOM + 外 PZT 双执行器，
-    大调谐范围 + ~1 kHz 控制带宽；
-    (3) 参考 H-maser 得 f_rep 1 s Allan 330 μHz，残余积分时延抖动 418 fs（3 Hz–1 MHz）； (4) 去除温度主动控制简化结构。 在"全 PM + 紧凑 + 单执行器"组合上刷新工程化指标，但未刷新本子域的 A1-Noise 或 A1-Rep 纪录， 故归 evidence。对齐 v2 子域主线：A1-Robust（紧凑 + 场外）。
+    [技术论文 / A1-Robust 工程化] 中科院西光所。200 MHz 全 PM Er:fiber 梳 面向场外应用的工程化集成： (1) 基于 GRIN 光纤耦合透镜自研微型 f-2f 干涉仪（替代四片非球面镜方案）， f_CEO SNR 40 dB； (2) 自研"光纤执行器"替代腔内 EOM + 外 PZT 双执行器， 大调谐范围 + ~1 kHz 控制带宽； (3) 参考 H-maser 得 f_rep 1 s Allan 330 μHz，残余积分时延抖动 418 fs（3 Hz–1 MHz）； (4) 去除温度主动控制简化结构。 在"全 PM + 紧凑 + 单执行器"组合上刷新工程化指标，但未刷新本子域的 A1-Noise 或 A1-Rep 纪录， 故归 evidence。对齐 v2 子域主线：A1-Robust（紧凑 + 场外）。
 entities:
   - id: ent.compact_pm_er_comb_cai20
     name: "紧凑全 PM Er:fiber 单执行器梳（Cai 2020）"

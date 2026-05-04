@@ -12,7 +12,7 @@ meta:
   first_author: "Zhang"
   journal: "Chinese Physics B"
   volume: 31
-  pages: 054210
+  pages: 22664
   doi: 10.1088/1674-1056/ac40f6
   note: >
     [技术论文] 国家授时中心（Pan Zhang / Yan-Yan Zhang / Hai-Feng Jiang / Shou-Gang Zhang 等）。 基于 figure-9 结构 NALM 锁模 + 全保偏光纤的 Er:fiber turnkey 飞秒激光，基频 200 MHz， 输出光谱 FWHM 75 nm（1550 nm 中心）、变换极限 46 fs。单支路展宽至倍频程 SC 产生 f_ceo（SNR 38 dB @300 kHz RBW）， 通过调泵浦功率锁定 f_ceo，f_beat 通过腔内 EOM（~300 kHz 带宽）+ PZT 锁定到 1555 nm 超稳激光。 四条"应用支路"以 EDFA + PM-HNLF（+ PPLN）生成 698/729/1068/1156 nm 单模功率 ≥707 nW~5 µW， 与 Sr/Ca+/Al+/Yb 钟激光拍频 SNR 均 >30 dB @300 kHz。 in-loop：f_ceo 7.5×10⁻¹⁸/√τ @1 s，f_beat 8.5×10⁻¹⁸/√τ @1 s； out-of-loop：9×10⁻¹⁷ @1 s → 5.5×10⁻¹⁹ @4000 s，优于目前 Sr/Yb 最佳钟比对水平。 跨文件节点：ent.optical_frequency_comb、pri.self_referencing_f2f 定义于 udem2002.yaml； 与 ent.hybrid_ml_erfiber_comb_z17（zhang2017.yaml）构成同组 Er:fiber 梳架构演进序列（COMPETES-WITH）。

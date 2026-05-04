@@ -1,0 +1,24 @@
+# Kim 2008 — Drift-free femtosecond timing synchronization of remote optical and microwave... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: kim08
+  topic: time-frequency-transfer
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Drift-free femtosecond timing synchronization of remote optical and microwave sources"
+  year: 2008
+  first_author: "Kim"
+  authors: ["Jungwon Kim", "Jonathan A. Cox", "Jian Chen", "Franz X. Kärtner"]
+  journal: "Nature Photonics"
+  volume: 2
+  pages: 733-736
+  doi: 10.1038/nphoton.2008.225
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

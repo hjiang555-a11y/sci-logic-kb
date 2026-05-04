@@ -12,14 +12,7 @@ meta:
   first_author: "Sullivan"
   authors: ["Donald B. Sullivan", "David W. Allan", "David A. Howe", "Fred L. Walls"]
   note: >
-    [奠基技术报告 · < 1999 年白名单 §B Howe 噪声测量体系] NIST TN 1337 是时频计量方差 体系的"手册级"文献，由 Sullivan、Allan、Howe、Walls 四位奠基人联合编著。文档以 章节形式系统整理 1966–1990 期间方差体系的三项关键扩展： (1) Modified Allan Deviation（MDEV / MVAR / mod σ_y）——引入"相位平均窗口"修正，
-    使积分核从 sin⁴ 升级为 sin⁶，PM 噪声带宽依赖被抑制，white PM（α=+2）与
-    flicker PM（α=+1）能被分辨（斜率 μ 分别为 −3/2 与 −1）；
-    (2) 时偏差（TDEV / σ_x(τ) = τ · mod σ_y(τ) / sqrt(3)）——专用于时间同步/
-    网络时钟场景，单位 s；
-    (3) Hadamard Deviation（HDEV）——三点差分方差，对线性频率漂移鲁棒（drift 被
-    二阶差分消去），用于氢脉泽、老化快速器件的长 τ 分析。
-    本文件同时系统阐述测量带宽 f_h 对 ADEV / MDEV 结果的影响、dead-time 修正 （Yoshimura 系数表）、置信区间估计（等效自由度 χ² 分布）等工程规范。本文件为 时频工程师在实验室日常使用中的"座右铭"文献。
+    [奠基技术报告 · < 1999 年白名单 §B Howe 噪声测量体系] NIST TN 1337 是时频计量方差 体系的"手册级"文献，由 Sullivan、Allan、Howe、Walls 四位奠基人联合编著。文档以 章节形式系统整理 1966–1990 期间方差体系的三项关键扩展： (1) Modified Allan Deviation（MDEV / MVAR / mod σ_y）——引入"相位平均窗口"修正， 使积分核从 sin⁴ 升级为 sin⁶，PM 噪声带宽依赖被抑制，white PM（α=+2）与 flicker PM（α=+1）能被分辨（斜率 μ 分别为 −3/2 与 −1）； (2) 时偏差（TDEV / σ_x(τ) = τ · mod σ_y(τ) / sqrt(3)）——专用于时间同步/ 网络时钟场景，单位 s； (3) Hadamard Deviation（HDEV）——三点差分方差，对线性频率漂移鲁棒（drift 被 二阶差分消去），用于氢脉泽、老化快速器件的长 τ 分析。 本文件同时系统阐述测量带宽 f_h 对 ADEV / MDEV 结果的影响、dead-time 修正 （Yoshimura 系数表）、置信区间估计（等效自由度 χ² 分布）等工程规范。本文件为 时频工程师在实验室日常使用中的"座右铭"文献。
 entities: []
 
 principles:

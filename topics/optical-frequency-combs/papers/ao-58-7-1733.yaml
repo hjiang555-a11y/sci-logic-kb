@@ -1,0 +1,24 @@
+# Song 2019 — Compact low-noise passively mode-locked Er-doped femtosecond all-fiber laser ... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: ao-58-7-1733
+  topic: optical-frequency-combs
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Compact low-noise passively mode-locked Er-doped femtosecond all-fiber laser with 268  GHz fundamental repetition rate"
+  year: 2019
+  first_author: "Song"
+  authors: ["Jiazheng Song", "Hushan Wang", "Xinning Huang", "XiaoHong Hu", "Ting Zhang", "Yishan Wang", "Yuanshan Liu", "Jianguo Zhang"]
+  journal: "Applied Optics"
+  volume: 58
+  pages: 1733
+  doi: 10.1364/AO.58.001733
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

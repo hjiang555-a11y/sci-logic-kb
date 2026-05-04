@@ -1,0 +1,24 @@
+# Delva 2017 — Clocks in Space for Tests of Fundamental Physics [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: Delva2017_Article_ClocksInSpaceForTestsOfFunda
+  topic: frequency-standards
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Clocks in Space for Tests of Fundamental Physics"
+  year: 2017
+  first_author: "Delva"
+  authors: ["Pacôme Delva", "Aurélien Hees", "Peter Wolf"]
+  journal: "Space Science Reviews"
+  volume: 212
+  pages: 1385-1421
+  doi: 10.1007/s11214-017-0361-9
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

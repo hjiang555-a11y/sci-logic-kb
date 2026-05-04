@@ -12,14 +12,7 @@ meta:
   first_author: "Riley"
   authors: ["William J. Riley", "David A. Howe"]
   note: >
-    [奠基技术报告 · < 1999 年白名单 §B Howe 噪声测量体系；虽出版于 2008 年但作为 Howe 1990s 方差体系的集大成手册，按 TODO.md §0.1 §B 接受] Riley 联合 Howe 编著的 NIST SP 1065 是频率稳定度分析的权威参考手册，内容在 Sullivan 1990 基础上增补： (1) Overlapping Allan Deviation（OADEV）——利用滑动窗口大幅降低 ADEV 的方差，
-    使等效自由度 EDF ~2.67(N/m−1)，提升长 τ 数据点的统计意义；
-    (2) Total Deviation（TOTDEV / σ_Total(τ)）——对数据末端做反射延拓，增大样本有效
-    长度，长 τ 偏差远小于 ADEV；
-    (3) Theo1 / TheoH / TheoBR 方差（Howe 2000）——对 τ > N·τ_0/2 极长区间给出统计
-    效率最高的估计，需 bias 修正（TheoBR 系数），TheoH 是 Theo1 与 ADEV 的混合
-    估计（τ < 0.1·N·τ_0 用 ADEV，之后切 TheoBR）。
-    本手册给出每一种方差的 bias correction factor（b_1, b_2, b_3 系数表）、等效 自由度 EDF 公式、χ² 置信区间构造。是 Stable32（Riley 自著）、AllanTools（Python）、 TimeLab 等所有商业/开源稳定度分析软件的实现参考。
+    [奠基技术报告 · < 1999 年白名单 §B Howe 噪声测量体系；虽出版于 2008 年但作为 Howe 1990s 方差体系的集大成手册，按 TODO.md §0.1 §B 接受] Riley 联合 Howe 编著的 NIST SP 1065 是频率稳定度分析的权威参考手册，内容在 Sullivan 1990 基础上增补： (1) Overlapping Allan Deviation（OADEV）——利用滑动窗口大幅降低 ADEV 的方差， 使等效自由度 EDF ~2.67(N/m−1)，提升长 τ 数据点的统计意义； (2) Total Deviation（TOTDEV / σ_Total(τ)）——对数据末端做反射延拓，增大样本有效 长度，长 τ 偏差远小于 ADEV； (3) Theo1 / TheoH / TheoBR 方差（Howe 2000）——对 τ > N·τ_0/2 极长区间给出统计 效率最高的估计，需 bias 修正（TheoBR 系数），TheoH 是 Theo1 与 ADEV 的混合 估计（τ < 0.1·N·τ_0 用 ADEV，之后切 TheoBR）。 本手册给出每一种方差的 bias correction factor（b_1, b_2, b_3 系数表）、等效 自由度 EDF 公式、χ² 置信区间构造。是 Stable32（Riley 自著）、AllanTools（Python）、 TimeLab 等所有商业/开源稳定度分析软件的实现参考。
 entities: []
 
 principles:

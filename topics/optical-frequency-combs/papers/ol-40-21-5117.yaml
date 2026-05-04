@@ -1,0 +1,24 @@
+# Johnson 2015 — Octave-spanning coherent supercontinuum generation in a silicon nitride waveg... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: ol-40-21-5117
+  topic: optical-frequency-combs
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Octave-spanning coherent supercontinuum generation in a silicon nitride waveguide"
+  year: 2015
+  first_author: "Johnson"
+  authors: ["Adrea R. Johnson", "Aline S. Mayer", "Alexander Klenner", "Kevin Luke", "Erin S. Lamb", "Michael R. E. Lamont", "Chaitanya Joshi", "Yoshitomo Okawachi", "Frank W. Wise", "Michal Lipson", "Ursula Keller", "Alexander L. Gaeta"]
+  journal: "Optics Letters"
+  volume: 40
+  pages: 5117
+  doi: 10.1364/OL.40.005117
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

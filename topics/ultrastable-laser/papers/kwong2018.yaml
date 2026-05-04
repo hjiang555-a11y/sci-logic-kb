@@ -13,7 +13,7 @@ meta:
   authors: ["Chang Jian Kwong", "Michael G. Hansen", "Jun Sugawara", "Stephan Schiller"]
   journal: "Measurement Science and Technology"
   volume: 29
-  pages: 075011
+  pages: 31241
   doi: 10.1088/1361-6501/aac3b0
   note: >
     首次对 NEXCERA N118C 陶瓷腔进行精确长期漂移测量，发现分数长度漂移率 L⁻¹dΔL/dt = −(1.74±0.01)×10⁻⁸ yr⁻¹（室温），介于 ULE 与 Zerodur 之间。 CTE 零点温度约 22.9°C，与室温兼容。

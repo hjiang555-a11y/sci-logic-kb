@@ -12,7 +12,7 @@ meta:
   first_author: "Rao"
   journal: "Acta Photonica Sinica 光子学报"
   volume: 48
-  pages: 0114003
+  pages: 38915
   doi: 10.3788/gzxb20194801.0114003
   note: >
     [应用型技术论文] NTSC 团队继 Zhang 2017 锶光钟 Er:fiber 光梳之后，针对 Li 原子 D1 线（~670.78 nm） 频率测量需求，搭建 NPR 锁模掺铒飞秒光纤光梳 + f-2f 自参考 + HNLF/PPLN 扩展到 671 nm 的完整链路。 跨文件节点引用：ent.optical_frequency_comb、pri.self_referencing_f2f 定义于 udem2002.yaml； ent.hybrid_ml_erfiber_comb_z17 等 Zhang 2017 节点仅作背景参考，不复用。

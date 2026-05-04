@@ -12,7 +12,7 @@ meta:
   first_author: "Hickstein"
   journal: "Physical Review Applied"
   volume: 8
-  pages: 014025
+  pages: 6165
   doi: 10.1103/PhysRevApplied.8.014025
   note: >
     [技术论文] NIST Boulder + Yale（Tang 组）合作。在 SiO2 包覆 AlN 薄膜上刻蚀高限域 波导（800 nm 厚，宽 400–5100 nm），利用 AlN 材料同时具备 χ² 与 χ³ 的特点，使超连续 展宽（χ³: SPM/FWM/色散波）与 SHG（χ²）在同一单模波导中共存、自然时域重合， 无需外置倍频晶体、重组光路或延迟线即可从输出光直接光电探测 f_CEO。相比体块 f-2f 干涉仪， 该方案对 GHz 重频、低脉冲能量梳（EO 梳、微梳）友好，为便携式自参考梳奠基。

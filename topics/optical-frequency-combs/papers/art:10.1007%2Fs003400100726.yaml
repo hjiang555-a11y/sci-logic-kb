@@ -1,0 +1,24 @@
+# Paschotta 2002 — Passive mode locking with slow saturable absorbers [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: art:10.1007%2Fs003400100726
+  topic: optical-frequency-combs
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Passive mode locking with slow saturable absorbers"
+  year: 2002
+  first_author: "Paschotta"
+  authors: ["R. Paschotta", "U. Keller"]
+  journal: "Applied Physics B: Lasers and Optics"
+  volume: 73
+  pages: 653-662
+  doi: 10.1007/s003400100726
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

@@ -2,7 +2,7 @@
 
 # 📊 Metrics Quick Reference
 
-> Auto-generated 2026-05-04 03:55 UTC
+> Auto-generated 2026-05-04 04:06 UTC
 >
 > Metrics are grouped by **role** (v4.4 σ_y-first convention, see `topics/ultrastable-laser/_meta/scoping_principles.md` v2). Role is taken from the `role` field on the metric node when present, otherwise inferred from ID / name heuristics.
 

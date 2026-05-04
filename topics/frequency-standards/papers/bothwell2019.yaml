@@ -13,7 +13,7 @@ meta:
   authors: ["T. Bothwell", "D. Kedar", "E. Oelker", "J. M. Robinson", "S. L. Bromley", "W. L. Tew", "J. Ye", "C. J. Kennedy"]
   journal: "Metrologia"
   volume: 56
-  pages: 065004
+  pages: 27140
   doi: 10.1088/1681-7575/ab4089
   note: >
     [期刊论文] JILA. JILA SrI 光晶格钟系统不确定度再评估到 2.0×10⁻¹⁸， 关键改进：BBR shift 建模（结合 2019 JILA 精确原子响应测量）、lattice ac Stark 高阶项、atom-atom 相互作用建模。接续 Nicholson 2015 的 2.1×10⁻¹⁸ 纪录。

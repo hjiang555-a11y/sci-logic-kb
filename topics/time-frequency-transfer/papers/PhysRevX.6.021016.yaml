@@ -1,0 +1,23 @@
+# Deschênes 2016 — Synchronization of Distant Optical Clocks at the Femtosecond Level [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: PhysRevX.6.021016
+  topic: time-frequency-transfer
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Synchronization of Distant Optical Clocks at the Femtosecond Level"
+  year: 2016
+  first_author: "Deschênes"
+  authors: ["Jean-Daniel Deschênes", "Laura C. Sinclair", "Fabrizio R. Giorgetta", "William C. Swann", "Esther Baumann", "Hugo Bergeron", "Michael Cermak", "Ian Coddington", "Nathan R. Newbury"]
+  journal: "Physical Review X"
+  volume: 6
+  doi: 10.1103/PhysRevX.6.021016
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

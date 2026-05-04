@@ -1,0 +1,23 @@
+# Lu 2020 — Sensitive linear optical sampling system with femtosecond precision [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: Lu-2020-Sensitive-linear-optical-sampling-s
+  topic: time-frequency-transfer
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Sensitive linear optical sampling system with femtosecond precision"
+  year: 2020
+  first_author: "Lu"
+  authors: ["Qiming Lu", "Qi Shen", "Jianyu Guan", "Min Li", "Jiupeng Chen", "Shengkai Liao", "Qiang Zhang", "Chengzhi Peng"]
+  journal: "Review of Scientific Instruments"
+  volume: 91
+  doi: 10.1063/1.5144488
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

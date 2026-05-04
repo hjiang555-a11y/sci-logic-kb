@@ -1,0 +1,24 @@
+# Ruddock 2003 — Bandwidth-limited subpicosecond pulse generation in mode-locked cw dye lasers [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: Appl. Phys. Lett. 29 , 296 (1976)
+  topic: optical-frequency-combs
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Bandwidth-limited subpicosecond pulse generation in mode-locked cw dye lasers"
+  year: 2003
+  first_author: "Ruddock"
+  authors: ["I. S. Ruddock", "D. J. Bradley"]
+  journal: "Applied Physics Letters"
+  volume: 29
+  pages: 296-297
+  doi: 10.1063/1.89052
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

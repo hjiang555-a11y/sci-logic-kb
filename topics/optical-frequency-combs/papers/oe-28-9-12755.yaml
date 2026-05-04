@@ -1,0 +1,24 @@
+# Krüger 2020 — Performance scaling of a 10-GHz solid-state laser enabling self-referenced CE... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: oe-28-9-12755
+  topic: optical-frequency-combs
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Performance scaling of a 10-GHz solid-state laser enabling self-referenced CEO frequency detection without amplification"
+  year: 2020
+  first_author: "Krüger"
+  authors: ["Léonard M. Krüger", "Aline S. Mayer", "Yoshitomo Okawachi", "Xingchen Ji", "Alexander Klenner", "Adrea R. Johnson", "Carsten Langrock", "Martin M. Fejer", "Michal Lipson", "Alexander L. Gaeta", "Valentin J. Wittwer", "Thomas Südmeyer", "Christopher R. Phillips", "Ursula Keller"]
+  journal: "Optics Express"
+  volume: 28
+  pages: 12755
+  doi: 10.1364/OE.391252
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

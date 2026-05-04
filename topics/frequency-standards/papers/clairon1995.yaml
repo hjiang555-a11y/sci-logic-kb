@@ -2,7 +2,6 @@
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
-  zotero_key: 
   topic: frequency-standards
   source_type: technical_paper
   contribution_type: evidence
@@ -11,7 +10,6 @@ meta:
   year: 1995
   first_author: "Clairon"
   journal: "IEEE Transactions on Instrumentation and Measurement"
-  doi: 
   note: >
     报道了铯原子喷泉频率标准的初步研制结果，实现了 sub-Hertz 级的 Ramsey 共振线宽（< 700 mHz）， 并初步评估了冷碰撞频移等系统误差。
 entities:

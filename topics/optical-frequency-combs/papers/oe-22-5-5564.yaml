@@ -1,0 +1,24 @@
+# Tolstik 2014 — Graphene mode-locked Cr:ZnS laser with 41 fs pulse duration [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: oe-22-5-5564
+  topic: optical-frequency-combs
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Graphene mode-locked Cr:ZnS laser with 41 fs pulse duration"
+  year: 2014
+  first_author: "Tolstik"
+  authors: ["Nikolai Tolstik", "Evgeni Sorokin", "Irina T. Sorokina"]
+  journal: "Optics Express"
+  volume: 22
+  pages: 5564
+  doi: 10.1364/OE.22.005564
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

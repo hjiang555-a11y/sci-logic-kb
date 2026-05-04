@@ -13,7 +13,7 @@ meta:
   authors: ["G. P. Barwood", "P. Gill", "G. Huang", "H. A. Klein"]
   journal: "Measurement Science and Technology"
   volume: 23
-  pages: 055201
+  pages: 23169
   doi: 10.1088/0957-0233/23/5/055201
   note: >
     NPL 团队为 ⁸⁸Sr⁺ 单离子光频标开发自动激光控制系统—— 包括自动锁频、自动重锁和长期频率稳定运行。 是离子光钟工程化和自动化的基础性技术贡献。

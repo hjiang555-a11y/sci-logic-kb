@@ -1,0 +1,24 @@
+# Shi 2022 — Temperature Insensitive Delay-Line Fiber Interferometer Operating at Room Tem... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: Temperature_Insensitive_Delay-Line_Fiber_Inter
+  topic: ultrastable-laser
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Temperature Insensitive Delay-Line Fiber Interferometer Operating at Room Temperature"
+  year: 2022
+  first_author: "Shi"
+  authors: ["Bo Shi", "Guiseppe Marra", "Zitong Feng", "Hesham Sakr", "John R. Hayes", "Eric R. Numkam Fokoua", "Meng Ding", "Francesco Poletti", "David J. Richardson", "Radan Slavik"]
+  journal: "Journal of Lightwave Technology"
+  volume: 40
+  pages: 5716-5721
+  doi: 10.1109/JLT.2022.3177646
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

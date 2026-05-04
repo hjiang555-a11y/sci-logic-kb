@@ -1,0 +1,24 @@
+# Kraemer 2023 — Observation of the radiative decay of the 229Th nuclear clock isomer [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: s41586-023-05894-z
+  topic: frequency-standards
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Observation of the radiative decay of the 229Th nuclear clock isomer"
+  year: 2023
+  first_author: "Kraemer"
+  authors: ["Sandro Kraemer", "Janni Moens", "Michail Athanasakis-Kaklamanakis", "Silvia Bara", "Kjeld Beeks", "Premaditya Chhetri", "Katerina Chrysalidis", "Arno Claessens", "Thomas E. Cocolios", "João G. M. Correia", "Hilde De Witte", "Rafael Ferrer", "Sarina Geldhof", "Reinhard Heinke", "Niyusha Hosseini", "Mark Huyse", "Ulli Köster", "Yuri Kudryavtsev", "Mustapha Laatiaoui", "Razvan Lica", "Goele Magchiels", "Vladimir Manea", "Clement Merckling", "Lino M. C. Pereira", "Sebastian Raeder", "Thorsten Schumm", "Simon Sels", "Peter G. Thirolf", "Shandirai Malven Tunhuma", "Paul Van Den Bergh", "Piet Van Duppen", "André Vantomme", "Matthias Verlinde", "Renan Villarreal", "Ulrich Wahl"]
+  journal: "Nature"
+  volume: 617
+  pages: 706-710
+  doi: 10.1038/s41586-023-05894-z
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

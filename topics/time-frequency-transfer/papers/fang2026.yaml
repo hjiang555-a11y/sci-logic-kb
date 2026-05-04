@@ -13,7 +13,7 @@ meta:
   authors: ["Yu-Chen Fang", "Jian-Yu Guan", "Qi Shen", "Jin-Jian Han", "Lei Hou", "Meng-Zhe Lian", "Yong Wang", "Wei-Yue Liu", "Ji-Gang Ren", "Cheng-Zhi Peng", "Qiang Zhang", "Hai-Feng Jiang", "Jian-Wei Pan"]
   journal: "Chinese Physics B"
   volume: 35
-  pages: 010602
+  pages: 4482
   doi: 10.1088/1674-1056/ae1120
   note: >
     [evidence 论文] 提出复杂最小二乘（CLS）时延提取算法：直接使用互相关干涉图的 复数 FFT 数据（幅度+相位）进行最大似然估计，避免传统方法中相位解缠在低 SNR 下引入的严重误差。实验在乌鲁木齐 113 km 自由空间链路验证：最小检测功率从 ~1 nW 降至 0.1 nW（一个量级提升），短稳 TDEV 从 80 fs 改善至 50 fs。系统等效总损耗 可达 100 dB，匹配地月链路水平。

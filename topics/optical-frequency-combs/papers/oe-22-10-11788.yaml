@@ -1,0 +1,24 @@
+# Kim 2014 — Time-domain stabilization of carrier-envelope phase in femtosecond light pulses [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: oe-22-10-11788
+  topic: optical-frequency-combs
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Time-domain stabilization of carrier-envelope phase in femtosecond light pulses"
+  year: 2014
+  first_author: "Kim"
+  authors: ["Young-Jin Kim", "Ian Coddington", "William C. Swann", "Nathan R. Newbury", "Joohyung Lee", "Seungchul Kim", "Seung-Woo Kim"]
+  journal: "Optics Express"
+  volume: 22
+  pages: 11788
+  doi: 10.1364/OE.22.011788
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

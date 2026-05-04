@@ -13,7 +13,7 @@ meta:
   authors: ["Matthew A. Norcia", "Julia R. K. Cline", "Juan A. Muniz", "John M. Robinson", "Ross B. Hutson", "Akihisa Goban", "G. Edward Marti", "Jun Ye", "James K. Thompson"]
   journal: "Physical Review X"
   volume: 8
-  pages: 021036
+  pages: 8734
   doi: 10.1103/PhysRevX.8.021036
   note: >
     JILA 团队在 Sr 钟跃迁（¹S₀→³P₀）上观测超辐射并测量其频率。 超辐射是具有集体偶极相干（dipole coherence）的多原子 协同自发辐射——将被动光钟（探测→反馈）概念转变为 主动光钟（超辐射直接输出稳定光频）。该工作是主动 光钟路径的重要实验验证。

@@ -13,7 +13,7 @@ meta:
   authors: ["Alexander Aeppli", "Kyungtae Kim", "William Warfield", "Marianna S. Safronova", "Jun Ye"]
   journal: "Physical Review Letters"
   volume: 133
-  pages: 023401
+  pages: 9985
   doi: 10.1103/PhysRevLett.133.023401
   note: >
     JILA 团队将 Sr 光晶格钟的系统不确定度推进至 8×10⁻¹⁹—— 当前光钟系统不确定度的最低值之一。关键改进包括 黑体辐射频移的更精确评估、晶格光频移的精确控制、 以及密度频移的系统测量。为光钟重新定义 SI 秒提供基准。

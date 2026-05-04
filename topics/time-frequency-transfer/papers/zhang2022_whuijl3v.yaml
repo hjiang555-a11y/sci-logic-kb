@@ -13,7 +13,7 @@ meta:
   authors: ["X. Zhang", "X. Deng", "Q. Zang", "D. D. Jiao", "J. Gao", "D. Wang", "Q. Zhou", "J. Liu", "G. J. Xu", "R. F. Dong", "T. Liu", "S. G. Zhang"]
   journal: "Chinese Physics Letters"
   volume: 39
-  pages: 044201
+  pages: 18561
   doi: 10.1088/0256-307X/39/4/044201
   note: >
     [期刊论文] NTSC Xi'an. 在 490 km 实际场地部署光纤（高环境噪声）上使用主动噪声抵消 + 宽动态范围相位检测器实现相干光频传递。工程示范，证明中国西部噪声场地光纤条件下 长距离相干 OFT 的可行性。具体数值见正文。

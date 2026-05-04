@@ -1,0 +1,23 @@
+# Liu 2018 — In-orbit operation of an atomic clock based on laser-cooled 87Rb atoms [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: s41467-018-05219-z
+  topic: frequency-standards
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "In-orbit operation of an atomic clock based on laser-cooled 87Rb atoms"
+  year: 2018
+  first_author: "Liu"
+  authors: ["Liang Liu", "De-Sheng Lü", "Wei-Biao Chen", "Tang Li", "Qiu-Zhi Qu", "Bin Wang", "Lin Li", "Wei Ren", "Zuo-Ren Dong", "Jian-Bo Zhao", "Wen-Bing Xia", "Xin Zhao", "Jing-Wei Ji", "Mei-Feng Ye", "Yan-Guang Sun", "Yuan-Yuan Yao", "Dan Song", "Zhao-Gang Liang", "Shan-Jiang Hu", "Dun-He Yu", "Xia Hou", "Wei Shi", "Hua-Guo Zang", "Jing-Feng Xiang", "Xiang-Kai Peng", "Yu-Zhu Wang"]
+  journal: "Nature Communications"
+  volume: 9
+  doi: 10.1038/s41467-018-05219-z
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

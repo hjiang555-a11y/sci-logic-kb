@@ -15,9 +15,7 @@ meta:
   pages: 3262-3272
   doi: 10.1364/OSAC.2.003262
   note: >
-    [技术论文] NIST Boulder + U. Colorado. 开源 FPGA 数字伺服光梳稳定： (1) 低成本 Red Pitaya FPGA（125-14 板）+ 开源软件 → frep / fceo 数字相位锁； (2) 锁定 Er:fiber 梳（250 MHz，Menlo Systems FC1500）：a) frep → 1560 nm CW 激光拍频；b) fceo → f-2f 拍频； (3) 性能：a) 残余相位噪声 ~0.1 rad（< 100 as 时间抖动）；b) 无循环滑动锁定 > 30 h；
-    c) 与商业系统相当性能（Red Pitaya 无显著限制）；
-    (4) 模块化：易适配多种梳平台 / 执行器（慢 / 快反馈）； (5) 优势：低成本（Red Pitaya ~$500）+ 开源（降低技术门槛）。 本工作是开源 FPGA 数字伺服工程演示（达到商业系统同级性能），未刷新跨平台技术指标，归 evidence。 对齐 v2 子域主线：A-Locking（梳稳定技术）。
+    [技术论文] NIST Boulder + U. Colorado. 开源 FPGA 数字伺服光梳稳定： (1) 低成本 Red Pitaya FPGA（125-14 板）+ 开源软件 → frep / fceo 数字相位锁； (2) 锁定 Er:fiber 梳（250 MHz，Menlo Systems FC1500）：a) frep → 1560 nm CW 激光拍频；b) fceo → f-2f 拍频； (3) 性能：a) 残余相位噪声 ~0.1 rad（< 100 as 时间抖动）；b) 无循环滑动锁定 > 30 h； c) 与商业系统相当性能（Red Pitaya 无显著限制）； (4) 模块化：易适配多种梳平台 / 执行器（慢 / 快反馈）； (5) 优势：低成本（Red Pitaya ~$500）+ 开源（降低技术门槛）。 本工作是开源 FPGA 数字伺服工程演示（达到商业系统同级性能），未刷新跨平台技术指标，归 evidence。 对齐 v2 子域主线：A-Locking（梳稳定技术）。
 entities:
   - id: ent.fpga_digital_servo_er_comb_s19
     name: "FPGA 数字伺服 Er:fiber 梳系统（Shaw 2019, NIST）"

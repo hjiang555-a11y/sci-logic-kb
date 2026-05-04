@@ -13,7 +13,7 @@ meta:
   authors: ["H. L. Quan", "W. Y. Zhao", "W. X. Xue", "Y. Xing", "H. F. Jiang", "W. G. Guo", "S. G. Zhang"]
   journal: "Acta Photonica Sinica"
   volume: 50
-  pages: 0406003
+  pages: 134147
   doi: 10.3788/gzxb20215004.0406003
   note: >
     [期刊论文] NTSC Xi'an. 56 km 光纤微波频率传递，环回法测相位 + 本地预补偿， 双向采用不同频率微波调制避免光寄生反射串扰；配色散补偿光纤改善探测相噪。 实测传递稳定度 1.8×10⁻¹⁵ @1 s、4×10⁻¹⁸ @10⁴ s。

@@ -15,13 +15,7 @@ meta:
   pages: 401-405
   doi: 10.1038/s41586-018-0598-9
   note: >
-    [里程碑技术论文] Cornell + Columbia (Stern/Ji/Okawachi/Gaeta/Lipson) 合作。 毫米级 III–V RSOA 增益芯片端面对接 Si3N4 光子芯片，后者集成双 Vernier 微环滤波器 （半径 20/22 µm，FSR 1.18/1.07 THz）作为单纵模选择 + 半径 120 µm 非线性高 Q 微环 （Q_i = 8×10⁶，FSR = 194 GHz）既做激光腔输出耦合（Rayleigh 背散 40% 反射）又做 Kerr FWM 产生腔。1579 nm 泵浦 CW 激光、Popt = 2.5 mW（bus 波导前）即可触发孤子化； 片上电泵 Pelec = 98 mW（AAA 电池直接供电）输出 1.3 mW 激光 + 0.24 mW 梳，孤子谱宽 8.6 THz (72 nm, 30 dB)。模块化版本（Sagnac 环镜）在 Pelec = 162 mW 下产生双孤子 13.4 THz 谱，总梳功率 80 µW，转换效率 1.6%。本文件定义 Level-2 集成系统实例 ent.battery_operated_microcomb_s18 及若干 SWaP（size-weight-and-power）层面的 工程原理/指标；Level-1 类型节点 ent.microresonator_frequency_comb 等全部跨文件引用。 跨文件节点引用：
-    - ent.microresonator_frequency_comb 定义于 kippenberg2018.yaml
-    - ent.si3n4_integrated_comb 定义于 gaeta2019.yaml / kippenberg2018.yaml
-    - pri.dissipative_kerr_soliton 定义于 kippenberg2018.yaml
-    - pri.microresonator_anomalous_dispersion 定义于 kippenberg2018.yaml
-    - meth.cw_pumped_microcomb_generation 定义于 kippenberg2018.yaml
-    - meth.laser_tuning_soliton_access 定义于 li2017.yaml / kippenberg2018.yaml
+    [里程碑技术论文] Cornell + Columbia (Stern/Ji/Okawachi/Gaeta/Lipson) 合作。 毫米级 III–V RSOA 增益芯片端面对接 Si3N4 光子芯片，后者集成双 Vernier 微环滤波器 （半径 20/22 µm，FSR 1.18/1.07 THz）作为单纵模选择 + 半径 120 µm 非线性高 Q 微环 （Q_i = 8×10⁶，FSR = 194 GHz）既做激光腔输出耦合（Rayleigh 背散 40% 反射）又做 Kerr FWM 产生腔。1579 nm 泵浦 CW 激光、Popt = 2.5 mW（bus 波导前）即可触发孤子化； 片上电泵 Pelec = 98 mW（AAA 电池直接供电）输出 1.3 mW 激光 + 0.24 mW 梳，孤子谱宽 8.6 THz (72 nm, 30 dB)。模块化版本（Sagnac 环镜）在 Pelec = 162 mW 下产生双孤子 13.4 THz 谱，总梳功率 80 µW，转换效率 1.6%。本文件定义 Level-2 集成系统实例 ent.battery_operated_microcomb_s18 及若干 SWaP（size-weight-and-power）层面的 工程原理/指标；Level-1 类型节点 ent.microresonator_frequency_comb 等全部跨文件引用。 跨文件节点引用： - ent.microresonator_frequency_comb 定义于 kippenberg2018.yaml - ent.si3n4_integrated_comb 定义于 gaeta2019.yaml / kippenberg2018.yaml - pri.dissipative_kerr_soliton 定义于 kippenberg2018.yaml - pri.microresonator_anomalous_dispersion 定义于 kippenberg2018.yaml - meth.cw_pumped_microcomb_generation 定义于 kippenberg2018.yaml - meth.laser_tuning_soliton_access 定义于 li2017.yaml / kippenberg2018.yaml
 entities:
   - id: ent.battery_operated_microcomb_s18
     name: "电池供电全集成 III–V/Si3N4 Kerr 微梳源（Stern 2018）"

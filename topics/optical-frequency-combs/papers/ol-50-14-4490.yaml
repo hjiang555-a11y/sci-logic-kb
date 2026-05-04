@@ -1,0 +1,24 @@
+# Lorenz 2025 — Actively pulse-shaped linearly polarized 200 W photonic crystal fiber MOPA at... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: ol-50-14-4490
+  topic: optical-frequency-combs
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Actively pulse-shaped linearly polarized 200 W photonic crystal fiber MOPA at 2048 nm with 2 mJ pulse energy"
+  year: 2025
+  first_author: "Lorenz"
+  authors: ["Dominik Lorenz", "Julian Schneider", "Clément Romano", "Dieter Panitzek", "Jan Lautenschläger", "Marc Eichhorn", "Christelle Kieleck"]
+  journal: "Optics Letters"
+  volume: 50
+  pages: 4490
+  doi: 10.1364/OL.562668
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

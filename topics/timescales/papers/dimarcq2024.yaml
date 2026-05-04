@@ -12,7 +12,7 @@ meta:
   first_author: "Dimarcq"
   journal: "Metrologia"
   volume: 61
-  pages: 012001
+  pages: 5121
   doi: 10.1088/1681-7575/ad17d2
   note: >
     [综述/路线图] timescales 专题框架文档。 CCTF（国际时间频率咨询委员会）官方路线图，系统阐述 SI 秒重定义的条件、标准和时间表。 定义：顶层实体 ent.si_second_definition（Level 0，权威来源）； 原理 pri.redefinition_criteria_second（15 条强制性标准）、pri.secondary_representation_si_second。 不负责具体光钟技术参数（参见 frequency-standards 专题）。 跨专题关键接口：ent.si_second_definition CONDITIONED-BY ent.optical_frequency_standard （定义于 topics/frequency-standards/papers/fortier2026.yaml）。

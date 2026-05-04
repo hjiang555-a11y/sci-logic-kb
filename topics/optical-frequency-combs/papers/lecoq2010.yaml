@@ -12,7 +12,6 @@ meta:
   first_author: "Le Coq"
   authors: ["Y. Le Coq", "J. Millo", "W. Zhang", "M. Abgrall", "M. Lours", "H. Jiang", "E.M.L. English", "R. Boudot", "P.Y. Bourgeois", "M.E. Tobar", "J. Guena", "A. Clairon", "S. Bize", "A.N. Luiten", "Y. Kersal", "G. Santarelli"]
   journal: "CLEO/QELS 2010 (OSA)"
-  doi: 
   note: >
     CLEO/QELS 2010会议论文（LNE-SYRTE）。两台Er:fiber飞秒梳相位锁定于公共超稳激光 （1.55 µm），在11.55 GHz提取微波信号，相位噪声 −111 dBc/Hz（@1 Hz，受读出系统限制）。 单系统绝对稳定度约1.6×10⁻¹⁶（1s），长期平均至~3×10⁻¹⁹（65536 s）。 并演示用于铯喷泉时钟（稳定度3.5×10⁻¹⁴ τ⁻¹/²，投影噪声限）。 注：PDF含CID编码字体，部分文字为CID序列，核心数据已从可读段提取。
 entities:

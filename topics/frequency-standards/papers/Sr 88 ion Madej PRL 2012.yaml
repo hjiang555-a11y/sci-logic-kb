@@ -1,0 +1,23 @@
+# Madej 2012 — <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mm... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: Sr 88 ion Madej PRL 2012
+  topic: frequency-standards
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "<mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mml:mmultiscripts><mml:mi>Sr</mml:mi><mml:none/><mml:mo>+</mml:mo><mml:mprescripts/><mml:none/><mml:mn>88</mml:mn></mml:mmultiscripts></mml:math>445-THz Single-Ion Reference at the<mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>−</mml:mo><mml:mn>17</mml:mn></mml:mrow></mml:msup></mml:math>Level via Control and Cancellation of Systematic Uncertainties and Its Measurement against the SI Second"
+  year: 2012
+  first_author: "Madej"
+  authors: ["Alan A. Madej", "Pierre Dubé", "Zichao Zhou", "John E. Bernard", "Marina Gertsvolf"]
+  journal: "Physical Review Letters"
+  volume: 109
+  doi: 10.1103/PhysRevLett.109.203002
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []
