@@ -1,4 +1,4 @@
-# K�rtner ???? — Continuous-wave mode-locked solid-state lasers with enhanced spatial hole bur... [evidence]
+# K�rtner 1995 — Continuous-wave mode-locked solid-state lasers with enhanced spatial hole bur... [evidence]
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
@@ -8,6 +8,7 @@ meta:
   contribution_type: evidence
   reliability: high
   title: "Continuous-wave mode-locked solid-state lasers with enhanced spatial hole burning"
+  year: 1995
   first_author: "K�rtner"
   authors: ["F. X. K�rtner", "B. Braun", "U. Keller"]
   journal: "Applied Physics B Laser and Optics"

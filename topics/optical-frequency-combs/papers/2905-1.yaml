@@ -1,4 +1,4 @@
-# Durfee ???? — Direct diode-pumped Kerr-lens mode-locked Ti:sapphire laser [evidence]
+# Durfee 2012 — Direct diode-pumped Kerr-lens mode-locked Ti:sapphire laser [evidence]
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
@@ -8,6 +8,7 @@ meta:
   contribution_type: evidence
   reliability: high
   title: "Direct diode-pumped Kerr-lens mode-locked Ti:sapphire laser"
+  year: 2012
   first_author: "Durfee"
   authors: ["Charles G. Durfee", "Tristan Storz", "Jonathan Garlick", "Steven Hill", "Jeff A. Squier", "Matthew Kirchner", "Greg Taft", "Kevin Shea", "Henry Kapteyn", "Margaret Murnane", "Sterling Backus"]
   journal: "Optics Express"

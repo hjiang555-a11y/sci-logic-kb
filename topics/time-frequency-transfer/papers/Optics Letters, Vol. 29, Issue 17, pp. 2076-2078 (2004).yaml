@@ -1,4 +1,4 @@
-# Kim ???? — Femtosecond synchronization of radio frequency signals with optical pulse trains [evidence]
+# Kim 2004 — Femtosecond synchronization of radio frequency signals with optical pulse trains [evidence]
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
@@ -8,6 +8,7 @@ meta:
   contribution_type: evidence
   reliability: high
   title: "Femtosecond synchronization of radio frequency signals with optical pulse trains"
+  year: 2004
   first_author: "Kim"
   authors: ["J. Kim", "F. X. Kärtner", "M. H. Perrott"]
   journal: "Optics Letters"

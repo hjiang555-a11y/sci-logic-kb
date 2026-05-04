@@ -1,4 +1,4 @@
-# Shaddock ???? — Frequency locking a laser to an optical cavity by use of spatial mode interfe... [evidence]
+# Shaddock 1999 — Frequency locking a laser to an optical cavity by use of spatial mode interfe... [evidence]
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
@@ -8,6 +8,7 @@ meta:
   contribution_type: evidence
   reliability: high
   title: "Frequency locking a laser to an optical cavity by use of spatial mode interference"
+  year: 1999
   first_author: "Shaddock"
   authors: ["D. A. Shaddock", "M. B. Gray", "D. E. McClelland"]
   journal: "Optics Letters"

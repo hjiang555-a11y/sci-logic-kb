@@ -1,4 +1,4 @@
-# Webster ???? — Force-insensitive optical cavity [evidence]
+# Webster 2011 — Force-insensitive optical cavity [evidence]
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
@@ -8,6 +8,7 @@ meta:
   contribution_type: evidence
   reliability: high
   title: "Force-insensitive optical cavity"
+  year: 2011
   first_author: "Webster"
   authors: ["Stephen Webster", "Patrick Gill"]
   journal: "Optics Letters"

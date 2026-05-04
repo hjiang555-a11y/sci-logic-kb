@@ -1,4 +1,4 @@
-# Kim ???? — Long-term femtosecond timing link stabilization using a single-crystal balanc... [evidence]
+# Kim 2007 — Long-term femtosecond timing link stabilization using a single-crystal balanc... [evidence]
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
@@ -8,6 +8,7 @@ meta:
   contribution_type: evidence
   reliability: high
   title: "Long-term femtosecond timing link stabilization using a single-crystal balanced cross correlator"
+  year: 2007
   first_author: "Kim"
   authors: ["J. Kim", "J. Chen", "Z. Zhang", "F. N. C. Wong", "F. X. Kärtner", "F. Loehl", "H. Schlarb"]
   journal: "Optics Letters"
