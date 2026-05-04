@@ -1,12 +1,8 @@
-# Zhang 2012 — 商用光纤梳 EOM 传递函数表征与低噪声微波生成 [方法学论文]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: methodology
-
+# Zhang 2012 — Characterizing a Fiber-Based Frequency Comb With Electro-Optic Modulator [methodology]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "IK6MW5Q4"
+  zotero_key: IK6MW5Q4
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: methodology
@@ -16,21 +12,10 @@ meta:
   first_author: "Zhang"
   journal: "IEEE Trans. Ultrason. Ferroelectr. Freq. Control"
   volume: 59
-  issue: 3
-  pages: "432-438"
-  doi: "10.1109/TUFFC.2012.2212"
+  pages: 432-438
+  doi: 10.1109/TUFFC.2012.2212
   note: >
-    [方法学论文] LNE-SYRTE（Santarelli 组）+ Menlo Systems。对 Menlo 商用核心掺铒光纤梳
-    （250 MHz，内含自由空间 EOM）进行完整的 3×3 传递函数矩阵表征：
-    三个执行器（PZT、泵浦二极管电流、EOM 电压）→ 三个参数（frep、f0、振幅 A）。
-    核心贡献：(1) 系统测量九个传递函数，展示 EOM 作为 frep 高速执行器的潜力
-    （平坦响应至 ~900 kHz）；(2) 量化泵浦 RIN 到激光器 RIN 的传递关系，
-    证明低噪声电流源可显著降低激光器 RIN；(3) 分析 EOM 电压-to-f0 和电压-to-A
-    的交叉耦合效应；(4) 预测光-微波分频（12 GHz）的残余相位噪声限制。
-    跨文件节点引用：ent.optical_frequency_comb 定义于 giunta2019.yaml；
-    ent.er_fiber_frequency_comb 定义于 giunta2019.yaml；
-    pri.self_referencing_f2f 定义于 udem2002.yaml。
-
+    [方法学论文] LNE-SYRTE（Santarelli 组）+ Menlo Systems。对 Menlo 商用核心掺铒光纤梳 （250 MHz，内含自由空间 EOM）进行完整的 3×3 传递函数矩阵表征： 三个执行器（PZT、泵浦二极管电流、EOM 电压）→ 三个参数（frep、f0、振幅 A）。 核心贡献：(1) 系统测量九个传递函数，展示 EOM 作为 frep 高速执行器的潜力 （平坦响应至 ~900 kHz）；(2) 量化泵浦 RIN 到激光器 RIN 的传递关系， 证明低噪声电流源可显著降低激光器 RIN；(3) 分析 EOM 电压-to-f0 和电压-to-A 的交叉耦合效应；(4) 预测光-微波分频（12 GHz）的残余相位噪声限制。 跨文件节点引用：ent.optical_frequency_comb 定义于 giunta2019.yaml； ent.er_fiber_frequency_comb 定义于 giunta2019.yaml； pri.self_referencing_f2f 定义于 udem2002.yaml。
 entities:
   - id: ent.menlo_erfiber_eom_comb_z12
     name: "Menlo 商用掺铒光纤梳 + 自由空间 EOM（Zhang 2012 表征系统）"

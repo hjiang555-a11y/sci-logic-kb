@@ -1,22 +1,21 @@
+# Zhang 2017 — Ultrastable Silicon Cavity in a Continuously Operating Closed-Cycle Cryostat ... [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: N9AGEQ8S
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
-  title: Ultrastable Silicon Cavity in a Continuously Operating Closed-Cycle Cryostat
-    at 4 K
+  title: "Ultrastable Silicon Cavity in a Continuously Operating Closed-Cycle Cryostat at 4 K"
   year: 2017
-  first_author: Zhang
-  journal: Physical Review Letters
+  first_author: "Zhang"
+  journal: "Physical Review Letters"
   volume: 119
-  pages: '243601'
+  pages: 243601
   doi: 10.1103/PhysRevLett.119.243601
-  note: '首次演示在连续运行闭循环低温机中工作的 4 K 硅单晶参考腔（6 cm，1542 nm）， 实现约 1×10⁻¹⁶ 的分数频率不稳定度和 17 mHz
-    中位线宽。 论文核心贡献不是突破热噪声极限本身，而是证明闭循环 4 K 平台可以在无人值守下 将振动与温度扰动压低到接近热噪声底（6×10⁻¹⁷）附近。 关键工程创新包括多级热滤波屏蔽（HoCu₂
-    + 铜/铝热屏 + G10 低导热支撑） 和 split-plate 机械解耦布局。本文给出进一步通向 10⁻¹⁸ 的两条明确路径： 更长腔长（20 cm）与
-    AlGaAs 晶体镀层。该平台后续在 Robinson 2019 中达到 6.5×10⁻¹⁷ 热噪声极限。
-
-    '
+  note: >
+    首次演示在连续运行闭循环低温机中工作的 4 K 硅单晶参考腔（6 cm，1542 nm）， 实现约 1×10⁻¹⁶ 的分数频率不稳定度和 17 mHz 中位线宽。 论文核心贡献不是突破热噪声极限本身，而是证明闭循环 4 K 平台可以在无人值守下 将振动与温度扰动压低到接近热噪声底（6×10⁻¹⁷）附近。 关键工程创新包括多级热滤波屏蔽（HoCu₂ + 铜/铝热屏 + G10 低导热支撑） 和 split-plate 机械解耦布局。本文给出进一步通向 10⁻¹⁸ 的两条明确路径： 更长腔长（20 cm）与 AlGaAs 晶体镀层。该平台后续在 Robinson 2019 中达到 6.5×10⁻¹⁷ 热噪声极限。
 principles:
 - id: pri.multistage_thermal_damping_low_temp_z17
   name: 多级热阻尼低温滤波原理（Zhang 2017）

@@ -1,20 +1,21 @@
+# Braun 1995 — Continuous-wave mode-locked solid-state lasers with enhanced spatial hole bur... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: LY9I8I9I
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: 'Continuous-wave mode-locked solid-state lasers with enhanced spatial hole
-    burning, Part I: Experiments'
+  title: "Continuous-wave mode-locked solid-state lasers with enhanced spatial hole burning, Part I: Experiments"
   year: 1995
-  first_author: Braun
-  journal: Applied Physics B
+  first_author: "Braun"
+  journal: "Applied Physics B"
   volume: 61
   pages: 429-437
   doi: 10.1007/BF01081271
-  note: '系统研究增强空间烧孔对连续锁模固态激光的影响。 增益在端部（GE）比增益在中间（GM）产生约 3 倍更短脉冲。 核心贡献：空间烧孔增强增益带宽平坦化的实验验证。
-    与超稳激光主题关系较远，属激光物理基础。
-
-    '
+  note: >
+    系统研究增强空间烧孔对连续锁模固态激光的影响。 增益在端部（GE）比增益在中间（GM）产生约 3 倍更短脉冲。 核心贡献：空间烧孔增强增益带宽平坦化的实验验证。 与超稳激光主题关系较远，属激光物理基础。
 entities: []
 principles:
 - id: pri.enhanced_shb_pulse_shortening_b95

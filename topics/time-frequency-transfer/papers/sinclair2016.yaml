@@ -1,34 +1,22 @@
-# Sinclair 2016 — Synchronization of clocks through 12 km strongly turbulent air [evidence]
-# 提取者：Claude Code（AI 草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.5
-# 专题：time-frequency-transfer（O-TWTFT 强湍流 12 km 时钟同步 — 城市环境）
-# contribution_type: evidence — 验证 O-TWTFT 在强湍流（Rytov 方差达 7.5，多散射）
-#   下仍维持飞秒级同步；同时验证与自适应光学终端兼容性。
-
+# Sinclair 2016 — Synchronization of Clocks Through 12 km of Strongly Turbulent Air Over a City [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "nihms923383"
+  zotero_key: nihms923383
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Synchronization of Clocks Through 12 km of Strongly Turbulent Air Over a City"
   year: 2016
-  first_author: Sinclair
+  first_author: "Sinclair"
   authors: ["Laura C. Sinclair", "William C. Swann", "Hugo Bergeron", "Esther Baumann", "Michael Cermak", "Ian Coddington", "Jean-Daniel Deschênes", "Fabrizio R. Giorgetta", "Juan C. Juarez", "Isaac Khader", "Keith G. Petrillo", "Katherine T. Souza", "Michael L. Dennis", "Nathan R. Newbury"]
   journal: "Applied Physics Letters"
   volume: 109
-  pages: "151104"
-  doi: "10.1063/1.4963130"
+  pages: 151104
+  doi: 10.1063/1.4963130
   note: >
-    [evidence 论文] 在 Boulder 城市上空 12 km 近地面水平路径（海拔 25-50 m）上
-    进行 O-TWTFT 时钟同步，积分湍流进入强湍流区（Rytov 方差 3-7.5，Cn² ~ 10⁻¹³ m⁻²/³，
-    对应多次散射而非单次散射的闪烁饱和）。验证：(a) 双向飞行时间互易性在强湍流下
-    仍维持——支持亚飞秒级同步；(b) O-TWTFT 兼容 tip-tilt 和自适应光学（AO）终端；
-    (c) 信号中断（每秒 100+ 次 dropout）通过 Kalman 滤波和重同步策略应对。
-    TDEV ~165 as@百秒，与短距离弱湍流结果无统计差异——证明湍流不破坏互易性、
-    且 O-TWTFT 可在实用化长距离链路中工作。
-
+    [evidence 论文] 在 Boulder 城市上空 12 km 近地面水平路径（海拔 25-50 m）上 进行 O-TWTFT 时钟同步，积分湍流进入强湍流区（Rytov 方差 3-7.5，Cn² ~ 10⁻¹³ m⁻²/³， 对应多次散射而非单次散射的闪烁饱和）。验证：(a) 双向飞行时间互易性在强湍流下 仍维持——支持亚飞秒级同步；(b) O-TWTFT 兼容 tip-tilt 和自适应光学（AO）终端； (c) 信号中断（每秒 100+ 次 dropout）通过 Kalman 滤波和重同步策略应对。 TDEV ~165 as@百秒，与短距离弱湍流结果无统计差异——证明湍流不破坏互易性、 且 O-TWTFT 可在实用化长距离链路中工作。
 entities:
   - id: ent.sinclair2016_12km_strong_turbulence_otwtft
     name: "Sinclair 2016 O-TWTFT 强湍流 12 km 城市链路（NIST Boulder↔Valmont Butte）"

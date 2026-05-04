@@ -1,12 +1,8 @@
-# Carlson 2018 — 单梳重频切换双梳干涉术（PHIRE）[方法学论文]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: methodology
-
+# Carlson 2018 — Dual-comb interferometry via repetition rate switching of a single frequency ... [methodology]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "JTI6TJFU"
+  zotero_key: JTI6TJFU
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: methodology
@@ -16,21 +12,10 @@ meta:
   first_author: "Carlson"
   journal: "Optics Letters"
   volume: 43
-  issue: 15
-  pages: "3614-3617"
-  doi: "10.1364/OL.43.003614"
+  pages: 3614-3617
+  doi: 10.1364/OL.43.003614
   note: >
-    [方法学论文] NIST（Carlson, Hickstein, Cole, Diddams, Papp）。提出 PHIRE 方法
-    （Parallel Heterodyne Interferometry via Rep-rate Exchange）：仅用单个频率梳
-    通过快速重频切换实现双梳干涉。二进制调制 f_mod 使 frep 在两个值间交替，
-    一半输出经光纤延迟线（匹配 Ldelay = vg/2f_mod），另一半经 AOM 频移后重组，
-    产生标准双梳干涉图。保持完整双梳干涉的速度和分辨率，同时大幅简化实验装置
-    （单梳代替双梳）。使用 10.1 GHz EOM 梳演示：(1) 光谱测量（HCN 气体吸收）；
-    (2) 非线性展宽 PHIRE（HNLF 后的宽带光谱）；(3) 绝对距离测量（Vernier 扩展
-    NAR 至 45.7 m，精度 1 μm / 半周期，90 nm / 200 μs 平均）；(4) 远距离声学窃听
-    （4.5 m 外玻璃窗振动恢复音频）。
-    跨文件节点引用：pri.dual_comb_multiheterodyne_detection 定义于 coddington2016.yaml。
-
+    [方法学论文] NIST（Carlson, Hickstein, Cole, Diddams, Papp）。提出 PHIRE 方法 （Parallel Heterodyne Interferometry via Rep-rate Exchange）：仅用单个频率梳 通过快速重频切换实现双梳干涉。二进制调制 f_mod 使 frep 在两个值间交替， 一半输出经光纤延迟线（匹配 Ldelay = vg/2f_mod），另一半经 AOM 频移后重组， 产生标准双梳干涉图。保持完整双梳干涉的速度和分辨率，同时大幅简化实验装置 （单梳代替双梳）。使用 10.1 GHz EOM 梳演示：(1) 光谱测量（HCN 气体吸收）； (2) 非线性展宽 PHIRE（HNLF 后的宽带光谱）；(3) 绝对距离测量（Vernier 扩展 NAR 至 45.7 m，精度 1 μm / 半周期，90 nm / 200 μs 平均）；(4) 远距离声学窃听 （4.5 m 外玻璃窗振动恢复音频）。 跨文件节点引用：pri.dual_comb_multiheterodyne_detection 定义于 coddington2016.yaml。
 entities:
   - id: ent.phire_single_comb_dual_comb_c18
     name: "PHIRE 单梳双梳干涉系统（Carlson 2018）"

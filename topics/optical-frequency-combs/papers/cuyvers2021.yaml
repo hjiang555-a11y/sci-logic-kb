@@ -1,29 +1,21 @@
-# Cuyvers 2021 — III-V/SiN 异质集成被动锁模激光梳（低噪声芯片级）
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical
-
+# Cuyvers 2021 — Low Noise Heterogeneous III-V-on-Silicon-Nitride Mode-Locked Comb Laser [technical]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "5R8PUBX7"
+  zotero_key: 5R8PUBX7
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical
   reliability: high
   title: "Low Noise Heterogeneous III-V-on-Silicon-Nitride Mode-Locked Comb Laser"
   year: 2021
-  first_author: Cuyvers
+  first_author: "Cuyvers"
   journal: "Laser & Photonics Reviews"
   volume: 15
-  pages: "2000485"
-  doi: "10.1002/lpor.202000485"
+  pages: 2000485
+  doi: 10.1002/lpor.202000485
   note: >
-    [技术论文] Ghent/imec（Kuyken 组）+ Tyndall。首次异质集成 III-V 增益 + SiN 低损耗
-    无源波导构成扩展腔环形 colliding-pulse 被动锁模激光梳；
-    755 MHz 重频、RF 线宽 1 Hz、光学线宽 <200 kHz；晶圆级工艺可批产；
-    用 SiN 超低损耗消除传统片上 MLL 被动腔损耗瓶颈。
-
+    [技术论文] Ghent/imec（Kuyken 组）+ Tyndall。首次异质集成 III-V 增益 + SiN 低损耗 无源波导构成扩展腔环形 colliding-pulse 被动锁模激光梳； 755 MHz 重频、RF 线宽 1 Hz、光学线宽 <200 kHz；晶圆级工艺可批产； 用 SiN 超低损耗消除传统片上 MLL 被动腔损耗瓶颈。
 entities:
   - id: ent.hetero_iii_v_sin_mll_comb_c21
     name: "异质集成 III-V / SiN 被动锁模激光梳（Cuyvers 2021）"

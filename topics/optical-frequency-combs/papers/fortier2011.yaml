@@ -1,11 +1,8 @@
-# Fortier et al. 2011 — 光频除法生成超稳微波（首次<10⁻¹⁵光学分频微波） [breakthrough]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：optical-frequency-combs
-
+# Fortier 2011 — Generation of ultrastable microwaves via optical frequency division [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "YMWK52FQ"
+  zotero_key: YMWK52FQ
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: breakthrough
@@ -13,29 +10,13 @@ meta:
   title: "Generation of ultrastable microwaves via optical frequency division"
   year: 2011
   first_author: "Fortier"
-  authors:
-    - "T.M. Fortier"
-    - "M.S. Kirchner"
-    - "F. Quinlan"
-    - "J. Taylor"
-    - "J.C. Bergquist"
-    - "T. Rosenband"
-    - "N. Lemke"
-    - "A. Ludlow"
-    - "Y. Jiang"
-    - "C.W. Oates"
-    - "S.A. Diddams"
+  authors: ["T.M. Fortier", "M.S. Kirchner", "F. Quinlan", "J. Taylor", "J.C. Bergquist", "T. Rosenband", "N. Lemke", "A. Ludlow", "Y. Jiang", "C.W. Oates", "S.A. Diddams"]
   journal: "Nature Photonics"
-  volume: "5"
-  pages: "425"
-  doi: "10.1038/NPHOTON.2011.121"
+  volume: 5
+  pages: 425
+  doi: 10.1038/NPHOTON.2011.121
   note: >
-    里程碑成果：首次实现分数频率不稳定度≤8×10⁻¹⁶（1 s）的光学分频微波，
-    超越当时最好的微波振荡器（无需深冷）。使用1 GHz Ti:sapphire OFD+超稳FP腔（578 nm
-    和1070 nm），产生10 GHz信号：L(f)=−104 dBc/Hz（@1 Hz），−157 dBc/Hz散粒噪声底，
-    时序抖动760 as（1 Hz–1 MHz）。比此前工作改善10–1000倍（1 Hz–1 MHz全谱），
-    是光子微波生成领域奠基性突破。
-
+    里程碑成果：首次实现分数频率不稳定度≤8×10⁻¹⁶（1 s）的光学分频微波， 超越当时最好的微波振荡器（无需深冷）。使用1 GHz Ti:sapphire OFD+超稳FP腔（578 nm 和1070 nm），产生10 GHz信号：L(f)=−104 dBc/Hz（@1 Hz），−157 dBc/Hz散粒噪声底， 时序抖动760 as（1 Hz–1 MHz）。比此前工作改善10–1000倍（1 Hz–1 MHz全谱）， 是光子微波生成领域奠基性突破。
 entities:
   - id: ent.ti_sapphire_ofd_photonic_osc_fortier2011
     name: "Ti:sapphire OFD光子微波振荡器（Fortier 2011）"

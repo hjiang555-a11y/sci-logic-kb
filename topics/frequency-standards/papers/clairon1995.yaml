@@ -1,11 +1,8 @@
-# Clairon 1995 — 铯原子喷泉频率标准初步研制
-# 提取者：Claude
-# 提取日期：2026-04-27
-# Schema版本：v4.5
-# 专题：frequency-standards
-
+# Clairon 1995 — A Cesium Fountain Frequency Standard: Preliminary Results [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: ""
+  zotero_key: 
   topic: frequency-standards
   source_type: technical_paper
   contribution_type: evidence
@@ -14,11 +11,9 @@ meta:
   year: 1995
   first_author: "Clairon"
   journal: "IEEE Transactions on Instrumentation and Measurement"
-  doi: ""
+  doi: 
   note: >
-    报道了铯原子喷泉频率标准的初步研制结果，实现了 sub-Hertz 级的 Ramsey 共振线宽（< 700 mHz），
-    并初步评估了冷碰撞频移等系统误差。
-
+    报道了铯原子喷泉频率标准的初步研制结果，实现了 sub-Hertz 级的 Ramsey 共振线宽（< 700 mHz）， 并初步评估了冷碰撞频移等系统误差。
 entities:
   - id: ent.cesium_fountain_standard_clairon1995
     name: "铯原子喷泉频率标准 (Clairon 1995)"

@@ -1,34 +1,22 @@
-# Predehl 2012 — A 920-Kilometer Optical Fiber Link for Frequency Metrology at the 19th Decimal Place [breakthrough]
-# 提取者：Claude Code（AI 草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.5
-# 专题：time-frequency-transfer（光纤频率传递 — 首次 920 km 相位稳定化光纤链路）
-# contribution_type: breakthrough — 首次将相位相干光纤频率传递扩展至近 1000 km 实用距离，
-#   以两条反平行光纤链路实现 10⁻¹⁸ 级不稳定度，开创欧洲大陆光纤时钟比对网络。
-
+# Predehl 2012 — A 920-Kilometer Optical Fiber Link for Frequency Metrology at the 19th Decima... [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "2012 Science 336,441 920-Kilometer Optical Fiber Link"
+  zotero_key: 2012 Science 336,441 920-Kilometer Optical Fiber Link
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: breakthrough
   reliability: high
   title: "A 920-Kilometer Optical Fiber Link for Frequency Metrology at the 19th Decimal Place"
   year: 2012
-  first_author: Predehl
+  first_author: "Predehl"
   authors: ["K. Predehl", "G. Grosche", "S. M. F. Raupach", "S. Droste", "O. Terra", "J. Alnis", "Th. Legero", "T. W. Hänsch", "Th. Udem", "R. Holzwarth", "H. Schnatz"]
   journal: "Science"
   volume: 336
-  issue: 6080
-  pages: "441-444"
-  doi: "10.1126/science.1218442"
+  pages: 441-444
+  doi: 10.1126/science.1218442
   note: >
-    [breakthrough 论文] 首次将相位稳定化光纤频率传递扩展至 920 km（两条反平行
-    电信光纤链路连接 PTB Braunschweig 和 MPQ Garching）。利用往返相位噪声补偿
-    和双向光纤放大器（BEFA）中继再生，实现 MDEV = 5×10⁻¹⁵@1 s，
-    10⁻¹⁸ <1000 s，分数频率偏差约束至 (0.7 ± 3.7)×10⁻¹⁹。
-    这是当时最长的相位相干光纤频率传递距离——将光纤光学频率传递从百公里级
-    推进至千公里级，直接支持欧洲大陆尺度光学时钟比对网络。
-
+    [breakthrough 论文] 首次将相位稳定化光纤频率传递扩展至 920 km（两条反平行 电信光纤链路连接 PTB Braunschweig 和 MPQ Garching）。利用往返相位噪声补偿 和双向光纤放大器（BEFA）中继再生，实现 MDEV = 5×10⁻¹⁵@1 s， 10⁻¹⁸ <1000 s，分数频率偏差约束至 (0.7 ± 3.7)×10⁻¹⁹。 这是当时最长的相位相干光纤频率传递距离——将光纤光学频率传递从百公里级 推进至千公里级，直接支持欧洲大陆尺度光学时钟比对网络。
 entities:
   - id: ent.predehl2012_920km_fiber_link
     name: "Predehl 2012 920 km 反平行光纤频率传递链路（PTB↔MPQ）"

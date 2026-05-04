@@ -1,36 +1,21 @@
-# Li 2017 — 全保偏 Yb:fiber NALM 梳首次自参考，in-loop 10⁻¹⁹/s
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-21
-# Schema版本：v4.3
-# 专题：optical-frequency-combs
-# contribution_type: breakthrough（首次演示全 PM Yb:fiber NALM 梳 f_CEO 自参考）
-
+# Li 2017 — Low noise, self-referenced all polarization maintaining Ytterbium fiber laser... [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "RWPYUXTB"
+  zotero_key: RWPYUXTB
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
   title: "Low noise, self-referenced all polarization maintaining Ytterbium fiber laser frequency comb"
   year: 2017
-  first_author: Li
+  first_author: "Li"
   journal: "Optics Express"
   volume: 25
-  issue: 15
-  pages: "18017-18026"
-  doi: "10.1364/OE.25.018017"
+  pages: 18017-18026
+  doi: 10.1364/OE.25.018017
   note: >
-    [技术论文 / A1 子域首次] IMRA America（Fermann）+ 华沙大学。首次演示
-    全保偏（all-PM）Yb:fiber NALM 锁模梳的 f-2f 自参考稳定：
-    (1) 锁模谱 1015–1070 nm；PCF/HNLF 展宽至 650–1400 nm（倍频程）；
-    (2) 常规 f-2f 干涉仪测 f_CEO；
-    (3) 光学参考（1064 nm 超稳 CW）拍频 + PLL；
-    (4) in-loop fractional stability 换算到光学频率低 10⁻¹⁹ @ 1 s。
-    此前全 PM Yb NALM 梳（如 Guo 2017）未 f_CEO 锁定；本工作首次打通"全 PM + NALM + 自参考"
-    组合，为光学原子钟计量提供紧凑稳定平台。对齐 v2 子域主线：A1-Robust（全 PM）、
-    A1-Noise（in-loop σ_y 至 10⁻¹⁹）、A1-Rep（非必要但工艺相容）。
-    注意：**10⁻¹⁹ 是 in-loop** 数值，按 CONTRIBUTION_TIER_RULES 严格度低于 out-of-loop 超稳比对。
-
+    [技术论文 / A1 子域首次] IMRA America（Fermann）+ 华沙大学。首次演示 全保偏（all-PM）Yb:fiber NALM 锁模梳的 f-2f 自参考稳定： (1) 锁模谱 1015–1070 nm；PCF/HNLF 展宽至 650–1400 nm（倍频程）； (2) 常规 f-2f 干涉仪测 f_CEO； (3) 光学参考（1064 nm 超稳 CW）拍频 + PLL； (4) in-loop fractional stability 换算到光学频率低 10⁻¹⁹ @ 1 s。 此前全 PM Yb NALM 梳（如 Guo 2017）未 f_CEO 锁定；本工作首次打通"全 PM + NALM + 自参考" 组合，为光学原子钟计量提供紧凑稳定平台。对齐 v2 子域主线：A1-Robust（全 PM）、 A1-Noise（in-loop σ_y 至 10⁻¹⁹）、A1-Rep（非必要但工艺相容）。 注意：**10⁻¹⁹ 是 in-loop** 数值，按 CONTRIBUTION_TIER_RULES 严格度低于 out-of-loop 超稳比对。
 entities:
   - id: ent.all_pm_yb_nalm_comb_li17
     name: "全保偏 Yb:fiber NALM 自参考梳（Li 2017）"

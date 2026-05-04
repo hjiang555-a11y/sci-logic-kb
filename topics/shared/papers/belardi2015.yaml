@@ -1,33 +1,22 @@
-# Belardi 2015 — Design and Properties of Hollow Antiresonant Fibers for Visible and NIR [evidence]
-# 提取者：Claude Code（AI 草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.5
-# 专题：shared（跨专题使能技术 — 空芯光纤设计与表征）
-# contribution_type: evidence — 演示 HC-ARF 多种结构设计及其在可见/近红外的带宽与损耗性能；
-#   首次实现第一反共振窗工作的 HC-ARF；报告 175 dB/km@480nm 最低损耗。工程实现级贡献。
-
+# Belardi 2015 — Design and Properties of Hollow Antiresonant Fibers for the Visible and Near ... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "Design_and_Properties_of_Hollow_Antiresonant_F"
+  zotero_key: Design_and_Properties_of_Hollow_Antiresonant_F
   topic: shared
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Design and Properties of Hollow Antiresonant Fibers for the Visible and Near Infrared Spectral Range"
   year: 2015
-  first_author: Belardi
+  first_author: "Belardi"
   authors: ["Walter Belardi"]
   journal: "Journal of Lightwave Technology"
   volume: 33
-  issue: 21
-  pages: "4497-4503"
-  doi: "10.1109/JLT.2015.2477775"
+  pages: 4497-4503
+  doi: 10.1109/JLT.2015.2477775
   note: >
-    系统研究空芯反共振光纤（HC-ARF）在可见至近红外波段的设计灵活性与实验性能。
-    提出 SAR/DAR/TAR/DARfbf 四种结构对比，理论带宽 0.65–2.5 μm；首次实现工作于
-    第一反共振窗的 HC-ARF 实验演示（0.75–1.6 μm）；报告 175 dB/km@480 nm 最低损耗；
-    提出侧切 HC-ARF 快速气体传感方案。空芯光纤是超稳激光（光参考腔耦合）、
-    光频梳（飞秒脉冲传输）、时频传递（光纤链路）等多专题的交叉使能技术。
-
+    系统研究空芯反共振光纤（HC-ARF）在可见至近红外波段的设计灵活性与实验性能。 提出 SAR/DAR/TAR/DARfbf 四种结构对比，理论带宽 0.65–2.5 μm；首次实现工作于 第一反共振窗的 HC-ARF 实验演示（0.75–1.6 μm）；报告 175 dB/km@480 nm 最低损耗； 提出侧切 HC-ARF 快速气体传感方案。空芯光纤是超稳激光（光参考腔耦合）、 光频梳（飞秒脉冲传输）、时频传递（光纤链路）等多专题的交叉使能技术。
 entities:
   - id: ent.belardi2015_hc_arf_fibers
     name: "Belardi 2015 空芯反共振光纤（HC-ARF）系列设计与实验原型"

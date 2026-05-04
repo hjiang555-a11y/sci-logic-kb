@@ -1,32 +1,22 @@
-# Zhang 2023 — Passively stable dissemination of ultrastable optical frequency via noisy field fiber [framework]
-# 提取者：Claude Code（AI 草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.5
-# 专题：time-frequency-transfer（光纤光频传递 — 被动相位噪声对消综述）
-# contribution_type: framework — 综述被动相位噪声对消（PNC）技术在嘈杂场地光纤网络中
-#   的适用性、优势和限制；对比主动（ANC）和被动方案。
-
+# Zhang 2023 — Passively stable dissemination of ultrastable optical frequency via a noisy f... [framework]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "zhang2023_olt_157_108738"
+  zotero_key: zhang2023_olt_157_108738
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: framework
   reliability: high
   title: "Passively stable dissemination of ultrastable optical frequency via a noisy field fiber network"
   year: 2023
-  first_author: Zhang
+  first_author: "Zhang"
   authors: ["Xiang Zhang", "Liang Hu", "Xue Deng", "Qi Zang", "Dongdong Jiao", "Jing Gao", "Dan Wang", "Qian Zhou", "Jie Liu", "Guanjun Xu", "Tao Liu", "Ruifang Dong", "Shougang Zhang"]
   journal: "Optics and Laser Technology"
   volume: 157
-  pages: "108738"
-  doi: "10.1016/j.optlastec.2022.108738"
+  pages: 108738
+  doi: 10.1016/j.optlastec.2022.108738
   note: >
-    [framework/review 论文] NTSC 西安团队综述。对比主动相位噪声对消（ANC）与
-    被动相位噪声对消（PNC）在嘈杂场地光纤（如架空光缆、铁路沿线光缆）中的适用性。
-    ANC 需要高分辨率、无限检测范围的鉴相器处理大噪声，而 PNC 端到端无需鉴相器——
-    通过光域互易补偿实现相位稳定。提出引入光纤尾纤 AOM 避免本地射频时间基串扰。
-    配合 Zhang 2022（CPL, 全被动级联 490 km 场地光纤实验）作为此路线的理论总结。
-
+    [framework/review 论文] NTSC 西安团队综述。对比主动相位噪声对消（ANC）与 被动相位噪声对消（PNC）在嘈杂场地光纤（如架空光缆、铁路沿线光缆）中的适用性。 ANC 需要高分辨率、无限检测范围的鉴相器处理大噪声，而 PNC 端到端无需鉴相器—— 通过光域互易补偿实现相位稳定。提出引入光纤尾纤 AOM 避免本地射频时间基串扰。 配合 Zhang 2022（CPL, 全被动级联 490 km 场地光纤实验）作为此路线的理论总结。
 entities:
   - id: ent.zhang2023_passive_pnc_fiber_review
     name: "Zhang 2023 被动相位噪声对消光纤光频传递综述"

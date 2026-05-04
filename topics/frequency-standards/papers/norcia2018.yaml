@@ -1,32 +1,22 @@
-# Norcia 2018 — Frequency measurements of superradiance from the Sr clock transition [evidence]
-# 提取者：Claude Code（AI 草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.5
-# 专题：frequency-standards（Sr 超辐射 — 主动光钟新范式）
-# contribution_type: evidence — 首次测量 Sr 钟跃迁超辐射的频率特性；
-#   探索基于超辐射的"主动"光钟（active optical clock）新方案。
-
+# Norcia 2018 — Frequency Measurements of Superradiance from the Strontium Clock Transition [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "PhysRevX.8.021036"
+  zotero_key: PhysRevX.8.021036
   topic: frequency-standards
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Frequency Measurements of Superradiance from the Strontium Clock Transition"
   year: 2018
-  first_author: Norcia
+  first_author: "Norcia"
   authors: ["Matthew A. Norcia", "Julia R. K. Cline", "Juan A. Muniz", "John M. Robinson", "Ross B. Hutson", "Akihisa Goban", "G. Edward Marti", "Jun Ye", "James K. Thompson"]
   journal: "Physical Review X"
   volume: 8
-  pages: "021036"
-  doi: "10.1103/PhysRevX.8.021036"
+  pages: 021036
+  doi: 10.1103/PhysRevX.8.021036
   note: >
-    JILA 团队在 Sr 钟跃迁（¹S₀→³P₀）上观测超辐射并测量其频率。
-    超辐射是具有集体偶极相干（dipole coherence）的多原子
-    协同自发辐射——将被动光钟（探测→反馈）概念转变为
-    主动光钟（超辐射直接输出稳定光频）。该工作是主动
-    光钟路径的重要实验验证。
-
+    JILA 团队在 Sr 钟跃迁（¹S₀→³P₀）上观测超辐射并测量其频率。 超辐射是具有集体偶极相干（dipole coherence）的多原子 协同自发辐射——将被动光钟（探测→反馈）概念转变为 主动光钟（超辐射直接输出稳定光频）。该工作是主动 光钟路径的重要实验验证。
 entities:
   - id: ent.norcia2018_sr_superradiance_clock
     name: "Norcia 2018 Sr 钟跃迁超辐射频率测量（JILA）"

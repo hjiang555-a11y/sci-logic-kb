@@ -1,35 +1,21 @@
-# Wang 2014 — 500 MHz Yb:ring 光纤梳，振荡器直出 f_CEO 无需放大
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-21
-# Schema版本：v4.3
-# 专题：optical-frequency-combs
-# contribution_type: evidence（Yb:fiber 平台首次在 >500 MHz 基频直接自振荡 f_CEO 可锁）
-
+# Wang 2014 — 500 MHz spaced Yb:fiber laser frequency comb without amplifiers [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "VATLBIAD"
+  zotero_key: VATLBIAD
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
   title: "500 MHz spaced Yb:fiber laser frequency comb without amplifiers"
   year: 2014
-  first_author: Wang
+  first_author: "Wang"
   journal: "Optics Letters"
   volume: 39
-  issue: 9
-  pages: "2534-2537"
-  doi: "10.1364/OL.39.002534"
+  pages: 2534-2537
+  doi: 10.1364/OL.39.002534
   note: >
-    [技术论文] 北京大学 + 中国计量院。500 MHz NPE 锁模 Yb:ring 光纤激光器
-    直接从振荡器产生 f_CEO 无需腔外放大：
-    (1) 振荡器输出功率 450 mW（@ 1.07 W 泵浦，40% 光-光效率）；
-    (2) 脉冲压缩至 46 fs，峰值功率 5 kW 驱动 PCF 展宽 600–1300 nm（倍频程）；
-    (3) f-2f 干涉仪测 f_CEO 信噪比 >40 dB @ 300 kHz RBW；
-    (4) 开放环境 >6 小时稳定；in-loop tracking 4.46×10⁻¹³/√τ，Allan ~1×10⁻¹²/s。
-    意义：省去腔外 EDFA/YDFA 简化系统；500 MHz 齿距更有利于天文光谱仪校准（齿可分辨）。
-    对齐 v2 子域主线：A1-Rep（500 MHz 基频，天文校准友好）、B-Astro（作者明确指向）。
-    相较 bartels2009（10 GHz）在更低功率路径实现"无放大"的工程突破。
-
+    [技术论文] 北京大学 + 中国计量院。500 MHz NPE 锁模 Yb:ring 光纤激光器 直接从振荡器产生 f_CEO 无需腔外放大： (1) 振荡器输出功率 450 mW（@ 1.07 W 泵浦，40% 光-光效率）； (2) 脉冲压缩至 46 fs，峰值功率 5 kW 驱动 PCF 展宽 600–1300 nm（倍频程）； (3) f-2f 干涉仪测 f_CEO 信噪比 >40 dB @ 300 kHz RBW； (4) 开放环境 >6 小时稳定；in-loop tracking 4.46×10⁻¹³/√τ，Allan ~1×10⁻¹²/s。 意义：省去腔外 EDFA/YDFA 简化系统；500 MHz 齿距更有利于天文光谱仪校准（齿可分辨）。 对齐 v2 子域主线：A1-Rep（500 MHz 基频，天文校准友好）、B-Astro（作者明确指向）。 相较 bartels2009（10 GHz）在更低功率路径实现"无放大"的工程突破。
 entities:
   - id: ent.yb_fiber_500mhz_comb_wang14
     name: "500 MHz Yb:ring 光纤梳（无放大，Wang 2014）"

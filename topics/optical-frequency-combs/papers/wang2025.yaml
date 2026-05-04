@@ -1,38 +1,19 @@
-# Wang 2025 — 低延迟 FPGA 数字伺服将 Er 光纤梳重频锁定到 1560 nm 超稳激光，控制带宽 1.1 MHz [技术论文]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# 核心贡献：(1) Xilinx 7k325t FPGA @400 MHz 系统性压缩 IQ 解调链路延迟；
-#   (2) 低阶 FIR + 陷波（群延迟 2.5 T_s）+ atan2 LUT/倒数乘法（11 周期，vs CORDIC 24 周期）→
-#       板级延迟 <250 ns，控制带宽 1.1 MHz；
-#   (3) 100 MHz Er:fiber 梳同时锁 fceo 与 fbeat 至 1560 nm USL，fbeat 积分相噪 168 mrad（1 Hz–1 MHz），
-#       定时抖动 139 as，归一化 mod σ_y = 7.27×10⁻¹⁸ @1 s、1.29×10⁻²² @10 000 s。
-# Framework 依赖：ent.optical_frequency_comb (udem2002.yaml)；
-#   ent.fp_cavity_system (ultrastable-laser/papers/numata2004.yaml) 作 CONDITIONED-BY 接口。
-
+# Wang 2025 — A Low-Latency Digital Servo for Optical Frequency Comb Stabilization [technical]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "CEB7L6EM"
+  zotero_key: CEB7L6EM
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical
   reliability: high
   title: "A Low-Latency Digital Servo for Optical Frequency Comb Stabilization"
   year: 2025
-  first_author: Wang
+  first_author: "Wang"
   journal: "Review of Scientific Instruments"
-  doi: "10.1063/5.0280679"
+  doi: 10.1063/5.0280679
   note: >
-    [技术论文，USTC 粒子探测与电子学国家重点实验室 + 合肥微尺度 / 合肥国家实验室合作]
-    核心是"数字伺服延迟-带宽权衡"的工程实现：低阶 FIR + 陷波 + LUT/倒数乘法 atan2 → IQ 解调 50 ns，
-    整板 <250 ns，控制带宽 1.1 MHz，在保留数字相位展开/可重构/诊断集成优势同时逼近模拟 PLL。
-    跨文件引用：ent.optical_frequency_comb (udem2002.yaml)、
-    ent.fp_cavity_system (ultrastable-laser/numata2004.yaml，1560 nm USL 参考)。
-
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
+    [技术论文，USTC 粒子探测与电子学国家重点实验室 + 合肥微尺度 / 合肥国家实验室合作] 核心是"数字伺服延迟-带宽权衡"的工程实现：低阶 FIR + 陷波 + LUT/倒数乘法 atan2 → IQ 解调 50 ns， 整板 <250 ns，控制带宽 1.1 MHz，在保留数字相位展开/可重构/诊断集成优势同时逼近模拟 PLL。 跨文件引用：ent.optical_frequency_comb (udem2002.yaml)、 ent.fp_cavity_system (ultrastable-laser/numata2004.yaml，1560 nm USL 参考)。
 entities:
   - id: ent.low_latency_digital_servo_w25
     name: "低延迟 FPGA 数字伺服板（Wang 2025）"

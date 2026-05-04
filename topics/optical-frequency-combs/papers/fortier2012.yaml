@@ -1,11 +1,8 @@
-# Fortier et al. 2012 — 10 GHz混合光子微波振荡器亚飞秒绝对时序抖动 [evidence]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：optical-frequency-combs
-
+# Fortier 2012 — Sub-femtosecond absolute timing jitter with a 10 GHz hybrid photonic-microwav... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "PJEYSD8M"
+  zotero_key: PJEYSD8M
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: evidence
@@ -13,30 +10,13 @@ meta:
   title: "Sub-femtosecond absolute timing jitter with a 10 GHz hybrid photonic-microwave oscillator"
   year: 2012
   first_author: "Fortier"
-  authors:
-    - "T.M. Fortier"
-    - "C.W. Nelson"
-    - "A. Hati"
-    - "F. Quinlan"
-    - "J. Taylor"
-    - "H. Jiang"
-    - "C.W. Chou"
-    - "T. Rosenband"
-    - "N. Lemke"
-    - "A. Ludlow"
-    - "D. Howe"
-    - "C.W. Oates"
-    - "S.A. Diddams"
+  authors: ["T.M. Fortier", "C.W. Nelson", "A. Hati", "F. Quinlan", "J. Taylor", "H. Jiang", "C.W. Chou", "T. Rosenband", "N. Lemke", "A. Ludlow", "D. Howe", "C.W. Oates", "S.A. Diddams"]
   journal: "Applied Physics Letters"
-  volume: "100"
-  pages: "231111"
-  doi: "10.1063/1.4726122"
+  volume: 100
+  pages: 231111
+  doi: 10.1063/1.4726122
   note: >
-    在Fortier 2011（Nature Photonics，突破性OFD微波生成）基础上，通过将室温蓝宝石
-    腔振荡器（SLCO）规训至OFD微波信号，构建混合振荡器，实现10 GHz单台振荡器
-    420 as绝对时序抖动（1 Hz–5 GHz积分）。OFD使用1 GHz Ti:sapphire梳，
-    N≈50,000倍频程除频，相位噪声降低N²≈2.5×10⁹倍。
-
+    在Fortier 2011（Nature Photonics，突破性OFD微波生成）基础上，通过将室温蓝宝石 腔振荡器（SLCO）规训至OFD微波信号，构建混合振荡器，实现10 GHz单台振荡器 420 as绝对时序抖动（1 Hz–5 GHz积分）。OFD使用1 GHz Ti:sapphire梳， N≈50,000倍频程除频，相位噪声降低N²≈2.5×10⁹倍。
 entities:
   - id: ent.hybrid_photonic_microwave_osc_fortier2012
     name: "混合光子-微波振荡器（Fortier 2012）"

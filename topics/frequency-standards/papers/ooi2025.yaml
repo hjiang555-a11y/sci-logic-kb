@@ -1,29 +1,20 @@
-# Ooi 2025 — Frequency reproducibility of solid-state nuclear clock [evidence]
-# 提取者：Claude Code（AI 草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.5
-# 专题：frequency-standards（固态核光钟 — ²²⁹ᵐTh 掺杂晶体频率复现性）
-# contribution_type: evidence — 验证 ²²⁹ᵐTh 固态核光钟的频率复现性；
-#   核跃迁在固态环境中的计量性能评估。
-
+# Ooi 2025 — Frequency reproducibility of solid-state nuclear clock transitions [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "s41586-025-09999-5"
+  zotero_key: s41586-025-09999-5
   topic: frequency-standards
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Frequency reproducibility of solid-state nuclear clock transitions"
   year: 2025
-  first_author: Ooi
+  first_author: "Ooi"
   authors: ["Tian Ooi", "Jack F. Doyle", "Chuankun Zhang", "Jacob S. Higgins", "Jun Ye", "Kjeld Beeks", "Adrian Leitner", "Georgy A. Kazakov", "Thorsten Schumm"]
   journal: "Nature"
-  doi: "10.1038/s41586-025-09999-5"
+  doi: 10.1038/s41586-025-09999-5
   note: >
-    验证 ²²⁹ᵐTh 掺杂晶体中核跃迁的频率复现性——
-    固态基质对核跃迁频率的影响是核光钟实用化的关键问题。
-    该工作评估了不同晶体样品之间 ²²⁹ᵐTh 核跃迁频率的一致性，
-    为固态核光钟作为实用化频率标准提供实验基础。
-
+    验证 ²²⁹ᵐTh 掺杂晶体中核跃迁的频率复现性—— 固态基质对核跃迁频率的影响是核光钟实用化的关键问题。 该工作评估了不同晶体样品之间 ²²⁹ᵐTh 核跃迁频率的一致性， 为固态核光钟作为实用化频率标准提供实验基础。
 entities:
   - id: ent.ooi2025_solid_state_nuclear_clock_reproducibility
     name: "Ooi 2025 固态 ²²⁹ᵐTh 核光钟频率复现性（JILA）"

@@ -1,31 +1,22 @@
-# Campbell 2012 — Single-ion nuclear clock; ²²⁹Th²⁺ [evidence]
-# 提取者：Claude Code（AI 草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.5
-# 专题：frequency-standards（钍离子核光钟 — ²²⁹Th²⁺）
-# contribution_type: evidence — 提出并研究 ²²⁹Th²⁺ 作为核光钟候选离子；
-#   核跃迁的光谱和囚禁特性分析。
-
+# Campbell 2012 — Single-Ion Nuclear Clock for Metrology at the 19th Decimal Place [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "Th ion Campbell PRL 2012"
+  zotero_key: Th ion Campbell PRL 2012
   topic: frequency-standards
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Single-Ion Nuclear Clock for Metrology at the 19th Decimal Place"
   year: 2012
-  first_author: Campbell
+  first_author: "Campbell"
   authors: ["C. J. Campbell", "A. G. Radnaev", "A. Kuzmich", "V. A. Dzuba", "V. V. Flambaum", "A. Derevianko"]
   journal: "Physical Review Letters"
   volume: 108
-  pages: "120802"
-  doi: "10.1103/PhysRevLett.108.120802"
+  pages: 120802
+  doi: 10.1103/PhysRevLett.108.120802
   note: >
-    提出 ²²⁹Th²⁺ 离子作为核光钟候选——利用 ²²⁹ᵐTh 核同质异能态
-    跃迁（~8.4 eV）作为钟跃迁。讨论了离子囚禁、激光冷却、
-    和核跃迁探测的可行性方案。是核光钟离子路线的重要理论-
-    实验接口工作。
-
+    提出 ²²⁹Th²⁺ 离子作为核光钟候选——利用 ²²⁹ᵐTh 核同质异能态 跃迁（~8.4 eV）作为钟跃迁。讨论了离子囚禁、激光冷却、 和核跃迁探测的可行性方案。是核光钟离子路线的重要理论- 实验接口工作。
 entities:
   - id: ent.campbell2012_th229_ion_nuclear_clock
     name: "Campbell 2012 ²²⁹Th²⁺ 单离子核光钟方案"

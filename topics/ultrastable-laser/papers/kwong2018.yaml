@@ -1,26 +1,22 @@
+# Kwong 2018 — Characterization of the long-term dimensional stability of a NEXCERA block us... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: JP6J4EQD
   topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: Characterization of the long-term dimensional stability of a NEXCERA block
-    using the optical resonator technique
+  title: "Characterization of the long-term dimensional stability of a NEXCERA block using the optical resonator technique"
   year: 2018
-  first_author: Kwong
-  authors:
-  - Chang Jian Kwong
-  - Michael G. Hansen
-  - Jun Sugawara
-  - Stephan Schiller
-  journal: Measurement Science and Technology
+  first_author: "Kwong"
+  authors: ["Chang Jian Kwong", "Michael G. Hansen", "Jun Sugawara", "Stephan Schiller"]
+  journal: "Measurement Science and Technology"
   volume: 29
-  pages: '075011'
+  pages: 075011
   doi: 10.1088/1361-6501/aac3b0
-  note: '首次对 NEXCERA N118C 陶瓷腔进行精确长期漂移测量，发现分数长度漂移率 L⁻¹dΔL/dt = −(1.74±0.01)×10⁻⁸ yr⁻¹（室温），介于
-    ULE 与 Zerodur 之间。 CTE 零点温度约 22.9°C，与室温兼容。
-
-    '
+  note: >
+    首次对 NEXCERA N118C 陶瓷腔进行精确长期漂移测量，发现分数长度漂移率 L⁻¹dΔL/dt = −(1.74±0.01)×10⁻⁸ yr⁻¹（室温），介于 ULE 与 Zerodur 之间。 CTE 零点温度约 22.9°C，与室温兼容。
 entities:
 - id: ent.nexcera_optical_cavity_k18
   name: NEXCERA N118C 光学谐振腔

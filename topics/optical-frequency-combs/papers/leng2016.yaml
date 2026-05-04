@@ -1,12 +1,8 @@
-# Leng 2016 — 光频梳 50 km 光纤 RF 传输，4.7×10⁻¹⁸ 不稳定度 [技术论文]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical_breakthrough
-
+# Leng 2016 — RF Transfer by Optical Comb Over 50-km Fiber Link With 4.7 × 10⁻¹⁸ Instability [technical_breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "JN8JY9XG"
+  zotero_key: JN8JY9XG
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical_breakthrough
@@ -16,19 +12,10 @@ meta:
   first_author: "Leng"
   journal: "IEEE Photonics Journal"
   volume: 8
-  issue: 1
-  pages: "7901309"
-  doi: "10.1109/JPHOT.2016.2520830"
+  pages: 7901309
+  doi: 10.1109/JPHOT.2016.2520830
   note: >
-    [技术突破] 北京大学（赵建业组）。基于光频梳的 RF 传输系统：将 100 MHz 参考频率
-    编码在光频梳重频中，通过 50 km 光纤链路传输，利用光学窄带滤波器（0.5 nm @ 1550 nm）
-    抑制色散影响，结合光-微波相位检测器（OM-PD）和电学相位补偿方案消除
-    温度和振动引起的链路相位波动。实现相对频率不稳定度 1.9×10⁻¹⁴ @ 1 s，
-    4.7×10⁻¹⁸ @ 16400 s。关键创新：(1) 光学滤波器抑制宽带梳在长距离光纤中的
-    色散展宽问题——比 DCF（色散补偿光纤）更简单且通用；(2) Faraday 镜
-    回反双向传输 + 电学相位补偿架构。
-    跨文件节点引用：ent.optical_frequency_comb 定义于 giunta2019.yaml。
-
+    [技术突破] 北京大学（赵建业组）。基于光频梳的 RF 传输系统：将 100 MHz 参考频率 编码在光频梳重频中，通过 50 km 光纤链路传输，利用光学窄带滤波器（0.5 nm @ 1550 nm） 抑制色散影响，结合光-微波相位检测器（OM-PD）和电学相位补偿方案消除 温度和振动引起的链路相位波动。实现相对频率不稳定度 1.9×10⁻¹⁴ @ 1 s， 4.7×10⁻¹⁸ @ 16400 s。关键创新：(1) 光学滤波器抑制宽带梳在长距离光纤中的 色散展宽问题——比 DCF（色散补偿光纤）更简单且通用；(2) Faraday 镜 回反双向传输 + 电学相位补偿架构。 跨文件节点引用：ent.optical_frequency_comb 定义于 giunta2019.yaml。
 entities:
   - id: ent.rf_transfer_via_comb_50km_l16
     name: "光频梳 50 km 光纤 RF 传输系统（Leng 2016）"

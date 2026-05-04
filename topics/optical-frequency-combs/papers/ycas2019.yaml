@@ -1,53 +1,21 @@
-# Ycas 2019 — 首次用中红外双梳光谱在公里级开阔大气路径测量 VOC 基频 C-H 伸缩吸收 [里程碑技术论文]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical — 中红外开阔路径 DCS 应用论文
-#   核心贡献：
-#     (1) 首次将 DCS 从近红外倍频带推进到 2750–3150 cm⁻¹ 基频 C-H 伸缩带，吸收强度提升 ~1000×；
-#     (2) 首次在 162 m – 1 km 开阔大气路径实现中红外 DCS，测得
-#         丙酮 5.7 ppm·m、异丙醇 2.4 ppm·m、乙烷 0.4 ppb（1 min）灵敏度；
-#     (3) 将 NIR 已有的 "传前合束" 共模抵消大气湍流技术 [Rieker 2014, Han 2024] 扩展到中红外；
-#     (4) 用 Hitran2016 Voigt 模型对 H₂O / CH₄ 强吸收进行解杂（declutter），
-#         配合 PNNL 宽带吸收数据库同时反演窄线小分子 + 宽带大分子 VOC。
-#   Framework 依赖：
-#     ent.dual_comb_spectrometer、meth.dual_comb_spectroscopy、pri.dual_comb_multiheterodyne_detection
-#       定义于 coddington2016.yaml；
-#     ent.mid_ir_frequency_comb、meth.dfg_comb_generation、pri.molecular_rovibrational_fingerprint
-#       跨文件引用（详见 TOPICS.md 超集），本文件提供开阔路径 + VOC 应用证据；
-#     ent.atmospheric_turbulence_channel、pri.photon_starved_open_path_dcs_limit
-#       定义于 han2024.yaml（跨文件引用）。
-
+# Ycas 2019 — Mid-infrared dual-comb spectroscopy of volatile organic compounds across long... [technical]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "FQ4KYV38"
+  zotero_key: FQ4KYV38
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical
   reliability: high
   title: "Mid-infrared dual-comb spectroscopy of volatile organic compounds across long open-air paths"
   year: 2019
-  first_author: Ycas
+  first_author: "Ycas"
   journal: "Optica"
   volume: 6
-  issue: 2
-  pages: "165-168"
-  doi: "10.1364/OPTICA.6.000165"
+  pages: 165-168
+  doi: 10.1364/OPTICA.6.000165
   note: >
-    [里程碑技术论文] NIST Boulder（Ycas/Giorgetta/Cossel/Waxman/Baumann/Newbury/Coddington）。
-    两台 200 MHz 重频 Er 光纤梳各经 PPLN DFG 产生中红外梳（覆盖 2750–3150 cm⁻¹，C-H 基频伸缩带），
-    在 50:50 合束后通过 ZrF4 光纤耦合到 100 mm 口径望远镜，经 162 m 或 1 km 开阔大气路径
-    往返于角锥回射器。传前合束使湍流相位畸变对两梳共模，外差效率得以保持。
-    解杂流程：(1) 信号/参考谱相除；(2) Hitran2016 Voigt 模型拟合 H₂O/HDO/H₂¹⁸O/CH₄ 并除去；
-    (3) 释放前后比值（change detection）；(4) PNNL 参考谱拟合 VOC。
-    主要结果：丙酮 5.7 ppm·m、异丙醇 2.4 ppm·m（162 m 释放实验，1 min 分辨率）；
-    1 km 路径检出大气背景 C₂H₆ 3.75 ppb（1σ 0.4 ppb），与 10 km 外点式传感器 3.5 ppb 一致。
-    FOM = 1.2×10⁶ √Hz [Coddington 2016 定义]。
-
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
+    [里程碑技术论文] NIST Boulder（Ycas/Giorgetta/Cossel/Waxman/Baumann/Newbury/Coddington）。 两台 200 MHz 重频 Er 光纤梳各经 PPLN DFG 产生中红外梳（覆盖 2750–3150 cm⁻¹，C-H 基频伸缩带）， 在 50:50 合束后通过 ZrF4 光纤耦合到 100 mm 口径望远镜，经 162 m 或 1 km 开阔大气路径 往返于角锥回射器。传前合束使湍流相位畸变对两梳共模，外差效率得以保持。 解杂流程：(1) 信号/参考谱相除；(2) Hitran2016 Voigt 模型拟合 H₂O/HDO/H₂¹⁸O/CH₄ 并除去； (3) 释放前后比值（change detection）；(4) PNNL 参考谱拟合 VOC。 主要结果：丙酮 5.7 ppm·m、异丙醇 2.4 ppm·m（162 m 释放实验，1 min 分辨率）； 1 km 路径检出大气背景 C₂H₆ 3.75 ppb（1σ 0.4 ppb），与 10 km 外点式传感器 3.5 ppb 一致。 FOM = 1.2×10⁶ √Hz [Coddington 2016 定义]。
 entities:
   - id: ent.midir_dcs_vocs_y19
     name: "公里级开阔路径中红外 VOC 双梳光谱仪（Ycas 2019）"

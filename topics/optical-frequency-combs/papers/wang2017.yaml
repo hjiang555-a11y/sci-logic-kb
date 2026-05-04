@@ -1,21 +1,13 @@
-# Schema: v4.1 (2026-04-18)
-# Topic: optical-frequency-combs
+# Wang 2017 — A III-V-on-Si ultra-dense comb laser [technique]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
+  zotero_key: GY48UQ7F
   topic: optical-frequency-combs
-  zotero_key: "GY48UQ7F"
-  schema_version: "v4.1"
+  contribution_type: technique
   title: "A III-V-on-Si ultra-dense comb laser"
   year: 2017
-  first_author: Wang
-  contribution_type: technique
-  temporal_role: proposes
-  source:
-    authors: ["Wang, Z.", "Van Gasse, K.", "Moskalenko, V.", "Latkowski, S.", "Bente, E.", "Kuyken, B.", "Roelkens, G."]
-    year: 2017
-    title: "A III-V-on-Si ultra-dense comb laser"
-    venue: "Light: Science & Applications"
-    doi: "10.1038/lsa.2016.260"
-
+  first_author: "Wang"
 entities:
   - id: ent.iii_v_on_si_ultradense_comb_w17
     level: 1

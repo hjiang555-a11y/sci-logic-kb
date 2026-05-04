@@ -1,11 +1,8 @@
-# Hinkley 2013 — Yb optical lattice clock with 10^-18 instability [breakthrough]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：frequency-standards
-
+# Hinkley 2013 — An Atomic Clock with 10^-18 Instability [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "TP8JKHW3"
+  zotero_key: TP8JKHW3
   topic: frequency-standards
   source_type: journal_paper
   contribution_type: breakthrough
@@ -15,9 +12,9 @@ meta:
   first_author: "Hinkley"
   authors: ["N. Hinkley", "J. A. Sherman", "N. B. Phillips", "M. Schioppo", "N. D. Lemke", "K. Beloy", "C. W. Oates", "A. D. Ludlow"]
   journal: "Science"
-  doi: "10.1126/science.1237557"
-  note: "首次演示亚10^-18时钟不稳定性：两台171Yb光晶格钟同步interrogation消除Dick效应，7小时后达到1.6×10^-18"
-
+  doi: 10.1126/science.1237557
+  note: >
+    首次演示亚10^-18时钟不稳定性：两台171Yb光晶格钟同步interrogation消除Dick效应，7小时后达到1.6×10^-18
 entities:
   - id: ent.yb_optical_lattice_clock_nist2013
     name: "NIST 171Yb 光晶格原子钟（2013）"

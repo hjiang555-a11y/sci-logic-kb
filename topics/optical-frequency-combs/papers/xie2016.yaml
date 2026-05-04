@@ -1,32 +1,22 @@
 # Xie 2016 — Photonic microwave signals with zeptosecond-level absolute timing noise [evidence]
-# 提取者：Claude Code（AI 草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.5
-# 专题：optical-frequency-combs（光频分频微波生成 — zeptosecond 定时噪声）
-# contribution_type: evidence — 实现 zeptosecond 级绝对定时噪声的微波信号；
-#   通过低噪声光纤频率梳 + 高线性度光电二极管实现创纪录的微波纯度。
-
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "Xiaopeng Xie 2016"
+  zotero_key: Xiaopeng Xie 2016
   topic: optical-frequency-combs
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Photonic microwave signals with zeptosecond-level absolute timing noise"
   year: 2016
-  first_author: Xie
+  first_author: "Xie"
   authors: ["Xiaopeng Xie", "Romain Bouchand", "Daniele Nicolodi", "Michele Giunta", "Wolfgang Hansel", "Matthias Lezius", "Abhay Joshi", "Shubhashish Datta", "Christophe Alexandre", "Michel Lours", "Pierre-Alain Tremblin", "Giorgio Santarelli", "Ronald Holzwarth", "Yann Le Coq"]
   journal: "Nature Photonics"
   volume: 11
-  pages: "44-47"
-  doi: "10.1038/nphoton.2016.215"
+  pages: 44-47
+  doi: 10.1038/nphoton.2016.215
   note: >
-    LNE-SYRTE/Menlo Systems 联合团队实现最低相位噪声的
-    光生微波信号：频率稳定度 < 6.5×10⁻¹⁶ @1 s，
-    定时噪声 floor < 41 zs Hz⁻¹/²（相位噪声 < −173 dBc/Hz
-    @12 GHz 载波）。关键创新：高线性度光电二极管（flicker
-    相位噪声 < −140 f⁻¹ dBc Hz⁻¹）+ 低噪声 Er 光纤频率梳。
-
+    LNE-SYRTE/Menlo Systems 联合团队实现最低相位噪声的 光生微波信号：频率稳定度 < 6.5×10⁻¹⁶ @1 s， 定时噪声 floor < 41 zs Hz⁻¹/²（相位噪声 < −173 dBc/Hz @12 GHz 载波）。关键创新：高线性度光电二极管（flicker 相位噪声 < −140 f⁻¹ dBc Hz⁻¹）+ 低噪声 Er 光纤频率梳。
 entities:
   - id: ent.xie2016_zeptosecond_microwave_generation
     name: "Xie 2016 zeptosecond 定时噪声光生微波（LNE-SYRTE/Menlo）"

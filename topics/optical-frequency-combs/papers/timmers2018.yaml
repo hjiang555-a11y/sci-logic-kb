@@ -1,34 +1,21 @@
-# Timmers 2018 — 宽带中红外梳分子指纹图谱（OP-GaP 超八度）[breakthrough]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-22
-# Schema版本：v4.4
-# 专题：optical-frequency-combs
-# contribution_type: breakthrough（首次用脉冲内 DFG + OP-GaP 晶体实现超八度分子指纹区梳光谱，亮度匹敌同步辐射）
-
+# Timmers 2018 — Molecular fingerprinting with bright, broadband infrared frequency combs [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "TFUBQQB8"
+  zotero_key: TFUBQQB8
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
   title: "Molecular fingerprinting with bright, broadband infrared frequency combs"
   year: 2018
-  first_author: Timmers
+  first_author: "Timmers"
   journal: "Optica"
   volume: 5
-  issue: 6
-  pages: "727-732"
-  doi: "10.1364/OPTICA.5.000727"
+  pages: 727-732
+  doi: 10.1364/OPTICA.5.000727
   note: >
-    [技术论文 / 里程碑] NIST Boulder (Timmers, Kowligy, Lind, Cruz, Nader, Silfies, Ycas, Allison, Schunemann, Papp, Diddams) 2018 年 Optica。
-    首次用**脉冲内差频（intra-pulse DFG）+ OP-GaP 晶体**实现超八度（4–12 μm，覆盖分子指纹区）
-    中红外频率梳，亮度匹敌同步辐射红外光束线——克服传统 FTIR 热光源低亮度限制。
-    基于 Er:fiber 梳（100 MHz）+ EDFA + 正常色散 HNLF 展宽至少周期脉冲（~10 fs），
-    经 OP-GaP 准相位匹配 χ² DFG 产生 4–12 μm 超八度 LWIR 梳（0.25 mW 总功率，500,000 梳齿）；
-    演示甲醇/乙醇双梳光谱，分辨率 100 MHz（0.0033 cm⁻¹），频率不确定度 <10⁻¹¹，采集速率 20 ms。
-    开创了"桌面超宽带高亮度分子指纹梳"路线，为红外纳米光谱/生物医学成像提供新工具。
-    v2 子域主线：B-MIR（中红外光谱）主线——刷新指纹区梳功率 + 带宽纪录。
-
+    [技术论文 / 里程碑] NIST Boulder (Timmers, Kowligy, Lind, Cruz, Nader, Silfies, Ycas, Allison, Schunemann, Papp, Diddams) 2018 年 Optica。 首次用**脉冲内差频（intra-pulse DFG）+ OP-GaP 晶体**实现超八度（4–12 μm，覆盖分子指纹区） 中红外频率梳，亮度匹敌同步辐射红外光束线——克服传统 FTIR 热光源低亮度限制。 基于 Er:fiber 梳（100 MHz）+ EDFA + 正常色散 HNLF 展宽至少周期脉冲（~10 fs）， 经 OP-GaP 准相位匹配 χ² DFG 产生 4–12 μm 超八度 LWIR 梳（0.25 mW 总功率，500,000 梳齿）； 演示甲醇/乙醇双梳光谱，分辨率 100 MHz（0.0033 cm⁻¹），频率不确定度 <10⁻¹¹，采集速率 20 ms。 开创了"桌面超宽带高亮度分子指纹梳"路线，为红外纳米光谱/生物医学成像提供新工具。 v2 子域主线：B-MIR（中红外光谱）主线——刷新指纹区梳功率 + 带宽纪录。
 entities:
   - id: ent.opgap_super_octave_mir_comb_t18
     name: "OP-GaP 超八度中红外频率梳（Timmers 2018）"

@@ -1,46 +1,22 @@
-# Fortier & Baumann 2019 — 20 Years of Developments in Optical Frequency Comb Technology and Applications [framework]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：optical-frequency-combs
-# contribution_type: framework — OFC 技术与应用 20 年全景综述（1999–2019）。NIST 团队的
-#   系统性总结，覆盖从 Ti:sapphire 奠基到光纤梳主流化、微梳兴起、双梳光谱、天文梳、精密测距
-#   等 9 条应用主线的演化脉络。
-
+# Fortier 2019 — 20 Years of Developments in Optical Frequency Comb Technology and Applications [framework]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "FORTIER2019-COMMPHYS"
+  zotero_key: FORTIER2019-COMMPHYS
   topic: optical-frequency-combs
   source_type: review
   contribution_type: framework
   reliability: high
   title: "20 Years of Developments in Optical Frequency Comb Technology and Applications"
   year: 2019
-  first_author: Fortier
+  first_author: "Fortier"
   authors: ["Tara M. Fortier", "Esther Baumann"]
   journal: "Communications Physics"
   volume: 2
-  issue: 1
-  pages: "153"
-  doi: "10.1038/s42005-019-0249-y"
+  pages: 153
+  doi: 10.1038/s42005-019-0249-y
   note: >
-    [综述论文 / 奠基文献 · B1 OFC 20 年综述] NIST Time & Frequency Division 团队发表于
-    Communications Physics 的 OFC 技术 20 年全景综述。时间跨度 1999（首次 f-2f 演示）
-    至 2019（微梳成熟 + 双梳光谱商业化），系统整理 9 条主线：
-    (1) Ti:sapphire 锁模平台（奠基 → 现有研究主力）；
-    (2) Er:fiber / Yb:fiber 光纤锁模梳（主流化 → 外场应用）；
-    (3) 微梳（MgF₂ / SiN / Kerr 孤子，芯片级集成新兴）；
-    (4) QCL 梳（mid-IR 直接电泵浦）；
-    (5) f-2f 自参考与倍频程展宽技术（PCF → ANDi → waveguide）；
-    (6) 双梳光谱（气相 / 液相 / 固相，高分辨与高通量）；
-    (7) 天文光梳（HARPS / ESPRESSO / 1 cm/s 径向速度 → 行星搜寻）；
-    (8) 精密测距（TOF 与干涉混合，亚微米 → 米量级）；
-    (9) 光钟询问激光 + f_rep 低噪声微波生成。
-    本综述是 OFC 专题"谁做了什么"的权威时间轴，与 diddams2010（演化树）、picque2019
-    （Nature Photonics 应用视角）、fortier2022（NIST 综述）共同构成 OFC 历史层四重奏。
-    本文件建立 L0 级框架节点 pri.ofc_nine_application_threads_f19 与
-    meth.comb_platform_taxonomy_f19，为后续 OFC papers 提供 "应用主线定位" 与
-    "平台分类" 两个顶层路标。
-
+    [综述论文 / 奠基文献 · B1 OFC 20 年综述] NIST Time & Frequency Division 团队发表于 Communications Physics 的 OFC 技术 20 年全景综述。时间跨度 1999（首次 f-2f 演示） 至 2019（微梳成熟 + 双梳光谱商业化），系统整理 9 条主线： (1) Ti:sapphire 锁模平台（奠基 → 现有研究主力）； (2) Er:fiber / Yb:fiber 光纤锁模梳（主流化 → 外场应用）； (3) 微梳（MgF₂ / SiN / Kerr 孤子，芯片级集成新兴）； (4) QCL 梳（mid-IR 直接电泵浦）； (5) f-2f 自参考与倍频程展宽技术（PCF → ANDi → waveguide）； (6) 双梳光谱（气相 / 液相 / 固相，高分辨与高通量）； (7) 天文光梳（HARPS / ESPRESSO / 1 cm/s 径向速度 → 行星搜寻）； (8) 精密测距（TOF 与干涉混合，亚微米 → 米量级）； (9) 光钟询问激光 + f_rep 低噪声微波生成。 本综述是 OFC 专题"谁做了什么"的权威时间轴，与 diddams2010（演化树）、picque2019 （Nature Photonics 应用视角）、fortier2022（NIST 综述）共同构成 OFC 历史层四重奏。 本文件建立 L0 级框架节点 pri.ofc_nine_application_threads_f19 与 meth.comb_platform_taxonomy_f19，为后续 OFC papers 提供 "应用主线定位" 与 "平台分类" 两个顶层路标。
 entities: []
 
 principles:

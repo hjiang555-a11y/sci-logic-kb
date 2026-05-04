@@ -1,19 +1,21 @@
+# Kogelnik 1966 — Laser Beams and Resonators [framework]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: UQL6FYN7
+  topic: ultrastable-laser
   source_type: review_paper
   contribution_type: framework
   reliability: high
-  title: Laser Beams and Resonators
+  title: "Laser Beams and Resonators"
   year: 1966
-  first_author: Kogelnik
-  journal: Applied Optics
+  first_author: "Kogelnik"
+  journal: "Applied Optics"
   volume: 5
-  issue: 10
   pages: 1550-1567
   doi: 10.1364/AO.5.001550
-  note: '经典综述论文：激光光束传播和谐振腔理论。 涵盖高斯光束、ABCD 矩阵、腔模式、稳定性条件等。 超稳激光 FP 腔设计的基础理论参考。
-
-    '
+  note: >
+    经典综述论文：激光光束传播和谐振腔理论。 涵盖高斯光束、ABCD 矩阵、腔模式、稳定性条件等。 超稳激光 FP 腔设计的基础理论参考。
 entities: []
 principles:
 - id: pri.gaussian_beam_resonator_theory

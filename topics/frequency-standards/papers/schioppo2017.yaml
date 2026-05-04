@@ -1,11 +1,8 @@
 # Schioppo 2017 — Ultrastable optical clock with two cold-atom ensembles [breakthrough]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：frequency-standards
-
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "PSN8LTP5"
+  zotero_key: PSN8LTP5
   topic: frequency-standards
   source_type: journal_paper
   contribution_type: breakthrough
@@ -15,9 +12,9 @@ meta:
   first_author: "Schioppo"
   authors: ["M. Schioppo", "R. C. Brown", "W. F. McGrew", "N. Hinkley", "R. J. Fasano", "K. Beloy", "T. H. Yoon", "G. Milani", "D. Nicolodi", "J. A. Sherman", "N. B. Phillips", "C. W. Oates", "A. D. Ludlow"]
   journal: "Nature Photonics"
-  doi: "10.1038/nphoton.2016.231"
-  note: "双冷原子系综同步interrogation抑制Dick效应；1小时内时钟不稳定性3×10^-18；Yb光晶格钟作为本振；相位相干维持36秒"
-
+  doi: 10.1038/nphoton.2016.231
+  note: >
+    双冷原子系综同步interrogation抑制Dick效应；1小时内时钟不稳定性3×10^-18；Yb光晶格钟作为本振；相位相干维持36秒
 entities:
   - id: ent.yb_dual_ensemble_clock_nist2017
     name: "NIST 双Yb原子系综光钟（2017）"

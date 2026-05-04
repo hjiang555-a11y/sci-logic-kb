@@ -1,30 +1,21 @@
-# Yan 2015 — 阿秒分辨 Er:fiber 光频梳（腔内 EOM 快速反馈）
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical
-
+# Yan 2015 — Attosecond-Resolution Er:Fiber-Based Optical Frequency Comb [technical]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "9BEBKUGG"
+  zotero_key: 9BEBKUGG
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical
   reliability: high
   title: "Attosecond-Resolution Er:Fiber-Based Optical Frequency Comb"
   year: 2015
-  first_author: Yan
+  first_author: "Yan"
   journal: "Chinese Physics Letters"
   volume: 32
-  issue: 10
-  pages: "104207"
-  doi: "10.1088/0256-307X/32/10/104207"
+  pages: 104207
+  doi: 10.1088/0256-307X/32/10/104207
   note: >
-    [技术论文] 中科院国家授时中心（Jiang Haifeng 组）。232 MHz Er:fiber 锁模激光梳，
-    腔内集成 LiNbO₃ EOM + PZT 做 f_r 高速伺服（锁至 cw 参考），泵浦功率控 f_CEO。
-    环内相对频率稳定度 <1×10⁻¹⁶ @ 1 s，10⁴ s 积分至低 10⁻²⁰ 级；
-    对应计时不确定度 100–200 as（阿秒级），是当时最好的 Er 梳指标之一。
-
+    [技术论文] 中科院国家授时中心（Jiang Haifeng 组）。232 MHz Er:fiber 锁模激光梳， 腔内集成 LiNbO₃ EOM + PZT 做 f_r 高速伺服（锁至 cw 参考），泵浦功率控 f_CEO。 环内相对频率稳定度 <1×10⁻¹⁶ @ 1 s，10⁴ s 积分至低 10⁻²⁰ 级； 对应计时不确定度 100–200 as（阿秒级），是当时最好的 Er 梳指标之一。
 entities:
   - id: ent.attosecond_erfiber_comb_y15
     name: "阿秒分辨 Er:fiber 光频梳（Yan 2015，NTSC 系统）"

@@ -1,34 +1,21 @@
-# Spaun 2016 — 首个腔增强冷分子红外梳光谱（连续冷样品）[breakthrough]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-22
-# Schema版本：v4.4
-# 专题：optical-frequency-combs
-# contribution_type: breakthrough（首次将腔增强频率梳光谱与缓冲气体冷却结合，实现连续冷分子样品高分辨红外光谱）
-
+# Spaun 2016 — Continuous probing of cold complex molecules with infrared frequency comb spe... [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "NNLDMCDD"
+  zotero_key: NNLDMCDD
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
   title: "Continuous probing of cold complex molecules with infrared frequency comb spectroscopy"
   year: 2016
-  first_author: Spaun
+  first_author: "Spaun"
   journal: "Nature"
   volume: 533
-  issue: 7604
-  pages: "517-520"
-  doi: "10.1038/nature17440"
+  pages: 517-520
+  doi: 10.1038/nature17440
   note: >
-    [技术论文 / 里程碑] JILA (Spaun, Changala, Patterson, Bjork, Heckl, Doyle, Ye) 2016 年 Nature。
-    首次将**腔增强直接频率梳光谱（CE-DFCS）**与**缓冲气体冷却**结合——
-    在 ~10 K 连续冷样品中实现振转分辨中红外吸收光谱（C-H 伸缩区，~3 μm），
-    跨越"光谱拥挤"障碍（室温下复杂分子占据数百万振转态 → 谱线不可分辨）。
-    演示了硝基甲烷（CH₃NO₂）、萘（C₁₀H₈）、金刚烷（C₁₀H₁₆）、六亚甲基四胺（C₆H₁₂N₄）等大分子高分辨谱，
-    分辨率 ~50 kHz（仪器线宽，受梳稳定度限制），灵敏度提升 ~4 个数量级（腔增强 + 冷却双重增益）。
-    开创了"腔增强梳 + 冷分子"范式，为复杂分子结构/动力学/大振幅运动研究提供新工具。
-    v2 子域主线：B-DCS（双梳光谱）+ B-MIR（中红外光谱）双主线——刷新复杂分子光谱分辨率与灵敏度纪录。
-
+    [技术论文 / 里程碑] JILA (Spaun, Changala, Patterson, Bjork, Heckl, Doyle, Ye) 2016 年 Nature。 首次将**腔增强直接频率梳光谱（CE-DFCS）**与**缓冲气体冷却**结合—— 在 ~10 K 连续冷样品中实现振转分辨中红外吸收光谱（C-H 伸缩区，~3 μm）， 跨越"光谱拥挤"障碍（室温下复杂分子占据数百万振转态 → 谱线不可分辨）。 演示了硝基甲烷（CH₃NO₂）、萘（C₁₀H₈）、金刚烷（C₁₀H₁₆）、六亚甲基四胺（C₆H₁₂N₄）等大分子高分辨谱， 分辨率 ~50 kHz（仪器线宽，受梳稳定度限制），灵敏度提升 ~4 个数量级（腔增强 + 冷却双重增益）。 开创了"腔增强梳 + 冷分子"范式，为复杂分子结构/动力学/大振幅运动研究提供新工具。 v2 子域主线：B-DCS（双梳光谱）+ B-MIR（中红外光谱）双主线——刷新复杂分子光谱分辨率与灵敏度纪录。
 entities:
   - id: ent.cedcs_cold_molecule_system_s16
     name: "腔增强梳光谱 + 缓冲气体冷却系统（Spaun 2016）"

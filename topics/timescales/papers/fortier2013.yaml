@@ -1,50 +1,22 @@
-# Fortier 2013 — 高功率 MUTC 光电二极管光子微波生成 [时间标尺专题]
-# 提取者：Claude Code
-# 提取日期：2026-05-03
-# Schema版本：v4.0
-# 专题：timescales
-# contribution_type: evidence — 工程改进：利用 MUTC PD 实现更低附加噪声的 OFD 微波生成。
-#   Fortier 2013 报告了利用高功率、高线性度 MUTC 光电二极管进行光频率分频（OFD）
-#   光子微波生成的系统表征。实现了 10 GHz 微波绝对定时抖动 <500 as 和相位噪声底 –177 dBc/Hz。
-#   本文是光频率分频（OFD）微波生成技术的工程优化，不提出新物理原理，
-#   但大幅提升了从光学频率标准到微波域的转换性能——这对时标生成有直接意义。
-
+# fortier 2013 — Photonic microwave generation with high-power photodiodes [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "1302.5927"
+  zotero_key: 1302.5927
   topic: timescales
   source_type: paper
   contribution_type: evidence
   reliability: high
   title: "Photonic microwave generation with high-power photodiodes"
   year: 2013
-  first_author: fortier
-  authors:
-    - "Tara M. Fortier"
-    - "Franklyn Quinlan"
-    - "Archita Hati"
-    - "Craig Nelson"
-    - "Jennifer A. Taylor"
-    - "Yang Fu"
-    - "Joe Campbell"
-    - "Scott A. Diddams"
+  first_author: "fortier"
+  authors: ["Tara M. Fortier", "Franklyn Quinlan", "Archita Hati", "Craig Nelson", "Jennifer A. Taylor", "Yang Fu", "Joe Campbell", "Scott A. Diddams"]
   journal: "Optics Letters"
   volume: 38
-  pages: "1712"
-  doi: "10.1364/OL.38.001712"
+  pages: 1712
+  doi: 10.1364/OL.38.001712
   note: >
-    [实验/工程改进] timescales 专题工程证据文档。
-    利用高功率、高线性度 MUTC（modified uni-traveling carrier）光电二极管，
-    通过光频率分频（OFD）技术从飞秒激光频率梳生成低相位噪声 10 GHz 微波信号。
-    核心成果：10 GHz 载波功率 +14 dBm、绝对集成定时抖动 <500 as (1 Hz–10 MHz)、
-    相位噪声底 –177 dBc/Hz、AM-PM 系数 <0.1 rad（<20 mA 光电流）。
-    OFD 是光钟→微波时标的关键技术桥梁——MUTC PD 在此转换中实现了当时最低的附加噪声，
-    将光学标准稳定度以最小退化传递至微波域，为时标生成和光钟比较提供高纯度参考信号。
-    本文不重新定义 OFD 原理，而是通过 MUTC 结构优化光电检测环节的性能。
-
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
+    [实验/工程改进] timescales 专题工程证据文档。 利用高功率、高线性度 MUTC（modified uni-traveling carrier）光电二极管， 通过光频率分频（OFD）技术从飞秒激光频率梳生成低相位噪声 10 GHz 微波信号。 核心成果：10 GHz 载波功率 +14 dBm、绝对集成定时抖动 <500 as (1 Hz–10 MHz)、 相位噪声底 –177 dBc/Hz、AM-PM 系数 <0.1 rad（<20 mA 光电流）。 OFD 是光钟→微波时标的关键技术桥梁——MUTC PD 在此转换中实现了当时最低的附加噪声， 将光学标准稳定度以最小退化传递至微波域，为时标生成和光钟比较提供高纯度参考信号。 本文不重新定义 OFD 原理，而是通过 MUTC 结构优化光电检测环节的性能。
 entities:
   - id: ent.mutc_photonic_microwave_generator
     name: "MUTC 光电二极管光子微波发生器（基于光频率分频的低噪声 10GHz 微波源）"

@@ -1,32 +1,20 @@
-# Raupach 2014 — Chirped Frequency Transfer for synchronization and time transfer [evidence]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：time-frequency-transfer
-# contribution_type: evidence — PTB 149 km 光纤链路上通过"啁啾频率传递"（chirped optical carrier）
-#   实现同步与时间传递：precision ~200 ps @ 500 ps total uncertainty；Allan deviation @18000 s ≈ 2×10⁻¹⁹。
-
+# Raupach 2014 — Chirped Frequency Transfer: A Tool for Synchronization and Time Transfer [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "2s94vl95"
+  zotero_key: 2s94vl95
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Chirped Frequency Transfer: A Tool for Synchronization and Time Transfer"
   year: 2014
-  first_author: Raupach
-  authors:
-  - "S. M. F. Raupach"
-  - "G. Grosche"
+  first_author: "Raupach"
+  authors: ["S. M. F. Raupach", "G. Grosche"]
   journal: "Ieee Transactions on Ultrasonics Ferroelectrics and Frequency Control"
-  doi: "10.1109/tuffc.2014.2988"
+  doi: 10.1109/tuffc.2014.2988
   note: >
-    [期刊论文] PTB（Braunschweig）。在 149 km 光纤链路上传递"啁啾光载波"（chirp ~240 kHz/s），
-    远端频率计数器门由本地 10 MHz 氢脉泽驱动，对称路径延迟（几何 + 共模）被自然压制。
-    实测：同步 precision ≈ 200 ps，总 uncertainty ≈ 500 ps；频率 Allan deviation @18000 s ≈ 2×10⁻¹⁹；
-    当前 setup 下可无歧义测量 timing offset ≤ 4 分钟。与传统 1PPS 时间传递互补：只要本地振荡器
-    稳定，不需与外部时标严格关联即可做远程同步观测。
-
+    [期刊论文] PTB（Braunschweig）。在 149 km 光纤链路上传递"啁啾光载波"（chirp ~240 kHz/s）， 远端频率计数器门由本地 10 MHz 氢脉泽驱动，对称路径延迟（几何 + 共模）被自然压制。 实测：同步 precision ≈ 200 ps，总 uncertainty ≈ 500 ps；频率 Allan deviation @18000 s ≈ 2×10⁻¹⁹； 当前 setup 下可无歧义测量 timing offset ≤ 4 分钟。与传统 1PPS 时间传递互补：只要本地振荡器 稳定，不需与外部时标严格关联即可做远程同步观测。
 entities:
   - id: ent.ptb_149km_chirped_link_r14
     name: "PTB 149 km 啁啾光频率时间传递链路（Raupach 2014）"

@@ -1,30 +1,21 @@
-# Huang 2024 — 光频梳校准 FMCW 相干 NLOS 成像 + 测振
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical
-
+# Huang 2024 — Non-Line-of-Sight Imaging and Vibrometry Using a Comb-Calibrated Coherent Sensor [technical]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "2QUW2P6D"
+  zotero_key: 2QUW2P6D
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical
   reliability: high
   title: "Non-Line-of-Sight Imaging and Vibrometry Using a Comb-Calibrated Coherent Sensor"
   year: 2024
-  first_author: Huang
+  first_author: "Huang"
   journal: "Physical Review Letters"
   volume: 132
-  pages: "233802"
-  doi: "10.1103/PhysRevLett.132.233802"
+  pages: 233802
+  doi: 10.1103/PhysRevLett.132.233802
   note: >
-    [技术论文] USTC（Pan Jian-Wei 组）+ Hefei 国家实验室。提出用光频梳校准的 FMCW
-    调频连续波激光相干传感方案做非视距（NLOS）成像 + 测振；光梳作为 FMCW 频率调谐
-    线性度的实时校准参考，实现系统时间分辨 652 fs（可优化至 70 fs），SNR 比原生
-    FMCW 提升约 5 dB，能在强环境光下重建复杂 NLOS 场景，亚毫米定位精度，
-    NLOS 振动测量精度达数十 Hz。
-
+    [技术论文] USTC（Pan Jian-Wei 组）+ Hefei 国家实验室。提出用光频梳校准的 FMCW 调频连续波激光相干传感方案做非视距（NLOS）成像 + 测振；光梳作为 FMCW 频率调谐 线性度的实时校准参考，实现系统时间分辨 652 fs（可优化至 70 fs），SNR 比原生 FMCW 提升约 5 dB，能在强环境光下重建复杂 NLOS 场景，亚毫米定位精度， NLOS 振动测量精度达数十 Hz。
 entities:
   - id: ent.comb_calibrated_fmcw_nlos_sensor_h24
     name: "光梳校准 FMCW 相干 NLOS 传感系统（Huang 2024）"

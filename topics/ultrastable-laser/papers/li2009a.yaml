@@ -1,31 +1,20 @@
+# Li 2009 — Low Vibration Sensitivity Fiber Spools for Laser Stabilization [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: SI2N2B8N
   topic: ultrastable-laser
   source_type: conference_paper
   contribution_type: evidence
   reliability: medium
-  title: Low Vibration Sensitivity Fiber Spools for Laser Stabilization
+  title: "Low Vibration Sensitivity Fiber Spools for Laser Stabilization"
   year: 2009
-  first_author: Li
-  authors:
-  - T. Li
-  - B. Argence
-  - C. Nelson
-  - A. Hati
-  - E. Burt
-  - A. Haboucha
-  - H. Jiang
-  - J. L. Dornaux
-  - D. Koné
-  - A. Clairon
-  - P. Lemonde
-  - G. Santarelli
-  journal: 2009 IEEE International Frequency Control Symposium
-  doi: ''
-  note: '钛合金非对称支撑光纤线轴设计，通过 FEM 优化 h₂ 参数使垂直振动灵敏度零点可调。 300 m 光纤线轴振动灵敏度约 5×10⁻¹¹/m·s⁻²（沿线轴轴向）。
-    "自由"光纤尾纤约束方式对总振动灵敏度有显著影响。 版权标注 ©2009 IEEE（ISBN 978-1-4244-3510-4）。
-
-    '
+  first_author: "Li"
+  authors: ["T. Li", "B. Argence", "C. Nelson", "A. Hati", "E. Burt", "A. Haboucha", "H. Jiang", "J. L. Dornaux", "D. Koné", "A. Clairon", "P. Lemonde", "G. Santarelli"]
+  journal: "2009 IEEE International Frequency Control Symposium"
+  doi: 
+  note: >
+    钛合金非对称支撑光纤线轴设计，通过 FEM 优化 h₂ 参数使垂直振动灵敏度零点可调。 300 m 光纤线轴振动灵敏度约 5×10⁻¹¹/m·s⁻²（沿线轴轴向）。 "自由"光纤尾纤约束方式对总振动灵敏度有显著影响。 版权标注 ©2009 IEEE（ISBN 978-1-4244-3510-4）。
 entities:
 - id: ent.fiber_delay_line_reference
   name: 光纤延迟线参考系统（类级别实体）

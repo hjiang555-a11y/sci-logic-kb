@@ -1,28 +1,19 @@
-# Wu 2024 — 铌酸锂薄膜纳米波导可见-紫外频率梳
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical
-
+# Wu 2024 — Visible-to-ultraviolet frequency comb generation in lithium niobate nanophoto... [technical]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "8IPE8B8T"
+  zotero_key: 8IPE8B8T
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical
   reliability: high
   title: "Visible-to-ultraviolet frequency comb generation in lithium niobate nanophotonic waveguides"
   year: 2024
-  first_author: Wu
+  first_author: "Wu"
   journal: "Nature Photonics"
-  doi: "10.1038/s41566-023-01364-0"
+  doi: 10.1038/s41566-023-01364-0
   note: >
-    [技术论文] NIST/Colorado（Diddams 组）+ Caltech（Marandi 组）+ JPL。多段铌酸锂（TF-LN）
-    纳米波导：色散工程 + 啁啾准相位匹配（chirped QPM），结合 χ²+χ³ 非线性；
-    仅 90 pJ（1550 nm）Er:fiber 梳脉冲输入，产生 330–2400 nm 无间断梳谱；
-    350–550 nm UV/VIS 转换效率 17%；同一波导 χ² 倍频 + f-2f 直接给出 f_CEO，
-    并在 350 nm 处验证梳相干性。解决 UV/VIS 光梳长期缺失问题，关键服务离子/原子钟光梳参考。
-
+    [技术论文] NIST/Colorado（Diddams 组）+ Caltech（Marandi 组）+ JPL。多段铌酸锂（TF-LN） 纳米波导：色散工程 + 啁啾准相位匹配（chirped QPM），结合 χ²+χ³ 非线性； 仅 90 pJ（1550 nm）Er:fiber 梳脉冲输入，产生 330–2400 nm 无间断梳谱； 350–550 nm UV/VIS 转换效率 17%；同一波导 χ² 倍频 + f-2f 直接给出 f_CEO， 并在 350 nm 处验证梳相干性。解决 UV/VIS 光梳长期缺失问题，关键服务离子/原子钟光梳参考。
 entities:
   - id: ent.tf_lin_uv_vis_comb_w24
     name: "薄膜铌酸锂纳米波导 UV-VIS 梳（Wu 2024）"

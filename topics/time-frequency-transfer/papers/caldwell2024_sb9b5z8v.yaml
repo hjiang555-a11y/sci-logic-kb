@@ -1,32 +1,20 @@
-# Caldwell 2024 — Application of quantum-limited OTT to space-based optical clock comparisons [evidence]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：time-frequency-transfer
-# contribution_type: evidence
-
+# Caldwell 2024 — Application of quantum-limited optical time transfer to space-based optical c... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "sb9b5z8v"
+  zotero_key: sb9b5z8v
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Application of quantum-limited optical time transfer to space-based optical clock comparisons and coherent networks"
   year: 2024
-  first_author: Caldwell
-  authors:
-  - "Emily D. Caldwell"
-  - "Laura C. Sinclair"
-  - "Jean-Daniel Deschenes"
-  - "Fabrizio Giorgetta"
-  - "Nathan R. Newbury"
+  first_author: "Caldwell"
+  authors: ["Emily D. Caldwell", "Laura C. Sinclair", "Jean-Daniel Deschenes", "Fabrizio Giorgetta", "Nathan R. Newbury"]
   journal: "Apl Photonics"
-  doi: "10.1063/5.0170107"
+  doi: 10.1063/5.0170107
   note: >
-    [期刊论文] NIST. Caldwell 2023 方法扩展到：空间光钟比对 + coherent 网络分析
-    （链路预算、多节点、实际传递稳定度）。评估 ground↔LEO/MEO/GEO 不同轨道下
-    量子极限 OTT 可达到的时间 + 频率传递性能。
-
+    [期刊论文] NIST. Caldwell 2023 方法扩展到：空间光钟比对 + coherent 网络分析 （链路预算、多节点、实际传递稳定度）。评估 ground↔LEO/MEO/GEO 不同轨道下 量子极限 OTT 可达到的时间 + 频率传递性能。
 relations:
   - id: rel.caldwell_2024_al24_01
     subject: ent.free_space_optical_tf_link

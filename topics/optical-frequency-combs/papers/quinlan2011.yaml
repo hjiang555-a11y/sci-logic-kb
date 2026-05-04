@@ -1,11 +1,8 @@
-# Quinlan et al. 2011 — Er:fiber光频除法器超低相位噪声微波生成 [evidence]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：optical-frequency-combs
-
+# Quinlan 2011 — Ultralow phase noise microwave generation with an Er:fiber-based optical freq... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "LMJN9MGA"
+  zotero_key: LMJN9MGA
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: evidence
@@ -13,27 +10,13 @@ meta:
   title: "Ultralow phase noise microwave generation with an Er:fiber-based optical frequency divider"
   year: 2011
   first_author: "Quinlan"
-  authors:
-    - "Franklyn Quinlan"
-    - "Tara M. Fortier"
-    - "Matthew S. Kirchner"
-    - "Jennifer A. Taylor"
-    - "Michael J. Thorpe"
-    - "Nathan Lemke"
-    - "Andrew D. Ludlow"
-    - "Yanyi Jiang"
-    - "Scott A. Diddams"
+  authors: ["Franklyn Quinlan", "Tara M. Fortier", "Matthew S. Kirchner", "Jennifer A. Taylor", "Michael J. Thorpe", "Nathan Lemke", "Andrew D. Ludlow", "Yanyi Jiang", "Scott A. Diddams"]
   journal: "Optics Letters"
-  volume: "36"
-  issue: "16"
-  pages: "3260"
-  doi: ""
+  volume: 36
+  pages: 3260
+  doi: 
   note: >
-    首次演示Er:fiber OFD（200 MHz重复率）在10 GHz处绝对相位噪声低于−100 dBc/Hz（@1 Hz），
-    等于或优于深冷微波振荡器。关键：200 MHz重复率+高速腔内LiNbO₃调制器降低本底相位噪声。
-    散粒噪声限：−145 dBc/Hz（>10 kHz偏移）。分析Er:fiber残余噪声贡献，
-    证明Er:fiber与Ti:sapphire OFD性能相当，为便携式低成本低噪声微波源奠定基础。
-
+    首次演示Er:fiber OFD（200 MHz重复率）在10 GHz处绝对相位噪声低于−100 dBc/Hz（@1 Hz）， 等于或优于深冷微波振荡器。关键：200 MHz重复率+高速腔内LiNbO₃调制器降低本底相位噪声。 散粒噪声限：−145 dBc/Hz（>10 kHz偏移）。分析Er:fiber残余噪声贡献， 证明Er:fiber与Ti:sapphire OFD性能相当，为便携式低成本低噪声微波源奠定基础。
 entities:
   - id: ent.er_fiber_ofd_quinlan2011
     name: "200 MHz Er:fiber光频除法器（Quinlan 2011）"

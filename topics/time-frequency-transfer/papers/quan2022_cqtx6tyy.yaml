@@ -1,37 +1,22 @@
-# Quan 2022 — Microwave Frequency Dissemination over 212 km cascaded urban fiber link at 10⁻¹⁸ [evidence]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：time-frequency-transfer
-# contribution_type: evidence
-
+# Quan 2022 — Microwave Frequency Dissemination over a 212 km Cascaded Urban Fiber Link wit... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "cqtx6tyy"
+  zotero_key: cqtx6tyy
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
   reliability: medium
   title: "Microwave Frequency Dissemination over a 212 km Cascaded Urban Fiber Link with Stability at the 10⁻¹⁸ Level"
   year: 2022
-  first_author: Quan
-  authors:
-  - "H. L. Quan"
-  - "W. X. Xue"
-  - "W. Y. Zhao"
-  - "Y. Xing"
-  - "H. F. Jiang"
-  - "W. G. Guo"
-  - "S. G. Zhang"
+  first_author: "Quan"
+  authors: ["H. L. Quan", "W. X. Xue", "W. Y. Zhao", "Y. Xing", "H. F. Jiang", "W. G. Guo", "S. G. Zhang"]
   journal: "Photonics"
   volume: 9
-  issue: 4
-  pages: "239"
-  doi: "10.3390/photonics9040239"
+  pages: 239
+  doi: 10.3390/photonics9040239
   note: >
-    [期刊论文] NTSC Xi'an. 212 km = 2 段级联 106 km 城市场纤 RF-over-fiber 频率传递，
-    每段用独立微波 dissemination + 预补偿；两级之间采用不同 RF 调制频率避免 adjacent-stage
-    微波泄漏串扰。级联 stability 6.2×10⁻¹⁵ @1 s、6.4×10⁻¹⁸ @40000 s。
-
+    [期刊论文] NTSC Xi'an. 212 km = 2 段级联 106 km 城市场纤 RF-over-fiber 频率传递， 每段用独立微波 dissemination + 预补偿；两级之间采用不同 RF 调制频率避免 adjacent-stage 微波泄漏串扰。级联 stability 6.2×10⁻¹⁵ @1 s、6.4×10⁻¹⁸ @40000 s。
 entities:
   - id: ent.ntsc_212km_cascaded_rf_link_q22
     name: "NTSC 212 km 级联城市 RF-over-fiber 链路（Quan 2022）"

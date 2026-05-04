@@ -1,40 +1,21 @@
-# Endo 2018 — 超低噪声光学频率梳综述：从固态到光纤到整体式腔结构 [综述框架论文]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: framework
-
+# Endo 2018 — Ultralow Noise Optical Frequency Combs [framework]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: H93SHF89
   topic: optical-frequency-combs
   source_type: review
   contribution_type: framework
   reliability: high
-  title: Ultralow Noise Optical Frequency Combs
+  title: "Ultralow Noise Optical Frequency Combs"
   year: 2018
-  first_author: Endo
-  journal: IEEE Journal of Selected Topics in Quantum Electronics
+  first_author: "Endo"
+  journal: "IEEE Journal of Selected Topics in Quantum Electronics"
   volume: 24
-  issue: 5
-  pages: "1102413"
+  pages: 1102413
   doi: 10.1109/JSTQE.2018.2818461
-  note: '[综述框架论文] Endo、Schibli 2018 年 IEEE JSTQE 受邀综述。系统梳理各类 OFC 技术平台的噪声特性与稳定化方案，
-    聚焦"超低噪声"维度：(1) 介绍 OFC 两个自由度 frep、f_CEO 及其稳定化原理（f-2f 自参考、BOMPD）；
-    (2) 对比 Ti:sapphire、Er/Yb/Tm 光纤梳、VECSEL/MIXSEL 半导体梳、微谐振腔 Kerr 梳、EO 梳的噪声机制与工程特点；
-    (3) 阐明噪声层级：量子极限（Schawlow-Townes）< 技术噪声（泵浦 RIN、振动、温度、ASE、非线性相位噪声）；
-    (4) 核心结果：整体式 Er:glass + CaF₂ 腔 OFC（~1.5 GHz frep，1.56 μm）在自由运转条件下实现 ~1×10⁻¹⁹@1 s 频率不稳定度——
-    首次报告 OFC 自由运转达到 10⁻¹⁹ 量级。
-    ent.optical_frequency_comb 定义于 giunta2019.yaml；
-    ent.ti_sapphire_frequency_comb 定义于 udem2002.yaml；
-    ent.microresonator_frequency_comb 定义于 kippenberg2011.yaml；
-    ent.electro_optic_frequency_comb 定义于 picque2019.yaml；
-    ent.er_fiber_frequency_comb 定义于 droste2016.yaml；
-    pri.self_referencing_f2f 定义于 giunta2019.yaml；
-    pri.dual_comb_multiheterodyne_detection 定义于 coddington2016.yaml。
-
-    '
-
+  note: >
+    [综述框架论文] Endo、Schibli 2018 年 IEEE JSTQE 受邀综述。系统梳理各类 OFC 技术平台的噪声特性与稳定化方案， 聚焦"超低噪声"维度：(1) 介绍 OFC 两个自由度 frep、f_CEO 及其稳定化原理（f-2f 自参考、BOMPD）； (2) 对比 Ti:sapphire、Er/Yb/Tm 光纤梳、VECSEL/MIXSEL 半导体梳、微谐振腔 Kerr 梳、EO 梳的噪声机制与工程特点； (3) 阐明噪声层级：量子极限（Schawlow-Townes）< 技术噪声（泵浦 RIN、振动、温度、ASE、非线性相位噪声）； (4) 核心结果：整体式 Er:glass + CaF₂ 腔 OFC（~1.5 GHz frep，1.56 μm）在自由运转条件下实现 ~1×10⁻¹⁹@1 s 频率不稳定度—— 首次报告 OFC 自由运转达到 10⁻¹⁹ 量级。 ent.optical_frequency_comb 定义于 giunta2019.yaml； ent.ti_sapphire_frequency_comb 定义于 udem2002.yaml； ent.microresonator_frequency_comb 定义于 kippenberg2011.yaml； ent.electro_optic_frequency_comb 定义于 picque2019.yaml； ent.er_fiber_frequency_comb 定义于 droste2016.yaml； pri.self_referencing_f2f 定义于 giunta2019.yaml； pri.dual_comb_multiheterodyne_detection 定义于 coddington2016.yaml。
 entities:
 - id: ent.monolithic_erglass_comb_e18
   name: 整体式 Er:glass OFC（Endo 2018）

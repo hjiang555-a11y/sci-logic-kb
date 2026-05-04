@@ -1,20 +1,21 @@
+# Cole 2016 — High-performance near- and mid-infrared crystalline coatings [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: 4GUXEM2C
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: High-performance near- and mid-infrared crystalline coatings
+  title: "High-performance near- and mid-infrared crystalline coatings"
   year: 2016
-  first_author: Cole
-  journal: Optica
+  first_author: "Cole"
+  journal: "Optica"
   volume: 3
-  pages: '647'
+  pages: 647
   doi: 10.1364/OPTICA.3.000647
-  note: 'AlGaAs 晶体镀层工程性能大幅提升：近红外超额损耗降至 3 ppm（1064-1560 nm）， 1550 nm 精细度 >3×10⁵，1064
-    nm 吸收 <1 ppm。首次展示中红外（3.3/3.7 μm）性能。 光学损耗已完全可比 IBS 镀层，同时保持最低布朗噪声和最高热导率。 CMS/JILA（Cole/Ye组）+
-    Stanford。Cole 2013 的工程延伸。
-
-    '
+  note: >
+    AlGaAs 晶体镀层工程性能大幅提升：近红外超额损耗降至 3 ppm（1064-1560 nm）， 1550 nm 精细度 >3×10⁵，1064 nm 吸收 <1 ppm。首次展示中红外（3.3/3.7 μm）性能。 光学损耗已完全可比 IBS 镀层，同时保持最低布朗噪声和最高热导率。 CMS/JILA（Cole/Ye组）+ Stanford。Cole 2013 的工程延伸。
 methods:
 - id: meth.crystalline_coating_engineering_cole16
   name: 晶体镀层工程优化方法（Cole 2016）

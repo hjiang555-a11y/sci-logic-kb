@@ -1,20 +1,21 @@
+# Marchio 2018 — Optical performance of large-area crystalline coatings [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: LCMWCIWB
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: Optical performance of large-area crystalline coatings
+  title: "Optical performance of large-area crystalline coatings"
   year: 2018
-  first_author: Marchio
-  journal: Optics Express
+  first_author: "Marchio"
+  journal: "Optics Express"
   volume: 26
-  issue: 5
   pages: 6114-6125
   doi: 10.1364/OE.26.006114
-  note: '首次系统表征 50.8 mm（2 英寸）直径 GaAs/AlGaAs 晶体镀层的光学性能， 包括透射（6 ppm）、吸收（≤0.8 ppm）、散射（6–9.5
-    ppm）和缺陷密度（0.85/mm²）。 验证大面积晶体镀层可达到与 IBS 非晶镀层相当的光学品质， 为引力波探测器和超稳激光参考腔的应用铺平道路。
-
-    '
+  note: >
+    首次系统表征 50.8 mm（2 英寸）直径 GaAs/AlGaAs 晶体镀层的光学性能， 包括透射（6 ppm）、吸收（≤0.8 ppm）、散射（6–9.5 ppm）和缺陷密度（0.85/mm²）。 验证大面积晶体镀层可达到与 IBS 非晶镀层相当的光学品质， 为引力波探测器和超稳激光参考腔的应用铺平道路。
 entities:
 - id: ent.large_area_crystalline_coating_m18
   name: 大面积 GaAs/AlGaAs 晶体镀层（2 英寸）

@@ -1,20 +1,21 @@
+# Galland 2020 — Double-heterodyne probing for an ultra-stable laser based on spectral hole bu... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: MPWLNUIH
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: Double-heterodyne probing for an ultra-stable laser based on spectral hole
-    burning in a rare-earth-doped crystal
+  title: "Double-heterodyne probing for an ultra-stable laser based on spectral hole burning in a rare-earth-doped crystal"
   year: 2020
-  first_author: Galland
-  journal: Optics Letters
+  first_author: "Galland"
+  journal: "Optics Letters"
   volume: 45
-  issue: 7
   pages: 1930-1933
   doi: 10.1364/OL.45.001930
-  note: '双通道同时探测 SHB 吸收谱模式，产生双外差拍频信号， 通过两通道组合显著降低探测噪声。 核心贡献：SHB 探测方案的信噪比优化。
-
-    '
+  note: >
+    双通道同时探测 SHB 吸收谱模式，产生双外差拍频信号， 通过两通道组合显著降低探测噪声。 核心贡献：SHB 探测方案的信噪比优化。
 entities: []
 principles:
 - id: pri.double_heterodyne_shb_probing

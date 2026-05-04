@@ -1,42 +1,20 @@
+# Shen 2022 — Free-space dissemination of time and frequency with 10⁻¹⁹ instability over 11... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: P92ZFIAQ
   topic: ultrastable-laser
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
-  title: Free-space dissemination of time and frequency with 10⁻¹⁹ instability over
-    113 km
+  title: "Free-space dissemination of time and frequency with 10⁻¹⁹ instability over 113 km"
   year: 2022
-  first_author: Shen
-  authors:
-  - Qi Shen
-  - Jian-Yu Guan
-  - Ji-Gang Ren
-  - Ting Zeng
-  - Lei Hou
-  - Min Li
-  - Yuan Cao
-  - Jin-Jian Han
-  - Meng-Zhe Lian
-  - Yan-Wei Chen
-  - Xin-Xin Peng
-  - Shao-Mao Wang
-  - Dan-Yang Zhu
-  - Chao-Yang Lu
-  - Sheng-Kai Liao
-  - Juan Yin
-  - Jian-Jun Jia
-  - Cheng-Zhi Peng
-  - Hai-Feng Jiang
-  - Qiang Zhang
-  - Jian-Wei Pan
-  journal: Nature
+  first_author: "Shen"
+  authors: ["Qi Shen", "Jian-Yu Guan", "Ji-Gang Ren", "Ting Zeng", "Lei Hou", "Min Li", "Yuan Cao", "Jin-Jian Han", "Meng-Zhe Lian", "Yan-Wei Chen", "Xin-Xin Peng", "Shao-Mao Wang", "Dan-Yang Zhu", "Chao-Yang Lu", "Sheng-Kai Liao", "Juan Yin", "Jian-Jun Jia", "Cheng-Zhi Peng", "Hai-Feng Jiang", "Qiang Zhang", "Jian-Wei Pan"]
+  journal: "Nature"
   doi: 10.1038/s41586-022-05228-5
-  note: '首次实现 113 km 自由空间光学时频传递达 10⁻¹⁹ 稳定度（USTC/CAS，新疆乌鲁木齐）。 每端配备超稳激光（USL，1550.12
-    nm，3×10⁻¹⁵ @1 s）作为时钟源， 两路高功率光频梳（1545 nm 和 1563 nm，各 1 W 输出）双向传输， 线性光学采样（LOS）实现飞秒精度相位探测，
-    自适应光学（可变形镜）补偿大气波前畸变。 链路不稳定度 < 4×10⁻¹⁹ @10,000 s；时间偏移 6.3×10⁻²⁰ ± 3.4×10⁻¹⁹。
-
-    '
+  note: >
+    首次实现 113 km 自由空间光学时频传递达 10⁻¹⁹ 稳定度（USTC/CAS，新疆乌鲁木齐）。 每端配备超稳激光（USL，1550.12 nm，3×10⁻¹⁵ @1 s）作为时钟源， 两路高功率光频梳（1545 nm 和 1563 nm，各 1 W 输出）双向传输， 线性光学采样（LOS）实现飞秒精度相位探测， 自适应光学（可变形镜）补偿大气波前畸变。 链路不稳定度 < 4×10⁻¹⁹ @10,000 s；时间偏移 6.3×10⁻²⁰ ± 3.4×10⁻¹⁹。
 entities:
 - id: ent.freespace_tf_link_113km_sh22
   name: 113 km 自由空间时频传递链路（Shen 2022）

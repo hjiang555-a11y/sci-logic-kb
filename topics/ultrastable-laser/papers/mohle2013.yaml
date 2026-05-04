@@ -1,19 +1,21 @@
+# Möhle 2013 — Highly stable piezoelectrically tunable optical cavities [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: 8MNIBZEW
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: Highly stable piezoelectrically tunable optical cavities
+  title: "Highly stable piezoelectrically tunable optical cavities"
   year: 2013
-  first_author: Möhle
-  journal: Applied Physics B
+  first_author: "Möhle"
+  journal: "Applied Physics B"
   volume: 111
   pages: suppl
   doi: 10.1007/s00340-013-5394-3
-  note: '系统评估了四种压电材料（PZT 叠层、PZT 管、石英、PZN-PT 单晶） 在 10 cm Zerodur 高精细度腔中的频率稳定度和调谐能力。
-    短路压电时相对频率稳定度优于 1×10⁻¹⁴，可电调谐超过 1 个 FSR（>1.5 GHz）。 为 LISA 等空间任务的可调预稳定提供了技术基础。 核心贡献：证明内置压电驱动器不是频率稳定度的限制因素。
-
-    '
+  note: >
+    系统评估了四种压电材料（PZT 叠层、PZT 管、石英、PZN-PT 单晶） 在 10 cm Zerodur 高精细度腔中的频率稳定度和调谐能力。 短路压电时相对频率稳定度优于 1×10⁻¹⁴，可电调谐超过 1 个 FSR（>1.5 GHz）。 为 LISA 等空间任务的可调预稳定提供了技术基础。 核心贡献：证明内置压电驱动器不是频率稳定度的限制因素。
 entities:
 - id: ent.piezo_tunable_cavity_m13
   name: 压电可调谐高精细度参考腔

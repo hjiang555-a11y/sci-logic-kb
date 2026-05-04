@@ -1,20 +1,21 @@
+# Millo 2009 — Ultra-stable lasers based on vibration insensitive cavities [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: GLXHEIPV
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: Ultra-stable lasers based on vibration insensitive cavities
+  title: "Ultra-stable lasers based on vibration insensitive cavities"
   year: 2009
-  first_author: Millo
-  journal: Physical Review A
+  first_author: "Millo"
+  journal: "Physical Review A"
   volume: 79
   pages: 053829
   doi: 10.1103/PhysRevA.79.053829
-  note: '两台使用 FS（熔融石英）镜基底的振动不敏感腔超稳激光：竖直光轴+水平光轴两种设计。 振动灵敏度 ≤1.5×10⁻¹¹ per m/s²（各方向），支撑点位置依赖极低（无需精细调谐）。
-    稳定度 5.6×10⁻¹⁶ @1s（单腔推断），为该腔长（10cm）最佳结果。 首次使用 FS 镜降低热噪声（较全 ULE 腔提升 ~2×）。 LNE-SYRTE（Santarelli/Lemonde
-    组），1064 nm。
-
-    '
+  note: >
+    两台使用 FS（熔融石英）镜基底的振动不敏感腔超稳激光：竖直光轴+水平光轴两种设计。 振动灵敏度 ≤1.5×10⁻¹¹ per m/s²（各方向），支撑点位置依赖极低（无需精细调谐）。 稳定度 5.6×10⁻¹⁶ @1s（单腔推断），为该腔长（10cm）最佳结果。 首次使用 FS 镜降低热噪声（较全 ULE 腔提升 ~2×）。 LNE-SYRTE（Santarelli/Lemonde 组），1064 nm。
 methods:
 - id: meth.vibration_insensitive_cavity_design_m09
   name: 振动不敏感腔设计（Millo 2009）

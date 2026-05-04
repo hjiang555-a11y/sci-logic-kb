@@ -1,31 +1,22 @@
-# Allan 2016 — A Historical Perspective on the Development of the Allan Variances [framework]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：shared（时频计量方法论）
-# contribution_type: framework
-
+# Allan 2016 — A Historical Perspective on the Development of the Allan Variances and Their ... [framework]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "ALLAN2016"
+  zotero_key: ALLAN2016
   topic: shared
   source_type: review
   contribution_type: framework
   reliability: high
   title: "A Historical Perspective on the Development of the Allan Variances and Their Strengths and Weaknesses"
   year: 2016
-  first_author: Allan
+  first_author: "Allan"
   authors: ["D. W. Allan", "J. Levine"]
   journal: "IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control"
   volume: 63
-  issue: 4
-  pages: "513-519"
-  doi: "10.1109/TUFFC.2016.2524687"
+  pages: 513-519
+  doi: 10.1109/TUFFC.2016.2524687
   note: >
-    [综述论文] Allan 本人 + NIST Levine. 50 年 Allan 方差族（AVAR, MVAR, TVAR）
-    发展历史回顾与各变体强弱比较。是对 allan1966、howe1976、riley2008、sullivan1990
-    等基础文献的综述，并讨论 AVAR 在电信、时间传递等领域的适用条件。
-    作为 shared 专题的方法论 framework 收录。
-
+    [综述论文] Allan 本人 + NIST Levine. 50 年 Allan 方差族（AVAR, MVAR, TVAR） 发展历史回顾与各变体强弱比较。是对 allan1966、howe1976、riley2008、sullivan1990 等基础文献的综述，并讨论 AVAR 在电信、时间传递等领域的适用条件。 作为 shared 专题的方法论 framework 收录。
 principles:
   - id: pri.allan_variance_time_domain_characterization
     name: "Allan 方差族时域不稳定度刻画原理（综合 AVAR/MVAR/TVAR）"

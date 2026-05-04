@@ -1,34 +1,22 @@
-# Caldwell 2020 — Optical timing jitter due to atmospheric turbulence [evidence]
-# 提取者：Claude Code（AI 草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.5
-# 专题：time-frequency-transfer（大气湍流光学时序抖动 — 梳齿测量与微气象传感器预测对比）
-# contribution_type: evidence — 首次将频率梳实测大气湍流时序抖动与微气象传感器
-#   （sonic anemometer + 温湿度）独立预测模型直接对比；验证了 Monin-Obukhov 相似性
-#   理论用于光频传递噪声建模的准确性。
-
+# Caldwell 2020 — Optical timing jitter due to atmospheric turbulence: comparison of frequency ... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "oe-28-18-26661"
+  zotero_key: oe-28-18-26661
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Optical timing jitter due to atmospheric turbulence: comparison of frequency comb measurements to predictions from micrometeorological sensors"
   year: 2020
-  first_author: Caldwell
+  first_author: "Caldwell"
   authors: ["Emily D. Caldwell", "William C. Swann", "Jennifer L. Ellis", "Martha I. Bodine", "Carter Mak", "Nathan Kuczun", "Nathan R. Newbury", "Laura C. Sinclair", "Andreas Muschinski", "Gregory B. Rieker"]
   journal: "Optics Express"
   volume: 28
-  issue: 18
-  pages: "26661"
-  doi: "10.1364/OE.401501"
+  pages: 26661
+  doi: 10.1364/OE.401501
   note: >
-    [evidence 论文] 在近地面水平路径上使用 fs 频率梳测量湍流诱导的光脉冲时序抖动，
-    同时独立记录微气象传感器（sonic anemometer、温度、湿度、气压）数据。
-    将实测抖动 PSD 与基于 Monin-Obukhov 相似性理论的预测模型直接对比，
-    验证了微气象模型可用于预测光学时频传递链路中的大气相位噪声上限。
-    对激光测距、光学时间传递和长基线干涉仪的大气噪声预算具有实用价值。
-
+    [evidence 论文] 在近地面水平路径上使用 fs 频率梳测量湍流诱导的光脉冲时序抖动， 同时独立记录微气象传感器（sonic anemometer、温度、湿度、气压）数据。 将实测抖动 PSD 与基于 Monin-Obukhov 相似性理论的预测模型直接对比， 验证了微气象模型可用于预测光学时频传递链路中的大气相位噪声上限。 对激光测距、光学时间传递和长基线干涉仪的大气噪声预算具有实用价值。
 entities:
   - id: ent.caldwell2020_timing_jitter_measurement
     name: "Caldwell 2020 大气湍流光学时序抖动测量装置"

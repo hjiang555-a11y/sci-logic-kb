@@ -1,41 +1,22 @@
-# Peng 2020 — 电荷补偿MUTC光电二极管光子脉冲微波生成 [X/Ku/K波段，纪录峰值功率]
-# 提取日期：2026-05-03
-# Schema版本：v4.0
-# 专题：timescales
-# contribution_type: evidence — 工程改进，刷新MUTC光电二极管脉冲微波峰值功率纪录。
-#   与 timescales 专题的关联：光子微波生成是光钟/光频梳参考信号向微波域传递的关键技术通道；
-#   高功率光电二极管是此通道的核心器件。本文的 CC-MUTC PD 是 fortier2013 中 MUTC PD
-#   的后续工程优化（更高的反向偏压、更优的脉冲峰值功率）。
-#   核心贡献在微波光子学器件层面，与时间标尺的直接关系较弱，
-#   列入 timescales 专题主要作为光子微波生成技术链的器件进展记录。
-
+# peng 2020 — Photonic generation of pulsed microwave signals in the X-, Ku- and K-band [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "oe-28-19-28563"
+  zotero_key: oe-28-19-28563
   topic: timescales
   source_type: experiment
   contribution_type: evidence
   reliability: high
   title: "Photonic generation of pulsed microwave signals in the X-, Ku- and K-band"
   year: 2020
-  first_author: peng
-  authors:
-    - "Yiwei Peng"
-    - "Keye Sun"
-    - "Yang Shen"
-    - "Andreas Beling"
-    - "Joe C. Campbell"
+  first_author: "peng"
+  authors: ["Yiwei Peng", "Keye Sun", "Yang Shen", "Andreas Beling", "Joe C. Campbell"]
   journal: "Optics Express"
   volume: 28
-  pages: "28563–28572"
-  doi: "10.1364/OE.399102"
+  pages: 28563–28572
+  doi: 10.1364/OE.399102
   note: >
-    [实验/工程改进] 电荷补偿 MUTC (CC-MUTC) 光电二极管在 X (10 GHz)、Ku (17 GHz)、
-    K (22 GHz) 波段的高功率脉冲微波信号生成。
-    核心成果：脉冲微波峰值功率 44.2 dBm (26.3 W) @ 10 GHz、41.6 dBm (14.5 W) @ 17 GHz、
-    40.6 dBm (11.5 W) @ 22 GHz，均为当时已报道最高脉冲 RF 功率水平。
-    脉冲光响应峰值电压 38.3 V，FWHM 30 ps。
-    与 timescales 专题关联：光子微波生成链中的高功率 PD 器件进展（fortier2013 的后继优化）。
-
+    [实验/工程改进] 电荷补偿 MUTC (CC-MUTC) 光电二极管在 X (10 GHz)、Ku (17 GHz)、 K (22 GHz) 波段的高功率脉冲微波信号生成。 核心成果：脉冲微波峰值功率 44.2 dBm (26.3 W) @ 10 GHz、41.6 dBm (14.5 W) @ 17 GHz、 40.6 dBm (11.5 W) @ 22 GHz，均为当时已报道最高脉冲 RF 功率水平。 脉冲光响应峰值电压 38.3 V，FWHM 30 ps。 与 timescales 专题关联：光子微波生成链中的高功率 PD 器件进展（fortier2013 的后继优化）。
 entities:
   - id: ent.cc_mutc_pd_pulsed_microwave_source
     name: "CC-MUTC 光电二极管脉冲微波源（Peng 2020，X/Ku/K 波段）"

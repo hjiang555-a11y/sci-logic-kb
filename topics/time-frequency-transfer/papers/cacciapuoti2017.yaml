@@ -1,48 +1,18 @@
-# Cacciapuoti & Schiller 2017 — ESA I-SOC 科学需求文档（time-frequency-transfer 专题框架种子）
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：time-frequency-transfer
-# contribution_type: framework — 本文件为 time-frequency-transfer 专题的首个 framework 种子文档
-#   定义：顶层空间光钟任务实体（ent.space_optical_clock_mission）、三类高性能时频链路子节点（MWL / ELT+ / FCOL）、
-#         引力时间膨胀测量原理（共视 / 非共视比对）、跨专题 CONDITIONED-BY 接口（→ 超稳激光 / 光频梳 / 频率标准）。
-#   不负责：具体链路电气设计参数、具体光钟系统工程参数（由后续技术论文补充）。
-
+# Cacciapuoti 2017 — I-SOC Scientific Requirements (ESA Experiment Scientific Requirements documen... [framework]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "SCI-ESA-HRE-ESR-ISOC"   # 本文档无 Zotero 条目；此处用 ESA 参考文档编号占位（document_ref 冗余保留于下方）
+  zotero_key: SCI-ESA-HRE-ESR-ISOC
   topic: time-frequency-transfer
   source_type: technical_report
   contribution_type: framework
   reliability: high
   title: "I-SOC Scientific Requirements (ESA Experiment Scientific Requirements document, Issue 1.1 Approved)"
   year: 2017
-  first_author: Cacciapuoti
-  authors:
-  - "Luigi Cacciapuoti (ESA SCI-S)"
-  - "Stephan Schiller (HHU Düsseldorf)"
-  issuing_body: "European Space Agency (ESA)"
-  document_ref: "SCI-ESA-HRE-ESR-ISOC"
-  revision: "Issue 1, Revision 1"
-  issue_date: "2017-06-09"
-  doi: null
+  first_author: "Cacciapuoti"
+  authors: ["Luigi Cacciapuoti (ESA SCI-S)", "Stephan Schiller (HHU Düsseldorf)"]
   note: >
-    [技术报告 / 任务科学需求] time-frequency-transfer 专题种子 framework 文档。
-    定义 ESA I-SOC 任务（ISS-SOC，基于国际空间站的新一代空间光钟任务）的科学目标与顶层
-    需求。任务由三部分组成：(1) 空间段光学晶格钟 SLOC（Sr 原子，$\sigma_y=8\cdot10^{-16}\tau^{-1/2}$，
-    系统不确定度 $1\cdot10^{-17}$）；(2) 空间频率梳 SFC 作为光↔微波桥；(3) 三套高性能
-    地–空时频传递链路（微波链路 MWL、脉冲光学链路 ELT+、可选频率梳光学链路 FCOL）。
-    关键性能要求：MWL 不准确度 $5\cdot10^{-19}$、flicker floor $5\cdot10^{-19}$；ELT+ 时偏差
-    $\leq 0.5\,\text{ps}$ @ 100 s，$\leq 1\,\text{ps}$ 直至 $10^{6}$ s，对应分数不确定度 $1\cdot10^{-18}$。
-    科学目标（vs ACES）：地球引力红移测量 $2\cdot10^{-7}$（10×）、太阳引力红移 $1\cdot10^{-6}$（100×）、
-    月球引力红移 $2\cdot10^{-4}$（100×）、对 UTC/TAI 贡献 <1e-18 不准确度 + ps 级同步、精细
-    结构常数时间变化搜索（10 000×）、洲际/洲内差分大地水准面高度分辨率 0.05 m²/s²（≈0.5 cm）。
-    本文件建立 time-frequency-transfer 专题的顶层实体骨架与跨专题 CONDITIONED-BY 接口，
-    具体链路技术、光钟工程参数由后续技术论文补充。
-
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
+    [技术报告 / 任务科学需求] time-frequency-transfer 专题种子 framework 文档。 定义 ESA I-SOC 任务（ISS-SOC，基于国际空间站的新一代空间光钟任务）的科学目标与顶层 需求。任务由三部分组成：(1) 空间段光学晶格钟 SLOC（Sr 原子，$\sigma_y=8\cdot10^{-16}\tau^{-1/2}$， 系统不确定度 $1\cdot10^{-17}$）；(2) 空间频率梳 SFC 作为光↔微波桥；(3) 三套高性能 地–空时频传递链路（微波链路 MWL、脉冲光学链路 ELT+、可选频率梳光学链路 FCOL）。 关键性能要求：MWL 不准确度 $5\cdot10^{-19}$、flicker floor $5\cdot10^{-19}$；ELT+ 时偏差 $\leq 0.5\,\text{ps}$ @ 100 s，$\leq 1\,\text{ps}$ 直至 $10^{6}$ s，对应分数不确定度 $1\cdot10^{-18}$。 科学目标（vs ACES）：地球引力红移测量 $2\cdot10^{-7}$（10×）、太阳引力红移 $1\cdot10^{-6}$（100×）、 月球引力红移 $2\cdot10^{-4}$（100×）、对 UTC/TAI 贡献 <1e-18 不准确度 + ps 级同步、精细 结构常数时间变化搜索（10 000×）、洲际/洲内差分大地水准面高度分辨率 0.05 m²/s²（≈0.5 cm）。 本文件建立 time-frequency-transfer 专题的顶层实体骨架与跨专题 CONDITIONED-BY 接口， 具体链路技术、光钟工程参数由后续技术论文补充。
 entities:
   # ── Level 1 顶层：空间光钟任务（I-SOC） ─────────────────────────────────────
   - id: ent.space_optical_clock_mission

@@ -1,48 +1,21 @@
-# Hickstein 2017 — AlN 片上波导同时利用 χ²/χ³ 实现超连续展宽与 f-2f 自参考单芯片化 [技术论文]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical
-#   核心贡献：
-#     (1) 用 800 nm 厚、SiO2 包覆的 AlN 片上波导，以 0.8 nJ/1560 nm/80 fs Er:光纤梳泵浦
-#         生成 500–4000 nm 超宽带超连续谱（覆盖倍频程，含 3500–5500 nm DFG 中红外）；
-#     (2) 利用 AlN 同时具有 χ²（SHG）与 χ³（SPM/FWM/SC）的材料特性，在单片波导内同时
-#         完成超连续展宽与 SHG，直接从 780 nm 滤波+光电探测读出 f_CEO（SNR 37 dB，
-#         TM00 泵浦 4800 nm 宽波导），省去体块 f-2f 干涉仪与延迟线；
-#     (3) 实现 f_CEO 数小时稳相锁定，稳定度与传统 f-2f 干涉仪可比；
-#     (4) 展示通过改变波导宽度调控色散波位置与 TE/TM 模式交叉点，以强化窄带谱强度。
-#   跨文件节点引用：
-#     ent.optical_frequency_comb 定义于 udem2002.yaml；
-#     pri.self_referencing_f2f 定义于 udem2002.yaml / giunta2019.yaml；
-#     pri.supercontinuum_octave_spanning 定义于 diddams2000.yaml；
-#     pri.nonlinear_frequency_conversion_comb 已在仓库顶层节点列表注册。
-
+# Hickstein 2017 — Ultrabroadband Supercontinuum Generation and Frequency-Comb Stabilization Usi... [technical]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "CML5935T"
+  zotero_key: CML5935T
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical
   reliability: high
   title: "Ultrabroadband Supercontinuum Generation and Frequency-Comb Stabilization Using On-Chip Waveguides with Both Cubic and Quadratic Nonlinearities"
   year: 2017
-  first_author: Hickstein
+  first_author: "Hickstein"
   journal: "Physical Review Applied"
   volume: 8
-  issue: 1
-  pages: "014025"
-  doi: "10.1103/PhysRevApplied.8.014025"
+  pages: 014025
+  doi: 10.1103/PhysRevApplied.8.014025
   note: >
-    [技术论文] NIST Boulder + Yale（Tang 组）合作。在 SiO2 包覆 AlN 薄膜上刻蚀高限域
-    波导（800 nm 厚，宽 400–5100 nm），利用 AlN 材料同时具备 χ² 与 χ³ 的特点，使超连续
-    展宽（χ³: SPM/FWM/色散波）与 SHG（χ²）在同一单模波导中共存、自然时域重合，
-    无需外置倍频晶体、重组光路或延迟线即可从输出光直接光电探测 f_CEO。相比体块 f-2f 干涉仪，
-    该方案对 GHz 重频、低脉冲能量梳（EO 梳、微梳）友好，为便携式自参考梳奠基。
-
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
+    [技术论文] NIST Boulder + Yale（Tang 组）合作。在 SiO2 包覆 AlN 薄膜上刻蚀高限域 波导（800 nm 厚，宽 400–5100 nm），利用 AlN 材料同时具备 χ² 与 χ³ 的特点，使超连续 展宽（χ³: SPM/FWM/色散波）与 SHG（χ²）在同一单模波导中共存、自然时域重合， 无需外置倍频晶体、重组光路或延迟线即可从输出光直接光电探测 f_CEO。相比体块 f-2f 干涉仪， 该方案对 GHz 重频、低脉冲能量梳（EO 梳、微梳）友好，为便携式自参考梳奠基。
 entities:
   - id: ent.chi2_chi3_waveguide_fceo_h17
     name: "AlN 片上 χ²+χ³ 双非线性超连续波导（Hickstein 2017 系统）"

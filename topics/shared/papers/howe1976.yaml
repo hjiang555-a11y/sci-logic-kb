@@ -1,36 +1,18 @@
-# Howe 1976 — Frequency Domain Stability Measurements: A Tutorial Introduction (NBS TN 679) [framework]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：shared（时频计量数学基础 · B9 Allan–Howe 奠基白名单）
-# contribution_type: framework — 频域频率稳定度测量教程。建立相位噪声 PSD（S_phi(f)）
-#   与频率噪声 PSD（S_y(f)）的测量方法学；明确时域 ADEV 与频域 PSD 的对偶关系与转换公式。
-
+# Howe 1976 — Frequency Domain Stability Measurements: A Tutorial Introduction [framework]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "HOWE1976-NBS-TN679"
+  zotero_key: HOWE1976-NBS-TN679
   topic: shared
   source_type: technical_report
   contribution_type: framework
   reliability: high
   title: "Frequency Domain Stability Measurements: A Tutorial Introduction"
   year: 1976
-  first_author: Howe
+  first_author: "Howe"
   authors: ["David A. Howe"]
-  issuing_body: "National Bureau of Standards (NBS, U.S.A.)"
-  document_ref: "NBS Technical Note 679"
-  doi: null
   note: >
-    [奠基技术报告 · < 1999 年白名单 §B Howe 噪声测量体系] Howe 在 NBS 发表的频域频率
-    稳定度测量教程。与 Allan 1966/1987 的时域方差体系互补，系统建立频域 PSD 测量学：
-    (1) 相位噪声单边功率谱密度 S_phi(f)（单位 rad²/Hz）的标准测量方法（包括相位检波器
-    法、延迟线鉴频法）；(2) 分数频率噪声 PSD S_y(f)（单位 1/Hz）与 S_phi(f) 的转换
-    关系 S_y(f) = f² S_phi(f) / ν₀²；(3) 幂律噪声在频域的同一 α 分解；(4) 时-频对偶
-    积分公式 σ_y²(τ) = 2 ∫₀^{f_h} S_y(f) · sin⁴(π f τ) / (π f τ)² df。本文件确立频域
-    PSD 测量方法的行业规范，是所有现代相位噪声分析仪、商业频率稳定度分析软件（Stable32 
-    / AllanTools / TimeLab 等）的理论基础。
-    注：TODO.md §B 白名单提及"Howe 1981 NBS Tech Note 669"；本文件摄入的 NBS TN 679
-    是 Howe 在 1976 年的同系列教程文档，若专家确认两者是独立文档，可单独摄入 TN 669。
-
+    [奠基技术报告 · < 1999 年白名单 §B Howe 噪声测量体系] Howe 在 NBS 发表的频域频率 稳定度测量教程。与 Allan 1966/1987 的时域方差体系互补，系统建立频域 PSD 测量学： (1) 相位噪声单边功率谱密度 S_phi(f)（单位 rad²/Hz）的标准测量方法（包括相位检波器 法、延迟线鉴频法）；(2) 分数频率噪声 PSD S_y(f)（单位 1/Hz）与 S_phi(f) 的转换 关系 S_y(f) = f² S_phi(f) / ν₀²；(3) 幂律噪声在频域的同一 α 分解；(4) 时-频对偶 积分公式 σ_y²(τ) = 2 ∫₀^{f_h} S_y(f) · sin⁴(π f τ) / (π f τ)² df。本文件确立频域 PSD 测量方法的行业规范，是所有现代相位噪声分析仪、商业频率稳定度分析软件（Stable32  / AllanTools / TimeLab 等）的理论基础。 注：TODO.md §B 白名单提及"Howe 1981 NBS Tech Note 669"；本文件摄入的 NBS TN 679 是 Howe 在 1976 年的同系列教程文档，若专家确认两者是独立文档，可单独摄入 TN 669。
 entities: []
 
 principles:

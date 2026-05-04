@@ -1,36 +1,21 @@
-# Chen Z. 2024 — 双梳增强微波钟同步（205 km 商用光纤，PKU+BUPT）
-# 提取者：GitHub Copilot（AI草稿，2026-04-22）
-# 提取日期：2026-04-22
-# Schema版本：v4.3
-# 专题：optical-frequency-combs
-# contribution_type: evidence（微波钟同步残差 6.23 fs @ 1s，未破光钟同步纪录，定位微波钟应用）
-
+# Chen 2024 — Dual-comb-enhanced microwave clock synchronization over commercial fiber [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "QIFVVUIH"
+  zotero_key: QIFVVUIH
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
   title: "Dual-comb-enhanced microwave clock synchronization over commercial fiber"
   year: 2024
-  first_author: Chen
+  first_author: "Chen"
   journal: "Optica"
   volume: 11
-  issue: 9
-  pages: "1268-1276"
-  doi: "10.1364/OPTICA.530224"
+  pages: 1268-1276
+  doi: 10.1364/OPTICA.530224
   note: >
-    [技术论文] 北京大学 + 北京邮电大学。基于双梳增强光学双向时间传递（OTWTT）实现远程微波钟时间同步：
-    (1) 独立微波钟驱动双光频梳（本地 + 远端），通过商用光纤（205.86 km）传输强度编码脉冲；
-    (2) 线性光学采样（LOS）+ Kalman 滤波提取脉冲质心（start/stop times）→ 避免光电探测器 ps 级不确定度；
-    (3) 使用脉冲包络相位时间（非载波相位）进行时间同步 → 消除 CEO 频率不稳定影响（微波钟相噪高于光钟）；
-    (4) 色散补偿 + 全自动偏振控制 + 实时反馈保证互相干性；
-    (5) 达到残余时间偏差 6.23 fs @ 1 s, 不稳定度 <6×10⁻¹⁸ @ 10,000 s（微波钟间同步，首次 fs 级）；
-    (6) 副产品：sub-ps 级探测光纤互易性变化（安全监控应用）。
-    本工作是首次将微波钟间同步推进到 fs 级（此前受 TIC / 光电探测限制在 ps 级），但不刷新光钟间同步纪录
-    （已有 10⁻¹⁹ 级报道），且主技术挑战在克服微波钟相噪（非梳本身性能极限）。归 evidence。
-    对齐 v2 子域主线：B-FreqSyn（双梳时频传递）。
-
+    [技术论文] 北京大学 + 北京邮电大学。基于双梳增强光学双向时间传递（OTWTT）实现远程微波钟时间同步： (1) 独立微波钟驱动双光频梳（本地 + 远端），通过商用光纤（205.86 km）传输强度编码脉冲； (2) 线性光学采样（LOS）+ Kalman 滤波提取脉冲质心（start/stop times）→ 避免光电探测器 ps 级不确定度； (3) 使用脉冲包络相位时间（非载波相位）进行时间同步 → 消除 CEO 频率不稳定影响（微波钟相噪高于光钟）； (4) 色散补偿 + 全自动偏振控制 + 实时反馈保证互相干性； (5) 达到残余时间偏差 6.23 fs @ 1 s, 不稳定度 <6×10⁻¹⁸ @ 10,000 s（微波钟间同步，首次 fs 级）； (6) 副产品：sub-ps 级探测光纤互易性变化（安全监控应用）。 本工作是首次将微波钟间同步推进到 fs 级（此前受 TIC / 光电探测限制在 ps 级），但不刷新光钟间同步纪录 （已有 10⁻¹⁹ 级报道），且主技术挑战在克服微波钟相噪（非梳本身性能极限）。归 evidence。 对齐 v2 子域主线：B-FreqSyn（双梳时频传递）。
 entities:
   - id: ent.pku_dual_comb_microwave_sync_c24
     name: "北大双梳增强微波钟同步系统（Chen Z. 2024）"

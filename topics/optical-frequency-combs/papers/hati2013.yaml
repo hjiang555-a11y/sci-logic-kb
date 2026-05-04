@@ -1,11 +1,8 @@
-# Hati et al. 2013 — 光频除法最先进RF信号生成综合表征 [evidence]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：optical-frequency-combs
-
+# Hati 2013 — State-of-the-Art RF Signal Generation From Optical Frequency Division [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "JNDRRJTZ"
+  zotero_key: JNDRRJTZ
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: evidence
@@ -13,28 +10,13 @@ meta:
   title: "State-of-the-Art RF Signal Generation From Optical Frequency Division"
   year: 2013
   first_author: "Hati"
-  authors:
-    - "Archita Hati"
-    - "Craig W. Nelson"
-    - "Tara M. Fortier"
-    - "Norman Locke"
-    - "Jennifer A. Taylor"
-    - "Helen Quinlan"
-    - "John M. Taylor"
-    - "Wes Rippey"
-    - "Aaron Weiss"
-    - "Scott A. Diddams"
-    - "David A. Howe"
+  authors: ["Archita Hati", "Craig W. Nelson", "Tara M. Fortier", "Norman Locke", "Jennifer A. Taylor", "Helen Quinlan", "John M. Taylor", "Wes Rippey", "Aaron Weiss", "Scott A. Diddams", "David A. Howe"]
   journal: "IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control"
-  volume: "60"
-  issue: "9"
-  pages: "1796-1803"
-  doi: "10.1109/TUFFC.2013.2782"
+  volume: 60
+  pages: 1796-1803
+  doi: 10.1109/TUFFC.2013.2782
   note: >
-    NIST对光频除法（OFD）光子微波信号的全面表征与对比研究。
-    在100 MHz和1 GHz载波上演示当时最先进性能：绝对时序抖动0.72 fs（1 Hz–100 MHz积分）。
-    与最佳商用RF振荡器比对，OFD方案全面超越。综述多种光子振荡器配置。
-
+    NIST对光频除法（OFD）光子微波信号的全面表征与对比研究。 在100 MHz和1 GHz载波上演示当时最先进性能：绝对时序抖动0.72 fs（1 Hz–100 MHz积分）。 与最佳商用RF振荡器比对，OFD方案全面超越。综述多种光子振荡器配置。
 entities:
   - id: ent.ofd_photonic_rf_source_hati2013
     name: "OFD光子微波信号源（Hati 2013 NIST）"

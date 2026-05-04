@@ -1,29 +1,20 @@
-# Picqué & Diddams 2020 — 光频梳相干统一电磁谱（Science 里程碑综述）
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: framework
-
+# Diddams 2020 — Optical frequency combs: Coherently uniting the electromagnetic spectrum [framework]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "43TAX2KE"
+  zotero_key: 43TAX2KE
   topic: optical-frequency-combs
   source_type: review
   contribution_type: framework
   reliability: high
   title: "Optical frequency combs: Coherently uniting the electromagnetic spectrum"
   year: 2020
-  first_author: Diddams
+  first_author: "Diddams"
   authors: ["Scott A. Diddams", "Kerry Vahala", "Thomas Udem"]
   journal: "Science"
-  doi: "10.1126/science.aay3676"
+  doi: 10.1126/science.aay3676
   note: >
-    [框架论文] Diddams/Vahala/Udem 三位领域奠基人在 Science 的 20 周年回顾+展望。
-    确立光频梳作为"从 THz 到 UV 跨六个频域的相干统一桥"核心框架：
-    电子 ↔ 微波 ↔ 光 ↔ 紫外/X 射线 全谱相干互联的范式。
-    本文件只定义顶层 Level 0/1 实体与 tier=meta 原理以及跨专题接口；
-    不做具体实验系统的参数实例。
-
+    [框架论文] Diddams/Vahala/Udem 三位领域奠基人在 Science 的 20 周年回顾+展望。 确立光频梳作为"从 THz 到 UV 跨六个频域的相干统一桥"核心框架： 电子 ↔ 微波 ↔ 光 ↔ 紫外/X 射线 全谱相干互联的范式。 本文件只定义顶层 Level 0/1 实体与 tier=meta 原理以及跨专题接口； 不做具体实验系统的参数实例。
 entities:
   - id: ent.electromagnetic_spectrum_coherent_bridge
     name: "电磁谱相干统一桥（Level 0 顶层范式）"

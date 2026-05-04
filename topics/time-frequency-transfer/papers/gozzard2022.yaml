@@ -1,34 +1,22 @@
 # Gozzard 2022 — Ultrastable Free-Space Laser Links for a Global Network of Optical Atomic Clocks [breakthrough]
-# 提取者：Claude Code（AI 草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.5
-# 专题：time-frequency-transfer（自由空间激光频率传递 — 2.4 km 链路 6.1×10⁻²¹@300 s）
-# contribution_type: breakthrough — 在湍流等效地面-空间链路上实现 6.1×10⁻²¹@300 s 的
-#   自由空间频率传递不稳定度，证明地面-LEO 光钟比对在数秒积分后即受钟自身稳定度限制。
-
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "PhysRevLett.128.020801"
+  zotero_key: PhysRevLett.128.020801
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: breakthrough
   reliability: high
   title: "Ultrastable Free-Space Laser Links for a Global Network of Optical Atomic Clocks"
   year: 2022
-  first_author: Gozzard
+  first_author: "Gozzard"
   authors: ["D. R. Gozzard", "L. A. Howard", "B. P. Dix-Matthews", "S. F. E. Karpathakis", "C. T. Gravestock", "S. W. Schediwy"]
   journal: "Physical Review Letters"
   volume: 128
-  issue: 2
-  pages: "020801"
-  doi: "10.1103/PhysRevLett.128.020801"
+  pages: 020801
+  doi: 10.1103/PhysRevLett.128.020801
   note: >
-    [breakthrough 论文] 首次在湍流水平与地面-LEO卫星链路等效的 2.4 km 自由空间
-    路径上同时实现相位和振幅稳定化的频率传递。通过 tip-tilt 主动光学终端
-    抑制光束摆动、相位噪声补偿抵消大气路径起伏，达到分数频率不稳定度
-    6.1×10⁻²¹@300 s。据此推断地面-LEO 卫星链路在卫星过境窗口内可实现
-    ~1×10⁻²⁰ 的不稳定度——意味着钟比对在数秒积分后即受限于光钟自身稳定度
-    而非传递链路。为全球光学原子钟自由空间比对网络提供了关键技术验证。
-
+    [breakthrough 论文] 首次在湍流水平与地面-LEO卫星链路等效的 2.4 km 自由空间 路径上同时实现相位和振幅稳定化的频率传递。通过 tip-tilt 主动光学终端 抑制光束摆动、相位噪声补偿抵消大气路径起伏，达到分数频率不稳定度 6.1×10⁻²¹@300 s。据此推断地面-LEO 卫星链路在卫星过境窗口内可实现 ~1×10⁻²⁰ 的不稳定度——意味着钟比对在数秒积分后即受限于光钟自身稳定度 而非传递链路。为全球光学原子钟自由空间比对网络提供了关键技术验证。
 entities:
   - id: ent.gozzard2022_2km4_atmospheric_link
     name: "Gozzard 2022 2.4 km 大气相位-振幅双稳定自由空间频率传递链路（UWA）"

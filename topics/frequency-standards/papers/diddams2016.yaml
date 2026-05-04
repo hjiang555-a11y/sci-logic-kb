@@ -1,45 +1,22 @@
-# Diddams, Fortier & Ludlow 2016 — Optical Atomic Clocks (Nature Photonics) [framework]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：frequency-standards
-# contribution_type: framework — 2016 年光钟领域权威综述（NIST Diddams + NIST Fortier + 
-#   JILA Ludlow 三人联合署名）。系统整理 2000–2016 年间光学原子钟从概念到 10⁻¹⁸ 量级
-#   精度的演化；本文件作为 frequency-standards 专题早于 fortier2026 的早期框架补全。
-
+# Diddams 2016 — Optical atomic clocks [framework]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "DIDDAMS2016-NATPHOT"
+  zotero_key: DIDDAMS2016-NATPHOT
   topic: frequency-standards
   source_type: review
   contribution_type: framework
   reliability: high
   title: "Optical atomic clocks"
   year: 2016
-  first_author: Diddams
+  first_author: "Diddams"
   authors: ["Scott A. Diddams", "Tara M. Fortier", "Andrew D. Ludlow"]
   journal: "Nature Photonics"
   volume: 10
-  pages: "502-510"
-  doi: "10.1038/nphoton.2016.107"
+  pages: 502-510
+  doi: 10.1038/nphoton.2016.107
   note: >
-    [综述论文 · B1 OFC 早期综述（归 frequency-standards）] 光钟领域 2016 年权威综述。
-    三位作者覆盖 NIST（Diddams / Fortier）与 JILA（Ludlow）两大光钟重镇——文章同时
-    代表离子钟（NIST ²⁷Al⁺ / ¹⁷¹Yb⁺）与中性原子晶格钟（JILA Sr）两个分支的共同视角。
-    核心贡献：
-    (1) 明确光钟 10⁻¹⁸ 分数系统不确定度对应 1 cm 大地水准面分辨率，将光钟性能转化为
-    地球物理可观测量；
-    (2) 系统阐述五大系统效应（黑体辐射频移 BBR / 碰撞频移 / Zeeman 频移 / AC-Stark
-    频移 / Doppler）及其评估方法；
-    (3) 分析光钟短期稳定度 σ_y(τ) = (1/Q)·sqrt(T_c/(τ·N))·N_loops 的 QPN 极限公式，
-    指出实用钟已接近 QPN 极限，Dick 效应（本地振荡器频率噪声混叠）是进一步降低的
-    主要瓶颈；
-    (4) 预判光钟在 SI 秒重定义（2026 CIPM 建议）、引力红移厘米尺度测量、精细结构
-    常数 α 时间变化搜索中的角色。
-    本文件归入 frequency-standards 专题（内容与 fortier2026.yaml 同主题，但时间早 10 年；
-    是光钟领域概念奠基阶段的里程碑综述），与 fortier2026 形成"早期 + 当前"综述对。
-    B1 批次按原分类归 OFC，但依据论文内容实际归 frequency-standards（与批次 README
-    备注一致）。
-
+    [综述论文 · B1 OFC 早期综述（归 frequency-standards）] 光钟领域 2016 年权威综述。 三位作者覆盖 NIST（Diddams / Fortier）与 JILA（Ludlow）两大光钟重镇——文章同时 代表离子钟（NIST ²⁷Al⁺ / ¹⁷¹Yb⁺）与中性原子晶格钟（JILA Sr）两个分支的共同视角。 核心贡献： (1) 明确光钟 10⁻¹⁸ 分数系统不确定度对应 1 cm 大地水准面分辨率，将光钟性能转化为 地球物理可观测量； (2) 系统阐述五大系统效应（黑体辐射频移 BBR / 碰撞频移 / Zeeman 频移 / AC-Stark 频移 / Doppler）及其评估方法； (3) 分析光钟短期稳定度 σ_y(τ) = (1/Q)·sqrt(T_c/(τ·N))·N_loops 的 QPN 极限公式， 指出实用钟已接近 QPN 极限，Dick 效应（本地振荡器频率噪声混叠）是进一步降低的 主要瓶颈； (4) 预判光钟在 SI 秒重定义（2026 CIPM 建议）、引力红移厘米尺度测量、精细结构 常数 α 时间变化搜索中的角色。 本文件归入 frequency-standards 专题（内容与 fortier2026.yaml 同主题，但时间早 10 年； 是光钟领域概念奠基阶段的里程碑综述），与 fortier2026 形成"早期 + 当前"综述对。 B1 批次按原分类归 OFC，但依据论文内容实际归 frequency-standards（与批次 README 备注一致）。
 entities: []
 
 principles:

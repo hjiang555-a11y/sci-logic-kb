@@ -1,20 +1,21 @@
+# Ding 2025 — Hollow-core fiber made of ultralow expansion glass: Toward the ultimate stabi... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: QGLVTMB7
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: 'Hollow-core fiber made of ultralow expansion glass: Toward the ultimate
-    stability for room-temperature fiber optics'
+  title: "Hollow-core fiber made of ultralow expansion glass: Toward the ultimate stability for room-temperature fiber optics"
   year: 2025
-  first_author: Ding
-  journal: Science Advances
+  first_author: "Ding"
+  journal: "Science Advances"
   volume: 11
   pages: eads7529
   doi: 10.1126/sciadv.ads7529
-  note: '首次使用超低膨胀（ULE）玻璃制造空心光纤（HCF）， 热延迟系数比传统光纤低三个数量级。 结合 HCF 的低光-玻璃交互特性，为室温光纤应用提供极端稳定性。
-    核心贡献：材料创新（ULE HCF）开启光纤稳频的新极限。
-
-    '
+  note: >
+    首次使用超低膨胀（ULE）玻璃制造空心光纤（HCF）， 热延迟系数比传统光纤低三个数量级。 结合 HCF 的低光-玻璃交互特性，为室温光纤应用提供极端稳定性。 核心贡献：材料创新（ULE HCF）开启光纤稳频的新极限。
 entities:
 - id: ent.ule_hollow_core_fiber_d25
   name: ULE 玻璃空心光纤（Ding 2025）

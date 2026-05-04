@@ -1,48 +1,21 @@
-# Kashiwagi 2018 — 多分支 Er 光纤梳通过"分支间光纤噪声差分消除（FNDC）"将相对频率不确定度压到 10⁻²⁰ 量级 [技术论文]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical — 多分支光纤梳的分支间噪声工程方案
-#   核心贡献：
-#     (1) 指出多分支光纤梳（CEO-锁定支、拍频-锁定支、应用支各有独立 EDFA+HNLF 非公用光纤路径）
-#         的支间光纤噪声差是长期分数稳定度的首要限制；
-#     (2) 提出 FNDC：以 1542 nm CW 参考激光同时与 CEO-锁定支及其余两支拍频，
-#         用鼓式 PZT 光纤拉伸器以 ~100 Hz 带宽抵消每支相对 CEO-锁定支的光纤相噪；
-#     (3) 用两套准相同梳做光域比较，在 modified Allan 偏差下达到 9.7×10⁻²¹ @ 126500 s，
-#         加权标准差（单梳）1.6×10⁻²⁰，首次将多分支光纤梳的支间相对不确定度推入 10⁻²⁰ 级。
-#   Framework 依赖：ent.optical_frequency_comb、pri.self_referencing_f2f 定义于 udem2002.yaml；
-#     相关方法 meth.wideband_optical_frequency_synthesis 定义于 giunta2020.yaml。
-
+# Kashiwagi 2018 — Multi-branch fiber comb with relative frequency uncertainty at 10⁻²⁰ using fi... [technical]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "ERNT9GV3"
+  zotero_key: ERNT9GV3
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical
   reliability: high
   title: "Multi-branch fiber comb with relative frequency uncertainty at 10⁻²⁰ using fiber noise difference cancellation"
   year: 2018
-  first_author: Kashiwagi
+  first_author: "Kashiwagi"
   journal: "Optics Express"
   volume: 26
-  issue: 7
-  pages: "8831-8840"
-  doi: "10.1364/OE.26.008831"
+  pages: 8831-8840
+  doi: 10.1364/OE.26.008831
   note: >
-    [技术论文] NMIJ/AIST + JST ERATO MINOSHIMA IOS Project。自锁模 Er:fiber 振荡器
-    （4.4 mW，135 fs，1560 nm，43.4 MHz）输出分为四支（其中一支未用），每支分别经 EDFA+HNLF
-    获得不同应用所需谱段。f_CEO 由 CEO-锁定支的 f-2f 干涉仪探测、以泵浦 LD 电流反馈锁到 30 MHz；
-    f_beat 由 1064 nm 超稳 CW 参考经腔内 WG-EOM（快）+ 腔温 TEC（慢）锁定。为抑制分支间
-    独立光纤噪声差，在拍频-锁定支与应用支中各引入鼓型 PZT 光纤拉伸器；以 1542 nm CW 参考激光
-    与 CEO-锁定支的拍频作参考信号，和另两支拍频作误差信号，构成 FNDC 伺服（带宽约 100 Hz）。
-    两套准相同梳通过光域比较：1542 nm 拍频-锁定支混频比对 + 1700 nm 应用支直接拍频（BS+10 nm BPF）。
-    跨文件节点引用：ent.optical_frequency_comb、pri.self_referencing_f2f 定义于 udem2002.yaml；
-    meth.wideband_optical_frequency_synthesis 定义于 giunta2020.yaml。
-
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
+    [技术论文] NMIJ/AIST + JST ERATO MINOSHIMA IOS Project。自锁模 Er:fiber 振荡器 （4.4 mW，135 fs，1560 nm，43.4 MHz）输出分为四支（其中一支未用），每支分别经 EDFA+HNLF 获得不同应用所需谱段。f_CEO 由 CEO-锁定支的 f-2f 干涉仪探测、以泵浦 LD 电流反馈锁到 30 MHz； f_beat 由 1064 nm 超稳 CW 参考经腔内 WG-EOM（快）+ 腔温 TEC（慢）锁定。为抑制分支间 独立光纤噪声差，在拍频-锁定支与应用支中各引入鼓型 PZT 光纤拉伸器；以 1542 nm CW 参考激光 与 CEO-锁定支的拍频作参考信号，和另两支拍频作误差信号，构成 FNDC 伺服（带宽约 100 Hz）。 两套准相同梳通过光域比较：1542 nm 拍频-锁定支混频比对 + 1700 nm 应用支直接拍频（BS+10 nm BPF）。 跨文件节点引用：ent.optical_frequency_comb、pri.self_referencing_f2f 定义于 udem2002.yaml； meth.wideband_optical_frequency_synthesis 定义于 giunta2020.yaml。
 entities:
   - id: ent.multi_branch_fiber_comb_k18
     name: "多分支 Er 光纤梳（NMIJ Kashiwagi 2018，FNDC 增强）"

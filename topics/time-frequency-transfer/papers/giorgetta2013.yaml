@@ -1,36 +1,22 @@
 # Giorgetta 2013 — Optical two-way time and frequency transfer over free space [breakthrough]
-# 提取者：Claude Code（AI 草稿，供专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.5
-# 专题：time-frequency-transfer（自由空间光学双向时间频率传递 — 首次飞秒级 O-TWTFT）
-# contribution_type: breakthrough — 首次利用相干频率梳+线性光学采样实现自由空间
-#   光学双向时间频率传递（O-TWTFT），达到 1 fs 时偏、<10⁻¹⁸@1000 s 残余不稳定度、
-#   <4×10⁻¹⁹ 偏差，为卫星光学时频传递和时钟大地测量铺路。
-
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "Nature Photonics 2013 7（6） 435-439"
+  zotero_key: Nature Photonics 2013 7（6） 435-439
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: breakthrough
   reliability: high
   title: "Optical two-way time and frequency transfer over free space"
   year: 2013
-  first_author: Giorgetta
+  first_author: "Giorgetta"
   authors: ["Fabrizio R. Giorgetta", "William C. Swann", "Laura C. Sinclair", "Esther Baumann", "Ian Coddington", "Nathan R. Newbury"]
   journal: "Nature Photonics"
   volume: 7
-  issue: 6
-  pages: "434-438"
-  doi: "10.1038/nphoton.2013.69"
+  pages: 434-438
+  doi: 10.1038/nphoton.2013.69
   note: >
-    [breakthrough 论文] 首次实现自由空间光学双向时间频率传递（O-TWTFT）。
-    利用两套相干的 fs 光纤频率梳（各锁定至本地光学振荡器，重频差 Δf_r ~3 kHz），
-    通过线性光学采样（LOS）在 2 km 自由空间+500 m 光纤链路上实现：1 fs 残余
-    时偏（TDEV），<1×10⁻¹⁸@1000 s 残余分数频率不稳定度（MDEV），
-    系统偏差 <4×10⁻¹⁹。双向交换脉冲自动抵消大气路径波动至 ~300 nm 残余。
-    与光纤频率传递互补——自由空间 O-TWTFT 不要求连续链路且不受地理布线限制，
-    为未来卫星光学时频传递和全球时钟大地测量提供关键使能技术。
-
+    [breakthrough 论文] 首次实现自由空间光学双向时间频率传递（O-TWTFT）。 利用两套相干的 fs 光纤频率梳（各锁定至本地光学振荡器，重频差 Δf_r ~3 kHz）， 通过线性光学采样（LOS）在 2 km 自由空间+500 m 光纤链路上实现：1 fs 残余 时偏（TDEV），<1×10⁻¹⁸@1000 s 残余分数频率不稳定度（MDEV）， 系统偏差 <4×10⁻¹⁹。双向交换脉冲自动抵消大气路径波动至 ~300 nm 残余。 与光纤频率传递互补——自由空间 O-TWTFT 不要求连续链路且不受地理布线限制， 为未来卫星光学时频传递和全球时钟大地测量提供关键使能技术。
 entities:
   - id: ent.giorgetta2013_otwtft_setup
     name: "Giorgetta 2013 自由空间 O-TWTFT 实验设置（NIST）"

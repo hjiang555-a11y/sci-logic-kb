@@ -1,34 +1,21 @@
-# Nardelli 2023 — Er/Yb:glass 500 MHz 梳 10⁻¹⁸ 级光学与微波综合
-# 提取者：GitHub Copilot（AI草稿，2026-04-22）
-# 提取日期：2026-04-22
-# Schema版本：v4.3
-# 专题：optical-frequency-combs
-# contribution_type: evidence（首台 Er/Yb:glass 平台梳达到 Ti:sapph 同级综合性能，未刷新跨平台纪录）
-
+# Nardelli 2023 — Optical and Microwave Metrology at the 10⁻¹⁸ Level with an Er/Yb:glass Freque... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "R9HNIBTE"
+  zotero_key: R9HNIBTE
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
   title: "Optical and Microwave Metrology at the 10⁻¹⁸ Level with an Er/Yb:glass Frequency Comb"
   year: 2023
-  first_author: Nardelli
+  first_author: "Nardelli"
   journal: "Laser & Photonics Reviews"
   volume: 17
-  issue: "未明示"
-  pages: "2200650"
-  doi: "10.1002/lpor.202200650"
+  pages: 2200650
+  doi: 10.1002/lpor.202200650
   note: >
-    [技术论文] NIST Boulder + CU Boulder (Schibli)。基于 Er/Yb:glass 共掺杂磷酸盐玻璃增益介质 + SESAM 锁模的
-    500 MHz 自由空间腔频率梳，完成双超稳光参考（1157 nm / 1070 nm）稳频锁定与低噪声光生微波产生：
-    (1) SESAM 自启锁模 + 低腔损（65 mW 输出，180 fs 脉宽）；
-    (2) 双 CW 超稳激光同时锁定 frep + fceo，拍频 Allan 偏差达到 10⁻¹⁸ @ 1 s（与 Ti:sapph 同级）；
-    (3) 光电探测产生 500 MHz 微波，相位噪声与 Ti:sapph 相当；
-    (4) 平台优势：紧凑、低固有噪声（co-doping 抑制泵浦 RIN）、无需精密对准。
-    本工作是 Er/Yb:glass 平台首次达到 10⁻¹⁸ 级综合性能，但不刷新跨平台纪录（Ti:sapph 已达），
-    归 evidence。对齐 v2 子域主线：A1-Noise（低相噪，整体式腔）、B-FreqSyn（光学频率综合）。
-
+    [技术论文] NIST Boulder + CU Boulder (Schibli)。基于 Er/Yb:glass 共掺杂磷酸盐玻璃增益介质 + SESAM 锁模的 500 MHz 自由空间腔频率梳，完成双超稳光参考（1157 nm / 1070 nm）稳频锁定与低噪声光生微波产生： (1) SESAM 自启锁模 + 低腔损（65 mW 输出，180 fs 脉宽）； (2) 双 CW 超稳激光同时锁定 frep + fceo，拍频 Allan 偏差达到 10⁻¹⁸ @ 1 s（与 Ti:sapph 同级）； (3) 光电探测产生 500 MHz 微波，相位噪声与 Ti:sapph 相当； (4) 平台优势：紧凑、低固有噪声（co-doping 抑制泵浦 RIN）、无需精密对准。 本工作是 Er/Yb:glass 平台首次达到 10⁻¹⁸ 级综合性能，但不刷新跨平台纪录（Ti:sapph 已达）， 归 evidence。对齐 v2 子域主线：A1-Noise（低相噪，整体式腔）、B-FreqSyn（光学频率综合）。
 entities:
   - id: ent.er_yb_glass_comb_nardelli23
     name: "Er/Yb:glass 500 MHz 频率梳（Nardelli 2023）"

@@ -1,20 +1,21 @@
+# Zuba 2023 — Limits of Coupling Efficiency Into Hollow-Core Antiresonant Fibres [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: GIUQZ2EE
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: Limits of Coupling Efficiency Into Hollow-Core Antiresonant Fibres
+  title: "Limits of Coupling Efficiency Into Hollow-Core Antiresonant Fibres"
   year: 2023
-  first_author: Zuba
-  journal: Journal of Lightwave Technology
+  first_author: "Zuba"
+  journal: "Journal of Lightwave Technology"
   volume: 41
-  issue: 19
-  pages: '6374'
+  pages: 6374
   doi: 10.1109/JLT.2023.3289892
-  note: '理论和实验研究空心反谐振光纤（ARF/NANF）的耦合效率极限： LP01 模式耦合效率在束腰约为纤芯直径 70% 时最大（96–98%）。 偶数反谐振窗口比奇数窗口耦合效率更高。
-    核心贡献：为 HCF 光纤延迟线系统的功率预算提供设计指导。
-
-    '
+  note: >
+    理论和实验研究空心反谐振光纤（ARF/NANF）的耦合效率极限： LP01 模式耦合效率在束腰约为纤芯直径 70% 时最大（96–98%）。 偶数反谐振窗口比奇数窗口耦合效率更高。 核心贡献：为 HCF 光纤延迟线系统的功率预算提供设计指导。
 entities: []
 principles:
 - id: pri.hcf_coupling_efficiency_limit

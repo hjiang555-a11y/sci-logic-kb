@@ -1,35 +1,21 @@
-# Newbury & Washburn 2005 — Er:fiber 飞秒激光梳输出的扰动理论
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-21
-# Schema版本：v4.3
-# 专题：optical-frequency-combs
-# contribution_type: framework（建立光纤梳 f_r/f_CEO 响应与反馈拓扑的理论基础）
-
+# Newbury 2005 — Theory of the Frequency Comb Output From a Femtosecond Fiber Laser [framework]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "NHJ84W8G"
+  zotero_key: NHJ84W8G
   topic: optical-frequency-combs
   source_type: review
   contribution_type: framework
   reliability: high
   title: "Theory of the Frequency Comb Output From a Femtosecond Fiber Laser"
   year: 2005
-  first_author: Newbury
+  first_author: "Newbury"
   journal: "IEEE Journal of Quantum Electronics"
   volume: 41
-  issue: 11
-  pages: "1388-1402"
-  doi: "10.1109/JQE.2005.857657"
+  pages: 1388-1402
+  doi: 10.1109/JQE.2005.857657
   note: >
-    [理论专论 / 方法论框架] NIST Boulder + Kansas State。以孤子型 Er:fiber 激光为代表，
-    建立描述梳齿 f_r / f_CEO 随腔长、泵浦功率、腔损的扰动响应理论：
-    (1) 识别并量化共振色散、SAM 饱和、三阶色散、拉曼、SPM、自陡峭等各机理对 f_r / f_CEO 的贡献；
-    (2) 推导腔长—>f_r、泵浦功率—>f_CEO、腔损—>f_CEO 的传递函数；
-    (3) 给出反馈带宽受激发态寿命限制的一般形式。
-    本文是光纤梳设计空间的"工程师手册"，建立了后续十余年光纤梳伺服设计的语言体系，
-    不引入新实验演示，故归 framework。对齐子域主线（v2）：A1-Noise 的理论基石。
-    跨文件引用：pri.gain_lifetime_servo_bandwidth_limit（定义于 kuse2015.yaml）、
-    pri.comb_equation、ent.er_fiber_frequency_comb（定义于 droste2016.yaml）。
-
+    [理论专论 / 方法论框架] NIST Boulder + Kansas State。以孤子型 Er:fiber 激光为代表， 建立描述梳齿 f_r / f_CEO 随腔长、泵浦功率、腔损的扰动响应理论： (1) 识别并量化共振色散、SAM 饱和、三阶色散、拉曼、SPM、自陡峭等各机理对 f_r / f_CEO 的贡献； (2) 推导腔长—>f_r、泵浦功率—>f_CEO、腔损—>f_CEO 的传递函数； (3) 给出反馈带宽受激发态寿命限制的一般形式。 本文是光纤梳设计空间的"工程师手册"，建立了后续十余年光纤梳伺服设计的语言体系， 不引入新实验演示，故归 framework。对齐子域主线（v2）：A1-Noise 的理论基石。 跨文件引用：pri.gain_lifetime_servo_bandwidth_limit（定义于 kuse2015.yaml）、 pri.comb_equation、ent.er_fiber_frequency_comb（定义于 droste2016.yaml）。
 principles:
   - id: pri.fiber_comb_perturbative_response_theory
     name: "光纤梳 f_r/f_CEO 对腔参量扰动的微扰响应理论"

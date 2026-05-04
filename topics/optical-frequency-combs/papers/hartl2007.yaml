@@ -1,36 +1,20 @@
-# Hartl 2007 — 腔增强型Yb光纤梳：136 MHz重复率下实现3×10^14 W/cm²腔内峰值强度 [技术论文]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical
-
+# Hartl 2007 — Cavity-enhanced similariton Yb-fiber laser frequency comb: 3×10^14 W/cm² peak... [technical]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "H4DKWZWF"
+  zotero_key: H4DKWZWF
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical
   reliability: high
   title: "Cavity-enhanced similariton Yb-fiber laser frequency comb: 3×10^14 W/cm² peak intensity at 136 MHz"
   year: 2007
-  first_author: Hartl
+  first_author: "Hartl"
   journal: "Optics Letters"
   volume: 32
-  issue: 19
-  pages: "2870-2872"
+  pages: 2870-2872
   note: >
-    [技术论文] Hartl, Schibli, Marcinkevicius, Yost, Hudson, Fermann, Ye (JILA + IMRA) 合作。
-    首次演示将 Yb 光纤相似子振荡器（136 MHz，40 nm BW@1065 nm）经包层泵浦啁啾脉冲放大（CPA）
-    至 13.1 W 平均功率、75 fs 脉冲后，相干注入被动高精细度蝴蝶结环形腔（精细度 ~230×），
-    实现腔内平均功率 3 kW、峰值功率 230 MW、聚焦峰值强度 3×10^14 W/cm²（焦斑面积 150 µm²）。
-    利用 PDH 锁将重复率锁至腔 FSR（PZT 带宽 70 kHz + 光纤拉伸器 1 kHz）；
-    f_ceo 通过温度慢锁+泵功率调制高速锁定。在 136 MHz 重复率下演示 Xe/Kr/Ar/He 光电离，
-    开创高重复率腔增强 HHG → VUV/XUV 频率梳新方向。腔镜损伤阈值是当前主要限制。
-
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
+    [技术论文] Hartl, Schibli, Marcinkevicius, Yost, Hudson, Fermann, Ye (JILA + IMRA) 合作。 首次演示将 Yb 光纤相似子振荡器（136 MHz，40 nm BW@1065 nm）经包层泵浦啁啾脉冲放大（CPA） 至 13.1 W 平均功率、75 fs 脉冲后，相干注入被动高精细度蝴蝶结环形腔（精细度 ~230×）， 实现腔内平均功率 3 kW、峰值功率 230 MW、聚焦峰值强度 3×10^14 W/cm²（焦斑面积 150 µm²）。 利用 PDH 锁将重复率锁至腔 FSR（PZT 带宽 70 kHz + 光纤拉伸器 1 kHz）； f_ceo 通过温度慢锁+泵功率调制高速锁定。在 136 MHz 重复率下演示 Xe/Kr/Ar/He 光电离， 开创高重复率腔增强 HHG → VUV/XUV 频率梳新方向。腔镜损伤阈值是当前主要限制。
 entities:
   - id: ent.cavity_enhanced_yb_comb_h07
     name: "腔增强型 Yb 光纤频率梳系统（Hartl 2007）"

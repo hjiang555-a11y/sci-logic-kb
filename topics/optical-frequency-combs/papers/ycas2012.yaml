@@ -1,31 +1,21 @@
-# Ycas 2012 — 25 GHz 近红外天文光梳用于 Hobby-Eberly 望远镜径向速度校准
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical
-
+# Ycas 2012 — Demonstration of on-sky calibration of astronomical spectra using a 25 GHz ne... [technical]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "3JN2PBKX"
+  zotero_key: 3JN2PBKX
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical
   reliability: high
   title: "Demonstration of on-sky calibration of astronomical spectra using a 25 GHz near-IR laser frequency comb"
   year: 2012
-  first_author: Ycas
+  first_author: "Ycas"
   journal: "Optics Express"
   volume: 20
-  issue: 6
-  pages: "6631-6643"
-  doi: "10.1364/OE.20.006631"
+  pages: 6631-6643
+  doi: 10.1364/OE.20.006631
   note: >
-    [技术论文] NIST/Colorado + Penn State 合作。腔滤波 Er:fiber 梳（原生 250 MHz →
-    Fabry-Perot 滤波梳到 25 GHz 间距），覆盖 1450–1700 nm，GPS 原子钟锁定；
-    部署于 Hobby-Eberly 9.2 m 望远镜，连接 Pathfinder 近红外 echelle 光谱仪做 on-sky
-    径向速度校准，4 晚恒星观测 3 个 echelle order 达 ~10 m/s (~6 MHz) 精度。
-    天文光梳首批 on-sky NIR 现场验证之一。
-
+    [技术论文] NIST/Colorado + Penn State 合作。腔滤波 Er:fiber 梳（原生 250 MHz → Fabry-Perot 滤波梳到 25 GHz 间距），覆盖 1450–1700 nm，GPS 原子钟锁定； 部署于 Hobby-Eberly 9.2 m 望远镜，连接 Pathfinder 近红外 echelle 光谱仪做 on-sky 径向速度校准，4 晚恒星观测 3 个 echelle order 达 ~10 m/s (~6 MHz) 精度。 天文光梳首批 on-sky NIR 现场验证之一。
 entities:
   - id: ent.near_ir_astro_comb_y12
     name: "25 GHz 近红外天文光梳（Ycas 2012，HET/Pathfinder 系统）"

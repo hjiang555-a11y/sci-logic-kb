@@ -1,29 +1,20 @@
+# Xia 2025 — A multi-loop auto-locking system with fully digital electronics for ultra-sta... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: IUCMUIEI
   topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: A multi-loop auto-locking system with fully digital electronics for ultra-stable
-    laser
+  title: "A multi-loop auto-locking system with fully digital electronics for ultra-stable laser"
   year: 2025
-  first_author: Xia
-  authors:
-  - Can Xia
-  - DanYang Zhu
-  - Yaodong Hu
-  - ShaoMao Wang
-  - JianYu Guan
-  - Lei Hou
-  - Qi Shen
-  - HaiFeng Jiang
-  journal: AIP (preprint, dated 25 June 2025)
+  first_author: "Xia"
+  authors: ["Can Xia", "DanYang Zhu", "Yaodong Hu", "ShaoMao Wang", "JianYu Guan", "Lei Hou", "Qi Shen", "HaiFeng Jiang"]
+  journal: "AIP (preprint, dated 25 June 2025)"
   doi: TBD
-  note: '全数字单 FPGA 实现的超稳激光多环路（PDH + FNC + LPS）自动锁定系统（USTC Qi Shen 组）。 快反馈环路开环带宽 1.3
-    MHz；载波锁定模式分数频率不稳定度 1.5×10⁻¹⁵ @1 s， 偏频锁定模式 2.5×10⁻¹⁵ @1 s；数字电路自身噪声贡献 2.9×10⁻¹⁶
-    @1 s； FNC 环路噪声抑制 75 dB @1 Hz，LPS 环路 40 dB @1 Hz；中断后 10 s 内自动复锁。
-
-    '
+  note: >
+    全数字单 FPGA 实现的超稳激光多环路（PDH + FNC + LPS）自动锁定系统（USTC Qi Shen 组）。 快反馈环路开环带宽 1.3 MHz；载波锁定模式分数频率不稳定度 1.5×10⁻¹⁵ @1 s， 偏频锁定模式 2.5×10⁻¹⁵ @1 s；数字电路自身噪声贡献 2.9×10⁻¹⁶ @1 s； FNC 环路噪声抑制 75 dB @1 Hz，LPS 环路 40 dB @1 Hz；中断后 10 s 内自动复锁。
 entities:
 - id: ent.fpga_multiloop_autolock_xia25
   name: 全数字多环路超稳激光自动锁定系统（Xia 2025）

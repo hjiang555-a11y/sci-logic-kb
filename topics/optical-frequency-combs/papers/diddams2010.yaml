@@ -1,34 +1,21 @@
-# Diddams 2010 — 光学频率梳演化综述（十年历程与未来展望）[framework]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-22
-# Schema版本：v4.4
-# 专题：optical-frequency-combs
-# contribution_type: framework（全面综述 2000–2010 十年间光频梳从稳定化到多分支应用的演化）
-
+# Diddams 2010 — The evolving optical frequency comb [framework]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "VKLU3BG6"
+  zotero_key: VKLU3BG6
   topic: optical-frequency-combs
   source_type: review
   contribution_type: framework
   reliability: high
   title: "The evolving optical frequency comb"
   year: 2010
-  first_author: Diddams
+  first_author: "Diddams"
   journal: "J. Opt. Soc. Am. B"
   volume: 27
-  issue: 11
-  pages: "B51-B62"
-  doi: "10.1364/JOSAB.27.000B51"
+  pages: B51-B62
+  doi: 10.1364/JOSAB.27.000B51
   note: >
-    [综述论文 / 全专题框架] NIST Boulder Diddams 于 2010 年 10 月发表的光频梳专题受邀综述。
-    以"演化树"可视化呈现 2000–2010 十年间光频梳从 f-2f 自参考稳定化技术（根）到
-    光钟计量、光谱、微波合成、天文光谱校准、阿秒脉冲、精密测距、频率综合等多个应用分支（枝）的爆发性成长。
-    本综述定义了 OFC 的**功能性定义**："mode-locked femtosecond laser for which f_n, n, f_r, f_o are measured and controlled"。
-    涵盖自参考技术、光原子钟应用、XUV/mid-IR 波段扩展、双梳光谱、天文光梳、超短脉冲合成等全部主要子方向；
-    是"光学频率梳是什么、为何重要、如何演化"的**顶层框架文献**，与 Udem 2002、Picqué 2019 共同构成
-    OFC 专题的 L0 综述三角。
-    v2 子域主线：本文为跨子域综述，覆盖 A1–B 全分支。
-
+    [综述论文 / 全专题框架] NIST Boulder Diddams 于 2010 年 10 月发表的光频梳专题受邀综述。 以"演化树"可视化呈现 2000–2010 十年间光频梳从 f-2f 自参考稳定化技术（根）到 光钟计量、光谱、微波合成、天文光谱校准、阿秒脉冲、精密测距、频率综合等多个应用分支（枝）的爆发性成长。 本综述定义了 OFC 的**功能性定义**："mode-locked femtosecond laser for which f_n, n, f_r, f_o are measured and controlled"。 涵盖自参考技术、光原子钟应用、XUV/mid-IR 波段扩展、双梳光谱、天文光梳、超短脉冲合成等全部主要子方向； 是"光学频率梳是什么、为何重要、如何演化"的**顶层框架文献**，与 Udem 2002、Picqué 2019 共同构成 OFC 专题的 L0 综述三角。 v2 子域主线：本文为跨子域综述，覆盖 A1–B 全分支。
 entities:
   - id: ent.optical_frequency_comb_diddams2010
     name: "光学频率梳（Diddams 2010 综述定义）"

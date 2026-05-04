@@ -1,22 +1,21 @@
+# Kessler 2012 — A sub-40-mHz-linewidth laser based on a silicon single-crystal optical cavity [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: YKPFKDD9
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
-  title: A sub-40-mHz-linewidth laser based on a silicon single-crystal optical cavity
+  title: "A sub-40-mHz-linewidth laser based on a silicon single-crystal optical cavity"
   year: 2012
-  first_author: Kessler
-  journal: Nature Photonics
+  first_author: "Kessler"
+  journal: "Nature Photonics"
   volume: 6
   pages: 687-692
   doi: 10.1038/nphoton.2012.192
-  note: '首次实验演示硅单晶 FP 腔（间隔物+镜底物均为 Si），工作于 124 K（Si CTE 零点）， 实现当时最窄激光线宽 <40 mHz（拍频
-    49(4) mHz）及最佳频率稳定度 ~1×10⁻¹⁶。 核心创新：（1）利用硅单晶机械 Q > 10⁷ 将热噪声降低约一个数量级； （2）沿 ⟨110⟩
-    方向三点对称安装，竖轴配置，全向振动灵敏度 < 10⁻¹⁰/g； （3）实验确认 Si 腔 CTE 零点在 124.2 K，dα/dT = 1.71×10⁻⁸
-    K⁻²。 PTB（Sterr/Riehle 组）+ JILA（Ye 组）合作；Si 腔热噪声理论下限 mod σ_y ≈ 5×10⁻¹⁷， 但镀层（IBS
-    介质膜）成为唯一瓶颈，指向 Cole 2013 晶体镀层方案。 技术分支：FP参考腔系统（Fabry-Pérot Reference Cavity Systems）。
-
-    '
+  note: >
+    首次实验演示硅单晶 FP 腔（间隔物+镜底物均为 Si），工作于 124 K（Si CTE 零点）， 实现当时最窄激光线宽 <40 mHz（拍频 49(4) mHz）及最佳频率稳定度 ~1×10⁻¹⁶。 核心创新：（1）利用硅单晶机械 Q > 10⁷ 将热噪声降低约一个数量级； （2）沿 ⟨110⟩ 方向三点对称安装，竖轴配置，全向振动灵敏度 < 10⁻¹⁰/g； （3）实验确认 Si 腔 CTE 零点在 124.2 K，dα/dT = 1.71×10⁻⁸ K⁻²。 PTB（Sterr/Riehle 组）+ JILA（Ye 组）合作；Si 腔热噪声理论下限 mod σ_y ≈ 5×10⁻¹⁷， 但镀层（IBS 介质膜）成为唯一瓶颈，指向 Cole 2013 晶体镀层方案。 技术分支：FP参考腔系统（Fabry-Pérot Reference Cavity Systems）。
 entities:
 - id: ent.si_crystal_fp_cavity_k12
   name: 硅单晶低温 FP 参考腔

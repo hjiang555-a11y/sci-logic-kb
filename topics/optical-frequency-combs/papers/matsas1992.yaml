@@ -1,21 +1,22 @@
----
-paper_id: matsas1992
-title: "Selfstarting passively mode-locked fibre ring soliton laser exploiting nonlinear polarisation rotation"
-authors: [V. J. Matsas, T. P. Newson, D. J. Richardson, D. N. Payne]
-year: 1992
-journal: "Electronics Letters"
-volume: 28
-issue: 15
-pages: "1391-1393"
-doi: null
-contribution_type: breakthrough
-abstract: >-
-  Nonlinear birefringence effects in a fibre ring laser cavity have been exploited
-  to produce selfstarting, passive modelocking to give 1.5 ps soliton pulses.
-  The study demonstrates a self-starting passively mode-locked erbium-doped fibre laser (EDFL)
-  using nonlinear polarisation rotation (NPR) in a multibeatlength regime to generate
-  fundamental solitons.
-
+# Matsas 1992 — Selfstarting passively mode-locked fibre ring soliton laser exploiting nonlin... [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: matsas1992
+  topic: optical-frequency-combs
+  source_type: journal_paper
+  contribution_type: breakthrough
+  reliability: high
+  title: "Selfstarting passively mode-locked fibre ring soliton laser exploiting nonlinear polarisation rotation"
+  year: 1992
+  first_author: "Matsas"
+  authors: ["V. J. Matsas", "T. P. Newson", "D. J. Richardson", "D. N. Payne"]
+  journal: "Electronics Letters"
+  volume: 28
+  pages: 1391-1393
+  doi: 10.1049/el:19920903
+  note: >
+    First demonstration of self-starting passively mode-locked EDFL using nonlinear polarisation rotation (NPR) in a multibeatlength regime. Generated 1.5 ps fundamental soliton pulses at 1.55 um with 48 pJ intracavity pulse energy. Foundational work for NPR-based femtosecond comb development.
 entities:
   - id: ent.edfl_ring_laser
     name: "Erbium-doped fibre laser in a ring configuration"

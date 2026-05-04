@@ -1,3 +1,18 @@
+# KB 2024 — Logic bridge: cryogenic silicon cavity thermal noise chain [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: logic_bridge_poc
+  topic: ultrastable-laser
+  source_type: technical_paper
+  contribution_type: evidence
+  reliability: medium
+  title: "Logic bridge: cryogenic silicon cavity thermal noise chain"
+  year: 2024
+  first_author: "KB"
+  journal: "internal"
+  note: >
+    Internal logic bridge document connecting cryogenic silicon cavity (Robinson 2019) to Brownian thermal noise FDT principle. Not a published paper — serves as a POC for cross-paper reasoning chains.
 entities:
 - id: ent.cryogenic_silicon_cavity
   name: 低温单晶硅参考腔

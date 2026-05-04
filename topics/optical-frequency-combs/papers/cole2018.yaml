@@ -1,11 +1,8 @@
-# Cole et al. 2018 — 克尔微腔中孤子晶体的发现与表征 [breakthrough]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：optical-frequency-combs
-
+# Cole 2018 — Soliton crystals in Kerr resonators [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "Q7ZYAQMC"
+  zotero_key: Q7ZYAQMC
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: breakthrough
@@ -13,21 +10,12 @@ meta:
   title: "Soliton crystals in Kerr resonators"
   year: 2018
   first_author: "Cole"
-  authors:
-    - "Daniel C. Cole"
-    - "Erin S. Lamb"
-    - "Pascal Del'Haye"
-    - "Scott A. Diddams"
-    - "Scott B. Papp"
+  authors: ["Daniel C. Cole", "Erin S. Lamb", "Pascal Del'Haye", "Scott A. Diddams", "Scott B. Papp"]
   journal: "Nature Photonics"
-  volume: "11"
-  doi: "10.1038/s41566-017-0009-z"
+  volume: 11
+  doi: 10.1038/s41566-017-0009-z
   note: >
-    首次报道并完整表征克尔微腔中的孤子晶体——多个DKS孤子自组织排列成类晶体结构，
-    间距离散化。通过"指纹"光谱（多孤子谱干涉调制）可明确识别。晶体形成机制：
-    腔内模式简并引起长程孤子相互作用，抑制孤子湮灭。n个等间距孤子使
-    梳的有效重复率增为n×f_rep，可提升微腔梳功率效率。
-
+    首次报道并完整表征克尔微腔中的孤子晶体——多个DKS孤子自组织排列成类晶体结构， 间距离散化。通过"指纹"光谱（多孤子谱干涉调制）可明确识别。晶体形成机制： 腔内模式简并引起长程孤子相互作用，抑制孤子湮灭。n个等间距孤子使 梳的有效重复率增为n×f_rep，可提升微腔梳功率效率。
 entities:
   - id: ent.soliton_crystal_microcomb
     name: "孤子晶体微腔梳"

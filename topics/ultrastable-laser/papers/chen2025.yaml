@@ -1,21 +1,21 @@
+# Chen 2025 — A laser with instability reaching 10⁻¹⁷ based on a 10-cm-long silicon cavity ... [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: N6HILT6B
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
-  title: A laser with instability reaching 10⁻¹⁷ based on a 10-cm-long silicon cavity
-    at sub-5-K temperatures
+  title: "A laser with instability reaching 10⁻¹⁷ based on a 10-cm-long silicon cavity at sub-5-K temperatures"
   year: 2025
-  first_author: Chen
-  journal: Science Bulletin
+  first_author: "Chen"
+  journal: "Science Bulletin"
   volume: 70
   pages: 3337-3344
   doi: 10.1016/j.scib.2025.08.050
-  note: '首次使用 10 cm 长硅腔在 sub-5 K 温度实现 10⁻¹⁷ 量级频率稳定度。 开发 CQQM（Cool-Quiet Quench Measurement）协议诊断腔体固有性能。
-    在连续冷却下通过振动抑制达到 mod σ_y ≈ (4±1)×10⁻¹⁷（4-12 s）， 中位线宽 9.6(3) mHz @ 1397 nm。 北京大学（Xibo
-    Zhang 组），闭循环低温机。
-
-    '
+  note: >
+    首次使用 10 cm 长硅腔在 sub-5 K 温度实现 10⁻¹⁷ 量级频率稳定度。 开发 CQQM（Cool-Quiet Quench Measurement）协议诊断腔体固有性能。 在连续冷却下通过振动抑制达到 mod σ_y ≈ (4±1)×10⁻¹⁷（4-12 s）， 中位线宽 9.6(3) mHz @ 1397 nm。 北京大学（Xibo Zhang 组），闭循环低温机。
 entities:
 - id: ent.si_crystal_fp_cavity_sub5k_c25
   name: Sub-5K 10 cm 硅单晶 FP 腔（Chen 2025，Si1）

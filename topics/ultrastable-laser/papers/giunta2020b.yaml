@@ -1,32 +1,22 @@
+# Giunta 2020 — Compact and ultrastable photonic microwave oscillator [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: H7A8L8LT
   topic: ultrastable-laser
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
-  title: Compact and ultrastable photonic microwave oscillator
+  title: "Compact and ultrastable photonic microwave oscillator"
   year: 2020
-  first_author: Giunta
-  authors:
-  - Michele Giunta
-  - Jialiang Yu
-  - Maurice Lessing
-  - Marc Fischer
-  - Matthias Lezius
-  - Xiaopeng Xie
-  - Giorgio Santarelli
-  - Yann Le Coq
-  - Ronald Holzwarth
-  journal: Optics Letters
+  first_author: "Giunta"
+  authors: ["Michele Giunta", "Jialiang Yu", "Maurice Lessing", "Marc Fischer", "Matthias Lezius", "Xiaopeng Xie", "Giorgio Santarelli", "Yann Le Coq", "Ronald Holzwarth"]
+  journal: "Optics Letters"
   volume: 45
-  issue: 5
-  pages: '1140'
+  pages: 1140
   doi: 10.1364/OL.385503
-  note: '可搬运光子微波振荡器（Menlo Systems + MPQ + LNE-SYRTE + LP2N）： 5 cm ULE 立方参考腔（精细度~2.5×10⁵，热噪声底
-    ~2×10⁻¹⁵）+ Er:fiber 梳分频器， 产生 12 GHz 信号，绝对相位噪声 −83 dBc/Hz @1 Hz（腔热噪声限制）， 分频/探测残余噪声底
-    −115 dBc/Hz @1 Hz。 系统紧凑可搬运（OFD：3U，35 L，20 kg；OFR：8U，72 L，80 kg）， 实现室温蓝宝石腔振荡器级别性能而无需低温系统。
-
-    '
+  note: >
+    可搬运光子微波振荡器（Menlo Systems + MPQ + LNE-SYRTE + LP2N）： 5 cm ULE 立方参考腔（精细度~2.5×10⁵，热噪声底 ~2×10⁻¹⁵）+ Er:fiber 梳分频器， 产生 12 GHz 信号，绝对相位噪声 −83 dBc/Hz @1 Hz（腔热噪声限制）， 分频/探测残余噪声底 −115 dBc/Hz @1 Hz。 系统紧凑可搬运（OFD：3U，35 L，20 kg；OFR：8U，72 L，80 kg）， 实现室温蓝宝石腔振荡器级别性能而无需低温系统。
 entities:
 - id: ent.compact_pmo_giunta20b
   name: 紧凑光子微波振荡器 PMO（Giunta 2020b）

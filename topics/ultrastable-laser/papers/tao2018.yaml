@@ -1,19 +1,21 @@
+# Tao 2018 — A vibration-insensitive-cavity design holds impact of higher than 100g [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: U4Z95559
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: A vibration-insensitive-cavity design holds impact of higher than 100g
+  title: "A vibration-insensitive-cavity design holds impact of higher than 100g"
   year: 2018
-  first_author: Tao
-  journal: Applied Physics B
+  first_author: "Tao"
+  journal: "Applied Physics B"
   volume: 124
-  pages: '228'
+  pages: 228
   doi: 10.1007/s00340-018-7096-5
-  note: '报道一种坚固的振动不敏感 10 cm ULE 方形截面腔设计， 铝合金支撑框架通过 12 点对称夹持固定腔体， 实验验证可承受超过 100g 的冲击加速度（铝模型
-    250 mm 跌落，ULE 腔 20 mm 跌落）。 三轴振动灵敏度 0.8–2.5×10⁻¹⁰/g，接近热噪声极限 ~4.2×10⁻¹⁶。 核心贡献：在保持低振动灵敏度的同时实现极高的机械鲁棒性，适合可搬运和空间应用。
-
-    '
+  note: >
+    报道一种坚固的振动不敏感 10 cm ULE 方形截面腔设计， 铝合金支撑框架通过 12 点对称夹持固定腔体， 实验验证可承受超过 100g 的冲击加速度（铝模型 250 mm 跌落，ULE 腔 20 mm 跌落）。 三轴振动灵敏度 0.8–2.5×10⁻¹⁰/g，接近热噪声极限 ~4.2×10⁻¹⁶。 核心贡献：在保持低振动灵敏度的同时实现极高的机械鲁棒性，适合可搬运和空间应用。
 entities:
 - id: ent.robust_cuboid_cavity_t18
   name: 抗冲击方形 ULE 参考腔（Tao 2018）

@@ -1,12 +1,8 @@
-# Portuondo-Campa 2015 — DPSSL Er:Yb:glass 光频梳 + PM 保偏脉冲交织器，9.6 GHz 光生微波 −171 dBc/Hz 本底 [技术论文]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical
-
+# Portuondo-Campa 2015 — Ultra-low phase-noise microwave generation using a diode-pumped solid-state l... [technical]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "BESI3AEE"
+  zotero_key: BESI3AEE
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical
@@ -16,28 +12,10 @@ meta:
   first_author: "Portuondo-Campa"
   journal: "Optics Express"
   volume: 23
-  issue: 25
-  pages: "32441-32451"
-  doi: "10.1364/OE.23.032441"
+  pages: 32441-32451
+  doi: 10.1364/OE.23.032441
   note: >
-    [技术论文] CSEM Neuchâtel（Lecomte 组）。基于 Er:Yb:glass 二极管泵浦固态激光器
-    （DPSSL，1556 nm，146 fs，100 MHz）的光频梳，通过 6 级保偏（PM）低损耗光纤脉冲交织器
-    将重频提升至 3.2 GHz（2⁵ 倍增）+ 额外 1 级专门增强 9.6 GHz 第 3 谐波，
-    并在末级用 PM 偏振合束器（PBC）将双臂功率合成至单一输出（额外 ~3 dB 增益）。
-    两台相同 OFC 各自锁至共同的 PDH-稳 DFB 光纤激光（4 cm FP 腔），对拍测得
-    9.6 GHz 光生微波相位噪声底 −168 dBc/Hz（双源贡献）、−171 dBc/Hz（单源）@ 10 MHz 偏移——
-    PIN InGaAs 探测器架构的当时记录；仅超 cw 散粒噪声极限 ~3 dB，
-    受限于微波放大器残余相位噪声；平衡光学互相关（BOC）测得锁定 OFC 本征定时抖动
-    对应微波相噪低至 −148 dBc/Hz（1 Hz–1 kHz 区间，双源贡献）。
-    跨文件节点引用：ent.optical_frequency_comb 定义于 udem2002.yaml；
-    meth.photonic_microwave_synthesis 与 pri.optical_frequency_division_microwave
-    定义于 fortier2011.yaml / leopardi2017.yaml 相关文件；
-    pri.photodetection_shot_noise_limit 定义于 kalubovilage2022.yaml。
-
-# ═══════════════════════════════════════════════
-#  NODES
-# ═══════════════════════════════════════════════
-
+    [技术论文] CSEM Neuchâtel（Lecomte 组）。基于 Er:Yb:glass 二极管泵浦固态激光器 （DPSSL，1556 nm，146 fs，100 MHz）的光频梳，通过 6 级保偏（PM）低损耗光纤脉冲交织器 将重频提升至 3.2 GHz（2⁵ 倍增）+ 额外 1 级专门增强 9.6 GHz 第 3 谐波， 并在末级用 PM 偏振合束器（PBC）将双臂功率合成至单一输出（额外 ~3 dB 增益）。 两台相同 OFC 各自锁至共同的 PDH-稳 DFB 光纤激光（4 cm FP 腔），对拍测得 9.6 GHz 光生微波相位噪声底 −168 dBc/Hz（双源贡献）、−171 dBc/Hz（单源）@ 10 MHz 偏移—— PIN InGaAs 探测器架构的当时记录；仅超 cw 散粒噪声极限 ~3 dB， 受限于微波放大器残余相位噪声；平衡光学互相关（BOC）测得锁定 OFC 本征定时抖动 对应微波相噪低至 −148 dBc/Hz（1 Hz–1 kHz 区间，双源贡献）。 跨文件节点引用：ent.optical_frequency_comb 定义于 udem2002.yaml； meth.photonic_microwave_synthesis 与 pri.optical_frequency_division_microwave 定义于 fortier2011.yaml / leopardi2017.yaml 相关文件； pri.photodetection_shot_noise_limit 定义于 kalubovilage2022.yaml。
 entities:
   - id: ent.dpss_comb_interleaver_pc15
     name: "DPSSL Er:Yb:glass 光频梳 + PM 脉冲交织器系统（Portuondo-Campa 2015，9.6 GHz 光微波源）"

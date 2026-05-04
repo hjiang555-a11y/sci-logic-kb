@@ -1,41 +1,21 @@
-# Diddams 2000 — 首次用 300 THz 倍频程飞秒梳直接链接微波与光学频率 [里程碑技术论文]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical — 光学频率合成/计量奠基性实验论文
-#   核心贡献：
-#     (1) 首次利用空气-石英微结构光纤将 Ti:Sa 锁模激光梳展宽到倍频程（1064↔532 nm）；
-#     (2) 首次用单台飞秒梳直接将 Cs 微波基准与光学频率（282 THz 的 I₂-Nd:YAG）相连；
-#     (3) 同时验证 633 nm HeNe/I₂ 与 778 nm Rb 双光子标准，奠定 f-2f 自参考可行性。
-#   Framework 依赖：udem2002.yaml、giunta2019.yaml 已定义 ent.optical_frequency_comb、
-#     pri.self_referencing_f2f、pri.femtosecond_comb_frequency_ruler；本文件提供首次演示证据。
-
+# Diddams 2000 — Direct Link between Microwave and Optical Frequencies with a 300 THz Femtosec... [technical]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "9BV3WBSH"
+  zotero_key: 9BV3WBSH
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical
   reliability: high
   title: "Direct Link between Microwave and Optical Frequencies with a 300 THz Femtosecond Laser Comb"
   year: 2000
-  first_author: Diddams
+  first_author: "Diddams"
   journal: "Physical Review Letters"
   volume: 84
-  issue: 22
-  pages: "5102-5105"
-  doi: "10.1103/PhysRevLett.84.5102"
+  pages: 5102-5105
+  doi: 10.1103/PhysRevLett.84.5102
   note: >
-    [里程碑技术论文] JILA (Hall/Diddams/Cundiff/Jones/Ye) + MPQ (Hänsch/Holzwarth/Udem)
-    + Bell Labs (Ranka/Windeler) 合作。Ti:Sa 锁模激光（~10 fs，100 MHz 重复频率）耦合入
-    5–10 cm 空气-石英微结构光纤，输出超连续谱覆盖 >300 THz，覆盖 1064 nm 及其 532 nm 二倍频。
-    测得 I₂-Nd:YAG@1064 nm 频率 563 260 223 514 ± 5 kHz，2500 s 统计不确定度 2×10⁻¹³；
-    同时测 HeNe/I₂@633 nm 与 Rb@778 nm，均在已有标准不确定度内。开启"一台飞秒梳取代整条分频链"时代。
-
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
+    [里程碑技术论文] JILA (Hall/Diddams/Cundiff/Jones/Ye) + MPQ (Hänsch/Holzwarth/Udem) + Bell Labs (Ranka/Windeler) 合作。Ti:Sa 锁模激光（~10 fs，100 MHz 重复频率）耦合入 5–10 cm 空气-石英微结构光纤，输出超连续谱覆盖 >300 THz，覆盖 1064 nm 及其 532 nm 二倍频。 测得 I₂-Nd:YAG@1064 nm 频率 563 260 223 514 ± 5 kHz，2500 s 统计不确定度 2×10⁻¹³； 同时测 HeNe/I₂@633 nm 与 Rb@778 nm，均在已有标准不确定度内。开启"一台飞秒梳取代整条分频链"时代。
 entities:
   - id: ent.octave_spanning_tisa_comb_d00
     name: "倍频程 Ti:Sa 飞秒梳（Diddams 2000 系统）"

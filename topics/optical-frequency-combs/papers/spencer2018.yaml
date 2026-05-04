@@ -1,11 +1,8 @@
-# Spencer et al. 2018 — 集成光子学光频合成器（首次芯片集成OFC合成） [breakthrough]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：optical-frequency-combs
-
+# Spencer 2018 — An optical-frequency synthesizer using integrated photonics [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "4I37D6SD"
+  zotero_key: 4I37D6SD
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: breakthrough
@@ -13,42 +10,12 @@ meta:
   title: "An optical-frequency synthesizer using integrated photonics"
   year: 2018
   first_author: "Spencer"
-  authors:
-    - "Daryl T. Spencer"
-    - "Tara Drake"
-    - "Travis C. Briles"
-    - "Jordan Stone"
-    - "Laura C. Sinclair"
-    - "Connor Fredrick"
-    - "Qing Li"
-    - "Dario Westly"
-    - "B.R. Ilic"
-    - "Aaron Bluestone"
-    - "Nicolas Volet"
-    - "Tin Komljenovic"
-    - "Lin Chang"
-    - "Seong Hyun Lee"
-    - "Dongyoon Oh"
-    - "Myoung-Gyun Suh"
-    - "Ki Youl Yang"
-    - "Martin H.P. Pfeiffer"
-    - "Tobias J. Kippenberg"
-    - "Erik Norberg"
-    - "Luke Theogarajan"
-    - "Kerry Vahala"
-    - "Nathan R. Newbury"
-    - "Kartik Srinivasan"
-    - "John E. Bowers"
-    - "Scott A. Diddams"
-    - "Scott B. Papp"
+  authors: ["Daryl T. Spencer", "Tara Drake", "Travis C. Briles", "Jordan Stone", "Laura C. Sinclair", "Connor Fredrick", "Qing Li", "Dario Westly", "B.R. Ilic", "Aaron Bluestone", "Nicolas Volet", "Tin Komljenovic", "Lin Chang", "Seong Hyun Lee", "Dongyoon Oh", "Myoung-Gyun Suh", "Ki Youl Yang", "Martin H.P. Pfeiffer", "Tobias J. Kippenberg", "Erik Norberg", "Luke Theogarajan", "Kerry Vahala", "Nathan R. Newbury", "Kartik Srinivasan", "John E. Bowers", "Scott A. Diddams", "Scott B. Papp"]
   journal: "Nature"
-  volume: "557"
-  doi: "10.1038/s41586-018-0065-7"
+  volume: 557
+  doi: 10.1038/s41586-018-0065-7
   note: >
-    首次演示完全基于集成光子学的光频合成器：Si₃N₄微腔梳（1 THz间距，八倍频程）+
-    SiO₂楔形微腔梳（22 GHz间距）+ III-V/Si可调谐激光器，实现微波到光学域
-    的相干倍频链。合成误差 ≤7.7×10⁻¹⁵，覆盖 C 波段 4 THz 范围，1 Hz分辨率编程。
-
+    首次演示完全基于集成光子学的光频合成器：Si₃N₄微腔梳（1 THz间距，八倍频程）+ SiO₂楔形微腔梳（22 GHz间距）+ III-V/Si可调谐激光器，实现微波到光学域 的相干倍频链。合成误差 ≤7.7×10⁻¹⁵，覆盖 C 波段 4 THz 范围，1 Hz分辨率编程。
 entities:
   - id: ent.integrated_ofc_synthesizer_spencer2018
     name: "集成光子学光频合成器（Spencer 2018）"

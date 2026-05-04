@@ -1,31 +1,22 @@
 # Roslund 2024 — Optical clocks at sea [evidence]
-# 提取者：Claude Code（AI 草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.5
-# 专题：frequency-standards（可搬运光钟 — 舰载环境运行）
-# contribution_type: evidence — 首次在海上舰船平台运行光钟；验证光钟在
-#   非实验室环境（运动、振动、温度变化）下的鲁棒性。
-
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "s41586-024-07225-2"
+  zotero_key: s41586-024-07225-2
   topic: frequency-standards
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Optical clocks at sea"
   year: 2024
-  first_author: Roslund
+  first_author: "Roslund"
   authors: ["Jonathan D. Roslund", "Arman Cingoz", "William D. Lunden", "Guthrie B. Partridge", "Abijith S. Kowligy", "Frank Roller", "David B. Sheredy", "G. Edward Marti", "Andrew D. Ludlow", "Nathan R. Newbury"]
   journal: "Nature"
   volume: 628
-  pages: "736-740"
-  doi: "10.1038/s41586-024-07225-2"
+  pages: 736-740
+  doi: 10.1038/s41586-024-07225-2
   note: >
-    首次在海上舰船平台运行光钟——集成了紧凑、鲁棒的 Sr 光晶格钟系统，
-    在舰船运动、振动、温度波动等恶劣环境下维持光钟运行。
-    验证光钟走出实验室的可行性，为未来光钟在导航、大地测量、
-    基础物理测试中的应用铺路。
-
+    首次在海上舰船平台运行光钟——集成了紧凑、鲁棒的 Sr 光晶格钟系统， 在舰船运动、振动、温度波动等恶劣环境下维持光钟运行。 验证光钟走出实验室的可行性，为未来光钟在导航、大地测量、 基础物理测试中的应用铺路。
 entities:
   - id: ent.roslund2024_optical_clocks_at_sea
     name: "Roslund 2024 舰载 Sr 光晶格钟（NIST/NRL）"

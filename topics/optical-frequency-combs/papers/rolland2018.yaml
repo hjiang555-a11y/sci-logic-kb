@@ -1,34 +1,23 @@
-# Rolland 2018 — 双分支 Er:fiber 梳 10⁻¹⁸ 级稳定度传递（首次<10⁻¹⁸ dual-branch）
-# 提取者：GitHub Copilot（AI草稿，2026-04-22）
-# 提取日期：2026-04-22
-# Schema版本：v4.3
-# 专题：optical-frequency-combs
-# contribution_type: breakthrough（首次实现双分支梳架构下 <10⁻¹⁸ 稳定度传递，打破多支路相噪劣化瓶颈）
-
+# Rolland 2018 — Ultra-broadband dual-branch optical frequency comb with 10⁻¹⁸ instability [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "U5C8AJYM"
+  zotero_key: U5C8AJYM
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
   title: "Ultra-broadband dual-branch optical frequency comb with 10⁻¹⁸ instability"
   year: 2018
-  first_author: Rolland
+  first_author: "Rolland"
   journal: "Optica"
   volume: 5
-  issue: 9
-  pages: "1070-1077"
-  doi: "10.1364/OPTICA.5.001070"
+  pages: 1070-1077
+  doi: 10.1364/OPTICA.5.001070
   note: >
-    [技术论文 / 突破] IMRA America + Stanford。首次在**双分支**Er:fiber 频率梳架构下达到 10⁻¹⁸ 级稳定度传递：
-    (1) 从单振荡器输出分为两路：IR 分支（1000-2200 nm）+ 可见分支（780 nm 倍频后展宽至 500-1100 nm）；
-    (2) 双分支在 ~1 µm 处光谱重叠，用于主动相关"分支间差分相位噪声"；
-    (3) 通过检测 dual-branch fceo（而非单分支 fceo）+ 被动混频补偿，将残余差分噪声抑制至 out-of-loop 测得
-        1560 nm → 780 nm 稳定度传递残差 3×10⁻¹⁸ @ 1 s、1×10⁻¹⁹ @ 1000 s；
-    (4) 进一步消除未补偿光程噪声后，理论极限降至 6×10⁻¹⁹ @ 1 s（共光电探测器方案）。
-    本工作打破先前多支路梳"10⁻¹⁶ 级劣化"的瓶颈（Kashiwagi 2018 等），是多波长同时服务 10⁻¹⁸ 光钟的关键技术
-    路径。对齐 v2 子域主线：B-FreqSyn（多支路相位同步）。归 breakthrough。
-
+    [技术论文 / 突破] IMRA America + Stanford。首次在**双分支**Er:fiber 频率梳架构下达到 10⁻¹⁸ 级稳定度传递： (1) 从单振荡器输出分为两路：IR 分支（1000-2200 nm）+ 可见分支（780 nm 倍频后展宽至 500-1100 nm）； (2) 双分支在 ~1 µm 处光谱重叠，用于主动相关"分支间差分相位噪声"； (3) 通过检测 dual-branch fceo（而非单分支 fceo）+ 被动混频补偿，将残余差分噪声抑制至 out-of-loop 测得
+    1560 nm → 780 nm 稳定度传递残差 3×10⁻¹⁸ @ 1 s、1×10⁻¹⁹ @ 1000 s；
+    (4) 进一步消除未补偿光程噪声后，理论极限降至 6×10⁻¹⁹ @ 1 s（共光电探测器方案）。 本工作打破先前多支路梳"10⁻¹⁶ 级劣化"的瓶颈（Kashiwagi 2018 等），是多波长同时服务 10⁻¹⁸ 光钟的关键技术 路径。对齐 v2 子域主线：B-FreqSyn（多支路相位同步）。归 breakthrough。
 entities:
   - id: ent.dual_branch_er_comb_rolland18
     name: "双分支 Er:fiber 频率梳系统（Rolland 2018）"

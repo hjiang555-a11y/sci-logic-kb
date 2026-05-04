@@ -1,23 +1,21 @@
+# Lee 2026 — Frequency Stability of 2.5×10⁻¹⁷ from a Si Cavity with AlGaAs Crystalline Mir... [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: 4QVEXY63
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
-  title: Frequency Stability of 2.5×10⁻¹⁷ from a Si Cavity with AlGaAs Crystalline
-    Mirrors
+  title: "Frequency Stability of 2.5×10⁻¹⁷ from a Si Cavity with AlGaAs Crystalline Mirrors"
   year: 2026
-  first_author: Lee
-  journal: Physical Review Letters
+  first_author: "Lee"
+  journal: "Physical Review Letters"
   volume: 136
   pages: 033801
   doi: 10.1103/zgrm-cjbb
-  note: '首次从实验证明 AlGaAs 晶体镀层相对传统介质镀层具有明确优势（4×改善）： 6 cm Si 腔，17 K（Si CTE 第二零点），mod
-    σ_y = 2.5×10⁻¹⁷——光学参考腔世界纪录（截至 2026 年）。 关键发现：2017 年镀层批次存在"超额全局噪声"（excess global
-    noise），2023 年新批次无此问题， 首次实现晶体镀层理论噪声优势。 额外技术创新：（1）双偏振锁定（dual-polarization lock）消除晶体镀层固有双折射噪声；
-    （2）两台 Si 腔光学频率平均（optical frequency averaging）→ √2 稳定度提升； （3）四台 Si 腔（PTB + JILA）超过十年长期频率漂移统计。
-    JILA（Ye组）+ PTB（Sterr/Legero 组），1542 nm。
-
-    '
+  note: >
+    首次从实验证明 AlGaAs 晶体镀层相对传统介质镀层具有明确优势（4×改善）： 6 cm Si 腔，17 K（Si CTE 第二零点），mod σ_y = 2.5×10⁻¹⁷——光学参考腔世界纪录（截至 2026 年）。 关键发现：2017 年镀层批次存在"超额全局噪声"（excess global noise），2023 年新批次无此问题， 首次实现晶体镀层理论噪声优势。 额外技术创新：（1）双偏振锁定（dual-polarization lock）消除晶体镀层固有双折射噪声； （2）两台 Si 腔光学频率平均（optical frequency averaging）→ √2 稳定度提升； （3）四台 Si 腔（PTB + JILA）超过十年长期频率漂移统计。 JILA（Ye组）+ PTB（Sterr/Legero 组），1542 nm。
 entities:
 - id: ent.si_crystal_17k_fp_cavity_l26
   name: Si 单晶低温 FP 腔（17 K，AlGaAs 晶体镀层，Lee 2026）

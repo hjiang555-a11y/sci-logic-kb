@@ -1,23 +1,21 @@
+# Herbers 2022 — Transportable clock laser system with an instability of 1.6×10⁻¹⁶ [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: NU79W75P
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: Transportable clock laser system with an instability of 1.6×10⁻¹⁶
+  title: "Transportable clock laser system with an instability of 1.6×10⁻¹⁶"
   year: 2022
-  first_author: Herbers
-  journal: Optics Letters
+  first_author: "Herbers"
+  journal: "Optics Letters"
   volume: 47
-  issue: 20
   pages: 5441-5444
   doi: 10.1364/OL.470984
-  note: 'PTB 面向可搬运 87Sr 光钟的超稳激光系统。20 cm ULE 间隔物、FS 镜基底与 Al0.92Ga0.08As/GaAs 晶体镀层结合，在
-    1397 nm 工作并倍频到 698 nm。 论文给出预测热噪声底 mod σ_y≈7×10⁻¹⁷@1 s，实测系统 instability 低至 1.6×10⁻¹⁶，为文中所称当时最低报道的可搬运钟激光
-    instability。 10 点软安装在 20 cm 长腔条件下仍实现 2–3×10⁻¹²/(m/s²) 级三轴加速度灵敏度。 与纯实验室长腔/低温腔不同，本文突出“transportable
-    + crystalline coating” 的折中：长度和温度受可搬运性限制，因此更依赖低热噪声镀层、紧凑分光稳频链路、 RAM 抑制和 Doppler
-    cancellation。
-
-    '
+  note: >
+    PTB 面向可搬运 87Sr 光钟的超稳激光系统。20 cm ULE 间隔物、FS 镜基底与 Al0.92Ga0.08As/GaAs 晶体镀层结合，在 1397 nm 工作并倍频到 698 nm。 论文给出预测热噪声底 mod σ_y≈7×10⁻¹⁷@1 s，实测系统 instability 低至 1.6×10⁻¹⁶，为文中所称当时最低报道的可搬运钟激光 instability。 10 点软安装在 20 cm 长腔条件下仍实现 2–3×10⁻¹²/(m/s²) 级三轴加速度灵敏度。 与纯实验室长腔/低温腔不同，本文突出“transportable + crystalline coating” 的折中：长度和温度受可搬运性限制，因此更依赖低热噪声镀层、紧凑分光稳频链路、 RAM 抑制和 Doppler cancellation。
 principles:
 - id: pri.transportable_cavity_design_tradeoff_herbers22
   name: 可搬运腔设计折中原理（Herbers 2022）

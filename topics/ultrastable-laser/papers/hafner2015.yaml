@@ -1,22 +1,21 @@
+# Häfner 2015 — 8×10⁻¹⁷ fractional laser frequency instability with a long room-temperature c... [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: UV6S5FFL
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
-  title: 8×10⁻¹⁷ fractional laser frequency instability with a long room-temperature
-    cavity
+  title: "8×10⁻¹⁷ fractional laser frequency instability with a long room-temperature cavity"
   year: 2015
-  first_author: Häfner
-  journal: Optics Letters
+  first_author: "Häfner"
+  journal: "Optics Letters"
   volume: 40
   pages: 2112-2115
   doi: 10.1364/OL.40.002112
-  note: '首次展示 48 cm ULE 室温腔达到 σ_y < 1×10⁻¹⁶（1–1000 s）， 证明长腔策略可使室温腔稳定度接近低温 Si 腔水平。
-    核心创新：自平衡安装（self-balancing mount）——腔体一端铝夹具绕单玻璃球可旋转， 自动均衡四点 Viton/Teflon 支撑受力，使
-    ~1.8 kg 长腔全向加速度灵敏度 < 2×10⁻¹⁰/g。 另一创新：从激光二极管侧公共参考镜到腔镜及用户端（Sr 钟、频率梳）全链路光纤相位噪声消除。
-    PTB（德国），698 nm，与 Si 腔（Kessler 2012/Matei 2017）和可搬运腔三角帽比较。
-
-    '
+  note: >
+    首次展示 48 cm ULE 室温腔达到 σ_y < 1×10⁻¹⁶（1–1000 s）， 证明长腔策略可使室温腔稳定度接近低温 Si 腔水平。 核心创新：自平衡安装（self-balancing mount）——腔体一端铝夹具绕单玻璃球可旋转， 自动均衡四点 Viton/Teflon 支撑受力，使 ~1.8 kg 长腔全向加速度灵敏度 < 2×10⁻¹⁰/g。 另一创新：从激光二极管侧公共参考镜到腔镜及用户端（Sr 钟、频率梳）全链路光纤相位噪声消除。 PTB（德国），698 nm，与 Si 腔（Kessler 2012/Matei 2017）和可搬运腔三角帽比较。
 entities:
 - id: ent.self_balancing_long_cavity_h15
   name: 自平衡安装长 ULE 腔（Häfner 2015）

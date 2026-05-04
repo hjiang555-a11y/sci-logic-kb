@@ -1,34 +1,21 @@
-# Holzwarth 2001 — 首个二极管泵浦倍频程光梳（Cr:LiSAF + PCF）[breakthrough]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-22
-# Schema版本：v4.4
-# 专题：optical-frequency-combs
-# contribution_type: breakthrough（首次用二极管泵浦固态激光器实现倍频程白光频率梳，开创便携/低成本 OFC 路线）
-
+# Holzwarth 2001 — White-light frequency comb generation with a diode-pumped Cr:LiSAF laser [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "UNL7SSP3"
+  zotero_key: UNL7SSP3
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
   title: "White-light frequency comb generation with a diode-pumped Cr:LiSAF laser"
   year: 2001
-  first_author: Holzwarth
+  first_author: "Holzwarth"
   journal: "Optics Letters"
   volume: 26
-  issue: 17
-  pages: "1376-1378"
-  doi: "10.1364/OL.26.001376"
+  pages: 1376-1378
+  doi: 10.1364/OL.26.001376
   note: >
-    [技术论文 / 里程碑] MPQ Garching (Holzwarth, Zimmermann, Udem, Hänsch) + RWTH Aachen + U Bath 2001 年 Opt Lett。
-    首次用**二极管直接泵浦 Cr:LiSAF 飞秒激光器**（670 nm 激光二极管泵浦，电池供电）+ 光子晶体光纤（PCF）
-    实现覆盖超过一个倍频程的白光频率梳——此前倍频程梳均依赖 Ti:sapph（需 Ar⁺ 激光器或倍频 Nd:YAG 泵浦，体积大、成本高）。
-    Cr:LiSAF 泵浦光源可直接用激光二极管（2×350 mW @ 670 nm），整机可电池供电，光学斜率效率 39%；
-    输出 115 mW @ 93 MHz、894 nm 中心、24 nm FWHM 带宽（支持 40 fs 脉冲），
-    经 PCF 展宽至覆盖 >1 倍频程（保留梳结构），适用于光学频率计量。
-    开创了"便携式/低成本 OFC"技术路线，为 OFC 走出实验室（空间光钟、野外光谱等）奠定基础。
-    v2 子域主线：A1-Robust（工程化/紧凑化梳）首次演示；B-Spec（光谱展宽/波长扩展）二极管泵浦分支。
-
+    [技术论文 / 里程碑] MPQ Garching (Holzwarth, Zimmermann, Udem, Hänsch) + RWTH Aachen + U Bath 2001 年 Opt Lett。 首次用**二极管直接泵浦 Cr:LiSAF 飞秒激光器**（670 nm 激光二极管泵浦，电池供电）+ 光子晶体光纤（PCF） 实现覆盖超过一个倍频程的白光频率梳——此前倍频程梳均依赖 Ti:sapph（需 Ar⁺ 激光器或倍频 Nd:YAG 泵浦，体积大、成本高）。 Cr:LiSAF 泵浦光源可直接用激光二极管（2×350 mW @ 670 nm），整机可电池供电，光学斜率效率 39%； 输出 115 mW @ 93 MHz、894 nm 中心、24 nm FWHM 带宽（支持 40 fs 脉冲）， 经 PCF 展宽至覆盖 >1 倍频程（保留梳结构），适用于光学频率计量。 开创了"便携式/低成本 OFC"技术路线，为 OFC 走出实验室（空间光钟、野外光谱等）奠定基础。 v2 子域主线：A1-Robust（工程化/紧凑化梳）首次演示；B-Spec（光谱展宽/波长扩展）二极管泵浦分支。
 entities:
   - id: ent.diode_pumped_crlisaf_octave_comb_h01
     name: "二极管泵浦 Cr:LiSAF 倍频程频率梳（Holzwarth 2001）"

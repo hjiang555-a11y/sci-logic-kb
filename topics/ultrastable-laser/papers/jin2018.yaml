@@ -1,21 +1,21 @@
+# Jin 2018 — Laser frequency instability of 2×10⁻¹⁶ by stabilizing to 30-cm-long Fabry-Pér... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: 6R3RCHPT
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: Laser frequency instability of 2×10⁻¹⁶ by stabilizing to 30-cm-long Fabry-Pérot
-    cavities at 578 nm
+  title: "Laser frequency instability of 2×10⁻¹⁶ by stabilizing to 30-cm-long Fabry-Pérot cavities at 578 nm"
   year: 2018
-  first_author: Jin
-  journal: Optics Express
+  first_author: "Jin"
+  journal: "Optics Express"
   volume: 26
-  issue: 14
   pages: 18699-18707
   doi: 10.1364/OE.26.018699
-  note: '两台独立 30 cm ULE 腔稳定 578 nm 激光，实现 2×10⁻¹⁶ @ 1s 不稳定度， 0.2 Hz 最可几线宽，1 Hz 处频率噪声
-    0.1 Hz/√Hz。 用于 Yb 光晶格钟询问。 核心贡献：578 nm 室温长腔达到热噪声极限的代表性工作。
-
-    '
+  note: >
+    两台独立 30 cm ULE 腔稳定 578 nm 激光，实现 2×10⁻¹⁶ @ 1s 不稳定度， 0.2 Hz 最可几线宽，1 Hz 处频率噪声 0.1 Hz/√Hz。 用于 Yb 光晶格钟询问。 核心贡献：578 nm 室温长腔达到热噪声极限的代表性工作。
 entities:
 - id: ent.ule_cavity_30cm_578nm_j18
   name: 30 cm ULE 参考腔（Jin 2018, 578 nm）

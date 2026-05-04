@@ -1,37 +1,21 @@
-# Lesko 2020 — 1.56 µm处1 GHz全相位稳定交钥匙光频梳 [技术论文]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical
-
+# Lesko 2020 — Fully phase-stabilized 1 GHz turnkey frequency comb at 1.56 µm [technical]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "HG8TSPT6"
+  zotero_key: HG8TSPT6
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical
   reliability: high
   title: "Fully phase-stabilized 1 GHz turnkey frequency comb at 1.56 µm"
   year: 2020
-  first_author: Lesko
+  first_author: "Lesko"
   journal: "OSA Continuum"
   volume: 3
-  issue: 8
-  pages: "2070-2079"
-  doi: "10.1364/OSAC.396597"
+  pages: 2070-2079
+  doi: 10.1364/OSAC.396597
   note: >
-    [技术论文] NIST/CU Boulder 团队（Lesko, Lind, Hoghooghi, Kowligy, Timmers, Sekhar,
-    Rudin, Emaury, Rieker, Diddams）。采用商用交钥匙 1 GHz MENHIR-1550 Er:fiber 振荡器，
-    配合 PM 色散管理放大器（12 mW → 680 mW）、1.7 m PM-HNLF 超连续谱展宽（覆盖 1–2 µm）、
-    内联式 1 mm PPLN f-to-2f 干涉仪，实现全相位稳定光频梳。
-    f_CEO 锁至 H-maser（泵浦电流调制，20 kHz BW），积分相位噪声 438 mrad；
-    f_beat 锁至 1550 nm 腔稳 CW 激光（腔内压电陶瓷，100 kHz BW），积分相位噪声 40.6 mrad。
-    两台相同振荡器表现一致，验证了商业平台的可重复性。
-
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
+    [技术论文] NIST/CU Boulder 团队（Lesko, Lind, Hoghooghi, Kowligy, Timmers, Sekhar, Rudin, Emaury, Rieker, Diddams）。采用商用交钥匙 1 GHz MENHIR-1550 Er:fiber 振荡器， 配合 PM 色散管理放大器（12 mW → 680 mW）、1.7 m PM-HNLF 超连续谱展宽（覆盖 1–2 µm）、 内联式 1 mm PPLN f-to-2f 干涉仪，实现全相位稳定光频梳。 f_CEO 锁至 H-maser（泵浦电流调制，20 kHz BW），积分相位噪声 438 mrad； f_beat 锁至 1550 nm 腔稳 CW 激光（腔内压电陶瓷，100 kHz BW），积分相位噪声 40.6 mrad。 两台相同振荡器表现一致，验证了商业平台的可重复性。
 entities:
   - id: ent.ghz_turnkey_erfiber_comb_l20
     name: "1 GHz 交钥匙 Er:fiber 光频梳系统（Lesko 2020，1.56 µm）"

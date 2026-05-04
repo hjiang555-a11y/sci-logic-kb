@@ -1,22 +1,8 @@
-# Zhang 2022b — 全 PM 保偏光纤 figure-9 NALM Er:fiber 梳用于光钟频率比对 [技术论文]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical
-# 文件名说明：本目录已有 zhang2022.yaml 对应另一篇 Zhang 2022（229mTh VUV 梳光谱）论文，
-#   本文为同年不同课题组的 Er:fiber 梳论文，故加后缀 "b"。
-#   核心贡献：
-#     (1) 全保偏（all-PM）光纤 + figure-9 NALM 自启动锁模的 turnkey Er:fiber 光频梳，专为多种光钟频率比对设计；
-#     (2) 四支路分别输出 698/729/1068/1156 nm（对应 Sr / Ca+ / Al+ / Yb 光钟跃迁波长），SNR >30 dB @300 kHz；
-#     (3) 通过严格匹配支路光纤长度（±1 cm）与恒温控制（±0.2 °C）压低共模外的热漂移，out-of-loop 稳定度 9×10⁻¹⁷ @1 s → 5.5×10⁻¹⁹ @4000 s；
-#     (4) 证明在不引入实时光相位追踪（Nicolodi 2014 方案）的前提下，仅靠热管理即可满足 10⁻¹⁸ 级光钟比对需求。
-#   Framework 依赖：ent.optical_frequency_comb 权威定义于 udem2002.yaml；
-#     pri.self_referencing_f2f 定义于 udem2002.yaml / giunta2019.yaml；
-#     本系统相对 zhang2017.yaml 的 NPE+NALM 混合锁模方案属工程演进（全 PM + 纯 figure-9 NALM + 多支路应用结构）。
-
+# Zhang 2022 — All polarization-maintaining Er:fiber-based optical frequency comb for freque... [technical]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "BPQDL4DN"
+  zotero_key: BPQDL4DN
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical
@@ -26,25 +12,10 @@ meta:
   first_author: "Zhang"
   journal: "Chinese Physics B"
   volume: 31
-  issue: 5
-  pages: "054210"
-  doi: "10.1088/1674-1056/ac40f6"
+  pages: 054210
+  doi: 10.1088/1674-1056/ac40f6
   note: >
-    [技术论文] 国家授时中心（Pan Zhang / Yan-Yan Zhang / Hai-Feng Jiang / Shou-Gang Zhang 等）。
-    基于 figure-9 结构 NALM 锁模 + 全保偏光纤的 Er:fiber turnkey 飞秒激光，基频 200 MHz，
-    输出光谱 FWHM 75 nm（1550 nm 中心）、变换极限 46 fs。单支路展宽至倍频程 SC 产生 f_ceo（SNR 38 dB @300 kHz RBW），
-    通过调泵浦功率锁定 f_ceo，f_beat 通过腔内 EOM（~300 kHz 带宽）+ PZT 锁定到 1555 nm 超稳激光。
-    四条"应用支路"以 EDFA + PM-HNLF（+ PPLN）生成 698/729/1068/1156 nm 单模功率 ≥707 nW~5 µW，
-    与 Sr/Ca+/Al+/Yb 钟激光拍频 SNR 均 >30 dB @300 kHz。
-    in-loop：f_ceo 7.5×10⁻¹⁸/√τ @1 s，f_beat 8.5×10⁻¹⁸/√τ @1 s；
-    out-of-loop：9×10⁻¹⁷ @1 s → 5.5×10⁻¹⁹ @4000 s，优于目前 Sr/Yb 最佳钟比对水平。
-    跨文件节点：ent.optical_frequency_comb、pri.self_referencing_f2f 定义于 udem2002.yaml；
-    与 ent.hybrid_ml_erfiber_comb_z17（zhang2017.yaml）构成同组 Er:fiber 梳架构演进序列（COMPETES-WITH）。
-
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
+    [技术论文] 国家授时中心（Pan Zhang / Yan-Yan Zhang / Hai-Feng Jiang / Shou-Gang Zhang 等）。 基于 figure-9 结构 NALM 锁模 + 全保偏光纤的 Er:fiber turnkey 飞秒激光，基频 200 MHz， 输出光谱 FWHM 75 nm（1550 nm 中心）、变换极限 46 fs。单支路展宽至倍频程 SC 产生 f_ceo（SNR 38 dB @300 kHz RBW）， 通过调泵浦功率锁定 f_ceo，f_beat 通过腔内 EOM（~300 kHz 带宽）+ PZT 锁定到 1555 nm 超稳激光。 四条"应用支路"以 EDFA + PM-HNLF（+ PPLN）生成 698/729/1068/1156 nm 单模功率 ≥707 nW~5 µW， 与 Sr/Ca+/Al+/Yb 钟激光拍频 SNR 均 >30 dB @300 kHz。 in-loop：f_ceo 7.5×10⁻¹⁸/√τ @1 s，f_beat 8.5×10⁻¹⁸/√τ @1 s； out-of-loop：9×10⁻¹⁷ @1 s → 5.5×10⁻¹⁹ @4000 s，优于目前 Sr/Yb 最佳钟比对水平。 跨文件节点：ent.optical_frequency_comb、pri.self_referencing_f2f 定义于 udem2002.yaml； 与 ent.hybrid_ml_erfiber_comb_z17（zhang2017.yaml）构成同组 Er:fiber 梳架构演进序列（COMPETES-WITH）。
 entities:
   - id: ent.all_pm_erfiber_comb_z22b
     name: "全保偏 figure-9 NALM Er:fiber 光学频率梳（Zhang 2022b 系统）"

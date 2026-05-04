@@ -1,19 +1,21 @@
+# Li 2019 — Thermal phase noise in giant interferometric fiber optic gyroscopes [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: ELKHJ5GL
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: Thermal phase noise in giant interferometric fiber optic gyroscopes
+  title: "Thermal phase noise in giant interferometric fiber optic gyroscopes"
   year: 2019
-  first_author: Li
-  journal: Optics Express
+  first_author: "Li"
+  journal: "Optics Express"
   volume: 27
-  pages: '14121'
+  pages: 14121
   doi: 10.1364/OE.27.014121
-  note: '大型光纤陀螺仪（L > 10 km）中热相位噪声的理论推导和实验验证。 热噪声不可忽略，限制探测带宽。 30 km SMF 线圈实现 3.5 nrad/s/√Hz（低频），5.2
-    nrad/s/√Hz（100 Hz）。 核心贡献：光纤热相位噪声的定量分析——与超稳激光光纤系统共享噪声机制。
-
-    '
+  note: >
+    大型光纤陀螺仪（L > 10 km）中热相位噪声的理论推导和实验验证。 热噪声不可忽略，限制探测带宽。 30 km SMF 线圈实现 3.5 nrad/s/√Hz（低频），5.2 nrad/s/√Hz（100 Hz）。 核心贡献：光纤热相位噪声的定量分析——与超稳激光光纤系统共享噪声机制。
 entities: []
 principles:
 - id: pri.fiber_thermal_phase_noise_giant_ifog

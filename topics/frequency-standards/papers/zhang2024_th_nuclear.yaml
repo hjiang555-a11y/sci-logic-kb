@@ -1,32 +1,22 @@
-# Zhang 2024 — Frequency ratio of the 229mTh nuclear isomeric transition [evidence]
-# 提取者：Claude Code（AI 草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.5
-# 专题：frequency-standards（钍-229m 核光钟 — 核跃迁频率比）
-# contribution_type: evidence — 首次以 VUV 频率梳精确测量 ²²⁹ᵐTh 核同质异能态
-#   跃迁频率比，实现核光钟的关键里程碑。
-
+# Zhang 2024 — Frequency ratio of the 229mTh nuclear isomeric transition and the 87Sr atomic... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "s41586-024-07839-6"
+  zotero_key: s41586-024-07839-6
   topic: frequency-standards
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Frequency ratio of the 229mTh nuclear isomeric transition and the 87Sr atomic clock"
   year: 2024
-  first_author: Zhang
+  first_author: "Zhang"
   authors: ["Chuankun Zhang", "Tian Ooi", "Jacob S. Higgins", "Jack F. Doyle", "Lars von der Wense", "Kjeld Beeks", "Adrian Leitner", "Georgy A. Kazakov", "Peng Li", "Peter G. Thirolf", "Thorsten Schumm", "Jun Ye"]
   journal: "Nature"
   volume: 633
-  pages: "63-70"
-  doi: "10.1038/s41586-024-07839-6"
+  pages: 63-70
+  doi: 10.1038/s41586-024-07839-6
   note: >
-    首次以 VUV 频率梳直接精确测量 ²²⁹ᵐTh 核同质异能态跃迁频率
-    相对于 ⁸⁷Sr 原子钟的频率比。²²⁹ᵐTh 核跃迁（~8.4 eV / 148 nm）
-    因其极低的对外场敏感性被认为是下一代核光钟的候选——
-    核跃迁天然受核外电子屏蔽。该工作是核光钟从理论到实验的
-    关键里程碑。
-
+    首次以 VUV 频率梳直接精确测量 ²²⁹ᵐTh 核同质异能态跃迁频率 相对于 ⁸⁷Sr 原子钟的频率比。²²⁹ᵐTh 核跃迁（~8.4 eV / 148 nm） 因其极低的对外场敏感性被认为是下一代核光钟的候选—— 核跃迁天然受核外电子屏蔽。该工作是核光钟从理论到实验的 关键里程碑。
 entities:
   - id: ent.zhang2024_th229m_nuclear_clock_freq_ratio
     name: "Zhang 2024 ²²⁹ᵐTh 核跃迁频率比测量（JILA）"

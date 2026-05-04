@@ -1,40 +1,22 @@
-# Cundiff & Ye 2003 — Colloquium: Femtosecond optical frequency combs (Rev. Mod. Phys.) [framework]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：optical-frequency-combs
-# contribution_type: framework — OFC 专题早期权威综述。JILA 团队对 2000–2002 年飞秒光频梳
-#   从时域锁模物理到频域计量标尺的学科奠基性整合；补全 Udem 2002 / Hänsch 2006 Nobel Lecture
-#   之外的美国学派时域-频域对偶视角。
-
+# Cundiff 2003 — Colloquium: Femtosecond optical frequency combs [framework]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "CUNDIFF2003-RMP"
+  zotero_key: CUNDIFF2003-RMP
   topic: optical-frequency-combs
   source_type: review
   contribution_type: framework
   reliability: high
   title: "Colloquium: Femtosecond optical frequency combs"
   year: 2003
-  first_author: Cundiff
+  first_author: "Cundiff"
   authors: ["Steven T. Cundiff", "Jun Ye"]
   journal: "Reviews of Modern Physics"
   volume: 75
-  issue: 2
-  pages: "325-342"
-  doi: "10.1103/RevModPhys.75.325"
+  pages: 325-342
+  doi: 10.1103/RevModPhys.75.325
   note: >
-    [综述论文 / 奠基文献 · B1 OFC 早期综述] JILA 团队（Cundiff & Ye）发表于 Reviews of
-    Modern Physics 的 Colloquium，是 OFC 专题的早期美国学派奠基综述，与 Udem & Hänsch
-    2002 Nature 综述（德国学派）并列构成 OFC 理论奠基的双柱。本综述的独特贡献在于：
-    (1) 系统阐述锁模激光器时域脉冲列与频域梳齿的严格对偶（载波-包络相移 Δφ_ce 与
-    f_o = Δφ_ce · f_rep / (2π) 的严格推导）；
-    (2) 引入"载波-包络相位 (CEP) 控制"作为独立物理自由度，超出简单的 f_rep 锁定；
-    (3) 提出 f-2f 自参考的完整时域解释（包络与载波的群-相延迟差）；
-    (4) 强调 OFC 同时作为"光频计数器"与"超短脉冲合成器"的双重身份；
-    (5) 明确 OFC 是"光学钟"到"绝对光频测量"与"射频-光频分频"的枢纽。
-    本文为 JILA 的光频梳工作（Diddams 2000 首次 f-2f 演示、Ye 2000 频率综合）提供统
-    一理论框架；被 OFC 领域引用 3000+ 次，是入门必读文献。
-
+    [综述论文 / 奠基文献 · B1 OFC 早期综述] JILA 团队（Cundiff & Ye）发表于 Reviews of Modern Physics 的 Colloquium，是 OFC 专题的早期美国学派奠基综述，与 Udem & Hänsch 2002 Nature 综述（德国学派）并列构成 OFC 理论奠基的双柱。本综述的独特贡献在于： (1) 系统阐述锁模激光器时域脉冲列与频域梳齿的严格对偶（载波-包络相移 Δφ_ce 与 f_o = Δφ_ce · f_rep / (2π) 的严格推导）； (2) 引入"载波-包络相位 (CEP) 控制"作为独立物理自由度，超出简单的 f_rep 锁定； (3) 提出 f-2f 自参考的完整时域解释（包络与载波的群-相延迟差）； (4) 强调 OFC 同时作为"光频计数器"与"超短脉冲合成器"的双重身份； (5) 明确 OFC 是"光学钟"到"绝对光频测量"与"射频-光频分频"的枢纽。 本文为 JILA 的光频梳工作（Diddams 2000 首次 f-2f 演示、Ye 2000 频率综合）提供统 一理论框架；被 OFC 领域引用 3000+ 次，是入门必读文献。
 entities: []
 
 principles:

@@ -1,43 +1,22 @@
-# Exertier 2016 — Sub-ns time transfer consistency: GPS CV vs T2L2 [evidence]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：time-frequency-transfer
-# contribution_type: evidence
-
+# Exertier 2016 — Sub-ns time transfer consistency: a direct comparison between GPS CV and T2L2 [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "7t65sn78"
+  zotero_key: 7t65sn78
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Sub-ns time transfer consistency: a direct comparison between GPS CV and T2L2"
   year: 2016
-  first_author: Exertier
-  authors:
-  - "P. Exertier"
-  - "E. Samain"
-  - "C. Courde"
-  - "M. Aimar"
-  - "J. M. Torre"
-  - "G. D. Rovera"
-  - "M. Abgrall"
-  - "P. Uhrich"
-  - "R. Sherwood"
-  - "G. Herold"
-  - "U. Schreiber"
-  - "P. Guillemot"
+  first_author: "Exertier"
+  authors: ["P. Exertier", "E. Samain", "C. Courde", "M. Aimar", "J. M. Torre", "G. D. Rovera", "M. Abgrall", "P. Uhrich", "R. Sherwood", "G. Herold", "U. Schreiber", "P. Guillemot"]
   journal: "Metrologia"
   volume: 53
-  issue: 6
-  pages: "1395-1401"
-  doi: "10.1088/0026-1394/53/6/1395"
+  pages: 1395-1401
+  doi: 10.1088/0026-1394/53/6/1395
   note: >
-    [期刊论文] Observatoire de la Côte d'Azur + SYRTE + PTB. 直接比较两种卫星时间传递方法：
-    GPS common-view (CV) 与 T2L2（Time Transfer by Laser Link，Jason-2 卫星上）。
-    两者在 sub-ns（亚纳秒）一致，验证了 T2L2 光学激光链路作为独立校准方案的可靠性，
-    并为 GPS CV 时间传递不确定度预算提供外部校验。
-
+    [期刊论文] Observatoire de la Côte d'Azur + SYRTE + PTB. 直接比较两种卫星时间传递方法： GPS common-view (CV) 与 T2L2（Time Transfer by Laser Link，Jason-2 卫星上）。 两者在 sub-ns（亚纳秒）一致，验证了 T2L2 光学激光链路作为独立校准方案的可靠性， 并为 GPS CV 时间传递不确定度预算提供外部校验。
 entities:
   - id: ent.t2l2_laser_time_transfer
     name: "T2L2 卫星激光时间传递（Time Transfer by Laser Link）"

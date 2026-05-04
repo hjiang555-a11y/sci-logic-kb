@@ -1,18 +1,21 @@
+# Potnis 2016 — Note: Broadband low-noise photodetector for Pound-Drever-Hall laser stabiliza... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: WDGF2B36
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: 'Note: Broadband low-noise photodetector for Pound-Drever-Hall laser stabilization'
+  title: "Note: Broadband low-noise photodetector for Pound-Drever-Hall laser stabilization"
   year: 2016
-  first_author: Potnis
-  journal: Review of Scientific Instruments
+  first_author: "Potnis"
+  journal: "Review of Scientific Instruments"
   volume: 87
-  pages: '076104'
+  pages: 076104
   doi: 10.1063/1.4960088
-  note: '为 PDH 稳频设计的宽带低噪声光电探测器， 优化了 RF 频段的电子噪声性能。 核心贡献：PDH 系统光电探测器的工程优化参考。
-
-    '
+  note: >
+    为 PDH 稳频设计的宽带低噪声光电探测器， 优化了 RF 频段的电子噪声性能。 核心贡献：PDH 系统光电探测器的工程优化参考。
 entities:
 - id: ent.pdh_photodetector_p16
   name: 宽带低噪声 PDH 光电探测器（Potnis 2016）

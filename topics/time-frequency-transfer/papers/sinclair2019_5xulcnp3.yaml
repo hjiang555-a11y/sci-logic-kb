@@ -1,41 +1,22 @@
-# Sinclair 2019 — Femtosecond O-TWTFT in the presence of motion [evidence]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：time-frequency-transfer
-# contribution_type: evidence
-# 本文件同时建立 Level 1 节点 `ent.free_space_optical_tf_link`（自由空间光学时频传递链路总节点）。
-
+# Sinclair 2019 — Femtosecond optical two-way time-frequency transfer in the presence of motion [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "5xulcnp3"
+  zotero_key: 5xulcnp3
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Femtosecond optical two-way time-frequency transfer in the presence of motion"
   year: 2019
-  first_author: Sinclair
-  authors:
-  - "L. C. Sinclair"
-  - "H. Bergeron"
-  - "W. C. Swann"
-  - "I. Khader"
-  - "K. C. Cossel"
-  - "M. Cermak"
-  - "N. R. Newbury"
-  - "J. D. Deschenes"
+  first_author: "Sinclair"
+  authors: ["L. C. Sinclair", "H. Bergeron", "W. C. Swann", "I. Khader", "K. C. Cossel", "M. Cermak", "N. R. Newbury", "J. D. Deschenes"]
   journal: "Physical Review A"
   volume: 99
-  issue: 2
-  pages: "023844"
-  doi: "10.1103/PhysRevA.99.023844"
+  pages: 023844
+  doi: 10.1103/PhysRevA.99.023844
   note: >
-    [期刊论文] NIST Boulder + Université Laval. 给出 comb-based O-TWTFT 在运动平台上的完整
-    理论与实时算法：(1) 相对论引起的发射/接收时刻不在同一参考系；(2) 异步采样时间戳偏移；
-    (3) 光电色散；(4) 速度依赖收发机校准。实验在 ±25 m/s 下同步两站至 <1 fs 时间偏差，
-    速度相关 bias < 330 as (2σ)。为 ground-air / ground-satellite 自由空间链路奠定运动平台基础。
-    本文件建立 time-frequency-transfer 专题 Level 1 节点 ent.free_space_optical_tf_link。
-
+    [期刊论文] NIST Boulder + Université Laval. 给出 comb-based O-TWTFT 在运动平台上的完整 理论与实时算法：(1) 相对论引起的发射/接收时刻不在同一参考系；(2) 异步采样时间戳偏移； (3) 光电色散；(4) 速度依赖收发机校准。实验在 ±25 m/s 下同步两站至 <1 fs 时间偏差， 速度相关 bias < 330 as (2σ)。为 ground-air / ground-satellite 自由空间链路奠定运动平台基础。 本文件建立 time-frequency-transfer 专题 Level 1 节点 ent.free_space_optical_tf_link。
 entities:
   - id: ent.free_space_optical_tf_link
     name: "自由空间光学时频传递链路（Level 1 总节点）"

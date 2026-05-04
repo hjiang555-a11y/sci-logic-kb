@@ -1,20 +1,21 @@
+# Nelson 2008 — Relative Intensity Noise Suppression for RF Photonic Links [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: XAKCIXKT
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: Relative Intensity Noise Suppression for RF Photonic Links
+  title: "Relative Intensity Noise Suppression for RF Photonic Links"
   year: 2008
-  first_author: Nelson
-  journal: IEEE Photonics Technology Letters
+  first_author: "Nelson"
+  journal: "IEEE Photonics Technology Letters"
   volume: 20
-  issue: 18
   pages: 1542-1544
   doi: 10.1109/LPT.2008.928834
-  note: '利用光链路中已有的强度调制器同时实现 RIN 抑制和信号编码， 在 10 MHz 带宽内抑制 RIN 10–50 dB。 应用于光电振荡器（OEO）显著改善相位噪声。
-    核心贡献：无需额外硬件的 RIN 抑制技术。
-
-    '
+  note: >
+    利用光链路中已有的强度调制器同时实现 RIN 抑制和信号编码， 在 10 MHz 带宽内抑制 RIN 10–50 dB。 应用于光电振荡器（OEO）显著改善相位噪声。 核心贡献：无需额外硬件的 RIN 抑制技术。
 entities: []
 principles:
 - id: pri.rin_suppression_reuse_modulator

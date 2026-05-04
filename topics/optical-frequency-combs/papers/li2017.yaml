@@ -1,34 +1,21 @@
-# Li 2017 — 慢调谐稳定进入倍频程 Si₃N₄ 微梳孤子区
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical — 微腔梳（技术层 A2 分支）重要技术论文
-#   贡献：首次在 Si₃N₄ 微谐振腔中稳定访问倍频程单孤子态（pump ~120 mW）；
-#         仅靠"慢调谐泵浦激光频率"（远慢于热时间常数）实现，不需要快速功率踢动或复杂反馈；
-#         提出"邻近横模家族辅助热稳定"的新机制；两步分析模型 + LLE 数值模拟。
-#   Framework 依赖：kippenberg2011.yaml（微梳子域架构）、kippenberg2018.yaml（DKS 范式）。
-
+# Li 2017 — Stably accessing octave-spanning microresonator frequency combs in the solito... [technical]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "6JY7ZNWX"
+  zotero_key: 6JY7ZNWX
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical
   reliability: high
   title: "Stably accessing octave-spanning microresonator frequency combs in the soliton regime"
   year: 2017
-  first_author: Li
+  first_author: "Li"
   journal: "Optica"
   volume: 4
-  issue: 2
-  pages: "193-203"
-  doi: "10.1364/OPTICA.4.000193"
+  pages: 193-203
+  doi: 10.1364/OPTICA.4.000193
   note: >
-    [技术论文] NIST Gaithersburg（Srinivasan/Li）+ NIST Boulder（Papp/Diddams）合作。
-    Si₃N₄ 微环 Q≈10⁶，色散工程化后支持倍频程。展示仅靠"慢频率扫描泵浦激光"（时间尺度 >>
-    热时间常数 μs）即可获得多孤子态（40 mW）与单孤子态（120 mW）倍频程梳。
-    关键新发现：红失谐侧邻近模族成员可被动稳定热动力学。
-
+    [技术论文] NIST Gaithersburg（Srinivasan/Li）+ NIST Boulder（Papp/Diddams）合作。 Si₃N₄ 微环 Q≈10⁶，色散工程化后支持倍频程。展示仅靠"慢频率扫描泵浦激光"（时间尺度 >> 热时间常数 μs）即可获得多孤子态（40 mW）与单孤子态（120 mW）倍频程梳。 关键新发现：红失谐侧邻近模族成员可被动稳定热动力学。
 entities:
   - id: ent.octave_si3n4_microcomb_l17
     name: "倍频程 Si₃N₄ 微腔梳（Li 2017 系统）"

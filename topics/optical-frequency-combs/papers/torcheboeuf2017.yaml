@@ -1,12 +1,8 @@
-# Torcheboeuf 2017 — DPSSL Er:Yb:glass 光频梳腔内 EOM 实现 700 kHz 重频锁定带宽 [技术论文]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical_breakthrough
-
+# Torcheboeuf 2017 — Repetition rate stabilization of an optical frequency comb based on solid-sta... [technical_breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "HJHCMSZG"
+  zotero_key: HJHCMSZG
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical_breakthrough
@@ -16,21 +12,10 @@ meta:
   first_author: "Torcheboeuf"
   journal: "Optics Express"
   volume: 25
-  issue: 3
-  pages: "2215-2220"
-  doi: "10.1364/OE.25.002215"
+  pages: 2215-2220
+  doi: 10.1364/OE.25.002215
   note: >
-    [技术突破] CSEM Neuchâtel（Lecomte 组）。首次在二极管泵浦固态激光器（DPSSL，Er:Yb:glass，
-    100 MHz，1546 nm，220 fs 孤子脉冲）中采用腔内 EOM 实现 frep 锁定，锁定带宽达 700 kHz——
-    超越当时所有其他类型重频执行器。腔内 EOM 作用为电压控制群延迟元件，改变腔光程
-    从而调制 frep。fCEO 通过 f-2f 干涉仪探测，反馈至泵浦二极管注入电流，带宽 45 kHz。
-    frep 稳定至 1 Hz 级线宽的 PDH 稳腔 CW 激光（1560 nm），EOM 快速执行 + PZT 慢执行
-    级联架构。环路内积分相位噪声 133 mrad [10 Hz; 1 MHz]（扣除 CW 参考噪声后 115 mrad），
-    为固态激光器 OFC 的最佳结果之一。同时研究了 EOM 的 PM-to-AM 耦合效应。
-    跨文件节点引用：ent.optical_frequency_comb 定义于 giunta2019.yaml；
-    ent.dpss_comb_interleaver_pc15 定义于 portuondo-campa2015.yaml（同组前序工作）；
-    pri.self_referencing_f2f 定义于 udem2002.yaml。
-
+    [技术突破] CSEM Neuchâtel（Lecomte 组）。首次在二极管泵浦固态激光器（DPSSL，Er:Yb:glass， 100 MHz，1546 nm，220 fs 孤子脉冲）中采用腔内 EOM 实现 frep 锁定，锁定带宽达 700 kHz—— 超越当时所有其他类型重频执行器。腔内 EOM 作用为电压控制群延迟元件，改变腔光程 从而调制 frep。fCEO 通过 f-2f 干涉仪探测，反馈至泵浦二极管注入电流，带宽 45 kHz。 frep 稳定至 1 Hz 级线宽的 PDH 稳腔 CW 激光（1560 nm），EOM 快速执行 + PZT 慢执行 级联架构。环路内积分相位噪声 133 mrad [10 Hz; 1 MHz]（扣除 CW 参考噪声后 115 mrad）， 为固态激光器 OFC 的最佳结果之一。同时研究了 EOM 的 PM-to-AM 耦合效应。 跨文件节点引用：ent.optical_frequency_comb 定义于 giunta2019.yaml； ent.dpss_comb_interleaver_pc15 定义于 portuondo-campa2015.yaml（同组前序工作）； pri.self_referencing_f2f 定义于 udem2002.yaml。
 entities:
   - id: ent.dpssl_eryb_eom_comb_t17
     name: "DPSSL Er:Yb:glass 腔内 EOM 光频梳（Torcheboeuf 2017，700 kHz frep 锁定带宽）"

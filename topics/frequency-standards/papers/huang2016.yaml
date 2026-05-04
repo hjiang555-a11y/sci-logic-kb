@@ -1,31 +1,22 @@
-# Huang 2016 — Frequency comparison of two 40Ca+ optical clocks with uncertainty at 10⁻¹⁷ [evidence]
-# 提取者：Claude Code（AI 草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.5
-# 专题：frequency-standards（⁴⁰Ca⁺ 单离子光钟 — 10⁻¹⁷ 级比对）
-# contribution_type: evidence — 两台 ⁴⁰Ca⁺ 光钟以 10⁻¹⁷ 不确定度比对；
-#   是中国科学院武汉物数所离子光钟的里程碑。
-
+# Huang 2016 — Frequency Comparison of Two 40Ca+ Optical Clocks with an Uncertainty at the 1... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "PhysRevLett.116.013001"
+  zotero_key: PhysRevLett.116.013001
   topic: frequency-standards
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Frequency Comparison of Two 40Ca+ Optical Clocks with an Uncertainty at the 10^-17 Level"
   year: 2016
-  first_author: Huang
+  first_author: "Huang"
   authors: ["Y. Huang", "H. Guan", "P. Liu", "W. Bian", "L. Ma", "K. Liang", "T. Li", "K. Gao"]
   journal: "Physical Review Letters"
   volume: 116
-  pages: "013001"
-  doi: "10.1103/PhysRevLett.116.013001"
+  pages: 013001
+  doi: 10.1103/PhysRevLett.116.013001
   note: >
-    中国科学院武汉物数所（WIPM）团队实现两台 ⁴⁰Ca⁺ 单离子光钟的
-    频率比对，比对不确定度达 10⁻¹⁷ 量级。⁴⁰Ca⁺ 钟跃迁 ~729 nm
-    （电四极矩跃迁 4s ²S₁/₂→3d ²D₅/₂），是中国离子光钟路线的
-    代表性工作。
-
+    中国科学院武汉物数所（WIPM）团队实现两台 ⁴⁰Ca⁺ 单离子光钟的 频率比对，比对不确定度达 10⁻¹⁷ 量级。⁴⁰Ca⁺ 钟跃迁 ~729 nm （电四极矩跃迁 4s ²S₁/₂→3d ²D₅/₂），是中国离子光钟路线的 代表性工作。
 entities:
   - id: ent.huang2016_ca40_ion_clock_comparison
     name: "Huang 2016 两台 ⁴⁰Ca⁺ 光钟 10⁻¹⁷ 级比对（WIPM）"

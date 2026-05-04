@@ -1,30 +1,21 @@
-# Coburn 2018 — 野外部署双梳光谱仪做区域痕量气体溯源
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical — 双梳光谱应用层首次野外远程部署
-
+# Coburn 2018 — Regional trace-gas source attribution using a field-deployed dual frequency c... [technical]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "2QU7BQ44"
+  zotero_key: 2QU7BQ44
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical
   reliability: high
   title: "Regional trace-gas source attribution using a field-deployed dual frequency comb spectrometer"
   year: 2018
-  first_author: Coburn
+  first_author: "Coburn"
   journal: "Optica"
   volume: 5
-  issue: 4
-  pages: "320-327"
-  doi: "10.1364/OPTICA.5.000320"
+  pages: 320-327
+  doi: 10.1364/OPTICA.5.000320
   note: >
-    [应用层技术论文] Colorado/NIST（Rieker/Newbury/Coddington 组）。
-    首次野外远程部署双梳光谱仪 + 大气反演模型，实现数平方公里区域连续痕量气体监测与源定位。
-    1 km 距离检测到 1.6 g/min 甲烷源（小于典型气动控制器本底排放），
-    区域灵敏度比现有方法提升 ~10³ 倍。应用层范例：CH₄ 监测、油气泄漏、碳封存验证。
-
+    [应用层技术论文] Colorado/NIST（Rieker/Newbury/Coddington 组）。 首次野外远程部署双梳光谱仪 + 大气反演模型，实现数平方公里区域连续痕量气体监测与源定位。 1 km 距离检测到 1.6 g/min 甲烷源（小于典型气动控制器本底排放）， 区域灵敏度比现有方法提升 ~10³ 倍。应用层范例：CH₄ 监测、油气泄漏、碳封存验证。
 entities:
   - id: ent.field_deployed_dcs_c18
     name: "野外部署双梳光谱仪系统（Coburn 2018）"

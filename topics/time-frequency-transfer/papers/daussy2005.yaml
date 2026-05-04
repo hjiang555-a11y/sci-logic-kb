@@ -1,38 +1,22 @@
 # Daussy 2005 — Long-Distance Frequency Dissemination with a Resolution of 10⁻¹⁷ [breakthrough]
-# 提取者：Claude Code（AI 草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.5
-# 专题：time-frequency-transfer（光纤频率传递 — 首次 86 km 电信光纤 10⁻¹⁷ 级频率分发）
-# contribution_type: breakthrough — 首次在标准电信光纤上实现 43 km 往返（86 km 等效）的
-#   光学频率传递，达到 10⁻¹⁷/天 的频率分辨率——开启了光纤频率传递作为时钟比对
-#   新范式的时代。
-
-
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "PhysRevLett.94.203904"
+  zotero_key: PhysRevLett.94.203904
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: breakthrough
   reliability: high
   title: "Long-Distance Frequency Dissemination with a Resolution of 10⁻¹⁷"
   year: 2005
-  first_author: Daussy
+  first_author: "Daussy"
   authors: ["C. Daussy", "O. Lopez", "A. Amy-Klein", "A. Goncharov", "M. Guinet", "C. Chardonnet", "F. Narbonneau", "M. Lours", "D. Chambon", "S. Bize", "A. Clairon", "G. Santarelli", "M. E. Tobar", "A. N. Luiten"]
   journal: "Physical Review Letters"
   volume: 94
-  issue: 20
-  pages: "203904"
-  doi: "10.1103/PhysRevLett.94.203904"
+  pages: 203904
+  doi: 10.1103/PhysRevLett.94.203904
   note: >
-    [breakthrough 论文] 首次实验演示长距离光纤光学频率分发。在 SYRTE 和 LPL
-    （Paris Nord）之间 43 km 标准电信光纤链路上，以激光往返相位噪声检测
-    + AOM 反馈主动补偿方案，实现 86 km 往返链路的分数频率分辨率：
-    8×10⁻¹⁵@1 s, 10⁻¹⁷@1 天。作为应用，将 LPL 的 CO₂/OsO₄ 频率标准
-    的信号与 SYRTE 的微波基准参考比对，分辨率 3×10⁻¹⁴@1 s。
-    该实验确立了"光纤往返噪声补偿"作为远程光学时钟比对的基本技术范式，
-    是此后所有长距离光纤频率传递（Predehl 2012, Droste 2013 等）的
-    直接先驱。
-
+    [breakthrough 论文] 首次实验演示长距离光纤光学频率分发。在 SYRTE 和 LPL （Paris Nord）之间 43 km 标准电信光纤链路上，以激光往返相位噪声检测 + AOM 反馈主动补偿方案，实现 86 km 往返链路的分数频率分辨率： 8×10⁻¹⁵@1 s, 10⁻¹⁷@1 天。作为应用，将 LPL 的 CO₂/OsO₄ 频率标准 的信号与 SYRTE 的微波基准参考比对，分辨率 3×10⁻¹⁴@1 s。 该实验确立了"光纤往返噪声补偿"作为远程光学时钟比对的基本技术范式， 是此后所有长距离光纤频率传递（Predehl 2012, Droste 2013 等）的 直接先驱。
 entities:
   - id: ent.daussy2005_86km_fiber_link
     name: "Daussy 2005 SYRTE–LPL 43 km 电信光纤往返频率传递链路"

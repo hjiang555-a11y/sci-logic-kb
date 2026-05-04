@@ -1,54 +1,20 @@
-# Guena 2012 — Progress in atomic fountains at LNE-SYRTE
-# 提取者：Claude Code（AI草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.0
-# 专题：timescales
-# contribution_type: framework — 对 LNE-SYRTE 喷泉钟组五年进展的系统性概述，
-#   涵盖系统效应评估（DCP、微波透镜、BBR、微波泄漏）、时频计量应用、
-#   基本物理检验和 PHARAO 空间钟研制。
-
+# guena 2012 — Progress in atomic fountains at LNE-SYRTE [framework]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "Syrte 2012"
+  zotero_key: Syrte 2012
   topic: timescales
   source_type: review
   contribution_type: framework
   reliability: high
   title: "Progress in atomic fountains at LNE-SYRTE"
   year: 2012
-  first_author: guena
-  authors:
-    - "J. Guena"
-    - "M. Abgrall"
-    - "D. Rovera"
-    - "P. Laurent"
-    - "B. Chupin"
-    - "M. Lours"
-    - "G. Santarelli"
-    - "P. Rosenbusch"
-    - "M.E. Tobar"
-    - "R. Li"
-    - "K. Gibble"
-    - "A. Clairon"
-    - "S. Bize"
+  first_author: "guena"
+  authors: ["J. Guena", "M. Abgrall", "D. Rovera", "P. Laurent", "B. Chupin", "M. Lours", "G. Santarelli", "P. Rosenbusch", "M.E. Tobar", "R. Li", "K. Gibble", "A. Clairon", "S. Bize"]
   journal: "IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control"
-  doi: "10.1109/TUFFC.2012.2208"
+  doi: 10.1109/TUFFC.2012.2208
   note: >
-    [综述/框架] 系统概述 LNE-SYRTE 原子喷泉钟组（FO1、FO2、FOM）在 2007–2011 年的进展。
-    覆盖三种喷泉钟配置：FO1（¹³³Cs，2DMOT 装载）、FO2（⁸⁷Rb/¹³³Cs 双喷泉）、FOM（可搬运喷泉）。
-    核心贡献：(1) 分布式腔相位（DCP）频移的方位角傅里叶分解评估方法，
-    在 FO2-Cs 上将 DCP 不确定度从 3×10⁻¹⁶ 降至 8.4×10⁻¹⁷；
-    (2) 四台喷泉钟的微波透镜频移理论计算；
-    (3) 黑体辐射频移标量 Stark 系数修订值 k₀ = −2.282(4)×10⁻¹⁰ Hz·V⁻²·m²；
-    (4) 可切换微波合成器方案评估和控制微波泄漏频移；
-    (5) 系统精度预算：FO1 3.5×10⁻¹⁶、FO2-Cs 2.1×10⁻¹⁶、FOM 6.9×10⁻¹⁶、FO2-Rb 3.3×10⁻¹⁶；
-    (6) TAI 校准贡献（2007–2010 年全球近 50% 报告来自 SYRTE），喷泉钟数据月度驾驭 TA(F)；
-    (7) 基本物理检验：Rb/Cs 频率比时间变化约束、Lorentz 不变性 SME 约束（4 个新参数首次受限）；
-    (8) PHARAO 工程模型地面测试，总不确定度 1.9×10⁻¹⁵，与 FOM 比对一致性 <2×10⁻¹⁵。
-
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
+    [综述/框架] 系统概述 LNE-SYRTE 原子喷泉钟组（FO1、FO2、FOM）在 2007–2011 年的进展。 覆盖三种喷泉钟配置：FO1（¹³³Cs，2DMOT 装载）、FO2（⁸⁷Rb/¹³³Cs 双喷泉）、FOM（可搬运喷泉）。 核心贡献：(1) 分布式腔相位（DCP）频移的方位角傅里叶分解评估方法， 在 FO2-Cs 上将 DCP 不确定度从 3×10⁻¹⁶ 降至 8.4×10⁻¹⁷； (2) 四台喷泉钟的微波透镜频移理论计算； (3) 黑体辐射频移标量 Stark 系数修订值 k₀ = −2.282(4)×10⁻¹⁰ Hz·V⁻²·m²； (4) 可切换微波合成器方案评估和控制微波泄漏频移； (5) 系统精度预算：FO1 3.5×10⁻¹⁶、FO2-Cs 2.1×10⁻¹⁶、FOM 6.9×10⁻¹⁶、FO2-Rb 3.3×10⁻¹⁶； (6) TAI 校准贡献（2007–2010 年全球近 50% 报告来自 SYRTE），喷泉钟数据月度驾驭 TA(F)； (7) 基本物理检验：Rb/Cs 频率比时间变化约束、Lorentz 不变性 SME 约束（4 个新参数首次受限）； (8) PHARAO 工程模型地面测试，总不确定度 1.9×10⁻¹⁵，与 FOM 比对一致性 <2×10⁻¹⁵。
 entities:
   - id: ent.lne_syrte_fountain_ensemble_2012
     name: "LNE-SYRTE 原子喷泉钟组（FO1、FO2 Rb/Cs 双喷泉、FOM 可搬运喷泉，2012 年水平）"

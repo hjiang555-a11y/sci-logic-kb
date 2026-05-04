@@ -1,37 +1,22 @@
-# Quan 2021 — High-resolution 56 km microwave frequency dissemination via microwave phase compensation [evidence]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：time-frequency-transfer
-# contribution_type: evidence
-
+# Quan 2021 — High-resolution Microwave Frequency Dissemination via 56 km Optical Fiber Bas... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "592vc93u"
+  zotero_key: 592vc93u
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
   reliability: medium
   title: "High-resolution Microwave Frequency Dissemination via 56 km Optical Fiber Based on Microwave Phase Compensation"
   year: 2021
-  first_author: Quan
-  authors:
-  - "H. L. Quan"
-  - "W. Y. Zhao"
-  - "W. X. Xue"
-  - "Y. Xing"
-  - "H. F. Jiang"
-  - "W. G. Guo"
-  - "S. G. Zhang"
+  first_author: "Quan"
+  authors: ["H. L. Quan", "W. Y. Zhao", "W. X. Xue", "Y. Xing", "H. F. Jiang", "W. G. Guo", "S. G. Zhang"]
   journal: "Acta Photonica Sinica"
   volume: 50
-  issue: 4
-  pages: "0406003"
-  doi: "10.3788/gzxb20215004.0406003"
+  pages: 0406003
+  doi: 10.3788/gzxb20215004.0406003
   note: >
-    [期刊论文] NTSC Xi'an. 56 km 光纤微波频率传递，环回法测相位 + 本地预补偿，
-    双向采用不同频率微波调制避免光寄生反射串扰；配色散补偿光纤改善探测相噪。
-    实测传递稳定度 1.8×10⁻¹⁵ @1 s、4×10⁻¹⁸ @10⁴ s。
-
+    [期刊论文] NTSC Xi'an. 56 km 光纤微波频率传递，环回法测相位 + 本地预补偿， 双向采用不同频率微波调制避免光寄生反射串扰；配色散补偿光纤改善探测相噪。 实测传递稳定度 1.8×10⁻¹⁵ @1 s、4×10⁻¹⁸ @10⁴ s。
 entities:
   - id: ent.ntsc_56km_rf_precompensation_q21
     name: "NTSC 56 km 微波预补偿光纤传递（Quan 2021）"

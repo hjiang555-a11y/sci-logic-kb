@@ -1,21 +1,21 @@
+# Matei 2017 — 1.5 μm Lasers with Sub-10 mHz Linewidth [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: TVY7T59A
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
-  title: 1.5 μm Lasers with Sub-10 mHz Linewidth
+  title: "1.5 μm Lasers with Sub-10 mHz Linewidth"
   year: 2017
-  first_author: Matei
-  journal: Physical Review Letters
+  first_author: "Matei"
+  journal: "Physical Review Letters"
   volume: 118
-  pages: '263202'
+  pages: 263202
   doi: 10.1103/PhysRevLett.118.263202
-  note: '首次从实验确认两套独立 PTB Si 腔（Si2, Si3）同时在 mod σ_y = 4×10⁻¹⁷ 镀层热噪声极限运行； 个体激光线宽 5–10
-    mHz，光学相干时间 11–55 s（取决于应用场景定义）。 核心贡献：（1）实验确认 Si 腔已达到镀层布朗噪声极限（间隔物+底物热噪声可忽略）； （2）严格处理
-    flicker 频率噪声主导时的线宽/相干时间定义问题（发散问题及实用定义）； （3）提供迄今最高频率稳定度激光的完整相位噪声谱和相干时间分析。 PTB（Matei/Legero/Sterr
-    组）+ JILA（Ye 组）合作。 技术分支：FP参考腔系统（Fabry-Pérot Reference Cavity Systems）。
-
-    '
+  note: >
+    首次从实验确认两套独立 PTB Si 腔（Si2, Si3）同时在 mod σ_y = 4×10⁻¹⁷ 镀层热噪声极限运行； 个体激光线宽 5–10 mHz，光学相干时间 11–55 s（取决于应用场景定义）。 核心贡献：（1）实验确认 Si 腔已达到镀层布朗噪声极限（间隔物+底物热噪声可忽略）； （2）严格处理 flicker 频率噪声主导时的线宽/相干时间定义问题（发散问题及实用定义）； （3）提供迄今最高频率稳定度激光的完整相位噪声谱和相干时间分析。 PTB（Matei/Legero/Sterr 组）+ JILA（Ye 组）合作。 技术分支：FP参考腔系统（Fabry-Pérot Reference Cavity Systems）。
 principles:
 - id: pri.flicker_noise_linewidth_divergence
   name: 闪变频率噪声线宽发散问题与实用线宽定义

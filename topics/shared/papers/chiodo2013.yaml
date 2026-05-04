@@ -1,29 +1,20 @@
 # Chiodo 2013 — Lasers for coherent optical satellite links with large dynamics [evidence]
-# 提取者：Claude Code（AI 草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.5
-# 专题：shared（时频计量数学基础）
-# contribution_type: evidence — 演示了一套满足大气湍流极限相干光链路需求的激光系统，
-#   结合了光纤延迟线稳频与大动态扫频能力。未打破 σ_y 纪录，属工程实现级贡献。
-
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "1305.3026"
+  zotero_key: 1305.3026
   topic: shared
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Lasers for coherent optical satellite links with large dynamics"
   year: 2013
-  first_author: Chiodo
+  first_author: "Chiodo"
   authors: ["Nicola Chiodo", "Khelifa Djerroud", "Ouali Acef", "André Clairon", "Peter Wolf"]
   journal: "Applied Optics"
-  doi: "10.1364/AO.52.008642"
+  doi: 10.1364/AO.52.008642
   note: >
-    基于光纤不等臂干涉仪稳频 + DDS 控制扫频的激光系统工程实现。两个激光器
-    （Nd:YAG + 光纤放大器发射，FBG 光纤激光器本振）分别锁定在 2km/1km 光纤延迟线，
-    通过直接数字合成器编程控制本振扫频以补偿低轨卫星多普勒效应（±12 GHz，
-    最大速率 120 MHz/s）。系统已从巴黎搬运至 Calern 天文台 1.5m 测月/测卫望远镜测试。
-
+    基于光纤不等臂干涉仪稳频 + DDS 控制扫频的激光系统工程实现。两个激光器 （Nd:YAG + 光纤放大器发射，FBG 光纤激光器本振）分别锁定在 2km/1km 光纤延迟线， 通过直接数字合成器编程控制本振扫频以补偿低轨卫星多普勒效应（±12 GHz， 最大速率 120 MHz/s）。系统已从巴黎搬运至 Calern 天文台 1.5m 测月/测卫望远镜测试。
 entities:
   - id: ent.chiodo2013_laser_system
     name: "Mini-DOLL 相干光星地链路激光系统（Chiodo 2013）"

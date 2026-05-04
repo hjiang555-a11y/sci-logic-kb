@@ -1,28 +1,21 @@
-# Hoghooghi 2022 — 宽带 1 GHz 中红外频率梳（IP-DFG）
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical
-
+# Hoghooghi 2022 — Broadband 1-GHz mid-infrared frequency comb [technical]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "7HSU6V7Q"
+  zotero_key: 7HSU6V7Q
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical
   reliability: high
   title: "Broadband 1-GHz mid-infrared frequency comb"
   year: 2022
-  first_author: Hoghooghi
+  first_author: "Hoghooghi"
   journal: "Light: Science & Applications"
   volume: 11
-  pages: "264"
-  doi: "10.1038/s41377-022-00947-w"
+  pages: 264
+  doi: 10.1038/s41377-022-00947-w
   note: >
-    [技术论文] Colorado/NIST（Diddams/Rieker 组）。以商用 1.56 µm 锁模激光 + 全光纤 Er
-    放大 + χ² 非线性晶体做脉冲内差频（IP-DFG）产生少周期脉冲，实现首个 3–13 µm 覆盖
-    的 1 GHz 中红外梳。为 μs 时间分辨、>5 THz 瞬态化学/燃烧 DCS 提供核心光源。
-
+    [技术论文] Colorado/NIST（Diddams/Rieker 组）。以商用 1.56 µm 锁模激光 + 全光纤 Er 放大 + χ² 非线性晶体做脉冲内差频（IP-DFG）产生少周期脉冲，实现首个 3–13 µm 覆盖 的 1 GHz 中红外梳。为 μs 时间分辨、>5 THz 瞬态化学/燃烧 DCS 提供核心光源。
 entities:
   - id: ent.broadband_1ghz_mir_comb_h22
     name: "1 GHz 宽带中红外光频梳（Hoghooghi 2022）"

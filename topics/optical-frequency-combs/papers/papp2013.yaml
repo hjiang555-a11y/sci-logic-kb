@@ -1,45 +1,21 @@
-# Papp 2013 — 电光调制边带参量种子注入，精确定义微腔梳的模间距 [方法/原理技术论文]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical
-#   核心贡献：
-#     (1) 提出 "parametric seeding"：将强度调制的泵浦边带（feo≈FSR）注入微腔，强制梳的模间距 Δν 精确锁定于 feo，
-#         打破以往微梳模间距由腔 FSR 偶然决定的局面；
-#     (2) 展示 Δν 在 ~10 MHz 范围内可由射频 feo 连续调谐，绝对线间距 Allan 偏差达 1.6×10⁻¹³（1 s），
-#         较既有微梳线间距稳定度提升 ~10×；
-#     (3) 揭示微梳通常由多个独立子梳（subcomb，mi≈20、mi≈60 的初级参量过程）叠加组成，
-#         并演示参量种子注入可部分 injection-lock 子梳、产生跨 >54 模完全等间距（≤2 Hz 偏差）的梳谱；
-#     (4) 为后续通过热稳定化/孤子机制（Yi 2016 等）获得确定性锁模微梳提供物理线索（调谐范围 / 稳定性受模族、Raman、热双稳限制）。
-#   节点复用：ent.microresonator_frequency_comb（kippenberg2011/2018）、pri.parametric_four_wave_mixing_comb、
-#     pri.microresonator_anomalous_dispersion、meth.cw_pumped_microcomb_generation —— 均跨文件引用，不重复定义。
-
+# Papp 2013 — Parametric seeding of a microresonator optical frequency comb [technical]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "BG93PZPK"
+  zotero_key: BG93PZPK
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical
   reliability: high
   title: "Parametric seeding of a microresonator optical frequency comb"
   year: 2013
-  first_author: Papp
+  first_author: "Papp"
   journal: "Optics Express"
   volume: 21
-  issue: 15
-  pages: "17615-17624"
-  doi: "10.1364/OE.21.017615"
+  pages: 17615-17624
+  doi: 10.1364/OE.21.017615
   note: >
-    [方法/原理技术论文] NIST Boulder (Papp/Del'Haye/Diddams)，fused-silica 33 GHz 盘形微腔（Vahala 组提供），
-    CW 泵浦 + Mach-Zehnder EO 强度调制产生间距 feo≈FSR 的双边带，
-    通过参量 FWM 放大将 EO 相干性转写进整个微梳。首次给出 "sub-comb" 的直接光学频率证据，
-    并预示通过偏移微波 feo 可控制子梳 offset，但真正完全等间距要求 mi→0（injection lock），
-    这一局限为后续孤子微梳路径（laser_tuning_soliton_access，yi2016.yaml）提供动机。
-
-# ═══════════════════════════════════════════════
-#  NODES
-# ═══════════════════════════════════════════════
-
+    [方法/原理技术论文] NIST Boulder (Papp/Del'Haye/Diddams)，fused-silica 33 GHz 盘形微腔（Vahala 组提供）， CW 泵浦 + Mach-Zehnder EO 强度调制产生间距 feo≈FSR 的双边带， 通过参量 FWM 放大将 EO 相干性转写进整个微梳。首次给出 "sub-comb" 的直接光学频率证据， 并预示通过偏移微波 feo 可控制子梳 offset，但真正完全等间距要求 mi→0（injection lock）， 这一局限为后续孤子微梳路径（laser_tuning_soliton_access，yi2016.yaml）提供动机。
 entities:
   - id: ent.parametrically_seeded_microcomb_p13
     name: "参量种子注入微腔频梳系统（Papp 2013）"

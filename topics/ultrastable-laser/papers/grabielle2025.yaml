@@ -1,20 +1,21 @@
+# Grabielle 2025 — Locking noise in laser frequency stabilization to an optical fiber delay line [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: XSMPRNT3
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: Locking noise in laser frequency stabilization to an optical fiber delay
-    line
+  title: "Locking noise in laser frequency stabilization to an optical fiber delay line"
   year: 2025
-  first_author: Grabielle
-  journal: Optics Express
+  first_author: "Grabielle"
+  journal: "Optics Express"
   volume: 33
-  issue: 16
-  pages: '35028'
+  pages: 35028
   doi: 10.1364/OE.33.035028
-  note: '研究光纤延迟线 PDH 锁频中的锁定过程噪声。 白频率噪声底限来自频率鉴频器非线性。 通过增大锁定带宽降低此噪声至非线性不再限制的水平。 核心贡献：识别并解决光纤延迟线锁频的锁定噪声限制。
-
-    '
+  note: >
+    研究光纤延迟线 PDH 锁频中的锁定过程噪声。 白频率噪声底限来自频率鉴频器非线性。 通过增大锁定带宽降低此噪声至非线性不再限制的水平。 核心贡献：识别并解决光纤延迟线锁频的锁定噪声限制。
 entities: []
 principles:
 - id: pri.fdl_locking_noise_nonlinearity

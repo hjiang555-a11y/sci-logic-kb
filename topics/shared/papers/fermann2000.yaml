@@ -1,35 +1,22 @@
 # Fermann 2000 — Self-Similar Propagation and Amplification of Parabolic Pulses in Optical Fibers [breakthrough]
-# 提取者：Claude Code（AI 草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.5
-# 专题：shared（非线性光纤光学基础 — 自相似抛物线脉冲）
-# contribution_type: breakthrough — 首次理论推导并实验证实 NLSE 含增益项的自相似渐近解
-#   （抛物线脉冲 / similariton），开创光纤放大器中自相似脉冲传播新范式。
-
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "PhysRevLett.84.6010"
+  zotero_key: PhysRevLett.84.6010
   topic: shared
   source_type: journal_paper
   contribution_type: breakthrough
   reliability: high
   title: "Self-Similar Propagation and Amplification of Parabolic Pulses in Optical Fibers"
   year: 2000
-  first_author: Fermann
+  first_author: "Fermann"
   authors: ["M. E. Fermann", "V. I. Kruglov", "B. C. Thomsen", "J. M. Dudley", "J. D. Harvey"]
   journal: "Physical Review Letters"
   volume: 84
-  issue: 26
-  pages: "6010-6013"
-  doi: "10.1103/PhysRevLett.84.6010"
+  pages: 6010-6013
+  doi: 10.1103/PhysRevLett.84.6010
   note: >
-    [breakthrough 论文] 首次将自相似分析方法应用于含增益 NLSE，找到严格的渐近
-    自相似解——抛物线强度包络 + 严格线性啁啾脉冲（后称 similariton）。该解在
-    正常色散高增益光纤放大器中自相似传播，仅由输入脉冲能量和放大器参数决定，
-    与输入脉冲形状无关。实验在 Yb 掺杂光纤放大器（30 dB 增益）中以 FROG 表征
-    验证；压缩后获 68 fs / 80 kW 峰值功率脉冲。抛物线脉冲传播已成为光纤光学中
-    与孤子并列的基础范式。跨专题关联：光频梳脉冲放大、超稳激光种子源、时频传递
-    光纤链路脉冲传输。
-
+    [breakthrough 论文] 首次将自相似分析方法应用于含增益 NLSE，找到严格的渐近 自相似解——抛物线强度包络 + 严格线性啁啾脉冲（后称 similariton）。该解在 正常色散高增益光纤放大器中自相似传播，仅由输入脉冲能量和放大器参数决定， 与输入脉冲形状无关。实验在 Yb 掺杂光纤放大器（30 dB 增益）中以 FROG 表征 验证；压缩后获 68 fs / 80 kW 峰值功率脉冲。抛物线脉冲传播已成为光纤光学中 与孤子并列的基础范式。跨专题关联：光频梳脉冲放大、超稳激光种子源、时频传递 光纤链路脉冲传输。
 entities:
   - id: ent.fermann2000_parabolic_amplifier
     name: "Fermann 2000 Yb 掺杂光纤抛物线脉冲放大器"

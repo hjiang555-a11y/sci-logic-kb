@@ -1,33 +1,21 @@
-# Ideguchi 2016 — 首个 KLM 单腔双向双梳环形激光器 [breakthrough]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-22
-# Schema版本：v4.4
-# 专题：optical-frequency-combs
-# contribution_type: breakthrough（首次用单腔 Kerr 透镜锁模双向环形激光器实现双梳光谱，无需主动稳定）
-
+# Ideguchi 2016 — Kerr-lens mode-locked bidirectional dual-comb ring laser for broadband dual-c... [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "PBGQXUED"
+  zotero_key: PBGQXUED
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
   title: "Kerr-lens mode-locked bidirectional dual-comb ring laser for broadband dual-comb spectroscopy"
   year: 2016
-  first_author: Ideguchi
+  first_author: "Ideguchi"
   journal: "Optica"
   volume: 3
-  issue: 7
-  pages: "748-753"
-  doi: "10.1364/OPTICA.3.000748"
+  pages: 748-753
+  doi: 10.1364/OPTICA.3.000748
   note: >
-    [技术论文 / 里程碑] U Tokyo (Ideguchi, Nakamura, Kobayashi, Goda) 2016 年 Optica。
-    首次用单个 KLM（Kerr 透镜锁模）Ti:sapph **双向环形激光器**实现双梳光谱——
-    利用环形腔中顺时针（CW）与逆时针（CCW）方向传播的两个锁模脉冲因 Kerr 非线性不对称而具有略不同重频（Δf_rep ~ kHz），
-    形成天然"双梳"配置；由于共享同一物理腔，相对相干性被动稳定，**无需主动锁相系统**（f-2f 干涉仪或外部参考腔+伺服反馈）。
-    实现宽带（~700–1000 nm）双梳光谱，互相干时间 >10 s（自由运行），简化传统双梳系统（需两台独立激光器+复杂稳频）。
-    开创了"单腔双梳"技术路线，为双梳光谱学的便携化/低成本化/鲁棒化提供可行方案。
-    v2 子域主线：B-DCS（双梳光谱）主线首次单腔实现——刷新系统简化纪录（从"双激光器+稳频"到"单激光器+自由运行"）。
-
+    [技术论文 / 里程碑] U Tokyo (Ideguchi, Nakamura, Kobayashi, Goda) 2016 年 Optica。 首次用单个 KLM（Kerr 透镜锁模）Ti:sapph **双向环形激光器**实现双梳光谱—— 利用环形腔中顺时针（CW）与逆时针（CCW）方向传播的两个锁模脉冲因 Kerr 非线性不对称而具有略不同重频（Δf_rep ~ kHz）， 形成天然"双梳"配置；由于共享同一物理腔，相对相干性被动稳定，**无需主动锁相系统**（f-2f 干涉仪或外部参考腔+伺服反馈）。 实现宽带（~700–1000 nm）双梳光谱，互相干时间 >10 s（自由运行），简化传统双梳系统（需两台独立激光器+复杂稳频）。 开创了"单腔双梳"技术路线，为双梳光谱学的便携化/低成本化/鲁棒化提供可行方案。 v2 子域主线：B-DCS（双梳光谱）主线首次单腔实现——刷新系统简化纪录（从"双激光器+稳频"到"单激光器+自由运行"）。
 entities:
   - id: ent.klm_bidirectional_ring_dual_comb_i16
     name: "KLM 单腔双向双梳环形激光器（Ideguchi 2016）"

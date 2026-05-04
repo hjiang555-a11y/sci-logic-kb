@@ -1,12 +1,8 @@
-# Del'Haye 2014 — 微腔梳自注入锁定与相位锁定态 [原理验证论文]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: principle_validation
-
+# Del'Haye 2014 — Self-Injection Locking and Phase-Locked States in Microresonator-Based Optica... [principle_validation]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "HSRPL6ZX"
+  zotero_key: HSRPL6ZX
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: principle_validation
@@ -16,22 +12,10 @@ meta:
   first_author: "Del'Haye"
   journal: "Physical Review Letters"
   volume: 112
-  pages: "043905"
-  doi: "10.1103/PhysRevLett.112.043905"
+  pages: 043905
+  doi: 10.1103/PhysRevLett.112.043905
   note: >
-    [原理验证] NIST（Del'Haye, Beha, Papp, Diddams）。通过频域实验揭示微谐振腔光频梳
-    （silica microrod，~25.6 GHz FSR，Q = 1.85×10⁸）从束状梳（bunched comb）向
-    连续相位锁定梳（phase-locked continuous comb）的转变机制。核心发现：
-    (1) 自注入锁定（self-injection locking）是微梳相位锁定的关键机制——
-    当束状梳的子梳（bunches）开始频域重叠时，参量增益介导的注入锁定使频率偏移
-    锁定至零，遵循 Adler 方程描述；(2) 锁定范围与泵浦功率（即重叠区梳齿振幅比）
-    相关，可从 Adler 模型定量拟合；(3) 发现了频率等间距但梳齿间相位关系
-    不确定的相位稳定微梳态——表明存在不依赖超短脉冲环形循环的相位锁定机制，
-    与传统锁模激光器的可饱和吸收体机制本质不同。
-    跨文件节点引用：ent.microresonator_frequency_comb 定义于 kippenberg2011.yaml；
-    pri.parametric_four_wave_mixing_comb 定义于 kippenberg2011.yaml；
-    pri.dissipative_kerr_soliton 定义于 kippenberg2018.yaml。
-
+    [原理验证] NIST（Del'Haye, Beha, Papp, Diddams）。通过频域实验揭示微谐振腔光频梳 （silica microrod，~25.6 GHz FSR，Q = 1.85×10⁸）从束状梳（bunched comb）向 连续相位锁定梳（phase-locked continuous comb）的转变机制。核心发现： (1) 自注入锁定（self-injection locking）是微梳相位锁定的关键机制—— 当束状梳的子梳（bunches）开始频域重叠时，参量增益介导的注入锁定使频率偏移 锁定至零，遵循 Adler 方程描述；(2) 锁定范围与泵浦功率（即重叠区梳齿振幅比） 相关，可从 Adler 模型定量拟合；(3) 发现了频率等间距但梳齿间相位关系 不确定的相位稳定微梳态——表明存在不依赖超短脉冲环形循环的相位锁定机制， 与传统锁模激光器的可饱和吸收体机制本质不同。 跨文件节点引用：ent.microresonator_frequency_comb 定义于 kippenberg2011.yaml； pri.parametric_four_wave_mixing_comb 定义于 kippenberg2011.yaml； pri.dissipative_kerr_soliton 定义于 kippenberg2018.yaml。
 entities:
   - id: ent.silica_microrod_comb_d14
     name: "熔融石英微杆谐振腔频率梳（Del'Haye 2014，自注入锁定实验）"

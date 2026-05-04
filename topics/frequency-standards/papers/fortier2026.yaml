@@ -1,40 +1,21 @@
-# Fortier 2026 — 光学原子钟：定义时间频率计量的未来（综述）[频率标准专题框架文档]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-16
-# Schema版本：v4.1
-# 专题：frequency-standards
-# contribution_type: framework — 此文件为 frequency-standards 专题的光学频率标准框架定义文档
-#   定义：顶层实体（ent.optical_frequency_standard 及 Level 2 分类框架节点）、
-#         核心原理（量子投影噪声、Dick 效应、魔术波长）、跨专题接口关系。
-#   不负责：具体系统工程参数（由各技术论文提供）。
-
+# Fortier 2026 — Optical atomic clocks: defining the future of time and frequency metrology [framework]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "BWR7TEZ6"
+  zotero_key: BWR7TEZ6
   topic: frequency-standards
   source_type: review
   contribution_type: framework
   reliability: high
   title: "Optical atomic clocks: defining the future of time and frequency metrology"
   year: 2026
-  first_author: Fortier
+  first_author: "Fortier"
   journal: "Optica"
   volume: 13
-  issue: 1
-  pages: "143-160"
-  doi: "10.1364/OPTICA.575770"
+  pages: 143-160
+  doi: 10.1364/OPTICA.575770
   note: >
-    [综述论文] frequency-standards 专题框架文档（光学频率标准部分）。
-    NIST/BIPM/NPL 联合综述，系统回顾光学原子钟的原理、架构、支撑技术和应用前景。
-    定义：顶层实体 ent.optical_frequency_standard（Level 1）及三类架构子节点（Level 2）；
-    核心原理 pri.quantum_projection_noise_limit、pri.dick_effect、pri.magic_wavelength_lattice；
-    跨专题接口：光钟 CONDITIONED-BY 超稳激光（询问激光线宽/Dick 效应耦合）。
-    不负责具体系统参数或新实验结果（参见各技术论文）。
-    当前最佳分数不确定度 <10⁻¹⁸，不稳定度 ~5×10⁻¹⁷/√τ（综述汇总值，verification_status: inferred）。
-
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
+    [综述论文] frequency-standards 专题框架文档（光学频率标准部分）。 NIST/BIPM/NPL 联合综述，系统回顾光学原子钟的原理、架构、支撑技术和应用前景。 定义：顶层实体 ent.optical_frequency_standard（Level 1）及三类架构子节点（Level 2）； 核心原理 pri.quantum_projection_noise_limit、pri.dick_effect、pri.magic_wavelength_lattice； 跨专题接口：光钟 CONDITIONED-BY 超稳激光（询问激光线宽/Dick 效应耦合）。 不负责具体系统参数或新实验结果（参见各技术论文）。 当前最佳分数不确定度 <10⁻¹⁸，不稳定度 ~5×10⁻¹⁷/√τ（综述汇总值，verification_status: inferred）。
 entities:
   # ── 框架型实体节点 ─────────────────────────────────────────────────────────
   # Level 1 顶层实体由本框架文档定义（权威来源）。

@@ -1,34 +1,21 @@
-# Diddams 2007 — 首个分辨梳模式分子指纹光谱（VIPA 色散）[breakthrough]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-22
-# Schema版本：v4.4
-# 专题：optical-frequency-combs
-# contribution_type: breakthrough（首次用 VIPA 高分辨色散器空间分辨单个梳齿，实现分子指纹图谱二维成像）
-
+# Diddams 2007 — Molecular fingerprinting with the resolved modes of a femtosecond laser frequ... [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "U9WDX7JI"
+  zotero_key: U9WDX7JI
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
   title: "Molecular fingerprinting with the resolved modes of a femtosecond laser frequency comb"
   year: 2007
-  first_author: Diddams
+  first_author: "Diddams"
   journal: "Nature"
   volume: 445
-  issue: 7128
-  pages: "627-630"
-  doi: "10.1038/nature05524"
+  pages: 627-630
+  doi: 10.1038/nature05524
   note: >
-    [技术论文 / 里程碑] NIST Boulder (Diddams, Hollberg, Mbele) 2007 年 Nature。
-    首次用 **VIPA（virtually imaged phased array）高分辨色散器**空间分辨稳定频率梳的单个梳齿（1 GHz 间距），
-    将梳齿排列为二维阵列（x 方向：VIPA 色散 ~50 GHz FSR，y 方向：光栅色散 ~THz 范围），
-    实现**分辨梳模式的分子指纹光谱成像**——每个"点"代表一根梳齿，覆盖 >6 THz 带宽（633 ± 5 nm 区域），
-    采集时间数毫秒（CCD 并行读出）。
-    演示了碘分子蒸气（I₂）高分辨吸收谱，**直接可视化数千梳齿的分子指纹调制**（每根齿的振幅独立测量）。
-    开创了"并行梳齿访问"光谱学范式，为高带宽扩频通信、相干量子控制、任意光学波形合成提供技术路径。
-    v2 子域主线：B-Spec（光谱展宽/波长扩展）主线——首次空间分辨梳齿 + 分子光谱成像（刷新梳齿访问方式纪录）。
-
+    [技术论文 / 里程碑] NIST Boulder (Diddams, Hollberg, Mbele) 2007 年 Nature。 首次用 **VIPA（virtually imaged phased array）高分辨色散器**空间分辨稳定频率梳的单个梳齿（1 GHz 间距）， 将梳齿排列为二维阵列（x 方向：VIPA 色散 ~50 GHz FSR，y 方向：光栅色散 ~THz 范围）， 实现**分辨梳模式的分子指纹光谱成像**——每个"点"代表一根梳齿，覆盖 >6 THz 带宽（633 ± 5 nm 区域）， 采集时间数毫秒（CCD 并行读出）。 演示了碘分子蒸气（I₂）高分辨吸收谱，**直接可视化数千梳齿的分子指纹调制**（每根齿的振幅独立测量）。 开创了"并行梳齿访问"光谱学范式，为高带宽扩频通信、相干量子控制、任意光学波形合成提供技术路径。 v2 子域主线：B-Spec（光谱展宽/波长扩展）主线——首次空间分辨梳齿 + 分子光谱成像（刷新梳齿访问方式纪录）。
 entities:
   - id: ent.vipa_resolved_mode_comb_spectrometer_d07
     name: "VIPA 分辨梳模式光谱仪（Diddams 2007）"

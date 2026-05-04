@@ -1,39 +1,21 @@
-# Giunta 2019 — 光学频率梳 20 年发展：从基础物理到 20 位数精度 [光学频率梳专题框架文档]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-16
-# Schema版本：v4.0
-# 专题：optical-frequency-combs
-# contribution_type: framework — 此文件为 optical-frequency-combs 专题的顶层架构定义文档
-#   定义：顶层实体 ent.optical_frequency_comb（权威来源）、核心原理（f-2f 自参考、光学分频、频率比测量）。
-#   不负责：具体梳实现的工程参数（由各技术论文提供）。
-
+# Giunta 2019 — 20 Years and 20 Decimal Digits: A Journey With Optical Frequency Combs [framework]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "KTHCQRJ2"
+  zotero_key: KTHCQRJ2
   topic: optical-frequency-combs
   source_type: review
   contribution_type: framework
   reliability: high
   title: "20 Years and 20 Decimal Digits: A Journey With Optical Frequency Combs"
   year: 2019
-  first_author: Giunta
+  first_author: "Giunta"
   journal: "IEEE Photonics Technology Letters"
   volume: 31
-  issue: 23
-  pages: "1898-1901"
-  doi: "10.1109/LPT.2019.2947907"
+  pages: 1898-1901
+  doi: 10.1109/LPT.2019.2947907
   note: >
-    [综述论文] optical-frequency-combs 专题框架文档。
-    Menlo Systems 团队（含 Hänsch/Holzwarth）回顾光学频率梳从 1999 年诞生到 2019 年 20 位数精度的发展历程。
-    定义：顶层实体 ent.optical_frequency_comb（Level 1，权威来源）；
-    核心原理 pri.self_referencing_f2f、pri.optical_frequency_division_microwave、pri.frequency_ratio_measurement；
-    方法 meth.photonic_microwave_synthesis 及对应指标。
-    不负责具体梳架构的工程参数（如相噪地板、保真度数值由 giunta2020.yaml 等技术论文提供）。
-    作为 retrospective review，综述转述值标注 verification_status: inferred。
-
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
+    [综述论文] optical-frequency-combs 专题框架文档。 Menlo Systems 团队（含 Hänsch/Holzwarth）回顾光学频率梳从 1999 年诞生到 2019 年 20 位数精度的发展历程。 定义：顶层实体 ent.optical_frequency_comb（Level 1，权威来源）； 核心原理 pri.self_referencing_f2f、pri.optical_frequency_division_microwave、pri.frequency_ratio_measurement； 方法 meth.photonic_microwave_synthesis 及对应指标。 不负责具体梳架构的工程参数（如相噪地板、保真度数值由 giunta2020.yaml 等技术论文提供）。 作为 retrospective review，综述转述值标注 verification_status: inferred。
 entities:
   - id: ent.optical_frequency_comb
     name: "光学频率梳（通用）"

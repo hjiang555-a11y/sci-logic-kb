@@ -1,32 +1,22 @@
 # Bothwell 2019 — JILA SrI optical lattice clock with uncertainty of 2.0×10⁻¹⁸ [evidence]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：frequency-standards
-# contribution_type: evidence
-# 注意：PDF 在仓库中不可解析，本条目基于公开文献记录。
-
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "BOTHWELL2019"
+  zotero_key: BOTHWELL2019
   topic: frequency-standards
   source_type: journal_paper
   contribution_type: evidence
   reliability: medium
   title: "JILA SrI optical lattice clock with uncertainty of 2.0×10⁻¹⁸"
   year: 2019
-  first_author: Bothwell
-  authors: ["T. Bothwell", "D. Kedar", "E. Oelker", "J. M. Robinson", "S. L. Bromley",
-    "W. L. Tew", "J. Ye", "C. J. Kennedy"]
+  first_author: "Bothwell"
+  authors: ["T. Bothwell", "D. Kedar", "E. Oelker", "J. M. Robinson", "S. L. Bromley", "W. L. Tew", "J. Ye", "C. J. Kennedy"]
   journal: "Metrologia"
   volume: 56
-  issue: 6
-  pages: "065004"
-  doi: "10.1088/1681-7575/ab4089"
+  pages: 065004
+  doi: 10.1088/1681-7575/ab4089
   note: >
-    [期刊论文] JILA. JILA SrI 光晶格钟系统不确定度再评估到 2.0×10⁻¹⁸，
-    关键改进：BBR shift 建模（结合 2019 JILA 精确原子响应测量）、lattice ac Stark
-    高阶项、atom-atom 相互作用建模。接续 Nicholson 2015 的 2.1×10⁻¹⁸ 纪录。
-
+    [期刊论文] JILA. JILA SrI 光晶格钟系统不确定度再评估到 2.0×10⁻¹⁸， 关键改进：BBR shift 建模（结合 2019 JILA 精确原子响应测量）、lattice ac Stark 高阶项、atom-atom 相互作用建模。接续 Nicholson 2015 的 2.1×10⁻¹⁸ 纪录。
 entities:
   - id: ent.jila_sri_sr_clock_b19
     name: "JILA SrI ⁸⁷Sr 光晶格钟（Bothwell 2019, 2×10⁻¹⁸）"

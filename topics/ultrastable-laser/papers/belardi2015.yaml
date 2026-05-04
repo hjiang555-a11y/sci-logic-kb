@@ -1,22 +1,21 @@
+# Belardi 2015 — Design and Properties of Hollow Antiresonant Fibers for the Visible and Near ... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: 2F3PD62T
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: Design and Properties of Hollow Antiresonant Fibers for the Visible and Near
-    Infrared Spectral Range
+  title: "Design and Properties of Hollow Antiresonant Fibers for the Visible and Near Infrared Spectral Range"
   year: 2015
-  first_author: Belardi
-  journal: Journal of Lightwave Technology
+  first_author: "Belardi"
+  journal: "Journal of Lightwave Technology"
   volume: 33
-  issue: 21
   pages: 4497-4503
   doi: 10.1109/JLT.2015.2477775
-  note: '系统讨论反谐振空心光纤（HC-ARF）在可见/近红外的设计自由度。 论文给出第一反谐振窗口由壁厚决定的基础设计规则，展示 free core boundary
-    结构可减弱包层模耦合，并实验实现 0.75–1.6 μm 的一阶反谐振传输与 480 nm 处 175 dB/km 的可见光低损耗。对本知识库的意义：为后续
-    空心光纤低背向散射（Michaud-Belleau 2021）与热噪声（Michaud-Belleau 2022） 条目提供可复用的基础设计节点。
-
-    '
+  note: >
+    系统讨论反谐振空心光纤（HC-ARF）在可见/近红外的设计自由度。 论文给出第一反谐振窗口由壁厚决定的基础设计规则，展示 free core boundary 结构可减弱包层模耦合，并实验实现 0.75–1.6 μm 的一阶反谐振传输与 480 nm 处 175 dB/km 的可见光低损耗。对本知识库的意义：为后续 空心光纤低背向散射（Michaud-Belleau 2021）与热噪声（Michaud-Belleau 2022） 条目提供可复用的基础设计节点。
 entities:
 - id: ent.antiresonant_hollow_core_fiber
   name: 反谐振空心光纤（HC-ARF）

@@ -1,21 +1,21 @@
+# Chen 2014 — A compact, robust, and transportable ultra-stable laser with a fractional fre... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: WTUHUAQ7
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: A compact, robust, and transportable ultra-stable laser with a fractional
-    frequency instability of 1×10⁻¹⁵
+  title: "A compact, robust, and transportable ultra-stable laser with a fractional frequency instability of 1×10⁻¹⁵"
   year: 2014
-  first_author: Chen
-  journal: Review of Scientific Instruments
+  first_author: "Chen"
+  journal: "Review of Scientific Instruments"
   volume: 85
-  pages: '113107'
+  pages: 113107
   doi: 10.1063/1.4898334
-  note: '面向 STE-QUEST 空间任务的紧凑可搬运超稳激光系统， 10 cm ULE 腔，20 个细柱分三组在对称面上夹持， 加速度灵敏度 1.7,
-    8.0, 39 ×10⁻¹¹/g， 三角帽测量确定 σ_y = 1×10⁻¹⁵ @ 1–10 s。 整体光学系统尺寸 40×20×30 cm。 核心贡献：首个面向
-    STE-QUEST 的可搬运超稳激光原型。
-
-    '
+  note: >
+    面向 STE-QUEST 空间任务的紧凑可搬运超稳激光系统， 10 cm ULE 腔，20 个细柱分三组在对称面上夹持， 加速度灵敏度 1.7, 8.0, 39 ×10⁻¹¹/g， 三角帽测量确定 σ_y = 1×10⁻¹⁵ @ 1–10 s。 整体光学系统尺寸 40×20×30 cm。 核心贡献：首个面向 STE-QUEST 的可搬运超稳激光原型。
 entities:
 - id: ent.compact_transportable_cavity_c14
   name: STE-QUEST 紧凑可搬运参考腔（Chen 2014）

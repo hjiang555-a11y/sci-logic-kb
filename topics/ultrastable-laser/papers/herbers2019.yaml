@@ -1,20 +1,21 @@
+# Herbers 2019 — Phase noise of frequency doublers in optical clock lasers [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: WP8FMS5N
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: Phase noise of frequency doublers in optical clock lasers
+  title: "Phase noise of frequency doublers in optical clock lasers"
   year: 2019
-  first_author: Herbers
-  journal: Optics Express
+  first_author: "Herbers"
+  journal: "Optics Express"
   volume: 27
-  issue: 16
   pages: 23262-23273
   doi: 10.1364/OE.27.023262
-  note: '系统表征 PPLN 波导频率倍频器（1396 nm → 698 nm）在光钟应用中的相位噪声。 双 SHG 模块对比测量表明，稳态工作时倍频器引入的额外相位噪声
-    比当前最佳询问激光噪声低两个数量级以上。 光功率变化导致的相位啁啾对钟精度的影响也做了评估。 核心贡献：证明 PPLN 波导 SHG 不是光钟性能的限制因素。
-
-    '
+  note: >
+    系统表征 PPLN 波导频率倍频器（1396 nm → 698 nm）在光钟应用中的相位噪声。 双 SHG 模块对比测量表明，稳态工作时倍频器引入的额外相位噪声 比当前最佳询问激光噪声低两个数量级以上。 光功率变化导致的相位啁啾对钟精度的影响也做了评估。 核心贡献：证明 PPLN 波导 SHG 不是光钟性能的限制因素。
 entities:
 - id: ent.ppln_shg_module_h19
   name: PPLN 波导二次谐波产生模块

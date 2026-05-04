@@ -1,30 +1,21 @@
-# Leopardi 2017 — 单分支 Er:fiber 光频梳，10⁻¹⁸ 级光频测量不稳定度
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical
-
+# Leopardi 2017 — Single-branch Er:fiber frequency comb for precision optical metrology with 10... [technical]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "8XUFRL4K"
+  zotero_key: 8XUFRL4K
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical
   reliability: high
   title: "Single-branch Er:fiber frequency comb for precision optical metrology with 10⁻¹⁸ fractional instability"
   year: 2017
-  first_author: Leopardi
+  first_author: "Leopardi"
   journal: "Optica"
   volume: 4
-  issue: 8
-  pages: "879-885"
-  doi: "10.1364/OPTICA.4.000879"
+  pages: 879-885
+  doi: 10.1364/OPTICA.4.000879
   note: >
-    [技术论文] NIST Boulder（Fortier/Diddams 组）。单分支 Er:fiber 梳：所有关键光纤链路
-    共模并置于锁相环伺服环内，从而消除多分支架构中光纤相位噪声的非共模残差。
-    实测分数光频测量不确定度 <1×10⁻¹⁹，1 s 不稳定度 3×10⁻¹⁸，1000 s 降至 1×10⁻¹⁹，
-    为光钟比对提供计量级桥接工具。
-
+    [技术论文] NIST Boulder（Fortier/Diddams 组）。单分支 Er:fiber 梳：所有关键光纤链路 共模并置于锁相环伺服环内，从而消除多分支架构中光纤相位噪声的非共模残差。 实测分数光频测量不确定度 <1×10⁻¹⁹，1 s 不稳定度 3×10⁻¹⁸，1000 s 降至 1×10⁻¹⁹， 为光钟比对提供计量级桥接工具。
 entities:
   - id: ent.single_branch_erfiber_comb_l17
     name: "单分支 Er:fiber 光频梳（Leopardi 2017）"

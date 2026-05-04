@@ -1,34 +1,22 @@
 # Oelker 2019 — Demonstration of 4.8×10⁻¹⁷ stability at 1 s for two independent optical clocks [evidence]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：frequency-standards
-# contribution_type: evidence
-# 注意：PDF 本文件在仓库中损坏（无 trailer），本条目基于公开文献记录。
-
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "OELKER2019"
+  zotero_key: OELKER2019
   topic: frequency-standards
   source_type: journal_paper
   contribution_type: evidence
   reliability: medium
   title: "Demonstration of 4.8×10⁻¹⁷ stability at 1 s for two independent optical clocks"
   year: 2019
-  first_author: Oelker
-  authors: ["E. Oelker", "R. B. Hutson", "C. J. Kennedy", "L. Sonderhouse", "T. Bothwell",
-    "A. Goban", "D. Kedar", "C. Sanner", "J. M. Robinson", "G. E. Marti", "D. G. Matei",
-    "T. Legero", "M. Giunta", "R. Holzwarth", "F. Riehle", "U. Sterr", "J. Ye"]
+  first_author: "Oelker"
+  authors: ["E. Oelker", "R. B. Hutson", "C. J. Kennedy", "L. Sonderhouse", "T. Bothwell", "A. Goban", "D. Kedar", "C. Sanner", "J. M. Robinson", "G. E. Marti", "D. G. Matei", "T. Legero", "M. Giunta", "R. Holzwarth", "F. Riehle", "U. Sterr", "J. Ye"]
   journal: "Nature Photonics"
   volume: 13
-  pages: "714-719"
-  doi: "10.1038/s41566-019-0493-4"
+  pages: 714-719
+  doi: 10.1038/s41566-019-0493-4
   note: >
-    [期刊论文] JILA + PTB. 两台独立 ⁸⁷Sr 光晶格钟（3D optical lattice / cryogenic lattice）
-    由 PTB 硅晶振腔室稳频激光（Si cavity, 563 nm）询问，实现 4.8×10⁻¹⁷ @ 1 s
-    Allan deviation——Dick-limited 短期稳定度突破，coherence time 显著延长，直接受益于
-    超稳激光的 thermal noise 限制激光。
-    此结果支持 Bothwell 2019、Bothwell 2022 的 mm-scale 重力红移实验等后续工作。
-
+    [期刊论文] JILA + PTB. 两台独立 ⁸⁷Sr 光晶格钟（3D optical lattice / cryogenic lattice） 由 PTB 硅晶振腔室稳频激光（Si cavity, 563 nm）询问，实现 4.8×10⁻¹⁷ @ 1 s Allan deviation——Dick-limited 短期稳定度突破，coherence time 显著延长，直接受益于 超稳激光的 thermal noise 限制激光。 此结果支持 Bothwell 2019、Bothwell 2022 的 mm-scale 重力红移实验等后续工作。
 entities:
   - id: ent.jila_dual_sr_clock_si_lo_o19
     name: "JILA 双 ⁸⁷Sr 光晶格钟 + Si cavity LO（Oelker 2019）"

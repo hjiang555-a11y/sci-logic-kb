@@ -1,46 +1,20 @@
-# Zeng 2024 — Measurement of atmospheric non-reciprocity for satellite-based TWTFT [evidence]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：time-frequency-transfer
-# contribution_type: evidence
-
+# Zeng 2024 — Measurement of atmospheric non-reciprocity effects for satellite-based two-wa... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "kbzasp75"
+  zotero_key: kbzasp75
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
   reliability: medium
   title: "Measurement of atmospheric non-reciprocity effects for satellite-based two-way time-frequency transfer"
   year: 2024
-  first_author: Zeng
-  authors:
-  - "Ting Zeng"
-  - "Qi Shen"
-  - "Yuan Cao"
-  - "Jian-Yu Guan"
-  - "Meng-Zhe Lian"
-  - "Jin-Jian Han"
-  - "Lei Hou"
-  - "Jian Lu"
-  - "Xin-Xin Peng"
-  - "Min Li"
-  - "Wei-Yue Liu"
-  - "Jin-Cai Wu"
-  - "Yong Wang"
-  - "Juan Yin"
-  - "Ji-Gang Ren"
-  - "Hai-Feng Jiang"
-  - "Qiang Zhang"
-  - "Cheng-Zhi Peng"
-  - "Jian-Wei Pan"
+  first_author: "Zeng"
+  authors: ["Ting Zeng", "Qi Shen", "Yuan Cao", "Jian-Yu Guan", "Meng-Zhe Lian", "Jin-Jian Han", "Lei Hou", "Jian Lu", "Xin-Xin Peng", "Min Li", "Wei-Yue Liu", "Jin-Cai Wu", "Yong Wang", "Juan Yin", "Ji-Gang Ren", "Hai-Feng Jiang", "Qiang Zhang", "Cheng-Zhi Peng", "Jian-Wei Pan"]
   journal: "Photonics Research"
-  doi: "10.1364/PRJ.511141"
+  doi: 10.1364/PRJ.511141
   note: >
-    [期刊论文] USTC / NTSC 合作团队。定量测量卫星-地面双向时频传递 (TWTFT) 中大气
-    non-reciprocity 效应（两方向不同穿越时间导致的大气状态不一致），
-    为 ground↔satellite 光学链路的精度评估与校正模型提供实测数据。
-
+    [期刊论文] USTC / NTSC 合作团队。定量测量卫星-地面双向时频传递 (TWTFT) 中大气 non-reciprocity 效应（两方向不同穿越时间导致的大气状态不一致）， 为 ground↔satellite 光学链路的精度评估与校正模型提供实测数据。
 principles:
   - id: pri.atmospheric_non_reciprocity_satellite_twtft
     name: "卫星双向 TWTFT 大气非互易性原理"

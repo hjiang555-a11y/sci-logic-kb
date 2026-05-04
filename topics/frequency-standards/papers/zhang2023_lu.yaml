@@ -1,30 +1,21 @@
-# Zhang 2023 — ¹⁷⁶Lu⁺ clock comparison at 10⁻¹⁸ via correlation spectroscopy [evidence]
-# 提取者：Claude Code（AI 草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.5
-# 专题：frequency-standards（¹⁷⁶Lu⁺ 离子光钟 — 关联谱比对）
-# contribution_type: evidence — 通过关联谱技术实现 ¹⁷⁶Lu⁺ 光钟 10⁻¹⁸ 级比对；
-#   演示 E3 跃迁光钟的高精度。
-
+# Zhang 2023 — 176Lu+ clock comparison at the 10^-18 level via correlation spectroscopy [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "sciadv.adg1971"
+  zotero_key: sciadv.adg1971
   topic: frequency-standards
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "176Lu+ clock comparison at the 10^-18 level via correlation spectroscopy"
   year: 2023
-  first_author: Zhang
+  first_author: "Zhang"
   authors: ["Zhiqiang Zhang", "Kyle J. Arnold", "Rattakorn Kaewuam", "Murray D. Barrett"]
   journal: "Science Advances"
   volume: 9
-  doi: "10.1126/sciadv.adg1971"
+  doi: 10.1126/sciadv.adg1971
   note: >
-    新加坡国立大学（NUS）团队利用关联谱（correlation spectroscopy）
-    技术实现两台 ¹⁷⁶Lu⁺ 光钟的 10⁻¹⁸ 级频率比对。
-    ¹⁷⁶Lu⁺ 的 ¹S₀→³D₁ 钟跃迁具有极低的系统频移灵敏度。
-    关联谱可抑制共模噪声，提高比对灵敏度。
-
+    新加坡国立大学（NUS）团队利用关联谱（correlation spectroscopy） 技术实现两台 ¹⁷⁶Lu⁺ 光钟的 10⁻¹⁸ 级频率比对。 ¹⁷⁶Lu⁺ 的 ¹S₀→³D₁ 钟跃迁具有极低的系统频移灵敏度。 关联谱可抑制共模噪声，提高比对灵敏度。
 entities:
   - id: ent.zhang2023_lu176_correlation_spectroscopy
     name: "Zhang 2023 ¹⁷⁶Lu⁺ 光钟关联谱 10⁻¹⁸ 比对（NUS）"

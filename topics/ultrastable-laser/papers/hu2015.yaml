@@ -1,20 +1,21 @@
+# Hu 2015 — An optical fiber spool for laser stabilization with reduced acceleration sens... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: KH82PQJ2
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: An optical fiber spool for laser stabilization with reduced acceleration
-    sensitivity to 10⁻¹²/g
+  title: "An optical fiber spool for laser stabilization with reduced acceleration sensitivity to 10⁻¹²/g"
   year: 2015
-  first_author: Hu
-  journal: Chinese Physics B
+  first_author: "Hu"
+  journal: "Chinese Physics B"
   volume: 24
-  pages: '104213'
+  pages: 104213
   doi: 10.1088/1674-1056/24/10/104213
-  note: '对称安装光纤盘设计，FEM 优化实现水平和垂直方向 加速度灵敏度分别降至 3.25×10⁻¹²/g 和 5.38×10⁻¹²/g。 对几何参数变化不敏感，抗加工公差。
-    核心贡献：光纤稳频系统振动噪声抑制的关键部件设计。
-
-    '
+  note: >
+    对称安装光纤盘设计，FEM 优化实现水平和垂直方向 加速度灵敏度分别降至 3.25×10⁻¹²/g 和 5.38×10⁻¹²/g。 对几何参数变化不敏感，抗加工公差。 核心贡献：光纤稳频系统振动噪声抑制的关键部件设计。
 entities:
 - id: ent.ultralow_accel_fiber_spool_h15
   name: 超低加速度灵敏度光纤盘（Hu 2015）

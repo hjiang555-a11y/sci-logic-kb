@@ -1,23 +1,21 @@
+# Parke 2025 — Three hundred microsecond optical cavity storage time and 10⁻⁷ active RAM can... [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: U2LXSU62
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: breakthrough
-  primary_metric_exempt_reason: new_method
   reliability: high
-  title: Three hundred microsecond optical cavity storage time and 10⁻⁷ active RAM
-    cancellation for 10⁻¹⁹ laser frequency stabilization
+  title: "Three hundred microsecond optical cavity storage time and 10⁻⁷ active RAM cancellation for 10⁻¹⁹ laser frequency stabilization"
   year: 2025
-  first_author: Parke
-  journal: Optics Letters
+  first_author: "Parke"
+  journal: "Optics Letters"
   volume: 50
-  issue: 10
   pages: 3405-3408
   doi: 10.1364/OL.560815
-  note: '采用 68 cm 长 FP 参考腔实现 300 μs 光学存储时间（Finesse 410,000）， 配合退火质子交换（APE）铌酸锂波导 EOM
-    的偏置电场主动 RAM 消除方案， 将 RAM 引起的频率不稳定度降至 3×10⁻¹⁹ @ 10–100 s，远低于腔热噪声极限。 核心贡献：在频率鉴别系数和
-    PDH 调制保真度两个基本面同时突破现有技术水平。
-
-    '
+  note: >
+    采用 68 cm 长 FP 参考腔实现 300 μs 光学存储时间（Finesse 410,000）， 配合退火质子交换（APE）铌酸锂波导 EOM 的偏置电场主动 RAM 消除方案， 将 RAM 引起的频率不稳定度降至 3×10⁻¹⁹ @ 10–100 s，远低于腔热噪声极限。 核心贡献：在频率鉴别系数和 PDH 调制保真度两个基本面同时突破现有技术水平。
 entities:
 - id: ent.long_cavity_68cm_p25
   name: 68 cm 长 FP 参考腔

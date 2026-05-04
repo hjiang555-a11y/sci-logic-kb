@@ -1,48 +1,22 @@
-# Nakamura 2020 — Coherent optical clock down-conversion for microwave frequencies with 10⁻¹⁸ instability [evidence]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：time-frequency-transfer
-# contribution_type: evidence — NIST Boulder Science 文章。光梳下转换产生 10 GHz 微波，
-#   fractional instability 1×10⁻¹⁸，为雷达、导航、VLBI 提供光钟稳定度电子信号。
-
+# Nakamura 2020 — Coherent optical clock down-conversion for microwave frequencies with 10⁻¹⁸ i... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "imx242p7"
+  zotero_key: imx242p7
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Coherent optical clock down-conversion for microwave frequencies with 10⁻¹⁸ instability"
   year: 2020
-  first_author: Nakamura
-  authors:
-  - "T. Nakamura"
-  - "J. Davila-Rodriguez"
-  - "H. Leopardi"
-  - "J. A. Sherman"
-  - "T. M. Fortier"
-  - "X. J. Xie"
-  - "J. C. Campbell"
-  - "W. F. McGrew"
-  - "X. G. Zhang"
-  - "Y. S. Hassan"
-  - "D. Nicolodi"
-  - "K. Beloy"
-  - "A. D. Ludlow"
-  - "S. A. Diddams"
-  - "F. Quinlan"
+  first_author: "Nakamura"
+  authors: ["T. Nakamura", "J. Davila-Rodriguez", "H. Leopardi", "J. A. Sherman", "T. M. Fortier", "X. J. Xie", "J. C. Campbell", "W. F. McGrew", "X. G. Zhang", "Y. S. Hassan", "D. Nicolodi", "K. Beloy", "A. D. Ludlow", "S. A. Diddams", "F. Quinlan"]
   journal: "Science"
   volume: 368
-  issue: 6493
-  pages: "889-892"
-  doi: "10.1126/science.abb2473"
+  pages: 889-892
+  doi: 10.1126/science.abb2473
   note: >
-    [期刊论文] NIST Boulder (Quinlan, Diddams, Ludlow). 两独立光-电信号发生器对比，
-    演示 10 GHz 微波相位精确跟随光钟相位，fractional instability 1×10⁻¹⁸（电学域）。
-    这是光钟性能首次完整转移至电学域，为雷达、导航、通信、长基线 VLBI 等提供
-    光钟级电学载波。本文连接 time-frequency-transfer（下转换后的微波作为 TF 分发物理量）
-    与 frequency-standards（光钟源）两个专题。
-
+    [期刊论文] NIST Boulder (Quinlan, Diddams, Ludlow). 两独立光-电信号发生器对比， 演示 10 GHz 微波相位精确跟随光钟相位，fractional instability 1×10⁻¹⁸（电学域）。 这是光钟性能首次完整转移至电学域，为雷达、导航、通信、长基线 VLBI 等提供 光钟级电学载波。本文连接 time-frequency-transfer（下转换后的微波作为 TF 分发物理量） 与 frequency-standards（光钟源）两个专题。
 entities:
   - id: ent.optical_to_microwave_photonic_synth_n20
     name: "光钟相位→10 GHz 微波相干下转换合成器（Nakamura 2020）"

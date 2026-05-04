@@ -1,36 +1,21 @@
-# Washburn 2004 — 首台近红外 Er:fiber 全相位锁定频率梳
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-21
-# Schema版本：v4.3
-# 专题：optical-frequency-combs
-# contribution_type: breakthrough（首次演示 Er:fiber 全相位锁定梳在近红外，开辟光纤激光梳路径）
-
+# Washburn 2004 — Phase-locked, erbium-fiber-laser-based frequency comb in the near infrared [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "TP9NSD4F"
+  zotero_key: TP9NSD4F
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
   title: "Phase-locked, erbium-fiber-laser-based frequency comb in the near infrared"
   year: 2004
-  first_author: Washburn
+  first_author: "Washburn"
   journal: "Optics Letters"
   volume: 29
-  issue: 3
-  pages: "250-252"
-  doi: "10.1364/OL.29.000250"
+  pages: 250-252
+  doi: 10.1364/OL.29.000250
   note: >
-    [技术论文 / 里程碑] NIST Boulder（Diddams/Newbury）+ OFS Labs 联合工作。
-    首次演示在近红外（1100–2200 nm）完全自参考相位锁定的 Er:fiber 频率梳：
-    (1) 锁模 EDFA 脉冲放大后进入新型色散平坦高非线性光纤（HNLF），展宽至覆盖倍频程；
-    (2) 标准 f-2f 外差探测 f_CEO；(3) 腔内光纤拉伸器锁 f_r，泵浦功率控 f_0；
-    (4) 两自由度均锁到同一 RF 基准，直接建立光-RF 链路。
-    此前 Er:fiber 梳要么只锁 f_r、要么需双参考（RF + 光学），本工作是首台 Er:fiber
-    单参考全锁梳——拉开"光纤激光梳替代钛宝石梳用于场外计量"序幕。
-    对齐子域主线（scoping_principles v2）：A1-Rep（~100 MHz 级）、A1-Noise（phase-locked）。
-    跨文件引用：ent.optical_frequency_comb（giunta2019）、pri.self_referencing_f2f（giunta2019）、
-    pri.comb_equation、pri.supercontinuum_octave_spanning（已有节点）。
-
+    [技术论文 / 里程碑] NIST Boulder（Diddams/Newbury）+ OFS Labs 联合工作。 首次演示在近红外（1100–2200 nm）完全自参考相位锁定的 Er:fiber 频率梳： (1) 锁模 EDFA 脉冲放大后进入新型色散平坦高非线性光纤（HNLF），展宽至覆盖倍频程； (2) 标准 f-2f 外差探测 f_CEO；(3) 腔内光纤拉伸器锁 f_r，泵浦功率控 f_0； (4) 两自由度均锁到同一 RF 基准，直接建立光-RF 链路。 此前 Er:fiber 梳要么只锁 f_r、要么需双参考（RF + 光学），本工作是首台 Er:fiber 单参考全锁梳——拉开"光纤激光梳替代钛宝石梳用于场外计量"序幕。 对齐子域主线（scoping_principles v2）：A1-Rep（~100 MHz 级）、A1-Noise（phase-locked）。 跨文件引用：ent.optical_frequency_comb（giunta2019）、pri.self_referencing_f2f（giunta2019）、 pri.comb_equation、pri.supercontinuum_octave_spanning（已有节点）。
 entities:
   - id: ent.er_fiber_comb_washburn04
     name: "NIST Er:fiber 近红外全锁频率梳（Washburn 2004）"

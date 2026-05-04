@@ -1,42 +1,22 @@
-# Diddams, Vahala & Udem 2020 — Optical Frequency Combs: Coherently Uniting the Electromagnetic Spectrum [framework]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：optical-frequency-combs
-# contribution_type: framework — Science 2020 重磅综述，OFC 三大领军人物（NIST Diddams +
-#   Caltech Vahala + MPQ Udem）联合署名，宣告 OFC 从单一技术到"统一电磁波谱相干标尺"
-#   的学科地位；定义 OFC 跨 RF–THz–光–XUV 的桥梁角色。
-
+# Diddams 2020 — Optical frequency combs: Coherently uniting the electromagnetic spectrum [framework]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "DIDDAMS2020-SCIENCE"
+  zotero_key: DIDDAMS2020-SCIENCE
   topic: optical-frequency-combs
   source_type: review
   contribution_type: framework
   reliability: high
   title: "Optical frequency combs: Coherently uniting the electromagnetic spectrum"
   year: 2020
-  first_author: Diddams
+  first_author: "Diddams"
   authors: ["Scott A. Diddams", "Kerry Vahala", "Thomas Udem"]
   journal: "Science"
   volume: 369
-  issue: 6501
-  pages: "eaay3676"
-  doi: "10.1126/science.aay3676"
+  pages: eaay3676
+  doi: 10.1126/science.aay3676
   note: >
-    [综述论文 / 奠基文献 · B1 OFC 学科定位综述] Science 2020 年 369 卷重磅综述，
-    OFC 三大领军人物（NIST Diddams + Caltech Vahala + MPQ Udem）联合署名。本综述的
-    学科地位贡献（与 Udem 2002 / Cundiff 2003 / Diddams 2010 / Fortier 2019 综述并列）：
-    (1) 明确 OFC 作为**统一电磁波谱的相干频率标尺**——从 mHz 级量子钟跃迁到 XUV（自由
-    电子激光、HHG）到 THz 到 RF，全部用同一把 f_rep/f_o 两参数决定的梳齿网格度量；
-    (2) 强调微梳（microresonator Kerr combs）作为芯片级平台的崛起，与光纤梳、
-    Ti:sapphire 梳形成三足鼎立；
-    (3) 阐述 OFC 在引力波探测、系外行星搜寻、基本物理常数检验（α·m_e/m_p）、
-    量子计算相干控制中的新兴角色；
-    (4) 指出 OFC 不再是单纯的"频率测量工具"，而是"相干光与微波之间的通用桥梁"——
-    这改变了"频率标准"概念的外延。
-    本文件建立 pri.ofc_unified_electromagnetic_spectrum_framework 顶层框架原理，作为
-    OFC 专题学科定位的权威声明。
-
+    [综述论文 / 奠基文献 · B1 OFC 学科定位综述] Science 2020 年 369 卷重磅综述， OFC 三大领军人物（NIST Diddams + Caltech Vahala + MPQ Udem）联合署名。本综述的 学科地位贡献（与 Udem 2002 / Cundiff 2003 / Diddams 2010 / Fortier 2019 综述并列）： (1) 明确 OFC 作为**统一电磁波谱的相干频率标尺**——从 mHz 级量子钟跃迁到 XUV（自由 电子激光、HHG）到 THz 到 RF，全部用同一把 f_rep/f_o 两参数决定的梳齿网格度量； (2) 强调微梳（microresonator Kerr combs）作为芯片级平台的崛起，与光纤梳、 Ti:sapphire 梳形成三足鼎立； (3) 阐述 OFC 在引力波探测、系外行星搜寻、基本物理常数检验（α·m_e/m_p）、 量子计算相干控制中的新兴角色； (4) 指出 OFC 不再是单纯的"频率测量工具"，而是"相干光与微波之间的通用桥梁"—— 这改变了"频率标准"概念的外延。 本文件建立 pri.ofc_unified_electromagnetic_spectrum_framework 顶层框架原理，作为 OFC 专题学科定位的权威声明。
 entities: []
 
 principles:

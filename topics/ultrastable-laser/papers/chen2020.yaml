@@ -1,19 +1,21 @@
+# Chen 2020 — Laser frequency instability of 6×10⁻¹⁶ using 10-cm-long cavities on a cubic s... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: Z37PT8RC
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: Laser frequency instability of 6×10⁻¹⁶ using 10-cm-long cavities on a cubic
-    spacer
+  title: "Laser frequency instability of 6×10⁻¹⁶ using 10-cm-long cavities on a cubic spacer"
   year: 2020
-  first_author: Chen
-  journal: Chinese Optics Letters
+  first_author: "Chen"
+  journal: "Chinese Optics Letters"
   volume: 18
-  pages: '030201'
+  pages: 030201
   doi: 10.3788/COL202018.030201
-  note: '10 cm 立方 ULE 腔（两对正交 FP 腔共享同一间隔物）， 刚性安装可搬运，1064 nm，频率不稳定度 6×10⁻¹⁶ @ 1s。 核心贡献：立方几何双腔方案，兼顾紧凑、可搬运和低振动灵敏度。
-
-    '
+  note: >
+    10 cm 立方 ULE 腔（两对正交 FP 腔共享同一间隔物）， 刚性安装可搬运，1064 nm，频率不稳定度 6×10⁻¹⁶ @ 1s。 核心贡献：立方几何双腔方案，兼顾紧凑、可搬运和低振动灵敏度。
 entities:
 - id: ent.cubic_dual_cavity_c20
   name: 10 cm 立方双 FP 腔（Chen 2020）

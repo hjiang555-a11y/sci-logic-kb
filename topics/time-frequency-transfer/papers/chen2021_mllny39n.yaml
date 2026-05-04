@@ -1,52 +1,22 @@
-# Chen 2021 — Twin-field QKD over 511 km optical fibre linking two metropolitan areas [evidence]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：time-frequency-transfer
-# contribution_type: evidence — USTC 陈久鹏团队。Nature Photonics。TF-QKD 本身不是 TF 传递
-#   主题，但文中使用的"12 根光纤 cable 中 3 根分别承载 量子信道 / 光学同步 / 频率锁定"为 511 km
-#   场部署 T&F 传输提供代表性基础设施证据。
-
+# Chen 2021 — Twin-field quantum key distribution over a 511 km optical fibre linking two d... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "mllny39n"
+  zotero_key: mllny39n
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
   reliability: medium
   title: "Twin-field quantum key distribution over a 511 km optical fibre linking two distant metropolitan areas"
   year: 2021
-  first_author: Chen
-  authors:
-  - "J. P. Chen"
-  - "C. Zhang"
-  - "Y. Liu"
-  - "C. Jiang"
-  - "W. J. Zhang"
-  - "Z. Y. Han"
-  - "S. Z. Ma"
-  - "X. L. Hu"
-  - "Y. H. Li"
-  - "H. Liu"
-  - "F. Zhou"
-  - "H. F. Jiang"
-  - "T. Y. Chen"
-  - "H. Li"
-  - "L. X. You"
-  - "Z. Wang"
-  - "X. B. Wang"
-  - "Q. Zhang"
-  - "J. W. Pan"
+  first_author: "Chen"
+  authors: ["J. P. Chen", "C. Zhang", "Y. Liu", "C. Jiang", "W. J. Zhang", "Z. Y. Han", "S. Z. Ma", "X. L. Hu", "Y. H. Li", "H. Liu", "F. Zhou", "H. F. Jiang", "T. Y. Chen", "H. Li", "L. X. You", "Z. Wang", "X. B. Wang", "Q. Zhang", "J. W. Pan"]
   journal: "Nature Photonics"
   volume: 15
-  pages: "570-575"
-  doi: "10.1038/s41566-021-00828-5"
+  pages: 570-575
+  doi: 10.1038/s41566-021-00828-5
   note: >
-    [期刊论文 / 辅证] USTC. 本文主题是 twin-field QKD，但其实验基础设施——
-    511 km deployed fiber trunk 12 根光纤中 1 根专门承载 "optical synchronization"、
-    1 根承载 "frequency locking"——本身对 time-frequency-transfer 专题构成证据：
-    在现役城际 deployed fiber 上，光学同步与频率锁定链路可稳定运行支持超长距离
-    量子/相干应用。本文件作为 evidence 档收录，不建独立新节点，仅给出一条 PART-OF 关系。
-
+    [期刊论文 / 辅证] USTC. 本文主题是 twin-field QKD，但其实验基础设施—— 511 km deployed fiber trunk 12 根光纤中 1 根专门承载 "optical synchronization"、 1 根承载 "frequency locking"——本身对 time-frequency-transfer 专题构成证据： 在现役城际 deployed fiber 上，光学同步与频率锁定链路可稳定运行支持超长距离 量子/相干应用。本文件作为 evidence 档收录，不建独立新节点，仅给出一条 PART-OF 关系。
 relations:
   - id: rel.chen_2021_he21_01
     subject: ent.coherent_optical_fiber_link

@@ -1,34 +1,21 @@
-# Coddington 2010 — 高信噪比相干双梳光谱（基础性技术论文）
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical — 双梳光谱学高 SNR 基础性论文（应用层核心证据）
-#   贡献：系统阐述相干双梳光谱仪设计与高 SNR 实现；演示 9 THz 带宽、220 MHz 分辨、
-#         41,000 谱元、平均 SNR=2500、峰值 SNR=4000（1550 nm @ HCN overtone）。
-#   Framework 依赖：coddington2016.yaml（应用层综述）、picque2019.yaml、udem2002.yaml。
-
+# Coddington 2010 — Coherent dual-comb spectroscopy at high signal-to-noise ratio [technical]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "7PDY5FDM"
+  zotero_key: 7PDY5FDM
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical
   reliability: high
   title: "Coherent dual-comb spectroscopy at high signal-to-noise ratio"
   year: 2010
-  first_author: Coddington
+  first_author: "Coddington"
   journal: "Physical Review A"
   volume: 82
-  issue: 4
-  pages: "043817"
-  doi: "10.1103/PhysRevA.82.043817"
+  pages: 043817
+  doi: 10.1103/PhysRevA.82.043817
   note: >
-    [应用层技术论文] NIST Coddington/Swann/Newbury 组。详细阐述相干双梳光谱（DCS）
-    仪设计：两台 Er:fiber 梳分别相位锁至两路 cw 参考，通过重频差 Δf_r 做多外差采样，
-    实时相干平均恢复复响应（magnitude + phase）。在 HCN overtone（194 THz / 1545 nm）
-    上 9 THz 带宽 × 220 MHz 分辨 → 41,000 resolution elements，平均 SNR 2500，
-    峰值 SNR 4000；相位灵敏度 250 μrad，分数吸收灵敏度 0.05%。
-
+    [应用层技术论文] NIST Coddington/Swann/Newbury 组。详细阐述相干双梳光谱（DCS） 仪设计：两台 Er:fiber 梳分别相位锁至两路 cw 参考，通过重频差 Δf_r 做多外差采样， 实时相干平均恢复复响应（magnitude + phase）。在 HCN overtone（194 THz / 1545 nm） 上 9 THz 带宽 × 220 MHz 分辨 → 41,000 resolution elements，平均 SNR 2500， 峰值 SNR 4000；相位灵敏度 250 μrad，分数吸收灵敏度 0.05%。
 entities:
   - id: ent.coherent_dual_comb_spectrometer_c10
     name: "相干双梳光谱仪（Coddington 2010 系统）"

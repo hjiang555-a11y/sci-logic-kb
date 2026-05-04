@@ -1,19 +1,21 @@
+# Huang 2019 — All-fiber-based laser with 200 mHz linewidth [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: F2GG2N6W
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: All-fiber-based laser with 200 mHz linewidth
+  title: "All-fiber-based laser with 200 mHz linewidth"
   year: 2019
-  first_author: Huang
-  journal: Chinese Optics Letters
+  first_author: "Huang"
+  journal: "Chinese Optics Letters"
   volume: 17
-  pages: '071407'
+  pages: 071407
   doi: 10.3788/COL201917.071407
-  note: '1.55 μm 掺铒光纤激光锁定到 5 km 光纤延迟线（FDL）， 实现 200 mHz 线宽（FDL 稳激光最窄线宽记录）， 分数频率稳定度
-    3×10⁻¹⁵ @ 1–10s。 核心贡献：光纤延迟线稳频方案窄线宽极限的代表性验证。
-
-    '
+  note: >
+    1.55 μm 掺铒光纤激光锁定到 5 km 光纤延迟线（FDL）， 实现 200 mHz 线宽（FDL 稳激光最窄线宽记录）， 分数频率稳定度 3×10⁻¹⁵ @ 1–10s。 核心贡献：光纤延迟线稳频方案窄线宽极限的代表性验证。
 entities: []
 principles: []
 methods:

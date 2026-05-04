@@ -1,31 +1,22 @@
-# Weyers 2009 — Cs fountain clock reaching quantum limit [evidence]
-# 提取者：Claude Code（AI 草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.5
-# 专题：frequency-standards（Cs 喷泉钟 — 量子极限）
-# contribution_type: evidence — PTB Cs 喷泉钟通过超稳激光器锁相微波振荡器
-#   达到量子投影噪声极限。
-
+# Weyers 2009 — Reaching the quantum limit in a fountain clock using a microwave oscillator p... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "2009 Weyers - Phys.Rev.A79"
+  zotero_key: 2009 Weyers - Phys.Rev.A79
   topic: frequency-standards
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Reaching the quantum limit in a fountain clock using a microwave oscillator phase locked to an ultrastable laser"
   year: 2009
-  first_author: Weyers
+  first_author: "Weyers"
   authors: ["S. Weyers", "B. Lipphardt", "H. Schnatz"]
   journal: "Physical Review A"
   volume: 79
-  pages: "031803(R)"
-  doi: "10.1103/PhysRevA.79.031803"
+  pages: 031803(R)
+  doi: 10.1103/PhysRevA.79.031803
   note: >
-    PTB 团队将 Cs 喷泉钟的微波探询信号锁相至超稳激光器，
-    使微波振荡器的相位噪声降低到不再限制喷泉钟性能——
-    从而使喷泉钟达到量子投影噪声（QPN）极限。验证了
-    超稳激光器可用于改善微波钟的短期稳定度。
-
+    PTB 团队将 Cs 喷泉钟的微波探询信号锁相至超稳激光器， 使微波振荡器的相位噪声降低到不再限制喷泉钟性能—— 从而使喷泉钟达到量子投影噪声（QPN）极限。验证了 超稳激光器可用于改善微波钟的短期稳定度。
 entities:
   - id: ent.weyers2009_cs_fountain_quantum_limit
     name: "Weyers 2009 Cs 喷泉钟量子极限（PTB）"

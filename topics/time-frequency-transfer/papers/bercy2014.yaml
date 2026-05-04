@@ -1,35 +1,22 @@
-# Bercy 2014 — Two-way optical frequency comparisons at 5×10⁻²¹ relative stability over 100-km telecommunication network fibers [evidence]
-# 提取者：Claude Code（AI 草稿，供专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.5
-# 专题：time-frequency-transfer（光纤双向频率比对 — 公共电信光纤中的 10⁻²¹ 级光频比对）
-# contribution_type: evidence — 实验演示两种双向光频比对方案（2WU/2WB）在 100 km 城市
-#   公共电信光纤上的卓越表现；验证无需主动噪声补偿即可达 5×10⁻²¹@4000 s 的不稳定度。
-
+# Bercy 2014 — Two-way optical frequency comparisons at 5×10⁻²¹ relative stability over 100-... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "PhysRevA.90.061802"
+  zotero_key: PhysRevA.90.061802
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Two-way optical frequency comparisons at 5×10⁻²¹ relative stability over 100-km telecommunication network fibers"
   year: 2014
-  first_author: Bercy
+  first_author: "Bercy"
   authors: ["Anthony Bercy", "Fabio Stefani", "Olivier Lopez", "Christian Chardonnet", "Paul-Eric Pottie", "Anne Amy-Klein"]
   journal: "Physical Review A"
   volume: 90
-  issue: 6
-  pages: "061802(R)"
-  doi: "10.1103/PhysRevA.90.061802"
+  pages: 061802(R)
+  doi: 10.1103/PhysRevA.90.061802
   note: >
-    [evidence 论文] 在巴黎城市 100 km 光纤环路上实验演示两种双向光频比对方案：
-    (1) 2WU（two-way unidirectional）——使用两条平行光纤，每纤单向传输，1 s 不稳定度
-    10⁻¹⁵，40,000 s 积分至 2×10⁻¹⁷（比单向光纤噪声低三个量级）；
-    (2) 2WB（two-way bidirectional）——单根光纤双向传输，1 s 不稳定度
-    7×10⁻¹⁸，4000 s 积分至 5×10⁻²¹，分数不确定度 2×10⁻²⁰。
-    2WU 不需要改动现有电信网络基础设施（保持单向 EDFA），而 2WB 提供最高
-    分辨率。两种方案均无需往返主动噪声补偿，仅依赖对称传播抵消。
-
+    [evidence 论文] 在巴黎城市 100 km 光纤环路上实验演示两种双向光频比对方案： (1) 2WU（two-way unidirectional）——使用两条平行光纤，每纤单向传输，1 s 不稳定度 10⁻¹⁵，40,000 s 积分至 2×10⁻¹⁷（比单向光纤噪声低三个量级）； (2) 2WB（two-way bidirectional）——单根光纤双向传输，1 s 不稳定度 7×10⁻¹⁸，4000 s 积分至 5×10⁻²¹，分数不确定度 2×10⁻²⁰。 2WU 不需要改动现有电信网络基础设施（保持单向 EDFA），而 2WB 提供最高 分辨率。两种方案均无需往返主动噪声补偿，仅依赖对称传播抵消。
 entities:
   - id: ent.bercy2014_100km_two_way_comparison
     name: "Bercy 2014 巴黎 100 km 城市光纤环路双向光频比对实验"

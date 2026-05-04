@@ -1,30 +1,22 @@
-# Huntemann 2012 — Yb⁺ single-ion optical clock [evidence]
-# 提取者：Claude Code（AI 草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.5
-# 专题：frequency-standards（¹⁷¹Yb⁺ 单离子光钟 — 电八极跃迁）
-# contribution_type: evidence — PTB ¹⁷¹Yb⁺ 单离子光钟；
-#   利用 E3 电八极跃迁实现高 Q 值钟跃迁。
-
+# Huntemann 2012 — Improved Limit on a Temporal Variation of the Proton-to-Electron Mass Ratio f... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "Yb ion Huntermann PRL 2012"
+  zotero_key: Yb ion Huntermann PRL 2012
   topic: frequency-standards
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Improved Limit on a Temporal Variation of the Proton-to-Electron Mass Ratio from Comparisons of Yb+ and Cs Atomic Clocks"
   year: 2012
-  first_author: Huntemann
+  first_author: "Huntemann"
   authors: ["N. Huntemann", "B. Lipphardt", "Chr. Tamm", "V. Gerginov", "S. Weyers", "E. Peik"]
   journal: "Physical Review Letters"
   volume: 108
-  pages: "090801"
-  doi: "10.1103/PhysRevLett.108.090801"
+  pages: 090801
+  doi: 10.1103/PhysRevLett.108.090801
   note: >
-    PTB 团队利用 ¹⁷¹Yb⁺ 电八极（E3）跃迁光钟与 Cs 喷泉钟的
-    长期比对，约束质子-电子质量比 μ = m_p/m_e 的时间变化。
-    同时也演示了 Yb⁺ E3 光钟的性能。
-
+    PTB 团队利用 ¹⁷¹Yb⁺ 电八极（E3）跃迁光钟与 Cs 喷泉钟的 长期比对，约束质子-电子质量比 μ = m_p/m_e 的时间变化。 同时也演示了 Yb⁺ E3 光钟的性能。
 entities:
   - id: ent.huntemann2012_yb_e3_ion_clock
     name: "Huntemann 2012 ¹⁷¹Yb⁺ E3 单离子光钟（PTB）"

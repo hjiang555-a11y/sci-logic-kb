@@ -1,36 +1,22 @@
-# Sinclair 2014 — Optical phase noise from atmospheric fluctuations [evidence]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：time-frequency-transfer
-# contribution_type: evidence
-
+# Sinclair 2014 — Optical phase noise from atmospheric fluctuations and its impact on optical t... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "fx9ixtdb"
+  zotero_key: fx9ixtdb
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Optical phase noise from atmospheric fluctuations and its impact on optical time-frequency transfer"
   year: 2014
-  first_author: Sinclair
-  authors:
-  - "L. C. Sinclair"
-  - "F. R. Giorgetta"
-  - "W. C. Swann"
-  - "E. Baumann"
-  - "I. Coddington"
-  - "N. R. Newbury"
+  first_author: "Sinclair"
+  authors: ["L. C. Sinclair", "F. R. Giorgetta", "W. C. Swann", "E. Baumann", "I. Coddington", "N. R. Newbury"]
   journal: "Physical Review A"
   volume: 89
-  issue: 2
-  pages: "023805"
-  doi: "10.1103/PhysRevA.89.023805"
+  pages: 023805
+  doi: 10.1103/PhysRevA.89.023805
   note: >
-    [期刊论文] NIST Boulder. 2 km 水平大气光路相位噪声 PSD 测量：∝f⁻²·³（直至 100 μHz Fourier
-    频率无 low-frequency roll-off），偏离 Kolmogorov-Taylor 湍流外尺度预言，与其他相关实验观测
-    一致。为自由空间光学时频传递的单向精度与稳定度设定大气基础极限。
-
+    [期刊论文] NIST Boulder. 2 km 水平大气光路相位噪声 PSD 测量：∝f⁻²·³（直至 100 μHz Fourier 频率无 low-frequency roll-off），偏离 Kolmogorov-Taylor 湍流外尺度预言，与其他相关实验观测 一致。为自由空间光学时频传递的单向精度与稳定度设定大气基础极限。
 entities:
   - id: ent.atmospheric_optical_phase_psd_s14
     name: "大气光学相位噪声 PSD 测量（2 km 水平路径，NIST Boulder）"

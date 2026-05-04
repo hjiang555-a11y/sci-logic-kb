@@ -1,18 +1,21 @@
+# Numata 2004 — Thermal-Noise Limit in the Frequency Stabilization of Lasers with Rigid Cavities [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: VDXBPUQB
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
-  title: Thermal-Noise Limit in the Frequency Stabilization of Lasers with Rigid Cavities
+  title: "Thermal-Noise Limit in the Frequency Stabilization of Lasers with Rigid Cavities"
   year: 2004
-  first_author: Numata
-  journal: Physical Review Letters
+  first_author: "Numata"
+  journal: "Physical Review Letters"
   volume: 93
-  pages: '250602'
+  pages: 250602
   doi: 10.1103/PhysRevLett.93.250602
-  note: '首次系统量化刚性 FP 腔各部件热噪声贡献； 证明 Young 1999 结果已在热噪声极限处工作。 奠定了"腔设计优化"的理论框架。
-
-    '
+  note: >
+    首次系统量化刚性 FP 腔各部件热噪声贡献； 证明 Young 1999 结果已在热噪声极限处工作。 奠定了"腔设计优化"的理论框架。
 entities:
 - id: ent.fp_cavity_system
   name: 刚性 F-P 参考腔系统

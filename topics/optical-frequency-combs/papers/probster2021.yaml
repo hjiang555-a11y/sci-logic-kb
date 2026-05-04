@@ -1,30 +1,21 @@
-# Pröbster 2021 — FOKUS II 紧凑真空兼容双梳系统空间飞行验证
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical
-
+# Pröbster 2021 — FOKUS II—Space flight of a compact and vacuum compatible dual frequency comb ... [technical]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "2SMDS6NY"
+  zotero_key: 2SMDS6NY
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical
   reliability: high
   title: "FOKUS II—Space flight of a compact and vacuum compatible dual frequency comb system"
   year: 2021
-  first_author: Pröbster
+  first_author: "Pröbster"
   journal: "JOSA B"
   volume: 38
-  issue: 3
-  pages: "932-939"
-  doi: "10.1364/JOSAB.413929"
+  pages: 932-939
+  doi: 10.1364/JOSAB.413929
   note: >
-    [技术论文] Menlo Systems + U Bremen/ZARM。FOKUS II 是紧凑真空兼容双光梳载荷，
-    基于 NOLM 光纤锁模激光；相对 FOKUS I 缩减体积/质量/功耗；两路冗余梳 + 自主模式数判定；
-    经 TEXUS 54 探空火箭零重力飞行，与 JOKARUS 碘稳频 cw 激光连接测试。
-    推进光梳走向导航卫星、星间测距、空间光钟的工程成熟度。
-
+    [技术论文] Menlo Systems + U Bremen/ZARM。FOKUS II 是紧凑真空兼容双光梳载荷， 基于 NOLM 光纤锁模激光；相对 FOKUS I 缩减体积/质量/功耗；两路冗余梳 + 自主模式数判定； 经 TEXUS 54 探空火箭零重力飞行，与 JOKARUS 碘稳频 cw 激光连接测试。 推进光梳走向导航卫星、星间测距、空间光钟的工程成熟度。
 entities:
   - id: ent.fokus_ii_space_dual_comb_p21
     name: "FOKUS II 空间双光梳系统（Pröbster 2021）"

@@ -1,36 +1,23 @@
-# Ma 2018 — 首次 750 MHz Yb:fiber 梳紧锁（<1 rad 积分相噪）
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-21
-# Schema版本：v4.3
-# 专题：optical-frequency-combs
-# contribution_type: breakthrough（首次 Yb:fiber 750 MHz 基频紧锁到 <1 rad + σ_y 1e-18 in-loop）
-
+# Ma 2018 — Low-noise 750 MHz spaced ytterbium fiber frequency combs [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "P4TCLWW2"
+  zotero_key: P4TCLWW2
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
   title: "Low-noise 750 MHz spaced ytterbium fiber frequency combs"
   year: 2018
-  first_author: Ma
+  first_author: "Ma"
   journal: "Optics Letters"
   volume: 43
-  issue: 17
-  pages: "4136-4139"
-  doi: "10.1364/OL.43.004136"
+  pages: 4136-4139
+  doi: 10.1364/OL.43.004136
   note: >
-    [技术论文 / A1 子域纪录] 北京大学 + UEC 东京 + Colorado（Schibli）+ JST 合作。
-    两台独立 750 MHz Yb:fiber 梳紧锁到 CW 光学参考：
-    (1) 首次在 750 MHz 基频 Yb:fiber 平台实现 <1 rad 积分相噪
-        （0.1 Hz–10 MHz 积分，远优于此前 >100 MHz 平台的同级锁定）；
-    (2) 两台梳均达到 ~10⁻¹⁸ @ 1 s in-loop fractional instability；
-    (3) 执行器为腔内 EOM + 单级 PZT。
-    关键突破：克服高重频 Yb:fiber 的高 f_CEO 线宽（>100 kHz）与 EOM-泵浦耦合，
-    使"光学原子钟梳"的重复频率从传统 ~100 MHz 提升到 750 MHz。
-    对齐 v2 子域主线：A1-Rep（750 MHz 紧锁首次）+ A1-Noise（<1 rad）+ B-FreqSyn（1e-18 in-loop）。
-    注意：**10⁻¹⁸ 是 in-loop**（严格度低于 out-of-loop 比对）。
-
+    [技术论文 / A1 子域纪录] 北京大学 + UEC 东京 + Colorado（Schibli）+ JST 合作。 两台独立 750 MHz Yb:fiber 梳紧锁到 CW 光学参考： (1) 首次在 750 MHz 基频 Yb:fiber 平台实现 <1 rad 积分相噪
+    （0.1 Hz–10 MHz 积分，远优于此前 >100 MHz 平台的同级锁定）；
+    (2) 两台梳均达到 ~10⁻¹⁸ @ 1 s in-loop fractional instability； (3) 执行器为腔内 EOM + 单级 PZT。 关键突破：克服高重频 Yb:fiber 的高 f_CEO 线宽（>100 kHz）与 EOM-泵浦耦合， 使"光学原子钟梳"的重复频率从传统 ~100 MHz 提升到 750 MHz。 对齐 v2 子域主线：A1-Rep（750 MHz 紧锁首次）+ A1-Noise（<1 rad）+ B-FreqSyn（1e-18 in-loop）。 注意：**10⁻¹⁸ 是 in-loop**（严格度低于 out-of-loop 比对）。
 entities:
   - id: ent.yb_fiber_750mhz_comb_m18
     name: "750 MHz Yb:fiber 紧锁梳（Ma 2018）"

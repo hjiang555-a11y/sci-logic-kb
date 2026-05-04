@@ -1,27 +1,21 @@
+# Coddington 2016 — Dual-comb spectroscopy [framework]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: XJ9M7ZLG
   topic: optical-frequency-combs
   source_type: review
   contribution_type: framework
   reliability: high
-  title: Dual-comb spectroscopy
+  title: "Dual-comb spectroscopy"
   year: 2016
-  first_author: Coddington
-  journal: Optica
+  first_author: "Coddington"
+  journal: "Optica"
   volume: 3
-  issue: 4
   pages: 414-426
   doi: 10.1364/OPTICA.3.000414
-  note: '[综述论文 / 应用层子类框架文档] NIST Coddington, Newbury, Swann 团队 2016 年 Optica 综述。 在
-    Picqué 2019 定义的六大光谱方法中，双梳光谱是覆盖波段最广、发展最迅速的子类。 产生 RF 梳，将光学谱以压缩因子 m = f_rep/Δf_rep
-    映射到射频域； (2) 阐明互相干（mutual coherence）要求——两梳相对线宽须远小于 Δf_rep； (3) 给出 SNR 标度律 SNR ≈
-    √(τ·n_comb)/M（散粒噪声极限）； (4) 对比 FTIR：无移动部件、微秒级采集、Hz 级频率精度、激光源亮度优势； (5) 总结三类实现：自由运行梳、互相干梳、全参考梳；
-    (6) 覆盖近红外、中红外、远红外、THz 各波段 DCS 演示。 ent.optical_frequency_comb 定义于 giunta2019.yaml；pri.self_referencing_f2f
-    定义于 giunta2019.yaml。
-
-    '
-
-# Schema版本：v4.1
+  note: >
+    [综述论文 / 应用层子类框架文档] NIST Coddington, Newbury, Swann 团队 2016 年 Optica 综述。 在 Picqué 2019 定义的六大光谱方法中，双梳光谱是覆盖波段最广、发展最迅速的子类。 产生 RF 梳，将光学谱以压缩因子 m = f_rep/Δf_rep 映射到射频域； (2) 阐明互相干（mutual coherence）要求——两梳相对线宽须远小于 Δf_rep； (3) 给出 SNR 标度律 SNR ≈ √(τ·n_comb)/M（散粒噪声极限）； (4) 对比 FTIR：无移动部件、微秒级采集、Hz 级频率精度、激光源亮度优势； (5) 总结三类实现：自由运行梳、互相干梳、全参考梳； (6) 覆盖近红外、中红外、远红外、THz 各波段 DCS 演示。 ent.optical_frequency_comb 定义于 giunta2019.yaml；pri.self_referencing_f2f 定义于 giunta2019.yaml。
 entities:
 - id: ent.dual_comb_spectrometer
   name: 双梳光谱仪

@@ -1,22 +1,21 @@
+# Jeon 2025 — 10⁻¹⁵-level laser stabilization down to fiber thermal noise limit using self-... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: SBPRDKPV
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: 10⁻¹⁵-level laser stabilization down to fiber thermal noise limit using self-homodyne
-    detection
+  title: "10⁻¹⁵-level laser stabilization down to fiber thermal noise limit using self-homodyne detection"
   year: 2025
-  first_author: Jeon
-  journal: Optics Letters
+  first_author: "Jeon"
+  journal: "Optics Letters"
   volume: 50
-  issue: 4
   pages: 1057-1060
   doi: 10.1364/OL.541281
-  note: '采用 1 km 全单模光纤迈克尔逊自零差干涉仪与平衡探测， 在无真空系统条件下将 1550 nm 连续激光稳定到光纤热噪声极限， 实现 6.3×10⁻¹⁵
-    @ 16 ms 的频率不稳定度。 核心贡献：把光纤延迟线稳频从“自外差 + AOM/RF”推进到“自零差 + 单 BPD” 的极简架构，并在 4–200 Hz
-    频段达到 1 km 光纤往返热噪声地板。
-
-    '
+  note: >
+    采用 1 km 全单模光纤迈克尔逊自零差干涉仪与平衡探测， 在无真空系统条件下将 1550 nm 连续激光稳定到光纤热噪声极限， 实现 6.3×10⁻¹⁵ @ 16 ms 的频率不稳定度。 核心贡献：把光纤延迟线稳频从“自外差 + AOM/RF”推进到“自零差 + 单 BPD” 的极简架构，并在 4–200 Hz 频段达到 1 km 光纤往返热噪声地板。
 entities: []
 principles:
 - id: pri.self_homodyne_balanced_detection

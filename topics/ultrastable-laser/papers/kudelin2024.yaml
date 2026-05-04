@@ -1,31 +1,20 @@
+# Kudelin 2024 — Photonic chip-based low-noise microwave oscillator [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: AF34FGMU
   topic: ultrastable-laser
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
-  title: Photonic chip-based low-noise microwave oscillator
+  title: "Photonic chip-based low-noise microwave oscillator"
   year: 2024
-  first_author: Kudelin
-  authors:
-  - Igor Kudelin
-  - William Groman
-  - Qing-Xin Ji
-  - Joel Guo
-  - Megan L. Kelleher
-  - Dahyeon Lee
-  - Takuma Nakamura
-  - Charles A. McLemore
-  - Franklyn Quinlan
-  - Scott A. Diddams
-  journal: Nature
+  first_author: "Kudelin"
+  authors: ["Igor Kudelin", "William Groman", "Qing-Xin Ji", "Joel Guo", "Megan L. Kelleher", "Dahyeon Lee", "Takuma Nakamura", "Charles A. McLemore", "Franklyn Quinlan", "Scott A. Diddams"]
+  journal: "Nature"
   doi: 10.1038/s41586-024-07058-z
-  note: '芯片集成光子微波振荡器（NIST/CU Boulder/Caltech 等）：两路 SiN 螺旋谐振器 自注入锁定 DFB 激光，PDH 锁定至
-    6.3 mm 微型 F-P 腔（精细度~900,000）， 暗孤子 SiN 双环微腔梳（~20 GHz 重复率）实现两点光频分频（2P-OFD）， MUTC
-    光电探测器输出 20 GHz 微波，相位噪声 −96 dBc/Hz @100 Hz、−135 dBc/Hz @10 kHz， 为集成光子系统的前所未有水平；系统分数频率不稳定度
-    1.7×10⁻¹⁵ @1 s。
-
-    '
+  note: >
+    芯片集成光子微波振荡器（NIST/CU Boulder/Caltech 等）：两路 SiN 螺旋谐振器 自注入锁定 DFB 激光，PDH 锁定至 6.3 mm 微型 F-P 腔（精细度~900,000）， 暗孤子 SiN 双环微腔梳（~20 GHz 重复率）实现两点光频分频（2P-OFD）， MUTC 光电探测器输出 20 GHz 微波，相位噪声 −96 dBc/Hz @100 Hz、−135 dBc/Hz @10 kHz， 为集成光子系统的前所未有水平；系统分数频率不稳定度 1.7×10⁻¹⁵ @1 s。
 entities:
 - id: ent.chip_photonic_mw_oscillator_k24
   name: 芯片光子微波振荡器（Kudelin 2024）

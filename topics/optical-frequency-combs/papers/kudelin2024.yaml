@@ -1,31 +1,22 @@
 # Kudelin 2024 — Photonic chip-based low-noise microwave oscillator [evidence]
-# 提取者：Claude Code（AI 草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.5
-# 专题：optical-frequency-combs（集成光子芯片光频分频微波生成）
-# contribution_type: evidence — 利用集成光子芯片实现光频分频低噪声微波生成；
-#   替代体光学/光纤分立元件，大幅减小系统体积和功耗。
-
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "3250 (1)"
+  zotero_key: 3250 (1)
   topic: optical-frequency-combs
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Photonic chip-based low-noise microwave oscillator"
   year: 2024
-  first_author: Kudelin
+  first_author: "Kudelin"
   authors: ["Igor Kudelin", "William Groman", "Qing-Xin Ji", "Joel Guo", "Megan L. Kelleher", "Dahyeon Lee", "Takuma Nakamura", "Charles A. McLemore", "Pedram Shirmohammadi", "Samin Hanifi", "Haotian Cheng", "Naijun Jin", "Lue Wu", "Samuel Halladay", "Yizhi Luo", "Zhaowei Dai", "Warren Jin", "Junwu Bai", "Yifan Liu", "Wei Zhang", "Chao Xiang", "Lin Chang", "Vladimir Iltchenko", "Owen Miller", "Andrey Matsko", "Steven M. Bowers", "Peter T. Rakich", "Joe C. Campbell", "John E. Bowers", "Kerry J. Vahala", "Franklyn Quinlan", "Scott A. Diddams"]
   journal: "Nature"
   volume: 627
-  pages: "534-539"
-  doi: "10.1038/s41586-024-07058-z"
+  pages: 534-539
+  doi: 10.1038/s41586-024-07058-z
   note: >
-    NIST/Caltech/UVA 联合团队利用集成光子芯片（SiN 微腔 soliton 频率梳 +
-    集成光电二极管）实现两点光频分频（OFD）低噪声微波生成。
-    替代传统体光学/光纤 OFD 系统，大幅减小体积和功耗——
-    是光频分频微波源从实验室走向工程化的关键一步。
-
+    NIST/Caltech/UVA 联合团队利用集成光子芯片（SiN 微腔 soliton 频率梳 + 集成光电二极管）实现两点光频分频（OFD）低噪声微波生成。 替代传统体光学/光纤 OFD 系统，大幅减小体积和功耗—— 是光频分频微波源从实验室走向工程化的关键一步。
 entities:
   - id: ent.kudelin2024_photonic_chip_ofd_microwave
     name: "Kudelin 2024 集成光子芯片光频分频微波振荡器（NIST/Caltech）"

@@ -1,19 +1,21 @@
+# Jiang 2011 — Making optical atomic clocks more stable with 10⁻¹⁶-level laser stabilization [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: RAC23NZV
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: Making optical atomic clocks more stable with 10⁻¹⁶-level laser stabilization
+  title: "Making optical atomic clocks more stable with 10⁻¹⁶-level laser stabilization"
   year: 2011
-  first_author: Jiang
-  journal: Nature Photonics
+  first_author: "Jiang"
+  journal: "Nature Photonics"
   volume: 5
   pages: 158-161
   doi: 10.1038/nphoton.2010.313
-  note: '演示热噪声极限降低的腔稳激光系统，分数频率不稳定度 2×10⁻¹⁶。 用于 Yb 光晶格钟，分辨 1 Hz 线宽钟跃迁（Q = 5×10¹⁴），
-    实现钟不稳定度 5×10⁻¹⁶/√τ。 核心贡献：首次用 10⁻¹⁶ 级激光源充分发挥 Yb 光钟潜力。
-
-    '
+  note: >
+    演示热噪声极限降低的腔稳激光系统，分数频率不稳定度 2×10⁻¹⁶。 用于 Yb 光晶格钟，分辨 1 Hz 线宽钟跃迁（Q = 5×10¹⁴）， 实现钟不稳定度 5×10⁻¹⁶/√τ。 核心贡献：首次用 10⁻¹⁶ 级激光源充分发挥 Yb 光钟潜力。
 entities:
 - id: ent.low_thermal_noise_cavity_j11
   name: 低热噪声 FP 参考腔（Jiang 2011）

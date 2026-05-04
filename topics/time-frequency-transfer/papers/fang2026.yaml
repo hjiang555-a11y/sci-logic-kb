@@ -1,33 +1,22 @@
-# Fang 2026 — Enhanced O-TWTFT timing with complex maximum likelihood estimation [evidence]
-# 提取者：Claude Code（AI 草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.5
-# 专题：time-frequency-transfer（O-TWTFT 复杂最小二乘时延提取算法 — 113 km 自由空间链路）
-# contribution_type: evidence — 提出复杂最小二乘（CLS）估计算法替代传统相位解缠+最小二乘，
-#   将 O-TWTFT 检测灵敏度从 ~1 nW 提升至 0.1 nW（一个量级），短稳从 80 fs→50 fs。
-#   不改变硬件——纯软件/数据处理创新。
-
+# Fang 2026 — Enhanced timing of a 113 km O-TWTFT link with complex maximum likelihood esti... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "fang2026_cpb_ae1120"
+  zotero_key: fang2026_cpb_ae1120
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Enhanced timing of a 113 km O-TWTFT link with complex maximum likelihood estimation process"
   year: 2026
-  first_author: Fang
+  first_author: "Fang"
   authors: ["Yu-Chen Fang", "Jian-Yu Guan", "Qi Shen", "Jin-Jian Han", "Lei Hou", "Meng-Zhe Lian", "Yong Wang", "Wei-Yue Liu", "Ji-Gang Ren", "Cheng-Zhi Peng", "Qiang Zhang", "Hai-Feng Jiang", "Jian-Wei Pan"]
   journal: "Chinese Physics B"
   volume: 35
-  pages: "010602"
-  doi: "10.1088/1674-1056/ae1120"
+  pages: 010602
+  doi: 10.1088/1674-1056/ae1120
   note: >
-    [evidence 论文] 提出复杂最小二乘（CLS）时延提取算法：直接使用互相关干涉图的
-    复数 FFT 数据（幅度+相位）进行最大似然估计，避免传统方法中相位解缠在低 SNR
-    下引入的严重误差。实验在乌鲁木齐 113 km 自由空间链路验证：最小检测功率从 ~1 nW
-    降至 0.1 nW（一个量级提升），短稳 TDEV 从 80 fs 改善至 50 fs。系统等效总损耗
-    可达 100 dB，匹配地月链路水平。
-
+    [evidence 论文] 提出复杂最小二乘（CLS）时延提取算法：直接使用互相关干涉图的 复数 FFT 数据（幅度+相位）进行最大似然估计，避免传统方法中相位解缠在低 SNR 下引入的严重误差。实验在乌鲁木齐 113 km 自由空间链路验证：最小检测功率从 ~1 nW 降至 0.1 nW（一个量级提升），短稳 TDEV 从 80 fs 改善至 50 fs。系统等效总损耗 可达 100 dB，匹配地月链路水平。
 entities:
   - id: ent.fang2026_cls_otwtft_113km
     name: "Fang 2026 CLS 增强型 O-TWTFT 113 km 链路（乌鲁木齐南山↔高崖子）"

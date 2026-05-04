@@ -1,31 +1,22 @@
-# Takamoto 2020 — Test of general relativity by transportable optical lattice clocks [evidence]
-# 提取者：Claude Code（AI 草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.5
-# 专题：frequency-standards（可搬运 Sr 光晶格钟 — 广义相对论检验）
-# contribution_type: evidence — 通过可搬运 Sr 光晶格钟的相对论红移测量
-#   检验广义相对论；验证远程光钟比对用于大地测量。
-
+# Takamoto 2020 — Test of general relativity by a pair of transportable optical lattice clocks [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "s41566-020-0619-8"
+  zotero_key: s41566-020-0619-8
   topic: frequency-standards
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Test of general relativity by a pair of transportable optical lattice clocks"
   year: 2020
-  first_author: Takamoto
+  first_author: "Takamoto"
   authors: ["Masao Takamoto", "Ichiro Ushijima", "Noriaki Ohmae", "Toshihiro Yahagi", "Kensuke Kokado", "Hisaaki Shinkai", "Hidetoshi Katori"]
   journal: "Nature Photonics"
   volume: 14
-  pages: "411-415"
-  doi: "10.1038/s41566-020-0619-8"
+  pages: 411-415
+  doi: 10.1038/s41566-020-0619-8
   note: >
-    日本 RIKEN/东京大学团队使用两台可搬运 Sr 光晶格钟进行
-    广义相对论引力红移检验。将两台可搬运 Sr 钟分别放置在
-    东京晴空塔的不同高度，通过测量引力红移差验证等效原理。
-    演示了光晶格钟从实验室走向现场应用（大地测量、测高）。
-
+    日本 RIKEN/东京大学团队使用两台可搬运 Sr 光晶格钟进行 广义相对论引力红移检验。将两台可搬运 Sr 钟分别放置在 东京晴空塔的不同高度，通过测量引力红移差验证等效原理。 演示了光晶格钟从实验室走向现场应用（大地测量、测高）。
 entities:
   - id: ent.takamoto2020_transportable_sr_clock_gr_test
     name: "Takamoto 2020 可搬运 Sr 光晶格钟广义相对论检验（RIKEN）"

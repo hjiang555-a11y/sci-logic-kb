@@ -1,24 +1,21 @@
+# Robinson 2019 — Crystalline optical cavity at 4 K with thermal-noise-limited instability and ... [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: JIZCUZLY
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
-  title: Crystalline optical cavity at 4 K with thermal-noise-limited instability
-    and ultralow drift
+  title: "Crystalline optical cavity at 4 K with thermal-noise-limited instability and ultralow drift"
   year: 2019
-  first_author: Robinson
-  journal: Optica
+  first_author: "Robinson"
+  journal: "Optica"
   volume: 6
   pages: 240-243
   doi: 10.1364/OPTICA.6.000240
-  note: '首次在 4 K 操作的硅单晶 FP 腔（Si4，JILA）达到热噪声极限稳定度。 4 K 非 Si CTE 严格零点（零点在 124 K 和 ~17
-    K），但 CTE 在 4 K 渐近趋近零 （α → 0 as T → 0），利用材料物理使腔长温度敏感度极低。 核心贡献：（1）首次演示 4 K Si 腔热噪声极限
-    mod σ_y = 6.5×10⁻¹⁷（0.8–80 s）； （2）发现光功率驱动的频率漂移线性依赖：斜率约 -7×10⁻²¹/s/nW，40 nW 时最低漂移
-    -3×10⁻¹⁹/s；（3）激光线宽中位值 16 mHz（100 次 FFT 测量）。 系统（Si4）为 6 cm 长 Si 腔，三层低温热屏（4 K 内屏
-    + 40 K 外屏），IBS 镀层。 JILA（Ye 组）+ PTB（Sterr/Riehle 组）合作；Si3（124 K，Matei 2017）用作参考。
-    本文指明下一步：晶体镀层（AlGaAs）替换 IBS 可降低热噪声 10×，进一步降温亦可受益。
-
-    '
+  note: >
+    首次在 4 K 操作的硅单晶 FP 腔（Si4，JILA）达到热噪声极限稳定度。 4 K 非 Si CTE 严格零点（零点在 124 K 和 ~17 K），但 CTE 在 4 K 渐近趋近零 （α → 0 as T → 0），利用材料物理使腔长温度敏感度极低。 核心贡献：（1）首次演示 4 K Si 腔热噪声极限 mod σ_y = 6.5×10⁻¹⁷（0.8–80 s）； （2）发现光功率驱动的频率漂移线性依赖：斜率约 -7×10⁻²¹/s/nW，40 nW 时最低漂移 -3×10⁻¹⁹/s；（3）激光线宽中位值 16 mHz（100 次 FFT 测量）。 系统（Si4）为 6 cm 长 Si 腔，三层低温热屏（4 K 内屏 + 40 K 外屏），IBS 镀层。 JILA（Ye 组）+ PTB（Sterr/Riehle 组）合作；Si3（124 K，Matei 2017）用作参考。 本文指明下一步：晶体镀层（AlGaAs）替换 IBS 可降低热噪声 10×，进一步降温亦可受益。
 entities:
 - id: ent.si_crystal_fp_cavity_4k_r19
   name: 4 K 硅单晶 FP 参考腔（Robinson 2019，Si4）

@@ -1,35 +1,21 @@
-# Bartels 2009 — 首台 10 GHz 自参考 Ti:sapph 光学频率梳
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-21
-# Schema版本：v4.3
-# 专题：optical-frequency-combs
-# contribution_type: breakthrough（首次在 10 GHz 基频条件下实现完整 f-2f 自参考，单齿 >1 nW）
-
+# Bartels 2009 — 10-GHz Self-Referenced Optical Frequency Comb [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "RDBWYLKJ"
+  zotero_key: RDBWYLKJ
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
   title: "10-GHz Self-Referenced Optical Frequency Comb"
   year: 2009
-  first_author: Bartels
+  first_author: "Bartels"
   journal: "Science"
   volume: 326
-  issue: 5953
-  pages: "681"
-  doi: "10.1126/science.1179112"
+  pages: 681
+  doi: 10.1126/science.1179112
   note: >
-    [技术论文 / 里程碑] Universität Konstanz + NIST Boulder。首次将基频 10 GHz
-    重复频率的钛宝石 Kerr 透镜锁模激光器做成**完全自参考**的光学频率梳：
-    (1) 紧凑腔长设计 + 强聚焦 + 色散精调支持 <40 fs 脉冲；
-    (2) >50 000 模覆盖 ~350 THz，单 10-GHz 模平均 >0.5 mW，>1 nW 经空间分辨后；
-    (3) f-2f 自参考锁定 f_0 与 f_R 至 Cs 原子钟溯源的 RF 参考。
-    此前 10 GHz+ 梳受"带宽-平均功率"权衡限制不能自参考或被空间分辨；
-    本工作同时打破二者，使"直接单齿访问 + 绝对频率锁定"可行——
-    为天文光谱仪校准、任意波形合成、Fourier 综合等应用奠定基础。
-    对齐子域主线（v2）：A1-Rep 基频 10 GHz 自参考 + 单齿功率；B-Astro（作者明确指向天文光谱校准）。
-
+    [技术论文 / 里程碑] Universität Konstanz + NIST Boulder。首次将基频 10 GHz 重复频率的钛宝石 Kerr 透镜锁模激光器做成**完全自参考**的光学频率梳： (1) 紧凑腔长设计 + 强聚焦 + 色散精调支持 <40 fs 脉冲； (2) >50 000 模覆盖 ~350 THz，单 10-GHz 模平均 >0.5 mW，>1 nW 经空间分辨后； (3) f-2f 自参考锁定 f_0 与 f_R 至 Cs 原子钟溯源的 RF 参考。 此前 10 GHz+ 梳受"带宽-平均功率"权衡限制不能自参考或被空间分辨； 本工作同时打破二者，使"直接单齿访问 + 绝对频率锁定"可行—— 为天文光谱仪校准、任意波形合成、Fourier 综合等应用奠定基础。 对齐子域主线（v2）：A1-Rep 基频 10 GHz 自参考 + 单齿功率；B-Astro（作者明确指向天文光谱校准）。
 entities:
   - id: ent.ti_sapph_10ghz_comb_bartels09
     name: "10 GHz 自参考 Ti:sapph 频率梳（Bartels 2009）"

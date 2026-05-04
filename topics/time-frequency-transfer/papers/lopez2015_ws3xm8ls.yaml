@@ -1,47 +1,22 @@
-# Lopez 2015 — Frequency and time transfer for metrology and beyond using telecommunication network fibres [framework]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：time-frequency-transfer
-# contribution_type: framework — C. R. Physique 综述。LPL/SYRTE 团队回顾十年光纤时频传递进展，
-#   并首次论证"共享电信互联网活动光纤"（dark channel on public telecom network）传递计量级信号
-#   在国家/洲际尺度的可行性（REFIMEVE+ 种子文献）。
-
+# Lopez 2015 — Frequency and time transfer for metrology and beyond using telecommunication ... [framework]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "ws3xm8ls"
+  zotero_key: ws3xm8ls
   topic: time-frequency-transfer
   source_type: review
   contribution_type: framework
   reliability: high
   title: "Frequency and time transfer for metrology and beyond using telecommunication network fibres"
   year: 2015
-  first_author: Lopez
-  authors:
-  - "O. Lopez"
-  - "F. Kefelian"
-  - "H. F. Jiang"
-  - "A. Haboucha"
-  - "A. Bercy"
-  - "F. Stefani"
-  - "B. Chanteau"
-  - "A. Kanj"
-  - "D. Rovera"
-  - "J. Achkar"
-  - "C. Chardonnet"
-  - "P. E. Pottie"
-  - "A. Amy-Klein"
-  - "G. Santarelli"
+  first_author: "Lopez"
+  authors: ["O. Lopez", "F. Kefelian", "H. F. Jiang", "A. Haboucha", "A. Bercy", "F. Stefani", "B. Chanteau", "A. Kanj", "D. Rovera", "J. Achkar", "C. Chardonnet", "P. E. Pottie", "A. Amy-Klein", "G. Santarelli"]
   journal: "Comptes Rendus Physique"
   volume: 16
-  issue: 5
-  pages: "531-539"
-  doi: "10.1016/j.crhy.2015.04.005"
+  pages: 531-539
+  doi: 10.1016/j.crhy.2015.04.005
   note: >
-    [综述 / framework] Laboratoire de Physique des Lasers + SYRTE + Bordeaux。第一次系统论证
-    光纤时频传递可以承载于**正在运营**的电信暗信道（"dark channel on live telecom network"，
-    DWDM 信道之间），不需要专用暗纤。为 REFIMEVE+ 国家级 ultrastable metrological optical network
-    的建设提供理论与工程基础。
-
+    [综述 / framework] Laboratoire de Physique des Lasers + SYRTE + Bordeaux。第一次系统论证 光纤时频传递可以承载于**正在运营**的电信暗信道（"dark channel on live telecom network"， DWDM 信道之间），不需要专用暗纤。为 REFIMEVE+ 国家级 ultrastable metrological optical network 的建设提供理论与工程基础。
 entities:
   - id: ent.shared_telecom_fiber_metrology_channel
     name: "电信网络共享暗信道（计量级光纤时频传递载体）"

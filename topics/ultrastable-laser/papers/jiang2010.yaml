@@ -1,20 +1,21 @@
+# Jiang 2010 — An agile laser with ultra-low frequency noise and high sweep linearity [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: T8JR8IJ7
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: medium
-  title: An agile laser with ultra-low frequency noise and high sweep linearity
+  title: "An agile laser with ultra-low frequency noise and high sweep linearity"
   year: 2010
-  first_author: Jiang
-  journal: Optics Express
+  first_author: "Jiang"
+  journal: "Optics Express"
   volume: 18
-  issue: 4
   pages: 3284-3297
   doi: 10.1364/OE.18.003284
-  note: '演示了以光纤迈克尔逊干涉仪（非刚性 FP 腔）作为频率参考的超低噪声可捷变激光。 在非扫频条件下频率噪声接近 ULE 腔稳激光水平； 扫频时的根本限制：Rayleigh
-    背向散射（RBS）产生的干涉条纹噪声。 核心贡献：光纤干涉仪方案与 FP 腔方案的工程权衡得到量化比较。
-
-    '
+  note: >
+    演示了以光纤迈克尔逊干涉仪（非刚性 FP 腔）作为频率参考的超低噪声可捷变激光。 在非扫频条件下频率噪声接近 ULE 腔稳激光水平； 扫频时的根本限制：Rayleigh 背向散射（RBS）产生的干涉条纹噪声。 核心贡献：光纤干涉仪方案与 FP 腔方案的工程权衡得到量化比较。
 entities:
 - id: ent.fiber_interferometer
   name: 光纤迈克尔逊干涉仪（频率参考）

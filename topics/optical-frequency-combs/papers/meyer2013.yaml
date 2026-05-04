@@ -1,33 +1,21 @@
-# Meyer 2013 — 光学稳频 Yb:KYW 飞秒梳，低相噪 10 GHz 微波生成
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-21
-# Schema版本：v4.3
-# 专题：optical-frequency-combs
-# contribution_type: evidence（首台 Yb:KYW 双 DOF 光学锁定梳，微波相噪与 σ_y 与 Ti:sapph 同级）
-
+# Meyer 2013 — A frequency-stabilized Yb:KYW femtosecond laser frequency comb and its applic... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "T6AF6HJF"
+  zotero_key: T6AF6HJF
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
   title: "A frequency-stabilized Yb:KYW femtosecond laser frequency comb and its application to low-phase-noise microwave generation"
   year: 2013
-  first_author: Meyer
+  first_author: "Meyer"
   journal: "Applied Physics B"
   volume: 112
-  issue: 4
-  pages: "565-570"
-  doi: "10.1007/s00340-013-5439-9"
+  pages: 565-570
+  doi: 10.1007/s00340-013-5439-9
   note: >
-    [技术论文] NIST Boulder (Fortier/Diddams)。首次在 Yb:KYW 飞秒晶体激光平台上
-    完成双自由度（f_0 + f_rep）光学稳频：f_0 用 f-2f 锁定，f_rep 锁至 1068 nm CW
-    参考激光。该稳频梳光电探测产生 10 GHz 微波，1 Hz offset 相噪 -99 dBc/Hz；
-    Allan 偏差 <2.6×10⁻¹⁵ @ 1 s（与独立 Ti:sapph 梳比对）。 提供 Yb:KYW 作为
-    紧凑 GHz 级光学-微波分频平台的工程示范。本工作不刷新跨平台纪录（Ti:sapph
-    同期已达相近水平），但在 Yb:KYW 子支路首次达到该指标——归 evidence。
-    对齐 v2 子域主线：A1-Noise（f_0 subradian PLL）、B-FreqSyn（低相噪 μwave 生成）。
-
+    [技术论文] NIST Boulder (Fortier/Diddams)。首次在 Yb:KYW 飞秒晶体激光平台上 完成双自由度（f_0 + f_rep）光学稳频：f_0 用 f-2f 锁定，f_rep 锁至 1068 nm CW 参考激光。该稳频梳光电探测产生 10 GHz 微波，1 Hz offset 相噪 -99 dBc/Hz； Allan 偏差 <2.6×10⁻¹⁵ @ 1 s（与独立 Ti:sapph 梳比对）。 提供 Yb:KYW 作为 紧凑 GHz 级光学-微波分频平台的工程示范。本工作不刷新跨平台纪录（Ti:sapph 同期已达相近水平），但在 Yb:KYW 子支路首次达到该指标——归 evidence。 对齐 v2 子域主线：A1-Noise（f_0 subradian PLL）、B-FreqSyn（低相噪 μwave 生成）。
 entities:
   - id: ent.yb_kyw_fs_comb_meyer13
     name: "光学稳频 Yb:KYW 飞秒频率梳（Meyer 2013）"

@@ -1,30 +1,22 @@
 # King 2022 — An optical atomic clock based on a highly charged ion [evidence]
-# 提取者：Claude Code（AI 草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.5
-# 专题：frequency-standards（高电荷离子光钟 — Ar¹³⁺）
-# contribution_type: evidence — 首次实验实现高电荷离子（HCI）光钟；Ar¹³⁺ 离子在
-#   光频段的跃迁用于高精度频率计量。
-
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "s41586-022-05245-4"
+  zotero_key: s41586-022-05245-4
   topic: frequency-standards
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "An optical atomic clock based on a highly charged ion"
   year: 2022
-  first_author: King
+  first_author: "King"
   authors: ["Steven A. King", "Lukas J. Spiess", "Peter Micke", "Alexander Wilzewski", "Tobias Leopold", "Ekkehard Peik", "Piet O. Schmidt"]
   journal: "Nature"
   volume: 611
-  pages: "43-47"
-  doi: "10.1038/s41586-022-05245-4"
+  pages: 43-47
+  doi: 10.1038/s41586-022-05245-4
   note: >
-    首次实验实现基于高电荷离子（HCI）Ar¹³⁺ 的光钟。HCI 对外场扰动
-    具有天然低敏感性，理论预测可达 10⁻¹⁹ 系统不确定度。是光钟体系的
-    重要拓展方向——不同于中性原子光晶格钟和单离子钟的第三种路线。
-
+    首次实验实现基于高电荷离子（HCI）Ar¹³⁺ 的光钟。HCI 对外场扰动 具有天然低敏感性，理论预测可达 10⁻¹⁹ 系统不确定度。是光钟体系的 重要拓展方向——不同于中性原子光晶格钟和单离子钟的第三种路线。
 entities:
   - id: ent.king2022_hci_ar13_optical_clock
     name: "King 2022 高电荷离子 Ar¹³⁺ 光钟（PTB）"

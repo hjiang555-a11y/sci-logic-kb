@@ -1,31 +1,22 @@
 # Heavner 2005 — NIST-F1: recent improvements and accuracy evaluations [evidence]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：frequency-standards
-# contribution_type: evidence
-
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "HEAVNER2005"
+  zotero_key: HEAVNER2005
   topic: frequency-standards
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "NIST-F1: recent improvements and accuracy evaluations"
   year: 2005
-  first_author: Heavner
+  first_author: "Heavner"
   authors: ["T. P. Heavner", "S. R. Jefferts", "E. A. Donley", "J. H. Shirley", "T. E. Parker"]
   journal: "Metrologia"
   volume: 42
-  issue: 5
-  pages: "411-422"
-  doi: "10.1088/0026-1394/42/5/012"
+  pages: 411-422
+  doi: 10.1088/0026-1394/42/5/012
   note: >
-    [期刊论文] NIST Boulder. NIST-F1 Cs 喷泉初级频标近几年改进与精度评估：
-    2×改善实现 u_B 0.53×10⁻¹⁵（2005-01）、u_B+time-transfer 0.97×10⁻¹⁵（BIPM 上报）。
-    微波频标的代表性 Cs 初级标准文献，为光钟-Cs 比对链（Oskay 2006、Rosenband 2008、
-    本 PR 也包含 Guéna 2017 fiber-link 喷泉比对）提供微波端不确定度预算基准。
-
+    [期刊论文] NIST Boulder. NIST-F1 Cs 喷泉初级频标近几年改进与精度评估： 2×改善实现 u_B 0.53×10⁻¹⁵（2005-01）、u_B+time-transfer 0.97×10⁻¹⁵（BIPM 上报）。 微波频标的代表性 Cs 初级标准文献，为光钟-Cs 比对链（Oskay 2006、Rosenband 2008、 本 PR 也包含 Guéna 2017 fiber-link 喷泉比对）提供微波端不确定度预算基准。
 entities:
   - id: ent.nist_f1_cs_fountain_h05
     name: "NIST-F1 铯喷泉初级频标（2005 改进版）"

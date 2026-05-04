@@ -1,44 +1,21 @@
-# Caldwell 2020 — 飞秒梳测大气定时抖动 PSD 与同址微气象 Cn² 首次定量对齐 [技术论文]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical
-#   核心贡献：NIST Table Mountain 280 m 折返路径上，两台 1560 nm 自参考光纤梳
-#   + 线性光学采样测 δT_atmosphere；同址 sonic + 气压计独立反演 Cn² 与 V⊥；
-#   三种湍流谱模型（Kolmogorov / von Kármán / Greenwood-Tarazano）以气象数据为
-#   输入直接预测 S_jitter(f)，首次与梳实测 PSD 定量对齐；V⊥>1 m/s 时梳-Cn² 与
-#   sonic-Cn² 一致到 5× 内，V⊥→0 时 Taylor 冻结湍流假设失效。
-#   Framework 依赖：ent.optical_frequency_comb（udem2002.yaml）；
-#   ent.atmospheric_turbulence_channel（han2024.yaml）；
-#   ent.dual_comb_spectrometer（coddington2016.yaml，技术基线）。
-
+# Caldwell 2020 — Optical timing jitter due to atmospheric turbulence: comparison of frequency ... [technical]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "EB5IM2K9"
+  zotero_key: EB5IM2K9
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical
   reliability: high
   title: "Optical timing jitter due to atmospheric turbulence: comparison of frequency comb measurements to predictions from micrometeorological sensors"
   year: 2020
-  first_author: Caldwell
+  first_author: "Caldwell"
   journal: "Optics Express"
   volume: 28
-  issue: 18
-  pages: "26661-26675"
-  doi: "10.1364/OE.400434"
+  pages: 26661-26675
+  doi: 10.1364/OE.400434
   note: >
-    [技术论文] NIST + CU Boulder + NorthWest Research Associates 合作。
-    280 m 折返水平近地路径；两台 200 MHz 光纤梳（signal / LO），
-    1560 nm 中心波长，带宽 14 nm；Δfr ≈ 2 kHz 实现线性光学采样；
-    比对象为超声风温仪（32 Hz 采样，精度 1 cm/s, 0.01 K）+ 石英压力计（10 Hz）。
-    本论文首次完成飞秒梳 timing jitter 与同址微气象 Cn² 传感器的量化跨域验证，
-    为光学自由空间时频传递、激光测距、长基线干涉的噪声建模提供可信预测链。
-
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
+    [技术论文] NIST + CU Boulder + NorthWest Research Associates 合作。 280 m 折返水平近地路径；两台 200 MHz 光纤梳（signal / LO）， 1560 nm 中心波长，带宽 14 nm；Δfr ≈ 2 kHz 实现线性光学采样； 比对象为超声风温仪（32 Hz 采样，精度 1 cm/s, 0.01 K）+ 石英压力计（10 Hz）。 本论文首次完成飞秒梳 timing jitter 与同址微气象 Cn² 传感器的量化跨域验证， 为光学自由空间时频传递、激光测距、长基线干涉的噪声建模提供可信预测链。
 entities:
   - id: ent.two_way_comb_timing_link_c20
     name: "两向梳定时抖动测量链路（Caldwell 2020 系统）"

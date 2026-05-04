@@ -1,21 +1,21 @@
+# Kedar 2023 — Frequency stability of cryogenic silicon cavities with semiconductor crystall... [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: 8YK6EH22
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
-  title: Frequency stability of cryogenic silicon cavities with semiconductor crystalline
-    coatings
+  title: "Frequency stability of cryogenic silicon cavities with semiconductor crystalline coatings"
   year: 2023
-  first_author: Kedar
-  journal: Optica
+  first_author: "Kedar"
+  journal: "Optica"
   volume: 10
-  pages: '464'
+  pages: 464
   doi: 10.1364/OPTICA.479462
-  note: '首次系统表征 AlGaAs 晶体镀层在低温硅腔（Si5 @124K, Si6 @16K/4K）上的频率噪声。 观测到与偏振模式反相关的"双折射噪声"，与腔内功率
-    ∝1/√P_c、光斑面积有标度律。 通过双偏振同时探测一阶消除双折射噪声。 残余噪声低于等效 IBS 镀层腔（Si6: 5.5×10⁻¹⁷, Si5: 3.5×10⁻¹⁷），
-    但仍高于热噪声极限——来源不明，后续研究认为不是真正的"双折射噪声"。 JILA（Ye组）+ PTB（Sterr/Riehle组），1542 nm。
-
-    '
+  note: >
+    首次系统表征 AlGaAs 晶体镀层在低温硅腔（Si5 @124K, Si6 @16K/4K）上的频率噪声。 观测到与偏振模式反相关的"双折射噪声"，与腔内功率 ∝1/√P_c、光斑面积有标度律。 通过双偏振同时探测一阶消除双折射噪声。 残余噪声低于等效 IBS 镀层腔（Si6: 5.5×10⁻¹⁷, Si5: 3.5×10⁻¹⁷）， 但仍高于热噪声极限——来源不明，后续研究认为不是真正的"双折射噪声"。 JILA（Ye组）+ PTB（Sterr/Riehle组），1542 nm。
 methods:
 - id: meth.dual_polarization_suppression_kedar23
   name: 双偏振同时探测抑制偏振反相关噪声

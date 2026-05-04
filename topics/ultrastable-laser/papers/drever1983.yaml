@@ -1,19 +1,21 @@
+# Drever 1983 — Laser phase and frequency stabilization using an optical resonator [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: 694DPR5F
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: breakthrough
-  primary_metric_exempt_reason: new_method
   reliability: high
-  title: Laser phase and frequency stabilization using an optical resonator
+  title: "Laser phase and frequency stabilization using an optical resonator"
   year: 1983
-  first_author: Drever
-  journal: 'Applied Physics B: Lasers and Optics'
+  first_author: "Drever"
+  journal: "Applied Physics B: Lasers and Optics"
   volume: 31
   pages: 97-105
   doi: 10.1007/BF00702605
-  note: '首次提出 PDH（Pound-Drever-Hall）激光锁频方法； 以腔反射模式 + 射频外差探测实现亚百赫兹线宽； 奠定了现代超稳激光技术的方法论基础。
-
-    '
+  note: >
+    首次提出 PDH（Pound-Drever-Hall）激光锁频方法； 以腔反射模式 + 射频外差探测实现亚百赫兹线宽； 奠定了现代超稳激光技术的方法论基础。
 entities:
 - id: ent.eom
   name: 电光调制器（EOM）

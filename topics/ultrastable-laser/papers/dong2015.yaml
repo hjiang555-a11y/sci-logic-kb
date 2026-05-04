@@ -1,20 +1,21 @@
+# Dong 2015 — Subhertz linewidth laser by locking to a fiber delay line [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: W8K5GLK6
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: medium
-  title: Subhertz linewidth laser by locking to a fiber delay line
+  title: "Subhertz linewidth laser by locking to a fiber delay line"
   year: 2015
-  first_author: Dong
-  journal: Applied Optics
+  first_author: "Dong"
+  journal: "Applied Optics"
   volume: 54
-  issue: 5
   pages: 1152-1156
   doi: 10.1364/AO.54.001152
-  note: '首次实现光纤延迟线锁频的亚赫兹线宽（0.67 Hz 拍频线宽，单激光 < 0.5 Hz）， 分数频率不稳定度 5×10⁻¹⁵ @ 0.1–1 s。
-    核心贡献：将 Kéfélian 2009 方案推进到亚赫兹线宽里程碑。 频率噪声在 200 Hz–1 kHz 由光纤热噪声和射频放大器热噪声联合主导。 在知识图谱中填补光纤稳频链路的亚赫兹线宽首次实现。
-
-    '
+  note: >
+    首次实现光纤延迟线锁频的亚赫兹线宽（0.67 Hz 拍频线宽，单激光 < 0.5 Hz）， 分数频率不稳定度 5×10⁻¹⁵ @ 0.1–1 s。 核心贡献：将 Kéfélian 2009 方案推进到亚赫兹线宽里程碑。 频率噪声在 200 Hz–1 kHz 由光纤热噪声和射频放大器热噪声联合主导。 在知识图谱中填补光纤稳频链路的亚赫兹线宽首次实现。
 entities: []
 principles:
 - id: pri.fiber_thermal_noise_wanser

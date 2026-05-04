@@ -1,11 +1,8 @@
-# Le Coq et al. 2010 — Er:fiber梳超低噪声微波生成与铯喷泉钟应用 [evidence]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：optical-frequency-combs
-
+# Le Coq 2010 — Ultra-low Noise Microwave Generation Using Femtosecond Lasers and Application... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "5K2FFLPG"
+  zotero_key: 5K2FFLPG
   topic: optical-frequency-combs
   source_type: conference_paper
   contribution_type: evidence
@@ -13,32 +10,11 @@ meta:
   title: "Ultra-low Noise Microwave Generation Using Femtosecond Lasers and Applications to Tests of Fundamental Constants"
   year: 2010
   first_author: "Le Coq"
-  authors:
-    - "Y. Le Coq"
-    - "J. Millo"
-    - "W. Zhang"
-    - "M. Abgrall"
-    - "M. Lours"
-    - "H. Jiang"
-    - "E.M.L. English"
-    - "R. Boudot"
-    - "P.Y. Bourgeois"
-    - "M.E. Tobar"
-    - "J. Guena"
-    - "A. Clairon"
-    - "S. Bize"
-    - "A.N. Luiten"
-    - "Y. Kersal"
-    - "G. Santarelli"
+  authors: ["Y. Le Coq", "J. Millo", "W. Zhang", "M. Abgrall", "M. Lours", "H. Jiang", "E.M.L. English", "R. Boudot", "P.Y. Bourgeois", "M.E. Tobar", "J. Guena", "A. Clairon", "S. Bize", "A.N. Luiten", "Y. Kersal", "G. Santarelli"]
   journal: "CLEO/QELS 2010 (OSA)"
-  doi: ""
+  doi: 
   note: >
-    CLEO/QELS 2010会议论文（LNE-SYRTE）。两台Er:fiber飞秒梳相位锁定于公共超稳激光
-    （1.55 µm），在11.55 GHz提取微波信号，相位噪声 −111 dBc/Hz（@1 Hz，受读出系统限制）。
-    单系统绝对稳定度约1.6×10⁻¹⁶（1s），长期平均至~3×10⁻¹⁹（65536 s）。
-    并演示用于铯喷泉时钟（稳定度3.5×10⁻¹⁴ τ⁻¹/²，投影噪声限）。
-    注：PDF含CID编码字体，部分文字为CID序列，核心数据已从可读段提取。
-
+    CLEO/QELS 2010会议论文（LNE-SYRTE）。两台Er:fiber飞秒梳相位锁定于公共超稳激光 （1.55 µm），在11.55 GHz提取微波信号，相位噪声 −111 dBc/Hz（@1 Hz，受读出系统限制）。 单系统绝对稳定度约1.6×10⁻¹⁶（1s），长期平均至~3×10⁻¹⁹（65536 s）。 并演示用于铯喷泉时钟（稳定度3.5×10⁻¹⁴ τ⁻¹/²，投影噪声限）。 注：PDF含CID编码字体，部分文字为CID序列，核心数据已从可读段提取。
 entities:
   - id: ent.er_fiber_ofd_lecoq2010
     name: "LNE-SYRTE Er:fiber光频除法器（Le Coq 2010）"

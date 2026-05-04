@@ -1,21 +1,21 @@
+# Shi 2022 — Temperature Insensitive Delay-Line Fiber Interferometer Operating at Room Tem... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: UKBFZLXG
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: Temperature Insensitive Delay-Line Fiber Interferometer Operating at Room
-    Temperature
+  title: "Temperature Insensitive Delay-Line Fiber Interferometer Operating at Room Temperature"
   year: 2022
-  first_author: Shi
-  journal: Journal of Lightwave Technology
+  first_author: "Shi"
+  journal: "Journal of Lightwave Technology"
   volume: 40
-  issue: 16
-  pages: '5716'
+  pages: 5716
   doi: 10.1109/JLT.2022.3183060
-  note: '热不敏感光纤 MZI：HCF（低热灵敏度）和 SMF（高热灵敏度 ~25×） 以 25:1 长度比组合，使两臂热相位变化相互抵消。 零灵敏度温度可通过调节光纤长度比控制。
-    核心贡献：无需恒温的温度不敏感光纤干涉仪方案。
-
-    '
+  note: >
+    热不敏感光纤 MZI：HCF（低热灵敏度）和 SMF（高热灵敏度 ~25×） 以 25:1 长度比组合，使两臂热相位变化相互抵消。 零灵敏度温度可通过调节光纤长度比控制。 核心贡献：无需恒温的温度不敏感光纤干涉仪方案。
 entities: []
 principles:
 - id: pri.hcf_smf_thermal_compensation

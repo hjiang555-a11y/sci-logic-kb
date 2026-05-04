@@ -1,35 +1,21 @@
-# Zhang 2015 — Er:fiber 腔内 EOM + PZT 双执行器长期稳频梳
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-21
-# Schema版本：v4.3
-# 专题：optical-frequency-combs
-# contribution_type: evidence（腔内 EOM 提高 f_rep 伺服带宽至 230 kHz 的工程复现）
-
+# Zhang 2015 — A long-term frequency-stabilized erbium-fiber-laser-based optical frequency c... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "R4M8SE4F"
+  zotero_key: R4M8SE4F
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: evidence
   reliability: medium
   title: "A long-term frequency-stabilized erbium-fiber-laser-based optical frequency comb with an intra-cavity electro-optic modulator"
   year: 2015
-  first_author: Zhang
+  first_author: "Zhang"
   journal: "Chinese Physics B"
   volume: 24
-  issue: 6
-  pages: "064209"
-  doi: "10.1088/1674-1056/24/6/064209"
+  pages: 064209
+  doi: 10.1088/1674-1056/24/6/064209
   note: >
-    [技术论文] 国家授时中心/中科院合作。209 MHz Er:fiber NPE 锁模梳，
-    腔内 LiNbO₃ EOM + 2 cm 长程 PZT 双执行器锁 f_rep：
-    (1) EOM 高带宽通道实现 ~230 kHz f_rep 伺服带宽（远超纯 PZT ~kHz）；
-    (2) 闭环 3 kHz 时的长期稳定，支持小时量级连续运行；
-    (3) common-path f-2f 干涉仪测 f_CEO，SNR 40 dB @ 3 MHz RBW；
-    (4) 锁定后 f_CEO 1 s 偏差 0.6 mHz。
-    EOM-PZT 双执行器已是彼时成熟拓扑（参见 Hudson 2005、kuse2015），本工作是在
-    国产 Er:fiber 平台上的长期运行工程复现，故归 evidence。
-    对齐 v2 子域主线：A1-Robust（长期稳定）、A1-Noise（伺服带宽）。
-
+    [技术论文] 国家授时中心/中科院合作。209 MHz Er:fiber NPE 锁模梳， 腔内 LiNbO₃ EOM + 2 cm 长程 PZT 双执行器锁 f_rep： (1) EOM 高带宽通道实现 ~230 kHz f_rep 伺服带宽（远超纯 PZT ~kHz）； (2) 闭环 3 kHz 时的长期稳定，支持小时量级连续运行； (3) common-path f-2f 干涉仪测 f_CEO，SNR 40 dB @ 3 MHz RBW； (4) 锁定后 f_CEO 1 s 偏差 0.6 mHz。 EOM-PZT 双执行器已是彼时成熟拓扑（参见 Hudson 2005、kuse2015），本工作是在 国产 Er:fiber 平台上的长期运行工程复现，故归 evidence。 对齐 v2 子域主线：A1-Robust（长期稳定）、A1-Noise（伺服带宽）。
 entities:
   - id: ent.er_fiber_intracavity_eom_comb_z15
     name: "Er:fiber 腔内 EOM 稳频梳（Zhang 2015）"

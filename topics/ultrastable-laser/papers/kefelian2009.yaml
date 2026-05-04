@@ -1,23 +1,21 @@
+# Kéfélian 2009 — Ultralow-frequency-noise stabilization of a laser by locking to an optical fi... [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: MN54T4F3
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: breakthrough
-  primary_metric_exempt_reason: psd_only
   reliability: medium
-  title: Ultralow-frequency-noise stabilization of a laser by locking to an optical
-    fiber-delay line
+  title: "Ultralow-frequency-noise stabilization of a laser by locking to an optical fiber-delay line"
   year: 2009
-  first_author: Kéfélian
-  journal: Optics Letters
+  first_author: "Kéfélian"
+  journal: "Optics Letters"
   volume: 34
-  issue: 7
   pages: 914-916
   doi: 10.1364/OL.34.000914
-  note: '首次演示全光纤迈克尔逊干涉仪 AOM 外差锁频将 DFB EDFL 频率噪声降低超 40 dB， 在 40 Hz–30 kHz 频段达到与高精细度
-    FP 腔 PDH 锁定可比的水平。 核心贡献：验证了光纤延迟线外差方案作为 FP 腔替代的可行性（首次 40 dB 级降噪）。 在知识图谱中填补 ent.fiber_interferometer
-    的首次高性能演示时间点。
-
-    '
+  note: >
+    首次演示全光纤迈克尔逊干涉仪 AOM 外差锁频将 DFB EDFL 频率噪声降低超 40 dB， 在 40 Hz–30 kHz 频段达到与高精细度 FP 腔 PDH 锁定可比的水平。 核心贡献：验证了光纤延迟线外差方案作为 FP 腔替代的可行性（首次 40 dB 级降噪）。 在知识图谱中填补 ent.fiber_interferometer 的首次高性能演示时间点。
 entities: []
 principles: []
 methods: []

@@ -1,20 +1,21 @@
+# Grote 2016 — High power and ultra-low-noise photodetector for squeezed-light enhanced grav... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: VM5MJ9B3
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: High power and ultra-low-noise photodetector for squeezed-light enhanced
-    gravitational wave detectors
+  title: "High power and ultra-low-noise photodetector for squeezed-light enhanced gravitational wave detectors"
   year: 2016
-  first_author: Grote
-  journal: Optics Express
+  first_author: "Grote"
+  journal: "Optics Express"
   volume: 24
-  pages: '20107'
+  pages: 20107
   doi: 10.1364/OE.24.020107
-  note: '为压缩光增强引力波探测器设计的高功率超低噪声光电探测器， 音频频段电子噪声降低 4 倍以上（>1 kHz）， 应用于 GEO 600 引力波探测器。
-    核心贡献：量子噪声极限探测的光电探测器工程方案。
-
-    '
+  note: >
+    为压缩光增强引力波探测器设计的高功率超低噪声光电探测器， 音频频段电子噪声降低 4 倍以上（>1 kHz）， 应用于 GEO 600 引力波探测器。 核心贡献：量子噪声极限探测的光电探测器工程方案。
 entities:
 - id: ent.gw_photodetector_g16
   name: 高功率超低噪声光电探测器（Grote 2016）

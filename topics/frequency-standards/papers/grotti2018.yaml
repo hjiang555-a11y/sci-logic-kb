@@ -1,11 +1,8 @@
 # Grotti 2018 — Geodesy and metrology with a transportable optical clock [breakthrough]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：frequency-standards
-
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "QQ6FRH2U"
+  zotero_key: QQ6FRH2U
   topic: frequency-standards
   source_type: journal_paper
   contribution_type: breakthrough
@@ -15,9 +12,9 @@ meta:
   first_author: "Grotti"
   authors: ["J. Grotti", "S. Koller", "S. Vogt", "S. Häfner", "U. Sterr", "C. Lisdat", "H. Denker", "C. Voigt", "L. Timmen", "A. Rolland", "F. N. Baynes", "H. Margolis", "M. Zampaolo", "P. Thoumany", "M. Pizzocaro", "B. Rauf", "F. Bregolin", "A. Tampellini", "P. Tavella", "M. Milani", "G. Costanzo", "C. Clivati", "D. Calonico", "P. Delva"]
   journal: "Nature Physics"
-  doi: "10.1038/s41567-017-0042-3"
-  note: "首次用可搬运Sr光晶格钟进行大地测量：测量引力势差不确定度5×10^-18；PTB-INRIM光纤链路频率比对"
-
+  doi: 10.1038/s41567-017-0042-3
+  note: >
+    首次用可搬运Sr光晶格钟进行大地测量：测量引力势差不确定度5×10^-18；PTB-INRIM光纤链路频率比对
 entities:
   - id: ent.transportable_sr_clock_ptb2018
     name: "PTB 可搬运Sr光晶格钟（2018）"

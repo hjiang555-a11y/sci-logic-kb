@@ -1,26 +1,8 @@
-# Han 2024 — 113 km 开放大气双梳光谱：双站双向+时频传递+高功率梳，世界最长开放路径 DCS [里程碑技术论文]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical
-#   核心贡献：
-#     (1) 首次实现 113 km（此前最长 ~20 km）开放大气水平路径双梳光谱，信道损耗 83 dB，
-#         接近高轨卫星-地面单模光纤耦合的 60–80 dB 典型损耗量级；
-#     (2) 提出双站两向（bistatic two-way）协议：两台梳分置两端互发互收，
-#         消除反射镜几何损耗，把"二次穿过大气"降为"单程穿过"；
-#     (3) 用光纤/自由空间时频传递将两端独立 Rb+USL 频率基准绑定，
-#         将频率精度由 1 GHz 提升 5 个数量级至 10 kHz（M = fr/Δfr = 10⁵）；
-#     (4) 开发高功率 OFC（EDFA 后 1 W/梳）、400 mm 口径望远镜、低 NEP 平衡探测、
-#         门限触发采集等硬件链路，使 nW 级接收回波仍可相干平均；
-#     (5) 在 5 min 内对 CO₂ 达到 <2 ppm，36 min 达 <0.6 ppm 的 Allan 精度。
-#   Framework 依赖：
-#     ent.dual_comb_spectrometer（权威定义于 coddington2016.yaml）；
-#     meth.dual_comb_spectroscopy / pri.dual_comb_multiheterodyne_detection
-#     / meth.adaptive_sampling_correction 均已定义，本文件仅跨文件引用。
-
+# Han 2024 — Dual-comb spectroscopy over a 100 km open-air path [technical]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "AZ25GQE3"
+  zotero_key: AZ25GQE3
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical
@@ -29,25 +11,9 @@ meta:
   year: 2024
   first_author: "Han"
   journal: "Nature Photonics"
-  volume: null
-  issue: null
-  pages: null
-  doi: "10.1038/s41566-024-01525-9"
+  doi: 10.1038/s41566-024-01525-9
   note: >
-    [里程碑技术论文] USTC（Pan/Zhang/Xue/Jiang 等）与新疆天文台合作，Nanshan↔Gaoyazi
-    两终端跨越 113 km 山地水平路径。每端独立 Rb 原子钟+USL+OFC（Er 光纤梳，fr≈250 MHz），
-    两端 Δfr = 2.5 kHz。两梳经 EDFA 放大至 1 W、3 dB 带宽 7 nm @1545 nm，经 400 mm 望远镜
-    互发互收，接收端与本地梳干涉形成双梳干涉图。时频传递（参考 Shen 2022 @10⁻¹⁹/113 km）
-    将独立基准绑定，从原始 ~1 GHz 频移收窄到 10 kHz 光学频率精度；HITRAN2020 反演 CO₂/H₂O。
-    跨文件引用：ent.dual_comb_spectrometer、meth.dual_comb_spectroscopy、
-    pri.dual_comb_multiheterodyne_detection、meth.adaptive_sampling_correction
-    定义于 coddington2016.yaml / coddington2010 体系；ent.optical_frequency_comb
-    定义于 udem2002.yaml。
-
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
+    [里程碑技术论文] USTC（Pan/Zhang/Xue/Jiang 等）与新疆天文台合作，Nanshan↔Gaoyazi 两终端跨越 113 km 山地水平路径。每端独立 Rb 原子钟+USL+OFC（Er 光纤梳，fr≈250 MHz）， 两端 Δfr = 2.5 kHz。两梳经 EDFA 放大至 1 W、3 dB 带宽 7 nm @1545 nm，经 400 mm 望远镜 互发互收，接收端与本地梳干涉形成双梳干涉图。时频传递（参考 Shen 2022 @10⁻¹⁹/113 km） 将独立基准绑定，从原始 ~1 GHz 频移收窄到 10 kHz 光学频率精度；HITRAN2020 反演 CO₂/H₂O。 跨文件引用：ent.dual_comb_spectrometer、meth.dual_comb_spectroscopy、 pri.dual_comb_multiheterodyne_detection、meth.adaptive_sampling_correction 定义于 coddington2016.yaml / coddington2010 体系；ent.optical_frequency_comb 定义于 udem2002.yaml。
 entities:
   - id: ent.long_path_dcs_h24
     name: "113 km 开放大气双站双向双梳光谱系统（Han 2024）"

@@ -1,37 +1,22 @@
-# Swann 2019 — Impact of turbulence anisoplanatism on precision free-space optical time transfer [evidence]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：time-frequency-transfer
-# contribution_type: evidence
-
+# Swann 2019 — Measurement of the impact of turbulence anisoplanatism on precision free-spac... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "9ltylbj8"
+  zotero_key: 9ltylbj8
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Measurement of the impact of turbulence anisoplanatism on precision free-space optical time transfer"
   year: 2019
-  first_author: Swann
-  authors:
-  - "W. C. Swann"
-  - "M. I. Bodine"
-  - "I. Khader"
-  - "J. D. Deschenes"
-  - "E. Baumann"
-  - "L. C. Sinclair"
-  - "N. R. Newbury"
+  first_author: "Swann"
+  authors: ["W. C. Swann", "M. I. Bodine", "I. Khader", "J. D. Deschenes", "E. Baumann", "L. C. Sinclair", "N. R. Newbury"]
   journal: "Physical Review A"
   volume: 99
-  issue: 2
-  pages: "023855"
-  doi: "10.1103/PhysRevA.99.023855"
+  pages: 023855
+  doi: 10.1103/PhysRevA.99.023855
   note: >
-    [期刊论文] NIST Boulder + Laval. 实验测量横向平台运动 + 湍流空间变化导致的 O-TWTFT
-    互易性破坏（anisoplanatism）。2 km 两路空间分离链路，同步与频率传递退化适度，
-    外推到 ground↔MEO 卫星链路仅几 fs 级 timing noise 增加——对自由空间光钟网络具鼓舞意义。
-
+    [期刊论文] NIST Boulder + Laval. 实验测量横向平台运动 + 湍流空间变化导致的 O-TWTFT 互易性破坏（anisoplanatism）。2 km 两路空间分离链路，同步与频率传递退化适度， 外推到 ground↔MEO 卫星链路仅几 fs 级 timing noise 增加——对自由空间光钟网络具鼓舞意义。
 entities:
   - id: ent.anisoplanatism_study_link_sw19
     name: "双路空间分离 O-TWTFT 湍流 anisoplanatism 测量（Swann 2019）"

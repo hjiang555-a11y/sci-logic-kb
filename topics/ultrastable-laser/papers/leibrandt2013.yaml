@@ -1,20 +1,21 @@
+# Leibrandt 2013 — Absolute and Relative Stability of an Optical Frequency Reference Based on Sp... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: WK9QLCGF
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: Absolute and Relative Stability of an Optical Frequency Reference Based on
-    Spectral Hole Burning in Eu³⁺:Y₂SiO₅
+  title: "Absolute and Relative Stability of an Optical Frequency Reference Based on Spectral Hole Burning in Eu³⁺:Y₂SiO₅"
   year: 2013
-  first_author: Leibrandt
-  journal: Physical Review Letters
+  first_author: "Leibrandt"
+  journal: "Physical Review Letters"
   volume: 111
-  pages: '237402'
+  pages: 237402
   doi: 10.1103/PhysRevLett.111.237402
-  note: '基于 Eu³⁺:Y₂SiO₅ 光谱烧孔（SHB）的光学频率参考。 短期稳定度 1×10⁻¹⁵/√τ（vs FP 腔）， 双晶体比较达 5.5×10⁻¹⁷
-    @ 204 s，频率漂移率 5×10⁻¹⁸/s。 核心贡献：SHB 作为替代 FP 腔频率参考的里程碑验证。
-
-    '
+  note: >
+    基于 Eu³⁺:Y₂SiO₅ 光谱烧孔（SHB）的光学频率参考。 短期稳定度 1×10⁻¹⁵/√τ（vs FP 腔）， 双晶体比较达 5.5×10⁻¹⁷ @ 204 s，频率漂移率 5×10⁻¹⁸/s。 核心贡献：SHB 作为替代 FP 腔频率参考的里程碑验证。
 entities:
 - id: ent.shb_eu_yso_reference_l13
   name: Eu³⁺:Y₂SiO₅ 光谱烧孔频率参考

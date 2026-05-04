@@ -1,21 +1,21 @@
+# Gao 2025 — An Ultra-Low Frequency Noise Laser Based on All-Fiber Integrated Recirculatin... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: JAW66GYL
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: An Ultra-Low Frequency Noise Laser Based on All-Fiber Integrated Recirculating
-    Interferometers
+  title: "An Ultra-Low Frequency Noise Laser Based on All-Fiber Integrated Recirculating Interferometers"
   year: 2025
-  first_author: Gao
-  journal: Journal of Lightwave Technology
+  first_author: "Gao"
+  journal: "Journal of Lightwave Technology"
   volume: 43
-  issue: 9
-  pages: '4469'
+  pages: 4469
   doi: 10.1109/JLT.2025.XXXXXXX
-  note: '全光纤循环干涉仪（RI），100 m 光纤延迟线实现等效长光纤的 频率鉴频灵敏度（提高 >1 个数量级），频率噪声 PSD < 1 Hz²/Hz
-    @ 1 Hz–10 kHz。 核心贡献：循环干涉仪突破了短光纤延迟线灵敏度限制。
-
-    '
+  note: >
+    全光纤循环干涉仪（RI），100 m 光纤延迟线实现等效长光纤的 频率鉴频灵敏度（提高 >1 个数量级），频率噪声 PSD < 1 Hz²/Hz @ 1 Hz–10 kHz。 核心贡献：循环干涉仪突破了短光纤延迟线灵敏度限制。
 entities:
 - id: ent.recirculating_fiber_interferometer_g25
   name: 全光纤循环干涉仪（Gao 2025）

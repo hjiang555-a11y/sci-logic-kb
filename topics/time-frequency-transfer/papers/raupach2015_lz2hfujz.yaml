@@ -1,36 +1,22 @@
-# Raupach 2015 — Brillouin amplification supports 1×10⁻²⁰ uncertainty in optical frequency transfer over 1400 km [evidence]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：time-frequency-transfer
-# contribution_type: evidence — PTB Braunschweig ↔ Strasbourg 1400 km 地下光纤环，
-#   纯 Brillouin 放大（无 EDFA）支持连续数天相位连续测量，uncertainty (1.1 ± 0.4)×10⁻²⁰（3 周均值），
-#   最佳 instability 6.9×10⁻²¹ @ 30000 s。
-
+# Raupach 2015 — Brillouin amplification supports 1×10⁻²⁰ uncertainty in optical frequency tra... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "lz2hfujz"
+  zotero_key: lz2hfujz
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Brillouin amplification supports 1×10⁻²⁰ uncertainty in optical frequency transfer over 1400 km of underground fiber"
   year: 2015
-  first_author: Raupach
-  authors:
-  - "S. M. F. Raupach"
-  - "A. Koczwara"
-  - "G. Grosche"
+  first_author: "Raupach"
+  authors: ["S. M. F. Raupach", "A. Koczwara", "G. Grosche"]
   journal: "Physical Review A"
   volume: 92
-  issue: 2
-  pages: "021801(R)"
-  doi: "10.1103/PhysRevA.92.021801"
+  pages: 021801(R)
+  doi: 10.1103/PhysRevA.92.021801
   note: >
-    [快讯] PTB。1400 km 地下光纤环（Braunschweig↔Strasbourg往返），链路仅用 **光纤 Brillouin
-    放大器（FBA）**（窄带、内禀双向对称、无 EDFA 反向反射问题），实现连续数天相位连续测量。
-    3 周加权均值 fractional offset (1.1 ± 0.4)×10⁻²⁰；最佳实例 instability 6.9×10⁻²¹、
-    fractional offset 4.4×10⁻²¹ @ 30000 s。为世界最佳光钟（10⁻¹⁸）比对提供可忽略链路贡献的上限。
-
+    [快讯] PTB。1400 km 地下光纤环（Braunschweig↔Strasbourg往返），链路仅用 **光纤 Brillouin 放大器（FBA）**（窄带、内禀双向对称、无 EDFA 反向反射问题），实现连续数天相位连续测量。 3 周加权均值 fractional offset (1.1 ± 0.4)×10⁻²⁰；最佳实例 instability 6.9×10⁻²¹、 fractional offset 4.4×10⁻²¹ @ 30000 s。为世界最佳光钟（10⁻¹⁸）比对提供可忽略链路贡献的上限。
 entities:
   - id: ent.ptb_1400km_brillouin_link_r15
     name: "PTB 1400 km Brillouin 放大光纤链路（Raupach 2015）"

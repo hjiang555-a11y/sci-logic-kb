@@ -1,20 +1,8 @@
-# Zhang 2017 — NPE+NALM 混合锁模 Er:fiber 飞秒激光构建鲁棒光学频率梳 [技术论文]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical
-#   核心贡献：
-#     (1) 提出 NPE + NALM 混合锁模 Er:fiber 飞秒激光（NALM 启动/整形宽脉冲，NPE 快饱和吸收细化短脉冲）；
-#     (2) 系统兼具 NALM 的自启动/鲁棒性与 NPE 的低 RIN/低相噪，重频提升至 168 MHz，最窄脉冲 49 fs，峰值脉冲能量 0.75 nJ；
-#     (3) 稳定化 f_ceo 和 1555 nm 梳齿，双路 in-loop Allan 偏差均 < 1×10⁻¹⁷ @1s，长期稳定性达 10⁻²⁰ @10000 s；
-#     (4) 掉电 6 个月后仍可自启动，验证了对空间等严苛应用的鲁棒性。
-#   Framework 依赖：ent.optical_frequency_comb 权威定义于 udem2002.yaml；
-#     pri.self_referencing_f2f 定义于 udem2002.yaml / giunta2019.yaml；本文件为 Er:fiber 飞秒梳方向的
-#     Level 2 实例节点 + 混合锁模机制原理。
-
+# Zhang 2017 — Robust optical-frequency-comb based on the hybrid mode-locked Er:fiber femtos... [technical]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "9RFKI5SH"
+  zotero_key: 9RFKI5SH
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical
@@ -24,24 +12,10 @@ meta:
   first_author: "Zhang"
   journal: "Optics Express"
   volume: 25
-  issue: 18
-  pages: "21719-21725"
-  doi: "10.1364/OE.25.021719"
+  pages: 21719-21725
+  doi: 10.1364/OE.25.021719
   note: >
-    [技术论文] 国家授时中心（Zhang/Jiang 等）研制的 Er:fiber 混合锁模飞秒激光梳。
-    左环为主谐振腔（NPE 单元：SMF-28 + 自由空间 PBS/波片/PZT/EOM + 隔离器 + 偏振片），
-    右环为典型 NALM（50:50 耦合器连接）。NALM 负责启动锁模并整形宽脉冲，NPE 作为快饱和吸收机制
-    在腔内实现幅度非线性滤波、压缩脉冲。腔长 122.5 cm，净色散 ~ -5000 fs²，重频 168 MHz，
-    860 mW 泵浦下最窄脉冲 49 fs、输出功率最高 126 mW、单脉冲能量 0.75 nJ。
-    通过全光纤超连续展宽 + 共光程 f-2f 探测 f_ceo（SNR 35 dB @300 kHz RBW）；f_ceo 通过调泵浦电流锁定（0.7 MHz/mA）；
-    1555 nm 梳齿对窄线宽 CW 激光锁定（EOM + PZT 双通道）。in-loop f_ceo Allan 偏差 9.0×10⁻¹⁸ @1 s，
-    in-loop f_beat 9.4×10⁻¹⁸ @1 s 并下降到 10⁻²⁰ @10000 s。
-    跨文件节点：ent.optical_frequency_comb、pri.self_referencing_f2f 已定义于 udem2002.yaml。
-
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
+    [技术论文] 国家授时中心（Zhang/Jiang 等）研制的 Er:fiber 混合锁模飞秒激光梳。 左环为主谐振腔（NPE 单元：SMF-28 + 自由空间 PBS/波片/PZT/EOM + 隔离器 + 偏振片）， 右环为典型 NALM（50:50 耦合器连接）。NALM 负责启动锁模并整形宽脉冲，NPE 作为快饱和吸收机制 在腔内实现幅度非线性滤波、压缩脉冲。腔长 122.5 cm，净色散 ~ -5000 fs²，重频 168 MHz， 860 mW 泵浦下最窄脉冲 49 fs、输出功率最高 126 mW、单脉冲能量 0.75 nJ。 通过全光纤超连续展宽 + 共光程 f-2f 探测 f_ceo（SNR 35 dB @300 kHz RBW）；f_ceo 通过调泵浦电流锁定（0.7 MHz/mA）； 1555 nm 梳齿对窄线宽 CW 激光锁定（EOM + PZT 双通道）。in-loop f_ceo Allan 偏差 9.0×10⁻¹⁸ @1 s， in-loop f_beat 9.4×10⁻¹⁸ @1 s 并下降到 10⁻²⁰ @10000 s。 跨文件节点：ent.optical_frequency_comb、pri.self_referencing_f2f 已定义于 udem2002.yaml。
 entities:
   - id: ent.hybrid_ml_erfiber_comb_z17
     name: "NPE+NALM 混合锁模 Er:fiber 光学频率梳（Zhang 2017 系统）"

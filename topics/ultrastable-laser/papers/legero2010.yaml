@@ -1,21 +1,21 @@
+# Legero 2010 — Tuning the thermal expansion properties of optical reference cavities with fu... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: MW3RDB68
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: Tuning the thermal expansion properties of optical reference cavities with
-    fused silica mirrors
+  title: "Tuning the thermal expansion properties of optical reference cavities with fused silica mirrors"
   year: 2010
-  first_author: Legero
-  journal: Optics Letters
+  first_author: "Legero"
+  journal: "Optics Letters"
   volume: 35
   pages: 1275-1277
   doi: 10.1364/OL.35.001275
-  note: '研究 LTE（低热膨胀）间隔物 + 熔融石英（FS）镜的混合材料腔热膨胀特性。 发现 FS 镜导致 CTE 零点温度比全 ULE 腔降低约 20
-    K， 但通过在 FS 镜背面光学贴合 ULE 环可调谐零点温度范围 ~30 K。 PTB（Legero/Kessler/Sterr），为后续 Millo 2009
-    等 FS 镜低热噪声腔提供工程基础。 CTE 调谐技术作为腔热漂移控制的子内容记录，不单独建立原理节点。
-
-    '
+  note: >
+    研究 LTE（低热膨胀）间隔物 + 熔融石英（FS）镜的混合材料腔热膨胀特性。 发现 FS 镜导致 CTE 零点温度比全 ULE 腔降低约 20 K， 但通过在 FS 镜背面光学贴合 ULE 环可调谐零点温度范围 ~30 K。 PTB（Legero/Kessler/Sterr），为后续 Millo 2009 等 FS 镜低热噪声腔提供工程基础。 CTE 调谐技术作为腔热漂移控制的子内容记录，不单独建立原理节点。
 methods:
 - id: meth.cte_tuning_fs_mirror_leg10
   name: FS镜CTE调谐方法（Legero 2010）

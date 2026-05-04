@@ -1,20 +1,21 @@
+# Gobron 2017 — Dispersive heterodyne probing method for laser frequency stabilization based ... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: HKYLIW8U
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: Dispersive heterodyne probing method for laser frequency stabilization based
-    on spectral hole burning in rare-earth doped crystals
+  title: "Dispersive heterodyne probing method for laser frequency stabilization based on spectral hole burning in rare-earth doped crystals"
   year: 2017
-  first_author: Gobron
-  journal: Optics Express
+  first_author: "Gobron"
+  journal: "Optics Express"
   volume: 25
-  pages: '15539'
+  pages: 15539
   doi: 10.1364/OE.25.015539
-  note: '基于稀土掺杂晶体光谱烧孔的色散外差探测稳频新方法。 主激光和从激光产生外差拍频，通过色散信号锁定频率。 核心贡献：SHB 稳频的新探测方案，互补
-    Leibrandt 2013 的方法。
-
-    '
+  note: >
+    基于稀土掺杂晶体光谱烧孔的色散外差探测稳频新方法。 主激光和从激光产生外差拍频，通过色散信号锁定频率。 核心贡献：SHB 稳频的新探测方案，互补 Leibrandt 2013 的方法。
 entities: []
 principles:
 - id: pri.dispersive_heterodyne_shb

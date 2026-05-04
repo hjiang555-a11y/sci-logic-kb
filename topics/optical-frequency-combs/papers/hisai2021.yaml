@@ -1,35 +1,21 @@
-# Hisai 2021 — NMIJ 8分支 Er:fiber 梳服务 Sr/Yb 光钟（稳定运行验证）
-# 提取者：GitHub Copilot（AI草稿，2026-04-22）
-# 提取日期：2026-04-22
-# Schema版本：v4.3
-# 专题：optical-frequency-combs
-# contribution_type: evidence（8支路架构首次演示，但稳定度未破纪录，定位为工程验证）
-
+# Hisai 2021 — Development of 8-branch Er:fiber frequency comb for Sr and Yb optical lattice... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "SZL4V3W8"
+  zotero_key: SZL4V3W8
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
   title: "Development of 8-branch Er:fiber frequency comb for Sr and Yb optical lattice clocks"
   year: 2021
-  first_author: Hisai
+  first_author: "Hisai"
   journal: "Optics Express"
   volume: 27
-  issue: 5
-  pages: "6404-6415"
-  doi: "10.1364/OE.27.006404"
+  pages: 6404-6415
+  doi: 10.1364/OE.27.006404
   note: >
-    [技术论文] NMIJ (日本国家计量院)。开发 8分支 Er:fiber 频率梳（7 个应用端口 + 1 个 fceo 端口），
-    同时服务 Sr 与 Yb 光晶格钟的冷却/再泵浦/晶格/时钟激光频率锁定与测量：
-    (1) NPR 锁模振荡器（50.25 MHz）+ 三级 1:1 耦合器分光 → 8 分支，各自独立优化 EDFA + 非线性展宽；
-    (2) 7 个应用端口覆盖 578 nm / 679 nm / 698 nm / 759 nm / 798 nm / 813 nm / 1389 nm；
-    (3) 每路拍频 SNR > 30 dB @ 300 kHz RBW；同时锁定 4 个再泵浦/晶格激光 + 测量 2 个时钟激光；
-    (4) 验证光钟可靠运行（依赖梳稳频，无需单独光学腔）。
-    本工作是多分支梳架构的重要工程示范（8 分支，文献中最多），但未报告跨支路相位同步精度（σ_y 或相噪），
-    且 SNR / 稳定度未破先前纪录（Rolland 2018 / Kashiwagi 2018）。归 evidence（工程复杂度里程碑）。
-    对齐 v2 子域主线：B-FreqSyn（多支路相位同步），但性能参数未突破。
-
+    [技术论文] NMIJ (日本国家计量院)。开发 8分支 Er:fiber 频率梳（7 个应用端口 + 1 个 fceo 端口）， 同时服务 Sr 与 Yb 光晶格钟的冷却/再泵浦/晶格/时钟激光频率锁定与测量： (1) NPR 锁模振荡器（50.25 MHz）+ 三级 1:1 耦合器分光 → 8 分支，各自独立优化 EDFA + 非线性展宽； (2) 7 个应用端口覆盖 578 nm / 679 nm / 698 nm / 759 nm / 798 nm / 813 nm / 1389 nm； (3) 每路拍频 SNR > 30 dB @ 300 kHz RBW；同时锁定 4 个再泵浦/晶格激光 + 测量 2 个时钟激光； (4) 验证光钟可靠运行（依赖梳稳频，无需单独光学腔）。 本工作是多分支梳架构的重要工程示范（8 分支，文献中最多），但未报告跨支路相位同步精度（σ_y 或相噪）， 且 SNR / 稳定度未破先前纪录（Rolland 2018 / Kashiwagi 2018）。归 evidence（工程复杂度里程碑）。 对齐 v2 子域主线：B-FreqSyn（多支路相位同步），但性能参数未突破。
 entities:
   - id: ent.nmij_8branch_er_comb_h21
     name: "NMIJ 8分支 Er:fiber 频率梳（Hisai 2021）"

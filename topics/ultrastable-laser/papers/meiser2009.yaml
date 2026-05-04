@@ -1,19 +1,21 @@
+# Meiser 2009 — Prospects for a Millihertz-Linewidth Laser [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: WW9ESVMK
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: Prospects for a Millihertz-Linewidth Laser
+  title: "Prospects for a Millihertz-Linewidth Laser"
   year: 2009
-  first_author: Meiser
-  journal: Physical Review Letters
+  first_author: "Meiser"
+  journal: "Physical Review Letters"
   volume: 102
-  pages: '163601'
+  pages: 163601
   doi: 10.1103/PhysRevLett.102.163601
-  note: '理论提出基于碱土金属原子超辐射的毫赫兹线宽激光源。 光晶格中原子在超窄钟跃迁上集体发射至高 Q 腔模， 集体效应使线宽小于钟跃迁自然线宽，功率 ~10⁻¹²
-    W 可用于锁定从激光。 核心贡献：超辐射激光概念——绕过 FP 腔热噪声限制的替代方案。
-
-    '
+  note: >
+    理论提出基于碱土金属原子超辐射的毫赫兹线宽激光源。 光晶格中原子在超窄钟跃迁上集体发射至高 Q 腔模， 集体效应使线宽小于钟跃迁自然线宽，功率 ~10⁻¹² W 可用于锁定从激光。 核心贡献：超辐射激光概念——绕过 FP 腔热噪声限制的替代方案。
 entities:
 - id: ent.superradiant_laser_m09
   name: 超辐射激光（Meiser 2009 理论）

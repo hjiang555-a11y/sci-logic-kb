@@ -1,41 +1,22 @@
 # Dix-Matthews 2021 — Point-to-point stabilized optical frequency transfer with active optics [evidence]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：time-frequency-transfer
-# contribution_type: evidence
-
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "bv4dl5z6"
+  zotero_key: bv4dl5z6
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Point-to-point stabilized optical frequency transfer with active optics"
   year: 2021
-  first_author: Dix-Matthews
-  authors:
-  - "B. P. Dix-Matthews"
-  - "S. W. Schediwy"
-  - "D. R. Gozzard"
-  - "E. Savalle"
-  - "F. X. Esnault"
-  - "T. Leveque"
-  - "C. Gravestock"
-  - "D. D'Mello"
-  - "S. Karpathakis"
-  - "M. Tobar"
-  - "P. Wolf"
+  first_author: "Dix-Matthews"
+  authors: ["B. P. Dix-Matthews", "S. W. Schediwy", "D. R. Gozzard", "E. Savalle", "F. X. Esnault", "T. Leveque", "C. Gravestock", "D. D'Mello", "S. Karpathakis", "M. Tobar", "P. Wolf"]
   journal: "Nature Communications"
   volume: 12
-  pages: "515"
-  doi: "10.1038/s41467-020-20591-5"
+  pages: 515
+  doi: 10.1038/s41467-020-20591-5
   note: >
-    [期刊论文] UWA（西澳大学）+ SYRTE + CNES. 265 m 水平自由空间链路 + 主动 tip-tilt 光学终端
-    抑制 beam wander，连续无 cycle-slip 相位锁定 >1 h。残余 phase noise 2.7×10⁻⁶ rad²/Hz @1 Hz，
-    fractional frequency instability 1.6×10⁻¹⁹ @40 s——超过当前最佳光钟，确保 clock-limited
-    自由空间频率比对。紧凑人员可搬运。715 m 地下光纤并行链路做基准参考。
-
+    [期刊论文] UWA（西澳大学）+ SYRTE + CNES. 265 m 水平自由空间链路 + 主动 tip-tilt 光学终端 抑制 beam wander，连续无 cycle-slip 相位锁定 >1 h。残余 phase noise 2.7×10⁻⁶ rad²/Hz @1 Hz， fractional frequency instability 1.6×10⁻¹⁹ @40 s——超过当前最佳光钟，确保 clock-limited 自由空间频率比对。紧凑人员可搬运。715 m 地下光纤并行链路做基准参考。
 entities:
   - id: ent.uwa_265m_active_tiptilt_link_dm21
     name: "UWA 265 m 主动 tip-tilt 自由空间光频传递（Dix-Matthews 2021）"

@@ -1,21 +1,21 @@
+# Dixneuf 2020 — Ultra-low intensity noise, all fiber 365 W linearly polarized single frequenc... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: HJZ6BVYE
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: Ultra-low intensity noise, all fiber 365 W linearly polarized single frequency
-    laser at 1064 nm
+  title: "Ultra-low intensity noise, all fiber 365 W linearly polarized single frequency laser at 1064 nm"
   year: 2020
-  first_author: Dixneuf
-  journal: Optics Express
+  first_author: "Dixneuf"
+  journal: "Optics Express"
   volume: 28
-  issue: 8
-  pages: '10960'
+  pages: 10960
   doi: 10.1364/OE.28.010960
-  note: '全光纤 365 W 线偏振单频 1064 nm MOPA， RIN 降至 -160 dBc/Hz @ 2–10 kHz（1 MHz 带宽伺服），
-    350 W 隔离输出，功率稳定性 <0.7% RMS / 1100 小时。 核心贡献：引力波探测和精密测量所需的高功率低噪声激光源。
-
-    '
+  note: >
+    全光纤 365 W 线偏振单频 1064 nm MOPA， RIN 降至 -160 dBc/Hz @ 2–10 kHz（1 MHz 带宽伺服）， 350 W 隔离输出，功率稳定性 <0.7% RMS / 1100 小时。 核心贡献：引力波探测和精密测量所需的高功率低噪声激光源。
 entities:
 - id: ent.high_power_low_rin_fiber_laser_d20
   name: 365 W 超低 RIN 全光纤单频激光（Dixneuf 2020）

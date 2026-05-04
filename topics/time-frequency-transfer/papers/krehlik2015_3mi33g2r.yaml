@@ -1,38 +1,22 @@
-# Krehlik 2015 — Ultrastable long-distance fibre-optic time transfer: active compensation over a wide range of delays [evidence]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：time-frequency-transfer
-# contribution_type: evidence — AGH Kraków 团队（波兰）提出一种新型有源延迟稳定方案（模拟电延迟 +
-#   数字跳变补偿），可在"任意大的延迟漂移范围"下维持 RF-over-fiber 时间传递精度。
-
+# Krehlik 2015 — Ultrastable long-distance fibre-optic time transfer: active compensation over... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "3mi33g2r"
+  zotero_key: 3mi33g2r
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
   reliability: medium
   title: "Ultrastable long-distance fibre-optic time transfer: active compensation over a wide range of delays"
   year: 2015
-  first_author: Krehlik
-  authors:
-  - "P. Krehlik"
-  - "L. Sliwczynski"
-  - "L. Buczek"
-  - "J. Kolodziej"
-  - "M. Lipinski"
+  first_author: "Krehlik"
+  authors: ["P. Krehlik", "L. Sliwczynski", "L. Buczek", "J. Kolodziej", "M. Lipinski"]
   journal: "Metrologia"
   volume: 52
-  issue: 1
-  pages: "82-88"
-  doi: "10.1088/0026-1394/52/1/82"
+  pages: 82-88
+  doi: 10.1088/0026-1394/52/1/82
   note: >
-    [期刊论文] AGH University of Science and Technology, Kraków。针对 RF-over-fiber（微波
-    调制光载波）时间/频率分发，传统电子可变延迟线（VDL）压缩范围有限，
-    长距离链路温度漂移可导致累积延迟远超 VDL 范围。本文提出"模拟精调 + 数字跳变补偿"混合方案：
-    模拟 VDL 负责高分辨率连续补偿，达到量程极限时数字侧位切换一个整数 RF 周期，实现
-    "potentially unlimited range of compensation"。实用于 ≥1000 km 光纤时间分发。
-
+    [期刊论文] AGH University of Science and Technology, Kraków。针对 RF-over-fiber（微波 调制光载波）时间/频率分发，传统电子可变延迟线（VDL）压缩范围有限， 长距离链路温度漂移可导致累积延迟远超 VDL 范围。本文提出"模拟精调 + 数字跳变补偿"混合方案： 模拟 VDL 负责高分辨率连续补偿，达到量程极限时数字侧位切换一个整数 RF 周期，实现 "potentially unlimited range of compensation"。实用于 ≥1000 km 光纤时间分发。
 entities:
   - id: ent.rf_over_fiber_time_transfer_link
     name: "RF-over-fiber 时间 / 射频频率传递链路（Level 1）"

@@ -1,51 +1,22 @@
-# Shen 2021 — Experimental simulation of time and frequency transfer via optical satellite–ground link at 10⁻¹⁸ instability [evidence]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：time-frequency-transfer
-# contribution_type: evidence — USTC Pan 团队 Optica。地面模拟实验验证基于"脉冲激光"
-#   的光学卫星-地面时频传递链路，与微波链路相比具有更高时间分辨率与更大的不模糊区间；
-#   实验 instability 达到 10⁻¹⁸ 量级，为 I-SOC/ACES 后续替代方案提供依据。
-
+# Shen 2021 — Experimental simulation of time and frequency transfer via an optical satelli... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "8pxzl98k"
+  zotero_key: 8pxzl98k
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Experimental simulation of time and frequency transfer via an optical satellite–ground link at 10⁻¹⁸ instability"
   year: 2021
-  first_author: Shen
-  authors:
-  - "Qi Shen"
-  - "Jian-Yu Guan"
-  - "Ting Zeng"
-  - "Qi-Ming Lu"
-  - "Liang Huang"
-  - "Yuan Cao"
-  - "Jiu-Peng Chen"
-  - "Tian-Qi Tao"
-  - "Jin-Cai Wu"
-  - "Lei Hou"
-  - "Sheng-Kai Liao"
-  - "Ji-Gang Ren"
-  - "Juan Yin"
-  - "Jian-Jun Jia"
-  - "Hai-Feng Jiang"
-  - "Cheng-Zhi Peng"
-  - "Qiang Zhang"
-  - "Jian-Wei Pan"
+  first_author: "Shen"
+  authors: ["Qi Shen", "Jian-Yu Guan", "Ting Zeng", "Qi-Ming Lu", "Liang Huang", "Yuan Cao", "Jiu-Peng Chen", "Tian-Qi Tao", "Jin-Cai Wu", "Lei Hou", "Sheng-Kai Liao", "Ji-Gang Ren", "Juan Yin", "Jian-Jun Jia", "Hai-Feng Jiang", "Cheng-Zhi Peng", "Qiang Zhang", "Jian-Wei Pan"]
   journal: "Optica"
   volume: 8
-  issue: 4
-  pages: "471-476"
-  doi: "10.1364/OPTICA.413114"
+  pages: 471-476
+  doi: 10.1364/OPTICA.413114
   note: >
-    [期刊论文] USTC 潘建伟团队。地面模拟实验：脉冲激光（~10 ps 级脉宽）光学卫星-地面
-    链路 T&F 传递，达到 10⁻¹⁸ 级不稳定度。分析不同轨道（LEO/MEO/GEO）链路可见性、
-    多普勒、链路预算，结论高轨链路（长可见时间 + 慢多普勒）更适合稳定 T&F 比对/分发。
-    为 I-SOC（ELT+）与未来中国地空光链路项目提供证据。
-
+    [期刊论文] USTC 潘建伟团队。地面模拟实验：脉冲激光（~10 ps 级脉宽）光学卫星-地面 链路 T&F 传递，达到 10⁻¹⁸ 级不稳定度。分析不同轨道（LEO/MEO/GEO）链路可见性、 多普勒、链路预算，结论高轨链路（长可见时间 + 慢多普勒）更适合稳定 T&F 比对/分发。 为 I-SOC（ELT+）与未来中国地空光链路项目提供证据。
 entities:
   - id: ent.optical_satellite_ground_link_s21
     name: "光学卫星-地面时频传递链路（脉冲激光，Shen 2021 模拟）"

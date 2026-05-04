@@ -1,29 +1,21 @@
-# Yi 2016 — 分子/原子线锁定近红外电光调制梳用于天文径向速度测量
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical
-
+# Yi 2016 — Demonstration of a near-IR line-referenced electro-optical laser frequency co... [technical]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "59ULFL9Y"
+  zotero_key: 59ULFL9Y
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical
   reliability: high
   title: "Demonstration of a near-IR line-referenced electro-optical laser frequency comb for precision radial velocity measurements in astronomy"
   year: 2016
-  first_author: Yi
+  first_author: "Yi"
   journal: "Nature Communications"
   volume: 7
-  pages: "10436"
-  doi: "10.1038/ncomms10436"
+  pages: 10436
+  doi: 10.1038/ncomms10436
   note: >
-    [技术论文] Caltech（Vahala 组）+ NIST + JPL + NASA Exoplanet Science。
-    以 EO 调制 CW 激光产生~10–20 GHz 间距梳（H 波段 1560 nm），中心波长锁至
-    分子/原子参考线（无需 f-2f 自参考）；成分全为商用现货；部署于 NASA IRTF 与 Keck II。
-    EOFC 是"天文梳"第二条路线：与锁模梳 + F-P 滤波（Ycas 2012）形成技术竞争。
-
+    [技术论文] Caltech（Vahala 组）+ NIST + JPL + NASA Exoplanet Science。 以 EO 调制 CW 激光产生~10–20 GHz 间距梳（H 波段 1560 nm），中心波长锁至 分子/原子参考线（无需 f-2f 自参考）；成分全为商用现货；部署于 NASA IRTF 与 Keck II。 EOFC 是"天文梳"第二条路线：与锁模梳 + F-P 滤波（Ycas 2012）形成技术竞争。
 entities:
   - id: ent.line_referenced_eo_comb_y16
     name: "分子/原子线锁定 EO 调制天文光梳（Yi 2016）"

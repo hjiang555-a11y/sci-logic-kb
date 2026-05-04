@@ -1,12 +1,8 @@
-# Pasquazi 2018 — 微梳综述：新一代光源 [综述/框架型论文，81 pages]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: framework
-
+# Pasquazi 2018 — Micro-combs: A novel generation of optical sources [framework]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "HPCYUSLJ"
+  zotero_key: HPCYUSLJ
   topic: optical-frequency-combs
   source_type: review
   contribution_type: framework
@@ -16,29 +12,12 @@ meta:
   first_author: "Pasquazi"
   journal: "Physics Reports"
   volume: 729
-  pages: "1-81"
-  doi: "10.1016/j.physrep.2017.08.004"
+  pages: 1-81
+  doi: 10.1016/j.physrep.2017.08.004
   note: >
-    [综述/框架型] Pasquazi, Peccianti, Razzari, Moss, Coen, Erkintalo, Chembo,
-    Hansson, Wabnitz, Del'Haye, Xue, Weiner, Morandotti。迄今最全面的微腔光频梳综述
-    （81 页，~330 篇参考文献）。系统覆盖：
-    (1) 微谐振器技术平台（bulk WGM vs CMOS 兼容集成平台）；
-    (2) 耦合模理论建模（线性性质、非线性耦合、热效应）；
-    (3) 光学参量振荡阈值以上的微梳产生（大带宽、时域特征）；
-    (4) Lugiato-Lefever 方程（LLE）及其与耦合模形式的联系；
-    (5) 相干微梳产生（时域腔孤子 DKS、模式交互辅助梳产生、
-        暗脉冲锁模、自注入锁定、滤波驱动 FWM 激光）；
-    (6) 应用（计量学、射频光子学、光通信、量子光学微梳）。
-    作为框架型综述，本文主要建立微梳领域的顶层架构——
-    定义 Level 0/1 实体、tier: meta/domain 原理和跨专题接口。
-    跨文件节点引用：ent.microresonator_frequency_comb 定义于 kippenberg2011.yaml；
-    pri.parametric_four_wave_mixing_comb、pri.dissipative_kerr_soliton、
-    pri.lugiato_lefever_equation 定义于现有文件。
-
-# ═══════════════════════════════════════════════
-#  ENTITIES — 框架型顶层定义
-# ═══════════════════════════════════════════════
-
+    [综述/框架型] Pasquazi, Peccianti, Razzari, Moss, Coen, Erkintalo, Chembo, Hansson, Wabnitz, Del'Haye, Xue, Weiner, Morandotti。迄今最全面的微腔光频梳综述 （81 页，~330 篇参考文献）。系统覆盖： (1) 微谐振器技术平台（bulk WGM vs CMOS 兼容集成平台）； (2) 耦合模理论建模（线性性质、非线性耦合、热效应）； (3) 光学参量振荡阈值以上的微梳产生（大带宽、时域特征）； (4) Lugiato-Lefever 方程（LLE）及其与耦合模形式的联系； (5) 相干微梳产生（时域腔孤子 DKS、模式交互辅助梳产生、
+    暗脉冲锁模、自注入锁定、滤波驱动 FWM 激光）；
+    (6) 应用（计量学、射频光子学、光通信、量子光学微梳）。 作为框架型综述，本文主要建立微梳领域的顶层架构—— 定义 Level 0/1 实体、tier: meta/domain 原理和跨专题接口。 跨文件节点引用：ent.microresonator_frequency_comb 定义于 kippenberg2011.yaml； pri.parametric_four_wave_mixing_comb、pri.dissipative_kerr_soliton、 pri.lugiato_lefever_equation 定义于现有文件。
 entities:
   - id: ent.bulk_wgm_resonator_platform
     name: "体材料耳语回廊模（WGM）微谐振器平台"

@@ -1,33 +1,21 @@
-# Carlson 2017 — SiN 波导低功率自参考梳（NIST）
-# 提取者：GitHub Copilot（AI草稿，2026-04-22）
-# 提取日期：2026-04-22
-# Schema版本：v4.5
-# 专题：optical-frequency-combs
-# contribution_type: evidence（低功率 11.3 mW 实现自参考，10× 功率降低，未刷新跨平台纪录）
-
+# Carlson 2017 — Self-referenced frequency combs using high-efficiency silicon-nitride waveguides [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "WCBMETLH"
+  zotero_key: WCBMETLH
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
   title: "Self-referenced frequency combs using high-efficiency silicon-nitride waveguides"
   year: 2017
-  first_author: Carlson
+  first_author: "Carlson"
   journal: "Optics Letters"
   volume: 42
-  issue: 12
-  pages: "2314-2317"
-  doi: "10.1364/OL.42.002314"
+  pages: 2314-2317
+  doi: 10.1364/OL.42.002314
   note: >
-    [技术论文] NIST Boulder + U. Colorado. SiN 波导低功率自参考 Er 光纤梳：
-    (1) 利用 3400 nm 宽 SiN 波导（700 nm 厚，1 cm 长）实现超连续谱产生，入射光功率仅 11.3 mW（约为传统 HNLF 方案的 1/10）；
-    (2) 两种自参考方案：a) 780 nm 色散波 + 1560 nm 倍频混频（低功率 f-2f）；b) 更高功率下直接 f-3f（同时产生超连续谱与三次谐波，无需外部倍频晶体）；
-    (3) 低耦合损耗（< 2 dB）+ SiN 高非线性（110 pJ 脉冲能量即可产生两倍频程展宽）；
-    (4) 适用于便携式 / 空间应用（低功率预算）。
-    本工作是 SiN 波导 f-2f 方案的工程优化（降低功率门槛），未刷新跨平台自参考功率最低纪录（芯片平台已有更低功率方案），
-    归 evidence。对齐 v2 子域主线：A-WG（芯片波导非线性）、B-Space（低功率适合空间应用）。
-
+    [技术论文] NIST Boulder + U. Colorado. SiN 波导低功率自参考 Er 光纤梳： (1) 利用 3400 nm 宽 SiN 波导（700 nm 厚，1 cm 长）实现超连续谱产生，入射光功率仅 11.3 mW（约为传统 HNLF 方案的 1/10）； (2) 两种自参考方案：a) 780 nm 色散波 + 1560 nm 倍频混频（低功率 f-2f）；b) 更高功率下直接 f-3f（同时产生超连续谱与三次谐波，无需外部倍频晶体）； (3) 低耦合损耗（< 2 dB）+ SiN 高非线性（110 pJ 脉冲能量即可产生两倍频程展宽）； (4) 适用于便携式 / 空间应用（低功率预算）。 本工作是 SiN 波导 f-2f 方案的工程优化（降低功率门槛），未刷新跨平台自参考功率最低纪录（芯片平台已有更低功率方案）， 归 evidence。对齐 v2 子域主线：A-WG（芯片波导非线性）、B-Space（低功率适合空间应用）。
 entities:
   - id: ent.sin_waveguide_low_power_f2f_c17
     name: "SiN 波导低功率 f-2f 自参考系统（Carlson 2017）"

@@ -1,34 +1,22 @@
 # Exertier 2014 — Time Transfer by Laser Link: Data analysis and validation to the ps level [evidence]
-# 提取者：Claude Code（AI 草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.5
-# 专题：time-frequency-transfer（卫星激光时间传递 — T2L2 数据处理与 ps 级验证）
-# contribution_type: evidence — 开发 T2L2 完整数据处理管线，将原始测量转化为地-地时钟同步产品；
-#   建立噪声/信号分离模型，通过 5 年数据验证共视和非共视模式的时间稳定性。
-
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "1-s2.0-S0273117714005274-main"
+  zotero_key: 1-s2.0-S0273117714005274-main
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Time Transfer by Laser Link: Data analysis and validation to the ps level"
   year: 2014
-  first_author: Exertier
+  first_author: "Exertier"
   authors: ["P. Exertier", "E. Samain", "N. Martin", "C. Courde", "M. Laas-Bourez", "C. Foussard", "Ph. Guillemot"]
   journal: "Advances in Space Research"
   volume: 54
-  issue: 11
-  pages: "2371-2385"
-  doi: "10.1016/j.asr.2014.08.015"
+  pages: 2371-2385
+  doi: 10.1016/j.asr.2014.08.015
   note: >
-    [evidence 论文] T2L2/Jason-2 数据处理方法学与 5 年（2008–2013）数据验证。
-    建立从原始 SLR+T2L2 数据到地-地时钟同步的完整数据处理管线：三重态识别、
-    仪器修正（时间游走 30–150 ps、LRA-T2L2 几何 ~0.2 ns、相对论频率偏移~
-    40–100 ps/pass、地面站校准）、噪声/信号分离模型、共视与非共视模式分析。
-    配备 H-Maser 的 SLR 站最佳地-空 TDEV ~6–8 ps@75 s；非共视模式受限于
-    DORIS USO 长期频率建模精度。突出 SLR 站校准缺失是当前准确度瓶颈。
-
+    [evidence 论文] T2L2/Jason-2 数据处理方法学与 5 年（2008–2013）数据验证。 建立从原始 SLR+T2L2 数据到地-地时钟同步的完整数据处理管线：三重态识别、 仪器修正（时间游走 30–150 ps、LRA-T2L2 几何 ~0.2 ns、相对论频率偏移~ 40–100 ps/pass、地面站校准）、噪声/信号分离模型、共视与非共视模式分析。 配备 H-Maser 的 SLR 站最佳地-空 TDEV ~6–8 ps@75 s；非共视模式受限于 DORIS USO 长期频率建模精度。突出 SLR 站校准缺失是当前准确度瓶颈。
 entities:
   - id: ent.t2l2_data_pipeline_exertier2014
     name: "T2L2/Jason-2 数据处理管线与分析中心（Exertier 2014）"

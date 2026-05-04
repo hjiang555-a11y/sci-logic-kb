@@ -1,22 +1,21 @@
+# Michaud-Belleau 2022 — Fundamental thermal noise in antiresonant hollow-core fibers [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: 4GT5VD54
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: breakthrough
-  primary_metric_exempt_reason: new_principle
   reliability: high
-  title: Fundamental thermal noise in antiresonant hollow-core fibers
+  title: "Fundamental thermal noise in antiresonant hollow-core fibers"
   year: 2022
-  first_author: Michaud-Belleau
-  journal: Physical Review A
+  first_author: "Michaud-Belleau"
+  journal: "Physical Review A"
   volume: 106
-  pages: '023501'
+  pages: 023501
   doi: 10.1103/PhysRevA.106.023501
-  note: '首次评估空心光纤的基础热噪声。 发现大气压空气填充 NANF 在 1550 nm 比等效光学长度的实芯光纤更噪， 但抽真空至 0.15 atm 后实现光纤中最低热噪声
-    ≈1.3×10⁻¹⁷ (rad²/Hz)/m @30 kHz。 热传导噪声模型主导（气体热光学贡献）。 预测低损耗空心光纤可与超稳腔竞争用于激光频率稳定。
-    Editors'' Suggestion。Southampton + Laval 大学。 根据专家意见：空心光纤热噪声原理属于光纤干涉仪下面的内容， 对应
-    FP 腔的 pri.brownian_thermal_noise_fdt 处理方式（跨分支原理隔离）。
-
-    '
+  note: >
+    首次评估空心光纤的基础热噪声。 发现大气压空气填充 NANF 在 1550 nm 比等效光学长度的实芯光纤更噪， 但抽真空至 0.15 atm 后实现光纤中最低热噪声 ≈1.3×10⁻¹⁷ (rad²/Hz)/m @30 kHz。 热传导噪声模型主导（气体热光学贡献）。 预测低损耗空心光纤可与超稳腔竞争用于激光频率稳定。 Editors' Suggestion。Southampton + Laval 大学。 根据专家意见：空心光纤热噪声原理属于光纤干涉仪下面的内容， 对应 FP 腔的 pri.brownian_thermal_noise_fdt 处理方式（跨分支原理隔离）。
 principles:
 - id: pri.hollow_core_fiber_thermal_noise
   name: 空心光纤热噪声原理

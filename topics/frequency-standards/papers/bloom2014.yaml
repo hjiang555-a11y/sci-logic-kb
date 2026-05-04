@@ -1,11 +1,8 @@
-# Bloom 2014 — Sr optical lattice clock at 10^-18 accuracy [breakthrough]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：frequency-standards
-
+# Bloom 2014 — An optical lattice clock with accuracy and stability at the 10^-18 level [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "4NS3HJGP"
+  zotero_key: 4NS3HJGP
   topic: frequency-standards
   source_type: journal_paper
   contribution_type: breakthrough
@@ -15,9 +12,9 @@ meta:
   first_author: "Bloom"
   authors: ["B. J. Bloom", "T. L. Nicholson", "J. R. Williams", "S. L. Campbell", "M. Bishof", "X. Zhang", "W. Zhang", "S. L. Bromley", "J. Ye"]
   journal: "Nature"
-  doi: "10.1038/nature12941"
-  note: "首个多原子系统实现10^-18精度的Sr光晶格钟；原位温度探测用于BBR Stark频移校正；分数不确定度6.4×10^-18"
-
+  doi: 10.1038/nature12941
+  note: >
+    首个多原子系统实现10^-18精度的Sr光晶格钟；原位温度探测用于BBR Stark频移校正；分数不确定度6.4×10^-18
 entities:
   - id: ent.sr_optical_lattice_clock_jila2014
     name: "JILA Sr 光晶格原子钟（2014）"

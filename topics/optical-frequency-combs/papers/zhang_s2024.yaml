@@ -1,34 +1,21 @@
-# Zhang S. 2024 — 梳齿-CW 拍频 SNR 提升（门控探测 + 平衡检测，USTC）
-# 提取者：GitHub Copilot（AI草稿，2026-04-22）
-# 提取日期：2026-04-22
-# Schema版本：v4.3
-# 专题：optical-frequency-combs
-# contribution_type: evidence（SNR 提升 20 dB 达 >60 dB，工程优化未破跨平台纪录）
-
+# Zhang 2024 — Increase in the signal-to-noise ratio of the beat note between a frequency co... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "QEJS62JG"
+  zotero_key: QEJS62JG
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
   title: "Increase in the signal-to-noise ratio of the beat note between a frequency comb and a continuous-wave laser"
   year: 2024
-  first_author: Zhang
+  first_author: "Zhang"
   journal: "Physical Review Applied"
   volume: 21
-  issue: 3
-  pages: "034066"
-  doi: "10.1103/PhysRevApplied.21.034066"
+  pages: 034066
+  doi: 10.1103/PhysRevApplied.21.034066
   note: >
-    [技术论文] USTC（中国科学技术大学）。针对梳齿-CW 拍频 SNR 的系统优化方案：
-    (1) 分析拍频 SNR 模型（单齿功率 + 探测器噪声 + 光学噪声）；
-    (2) 高速平衡检测（抑制共模光强噪声）+ 门控探测（利用梳齿相位相干，抑制相位随机白噪声）；
-    (3) 自制低噪声可调延迟脉冲发生器电路（实现最优门控时延）；
-    (4) 相比传统直接探测，SNR 提升 20 dB，达到 >60 dB @ 300 kHz RBW；
-    (5) 验证梳锁定超稳激光（USL）的高可靠性与鲁棒性。
-    本工作是工程优化（门控探测方案的硬件改进 + SNR 定量提升），未突破跨平台拍频 SNR 纪录（例如高重频梳或
-    单齿功率更高的方案），归 evidence。对齐 v2 子域主线：B-FreqSyn（拍频 SNR 是锁定带宽与相位滑动风险的关键）。
-
+    [技术论文] USTC（中国科学技术大学）。针对梳齿-CW 拍频 SNR 的系统优化方案： (1) 分析拍频 SNR 模型（单齿功率 + 探测器噪声 + 光学噪声）； (2) 高速平衡检测（抑制共模光强噪声）+ 门控探测（利用梳齿相位相干，抑制相位随机白噪声）； (3) 自制低噪声可调延迟脉冲发生器电路（实现最优门控时延）； (4) 相比传统直接探测，SNR 提升 20 dB，达到 >60 dB @ 300 kHz RBW； (5) 验证梳锁定超稳激光（USL）的高可靠性与鲁棒性。 本工作是工程优化（门控探测方案的硬件改进 + SNR 定量提升），未突破跨平台拍频 SNR 纪录（例如高重频梳或 单齿功率更高的方案），归 evidence。对齐 v2 子域主线：B-FreqSyn（拍频 SNR 是锁定带宽与相位滑动风险的关键）。
 entities:
   - id: ent.ustc_gated_balanced_detection_comb_z24
     name: "USTC 门控平衡探测梳锁定系统（Zhang S. 2024）"

@@ -1,34 +1,21 @@
-# Luo 2020 — 130 W Yb 光纤梳基于 CPA（华东师大）
-# 提取者：GitHub Copilot（AI草稿，2026-04-22）
-# 提取日期：2026-04-22
-# Schema版本：v4.5
-# 专题：optical-frequency-combs
-# contribution_type: evidence（高功率工程演示，130 W / 180 fs，未刷新跨平台纪录）
-
+# Luo 2020 — 130 W, 180 fs ultrafast Yb-doped fiber frequency comb based on chirped-pulse ... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "X6KNIXMW"
+  zotero_key: X6KNIXMW
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
   title: "130 W, 180 fs ultrafast Yb-doped fiber frequency comb based on chirped-pulse fiber amplification"
   year: 2020
-  first_author: Luo
+  first_author: "Luo"
   journal: "Optics Express"
   volume: 28
-  issue: 4
-  pages: "4817-4824"
-  doi: "10.1364/OE.386211"
+  pages: 4817-4824
+  doi: 10.1364/OE.386211
   note: >
-    [技术论文] 华东师大（East China Normal University, ECNU）。基于 CPA 的高功率 Yb 光纤梳：
-    (1) 250 MHz NPR 锁模种子激光 + 光纤展宽器 + 三级光纤放大（LMA DC Yb-PCF）→ 132 W 平均功率；
-    (2) grism 压缩器补偿 GVD + TOD → 180 fs 脉冲（~99% 能量在主峰）；
-    (3) frep 与 fceo 双锁至 Rb 钟，稳定度 8.3×10⁻¹³（frep）与 1.35×10⁻¹⁹（fceo）@ 1000 s；
-    (4) 低噪声特性：高功率下仍保持相位噪声低水平；
-    (5) 目标应用：UV / 中红外倍频/差频产生、双梳光谱。
-    本工作是高功率 Yb:fiber 梳 CPA 工程演示，132 W 输出在光纤梳中属高水平但未刷新跨平台最高功率纪录（已有 > 300 W 报道），
-    归 evidence。对齐 v2 子域主线：A1-Rep（高重频 + 高功率 → 高峰值功率用于非线性转换）。
-
+    [技术论文] 华东师大（East China Normal University, ECNU）。基于 CPA 的高功率 Yb 光纤梳： (1) 250 MHz NPR 锁模种子激光 + 光纤展宽器 + 三级光纤放大（LMA DC Yb-PCF）→ 132 W 平均功率； (2) grism 压缩器补偿 GVD + TOD → 180 fs 脉冲（~99% 能量在主峰）； (3) frep 与 fceo 双锁至 Rb 钟，稳定度 8.3×10⁻¹³（frep）与 1.35×10⁻¹⁹（fceo）@ 1000 s； (4) 低噪声特性：高功率下仍保持相位噪声低水平； (5) 目标应用：UV / 中红外倍频/差频产生、双梳光谱。 本工作是高功率 Yb:fiber 梳 CPA 工程演示，132 W 输出在光纤梳中属高水平但未刷新跨平台最高功率纪录（已有 > 300 W 报道）， 归 evidence。对齐 v2 子域主线：A1-Rep（高重频 + 高功率 → 高峰值功率用于非线性转换）。
 entities:
   - id: ent.yb_fiber_comb_130w_cpa_l20
     name: "130 W Yb 光纤梳 CPA 系统（Luo 2020, ECNU）"

@@ -1,31 +1,21 @@
-# Zhang 2022 — 可调谐 VUV 光频梳用于 229mTh 核钟光谱（腔增强七次谐波）
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical
-
+# Zhang 2022 — Tunable VUV frequency comb for 229mTh nuclear spectroscopy [technical]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "25EY6V8L"
+  zotero_key: 25EY6V8L
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical
   reliability: high
   title: "Tunable VUV frequency comb for 229mTh nuclear spectroscopy"
   year: 2022
-  first_author: Zhang
+  first_author: "Zhang"
   journal: "Optics Letters"
   volume: 47
-  issue: 21
-  pages: "5591-5594"
-  doi: "10.1364/OL.473006"
+  pages: 5591-5594
+  doi: 10.1364/OL.473006
   note: >
-    [技术论文] JILA（Ye 组）+ IMRA。75 MHz Yb:fiber 梳 → 大模面积光纤放大器 >50 W，
-    <150 fs；f-2f 自参考 + Sr 光钟激光（698 nm）相位锁一齿；可调带通滤波使中心波长
-    1040–1070 nm 可调；腔增强 ~×100 后用非共线几何做七次谐波（150 nm VUV）输出。
-    产生的 VUV 梳频率覆盖 229mTh 核钟跃迁的当前不确定度范围（~8.34 eV），是核钟发展
-    关键光源。
-
+    [技术论文] JILA（Ye 组）+ IMRA。75 MHz Yb:fiber 梳 → 大模面积光纤放大器 >50 W， <150 fs；f-2f 自参考 + Sr 光钟激光（698 nm）相位锁一齿；可调带通滤波使中心波长 1040–1070 nm 可调；腔增强 ~×100 后用非共线几何做七次谐波（150 nm VUV）输出。 产生的 VUV 梳频率覆盖 229mTh 核钟跃迁的当前不确定度范围（~8.34 eV），是核钟发展 关键光源。
 entities:
   - id: ent.tunable_vuv_comb_z22
     name: "可调谐 VUV 光频梳（Zhang 2022，229mTh 核光谱）"

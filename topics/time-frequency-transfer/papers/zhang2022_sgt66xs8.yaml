@@ -1,44 +1,20 @@
 # Zhang 2022 — All-Passive Cascaded Optical Frequency Transfer [evidence]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：time-frequency-transfer
-# contribution_type: evidence — NTSC Xi'an（国家授时中心）团队。提出"全被动级联"光频传递：
-#   不使用有源相位锁定环，而靠被动互易补偿在噪声场地光纤环境下实现多段级联；
-#   实验配套综述（Zhang 2023, Optics & Laser Technology）总结此路线的适用边界。
-
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "sgt66xs8"
+  zotero_key: sgt66xs8
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
   reliability: medium
   title: "All-Passive Cascaded Optical Frequency Transfer"
   year: 2022
-  first_author: Zhang
-  authors:
-  - "X. Zhang"
-  - "L. Hu"
-  - "X. Deng"
-  - "Q. Zang"
-  - "J. Liu"
-  - "D. Jiao"
-  - "J. Gao"
-  - "R. Dong"
-  - "T. Liu"
-  - "G. Wu"
-  - "J. Chen"
-  - "S. Zhang"
+  first_author: "Zhang"
+  authors: ["X. Zhang", "L. Hu", "X. Deng", "Q. Zang", "J. Liu", "D. Jiao", "J. Gao", "R. Dong", "T. Liu", "G. Wu", "J. Chen", "S. Zhang"]
   journal: "Ieee Photonics Technology Letters"
-  doi: "10.1109/LPT.2022.3164406"
+  doi: 10.1109/LPT.2022.3164406
   note: >
-    [期刊论文] NTSC Xi'an (National Time Service Center). 全被动级联光频传递：
-    放弃传统"主动相位噪声抵消 (ANC)"方案——该方案需要高分辨率、宽范围相位探测器，
-    在噪声场地光纤链路上性能恶化——改用被动互易补偿在 cascaded EDFA 链路上消除光纤相噪。
-    优点：系统简化；缺点：极限稳定度受制于被动互易性极限（类似 Xu 2019 10⁻²¹）。
-    对应 2023 年同组综述（Optics & Laser Technology 157: 108738）详细梳理了
-    passive vs active 两条技术路线的权衡。
-
+    [期刊论文] NTSC Xi'an (National Time Service Center). 全被动级联光频传递： 放弃传统"主动相位噪声抵消 (ANC)"方案——该方案需要高分辨率、宽范围相位探测器， 在噪声场地光纤链路上性能恶化——改用被动互易补偿在 cascaded EDFA 链路上消除光纤相噪。 优点：系统简化；缺点：极限稳定度受制于被动互易性极限（类似 Xu 2019 10⁻²¹）。 对应 2023 年同组综述（Optics & Laser Technology 157: 108738）详细梳理了 passive vs active 两条技术路线的权衡。
 principles:
   - id: pri.passive_reciprocal_fiber_noise_cancellation
     name: "被动互易光纤相位噪声抵消原理"

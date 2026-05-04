@@ -1,26 +1,22 @@
-# Beha 2017 — EOM梳电光合成光：f-2f自参考，分数频率精度<5×10⁻¹⁴ [evidence]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：optical-frequency-combs
-
+# Beha 2017 — Electronic synthesis of light [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "FU92Y8XG"
+  zotero_key: FU92Y8XG
   topic: optical-frequency-combs
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Electronic synthesis of light"
   year: 2017
-  first_author: Beha
+  first_author: "Beha"
   authors: ["K. Beha", "D. C. Cole", "P. Del'Haye", "A. Coillet", "S. A. Diddams", "S. B. Papp"]
   journal: "Optica"
   volume: 4
   pages: 406
-  doi: "10.1364/OPTICA.4.000406"
-  note: "NIST：首次实现基于电光调制（EOM）梳的 f-2f 自参考与光学频率合成；160 THz超连续谱，
-    分数频率精度 <5×10⁻¹⁴，模间距可调（取决于微波调制频率），不依赖锁模机制。"
-
+  doi: 10.1364/OPTICA.4.000406
+  note: >
+    NIST：首次实现基于电光调制（EOM）梳的 f-2f 自参考与光学频率合成；160 THz超连续谱， 分数频率精度 <5×10⁻¹⁴，模间距可调（取决于微波调制频率），不依赖锁模机制。
 entities:
   - id: ent.eom_frequency_comb
     name: "电光调制频率梳"

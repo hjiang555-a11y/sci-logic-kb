@@ -1,25 +1,21 @@
+# Kippenberg 2011 — Microresonator-Based Optical Frequency Combs [framework]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: 2ADYRC8C
   topic: optical-frequency-combs
   source_type: review
   contribution_type: framework
   reliability: high
-  title: Microresonator-Based Optical Frequency Combs
+  title: "Microresonator-Based Optical Frequency Combs"
   year: 2011
-  first_author: Kippenberg
-  journal: Science
+  first_author: "Kippenberg"
+  journal: "Science"
   volume: 332
   pages: 555-559
   doi: 10.1126/science.1193968
-  note: '[综述论文 / 子域架构文档] Kippenberg (EPFL) + Holzwarth (Menlo) + Diddams (NIST) 2011
-    Science 综述。 首篇 Science 级微谐振腔频率梳综述，系统阐述参量四波混频（FWM）在高 Q 微谐振腔中产生光学频率梳的新原理， 定义微梳子域架构：CW
-    泵浦 → Kerr 非线性 → 参量振荡 → 级联 FWM → 等间距梳齿。 核心贡献：(1) 阐明与锁模激光器梳本质不同的梳产生机制（参量 vs 受激辐射）；
-    (2) 综述四类平台：silica microtoroid、crystalline (CaF₂/MgF₂)、Si₃N₄ integrated、Hydex；
-    (3) 明确高重频（10–1000 GHz）和芯片集成两大核心优势； (4) 论述应用前景：天文光谱定标、微波光子学、电信、分子光谱； (5) 指出关键挑战：相干梳态、f-2f
-    自参考、相位噪声、倍频程展宽。 ent.optical_frequency_comb 定义于 giunta2019.yaml；pri.self_referencing_f2f
-    定义于 giunta2019.yaml。
-
-    '
+  note: >
+    [综述论文 / 子域架构文档] Kippenberg (EPFL) + Holzwarth (Menlo) + Diddams (NIST) 2011 Science 综述。 首篇 Science 级微谐振腔频率梳综述，系统阐述参量四波混频（FWM）在高 Q 微谐振腔中产生光学频率梳的新原理， 定义微梳子域架构：CW 泵浦 → Kerr 非线性 → 参量振荡 → 级联 FWM → 等间距梳齿。 核心贡献：(1) 阐明与锁模激光器梳本质不同的梳产生机制（参量 vs 受激辐射）； (2) 综述四类平台：silica microtoroid、crystalline (CaF₂/MgF₂)、Si₃N₄ integrated、Hydex； (3) 明确高重频（10–1000 GHz）和芯片集成两大核心优势； (4) 论述应用前景：天文光谱定标、微波光子学、电信、分子光谱； (5) 指出关键挑战：相干梳态、f-2f 自参考、相位噪声、倍频程展宽。 ent.optical_frequency_comb 定义于 giunta2019.yaml；pri.self_referencing_f2f 定义于 giunta2019.yaml。
 entities:
 - id: ent.microresonator_frequency_comb
   name: 微谐振腔光学频率梳（微梳）

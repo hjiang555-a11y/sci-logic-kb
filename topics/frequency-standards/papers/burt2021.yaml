@@ -1,32 +1,22 @@
 # Burt 2021 — Demonstration of a trapped-ion atomic clock in space [evidence]
-# 提取者：Claude Code（AI 草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.5
-# 专题：frequency-standards（空间离子钟 — DSAC 深空原子钟在轨演示）
-# contribution_type: evidence — 首台在轨运行的高性能离子钟；
-#   验证空间环境下离子钟的长稳性能，为深空导航提供星载时频。
-
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "s41586-021-03571-7"
+  zotero_key: s41586-021-03571-7
   topic: frequency-standards
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Demonstration of a trapped-ion atomic clock in space"
   year: 2021
-  first_author: Burt
+  first_author: "Burt"
   authors: ["E. A. Burt", "J. D. Prestage", "R. L. Tjoelker", "D. G. Enzer", "D. Kuang", "D. W. Murphy", "D. E. Robison", "J. M. Seubert", "R. T. Wang", "T. A. Ely"]
   journal: "Nature"
   volume: 595
-  pages: "43-47"
-  doi: "10.1038/s41586-021-03571-7"
+  pages: 43-47
+  doi: 10.1038/s41586-021-03571-7
   note: >
-    NASA/JPL 的深空原子钟（DSAC）——首台在轨运行的高性能
-    汞离子（¹⁹⁹Hg⁺）微波钟。DSAC 在低地球轨道（LEO）运行
-    一年，演示了空间环境下离子钟的长稳性能。
-    主要应用：深空导航（单向测距替代双向测距）、GNSS 增强、
-    空间基础物理实验。
-
+    NASA/JPL 的深空原子钟（DSAC）——首台在轨运行的高性能 汞离子（¹⁹⁹Hg⁺）微波钟。DSAC 在低地球轨道（LEO）运行 一年，演示了空间环境下离子钟的长稳性能。 主要应用：深空导航（单向测距替代双向测距）、GNSS 增强、 空间基础物理实验。
 entities:
   - id: ent.burt2021_dsac_space_ion_clock
     name: "Burt 2021 DSAC 空间汞离子微波钟（NASA/JPL）"

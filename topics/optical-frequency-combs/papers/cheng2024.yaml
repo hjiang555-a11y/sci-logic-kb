@@ -1,33 +1,21 @@
-# Cheng 2024 — 首个连续 UV–蓝绿天文光梳（χ²组合 MgO:PPLN）[breakthrough]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-22
-# Schema版本：v4.4
-# 专题：optical-frequency-combs
-# contribution_type: breakthrough（首次实现连续 390–520 nm UV–蓝绿天文光梳覆盖，跨越 SHG-only 谱间隙）
-
+# Cheng 2024 — Continuous ultraviolet to blue-green astrocomb [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "NDSVHPF5"
+  zotero_key: NDSVHPF5
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
   title: "Continuous ultraviolet to blue-green astrocomb"
   year: 2024
-  first_author: Cheng
+  first_author: "Cheng"
   journal: "Nature Communications"
   volume: 15
-  issue: 1
-  pages: "1466"
-  doi: "10.1038/s41467-024-45924-6"
+  pages: 1466
+  doi: 10.1038/s41467-024-45924-6
   note: >
-    [技术论文 / 里程碑] Heriot-Watt (Cheng, Dadi, Mitchell, Thompson, Piskunov, Wright, Gawith, McCracken, Reid) 2024 年 Nature Comm。
-    首次实现**连续 UV–蓝绿天文光梳覆盖**（390–520 nm，跨越传统 SHG-only 方案的"蓝绿谱间隙"）——
-    通过在 MgO:PPLN 波导中组合**二次谐波产生（SHG，800 nm → 400 nm）+ 和频混频（SFM，800+1200 nm → 490 nm）**，
-    弥补单 SHG 方案因 Ti:sapph 泵浦谱宽有限而无法覆盖 440–480 nm 的谱间隙。
-    使用 1 GHz Ti:sapph 梳（仅需 ~100 pJ 脉冲能量），经波导非线性转换后过 Fabry-Pérot 滤波提取 30 GHz 子梳，
-    实现 392–472 nm 连续覆盖、梳齿均匀度 <5 dB（经模滤波后），适配 HARPS/ESPRESSO/ANDES 等蓝光 RV 仪器。
-    v2 子域主线：A3-Astro（天文光梳）+ B-Spec（光谱展宽/波长扩展）双主线首次突破——刷新蓝光天文光梳连续覆盖纪录。
-
+    [技术论文 / 里程碑] Heriot-Watt (Cheng, Dadi, Mitchell, Thompson, Piskunov, Wright, Gawith, McCracken, Reid) 2024 年 Nature Comm。 首次实现**连续 UV–蓝绿天文光梳覆盖**（390–520 nm，跨越传统 SHG-only 方案的"蓝绿谱间隙"）—— 通过在 MgO:PPLN 波导中组合**二次谐波产生（SHG，800 nm → 400 nm）+ 和频混频（SFM，800+1200 nm → 490 nm）**， 弥补单 SHG 方案因 Ti:sapph 泵浦谱宽有限而无法覆盖 440–480 nm 的谱间隙。 使用 1 GHz Ti:sapph 梳（仅需 ~100 pJ 脉冲能量），经波导非线性转换后过 Fabry-Pérot 滤波提取 30 GHz 子梳， 实现 392–472 nm 连续覆盖、梳齿均匀度 <5 dB（经模滤波后），适配 HARPS/ESPRESSO/ANDES 等蓝光 RV 仪器。 v2 子域主线：A3-Astro（天文光梳）+ B-Spec（光谱展宽/波长扩展）双主线首次突破——刷新蓝光天文光梳连续覆盖纪录。
 entities:
   - id: ent.continuous_uv_bluegreen_astrocomb_c24
     name: "连续 UV–蓝绿天文光梳（Cheng 2024）"

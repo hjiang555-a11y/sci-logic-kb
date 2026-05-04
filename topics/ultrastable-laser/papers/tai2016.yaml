@@ -1,21 +1,21 @@
+# Tai 2016 — Electro-optic modulator with ultra-low residual amplitude modulation for freq... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: FIJXUVZV
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: Electro-optic modulator with ultra-low residual amplitude modulation for
-    frequency modulation and laser stabilization
+  title: "Electro-optic modulator with ultra-low residual amplitude modulation for frequency modulation and laser stabilization"
   year: 2016
-  first_author: Tai
-  journal: Optics Letters
+  first_author: "Tai"
+  journal: "Optics Letters"
   volume: 41
-  issue: 23
   pages: 5584-5587
   doi: 10.1364/OL.41.005584
-  note: '布儒斯特角切割 EOM，被动实现 ppm 级 RAM（无需主动温控和偏压控制）， RAM 引起的频率不稳定度 <3×10⁻¹⁷ @ 1–1000s。
-    核心贡献：简化 EOM RAM 抑制方案，为超稳激光系统降低技术噪声。
-
-    '
+  note: >
+    布儒斯特角切割 EOM，被动实现 ppm 级 RAM（无需主动温控和偏压控制）， RAM 引起的频率不稳定度 <3×10⁻¹⁷ @ 1–1000s。 核心贡献：简化 EOM RAM 抑制方案，为超稳激光系统降低技术噪声。
 entities:
 - id: ent.brewster_eom_t16
   name: 布儒斯特角 EOM（Tai 2016）

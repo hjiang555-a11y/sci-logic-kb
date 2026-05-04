@@ -1,35 +1,22 @@
 # Allan 1987 — Should the Classical Variance Be Used as a Basic Measure in Standards Metrology? [framework]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：shared（时频计量数学基础 · B9 Allan–Howe 奠基白名单）
-# contribution_type: framework — 对 Allan 1966 的 21 年回顾与重申。定义幂律噪声分类体系，
-#   系统给出 σ_y(τ) 斜率 ↔ 噪声类型映射；确立 Allan 方差为计量标准的行业共识。
-
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "ALLAN1987-TUFFC"
+  zotero_key: ALLAN1987-TUFFC
   topic: shared
   source_type: journal_paper
   contribution_type: framework
   reliability: high
   title: "Should the Classical Variance Be Used as a Basic Measure in Standards Metrology?"
   year: 1987
-  first_author: Allan
+  first_author: "Allan"
   authors: ["David W. Allan"]
   journal: "IEEE Transactions on Instrumentation and Measurement"
-  volume: "IM-36"
-  issue: 2
-  pages: "646-654"
-  doi: "10.1109/TIM.1987.6312761"
+  volume: IM-36
+  pages: 646-654
+  doi: 10.1109/TIM.1987.6312761
   note: >
-    [奠基期刊论文 · < 1999 年白名单 §A] Allan 在 1966 原始论文 21 年后的系统性重申与
-    扩展。论文以"标准计量学是否应继续使用经典方差"为反问，系统论证 Allan 方差族（含
-    MVAR / HDEV 等派生）在工业计量、原子钟表征、时标建立、激光稳定度测量等所有时频
-    应用中应取代经典方差。本文明确列出 5 种幂律噪声（white PM / flicker PM / white FM
-    / flicker FM / random-walk FM）的 S_y(f) ∝ f^α 谱形，以及对应的 σ_y(τ) ∝ τ^μ 斜率
-    公式（μ = −α−1，α ≤ 1 区；另含 PM 噪声的带宽修正 μ = −1 共一区）。此斜率-噪声映射
-    成为时频工程师读 σ_y(τ) 曲线的基本词典。
-
+    [奠基期刊论文 · < 1999 年白名单 §A] Allan 在 1966 原始论文 21 年后的系统性重申与 扩展。论文以"标准计量学是否应继续使用经典方差"为反问，系统论证 Allan 方差族（含 MVAR / HDEV 等派生）在工业计量、原子钟表征、时标建立、激光稳定度测量等所有时频 应用中应取代经典方差。本文明确列出 5 种幂律噪声（white PM / flicker PM / white FM / flicker FM / random-walk FM）的 S_y(f) ∝ f^α 谱形，以及对应的 σ_y(τ) ∝ τ^μ 斜率 公式（μ = −α−1，α ≤ 1 区；另含 PM 噪声的带宽修正 μ = −1 共一区）。此斜率-噪声映射 成为时频工程师读 σ_y(τ) 曲线的基本词典。
 entities: []
 
 principles:

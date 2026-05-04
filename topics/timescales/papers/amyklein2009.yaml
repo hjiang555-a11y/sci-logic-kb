@@ -1,41 +1,19 @@
-# Amy-Klein 2009 — 质子-电子质量比稳定性：分子 SF6 经光纤链路比对铯原子钟
-# 提取日期：2026-05-03
-# Schema版本：v4.0
-# 专题：timescales
-# contribution_type: evidence — 实验测量数据 + 工程改进（混合光纤链路）
-
+# Amy-Klein 2009 — Stability of the Proton-to-Electron Mass Ratio Tested with Molecules Using an... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "ICOLS09 Amy et al"
+  zotero_key: ICOLS09 Amy et al
   topic: timescales
   source_type: conference
   contribution_type: evidence
   reliability: medium
   title: "Stability of the Proton-to-Electron Mass Ratio Tested with Molecules Using an Optical Link to Primary Clock"
   year: 2009
-  first_author: Amy-Klein
-  authors:
-    - A. Amy-Klein
-    - A. Shelkovnikov
-    - R.J. Butcher
-    - A. Goncharov
-    - O. Lopez
-    - C. Daussy
-    - F. Kefelian
-    - C. Chardonnet
-    - H. Jiang
-    - G. Santarelli
+  first_author: "Amy-Klein"
+  authors: ["A. Amy-Klein", "A. Shelkovnikov", "R.J. Butcher", "A. Goncharov", "O. Lopez", "C. Daussy", "F. Kefelian", "C. Chardonnet", "H. Jiang", "G. Santarelli"]
   journal: "Proceedings of the International Conference on Laser Spectroscopy (ICOLS)"
-  doi: null
   note: >
-    [会议论文] ICOLS 2009。报告两项成果：(1) 通过比较 SF6 分子振动-转动跃迁与 Cs 原子超精细跃迁，
-    获得质子-电子质量比时间变化上限 (3.8 ± 5.6) × 10⁻¹⁴ yr⁻¹，此为当时最精确的分子跃迁绝对频率测量；
-    (2) 演示了 108 km 混合光纤链路（专用暗光纤 + 城市电信网络 DWDM 共存），
-    同时传输计量频率信号和互联网数据，稳定度达到 4×10⁻¹⁶ @ 1 s、7×10⁻²⁰ @ 10⁴ s。
-
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
+    [会议论文] ICOLS 2009。报告两项成果：(1) 通过比较 SF6 分子振动-转动跃迁与 Cs 原子超精细跃迁， 获得质子-电子质量比时间变化上限 (3.8 ± 5.6) × 10⁻¹⁴ yr⁻¹，此为当时最精确的分子跃迁绝对频率测量； (2) 演示了 108 km 混合光纤链路（专用暗光纤 + 城市电信网络 DWDM 共存）， 同时传输计量频率信号和互联网数据，稳定度达到 4×10⁻¹⁶ @ 1 s、7×10⁻²⁰ @ 10⁴ s。
 entities:
   - id: ent.sf6_molecular_spectrometer_lpl
     name: "SF6 分子 Ramsey 条纹光谱仪（LPL，2009）"

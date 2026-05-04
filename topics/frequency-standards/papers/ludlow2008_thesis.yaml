@@ -1,46 +1,18 @@
-# Ludlow 2008 — The Strontium Optical Lattice Clock: Optical Spectroscopy with Sub-Hertz Accuracy (PhD Thesis, JILA) [framework]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：frequency-standards
-# contribution_type: framework — Andrew D. Ludlow 博士论文（JILA / University of Colorado Boulder
-#   2008）。系统化 Sr 光晶格钟从询问激光到探测序列到系统评估的全栈技术集成；作为 Sr 钟的
-#   "教科书式" 综合文档，是 B5a（Sr lattice 主干）的必要前置参考。
-
+# Ludlow 2008 — The Strontium Optical Lattice Clock: Optical Spectroscopy with Sub-Hertz Accu... [framework]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "LUDLOW2008-THESIS-JILA"
+  zotero_key: LUDLOW2008-THESIS-JILA
   topic: frequency-standards
   source_type: thesis
   contribution_type: framework
   reliability: high
   title: "The Strontium Optical Lattice Clock: Optical Spectroscopy with Sub-Hertz Accuracy"
   year: 2008
-  first_author: Ludlow
+  first_author: "Ludlow"
   authors: ["Andrew D. Ludlow"]
-  institution: "University of Colorado Boulder (JILA)"
-  thesis_type: "PhD dissertation"
-  advisor: "Jun Ye"
-  doi: null
   note: >
-    [博士论文 · 白名单 §A：Tier 1 group PhD thesis（JILA/Ye group）] Andrew D. Ludlow 
-    2008 年博士论文，JILA Ye group 的 Sr 光晶格钟系统化教科书。内容覆盖 Sr 光晶格钟
-    全栈：
-    (1) 698 nm ULE 腔超稳激光器（亚赫兹线宽 / 10⁻¹⁵/τ 稳定度；本论文是超稳激光专题
-    早期里程碑 "JILA Sr 钟询问激光系统" 的权威来源，与现有 ultrastable-laser 专题
-    jiang2010/millo2009 等论文形成参考链）；
-    (2) 813 nm 魔术波长光晶格装载 + 操作协议（约 10⁴ 个 ⁸⁷Sr 原子，光阱频率魔术化
-    降低 AC-Stark 系统效应到 10⁻¹⁸ 量级）；
-    (3) ¹S₀ → ³P₀ 钟跃迁（λ=698 nm，自然线宽 ~1 mHz）亚赫兹谱线分辨的 Rabi / Ramsey
-    询问序列；
-    (4) 系统效应评估体系：黑体辐射频移、Zeeman 频移、碰撞频移、AC-Stark 频移、重力
-    红移、相对论 Doppler 的独立测量与误差预算合成方法；
-    (5) 远程光纤比对（Sr 晶格钟 vs Ca 光钟 vs Cs 喷泉）给出 1×10⁻¹⁶ 分数不确定度，
-    即 Ludlow 2008 Science 论文（zotero_key 待定）的博士论文完整版。
-    本文件作为 frequency-standards 专题的教科书式系统工程综合，建立 meth.sr_optical_lattice_clock_stack
-    方法节点与 pri.magic_wavelength_operational_protocol 操作协议原理，为后续 B5a
-    批次 Sr 系列论文（bloom2014 / nicholson2015 / bothwell2022 等）提供共同参考基线。
-    PhD thesis 按 CONTRIBUTING.md 第八节"博士论文"规则接受摄入。
-
+    [博士论文 · 白名单 §A：Tier 1 group PhD thesis（JILA/Ye group）] Andrew D. Ludlow  2008 年博士论文，JILA Ye group 的 Sr 光晶格钟系统化教科书。内容覆盖 Sr 光晶格钟 全栈： (1) 698 nm ULE 腔超稳激光器（亚赫兹线宽 / 10⁻¹⁵/τ 稳定度；本论文是超稳激光专题 早期里程碑 "JILA Sr 钟询问激光系统" 的权威来源，与现有 ultrastable-laser 专题 jiang2010/millo2009 等论文形成参考链）； (2) 813 nm 魔术波长光晶格装载 + 操作协议（约 10⁴ 个 ⁸⁷Sr 原子，光阱频率魔术化 降低 AC-Stark 系统效应到 10⁻¹⁸ 量级）； (3) ¹S₀ → ³P₀ 钟跃迁（λ=698 nm，自然线宽 ~1 mHz）亚赫兹谱线分辨的 Rabi / Ramsey 询问序列； (4) 系统效应评估体系：黑体辐射频移、Zeeman 频移、碰撞频移、AC-Stark 频移、重力 红移、相对论 Doppler 的独立测量与误差预算合成方法； (5) 远程光纤比对（Sr 晶格钟 vs Ca 光钟 vs Cs 喷泉）给出 1×10⁻¹⁶ 分数不确定度， 即 Ludlow 2008 Science 论文（zotero_key 待定）的博士论文完整版。 本文件作为 frequency-standards 专题的教科书式系统工程综合，建立 meth.sr_optical_lattice_clock_stack 方法节点与 pri.magic_wavelength_operational_protocol 操作协议原理，为后续 B5a 批次 Sr 系列论文（bloom2014 / nicholson2015 / bothwell2022 等）提供共同参考基线。 PhD thesis 按 CONTRIBUTING.md 第八节"博士论文"规则接受摄入。
 entities: []
 
 principles:

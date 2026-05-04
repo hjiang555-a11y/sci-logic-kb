@@ -1,36 +1,21 @@
-# Ning 2020 — 全 PM 多分支 Er:fiber 梳用于 CRDS（中国时频中心）
-# 提取者：GitHub Copilot（AI草稿，2026-04-22）
-# 提取日期：2026-04-22
-# Schema版本：v4.3
-# 专题：optical-frequency-combs
-# contribution_type: evidence（全 PM 5分支架构 + NALM 锁模，工程验证未破纪录）
-
+# Ning 2020 — An All-Polarization-Maintaining Multi-Branch Optical Frequency Comb for Highl... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "ST825B59"
+  zotero_key: ST825B59
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
   title: "An All-Polarization-Maintaining Multi-Branch Optical Frequency Comb for Highly Sensitive Cavity Ring-Down Spectroscopy"
   year: 2020
-  first_author: Ning
+  first_author: "Ning"
   journal: "Chinese Physics Letters"
   volume: 37
-  issue: 6
-  pages: "064202"
-  doi: "10.1088/0256-307X/37/6/064202"
+  pages: 064202
+  doi: 10.1088/0256-307X/37/6/064202
   note: >
-    [技术论文] 中国科学院国家授时中心。开发全 PM（polarization-maintaining）多分支 Er:fiber 频率梳
-    （5 个应用端口，NALM 锁模），用于高灵敏度腔衰荡光谱（CRDS）：
-    (1) NALM 非线性放大环镜锁模 → 自启动、鲁棒、低噪声（相较 NPR / SESAM）；
-    (2) 全 PM 光纤架构 → 免偏振漂移（环境温度/振动/应力）；
-    (3) 5 个应用端口（1064 nm / 1083 nm / 1380 nm / 1637 nm / 1750 nm）用于分子振转光谱测量；
-    (4) fceo in-loop 不稳定度 5.6×10⁻¹⁸ @ 1 s, frep 不稳定度 < 1.8×10⁻¹² @ 1 s（受频率计数器噪底限制）；
-    (5) 拍频 SNR > 30 dB @ 100 kHz RBW。
-    本工作定位于 CRDS 应用验证（sub-kHz 分辨率分子光谱），未报告光学频率传递或光生微波性能，
-    且稳定度未超越先前 NALM 梳纪录（Kuse 2015/2016, Li 2017），归 evidence。
-    对齐 v2 子域主线：B-MIR（NIR 覆盖多分子吸收线）。
-
+    [技术论文] 中国科学院国家授时中心。开发全 PM（polarization-maintaining）多分支 Er:fiber 频率梳 （5 个应用端口，NALM 锁模），用于高灵敏度腔衰荡光谱（CRDS）： (1) NALM 非线性放大环镜锁模 → 自启动、鲁棒、低噪声（相较 NPR / SESAM）； (2) 全 PM 光纤架构 → 免偏振漂移（环境温度/振动/应力）； (3) 5 个应用端口（1064 nm / 1083 nm / 1380 nm / 1637 nm / 1750 nm）用于分子振转光谱测量； (4) fceo in-loop 不稳定度 5.6×10⁻¹⁸ @ 1 s, frep 不稳定度 < 1.8×10⁻¹² @ 1 s（受频率计数器噪底限制）； (5) 拍频 SNR > 30 dB @ 100 kHz RBW。 本工作定位于 CRDS 应用验证（sub-kHz 分辨率分子光谱），未报告光学频率传递或光生微波性能， 且稳定度未超越先前 NALM 梳纪录（Kuse 2015/2016, Li 2017），归 evidence。 对齐 v2 子域主线：B-MIR（NIR 覆盖多分子吸收线）。
 entities:
   - id: ent.ntsc_all_pm_5branch_comb_n20
     name: "国家授时中心全 PM 5分支 NALM Er:fiber 梳（Ning 2020）"

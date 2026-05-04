@@ -1,31 +1,20 @@
-# Turza 2019 — Compensation of differential delay for frequency transfer in DWDM networks [evidence]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：time-frequency-transfer
-# contribution_type: evidence
-
+# Turza 2019 — Compensation of the fluctuations of differential delay for frequency transfer... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "9s69d3dw"
+  zotero_key: 9s69d3dw
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
   reliability: medium
   title: "Compensation of the fluctuations of differential delay for frequency transfer in DWDM networks"
   year: 2019
-  first_author: Turza
-  authors:
-  - "K. Turza"
-  - "P. Krehlik"
-  - "L. Sliwczynski"
+  first_author: "Turza"
+  authors: ["K. Turza", "P. Krehlik", "L. Sliwczynski"]
   journal: "Ieee Transactions on Ultrasonics Ferroelectrics and Frequency Control"
-  doi: "10.1109/tuffc.2019.2890993"
+  doi: 10.1109/tuffc.2019.2890993
   note: >
-    [期刊论文] AGH University. 识别到 DWDM 电信光纤网络中"色散补偿光纤 (DCF) 模块"
-    引起的双向 differential delay 温度漂移是 RF-over-fiber 长期稳定度的主导劣化因素。
-    利用 DCF 模块内自带温度传感器建模补偿温度诱发 delay 变化，在波兰国家网 3 条 ≤1550 km
-    干线上实验验证，长期稳定度显著改善。工程价值大。
-
+    [期刊论文] AGH University. 识别到 DWDM 电信光纤网络中"色散补偿光纤 (DCF) 模块" 引起的双向 differential delay 温度漂移是 RF-over-fiber 长期稳定度的主导劣化因素。 利用 DCF 模块内自带温度传感器建模补偿温度诱发 delay 变化，在波兰国家网 3 条 ≤1550 km 干线上实验验证，长期稳定度显著改善。工程价值大。
 principles:
   - id: pri.dcf_induced_differential_delay_temp_compensation
     name: "DCF 模块温度诱发 differential delay 建模补偿原理"

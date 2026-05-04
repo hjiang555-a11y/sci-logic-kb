@@ -1,21 +1,21 @@
+# Shaddock 1999 — Frequency locking a laser to an optical cavity by use of spatial mode interfe... [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: S5PX7GHC
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: breakthrough
-  primary_metric_exempt_reason: new_method
   reliability: medium
-  title: Frequency locking a laser to an optical cavity by use of spatial mode interference
+  title: "Frequency locking a laser to an optical cavity by use of spatial mode interference"
   year: 1999
-  first_author: Shaddock
-  journal: Optics Letters
+  first_author: "Shaddock"
+  journal: "Optics Letters"
   volume: 24
-  issue: 21
   pages: 1499-1501
   doi: 10.1364/OL.24.001499
-  note: '首次提出 Tilt Locking 方法（空间横模干涉锁频）； 揭示 PDH 与 Tilt Locking 的物理同源性（共有"非谐振参考光"元原理）；
-    2021 年 Chabbra et al. 有高性能验证后续。
-
-    '
+  note: >
+    首次提出 Tilt Locking 方法（空间横模干涉锁频）； 揭示 PDH 与 Tilt Locking 的物理同源性（共有"非谐振参考光"元原理）； 2021 年 Chabbra et al. 有高性能验证后续。
 entities: null
 principles:
 - id: pri.off_resonance_reference_light

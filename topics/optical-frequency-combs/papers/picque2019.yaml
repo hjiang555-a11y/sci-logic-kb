@@ -1,27 +1,21 @@
+# Picqué 2019 — Frequency comb spectroscopy [framework]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: RZME5CH8
   topic: optical-frequency-combs
   source_type: review
   contribution_type: framework
   reliability: high
-  title: Frequency comb spectroscopy
+  title: "Frequency comb spectroscopy"
   year: 2019
-  first_author: Picqué
-  journal: Nature Photonics
+  first_author: "Picqué"
+  journal: "Nature Photonics"
   volume: 13
   pages: 146-157
   doi: 10.1038/s41566-018-0347-5
-  note: '[综述论文 / 方法架构文档] Picqué (MPQ/CNRS) & Hänsch (MPQ) 2019 Nature Photonics 综述。
-    聚焦"直接频率梳光谱"（频率梳直接与样品相互作用的宽带光谱学），区别于"梳辅助精密光谱"。 系统分类六大光谱方法： (1) 直接频率梳光谱（双光子无多普勒激发）；
-    (2) Ramsey-comb 光谱（脉冲对干涉，精密测频）； (3) 色散光谱仪 + 梳（VIPA 交叉色散，600 MHz 分辨）； (4) 迈克尔逊傅里叶变换光谱
-    + 梳（腔增强，10 MHz 分辨）； (5) 双梳光谱（最受关注，多波段覆盖）； (6) 非线性梳光谱（相干 Raman、泵浦-探测）。 覆盖光谱区域：亚毫米波/THz
-    (0.3–3 THz)、远红外 (3–15 THz)、中红外 (15–150 THz)、 近红外 (150–375 THz)、可见光/紫外 (>750 THz)。
-    梳源包括：锁模激光器、电光调制梳、微腔梳、量子级联激光梳。 ent.optical_frequency_comb 定义于 giunta2019.yaml；
-    ent.dual_comb_spectrometer、meth.dual_comb_spectroscopy 定义于 coddington2016.yaml；
-    ent.mid_ir_frequency_comb 定义于 schliesser2012.yaml； ent.microresonator_frequency_comb
-    定义于 kippenberg2011.yaml。
-
-    '
+  note: >
+    [综述论文 / 方法架构文档] Picqué (MPQ/CNRS) & Hänsch (MPQ) 2019 Nature Photonics 综述。 聚焦"直接频率梳光谱"（频率梳直接与样品相互作用的宽带光谱学），区别于"梳辅助精密光谱"。 系统分类六大光谱方法： (1) 直接频率梳光谱（双光子无多普勒激发）； (2) Ramsey-comb 光谱（脉冲对干涉，精密测频）； (3) 色散光谱仪 + 梳（VIPA 交叉色散，600 MHz 分辨）； (4) 迈克尔逊傅里叶变换光谱 + 梳（腔增强，10 MHz 分辨）； (5) 双梳光谱（最受关注，多波段覆盖）； (6) 非线性梳光谱（相干 Raman、泵浦-探测）。 覆盖光谱区域：亚毫米波/THz (0.3–3 THz)、远红外 (3–15 THz)、中红外 (15–150 THz)、 近红外 (150–375 THz)、可见光/紫外 (>750 THz)。 梳源包括：锁模激光器、电光调制梳、微腔梳、量子级联激光梳。 ent.optical_frequency_comb 定义于 giunta2019.yaml； ent.dual_comb_spectrometer、meth.dual_comb_spectroscopy 定义于 coddington2016.yaml； ent.mid_ir_frequency_comb 定义于 schliesser2012.yaml； ent.microresonator_frequency_comb 定义于 kippenberg2011.yaml。
 entities:
 - id: ent.electro_optic_frequency_comb
   name: 电光调制频率梳

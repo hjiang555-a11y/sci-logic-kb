@@ -1,19 +1,21 @@
+# Tai 2017 — Transportable 1555-nm Ultra-Stable Laser with Sub-0.185-Hz Linewidth [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: AHUZI4A7
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: medium
-  title: Transportable 1555-nm Ultra-Stable Laser with Sub-0.185-Hz Linewidth
+  title: "Transportable 1555-nm Ultra-Stable Laser with Sub-0.185-Hz Linewidth"
   year: 2017
-  first_author: Tai
-  journal: Chinese Physics Letters
+  first_author: "Tai"
+  journal: "Chinese Physics Letters"
   volume: 34
   pages: 090602
   doi: 10.1088/0256-307X/34/9/090602
-  note: '展示面向可搬运光子微波产生系统的两台 1555 nm 腔稳定激光。 10 cm ULE 竖直腔，PDH 锁频，稳定度达热噪声极限 7×10⁻¹⁶（1-10
-    s）， 双激光拍频线宽 185 mHz。 中国国家授时中心（张首刚/姜海峰组）。 知识贡献较小：标准 ULE 腔技术的工程实现，代表可搬运应用维度。
-
-    '
+  note: >
+    展示面向可搬运光子微波产生系统的两台 1555 nm 腔稳定激光。 10 cm ULE 竖直腔，PDH 锁频，稳定度达热噪声极限 7×10⁻¹⁶（1-10 s）， 双激光拍频线宽 185 mHz。 中国国家授时中心（张首刚/姜海峰组）。 知识贡献较小：标准 ULE 腔技术的工程实现，代表可搬运应用维度。
 methods:
 - id: meth.transportable_ule_cavity_lock_tai17
   name: 可搬运 ULE 腔 PDH 锁频方法（Tai 2017）

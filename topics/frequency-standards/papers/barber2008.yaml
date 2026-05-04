@@ -1,30 +1,22 @@
-# Barber 2008 — Optical lattice induced light shifts in an Yb atomic clock [evidence]
-# 提取者：Claude Code（AI 草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.5
-# 专题：frequency-standards（Yb 光晶格钟 — 光频移评估）
-# contribution_type: evidence — 系统评估 Yb 光晶格钟的晶格诱导光频移，
-#   是 Yb 光钟发展的基础性系统效应研究。
-
+# Barber 2008 — Optical Lattice Induced Light Shifts in an Yb Atomic Clock [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "PhysRevLett.100.103002"
+  zotero_key: PhysRevLett.100.103002
   topic: frequency-standards
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Optical Lattice Induced Light Shifts in an Yb Atomic Clock"
   year: 2008
-  first_author: Barber
+  first_author: "Barber"
   authors: ["Z. W. Barber", "J. E. Stalnaker", "N. D. Lemke", "N. Poli", "C. W. Oates", "T. M. Fortier", "S. A. Diddams", "L. Hollberg", "C. W. Hoyt"]
   journal: "Physical Review Letters"
   volume: 100
-  pages: "103002"
-  doi: "10.1103/PhysRevLett.100.103002"
+  pages: 103002
+  doi: 10.1103/PhysRevLett.100.103002
   note: >
-    NIST 团队系统测量和评估 ¹⁷¹Yb 光晶格钟的晶格诱导光频移——
-    包括 scalar、tensor 和 vector 光频移分量。确定了 Yb 的
-    magic wavelength 条件，为后续 Yb 光钟精度提升奠定基础。
-
+    NIST 团队系统测量和评估 ¹⁷¹Yb 光晶格钟的晶格诱导光频移—— 包括 scalar、tensor 和 vector 光频移分量。确定了 Yb 的 magic wavelength 条件，为后续 Yb 光钟精度提升奠定基础。
 entities:
   - id: ent.barber2008_yb_lattice_light_shift
     name: "Barber 2008 Yb 光晶格钟光频移评估（NIST）"

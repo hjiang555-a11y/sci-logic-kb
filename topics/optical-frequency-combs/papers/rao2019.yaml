@@ -1,47 +1,21 @@
-# Rao 2019 — 面向 Li 原子 D1 线频率测量应用的掺铒飞秒光纤光梳系统研制 [应用型技术论文]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical — Er:fiber 光梳 + f-2f 自参考 + 光谱扩展至 671 nm + Li D1 线拍频应用
-#   核心贡献：
-#     (1) 自研 NPR 锁模掺铒飞秒光纤激光器（196.5 MHz，中心 1572 nm，59 fs）；
-#     (2) f-2f 自参考获得 fceo SNR ~40 dB（RBW 300 kHz），泵浦电流锁 fceo；EOM+PZT 双驱动锁 frep；
-#     (3) HNLF 光谱展宽到 1342 nm + MgO:PPLN 倍频至 671 nm（单模能量 208 nW），与 DLCpro 671 nm 单频激光
-#         拍频得 ~60 dB（RBW 1 Hz）信号，满足 Li 原子 D1 线精密频率测量应用需求。
-#   Framework 依赖：
-#     - ent.optical_frequency_comb（udem2002.yaml，顶层权威定义）
-#     - pri.self_referencing_f2f（udem2002.yaml / giunta2019.yaml）
-#     - 同组前作：zhang2017.yaml（NPE+NALM 混合锁模 Er:fiber 光梳，用于锶光钟测量），
-#       本文件面向 Li D1 线应用独立建 Level-2 系统节点。
-
+# Rao 2019 — Er:fiber Femtosecond Optical Frequency Comb Aimed at Measurement of Frequency... [technical]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "CA55MEKS"
+  zotero_key: CA55MEKS
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical
   reliability: high
   title: "Er:fiber Femtosecond Optical Frequency Comb Aimed at Measurement of Frequency of D1 Line in Li Atoms"
-  title_zh: "面向 Li 原子 D1 线频率测量应用的掺铒飞秒光纤光梳系统"
   year: 2019
-  first_author: Rao
-  authors_zh: "饶冰洁, 张颜艳, 闫露露, 武跃龙, 张攀, 樊松涛, 郭文阁, 张晓斐, 张首刚, 姜海峰"
-  affiliation: "中国科学院国家授时中心 时间频率基准重点实验室"
+  first_author: "Rao"
   journal: "Acta Photonica Sinica 光子学报"
   volume: 48
-  issue: 1
-  pages: "0114003"
-  doi: "10.3788/gzxb20194801.0114003"
+  pages: 0114003
+  doi: 10.3788/gzxb20194801.0114003
   note: >
-    [应用型技术论文] NTSC 团队继 Zhang 2017 锶光钟 Er:fiber 光梳之后，针对 Li 原子 D1 线（~670.78 nm）
-    频率测量需求，搭建 NPR 锁模掺铒飞秒光纤光梳 + f-2f 自参考 + HNLF/PPLN 扩展到 671 nm 的完整链路。
-    跨文件节点引用：ent.optical_frequency_comb、pri.self_referencing_f2f 定义于 udem2002.yaml；
-    ent.hybrid_ml_erfiber_comb_z17 等 Zhang 2017 节点仅作背景参考，不复用。
-
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
+    [应用型技术论文] NTSC 团队继 Zhang 2017 锶光钟 Er:fiber 光梳之后，针对 Li 原子 D1 线（~670.78 nm） 频率测量需求，搭建 NPR 锁模掺铒飞秒光纤光梳 + f-2f 自参考 + HNLF/PPLN 扩展到 671 nm 的完整链路。 跨文件节点引用：ent.optical_frequency_comb、pri.self_referencing_f2f 定义于 udem2002.yaml； ent.hybrid_ml_erfiber_comb_z17 等 Zhang 2017 节点仅作背景参考，不复用。
 entities:
   - id: ent.erfiber_comb_li_d1_r19
     name: "面向 Li D1 线测量的 Er:fiber 飞秒光纤光梳系统（Rao 2019）"

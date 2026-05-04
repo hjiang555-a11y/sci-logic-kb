@@ -1,25 +1,21 @@
+# Kippenberg 2018 — Dissipative Kerr solitons in optical microresonators [framework]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: TRFV3Y5G
   topic: optical-frequency-combs
   source_type: review
   contribution_type: framework
   reliability: high
-  title: Dissipative Kerr solitons in optical microresonators
+  title: "Dissipative Kerr solitons in optical microresonators"
   year: 2018
-  first_author: Kippenberg
-  journal: Science
+  first_author: "Kippenberg"
+  journal: "Science"
   volume: 361
   pages: eaan8083
   doi: 10.1126/science.aan8083
-  note: '[综述论文 / DKS 范式定义文档] Kippenberg (EPFL) + Gaeta (Columbia) + Lipson (Columbia)
-    + Gorodetsky (MSU) 2018 Science 综述。 系统总结耗散 Kerr 孤子（DKS）在微谐振腔中的物理机制、形成动力学、平台实现与应用前景。
-    核心贡献：(1) 定义 DKS 双平衡原理（非线性↔色散 + 增益↔损耗）作为微梳从混沌态走向相干态的关键机制； (2) 阐述 Lugiato-Lefever
-    方程（LLE）作为腔内场演化的统一数学描述； (3) 总结色散波（Cherenkov 辐射）实现倍频程展宽的物理机制； (4) 建立激光扫频进入孤子态的标准方法；
-    (5) 总结 DKS 微梳在通信（>50 Tbit/s）、双梳光谱、LiDAR、天文光谱定标、 光学频率合成（自参考已实现）、低噪声微波产生等领域的应用演示。
-    ent.microresonator_frequency_comb 定义于 kippenberg2011.yaml； ent.si3n4_integrated_comb
-    定义于 kippenberg2011.yaml； ent.optical_frequency_comb 定义于 giunta2019.yaml。
-
-    '
+  note: >
+    [综述论文 / DKS 范式定义文档] Kippenberg (EPFL) + Gaeta (Columbia) + Lipson (Columbia) + Gorodetsky (MSU) 2018 Science 综述。 系统总结耗散 Kerr 孤子（DKS）在微谐振腔中的物理机制、形成动力学、平台实现与应用前景。 核心贡献：(1) 定义 DKS 双平衡原理（非线性↔色散 + 增益↔损耗）作为微梳从混沌态走向相干态的关键机制； (2) 阐述 Lugiato-Lefever 方程（LLE）作为腔内场演化的统一数学描述； (3) 总结色散波（Cherenkov 辐射）实现倍频程展宽的物理机制； (4) 建立激光扫频进入孤子态的标准方法； (5) 总结 DKS 微梳在通信（>50 Tbit/s）、双梳光谱、LiDAR、天文光谱定标、 光学频率合成（自参考已实现）、低噪声微波产生等领域的应用演示。 ent.microresonator_frequency_comb 定义于 kippenberg2011.yaml； ent.si3n4_integrated_comb 定义于 kippenberg2011.yaml； ent.optical_frequency_comb 定义于 giunta2019.yaml。
 entities: []
 principles:
 - id: pri.dissipative_kerr_soliton

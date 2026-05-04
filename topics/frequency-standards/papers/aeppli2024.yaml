@@ -1,31 +1,22 @@
-# Aeppli 2024 — Clock with 8×10⁻¹⁹ systematic uncertainty [evidence]
-# 提取者：Claude Code（AI 草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.5
-# 专题：frequency-standards（Sr 光晶格钟 — 8×10⁻¹⁹ 系统不确定度）
-# contribution_type: evidence — JILA Sr 光晶格钟实现 8×10⁻¹⁹ 系统不确定度；
-#   是目前精度最高的光钟系统不确定度之一。
-
+# Aeppli 2024 — Clock with 8×10^-19 Systematic Uncertainty [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "Sr accuracy_PRL.133.023401.2024_0"
+  zotero_key: Sr accuracy_PRL.133.023401.2024_0
   topic: frequency-standards
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Clock with 8×10^-19 Systematic Uncertainty"
   year: 2024
-  first_author: Aeppli
+  first_author: "Aeppli"
   authors: ["Alexander Aeppli", "Kyungtae Kim", "William Warfield", "Marianna S. Safronova", "Jun Ye"]
   journal: "Physical Review Letters"
   volume: 133
-  pages: "023401"
-  doi: "10.1103/PhysRevLett.133.023401"
+  pages: 023401
+  doi: 10.1103/PhysRevLett.133.023401
   note: >
-    JILA 团队将 Sr 光晶格钟的系统不确定度推进至 8×10⁻¹⁹——
-    当前光钟系统不确定度的最低值之一。关键改进包括
-    黑体辐射频移的更精确评估、晶格光频移的精确控制、
-    以及密度频移的系统测量。为光钟重新定义 SI 秒提供基准。
-
+    JILA 团队将 Sr 光晶格钟的系统不确定度推进至 8×10⁻¹⁹—— 当前光钟系统不确定度的最低值之一。关键改进包括 黑体辐射频移的更精确评估、晶格光频移的精确控制、 以及密度频移的系统测量。为光钟重新定义 SI 秒提供基准。
 entities:
   - id: ent.aeppli2024_sr_clock_8e19
     name: "Aeppli 2024 JILA Sr 光晶格钟 — 8×10⁻¹⁹ 系统不确定度"

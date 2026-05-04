@@ -1,11 +1,8 @@
-# Nicolodi et al. 2014 — 光学波长间10^-18级光谱纯度传递 [breakthrough]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：optical-frequency-combs
-
+# Nicolodi 2014 — Spectral purity transfer between optical wavelengths at the 10^-18 level [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "JBIG86N9"
+  zotero_key: JBIG86N9
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: breakthrough
@@ -13,22 +10,13 @@ meta:
   title: "Spectral purity transfer between optical wavelengths at the 10^-18 level"
   year: 2014
   first_author: "Nicolodi"
-  authors:
-    - "Daniele Nicolodi"
-    - "Bérengère Argence"
-    - "Wei Zhang"
-    - "Rodolphe Le Targat"
-    - "Giorgio Santarelli"
-    - "Yann Le Coq"
+  authors: ["Daniele Nicolodi", "Bérengère Argence", "Wei Zhang", "Rodolphe Le Targat", "Giorgio Santarelli", "Yann Le Coq"]
   journal: "Nature Photonics"
-  volume: "8"
-  pages: "219-223"
-  doi: "10.1038/nphoton.2013.361"
+  volume: 8
+  pages: 219-223
+  doi: 10.1038/nphoton.2013.361
   note: >
-    首次证明Er:fiber光频梳可在1062 nm→1542 nm之间传递激光频率稳定度，
-    梳传递退化低于3×10^-18（1 s），比此前最佳结果改善约两个数量级。
-    使用腔内EOM实现快速相位锁定，源激光（ULE腔稳定，1062 nm）稳定度4.5×10^-16（1 s）。
-
+    首次证明Er:fiber光频梳可在1062 nm→1542 nm之间传递激光频率稳定度， 梳传递退化低于3×10^-18（1 s），比此前最佳结果改善约两个数量级。 使用腔内EOM实现快速相位锁定，源激光（ULE腔稳定，1062 nm）稳定度4.5×10^-16（1 s）。
 entities:
   - id: ent.er_fiber_ofc_spectral_transfer_nicolodi2014
     name: "Er:fiber光频梳光谱纯度传递系统（Nicolodi 2014）"

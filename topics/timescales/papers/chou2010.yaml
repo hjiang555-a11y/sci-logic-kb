@@ -1,37 +1,22 @@
-# Chou 2010 — Optical Clocks and Relativity [时间标尺专题 实验论文]
-# 提取者：Claude Code（AI草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.4
-# 专题：timescales
-# contribution_type: evidence — 首次在人类日常尺度（<10 m/s 速度、33 cm 高度差）用光钟检测相对论时间膨胀和引力红移
-
+# chou 2010 — Optical Clocks and Relativity [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "1630.full (1)"
+  zotero_key: 1630.full (1)
   topic: timescales
   source_type: research_article
   contribution_type: evidence
   reliability: high
   title: "Optical Clocks and Relativity"
   year: 2010
-  first_author: chou
-  authors:
-    - "C. W. Chou"
-    - "D. B. Hume"
-    - "T. Rosenband"
-    - "D. J. Wineland"
+  first_author: "chou"
+  authors: ["C. W. Chou", "D. B. Hume", "T. Rosenband", "D. J. Wineland"]
   journal: "Science"
   volume: 329
-  pages: "1630-1633"
-  doi: "10.1126/science.1192720"
+  pages: 1630-1633
+  doi: 10.1126/science.1192720
   note: >
-    [实验] NIST 用两台 ²⁷Al⁺ 量子逻辑光钟（分别以 Be⁺ 和 Mg⁺ 为逻辑离子）通过 75 m 相位稳定光纤比较，
-    检测到 <10 m/s 速度引发的狭义相对论时间膨胀、33 cm 高度差引发的引力红移。
-    首次将相对论验证从宇宙尺度/高速带入人类日常尺度，并提出光钟测地学（clock-based geodesy）概念。
-
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
+    [实验] NIST 用两台 ²⁷Al⁺ 量子逻辑光钟（分别以 Be⁺ 和 Mg⁺ 为逻辑离子）通过 75 m 相位稳定光纤比较， 检测到 <10 m/s 速度引发的狭义相对论时间膨胀、33 cm 高度差引发的引力红移。 首次将相对论验证从宇宙尺度/高速带入人类日常尺度，并提出光钟测地学（clock-based geodesy）概念。
 entities:
   - id: ent.al_plus_ion_optical_clock
     name: "²⁷Al⁺ 离子量子逻辑光钟（NIST 实验系统）"

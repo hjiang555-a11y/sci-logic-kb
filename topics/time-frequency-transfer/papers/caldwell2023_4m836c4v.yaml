@@ -1,41 +1,22 @@
 # Caldwell 2023 — Quantum-limited optical time transfer for future geosynchronous links [evidence]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：time-frequency-transfer
-# contribution_type: evidence — 逼近 breakthrough。10000× 低于以往接收功率、300 km 山顶-山顶
-#   自由空间同步至 320 as，40 µW launched power 支持 102 dB 链路损耗——足以支撑
-#   ground↔geosynchronous orbit 光学 TF。
-
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "4m836c4v"
+  zotero_key: 4m836c4v
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Quantum-limited optical time transfer for future geosynchronous links"
   year: 2023
-  first_author: Caldwell
-  authors:
-  - "Emily D. Caldwell"
-  - "Jean-Daniel Deschenes"
-  - "Jennifer Ellis"
-  - "William C. Swann"
-  - "Benjamin K. Stuhl"
-  - "Hugo Bergeron"
-  - "Nathan R. Newbury"
-  - "Laura C. Sinclair"
+  first_author: "Caldwell"
+  authors: ["Emily D. Caldwell", "Jean-Daniel Deschenes", "Jennifer Ellis", "William C. Swann", "Benjamin K. Stuhl", "Hugo Bergeron", "Nathan R. Newbury", "Laura C. Sinclair"]
   journal: "Nature"
   volume: 618
-  pages: "721-726"
-  doi: "10.1038/s41586-023-06032-5"
+  pages: 721-726
+  doi: 10.1038/s41586-023-06032-5
   note: >
-    [期刊论文] NIST Boulder + Laval + NOAA. 近量子极限 O-TWTFT：10000× 低于以往最低
-    接收功率，300 km Hawaii 山顶-山顶自由空间同步至 320 as；40 µW launched power 支持
-    102 dB 链路损耗，足以支撑 ground↔geosynchronous orbit 光学时间传递。
-    光钟-时频比对-地球静止轨道链路构成"网络连接大规模光钟"的关键使能。
-    建议专家考虑将此升为 breakthrough。
-
+    [期刊论文] NIST Boulder + Laval + NOAA. 近量子极限 O-TWTFT：10000× 低于以往最低 接收功率，300 km Hawaii 山顶-山顶自由空间同步至 320 as；40 µW launched power 支持 102 dB 链路损耗，足以支撑 ground↔geosynchronous orbit 光学时间传递。 光钟-时频比对-地球静止轨道链路构成"网络连接大规模光钟"的关键使能。 建议专家考虑将此升为 breakthrough。
 entities:
   - id: ent.quantum_limited_ott_hawaii_c23
     name: "Hawaii 300 km 近量子极限光学时间传递（Caldwell 2023）"

@@ -1,33 +1,22 @@
-# Pizzocaro 2021 — Intercontinental comparison of optical atomic clocks through VLBI [breakthrough]
-# 提取者：Claude Code（AI 草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.5
-# 专题：time-frequency-transfer（VLBI 光钟洲际比对 — 9000 km 意大利-日本）
-# contribution_type: breakthrough — 首次利用甚长基线干涉测量（VLBI）实现洲际光学原子钟
-#   比对（意大利-日本 9000 km），性能超越卫星双向时间频率传递（TWSTFT）。
-
+# Pizzocaro 2021 — Intercontinental comparison of optical atomic clocks through very long baseli... [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "s41567-020-01038-6"
+  zotero_key: s41567-020-01038-6
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: breakthrough
   reliability: high
   title: "Intercontinental comparison of optical atomic clocks through very long baseline interferometry"
   year: 2021
-  first_author: Pizzocaro
+  first_author: "Pizzocaro"
   authors: ["Marco Pizzocaro", "Mamoru Sekido", "Kazuhiro Takefuji", "Hideki Ujihara", "Hidekazu Hachisu", "Nils Nemitz", "Masanori Tsutsumi", "Tetsuro Kondo", "Eiji Kawai", "Ryuichi Ichikawa", "Kunitaka Namba", "Yoshihiro Okamoto", "Rumi Takahashi", "Junichi Komuro", "Cecilia Clivati", "Filippo Bregolin", "Piero Barbieri", "Alberto Mura", "Elena Cantoni", "Giancarlo Cerretto", "Filippo Levi", "Giuseppe Maccaferri", "Mauro Roma", "Claudio Bortolotti", "Monia Negusini", "Roberto Ricci", "Giampaolo Zacchiroli", "Juri Roda", "Julia Leute", "Gérard Petit", "Federico Perini", "Davide Calonico", "Tetsuya Ido"]
   journal: "Nature Physics"
   volume: 17
-  pages: "223-227"
-  doi: "10.1038/s41567-020-01038-6"
+  pages: 223-227
+  doi: 10.1038/s41567-020-01038-6
   note: >
-    [breakthrough 论文] 首次以 VLBI 技术实现洲际光钟比对。在意大利 Medicina 和
-    日本 Koganei（~9000 km 基线）各部署专用可搬运 VLBI 站（宽带检测），
-    观测河外射电源实现两地光钟（意大利 Yb 光晶格钟、日本 Sr 光晶格钟）
-    的频率比对。分数频率不稳定度 ~2×10⁻¹⁶@1000 s——超越卫星 TWSTFT
-    和 GPS PPP 技术——为未来跨洋光学时钟比对和国际时间尺度构建提供
-    替代或补充卫星技术的独立方案。
-
+    [breakthrough 论文] 首次以 VLBI 技术实现洲际光钟比对。在意大利 Medicina 和 日本 Koganei（~9000 km 基线）各部署专用可搬运 VLBI 站（宽带检测）， 观测河外射电源实现两地光钟（意大利 Yb 光晶格钟、日本 Sr 光晶格钟） 的频率比对。分数频率不稳定度 ~2×10⁻¹⁶@1000 s——超越卫星 TWSTFT 和 GPS PPP 技术——为未来跨洋光学时钟比对和国际时间尺度构建提供 替代或补充卫星技术的独立方案。
 entities:
   - id: ent.pizzocaro2021_vlbi_clock_comparison
     name: "Pizzocaro 2021 VLBI 洲际光钟比对系统（Medicina↔Koganei 9000 km）"

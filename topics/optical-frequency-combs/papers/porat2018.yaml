@@ -1,33 +1,21 @@
-# Porat 2018 — 首次相位匹配 XUV 频率梳（77 MHz 高温气体）[breakthrough]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-22
-# Schema版本：v4.4
-# 专题：optical-frequency-combs
-# contribution_type: breakthrough（首次在高重频飞秒增强腔内实现相位匹配 XUV 高次谐波频率梳产生，单次谐波功率达 ~2 mW）
-
+# Porat 2018 — Phase-matched extreme-ultraviolet frequency-comb generation [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "L88UAAEQ"
+  zotero_key: L88UAAEQ
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
   title: "Phase-matched extreme-ultraviolet frequency-comb generation"
   year: 2018
-  first_author: Porat
+  first_author: "Porat"
   journal: "Nature Photonics"
   volume: 12
-  issue: 7
-  pages: "387-391"
-  doi: "10.1038/s41566-018-0199-z"
+  pages: 387-391
+  doi: 10.1038/s41566-018-0199-z
   note: >
-    [技术论文 / 里程碑] JILA (Porat, Heyl, Schoun, Benko, Dörre, Corwin, Ye) 2018 年 Nature Photonics。
-    首次在 f_rep = 77 MHz 飞秒增强腔内实现**相位匹配的 XUV 高次谐波频率梳产生**——
-    此前高重频（>10 MHz）HHG 系统受稳态等离子体积累阻碍，无法达成相位匹配，XUV 功率受限于 μW 级。
-    本工作引入**高温混合气体**（Ar+He，背压温度 T 高达 800 K）提升原子平动速度 v_gas ∝ √(RT/M_avg)，
-    将束流逗留时间参数 ξ_beam = σ_FWHM/(v_gas·τ_rep) 降至 ξ_beam < 1，使稳态等离子体分数大幅降低 → 相位匹配条件恢复。
-    实现单次谐波（单个 XUV 波长）功率 ~2 mW（先前最高 <100 μW），为 XUV 频率梳光谱、量子基准测试提供实用化光源。
-    v2 子域主线：B-Spec（XUV 波段扩展）主线首次突破 — 刷新高重频 HHG 相位匹配纪录 + XUV 单谐波功率纪录。
-
+    [技术论文 / 里程碑] JILA (Porat, Heyl, Schoun, Benko, Dörre, Corwin, Ye) 2018 年 Nature Photonics。 首次在 f_rep = 77 MHz 飞秒增强腔内实现**相位匹配的 XUV 高次谐波频率梳产生**—— 此前高重频（>10 MHz）HHG 系统受稳态等离子体积累阻碍，无法达成相位匹配，XUV 功率受限于 μW 级。 本工作引入**高温混合气体**（Ar+He，背压温度 T 高达 800 K）提升原子平动速度 v_gas ∝ √(RT/M_avg)， 将束流逗留时间参数 ξ_beam = σ_FWHM/(v_gas·τ_rep) 降至 ξ_beam < 1，使稳态等离子体分数大幅降低 → 相位匹配条件恢复。 实现单次谐波（单个 XUV 波长）功率 ~2 mW（先前最高 <100 μW），为 XUV 频率梳光谱、量子基准测试提供实用化光源。 v2 子域主线：B-Spec（XUV 波段扩展）主线首次突破 — 刷新高重频 HHG 相位匹配纪录 + XUV 单谐波功率纪录。
 entities:
   - id: ent.high_temp_gas_mixture_hhg_p18
     name: "高温混合气体 HHG 系统（Porat 2018）"

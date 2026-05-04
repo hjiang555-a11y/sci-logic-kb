@@ -1,37 +1,22 @@
-# Allan 1966 — Statistics of Atomic Frequency Standards（σ_y(τ) 两样本 Allan 方差原始定义）[framework]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：shared（时频计量数学基础 · B9 Allan–Howe 奠基白名单）
-# contribution_type: framework — 时频计量分数频率不稳定度表征的奠基文献。
-#   定义：两样本（Allan）方差 σ_y²(τ) 作为频率稳定度标准度量；揭示经典方差在 flicker / random-walk
-#         噪声下的发散问题；为后续 ADEV / MDEV / Hadamard / Theo1 全部派生方差提供出发点。
-
+# Allan 1966 — Statistics of Atomic Frequency Standards [framework]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "ALLAN1966-PROCIEEE"
+  zotero_key: ALLAN1966-PROCIEEE
   topic: shared
   source_type: journal_paper
   contribution_type: framework
   reliability: high
   title: "Statistics of Atomic Frequency Standards"
   year: 1966
-  first_author: Allan
+  first_author: "Allan"
   authors: ["David W. Allan"]
   journal: "Proceedings of the IEEE"
   volume: 54
-  issue: 2
-  pages: "221-230"
-  doi: "10.1109/PROC.1966.4634"
+  pages: 221-230
+  doi: 10.1109/PROC.1966.4634
   note: >
-    [奠基期刊论文 · < 1999 年白名单 §A] 时频计量统计学的开山之作。定义"两样本方差"
-    σ_y²(τ) = ½⟨(ȳ_{k+1} − ȳ_k)²⟩（后世称 Allan 方差 / ADEV），作为对连续相邻两段
-    归一化频率偏差平均值差的方差。与经典方差的关键区别：Allan 方差对 flicker FM 与
-    random-walk FM 等非平稳噪声收敛，而经典标准差发散——这使得 σ_y(τ) 可以作为
-    跨时间尺度可复现比较的不稳定度度量。本论文在频率标准/时钟表征领域已被整个学科
-    共识为度量标准，所有现代时频稳定度分析（ADEV / MDEV / OADEV / HDEV / TOTDEV
-    / Theo1 / Theoh）均在此基础上派生。本文件作为时频数学基础专题（topics/shared/）
-    的首个 framework 种子文档。
-
+    [奠基期刊论文 · < 1999 年白名单 §A] 时频计量统计学的开山之作。定义"两样本方差" σ_y²(τ) = ½⟨(ȳ_{k+1} − ȳ_k)²⟩（后世称 Allan 方差 / ADEV），作为对连续相邻两段 归一化频率偏差平均值差的方差。与经典方差的关键区别：Allan 方差对 flicker FM 与 random-walk FM 等非平稳噪声收敛，而经典标准差发散——这使得 σ_y(τ) 可以作为 跨时间尺度可复现比较的不稳定度度量。本论文在频率标准/时钟表征领域已被整个学科 共识为度量标准，所有现代时频稳定度分析（ADEV / MDEV / OADEV / HDEV / TOTDEV / Theo1 / Theoh）均在此基础上派生。本文件作为时频数学基础专题（topics/shared/） 的首个 framework 种子文档。
 entities: []
 
 principles:

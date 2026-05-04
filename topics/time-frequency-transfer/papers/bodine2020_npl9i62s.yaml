@@ -1,36 +1,20 @@
-# Bodine 2020 — Optical time-frequency transfer across a free-space three-node network [evidence]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：time-frequency-transfer
-# contribution_type: evidence
-
+# Bodine 2020 — Optical time-frequency transfer across a free-space, three-node network [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "npl9i62s"
+  zotero_key: npl9i62s
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Optical time-frequency transfer across a free-space, three-node network"
   year: 2020
-  first_author: Bodine
-  authors:
-  - "M. I. Bodine"
-  - "J. L. Ellis"
-  - "W. C. Swann"
-  - "S. A. Stevenson"
-  - "J. D. Deschenes"
-  - "E. D. Hannah"
-  - "P. Manurkar"
-  - "N. R. Newbury"
-  - "L. C. Sinclair"
+  first_author: "Bodine"
+  authors: ["M. I. Bodine", "J. L. Ellis", "W. C. Swann", "S. A. Stevenson", "J. D. Deschenes", "E. D. Hannah", "P. Manurkar", "N. R. Newbury", "L. C. Sinclair"]
   journal: "Apl Photonics"
-  doi: "10.1063/5.0010704"
+  doi: 10.1063/5.0010704
   note: >
-    [期刊论文] NIST Boulder + Laval. 首次在三节点自由空间网络上演示 comb-based O-TWTFT，
-    验证多节点同步的可扩展性（几何一致性、级联误差、多链路并发操作）；为自由空间光钟
-    mesh 网络（ground-ground、ground-satellite）提供多节点操作的证据。
-
+    [期刊论文] NIST Boulder + Laval. 首次在三节点自由空间网络上演示 comb-based O-TWTFT， 验证多节点同步的可扩展性（几何一致性、级联误差、多链路并发操作）；为自由空间光钟 mesh 网络（ground-ground、ground-satellite）提供多节点操作的证据。
 entities:
   - id: ent.three_node_free_space_network_b20
     name: "三节点自由空间 O-TWTFT 网络（Bodine 2020）"

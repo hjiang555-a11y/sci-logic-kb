@@ -1,12 +1,8 @@
-# Fermann 2022 — 光纤频率梳精密频率传递综述 [综述/框架型]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: framework
-
+# Fermann 2022 — Precision frequency transfer with fiber frequency combs [framework]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "J37V2ZZQ"
+  zotero_key: J37V2ZZQ
   topic: optical-frequency-combs
   source_type: review
   contribution_type: framework
@@ -16,19 +12,10 @@ meta:
   first_author: "Fermann"
   journal: "Frontiers in Physics"
   volume: 10
-  pages: "1005074"
-  doi: "10.3389/fphy.2022.1005074"
+  pages: 1005074
+  doi: 10.3389/fphy.2022.1005074
   note: >
-    [综述/框架型] IMRA America（Fermann, Lee, Li, Rolland, Jiang）。综述光纤频率梳的
-    精密频率传递技术：(1) 单分支超连续谱频率传递——跨倍频程稳定度 <1×10⁻¹⁷/1s；
-    (2) 超连续谱拼接（stitching）——跨 >2 倍频程超连续谱带宽；(3) 噪声抵消技术——
-    相对频率传递稳定度 ≈2×10⁻¹⁸/1s；(4) 脉冲整形优化多波段功率分配。
-    同时综述：Er 光纤频率梳一般架构（NALM、G-EOM、LN-EOM 高带宽调制器）、
-    XUV-to-MIR 全谱域频率扩展、功率放大、低噪声微波/毫米波生成。
-    跨文件节点引用：ent.er_fiber_frequency_comb / ent.optical_frequency_comb
-    定义于 giunta2019.yaml；meth.heterodyne_beat_note 定义于 udem2002.yaml；
-    pri.ofc_two_dof_stabilization 定义于 giunta2019.yaml。
-
+    [综述/框架型] IMRA America（Fermann, Lee, Li, Rolland, Jiang）。综述光纤频率梳的 精密频率传递技术：(1) 单分支超连续谱频率传递——跨倍频程稳定度 <1×10⁻¹⁷/1s； (2) 超连续谱拼接（stitching）——跨 >2 倍频程超连续谱带宽；(3) 噪声抵消技术—— 相对频率传递稳定度 ≈2×10⁻¹⁸/1s；(4) 脉冲整形优化多波段功率分配。 同时综述：Er 光纤频率梳一般架构（NALM、G-EOM、LN-EOM 高带宽调制器）、 XUV-to-MIR 全谱域频率扩展、功率放大、低噪声微波/毫米波生成。 跨文件节点引用：ent.er_fiber_frequency_comb / ent.optical_frequency_comb 定义于 giunta2019.yaml；meth.heterodyne_beat_note 定义于 udem2002.yaml； pri.ofc_two_dof_stabilization 定义于 giunta2019.yaml。
 entities:
   - id: ent.precision_frequency_transfer_system_f22
     name: "光纤梳精密频率传递系统框架（Fermann 2022）"

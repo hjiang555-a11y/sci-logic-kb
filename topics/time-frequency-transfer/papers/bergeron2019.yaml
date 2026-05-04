@@ -1,33 +1,22 @@
 # Bergeron 2019 — Femtosecond time synchronization of optical clocks off of a flying quadcopter [breakthrough]
-# 提取者：Claude Code（AI 草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.5
-# 专题：time-frequency-transfer（运动平台光学时间同步 — 四旋翼飞行器 O-TWTFT <1 fs）
-# contribution_type: breakthrough — 首次在运动平台（四旋翼无人机+24 m/s 模拟速度）上实现
-#   fs 级 O-TWTFT 时钟同步，克服了运动导致的双向时间传递互易性破缺问题。
-
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "s41467-019-09768-9"
+  zotero_key: s41467-019-09768-9
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: breakthrough
   reliability: high
   title: "Femtosecond time synchronization of optical clocks off of a flying quadcopter"
   year: 2019
-  first_author: Bergeron
+  first_author: "Bergeron"
   authors: ["Hugo Bergeron", "Laura C. Sinclair", "William C. Swann", "Isaac Khader", "Kevin C. Cossel", "Michael Cermak", "Jean-Daniel Deschênes", "Nathan R. Newbury"]
   journal: "Nature Communications"
   volume: 10
-  pages: "1819"
-  doi: "10.1038/s41467-019-09768-9"
+  pages: 1819
+  doi: 10.1038/s41467-019-09768-9
   note: >
-    [breakthrough 论文] 首次在运动平台（四旋翼无人机携 retroreflector，最大 ~24 m/s
-    有效闭合速度）上实现频率梳 O-TWTFT 飞秒级时钟同步。核心创新：解决运动导致
-    的双向飞行时间互易性破缺问题——在 50 ps 量级的非互易路径变化下，通过
-    改进的时间-频率传递解算（同时估计钟差和速度诱导的线性 chirp），仍实现
-    <1 fs 时钟同步时间偏差（TDEV）和 ~10⁻¹⁸ 频率一致性（尽管存在 10⁻⁷ 量级 Doppler
-    偏移）。为未来机载/星载光学时钟的空中-地面和星间自由空间同步铺路。
-
+    [breakthrough 论文] 首次在运动平台（四旋翼无人机携 retroreflector，最大 ~24 m/s 有效闭合速度）上实现频率梳 O-TWTFT 飞秒级时钟同步。核心创新：解决运动导致 的双向飞行时间互易性破缺问题——在 50 ps 量级的非互易路径变化下，通过 改进的时间-频率传递解算（同时估计钟差和速度诱导的线性 chirp），仍实现 <1 fs 时钟同步时间偏差（TDEV）和 ~10⁻¹⁸ 频率一致性（尽管存在 10⁻⁷ 量级 Doppler 偏移）。为未来机载/星载光学时钟的空中-地面和星间自由空间同步铺路。
 entities:
   - id: ent.bergeron2019_quadcopter_otwtft
     name: "Bergeron 2019 四旋翼飞行器 O-TWTFT 运动平台实验系统"

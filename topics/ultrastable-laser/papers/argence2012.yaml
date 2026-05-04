@@ -1,19 +1,21 @@
+# Argence 2012 — Prototype of an ultra-stable optical cavity for space applications [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: RP8Q44RZ
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: Prototype of an ultra-stable optical cavity for space applications
+  title: "Prototype of an ultra-stable optical cavity for space applications"
   year: 2012
-  first_author: Argence
-  journal: Optics Express
+  first_author: "Argence"
+  journal: "Optics Express"
   volume: 20
-  pages: '25409'
+  pages: 25409
   doi: 10.1364/OE.20.025409
-  note: '面向空间任务设计的 100 mm ULE 圆柱腔原型，中平面刚性固定， 工业级制造（SODERN），轴向振动灵敏度 4×10⁻¹¹/(m/s²)，
-    横向 <1×10⁻¹¹/(m/s²)，分数频率不稳定度 5–6×10⁻¹⁶ @ 1s。 可承受数 g 加速度，工作温度范围 -33°C 至 73°C。 核心贡献：首个由工业界制造的空间级超稳腔原型，兼顾鲁棒性和性能。
-
-    '
+  note: >
+    面向空间任务设计的 100 mm ULE 圆柱腔原型，中平面刚性固定， 工业级制造（SODERN），轴向振动灵敏度 4×10⁻¹¹/(m/s²)， 横向 <1×10⁻¹¹/(m/s²)，分数频率不稳定度 5–6×10⁻¹⁶ @ 1s。 可承受数 g 加速度，工作温度范围 -33°C 至 73°C。 核心贡献：首个由工业界制造的空间级超稳腔原型，兼顾鲁棒性和性能。
 entities:
 - id: ent.space_cavity_prototype_a12
   name: 空间超稳腔原型（Argence 2012）

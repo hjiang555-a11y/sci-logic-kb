@@ -1,55 +1,22 @@
+# Schioppo 2021 — Comparing ultrastable lasers at 7×10⁻¹⁷ fractional frequency instability thro... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: K5JMAYPZ
   topic: ultrastable-laser
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
-  title: Comparing ultrastable lasers at 7×10⁻¹⁷ fractional frequency instability
-    through a 2220 km optical fibre network
+  title: "Comparing ultrastable lasers at 7×10⁻¹⁷ fractional frequency instability through a 2220 km optical fibre network"
   year: 2021
-  first_author: Schioppo
-  authors:
-  - M. Schioppo
-  - J. Kronjäger
-  - A. Silva
-  - R. Ilieva
-  - J. W. Paterson
-  - C. F. A. Baynham
-  - W. Bowden
-  - I. R. Hill
-  - R. Hobson
-  - A. Vianello
-  - M. Dovale-Álvarez
-  - R. A. Williams
-  - G. Marra
-  - H. S. Margolis
-  - A. Amy-Klein
-  - O. Lopez
-  - E. Cantin
-  - H. Álvarez-Martínez
-  - R. Le Targat
-  - P. E. Pottie
-  - N. Quintin
-  - T. Legero
-  - S. Häfner
-  - U. Sterr
-  - R. Schwarz
-  - S. Dörscher
-  - C. Lisdat
-  - S. Koke
-  - A. Kuhl
-  - T. Waterholter
-  - E. Benkler
-  - G. Grosche
-  journal: Nature Communications
+  first_author: "Schioppo"
+  authors: ["M. Schioppo", "J. Kronjäger", "A. Silva", "R. Ilieva", "J. W. Paterson", "C. F. A. Baynham", "W. Bowden", "I. R. Hill", "R. Hobson", "A. Vianello", "M. Dovale-Álvarez", "R. A. Williams", "G. Marra", "H. S. Margolis", "A. Amy-Klein", "O. Lopez", "E. Cantin", "H. Álvarez-Martínez", "R. Le Targat", "P. E. Pottie", "N. Quintin", "T. Legero", "S. Häfner", "U. Sterr", "R. Schwarz", "S. Dörscher", "C. Lisdat", "S. Koke", "A. Kuhl", "T. Waterholter", "E. Benkler", "G. Grosche"]
+  journal: "Nature Communications"
   volume: 13
-  pages: '212'
+  pages: 212
   doi: 10.1038/s41467-021-27884-3
-  note: 'NPL（英国）与 PTB（德国）两台地理上分离的超稳激光通过 2220 km 欧洲光纤网络比对 （NPL: 48.5 cm ULE 腔；PTB:
-    低温硅腔）。 MDEV 合并不稳定度 7×10⁻¹⁷（30–200 s 平均时间）； PTB Si 腔：4×10⁻¹⁷ MDEV 闪烁频率底；NPL ULE
-    腔：6×10⁻¹⁷ MDEV（7×10⁻¹⁷ ADEV）。 首次无环回光纤直接测量 2220 km 完整链路短期噪声。 核心贡献：验证超长距离（~10⁶ m）光纤网络超稳激光比对能力及链路噪声特性。
-
-    '
+  note: >
+    NPL（英国）与 PTB（德国）两台地理上分离的超稳激光通过 2220 km 欧洲光纤网络比对 （NPL: 48.5 cm ULE 腔；PTB: 低温硅腔）。 MDEV 合并不稳定度 7×10⁻¹⁷（30–200 s 平均时间）； PTB Si 腔：4×10⁻¹⁷ MDEV 闪烁频率底；NPL ULE 腔：6×10⁻¹⁷ MDEV（7×10⁻¹⁷ ADEV）。 首次无环回光纤直接测量 2220 km 完整链路短期噪声。 核心贡献：验证超长距离（~10⁶ m）光纤网络超稳激光比对能力及链路噪声特性。
 entities:
 - id: ent.npl_ule_cavity_laser_sc21
   name: NPL 超稳激光（48.5 cm ULE 腔，Schioppo 2021）

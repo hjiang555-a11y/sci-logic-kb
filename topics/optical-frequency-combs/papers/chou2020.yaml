@@ -1,48 +1,21 @@
-# Chou 2020 — 首次在单分子离子纯量子态上实现飞秒梳驱动的 THz 转动光谱 [里程碑技术论文]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical
-#   核心贡献：
-#     (1) 将量子逻辑光谱（QLS）与飞秒光学频率梳的相干 Raman 驱动首次结合，
-#         在单一囚禁 40CaH+ 分子离子的纯量子态上直接驱动 THz 级转动跃迁；
-#     (2) 实现 <1 kHz 傅里叶极限线型，统计不确定度 <100 Hz，绝对跃迁频率精度 ~1 ppb；
-#     (3) 首次直接测得 40CaH+ 转动常数 BR = 142 501 777.9(1.7) kHz，
-#         相对精度 1.2×10⁻⁸，远超 ab initio 量子化学计算；
-#     (4) 可非破坏性读出，分子保留以继续量子态操纵，打开分子量子信息与精密计量的结合方向。
-#   Framework 依赖：ent.optical_frequency_comb 权威定义于 udem2002.yaml；
-#     pri.ramsey_comb_spectroscopy、meth.direct_two_photon_comb_spectroscopy 定义于 picque2019.yaml；
-#     ent.optical_frequency_standard 为跨主题接口节点。
-
+# Chou 2020 — Frequency-comb spectroscopy on pure quantum states of a single molecular ion [technical]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "DUJ8VXBR"
+  zotero_key: DUJ8VXBR
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical
   reliability: high
   title: "Frequency-comb spectroscopy on pure quantum states of a single molecular ion"
   year: 2020
-  first_author: Chou
+  first_author: "Chou"
   journal: "Science"
   volume: 367
-  issue: 6485
-  pages: "1458-1461"
-  doi: "10.1126/science.aba3628"
+  pages: 1458-1461
+  doi: 10.1126/science.aba3628
   note: >
-    [里程碑技术论文] NIST Time and Frequency Division (Chou/Leibfried/Leibrandt 等)。
-    40Ca+–40CaH+ 共囚禁于线性 Paul 阱；1051 nm CW 光纤 Raman 激光做投影式态制备与非破坏性读出，
-    Ti:S 飞秒梳（frep ≈ 80 MHz，800–850 nm，~10 THz 带宽）分为两束、各经 AOM 频移 ±fAOM，
-    两梳齿对共同驱动 ΔJ = ±2 型 THz 级受激 Raman 转动跃迁，
-    fRaman = |N·frep − 2·fAOM|，N ∈ ℤ。J=1→3, 2→4, 3→5, 4→6 四条转动跃迁，
-    95% 置信统计不确定度 <100 Hz，系统不确定度 ~2–5 kHz（阱 RF 电场 Stark 移动主导），
-    Fourier 极限线宽 <1 kHz @ 1.6 ms 方脉冲。该实验打通 QLS + OFC + 分子，
-    可推广到多原子分子、手性分子、m_e/m_p 变化检验等。
-
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
+    [里程碑技术论文] NIST Time and Frequency Division (Chou/Leibfried/Leibrandt 等)。 40Ca+–40CaH+ 共囚禁于线性 Paul 阱；1051 nm CW 光纤 Raman 激光做投影式态制备与非破坏性读出， Ti:S 飞秒梳（frep ≈ 80 MHz，800–850 nm，~10 THz 带宽）分为两束、各经 AOM 频移 ±fAOM， 两梳齿对共同驱动 ΔJ = ±2 型 THz 级受激 Raman 转动跃迁， fRaman = |N·frep − 2·fAOM|，N ∈ ℤ。J=1→3, 2→4, 3→5, 4→6 四条转动跃迁， 95% 置信统计不确定度 <100 Hz，系统不确定度 ~2–5 kHz（阱 RF 电场 Stark 移动主导）， Fourier 极限线宽 <1 kHz @ 1.6 ms 方脉冲。该实验打通 QLS + OFC + 分子， 可推广到多原子分子、手性分子、m_e/m_p 变化检验等。
 entities:
   - id: ent.single_ion_comb_spectrometer_c20
     name: "单分子离子 + 飞秒梳 Raman 光谱仪（Chou 2020 系统）"

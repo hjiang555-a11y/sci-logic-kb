@@ -1,19 +1,21 @@
+# Huang 2023 — All-fiber-based ultrastable laser with long-term frequency stability of 1.1×1... [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: JYGVFJBN
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
-  title: All-fiber-based ultrastable laser with long-term frequency stability of 1.1×10⁻¹⁴
+  title: "All-fiber-based ultrastable laser with long-term frequency stability of 1.1×10⁻¹⁴"
   year: 2023
-  first_author: Huang
-  journal: Chinese Optics Letters
+  first_author: "Huang"
+  journal: "Chinese Optics Letters"
   volume: 21
-  pages: '011403'
+  pages: 011403
   doi: 10.3788/COL202321.011403
-  note: '1550 nm 全光纤超稳激光，锁定到光纤延迟线（FDL）， 五层热屏蔽 + 两级主动温控 + 光功率/RF 功率稳定， 3.2×10⁻¹⁵ @
-    1s，1.1×10⁻¹⁴ @ 1000s（全光纤最佳长期稳定度）。 核心贡献：全光纤方案长期稳定度的最佳记录。
-
-    '
+  note: >
+    1550 nm 全光纤超稳激光，锁定到光纤延迟线（FDL）， 五层热屏蔽 + 两级主动温控 + 光功率/RF 功率稳定， 3.2×10⁻¹⁵ @ 1s，1.1×10⁻¹⁴ @ 1000s（全光纤最佳长期稳定度）。 核心贡献：全光纤方案长期稳定度的最佳记录。
 entities: []
 principles: []
 methods:

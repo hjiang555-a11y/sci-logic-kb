@@ -1,12 +1,8 @@
-# Chiles 2018 — 氘化氮化硅（SiN:D）PECVD 集成光子平台，宽带 Kerr 梳与倍频程 SCG [技术突破]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical_breakthrough
-
+# Chiles 2018 — Deuterated silicon nitride photonic devices for broadband optical frequency c... [technical_breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "HW9TAY3W"
+  zotero_key: HW9TAY3W
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical_breakthrough
@@ -16,20 +12,10 @@ meta:
   first_author: "Chiles"
   journal: "Optics Letters"
   volume: 43
-  issue: 7
-  pages: "1527-1530"
-  doi: "10.1364/OL.43.001527"
+  pages: 1527-1530
+  doi: 10.1364/OL.43.001527
   note: >
-    [技术突破] NIST（Chiles, Diddams, Papp, Nam 等）。首次演示氘化氮化硅（SiN:D）
-    通过等离子体增强化学气相沉积（PECVD / ICP-CVD）制备的集成光子平台用于非线性光学：
-    (1) 峰值工艺温度 <300°C，CMOS 后端兼容；(2) 用氘化硅烷（SiD₄）替代常规硅烷（SiH₄），
-    将 N-H 吸收带从 1.5 μm 移至 ~2.04 μm，C 波段损耗降至 0.31 dB/cm（vs PECVD SiN:H 的
-    2.5 dB/cm，改善 8 倍）；(3) 微环谐振器 Q 因子达 1.6×10⁶ @ 1552 nm；
-    (4) 演示 1 THz FSR、900 nm 带宽 MI Kerr 微梳；(5) 演示倍频程超连续谱。
-    跨文件节点引用：ent.si3n4_integrated_comb 定义于 kippenberg2011.yaml；
-    pri.parametric_four_wave_mixing_comb 定义于 kippenberg2011.yaml；
-    pri.supercontinuum_octave_spanning 定义于 diddams2000.yaml。
-
+    [技术突破] NIST（Chiles, Diddams, Papp, Nam 等）。首次演示氘化氮化硅（SiN:D） 通过等离子体增强化学气相沉积（PECVD / ICP-CVD）制备的集成光子平台用于非线性光学： (1) 峰值工艺温度 <300°C，CMOS 后端兼容；(2) 用氘化硅烷（SiD₄）替代常规硅烷（SiH₄）， 将 N-H 吸收带从 1.5 μm 移至 ~2.04 μm，C 波段损耗降至 0.31 dB/cm（vs PECVD SiN:H 的 2.5 dB/cm，改善 8 倍）；(3) 微环谐振器 Q 因子达 1.6×10⁶ @ 1552 nm； (4) 演示 1 THz FSR、900 nm 带宽 MI Kerr 微梳；(5) 演示倍频程超连续谱。 跨文件节点引用：ent.si3n4_integrated_comb 定义于 kippenberg2011.yaml； pri.parametric_four_wave_mixing_comb 定义于 kippenberg2011.yaml； pri.supercontinuum_octave_spanning 定义于 diddams2000.yaml。
 entities:
   - id: ent.deuterated_sin_photonic_platform_c18
     name: "氘化氮化硅（SiN:D）PECVD 集成光子平台（Chiles 2018）"

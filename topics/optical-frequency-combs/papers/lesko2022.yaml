@@ -1,31 +1,21 @@
-# Lesko 2022 — 固态高次谐波的 CEP 相位敏感光梳计量（CAMS 方法）
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical
-
+# Lesko 2022 — High-sensitivity frequency comb carrier-envelope-phase metrology in solid sta... [technical]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "7978HTD3"
+  zotero_key: 7978HTD3
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical
   reliability: high
   title: "High-sensitivity frequency comb carrier-envelope-phase metrology in solid state high harmonic generation"
   year: 2022
-  first_author: Lesko
+  first_author: "Lesko"
   journal: "Optica"
   volume: 9
-  issue: 10
-  pages: "1156-1162"
-  doi: "10.1364/OPTICA.465709"
+  pages: 1156-1162
+  doi: 10.1364/OPTICA.465709
   note: >
-    [技术论文] NIST/Colorado（Diddams 组）。用 100 MHz 简洁 Er:fiber 梳（12 nJ / 20 fs /
-    TW·cm⁻² 峰值）在 500 µm ZnO 固态晶体中单程驱动 HHG，谐波谱延伸至 200 nm；
-    提出 "CAMS" (carrier-envelope amplitude modulation spectroscopy) 技术：用 f_CEO
-    作为自然载波调制信号 + 锁相解调，实现 85 dB SNR 相位敏感谐波计量。
-    开辟 100 MHz 重频下 CEP-敏感非微扰 HHG 光谱学的新路线。
-
+    [技术论文] NIST/Colorado（Diddams 组）。用 100 MHz 简洁 Er:fiber 梳（12 nJ / 20 fs / TW·cm⁻² 峰值）在 500 µm ZnO 固态晶体中单程驱动 HHG，谐波谱延伸至 200 nm； 提出 "CAMS" (carrier-envelope amplitude modulation spectroscopy) 技术：用 f_CEO 作为自然载波调制信号 + 锁相解调，实现 85 dB SNR 相位敏感谐波计量。 开辟 100 MHz 重频下 CEP-敏感非微扰 HHG 光谱学的新路线。
 entities:
   - id: ent.cep_hhg_comb_system_l22
     name: "100 MHz Er:fiber + 固态 HHG CEP 计量系统（Lesko 2022）"

@@ -1,20 +1,21 @@
+# Loh 2019 — Ultra-narrow linewidth Brillouin laser with nanokelvin temperature self-refer... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: UP2Q8F9Y
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: Ultra-narrow linewidth Brillouin laser with nanokelvin temperature self-referencing
+  title: "Ultra-narrow linewidth Brillouin laser with nanokelvin temperature self-referencing"
   year: 2019
-  first_author: Loh
-  journal: Optica
+  first_author: "Loh"
+  journal: "Optica"
   volume: 6
-  issue: 2
   pages: 152-159
   doi: 10.1364/OPTICA.6.000152
-  note: '基于 2 m 光纤大模体积谐振器的受激布里渊散射（SBS）激光， 利用光纤的长时间常数抑制快速热波动， 纳开尔文级温度自参考实现超窄线宽。 核心贡献：SBS
-    激光作为紧凑超稳激光的替代方案。
-
-    '
+  note: >
+    基于 2 m 光纤大模体积谐振器的受激布里渊散射（SBS）激光， 利用光纤的长时间常数抑制快速热波动， 纳开尔文级温度自参考实现超窄线宽。 核心贡献：SBS 激光作为紧凑超稳激光的替代方案。
 entities:
 - id: ent.brillouin_fiber_laser_l19
   name: 光纤布里渊激光器（Loh 2019）

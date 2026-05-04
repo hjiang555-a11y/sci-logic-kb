@@ -1,34 +1,21 @@
-# Inaba 2013 — 光纤梳激光线宽转移至 578 nm 探测 171Yb 钟跃迁（日本 AIST/NMIJ）
-# 提取者：GitHub Copilot（AI草稿，2026-04-22）
-# 提取日期：2026-04-22
-# Schema版本：v4.5
-# 专题：optical-frequency-combs
-# contribution_type: evidence（光纤梳线宽转移应用演示，未刷新跨平台技术指标）
-
+# Inaba 2013 — Spectroscopy of 171Yb in an optical lattice based on laser linewidth transfer... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "Y7KZ89LA"
+  zotero_key: Y7KZ89LA
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
   title: "Spectroscopy of 171Yb in an optical lattice based on laser linewidth transfer using a narrow linewidth frequency comb"
   year: 2013
-  first_author: Inaba
+  first_author: "Inaba"
   journal: "Optics Express"
   volume: 21
-  issue: 7
-  pages: "7891-7896"
-  doi: "10.1364/OE.21.007891"
+  pages: 7891-7896
+  doi: 10.1364/OE.21.007891
   note: >
-    [技术论文] 日本 AIST/NMIJ（国家计量院）。光纤梳激光线宽转移用于 171Yb 光钟：
-    (1) Er:fiber 梳（frep ~ 250 MHz，腔内 EOM 高带宽控制）锁定至 1064 nm 超稳激光（宽伺服带宽）；
-    (2) 578 nm 从激光（slave laser）直接锁定至梳齿（578 nm）→ 线宽转移（从 1064 nm master → 578 nm slave）；
-    (3) 观测 171Yb 光晶格钟跃迁（¹S₀ → ³P₀）：20 Hz 光谱线宽（Fourier 限制，40 ms 询问时间）；
-    (4) 优势：无需 578 nm 独立超稳腔，简化系统（一个 1064 nm 腔 + 梳 即可驱动多个波长钟激光）；
-    (5) 梳相对线宽 3×10⁻¹⁶ @ 1 s（支持高准确度光钟比对）。
-    本工作是光纤梳线宽转移应用演示（观测到 20 Hz 钟跃迁线宽），未刷新跨平台光钟精度纪录，归 evidence。
-    对齐 v2 子域主线：B-FreqSyn（光学频率综合）。
-
+    [技术论文] 日本 AIST/NMIJ（国家计量院）。光纤梳激光线宽转移用于 171Yb 光钟： (1) Er:fiber 梳（frep ~ 250 MHz，腔内 EOM 高带宽控制）锁定至 1064 nm 超稳激光（宽伺服带宽）； (2) 578 nm 从激光（slave laser）直接锁定至梳齿（578 nm）→ 线宽转移（从 1064 nm master → 578 nm slave）； (3) 观测 171Yb 光晶格钟跃迁（¹S₀ → ³P₀）：20 Hz 光谱线宽（Fourier 限制，40 ms 询问时间）； (4) 优势：无需 578 nm 独立超稳腔，简化系统（一个 1064 nm 腔 + 梳 即可驱动多个波长钟激光）； (5) 梳相对线宽 3×10⁻¹⁶ @ 1 s（支持高准确度光钟比对）。 本工作是光纤梳线宽转移应用演示（观测到 20 Hz 钟跃迁线宽），未刷新跨平台光钟精度纪录，归 evidence。 对齐 v2 子域主线：B-FreqSyn（光学频率综合）。
 entities:
   - id: ent.fiber_comb_linewidth_transfer_yb_clock_i13
     name: "光纤梳线宽转移驱动 171Yb 光钟系统（Inaba 2013, AIST）"

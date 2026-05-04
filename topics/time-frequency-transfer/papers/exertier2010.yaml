@@ -1,33 +1,22 @@
 # Exertier 2010 — Status of the T2L2/Jason2 Experiment [evidence]
-# 提取者：Claude Code（AI 草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.5
-# 专题：time-frequency-transfer（卫星激光时间传递 — T2L2/Jason2 实验状态与初期数据）
-# contribution_type: evidence — T2L2 在轨一年后的状态报告；初步验证仪器灵敏度、噪声来源、
-#   误差预算和时间稳定性，为后续高精度时频比对奠定操作基础。
-
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "1-s2.0-S0273117710004278-main"
+  zotero_key: 1-s2.0-S0273117710004278-main
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Status of the T2L2/Jason2 Experiment"
   year: 2010
-  first_author: Exertier
+  first_author: "Exertier"
   authors: ["Pierre Exertier", "Etienne Samain", "Pascal Bonnefond", "Philippe Guillemot"]
   journal: "Advances in Space Research"
   volume: 46
-  issue: 12
-  pages: "1559-1565"
-  doi: "10.1016/j.asr.2010.06.028"
+  pages: 1559-1565
+  doi: 10.1016/j.asr.2010.06.028
   note: >
-    [evidence 论文] T2L2（Time Transfer by Laser Link）在轨运行一年（2008.06–2009.06）后的
-    状态与初期数据分析。验证了仪器对脉冲能量（单光子—多光子探测模式）的灵敏度、SLR和T2L2
-    数据噪声来源、初步误差预算及地面-空间时间传递的时间稳定性。利用配备 H-Maser 或
-    Cs 钟作为参考的 SLR 站，地面-空间时间传递 TDEV 约 40 ps@1 s、7 ps@30 s（Wettzell H-Maser）。
-    T2L2 仪器本身期望达到 10–12 ps@1 s、<1 ps@1000 s 的时间稳定性。
-
+    [evidence 论文] T2L2（Time Transfer by Laser Link）在轨运行一年（2008.06–2009.06）后的 状态与初期数据分析。验证了仪器对脉冲能量（单光子—多光子探测模式）的灵敏度、SLR和T2L2 数据噪声来源、初步误差预算及地面-空间时间传递的时间稳定性。利用配备 H-Maser 或 Cs 钟作为参考的 SLR 站，地面-空间时间传递 TDEV 约 40 ps@1 s、7 ps@30 s（Wettzell H-Maser）。 T2L2 仪器本身期望达到 10–12 ps@1 s、<1 ps@1000 s 的时间稳定性。
 entities:
   - id: ent.t2l2_jason2_experiment
     name: "T2L2/Jason2 时间传递实验（初始在轨阶段 2008–2009）"

@@ -1,19 +1,21 @@
+# Yan 2018 — Multi-cavity-stabilized ultrastable laser [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: XWBUNX3P
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
-  title: Multi-cavity-stabilized ultrastable laser
+  title: "Multi-cavity-stabilized ultrastable laser"
   year: 2018
-  first_author: Yan
-  journal: Chinese Optics Letters
+  first_author: "Yan"
+  journal: "Chinese Optics Letters"
   volume: 16
-  pages: '121403'
+  pages: 121403
   doi: 10.3788/COL201816.121403
-  note: '演示多腔频率平均的超稳激光方案：两台独立超稳激光的频率通过 AOM 实时合成，等效降低热噪声 √n 倍（n 为腔数）。 实验用两台 10 cm 腔实现
-    5×10⁻¹⁶ 合成激光不稳定度（√2 改善）。 核心贡献：验证 pri.optical_frequency_averaging 的实验方案。
-
-    '
+  note: >
+    演示多腔频率平均的超稳激光方案：两台独立超稳激光的频率通过 AOM 实时合成，等效降低热噪声 √n 倍（n 为腔数）。 实验用两台 10 cm 腔实现 5×10⁻¹⁶ 合成激光不稳定度（√2 改善）。 核心贡献：验证 pri.optical_frequency_averaging 的实验方案。
 entities: []
 principles: []
 methods:

@@ -1,12 +1,8 @@
-# Gaeta 2019 — 光子芯片基频率梳综述：SCG + Kerr微梳平台分类、形成机制与集成路线图 [综述/框架型]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: framework
-
+# Gaeta 2019 — Photonic-chip-based frequency combs [framework]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "BRKZG9H2"
+  zotero_key: BRKZG9H2
   topic: optical-frequency-combs
   source_type: review
   contribution_type: framework
@@ -16,28 +12,10 @@ meta:
   first_author: "Gaeta"
   journal: "Nature Photonics"
   volume: 13
-  issue: 3
-  pages: "158-169"
-  doi: "10.1038/s41566-019-0358-x"
+  pages: 158-169
+  doi: 10.1038/s41566-019-0358-x
   note: >
-    [综述/框架型] Gaeta (Columbia) + Lipson (Columbia) + Kippenberg (EPFL) 2019
-    Nature Photonics 综述。统一梳理光子芯片平台上的频率梳生成两大路径：
-    (1) 波导中的超连续谱生成（SCG，飞秒泵浦）；(2) 微谐振腔中的 Kerr 梳生成（KCG，CW 泵浦）。
-    核心框架贡献：(a) 建立芯片非线性光子学平台分类表（Si3N4、Si、a-Si:H、Hydex、AlN、GaP、
-    Diamond、AlGaAs、SiGe、Ge、LiNbO3、硫系玻璃等 15+ 平台的折射率/非线性指数/透明窗口/χ(2)
-    对比）；(b) 形式化 KCG 形成态分类体系（Turing rolls/稳定低噪声、混沌 MI、单/多孤子 DKS、
-    孤子晶体、呼吸孤子、暗脉冲/platicon）；(c) 阐明色散工程-平台-功耗-带宽四维权衡空间；
-    (d) 指出 Raman 散射对最小 FSR 的基本限制（gR/gK 条件）；(e) 综述芯片梳在通信、测距、光谱、
-    时钟、微波综合、LiDAR、天文光谱定标等应用的成熟度。
-    跨文件节点引用（只引用，不重复定义）：
-    ent.microresonator_frequency_comb / ent.si3n4_integrated_comb 定义于 kippenberg2011.yaml；
-    pri.parametric_four_wave_mixing_comb / pri.microresonator_anomalous_dispersion /
-    pri.dissipative_kerr_soliton / pri.lugiato_lefever_equation /
-    meth.cw_pumped_microcomb_generation / meth.laser_tuning_soliton_access /
-    meth.microcomb_self_referencing 定义于 kippenberg2018.yaml；
-    pri.supercontinuum_octave_spanning 定义于 diddams2000.yaml；
-    pri.self_referencing_f2f 定义于 udem2002.yaml。
-
+    [综述/框架型] Gaeta (Columbia) + Lipson (Columbia) + Kippenberg (EPFL) 2019 Nature Photonics 综述。统一梳理光子芯片平台上的频率梳生成两大路径： (1) 波导中的超连续谱生成（SCG，飞秒泵浦）；(2) 微谐振腔中的 Kerr 梳生成（KCG，CW 泵浦）。 核心框架贡献：(a) 建立芯片非线性光子学平台分类表（Si3N4、Si、a-Si:H、Hydex、AlN、GaP、 Diamond、AlGaAs、SiGe、Ge、LiNbO3、硫系玻璃等 15+ 平台的折射率/非线性指数/透明窗口/χ(2) 对比）；(b) 形式化 KCG 形成态分类体系（Turing rolls/稳定低噪声、混沌 MI、单/多孤子 DKS、 孤子晶体、呼吸孤子、暗脉冲/platicon）；(c) 阐明色散工程-平台-功耗-带宽四维权衡空间； (d) 指出 Raman 散射对最小 FSR 的基本限制（gR/gK 条件）；(e) 综述芯片梳在通信、测距、光谱、 时钟、微波综合、LiDAR、天文光谱定标等应用的成熟度。 跨文件节点引用（只引用，不重复定义）： ent.microresonator_frequency_comb / ent.si3n4_integrated_comb 定义于 kippenberg2011.yaml； pri.parametric_four_wave_mixing_comb / pri.microresonator_anomalous_dispersion / pri.dissipative_kerr_soliton / pri.lugiato_lefever_equation / meth.cw_pumped_microcomb_generation / meth.laser_tuning_soliton_access / meth.microcomb_self_referencing 定义于 kippenberg2018.yaml； pri.supercontinuum_octave_spanning 定义于 diddams2000.yaml； pri.self_referencing_f2f 定义于 udem2002.yaml。
 entities:
   - id: ent.chip_scg_waveguide_g19
     name: "芯片基超连续谱波导（SCG 平台）"

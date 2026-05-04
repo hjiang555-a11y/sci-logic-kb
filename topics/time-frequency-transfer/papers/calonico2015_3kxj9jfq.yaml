@@ -1,44 +1,20 @@
-# Calonico 2015 — High-accuracy coherent optical frequency transfer over doubled 642-km fiber link [evidence]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：time-frequency-transfer
-# contribution_type: evidence — INRIM 642 km → 1284 km 双程单纤相干光频传递，σ_y(1000 s)=3×10⁻¹⁹，
-#   accuracy 5×10⁻¹⁹；提出"单纤双往返"链路表征新方法。本文件同时引入本专题
-#   `ent.coherent_optical_fiber_link`（Level 1 干线光纤相干链路总节点）。
-
+# Calonico 2014 — High-accuracy coherent optical frequency transfer over a doubled 642-km fiber... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "3kxj9jfq"
+  zotero_key: 3kxj9jfq
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "High-accuracy coherent optical frequency transfer over a doubled 642-km fiber link"
   year: 2014
-  first_author: Calonico
-  authors:
-  - "D. Calonico"
-  - "E. K. Bertacco"
-  - "C. E. Calosso"
-  - "C. Clivati"
-  - "G. A. Costanzo"
-  - "M. Frittelli"
-  - "A. Godone"
-  - "A. Mura"
-  - "N. Poli"
-  - "D. V. Sutyrin"
-  - "G. M. Tino"
-  - "M. E. Zucco"
-  - "F. Levi"
+  first_author: "Calonico"
+  authors: ["D. Calonico", "E. K. Bertacco", "C. E. Calosso", "C. Clivati", "G. A. Costanzo", "M. Frittelli", "A. Godone", "A. Mura", "N. Poli", "D. V. Sutyrin", "G. M. Tino", "M. E. Zucco", "F. Levi"]
   journal: "Applied Physics B-Lasers and Optics"
-  doi: "10.1007/s00340-014-5971-2"
+  doi: 10.1007/s00340-014-5971-2
   note: >
-    [期刊论文] INRIM + LENS（意大利国家计量院 + 佛罗伦萨大学）。Torino–Firenze–Torino
-    642 km × 2 = 1284 km 相干光纤链路（活动 EDFA + 光学相位锁定补偿），σ_y(1000 s)=3×10⁻¹⁹
-    @5 mHz 测量带宽，accuracy 5×10⁻¹⁹。提出"单纤双往返"（double round trip on single fiber）
-    表征方法，作为传统"平行双纤"配置的替代方案，利于长距离干线节省成本。本文件同时建立
-    time-frequency-transfer 专题的 Level 1 光纤相干链路总节点 `ent.coherent_optical_fiber_link`。
-
+    [期刊论文] INRIM + LENS（意大利国家计量院 + 佛罗伦萨大学）。Torino–Firenze–Torino 642 km × 2 = 1284 km 相干光纤链路（活动 EDFA + 光学相位锁定补偿），σ_y(1000 s)=3×10⁻¹⁹ @5 mHz 测量带宽，accuracy 5×10⁻¹⁹。提出"单纤双往返"（double round trip on single fiber） 表征方法，作为传统"平行双纤"配置的替代方案，利于长距离干线节省成本。本文件同时建立 time-frequency-transfer 专题的 Level 1 光纤相干链路总节点 `ent.coherent_optical_fiber_link`。
 entities:
   - id: ent.coherent_optical_fiber_link
     name: "相干光纤时频传递链路（Level 1 总节点）"

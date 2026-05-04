@@ -1,33 +1,22 @@
 # Briles 2010 — Simple piezoelectric-actuated mirror with 180 kHz servo bandwidth [evidence]
-# 提取者：Claude Code（AI 草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.5
-# 专题：ultrastable-laser（PZT 快反镜 — 180 kHz 伺服带宽 — PDH 稳频使能技术）
-# contribution_type: evidence — 展示当时最大 PZT 伺服带宽 180 kHz，用于光腔长度稳定。
-#   使能超稳激光 PDH 锁频的高带宽反馈路径。
-
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "oe-18-10-9739"
+  zotero_key: oe-18-10-9739
   topic: ultrastable-laser
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Simple piezoelectric-actuated mirror with 180 kHz servo bandwidth"
   year: 2010
-  first_author: Briles
+  first_author: "Briles"
   authors: ["Travis C. Briles", "Dylan C. Yost", "Arman Cingöz", "Jun Ye", "Thomas R. Schibli"]
   journal: "Optics Express"
   volume: 18
-  issue: 10
-  pages: "9739"
-  doi: "10.1364/OE.18.009739"
+  pages: 9739
+  doi: 10.1364/OE.18.009739
   note: >
-    [evidence 论文] JILA。展示一种高带宽压电驱动镜面用于光腔长度稳定。
-    PZT 驱动器幅频响应平坦、相位裕度 >135° 达 200 kHz，闭环伺服
-    单位增益频率 180 kHz——当时 PZT 驱动器已知最大的伺服带宽。
-    广泛适用于激光稳频（PDH 锁频快反馈）、光学干涉仪和光通信。
-    无直接 σ_y 报告；贡献在于 PDH 伺服链路的使能技术。
-
+    [evidence 论文] JILA。展示一种高带宽压电驱动镜面用于光腔长度稳定。 PZT 驱动器幅频响应平坦、相位裕度 >135° 达 200 kHz，闭环伺服 单位增益频率 180 kHz——当时 PZT 驱动器已知最大的伺服带宽。 广泛适用于激光稳频（PDH 锁频快反馈）、光学干涉仪和光通信。 无直接 σ_y 报告；贡献在于 PDH 伺服链路的使能技术。
 entities:
   - id: ent.briles2010_high_bw_pzt_mirror
     name: "Briles 2010 180 kHz 伺服带宽 PZT 驱动镜（JILA）"

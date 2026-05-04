@@ -1,20 +1,21 @@
+# Thorpe 2011 — Frequency stabilization to 6×10⁻¹⁶ via spectral-hole burning [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: Q2MRB267
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
-  title: Frequency stabilization to 6×10⁻¹⁶ via spectral-hole burning
+  title: "Frequency stabilization to 6×10⁻¹⁶ via spectral-hole burning"
   year: 2011
-  first_author: Thorpe
-  journal: Nature Photonics
+  first_author: "Thorpe"
+  journal: "Nature Photonics"
   volume: 5
   pages: 688-693
   doi: 10.1038/nphoton.2011.215
-  note: '技术分支：光谱烧孔稳频（Spectral Hole Burning Frequency Reference） 首次演示 FP 腔 + SHB 两级稳频方案，
-    激光先预稳定至 FP 腔（σ_y < 1×10⁻¹³）， 再锁定至 Eu³⁺:Y₂SiO₅ 光谱烧孔模式达 σ_y ≤ 6×10⁻¹⁶ @ 2–8 s。 测量光谱孔对温度（16
-    kHz/K²）、压力（-11.4 Hz/Pa）和加速度（7×10⁻¹²/g）的灵敏度。 核心贡献：SHB 稳频的里程碑——首次达到 10⁻¹⁶ 级。
-
-    '
+  note: >
+    技术分支：光谱烧孔稳频（Spectral Hole Burning Frequency Reference） 首次演示 FP 腔 + SHB 两级稳频方案， 激光先预稳定至 FP 腔（σ_y < 1×10⁻¹³）， 再锁定至 Eu³⁺:Y₂SiO₅ 光谱烧孔模式达 σ_y ≤ 6×10⁻¹⁶ @ 2–8 s。 测量光谱孔对温度（16 kHz/K²）、压力（-11.4 Hz/Pa）和加速度（7×10⁻¹²/g）的灵敏度。 核心贡献：SHB 稳频的里程碑——首次达到 10⁻¹⁶ 级。
 entities: []
 principles: []
 methods:

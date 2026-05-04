@@ -1,21 +1,21 @@
+# Webster 2008 — Thermal-noise-limited optical cavity [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: VU2V2PTX
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
-  title: Thermal-noise-limited optical cavity
+  title: "Thermal-noise-limited optical cavity"
   year: 2008
-  first_author: Webster
-  journal: Physical Review A
+  first_author: "Webster"
+  journal: "Physical Review A"
   volume: 77
   pages: 033847
   doi: 10.1103/PhysRevA.77.033847
-  note: '实验首次直接展示一对光学腔在排除振动和温度扰动后达到热噪声极限。 稳定度 ≈2×10⁻¹⁵（0.5–100 s），归因于镜基底和镀层的布朗运动，
-    与 Numata 2004 理论预测定量一致。是该理论的首次全面实验验证。 NPL（Gill组）+ SYRTE（Millo），1064 nm 双 ULE 腔拍频。
-    ⚠ 年份注意：QUEUE.md 标注 "Webster 2003?"，PDF 文件名为 webster2004.pdf， 实际 Received 31 Oct
-    2007, Published 27 Mar 2008 (Phys. Rev. A 77, 033847)。
-
-    '
+  note: >
+    实验首次直接展示一对光学腔在排除振动和温度扰动后达到热噪声极限。 稳定度 ≈2×10⁻¹⁵（0.5–100 s），归因于镜基底和镀层的布朗运动， 与 Numata 2004 理论预测定量一致。是该理论的首次全面实验验证。 NPL（Gill组）+ SYRTE（Millo），1064 nm 双 ULE 腔拍频。 ⚠ 年份注意：QUEUE.md 标注 "Webster 2003?"，PDF 文件名为 webster2004.pdf， 实际 Received 31 Oct 2007, Published 27 Mar 2008 (Phys. Rev. A 77, 033847)。
 methods:
 - id: meth.vibration_insensitive_cavity_lock_w08
   name: 振动不敏感 ULE 腔 PDH 锁频方法（Webster 2008）

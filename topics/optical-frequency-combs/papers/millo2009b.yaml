@@ -1,34 +1,21 @@
-# Millo 2009b — 光纤梳光生微波驱动Cs喷泉钟（法国 LNE-SYRTE）
-# 提取者：GitHub Copilot（AI草稿，2026-04-22）
-# 提取日期：2026-04-22
-# Schema版本：v4.5
-# 专题：optical-frequency-combs
-# contribution_type: evidence（光纤梳光生微波应用演示，达到 Ti:sapph 同级稳定度，未刷新跨平台纪录）
-# 注：本论文作者 Millo 另有一篇 2009 PRA 论文在 ultrastable-laser 专题下，故本文件命名为 millo2009b.yaml
-
+# Millo 2009 — Ultralow noise microwave generation with fiber-based optical frequency comb a... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "WHNQC4FV"
+  zotero_key: WHNQC4FV
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
   title: "Ultralow noise microwave generation with fiber-based optical frequency comb and application to atomic fountain clock"
   year: 2009
-  first_author: Millo
+  first_author: "Millo"
   journal: "Applied Physics Letters"
   volume: 94
-  issue: "未明示"
-  pages: "141105"
-  doi: "10.1063/1.3112574"
+  pages: 141105
+  doi: 10.1063/1.3112574
   note: >
-    [技术论文] LNE-SYRTE（法国）+ U. Western Australia. 光纤梳光生微波驱动 Cs 喷泉钟：
-    (1) Er:fiber 梳（frep ~ 250 MHz）锁定至超稳光腔（1542 nm CW 参考激光），frep 倍频程（11.932 GHz）作为喷泉钟询问振荡器；
-    (2) 与钛宝石梳（TSOFC）+ 低温蓝宝石振荡器（CSO）三路比对，光纤梳光生微波稳定度 ~3×10⁻¹⁵ @ 1-10 s（与 Ti:sapph 同级）；
-    (3) 喷泉钟 Ramsey 光谱驱动由光纤梳微波替代 CSO，钟稳定度 3.5×10⁻¹⁴ τ⁻¹/²；
-    (4) 首次将光纤梳光生微波应用于喷泉钟，验证可靠性（CSO 替代方案）。
-    本工作是光纤梳光生微波应用演示（达到 Ti:sapph 同级稳定度，但非首次且未刷新纪录），归 evidence。
-    对齐 v2 子域主线：B-FreqSyn（光学分频到微波）。
-
+    [技术论文] LNE-SYRTE（法国）+ U. Western Australia. 光纤梳光生微波驱动 Cs 喷泉钟： (1) Er:fiber 梳（frep ~ 250 MHz）锁定至超稳光腔（1542 nm CW 参考激光），frep 倍频程（11.932 GHz）作为喷泉钟询问振荡器； (2) 与钛宝石梳（TSOFC）+ 低温蓝宝石振荡器（CSO）三路比对，光纤梳光生微波稳定度 ~3×10⁻¹⁵ @ 1-10 s（与 Ti:sapph 同级）； (3) 喷泉钟 Ramsey 光谱驱动由光纤梳微波替代 CSO，钟稳定度 3.5×10⁻¹⁴ τ⁻¹/²； (4) 首次将光纤梳光生微波应用于喷泉钟，验证可靠性（CSO 替代方案）。 本工作是光纤梳光生微波应用演示（达到 Ti:sapph 同级稳定度，但非首次且未刷新纪录），归 evidence。 对齐 v2 子域主线：B-FreqSyn（光学分频到微波）。
 entities:
   - id: ent.fiber_comb_microwave_cs_fountain_m09b
     name: "光纤梳光生微波驱动 Cs 喷泉钟系统（Millo 2009b）"

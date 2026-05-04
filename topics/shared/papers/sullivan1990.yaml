@@ -1,40 +1,25 @@
-# Sullivan / Allan / Howe / Walls 1990 — Characterization of Clocks and Oscillators (NIST TN 1337) [framework]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：shared（时频计量数学基础 · B9 Allan–Howe 奠基白名单）
-# contribution_type: framework — 时频计量方差体系的"手册级"集大成。定义 Modified Allan 方差
-#   （MVAR / MDEV）、时偏差（TDEV / σ_x）、Hadamard 偏差（HDEV）；给出 PM 噪声分辨、
-#   线性漂移容忍、带宽独立性等扩展方差的工程使用规范。
-
+# Sullivan 1990 — Characterization of Clocks and Oscillators [framework]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "SULLIVAN1990-NIST-TN1337"
+  zotero_key: SULLIVAN1990-NIST-TN1337
   topic: shared
   source_type: technical_report
   contribution_type: framework
   reliability: high
   title: "Characterization of Clocks and Oscillators"
   year: 1990
-  first_author: Sullivan
+  first_author: "Sullivan"
   authors: ["Donald B. Sullivan", "David W. Allan", "David A. Howe", "Fred L. Walls"]
-  issuing_body: "National Institute of Standards and Technology (NIST)"
-  document_ref: "NIST Technical Note 1337"
-  doi: null
   note: >
-    [奠基技术报告 · < 1999 年白名单 §B Howe 噪声测量体系] NIST TN 1337 是时频计量方差
-    体系的"手册级"文献，由 Sullivan、Allan、Howe、Walls 四位奠基人联合编著。文档以
-    章节形式系统整理 1966–1990 期间方差体系的三项关键扩展：
-    (1) Modified Allan Deviation（MDEV / MVAR / mod σ_y）——引入"相位平均窗口"修正，
-        使积分核从 sin⁴ 升级为 sin⁶，PM 噪声带宽依赖被抑制，white PM（α=+2）与
-        flicker PM（α=+1）能被分辨（斜率 μ 分别为 −3/2 与 −1）；
+    [奠基技术报告 · < 1999 年白名单 §B Howe 噪声测量体系] NIST TN 1337 是时频计量方差 体系的"手册级"文献，由 Sullivan、Allan、Howe、Walls 四位奠基人联合编著。文档以 章节形式系统整理 1966–1990 期间方差体系的三项关键扩展： (1) Modified Allan Deviation（MDEV / MVAR / mod σ_y）——引入"相位平均窗口"修正，
+    使积分核从 sin⁴ 升级为 sin⁶，PM 噪声带宽依赖被抑制，white PM（α=+2）与
+    flicker PM（α=+1）能被分辨（斜率 μ 分别为 −3/2 与 −1）；
     (2) 时偏差（TDEV / σ_x(τ) = τ · mod σ_y(τ) / sqrt(3)）——专用于时间同步/
-        网络时钟场景，单位 s；
+    网络时钟场景，单位 s；
     (3) Hadamard Deviation（HDEV）——三点差分方差，对线性频率漂移鲁棒（drift 被
-        二阶差分消去），用于氢脉泽、老化快速器件的长 τ 分析。
-    本文件同时系统阐述测量带宽 f_h 对 ADEV / MDEV 结果的影响、dead-time 修正
-    （Yoshimura 系数表）、置信区间估计（等效自由度 χ² 分布）等工程规范。本文件为
-    时频工程师在实验室日常使用中的"座右铭"文献。
-
+    二阶差分消去），用于氢脉泽、老化快速器件的长 τ 分析。
+    本文件同时系统阐述测量带宽 f_h 对 ADEV / MDEV 结果的影响、dead-time 修正 （Yoshimura 系数表）、置信区间估计（等效自由度 χ² 分布）等工程规范。本文件为 时频工程师在实验室日常使用中的"座右铭"文献。
 entities: []
 
 principles:

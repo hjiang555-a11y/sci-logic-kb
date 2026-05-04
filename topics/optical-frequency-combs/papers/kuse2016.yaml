@@ -1,34 +1,21 @@
-# Kuse 2016 — 全保偏 Er:fiber NALM 锁模梳，40 as 时延抖动
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-21
-# Schema版本：v4.3
-# 专题：optical-frequency-combs
-# contribution_type: breakthrough（Er:fiber 梳当时最低 40 as 积分时延抖动，打破 NPR 路径限制）
-
+# Kuse 2016 — All polarization-maintaining Er fiber-based optical frequency combs with nonl... [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "QXC7FSMC"
+  zotero_key: QXC7FSMC
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
   title: "All polarization-maintaining Er fiber-based optical frequency combs with nonlinear amplifying loop mirror"
   year: 2016
-  first_author: Kuse
+  first_author: "Kuse"
   journal: "Optics Express"
   volume: 24
-  issue: 3
-  pages: "3095-3102"
-  doi: "10.1364/OE.24.003095"
+  pages: 3095-3102
+  doi: 10.1364/OE.24.003095
   note: >
-    [技术论文 / A1-Noise 子域纪录] IMRA America（Fermann）+ Colorado（Schibli）。
-    全保偏 Er:fiber 锁模激光器基于**非线性放大环镜（NALM）**锁模，取代 NPR：
-    (1) f_CEO 积分相位噪声 <0.2 rad；
-    (2) 10 kHz–10 MHz 积分时延抖动 40 as —— 当时 Er:fiber 梳纪录；
-    (3) NALM 锁模兼容全 PM 光路，抗振动/温度、自启易，优于 NPR 的全 PM 难题。
-    相比 Kuse 2015（OE, 石墨烯 EOM，zotero_key 3RT4U4TV）的同作者工作，本篇重点
-    从"f_CEO 相噪突破"转向"**时延抖动**刷新纪录"，是不同的主要贡献——因此作为独立节点。
-    对齐 v2 子域主线：A1-Noise（时延抖动 40 as 纪录）、A1-Robust（全 PM + 自启 NALM）。
-
+    [技术论文 / A1-Noise 子域纪录] IMRA America（Fermann）+ Colorado（Schibli）。 全保偏 Er:fiber 锁模激光器基于**非线性放大环镜（NALM）**锁模，取代 NPR： (1) f_CEO 积分相位噪声 <0.2 rad； (2) 10 kHz–10 MHz 积分时延抖动 40 as —— 当时 Er:fiber 梳纪录； (3) NALM 锁模兼容全 PM 光路，抗振动/温度、自启易，优于 NPR 的全 PM 难题。 相比 Kuse 2015（OE, 石墨烯 EOM，zotero_key 3RT4U4TV）的同作者工作，本篇重点 从"f_CEO 相噪突破"转向"**时延抖动**刷新纪录"，是不同的主要贡献——因此作为独立节点。 对齐 v2 子域主线：A1-Noise（时延抖动 40 as 纪录）、A1-Robust（全 PM + 自启 NALM）。
 entities:
   - id: ent.all_pm_er_nalm_comb_k16
     name: "全保偏 Er:fiber NALM 梳（Kuse 2016）"

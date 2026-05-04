@@ -1,20 +1,21 @@
+# Shi 2021 — Thinly coated hollow core fiber for improved thermal phase-stability performance [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: QLXRP462
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: Thinly coated hollow core fiber for improved thermal phase-stability performance
+  title: "Thinly coated hollow core fiber for improved thermal phase-stability performance"
   year: 2021
-  first_author: Shi
-  journal: Optics Letters
+  first_author: "Shi"
+  journal: "Optics Letters"
   volume: 46
-  issue: 20
   pages: 5177-5180
   doi: 10.1364/OL.46.005177
-  note: '实验证明空心光纤（HCF）涂层对热相位灵敏度的显著影响： 涂层贡献可使 HCF 热灵敏度恶化数倍。 薄外壁 HCF（~20 μm）受涂层影响尤为显著。
-    核心贡献：解释了 HCF 热灵敏度文献差异的物理机制。
-
-    '
+  note: >
+    实验证明空心光纤（HCF）涂层对热相位灵敏度的显著影响： 涂层贡献可使 HCF 热灵敏度恶化数倍。 薄外壁 HCF（~20 μm）受涂层影响尤为显著。 核心贡献：解释了 HCF 热灵敏度文献差异的物理机制。
 entities: []
 principles:
 - id: pri.hcf_coating_thermal_sensitivity

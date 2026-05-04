@@ -1,19 +1,21 @@
+# Steinlechner 2018 — Development of mirror coatings for gravitational-wave detectors [framework]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: L6KKLLSR
+  topic: ultrastable-laser
   source_type: review
   contribution_type: framework
   reliability: high
-  title: Development of mirror coatings for gravitational-wave detectors
+  title: "Development of mirror coatings for gravitational-wave detectors"
   year: 2018
-  first_author: Steinlechner
-  journal: Philosophical Transactions of the Royal Society A
+  first_author: "Steinlechner"
+  journal: "Philosophical Transactions of the Royal Society A"
   volume: 376
-  pages: '20170282'
+  pages: 20170282
   doi: 10.1098/rsta.2017.0282
-  note: '引力波探测器镜面镀层发展的系统综述。总结 SiO₂/Ti:Ta₂O₅、a-Si、 AlGaAs 晶体镀层和 SiNₓ 等材料在不同温度下的机械损耗角、光学吸收和
-    散射性能。为超稳激光参考腔镀层选材提供直接依据。 核心贡献：提供了多种镀层材料在室温和低温下的损耗角系统比较表。
-
-    '
+  note: >
+    引力波探测器镜面镀层发展的系统综述。总结 SiO₂/Ti:Ta₂O₅、a-Si、 AlGaAs 晶体镀层和 SiNₓ 等材料在不同温度下的机械损耗角、光学吸收和 散射性能。为超稳激光参考腔镀层选材提供直接依据。 核心贡献：提供了多种镀层材料在室温和低温下的损耗角系统比较表。
 entities: []
 principles:
 - id: pri.coating_thermal_noise_material_comparison

@@ -1,21 +1,21 @@
+# Webster 2011 — Force-insensitive optical cavity [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: A96XGR82
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: Force-insensitive optical cavity
+  title: "Force-insensitive optical cavity"
   year: 2011
-  first_author: Webster
-  journal: Optics Letters
+  first_author: "Webster"
+  journal: "Optics Letters"
   volume: 36
-  issue: 18
   pages: 3572-3574
   doi: 10.1364/OL.36.003572
-  note: 'NPL Webster & Gill 2011；在 Webster 2007（振动不敏感）基础上进一步实现"力不敏感"。 区别：2007 是水平腔+切口+四点橡胶球，依赖重力方向固定、腔体自重压支撑点；
-    2011 是立方体腔+四点四面体支撑+顶点截断，腔体刚性约束在全方向， 对所有惯性力（含支撑压力、重力）均不敏感——适用于失重/非实验室环境（卫星、机载）。
-    最大加速度灵敏度 2.5×10⁻¹¹/g（全向被动），为当时光学腔最低被动灵敏度。 目标稳定度 10⁻¹⁵ 量级，用于非实验室环境光频标。
-
-    '
+  note: >
+    NPL Webster & Gill 2011；在 Webster 2007（振动不敏感）基础上进一步实现"力不敏感"。 区别：2007 是水平腔+切口+四点橡胶球，依赖重力方向固定、腔体自重压支撑点； 2011 是立方体腔+四点四面体支撑+顶点截断，腔体刚性约束在全方向， 对所有惯性力（含支撑压力、重力）均不敏感——适用于失重/非实验室环境（卫星、机载）。 最大加速度灵敏度 2.5×10⁻¹¹/g（全向被动），为当时光学腔最低被动灵敏度。 目标稳定度 10⁻¹⁵ 量级，用于非实验室环境光频标。
 entities:
 - id: ent.cubic_force_insensitive_cavity_w11
   name: 立方体力不敏感光学腔（Webster 2011）

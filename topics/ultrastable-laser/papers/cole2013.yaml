@@ -1,22 +1,21 @@
+# Cole 2013 — Tenfold reduction of Brownian noise in high-reflectivity optical coatings [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: CWIHQRJD
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: breakthrough
-  primary_metric_exempt_reason: new_principle
   reliability: high
-  title: Tenfold reduction of Brownian noise in high-reflectivity optical coatings
+  title: "Tenfold reduction of Brownian noise in high-reflectivity optical coatings"
   year: 2013
-  first_author: Cole
-  journal: Nature Photonics
+  first_author: "Cole"
+  journal: "Nature Photonics"
   volume: 7
   pages: 644-650
   doi: 10.1038/nphoton.2013.174
-  note: '首次在光学参考腔中演示 AlGaAs/GaAs 单晶外延镀层（晶体镀层）， 室温下测量的镀层损耗角 φ ≤ 2.5×10⁻⁵（上限值），较最优 IBS
-    介质膜（φ ~ 2×10⁻⁴）低约 10×。 直接解决了 Kessler 2012 Si 腔确认的最终瓶颈：IBS 镀层布朗热噪声。 核心技术：MBE 外延
-    AlGaAs/GaAs DBR + 基底转移工艺（键合到曲面熔融石英）， 腔精细度 F = 1.5(1)×10⁵，Allan 偏差 σ_y = 1.05(1)×10⁻¹⁵
-    at 1 s（35mm Zerodur 腔）。 JILA（Ye 组）+ 维也纳大学（Aspelmeyer 组）合作。
-
-    '
+  note: >
+    首次在光学参考腔中演示 AlGaAs/GaAs 单晶外延镀层（晶体镀层）， 室温下测量的镀层损耗角 φ ≤ 2.5×10⁻⁵（上限值），较最优 IBS 介质膜（φ ~ 2×10⁻⁴）低约 10×。 直接解决了 Kessler 2012 Si 腔确认的最终瓶颈：IBS 镀层布朗热噪声。 核心技术：MBE 外延 AlGaAs/GaAs DBR + 基底转移工艺（键合到曲面熔融石英）， 腔精细度 F = 1.5(1)×10⁵，Allan 偏差 σ_y = 1.05(1)×10⁻¹⁵ at 1 s（35mm Zerodur 腔）。 JILA（Ye 组）+ 维也纳大学（Aspelmeyer 组）合作。
 entities:
 - id: ent.algaas_crystalline_mirror_c13
   name: AlGaAs/GaAs 晶体镀层腔镜

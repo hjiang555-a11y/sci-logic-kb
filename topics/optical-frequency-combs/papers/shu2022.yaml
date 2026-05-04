@@ -1,20 +1,8 @@
-# Shu 2022 — AlGaAsOI 暗孤子微梳驱动 CMOS 硅光引擎，实现 2 Tbit/s 并行相干光互连与可重构微波光子滤波器 [技术演示/里程碑]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical — 微梳+硅光系统集成演示
-#   核心贡献：
-#     (1) 将 DFB 激光直接泵浦的 AlGaAsOI 高 Q 微环（Q ≈ 1–2 M，阈值 <100 μW，10 mW 泵浦出 180 GHz 暗孤子梳）
-#         与 CMOS 代工厂流片的 SOI 硅光引擎（MZM、微加热器、延迟线、Ge 光电二极管、微环滤波器）组合成单芯片尺度光电系统；
-#     (2) 首次以微梳取代 WDM DFB 阵列，演示 20-通道 PAM4 @ 50 Gbaud → 2 Tbit/s 聚合速率（1.65 Tbit/s 净速率）并行相干数据链路；
-#     (3) 构建可重构微波光子滤波器（MPF）：通带 0.9–1.1 GHz 可调、FSR 1.8/3.6/7.2 GHz 可重构、约 53 μs 重构速度，同时兼容非色散与色散 tap delay 方案。
-#   Framework 依赖：ent.microresonator_frequency_comb / ent.si3n4_integrated_comb / pri.dissipative_kerr_soliton /
-#     pri.lugiato_lefever_equation / meth.cw_pumped_microcomb_generation / meth.laser_tuning_soliton_access
-#     均定义于 kippenberg2011.yaml / kippenberg2018.yaml / huang2024.yaml，本文件通过 note 跨文件引用，不重复定义。
-
+# Shu 2022 — Microcomb-driven silicon photonic systems [technical]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "AT5ZTB9M"
+  zotero_key: AT5ZTB9M
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical
@@ -24,23 +12,10 @@ meta:
   first_author: "Shu"
   journal: "Nature"
   volume: 605
-  issue: 7910
-  pages: "457-463"
-  doi: "10.1038/s41586-022-04579-3"
+  pages: 457-463
+  doi: 10.1038/s41586-022-04579-3
   note: >
-    [里程碑技术论文] 北京大学 + UCSB (Bowers 组) 联合工作。用 AlGaAsOI 异质集成高 Q 微腔
-    （n₂ ≈ 2.6×10⁻¹⁷ m²/W，热光系数 2.3×10⁻⁴ K⁻¹）在正常色散 + 避免模交叉条件下产生暗脉冲 Kerr 梳，
-    低阈值（<100 μW 振荡阈值，mW 级相干态）、turnkey 启动、7 小时无反馈自由运行稳定。
-    将 20 条梳齿并行驱动 CMOS 硅光 T/R 芯片实现 50 Gbaud PAM4、2 Tbit/s 聚合数据率；
-    同一微梳同时驱动可重构 MPF（53 μs 重构速度）。奠定"微梳替代 DFB 阵列作为片上多波长光源"路线。
-    跨文件：AlGaAsOI Kerr 梳产生所依赖的 ent.microresonator_frequency_comb、
-    pri.dissipative_kerr_soliton、pri.lugiato_lefever_equation、meth.cw_pumped_microcomb_generation
-    均定义于 kippenberg2011.yaml / kippenberg2018.yaml；本文件仅创建 Level-2 本系统实例与本论文新指标。
-
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
+    [里程碑技术论文] 北京大学 + UCSB (Bowers 组) 联合工作。用 AlGaAsOI 异质集成高 Q 微腔 （n₂ ≈ 2.6×10⁻¹⁷ m²/W，热光系数 2.3×10⁻⁴ K⁻¹）在正常色散 + 避免模交叉条件下产生暗脉冲 Kerr 梳， 低阈值（<100 μW 振荡阈值，mW 级相干态）、turnkey 启动、7 小时无反馈自由运行稳定。 将 20 条梳齿并行驱动 CMOS 硅光 T/R 芯片实现 50 Gbaud PAM4、2 Tbit/s 聚合数据率； 同一微梳同时驱动可重构 MPF（53 μs 重构速度）。奠定"微梳替代 DFB 阵列作为片上多波长光源"路线。 跨文件：AlGaAsOI Kerr 梳产生所依赖的 ent.microresonator_frequency_comb、 pri.dissipative_kerr_soliton、pri.lugiato_lefever_equation、meth.cw_pumped_microcomb_generation 均定义于 kippenberg2011.yaml / kippenberg2018.yaml；本文件仅创建 Level-2 本系统实例与本论文新指标。
 entities:
   - id: ent.algaasoi_dark_pulse_microcomb_s22
     name: "AlGaAsOI 暗脉冲 Kerr 微梳源（Shu 2022 系统）"

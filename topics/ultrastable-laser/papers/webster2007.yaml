@@ -1,22 +1,21 @@
+# Webster 2007 — Vibration insensitive optical cavity [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: UCNS7EM7
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: breakthrough
-  primary_metric_exempt_reason: new_principle
   reliability: high
-  title: Vibration insensitive optical cavity
+  title: "Vibration insensitive optical cavity"
   year: 2007
-  first_author: Webster
-  journal: Physical Review A
+  first_author: "Webster"
+  journal: "Physical Review A"
   volume: 75
   pages: 011801(R)
   doi: 10.1103/PhysRevA.75.011801
-  note: '技术分支：FP参考腔系统（Fabry-Pérot Reference Cavity Systems） 首次实验证明全向振动不敏感 FP 腔（Rapid
-    Communication，NPL）； 竖直加速度灵敏度 <0.1 kHz/ms⁻²（较典型值 ~100 kHz/ms⁻² 改善 >1000×）； 水平灵敏度
-    3.7 kHz/ms⁻²（改善 ~27×）。 核心方法：底部方形切口 + 四点橡胶球对称支撑 + 有限元设计， 使加速度引起的两腔镜面中心位移等大反向，净腔长变化为零。
-    论文明确指出振动压制后热噪声（Numata 2004）成为下一极限， 并指出增长腔长可同时维持振动不敏感性且降低热噪声影响。
-
-    '
+  note: >
+    技术分支：FP参考腔系统（Fabry-Pérot Reference Cavity Systems） 首次实验证明全向振动不敏感 FP 腔（Rapid Communication，NPL）； 竖直加速度灵敏度 <0.1 kHz/ms⁻²（较典型值 ~100 kHz/ms⁻² 改善 >1000×）； 水平灵敏度 3.7 kHz/ms⁻²（改善 ~27×）。 核心方法：底部方形切口 + 四点橡胶球对称支撑 + 有限元设计， 使加速度引起的两腔镜面中心位移等大反向，净腔长变化为零。 论文明确指出振动压制后热噪声（Numata 2004）成为下一极限， 并指出增长腔长可同时维持振动不敏感性且降低热噪声影响。
 entities:
 - id: ent.cutout_cavity_mount_w07
   name: 切口腔体安装设计（Webster 2007）

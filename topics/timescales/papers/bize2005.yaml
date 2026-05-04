@@ -1,53 +1,22 @@
-# Bize 2005 — Cold atom clocks and applications (BNM-SYRTE fountain advances & PHARAO)
-# 提取者：Claude Code（AI草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.0
-# 专题：timescales
-# contribution_type: evidence — 报告 BNM-SYRTE 喷泉钟组的最佳性能数据和工程改进
-
+# Bize 2005 — Cold atom clocks and applications [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "LZ01024172"
+  zotero_key: LZ01024172
   topic: timescales
   source_type: review
   contribution_type: evidence
   reliability: high
   title: "Cold atom clocks and applications"
   year: 2005
-  first_author: Bize
-  authors:
-    - "S. Bize"
-    - "P. Laurent"
-    - "M. Abgrall"
-    - "H. Marion"
-    - "I. Maksimovic"
-    - "L. Cacciapuoti"
-    - "J. Grunert"
-    - "C. Vian"
-    - "F. Pereira dos Santos"
-    - "P. Rosenbusch"
-    - "P. Lemonde"
-    - "G. Santarelli"
-    - "P. Wolf"
-    - "A. Clairon"
-    - "A. Luiten"
-    - "M. Tobar"
-    - "C. Salomon"
+  first_author: "Bize"
+  authors: ["S. Bize", "P. Laurent", "M. Abgrall", "H. Marion", "I. Maksimovic", "L. Cacciapuoti", "J. Grunert", "C. Vian", "F. Pereira dos Santos", "P. Rosenbusch", "P. Lemonde", "G. Santarelli", "P. Wolf", "A. Clairon", "A. Luiten", "M. Tobar", "C. Salomon"]
   journal: "Journal of Physics B: Atomic, Molecular and Optical Physics"
   volume: 38
-  pages: "S449–S468"
-  doi: "10.1088/0953-4075/38/9/002"
+  pages: S449–S468
+  doi: 10.1088/0953-4075/38/9/002
   note: >
-    [实验进展/综述] 报告 BNM-SYRTE 冷原子喷泉钟在 2005 年前的最新进展。
-    核心贡献：(1) 利用低温蓝宝石振荡器（CSO）实现喷泉钟量子极限稳定度 1.6×10⁻¹⁴ τ⁻¹/²；
-    (2) 中断绝热通道方法控制冷碰撞频移至 0.1% 精度；
-    (3) 首次实现基准频标 2×10⁻¹⁶ @ 50000 s 的长期稳定度；
-    (4) 6年 ⁸⁷Rb/¹³³Cs 频率比比对约束基本常数变化；
-    (5) PHARAO 空间冷原子钟研制进展（ACES 任务）。
-
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
+    [实验进展/综述] 报告 BNM-SYRTE 冷原子喷泉钟在 2005 年前的最新进展。 核心贡献：(1) 利用低温蓝宝石振荡器（CSO）实现喷泉钟量子极限稳定度 1.6×10⁻¹⁴ τ⁻¹/²； (2) 中断绝热通道方法控制冷碰撞频移至 0.1% 精度； (3) 首次实现基准频标 2×10⁻¹⁶ @ 50000 s 的长期稳定度； (4) 6年 ⁸⁷Rb/¹³³Cs 频率比比对约束基本常数变化； (5) PHARAO 空间冷原子钟研制进展（ACES 任务）。
 entities:
   # ── 冷原子喷泉钟实体 ─────────────────────────────────────────────────────────
   - id: ent.bnm_syrte_cs_rb_fountain_ensemble_2005

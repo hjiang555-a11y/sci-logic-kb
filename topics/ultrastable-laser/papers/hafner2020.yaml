@@ -1,21 +1,21 @@
+# Häfner 2020 — Transportable interrogation laser system with an instability of mod σ_y = 3×1... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: X7XXKXDZ
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: Transportable interrogation laser system with an instability of mod σ_y =
-    3×10⁻¹⁶
+  title: "Transportable interrogation laser system with an instability of mod σ_y = 3×10⁻¹⁶"
   year: 2020
-  first_author: Häfner
-  journal: Optics Express
+  first_author: "Häfner"
+  journal: "Optics Express"
   volume: 28
-  issue: 11
-  pages: '16407'
+  pages: 16407
   doi: 10.1364/OE.28.016407
-  note: '可搬运锶晶格钟询问激光系统，基于 12 cm ULE 参考腔。 10 个 Invar 引脚 + 柔性钢丝/带独立约束六自由度，可承受 50g 冲击。
-    达到热噪声极限 mod σ_y ≈ 3×10⁻¹⁶ @ 0.5–10 s。 已在多次野外实验中成功运行。 核心贡献：L/D > 1 长细比腔体的可搬运刚性安装方案。
-
-    '
+  note: >
+    可搬运锶晶格钟询问激光系统，基于 12 cm ULE 参考腔。 10 个 Invar 引脚 + 柔性钢丝/带独立约束六自由度，可承受 50g 冲击。 达到热噪声极限 mod σ_y ≈ 3×10⁻¹⁶ @ 0.5–10 s。 已在多次野外实验中成功运行。 核心贡献：L/D > 1 长细比腔体的可搬运刚性安装方案。
 entities:
 - id: ent.transportable_12cm_cavity_h20
   name: 可搬运 12 cm ULE 参考腔（Häfner 2020）

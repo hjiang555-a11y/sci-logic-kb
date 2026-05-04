@@ -1,18 +1,21 @@
+# Adhikari 2014 — Gravitational radiation detection with laser interferometry [framework]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: FTXSM9QC
+  topic: ultrastable-laser
   source_type: review_paper
   contribution_type: framework
   reliability: high
-  title: Gravitational radiation detection with laser interferometry
+  title: "Gravitational radiation detection with laser interferometry"
   year: 2014
-  first_author: Adhikari
-  journal: Reviews of Modern Physics
+  first_author: "Adhikari"
+  journal: "Reviews of Modern Physics"
   volume: 86
   pages: 121-151
   doi: 10.1103/RevModPhys.86.121
-  note: '激光干涉引力波探测综述：涵盖探测器设计、噪声源、 量子噪声限制、压缩光增强、未来发展方向。 超稳激光和 FP 腔技术在引力波探测中的核心应用参考。
-
-    '
+  note: >
+    激光干涉引力波探测综述：涵盖探测器设计、噪声源、 量子噪声限制、压缩光增强、未来发展方向。 超稳激光和 FP 腔技术在引力波探测中的核心应用参考。
 entities: []
 principles:
 - id: pri.laser_interferometer_gw_detection_a14

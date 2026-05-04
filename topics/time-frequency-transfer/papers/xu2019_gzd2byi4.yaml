@@ -1,36 +1,20 @@
 # Xu 2019 — Reciprocity of propagation in optical fiber links demonstrated to 10⁻²¹ [evidence]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：time-frequency-transfer
-# contribution_type: evidence — SYRTE + LPL 用专用链路架构独立检测正向/反向传播噪声，
-#   证明光纤前向/后向传播时延的互易性到 yoctosecond/s 量级（frequency offset (4.4±2.3)×10⁻²¹，
-#   温度补偿后 (0.5±2.0)×10⁻²¹），33 天数据。
-
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "gzd2byi4"
+  zotero_key: gzd2byi4
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Reciprocity of propagation in optical fiber links demonstrated to 10⁻²¹"
   year: 2019
-  first_author: Xu
-  authors:
-  - "D. Xu"
-  - "P. Delva"
-  - "O. Lopez"
-  - "A. Amy-Klein"
-  - "P. E. Pottie"
+  first_author: "Xu"
+  authors: ["D. Xu", "P. Delva", "O. Lopez", "A. Amy-Klein", "P. E. Pottie"]
   journal: "Opt. Express"
-  doi: "10.1364/oe.27.036965"
+  doi: 10.1364/oe.27.036965
   note: >
-    [期刊论文] SYRTE + LPL. 用专用链路架构可同时独立检测光纤中正向与反向传播相位噪声，
-    证实光学相位演化主导来自 Michelson 干涉仪参考臂的温度；33 天观测 frequency offset
-    (4.4 ± 2.3)×10⁻²¹，用 Bayesian 温度模型后处理降至 (0.5 ± 2.0)×10⁻²¹。
-    这是对光纤前向/后向传播互易性（reciprocity）的最严格验证之一，
-    支撑 10⁻²⁰ 级光钟比对与相对论精密检验。
-
+    [期刊论文] SYRTE + LPL. 用专用链路架构可同时独立检测光纤中正向与反向传播相位噪声， 证实光学相位演化主导来自 Michelson 干涉仪参考臂的温度；33 天观测 frequency offset (4.4 ± 2.3)×10⁻²¹，用 Bayesian 温度模型后处理降至 (0.5 ± 2.0)×10⁻²¹。 这是对光纤前向/后向传播互易性（reciprocity）的最严格验证之一， 支撑 10⁻²⁰ 级光钟比对与相对论精密检验。
 principles:
   - id: pri.fiber_propagation_reciprocity
     name: "光纤传播互易性原理（前向=后向传播延迟）"

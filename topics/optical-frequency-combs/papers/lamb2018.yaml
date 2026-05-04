@@ -1,28 +1,21 @@
-# Lamb 2018 — 15 GHz 倍频程 Kerr 微梳 + SiN 超连续光谱，f-2f 自参考光频比对
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical — 微梳自参考 + 光频测量关键集成技术论文
-
+# Lamb 2018 — Optical-Frequency Measurements with a Kerr Microcomb and Photonic-Chip Superc... [technical]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "52N4T2DE"
+  zotero_key: 52N4T2DE
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical
   reliability: high
   title: "Optical-Frequency Measurements with a Kerr Microcomb and Photonic-Chip Supercontinuum"
   year: 2018
-  first_author: Lamb
+  first_author: "Lamb"
   journal: "Physical Review Applied"
   volume: 9
-  pages: "024030"
-  doi: "10.1103/PhysRevApplied.9.024030"
+  pages: 024030
+  doi: 10.1103/PhysRevApplied.9.024030
   note: >
-    [技术论文] NIST Boulder（Papp/Diddams 组）。15 GHz 重频倍频程单孤子 SiO₂ 微环梳，
-    SiN 集成波导产生 700–2100 nm 超连续谱（每模 >100 nW），支持 f-2f 自参考；
-    演示微梳介导的两超稳腔光频比较。首次在集成 Kerr 微梳平台同时实现 f-2f + 光频计量级比对。
-
+    [技术论文] NIST Boulder（Papp/Diddams 组）。15 GHz 重频倍频程单孤子 SiO₂ 微环梳， SiN 集成波导产生 700–2100 nm 超连续谱（每模 >100 nW），支持 f-2f 自参考； 演示微梳介导的两超稳腔光频比较。首次在集成 Kerr 微梳平台同时实现 f-2f + 光频计量级比对。
 entities:
   - id: ent.kerr_microcomb_photonic_chip_sc_l18
     name: "15 GHz Kerr 微梳 + SiN 片上超连续谱系统（Lamb 2018）"

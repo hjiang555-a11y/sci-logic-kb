@@ -1,40 +1,24 @@
-# Koke 2019 — Brillouin 放大 + 中继激光站 1400 km 光纤频率传递（PTB + LNE-SYRTE）
-# 提取者：GitHub Copilot（AI草稿，2026-04-22）
-# 提取日期：2026-04-22
-# Schema版本：v4.5
-# 专题：optical-frequency-combs
-# contribution_type: breakthrough（首次 Brillouin 放大 + 中继站组合 1400 km 光纤链路，Continental-scale）
-
+# Koke 2019 — Combining fiber Brillouin amplification with a repeater laser station for fib... [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "ZG45BBYV"
+  zotero_key: ZG45BBYV
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
   title: "Combining fiber Brillouin amplification with a repeater laser station for fiber-based optical frequency dissemination over 1400 km"
   year: 2019
-  first_author: Koke
+  first_author: "Koke"
   journal: "New Journal of Physics"
   volume: 21
-  issue: "未明示"
-  pages: "123017"
-  doi: "10.1088/1367-2630/ab5d95"
+  pages: 123017
+  doi: 10.1088/1367-2630/ab5d95
   note: >
-    [Breakthrough 论文] PTB（德国联邦物理技术研究院）+ LNE-SYRTE（法国）。首次 Brillouin 放大 + 中继激光站组合 1400 km 光纤频率传递：
-    (1) 1400 km 环形光纤链路（Braunschweig ↔ Strasbourg 地下光纤）：首次结合光纤 Brillouin 放大器（FBA）与中继激光站（RLS）；
-    (2) 相位相干运行 > 5 天（累计 65 天数据）；加权平均分数频率偏移 (-1.1±0.4)×10⁻²⁰；
-    (3) 两根光纤相位噪声相关性 > 98%（双向噪声抵消）；
-    (4) 技术突破：a) Brillouin 放大解决长距离信号衰减（避免 bEDFA 自振荡 / 循环滑动）；
-        b) 中继激光站解决剩余损耗 + 分段稳定；
-        c) 组合方案首次实现 Continental-scale（>1000 km）光纤频率传递。
-    本工作是首次 1400 km Brillouin + RLS 组合链路，判定 breakthrough（首次 Continental-scale Brillouin-amplified link）。
-    对齐 v2 子域主线：C-Transfer（光纤频率传递）。
-
-  primary_metric_exempt_reason: new_method
-  breakthrough_paths:
-    - pri.brillouin_amplification_long_distance_k19
-    - meth.brillouin_rls_hybrid_1400km_k19
-
+    [Breakthrough 论文] PTB（德国联邦物理技术研究院）+ LNE-SYRTE（法国）。首次 Brillouin 放大 + 中继激光站组合 1400 km 光纤频率传递： (1) 1400 km 环形光纤链路（Braunschweig ↔ Strasbourg 地下光纤）：首次结合光纤 Brillouin 放大器（FBA）与中继激光站（RLS）； (2) 相位相干运行 > 5 天（累计 65 天数据）；加权平均分数频率偏移 (-1.1±0.4)×10⁻²⁰； (3) 两根光纤相位噪声相关性 > 98%（双向噪声抵消）； (4) 技术突破：a) Brillouin 放大解决长距离信号衰减（避免 bEDFA 自振荡 / 循环滑动）；
+    b) 中继激光站解决剩余损耗 + 分段稳定；
+    c) 组合方案首次实现 Continental-scale（>1000 km）光纤频率传递。
+    本工作是首次 1400 km Brillouin + RLS 组合链路，判定 breakthrough（首次 Continental-scale Brillouin-amplified link）。 对齐 v2 子域主线：C-Transfer（光纤频率传递）。
 entities:
   - id: ent.brillouin_rls_1400km_link_k19
     name: "Brillouin 放大 + 中继站 1400 km 光纤频率传递链路（Koke 2019, PTB）"

@@ -1,34 +1,21 @@
-# Lee 2015 — 整体式 SESAM+graphene EOM 器件（单片锁模+稳频，CU Boulder+NIST）
-# 提取者：GitHub Copilot（AI草稿，2026-04-22）
-# 提取日期：2026-04-22
-# Schema版本：v4.3
-# 专题：optical-frequency-combs
-# contribution_type: breakthrough（首次单片集成 SESAM 锁模 + graphene EOM 稳频，>5 MHz 带宽）
-
+# Lee 2015 — Monolithic device for modelocking and stabilization of frequency combs [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "L6ZZII7R"
+  zotero_key: L6ZZII7R
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
   title: "Monolithic device for modelocking and stabilization of frequency combs"
   year: 2015
-  first_author: Lee
+  first_author: "Lee"
   journal: "Optics Express"
   volume: 23
-  issue: 26
-  pages: "33038-33046"
-  doi: "10.1364/OE.23.033038"
+  pages: 33038-33046
+  doi: 10.1364/OE.23.033038
   note: >
-    [技术论文 / 突破] CU Boulder + NIST。首次演示单片集成器件，同时实现锁模（SESAM）与高带宽稳频（graphene EOM）：
-    (1) III-V 半导体可饱和吸收镜（SESAM）+ 石墨烯电光调制器（graphene EOM）异质集成在单一镜片上；
-    (2) SESAM 提供自启锁模（InGaAs 量子阱饱和吸收）；graphene EOM 提供纯损耗调制（bandwidth > 5 MHz，仅需低压驱动）；
-    (3) 插入 Er:fiber 梳腔内作为端镜 → 简化腔设计（无需单独插入 EOM，无额外插入损耗）；
-    (4) 演示 fceo 稳频带宽超 5 MHz（超越增益寿命限制 ~100 kHz），frep 控制带宽同步提升；
-    (5) 为紧凑型可野外部署梳奠定基础（全 PM 光纤 + 单片器件 → 免对准）。
-    本工作首次将 SESAM + graphene EOM 集成在单一器件上，打破先前"分立器件级联"架构，是紧凑鲁棒梳的关键里程碑。
-    对齐 v2 子域主线：A1-Robust（紧凑/集成/野外适用）+ A1-Noise（高带宽稳频）。归 breakthrough。
-
+    [技术论文 / 突破] CU Boulder + NIST。首次演示单片集成器件，同时实现锁模（SESAM）与高带宽稳频（graphene EOM）： (1) III-V 半导体可饱和吸收镜（SESAM）+ 石墨烯电光调制器（graphene EOM）异质集成在单一镜片上； (2) SESAM 提供自启锁模（InGaAs 量子阱饱和吸收）；graphene EOM 提供纯损耗调制（bandwidth > 5 MHz，仅需低压驱动）； (3) 插入 Er:fiber 梳腔内作为端镜 → 简化腔设计（无需单独插入 EOM，无额外插入损耗）； (4) 演示 fceo 稳频带宽超 5 MHz（超越增益寿命限制 ~100 kHz），frep 控制带宽同步提升； (5) 为紧凑型可野外部署梳奠定基础（全 PM 光纤 + 单片器件 → 免对准）。 本工作首次将 SESAM + graphene EOM 集成在单一器件上，打破先前"分立器件级联"架构，是紧凑鲁棒梳的关键里程碑。 对齐 v2 子域主线：A1-Robust（紧凑/集成/野外适用）+ A1-Noise（高带宽稳频）。归 breakthrough。
 entities:
   - id: ent.monolithic_sesam_graphene_device_l15
     name: "整体式 SESAM+graphene EOM 器件（Lee 2015）"

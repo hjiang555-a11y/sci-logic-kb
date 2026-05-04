@@ -1,20 +1,21 @@
+# Aasi 2013 — Enhanced sensitivity of the LIGO gravitational wave detector by using squeeze... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: 8NUIA2K7
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: Enhanced sensitivity of the LIGO gravitational wave detector by using squeezed
-    states of light
+  title: "Enhanced sensitivity of the LIGO gravitational wave detector by using squeezed states of light"
   year: 2013
-  first_author: Aasi
-  journal: Nature Photonics
+  first_author: "Aasi"
+  journal: "Nature Photonics"
   volume: 7
   pages: 613-619
   doi: 10.1038/nphoton.2013.177
-  note: 'LIGO 注入压缩真空态光场突破量子散粒噪声极限， 150 Hz 以上灵敏度改善，实现历史最佳宽带引力波灵敏度。 核心贡献：量子增强精密测量的里程碑。
-    与超稳激光共享量子噪声和光电探测技术。
-
-    '
+  note: >
+    LIGO 注入压缩真空态光场突破量子散粒噪声极限， 150 Hz 以上灵敏度改善，实现历史最佳宽带引力波灵敏度。 核心贡献：量子增强精密测量的里程碑。 与超稳激光共享量子噪声和光电探测技术。
 entities: []
 principles:
 - id: pri.squeezed_light_quantum_enhancement

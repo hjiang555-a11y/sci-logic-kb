@@ -1,52 +1,21 @@
-# Suh 2019 — 首次将微谐振腔孤子微梳用作天文光谱仪校准源（Keck II/NIRSPEC）[里程碑技术论文]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical — 天文光梳（astrocomb）方向的首次微腔实施
-#   核心贡献：
-#     (1) 首次将 DKS 孤子微梳（22.1 GHz 线距，1550 nm 附近）搬上 10 m 级望远镜（Keck II）
-#         并直接对天文近红外光谱仪 NIRSPEC 进行校准；
-#     (2) 利用微腔 FSR 原生 22.1 GHz 与天文光谱仪分辨率天然匹配，
-#         **无需外加 Fabry-Pérot 模式过滤**即达到可分辨梳线——区别于 Ti:Sa/EO 类传统 astrocomb；
-#     (3) 方案整体简化（CW 泵浦 + 芯片微腔 + HCN 锁定 + Rb 钟），
-#         达到 ≤5 m/s 的定标不确定度（受 f0 锁定的 ~1 MHz 主导，等效 ~1 m/s RV）。
-#   注：本论文实际工作在 **近红外 ~1550 nm**（NIRSPEC, echelle orders 44-51, 1471–1620 nm），
-#       并非可见光/HIRES/SHG。任务指示中的 "620–690 nm via SHG / HIRES" 与实际 PDF 内容不符，
-#       本文件按论文实际内容提取；SHG 到可见的微梳 astrocomb 方案是后续工作（如 Obrzud 2019）。
-#   Framework 依赖：
-#     ent.microresonator_frequency_comb（权威定义：kippenberg2018 / yi2016）
-#     ent.silica_microtoroid_comb / ent.silica_wedge_microresonator（权威定义：yi2016）
-#     pri.dissipative_kerr_soliton（权威定义：herr2014 / yi2016）
-#     meth.laser_tuning_soliton_access（权威定义：herr2014 / yi2016）
-
+# Suh 2019 — Searching for exoplanets using a microresonator astrocomb [technical]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "BYUPFGJY"
+  zotero_key: BYUPFGJY
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical
   reliability: high
   title: "Searching for exoplanets using a microresonator astrocomb"
   year: 2019
-  first_author: Suh
+  first_author: "Suh"
   journal: "Nature Photonics"
   volume: 13
-  pages: "25-30"
-  doi: "10.1038/s41566-018-0312-3"
-  temporal_role: proposes
-  verification_status: observed
+  pages: 25-30
+  doi: 10.1038/s41566-018-0312-3
   note: >
-    Caltech Vahala 组 + NIST/JILA Papp/Diddams + JPL + UCLA + Keck Observatory 合作。
-    3 mm 直径硅基二氧化硅（silica wedge）微腔，Q≈3×10^8，CW 光纤激光泵浦产生单孤子态，
-    孤子脉宽 145 fs，重频 22.1 GHz。offset 通过与锁定在 H¹³C¹⁴N (HCN) P(16) 线的参考激光拍频确定，
-    frep 通过 AOM 锁定。输出经非线性展宽覆盖 NIRSPEC 八个 echelle 级（1471–1620 nm），
-    2017-09-10 UTC 在 Keck II 上与传统 EO astrocomb 交替校准，作用于 51 Peg、HD 187123。
-    梳线质心在 30 min 内的 1-σ 稳定度 ~2 m/s，整体定标不确定度 ≤5 m/s。
-
-# ═══════════════════════════════════════════════
-#  NODES
-# ═══════════════════════════════════════════════
-
+    Caltech Vahala 组 + NIST/JILA Papp/Diddams + JPL + UCLA + Keck Observatory 合作。 3 mm 直径硅基二氧化硅（silica wedge）微腔，Q≈3×10^8，CW 光纤激光泵浦产生单孤子态， 孤子脉宽 145 fs，重频 22.1 GHz。offset 通过与锁定在 H¹³C¹⁴N (HCN) P(16) 线的参考激光拍频确定， frep 通过 AOM 锁定。输出经非线性展宽覆盖 NIRSPEC 八个 echelle 级（1471–1620 nm）， 2017-09-10 UTC 在 Keck II 上与传统 EO astrocomb 交替校准，作用于 51 Peg、HD 187123。 梳线质心在 30 min 内的 1-σ 稳定度 ~2 m/s，整体定标不确定度 ≤5 m/s。
 entities:
   - id: ent.microresonator_astrocomb_s19
     name: "微谐振腔天文光梳系统（Suh 2019 @ Keck II/NIRSPEC）"

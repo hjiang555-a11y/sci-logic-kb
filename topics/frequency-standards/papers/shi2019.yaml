@@ -1,32 +1,22 @@
 # Shi 2019 — Realization of phase locking in good-bad-cavity active optical clock [evidence]
-# 提取者：Claude Code（AI 草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.5
-# 专题：frequency-standards（主动光钟 — good-bad-cavity 锁相）
-# contribution_type: evidence — 实现 good-bad-cavity 主动光钟的相位锁定；
-#   探索主动光钟的一种工程实现方案。
-
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "oe-27-16-22040"
+  zotero_key: oe-27-16-22040
   topic: frequency-standards
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Realization of phase locking in good-bad-cavity active optical clock"
   year: 2019
-  first_author: Shi
+  first_author: "Shi"
   authors: ["Tiantian Shi", "et al."]
   journal: "Optics Express"
   volume: 27
-  pages: "22040"
-  doi: "10.1364/OE.27.022040"
+  pages: 22040
+  doi: 10.1364/OE.27.022040
   note: >
-    实现 good-bad-cavity 主动光钟的相位锁定方案。
-    Good-bad-cavity 是指使用两个耦合光腔——一个
-    高 Q 腔（good cavity）提供频率参考，一个低 Q 腔
-    （bad cavity）容纳增益介质并输出光。
-    是主动光钟的工程实现路径之一。
-
+    实现 good-bad-cavity 主动光钟的相位锁定方案。 Good-bad-cavity 是指使用两个耦合光腔——一个 高 Q 腔（good cavity）提供频率参考，一个低 Q 腔 （bad cavity）容纳增益介质并输出光。 是主动光钟的工程实现路径之一。
 entities:
   - id: ent.shi2019_good_bad_cavity_active_clock
     name: "Shi 2019 good-bad-cavity 主动光钟锁相（中科院）"

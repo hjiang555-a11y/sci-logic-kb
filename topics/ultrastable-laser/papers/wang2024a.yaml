@@ -1,34 +1,22 @@
+# Wang 2024 — Purification technique with a hertz-linewidth laser for fiber-based optical f... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: CYS7GEVR
   topic: ultrastable-laser
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
-  title: Purification technique with a hertz-linewidth laser for fiber-based optical
-    frequency coherence dissemination
+  title: "Purification technique with a hertz-linewidth laser for fiber-based optical frequency coherence dissemination"
   year: 2024
-  first_author: Wang
-  authors:
-  - Dan Wang
-  - Jie Liu
-  - Dongdong Jiao
-  - Qi Zang
-  - Xiang Zhang
-  - Qian Zhou
-  - Yucan Zhang
-  - Guanjun Xu
-  - Ruifang Dong
-  - Tao Liu
-  - Shougang Zhang
-  journal: Optical Fiber Technology
+  first_author: "Wang"
+  authors: ["Dan Wang", "Jie Liu", "Dongdong Jiao", "Qi Zang", "Xiang Zhang", "Qian Zhou", "Yucan Zhang", "Guanjun Xu", "Ruifang Dong", "Tao Liu", "Shougang Zhang"]
+  journal: "Optical Fiber Technology"
   volume: 87
-  pages: '103923'
+  pages: 103923
   doi: 10.1016/j.yofte.2024.103923
-  note: '提出并验证光频净化中继站方案（NTSC/CAS）：本地赫兹线宽超稳激光（50 mm 腔，精细度~450,000） 在 10 Hz 带宽内相位锁定至上游传输光频，10
-    Hz 以上跟随本地激光低噪声。 FPGA 实时消除相位周期跳变。应用于 106 km 通信光纤链路： 1 s 不稳定度提升 3 倍（4.50×10⁻¹⁵ vs
-    1.57×10⁻¹⁴）， 10,000 s 达 8.43×10⁻¹⁹（提升约 2 个量级）。
-
-    '
+  note: >
+    提出并验证光频净化中继站方案（NTSC/CAS）：本地赫兹线宽超稳激光（50 mm 腔，精细度~450,000） 在 10 Hz 带宽内相位锁定至上游传输光频，10 Hz 以上跟随本地激光低噪声。 FPGA 实时消除相位周期跳变。应用于 106 km 通信光纤链路： 1 s 不稳定度提升 3 倍（4.50×10⁻¹⁵ vs 1.57×10⁻¹⁴）， 10,000 s 达 8.43×10⁻¹⁹（提升约 2 个量级）。
 entities:
 - id: ent.optical_freq_purification_station_w24
   name: 光频净化中继站（Wang 2024a）

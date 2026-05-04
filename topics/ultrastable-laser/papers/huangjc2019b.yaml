@@ -1,19 +1,21 @@
+# Huang 2019 — Vibration-insensitive fiber spool for laser stabilization [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: 5DCNFGX4
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: Vibration-insensitive fiber spool for laser stabilization
+  title: "Vibration-insensitive fiber spool for laser stabilization"
   year: 2019
-  first_author: Huang
-  journal: Chinese Optics Letters
+  first_author: "Huang"
+  journal: "Chinese Optics Letters"
   volume: 17
   pages: 081403
   doi: 10.3788/COL201917.081403
-  note: '双缠绕光纤盘设计，实现全方向超低加速度灵敏度： 轴向 8×10⁻¹¹/g，径向 3×10⁻¹¹/g。 TC4 钛合金材料，FEM 优化几何参数。
-    核心贡献：改进了 Hu 2015 的对称光纤盘设计， 对径向和轴向同时优化。
-
-    '
+  note: >
+    双缠绕光纤盘设计，实现全方向超低加速度灵敏度： 轴向 8×10⁻¹¹/g，径向 3×10⁻¹¹/g。 TC4 钛合金材料，FEM 优化几何参数。 核心贡献：改进了 Hu 2015 的对称光纤盘设计， 对径向和轴向同时优化。
 entities:
 - id: ent.double_winding_fiber_spool_hjc19
   name: 双缠绕抗振光纤盘（Huang JC 2019b）

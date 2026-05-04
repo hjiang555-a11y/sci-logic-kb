@@ -1,12 +1,8 @@
-# Xing 2020 — 首次全光纤 2 µm 频率梳实现 1.4 光周期（9.5 fs）脉冲与倍频程自参考 [技术论文]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical
-
+# Xing 2020 — All-fiber frequency comb at 2 µm providing 1.4-cycle pulses [technical]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "BDY8JHA4"
+  zotero_key: BDY8JHA4
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical
@@ -16,22 +12,10 @@ meta:
   first_author: "Xing"
   journal: "Optics Letters"
   volume: 45
-  issue: 9
-  pages: "2660-2663"
-  doi: "10.1364/OL.391486"
+  pages: 2660-2663
+  doi: 10.1364/OL.391486
   note: >
-    [技术论文] NIST + JILA (Xing / Kowligy / Lesko / Lind / Diddams)。以 Menlo Figure-9
-    Er:光纤锁模激光器（1.56 µm，100 MHz）为种子，经 EDFA 放大到 190 mW，50 fs，
-    在 30 cm HNLF1 中通过 Raman 孤子自频移产生 1928 nm / 45 fs / 40 mW 的 2 µm 种子；
-    PM-TDF CPA（Nufern PM-TSF-9/125，前向 1550 nm 泵浦）放大至 420 mW，随后两级压缩
-    （PM1550XP 64 cm 补偿 + PM-HNLF2 6 cm 非线性自压缩）得到 327 mW、9.5 fs（1.4 光周期）
-    脉冲，谱覆盖 1–2.4 µm。13 mW 旁路经 PPLN 做 f-2f，在 1075 nm 波段回读 f_ceo，
-    30 dB SNR @300 kHz RBW、3 dB 线宽 ~5 kHz。系统完全采用商用光纤器件，35×30 cm 立面盒可容纳。
-
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
+    [技术论文] NIST + JILA (Xing / Kowligy / Lesko / Lind / Diddams)。以 Menlo Figure-9 Er:光纤锁模激光器（1.56 µm，100 MHz）为种子，经 EDFA 放大到 190 mW，50 fs， 在 30 cm HNLF1 中通过 Raman 孤子自频移产生 1928 nm / 45 fs / 40 mW 的 2 µm 种子； PM-TDF CPA（Nufern PM-TSF-9/125，前向 1550 nm 泵浦）放大至 420 mW，随后两级压缩 （PM1550XP 64 cm 补偿 + PM-HNLF2 6 cm 非线性自压缩）得到 327 mW、9.5 fs（1.4 光周期） 脉冲，谱覆盖 1–2.4 µm。13 mW 旁路经 PPLN 做 f-2f，在 1075 nm 波段回读 f_ceo， 30 dB SNR @300 kHz RBW、3 dB 线宽 ~5 kHz。系统完全采用商用光纤器件，35×30 cm 立面盒可容纳。
 entities:
   - id: ent.all_fiber_2um_comb_x20
     name: "全光纤 2 µm 飞秒频率梳系统（Xing 2020）"

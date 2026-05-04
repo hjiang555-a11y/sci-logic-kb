@@ -1,23 +1,20 @@
+# Jiang 2009 — Ultra Low Frequency Noise Laser Stabilized On Optical Fiber Spool [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: G2IXLQ3G
   topic: ultrastable-laser
   source_type: conference_paper
   contribution_type: evidence
   reliability: high
-  title: Ultra Low Frequency Noise Laser Stabilized On Optical Fiber Spool
+  title: "Ultra Low Frequency Noise Laser Stabilized On Optical Fiber Spool"
   year: 2009
-  first_author: Jiang
-  authors:
-  - Haifeng Jiang
-  - Pierre Lemonde
-  - Giorgio Santarelli
-  - Fabien Kéfélian
-  journal: 2009 IEEE International Frequency Control Symposium
-  doi: ''
-  note: 'Er 光纤激光器锁定至 1 km 光纤非平衡迈克尔逊干涉仪（外差探测）， 频率噪声降低 >40 dB，1 Hz–10 kHz 全范围 <1 Hz²/Hz。
-    30 Hz–10 kHz 与 PDH 超稳腔性能相当。全光纤系统：无需光路准直，可频率调谐（DDS）。 版权标注 ©2009 IEEE（ISBN 978-1-4244-3510-4）。
-
-    '
+  first_author: "Jiang"
+  authors: ["Haifeng Jiang", "Pierre Lemonde", "Giorgio Santarelli", "Fabien Kéfélian"]
+  journal: "2009 IEEE International Frequency Control Symposium"
+  doi: 
+  note: >
+    Er 光纤激光器锁定至 1 km 光纤非平衡迈克尔逊干涉仪（外差探测）， 频率噪声降低 >40 dB，1 Hz–10 kHz 全范围 <1 Hz²/Hz。 30 Hz–10 kHz 与 PDH 超稳腔性能相当。全光纤系统：无需光路准直，可频率调谐（DDS）。 版权标注 ©2009 IEEE（ISBN 978-1-4244-3510-4）。
 entities:
 - id: ent.fiber_michelson_1km_j09
   name: 1 km 光纤非平衡迈克尔逊干涉仪（Jiang 2009a）

@@ -1,32 +1,22 @@
-# Brown 2017 — Hyperpolarizability and operational magic wavelength in optical lattice clock [evidence]
-# 提取者：Claude Code（AI 草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.5
-# 专题：frequency-standards（Sr 光晶格钟 — hyperpolarizability 和 magic wavelength）
-# contribution_type: evidence — 精密测量 Sr 光晶格钟的 hyperpolarizability 效应；
-#   确定 operational magic wavelength——是光钟系统不确定度评估的关键贡献。
-
+# Brown 2017 — Hyperpolarizability and Operational Magic Wavelength in an Optical Lattice Clock [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "2923-1"
+  zotero_key: 2923-1
   topic: frequency-standards
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "Hyperpolarizability and Operational Magic Wavelength in an Optical Lattice Clock"
   year: 2017
-  first_author: Brown
+  first_author: "Brown"
   authors: ["R. C. Brown", "N. B. Phillips", "K. Beloy", "W. F. McGrew", "M. Schioppo", "R. J. Fasano", "G. Milani", "X. Zhang", "N. Hinkley", "H. Leopardi", "T. H. Yoon", "D. Nicolodi", "T. M. Fortier", "A. D. Ludlow"]
   journal: "Physical Review Letters"
   volume: 119
-  pages: "253001"
-  doi: "10.1103/PhysRevLett.119.253001"
+  pages: 253001
+  doi: 10.1103/PhysRevLett.119.253001
   note: >
-    NIST/JILA 团队精密测量 Sr 光晶格钟的 hyperpolarizability
-    （超极化率）效应——晶格光场的高阶 Stark 频移。
-    通过测量不同晶格深度下的频移，提取 hyperpolarizability
-    系数并确定 operational magic wavelength。
-    是 Sr 钟 10⁻¹⁸ 系统不确定度的关键贡献。
-
+    NIST/JILA 团队精密测量 Sr 光晶格钟的 hyperpolarizability （超极化率）效应——晶格光场的高阶 Stark 频移。 通过测量不同晶格深度下的频移，提取 hyperpolarizability 系数并确定 operational magic wavelength。 是 Sr 钟 10⁻¹⁸ 系统不确定度的关键贡献。
 entities:
   - id: ent.brown2017_hyperpolarizability_sr
     name: "Brown 2017 Sr 光钟 hyperpolarizability 和 operational magic wavelength（NIST/JILA）"

@@ -1,30 +1,21 @@
-# Kuse 2015 — 石墨烯调制器实现全保偏 Er 光纤梳超低相位噪声
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical
-
+# Kuse 2015 — Ultra-low noise all polarization-maintaining Er fiber-based optical frequency... [technical]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "3RT4U4TV"
+  zotero_key: 3RT4U4TV
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical
   reliability: high
   title: "Ultra-low noise all polarization-maintaining Er fiber-based optical frequency combs facilitated with a graphene modulator"
   year: 2015
-  first_author: Kuse
+  first_author: "Kuse"
   journal: "Optics Express"
   volume: 23
-  issue: 19
-  pages: "24342-24354"
-  doi: "10.1364/OE.23.024342"
+  pages: 24342-24354
+  doi: 10.1364/OE.23.024342
   note: >
-    [技术论文] IMRA America（Fermann 组）+ Colorado（Schibli）。利用腔内石墨烯电光
-    调制器（GM）做 f_CEO 与 f_rep 的快速调制，配合腔外块状 EOM 做 f_rep 细控制；
-    首次在全保偏（all-PM）Er 光纤梳上实现记录级相噪：f_CEO 积分相噪 0.25 rad
-    (10 Hz–3 MHz)，拍频相噪 0.11 rad。解决了泵浦电流调制带宽受增益寿命限制的瓶颈。
-
+    [技术论文] IMRA America（Fermann 组）+ Colorado（Schibli）。利用腔内石墨烯电光 调制器（GM）做 f_CEO 与 f_rep 的快速调制，配合腔外块状 EOM 做 f_rep 细控制； 首次在全保偏（all-PM）Er 光纤梳上实现记录级相噪：f_CEO 积分相噪 0.25 rad (10 Hz–3 MHz)，拍频相噪 0.11 rad。解决了泵浦电流调制带宽受增益寿命限制的瓶颈。
 entities:
   - id: ent.graphene_modulator_comb_kuse15
     name: "石墨烯腔内电光调制器（Kuse 2015，用于 Er:fiber 梳）"

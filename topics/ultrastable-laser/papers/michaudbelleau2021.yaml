@@ -1,21 +1,21 @@
+# Michaud-Belleau 2021 — Backscattering in antiresonant hollow-core fibers: over 40 dB lower than in s... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: DD6SE43C
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: 'Backscattering in antiresonant hollow-core fibers: over 40 dB lower than
-    in standard optical fibers'
+  title: "Backscattering in antiresonant hollow-core fibers: over 40 dB lower than in standard optical fibers"
   year: 2021
-  first_author: Michaud-Belleau
-  journal: Optica
+  first_author: "Michaud-Belleau"
+  journal: "Optica"
   volume: 8
-  pages: '216'
+  pages: 216
   doi: 10.1364/OPTICA.403087
-  note: '首次测量低损耗反谐振空心光纤（AR-HCF/NANF）的背向散射。 背向散射系数 −118 dB/m，较实芯光纤低 40 dB 以上， 与假设表面粗糙度为散射源的模拟一致。
-    对光纤稳频意义：消除 Rayleigh 背向散射——实芯光纤干涉仪的主要噪声源之一。 Southampton + Laval 大学。 根据专家意见：空心光纤相关原理节点属于光纤干涉仪
-    (ent.fiber_interferometer) 下面的内容， 对应 FP 腔热噪声处理方式。
-
-    '
+  note: >
+    首次测量低损耗反谐振空心光纤（AR-HCF/NANF）的背向散射。 背向散射系数 −118 dB/m，较实芯光纤低 40 dB 以上， 与假设表面粗糙度为散射源的模拟一致。 对光纤稳频意义：消除 Rayleigh 背向散射——实芯光纤干涉仪的主要噪声源之一。 Southampton + Laval 大学。 根据专家意见：空心光纤相关原理节点属于光纤干涉仪 (ent.fiber_interferometer) 下面的内容， 对应 FP 腔热噪声处理方式。
 principles:
 - id: pri.hollow_core_fiber_low_backscattering
   name: 空心光纤低背向散射原理

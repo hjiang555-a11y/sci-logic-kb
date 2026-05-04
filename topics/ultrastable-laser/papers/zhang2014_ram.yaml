@@ -1,23 +1,21 @@
+# Zhang 2014 — Reduction of residual amplitude modulation to 1×10⁻⁶ for frequency modulation... [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: S5GJNVG8
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: breakthrough
-  primary_metric_exempt_reason: new_method
   reliability: high
-  title: Reduction of residual amplitude modulation to 1×10⁻⁶ for frequency modulation
-    and laser stabilization
+  title: "Reduction of residual amplitude modulation to 1×10⁻⁶ for frequency modulation and laser stabilization"
   year: 2014
-  first_author: Zhang
-  journal: Optics Letters
+  first_author: "Zhang"
+  journal: "Optics Letters"
   volume: 39
   pages: 1980-1983
   doi: 10.1364/OL.39.001980
-  note: '首次将PDH锁频中的残余幅度调制（RAM）主动抑制至1 ppm量级（1×10⁻⁶）， 同时消除同相分量（DC电场反馈）和正交分量（EOM温度反馈），
-    实现56 dB RAM抑制，长达2小时无明显漂移。 在35 mm AlGaAs晶体镀层腔（κ=28 kHz）中，1 ppm RAM对应σ_y=1×10⁻¹⁶；
-    在210 mm Si单晶腔（κ=3 kHz）中，5 ppm RAM对应σ_y=8×10⁻¹⁷（接近热噪声极限）。 JILA（Ye/Hall组）+ PTB +
-    维也纳大学合作。
-
-    '
+  note: >
+    首次将PDH锁频中的残余幅度调制（RAM）主动抑制至1 ppm量级（1×10⁻⁶）， 同时消除同相分量（DC电场反馈）和正交分量（EOM温度反馈）， 实现56 dB RAM抑制，长达2小时无明显漂移。 在35 mm AlGaAs晶体镀层腔（κ=28 kHz）中，1 ppm RAM对应σ_y=1×10⁻¹⁶； 在210 mm Si单晶腔（κ=3 kHz）中，5 ppm RAM对应σ_y=8×10⁻¹⁷（接近热噪声极限）。 JILA（Ye/Hall组）+ PTB + 维也纳大学合作。
 entities: null
 principles:
 - id: pri.ram_pdh_frequency_offset

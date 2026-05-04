@@ -1,28 +1,18 @@
-# SI Second Redefinition Roadmap 2021 — Roadmap towards the redefinition of the SI second [framework]
-# 提取者：Claude Code（AI 草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.5
-# 专题：frequency-standards（SI 秒重新定义路线图）
-# contribution_type: framework — CCTF 路线图文档；汇总光钟重新定义
-#   SI 秒所需的技术条件和时间表。
-
+# Dimarcq 2021 — Roadmap towards the redefinition of the SI second [framework]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "6aa4cdb5290485275d10e4d2976a14fd_aaddca25ef0b2"
+  zotero_key: 6aa4cdb5290485275d10e4d2976a14fd_aaddca25ef0b2
   topic: frequency-standards
   source_type: other
   contribution_type: framework
   reliability: high
   title: "Roadmap towards the redefinition of the SI second"
   year: 2021
-  first_author: Dimarcq
+  first_author: "Dimarcq"
   authors: ["N. Dimarcq", "M. Gertsvolf", "G. Mileti", "S. Bize", "C. W. Oates", "E. Peik", "D. Calonico", "T. Ido"]
   note: >
-    CCTF（国际时间频率咨询委员会）关于 SI 秒重新定义的
-    路线图文档。规定了光钟重新定义 SI 秒前必须达到的
-    技术里程碑：至少三种不同光钟体系的系统不确定度
-    < 5×10⁻¹⁸、光钟之间的频率比独立验证、光钟与 Cs
-    喷泉钟的长期比对、以及可搬运光钟的比对实验。
-
+    CCTF（国际时间频率咨询委员会）关于 SI 秒重新定义的 路线图文档。规定了光钟重新定义 SI 秒前必须达到的 技术里程碑：至少三种不同光钟体系的系统不确定度 < 5×10⁻¹⁸、光钟之间的频率比独立验证、光钟与 Cs 喷泉钟的长期比对、以及可搬运光钟的比对实验。
 entities:
   - id: ent.si_second_redefinition_roadmap_2021
     name: "SI 秒重新定义路线图（2021 CCTF）"

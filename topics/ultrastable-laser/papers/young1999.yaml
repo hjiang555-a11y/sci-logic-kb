@@ -1,19 +1,21 @@
+# Young 1999 — Visible Lasers with Subhertz Linewidths [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: EGAZKLXR
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: medium
-  title: Visible Lasers with Subhertz Linewidths
+  title: "Visible Lasers with Subhertz Linewidths"
   year: 1999
-  first_author: Young
-  journal: Physical Review Letters
+  first_author: "Young"
+  journal: "Physical Review Letters"
   volume: 82
   pages: 3799-3802
   doi: 10.1103/PhysRevLett.82.3799
-  note: '首次实验证明亚赫兹线宽可见激光（0.6 Hz @ 563 nm）； 后经 Numata 2004 确认该结果已在热噪声极限处工作。 核心贡献：展示低频弹性悬挂隔振
-    + 两级 PDH 锁频的组合方案。 技术分支：FP参考腔系统（Fabry-Pérot Reference Cavity Systems）。
-
-    '
+  note: >
+    首次实验证明亚赫兹线宽可见激光（0.6 Hz @ 563 nm）； 后经 Numata 2004 确认该结果已在热噪声极限处工作。 核心贡献：展示低频弹性悬挂隔振 + 两级 PDH 锁频的组合方案。 技术分支：FP参考腔系统（Fabry-Pérot Reference Cavity Systems）。
 entities:
 - id: ent.vibration_isolation
   name: 被动隔振系统（Young 1999）

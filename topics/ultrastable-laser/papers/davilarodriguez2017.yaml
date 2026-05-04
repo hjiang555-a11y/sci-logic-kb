@@ -1,31 +1,22 @@
+# Davila-Rodriguez 2017 — Compact, thermal-noise-limited reference cavity for ultra-low-noise microwave... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: NHG79KDA
   topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: Compact, thermal-noise-limited reference cavity for ultra-low-noise microwave
-    generation
+  title: "Compact, thermal-noise-limited reference cavity for ultra-low-noise microwave generation"
   year: 2017
-  first_author: Davila-Rodriguez
-  authors:
-  - J. Davila-Rodriguez
-  - F. N. Baynes
-  - A. D. Ludlow
-  - T. M. Fortier
-  - H. Leopardi
-  - S. A. Diddams
-  - F. Quinlan
-  journal: Optics Letters
+  first_author: "Davila-Rodriguez"
+  authors: ["J. Davila-Rodriguez", "F. N. Baynes", "A. D. Ludlow", "T. M. Fortier", "H. Leopardi", "S. A. Diddams", "F. Quinlan"]
+  journal: "Optics Letters"
   volume: 42
-  issue: 7
-  pages: '1277'
+  pages: 1277
   doi: 10.1364/OL.42.001277
-  note: '25 mm 长 ULE 圆柱腔（直径 50 mm），熔融石英镜配 ULE 衬环（调节 CTE 零点）， 刚性夹持（Invar 板 + 弹性体球）对挤压力一阶不灵敏。
-    室温热噪声极限运行，1 Hz–1 kHz 内激光相位噪声接近热噪声极限。 Allan 偏差 2×10⁻¹⁵（τ = 0.1 s）；10 GHz 相位噪声 −97
-    dBc/Hz @ 1 Hz 偏移。
-
-    '
+  note: >
+    25 mm 长 ULE 圆柱腔（直径 50 mm），熔融石英镜配 ULE 衬环（调节 CTE 零点）， 刚性夹持（Invar 板 + 弹性体球）对挤压力一阶不灵敏。 室温热噪声极限运行，1 Hz–1 kHz 内激光相位噪声接近热噪声极限。 Allan 偏差 2×10⁻¹⁵（τ = 0.1 s）；10 GHz 相位噪声 −97 dBc/Hz @ 1 Hz 偏移。
 entities:
 - id: ent.compact_ule_cavity_25mm_d17
   name: 25 mm ULE 圆柱参考腔（Davila-Rodriguez 2017）

@@ -1,20 +1,21 @@
+# Didier 2018 — Ultracompact reference ultralow expansion glass cavity [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: PHRXF4IL
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: Ultracompact reference ultralow expansion glass cavity
+  title: "Ultracompact reference ultralow expansion glass cavity"
   year: 2018
-  first_author: Didier
-  journal: Applied Optics
+  first_author: "Didier"
+  journal: "Applied Optics"
   volume: 57
-  issue: 22
   pages: 6470-6473
   doi: 10.1364/AO.57.006470
-  note: '首次实验表征 25 mm 金字塔形 ULE 参考腔，配备 AlGaAs 晶体镀层， 含真空腔室和光学组件总体积仅 30 L。 σ_y(1s) ≈
-    7.5×10⁻¹⁵，主要受限于腔体尺寸（热噪声）和技术噪声。 核心贡献：极端紧凑化方向的探索，适合嵌入式和空间应用。
-
-    '
+  note: >
+    首次实验表征 25 mm 金字塔形 ULE 参考腔，配备 AlGaAs 晶体镀层， 含真空腔室和光学组件总体积仅 30 L。 σ_y(1s) ≈ 7.5×10⁻¹⁵，主要受限于腔体尺寸（热噪声）和技术噪声。 核心贡献：极端紧凑化方向的探索，适合嵌入式和空间应用。
 entities:
 - id: ent.ultracompact_pyramid_cavity_d18
   name: 超紧凑金字塔形 ULE 参考腔（Didier 2018）

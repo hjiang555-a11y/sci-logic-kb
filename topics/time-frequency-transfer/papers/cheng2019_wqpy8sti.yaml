@@ -1,34 +1,20 @@
-# Cheng 2019 — Time transfer through the optical supervisory channel in WDM systems [evidence]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：time-frequency-transfer
-# contribution_type: evidence — SJTU（上海交大）。利用商用 WDM 系统的光监控信道（OSC）
-#   子带传递时间信号，不影响现有通信业务；100 km 实验室 WDM 链路共传时间/监控/数据业务。
-
+# Cheng 2019 — Time transfer through the optical supervisory channel in wavelength division ... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "wqpy8sti"
+  zotero_key: wqpy8sti
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
   reliability: medium
   title: "Time transfer through the optical supervisory channel in wavelength division multiplexing systems"
   year: 2019
-  first_author: Cheng
-  authors:
-  - "Hanhuang Cheng"
-  - "Guiling Wu"
-  - "Faxing Zuo"
-  - "Liang Hu"
-  - "Jianping Chen"
+  first_author: "Cheng"
+  authors: ["Hanhuang Cheng", "Guiling Wu", "Faxing Zuo", "Liang Hu", "Jianping Chen"]
   journal: "Opt. Lett."
-  doi: "10.1364/OL.44.005206"
+  doi: 10.1364/OL.44.005206
   note: >
-    [期刊论文] Shanghai Jiao Tong University. 在商用 WDM 系统的光监控信道（OSC，
-    通常 1510/1625 nm）内划一个子带承载时间信号，双向使用相同或极接近波长以最大化
-    对称性。100 km 实验室光纤同时承载 time + OSC + 数据业务，验证兼容性与子带时间传递
-    精度。工程示范意义大于性能纪录。
-
+    [期刊论文] Shanghai Jiao Tong University. 在商用 WDM 系统的光监控信道（OSC， 通常 1510/1625 nm）内划一个子带承载时间信号，双向使用相同或极接近波长以最大化 对称性。100 km 实验室光纤同时承载 time + OSC + 数据业务，验证兼容性与子带时间传递 精度。工程示范意义大于性能纪录。
 entities:
   - id: ent.osc_subband_time_transfer_cheng19
     name: "OSC 子带时间传递（商用 WDM 系统复用）"

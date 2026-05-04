@@ -1,46 +1,21 @@
-# McFerran 2007 — 通过抑制泵浦 RIN 将 Er:fiber 梳 fceo 积分相位抖动降至 ~1 rad [技术论文]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical — Er:fiber 频率梳 fceo 相噪机理与抑制工程论文
-#   核心贡献：
-#     (1) 明确识别 Er:fiber 梳 fceo 大频率抖动的物理起源 = 1480 nm 泵浦二极管的白噪声 RIN；
-#     (2) 建立 RIN → f_r / fceo 的定量 AM-FM 响应链（P·df_ceo/dP = −1.30 GHz，
-#         P·df_r/dP = −320 Hz；7 kHz 低通滚降）；
-#     (3) 提出"固定点呼吸模型"定量预测整条梳各梳齿频率噪声（公式 S_ceo/S_λ = n_fix²/(n_fix−n_λ)²）；
-#     (4) 双重抑制：提高泵浦电流压低白 RIN + 相位超前补偿将伺服带宽从 ~5 kHz 推至 ~80 kHz；
-#     (5) 演示仪器极限 fceo 线宽 + 积分相位噪声 0.99 rad²（≈1 rad），
-#         Nyquist 外推 1.3 rad，计数 fceo ≤1 mHz@1 s (<10⁻¹⁷ 相对于 200 THz 光频)。
-#   Framework 依赖：ent.optical_frequency_comb、pri.self_referencing_f2f 定义于 udem2002.yaml，
-#     本文件定义其 Er:fiber 低相噪实例 ent.pump_noise_suppressed_erfiber_comb_m07 与工程原理
-#     pri.pump_rin_to_fceo_coupling。
-
+# McFerran 2007 — Suppression of pump-induced frequency noise in fiber-laser frequency combs le... [technical]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "CNSSF9YY"
+  zotero_key: CNSSF9YY
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical
   reliability: high
   title: "Suppression of pump-induced frequency noise in fiber-laser frequency combs leading to sub-radian fceo phase excursions"
   year: 2007
-  first_author: McFerran
+  first_author: "McFerran"
   journal: "Applied Physics B"
   volume: 86
-  issue: 2
-  pages: "219-227"
-  doi: "10.1007/s00340-006-2426-4"
+  pages: 219-227
+  doi: 10.1007/s00340-006-2426-4
   note: >
-    [技术论文] NIST Boulder 光电部（McFerran/Swann/Washburn/Newbury）。Er:fiber 非线性偏振旋转
-    锁模梳（50 MHz，~45 fs，1560 nm 中心）+ EDFA + HNLF 倍频程展宽（960–2200 nm）+ 2060 nm f-2f
-    干涉仪。识别 Bragg 光栅稳定 Fabry-Pérot 1480 nm 泵浦二极管 RIN 为 fceo 宽线宽（数百 kHz）主因；
-    提高泵流至 1 A 压低白 RIN，结合相位超前补偿将伺服带宽扩至 ~80 kHz，锁环积分相噪 ≤1 rad。
-    跨文件节点引用：ent.optical_frequency_comb 与 pri.self_referencing_f2f 定义于 udem2002.yaml。
-
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
+    [技术论文] NIST Boulder 光电部（McFerran/Swann/Washburn/Newbury）。Er:fiber 非线性偏振旋转 锁模梳（50 MHz，~45 fs，1560 nm 中心）+ EDFA + HNLF 倍频程展宽（960–2200 nm）+ 2060 nm f-2f 干涉仪。识别 Bragg 光栅稳定 Fabry-Pérot 1480 nm 泵浦二极管 RIN 为 fceo 宽线宽（数百 kHz）主因； 提高泵流至 1 A 压低白 RIN，结合相位超前补偿将伺服带宽扩至 ~80 kHz，锁环积分相噪 ≤1 rad。 跨文件节点引用：ent.optical_frequency_comb 与 pri.self_referencing_f2f 定义于 udem2002.yaml。
 entities:
   - id: ent.pump_noise_suppressed_erfiber_comb_m07
     name: "低泵噪 Er:fiber 频率梳（McFerran 2007 系统）"

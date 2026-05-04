@@ -1,20 +1,21 @@
+# Cook 2015 — Laser-Frequency Stabilization Based on Steady-State Spectral-Hole Burning in ... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: KZJHGH3N
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: Laser-Frequency Stabilization Based on Steady-State Spectral-Hole Burning
-    in Eu³⁺:Y₂SiO₅
+  title: "Laser-Frequency Stabilization Based on Steady-State Spectral-Hole Burning in Eu³⁺:Y₂SiO₅"
   year: 2015
-  first_author: Cook
-  journal: Physical Review Letters
+  first_author: "Cook"
+  journal: "Physical Review Letters"
   volume: 114
-  pages: '253902'
+  pages: 253902
   doi: 10.1103/PhysRevLett.114.253902
-  note: '基于稳态光谱烧孔模式的稳频方法——三区域光谱孔（间隔为基态超精细分裂）， 烧孔模式数天不退化。与腔稳激光和 Yb 光钟比较， SHB 分数频率不稳定度
-    1.0×10⁻¹⁵/√τ，平均至 8.5×10⁻¹⁷ @ 73 s。 核心贡献：稳态 SHB 方法——无需周期性重新烧孔。
-
-    '
+  note: >
+    基于稳态光谱烧孔模式的稳频方法——三区域光谱孔（间隔为基态超精细分裂）， 烧孔模式数天不退化。与腔稳激光和 Yb 光钟比较， SHB 分数频率不稳定度 1.0×10⁻¹⁵/√τ，平均至 8.5×10⁻¹⁷ @ 73 s。 核心贡献：稳态 SHB 方法——无需周期性重新烧孔。
 entities: []
 principles:
 - id: pri.steady_state_shb_pattern

@@ -1,22 +1,23 @@
+# Schliesser 2012 — Mid-infrared frequency combs [framework]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: YYXGH9X3
   topic: optical-frequency-combs
   source_type: review
   contribution_type: framework
   reliability: high
-  title: Mid-infrared frequency combs
+  title: "Mid-infrared frequency combs"
   year: 2012
-  first_author: Schliesser
-  journal: Nature Photonics
+  first_author: "Schliesser"
+  journal: "Nature Photonics"
   volume: 6
   pages: 440-449
   doi: 10.1038/nphoton.2012.142
-  note: "[综述论文 / 子域架构文档] Schliesser (EPFL) + Picqué (MPQ/CNRS) + Hänsch (MPQ) 2012\
-    \ Nature Photonics 综述。 首篇系统性中红外频率梳综述，定义 2–20 μm 频率梳子域架构： (1) 阐明中红外频谱的核心科学驱动——分子振转指纹光谱（强吸收线、大气窗口、痕量气体检测）；\
-    \ (2) 系统综述四类中红外梳产生方案：直接锁模激光器（Cr²⁺:ZnSe/ZnS）、差频产生（DFG）、\n    光参量振荡（OPO）、微谐振腔 Kerr\
-    \ 梳（CaF₂/MgF₂）；\n(3) 综述应用：精密光谱、双梳光谱、腔增强光谱、痕量气体检测； (4) 明确关键挑战：单梳齿功率、光谱覆盖范围、相干性/相位稳定性。\
-    \ ent.optical_frequency_comb 定义于 giunta2019.yaml； ent.microresonator_frequency_comb\
-    \ 定义于 kippenberg2011.yaml； pri.self_referencing_f2f 定义于 giunta2019.yaml。\n"
+  note: >
+    [综述论文 / 子域架构文档] Schliesser (EPFL) + Picqué (MPQ/CNRS) + Hänsch (MPQ) 2012 Nature Photonics 综述。 首篇系统性中红外频率梳综述，定义 2–20 μm 频率梳子域架构： (1) 阐明中红外频谱的核心科学驱动——分子振转指纹光谱（强吸收线、大气窗口、痕量气体检测）； (2) 系统综述四类中红外梳产生方案：直接锁模激光器（Cr²⁺:ZnSe/ZnS）、差频产生（DFG）、
+    光参量振荡（OPO）、微谐振腔 Kerr 梳（CaF₂/MgF₂）；
+    (3) 综述应用：精密光谱、双梳光谱、腔增强光谱、痕量气体检测； (4) 明确关键挑战：单梳齿功率、光谱覆盖范围、相干性/相位稳定性。 ent.optical_frequency_comb 定义于 giunta2019.yaml； ent.microresonator_frequency_comb 定义于 kippenberg2011.yaml； pri.self_referencing_f2f 定义于 giunta2019.yaml。
 entities:
 - id: ent.mid_ir_frequency_comb
   name: 中红外频率梳

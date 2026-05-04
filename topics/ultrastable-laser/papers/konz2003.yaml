@@ -1,20 +1,21 @@
+# Könz 2003 — Temperature and concentration dependence of optical dephasing, spectral-hole ... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: MNIZVIMG
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: Temperature and concentration dependence of optical dephasing, spectral-hole
-    lifetime, and anisotropic absorption in Eu³⁺:Y₂SiO₅
+  title: "Temperature and concentration dependence of optical dephasing, spectral-hole lifetime, and anisotropic absorption in Eu³⁺:Y₂SiO₅"
   year: 2003
-  first_author: Könz
-  journal: Physical Review B
+  first_author: "Könz"
+  journal: "Physical Review B"
   volume: 68
   pages: 085109
   doi: 10.1103/PhysRevB.68.085109
-  note: 'Eu³⁺:Y₂SiO₅ 的系统性光谱表征： T₂ 达 2.6 ms（接近荧光寿命极限）， 光谱孔寿命从 18 K 的 1 s 到 2 K 的 >20
-    天， 浓度从 0.02% 到 7% 时非均匀线宽从 0.5 GHz 增至 ~150 GHz。 核心贡献：SHB 稳频的材料基础参数参考。
-
-    '
+  note: >
+    Eu³⁺:Y₂SiO₅ 的系统性光谱表征： T₂ 达 2.6 ms（接近荧光寿命极限）， 光谱孔寿命从 18 K 的 1 s 到 2 K 的 >20 天， 浓度从 0.02% 到 7% 时非均匀线宽从 0.5 GHz 增至 ~150 GHz。 核心贡献：SHB 稳频的材料基础参数参考。
 entities: []
 principles: []
 methods:

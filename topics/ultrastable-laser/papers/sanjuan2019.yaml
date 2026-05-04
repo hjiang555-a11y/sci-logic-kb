@@ -1,20 +1,21 @@
+# Sanjuan 2019 — Long-term stable optical cavity for special relativity tests in space [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: H3HYK5D3
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: Long-term stable optical cavity for special relativity tests in space
+  title: "Long-term stable optical cavity for special relativity tests in space"
   year: 2019
-  first_author: Sanjuan
-  journal: Optics Express
+  first_author: "Sanjuan"
+  journal: "Optics Express"
   volume: 27
-  issue: 25
-  pages: '36206'
+  pages: 36206
   doi: 10.1364/OE.27.036206
-  note: '为 BOOST 空间任务设计的 8.7 cm 立方 ULE 腔，目标检验洛伦兹不变性。 五层铝热屏蔽（PEEK 隔热柱）实现 0.18 mHz 处
-    ~10⁻¹⁴ Allan 偏差。 详细噪声分解表明强度波动是亚毫赫兹频段的主要噪声源。 核心贡献：系统级频域热屏蔽表征和亚毫赫兹噪声分解。
-
-    '
+  note: >
+    为 BOOST 空间任务设计的 8.7 cm 立方 ULE 腔，目标检验洛伦兹不变性。 五层铝热屏蔽（PEEK 隔热柱）实现 0.18 mHz 处 ~10⁻¹⁴ Allan 偏差。 详细噪声分解表明强度波动是亚毫赫兹频段的主要噪声源。 核心贡献：系统级频域热屏蔽表征和亚毫赫兹噪声分解。
 entities:
 - id: ent.boost_cubic_cavity_s19
   name: BOOST 立方 ULE 参考腔（Sanjuan 2019）

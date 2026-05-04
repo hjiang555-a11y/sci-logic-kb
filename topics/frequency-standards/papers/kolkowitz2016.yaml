@@ -1,32 +1,22 @@
 # Kolkowitz 2016 — Gravitational wave detection with optical lattice atomic clocks [framework]
-# 提取者：Claude Code（AI 草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.5
-# 专题：frequency-standards（光晶格钟引力波探测 — 新应用场景）
-# contribution_type: framework — 提出利用光晶格钟网络探测引力波
-#   （GW）的新方案；光钟作为 GW 探测器的新范式。
-
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "ClockGW_PhysRevD.94.124043"
+  zotero_key: ClockGW_PhysRevD.94.124043
   topic: frequency-standards
   source_type: journal_paper
   contribution_type: framework
   reliability: high
   title: "Gravitational wave detection with optical lattice atomic clocks"
   year: 2016
-  first_author: Kolkowitz
+  first_author: "Kolkowitz"
   authors: ["S. Kolkowitz", "I. Pikovski", "N. Langellier", "M. D. Lukin", "R. L. Walsworth", "J. Ye"]
   journal: "Physical Review D"
   volume: 94
-  pages: "124043"
-  doi: "10.1103/PhysRevD.94.124043"
+  pages: 124043
+  doi: 10.1103/PhysRevD.94.124043
   note: >
-    JILA/Harvard 联合提出利用地球尺度的光晶格钟网络
-    作为引力波探测器。引力波通过改变光钟之间的
-    时空度规来改变它们的频率差——类似 LISA 的工作
-    原理但使用光钟而非激光干涉仪。探测频率范围
-    ~10⁻⁴-10⁻² Hz（介于 LIGO 和 CMB 之间）。
-
+    JILA/Harvard 联合提出利用地球尺度的光晶格钟网络 作为引力波探测器。引力波通过改变光钟之间的 时空度规来改变它们的频率差——类似 LISA 的工作 原理但使用光钟而非激光干涉仪。探测频率范围 ~10⁻⁴-10⁻² Hz（介于 LIGO 和 CMB 之间）。
 entities:
   - id: ent.kolkowitz2016_clock_gw_detector
     name: "Kolkowitz 2016 光钟引力波探测方案（JILA/Harvard）"

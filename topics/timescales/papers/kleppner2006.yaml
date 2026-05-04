@@ -1,45 +1,22 @@
-# Kleppner 2006 — 引力对原子时标比较的终极限制 [时间标尺专题概念框架]
-# 提取者：Claude Code
-# 提取日期：2026-05-03
-# Schema版本：v4.0
-# 专题：timescales
-# contribution_type: framework — 此文件为 timescales 专题建立"引力-时间纠缠"的概念架构。
-#   Kleppner 2006 是一篇 Physics Today 短评，阐述两个核心议题：
-#   (1) UTC 闰秒机制的历史与争议；(2) 当原子钟精度进入 10⁻¹⁶–10⁻¹⁸ 后，
-#   引力红移使全球分布式时间比对失去物理意义——"时间好到不真实"("too good to be true")。
-#   本文不报告新实验数据，而是为超精密时间尺度的物理边界设定概念框架。
-
+# Kleppner 2006 — Time too good to be true [framework]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "1.2195297"
+  zotero_key: 1.2195297
   topic: timescales
   source_type: commentary
   contribution_type: framework
   reliability: high
   title: "Time too good to be true"
   year: 2006
-  first_author: Kleppner
-  authors:
-    - "Daniel Kleppner"
+  first_author: "Kleppner"
+  authors: ["Daniel Kleppner"]
   journal: "Physics Today"
   volume: 59
-  number: 3
-  pages: "10–11"
-  doi: "10.1063/1.2195297"
+  pages: 10–11
+  doi: 10.1063/1.2195297
   note: >
-    [短评/概念框架] timescales 专题概念架构文档。
-    Physics Today 短评，无新实验数据。建立两条核心见解：
-    (1) UTC 闰秒机制：1972 年引入至今已插入 23 个闰秒；若 SI 秒定义为 9,192,631,997 周期
-    （而非 770），只需 3 个闰秒。GPS 因无法容忍时间跳变而采用无闰秒时标。
-    (2) "时间好到不真实"：引力红移 ~1×10⁻¹⁶/m；大地水准面不确定度 30–50 cm
-    → 钟频率比较不确定度 ~3×10⁻¹⁷；固体潮引起 20 cm 起伏 → ~2×10⁻¹⁷。
-    核心哲学洞察：引力不是扰动钟的工作，而是改变时间本身。
-    在 10⁻¹⁷–10⁻¹⁸ 精度水平，全球分布式时钟比较如同比较散落海洋中各艘小船上
-    的摆钟——各有各的时间，无一可声称自己为"真时间"。
-
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
+    [短评/概念框架] timescales 专题概念架构文档。 Physics Today 短评，无新实验数据。建立两条核心见解： (1) UTC 闰秒机制：1972 年引入至今已插入 23 个闰秒；若 SI 秒定义为 9,192,631,997 周期 （而非 770），只需 3 个闰秒。GPS 因无法容忍时间跳变而采用无闰秒时标。 (2) "时间好到不真实"：引力红移 ~1×10⁻¹⁶/m；大地水准面不确定度 30–50 cm → 钟频率比较不确定度 ~3×10⁻¹⁷；固体潮引起 20 cm 起伏 → ~2×10⁻¹⁷。 核心哲学洞察：引力不是扰动钟的工作，而是改变时间本身。 在 10⁻¹⁷–10⁻¹⁸ 精度水平，全球分布式时钟比较如同比较散落海洋中各艘小船上 的摆钟——各有各的时间，无一可声称自己为"真时间"。
 entities:
   - id: ent.utc_leap_seconds
     name: "UTC 闰秒机制（协调世界时的闰秒插入管理）"

@@ -1,24 +1,22 @@
+# Leibrandt 2013 — Cavity-stabilized laser with acceleration sensitivity below 10^-12 g^-1 [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: H5MYBTXH
   topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: Cavity-stabilized laser with acceleration sensitivity below 10^-12 g^-1
+  title: "Cavity-stabilized laser with acceleration sensitivity below 10^-12 g^-1"
   year: 2013
-  first_author: Leibrandt
-  authors:
-  - David R. Leibrandt
-  - James C. Bergquist
-  - Till Rosenband
-  journal: Physical Review A
+  first_author: "Leibrandt"
+  authors: ["David R. Leibrandt", "James C. Bergquist", "Till Rosenband"]
+  journal: "Physical Review A"
   volume: 87
   pages: 023829
   doi: 10.1103/PhysRevA.87.023829
-  note: '1070 nm 腔稳激光器，球形 ULE 间隔体（Ø50 mm）配熔融石英镜。 被动加速度灵敏度 2×10⁻¹¹ g⁻¹，经六轴惯性力（线性加速度、转动加速度、转动角速度）
-    实时前馈降低 50 倍至 <10⁻¹² g⁻¹；温度前馈降低频率漂移 70 倍。 Allan 偏差 2×10⁻¹⁵（0.5–10 s）。
-
-    '
+  note: >
+    1070 nm 腔稳激光器，球形 ULE 间隔体（Ø50 mm）配熔融石英镜。 被动加速度灵敏度 2×10⁻¹¹ g⁻¹，经六轴惯性力（线性加速度、转动加速度、转动角速度） 实时前馈降低 50 倍至 <10⁻¹² g⁻¹；温度前馈降低频率漂移 70 倍。 Allan 偏差 2×10⁻¹⁵（0.5–10 s）。
 entities:
 - id: ent.spherical_ule_cavity_l13b
   name: 球形 ULE 腔（Leibrandt 2013b）

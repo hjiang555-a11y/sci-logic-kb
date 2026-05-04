@@ -1,39 +1,21 @@
-# Dimarcq 2024 — 秒定义重定义路线图 [时间标尺专题框架文档]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-16
-# Schema版本：v4.0
-# 专题：timescales
-# contribution_type: framework — 此文件为 timescales 专题的顶层架构定义文档
-#   定义：顶层实体 ent.si_second_definition（权威来源）、核心原理（重定义标准、次级表示机制）。
-#   跨专题接口：timescales CONDITIONED-BY 光钟（CONDITIONED-BY 超稳激光）。
-#   ent.optical_frequency_standard：跨专题引用，定义于 topics/frequency-standards/papers/fortier2026.yaml。
-
+# Dimarcq 2024 — Roadmap towards the redefinition of the second [framework]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "SDG6KXNZ"
+  zotero_key: SDG6KXNZ
   topic: timescales
   source_type: review
   contribution_type: framework
   reliability: high
   title: "Roadmap towards the redefinition of the second"
   year: 2024
-  first_author: Dimarcq
+  first_author: "Dimarcq"
   journal: "Metrologia"
   volume: 61
-  pages: "012001"
-  doi: "10.1088/1681-7575/ad17d2"
+  pages: 012001
+  doi: 10.1088/1681-7575/ad17d2
   note: >
-    [综述/路线图] timescales 专题框架文档。
-    CCTF（国际时间频率咨询委员会）官方路线图，系统阐述 SI 秒重定义的条件、标准和时间表。
-    定义：顶层实体 ent.si_second_definition（Level 0，权威来源）；
-    原理 pri.redefinition_criteria_second（15 条强制性标准）、pri.secondary_representation_si_second。
-    不负责具体光钟技术参数（参见 frequency-standards 专题）。
-    跨专题关键接口：ent.si_second_definition CONDITIONED-BY ent.optical_frequency_standard
-    （定义于 topics/frequency-standards/papers/fortier2026.yaml）。
-
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
+    [综述/路线图] timescales 专题框架文档。 CCTF（国际时间频率咨询委员会）官方路线图，系统阐述 SI 秒重定义的条件、标准和时间表。 定义：顶层实体 ent.si_second_definition（Level 0，权威来源）； 原理 pri.redefinition_criteria_second（15 条强制性标准）、pri.secondary_representation_si_second。 不负责具体光钟技术参数（参见 frequency-standards 专题）。 跨专题关键接口：ent.si_second_definition CONDITIONED-BY ent.optical_frequency_standard （定义于 topics/frequency-standards/papers/fortier2026.yaml）。
 entities:
   # ── 框架型实体节点 ─────────────────────────────────────────────────────────
   # ent.si_second_definition：本文件权威定义（timescales 专题顶层）

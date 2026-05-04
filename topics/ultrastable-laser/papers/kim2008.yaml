@@ -1,20 +1,21 @@
+# Kim 2008 — Drift-free femtosecond timing synchronization of remote optical and microwave... [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: H5YVF5AR
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
-  title: Drift-free femtosecond timing synchronization of remote optical and microwave
-    sources
+  title: "Drift-free femtosecond timing synchronization of remote optical and microwave sources"
   year: 2008
-  first_author: Kim
-  journal: Nature Photonics
+  first_author: "Kim"
+  journal: "Nature Photonics"
   volume: 2
   pages: 733-736
   doi: 10.1038/nphoton.2008.225
-  note: '首次系统演示基于锁模激光光脉冲列的远程时序网络：通过定时稳定光纤链路分发主时钟， 并在远端分别实现光-光与光-微波同步，在超过 10 h 的时间内保持亚
-    10 fs 漂移自由精度。 核心贡献：把传统“光电探测 + 微波混频”方案替换为平衡光学互相关与 BOM-PD， 解决长期热漂移与幅度-相位转换问题。
-
-    '
+  note: >
+    首次系统演示基于锁模激光光脉冲列的远程时序网络：通过定时稳定光纤链路分发主时钟， 并在远端分别实现光-光与光-微波同步，在超过 10 h 的时间内保持亚 10 fs 漂移自由精度。 核心贡献：把传统“光电探测 + 微波混频”方案替换为平衡光学互相关与 BOM-PD， 解决长期热漂移与幅度-相位转换问题。
 entities:
 - id: ent.remote_timing_synchronization_network
   name: 远程飞秒时序同步网络

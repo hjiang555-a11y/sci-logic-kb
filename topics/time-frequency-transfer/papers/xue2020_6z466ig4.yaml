@@ -1,34 +1,20 @@
-# Xue 2020 — Microwave frequency transfer over 112-km urban fiber link via electronic phase compensation [evidence]
-# 提取者：GitHub Copilot（AI 草稿，待专家确认）
-# 提取日期：2026-04-23
-# Schema版本：v4.5
-# 专题：time-frequency-transfer
-# contribution_type: evidence
-
+# Xue 2020 — Microwave frequency transfer over a 112-km urban fiber link based on electron... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "6z466ig4"
+  zotero_key: 6z466ig4
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
   reliability: medium
   title: "Microwave frequency transfer over a 112-km urban fiber link based on electronic phase compensation"
   year: 2020
-  first_author: Xue
-  authors:
-  - "W. X. Xue"
-  - "W. Y. Zhao"
-  - "H. L. Quan"
-  - "C. C. Zhao"
-  - "Y. Xing"
-  - "H. F. Jiang"
-  - "S. G. Zhang"
+  first_author: "Xue"
+  authors: ["W. X. Xue", "W. Y. Zhao", "H. L. Quan", "C. C. Zhao", "Y. Xing", "H. F. Jiang", "S. G. Zhang"]
   journal: "Chin. Phys. B"
-  doi: "10.1088/1674-1056/ab84d6"
+  doi: 10.1088/1674-1056/ab84d6
   note: >
-    [期刊论文] NTSC Xi'an. 112 km 城市场部署光纤链路上 RF-over-fiber 频率传递，
-    在本地端用电子移相补偿链路相位漂移（"electronic phase compensation"），
-    简化系统架构。代表中国 NTSC 团队 urban-fiber RF 传递工程路线。
-
+    [期刊论文] NTSC Xi'an. 112 km 城市场部署光纤链路上 RF-over-fiber 频率传递， 在本地端用电子移相补偿链路相位漂移（"electronic phase compensation"）， 简化系统架构。代表中国 NTSC 团队 urban-fiber RF 传递工程路线。
 entities:
   - id: ent.ntsc_112km_urban_rf_link_x20
     name: "NTSC 112 km 城市 RF-over-fiber 链路（Xue 2020）"

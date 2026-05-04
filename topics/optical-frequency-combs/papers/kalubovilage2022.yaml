@@ -1,30 +1,21 @@
-# Kalubovilage 2022 — 自由运行单片锁模激光梳 X 波段光生微波，相噪 <-180 dBc/Hz
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical
-
+# Kalubovilage 2022 — X-Band photonic microwaves with phase noise below −180 dBc/Hz using a free-ru... [technical]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "3VF89TBF"
+  zotero_key: 3VF89TBF
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical
   reliability: high
   title: "X-Band photonic microwaves with phase noise below −180 dBc/Hz using a free-running monolithic comb"
   year: 2022
-  first_author: Kalubovilage
+  first_author: "Kalubovilage"
   journal: "Optics Express"
   volume: 30
-  issue: 7
-  pages: "11266-11280"
-  doi: "10.1364/OE.455308"
+  pages: 11266-11280
+  doi: 10.1364/OE.455308
   note: >
-    [技术论文] Colorado（Schibli 组）+ Tokyo。自由运行单片锁模激光器（CaF₂ 腔 + GTI 镀层 +
-    直接贴附增益介质）产生 8 GHz 光生微波；配合低温冷却 RF 功分器消除热噪声，
-    整体相位噪声本底 < −180 dBc/Hz（1 MHz 偏移以下），无需超稳腔、无需外部锁定。
-    展示自由运行低噪声梳作为 OFD 系统的紧凑替代方案。
-
+    [技术论文] Colorado（Schibli 组）+ Tokyo。自由运行单片锁模激光器（CaF₂ 腔 + GTI 镀层 + 直接贴附增益介质）产生 8 GHz 光生微波；配合低温冷却 RF 功分器消除热噪声， 整体相位噪声本底 < −180 dBc/Hz（1 MHz 偏移以下），无需超稳腔、无需外部锁定。 展示自由运行低噪声梳作为 OFD 系统的紧凑替代方案。
 entities:
   - id: ent.monolithic_modelocked_laser_comb_k22
     name: "单片锁模激光光频梳（Kalubovilage 2022，8 GHz X 波段光微波源）"

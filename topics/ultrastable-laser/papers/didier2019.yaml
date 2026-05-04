@@ -1,21 +1,21 @@
+# Didier 2019 — 946-nm Nd:YAG digital-locked laser at 1.1×10⁻¹⁶ in 1 s and transfer-locked to... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
   zotero_key: MIAVJSIK
+  topic: ultrastable-laser
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: 946-nm Nd:YAG digital-locked laser at 1.1×10⁻¹⁶ in 1 s and transfer-locked
-    to a cryogenic silicon cavity
+  title: "946-nm Nd:YAG digital-locked laser at 1.1×10⁻¹⁶ in 1 s and transfer-locked to a cryogenic silicon cavity"
   year: 2019
-  first_author: Didier
-  journal: Optics Letters
+  first_author: "Didier"
+  journal: "Optics Letters"
   volume: 44
-  issue: 7
   pages: 1781-1784
   doi: 10.1364/OL.44.001781
-  note: '946 nm Nd:YAG 超稳激光，预稳定至 30 cm ULE 腔达 1.1×10⁻¹⁶ @ 1s， 通过光频梳传递锁定至低温硅腔（4×10⁻¹⁷）获得更低不稳定度。
-    全数字 FPGA 伺服取代模拟电子学。用于 In⁺ 多离子钟。 核心贡献：数字 PDH 锁频 + 跨腔传递锁定方案。
-
-    '
+  note: >
+    946 nm Nd:YAG 超稳激光，预稳定至 30 cm ULE 腔达 1.1×10⁻¹⁶ @ 1s， 通过光频梳传递锁定至低温硅腔（4×10⁻¹⁷）获得更低不稳定度。 全数字 FPGA 伺服取代模拟电子学。用于 In⁺ 多离子钟。 核心贡献：数字 PDH 锁频 + 跨腔传递锁定方案。
 entities:
 - id: ent.ndyag_946nm_laser_d19
   name: 946 nm Nd:YAG 数字锁定超稳激光

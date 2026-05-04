@@ -1,23 +1,8 @@
-# Metcalf 2019 — 30 GHz EO + SiN 纳米光子超连续天文梳首次在 10 m HET 上支持 NIR M 型矮星 RV 光谱 [应用技术里程碑]
-# 提取者：GitHub Copilot（AI草稿，待专家确认）
-# 提取日期：2026-04-19
-# Schema版本：v4.1
-# 专题：optical-frequency-combs
-# contribution_type: technical — 天文光梳/系外行星 RV 测量应用论文
-#   核心贡献：
-#     (1) 首次实现覆盖 700–1600 nm、30 GHz 齿距的 EO + 纳米光子 SiN 天文梳；
-#     (2) 在 10 m Hobby–Eberly 望远镜 + HPF 光谱仪上运行数月，实现 NIR 首个 ~1 m/s 级 RV 精度
-#         （Barnard 星 3 个月 RMS 1.53 m/s）；
-#     (3) 差分仪器稳定度达到 <10 cm/s（300 min 平均 ~6 cm/s），接近光子噪声极限；
-#     (4) 工程路径：EO 电光调制 → 30 GHz FP 滤波 → Yb 光纤放大 → 70 fs 压缩 → 25 mm SiN 波导
-#         低功率（525 mW）展宽 + 静/动态幅度滤波整形 + GPS-disciplined 时钟溯源到 SI 秒。
-#   Framework 依赖：udem2002.yaml / giunta2019.yaml 已定义 ent.optical_frequency_comb、
-#     pri.femtosecond_comb_frequency_ruler；ycas2012.yaml / leopardi2017.yaml 已分别提供
-#     ent.near_ir_astro_comb_y12 与 meth.astro_comb_rv_calibration。本文件是 NIR + EO + 纳米光子
-#     一体化方案的首次天文部署实例。
-
+# Metcalf 2019 — Stellar spectroscopy in the near-infrared with a laser frequency comb [technical]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "9YYDT9H4"
+  zotero_key: 9YYDT9H4
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical
@@ -27,26 +12,10 @@ meta:
   first_author: "Metcalf"
   journal: "Optica"
   volume: 6
-  issue: 2
-  pages: "233-239"
-  doi: "10.1364/OPTICA.6.000233"
+  pages: 233-239
+  doi: 10.1364/OPTICA.6.000233
   note: >
-    [应用技术里程碑] NIST（Diddams/Papp/Quinlan/Carlson/Hickstein 等）+ Penn State
-    （Mahadevan/Halverson/Ramsey/Wright 等）+ UT Austin McDonald + Macquarie 等合作。
-    在 McDonald 天文台 10 m HET 搭载自制 30 GHz EO+SiN 天文梳 + 低温真空 HPF 交叉色散
-    echelle 光谱仪（R≈53000，28 阶，810–1280 nm），2018-05 起自动长期运行。
-    梳溯源至 GPS 驯服时钟，1 s 分数稳定度 2×10⁻¹¹，>1 day <3×10⁻¹³；
-    Barnard 星 3 个月 RV 散布 RMS 1.53 m/s（5 min 原始 2.83 m/s），
-    仪器差分漂移 10 min 20 cm/s、300 min bin 6 cm/s。
-    跨文件节点引用：ent.optical_frequency_comb 定义于 udem2002.yaml；
-    ent.electro_optic_frequency_comb 与 meth.astro_comb_rv_calibration 分别位于专题顶层与
-    ycas2012.yaml；pri.self_referencing_f2f 在此论文中未启用（梳直接锁到微波，
-    无需 f-2f 自参考）。
-
-# ═══════════════════════════════════════════════
-#  NODES（节点）
-# ═══════════════════════════════════════════════
-
+    [应用技术里程碑] NIST（Diddams/Papp/Quinlan/Carlson/Hickstein 等）+ Penn State （Mahadevan/Halverson/Ramsey/Wright 等）+ UT Austin McDonald + Macquarie 等合作。 在 McDonald 天文台 10 m HET 搭载自制 30 GHz EO+SiN 天文梳 + 低温真空 HPF 交叉色散 echelle 光谱仪（R≈53000，28 阶，810–1280 nm），2018-05 起自动长期运行。 梳溯源至 GPS 驯服时钟，1 s 分数稳定度 2×10⁻¹¹，>1 day <3×10⁻¹³； Barnard 星 3 个月 RV 散布 RMS 1.53 m/s（5 min 原始 2.83 m/s）， 仪器差分漂移 10 min 20 cm/s、300 min bin 6 cm/s。 跨文件节点引用：ent.optical_frequency_comb 定义于 udem2002.yaml； ent.electro_optic_frequency_comb 与 meth.astro_comb_rv_calibration 分别位于专题顶层与 ycas2012.yaml；pri.self_referencing_f2f 在此论文中未启用（梳直接锁到微波， 无需 f-2f 自参考）。
 entities:
   - id: ent.hpf_nir_astrocomb_m19
     name: "HPF 30 GHz EO + 纳米光子 NIR 天文梳（Metcalf 2019 系统）"

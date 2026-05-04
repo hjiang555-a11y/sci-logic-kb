@@ -1,33 +1,21 @@
-# Marra 2012 — 3×10⁻¹⁸ 精度光频梳光纤传递（NPL首次）
-# 提取者：GitHub Copilot（AI草稿，2026-04-22）
-# 提取日期：2026-04-22
-# Schema版本：v4.3
-# 专题：optical-frequency-combs
-# contribution_type: breakthrough（首次实现光频梳结构经 km 级光纤传递达 <3×10⁻¹⁸ 精度，开创光频梳传递新范式）
-
+# Marra 2012 — Dissemination of an optical frequency comb over fiber with 3×10⁻¹⁸ fractional... [breakthrough]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "P7A5Z647"
+  zotero_key: P7A5Z647
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: breakthrough
   reliability: high
   title: "Dissemination of an optical frequency comb over fiber with 3×10⁻¹⁸ fractional accuracy"
   year: 2012
-  first_author: Marra
+  first_author: "Marra"
   journal: "Optics Express"
   volume: 20
-  issue: 2
-  pages: "1775-1782"
-  doi: "10.1364/OE.20.001775"
+  pages: 1775-1782
+  doi: 10.1364/OE.20.001775
   note: >
-    [技术论文 / 突破] NPL (National Physical Laboratory, UK) + Southampton。首次演示整体光频梳结构
-    （所有梳齿频率关系完整保留）通过 km 级光纤传递并达到与超稳激光频率传递同等精度（3×10⁻¹⁸ @ 1000s）：
-    (1) 光学相位探测 + AOM/光纤拉伸主动噪声抵消，稳定光纤链路光程；
-    (2) 光学模式稳定度 2×10⁻¹⁸ @ 数千秒，模间距（f_rep）经光电转换后稳定度 4×10⁻¹⁷；
-    (3) 超越先前单 CW 激光光纤传递记录（10⁻¹⁹），开创"梳整体传递"范式——为远程光钟比对、天文仪器校准奠定基础。
-    档位判定：刷新 B-FreqSyn 主线"σ_y 链路传递残差 + 传递距离"双重指标（首次<3×10⁻¹⁸ comb full transfer），
-    归 breakthrough。对齐 v2 子域主线：B-FreqSyn。
-
+    [技术论文 / 突破] NPL (National Physical Laboratory, UK) + Southampton。首次演示整体光频梳结构 （所有梳齿频率关系完整保留）通过 km 级光纤传递并达到与超稳激光频率传递同等精度（3×10⁻¹⁸ @ 1000s）： (1) 光学相位探测 + AOM/光纤拉伸主动噪声抵消，稳定光纤链路光程； (2) 光学模式稳定度 2×10⁻¹⁸ @ 数千秒，模间距（f_rep）经光电转换后稳定度 4×10⁻¹⁷； (3) 超越先前单 CW 激光光纤传递记录（10⁻¹⁹），开创"梳整体传递"范式——为远程光钟比对、天文仪器校准奠定基础。 档位判定：刷新 B-FreqSyn 主线"σ_y 链路传递残差 + 传递距离"双重指标（首次<3×10⁻¹⁸ comb full transfer）， 归 breakthrough。对齐 v2 子域主线：B-FreqSyn。
 entities:
   - id: ent.npl_fiber_comb_transfer_system_m12
     name: "NPL 光频梳结构光纤传递系统（Marra 2012）"

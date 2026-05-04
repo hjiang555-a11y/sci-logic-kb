@@ -1,30 +1,22 @@
-# Bowden 2019 — Pyramid MOT with integrated optical cavities for cold atom optical clock [evidence]
-# 提取者：Claude Code（AI 草稿，待专家确认）
-# 提取日期：2026-05-03
-# Schema版本：v4.5
-# 专题：frequency-standards（冷原子平台 — 集成光腔金字塔 MOT）
-# contribution_type: evidence — 开发用于光晶格钟的紧凑型金字塔 MOT；
-#   集成光学腔增强冷原子装载效率。
-
+# Bowden 2019 — A pyramid MOT with integrated optical cavities as a cold atom platform for an... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
 meta:
-  zotero_key: "s41598-019-48168-3"
+  zotero_key: s41598-019-48168-3
   topic: frequency-standards
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
   title: "A pyramid MOT with integrated optical cavities as a cold atom platform for an optical lattice clock"
   year: 2019
-  first_author: Bowden
+  first_author: "Bowden"
   authors: ["William Bowden", "Richard Hobson", "Ian R. Hill", "Alvise Vianello", "Marco Schioppo", "Alissa Silva", "Helen S. Margolis", "Patrick Gill"]
   journal: "Scientific Reports"
   volume: 9
-  pages: "11704"
-  doi: "10.1038/s41598-019-48168-3"
+  pages: 11704
+  doi: 10.1038/s41598-019-48168-3
   note: >
-    NPL 团队开发紧凑型金字塔 MOT（磁光阱）用于光晶格钟的
-    冷原子制备。集成光学腔增强 MOT 光束利用效率，
-    减小系统尺寸和功耗——面向可搬运光钟的工程化需求。
-
+    NPL 团队开发紧凑型金字塔 MOT（磁光阱）用于光晶格钟的 冷原子制备。集成光学腔增强 MOT 光束利用效率， 减小系统尺寸和功耗——面向可搬运光钟的工程化需求。
 entities:
   - id: ent.bowden2019_pyramid_mot_optical_clock
     name: "Bowden 2019 集成光腔金字塔 MOT 光钟平台（NPL）"
