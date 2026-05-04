@@ -44,7 +44,7 @@ entities:
 relations:
   - id: rel.kazakov2012_01
     subject: ent.kazakov2012_th_nuclear_clock_theory
-    predicate: APPRAISES
+    predicate: CHARACTERIZES
     object: pri.th229_ion_nuclear_clock_scheme
     confidence: established
     source:

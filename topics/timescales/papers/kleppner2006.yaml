@@ -294,7 +294,7 @@ relations:
 
   - id: rel.kleppner_2006_02
     subject: pri.gravitational_blueshift_clock_rate
-    predicate: CONSTRAINED-BY
+    predicate: BOUNDED-BY
     object: ent.geoid
     confidence: established
     source:
@@ -318,7 +318,7 @@ relations:
 
   - id: rel.kleppner_2006_03
     subject: pri.gravitational_blueshift_clock_rate
-    predicate: SUBSUMED-BY
+    predicate: PART-OF
     object: pri.time_entangled_with_gravity
     confidence: established
     source:
@@ -337,7 +337,7 @@ relations:
 
   - id: rel.kleppner_2006_04
     subject: ent.utc_leap_seconds
-    predicate: REALIZED-BY
+    predicate: REALIZES
     object: meth.gps_satellite_clock_comparison
     confidence: established
     source:

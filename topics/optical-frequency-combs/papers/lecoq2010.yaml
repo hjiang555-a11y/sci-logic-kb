@@ -134,7 +134,7 @@ relations:
 
   - id: rel.le_coq_2010_03
     subject: ent.er_fiber_ofd_lecoq2010
-    predicate: USES-METHOD
+    predicate: IMPLEMENTS
     object: pri.two_comb_microwave_comparison
     confidence: established
     source:

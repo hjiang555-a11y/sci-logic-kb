@@ -112,7 +112,7 @@ relations:
 
   - id: rel.nicolodi_2014_02
     subject: meth.intra_cavity_eom_phase_lock
-    predicate: ENABLES
+    predicate: ENABLED-BY
     object: met.spectral_purity_transfer_degradation_nicolodi2014
     confidence: established
     source:

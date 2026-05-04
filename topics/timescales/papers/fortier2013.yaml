@@ -341,7 +341,7 @@ metrics:
 relations:
   - id: rel.fortier_2013_01
     subject: ent.mutc_photonic_microwave_generator
-    predicate: REALIZED-BY
+    predicate: REALIZES
     object: meth.mutc_pd_photonic_microwave_generation
     confidence: established
     source:
@@ -361,7 +361,7 @@ relations:
 
   - id: rel.fortier_2013_02
     subject: pri.ofd_transfers_optical_stability_to_microwave
-    predicate: UNDERLIES
+    predicate: ENABLED-BY
     object: ent.mutc_photonic_microwave_generator
     confidence: established
     source:
@@ -419,7 +419,7 @@ relations:
 
   - id: rel.fortier_2013_05
     subject: pri.mutc_structure_suppresses_space_charge
-    predicate: MITIGATES
+    predicate: BOUNDED-BY
     object: pri.am_pm_conversion_couples_rin_to_phase_noise
     confidence: established
     source:
@@ -441,7 +441,7 @@ relations:
 
   - id: rel.fortier_2013_06
     subject: pri.am_pm_conversion_couples_rin_to_phase_noise
-    predicate: DEMONSTRATED-BY
+    predicate: DEMONSTRATES
     object: met.mutc_am_pm_coefficient
     confidence: established
     source:

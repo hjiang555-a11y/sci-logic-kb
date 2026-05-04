@@ -43,7 +43,7 @@ entities:
 relations:
   - id: rel.beloy2020_01
     subject: ent.beloy2020_ba4_optical_clock_candidate
-    predicate: APPRAISES
+    predicate: CHARACTERIZES
     object: pri.highly_charged_ion_optical_clock
     confidence: established
     source:

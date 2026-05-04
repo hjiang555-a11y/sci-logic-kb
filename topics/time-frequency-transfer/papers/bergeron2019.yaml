@@ -140,7 +140,7 @@ relations:
 
   - id: rel.bergeron2019_04
     subject: meth.motion_resilient_otwtft
-    predicate: IMPROVES-ON
+    predicate: DERIVED-FROM
     object: meth.dual_comb_otwtft_over_free_space
     confidence: established
     source:

@@ -104,7 +104,7 @@ relations:
   file: /data/sci-logic-kb/topics/ultrastable-laser/papers/grote2016.yaml
 - id: rel.grote_2016_R16_02
   subject: pri.high_power_low_noise_photodetector_design_g16
-  predicate: ENABLES
+  predicate: ENABLED-BY
   object: ent.gw_photodetector_g16
   confidence: established
   source:

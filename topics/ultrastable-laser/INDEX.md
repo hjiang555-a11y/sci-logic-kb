@@ -2,7 +2,7 @@
 
 # Ultrastable Laser — Topic Index
 
-> Auto-generated 2026-05-03 13:23 UTC · 91 papers · 395 nodes · 396 relations
+> Auto-generated 2026-05-04 03:47 UTC · 91 papers · 395 nodes · 396 relations
 
 ## Entities
 
@@ -454,11 +454,19 @@
 
 - **Source**: argence2012
 
+### `rel.bridge_brownian_thermal_noise_fdt_cryogenic_silicon_stabilization`: `pri.brownian_thermal_noise_fdt` → `meth.cryogenic_silicon_stabilization`
+
+- **Source**: robinson2019
+
 ### `rel.bridge_coat_01`: `ent.mirror_coating` → `pri.brownian_thermal_noise_fdt`
 
 - **Source**: cole2013
 - **Breakthrough paths**:
   - `pri.crystalline_coating_low_brownian_noise` — status: demonstrated · gain: AlGaAs 晶体镀层替换传统 IBS 镀层，机械损耗角降低 ≥10×，镀层热噪声贡献同比例下降
+
+### `rel.bridge_coat_02`: `pri.brownian_thermal_noise_fdt` → `meth.crystalline_coating_deposition`
+
+- **Source**: cole2013
 
 ### `rel.bridge_cryo_01`: `ent.fp_cavity_system` → `pri.brownian_thermal_noise_fdt`
 
@@ -580,6 +588,10 @@
 - **Source**: li2019
 
 ### `rel.logic_bridge_01`: `ent.fp_cavity_system` → `pri.brownian_thermal_noise_fdt`
+
+- **Source**: logic_bridge_poc
+
+### `rel.logic_bridge_02`: `pri.brownian_thermal_noise_fdt` → `meth.cryogenic_silicon_stabilization`
 
 - **Source**: logic_bridge_poc
 

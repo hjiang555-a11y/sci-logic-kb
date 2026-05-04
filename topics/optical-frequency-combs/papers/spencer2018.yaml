@@ -163,7 +163,7 @@ relations:
 
   - id: rel.spencer_2018_02
     subject: ent.integrated_ofc_synthesizer_spencer2018
-    predicate: USES-METHOD
+    predicate: IMPLEMENTS
     object: meth.dual_dks_synthesizer
     confidence: established
     source:
@@ -174,7 +174,7 @@ relations:
 
   - id: rel.spencer_2018_03
     subject: ent.sin_thz_kerr_comb
-    predicate: ENABLES
+    predicate: ENABLED-BY
     object: pri.self_referencing_f2f
     confidence: established
     note: "跨文件引用 pri.self_referencing_f2f，定义于 topics/optical-frequency-combs/papers/giunta2019.yaml 等"

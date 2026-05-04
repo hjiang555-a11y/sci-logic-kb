@@ -214,7 +214,7 @@ relations:
 
   - id: rel.chiodo2013_03
     subject: pri.laser_stability_requirement_from_atmospheric_turbulence
-    predicate: APPLIED-TO
+    predicate: CONDITIONED-BY
     object: ent.chiodo2013_laser_system
     confidence: established
     source:

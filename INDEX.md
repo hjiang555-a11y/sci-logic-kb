@@ -2,7 +2,7 @@
 
 # 📚 sci-logic-kb — Knowledge Base Index
 
-> Auto-generated 2026-05-03 13:23 UTC
+> Auto-generated 2026-05-04 03:47 UTC
 
 ## 🧭 按研究问题导航
 
@@ -52,6 +52,7 @@
 | Subject | → | Limiting Principle | Topic | Source |
 |---------|---|-------------------|-------|--------|
 | `ent.cavity_enhanced_yb_comb_h07` | BOUNDED-BY | `pri.mirror_damage_threshold_limit` | Optical Frequency Combs | hartl2007 |
+| `ent.cc_mutc_pd_pulsed_microwave_source` | BOUNDED-BY | `pri.pulsed_illumination_mitigates_thermal_limit` | Timescales | peng2020 |
 | `ent.cedcs_cold_molecule_system_s16` | BOUNDED-BY | `pri.buffer_gas_cooling_spectral_simplification_s16` | Optical Frequency Combs | spaun2016 |
 | `ent.cesium_fountain_standard_clairon1995` | BOUNDED-BY | `pri.cold_collisional_shift_cesium` | Frequency Standards | clairon1995 |
 | `ent.co2_machined_microrod_comb_p13b` | BOUNDED-BY | `pri.mechanical_microrod_frep_control_p13b` | Optical Frequency Combs | papp2013b |
@@ -70,5 +71,4 @@
 | `ent.fiber_interferometer` | BOUNDED-BY | `pri.hollow_core_fiber_thermal_noise` | Ultrastable Laser | michaudbelleau2022 |
 | `ent.fp_cavity_system` | BOUNDED-BY | `pri.brownian_thermal_noise_fdt` | Ultrastable Laser | cole2013 |
 | `ent.fp_cavity_system` | BOUNDED-BY | `pri.brownian_thermal_noise_fdt` | Ultrastable Laser | hafner2015 |
-| `ent.fp_cavity_system` | BOUNDED-BY | `pri.brownian_thermal_noise_fdt` | Ultrastable Laser | legero2010 |
 

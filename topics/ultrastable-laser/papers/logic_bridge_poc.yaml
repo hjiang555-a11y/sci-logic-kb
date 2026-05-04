@@ -1,0 +1,39 @@
+entities:
+- id: ent.cryogenic_silicon_cavity
+  name: 低温单晶硅参考腔
+  hierarchy_level: 1
+  status: demonstrated
+  function: 在 4K-124K 环境下提供极低热噪声的频率参考
+methods:
+- id: meth.cryogenic_silicon_stabilization
+  name: 低温单晶硅稳频法
+  status: demonstrated
+  applies_to: ent.cryogenic_silicon_cavity
+  steps_summary: Si-crystal spacer -> Cool to 4K/124K -> High-Q mirroring -> Lock
+    laser
+metrics:
+- id: met.allan_deviation_cryo
+  name: 低温硅腔分数频率不稳定度
+  unit: 无量纲
+  description: 低温硅腔在热噪声极限下的 Allan 偏差
+  demonstrated_value:
+    value: '6.5e-17'
+    conditions: 4K, 6cm cavity, Robinson 2019
+    verification_status: observed
+    confidence: established
+relations:
+- id: rel.logic_bridge_01
+  subject: ent.fp_cavity_system
+  predicate: BOUNDED-BY
+  object: pri.brownian_thermal_noise_fdt
+  confidence: established
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/logic_bridge_poc.yaml
+- id: rel.logic_bridge_02
+  subject: pri.brownian_thermal_noise_fdt
+  predicate: BOUNDED-BY
+  object: meth.cryogenic_silicon_stabilization
+  confidence: established
+  source:
+    zotero_key: JIZCUZLY
+    claim: ' la-Cryo reduces thermal noise by orders of magnitude'
+  file: /data/sci-logic-kb/topics/ultrastable-laser/papers/logic_bridge_poc.yaml

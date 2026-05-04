@@ -179,7 +179,7 @@ relations:
 
   - id: rel.predehl2012_04
     subject: pri.bidirectional_edfa_amplified_long_haul_fiber
-    predicate: ENABLES
+    predicate: ENABLED-BY
     object: meth.antiparallel_fiber_frequency_dissemination
     confidence: established
     source:

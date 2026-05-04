@@ -221,9 +221,9 @@ relations:
       claim: a reduction in the coating loss angle by at least one order of magnitude relative to conventional silica/tantala mirrors
 - id: rel.bridge_coat_02
   subject: pri.brownian_thermal_noise_fdt
-  predicate: RESOLVED-BY
+  predicate: BOUNDED-BY
   object: meth.crystalline_coating_deposition
 - id: rel.bridge_coat_03
   subject: meth.crystalline_coating_deposition
-  predicate: PRODUCES
+  predicate: ENABLED-BY
   object: met.algaas_coating_loss_angle_c13

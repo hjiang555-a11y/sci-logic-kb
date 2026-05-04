@@ -130,7 +130,7 @@ relations:
   file: /data/sci-logic-kb/topics/ultrastable-laser/papers/shen2022.yaml
 - id: rel.shen_2022_h03
   subject: ent.freespace_tf_link_113km_sh22
-  predicate: DEPENDS-ON
+  predicate: ENABLED-BY
   object: meth.pdh_locking
   confidence: established
   source:

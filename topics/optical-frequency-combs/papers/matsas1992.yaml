@@ -1,0 +1,124 @@
+---
+paper_id: matsas1992
+title: "Selfstarting passively mode-locked fibre ring soliton laser exploiting nonlinear polarisation rotation"
+authors: [V. J. Matsas, T. P. Newson, D. J. Richardson, D. N. Payne]
+year: 1992
+journal: "Electronics Letters"
+volume: 28
+issue: 15
+pages: "1391-1393"
+doi: null
+contribution_type: breakthrough
+abstract: >-
+  Nonlinear birefringence effects in a fibre ring laser cavity have been exploited
+  to produce selfstarting, passive modelocking to give 1.5 ps soliton pulses.
+  The study demonstrates a self-starting passively mode-locked erbium-doped fibre laser (EDFL)
+  using nonlinear polarisation rotation (NPR) in a multibeatlength regime to generate
+  fundamental solitons.
+
+entities:
+  - id: ent.edfl_ring_laser
+    name: "Erbium-doped fibre laser in a ring configuration"
+    hierarchy_level: 1
+    status: demonstrated
+    function: "Produces soliton pulses via nonlinear polarisation rotation"
+  - id: ent.nonlinear_polarisation_rotation
+    name: "Nonlinear birefringence effects used for passive modelocking"
+    hierarchy_level: 1
+    status: demonstrated
+    function: "Passive mode-locking mechanism based on NPR"
+  - id: ent.soliton_pulse
+    name: "Fundamental soliton pulses with 1.55 um wavelength"
+    hierarchy_level: 2
+    status: demonstrated
+    function: "Short pulse output"
+  - id: ent.low_bi_spun_fibre
+    name: "Passive low-birefringence spun fibre used in the cavity"
+    hierarchy_level: 2
+    status: demonstrated
+    function: "Reduces polarization mode dispersion"
+  - id: ent.polarisation_controller
+    name: "PCs used to control the polarisation state and system loss"
+    hierarchy_level: 2
+    status: demonstrated
+    function: "Adjusts input polarization for NPR"
+
+principles:
+  - id: pri.nonlinear_birefringence_modelocking
+    name: "Using nonlinear birefringence to initiate and sustain passive mode-locking"
+    tier: domain
+    verification_status: observed
+    statement: "Nonlinear birefringence effects in a fibre ring laser cavity can be exploited to produce self-starting, passive mode-locking."
+  - id: pri.soliton_generation_in_fibre
+    name: "Formation of fundamental solitons in the anomalous dispersion regime of an EDFL"
+    tier: domain
+    verification_status: observed
+    statement: "Fundamental solitons are generated in the anomalous dispersion regime of the fiber."
+
+methods:
+  - id: meth.passive_modelocking_via_npr
+    name: "Mode-locking achieved through nonlinear polarisation rotation and a polariser"
+    status: demonstrated
+    applies_to: ent.edfl_ring_laser
+    steps_summary: "EDFL ring cavity -> NPR via nonlinear birefringence -> Polarizer -> Soliton pulses"
+
+metrics:
+  - id: met.pulse_duration
+    name: "Pulse duration of the generated solitons"
+    unit: "ps"
+    description: "Pulse duration of the generated solitons"
+    demonstrated_value:
+      value: "1.55"
+      conditions: "EDFL ring laser with NPR"
+      verification_status: observed
+      confidence: established
+  - id: met.lasing_wavelength
+    name: "Lasing wavelength"
+    unit: "um"
+    description: "Lasing wavelength"
+    demonstrated_value:
+      value: "1.55"
+      conditions: "EDFL"
+      verification_status: observed
+      confidence: established
+  - id: met.intracavity_pulse_energy
+    name: "Intracavity pulse energy"
+    unit: "pJ"
+    description: "Intracavity pulse energy"
+    demonstrated_value:
+      value: "48"
+      conditions: "EDFL ring laser"
+      verification_status: observed
+      confidence: established
+
+relations:
+  - id: rel.matsas_1992_01
+    subject: meth.passive_modelocking_via_npr
+    predicate: DERIVED-FROM
+    object: pri.nonlinear_birefringence_modelocking
+    confidence: established
+  - id: rel.matsas_1992_02
+    subject: ent.edfl_ring_laser
+    predicate: IMPLEMENTS
+    object: meth.passive_modelocking_via_npr
+    confidence: established
+  - id: rel.matsas_1992_03
+    subject: meth.passive_modelocking_via_npr
+    predicate: ENABLED-BY
+    object: ent.soliton_pulse
+    confidence: established
+  - id: rel.matsas_1992_04
+    subject: ent.soliton_pulse
+    predicate: CHARACTERIZED-BY
+    object: met.pulse_duration
+    confidence: established
+  - id: rel.matsas_1992_05
+    subject: ent.edfl_ring_laser
+    predicate: ENABLED-BY
+    object: ent.low_bi_spun_fibre
+    confidence: established
+  - id: rel.matsas_1992_06
+    subject: ent.edfl_ring_laser
+    predicate: ENABLED-BY
+    object: ent.polarisation_controller
+    confidence: established

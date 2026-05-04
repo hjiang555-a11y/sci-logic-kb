@@ -385,7 +385,7 @@ relations:
 
   - id: rel.bize_2005_02
     subject: ent.cryogenic_sapphire_oscillator_uwa_2005
-    predicate: INTERROGATES
+    predicate: CHARACTERIZES
     object: ent.bnm_syrte_cs_rb_fountain_ensemble_2005
     confidence: established
     source: {zotero_key: "LZ01024172", claim: "the three fountains use the same CSO oscillator to synthesize the microwave signals probing the atomic transition"}
@@ -393,7 +393,7 @@ relations:
 
   - id: rel.bize_2005_03
     subject: pri.interrupted_adiabatic_passage_density_control
-    predicate: ENABLES
+    predicate: ENABLED-BY
     object: meth.interrupted_adiabatic_passage_density_ratio
     confidence: established
     source: {zotero_key: "LZ01024172", claim: "this method, the atom number is changed without affecting either the velocity or the position distributions"}
@@ -401,7 +401,7 @@ relations:
 
   - id: rel.bize_2005_04
     subject: meth.interrupted_adiabatic_passage_density_ratio
-    predicate: ENABLES
+    predicate: ENABLED-BY
     object: meth.fountain_real_time_differential_collision_shift
     confidence: established
     source: {zotero_key: "LZ01024172", claim: "we recently developed a new method based on interrupted adiabatic passage to select atoms... this method enables the collisional shift to be extrapolated to zero density with this accuracy"}
@@ -430,7 +430,7 @@ relations:
 
   - id: rel.bize_2005_08
     subject: ent.bnm_syrte_cs_rb_fountain_ensemble_2005
-    predicate: MEASURES
+    predicate: CHARACTERIZED-BY
     object: met.rb_cs_frequency_ratio_drift_2005
     confidence: established
     source: {zotero_key: "LZ01024172", claim: "A weighted linear fit to the data... determines how these measurements constrain a possible time variation of ν_Rb/ν_Cs"}
@@ -453,7 +453,7 @@ relations:
 
   - id: rel.bize_2005_11
     subject: pri.fountain_quantum_projection_noise_limit
-    predicate: MANIFESTS-AS
+    predicate: CHARACTERIZED-BY
     object: met.cs_fountain_best_short_term_stability_syrte_2005
     confidence: established
     source: {zotero_key: "LZ01024172", claim: "the fractional instabilities... are within ~20% of the standard quantum limit"}
@@ -461,7 +461,7 @@ relations:
 
   - id: rel.bize_2005_12
     subject: pri.hyperfine_frequency_sensitivity_fundamental_constants
-    predicate: ENABLES
+    predicate: ENABLED-BY
     object: meth.fundamental_constant_variation_rb_cs_ratio
     confidence: established
     source: {zotero_key: "LZ01024172", claim: "any measurement of the ratio between atomic frequencies can be interpreted as testing the stability of four dimensionless fundamental constants"}
@@ -469,7 +469,7 @@ relations:
 
   - id: rel.bize_2005_13
     subject: meth.fundamental_constant_variation_rb_cs_ratio
-    predicate: VALIDATES
+    predicate: DEMONSTRATES
     object: pri.hyperfine_frequency_sensitivity_fundamental_constants
     confidence: established
     source: {zotero_key: "LZ01024172", claim: "Using the calculated link between g-factors and m_q, m_s and Λ_QCD... we find the constraint to the variation of fundamental constants"}

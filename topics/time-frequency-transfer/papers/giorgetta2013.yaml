@@ -170,7 +170,7 @@ relations:
 
   - id: rel.giorgetta2013_02
     subject: pri.free_space_optical_reciprocity_otwtft
-    predicate: ENABLES
+    predicate: ENABLED-BY
     object: meth.dual_comb_otwtft_over_free_space
     confidence: established
     source:

@@ -430,14 +430,14 @@ relations:
 
   - id: rel.guena_2012_04
     subject: ent.lne_syrte_fountain_ensemble_2012
-    predicate: HAS-SUBSYSTEM
+    predicate: PART-OF
     object: ent.fo2_dual_rb_cs_fountain_2012
     confidence: established
     source: {zotero_key: "Syrte 2012", claim: "The Rb and Cs clocks in FO2 routinely operate simultaneously since 2009"}
 
   - id: rel.guena_2012_05
     subject: ent.fo2_dual_rb_cs_fountain_2012
-    predicate: MEASURES
+    predicate: CHARACTERIZED-BY
     object: met.rb_cs_frequency_ratio_drift_2012
     confidence: established
     source: {zotero_key: "Syrte 2012", claim: "a putative time variation of the ratio of the two hyperfine frequencies is constrained to d ln(ν_Rb/ν_Cs)/dt = (−3.2 ± 2.3) × 10⁻¹⁶ yr⁻¹"}
@@ -465,7 +465,7 @@ relations:
 
   - id: rel.guena_2012_09
     subject: ent.lne_syrte_fountain_ensemble_2012
-    predicate: CALIBRATES
+    predicate: CHARACTERIZED-BY
     object: ent.si_second_definition
     confidence: established
     source: {zotero_key: "Syrte 2012", claim: "LNE-SYRTE reported 78 formal evaluations to BIPM, out of a total of 161 fountain reports worldwide, i.e. LNE-SYRTE has contributed almost 50% of all reports since 2007"}
@@ -473,7 +473,7 @@ relations:
 
   - id: rel.guena_2012_10
     subject: ent.lne_syrte_fountain_ensemble_2012
-    predicate: BROADENED-BY
+    predicate: ENABLED-BY
     object: met.tai_fountain_calibration_contribution_2012
     confidence: established
     source: {zotero_key: "Syrte 2012", claim: "Since 2007, LNE-SYRTE fountains have measured the frequency of one of LNE-SYRTE H-masers almost continuously. These data are used to calibrate the International Atomic Time (TAI)."}
@@ -494,14 +494,14 @@ relations:
 
   - id: rel.guena_2012_13
     subject: meth.fountain_steering_timescale
-    predicate: APPLIED-TO
+    predicate: CONDITIONED-BY
     object: ent.lne_syrte_fountain_ensemble_2012
     confidence: established
     source: {zotero_key: "Syrte 2012", claim: "Since mid-2006, fountain data, including from FO2-Rb, are used to steer the French Atomic Time TA(F) on a monthly basis."}
 
   - id: rel.guena_2012_14
     subject: ent.pharao_engineering_model_2012
-    predicate: COMPARED-WITH
+    predicate: COMPETES-WITH
     object: ent.lne_syrte_fountain_ensemble_2012
     confidence: established
     mode: frequency_comparison

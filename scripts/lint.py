@@ -36,6 +36,7 @@ import yaml
 VALID_PREFIXES = ("ent.", "pri.", "meth.", "met.", "rel.")
 
 VALID_PREDICATES = frozenset({
+    # Core (v4.0+)
     "PART-OF",
     "CHARACTERIZED-BY",
     "OPERATIONALIZED-AS",
@@ -45,13 +46,11 @@ VALID_PREDICATES = frozenset({
     "CONDITIONED-BY",
     "COMPETES-WITH",
     "SHARED-WITH",  # v4.5+ : cross-topic public mechanism anchoring
-})
-
-DEPRECATED_PREDICATES = frozenset({
-    "GOVERNED-BY",
-    "EQUIVALENT-IN-CONTEXT",
-    "SUPPORTED-BY",
-    "BREAKTHROUGH-VIA",
+    # Extended (v4.6 — promoted from common usage)
+    "REALIZES",       # system → method implementation
+    "DEMONSTRATES",   # metric → principle: evidence
+    "CHARACTERIZES",  # principle → phenomenon: description
+    "IMPLEMENTS",     # method → sub-method: composition
 })
 
 REQUIRED_META_FIELDS = ("zotero_key", "title", "year", "first_author")
@@ -378,16 +377,16 @@ def check_missing_metric_conditions(all_nodes: list[dict[str, Any]]) -> list[Iss
 
 
 def check_invalid_predicates(all_relations: list[dict[str, Any]]) -> list[Issue]:
-    """9. Relations using deprecated predicates."""
+    """9. Relations using non-canonical predicates."""
     issues: list[Issue] = []
     for rel in all_relations:
         pred = rel.get("predicate", "")
         f = rel.get("_file", "?")
         rid = rel.get("id", "?")
-        if pred in DEPRECATED_PREDICATES:
+        if pred and pred not in VALID_PREDICATES:
             issues.append(Issue(
                 "ERROR", "invalid-predicate", f,
-                f"Relation '{rid}' uses deprecated predicate '{pred}'",
+                f"Relation '{rid}' uses non-canonical predicate '{pred}'",
             ))
     return issues
 

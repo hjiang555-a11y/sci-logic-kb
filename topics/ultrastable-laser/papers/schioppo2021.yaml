@@ -144,7 +144,7 @@ relations:
   file: /data/sci-logic-kb/topics/ultrastable-laser/papers/schioppo2021.yaml
 - id: rel.schioppo_2021_c03
   subject: ent.npl_ule_cavity_laser_sc21
-  predicate: DEPENDS-ON
+  predicate: ENABLED-BY
   object: ent.european_fiber_network_sc21
   confidence: established
   source:

@@ -127,7 +127,7 @@ relations:
 
   - id: rel.fortier_2012_03
     subject: ent.hybrid_photonic_microwave_osc_fortier2012
-    predicate: USES-METHOD
+    predicate: IMPLEMENTS
     object: pri.optical_frequency_division_microwave
     confidence: established
     note: "跨文件引用 pri.optical_frequency_division_microwave，定义于 topics/optical-frequency-combs/papers/"

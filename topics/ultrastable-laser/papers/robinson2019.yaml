@@ -448,14 +448,14 @@ relations:
   file: /data/sci-logic-kb/topics/ultrastable-laser/papers/robinson2019.yaml
 - id: rel.bridge_brownian_thermal_noise_fdt_cryogenic_silicon_stabilization
   subject: pri.brownian_thermal_noise_fdt
-  predicate: RESOLVED-BY
+  predicate: BOUNDED-BY
   object: meth.cryogenic_silicon_stabilization
   confidence: established
   source:
     note: Bridge injected to establish reasoning chain for Metric Chain Automation
 - id: rel.bridge_cryogenic_silicon_stabilization_allan_deviation_cryo
   subject: meth.cryogenic_silicon_stabilization
-  predicate: PRODUCES
+  predicate: ENABLED-BY
   object: met.allan_deviation_cryo
   confidence: established
   source:

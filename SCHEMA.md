@@ -59,15 +59,29 @@
 
 指标链条不再是 emergent 的路径，而是**显式管理**的实体。
 
-### 1. 关系谓词
-- $\text{DETERMINED-BY}$ (由...决定)：强因果关系，通常伴随数学公式。
-- $\text{BOUNDED-BY}$ (受限于)：定义性能上限的瓶颈关系。
-- $\text{IMPLEMENTS}$ (实现)：方法 $\to$ 原理。
-- $\text{SUPPORTED-BY}$ (由...支撑)：节点 $\to$ 证据。
+### 1. 标准关系谓词 (Canonical Predicates, v4.6)
 
-### 2. 分解图逻辑
-一个顶层指标 (Top-level Metric) 的分解路径如下：
-$$\text{Metric} \xrightarrow{\text{BOUNDED-BY}} \text{Critical Factor} \xrightarrow{\text{DETERMINED-BY}} \text{Physics Principle} \xrightarrow{\text{ASSOCIATED-WITH}} \text{Material/Method}$$
+12 种标准化关系，所有 YAML `relations` 块必须使用：
+
+| 谓词 | 语义 | 典型方向 |
+|------|------|----------|
+| **CHARACTERIZED-BY** | 属性归因 | ent/met → met, pri → domain 现象 |
+| **ENABLED-BY** | 使能依赖 | meth → pri, ent → meth |
+| **PART-OF** | 层级组成 | ent → ent, meth → meth |
+| **BOUNDED-BY** | 物理/工程瓶颈 | met → pri, met → cond |
+| **OPERATIONALIZED-AS** | 原理 → 方法的工程实现 | pri → meth |
+| **CONDITIONED-BY** | 适用条件 | meth → cond, pri → cond |
+| **DERIVED-FROM** | 理论/方法演进 | meth → meth, pri → pri |
+| **COMPETES-WITH** | 替代方案 | meth → meth, pri → pri |
+| **SHARED-WITH** | 跨专题公共机制锚定 (v4.5+) | node → shared/node |
+| **REALIZES** | 实验系统实现方法 | ent → meth |
+| **DEMONSTRATES** | 指标数据证明原理 | met → pri |
+| **CHARACTERIZES** | 原理描述现象 | pri → domain 现象 |
+| **IMPLEMENTS** | 方法调用子方法 | meth → meth |
+
+### 2. 指标链条分解图
+一个顶层指标的典型分解路径（使用标准谓词）：
+$$\text{Metric} \xrightarrow{\text{BOUNDED-BY}} \text{Critical Factor} \xrightarrow{\text{CHARACTERIZED-BY}} \text{Physics Principle} \xrightarrow{\text{ENABLED-BY}} \text{Material/Method}$$
 
 ---
 

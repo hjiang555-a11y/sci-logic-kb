@@ -131,7 +131,7 @@ relations:
 
   - id: rel.quinlan_2011_04
     subject: ent.er_fiber_ofd_quinlan2011
-    predicate: USES-METHOD
+    predicate: IMPLEMENTS
     object: pri.optical_frequency_division_microwave
     confidence: established
     note: "跨文件引用 pri.optical_frequency_division_microwave，定义于 topics/optical-frequency-combs/papers/"

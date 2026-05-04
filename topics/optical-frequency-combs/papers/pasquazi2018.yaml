@@ -259,7 +259,7 @@ relations:
 
   - id: rel.pasquazi_2016_18_07
     subject: pri.mode_interaction_comb_generation
-    predicate: ENABLES
+    predicate: ENABLED-BY
     object: ent.microresonator_frequency_comb
     source:
       claim: "mode interactions are very useful for comb generation in the normal dispersion region"

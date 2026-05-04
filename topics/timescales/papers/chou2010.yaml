@@ -247,7 +247,7 @@ relations:
 
   - id: rel.chou_2010_04
     subject: met.residual_ion_doppler_velocity_2010
-    predicate: CONSTRAINS
+    predicate: BOUNDED-BY
     object: met.time_dilation_detection_velocity_2010
     confidence: established
     source: {zotero_key: "1630.full (1)", claim: "the clock rate is not significantly affected by a velocity of this magnitude, because it is derived from an average of the two opposite laser-probe directions"}
@@ -257,7 +257,7 @@ relations:
 
   - id: rel.chou_2010_05
     subject: ent.al_plus_ion_optical_clock
-    predicate: IMPLEMENTED-BY
+    predicate: REALIZES
     object: meth.ion_motion_induced_time_dilation
     confidence: established
     source: {zotero_key: "1630.full (1)", claim: "we set the Al+ ion in the Al-Mg clock in motion by applying a small static electric field that shifts the position of the ion slightly away from the null of the confining RF field"}
@@ -267,7 +267,7 @@ relations:
 
   - id: rel.chou_2010_06
     subject: ent.al_plus_ion_optical_clock
-    predicate: CONNECTED-BY
+    predicate: PART-OF
     object: ent.phase_stabilized_fiber_clock_link
     confidence: established
     source: {zotero_key: "1630.full (1)", claim: "The two Al+ optical clocks were located in separate laboratories and were compared by transmitting the stable clock signal through a 75-m length of phase-stabilized optical fiber"}

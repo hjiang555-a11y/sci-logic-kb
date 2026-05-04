@@ -66,7 +66,7 @@ principles:
 relations:
   - id: rel.si_roadmap_01
     subject: ent.si_second_redefinition_roadmap_2021
-    predicate: APPRAISES
+    predicate: CHARACTERIZES
     object: pri.si_second_redefinition_criteria
     confidence: established
     source:

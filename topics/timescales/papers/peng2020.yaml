@@ -197,7 +197,7 @@ metrics:
 relations:
   - id: rel.peng_2021_20_01
     subject: ent.cc_mutc_pd_pulsed_microwave_source
-    predicate: IMPROVES-ON
+    predicate: DERIVED-FROM
     object: ent.mutc_photonic_microwave_generator
     confidence: likely
     source: {zotero_key: "oe-28-19-28563", claim: "The peak voltage is 6 V higher than the previous reported MUTC photodiodes [12]"}
@@ -208,7 +208,7 @@ relations:
 
   - id: rel.peng_2021_20_02
     subject: ent.cc_mutc_pd_pulsed_microwave_source
-    predicate: IS-LIMITED-BY
+    predicate: BOUNDED-BY
     object: pri.pulsed_illumination_mitigates_thermal_limit
     confidence: likely
     is_system_limit: true
@@ -237,7 +237,7 @@ relations:
 
   - id: rel.peng_2021_20_05
     subject: ent.cc_mutc_pd_pulsed_microwave_source
-    predicate: ENHANCED-BY
+    predicate: ENABLED-BY
     object: pri.pulsed_illumination_mitigates_thermal_limit
     confidence: likely
     source: {zotero_key: "oe-28-19-28563", claim: "As duty cycle increases from 5% to 100%, the maximum peak power decreases by 11.3 dB and the maximum bias voltage decreases by 17.3 V. It can be concluded that thermal degradation is mitigated and the peak power is enhanced with decreasing duty cycle"}

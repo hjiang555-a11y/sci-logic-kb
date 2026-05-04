@@ -2,7 +2,7 @@
 
 # Timescales — Topic Index
 
-> Auto-generated 2026-05-03 13:23 UTC · 8 papers · 92 nodes · 62 relations
+> Auto-generated 2026-05-04 03:47 UTC · 8 papers · 92 nodes · 62 relations
 
 ## Entities
 
@@ -137,9 +137,25 @@
 
 ## BOUNDED-BY Chains
 
+### `rel.chou_2010_04`: `met.residual_ion_doppler_velocity_2010` → `met.time_dilation_detection_velocity_2010`
+
+- **Source**: chou2010
+
 ### `rel.dimarcq_2021_24_01`: `ent.si_second_definition` → `pri.redefinition_criteria_second`
 
 - **Source**: dimarcq2024
+
+### `rel.fortier_2013_05`: `pri.mutc_structure_suppresses_space_charge` → `pri.am_pm_conversion_couples_rin_to_phase_noise`
+
+- **Source**: fortier2013
+
+### `rel.kleppner_2006_02`: `pri.gravitational_blueshift_clock_rate` → `ent.geoid`
+
+- **Source**: kleppner2006
+
+### `rel.peng_2021_20_02`: `ent.cc_mutc_pd_pulsed_microwave_source` → `pri.pulsed_illumination_mitigates_thermal_limit`
+
+- **Source**: peng2020
 
 ## Cross-Topic References
 

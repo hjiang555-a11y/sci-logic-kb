@@ -170,7 +170,7 @@ relations:
 
   - id: rel.cole_2018_04
     subject: ent.silica_wgm_resonator_cole
-    predicate: ENABLES
+    predicate: ENABLED-BY
     object: ent.soliton_crystal_microcomb
     confidence: established
     source:
@@ -181,7 +181,7 @@ relations:
 
   - id: rel.cole_2018_05
     subject: ent.soliton_crystal_microcomb
-    predicate: USES-METHOD
+    predicate: IMPLEMENTS
     object: meth.adiabatic_soliton_crystal_generation
     confidence: established
     source:

@@ -299,7 +299,7 @@ relations:
 
   - id: rel.amyklein_2009_03
     subject: pri.molecular_atomic_frequency_ratio_mass_dependence
-    predicate: GOVERNS
+    predicate: CONDITIONED-BY
     object: ent.sf6_molecular_spectrometer_lpl
     confidence: established
     source: {claim: "the dependence ν(SF6)/ν(Cs) ∝ K·α^2.83·(mp/me)"}
@@ -308,7 +308,7 @@ relations:
 
   - id: rel.amyklein_2009_04
     subject: pri.round_trip_phase_noise_compensation_fiber_link
-    predicate: REALIZED-BY
+    predicate: REALIZES
     object: meth.round_trip_fiber_phase_noise_correction
     confidence: established
     source: {claim: "the phase difference gives the error signal for the correction loop.
@@ -316,7 +316,7 @@ relations:
 
   - id: rel.amyklein_2009_05
     subject: meth.sf6_ramsey_fringe_absolute_frequency_measurement
-    predicate: DEPENDS-ON
+    predicate: ENABLED-BY
     object: ent.phase_stabilized_fiber_frequency_link_paris_2009
     confidence: established
     source: {claim: "The reference is generated at LNE-SYRTE … It is transferred to the LPL
@@ -327,7 +327,7 @@ relations:
 
   - id: rel.amyklein_2009_06
     subject: pri.dwdm_oadm_metrology_data_coexistence
-    predicate: ENABLED
+    predicate: ENABLED-BY
     object: ent.phase_stabilized_fiber_frequency_link_paris_2009
     confidence: likely
     source: {claim: "The ultra-stable signal is travelling through a network node at Aubervilliers …

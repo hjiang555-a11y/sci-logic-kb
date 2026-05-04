@@ -45,7 +45,7 @@ entities:
 relations:
   - id: rel.takamoto2022_01
     subject: ent.takamoto2022_transportable_clock_perspective
-    predicate: APPRAISES
+    predicate: CHARACTERIZES
     object: pri.transportable_optical_clock_engineering
     confidence: established
     source:

@@ -120,7 +120,7 @@ relations:
   file: /data/sci-logic-kb/topics/ultrastable-laser/papers/wang2024a.yaml
 - id: rel.wang_2024_03
   subject: meth.optical_freq_purification_w24
-  predicate: DEPENDS-ON
+  predicate: ENABLED-BY
   object: meth.fiber_link_phase_noise_cancellation_w16
   confidence: established
   source:

@@ -141,7 +141,7 @@ relations:
 
   - id: rel.fang2026_04
     subject: meth.otwtft_cls_timing_extraction
-    predicate: IMPROVES-ON
+    predicate: DERIVED-FROM
     object: meth.dual_comb_otwtft_over_free_space
     confidence: established
     source:
