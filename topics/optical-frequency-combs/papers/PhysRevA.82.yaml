@@ -1,0 +1,23 @@
+# Coddington 2010 — Coherent dual-comb spectroscopy at high signal-to-noise ratio [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: PhysRevA.82
+  topic: optical-frequency-combs
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Coherent dual-comb spectroscopy at high signal-to-noise ratio"
+  year: 2010
+  first_author: "Coddington"
+  authors: ["I. Coddington", "W. Swann", "N. Newbury"]
+  journal: "Physical Review A"
+  volume: 82
+  doi: 10.1103/PhysRevA.82.043817
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

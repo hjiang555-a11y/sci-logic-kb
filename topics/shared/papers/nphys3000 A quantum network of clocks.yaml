@@ -1,0 +1,24 @@
+# Kómár 2014 — A quantum network of clocks [framework]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: nphys3000 A quantum network of clocks
+  topic: shared
+  source_type: journal_paper
+  contribution_type: framework
+  reliability: high
+  title: "A quantum network of clocks"
+  year: 2014
+  first_author: "Kómár"
+  authors: ["P. Kómár", "E. M. Kessler", "M. Bishof", "L. Jiang", "A. S. Sørensen", "J. Ye", "M. D. Lukin"]
+  journal: "Nature Physics"
+  volume: 10
+  pages: 582-587
+  doi: 10.1038/NPHYS3000
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

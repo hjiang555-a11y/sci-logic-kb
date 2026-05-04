@@ -1,0 +1,24 @@
+# Caldwell 2022 — The time-programmable frequency comb and its use in quantum-limited ranging [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: s41586-022-05225-8
+  topic: optical-frequency-combs
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "The time-programmable frequency comb and its use in quantum-limited ranging"
+  year: 2022
+  first_author: "Caldwell"
+  authors: ["Emily D. Caldwell", "Laura C. Sinclair", "Nathan R. Newbury", "Jean-Daniel Deschenes"]
+  journal: "Nature"
+  volume: 610
+  pages: 667-673
+  doi: 10.1038/s41586-022-05225-8
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

@@ -1,0 +1,24 @@
+# Jiang 2011 — Noise Floor Reduction of an Er:Fiber Laser-Based Photonic Microwave Generator [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: Jiang ieee pj 2011
+  topic: optical-frequency-combs
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Noise Floor Reduction of an Er:Fiber Laser-Based Photonic Microwave Generator"
+  year: 2011
+  first_author: "Jiang"
+  authors: ["Haifeng Jiang", "J. Taylor", "F. Quinlan", "T. Fortier", "S. A. Diddams"]
+  journal: "IEEE Photonics Journal"
+  volume: 3
+  pages: 1004-1012
+  doi: 10.1109/JPHOT.2011.2171480
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

@@ -1,0 +1,24 @@
+# Porat 2018 — Phase-matched extreme-ultraviolet frequency-comb generation [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: NaturePhoton_XUVcomb phase match 2018
+  topic: optical-frequency-combs
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Phase-matched extreme-ultraviolet frequency-comb generation"
+  year: 2018
+  first_author: "Porat"
+  authors: ["Gil Porat", "Christoph M. Heyl", "Stephen B. Schoun", "Craig Benko", "Nadine Dörre", "Kristan L. Corwin", "Jun Ye"]
+  journal: "Nature Photonics"
+  volume: 12
+  pages: 387-391
+  doi: 10.1038/s41566-018-0199-z
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

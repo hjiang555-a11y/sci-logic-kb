@@ -1,0 +1,24 @@
+# Shu 2022 — Microcomb-driven silicon photonic systems [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: s41586-022-04579-3
+  topic: optical-frequency-combs
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Microcomb-driven silicon photonic systems"
+  year: 2022
+  first_author: "Shu"
+  authors: ["Haowen Shu", "Lin Chang", "Yuansheng Tao", "Bitao Shen", "Weiqiang Xie", "Ming Jin", "Andrew Netherton", "Zihan Tao", "Xuguang Zhang", "Ruixuan Chen", "Bowen Bai", "Jun Qin", "Shaohua Yu", "Xingjun Wang", "John E. Bowers"]
+  journal: "Nature"
+  volume: 605
+  pages: 457-463
+  doi: 10.1038/s41586-022-04579-3
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

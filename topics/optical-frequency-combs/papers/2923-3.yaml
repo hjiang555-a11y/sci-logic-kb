@@ -1,0 +1,23 @@
+# Hickstein 2017 — Ultrabroadband Supercontinuum Generation and Frequency-Comb Stabilization Usi... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: 2923-3
+  topic: optical-frequency-combs
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Ultrabroadband Supercontinuum Generation and Frequency-Comb Stabilization Using On-Chip Waveguides with Both Cubic and Quadratic Nonlinearities"
+  year: 2017
+  first_author: "Hickstein"
+  authors: ["Daniel D. Hickstein", "Hojoong Jung", "David R. Carlson", "Alex Lind", "Ian Coddington", "Kartik Srinivasan", "Gabriel G. Ycas", "Daniel C. Cole", "Abijith Kowligy", "Connor Fredrick", "Stefan Droste", "Erin S. Lamb", "Nathan R. Newbury", "Hong X. Tang", "Scott A. Diddams", "Scott B. Papp"]
+  journal: "Physical Review Applied"
+  volume: 8
+  doi: 10.1103/PhysRevApplied.8.014025
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

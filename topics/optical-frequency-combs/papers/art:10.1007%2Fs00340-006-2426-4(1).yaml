@@ -1,0 +1,24 @@
+# McFerran 2006 — Suppression of pump-induced frequency noise in fiber-laser frequency combs le... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: art:10.1007%2Fs00340-006-2426-4(1)
+  topic: optical-frequency-combs
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Suppression of pump-induced frequency noise in fiber-laser frequency combs leading to sub-radian f ceo phase excursions"
+  year: 2006
+  first_author: "McFerran"
+  authors: ["J.J. McFerran", "W.C. Swann", "B.R. Washburn", "N.R. Newbury"]
+  journal: "Applied Physics B"
+  volume: 86
+  pages: 219-227
+  doi: 10.1007/s00340-006-2426-4
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

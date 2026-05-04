@@ -1,0 +1,24 @@
+# Parke 2025 — Three hundred microsecond optical cavity storage time and <b>10<sup>−7</sup><... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: ol-50-10-3405
+  topic: ultrastable-laser
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Three hundred microsecond optical cavity storage time and <b>10<sup>−7</sup></b> active RAM cancellation for <b>10<sup>−19</sup></b> laser frequency stabilization"
+  year: 2025
+  first_author: "Parke"
+  authors: ["Adam L. Parke", "Marco Schioppo"]
+  journal: "Optics Letters"
+  volume: 50
+  pages: 3405
+  doi: 10.1364/OL.560815
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

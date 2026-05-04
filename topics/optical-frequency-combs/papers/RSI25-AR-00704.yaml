@@ -1,0 +1,23 @@
+# Wang 2025 — A low-latency digital servo for optical frequency comb stabilization [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: RSI25-AR-00704
+  topic: optical-frequency-combs
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "A low-latency digital servo for optical frequency comb stabilization"
+  year: 2025
+  first_author: "Wang"
+  authors: ["Ziqi Wang", "Yu Wang", "Danyang Zhu", "You Pang", "Lei Hou", "Qi Shen", "Haifeng Jiang", "Shubin Liu"]
+  journal: "Review of Scientific Instruments"
+  volume: 96
+  doi: 10.1063/5.0280679
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

@@ -1,0 +1,24 @@
+# Jeon 2025 — 10<sup>−15</sup>-level laser stabilization down to fiber thermal noise limit ... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: Jeon 等 - 2025 - 10-15-level laser stabilization down to fiber thermal noise limit using self-homodyne detection
+  topic: ultrastable-laser
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "10<sup>−15</sup>-level laser stabilization down to fiber thermal noise limit using self-homodyne detection"
+  year: 2025
+  first_author: "Jeon"
+  authors: ["Igju Jeon", "Woosong Jeong", "Changmin Ahn", "Jungwon Kim"]
+  journal: "Optics Letters"
+  volume: 50
+  pages: 1057
+  doi: 10.1364/OL.541281
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

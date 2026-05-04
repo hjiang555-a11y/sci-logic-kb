@@ -1,0 +1,24 @@
+# Quinlan 2013 — Exploiting shot noise correlations in the photodetection of ultrashort optica... [framework]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: Quinlan2013_2
+  topic: shared
+  source_type: journal_paper
+  contribution_type: framework
+  reliability: high
+  title: "Exploiting shot noise correlations in the photodetection of ultrashort optical pulse trains"
+  year: 2013
+  first_author: "Quinlan"
+  authors: ["F. Quinlan", "T. M. Fortier", "H. Jiang", "A. Hati", "C. Nelson", "Y. Fu", "J. C. Campbell", "S. A. Diddams"]
+  journal: "Nature Photonics"
+  volume: 7
+  pages: 290-293
+  doi: 10.1038/NPHOTON.2013.33
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

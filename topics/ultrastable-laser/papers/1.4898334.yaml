@@ -1,0 +1,23 @@
+# Chen 2014 — A compact, robust, and transportable ultra-stable laser with a fractional fre... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: 1.4898334
+  topic: ultrastable-laser
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "A compact, robust, and transportable ultra-stable laser with a fractional frequency instability of 1 × 10−15"
+  year: 2014
+  first_author: "Chen"
+  authors: ["Qun-Feng Chen", "Alexander Nevsky", "Marco Cardace", "Stephan Schiller", "Thomas Legero", "Sebastian Häfner", "Andre Uhde", "Uwe Sterr"]
+  journal: "Review of Scientific Instruments"
+  volume: 85
+  doi: 10.1063/1.4898334
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

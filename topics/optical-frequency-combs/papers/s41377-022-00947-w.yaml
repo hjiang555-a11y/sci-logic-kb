@@ -1,0 +1,23 @@
+# Hoghooghi 2022 — Broadband 1-GHz mid-infrared frequency comb [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: s41377-022-00947-w
+  topic: optical-frequency-combs
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Broadband 1-GHz mid-infrared frequency comb"
+  year: 2022
+  first_author: "Hoghooghi"
+  authors: ["Nazanin Hoghooghi", "Sida Xing", "Peter Chang", "Daniel Lesko", "Alexander Lind", "Greg Rieker", "Scott Diddams"]
+  journal: "Light: Science &amp; Applications"
+  volume: 11
+  doi: 10.1038/s41377-022-00947-w
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

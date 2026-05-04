@@ -1,0 +1,24 @@
+# Endo 2018 — Ultralow Noise Optical Frequency Combs [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: low noise comb1
+  topic: optical-frequency-combs
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Ultralow Noise Optical Frequency Combs"
+  year: 2018
+  first_author: "Endo"
+  authors: ["Mamoru Endo", "Tyko D. Shoji", "Thomas R. Schibli"]
+  journal: "IEEE Journal of Selected Topics in Quantum Electronics"
+  volume: 24
+  pages: 1-13
+  doi: 10.1109/JSTQE.2018.2818461
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

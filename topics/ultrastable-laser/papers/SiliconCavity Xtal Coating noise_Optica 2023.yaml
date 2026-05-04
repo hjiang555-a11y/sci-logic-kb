@@ -1,0 +1,24 @@
+# Kedar 2023 — Frequency stability of cryogenic silicon cavities with semiconductor crystall... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: SiliconCavity Xtal Coating noise_Optica 2023
+  topic: ultrastable-laser
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Frequency stability of cryogenic silicon cavities with semiconductor crystalline coatings"
+  year: 2023
+  first_author: "Kedar"
+  authors: ["Dhruv Kedar", "Jialiang Yu", "Eric Oelker", "Alexander Staron", "William R. Milner", "John M. Robinson", "Thomas Legero", "Fritz Riehle", "Uwe Sterr", "Jun Ye"]
+  journal: "Optica"
+  volume: 10
+  pages: 464
+  doi: 10.1364/OPTICA.479462
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

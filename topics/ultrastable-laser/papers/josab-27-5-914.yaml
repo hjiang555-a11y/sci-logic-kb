@@ -9,8 +9,13 @@ meta:
   reliability: high
   title: "Tuning the thermal expansion properties of optical reference cavities with fused silica mirrors"
   first_author: "Legero"
+  authors: ["Thomas Legero", "Thomas Kessler", "Uwe Sterr"]
+  journal: "Journal of the Optical Society of America B"
+  volume: 27
+  pages: 914
+  doi: 10.1364/JOSAB.27.000914
   note: >
-    [手动审查] 熔融石英镜与LTE玻璃腔体热膨胀失配导致镜面变形，降低零交叉温度约20K。LTE环光胶于FS镜背面可在30K范围调谐零交叉温度。
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
 entities: []
 principles: []
 methods: []

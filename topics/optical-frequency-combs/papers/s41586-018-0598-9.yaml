@@ -1,0 +1,24 @@
+# Stern 2018 — Battery-operated integrated frequency comb generator [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: s41586-018-0598-9
+  topic: optical-frequency-combs
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Battery-operated integrated frequency comb generator"
+  year: 2018
+  first_author: "Stern"
+  authors: ["Brian Stern", "Xingchen Ji", "Yoshitomo Okawachi", "Alexander L. Gaeta", "Michal Lipson"]
+  journal: "Nature"
+  volume: 562
+  pages: 401-405
+  doi: 10.1038/s41586-018-0598-9
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

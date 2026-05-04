@@ -1,0 +1,24 @@
+# Schioppo 2016 — Ultrastable optical clock with two cold-atom ensembles [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: 2905-6
+  topic: ultrastable-laser
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Ultrastable optical clock with two cold-atom ensembles"
+  year: 2016
+  first_author: "Schioppo"
+  authors: ["M. Schioppo", "R. C. Brown", "W. F. McGrew", "N. Hinkley", "R. J. Fasano", "K. Beloy", "T. H. Yoon", "G. Milani", "D. Nicolodi", "J. A. Sherman", "N. B. Phillips", "C. W. Oates", "A. D. Ludlow"]
+  journal: "Nature Photonics"
+  volume: 11
+  pages: 48-52
+  doi: 10.1038/NPHOTON.2016.231
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

@@ -1,0 +1,24 @@
+# Gao 2025 — An Ultra-Low Frequency Noise Laser Based on All-Fiber Integrated Recirculatin... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: An_Ultra-Low_Frequency_Noise_Laser_Based_on_Al
+  topic: ultrastable-laser
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "An Ultra-Low Frequency Noise Laser Based on All-Fiber Integrated Recirculating Interferometers"
+  year: 2025
+  first_author: "Gao"
+  authors: ["Jing Gao", "Dongdong Jiao", "Linbo Zhang", "Guanjun Xu", "Bimu Yao", "Ruifang Dong", "Tao Liu", "Shougang Zhang"]
+  journal: "Journal of Lightwave Technology"
+  volume: 43
+  pages: 4469-4476
+  doi: 10.1109/JLT.2025.3533536
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

@@ -1,0 +1,23 @@
+# Leibrandt 2013 — Absolute and Relative Stability of an Optical Frequency Reference Based on Sp... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: PhysRevLett.111.237402
+  topic: ultrastable-laser
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Absolute and Relative Stability of an Optical Frequency Reference Based on Spectral Hole Burning in<mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mml:msup><mml:mi>Eu</mml:mi><mml:mrow><mml:mn>3</mml:mn><mml:mo mathvariant=\"bold\">+</mml:mo></mml:mrow></mml:msup><mml:mtext mathvariant=\"normal\">:</mml:mtext><mml:msub><mml:mi mathvariant=\"bold\">Y</mml:mi><mml:mn>2</mml:mn></mml:msub><mml:msub><mml:mi>SiO</mml:mi><mml:mn>5</mml:mn></mml:msub></mml:math>"
+  year: 2013
+  first_author: "Leibrandt"
+  authors: ["David R. Leibrandt", "Michael J. Thorpe", "Chin-Wen Chou", "Tara M. Fortier", "Scott A. Diddams", "Till Rosenband"]
+  journal: "Physical Review Letters"
+  volume: 111
+  doi: 10.1103/PhysRevLett.111.237402
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

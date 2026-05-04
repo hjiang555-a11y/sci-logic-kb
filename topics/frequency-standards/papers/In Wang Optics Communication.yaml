@@ -1,0 +1,24 @@
+# Wang 2007 — Absolute frequency measurement and high resolution spectroscopy of 115In+ 5s2... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: In Wang Optics Communication
+  topic: frequency-standards
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Absolute frequency measurement and high resolution spectroscopy of 115In+ 5s2 1S0–5s5p 3P0 narrowline transition"
+  year: 2007
+  first_author: "Wang"
+  authors: ["Y.H. Wang", "R. Dumke", "T. Liu", "A. Stejskal", "Y.N. Zhao", "J. Zhang", "Z.H. Lu", "L.J. Wang", "Th. Becker", "H. Walther"]
+  journal: "Optics Communications"
+  volume: 273
+  pages: 526-531
+  doi: 10.1016/j.optcom.2007.01.068
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

@@ -1,0 +1,24 @@
+# Kessler 2012 — A sub-40-mHz-linewidth laser based on a silicon single-crystal optical cavity [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: nphoton.2012.217
+  topic: ultrastable-laser
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "A sub-40-mHz-linewidth laser based on a silicon single-crystal optical cavity"
+  year: 2012
+  first_author: "Kessler"
+  authors: ["T. Kessler", "C. Hagemann", "C. Grebing", "T. Legero", "U. Sterr", "F. Riehle", "M. J. Martin", "L. Chen", "J. Ye"]
+  journal: "Nature Photonics"
+  volume: 6
+  pages: 687-692
+  doi: 10.1038/NPHOTON.2012.217
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

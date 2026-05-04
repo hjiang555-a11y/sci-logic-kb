@@ -1,0 +1,24 @@
+# Spaun 2016 — Continuous probing of cold complex molecules with infrared frequency comb spe... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: Nature 533, 517–520 (26 May 2016)
+  topic: optical-frequency-combs
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Continuous probing of cold complex molecules with infrared frequency comb spectroscopy"
+  year: 2016
+  first_author: "Spaun"
+  authors: ["Ben Spaun", "P. Bryan Changala", "David Patterson", "Bryce J. Bjork", "Oliver H. Heckl", "John M. Doyle", "Jun Ye"]
+  journal: "Nature"
+  volume: 533
+  pages: 517-520
+  doi: 10.1038/nature17440
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

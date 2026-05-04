@@ -1,0 +1,24 @@
+# Zhang 2014 — Reduction of residual amplitude modulation to 1 × 10^-6 for frequency modulat... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: Opt. Lett. 39(7), 1980-1983 (2014)
+  topic: ultrastable-laser
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Reduction of residual amplitude modulation to 1 × 10^-6 for frequency modulation and laser stabilization"
+  year: 2014
+  first_author: "Zhang"
+  authors: ["W. Zhang", "M. J. Martin", "C. Benko", "J. L. Hall", "J. Ye", "C. Hagemann", "T. Legero", "U. Sterr", "F. Riehle", "G. D. Cole", "M. Aspelmeyer"]
+  journal: "Optics Letters"
+  volume: 39
+  pages: 1980
+  doi: 10.1364/OL.39.001980
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

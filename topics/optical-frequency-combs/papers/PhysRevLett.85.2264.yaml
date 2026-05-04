@@ -9,8 +9,13 @@ meta:
   reliability: high
   title: "Optical Frequency Synthesizer for Precision Spectroscopy"
   first_author: "Holzwarth"
+  authors: ["R. Holzwarth", "Th. Udem", "T. W. Hänsch", "J. C. Knight", "W. J. Wadsworth", "P. St. J. Russell"]
+  journal: "Physical Review Letters"
+  volume: 85
+  pages: 2264-2267
+  doi: 10.1103/PhysRevLett.85.2264
   note: >
-    [手动审查] 光频梳奠基性论文——首次展示倍频程光频梳用于精密光谱的频率合成器。飞秒锁模激光+PCF超连续谱，RF→光学一步相干链接，不确定度5.1e-16。
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
 entities: []
 principles: []
 methods: []

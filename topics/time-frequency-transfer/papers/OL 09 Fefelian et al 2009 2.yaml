@@ -9,8 +9,13 @@ meta:
   reliability: high
   title: "High-resolution optical frequency dissemination on a telecommunications network with data traffic"
   first_author: "Kéfélian"
+  authors: ["Fabien Kéfélian", "Olivier Lopez", "Haifeng Jiang", "Christian Chardonnet", "Anne Amy-Klein", "Giorgio Santarelli"]
+  journal: "Optics Letters"
+  volume: 34
+  pages: 1573
+  doi: 10.1364/OL.34.001573
   note: >
-    [手动审查] 108 km城市光纤链路（含22 km通信网光纤+互联网数据共存）超稳激光频率传递。DWDM复用，计量信号与数据信号分频传输。
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
 entities: []
 principles: []
 methods: []

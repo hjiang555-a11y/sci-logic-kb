@@ -1,0 +1,23 @@
+# Yi 2016 — Demonstration of a near-IR line-referenced electro-optical laser frequency co... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: ncomms10436
+  topic: optical-frequency-combs
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Demonstration of a near-IR line-referenced electro-optical laser frequency comb for precision radial velocity measurements in astronomy"
+  year: 2016
+  first_author: "Yi"
+  authors: ["X. Yi", "K. Vahala", "J. Li", "S. Diddams", "G. Ycas", "P. Plavchan", "S. Leifer", "J. Sandhu", "G. Vasisht", "P. Chen", "P. Gao", "J. Gagne", "E. Furlan", "M. Bottom", "E. C. Martin", "M. P. Fitzgerald", "G. Doppmann", "C. Beichman"]
+  journal: "Nature Communications"
+  volume: 7
+  doi: 10.1038/ncomms10436
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

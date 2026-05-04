@@ -1,0 +1,24 @@
+# Kalubovilage 2022 — X-Band photonic microwaves with phase noise below −180 dBc/Hz using a free-ru... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: oe-30-7-11266
+  topic: optical-frequency-combs
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "X-Band photonic microwaves with phase noise below −180 dBc/Hz using a free-running monolithic comb"
+  year: 2022
+  first_author: "Kalubovilage"
+  authors: ["Manoj Kalubovilage", "Mamoru Endo", "Thomas R. Schibli"]
+  journal: "Optics Express"
+  volume: 30
+  pages: 11266
+  doi: 10.1364/OE.455308
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

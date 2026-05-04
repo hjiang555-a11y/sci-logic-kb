@@ -1,0 +1,24 @@
+# Meyer 2013 — A frequency-stabilized Yb:KYW femtosecond laser frequency comb and its applic... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: s00340-013-5439-9
+  topic: optical-frequency-combs
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "A frequency-stabilized Yb:KYW femtosecond laser frequency comb and its application to low-phase-noise microwave generation"
+  year: 2013
+  first_author: "Meyer"
+  authors: ["Stephanie A. Meyer", "Tara M. Fortier", "Steve Lecomte", "Scott A. Diddams"]
+  journal: "Applied Physics B"
+  volume: 112
+  pages: 565-570
+  doi: 10.1007/s00340-013-5439-9
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

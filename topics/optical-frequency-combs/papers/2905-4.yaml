@@ -1,0 +1,24 @@
+# Carlson 2017 — Self-referenced frequency combs using high-efficiency silicon-nitride waveguides [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: 2905-4
+  topic: optical-frequency-combs
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Self-referenced frequency combs using high-efficiency silicon-nitride waveguides"
+  year: 2017
+  first_author: "Carlson"
+  authors: ["David R. Carlson", "Daniel D. Hickstein", "Alex Lind", "Stefan Droste", "Daron Westly", "Nima Nader", "Ian Coddington", "Nathan R. Newbury", "Kartik Srinivasan", "Scott A. Diddams", "Scott B. Papp"]
+  journal: "Optics Letters"
+  volume: 42
+  pages: 2314
+  doi: 10.1364/OL.42.002314
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

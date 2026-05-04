@@ -1,0 +1,24 @@
+# Ma 2018 — Low-noise 750  MHz spaced ytterbium fiber frequency combs [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: 10.1364@OL.43.004136
+  topic: optical-frequency-combs
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Low-noise 750  MHz spaced ytterbium fiber frequency combs"
+  year: 2018
+  first_author: "Ma"
+  authors: ["Yuxuan Ma", "Bo Xu", "Hirotaka Ishii", "Fei Meng", "Yoshiaki Nakajima", "Isao Matsushima", "Thomas R. Schibli", "Zhigang Zhang", "Kaoru Minoshima"]
+  journal: "Optics Letters"
+  volume: 43
+  pages: 4136
+  doi: 10.1364/OL.43.004136
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

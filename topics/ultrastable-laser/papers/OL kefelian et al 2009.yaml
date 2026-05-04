@@ -9,8 +9,13 @@ meta:
   reliability: high
   title: "Ultralow-frequency-noise stabilization of a laser by locking to an optical fiber-delay line"
   first_author: "Kéfélian"
+  authors: ["Fabien Kéfélian", "Haifeng Jiang", "Pierre Lemonde", "Giorgio Santarelli"]
+  journal: "Optics Letters"
+  volume: 34
+  pages: 914
+  doi: 10.1364/OL.34.000914
   note: >
-    [手动审查] 全光纤Michelson干涉仪（1 km SMF-28光纤臂差+AOM外差检测）锁定EDF DFB激光器。频率噪声抑制>40 dB（1 Hz-10 kHz），达10^-2 Hz^2/Hz@1 kHz。
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
 entities: []
 principles: []
 methods: []

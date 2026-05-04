@@ -1,0 +1,24 @@
+# Grotti 2018 — Geodesy and metrology with a transportable optical clock [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: s41567-017-0042-3
+  topic: frequency-standards
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Geodesy and metrology with a transportable optical clock"
+  year: 2018
+  first_author: "Grotti"
+  authors: ["Jacopo Grotti", "Silvio Koller", "Stefan Vogt", "Sebastian Häfner", "Uwe Sterr", "Christian Lisdat", "Heiner Denker", "Christian Voigt", "Ludger Timmen", "Antoine Rolland", "Fred N. Baynes", "Helen S. Margolis", "Michel Zampaolo", "Pierre Thoumany", "Marco Pizzocaro", "Benjamin Rauf", "Filippo Bregolin", "Anna Tampellini", "Piero Barbieri", "Massimo Zucco", "Giovanni A. Costanzo", "Cecilia Clivati", "Filippo Levi", "Davide Calonico"]
+  journal: "Nature Physics"
+  volume: 14
+  pages: 437-441
+  doi: 10.1038/s41567-017-0042-3
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

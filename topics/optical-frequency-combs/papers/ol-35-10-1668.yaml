@@ -7,10 +7,15 @@ meta:
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
-  title: "Locking the carrier-envelope-offset frequency of an optical parametric oscillator without f-2f self-referencing"
+  title: "Locking the carrier-envelope-offset frequency of an optical parametric oscillator without f–2f self-referencing"
   first_author: "Ferreiro"
+  authors: ["Teresa I. Ferreiro", "Jinghua Sun", "Derryck T. Reid"]
+  journal: "Optics Letters"
+  volume: 35
+  pages: 1668
+  doi: 10.1364/OL.35.001668
   note: >
-    [手动审查] OPO载波包络偏频锁定，无需f-2f自参考。利用泵浦超连续谱高频模与非相位匹配泵浦+信号和频模干涉产生拍频信号。锁定带宽1.1 kHz，累积相位误差0.38 rad@1s。
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
 entities: []
 principles: []
 methods: []

@@ -1,0 +1,24 @@
+# Wu 2024 — Visible-to-ultraviolet frequency comb generation in lithium niobate nanophoto... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: Visible-to-ultraviolet_frequency_comb_generati
+  topic: optical-frequency-combs
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Visible-to-ultraviolet frequency comb generation in lithium niobate nanophotonic waveguides"
+  year: 2024
+  first_author: "Wu"
+  authors: ["Tsung-Han Wu", "Luis Ledezma", "Connor Fredrick", "Pooja Sekhar", "Ryoto Sekine", "Qiushi Guo", "Ryan M. Briggs", "Alireza Marandi", "Scott A. Diddams"]
+  journal: "Nature Photonics"
+  volume: 18
+  pages: 218-223
+  doi: 10.1038/s41566-023-01364-0
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

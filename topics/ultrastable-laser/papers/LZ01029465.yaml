@@ -1,0 +1,24 @@
+# Tai 2016 — Electro-optic modulator with ultra-low residual amplitude modulation for freq... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: LZ01029465
+  topic: ultrastable-laser
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Electro-optic modulator with ultra-low residual amplitude modulation for frequency modulation and laser stabilization"
+  year: 2016
+  first_author: "Tai"
+  authors: ["Zhaoyang Tai", "Lulu Yan", "Yanyan Zhang", "Xiaofei Zhang", "Wenge Guo", "Shougang Zhang", "Haifeng Jiang"]
+  journal: "Optics Letters"
+  volume: 41
+  pages: 5584
+  doi: 10.1364/OL.41.005584
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

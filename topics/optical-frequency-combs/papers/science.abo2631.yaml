@@ -1,4 +1,4 @@
-# Liu 2022 — A photonic integrated circuit–based erbium-doped amplifier [evidence]
+# Liu ???? — A photonic integrated circuit–based erbium-doped amplifier [evidence]
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
@@ -8,7 +8,6 @@ meta:
   contribution_type: evidence
   reliability: high
   title: "A photonic integrated circuit–based erbium-doped amplifier"
-  year: 2022
   first_author: "Liu"
   authors: ["Yang Liu", "Zheru Qiu", "Xinru Ji", "Anton Lukashchuk", "Jijun He", "Johann Riemensberger", "Martin Hafermann", "Rui Ning Wang", "Junqiu Liu", "Carsten Ronning", "Tobias J. Kippenberg"]
   journal: "Science"

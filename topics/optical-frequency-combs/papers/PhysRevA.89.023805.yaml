@@ -1,0 +1,23 @@
+# Sinclair 2014 — Optical phase noise from atmospheric fluctuations and its impact on optical t... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: PhysRevA.89.023805
+  topic: optical-frequency-combs
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Optical phase noise from atmospheric fluctuations and its impact on optical time-frequency transfer"
+  year: 2014
+  first_author: "Sinclair"
+  authors: ["L. C. Sinclair", "F. R. Giorgetta", "W. C. Swann", "E. Baumann", "I. Coddington", "N. R. Newbury"]
+  journal: "Physical Review A"
+  volume: 89
+  doi: 10.1103/PhysRevA.89.023805
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

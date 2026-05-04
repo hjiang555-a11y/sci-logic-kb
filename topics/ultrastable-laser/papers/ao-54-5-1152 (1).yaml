@@ -1,0 +1,24 @@
+# Dong 2015 — Subhertz linewidth laser by locking to a fiber delay line [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: ao-54-5-1152 (1)
+  topic: ultrastable-laser
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Subhertz linewidth laser by locking to a fiber delay line"
+  year: 2015
+  first_author: "Dong"
+  authors: ["Jing Dong", "Yongqi Hu", "Junchao Huang", "Meifeng Ye", "Qiuzhi Qu", "Tang Li", "Liang Liu"]
+  journal: "Applied Optics"
+  volume: 54
+  pages: 1152
+  doi: 10.1364/AO.54.001152
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

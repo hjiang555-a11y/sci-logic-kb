@@ -1,0 +1,24 @@
+# Sinclair 2014 — Operation of an optically coherent frequency comb outside the metrology lab [framework]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: oe-22-6-6996(1)
+  topic: shared
+  source_type: journal_paper
+  contribution_type: framework
+  reliability: high
+  title: "Operation of an optically coherent frequency comb outside the metrology lab"
+  year: 2014
+  first_author: "Sinclair"
+  authors: ["L. C. Sinclair", "I. Coddington", "W. C. Swann", "G. B. Rieker", "A. Hati", "K. Iwakuni", "N. R. Newbury"]
+  journal: "Optics Express"
+  volume: 22
+  pages: 6996
+  doi: 10.1364/OE.22.006996
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

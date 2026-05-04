@@ -1,0 +1,24 @@
+# Kuse 2015 — Ultra-low noise all polarization-maintaining Er fiber-based optical frequency... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: oe-23-19-24342
+  topic: optical-frequency-combs
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Ultra-low noise all polarization-maintaining Er fiber-based optical frequency combs facilitated with a graphene modulator"
+  year: 2015
+  first_author: "Kuse"
+  authors: ["N. Kuse", "C.-C. Lee", "J. Jiang", "C. Mohr", "T. R. Schibli", "M.E. Fermann"]
+  journal: "Optics Express"
+  volume: 23
+  pages: 24342
+  doi: 10.1364/OE.23.024342
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

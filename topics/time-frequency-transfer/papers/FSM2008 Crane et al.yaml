@@ -1,17 +1,17 @@
-# Crane ???? — Optical Frequency Transfer over 172 km of Installed Fiber [evidence]
+# kefelian ???? — FSM2008 [evidence]
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
   zotero_key: FSM2008 Crane et al
   topic: time-frequency-transfer
-  source_type: conference_paper
+  source_type: journal_paper
   contribution_type: evidence
-  reliability: high
-  title: "Optical Frequency Transfer over 172 km of Installed Fiber"
-  first_author: "Crane"
-  authors: ["S. Crane", "H. Jiang", "P. Lemonde", "G. Santarelli", "F. Kefelian", "O. Lopez", "A. Amy-Klein", "Ch. Chardonnet"]
+  reliability: medium
+  title: "FSM2008"
+  first_author: "kefelian"
+  authors: ["kefelian"]
   note: >
-    [手动审查] 172 km巴黎城市光纤光频传递（86 km光纤循环回路）。1542 nm亚Hz激光，全光纤干涉仪补偿。Allan偏差10^-16@1s，10^-19@10^4s。
+    [批量提取] 元数据来源：PDF metadata。内容待专家提取。
 entities: []
 principles: []
 methods: []

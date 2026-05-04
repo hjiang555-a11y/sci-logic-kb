@@ -1,0 +1,23 @@
+# Li 2024 — A strontium lattice clock with both stability and uncertainty below 5e-18 [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: Li_2024_Metrologia_61_015006
+  topic: frequency-standards
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "A strontium lattice clock with both stability and uncertainty below 5e-18"
+  year: 2024
+  first_author: "Li"
+  journal: "Metrologia"
+  volume: 61
+  pages: 6662
+  doi: 10.1088/1681-7575/ad10c6
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

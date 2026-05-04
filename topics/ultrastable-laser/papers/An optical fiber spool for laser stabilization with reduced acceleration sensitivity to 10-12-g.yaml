@@ -1,0 +1,24 @@
+# Hu 2015 — An optical fiber spool for laser stabilization with reduced acceleration sens... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: An optical fiber spool for laser stabilization with reduced acceleration sensitivity to 10-12-g
+  topic: ultrastable-laser
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "An optical fiber spool for laser stabilization with reduced acceleration sensitivity to 10 <sup>−12</sup> /g"
+  year: 2015
+  first_author: "Hu"
+  authors: ["Yong-Qi Hu", "Jing Dong", "Jun-Chao Huang", "Tang Li", "Liang Liu"]
+  journal: "Chinese Physics B"
+  volume: 24
+  pages: 104213
+  doi: 10.1088/1674-1056/24/10/104213
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []

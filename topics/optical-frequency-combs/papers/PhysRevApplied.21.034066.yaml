@@ -1,0 +1,23 @@
+# Zhang 2024 — Increase in the signal-to-noise ratio of the beat note between a frequency co... [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-04
+meta:
+  zotero_key: PhysRevApplied.21.034066
+  topic: optical-frequency-combs
+  source_type: journal_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Increase in the signal-to-noise ratio of the beat note between a frequency comb and a continuous-wave laser"
+  year: 2024
+  first_author: "Zhang"
+  authors: ["Shen Zhang", "Qi Shen", "Lei Hou", "Jian-Yu Guan", "Shengkai Liao", "Qiang Zhang", "Hai-Feng Jiang"]
+  journal: "Physical Review Applied"
+  volume: 21
+  doi: 10.1103/PhysRevApplied.21.034066
+  note: >
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
+entities: []
+principles: []
+methods: []
+metrics: []
+relations: []
