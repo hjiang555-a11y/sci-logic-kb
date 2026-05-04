@@ -1,4 +1,4 @@
-#  ???? — 2017.03.09.0001-利用模式滤波器产生4.77GHz重复频率飞秒脉冲激光的+实验研究-2017_3_9 22_09_17 (1) [evidence]
+# Chen ???? — Experiment on the generation of 4.77 GHz repetition-rate femtosecond pulses w... [evidence]
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
@@ -6,11 +6,12 @@ meta:
   topic: optical-frequency-combs
   source_type: journal_paper
   contribution_type: evidence
-  reliability: low
-  title: "2017.03.09.0001-利用模式滤波器产生4.77GHz重复频率飞秒脉冲激光的+实验研究-2017_3_9 22_09_17 (1)"
-  first_author: ""
+  reliability: medium
+  title: "Experiment on the generation of 4.77 GHz repetition-rate femtosecond pulses with a mode filter"
+  first_author: "Chen"
+  authors: ["Chen Maoqiang", "Tai Zhaoyang", "Yan Lulu", "Zhang Yanyan", "Guo Wenge", "Zhang Shougang", "Jiang Haifeng"]
   note: >
-    [批量提取] 元数据来源：placeholder (needs expert review)。内容待专家提取。
+    [批量提取] 元数据来源：PDF metadata。无 DOI/期刊信息，可能为内部报告。内容待专家提取。
 entities: []
 principles: []
 methods: []

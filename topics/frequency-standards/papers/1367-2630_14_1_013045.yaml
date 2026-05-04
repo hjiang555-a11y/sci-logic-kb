@@ -1,4 +1,4 @@
-#  ???? — 1367-2630_14_1_013045 [evidence]
+# (待补全) ???? — Absolute frequency measurement of the 2S1/2–2F7/2 electric octupole transitio... [evidence]
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
@@ -6,11 +6,11 @@ meta:
   topic: frequency-standards
   source_type: journal_paper
   contribution_type: evidence
-  reliability: low
-  title: "1367-2630_14_1_013045"
-  first_author: ""
+  reliability: medium
+  title: "Absolute frequency measurement of the 2S1/2–2F7/2 electric octupole transition in a single ion of 171Yb+ with 10−15 fractional uncertainty"
+  first_author: "(待补全)"
   note: >
-    [批量提取] 元数据来源：placeholder (needs expert review)。内容待专家提取。
+    [手动审查] Yb+ 离子 2S1/2–2F7/2 电八极跃迁绝对频率测量，10^-15 不确定度。作者待补全。
 entities: []
 principles: []
 methods: []

@@ -1,4 +1,4 @@
-#  ???? — Characterization of the long-term2018 [evidence]
+# Kwong ???? — Characterization of the long-term dimensional stability of a NEXCERA block us... [evidence]
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
@@ -6,11 +6,11 @@ meta:
   topic: ultrastable-laser
   source_type: journal_paper
   contribution_type: evidence
-  reliability: low
-  title: "Characterization of the long-term2018"
-  first_author: ""
+  reliability: high
+  title: "Characterization of the long-term dimensional stability of a NEXCERA block using the optical resonator technique"
+  first_author: "Kwong"
   note: >
-    [批量提取] 元数据来源：placeholder (needs expert review)。内容待专家提取。
+    [手动审查] NEXCERA陶瓷块长期尺寸稳定性，用光学谐振腔技术测量。超低膨胀陶瓷作为参考腔间隔材料的评估。
 entities: []
 principles: []
 methods: []

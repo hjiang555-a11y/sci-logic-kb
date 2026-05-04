@@ -1,4 +1,4 @@
-#  ???? — josab-27-5-914 [evidence]
+# Legero ???? — Tuning the thermal expansion properties of optical reference cavities with fu... [evidence]
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
@@ -6,11 +6,11 @@ meta:
   topic: ultrastable-laser
   source_type: journal_paper
   contribution_type: evidence
-  reliability: low
-  title: "josab-27-5-914"
-  first_author: ""
+  reliability: high
+  title: "Tuning the thermal expansion properties of optical reference cavities with fused silica mirrors"
+  first_author: "Legero"
   note: >
-    [批量提取] 元数据来源：placeholder (needs expert review)。内容待专家提取。
+    [手动审查] 熔融石英镜与LTE玻璃腔体热膨胀失配导致镜面变形，降低零交叉温度约20K。LTE环光胶于FS镜背面可在30K范围调谐零交叉温度。
 entities: []
 principles: []
 methods: []

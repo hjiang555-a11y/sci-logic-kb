@@ -1,4 +1,4 @@
-#  ???? — OL 09 Fefelian et al 2009 2 [evidence]
+# Kéfélian ???? — High-resolution optical frequency dissemination on a telecommunications netwo... [evidence]
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
@@ -6,11 +6,11 @@ meta:
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
-  reliability: low
-  title: "OL 09 Fefelian et al 2009 2"
-  first_author: ""
+  reliability: high
+  title: "High-resolution optical frequency dissemination on a telecommunications network with data traffic"
+  first_author: "Kéfélian"
   note: >
-    [批量提取] 元数据来源：placeholder (needs expert review)。内容待专家提取。
+    [手动审查] 108 km城市光纤链路（含22 km通信网光纤+互联网数据共存）超稳激光频率传递。DWDM复用，计量信号与数据信号分频传输。
 entities: []
 principles: []
 methods: []

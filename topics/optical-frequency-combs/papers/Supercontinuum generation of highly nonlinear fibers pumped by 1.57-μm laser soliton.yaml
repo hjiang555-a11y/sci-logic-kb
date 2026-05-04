@@ -1,11 +1,4 @@
-# Fan 2019 — Supercontinuum generation of highly nonlinear fibers pumped by
-
-1.57
-
--
-
-μ m
-... [evidence]
+# Fan 2019 — Supercontinuum generation of highly nonlinear fibers pumped by 1.57-μm laser ... [evidence]
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
@@ -14,23 +7,9 @@ meta:
   source_type: journal_paper
   contribution_type: evidence
   reliability: high
-  title: >
-    Supercontinuum generation of highly nonlinear fibers pumped by
-
-1.57
-
--
-
-μ m
-
-laser soliton*
+  title: "Supercontinuum generation of highly nonlinear fibers pumped by 1.57-μm laser soliton"
   year: 2019
   first_author: "Fan"
-  authors: ["Song-Tao Fan", "Yan-Yan Zhang", "Lu-Lu Yan", "Wen-Ge Guo", "Shou-Gang Zhang", "Hai-Feng Jiang"]
-  journal: "Chinese Physics B"
-  volume: 28
-  pages: 26756
-  doi: 10.1088/1674-1056/28/6/064204
   note: >
     [批量提取] 元数据来源：CrossRef。内容待专家提取。
 entities: []

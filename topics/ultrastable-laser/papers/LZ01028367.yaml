@@ -1,4 +1,4 @@
-#  ???? — LZ01028367 [evidence]
+# Shaddock ???? — Frequency locking a laser to an optical cavity by use of spatial mode interfe... [evidence]
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
@@ -6,11 +6,16 @@ meta:
   topic: ultrastable-laser
   source_type: journal_paper
   contribution_type: evidence
-  reliability: low
-  title: "LZ01028367"
-  first_author: ""
+  reliability: high
+  title: "Frequency locking a laser to an optical cavity by use of spatial mode interference"
+  first_author: "Shaddock"
+  authors: ["D. A. Shaddock", "M. B. Gray", "D. E. McClelland"]
+  journal: "Optics Letters"
+  volume: 24
+  pages: 1499
+  doi: 10.1364/ol.24.001499
   note: >
-    [批量提取] 元数据来源：placeholder (needs expert review)。内容待专家提取。
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
 entities: []
 principles: []
 methods: []

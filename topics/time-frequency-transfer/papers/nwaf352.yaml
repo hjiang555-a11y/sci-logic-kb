@@ -1,4 +1,4 @@
-#  ???? — nwaf352 [evidence]
+# Chen 2025 — Absolute ranging over 113 km with nanometer precision [evidence]
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
@@ -6,12 +6,16 @@ meta:
   topic: time-frequency-transfer
   source_type: journal_paper
   contribution_type: evidence
-  reliability: low
-  title: "nwaf352"
-  first_author: ""
-  doi: 10.1093/nsr/nwaf352/8239805
+  reliability: high
+  title: "Absolute ranging over 113 km with nanometer precision"
+  year: 2025
+  first_author: "Chen"
+  authors: ["Yan-Wei Chen", "Meng-Zhe Lian", "Jin-Jian Han", "Ting Zeng", "Min Li", "Guo-Dong Wei", "Yong Wang", "Yi Sheng", "Ali Esamdin", "Lei Hou", "Qi Shen", "Jian-Yu Guan", "Jian-Jun Jia", "Ji-Gang Ren", "Cheng-Zhi Peng", "Qiang Zhang", "Hai-Feng Jiang", "Jian-Wei Pan"]
+  journal: "National Science Review"
+  volume: 12
+  doi: 10.1093/nsr/nwaf352
   note: >
-    [批量提取] 元数据来源：placeholder (needs expert review)。内容待专家提取。
+    [批量提取] 元数据来源：CrossRef。内容待专家提取。
 entities: []
 principles: []
 methods: []

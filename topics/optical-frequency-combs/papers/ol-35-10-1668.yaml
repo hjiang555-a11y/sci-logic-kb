@@ -1,4 +1,4 @@
-#  ???? — ol-35-10-1668 [evidence]
+# Ferreiro ???? — Locking the carrier-envelope-offset frequency of an optical parametric oscill... [evidence]
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
@@ -6,11 +6,11 @@ meta:
   topic: optical-frequency-combs
   source_type: journal_paper
   contribution_type: evidence
-  reliability: low
-  title: "ol-35-10-1668"
-  first_author: ""
+  reliability: high
+  title: "Locking the carrier-envelope-offset frequency of an optical parametric oscillator without f-2f self-referencing"
+  first_author: "Ferreiro"
   note: >
-    [批量提取] 元数据来源：placeholder (needs expert review)。内容待专家提取。
+    [手动审查] OPO载波包络偏频锁定，无需f-2f自参考。利用泵浦超连续谱高频模与非相位匹配泵浦+信号和频模干涉产生拍频信号。锁定带宽1.1 kHz，累积相位误差0.38 rad@1s。
 entities: []
 principles: []
 methods: []

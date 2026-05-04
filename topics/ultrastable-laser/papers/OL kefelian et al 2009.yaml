@@ -1,4 +1,4 @@
-#  ???? — OL kefelian et al 2009 [evidence]
+# Kéfélian ???? — Ultralow-frequency-noise stabilization of a laser by locking to an optical fi... [evidence]
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
@@ -6,11 +6,11 @@ meta:
   topic: ultrastable-laser
   source_type: journal_paper
   contribution_type: evidence
-  reliability: low
-  title: "OL kefelian et al 2009"
-  first_author: ""
+  reliability: high
+  title: "Ultralow-frequency-noise stabilization of a laser by locking to an optical fiber-delay line"
+  first_author: "Kéfélian"
   note: >
-    [批量提取] 元数据来源：placeholder (needs expert review)。内容待专家提取。
+    [手动审查] 全光纤Michelson干涉仪（1 km SMF-28光纤臂差+AOM外差检测）锁定EDF DFB激光器。频率噪声抑制>40 dB（1 Hz-10 kHz），达10^-2 Hz^2/Hz@1 kHz。
 entities: []
 principles: []
 methods: []
