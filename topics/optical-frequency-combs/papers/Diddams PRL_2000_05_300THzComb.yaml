@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：optical-frequency-combs
 meta:
+meta:
   zotero_key: Direct Link between Microwave and Optical Frequenc
   topic: optical-frequency-combs
   source_type: technical_paper
@@ -12,6 +13,7 @@ meta:
   title: Direct Link between Microwave and Optical Frequencies
   first_author: Scott
   note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1103/physrevlett.84.5102
 entities:
 - id: ent.diddams_prl_2000_05_300thzcomb_system
   name: Scott  experimental system

@@ -5,6 +5,8 @@
 # 专题：time-frequency-transfer
 meta:
   zotero_key: High-Precision Distribution of Highly
+meta:
+  zotero_key: High-Precision Distribution of Highly
   topic: time-frequency-transfer
   source_type: technical_paper
   contribution_type: evidence
@@ -12,6 +14,7 @@ meta:
   title: High-Precision Distribution of Highly
   first_author: Ning
   note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1038/srep05109
 entities:
 - id: ent.high_precision_distribution_of_system
   name: Ning  experimental system

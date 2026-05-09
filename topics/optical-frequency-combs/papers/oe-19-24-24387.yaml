@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：optical-frequency-combs
 meta:
+meta:
   zotero_key: Microwave generation with low residual phase
   topic: optical-frequency-combs
   source_type: technical_paper
@@ -12,6 +13,7 @@ meta:
   title: Microwave generation with low residual phase
   first_author: William
   note: batch minimal extraction; pending expert review for full entities/principles
+  doi: ''
 entities:
 - id: ent.oe_19_24_24387_system
   name: William  experimental system

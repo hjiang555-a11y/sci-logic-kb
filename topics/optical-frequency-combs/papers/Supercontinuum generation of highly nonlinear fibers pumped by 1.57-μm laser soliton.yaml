@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：optical-frequency-combs
 meta:
+meta:
   zotero_key: Supercontinuum generation of highly nonlinear fibe
   topic: optical-frequency-combs
   source_type: technical_paper
@@ -13,6 +14,7 @@ meta:
   first_author: Fan
   note: fixed from broken YAML; pending expert review
   year: 2019
+  doi: 10.1088/1674-1056/28/6/064204
 entities:
 - id: ent.supercontinuum_generation_of_h_system
   name: Fan 2019 experimental system

@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：ultrastable-laser
 meta:
+meta:
   zotero_key: Fundamentalthermalnoiseinantiresonanthollow-corefi
   topic: ultrastable-laser
   source_type: technical_paper
@@ -12,6 +13,7 @@ meta:
   title: Fundamentalthermalnoiseinantiresonanthollow-corefibers
   first_author: ''
   note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1103/PhysRevA
 entities:
 - id: ent.physreva_106_023501_system
   name: '  experimental system'

@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：optical-frequency-combs
 meta:
+meta:
   zotero_key: Ultrabroadband Supercontinuum Generation and Frequ
   topic: optical-frequency-combs
   source_type: technical_paper
@@ -12,6 +13,7 @@ meta:
   title: Ultrabroadband Supercontinuum Generation and Frequency-Comb Stabilization
   first_author: Daniel
   note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1103/PhysRevApplied
 entities:
 - id: ent.2923_3_system
   name: Daniel  experimental system

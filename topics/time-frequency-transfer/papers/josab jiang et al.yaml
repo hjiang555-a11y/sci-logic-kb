@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：time-frequency-transfer
 meta:
+meta:
   zotero_key: Jiangetal. Vol.25,No.12/December2008/J.Opt.Soc.Am.
   topic: time-frequency-transfer
   source_type: technical_paper
@@ -12,6 +13,7 @@ meta:
   title: Jiangetal. Vol.25,No.12/December2008/J.Opt.Soc.Am.B 2029
   first_author: ''
   note: batch minimal extraction; pending expert review for full entities/principles
+  doi: ''
 entities:
 - id: ent.josab_jiang_et_al_system
   name: '  experimental system'

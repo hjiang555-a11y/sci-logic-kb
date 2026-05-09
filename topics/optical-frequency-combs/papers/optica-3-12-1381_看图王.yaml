@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：optical-frequency-combs
 meta:
+meta:
   zotero_key: Space-borne frequency comb metrology
   topic: optical-frequency-combs
   source_type: technical_paper
@@ -12,6 +13,7 @@ meta:
   title: Space-borne frequency comb metrology
   first_author: ''
   note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1364/OPTICA
 entities:
 - id: ent.optica_3_12_1381_____system
   name: '  experimental system'

@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：optical-frequency-combs
 meta:
+meta:
   zotero_key: ResearchArticle Vol.28,No.9/27April2020/OpticsExpr
   topic: optical-frequency-combs
   source_type: technical_paper
@@ -12,6 +13,7 @@ meta:
   title: ResearchArticle Vol.28,No.9/27April2020/OpticsExpress 12755
   first_author: ''
   note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1364/OE
 entities:
 - id: ent.oe_28_9_12755_system
   name: '  experimental system'

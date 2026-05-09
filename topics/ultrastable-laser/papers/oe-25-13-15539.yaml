@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：ultrastable-laser
 meta:
+meta:
   zotero_key: Dispersive heterodyne probing method for laser
   topic: ultrastable-laser
   source_type: technical_paper
@@ -12,6 +13,7 @@ meta:
   title: Dispersive heterodyne probing method for laser
   first_author: ''
   note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1364/OE
 entities:
 - id: ent.oe_25_13_15539_system
   name: '  experimental system'

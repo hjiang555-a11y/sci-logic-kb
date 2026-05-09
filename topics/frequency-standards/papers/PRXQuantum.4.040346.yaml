@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：frequency-standards
 meta:
+meta:
   zotero_key: Sideband Thermometry of Ion Crystals
   topic: frequency-standards
   source_type: technical_paper
@@ -12,6 +13,7 @@ meta:
   title: Sideband Thermometry of Ion Crystals
   first_author: ''
   note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1103/PRXQuantum
 entities:
 - id: ent.prxquantum_4_040346_system
   name: '  experimental system'

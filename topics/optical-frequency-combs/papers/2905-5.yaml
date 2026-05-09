@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：optical-frequency-combs
 meta:
+meta:
   zotero_key: Stably accessing octave-spanning microresonator
   topic: optical-frequency-combs
   source_type: technical_paper
@@ -12,6 +13,7 @@ meta:
   title: Stably accessing octave-spanning microresonator
   first_author: ''
   note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1364/OPTICA
 entities:
 - id: ent.2905_5_system
   name: '  experimental system'

@@ -2,113 +2,106 @@
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
+meta:
   zotero_key: HOWE1976-NBS-TN679
   topic: shared
   source_type: technical_report
   contribution_type: framework
   reliability: high
-  title: "Frequency Domain Stability Measurements: A Tutorial Introduction"
+  title: 'Frequency Domain Stability Measurements: A Tutorial Introduction'
   year: 1976
-  first_author: "Howe"
-  authors: ["David A. Howe"]
-  note: >
-    [奠基技术报告 · < 1999 年白名单 §B Howe 噪声测量体系] Howe 在 NBS 发表的频域频率 稳定度测量教程。与 Allan 1966/1987 的时域方差体系互补，系统建立频域 PSD 测量学： (1) 相位噪声单边功率谱密度 S_phi(f)（单位 rad²/Hz）的标准测量方法（包括相位检波器 法、延迟线鉴频法）；(2) 分数频率噪声 PSD S_y(f)（单位 1/Hz）与 S_phi(f) 的转换 关系 S_y(f) = f² S_phi(f) / ν₀²；(3) 幂律噪声在频域的同一 α 分解；(4) 时-频对偶 积分公式 σ_y²(τ) = 2 ∫₀^{f_h} S_y(f) · sin⁴(π f τ) / (π f τ)² df。本文件确立频域 PSD 测量方法的行业规范，是所有现代相位噪声分析仪、商业频率稳定度分析软件（Stable32  / AllanTools / TimeLab 等）的理论基础。 注：TODO.md §B 白名单提及"Howe 1981 NBS Tech Note 669"；本文件摄入的 NBS TN 679 是 Howe 在 1976 年的同系列教程文档，若专家确认两者是独立文档，可单独摄入 TN 669。
+  first_author: Howe
+  authors:
+  - David A. Howe
+  note: '[奠基技术报告 · < 1999 年白名单 §B Howe 噪声测量体系] Howe 在 NBS 发表的频域频率 稳定度测量教程。与 Allan 1966/1987 的时域方差体系互补，系统建立频域 PSD 测量学： (1) 相位噪声单边功率谱密度 S_phi(f)（单位 rad²/Hz）的标准测量方法（包括相位检波器 法、延迟线鉴频法）；(2) 分数频率噪声 PSD S_y(f)（单位
+    1/Hz）与 S_phi(f) 的转换 关系 S_y(f) = f² S_phi(f) / ν₀²；(3) 幂律噪声在频域的同一 α 分解；(4) 时-频对偶 积分公式 σ_y²(τ) = 2 ∫₀^{f_h} S_y(f) · sin⁴(π f τ) / (π f τ)² df。本文件确立频域 PSD 测量方法的行业规范，是所有现代相位噪声分析仪、商业频率稳定度分析软件（Stable32  /
+    AllanTools / TimeLab 等）的理论基础。 注：TODO.md §B 白名单提及"Howe 1981 NBS Tech Note 669"；本文件摄入的 NBS TN 679 是 Howe 在 1976 年的同系列教程文档，若专家确认两者是独立文档，可单独摄入 TN 669。
+
+    '
+  doi: 10.6028/nbs.tn.679
 entities: []
-
 principles:
-  - id: pri.phase_noise_frequency_noise_psd_duality
-    name: "相位噪声 PSD 与频率噪声 PSD 对偶关系"
-    tier: meta
-    verification_status: observed
-    statement: >
-      "相位噪声单边功率谱密度 S_phi(f)（rad²/Hz）与分数频率噪声单边功率谱密度 S_y(f)
-      （1/Hz）之间存在确定性对偶关系 S_y(f) = (f / nu_0)² · S_phi(f)，其中 nu_0 为
-      载频。二者在实验中可互换测量：相位法（含相位检波器、延迟线鉴频）直接给 S_phi；
-      频率计数给 S_y；任一测量可通过此关系换算为另一个。"
-    domain: "时频计量；频谱分析"
-    key_insight: >
-      短期稳定度的完整表征需要频域 PSD 而非仅时域 ADEV——因为 PSD 提供"每一傅里叶
-      频率上的噪声密度"，比 σ_y(τ) 的"在尺度 τ 上的积分不稳定度"信息密度更高。
-      在分析窄带器件（如振荡器偏移载波的相位噪声）时必须用 S_phi(f)。但二者信息
-      等价：存在积分公式在时/频域之间双向转换。
-    conditions: "稳态信号；载频 nu_0 已知；测量带宽覆盖感兴趣的傅里叶频率范围"
-    formula: "S_y(f) = (f^2 / nu_0^2) * S_phi(f);  sigma_y^2(tau) = 2 * integral_0^{f_h} S_y(f) * sin^4(pi f tau) / (pi f tau)^2 df"
-    source:
-      zotero_key: "HOWE1976-NBS-TN679"
-      claim: >
-        "the one-sided power spectral density of phase fluctuations S_phi(f) and of fractional
-        frequency fluctuations S_y(f) are related by S_y(f) = (f/ν₀)² S_phi(f), and either may
-        be converted to the time-domain two-sample deviation by the appropriate integral."
+- id: pri.phase_noise_frequency_noise_psd_duality
+  name: 相位噪声 PSD 与频率噪声 PSD 对偶关系
+  tier: meta
+  verification_status: observed
+  statement: '"相位噪声单边功率谱密度 S_phi(f)（rad²/Hz）与分数频率噪声单边功率谱密度 S_y(f) （1/Hz）之间存在确定性对偶关系 S_y(f) = (f / nu_0)² · S_phi(f)，其中 nu_0 为 载频。二者在实验中可互换测量：相位法（含相位检波器、延迟线鉴频）直接给 S_phi； 频率计数给 S_y；任一测量可通过此关系换算为另一个。"
 
-  - id: pri.time_frequency_domain_transfer_function
-    name: "时-频域稳定度转换传递函数原理（sin⁴ 核）"
-    tier: meta
-    verification_status: observed
-    statement: >
-      "由时域 σ_y²(τ) 与频域 S_y(f) 的转换积分核 |H_ADEV(f,τ)|² = 2 sin⁴(π f τ) / (π f τ)²
-      严格决定了 ADEV 对不同傅里叶频率噪声的加权响应——这是 Allan 方差 对 white PM 与 
-      flicker PM 无法区分（均给 μ ≈ −1 斜率）的根本原因：sin⁴ 核在高 f 区衰减不够快，
-      高频带宽 f_h 会进入结果，使 σ_y 对测量带宽敏感。"
-    domain: "时频计量；积分核分析"
-    key_insight: >
-      ADEV 与 PSD 的转换不是简单 Fourier 对偶——其积分核形状决定了方法的诊断能力边界。
-      为解决 PM 噪声的诊断简并，Sullivan 1990 引入 MDEV，其积分核改为 sin^6，带宽
-      依赖被抑制，PM 噪声能被分辨。此原理解释了所有 Allan 派生方差（MDEV / TDEV /
-      HDEV / Theo1）存在的理论必要性。
-    conditions: "连续相邻采样，dead time = 0；高频带宽 f_h 明确"
-    formula: "|H_ADEV(f, tau)|^2 = 2 * sin^4(pi f tau) / (pi f tau)^2   (first-difference sinc^2-like kernel)"
-    source:
-      zotero_key: "HOWE1976-NBS-TN679"
-      claim: >
-        "the transfer function relating S_y(f) to σ_y²(τ) contains a sin⁴(π f τ) factor which
-        gives poor high-frequency rolloff and causes Allan variance to depend on measurement
-        bandwidth for white phase noise."
+    '
+  domain: 时频计量；频谱分析
+  key_insight: '短期稳定度的完整表征需要频域 PSD 而非仅时域 ADEV——因为 PSD 提供"每一傅里叶 频率上的噪声密度"，比 σ_y(τ) 的"在尺度 τ 上的积分不稳定度"信息密度更高。 在分析窄带器件（如振荡器偏移载波的相位噪声）时必须用 S_phi(f)。但二者信息 等价：存在积分公式在时/频域之间双向转换。
 
+    '
+  conditions: 稳态信号；载频 nu_0 已知；测量带宽覆盖感兴趣的傅里叶频率范围
+  formula: S_y(f) = (f^2 / nu_0^2) * S_phi(f);  sigma_y^2(tau) = 2 * integral_0^{f_h} S_y(f) * sin^4(pi f tau) / (pi f tau)^2 df
+  source:
+    zotero_key: HOWE1976-NBS-TN679
+    claim: '"the one-sided power spectral density of phase fluctuations S_phi(f) and of fractional frequency fluctuations S_y(f) are related by S_y(f) = (f/ν₀)² S_phi(f), and either may be converted to
+      the time-domain two-sample deviation by the appropriate integral."
+
+      '
+- id: pri.time_frequency_domain_transfer_function
+  name: 时-频域稳定度转换传递函数原理（sin⁴ 核）
+  tier: meta
+  verification_status: observed
+  statement: '"由时域 σ_y²(τ) 与频域 S_y(f) 的转换积分核 |H_ADEV(f,τ)|² = 2 sin⁴(π f τ) / (π f τ)² 严格决定了 ADEV 对不同傅里叶频率噪声的加权响应——这是 Allan 方差 对 white PM 与  flicker PM 无法区分（均给 μ ≈ −1 斜率）的根本原因：sin⁴ 核在高 f 区衰减不够快， 高频带宽 f_h
+    会进入结果，使 σ_y 对测量带宽敏感。"
+
+    '
+  domain: 时频计量；积分核分析
+  key_insight: 'ADEV 与 PSD 的转换不是简单 Fourier 对偶——其积分核形状决定了方法的诊断能力边界。 为解决 PM 噪声的诊断简并，Sullivan 1990 引入 MDEV，其积分核改为 sin^6，带宽 依赖被抑制，PM 噪声能被分辨。此原理解释了所有 Allan 派生方差（MDEV / TDEV / HDEV / Theo1）存在的理论必要性。
+
+    '
+  conditions: 连续相邻采样，dead time = 0；高频带宽 f_h 明确
+  formula: '|H_ADEV(f, tau)|^2 = 2 * sin^4(pi f tau) / (pi f tau)^2   (first-difference sinc^2-like kernel)'
+  source:
+    zotero_key: HOWE1976-NBS-TN679
+    claim: '"the transfer function relating S_y(f) to σ_y²(τ) contains a sin⁴(π f τ) factor which gives poor high-frequency rolloff and causes Allan variance to depend on measurement bandwidth for white
+      phase noise."
+
+      '
 methods:
-  - id: meth.phase_noise_psd_measurement
-    name: "相位噪声功率谱密度 S_phi(f) 测量方法"
-    purpose: >
-      对振荡器 / 频率参考的短期相位稳定度做频域表征。与时域 ADEV 互补，提供每一
-      傅里叶偏置频率 f 上的噪声密度。是激光器线宽分析、微波振荡器相位噪声规格、
-      光子微波产生器性能对标的标准度量工具。
-    description: >
-      两主流实现：(1) 相位检波器法（将被测信号与参考信号经 90° 正交相位锁定至 DC，
-      输出端电压正比于相位涨落，经 FFT 得 S_phi(f)）；(2) 延迟线鉴频法（自参考，
-      无需独立更低相噪参考源，但灵敏度依赖延迟长度与载频）。现代相位噪声分析仪（如
-      Keysight E5052B、Rohde & Schwarz FSWP）内置多种方法。
-    key_steps:
-      - "选择比被测信号相噪低 > 10 dB 的参考源（或用延迟线法自参考）"
-      - "将两信号接入相位检波器（mixer 正交锁）或延迟线鉴频器"
-      - "输出端 DC 电压 V(t) = K_phi * delta_phi(t)，经 FFT 得 S_V(f)"
-      - "由检波增益 K_phi 换算 S_phi(f) = S_V(f) / K_phi^2"
-      - "如需分数频率 PSD：S_y(f) = (f/nu_0)^2 * S_phi(f)"
-    applicable_conditions: "稳态信号；被测与参考频率接近；相位锁定环带宽远大于关心的 f"
-    source:
-      zotero_key: "HOWE1976-NBS-TN679"
-      claim: >
-        "phase noise spectral density is commonly measured with a double-balanced mixer
-        phase detector operated at quadrature against a reference oscillator, or with a
-        delay-line discriminator, yielding S_phi(f) at offset frequencies from carrier."
-    note: >
-      本方法为时频领域最基础的频域短期稳定度表征手段，已被本库多个论文（matei2017 /
-      kessler2012 / robinson2019 等）隐式使用。本文件建立 meth.phase_noise_psd_measurement
-      为权威规范节点。
+- id: meth.phase_noise_psd_measurement
+  name: 相位噪声功率谱密度 S_phi(f) 测量方法
+  purpose: '对振荡器 / 频率参考的短期相位稳定度做频域表征。与时域 ADEV 互补，提供每一 傅里叶偏置频率 f 上的噪声密度。是激光器线宽分析、微波振荡器相位噪声规格、 光子微波产生器性能对标的标准度量工具。
 
+    '
+  description: '两主流实现：(1) 相位检波器法（将被测信号与参考信号经 90° 正交相位锁定至 DC， 输出端电压正比于相位涨落，经 FFT 得 S_phi(f)）；(2) 延迟线鉴频法（自参考， 无需独立更低相噪参考源，但灵敏度依赖延迟长度与载频）。现代相位噪声分析仪（如 Keysight E5052B、Rohde & Schwarz FSWP）内置多种方法。
+
+    '
+  key_steps:
+  - 选择比被测信号相噪低 > 10 dB 的参考源（或用延迟线法自参考）
+  - 将两信号接入相位检波器（mixer 正交锁）或延迟线鉴频器
+  - 输出端 DC 电压 V(t) = K_phi * delta_phi(t)，经 FFT 得 S_V(f)
+  - 由检波增益 K_phi 换算 S_phi(f) = S_V(f) / K_phi^2
+  - 如需分数频率 PSD：S_y(f) = (f/nu_0)^2 * S_phi(f)
+  applicable_conditions: 稳态信号；被测与参考频率接近；相位锁定环带宽远大于关心的 f
+  source:
+    zotero_key: HOWE1976-NBS-TN679
+    claim: '"phase noise spectral density is commonly measured with a double-balanced mixer phase detector operated at quadrature against a reference oscillator, or with a delay-line discriminator, yielding
+      S_phi(f) at offset frequencies from carrier."
+
+      '
+  note: '本方法为时频领域最基础的频域短期稳定度表征手段，已被本库多个论文（matei2017 / kessler2012 / robinson2019 等）隐式使用。本文件建立 meth.phase_noise_psd_measurement 为权威规范节点。
+
+    '
 metrics: []
-
 relations:
-  - id: rel.howe_1976_76_01
-    subject: meth.phase_noise_psd_measurement
-    predicate: OPERATIONALIZED-AS
-    object: pri.phase_noise_frequency_noise_psd_duality
-    confidence: established
-    source: {zotero_key: "HOWE1976-NBS-TN679", claim: "S_phi(f) is measured directly and converted to S_y(f) via the duality relation S_y(f) = (f/ν₀)² S_phi(f)."}
-    note: "相位噪声测量方法承载相位-频率噪声 PSD 对偶的原理。"
-
-  - id: rel.howe_1976_76_02
-    subject: meth.allan_deviation_adev
-    predicate: CONDITIONED-BY
-    object: pri.time_frequency_domain_transfer_function
-    confidence: established
-    source: {zotero_key: "HOWE1976-NBS-TN679", claim: "the transfer function relating S_y(f) to σ_y²(τ) contains a sin⁴(π f τ) factor which causes Allan variance to depend on measurement bandwidth for white phase noise."}
-    note: "ADEV 的 PM 噪声带宽依赖源自其积分核形状——这是 MDEV / TDEV 派生方差存在的理论依据。跨文件引用 meth.allan_deviation_adev（allan1966.yaml）。"
+- id: rel.howe_1976_76_01
+  subject: meth.phase_noise_psd_measurement
+  predicate: OPERATIONALIZED-AS
+  object: pri.phase_noise_frequency_noise_psd_duality
+  confidence: established
+  source:
+    zotero_key: HOWE1976-NBS-TN679
+    claim: S_phi(f) is measured directly and converted to S_y(f) via the duality relation S_y(f) = (f/ν₀)² S_phi(f).
+  note: 相位噪声测量方法承载相位-频率噪声 PSD 对偶的原理。
+- id: rel.howe_1976_76_02
+  subject: meth.allan_deviation_adev
+  predicate: CONDITIONED-BY
+  object: pri.time_frequency_domain_transfer_function
+  confidence: established
+  source:
+    zotero_key: HOWE1976-NBS-TN679
+    claim: the transfer function relating S_y(f) to σ_y²(τ) contains a sin⁴(π f τ) factor which causes Allan variance to depend on measurement bandwidth for white phase noise.
+  note: ADEV 的 PM 噪声带宽依赖源自其积分核形状——这是 MDEV / TDEV 派生方差存在的理论依据。跨文件引用 meth.allan_deviation_adev（allan1966.yaml）。

@@ -2,155 +2,154 @@
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
+meta:
   zotero_key: RILEY2008-NIST-SP1065
   topic: shared
   source_type: handbook
   contribution_type: framework
   reliability: high
-  title: "Handbook of Frequency Stability Analysis"
+  title: Handbook of Frequency Stability Analysis
   year: 2008
-  first_author: "Riley"
-  authors: ["William J. Riley", "David A. Howe"]
-  note: >
-    [奠基技术报告 · < 1999 年白名单 §B Howe 噪声测量体系；虽出版于 2008 年但作为 Howe 1990s 方差体系的集大成手册，按 TODO.md §0.1 §B 接受] Riley 联合 Howe 编著的 NIST SP 1065 是频率稳定度分析的权威参考手册，内容在 Sullivan 1990 基础上增补： (1) Overlapping Allan Deviation（OADEV）——利用滑动窗口大幅降低 ADEV 的方差， 使等效自由度 EDF ~2.67(N/m−1)，提升长 τ 数据点的统计意义； (2) Total Deviation（TOTDEV / σ_Total(τ)）——对数据末端做反射延拓，增大样本有效 长度，长 τ 偏差远小于 ADEV； (3) Theo1 / TheoH / TheoBR 方差（Howe 2000）——对 τ > N·τ_0/2 极长区间给出统计 效率最高的估计，需 bias 修正（TheoBR 系数），TheoH 是 Theo1 与 ADEV 的混合 估计（τ < 0.1·N·τ_0 用 ADEV，之后切 TheoBR）。 本手册给出每一种方差的 bias correction factor（b_1, b_2, b_3 系数表）、等效 自由度 EDF 公式、χ² 置信区间构造。是 Stable32（Riley 自著）、AllanTools（Python）、 TimeLab 等所有商业/开源稳定度分析软件的实现参考。
+  first_author: Riley
+  authors:
+  - William J. Riley
+  - David A. Howe
+  note: '[奠基技术报告 · < 1999 年白名单 §B Howe 噪声测量体系；虽出版于 2008 年但作为 Howe 1990s 方差体系的集大成手册，按 TODO.md §0.1 §B 接受] Riley 联合 Howe 编著的 NIST SP 1065 是频率稳定度分析的权威参考手册，内容在 Sullivan 1990 基础上增补： (1) Overlapping Allan Deviation（OADEV）——利用滑动窗口大幅降低
+    ADEV 的方差， 使等效自由度 EDF ~2.67(N/m−1)，提升长 τ 数据点的统计意义； (2) Total Deviation（TOTDEV / σ_Total(τ)）——对数据末端做反射延拓，增大样本有效 长度，长 τ 偏差远小于 ADEV； (3) Theo1 / TheoH / TheoBR 方差（Howe 2000）——对 τ > N·τ_0/2 极长区间给出统计 效率最高的估计，需
+    bias 修正（TheoBR 系数），TheoH 是 Theo1 与 ADEV 的混合 估计（τ < 0.1·N·τ_0 用 ADEV，之后切 TheoBR）。 本手册给出每一种方差的 bias correction factor（b_1, b_2, b_3 系数表）、等效 自由度 EDF 公式、χ² 置信区间构造。是 Stable32（Riley 自著）、AllanTools（Python）、
+    TimeLab 等所有商业/开源稳定度分析软件的实现参考。
+
+    '
+  doi: 10.6028/nist.sp.1065
 entities: []
-
 principles:
-  - id: pri.overlapping_estimator_improves_edf
-    name: "重叠估计量提升等效自由度原理"
-    tier: meta
-    verification_status: observed
-    statement: >
-      "在给定 N 点数据上，将 ADEV 的非重叠分块（每段独立使用一次）替换为步长 τ_0 的
-      重叠滑动窗口估计，能把等效自由度 EDF 从约 (N/m − 1) 提高到约 2.67(N/m − 1)
-      （对 white FM 噪声），即一次测量就能给出统计意义更强的 σ_y(τ) 点估计与更窄
-      的置信区间。重叠操作不改变被估计对象（仍是真 ADEV），只降低估计量的方差。"
-    domain: "时频计量；估计量统计效率"
-    key_insight: >
-      重叠估计在不增加实验成本前提下提高信息利用率——对长 τ（m 大）数据点尤其重要，
-      因为 m 大时非重叠分块可能只有 1–2 段，方差巨大，置信区间包括零。OADEV 是现代
-      稳定度报告中长 τ 性能可信展示的事实标准。
-    conditions: "连续无间断数据；估计量对白噪声 EDF 计算式有 Greenhall 表可查"
-    formula: "EDF_OADEV ~ 2.67 * (N / m - 1)  (white FM); Greenhall formulas available per noise type"
-    source:
-      zotero_key: "RILEY2008-NIST-SP1065"
-      claim: >
-        "the overlapping Allan deviation is calculated using all possible combinations of the
-        data, yielding the same expected value as the standard Allan deviation but with
-        improved confidence — larger equivalent degrees of freedom."
+- id: pri.overlapping_estimator_improves_edf
+  name: 重叠估计量提升等效自由度原理
+  tier: meta
+  verification_status: observed
+  statement: '"在给定 N 点数据上，将 ADEV 的非重叠分块（每段独立使用一次）替换为步长 τ_0 的 重叠滑动窗口估计，能把等效自由度 EDF 从约 (N/m − 1) 提高到约 2.67(N/m − 1) （对 white FM 噪声），即一次测量就能给出统计意义更强的 σ_y(τ) 点估计与更窄 的置信区间。重叠操作不改变被估计对象（仍是真 ADEV），只降低估计量的方差。"
 
-  - id: pri.theo1_long_tau_statistical_efficiency
-    name: "Theo1 方差长 τ 统计效率最优原理"
-    tier: meta
-    verification_status: observed
-    statement: >
-      "Theo1(m=n·τ_0, N) 方差估计在给定数据长度 N 下可覆盖至 τ = 0.75·N·τ_0，
-      远超 ADEV / MDEV 的 τ ≤ N·τ_0 / 3 硬约束；并在 white FM / flicker FM 噪声下
-      EDF 优于 OADEV。代价：Theo1 对不同 α 有偏差（bias），需查 Howe 2006 表给出
-      的 b_1(α) 修正；TheoBR 是经偏差修正的可直接比较值，TheoH 是 ADEV + TheoBR
-      的混合估计，给出完整 τ 范围的最佳实践曲线。"
-    domain: "时频计量；长 τ 统计学"
-    key_insight: >
-      Theo1 突破了 ADEV 家族"τ ≤ N·τ_0 / 3"的硬约束——在数据量有限（如新建原子钟
-      初期连续运行 1–2 周）时，Theo1 把可分析的 τ 上限推至 N·τ_0 的 75%。这对报告
-      长期稳定度至关重要：无 Theo1 时，一周数据只能给 τ ≤ 2 天的 ADEV，看不到真正的
-      长期性能；有 Theo1 后可给出 5 天 τ 的稳定度。TheoH 是工程常用实现（Stable32 默认）。
-    conditions: "连续无间断相位数据；bias 修正系数按噪声类型 α 查表；小 N 时修正引入不确定度"
-    formula: "Theo1(m, tau_0, N) = (1/(0.75(N-m)(m*tau_0)^2)) * sum_{i=1}^{N-m} sum_{delta=0}^{m/2-1} (1/(m/2-delta)) * (x_i - x_{i-delta+m/2} + x_{i+m} - x_{i+delta+m/2})^2"
-    source:
-      zotero_key: "RILEY2008-NIST-SP1065"
-      claim: >
-        "Theo1, developed by Howe, extends the maximum τ to about 75 % of N·τ_0, well beyond
-        the N·τ_0/3 limit of ADEV/MDEV, and offers statistical efficiency superior to the
-        overlapping Allan deviation at long τ."
+    '
+  domain: 时频计量；估计量统计效率
+  key_insight: '重叠估计在不增加实验成本前提下提高信息利用率——对长 τ（m 大）数据点尤其重要， 因为 m 大时非重叠分块可能只有 1–2 段，方差巨大，置信区间包括零。OADEV 是现代 稳定度报告中长 τ 性能可信展示的事实标准。
 
+    '
+  conditions: 连续无间断数据；估计量对白噪声 EDF 计算式有 Greenhall 表可查
+  formula: EDF_OADEV ~ 2.67 * (N / m - 1)  (white FM); Greenhall formulas available per noise type
+  source:
+    zotero_key: RILEY2008-NIST-SP1065
+    claim: '"the overlapping Allan deviation is calculated using all possible combinations of the data, yielding the same expected value as the standard Allan deviation but with improved confidence — larger
+      equivalent degrees of freedom."
+
+      '
+- id: pri.theo1_long_tau_statistical_efficiency
+  name: Theo1 方差长 τ 统计效率最优原理
+  tier: meta
+  verification_status: observed
+  statement: '"Theo1(m=n·τ_0, N) 方差估计在给定数据长度 N 下可覆盖至 τ = 0.75·N·τ_0， 远超 ADEV / MDEV 的 τ ≤ N·τ_0 / 3 硬约束；并在 white FM / flicker FM 噪声下 EDF 优于 OADEV。代价：Theo1 对不同 α 有偏差（bias），需查 Howe 2006 表给出 的 b_1(α) 修正；TheoBR
+    是经偏差修正的可直接比较值，TheoH 是 ADEV + TheoBR 的混合估计，给出完整 τ 范围的最佳实践曲线。"
+
+    '
+  domain: 时频计量；长 τ 统计学
+  key_insight: 'Theo1 突破了 ADEV 家族"τ ≤ N·τ_0 / 3"的硬约束——在数据量有限（如新建原子钟 初期连续运行 1–2 周）时，Theo1 把可分析的 τ 上限推至 N·τ_0 的 75%。这对报告 长期稳定度至关重要：无 Theo1 时，一周数据只能给 τ ≤ 2 天的 ADEV，看不到真正的 长期性能；有 Theo1 后可给出 5 天 τ 的稳定度。TheoH
+    是工程常用实现（Stable32 默认）。
+
+    '
+  conditions: 连续无间断相位数据；bias 修正系数按噪声类型 α 查表；小 N 时修正引入不确定度
+  formula: Theo1(m, tau_0, N) = (1/(0.75(N-m)(m*tau_0)^2)) * sum_{i=1}^{N-m} sum_{delta=0}^{m/2-1} (1/(m/2-delta)) * (x_i - x_{i-delta+m/2} + x_{i+m} - x_{i+delta+m/2})^2
+  source:
+    zotero_key: RILEY2008-NIST-SP1065
+    claim: '"Theo1, developed by Howe, extends the maximum τ to about 75 % of N·τ_0, well beyond the N·τ_0/3 limit of ADEV/MDEV, and offers statistical efficiency superior to the overlapping Allan deviation
+      at long τ."
+
+      '
 methods:
-  - id: meth.overlapping_allan_deviation_oadev
-    name: "重叠 Allan 偏差 OADEV"
-    purpose: >
-      对既有测量数据提取 ADEV 估计时减小方差、提升长 τ 置信度。是现代时频论文默认
-      的 σ_y(τ) 报告格式。
-    description: >
-      采用步长 τ_0 的滑动窗口遍历所有长度为 m·τ_0 的相邻两段，按 OADEV 公式求和。
-      期望值与 ADEV 相同，估计量方差更小（EDF 提升约 2.67×）。
-    key_steps:
-      - "采集 τ_0 等间隔相位数据 x_0, x_1, ..., x_N"
-      - "对每 m = 1, 2, 4, 8, ...，计算 sigma_y^2(m*tau_0) = (1/(2*m^2*tau_0^2*(N-2m))) * sum_{j=0}^{N-2m-1} (x_{j+2m} - 2*x_{j+m} + x_j)^2"
-      - "开方得 OADEV；使用 Greenhall 公式给等效自由度 EDF 与 χ² 置信区间"
-    applicable_conditions: "连续相位数据；N 足够大使 N/m - 1 > 10 以获有意义置信区间"
-    source:
-      zotero_key: "RILEY2008-NIST-SP1065"
-      claim: "the overlapping Allan deviation uses all possible pairs of samples, thereby improving the estimation confidence over the non-overlapped ADEV."
-    note: >
-      本方法已被本库多个 breakthrough 论文（如 bothwell2022 Sr 光钟、matei2017 Si 腔、
-      oelker2019 时间移动钟等）用作长 τ 性能报告的规范度量。
+- id: meth.overlapping_allan_deviation_oadev
+  name: 重叠 Allan 偏差 OADEV
+  purpose: '对既有测量数据提取 ADEV 估计时减小方差、提升长 τ 置信度。是现代时频论文默认 的 σ_y(τ) 报告格式。
 
-  - id: meth.total_deviation_totdev
-    name: "Total 偏差 TOTDEV / σ_Total(τ)"
-    purpose: >
-      对有限长度数据给出长 τ 低偏差的 σ_y 估计。通过对数据末端做反射延拓，使长 τ
-      估计避免因样本过短产生的系统性低估。
-    description: >
-      把长度 N 的数据按反射条件延拓为 3N，再在延拓序列上做 OADEV 计算。对 α ≠ 0 有
-      偏差，需用 bias factor 修正。
-    key_steps:
-      - "数据反射延拓：x_{-i} = 2*x_0 - x_i; x_{N+i} = 2*x_N - x_{N-i}"
-      - "在延拓序列上按 OADEV 公式计算 sigma_Total^2(m*tau_0)"
-      - "按噪声类型 α 查 bias 表做修正"
-    applicable_conditions: "长 τ (m > N/10) 且数据量有限时优选；短 τ 与 OADEV 一致"
-    source:
-      zotero_key: "RILEY2008-NIST-SP1065"
-      claim: "Total deviation extends the original data record by reflection, allowing long-τ stability estimates with reduced bias compared with the Allan variance."
+    '
+  description: '采用步长 τ_0 的滑动窗口遍历所有长度为 m·τ_0 的相邻两段，按 OADEV 公式求和。 期望值与 ADEV 相同，估计量方差更小（EDF 提升约 2.67×）。
 
-  - id: meth.theo1_thedev
-    name: "Theo1 / TheoBR / TheoH 方差（Howe 族）"
-    purpose: >
-      在给定数据长度 N 下把可分析 τ 上限推至 ~0.75·N·τ_0，远超 ADEV 家族。现代长期
-      稳定度分析的默认工具。
-    description: >
-      Theo1 为 Howe 提出的改良二阶差分方差，对长 τ 有最优 EDF；TheoBR 为偏差修正后
-      直接与 ADEV 可比的版本（bias factor b_R(α) 查表）；TheoH 为 ADEV（τ < 0.1·N·τ_0）
-      与 TheoBR（τ ≥ 0.1·N·τ_0）的混合曲线，默认在 Stable32 / AllanTools 实现中使用。
-    key_steps:
-      - "按 Theo1 公式（见 pri.theo1_long_tau_statistical_efficiency 的 formula 字段）计算原始估计"
-      - "由 data 先识别噪声类型 α，再查 Howe 2006 bias 表做 TheoBR = Theo1 / b_R(α)"
-      - "构造 TheoH：tau < 0.1*N*tau_0 用 ADEV；tau >= 0.1*N*tau_0 用 TheoBR"
-    applicable_conditions: "连续相位数据；N >= 32（bias 表低 N 不稳定）；长 τ 报告（τ > N/3 时 ADEV 已失效）"
-    source:
-      zotero_key: "RILEY2008-NIST-SP1065"
-      claim: "Theo1 and its hybrid form TheoH extend stability estimates to τ ≈ 0.75 N τ_0, giving long-term stability information that ADEV and MDEV cannot provide from the same data set."
+    '
+  key_steps:
+  - 采集 τ_0 等间隔相位数据 x_0, x_1, ..., x_N
+  - 对每 m = 1, 2, 4, 8, ...，计算 sigma_y^2(m*tau_0) = (1/(2*m^2*tau_0^2*(N-2m))) * sum_{j=0}^{N-2m-1} (x_{j+2m} - 2*x_{j+m} + x_j)^2
+  - 开方得 OADEV；使用 Greenhall 公式给等效自由度 EDF 与 χ² 置信区间
+  applicable_conditions: 连续相位数据；N 足够大使 N/m - 1 > 10 以获有意义置信区间
+  source:
+    zotero_key: RILEY2008-NIST-SP1065
+    claim: the overlapping Allan deviation uses all possible pairs of samples, thereby improving the estimation confidence over the non-overlapped ADEV.
+  note: '本方法已被本库多个 breakthrough 论文（如 bothwell2022 Sr 光钟、matei2017 Si 腔、 oelker2019 时间移动钟等）用作长 τ 性能报告的规范度量。
 
+    '
+- id: meth.total_deviation_totdev
+  name: Total 偏差 TOTDEV / σ_Total(τ)
+  purpose: '对有限长度数据给出长 τ 低偏差的 σ_y 估计。通过对数据末端做反射延拓，使长 τ 估计避免因样本过短产生的系统性低估。
+
+    '
+  description: '把长度 N 的数据按反射条件延拓为 3N，再在延拓序列上做 OADEV 计算。对 α ≠ 0 有 偏差，需用 bias factor 修正。
+
+    '
+  key_steps:
+  - 数据反射延拓：x_{-i} = 2*x_0 - x_i; x_{N+i} = 2*x_N - x_{N-i}
+  - 在延拓序列上按 OADEV 公式计算 sigma_Total^2(m*tau_0)
+  - 按噪声类型 α 查 bias 表做修正
+  applicable_conditions: 长 τ (m > N/10) 且数据量有限时优选；短 τ 与 OADEV 一致
+  source:
+    zotero_key: RILEY2008-NIST-SP1065
+    claim: Total deviation extends the original data record by reflection, allowing long-τ stability estimates with reduced bias compared with the Allan variance.
+- id: meth.theo1_thedev
+  name: Theo1 / TheoBR / TheoH 方差（Howe 族）
+  purpose: '在给定数据长度 N 下把可分析 τ 上限推至 ~0.75·N·τ_0，远超 ADEV 家族。现代长期 稳定度分析的默认工具。
+
+    '
+  description: 'Theo1 为 Howe 提出的改良二阶差分方差，对长 τ 有最优 EDF；TheoBR 为偏差修正后 直接与 ADEV 可比的版本（bias factor b_R(α) 查表）；TheoH 为 ADEV（τ < 0.1·N·τ_0） 与 TheoBR（τ ≥ 0.1·N·τ_0）的混合曲线，默认在 Stable32 / AllanTools 实现中使用。
+
+    '
+  key_steps:
+  - 按 Theo1 公式（见 pri.theo1_long_tau_statistical_efficiency 的 formula 字段）计算原始估计
+  - 由 data 先识别噪声类型 α，再查 Howe 2006 bias 表做 TheoBR = Theo1 / b_R(α)
+  - 构造 TheoH：tau < 0.1*N*tau_0 用 ADEV；tau >= 0.1*N*tau_0 用 TheoBR
+  applicable_conditions: 连续相位数据；N >= 32（bias 表低 N 不稳定）；长 τ 报告（τ > N/3 时 ADEV 已失效）
+  source:
+    zotero_key: RILEY2008-NIST-SP1065
+    claim: Theo1 and its hybrid form TheoH extend stability estimates to τ ≈ 0.75 N τ_0, giving long-term stability information that ADEV and MDEV cannot provide from the same data set.
 metrics: []
-
 relations:
-  - id: rel.riley_2008_08_01
-    subject: meth.overlapping_allan_deviation_oadev
-    predicate: DERIVED-FROM
-    object: pri.overlapping_estimator_improves_edf
-    confidence: established
-    source: {zotero_key: "RILEY2008-NIST-SP1065", claim: "the overlapping Allan deviation uses all possible pairs of samples, thereby improving the estimation confidence."}
-    note: "OADEV 方法从重叠估计量 EDF 提升原理派生。"
-
-  - id: rel.riley_2008_08_02
-    subject: meth.overlapping_allan_deviation_oadev
-    predicate: DERIVED-FROM
-    object: meth.allan_deviation_adev
-    confidence: established
-    source: {zotero_key: "RILEY2008-NIST-SP1065", claim: "the overlapping Allan deviation has the same expected value as the Allan deviation but with improved confidence."}
-    note: "OADEV 是 ADEV 的统计效率增强版，期望值相同。跨文件引用 meth.allan_deviation_adev（allan1966.yaml）。"
-
-  - id: rel.riley_2008_08_03
-    subject: meth.theo1_thedev
-    predicate: DERIVED-FROM
-    object: pri.theo1_long_tau_statistical_efficiency
-    confidence: established
-    source: {zotero_key: "RILEY2008-NIST-SP1065", claim: "Theo1 extends the maximum τ to about 75 % of Nτ_0, beyond the N τ_0/3 limit of ADEV."}
-    note: "Theo1 方法从其长 τ 统计效率原理派生。"
-
-  - id: rel.riley_2008_08_04
-    subject: meth.total_deviation_totdev
-    predicate: DERIVED-FROM
-    object: meth.allan_deviation_adev
-    confidence: established
-    source: {zotero_key: "RILEY2008-NIST-SP1065", claim: "Total deviation extends the original data record by reflection, allowing long-τ stability estimates with reduced bias compared with the Allan variance."}
-    note: "TOTDEV 在 ADEV 基础上做数据反射延拓，长 τ 低偏差。跨文件引用 meth.allan_deviation_adev（allan1966.yaml）。"
+- id: rel.riley_2008_08_01
+  subject: meth.overlapping_allan_deviation_oadev
+  predicate: DERIVED-FROM
+  object: pri.overlapping_estimator_improves_edf
+  confidence: established
+  source:
+    zotero_key: RILEY2008-NIST-SP1065
+    claim: the overlapping Allan deviation uses all possible pairs of samples, thereby improving the estimation confidence.
+  note: OADEV 方法从重叠估计量 EDF 提升原理派生。
+- id: rel.riley_2008_08_02
+  subject: meth.overlapping_allan_deviation_oadev
+  predicate: DERIVED-FROM
+  object: meth.allan_deviation_adev
+  confidence: established
+  source:
+    zotero_key: RILEY2008-NIST-SP1065
+    claim: the overlapping Allan deviation has the same expected value as the Allan deviation but with improved confidence.
+  note: OADEV 是 ADEV 的统计效率增强版，期望值相同。跨文件引用 meth.allan_deviation_adev（allan1966.yaml）。
+- id: rel.riley_2008_08_03
+  subject: meth.theo1_thedev
+  predicate: DERIVED-FROM
+  object: pri.theo1_long_tau_statistical_efficiency
+  confidence: established
+  source:
+    zotero_key: RILEY2008-NIST-SP1065
+    claim: Theo1 extends the maximum τ to about 75 % of Nτ_0, beyond the N τ_0/3 limit of ADEV.
+  note: Theo1 方法从其长 τ 统计效率原理派生。
+- id: rel.riley_2008_08_04
+  subject: meth.total_deviation_totdev
+  predicate: DERIVED-FROM
+  object: meth.allan_deviation_adev
+  confidence: established
+  source:
+    zotero_key: RILEY2008-NIST-SP1065
+    claim: Total deviation extends the original data record by reflection, allowing long-τ stability estimates with reduced bias compared with the Allan variance.
+  note: TOTDEV 在 ADEV 基础上做数据反射延拓，长 τ 低偏差。跨文件引用 meth.allan_deviation_adev（allan1966.yaml）。

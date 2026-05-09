@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：optical-frequency-combs
 meta:
+meta:
   zotero_key: Graphene mode-locked Cr:ZnS laser with 41 fs
   topic: optical-frequency-combs
   source_type: technical_paper
@@ -13,6 +14,7 @@ meta:
   first_author: Irina
   note: batch minimal extraction; pending expert review for full entities/principles
   year: 2014
+  doi: 10.1364/OE
 entities:
 - id: ent.oe_22_5_5564_system
   name: Irina 2014 experimental system

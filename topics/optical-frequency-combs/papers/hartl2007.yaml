@@ -2,321 +2,333 @@
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
+meta:
   zotero_key: H4DKWZWF
   topic: optical-frequency-combs
   source_type: technical_paper
   contribution_type: technical
   reliability: high
-  title: "Cavity-enhanced similariton Yb-fiber laser frequency comb: 3×10^14 W/cm² peak intensity at 136 MHz"
+  title: 'Cavity-enhanced similariton Yb-fiber laser frequency comb: 3×10^14 W/cm² peak intensity at 136 MHz'
   year: 2007
-  first_author: "Hartl"
-  journal: "Optics Letters"
+  first_author: Hartl
+  journal: Optics Letters
   volume: 32
   pages: 2870-2872
-  note: >
-    [技术论文] Hartl, Schibli, Marcinkevicius, Yost, Hudson, Fermann, Ye (JILA + IMRA) 合作。 首次演示将 Yb 光纤相似子振荡器（136 MHz，40 nm BW@1065 nm）经包层泵浦啁啾脉冲放大（CPA） 至 13.1 W 平均功率、75 fs 脉冲后，相干注入被动高精细度蝴蝶结环形腔（精细度 ~230×）， 实现腔内平均功率 3 kW、峰值功率 230 MW、聚焦峰值强度 3×10^14 W/cm²（焦斑面积 150 µm²）。 利用 PDH 锁将重复率锁至腔 FSR（PZT 带宽 70 kHz + 光纤拉伸器 1 kHz）； f_ceo 通过温度慢锁+泵功率调制高速锁定。在 136 MHz 重复率下演示 Xe/Kr/Ar/He 光电离， 开创高重复率腔增强 HHG → VUV/XUV 频率梳新方向。腔镜损伤阈值是当前主要限制。
+  note: '[技术论文] Hartl, Schibli, Marcinkevicius, Yost, Hudson, Fermann, Ye (JILA + IMRA) 合作。 首次演示将 Yb 光纤相似子振荡器（136 MHz，40 nm BW@1065 nm）经包层泵浦啁啾脉冲放大（CPA） 至 13.1 W 平均功率、75 fs 脉冲后，相干注入被动高精细度蝴蝶结环形腔（精细度 ~230×），
+    实现腔内平均功率 3 kW、峰值功率 230 MW、聚焦峰值强度 3×10^14 W/cm²（焦斑面积 150 µm²）。 利用 PDH 锁将重复率锁至腔 FSR（PZT 带宽 70 kHz + 光纤拉伸器 1 kHz）； f_ceo 通过温度慢锁+泵功率调制高速锁定。在 136 MHz 重复率下演示 Xe/Kr/Ar/He 光电离， 开创高重复率腔增强 HHG → VUV/XUV 频率梳新方向。腔镜损伤阈值是当前主要限制。
+
+    '
+  doi: 10.1364/ol.32.002870
 entities:
-  - id: ent.cavity_enhanced_yb_comb_h07
-    name: "腔增强型 Yb 光纤频率梳系统（Hartl 2007）"
-    aliases: ["cavity-enhanced similariton Yb-fiber comb", "CE-FC Hartl 2007"]
-    hierarchy_level: 2
-    status: demonstrated
-    function: >
-      Yb 光纤相似子振荡器（frep=136 MHz，40 nm 带宽，中心 1065 nm）经包层泵浦 CPA 放大至
-      13.1 W / 75 fs，相干注入无源高精细度蝴蝶结环形腔（精细度 ~230×），腔内峰值强度达
-      3×10^14 W/cm²。用于贵气体光电离及腔增强高次谐波产生（HHG），将频率梳扩展至 VUV/XUV。
-    key_parameters:
-      oscillator_type: "Yb 光纤相似子（similariton）锁模振荡器"
-      repetition_rate: "136 MHz"
-      spectral_bandwidth: "40 nm @1065 nm"
-      amplifier_avg_power: "13.1 W（CPA 输出）"
-      amplifier_pulse_duration: "75 fs（CPA 压缩后）"
-      cavity_finesse: "~230×"
-      intracavity_avg_power: "3 kW"
-      intracavity_peak_power: "230 MW"
-      intracavity_pulse_duration: "95 fs"
-      intracavity_focus_area: "150 µm²"
-      intracavity_peak_intensity: "3×10^14 W/cm²"
-      pzr_servo_bandwidth: "70 kHz（PZT）; 1 kHz（光纤拉伸器）"
-    historical_landmarks:
-      first_demonstration: "2007 — 腔增强Yb光纤梳，136 MHz下实现3×10^14 W/cm²贵气体电离 (Hartl et al. 2007)"
-    note: >
-      Level 2 实例节点，PART-OF ent.optical_frequency_comb（权威定义于 udem2002.yaml）。
-      系统集成 ent.passive_buildup_cavity_h07 和 ent.yb_similariton_cpa_h07 两个 Level 3 子单元。
+- id: ent.cavity_enhanced_yb_comb_h07
+  name: 腔增强型 Yb 光纤频率梳系统（Hartl 2007）
+  aliases:
+  - cavity-enhanced similariton Yb-fiber comb
+  - CE-FC Hartl 2007
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Yb 光纤相似子振荡器（frep=136 MHz，40 nm 带宽，中心 1065 nm）经包层泵浦 CPA 放大至 13.1 W / 75 fs，相干注入无源高精细度蝴蝶结环形腔（精细度 ~230×），腔内峰值强度达 3×10^14 W/cm²。用于贵气体光电离及腔增强高次谐波产生（HHG），将频率梳扩展至 VUV/XUV。
 
-  - id: ent.passive_buildup_cavity_h07
-    name: "被动功率增强蝴蝶结环形腔（Hartl 2007）"
-    aliases: ["passive high-finesse bow-tie ring cavity", "external buildup cavity"]
-    hierarchy_level: 3
-    status: demonstrated
-    function: >
-      无源高精细度蝴蝶结四镜环形腔，通过与注入脉冲列的相干叠加在腔内建立功率增强。
-      精细度 ~230 对应单程腔损耗 ~1.4%；腔内包含贵气体喷嘴焦点（聚焦面积 150 µm²）。
-    key_parameters:
-      finesse: "~230"
-      power_enhancement_factor: "~230×（3 kW / 13.1 W）"
-      cavity_geometry: "蝴蝶结四镜环形（bow-tie ring）"
-      focus_area: "150 µm²"
-    note: "PART-OF ent.cavity_enhanced_yb_comb_h07"
+    '
+  key_parameters:
+    oscillator_type: Yb 光纤相似子（similariton）锁模振荡器
+    repetition_rate: 136 MHz
+    spectral_bandwidth: 40 nm @1065 nm
+    amplifier_avg_power: 13.1 W（CPA 输出）
+    amplifier_pulse_duration: 75 fs（CPA 压缩后）
+    cavity_finesse: ~230×
+    intracavity_avg_power: 3 kW
+    intracavity_peak_power: 230 MW
+    intracavity_pulse_duration: 95 fs
+    intracavity_focus_area: 150 µm²
+    intracavity_peak_intensity: 3×10^14 W/cm²
+    pzr_servo_bandwidth: 70 kHz（PZT）; 1 kHz（光纤拉伸器）
+  historical_landmarks:
+    first_demonstration: 2007 — 腔增强Yb光纤梳，136 MHz下实现3×10^14 W/cm²贵气体电离 (Hartl et al. 2007)
+  note: 'Level 2 实例节点，PART-OF ent.optical_frequency_comb（权威定义于 udem2002.yaml）。 系统集成 ent.passive_buildup_cavity_h07 和 ent.yb_similariton_cpa_h07 两个 Level 3 子单元。
 
-  - id: ent.yb_similariton_cpa_h07
-    name: "Yb 光纤相似子振荡器 + CPA 放大器（Hartl 2007）"
-    aliases: ["similariton Yb-fiber oscillator + CPA", "Yb CPA frontend"]
-    hierarchy_level: 3
-    status: demonstrated
-    function: >
-      Yb 光纤相似子锁模振荡器产生 frep=136 MHz、40 nm 带宽（@1065 nm）的频率梳种子，
-      经包层泵浦啁啾脉冲光纤放大器压缩至 75 fs、13.1 W，作为高功率梳前端注入增强腔。
-    key_parameters:
-      repetition_rate: "136 MHz"
-      seed_bandwidth: "40 nm @1065 nm"
-      output_avg_power: "13.1 W"
-      output_pulse_duration: "75 fs"
-      amplifier_type: "包层泵浦啁啾脉冲光纤放大器（CPA）"
-    note: "PART-OF ent.cavity_enhanced_yb_comb_h07"
+    '
+- id: ent.passive_buildup_cavity_h07
+  name: 被动功率增强蝴蝶结环形腔（Hartl 2007）
+  aliases:
+  - passive high-finesse bow-tie ring cavity
+  - external buildup cavity
+  hierarchy_level: 3
+  status: demonstrated
+  function: '无源高精细度蝴蝶结四镜环形腔，通过与注入脉冲列的相干叠加在腔内建立功率增强。 精细度 ~230 对应单程腔损耗 ~1.4%；腔内包含贵气体喷嘴焦点（聚焦面积 150 µm²）。
 
+    '
+  key_parameters:
+    finesse: ~230
+    power_enhancement_factor: ~230×（3 kW / 13.1 W）
+    cavity_geometry: 蝴蝶结四镜环形（bow-tie ring）
+    focus_area: 150 µm²
+  note: PART-OF ent.cavity_enhanced_yb_comb_h07
+- id: ent.yb_similariton_cpa_h07
+  name: Yb 光纤相似子振荡器 + CPA 放大器（Hartl 2007）
+  aliases:
+  - similariton Yb-fiber oscillator + CPA
+  - Yb CPA frontend
+  hierarchy_level: 3
+  status: demonstrated
+  function: 'Yb 光纤相似子锁模振荡器产生 frep=136 MHz、40 nm 带宽（@1065 nm）的频率梳种子， 经包层泵浦啁啾脉冲光纤放大器压缩至 75 fs、13.1 W，作为高功率梳前端注入增强腔。
+
+    '
+  key_parameters:
+    repetition_rate: 136 MHz
+    seed_bandwidth: 40 nm @1065 nm
+    output_avg_power: 13.1 W
+    output_pulse_duration: 75 fs
+    amplifier_type: 包层泵浦啁啾脉冲光纤放大器（CPA）
+  note: PART-OF ent.cavity_enhanced_yb_comb_h07
 principles:
-  - id: pri.coherent_pulse_addition_passive_cavity
-    name: "飞秒脉冲在被动高精细度腔内的相干叠加增强原理"
-    tier: domain
-    verification_status: observed
-    statement: >
-      当飞秒频率梳的重复率 frep 精确锁定至无源腔的自由光谱范围（FSR），且载波包络偏置频率
-      f_ceo 位于腔的接受带宽（Δν_cav = FSR/F）以内时，相继脉冲在腔内相干叠加，腔内平均功率
-      达到单程注入功率的精细度 F 倍，腔内峰值强度相应增大 ~F 倍（忽略脉冲展宽修正）。
-    domain: "非线性光学；腔物理；飞秒激光技术"
-    formula: >
-      P_intracavity ≈ F/π × P_input（对行波环形腔，假设阻抗匹配）；
-      I_peak = P_peak × F / A_focus；
-      锁定条件：|frep − FSR| < FSR/F，且 f_ceo 在腔色散容忍范围内
-    key_insight: >
-      被动腔不需要增益介质即可将 MHz 级重复率光纤梳的脉冲能量提升 ~100-1000 倍，
-      使峰值强度进入强场物理（HHG、光电离）所需的 10^13–10^14 W/cm² 范围，
-      同时保留原始梳的相干性和重复率。
-    conditions: "frep 精确锁定至腔 FSR；f_ceo 在腔接受带宽内；腔损耗低（高精细度）"
-    preconditions:
-      - "腔镜色散低，使梳线在腔带宽内一致增强"
-      - "注入光束模式与腔基模高效匹配"
-      - "frep 伺服带宽足够抑制激光/腔的相对相位噪声"
-    invalidated_when:
-      - "腔镜损伤导致损耗突增，精细度下降"
-      - "腔内色散过大，梳线增强不均匀，脉冲压缩失效"
-      - "frep/f_ceo 锁定失效（cycle slip）"
-    source_claim: >
-      "cavity-enhanced femtosecond laser frequency combs ... coherently add the pulses
-      of a stabilized frequency comb in a high-finesse passive enhancement cavity"
-    open_questions:
-      - "腔内高功率等离子体对腔锁定（色散扰动）和腔镜寿命的影响如何量化？"
-      - "色散补偿精度对可用精细度上限的限制是否存在基本权衡？"
+- id: pri.coherent_pulse_addition_passive_cavity
+  name: 飞秒脉冲在被动高精细度腔内的相干叠加增强原理
+  tier: domain
+  verification_status: observed
+  statement: '当飞秒频率梳的重复率 frep 精确锁定至无源腔的自由光谱范围（FSR），且载波包络偏置频率 f_ceo 位于腔的接受带宽（Δν_cav = FSR/F）以内时，相继脉冲在腔内相干叠加，腔内平均功率 达到单程注入功率的精细度 F 倍，腔内峰值强度相应增大 ~F 倍（忽略脉冲展宽修正）。
 
-  - id: pri.hhg_comb_vuv_extension
-    name: "腔内 HHG 将频率梳扩展至 VUV/XUV 原理"
-    tier: domain
-    verification_status: observed
-    statement: >
-      在腔内高强度聚焦区注入贵气体（Xe、Kr、Ar、He），当峰值强度超过气体的光电离阈值
-      (~10^13–10^14 W/cm²)，高次谐波产生（HHG）将基频梳在同一 frep 下相干上转换至
-      VUV/XUV 频段，形成 VUV/XUV 频率梳，可用于精密光谱和阿秒科学。
-    domain: "强场物理；极端非线性光学；光学频率计量"
-    key_insight: >
-      MHz 级重复率（136 MHz vs 通常 1–10 kHz）使 HHG 光子通量比传统放大器系统高约 10^5 倍，
-      且直接保留原始梳的相干结构，无需额外的 VUV 参考源。
-    conditions: >
-      腔内峰值强度 >10^13 W/cm²；适当气体压力与焦点位置；
-      腔内谐波输出耦合（需Brewster板或薄膜输出耦合器）
-    preconditions:
-      - "pri.coherent_pulse_addition_passive_cavity 成立（高腔内强度前提）"
-      - "腔镜在 VUV/XUV 波段具有足够透射率以提取谐波"
-    invalidated_when:
-      - "等离子体密度过高，折射率变化破坏相位匹配"
-      - "气体吸收在腔内积累，降低精细度"
-    source_claim: >
-      "the cavity-circulating beam is focused to a 150 µm² spot to generate photoionization
-      events in noble gas jets at the 136 MHz repetition rate"
-    breakthrough_paths:
-      - direction: pri.coherent_pulse_addition_passive_cavity
-        expected_gain: "提高腔内强度 → 扩展至更短谐波阶次（软 X 射线）"
-        status: proposed
-        source: {zotero_key: "H4DKWZWF", claim: "require high-damage-threshold, low-dispersion mirror coatings in order to overcome currently observed sporadic mirror damages"}
+    '
+  domain: 非线性光学；腔物理；飞秒激光技术
+  formula: 'P_intracavity ≈ F/π × P_input（对行波环形腔，假设阻抗匹配）； I_peak = P_peak × F / A_focus； 锁定条件：|frep − FSR| < FSR/F，且 f_ceo 在腔色散容忍范围内
 
-  - id: pri.mirror_damage_threshold_limit
-    name: "腔镜损伤阈值限制原理（腔增强强场系统）"
-    tier: engineering
-    verification_status: observed
-    statement: >
-      在被动增强腔中，腔镜表面承受的峰值强度随腔内功率增强而升高；当腔内峰值强度
-      超过腔镜镀层的损伤阈值（~10^11–10^13 W/cm² for standard dielectric coatings）时，
-      发生散射损耗突增乃至不可逆损伤，限制可达最高功率增强因子。
-    domain: "腔光学；激光损伤物理"
-    key_insight: >
-      腔镜损伤阈值是腔增强强场系统的硬性上限：提高精细度（更高增强）与避免损伤之间存在根本矛盾，
-      需要高损伤阈值低色散镀层的材料/工艺突破才能进一步提升腔内强度。
-    conditions: "腔内峰值功率达 100 MW 量级；重复率 100 MHz 级（高平均功率）"
-    source_claim: >
-      "require high-damage-threshold, low-dispersion mirror coatings in order to overcome
-      currently observed sporadic mirror damages"
-    breakthrough_paths:
-      - direction: meth.intracavity_pdh_frep_lock_h07
-        expected_gain: "更精确的腔锁定降低腔内瞬态功率尖峰，减少损伤概率"
-        status: proposed
-        source: {zotero_key: "H4DKWZWF", claim: "currently observed sporadic mirror damages"}
-      - direction: pri.coherent_pulse_addition_passive_cavity
-        expected_gain: "采用高损伤阈值低色散宽带镀层，在相同增强下推高损伤阈值边界"
-        status: proposed
-        source: {zotero_key: "H4DKWZWF", claim: "high-damage-threshold, low-dispersion mirror coatings"}
+    '
+  key_insight: '被动腔不需要增益介质即可将 MHz 级重复率光纤梳的脉冲能量提升 ~100-1000 倍， 使峰值强度进入强场物理（HHG、光电离）所需的 10^13–10^14 W/cm² 范围， 同时保留原始梳的相干性和重复率。
 
+    '
+  conditions: frep 精确锁定至腔 FSR；f_ceo 在腔接受带宽内；腔损耗低（高精细度）
+  preconditions:
+  - 腔镜色散低，使梳线在腔带宽内一致增强
+  - 注入光束模式与腔基模高效匹配
+  - frep 伺服带宽足够抑制激光/腔的相对相位噪声
+  invalidated_when:
+  - 腔镜损伤导致损耗突增，精细度下降
+  - 腔内色散过大，梳线增强不均匀，脉冲压缩失效
+  - frep/f_ceo 锁定失效（cycle slip）
+  source_claim: '"cavity-enhanced femtosecond laser frequency combs ... coherently add the pulses of a stabilized frequency comb in a high-finesse passive enhancement cavity"
+
+    '
+  open_questions:
+  - 腔内高功率等离子体对腔锁定（色散扰动）和腔镜寿命的影响如何量化？
+  - 色散补偿精度对可用精细度上限的限制是否存在基本权衡？
+- id: pri.hhg_comb_vuv_extension
+  name: 腔内 HHG 将频率梳扩展至 VUV/XUV 原理
+  tier: domain
+  verification_status: observed
+  statement: '在腔内高强度聚焦区注入贵气体（Xe、Kr、Ar、He），当峰值强度超过气体的光电离阈值 (~10^13–10^14 W/cm²)，高次谐波产生（HHG）将基频梳在同一 frep 下相干上转换至 VUV/XUV 频段，形成 VUV/XUV 频率梳，可用于精密光谱和阿秒科学。
+
+    '
+  domain: 强场物理；极端非线性光学；光学频率计量
+  key_insight: 'MHz 级重复率（136 MHz vs 通常 1–10 kHz）使 HHG 光子通量比传统放大器系统高约 10^5 倍， 且直接保留原始梳的相干结构，无需额外的 VUV 参考源。
+
+    '
+  conditions: '腔内峰值强度 >10^13 W/cm²；适当气体压力与焦点位置； 腔内谐波输出耦合（需Brewster板或薄膜输出耦合器）
+
+    '
+  preconditions:
+  - pri.coherent_pulse_addition_passive_cavity 成立（高腔内强度前提）
+  - 腔镜在 VUV/XUV 波段具有足够透射率以提取谐波
+  invalidated_when:
+  - 等离子体密度过高，折射率变化破坏相位匹配
+  - 气体吸收在腔内积累，降低精细度
+  source_claim: '"the cavity-circulating beam is focused to a 150 µm² spot to generate photoionization events in noble gas jets at the 136 MHz repetition rate"
+
+    '
+  breakthrough_paths:
+  - direction: pri.coherent_pulse_addition_passive_cavity
+    expected_gain: 提高腔内强度 → 扩展至更短谐波阶次（软 X 射线）
+    status: proposed
+    source:
+      zotero_key: H4DKWZWF
+      claim: require high-damage-threshold, low-dispersion mirror coatings in order to overcome currently observed sporadic mirror damages
+- id: pri.mirror_damage_threshold_limit
+  name: 腔镜损伤阈值限制原理（腔增强强场系统）
+  tier: engineering
+  verification_status: observed
+  statement: '在被动增强腔中，腔镜表面承受的峰值强度随腔内功率增强而升高；当腔内峰值强度 超过腔镜镀层的损伤阈值（~10^11–10^13 W/cm² for standard dielectric coatings）时， 发生散射损耗突增乃至不可逆损伤，限制可达最高功率增强因子。
+
+    '
+  domain: 腔光学；激光损伤物理
+  key_insight: '腔镜损伤阈值是腔增强强场系统的硬性上限：提高精细度（更高增强）与避免损伤之间存在根本矛盾， 需要高损伤阈值低色散镀层的材料/工艺突破才能进一步提升腔内强度。
+
+    '
+  conditions: 腔内峰值功率达 100 MW 量级；重复率 100 MHz 级（高平均功率）
+  source_claim: '"require high-damage-threshold, low-dispersion mirror coatings in order to overcome currently observed sporadic mirror damages"
+
+    '
+  breakthrough_paths:
+  - direction: meth.intracavity_pdh_frep_lock_h07
+    expected_gain: 更精确的腔锁定降低腔内瞬态功率尖峰，减少损伤概率
+    status: proposed
+    source:
+      zotero_key: H4DKWZWF
+      claim: currently observed sporadic mirror damages
+  - direction: pri.coherent_pulse_addition_passive_cavity
+    expected_gain: 采用高损伤阈值低色散宽带镀层，在相同增强下推高损伤阈值边界
+    status: proposed
+    source:
+      zotero_key: H4DKWZWF
+      claim: high-damage-threshold, low-dispersion mirror coatings
 methods:
-  - id: meth.intracavity_pdh_frep_lock_h07
-    name: "PDH 腔锁频（frep → FSR）与 f_ceo 双路稳频方法（Hartl 2007）"
-    status: demonstrated
-    applies_to: ent.cavity_enhanced_yb_comb_h07
-    steps_summary: >
-      1. 使用 PDH 误差信号将振荡器 frep 锁定至增强腔 FSR：
-         快路：腔外 PZT（带宽 70 kHz）；慢路：腔内光纤拉伸器（带宽 1 kHz）；
-      2. f_ceo 稳定：慢路通过调节振荡器温度；
-         快路通过调制泵浦功率（高带宽 f_ceo 控制）；
-      3. 腔内光电离事件（Xe、Kr、Ar、He）在 136 MHz 重复率下持续产生，
-         验证系统高稳定运行。
-    required_hardware:
-      - ent.passive_buildup_cavity_h07
-      - ent.yb_similariton_cpa_h07
-    conditions:
-      - "PZT 伺服带宽 70 kHz 足以抑制腔-激光相对路径噪声"
-      - "f_ceo 慢锁温度控制 + 泵浦调制兼顾长期稳定与快速响应"
-    source_claim: >
-      "frep is phase-locked to the cavity FSR via a piezo (70 kHz bandwidth)
-      and a fiber stretcher (1 kHz bandwidth)"
+- id: meth.intracavity_pdh_frep_lock_h07
+  name: PDH 腔锁频（frep → FSR）与 f_ceo 双路稳频方法（Hartl 2007）
+  status: demonstrated
+  applies_to: ent.cavity_enhanced_yb_comb_h07
+  steps_summary: "1. 使用 PDH 误差信号将振荡器 frep 锁定至增强腔 FSR：\n   快路：腔外 PZT（带宽 70 kHz）；慢路：腔内光纤拉伸器（带宽 1 kHz）；\n2. f_ceo 稳定：慢路通过调节振荡器温度；\n   快路通过调制泵浦功率（高带宽 f_ceo 控制）；\n3. 腔内光电离事件（Xe、Kr、Ar、He）在 136 MHz 重复率下持续产生，\n\
+    \   验证系统高稳定运行。\n"
+  required_hardware:
+  - ent.passive_buildup_cavity_h07
+  - ent.yb_similariton_cpa_h07
+  conditions:
+  - PZT 伺服带宽 70 kHz 足以抑制腔-激光相对路径噪声
+  - f_ceo 慢锁温度控制 + 泵浦调制兼顾长期稳定与快速响应
+  source_claim: '"frep is phase-locked to the cavity FSR via a piezo (70 kHz bandwidth) and a fiber stretcher (1 kHz bandwidth)"
 
+    '
 metrics:
-  - id: met.intracavity_peak_intensity_h07
-    name: "腔内聚焦峰值强度（Hartl 2007）"
-    unit: "W/cm²"
-    description: "高精细度增强腔内焦点处的峰值光强，决定强场非线性过程（HHG、光电离）的驱动效率。"
-    demonstrated_value:
-      value: "3×10^14 W/cm²"
-      conditions: "精细度 ~230×；焦斑面积 150 µm²；腔内峰值功率 230 MW；frep=136 MHz"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "H4DKWZWF", claim: "peak intensity of 3×10^14 W/cm² at the intracavity focus"}
-    historical_landmarks:
-      first_demonstration:
-        value: "3×10^14 W/cm² @136 MHz Yb 光纤梳腔增强系统"
-        year: 2007
-        source: {zotero_key: "H4DKWZWF"}
-        note: "首次在 100 MHz 级重复率下实现强场光电离所需腔内峰值强度"
-
-  - id: met.intracavity_peak_power_h07
-    name: "腔内峰值功率（Hartl 2007）"
-    unit: "W"
-    description: "增强腔内循环脉冲的峰值功率，由平均功率与脉宽决定。"
-    demonstrated_value:
-      value: "230 MW"
-      conditions: "腔内平均功率 3 kW；腔内脉宽 95 fs；frep=136 MHz"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "H4DKWZWF", claim: "intracavity peak power of 230 MW"}
-
-  - id: met.intracavity_avg_power_h07
-    name: "腔内平均功率（Hartl 2007）"
-    unit: "W"
-    description: "高精细度被动增强腔内循环的平均功率，等于注入平均功率乘以功率增强因子。"
-    demonstrated_value:
-      value: "3 kW（增强因子 ~230×）"
-      conditions: "CPA 注入 13.1 W；精细度 ~230×；阻抗匹配条件下"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "H4DKWZWF", claim: "intracavity average power of 3 kW, an enhancement of 230"}
-
-  - id: met.pulse_duration_intracavity_h07
-    name: "腔内脉冲宽度（Hartl 2007）"
-    unit: "fs"
-    description: "增强腔内循环脉冲的时间宽度，受腔镜色散残差限制。"
-    demonstrated_value:
-      value: "95 fs"
-      conditions: "腔内色散补偿后；CPA 输出 75 fs（注入前）"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "H4DKWZWF", claim: "intracavity pulse duration of 95 fs"}
-
-# ═══════════════════════════════════════════════
-#  RELATIONS（关系）
-# ═══════════════════════════════════════════════
-
+- id: met.intracavity_peak_intensity_h07
+  name: 腔内聚焦峰值强度（Hartl 2007）
+  unit: W/cm²
+  description: 高精细度增强腔内焦点处的峰值光强，决定强场非线性过程（HHG、光电离）的驱动效率。
+  demonstrated_value:
+    value: 3×10^14 W/cm²
+    conditions: 精细度 ~230×；焦斑面积 150 µm²；腔内峰值功率 230 MW；frep=136 MHz
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: H4DKWZWF
+      claim: peak intensity of 3×10^14 W/cm² at the intracavity focus
+  historical_landmarks:
+    first_demonstration:
+      value: 3×10^14 W/cm² @136 MHz Yb 光纤梳腔增强系统
+      year: 2007
+      source:
+        zotero_key: H4DKWZWF
+      note: 首次在 100 MHz 级重复率下实现强场光电离所需腔内峰值强度
+- id: met.intracavity_peak_power_h07
+  name: 腔内峰值功率（Hartl 2007）
+  unit: W
+  description: 增强腔内循环脉冲的峰值功率，由平均功率与脉宽决定。
+  demonstrated_value:
+    value: 230 MW
+    conditions: 腔内平均功率 3 kW；腔内脉宽 95 fs；frep=136 MHz
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: H4DKWZWF
+      claim: intracavity peak power of 230 MW
+- id: met.intracavity_avg_power_h07
+  name: 腔内平均功率（Hartl 2007）
+  unit: W
+  description: 高精细度被动增强腔内循环的平均功率，等于注入平均功率乘以功率增强因子。
+  demonstrated_value:
+    value: 3 kW（增强因子 ~230×）
+    conditions: CPA 注入 13.1 W；精细度 ~230×；阻抗匹配条件下
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: H4DKWZWF
+      claim: intracavity average power of 3 kW, an enhancement of 230
+- id: met.pulse_duration_intracavity_h07
+  name: 腔内脉冲宽度（Hartl 2007）
+  unit: fs
+  description: 增强腔内循环脉冲的时间宽度，受腔镜色散残差限制。
+  demonstrated_value:
+    value: 95 fs
+    conditions: 腔内色散补偿后；CPA 输出 75 fs（注入前）
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: H4DKWZWF
+      claim: intracavity pulse duration of 95 fs
 relations:
-  - id: rel.hartl_2007_07_01
-    subject: ent.cavity_enhanced_yb_comb_h07
-    predicate: PART-OF
-    object: ent.optical_frequency_comb
-    confidence: established
-    source: {zotero_key: "H4DKWZWF", claim: "cavity-enhanced similariton Yb-fiber laser frequency comb"}
-    note: "ent.optical_frequency_comb 定义于 udem2002.yaml（跨文件引用）"
-
-  - id: rel.hartl_2007_07_02
-    subject: ent.passive_buildup_cavity_h07
-    predicate: PART-OF
-    object: ent.cavity_enhanced_yb_comb_h07
-    confidence: established
-    source: {zotero_key: "H4DKWZWF", claim: "passive high-finesse bow-tie enhancement cavity with a finesse of ~230"}
-
-  - id: rel.hartl_2007_07_03
-    subject: ent.yb_similariton_cpa_h07
-    predicate: PART-OF
-    object: ent.cavity_enhanced_yb_comb_h07
-    confidence: established
-    source: {zotero_key: "H4DKWZWF", claim: "Yb-fiber similariton oscillator with frep=136 MHz ... cladding-pumped chirped-pulse fiber amplifier"}
-
-  - id: rel.hartl_2007_07_04
-    subject: ent.cavity_enhanced_yb_comb_h07
-    predicate: CHARACTERIZED-BY
-    object: met.intracavity_peak_intensity_h07
-    confidence: established
-    source: {zotero_key: "H4DKWZWF", claim: "3×10^14 W/cm² peak intensity at 136 MHz"}
-
-  - id: rel.hartl_2007_07_05
-    subject: ent.cavity_enhanced_yb_comb_h07
-    predicate: CHARACTERIZED-BY
-    object: met.intracavity_avg_power_h07
-    confidence: established
-    source: {zotero_key: "H4DKWZWF", claim: "intracavity average power of 3 kW"}
-
-  - id: rel.hartl_2007_07_06
-    subject: ent.cavity_enhanced_yb_comb_h07
-    predicate: ENABLED-BY
-    object: pri.coherent_pulse_addition_passive_cavity
-    confidence: established
-    source: {zotero_key: "H4DKWZWF", claim: "coherently coupled into a passive high-finesse enhancement cavity"}
-
-  - id: rel.hartl_2007_07_07
-    subject: pri.coherent_pulse_addition_passive_cavity
-    predicate: ENABLED-BY
-    object: meth.intracavity_pdh_frep_lock_h07
-    confidence: established
-    source: {zotero_key: "H4DKWZWF", claim: "frep is phase-locked to the cavity FSR via a piezo and a fiber stretcher"}
-
-  - id: rel.hartl_2007_07_08
-    subject: ent.cavity_enhanced_yb_comb_h07
-    predicate: BOUNDED-BY
-    object: pri.mirror_damage_threshold_limit
-    confidence: established
-    source: {zotero_key: "H4DKWZWF", claim: "require high-damage-threshold, low-dispersion mirror coatings in order to overcome currently observed sporadic mirror damages"}
-    breakthrough_paths:
-      - direction: pri.coherent_pulse_addition_passive_cavity
-        expected_gain: "新型高损伤阈值低色散宽带介质镀层可在同等精细度下推高强度上限"
-        status: proposed
-        source: {zotero_key: "H4DKWZWF", claim: "high-damage-threshold, low-dispersion mirror coatings"}
-
-  - id: rel.hartl_2007_07_09
-    subject: pri.hhg_comb_vuv_extension
-    predicate: DERIVED-FROM
-    object: pri.self_referencing_f2f
-    confidence: inferred
-    source: {zotero_key: "H4DKWZWF", claim: "frequency comb extending from the VUV to the visible spectral range"}
-    note: "pri.self_referencing_f2f 定义于 udem2002.yaml / giunta2019.yaml（跨文件引用）"
-
-  - id: rel.hartl_2007_07_10
-    subject: ent.cavity_enhanced_yb_comb_h07
-    predicate: CONDITIONED-BY
-    object: ent.vibration_environment
-    confidence: inferred
-    source: {zotero_key: "H4DKWZWF", claim: "frep locked to cavity FSR requires active servo isolation"}
-    note: "ent.vibration_environment 定义于 topics/ultrastable-laser/papers/numata2004.yaml（跨专题引用）"
+- id: rel.hartl_2007_07_01
+  subject: ent.cavity_enhanced_yb_comb_h07
+  predicate: PART-OF
+  object: ent.optical_frequency_comb
+  confidence: established
+  source:
+    zotero_key: H4DKWZWF
+    claim: cavity-enhanced similariton Yb-fiber laser frequency comb
+  note: ent.optical_frequency_comb 定义于 udem2002.yaml（跨文件引用）
+- id: rel.hartl_2007_07_02
+  subject: ent.passive_buildup_cavity_h07
+  predicate: PART-OF
+  object: ent.cavity_enhanced_yb_comb_h07
+  confidence: established
+  source:
+    zotero_key: H4DKWZWF
+    claim: passive high-finesse bow-tie enhancement cavity with a finesse of ~230
+- id: rel.hartl_2007_07_03
+  subject: ent.yb_similariton_cpa_h07
+  predicate: PART-OF
+  object: ent.cavity_enhanced_yb_comb_h07
+  confidence: established
+  source:
+    zotero_key: H4DKWZWF
+    claim: Yb-fiber similariton oscillator with frep=136 MHz ... cladding-pumped chirped-pulse fiber amplifier
+- id: rel.hartl_2007_07_04
+  subject: ent.cavity_enhanced_yb_comb_h07
+  predicate: CHARACTERIZED-BY
+  object: met.intracavity_peak_intensity_h07
+  confidence: established
+  source:
+    zotero_key: H4DKWZWF
+    claim: 3×10^14 W/cm² peak intensity at 136 MHz
+- id: rel.hartl_2007_07_05
+  subject: ent.cavity_enhanced_yb_comb_h07
+  predicate: CHARACTERIZED-BY
+  object: met.intracavity_avg_power_h07
+  confidence: established
+  source:
+    zotero_key: H4DKWZWF
+    claim: intracavity average power of 3 kW
+- id: rel.hartl_2007_07_06
+  subject: ent.cavity_enhanced_yb_comb_h07
+  predicate: ENABLED-BY
+  object: pri.coherent_pulse_addition_passive_cavity
+  confidence: established
+  source:
+    zotero_key: H4DKWZWF
+    claim: coherently coupled into a passive high-finesse enhancement cavity
+- id: rel.hartl_2007_07_07
+  subject: pri.coherent_pulse_addition_passive_cavity
+  predicate: ENABLED-BY
+  object: meth.intracavity_pdh_frep_lock_h07
+  confidence: established
+  source:
+    zotero_key: H4DKWZWF
+    claim: frep is phase-locked to the cavity FSR via a piezo and a fiber stretcher
+- id: rel.hartl_2007_07_08
+  subject: ent.cavity_enhanced_yb_comb_h07
+  predicate: BOUNDED-BY
+  object: pri.mirror_damage_threshold_limit
+  confidence: established
+  source:
+    zotero_key: H4DKWZWF
+    claim: require high-damage-threshold, low-dispersion mirror coatings in order to overcome currently observed sporadic mirror damages
+  breakthrough_paths:
+  - direction: pri.coherent_pulse_addition_passive_cavity
+    expected_gain: 新型高损伤阈值低色散宽带介质镀层可在同等精细度下推高强度上限
+    status: proposed
+    source:
+      zotero_key: H4DKWZWF
+      claim: high-damage-threshold, low-dispersion mirror coatings
+- id: rel.hartl_2007_07_09
+  subject: pri.hhg_comb_vuv_extension
+  predicate: DERIVED-FROM
+  object: pri.self_referencing_f2f
+  confidence: inferred
+  source:
+    zotero_key: H4DKWZWF
+    claim: frequency comb extending from the VUV to the visible spectral range
+  note: pri.self_referencing_f2f 定义于 udem2002.yaml / giunta2019.yaml（跨文件引用）
+- id: rel.hartl_2007_07_10
+  subject: ent.cavity_enhanced_yb_comb_h07
+  predicate: CONDITIONED-BY
+  object: ent.vibration_environment
+  confidence: inferred
+  source:
+    zotero_key: H4DKWZWF
+    claim: frep locked to cavity FSR requires active servo isolation
+  note: ent.vibration_environment 定义于 topics/ultrastable-laser/papers/numata2004.yaml（跨专题引用）

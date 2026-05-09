@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：time-frequency-transfer
 meta:
+meta:
   zotero_key: Cascaded multiplexed optical link on a
   topic: time-frequency-transfer
   source_type: technical_paper
@@ -12,6 +13,7 @@ meta:
   title: Cascaded multiplexed optical link on a
   first_author: Foreman
   note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1364/oe.18.016849
 entities:
 - id: ent.oe_lopez_10_system
   name: Foreman  experimental system

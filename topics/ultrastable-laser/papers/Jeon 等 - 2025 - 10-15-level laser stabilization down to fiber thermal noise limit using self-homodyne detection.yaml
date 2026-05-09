@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：ultrastable-laser
 meta:
+meta:
   zotero_key: 10−15-level laser stabilization down to fiber ther
   topic: ultrastable-laser
   source_type: technical_paper
@@ -12,6 +13,7 @@ meta:
   title: 10−15-level laser stabilization down to fiber thermal
   first_author: ''
   note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1364/OL
 entities:
 - id: ent.jeon_____2025___10_15_level_la_system
   name: '  experimental system'

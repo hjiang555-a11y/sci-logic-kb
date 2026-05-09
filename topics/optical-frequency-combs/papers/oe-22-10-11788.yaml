@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：optical-frequency-combs
 meta:
+meta:
   zotero_key: Time-domain stabilization of carrier-envelope
   topic: optical-frequency-combs
   source_type: technical_paper
@@ -12,6 +13,7 @@ meta:
   title: Time-domain stabilization of carrier-envelope
   first_author: William
   note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1364/OE
 entities:
 - id: ent.oe_22_10_11788_system
   name: William  experimental system

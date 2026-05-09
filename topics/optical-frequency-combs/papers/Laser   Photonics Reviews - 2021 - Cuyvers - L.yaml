@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：optical-frequency-combs
 meta:
+meta:
   zotero_key: Low Noise Heterogeneous III-V-on-Silicon-Nitride
   topic: optical-frequency-combs
   source_type: technical_paper
@@ -12,6 +13,7 @@ meta:
   title: Low Noise Heterogeneous III-V-on-Silicon-Nitride
   first_author: ''
   note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1002/lpor
 entities:
 - id: ent.laser___photonics_reviews___20_system
   name: '  experimental system'

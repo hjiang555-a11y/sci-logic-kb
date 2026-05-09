@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：time-frequency-transfer
 meta:
+meta:
   zotero_key: '[2022] Passively stable dissemination of ultra'
   topic: time-frequency-transfer
   source_type: technical_paper
@@ -13,6 +14,7 @@ meta:
   first_author: Zhang
   note: fixed from broken YAML; pending expert review
   year: 2022
+  doi: 10.1016/j.optlastec.2022.108738
 entities:
 - id: ent._2022__passively_stable_dissem_system
   name: Zhang 2022 experimental system

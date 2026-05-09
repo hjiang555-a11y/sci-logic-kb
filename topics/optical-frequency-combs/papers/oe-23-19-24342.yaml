@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：optical-frequency-combs
 meta:
+meta:
   zotero_key: Ultra-low noise all polarization-maintaining Er
   topic: optical-frequency-combs
   source_type: technical_paper
@@ -12,6 +13,7 @@ meta:
   title: Ultra-low noise all polarization-maintaining Er
   first_author: Leibrandt
   note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1364/OE
 entities:
 - id: ent.oe_23_19_24342_system
   name: Leibrandt  experimental system

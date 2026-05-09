@@ -2,147 +2,129 @@
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
+meta:
   zotero_key: LUDLOW2008-THESIS-JILA
   topic: frequency-standards
   source_type: thesis
   contribution_type: framework
   reliability: high
-  title: "The Strontium Optical Lattice Clock: Optical Spectroscopy with Sub-Hertz Accuracy"
+  title: 'The Strontium Optical Lattice Clock: Optical Spectroscopy with Sub-Hertz Accuracy'
   year: 2008
-  first_author: "Ludlow"
-  authors: ["Andrew D. Ludlow"]
-  note: >
-    [博士论文 · 白名单 §A：Tier 1 group PhD thesis（JILA/Ye group）] Andrew D. Ludlow  2008 年博士论文，JILA Ye group 的 Sr 光晶格钟系统化教科书。内容覆盖 Sr 光晶格钟 全栈： (1) 698 nm ULE 腔超稳激光器（亚赫兹线宽 / 10⁻¹⁵/τ 稳定度；本论文是超稳激光专题 早期里程碑 "JILA Sr 钟询问激光系统" 的权威来源，与现有 ultrastable-laser 专题 jiang2010/millo2009 等论文形成参考链）； (2) 813 nm 魔术波长光晶格装载 + 操作协议（约 10⁴ 个 ⁸⁷Sr 原子，光阱频率魔术化 降低 AC-Stark 系统效应到 10⁻¹⁸ 量级）； (3) ¹S₀ → ³P₀ 钟跃迁（λ=698 nm，自然线宽 ~1 mHz）亚赫兹谱线分辨的 Rabi / Ramsey 询问序列； (4) 系统效应评估体系：黑体辐射频移、Zeeman 频移、碰撞频移、AC-Stark 频移、重力 红移、相对论 Doppler 的独立测量与误差预算合成方法； (5) 远程光纤比对（Sr 晶格钟 vs Ca 光钟 vs Cs 喷泉）给出 1×10⁻¹⁶ 分数不确定度， 即 Ludlow 2008 Science 论文（zotero_key 待定）的博士论文完整版。 本文件作为 frequency-standards 专题的教科书式系统工程综合，建立 meth.sr_optical_lattice_clock_stack 方法节点与 pri.magic_wavelength_operational_protocol 操作协议原理，为后续 B5a 批次 Sr 系列论文（bloom2014 / nicholson2015 / bothwell2022 等）提供共同参考基线。 PhD thesis 按 CONTRIBUTING.md 第八节"博士论文"规则接受摄入。
+  first_author: Ludlow
+  authors:
+  - Andrew D. Ludlow
+  note: '[博士论文 · 白名单 §A：Tier 1 group PhD thesis（JILA/Ye group）] Andrew D. Ludlow  2008 年博士论文，JILA Ye group 的 Sr 光晶格钟系统化教科书。内容覆盖 Sr 光晶格钟 全栈： (1) 698 nm ULE 腔超稳激光器（亚赫兹线宽 / 10⁻¹⁵/τ 稳定度；本论文是超稳激光专题 早期里程碑 "JILA
+    Sr 钟询问激光系统" 的权威来源，与现有 ultrastable-laser 专题 jiang2010/millo2009 等论文形成参考链）； (2) 813 nm 魔术波长光晶格装载 + 操作协议（约 10⁴ 个 ⁸⁷Sr 原子，光阱频率魔术化 降低 AC-Stark 系统效应到 10⁻¹⁸ 量级）； (3) ¹S₀ → ³P₀ 钟跃迁（λ=698 nm，自然线宽 ~1 mHz）亚赫兹谱线分辨的
+    Rabi / Ramsey 询问序列； (4) 系统效应评估体系：黑体辐射频移、Zeeman 频移、碰撞频移、AC-Stark 频移、重力 红移、相对论 Doppler 的独立测量与误差预算合成方法； (5) 远程光纤比对（Sr 晶格钟 vs Ca 光钟 vs Cs 喷泉）给出 1×10⁻¹⁶ 分数不确定度， 即 Ludlow 2008 Science 论文（zotero_key 待定）的博士论文完整版。
+    本文件作为 frequency-standards 专题的教科书式系统工程综合，建立 meth.sr_optical_lattice_clock_stack 方法节点与 pri.magic_wavelength_operational_protocol 操作协议原理，为后续 B5a 批次 Sr 系列论文（bloom2014 / nicholson2015 / bothwell2022 等）提供共同参考基线。
+    PhD thesis 按 CONTRIBUTING.md 第八节"博士论文"规则接受摄入。
+
+    '
+  doi: ''
 entities: []
-
 principles:
-  - id: pri.magic_wavelength_operational_protocol_l08
-    name: "魔术波长光晶格钟操作协议原理（Ludlow thesis）"
-    tier: domain
-    verification_status: observed
-    statement: >
-      "将中性 ⁸⁷Sr 原子装载到波长为 Sr ¹S₀ 与 ³P₀ 跃迁 AC-Stark 移动相等的 813 nm 
-      光晶格中（魔术波长 λ_magic），晶格光强 I 不再改变钟跃迁频率到一阶。完整操作
-      协议包括：(a) 2 阶 Zeeman 屏蔽（双极化光晶格交替）、(b) 原子温度降到 μK 以下
-      抑制晶格光位点热占据（Lamb-Dicke 区）、(c) 激发率归一化探测（归一化计数消除
-      原子数涨落）、(d) 交替测量正负自旋态消除 1 阶 Zeeman 与 vector Stark 频移。
-      这一操作协议在 Ludlow thesis 2008 中首次完整系统化，后续所有 Sr 钟实验室都
-      以此为模板。"
-    domain: "冷原子光钟；系统效应消除协议"
-    key_insight: >
-      "魔术波长" 本身只是光阱 AC-Stark 消除的必要条件；做出 10⁻¹⁷ 级 Sr 钟还需要
-      多达七八个操作步骤的系统组合。Ludlow 2008 thesis 的贡献是把这些步骤整合为
-      工程可复用的 "Sr 钟标准操作" 流程——这是为什么后续 10 年 Sr 钟从 JILA 向
-      PTB / NIST / RIKEN / SYRTE 等多个实验室快速复制的原因。
-    conditions: "⁸⁷Sr 同位素（核自旋 I=9/2）；813 nm 一维或三维光晶格；<1 μK 温度；真空压强 <10⁻⁹ mbar"
-    formula: "delta_nu_AC-Stark(lambda_magic) = 0 to first order in I;  lambda_magic(^87Sr, ^1S_0 -> ^3P_0) ~ 813.4 nm"
-    source:
-      zotero_key: "LUDLOW2008-THESIS-JILA"
-      claim: >
-        "At the magic wavelength of 813 nm, the polarizabilities of the ¹S₀ and ³P₀ states
-        are matched, eliminating the scalar AC-Stark shift of the clock transition to
-        first order; combined with dual-polarization lattice schemes and differential
-        Zeeman suppression, the protocol achieves sub-10⁻¹⁶ fractional uncertainty."
+- id: pri.magic_wavelength_operational_protocol_l08
+  name: 魔术波长光晶格钟操作协议原理（Ludlow thesis）
+  tier: domain
+  verification_status: observed
+  statement: '"将中性 ⁸⁷Sr 原子装载到波长为 Sr ¹S₀ 与 ³P₀ 跃迁 AC-Stark 移动相等的 813 nm  光晶格中（魔术波长 λ_magic），晶格光强 I 不再改变钟跃迁频率到一阶。完整操作 协议包括：(a) 2 阶 Zeeman 屏蔽（双极化光晶格交替）、(b) 原子温度降到 μK 以下 抑制晶格光位点热占据（Lamb-Dicke 区）、(c) 激发率归一化探测（归一化计数消除
+    原子数涨落）、(d) 交替测量正负自旋态消除 1 阶 Zeeman 与 vector Stark 频移。 这一操作协议在 Ludlow thesis 2008 中首次完整系统化，后续所有 Sr 钟实验室都 以此为模板。"
 
-  - id: pri.sr_clock_systematic_budget_framework_l08
-    name: "Sr 光晶格钟系统误差预算框架（Ludlow thesis）"
-    tier: domain
-    verification_status: observed
-    statement: >
-      "Sr 光晶格钟 10⁻¹⁷ 级系统不确定度预算由八类独立效应合成：
-      (B1) 黑体辐射频移（BBR）——占主导，~2×10⁻¹⁵ 室温值，需温度测量到 10 mK 级、
-      或冷屏蔽至液氮温度；
-      (B2) 二阶 Zeeman 频移——通过交替测量对称自旋态 m_F=±9/2 平均抵消；
-      (B3) AC-Stark 频移——魔术波长抵消一阶，残差二阶项需要严格锁定晶格波长；
-      (B4) 冷碰撞频移——通过调节原子密度外推到零密度；
-      (B5) 线啁啾/探测脉冲 AC-Stark——独立测量并扣除；
-      (B6) 重力红移——需测定原子平均高度到 cm 级；
-      (B7) DC Stark / 杂散电场——通过共振搜索屏蔽；
-      (B8) 1 阶 Doppler / 晶格振动——Lamb-Dicke 区抑制。
-      每一项独立评估给出 Type B 不确定度，合成总预算。"
-    domain: "光钟系统误差分析"
-    key_insight: >
-      Ludlow 2008 thesis 首次把这八类效应的系统化评估方法整合为一张表。这张表至今
-      仍是 Sr 钟（与普遍地所有光钟）的系统预算模板——后续 Bloom 2014 / Nicholson 2015
-      / Oelker 2019 / Bothwell 2022 论文的误差预算表都是这张表的直接后代（添加了
-      温度精测、差分重力等新技术但框架不变）。
-    conditions: "已知实验室温度 / 原子数 / 晶格频率 / 磁场 / 电场；每项独立测量到其贡献 <1×10⁻¹⁷"
-    formula: "u_total^2 = sum_i (u_i)^2  for i in {BBR, Zeeman, AC-Stark, collision, chirp, gravity, DC, Doppler}"
-    source:
-      zotero_key: "LUDLOW2008-THESIS-JILA"
-      claim: >
-        "the total systematic uncertainty budget of the JILA Sr clock is constructed as
-        the quadrature sum of eight independently evaluated contributions, with BBR,
-        collisions, and lattice AC-Stark residuals dominating the final uncertainty."
+    '
+  domain: 冷原子光钟；系统效应消除协议
+  key_insight: '"魔术波长" 本身只是光阱 AC-Stark 消除的必要条件；做出 10⁻¹⁷ 级 Sr 钟还需要 多达七八个操作步骤的系统组合。Ludlow 2008 thesis 的贡献是把这些步骤整合为 工程可复用的 "Sr 钟标准操作" 流程——这是为什么后续 10 年 Sr 钟从 JILA 向 PTB / NIST / RIKEN / SYRTE 等多个实验室快速复制的原因。
 
+    '
+  conditions: ⁸⁷Sr 同位素（核自旋 I=9/2）；813 nm 一维或三维光晶格；<1 μK 温度；真空压强 <10⁻⁹ mbar
+  formula: delta_nu_AC-Stark(lambda_magic) = 0 to first order in I;  lambda_magic(^87Sr, ^1S_0 -> ^3P_0) ~ 813.4 nm
+  source:
+    zotero_key: LUDLOW2008-THESIS-JILA
+    claim: '"At the magic wavelength of 813 nm, the polarizabilities of the ¹S₀ and ³P₀ states are matched, eliminating the scalar AC-Stark shift of the clock transition to first order; combined with dual-polarization
+      lattice schemes and differential Zeeman suppression, the protocol achieves sub-10⁻¹⁶ fractional uncertainty."
+
+      '
+- id: pri.sr_clock_systematic_budget_framework_l08
+  name: Sr 光晶格钟系统误差预算框架（Ludlow thesis）
+  tier: domain
+  verification_status: observed
+  statement: '"Sr 光晶格钟 10⁻¹⁷ 级系统不确定度预算由八类独立效应合成： (B1) 黑体辐射频移（BBR）——占主导，~2×10⁻¹⁵ 室温值，需温度测量到 10 mK 级、 或冷屏蔽至液氮温度； (B2) 二阶 Zeeman 频移——通过交替测量对称自旋态 m_F=±9/2 平均抵消； (B3) AC-Stark 频移——魔术波长抵消一阶，残差二阶项需要严格锁定晶格波长； (B4)
+    冷碰撞频移——通过调节原子密度外推到零密度； (B5) 线啁啾/探测脉冲 AC-Stark——独立测量并扣除； (B6) 重力红移——需测定原子平均高度到 cm 级； (B7) DC Stark / 杂散电场——通过共振搜索屏蔽； (B8) 1 阶 Doppler / 晶格振动——Lamb-Dicke 区抑制。 每一项独立评估给出 Type B 不确定度，合成总预算。"
+
+    '
+  domain: 光钟系统误差分析
+  key_insight: 'Ludlow 2008 thesis 首次把这八类效应的系统化评估方法整合为一张表。这张表至今 仍是 Sr 钟（与普遍地所有光钟）的系统预算模板——后续 Bloom 2014 / Nicholson 2015 / Oelker 2019 / Bothwell 2022 论文的误差预算表都是这张表的直接后代（添加了 温度精测、差分重力等新技术但框架不变）。
+
+    '
+  conditions: 已知实验室温度 / 原子数 / 晶格频率 / 磁场 / 电场；每项独立测量到其贡献 <1×10⁻¹⁷
+  formula: u_total^2 = sum_i (u_i)^2  for i in {BBR, Zeeman, AC-Stark, collision, chirp, gravity, DC, Doppler}
+  source:
+    zotero_key: LUDLOW2008-THESIS-JILA
+    claim: '"the total systematic uncertainty budget of the JILA Sr clock is constructed as the quadrature sum of eight independently evaluated contributions, with BBR, collisions, and lattice AC-Stark
+      residuals dominating the final uncertainty."
+
+      '
 methods:
-  - id: meth.sr_optical_lattice_clock_stack_l08
-    name: "Sr 光晶格钟全栈集成方法（Ludlow thesis）"
-    purpose: >
-      将 Sr 光晶格钟从原子源到最终频率输出作为完整系统进行工程化集成。本方法是
-      所有后续 Sr 钟复制项目的"参考设计"。
-    description: >
-      八级串联系统：(1) Sr 原子束 + Zeeman 减速器（2D MOT 磁光阱）；
-      (2) 461 nm 蓝色 MOT（一级冷却，mK 级）；
-      (3) 689 nm 红色 MOT（二级冷却，~μK 级窄线冷却）；
-      (4) 813 nm 魔术波长光晶格装载（一维或三维，~10⁴ 原子）；
-      (5) 698 nm 超稳激光询问（ULE 腔，亚 Hz 线宽）；
-      (6) ¹S₀ → ³P₀ Rabi / Ramsey 谱线询问（10–100 ms 积分）；
-      (7) 激发率归一化探测（spin-echo 类似方案抑制探测噪声）；
-      (8) 频率反馈到询问激光闭环（PID 长短期分层）。
-      整个链路分数频率不稳定度 ~1×10⁻¹⁵/sqrt(τ)；系统不确定度 ~1×10⁻¹⁶（thesis 时代）。
-    key_steps:
-      - "调试 Zeeman 减速器 + 双 MOT 冷却至 ~μK"
-      - "把原子装载到魔术波长 813 nm 光晶格，测定晶格频率稳定度"
-      - "长锁 698 nm 询问激光到 ULE 腔；CEP 梳链接到 Cs 喷泉做绝对频率测量"
-      - "对钟跃迁做 Rabi 谱 + Ramsey 谱，读 Q factor（目标 ~10^14）"
-      - "跑完整 8-项系统误差预算评估，给出 Type B 不确定度"
-      - "与 JILA Ca 光钟远程比对给出 Type A 频率差"
-    applicable_conditions: "JILA 2008 条件；可扩展到 ¹⁷¹Yb / ⁸⁸Sr / ⁸⁷Sr 其他魔术波长系统"
-    source:
-      zotero_key: "LUDLOW2008-THESIS-JILA"
-      claim: >
-        "the complete JILA Sr clock system integrates Zeeman slowing, blue/red MOTs,
-        magic-wavelength lattice trapping, ULE-stabilized interrogation laser,
-        Ramsey spectroscopy, and excitation-ratio detection into a coherent stack
-        achieving sub-Hz optical spectroscopy and 10⁻¹⁶ fractional uncertainty."
-    note: >
-      本方法节点是 B5a 批次后续 Sr 钟论文（ludlow2008 / bloom2014 / nicholson2015 
-      / oelker2019 / bothwell2022 等）的共同底座——这些论文都是对本栈的某一层做
-      精细化（如把 ULE 腔换成 Si 低温腔、把 1D 晶格换成 3D 晶格、把 Rabi 换成
-      Ramsey-interrogation 长周期方案等）。
+- id: meth.sr_optical_lattice_clock_stack_l08
+  name: Sr 光晶格钟全栈集成方法（Ludlow thesis）
+  purpose: '将 Sr 光晶格钟从原子源到最终频率输出作为完整系统进行工程化集成。本方法是 所有后续 Sr 钟复制项目的"参考设计"。
 
+    '
+  description: '八级串联系统：(1) Sr 原子束 + Zeeman 减速器（2D MOT 磁光阱）； (2) 461 nm 蓝色 MOT（一级冷却，mK 级）； (3) 689 nm 红色 MOT（二级冷却，~μK 级窄线冷却）； (4) 813 nm 魔术波长光晶格装载（一维或三维，~10⁴ 原子）； (5) 698 nm 超稳激光询问（ULE 腔，亚 Hz 线宽）； (6) ¹S₀
+    → ³P₀ Rabi / Ramsey 谱线询问（10–100 ms 积分）； (7) 激发率归一化探测（spin-echo 类似方案抑制探测噪声）； (8) 频率反馈到询问激光闭环（PID 长短期分层）。 整个链路分数频率不稳定度 ~1×10⁻¹⁵/sqrt(τ)；系统不确定度 ~1×10⁻¹⁶（thesis 时代）。
+
+    '
+  key_steps:
+  - 调试 Zeeman 减速器 + 双 MOT 冷却至 ~μK
+  - 把原子装载到魔术波长 813 nm 光晶格，测定晶格频率稳定度
+  - 长锁 698 nm 询问激光到 ULE 腔；CEP 梳链接到 Cs 喷泉做绝对频率测量
+  - 对钟跃迁做 Rabi 谱 + Ramsey 谱，读 Q factor（目标 ~10^14）
+  - 跑完整 8-项系统误差预算评估，给出 Type B 不确定度
+  - 与 JILA Ca 光钟远程比对给出 Type A 频率差
+  applicable_conditions: JILA 2008 条件；可扩展到 ¹⁷¹Yb / ⁸⁸Sr / ⁸⁷Sr 其他魔术波长系统
+  source:
+    zotero_key: LUDLOW2008-THESIS-JILA
+    claim: '"the complete JILA Sr clock system integrates Zeeman slowing, blue/red MOTs, magic-wavelength lattice trapping, ULE-stabilized interrogation laser, Ramsey spectroscopy, and excitation-ratio
+      detection into a coherent stack achieving sub-Hz optical spectroscopy and 10⁻¹⁶ fractional uncertainty."
+
+      '
+  note: '本方法节点是 B5a 批次后续 Sr 钟论文（ludlow2008 / bloom2014 / nicholson2015  / oelker2019 / bothwell2022 等）的共同底座——这些论文都是对本栈的某一层做 精细化（如把 ULE 腔换成 Si 低温腔、把 1D 晶格换成 3D 晶格、把 Rabi 换成 Ramsey-interrogation 长周期方案等）。
+
+    '
 metrics: []
-
 relations:
-  - id: rel.ludlow_2008_08T_01
-    subject: meth.sr_optical_lattice_clock_stack_l08
-    predicate: OPERATIONALIZED-AS
-    object: ent.optical_lattice_clock
-    confidence: established
-    source: {zotero_key: "LUDLOW2008-THESIS-JILA", claim: "the complete JILA Sr clock system integrates Zeeman slowing, blue/red MOTs, magic-wavelength lattice trapping..."}
-    note: "Sr 光晶格钟全栈方法承载光晶格钟架构子节点的具体实现。跨文件引用 ent.optical_lattice_clock（fortier2026.yaml）。"
-
-  - id: rel.ludlow_2008_08T_02
-    subject: meth.sr_optical_lattice_clock_stack_l08
-    predicate: CONDITIONED-BY
-    object: pri.magic_wavelength_operational_protocol_l08
-    confidence: established
-    source: {zotero_key: "LUDLOW2008-THESIS-JILA", claim: "the magic-wavelength protocol is a prerequisite for 10⁻¹⁶ fractional uncertainty in the Sr lattice clock."}
-    note: "Sr 钟全栈依赖魔术波长操作协议作为 AC-Stark 消除的前提。"
-
-  - id: rel.ludlow_2008_08T_03
-    subject: ent.optical_lattice_clock
-    predicate: BOUNDED-BY
-    object: pri.sr_clock_systematic_budget_framework_l08
-    confidence: established
-    source: {zotero_key: "LUDLOW2008-THESIS-JILA", claim: "the total systematic uncertainty budget of the JILA Sr clock is constructed as the quadrature sum of eight independently evaluated contributions."}
-    note: "光晶格钟的不确定度由八项系统效应预算合成限制。跨文件引用 ent.optical_lattice_clock（fortier2026.yaml）。"
-
-  - id: rel.ludlow_2008_08T_04
-    subject: meth.sr_optical_lattice_clock_stack_l08
-    predicate: OPERATIONALIZED-AS
-    object: meth.allan_deviation_adev
-    confidence: established
-    source: {zotero_key: "LUDLOW2008-THESIS-JILA", claim: "clock performance is characterized by the Allan deviation σ_y(τ), averaging down as white FM noise at short τ before encountering systematic floors."}
-    note: "Sr 钟栈的性能度量通过 Allan 偏差实现。跨文件引用 meth.allan_deviation_adev（shared/papers/allan1966.yaml，B9 建立）。"
+- id: rel.ludlow_2008_08T_01
+  subject: meth.sr_optical_lattice_clock_stack_l08
+  predicate: OPERATIONALIZED-AS
+  object: ent.optical_lattice_clock
+  confidence: established
+  source:
+    zotero_key: LUDLOW2008-THESIS-JILA
+    claim: the complete JILA Sr clock system integrates Zeeman slowing, blue/red MOTs, magic-wavelength lattice trapping...
+  note: Sr 光晶格钟全栈方法承载光晶格钟架构子节点的具体实现。跨文件引用 ent.optical_lattice_clock（fortier2026.yaml）。
+- id: rel.ludlow_2008_08T_02
+  subject: meth.sr_optical_lattice_clock_stack_l08
+  predicate: CONDITIONED-BY
+  object: pri.magic_wavelength_operational_protocol_l08
+  confidence: established
+  source:
+    zotero_key: LUDLOW2008-THESIS-JILA
+    claim: the magic-wavelength protocol is a prerequisite for 10⁻¹⁶ fractional uncertainty in the Sr lattice clock.
+  note: Sr 钟全栈依赖魔术波长操作协议作为 AC-Stark 消除的前提。
+- id: rel.ludlow_2008_08T_03
+  subject: ent.optical_lattice_clock
+  predicate: BOUNDED-BY
+  object: pri.sr_clock_systematic_budget_framework_l08
+  confidence: established
+  source:
+    zotero_key: LUDLOW2008-THESIS-JILA
+    claim: the total systematic uncertainty budget of the JILA Sr clock is constructed as the quadrature sum of eight independently evaluated contributions.
+  note: 光晶格钟的不确定度由八项系统效应预算合成限制。跨文件引用 ent.optical_lattice_clock（fortier2026.yaml）。
+- id: rel.ludlow_2008_08T_04
+  subject: meth.sr_optical_lattice_clock_stack_l08
+  predicate: OPERATIONALIZED-AS
+  object: meth.allan_deviation_adev
+  confidence: established
+  source:
+    zotero_key: LUDLOW2008-THESIS-JILA
+    claim: clock performance is characterized by the Allan deviation σ_y(τ), averaging down as white FM noise at short τ before encountering systematic floors.
+  note: Sr 钟栈的性能度量通过 Allan 偏差实现。跨文件引用 meth.allan_deviation_adev（shared/papers/allan1966.yaml，B9 建立）。

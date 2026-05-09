@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：time-frequency-transfer
 meta:
+meta:
   zotero_key: Femtosecond synchronization of radio frequency sig
   topic: time-frequency-transfer
   source_type: technical_paper
@@ -13,6 +14,7 @@ meta:
   first_author: ''
   note: batch minimal extraction; pending expert review for full entities/principles
   year: 2004
+  doi: 10.1364/ol.29.002076
 entities:
 - id: ent.optics_letters__vol__29__issue_system
   name: ' 2004 experimental system'

@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：frequency-standards
 meta:
+meta:
   zotero_key: OPEN Systematic evaluation of a 171Yb
   topic: frequency-standards
   source_type: technical_paper
@@ -12,6 +13,7 @@ meta:
   title: OPEN Systematic evaluation of a 171Yb
   first_author: ''
   note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1038/s41598-018-26365-w
 entities:
 - id: ent.s41598_018_26365_w_system
   name: '  experimental system'

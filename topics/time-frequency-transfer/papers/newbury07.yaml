@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：time-frequency-transfer
 meta:
+meta:
   zotero_key: Coherent transfer of an optical carrier over 251 k
   topic: time-frequency-transfer
   source_type: technical_paper
@@ -12,6 +13,7 @@ meta:
   title: Coherent transfer of an optical carrier over 251 km
   first_author: ''
   note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1364/ol.32.003056
 entities:
 - id: ent.newbury07_system
   name: '  experimental system'

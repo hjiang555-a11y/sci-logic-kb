@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：optical-frequency-combs
 meta:
+meta:
   zotero_key: 饶冰洁 张攀 李铭坤 杨西光 闫露露 陈鑫 张首刚 张颜艳 姜海峰
   topic: optical-frequency-combs
   source_type: technical_paper
@@ -12,7 +13,7 @@ meta:
   title: 饶冰洁 张攀 李铭坤 杨西光 闫露露 陈鑫 张首刚 张颜艳 姜海峰
   first_author: ''
   note: batch minimal extraction; pending expert review for full entities/principles
-  doi: 10.7498/aps
+  doi: ''
 entities:
 - id: ent.8_20212162_system
   name: '  experimental system'

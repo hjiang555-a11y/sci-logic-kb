@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：optical-frequency-combs
 meta:
+meta:
   zotero_key: Optical Frequency Synthesizer for Precision Spectr
   topic: optical-frequency-combs
   source_type: technical_paper
@@ -12,6 +13,7 @@ meta:
   title: Optical Frequency Synthesizer for Precision Spectroscopy
   first_author: ''
   note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1103/physrevlett.85.2264
 entities:
 - id: ent.physrevlett_85_2264_system
   name: '  experimental system'

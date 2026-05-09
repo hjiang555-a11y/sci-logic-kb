@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：ultrastable-laser
 meta:
+meta:
   zotero_key: Progressesofultrastableoptical-cavity-basedmicrowa
   topic: ultrastable-laser
   source_type: technical_paper
@@ -12,7 +13,7 @@ meta:
   title: Progressesofultrastableoptical-cavity-basedmicrowavesource
   first_author: ''
   note: batch minimal extraction; pending expert review for full entities/principles
-  doi: 10.7498/aps
+  doi: ''
 entities:
 - id: ent.s20180751_system
   name: '  experimental system'

@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：optical-frequency-combs
 meta:
+meta:
   zotero_key: Compact, stable 1 GHz femtosecond
   topic: optical-frequency-combs
   source_type: technical_paper
@@ -13,6 +14,7 @@ meta:
   first_author: Michelle
   note: batch minimal extraction; pending expert review for full entities/principles
   year: 2010
+  doi: 10.1364/ao.49.005577
 entities:
 - id: ent.ao_49_29_5577_system
   name: Michelle 2010 experimental system

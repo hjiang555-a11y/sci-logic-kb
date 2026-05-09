@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：ultrastable-laser
 meta:
+meta:
   zotero_key: 216 Vol.8,No.2/February2021/Optica Letter
   topic: ultrastable-laser
   source_type: technical_paper
@@ -12,6 +13,7 @@ meta:
   title: 216 Vol.8,No.2/February2021/Optica Letter
   first_author: ''
   note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1364/OPTICA
 entities:
 - id: ent.optica_8_2_216_system
   name: '  experimental system'

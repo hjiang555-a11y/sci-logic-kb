@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：time-frequency-transfer
 meta:
+meta:
   zotero_key: Dissemination of an optical frequency
   topic: time-frequency-transfer
   source_type: technical_paper
@@ -13,6 +14,7 @@ meta:
   first_author: Thorpe
   note: batch minimal extraction; pending expert review for full entities/principles
   year: 2012
+  doi: ''
 entities:
 - id: ent.oe_20_2_1775_system
   name: Thorpe 2012 experimental system

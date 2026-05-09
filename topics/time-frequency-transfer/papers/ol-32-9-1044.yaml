@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：time-frequency-transfer
 meta:
+meta:
   zotero_key: Long-term femtosecond timing link stabilization
   topic: time-frequency-transfer
   source_type: technical_paper
@@ -13,6 +14,7 @@ meta:
   first_author: Kim
   note: batch minimal extraction; pending expert review for full entities/principles
   year: 2007
+  doi: ''
 entities:
 - id: ent.ol_32_9_1044_system
   name: Kim 2007 experimental system

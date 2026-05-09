@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：optical-frequency-combs
 meta:
+meta:
   zotero_key: All polarization-maintaining Er fiber-based
   topic: optical-frequency-combs
   source_type: technical_paper
@@ -13,6 +14,7 @@ meta:
   first_author: Diddams
   note: batch minimal extraction; pending expert review for full entities/principles
   year: 2016
+  doi: 10.1364/OE
 entities:
 - id: ent.oe_24_3_3095_system
   name: Diddams 2016 experimental system

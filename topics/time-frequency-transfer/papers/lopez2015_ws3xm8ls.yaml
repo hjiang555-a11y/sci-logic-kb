@@ -2,79 +2,89 @@
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
+meta:
   zotero_key: ws3xm8ls
   topic: time-frequency-transfer
   source_type: review
   contribution_type: framework
   reliability: high
-  title: "Frequency and time transfer for metrology and beyond using telecommunication network fibres"
+  title: Frequency and time transfer for metrology and beyond using telecommunication network fibres
   year: 2015
-  first_author: "Lopez"
-  authors: ["O. Lopez", "F. Kefelian", "H. F. Jiang", "A. Haboucha", "A. Bercy", "F. Stefani", "B. Chanteau", "A. Kanj", "D. Rovera", "J. Achkar", "C. Chardonnet", "P. E. Pottie", "A. Amy-Klein", "G. Santarelli"]
-  journal: "Comptes Rendus Physique"
+  first_author: Lopez
+  authors:
+  - O. Lopez
+  - F. Kefelian
+  - H. F. Jiang
+  - A. Haboucha
+  - A. Bercy
+  - F. Stefani
+  - B. Chanteau
+  - A. Kanj
+  - D. Rovera
+  - J. Achkar
+  - C. Chardonnet
+  - P. E. Pottie
+  - A. Amy-Klein
+  - G. Santarelli
+  journal: Comptes Rendus Physique
   volume: 16
   pages: 531-539
-  doi: 10.1016/j.crhy.2015.04.005
-  note: >
-    [综述 / framework] Laboratoire de Physique des Lasers + SYRTE + Bordeaux。第一次系统论证 光纤时频传递可以承载于**正在运营**的电信暗信道（"dark channel on live telecom network"， DWDM 信道之间），不需要专用暗纤。为 REFIMEVE+ 国家级 ultrastable metrological optical network 的建设提供理论与工程基础。
+  doi: ''
+  note: '[综述 / framework] Laboratoire de Physique des Lasers + SYRTE + Bordeaux。第一次系统论证 光纤时频传递可以承载于**正在运营**的电信暗信道（"dark channel on live telecom network"， DWDM 信道之间），不需要专用暗纤。为 REFIMEVE+ 国家级 ultrastable metrological
+    optical network 的建设提供理论与工程基础。
+
+    '
 entities:
-  - id: ent.shared_telecom_fiber_metrology_channel
-    name: "电信网络共享暗信道（计量级光纤时频传递载体）"
-    hierarchy_level: 2
-    status: demonstrated
-    function: >
-      在运营中的电信 DWDM 光纤网络中，选择一个未使用/低占用的 ITU 信道
-      承载计量级超稳光信号；与数据通道共用光放大器与色散补偿模块。
-    key_parameters:
-      channel_grid: "ITU 100/50 GHz grid"
-      coexistence: "with live internet data traffic"
-      advantage: "no dedicated dark fiber needed; national scalability"
-    note: "Level 2 实例，PART-OF ent.coherent_optical_fiber_link"
+- id: ent.shared_telecom_fiber_metrology_channel
+  name: 电信网络共享暗信道（计量级光纤时频传递载体）
+  hierarchy_level: 2
+  status: demonstrated
+  function: '在运营中的电信 DWDM 光纤网络中，选择一个未使用/低占用的 ITU 信道 承载计量级超稳光信号；与数据通道共用光放大器与色散补偿模块。
 
+    '
+  key_parameters:
+    channel_grid: ITU 100/50 GHz grid
+    coexistence: with live internet data traffic
+    advantage: no dedicated dark fiber needed; national scalability
+  note: Level 2 实例，PART-OF ent.coherent_optical_fiber_link
 principles:
-  - id: pri.telecom_network_metrology_coexistence
-    name: "电信暗信道共存计量信号传递原理"
-    tier: domain
-    verification_status: demonstrated
-    statement: >
-      在运营电信 DWDM 网络中，选择一个低占用 ITU 信道传递计量级超稳光载波，
-      可与数据业务共享光放大、色散补偿与传输光纤，而不显著劣化二者性能。
-      经验证的兼容性边界：计量信号功率 ≤ 数据信号、避免波长相邻以防四波混频窜扰、
-      接入点需双向对称放大。
-    domain: "国家级时频计量网络工程"
-    conditions: "DWDM grid available; bidirectional amplification可改造"
-    source_claim: "public telecommunication network carrying Internet data can be used to compare and distribute ultra-stable metrological signals over long distances"
+- id: pri.telecom_network_metrology_coexistence
+  name: 电信暗信道共存计量信号传递原理
+  tier: domain
+  verification_status: demonstrated
+  statement: '在运营电信 DWDM 网络中，选择一个低占用 ITU 信道传递计量级超稳光载波， 可与数据业务共享光放大、色散补偿与传输光纤，而不显著劣化二者性能。 经验证的兼容性边界：计量信号功率 ≤ 数据信号、避免波长相邻以防四波混频窜扰、 接入点需双向对称放大。
 
+    '
+  domain: 国家级时频计量网络工程
+  conditions: DWDM grid available; bidirectional amplification可改造
+  source_claim: public telecommunication network carrying Internet data can be used to compare and distribute ultra-stable metrological signals over long distances
 relations:
-  - id: rel.lopez_2015_15_01
-    subject: ent.shared_telecom_fiber_metrology_channel
-    predicate: PART-OF
-    object: ent.coherent_optical_fiber_link
-    source:
-      paper: lopez2015
-      claim: "frequency and time transfer ... using telecommunication network fibres"
-
-  - id: rel.lopez_2015_15_02
-    subject: ent.shared_telecom_fiber_metrology_channel
-    predicate: OPERATIONALIZED-AS
-    object: pri.telecom_network_metrology_coexistence
-    source:
-      paper: lopez2015
-      claim: "public telecommunication network ... used to compare and distribute ultra-stable metrological signals"
-
-  - id: rel.lopez_2015_15_03
-    subject: ent.shared_telecom_fiber_metrology_channel
-    predicate: ENABLED-BY
-    object: pri.noise_cancellation_frequency_transfer
-    source:
-      paper: lopez2015
-      claim: "actively stabilized phase of the transferred optical signal"
-
-  - id: rel.lopez_2015_15_04
-    subject: ent.coherent_optical_fiber_link
-    predicate: CONDITIONED-BY
-    object: ent.optical_frequency_comb
-    source:
-      paper: lopez2015
-      claim: "frequency comb to distribute the optical carrier to multiple users"
-    note: "跨专题引用：ent.optical_frequency_comb 定义于 optical-frequency-combs 专题"
+- id: rel.lopez_2015_15_01
+  subject: ent.shared_telecom_fiber_metrology_channel
+  predicate: PART-OF
+  object: ent.coherent_optical_fiber_link
+  source:
+    paper: lopez2015
+    claim: frequency and time transfer ... using telecommunication network fibres
+- id: rel.lopez_2015_15_02
+  subject: ent.shared_telecom_fiber_metrology_channel
+  predicate: OPERATIONALIZED-AS
+  object: pri.telecom_network_metrology_coexistence
+  source:
+    paper: lopez2015
+    claim: public telecommunication network ... used to compare and distribute ultra-stable metrological signals
+- id: rel.lopez_2015_15_03
+  subject: ent.shared_telecom_fiber_metrology_channel
+  predicate: ENABLED-BY
+  object: pri.noise_cancellation_frequency_transfer
+  source:
+    paper: lopez2015
+    claim: actively stabilized phase of the transferred optical signal
+- id: rel.lopez_2015_15_04
+  subject: ent.coherent_optical_fiber_link
+  predicate: CONDITIONED-BY
+  object: ent.optical_frequency_comb
+  source:
+    paper: lopez2015
+    claim: frequency comb to distribute the optical carrier to multiple users
+  note: 跨专题引用：ent.optical_frequency_comb 定义于 optical-frequency-combs 专题

@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：frequency-standards
 meta:
+meta:
   zotero_key: Accuracy evaluation of NIST-F1
   topic: frequency-standards
   source_type: technical_paper
@@ -12,6 +13,7 @@ meta:
   title: Accuracy evaluation of NIST-F1
   first_author: Jefferts
   note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1088/0026-1394/39/4/1
 entities:
 - id: ent.1823_1__system
   name: Jefferts  experimental system

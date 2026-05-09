@@ -2,63 +2,62 @@
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
+meta:
   zotero_key: 6aa4cdb5290485275d10e4d2976a14fd_aaddca25ef0b2
   topic: frequency-standards
   source_type: other
   contribution_type: framework
   reliability: high
-  title: "Roadmap towards the redefinition of the SI second"
+  title: Roadmap towards the redefinition of the SI second
   year: 2021
-  first_author: "Dimarcq"
-  authors: ["N. Dimarcq", "M. Gertsvolf", "G. Mileti", "S. Bize", "C. W. Oates", "E. Peik", "D. Calonico", "T. Ido"]
-  note: >
-    CCTF（国际时间频率咨询委员会）关于 SI 秒重新定义的 路线图文档。规定了光钟重新定义 SI 秒前必须达到的 技术里程碑：至少三种不同光钟体系的系统不确定度 < 5×10⁻¹⁸、光钟之间的频率比独立验证、光钟与 Cs 喷泉钟的长期比对、以及可搬运光钟的比对实验。
+  first_author: Dimarcq
+  authors:
+  - N. Dimarcq
+  - M. Gertsvolf
+  - G. Mileti
+  - S. Bize
+  - C. W. Oates
+  - E. Peik
+  - D. Calonico
+  - T. Ido
+  note: 'CCTF（国际时间频率咨询委员会）关于 SI 秒重新定义的 路线图文档。规定了光钟重新定义 SI 秒前必须达到的 技术里程碑：至少三种不同光钟体系的系统不确定度 < 5×10⁻¹⁸、光钟之间的频率比独立验证、光钟与 Cs 喷泉钟的长期比对、以及可搬运光钟的比对实验。
+
+    '
+  doi: 10.1088/1681-7575/ad17d2
 entities:
-  - id: ent.si_second_redefinition_roadmap_2021
-    name: "SI 秒重新定义路线图（2021 CCTF）"
-    tier: system
-    domain: "SI 秒重新定义；光钟；频率计量；国际标准"
-    description: >
-      CCTF 制定的 SI 秒重新定义路线图。规定了从现行
-      Cs 微波标准过渡到光频标准的必要条件和步骤：
-      (a) 多种光钟体系（≥3）实现 < 5×10⁻¹⁸ 系统不确定度；
-      (b) 光钟频率比的独立验证（不同研究所之间）；
-      (c) 光钟与现有 Cs 主钟的长期一致性验证；
-      (d) 可搬运光钟的比对试验确认大地测量一致性。
-    verification_status: proposed
-    source:
-      zotero_key: "6aa4cdb5290485275d10e4d2976a14fd_aaddca25ef0b2"
-      claim: "This roadmap outlines the technical milestones required before the redefinition of the SI second."
+- id: ent.si_second_redefinition_roadmap_2021
+  name: SI 秒重新定义路线图（2021 CCTF）
+  tier: system
+  domain: SI 秒重新定义；光钟；频率计量；国际标准
+  description: 'CCTF 制定的 SI 秒重新定义路线图。规定了从现行 Cs 微波标准过渡到光频标准的必要条件和步骤： (a) 多种光钟体系（≥3）实现 < 5×10⁻¹⁸ 系统不确定度； (b) 光钟频率比的独立验证（不同研究所之间）； (c) 光钟与现有 Cs 主钟的长期一致性验证； (d) 可搬运光钟的比对试验确认大地测量一致性。
 
+    '
+  verification_status: proposed
+  source:
+    zotero_key: 6aa4cdb5290485275d10e4d2976a14fd_aaddca25ef0b2
+    claim: This roadmap outlines the technical milestones required before the redefinition of the SI second.
 principles:
-  - id: pri.si_second_redefinition_criteria
-    name: "SI 秒重新定义判据原理"
-    tier: domain
-    verification_status: established
-    statement: >
-      SI 秒重新定义需要满足：(a) 新参考（光频）的性能
-      显著优于现行参考（Cs 微波）；(b) 新参考在不同
-      实现（不同原子/离子、不同研究所）之间的一致性
-      得到验证；(c) 新参考与现行参考的连续性得到确保；
-      (d) 新参考可通过标准化的比对方法传递至用户。
-      核心判据：光钟频率比的不确定度必须小于现行
-      Cs 钟的实现精度。
-    domain: "SI 秒；光钟；国际计量标准"
-    key_insight: >
-      重新定义 SI 秒不仅是"谁更好"的问题，更是"不同实现
-      之间的一致性"问题——三个独立光钟以 5×10⁻¹⁸ 一致
-      比单个光钟达到 10⁻¹⁹ 更重要。
-    conditions: "≥3 种光钟体系不确定度 < 5×10⁻¹⁸；独立频率比验证；Cs 主钟比对连续性验证"
-    source:
-      zotero_key: "6aa4cdb5290485275d10e4d2976a14fd_aaddca25ef0b2"
-      claim: "At least three different optical clock systems must demonstrate systematic uncertainties below 5×10^-18."
+- id: pri.si_second_redefinition_criteria
+  name: SI 秒重新定义判据原理
+  tier: domain
+  verification_status: established
+  statement: 'SI 秒重新定义需要满足：(a) 新参考（光频）的性能 显著优于现行参考（Cs 微波）；(b) 新参考在不同 实现（不同原子/离子、不同研究所）之间的一致性 得到验证；(c) 新参考与现行参考的连续性得到确保； (d) 新参考可通过标准化的比对方法传递至用户。 核心判据：光钟频率比的不确定度必须小于现行 Cs 钟的实现精度。
 
+    '
+  domain: SI 秒；光钟；国际计量标准
+  key_insight: '重新定义 SI 秒不仅是"谁更好"的问题，更是"不同实现 之间的一致性"问题——三个独立光钟以 5×10⁻¹⁸ 一致 比单个光钟达到 10⁻¹⁹ 更重要。
+
+    '
+  conditions: ≥3 种光钟体系不确定度 < 5×10⁻¹⁸；独立频率比验证；Cs 主钟比对连续性验证
+  source:
+    zotero_key: 6aa4cdb5290485275d10e4d2976a14fd_aaddca25ef0b2
+    claim: At least three different optical clock systems must demonstrate systematic uncertainties below 5×10^-18.
 relations:
-  - id: rel.si_roadmap_01
-    subject: ent.si_second_redefinition_roadmap_2021
-    predicate: CHARACTERIZES
-    object: pri.si_second_redefinition_criteria
-    confidence: established
-    source:
-      zotero_key: "6aa4cdb5290485275d10e4d2976a14fd_aaddca25ef0b2"
-      claim: "This roadmap outlines the technical milestones required before the redefinition of the SI second."
+- id: rel.si_roadmap_01
+  subject: ent.si_second_redefinition_roadmap_2021
+  predicate: CHARACTERIZES
+  object: pri.si_second_redefinition_criteria
+  confidence: established
+  source:
+    zotero_key: 6aa4cdb5290485275d10e4d2976a14fd_aaddca25ef0b2
+    claim: This roadmap outlines the technical milestones required before the redefinition of the SI second.

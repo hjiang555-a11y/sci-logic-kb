@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：optical-frequency-combs
 meta:
+meta:
   zotero_key: An All-Polarization-Maintaining Multi-Branch Optic
   topic: optical-frequency-combs
   source_type: technical_paper
@@ -12,6 +13,7 @@ meta:
   title: An All-Polarization-Maintaining Multi-Branch Optical Frequency Comb
   first_author: Ning
   note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1088/0256-307X/37/6/064202
 entities:
 - id: ent.ning_2020_chinese_phys__lett___system
   name: Ning  experimental system

@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：optical-frequency-combs
 meta:
+meta:
   zotero_key: Ultralow phase noise microwave generation with an
   topic: optical-frequency-combs
   source_type: technical_paper
@@ -12,6 +13,7 @@ meta:
   title: Ultralow phase noise microwave generation with an
   first_author: Tara
   note: batch minimal extraction; pending expert review for full entities/principles
+  doi: ''
 entities:
 - id: ent.2542_1__system
   name: Tara  experimental system

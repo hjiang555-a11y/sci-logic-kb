@@ -2,135 +2,144 @@
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
+meta:
   topic: frequency-standards
   source_type: technical_paper
   contribution_type: evidence
   reliability: high
-  title: "A Cesium Fountain Frequency Standard: Preliminary Results"
+  title: 'A Cesium Fountain Frequency Standard: Preliminary Results'
   year: 1995
-  first_author: "Clairon"
-  journal: "IEEE Transactions on Instrumentation and Measurement"
-  note: >
-    报道了铯原子喷泉频率标准的初步研制结果，实现了 sub-Hertz 级的 Ramsey 共振线宽（< 700 mHz）， 并初步评估了冷碰撞频移等系统误差。
+  first_author: Clairon
+  journal: IEEE Transactions on Instrumentation and Measurement
+  note: '报道了铯原子喷泉频率标准的初步研制结果，实现了 sub-Hertz 级的 Ramsey 共振线宽（< 700 mHz）， 并初步评估了冷碰撞频移等系统误差。
+
+    '
+  doi: 10.1109/19.377790
 entities:
-  - id: ent.cesium_fountain_standard_clairon1995
-    name: "铯原子喷泉频率标准 (Clairon 1995)"
-    aliases: ["Cesium Fountain Frequency Standard"]
-    hierarchy_level: 2
-    status: demonstrated
-    function: >
-      利用激光冷却的冷铯原子在竖直方向上的抛射与回落，通过两次穿过微波腔实现长相干时间的 Ramsey 干涉，
-      从而获得极窄的共振线宽和高频率稳定性。
-    key_parameters:
-      cycle_time: "1.1 s"
-      C_field: "1.8 mG"
-      microwave_cavity_Q: "30 000"
-      launch_height: "C-field 区域约 70 cm"
-    interface_requirements:
-      vacuum: "C-field 区域压力 < 5*10^-10 Torr"
-      magnetic_shielding: "四层磁屏蔽，轴向屏蔽因子约 10^4"
+- id: ent.cesium_fountain_standard_clairon1995
+  name: 铯原子喷泉频率标准 (Clairon 1995)
+  aliases:
+  - Cesium Fountain Frequency Standard
+  hierarchy_level: 2
+  status: demonstrated
+  function: '利用激光冷却的冷铯原子在竖直方向上的抛射与回落，通过两次穿过微波腔实现长相干时间的 Ramsey 干涉， 从而获得极窄的共振线宽和高频率稳定性。
 
+    '
+  key_parameters:
+    cycle_time: 1.1 s
+    C_field: 1.8 mG
+    microwave_cavity_Q: 30 000
+    launch_height: C-field 区域约 70 cm
+  interface_requirements:
+    vacuum: C-field 区域压力 < 5*10^-10 Torr
+    magnetic_shielding: 四层磁屏蔽，轴向屏蔽因子约 10^4
 principles:
-  - id: pri.ramsey_separated_oscillatory_fields_fountain
-    name: "喷泉式 Ramsey 分离振荡场原理"
-    tier: domain
-    verification_status: observed
-    statement: >
-      原子在抛射过程中两次穿过微波腔，两次相互作用之间的时间间隔 $\tau$ 远大于热原子束，
-      导致共振线宽 $\Delta \nu \approx 1/(2\tau)$ 显著降低。
-    domain: "原子频率标准"
-    formula: '$\Delta \nu_{FWHM} \approx 1/(2\tau)$'
-    key_insight: "利用激光冷却降低原子速度并增加相互作用时间，将线宽降低至 sub-Hertz 量级。"
-    conditions: '极低温度（$\mu 级别）且高真空环境下'
-    source_claim: "The long time between the two interactions leads to a sub-Hertz Ramsey resonance, two orders of magnitude narrower than in classical thermal beam devices."
+- id: pri.ramsey_separated_oscillatory_fields_fountain
+  name: 喷泉式 Ramsey 分离振荡场原理
+  tier: domain
+  verification_status: observed
+  statement: '原子在抛射过程中两次穿过微波腔，两次相互作用之间的时间间隔 $\tau$ 远大于热原子束， 导致共振线宽 $\Delta \nu \approx 1/(2\tau)$ 显著降低。
 
-  - id: pri.cold_collisional_shift_cesium
-    name: "冷铯原子碰撞频移"
-    tier: domain
-    verification_status: observed
-    statement: >
-      在极低温度下，铯原子间的 s-波散射导致频率偏移，该偏移与原子的平均密度 $\rho$ 成正比。
-    domain: "系统误差"
-    formula: '$\Delta \nu / \nu \propto \rho$'
-    key_insight: "冷碰撞是喷泉钟长期稳定度和准确度的主要限制因素。"
-    conditions: "s-wave scattering regime"
-    source_claim: "A preliminary evaluation of some systematic effects shows that cold collisions will be the limiting effect for long-term stability and accuracy."
+    '
+  domain: 原子频率标准
+  formula: $\Delta \nu_{FWHM} \approx 1/(2\tau)$
+  key_insight: 利用激光冷却降低原子速度并增加相互作用时间，将线宽降低至 sub-Hertz 量级。
+  conditions: 极低温度（$\mu 级别）且高真空环境下
+  source_claim: The long time between the two interactions leads to a sub-Hertz Ramsey resonance, two orders of magnitude narrower than in classical thermal beam devices.
+- id: pri.cold_collisional_shift_cesium
+  name: 冷铯原子碰撞频移
+  tier: domain
+  verification_status: observed
+  statement: '在极低温度下，铯原子间的 s-波散射导致频率偏移，该偏移与原子的平均密度 $\rho$ 成正比。
 
+    '
+  domain: 系统误差
+  formula: $\Delta \nu / \nu \propto \rho$
+  key_insight: 冷碰撞是喷泉钟长期稳定度和准确度的主要限制因素。
+  conditions: s-wave scattering regime
+  source_claim: A preliminary evaluation of some systematic effects shows that cold collisions will be the limiting effect for long-term stability and accuracy.
 methods:
-  - id: meth.cesium_fountain_operation_cycle
-    name: "铯原子喷泉运行周期"
-    status: demonstrated
-    applies_to: ent.cesium_fountain_standard_clairon1995
-    steps_summary: >
-      1. 原子捕获与冷却 (0.3-0.5 s) $\rightarrow$ 2. 1-D 移动光 molasses 抛射 $\rightarrow$ 3. 第一次微波相互作用 ($\pi/2$ 脉冲) $\rightarrow$ 4.  ballistic 飞行与回落 $\rightarrow$ 5. 第二次微波相互作用 $\rightarrow$ 6. 荧光检测并计算跃迁概率。
-    source_claim: "The cesium atoms are first cooled for about 0.3 s to 0.5 s, and then the 1-D moving molasses method is used to launch the atoms."
+- id: meth.cesium_fountain_operation_cycle
+  name: 铯原子喷泉运行周期
+  status: demonstrated
+  applies_to: ent.cesium_fountain_standard_clairon1995
+  steps_summary: '1. 原子捕获与冷却 (0.3-0.5 s) $\rightarrow$ 2. 1-D 移动光 molasses 抛射 $\rightarrow$ 3. 第一次微波相互作用 ($\pi/2$ 脉冲) $\rightarrow$ 4.  ballistic 飞行与回落 $\rightarrow$ 5. 第二次微波相互作用 $\rightarrow$ 6. 荧光检测并计算跃迁概率。
 
-  - id: meth.time_of_flight_velocity_distribution
-    name: "飞行时间法测速"
-    status: demonstrated
-    applies_to: ent.cesium_fountain_standard_clairon1995
-    steps_summary: >
-      通过检测不同时间点的原子荧光，确定原子的垂直速度分布。
-    source_claim: "the time-of-flight (TOF) technique is used to determine the vertical velocity distribution."
+    '
+  source_claim: The cesium atoms are first cooled for about 0.3 s to 0.5 s, and then the 1-D moving molasses method is used to launch the atoms.
+- id: meth.time_of_flight_velocity_distribution
+  name: 飞行时间法测速
+  status: demonstrated
+  applies_to: ent.cesium_fountain_standard_clairon1995
+  steps_summary: '通过检测不同时间点的原子荧光，确定原子的垂直速度分布。
 
+    '
+  source_claim: the time-of-flight (TOF) technique is used to determine the vertical velocity distribution.
 metrics:
-  - id: met.ramsey_linewidth_clairon1995
-    name: "Ramsey 共振线宽"
-    unit: "Hz"
-    role: secondary
-    description: "决定频率标准的短期稳定性上限"
-    demonstrated_value:
-      value: "< 700 mHz"
-      conditions: "flight time above the cavity of 500 ms"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "", claim: "the central fringe... is less than 700 mHz wide (FWHM)"}
-
-  - id: met.fractional_frequency_stability_clairon1995
-    name: '分数频率不稳定度 $\sigma_y(\tau)$'
-    unit: "无量纲 (Allan deviation)"
-    role: primary
-    description: "相对于 H-maser 的短期频率稳定性"
-    demonstrated_value:
-      value: "3 * 10^-13 / sqrt(tau)"
-      conditions: "measured against an H-maser, cycle duration 1.1 s"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "", claim: "The short-term frequency stability, measured against an H-maser, is 3 * 10^-13 tau^-1/2"}
-
-  - id: met.cold_collisional_shift_value_clairon1995
-    name: '冷碰撞频移 $\Delta \nu / \nu$'
-    unit: "无量纲"
-    role: engineering
-    description: "由于原子间碰撞导致的频率偏移"
-    demonstrated_value:
-      value: "10^-15 (typical conditions)"
-      conditions: "10^5 atoms at the detection in mF=0 and 5 muK"
-      verification_status: observed
-      confidence: established
-      source: {zotero_key: "", claim: "the relative collisional shift can be estimated to be 3 * 10^-15 under typical conditions"}
-
-relations:
-  - id: rel.clairon_1995_lairon1995_01
-    subject: ent.cesium_fountain_standard_clairon1995
-    predicate: CHARACTERIZED-BY
-    object: met.ramsey_linewidth_clairon1995
-    confidence: established
-    source: {zotero_key: "", claim: "Ramsey fringes as narrow as 0.7 Hz have been obtained."}
-
-  - id: rel.clairon_1995_lairon1995_02
-    subject: ent.cesium_fountain_standard_clairon1995
-    predicate: CHARACTERIZED-BY
-    object: met.fractional_frequency_stability_clairon1995
-    confidence: established
-    source: {zotero_key: "", claim: "The short-term frequency stability, measured against an H-maser, is 3 * 10^-13 tau^-1/2"}
-
-  - id: rel.clairon_1995_lairon1995_03
-    subject: ent.cesium_fountain_standard_clairon1995
-    predicate: BOUNDED-BY
-    object: pri.cold_collisional_shift_cesium
-    is_system_limit: true
+- id: met.ramsey_linewidth_clairon1995
+  name: Ramsey 共振线宽
+  unit: Hz
+  role: secondary
+  description: 决定频率标准的短期稳定性上限
+  demonstrated_value:
+    value: < 700 mHz
+    conditions: flight time above the cavity of 500 ms
     verification_status: observed
-    temporal_role: validates
     confidence: established
-    source: {zotero_key: "", claim: "cold collisions will be the limiting effect for long-term stability and accuracy."}
+    source:
+      zotero_key: ''
+      claim: the central fringe... is less than 700 mHz wide (FWHM)
+- id: met.fractional_frequency_stability_clairon1995
+  name: 分数频率不稳定度 $\sigma_y(\tau)$
+  unit: 无量纲 (Allan deviation)
+  role: primary
+  description: 相对于 H-maser 的短期频率稳定性
+  demonstrated_value:
+    value: 3 * 10^-13 / sqrt(tau)
+    conditions: measured against an H-maser, cycle duration 1.1 s
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: ''
+      claim: The short-term frequency stability, measured against an H-maser, is 3 * 10^-13 tau^-1/2
+- id: met.cold_collisional_shift_value_clairon1995
+  name: 冷碰撞频移 $\Delta \nu / \nu$
+  unit: 无量纲
+  role: engineering
+  description: 由于原子间碰撞导致的频率偏移
+  demonstrated_value:
+    value: 10^-15 (typical conditions)
+    conditions: 10^5 atoms at the detection in mF=0 and 5 muK
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: ''
+      claim: the relative collisional shift can be estimated to be 3 * 10^-15 under typical conditions
+relations:
+- id: rel.clairon_1995_lairon1995_01
+  subject: ent.cesium_fountain_standard_clairon1995
+  predicate: CHARACTERIZED-BY
+  object: met.ramsey_linewidth_clairon1995
+  confidence: established
+  source:
+    zotero_key: ''
+    claim: Ramsey fringes as narrow as 0.7 Hz have been obtained.
+- id: rel.clairon_1995_lairon1995_02
+  subject: ent.cesium_fountain_standard_clairon1995
+  predicate: CHARACTERIZED-BY
+  object: met.fractional_frequency_stability_clairon1995
+  confidence: established
+  source:
+    zotero_key: ''
+    claim: The short-term frequency stability, measured against an H-maser, is 3 * 10^-13 tau^-1/2
+- id: rel.clairon_1995_lairon1995_03
+  subject: ent.cesium_fountain_standard_clairon1995
+  predicate: BOUNDED-BY
+  object: pri.cold_collisional_shift_cesium
+  is_system_limit: true
+  verification_status: observed
+  temporal_role: validates
+  confidence: established
+  source:
+    zotero_key: ''
+    claim: cold collisions will be the limiting effect for long-term stability and accuracy.

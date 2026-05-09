@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：frequency-standards
 meta:
+meta:
   zotero_key: Flywheel oscillator for atomic fountain clocks usi
   topic: frequency-standards
   source_type: technical_paper
@@ -12,6 +13,7 @@ meta:
   title: Flywheel oscillator for atomic fountain clocks using
   first_author: Millo
   note: batch minimal extraction; pending expert review for full entities/principles
+  doi: ''
 entities:
 - id: ent.eftf09_millo_et_al_proceeding_system
   name: Millo  experimental system

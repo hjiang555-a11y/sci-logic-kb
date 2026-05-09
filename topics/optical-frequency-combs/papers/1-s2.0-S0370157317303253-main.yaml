@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：optical-frequency-combs
 meta:
+meta:
   zotero_key: PhysicsReports729(2018)1–81
   topic: optical-frequency-combs
   source_type: technical_paper
@@ -12,6 +13,7 @@ meta:
   title: PhysicsReports729(2018)1–81
   first_author: ''
   note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1016/j.physrep.2017.08.004
 entities:
 - id: ent.1_s2_0_s0370157317303253_main_system
   name: '  experimental system'

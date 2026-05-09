@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：ultrastable-laser
 meta:
+meta:
   zotero_key: 5584 Vol.41,No.23/December12016/OpticsLetters Lett
   topic: ultrastable-laser
   source_type: technical_paper
@@ -12,6 +13,7 @@ meta:
   title: 5584 Vol.41,No.23/December12016/OpticsLetters Letter
   first_author: ''
   note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1364/OL
 entities:
 - id: ent.lz01029465_system
   name: '  experimental system'

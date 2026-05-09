@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：optical-frequency-combs
 meta:
+meta:
   zotero_key: Suppression of amplitude-to-phase noise
   topic: optical-frequency-combs
   source_type: technical_paper
@@ -13,6 +14,7 @@ meta:
   first_author: Helen
   note: batch minimal extraction; pending expert review for full entities/principles
   year: 2013
+  doi: 10.1364/OE
 entities:
 - id: ent.oe_21_22_27057_system
   name: Helen 2013 experimental system

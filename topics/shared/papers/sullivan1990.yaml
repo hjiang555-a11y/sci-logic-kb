@@ -2,155 +2,152 @@
 # 提取者：AI（待专家确认）
 # 提取日期：2026-05-04
 meta:
+meta:
   zotero_key: SULLIVAN1990-NIST-TN1337
   topic: shared
   source_type: technical_report
   contribution_type: framework
   reliability: high
-  title: "Characterization of Clocks and Oscillators"
+  title: Characterization of Clocks and Oscillators
   year: 1990
-  first_author: "Sullivan"
-  authors: ["Donald B. Sullivan", "David W. Allan", "David A. Howe", "Fred L. Walls"]
-  note: >
-    [奠基技术报告 · < 1999 年白名单 §B Howe 噪声测量体系] NIST TN 1337 是时频计量方差 体系的"手册级"文献，由 Sullivan、Allan、Howe、Walls 四位奠基人联合编著。文档以 章节形式系统整理 1966–1990 期间方差体系的三项关键扩展： (1) Modified Allan Deviation（MDEV / MVAR / mod σ_y）——引入"相位平均窗口"修正， 使积分核从 sin⁴ 升级为 sin⁶，PM 噪声带宽依赖被抑制，white PM（α=+2）与 flicker PM（α=+1）能被分辨（斜率 μ 分别为 −3/2 与 −1）； (2) 时偏差（TDEV / σ_x(τ) = τ · mod σ_y(τ) / sqrt(3)）——专用于时间同步/ 网络时钟场景，单位 s； (3) Hadamard Deviation（HDEV）——三点差分方差，对线性频率漂移鲁棒（drift 被 二阶差分消去），用于氢脉泽、老化快速器件的长 τ 分析。 本文件同时系统阐述测量带宽 f_h 对 ADEV / MDEV 结果的影响、dead-time 修正 （Yoshimura 系数表）、置信区间估计（等效自由度 χ² 分布）等工程规范。本文件为 时频工程师在实验室日常使用中的"座右铭"文献。
+  first_author: Sullivan
+  authors:
+  - Donald B. Sullivan
+  - David W. Allan
+  - David A. Howe
+  - Fred L. Walls
+  note: '[奠基技术报告 · < 1999 年白名单 §B Howe 噪声测量体系] NIST TN 1337 是时频计量方差 体系的"手册级"文献，由 Sullivan、Allan、Howe、Walls 四位奠基人联合编著。文档以 章节形式系统整理 1966–1990 期间方差体系的三项关键扩展： (1) Modified Allan Deviation（MDEV / MVAR / mod
+    σ_y）——引入"相位平均窗口"修正， 使积分核从 sin⁴ 升级为 sin⁶，PM 噪声带宽依赖被抑制，white PM（α=+2）与 flicker PM（α=+1）能被分辨（斜率 μ 分别为 −3/2 与 −1）； (2) 时偏差（TDEV / σ_x(τ) = τ · mod σ_y(τ) / sqrt(3)）——专用于时间同步/ 网络时钟场景，单位 s； (3) Hadamard Deviation（HDEV）——三点差分方差，对线性频率漂移鲁棒（drift
+    被 二阶差分消去），用于氢脉泽、老化快速器件的长 τ 分析。 本文件同时系统阐述测量带宽 f_h 对 ADEV / MDEV 结果的影响、dead-time 修正 （Yoshimura 系数表）、置信区间估计（等效自由度 χ² 分布）等工程规范。本文件为 时频工程师在实验室日常使用中的"座右铭"文献。
+
+    '
+  doi: 10.6028/nist.tn.1337
 entities: []
-
 principles:
-  - id: pri.modified_allan_kernel_resolves_pm_noise
-    name: "MDEV 相位平均积分核分辨 PM 噪声原理"
-    tier: meta
-    verification_status: observed
-    statement: >
-      "引入 n 点相位平均窗口后，mod σ_y²(τ = n·τ_0) 的时-频传递函数核从 ADEV 的
-      sin^4 变为 sin^6，高频滚降更陡峭，对测量带宽 f_h 的依赖被充分抑制。结果：
-      white PM 噪声（α=+2）给出斜率 μ = −3/2、flicker PM 噪声（α=+1）给出 μ = −1
-      的 mod σ_y(τ) 曲线，两者可被明确区分。"
-      这是 MDEV 相对 ADEV 的核心增值：在 PM 噪声主导的极短 τ 区间，提供可靠的噪声
-      类型诊断。
-    domain: "时频计量；积分核分析"
-    key_insight: >
-      ADEV 的 PM 噪声诊断简并（white PM 与 flicker PM 均给 μ ≈ −1 斜率）源自 sin⁴
-      积分核高频滚降不足；MDEV 通过"先在每段做 n 点相位平均、再做两样本差分方差"把
-      核变成 sin⁶，相当于增加一阶低通滤波，PM 噪声带宽依赖消失。工程上：测短 τ
-      性能、判断 PM 噪声类型时必须用 MDEV。
-    conditions: "连续无间断相位数据；n = τ/τ_0 取整；相同 f_h 前提下可比"
-    formula: "mod sigma_y^2(tau=n*tau_0) = (1/(2 n^4 tau_0^2 (N-3n+1))) sum_{j=1}^{N-3n+1} ( sum_{i=j}^{j+n-1} (x_{i+2n} - 2*x_{i+n} + x_i) )^2"
-    source:
-      zotero_key: "SULLIVAN1990-NIST-TN1337"
-      claim: >
-        "Modified Allan variance replaces the sin⁴ transfer function kernel with sin⁶ by phase-
-        averaging over n samples before differencing, thereby distinguishing white PM from
-        flicker PM noise (slopes −3/2 vs −1 in mod σ_y(τ) log-log plot)."
+- id: pri.modified_allan_kernel_resolves_pm_noise
+  name: MDEV 相位平均积分核分辨 PM 噪声原理
+  tier: meta
+  verification_status: observed
+  statement: '"引入 n 点相位平均窗口后，mod σ_y²(τ = n·τ_0) 的时-频传递函数核从 ADEV 的 sin^4 变为 sin^6，高频滚降更陡峭，对测量带宽 f_h 的依赖被充分抑制。结果： white PM 噪声（α=+2）给出斜率 μ = −3/2、flicker PM 噪声（α=+1）给出 μ = −1 的 mod σ_y(τ) 曲线，两者可被明确区分。" 这是
+    MDEV 相对 ADEV 的核心增值：在 PM 噪声主导的极短 τ 区间，提供可靠的噪声 类型诊断。
 
-  - id: pri.hadamard_variance_drift_insensitive
-    name: "Hadamard 方差对线性漂移不敏感原理"
-    tier: meta
-    verification_status: observed
-    statement: >
-      "Hadamard 方差 H²_y(τ) = (1/6)⟨(ȳ_{k+2} − 2·ȳ_{k+1} + ȳ_k)²⟩ 采用三点二阶差分
-      （二次差分），线性频率漂移（由 y(t) = a + b·t 建模）在二阶差分下被严格消除。
-      因此 HDEV 在存在显著漂移的钟（氢脉泽长 τ、器件老化初期）上仍可提供正确的随机
-      噪声估计，而 ADEV 会把漂移误判为 random-walk FM。"
-    domain: "时频计量；漂移容忍统计学"
-    key_insight: >
-      时频工程中"漂移 vs 噪声"的辨识是长 τ 分析的最大坑——ADEV 见到大 μ=+1 斜率
-      可能是真 RW FM 也可能是误入线性漂移。HDEV 通过二阶差分结构天然免疫线性漂移，
-      是氢脉泽、低老化率铷钟、原子钟组长 τ 性能评估的首选工具。老化率估计也可反过来
-      由 ADEV/HDEV 比值推算。
-    conditions: "连续无间断采样；漂移项至多到一阶（线性），二阶及以上漂移须额外拟合"
-    formula: "H^2_y(tau) = (1/6) * < (y_{k+2} - 2 * y_{k+1} + y_k)^2 >"
-    source:
-      zotero_key: "SULLIVAN1990-NIST-TN1337"
-      claim: >
-        "the Hadamard variance uses three-sample second differences, which eliminate linear
-        frequency drift, giving a reliable estimate of random frequency noise even in the
-        presence of deterministic drift."
+    '
+  domain: 时频计量；积分核分析
+  key_insight: 'ADEV 的 PM 噪声诊断简并（white PM 与 flicker PM 均给 μ ≈ −1 斜率）源自 sin⁴ 积分核高频滚降不足；MDEV 通过"先在每段做 n 点相位平均、再做两样本差分方差"把 核变成 sin⁶，相当于增加一阶低通滤波，PM 噪声带宽依赖消失。工程上：测短 τ 性能、判断 PM 噪声类型时必须用 MDEV。
 
+    '
+  conditions: 连续无间断相位数据；n = τ/τ_0 取整；相同 f_h 前提下可比
+  formula: mod sigma_y^2(tau=n*tau_0) = (1/(2 n^4 tau_0^2 (N-3n+1))) sum_{j=1}^{N-3n+1} ( sum_{i=j}^{j+n-1} (x_{i+2n} - 2*x_{i+n} + x_i) )^2
+  source:
+    zotero_key: SULLIVAN1990-NIST-TN1337
+    claim: '"Modified Allan variance replaces the sin⁴ transfer function kernel with sin⁶ by phase- averaging over n samples before differencing, thereby distinguishing white PM from flicker PM noise (slopes
+      −3/2 vs −1 in mod σ_y(τ) log-log plot)."
+
+      '
+- id: pri.hadamard_variance_drift_insensitive
+  name: Hadamard 方差对线性漂移不敏感原理
+  tier: meta
+  verification_status: observed
+  statement: '"Hadamard 方差 H²_y(τ) = (1/6)⟨(ȳ_{k+2} − 2·ȳ_{k+1} + ȳ_k)²⟩ 采用三点二阶差分 （二次差分），线性频率漂移（由 y(t) = a + b·t 建模）在二阶差分下被严格消除。 因此 HDEV 在存在显著漂移的钟（氢脉泽长 τ、器件老化初期）上仍可提供正确的随机 噪声估计，而 ADEV 会把漂移误判为 random-walk
+    FM。"
+
+    '
+  domain: 时频计量；漂移容忍统计学
+  key_insight: '时频工程中"漂移 vs 噪声"的辨识是长 τ 分析的最大坑——ADEV 见到大 μ=+1 斜率 可能是真 RW FM 也可能是误入线性漂移。HDEV 通过二阶差分结构天然免疫线性漂移， 是氢脉泽、低老化率铷钟、原子钟组长 τ 性能评估的首选工具。老化率估计也可反过来 由 ADEV/HDEV 比值推算。
+
+    '
+  conditions: 连续无间断采样；漂移项至多到一阶（线性），二阶及以上漂移须额外拟合
+  formula: H^2_y(tau) = (1/6) * < (y_{k+2} - 2 * y_{k+1} + y_k)^2 >
+  source:
+    zotero_key: SULLIVAN1990-NIST-TN1337
+    claim: '"the Hadamard variance uses three-sample second differences, which eliminate linear frequency drift, giving a reliable estimate of random frequency noise even in the presence of deterministic
+      drift."
+
+      '
 methods:
-  - id: meth.modified_allan_deviation_mdev
-    name: "修正 Allan 偏差 MDEV / mod σ_y(τ)"
-    purpose: >
-      在短 τ 区间（PM 噪声主导）给出带宽独立、白/闪烁 PM 可分辨的分数频率稳定度
-      度量。补 ADEV 的诊断盲区。
-    description: >
-      在 ADEV 的基础上，对每段长度 τ = n·τ_0 的相位数据先做 n 点滑动平均，再做两样本
-      差分平方。经 n = 1, 2, 4, 8, … 逐级增大得到 mod σ_y(τ) 曲线。
-    key_steps:
-      - "采集 τ_0 间隔相位数据 x_1, x_2, …, x_N"
-      - "对每个 m（m = 1, 2, 4, …），计算三阶差分 D_j = sum_{i=j}^{j+m-1}(x_{i+2m} - 2*x_{i+m} + x_i)"
-      - "mod sigma_y^2(tau=m*tau_0) = (1/(2 m^4 tau_0^2 (N-3m+1))) * sum_{j=1}^{N-3m+1} D_j^2"
-      - "开方得 mod σ_y(τ)，在 log-log 图读 PM 噪声斜率"
-    applicable_conditions: "相位数据；τ_0 足够小（Nyquist 覆盖 f_h）；连续采样"
-    source:
-      zotero_key: "SULLIVAN1990-NIST-TN1337"
-      claim: "the Modified Allan deviation mod σ_y(τ) is computed from phase data by first averaging over n samples and then applying the second-difference operation."
+- id: meth.modified_allan_deviation_mdev
+  name: 修正 Allan 偏差 MDEV / mod σ_y(τ)
+  purpose: '在短 τ 区间（PM 噪声主导）给出带宽独立、白/闪烁 PM 可分辨的分数频率稳定度 度量。补 ADEV 的诊断盲区。
 
-  - id: meth.time_deviation_tdev
-    name: "时偏差 TDEV / σ_x(τ)"
-    purpose: >
-      专用于时间同步 / 网络时钟 / 时间传递链路的时间稳定度度量。单位 s，直接给出
-      "在时间尺度 τ 下的时间误差均方根"。
-    description: >
-      由 MDEV 经 σ_x(τ) = τ · mod σ_y(τ) / sqrt(3) 得到。与 mod σ_y 的频率量纲
-      不同，σ_x 是时间量纲，适合 NTP / PTP / TWSTFT 链路、数据中心时钟同步等
-      工程场景的规范指标。
-    key_steps:
-      - "先按 MDEV 算出 mod sigma_y(tau)"
-      - "sigma_x(tau) = tau * mod_sigma_y(tau) / sqrt(3)"
-    applicable_conditions: "与 MDEV 同；量纲转换公式须乘以 τ 并除以 sqrt(3)"
-    source:
-      zotero_key: "SULLIVAN1990-NIST-TN1337"
-      claim: "σ_x(τ) = τ · mod σ_y(τ) / √3 defines the Time Deviation, the preferred stability metric for time-transfer links and network synchronization."
+    '
+  description: '在 ADEV 的基础上，对每段长度 τ = n·τ_0 的相位数据先做 n 点滑动平均，再做两样本 差分平方。经 n = 1, 2, 4, 8, … 逐级增大得到 mod σ_y(τ) 曲线。
 
-  - id: meth.hadamard_deviation_hdev
-    name: "Hadamard 偏差 HDEV / H_y(τ)"
-    purpose: >
-      长 τ 区间漂移免疫的分数频率稳定度度量。用于氢脉泽、铷钟、原子钟组长期性能
-      评估；对线性漂移天然鲁棒。
-    description: >
-      三点二阶差分方差开方：H_y(τ) = sqrt{(1/6)⟨(ȳ_{k+2} − 2ȳ_{k+1} + ȳ_k)²⟩}。
-      与 ADEV 并列使用，其比值可反过来估计线性漂移率（b = sqrt(ADEV^2 − HDEV^2) / τ
-      in RW-FM-dominated region，as a rough rule-of-thumb）。
-    key_steps:
-      - "按 tau = m * tau_0 分块平均得 y_1, y_2, ...（m 长 N 段）"
-      - "H_y^2(tau) = (1/6) * < (y_{k+2} - 2 * y_{k+1} + y_k)^2 >"
-      - "开方得 HDEV"
-    applicable_conditions: "线性漂移（aging）显著的钟；采样无间断"
-    source:
-      zotero_key: "SULLIVAN1990-NIST-TN1337"
-      claim: "the Hadamard deviation H_y(τ), derived from the three-sample Hadamard variance, rejects linear frequency drift and is the recommended long-τ stability measure for drifting sources."
+    '
+  key_steps:
+  - 采集 τ_0 间隔相位数据 x_1, x_2, …, x_N
+  - 对每个 m（m = 1, 2, 4, …），计算三阶差分 D_j = sum_{i=j}^{j+m-1}(x_{i+2m} - 2*x_{i+m} + x_i)
+  - mod sigma_y^2(tau=m*tau_0) = (1/(2 m^4 tau_0^2 (N-3m+1))) * sum_{j=1}^{N-3m+1} D_j^2
+  - 开方得 mod σ_y(τ)，在 log-log 图读 PM 噪声斜率
+  applicable_conditions: 相位数据；τ_0 足够小（Nyquist 覆盖 f_h）；连续采样
+  source:
+    zotero_key: SULLIVAN1990-NIST-TN1337
+    claim: the Modified Allan deviation mod σ_y(τ) is computed from phase data by first averaging over n samples and then applying the second-difference operation.
+- id: meth.time_deviation_tdev
+  name: 时偏差 TDEV / σ_x(τ)
+  purpose: '专用于时间同步 / 网络时钟 / 时间传递链路的时间稳定度度量。单位 s，直接给出 "在时间尺度 τ 下的时间误差均方根"。
 
+    '
+  description: '由 MDEV 经 σ_x(τ) = τ · mod σ_y(τ) / sqrt(3) 得到。与 mod σ_y 的频率量纲 不同，σ_x 是时间量纲，适合 NTP / PTP / TWSTFT 链路、数据中心时钟同步等 工程场景的规范指标。
+
+    '
+  key_steps:
+  - 先按 MDEV 算出 mod sigma_y(tau)
+  - sigma_x(tau) = tau * mod_sigma_y(tau) / sqrt(3)
+  applicable_conditions: 与 MDEV 同；量纲转换公式须乘以 τ 并除以 sqrt(3)
+  source:
+    zotero_key: SULLIVAN1990-NIST-TN1337
+    claim: σ_x(τ) = τ · mod σ_y(τ) / √3 defines the Time Deviation, the preferred stability metric for time-transfer links and network synchronization.
+- id: meth.hadamard_deviation_hdev
+  name: Hadamard 偏差 HDEV / H_y(τ)
+  purpose: '长 τ 区间漂移免疫的分数频率稳定度度量。用于氢脉泽、铷钟、原子钟组长期性能 评估；对线性漂移天然鲁棒。
+
+    '
+  description: '三点二阶差分方差开方：H_y(τ) = sqrt{(1/6)⟨(ȳ_{k+2} − 2ȳ_{k+1} + ȳ_k)²⟩}。 与 ADEV 并列使用，其比值可反过来估计线性漂移率（b = sqrt(ADEV^2 − HDEV^2) / τ in RW-FM-dominated region，as a rough rule-of-thumb）。
+
+    '
+  key_steps:
+  - 按 tau = m * tau_0 分块平均得 y_1, y_2, ...（m 长 N 段）
+  - H_y^2(tau) = (1/6) * < (y_{k+2} - 2 * y_{k+1} + y_k)^2 >
+  - 开方得 HDEV
+  applicable_conditions: 线性漂移（aging）显著的钟；采样无间断
+  source:
+    zotero_key: SULLIVAN1990-NIST-TN1337
+    claim: the Hadamard deviation H_y(τ), derived from the three-sample Hadamard variance, rejects linear frequency drift and is the recommended long-τ stability measure for drifting sources.
 metrics: []
-
 relations:
-  - id: rel.sullivan_1990_90_01
-    subject: meth.modified_allan_deviation_mdev
-    predicate: DERIVED-FROM
-    object: pri.modified_allan_kernel_resolves_pm_noise
-    confidence: established
-    source: {zotero_key: "SULLIVAN1990-NIST-TN1337", claim: "Modified Allan variance replaces the sin⁴ transfer function kernel with sin⁶ by phase-averaging over n samples."}
-    note: "MDEV 方法从 sin⁶ 积分核原理派生。"
-
-  - id: rel.sullivan_1990_90_02
-    subject: meth.time_deviation_tdev
-    predicate: DERIVED-FROM
-    object: meth.modified_allan_deviation_mdev
-    confidence: established
-    source: {zotero_key: "SULLIVAN1990-NIST-TN1337", claim: "σ_x(τ) = τ · mod σ_y(τ) / √3 defines the Time Deviation."}
-    note: "TDEV 由 MDEV 经量纲换算直接派生：σ_x = τ · mod σ_y / √3。"
-
-  - id: rel.sullivan_1990_90_03
-    subject: meth.hadamard_deviation_hdev
-    predicate: DERIVED-FROM
-    object: pri.hadamard_variance_drift_insensitive
-    confidence: established
-    source: {zotero_key: "SULLIVAN1990-NIST-TN1337", claim: "the Hadamard variance uses three-sample second differences, which eliminate linear frequency drift."}
-    note: "HDEV 方法从二阶差分漂移免疫原理派生。"
-
-  - id: rel.sullivan_1990_90_04
-    subject: meth.modified_allan_deviation_mdev
-    predicate: DERIVED-FROM
-    object: meth.allan_deviation_adev
-    confidence: established
-    source: {zotero_key: "SULLIVAN1990-NIST-TN1337", claim: "Modified Allan deviation is a refinement of the Allan deviation obtained by phase-averaging before differencing."}
-    note: "MDEV 是对 ADEV 的扩展：多一层相位平均。跨文件引用 meth.allan_deviation_adev（allan1966.yaml）。"
+- id: rel.sullivan_1990_90_01
+  subject: meth.modified_allan_deviation_mdev
+  predicate: DERIVED-FROM
+  object: pri.modified_allan_kernel_resolves_pm_noise
+  confidence: established
+  source:
+    zotero_key: SULLIVAN1990-NIST-TN1337
+    claim: Modified Allan variance replaces the sin⁴ transfer function kernel with sin⁶ by phase-averaging over n samples.
+  note: MDEV 方法从 sin⁶ 积分核原理派生。
+- id: rel.sullivan_1990_90_02
+  subject: meth.time_deviation_tdev
+  predicate: DERIVED-FROM
+  object: meth.modified_allan_deviation_mdev
+  confidence: established
+  source:
+    zotero_key: SULLIVAN1990-NIST-TN1337
+    claim: σ_x(τ) = τ · mod σ_y(τ) / √3 defines the Time Deviation.
+  note: TDEV 由 MDEV 经量纲换算直接派生：σ_x = τ · mod σ_y / √3。
+- id: rel.sullivan_1990_90_03
+  subject: meth.hadamard_deviation_hdev
+  predicate: DERIVED-FROM
+  object: pri.hadamard_variance_drift_insensitive
+  confidence: established
+  source:
+    zotero_key: SULLIVAN1990-NIST-TN1337
+    claim: the Hadamard variance uses three-sample second differences, which eliminate linear frequency drift.
+  note: HDEV 方法从二阶差分漂移免疫原理派生。
+- id: rel.sullivan_1990_90_04
+  subject: meth.modified_allan_deviation_mdev
+  predicate: DERIVED-FROM
+  object: meth.allan_deviation_adev
+  confidence: established
+  source:
+    zotero_key: SULLIVAN1990-NIST-TN1337
+    claim: Modified Allan deviation is a refinement of the Allan deviation obtained by phase-averaging before differencing.
+  note: MDEV 是对 ADEV 的扩展：多一层相位平均。跨文件引用 meth.allan_deviation_adev（allan1966.yaml）。

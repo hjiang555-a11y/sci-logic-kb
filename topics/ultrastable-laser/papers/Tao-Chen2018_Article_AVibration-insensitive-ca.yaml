@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：ultrastable-laser
 meta:
+meta:
   zotero_key: Tao-Chen2018_Article_AVibration-insensitive-ca
   topic: ultrastable-laser
   source_type: technical_paper
@@ -13,6 +14,7 @@ meta:
   first_author: Tao
   note: fixed from broken YAML; pending expert review
   year: 2018
+  doi: 10.1007/s00340-018-7096-5
 entities:
 - id: ent.tao_chen2018_article_avibratio_system
   name: Tao 2018 experimental system

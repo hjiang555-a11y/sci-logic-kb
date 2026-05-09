@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：time-frequency-transfer
 meta:
+meta:
   zotero_key: 113 km absolute ranging with nanometer precision
   topic: time-frequency-transfer
   source_type: technical_paper
@@ -12,6 +13,7 @@ meta:
   title: 113 km absolute ranging with nanometer precision
   first_author: ''
   note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1093/nsr/nwaf352
 entities:
 - id: ent.nwaf352_system
   name: '  experimental system'

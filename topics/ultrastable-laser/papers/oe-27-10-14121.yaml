@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：ultrastable-laser
 meta:
+meta:
   zotero_key: Thermal phase noise in giant interferometric
   topic: ultrastable-laser
   source_type: technical_paper
@@ -12,6 +13,7 @@ meta:
   title: Thermal phase noise in giant interferometric
   first_author: ''
   note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1364/OE
 entities:
 - id: ent.oe_27_10_14121_system
   name: '  experimental system'

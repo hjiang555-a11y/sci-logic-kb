@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：frequency-standards
 meta:
+meta:
   zotero_key: METROLOGY erationfortheredefinitionoftheSIsecond
   topic: frequency-standards
   source_type: technical_paper
@@ -12,6 +13,7 @@ meta:
   title: METROLOGY erationfortheredefinitionoftheSIsecond
   first_author: ''
   note: batch minimal extraction; pending expert review for full entities/principles
+  doi: ''
 entities:
 - id: ent.science_2020_nakamura_system
   name: '  experimental system'

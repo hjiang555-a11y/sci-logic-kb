@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：time-frequency-transfer
 meta:
+meta:
   zotero_key: Spectral purity transfer between optical
   topic: time-frequency-transfer
   source_type: technical_paper
@@ -12,6 +13,7 @@ meta:
   title: Spectral purity transfer between optical
   first_author: ''
   note: batch minimal extraction; pending expert review for full entities/principles
+  doi: ''
 entities:
 - id: ent.1311_4378_system
   name: '  experimental system'

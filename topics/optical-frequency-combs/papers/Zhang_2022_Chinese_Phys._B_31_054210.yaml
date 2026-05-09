@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：optical-frequency-combs
 meta:
+meta:
   zotero_key: All polarization-maintaining Er:fiber-based optica
   topic: optical-frequency-combs
   source_type: technical_paper
@@ -12,6 +13,7 @@ meta:
   title: All polarization-maintaining Er:fiber-based optical -Recent progress in integrated electro-optic
   first_author: Wang
   note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1088/1674-1056/ac40f6
 entities:
 - id: ent.zhang_2022_chinese_phys__b_31__system
   name: Wang  experimental system

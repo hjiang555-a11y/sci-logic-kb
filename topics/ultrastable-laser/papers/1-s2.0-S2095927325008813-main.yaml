@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：ultrastable-laser
 meta:
+meta:
   zotero_key: ScienceBulletin70(2025)3337–3344
   topic: ultrastable-laser
   source_type: technical_paper
@@ -12,6 +13,7 @@ meta:
   title: ScienceBulletin70(2025)3337–3344
   first_author: ''
   note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1016/j.scib.2025.08.050
 entities:
 - id: ent.1_s2_0_s2095927325008813_main_system
   name: '  experimental system'

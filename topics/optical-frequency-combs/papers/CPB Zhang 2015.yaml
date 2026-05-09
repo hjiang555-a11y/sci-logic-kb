@@ -4,6 +4,7 @@
 # Schema版本：v4.5
 # 专题：optical-frequency-combs
 meta:
+meta:
   zotero_key: A long-term frequency-stabilized erbium-fiber- -Fr
   topic: optical-frequency-combs
   source_type: technical_paper
@@ -12,6 +13,7 @@ meta:
   title: A long-term frequency-stabilized erbium-fiber- -Frequency-stabilized Yb:fiber comb with a
   first_author: Zhang
   note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1088/1674-1056/24/6/064209
 entities:
 - id: ent.cpb_zhang_2015_system
   name: Zhang  experimental system
