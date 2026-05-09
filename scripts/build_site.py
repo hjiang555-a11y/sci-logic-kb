@@ -67,7 +67,8 @@ class SiteBuilder:
         home_link = home + 'index.html'
         return f"""<nav><a href="{home_link}">sci-logic-kb</a>
 <a href="{home}topics/">Topics</a> <a href="{home}chains/">Chains</a>
-<a href="{home}consensus/">Consensus</a> <a href="{home}dashboard/">Dashboard</a></nav>
+<a href="{home}consensus/">Consensus</a> <a href="{home}dashboard/">Dashboard</a>
+<a href="{home}query.html" style="color:#059669">Query</a></nav>
 <main>"""
 
     def page(self, title, depth, body, extra_head='', extra_script=''):
@@ -134,6 +135,22 @@ class SiteBuilder:
                     try: self.stats_data.update(json.loads(line))
                     except: pass
         except: pass
+
+        self.search_index = []
+        for p in self.all_papers:
+            idx_entry = {'topic':p['topic'],'title':p['title'],'author':p['author'],'year':p['year'],'type':p['ct'],'has_content':p['has_content'],'metrics':[],'principles':[],'limits':[]}
+            td = self.topics.get(p['topic'],{})
+            for m in td.get('metrics',[]):
+                if m.get('file') == p['file']: idx_entry['metrics'].append({'name':m['name'],'value':m['value'][:200]})
+            for pr in td.get('principles',[]):
+                if pr.get('file') == p['file']: idx_entry['principles'].append(pr['name'])
+            for lb in td.get('bounded_by',[]):
+                if lb.get('file') == p['file']: idx_entry['limits'].append(f"{lb['subject']} → {lb['object']}")
+            self.search_index.append(idx_entry)
+        for c in self.chains:
+            self.search_index.append({'topic':f"chain:{c['domain']}",'title':c['q'],'author':'reasoning chain','year':'','type':'chain','has_content':True,'metrics':[],'principles':[c['lp']],'limits':[f"{e['from']} → {e['to']}" for e in c['edges']]})
+        for cs in self.consensus:
+            self.search_index.append({'topic':f"consensus:{cs['domain']}",'title':cs['name'],'author':'consensus','year':'','type':'consensus','has_content':True,'metrics':[{'name':cs['name'],'value':str(cs['best'])[:200]}],'principles':[],'limits':[]})
 
     def build_index(self):
         total=len(self.all_papers)
@@ -228,6 +245,16 @@ r.style.display='block';l.innerHTML='Searching...';try{var d=await(await fetch('
                     b+=f'<li>{bt_mark} {escape(lb["subject"])} → {escape(lb["object"])}</li>'
                 b+='</ul>'
             with open(os.path.join(self.out,'topics',topic,'index.html'),'w') as f: f.write(self.page(topic,2,b))
+
+        # Topics listing page
+        b='<h1>Topics</h1><p>6 topics — click to browse papers, metrics, and limits.</p><div class="grid">'
+        for t in self.topic_order:
+            td=self.topics.get(t,{})
+            pc=sum(1 for p in td.get('papers',[]) if p['has_content'])
+            tp=len(td.get('papers',[]))
+            b+=f'<a href="{t}/"><div class="card"><h3>{t}</h3><p>{pc}/{tp} papers · {len(td.get("metrics",[]))} metrics · {len(td.get("bounded_by",[]))} BOUNDED-BY · {len(td.get("bt_paths",[]))} paths</p></div></a>'
+        b+='</div>'
+        with open(os.path.join(self.out,'topics','index.html'),'w') as f: f.write(self.page('Topics',1,b))
 
     def build_chains(self):
         b='<h1>Reasoning Chains</h1><p>12 chains — causal reasoning from limiting principles to breakthrough paths.</p>'
@@ -331,6 +358,9 @@ r.style.display='block';l.innerHTML='Searching...';try{var d=await(await fetch('
         # JSON data export
         export={'papers':self.all_papers,'chains':[{'id':c['id'],'q':c['q'],'domain':c['domain']} for c in self.chains],'consensus':[{'metric':c['metric'],'domain':c['domain'],'best':c['best']} for c in self.consensus]}
         with open(os.path.join(self.out,'api','data.json'),'w') as f: json.dump(export,f,ensure_ascii=False)
+
+        with open(os.path.join(self.out,'api','search_index.json'),'w') as f:
+            json.dump(self.search_index,f,ensure_ascii=False)
 
         # Copy graph viewer into the Pages artifact. Symlinks can be broken or
         # rejected by artifact upload when the site is built from a relative path.
