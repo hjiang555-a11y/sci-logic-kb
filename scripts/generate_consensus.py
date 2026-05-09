@@ -10,7 +10,7 @@ from datetime import datetime
 
 def parse_args():
     p = argparse.ArgumentParser(description="Generate v5.0 consensus reports from v4.5 data")
-    p.add_argument("--repo-path", default="/data/sci-logic-kb", help="Repository root")
+    p.add_argument("--repo-path", default=".", help="Repository root")
     p.add_argument("--topic", required=True, help="Topic name")
     p.add_argument("--output-dir", default=None, help="Output directory (default: consensus/)")
     p.add_argument("--dry-run", action="store_true", help="Preview only, don't write files")

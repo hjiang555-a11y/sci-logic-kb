@@ -13,7 +13,7 @@ from datetime import datetime
 
 def parse_args():
     p = argparse.ArgumentParser(description="Validate v5.0 reasoning chains")
-    p.add_argument("--repo-path", default="/data/sci-logic-kb", help="Repository root")
+    p.add_argument("--repo-path", default=".", help="Repository root")
     p.add_argument("--chain", default=None, help="Validate specific chain file")
     p.add_argument("--strict", action="store_true", help="Warnings are errors")
     return p.parse_args()
@@ -170,7 +170,7 @@ def validate_consensus(consensus_path, papers):
 
 def main():
     args = parse_args()
-    repo = args.repo_path
+    repo = os.path.abspath(args.repo_path)
     
     print("Collecting v4.5 data...")
     relations = collect_v4_relations(repo)

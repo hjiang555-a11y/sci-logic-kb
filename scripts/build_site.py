@@ -8,7 +8,7 @@ Output: docs/site/
   consensus/    — Consensus timeline viewer
   api/data.json — Full structured dataset
 """
-import os, sys, yaml, json, argparse, subprocess, glob
+import os, sys, yaml, json, argparse, subprocess, glob, shutil
 from collections import defaultdict, Counter
 from datetime import datetime
 from html import escape
@@ -332,22 +332,29 @@ r.style.display='block';l.innerHTML='Searching...';try{var d=await(await fetch('
         export={'papers':self.all_papers,'chains':[{'id':c['id'],'q':c['q'],'domain':c['domain']} for c in self.chains],'consensus':[{'metric':c['metric'],'domain':c['domain'],'best':c['best']} for c in self.consensus]}
         with open(os.path.join(self.out,'api','data.json'),'w') as f: json.dump(export,f,ensure_ascii=False)
 
-        # Symlink graph viewer
+        # Copy graph viewer into the Pages artifact. Symlinks can be broken or
+        # rejected by artifact upload when the site is built from a relative path.
         gs=os.path.join(self.repo,'docs/graph')
         gd=os.path.join(self.out,'graph')
-        if os.path.exists(gs) and not os.path.exists(gd): os.symlink(gs,gd)
+        if os.path.exists(gs):
+            if os.path.islink(gd) or os.path.isfile(gd):
+                os.unlink(gd)
+            elif os.path.isdir(gd):
+                shutil.rmtree(gd)
+            shutil.copytree(gs,gd)
 
         print(f"\nSite generated: {self.out}")
         print(f"  index.html · topics/ · chains/ · consensus/ · dashboard/")
-        print(f"  api/data.json · graph/ (symlink)")
+        print(f"  api/data.json · graph/")
         return 0
 
 def main():
     p=argparse.ArgumentParser()
-    p.add_argument('--repo-path',default='/data/sci-logic-kb')
+    p.add_argument('--repo-path',default='.')
     p.add_argument('--output',default=None)
     a=p.parse_args()
-    out=a.output or os.path.join(a.repo_path,'docs/site')
-    return SiteBuilder(a.repo_path,out).build()
+    repo_path=os.path.abspath(a.repo_path)
+    out=a.output or os.path.join(repo_path,'docs/site')
+    return SiteBuilder(repo_path,out).build()
 
 if __name__=='__main__': sys.exit(main())

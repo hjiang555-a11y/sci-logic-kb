@@ -14,7 +14,7 @@ from datetime import datetime
 
 def parse_args():
     p = argparse.ArgumentParser(description="v5.0 reasoning readiness metrics")
-    p.add_argument("--repo-path", default="/data/sci-logic-kb", help="Repository root")
+    p.add_argument("--repo-path", default=".", help="Repository root")
     p.add_argument("--json", action="store_true", help="JSON output")
     return p.parse_args()
 
@@ -100,7 +100,7 @@ def check_references(repo_path):
 
 def main():
     args = parse_args()
-    repo = args.repo_path
+    repo = os.path.abspath(args.repo_path)
 
     v4_stats, chains, chain_by_domain, registries = check_references(repo)
     consensus_reports = count_consensus(repo)
