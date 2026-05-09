@@ -4,27 +4,34 @@
 <title>Query · sci-logic-kb</title>
 <link rel="stylesheet" href="style.css">
 <style>
-body{max-width:750px;margin:0 auto;padding:0 16px;background:#f8fafc}
-.chat{display:flex;flex-direction:column;gap:16px;margin:16px 0 120px}
-.msg{max-width:90%;padding:12px 16px;border-radius:12px;font-size:14px;line-height:1.6;animation:fadein .2s}
-.msg.user{align-self:flex-end;background:#2563eb;color:#fff;border-bottom-right-radius:4px}
-.msg.bot{align-self:flex-start;background:#fff;border:1px solid #e2e8f0;border-bottom-left-radius:4px;box-shadow:0 1px 2px rgba(0,0,0,.05)}
-.msg.bot h4{color:#2563eb;margin:0 0 4px;font-size:13px}
-.msg.bot code{background:#fef3c7;color:#92400e;padding:1px 4px;border-radius:3px;font-size:12px}
-.msg.bot .src{font-size:11px;color:#94a3b8;margin-top:6px}
-.msg.bot .src a{color:#64748b}
-.input-bar{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #e2e8f0;padding:12px 16px;display:flex;gap:8px;z-index:10}
-.input-bar textarea{flex:1;padding:10px 14px;border:2px solid #e2e8f0;border-radius:24px;font-size:14px;font-family:inherit;resize:none;min-height:44px;max-height:120px;line-height:1.4}
-.input-bar textarea:focus{outline:none;border-color:#2563eb}
-.input-bar button{background:#2563eb;color:#fff;border:none;border-radius:24px;padding:10px 20px;font-size:14px;cursor:pointer;font-weight:600;white-space:nowrap}
-.input-bar button:hover{background:#1d4ed8}
-.followups{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
-.followups span{background:#f1f5f9;border:1px solid #e2e8f0;border-radius:16px;padding:4px 10px;font-size:12px;cursor:pointer;color:#2563eb}
-.followups span:hover{background:#dbeafe;border-color:#93c5fd}
-.answer-highlight{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:8px 12px;margin:8px 0;font-size:16px;font-weight:600}
-.empty-chat{text-align:center;padding:60px 20px;color:#94a3b8}
-.empty-chat p{font-size:14px;margin:4px 0}
-@keyframes fadein{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+body{max-width:900px;margin:0 auto;padding:0 16px}
+.query-bar{display:flex;gap:8px;margin:16px 0;flex-wrap:wrap}
+.query-bar input,.query-bar select{padding:10px 14px;border:2px solid #e2e8f0;border-radius:8px;font-size:14px;font-family:inherit}
+.query-bar input{flex:1;min-width:200px}
+.query-bar input:focus,.query-bar select:focus{outline:none;border-color:#2563eb}
+.query-bar button{background:#2563eb;color:#fff;border:none;border-radius:8px;padding:10px 20px;font-size:14px;cursor:pointer;font-weight:600}
+.tabs{display:flex;gap:0;margin:16px 0;border-bottom:2px solid #e2e8f0}
+.tab{padding:10px 20px;cursor:pointer;font-size:14px;color:#64748b;border-bottom:2px solid transparent;margin-bottom:-2px}
+.tab.active{color:#2563eb;border-bottom-color:#2563eb;font-weight:600}
+.tab:hover{color:#2563eb}
+.result-count{font-size:12px;color:#94a3b8;margin:8px 0}
+.metric-row{display:grid;grid-template-columns:100px 1fr 1fr;gap:8px;padding:10px;border-bottom:1px solid #f1f5f9;font-size:13px;align-items:center}
+.metric-row:hover{background:#f8fafc}
+.metric-row .val{font-weight:600;color:#0f172a}
+.metric-row .name{color:#475569}
+.metric-row .paper{font-size:11px;color:#94a3b8}
+.chain-card{border-left:4px solid #7c3aed;padding:12px;margin:8px 0;background:#faf5ff;border-radius:4px}
+.chain-card h4{color:#7c3aed;margin:0 0 4px}
+.chain-card .edges{font-size:12px;color:#64748b;margin:6px 0}
+.consensus-card{border-left:4px solid #059669;padding:12px;margin:8px 0;background:#f0fdf4;border-radius:4px}
+.consensus-card .best{font-size:16px;font-weight:700;color:#0f172a}
+.tl-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#059669;margin-right:6px}
+.tl-line{padding:4px 0 4px 20px;border-left:2px solid #e2e8f0;font-size:13px}
+.tl-line strong{color:#059669}
+.filter-row{display:flex;gap:8px;align-items:center}
+.chip-row{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.chip-row span{padding:4px 10px;border-radius:16px;font-size:12px;cursor:pointer;border:1px solid #e2e8f0;background:#fff}
+.chip-row span.on{background:#2563eb;color:#fff;border-color:#2563eb}
 </style>
 </head>
 <body>
@@ -34,132 +41,132 @@ body{max-width:750px;margin:0 auto;padding:0 16px;background:#f8fafc}
 <a href="query.html" style="color:#059669">Query</a></nav>
 <main>
 
-<div class="chat" id="chat">
-<div class="empty-chat" id="welcome">
-<p style="font-size:20px">🔍</p>
-<p>Ask about time-frequency metrology</p>
-<p style="font-size:12px">Try: "What is the best σ_y?" or "How to break through thermal noise?" or "Lee 2026"</p>
-</div>
+<div class="tabs">
+<span class="tab active" onclick="switchTab('metrics')">📊 Metrics</span>
+<span class="tab" onclick="switchTab('chains')">🔗 Chains</span>
+<span class="tab" onclick="switchTab('consensus')">📋 Consensus</span>
+<span class="tab" onclick="switchTab('papers')">📄 Papers</span>
 </div>
 
-<div class="input-bar">
-<textarea id="q" rows="1" placeholder="Ask anything..." onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();send()}"></textarea>
-<button onclick="send()">Send</button>
+<div class="query-bar">
+<input type="text" id="search" placeholder="Filter..." oninput="doSearch()">
+<select id="topicFilter" onchange="doSearch()">
+<option value="">All topics</option>
+<option value="ultrastable-laser">Ultra-stable Laser</option>
+<option value="optical-frequency-combs">Optical Frequency Combs</option>
+<option value="frequency-standards">Frequency Standards</option>
+<option value="time-frequency-transfer">Time-Frequency Transfer</option>
+<option value="timescales">Timescales</option>
+<option value="shared">Shared</option>
+</select>
 </div>
+
+<div id="results"><div class="result-count">Loading...</div></div>
 
 </main>
+<footer>sci-logic-kb v5.0</footer>
+
 <script>
-let INDEX=null,CONTEXT={topic:null,metric:null,lastIntent:null};
-async function load(){if(!INDEX)try{INDEX=await(await fetch('api/search_index.json')).json()}catch(e){INDEX=[]}}
+let DATA = null, activeTab = 'metrics';
 
-function send(){
- const q=document.getElementById('q').value.trim();if(!q)return;
- document.getElementById('welcome')?.remove();
- addMsg(q,'user');
- document.getElementById('q').value='';
- load().then(()=>{const r=think(q);addMsg(r.text,'bot',r.followups);CONTEXT=r.ctx});
+async function load() {
+    if (!DATA) {
+        try { DATA = await (await fetch('api/structured_data.json')).json(); }
+        catch(e) { DATA = {topics:{},metrics:[],principles:[],chains:[],consensus:[]}; }
+    }
+    doSearch();
 }
 
-function addMsg(text,role,followups){
- const d=document.getElementById('chat');
- const m=document.createElement('div');m.className='msg '+role;m.innerHTML=text;
- if(followups&&followups.length){
-  const f=document.createElement('div');f.className='followups';
-  followups.forEach(t=>{const s=document.createElement('span');s.textContent=t;s.onclick=()=>{document.getElementById('q').value=t;send()};f.appendChild(s)});
-  m.appendChild(f);
- }
- d.appendChild(m);d.scrollTop=d.scrollHeight;
+function switchTab(tab) {
+    activeTab = tab;
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t => { if(t.textContent.includes(tab==='metrics'?'Metrics':tab==='chains'?'Chains':tab==='consensus'?'Consensus':'Papers')) t.classList.add('active'); });
+    doSearch();
 }
 
-function think(q){
- const lower=q.toLowerCase();
- const idx=INDEX||[];
- 
- // Detect intent
- let intent='general';
- if(/what.*(best|record|limit|value|consensus)|极限|最佳|记录/.test(lower)) intent='best_value';
- else if(/how.*break|突破|path|怎样|怎么|解决/.test(lower)) intent='breakthrough';
- else if(/why|limit|bound|卡|限制|原因/.test(lower)) intent='limit';
- else if(/who|show.*paper|paper.*about|论文/.test(lower)) intent='paper';
- 
- // Tokenize
- const tokens=lower.replace(/[^\w\s\-×στ]/g,' ').split(/\s+/).filter(w=>w.length>1);
- 
- // Detect topic
- let topic=null;
- const topicMap={usl:'ultrastable-laser',ofc:'optical-frequency-combs',fs:'frequency-standards',tft:'time-frequency-transfer',ts:'timescales',cavity:'ultrastable-laser',laser:'ultrastable-laser',fiber:'ultrastable-laser',comb:'optical-frequency-combs',clock:'frequency-standards',link:'time-frequency-transfer',transfer:'time-frequency-transfer',timescale:'timescales',allan:'shared'};
- for(const[k,v] of Object.entries(topicMap)){if(lower.includes(k)){topic=v;break}}
- if(!topic) topic=CONTEXT.topic;
- 
- // Score items
- function score(item){
-  let s=0;const t=(item.title+' '+item.author+' '+item.topic+' '+(item.metrics||[]).map(m=>m.name+' '+m.value).join(' ')+(item.principles||[]).join(' ')+(item.limits||[]).join(' ')).toLowerCase();
-  for(const tk of tokens){if(t.includes(tk))s+=tk.length>3?3:1;}
-  if(item.type==='consensus')s+=intent==='best_value'?10:5;
-  if(item.type==='chain')s+=intent==='breakthrough'||intent==='limit'?8:3;
-  if(topic&&item.topic.includes(topic))s+=5;
-  if(item.has_content)s+=2;
-  return s;
- }
- 
- let scored=idx.map(i=>({item:i,score:score(i)})).filter(s=>s.score>0);
- scored.sort((a,b)=>b.score-a.score);
- const top=scored.slice(0,12);
- 
- if(!top.length) return {text:'No results found. Try different keywords or browse <a href="topics/">Topics</a>.',followups:[],ctx:CONTEXT};
- 
- // Generate answer
- let text='',followups=[];
- const best=top[0].item;
- const bestConsensus=top.find(s=>s.item.type==='consensus');
- const bestChain=top.find(s=>s.item.type==='chain');
- 
- if(intent==='best_value'&&bestConsensus){
-  const c=bestConsensus.item;const mv=c.metrics&&c.metrics[0];
-  text+=`<h4>📊 Best demonstrated value</h4>`;
-  if(mv) text+=`<div class="answer-highlight">${esc(mv.value.substring(0,150))}</div>`;
-  text+=`<div class="src">${esc(c.title)} · <a href="consensus/">consensus report</a></div>`;
-  followups.push(`How to improve this?`,'Show the timeline');
-  CONTEXT={topic:c.topic.replace('consensus:',''),metric:mv?mv.name:'',lastIntent:intent};
- } else if(intent==='breakthrough'&&bestChain){
-  const c=bestChain.item;const limits=c.limits||[];
-  text+=`<h4>🔗 ${esc(c.title.substring(0,200))}</h4>`;
-  if(limits.length){text+='<p>Breakthrough paths:</p>';limits.slice(0,3).forEach(l=>text+=`<div style="font-size:13px;margin:2px 0">→ ${esc(l.substring(0,120))}</div>`)}
-  text+=`<div class="src"><a href="chains/">View full reasoning chain</a></div>`;
-  followups.push('What is the current limit?','Show related papers');
-  CONTEXT={topic:c.topic.replace('chain:',''),metric:null,lastIntent:intent};
- } else if(intent==='limit'&&bestChain){
-  const c=bestChain.item;
-  text+=`<h4>🔗 ${esc(c.title.substring(0,200))}</h4>`;
-  text+=`<p>This is limited by the principle described in the reasoning chain above.</p>`;
-  text+=`<div class="src"><a href="chains/">View reasoning chain</a></div>`;
-  followups.push('How to break through?','Show the best value');
-  CONTEXT={topic:c.topic.replace('chain:',''),metric:null,lastIntent:intent};
- } else {
-  const n=Math.min(top.length,6);
-  text+=`<h4>Found ${top.length} results</h4>`;
-  for(let i=0;i<n;i++){
-   const it=top[i].item;const tc=it.topic.replace(/^(chain:|consensus:)/,'');
-   const badge=it.type==='consensus'?'📊':it.type==='chain'?'🔗':'📄';
-   text+=`<div style="margin:8px 0;padding:8px;background:#f8fafc;border-radius:6px">`;
-   text+=`<strong>${badge}</strong> ${esc(it.title.substring(0,150))}<br>`;
-   text+=`<span style="font-size:11px;color:#94a3b8">${tc}`;
-   if(it.year)text+=` · ${it.year}`;
-   if(it.author&&it.type!=='consensus')text+=` · ${it.author}`;
-   text+=`</span>`;
-   if(it.metrics&&it.metrics.length) text+=`<div style="font-size:12px;margin-top:2px"><code>${esc(it.metrics[0].value.substring(0,80))}</code></div>`;
-   text+=`</div>`;
-  }
-  text+=`<div class="src"><a href="topics/">Browse all topics</a> · <a href="chains/">All chains</a> · <a href="consensus/">All consensus</a></div>`;
-  followups.push('Show me the best value','What limits this?');
-  CONTEXT={topic:best.topic?.replace(/^(chain:|consensus:)/,''),metric:null,lastIntent:intent};
- }
- 
- return {text,followups,ctx:CONTEXT};
+function doSearch() {
+    const q = (document.getElementById('search').value || '').toLowerCase();
+    const topic = document.getElementById('topicFilter').value;
+    
+    let html = '';
+    
+    if (activeTab === 'metrics') {
+        let metrics = DATA.metrics || [];
+        if (topic) metrics = metrics.filter(m => m.topic === topic);
+        if (q) metrics = metrics.filter(m => (m.metric+' '+m.value).toLowerCase().includes(q));
+        
+        html = `<div class="result-count">${metrics.length} metrics</div>`;
+        metrics.slice(0,100).forEach(m => {
+            html += `<div class="metric-row">
+                <span>${m.year||''}</span>
+                <span class="val">${esc(m.value.substring(0,100))}</span>
+                <span class="name">${esc(m.metric.substring(0,60))}<br><span class="paper">${esc(m.paper.substring(0,60))}</span></span>
+            </div>`;
+        });
+        
+    } else if (activeTab === 'chains') {
+        let chains = DATA.chains || [];
+        if (topic) chains = chains.filter(c => c.domain === topic);
+        if (q) chains = chains.filter(c => (c.question+' '+c.limit).toLowerCase().includes(q));
+        
+        html = `<div class="result-count">${chains.length} chains</div>`;
+        chains.forEach(c => {
+            html += `<div class="chain-card"><h4>${esc(c.question)}</h4>
+            <div class="edges">Limit: ${esc(c.limit||'N/A')} · Best: ${esc((c.best||'').substring(0,80))}</div>`;
+            if (c.narrative) html += `<p style="font-size:12px;color:#475569;margin:4px 0">${esc(c.narrative.substring(0,300))}</p>`;
+            html += `<div class="edges">`;
+            (c.edges||[]).slice(0,5).forEach(e => html += `${esc(e.from)} → <strong>${e.relation}</strong> → ${esc(e.to)}<br>`);
+            html += `</div><a href="chains/" style="font-size:12px">→ View chain</a></div>`;
+        });
+        
+    } else if (activeTab === 'consensus') {
+        let cs = DATA.consensus || [];
+        if (topic) cs = cs.filter(c => c.domain === topic);
+        if (q) cs = cs.filter(c => (c.name+' '+c.best).toLowerCase().includes(q));
+        
+        html = `<div class="result-count">${cs.length} consensus reports</div>`;
+        cs.forEach(c => {
+            html += `<div class="consensus-card">
+            <h4>${esc(c.name||c.metric)}</h4>
+            <div class="best">${esc((c.best||'').substring(0,120))}</div>
+            <p style="font-size:12px;color:#64748b;margin:4px 0">${esc((c.trend||'').substring(0,200))}</p>`;
+            if (c.timeline) {
+                html += '<div style="margin:8px 0">';
+                c.timeline.slice(0,8).forEach(t => {
+                    html += `<div class="tl-line"><span class="tl-dot"></span><strong>${t.year||''}</strong> ${esc((t.value||'').substring(0,80))}<br><span style="font-size:11px;color:#94a3b8">${esc((t.system||'').substring(0,80))}</span></div>`;
+                });
+                html += '</div>';
+            }
+            html += `<a href="consensus/" style="font-size:12px">→ View consensus</a></div>`;
+        });
+        
+    } else if (activeTab === 'papers') {
+        let papers = [];
+        for (const [t, plist] of Object.entries(DATA.topics||{})) {
+            if (topic && t !== topic) continue;
+            for (const p of plist) {
+                if (q && !(p.title+' '+p.author).toLowerCase().includes(q)) continue;
+                papers.push({...p, topic: t});
+            }
+        }
+        
+        html = `<div class="result-count">${papers.length} papers</div>`;
+        papers.sort((a,b) => (b.year||'0').localeCompare(a.year||'0'));
+        papers.slice(0,50).forEach(p => {
+            html += `<div style="padding:8px;border-bottom:1px solid #f1f5f9;font-size:13px">
+            <strong>${p.year||'?'}</strong> ${esc(p.author)} · <span style="color:#64748b">${p.topic}</span><br>
+            ${esc((p.title||'').substring(0,150))}<br>`;
+            if (p.metrics && p.metrics.length) html += `<span style="font-size:11px;color:#94a3b8">${p.metrics.length} metrics</span>`;
+            html += `</div>`;
+        });
+    }
+    
+    if (!html) html = '<div style="text-align:center;padding:40px;color:#94a3b8">No results</div>';
+    document.getElementById('results').innerHTML = html;
 }
 
-function esc(s){if(!s)return'';return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
-document.getElementById('q').focus();
+function esc(s) { if(!s)return''; return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+load();
 </script>
 </body>
 </html>
