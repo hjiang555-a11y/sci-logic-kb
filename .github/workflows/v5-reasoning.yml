@@ -29,7 +29,7 @@ jobs:
       - name: Rebuild evidence indices
         run: |
           for topic in ultrastable-laser optical-frequency-combs frequency-standards time-frequency-transfer timescales shared; do
-            python scripts/build_evidence_index.py --topic $topic || true
+            python scripts/build_evidence_index.py --topic $topic
           done
       - name: Validate reasoning chains
         run: python scripts/validate_chains.py --strict

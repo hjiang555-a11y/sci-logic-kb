@@ -10,7 +10,7 @@ from datetime import datetime
 
 def parse_args():
     p = argparse.ArgumentParser(description="Build v5.0 evidence index from v4.5 YAML")
-    p.add_argument("--repo-path", default="/data/sci-logic-kb", help="Repository root")
+    p.add_argument("--repo-path", default=".", help="Repository root")
     p.add_argument("--topic", required=True, help="Topic name (e.g., ultrastable-laser)")
     p.add_argument("--output-dir", default=None, help="Output directory (default: evidence/)")
     return p.parse_args()
@@ -25,21 +25,22 @@ def load_yaml(path):
 def extract_evidence(topic_dir):
     """Scan topic YAML files and extract atomic evidence from relations."""
     papers_dir = os.path.join(topic_dir, "papers")
-    if not os.path.isdir(papers_dir):
-        print(f"ERROR: papers directory not found at {papers_dir}")
-        return [], {}
-
-    yaml_files = sorted([f for f in os.listdir(papers_dir) if f.endswith('.yaml')])
-
-    evidence_list = []
     stats = {
-        'total_papers': len(yaml_files),
+        'total_papers': 0,
         'papers_with_relations': 0,
         'total_relations': 0,
         'bounded_by_count': 0,
         'with_breakthrough_paths': 0,
         'with_limit_status': 0,
     }
+    if not os.path.isdir(papers_dir):
+        print(f"ERROR: papers directory not found at {papers_dir}")
+        return [], {}, stats
+
+    yaml_files = sorted([f for f in os.listdir(papers_dir) if f.endswith('.yaml')])
+
+    evidence_list = []
+    stats['total_papers'] = len(yaml_files)
     by_principle = defaultdict(list)
 
     for fname in yaml_files:
@@ -186,8 +187,9 @@ def build_registry(evidence_list, by_principle, topic):
 
 def main():
     args = parse_args()
-    topic_dir = os.path.join(args.repo_path, "topics", args.topic)
-    output_dir = args.output_dir or os.path.join(args.repo_path, "evidence")
+    repo_path = os.path.abspath(args.repo_path)
+    topic_dir = os.path.join(repo_path, "topics", args.topic)
+    output_dir = args.output_dir or os.path.join(repo_path, "evidence")
 
     print(f"Scanning: {topic_dir}")
     evidence_list, by_principle, stats = extract_evidence(topic_dir)
@@ -198,7 +200,7 @@ def main():
 
     if not evidence_list:
         print("\nNo BOUNDED-BY relations found. Nothing to index.")
-        return 1
+        return 1 if stats['total_papers'] == 0 else 0
 
     registry = build_registry(evidence_list, by_principle, args.topic)
 
