@@ -2,7 +2,7 @@
 
 # 🔬 Principles Quick Reference
 
-> Auto-generated 2026-05-04 04:06 UTC
+> Auto-generated 2026-05-09 06:38 UTC
 
 ## Tier: meta
 
@@ -203,6 +203,7 @@
 | `pri.photodetection_shot_noise_limit` | 光电探测散粒噪声光微波相噪极限原理 | Optical Frequency Combs | [kalubovilage2022](topics/optical-frequency-combs/papers/kalubovilage2022.yaml) |
 | `pri.pulse_interleaver_rep_rate_multiplication` | 光纤脉冲交织器重频倍增与光生微波散粒噪声降底原理 | Optical Frequency Combs | [portuondo-campa2015](topics/optical-frequency-combs/papers/portuondo-campa2015.yaml) |
 | `pri.qpn_dick_two_fundamental_limits_dfl16` | 光钟双重基本极限：量子投影噪声 + Dick 效应 | Frequency Standards | [diddams2016](topics/frequency-standards/papers/diddams2016.yaml) |
+| `pri.quantum_clock_network_entanglement` | Quantum entanglement-enhanced clock network protocol | shared | [nphys3000 A quantum network of clocks](topics/shared/papers/nphys3000 A quantum network of clocks.yaml) |
 | `pri.quantum_limited_photon_counted_ott` | 量子极限光子计数光学时间传递原理 | Time-Frequency Transfer | [caldwell2023_4m836c4v](topics/time-frequency-transfer/papers/caldwell2023_4m836c4v.yaml) |
 | `pri.quantum_logic_clock_readout` | 量子逻辑光钟读出原理 | Frequency Standards | [rosenband2008](topics/frequency-standards/papers/rosenband2008.yaml) |
 | `pri.quantum_projection_noise_limit` | 量子投影噪声极限 | Frequency Standards | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
@@ -221,6 +222,8 @@
 | `pri.self_referencing_f2f` | f-2f 自参考原理 | Optical Frequency Combs | [giunta2019](topics/optical-frequency-combs/papers/giunta2019.yaml) |
 | `pri.shg_excess_phase_noise_limit` | 二次谐波产生额外相位噪声极限 | Ultrastable Laser | [herbers2019](topics/ultrastable-laser/papers/herbers2019.yaml) |
 | `pri.shg_sfm_combined_astrocomb_continuous_coverage_c24` | SHG + SFM 组合实现天文光梳连续覆盖原理（Cheng 2024） | Optical Frequency Combs | [cheng2024](topics/optical-frequency-combs/papers/cheng2024.yaml) |
+| `pri.shot_noise_correlation_exploitation` | Shot noise correlation exploitation for sub-shot-noise… | shared | [Quinlan2013_2](topics/shared/papers/Quinlan2013_2.yaml) |
+| `pri.shot_noise_frequency_domain_pulse_detection` | Shot noise frequency-domain model for pulse detection | shared | [Quinlan2013](topics/shared/papers/Quinlan2013.yaml) |
 | `pri.shot_noise_frequency_limit` | 散粒噪声频率稳定度极限 | Ultrastable Laser | [drever1983](topics/ultrastable-laser/papers/drever1983.yaml) |
 | `pri.si_second_redefinition_criteria` | SI 秒重新定义判据原理 | Frequency Standards | [si_second_redefinition_roadmap2021](topics/frequency-standards/papers/si_second_redefinition_roadmap2021.yaml) |
 | `pri.silicon_cte_asymptotic_zero_4k` | 硅单晶 4 K 热膨胀系数渐近零（热力学第三定律） | Ultrastable Laser | [robinson2019](topics/ultrastable-laser/papers/robinson2019.yaml) |
@@ -272,6 +275,7 @@
 | `pri.active_tiptilt_beam_wander_suppression` | 主动 tip-tilt 光学终端抑制自由空间光束摆动原理 | Time-Frequency Transfer | [dix-matthews2021_bv4dl5z6](topics/time-frequency-transfer/papers/dix-matthews2021_bv4dl5z6.yaml) |
 | `pri.adjacent_mode_thermal_stabilization` | 邻近模族被动热稳定原理（Li 2017 新提出） | Optical Frequency Combs | [li2017](topics/optical-frequency-combs/papers/li2017.yaml) |
 | `pri.am_pm_conversion_couples_rin_to_phase_noise` | 光电检测中的 AM-PM 转换将光脉冲 RIN 耦合为微波相位噪声 | Timescales | [fortier2013](topics/timescales/papers/fortier2013.yaml) |
+| `pri.am_pm_conversion_in_photodiodes` | AM-to-PM conversion in photodiodes | shared | [s00340-011-4710-1](topics/shared/papers/s00340-011-4710-1.yaml) |
 | `pri.amplifier_residual_phase_noise_limit` | 微波放大器残余相位噪声限制原理（光微波链路远载波本底） | Optical Frequency Combs | [portuondo-campa2015](topics/optical-frequency-combs/papers/portuondo-campa2015.yaml) |
 | `pri.asymmetric_spool_vibration_nulling` | 非对称支撑线轴振动灵敏度调零原理 | Ultrastable Laser | [li2009a](topics/ultrastable-laser/papers/li2009a.yaml) |
 | `pri.bandwidth_power_tradeoff_long_path_comb` | 长程 DCS 高功率-大带宽权衡原理 | Optical Frequency Combs | [han2024](topics/optical-frequency-combs/papers/han2024.yaml) |
@@ -307,6 +311,7 @@
 | `pri.envelope_phase_time_ceo_free_sync_c24` | 脉冲包络相位时间同步免 CEO 依赖原理（Chen Z. 2024） | Optical Frequency Combs | [chen_z2024](topics/optical-frequency-combs/papers/chen_z2024.yaml) |
 | `pri.er_yb_co_doping_pump_noise_suppression_n23` | Er/Yb 共掺杂抑制泵浦强度噪声耦合原理（Nardelli 2023） | Optical Frequency Combs | [nardelli2023](topics/optical-frequency-combs/papers/nardelli2023.yaml) |
 | `pri.fceo_frep_decoupling_via_beat_subtraction` | fbeat − fceo 合成实现 n·f_rep 独立锁定原理 | Optical Frequency Combs | [kuse2015](topics/optical-frequency-combs/papers/kuse2015.yaml) |
+| `pri.fdl_locking_noise_white_floor` | FDL locking white frequency noise floor from servo non… | shared | [oe-33-16-35028](topics/shared/papers/oe-33-16-35028.yaml) |
 | `pri.fiber_comb_mimo_feedback_topology` | 光纤梳多自由度反馈拓扑设计原理 | Optical Frequency Combs | [newbury2005](topics/optical-frequency-combs/papers/newbury2005.yaml) |
 | `pri.fiber_modal_noise_nir_rv_limit` | 多模光纤模态噪声对 NIR RV 精度的限制原理 | Optical Frequency Combs | [metcalf2019](topics/optical-frequency-combs/papers/metcalf2019.yaml) |
 | `pri.fiber_resistive_modulator_frep_tuning_m18` | 光纤电阻调制器 frep 调谐原理（Manurkar 2018） | Optical Frequency Combs | [manurkar2018](topics/optical-frequency-combs/papers/manurkar2018.yaml) |
@@ -314,6 +319,7 @@
 | `pri.flicker_noise_linewidth_divergence` | 闪变频率噪声线宽发散问题与实用线宽定义 | Ultrastable Laser | [matei2017](topics/ultrastable-laser/papers/matei2017.yaml) |
 | `pri.folded_path_turbulence_correlation_c20` | 折返路径湍流扰动完全相关 → 方差 ×4 | Optical Frequency Combs | [caldwell2020](topics/optical-frequency-combs/papers/caldwell2020.yaml) |
 | `pri.free_core_boundary_mode_decoupling` | 自由核心边界降低包层模耦合原理 | Ultrastable Laser | [belardi2015](topics/ultrastable-laser/papers/belardi2015.yaml) |
+| `pri.frequency_synthesizer_phase_noise_to_fountain_stability` | 频率综合器相位噪声至喷泉钟稳定度传递 | Frequency Standards | [zhao2008](topics/frequency-standards/papers/zhao2008.yaml) |
 | `pri.gain_lifetime_servo_bandwidth_limit` | 增益介质寿命限制伺服带宽原理 | Optical Frequency Combs | [kuse2015](topics/optical-frequency-combs/papers/kuse2015.yaml) |
 | `pri.gated_detection_phase_coherent_snr_enhancement_z24` | 门控探测利用梳齿相位相干性增强 SNR 原理（Zhang S. 2024） | Optical Frequency Combs | [zhang_s2024](topics/optical-frequency-combs/papers/zhang_s2024.yaml) |
 | `pri.geoid_uncertainty_clock_comparison_limit` | 大地水准面不确定度对时钟比较的终极限制 | Timescales | [kleppner2006](topics/timescales/papers/kleppner2006.yaml) |
@@ -369,7 +375,6 @@
 | `pri.passive_reciprocal_fiber_noise_cancellation` | 被动互易光纤相位噪声抵消原理 | Time-Frequency Transfer | [zhang2022_sgt66xs8](topics/time-frequency-transfer/papers/zhang2022_sgt66xs8.yaml) |
 | `pri.photon_starved_open_path_dcs_limit` | 光子饥饿长程 DCS 灵敏度/距离极限（散粒噪声+信道损耗） | Optical Frequency Combs | [han2024](topics/optical-frequency-combs/papers/han2024.yaml) |
 | `pri.piezo_tuning_stability_tradeoff` | 压电调谐范围与频率稳定度的权衡 | Ultrastable Laser | [mohle2013](topics/ultrastable-laser/papers/mohle2013.yaml) |
-| `pri.pm_fiber_digital_feedback_phase_slip_free_s15` | 全 PM 光纤 + 数字反馈实现长期无相位滑动原理（Sinclair 2015） | Optical Frequency Combs | [sinclair2015](topics/optical-frequency-combs/papers/sinclair2015.yaml) |
 | `pri.pm_fiber_splice_vibration_immunity` | 全 PM 光纤拼接免调校振动免疫原理 | Optical Frequency Combs | [sinclair2014](topics/optical-frequency-combs/papers/sinclair2014.yaml) |
 | `pri.polarization_rotation_cavity_loss_frequency_control_z17` | 偏振态旋转调制腔损驱动梳频率控制原理（Zhang Y. 2017） | Optical Frequency Combs | [zhang2017b](topics/optical-frequency-combs/papers/zhang2017b.yaml) |
 | `pri.pulsed_illumination_mitigates_thermal_limit` | 脉冲光照抑制热退化机制，使光电二极管超越 CW 偏置电压与功率极限 | Timescales | [peng2020](topics/timescales/papers/peng2020.yaml) |

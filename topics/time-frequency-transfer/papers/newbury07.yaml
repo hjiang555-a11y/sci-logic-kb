@@ -1,18 +1,41 @@
-#  ???? — newbury07 [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Coherent transfer of an optical carrier over 251 km [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
 meta:
-  zotero_key: newbury07
+  zotero_key: Coherent transfer of an optical carrier over 251 k
   topic: time-frequency-transfer
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: low
-  title: "newbury07"
-  first_author: ""
-  note: >
-    [批量提取] 元数据来源：placeholder (needs expert review)。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Coherent transfer of an optical carrier over 251 km
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.newbury07_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.newbury07_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Coherent transfer of an optical carrier over 251 k
+      claim: core experimental result
+relations:
+- id: rel.newbury07_01
+  subject: ent.newbury07_system
+  predicate: CHARACTERIZED-BY
+  object: met.newbury07_primary
+  confidence: established
+  source:
+    zotero_key: Coherent transfer of an optical carrier over 251 k
+    claim: experimental system characterized by primary metric

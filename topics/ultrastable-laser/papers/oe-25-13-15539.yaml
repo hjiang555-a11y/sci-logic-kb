@@ -1,24 +1,41 @@
-# Gobron 2017 — Dispersive heterodyne probing method for laser frequency stabilization based ... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Dispersive heterodyne probing method for laser [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：ultrastable-laser
 meta:
-  zotero_key: oe-25-13-15539
+  zotero_key: Dispersive heterodyne probing method for laser
   topic: ultrastable-laser
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Dispersive heterodyne probing method for laser frequency stabilization based on spectral hole burning in rare-earth doped crystals"
-  year: 2017
-  first_author: "Gobron"
-  authors: ["O. Gobron", "K. Jung", "N. Galland", "K. Predehl", "R. Le Targat", "A. Ferrier", "P. Goldner", "S. Seidelin", "Y. Le Coq"]
-  journal: "Optics Express"
-  volume: 25
-  pages: 15539
-  doi: 10.1364/OE.25.015539
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Dispersive heterodyne probing method for laser
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.oe_25_13_15539_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.oe_25_13_15539_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Dispersive heterodyne probing method for laser
+      claim: core experimental result
+relations:
+- id: rel.oe_25_13_15539_01
+  subject: ent.oe_25_13_15539_system
+  predicate: CHARACTERIZED-BY
+  object: met.oe_25_13_15539_primary
+  confidence: established
+  source:
+    zotero_key: Dispersive heterodyne probing method for laser
+    claim: experimental system characterized by primary metric

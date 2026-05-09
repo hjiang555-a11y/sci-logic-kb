@@ -1,9 +1,0 @@
-evidence: relative frequency instability of the synthesized laser is 5×10⁻¹⁶, improved
-  by a factor of √2
-id: evrel_XWBUNX3P_rel.yan_2018_A02
-metadata:
-  source_paper: yan2018
-  zotero_key: XWBUNX3P
-object: meth.multi_cavity_frequency_averaging_y18
-predicate: OPERATIONALIZED-AS
-subject: met.synthesized_laser_instability_y18

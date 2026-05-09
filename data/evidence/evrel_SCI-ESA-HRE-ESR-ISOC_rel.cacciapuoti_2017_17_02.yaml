@@ -1,9 +1,0 @@
-evidence: The clock signal is converted by SFC, a femtosecond frequency comb, into
-  a form suitable for optical and microwave transfer to/from Earth.
-id: evrel_SCI-ESA-HRE-ESR-ISOC_rel.cacciapuoti_2017_17_02
-metadata:
-  source_paper: cacciapuoti2017
-  zotero_key: SCI-ESA-HRE-ESR-ISOC
-object: ent.space_optical_clock_mission
-predicate: PART-OF
-subject: ent.space_frequency_comb_sfc

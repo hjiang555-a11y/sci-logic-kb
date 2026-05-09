@@ -1,8 +1,0 @@
-evidence: 与 671 nm 单频激光拍频产生约为 60 dB（RBW=1 Hz）信号
-id: evrel_CA55MEKS_rel.rao_2019_19_08
-metadata:
-  source_paper: rao2019
-  zotero_key: CA55MEKS
-object: met.beat_snr_li_d1_r19
-predicate: CHARACTERIZED-BY
-subject: ent.erfiber_comb_li_d1_r19

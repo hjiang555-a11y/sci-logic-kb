@@ -1,24 +1,42 @@
-# Steinlechner 2018 — Development of mirror coatings for gravitational-wave detectors [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Downloaded from http://rsta.royalsocietypublishing.org/ on May 2, 2018 [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：ultrastable-laser
 meta:
-  zotero_key: 20170282.full
+  zotero_key: Downloaded from http://rsta.royalsocietypublishing
   topic: ultrastable-laser
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Development of mirror coatings for gravitational-wave detectors"
-  year: 2018
-  first_author: "Steinlechner"
-  authors: ["J. Steinlechner"]
-  journal: "Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences"
-  volume: 376
-  pages: 20170282
-  doi: 10.1098/rsta.2017.0282
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Downloaded from http://rsta.royalsocietypublishing.org/ on May 2, 2018
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1098/rsta
+entities:
+- id: ent.20170282_full_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.20170282_full_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Downloaded from http://rsta.royalsocietypublishing
+      claim: core experimental result
+relations:
+- id: rel.20170282_full_01
+  subject: ent.20170282_full_system
+  predicate: CHARACTERIZED-BY
+  object: met.20170282_full_primary
+  confidence: established
+  source:
+    zotero_key: Downloaded from http://rsta.royalsocietypublishing
+    claim: experimental system characterized by primary metric

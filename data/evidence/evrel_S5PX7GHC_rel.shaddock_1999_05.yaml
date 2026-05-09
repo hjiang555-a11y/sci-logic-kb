@@ -1,8 +1,0 @@
-evidence: sidebands outside passband ... reflected ... heterodyne detection
-id: evrel_S5PX7GHC_rel.shaddock_1999_05
-metadata:
-  source_paper: shaddock1999
-  zotero_key: S5PX7GHC
-object: pri.off_resonance_reference_light
-predicate: ENABLED-BY
-subject: meth.pdh_locking

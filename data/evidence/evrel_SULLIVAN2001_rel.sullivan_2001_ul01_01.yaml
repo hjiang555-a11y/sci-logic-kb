@@ -1,8 +1,0 @@
-evidence: primary atomic frequency standards at NIST realize the SI second
-id: evrel_SULLIVAN2001_rel.sullivan_2001_ul01_01
-metadata:
-  source_paper: sullivan2001
-  zotero_key: SULLIVAN2001
-object: pri.si_second_cesium_definition
-predicate: REALIZES
-subject: ent.microwave_frequency_standard

@@ -1,9 +1,0 @@
-evidence: the total systematic uncertainty budget of the JILA Sr clock is constructed
-  as the quadrature sum of eight independently evaluated contributions.
-id: evrel_LUDLOW2008-THESIS-JILA_rel.ludlow_2008_08T_03
-metadata:
-  source_paper: ludlow2008_thesis
-  zotero_key: LUDLOW2008-THESIS-JILA
-object: pri.sr_clock_systematic_budget_framework_l08
-predicate: BOUNDED-BY
-subject: ent.optical_lattice_clock

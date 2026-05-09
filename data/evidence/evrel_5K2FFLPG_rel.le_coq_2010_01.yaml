@@ -1,8 +1,0 @@
-evidence: relative phase noise of -111 dBc/Hz at 1 Hz from the carrier
-id: evrel_5K2FFLPG_rel.le_coq_2010_01
-metadata:
-  source_paper: lecoq2010
-  zotero_key: 5K2FFLPG
-object: met.microwave_phase_noise_lecoq2010
-predicate: CHARACTERIZED-BY
-subject: ent.er_fiber_ofd_lecoq2010

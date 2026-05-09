@@ -1,24 +1,55 @@
-# Zhang 2011 — Amplitude to phase conversion of InGaAs pin photo-diodes for femtosecond lase... [framework]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Zhang 2011 — AM-to-PM conversion in InGaAs pin photodiodes for femtosecond comb microwave generation [evidence]
+# 提取者：AI
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：shared
 meta:
   zotero_key: s00340-011-4710-1
   topic: shared
-  source_type: journal_paper
-  contribution_type: framework
+  source_type: technical_paper
+  contribution_type: evidence
   reliability: high
-  title: "Amplitude to phase conversion of InGaAs pin photo-diodes for femtosecond lasers microwave signal generation"
-  year: 2011
-  first_author: "Zhang"
-  authors: ["W. Zhang", "T. Li", "M. Lours", "S. Seidelin", "G. Santarelli", "Y. Le Coq"]
-  journal: "Applied Physics B"
+  title: Amplitude to phase conversion of InGaAs pin photo-diodes for femtosecond lasers microwave signal generation
+  year: 2012
+  first_author: Zhang
+  journal: Applied Physics B
   volume: 106
   pages: 301-308
   doi: 10.1007/s00340-011-4710-1
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  note: 'Experimental study of AM-to-PM conversion in InGaAs pin photodiodes under femtosecond pulse illumination. Measured pulse energy vs output microwave phase relationship from linear to saturation
+    regimes. Cross-topic: OFC microwave generation, frequency transfer, clock interrogation.'
+principles:
+- id: pri.am_pm_conversion_in_photodiodes
+  name: AM-to-PM conversion in photodiodes
+  tier: engineering
+  verification_status: observed
+  statement: In InGaAs pin photodiodes illuminated by femtosecond pulse trains, the phase of the output microwave signal depends on the incident optical pulse energy. This AM-to-PM conversion arises from
+    carrier dynamics (space charge effects and carrier screening), intensifying near and above saturation.
+  domain: photodetection, microwave photonics
+  key_insight: AM-to-PM conversion in photodiodes is a significant source of phase noise in photonically generated microwave signals; mitigation requires optical power stabilization or low-conversion-coefficient
+    detectors
+  conditions: Femtosecond laser pulse illumination; InGaAs pin structure; pulse energy from linear to saturation regime
+  source_claim: the phase of these components (relative to the optical pulse train) is known to be dependent on the optical energy per pulse
+metrics:
+- id: met.am_pm_conversion_coefficient_ingaas
+  name: InGaAs pin photodiode AM-PM conversion coefficient
+  unit: rad/nJ or rad/mW
+  role: primary
+  description: Change in output microwave phase per unit change in incident optical pulse energy; key parameter for photodetector suitability in microwave generation
+  demonstrated_value:
+    value: device-dependent (low in linear regime, increases significantly near saturation)
+    conditions: Er:fiber femtosecond laser, 100 MHz repetition rate, 1550 nm
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: s00340-011-4710-1
+      claim: the energy to phase dependence is measured over a large range of impinging pulse energies near and above saturation
+relations:
+- id: rel.zhang_2011_01
+  subject: met.am_pm_conversion_coefficient_ingaas
+  predicate: CHARACTERIZED-BY
+  object: pri.am_pm_conversion_in_photodiodes
+  confidence: established
+  source:
+    zotero_key: s00340-011-4710-1
+    claim: the phase of these components (relative to the optical pulse train) is known to be dependent on the optical energy per pulse

@@ -2,7 +2,7 @@
 
 # 📚 sci-logic-kb — Knowledge Base Index
 
-> Auto-generated 2026-05-04 04:06 UTC
+> Auto-generated 2026-05-09 06:38 UTC
 
 ## 🧭 按研究问题导航
 
@@ -21,13 +21,13 @@
 
 | Topic | Papers | Nodes | Relations | Index |
 |-------|-------:|------:|----------:|-------|
-| Frequency Standards | 53 | 109 | 89 | [→ INDEX](topics/frequency-standards/INDEX.md) |
-| Optical Frequency Combs | 155 | 698 | 822 | [→ INDEX](topics/optical-frequency-combs/INDEX.md) |
-| shared | 10 | 39 | 29 | [→ INDEX](topics/shared/INDEX.md) |
-| Time-Frequency Transfer | 59 | 131 | 149 | [→ INDEX](topics/time-frequency-transfer/INDEX.md) |
+| Frequency Standards | 73 | 172 | 122 | [→ INDEX](topics/frequency-standards/INDEX.md) |
+| Optical Frequency Combs | 213 | 890 | 916 | [→ INDEX](topics/optical-frequency-combs/INDEX.md) |
+| shared | 16 | 53 | 36 | [→ INDEX](topics/shared/INDEX.md) |
+| Time-Frequency Transfer | 77 | 198 | 184 | [→ INDEX](topics/time-frequency-transfer/INDEX.md) |
 | Timescales | 8 | 92 | 62 | [→ INDEX](topics/timescales/INDEX.md) |
-| Ultrastable Laser | 114 | 395 | 396 | [→ INDEX](topics/ultrastable-laser/INDEX.md) |
-| **Total** | **399** | **1464** | **1547** | |
+| Ultrastable Laser | 143 | 499 | 448 | [→ INDEX](topics/ultrastable-laser/INDEX.md) |
+| **Total** | **530** | **1904** | **1768** | |
 
 ## Cross-Topic Quick References
 
@@ -40,12 +40,12 @@
 
 | Topic | Entities | Principles | Methods | Metrics |
 |-------|--------:|-----------:|--------:|--------:|
-| Frequency Standards | 44 | 32 | 4 | 29 |
-| Optical Frequency Combs | 167 | 197 | 95 | 239 |
-| shared | 3 | 17 | 11 | 8 |
-| Time-Frequency Transfer | 46 | 39 | 15 | 31 |
+| Frequency Standards | 74 | 33 | 5 | 60 |
+| Optical Frequency Combs | 263 | 196 | 95 | 336 |
+| shared | 4 | 22 | 13 | 14 |
+| Time-Frequency Transfer | 79 | 39 | 16 | 64 |
 | Timescales | 15 | 21 | 17 | 39 |
-| Ultrastable Laser | 65 | 86 | 87 | 157 |
+| Ultrastable Laser | 117 | 86 | 87 | 209 |
 
 ## Top BOUNDED-BY Chains
 

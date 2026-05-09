@@ -1,24 +1,42 @@
-# Chen 2021 — Twin-field quantum key distribution over a 511 km optical fibre linking two d... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Twin-field quantum key distribution over a 511 km [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
 meta:
-  zotero_key: s41566-021-00828-5
+  zotero_key: Twin-field quantum key distribution over a 511 km
   topic: time-frequency-transfer
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Twin-field quantum key distribution over a 511 km optical fibre linking two distant metropolitan areas"
-  year: 2021
-  first_author: "Chen"
-  authors: ["Jiu-Peng Chen", "Chi Zhang", "Yang Liu", "Cong Jiang", "Wei-Jun Zhang", "Zhi-Yong Han", "Shi-Zhao Ma", "Xiao-Long Hu", "Yu-Huai Li", "Hui Liu", "Fei Zhou", "Hai-Feng Jiang", "Teng-Yun Chen", "Hao Li", "Li-Xing You", "Zhen Wang", "Xiang-Bin Wang", "Qiang Zhang", "Jian-Wei Pan"]
-  journal: "Nature Photonics"
-  volume: 15
-  pages: 570-575
+  reliability: medium
+  title: Twin-field quantum key distribution over a 511 km
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
   doi: 10.1038/s41566-021-00828-5
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+entities:
+- id: ent.s41566_021_00828_5_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.s41566_021_00828_5_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Twin-field quantum key distribution over a 511 km
+      claim: core experimental result
+relations:
+- id: rel.s41566_021_00828_5_01
+  subject: ent.s41566_021_00828_5_system
+  predicate: CHARACTERIZED-BY
+  object: met.s41566_021_00828_5_primary
+  confidence: established
+  source:
+    zotero_key: Twin-field quantum key distribution over a 511 km
+    claim: experimental system characterized by primary metric

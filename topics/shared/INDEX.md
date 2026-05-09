@@ -2,7 +2,7 @@
 
 # shared — Topic Index
 
-> Auto-generated 2026-05-04 04:06 UTC · 10 papers · 39 nodes · 29 relations
+> Auto-generated 2026-05-09 06:38 UTC · 16 papers · 53 nodes · 36 relations
 
 ## Entities
 
@@ -11,14 +11,17 @@
 | `ent.belardi2015_hc_arf_fibers` | Belardi 2015 空芯反共振光纤（HC-ARF）系列设计与实验原型 | — | [belardi2015](topics/shared/papers/belardi2015.yaml) |
 | `ent.chiodo2013_laser_system` | Mini-DOLL 相干光星地链路激光系统（Chiodo 2013） | — | [chiodo2013](topics/shared/papers/chiodo2013.yaml) |
 | `ent.fermann2000_parabolic_amplifier` | Fermann 2000 Yb 掺杂光纤抛物线脉冲放大器 | — | [fermann2000](topics/shared/papers/fermann2000.yaml) |
+| `ent.portable_field_frequency_comb_s14` | Portable field-deployable optical frequency comb | 1 | [oe-22-6-6996(1)](topics/shared/papers/oe-22-6-6996(1).yaml) |
 
 ## Principles
 
 | ID | Name | Tier | Source |
 |----|------|------|--------|
 | `pri.allan_variance_time_domain_characterization` | Allan 方差族时域不稳定度刻画原理（综合 AVAR/MVAR/TVAR） | foundational | [allan2016](topics/shared/papers/allan2016.yaml) |
+| `pri.am_pm_conversion_in_photodiodes` | AM-to-PM conversion in photodiodes | engineering | [s00340-011-4710-1](topics/shared/papers/s00340-011-4710-1.yaml) |
 | `pri.antiresonance_wavelength_condition` | 空芯反共振光纤反共振波长条件原理 | domain | [belardi2015](topics/shared/papers/belardi2015.yaml) |
 | `pri.classical_variance_divergence_for_flicker_noise` | 经典方差对 flicker / random-walk 频率噪声发散原理 | meta | [allan1966](topics/shared/papers/allan1966.yaml) |
+| `pri.fdl_locking_noise_white_floor` | FDL locking white frequency noise floor from servo nonlinea… | engineering | [oe-33-16-35028](topics/shared/papers/oe-33-16-35028.yaml) |
 | `pri.fibre_delay_line_sweep_stability_maintained` | 光纤延迟线稳频下大动态扫频稳定度保持原理 | domain | [chiodo2013](topics/shared/papers/chiodo2013.yaml) |
 | `pri.free_core_boundary_reduces_mode_coupling` | 自由芯边界降低基模-包层模耦合原理 | domain | [belardi2015](topics/shared/papers/belardi2015.yaml) |
 | `pri.hadamard_variance_drift_insensitive` | Hadamard 方差对线性漂移不敏感原理 | meta | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
@@ -29,6 +32,9 @@
 | `pri.parabolic_pulse_self_similar_propagation_passive_fiber` | 抛物线脉冲在无源正常色散光纤中自相似传播原理 | domain | [fermann2000](topics/shared/papers/fermann2000.yaml) |
 | `pri.phase_noise_frequency_noise_psd_duality` | 相位噪声 PSD 与频率噪声 PSD 对偶关系 | meta | [howe1976](topics/shared/papers/howe1976.yaml) |
 | `pri.power_law_noise_taxonomy` | 时频噪声五类幂律分类（white PM / flicker PM / white FM / flicker FM / … | meta | [allan1987](topics/shared/papers/allan1987.yaml) |
+| `pri.quantum_clock_network_entanglement` | Quantum entanglement-enhanced clock network protocol | domain | [nphys3000 A quantum network of clocks](topics/shared/papers/nphys3000 A quantum network of clocks.yaml) |
+| `pri.shot_noise_correlation_exploitation` | Shot noise correlation exploitation for sub-shot-noise dete… | domain | [Quinlan2013_2](topics/shared/papers/Quinlan2013_2.yaml) |
+| `pri.shot_noise_frequency_domain_pulse_detection` | Shot noise frequency-domain model for pulse detection | domain | [Quinlan2013](topics/shared/papers/Quinlan2013.yaml) |
 | `pri.sigma_y_slope_identifies_noise_type` | σ_y(τ) 斜率-噪声辨识原理 | meta | [allan1987](topics/shared/papers/allan1987.yaml) |
 | `pri.theo1_long_tau_statistical_efficiency` | Theo1 方差长 τ 统计效率最优原理 | meta | [riley2008](topics/shared/papers/riley2008.yaml) |
 | `pri.time_frequency_domain_transfer_function` | 时-频域稳定度转换传递函数原理（sin⁴ 核） | meta | [howe1976](topics/shared/papers/howe1976.yaml) |
@@ -39,12 +45,14 @@
 | ID | Name | Source |
 |----|------|--------|
 | `meth.allan_deviation_adev` | Allan 偏差（两样本 Allan 方差开方，ADEV / σ_y(τ)） | [allan1966](topics/shared/papers/allan1966.yaml) |
+| `meth.balanced_detection_shot_noise_correlation` | Balanced detection with shot noise correlation exploitation | [Quinlan2013_2](topics/shared/papers/Quinlan2013_2.yaml) |
 | `meth.fibre_delay_line_stabilization_with_dds_sweep` | 光纤延迟线稳频 + DDS 编程扫频方法 | [chiodo2013](topics/shared/papers/chiodo2013.yaml) |
 | `meth.hadamard_deviation_hdev` | Hadamard 偏差 HDEV / H_y(τ) | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
 | `meth.hc_arf_stack_and_draw_fabrication` | HC-ARF 三级堆叠-拉丝制备方法 | [belardi2015](topics/shared/papers/belardi2015.yaml) |
 | `meth.modified_allan_deviation_mdev` | 修正 Allan 偏差 MDEV / mod σ_y(τ) | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
 | `meth.overlapping_allan_deviation_oadev` | 重叠 Allan 偏差 OADEV | [riley2008](topics/shared/papers/riley2008.yaml) |
 | `meth.phase_noise_psd_measurement` | 相位噪声功率谱密度 S_phi(f) 测量方法 | [howe1976](topics/shared/papers/howe1976.yaml) |
+| `meth.shot_noise_spectral_correlation_analysis` | Shot noise spectral correlation analysis method | [Quinlan2013](topics/shared/papers/Quinlan2013.yaml) |
 | `meth.similariton_parabolic_pulse_amplification` | Similariton 抛物线脉冲光纤放大方法 | [fermann2000](topics/shared/papers/fermann2000.yaml) |
 | `meth.theo1_thedev` | Theo1 / TheoBR / TheoH 方差（Howe 族） | [riley2008](topics/shared/papers/riley2008.yaml) |
 | `meth.time_deviation_tdev` | 时偏差 TDEV / σ_x(τ) | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
@@ -59,9 +67,14 @@
 | ID | Name | Best Value | Source |
 |----|------|------------|--------|
 | `met.allan_deviation_chiodo2013_laser_to_laser` | Chiodo 2013 双激光器互比 Allan 偏差 σ_y(τ) | σ_y(0.2 s) ≈ 1×10⁻¹⁴（双激光器互比）；σ_y(1 s) ≈ 5×10⁻¹⁴（vs 独立参考源） | [chiodo2013](topics/shared/papers/chiodo2013.yaml) |
+| `met.am_pm_conversion_coefficient_ingaas` | InGaAs pin photodiode AM-PM conversion coefficient | device-dependent (low in linear regime, increases significa… | [s00340-011-4710-1](topics/shared/papers/s00340-011-4710-1.yaml) |
+| `met.fdl_locking_noise_floor_g25` | FDL locking noise white frequency floor | characterized white frequency noise floor | [oe-33-16-35028](topics/shared/papers/oe-33-16-35028.yaml) |
 | `met.fractional_frequency_instability_sigma_y` | 分数频率不稳定度 σ_y(τ)（Allan 偏差通用度量，landmark 定义） | N/A（度量定义而非测量实例；具体数值见本库数十个派生 met.*allan_deviation_* 节点） | [allan1966](topics/shared/papers/allan1966.yaml) |
 | `met.hc_arf_attenuation_480nm_belardi2015` | Belardi 2015 HC-ARF 可见光波段最低损耗 @ 480 nm | 175 dB/km @ 480 nm | [belardi2015](topics/shared/papers/belardi2015.yaml) |
+| `met.quantum_clock_network_precision_gain` | Quantum clock network precision enhancement | Heisenberg-limited scaling with atom number (theory proposa… | [nphys3000 A quantum network of clocks](topics/shared/papers/nphys3000 A quantum network of clocks.yaml) |
+| `met.shot_noise_amplitude_phase_imbalance` | Shot noise amplitude-phase imbalance ratio | up to several orders of magnitude (>20 dB) imbalance | [Quinlan2013](topics/shared/papers/Quinlan2013.yaml) |
 | `met.similariton_compressed_pulse_fermann2000` | Fermann 2000 Similariton 压缩脉冲性能 | 68 fs 脉宽，80 kW 峰值功率（压缩比 ~38×） | [fermann2000](topics/shared/papers/fermann2000.yaml) |
+| `met.sub_shot_noise_phase_detection_improvement` | Sub-shot-noise phase detection improvement | several dB below classical shot noise limit | [Quinlan2013_2](topics/shared/papers/Quinlan2013_2.yaml) |
 
 ### 📊 Secondary (线宽/PSD/相干)
 
@@ -71,6 +84,12 @@
 | `met.frequency_sweep_range_chiodo2013` | Chiodo 2013 光纤延迟线稳频激光器扫频范围与速率 | 线性扫频：>25 GHz，≤1 GHz/s 无稳定度退化；非线性模拟：24.8 GHz / 652 s，残余 ≈ 本征… | [chiodo2013](topics/shared/papers/chiodo2013.yaml) |
 | `met.hc_arf_bandwidth_first_ar_window_belardi2015` | Belardi 2015 HC-ARF 第一反共振窗传输带宽 | 0.75–1.6 μm（实测）；0.65–2.5 μm（理论 DARfbf，泄漏损耗 <1 dB/m） | [belardi2015](topics/shared/papers/belardi2015.yaml) |
 | `met.similariton_output_pulse_fermann2000` | Fermann 2000 Similariton 放大器输出脉冲参数 | Δt = 2.6 ps, Δλ = 32 nm, E_out = 12 nJ, ΔτΔν ≈ 22 | [fermann2000](topics/shared/papers/fermann2000.yaml) |
+
+### ❓ Unspecified
+
+| ID | Name | Best Value | Source |
+|----|------|------------|--------|
+| `met.field_comb_coherence_s14` | Field comb coherence performance | coherent operation demonstrated outside lab | [oe-22-6-6996(1)](topics/shared/papers/oe-22-6-6996(1).yaml) |
 
 ## Cross-Topic References
 

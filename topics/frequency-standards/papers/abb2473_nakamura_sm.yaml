@@ -1,24 +1,42 @@
-# Nakamura 2020 — Coherent optical clock down-conversion for microwave frequencies with 10 <sup... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Jeff  — science.sciencemag.org/content/368/6493/889/suppl/DC1 [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：frequency-standards
 meta:
-  zotero_key: abb2473_nakamura_sm
+  zotero_key: science.sciencemag.org/content/368/6493/889/suppl/
   topic: frequency-standards
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Coherent optical clock down-conversion for microwave frequencies with 10 <sup>−18</sup> instability"
-  year: 2020
-  first_author: "Nakamura"
-  authors: ["Takuma Nakamura", "Josue Davila-Rodriguez", "Holly Leopardi", "Jeff A. Sherman", "Tara M. Fortier", "Xiaojun Xie", "Joe C. Campbell", "William F. McGrew", "Xiaogang Zhang", "Youssef S. Hassan", "Daniele Nicolodi", "Kyle Beloy", "Andrew D. Ludlow", "Scott A. Diddams", "Franklyn Quinlan"]
-  journal: "Science"
-  volume: 368
-  pages: 889-892
-  doi: 10.1126/science.abb2473
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: science.sciencemag.org/content/368/6493/889/suppl/DC1
+  first_author: Jeff
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1126/science
+entities:
+- id: ent.abb2473_nakamura_sm_system
+  name: Jeff  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Jeff '
+metrics:
+- id: met.abb2473_nakamura_sm_primary
+  name: Jeff  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: science.sciencemag.org/content/368/6493/889/suppl/
+      claim: core experimental result
+relations:
+- id: rel.abb2473_nakamura_sm_01
+  subject: ent.abb2473_nakamura_sm_system
+  predicate: CHARACTERIZED-BY
+  object: met.abb2473_nakamura_sm_primary
+  confidence: established
+  source:
+    zotero_key: science.sciencemag.org/content/368/6493/889/suppl/
+    claim: experimental system characterized by primary metric

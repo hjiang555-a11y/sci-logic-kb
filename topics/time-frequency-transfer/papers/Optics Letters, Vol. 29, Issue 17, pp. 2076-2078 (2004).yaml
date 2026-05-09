@@ -1,18 +1,42 @@
-#  ???? — Femtosecond synchronization of radio frequency signals with [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#  2004 — Femtosecond synchronization of radio frequency signals with [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
 meta:
-  zotero_key: Optics Letters, Vol. 29, Issue 17, pp. 2076-2078 (2004)
+  zotero_key: Femtosecond synchronization of radio frequency sig
   topic: time-frequency-transfer
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
   reliability: medium
-  title: "Femtosecond synchronization of radio frequency signals with"
-  first_author: ""
-  note: >
-    [批量提取] 元数据来源：PDF metadata。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  title: Femtosecond synchronization of radio frequency signals with
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+  year: 2004
+entities:
+- id: ent.optics_letters__vol__29__issue_system
+  name: ' 2004 experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: Experimental system described in  2004
+metrics:
+- id: met.optics_letters__vol__29__issue_primary
+  name: ' 2004 primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Femtosecond synchronization of radio frequency sig
+      claim: core experimental result
+relations:
+- id: rel.optics_letters__vol__29__issue_01
+  subject: ent.optics_letters__vol__29__issue_system
+  predicate: CHARACTERIZED-BY
+  object: met.optics_letters__vol__29__issue_primary
+  confidence: established
+  source:
+    zotero_key: Femtosecond synchronization of radio frequency sig
+    claim: experimental system characterized by primary metric

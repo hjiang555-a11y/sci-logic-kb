@@ -1,9 +1,0 @@
-evidence: in-loop fractional frequency stability scaled to an optical frequency of
-  low 10−19 at 1 second
-id: evrel_RWPYUXTB_rel.li_2017_i17_02
-metadata:
-  source_paper: li2017b
-  zotero_key: RWPYUXTB
-object: met.fractional_stability_inloop_yb_pm_li17
-predicate: CHARACTERIZED-BY
-subject: ent.all_pm_yb_nalm_comb_li17

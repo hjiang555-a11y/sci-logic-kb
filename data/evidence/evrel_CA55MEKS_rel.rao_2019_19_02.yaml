@@ -1,8 +1,0 @@
-evidence: 中心波长为 1572 nm，光谱的 3 dB 带宽为 35 nm…脉冲宽度为 59 fs
-id: evrel_CA55MEKS_rel.rao_2019_19_02
-metadata:
-  source_paper: rao2019
-  zotero_key: CA55MEKS
-object: met.comb_linewidth_1572nm_r19
-predicate: CHARACTERIZED-BY
-subject: ent.erfiber_comb_li_d1_r19

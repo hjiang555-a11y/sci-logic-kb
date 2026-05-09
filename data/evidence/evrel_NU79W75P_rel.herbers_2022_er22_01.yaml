@@ -1,8 +1,0 @@
-evidence: The laser system’s instability reaches down to mod σy = 1.6 × 10−16
-id: evrel_NU79W75P_rel.herbers_2022_er22_01
-metadata:
-  source_paper: herbers2022
-  zotero_key: NU79W75P
-object: met.fractional_freq_instability_herbers22
-predicate: CHARACTERIZED-BY
-subject: ent.fp_cavity_system

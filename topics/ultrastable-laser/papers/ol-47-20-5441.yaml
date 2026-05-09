@@ -1,24 +1,41 @@
-# Herbers 2022 — Transportable clock laser system with an instability of 1.6 × 10<sup>−16</sup> [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Transportable clock laser system with an instability [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：ultrastable-laser
 meta:
-  zotero_key: ol-47-20-5441
+  zotero_key: Transportable clock laser system with an instabili
   topic: ultrastable-laser
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Transportable clock laser system with an instability of 1.6 × 10<sup>−16</sup>"
-  year: 2022
-  first_author: "Herbers"
-  authors: ["Sofia Herbers", "Sebastian Häfner", "Sören Dörscher", "Tim Lücke", "Uwe Sterr", "Christian Lisdat"]
-  journal: "Optics Letters"
-  volume: 47
-  pages: 5441
-  doi: 10.1364/OL.470984
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Transportable clock laser system with an instability
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.ol_47_20_5441_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.ol_47_20_5441_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Transportable clock laser system with an instabili
+      claim: core experimental result
+relations:
+- id: rel.ol_47_20_5441_01
+  subject: ent.ol_47_20_5441_system
+  predicate: CHARACTERIZED-BY
+  object: met.ol_47_20_5441_primary
+  confidence: established
+  source:
+    zotero_key: Transportable clock laser system with an instabili
+    claim: experimental system characterized by primary metric

@@ -1,8 +1,0 @@
-evidence: tested on three different long-haul routes (up to 1550 km)
-id: evrel_9s69d3dw_rel.turza_2019_ur19_02
-metadata:
-  source_paper: turza2019_9s69d3dw
-  zotero_key: 9s69d3dw
-object: pri.dcf_induced_differential_delay_temp_compensation
-predicate: ENABLED-BY
-subject: ent.rf_over_fiber_time_transfer_link

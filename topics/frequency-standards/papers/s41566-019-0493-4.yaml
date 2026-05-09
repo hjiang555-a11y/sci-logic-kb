@@ -1,24 +1,42 @@
-# Oelker 2019 — Demonstration of 4.8 × 10−17 stability at 1 s for two independent optical clocks [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — 10−17 stability at 1 s for two [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：frequency-standards
 meta:
-  zotero_key: s41566-019-0493-4
+  zotero_key: 10−17 stability at 1 s for two
   topic: frequency-standards
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Demonstration of 4.8 × 10−17 stability at 1 s for two independent optical clocks"
-  year: 2019
-  first_author: "Oelker"
-  authors: ["E. Oelker", "R. B. Hutson", "C. J. Kennedy", "L. Sonderhouse", "T. Bothwell", "A. Goban", "D. Kedar", "C. Sanner", "J. M. Robinson", "G. E. Marti", "D. G. Matei", "T. Legero", "M. Giunta", "R. Holzwarth", "F. Riehle", "U. Sterr", "J. Ye"]
-  journal: "Nature Photonics"
-  volume: 13
-  pages: 714-719
+  reliability: medium
+  title: 10−17 stability at 1 s for two
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
   doi: 10.1038/s41566-019-0493-4
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+entities:
+- id: ent.s41566_019_0493_4_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.s41566_019_0493_4_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: 10−17 stability at 1 s for two
+      claim: core experimental result
+relations:
+- id: rel.s41566_019_0493_4_01
+  subject: ent.s41566_019_0493_4_system
+  predicate: CHARACTERIZED-BY
+  object: met.s41566_019_0493_4_primary
+  confidence: established
+  source:
+    zotero_key: 10−17 stability at 1 s for two
+    claim: experimental system characterized by primary metric

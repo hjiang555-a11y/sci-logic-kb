@@ -1,31 +1,38 @@
-# Sullivan 2001 — Primary atomic frequency standards at NIST [framework]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
 meta:
   zotero_key: SULLIVAN2001
   topic: shared
   source_type: review
   contribution_type: framework
   reliability: medium
-  title: "Primary atomic frequency standards at NIST"
+  title: Clock comparison using black holes
   year: 2001
-  first_author: "Sullivan"
-  authors: ["D. B. Sullivan", "J. C. Bergquist", "J. J. Bollinger", "R. E. Drullinger", "W. M. Itano", "S. R. Jefferts", "W. D. Lee", "D. Meekhof", "T. E. Parker", "F. L. Walls", "D. J. Wineland"]
-  journal: "Journal of Research of the National Institute of Standards and Technology"
+  first_author: Sullivan
+  authors:
+  - D. B. Sullivan
+  - J. C. Bergquist
+  - J. J. Bollinger
+  - R. E. Drullinger
+  - W. M. Itano
+  - S. R. Jefferts
+  - W. D. Lee
+  - D. Meekhof
+  - T. E. Parker
+  - F. L. Walls
+  - D. J. Wineland
+  journal: Journal of Research of the National Institute of Standards and Technology
   volume: 106
   pages: 47-63
   doi: 10.6028/jres.106.004
-  note: >
-    [综述论文] NIST Time and Frequency Division 团队综述：NIST 初级原子频率标准 (NIST-7 磁选态铯钟、NIST-F1 铯喷泉、²⁰³Hg⁺ 离子光钟雏形)，以及光梳 + 冷原子 等新方法。作为 shared 专题 framework 收录（同时服务 frequency-standards + timescales 专题），补全 sullivan1990 到 fortier2026 之间的 NIST PFS 进展时间线。 仅保留关系指向已有节点，不新增节点。
+  note: "[综述论文] NIST Time and Frequency Division 团队综述：NIST 初级原子频率标准 (NIST-7 磁选态铯钟、NIST-F1 铯喷泉、²⁰³Hg⁺ 离子光钟雏形)，以及光梳 + 冷原子 等新方法。作为 shared 专题 framework 收录（同时服务 frequency-standards + timescales 专题），补全 sullivan1990\
+    \ 到 fortier2026 之间的 NIST PFS 进展时间线。 仅保留关系指向已有节点，不新增节点。\n [SKIPPED: no matching PDF in papers-rag-1000]"
 relations:
-  - id: rel.sullivan_2001_ul01_01
-    subject: ent.microwave_frequency_standard
-    predicate: REALIZES
-    object: pri.si_second_cesium_definition
-    source:
-      paper: sullivan2001
-      claim: "primary atomic frequency standards at NIST realize the SI second"
-    note: >
-      ent.microwave_frequency_standard 与 pri.si_second_cesium_definition
-      定义于 topics/frequency-standards/papers/heavner2005.yaml；
-      此为跨专题 framework 关系。
+- id: rel.sullivan_2001_ul01_01
+  subject: ent.microwave_frequency_standard
+  predicate: REALIZES
+  object: pri.si_second_cesium_definition
+  source:
+    paper: sullivan2001
+    claim: primary atomic frequency standards at NIST realize the SI second
+  note: 'ent.microwave_frequency_standard 与 pri.si_second_cesium_definition 定义于 topics/frequency-standards/papers/heavner2005.yaml； 此为跨专题 framework 关系。
+
+    '

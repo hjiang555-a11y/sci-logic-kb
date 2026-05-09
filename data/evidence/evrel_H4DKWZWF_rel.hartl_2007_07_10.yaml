@@ -1,8 +1,0 @@
-evidence: frep locked to cavity FSR requires active servo isolation
-id: evrel_H4DKWZWF_rel.hartl_2007_07_10
-metadata:
-  source_paper: hartl2007
-  zotero_key: H4DKWZWF
-object: ent.vibration_environment
-predicate: CONDITIONED-BY
-subject: ent.cavity_enhanced_yb_comb_h07

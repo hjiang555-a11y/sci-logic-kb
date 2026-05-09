@@ -1,9 +1,0 @@
-evidence: bulk resonators possess the best Q-factors demonstrated thus far, as well
-  as silicon nitride... for their potential as on-chip optical sources
-id: evrel_HPCYUSLJ_rel.pasquazi_2016_18_01
-metadata:
-  source_paper: pasquazi2018
-  zotero_key: HPCYUSLJ
-object: ent.cmos_integrated_resonator_platform
-predicate: COMPETES-WITH
-subject: ent.bulk_wgm_resonator_platform

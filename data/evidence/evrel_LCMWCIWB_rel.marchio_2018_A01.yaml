@@ -1,9 +1,0 @@
-evidence: crystalline coatings transferred to 50.8-mm diameter fused silica and sapphire
-  substrates
-id: evrel_LCMWCIWB_rel.marchio_2018_A01
-metadata:
-  source_paper: marchio2018
-  zotero_key: LCMWCIWB
-object: ent.mirror_coating
-predicate: PART-OF
-subject: ent.large_area_crystalline_coating_m18

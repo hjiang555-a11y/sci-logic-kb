@@ -1,0 +1,98 @@
+metric: met.fiber_link_frequency_instability
+metric_name: "Optical frequency transfer instability — by distance scale"
+context: "Fiber link limitations by distance. Non-reciprocity compensation (Sagnac, thermal asymmetry) is solved by bidirectional schemes. The dominant remaining limit is Polarization Mode Dispersion (PMD)."
+domain: time-frequency-transfer
+updated: 2026-05-09
+confidence: established
+
+limitation_stack:
+  - name: "Compensation non-reciprocity"
+    status: "SOLVED"
+    principle: "Bidirectional transmission + synchronous phase measurement at both ends cancels common-mode path-length fluctuations"
+    solved_by: "Calosso 2013 (two-way passive); Bercy 2014 (100 km, 5×10⁻²¹); Xu 2019 ((0.5±2.0)×10⁻²¹ residual over 33 days)"
+    residual: "~10⁻²¹ — at fundamental Sagnac + thermal asymmetry floor"
+
+  - name: "Polarization Mode Dispersion (PMD)"
+    status: "ACTIVE — dominant remaining limit"
+    principle: "PMD causes polarization-dependent group delay between two orthogonal polarization modes. Under environmental perturbation (temperature, stress), the differential delay fluctuates, introducing non-reciprocal phase noise that bidirectional compensation cannot fully cancel."
+    impact: "Polarization fading → optical beat signal dropout → detection loss-of-lock; limits continuous operation to <50% duty cycle without mitigation"
+    breakthrough: "Dual-polarization coherent receiver + active polarization tracking (Clivati 2020) — maintains lock through polarization scrambling"
+    remaining_challenge: "Residual PMD-induced phase noise at the 10⁻²⁰ level for links >500 km; active polarization control adds complexity"
+
+  - name: "Amplifier noise accumulation"
+    status: "Active for links >500 km"
+    principle: "Each EDFA adds spontaneous emission noise; cascaded amplifiers accumulate both phase noise and amplitude noise"
+    breakthrough: "Brillouin amplification (Raupach 2015) — distributed gain reduces amplifier count"
+
+  - name: "Free-space atmospheric turbulence"
+    status: "Active for satellite/ground links"
+    principle: "Atmospheric turbulence induces beam wander and scintillation, breaking spatial reciprocity"
+    breakthrough: "Tip-tilt active tracking (Sinclair 2016); quantum-limited detection (Caldwell 2023)"
+
+consensus:
+  best_demonstrated_value: "σ_y = 5×10⁻²¹ @ 4,000 s (Bercy 2014, 100 km bidirectional passive)"
+  best_demonstrated_accuracy: "(0.5±2.0)×10⁻²¹ over 33 days (Xu 2019, non-reciprocity verified)"
+  best_long_distance: "1.5×10⁻¹⁹ flicker floor (Predehl 2012, 920 km)"
+  dominant_limit_current: "PMD — polarization fading limits continuous operation; dual-polarization receivers emerging"
+  remaining_gap: "Non-reciprocity: SOLVED (~10⁻²¹). PMD: 10-100× above non-reciprocity floor for links >500 km"
+
+consensus_by_scale:
+  metro_lt_100km:
+    label: "Metro-scale (< 100 km)"
+    best_instability: "σ_y = 5×10⁻²¹ @ 4,000 s (Bercy 2014, 100 km bidirectional)"
+    limit: "Non-reciprocity → SOLVED; PMD manageable at this scale"
+    status: "Mature"
+
+  regional_100_500km:
+    label: "Regional-scale (100-500 km)"
+    best_instability: "<4×10⁻¹⁹ (Shen 2022, 113 km cascaded)"
+    limit: "PMD begins to dominate; amplifier noise emerges"
+    status: "Active development"
+
+  national_500_2000km:
+    label: "National-scale (500-2000 km)"
+    best_instability: "σ_y = 1.5×10⁻¹⁹ floor (Predehl 2012, 920 km)"
+    limit: "PMD + amplifier noise co-dominate; polarization fading limits duty cycle"
+    status: "Demonstrated with limitations"
+
+  continental_gt_2000km:
+    label: "Continental-scale (> 2,000 km)"
+    best_instability: "σ_y = 4×10⁻¹⁷ (Schioppo 2021, 2,220 km fiber); VLBI: 2-4×10⁻¹⁶ (Pizzocaro 2021)"
+    limit: "PMD dominant; cascaded amplifiers; geoid uncertainty"
+    status: "Emerging; VLBI as alternative for trans-oceanic"
+
+timeline:
+  - year: 2005
+    value: "σ_y ~10⁻¹⁶ @ 1,000 s"
+    system: "Daussy — 86 km first long-distance link"
+    significance: "First demonstration; active PLL compensation"
+  - year: 2012
+    value: "σ_y = 1.5×10⁻¹⁹ flicker floor"
+    system: "Predehl — 920 km national-scale link"
+    significance: "National fiber network proven for clock comparison"
+  - year: 2013
+    value: "Two-way passive: 10⁻²¹ demonstrated"
+    system: "Calosso — 47 km two-way phase comparison"
+    significance: "Non-reciprocity compensation proven: passive scheme eliminates PLL bandwidth limit"
+  - year: 2014
+    value: "σ_y = 5×10⁻²¹ @ 4,000 s"
+    system: "Bercy — 100 km bidirectional passive"
+    significance: "Passive scheme reaches fundamental non-reciprocity floor"
+  - year: 2019
+    value: "(0.5±2.0)×10⁻²¹ residual, 33 days"
+    system: "Xu — reciprocity of propagation verified"
+    significance: "Non-reciprocity fundamentally confirmed at 10⁻²¹ level — this limit is SOLVED"
+  - year: 2020
+    value: "Dual-polarization coherent receiver"
+    system: "Clivati — PMD mitigation via polarization diversity"
+    significance: "PMD identified as the NEXT dominant limit; dual-pol receiver demonstrated"
+  - year: 2022
+    value: "6.1×10⁻²¹ @ 300 s free-space"
+    system: "Gozzard — 2 km free-space transfer"
+    significance: "Free-space approaching fiber parity at metro scale"
+  - year: 2023
+    value: "102 dB quantum-limited link budget"
+    system: "Caldwell — quantum time transfer"
+    significance: "Ground↔GEO satellite demonstrated feasible"
+
+trend: "Non-reciprocity compensation is SOLVED (Xu 2019). The current bottleneck is PMD — polarization fading causes detection loss-of-lock, limiting operational duty cycle. Dual-polarization receivers (Clivati 2020) are the key breakthrough. Next frontier: PMD compensation for >500 km links and space-based global clock networks."

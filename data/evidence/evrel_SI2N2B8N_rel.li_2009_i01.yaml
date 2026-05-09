@@ -1,9 +1,0 @@
-evidence: The vibration sensitivity of new-design spool wound with 300 m fiber is
-  around 5×10^-11/ms^-2
-id: evrel_SI2N2B8N_rel.li_2009_i01
-metadata:
-  source_paper: li2009a
-  zotero_key: SI2N2B8N
-object: met.fiber_spool_accel_sensitivity_l09
-predicate: CHARACTERIZED-BY
-subject: ent.titanium_fiber_spool_l09

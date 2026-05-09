@@ -1,8 +1,0 @@
-evidence: 自由运转情况下 fceo 的秒级频率稳定度为 1.52×10⁻⁷
-id: evrel_CA55MEKS_rel.rao_2019_19_06
-metadata:
-  source_paper: rao2019
-  zotero_key: CA55MEKS
-object: met.free_running_fceo_instability_r19
-predicate: CHARACTERIZED-BY
-subject: ent.erfiber_comb_li_d1_r19

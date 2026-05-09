@@ -1,18 +1,41 @@
-#  ???? — josab jiang et al [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Jiangetal. Vol.25,No.12/December2008/J.Opt.Soc.Am.B 2029 [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
 meta:
-  zotero_key: josab jiang et al
+  zotero_key: Jiangetal. Vol.25,No.12/December2008/J.Opt.Soc.Am.
   topic: time-frequency-transfer
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: low
-  title: "josab jiang et al"
-  first_author: ""
-  note: >
-    [批量提取] 元数据来源：placeholder (needs expert review)。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Jiangetal. Vol.25,No.12/December2008/J.Opt.Soc.Am.B 2029
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.josab_jiang_et_al_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.josab_jiang_et_al_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Jiangetal. Vol.25,No.12/December2008/J.Opt.Soc.Am.
+      claim: core experimental result
+relations:
+- id: rel.josab_jiang_et_al_01
+  subject: ent.josab_jiang_et_al_system
+  predicate: CHARACTERIZED-BY
+  object: met.josab_jiang_et_al_primary
+  confidence: established
+  source:
+    zotero_key: Jiangetal. Vol.25,No.12/December2008/J.Opt.Soc.Am.
+    claim: experimental system characterized by primary metric

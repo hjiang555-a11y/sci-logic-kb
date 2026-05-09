@@ -1,9 +1,0 @@
-evidence: waveguide-based EOM provides phase modulation for cavity-stabilized laser
-  system
-id: evrel_S5GJNVG8_rel.zhang_2014_14_04
-metadata:
-  source_paper: zhang2014_ram
-  zotero_key: S5GJNVG8
-object: ent.fp_cavity_system
-predicate: PART-OF
-subject: ent.eom

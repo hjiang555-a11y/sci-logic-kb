@@ -1,9 +1,0 @@
-evidence: stabilize the laser to σ_y ≤ 6×10⁻¹⁶ for 2 s ≤ τ ≤ 8 s via spectral-hole
-  burning
-id: evrel_Q2MRB267_rel.thorpe_2011_H03
-metadata:
-  source_paper: thorpe2011
-  zotero_key: Q2MRB267
-object: meth.two_stage_shb_fp_lock_thorpe11
-predicate: OPERATIONALIZED-AS
-subject: met.shb_stability_thorpe11

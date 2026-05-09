@@ -1,9 +1,0 @@
-evidence: weighted mean of the transferred frequency's fractional offset of (1.1 ±
-  0.4)×10⁻²⁰
-id: evrel_lz2hfujz_rel.raupach_2015_15_03
-metadata:
-  source_paper: raupach2015_lz2hfujz
-  zotero_key: lz2hfujz
-object: met.coherent_optical_fiber_link_uncertainty_long
-predicate: CHARACTERIZED-BY
-subject: ent.ptb_1400km_brillouin_link_r15

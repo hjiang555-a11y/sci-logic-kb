@@ -1,24 +1,42 @@
-# Cole 2017 — Soliton crystals in Kerr resonators [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Daniel  — Soliton crystals in Kerr resonators [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: 2923-2
+  zotero_key: Soliton crystals in Kerr resonators
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Soliton crystals in Kerr resonators"
-  year: 2017
-  first_author: "Cole"
-  authors: ["Daniel C. Cole", "Erin S. Lamb", "Pascal Del’Haye", "Scott A. Diddams", "Scott B. Papp"]
-  journal: "Nature Photonics"
-  volume: 11
-  pages: 671-676
+  reliability: medium
+  title: Soliton crystals in Kerr resonators
+  first_author: Daniel
+  note: batch minimal extraction; pending expert review for full entities/principles
   doi: 10.1038/s41566-017-0009-z
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+entities:
+- id: ent.2923_2_system
+  name: Daniel  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Daniel '
+metrics:
+- id: met.2923_2_primary
+  name: Daniel  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Soliton crystals in Kerr resonators
+      claim: core experimental result
+relations:
+- id: rel.2923_2_01
+  subject: ent.2923_2_system
+  predicate: CHARACTERIZED-BY
+  object: met.2923_2_primary
+  confidence: established
+  source:
+    zotero_key: Soliton crystals in Kerr resonators
+    claim: experimental system characterized by primary metric

@@ -1,8 +1,0 @@
-evidence: dual-comb-enhanced OTWTT
-id: evrel_QIFVVUIH_rel.chen_2024_he24_01
-metadata:
-  source_paper: chen_z2024
-  zotero_key: QIFVVUIH
-object: ent.dual_comb_spectrometer
-predicate: PART-OF
-subject: ent.pku_dual_comb_microwave_sync_c24

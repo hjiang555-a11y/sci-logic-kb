@@ -1,24 +1,42 @@
-# Picqué 2019 — Frequency comb spectroscopy [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Theodor  — httRps:e//dvoi.orige/10w.1038 /As415R66t-018i-c034l7-5e | FOCUS [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: s41566-018-0347-5
+  zotero_key: httRps:e//dvoi.orige/10w.1038 /As415R66t-018i-c034
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Frequency comb spectroscopy"
-  year: 2019
-  first_author: "Picqué"
-  authors: ["Nathalie Picqué", "Theodor W. Hänsch"]
-  journal: "Nature Photonics"
-  volume: 13
-  pages: 146-157
+  reliability: medium
+  title: httRps:e//dvoi.orige/10w.1038 /As415R66t-018i-c034l7-5e | FOCUS
+  first_author: Theodor
+  note: batch minimal extraction; pending expert review for full entities/principles
   doi: 10.1038/s41566-018-0347-5
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+entities:
+- id: ent.s41566_018_0347_5_system
+  name: Theodor  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Theodor '
+metrics:
+- id: met.s41566_018_0347_5_primary
+  name: Theodor  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: httRps:e//dvoi.orige/10w.1038 /As415R66t-018i-c034
+      claim: core experimental result
+relations:
+- id: rel.s41566_018_0347_5_01
+  subject: ent.s41566_018_0347_5_system
+  predicate: CHARACTERIZED-BY
+  object: met.s41566_018_0347_5_primary
+  confidence: established
+  source:
+    zotero_key: httRps:e//dvoi.orige/10w.1038 /As415R66t-018i-c034
+    claim: experimental system characterized by primary metric

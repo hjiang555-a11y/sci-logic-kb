@@ -1,8 +1,0 @@
-evidence: stability is limited by the ultrastable laser used as the optical carrier
-id: evrel_3kxj9jfq_rel.calonico_2014_15_06
-metadata:
-  source_paper: calonico2015_3kxj9jfq
-  zotero_key: 3kxj9jfq
-object: ent.fp_cavity_system
-predicate: CONDITIONED-BY
-subject: ent.coherent_optical_fiber_link

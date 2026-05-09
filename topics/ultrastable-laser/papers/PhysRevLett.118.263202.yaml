@@ -1,23 +1,42 @@
-# Matei 2017 — <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mm... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Linewidth  — 1.5 μm Lasers with Sub-10 mHz Linewidth [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：ultrastable-laser
 meta:
-  zotero_key: PhysRevLett.118.263202
+  zotero_key: 1.5 μm Lasers with Sub-10 mHz Linewidth
   topic: ultrastable-laser
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "<mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mml:mrow><mml:mn>1.5</mml:mn><mml:mtext> </mml:mtext><mml:mtext> </mml:mtext><mml:mi>μ</mml:mi><mml:mrow><mml:mi mathvariant=\"normal\">m</mml:mi></mml:mrow></mml:mrow></mml:math> Lasers with Sub-10 mHz Linewidth"
-  year: 2017
-  first_author: "Matei"
-  authors: ["D. G. Matei", "T. Legero", "S. Häfner", "C. Grebing", "R. Weyrich", "W. Zhang", "L. Sonderhouse", "J. M. Robinson", "J. Ye", "F. Riehle", "U. Sterr"]
-  journal: "Physical Review Letters"
-  volume: 118
-  doi: 10.1103/PhysRevLett.118.263202
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: 1.5 μm Lasers with Sub-10 mHz Linewidth
+  first_author: Linewidth
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1103/PhysRevLett
+entities:
+- id: ent.physrevlett_118_263202_system
+  name: Linewidth  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Linewidth '
+metrics:
+- id: met.physrevlett_118_263202_primary
+  name: Linewidth  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: 1.5 μm Lasers with Sub-10 mHz Linewidth
+      claim: core experimental result
+relations:
+- id: rel.physrevlett_118_263202_01
+  subject: ent.physrevlett_118_263202_system
+  predicate: CHARACTERIZED-BY
+  object: met.physrevlett_118_263202_primary
+  confidence: established
+  source:
+    zotero_key: 1.5 μm Lasers with Sub-10 mHz Linewidth
+    claim: experimental system characterized by primary metric

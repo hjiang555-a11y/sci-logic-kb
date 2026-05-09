@@ -1,9 +1,0 @@
-evidence: fundamental limitation of laser frequency stability is the thermal fluctuation
-  of cavity length, primarily caused by the Brownian motion
-id: evrel_AHUZI4A7_rel.tai_2017_ai01
-metadata:
-  source_paper: tai2017
-  zotero_key: AHUZI4A7
-object: pri.brownian_thermal_noise_fdt
-predicate: BOUNDED-BY
-subject: ent.fp_cavity_system

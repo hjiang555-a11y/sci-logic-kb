@@ -1,8 +1,0 @@
-evidence: ≈2 × 10⁻¹⁸ in 1 s
-id: evrel_J37V2ZZQ_rel.fermann_2022_22_02
-metadata:
-  source_paper: fermann2022
-  zotero_key: J37V2ZZQ
-object: met.noise_cancelled_transfer_stability_f22
-predicate: CHARACTERIZED-BY
-subject: ent.precision_frequency_transfer_system_f22

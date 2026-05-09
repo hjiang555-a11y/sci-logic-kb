@@ -1,8 +1,0 @@
-evidence: thermal phase noise limits the detection bandwidth
-id: evrel_ELKHJ5GL_rel.li_2019_IG01
-metadata:
-  source_paper: li2019
-  zotero_key: ELKHJ5GL
-object: pri.fiber_thermal_phase_noise_giant_ifog
-predicate: BOUNDED-BY
-subject: ent.fiber_interferometer

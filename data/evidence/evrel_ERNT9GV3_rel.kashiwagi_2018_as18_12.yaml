@@ -1,9 +1,0 @@
-evidence: some part of the optical path length fluctuation was not cancelled; the
-  f_CEO beat detection path and part of the beat detection path for the FNDC
-id: evrel_ERNT9GV3_rel.kashiwagi_2018_as18_12
-metadata:
-  source_paper: kashiwagi2018
-  zotero_key: ERNT9GV3
-object: pri.residual_free_space_path_noise_floor
-predicate: BOUNDED-BY
-subject: met.relative_frequency_instability_allan_k18

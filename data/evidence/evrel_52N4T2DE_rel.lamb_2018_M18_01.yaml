@@ -1,9 +1,0 @@
-evidence: The 15 GHz Kerr microcomb with SiN photonic-chip supercontinuum spans 700–2100
-  nm (one octave).
-id: evrel_52N4T2DE_rel.lamb_2018_M18_01
-metadata:
-  source_paper: lamb2018
-  zotero_key: 52N4T2DE
-object: met.microcomb_sc_spectral_span
-predicate: CHARACTERIZED-BY
-subject: ent.kerr_microcomb_photonic_chip_sc_l18

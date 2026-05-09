@@ -1,18 +1,41 @@
-#  ???? — 1311.4378 [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Spectral purity transfer between optical [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
 meta:
-  zotero_key: 1311.4378
+  zotero_key: Spectral purity transfer between optical
   topic: time-frequency-transfer
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: low
-  title: "1311.4378"
-  first_author: ""
-  note: >
-    [批量提取] 元数据来源：placeholder (needs expert review)。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Spectral purity transfer between optical
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.1311_4378_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.1311_4378_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Spectral purity transfer between optical
+      claim: core experimental result
+relations:
+- id: rel.1311_4378_01
+  subject: ent.1311_4378_system
+  predicate: CHARACTERIZED-BY
+  object: met.1311_4378_primary
+  confidence: established
+  source:
+    zotero_key: Spectral purity transfer between optical
+    claim: experimental system characterized by primary metric

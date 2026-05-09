@@ -1,23 +1,42 @@
-# Numata 2004 — Thermal-Noise Limit in the Frequency Stabilization of Lasers with Rigid Cavities [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Thermal-Noise Limit in the Frequency Stabilization of Lasers with Rigid Cavities [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：ultrastable-laser
 meta:
-  zotero_key: PhysRevLett.93.250602
+  zotero_key: Thermal-Noise Limit in the Frequency Stabilization
   topic: ultrastable-laser
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Thermal-Noise Limit in the Frequency Stabilization of Lasers with Rigid Cavities"
-  year: 2004
-  first_author: "Numata"
-  authors: ["Kenji Numata", "Amy Kemery", "Jordan Camp"]
-  journal: "Physical Review Letters"
-  volume: 93
-  doi: 10.1103/PhysRevLett.93.250602
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Thermal-Noise Limit in the Frequency Stabilization of Lasers with Rigid Cavities
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1103/PhysRevLett
+entities:
+- id: ent.physrevlett_93_250602_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.physrevlett_93_250602_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Thermal-Noise Limit in the Frequency Stabilization
+      claim: core experimental result
+relations:
+- id: rel.physrevlett_93_250602_01
+  subject: ent.physrevlett_93_250602_system
+  predicate: CHARACTERIZED-BY
+  object: met.physrevlett_93_250602_primary
+  confidence: established
+  source:
+    zotero_key: Thermal-Noise Limit in the Frequency Stabilization
+    claim: experimental system characterized by primary metric

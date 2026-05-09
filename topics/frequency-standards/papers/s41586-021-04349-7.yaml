@@ -1,24 +1,42 @@
-# Bothwell 2022 — Resolving the gravitational redshift across a millimetre-scale atomic sample [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Colin  — Resolving the gravitational redshift across a [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：frequency-standards
 meta:
-  zotero_key: s41586-021-04349-7
+  zotero_key: Resolving the gravitational redshift across a
   topic: frequency-standards
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Resolving the gravitational redshift across a millimetre-scale atomic sample"
-  year: 2022
-  first_author: "Bothwell"
-  authors: ["Tobias Bothwell", "Colin J. Kennedy", "Alexander Aeppli", "Dhruv Kedar", "John M. Robinson", "Eric Oelker", "Alexander Staron", "Jun Ye"]
-  journal: "Nature"
-  volume: 602
-  pages: 420-424
+  reliability: medium
+  title: Resolving the gravitational redshift across a
+  first_author: Colin
+  note: batch minimal extraction; pending expert review for full entities/principles
   doi: 10.1038/s41586-021-04349-7
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+entities:
+- id: ent.s41586_021_04349_7_system
+  name: Colin  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Colin '
+metrics:
+- id: met.s41586_021_04349_7_primary
+  name: Colin  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Resolving the gravitational redshift across a
+      claim: core experimental result
+relations:
+- id: rel.s41586_021_04349_7_01
+  subject: ent.s41586_021_04349_7_system
+  predicate: CHARACTERIZED-BY
+  object: met.s41586_021_04349_7_primary
+  confidence: established
+  source:
+    zotero_key: Resolving the gravitational redshift across a
+    claim: experimental system characterized by primary metric

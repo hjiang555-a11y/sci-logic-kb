@@ -1,8 +1,0 @@
-evidence: Comb operates across 10–40 °C baseplate temperature range during flight
-id: evrel_BWX8NI2P_rel.lezius_2016_ez04
-metadata:
-  source_paper: lezius2016
-  zotero_key: BWX8NI2P
-object: met.operating_temperature_range_l16
-predicate: CHARACTERIZED-BY
-subject: ent.spaceborne_erfiber_comb_l16

@@ -63,11 +63,11 @@ methods:
     claim: active servo comprising in-phase and quadrature RAM corrections allows
       frequency stabilization comparable to fundamental thermal noise limit
 metrics:
-- id: met.ram_fractional_instability
-  name: RAM引起的分数频率不稳定度
-  unit: 无量纲（Allan偏差）
-  description: 因RAM导致的PDH锁频系统分数频率不稳定度上限
-  demonstrated_value:
+  - id: met.ram_fractional_instability
+    name: RAM引起的分数频率不稳定度
+    unit: 无量纲（Allan偏差）
+    description: 因RAM导致的PDH锁频系统分数频率不稳定度上限
+    demonstrated_value:
     value: σ_y ≤ 1×10⁻¹⁶（35 mm腔，κ=28 kHz，σ_RAM=1 ppm）
     conditions: 波导EOM + 双通道主动RAM消除伺服；1 ppm RAM稳定度，1–1000 s
     verification_status: observed
@@ -75,7 +75,7 @@ metrics:
     source:
       zotero_key: S5GJNVG8
       claim: σ_RAM at 1 ppm corresponds to σ_y of 1×10⁻¹⁶ for 35 mm cavity
-  note: '对210 mm Si腔（κ=3 kHz），5 ppm RAM → σ_y=8×10⁻¹⁷，接近Si腔热噪声极限。 RAM不再是限制因素（贡献低于腔热噪声极限）。
+    note: '对210 mm Si腔（κ=3 kHz），5 ppm RAM → σ_y=8×10⁻¹⁷，接近Si腔热噪声极限。 RAM不再是限制因素（贡献低于腔热噪声极限）。
 
     '
 relations:

@@ -1,8 +1,0 @@
-evidence: electronic phase compensation based on round-trip measurement
-id: evrel_6z466ig4_rel.xue_2020_ue20_02
-metadata:
-  source_paper: xue2020_6z466ig4
-  zotero_key: 6z466ig4
-object: pri.roundtrip_phase_compensation_rf_transfer
-predicate: ENABLED-BY
-subject: ent.ntsc_112km_urban_rf_link_x20

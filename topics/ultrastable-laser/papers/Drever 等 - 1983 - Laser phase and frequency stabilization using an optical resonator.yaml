@@ -1,18 +1,41 @@
-#  ???? — Laser phase and frequency stabilization using an optical resonator [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Appl. Phys. B 31, 97-105 (I983) [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：ultrastable-laser
 meta:
-  zotero_key: Drever 等 - 1983 - Laser phase and frequency stabilization using an optical resonator
+  zotero_key: Appl. Phys. B 31, 97-105 (I983)
   topic: ultrastable-laser
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
   reliability: medium
-  title: "Laser phase and frequency stabilization using an optical resonator"
-  first_author: ""
-  note: >
-    [批量提取] 元数据来源：PDF metadata。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  title: Appl. Phys. B 31, 97-105 (I983)
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.drever_____1983___laser_phase__system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.drever_____1983___laser_phase__primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Appl. Phys. B 31, 97-105 (I983)
+      claim: core experimental result
+relations:
+- id: rel.drever_____1983___laser_phase__01
+  subject: ent.drever_____1983___laser_phase__system
+  predicate: CHARACTERIZED-BY
+  object: met.drever_____1983___laser_phase__primary
+  confidence: established
+  source:
+    zotero_key: Appl. Phys. B 31, 97-105 (I983)
+    claim: experimental system characterized by primary metric

@@ -1,9 +1,0 @@
-evidence: simultaneous measurements of the same optical frequency ratio with two independent
-  OFCs have shown agreement at the level of 10⁻²¹
-id: evrel_SDG6KXNZ_rel.dimarcq_2021_24_04
-metadata:
-  source_paper: dimarcq2024
-  zotero_key: SDG6KXNZ
-object: meth.optical_clock_comparison
-predicate: OPERATIONALIZED-AS
-subject: met.optical_clock_systematic_uncertainty

@@ -1,8 +1,0 @@
-evidence: performance similar to or better than standard FMS
-id: evrel_HKYLIW8U_rel.gobron_2017_O03
-metadata:
-  source_paper: gobron2017
-  zotero_key: HKYLIW8U
-object: meth.dispersive_heterodyne_shb_locking
-predicate: CHARACTERIZES
-subject: met.frequency_stability_g17

@@ -1,9 +1,0 @@
-evidence: intracavity light heats mirror coatings, shifting cavity resonance by ≈1
-  Hz/mW
-id: evrel_EGAZKLXR_rel.young_1999_06
-metadata:
-  source_paper: young1999
-  zotero_key: EGAZKLXR
-object: pri.mirror_heating_cavity_shift
-predicate: BOUNDED-BY
-subject: ent.fp_cavity_system

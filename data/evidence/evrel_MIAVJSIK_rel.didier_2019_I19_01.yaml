@@ -1,8 +1,0 @@
-evidence: transfer-locked to a cryogenic silicon cavity via frequency comb
-id: evrel_MIAVJSIK_rel.didier_2019_I19_01
-metadata:
-  source_paper: didier2019
-  zotero_key: MIAVJSIK
-object: pri.transfer_lock_via_frequency_comb
-predicate: ENABLED-BY
-subject: ent.ndyag_946nm_laser_d19

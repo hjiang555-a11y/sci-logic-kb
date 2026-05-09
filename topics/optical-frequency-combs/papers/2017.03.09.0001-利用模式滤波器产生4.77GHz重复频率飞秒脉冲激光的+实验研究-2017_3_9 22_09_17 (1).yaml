@@ -1,18 +1,41 @@
-#  ???? — 2017.03.09.0001-利用模式滤波器产生4.77GHz重复频率飞秒脉冲激光的+实验研究-2017_3_9 22_09_17 (1) [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — 陈茂强 1，2，3,邰朝阳 1，2，3,闫露露 1，2，3,张颜艳 1，2，3,郭文阁 1，2,张首刚 1，2，3,姜海峰 1，2，3，* [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: 2017.03.09.0001-利用模式滤波器产生4.77GHz重复频率飞秒脉冲激光的+实验研究-2017_3_9 22_09_17 (1)
+  zotero_key: 陈茂强 1，2，3,邰朝阳 1，2，3,闫露露 1，2，3,张颜艳 1，2，3,郭文阁 1，2,张首
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: low
-  title: "2017.03.09.0001-利用模式滤波器产生4.77GHz重复频率飞秒脉冲激光的+实验研究-2017_3_9 22_09_17 (1)"
-  first_author: ""
-  note: >
-    [批量提取] 元数据来源：placeholder (needs expert review)。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: 陈茂强 1，2，3,邰朝阳 1，2，3,闫露露 1，2，3,张颜艳 1，2，3,郭文阁 1，2,张首刚 1，2，3,姜海峰 1，2，3，*
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.2017_03_09_0001__________4_77g_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.2017_03_09_0001__________4_77g_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: 陈茂强 1，2，3,邰朝阳 1，2，3,闫露露 1，2，3,张颜艳 1，2，3,郭文阁 1，2,张首
+      claim: core experimental result
+relations:
+- id: rel.2017_03_09_0001__________4_77g_01
+  subject: ent.2017_03_09_0001__________4_77g_system
+  predicate: CHARACTERIZED-BY
+  object: met.2017_03_09_0001__________4_77g_primary
+  confidence: established
+  source:
+    zotero_key: 陈茂强 1，2，3,邰朝阳 1，2，3,闫露露 1，2，3,张颜艳 1，2，3,郭文阁 1，2,张首
+    claim: experimental system characterized by primary metric

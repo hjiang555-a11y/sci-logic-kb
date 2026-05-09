@@ -1,9 +1,0 @@
-evidence: thermal noise floor scales as 1/L with cavity length; increasing L reduces
-  the FDT-limited displacement noise
-id: evrel_UV6S5FFL_rel.häfner_2015_09
-metadata:
-  source_paper: hafner2015
-  zotero_key: UV6S5FFL
-object: pri.brownian_thermal_noise_fdt
-predicate: DERIVED-FROM
-subject: pri.long_cavity_thermal_noise_reduction

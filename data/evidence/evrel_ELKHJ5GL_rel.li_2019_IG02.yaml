@@ -1,9 +1,0 @@
-evidence: thermal phase noise originates from the fluctuation-dissipation theorem
-  applied to the fiber refractive index
-id: evrel_ELKHJ5GL_rel.li_2019_IG02
-metadata:
-  source_paper: li2019
-  zotero_key: ELKHJ5GL
-object: pri.brownian_thermal_noise_fdt
-predicate: DERIVED-FROM
-subject: pri.fiber_thermal_phase_noise_giant_ifog

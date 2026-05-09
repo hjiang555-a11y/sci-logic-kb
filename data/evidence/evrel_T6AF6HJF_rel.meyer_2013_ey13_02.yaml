@@ -1,8 +1,0 @@
-evidence: The phase noise of the resulting 10 GHz microwaves was -99 dBc/Hz at 1 Hz
-id: evrel_T6AF6HJF_rel.meyer_2013_ey13_02
-metadata:
-  source_paper: meyer2013
-  zotero_key: T6AF6HJF
-object: met.mwave_phase_noise_10ghz_m13
-predicate: CHARACTERIZED-BY
-subject: ent.yb_kyw_fs_comb_meyer13

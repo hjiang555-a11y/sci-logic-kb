@@ -1,9 +1,0 @@
-evidence: Reverse-biased saturable absorber section integrated on-chip enables passive
-  mode-locking
-id: evrel_GY48UQ7F_rel.wang_2017_an02
-metadata:
-  source_paper: wang2017
-  zotero_key: GY48UQ7F
-object: ent.iii_v_on_si_ultradense_comb_w17
-predicate: PART-OF
-subject: ent.saturable_absorber_w17

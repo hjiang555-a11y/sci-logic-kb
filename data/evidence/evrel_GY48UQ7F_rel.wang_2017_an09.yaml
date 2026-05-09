@@ -1,9 +1,0 @@
-evidence: Heterogeneous III-V-on-Si integration enables co-integration of gain with
-  low-loss Si passive waveguides
-id: evrel_GY48UQ7F_rel.wang_2017_an09
-metadata:
-  source_paper: wang2017
-  zotero_key: GY48UQ7F
-object: pri.heterogeneous_iii_v_on_si_integration
-predicate: ENABLED-BY
-subject: meth.passive_mode_locking_iii_v_si

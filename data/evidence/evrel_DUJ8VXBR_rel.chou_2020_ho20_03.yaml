@@ -1,9 +1,0 @@
-evidence: a trapped molecular ion in a single quantum state ... read out the final
-  state nondestructively
-id: evrel_DUJ8VXBR_rel.chou_2020_ho20_03
-metadata:
-  source_paper: chou2020
-  zotero_key: DUJ8VXBR
-object: pri.state_prepared_single_ion_spectroscopy
-predicate: ENABLED-BY
-subject: ent.single_ion_comb_spectrometer_c20

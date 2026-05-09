@@ -1,9 +1,0 @@
-evidence: conversion efficiency from the near-infrared pump to the ultraviolet–visible
-  region of 350–550 nm is 17%
-id: evrel_8IPE8B8T_rel.wu_2024_24_02
-metadata:
-  source_paper: wu2024
-  zotero_key: 8IPE8B8T
-object: met.tf_ln_uv_conversion_efficiency_w24
-predicate: CHARACTERIZED-BY
-subject: ent.tf_lin_uv_vis_comb_w24

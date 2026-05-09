@@ -1,9 +1,0 @@
-evidence: upper bound on the mechanical loss factor of 2.3 × 10⁻⁵ at 17 K, confirming
-  expectations on the superior mechanical properties of crystalline AlGaAs coatings
-id: evrel_4QVEXY63_rel.lee_2026_08
-metadata:
-  source_paper: lee2026
-  zotero_key: 4QVEXY63
-object: pri.brownian_thermal_noise_fdt
-predicate: DERIVED-FROM
-subject: pri.crystalline_coating_low_brownian_noise

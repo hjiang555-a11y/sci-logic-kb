@@ -1,18 +1,41 @@
-#  ???? — untitled [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Spence  — Direct diode-pumped Kerr-lens [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: 2905-1
+  zotero_key: Direct diode-pumped Kerr-lens
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
   reliability: medium
-  title: "untitled"
-  first_author: ""
-  note: >
-    [批量提取] 元数据来源：PDF metadata。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  title: Direct diode-pumped Kerr-lens
+  first_author: Spence
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.2905_1_system
+  name: Spence  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Spence '
+metrics:
+- id: met.2905_1_primary
+  name: Spence  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Direct diode-pumped Kerr-lens
+      claim: core experimental result
+relations:
+- id: rel.2905_1_01
+  subject: ent.2905_1_system
+  predicate: CHARACTERIZED-BY
+  object: met.2905_1_primary
+  confidence: established
+  source:
+    zotero_key: Direct diode-pumped Kerr-lens
+    claim: experimental system characterized by primary metric

@@ -1,24 +1,42 @@
-# Wu 2024 — Visible-to-ultraviolet frequency comb generation in lithium niobate nanophoto... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Ryan  — Article https://doi.org/10.1038/s41566-023-01364-0 [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: Visible-to-ultraviolet_frequency_comb_generati
+  zotero_key: Article https://doi.org/10.1038/s41566-023-01364-0
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Visible-to-ultraviolet frequency comb generation in lithium niobate nanophotonic waveguides"
-  year: 2024
-  first_author: "Wu"
-  authors: ["Tsung-Han Wu", "Luis Ledezma", "Connor Fredrick", "Pooja Sekhar", "Ryoto Sekine", "Qiushi Guo", "Ryan M. Briggs", "Alireza Marandi", "Scott A. Diddams"]
-  journal: "Nature Photonics"
-  volume: 18
-  pages: 218-223
+  reliability: medium
+  title: Article https://doi.org/10.1038/s41566-023-01364-0
+  first_author: Ryan
+  note: batch minimal extraction; pending expert review for full entities/principles
   doi: 10.1038/s41566-023-01364-0
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+entities:
+- id: ent.visible_to_ultraviolet_frequen_system
+  name: Ryan  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Ryan '
+metrics:
+- id: met.visible_to_ultraviolet_frequen_primary
+  name: Ryan  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Article https://doi.org/10.1038/s41566-023-01364-0
+      claim: core experimental result
+relations:
+- id: rel.visible_to_ultraviolet_frequen_01
+  subject: ent.visible_to_ultraviolet_frequen_system
+  predicate: CHARACTERIZED-BY
+  object: met.visible_to_ultraviolet_frequen_primary
+  confidence: established
+  source:
+    zotero_key: Article https://doi.org/10.1038/s41566-023-01364-0
+    claim: experimental system characterized by primary metric

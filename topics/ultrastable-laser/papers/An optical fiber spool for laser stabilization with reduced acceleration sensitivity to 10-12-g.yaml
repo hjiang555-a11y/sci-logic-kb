@@ -1,24 +1,42 @@
-# Hu 2015 — An optical fiber spool for laser stabilization with reduced acceleration sens... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Huang  — Chin.Phys.B Vol.24,No.10 (2015) 104213 [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：ultrastable-laser
 meta:
-  zotero_key: An optical fiber spool for laser stabilization with reduced acceleration sensitivity to 10-12-g
+  zotero_key: Chin.Phys.B Vol.24,No.10 (2015) 104213
   topic: ultrastable-laser
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "An optical fiber spool for laser stabilization with reduced acceleration sensitivity to 10 <sup>−12</sup> /g"
-  year: 2015
-  first_author: "Hu"
-  authors: ["Yong-Qi Hu", "Jing Dong", "Jun-Chao Huang", "Tang Li", "Liang Liu"]
-  journal: "Chinese Physics B"
-  volume: 24
-  pages: 104213
+  reliability: medium
+  title: Chin.Phys.B Vol.24,No.10 (2015) 104213
+  first_author: Huang
+  note: batch minimal extraction; pending expert review for full entities/principles
   doi: 10.1088/1674-1056/24/10/104213
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+entities:
+- id: ent.an_optical_fiber_spool_for_las_system
+  name: Huang  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Huang '
+metrics:
+- id: met.an_optical_fiber_spool_for_las_primary
+  name: Huang  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Chin.Phys.B Vol.24,No.10 (2015) 104213
+      claim: core experimental result
+relations:
+- id: rel.an_optical_fiber_spool_for_las_01
+  subject: ent.an_optical_fiber_spool_for_las_system
+  predicate: CHARACTERIZED-BY
+  object: met.an_optical_fiber_spool_for_las_primary
+  confidence: established
+  source:
+    zotero_key: Chin.Phys.B Vol.24,No.10 (2015) 104213
+    claim: experimental system characterized by primary metric

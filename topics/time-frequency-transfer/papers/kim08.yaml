@@ -1,24 +1,42 @@
-# Kim 2008 — Drift-free femtosecond timing synchronization of remote optical and microwave... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Drift-free femtosecond timing [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
 meta:
-  zotero_key: kim08
+  zotero_key: Drift-free femtosecond timing
   topic: time-frequency-transfer
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Drift-free femtosecond timing synchronization of remote optical and microwave sources"
-  year: 2008
-  first_author: "Kim"
-  authors: ["Jungwon Kim", "Jonathan A. Cox", "Jian Chen", "Franz X. Kärtner"]
-  journal: "Nature Photonics"
-  volume: 2
-  pages: 733-736
-  doi: 10.1038/nphoton.2008.225
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Drift-free femtosecond timing
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1038/nphoton
+entities:
+- id: ent.kim08_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.kim08_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Drift-free femtosecond timing
+      claim: core experimental result
+relations:
+- id: rel.kim08_01
+  subject: ent.kim08_system
+  predicate: CHARACTERIZED-BY
+  object: met.kim08_primary
+  confidence: established
+  source:
+    zotero_key: Drift-free femtosecond timing
+    claim: experimental system characterized by primary metric

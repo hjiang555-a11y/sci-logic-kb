@@ -1,9 +1,0 @@
-evidence: monolithic all-solid-state cavity eliminates air-path fluctuations and reduces
-  round-trip loss, enabling 10^-19 free-running stability
-id: evrel_H93SHF89_rel.endo_2018_18_02
-metadata:
-  source_paper: endo2018
-  zotero_key: H93SHF89
-object: pri.monolithic_cavity_intrinsic_noise_reduction
-predicate: ENABLED-BY
-subject: ent.monolithic_erglass_comb_e18

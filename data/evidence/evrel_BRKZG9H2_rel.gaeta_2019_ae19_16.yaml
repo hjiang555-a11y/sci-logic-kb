@@ -1,8 +1,0 @@
-evidence: sub-milliwatt parametric oscillation threshold
-id: evrel_BRKZG9H2_rel.gaeta_2019_ae19_16
-metadata:
-  source_paper: gaeta2019
-  zotero_key: BRKZG9H2
-object: met.microcomb_pump_threshold_g19
-predicate: CHARACTERIZED-BY
-subject: ent.microresonator_frequency_comb

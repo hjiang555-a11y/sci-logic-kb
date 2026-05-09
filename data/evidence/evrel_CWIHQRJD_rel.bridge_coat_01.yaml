@@ -1,8 +1,0 @@
-evidence: ''
-id: evrel_CWIHQRJD_rel.bridge_coat_01
-metadata:
-  source_paper: cole2013
-  zotero_key: CWIHQRJD
-object: pri.brownian_thermal_noise_fdt
-predicate: BOUNDED-BY
-subject: ent.mirror_coating

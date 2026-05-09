@@ -1,8 +1,0 @@
-evidence: The median laser linewidth for the distribution in Fig. 3B is 16 mHz
-id: evrel_JIZCUZLY_rel.robinson_2019_05
-metadata:
-  source_paper: robinson2019
-  zotero_key: JIZCUZLY
-object: met.laser_linewidth_r19
-predicate: CHARACTERIZED-BY
-subject: ent.si_crystal_fp_cavity_4k_r19

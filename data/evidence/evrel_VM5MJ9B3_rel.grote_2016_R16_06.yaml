@@ -1,8 +1,0 @@
-evidence: electronic noise reduced above 1 kHz
-id: evrel_VM5MJ9B3_rel.grote_2016_R16_06
-metadata:
-  source_paper: grote2016
-  zotero_key: VM5MJ9B3
-object: meth.low_noise_high_power_pd_circuit_design_g16
-predicate: CHARACTERIZES
-subject: met.frequency_band_g16

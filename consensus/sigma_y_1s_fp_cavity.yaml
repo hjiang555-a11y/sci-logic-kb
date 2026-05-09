@@ -1,0 +1,116 @@
+metric: met.fractional_frequency_instability
+context: "FP cavity-stabilized laser, σ_y at τ ≈ 1 s (modified Allan deviation)"
+domain: ultrastable-laser
+updated: 2026-05-09
+confidence: established
+
+consensus:
+  best_demonstrated_value: "mod σ_y = 2.5×10⁻¹⁷"
+  best_demonstrated_system: "17 K Si cavity (6 cm) + AlGaAs crystalline coating"
+  best_demonstrated_paper: "Lee 2026"
+  best_demonstrated_institution: "JILA (Ye group) / PTB"
+  best_demonstrated_conditions: "17 K, Si single crystal spacer, AlGaAs/GaAs DBR coating, optimized vibration isolation"
+  theoretical_limit: "~3×10⁻¹⁸ (with φ_coating < 10⁻⁶ at cryogenic temperatures)"
+  remaining_gap: "~8× (best demonstrated vs theoretical)"
+  contested: false
+
+timeline:
+  - year: 1983
+    value: "< 100 Hz linewidth (not σ_y)"
+    system: "Drever 1983 — PDH technique invented"
+    significance: "Foundation technology"
+    paper: drever1983
+
+  - year: 1999
+    value: "≈ 3×10⁻¹⁶"
+    system: "Young 1999 — ULE cavity, 563 nm dye laser"
+    significance: "First sub-Hz linewidth; established ULE reference cavity platform"
+    paper: young1999
+
+  - year: 2004
+    value: "(theory)"
+    system: "Numata 2004 — FDT thermal noise theory for FP cavities"
+    significance: "Established coating thermal noise as the ultimate limit"
+    paper: numata2004
+
+  - year: 2008
+    value: "≈ 2×10⁻¹⁵"
+    system: "Webster 2008 — First comprehensive thermal noise verification"
+    significance: "Confirmed that observed noise floor matches FDT prediction"
+    paper: webster2008
+
+  - year: 2012
+    value: "≈ 1×10⁻¹⁶"
+    system: "Kessler 2012 — 124 K Si single-crystal cavity"
+    significance: "Si cryogenic platform: 1000× higher Q than ULE, sub-40 mHz linewidth"
+    paper: kessler2012
+
+  - year: 2013
+    value: "(material breakthrough)"
+    system: "Cole 2013 — AlGaAs/GaAs crystalline coating"
+    significance: "10× lower coating mechanical loss than IBS; opened path to 10⁻¹⁷"
+    paper: cole2013
+
+  - year: 2015
+    value: "8×10⁻¹⁷ (thermal limit)"
+    system: "Häfner 2015 — 48 cm room-temp ULE cavity"
+    significance: "Demonstrated that long cavities can reach 10⁻¹⁷ territory without cryogenics"
+    paper: hafner2015
+
+  - year: 2017
+    value: "4×10⁻¹⁷"
+    system: "Matei 2017 — 124 K Si cavity + IBS coating"
+    significance: "Proved that cryogenic Si reaches coating-limited thermal noise floor"
+    paper: matei2017
+
+  - year: 2019
+    value: "6.5×10⁻¹⁷"
+    system: "Robinson 2019 — 4 K Si cavity (Si4)"
+    significance: "First rigorous 4K characterization; discovered power-dependent drift"
+    paper: robinson2019
+
+  - year: 2025
+    value: "3×10⁻¹⁹ (RAM limit)"
+    system: "Parke 2025 — 68 cm cavity, 295 μs storage time"
+    significance: "Longest demonstrated cavity; active RAM cancellation to 10⁻¹⁹ level"
+    paper: parke2025
+
+  - year: 2025
+    value: "≈ 4×10⁻¹⁷"
+    system: "Chen 2025 — 10 cm Si cavity at sub-5 K"
+    significance: "Sub-5K operation; still IBS-limited, points to AlGaAs as next step"
+    paper: chen2025
+
+  - year: 2026
+    value: "2.5×10⁻¹⁷ (WORLD RECORD)"
+    system: "Lee 2026 — 17 K Si + AlGaAs crystalline coating"
+    significance: "Convergence of cryogenic Si + crystalline coating paths; four times better than IBS"
+    paper: lee2026
+
+breakthrough_paths:
+  active:
+    - direction: "Further crystalline coating optimization (GaP, SiN)"
+      expected_gain: "φ < 10⁻⁶ at cryo → σ_y ≈ 10⁻¹⁸"
+      status: proposed
+      papers: []
+
+    - direction: "Longer cavities with crystalline coatings at 17K"
+      expected_gain: "σ_y ∝ 1/L; 20 cm cavity → further 3× improvement"
+      status: proposed
+      papers: []
+
+  demonstrated:
+    - direction: "AlGaAs crystalline coating replaces IBS"
+      achieved_gain: "~10× coating noise reduction"
+      papers: [cole2013, lee2026]
+      status: demonstrated
+
+    - direction: "Cryogenic Si at CTE zero (124K → 17K → <4K)"
+      achieved_gain: "~5× from 300K → 17K; ~30× for substrate Q enhancement"
+      papers: [kessler2012, matei2017, robinson2019, chen2025, lee2026]
+      status: demonstrated
+
+    - direction: "Long cavity (>40 cm) to dilute coating noise"
+      achieved_gain: "~5× from 10cm → 48cm"
+      papers: [hafner2015, parke2025]
+      status: demonstrated

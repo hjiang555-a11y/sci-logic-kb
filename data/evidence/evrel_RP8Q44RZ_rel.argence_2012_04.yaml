@@ -1,8 +1,0 @@
-evidence: vibration perturbations... designed to be acceleration tolerant
-id: evrel_RP8Q44RZ_rel.argence_2012_04
-metadata:
-  source_paper: argence2012
-  zotero_key: RP8Q44RZ
-object: ent.vibration_environment
-predicate: CONDITIONED-BY
-subject: ent.space_cavity_prototype_a12

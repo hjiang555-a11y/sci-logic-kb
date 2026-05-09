@@ -1,9 +1,0 @@
-evidence: timing uncertainties are 100–200 as with in-loop relative frequency stabilities
-  below 1 × 10⁻¹⁶ at 1 s
-id: evrel_9BEBKUGG_rel.yan_2015_15_01
-metadata:
-  source_paper: yan2015
-  zotero_key: 9BEBKUGG
-object: met.erfiber_timing_uncertainty_y15
-predicate: CHARACTERIZED-BY
-subject: ent.attosecond_erfiber_comb_y15

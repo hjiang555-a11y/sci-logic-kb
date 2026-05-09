@@ -1,9 +1,0 @@
-evidence: We use an f–2f nonlinear interferometer to measure the carrier envelope
-  offset frequency
-id: evrel_T6AF6HJF_rel.meyer_2013_ey13_05
-metadata:
-  source_paper: meyer2013
-  zotero_key: T6AF6HJF
-object: pri.self_referencing_f2f
-predicate: ENABLED-BY
-subject: meth.frep_lock_to_cw_reference_m13

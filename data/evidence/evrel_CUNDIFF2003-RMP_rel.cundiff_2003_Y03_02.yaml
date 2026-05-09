@@ -1,9 +1,0 @@
-evidence: measurement and control of f_o becomes feasible through self-referencing
-  with an octave-spanning spectrum.
-id: evrel_CUNDIFF2003-RMP_rel.cundiff_2003_Y03_02
-metadata:
-  source_paper: cundiff2003
-  zotero_key: CUNDIFF2003-RMP
-object: pri.octave_span_enables_absolute_referencing_cy03
-predicate: ENABLED-BY
-subject: pri.cep_controlled_frequency_comb_time_frequency_duality

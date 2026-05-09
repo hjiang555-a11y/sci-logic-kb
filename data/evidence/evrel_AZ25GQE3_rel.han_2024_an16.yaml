@@ -1,8 +1,0 @@
-evidence: 113 km turbulent horizontal open-air path
-id: evrel_AZ25GQE3_rel.han_2024_an16
-metadata:
-  source_paper: han2024
-  zotero_key: AZ25GQE3
-object: ent.atmospheric_turbulence_channel
-predicate: CONDITIONED-BY
-subject: ent.long_path_dcs_h24

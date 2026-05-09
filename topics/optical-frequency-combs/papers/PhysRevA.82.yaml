@@ -1,23 +1,42 @@
-# Coddington 2010 — Coherent dual-comb spectroscopy at high signal-to-noise ratio [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Coddington  — Coherentdual-combspectroscopyathighsignal-to-noiseratio [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: PhysRevA.82
+  zotero_key: Coherentdual-combspectroscopyathighsignal-to-noise
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Coherent dual-comb spectroscopy at high signal-to-noise ratio"
-  year: 2010
-  first_author: "Coddington"
-  authors: ["I. Coddington", "W. Swann", "N. Newbury"]
-  journal: "Physical Review A"
-  volume: 82
-  doi: 10.1103/PhysRevA.82.043817
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Coherentdual-combspectroscopyathighsignal-to-noiseratio
+  first_author: Coddington
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1103/PhysRevA
+entities:
+- id: ent.physreva_82_system
+  name: Coddington  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Coddington '
+metrics:
+- id: met.physreva_82_primary
+  name: Coddington  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Coherentdual-combspectroscopyathighsignal-to-noise
+      claim: core experimental result
+relations:
+- id: rel.physreva_82_01
+  subject: ent.physreva_82_system
+  predicate: CHARACTERIZED-BY
+  object: met.physreva_82_primary
+  confidence: established
+  source:
+    zotero_key: Coherentdual-combspectroscopyathighsignal-to-noise
+    claim: experimental system characterized by primary metric

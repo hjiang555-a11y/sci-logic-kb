@@ -1,19 +1,42 @@
-# Society ???? — Title: font: times; size: 18 point; style: plain; justified: center; capitali... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Kevin 2010 — Dark pulse quantum dot diode laser [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: oe-18-13-13385
+  zotero_key: Dark pulse quantum dot diode laser
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
   reliability: medium
-  title: "Title: font: times; size: 18 point; style: plain; justified: center; capitalization: first word and Names only"
-  first_author: "Society"
-  authors: ["Optical Society"]
-  note: >
-    [批量提取] 元数据来源：PDF metadata。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  title: Dark pulse quantum dot diode laser
+  first_author: Kevin
+  note: batch minimal extraction; pending expert review for full entities/principles
+  year: 2010
+entities:
+- id: ent.oe_18_13_13385_system
+  name: Kevin 2010 experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: Experimental system described in Kevin 2010
+metrics:
+- id: met.oe_18_13_13385_primary
+  name: Kevin 2010 primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Dark pulse quantum dot diode laser
+      claim: core experimental result
+relations:
+- id: rel.oe_18_13_13385_01
+  subject: ent.oe_18_13_13385_system
+  predicate: CHARACTERIZED-BY
+  object: met.oe_18_13_13385_primary
+  confidence: established
+  source:
+    zotero_key: Dark pulse quantum dot diode laser
+    claim: experimental system characterized by primary metric

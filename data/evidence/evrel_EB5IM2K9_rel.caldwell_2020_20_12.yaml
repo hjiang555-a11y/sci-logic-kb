@@ -1,8 +1,0 @@
-evidence: L0 which we have set to the beam height above ground (1.6 m)
-id: evrel_EB5IM2K9_rel.caldwell_2020_20_12
-metadata:
-  source_paper: caldwell2020
-  zotero_key: EB5IM2K9
-object: met.outer_scale_length_c20
-predicate: CHARACTERIZED-BY
-subject: ent.two_way_comb_timing_link_c20

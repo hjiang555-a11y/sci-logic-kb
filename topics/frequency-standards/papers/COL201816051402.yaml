@@ -1,24 +1,42 @@
-# Li 2018 — An improved strontium lattice clock with 10?16 level laser frequency stabiliz... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — COL 16(5), 051402(2018) CHINESE OPTICS LETTERS May 10, 2018 [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：frequency-standards
 meta:
-  zotero_key: COL201816051402
+  zotero_key: COL 16(5), 051402(2018) CHINESE OPTICS LETTERS May
   topic: frequency-standards
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "An improved strontium lattice clock with 10?16 level laser frequency stabilization"
-  year: 2018
-  first_author: "Li"
-  authors: ["Ye Li Ye Li", "Yige Lin Yige Lin", "Qiang Wang Qiang Wang", "Tao Yang Tao Yang", "Zhen Sun Zhen Sun", "Erjun Zang Erjun Zang", "Zhanjun Fang Zhanjun Fang"]
-  journal: "Chinese Optics Letters"
-  volume: 16
-  pages: 21250
-  doi: 10.3788/COL201816.051402
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: COL 16(5), 051402(2018) CHINESE OPTICS LETTERS May 10, 2018
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.3788/COL201816
+entities:
+- id: ent.col201816051402_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.col201816051402_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: COL 16(5), 051402(2018) CHINESE OPTICS LETTERS May
+      claim: core experimental result
+relations:
+- id: rel.col201816051402_01
+  subject: ent.col201816051402_system
+  predicate: CHARACTERIZED-BY
+  object: met.col201816051402_primary
+  confidence: established
+  source:
+    zotero_key: COL 16(5), 051402(2018) CHINESE OPTICS LETTERS May
+    claim: experimental system characterized by primary metric

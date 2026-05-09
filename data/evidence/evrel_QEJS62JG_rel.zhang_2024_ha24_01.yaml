@@ -1,8 +1,0 @@
-evidence: frequency comb ... Er-doped-fiber
-id: evrel_QEJS62JG_rel.zhang_2024_ha24_01
-metadata:
-  source_paper: zhang_s2024
-  zotero_key: QEJS62JG
-object: ent.er_fiber_frequency_comb
-predicate: PART-OF
-subject: ent.ustc_gated_balanced_detection_comb_z24

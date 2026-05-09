@@ -1,9 +1,0 @@
-evidence: CAMS exploits the natural f_CEO modulation of CEP-sensitive harmonics for
-  lock-in detection without external modulators.
-id: evrel_7978HTD3_rel.lesko_2022_K22_03
-metadata:
-  source_paper: lesko2022
-  zotero_key: 7978HTD3
-object: pri.cams_fceo_demodulation
-predicate: ENABLED-BY
-subject: meth.carrier_envelope_amplitude_modulation_spectroscopy

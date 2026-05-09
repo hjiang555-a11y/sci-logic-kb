@@ -1,9 +1,0 @@
-evidence: optical cavity consisting of two highly reflective mirrors contacted to
-  a glass spacer
-id: evrel_A96XGR82_rel.webster_2011_11_01
-metadata:
-  source_paper: webster2011
-  zotero_key: A96XGR82
-object: ent.fp_cavity_system
-predicate: PART-OF
-subject: ent.cubic_force_insensitive_cavity_w11

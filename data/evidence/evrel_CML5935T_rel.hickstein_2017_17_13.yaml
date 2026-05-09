@@ -1,9 +1,0 @@
-evidence: The only equipment required to detect f_CEO is a 780-nm bandpass filter
-  and a photodetector
-id: evrel_CML5935T_rel.hickstein_2017_17_13
-metadata:
-  source_paper: hickstein2017
-  zotero_key: CML5935T
-object: ent.chi2_chi3_waveguide_fceo_h17
-predicate: CONDITIONED-BY
-subject: meth.on_chip_f2f_stabilization

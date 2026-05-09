@@ -1,9 +1,0 @@
-evidence: comb-calibrated HPF has the intrinsic stability to support infrared spectroscopy
-  with precision below 10 cm/s
-id: evrel_9YYDT9H4_rel.metcalf_2019_19_06
-metadata:
-  source_paper: metcalf2019
-  zotero_key: 9YYDT9H4
-object: met.hpf_instrumental_rv_precision_m19
-predicate: CHARACTERIZED-BY
-subject: ent.hpf_spectrograph_m19

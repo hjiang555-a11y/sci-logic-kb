@@ -1,0 +1,41 @@
+name: v5-reasoning
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'topics/**/*.yaml'
+      - 'logic/chains/*.yaml'
+      - 'consensus/*.yaml'
+      - 'evidence/*.yaml'
+  pull_request:
+    paths:
+      - 'topics/**/*.yaml'
+      - 'logic/chains/*.yaml'
+      - 'consensus/*.yaml'
+      - 'evidence/*.yaml'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: pip install pyyaml
+      - name: Rebuild evidence indices
+        run: |
+          for topic in ultrastable-laser optical-frequency-combs frequency-standards time-frequency-transfer timescales shared; do
+            python scripts/build_evidence_index.py --topic $topic || true
+          done
+      - name: Validate reasoning chains
+        run: python scripts/validate_chains.py --strict
+      - name: Reasoning readiness stats
+        run: python scripts/reasoning_stats.py
+      - name: Check for stale evidence
+        run: |
+          python scripts/reasoning_stats.py --json > /tmp/reasoning_stats.json
+          echo "Reasoning stats generated"

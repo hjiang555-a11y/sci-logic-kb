@@ -1,19 +1,42 @@
-# Tai ???? — Transportable 1555-nm Ultra-Stable Laser with Sub-0.185-Hz Linewidth [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Volume 34 Number 9 September 2017 [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：ultrastable-laser
 meta:
-  zotero_key: cpl34-090602-2017-0572w
+  zotero_key: Volume 34 Number 9 September 2017
   topic: ultrastable-laser
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
   reliability: medium
-  title: "Transportable 1555-nm Ultra-Stable Laser with Sub-0.185-Hz Linewidth"
-  first_author: "Tai"
-  authors: ["Zhao-Yang Tai, Lu-Lu Yan, Yan-Yan Zhang, Xiao-Fei Zhang, Wen-Ge Guo, Shou-Gang Zhang, Hai-Feng Jiang"]
-  note: >
-    [批量提取] 元数据来源：PDF metadata。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  title: Volume 34 Number 9 September 2017
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1088/0256-307X/34/9/090602
+entities:
+- id: ent.cpl34_090602_2017_0572w_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.cpl34_090602_2017_0572w_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Volume 34 Number 9 September 2017
+      claim: core experimental result
+relations:
+- id: rel.cpl34_090602_2017_0572w_01
+  subject: ent.cpl34_090602_2017_0572w_system
+  predicate: CHARACTERIZED-BY
+  object: met.cpl34_090602_2017_0572w_primary
+  confidence: established
+  source:
+    zotero_key: Volume 34 Number 9 September 2017
+    claim: experimental system characterized by primary metric

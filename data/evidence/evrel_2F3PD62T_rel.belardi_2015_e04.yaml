@@ -1,9 +1,0 @@
-evidence: the use of the DARfbf design ... shows the advantage of having a leakage
-  loss of less than 1 dB/km over a larger bandwidth
-id: evrel_2F3PD62T_rel.belardi_2015_e04
-metadata:
-  source_paper: belardi2015
-  zotero_key: 2F3PD62T
-object: pri.free_core_boundary_mode_decoupling
-predicate: ENABLED-BY
-subject: ent.antiresonant_hollow_core_fiber

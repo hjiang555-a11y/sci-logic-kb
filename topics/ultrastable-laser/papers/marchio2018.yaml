@@ -53,9 +53,9 @@ principles:
 - id: pri.comprehensive_optical_characterization_large_area_coatings_m18
   name: 大面积晶体镀层光学性能综合表征原理
   description: '大面积（≥50 mm）晶体镀层的光学性能需通过透射、吸收、散射、缺陷密度等多个独立参数进行综合表征， 任何单一参数不足以评估其整体光学品质。镀层在引力波探测器等精密应用中的适用性取决于这些参数的同时达标。
-
     '
   domain: optics, coating_characterization
+  conditions: "大面积（≥50 mm）晶体镀层样品；需透射、吸收、散射、缺陷密度等多参数同时测量；适用于引力波探测器等高精度光学应用"
   core_idea: multi‑parameter characterization ensures coating suitability for high‑precision
     applications
   source:

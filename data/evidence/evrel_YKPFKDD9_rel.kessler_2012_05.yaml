@@ -1,8 +1,0 @@
-evidence: FWHM of 49(4) mHz... linewidth is below 35 mHz
-id: evrel_YKPFKDD9_rel.kessler_2012_05
-metadata:
-  source_paper: kessler2012
-  zotero_key: YKPFKDD9
-object: met.laser_linewidth_k12
-predicate: CHARACTERIZED-BY
-subject: ent.si_crystal_fp_cavity_k12

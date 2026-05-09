@@ -1,0 +1,66 @@
+metric: met.allan_deviation_noise_type_identification
+metric_name: Allan deviation noise type identification
+context: The universal diagnostic for frequency standards — noise classification via sigma_y(tau) slope
+domain: shared
+updated: '2026-05-09'
+confidence: established
+consensus:
+  core_principle: The slope of log(sigma_y) vs log(tau) identifies the dominant noise process
+  five_noise_types: WPM, FPM, WFM, FFM (flicker floor), RWFM
+  primary_metric_for_usl: Modified Allan deviation (MDEV) — discriminates WPM from FPM
+  standard_reference: IEEE Std 1139, NIST SP 1065 (Riley 2008)
+noise_type_table:
+- type: White PM (WPM)
+  slope: sigma_y proportional to tau^-1
+  PSD: S_y(f) proportional to f^2
+  ADEV_converges: true
+- type: Flicker PM (FPM)
+  slope: sigma_y proportional to tau^-1
+  PSD: S_y(f) proportional to f^1
+  ADEV_converges: true
+  note: Use MDEV to distinguish from WPM
+- type: White FM (WFM)
+  slope: sigma_y proportional to tau^-1/2
+  PSD: S_y(f) proportional to f^0
+  ADEV_converges: true
+- type: Flicker FM (FFM)
+  slope: sigma_y proportional to tau^0 (flicker floor)
+  PSD: S_y(f) proportional to f^-1
+  ADEV_converges: true
+  note: Dominant limit for FP cavity lasers (Brownian thermal noise)
+- type: Random walk FM (RWFM)
+  slope: sigma_y proportional to tau^+1/2
+  PSD: S_y(f) proportional to f^-2
+  ADEV_converges: false
+  note: Use Hadamard deviation
+timeline:
+- year: 1966
+  value: Two-sample (Allan) variance defined
+  system: Allan — Statistics of Atomic Frequency Standards
+  significance: Solved classical variance divergence for flicker noise; became universal standard
+- year: 1976
+  value: NBS TN 679 — characterization methods
+  system: Howe — frequency domain stability measurement
+  significance: Established systematic methodology
+- year: 1981
+  value: Modified Allan variance (MDEV)
+  system: Allan and Barnes — phase averaging kernel
+  significance: Distinguishes WPM from FPM
+- year: 1987
+  value: Comprehensive review
+  system: Allan — IEEE Proc. review
+  significance: All variance measures and relationships
+- year: 1990
+  value: NIST TN 1337
+  system: Sullivan — clock characterization guide
+  significance: Practical handbook for clock metrologists
+- year: 2008
+  value: NIST SP 1065 Handbook
+  system: Riley — definitive reference
+  significance: Complete reference with confidence intervals and software
+- year: 2016
+  value: Classical variance debate
+  system: Allan — re-examination
+  significance: Fundamentals for modern optical clock metrology
+trend: Allan deviation remains the universal diagnostic. The mathematical foundation established in 1966-2008 is complete; current work focuses on extending to optical clock regimes and inter-comparison
+  methodologies.

@@ -1,8 +1,0 @@
-evidence: 500 MHz ytterbium fiber laser comb without amplifiers
-id: evrel_VATLBIAD_rel.wang_2014_14_02
-metadata:
-  source_paper: wang2014
-  zotero_key: VATLBIAD
-object: met.frep_500mhz_no_amp_w14
-predicate: CHARACTERIZED-BY
-subject: ent.yb_fiber_500mhz_comb_wang14

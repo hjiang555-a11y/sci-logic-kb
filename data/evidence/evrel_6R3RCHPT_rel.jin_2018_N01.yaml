@@ -1,8 +1,0 @@
-evidence: 30-cm-long Fabry-Pérot cavities
-id: evrel_6R3RCHPT_rel.jin_2018_N01
-metadata:
-  source_paper: jin2018
-  zotero_key: 6R3RCHPT
-object: ent.fp_cavity_system
-predicate: PART-OF
-subject: ent.ule_cavity_30cm_578nm_j18

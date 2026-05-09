@@ -1,0 +1,90 @@
+chain_id: allan_variance_foundations
+question: "What is the mathematical foundation of frequency stability characterization, and how do Allan variance, modified Allan variance, and phase noise PSD relate?"
+domain: shared
+confidence: draft
+last_updated: 2026-05-09
+
+limiting_principle:
+  id: "N/A"
+  name: "Noise type classification via Allan deviation slope analysis"
+  note: "This is a mathematical foundations chain—no single physical limiting principle. The 'limit' is the conceptual framework of noise type identification."
+  statement: >
+    The slope of log(σ_y) vs log(τ) directly identifies the dominant noise type.
+    This is the primary diagnostic tool for oscillator characterization.
+    Five canonical noise types (α = 2,1,0,-1,-2) cover all practical stability regimes.
+
+definition:
+  concept: "Allan variance (ADEV)"
+  formula: "σ²_y(τ) = ½⟨(ȳ_{k+1} − ȳ_k)²⟩"
+  statement: >
+    The standard Allan variance (or two-sample variance) measures fractional frequency
+    stability as a function of averaging time τ. Unlike classical variance, ADEV converges
+    for all common noise types (white PM, flicker PM, white FM, flicker FM, random walk FM).
+    It is the primary metric for comparing oscillator stability across the time-frequency field.
+  defined_by: allan1966.yaml
+
+noise_types:
+  - type: "White phase modulation (WPM)"
+    slope: "σ_y(τ) ∝ τ⁻¹"
+    psd: "S_y(f) ∝ f²"
+  - type: "Flicker phase modulation (FPM)"
+    slope: "σ_y(τ) ∝ τ⁻¹"
+    psd: "S_y(f) ∝ f¹"
+  - type: "White frequency modulation (WFM)"
+    slope: "σ_y(τ) ∝ τ⁻¹/²"
+    psd: "S_y(f) ∝ f⁰"
+  - type: "Flicker frequency modulation (FFM)"
+    slope: "σ_y(τ) ∝ τ⁰ (flicker floor)"
+    psd: "S_y(f) ∝ f⁻¹"
+  - type: "Random walk frequency modulation (RWFM)"
+    slope: "σ_y(τ) ∝ τ⁺¹/²"
+    psd: "S_y(f) ∝ f⁻²"
+
+variants:
+  - name: "Modified Allan deviation (MDEV)"
+    advantage: "Discriminates WPM from FPM (which ADEV cannot)"
+    use: "Primary metric for ultrastable-laser stability characterization"
+
+  - name: "Time deviation (TDEV)"
+    advantage: "Measures time (phase) stability rather than fractional frequency stability"
+    use: "Clock and time transfer characterization"
+
+  - name: "Hadamard deviation"
+    advantage: "Converges for random walk FM (which ADEV does not)"
+    use: "Characterizing long-term drift in active hydrogen masers"
+
+  - name: "Overlapping Allan deviation (OADEV)"
+    advantage: "Better confidence at long τ by using overlapping samples"
+    use: "Standard for most modern stability measurements"
+
+phase_noise_relationship:
+  statement: >
+    Frequency domain phase noise PSD L(f) and time domain Allan variance σ²_y(τ) are
+    related through a set of integral transforms. For a given noise type (power law
+    exponent α), the conversion between S_y(f) and σ_y(τ) is analytic. The five canonical
+    noise types (α = 2, 1, 0, -1, -2) cover all practical stability regimes.
+
+key_principle:
+  name: "Noise type identification from Allan deviation slope"
+  statement: >
+    The slope of log(σ_y) vs log(τ) directly identifies the dominant noise type at
+    each averaging time. This is the primary diagnostic tool for oscillator characterization.
+    For example, a flicker floor (flat σ_y) at τ = 0.1-100 s indicates flicker FM
+    from Brownian thermal noise — the dominant limit for FP cavity-stabilized lasers.
+
+references:
+  foundational:
+    - allan1966: "Statistics of atomic frequency standards"
+    - allan1987: "Time and frequency characterization, estimation, and prediction"
+    - howe1976: "NBS TN 679 — Characterization of frequency stability"
+    - riley2008: "NIST SP 1065 — Handbook of frequency stability analysis"
+    - sullivan1990: "NIST TN 1337 — Characterization of clocks and oscillators"
+
+  recent:
+    - allan2016: "Should the classical variance be used as a basic measure in standards metrology?"
+
+evidence:
+  - relation_id: rel.allan_1966_66_01
+    note: "Foundational: definition of two-sample (Allan) variance"
+  - relation_id: rel.howe_1976_76_01
+    note: "NBS TN 679: comprehensive frequency stability characterization methods"

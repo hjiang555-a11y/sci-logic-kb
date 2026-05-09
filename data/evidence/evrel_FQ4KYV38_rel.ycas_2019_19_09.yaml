@@ -1,9 +1,0 @@
-evidence: probe the fundamental mid-infrared C-H stretch modes of volatile organic
-  compounds
-id: evrel_FQ4KYV38_rel.ycas_2019_19_09
-metadata:
-  source_paper: ycas2019
-  zotero_key: FQ4KYV38
-object: pri.molecular_rovibrational_fingerprint
-predicate: ENABLED-BY
-subject: meth.midir_dcs_vocs_protocol_y19

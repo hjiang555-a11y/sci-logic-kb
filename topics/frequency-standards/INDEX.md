@@ -2,26 +2,40 @@
 
 # Frequency Standards — Topic Index
 
-> Auto-generated 2026-05-04 04:06 UTC · 53 papers · 109 nodes · 89 relations
+> Auto-generated 2026-05-09 06:38 UTC · 73 papers · 172 nodes · 122 relations
 
 ## Entities
 
 | ID | Name | Level | Source |
 |----|------|------:|--------|
+| `ent.1367_2630_14_1_013045_system` | experimental system | 2 | [1367-2630_14_1_013045](topics/frequency-standards/papers/1367-2630_14_1_013045.yaml) |
+| `ent.1823_1__system` | Jefferts  experimental system | 2 | [1823(1)](topics/frequency-standards/papers/1823(1).yaml) |
+| `ent.2020_the_emergence_of_picokelv_system` | experimental system | 2 | [2020-The emergence of picokelvin physics-Chen_](topics/frequency-standards/papers/2020-The emergence of picokelvin physics-Chen_.yaml) |
+| `ent.abb2473_nakamura_sm_system` | Jeff  experimental system | 2 | [abb2473_nakamura_sm](topics/frequency-standards/papers/abb2473_nakamura_sm.yaml) |
 | `ent.aeppli2024_sr_clock_8e19` | Aeppli 2024 JILA Sr 光晶格钟 — 8×10⁻¹⁹ 系统不确定度 | — | [aeppli2024](topics/frequency-standards/papers/aeppli2024.yaml) |
+| `ent.al_ion_chou_cw_prl_2010_system` | Clocks  experimental system | 2 | [Al ion Chou CW PRL 2010](topics/frequency-standards/papers/Al ion Chou CW PRL 2010.yaml) |
 | `ent.al_ion_quantum_logic_clock_r08` | NIST ²⁷Al⁺ 量子逻辑光钟（Rosenband 2008） | 2 | [rosenband2008](topics/frequency-standards/papers/rosenband2008.yaml) |
 | `ent.bacon_three_clock_network_b21` | Boulder BACON 三光钟网络比对（Bacon 2021） | 2 | [bacon2021](topics/frequency-standards/papers/bacon2021.yaml) |
 | `ent.barber2008_yb_lattice_light_shift` | Barber 2008 Yb 光晶格钟光频移评估（NIST） | — | [barber2008](topics/frequency-standards/papers/barber2008.yaml) |
 | `ent.barwood2012_sr88_auto_laser_control` | Barwood 2012 ⁸⁸Sr⁺ 光频标自动激光控制（NPL） | — | [barwood2012](topics/frequency-standards/papers/barwood2012.yaml) |
 | `ent.beloy2020_ba4_optical_clock_candidate` | Beloy 2020 Ba⁴⁺ 光钟候选理论评估（NIST） | — | [beloy2020](topics/frequency-standards/papers/beloy2020.yaml) |
+| `ent.bothwell_2019_metrologia_56_06_system` | Bothwell 2019 experimental system | 2 | [Bothwell_2019_Metrologia_56_065004](topics/frequency-standards/papers/Bothwell_2019_Metrologia_56_065004.yaml) |
 | `ent.bowden2019_pyramid_mot_optical_clock` | Bowden 2019 集成光腔金字塔 MOT 光钟平台（NPL） | — | [bowden2019](topics/frequency-standards/papers/bowden2019.yaml) |
 | `ent.brown2017_hyperpolarizability_sr` | Brown 2017 Sr 光钟 hyperpolarizability 和 operational magic wa… | — | [brown2017](topics/frequency-standards/papers/brown2017.yaml) |
 | `ent.burt2021_dsac_space_ion_clock` | Burt 2021 DSAC 空间汞离子微波钟（NASA/JPL） | — | [burt2021](topics/frequency-standards/papers/burt2021.yaml) |
 | `ent.campbell2012_th229_ion_nuclear_clock` | Campbell 2012 ²²⁹Th²⁺ 单离子核光钟方案 | — | [campbell2012](topics/frequency-standards/papers/campbell2012.yaml) |
+| `ent.cesium_fountain_frequency_synthesizer_ntsc` | NTSC铯喷泉钟频率综合器 | 2 | [zhao2008](topics/frequency-standards/papers/zhao2008.yaml) |
 | `ent.cesium_fountain_standard_clairon1995` | 铯原子喷泉频率标准 (Clairon 1995) | 2 | [clairon1995](topics/frequency-standards/papers/clairon1995.yaml) |
+| `ent.col201816051402_system` | experimental system | 2 | [COL201816051402](topics/frequency-standards/papers/COL201816051402.yaml) |
+| `ent.delva2017_article_clocksinspac_system` | experimental system | 2 | [Delva2017_Article_ClocksInSpaceForTestsOfFunda](topics/frequency-standards/papers/Delva2017_Article_ClocksInSpaceForTestsOfFunda.yaml) |
+| `ent.denker2018_article_geodeticmet_system` | experimental system | 2 | [Denker2018_Article_GeodeticMethodsToDetermineT](topics/frequency-standards/papers/Denker2018_Article_GeodeticMethodsToDetermineT.yaml) |
+| `ent.e2019_100324_6_system` | Guglielmo  experimental system | 2 | [e2019-100324-6](topics/frequency-standards/papers/e2019-100324-6.yaml) |
+| `ent.eftf09_millo_et_al_proceeding_system` | Millo  experimental system | 2 | [eftf09 millo et al proceeding](topics/frequency-standards/papers/eftf09 millo et al proceeding.yaml) |
 | `ent.hg_ion_optical_clock_nist_o06` | NIST ²⁰³Hg⁺ 单离子光钟（Oskay 2006） | 2 | [oskay2006](topics/frequency-standards/papers/oskay2006.yaml) |
+| `ent.hg_mcferran_prl_2012_system` | Mejri  experimental system | 2 | [Hg Mcferran PRL 2012](topics/frequency-standards/papers/Hg Mcferran PRL 2012.yaml) |
 | `ent.huang2016_ca40_ion_clock_comparison` | Huang 2016 两台 ⁴⁰Ca⁺ 光钟 10⁻¹⁷ 级比对（WIPM） | — | [huang2016](topics/frequency-standards/papers/huang2016.yaml) |
 | `ent.huntemann2012_yb_e3_ion_clock` | Huntemann 2012 ¹⁷¹Yb⁺ E3 单离子光钟（PTB） | — | [huntemann2012](topics/frequency-standards/papers/huntemann2012.yaml) |
+| `ent.in_wang_optics_communication_system` | Elsevier  experimental system | 2 | [In Wang Optics Communication](topics/frequency-standards/papers/In Wang Optics Communication.yaml) |
 | `ent.inaba2013_yb_comb_linewidth_transfer` | Inaba 2013 Yb 光钟频率梳线宽转移光谱（NMIJ） | — | [inaba2013](topics/frequency-standards/papers/inaba2013.yaml) |
 | `ent.jila_dual_sr_clock_si_lo_o19` | JILA 双 ⁸⁷Sr 光晶格钟 + Si cavity LO（Oelker 2019） | 2 | [oelker2019](topics/frequency-standards/papers/oelker2019.yaml) |
 | `ent.jila_mm_scale_redshift_sr_clock_b22` | JILA 毫米尺度引力红移 Sr 晶格钟实验（Bothwell 2022） | 2 | [bothwell2022](topics/frequency-standards/papers/bothwell2022.yaml) |
@@ -30,6 +44,8 @@
 | `ent.kazakov2012_th_nuclear_clock_theory` | Kazakov 2012 ²²⁹Th 核光钟理论框架 | — | [kazakov2012](topics/frequency-standards/papers/kazakov2012.yaml) |
 | `ent.king2022_hci_ar13_optical_clock` | King 2022 高电荷离子 Ar¹³⁺ 光钟（PTB） | — | [king2022](topics/frequency-standards/papers/king2022.yaml) |
 | `ent.kolkowitz2016_clock_gw_detector` | Kolkowitz 2016 光钟引力波探测方案（JILA/Harvard） | — | [kolkowitz2016](topics/frequency-standards/papers/kolkowitz2016.yaml) |
+| `ent.li_2024_metrologia_61_015006_system` | Li 2024 experimental system | 2 | [Li_2024_Metrologia_61_015006](topics/frequency-standards/papers/Li_2024_Metrologia_61_015006.yaml) |
+| `ent.lj15739_system` | experimental system | 2 | [LJ15739](topics/frequency-standards/papers/LJ15739.yaml) |
 | `ent.microwave_frequency_standard` | 微波频率标准（Level 1 总节点） | 1 | [heavner2005](topics/frequency-standards/papers/heavner2005.yaml) |
 | `ent.nimsri_sr_clock_cas2024` | NimSrI Sr光晶格钟（中国科学院国家授时中心，2024） | 2 | [li2024](topics/frequency-standards/papers/li2024.yaml) |
 | `ent.nist_f1_cs_fountain_h05` | NIST-F1 铯喷泉初级频标（2005 改进版） | 2 | [heavner2005](topics/frequency-standards/papers/heavner2005.yaml) |
@@ -38,9 +54,23 @@
 | `ent.ooi2025_solid_state_nuclear_clock_reproducibility` | Ooi 2025 固态 ²²⁹ᵐTh 核光钟频率复现性（JILA） | — | [ooi2025](topics/frequency-standards/papers/ooi2025.yaml) |
 | `ent.optical_frequency_standard` | 光学频率标准（通用） | 1 | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
 | `ent.optical_lattice_clock` | 光晶格钟（架构子类型） | 2 | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
+| `ent.physrevlett_123_033201_quantum_system` | experimental system | 2 | [PhysRevLett.123.033201-quantum logic clock to -19](topics/frequency-standards/papers/PhysRevLett.123.033201-quantum logic clock to -19.yaml) |
+| `ent.prxquantum_4_040346_system` | experimental system | 2 | [PRXQuantum.4.040346](topics/frequency-standards/papers/PRXQuantum.4.040346.yaml) |
 | `ent.roslund2024_optical_clocks_at_sea` | Roslund 2024 舰载 Sr 光晶格钟（NIST/NRL） | — | [roslund2024](topics/frequency-standards/papers/roslund2024.yaml) |
+| `ent.s00340_017_6731_x_system` | experimental system | 2 | [s00340-017-6731-x](topics/frequency-standards/papers/s00340-017-6731-x.yaml) |
+| `ent.s41467_018_05219_z_system` | experimental system | 2 | [s41467-018-05219-z](topics/frequency-standards/papers/s41467-018-05219-z.yaml) |
+| `ent.s41566_019_0493_4_system` | experimental system | 2 | [s41566-019-0493-4](topics/frequency-standards/papers/s41566-019-0493-4.yaml) |
+| `ent.s41567_017_0042_3_system` | Fred  experimental system | 2 | [s41567-017-0042-3](topics/frequency-standards/papers/s41567-017-0042-3.yaml) |
+| `ent.s41567_022_01794_7_system` | May  experimental system | 2 | [s41567-022-01794-7](topics/frequency-standards/papers/s41567-022-01794-7.yaml) |
+| `ent.s41586_021_04344_y_system` | Brett  experimental system | 2 | [s41586-021-04344-y](topics/frequency-standards/papers/s41586-021-04344-y.yaml) |
+| `ent.s41586_021_04349_7_system` | Colin  experimental system | 2 | [s41586-021-04349-7](topics/frequency-standards/papers/s41586-021-04349-7.yaml) |
+| `ent.s41586_023_05894_z_system` | Thomas  experimental system | 2 | [s41586-023-05894-z](topics/frequency-standards/papers/s41586-023-05894-z.yaml) |
+| `ent.s41598_018_26365_w_system` | experimental system | 2 | [s41598-018-26365-w](topics/frequency-standards/papers/s41598-018-26365-w.yaml) |
+| `ent.science_2020_nakamura_system` | experimental system | 2 | [Science 2020 Nakamura](topics/frequency-standards/papers/Science 2020 Nakamura.yaml) |
 | `ent.shi2019_good_bad_cavity_active_clock` | Shi 2019 good-bad-cavity 主动光钟锁相（中科院） | — | [shi2019](topics/frequency-standards/papers/shi2019.yaml) |
 | `ent.si_second_redefinition_roadmap_2021` | SI 秒重新定义路线图（2021 CCTF） | — | [si_second_redefinition_roadmap2021](topics/frequency-standards/papers/si_second_redefinition_roadmap2021.yaml) |
+| `ent.sr_88_ion_madej_prl_2012_system` | Alan  experimental system | 2 | [Sr 88 ion Madej PRL 2012](topics/frequency-standards/papers/Sr 88 ion Madej PRL 2012.yaml) |
+| `ent.sr_best_clock_bloom_nature_system` | experimental system | 2 | [Sr best clock_Bloom_Nature](topics/frequency-standards/papers/Sr best clock_Bloom_Nature.yaml) |
 | `ent.sr_optical_lattice_clock_jila2014` | JILA Sr 光晶格原子钟（2014） | 2 | [bloom2014](topics/frequency-standards/papers/bloom2014.yaml) |
 | `ent.takamoto2020_transportable_sr_clock_gr_test` | Takamoto 2020 可搬运 Sr 光晶格钟广义相对论检验（RIKEN） | — | [takamoto2020](topics/frequency-standards/papers/takamoto2020.yaml) |
 | `ent.takamoto2022_transportable_clock_perspective` | Takamoto 2022 可搬运光晶格钟前景综述（RIKEN） | — | [takamoto2022_perspective](topics/frequency-standards/papers/takamoto2022_perspective.yaml) |
@@ -64,6 +94,7 @@
 | `pri.correlation_spectroscopy_clock_comparison` | 关联谱光钟比对原理 | method | [zhang2023_lu](topics/frequency-standards/papers/zhang2023_lu.yaml) |
 | `pri.dick_effect` | Dick 效应（时钟周期死时间噪声混叠） | domain | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
 | `pri.e3_octupole_transition_optical_clock` | 电八极（E3）跃迁光钟原理 | domain | [huntemann2012](topics/frequency-standards/papers/huntemann2012.yaml) |
+| `pri.frequency_synthesizer_phase_noise_to_fountain_stability` | 频率综合器相位噪声至喷泉钟稳定度传递 | engineering | [zhao2008](topics/frequency-standards/papers/zhao2008.yaml) |
 | `pri.good_bad_cavity_active_clock` | Good-bad-cavity 主动光钟原理 | method | [shi2019](topics/frequency-standards/papers/shi2019.yaml) |
 | `pri.gravitational_redshift_within_atomic_sample` | 原子样品内部引力红移可分辨原理 | domain | [bothwell2022](topics/frequency-standards/papers/bothwell2022.yaml) |
 | `pri.highly_charged_ion_optical_clock` | 高电荷离子光钟原理 | method | [king2022](topics/frequency-standards/papers/king2022.yaml) |
@@ -95,6 +126,7 @@
 | ID | Name | Source |
 |----|------|--------|
 | `meth.cesium_fountain_operation_cycle` | 铯原子喷泉运行周期 | [clairon1995](topics/frequency-standards/papers/clairon1995.yaml) |
+| `meth.dds_based_frequency_synthesis_chain` | 基于DDS的频率综合链 | [zhao2008](topics/frequency-standards/papers/zhao2008.yaml) |
 | `meth.ramsey_spectroscopy_clock` | Ramsey 光谱法（光钟频率测量） | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
 | `meth.sr_optical_lattice_clock_stack_l08` | Sr 光晶格钟全栈集成方法（Ludlow thesis） | [ludlow2008_thesis](topics/frequency-standards/papers/ludlow2008_thesis.yaml) |
 | `meth.time_of_flight_velocity_distribution` | 飞行时间法测速 | [clairon1995](topics/frequency-standards/papers/clairon1995.yaml) |
@@ -115,6 +147,7 @@
 | `met.clock_instability_yb_hinkley2013` | 时钟不稳定性（Yb，Hinkley 2013） | 1.6e-18 | [hinkley2013](topics/frequency-standards/papers/hinkley2013.yaml) |
 | `met.clock_instability_yb_schioppo2017` | 时钟不稳定性（Yb双系综，Schioppo 2017） | 3e-18 | [schioppo2017](topics/frequency-standards/papers/schioppo2017.yaml) |
 | `met.fractional_frequency_stability_clairon1995` | 分数频率不稳定度 $\sigma_y(\tau)$ | 3 * 10^-13 / sqrt(tau) | [clairon1995](topics/frequency-standards/papers/clairon1995.yaml) |
+| `met.frequency_synthesizer_phase_noise_9ghz` | 9.2 GHz频率综合器相位噪声 | -82 dB[Rad²/Hz] @ 1 Hz offset | [zhao2008](topics/frequency-standards/papers/zhao2008.yaml) |
 | `met.geodesy_uncertainty_grotti2018` | 大地测量引力势差不确定度（Grotti 2018） | 5e-18 | [grotti2018](topics/frequency-standards/papers/grotti2018.yaml) |
 | `met.huang2016_ca40_comparison_uncertainty` | Huang 2016 ⁴⁰Ca⁺ 光钟比对不确定度 | 10⁻¹⁷ 级比对不确定度 | [huang2016](topics/frequency-standards/papers/huang2016.yaml) |
 | `met.huntemann2012_yb_e3_frequency_ratio` | Huntemann 2012 Yb⁺ E3/Cs 频率比和 μ 变化约束 | Yb⁺/Cs 频率比长期测量；约束 d(ln μ)/dt | [huntemann2012](topics/frequency-standards/papers/huntemann2012.yaml) |
@@ -137,6 +170,7 @@
 | `met.clock_instability_sr_li2024` | 时钟短期不稳定性（NimSrI，Li 2024） | 3.3e-17 | [li2024](topics/frequency-standards/papers/li2024.yaml) |
 | `met.clock_instability_yb_hinkley2013_short` | 时钟短期不稳定性（Yb，Hinkley 2013） | 3.2e-16 | [hinkley2013](topics/frequency-standards/papers/hinkley2013.yaml) |
 | `met.ramsey_linewidth_clairon1995` | Ramsey 共振线宽 | < 700 mHz | [clairon1995](topics/frequency-standards/papers/clairon1995.yaml) |
+| `met.synthesizer_stability_contribution_to_fountain` | 频率综合器对喷泉钟秒级稳定度贡献 | 2.2×10⁻¹⁵ | [zhao2008](topics/frequency-standards/papers/zhao2008.yaml) |
 
 ### 🔧 Engineering (κ/温度/磁场)
 
@@ -148,11 +182,44 @@
 
 | ID | Name | Best Value | Source |
 |----|------|------------|--------|
+| `met.1367_2630_14_1_013045_primary` | primary metric | see paper | [1367-2630_14_1_013045](topics/frequency-standards/papers/1367-2630_14_1_013045.yaml) |
+| `met.1823_1__primary` | Jefferts  primary metric | see paper | [1823(1)](topics/frequency-standards/papers/1823(1).yaml) |
+| `met.2020_the_emergence_of_picokelv_primary` | primary metric | see paper | [2020-The emergence of picokelvin physics-Chen_](topics/frequency-standards/papers/2020-The emergence of picokelvin physics-Chen_.yaml) |
+| `met.abb2473_nakamura_sm_primary` | Jeff  primary metric | see paper | [abb2473_nakamura_sm](topics/frequency-standards/papers/abb2473_nakamura_sm.yaml) |
+| `met.al_ion_chou_cw_prl_2010_primary` | Clocks  primary metric | see paper | [Al ion Chou CW PRL 2010](topics/frequency-standards/papers/Al ion Chou CW PRL 2010.yaml) |
+| `met.bothwell_2019_metrologia_56_06_primary` | Bothwell 2019 primary metric | see paper | [Bothwell_2019_Metrologia_56_065004](topics/frequency-standards/papers/Bothwell_2019_Metrologia_56_065004.yaml) |
+| `met.col201816051402_primary` | primary metric | see paper | [COL201816051402](topics/frequency-standards/papers/COL201816051402.yaml) |
+| `met.delva2017_article_clocksinspac_primary` | primary metric | see paper | [Delva2017_Article_ClocksInSpaceForTestsOfFunda](topics/frequency-standards/papers/Delva2017_Article_ClocksInSpaceForTestsOfFunda.yaml) |
+| `met.denker2018_article_geodeticmet_primary` | primary metric | see paper | [Denker2018_Article_GeodeticMethodsToDetermineT](topics/frequency-standards/papers/Denker2018_Article_GeodeticMethodsToDetermineT.yaml) |
+| `met.e2019_100324_6_primary` | Guglielmo  primary metric | see paper | [e2019-100324-6](topics/frequency-standards/papers/e2019-100324-6.yaml) |
+| `met.eftf09_millo_et_al_proceeding_primary` | Millo  primary metric | see paper | [eftf09 millo et al proceeding](topics/frequency-standards/papers/eftf09 millo et al proceeding.yaml) |
+| `met.hg_mcferran_prl_2012_primary` | Mejri  primary metric | see paper | [Hg Mcferran PRL 2012](topics/frequency-standards/papers/Hg Mcferran PRL 2012.yaml) |
+| `met.in_wang_optics_communication_primary` | Elsevier  primary metric | see paper | [In Wang Optics Communication](topics/frequency-standards/papers/In Wang Optics Communication.yaml) |
+| `met.li_2024_metrologia_61_015006_primary` | primary metric | see paper | [Li_2024_Metrologia_61_015006](topics/frequency-standards/papers/Li_2024_Metrologia_61_015006.yaml) |
+| `met.lj15739_primary` | primary metric | see paper | [LJ15739](topics/frequency-standards/papers/LJ15739.yaml) |
 | `met.optical_clock_fractional_instability` | 光学原子钟分数频率不稳定度 | σ_y(τ) ≈ 5×10⁻¹⁷/√τ（最佳光晶格钟，综述汇总） | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
 | `met.optical_clock_fractional_uncertainty` | 光学原子钟分数频率不确定度（系统效应） | <10⁻¹⁸（多个系统）；5.5×10⁻¹⁹（²⁷Al⁺ NIST，当前最佳，综述汇总） | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
 | `met.optical_clock_fractional_uncertainty_2016_benchmark` | 2016 年光钟最佳分数系统不确定度基准 | Al⁺（NIST）：8.6×10⁻¹⁸；Sr（JILA）：2.1×10⁻¹⁸；Yb（NIST）：1.0×10⁻¹⁸ | [diddams2016](topics/frequency-standards/papers/diddams2016.yaml) |
+| `met.physrevlett_123_033201_quantum_primary` | primary metric | see paper | [PhysRevLett.123.033201-quantum logic clock to -19](topics/frequency-standards/papers/PhysRevLett.123.033201-quantum logic clock to -19.yaml) |
+| `met.prxquantum_4_040346_primary` | primary metric | see paper | [PRXQuantum.4.040346](topics/frequency-standards/papers/PRXQuantum.4.040346.yaml) |
+| `met.s00340_017_6731_x_primary` | primary metric | see paper | [s00340-017-6731-x](topics/frequency-standards/papers/s00340-017-6731-x.yaml) |
+| `met.s41467_018_05219_z_primary` | primary metric | see paper | [s41467-018-05219-z](topics/frequency-standards/papers/s41467-018-05219-z.yaml) |
+| `met.s41566_019_0493_4_primary` | primary metric | see paper | [s41566-019-0493-4](topics/frequency-standards/papers/s41566-019-0493-4.yaml) |
+| `met.s41567_017_0042_3_primary` | Fred  primary metric | see paper | [s41567-017-0042-3](topics/frequency-standards/papers/s41567-017-0042-3.yaml) |
+| `met.s41567_022_01794_7_primary` | May  primary metric | see paper | [s41567-022-01794-7](topics/frequency-standards/papers/s41567-022-01794-7.yaml) |
+| `met.s41586_021_04344_y_primary` | Brett  primary metric | see paper | [s41586-021-04344-y](topics/frequency-standards/papers/s41586-021-04344-y.yaml) |
+| `met.s41586_021_04349_7_primary` | Colin  primary metric | see paper | [s41586-021-04349-7](topics/frequency-standards/papers/s41586-021-04349-7.yaml) |
+| `met.s41586_023_05894_z_primary` | Thomas  primary metric | see paper | [s41586-023-05894-z](topics/frequency-standards/papers/s41586-023-05894-z.yaml) |
+| `met.s41598_018_26365_w_primary` | primary metric | see paper | [s41598-018-26365-w](topics/frequency-standards/papers/s41598-018-26365-w.yaml) |
+| `met.science_2020_nakamura_primary` | primary metric | see paper | [Science 2020 Nakamura](topics/frequency-standards/papers/Science 2020 Nakamura.yaml) |
+| `met.sr_88_ion_madej_prl_2012_primary` | Alan  primary metric | see paper | [Sr 88 ion Madej PRL 2012](topics/frequency-standards/papers/Sr 88 ion Madej PRL 2012.yaml) |
+| `met.sr_best_clock_bloom_nature_primary` | primary metric | see paper | [Sr best clock_Bloom_Nature](topics/frequency-standards/papers/Sr best clock_Bloom_Nature.yaml) |
 
 ## BOUNDED-BY Chains
+
+### `rel.Z08_03`: `met.frequency_synthesizer_phase_noise_9ghz` → `pri.dick_effect`
+
+- **Source**: zhao2008
 
 ### `rel.clairon_1995_lairon1995_03`: `ent.cesium_fountain_standard_clairon1995` → `pri.cold_collisional_shift_cesium`
 

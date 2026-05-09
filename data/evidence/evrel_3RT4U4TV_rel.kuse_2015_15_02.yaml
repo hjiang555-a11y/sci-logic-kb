@@ -1,9 +1,0 @@
-evidence: The all-PM Er:fiber comb achieves record-low f_CEO integrated phase noise
-  of 0.25 rad (10 Hz–3 MHz), breaking the >1 rad barrier of previous all-PM combs.
-id: evrel_3RT4U4TV_rel.kuse_2015_15_02
-metadata:
-  source_paper: kuse2015
-  zotero_key: 3RT4U4TV
-object: met.fceo_integrated_phase_noise_k15
-predicate: CHARACTERIZED-BY
-subject: ent.all_pm_er_fiber_comb_k15

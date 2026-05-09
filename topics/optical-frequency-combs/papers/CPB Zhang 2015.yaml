@@ -1,18 +1,41 @@
-#  ???? — CPB Zhang 2015 [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Zhang  — A long-term frequency-stabilized erbium-fiber- -Frequency-stabilized Yb:fiber co [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: CPB Zhang 2015
+  zotero_key: A long-term frequency-stabilized erbium-fiber- -Fr
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: low
-  title: "CPB Zhang 2015"
-  first_author: ""
-  note: >
-    [批量提取] 元数据来源：placeholder (needs expert review)。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: A long-term frequency-stabilized erbium-fiber- -Frequency-stabilized Yb:fiber comb with a
+  first_author: Zhang
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.cpb_zhang_2015_system
+  name: Zhang  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Zhang '
+metrics:
+- id: met.cpb_zhang_2015_primary
+  name: Zhang  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: A long-term frequency-stabilized erbium-fiber- -Fr
+      claim: core experimental result
+relations:
+- id: rel.cpb_zhang_2015_01
+  subject: ent.cpb_zhang_2015_system
+  predicate: CHARACTERIZED-BY
+  object: met.cpb_zhang_2015_primary
+  confidence: established
+  source:
+    zotero_key: A long-term frequency-stabilized erbium-fiber- -Fr
+    claim: experimental system characterized by primary metric

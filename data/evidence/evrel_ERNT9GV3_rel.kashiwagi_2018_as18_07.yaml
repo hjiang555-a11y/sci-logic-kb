@@ -1,8 +1,0 @@
-evidence: the FNDC improved the frequency stability ... Fig. 5
-id: evrel_ERNT9GV3_rel.kashiwagi_2018_as18_07
-metadata:
-  source_paper: kashiwagi2018
-  zotero_key: ERNT9GV3
-object: meth.fiber_noise_difference_cancellation_k18
-predicate: OPERATIONALIZED-AS
-subject: met.relative_frequency_instability_allan_k18

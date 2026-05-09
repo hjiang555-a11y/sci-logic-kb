@@ -1,8 +1,0 @@
-evidence: 168 mrad for fbeat, corresponding to timing jitter of 139 attoseconds
-id: evrel_CEB7L6EM_rel.wang_2025_25_06
-metadata:
-  source_paper: wang2025
-  zotero_key: CEB7L6EM
-object: met.fbeat_residual_integrated_phase_noise_w25
-predicate: CHARACTERIZED-BY
-subject: meth.digital_comb_frep_to_usl_locking_w25

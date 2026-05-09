@@ -1,8 +1,0 @@
-evidence: optical reference cavity with a length of 68 cm... finesse in vacuum 410,000
-id: evrel_U2LXSU62_rel.parke_2025_06
-metadata:
-  source_paper: parke2025
-  zotero_key: U2LXSU62
-object: meth.long_fp_cavity_design_fabrication_p25
-predicate: IMPLEMENTS
-subject: ent.long_cavity_68cm_p25

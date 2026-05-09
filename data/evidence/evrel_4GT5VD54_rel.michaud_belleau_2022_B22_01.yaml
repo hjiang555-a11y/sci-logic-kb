@@ -1,9 +1,0 @@
-evidence: fundamental thermal noise are known to set the ultimate phase resolution
-  of fiber-based interferometers
-id: evrel_4GT5VD54_rel.michaud_belleau_2022_B22_01
-metadata:
-  source_paper: michaudbelleau2022
-  zotero_key: 4GT5VD54
-object: pri.hollow_core_fiber_thermal_noise
-predicate: BOUNDED-BY
-subject: ent.fiber_interferometer

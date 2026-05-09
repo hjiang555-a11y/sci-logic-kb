@@ -1,8 +1,0 @@
-evidence: extensive review of Q-factors across platforms
-id: evrel_HPCYUSLJ_rel.pasquazi_2016_18_02
-metadata:
-  source_paper: pasquazi2018
-  zotero_key: HPCYUSLJ
-object: met.microcomb_q_factor_record_p18
-predicate: CHARACTERIZED-BY
-subject: ent.cmos_integrated_resonator_platform

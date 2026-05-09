@@ -1,9 +1,0 @@
-evidence: The octave-spanning Si₃N₄ microcomb is an instance of the microresonator
-  frequency comb platform.
-id: evrel_6JY7ZNWX_rel.li_2017_17_06
-metadata:
-  source_paper: li2017
-  zotero_key: 6JY7ZNWX
-object: ent.microresonator_frequency_comb
-predicate: PART-OF
-subject: ent.octave_si3n4_microcomb_l17

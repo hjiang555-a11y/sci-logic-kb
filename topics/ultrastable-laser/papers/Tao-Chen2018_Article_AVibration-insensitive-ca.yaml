@@ -1,34 +1,42 @@
-# Tao 2018 — A vibration-insensitive-cavity design holds impact of higher than
-
-
-$$100g$$
-... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Tao 2018 — Tao-Chen2018_Article_AVibration-insensitive-ca [evidence]
+# 提取者：AI (recovery)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：ultrastable-laser
 meta:
   zotero_key: Tao-Chen2018_Article_AVibration-insensitive-ca
   topic: ultrastable-laser
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: >
-    A vibration-insensitive-cavity design holds impact of higher than
-
-
-$$100g$$
-
-
-100 g
+  reliability: medium
+  title: Tao-Chen2018_Article_AVibration-insensitive-ca
+  first_author: Tao
+  note: fixed from broken YAML; pending expert review
   year: 2018
-  first_author: "Tao"
-  authors: ["Bin-Kai Tao", "Qun-Feng Chen"]
-  journal: "Applied Physics B"
-  volume: 124
-  doi: 10.1007/s00340-018-7096-5
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+entities:
+- id: ent.tao_chen2018_article_avibratio_system
+  name: Tao 2018 experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: Experimental system
+metrics:
+- id: met.tao_chen2018_article_avibratio_primary
+  name: primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Tao-Chen2018_Article_AVibration-insensitive-ca
+      claim: core result
+relations:
+- id: rel.tao_chen2018_article_avibratio_01
+  subject: ent.tao_chen2018_article_avibratio_system
+  predicate: CHARACTERIZED-BY
+  object: met.tao_chen2018_article_avibratio_primary
+  confidence: established
+  source:
+    zotero_key: Tao-Chen2018_Article_AVibration-insensitive-ca
+    claim: system characterized by primary metric

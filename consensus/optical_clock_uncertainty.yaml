@@ -1,0 +1,55 @@
+metric: met.optical_clock_uncertainty
+metric_name: "Optical atomic clock systematic uncertainty and instability"
+context: "The core metric for optical frequency standards — systematic uncertainty determines clock accuracy"
+domain: frequency-standards
+updated: 2026-05-09
+confidence: established
+
+consensus:
+  best_demonstrated_uncertainty: "5.5×10⁻¹⁹ (²⁷Al⁺ quantum logic clock, NIST)"
+  best_lattice_uncertainty: "8×10⁻¹⁹ (⁸⁷Sr optical lattice clock, Aeppli 2024)"
+  best_demonstrated_instability: "3×10⁻¹⁸ (Yb double-ensemble ZDT, Schioppo 2017)"
+  theoretical_limit: "~10⁻¹⁹ (BBR Stark shift at room temp; cryogenic operation approaching)"
+  remaining_gap: "~5× from best demonstrated (5.5×10⁻¹⁹) to theoretical 10⁻¹⁹; BBR shift is the dominant system effect"
+  contested: false
+  note: "Al⁺ quantum logic clock currently holds the record for lowest systematic uncertainty. Sr lattice clocks have reached 8×10⁻¹⁹ (Aeppli 2024). Both are approaching the 10⁻¹⁹ barrier."
+
+timeline:
+  - year: 1995
+    value: "σ_y = 3×10⁻¹³/√τ (Cs fountain)"
+    system: "Clairon — first Cs fountain clock"
+    significance: "Cold-atom fountain established as microwave standard"
+  - year: 2005
+    value: "7.5×10⁻¹⁶ (Cs fountain)"
+    system: "Bize — BNM-SYRTE fountain ensemble"
+    significance: "Cs fountain approaching 10⁻¹⁶ accuracy"
+  - year: 2013
+    value: "σ_y = 3.2×10⁻¹⁶ (Yb)"
+    system: "Hinkley — Yb optical lattice clock"
+    significance: "Optical clock instability surpassing Cs fountains by 1000×"
+  - year: 2014
+    value: "6.4×10⁻¹⁸ (Sr)"
+    system: "Bloom — JILA Sr optical lattice clock"
+    significance: "First optical clock with <10⁻¹⁷ systematic uncertainty"
+  - year: 2016
+    value: "Al⁺: 8.6×10⁻¹⁸; Sr: 2.1×10⁻¹⁸; Yb: 1.0×10⁻¹⁸"
+    system: "Multi-species comparison (NIST/JILA)"
+    significance: "Three species at <10⁻¹⁷; SI redefinition criteria met"
+  - year: 2017
+    value: "σ_y = 3×10⁻¹⁸ (Yb ZDT)"
+    system: "Schioppo — zero-dead-time Yb clock"
+    significance: "Dick effect eliminated; instability reaches 10⁻¹⁸"
+  - year: 2018
+    value: "5×10⁻¹⁸ (gravitational potential measurement)"
+    system: "Grotti — Sr clock geodesy"
+    significance: "Clock-based geodetic measurement at cm level"
+  - year: 2024
+    value: "8×10⁻¹⁹ (Sr, systematic uncertainty)"
+    system: "Aeppli — Sr optical lattice clock"
+    significance: "Sr lattice clock breaks 10⁻¹⁸ barrier"
+  - year: 2026
+    value: "5.5×10⁻¹⁹ (²⁷Al⁺, current best); ~5×10⁻¹⁷/√τ (best lattice)"
+    system: "Fortier review — state of the field"
+    significance: "Al⁺ quantum logic clock holds record; lattice clocks at ~5×10⁻¹⁷/√τ instability"
+
+trend: "Systematic uncertainty improved 1000× from Cs fountain (10⁻¹⁶, 1995) to Al⁺ logic clock (5.5×10⁻¹⁹, 2026). Multiple species now at <10⁻¹⁸. The 10⁻¹⁹ barrier is being breached. SI second redefinition is technically satisfied."

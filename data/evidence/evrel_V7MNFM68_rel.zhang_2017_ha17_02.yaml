@@ -1,9 +1,0 @@
-evidence: intracavity electro-optic modulator tunes the polarization state ... dynamic
-  ranges ... at least one order of magnitude larger
-id: evrel_V7MNFM68_rel.zhang_2017_ha17_02
-metadata:
-  source_paper: zhang2017b
-  zotero_key: V7MNFM68
-object: pri.polarization_rotation_cavity_loss_frequency_control_z17
-predicate: CHARACTERIZED-BY
-subject: ent.ntsc_polarization_rotation_eom_comb_z17

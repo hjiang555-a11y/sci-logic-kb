@@ -1,9 +1,0 @@
-evidence: rf phase modulator is required hardware for PDH frequency lock of an optical
-  resonator
-id: evrel_694DPR5F_rel.drever_1983_06
-metadata:
-  source_paper: drever1983
-  zotero_key: 694DPR5F
-object: ent.fp_cavity_system
-predicate: PART-OF
-subject: ent.eom

@@ -1,0 +1,52 @@
+chain_id: comb_repetition_rate_timing
+question: How do comb repetition rates evolve from MHz to GHz, and what enables f_rep as a precision timing reference?
+domain: optical-frequency-combs
+confidence: draft
+last_updated: '2026-05-09'
+current_best:
+  value: 10 GHz KLM self-referenced comb; 194 GHz DKS microcomb
+  system: Bartels 2009 / Stern 2018
+limiting_principle:
+  id: pri.high_frep_bandwidth_power_tradeoff
+  name: High f_rep trades per-tooth power against mode resolvability
+  defined_by: bartels2009.yaml
+  statement: Higher f_rep means fewer teeth within gain bandwidth = more power per tooth for f-2f. But >10 GHz, per-tooth power drops below SNR threshold.
+timeline:
+- year: 2009
+  value: 10 GHz (KLM, self-referenced)
+  system: Bartels Ti:Sapphire KLM comb
+  note: First self-referenced 10 GHz comb
+- year: 2011
+  value: 10-1000 GHz microcomb range
+  system: Kippenberg microresonator combs
+  note: 3 orders of magnitude f_rep span
+- year: 2014
+  value: 500 MHz Er:fiber octave
+  system: Wang octave Er:fiber comb
+  note: Highest fiber f_rep with octave
+- year: 2018
+  value: 194 GHz Si3N4 DKS
+  system: Stern integrated microcomb
+  note: Integrated photonic timing reference
+- year: 2018
+  value: nx194 GHz soliton crystal
+  system: Cole soliton crystal
+  note: Programmable f_rep via soliton crystals
+edges:
+- from: Comb repetition rate
+  to: pri.high_frep_bandwidth_power_tradeoff
+  relation: BOUNDED-BY
+- from: pri.high_frep_bandwidth_power_tradeoff
+  to: KLM 10 GHz self-referenced
+  relation: RESOLVED-BY
+  status: demonstrated
+- from: 'Current: 10 GHz electrical / 194 GHz optical'
+  to: 'Target: >300 GHz integrated timing'
+  relation: REMAINING-GAP (per-tooth power)
+evidence:
+- relation_id: rel.bartels_2009_ar09_04
+  claim: 10 GHz self-referenced comb with >1 nW per tooth
+- relation_id: rel.kippenberg_2017_18_04
+  claim: microresonator combs span 10-1000 GHz f_rep
+- relation_id: rel.stern_2018_18_01
+  claim: 194 GHz integrated Si3N4 DKS microcomb

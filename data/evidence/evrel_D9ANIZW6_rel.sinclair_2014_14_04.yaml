@@ -1,8 +1,0 @@
-evidence: 0.22 rad for fopt ... 0.3 rad ... 3.8 rad/g
-id: evrel_D9ANIZW6_rel.sinclair_2014_14_04
-metadata:
-  source_paper: sinclair2014
-  zotero_key: D9ANIZW6
-object: met.integrated_phase_noise_fopt_s14
-predicate: CHARACTERIZED-BY
-subject: ent.ruggedized_field_comb_s14

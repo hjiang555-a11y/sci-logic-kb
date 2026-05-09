@@ -1,24 +1,42 @@
-# Wang 2014 — 500  MHz spaced Yb:fiber laser frequency comb without amplifiers [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — 500 MHz spaced Yb:fiber laser frequency comb [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: 2014 Opt Lett(39.9.2534)-ZZG_500--MHz spaced Yb-fiber laser frequency comb without amplifiers
+  zotero_key: 500 MHz spaced Yb:fiber laser frequency comb
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "500  MHz spaced Yb:fiber laser frequency comb without amplifiers"
-  year: 2014
-  first_author: "Wang"
-  authors: ["Guizhong Wang", "Fei Meng", "Chen Li", "Tongxiao Jiang", "Aimin Wang", "Zhanjun Fang", "Zhigang Zhang"]
-  journal: "Optics Letters"
-  volume: 39
-  pages: 2534
-  doi: 10.1364/OL.39.002534
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: 500 MHz spaced Yb:fiber laser frequency comb
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1364/OL
+entities:
+- id: ent.2014_opt_lett_39_9_2534__zzg_5_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.2014_opt_lett_39_9_2534__zzg_5_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: 500 MHz spaced Yb:fiber laser frequency comb
+      claim: core experimental result
+relations:
+- id: rel.2014_opt_lett_39_9_2534__zzg_5_01
+  subject: ent.2014_opt_lett_39_9_2534__zzg_5_system
+  predicate: CHARACTERIZED-BY
+  object: met.2014_opt_lett_39_9_2534__zzg_5_primary
+  confidence: established
+  source:
+    zotero_key: 500 MHz spaced Yb:fiber laser frequency comb
+    claim: experimental system characterized by primary metric

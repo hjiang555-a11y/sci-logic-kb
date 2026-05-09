@@ -1,9 +1,0 @@
-evidence: This deformation strongly contributes to the cavity's effective CTE, decreasing
-  the zero crossing temperature by about 20 K
-id: evrel_MW3RDB68_rel.legero_2010_eg03
-metadata:
-  source_paper: legero2010
-  zotero_key: MW3RDB68
-object: met.cte_shift_fs_mirror_leg10
-predicate: CHARACTERIZED-BY
-subject: ent.mirror_substrate

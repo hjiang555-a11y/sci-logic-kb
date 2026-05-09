@@ -1,0 +1,153 @@
+# Zhao 2008 — 铯原子喷泉钟低噪声频率综合器的研制 [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-08
+# Schema版本：v4.5
+# 专题：frequency-standards
+
+meta:
+  zotero_key: null
+  topic: frequency-standards
+  source_type: technical_paper
+  contribution_type: evidence
+  reliability: medium
+  title: "铯原子喷泉钟低噪声频率综合器的研制"
+  year: 2008
+  first_author: "赵文宇"
+  journal: "时间频率学报"
+  volume: 31
+  pages: "81-85"
+  doi: "10.13875/j.issn.1674-0637.2008.02.008"
+  note: >
+    中文论文。报道了中国科学院国家授时中心（NTSC）自行研制的铯原子喷泉钟9.2 GHz低噪声频率综合器。
+    相位噪声 -82 dB[Rad²/Hz] @ offset 1 Hz，对喷泉钟秒级稳定度影响 2.2×10⁻¹⁵。
+
+entities:
+  - id: ent.cesium_fountain_frequency_synthesizer_ntsc
+    name: "NTSC铯喷泉钟频率综合器"
+    aliases: ["9.2 GHz frequency synthesizer for Cs fountain", "频率综合器"]
+    hierarchy_level: 2
+    status: demonstrated
+    function: >
+      将5 MHz超稳振荡器（USO）信号通过锁相倍频和混频链综合为9.192 631 770 GHz的铯原子基态超精细跃迁询问信号。
+      利用直接数字频率合成器（DDS）实现频率调制和PC控制调谐。
+      整个装置置于坡莫合金磁屏蔽盒中。
+    key_parameters:
+      output_frequency: "9.192 631 770 GHz"
+      input_reference: "5 MHz USO（相位噪声 -130 dBc/Hz @ 1 Hz offset）"
+      phase_noise: "-82 dB[Rad²/Hz] @ 1 Hz offset"
+      dds_resolution: "优于 10 μHz"
+    feasibility_assessment:
+      engineering_complexity: "medium"
+      cost_estimate: "$$"
+    practical_limitations:
+      - description: "温度波动影响（计划后期整体控温）"
+        source_claim: "考虑到温度波动的影响，我们将对频率综合器整体控温"
+        impact: "长期频率稳定度"
+    note: >
+      Level 2 实例节点，PART-OF ent.cesium_fountain_standard_clairon1995 的本地实现方案。
+      国内首次自主研制9.2 GHz铯喷泉钟频率综合器。
+
+principles:
+  - id: pri.frequency_synthesizer_phase_noise_to_fountain_stability
+    name: "频率综合器相位噪声至喷泉钟稳定度传递"
+    tier: engineering
+    verification_status: calculated
+    statement: >
+      频率综合器相位噪声通过 Dick 效应影响喷泉原子钟的短期频率稳定度。
+      影响量由调频闪烁噪声主导（h₋₁项），在几赫兹偏频范围内：
+      σ_y(τ) ≈ √(h₋₁ · sin(πd)/πd · T_c/τ)，其中 d 为原子-场相互作用时间与周期之比。
+    formula: "σ_y(τ) ≈ √(h₋₁ · sin(πd)/πd · T_c/τ)"
+    key_insight: "频率综合器的闪烁频率噪声是喷泉钟秒稳的限制因素之一"
+    conditions: "d = T/T_c = 0.42（NTSC喷泉钟设计参数：T = 0.5 s, T_c = 1.2 s）"
+    source_claim: "频率综合器相位噪声影响喷泉钟的输出频率稳定度，影响程度与喷泉钟的时序结构有关"
+
+methods:
+  - id: meth.dds_based_frequency_synthesis_chain
+    name: "基于DDS的频率综合链"
+    status: demonstrated
+    applies_to: ent.cesium_fountain_frequency_synthesizer_ntsc
+    steps_summary: >
+      5 MHz USO → 锁相倍频至100 MHz → 倍频至200 MHz → 三路分配：
+      (1) 5分频至40 MHz → DDS参考 → 输出7.368230 MHz+δν；
+      (2) NLTL梳状倍频至9 GHz；
+      (3) 提供混频参考 → 8.993 GHz介质振荡器锁相至100 MHz → 与9 GHz混频产生7.368 MHz → 与DDS输出鉴相 → 控制介质振荡器 → 最终输出9.193 GHz
+    required_hardware:
+      - ent.cesium_fountain_frequency_synthesizer_ntsc
+    advantages:
+      - "全锁相链结构，DDS实现精密频率调谐（优10 μHz）"
+      - "PC可控功率衰减和时序控制"
+    disadvantages:
+      - "调频闪烁噪声主导低频偏相位噪声"
+    source_claim: "整个频率综合器装置放在一个坡莫合金的磁屏蔽盒子中"
+
+metrics:
+  - id: met.frequency_synthesizer_phase_noise_9ghz
+    name: "9.2 GHz频率综合器相位噪声"
+    unit: "dB[Rad²/Hz]"
+    role: primary
+    description: "输出9.193 GHz信号的相位噪声谱密度，是喷泉钟 Dick 效应限制的主要来源"
+    demonstrated_value:
+      value: "-82 dB[Rad²/Hz] @ 1 Hz offset"
+      conditions: "检相法测量，两套相同综合器共用5 MHz USO参考"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: null
+        claim: "相位噪声为-82 dB[Rad²/Hz]@offset 1 Hz"
+    note: "NIST同类产品为-79 dB[Rad²/Hz]@offset 1 Hz"
+
+  - id: met.synthesizer_stability_contribution_to_fountain
+    name: "频率综合器对喷泉钟秒级稳定度贡献"
+    unit: "分数频率不稳定度"
+    role: secondary
+    description: "频率综合器相位噪声经Dick效应传递后对喷泉钟σ_y(1 s)的贡献"
+    demonstrated_value:
+      value: "2.2×10⁻¹⁵"
+      conditions: "d = 0.42（T_c = 1.2 s, T = 0.5 s），调频闪烁噪声主导"
+      verification_status: calculated
+      confidence: likely
+      source:
+        zotero_key: null
+        claim: "频率综合器的相位噪声对喷泉钟秒级稳定度的影响为2.2×10⁻¹⁵，较其他噪声的影响，可以忽略"
+
+relations:
+  - id: rel.Z08_01
+    subject: ent.cesium_fountain_frequency_synthesizer_ntsc
+    predicate: PART-OF
+    object: ent.cesium_fountain_standard_clairon1995
+    confidence: established
+    source:
+      zotero_key: null
+      claim: "频率综合器是铯喷泉钟的重要组成部分，也是提高铯喷泉钟性能的关键部件"
+    note: "跨文件引用，ent.cesium_fountain_standard_clairon1995 定义于频率标准专题"
+
+  - id: rel.Z08_02
+    subject: ent.cesium_fountain_frequency_synthesizer_ntsc
+    predicate: CHARACTERIZED-BY
+    object: met.frequency_synthesizer_phase_noise_9ghz
+    confidence: established
+    source:
+      zotero_key: null
+      claim: "相位噪声为-82 dB[Rad²/Hz]@offset 1 Hz"
+
+  - id: rel.Z08_03
+    subject: met.frequency_synthesizer_phase_noise_9ghz
+    predicate: BOUNDED-BY
+    object: pri.dick_effect
+    confidence: established
+    source:
+      zotero_key: null
+      claim: "由于 Dick 效应，频率综合器相位噪声影响喷泉钟的输出频率稳定度"
+    is_system_limit: false
+    dominated_by: pri.quantum_projection_noise_limit
+    limit_status: conditional
+    note: "频率综合器相位噪声贡献 2.2×10⁻¹⁵，远低于 QPN 限制（~10⁻¹⁴）；跨文件引用，pri.dick_effect 定义于 fortier2026.yaml"
+
+  - id: rel.Z08_04
+    subject: ent.cesium_fountain_frequency_synthesizer_ntsc
+    predicate: OPERATIONALIZED-AS
+    object: meth.dds_based_frequency_synthesis_chain
+    confidence: established
+    source:
+      zotero_key: null
+      claim: "选择频率短期稳定性能优越的5 MHz超稳振荡器（USO）作为本地振荡器"

@@ -1,8 +1,0 @@
-evidence: space-based optical clock comparisons
-id: evrel_sb9b5z8v_rel.caldwell_2024_al24_02
-metadata:
-  source_paper: caldwell2024_sb9b5z8v
-  zotero_key: sb9b5z8v
-object: ent.optical_frequency_standard
-predicate: CONDITIONED-BY
-subject: ent.free_space_optical_tf_link

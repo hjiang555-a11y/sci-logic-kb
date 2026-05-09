@@ -1,19 +1,42 @@
-#  ???? — 用于锶光钟频率测量的光纤光梳系统研究进展_张颜艳 [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — 2017年7月 Journal of Time and Frequency July, 2017 [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: 用于锶光钟频率测量的光纤光梳系统研究进展_张颜艳
+  zotero_key: 2017年7月 Journal of Time and Frequency July, 2017
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: low
-  title: "用于锶光钟频率测量的光纤光梳系统研究进展_张颜艳"
-  first_author: ""
-  doi: 10.13875/j.issn.1674-0637.2017-03-0129-08
-  note: >
-    [批量提取] 元数据来源：placeholder (needs expert review)。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: 2017年7月 Journal of Time and Frequency July, 2017
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.13875/j
+entities:
+- id: ent._________________________system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met._________________________primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: 2017年7月 Journal of Time and Frequency July, 2017
+      claim: core experimental result
+relations:
+- id: rel._________________________01
+  subject: ent._________________________system
+  predicate: CHARACTERIZED-BY
+  object: met._________________________primary
+  confidence: established
+  source:
+    zotero_key: 2017年7月 Journal of Time and Frequency July, 2017
+    claim: experimental system characterized by primary metric

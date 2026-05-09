@@ -1,9 +1,0 @@
-evidence: Researchers have employed pumping at 2.45 μm to demonstrate a Kerr comb
-  covering the range of 2.35–2.5 μm... milliwatt powers per mode
-id: evrel_YYXGH9X3_rel.schliesser_2011_12_13
-metadata:
-  source_paper: schliesser2012
-  zotero_key: YYXGH9X3
-object: ent.microresonator_frequency_comb
-predicate: CONDITIONED-BY
-subject: ent.mid_ir_frequency_comb

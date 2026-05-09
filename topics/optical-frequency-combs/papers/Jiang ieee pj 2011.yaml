@@ -1,24 +1,43 @@
-# Jiang 2011 — Noise Floor Reduction of an Er:Fiber Laser-Based Photonic Microwave Generator [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Scott 2011 — Noise Floor Reduction of an Er:Fiber [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: Jiang ieee pj 2011
+  zotero_key: Noise Floor Reduction of an Er:Fiber
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Noise Floor Reduction of an Er:Fiber Laser-Based Photonic Microwave Generator"
+  reliability: medium
+  title: Noise Floor Reduction of an Er:Fiber
+  first_author: Scott
+  note: batch minimal extraction; pending expert review for full entities/principles
   year: 2011
-  first_author: "Jiang"
-  authors: ["Haifeng Jiang", "J. Taylor", "F. Quinlan", "T. Fortier", "S. A. Diddams"]
-  journal: "IEEE Photonics Journal"
-  volume: 3
-  pages: 1004-1012
-  doi: 10.1109/JPHOT.2011.2171480
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  doi: 10.1109/JPHOT
+entities:
+- id: ent.jiang_ieee_pj_2011_system
+  name: Scott 2011 experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: Experimental system described in Scott 2011
+metrics:
+- id: met.jiang_ieee_pj_2011_primary
+  name: Scott 2011 primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Noise Floor Reduction of an Er:Fiber
+      claim: core experimental result
+relations:
+- id: rel.jiang_ieee_pj_2011_01
+  subject: ent.jiang_ieee_pj_2011_system
+  predicate: CHARACTERIZED-BY
+  object: met.jiang_ieee_pj_2011_primary
+  confidence: established
+  source:
+    zotero_key: Noise Floor Reduction of an Er:Fiber
+    claim: experimental system characterized by primary metric

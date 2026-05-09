@@ -50,11 +50,13 @@ principles:
     tier: domain
     verification_status: observed
     statement: "Nonlinear birefringence effects in a fibre ring laser cavity can be exploited to produce self-starting, passive mode-locking."
+    conditions: "Erbium-doped fiber ring cavity with polarization controller and polarizer; anomalous dispersion regime; sufficient intracavity pulse energy (~48 pJ)"
   - id: pri.soliton_generation_in_fibre
     name: "Formation of fundamental solitons in the anomalous dispersion regime of an EDFL"
     tier: domain
     verification_status: observed
     statement: "Fundamental solitons are generated in the anomalous dispersion regime of the fiber."
+    conditions: "Anomalous group velocity dispersion at 1.55 um; EDFL ring cavity; NPR-based passive modelocking active"
 
 methods:
   - id: meth.passive_modelocking_via_npr
@@ -98,28 +100,46 @@ relations:
     predicate: DERIVED-FROM
     object: pri.nonlinear_birefringence_modelocking
     confidence: established
+    source:
+      zotero_key: matsas1992
+      claim: "Nonlinear birefringence effects in a fibre ring laser cavity can be exploited to produce self-starting, passive mode-locking"
   - id: rel.matsas_1992_02
     subject: ent.edfl_ring_laser
     predicate: IMPLEMENTS
     object: meth.passive_modelocking_via_npr
     confidence: established
+    source:
+      zotero_key: matsas1992
+      claim: "Self-starting passively mode-locked fibre ring soliton laser"
   - id: rel.matsas_1992_03
     subject: meth.passive_modelocking_via_npr
     predicate: ENABLED-BY
     object: ent.soliton_pulse
     confidence: established
+    source:
+      zotero_key: matsas1992
+      claim: "Generated 1.5 ps fundamental soliton pulses at 1.55 um"
   - id: rel.matsas_1992_04
     subject: ent.soliton_pulse
     predicate: CHARACTERIZED-BY
     object: met.pulse_duration
     confidence: established
+    source:
+      zotero_key: matsas1992
+      claim: "Pulse duration of 1.5 ps at 1.55 um wavelength"
   - id: rel.matsas_1992_05
     subject: ent.edfl_ring_laser
     predicate: ENABLED-BY
     object: ent.low_bi_spun_fibre
     confidence: established
+    source:
+      zotero_key: matsas1992
+      claim: "Passive low-birefringence spun fibre used in the cavity reduces polarization mode dispersion"
   - id: rel.matsas_1992_06
     subject: ent.edfl_ring_laser
     predicate: ENABLED-BY
     object: ent.polarisation_controller
     confidence: established
+    source:
+      zotero_key: matsas1992
+      claim: "Polarization controllers used to control the polarization state and system loss for NPR modelocking"

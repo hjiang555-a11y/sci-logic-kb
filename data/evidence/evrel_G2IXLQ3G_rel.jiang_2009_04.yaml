@@ -1,9 +1,0 @@
-evidence: all interferometer components are pigtailed off-the-shelf elements. Therefore
-  we do not need to do any optical alignment and it is simple and robust
-id: evrel_G2IXLQ3G_rel.jiang_2009_04
-metadata:
-  source_paper: jiang2009a
-  zotero_key: G2IXLQ3G
-object: meth.fiber_delay_locking
-predicate: ENABLED-BY
-subject: ent.fiber_michelson_1km_j09

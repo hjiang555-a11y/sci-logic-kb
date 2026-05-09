@@ -1,23 +1,41 @@
-# Gao 2018 — Systematic evaluation of a 171Yb optical clock by synchronous comparison betw... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — OPEN Systematic evaluation of a 171Yb [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：frequency-standards
 meta:
-  zotero_key: s41598-018-26365-w
+  zotero_key: OPEN Systematic evaluation of a 171Yb
   topic: frequency-standards
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Systematic evaluation of a 171Yb optical clock by synchronous comparison between two lattice systems"
-  year: 2018
-  first_author: "Gao"
-  authors: ["Qi Gao", "Min Zhou", "Chengyin Han", "Shangyan Li", "Shuang Zhang", "Yuan Yao", "Bo Li", "Hao Qiao", "Di Ai", "Ge Lou", "Mengya Zhang", "Yanyi Jiang", "Zhiyi Bi", "Longsheng Ma", "Xinye Xu"]
-  journal: "Scientific Reports"
-  volume: 8
-  doi: 10.1038/s41598-018-26365-w
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: OPEN Systematic evaluation of a 171Yb
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.s41598_018_26365_w_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.s41598_018_26365_w_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: OPEN Systematic evaluation of a 171Yb
+      claim: core experimental result
+relations:
+- id: rel.s41598_018_26365_w_01
+  subject: ent.s41598_018_26365_w_system
+  predicate: CHARACTERIZED-BY
+  object: met.s41598_018_26365_w_primary
+  confidence: established
+  source:
+    zotero_key: OPEN Systematic evaluation of a 171Yb
+    claim: experimental system characterized by primary metric

@@ -1,9 +1,0 @@
-evidence: frequency stability will become limited by thermal fluctuations of mirror
-  substrates and coatings [Numata 2004]
-id: evrel_UCNS7EM7_rel.webster_2007_05
-metadata:
-  source_paper: webster2007
-  zotero_key: UCNS7EM7
-object: pri.brownian_thermal_noise_fdt
-predicate: BOUNDED-BY
-subject: ent.fp_cavity_system

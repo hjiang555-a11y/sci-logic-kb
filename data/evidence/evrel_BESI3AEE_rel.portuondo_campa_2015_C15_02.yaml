@@ -1,9 +1,0 @@
-evidence: optical frequency combs based on diode-pumped solid-state lasers emitting
-  at telecom wavelength
-id: evrel_BESI3AEE_rel.portuondo_campa_2015_C15_02
-metadata:
-  source_paper: portuondo-campa2015
-  zotero_key: BESI3AEE
-object: ent.optical_frequency_comb
-predicate: PART-OF
-subject: ent.dpss_comb_interleaver_pc15

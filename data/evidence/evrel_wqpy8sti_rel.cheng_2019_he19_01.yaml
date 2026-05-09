@@ -1,9 +1,0 @@
-evidence: optical fiber time transfer scheme through the optical supervisory channel
-  ... in WDM systems
-id: evrel_wqpy8sti_rel.cheng_2019_he19_01
-metadata:
-  source_paper: cheng2019_wqpy8sti
-  zotero_key: wqpy8sti
-object: ent.rf_over_fiber_time_transfer_link
-predicate: PART-OF
-subject: ent.osc_subband_time_transfer_cheng19

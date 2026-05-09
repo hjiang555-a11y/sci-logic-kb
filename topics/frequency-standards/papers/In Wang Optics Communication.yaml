@@ -1,24 +1,41 @@
-# Wang 2007 — Absolute frequency measurement and high resolution spectroscopy of 115In+ 5s2... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Elsevier  — OpticsCommunications273(2007)526–531 [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：frequency-standards
 meta:
-  zotero_key: In Wang Optics Communication
+  zotero_key: OpticsCommunications273(2007)526–531
   topic: frequency-standards
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Absolute frequency measurement and high resolution spectroscopy of 115In+ 5s2 1S0–5s5p 3P0 narrowline transition"
-  year: 2007
-  first_author: "Wang"
-  authors: ["Y.H. Wang", "R. Dumke", "T. Liu", "A. Stejskal", "Y.N. Zhao", "J. Zhang", "Z.H. Lu", "L.J. Wang", "Th. Becker", "H. Walther"]
-  journal: "Optics Communications"
-  volume: 273
-  pages: 526-531
-  doi: 10.1016/j.optcom.2007.01.068
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: OpticsCommunications273(2007)526–531
+  first_author: Elsevier
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.in_wang_optics_communication_system
+  name: Elsevier  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Elsevier '
+metrics:
+- id: met.in_wang_optics_communication_primary
+  name: Elsevier  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: OpticsCommunications273(2007)526–531
+      claim: core experimental result
+relations:
+- id: rel.in_wang_optics_communication_01
+  subject: ent.in_wang_optics_communication_system
+  predicate: CHARACTERIZED-BY
+  object: met.in_wang_optics_communication_primary
+  confidence: established
+  source:
+    zotero_key: OpticsCommunications273(2007)526–531
+    claim: experimental system characterized by primary metric

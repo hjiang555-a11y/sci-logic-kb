@@ -1,9 +1,0 @@
-evidence: best result achieved for a cavity of this length... lower than the noise
-  floor of an all ULE cavity
-id: evrel_GLXHEIPV_rel.millo_2009_il01
-metadata:
-  source_paper: millo2009
-  zotero_key: GLXHEIPV
-object: pri.brownian_thermal_noise_fdt
-predicate: BOUNDED-BY
-subject: ent.fp_cavity_system

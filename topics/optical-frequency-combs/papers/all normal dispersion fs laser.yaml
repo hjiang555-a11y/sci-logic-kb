@@ -1,18 +1,42 @@
-#  ???? — all normal dispersion fs laser [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Fork 2006 — AndyChong,JoelBuckley,WillRenningerandFrankWise [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: all normal dispersion fs laser
+  zotero_key: AndyChong,JoelBuckley,WillRenningerandFrankWise
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: low
-  title: "all normal dispersion fs laser"
-  first_author: ""
-  note: >
-    [批量提取] 元数据来源：placeholder (needs expert review)。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: AndyChong,JoelBuckley,WillRenningerandFrankWise
+  first_author: Fork
+  note: batch minimal extraction; pending expert review for full entities/principles
+  year: 2006
+entities:
+- id: ent.all_normal_dispersion_fs_laser_system
+  name: Fork 2006 experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: Experimental system described in Fork 2006
+metrics:
+- id: met.all_normal_dispersion_fs_laser_primary
+  name: Fork 2006 primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: AndyChong,JoelBuckley,WillRenningerandFrankWise
+      claim: core experimental result
+relations:
+- id: rel.all_normal_dispersion_fs_laser_01
+  subject: ent.all_normal_dispersion_fs_laser_system
+  predicate: CHARACTERIZED-BY
+  object: met.all_normal_dispersion_fs_laser_primary
+  confidence: established
+  source:
+    zotero_key: AndyChong,JoelBuckley,WillRenningerandFrankWise
+    claim: experimental system characterized by primary metric

@@ -1,9 +1,0 @@
-evidence: optical frequency comb based on a 500 MHz free-space laser with an Er/Yb
-  co-doped phosphate glass gain medium
-id: evrel_R9HNIBTE_rel.nardelli_2023_ar23_01
-metadata:
-  source_paper: nardelli2023
-  zotero_key: R9HNIBTE
-object: ent.optical_frequency_comb
-predicate: PART-OF
-subject: ent.er_yb_glass_comb_nardelli23

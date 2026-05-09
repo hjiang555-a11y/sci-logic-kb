@@ -1,9 +1,0 @@
-evidence: In the f-2f scheme, the low-frequency portion of the spectrum undergoes
-  second-harmonic generation ... and interferes with the high-frequency portion
-id: evrel_CML5935T_rel.hickstein_2017_17_08
-metadata:
-  source_paper: hickstein2017
-  zotero_key: CML5935T
-object: pri.self_referencing_f2f
-predicate: DERIVED-FROM
-subject: pri.dual_chi2_chi3_integrated_f2f

@@ -1,8 +1,0 @@
-evidence: '> 90 h phase-slip free operation'
-id: evrel_LMFFEUFX_rel.sinclair_2015_in15_02
-metadata:
-  source_paper: sinclair2015
-  zotero_key: LMFFEUFX
-object: pri.pm_fiber_digital_feedback_phase_slip_free_s15
-predicate: CHARACTERIZED-BY
-subject: ent.nist_compact_pm_fiber_comb_s15

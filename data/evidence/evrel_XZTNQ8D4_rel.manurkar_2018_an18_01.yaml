@@ -1,8 +1,0 @@
-evidence: Er-doped fiber oscillator/amplifier
-id: evrel_XZTNQ8D4_rel.manurkar_2018_an18_01
-metadata:
-  source_paper: manurkar2018
-  zotero_key: XZTNQ8D4
-object: ent.er_fiber_frequency_comb
-predicate: PART-OF
-subject: ent.low_power_5w_self_ref_comb_m18

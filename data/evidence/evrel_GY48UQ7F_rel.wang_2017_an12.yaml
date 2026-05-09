@@ -1,8 +1,0 @@
-evidence: Residual GVD in the composite cavity limits comb bandwidth and equidistance.
-id: evrel_GY48UQ7F_rel.wang_2017_an12
-metadata:
-  source_paper: wang2017
-  zotero_key: GY48UQ7F
-object: pri.group_velocity_dispersion_comb_limit
-predicate: BOUNDED-BY
-subject: ent.iii_v_on_si_ultradense_comb_w17

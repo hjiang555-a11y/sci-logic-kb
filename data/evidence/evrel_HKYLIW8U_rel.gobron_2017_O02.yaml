@@ -1,8 +1,0 @@
-evidence: novel technique based on heterodyne beat-note
-id: evrel_HKYLIW8U_rel.gobron_2017_O02
-metadata:
-  source_paper: gobron2017
-  zotero_key: HKYLIW8U
-object: pri.dispersive_heterodyne_shb
-predicate: IMPLEMENTS
-subject: meth.dispersive_heterodyne_shb_locking

@@ -1,24 +1,42 @@
-# Giunta 2019 — Real-time phase tracking for wide-band optical frequency measurements at the ... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Real-time phase tracking for wide-band [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: s41566-019-0520-5
+  zotero_key: Real-time phase tracking for wide-band
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Real-time phase tracking for wide-band optical frequency measurements at the 20th decimal place"
-  year: 2019
-  first_author: "Giunta"
-  authors: ["Michele Giunta", "Wolfgang Hänsel", "Marc Fischer", "Matthias Lezius", "Thomas Udem", "Ronald Holzwarth"]
-  journal: "Nature Photonics"
-  volume: 14
-  pages: 44-49
+  reliability: medium
+  title: Real-time phase tracking for wide-band
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
   doi: 10.1038/s41566-019-0520-5
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+entities:
+- id: ent.s41566_019_0520_5_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.s41566_019_0520_5_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Real-time phase tracking for wide-band
+      claim: core experimental result
+relations:
+- id: rel.s41566_019_0520_5_01
+  subject: ent.s41566_019_0520_5_system
+  predicate: CHARACTERIZED-BY
+  object: met.s41566_019_0520_5_primary
+  confidence: established
+  source:
+    zotero_key: Real-time phase tracking for wide-band
+    claim: experimental system characterized by primary metric

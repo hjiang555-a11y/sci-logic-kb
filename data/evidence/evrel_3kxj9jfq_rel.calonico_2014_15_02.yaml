@@ -1,8 +1,0 @@
-evidence: phase-stabilized coherent optical frequency transfer
-id: evrel_3kxj9jfq_rel.calonico_2014_15_02
-metadata:
-  source_paper: calonico2015_3kxj9jfq
-  zotero_key: 3kxj9jfq
-object: pri.noise_cancellation_frequency_transfer
-predicate: ENABLED-BY
-subject: ent.coherent_optical_fiber_link

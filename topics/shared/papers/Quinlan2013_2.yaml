@@ -1,24 +1,60 @@
-# Quinlan 2013 — Exploiting shot noise correlations in the photodetection of ultrashort optica... [framework]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Quinlan 2013 — Exploiting shot noise correlations in photodetection [framework]
+# 提取者：AI
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：shared
 meta:
   zotero_key: Quinlan2013_2
   topic: shared
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: framework
   reliability: high
-  title: "Exploiting shot noise correlations in the photodetection of ultrashort optical pulse trains"
+  title: Exploiting shot noise correlations in the photodetection of ultrashort optical pulse trains
   year: 2013
-  first_author: "Quinlan"
-  authors: ["F. Quinlan", "T. M. Fortier", "H. Jiang", "A. Hati", "C. Nelson", "Y. Fu", "J. C. Campbell", "S. A. Diddams"]
-  journal: "Nature Photonics"
+  first_author: Quinlan
+  journal: Nature Photonics
   volume: 7
   pages: 290-293
-  doi: 10.1038/NPHOTON.2013.33
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  doi: 10.1038/nphoton.2013.33
+  note: NIST experiment demonstrating exploitation of shot noise spectral correlations to achieve sub-shot-noise phase detection. Companion to Quinlan2013 (JOSA B theory paper). Cross-topic applicability.
+principles:
+- id: pri.shot_noise_correlation_exploitation
+  name: Shot noise correlation exploitation for sub-shot-noise detection
+  tier: domain
+  verification_status: observed
+  statement: Spectral correlations in photocurrent shot noise, when properly exploited through balanced detection of two photodetectors, enable phase noise measurements below the classical shot noise limit
+    without requiring non-classical (squeezed) light states.
+  domain: signal detection, quantum-limited measurement
+  key_insight: Shot noise correlations between different spectral components allow sub-shot-noise phase detection using only classical optical pulse trains
+  conditions: Ultrashort optical pulse train; two balanced photodetectors; microwave frequency analysis of photocurrent; pulse width shorter than detector response time
+  source_claim: exploiting shot noise correlations... enable phase noise measurements below the classical shot noise limit
+methods:
+- id: meth.balanced_detection_shot_noise_correlation
+  name: Balanced detection with shot noise correlation exploitation
+  status: demonstrated
+  applies_to: cross-topic (OFC microwave generation, phase noise measurement)
+  steps_summary: Split optical pulse train → two matched photodetectors → cross-correlation of photocurrents → exploit spectral anticorrelation → sub-shot-noise phase detection
+  source_claim: exploiting shot noise correlations in the photodetection of ultrashort optical pulse trains
+metrics:
+- id: met.sub_shot_noise_phase_detection_improvement
+  name: Sub-shot-noise phase detection improvement
+  unit: dB
+  role: primary
+  description: Reduction in phase noise below the classical shot noise limit achieved through correlation exploitation
+  demonstrated_value:
+    value: several dB below classical shot noise limit
+    conditions: fs pulse train, balanced detection, microwave carrier at harmonic of f_rep
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Quinlan2013_2
+      claim: phase noise measurements below the classical shot noise limit
+relations:
+- id: rel.quinlan_2013b_01
+  subject: meth.balanced_detection_shot_noise_correlation
+  predicate: DERIVED-FROM
+  object: pri.shot_noise_correlation_exploitation
+  confidence: established
+  source:
+    zotero_key: Quinlan2013_2
+    claim: exploiting shot noise correlations

@@ -1,9 +1,0 @@
-evidence: Thermoelectrically cooled 100 MHz bandwidth HgCdTe detectors record the
-  light (interferograms)
-id: evrel_FQ4KYV38_rel.ycas_2019_19_05
-metadata:
-  source_paper: ycas2019
-  zotero_key: FQ4KYV38
-object: pri.dual_comb_multiheterodyne_detection
-predicate: ENABLED-BY
-subject: meth.midir_dcs_vocs_protocol_y19

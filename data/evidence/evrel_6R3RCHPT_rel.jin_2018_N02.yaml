@@ -1,9 +1,0 @@
-evidence: approaching to the thermal-noise-induced length instability of the reference
-  cavity
-id: evrel_6R3RCHPT_rel.jin_2018_N02
-metadata:
-  source_paper: jin2018
-  zotero_key: 6R3RCHPT
-object: pri.brownian_thermal_noise_fdt
-predicate: BOUNDED-BY
-subject: ent.ule_cavity_30cm_578nm_j18

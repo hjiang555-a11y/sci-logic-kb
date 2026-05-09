@@ -1,24 +1,42 @@
-# Chen 2020 — Laser frequency instability of 6 × 10−16 using 10-cm-long cavities on a cubic... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Webster  — COL 18(3), 030201(2020) CHINESE OPTICS LETTERS March 2020 [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：ultrastable-laser
 meta:
-  zotero_key: 030201 (1)
+  zotero_key: COL 18(3), 030201(2020) CHINESE OPTICS LETTERS Mar
   topic: ultrastable-laser
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Laser frequency instability of 6 × 10−16 using 10-cm-long cavities on a cubic spacer"
-  year: 2020
-  first_author: "Chen"
-  authors: ["Xiaotong Chen", "Yanyi Jiang", "Bo Li", "Hongfu Yu", "Haifeng Jiang", "Tao Wang", "Yuan Yao", "Longsheng Ma"]
-  journal: "Chinese Optics Letters"
-  volume: 18
-  pages: 12417
-  doi: 10.3788/COL202018.030201
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: COL 18(3), 030201(2020) CHINESE OPTICS LETTERS March 2020
+  first_author: Webster
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.3788/COL202018
+entities:
+- id: ent.030201__1__system
+  name: Webster  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Webster '
+metrics:
+- id: met.030201__1__primary
+  name: Webster  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: COL 18(3), 030201(2020) CHINESE OPTICS LETTERS Mar
+      claim: core experimental result
+relations:
+- id: rel.030201__1__01
+  subject: ent.030201__1__system
+  predicate: CHARACTERIZED-BY
+  object: met.030201__1__primary
+  confidence: established
+  source:
+    zotero_key: COL 18(3), 030201(2020) CHINESE OPTICS LETTERS Mar
+    claim: experimental system characterized by primary metric

@@ -1,8 +1,0 @@
-evidence: '''unloaded quality factor of approximately 300 million'''
-id: evrel_BYUPFGJY_rel.suh_2019_uh09
-metadata:
-  source_paper: suh2019
-  zotero_key: BYUPFGJY
-object: met.microresonator_Q_s19
-predicate: CHARACTERIZED-BY
-subject: ent.silica_wedge_microresonator_s19

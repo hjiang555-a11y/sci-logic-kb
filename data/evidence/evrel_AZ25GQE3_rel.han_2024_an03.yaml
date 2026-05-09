@@ -1,9 +1,0 @@
-evidence: Two homemade optical telescopes with an aperture of 400 mm and a focal length
-  of 1,600 mm are used to transmit and receive the laser
-id: evrel_AZ25GQE3_rel.han_2024_an03
-metadata:
-  source_paper: han2024
-  zotero_key: AZ25GQE3
-object: ent.long_path_dcs_h24
-predicate: PART-OF
-subject: ent.bistatic_two_way_optical_link_h24

@@ -1,8 +1,0 @@
-evidence: excess optical losses to levels as low as 3 ppm
-id: evrel_4GUXEM2C_rel.cole_2016_ol16_01
-metadata:
-  source_paper: cole2016
-  zotero_key: 4GUXEM2C
-object: met.algaas_optical_loss_cole16
-predicate: CHARACTERIZED-BY
-subject: ent.algaas_crystalline_mirror_c13

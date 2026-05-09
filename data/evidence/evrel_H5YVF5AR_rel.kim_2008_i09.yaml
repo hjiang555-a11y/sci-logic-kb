@@ -1,9 +1,0 @@
-evidence: we implemented this technique by using ... a balanced optical–microwave
-  phase detector (BOM-PD)
-id: evrel_H5YVF5AR_rel.kim_2008_i09
-metadata:
-  source_paper: kim2008
-  zotero_key: H5YVF5AR
-object: pri.optical_microwave_phase_detection_bom_pd
-predicate: ENABLED-BY
-subject: meth.optical_microwave_synchronization_bom_pd

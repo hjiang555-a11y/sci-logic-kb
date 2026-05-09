@@ -1,0 +1,51 @@
+chain_id: comb_spectral_coverage
+question: What determines the spectral bandwidth of frequency combs, and how has octave-spanning coverage been achieved?
+domain: optical-frequency-combs
+confidence: draft
+last_updated: '2026-05-09'
+current_best:
+  value: '>1 octave on-chip Si3N4 (495 THz)'
+  system: Gaeta 2019 chip-scale SCG
+limiting_principle:
+  id: pri.microresonator_anomalous_dispersion
+  name: Nonlinear spectral broadening limited by dispersion and pump power
+  defined_by: Multiple (Diddams 2000, Kippenberg 2018)
+  statement: Octave-spanning requires anomalous dispersion, sufficient peak power for nonlinear effects, and low-loss waveguiding.
+  note: Spectral coverage is enabled by anomalous dispersion for soliton-mode broadening
+timeline:
+- year: 2000
+  value: '>300 THz (one octave)'
+  system: Diddams PCF Ti:Sapphire
+  note: First octave-spanning comb
+- year: 2004
+  value: 1100-2200 nm
+  system: Washburn Er:fiber+HNLF
+  note: Fiber-based octave
+- year: 2017
+  value: ~1 octave microcomb
+  system: Li single-soliton microcomb
+  note: Microcomb octave
+- year: 2018
+  value: '>1 octave DKS Si3N4'
+  system: Kippenberg dissipative Kerr soliton
+  note: Integrated octave
+- year: 2019
+  value: '>495 THz on-chip Si3N4'
+  system: Gaeta chip-scale SCG
+  note: Chip-scale octave generation
+edges:
+- from: Comb spectral bandwidth
+  to: pri.microresonator_anomalous_dispersion
+  relation: BOUNDED-BY
+- from: pri.microresonator_anomalous_dispersion
+  to: On-chip Si3N4 waveguide SCG
+  relation: RESOLVED-BY
+  status: demonstrated
+- from: 'Current: on-chip octave'
+  to: 'Target: UV-to-IR single-chip comb'
+  relation: REMAINING-GAP
+evidence:
+- relation_id: rel.holzwarth_2000_ol00_01
+  claim: first self-referenced comb achieves octave-spanning spectrum
+- relation_id: rel.kippenberg_2017_18_03
+  claim: DKS microcomb achieves >1 octave spectral bandwidth

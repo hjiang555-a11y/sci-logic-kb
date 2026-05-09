@@ -1,8 +1,0 @@
-evidence: we observed 6.4 fs (r.m.s.) residual timing error between the link outputs
-id: evrel_H5YVF5AR_rel.kim_2008_i01
-metadata:
-  source_paper: kim2008
-  zotero_key: H5YVF5AR
-object: met.timing_link_stability_k08
-predicate: CHARACTERIZED-BY
-subject: ent.remote_timing_synchronization_network

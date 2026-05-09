@@ -1,9 +1,0 @@
-evidence: Building on our previous silicon cavity effort, we now achieve the fundamental
-  thermal-noise-limited stability for a 6 cm long silicon cavity cooled to 4 K
-id: evrel_JIZCUZLY_rel.robinson_2019_03
-metadata:
-  source_paper: robinson2019
-  zotero_key: JIZCUZLY
-object: pri.cryogenic_mechanical_q_enhancement
-predicate: ENABLED-BY
-subject: ent.si_crystal_fp_cavity_4k_r19

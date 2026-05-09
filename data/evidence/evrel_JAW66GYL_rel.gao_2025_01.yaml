@@ -1,8 +1,0 @@
-evidence: recirculating interferometer... increasing frequency-discriminator sensitivity
-id: evrel_JAW66GYL_rel.gao_2025_01
-metadata:
-  source_paper: gao2025
-  zotero_key: JAW66GYL
-object: pri.recirculating_interferometer_sensitivity
-predicate: ENABLED-BY
-subject: ent.recirculating_fiber_interferometer_g25

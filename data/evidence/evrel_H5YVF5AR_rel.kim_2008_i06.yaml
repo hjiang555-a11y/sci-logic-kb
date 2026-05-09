@@ -1,9 +1,0 @@
-evidence: for this optical–optical synchronization ... we can use balanced optical
-  cross-correlation
-id: evrel_H5YVF5AR_rel.kim_2008_i06
-metadata:
-  source_paper: kim2008
-  zotero_key: H5YVF5AR
-object: pri.balanced_optical_cross_correlation
-predicate: ENABLED-BY
-subject: meth.optical_optical_synchronization_boc

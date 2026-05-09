@@ -1,9 +1,0 @@
-evidence: For ELT+, TDEV is specified at 0.5 ps at 100 s, and < 1 ps for longer times
-  up to 1e6 s
-id: evrel_SCI-ESA-HRE-ESR-ISOC_rel.cacciapuoti_2017_17_13
-metadata:
-  source_paper: cacciapuoti2017
-  zotero_key: SCI-ESA-HRE-ESR-ISOC
-object: met.space_to_ground_link_instability
-predicate: CHARACTERIZED-BY
-subject: ent.pulsed_optical_link_elt_plus

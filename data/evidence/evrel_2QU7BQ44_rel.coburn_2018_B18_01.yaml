@@ -1,9 +1,0 @@
-evidence: The field-deployed dual-comb spectrometer detects and quantifies a 1.6 g/min
-  CH₄ source from 1 km distance.
-id: evrel_2QU7BQ44_rel.coburn_2018_B18_01
-metadata:
-  source_paper: coburn2018
-  zotero_key: 2QU7BQ44
-object: met.dcs_field_detection_limit_c18
-predicate: CHARACTERIZED-BY
-subject: ent.field_deployed_dcs_c18

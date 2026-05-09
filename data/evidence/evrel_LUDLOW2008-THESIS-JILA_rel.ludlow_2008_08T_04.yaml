@@ -1,9 +1,0 @@
-evidence: clock performance is characterized by the Allan deviation σ_y(τ), averaging
-  down as white FM noise at short τ before encountering systematic floors.
-id: evrel_LUDLOW2008-THESIS-JILA_rel.ludlow_2008_08T_04
-metadata:
-  source_paper: ludlow2008_thesis
-  zotero_key: LUDLOW2008-THESIS-JILA
-object: meth.allan_deviation_adev
-predicate: OPERATIONALIZED-AS
-subject: meth.sr_optical_lattice_clock_stack_l08

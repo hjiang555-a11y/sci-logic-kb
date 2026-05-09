@@ -1,19 +1,42 @@
-# Yu ???? — A 66 fs highly stable single wall carbon nanotube mode locked fiber laser [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Home Search Collections Journals About Contact us My IOPscience [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: Laser Phys. 24 (2014) 015105
+  zotero_key: 'Home Search Collections Journals About Contact us '
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
   reliability: medium
-  title: "A 66 fs highly stable single wall carbon nanotube mode locked fiber laser"
-  first_author: "Yu"
-  authors: ["Zhenhua Yu, Yonggang Wang, Xiao Zhang, Xinzheng Dong, Jinrong Tian, Yanrong Song"]
-  note: >
-    [批量提取] 元数据来源：PDF metadata。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  title: Home Search Collections Journals About Contact us My IOPscience
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1088/1054-660X/24/1/015105
+entities:
+- id: ent.laser_phys__24__2014__015105_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.laser_phys__24__2014__015105_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: 'Home Search Collections Journals About Contact us '
+      claim: core experimental result
+relations:
+- id: rel.laser_phys__24__2014__015105_01
+  subject: ent.laser_phys__24__2014__015105_system
+  predicate: CHARACTERIZED-BY
+  object: met.laser_phys__24__2014__015105_primary
+  confidence: established
+  source:
+    zotero_key: 'Home Search Collections Journals About Contact us '
+    claim: experimental system characterized by primary metric

@@ -1,9 +1,0 @@
-evidence: BOMPD implements the frep stabilization arm of the two-DOF OFC control scheme
-  with sub-femtosecond residual phase noise
-id: evrel_H93SHF89_rel.endo_2018_18_08
-metadata:
-  source_paper: endo2018
-  zotero_key: H93SHF89
-object: pri.ofc_two_dof_stabilization
-predicate: ENABLED-BY
-subject: meth.balanced_optical_microwave_phase_detector

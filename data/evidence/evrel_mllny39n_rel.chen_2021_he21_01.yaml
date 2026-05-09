@@ -1,9 +1,0 @@
-evidence: 12 fibres in the cable, three of which are used for the quantum channel,
-  optical synchronization and frequency locking
-id: evrel_mllny39n_rel.chen_2021_he21_01
-metadata:
-  source_paper: chen2021_mllny39n
-  zotero_key: mllny39n
-object: met.coherent_optical_fiber_link_instability
-predicate: CHARACTERIZED-BY
-subject: ent.coherent_optical_fiber_link

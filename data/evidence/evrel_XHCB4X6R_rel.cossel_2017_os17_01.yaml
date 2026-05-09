@@ -1,8 +1,0 @@
-evidence: dual-comb spectroscopy
-id: evrel_XHCB4X6R_rel.cossel_2017_os17_01
-metadata:
-  source_paper: cossel2017
-  zotero_key: XHCB4X6R
-object: ent.dual_comb_spectrometer
-predicate: PART-OF
-subject: ent.airborne_retroreflector_dcs_c17

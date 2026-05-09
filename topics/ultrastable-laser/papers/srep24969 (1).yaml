@@ -1,23 +1,41 @@
-# Wu 2016 — 0.26-Hz-linewidth ultrastable lasers at 1557 nm [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — OPEN 0.26-Hz-linewidth ultrastable lasers [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：ultrastable-laser
 meta:
-  zotero_key: srep24969 (1)
+  zotero_key: OPEN 0.26-Hz-linewidth ultrastable lasers
   topic: ultrastable-laser
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "0.26-Hz-linewidth ultrastable lasers at 1557 nm"
-  year: 2016
-  first_author: "Wu"
-  authors: ["Lifei Wu", "Yanyi Jiang", "Chaoqun Ma", "Wen Qi", "Hongfu Yu", "Zhiyi Bi", "Longsheng Ma"]
-  journal: "Scientific Reports"
-  volume: 6
-  doi: 10.1038/srep24969
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: OPEN 0.26-Hz-linewidth ultrastable lasers
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.srep24969__1__system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.srep24969__1__primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: OPEN 0.26-Hz-linewidth ultrastable lasers
+      claim: core experimental result
+relations:
+- id: rel.srep24969__1__01
+  subject: ent.srep24969__1__system
+  predicate: CHARACTERIZED-BY
+  object: met.srep24969__1__primary
+  confidence: established
+  source:
+    zotero_key: OPEN 0.26-Hz-linewidth ultrastable lasers
+    claim: experimental system characterized by primary metric

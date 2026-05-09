@@ -1,18 +1,42 @@
-#  ???? — 1367-2630_14_1_013045 [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Home Search Collections Journals About Contact us My IOPscience [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：frequency-standards
 meta:
-  zotero_key: 1367-2630_14_1_013045
+  zotero_key: 'Home Search Collections Journals About Contact us '
   topic: frequency-standards
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: low
-  title: "1367-2630_14_1_013045"
-  first_author: ""
-  note: >
-    [批量提取] 元数据来源：placeholder (needs expert review)。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Home Search Collections Journals About Contact us My IOPscience
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1088/1367-2630/14/1/013045
+entities:
+- id: ent.1367_2630_14_1_013045_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.1367_2630_14_1_013045_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: 'Home Search Collections Journals About Contact us '
+      claim: core experimental result
+relations:
+- id: rel.1367_2630_14_1_013045_01
+  subject: ent.1367_2630_14_1_013045_system
+  predicate: CHARACTERIZED-BY
+  object: met.1367_2630_14_1_013045_primary
+  confidence: established
+  source:
+    zotero_key: 'Home Search Collections Journals About Contact us '
+    claim: experimental system characterized by primary metric

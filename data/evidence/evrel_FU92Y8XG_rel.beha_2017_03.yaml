@@ -1,9 +1,0 @@
-evidence: opens a novel regime for tunable combs with wide mode spacing apart from
-  the requirements of mode locking
-id: evrel_FU92Y8XG_rel.beha_2017_03
-metadata:
-  source_paper: beha2017
-  zotero_key: FU92Y8XG
-object: ent.optical_frequency_comb
-predicate: COMPETES-WITH
-subject: ent.eom_frequency_comb

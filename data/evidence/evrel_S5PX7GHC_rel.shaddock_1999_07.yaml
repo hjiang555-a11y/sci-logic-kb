@@ -1,9 +1,0 @@
-evidence: TEM10 non-resonant due to Gouy phase ... serves as reference light for frequency
-  discrimination
-id: evrel_S5PX7GHC_rel.shaddock_1999_07
-metadata:
-  source_paper: shaddock1999
-  zotero_key: S5PX7GHC
-object: pri.off_resonance_reference_light
-predicate: DERIVED-FROM
-subject: pri.gouy_phase_discrimination

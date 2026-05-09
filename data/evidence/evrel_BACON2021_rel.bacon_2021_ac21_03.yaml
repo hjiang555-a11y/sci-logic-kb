@@ -1,8 +1,0 @@
-evidence: frequency ratio measurements at 18-digit accuracy
-id: evrel_BACON2021_rel.bacon_2021_ac21_03
-metadata:
-  source_paper: bacon2021
-  zotero_key: BACON2021
-object: met.optical_clock_fractional_uncertainty
-predicate: CHARACTERIZED-BY
-subject: ent.bacon_three_clock_network_b21

@@ -1,9 +1,0 @@
-evidence: The solid-state HHG system produces harmonic spectra extending from 200
-  to 650 nm.
-id: evrel_7978HTD3_rel.lesko_2022_K22_02
-metadata:
-  source_paper: lesko2022
-  zotero_key: 7978HTD3
-object: met.uv_vis_harmonic_bandwidth_l22
-predicate: CHARACTERIZED-BY
-subject: ent.cep_hhg_comb_system_l22

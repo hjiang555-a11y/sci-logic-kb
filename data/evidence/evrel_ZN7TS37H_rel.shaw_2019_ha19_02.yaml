@@ -1,9 +1,0 @@
-evidence: Red Pitaya and open-source software as a low-cost digital phase locking
-  system
-id: evrel_ZN7TS37H_rel.shaw_2019_ha19_02
-metadata:
-  source_paper: shaw2019
-  zotero_key: ZN7TS37H
-object: ent.fpga_digital_servo_er_comb_s19
-predicate: OPERATIONALIZED-AS
-subject: meth.red_pitaya_fpga_comb_servo_s19

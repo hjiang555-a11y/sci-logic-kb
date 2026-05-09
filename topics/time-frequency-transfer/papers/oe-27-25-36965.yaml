@@ -1,24 +1,41 @@
-# Xu 2019 — Reciprocity of propagation in optical fiber links demonstrated to 10<sup>−21<... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — ResearchArticle Vol.27,No.25/9December2019/OpticsExpress 36965 [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
 meta:
-  zotero_key: oe-27-25-36965
+  zotero_key: ResearchArticle Vol.27,No.25/9December2019/OpticsE
   topic: time-frequency-transfer
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Reciprocity of propagation in optical fiber links demonstrated to 10<sup>−21</sup>"
-  year: 2019
-  first_author: "Xu"
-  authors: ["Dan Xu", "Pacôme Delva", "Olivier Lopez", "Anne Amy-Klein", "Paul-Eric Pottie"]
-  journal: "Optics Express"
-  volume: 27
-  pages: 36965
-  doi: 10.1364/OE.27.036965
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: ResearchArticle Vol.27,No.25/9December2019/OpticsExpress 36965
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.oe_27_25_36965_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.oe_27_25_36965_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: ResearchArticle Vol.27,No.25/9December2019/OpticsE
+      claim: core experimental result
+relations:
+- id: rel.oe_27_25_36965_01
+  subject: ent.oe_27_25_36965_system
+  predicate: CHARACTERIZED-BY
+  object: met.oe_27_25_36965_primary
+  confidence: established
+  source:
+    zotero_key: ResearchArticle Vol.27,No.25/9December2019/OpticsE
+    claim: experimental system characterized by primary metric

@@ -1,9 +1,0 @@
-evidence: The heterogeneous III-V-on-SiN mode-locked laser achieves a radio frequency
-  linewidth of 1 Hz at 755 MHz repetition rate.
-id: evrel_5R8PUBX7_rel.cuyvers_2021_V21_01
-metadata:
-  source_paper: cuyvers2021
-  zotero_key: 5R8PUBX7
-object: met.mll_rf_linewidth_c21
-predicate: CHARACTERIZED-BY
-subject: ent.hetero_iii_v_sin_mll_comb_c21

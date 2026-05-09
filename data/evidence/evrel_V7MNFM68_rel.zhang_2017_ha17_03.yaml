@@ -1,9 +1,0 @@
-evidence: broadband associated with high performance ... large dynamic range associated
-  with good robustness
-id: evrel_V7MNFM68_rel.zhang_2017_ha17_03
-metadata:
-  source_paper: zhang2017b
-  zotero_key: V7MNFM68
-object: pri.gain_lifetime_servo_bandwidth_limit
-predicate: BOUNDED-BY
-subject: pri.polarization_rotation_cavity_loss_frequency_control_z17

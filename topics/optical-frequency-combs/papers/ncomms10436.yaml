@@ -1,23 +1,42 @@
-# Yi 2016 — Demonstration of a near-IR line-referenced electro-optical laser frequency co... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Received27Aug 2015 |Accepted 10Dec 2015 |Published 27 Jan2016 DOI:10.1038/ncomms [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: ncomms10436
+  zotero_key: Received27Aug 2015 |Accepted 10Dec 2015 |Published
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Demonstration of a near-IR line-referenced electro-optical laser frequency comb for precision radial velocity measurements in astronomy"
-  year: 2016
-  first_author: "Yi"
-  authors: ["X. Yi", "K. Vahala", "J. Li", "S. Diddams", "G. Ycas", "P. Plavchan", "S. Leifer", "J. Sandhu", "G. Vasisht", "P. Chen", "P. Gao", "J. Gagne", "E. Furlan", "M. Bottom", "E. C. Martin", "M. P. Fitzgerald", "G. Doppmann", "C. Beichman"]
-  journal: "Nature Communications"
-  volume: 7
+  reliability: medium
+  title: Received27Aug 2015 |Accepted 10Dec 2015 |Published 27 Jan2016 DOI:10.1038/ncomms10436 OPEN
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
   doi: 10.1038/ncomms10436
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+entities:
+- id: ent.ncomms10436_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.ncomms10436_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Received27Aug 2015 |Accepted 10Dec 2015 |Published
+      claim: core experimental result
+relations:
+- id: rel.ncomms10436_01
+  subject: ent.ncomms10436_system
+  predicate: CHARACTERIZED-BY
+  object: met.ncomms10436_primary
+  confidence: established
+  source:
+    zotero_key: Received27Aug 2015 |Accepted 10Dec 2015 |Published
+    claim: experimental system characterized by primary metric

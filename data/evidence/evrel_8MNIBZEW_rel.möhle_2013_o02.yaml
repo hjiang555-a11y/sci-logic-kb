@@ -1,8 +1,0 @@
-evidence: relative frequency stability better than 1×10⁻¹⁴
-id: evrel_8MNIBZEW_rel.möhle_2013_o02
-metadata:
-  source_paper: mohle2013
-  zotero_key: 8MNIBZEW
-object: met.freq_stability_piezo_cavity_m13
-predicate: CHARACTERIZED-BY
-subject: ent.piezo_tunable_cavity_m13

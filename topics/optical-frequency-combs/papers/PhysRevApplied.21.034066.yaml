@@ -1,23 +1,42 @@
-# Zhang 2024 — Increase in the signal-to-noise ratio of the beat note between a frequency co... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Increase in the signal-to-noise ratio of the beat note between a frequency comb [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: PhysRevApplied.21.034066
+  zotero_key: 'Increase in the signal-to-noise ratio of the beat '
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Increase in the signal-to-noise ratio of the beat note between a frequency comb and a continuous-wave laser"
-  year: 2024
-  first_author: "Zhang"
-  authors: ["Shen Zhang", "Qi Shen", "Lei Hou", "Jian-Yu Guan", "Shengkai Liao", "Qiang Zhang", "Hai-Feng Jiang"]
-  journal: "Physical Review Applied"
-  volume: 21
-  doi: 10.1103/PhysRevApplied.21.034066
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Increase in the signal-to-noise ratio of the beat note between a frequency comb
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1103/PhysRevApplied
+entities:
+- id: ent.physrevapplied_21_034066_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.physrevapplied_21_034066_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: 'Increase in the signal-to-noise ratio of the beat '
+      claim: core experimental result
+relations:
+- id: rel.physrevapplied_21_034066_01
+  subject: ent.physrevapplied_21_034066_system
+  predicate: CHARACTERIZED-BY
+  object: met.physrevapplied_21_034066_primary
+  confidence: established
+  source:
+    zotero_key: 'Increase in the signal-to-noise ratio of the beat '
+    claim: experimental system characterized by primary metric

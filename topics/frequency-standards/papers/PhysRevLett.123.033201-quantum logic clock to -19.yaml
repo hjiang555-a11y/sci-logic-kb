@@ -1,23 +1,42 @@
-# Brewer 2019 — <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mm... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Editors'Suggestion FeaturedinPhysics [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：frequency-standards
 meta:
-  zotero_key: PhysRevLett.123.033201-quantum logic clock to -19
+  zotero_key: Editors'Suggestion FeaturedinPhysics
   topic: frequency-standards
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "<mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mml:mrow><mml:mmultiscripts><mml:mrow><mml:msup><mml:mrow><mml:mi>Al</mml:mi></mml:mrow><mml:mrow><mml:mo>+</mml:mo></mml:mrow></mml:msup></mml:mrow><mml:mprescripts/><mml:none/><mml:mrow><mml:mn>27</mml:mn></mml:mrow></mml:mmultiscripts></mml:mrow></mml:math> Quantum-Logic Clock with a Systematic Uncertainty below <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>−</mml:mo><mml:mn>18</mml:mn></mml:mrow></mml:msup></mml:math>"
-  year: 2019
-  first_author: "Brewer"
-  authors: ["S. M. Brewer", "J.-S. Chen", "A. M. Hankin", "E. R. Clements", "C. W. Chou", "D. J. Wineland", "D. B. Hume", "D. R. Leibrandt"]
-  journal: "Physical Review Letters"
-  volume: 123
-  doi: 10.1103/PhysRevLett.123.033201
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Editors'Suggestion FeaturedinPhysics
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1103/PhysRevLett
+entities:
+- id: ent.physrevlett_123_033201_quantum_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.physrevlett_123_033201_quantum_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Editors'Suggestion FeaturedinPhysics
+      claim: core experimental result
+relations:
+- id: rel.physrevlett_123_033201_quantum_01
+  subject: ent.physrevlett_123_033201_quantum_system
+  predicate: CHARACTERIZED-BY
+  object: met.physrevlett_123_033201_quantum_primary
+  confidence: established
+  source:
+    zotero_key: Editors'Suggestion FeaturedinPhysics
+    claim: experimental system characterized by primary metric

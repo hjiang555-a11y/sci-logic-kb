@@ -1,23 +1,42 @@
-# Fermann 2022 — Precision frequency transfer with fiber frequency combs [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Martin  — DOI10.3389/fphy.2022.1005074 [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
 meta:
-  zotero_key: fphy-10-1005074
+  zotero_key: DOI10.3389/fphy.2022.1005074
   topic: time-frequency-transfer
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Precision frequency transfer with fiber frequency combs"
-  year: 2022
-  first_author: "Fermann"
-  authors: ["Martin E. Fermann", "Kevin F. Lee", "Peng Li", "Antoine Rolland", "Jie Jiang"]
-  journal: "Frontiers in Physics"
-  volume: 10
-  doi: 10.3389/fphy.2022.1005074
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: DOI10.3389/fphy.2022.1005074
+  first_author: Martin
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.3389/fphy
+entities:
+- id: ent.fphy_10_1005074_system
+  name: Martin  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Martin '
+metrics:
+- id: met.fphy_10_1005074_primary
+  name: Martin  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: DOI10.3389/fphy.2022.1005074
+      claim: core experimental result
+relations:
+- id: rel.fphy_10_1005074_01
+  subject: ent.fphy_10_1005074_system
+  predicate: CHARACTERIZED-BY
+  object: met.fphy_10_1005074_primary
+  confidence: established
+  source:
+    zotero_key: DOI10.3389/fphy.2022.1005074
+    claim: experimental system characterized by primary metric

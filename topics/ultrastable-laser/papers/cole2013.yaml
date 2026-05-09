@@ -73,11 +73,11 @@ principles:
     \ reduction\n in mechanical damping when compared with the best dielectric multilayers\"\
     \n"
 metrics:
-- id: met.algaas_coating_loss_angle_c13
-  name: AlGaAs 晶体镀层损耗角（Cole 2013）
-  unit: 无量纲（损耗角 φ = 1/Q_mech）
-  description: 从 FP 腔热噪声测量提取的 AlGaAs/GaAs 晶体镀层机械损耗角上限
-  demonstrated_value:
+  - id: met.algaas_coating_loss_angle_c13
+    name: AlGaAs 晶体镀层损耗角（Cole 2013）
+    unit: 无量纲（损耗角 φ = 1/Q_mech）
+    description: 从 FP 腔热噪声测量提取的 AlGaAs/GaAs 晶体镀层机械损耗角上限
+    demonstrated_value:
     value: φ_AlGaAs ≤ 2.5×10⁻⁵（室温上限，FP 腔测量）；对比 IBS 最优 φ ~ 2×10⁻⁴
     conditions: 35 mm Zerodur 腔，熔融石英底物，1064 nm，室温，与 PTB 698 nm 参考激光比较（Häfner 2015
       前身）
@@ -87,7 +87,7 @@ metrics:
       zotero_key: CWIHQRJD
       claim: extracted a loss angle of 0(4)×10⁻⁵ for the substrate-transferred crystalline
         coatings... agreement with room-temperature loss angle of 2.5×10⁻⁵
-  comparison:
+    comparison:
     ibs_best: φ_IBS_best ~ 2×10⁻⁴（最优 TiO₂:Ta₂O₅ 共掺 IBS 膜）
     ibs_standard: φ_IBS_standard ~ 4×10⁻⁴（标准 SiO₂/Ta₂O₅）
     reduction_factor: 约 10–16×（损耗角之比）
@@ -211,6 +211,10 @@ relations:
   subject: ent.mirror_coating
   predicate: BOUNDED-BY
   object: pri.brownian_thermal_noise_fdt
+  confidence: established
+  source:
+    zotero_key: CWIHQRJD
+    claim: "a reduction in the coating loss angle by at least one order of magnitude relative to conventional silica/tantala mirrors"
   breakthrough_paths:
   - direction: pri.crystalline_coating_low_brownian_noise
     expected_gain: AlGaAs 晶体镀层替换传统 IBS 镀层，机械损耗角降低 ≥10×，镀层热噪声贡献同比例下降
@@ -222,7 +226,15 @@ relations:
   subject: pri.brownian_thermal_noise_fdt
   predicate: BOUNDED-BY
   object: meth.crystalline_coating_deposition
+  confidence: established
+  source:
+    zotero_key: CWIHQRJD
+    claim: "substrate-transferred crystalline coatings employing AlGaAs/GaAs DBR reduce Brownian thermal noise by 10x"
 - id: rel.bridge_coat_03
   subject: meth.crystalline_coating_deposition
   predicate: ENABLED-BY
   object: met.algaas_coating_loss_angle_c13
+  confidence: established
+  source:
+    zotero_key: CWIHQRJD
+    claim: "extracted a loss angle of ≤2.5×10⁻⁵ for the substrate-transferred crystalline coatings"

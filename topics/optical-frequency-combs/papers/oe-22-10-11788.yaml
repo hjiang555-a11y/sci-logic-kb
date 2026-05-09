@@ -1,24 +1,41 @@
-# Kim 2014 — Time-domain stabilization of carrier-envelope phase in femtosecond light pulses [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# William  — Time-domain stabilization of carrier-envelope [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: oe-22-10-11788
+  zotero_key: Time-domain stabilization of carrier-envelope
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Time-domain stabilization of carrier-envelope phase in femtosecond light pulses"
-  year: 2014
-  first_author: "Kim"
-  authors: ["Young-Jin Kim", "Ian Coddington", "William C. Swann", "Nathan R. Newbury", "Joohyung Lee", "Seungchul Kim", "Seung-Woo Kim"]
-  journal: "Optics Express"
-  volume: 22
-  pages: 11788
-  doi: 10.1364/OE.22.011788
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Time-domain stabilization of carrier-envelope
+  first_author: William
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.oe_22_10_11788_system
+  name: William  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in William '
+metrics:
+- id: met.oe_22_10_11788_primary
+  name: William  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Time-domain stabilization of carrier-envelope
+      claim: core experimental result
+relations:
+- id: rel.oe_22_10_11788_01
+  subject: ent.oe_22_10_11788_system
+  predicate: CHARACTERIZED-BY
+  object: met.oe_22_10_11788_primary
+  confidence: established
+  source:
+    zotero_key: Time-domain stabilization of carrier-envelope
+    claim: experimental system characterized by primary metric

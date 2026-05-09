@@ -1,8 +1,0 @@
-evidence: 5 mW of light from each comb is coupled into a single-mode ZrF4 fiber
-id: evrel_FQ4KYV38_rel.ycas_2019_19_17
-metadata:
-  source_paper: ycas2019
-  zotero_key: FQ4KYV38
-object: pri.dfg_power_atmospheric_window_tradeoff
-predicate: BOUNDED-BY
-subject: met.voc_path_integrated_sensitivity_y19

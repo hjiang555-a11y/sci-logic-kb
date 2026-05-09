@@ -1,9 +1,0 @@
-evidence: The hybrid mode-locked scheme is more robust than lasers that only use NPE,
-  and the RIN is as low as schemes based on pure NPE.
-id: evrel_9RFKI5SH_rel.zhang_2017_hOFC17_03
-metadata:
-  source_paper: zhang2017
-  zotero_key: 9RFKI5SH
-object: pri.npe_nalm_hybrid_mode_locking
-predicate: ENABLED-BY
-subject: ent.hybrid_ml_erfiber_comb_z17

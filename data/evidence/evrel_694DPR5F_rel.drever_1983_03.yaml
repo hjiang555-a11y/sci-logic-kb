@@ -1,8 +1,0 @@
-evidence: the servo loop bandwidth is not limited by the cavity response time
-id: evrel_694DPR5F_rel.drever_1983_03
-metadata:
-  source_paper: drever1983
-  zotero_key: 694DPR5F
-object: pri.pdh_high_speed_regime
-predicate: ENABLED-BY
-subject: meth.pdh_locking

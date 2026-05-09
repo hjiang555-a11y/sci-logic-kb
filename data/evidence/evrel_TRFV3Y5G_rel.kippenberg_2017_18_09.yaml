@@ -1,8 +1,0 @@
-evidence: tens of milliwatts have been reported for octave spanning spectra
-id: evrel_TRFV3Y5G_rel.kippenberg_2017_18_09
-metadata:
-  source_paper: kippenberg2018
-  zotero_key: TRFV3Y5G
-object: met.microcomb_power_consumption
-predicate: CHARACTERIZED-BY
-subject: ent.microresonator_frequency_comb

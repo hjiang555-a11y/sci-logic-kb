@@ -1,9 +1,0 @@
-evidence: Sub-GHz mode spacing arises from the cm-scale Si extended cavity round-trip
-  time.
-id: evrel_GY48UQ7F_rel.wang_2017_an10
-metadata:
-  source_paper: wang2017
-  zotero_key: GY48UQ7F
-object: pri.long_cavity_subghz_comb_spacing
-predicate: ENABLED-BY
-subject: ent.iii_v_on_si_ultradense_comb_w17

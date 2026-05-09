@@ -1,9 +1,0 @@
-evidence: non-reciprocal phase device ... to ensure the self-starting operation by
-  introducing a phase bias of π/2
-id: evrel_BPQDL4DN_rel.zhang_2022_22B_04
-metadata:
-  source_paper: zhang2022b
-  zotero_key: BPQDL4DN
-object: pri.figure9_nalm_pm_self_starting
-predicate: ENABLED-BY
-subject: ent.all_pm_erfiber_comb_z22b

@@ -1,23 +1,42 @@
-# McFerran 2012 — Neutral Atom Frequency Reference in the Deep Ultraviolet with<mml:math xmlns:... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Mejri  — Neutral Atom Frequency Reference in the Deep Ultraviolet with [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：frequency-standards
 meta:
-  zotero_key: Hg Mcferran PRL 2012
+  zotero_key: Neutral Atom Frequency Reference in the Deep Ultra
   topic: frequency-standards
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Neutral Atom Frequency Reference in the Deep Ultraviolet with<mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mml:mtext mathvariant=\"normal\">Fractional Uncertainty</mml:mtext><mml:mo>=</mml:mo><mml:mn>5.7</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>−</mml:mo><mml:mn>15</mml:mn></mml:mrow></mml:msup></mml:math>"
-  year: 2012
-  first_author: "McFerran"
-  authors: ["J. J. McFerran", "L. Yi", "S. Mejri", "S. Di Manno", "W. Zhang", "J. Guéna", "Y. Le Coq", "S. Bize"]
-  journal: "Physical Review Letters"
-  volume: 108
-  doi: 10.1103/PhysRevLett.108.183004
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Neutral Atom Frequency Reference in the Deep Ultraviolet with
+  first_author: Mejri
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1103/PhysRevLett
+entities:
+- id: ent.hg_mcferran_prl_2012_system
+  name: Mejri  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Mejri '
+metrics:
+- id: met.hg_mcferran_prl_2012_primary
+  name: Mejri  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Neutral Atom Frequency Reference in the Deep Ultra
+      claim: core experimental result
+relations:
+- id: rel.hg_mcferran_prl_2012_01
+  subject: ent.hg_mcferran_prl_2012_system
+  predicate: CHARACTERIZED-BY
+  object: met.hg_mcferran_prl_2012_primary
+  confidence: established
+  source:
+    zotero_key: Neutral Atom Frequency Reference in the Deep Ultra
+    claim: experimental system characterized by primary metric

@@ -1,8 +1,0 @@
-evidence: reconstructed pulse of 9.5 fs
-id: evrel_BDY8JHA4_rel.xing_2020_04
-metadata:
-  source_paper: xing2020
-  zotero_key: BDY8JHA4
-object: met.pulse_duration_cycles_x20
-predicate: CHARACTERIZED-BY
-subject: ent.all_fiber_2um_comb_x20

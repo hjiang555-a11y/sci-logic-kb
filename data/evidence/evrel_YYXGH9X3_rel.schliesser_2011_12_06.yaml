@@ -1,8 +1,0 @@
-evidence: detection levels as low as one part per billion for H₂O₂
-id: evrel_YYXGH9X3_rel.schliesser_2011_12_06
-metadata:
-  source_paper: schliesser2012
-  zotero_key: YYXGH9X3
-object: met.trace_gas_sensitivity
-predicate: CHARACTERIZED-BY
-subject: ent.mid_ir_frequency_comb

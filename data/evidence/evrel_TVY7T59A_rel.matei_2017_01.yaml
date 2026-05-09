@@ -1,9 +1,0 @@
-evidence: mod σ_y = 4×10⁻¹⁷ for integration times between 0.8 s and a few tens of
-  seconds
-id: evrel_TVY7T59A_rel.matei_2017_01
-metadata:
-  source_paper: matei2017
-  zotero_key: TVY7T59A
-object: met.fractional_freq_instability_m17
-predicate: CHARACTERIZED-BY
-subject: ent.si_crystal_fp_cavity_k12

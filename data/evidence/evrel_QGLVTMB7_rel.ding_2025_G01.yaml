@@ -1,8 +1,0 @@
-evidence: ULE glass HCF exhibits three orders of magnitude lower thermal delay
-id: evrel_QGLVTMB7_rel.ding_2025_G01
-metadata:
-  source_paper: ding2025
-  zotero_key: QGLVTMB7
-object: pri.ule_hcf_thermal_stability
-predicate: ENABLED-BY
-subject: ent.ule_hollow_core_fiber_d25

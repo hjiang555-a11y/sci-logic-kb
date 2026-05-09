@@ -1,0 +1,145 @@
+chain_id: fiber_stabilization
+question: "What determines the ultimate frequency stability of fiber delay-line (FDL) stabilized lasers, and how can it be improved?"
+domain: ultrastable-laser
+confidence: draft
+last_updated: 2026-05-09
+
+current_best:
+  value: "frequency noise < 0.8 Hz²/Hz @ 1 Hz; σ_y ≈ 7×10⁻¹⁵ @ 0.1-1 s"
+  system: "1 km SMF-28 fiber MZI + self-homodyne balanced detection"
+  paper: "Dong 2015 / Jeon 2023"
+  note: >
+    Fiber-stabilized lasers lag FP cavities by ~100× in σ_y but offer unique advantages:
+    wide tunability, immunity to vacuum requirements, low cost, and SWaP for field deployment.
+
+limiting_principle:
+  id: pri.fiber_thermal_noise_wanser
+  name: "Fiber thermodynamic phase noise (Wanser model)"
+  statement: >
+    Thermally-driven refractive index fluctuations in optical fiber impose a fundamental
+    phase noise floor. For standard SMF-28, the thermal noise PSD scales with fiber length L,
+    temperature T², and the fiber's thermo-optic coefficient. At room temperature with 1 km
+    fiber, the noise floor limits frequency PSD to ~0.8 Hz²/Hz in the 4-200 Hz band.
+  defined_by: dong2015.yaml
+  evidence_count: 2
+  note: >
+    This is the single dominant limit for FDL-stabilized lasers, analogous to
+    Brownian thermal noise for FP cavities. The key difference: fiber noise scales
+    with L (longer is worse), while cavity noise scales with 1/L (longer is better).
+
+secondary_limits:
+  - id: pri.rayleigh_backscattering_noise
+    name: "Rayleigh backscattering in optical fiber"
+    effect: >
+      Backscattered light from intrinsic fiber inhomogeneities interferes with the
+      forward-propagating signal, creating phase noise. In standard SMF, RBS coefficient
+      is ~-75 dB/m, limiting sweep linearity and dynamic range.
+    breakthrough: >
+      Hollow-core fiber reduces RBS by >40 dB (to -118 dB/m, Michaud-Belleau 2021),
+      effectively eliminating this limit for HCF-based systems.
+
+  - id: pri.hollow_core_fiber_thermal_noise
+    name: "Hollow-core fiber fundamental thermal noise"
+    effect: >
+      HCF thermal noise is fundamentally lower than solid-core because the optical mode
+      propagates mostly in air (low thermo-optic coefficient). However, surface scattering
+      and mode coupling introduce new noise mechanisms.
+    breakthrough: >
+      ULE-glass HCF (Ding 2025) combines the low thermal noise of HCF with the low CTE
+      of ULE material, targeting room-temperature thermal noise limits competitive with
+      cryogenic FP cavities.
+
+  - id: pri.fdl_locking_noise_nonlinearity
+    name: "FDL servo locking noise floor"
+    effect: >
+      The finite delay in FDL locks introduces a white frequency noise floor proportional
+      to 1/(τ_delay · SNR). At short integration times, this can dominate over thermal noise.
+    breakthrough: >
+      Recirculating interferometers (Gao 2025) effectively increase delay length without
+      adding fiber, improving SNR without increasing thermal noise.
+
+condition_variables:
+  - symbol: "L"
+    name: "Fiber length"
+    effect: "Thermal phase noise PSD ∝ L — shorter fiber is better (opposite of FP cavity)"
+    current_best: "1 km (standard for most FDL systems)"
+    tradeoff: "Longer fiber increases discrimination slope but also increases thermal noise"
+
+  - symbol: "fiber_type"
+    name: "Fiber core type"
+    effect: "Solid-core (SMF) → HCF → ULE-HCF: each step reduces thermal noise ~10-100×"
+    solid_core: "SMF-28: ~0.8 Hz²/Hz @ 1 Hz (Dong 2015)"
+    hcf: "Antiresonant HCF: RBS -118 dB/m, lower thermal noise (Michaud-Belleau 2021/2022)"
+    ule_hcf: "ULE-glass HCF: room-temperature CTE ~0 (Ding 2025)"
+
+  - symbol: "detection_scheme"
+    name: "Phase detection method"
+    effect: "Balanced/self-homodyne detection suppresses intensity noise and detector noise"
+    heterodyne: "Standard AOM heterodyne (Kéfélian 2009, Dong 2015)"
+    self_homodyne: "Self-homodyne balanced detection (Jeon 2023) — reaches thermal limit without vacuum"
+
+breakthrough_narrative: >
+  Fiber delay-line (FDL) stabilization offers a fundamentally different path from FP cavities:
+  compact, tunable, vacuum-free, and SWaP-optimized for field deployment. The cost is
+  ~100× worse ultimate stability.
+  
+  The story begins in 2009 when Kéfélian demonstrated the first all-fiber delay-line lock
+  achieving 8 Hz linewidth — competitive with early FP cavities. Jiang (2010) extended this
+  to agile swept-frequency operation but encountered the Rayleigh backscattering limit.
+  
+  Dong (2015) marked a breakthrough: sub-Hz (0.67 Hz) linewidth with frequency noise reaching
+  the fundamental fiber thermal noise limit (Wanser model) in the 200 Hz–1 kHz band.
+  
+  The next frontier opened with hollow-core fiber (HCF). Michaud-Belleau (2021) showed that
+  HCF reduces backscattering by >40 dB versus solid-core fiber, eliminating the RBS noise
+  floor. The same group (2022) characterized the fundamental thermal noise limit of HCF,
+  showing it is intrinsically lower than solid-core.
+  
+  Jeon (2023) demonstrated that self-homodyne balanced detection can reach the thermal noise
+  limit without vacuum isolation — a practical breakthrough for field-deployable systems.
+  
+  The convergence point is emerging: ULE-glass HCF (Ding 2025) + recirculating interferometers
+  (Gao 2025) + self-homodyne detection → room-temperature fiber systems potentially reaching
+  10⁻¹⁵ stability at 1 s, competitive with moderate FP cavities but with SWaP advantages.
+
+edges:
+  - from: "FDL laser frequency stability"
+    to: pri.fiber_thermal_noise_wanser
+    relation: "BOUNDED-BY (primary)"
+  - from: pri.fiber_thermal_noise_wanser
+    to: "Hollow-core fiber (lower thermo-optic)"
+    relation: "RESOLVED-BY (Michaud-Belleau 2021/2022)"
+    status: demonstrated
+  - from: pri.fiber_thermal_noise_wanser
+    to: "Self-homodyne detection (no vacuum needed)"
+    relation: "RESOLVED-BY (Jeon 2023)"
+    status: demonstrated
+  - from: pri.fiber_thermal_noise_wanser
+    to: "ULE-glass HCF (room-temp CTE zero)"
+    relation: "NEXT-BREAKTHROUGH (Ding 2025)"
+    status: proposed
+  - from: pri.rayleigh_backscattering_noise
+    to: "HCF: -118 dB/m backscattering"
+    relation: "RESOLVED-BY (Michaud-Belleau 2021)"
+    status: demonstrated
+  - from: pri.fdl_locking_noise_nonlinearity
+    to: "Recirculating interferometers"
+    relation: "RESOLVED-BY (Gao 2025)"
+    status: proposed
+  - from: "Current: σ_y ≈ 7×10⁻¹⁵"
+    to: "Target: σ_y ≈ 1×10⁻¹⁵ (room temp)"
+    relation: "REMAINING-GAP (~7×)"
+
+evidence:
+  - relation_id: rel.dong_2010_o05
+    claim: "200 Hz to 1 kHz dominated by combination of thermal noise and RF amplifier thermal noise"
+  - relation_id: rel.jeon_2025_e02
+    claim: "the frequency noise level reaches the thermal noise limit of the 1-km fiber round trip"
+  - relation_id: rel.jiang_2010_05
+    claim: "RBS in fiber sets fundamental noise floor during sweep"
+  - relation_id: rel.michaud_belleau_2021_B21_01
+    claim: "backscattered light... act as a source of noise whenever they are allowed to reach the detector"
+  - relation_id: rel.michaud_belleau_2022_B22_01
+    claim: "fundamental thermal noise are known to set the ultimate phase resolution of fiber-based interferometers"
+  - relation_id: rel.grabielle_2025_R01
+    claim: "white frequency noise floor that limited the locking performance"

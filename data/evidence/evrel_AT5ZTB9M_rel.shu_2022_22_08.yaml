@@ -1,8 +1,0 @@
-evidence: reconfiguration speed (about 53 μs)
-id: evrel_AT5ZTB9M_rel.shu_2022_22_08
-metadata:
-  source_paper: shu2022
-  zotero_key: AT5ZTB9M
-object: met.mpf_reconfiguration_time_s22
-predicate: CHARACTERIZED-BY
-subject: ent.microcomb_driven_siph_system_s22

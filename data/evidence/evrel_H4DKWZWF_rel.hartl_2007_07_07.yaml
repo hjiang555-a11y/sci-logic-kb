@@ -1,8 +1,0 @@
-evidence: frep is phase-locked to the cavity FSR via a piezo and a fiber stretcher
-id: evrel_H4DKWZWF_rel.hartl_2007_07_07
-metadata:
-  source_paper: hartl2007
-  zotero_key: H4DKWZWF
-object: meth.intracavity_pdh_frep_lock_h07
-predicate: ENABLED-BY
-subject: pri.coherent_pulse_addition_passive_cavity

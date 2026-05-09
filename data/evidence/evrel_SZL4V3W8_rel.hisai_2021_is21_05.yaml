@@ -1,9 +1,0 @@
-evidence: one of the branches is usually used to detect and stabilize the carrier
-  envelope offset frequency (f_CEO)
-id: evrel_SZL4V3W8_rel.hisai_2021_is21_05
-metadata:
-  source_paper: hisai2021
-  zotero_key: SZL4V3W8
-object: pri.self_referencing_f2f
-predicate: ENABLED-BY
-subject: meth.triple_stage_1to1_splitter_8branch_h21

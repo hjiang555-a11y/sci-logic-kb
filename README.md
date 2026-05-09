@@ -1,8 +1,8 @@
 # sci-logic-kb
 
-[![GitHub Pages](https://img.shields.io/badge/%F0%9F%8C%90-在线浏览-4285F4?style=flat)](https://hjiang555-a11y.github.io/sci-logic-kb/) [![Graph Viewer](https://img.shields.io/badge/%F0%9F%94%97-交互式图谱-e15759?style=flat)](https://hjiang555-a11y.github.io/sci-logic-kb/docs/graph/)
+[![GitHub Pages](https://img.shields.io/badge/%F0%9F%8C%90-在线浏览-4285F4?style=flat)](https://hjiang555-a11y.github.io/sci-logic-kb/) [![Graph Viewer](https://img.shields.io/badge/%F0%9F%94%97-交互式图谱-e15759?style=flat)](https://hjiang555-a11y.github.io/sci-logic-kb/graph/) [![v5.0](https://img.shields.io/badge/架构-v5.0-blue?style=flat)](SCHEMA.md#十一v50-三层原子推理架构) [![Site](https://img.shields.io/badge/🌐-Website-059669?style=flat)](https://hjiang555-a11y.github.io/sci-logic-kb/)
 
-> 时间频率计量领域的结构化科研知识库。核心问题只有三类：**当前性能极限在哪、为什么卡在这里、怎样突破。**
+> 时间频率计量领域的结构化科研知识库。**事实层**（534 papers）+ **推理层**（7 chains）。核心问题只有三类：**当前性能极限在哪、为什么卡在这里、怎样突破。**
 
 ---
 
@@ -10,12 +10,23 @@
 
 | 我要... | 查看文档 |
 |---------|----------|
-| **上手操作** | [WORKFLOW.md](docs/WORKFLOW.md) - 操作流程指南 |
-| **提交论文** | [CONTRIBUTING.md](CONTRIBUTING.md) - 完整质量门 |
-| **查询知识** | [docs/USAGE.md](docs/USAGE.md) - 查询和诊断 |
-| **审核专题** | [docs/REVIEW_GUIDE.md](docs/REVIEW_GUIDE.md) - 审核入口 |
-| **了解规范** | [SCHEMA.md](SCHEMA.md) - 节点、关系、字段定义 |
-| **AI协作** | [CLAUDE.md](CLAUDE.md) - AI agent 行为约束 |
+| **理解极限** | [推理链](logic/chains/) — 因果推理：为什么卡在这里、怎样突破 |
+| **查询知识** | [INDEX_metrics.md](INDEX_metrics.md) — 跨专题指标快查 |
+| **上手操作** | [docs/WORKFLOW.md](docs/WORKFLOW.md) — 操作流程指南 |
+| **提交论文** | [CONTRIBUTING.md](CONTRIBUTING.md) — 论文摄入 + 推理链贡献 |
+| **了解规范** | [SCHEMA.md](SCHEMA.md) — 节点、关系、v5.0 推理架构 |
+| **AI 协作** | [CLAUDE.md](CLAUDE.md) — AI agent 行为约束 |
+
+---
+
+## 两层架构
+
+| 层 | 定位 | 回答的问题 | 规模 |
+|----|------|-----------|------|
+| **v5.0 推理层** | 叠加在 v4.5 之上的因果推理 | 领域卡在哪里、怎样突破 | 7 chains + 1 consensus |
+| **v4.5 事实层** | 论文级结构化知识图（唯一真源） | 这篇论文说了什么 | 534 papers / 1470 nodes |
+
+推理层入口：[`logic/chains/`](logic/chains/) — 每条链回答一个核心问题，聚合跨论文证据。
 
 ---
 
@@ -27,7 +38,9 @@
 | **审核** | 审核者/维护者 | [docs/REVIEW_GUIDE.md](docs/REVIEW_GUIDE.md) |
 | **使用** | 研究者/读者 | [docs/USAGE.md](docs/USAGE.md) |
 | **建设** | 摄入者/贡献者 | [CONTRIBUTING.md](CONTRIBUTING.md) |
-| **规范** | Schema维护者 | [SCHEMA.md](SCHEMA.md) |
+| **规范** | Schema 维护者 | [SCHEMA.md](SCHEMA.md) |
+| **档位** | 贡献者/审核者 | [docs/CONTRIBUTION_TIER_RULES.md](docs/CONTRIBUTION_TIER_RULES.md) |
+| **证据** | 所有入库者 | [docs/CLAIM_EVIDENCE_STANDARD.md](docs/CLAIM_EVIDENCE_STANDARD.md) |
 | **索引** | 所有人 | [TOPICS.md](TOPICS.md) / INDEX*.md |
 
 ---
@@ -85,10 +98,10 @@ python scripts/build_index.py      # 重建索引
 当前专题：
 - 超稳激光 (ultrastable-laser)
 - 光学频率梳 (optical-frequency-combs)
-- 离子/原子光钟 (optical-atomic-clocks)
-- 微波原子钟 (microwave-atomic-clocks)
+- 频率标准 (frequency-standards) — 光学/微波原子钟
 - 时间频率传递 (time-frequency-transfer)
-- 精密测量应用 (precision-measurement-applications)
+- 时间标尺 (timescales) — 时标生成与维持
+- 共享基础 (shared) — 跨专题数学基础与公共节点
 
 ---
 

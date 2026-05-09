@@ -1,9 +1,0 @@
-evidence: if operated within 50 mK of T₀, a temperature stability of better than 1
-  μK is required to reach a fractional frequency instability of below 10⁻¹⁶
-id: evrel_UV6S5FFL_rel.häfner_2015_08
-metadata:
-  source_paper: hafner2015
-  zotero_key: UV6S5FFL
-object: ent.thermal_environment
-predicate: CONDITIONED-BY
-subject: ent.self_balancing_long_cavity_h15

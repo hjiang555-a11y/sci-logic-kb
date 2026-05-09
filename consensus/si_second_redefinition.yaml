@@ -1,0 +1,46 @@
+metric: met.si_second_stability
+metric_name: "SI second realization stability and redefinition roadmap"
+context: "The timescale reference — from Cs fountain to optical clock redefinition"
+domain: timescales
+updated: 2026-05-09
+confidence: established
+
+consensus:
+  best_demonstrated_value: "5.5×10⁻¹⁹ (²⁷Al⁺ NIST) — optical clocks surpass Cs fountain by >1000×"
+  best_cs_fountain_uncertainty: "8.0×10⁻¹⁶ (BNM-SYRTE FOM, 2005)"
+  best_cs_fountain_stability: "σ_y = 1.3×10⁻¹³/√τ; 2×10⁻¹⁶ @ 4.5 days"
+  optical_clock_advantage: ">100× better than Cs fountain in both accuracy and stability"
+  redefinition_status: "CCTF roadmap active; multiple species at <10⁻¹⁸; 3+ independent ratio measurements demonstrated"
+  remaining_barrier: "Sustained TAI contribution from optical clocks, international consensus on transition(s)"
+
+timeline:
+  - year: 1967
+    value: "SI second defined by ¹³³Cs hyperfine transition"
+    system: "13th CGPM — 9,192,631,770 Hz"
+    significance: "Foundation of atomic timekeeping"
+  - year: 1972
+    value: "23 leap seconds inserted (1972-2006)"
+    system: "Kleppner — UTC leap second tracking"
+    significance: "Earth rotation vs atomic time divergence; motivation for redefinition debate"
+  - year: 1995
+    value: "σ_y = 3×10⁻¹³/√τ (Cs fountain)"
+    system: "Clairon — first Cs fountain at BNM-SYRTE"
+    significance: "Cold-atom fountain surpasses thermal beam standards"
+  - year: 2005
+    value: "7.5×10⁻¹⁶ uncertainty (Cs FO1)"
+    system: "Bize — BNM-SYRTE fountain ensemble"
+    significance: "Three-fountain ensemble; 48% of global TAI calibration"
+  - year: 2012
+    value: "σ_y = 1.3×10⁻¹³/√τ; 2×10⁻¹⁶ @ 4.5 days"
+    system: "Guéna — LNE-SYRTE fountain comparison"
+    significance: "Highest resolution Cs fountain comparison for TAI"
+  - year: 2016
+    value: "Al⁺: 8.6×10⁻¹⁸; Sr: 2.1×10⁻¹⁸"
+    system: "Optical clocks surpass Cs by >100×"
+    significance: "Multiple optical clock species at <10⁻¹⁷; CCTF redefinition criteria met"
+  - year: 2024
+    value: "4.8×10⁻¹⁸ (Sr, NIM China)"
+    system: "Li — Chinese Sr lattice clock"
+    significance: "Global participation in optical clock development for redefinition"
+
+trend: "Cs fountain accuracy plateaued at ~10⁻¹⁶ by 2005. Optical clocks reached 10⁻¹⁸ by 2014 and continue improving toward 10⁻¹⁹. The CCTF roadmap is technically satisfied; the remaining barrier is operational reliability and international consensus, not physics."

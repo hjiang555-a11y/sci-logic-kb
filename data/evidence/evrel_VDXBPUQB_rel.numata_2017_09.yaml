@@ -1,8 +1,0 @@
-evidence: mirror coatings contribute approximately 15% of total thermal noise
-id: evrel_VDXBPUQB_rel.numata_2017_09
-metadata:
-  source_paper: numata2004
-  zotero_key: VDXBPUQB
-object: ent.fp_cavity_system
-predicate: PART-OF
-subject: ent.mirror_coating

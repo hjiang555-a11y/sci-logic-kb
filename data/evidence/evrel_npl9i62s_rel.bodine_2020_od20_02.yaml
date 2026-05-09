@@ -1,8 +1,0 @@
-evidence: three-node network ... closure diagnostics
-id: evrel_npl9i62s_rel.bodine_2020_od20_02
-metadata:
-  source_paper: bodine2020_npl9i62s
-  zotero_key: npl9i62s
-object: pri.multi_node_tf_network_closure
-predicate: OPERATIONALIZED-AS
-subject: ent.three_node_free_space_network_b20

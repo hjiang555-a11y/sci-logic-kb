@@ -1,9 +1,0 @@
-evidence: combine both combs before propagation across the turbulent air path so that
-  turbulence-driven phase front distortions are common mode
-id: evrel_FQ4KYV38_rel.ycas_2019_19_06
-metadata:
-  source_paper: ycas2019
-  zotero_key: FQ4KYV38
-object: pri.common_path_comb_combining_turbulence_cancellation
-predicate: ENABLED-BY
-subject: meth.midir_dcs_vocs_protocol_y19

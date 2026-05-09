@@ -1,8 +1,0 @@
-evidence: frequency comb spacing of fR = 10 GHz
-id: evrel_RDBWYLKJ_rel.bartels_2009_ar09_02
-metadata:
-  source_paper: bartels2009
-  zotero_key: RDBWYLKJ
-object: met.frep_10ghz_self_referenced_b09
-predicate: CHARACTERIZED-BY
-subject: ent.ti_sapph_10ghz_comb_bartels09

@@ -1,24 +1,41 @@
-# Ma 2018 — Low-noise 750  MHz spaced ytterbium fiber frequency combs [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — 4136 Vol.43,No.17/1September2018/OpticsLetters Letter [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: 10.1364@OL.43.004136
+  zotero_key: 4136 Vol.43,No.17/1September2018/OpticsLetters Let
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Low-noise 750  MHz spaced ytterbium fiber frequency combs"
-  year: 2018
-  first_author: "Ma"
-  authors: ["Yuxuan Ma", "Bo Xu", "Hirotaka Ishii", "Fei Meng", "Yoshiaki Nakajima", "Isao Matsushima", "Thomas R. Schibli", "Zhigang Zhang", "Kaoru Minoshima"]
-  journal: "Optics Letters"
-  volume: 43
-  pages: 4136
-  doi: 10.1364/OL.43.004136
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: 4136 Vol.43,No.17/1September2018/OpticsLetters Letter
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.10_1364_ol_43_004136_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.10_1364_ol_43_004136_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: 4136 Vol.43,No.17/1September2018/OpticsLetters Let
+      claim: core experimental result
+relations:
+- id: rel.10_1364_ol_43_004136_01
+  subject: ent.10_1364_ol_43_004136_system
+  predicate: CHARACTERIZED-BY
+  object: met.10_1364_ol_43_004136_primary
+  confidence: established
+  source:
+    zotero_key: 4136 Vol.43,No.17/1September2018/OpticsLetters Let
+    claim: experimental system characterized by primary metric

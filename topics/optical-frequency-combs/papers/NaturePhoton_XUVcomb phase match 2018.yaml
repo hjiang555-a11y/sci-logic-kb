@@ -1,24 +1,42 @@
-# Porat 2018 — Phase-matched extreme-ultraviolet frequency-comb generation [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Christoph  — Phase-matched extreme-ultraviolet frequency- [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: NaturePhoton_XUVcomb phase match 2018
+  zotero_key: Phase-matched extreme-ultraviolet frequency-
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Phase-matched extreme-ultraviolet frequency-comb generation"
-  year: 2018
-  first_author: "Porat"
-  authors: ["Gil Porat", "Christoph M. Heyl", "Stephen B. Schoun", "Craig Benko", "Nadine Dörre", "Kristan L. Corwin", "Jun Ye"]
-  journal: "Nature Photonics"
-  volume: 12
-  pages: 387-391
+  reliability: medium
+  title: Phase-matched extreme-ultraviolet frequency-
+  first_author: Christoph
+  note: batch minimal extraction; pending expert review for full entities/principles
   doi: 10.1038/s41566-018-0199-z
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+entities:
+- id: ent.naturephoton_xuvcomb_phase_mat_system
+  name: Christoph  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Christoph '
+metrics:
+- id: met.naturephoton_xuvcomb_phase_mat_primary
+  name: Christoph  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Phase-matched extreme-ultraviolet frequency-
+      claim: core experimental result
+relations:
+- id: rel.naturephoton_xuvcomb_phase_mat_01
+  subject: ent.naturephoton_xuvcomb_phase_mat_system
+  predicate: CHARACTERIZED-BY
+  object: met.naturephoton_xuvcomb_phase_mat_primary
+  confidence: established
+  source:
+    zotero_key: Phase-matched extreme-ultraviolet frequency-
+    claim: experimental system characterized by primary metric

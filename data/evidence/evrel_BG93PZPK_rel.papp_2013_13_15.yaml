@@ -1,9 +1,0 @@
-evidence: Parametric phase matching depends on numerous parameters, and is apparently
-  influenced by the line spacing of the emergent comb
-id: evrel_BG93PZPK_rel.papp_2013_13_15
-metadata:
-  source_paper: papp2013
-  zotero_key: BG93PZPK
-object: pri.parametric_seeding_microcomb_spacing_control
-predicate: BOUNDED-BY
-subject: met.microcomb_linespacing_tuning_range_p13

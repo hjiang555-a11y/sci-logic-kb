@@ -1,8 +1,0 @@
-evidence: The Allan deviation of the laser frequency is 2×10^-15 from 0.5 to 10 s
-id: evrel_H5MYBTXH_rel.leibrandt_2013_04
-metadata:
-  source_paper: leibrandt2013b
-  zotero_key: H5MYBTXH
-object: met.allan_dev_l13b
-predicate: CHARACTERIZED-BY
-subject: ent.spherical_ule_cavity_l13b

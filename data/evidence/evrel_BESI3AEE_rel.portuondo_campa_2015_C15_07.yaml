@@ -1,9 +1,0 @@
-evidence: The DPSSL + PM pulse interleaver photonic microwave method is a specific
-  implementation of the general photonic microwave synthesis approach.
-id: evrel_BESI3AEE_rel.portuondo_campa_2015_C15_07
-metadata:
-  source_paper: portuondo-campa2015
-  zotero_key: BESI3AEE
-object: meth.photonic_microwave_synthesis
-predicate: DERIVED-FROM
-subject: meth.dpssl_interleaver_photonic_microwave_pc15

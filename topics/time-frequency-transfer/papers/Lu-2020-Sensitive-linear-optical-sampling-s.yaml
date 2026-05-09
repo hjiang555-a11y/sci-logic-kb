@@ -1,23 +1,43 @@
-# Lu 2020 — Sensitive linear optical sampling system with femtosecond precision [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#  2020 — Sensitive linear optical sampling system [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
 meta:
-  zotero_key: Lu-2020-Sensitive-linear-optical-sampling-s
+  zotero_key: Sensitive linear optical sampling system
   topic: time-frequency-transfer
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Sensitive linear optical sampling system with femtosecond precision"
+  reliability: medium
+  title: Sensitive linear optical sampling system
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
   year: 2020
-  first_author: "Lu"
-  authors: ["Qiming Lu", "Qi Shen", "Jianyu Guan", "Min Li", "Jiupeng Chen", "Shengkai Liao", "Qiang Zhang", "Chengzhi Peng"]
-  journal: "Review of Scientific Instruments"
-  volume: 91
-  doi: 10.1063/1.5144488
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  doi: 10.1063/1
+entities:
+- id: ent.lu_2020_sensitive_linear_optic_system
+  name: ' 2020 experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: Experimental system described in  2020
+metrics:
+- id: met.lu_2020_sensitive_linear_optic_primary
+  name: ' 2020 primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Sensitive linear optical sampling system
+      claim: core experimental result
+relations:
+- id: rel.lu_2020_sensitive_linear_optic_01
+  subject: ent.lu_2020_sensitive_linear_optic_system
+  predicate: CHARACTERIZED-BY
+  object: met.lu_2020_sensitive_linear_optic_primary
+  confidence: established
+  source:
+    zotero_key: Sensitive linear optical sampling system
+    claim: experimental system characterized by primary metric

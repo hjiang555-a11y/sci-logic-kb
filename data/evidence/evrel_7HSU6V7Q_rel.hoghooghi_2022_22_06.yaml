@@ -1,9 +1,0 @@
-evidence: The broadband 1 GHz IP-DFG comb is an instance of the mid-infrared frequency
-  comb class, targeting the 3–13 µm molecular fingerprint region.
-id: evrel_7HSU6V7Q_rel.hoghooghi_2022_22_06
-metadata:
-  source_paper: hoghooghi2022
-  zotero_key: 7HSU6V7Q
-object: ent.mid_ir_frequency_comb
-predicate: PART-OF
-subject: ent.broadband_1ghz_mir_comb_h22

@@ -1,9 +1,0 @@
-evidence: A bulk electro-optic modulator and a single-stack piezo-electric transducer
-  are employed as fast actuators
-id: evrel_P4TCLWW2_rel.ma_2018_a18_04
-metadata:
-  source_paper: ma2018
-  zotero_key: P4TCLWW2
-object: ent.yb_fiber_750mhz_comb_m18
-predicate: OPERATIONALIZED-AS
-subject: meth.bulk_eom_pzt_750mhz_yb_lock

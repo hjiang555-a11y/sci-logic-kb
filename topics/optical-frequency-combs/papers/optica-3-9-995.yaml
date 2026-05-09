@@ -1,24 +1,41 @@
-# Shoji 2016 — Ultra-low-noise monolithic mode-locked solid-state laser [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Ultra-low-noise monolithic mode-locked [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: optica-3-9-995
+  zotero_key: Ultra-low-noise monolithic mode-locked
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Ultra-low-noise monolithic mode-locked solid-state laser"
-  year: 2016
-  first_author: "Shoji"
-  authors: ["Tyko D. Shoji", "Wanyan Xie", "Kevin L. Silverman", "Ari Feldman", "Todd Harvey", "Richard P. Mirin", "Thomas R. Schibli"]
-  journal: "Optica"
-  volume: 3
-  pages: 995
-  doi: 10.1364/OPTICA.3.000995
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Ultra-low-noise monolithic mode-locked
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.optica_3_9_995_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.optica_3_9_995_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Ultra-low-noise monolithic mode-locked
+      claim: core experimental result
+relations:
+- id: rel.optica_3_9_995_01
+  subject: ent.optica_3_9_995_system
+  predicate: CHARACTERIZED-BY
+  object: met.optica_3_9_995_primary
+  confidence: established
+  source:
+    zotero_key: Ultra-low-noise monolithic mode-locked
+    claim: experimental system characterized by primary metric

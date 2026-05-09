@@ -1,0 +1,855 @@
+topic: ultrastable-laser
+generated: 2026-05-09 00:06 UTC
+schema_version: v5.0-evidence
+summary:
+  total_evidence_units: 55
+  unique_limiting_principles: 14
+  with_breakthrough_paths: 34
+  with_resolved_limits: 3
+  with_active_limits: 0
+evidence_groups:
+- limiting_principle: pri.brownian_thermal_noise_fdt
+  supporting_papers: 32
+  paper_list:
+  - argence2012.yaml
+  - chen2014.yaml
+  - chen2020.yaml
+  - chen2025.yaml
+  - cole2013.yaml
+  - didier2018.yaml
+  - giunta2020b.yaml
+  - hafner2015.yaml
+  - hafner2020.yaml
+  - jiang2011.yaml
+  - jin2018.yaml
+  - kedar2023.yaml
+  - kessler2012.yaml
+  - kudelin2024.yaml
+  - lee2026.yaml
+  - legero2010.yaml
+  - li2018.yaml
+  - logic_bridge_poc.yaml
+  - matei2017.yaml
+  - millo2009.yaml
+  - numata2004.yaml
+  - parke2025.yaml
+  - robinson2019.yaml
+  - schioppo2021.yaml
+  - tai2017.yaml
+  - tao2018.yaml
+  - webster2007.yaml
+  - webster2008.yaml
+  - webster2011.yaml
+  - wu2016.yaml
+  - young1999.yaml
+  - zhang2017.yaml
+  year_range: 1999-2026
+  first_authors:
+  - Argence
+  - Chen
+  - Cole
+  - Didier
+  - Giunta
+  - Häfner
+  - Jiang
+  - Jin
+  - KB
+  - Kedar
+  - Kessler
+  - Kudelin
+  - Lee
+  - Legero
+  - Li
+  - Matei
+  - Millo
+  - Numata
+  - Parke
+  - Robinson
+  - Schioppo
+  - Tai
+  - Tao
+  - Webster
+  - Wu
+  - Young
+  - Zhang
+  best_evidence:
+    paper: chen2025.yaml
+    author: Chen
+    year: 2025
+    claim: fundamentally limited by the Brownian thermal noise
+    is_system_limit: true
+    limit_status: resolved
+  breakthrough_paths:
+  - direction: pri.crystalline_coating_low_brownian_noise
+    expected_gain: 当前 Si1 使用 IBS 介质镀层；替换为 AlGaAs 晶体镀层可将镀层热噪声进一步降低 ~10×，逼近热噪声理论极限 ~3×10⁻¹⁷
+    status: proposed
+    source:
+      zotero_key: N6HILT6B
+      claim: fundamentally limited by the Brownian thermal noise
+  - direction: pri.cryogenic_mechanical_q_enhancement
+    expected_gain: sub-5 K 温区 Si 的 CTE→0 与机械 Q 提升，使间隔物/底物热噪声降至低于镀层贡献；本文已演示 ≈(4±1)×10⁻¹⁷
+    status: demonstrated
+    source:
+      zotero_key: N6HILT6B
+      claim: 10-cm-long silicon cavity at sub-5-K temperatures
+  - direction: pri.long_cavity_thermal_noise_reduction
+    expected_gain: 48 cm 腔使室温热噪声分数贡献降低约 2–5× vs 典型 10–25 cm 腔，达到 ~8×10⁻¹⁷
+    status: demonstrated
+    source:
+      zotero_key: UV6S5FFL
+      claim: instability of below 1×10⁻¹⁶ at averaging times from 1 to 1000 s
+  - direction: pri.silicon_cte_zero_crossing_17k
+    expected_gain: 进一步降温至 17 K（Si CTE 第二零点）+ AlGaAs 晶体镀层（2023 批次）→ mod σ_y = 2.5×10⁻¹⁷（Lee 2026，世界纪录）
+    status: demonstrated
+    source:
+      zotero_key: 4QVEXY63
+      claim: fractional frequency stability of 2.5×10⁻¹⁷ at 10 s is four times better than expected for dielectric mirrors
+  - direction: pri.optical_frequency_averaging
+    expected_gain: 两腔平均 → √2 稳定度提升；实现约 1.8×10⁻¹⁷（短时受 Dick 噪声限制）
+    status: demonstrated
+    source:
+      zotero_key: 4QVEXY63
+      claim: averaged laser is more stable than the two similar individual lasers by approximately √2
+  - direction: pri.brownian_thermal_noise_fdt
+    expected_gain: 优化 condition_variable φ：用低损耗镜底物（熔融石英 φ~10⁻⁷、单晶硅 φ~10⁻⁸）替代 ULE（φ~10⁻⁵），可降低底物热噪声约 100×。
+    status: demonstrated
+    source:
+      zotero_key: VDXBPUQB
+      claim: fused silica mirrors could reduce thermal noise by roughly two orders of magnitude
+  evidence_units:
+  - relation_id: rel.argence_2012_03
+    paper: argence2012.yaml
+    author: Argence
+    year: 2012
+    is_system_limit: true
+    limit_status: null
+    verification: calculated
+    claim: estimated flicker thermal noise is ~4×10⁻¹⁶, dominated by the mechanical quality factor of the coatings
+  - relation_id: rel.chen_2014_HF03
+    paper: chen2014.yaml
+    author: Chen
+    year: 2014
+    is_system_limit: false
+    limit_status: null
+    verification: calculated
+    claim: calculated instability flicker floor of σ_y = 4×10⁻¹⁶
+  - relation_id: rel.chen_2020_H02
+    paper: chen2020.yaml
+    author: Chen
+    year: 2020
+    is_system_limit: false
+    limit_status: null
+    verification: calculated
+    claim: cavity thermal noise-limited laser frequency instability... 4.3×10⁻¹⁶
+  - relation_id: rel.chen_2025_he02
+    paper: chen2025.yaml
+    author: Chen
+    year: 2025
+    is_system_limit: true
+    limit_status: resolved
+    verification: observed
+    claim: fundamentally limited by the Brownian thermal noise
+  - relation_id: rel.cole_2013_05
+    paper: cole2013.yaml
+    author: Cole
+    year: 2013
+    is_system_limit: true
+    limit_status: resolved
+    verification: observed
+    claim: current bounds of stability and sensitivity are dictated by the excess mechanical damping of the high-reflectivity coatings
+  - relation_id: rel.bridge_coat_01
+    paper: cole2013.yaml
+    author: Cole
+    year: 2013
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: a reduction in the coating loss angle by at least one order of magnitude relative to conventional silica/tantala mirrors
+  - relation_id: rel.didier_2018_D02
+    paper: didier2018.yaml
+    author: Didier
+    year: 2018
+    is_system_limit: false
+    limit_status: null
+    verification: calculated
+    claim: thermal noise of cavities, which now reaches the 10⁻¹⁷ decade, at the cost of complex systems
+  - relation_id: rel.giunta_2020_02
+    paper: giunta2020b.yaml
+    author: Giunta
+    year: 2020
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: '"The absolute phase noise of the 12 GHz carrier ... shows perfect agreement with the limit inferred by the optical phase noise measurement ... clearly limiting up to 1 kHz offset."
+
+      '
+  - relation_id: rel.häfner_2015_05
+    paper: hafner2015.yaml
+    author: Häfner
+    year: 2015
+    is_system_limit: true
+    limit_status: resolved
+    verification: observed
+    claim: best present room temperature resonators provide fractional laser instabilities of 1×10⁻¹⁶–2×10⁻¹⁶, limited by thermal Brownian noise, with the biggest contributions from mirror coatings
+  - relation_id: rel.häfner_2020_F20_03
+    paper: hafner2020.yaml
+    author: Häfner
+    year: 2020
+    is_system_limit: true
+    limit_status: null
+    verification: observed
+    claim: reaching its thermal noise floor of mod σ_y ≈ 3×10⁻¹⁶
+  - relation_id: rel.jiang_2011_I02
+    paper: jiang2011.yaml
+    author: Jiang
+    year: 2011
+    is_system_limit: true
+    limit_status: null
+    verification: observed
+    claim: fundamental limit... Brownian thermal mechanical fluctuations of the FP cavity
+  - relation_id: rel.jin_2018_N02
+    paper: jin2018.yaml
+    author: Jin
+    year: 2018
+    is_system_limit: true
+    limit_status: null
+    verification: observed
+    claim: approaching to the thermal-noise-induced length instability of the reference cavity
+  - relation_id: rel.kedar_2023_ed03
+    paper: kedar2023.yaml
+    author: Kedar
+    year: 2023
+    is_system_limit: true
+    limit_status: null
+    verification: observed
+    claim: limited in performance by the Brownian thermal noise associated with the mechanical dissipation of the mirror coatings
+  - relation_id: rel.kessler_2012_06
+    paper: kessler2012.yaml
+    author: Kessler
+    year: 2012
+    is_system_limit: true
+    limit_status: null
+    verification: calculated
+    claim: the thermal noise limit of an optical cavity based on single-crystal silicon is currently set by the optical coating
+  - relation_id: rel.kudelin_2024_02
+    paper: kudelin2024.yaml
+    author: Kudelin
+    year: 2024
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: '"The cavity is thermal noise limited for offset frequencies ranging from 1 Hz to 10 kHz. Moreover, the relative phase noise between two reference lasers locked to the same cavity takes advantage
+      of la'
+  - relation_id: rel.lee_2026_02
+    paper: lee2026.yaml
+    author: Lee
+    year: 2026
+    is_system_limit: true
+    limit_status: null
+    verification: observed
+    claim: fractional frequency stability of 2.5 × 10⁻¹⁷ at 10 s is four times better than expected for dielectric mirrors and corresponds to more than a tenfold reduction in the coating mechanical loss
+      factor
+  - relation_id: rel.legero_2010_eg02
+    paper: legero2010.yaml
+    author: Legero
+    year: 2010
+    is_system_limit: true
+    limit_status: null
+    verification: calculated
+    claim: The fractional length stability of typical 10 cm long cavities is limited to a flicker floor at the 10⁻¹⁵ level, attributed to inevitable thermal noise
+  - relation_id: rel.li_2018_I02
+    paper: li2018.yaml
+    author: Li
+    year: 2018
+    is_system_limit: true
+    limit_status: null
+    verification: observed
+    claim: laser frequency stabilization at 10⁻¹⁶ level
+  - relation_id: rel.logic_bridge_01
+    paper: logic_bridge_poc.yaml
+    author: KB
+    year: 2024
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: 'Logic bridge: FP cavity stability is fundamentally bounded by Brownian thermal noise per Fluctuation-Dissipation Theorem'
+  - relation_id: rel.matei_2017_03
+    paper: matei2017.yaml
+    author: Matei
+    year: 2017
+    is_system_limit: true
+    limit_status: null
+    verification: observed
+    claim: fractional frequency instability of each laser is completely determined by the fundamental thermal Brownian noise of the mirror coatings
+  - relation_id: rel.millo_2009_il01
+    paper: millo2009.yaml
+    author: Millo
+    year: 2009
+    is_system_limit: true
+    limit_status: null
+    verification: observed
+    claim: best result achieved for a cavity of this length... lower than the noise floor of an all ULE cavity
+  - relation_id: rel.numata_2017_01
+    paper: numata2004.yaml
+    author: Numata
+    year: 2004
+    is_system_limit: true
+    limit_status: null
+    verification: observed
+    claim: thermal noise from Brownian motion is the fundamental noise source for rigid FP cavities
+  - relation_id: rel.numata_2017_03
+    paper: numata2004.yaml
+    author: Numata
+    year: 2004
+    is_system_limit: true
+    limit_status: null
+    verification: calculated
+    claim: mirror substrate accounts for 84% of total thermal noise
+  - relation_id: rel.numata_2017_04
+    paper: numata2004.yaml
+    author: Numata
+    year: 2004
+    is_system_limit: false
+    limit_status: null
+    verification: calculated
+    claim: coating contributes about 15%
+  - relation_id: rel.numata_2017_05
+    paper: numata2004.yaml
+    author: Numata
+    year: 2004
+    is_system_limit: false
+    limit_status: null
+    verification: calculated
+    claim: spacer contributes only 1% of total thermal noise
+  - relation_id: rel.numata_2017_07
+    paper: numata2004.yaml
+    author: Numata
+    year: 2004
+    is_system_limit: true
+    limit_status: null
+    verification: observed
+    claim: the results of Young et al. are consistent with being at the thermal noise limit
+  - relation_id: rel.parke_2025_05
+    paper: parke2025.yaml
+    author: Parke
+    year: 2025
+    is_system_limit: true
+    limit_status: null
+    verification: calculated
+    claim: RAM-induced fractional instability... almost two orders of magnitude below our cavity thermal noise limit
+  - relation_id: rel.robinson_2019_07
+    paper: robinson2019.yaml
+    author: Robinson
+    year: 2019
+    is_system_limit: true
+    limit_status: null
+    verification: observed
+    claim: we extract a loss angle for the SiO₂/Ta₂O₅ mirror coatings to be ϕ = 5.15×10⁻⁴ [from PSD fit consistent with thermal noise floor]
+  - relation_id: rel.bridge_cryo_01
+    paper: robinson2019.yaml
+    author: Robinson
+    year: 2019
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: Si4 instability reaches 6.5×10⁻¹⁷... consistent with the predicted thermal noise floor
+  - relation_id: rel.schioppo_2021_c02
+    paper: schioppo2021.yaml
+    author: Schioppo
+    year: 2021
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: '"The ultimate fractional frequency instability σ_y of a laser, stabilised to an optical reference cavity, is limited by the fundamental flicker frequency noise originating from Brownian thermal-mechan'
+  - relation_id: rel.tai_2017_ai01
+    paper: tai2017.yaml
+    author: Tai
+    year: 2017
+    is_system_limit: true
+    limit_status: null
+    verification: observed
+    claim: fundamental limitation of laser frequency stability is the thermal fluctuation of cavity length, primarily caused by the Brownian motion
+  - relation_id: rel.tao_2018_05
+    paper: tao2018.yaml
+    author: Tao
+    year: 2018
+    is_system_limit: true
+    limit_status: null
+    verification: observed
+    claim: closed to the estimated thermal noise limit of the 10 cm long cavity
+  - relation_id: rel.webster_2007_05
+    paper: webster2007.yaml
+    author: Webster
+    year: 2007
+    is_system_limit: true
+    limit_status: null
+    verification: inferred
+    claim: frequency stability will become limited by thermal fluctuations of mirror substrates and coatings [Numata 2004]
+  - relation_id: rel.webster_2008_e08_01
+    paper: webster2008.yaml
+    author: Webster
+    year: 2008
+    is_system_limit: true
+    limit_status: null
+    verification: observed
+    claim: This limit is attributed to Brownian motion of the mirror substrates and coatings
+  - relation_id: rel.webster_2011_11_05
+    paper: webster2011.yaml
+    author: Webster
+    year: 2011
+    is_system_limit: true
+    limit_status: null
+    verification: inferred
+    claim: having suppressed the effects of technical noise a fundamental limit is reached, that due to thermal noise
+  - relation_id: rel.wu_2016_U03
+    paper: wu2016.yaml
+    author: Wu
+    year: 2016
+    is_system_limit: true
+    limit_status: null
+    verification: observed
+    claim: approaching the thermal noise limit of the reference cavities
+  - relation_id: rel.young_1999_10
+    paper: young1999.yaml
+    author: Young
+    year: 1999
+    is_system_limit: true
+    limit_status: null
+    verification: observed
+    claim: the results of Young et al. are consistent with being at the thermal noise limit
+  - relation_id: rel.zhang_2019_17_04
+    paper: zhang2017.yaml
+    author: Zhang
+    year: 2017
+    is_system_limit: false
+    limit_status: null
+    verification: calculated
+    claim: the thermal noise floor of 6 × 10−17... is computed taking into account the operating temperature, the cavity length, and the beam spot size
+- limiting_principle: pri.fiber_thermal_noise_wanser
+  supporting_papers: 2
+  paper_list:
+  - dong2015.yaml
+  - jeon2025.yaml
+  year_range: 2015-2025
+  first_authors:
+  - Dong
+  - Jeon
+  best_evidence:
+    paper: dong2015.yaml
+    author: Dong
+    year: 2015
+    claim: 200 Hz to 1 kHz dominated by combination of thermal noise and RF amplifier thermal noise
+    is_system_limit: true
+    limit_status: null
+  breakthrough_paths:
+  - direction: pri.fiber_thermal_noise_wanser
+    expected_gain: 使用空心光纤可大幅降低热折射噪声；低温运行可降低 T² 项
+    status: theoretical
+    source:
+      zotero_key: W8K5GLK6
+      claim: theoretical simulation of the thermal noise limit for two 1 km length fibers
+  - direction: meth.self_homodyne_fiber_locking
+    expected_gain: 通过自零差平衡探测压低强度噪声与探测电噪声，使 1 km 光纤系统在无真空条件下首次显露热噪声极限
+    status: demonstrated
+    source:
+      zotero_key: SBPRDKPV
+      claim: The fact that this noise level is lower than the thermal noise ... indicates that the self-homodyne balanced detection is sufficient
+  evidence_units:
+  - relation_id: rel.dong_2010_o04
+    paper: dong2015.yaml
+    author: Dong
+    year: 2015
+    is_system_limit: true
+    limit_status: null
+    verification: observed
+    claim: 200 Hz to 1 kHz dominated by combination of thermal noise and RF amplifier thermal noise
+  - relation_id: rel.jeon_2025_e08
+    paper: jeon2025.yaml
+    author: Jeon
+    year: 2025
+    is_system_limit: true
+    limit_status: null
+    verification: observed
+    claim: the frequency noise level reaches the thermal noise limit of the 1-km fiber round trip ... in the 4–200 Hz Fourier frequency range
+- limiting_principle: pri.rayleigh_backscattering_noise
+  supporting_papers: 2
+  paper_list:
+  - jiang2010.yaml
+  - michaudbelleau2021.yaml
+  year_range: 2010-2021
+  first_authors:
+  - Jiang
+  - Michaud-Belleau
+  best_evidence:
+    paper: jiang2010.yaml
+    author: Jiang
+    year: 2010
+    claim: RBS in fiber sets fundamental noise floor during sweep
+    is_system_limit: true
+    limit_status: null
+  breakthrough_paths:
+  - direction: pri.rayleigh_backscattering_noise
+    expected_gain: 围绕光纤延迟线锁频链路优化 RBS 抑制策略（缩短光纤/降低功率/偏振分集），可改善可捷变扫频性能边界（见 engineering_tradeoff 字段）。
+    status: demonstrated
+    source:
+      zotero_key: T8JR8IJ7
+      claim: Rayleigh backscattering is the fundamental limitation of the fiber interferometer reference during frequency chirping
+  - direction: pri.hollow_core_fiber_low_backscattering
+    expected_gain: ''
+    status: demonstrated
+    source:
+      zotero_key: DD6SE43C
+  evidence_units:
+  - relation_id: rel.jiang_2010_07
+    paper: jiang2010.yaml
+    author: Jiang
+    year: 2010
+    is_system_limit: true
+    limit_status: null
+    verification: observed
+    claim: RBS in fiber sets fundamental noise floor during sweep
+  - relation_id: rel.michaud_belleau_2021_B21_01
+    paper: michaudbelleau2021.yaml
+    author: Michaud-Belleau
+    year: 2021
+    is_system_limit: true
+    limit_status: null
+    verification: observed
+    claim: backscattered light... act as a source of noise whenever they are allowed to reach the detector
+- limiting_principle: meth.cryogenic_silicon_stabilization
+  supporting_papers: 2
+  paper_list:
+  - logic_bridge_poc.yaml
+  - robinson2019.yaml
+  year_range: 2019-2024
+  first_authors:
+  - KB
+  - Robinson
+  best_evidence:
+    paper: logic_bridge_poc.yaml
+    author: KB
+    year: 2024
+    claim: ' la-Cryo reduces thermal noise by orders of magnitude'
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths: []
+  evidence_units:
+  - relation_id: rel.logic_bridge_02
+    paper: logic_bridge_poc.yaml
+    author: KB
+    year: 2024
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: ' la-Cryo reduces thermal noise by orders of magnitude'
+  - relation_id: rel.bridge_brownian_thermal_noise_fdt_cryogenic_silicon_stabilization
+    paper: robinson2019.yaml
+    author: Robinson
+    year: 2019
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: Si4 instability reaches 6.5×10⁻¹⁷, consistent with the predicted thermal noise floor
+- limiting_principle: pri.ram_pdh_frequency_offset
+  supporting_papers: 1
+  paper_list:
+  - zhang2014_ram.yaml
+  year_range: 2014-2014
+  first_authors:
+  - Zhang
+  best_evidence:
+    paper: zhang2014_ram.yaml
+    author: Zhang
+    year: 2014
+    claim: RAM introduces frequency offset noise to the servo error signal, degrading laser frequency stability
+    is_system_limit: true
+    limit_status: null
+  breakthrough_paths:
+  - direction: pri.brewster_angle_ram_suppression
+    expected_gain: 布儒斯特角 EOM 几何被动抑制 RAM（无需有源伺服），Tai 2016 演示 RAM < 10⁻⁶ 量级
+    status: demonstrated
+    source:
+      zotero_key: S5GJNVG8
+      claim: RAM introduces frequency offset noise to the servo error signal
+  - direction: pri.ram_active_cancellation
+    expected_gain: 本文双通道伺服（同相 DC 电场 + 正交温度反馈）将 RAM 抑制至 1 ppm，对应 σ_y ≤ 1×10⁻¹⁶（35 mm 腔）
+    status: demonstrated
+    source:
+      zotero_key: S5GJNVG8
+      claim: working in tandem, suppress both the in-phase and quadrature components of the RAM to the 1 ppm level
+  - direction: pri.ram_bias_field_cancellation
+    expected_gain: Parke 2025 在 APE 铌酸锂波导 EOM 上用偏置电场闭环将 RAM 降至 10⁻⁷，等效 σ_y 贡献 3×10⁻¹⁹ @ 10–100 s
+    status: demonstrated
+    source:
+      zotero_key: U2LXSU62
+      claim: actively cancel residual amplitude modulation (RAM) at the 10⁻⁷ level
+  evidence_units:
+  - relation_id: rel.zhang_2014_14_01
+    paper: zhang2014_ram.yaml
+    author: Zhang
+    year: 2014
+    is_system_limit: true
+    limit_status: null
+    verification: observed
+    claim: RAM introduces frequency offset noise to the servo error signal, degrading laser frequency stability
+  - relation_id: rel.zhang_2014_14_05
+    paper: zhang2014_ram.yaml
+    author: Zhang
+    year: 2014
+    is_system_limit: false
+    limit_status: null
+    verification: observed
+    claim: σ_y = σ_RAM × κ/ν, for 35mm cavity κ=28kHz, σ_RAM=1ppm → σ_y=1×10⁻¹⁶
+- limiting_principle: meth.crystalline_coating_deposition
+  supporting_papers: 1
+  paper_list:
+  - cole2013.yaml
+  year_range: 2013-2013
+  first_authors:
+  - Cole
+  best_evidence:
+    paper: cole2013.yaml
+    author: Cole
+    year: 2013
+    claim: substrate-transferred crystalline coatings employing AlGaAs/GaAs DBR reduce Brownian thermal noise by 10x
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths: []
+  evidence_units:
+  - relation_id: rel.bridge_coat_02
+    paper: cole2013.yaml
+    author: Cole
+    year: 2013
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: substrate-transferred crystalline coatings employing AlGaAs/GaAs DBR reduce Brownian thermal noise by 10x
+- limiting_principle: pri.shot_noise_frequency_limit
+  supporting_papers: 1
+  paper_list:
+  - drever1983.yaml
+  year_range: 1983-1983
+  first_authors:
+  - Drever
+  best_evidence:
+    paper: drever1983.yaml
+    author: Drever
+    year: 1983
+    claim: fundamental performance limit set by photoelectron shot noise
+    is_system_limit: true
+    limit_status: null
+  breakthrough_paths:
+  - direction: pri.shot_noise_frequency_limit
+    expected_gain: 优化 engineering_optimization：提高注入功率 Po、透射效率 T 和量子效率 η，可按 δν_shot ∝ (Po·T·η)^(-1/2) 继续压低散粒噪声极限。
+    status: demonstrated
+    source:
+      zotero_key: 694DPR5F
+      claim: fundamental performance limit ... set by the photoelectron shot noise
+  evidence_units:
+  - relation_id: rel.drever_1983_04
+    paper: drever1983.yaml
+    author: Drever
+    year: 1983
+    is_system_limit: true
+    limit_status: null
+    verification: calculated
+    claim: fundamental performance limit set by photoelectron shot noise
+- limiting_principle: pri.fdl_locking_noise_nonlinearity
+  supporting_papers: 1
+  paper_list:
+  - grabielle2025.yaml
+  year_range: 2025-2025
+  first_authors:
+  - Grabielle
+  best_evidence:
+    paper: grabielle2025.yaml
+    author: Grabielle
+    year: 2025
+    claim: white frequency noise floor that limited the locking performance
+    is_system_limit: false
+    limit_status: null
+  breakthrough_paths: []
+  evidence_units:
+  - relation_id: rel.grabielle_2025_R01
+    paper: grabielle2025.yaml
+    author: Grabielle
+    year: 2025
+    is_system_limit: false
+    limit_status: null
+    verification: ''
+    claim: white frequency noise floor that limited the locking performance
+- limiting_principle: pri.fiber_thermal_phase_noise_giant_ifog
+  supporting_papers: 1
+  paper_list:
+  - li2019.yaml
+  year_range: 2019-2019
+  first_authors:
+  - Li
+  best_evidence:
+    paper: li2019.yaml
+    author: Li
+    year: 2019
+    claim: thermal phase noise limits the detection bandwidth
+    is_system_limit: true
+    limit_status: null
+  breakthrough_paths: []
+  evidence_units:
+  - relation_id: rel.li_2019_IG01
+    paper: li2019.yaml
+    author: Li
+    year: 2019
+    is_system_limit: true
+    limit_status: null
+    verification: ''
+    claim: thermal phase noise limits the detection bandwidth
+- limiting_principle: pri.flicker_noise_linewidth_divergence
+  supporting_papers: 1
+  paper_list:
+  - matei2017.yaml
+  year_range: 2017-2017
+  first_authors:
+  - Matei
+  best_evidence:
+    paper: matei2017.yaml
+    author: Matei
+    year: 2017
+    claim: the linewidth and implicitly the coherence time are mostly determined by the thermal noise level
+    is_system_limit: true
+    limit_status: null
+  breakthrough_paths:
+  - direction: pri.flicker_noise_linewidth_divergence
+    expected_gain: 尚无已知解决方案可消除flicker噪声对线宽定义的发散性限制
+    status: open
+    source:
+      zotero_key: TVY7T59A
+      claim: the linewidth and implicitly the coherence time are mostly determined by the thermal noise level
+  evidence_units:
+  - relation_id: rel.matei_2017_04
+    paper: matei2017.yaml
+    author: Matei
+    year: 2017
+    is_system_limit: true
+    limit_status: null
+    verification: calculated
+    claim: the linewidth and implicitly the coherence time are mostly determined by the thermal noise level
+- limiting_principle: pri.hollow_core_fiber_thermal_noise
+  supporting_papers: 1
+  paper_list:
+  - michaudbelleau2022.yaml
+  year_range: 2022-2022
+  first_authors:
+  - Michaud-Belleau
+  best_evidence:
+    paper: michaudbelleau2022.yaml
+    author: Michaud-Belleau
+    year: 2022
+    claim: fundamental thermal noise are known to set the ultimate phase resolution of fiber-based interferometers
+    is_system_limit: true
+    limit_status: null
+  breakthrough_paths:
+  - direction: pri.hollow_core_fiber_thermal_noise
+    expected_gain: ''
+    status: demonstrated
+    source:
+      zotero_key: 4GT5VD54
+  evidence_units:
+  - relation_id: rel.michaud_belleau_2022_B22_01
+    paper: michaudbelleau2022.yaml
+    author: Michaud-Belleau
+    year: 2022
+    is_system_limit: true
+    limit_status: null
+    verification: observed
+    claim: fundamental thermal noise are known to set the ultimate phase resolution of fiber-based interferometers
+- limiting_principle: pri.optical_power_cavity_drift
+  supporting_papers: 1
+  paper_list:
+  - robinson2019.yaml
+  year_range: 2019-2019
+  first_authors:
+  - Robinson
+  best_evidence:
+    paper: robinson2019.yaml
+    author: Robinson
+    year: 2019
+    claim: we make the discovery that frequency drift depends linearly on the incident power. The drift decreases as the circulating optical power is reduced, extrapolating to a zero drift when the incident
+      powe
+    is_system_limit: true
+    limit_status: null
+  breakthrough_paths:
+  - direction: pri.silicon_cte_asymptotic_zero_4k
+    expected_gain: '进一步降低腔内循环功率（<40 nW 传输）或采用偶发扫描方案（无持续锁定光） → 漂移外推趋向零，有望作为时间尺度使用
+
+      '
+    status: proposed
+    source:
+      zotero_key: JIZCUZLY
+      claim: as we continue to reduce the incident power, we can access an extremely low value of cavity drift, making it possible that such a cavity alone could be useful as a potential time scale
+  evidence_units:
+  - relation_id: rel.robinson_2019_08
+    paper: robinson2019.yaml
+    author: Robinson
+    year: 2019
+    is_system_limit: true
+    limit_status: null
+    verification: observed
+    claim: we make the discovery that frequency drift depends linearly on the incident power. The drift decreases as the circulating optical power is reduced, extrapolating to a zero drift when the incident
+      powe
+- limiting_principle: pri.coating_thermal_noise_material_comparison
+  supporting_papers: 1
+  paper_list:
+  - steinlechner2018.yaml
+  year_range: 2018-2018
+  first_authors:
+  - Steinlechner
+  best_evidence:
+    paper: steinlechner2018.yaml
+    author: Steinlechner
+    year: 2018
+    claim: coating thermal noise... will limit the sensitivity both of current detectors and of planned future detectors
+    is_system_limit: true
+    limit_status: null
+  breakthrough_paths:
+  - direction: pri.crystalline_coating_low_brownian_noise
+    expected_gain: ''
+    status: demonstrated
+    source: {}
+  evidence_units:
+  - relation_id: rel.steinlechner_2018_T01
+    paper: steinlechner2018.yaml
+    author: Steinlechner
+    year: 2018
+    is_system_limit: true
+    limit_status: null
+    verification: calculated
+    claim: coating thermal noise... will limit the sensitivity both of current detectors and of planned future detectors
+- limiting_principle: pri.mirror_heating_cavity_shift
+  supporting_papers: 1
+  paper_list:
+  - young1999.yaml
+  year_range: 1999-1999
+  first_authors:
+  - Young
+  best_evidence:
+    paper: young1999.yaml
+    author: Young
+    year: 1999
+    claim: intracavity light heats mirror coatings, shifting cavity resonance by ≈1 Hz/mW
+    is_system_limit: false
+    limit_status: null
+  breakthrough_paths:
+  - direction: meth.active_power_control
+    expected_gain: 通过主动功率控制将腔频移压低至非主导水平
+    status: demonstrated
+    source:
+      zotero_key: EGAZKLXR
+      claim: intracavity light heats mirror coatings, shifting cavity resonance by ≈1 Hz/mW
+  evidence_units:
+  - relation_id: rel.young_1999_06
+    paper: young1999.yaml
+    author: Young
+    year: 1999
+    is_system_limit: false
+    limit_status: null
+    verification: observed
+    claim: intracavity light heats mirror coatings, shifting cavity resonance by ≈1 Hz/mW

@@ -1,9 +1,0 @@
-evidence: 390–520 nm light from a 1 GHz Ti:sapphire frequency comb... extract a 30
-  GHz sub-comb spanning 392–472 nm
-id: evrel_NDSVHPF5_rel.cheng_2024_heng24_02
-metadata:
-  source_paper: cheng2024
-  zotero_key: NDSVHPF5
-object: met.astrocomb_continuous_coverage_c24
-predicate: CHARACTERIZED-BY
-subject: ent.continuous_uv_bluegreen_astrocomb_c24

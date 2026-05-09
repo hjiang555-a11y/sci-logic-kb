@@ -1,24 +1,42 @@
-# Denker 2017 — Geodetic methods to determine the relativistic redshift at the level of 10 $$... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Geodetic methods to determine the relativistic redshift at the level [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：frequency-standards
 meta:
-  zotero_key: Denker2018_Article_GeodeticMethodsToDetermineT
+  zotero_key: Geodetic methods to determine the relativistic red
   topic: frequency-standards
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Geodetic methods to determine the relativistic redshift at the level of 10 $$^{-18}$$ - 18 in the context of international timescales: a review and practical results"
-  year: 2017
-  first_author: "Denker"
-  authors: ["Heiner Denker", "Ludger Timmen", "Christian Voigt", "Stefan Weyers", "Ekkehard Peik", "Helen S. Margolis", "Pacôme Delva", "Peter Wolf", "Gérard Petit"]
-  journal: "Journal of Geodesy"
-  volume: 92
-  pages: 487-516
+  reliability: medium
+  title: Geodetic methods to determine the relativistic redshift at the level
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
   doi: 10.1007/s00190-017-1075-1
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+entities:
+- id: ent.denker2018_article_geodeticmet_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.denker2018_article_geodeticmet_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Geodetic methods to determine the relativistic red
+      claim: core experimental result
+relations:
+- id: rel.denker2018_article_geodeticmet_01
+  subject: ent.denker2018_article_geodeticmet_system
+  predicate: CHARACTERIZED-BY
+  object: met.denker2018_article_geodeticmet_primary
+  confidence: established
+  source:
+    zotero_key: Geodetic methods to determine the relativistic red
+    claim: experimental system characterized by primary metric

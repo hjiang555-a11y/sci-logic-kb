@@ -1,9 +1,0 @@
-evidence: reduced by a factor of 50 to below 10^-12 g^-1 for low-frequency accelerations
-  by real-time feedforward corrections
-id: evrel_H5MYBTXH_rel.leibrandt_2013_03
-metadata:
-  source_paper: leibrandt2013b
-  zotero_key: H5MYBTXH
-object: met.feedforward_accel_sensitivity_l13b
-predicate: CHARACTERIZED-BY
-subject: ent.spherical_ule_cavity_l13b

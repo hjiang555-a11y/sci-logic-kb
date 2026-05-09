@@ -1,9 +1,0 @@
-evidence: effect of the antivibration table is notable between 5 Hz and 100 Hz; even
-  without table noise reduction better than 30 dB
-id: evrel_MN54T4F3_rel.kéfélian_2009_ef05
-metadata:
-  source_paper: kefelian2009
-  zotero_key: MN54T4F3
-object: ent.vibration_environment
-predicate: CONDITIONED-BY
-subject: ent.fiber_interferometer

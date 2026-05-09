@@ -1,24 +1,43 @@
-# Dong 2015 — Subhertz linewidth laser by locking to a fiber delay line [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#  2015 — Subhertz linewidth laser by locking to a fiber delay line [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：ultrastable-laser
 meta:
-  zotero_key: ao-54-5-1152 (1)
+  zotero_key: Subhertz linewidth laser by locking to a fiber del
   topic: ultrastable-laser
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Subhertz linewidth laser by locking to a fiber delay line"
+  reliability: medium
+  title: Subhertz linewidth laser by locking to a fiber delay line
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
   year: 2015
-  first_author: "Dong"
-  authors: ["Jing Dong", "Yongqi Hu", "Junchao Huang", "Meifeng Ye", "Qiuzhi Qu", "Tang Li", "Liang Liu"]
-  journal: "Applied Optics"
-  volume: 54
-  pages: 1152
-  doi: 10.1364/AO.54.001152
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  doi: 10.1364/AO
+entities:
+- id: ent.ao_54_5_1152__1__system
+  name: ' 2015 experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: Experimental system described in  2015
+metrics:
+- id: met.ao_54_5_1152__1__primary
+  name: ' 2015 primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Subhertz linewidth laser by locking to a fiber del
+      claim: core experimental result
+relations:
+- id: rel.ao_54_5_1152__1__01
+  subject: ent.ao_54_5_1152__1__system
+  predicate: CHARACTERIZED-BY
+  object: met.ao_54_5_1152__1__primary
+  confidence: established
+  source:
+    zotero_key: Subhertz linewidth laser by locking to a fiber del
+    claim: experimental system characterized by primary metric

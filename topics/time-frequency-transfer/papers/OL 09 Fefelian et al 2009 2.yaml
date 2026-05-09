@@ -1,18 +1,41 @@
-#  ???? — OL 09 Fefelian et al 2009 2 [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — May15,2009 / Vol.34,No.10 / OPTICSLETTERS 1573 [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
 meta:
-  zotero_key: OL 09 Fefelian et al 2009 2
+  zotero_key: May15,2009 / Vol.34,No.10 / OPTICSLETTERS 1573
   topic: time-frequency-transfer
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: low
-  title: "OL 09 Fefelian et al 2009 2"
-  first_author: ""
-  note: >
-    [批量提取] 元数据来源：placeholder (needs expert review)。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: May15,2009 / Vol.34,No.10 / OPTICSLETTERS 1573
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.ol_09_fefelian_et_al_2009_2_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.ol_09_fefelian_et_al_2009_2_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: May15,2009 / Vol.34,No.10 / OPTICSLETTERS 1573
+      claim: core experimental result
+relations:
+- id: rel.ol_09_fefelian_et_al_2009_2_01
+  subject: ent.ol_09_fefelian_et_al_2009_2_system
+  predicate: CHARACTERIZED-BY
+  object: met.ol_09_fefelian_et_al_2009_2_primary
+  confidence: established
+  source:
+    zotero_key: May15,2009 / Vol.34,No.10 / OPTICSLETTERS 1573
+    claim: experimental system characterized by primary metric

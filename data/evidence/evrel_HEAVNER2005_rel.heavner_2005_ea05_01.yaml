@@ -1,8 +1,0 @@
-evidence: NIST-F1 ... laser-cooled Cs fountain primary frequency standard
-id: evrel_HEAVNER2005_rel.heavner_2005_ea05_01
-metadata:
-  source_paper: heavner2005
-  zotero_key: HEAVNER2005
-object: ent.microwave_frequency_standard
-predicate: PART-OF
-subject: ent.nist_f1_cs_fountain_h05

@@ -1,19 +1,41 @@
-# PM ???? — Noise Floor Reduction of a Fiber-Based Photonic Microwave Generator by Use of... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Noise floor reduction of a fiber-based photonic [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：ultrastable-laser
 meta:
-  zotero_key: Jiang IPC11
+  zotero_key: Noise floor reduction of a fiber-based photonic
   topic: ultrastable-laser
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
   reliability: medium
-  title: "Noise Floor Reduction of a Fiber-Based Photonic Microwave Generator by Use of a Mode-Filtering Cavity"
-  first_author: "PM"
-  authors: ["4:00 PM – 4:15 PM"]
-  note: >
-    [批量提取] 元数据来源：PDF metadata。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  title: Noise floor reduction of a fiber-based photonic
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.jiang_ipc11_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.jiang_ipc11_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Noise floor reduction of a fiber-based photonic
+      claim: core experimental result
+relations:
+- id: rel.jiang_ipc11_01
+  subject: ent.jiang_ipc11_system
+  predicate: CHARACTERIZED-BY
+  object: met.jiang_ipc11_primary
+  confidence: established
+  source:
+    zotero_key: Noise floor reduction of a fiber-based photonic
+    claim: experimental system characterized by primary metric

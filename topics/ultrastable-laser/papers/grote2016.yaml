@@ -37,9 +37,9 @@ principles:
   name: 高功率超低噪声光电探测器设计（Grote 2016）
   statement: '为压缩光增强引力波探测器设计的光电探测器，通过优化电路设计和元件选择， 在音频频段（>1 kHz）将电子噪声降低4倍以上，同时保持高功率处理能力
     （5–50 mW/元件），使系统接近量子散粒噪声极限。
-
     '
   domain: photodetection
+  conditions: "音频频段（>1 kHz）；元件功率处理5–50 mW；需低噪声放大电路和高量子效率光电二极管"
   subdomain: gravitational_wave_detection
   foundation: engineering
   evidence: experimental

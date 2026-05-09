@@ -1,8 +1,0 @@
-evidence: a record-low parametric oscillation threshold down to tens of microwatts
-id: evrel_AT5ZTB9M_rel.shu_2022_22_06
-metadata:
-  source_paper: shu2022
-  zotero_key: AT5ZTB9M
-object: met.microcomb_parametric_oscillation_threshold_s22
-predicate: CHARACTERIZED-BY
-subject: ent.algaasoi_dark_pulse_microcomb_s22

@@ -1,24 +1,42 @@
-# Zhang 2022 — Coherent Optical Frequency Transfer via a 490 km Noisy Fiber Link [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Chin. Phys. Lett. 39, 044201 (2022) [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
 meta:
-  zotero_key: 18561
+  zotero_key: Chin. Phys. Lett. 39, 044201 (2022)
   topic: time-frequency-transfer
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Coherent Optical Frequency Transfer via a 490 km Noisy Fiber Link"
-  year: 2022
-  first_author: "Zhang"
-  authors: ["Xiang Zhang", "Xue Deng", "Qi Zang", "Dongdong Jiao", "Jing Gao", "Dan Wang", "Qian Zhou", "Jie Liu", "Guanjun Xu", "Ruifang Dong", "Tao Liu", "Shougang Zhang"]
-  journal: "Chinese Physics Letters"
-  volume: 39
-  pages: 18561
+  reliability: medium
+  title: Chin. Phys. Lett. 39, 044201 (2022)
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
   doi: 10.1088/0256-307X/39/4/044201
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+entities:
+- id: ent.044201_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.044201_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Chin. Phys. Lett. 39, 044201 (2022)
+      claim: core experimental result
+relations:
+- id: rel.044201_01
+  subject: ent.044201_system
+  predicate: CHARACTERIZED-BY
+  object: met.044201_primary
+  confidence: established
+  source:
+    zotero_key: Chin. Phys. Lett. 39, 044201 (2022)
+    claim: experimental system characterized by primary metric

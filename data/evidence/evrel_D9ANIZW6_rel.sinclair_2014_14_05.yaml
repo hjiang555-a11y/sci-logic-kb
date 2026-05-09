@@ -1,8 +1,0 @@
-evidence: integrated phase noise is 2.9 rad for fceo
-id: evrel_D9ANIZW6_rel.sinclair_2014_14_05
-metadata:
-  source_paper: sinclair2014
-  zotero_key: D9ANIZW6
-object: met.integrated_phase_noise_fceo_s14
-predicate: CHARACTERIZED-BY
-subject: ent.ruggedized_field_comb_s14

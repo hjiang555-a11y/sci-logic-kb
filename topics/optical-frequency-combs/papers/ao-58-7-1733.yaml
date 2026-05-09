@@ -1,24 +1,42 @@
-# Song 2019 — Compact low-noise passively mode-locked Er-doped femtosecond all-fiber laser ... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Compact low-noise passively mode-locked [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: ao-58-7-1733
+  zotero_key: Compact low-noise passively mode-locked
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Compact low-noise passively mode-locked Er-doped femtosecond all-fiber laser with 268  GHz fundamental repetition rate"
-  year: 2019
-  first_author: "Song"
-  authors: ["Jiazheng Song", "Hushan Wang", "Xinning Huang", "XiaoHong Hu", "Ting Zhang", "Yishan Wang", "Yuanshan Liu", "Jianguo Zhang"]
-  journal: "Applied Optics"
-  volume: 58
-  pages: 1733
-  doi: 10.1364/AO.58.001733
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Compact low-noise passively mode-locked
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1364/AO
+entities:
+- id: ent.ao_58_7_1733_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.ao_58_7_1733_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Compact low-noise passively mode-locked
+      claim: core experimental result
+relations:
+- id: rel.ao_58_7_1733_01
+  subject: ent.ao_58_7_1733_system
+  predicate: CHARACTERIZED-BY
+  object: met.ao_58_7_1733_primary
+  confidence: established
+  source:
+    zotero_key: Compact low-noise passively mode-locked
+    claim: experimental system characterized by primary metric

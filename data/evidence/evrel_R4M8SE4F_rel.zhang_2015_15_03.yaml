@@ -1,8 +1,0 @@
-evidence: deviation of 0.6 mHz in an integration time of 1 s
-id: evrel_R4M8SE4F_rel.zhang_2015_15_03
-metadata:
-  source_paper: zhang2015
-  zotero_key: R4M8SE4F
-object: met.fceo_1s_deviation_z15
-predicate: CHARACTERIZED-BY
-subject: ent.er_fiber_intracavity_eom_comb_z15

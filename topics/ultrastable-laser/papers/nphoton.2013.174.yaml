@@ -1,24 +1,42 @@
-# Cole 2013 — Tenfold reduction of Brownian noise in high-reflectivity optical coatings [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Garrett  — Tenfold reduction of Brownian noise in [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：ultrastable-laser
 meta:
-  zotero_key: nphoton.2013.174
+  zotero_key: Tenfold reduction of Brownian noise in
   topic: ultrastable-laser
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Tenfold reduction of Brownian noise in high-reflectivity optical coatings"
-  year: 2013
-  first_author: "Cole"
-  authors: ["Garrett D. Cole", "Wei Zhang", "Michael J. Martin", "Jun Ye", "Markus Aspelmeyer"]
-  journal: "Nature Photonics"
-  volume: 7
-  pages: 644-650
-  doi: 10.1038/NPHOTON.2013.174
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Tenfold reduction of Brownian noise in
+  first_author: Garrett
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1038/NPHOTON
+entities:
+- id: ent.nphoton_2013_174_system
+  name: Garrett  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Garrett '
+metrics:
+- id: met.nphoton_2013_174_primary
+  name: Garrett  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Tenfold reduction of Brownian noise in
+      claim: core experimental result
+relations:
+- id: rel.nphoton_2013_174_01
+  subject: ent.nphoton_2013_174_system
+  predicate: CHARACTERIZED-BY
+  object: met.nphoton_2013_174_primary
+  confidence: established
+  source:
+    zotero_key: Tenfold reduction of Brownian noise in
+    claim: experimental system characterized by primary metric

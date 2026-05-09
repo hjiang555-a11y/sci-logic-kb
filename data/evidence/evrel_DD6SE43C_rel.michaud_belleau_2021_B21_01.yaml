@@ -1,9 +1,0 @@
-evidence: backscattered light... act as a source of noise whenever they are allowed
-  to reach the detector
-id: evrel_DD6SE43C_rel.michaud_belleau_2021_B21_01
-metadata:
-  source_paper: michaudbelleau2021
-  zotero_key: DD6SE43C
-object: pri.rayleigh_backscattering_noise
-predicate: BOUNDED-BY
-subject: ent.fiber_interferometer

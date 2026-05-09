@@ -1,9 +1,0 @@
-evidence: limited by the ring cavity length, high fundamental repetition rate fiber
-  lasers are still difficult to build
-id: evrel_VATLBIAD_rel.wang_2014_14_06
-metadata:
-  source_paper: wang2014
-  zotero_key: VATLBIAD
-object: pri.high_frep_bandwidth_power_tradeoff
-predicate: BOUNDED-BY
-subject: met.frep_500mhz_no_amp_w14

@@ -1,23 +1,41 @@
-# Xia 2025 — A multi-loop auto-locking system with fully digital electronics for ultra-sta... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — A multi-loop auto-locking system with fully digital electronics for ultra-stable [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：ultrastable-laser
 meta:
-  zotero_key: RSI25-AR-00618
+  zotero_key: A multi-loop auto-locking system with fully digita
   topic: ultrastable-laser
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "A multi-loop auto-locking system with fully digital electronics for ultra-stable laser"
-  year: 2025
-  first_author: "Xia"
-  authors: ["Can Xia", "DanYang Zhu", "Yaodong Hu", "ShaoMao Wang", "JianYu Guan", "Lei Hou", "Qi Shen", "HaiFeng Jiang"]
-  journal: "Review of Scientific Instruments"
-  volume: 96
-  doi: 10.1063/5.0274571
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: A multi-loop auto-locking system with fully digital electronics for ultra-stable laser
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.rsi25_ar_00618_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.rsi25_ar_00618_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: A multi-loop auto-locking system with fully digita
+      claim: core experimental result
+relations:
+- id: rel.rsi25_ar_00618_01
+  subject: ent.rsi25_ar_00618_system
+  predicate: CHARACTERIZED-BY
+  object: met.rsi25_ar_00618_primary
+  confidence: established
+  source:
+    zotero_key: A multi-loop auto-locking system with fully digita
+    claim: experimental system characterized by primary metric

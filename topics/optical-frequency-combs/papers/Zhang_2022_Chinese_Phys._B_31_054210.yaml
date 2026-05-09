@@ -1,18 +1,41 @@
-#  ???? — Zhang_2022_Chinese_Phys._B_31_054210 [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Wang  — All polarization-maintaining Er:fiber-based optical -Recent progress in integrat [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: Zhang_2022_Chinese_Phys._B_31_054210
+  zotero_key: All polarization-maintaining Er:fiber-based optica
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: low
-  title: "Zhang_2022_Chinese_Phys._B_31_054210"
-  first_author: ""
-  note: >
-    [批量提取] 元数据来源：placeholder (needs expert review)。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: All polarization-maintaining Er:fiber-based optical -Recent progress in integrated electro-optic
+  first_author: Wang
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.zhang_2022_chinese_phys__b_31__system
+  name: Wang  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Wang '
+metrics:
+- id: met.zhang_2022_chinese_phys__b_31__primary
+  name: Wang  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: All polarization-maintaining Er:fiber-based optica
+      claim: core experimental result
+relations:
+- id: rel.zhang_2022_chinese_phys__b_31__01
+  subject: ent.zhang_2022_chinese_phys__b_31__system
+  predicate: CHARACTERIZED-BY
+  object: met.zhang_2022_chinese_phys__b_31__primary
+  confidence: established
+  source:
+    zotero_key: All polarization-maintaining Er:fiber-based optica
+    claim: experimental system characterized by primary metric

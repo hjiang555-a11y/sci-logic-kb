@@ -1,9 +1,0 @@
-evidence: heralded projective molecular state preparation ... sequentially detecting
-  the |J″⟩ and |J′⟩ states
-id: evrel_DUJ8VXBR_rel.chou_2020_ho20_05
-metadata:
-  source_paper: chou2020
-  zotero_key: DUJ8VXBR
-object: pri.state_prepared_single_ion_spectroscopy
-predicate: ENABLED-BY
-subject: meth.single_ion_ofc_quantum_logic_spectroscopy_c20

@@ -1,9 +1,0 @@
-evidence: supports 10 GHz generation with phase noise near −100 dBc/Hz at 1 Hz offset
-  and <−173 dBc/Hz for all offsets >600 Hz
-id: evrel_NHG79KDA_rel.davila_rodriguez_2017_02
-metadata:
-  source_paper: davilarodriguez2017
-  zotero_key: NHG79KDA
-object: met.microwave_phase_noise_10ghz_d17
-predicate: CHARACTERIZED-BY
-subject: ent.compact_ule_cavity_25mm_d17

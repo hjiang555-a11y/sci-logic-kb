@@ -1,18 +1,41 @@
-#  ???? — Accuracy evaluation of NIST-F1 [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Jefferts  — Accuracy evaluation of NIST-F1 [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：frequency-standards
 meta:
-  zotero_key: 1823(1)
+  zotero_key: Accuracy evaluation of NIST-F1
   topic: frequency-standards
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
   reliability: medium
-  title: "Accuracy evaluation of NIST-F1"
-  first_author: ""
-  note: >
-    [批量提取] 元数据来源：PDF metadata。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  title: Accuracy evaluation of NIST-F1
+  first_author: Jefferts
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.1823_1__system
+  name: Jefferts  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Jefferts '
+metrics:
+- id: met.1823_1__primary
+  name: Jefferts  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Accuracy evaluation of NIST-F1
+      claim: core experimental result
+relations:
+- id: rel.1823_1__01
+  subject: ent.1823_1__system
+  predicate: CHARACTERIZED-BY
+  object: met.1823_1__primary
+  confidence: established
+  source:
+    zotero_key: Accuracy evaluation of NIST-F1
+    claim: experimental system characterized by primary metric

@@ -46,11 +46,12 @@
 
 | 专题 | 当前状态 | 构架入口 | 核心指标入口 | 关键节点入口 |
 |------|---------|---------|-------------|-------------|
-| 超稳激光 | 已入库，主线已收口 | [`topics/ultrastable-laser/_meta/architecture.md`](../topics/ultrastable-laser/_meta/architecture.md) | [`topics/ultrastable-laser/_meta/scoping_principles.md`](../topics/ultrastable-laser/_meta/scoping_principles.md) | 见 §3 |
-| 光学频率梳 | 已入库，需按子域审核 | [`topics/optical-frequency-combs/_meta/architecture.md`](../topics/optical-frequency-combs/_meta/architecture.md) | [`topics/optical-frequency-combs/_meta/scoping_principles.md`](../topics/optical-frequency-combs/_meta/scoping_principles.md) | 见 §4 |
-| 频率标准 | framework 骨架 | [`topics/frequency-standards/_meta/architecture.md`](../topics/frequency-standards/_meta/architecture.md) | `fortier2026.yaml` 中汇总指标 | 见 §5 |
-| 时间标尺与钟组 | framework 骨架 | [`topics/timescales/_meta/architecture.md`](../topics/timescales/_meta/architecture.md) | `dimarcq2024.yaml` 中路线图指标 | 见 §6 |
-| 时间频率传递 | 架构占位 | [`topics/time-frequency-transfer/_meta/architecture.md`](../topics/time-frequency-transfer/_meta/architecture.md) | 暂无稳定指标榜 | 见 §7 |
+| 超稳激光 | 维护中（143篇） | [`topics/ultrastable-laser/_meta/architecture.md`](../topics/ultrastable-laser/_meta/architecture.md) | [`topics/ultrastable-laser/_meta/scoping_principles.md`](../topics/ultrastable-laser/_meta/scoping_principles.md) | 见 §3 |
+| 光学频率梳 | 已入库（213篇） | [`topics/optical-frequency-combs/_meta/architecture.md`](../topics/optical-frequency-combs/_meta/architecture.md) | [`topics/optical-frequency-combs/_meta/scoping_principles.md`](../topics/optical-frequency-combs/_meta/scoping_principles.md) | 见 §4 |
+| 频率标准 | 成长中（72篇） | [`topics/frequency-standards/_meta/architecture.md`](../topics/frequency-standards/_meta/architecture.md) | `fortier2026.yaml` 中汇总指标 | 见 §5 |
+| 时间标尺 | 初建（8篇） | [`topics/timescales/_meta/architecture.md`](../topics/timescales/_meta/architecture.md) | `dimarcq2024.yaml` 中路线图指标 | 见 §6 |
+| 时间频率传递 | 成长中（76篇） | [`topics/time-frequency-transfer/_meta/architecture.md`](../topics/time-frequency-transfer/_meta/architecture.md) | 见 `_meta/architecture.md` 中指标 | 见 §7 |
+| 共享基础 | 初建（20篇） | [`topics/shared/_meta/architecture.md`](../topics/shared/_meta/architecture.md) | — | — |
 
 ---
 
@@ -188,7 +189,7 @@
 
 ---
 
-## 6. 时间标尺与钟组（当前以 framework 审接口）
+## 6. 时间标尺（当前以 framework 审接口）
 
 ### 6.1 构架要点
 
@@ -220,27 +221,27 @@
 
 ---
 
-## 7. 时间频率传递（当前只审骨架）
+## 7. 时间频率传递（76篇已入库，按链路子域审）
 
-当前没有论文，不做节点内容审核，只做骨架审核：
+当前已有 76 篇论文入库，覆盖光纤链路/自由空间链路/卫星链路。审核重点：
 
-- 光纤链路 / 自由空间链路 的一级划分是否合理
-- 与超稳激光 / 频梳 / 频率标准的接口是否合理
+- 光纤链路 / 自由空间链路 / 卫星链路的一级划分是否合理
+- 与超稳激光 / 频梳 / 频率标准的接口是否清楚
+- 核心指标：链路残差不稳定度 `met.*_link_instability`
 
 入口：
 
 - [`topics/time-frequency-transfer/_meta/architecture.md`](../topics/time-frequency-transfer/_meta/architecture.md)
-
-当前阶段不建议扩写 review checklist，只需守住骨架。
+- [`topics/time-frequency-transfer/INDEX.md`](../topics/time-frequency-transfer/INDEX.md)
 
 ---
 
 ## 8. 当前审核建议（按优先级）
 
-1. **先审超稳激光**：它已经具备“结构 + 指标 + 节点”的最完整闭环
-2. **再审光学频率梳**：重点不是补更多论文，而是确认多主线指标体系是否顺手
-3. **再审频率标准 / 时间标尺**：当前先确认框架和接口，不急着扩展 Level 2
-4. **时间频率传递先不展开**：只保留骨架
+1. **先审超稳激光**：它已经具备"结构 + 指标 + 节点"的最完整闭环，当前 143 篇论文
+2. **再审光学频率梳**：213 篇最大论文量，子域多主线指标体系需要验证
+3. **再审频率标准 / 时间频率传递**：各有 72/76 篇论文，当前先确认框架和接口
+4. **时间标尺 / 共享基础不展开**：论文规模尚小，守住骨架和接口
 
 ---
 

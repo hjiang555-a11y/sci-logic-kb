@@ -1,8 +1,0 @@
-evidence: frequency ratio of Al⁺ to Hg⁺ measured to 17th decimal place
-id: evrel_ROSENBAND2008_rel.rosenband_2008_os08_03
-metadata:
-  source_paper: rosenband2008
-  zotero_key: ROSENBAND2008
-object: met.optical_clock_fractional_uncertainty
-predicate: CHARACTERIZED-BY
-subject: ent.al_ion_quantum_logic_clock_r08

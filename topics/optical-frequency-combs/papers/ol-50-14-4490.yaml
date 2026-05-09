@@ -1,24 +1,41 @@
-# Lorenz 2025 — Actively pulse-shaped linearly polarized 200 W photonic crystal fiber MOPA at... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — 4490 Vol.50,No.14/15July2025/OpticsLetters Letter [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: ol-50-14-4490
+  zotero_key: 4490 Vol.50,No.14/15July2025/OpticsLetters Letter
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Actively pulse-shaped linearly polarized 200 W photonic crystal fiber MOPA at 2048 nm with 2 mJ pulse energy"
-  year: 2025
-  first_author: "Lorenz"
-  authors: ["Dominik Lorenz", "Julian Schneider", "Clément Romano", "Dieter Panitzek", "Jan Lautenschläger", "Marc Eichhorn", "Christelle Kieleck"]
-  journal: "Optics Letters"
-  volume: 50
-  pages: 4490
-  doi: 10.1364/OL.562668
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: 4490 Vol.50,No.14/15July2025/OpticsLetters Letter
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.ol_50_14_4490_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.ol_50_14_4490_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: 4490 Vol.50,No.14/15July2025/OpticsLetters Letter
+      claim: core experimental result
+relations:
+- id: rel.ol_50_14_4490_01
+  subject: ent.ol_50_14_4490_system
+  predicate: CHARACTERIZED-BY
+  object: met.ol_50_14_4490_primary
+  confidence: established
+  source:
+    zotero_key: 4490 Vol.50,No.14/15July2025/OpticsLetters Letter
+    claim: experimental system characterized by primary metric

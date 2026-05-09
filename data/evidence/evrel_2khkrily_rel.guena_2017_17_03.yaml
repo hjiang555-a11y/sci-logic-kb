@@ -1,8 +1,0 @@
-evidence: actively phase-stabilized long-distance fiber link
-id: evrel_2khkrily_rel.guena_2017_17_03
-metadata:
-  source_paper: guena2017_2khkrily
-  zotero_key: 2khkrily
-object: pri.noise_cancellation_frequency_transfer
-predicate: ENABLED-BY
-subject: ent.syrte_ptb_1415km_link_g17

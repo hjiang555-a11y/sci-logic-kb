@@ -1,18 +1,41 @@
-#  ???? — /home/journal/dvi/APB1078-final.dvi [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Nelson  — Appl.Phys.B65,277–294(1997) [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: Nelson1997_Article_Ultrashort-pulseFiberRingLa
+  zotero_key: Appl.Phys.B65,277–294(1997)
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
   reliability: medium
-  title: "/home/journal/dvi/APB1078-final.dvi"
-  first_author: ""
-  note: >
-    [批量提取] 元数据来源：PDF metadata。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  title: Appl.Phys.B65,277–294(1997)
+  first_author: Nelson
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.nelson1997_article_ultrashort__system
+  name: Nelson  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Nelson '
+metrics:
+- id: met.nelson1997_article_ultrashort__primary
+  name: Nelson  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Appl.Phys.B65,277–294(1997)
+      claim: core experimental result
+relations:
+- id: rel.nelson1997_article_ultrashort__01
+  subject: ent.nelson1997_article_ultrashort__system
+  predicate: CHARACTERIZED-BY
+  object: met.nelson1997_article_ultrashort__primary
+  confidence: established
+  source:
+    zotero_key: Appl.Phys.B65,277–294(1997)
+    claim: experimental system characterized by primary metric

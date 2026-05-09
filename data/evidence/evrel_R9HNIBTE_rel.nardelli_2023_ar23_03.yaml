@@ -1,9 +1,0 @@
-evidence: low intrinsic noise ... co-doping of Er and Yb that suppresses high-frequency
-  pump intensity noise
-id: evrel_R9HNIBTE_rel.nardelli_2023_ar23_03
-metadata:
-  source_paper: nardelli2023
-  zotero_key: R9HNIBTE
-object: pri.er_yb_co_doping_pump_noise_suppression_n23
-predicate: BOUNDED-BY
-subject: met.er_yb_glass_comb_beat_stability_n23

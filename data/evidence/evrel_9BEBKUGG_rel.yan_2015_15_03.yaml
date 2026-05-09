@@ -1,9 +1,0 @@
-evidence: 232 MHz Er:fiber comb with intracavity EOM achieves attosecond-level timing
-  resolution
-id: evrel_9BEBKUGG_rel.yan_2015_15_03
-metadata:
-  source_paper: yan2015
-  zotero_key: 9BEBKUGG
-object: ent.all_pm_er_fiber_comb_k15
-predicate: COMPETES-WITH
-subject: ent.attosecond_erfiber_comb_y15

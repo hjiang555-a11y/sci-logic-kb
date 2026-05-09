@@ -1,9 +1,0 @@
-evidence: active-vibration-isolation system... accelerometer was fixed to the optical
-  breadboard
-id: evrel_U4Z95559_rel.tao_2018_06
-metadata:
-  source_paper: tao2018
-  zotero_key: U4Z95559
-object: ent.vibration_environment
-predicate: CONDITIONED-BY
-subject: ent.robust_cuboid_cavity_t18

@@ -1,8 +1,0 @@
-evidence: frequency-locking a laser to a spectral hole
-id: evrel_HKYLIW8U_rel.gobron_2017_O01
-metadata:
-  source_paper: gobron2017
-  zotero_key: HKYLIW8U
-object: meth.dispersive_heterodyne_shb_locking
-predicate: OPERATIONALIZED-AS
-subject: ent.shb_eu_yso_reference_l13

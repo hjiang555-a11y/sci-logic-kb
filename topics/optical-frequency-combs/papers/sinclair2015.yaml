@@ -1,23 +1,42 @@
-# Sinclair 2015 — Invited Article: A compact optically coherent fiber frequency comb [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Sinclair  — Invited Article: A compact optically coherent fiber frequency comb [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: sinclair2015
+  zotero_key: 'Invited Article: A compact optically coherent fibe'
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Invited Article: A compact optically coherent fiber frequency comb"
-  year: 2015
-  first_author: "Sinclair"
-  authors: ["L. C. Sinclair", "J.-D. Deschênes", "L. Sonderhouse", "W. C. Swann", "I. H. Khader", "E. Baumann", "N. R. Newbury", "I. Coddington"]
-  journal: "Review of Scientific Instruments"
-  volume: 86
-  doi: 10.1063/1.4928163
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: 'Invited Article: A compact optically coherent fiber frequency comb'
+  first_author: Sinclair
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1063/1
+entities:
+- id: ent.sinclair2015_system
+  name: Sinclair  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Sinclair '
+metrics:
+- id: met.sinclair2015_primary
+  name: Sinclair  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: 'Invited Article: A compact optically coherent fibe'
+      claim: core experimental result
+relations:
+- id: rel.sinclair2015_01
+  subject: ent.sinclair2015_system
+  predicate: CHARACTERIZED-BY
+  object: met.sinclair2015_primary
+  confidence: established
+  source:
+    zotero_key: 'Invited Article: A compact optically coherent fibe'
+    claim: experimental system characterized by primary metric

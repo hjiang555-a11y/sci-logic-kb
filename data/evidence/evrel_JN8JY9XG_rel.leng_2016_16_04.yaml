@@ -1,8 +1,0 @@
-evidence: compensation scheme cancels the phase fluctuation
-id: evrel_JN8JY9XG_rel.leng_2016_16_04
-metadata:
-  source_paper: leng2016
-  zotero_key: JN8JY9XG
-object: pri.roundtrip_phase_compensation_rf_transfer
-predicate: ENABLED-BY
-subject: meth.comb_rf_fiber_transfer

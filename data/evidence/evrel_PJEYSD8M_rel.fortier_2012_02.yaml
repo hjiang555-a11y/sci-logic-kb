@@ -1,8 +1,0 @@
-evidence: the single oscillator timing jitter would be 420 attoseconds
-id: evrel_PJEYSD8M_rel.fortier_2012_02
-metadata:
-  source_paper: fortier2012
-  zotero_key: PJEYSD8M
-object: met.timing_jitter_hybrid_osc_fortier2012
-predicate: CHARACTERIZED-BY
-subject: ent.hybrid_photonic_microwave_osc_fortier2012

@@ -1,9 +1,0 @@
-evidence: feedback bandwidth for pump current modulation is limited by the response
-  time of the gain medium
-id: evrel_3RT4U4TV_rel.kuse_2015_15_06
-metadata:
-  source_paper: kuse2015
-  zotero_key: 3RT4U4TV
-object: pri.gain_lifetime_servo_bandwidth_limit
-predicate: BOUNDED-BY
-subject: met.fceo_integrated_phase_noise_k15

@@ -1,0 +1,130 @@
+topic: time-frequency-transfer
+generated: 2026-05-09 01:47 UTC
+schema_version: v5.0-evidence
+summary:
+  total_evidence_units: 5
+  unique_limiting_principles: 5
+  with_breakthrough_paths: 0
+  with_resolved_limits: 0
+  with_active_limits: 0
+evidence_groups:
+- limiting_principle: ent.space_lattice_optical_clock_sloc
+  supporting_papers: 1
+  paper_list:
+  - cacciapuoti2017.yaml
+  year_range: 2017-2017
+  first_authors:
+  - Cacciapuoti
+  best_evidence:
+    paper: cacciapuoti2017.yaml
+    author: Cacciapuoti
+    year: 2017
+    claim: In the non-common-view comparisons, a low instability of the atomic clock is particularly important; the performance of such comparisons will be limited by the on-board clock.
+    is_system_limit: true
+    limit_status: null
+  breakthrough_paths: []
+  evidence_units:
+  - relation_id: rel.cacciapuoti_2017_17_18
+    paper: cacciapuoti2017.yaml
+    author: Cacciapuoti
+    year: 2017
+    is_system_limit: true
+    limit_status: null
+    verification: calculated
+    claim: In the non-common-view comparisons, a low instability of the atomic clock is particularly important; the performance of such comparisons will be limited by the on-board clock.
+- limiting_principle: pri.atmospheric_optical_phase_noise_power_law
+  supporting_papers: 1
+  paper_list:
+  - sinclair2019_5xulcnp3.yaml
+  year_range: 2019-2019
+  first_authors:
+  - Sinclair
+  best_evidence:
+    paper: sinclair2019_5xulcnp3.yaml
+    author: Sinclair
+    year: 2019
+    claim: atmospheric turbulence limits free-space TWTFT precision
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths: []
+  evidence_units:
+  - relation_id: rel.sinclair_2019_in19_03
+    paper: sinclair2019_5xulcnp3.yaml
+    author: Sinclair
+    year: 2019
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: atmospheric turbulence limits free-space TWTFT precision
+- limiting_principle: pri.turbulence_anisoplanatism_tf_degradation
+  supporting_papers: 1
+  paper_list:
+  - swann2019_9ltylbj8.yaml
+  year_range: 2019-2019
+  first_authors:
+  - Swann
+  best_evidence:
+    paper: swann2019_9ltylbj8.yaml
+    author: Swann
+    year: 2019
+    claim: breakdown in the time-of-flight reciprocity
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths: []
+  evidence_units:
+  - relation_id: rel.swann_2019_wa19_02
+    paper: swann2019_9ltylbj8.yaml
+    author: Swann
+    year: 2019
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: breakdown in the time-of-flight reciprocity
+- limiting_principle: pri.dcf_induced_differential_delay_temp_compensation
+  supporting_papers: 1
+  paper_list:
+  - turza2019_9s69d3dw.yaml
+  year_range: 2019-2019
+  first_authors:
+  - Turza
+  best_evidence:
+    paper: turza2019_9s69d3dw.yaml
+    author: Turza
+    year: 2019
+    claim: DCFs cause substantial differential delay
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths: []
+  evidence_units:
+  - relation_id: rel.turza_2019_ur19_01
+    paper: turza2019_9s69d3dw.yaml
+    author: Turza
+    year: 2019
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: DCFs cause substantial differential delay
+- limiting_principle: pri.atmospheric_non_reciprocity_satellite_twtft
+  supporting_papers: 1
+  paper_list:
+  - zeng2024_kbzasp75.yaml
+  year_range: 2024-2024
+  first_authors:
+  - Zeng
+  best_evidence:
+    paper: zeng2024_kbzasp75.yaml
+    author: Zeng
+    year: 2024
+    claim: atmospheric non-reciprocity effects for satellite-based two-way time-frequency transfer
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths: []
+  evidence_units:
+  - relation_id: rel.zeng_2024_en24_01
+    paper: zeng2024_kbzasp75.yaml
+    author: Zeng
+    year: 2024
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: atmospheric non-reciprocity effects for satellite-based two-way time-frequency transfer

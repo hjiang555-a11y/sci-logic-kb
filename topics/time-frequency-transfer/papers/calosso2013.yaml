@@ -1,0 +1,107 @@
+# Calosso 2013 — Frequency transfer via two-way optical phase comparison on multiplexed fiber network [evidence]
+# 提取者：AI（待专家确认）
+# 提取日期：2026-05-08
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
+
+meta:
+  zotero_key: null
+  topic: time-frequency-transfer
+  source_type: technical_paper
+  contribution_type: evidence
+  reliability: high
+  title: "Frequency transfer via a two-way optical phase comparison on a multiplexed fiber network"
+  year: 2013
+  first_author: "Calosso"
+  journal: "Optics Letters"
+  note: >
+    首次演示双向光学相位比较方案实现光纤频率传递的无源噪声抵消。
+    在 47 km 城域光纤网络上实现 10⁻²¹ 级稳定度的频率比对，无需主动锁相补偿。
+    数字电子系统实现两端同步相位测量，通过后处理消除链路噪声。
+    方案可升级为更复杂的多任务光纤链路（含时间传递）。
+
+entities:
+  - id: ent.two_way_phase_comparison_fiber_link
+    name: "双向相位比较光纤链路"
+    aliases: ["two-way phase comparison link", "双向无源噪声抵消链路"]
+    hierarchy_level: 1
+    status: demonstrated
+    function: >
+      通过在同一光纤两端同时发射超稳激光信号，并在远端同步测量相位，
+      利用双向波越时间的对称性实现链路噪声的无源后处理抵消。
+      不需要主动锁相补偿回路，避免了锁相环带宽受限于光纤往返时间的问题。
+    key_parameters:
+      fiber_length: "47 km（城域光纤网络）"
+      laser_wavelength: "1542 nm（ν₀ ≈ 194 THz）"
+      noise_cancellation: "无源后处理抵消，达到 10⁻²¹ 频率比对稳定度"
+      phase_measurement: "Tracking DDS（数字跟踪直接频率合成器）同步测量"
+    note: >
+      区别于 ent.coherent_optical_fiber_link（主动锁相噪声补偿方案）。
+      本方案为无源方案，不要求主动补偿回路。
+
+methods:
+  - id: meth.two_way_passive_noise_cancellation
+    name: "双向无源噪声抵消方法"
+    status: demonstrated
+    applies_to: ent.two_way_phase_comparison_fiber_link
+    steps_summary: >
+      两端各发射一束超稳激光进入光纤 → 远端同步检测相位（Tracking DDS）
+      → 数据后处理抵消共模噪声 → 得到两端激光的频率差
+    required_hardware:
+      - ent.two_way_phase_comparison_fiber_link
+    advantages:
+      - "无主动锁相环带宽限制（不受光纤往返时间制约）"
+      - "避免背向散射和电噪声引入的锁相环杂散"
+      - "数字实现可扩展为多任务（时间传递+频率比对）"
+    disadvantages:
+      - "要求两端激光的相干长度超过光纤长度"
+      - "双向相位测量需要严格同步"
+    source_claim: >
+      "the fiber noise was passively cancelled... at the ultimate 10⁻²¹ stability level"
+
+metrics:
+  - id: met.two_way_phase_comparison_stability
+    name: "双向相位比对稳定度"
+    unit: "分数频率不稳定度"
+    role: primary
+    description: "通过双向无源噪声抵消后，两端超稳激光的频率比对分数不稳定度"
+    demonstrated_value:
+      value: "~10⁻²¹（基于 47 km 光纤，194 THz 光载波）"
+      conditions: "47 km 城域光纤网络，1542 nm 超稳激光"
+      verification_status: observed
+      confidence: established
+      source:
+        zotero_key: null
+        claim: "compared two optical frequencies at the ultimate 10⁻²¹ stability level"
+
+relations:
+  - id: rel.C13_01
+    subject: ent.two_way_phase_comparison_fiber_link
+    predicate: OPERATIONALIZED-AS
+    object: meth.two_way_passive_noise_cancellation
+    confidence: established
+    source:
+      zotero_key: null
+      claim: "The technique relies on the synchronous measurement of the optical phases at the two ends"
+
+  - id: rel.C13_02
+    subject: meth.two_way_passive_noise_cancellation
+    predicate: ENABLED-BY
+    object: pri.two_way_frequency_comparison_noise_rejection
+    confidence: established
+    source:
+      zotero_key: null
+      claim: "the noise is cancelled by data post-processing, in analogy to two-way methods"
+    note: "跨文件引用，pri.two_way_frequency_comparison_noise_rejection 定义于 TFT 专题其他论文"
+
+  - id: rel.C13_03
+    subject: ent.two_way_phase_comparison_fiber_link
+    predicate: COMPETES-WITH
+    object: ent.coherent_optical_fiber_link
+    confidence: established
+    source:
+      zotero_key: null
+      claim: "the bidirectional operation of the link poses several issues... the PLL bandwidth is limited by the round trip time"
+    tradeoffs:
+      subject_wins: ["无锁相环带宽限制", "避免背向散射引起的锁相环杂散", "数字实现简单可扩展"]
+      object_wins: ["可单向传递频率信号", "技术更成熟"]

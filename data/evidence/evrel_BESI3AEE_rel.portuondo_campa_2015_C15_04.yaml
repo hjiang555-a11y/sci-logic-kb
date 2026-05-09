@@ -1,9 +1,0 @@
-evidence: a direct optical measurement of the stabilized frequency combs' timing jitter
-  was performed using a balanced optical cross correlator
-id: evrel_BESI3AEE_rel.portuondo_campa_2015_C15_04
-metadata:
-  source_paper: portuondo-campa2015
-  zotero_key: BESI3AEE
-object: met.dpssl_ofc_timing_jitter_pc15
-predicate: CHARACTERIZED-BY
-subject: ent.dpss_comb_interleaver_pc15

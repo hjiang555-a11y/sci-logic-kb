@@ -2,13 +2,20 @@
 
 # Time-Frequency Transfer — Topic Index
 
-> Auto-generated 2026-05-04 04:06 UTC · 59 papers · 131 nodes · 149 relations
+> Auto-generated 2026-05-09 06:38 UTC · 77 papers · 198 nodes · 184 relations
 
 ## Entities
 
 | ID | Name | Level | Source |
 |----|------|------:|--------|
+| `ent.044201_system` | experimental system | 2 | [044201](topics/time-frequency-transfer/papers/044201.yaml) |
+| `ent.1311_4378_system` | experimental system | 2 | [1311.4378](topics/time-frequency-transfer/papers/1311.4378.yaml) |
+| `ent.1_s2_0_s1631070515000754_main_system` | experimental system | 2 | [1-s2.0-S1631070515000754-main](topics/time-frequency-transfer/papers/1-s2.0-S1631070515000754-main.yaml) |
+| `ent.251591__2__system` | experimental system | 2 | [251591 (2)](topics/time-frequency-transfer/papers/251591 (2).yaml) |
+| `ent.5_0010704_system` | Martha  experimental system | 2 | [5.0010704](topics/time-frequency-transfer/papers/5.0010704.yaml) |
+| `ent._2022__passively_stable_dissem_system` | Zhang 2022 experimental system | 2 | [[2022] Passively stable dissemination of ultra](topics/time-frequency-transfer/papers/[2022] Passively stable dissemination of ultra.yaml) |
 | `ent.anisoplanatism_study_link_sw19` | 双路空间分离 O-TWTFT 湍流 anisoplanatism 测量（Swann 2019） | 2 | [swann2019_9ltylbj8](topics/time-frequency-transfer/papers/swann2019_9ltylbj8.yaml) |
+| `ent.art_10_1007_2fs00340_009_3832__system` | experimental system | 2 | [art:10.1007%2Fs00340-009-3832-1](topics/time-frequency-transfer/papers/art:10.1007%2Fs00340-009-3832-1.yaml) |
 | `ent.atmospheric_optical_phase_psd_s14` | 大气光学相位噪声 PSD 测量（2 km 水平路径，NIST Boulder） | 2 | [sinclair2014_fx9ixtdb](topics/time-frequency-transfer/papers/sinclair2014_fx9ixtdb.yaml) |
 | `ent.bercy2014_100km_two_way_comparison` | Bercy 2014 巴黎 100 km 城市光纤环路双向光频比对实验 | — | [bercy2014](topics/time-frequency-transfer/papers/bercy2014.yaml) |
 | `ent.bergeron2019_quadcopter_otwtft` | Bergeron 2019 四旋翼飞行器 O-TWTFT 运动平台实验系统 | — | [bergeron2019](topics/time-frequency-transfer/papers/bergeron2019.yaml) |
@@ -16,23 +23,43 @@
 | `ent.coherent_optical_fiber_link` | 相干光纤时频传递链路（Level 1 总节点） | 1 | [calonico2015_3kxj9jfq](topics/time-frequency-transfer/papers/calonico2015_3kxj9jfq.yaml) |
 | `ent.comb_otwtft_with_motion_s19` | 运动平台 comb-based O-TWTFT（Sinclair 2019） | 2 | [sinclair2019_5xulcnp3](topics/time-frequency-transfer/papers/sinclair2019_5xulcnp3.yaml) |
 | `ent.daussy2005_86km_fiber_link` | Daussy 2005 SYRTE–LPL 43 km 电信光纤往返频率传递链路 | — | [daussy2005](topics/time-frequency-transfer/papers/daussy2005.yaml) |
+| `ent.derevianko_2022_quantum_sci__t_system` | Courde  experimental system | 2 | [Derevianko_2022_Quantum_Sci._Technol._7_044002](topics/time-frequency-transfer/papers/Derevianko_2022_Quantum_Sci._Technol._7_044002.yaml) |
 | `ent.differential_spectroscopy_interspecies_k23` | 跨种光钟差分光谱协议（Kim 2023） | 2 | [kim2023_mc7xt8b5](topics/time-frequency-transfer/papers/kim2023_mc7xt8b5.yaml) |
 | `ent.dual_polarization_receiver_link_cl20` | 双偏振相干接收光频分发（INRIM Clivati 2020） | 2 | [clivati2020_ispu4z4x](topics/time-frequency-transfer/papers/clivati2020_ispu4z4x.yaml) |
+| `ent.exertier_2016_metrologia_53_13_system` | Sherwood  experimental system | 2 | [Exertier_2016_Metrologia_53_1395](topics/time-frequency-transfer/papers/Exertier_2016_Metrologia_53_1395.yaml) |
 | `ent.fang2026_cls_otwtft_113km` | Fang 2026 CLS 增强型 O-TWTFT 113 km 链路（乌鲁木齐南山↔高崖子） | — | [fang2026](topics/time-frequency-transfer/papers/fang2026.yaml) |
+| `ent.fphy_10_1005074_system` | Martin  experimental system | 2 | [fphy-10-1005074](topics/time-frequency-transfer/papers/fphy-10-1005074.yaml) |
 | `ent.free_space_optical_tf_link` | 自由空间光学时频传递链路（Level 1 总节点） | 1 | [sinclair2019_5xulcnp3](topics/time-frequency-transfer/papers/sinclair2019_5xulcnp3.yaml) |
 | `ent.frequency_comb_optical_link_fcol` | 频率梳光学链路 FCOL（I-SOC 可选链路） | 2 | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `ent.fsm2008_crane_et_al_system` | Washington  experimental system | 2 | [FSM2008 Crane et al](topics/time-frequency-transfer/papers/FSM2008 Crane et al.yaml) |
 | `ent.giorgetta2013_otwtft_setup` | Giorgetta 2013 自由空间 O-TWTFT 实验设置（NIST） | — | [giorgetta2013](topics/time-frequency-transfer/papers/giorgetta2013.yaml) |
 | `ent.gozzard2022_2km4_atmospheric_link` | Gozzard 2022 2.4 km 大气相位-振幅双稳定自由空间频率传递链路（UWA） | — | [gozzard2022](topics/time-frequency-transfer/papers/gozzard2022.yaml) |
 | `ent.gps_common_view_time_transfer` | GPS 共视时间传递（GPS CV） | 2 | [exertier2016_7t65sn78](topics/time-frequency-transfer/papers/exertier2016_7t65sn78.yaml) |
+| `ent.high_precision_distribution_of_system` | Ning  experimental system | 2 | [High-Precision Distribution of Highly Stable Optical Pulse](topics/time-frequency-transfer/papers/High-Precision Distribution of Highly Stable Optical Pulse.yaml) |
 | `ent.inrim_642km_single_fiber_link_c15` | INRIM 642 km 单纤双往返相干链路（Calonico 2015） | 2 | [calonico2015_3kxj9jfq](topics/time-frequency-transfer/papers/calonico2015_3kxj9jfq.yaml) |
+| `ent.josab_jiang_et_al_system` | experimental system | 2 | [josab jiang et al](topics/time-frequency-transfer/papers/josab jiang et al.yaml) |
+| `ent.kim08_system` | experimental system | 2 | [kim08](topics/time-frequency-transfer/papers/kim08.yaml) |
+| `ent.lu_2020_sensitive_linear_optic_system` | 2020 experimental system | 2 | [Lu-2020-Sensitive-linear-optical-sampling-s](topics/time-frequency-transfer/papers/Lu-2020-Sensitive-linear-optical-sampling-s.yaml) |
 | `ent.microwave_link_mwl` | 微波时频传递链路 MWL（I-SOC 空间段 Ku 波段双向链路） | 2 | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `ent.newbury07_system` | experimental system | 2 | [newbury07](topics/time-frequency-transfer/papers/newbury07.yaml) |
 | `ent.ntsc_112km_urban_rf_link_x20` | NTSC 112 km 城市 RF-over-fiber 链路（Xue 2020） | 2 | [xue2020_6z466ig4](topics/time-frequency-transfer/papers/xue2020_6z466ig4.yaml) |
 | `ent.ntsc_212km_cascaded_rf_link_q22` | NTSC 212 km 级联城市 RF-over-fiber 链路（Quan 2022） | 2 | [quan2022_cqtx6tyy](topics/time-frequency-transfer/papers/quan2022_cqtx6tyy.yaml) |
 | `ent.ntsc_490km_noisy_field_link_z22b` | NTSC 490 km 噪声场地光纤相干链路（Zhang 2022 CPL） | 2 | [zhang2022_whuijl3v](topics/time-frequency-transfer/papers/zhang2022_whuijl3v.yaml) |
 | `ent.ntsc_56km_rf_precompensation_q21` | NTSC 56 km 微波预补偿光纤传递（Quan 2021） | 2 | [quan2021_592vc93u](topics/time-frequency-transfer/papers/quan2021_592vc93u.yaml) |
+| `ent.nwaf352_system` | experimental system | 2 | [nwaf352](topics/time-frequency-transfer/papers/nwaf352.yaml) |
+| `ent.oe_20_2_1775_system` | Thorpe 2012 experimental system | 2 | [oe-20-2-1775](topics/time-frequency-transfer/papers/oe-20-2-1775.yaml) |
+| `ent.oe_27_25_36965_system` | experimental system | 2 | [oe-27-25-36965](topics/time-frequency-transfer/papers/oe-27-25-36965.yaml) |
+| `ent.oe_lopez_10_system` | Foreman  experimental system | 2 | [OE Lopez 10](topics/time-frequency-transfer/papers/OE Lopez 10.yaml) |
+| `ent.ol_09_fefelian_et_al_2009_2_system` | experimental system | 2 | [OL 09 Fefelian et al 2009 2](topics/time-frequency-transfer/papers/OL 09 Fefelian et al 2009 2.yaml) |
+| `ent.ol_32_9_1044_system` | Kim 2007 experimental system | 2 | [ol-32-9-1044](topics/time-frequency-transfer/papers/ol-32-9-1044.yaml) |
+| `ent.optica_11_9_1268_system` | experimental system | 2 | [optica-11-9-1268](topics/time-frequency-transfer/papers/optica-11-9-1268.yaml) |
+| `ent.optica_8_4_471_system` | experimental system | 2 | [optica-8-4-471](topics/time-frequency-transfer/papers/optica-8-4-471.yaml) |
 | `ent.optical_satellite_ground_link_s21` | 光学卫星-地面时频传递链路（脉冲激光，Shen 2021 模拟） | 2 | [shen2021_8pxzl98k](topics/time-frequency-transfer/papers/shen2021_8pxzl98k.yaml) |
 | `ent.optical_to_microwave_photonic_synth_n20` | 光钟相位→10 GHz 微波相干下转换合成器（Nakamura 2020） | 2 | [nakamura2020_imx242p7](topics/time-frequency-transfer/papers/nakamura2020_imx242p7.yaml) |
+| `ent.optics_letters__vol__29__issue_system` | 2004 experimental system | 2 | [Optics Letters, Vol. 29, Issue 17, pp. 2076-2078 (2004)](topics/time-frequency-transfer/papers/Optics Letters, Vol. 29, Issue 17, pp. 2076-2078 (2004).yaml) |
 | `ent.osc_subband_time_transfer_cheng19` | OSC 子带时间传递（商用 WDM 系统复用） | 2 | [cheng2019_wqpy8sti](topics/time-frequency-transfer/papers/cheng2019_wqpy8sti.yaml) |
+| `ent.physreva_92_021801_system` | experimental system | 2 | [PhysRevA.92.021801](topics/time-frequency-transfer/papers/PhysRevA.92.021801.yaml) |
+| `ent.physrevx_6_021016_system` | Laura  experimental system | 2 | [PhysRevX.6.021016](topics/time-frequency-transfer/papers/PhysRevX.6.021016.yaml) |
 | `ent.pizzocaro2021_vlbi_clock_comparison` | Pizzocaro 2021 VLBI 洲际光钟比对系统（Medicina↔Koganei 9000 km） | — | [pizzocaro2021](topics/time-frequency-transfer/papers/pizzocaro2021.yaml) |
 | `ent.predehl2012_920km_fiber_link` | Predehl 2012 920 km 反平行光纤频率传递链路（PTB↔MPQ） | — | [predehl2012](topics/time-frequency-transfer/papers/predehl2012.yaml) |
 | `ent.ptb_1400km_brillouin_link_r15` | PTB 1400 km Brillouin 放大光纤链路（Raupach 2015） | 2 | [raupach2015_lz2hfujz](topics/time-frequency-transfer/papers/raupach2015_lz2hfujz.yaml) |
@@ -40,6 +67,10 @@
 | `ent.pulsed_optical_link_elt_plus` | 脉冲光学时频传递链路 ELT+（I-SOC 空间段） | 2 | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
 | `ent.quantum_limited_ott_hawaii_c23` | Hawaii 300 km 近量子极限光学时间传递（Caldwell 2023） | 2 | [caldwell2023_4m836c4v](topics/time-frequency-transfer/papers/caldwell2023_4m836c4v.yaml) |
 | `ent.rf_over_fiber_time_transfer_link` | RF-over-fiber 时间 / 射频频率传递链路（Level 1） | 1 | [krehlik2015_3mi33g2r](topics/time-frequency-transfer/papers/krehlik2015_3mi33g2r.yaml) |
+| `ent.s41467_020_20591_5_system` | Benjamin  experimental system | 2 | [s41467-020-20591-5](topics/time-frequency-transfer/papers/s41467-020-20591-5.yaml) |
+| `ent.s41566_021_00828_5_system` | experimental system | 2 | [s41566-021-00828-5](topics/time-frequency-transfer/papers/s41566-021-00828-5.yaml) |
+| `ent.s41586_022_05228_5_system` | experimental system | 2 | [s41586-022-05228-5](topics/time-frequency-transfer/papers/s41586-022-05228-5.yaml) |
+| `ent.s41586_023_06032_5_system` | Emily  experimental system | 2 | [s41586-023-06032-5](topics/time-frequency-transfer/papers/s41586-023-06032-5.yaml) |
 | `ent.same_wavelength_tf_joint_link_w20` | 同波长 T&F 联合传递链路（Wang 2020） | 2 | [wang2020_srpnqj3r](topics/time-frequency-transfer/papers/wang2020_srpnqj3r.yaml) |
 | `ent.satellite_microwave_time_transfer_link` | 卫星时间传递链路（Level 1 总节点，含微波与光学） | 1 | [exertier2016_7t65sn78](topics/time-frequency-transfer/papers/exertier2016_7t65sn78.yaml) |
 | `ent.shared_telecom_fiber_metrology_channel` | 电信网络共享暗信道（计量级光纤时频传递载体） | 2 | [lopez2015_ws3xm8ls](topics/time-frequency-transfer/papers/lopez2015_ws3xm8ls.yaml) |
@@ -52,7 +83,9 @@
 | `ent.t2l2_jason2_experiment` | T2L2/Jason2 时间传递实验（初始在轨阶段 2008–2009） | — | [exertier2010](topics/time-frequency-transfer/papers/exertier2010.yaml) |
 | `ent.t2l2_laser_time_transfer` | T2L2 卫星激光时间传递（Time Transfer by Laser Link） | 2 | [exertier2016_7t65sn78](topics/time-frequency-transfer/papers/exertier2016_7t65sn78.yaml) |
 | `ent.three_node_free_space_network_b20` | 三节点自由空间 O-TWTFT 网络（Bodine 2020） | 2 | [bodine2020_npl9i62s](topics/time-frequency-transfer/papers/bodine2020_npl9i62s.yaml) |
+| `ent.two_way_phase_comparison_fiber_link` | 双向相位比较光纤链路 | 1 | [calosso2013](topics/time-frequency-transfer/papers/calosso2013.yaml) |
 | `ent.uwa_265m_active_tiptilt_link_dm21` | UWA 265 m 主动 tip-tilt 自由空间光频传递（Dix-Matthews 2021） | 2 | [dix-matthews2021_bv4dl5z6](topics/time-frequency-transfer/papers/dix-matthews2021_bv4dl5z6.yaml) |
+| `ent.xu_2025_chinese_phys__lett__42_system` | Lazarev  experimental system | 2 | [Xu_2025_Chinese_Phys._Lett._42_120401](topics/time-frequency-transfer/papers/Xu_2025_Chinese_Phys._Lett._42_120401.yaml) |
 | `ent.zhang2023_passive_pnc_fiber_review` | Zhang 2023 被动相位噪声对消光纤光频传递综述 | — | [zhang2023](topics/time-frequency-transfer/papers/zhang2023.yaml) |
 
 ## Principles
@@ -116,6 +149,7 @@
 | `meth.phase_amplitude_tiptilt_free_space_frequency_transfer` | 相位-振幅双稳定自由空间光学频率传递方法 | [gozzard2022](topics/time-frequency-transfer/papers/gozzard2022.yaml) |
 | `meth.t2l2_data_reduction_triplet_identification` | T2L2 数据约化与三重态识别方法（Exertier 2014 管线） | [exertier2014](topics/time-frequency-transfer/papers/exertier2014.yaml) |
 | `meth.t2l2_ground_to_space_time_transfer` | T2L2 地面-空间激光时间传递方法 | [exertier2010](topics/time-frequency-transfer/papers/exertier2010.yaml) |
+| `meth.two_way_passive_noise_cancellation` | 双向无源噪声抵消方法 | [calosso2013](topics/time-frequency-transfer/papers/calosso2013.yaml) |
 | `meth.two_way_unidirectional_frequency_comparison` | 双向单纤（2WU/2WB）光频比对方法 | [bercy2014](topics/time-frequency-transfer/papers/bercy2014.yaml) |
 | `meth.vlbi_frequency_transfer_clock_comparison` | VLBI 频率传递光学时钟洲际比对方法 | [pizzocaro2021](topics/time-frequency-transfer/papers/pizzocaro2021.yaml) |
 
@@ -140,6 +174,7 @@
 | `met.sinclair2016_strong_turbulence_tdev` | Sinclair 2016 强湍流 12 km O-TWTFT 同步时间偏差 | 光学钟 + tip-tilt：gated TDEV ~165 as @>100 s，<1 fs @>2 s；连续数据 … | [sinclair2016](topics/time-frequency-transfer/papers/sinclair2016.yaml) |
 | `met.t2l2_ground_space_tdev_ps_exertier2014` | T2L2 地面-空间时间传递最佳 TDEV（Exertier 2014） | ~50–60 ps @ 0.1 s；τ^(-1/2) 改善；~6–8 ps @ 75 s（最小值），回升至数 10 p… | [exertier2014](topics/time-frequency-transfer/papers/exertier2014.yaml) |
 | `met.t2l2_time_stability_wettzell_exertier2010` | T2L2 Wettzell 站地面-空间时间传递稳定性（Exertier 2010） | ~40 ps @ 1 s；~7 ps @ 30 s | [exertier2010](topics/time-frequency-transfer/papers/exertier2010.yaml) |
+| `met.two_way_phase_comparison_stability` | 双向相位比对稳定度 | ~10⁻²¹（基于 47 km 光纤，194 THz 光载波） | [calosso2013](topics/time-frequency-transfer/papers/calosso2013.yaml) |
 
 ### 📊 Secondary (线宽/PSD/相干)
 
@@ -162,17 +197,49 @@
 
 | ID | Name | Best Value | Source |
 |----|------|------------|--------|
+| `met.044201_primary` | primary metric | see paper | [044201](topics/time-frequency-transfer/papers/044201.yaml) |
+| `met.1311_4378_primary` | primary metric | see paper | [1311.4378](topics/time-frequency-transfer/papers/1311.4378.yaml) |
+| `met.1_s2_0_s1631070515000754_main_primary` | primary metric | see paper | [1-s2.0-S1631070515000754-main](topics/time-frequency-transfer/papers/1-s2.0-S1631070515000754-main.yaml) |
+| `met.251591__2__primary` | primary metric | see paper | [251591 (2)](topics/time-frequency-transfer/papers/251591 (2).yaml) |
+| `met.5_0010704_primary` | Martha  primary metric | see paper | [5.0010704](topics/time-frequency-transfer/papers/5.0010704.yaml) |
+| `met._2022__passively_stable_dissem_primary` | primary metric | see paper | [[2022] Passively stable dissemination of ultra](topics/time-frequency-transfer/papers/[2022] Passively stable dissemination of ultra.yaml) |
+| `met.art_10_1007_2fs00340_009_3832__primary` | primary metric | see paper | [art:10.1007%2Fs00340-009-3832-1](topics/time-frequency-transfer/papers/art:10.1007%2Fs00340-009-3832-1.yaml) |
 | `met.chirped_tf_sync_precision` | 啁啾光传递同步精度 σ(Δt) | ≈ 200 ps @ τ_obs ~18000 s（precision）；总 uncertainty ≈ 500 ps | [raupach2014_2s94vl95](topics/time-frequency-transfer/papers/raupach2014_2s94vl95.yaml) |
 | `met.coherent_optical_fiber_link_accuracy` | 相干光纤链路分数频率准确度（accuracy） | 5×10⁻¹⁹ | [calonico2015_3kxj9jfq](topics/time-frequency-transfer/papers/calonico2015_3kxj9jfq.yaml) |
 | `met.coherent_optical_fiber_link_instability` | 相干光纤链路分数频率不稳定度 σ_y(τ) | 3×10⁻¹⁹ @ τ=1000 s（ADEV, 5 mHz bandwidth） | [calonico2015_3kxj9jfq](topics/time-frequency-transfer/papers/calonico2015_3kxj9jfq.yaml) |
 | `met.coherent_optical_fiber_link_residual_offset_yocto` | 光纤链路残余频率 offset（互易性极限） | (4.4 ± 2.3)×10⁻²¹（raw, 33 d）；(0.5 ± 2.0)×10⁻²¹（温度补偿后） | [xu2019_gzd2byi4](topics/time-frequency-transfer/papers/xu2019_gzd2byi4.yaml) |
 | `met.coherent_optical_fiber_link_uncertainty_long` | 长距离相干光纤链路 fractional uncertainty（长均值） | (1.1 ± 0.4)×10⁻²⁰（3 周加权均值，1400 km Brillouin-only loop） | [raupach2015_lz2hfujz](topics/time-frequency-transfer/papers/raupach2015_lz2hfujz.yaml) |
+| `met.derevianko_2022_quantum_sci__t_primary` | Courde  primary metric | see paper | [Derevianko_2022_Quantum_Sci._Technol._7_044002](topics/time-frequency-transfer/papers/Derevianko_2022_Quantum_Sci._Technol._7_044002.yaml) |
 | `met.earth_grs_test_uncertainty` | 地球引力红移测试分数不确定度（任务科学目标） | $2\cdot10^{-7}$（目标，vs ACES 约 $2\cdot10^{-6}$，提升因子 ~10×） | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `met.exertier_2016_metrologia_53_13_primary` | Sherwood  primary metric | see paper | [Exertier_2016_Metrologia_53_1395](topics/time-frequency-transfer/papers/Exertier_2016_Metrologia_53_1395.yaml) |
+| `met.fphy_10_1005074_primary` | Martin  primary metric | see paper | [fphy-10-1005074](topics/time-frequency-transfer/papers/fphy-10-1005074.yaml) |
+| `met.fsm2008_crane_et_al_primary` | Washington  primary metric | see paper | [FSM2008 Crane et al](topics/time-frequency-transfer/papers/FSM2008 Crane et al.yaml) |
+| `met.high_precision_distribution_of_primary` | Ning  primary metric | see paper | [High-Precision Distribution of Highly Stable Optical Pulse](topics/time-frequency-transfer/papers/High-Precision Distribution of Highly Stable Optical Pulse.yaml) |
 | `met.international_fountain_comparison_agreement` | 光纤链路国际初级频标比对一致性 | y(SYRTE−PTB) ≈ 5×10⁻¹⁷（与两边 fountain uncertainty budget 一致） | [guena2017_2khkrily](topics/time-frequency-transfer/papers/guena2017_2khkrily.yaml) |
+| `met.josab_jiang_et_al_primary` | primary metric | see paper | [josab jiang et al](topics/time-frequency-transfer/papers/josab jiang et al.yaml) |
+| `met.kim08_primary` | primary metric | see paper | [kim08](topics/time-frequency-transfer/papers/kim08.yaml) |
+| `met.lu_2020_sensitive_linear_optic_primary` | 2020 primary metric | see paper | [Lu-2020-Sensitive-linear-optical-sampling-s](topics/time-frequency-transfer/papers/Lu-2020-Sensitive-linear-optical-sampling-s.yaml) |
+| `met.newbury07_primary` | primary metric | see paper | [newbury07](topics/time-frequency-transfer/papers/newbury07.yaml) |
+| `met.nwaf352_primary` | primary metric | see paper | [nwaf352](topics/time-frequency-transfer/papers/nwaf352.yaml) |
+| `met.oe_20_2_1775_primary` | Thorpe 2012 primary metric | see paper | [oe-20-2-1775](topics/time-frequency-transfer/papers/oe-20-2-1775.yaml) |
+| `met.oe_27_25_36965_primary` | primary metric | see paper | [oe-27-25-36965](topics/time-frequency-transfer/papers/oe-27-25-36965.yaml) |
+| `met.oe_lopez_10_primary` | Foreman  primary metric | see paper | [OE Lopez 10](topics/time-frequency-transfer/papers/OE Lopez 10.yaml) |
+| `met.ol_09_fefelian_et_al_2009_2_primary` | primary metric | see paper | [OL 09 Fefelian et al 2009 2](topics/time-frequency-transfer/papers/OL 09 Fefelian et al 2009 2.yaml) |
+| `met.ol_32_9_1044_primary` | Kim 2007 primary metric | see paper | [ol-32-9-1044](topics/time-frequency-transfer/papers/ol-32-9-1044.yaml) |
+| `met.optica_11_9_1268_primary` | primary metric | see paper | [optica-11-9-1268](topics/time-frequency-transfer/papers/optica-11-9-1268.yaml) |
+| `met.optica_8_4_471_primary` | primary metric | see paper | [optica-8-4-471](topics/time-frequency-transfer/papers/optica-8-4-471.yaml) |
+| `met.optics_letters__vol__29__issue_primary` | 2004 primary metric | see paper | [Optics Letters, Vol. 29, Issue 17, pp. 2076-2078 (2004)](topics/time-frequency-transfer/papers/Optics Letters, Vol. 29, Issue 17, pp. 2076-2078 (2004).yaml) |
 | `met.photon_limited_ott_supported_link_loss` | 量子极限光学时间传递支持的最大链路损耗 | 102 dB（4.0 mW 发射功率，足以支撑 ground↔geosynchronous orbit） | [caldwell2023_4m836c4v](topics/time-frequency-transfer/papers/caldwell2023_4m836c4v.yaml) |
+| `met.physreva_92_021801_primary` | primary metric | see paper | [PhysRevA.92.021801](topics/time-frequency-transfer/papers/PhysRevA.92.021801.yaml) |
+| `met.physrevx_6_021016_primary` | Laura  primary metric | see paper | [PhysRevX.6.021016](topics/time-frequency-transfer/papers/PhysRevX.6.021016.yaml) |
 | `met.rf_over_fiber_link_instability` | RF-over-fiber 链路分数频率不稳定度 | 10⁻¹⁶ 级 @ 长平均时间（具体值见正文 Allan plot） | [krehlik2015_3mi33g2r](topics/time-frequency-transfer/papers/krehlik2015_3mi33g2r.yaml) |
+| `met.s41467_020_20591_5_primary` | Benjamin  primary metric | see paper | [s41467-020-20591-5](topics/time-frequency-transfer/papers/s41467-020-20591-5.yaml) |
+| `met.s41566_021_00828_5_primary` | primary metric | see paper | [s41566-021-00828-5](topics/time-frequency-transfer/papers/s41566-021-00828-5.yaml) |
+| `met.s41586_022_05228_5_primary` | primary metric | see paper | [s41586-022-05228-5](topics/time-frequency-transfer/papers/s41586-022-05228-5.yaml) |
+| `met.s41586_023_06032_5_primary` | Emily  primary metric | see paper | [s41586-023-06032-5](topics/time-frequency-transfer/papers/s41586-023-06032-5.yaml) |
 | `met.space_to_ground_link_inaccuracy` | 空间–地面时频链路分数不准确度 | MWL: $5\cdot10^{-19}$（#SR-PL-10，需求目标）；ELT+: $1\cdot10^{-18}… | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
 | `met.space_to_ground_link_instability` | 空间–地面时频链路不稳定度 | MWL（#SR-PL-09，需求目标）：白相位噪声 $1.6\cdot10^{-14}$ @ 10 s；闪烁相位 mo… | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `met.xu_2025_chinese_phys__lett__42_primary` | Lazarev  primary metric | see paper | [Xu_2025_Chinese_Phys._Lett._42_120401](topics/time-frequency-transfer/papers/Xu_2025_Chinese_Phys._Lett._42_120401.yaml) |
 
 ## BOUNDED-BY Chains
 

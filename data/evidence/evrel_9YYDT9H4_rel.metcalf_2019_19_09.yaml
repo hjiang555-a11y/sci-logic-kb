@@ -1,9 +1,0 @@
-evidence: supercontinuum spectrum spanning 700–1600 nm with only 525 mW of incident
-  average power
-id: evrel_9YYDT9H4_rel.metcalf_2019_19_09
-metadata:
-  source_paper: metcalf2019
-  zotero_key: 9YYDT9H4
-object: pri.nanophotonic_supercontinuum_low_power
-predicate: ENABLED-BY
-subject: meth.eo_sin_astrocomb_calibration_m19

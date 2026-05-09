@@ -1,8 +1,0 @@
-evidence: we use a two-channel vector signal analyzer to measure transfer functions
-id: evrel_IK6MW5Q4_rel.zhang_2012_12_03
-metadata:
-  source_paper: zhang2012c
-  zotero_key: IK6MW5Q4
-object: meth.comb_transfer_function_measurement
-predicate: OPERATIONALIZED-AS
-subject: met.eom_frep_transfer_bandwidth_z12

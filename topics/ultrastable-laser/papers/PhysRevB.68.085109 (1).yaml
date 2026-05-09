@@ -1,23 +1,42 @@
-# Könz 2003 — Temperature and concentration dependence of optical dephasing, spectral-hole ... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Sun  — Temperature and concentration dependence of optical dephasing, spectral-hole lif [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：ultrastable-laser
 meta:
-  zotero_key: PhysRevB.68.085109 (1)
+  zotero_key: Temperature and concentration dependence of optica
   topic: ultrastable-laser
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Temperature and concentration dependence of optical dephasing, spectral-hole lifetime, and anisotropic absorption in<mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mml:mrow><mml:msup><mml:mrow><mml:mi mathvariant=\"normal\">Eu</mml:mi></mml:mrow><mml:mrow><mml:mn>3</mml:mn><mml:mo>+</mml:mo></mml:mrow></mml:msup></mml:mrow><mml:mrow><mml:msub><mml:mrow><mml:mo>:</mml:mo><mml:mi mathvariant=\"normal\">Y</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msub></mml:mrow><mml:mrow><mml:msub><mml:mrow><mml:mi mathvariant=\"normal\">SiO</mml:mi></mml:mrow><mml:mrow><mml:mn>5</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:math>"
-  year: 2003
-  first_author: "Könz"
-  authors: ["Flurin Könz", "Y. Sun", "C. W. Thiel", "R. L. Cone", "R. W. Equall", "R. L. Hutcheson", "R. M. Macfarlane"]
-  journal: "Physical Review B"
-  volume: 68
-  doi: 10.1103/PhysRevB.68.085109
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Temperature and concentration dependence of optical dephasing, spectral-hole lifetime,
+  first_author: Sun
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1103/PhysRevB
+entities:
+- id: ent.physrevb_68_085109__1__system
+  name: Sun  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Sun '
+metrics:
+- id: met.physrevb_68_085109__1__primary
+  name: Sun  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Temperature and concentration dependence of optica
+      claim: core experimental result
+relations:
+- id: rel.physrevb_68_085109__1__01
+  subject: ent.physrevb_68_085109__1__system
+  predicate: CHARACTERIZED-BY
+  object: met.physrevb_68_085109__1__primary
+  confidence: established
+  source:
+    zotero_key: Temperature and concentration dependence of optica
+    claim: experimental system characterized by primary metric

@@ -1,8 +1,0 @@
-evidence: linewidth of 0.6 Hz for averaging times up to 32 s
-id: evrel_EGAZKLXR_rel.young_1999_01
-metadata:
-  source_paper: young1999
-  zotero_key: EGAZKLXR
-object: met.laser_linewidth_563nm
-predicate: CHARACTERIZED-BY
-subject: ent.laser_source

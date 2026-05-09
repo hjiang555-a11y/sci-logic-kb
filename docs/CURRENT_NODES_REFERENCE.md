@@ -4,7 +4,7 @@
 
 > **用途**：处理新论文时，用此文件快速检查是否已有同名/同义节点，避免重复定义。
 > **维护**：本文件由 `scripts/build_index.py` 自动生成，**请勿手工编辑**。
-> **生成时间**：2026-05-04 04:06 UTC
+> **生成时间**：2026-05-09 06:38 UTC
 
 > **使用方式**：
 > - 处理新论文时，`Ctrl+F` 搜索关键词（如 `brownian`, `pdh`, `fiber`）
@@ -35,6 +35,7 @@
 | `pri.correlation_spectroscopy_clock_comparison` | 关联谱光钟比对原理 | method | [zhang2023_lu](topics/frequency-standards/papers/zhang2023_lu.yaml) |
 | `pri.dick_effect` | Dick 效应（时钟周期死时间噪声混叠） | domain | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
 | `pri.e3_octupole_transition_optical_clock` | 电八极（E3）跃迁光钟原理 | domain | [huntemann2012](topics/frequency-standards/papers/huntemann2012.yaml) |
+| `pri.frequency_synthesizer_phase_noise_to_fountain_stability` | 频率综合器相位噪声至喷泉钟稳定度传递 | engineering | [zhao2008](topics/frequency-standards/papers/zhao2008.yaml) |
 | `pri.good_bad_cavity_active_clock` | Good-bad-cavity 主动光钟原理 | method | [shi2019](topics/frequency-standards/papers/shi2019.yaml) |
 | `pri.gravitational_redshift_within_atomic_sample` | 原子样品内部引力红移可分辨原理 | domain | [bothwell2022](topics/frequency-standards/papers/bothwell2022.yaml) |
 | `pri.highly_charged_ion_optical_clock` | 高电荷离子光钟原理 | method | [king2022](topics/frequency-standards/papers/king2022.yaml) |
@@ -66,6 +67,7 @@
 | ID | Name | Source |
 |----|------|--------|
 | `meth.cesium_fountain_operation_cycle` | 铯原子喷泉运行周期 | [clairon1995](topics/frequency-standards/papers/clairon1995.yaml) |
+| `meth.dds_based_frequency_synthesis_chain` | 基于DDS的频率综合链 | [zhao2008](topics/frequency-standards/papers/zhao2008.yaml) |
 | `meth.ramsey_spectroscopy_clock` | Ramsey 光谱法（光钟频率测量） | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
 | `meth.sr_optical_lattice_clock_stack_l08` | Sr 光晶格钟全栈集成方法（Ludlow thesis） | [ludlow2008_thesis](topics/frequency-standards/papers/ludlow2008_thesis.yaml) |
 | `meth.time_of_flight_velocity_distribution` | 飞行时间法测速 | [clairon1995](topics/frequency-standards/papers/clairon1995.yaml) |
@@ -257,7 +259,6 @@
 | `pri.phase_matching_bandwidth_limit_chi2` | χ² 相位匹配带宽限制原理 | domain | [hickstein2017](topics/optical-frequency-combs/papers/hickstein2017.yaml) |
 | `pri.photodetection_shot_noise_limit` | 光电探测散粒噪声光微波相噪极限原理 | domain | [kalubovilage2022](topics/optical-frequency-combs/papers/kalubovilage2022.yaml) |
 | `pri.photon_starved_open_path_dcs_limit` | 光子饥饿长程 DCS 灵敏度/距离极限（散粒噪声+信道损耗） | engineering | [han2024](topics/optical-frequency-combs/papers/han2024.yaml) |
-| `pri.pm_fiber_digital_feedback_phase_slip_free_s15` | 全 PM 光纤 + 数字反馈实现长期无相位滑动原理（Sinclair 2015） | engineering | [sinclair2015](topics/optical-frequency-combs/papers/sinclair2015.yaml) |
 | `pri.pm_fiber_splice_vibration_immunity` | 全 PM 光纤拼接免调校振动免疫原理 | engineering | [sinclair2014](topics/optical-frequency-combs/papers/sinclair2014.yaml) |
 | `pri.polarization_rotation_cavity_loss_frequency_control_z17` | 偏振态旋转调制腔损驱动梳频率控制原理（Zhang Y. 2017） | engineering | [zhang2017b](topics/optical-frequency-combs/papers/zhang2017b.yaml) |
 | `pri.pulse_interleaver_rep_rate_multiplication` | 光纤脉冲交织器重频倍增与光生微波散粒噪声降底原理 | domain | [portuondo-campa2015](topics/optical-frequency-combs/papers/portuondo-campa2015.yaml) |
@@ -407,13 +408,21 @@
 ## shared  
 > 详细索引: [`topics/shared/INDEX.md`](topics/shared/INDEX.md)
 
+### Entities (Level 0–1)
+
+| ID | Name | Source |
+|----|------|--------|
+| `ent.portable_field_frequency_comb_s14` | Portable field-deployable optical frequency comb | [oe-22-6-6996(1)](topics/shared/papers/oe-22-6-6996(1).yaml) |
+
 ### Principles
 
 | ID | Name | Tier | Source |
 |----|------|------|--------|
 | `pri.allan_variance_time_domain_characterization` | Allan 方差族时域不稳定度刻画原理（综合 AVAR/MVAR/TVAR） | foundational | [allan2016](topics/shared/papers/allan2016.yaml) |
+| `pri.am_pm_conversion_in_photodiodes` | AM-to-PM conversion in photodiodes | engineering | [s00340-011-4710-1](topics/shared/papers/s00340-011-4710-1.yaml) |
 | `pri.antiresonance_wavelength_condition` | 空芯反共振光纤反共振波长条件原理 | domain | [belardi2015](topics/shared/papers/belardi2015.yaml) |
 | `pri.classical_variance_divergence_for_flicker_noise` | 经典方差对 flicker / random-walk 频率噪声发散原理 | meta | [allan1966](topics/shared/papers/allan1966.yaml) |
+| `pri.fdl_locking_noise_white_floor` | FDL locking white frequency noise floor from servo non… | engineering | [oe-33-16-35028](topics/shared/papers/oe-33-16-35028.yaml) |
 | `pri.fibre_delay_line_sweep_stability_maintained` | 光纤延迟线稳频下大动态扫频稳定度保持原理 | domain | [chiodo2013](topics/shared/papers/chiodo2013.yaml) |
 | `pri.free_core_boundary_reduces_mode_coupling` | 自由芯边界降低基模-包层模耦合原理 | domain | [belardi2015](topics/shared/papers/belardi2015.yaml) |
 | `pri.hadamard_variance_drift_insensitive` | Hadamard 方差对线性漂移不敏感原理 | meta | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
@@ -424,6 +433,9 @@
 | `pri.parabolic_pulse_self_similar_propagation_passive_fiber` | 抛物线脉冲在无源正常色散光纤中自相似传播原理 | domain | [fermann2000](topics/shared/papers/fermann2000.yaml) |
 | `pri.phase_noise_frequency_noise_psd_duality` | 相位噪声 PSD 与频率噪声 PSD 对偶关系 | meta | [howe1976](topics/shared/papers/howe1976.yaml) |
 | `pri.power_law_noise_taxonomy` | 时频噪声五类幂律分类（white PM / flicker PM / white FM / flicker … | meta | [allan1987](topics/shared/papers/allan1987.yaml) |
+| `pri.quantum_clock_network_entanglement` | Quantum entanglement-enhanced clock network protocol | domain | [nphys3000 A quantum network of clocks](topics/shared/papers/nphys3000 A quantum network of clocks.yaml) |
+| `pri.shot_noise_correlation_exploitation` | Shot noise correlation exploitation for sub-shot-noise… | domain | [Quinlan2013_2](topics/shared/papers/Quinlan2013_2.yaml) |
+| `pri.shot_noise_frequency_domain_pulse_detection` | Shot noise frequency-domain model for pulse detection | domain | [Quinlan2013](topics/shared/papers/Quinlan2013.yaml) |
 | `pri.sigma_y_slope_identifies_noise_type` | σ_y(τ) 斜率-噪声辨识原理 | meta | [allan1987](topics/shared/papers/allan1987.yaml) |
 | `pri.theo1_long_tau_statistical_efficiency` | Theo1 方差长 τ 统计效率最优原理 | meta | [riley2008](topics/shared/papers/riley2008.yaml) |
 | `pri.time_frequency_domain_transfer_function` | 时-频域稳定度转换传递函数原理（sin⁴ 核） | meta | [howe1976](topics/shared/papers/howe1976.yaml) |
@@ -434,12 +446,14 @@
 | ID | Name | Source |
 |----|------|--------|
 | `meth.allan_deviation_adev` | Allan 偏差（两样本 Allan 方差开方，ADEV / σ_y(τ)） | [allan1966](topics/shared/papers/allan1966.yaml) |
+| `meth.balanced_detection_shot_noise_correlation` | Balanced detection with shot noise correlation exploit… | [Quinlan2013_2](topics/shared/papers/Quinlan2013_2.yaml) |
 | `meth.fibre_delay_line_stabilization_with_dds_sweep` | 光纤延迟线稳频 + DDS 编程扫频方法 | [chiodo2013](topics/shared/papers/chiodo2013.yaml) |
 | `meth.hadamard_deviation_hdev` | Hadamard 偏差 HDEV / H_y(τ) | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
 | `meth.hc_arf_stack_and_draw_fabrication` | HC-ARF 三级堆叠-拉丝制备方法 | [belardi2015](topics/shared/papers/belardi2015.yaml) |
 | `meth.modified_allan_deviation_mdev` | 修正 Allan 偏差 MDEV / mod σ_y(τ) | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
 | `meth.overlapping_allan_deviation_oadev` | 重叠 Allan 偏差 OADEV | [riley2008](topics/shared/papers/riley2008.yaml) |
 | `meth.phase_noise_psd_measurement` | 相位噪声功率谱密度 S_phi(f) 测量方法 | [howe1976](topics/shared/papers/howe1976.yaml) |
+| `meth.shot_noise_spectral_correlation_analysis` | Shot noise spectral correlation analysis method | [Quinlan2013](topics/shared/papers/Quinlan2013.yaml) |
 | `meth.similariton_parabolic_pulse_amplification` | Similariton 抛物线脉冲光纤放大方法 | [fermann2000](topics/shared/papers/fermann2000.yaml) |
 | `meth.theo1_thedev` | Theo1 / TheoBR / TheoH 方差（Howe 族） | [riley2008](topics/shared/papers/riley2008.yaml) |
 | `meth.time_deviation_tdev` | 时偏差 TDEV / σ_x(τ) | [sullivan1990](topics/shared/papers/sullivan1990.yaml) |
@@ -459,6 +473,7 @@
 | `ent.rf_over_fiber_time_transfer_link` | RF-over-fiber 时间 / 射频频率传递链路（Level 1） | [krehlik2015_3mi33g2r](topics/time-frequency-transfer/papers/krehlik2015_3mi33g2r.yaml) |
 | `ent.satellite_microwave_time_transfer_link` | 卫星时间传递链路（Level 1 总节点，含微波与光学） | [exertier2016_7t65sn78](topics/time-frequency-transfer/papers/exertier2016_7t65sn78.yaml) |
 | `ent.space_optical_clock_mission` | 空间光学原子钟任务（通用 · I-SOC 为代表实例） | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `ent.two_way_phase_comparison_fiber_link` | 双向相位比较光纤链路 | [calosso2013](topics/time-frequency-transfer/papers/calosso2013.yaml) |
 
 ### Principles
 
@@ -521,6 +536,7 @@
 | `meth.phase_amplitude_tiptilt_free_space_frequency_transfer` | 相位-振幅双稳定自由空间光学频率传递方法 | [gozzard2022](topics/time-frequency-transfer/papers/gozzard2022.yaml) |
 | `meth.t2l2_data_reduction_triplet_identification` | T2L2 数据约化与三重态识别方法（Exertier 2014 管线） | [exertier2014](topics/time-frequency-transfer/papers/exertier2014.yaml) |
 | `meth.t2l2_ground_to_space_time_transfer` | T2L2 地面-空间激光时间传递方法 | [exertier2010](topics/time-frequency-transfer/papers/exertier2010.yaml) |
+| `meth.two_way_passive_noise_cancellation` | 双向无源噪声抵消方法 | [calosso2013](topics/time-frequency-transfer/papers/calosso2013.yaml) |
 | `meth.two_way_unidirectional_frequency_comparison` | 双向单纤（2WU/2WB）光频比对方法 | [bercy2014](topics/time-frequency-transfer/papers/bercy2014.yaml) |
 | `meth.vlbi_frequency_transfer_clock_comparison` | VLBI 频率传递光学时钟洲际比对方法 | [pizzocaro2021](topics/time-frequency-transfer/papers/pizzocaro2021.yaml) |
 

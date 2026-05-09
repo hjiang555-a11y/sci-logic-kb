@@ -1,8 +1,0 @@
-evidence: supercontinuum spectrum spanning 700–1600 nm
-id: evrel_9YYDT9H4_rel.metcalf_2019_19_04
-metadata:
-  source_paper: metcalf2019
-  zotero_key: 9YYDT9H4
-object: met.astrocomb_spectral_coverage_m19
-predicate: CHARACTERIZED-BY
-subject: ent.hpf_nir_astrocomb_m19

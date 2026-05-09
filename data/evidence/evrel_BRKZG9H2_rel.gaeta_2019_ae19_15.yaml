@@ -1,8 +1,0 @@
-evidence: low threshold power for soliton generation
-id: evrel_BRKZG9H2_rel.gaeta_2019_ae19_15
-metadata:
-  source_paper: gaeta2019
-  zotero_key: BRKZG9H2
-object: meth.cw_pumped_microcomb_generation
-predicate: OPERATIONALIZED-AS
-subject: met.platform_q_factor_g19

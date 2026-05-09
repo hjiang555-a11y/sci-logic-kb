@@ -1,9 +1,0 @@
-evidence: thermal noise of cavities, which now reaches the 10⁻¹⁷ decade, at the cost
-  of complex systems
-id: evrel_PHRXF4IL_rel.didier_2018_D02
-metadata:
-  source_paper: didier2018
-  zotero_key: PHRXF4IL
-object: pri.brownian_thermal_noise_fdt
-predicate: BOUNDED-BY
-subject: ent.ultracompact_pyramid_cavity_d18

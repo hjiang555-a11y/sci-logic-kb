@@ -1,9 +1,0 @@
-evidence: at a fractional frequency uncertainty of 10⁻¹⁸, an optical clock is sensitive
-  to a change in height of only 1 cm on Earth's surface.
-id: evrel_DIDDAMS2016-NATPHOT_rel.diddams_2016_FL16_01
-metadata:
-  source_paper: diddams2016
-  zotero_key: DIDDAMS2016-NATPHOT
-object: ent.optical_frequency_standard
-predicate: ENABLED-BY
-subject: pri.optical_clock_ten_minus_eighteen_geoid_bridge

@@ -1,9 +1,0 @@
-evidence: The 100 MHz Er:fiber + solid-state HHG system is an instance of the optical
-  frequency comb platform.
-id: evrel_7978HTD3_rel.lesko_2022_K22_05
-metadata:
-  source_paper: lesko2022
-  zotero_key: 7978HTD3
-object: ent.optical_frequency_comb
-predicate: PART-OF
-subject: ent.cep_hhg_comb_system_l22

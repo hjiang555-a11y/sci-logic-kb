@@ -1,0 +1,94 @@
+chain_id: fiber_link_instability
+question: "What limits the instability of optical frequency transfer over fiber links, and what is the path forward?"
+domain: time-frequency-transfer
+confidence: draft
+last_updated: 2026-05-09
+
+current_best:
+  value: "σ_y = 5×10⁻²¹ @ 4,000 s (100 km); (0.5±2.0)×10⁻²¹ residual over 33 days"
+  systems: "Bercy 2014 (passive bidirectional); Xu 2019 (reciprocity verified)"
+  note: "Non-reciprocity compensation is SOLVED. PMD is the current dominant limit."
+
+limiting_principle:
+  id: pri.two_way_frequency_comparison_noise_rejection
+  name: "Two-way noise rejection via bidirectional transmission"
+  defined_by: "Calosso 2013, Bercy 2014"
+  statement: "Bidirectional transmission + synchronous phase measurement cancels common-mode path-length fluctuations. Residual non-reciprocity is at the 10⁻²¹ level."
+  status: "SOLVED — at fundamental limit"
+
+secondary_limits:
+  - id: "N/A"
+    name: "PMD — Polarization Mode Dispersion (current dominant limit)"
+    status: "ACTIVE"
+    statement: "PMD causes polarization-dependent group delay. Environmental perturbations induce differential delay fluctuations between polarization modes, producing non-reciprocal phase noise. Causes optical beat signal fading and detection loss-of-lock."
+    breakthrough: "Dual-polarization coherent receiver (Clivati 2020) — maintains lock through polarization scrambling."
+    remaining: "Residual PMD phase noise at 10⁻²⁰ level for links >500 km"
+    defined_by: clivati2020_ispu4z4x.yaml
+
+condition_variables:
+  - symbol: "L"
+    name: "Link distance"
+    effect: "σ_y ∝ L for active PLL (round-trip delay limits bandwidth). Independent of L for passive bidirectional (only residual non-reciprocity matters). PMD scales with √L (random walk in polarization state)."
+
+  - symbol: "compensation_scheme"
+    name: "Compensation method"
+    active_pll: "Round-trip PLL — bandwidth ~1/τ_roundtrip; limited to ~1 kHz for 100 km"
+    passive_bidirectional: "Two-way post-processing — no bandwidth limit; cancels all reciprocal noise"
+    dual_polarization: "Required to mitigate PMD fading; Clivati 2020 demonstrated robust lock"
+
+  - symbol: "pmd_mitigation"
+    name: "PMD mitigation strategy"
+    none: "Polarization fading → duty cycle <50%"
+    dual_pol_rx: "Dual-polarization coherent receiver → maintains lock through scrambling (Clivati 2020)"
+    active_tracking: "Active polarization tracking → compensates PMD-induced phase shifts"
+
+breakthrough_narrative: >
+  Optical frequency transfer over fiber faced two fundamental limits: compensation
+  non-reciprocity and polarization mode dispersion (PMD).
+  
+  Non-reciprocity has been SOLVED. Calosso (2013) demonstrated that two-way passive
+  phase comparison eliminates the PLL bandwidth constraint. Bercy (2014) reached the
+  fundamental non-reciprocity floor at 5×10⁻²¹ @ 4,000 s. Xu (2019) confirmed that
+  residual non-reciprocity after temperature compensation is (0.5±2.0)×10⁻²¹ over
+  33 days. This limit is fundamentally understood and compensated.
+  
+  PMD is the CURRENT DOMINANT LIMIT. Polarization mode dispersion causes differential
+  group delay between orthogonal polarization states. Under environmental perturbation,
+  PMD fluctuations introduce non-reciprocal phase noise that cannot be fully canceled
+  by bidirectional schemes. The practical impact is severe: polarization fading causes
+  optical beat signal dropout and detection loss-of-lock, limiting continuous operation.
+  
+  Clivati (2020) demonstrated the breakthrough: a dual-polarization coherent receiver
+  that maintains frequency lock through polarization scrambling. This enables robust,
+  continuous operation of fiber links. The remaining challenge is residual PMD-induced
+  phase noise at the 10⁻²⁰ level for links exceeding 500 km.
+  
+  The path forward: dual-polarization receivers + active polarization tracking for
+  national-scale links; quantum-limited detection for satellite-based global networks.
+
+edges:
+  - from: "Fiber link instability"
+    to: pri.two_way_frequency_comparison_noise_rejection
+    relation: "BOUNDED-BY"
+    status: "SOLVED (Xu 2019)"
+  - from: "Fiber link instability"
+    to: "PMD — polarization mode dispersion"
+    relation: "BOUNDED-BY (current dominant limit)"
+    status: active
+  - from: "PMD — polarization mode dispersion"
+    to: "Dual-polarization coherent receiver"
+    relation: "RESOLVED-BY (Clivati 2020)"
+    status: demonstrated
+  - from: "Current: PMD limited"
+    to: "Target: 10⁻²⁰ national-scale with PMD compensation"
+    relation: "REMAINING-GAP (~10× for >500 km)"
+
+evidence:
+  - relation_id: rel.C13_02
+    claim: "noise cancelled by data post-processing via two-way methods"
+  - relation_id: rel.clivati_2020_li20_01
+    claim: "dual-polarization coherent receiver for robust frequency dissemination"
+  - relation_id: rel.sinclair_2019_in19_03
+    claim: "atmospheric optical phase noise follows power law"
+  - relation_id: rel.zeng_2024_en24_01
+    claim: "atmospheric non-reciprocity limits satellite two-way frequency transfer"

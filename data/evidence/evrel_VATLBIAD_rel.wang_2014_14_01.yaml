@@ -1,8 +1,0 @@
-evidence: An optical frequency comb based on Yb:ring fiber laser was demonstrated.
-id: evrel_VATLBIAD_rel.wang_2014_14_01
-metadata:
-  source_paper: wang2014
-  zotero_key: VATLBIAD
-object: ent.optical_frequency_comb
-predicate: PART-OF
-subject: ent.yb_fiber_500mhz_comb_wang14

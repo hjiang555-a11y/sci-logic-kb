@@ -1,8 +1,0 @@
-evidence: 300 km between mountaintops in Hawaii
-id: evrel_4m836c4v_rel.caldwell_2023_al23_01
-metadata:
-  source_paper: caldwell2023_4m836c4v
-  zotero_key: 4m836c4v
-object: ent.free_space_optical_tf_link
-predicate: PART-OF
-subject: ent.quantum_limited_ott_hawaii_c23

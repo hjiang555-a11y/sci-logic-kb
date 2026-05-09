@@ -1,8 +1,0 @@
-evidence: Ramsey spectroscopy with synchronous interrogation of two clocks
-id: evrel_TP8JKHW3_rel.hinkley_2013_02
-metadata:
-  source_paper: hinkley2013
-  zotero_key: TP8JKHW3
-object: meth.ramsey_spectroscopy_clock
-predicate: IMPLEMENTS
-subject: ent.yb_optical_lattice_clock_nist2013

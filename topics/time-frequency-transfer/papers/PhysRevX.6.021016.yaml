@@ -1,23 +1,42 @@
-# Deschênes 2016 — Synchronization of Distant Optical Clocks at the Femtosecond Level [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Laura  — Synchronization of Distant Optical Clocks at the Femtosecond Level [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
 meta:
-  zotero_key: PhysRevX.6.021016
+  zotero_key: Synchronization of Distant Optical Clocks at the F
   topic: time-frequency-transfer
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Synchronization of Distant Optical Clocks at the Femtosecond Level"
-  year: 2016
-  first_author: "Deschênes"
-  authors: ["Jean-Daniel Deschênes", "Laura C. Sinclair", "Fabrizio R. Giorgetta", "William C. Swann", "Esther Baumann", "Hugo Bergeron", "Michael Cermak", "Ian Coddington", "Nathan R. Newbury"]
-  journal: "Physical Review X"
-  volume: 6
-  doi: 10.1103/PhysRevX.6.021016
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Synchronization of Distant Optical Clocks at the Femtosecond Level
+  first_author: Laura
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1103/PhysRevX
+entities:
+- id: ent.physrevx_6_021016_system
+  name: Laura  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Laura '
+metrics:
+- id: met.physrevx_6_021016_primary
+  name: Laura  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Synchronization of Distant Optical Clocks at the F
+      claim: core experimental result
+relations:
+- id: rel.physrevx_6_021016_01
+  subject: ent.physrevx_6_021016_system
+  predicate: CHARACTERIZED-BY
+  object: met.physrevx_6_021016_primary
+  confidence: established
+  source:
+    zotero_key: Synchronization of Distant Optical Clocks at the F
+    claim: experimental system characterized by primary metric

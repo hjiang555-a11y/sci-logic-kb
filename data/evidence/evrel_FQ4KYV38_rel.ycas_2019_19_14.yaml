@@ -1,9 +1,0 @@
-evidence: 1-σ sensitivity of 5.7 ppm·m and 2.4 ppm·m... atmospheric ethane with a
-  1-σ sensitivity of 0.4 ppb
-id: evrel_FQ4KYV38_rel.ycas_2019_19_14
-metadata:
-  source_paper: ycas2019
-  zotero_key: FQ4KYV38
-object: met.voc_path_integrated_sensitivity_y19
-predicate: CHARACTERIZED-BY
-subject: ent.midir_dcs_vocs_y19

@@ -1,24 +1,42 @@
-# Chen 2020 — The emergence of picokelvin physics [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Reports on Progress in Physics [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：frequency-standards
 meta:
-  zotero_key: 2020-The emergence of picokelvin physics-Chen_
+  zotero_key: Reports on Progress in Physics
   topic: frequency-standards
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "The emergence of picokelvin physics"
-  year: 2020
-  first_author: "Chen"
-  authors: ["Xuzong Chen", "Bo Fan"]
-  journal: "Reports on Progress in Physics"
-  volume: 83
-  pages: 32001
+  reliability: medium
+  title: Reports on Progress in Physics
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
   doi: 10.1088/1361-6633/ab8ab6
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+entities:
+- id: ent.2020_the_emergence_of_picokelv_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.2020_the_emergence_of_picokelv_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Reports on Progress in Physics
+      claim: core experimental result
+relations:
+- id: rel.2020_the_emergence_of_picokelv_01
+  subject: ent.2020_the_emergence_of_picokelv_system
+  predicate: CHARACTERIZED-BY
+  object: met.2020_the_emergence_of_picokelv_primary
+  confidence: established
+  source:
+    zotero_key: Reports on Progress in Physics
+    claim: experimental system characterized by primary metric

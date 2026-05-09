@@ -1,8 +1,0 @@
-evidence: 0.5 g rms integrated acceleration ... 0.5 g peak accelerations
-id: evrel_D9ANIZW6_rel.sinclair_2014_14_07
-metadata:
-  source_paper: sinclair2014
-  zotero_key: D9ANIZW6
-object: met.vibration_tolerance_s14
-predicate: CHARACTERIZED-BY
-subject: ent.ruggedized_field_comb_s14

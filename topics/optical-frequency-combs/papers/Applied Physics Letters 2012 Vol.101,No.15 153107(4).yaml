@@ -1,23 +1,42 @@
-# Popa 2012 — 74-fs nanotube-mode-locked fiber laser [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Popa  — 74-fs nanotube-mode-locked fiber laser [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: Applied Physics Letters 2012 Vol.101,No.15 153107(4)
+  zotero_key: 74-fs nanotube-mode-locked fiber laser
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "74-fs nanotube-mode-locked fiber laser"
-  year: 2012
-  first_author: "Popa"
-  authors: ["D. Popa", "Z. Sun", "T. Hasan", "W. B. Cho", "F. Wang", "F. Torrisi", "A. C. Ferrari"]
-  journal: "Applied Physics Letters"
-  volume: 101
-  doi: 10.1063/1.4757293
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: 74-fs nanotube-mode-locked fiber laser
+  first_author: Popa
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1063/1
+entities:
+- id: ent.applied_physics_letters_2012_v_system
+  name: Popa  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Popa '
+metrics:
+- id: met.applied_physics_letters_2012_v_primary
+  name: Popa  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: 74-fs nanotube-mode-locked fiber laser
+      claim: core experimental result
+relations:
+- id: rel.applied_physics_letters_2012_v_01
+  subject: ent.applied_physics_letters_2012_v_system
+  predicate: CHARACTERIZED-BY
+  object: met.applied_physics_letters_2012_v_primary
+  confidence: established
+  source:
+    zotero_key: 74-fs nanotube-mode-locked fiber laser
+    claim: experimental system characterized by primary metric

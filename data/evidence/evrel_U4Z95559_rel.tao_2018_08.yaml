@@ -1,8 +1,0 @@
-evidence: The cavity was mounted by squeezing at 12 points...
-id: evrel_U4Z95559_rel.tao_2018_08
-metadata:
-  source_paper: tao2018
-  zotero_key: U4Z95559
-object: meth.multi_point_cavity_mounting_t18
-predicate: OPERATIONALIZED-AS
-subject: ent.robust_cuboid_cavity_t18

@@ -1,9 +1,0 @@
-evidence: III-V-on-Si mode-locked laser produces an optical frequency comb with thousands
-  of equidistant lines
-id: evrel_GY48UQ7F_rel.wang_2017_an15
-metadata:
-  source_paper: wang2017
-  zotero_key: GY48UQ7F
-object: ent.optical_frequency_comb
-predicate: PART-OF
-subject: ent.iii_v_on_si_ultradense_comb_w17

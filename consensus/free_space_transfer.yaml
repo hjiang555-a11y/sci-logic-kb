@@ -1,0 +1,61 @@
+metric: met.free_space_transfer_instability
+metric_name: "Free-space optical time-frequency transfer instability"
+context: "Free-space transfer — fundamentally distinct from fiber. Atmospheric turbulence replaces PMD as dominant noise source. Nature 2022 (Shen) and Nature 2023 (Caldwell) are the definitive consensus papers."
+domain: time-frequency-transfer
+updated: 2026-05-09
+confidence: established
+
+consensus:
+  best_demonstrated_instability: "σ_y < 4×10⁻¹⁹ @ 113 km (Shen 2022, Nature — THE benchmark)"
+  best_demonstrated_short_range: "σ_y = 6.1×10⁻²¹ @ 300 s (Gozzard 2022, 2 km)"
+  best_demonstrated_link_budget: "102 dB with 4.0 mW (Caldwell 2023, Nature — ground↔GEO feasible)"
+  best_demonstrated_timing_precision: "0.7 nm / 4.8 as (Caldwell 2022, Nature — quantum-limited ranging)"
+  best_doppler_immunity: "<1 fs TDEV with 10⁻⁷ Doppler (Bergeron 2019, Nature Comms)"
+  theoretical_limit: "Quantum detection limit (single-photon); atmospheric outer scale (~10-100 m)"
+  remaining_gap: "113 km demonstrated at <4×10⁻¹⁹ (Shen Nature 2022). Scaling to GEO (40,000 km) requires closing 10-100× gap via quantum detection and larger apertures."
+
+definitive_references:
+  - paper: "Shen 2022 Nature — Free-space dissemination of time and frequency with 10⁻¹⁹ instability over 113 km"
+    role: "Longest free-space link; sets the current benchmark for all free-space transfer"
+  - paper: "Caldwell 2023 Nature — Quantum-limited optical time transfer for future geosynchronous links"
+    role: "Proves ground↔GEO satellite links are technically feasible; 102 dB quantum-limited budget"
+  - paper: "Caldwell 2022 Nature — The time-programmable frequency comb and its use in quantum-limited ranging"
+    role: "Quantum-limited precision: 0.7 nm / 4.8 as; demonstrates the ultimate detection limit"
+
+limitation_stack:
+  - name: "Atmospheric turbulence phase noise"
+    status: "Fundamental — Shen 2022 Nature characterized at 113 km"
+    principle: "Kolmogorov turbulence dominates at all practical distances. Tip-tilt tracking (Sinclair 2016) mitigates beam wander."
+  - name: "Link budget (∝ 1/L²)"
+    status: "GEO feasible — Caldwell 2023 Nature demonstrated 102 dB budget"
+    principle: "Free-space loss limits received power. Quantum detection enables single-photon-level operation."
+  - name: "Satellite Doppler (10⁻⁶-10⁻⁷)"
+    status: "Solvable — demonstrated at sub-fs level"
+    principle: "LEO 7 km/s → 10⁻⁵ Doppler; compensated via ephemeris or two-way cancellation"
+
+vs_fiber:
+  fiber: "PMD-limited; national-scale operational; cannot cross oceans"
+  free_space: "Atmosphere-limited; 113 km demonstrated (Shen Nature 2022); global coverage via satellites"
+  convergence: "Both reaching 10⁻²¹ at metro scale; satellite links needed for intercontinental clock networks"
+
+timeline:
+  - year: 2016
+    value: "Tip-tilt active tracking demonstrated at 12 km"
+    system: "Sinclair — 12 km free-space optical clock comparison"
+  - year: 2019
+    value: "<1 fs TDEV with 10⁻⁷ Doppler (flying quadcopter)"
+    system: "Bergeron 2019, Nature Communications"
+  - year: 2020
+    value: "Atmospheric timing jitter PSD: S_jitter ∝ f^(-6.7/3)"
+    system: "Caldwell — Kolmogorov turbulence model validated"
+  - year: 2022
+    value: "σ_y < 4×10⁻¹⁹ @ 113 km ← Definitive benchmark"
+    system: "Shen 2022, Nature — longest free-space link"
+  - year: 2022
+    value: "Quantum-limited ranging: 0.7 nm / 4.8 as"
+    system: "Caldwell 2022, Nature — time-programmable comb"
+  - year: 2023
+    value: "102 dB quantum-limited budget → GEO feasible"
+    system: "Caldwell 2023, Nature — quantum time transfer"
+
+trend: "Free-space transfer is now a Nature-published field. Shen (2022) set the 113 km benchmark. Caldwell (2023) proved GEO is feasible. The next Nature paper in this sequence should demonstrate LEO satellite transfer."

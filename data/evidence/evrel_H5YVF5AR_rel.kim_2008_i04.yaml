@@ -1,8 +1,0 @@
-evidence: The integrated timing jitter is 0.4 fs (r.m.s.) in the 22 mHz–2.3 MHz range
-id: evrel_H5YVF5AR_rel.kim_2008_i04
-metadata:
-  source_paper: kim2008
-  zotero_key: H5YVF5AR
-object: met.optical_optical_sync_jitter_k08
-predicate: CHARACTERIZED-BY
-subject: ent.remote_timing_synchronization_network

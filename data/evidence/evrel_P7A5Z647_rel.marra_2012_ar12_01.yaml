@@ -1,9 +1,0 @@
-evidence: dissemination of an optical frequency comb over fiber with 3×10⁻¹⁸ fractional
-  accuracy
-id: evrel_P7A5Z647_rel.marra_2012_ar12_01
-metadata:
-  source_paper: marra2012
-  zotero_key: P7A5Z647
-object: ent.precision_frequency_transfer_system_f22
-predicate: PART-OF
-subject: ent.npl_fiber_comb_transfer_system_m12

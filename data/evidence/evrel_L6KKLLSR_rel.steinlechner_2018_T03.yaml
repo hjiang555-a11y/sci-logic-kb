@@ -1,8 +1,0 @@
-evidence: 'Table 1: Mechanical loss φ at different temperatures'
-id: evrel_L6KKLLSR_rel.steinlechner_2018_T03
-metadata:
-  source_paper: steinlechner2018
-  zotero_key: L6KKLLSR
-object: meth.coating_material_comparative_analysis_s18
-predicate: CHARACTERIZES
-subject: met.coating_loss_angle_comparison_s18

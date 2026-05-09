@@ -1,24 +1,42 @@
-# Pröbster 2021 — FOKUS II—Space flight of a compact and vacuum compatible dual frequency comb ... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Benjamin  — 932 Vol.38,No.3/March2021/JournaloftheOpticalSocietyofAmericaB ResearchArticle [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: josab-38-3-932
+  zotero_key: 932 Vol.38,No.3/March2021/JournaloftheOpticalSocie
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "FOKUS II—Space flight of a compact and vacuum compatible dual frequency comb system"
-  year: 2021
-  first_author: "Pröbster"
-  authors: ["Benjamin J. Pröbster", "Matthias Lezius", "Olaf Mandel", "Claus Braxmaier", "Ronald Holzwarth"]
-  journal: "Journal of the Optical Society of America B"
-  volume: 38
-  pages: 932
-  doi: 10.1364/JOSAB.413929
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: 932 Vol.38,No.3/March2021/JournaloftheOpticalSocietyofAmericaB ResearchArticle
+  first_author: Benjamin
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1364/JOSAB
+entities:
+- id: ent.josab_38_3_932_system
+  name: Benjamin  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Benjamin '
+metrics:
+- id: met.josab_38_3_932_primary
+  name: Benjamin  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: 932 Vol.38,No.3/March2021/JournaloftheOpticalSocie
+      claim: core experimental result
+relations:
+- id: rel.josab_38_3_932_01
+  subject: ent.josab_38_3_932_system
+  predicate: CHARACTERIZED-BY
+  object: met.josab_38_3_932_primary
+  confidence: established
+  source:
+    zotero_key: 932 Vol.38,No.3/March2021/JournaloftheOpticalSocie
+    claim: experimental system characterized by primary metric

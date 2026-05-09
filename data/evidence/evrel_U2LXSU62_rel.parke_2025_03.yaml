@@ -1,9 +1,0 @@
-evidence: we maximize τ_cav by developing an optical reference cavity with a length
-  of 68 cm
-id: evrel_U2LXSU62_rel.parke_2025_03
-metadata:
-  source_paper: parke2025
-  zotero_key: U2LXSU62
-object: pri.long_cavity_discriminator_enhancement
-predicate: ENABLED-BY
-subject: ent.long_cavity_68cm_p25

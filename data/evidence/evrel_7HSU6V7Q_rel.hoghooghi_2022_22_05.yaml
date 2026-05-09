@@ -1,9 +1,0 @@
-evidence: through nonlinear down-conversion of near-infrared frequency combs, either
-  through parametric oscillation or difference frequency generation
-id: evrel_7HSU6V7Q_rel.hoghooghi_2022_22_05
-metadata:
-  source_paper: hoghooghi2022
-  zotero_key: 7HSU6V7Q
-object: meth.opo_comb_generation
-predicate: COMPETES-WITH
-subject: meth.dfg_comb_generation

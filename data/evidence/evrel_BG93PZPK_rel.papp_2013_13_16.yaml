@@ -1,9 +1,0 @@
-evidence: a single microcomb tooth often has spectral contributions from independent
-  subcombs
-id: evrel_BG93PZPK_rel.papp_2013_13_16
-metadata:
-  source_paper: papp2013
-  zotero_key: BG93PZPK
-object: pri.microcomb_subcomb_offset_p13
-predicate: CONDITIONED-BY
-subject: ent.parametrically_seeded_microcomb_p13

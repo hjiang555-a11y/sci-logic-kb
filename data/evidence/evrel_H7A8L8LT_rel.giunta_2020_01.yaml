@@ -1,9 +1,0 @@
-evidence: A standard Pound–Drever–Hall locking scheme is implemented by generating
-  20 MHz sidebands on the injected cavity light.
-id: evrel_H7A8L8LT_rel.giunta_2020_01
-metadata:
-  source_paper: giunta2020b
-  zotero_key: H7A8L8LT
-object: meth.pdh_locking
-predicate: ENABLED-BY
-subject: ent.compact_pmo_giunta20b

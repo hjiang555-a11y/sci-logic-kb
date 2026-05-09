@@ -1,8 +1,0 @@
-evidence: comb-based optical two-way time and frequency transfer (O-TWTFT)
-id: evrel_5xulcnp3_rel.sinclair_2019_in19_01
-metadata:
-  source_paper: sinclair2019_5xulcnp3
-  zotero_key: 5xulcnp3
-object: ent.free_space_optical_tf_link
-predicate: PART-OF
-subject: ent.comb_otwtft_with_motion_s19

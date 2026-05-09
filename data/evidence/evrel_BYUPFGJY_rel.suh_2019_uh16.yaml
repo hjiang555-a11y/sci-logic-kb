@@ -1,9 +1,0 @@
-evidence: '''The value of f0 of a soliton comb line is measured [via] reference laser
-  … locked to HCN'''
-id: evrel_BYUPFGJY_rel.suh_2019_uh16
-metadata:
-  source_paper: suh2019
-  zotero_key: BYUPFGJY
-object: ent.hcn_reference_laser_s19
-predicate: CONDITIONED-BY
-subject: ent.microresonator_astrocomb_s19

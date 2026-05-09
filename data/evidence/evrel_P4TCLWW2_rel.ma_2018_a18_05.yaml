@@ -1,9 +1,0 @@
-evidence: tight phase locking in high-repetition-rate Yb:fiber frequency combs involves
-  two issues
-id: evrel_P4TCLWW2_rel.ma_2018_a18_05
-metadata:
-  source_paper: ma2018
-  zotero_key: P4TCLWW2
-object: pri.high_frep_yb_tight_lock_challenges
-predicate: ENABLED-BY
-subject: meth.bulk_eom_pzt_750mhz_yb_lock

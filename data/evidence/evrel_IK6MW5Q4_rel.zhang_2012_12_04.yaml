@@ -1,9 +1,0 @@
-evidence: A full characterization requires the measurement of the nine transfer function
-  matrix elements
-id: evrel_IK6MW5Q4_rel.zhang_2012_12_04
-metadata:
-  source_paper: zhang2012c
-  zotero_key: IK6MW5Q4
-object: pri.comb_actuator_transfer_matrix
-predicate: ENABLED-BY
-subject: meth.comb_transfer_function_measurement

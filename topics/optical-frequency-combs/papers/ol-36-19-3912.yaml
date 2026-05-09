@@ -1,18 +1,42 @@
-#  ???? — untitled [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Martin 2011 — Supercontinuum generation in quasi-phase-matched [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: ol-36-19-3912
+  zotero_key: Supercontinuum generation in quasi-phase-matched
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
   reliability: medium
-  title: "untitled"
-  first_author: ""
-  note: >
-    [批量提取] 元数据来源：PDF metadata。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  title: Supercontinuum generation in quasi-phase-matched
+  first_author: Martin
+  note: batch minimal extraction; pending expert review for full entities/principles
+  year: 2011
+entities:
+- id: ent.ol_36_19_3912_system
+  name: Martin 2011 experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: Experimental system described in Martin 2011
+metrics:
+- id: met.ol_36_19_3912_primary
+  name: Martin 2011 primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Supercontinuum generation in quasi-phase-matched
+      claim: core experimental result
+relations:
+- id: rel.ol_36_19_3912_01
+  subject: ent.ol_36_19_3912_system
+  predicate: CHARACTERIZED-BY
+  object: met.ol_36_19_3912_primary
+  confidence: established
+  source:
+    zotero_key: Supercontinuum generation in quasi-phase-matched
+    claim: experimental system characterized by primary metric

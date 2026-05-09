@@ -1,9 +1,0 @@
-evidence: The repetition rate of the optical frequency comb is locked to a 1560 nm
-  ultrastable laser
-id: evrel_CEB7L6EM_rel.wang_2025_25_02
-metadata:
-  source_paper: wang2025
-  zotero_key: CEB7L6EM
-object: ent.fp_cavity_system
-predicate: CONDITIONED-BY
-subject: ent.low_latency_digital_servo_w25

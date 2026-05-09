@@ -1,8 +1,0 @@
-evidence: ring in the midplane allows rigid attachment
-id: evrel_RP8Q44RZ_rel.argence_2012_02
-metadata:
-  source_paper: argence2012
-  zotero_key: RP8Q44RZ
-object: pri.midplane_rigid_mounting_space
-predicate: ENABLED-BY
-subject: ent.space_cavity_prototype_a12

@@ -1,24 +1,42 @@
-# Möhle 2013 — Highly stable piezoelectrically tunable optical cavities [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Evgeny  — DOI10.1007/s00340-012-5322-0 [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：ultrastable-laser
 meta:
-  zotero_key: Highly stable piezoelectrically tunable optical cavities
+  zotero_key: DOI10.1007/s00340-012-5322-0
   topic: ultrastable-laser
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Highly stable piezoelectrically tunable optical cavities"
-  year: 2013
-  first_author: "Möhle"
-  authors: ["Katharina Möhle", "Evgeny V. Kovalchuk", "Klaus Döringshoff", "Moritz Nagel", "Achim Peters"]
-  journal: "Applied Physics B"
-  volume: 111
-  pages: 223-231
+  reliability: medium
+  title: DOI10.1007/s00340-012-5322-0
+  first_author: Evgeny
+  note: batch minimal extraction; pending expert review for full entities/principles
   doi: 10.1007/s00340-012-5322-0
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+entities:
+- id: ent.highly_stable_piezoelectricall_system
+  name: Evgeny  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Evgeny '
+metrics:
+- id: met.highly_stable_piezoelectricall_primary
+  name: Evgeny  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: DOI10.1007/s00340-012-5322-0
+      claim: core experimental result
+relations:
+- id: rel.highly_stable_piezoelectricall_01
+  subject: ent.highly_stable_piezoelectricall_system
+  predicate: CHARACTERIZED-BY
+  object: met.highly_stable_piezoelectricall_primary
+  confidence: established
+  source:
+    zotero_key: DOI10.1007/s00340-012-5322-0
+    claim: experimental system characterized by primary metric

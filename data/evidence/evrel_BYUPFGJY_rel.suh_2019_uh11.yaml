@@ -1,8 +1,0 @@
-evidence: 方法节：通过 AOM 控制泵浦功率/频率进入与维持单孤子态。
-id: evrel_BYUPFGJY_rel.suh_2019_uh11
-metadata:
-  source_paper: suh2019
-  zotero_key: BYUPFGJY
-object: meth.laser_tuning_soliton_access
-predicate: ENABLED-BY
-subject: ent.microresonator_astrocomb_s19

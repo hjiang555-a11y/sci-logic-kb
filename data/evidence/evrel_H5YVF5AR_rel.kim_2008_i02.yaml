@@ -1,8 +1,0 @@
-evidence: the time-of-flight of each link should be stabilized with a feedback loop
-id: evrel_H5YVF5AR_rel.kim_2008_i02
-metadata:
-  source_paper: kim2008
-  zotero_key: H5YVF5AR
-object: meth.timing_stabilized_fiber_linking
-predicate: OPERATIONALIZED-AS
-subject: met.timing_link_stability_k08

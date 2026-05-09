@@ -1,9 +1,0 @@
-evidence: Ultra-low intensity noise, all fiber 365 W linearly polarized single frequency
-  laser at 1064 nm
-id: evrel_HJZ6BVYE_rel.dixneuf_2020_ix01
-metadata:
-  source_paper: dixneuf2020
-  zotero_key: HJZ6BVYE
-object: pri.high_power_low_rin_fiber_laser_design_d20
-predicate: IMPLEMENTS
-subject: ent.high_power_low_rin_fiber_laser_d20

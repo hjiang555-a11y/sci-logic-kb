@@ -1,9 +1,0 @@
-evidence: this phase-matching mechanism provides a phase-matching bandwidth of only
-  a few nanometers
-id: evrel_CML5935T_rel.hickstein_2017_17_12
-metadata:
-  source_paper: hickstein2017
-  zotero_key: CML5935T
-object: pri.phase_matching_bandwidth_limit_chi2
-predicate: BOUNDED-BY
-subject: meth.on_chip_f2f_stabilization

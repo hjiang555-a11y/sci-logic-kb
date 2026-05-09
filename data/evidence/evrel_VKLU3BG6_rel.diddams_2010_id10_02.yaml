@@ -1,9 +1,0 @@
-evidence: a frequency comb is the optical output of a mode-locked laser for which
-  the parameters f_n, n, f_r, and f_o are measured and controlled
-id: evrel_VKLU3BG6_rel.diddams_2010_id10_02
-metadata:
-  source_paper: diddams2010
-  zotero_key: VKLU3BG6
-object: pri.ofc_functional_definition_2010
-predicate: CHARACTERIZED-BY
-subject: ent.optical_frequency_comb_diddams2010

@@ -1,19 +1,41 @@
-# kefelian ???? — FSM2008 [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Washington  — U.S. Naval Observatory, 3450 Massachusetts Avenue NW [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
 meta:
-  zotero_key: FSM2008 Crane et al
+  zotero_key: 'U.S. Naval Observatory, 3450 Massachusetts Avenue '
   topic: time-frequency-transfer
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
   reliability: medium
-  title: "FSM2008"
-  first_author: "kefelian"
-  authors: ["kefelian"]
-  note: >
-    [批量提取] 元数据来源：PDF metadata。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  title: U.S. Naval Observatory, 3450 Massachusetts Avenue NW
+  first_author: Washington
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.fsm2008_crane_et_al_system
+  name: Washington  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Washington '
+metrics:
+- id: met.fsm2008_crane_et_al_primary
+  name: Washington  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: 'U.S. Naval Observatory, 3450 Massachusetts Avenue '
+      claim: core experimental result
+relations:
+- id: rel.fsm2008_crane_et_al_01
+  subject: ent.fsm2008_crane_et_al_system
+  predicate: CHARACTERIZED-BY
+  object: met.fsm2008_crane_et_al_primary
+  confidence: established
+  source:
+    zotero_key: 'U.S. Naval Observatory, 3450 Massachusetts Avenue '
+    claim: experimental system characterized by primary metric

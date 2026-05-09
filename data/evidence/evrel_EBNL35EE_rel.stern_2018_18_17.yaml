@@ -1,9 +1,0 @@
-evidence: The 78–130 mW wall-plug electrical power for soliton generation is controlled
-  via electrical pump current tuning of the hybrid III-V/Si₃N₄ laser.
-id: evrel_EBNL35EE_rel.stern_2018_18_17
-metadata:
-  source_paper: stern2018
-  zotero_key: EBNL35EE
-object: meth.electrical_soliton_tuning_s18
-predicate: OPERATIONALIZED-AS
-subject: met.microcomb_wallplug_electrical_power_s18

@@ -1,9 +1,0 @@
-evidence: imperfect phase-matching is often the limiting factor for the achieved bandwidth
-  because the poling period is optimized for only part of the comb spectrum
-id: evrel_YYXGH9X3_rel.schliesser_2011_12_09
-metadata:
-  source_paper: schliesser2012
-  zotero_key: YYXGH9X3
-object: pri.nonlinear_frequency_conversion_comb
-predicate: BOUNDED-BY
-subject: met.mid_ir_spectral_coverage

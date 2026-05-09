@@ -1,9 +1,0 @@
-evidence: averaging the lengths of these cavities... the equivalent beam size is then
-  enlarged n times
-id: evrel_XWBUNX3P_rel.yan_2018_A01
-metadata:
-  source_paper: yan2018
-  zotero_key: XWBUNX3P
-object: meth.multi_cavity_averaging
-predicate: OPERATIONALIZED-AS
-subject: met.synthesized_laser_instability_y18

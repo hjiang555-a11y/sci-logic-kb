@@ -1,8 +1,0 @@
-evidence: the pulsed optical link ELT+
-id: evrel_SCI-ESA-HRE-ESR-ISOC_rel.cacciapuoti_2017_17_11
-metadata:
-  source_paper: cacciapuoti2017
-  zotero_key: SCI-ESA-HRE-ESR-ISOC
-object: meth.elt_plus_pulsed_optical_tf_transfer
-predicate: OPERATIONALIZED-AS
-subject: ent.pulsed_optical_link_elt_plus

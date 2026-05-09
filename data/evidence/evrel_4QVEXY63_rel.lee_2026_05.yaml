@@ -1,8 +1,0 @@
-evidence: 6-cm-long cryogenic silicon cavity operated at 17 K
-id: evrel_4QVEXY63_rel.lee_2026_05
-metadata:
-  source_paper: lee2026
-  zotero_key: 4QVEXY63
-object: ent.fp_cavity_system
-predicate: PART-OF
-subject: ent.si_crystal_17k_fp_cavity_l26

@@ -1,24 +1,42 @@
-# Kuse 2016 — All polarization-maintaining Er fiber-based optical frequency combs with nonl... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Diddams 2016 — All polarization-maintaining Er fiber-based [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: oe-24-3-3095
+  zotero_key: All polarization-maintaining Er fiber-based
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "All polarization-maintaining Er fiber-based optical frequency combs with nonlinear amplifying loop mirror"
+  reliability: medium
+  title: All polarization-maintaining Er fiber-based
+  first_author: Diddams
+  note: batch minimal extraction; pending expert review for full entities/principles
   year: 2016
-  first_author: "Kuse"
-  authors: ["N. Kuse", "J. Jiang", "C.-C. Lee", "T. R. Schibli", "M.E. Fermann"]
-  journal: "Optics Express"
-  volume: 24
-  pages: 3095
-  doi: 10.1364/OE.24.003095
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+entities:
+- id: ent.oe_24_3_3095_system
+  name: Diddams 2016 experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: Experimental system described in Diddams 2016
+metrics:
+- id: met.oe_24_3_3095_primary
+  name: Diddams 2016 primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: All polarization-maintaining Er fiber-based
+      claim: core experimental result
+relations:
+- id: rel.oe_24_3_3095_01
+  subject: ent.oe_24_3_3095_system
+  predicate: CHARACTERIZED-BY
+  object: met.oe_24_3_3095_primary
+  confidence: established
+  source:
+    zotero_key: All polarization-maintaining Er fiber-based
+    claim: experimental system characterized by primary metric

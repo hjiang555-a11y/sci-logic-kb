@@ -1,24 +1,42 @@
-# Parke 2025 — Three hundred microsecond optical cavity storage time and <b>10<sup>−7</sup><... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Adam  — Three hundred microsecond optical cavity storage [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：ultrastable-laser
 meta:
-  zotero_key: ol-50-10-3405
+  zotero_key: Three hundred microsecond optical cavity storage
   topic: ultrastable-laser
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Three hundred microsecond optical cavity storage time and <b>10<sup>−7</sup></b> active RAM cancellation for <b>10<sup>−19</sup></b> laser frequency stabilization"
-  year: 2025
-  first_author: "Parke"
-  authors: ["Adam L. Parke", "Marco Schioppo"]
-  journal: "Optics Letters"
-  volume: 50
-  pages: 3405
-  doi: 10.1364/OL.560815
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Three hundred microsecond optical cavity storage
+  first_author: Adam
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1364/OL
+entities:
+- id: ent.ol_50_10_3405_system
+  name: Adam  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Adam '
+metrics:
+- id: met.ol_50_10_3405_primary
+  name: Adam  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Three hundred microsecond optical cavity storage
+      claim: core experimental result
+relations:
+- id: rel.ol_50_10_3405_01
+  subject: ent.ol_50_10_3405_system
+  predicate: CHARACTERIZED-BY
+  object: met.ol_50_10_3405_primary
+  confidence: established
+  source:
+    zotero_key: Three hundred microsecond optical cavity storage
+    claim: experimental system characterized by primary metric

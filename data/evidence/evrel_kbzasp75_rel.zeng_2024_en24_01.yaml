@@ -1,9 +1,0 @@
-evidence: atmospheric non-reciprocity effects for satellite-based two-way time-frequency
-  transfer
-id: evrel_kbzasp75_rel.zeng_2024_en24_01
-metadata:
-  source_paper: zeng2024_kbzasp75
-  zotero_key: kbzasp75
-object: pri.atmospheric_non_reciprocity_satellite_twtft
-predicate: BOUNDED-BY
-subject: ent.satellite_microwave_time_transfer_link

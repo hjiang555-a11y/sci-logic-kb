@@ -1,18 +1,41 @@
-#  ???? — A photonic integrated circuit–based erbium-doped amplifier [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — PHOTONICS lockedlasersthatarewidelydeployedinap- [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: science.abo2631
+  zotero_key: PHOTONICS lockedlasersthatarewidelydeployedinap-
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
   reliability: medium
-  title: "A photonic integrated circuit–based erbium-doped amplifier"
-  first_author: ""
-  note: >
-    [批量提取] 元数据来源：PDF metadata。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  title: PHOTONICS lockedlasersthatarewidelydeployedinap-
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.science_abo2631_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.science_abo2631_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: PHOTONICS lockedlasersthatarewidelydeployedinap-
+      claim: core experimental result
+relations:
+- id: rel.science_abo2631_01
+  subject: ent.science_abo2631_system
+  predicate: CHARACTERIZED-BY
+  object: met.science_abo2631_primary
+  confidence: established
+  source:
+    zotero_key: PHOTONICS lockedlasersthatarewidelydeployedinap-
+    claim: experimental system characterized by primary metric

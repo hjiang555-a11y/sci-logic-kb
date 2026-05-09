@@ -1,9 +1,0 @@
-evidence: gap-free frequency comb coverage spanning 330–2,400 nm with only 90 pJ of
-  pulse energy
-id: evrel_8IPE8B8T_rel.wu_2024_24_01
-metadata:
-  source_paper: wu2024
-  zotero_key: 8IPE8B8T
-object: met.tf_ln_spectral_coverage_w24
-predicate: CHARACTERIZED-BY
-subject: ent.tf_lin_uv_vis_comb_w24

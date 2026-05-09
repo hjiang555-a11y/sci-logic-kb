@@ -1,9 +1,0 @@
-evidence: dichroic heterodyne detection is used to compensate phase drifts occurring
-  in the generation and dissemination of widely spaced optical frequencies
-id: evrel_UFWLAXMA_rel.giunta_2020_20_03
-metadata:
-  source_paper: giunta2020
-  zotero_key: UFWLAXMA
-object: pri.dichroic_heterodyne_detection
-predicate: ENABLED-BY
-subject: meth.wideband_optical_frequency_synthesis

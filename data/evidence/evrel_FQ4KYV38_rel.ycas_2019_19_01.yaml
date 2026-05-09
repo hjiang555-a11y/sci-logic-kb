@@ -1,8 +1,0 @@
-evidence: includes the MIR dual-comb spectrometer
-id: evrel_FQ4KYV38_rel.ycas_2019_19_01
-metadata:
-  source_paper: ycas2019
-  zotero_key: FQ4KYV38
-object: ent.dual_comb_spectrometer
-predicate: PART-OF
-subject: ent.midir_dcs_vocs_y19

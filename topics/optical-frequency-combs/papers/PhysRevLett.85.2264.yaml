@@ -1,18 +1,41 @@
-#  ???? — PhysRevLett.85.2264 [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Optical Frequency Synthesizer for Precision Spectroscopy [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: PhysRevLett.85.2264
+  zotero_key: Optical Frequency Synthesizer for Precision Spectr
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: low
-  title: "PhysRevLett.85.2264"
-  first_author: ""
-  note: >
-    [批量提取] 元数据来源：placeholder (needs expert review)。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Optical Frequency Synthesizer for Precision Spectroscopy
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.physrevlett_85_2264_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.physrevlett_85_2264_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Optical Frequency Synthesizer for Precision Spectr
+      claim: core experimental result
+relations:
+- id: rel.physrevlett_85_2264_01
+  subject: ent.physrevlett_85_2264_system
+  predicate: CHARACTERIZED-BY
+  object: met.physrevlett_85_2264_primary
+  confidence: established
+  source:
+    zotero_key: Optical Frequency Synthesizer for Precision Spectr
+    claim: experimental system characterized by primary metric

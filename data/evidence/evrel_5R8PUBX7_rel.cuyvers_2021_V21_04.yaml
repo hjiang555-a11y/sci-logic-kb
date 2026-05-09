@@ -1,9 +1,0 @@
-evidence: Electrically pumped III-V/SiN mode-locked laser combs represent an alternative
-  chip-scale comb platform competing with optically pumped Kerr microresonator combs.
-id: evrel_5R8PUBX7_rel.cuyvers_2021_V21_04
-metadata:
-  source_paper: cuyvers2021
-  zotero_key: 5R8PUBX7
-object: ent.microresonator_frequency_comb
-predicate: COMPETES-WITH
-subject: ent.hetero_iii_v_sin_mll_comb_c21

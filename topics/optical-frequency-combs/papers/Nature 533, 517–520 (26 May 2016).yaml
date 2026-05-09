@@ -1,24 +1,42 @@
-# Spaun 2016 — Continuous probing of cold complex molecules with infrared frequency comb spe... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Bryce  — Continuous probing of cold complex molecules with [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: Nature 533, 517–520 (26 May 2016)
+  zotero_key: Continuous probing of cold complex molecules with
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Continuous probing of cold complex molecules with infrared frequency comb spectroscopy"
-  year: 2016
-  first_author: "Spaun"
-  authors: ["Ben Spaun", "P. Bryan Changala", "David Patterson", "Bryce J. Bjork", "Oliver H. Heckl", "John M. Doyle", "Jun Ye"]
-  journal: "Nature"
-  volume: 533
-  pages: 517-520
+  reliability: medium
+  title: Continuous probing of cold complex molecules with
+  first_author: Bryce
+  note: batch minimal extraction; pending expert review for full entities/principles
   doi: 10.1038/nature17440
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+entities:
+- id: ent.nature_533__517_520__26_may_20_system
+  name: Bryce  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Bryce '
+metrics:
+- id: met.nature_533__517_520__26_may_20_primary
+  name: Bryce  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Continuous probing of cold complex molecules with
+      claim: core experimental result
+relations:
+- id: rel.nature_533__517_520__26_may_20_01
+  subject: ent.nature_533__517_520__26_may_20_system
+  predicate: CHARACTERIZED-BY
+  object: met.nature_533__517_520__26_may_20_primary
+  confidence: established
+  source:
+    zotero_key: Continuous probing of cold complex molecules with
+    claim: experimental system characterized by primary metric

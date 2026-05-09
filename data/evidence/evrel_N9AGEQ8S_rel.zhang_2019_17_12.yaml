@@ -1,9 +1,0 @@
-evidence: The mechanical design isolates the cavity from the vibrations of the cryocooler...
-  The split plate is mechanically decoupled from the main plate
-id: evrel_N9AGEQ8S_rel.zhang_2019_17_12
-metadata:
-  source_paper: zhang2017
-  zotero_key: N9AGEQ8S
-object: meth.split_plate_vibration_isolation_z17
-predicate: OPERATIONALIZED-AS
-subject: ent.si_crystal_fp_cavity_4k_r19

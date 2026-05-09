@@ -1,9 +1,0 @@
-evidence: a 300 μm dynamic fiber agitator, which is coupled to one port of a 2 inch
-  integrating sphere
-id: evrel_9YYDT9H4_rel.metcalf_2019_19_02
-metadata:
-  source_paper: metcalf2019
-  zotero_key: 9YYDT9H4
-object: ent.hpf_nir_astrocomb_m19
-predicate: PART-OF
-subject: ent.dynamic_fiber_scrambler_m19

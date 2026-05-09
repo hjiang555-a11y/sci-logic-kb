@@ -1,8 +1,0 @@
-evidence: The difference of the RVs of the two channels is shown in Fig. 4(c)
-id: evrel_9YYDT9H4_rel.metcalf_2019_19_11
-metadata:
-  source_paper: metcalf2019
-  zotero_key: 9YYDT9H4
-object: meth.common_comb_differential_rv_test
-predicate: OPERATIONALIZED-AS
-subject: met.hpf_instrumental_rv_precision_m19

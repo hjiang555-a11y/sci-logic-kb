@@ -2,7 +2,7 @@
 
 # 📊 Metrics Quick Reference
 
-> Auto-generated 2026-05-04 04:06 UTC
+> Auto-generated 2026-05-09 06:38 UTC
 >
 > Metrics are grouped by **role** (v4.4 σ_y-first convention, see `topics/ultrastable-laser/_meta/scoping_principles.md` v2). Role is taken from the `role` field on the metric node when present, otherwise inferred from ID / name heuristics.
 
@@ -20,6 +20,7 @@
 | `met.clock_instability_yb_hinkley2013` | 时钟不稳定性（Yb，Hinkley 2013） | 1.6e-18 | 两台Yb光晶格钟同步interrogation，积分时间约7小时，578 nm跃迁，自旋极化超冷1… | [hinkley2013](topics/frequency-standards/papers/hinkley2013.yaml) |
 | `met.clock_instability_yb_schioppo2017` | 时钟不稳定性（Yb双系综，Schioppo 2017） | 3e-18 | 双Yb冷原子系综同步interrogation，积分时间1小时，NIST 2017 | [schioppo2017](topics/frequency-standards/papers/schioppo2017.yaml) |
 | `met.fractional_frequency_stability_clairon1995` | 分数频率不稳定度 $\sigma_y(\tau)$ | 3 * 10^-13 / sqrt(tau) | measured against an H-maser, cycle duration 1.1 s | [clairon1995](topics/frequency-standards/papers/clairon1995.yaml) |
+| `met.frequency_synthesizer_phase_noise_9ghz` | 9.2 GHz频率综合器相位噪声 | -82 dB[Rad²/Hz] @ 1 Hz offset | 检相法测量，两套相同综合器共用5 MHz USO参考 | [zhao2008](topics/frequency-standards/papers/zhao2008.yaml) |
 | `met.geodesy_uncertainty_grotti2018` | 大地测量引力势差不确定度（Grotti 2018） | 5e-18 | 可搬运Sr光晶格钟，PTB至意大利INRIM站点，光纤链路频率传输 | [grotti2018](topics/frequency-standards/papers/grotti2018.yaml) |
 | `met.huang2016_ca40_comparison_uncertainty` | Huang 2016 ⁴⁰Ca⁺ 光钟比对不确定度 | 10⁻¹⁷ 级比对不确定度 | 两台独立 ⁴⁰Ca⁺ 光钟；WIPM 实验室 | [huang2016](topics/frequency-standards/papers/huang2016.yaml) |
 | `met.huntemann2012_yb_e3_frequency_ratio` | Huntemann 2012 Yb⁺ E3/Cs 频率比和 μ 变化约束 | Yb⁺/Cs 频率比长期测量；约束 d(ln μ)/dt | PTB Yb⁺ E3 光钟 + Cs 喷泉钟；数年基线 | [huntemann2012](topics/frequency-standards/papers/huntemann2012.yaml) |
@@ -42,6 +43,7 @@
 | `met.clock_instability_sr_li2024` | 时钟短期不稳定性（NimSrI，Li 2024） | 3.3e-17 | NimSrI Sr光晶格钟，归一化至1秒 | [li2024](topics/frequency-standards/papers/li2024.yaml) |
 | `met.clock_instability_yb_hinkley2013_short` | 时钟短期不稳定性（Yb，Hinkley 2013） | 3.2e-16 | 每秒归一化，QPN极限，578 nm Yb光晶格钟 | [hinkley2013](topics/frequency-standards/papers/hinkley2013.yaml) |
 | `met.ramsey_linewidth_clairon1995` | Ramsey 共振线宽 | < 700 mHz | flight time above the cavity of 500 ms | [clairon1995](topics/frequency-standards/papers/clairon1995.yaml) |
+| `met.synthesizer_stability_contribution_to_fountain` | 频率综合器对喷泉钟秒级稳定度贡献 | 2.2×10⁻¹⁵ | d = 0.42（T_c = 1.2 s, T = 0.5 s），调频闪烁噪声主导 | [zhao2008](topics/frequency-standards/papers/zhao2008.yaml) |
 
 ### 🔧 Engineering (κ/温度/磁场)
 
@@ -53,9 +55,38 @@
 
 | ID | Name | Best Value | Conditions | Source |
 |----|------|------------|------------|--------|
+| `met.1367_2630_14_1_013045_primary` | primary metric | see paper | see paper | [1367-2630_14_1_013045](topics/frequency-standards/papers/1367-2630_14_1_013045.yaml) |
+| `met.1823_1__primary` | Jefferts  primary metric | see paper | see paper | [1823(1)](topics/frequency-standards/papers/1823(1).yaml) |
+| `met.2020_the_emergence_of_picokelv_primary` | primary metric | see paper | see paper | [2020-The emergence of picokelvin physics-Chen_](topics/frequency-standards/papers/2020-The emergence of picokelvin physics-Chen_.yaml) |
+| `met.abb2473_nakamura_sm_primary` | Jeff  primary metric | see paper | see paper | [abb2473_nakamura_sm](topics/frequency-standards/papers/abb2473_nakamura_sm.yaml) |
+| `met.al_ion_chou_cw_prl_2010_primary` | Clocks  primary metric | see paper | see paper | [Al ion Chou CW PRL 2010](topics/frequency-standards/papers/Al ion Chou CW PRL 2010.yaml) |
+| `met.bothwell_2019_metrologia_56_06_primary` | Bothwell 2019 primary metric | see paper | see paper | [Bothwell_2019_Metrologia_56_065004](topics/frequency-standards/papers/Bothwell_2019_Metrologia_56_065004.yaml) |
+| `met.col201816051402_primary` | primary metric | see paper | see paper | [COL201816051402](topics/frequency-standards/papers/COL201816051402.yaml) |
+| `met.delva2017_article_clocksinspac_primary` | primary metric | see paper | see paper | [Delva2017_Article_ClocksInSpaceForTestsOfFunda](topics/frequency-standards/papers/Delva2017_Article_ClocksInSpaceForTestsOfFunda.yaml) |
+| `met.denker2018_article_geodeticmet_primary` | primary metric | see paper | see paper | [Denker2018_Article_GeodeticMethodsToDetermineT](topics/frequency-standards/papers/Denker2018_Article_GeodeticMethodsToDetermineT.yaml) |
+| `met.e2019_100324_6_primary` | Guglielmo  primary metric | see paper | see paper | [e2019-100324-6](topics/frequency-standards/papers/e2019-100324-6.yaml) |
+| `met.eftf09_millo_et_al_proceeding_primary` | Millo  primary metric | see paper | see paper | [eftf09 millo et al proceeding](topics/frequency-standards/papers/eftf09 millo et al proceeding.yaml) |
+| `met.hg_mcferran_prl_2012_primary` | Mejri  primary metric | see paper | see paper | [Hg Mcferran PRL 2012](topics/frequency-standards/papers/Hg Mcferran PRL 2012.yaml) |
+| `met.in_wang_optics_communication_primary` | Elsevier  primary metric | see paper | see paper | [In Wang Optics Communication](topics/frequency-standards/papers/In Wang Optics Communication.yaml) |
+| `met.li_2024_metrologia_61_015006_primary` | primary metric | see paper | see paper | [Li_2024_Metrologia_61_015006](topics/frequency-standards/papers/Li_2024_Metrologia_61_015006.yaml) |
+| `met.lj15739_primary` | primary metric | see paper | see paper | [LJ15739](topics/frequency-standards/papers/LJ15739.yaml) |
 | `met.optical_clock_fractional_instability` | 光学原子钟分数频率不稳定度 | σ_y(τ) ≈ 5×10⁻¹⁷/√τ（最佳光晶格钟，综述汇总） | ⁸⁷Sr 或 ¹⁷¹Yb 光晶格钟，~10⁴ 原子，T_m ≈ 1–4 s，超稳腔激光 | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
 | `met.optical_clock_fractional_uncertainty` | 光学原子钟分数频率不确定度（系统效应） | <10⁻¹⁸（多个系统）；5.5×10⁻¹⁹（²⁷Al⁺ NIST，当前最佳，综述汇总） | ²⁷Al⁺ 量子逻辑钟（NIST），完整不确定度预算评估 | [fortier2026](topics/frequency-standards/papers/fortier2026.yaml) |
 | `met.optical_clock_fractional_uncertainty_2016_benchmark` | 2016 年光钟最佳分数系统不确定度基准 | Al⁺（NIST）：8.6×10⁻¹⁸；Sr（JILA）：2.1×10⁻¹⁸；Yb（NIST）：1.0×10⁻¹⁸ | 实验室条件稳态运行；主要系统效应（BBR / Zeeman / AC-Stark / 碰撞）独立评估 | [diddams2016](topics/frequency-standards/papers/diddams2016.yaml) |
+| `met.physrevlett_123_033201_quantum_primary` | primary metric | see paper | see paper | [PhysRevLett.123.033201-quantum logic clock to -19](topics/frequency-standards/papers/PhysRevLett.123.033201-quantum logic clock to -19.yaml) |
+| `met.prxquantum_4_040346_primary` | primary metric | see paper | see paper | [PRXQuantum.4.040346](topics/frequency-standards/papers/PRXQuantum.4.040346.yaml) |
+| `met.s00340_017_6731_x_primary` | primary metric | see paper | see paper | [s00340-017-6731-x](topics/frequency-standards/papers/s00340-017-6731-x.yaml) |
+| `met.s41467_018_05219_z_primary` | primary metric | see paper | see paper | [s41467-018-05219-z](topics/frequency-standards/papers/s41467-018-05219-z.yaml) |
+| `met.s41566_019_0493_4_primary` | primary metric | see paper | see paper | [s41566-019-0493-4](topics/frequency-standards/papers/s41566-019-0493-4.yaml) |
+| `met.s41567_017_0042_3_primary` | Fred  primary metric | see paper | see paper | [s41567-017-0042-3](topics/frequency-standards/papers/s41567-017-0042-3.yaml) |
+| `met.s41567_022_01794_7_primary` | May  primary metric | see paper | see paper | [s41567-022-01794-7](topics/frequency-standards/papers/s41567-022-01794-7.yaml) |
+| `met.s41586_021_04344_y_primary` | Brett  primary metric | see paper | see paper | [s41586-021-04344-y](topics/frequency-standards/papers/s41586-021-04344-y.yaml) |
+| `met.s41586_021_04349_7_primary` | Colin  primary metric | see paper | see paper | [s41586-021-04349-7](topics/frequency-standards/papers/s41586-021-04349-7.yaml) |
+| `met.s41586_023_05894_z_primary` | Thomas  primary metric | see paper | see paper | [s41586-023-05894-z](topics/frequency-standards/papers/s41586-023-05894-z.yaml) |
+| `met.s41598_018_26365_w_primary` | primary metric | see paper | see paper | [s41598-018-26365-w](topics/frequency-standards/papers/s41598-018-26365-w.yaml) |
+| `met.science_2020_nakamura_primary` | primary metric | see paper | see paper | [Science 2020 Nakamura](topics/frequency-standards/papers/Science 2020 Nakamura.yaml) |
+| `met.sr_88_ion_madej_prl_2012_primary` | Alan  primary metric | see paper | see paper | [Sr 88 ion Madej PRL 2012](topics/frequency-standards/papers/Sr 88 ion Madej PRL 2012.yaml) |
+| `met.sr_best_clock_bloom_nature_primary` | primary metric | see paper | see paper | [Sr best clock_Bloom_Nature](topics/frequency-standards/papers/Sr best clock_Bloom_Nature.yaml) |
 
 ## Optical Frequency Combs
 
@@ -135,10 +166,38 @@
 
 | ID | Name | Best Value | Conditions | Source |
 |----|------|------------|------------|--------|
+| `met.10_1364_ol_43_004136_primary` | primary metric | see paper | see paper | [10.1364@OL.43.004136](topics/optical-frequency-combs/papers/10.1364@OL.43.004136.yaml) |
+| `met.119970g_primary` | primary metric | see paper | see paper | [119970G](topics/optical-frequency-combs/papers/119970G.yaml) |
+| `met.1312_1997_primary` | Fred  primary metric | see paper | see paper | [1312.1997](topics/optical-frequency-combs/papers/1312.1997.yaml) |
+| `met.163104_1_online_primary` | primary metric | see paper | see paper | [163104_1_online](topics/optical-frequency-combs/papers/163104_1_online.yaml) |
+| `met.1_s2_0_s0370157317303253_main_primary` | primary metric | see paper | see paper | [1-s2.0-S0370157317303253-main](topics/optical-frequency-combs/papers/1-s2.0-S0370157317303253-main.yaml) |
+| `met.2014_opt_lett_39_9_2534__zzg_5_primary` | primary metric | see paper | see paper | [2014 Opt Lett(39.9.2534)-ZZG_500--MHz spaced Yb-fiber laser frequency comb without amplifiers](topics/optical-frequency-combs/papers/2014 Opt Lett(39.9.2534)-ZZG_500--MHz spaced Yb-fiber laser frequency comb without amplifiers.yaml) |
+| `met.2016_nanophotonics_optical_fre_primary` | primary metric | see paper | see paper | [2016 Nanophotonics optical frequency comb generation based on erbium fiber lasers](topics/optical-frequency-combs/papers/2016 Nanophotonics optical frequency comb generation based on erbium fiber lasers.yaml) |
+| `met.2017_03_09_0001__________4_77g_primary` | primary metric | see paper | see paper | [2017.03.09.0001-利用模式滤波器产生4.77GHz重复频率飞秒脉冲激光的+实验研究-2017_3_9 22_09_17 (1)](topics/optical-frequency-combs/papers/2017.03.09.0001-利用模式滤波器产生4.77GHz重复频率飞秒脉冲激光的+实验研究-2017_3_9 22_09_17 (1).yaml) |
+| `met.2542_1__primary` | Tara  primary metric | see paper | see paper | [2542(1)](topics/optical-frequency-combs/papers/2542(1).yaml) |
+| `met.2905_1_primary` | Spence  primary metric | see paper | see paper | [2905-1](topics/optical-frequency-combs/papers/2905-1.yaml) |
+| `met.2905_2_primary` | primary metric | see paper | see paper | [2905-2](topics/optical-frequency-combs/papers/2905-2.yaml) |
+| `met.2905_3_primary` | David  primary metric | see paper | see paper | [2905-3](topics/optical-frequency-combs/papers/2905-3.yaml) |
+| `met.2905_4_primary` | primary metric | see paper | see paper | [2905-4](topics/optical-frequency-combs/papers/2905-4.yaml) |
+| `met.2905_5_primary` | primary metric | see paper | see paper | [2905-5](topics/optical-frequency-combs/papers/2905-5.yaml) |
+| `met.2923_2_primary` | Daniel  primary metric | see paper | see paper | [2923-2](topics/optical-frequency-combs/papers/2923-2.yaml) |
+| `met.2923_3_primary` | Daniel  primary metric | see paper | see paper | [2923-3](topics/optical-frequency-combs/papers/2923-3.yaml) |
+| `met.8_20212162_primary` | primary metric | see paper | see paper | [8-20212162](topics/optical-frequency-combs/papers/8-20212162.yaml) |
 | `met.8branch_beat_snr_h21` | 8分支梳拍频信噪比 | > 30 dB @ 300 kHz RBW（所有 7 个应用端口） | NMIJ 8分支 Er:fiber 梳 + 独立优化 EDFA/展宽 | [hisai2021](topics/optical-frequency-combs/papers/hisai2021.yaml) |
+| `met._________________________primary` | primary metric | see paper | see paper | [用于锶光钟频率测量的光纤光梳系统研究进展_张颜艳](topics/optical-frequency-combs/papers/用于锶光钟频率测量的光纤光梳系统研究进展_张颜艳.yaml) |
+| `met.all_normal_dispersion_fs_laser_primary` | Fork 2006 primary metric | see paper | see paper | [all normal dispersion fs laser](topics/optical-frequency-combs/papers/all normal dispersion fs laser.yaml) |
+| `met.ao_49_29_5577_primary` | Michelle 2010 primary metric | see paper | see paper | [ao-49-29-5577](topics/optical-frequency-combs/papers/ao-49-29-5577.yaml) |
+| `met.ao_58_7_1733_primary` | primary metric | see paper | see paper | [ao-58-7-1733](topics/optical-frequency-combs/papers/ao-58-7-1733.yaml) |
+| `met.appl__phys__lett__29___296__19_primary` | primary metric | see paper | see paper | [Appl. Phys. Lett. 29 , 296 (1976)](topics/optical-frequency-combs/papers/Appl. Phys. Lett. 29 , 296 (1976).yaml) |
+| `met.applied_physics_letters_2012_v_primary` | Popa  primary metric | see paper | see paper | [Applied Physics Letters 2012 Vol.101,No.15 153107(4)](topics/optical-frequency-combs/papers/Applied Physics Letters 2012 Vol.101,No.15 153107(4).yaml) |
+| `met.art_10_1007_2fs003400100726_primary` | primary metric | see paper | see paper | [art:10.1007%2Fs003400100726](topics/optical-frequency-combs/papers/art:10.1007%2Fs003400100726.yaml) |
+| `met.art_10_1007_2fs00340_006_2426__primary` | primary metric | see paper | see paper | [art:10.1007%2Fs00340-006-2426-4(1)](topics/optical-frequency-combs/papers/art:10.1007%2Fs00340-006-2426-4(1).yaml) |
+| `met.art_10_1007_2fs00340_013_5740__primary` | primary metric | see paper | see paper | [art:10.1007%2Fs00340-013-5740-7](topics/optical-frequency-combs/papers/art:10.1007%2Fs00340-013-5740-7.yaml) |
 | `met.astro_comb_rv_precision_y12` | 天文光梳径向速度校准精度 | ~10 m/s（~6 MHz @ 1.6 µm） | 4 夜，HET 9.2 m + Pathfinder NIR 光谱仪，3 echelle order | [ycas2012](topics/optical-frequency-combs/papers/ycas2012.yaml) |
 | `met.astrocomb_continuous_coverage_c24` | 天文光梳连续覆盖范围（Cheng 2024） | 390–520 nm（连续，无谱间隙） | MgO:PPLN 波导 SHG + SFM 组合，1 GHz Ti:sapph 源梳（脉冲能量 ~… | [cheng2024](topics/optical-frequency-combs/papers/cheng2024.yaml) |
+| `met.attosecond_resolution_primary` | primary metric | see paper | see paper | [Attosecond-Resolution](topics/optical-frequency-combs/papers/Attosecond-Resolution.yaml) |
 | `met.average_power_2um_comb_x20` | 2 µm 梳平均输出功率 | 327 mW @100 MHz | 1.94 W C-band 泵浦，17% 总效率 | [xing2020](topics/optical-frequency-combs/papers/xing2020.yaml) |
+| `met.bartels05_primary` | Bartels 2005 primary metric | see paper | see paper | [bartels05](topics/optical-frequency-combs/papers/bartels05.yaml) |
 | `met.brillouin_rls_1400km_frequency_offset_k19` | 1400 km Brillouin + RLS 链路频率偏移 | (-1.1±0.4)×10⁻²⁰ | 1400 km 光纤链路（Brillouin + RLS） | [koke2019](topics/optical-frequency-combs/papers/koke2019.yaml) |
 | `met.cams_snr_l22` | CAMS 相位敏感谐波探测 SNR | 85 dB | 100 MHz Er:fiber + ZnO HHG + 锁相解调 @ f_CEO | [lesko2022](topics/optical-frequency-combs/papers/lesko2022.yaml) |
 | `met.channel_loss_dcs_h24` | DCS 信道总衰减（发射到接收光功率比） | 83 dB | 1 W 发射，首帧 >100 nW 接收，后续帧 >5 nW，113 km 水平路径 | [han2024](topics/optical-frequency-combs/papers/han2024.yaml) |
@@ -158,17 +217,20 @@
 | `met.comb_spectroscopy_spectral_coverage` | 频率梳光谱覆盖范围 | 亚毫米波 0.3–3 THz（光导天线/光整流下转换）； 远红外 3–15 THz（THz QCL 梳 ~3 THz … | 双梳光谱已在所有上述波段实现实验演示（见 Fig. 6）； 近红外技术最为成熟（商业化光纤梳）； … | [picque2019](topics/optical-frequency-combs/papers/picque2019.yaml) |
 | `met.comb_transfer_stability_g20` | 光学频率梳传递稳定度（Giunta 2020） | mod σ_y(τ) < 10⁻¹⁸ @ τ > 10 s（各频段）；10⁻²⁰ @ ~100 s | 两台 Er:fiber 梳，共享 1542 nm USL 参考，色散外差检测启用 | [giunta2020](topics/optical-frequency-combs/papers/giunta2020.yaml) |
 | `met.compressed_pulse_duration_l20` | 压缩后脉冲宽度（Lesko 2020） | — | — | [lesko2020](topics/optical-frequency-combs/papers/lesko2020.yaml) |
+| `met.cpb_zhang_2015_primary` | Zhang  primary metric | see paper | see paper | [CPB Zhang 2015](topics/optical-frequency-combs/papers/CPB Zhang 2015.yaml) |
 | `met.dcs_acquisition_speed` | 双梳光谱采集速度 | 毫秒级（f_rep ~100 MHz，>10⁵ 光谱通道）至 <1 μs（f_rep >10 GHz，~50-100 … | 单次干涉图采集时间 = 1/Δf_rep；100 MHz 梳典型 Δf_rep = 100 Hz–… | [coddington2016](topics/optical-frequency-combs/papers/coddington2016.yaml) |
 | `met.dcs_field_detection_limit_c18` | 野外 DCS 甲烷源检测限（Coburn 2018） | 1.6 g/min @ 1 km 距离 | Er:fiber 双梳，CH₄ 2ν₃ 带，典型大气条件，30 min–24 h 数据窗口 | [coburn2018](topics/optical-frequency-combs/papers/coburn2018.yaml) |
 | `met.dcs_figure_of_merit_y19` | DCS 品质因数（Coddington 2016 定义，Ycas 2019 值） | 1.2×10⁶ √Hz | 2750–3150 cm⁻¹；HgCdTe 探测器；1 min 相干平均 | [ycas2019](topics/optical-frequency-combs/papers/ycas2019.yaml) |
 | `met.dcs_frequency_resolution` | 双梳光谱频率分辨率 | 220 MHz，~41,000 分辨元 @ 9 THz 带宽 | NIST Er:fiber 双梳，1550 nm 附近 HCN overtone 带 | [coddington2010](topics/optical-frequency-combs/papers/coddington2010.yaml) |
 | `met.dcs_snr_coherent` | 相干双梳光谱信噪比（幅度 + 相位） | 平均 SNR 2500，峰值 SNR 4000；相位灵敏度 250 μrad；分数吸收灵敏度 0.05% | 9 THz 带宽，HCN overtone @ 1550 nm，相干实时平均 | [coddington2010](topics/optical-frequency-combs/papers/coddington2010.yaml) |
 | `met.dcs_snr_per_tooth` | 双梳光谱单齿信噪比 | figure of merit ~2×10⁸ Hz^(1/2)（数字相位/定时校正 + 高动态范围探测器） | 近红外 Er:fiber 梳，100 MHz 梳齿间距，数字相位/定时校正 + 高动态范围 InG… | [coddington2016](topics/optical-frequency-combs/papers/coddington2016.yaml) |
+| `met.diddams_prl_2000_05_300thzcomb_primary` | Scott  primary metric | see paper | see paper | [Diddams PRL_2000_05_300THzComb](topics/optical-frequency-combs/papers/Diddams PRL_2000_05_300THzComb.yaml) |
 | `met.digital_servo_control_bandwidth_w25` | 数字伺服控制带宽（Wang 2025） | 1.1 MHz | Xilinx 7k325t @400 MHz 主时钟；板级延迟 <250 ns；100 MHz E… | [wang2025](topics/optical-frequency-combs/papers/wang2025.yaml) |
 | `met.diode_pumped_comb_slope_efficiency_h01` | 二极管泵浦梳光学斜率效率（Holzwarth 2001） | 39% | Cr:LiSAF KLM 锁模激光器，670 nm 激光二极管泵浦（2×350 mW）， Z-fo… | [holzwarth2001](topics/optical-frequency-combs/papers/holzwarth2001.yaml) |
 | `met.dks_comb_bandwidth` | DKS 微梳光谱带宽 | >1 octave（Si₃N₄ 微谐振腔，双色散波，THz 模式间距） | Si₃N₄ 集成微环谐振腔，色散工程优化四阶色散，CW 泵浦，数十 mW 泵浦功率 | [kippenberg2018](topics/optical-frequency-combs/papers/kippenberg2018.yaml) |
 | `met.dpssl_ofc_timing_jitter_pc15` | 锁定 DPSSL OFC 本征定时抖动（BOC 光学测量，Portuondo-Campa… | 等效相噪低至 −148 dBc/Hz（1 Hz–1 kHz，两源共同贡献） | 完全锁定 OFC（f_rep + f₀ 均闭环），BOC 无反馈式同步（重频锁至共同光参考即已同步） | [portuondo-campa2015](topics/optical-frequency-combs/papers/portuondo-campa2015.yaml) |
 | `met.dual_branch_transfer_stability_r18` | 双分支梳波长传递稳定度（1560 nm → 780 nm） | 3×10⁻¹⁸ @ 1 s, 1×10⁻¹⁹ @ 1000 s（Allan 偏差） | 双分支 Er:fiber 梳 + dual-branch fceo 锁定 + 被动混频噪声抵消 | [rolland2018](topics/optical-frequency-combs/papers/rolland2018.yaml) |
+| `met.eaay3676_full_primary` | primary metric | see paper | see paper | [eaay3676.full](topics/optical-frequency-combs/papers/eaay3676.full.yaml) |
 | `met.eo_comb_spectral_span_y16` | EO 天文梳光谱覆盖（Yi 2016） | ~100+ nm，中心 1559.9 nm（H 波段） | EO 调制梳 + HNLF 展宽 | [yi2016](topics/optical-frequency-combs/papers/yi2016.yaml) |
 | `met.eom_frep_transfer_bandwidth_z12` | EOM→frep 传递函数带宽（Zhang 2012，Menlo Er:fiber 梳） | — | — | [zhang2012c](topics/optical-frequency-combs/papers/zhang2012c.yaml) |
 | `met.er_fiber_comb_nir_octave_span_w04` | Er:fiber 梳 HNLF 展宽后光谱覆盖 | 1100–2200 nm（约 1 个光学倍频程） | Er:fiber 振荡器 + EDFA + 色散平坦 HNLF | [washburn2004](topics/optical-frequency-combs/papers/washburn2004.yaml) |
@@ -208,6 +270,7 @@
 | `met.frep_servo_bandwidth_z15` | f_rep 伺服带宽（EOM 通道） | ~230 kHz（EOM），闭环综合 3 kHz | Zhang 2015 拓扑，209 MHz Er:fiber | [zhang2015](topics/optical-frequency-combs/papers/zhang2015.yaml) |
 | `met.freq_accuracy_dcs_h24` | DCS 绝对频率精度（校准后） | 10 kHz（校准后）；~1 GHz（未校准，因 Δf_CW 漂移） | fr=250 MHz，Δfr=2.5 kHz，干涉图内嵌时频比对校准 | [han2024](topics/optical-frequency-combs/papers/han2024.yaml) |
 | `met.freq_resolution_dcs_h24` | DCS 频率分辨率 | 605 MHz | 数据带宽限制，仅采集 40% 单干涉图 | [han2024](topics/optical-frequency-combs/papers/han2024.yaml) |
+| `met.fu_ipc11_primary` | primary metric | see paper | see paper | [Fu IPC11](topics/optical-frequency-combs/papers/Fu IPC11.yaml) |
 | `met.hpf_instrumental_rv_precision_m19` | HPF 仪器差分 RV 漂移（同梳双纤测试） | 10 min bin 20 cm/s；300 min bin 6 cm/s；6 天内无显著漂移 | sky 与 science 两光纤同梳照射，差分求漂移；2018 多夜测试 | [metcalf2019](topics/optical-frequency-combs/papers/metcalf2019.yaml) |
 | `met.hydrogen_1s2s_frequency_accuracy` | 氢原子 1S-2S 跃迁频率测量精度 | 4.2 parts in 10¹⁵ 分数精度（~10 Hz 绝对不确定度） | 频率梳锁定至铯喷泉钟（SI 秒定义），MPQ 实验 | [giunta2019](topics/optical-frequency-combs/papers/giunta2019.yaml) |
 | `met.inflight_f2f_beat_snr_l16` | In-flight f-2f beat-note SNR | ≥ 30 dB in 100 kHz RBW throughout flight | ['TEXUS-51 flight, 100 MHz Er:fiber comb, HNLF su… | [lezius2016](topics/optical-frequency-combs/papers/lezius2016.yaml) |
@@ -218,9 +281,17 @@
 | `met.intracavity_peak_power_h07` | 腔内峰值功率（Hartl 2007） | 230 MW | 腔内平均功率 3 kW；腔内脉宽 95 fs；frep=136 MHz | [hartl2007](topics/optical-frequency-combs/papers/hartl2007.yaml) |
 | `met.intracavity_pulse_energy` | Intracavity pulse energy | 48 | EDFL ring laser | [matsas1992](topics/optical-frequency-combs/papers/matsas1992.yaml) |
 | `met.ir_power_before_hhg_z22` | HHG 前基频脉冲平均功率与脉宽 | >50 W 平均 / <150 fs | Yb:fiber LMF 功率放大器输出 | [zhang2022](topics/optical-frequency-combs/papers/zhang2022.yaml) |
+| `met.jiang_ieee_pj_2011_primary` | Scott 2011 primary metric | see paper | see paper | [Jiang ieee pj 2011](topics/optical-frequency-combs/papers/Jiang ieee pj 2011.yaml) |
+| `met.josab_38_3_932_primary` | Benjamin  primary metric | see paper | see paper | [josab-38-3-932](topics/optical-frequency-combs/papers/josab-38-3-932.yaml) |
+| `met.laser___photonics_reviews___20_primary` | primary metric | see paper | see paper | [Laser   Photonics Reviews - 2021 - Cuyvers - L](topics/optical-frequency-combs/papers/Laser   Photonics Reviews - 2021 - Cuyvers - L.yaml) |
+| `met.laser_phys__24__2014__015105_primary` | primary metric | see paper | see paper | [Laser Phys. 24 (2014) 015105](topics/optical-frequency-combs/papers/Laser Phys. 24 (2014) 015105.yaml) |
 | `met.lasing_wavelength` | Lasing wavelength | 1.55 | EDFL | [matsas1992](topics/optical-frequency-combs/papers/matsas1992.yaml) |
 | `met.li_d1_measurement_uncertainty_r19` | Li 原子 D1 线频率测量应用的可达测量不确定度（Rao 2019 目标） | ~10 Hz @ 100 s（对应 kHz 量级绝对准确度需求） | 梳锁定到外部微波参考；100 s 积分；Li D1 ~447 THz | [rao2019](topics/optical-frequency-combs/papers/rao2019.yaml) |
 | `met.lock_uptime_s14` | 连续无相位滑移锁定时间 | >35 h 连续无相位滑移（实验室，1 s 门时计数 f_ceo σ = 0.62 mHz / f_opt σ = 0… | 实验室环境；最终受限于致动器动态范围或偶发电气瞬态 | [sinclair2014](topics/optical-frequency-combs/papers/sinclair2014.yaml) |
+| `met.low_noise_comb1_primary` | primary metric | see paper | see paper | [low noise comb1](topics/optical-frequency-combs/papers/low noise comb1.yaml) |
+| `met.lz01027879_primary` | Holzwarth 2001 primary metric | see paper | see paper | [LZ01027879](topics/optical-frequency-combs/papers/LZ01027879.yaml) |
+| `met.lz01030765_primary` | primary metric | see paper | see paper | [LZ01030765](topics/optical-frequency-combs/papers/LZ01030765.yaml) |
+| `met.menlo_______primary` | primary metric | see paper | see paper | [Menlo激光系统专利](topics/optical-frequency-combs/papers/Menlo激光系统专利.yaml) |
 | `met.microcomb_30dB_bandwidth_s18` | 集成微梳 30-dB 光谱带宽 | 8.6 THz (72 nm) 单孤子；13.4 THz (105 nm) 双孤子 | 近 1550 nm 泵浦；Pelec = 130 / 162 mW 两种拓扑 | [stern2018](topics/optical-frequency-combs/papers/stern2018.yaml) |
 | `met.microcomb_comb_line_power_s18` | 集成微梳梳齿总光功率 / 单齿功率 | 0.24 mW 总梳功率（双用环拓扑，Pelec=130 mW）；80 µW（Sagnac 模块化拓扑，Pelec=1… | 单孤子 / 双孤子 30-dB bandwidth 8.6–13.4 THz | [stern2018](topics/optical-frequency-combs/papers/stern2018.yaml) |
 | `met.microcomb_conversion_efficiency_g19` | 微梳泵-梳功率转换效率 | 单孤子态典型 1–3%（∝ 孤子数 N）；正常 GVD 暗脉冲/platicon 显著更高 | Si3N4 / Silica DKS，1.55 μm 泵浦 | [gaeta2019](topics/optical-frequency-combs/papers/gaeta2019.yaml) |
@@ -250,15 +321,42 @@
 | `met.mll_rf_linewidth_c21` | 集成 MLL 重频 RF 线宽 | 1 Hz | III-V/SiN MLL，755 MHz 重频 | [cuyvers2021](topics/optical-frequency-combs/papers/cuyvers2021.yaml) |
 | `met.mode_spacing_s19` | 微梳原生线间距 | 22.1 | 3 mm silica wedge 微腔 FSR | [suh2019](topics/optical-frequency-combs/papers/suh2019.yaml) |
 | `met.mpf_reconfiguration_time_s22` | 微波光子滤波器重构时间 | ~53 μs | AlGaAsOI 微梳 + SOI 硅光 OSS 热调加权；非色散 TDL 与色散 SMF TDL… | [shu2022](topics/optical-frequency-combs/papers/shu2022.yaml) |
+| `met.nature_533__517_520__26_may_20_primary` | Bryce  primary metric | see paper | see paper | [Nature 533, 517–520 (26 May 2016)](topics/optical-frequency-combs/papers/Nature 533, 517–520 (26 May 2016).yaml) |
+| `met.naturephoton_xuvcomb_phase_mat_primary` | Christoph  primary metric | see paper | see paper | [NaturePhoton_XUVcomb phase match 2018](topics/optical-frequency-combs/papers/NaturePhoton_XUVcomb phase match 2018.yaml) |
+| `met.ncomms10436_primary` | primary metric | see paper | see paper | [ncomms10436](topics/optical-frequency-combs/papers/ncomms10436.yaml) |
+| `met.nelson1997_article_ultrashort__primary` | Nelson  primary metric | see paper | see paper | [Nelson1997_Article_Ultrashort-pulseFiberRingLa](topics/optical-frequency-combs/papers/Nelson1997_Article_Ultrashort-pulseFiberRingLa.yaml) |
+| `met.ning_2020_chinese_phys__lett___primary` | Ning  primary metric | see paper | see paper | [Ning_2020_Chinese_Phys._Lett._37_064202](topics/optical-frequency-combs/papers/Ning_2020_Chinese_Phys._Lett._37_064202.yaml) |
 | `met.nlos_vibrometry_accuracy_h24` | NLOS 测振精度 | 数十 Hz（~10 Hz 量级） | NLOS 几何，多帧相位跟踪 | [huang2024](topics/optical-frequency-combs/papers/huang2024.yaml) |
 | `met.noise_cancelled_transfer_stability_f22` | 噪声抵消后频率传递稳定度（Fermann 2022 综述） | — | — | [fermann2022](topics/optical-frequency-combs/papers/fermann2022.yaml) |
 | `met.number_of_comb_lines_w17` | Number of coherent comb lines | thousands of equidistant lines across the C-band | ['Above mode-locking threshold; single operating … | [wang2017](topics/optical-frequency-combs/papers/wang2017.yaml) |
+| `met.oe_18_13_13385_primary` | Kevin 2010 primary metric | see paper | see paper | [oe-18-13-13385](topics/optical-frequency-combs/papers/oe-18-13-13385.yaml) |
+| `met.oe_19_24_24387_primary` | William  primary metric | see paper | see paper | [oe-19-24-24387](topics/optical-frequency-combs/papers/oe-19-24-24387.yaml) |
+| `met.oe_21_15_17615_primary` | Gerginov 2013 primary metric | see paper | see paper | [oe-21-15-17615](topics/optical-frequency-combs/papers/oe-21-15-17615.yaml) |
+| `met.oe_21_22_27057_primary` | Helen 2013 primary metric | see paper | see paper | [oe-21-22-27057](topics/optical-frequency-combs/papers/oe-21-22-27057.yaml) |
+| `met.oe_22_10_11788_primary` | William  primary metric | see paper | see paper | [oe-22-10-11788](topics/optical-frequency-combs/papers/oe-22-10-11788.yaml) |
+| `met.oe_22_5_5564_primary` | Irina 2014 primary metric | see paper | see paper | [oe-22-5-5564](topics/optical-frequency-combs/papers/oe-22-5-5564.yaml) |
+| `met.oe_23_19_24342_primary` | Leibrandt  primary metric | see paper | see paper | [oe-23-19-24342](topics/optical-frequency-combs/papers/oe-23-19-24342.yaml) |
+| `met.oe_24_3_3095_primary` | Diddams 2016 primary metric | see paper | see paper | [oe-24-3-3095](topics/optical-frequency-combs/papers/oe-24-3-3095.yaml) |
+| `met.oe_25_18_21719_primary` | Udem  primary metric | see paper | see paper | [oe-25-18-21719](topics/optical-frequency-combs/papers/oe-25-18-21719.yaml) |
+| `met.oe_28_9_12755_primary` | primary metric | see paper | see paper | [oe-28-9-12755](topics/optical-frequency-combs/papers/oe-28-9-12755.yaml) |
+| `met.oe_30_7_11266_primary` | primary metric | see paper | see paper | [oe-30-7-11266](topics/optical-frequency-combs/papers/oe-30-7-11266.yaml) |
 | `met.ofc_timing_jitter_floor` | OFC 模间定时抖动本底 | <1 fs（主动锁定至超稳激光后，BOMPD 方案） | OFC frep 通过 BOMPD 锁定至光学参考，积分频率范围 1 Hz–1 MHz | [endo2018](topics/optical-frequency-combs/papers/endo2018.yaml) |
+| `met.ol_32_19_2870_primary` | Jones  primary metric | see paper | see paper | [ol-32-19-2870](topics/optical-frequency-combs/papers/ol-32-19-2870.yaml) |
+| `met.ol_35_10_1668_primary` | primary metric | see paper | see paper | [ol-35-10-1668](topics/optical-frequency-combs/papers/ol-35-10-1668.yaml) |
+| `met.ol_36_19_3912_primary` | Martin 2011 primary metric | see paper | see paper | [ol-36-19-3912](topics/optical-frequency-combs/papers/ol-36-19-3912.yaml) |
+| `met.ol_40_21_5117_primary` | primary metric | see paper | see paper | [ol-40-21-5117](topics/optical-frequency-combs/papers/ol-40-21-5117.yaml) |
+| `met.ol_46_21_5429_primary` | Tobias  primary metric | see paper | see paper | [ol-46-21-5429](topics/optical-frequency-combs/papers/ol-46-21-5429.yaml) |
+| `met.ol_47_20_5417_primary` | primary metric | see paper | see paper | [ol-47-20-5417](topics/optical-frequency-combs/papers/ol-47-20-5417.yaml) |
+| `met.ol_47_21_5591_primary` | John  primary metric | see paper | see paper | [ol-47-21-5591](topics/optical-frequency-combs/papers/ol-47-21-5591.yaml) |
+| `met.ol_50_14_4490_primary` | primary metric | see paper | see paper | [ol-50-14-4490](topics/optical-frequency-combs/papers/ol-50-14-4490.yaml) |
 | `met.on_chip_mid_ir_power_h17` | 片上中红外 DFG 输出功率（Hickstein 2017） | ~0.3 mW（3500–4000 nm 区间） | 2600 nm 宽波导；TM 泵浦；DFG 来自展宽泵浦与长波色散波的差频 | [hickstein2017](topics/optical-frequency-combs/papers/hickstein2017.yaml) |
 | `met.open_path_length_midir_dcs_y19` | 开阔大气路径长度（中红外 DCS，Ycas 2019） | 162 m（小回射器 63.5 mm）与 1 km（大回射器 127 mm） | NIST Boulder 园区 DCS 链路；2018 年 6 月测量 | [ycas2019](topics/optical-frequency-combs/papers/ycas2019.yaml) |
 | `met.operating_temperature_range_l16` | Qualified operating temperature range | 10–40 °C baseplate | — | [lezius2016](topics/optical-frequency-combs/papers/lezius2016.yaml) |
+| `met.optica_3_12_1381_____primary` | primary metric | see paper | see paper | [optica-3-12-1381_看图王](topics/optical-frequency-combs/papers/optica-3-12-1381_看图王.yaml) |
+| `met.optica_3_9_995_primary` | primary metric | see paper | see paper | [optica-3-9-995](topics/optical-frequency-combs/papers/optica-3-9-995.yaml) |
 | `met.optical_frequency_measurement_accuracy_u02` | 光学频率测量准确度（Udem 2002 综述报告） | 1.9×10⁻¹⁴（氢 1S-2S 跃迁，受限于氢光谱仪再现性而非频率梳） | Ti:sapphire 频率梳 + PCF 展宽，f_rep 锁定至铯喷泉钟（LPTF）， 486… | [udem2002](topics/optical-frequency-combs/papers/udem2002.yaml) |
 | `met.optical_frequency_measurement_uncertainty_d00` | 光学频率测量统计不确定度（Diddams 2000，282 THz@1064 nm） | ~2×10⁻¹³（2500 s，~50 Hz 于 282 THz） | 10 GHz 本振锁定至本地 Rb，GPS 共视至 NIST Cs 集合；tracking osc… | [diddams2000](topics/optical-frequency-combs/papers/diddams2000.yaml) |
+| `met.optics_letters_2014_vol__39__n_primary` | Kim 2014 primary metric | see paper | see paper | [OPTICS LETTERS 2014 Vol. 39, No. 6 1553-1556](topics/optical-frequency-combs/papers/OPTICS LETTERS 2014 Vol. 39, No. 6 1553-1556.yaml) |
 | `met.outer_scale_length_c20` | 近地水平路径外尺度 L₀（拟合值） | 1.6 m（beam 高度）；敏感性测试范围 1–10 m | L₀ ≈ 光束离地高度（Refs. [4,21,22,26]） | [caldwell2020](topics/optical-frequency-combs/papers/caldwell2020.yaml) |
 | `met.parametric_oscillation_threshold` | 参量振荡阈值功率 | sub-μW（超高 Q silica/crystalline）至 ~300 mW（Si₃N₄，Q = 10⁵–10⁶） | P_th ∝ n₀²V_eff/(n₂Q²)；silica microtoroid Q > 10⁸… | [kippenberg2011](topics/optical-frequency-combs/papers/kippenberg2011.yaml) |
 | `met.peak_power_2um_comb_x20` | 2 µm 压缩脉冲峰值功率 | ~104 kW（主峰含 32% 能量，含 10% Fresnel 反射损失） | 327 mW 平均功率，100 MHz，1.4 cycle | [xing2020](topics/optical-frequency-combs/papers/xing2020.yaml) |
@@ -267,6 +365,12 @@
 | `met.phire_distance_precision_averaged_c18` | PHIRE 距离测量精度（平均后，Carlson 2018） | — | — | [carlson2018](topics/optical-frequency-combs/papers/carlson2018.yaml) |
 | `met.phire_distance_precision_c18` | PHIRE 距离测量精度（Carlson 2018） | — | — | [carlson2018](topics/optical-frequency-combs/papers/carlson2018.yaml) |
 | `met.phire_nar_extended_c18` | PHIRE 扩展非模糊距离范围（Carlson 2018） | — | — | [carlson2018](topics/optical-frequency-combs/papers/carlson2018.yaml) |
+| `met.physreva_82_primary` | Coddington  primary metric | see paper | see paper | [PhysRevA.82](topics/optical-frequency-combs/papers/PhysRevA.82.yaml) |
+| `met.physreva_89_023805_primary` | Giorgetta  primary metric | see paper | see paper | [PhysRevA.89.023805](topics/optical-frequency-combs/papers/PhysRevA.89.023805.yaml) |
+| `met.physrevapplied_21_034066_primary` | primary metric | see paper | see paper | [PhysRevApplied.21.034066](topics/optical-frequency-combs/papers/PhysRevApplied.21.034066.yaml) |
+| `met.physrevlett_132_233802_primary` | primary metric | see paper | see paper | [PhysRevLett.132.233802](topics/optical-frequency-combs/papers/PhysRevLett.132.233802.yaml) |
+| `met.physrevlett_85_2264_primary` | primary metric | see paper | see paper | [PhysRevLett.85.2264](topics/optical-frequency-combs/papers/PhysRevLett.85.2264.yaml) |
+| `met.physrevx_3_031003_primary` | Scott  primary metric | see paper | see paper | [PhysRevX.3.031003](topics/optical-frequency-combs/papers/PhysRevX.3.031003.yaml) |
 | `met.pulse_duration` | Pulse duration of the generated solitons | 1.55 | EDFL ring laser with NPR | [matsas1992](topics/optical-frequency-combs/papers/matsas1992.yaml) |
 | `met.pulse_duration_cycles_x20` | 2 µm 脉冲持续时间（以光周期计） | 9.5 fs（1.4 光周期 @2 µm） | 327 mW 输出，1.94 W C-band 泵浦，SHG-FROG 重建误差 1.1%，±1.… | [xing2020](topics/optical-frequency-combs/papers/xing2020.yaml) |
 | `met.pulse_duration_intracavity_h07` | 腔内脉冲宽度（Hartl 2007） | 95 fs | 腔内色散补偿后；CPA 输出 75 fs（注入前） | [hartl2007](topics/optical-frequency-combs/papers/hartl2007.yaml) |
@@ -275,6 +379,7 @@
 | `met.pump_pulse_energy_threshold_h17` | 片上 f-2f 自参考泵浦脉冲能量阈值（Hickstein 2017） | 0.8 nJ（80 mW @ 100 MHz） | AlN 波导；1560 nm；~80 fs 脉宽 | [hickstein2017](topics/optical-frequency-combs/papers/hickstein2017.yaml) |
 | `met.pump_to_rin_transfer_z12` | 泵浦电流→激光器 RIN 传递系数（Zhang 2012） | — | — | [zhang2012c](topics/optical-frequency-combs/papers/zhang2012c.yaml) |
 | `met.ramsey_comb_fractional_accuracy` | Ramsey-comb 光谱分数频率精度 | ~10⁻¹² 级分数精度（H₂ 双光子跃迁，202 nm） | H₂ 分子 EF¹Σ_g⁺ ← X¹Σ_g⁺ 双光子跃迁，深紫外 202 nm (1,485 TH… | [picque2019](topics/optical-frequency-combs/papers/picque2019.yaml) |
+| `met.rapid_and_precise_absolute_dis_primary` | Swann  primary metric | see paper | see paper | [Rapid_and_precise_absolute_distance_measurements_NIST](topics/optical-frequency-combs/papers/Rapid_and_precise_absolute_distance_measurements_NIST.yaml) |
 | `met.received_power_per_ifg_h24` | 单干涉图接收光功率（回波功率） | 首帧 >100 nW；后续帧 >5 nW | 门限触发，中心爆发段，113 km 路径，1 h 累积 | [han2024](topics/optical-frequency-combs/papers/han2024.yaml) |
 | `met.relative_frequency_instability_allan_k18` | 支间相对频率 Allan 偏差（Kashiwagi 2018，FNDC 开启） | 1.4×10⁻¹⁶ @1 s（拍频-锁定支，FNDC on）；1.8×10⁻¹⁶ @1 s（应用支，FNDC on）；… | 两套共用 1064 nm USL（f_beat）与 1542 nm CW（FNDC）；f_rep=… | [kashiwagi2018](topics/optical-frequency-combs/papers/kashiwagi2018.yaml) |
 | `met.relative_frequency_uncertainty_modallan_k18` | 支间相对频率 modified Allan 偏差（长期，Kashiwagi 2018） | 9.7×10⁻²¹ @ 126500 s（mod σ_y）；加权标准差（单梳）1.6×10⁻²⁰ | 总测量时长 510000 s（mod σ_y 序列）与 600000 s（移动平均序列）； 除以 … | [kashiwagi2018](topics/optical-frequency-combs/papers/kashiwagi2018.yaml) |
@@ -286,10 +391,26 @@
 | `met.rin_erfiber_z17` | 相对强度噪声（RIN） | -135 dBc/Hz（10 Hz–1 kHz）；-130 dBc/Hz @1 Hz；< -145 dBc/Hz @ … | ~10 mW 耦合至 Thorlabs DET10 光电探测器；SR785 FFT 分析；不同泵浦… | [zhang2017](topics/optical-frequency-combs/papers/zhang2017.yaml) |
 | `met.rotational_constant_br_c20` | 40CaH+ 转动常数 BR（Chou 2020） | 142 501 777.9 ± 1.7 kHz（相对精度 1.2×10⁻⁸） | 联合 J ∈ {1,2,3,4} → J+2 共 4 条跃迁；含四阶离心修正 | [chou2020](topics/optical-frequency-combs/papers/chou2020.yaml) |
 | `met.rotational_transition_frequency_uncertainty_c20` | 转动跃迁绝对频率不确定度（Chou 2020，40CaH+） | ~1 ppb（~1×10⁻⁹）；统计 <100 Hz，系统 2.4–4.5 kHz | B=0.357(1) mT；~1.6 ms 方脉冲 CRPT；J ∈ {1,2,3,4} → J+… | [chou2020](topics/optical-frequency-combs/papers/chou2020.yaml) |
+| `met.rsi25_ar_00704_primary` | primary metric | see paper | see paper | [RSI25-AR-00704](topics/optical-frequency-combs/papers/RSI25-AR-00704.yaml) |
 | `met.rv_calibration_uncertainty_s19` | Keck II/NIRSPEC 定标不确定度 | ≤5 | 2017-09-10 UTC，望远镜静态指向，soliton + EO comb 交替 | [suh2019](topics/optical-frequency-combs/papers/suh2019.yaml) |
+| `met.s00340_004_1547_x_primary` | primary metric | see paper | see paper | [s00340-004-1547-x](topics/optical-frequency-combs/papers/s00340-004-1547-x.yaml) |
+| `met.s00340_004_1548_9_primary` | primary metric | see paper | see paper | [s00340-004-1548-9](topics/optical-frequency-combs/papers/s00340-004-1548-9.yaml) |
+| `met.s00340_013_5439_9_primary` | Stephanie  primary metric | see paper | see paper | [s00340-013-5439-9](topics/optical-frequency-combs/papers/s00340-013-5439-9.yaml) |
+| `met.s41377_022_00947_w_primary` | primary metric | see paper | see paper | [s41377-022-00947-w](topics/optical-frequency-combs/papers/s41377-022-00947-w.yaml) |
+| `met.s41467_024_45924_6__1__primary` | primary metric | see paper | see paper | [s41467-024-45924-6 (1)](topics/optical-frequency-combs/papers/s41467-024-45924-6 (1).yaml) |
+| `met.s41566_018_0347_5_primary` | Theodor  primary metric | see paper | see paper | [s41566-018-0347-5](topics/optical-frequency-combs/papers/s41566-018-0347-5.yaml) |
+| `met.s41566_019_0358_x_primary` | Alexander  primary metric | see paper | see paper | [s41566-019-0358-x](topics/optical-frequency-combs/papers/s41566-019-0358-x.yaml) |
+| `met.s41566_019_0520_5_primary` | primary metric | see paper | see paper | [s41566-019-0520-5](topics/optical-frequency-combs/papers/s41566-019-0520-5.yaml) |
+| `met.s41566_024_01525_9_primary` | primary metric | see paper | see paper | [s41566-024-01525-9](topics/optical-frequency-combs/papers/s41566-024-01525-9.yaml) |
+| `met.s41586_018_0598_9_primary` | Alexander  primary metric | see paper | see paper | [s41586-018-0598-9](topics/optical-frequency-combs/papers/s41586-018-0598-9.yaml) |
+| `met.s41586_022_04579_3_primary` | John  primary metric | see paper | see paper | [s41586-022-04579-3](topics/optical-frequency-combs/papers/s41586-022-04579-3.yaml) |
+| `met.s41586_022_05225_8_primary` | Emily  primary metric | see paper | see paper | [s41586-022-05225-8](topics/optical-frequency-combs/papers/s41586-022-05225-8.yaml) |
+| `met.schliesser_____2012___mid_infr_primary` | Theodor  primary metric | see paper | see paper | [Schliesser 等 - 2012 - Mid-infrared frequency combs](topics/optical-frequency-combs/papers/Schliesser 等 - 2012 - Mid-infrared frequency combs.yaml) |
+| `met.science_abo2631_primary` | primary metric | see paper | see paper | [science.abo2631](topics/optical-frequency-combs/papers/science.abo2631.yaml) |
 | `met.self_ref_comb_electrical_power_m18` | 全自参考梳总电功率 | <5 W | Er:fiber 梳（100 MHz）+ SiN 波导 f-2f + 光纤电阻调制器温控 | [manurkar2018](topics/optical-frequency-combs/papers/manurkar2018.yaml) |
 | `met.servo_bandwidth_m07` | fceo 泵电流伺服带宽（McFerran 2007） | ~80 kHz（从无相位超前的 ~5 kHz 扩展） | phase-lead 补偿 + 泵电流直接反馈端口 | [mcferran2007](topics/optical-frequency-combs/papers/mcferran2007.yaml) |
 | `met.sin_waveguide_f2f_power_c17` | SiN 波导 f-2f 自参考入射功率 | 11.3 mW（入射芯片） | SiN 波导（3400 nm 宽 × 700 nm 厚 × 1 cm 长）+ Er:fiber 梳… | [carlson2017](topics/optical-frequency-combs/papers/carlson2017.yaml) |
+| `met.sinclair2015_primary` | Sinclair  primary metric | see paper | see paper | [sinclair2015](topics/optical-frequency-combs/papers/sinclair2015.yaml) |
 | `met.sind_nd_absorption_peak_c18` | SiN:D N-D 吸收峰（Chiles 2018） | — | — | [chiles2018](topics/optical-frequency-combs/papers/chiles2018.yaml) |
 | `met.sind_propagation_loss_c18` | SiN:D C 波段传播损耗（Chiles 2018） | — | — | [chiles2018](topics/optical-frequency-combs/papers/chiles2018.yaml) |
 | `met.sind_quality_factor_c18` | SiN:D 微环 Q 因子（Chiles 2018） | — | — | [chiles2018](topics/optical-frequency-combs/papers/chiles2018.yaml) |
@@ -299,7 +420,9 @@
 | `met.spectral_coverage_h24` | 长程 DCS 光谱覆盖范围（3 dB 带宽） | ~50 cm⁻¹（6455.5–6505.5 cm⁻¹，≈7 nm @1545 nm，≈6000 梳齿） | 两级 EDFA + 20 nm 滤光 → 3 dB=7 nm | [han2024](topics/optical-frequency-combs/papers/han2024.yaml) |
 | `met.spectral_coverage_s19` | NIRSPEC 可用谱覆盖 | 1471–1620 | 孤子梳经非线性光纤展宽后，覆盖 NIRSPEC echelle orders 44–51 | [suh2019](topics/optical-frequency-combs/papers/suh2019.yaml) |
 | `met.spectrum_after_hnlf_li17` | 全 PM Yb NALM 梳展宽后光谱范围 | 650–1400 nm（覆盖 >1 个倍频程） | Yb 光纤放大后进入 HNLF | [li2017b](topics/optical-frequency-combs/papers/li2017b.yaml) |
+| `met.srep05134_1_____primary` | primary metric | see paper | see paper | [srep05134-1_看图王](topics/optical-frequency-combs/papers/srep05134-1_看图王.yaml) |
 | `met.stellar_rv_precision_nir_m19` | NIR 恒星 RV 精度（HPF + EO-SiN 梳定标，Barnard 星） | 5 min 单次 2.83 m/s；1 h track bin 1.53 m/s RMS（3 个月时间尺度） | HET 10 m；Barnard 星（M4）；2018-05 起 118 次高 SNR 观测；5 … | [metcalf2019](topics/optical-frequency-combs/papers/metcalf2019.yaml) |
+| `met.supercontinuum_generation_of_h_primary` | primary metric | see paper | see paper | [Supercontinuum generation of highly nonlinear fibers pumped by 1.57-μm laser soliton](topics/optical-frequency-combs/papers/Supercontinuum generation of highly nonlinear fibers pumped by 1.57-μm laser soliton.yaml) |
 | `met.swap_budget_l16` | SWaP budget of space-qualified comb | 22 L, 22 kg, 70 W | ['Integrated payload including optics, electronic… | [lezius2016](topics/optical-frequency-combs/papers/lezius2016.yaml) |
 | `met.tf_ln_spectral_coverage_w24` | TF-LN UV/VIS 梳光谱覆盖 | 330–2400 nm 无间断 | 90 pJ @ 1550 nm 输入，TF-LN 多段啁啾 QPM 波导 | [wu2024](topics/optical-frequency-combs/papers/wu2024.yaml) |
 | `met.tf_ln_uv_conversion_efficiency_w24` | UV/VIS 段转换效率 | 17%（350–550 nm） | TF-LN 多段 QPM，90 pJ 泵浦 | [wu2024](topics/optical-frequency-combs/papers/wu2024.yaml) |
@@ -308,15 +431,20 @@
 | `met.tpfc_photon_per_pulse_c22` | TPFC 最低平均光子数 / 脉冲（测距可检测） | 1/77（接近量子极限 2×） | TPFC 追踪双梳测距 | [caldwell2022](topics/optical-frequency-combs/papers/caldwell2022.yaml) |
 | `met.tpfc_ranging_precision_c22` | TPFC 测距精度地板 | 0.7 nm（4.8 as 飞行时间） | TPFC 追踪双梳测距系统 | [caldwell2022](topics/optical-frequency-combs/papers/caldwell2022.yaml) |
 | `met.trace_gas_sensitivity` | 痕量气体检测灵敏度 | ~1 ppb（H₂O₂ @ ~3.75 μm，腔增强频率梳傅里叶变换光谱） | OPO 中红外频率梳 + 高精细度增强腔（finesse >3800）+ Michelson-ba… | [schliesser2012](topics/optical-frequency-combs/papers/schliesser2012.yaml) |
+| `met.udem_____2002___optical_freque_primary` | Udem  primary metric | see paper | see paper | [Udem 等 - 2002 - Optical frequency metrology](topics/optical-frequency-combs/papers/Udem 等 - 2002 - Optical frequency metrology.yaml) |
 | `met.uv_vis_harmonic_bandwidth_l22` | UV/VIS 谐波光梳带宽 | 200–650 nm | ZnO 固态 HHG from 1550 nm | [lesko2022](topics/optical-frequency-combs/papers/lesko2022.yaml) |
 | `met.vibration_qualification_l16` | Qualified vibration / shock levels | 8.1 g_rms random (20–2000 Hz), 25 g shock | ['Sounding-rocket qualification campaign'] | [lezius2016](topics/optical-frequency-combs/papers/lezius2016.yaml) |
 | `met.vibration_tolerance_s14` | 维持光锁的振动耐受水平 | 0.5 g rms（振动台 1/f 谱 10 Hz–1 kHz，f_opt 锁上限）；>0.5 g 峰值（车辆，路况加… | 无额外隔振，光学盒直接安装；供电：小型发电机（车辆） | [sinclair2014](topics/optical-frequency-combs/papers/sinclair2014.yaml) |
 | `met.vipa_spectral_resolution` | VIPA 交叉色散光谱分辨率 | ~600 MHz（最佳报告值） | VIPA 标准具 + 交叉色散光栅，二维 CCD 检测 | [picque2019](topics/optical-frequency-combs/papers/picque2019.yaml) |
+| `met.visible_to_ultraviolet_frequen_primary` | Ryan  primary metric | see paper | see paper | [Visible-to-ultraviolet_frequency_comb_generati](topics/optical-frequency-combs/papers/Visible-to-ultraviolet_frequency_comb_generati.yaml) |
 | `met.voc_path_integrated_sensitivity_y19` | 路径积分 VOC 浓度灵敏度（Ycas 2019，1 min 平均） | 丙酮 5.7 ppm·m；异丙醇 2.4 ppm·m（均在 162 m 释放实验）； 乙烷 0.4 ppb（1 km … | 1 min 相干平均；Hitran 2016 解杂 + PNNL 宽带拟合；释放前 3500 s … | [ycas2019](topics/optical-frequency-combs/papers/ycas2019.yaml) |
 | `met.vuv_comb_tunability_z22` | VUV 梳波长可调谐范围 | ~148–153 nm（对应 1040–1070 nm 基频 × 1/7） | Yb:fiber 梳 + 可调带通滤波 + 增强腔 H7 | [zhang2022](topics/optical-frequency-combs/papers/zhang2022.yaml) |
 | `met.wall_plug_power_w17` | Electrical drive power / wall-plug | sub-watt chip-level electrical drive | — | [wang2017](topics/optical-frequency-combs/papers/wang2017.yaml) |
+| `met.washburn_fiberlaser_lock_primary` | Brian  primary metric | see paper | see paper | [washburn_fiberlaser_lock](topics/optical-frequency-combs/papers/washburn_fiberlaser_lock.yaml) |
 | `met.xuv_harmonic_power_p18` | XUV 单谐波功率（Porat 2018） | ~2 mW | f_rep = 77 MHz 飞秒增强腔，Ar+He 混合气体（背压温度 T = 800 K）， … | [porat2018](topics/optical-frequency-combs/papers/porat2018.yaml) |
 | `met.yb_fiber_comb_power_cpa_l20` | Yb 光纤梳 CPA 输出功率 | 132 W（180 fs，99% 主峰能量） | Yb:fiber CPA 系统（250 MHz frep）+ grism 压缩器 | [luo2020](topics/optical-frequency-combs/papers/luo2020.yaml) |
+| `met.zhang_2022_chinese_phys__b_31__primary` | Wang  primary metric | see paper | see paper | [Zhang_2022_Chinese_Phys._B_31_054210](topics/optical-frequency-combs/papers/Zhang_2022_Chinese_Phys._B_31_054210.yaml) |
+| `met.zhang_yy__ifcs_2014_primary` | primary metric | see paper | see paper | [Zhang yy  IFCS 2014](topics/optical-frequency-combs/papers/Zhang yy  IFCS 2014.yaml) |
 
 ## shared
 
@@ -325,9 +453,14 @@
 | ID | Name | Best Value | Conditions | Source |
 |----|------|------------|------------|--------|
 | `met.allan_deviation_chiodo2013_laser_to_laser` | Chiodo 2013 双激光器互比 Allan 偏差 σ_y(τ) | σ_y(0.2 s) ≈ 1×10⁻¹⁴（双激光器互比）；σ_y(1 s) ≈ 5×10⁻¹⁴（vs 独立参考源） | τ=0.2 s 最优；无扫频静态锁定；Calern 台址（海拔 1270m，气压低）；采样时间 1… | [chiodo2013](topics/shared/papers/chiodo2013.yaml) |
+| `met.am_pm_conversion_coefficient_ingaas` | InGaAs pin photodiode AM-PM conversion coeff… | device-dependent (low in linear regime, increases significa… | Er:fiber femtosecond laser, 100 MHz repetition ra… | [s00340-011-4710-1](topics/shared/papers/s00340-011-4710-1.yaml) |
+| `met.fdl_locking_noise_floor_g25` | FDL locking noise white frequency floor | characterized white frequency noise floor | FDL-based laser stabilization system, ARTEMIS lab | [oe-33-16-35028](topics/shared/papers/oe-33-16-35028.yaml) |
 | `met.fractional_frequency_instability_sigma_y` | 分数频率不稳定度 σ_y(τ)（Allan 偏差通用度量，landmark 定义） | N/A（度量定义而非测量实例；具体数值见本库数十个派生 met.*allan_deviation_* 节点） | 跨整个知识库适用；每个实例指标的条件由其所在 paper YAML 给出；度量自身在 tau >=… | [allan1966](topics/shared/papers/allan1966.yaml) |
 | `met.hc_arf_attenuation_480nm_belardi2015` | Belardi 2015 HC-ARF 可见光波段最低损耗 @ 480 nm | 175 dB/km @ 480 nm | DAR 自由芯边界结构；纤芯 ~51 μm；t₁ ≈ 1.27 μm；截断法 20m→5.1m；测… | [belardi2015](topics/shared/papers/belardi2015.yaml) |
+| `met.quantum_clock_network_precision_gain` | Quantum clock network precision enhancement | Heisenberg-limited scaling with atom number (theory proposa… | M entangled clocks, each with N atoms; ideal enta… | [nphys3000 A quantum network of clocks](topics/shared/papers/nphys3000 A quantum network of clocks.yaml) |
+| `met.shot_noise_amplitude_phase_imbalance` | Shot noise amplitude-phase imbalance ratio | up to several orders of magnitude (>20 dB) imbalance | fs-level optical pulses, broadband photodetector | [Quinlan2013](topics/shared/papers/Quinlan2013.yaml) |
 | `met.similariton_compressed_pulse_fermann2000` | Fermann 2000 Similariton 压缩脉冲性能 | 68 fs 脉宽，80 kW 峰值功率（压缩比 ~38×） | Yb 放大器 30 dB 增益；光栅对压缩器；受三阶色散限制（改进设计可达 ~30 fs 变换极限） | [fermann2000](topics/shared/papers/fermann2000.yaml) |
+| `met.sub_shot_noise_phase_detection_improvement` | Sub-shot-noise phase detection improvement | several dB below classical shot noise limit | fs pulse train, balanced detection, microwave car… | [Quinlan2013_2](topics/shared/papers/Quinlan2013_2.yaml) |
 
 ### 📊 Secondary (线宽/PSD/相干)
 
@@ -337,6 +470,12 @@
 | `met.frequency_sweep_range_chiodo2013` | Chiodo 2013 光纤延迟线稳频激光器扫频范围与速率 | 线性扫频：>25 GHz，≤1 GHz/s 无稳定度退化；非线性模拟：24.8 GHz / 652 s，残余 ≈ 本征… | FBG 光纤激光器 PZT 宽调谐模式（~106 GHz 范围）；DDS 1ms 刷新；τ=9.5… | [chiodo2013](topics/shared/papers/chiodo2013.yaml) |
 | `met.hc_arf_bandwidth_first_ar_window_belardi2015` | Belardi 2015 HC-ARF 第一反共振窗传输带宽 | 0.75–1.6 μm（实测）；0.65–2.5 μm（理论 DARfbf，泄漏损耗 <1 dB/m） | 2 m 光纤；钨卤素宽带光源 + 光谱分析仪；t = 0.34 ± 0.02 μm | [belardi2015](topics/shared/papers/belardi2015.yaml) |
 | `met.similariton_output_pulse_fermann2000` | Fermann 2000 Similariton 放大器输出脉冲参数 | Δt = 2.6 ps, Δλ = 32 nm, E_out = 12 nJ, ΔτΔν ≈ 22 | 种子 200 fs / 12 pJ；3.6 m Yb 光纤；g = 1.9 m⁻¹（30 dB）；… | [fermann2000](topics/shared/papers/fermann2000.yaml) |
+
+### ❓ Unspecified
+
+| ID | Name | Best Value | Conditions | Source |
+|----|------|------------|------------|--------|
+| `met.field_comb_coherence_s14` | Field comb coherence performance | coherent operation demonstrated outside lab | field-deployable setup, non-laboratory environment | [oe-22-6-6996(1)](topics/shared/papers/oe-22-6-6996(1).yaml) |
 
 ## Time-Frequency Transfer
 
@@ -357,6 +496,7 @@
 | `met.sinclair2016_strong_turbulence_tdev` | Sinclair 2016 强湍流 12 km O-TWTFT 同步时间偏差 | 光学钟 + tip-tilt：gated TDEV ~165 as @>100 s，<1 fs @>2 s；连续数据 … | 12 km 折返 Boulder→Valmont 路径；Cn² 从 10⁻¹⁶（弱）到 10⁻¹³… | [sinclair2016](topics/time-frequency-transfer/papers/sinclair2016.yaml) |
 | `met.t2l2_ground_space_tdev_ps_exertier2014` | T2L2 地面-空间时间传递最佳 TDEV（Exertier 2014） | ~50–60 ps @ 0.1 s；τ^(-1/2) 改善；~6–8 ps @ 75 s（最小值），回升至数 10 p… | H-Maser 参考 SLR 站（Grasse/Herstmonceux）；Jason-2 单个 … | [exertier2014](topics/time-frequency-transfer/papers/exertier2014.yaml) |
 | `met.t2l2_time_stability_wettzell_exertier2010` | T2L2 Wettzell 站地面-空间时间传递稳定性（Exertier 2010） | ~40 ps @ 1 s；~7 ps @ 30 s | Wettzell H-Maser 参考；Jason-2 pass ~650 s；SLR 数据经 1… | [exertier2010](topics/time-frequency-transfer/papers/exertier2010.yaml) |
+| `met.two_way_phase_comparison_stability` | 双向相位比对稳定度 | ~10⁻²¹（基于 47 km 光纤，194 THz 光载波） | 47 km 城域光纤网络，1542 nm 超稳激光 | [calosso2013](topics/time-frequency-transfer/papers/calosso2013.yaml) |
 
 ### 📊 Secondary (线宽/PSD/相干)
 
@@ -379,17 +519,49 @@
 
 | ID | Name | Best Value | Conditions | Source |
 |----|------|------------|------------|--------|
+| `met.044201_primary` | primary metric | see paper | see paper | [044201](topics/time-frequency-transfer/papers/044201.yaml) |
+| `met.1311_4378_primary` | primary metric | see paper | see paper | [1311.4378](topics/time-frequency-transfer/papers/1311.4378.yaml) |
+| `met.1_s2_0_s1631070515000754_main_primary` | primary metric | see paper | see paper | [1-s2.0-S1631070515000754-main](topics/time-frequency-transfer/papers/1-s2.0-S1631070515000754-main.yaml) |
+| `met.251591__2__primary` | primary metric | see paper | see paper | [251591 (2)](topics/time-frequency-transfer/papers/251591 (2).yaml) |
+| `met.5_0010704_primary` | Martha  primary metric | see paper | see paper | [5.0010704](topics/time-frequency-transfer/papers/5.0010704.yaml) |
+| `met._2022__passively_stable_dissem_primary` | primary metric | see paper | see paper | [[2022] Passively stable dissemination of ultra](topics/time-frequency-transfer/papers/[2022] Passively stable dissemination of ultra.yaml) |
+| `met.art_10_1007_2fs00340_009_3832__primary` | primary metric | see paper | see paper | [art:10.1007%2Fs00340-009-3832-1](topics/time-frequency-transfer/papers/art:10.1007%2Fs00340-009-3832-1.yaml) |
 | `met.chirped_tf_sync_precision` | 啁啾光传递同步精度 σ(Δt) | ≈ 200 ps @ τ_obs ~18000 s（precision）；总 uncertainty ≈ 500 ps | PTB 149 km link, chirp 240 kHz/s, 10 MHz H-maser-… | [raupach2014_2s94vl95](topics/time-frequency-transfer/papers/raupach2014_2s94vl95.yaml) |
 | `met.coherent_optical_fiber_link_accuracy` | 相干光纤链路分数频率准确度（accuracy） | 5×10⁻¹⁹ | 642 km × 2 = 1284 km single-fiber double-round-tr… | [calonico2015_3kxj9jfq](topics/time-frequency-transfer/papers/calonico2015_3kxj9jfq.yaml) |
 | `met.coherent_optical_fiber_link_instability` | 相干光纤链路分数频率不稳定度 σ_y(τ) | 3×10⁻¹⁹ @ τ=1000 s（ADEV, 5 mHz bandwidth） | INRIM Torino–Firenze 642 km 单纤双往返（1284 km 等效），EDF… | [calonico2015_3kxj9jfq](topics/time-frequency-transfer/papers/calonico2015_3kxj9jfq.yaml) |
 | `met.coherent_optical_fiber_link_residual_offset_yocto` | 光纤链路残余频率 offset（互易性极限） | (4.4 ± 2.3)×10⁻²¹（raw, 33 d）；(0.5 ± 2.0)×10⁻²¹（温度补偿后） | SYRTE, dedicated link architecture with forward/b… | [xu2019_gzd2byi4](topics/time-frequency-transfer/papers/xu2019_gzd2byi4.yaml) |
 | `met.coherent_optical_fiber_link_uncertainty_long` | 长距离相干光纤链路 fractional uncertainty（长均值） | (1.1 ± 0.4)×10⁻²⁰（3 周加权均值，1400 km Brillouin-only loop） | underground fiber, Braunschweig↔Strasbourg, FBA-o… | [raupach2015_lz2hfujz](topics/time-frequency-transfer/papers/raupach2015_lz2hfujz.yaml) |
+| `met.derevianko_2022_quantum_sci__t_primary` | Courde  primary metric | see paper | see paper | [Derevianko_2022_Quantum_Sci._Technol._7_044002](topics/time-frequency-transfer/papers/Derevianko_2022_Quantum_Sci._Technol._7_044002.yaml) |
 | `met.earth_grs_test_uncertainty` | 地球引力红移测试分数不确定度（任务科学目标） | $2\cdot10^{-7}$（目标，vs ACES 约 $2\cdot10^{-6}$，提升因子 ~10×） | ≥2 年科学阶段；空间段 SLOC $8\cdot10^{-16}/\sqrt{\tau}$ 不稳… | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `met.exertier_2016_metrologia_53_13_primary` | Sherwood  primary metric | see paper | see paper | [Exertier_2016_Metrologia_53_1395](topics/time-frequency-transfer/papers/Exertier_2016_Metrologia_53_1395.yaml) |
+| `met.fphy_10_1005074_primary` | Martin  primary metric | see paper | see paper | [fphy-10-1005074](topics/time-frequency-transfer/papers/fphy-10-1005074.yaml) |
+| `met.fsm2008_crane_et_al_primary` | Washington  primary metric | see paper | see paper | [FSM2008 Crane et al](topics/time-frequency-transfer/papers/FSM2008 Crane et al.yaml) |
+| `met.high_precision_distribution_of_primary` | Ning  primary metric | see paper | see paper | [High-Precision Distribution of Highly Stable Optical Pulse](topics/time-frequency-transfer/papers/High-Precision Distribution of Highly Stable Optical Pulse.yaml) |
 | `met.international_fountain_comparison_agreement` | 光纤链路国际初级频标比对一致性 | y(SYRTE−PTB) ≈ 5×10⁻¹⁷（与两边 fountain uncertainty budget 一致） | SYRTE↔PTB 1415 km 相干光纤链路 + 光↔微波传递链（光梳） | [guena2017_2khkrily](topics/time-frequency-transfer/papers/guena2017_2khkrily.yaml) |
+| `met.josab_jiang_et_al_primary` | primary metric | see paper | see paper | [josab jiang et al](topics/time-frequency-transfer/papers/josab jiang et al.yaml) |
+| `met.kim08_primary` | primary metric | see paper | see paper | [kim08](topics/time-frequency-transfer/papers/kim08.yaml) |
+| `met.lu_2020_sensitive_linear_optic_primary` | 2020 primary metric | see paper | see paper | [Lu-2020-Sensitive-linear-optical-sampling-s](topics/time-frequency-transfer/papers/Lu-2020-Sensitive-linear-optical-sampling-s.yaml) |
+| `met.newbury07_primary` | primary metric | see paper | see paper | [newbury07](topics/time-frequency-transfer/papers/newbury07.yaml) |
+| `met.nwaf352_primary` | primary metric | see paper | see paper | [nwaf352](topics/time-frequency-transfer/papers/nwaf352.yaml) |
+| `met.oe_20_2_1775_primary` | Thorpe 2012 primary metric | see paper | see paper | [oe-20-2-1775](topics/time-frequency-transfer/papers/oe-20-2-1775.yaml) |
+| `met.oe_27_25_36965_primary` | primary metric | see paper | see paper | [oe-27-25-36965](topics/time-frequency-transfer/papers/oe-27-25-36965.yaml) |
+| `met.oe_lopez_10_primary` | Foreman  primary metric | see paper | see paper | [OE Lopez 10](topics/time-frequency-transfer/papers/OE Lopez 10.yaml) |
+| `met.ol_09_fefelian_et_al_2009_2_primary` | primary metric | see paper | see paper | [OL 09 Fefelian et al 2009 2](topics/time-frequency-transfer/papers/OL 09 Fefelian et al 2009 2.yaml) |
+| `met.ol_32_9_1044_primary` | Kim 2007 primary metric | see paper | see paper | [ol-32-9-1044](topics/time-frequency-transfer/papers/ol-32-9-1044.yaml) |
+| `met.optica_11_9_1268_primary` | primary metric | see paper | see paper | [optica-11-9-1268](topics/time-frequency-transfer/papers/optica-11-9-1268.yaml) |
+| `met.optica_8_4_471_primary` | primary metric | see paper | see paper | [optica-8-4-471](topics/time-frequency-transfer/papers/optica-8-4-471.yaml) |
+| `met.optics_letters__vol__29__issue_primary` | 2004 primary metric | see paper | see paper | [Optics Letters, Vol. 29, Issue 17, pp. 2076-2078 (2004)](topics/time-frequency-transfer/papers/Optics Letters, Vol. 29, Issue 17, pp. 2076-2078 (2004).yaml) |
 | `met.photon_limited_ott_supported_link_loss` | 量子极限光学时间传递支持的最大链路损耗 | 102 dB（4.0 mW 发射功率，足以支撑 ground↔geosynchronous orbit） | 300 km Hawaii mountaintop link, quantum-limited p… | [caldwell2023_4m836c4v](topics/time-frequency-transfer/papers/caldwell2023_4m836c4v.yaml) |
+| `met.physreva_92_021801_primary` | primary metric | see paper | see paper | [PhysRevA.92.021801](topics/time-frequency-transfer/papers/PhysRevA.92.021801.yaml) |
+| `met.physrevx_6_021016_primary` | Laura  primary metric | see paper | see paper | [PhysRevX.6.021016](topics/time-frequency-transfer/papers/PhysRevX.6.021016.yaml) |
 | `met.rf_over_fiber_link_instability` | RF-over-fiber 链路分数频率不稳定度 | 10⁻¹⁶ 级 @ 长平均时间（具体值见正文 Allan plot） | AGH fiber link, hybrid analog+digital delay compe… | [krehlik2015_3mi33g2r](topics/time-frequency-transfer/papers/krehlik2015_3mi33g2r.yaml) |
+| `met.s41467_020_20591_5_primary` | Benjamin  primary metric | see paper | see paper | [s41467-020-20591-5](topics/time-frequency-transfer/papers/s41467-020-20591-5.yaml) |
+| `met.s41566_021_00828_5_primary` | primary metric | see paper | see paper | [s41566-021-00828-5](topics/time-frequency-transfer/papers/s41566-021-00828-5.yaml) |
+| `met.s41586_022_05228_5_primary` | primary metric | see paper | see paper | [s41586-022-05228-5](topics/time-frequency-transfer/papers/s41586-022-05228-5.yaml) |
+| `met.s41586_023_06032_5_primary` | Emily  primary metric | see paper | see paper | [s41586-023-06032-5](topics/time-frequency-transfer/papers/s41586-023-06032-5.yaml) |
 | `met.space_to_ground_link_inaccuracy` | 空间–地面时频链路分数不准确度 | MWL: $5\cdot10^{-19}$（#SR-PL-10，需求目标）；ELT+: $1\cdot10^{-18}… | 正确定标大气延迟、几何光程、本地 SLR 站延迟（ELT+ 单向 $\leq 20\,\text{… | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
 | `met.space_to_ground_link_instability` | 空间–地面时频链路不稳定度 | MWL（#SR-PL-09，需求目标）：白相位噪声 $1.6\cdot10^{-14}$ @ 10 s；闪烁相位 mo… | ISS 过顶（MWL 典型 ≤300 s，ELT+ 典型 ~200 s），空间–地面单次过顶；空间… | [cacciapuoti2017](topics/time-frequency-transfer/papers/cacciapuoti2017.yaml) |
+| `met.xu_2025_chinese_phys__lett__42_primary` | Lazarev  primary metric | see paper | see paper | [Xu_2025_Chinese_Phys._Lett._42_120401](topics/time-frequency-transfer/papers/Xu_2025_Chinese_Phys._Lett._42_120401.yaml) |
 
 ## Timescales
 
@@ -512,6 +684,7 @@
 | ID | Name | Best Value | Conditions | Source |
 |----|------|------------|------------|--------|
 | `met.accel_sensitivity_d17` | 腔轴方向加速度灵敏度（最小化后） | ~4.5×10⁻¹⁰ | 腔轴方向；持腔半径 24.5 mm（最优）；主动隔振平台上 | [davilarodriguez2017](topics/ultrastable-laser/papers/davilarodriguez2017.yaml) |
+| `met.an_ultra_low_frequency_noise_l_primary` | primary metric | see paper | see paper | [An_Ultra-Low_Frequency_Noise_Laser_Based_on_Al](topics/ultrastable-laser/papers/An_Ultra-Low_Frequency_Noise_Laser_Based_on_Al.yaml) |
 | `met.fiber_laser_linewidth_hjc19` | 全光纤激光线宽（Huang JC 2019） | 0.2 Hz (200 mHz) | 5 km FDL，超低加速度灵敏度光纤盘，真空 | [huangjc2019](topics/ultrastable-laser/papers/huangjc2019.yaml) |
 | `met.fiber_laser_noise_reduction_j09` | 相对原始噪声降低量 | >40 | 1 Hz–10 kHz Fourier 频率范围；1 km SMF-28 光纤干涉仪锁定 | [jiang2009a](topics/ultrastable-laser/papers/jiang2009a.yaml) |
 | `met.fiber_spool_free_fiber_sensitivity_l09` | 尾纤约束对振动灵敏度的影响 | 在 5×10⁻¹¹ 量级，随约束方式显著变化（高张力可降低至更低值） | SMF-28；0.4 m 裸光纤尾纤；低/中/高张力三种约束 | [li2009a](topics/ultrastable-laser/papers/li2009a.yaml) |
@@ -520,8 +693,8 @@
 | `met.freq_noise_psd_fiber_jeon25` | 频率噪声谱密度（Jeon 2025，自零差 1 km 光纤） | 4 Hz–10 kHz 频段最高降噪约 10⁴；4–200 Hz 达到 1 km 光纤往返热噪声极限 | 1 km 光纤线轴（2 km 有效往返长度），短期频噪测量，多次重复试验一致 | [jeon2025](topics/ultrastable-laser/papers/jeon2025.yaml) |
 | `met.freq_noise_psd_fiber_kef09` | 频率噪声谱密度（Kéfélian 2009，1 km 光纤） | < 1 Hz²/Hz (1 Hz–10 kHz)；10⁻² Hz²/Hz @ 1 kHz | 1 km SMF-28 光纤，DFB EDFL 1550 nm，AOM 外差检测，隔振台+隔声箱 | [kefelian2009](topics/ultrastable-laser/papers/kefelian2009.yaml) |
 | `met.freq_noise_psd_ri_g25` | 循环干涉仪频率噪声 PSD（Gao 2025） | <1 Hz²/Hz @ 1 Hz–10 kHz | 100 m 光纤延迟线，全光纤循环干涉仪 | [gao2025](topics/ultrastable-laser/papers/gao2025.yaml) |
-| `met.freq_spectral_density` | 激光频率噪声谱密度 | < 0.3 Hz/√Hz @ 1 kHz | 氩离子激光器 PDH 锁定到三角形环形腔（10 m 臂长，finesse ≈ 100，注入功率 6… | [drever1983](topics/ultrastable-laser/papers/drever1983.yaml) |
-| `met.laser_linewidth` | 激光线宽 | < 100 Hz | 染料激光器 + 气体激光器分别 PDH 锁定到同一 F-P 腔，测两者拍频 | [drever1983](topics/ultrastable-laser/papers/drever1983.yaml) |
+| `met.freq_spectral_density` | 激光频率噪声谱密度 | < 0.3 Hz/√Hz @ 1 kHz | — | [drever1983](topics/ultrastable-laser/papers/drever1983.yaml) |
+| `met.laser_linewidth` | 激光线宽 | < 100 Hz | — | [drever1983](topics/ultrastable-laser/papers/drever1983.yaml) |
 | `met.laser_linewidth_563nm` | 激光线宽（563 nm，Young 1999） | 0.6 Hz | 563 nm 染料激光，PDH 锁定到 24 cm ULE 高精细度腔（finesse > 150… | [young1999](topics/ultrastable-laser/papers/young1999.yaml) |
 | `met.laser_linewidth_c25` | 激光线宽（Chen 2025，Si1 腔） | 9.6(3) mHz (computed from PSD); 5.7(3) mHz (beat measuremen… | 1397 nm, sub-5K Si 腔, 连续冷却振动抑制后 | [chen2025](topics/ultrastable-laser/papers/chen2025.yaml) |
 | `met.laser_linewidth_dong15` | 激光线宽（Dong 2015，500 m 光纤，亚赫兹） | 0.67 Hz 拍频（单激光 < 0.5 Hz） | 500 m SMF-28×2 系统拍频，0.25 Hz RBW，线性漂移已消除 | [dong2015](topics/ultrastable-laser/papers/dong2015.yaml) |
@@ -562,7 +735,7 @@
 | ID | Name | Best Value | Conditions | Source |
 |----|------|------------|------------|--------|
 | `met.algaas_coating_loss_angle_17k_l26` | AlGaAs 晶体镀层损耗角（Lee 2026，17 K） | φ_AlGaAs(17K) < 2.3×10⁻⁵（上限，FP 腔热噪声测量） | 6 cm Si 腔，17 K，1542 nm，AlGaAs 晶体镀层（2023 批次，48.5 周… | [lee2026](topics/ultrastable-laser/papers/lee2026.yaml) |
-| `met.algaas_coating_loss_angle_c13` | AlGaAs 晶体镀层损耗角（Cole 2013） | φ_AlGaAs ≤ 2.5×10⁻⁵（室温上限，FP 腔测量）；对比 IBS 最优 φ ~ 2×10⁻⁴ | 35 mm Zerodur 腔，熔融石英底物，1064 nm，室温，与 PTB 698 nm 参考… | [cole2013](topics/ultrastable-laser/papers/cole2013.yaml) |
+| `met.algaas_coating_loss_angle_c13` | AlGaAs 晶体镀层损耗角（Cole 2013） | — | — | [cole2013](topics/ultrastable-laser/papers/cole2013.yaml) |
 | `met.algaas_coating_loss_angle_ibs_4k_r19` | IBS 镀层损耗角（Robinson 2019，4 K Si 腔提取） | φ_IBS(4K) = 5.15×10⁻⁴（SiO₂/Ta₂O₅ IBS 镀层） | 6 cm Si4 腔，4 K，PSD 拟合范围 5 mHz – 2 Hz，Sy = a·f⁻¹ 模… | [robinson2019](topics/ultrastable-laser/papers/robinson2019.yaml) |
 | `met.algaas_coating_loss_angle_kedar23` | AlGaAs 晶体镀层损耗角上限（Kedar 2023） | φ < 4.1×10⁻⁴ (4.7K); φ < 1.2×10⁻⁴ (16.7K) | Si6 腔, AlGaAs/GaAs 晶体镀层, 低温 | [kedar2023](topics/ultrastable-laser/papers/kedar2023.yaml) |
 | `met.algaas_finesse_cole16` | AlGaAs 晶体镀层腔精细度（Cole 2016） | >3×10⁵ | 1550 nm, GaAs/AlGaAs 晶体镀层 | [cole2016](topics/ultrastable-laser/papers/cole2016.yaml) |
@@ -579,19 +752,34 @@
 
 | ID | Name | Best Value | Conditions | Source |
 |----|------|------------|------------|--------|
+| `met.030201__1__primary` | Webster  primary metric | see paper | see paper | [030201 (1)](topics/ultrastable-laser/papers/030201 (1).yaml) |
+| `met.1_4898334_primary` | primary metric | see paper | see paper | [1.4898334](topics/ultrastable-laser/papers/1.4898334.yaml) |
+| `met.1_s2_0_s2095927325008813_main_primary` | primary metric | see paper | see paper | [1-s2.0-S2095927325008813-main](topics/ultrastable-laser/papers/1-s2.0-S2095927325008813-main.yaml) |
+| `met.20170282_full_primary` | primary metric | see paper | see paper | [20170282.full](topics/ultrastable-laser/papers/20170282.full.yaml) |
+| `met.2905_6_primary` | primary metric | see paper | see paper | [2905-6](topics/ultrastable-laser/papers/2905-6.yaml) |
 | `met.algaas_absorption_1064_cole16` | AlGaAs 晶体镀层 1064 nm 吸收（Cole 2016） | <1 ppm | 1064 nm, PTS 测量 | [cole2016](topics/ultrastable-laser/papers/cole2016.yaml) |
 | `met.algaas_optical_loss_cole16` | AlGaAs 晶体镀层超额光学损耗（Cole 2016） | 3 ppm (scatter + absorption, NIR 1064-1560 nm) | GaAs/AlGaAs 基底转移晶体镀层, 近红外 | [cole2016](topics/ultrastable-laser/papers/cole2016.yaml) |
+| `met.an_optical_fiber_spool_for_las_primary` | Huang  primary metric | see paper | see paper | [An optical fiber spool for laser stabilization with reduced acceleration sensitivity to 10-12-g](topics/ultrastable-laser/papers/An optical fiber spool for laser stabilization with reduced acceleration sensitivity to 10-12-g.yaml) |
+| `met.ao_54_5_1152__1__primary` | 2015 primary metric | see paper | see paper | [ao-54-5-1152 (1)](topics/ultrastable-laser/papers/ao-54-5-1152 (1).yaml) |
+| `met.argence_oe_2012_primary` | Swallows  primary metric | see paper | see paper | [Argence oe 2012](topics/ultrastable-laser/papers/Argence oe 2012.yaml) |
+| `met.art_10_1007_2fbf01081271_primary` | primary metric | see paper | see paper | [art:10.1007%2FBF01081271](topics/ultrastable-laser/papers/art:10.1007%2FBF01081271.yaml) |
+| `met.art_10_1007_2fbf01091215_primary` | Flood  primary metric | see paper | see paper | [art:10.1007%2FBF01091215](topics/ultrastable-laser/papers/art:10.1007%2FBF01091215.yaml) |
 | `met.backscattering_coefficient_hcf_mb21` | 背向散射系数（Michaud-Belleau 2021，AR-HCF） | −118 dB/m | 低损耗 NANF, 1.55 μm, 自研 OFDR 测量 | [michaudbelleau2021](topics/ultrastable-laser/papers/michaudbelleau2021.yaml) |
 | `met.beam_quality_d20` | 光束质量M²（Dixneuf 2020） | <1.1 | 输出光束经过准直，1064 nm | [dixneuf2020](topics/ultrastable-laser/papers/dixneuf2020.yaml) |
 | `met.beam_waist_parameter_k66` | 光束腰斑参数（理论） | 由腔参数决定 | 稳定球面镜谐振腔 | [kogelnik1966](topics/ultrastable-laser/papers/kogelnik1966.yaml) |
 | `met.cavity_storage_time_p25` | 光学腔存储时间 | 295 ± 2 μs | 68 cm ULE 腔，真空 6×10⁻⁸ mbar，1542 nm，ringdown 测量 10… | [parke2025](topics/ultrastable-laser/papers/parke2025.yaml) |
+| `met.characterization_of_the_long_t_primary` | Akamatsu  primary metric | see paper | see paper | [Characterization of the long-term2018](topics/ultrastable-laser/papers/Characterization of the long-term2018.yaml) |
 | `met.chip_mw_instability_k24` | 芯片微波振荡器分数频率不稳定度（Kudelin 2024） | 1.7×10⁻¹⁵ | τ = 1 s；20 GHz 输出；芯片集成 2P-OFD 系统 | [kudelin2024](topics/ultrastable-laser/papers/kudelin2024.yaml) |
+| `met.col_18_0476_primary` | primary metric | see paper | see paper | [COL-18-0476](topics/ultrastable-laser/papers/COL-18-0476.yaml) |
+| `met.cpl34_090602_2017_0572w_primary` | primary metric | see paper | see paper | [cpl34-090602-2017-0572w](topics/ultrastable-laser/papers/cpl34-090602-2017-0572w.yaml) |
 | `met.crystalline_coating_absorption_m18` | 晶体镀层光学吸收 | ≤0.8 ppm (fused silica substrate) | 2 英寸 GaAs/AlGaAs 镀层，1064 nm，光热偏转法 | [marchio2018](topics/ultrastable-laser/papers/marchio2018.yaml) |
 | `met.crystalline_coating_tis_m18` | 晶体镀层总积分散射（TIS） | 6–9.5 ppm | 2 英寸 GaAs/AlGaAs 镀层，1064 nm，CASI 散射仪，FS 9.5 ppm /… | [marchio2018](topics/ultrastable-laser/papers/marchio2018.yaml) |
 | `met.cte_shift_fs_mirror_leg10` | FS 镜引起的 CTE 零点温度偏移（Legero 2010） | ~20 K (降低) | FS 镜 + ULE 间隔物，镜面变形 (bulging) 效应 | [legero2010](topics/ultrastable-laser/papers/legero2010.yaml) |
 | `met.cte_zero_crossing_tuning_range_leg10` | CTE 零点温度调谐范围（Legero 2010） | ~30 K | FS 镜 + ULE 间隔物 + ULE 补偿环，FEM 模拟 + 实测 | [legero2010](topics/ultrastable-laser/papers/legero2010.yaml) |
 | `met.detection_snr_improvement_g20` | 探测信噪比改善（Galland 2020） | 改善（具体数值未给出） | 双外差探测SHB | [galland2020](topics/ultrastable-laser/papers/galland2020.yaml) |
 | `met.digital_noise_contribution_xia25` | 数字电子系统噪声贡献（Xia 2025） | 2.9×10⁻¹⁶ | 载波锁定模式；τ = 1 s；全数字系统单独测试 | [xia2025](topics/ultrastable-laser/papers/xia2025.yaml) |
+| `met.drever_____1983___laser_phase__primary` | primary metric | see paper | see paper | [Drever 等 - 1983 - Laser phase and frequency stabilization using an optical resonator](topics/ultrastable-laser/papers/Drever 等 - 1983 - Laser phase and frequency stabilization using an optical resonator.yaml) |
+| `met.eftf09_jiang_et_al_proceeding_primary` | primary metric | see paper | see paper | [eftf09 jiang et al proceeding](topics/ultrastable-laser/papers/eftf09 jiang et al proceeding.yaml) |
 | `met.electronic_noise_reduction_factor_g16` | 电子噪声降低倍数（Grote 2016） | >4 | 音频频段 >1 kHz，高功率光电探测器 | [grote2016](topics/ultrastable-laser/papers/grote2016.yaml) |
 | `met.eu_yso_t2_k03` | Eu³⁺:Y₂SiO₅ 光学退相时间（Könz 2003） | T₂ up to 2.6 ms | Eu³⁺:Y₂SiO₅, low concentration, ~2 K | [konz2003](topics/ultrastable-laser/papers/konz2003.yaml) |
 | `met.fiber_freq_stability_hjc19` | 全光纤频率稳定度（Huang JC 2019） | 3×10⁻¹⁵ @ 1–10 s | 5 km FDL，1.55 μm | [huangjc2019](topics/ultrastable-laser/papers/huangjc2019.yaml) |
@@ -600,28 +788,59 @@
 | `met.frequency_band_g16` | 有效频段（Grote 2016） | >1 | 电子噪声降低效果显著的频段 | [grote2016](topics/ultrastable-laser/papers/grote2016.yaml) |
 | `met.frequency_range_a13` | 改善频率范围（Aasi 2013） | 150 Hz 以上 | 压缩光注入，正交相位优化 | [aasi2013](topics/ultrastable-laser/papers/aasi2013.yaml) |
 | `met.frequency_stability_g17` | 频率稳定度（Gobron 2017） | 与标准FMS方法相当或更好 | 光谱烧孔稳频，Eu:YSO晶体，1.6 K | [gobron2017](topics/ultrastable-laser/papers/gobron2017.yaml) |
+| `met.highly_stable_piezoelectricall_primary` | Evgeny  primary metric | see paper | see paper | [Highly stable piezoelectrically tunable optical cavities](topics/ultrastable-laser/papers/Highly stable piezoelectrically tunable optical cavities.yaml) |
 | `met.impact_resistance_t18` | 抗冲击加速度（Tao 2018） | >100g (ULE cavity, 20 mm drop); >250g (Al model, 250 mm dro… | 7075 铝合金框架，12 点 Viton 球缓冲夹持，跌落至光学平台 | [tao2018](topics/ultrastable-laser/papers/tao2018.yaml) |
+| `met.jeon_____2025___10_15_level_la_primary` | primary metric | see paper | see paper | [Jeon 等 - 2025 - 10-15-level laser stabilization down to fiber thermal noise limit using self-homodyne detection](topics/ultrastable-laser/papers/Jeon 等 - 2025 - 10-15-level laser stabilization down to fiber thermal noise limit using self-homodyne detection.yaml) |
+| `met.jiang_ipc11_primary` | primary metric | see paper | see paper | [Jiang IPC11](topics/ultrastable-laser/papers/Jiang IPC11.yaml) |
+| `met.jiang_oe_primary` | Harris  primary metric | see paper | see paper | [Jiang_OE](topics/ultrastable-laser/papers/Jiang_OE.yaml) |
+| `met.josab_27_5_914_primary` | 2010 primary metric | see paper | see paper | [josab-27-5-914](topics/ultrastable-laser/papers/josab-27-5-914.yaml) |
+| `met.li_11_eftf_ifcs_primary` | primary metric | see paper | see paper | [Li 11 EFTF IFCS](topics/ultrastable-laser/papers/Li 11 EFTF IFCS.yaml) |
+| `met.limits_of_coupling_efficiency__primary` | primary metric | see paper | see paper | [Limits_of_Coupling_Efficiency_Into_Hollow-Core](topics/ultrastable-laser/papers/Limits_of_Coupling_Efficiency_Into_Hollow-Core.yaml) |
 | `met.locking_bandwidth_g25` | 锁定带宽（Grabielle 2025） | 增大后的带宽（具体值未给出） | 优化后的锁定回路 | [grabielle2025](topics/ultrastable-laser/papers/grabielle2025.yaml) |
 | `met.locking_noise_floor_g25` | 锁定噪声底限（Grabielle 2025） | white frequency noise floor (具体值未给出) | 光纤延迟线PDH锁定，鉴频器非线性主导 | [grabielle2025](topics/ultrastable-laser/papers/grabielle2025.yaml) |
 | `met.long_term_instability_s19` | 长期频率不稳定度（Sanjuan 2019） | ~10⁻¹⁴ @ 5400 s (Allan deviation) | 8.7 cm ULE 立方腔，五层热屏蔽，1064 nm | [sanjuan2019](topics/ultrastable-laser/papers/sanjuan2019.yaml) |
 | `met.long_term_instability_w16` | 长期频率不稳定度（Wu 2016） | 1×10⁻¹⁵ @ 100–4000 s | 10 cm ULE 腔，室温，两级热屏蔽，去除线性漂移 | [wu2016](topics/ultrastable-laser/papers/wu2016.yaml) |
+| `met.lz01028367_primary` | Shaddock  primary metric | see paper | see paper | [LZ01028367](topics/ultrastable-laser/papers/LZ01028367.yaml) |
+| `met.lz01029465_primary` | primary metric | see paper | see paper | [LZ01029465](topics/ultrastable-laser/papers/LZ01029465.yaml) |
+| `met.millo_____2009___ultrastable_l_primary` | Millo  primary metric | see paper | see paper | [Millo 等 - 2009 - Ultrastable lasers based on vibration insensitive cavities](topics/ultrastable-laser/papers/Millo 等 - 2009 - Ultrastable lasers based on vibration insensitive cavities.yaml) |
 | `met.noise_reduction_g20` | 探测噪声降低（Galland 2020） | 显著降低（具体数值未给出） | 双外差探测SHB，共模噪声抑制 | [galland2020](topics/ultrastable-laser/papers/galland2020.yaml) |
+| `met.nphoton_2012_217_primary` | primary metric | see paper | see paper | [nphoton.2012.217](topics/ultrastable-laser/papers/nphoton.2012.217.yaml) |
+| `met.nphoton_2013_174_primary` | Garrett  primary metric | see paper | see paper | [nphoton.2013.174](topics/ultrastable-laser/papers/nphoton.2013.174.yaml) |
+| `met.oe_25_13_15539_primary` | primary metric | see paper | see paper | [oe-25-13-15539](topics/ultrastable-laser/papers/oe-25-13-15539.yaml) |
+| `met.oe_27_10_14121_primary` | primary metric | see paper | see paper | [oe-27-10-14121](topics/ultrastable-laser/papers/oe-27-10-14121.yaml) |
+| `met.ol_47_20_5441_primary` | primary metric | see paper | see paper | [ol-47-20-5441](topics/ultrastable-laser/papers/ol-47-20-5441.yaml) |
+| `met.ol_50_10_3405_primary` | Adam  primary metric | see paper | see paper | [ol-50-10-3405](topics/ultrastable-laser/papers/ol-50-10-3405.yaml) |
+| `met.ol_kefelian_et_al_2009_primary` | primary metric | see paper | see paper | [OL kefelian et al 2009](topics/ultrastable-laser/papers/OL kefelian et al 2009.yaml) |
+| `met.opt__lett__39_7___1980_1983__2_primary` | primary metric | see paper | see paper | [Opt. Lett. 39(7), 1980-1983 (2014)](topics/ultrastable-laser/papers/Opt. Lett. 39(7), 1980-1983 (2014).yaml) |
+| `met.optica_8_2_216_primary` | primary metric | see paper | see paper | [optica-8-2-216](topics/ultrastable-laser/papers/optica-8-2-216.yaml) |
 | `met.optical_optical_sync_jitter_k08` | 远程光-光同步时序抖动（Kim 2008） | 0.4 fs r.m.s.（22 mHz–2.3 MHz） | Ti:sapphire 激光与 Cr:forsterite 激光远程同步，连续运行 >12 h，o… | [kim2008](topics/ultrastable-laser/papers/kim2008.yaml) |
+| `met.optics_letters__vol__36_issue__primary` | 2011 primary metric | see paper | see paper | [Optics Letters, Vol. 36 Issue 18, pp.3572-3574 (2011)](topics/ultrastable-laser/papers/Optics Letters, Vol. 36 Issue 18, pp.3572-3574 (2011).yaml) |
 | `met.output_power_d20` | 输出功率（Dixneuf 2020） | 365 W (350 W isolated) | 1064 nm，单频，线偏振，全光纤MOPA | [dixneuf2020](topics/ultrastable-laser/papers/dixneuf2020.yaml) |
 | `met.pd_bandwidth_p16` | 光电探测器带宽（Potnis 2016） | DC to 50 MHz | -3 dB带宽，室温。 | [potnis2016](topics/ultrastable-laser/papers/potnis2016.yaml) |
 | `met.pd_noise_voltage_density_p16` | 光电探测器噪声电压谱密度（Potnis 2016） | ~2 nV/√Hz @ 10 MHz | 在10 MHz频率下测量，室温，使用OPA847跨阻放大器。 | [potnis2016](topics/ultrastable-laser/papers/potnis2016.yaml) |
+| `met.photonic_generation_of_rf_and__primary` | primary metric | see paper | see paper | [Photonic generation of RF and microwave signal with relative frequency instability of 10-15](topics/ultrastable-laser/papers/Photonic generation of RF and microwave signal with relative frequency instability of 10-15.yaml) |
+| `met.physreva_106_023501_primary` | primary metric | see paper | see paper | [PhysRevA.106.023501](topics/ultrastable-laser/papers/PhysRevA.106.023501.yaml) |
+| `met.physrevb_68_085109__1__primary` | Sun  primary metric | see paper | see paper | [PhysRevB.68.085109 (1)](topics/ultrastable-laser/papers/PhysRevB.68.085109 (1).yaml) |
+| `met.physrevlett_102_163601_primary` | primary metric | see paper | see paper | [PhysRevLett.102.163601](topics/ultrastable-laser/papers/PhysRevLett.102.163601.yaml) |
+| `met.physrevlett_111_237402_primary` | David  primary metric | see paper | see paper | [PhysRevLett.111.237402](topics/ultrastable-laser/papers/PhysRevLett.111.237402.yaml) |
+| `met.physrevlett_114_253902_primary` | David  primary metric | see paper | see paper | [PhysRevLett.114.253902](topics/ultrastable-laser/papers/PhysRevLett.114.253902.yaml) |
+| `met.physrevlett_118_263202_primary` | Linewidth  primary metric | see paper | see paper | [PhysRevLett.118.263202](topics/ultrastable-laser/papers/PhysRevLett.118.263202.yaml) |
+| `met.physrevlett_93_250602_primary` | primary metric | see paper | see paper | [PhysRevLett.93.250602](topics/ultrastable-laser/papers/PhysRevLett.93.250602.yaml) |
 | `met.piezo_tuning_range_m13` | 压电调谐范围 | >1.5 GHz (>1 FSR) | 10 cm Zerodur 腔，PZT 叠层或 PZN-PT 驱动 | [mohle2013](topics/ultrastable-laser/papers/mohle2013.yaml) |
 | `met.pmo_residual_noise_giunta20b` | 12 GHz PMO 分频/探测残余噪声底（Giunta 2020b） | −115 dBc/Hz @ 1 Hz | 三路 OFD 互相关；12 GHz 载波；OFR 为 CrystallineMirror（AlGa… | [giunta2020b](topics/ultrastable-laser/papers/giunta2020b.yaml) |
 | `met.power_handling_capacity_g16` | 功率处理能力（Grote 2016） | 5–50 | 光电探测器元件，针对压缩光增强引力波探测器 | [grote2016](topics/ultrastable-laser/papers/grote2016.yaml) |
 | `met.power_stability_d20` | 功率长期稳定性（Dixneuf 2020） | <0.7% RMS | 连续运行1100小时，环境温度控制 | [dixneuf2020](topics/ultrastable-laser/papers/dixneuf2020.yaml) |
 | `met.ptb_si_cavity_instability_sc21` | PTB 低温 Si 腔超稳激光不稳定度（Schioppo 2021） | 4×10⁻¹⁷ | PTB Braunschweig 低温 Si 腔；MDEV 闪烁频率热噪声底；本地 + 远程 Sr… | [schioppo2021](topics/ultrastable-laser/papers/schioppo2021.yaml) |
-| `met.ram_fractional_instability` | RAM引起的分数频率不稳定度 | σ_y ≤ 1×10⁻¹⁶（35 mm腔，κ=28 kHz，σ_RAM=1 ppm） | 波导EOM + 双通道主动RAM消除伺服；1 ppm RAM稳定度，1–1000 s | [zhang2014_ram](topics/ultrastable-laser/papers/zhang2014_ram.yaml) |
+| `met.ram_fractional_instability` | RAM引起的分数频率不稳定度 | — | — | [zhang2014_ram](topics/ultrastable-laser/papers/zhang2014_ram.yaml) |
 | `met.ram_fractional_instability_p25` | RAM 引起的分数频率不稳定度 | 3×10⁻¹⁹ @ 10–100 s | 68 cm 腔，APE 波导 EOM，偏置电场主动消除，实验室温度稳定 ~1°C | [parke2025](topics/ultrastable-laser/papers/parke2025.yaml) |
 | `met.rayleigh_range_k66` | 瑞利范围（理论） | z_R = πw₀²/λ | 高斯光束传播 | [kogelnik1966](topics/ultrastable-laser/papers/kogelnik1966.yaml) |
 | `met.rb_interferometer_stability_o19` | RB 干涉仪稳频不稳定度（Olson 2019） | <2×10⁻¹⁶ @ 10–1000 s | ⁴⁰Ca 热原子束，657 nm，Ramsey-Bordé | [olson2019](topics/ultrastable-laser/papers/olson2019.yaml) |
 | `met.rin_level_d20` | 相对强度噪声（Dixneuf 2020） | -160 dBc/Hz @ 2–10 kHz | 1 MHz带宽RIN伺服激活，1064 nm单频激光 | [dixneuf2020](topics/ultrastable-laser/papers/dixneuf2020.yaml) |
 | `met.rin_suppression_bandwidth_n08` | RIN抑制带宽（Nelson 2008） | 10 MHz | 抑制有效的频率范围。 | [nelson2008](topics/ultrastable-laser/papers/nelson2008.yaml) |
 | `met.rin_suppression_ratio_n08` | RIN抑制比（Nelson 2008） | 10–50 dB | 在10 MHz带宽内，针对激光相对强度噪声，利用已有强度调制器实现。 | [nelson2008](topics/ultrastable-laser/papers/nelson2008.yaml) |
+| `met.rsi25_ar_00618_primary` | primary metric | see paper | see paper | [RSI25-AR-00618](topics/ultrastable-laser/papers/RSI25-AR-00618.yaml) |
+| `met.s20180751_primary` | primary metric | see paper | see paper | [s20180751](topics/ultrastable-laser/papers/s20180751.yaml) |
+| `met.s41467_021_27884_3_primary` | primary metric | see paper | see paper | [s41467-021-27884-3](topics/ultrastable-laser/papers/s41467-021-27884-3.yaml) |
 | `met.sensitivity_improvement_a13` | 灵敏度改善（Aasi 2013） | 改善具体数值未给出，但超过量子散粒噪声极限 | 压缩光注入LIGO干涉仪暗端口 | [aasi2013](topics/ultrastable-laser/papers/aasi2013.yaml) |
 | `met.servo_bandwidth` | 伺服带宽（Unity Gain Frequency） | 约 230 Hz（Chabbra 2021 实验值） | Tilt Locking，受分割探测器跨阻放大器带宽限制 | [shaddock1999](topics/ultrastable-laser/papers/shaddock1999.yaml) |
 | `met.servo_bandwidth_d20` | RIN伺服带宽（Dixneuf 2020） | 1 MHz | 反馈回路包含光电探测、电子处理、强度调制器驱动 | [dixneuf2020](topics/ultrastable-laser/papers/dixneuf2020.yaml) |
@@ -629,13 +848,18 @@
 | `met.shb_absolute_stability_l13` | SHB 绝对稳定度（vs H-maser, Leibrandt 2013） | 1×10⁻¹⁵/√τ, drift 5×10⁻¹⁸/s | 单个光谱孔 vs 氢钟 | [leibrandt2013](topics/ultrastable-laser/papers/leibrandt2013.yaml) |
 | `met.shb_environmental_sensitivity_thorpe11` | SHB 环境灵敏度（Thorpe 2011） | temperature: 16 kHz/K²; pressure: -11.4 Hz/Pa; acceleration… | Eu³⁺:Y₂SiO₅, 4 K | [thorpe2011](topics/ultrastable-laser/papers/thorpe2011.yaml) |
 | `met.shb_relative_stability_l13` | SHB 双晶体相对稳定度（Leibrandt 2013） | 5.5×10⁻¹⁷ @ 204 s (quadratic drift removed) | 两块 Eu³⁺:Y₂SiO₅ 晶体，同一低温容器，4 K | [leibrandt2013](topics/ultrastable-laser/papers/leibrandt2013.yaml) |
+| `met.siliconcavity_xtal_coating_noi_primary` | William  primary metric | see paper | see paper | [SiliconCavity Xtal Coating noise_Optica 2023](topics/ultrastable-laser/papers/SiliconCavity Xtal Coating noise_Optica 2023.yaml) |
 | `met.snr_improvement_g17` | 信噪比提升（Gobron 2017） | 具体数值未给出，但理论上更优 | 光谱烧孔稳频，避免烧孔功率引起的光谱畸变 | [gobron2017](topics/ultrastable-laser/papers/gobron2017.yaml) |
 | `met.spectral_distortion_immunity_g17` | 光谱畸变免疫性（Gobron 2017） | 不受烧孔功率引起的畸变影响 | 高烧孔功率下 | [gobron2017](topics/ultrastable-laser/papers/gobron2017.yaml) |
 | `met.spectral_hole_lifetime_k03` | 光谱孔寿命（Könz 2003） | 1 s @ 18 K to >20 days @ 2 K | Eu³⁺:Y₂SiO₅, various concentrations | [konz2003](topics/ultrastable-laser/papers/konz2003.yaml) |
 | `met.sr_clock_instability_l18` | Sr 钟频率稳定度（Li 2018） | <3.2×10⁻¹⁶ short-term, 1.8×10⁻¹⁵/√τ | 30 cm ULE 腔，⁸⁷Sr 光晶格钟，NIM | [li2018](topics/ultrastable-laser/papers/li2018.yaml) |
+| `met.srep24969__1__primary` | primary metric | see paper | see paper | [srep24969 (1)](topics/ultrastable-laser/papers/srep24969 (1).yaml) |
 | `met.steady_state_shb_stability_c15` | 稳态 SHB 稳频稳定度（Cook 2015） | 1.0×10⁻¹⁵/√τ → 8.5×10⁻¹⁷ @ 73 s | Eu³⁺:Y₂SiO₅, 稳态三区域烧孔, vs Yb 光钟 | [cook2015](topics/ultrastable-laser/papers/cook2015.yaml) |
+| `met.tao_chen2018_article_avibratio_primary` | primary metric | see paper | see paper | [Tao-Chen2018_Article_AVibration-insensitive-ca](topics/ultrastable-laser/papers/Tao-Chen2018_Article_AVibration-insensitive-ca.yaml) |
+| `met.temperature_insensitive_delay__primary` | primary metric | see paper | see paper | [Temperature_Insensitive_Delay-Line_Fiber_Inter](topics/ultrastable-laser/papers/Temperature_Insensitive_Delay-Line_Fiber_Inter.yaml) |
 | `met.thermal_noise_freq_psd` | 热噪声频率噪声谱密度（刚性腔极限） | ~0.13 × (1Hz/f)^(1/2) Hz/√Hz | ULE 腔，L=24 cm，w₀=240 μm，T=300 K，三类部件贡献之和 | [numata2004](topics/ultrastable-laser/papers/numata2004.yaml) |
-| `met.thermal_noise_psd_hcf_mb22` | 空心光纤热噪声功率谱密度（Michaud-Belleau 2022） | ≈1.3×10⁻¹⁷ (rad²/Hz)/m @30 kHz | 大模场面积 NANF, 抽真空密封至 0.15 atm, 1550 nm | [michaudbelleau2022](topics/ultrastable-laser/papers/michaudbelleau2022.yaml) |
+| `met.thermal_noise_limited_optical__primary` | primary metric | see paper | see paper | [thermal noise limited optical cavity webster](topics/ultrastable-laser/papers/thermal noise limited optical cavity webster.yaml) |
+| `met.thermal_noise_psd_hcf_mb22` | 空心光纤热噪声功率谱密度（Michaud-Belleau 2022） | — | — | [michaudbelleau2022](topics/ultrastable-laser/papers/michaudbelleau2022.yaml) |
 | `met.timing_link_stability_k08` | 定时稳定光纤链路残余时差（Kim 2008） | 6.4 fs r.m.s. @ 72 h；0.36 fs r.m.s. @ 10 ms–1 s | 两条独立 ~300 m 色散补偿定时稳定光纤链路，out-of-loop 平衡互相关测量 | [kim2008](topics/ultrastable-laser/papers/kim2008.yaml) |
 | `met.transmission_bandwidth_hcarf_b15` | 传输带宽（Belardi 2015，HC-ARF） | 0.75–1.6 μm | 2 m fabricated HC-ARF, 23 μm core, t = 0.34 ± 0.0… | [belardi2015](topics/ultrastable-laser/papers/belardi2015.yaml) |
 | `met.visible_attenuation_hcarf_b15` | 可见光最小衰减（Belardi 2015，HC-ARF） | 175 dB/km @ 480 nm | cutback measurement, 51 μm core, t1 ≈ 1.27 ± 0.06… | [belardi2015](topics/ultrastable-laser/papers/belardi2015.yaml) |

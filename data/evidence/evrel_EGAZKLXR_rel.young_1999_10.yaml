@@ -1,9 +1,0 @@
-evidence: the results of Young et al. are consistent with being at the thermal noise
-  limit
-id: evrel_EGAZKLXR_rel.young_1999_10
-metadata:
-  source_paper: young1999
-  zotero_key: EGAZKLXR
-object: pri.brownian_thermal_noise_fdt
-predicate: BOUNDED-BY
-subject: ent.fp_cavity_system

@@ -1,8 +1,0 @@
-evidence: f0 ... detected with the standard f-to-2f heterodyne technique
-id: evrel_TP9NSD4F_rel.washburn_2004_ash04_04
-metadata:
-  source_paper: washburn2004
-  zotero_key: TP9NSD4F
-object: pri.self_referencing_f2f
-predicate: ENABLED-BY
-subject: meth.dual_pll_frep_fceo_rf_reference

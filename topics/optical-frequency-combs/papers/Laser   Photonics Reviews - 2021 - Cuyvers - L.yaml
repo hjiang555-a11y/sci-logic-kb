@@ -1,23 +1,41 @@
-# Cuyvers 2021 — Low Noise Heterogeneous III‐V‐on‐Silicon‐Nitride Mode‐Locked Comb Laser [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Low Noise Heterogeneous III-V-on-Silicon-Nitride [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: Laser   Photonics Reviews - 2021 - Cuyvers - L
+  zotero_key: Low Noise Heterogeneous III-V-on-Silicon-Nitride
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Low Noise Heterogeneous III‐V‐on‐Silicon‐Nitride Mode‐Locked Comb Laser"
-  year: 2021
-  first_author: "Cuyvers"
-  authors: ["Stijn Cuyvers", "Bahawal Haq", "Camiel Op de Beeck", "Stijn Poelman", "Artur Hermans", "Zheng Wang", "Agnieszka Gocalinska", "Emanuele Pelucchi", "Brian Corbett", "Gunther Roelkens", "Kasper Van Gasse", "Bart Kuyken"]
-  journal: "Laser &amp; Photonics Reviews"
-  volume: 15
-  doi: 10.1002/lpor.202000485
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Low Noise Heterogeneous III-V-on-Silicon-Nitride
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.laser___photonics_reviews___20_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.laser___photonics_reviews___20_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Low Noise Heterogeneous III-V-on-Silicon-Nitride
+      claim: core experimental result
+relations:
+- id: rel.laser___photonics_reviews___20_01
+  subject: ent.laser___photonics_reviews___20_system
+  predicate: CHARACTERIZED-BY
+  object: met.laser___photonics_reviews___20_primary
+  confidence: established
+  source:
+    zotero_key: Low Noise Heterogeneous III-V-on-Silicon-Nitride
+    claim: experimental system characterized by primary metric

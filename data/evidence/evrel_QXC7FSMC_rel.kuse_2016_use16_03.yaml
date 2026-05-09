@@ -1,8 +1,0 @@
-evidence: below 0.2 rad carrier-envelope-offset frequency phase noise
-id: evrel_QXC7FSMC_rel.kuse_2016_use16_03
-metadata:
-  source_paper: kuse2016
-  zotero_key: QXC7FSMC
-object: met.fceo_phase_noise_k16
-predicate: CHARACTERIZED-BY
-subject: ent.all_pm_er_nalm_comb_k16

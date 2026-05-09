@@ -1,8 +1,0 @@
-evidence: The transmission spectrum is spanning from 750 to 1600 nm
-id: evrel_2F3PD62T_rel.belardi_2015_e05
-metadata:
-  source_paper: belardi2015
-  zotero_key: 2F3PD62T
-object: met.transmission_bandwidth_hcarf_b15
-predicate: CHARACTERIZED-BY
-subject: ent.antiresonant_hollow_core_fiber

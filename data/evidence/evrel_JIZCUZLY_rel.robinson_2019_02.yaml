@@ -1,8 +1,0 @@
-evidence: at 4 K where the silicon thermal expansion asymptotically approaches zero
-id: evrel_JIZCUZLY_rel.robinson_2019_02
-metadata:
-  source_paper: robinson2019
-  zotero_key: JIZCUZLY
-object: pri.silicon_cte_asymptotic_zero_4k
-predicate: ENABLED-BY
-subject: ent.si_crystal_fp_cavity_4k_r19

@@ -1,0 +1,99 @@
+chain_id: comb_noise_transfer
+question: "What limits the phase noise of optical frequency comb teeth, and how can spectral purity be transferred from optical reference to microwave?"
+domain: optical-frequency-combs
+confidence: draft
+last_updated: 2026-05-09
+
+current_best:
+  value: "f_CEO integrated phase noise ~50 mrad; optical-to-microwave transfer at 10⁻¹⁸ level"
+  systems: "All-PM Er:fiber comb (Kuse 2015); 1 GHz turnkey comb (Lesko 2020)"
+  note: "Comb noise is dominated by three coupled effects: servo bandwidth, pump RIN, and high-frep power constraints."
+
+limiting_principle:
+  id: pri.gain_lifetime_servo_bandwidth_limit
+  name: "Gain lifetime limits f_CEO servo bandwidth"
+  statement: >
+    The upper-state lifetime of Er:fiber (~10 ms for EDFA) limits the achievable
+    servo bandwidth for stabilizing f_CEO via pump current modulation. Below ~20 kHz
+    bandwidth, residual f_CEO phase noise dominates the comb's integrated phase noise.
+  defined_by: kuse2015.yaml
+  evidence_count: 5
+
+secondary_limits:
+  - id: pri.pump_rin_to_fceo_coupling
+    name: "Pump RIN couples to f_CEO via nonlinear amplitude-to-phase conversion"
+    effect: "Pump laser relative intensity noise (RIN) is converted to f_CEO phase noise through the comb's nonlinear dynamics, particularly in fiber-based systems where nonlinearity is stronger."
+    breakthrough: "AOM feedforward (Lesko 2020) extends effective f_CEO bandwidth from 20 kHz to >100 kHz, pushing integrated phase noise from 438 mrad toward ~50 mrad."
+
+  - id: pri.high_frep_bandwidth_power_tradeoff
+    name: "High repetition rate limits per-comb-tooth power"
+    effect: "At f_rep > 10 GHz, the available power per comb tooth drops below the threshold needed for self-referencing (f-2f interferometry), creating a fundamental tradeoff between comb resolution and noise performance."
+    breakthrough: "KLM-based 10 GHz comb (Bartels 2009) demonstrated self-referenced operation at 10 GHz f_rep with sufficient per-tooth power."
+
+condition_variables:
+  - symbol: "f_rep"
+    name: "Repetition rate"
+    effect: "Higher f_rep → fewer teeth within gain bandwidth → more power per tooth → better SNR for self-referencing. But above ~10 GHz, mode spacing challenges detection."
+    typical: "100-250 MHz (standard Er:fiber combs)"
+    high_frep: "1-10 GHz (KLM, microresonator combs)"
+  - symbol: "servo_bandwidth"
+    name: "f_CEO servo bandwidth"
+    effect: "Higher bandwidth → lower residual phase noise. Limited by gain lifetime in pump-modulated systems."
+    standard: "~20 kHz (pump modulation)"
+    enhanced: ">100 kHz (intracavity EOM, AOM feedforward)"
+  - symbol: "pump_RIN"
+    name: "Pump laser RIN"
+    effect: "Directly couples to f_CEO noise. RIN suppression at the pump laser level is essential."
+
+breakthrough_narrative: >
+  The optical frequency comb's defining capability — transferring spectral purity
+  from an optical reference to microwave frequencies — is fundamentally limited by
+  the phase noise on each comb tooth. This noise originates from three coupled sources.
+  
+  First, the servo bandwidth for stabilizing f_CEO is limited by the Er:fiber gain
+  lifetime (~10 ms), restricting pump-modulation bandwidth to ~20 kHz. Kuse (2015)
+  demonstrated that intracavity graphene modulators can bypass this limit, achieving
+  MHz-level bandwidth.
+  
+  Second, pump laser RIN couples to f_CEO through nonlinear conversion in the fiber.
+  Lesko (2020) showed that AOM feedforward can extend the effective servo bandwidth
+  from 20 kHz to >100 kHz, reducing integrated phase noise from 438 mrad toward 50 mrad.
+  
+  Third, at high repetition rates (>10 GHz), the per-comb-tooth power drops below the
+  threshold for f-2f self-referencing. Bartels (2009) demonstrated the first self-referenced
+  10 GHz comb using KLM in Ti:sapphire.
+  
+  The state of the art: Nicolodi (2014) demonstrated 10⁻¹⁸-level spectral purity transfer
+  between optical wavelengths; Fortier (2011) achieved ultrastable microwave generation
+  via optical frequency division. The remaining gap is in fully integrating these advances
+  into turnkey, field-deployable comb systems.
+
+edges:
+  - from: "Comb tooth phase noise"
+    to: pri.gain_lifetime_servo_bandwidth_limit
+    relation: "BOUNDED-BY (5 papers)"
+  - from: pri.gain_lifetime_servo_bandwidth_limit
+    to: "Intracavity graphene/EOM modulators"
+    relation: "RESOLVED-BY (Kuse 2015)"
+    status: demonstrated
+  - from: pri.pump_rin_to_fceo_coupling
+    to: "AOM feedforward (>100 kHz bandwidth)"
+    relation: "RESOLVED-BY (Lesko 2020)"
+    status: demonstrated
+  - from: pri.high_frep_bandwidth_power_tradeoff
+    to: "KLM 10 GHz self-referenced comb"
+    relation: "RESOLVED-BY (Bartels 2009)"
+    status: demonstrated
+  - from: "Current: ~50 mrad f_CEO noise"
+    to: "Target: <10 mrad integrated phase noise"
+    relation: "REMAINING-GAP (~5×)"
+
+evidence:
+  - relation_id: rel.kuse_2015_15_06
+    claim: "f_CEO servo bandwidth limited by EDFA gain lifetime"
+  - relation_id: rel.lesko_2020_006
+    claim: "pump RIN couples to f_CEO via nonlinear amplitude-to-phase conversion"
+  - relation_id: rel.bartels_2009_ar09_04
+    claim: "10 GHz self-referenced comb requires sufficient per-tooth power for f-2f"
+  - relation_id: rel.nicolodi_2014_01
+    claim: "spectral purity transfer between optical wavelengths at 10⁻¹⁸ level"

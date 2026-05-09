@@ -1,9 +1,0 @@
-evidence: The heterogeneous III-V/SiN mode-locked laser is a chip-scale implementation
-  of optical frequency comb technology with wafer-scale manufacturability.
-id: evrel_5R8PUBX7_rel.cuyvers_2021_V21_05
-metadata:
-  source_paper: cuyvers2021
-  zotero_key: 5R8PUBX7
-object: ent.optical_frequency_comb
-predicate: PART-OF
-subject: ent.hetero_iii_v_sin_mll_comb_c21

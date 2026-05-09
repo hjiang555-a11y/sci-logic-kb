@@ -1,8 +1,0 @@
-evidence: a transition frequency value as accurate as 1.9 parts in 10¹⁴
-id: evrel_N3W35JH6_rel.udem_2001_02_07
-metadata:
-  source_paper: udem2002
-  zotero_key: N3W35JH6
-object: met.optical_frequency_measurement_accuracy_u02
-predicate: CHARACTERIZED-BY
-subject: ent.optical_frequency_comb

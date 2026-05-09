@@ -1,9 +1,0 @@
-evidence: Flight operation protocol enabled by ruggedized all-fiber architecture surviving
-  launch and microgravity
-id: evrel_BWX8NI2P_rel.lezius_2016_ez14
-metadata:
-  source_paper: lezius2016
-  zotero_key: BWX8NI2P
-object: pri.ruggedized_erfiber_comb_space_qualification
-predicate: ENABLED-BY
-subject: meth.flight_operation_protocol_l16

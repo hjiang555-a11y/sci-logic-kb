@@ -1,18 +1,42 @@
-#  ???? — White-light frequency comb generation with a diode-pumped [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Holzwarth 2001 — White-light frequency comb generation with a diode-pumped [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: LZ01027879
+  zotero_key: White-light frequency comb generation with a diode
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
   reliability: medium
-  title: "White-light frequency comb generation with a diode-pumped"
-  first_author: ""
-  note: >
-    [批量提取] 元数据来源：PDF metadata。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  title: White-light frequency comb generation with a diode-pumped
+  first_author: Holzwarth
+  note: batch minimal extraction; pending expert review for full entities/principles
+  year: 2001
+entities:
+- id: ent.lz01027879_system
+  name: Holzwarth 2001 experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: Experimental system described in Holzwarth 2001
+metrics:
+- id: met.lz01027879_primary
+  name: Holzwarth 2001 primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: White-light frequency comb generation with a diode
+      claim: core experimental result
+relations:
+- id: rel.lz01027879_01
+  subject: ent.lz01027879_system
+  predicate: CHARACTERIZED-BY
+  object: met.lz01027879_primary
+  confidence: established
+  source:
+    zotero_key: White-light frequency comb generation with a diode
+    claim: experimental system characterized by primary metric

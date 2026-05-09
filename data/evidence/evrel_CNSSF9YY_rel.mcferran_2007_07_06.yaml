@@ -1,9 +1,0 @@
-evidence: the primary cause of frequency noise associated with the offset frequency
-  is the relative intensity noise of the pump laser
-id: evrel_CNSSF9YY_rel.mcferran_2007_07_06
-metadata:
-  source_paper: mcferran2007
-  zotero_key: CNSSF9YY
-object: pri.pump_rin_to_fceo_coupling
-predicate: ENABLED-BY
-subject: meth.pump_current_feedback_fceo_lock

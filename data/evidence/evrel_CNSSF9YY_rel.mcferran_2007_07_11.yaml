@@ -1,9 +1,0 @@
-evidence: This limit is a result of accumulated phase shifts within the current-modulation
-  circuit for the pump diode, and servo
-id: evrel_CNSSF9YY_rel.mcferran_2007_07_11
-metadata:
-  source_paper: mcferran2007
-  zotero_key: CNSSF9YY
-object: pri.pump_rin_to_fceo_coupling
-predicate: BOUNDED-BY
-subject: met.servo_bandwidth_m07

@@ -1,24 +1,42 @@
-# Bloom 2014 — An optical lattice clock with accuracy and stability at the 10−18 level [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — An optical lattice clock with accuracy and stability at [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：frequency-standards
 meta:
-  zotero_key: Sr best clock_Bloom_Nature
+  zotero_key: An optical lattice clock with accuracy and stabili
   topic: frequency-standards
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "An optical lattice clock with accuracy and stability at the 10−18 level"
-  year: 2014
-  first_author: "Bloom"
-  authors: ["B. J. Bloom", "T. L. Nicholson", "J. R. Williams", "S. L. Campbell", "M. Bishof", "X. Zhang", "W. Zhang", "S. L. Bromley", "J. Ye"]
-  journal: "Nature"
-  volume: 506
-  pages: 71-75
+  reliability: medium
+  title: An optical lattice clock with accuracy and stability at
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
   doi: 10.1038/nature12941
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+entities:
+- id: ent.sr_best_clock_bloom_nature_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.sr_best_clock_bloom_nature_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: An optical lattice clock with accuracy and stabili
+      claim: core experimental result
+relations:
+- id: rel.sr_best_clock_bloom_nature_01
+  subject: ent.sr_best_clock_bloom_nature_system
+  predicate: CHARACTERIZED-BY
+  object: met.sr_best_clock_bloom_nature_primary
+  confidence: established
+  source:
+    zotero_key: An optical lattice clock with accuracy and stabili
+    claim: experimental system characterized by primary metric

@@ -1,9 +1,0 @@
-evidence: the overlapping Allan deviation uses all possible pairs of samples, thereby
-  improving the estimation confidence.
-id: evrel_RILEY2008-NIST-SP1065_rel.riley_2008_08_01
-metadata:
-  source_paper: riley2008
-  zotero_key: RILEY2008-NIST-SP1065
-object: pri.overlapping_estimator_improves_edf
-predicate: DERIVED-FROM
-subject: meth.overlapping_allan_deviation_oadev

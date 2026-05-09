@@ -1,8 +1,0 @@
-evidence: utilize the intensity modulator already present in a photonic link
-id: evrel_XAKCIXKT_rel.nelson_2008_el04
-metadata:
-  source_paper: nelson2008
-  zotero_key: XAKCIXKT
-object: ent.eom
-predicate: ENABLED-BY
-subject: pri.rin_suppression_reuse_modulator

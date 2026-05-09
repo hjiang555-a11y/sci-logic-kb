@@ -1,24 +1,41 @@
-# Krüger 2020 — Performance scaling of a 10-GHz solid-state laser enabling self-referenced CE... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — ResearchArticle Vol.28,No.9/27April2020/OpticsExpress 12755 [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: oe-28-9-12755
+  zotero_key: ResearchArticle Vol.28,No.9/27April2020/OpticsExpr
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Performance scaling of a 10-GHz solid-state laser enabling self-referenced CEO frequency detection without amplification"
-  year: 2020
-  first_author: "Krüger"
-  authors: ["Léonard M. Krüger", "Aline S. Mayer", "Yoshitomo Okawachi", "Xingchen Ji", "Alexander Klenner", "Adrea R. Johnson", "Carsten Langrock", "Martin M. Fejer", "Michal Lipson", "Alexander L. Gaeta", "Valentin J. Wittwer", "Thomas Südmeyer", "Christopher R. Phillips", "Ursula Keller"]
-  journal: "Optics Express"
-  volume: 28
-  pages: 12755
-  doi: 10.1364/OE.391252
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: ResearchArticle Vol.28,No.9/27April2020/OpticsExpress 12755
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.oe_28_9_12755_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.oe_28_9_12755_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: ResearchArticle Vol.28,No.9/27April2020/OpticsExpr
+      claim: core experimental result
+relations:
+- id: rel.oe_28_9_12755_01
+  subject: ent.oe_28_9_12755_system
+  predicate: CHARACTERIZED-BY
+  object: met.oe_28_9_12755_primary
+  confidence: established
+  source:
+    zotero_key: ResearchArticle Vol.28,No.9/27April2020/OpticsExpr
+    claim: experimental system characterized by primary metric

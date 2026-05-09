@@ -1,24 +1,41 @@
-# Chen 2025 — A laser with instability reaching <mml:math xmlns:mml="http://www.w3.org/1998... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — ScienceBulletin70(2025)3337–3344 [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：ultrastable-laser
 meta:
-  zotero_key: 1-s2.0-S2095927325008813-main
+  zotero_key: ScienceBulletin70(2025)3337–3344
   topic: ultrastable-laser
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "A laser with instability reaching <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\" altimg=\"si12.svg\"> <mml:mrow> <mml:mn>4</mml:mn> <mml:mo>×</mml:mo> <mml:msup> <mml:mrow> <mml:mn>10</mml:mn> </mml:mrow> <mml:mrow> <mml:mo>-</mml:mo> <mml:mn>17</mml:mn> </mml:mrow> </mml:msup> </mml:mrow> </mml:math> based on a 10-cm-long silicon cavity at sub-5-K temperatures"
-  year: 2025
-  first_author: "Chen"
-  authors: ["Zhi-Ang Chen", "Hao-Ran Zeng", "Wen-Wei Wang", "Han Zhang", "Run-Qi Lei", "Jian-Zhang Li", "Cai-Yin Pang", "She-Song Huang", "Xibo Zhang"]
-  journal: "Science Bulletin"
-  volume: 70
-  pages: 3337-3344
-  doi: 10.1016/j.scib.2025.08.050
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: ScienceBulletin70(2025)3337–3344
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.1_s2_0_s2095927325008813_main_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.1_s2_0_s2095927325008813_main_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: ScienceBulletin70(2025)3337–3344
+      claim: core experimental result
+relations:
+- id: rel.1_s2_0_s2095927325008813_main_01
+  subject: ent.1_s2_0_s2095927325008813_main_system
+  predicate: CHARACTERIZED-BY
+  object: met.1_s2_0_s2095927325008813_main_primary
+  confidence: established
+  source:
+    zotero_key: ScienceBulletin70(2025)3337–3344
+    claim: experimental system characterized by primary metric

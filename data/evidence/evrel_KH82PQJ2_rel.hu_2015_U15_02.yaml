@@ -1,8 +1,0 @@
-evidence: symmetrically mounted structure to reduce acceleration sensitivity
-id: evrel_KH82PQJ2_rel.hu_2015_U15_02
-metadata:
-  source_paper: hu2015
-  zotero_key: KH82PQJ2
-object: pri.symmetric_spool_vibration_cancellation
-predicate: ENABLED-BY
-subject: ent.ultralow_accel_fiber_spool_h15

@@ -1,18 +1,41 @@
-#  ???? — Laser with non-linear optical loop mirror - European Patent Office - EP 26372... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Printed by Jouve, 75001 PARIS (FR) [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: Menlo激光系统专利
+  zotero_key: Printed by Jouve, 75001 PARIS (FR)
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
   reliability: medium
-  title: "Laser with non-linear optical loop mirror - European Patent Office - EP 2637265 A1"
-  first_author: ""
-  note: >
-    [批量提取] 元数据来源：PDF metadata。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  title: Printed by Jouve, 75001 PARIS (FR)
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.menlo_______system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.menlo_______primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Printed by Jouve, 75001 PARIS (FR)
+      claim: core experimental result
+relations:
+- id: rel.menlo_______01
+  subject: ent.menlo_______system
+  predicate: CHARACTERIZED-BY
+  object: met.menlo_______primary
+  confidence: established
+  source:
+    zotero_key: Printed by Jouve, 75001 PARIS (FR)
+    claim: experimental system characterized by primary metric

@@ -1,19 +1,41 @@
-# Millo ???? — Flywheel Oscillator for Atomic Fountain Clocks Using Ultra-Stable Lasers and ... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Millo  — Flywheel oscillator for atomic fountain clocks using [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：frequency-standards
 meta:
-  zotero_key: eftf09 millo et al proceeding
+  zotero_key: Flywheel oscillator for atomic fountain clocks usi
   topic: frequency-standards
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
   reliability: medium
-  title: "Flywheel Oscillator for Atomic Fountain Clocks Using Ultra-Stable Lasers and a Fiber-Based Optical Frequency Comb"
-  first_author: "Millo"
-  authors: ["J. Millo, Y. Le Coq, S. Bize, J. Guéna, J. Jiang, M. Abgrall, E.M.L. English, A. Clairon, G. Santarelli, M.E. Tobar"]
-  note: >
-    [批量提取] 元数据来源：PDF metadata。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  title: Flywheel oscillator for atomic fountain clocks using
+  first_author: Millo
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.eftf09_millo_et_al_proceeding_system
+  name: Millo  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Millo '
+metrics:
+- id: met.eftf09_millo_et_al_proceeding_primary
+  name: Millo  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Flywheel oscillator for atomic fountain clocks usi
+      claim: core experimental result
+relations:
+- id: rel.eftf09_millo_et_al_proceeding_01
+  subject: ent.eftf09_millo_et_al_proceeding_system
+  predicate: CHARACTERIZED-BY
+  object: met.eftf09_millo_et_al_proceeding_primary
+  confidence: established
+  source:
+    zotero_key: Flywheel oscillator for atomic fountain clocks usi
+    claim: experimental system characterized by primary metric

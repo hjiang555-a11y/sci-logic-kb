@@ -1,0 +1,132 @@
+topic: timescales
+generated: 2026-05-09 01:47 UTC
+schema_version: v5.0-evidence
+summary:
+  total_evidence_units: 5
+  unique_limiting_principles: 5
+  with_breakthrough_paths: 0
+  with_resolved_limits: 0
+  with_active_limits: 0
+evidence_groups:
+- limiting_principle: met.time_dilation_detection_velocity_2010
+  supporting_papers: 1
+  paper_list:
+  - chou2010.yaml
+  year_range: 2010-2010
+  first_authors:
+  - chou
+  best_evidence:
+    paper: chou2010.yaml
+    author: chou
+    year: 2010
+    claim: the clock rate is not significantly affected by a velocity of this magnitude, because it is derived from an average of the two opposite laser-probe directions
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths: []
+  evidence_units:
+  - relation_id: rel.chou_2010_04
+    paper: chou2010.yaml
+    author: chou
+    year: 2010
+    is_system_limit: null
+    limit_status: null
+    verification: observed
+    claim: the clock rate is not significantly affected by a velocity of this magnitude, because it is derived from an average of the two opposite laser-probe directions
+- limiting_principle: pri.redefinition_criteria_second
+  supporting_papers: 1
+  paper_list:
+  - dimarcq2024.yaml
+  year_range: 2024-2024
+  first_authors:
+  - Dimarcq
+  best_evidence:
+    paper: dimarcq2024.yaml
+    author: Dimarcq
+    year: 2024
+    claim: Mandatory criteria that must be achieved before changing the definition
+    is_system_limit: true
+    limit_status: null
+  breakthrough_paths: []
+  evidence_units:
+  - relation_id: rel.dimarcq_2021_24_01
+    paper: dimarcq2024.yaml
+    author: Dimarcq
+    year: 2024
+    is_system_limit: true
+    limit_status: null
+    verification: calculated
+    claim: Mandatory criteria that must be achieved before changing the definition
+- limiting_principle: pri.am_pm_conversion_couples_rin_to_phase_noise
+  supporting_papers: 1
+  paper_list:
+  - fortier2013.yaml
+  year_range: 2013-2013
+  first_authors:
+  - fortier
+  best_evidence:
+    paper: fortier2013.yaml
+    author: fortier
+    year: 2013
+    claim: the MUTC photodiode structure [is used] to effectively suppress the space charge effect [17]
+    is_system_limit: false
+    limit_status: null
+  breakthrough_paths: []
+  evidence_units:
+  - relation_id: rel.fortier_2013_05
+    paper: fortier2013.yaml
+    author: fortier
+    year: 2013
+    is_system_limit: false
+    limit_status: null
+    verification: observed
+    claim: the MUTC photodiode structure [is used] to effectively suppress the space charge effect [17]
+- limiting_principle: ent.geoid
+  supporting_papers: 1
+  paper_list:
+  - kleppner2006.yaml
+  year_range: 2006-2006
+  first_authors:
+  - Kleppner
+  best_evidence:
+    paper: kleppner2006.yaml
+    author: Kleppner
+    year: 2006
+    claim: To compare frequency standards in different locations to 1 part in 10¹⁶, however, the altitudes would need to be known to a fraction of a meter, which is no easy matter. To compare them to a
+      part in 1
+    is_system_limit: true
+    limit_status: null
+  breakthrough_paths: []
+  evidence_units:
+  - relation_id: rel.kleppner_2006_02
+    paper: kleppner2006.yaml
+    author: Kleppner
+    year: 2006
+    is_system_limit: true
+    limit_status: null
+    verification: calculated
+    claim: To compare frequency standards in different locations to 1 part in 10¹⁶, however, the altitudes would need to be known to a fraction of a meter, which is no easy matter. To compare them to a
+      part in 1
+- limiting_principle: pri.pulsed_illumination_mitigates_thermal_limit
+  supporting_papers: 1
+  paper_list:
+  - peng2020.yaml
+  year_range: 2020-2020
+  first_authors:
+  - peng
+  best_evidence:
+    paper: peng2020.yaml
+    author: peng
+    year: 2020
+    claim: we concluded that the devices are limited by the thermal degradation rather than avalanche phenomena at 5% duty cycle
+    is_system_limit: true
+    limit_status: null
+  breakthrough_paths: []
+  evidence_units:
+  - relation_id: rel.peng_2021_20_02
+    paper: peng2020.yaml
+    author: peng
+    year: 2020
+    is_system_limit: true
+    limit_status: null
+    verification: claimed
+    claim: we concluded that the devices are limited by the thermal degradation rather than avalanche phenomena at 5% duty cycle

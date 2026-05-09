@@ -1,8 +1,0 @@
-evidence: stability better than 5.6×10⁻¹⁶ at 1 second
-id: evrel_GLXHEIPV_rel.millo_2009_il03
-metadata:
-  source_paper: millo2009
-  zotero_key: GLXHEIPV
-object: met.fractional_freq_instability_millo09
-predicate: CHARACTERIZED-BY
-subject: ent.fp_cavity_system

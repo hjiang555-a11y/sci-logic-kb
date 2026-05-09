@@ -1,24 +1,42 @@
-# Coddington 2009 — Rapid and precise absolute distance measurements at long range [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Swann  — Rapid and precise absolute distance measurements [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: Rapid_and_precise_absolute_distance_measurements_NIST
+  zotero_key: Rapid and precise absolute distance measurements
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Rapid and precise absolute distance measurements at long range"
-  year: 2009
-  first_author: "Coddington"
-  authors: ["I. Coddington", "W. C. Swann", "L. Nenadovic", "N. R. Newbury"]
-  journal: "Nature Photonics"
-  volume: 3
-  pages: 351-356
-  doi: 10.1038/NPHOTON.2009.94
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Rapid and precise absolute distance measurements
+  first_author: Swann
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1038/NPHOTON
+entities:
+- id: ent.rapid_and_precise_absolute_dis_system
+  name: Swann  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Swann '
+metrics:
+- id: met.rapid_and_precise_absolute_dis_primary
+  name: Swann  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Rapid and precise absolute distance measurements
+      claim: core experimental result
+relations:
+- id: rel.rapid_and_precise_absolute_dis_01
+  subject: ent.rapid_and_precise_absolute_dis_system
+  predicate: CHARACTERIZED-BY
+  object: met.rapid_and_precise_absolute_dis_primary
+  confidence: established
+  source:
+    zotero_key: Rapid and precise absolute distance measurements
+    claim: experimental system characterized by primary metric

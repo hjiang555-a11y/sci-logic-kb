@@ -1,9 +1,0 @@
-evidence: Such a coherent comb is used to drive CMOS-foundry-based SiPh engines containing
-  versatile functionality
-id: evrel_AT5ZTB9M_rel.shu_2022_22_15
-metadata:
-  source_paper: shu2022
-  zotero_key: AT5ZTB9M
-object: ent.siph_tr_chip_s22
-predicate: CONDITIONED-BY
-subject: ent.algaasoi_dark_pulse_microcomb_s22

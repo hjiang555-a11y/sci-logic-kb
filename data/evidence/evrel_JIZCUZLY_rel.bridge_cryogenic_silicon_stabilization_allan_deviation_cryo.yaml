@@ -1,8 +1,0 @@
-evidence: ''
-id: evrel_JIZCUZLY_rel.bridge_cryogenic_silicon_stabilization_allan_deviation_cryo
-metadata:
-  source_paper: robinson2019
-  zotero_key: JIZCUZLY
-object: met.allan_deviation_cryo
-predicate: PRODUCES
-subject: meth.cryogenic_silicon_stabilization

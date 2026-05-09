@@ -1,8 +1,0 @@
-evidence: the linewidth within 0.1 s is less than 1 Hz
-id: evrel_SBPRDKPV_rel.jeon_2025_e07
-metadata:
-  source_paper: jeon2025
-  zotero_key: SBPRDKPV
-object: met.laser_linewidth_jeon25
-predicate: CHARACTERIZED-BY
-subject: ent.fiber_interferometer

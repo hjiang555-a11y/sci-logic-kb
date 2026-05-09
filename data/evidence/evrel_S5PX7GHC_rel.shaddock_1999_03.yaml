@@ -1,8 +1,0 @@
-evidence: TEM10 non-resonant due to different Gouy phase accumulation
-id: evrel_S5PX7GHC_rel.shaddock_1999_03
-metadata:
-  source_paper: shaddock1999
-  zotero_key: S5PX7GHC
-object: pri.gouy_phase_discrimination
-predicate: ENABLED-BY
-subject: meth.tilt_locking

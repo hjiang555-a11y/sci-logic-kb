@@ -1,9 +1,0 @@
-evidence: I-SOC also allows the comparisons of distant ground clocks via non-common-view
-  comparisons
-id: evrel_SCI-ESA-HRE-ESR-ISOC_rel.cacciapuoti_2017_17_09
-metadata:
-  source_paper: cacciapuoti2017
-  zotero_key: SCI-ESA-HRE-ESR-ISOC
-object: pri.non_common_view_clock_comparison
-predicate: OPERATIONALIZED-AS
-subject: ent.space_optical_clock_mission

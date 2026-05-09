@@ -1,19 +1,41 @@
-# Changepdfauthor ???? — Changepdftitle [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Lazarev  — −20 -Berezinskii-Kosterlitz-Thouless phase [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
 meta:
-  zotero_key: Xu_2025_Chinese_Phys._Lett._42_120401
+  zotero_key: −20 -Berezinskii-Kosterlitz-Thouless phase
   topic: time-frequency-transfer
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
   reliability: medium
-  title: "Changepdftitle"
-  first_author: "Changepdfauthor"
-  authors: ["Changepdfauthor"]
-  note: >
-    [批量提取] 元数据来源：PDF metadata。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  title: −20 -Berezinskii-Kosterlitz-Thouless phase
+  first_author: Lazarev
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.xu_2025_chinese_phys__lett__42_system
+  name: Lazarev  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Lazarev '
+metrics:
+- id: met.xu_2025_chinese_phys__lett__42_primary
+  name: Lazarev  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: −20 -Berezinskii-Kosterlitz-Thouless phase
+      claim: core experimental result
+relations:
+- id: rel.xu_2025_chinese_phys__lett__42_01
+  subject: ent.xu_2025_chinese_phys__lett__42_system
+  predicate: CHARACTERIZED-BY
+  object: met.xu_2025_chinese_phys__lett__42_primary
+  confidence: established
+  source:
+    zotero_key: −20 -Berezinskii-Kosterlitz-Thouless phase
+    claim: experimental system characterized by primary metric

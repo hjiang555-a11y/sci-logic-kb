@@ -1,8 +1,0 @@
-evidence: frequency comb to distribute the optical carrier to multiple users
-id: evrel_ws3xm8ls_rel.lopez_2015_15_04
-metadata:
-  source_paper: lopez2015_ws3xm8ls
-  zotero_key: ws3xm8ls
-object: ent.optical_frequency_comb
-predicate: CONDITIONED-BY
-subject: ent.coherent_optical_fiber_link

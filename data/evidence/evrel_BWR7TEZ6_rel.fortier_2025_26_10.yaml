@@ -1,9 +1,0 @@
-evidence: Optical frequency combs serve as the essential clockwork linking optical
-  atomic references to countable microwave signals
-id: evrel_BWR7TEZ6_rel.fortier_2025_26_10
-metadata:
-  source_paper: fortier2026
-  zotero_key: BWR7TEZ6
-object: ent.optical_frequency_comb
-predicate: CONDITIONED-BY
-subject: ent.optical_frequency_standard

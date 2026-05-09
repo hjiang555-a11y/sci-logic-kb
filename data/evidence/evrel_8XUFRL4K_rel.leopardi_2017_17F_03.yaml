@@ -1,9 +1,0 @@
-evidence: The 10⁻¹⁸-level synthesis instability is achieved through the single-branch
-  common-mode fiber comb servo architecture.
-id: evrel_8XUFRL4K_rel.leopardi_2017_17F_03
-metadata:
-  source_paper: leopardi2017
-  zotero_key: 8XUFRL4K
-object: meth.common_mode_fiber_comb_servo
-predicate: OPERATIONALIZED-AS
-subject: met.erfiber_comb_synthesis_instability_l17

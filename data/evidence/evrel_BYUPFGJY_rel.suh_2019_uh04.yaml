@@ -1,8 +1,0 @@
-evidence: '''reference laser, which is locked to a hydrogen cyanide (HCN)'''
-id: evrel_BYUPFGJY_rel.suh_2019_uh04
-metadata:
-  source_paper: suh2019
-  zotero_key: BYUPFGJY
-object: ent.microresonator_astrocomb_s19
-predicate: PART-OF
-subject: ent.hcn_reference_laser_s19

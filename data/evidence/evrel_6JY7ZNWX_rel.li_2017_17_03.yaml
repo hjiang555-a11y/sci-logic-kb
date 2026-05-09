@@ -1,9 +1,0 @@
-evidence: adjacent mode family member ... helps stabilize the thermal dynamics during
-  soliton formation
-id: evrel_6JY7ZNWX_rel.li_2017_17_03
-metadata:
-  source_paper: li2017
-  zotero_key: 6JY7ZNWX
-object: pri.adjacent_mode_thermal_stabilization
-predicate: ENABLED-BY
-subject: meth.laser_tuning_soliton_access

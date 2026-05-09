@@ -1,8 +1,0 @@
-evidence: platform selection is an application-driven compromise.
-id: evrel_FORTIER2019-COMMPHYS_rel.fortier_2019_19_02
-metadata:
-  source_paper: fortier2019
-  zotero_key: FORTIER2019-COMMPHYS
-object: pri.ofc_nine_application_threads_f19
-predicate: DERIVED-FROM
-subject: pri.comb_platform_tradeoffs_f19

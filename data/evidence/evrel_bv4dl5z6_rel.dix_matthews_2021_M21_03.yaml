@@ -1,8 +1,0 @@
-evidence: phase-stabilized ... active phase stabilization
-id: evrel_bv4dl5z6_rel.dix_matthews_2021_M21_03
-metadata:
-  source_paper: dix-matthews2021_bv4dl5z6
-  zotero_key: bv4dl5z6
-object: pri.noise_cancellation_frequency_transfer
-predicate: ENABLED-BY
-subject: ent.uwa_265m_active_tiptilt_link_dm21

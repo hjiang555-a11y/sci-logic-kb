@@ -1,8 +1,0 @@
-evidence: <5 W
-id: evrel_XZTNQ8D4_rel.manurkar_2018_an18_02
-metadata:
-  source_paper: manurkar2018
-  zotero_key: XZTNQ8D4
-object: met.self_ref_comb_electrical_power_m18
-predicate: CHARACTERIZED-BY
-subject: ent.low_power_5w_self_ref_comb_m18

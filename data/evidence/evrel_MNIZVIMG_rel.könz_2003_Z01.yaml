@@ -1,8 +1,0 @@
-evidence: spectral hole lifetimes for temperatures from 2 K to 18 K
-id: evrel_MNIZVIMG_rel.könz_2003_Z01
-metadata:
-  source_paper: konz2003
-  zotero_key: MNIZVIMG
-object: met.spectral_hole_lifetime_k03
-predicate: CONDITIONED-BY
-subject: ent.shb_eu_yso_reference_l13

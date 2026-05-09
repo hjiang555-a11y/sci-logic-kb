@@ -1,9 +1,0 @@
-evidence: aggregate bit rate of 2 Tbit s⁻¹ (1.65 Tbit s⁻¹ net rate after FEC overhead
-  subtraction)
-id: evrel_AT5ZTB9M_rel.shu_2022_22_05
-metadata:
-  source_paper: shu2022
-  zotero_key: AT5ZTB9M
-object: met.microcomb_aggregate_data_rate_s22
-predicate: CHARACTERIZED-BY
-subject: ent.microcomb_driven_siph_system_s22

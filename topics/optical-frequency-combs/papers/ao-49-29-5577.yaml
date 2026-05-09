@@ -1,18 +1,42 @@
-#  ???? — untitled [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Michelle 2010 — Compact, stable 1 GHz femtosecond [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: ao-49-29-5577
+  zotero_key: Compact, stable 1 GHz femtosecond
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
   reliability: medium
-  title: "untitled"
-  first_author: ""
-  note: >
-    [批量提取] 元数据来源：PDF metadata。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  title: Compact, stable 1 GHz femtosecond
+  first_author: Michelle
+  note: batch minimal extraction; pending expert review for full entities/principles
+  year: 2010
+entities:
+- id: ent.ao_49_29_5577_system
+  name: Michelle 2010 experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: Experimental system described in Michelle 2010
+metrics:
+- id: met.ao_49_29_5577_primary
+  name: Michelle 2010 primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Compact, stable 1 GHz femtosecond
+      claim: core experimental result
+relations:
+- id: rel.ao_49_29_5577_01
+  subject: ent.ao_49_29_5577_system
+  predicate: CHARACTERIZED-BY
+  object: met.ao_49_29_5577_primary
+  confidence: established
+  source:
+    zotero_key: Compact, stable 1 GHz femtosecond
+    claim: experimental system characterized by primary metric

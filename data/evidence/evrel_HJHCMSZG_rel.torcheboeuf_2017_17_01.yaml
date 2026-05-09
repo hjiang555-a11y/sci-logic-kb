@@ -1,9 +1,0 @@
-evidence: An optical frequency comb based on a diode-pumped solid-state laser (DPSSL)
-  technology
-id: evrel_HJHCMSZG_rel.torcheboeuf_2017_17_01
-metadata:
-  source_paper: torcheboeuf2017
-  zotero_key: HJHCMSZG
-object: ent.optical_frequency_comb
-predicate: PART-OF
-subject: ent.dpssl_eryb_eom_comb_t17

@@ -1,9 +1,0 @@
-evidence: an all-fiber approach to generating sub-2-cycle pulses at 2 µm and a corresponding
-  octave-spanning optical frequency comb
-id: evrel_BDY8JHA4_rel.xing_2020_16
-metadata:
-  source_paper: xing2020
-  zotero_key: BDY8JHA4
-object: ent.octave_spanning_tisa_comb_d00
-predicate: COMPETES-WITH
-subject: ent.all_fiber_2um_comb_x20

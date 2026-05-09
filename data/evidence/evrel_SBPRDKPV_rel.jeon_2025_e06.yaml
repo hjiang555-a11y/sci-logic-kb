@@ -1,9 +1,0 @@
-evidence: the frequency noise is reduced by up to 10^4 times in the Fourier frequency
-  range from 4 Hz to 10 kHz
-id: evrel_SBPRDKPV_rel.jeon_2025_e06
-metadata:
-  source_paper: jeon2025
-  zotero_key: SBPRDKPV
-object: met.freq_noise_psd_fiber_jeon25
-predicate: CHARACTERIZED-BY
-subject: ent.fiber_interferometer

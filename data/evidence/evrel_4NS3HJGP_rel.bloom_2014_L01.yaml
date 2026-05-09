@@ -1,8 +1,0 @@
-evidence: fractional frequency uncertainty of 6.4 × 10^-18
-id: evrel_4NS3HJGP_rel.bloom_2014_L01
-metadata:
-  source_paper: bloom2014
-  zotero_key: 4NS3HJGP
-object: met.systematic_uncertainty_sr_bloom2014
-predicate: CHARACTERIZED-BY
-subject: ent.sr_optical_lattice_clock_jila2014

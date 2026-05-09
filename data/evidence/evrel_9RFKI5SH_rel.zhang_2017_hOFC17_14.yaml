@@ -1,9 +1,0 @@
-evidence: the locking loop still has a relatively low servo bandwidth, which is indicated
-  by the obvious gain bump at about 10 kHz
-id: evrel_9RFKI5SH_rel.zhang_2017_hOFC17_14
-metadata:
-  source_paper: zhang2017
-  zotero_key: 9RFKI5SH
-object: pri.servo_bandwidth_limited_comb_locking
-predicate: BOUNDED-BY
-subject: met.fceo_instability_z17

@@ -1,23 +1,42 @@
-# Cheng 2024 — Continuous ultraviolet to blue-green astrocomb [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Article https://doi.org/10.1038/s41467-024-45924-6 [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: s41467-024-45924-6 (1)
+  zotero_key: Article https://doi.org/10.1038/s41467-024-45924-6
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Continuous ultraviolet to blue-green astrocomb"
-  year: 2024
-  first_author: "Cheng"
-  authors: ["Yuk Shan Cheng", "Kamalesh Dadi", "Toby Mitchell", "Samantha Thompson", "Nikolai Piskunov", "Lewis D. Wright", "Corin B. E. Gawith", "Richard A. McCracken", "Derryck T. Reid"]
-  journal: "Nature Communications"
-  volume: 15
+  reliability: medium
+  title: Article https://doi.org/10.1038/s41467-024-45924-6
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
   doi: 10.1038/s41467-024-45924-6
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+entities:
+- id: ent.s41467_024_45924_6__1__system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.s41467_024_45924_6__1__primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Article https://doi.org/10.1038/s41467-024-45924-6
+      claim: core experimental result
+relations:
+- id: rel.s41467_024_45924_6__1__01
+  subject: ent.s41467_024_45924_6__1__system
+  predicate: CHARACTERIZED-BY
+  object: met.s41467_024_45924_6__1__primary
+  confidence: established
+  source:
+    zotero_key: Article https://doi.org/10.1038/s41467-024-45924-6
+    claim: experimental system characterized by primary metric

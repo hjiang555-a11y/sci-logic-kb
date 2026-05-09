@@ -1,9 +1,0 @@
-evidence: Integrated SiN waveguide supercontinuum generation enables f-2f self-referencing
-  of the low-pulse-energy microcomb.
-id: evrel_52N4T2DE_rel.lamb_2018_M18_02
-metadata:
-  source_paper: lamb2018
-  zotero_key: 52N4T2DE
-object: pri.integrated_photonic_supercontinuum_for_microcomb_f2f
-predicate: ENABLED-BY
-subject: meth.microcomb_self_referencing

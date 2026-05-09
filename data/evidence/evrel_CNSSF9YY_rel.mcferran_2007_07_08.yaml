@@ -1,9 +1,0 @@
-evidence: the comb will perform breathing motion about this fixed point ... S_ceo/S_λ
-  = n_fix²/(n_fix − n_λ)²
-id: evrel_CNSSF9YY_rel.mcferran_2007_07_08
-metadata:
-  source_paper: mcferran2007
-  zotero_key: CNSSF9YY
-object: pri.comb_breathing_fixed_point
-predicate: DERIVED-FROM
-subject: pri.pump_rin_to_fceo_coupling

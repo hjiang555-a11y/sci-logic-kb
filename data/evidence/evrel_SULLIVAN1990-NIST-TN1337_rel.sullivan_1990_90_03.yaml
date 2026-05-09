@@ -1,9 +1,0 @@
-evidence: the Hadamard variance uses three-sample second differences, which eliminate
-  linear frequency drift.
-id: evrel_SULLIVAN1990-NIST-TN1337_rel.sullivan_1990_90_03
-metadata:
-  source_paper: sullivan1990
-  zotero_key: SULLIVAN1990-NIST-TN1337
-object: pri.hadamard_variance_drift_insensitive
-predicate: DERIVED-FROM
-subject: meth.hadamard_deviation_hdev

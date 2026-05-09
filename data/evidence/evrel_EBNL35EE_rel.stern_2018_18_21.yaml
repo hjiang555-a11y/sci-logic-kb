@@ -1,9 +1,0 @@
-evidence: previous demonstrations using integrated resonators have relied on external
-  pump lasers that are typically large, expensive and power-hungry
-id: evrel_EBNL35EE_rel.stern_2018_18_21
-metadata:
-  source_paper: stern2018
-  zotero_key: EBNL35EE
-object: ent.si3n4_integrated_comb
-predicate: COMPETES-WITH
-subject: ent.battery_operated_microcomb_s18

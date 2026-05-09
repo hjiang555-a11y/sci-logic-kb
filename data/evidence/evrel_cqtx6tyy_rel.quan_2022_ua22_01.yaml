@@ -1,8 +1,0 @@
-evidence: 212 km cascaded urban fiber link
-id: evrel_cqtx6tyy_rel.quan_2022_ua22_01
-metadata:
-  source_paper: quan2022_cqtx6tyy
-  zotero_key: cqtx6tyy
-object: ent.rf_over_fiber_time_transfer_link
-predicate: PART-OF
-subject: ent.ntsc_212km_cascaded_rf_link_q22

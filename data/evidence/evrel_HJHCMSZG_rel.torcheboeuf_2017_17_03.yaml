@@ -1,8 +1,0 @@
-evidence: in-loop integrated phase noise of 133 mrad [10 Hz; 1 MHz]
-id: evrel_HJHCMSZG_rel.torcheboeuf_2017_17_03
-metadata:
-  source_paper: torcheboeuf2017
-  zotero_key: HJHCMSZG
-object: met.frep_integrated_phase_noise_t17
-predicate: CHARACTERIZED-BY
-subject: ent.dpssl_eryb_eom_comb_t17

@@ -1,8 +1,0 @@
-evidence: parametric seeding of a microresonator frequency comb (microcomb)
-id: evrel_BG93PZPK_rel.papp_2013_13_02
-metadata:
-  source_paper: papp2013
-  zotero_key: BG93PZPK
-object: ent.microresonator_frequency_comb
-predicate: PART-OF
-subject: ent.parametrically_seeded_microcomb_p13

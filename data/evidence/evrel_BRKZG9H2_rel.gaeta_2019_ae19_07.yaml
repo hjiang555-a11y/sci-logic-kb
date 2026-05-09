@@ -1,9 +1,0 @@
-evidence: tight confinement allows for dispersion engineering that offers control
-  of the interaction to enhance and/or tailor the comb spectrum
-id: evrel_BRKZG9H2_rel.gaeta_2019_ae19_07
-metadata:
-  source_paper: gaeta2019
-  zotero_key: BRKZG9H2
-object: pri.chip_dispersion_engineering_high_index_contrast
-predicate: ENABLED-BY
-subject: ent.microresonator_frequency_comb

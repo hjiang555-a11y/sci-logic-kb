@@ -1,8 +1,0 @@
-evidence: frequency noise below −1 dB Hz²/Hz at 1 Hz
-id: evrel_W8K5GLK6_rel.dong_2010_o03
-metadata:
-  source_paper: dong2015
-  zotero_key: W8K5GLK6
-object: met.freq_noise_psd_fiber_dong15
-predicate: CHARACTERIZED-BY
-subject: ent.fiber_interferometer

@@ -1,8 +1,0 @@
-evidence: The achieved DCS figure of merit is 1.2 × 10^6 √Hz
-id: evrel_FQ4KYV38_rel.ycas_2019_19_15
-metadata:
-  source_paper: ycas2019
-  zotero_key: FQ4KYV38
-object: met.dcs_figure_of_merit_y19
-predicate: CHARACTERIZED-BY
-subject: ent.midir_dcs_vocs_y19

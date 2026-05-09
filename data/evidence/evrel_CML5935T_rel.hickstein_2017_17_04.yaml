@@ -1,8 +1,0 @@
-evidence: Broadband light ... with only about 80 mW (0.8 nJ) of 1560-nm pump power
-id: evrel_CML5935T_rel.hickstein_2017_17_04
-metadata:
-  source_paper: hickstein2017
-  zotero_key: CML5935T
-object: met.pump_pulse_energy_threshold_h17
-predicate: CHARACTERIZED-BY
-subject: ent.chi2_chi3_waveguide_fceo_h17

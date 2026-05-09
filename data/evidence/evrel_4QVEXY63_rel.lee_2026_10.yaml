@@ -1,9 +1,0 @@
-evidence: averaged laser is more stable than the two similar individual lasers by
-  approximately √2
-id: evrel_4QVEXY63_rel.lee_2026_10
-metadata:
-  source_paper: lee2026
-  zotero_key: 4QVEXY63
-object: pri.optical_frequency_averaging
-predicate: ENABLED-BY
-subject: meth.multi_cavity_averaging

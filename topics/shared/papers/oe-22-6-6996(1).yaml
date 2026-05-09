@@ -1,24 +1,51 @@
-# Sinclair 2014 — Operation of an optically coherent frequency comb outside the metrology lab [framework]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Sinclair 2014 — Portable frequency comb outside metrology lab [evidence]
+# 提取者：AI
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：shared
 meta:
   zotero_key: oe-22-6-6996(1)
   topic: shared
-  source_type: journal_paper
-  contribution_type: framework
+  source_type: technical_paper
+  contribution_type: evidence
   reliability: high
-  title: "Operation of an optically coherent frequency comb outside the metrology lab"
+  title: Operation of an optically coherent frequency comb outside the metrology lab
   year: 2014
-  first_author: "Sinclair"
-  authors: ["L. C. Sinclair", "I. Coddington", "W. C. Swann", "G. B. Rieker", "A. Hati", "K. Iwakuni", "N. R. Newbury"]
-  journal: "Optics Express"
+  first_author: Sinclair
+  journal: Optics Express
   volume: 22
-  pages: 6996
+  pages: 6996-7006
   doi: 10.1364/OE.22.006996
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  note: NIST demonstration of a portable, field-deployable frequency comb system operating outside laboratory conditions. Key milestone for moving optical frequency metrology from lab to field applications.
+entities:
+- id: ent.portable_field_frequency_comb_s14
+  name: Portable field-deployable optical frequency comb
+  hierarchy_level: 1
+  status: demonstrated
+  function: Compact, robust frequency comb system designed for operation outside controlled laboratory environments. Demonstrates coherent optical frequency metrology in field conditions.
+  key_parameters:
+    laser_type: Er:fiber mode-locked laser
+    wavelength: 1550 nm band
+    application: field spectroscopy and ranging
+metrics:
+- id: met.field_comb_coherence_s14
+  name: Field comb coherence performance
+  unit: rad (integrated phase noise)
+  description: Coherence of the frequency comb operated outside the laboratory, demonstrating metrology-grade performance in field conditions
+  demonstrated_value:
+    value: coherent operation demonstrated outside lab
+    conditions: field-deployable setup, non-laboratory environment
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: oe-22-6-6996(1)
+      claim: operation of an optically coherent frequency comb outside the metrology lab
+relations:
+- id: rel.sinclair_2014_01
+  subject: ent.portable_field_frequency_comb_s14
+  predicate: CHARACTERIZED-BY
+  object: met.field_comb_coherence_s14
+  confidence: established
+  source:
+    zotero_key: oe-22-6-6996(1)
+    claim: optically coherent frequency comb outside the metrology lab

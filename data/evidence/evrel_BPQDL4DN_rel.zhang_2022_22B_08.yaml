@@ -1,9 +1,0 @@
-evidence: The relative instability is 9×10⁻¹⁷ at an averaging time of 1 s, and decreases
-  to 5.5×10⁻¹⁹ ... 4000 s
-id: evrel_BPQDL4DN_rel.zhang_2022_22B_08
-metadata:
-  source_paper: zhang2022b
-  zotero_key: BPQDL4DN
-object: met.out_of_loop_instability_z22b
-predicate: CHARACTERIZED-BY
-subject: ent.all_pm_erfiber_comb_z22b

@@ -1,8 +1,0 @@
-evidence: optical lattice clocks leverage large ensembles of neutral atoms
-id: evrel_BWR7TEZ6_rel.fortier_2025_26_02
-metadata:
-  source_paper: fortier2026
-  zotero_key: BWR7TEZ6
-object: ent.optical_frequency_standard
-predicate: PART-OF
-subject: ent.optical_lattice_clock

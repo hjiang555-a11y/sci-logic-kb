@@ -1,9 +1,0 @@
-evidence: the full comb spectrum is uniquely determined by the two degrees of freedom
-  (f_rep, f_o) arising from the time-frequency duality of mode-locked pulse trains.
-id: evrel_CUNDIFF2003-RMP_rel.cundiff_2003_Y03_01
-metadata:
-  source_paper: cundiff2003
-  zotero_key: CUNDIFF2003-RMP
-object: pri.cep_controlled_frequency_comb_time_frequency_duality
-predicate: CHARACTERIZED-BY
-subject: ent.optical_frequency_comb

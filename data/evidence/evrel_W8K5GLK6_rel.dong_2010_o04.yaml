@@ -1,9 +1,0 @@
-evidence: 200 Hz to 1 kHz dominated by combination of thermal noise and RF amplifier
-  thermal noise
-id: evrel_W8K5GLK6_rel.dong_2010_o04
-metadata:
-  source_paper: dong2015
-  zotero_key: W8K5GLK6
-object: pri.fiber_thermal_noise_wanser
-predicate: BOUNDED-BY
-subject: ent.fiber_interferometer

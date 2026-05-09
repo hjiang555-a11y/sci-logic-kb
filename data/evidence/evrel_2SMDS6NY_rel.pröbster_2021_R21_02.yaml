@@ -1,9 +1,0 @@
-evidence: The dual-comb geometry enables autonomous optical mode number determination
-  without requiring a wavemeter in space.
-id: evrel_2SMDS6NY_rel.pröbster_2021_R21_02
-metadata:
-  source_paper: probster2021
-  zotero_key: 2SMDS6NY
-object: pri.dual_comb_mode_number_self_determination
-predicate: ENABLED-BY
-subject: meth.space_qualified_comb_integration

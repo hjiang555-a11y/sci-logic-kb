@@ -1,9 +1,0 @@
-evidence: RV scatter is currently about 5 times greater than the photon-limited precision
-  (3.7 cm/s in 10 min)
-id: evrel_9YYDT9H4_rel.metcalf_2019_19_13
-metadata:
-  source_paper: metcalf2019
-  zotero_key: 9YYDT9H4
-object: pri.fiber_modal_noise_nir_rv_limit
-predicate: BOUNDED-BY
-subject: met.hpf_instrumental_rv_precision_m19

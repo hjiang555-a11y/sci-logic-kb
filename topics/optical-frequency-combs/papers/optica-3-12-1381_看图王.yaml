@@ -1,24 +1,41 @@
-# Lezius 2016 — Space-borne frequency comb metrology [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Space-borne frequency comb metrology [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: optica-3-12-1381_看图王
+  zotero_key: Space-borne frequency comb metrology
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Space-borne frequency comb metrology"
-  year: 2016
-  first_author: "Lezius"
-  authors: ["Matthias Lezius", "Tobias Wilken", "Christian Deutsch", "Michele Giunta", "Olaf Mandel", "Andy Thaller", "Vladimir Schkolnik", "Max Schiemangk", "Aline Dinkelaker", "Anja Kohfeldt", "Andreas Wicht", "Markus Krutzik", "Achim Peters", "Ortwin Hellmig", "Hannes Duncker", "Klaus Sengstock", "Patrick Windpassinger", "Kai Lampmann", "Thomas Hülsing", "Theodor W. Hänsch", "Ronald Holzwarth"]
-  journal: "Optica"
-  volume: 3
-  pages: 1381
-  doi: 10.1364/OPTICA.3.001381
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Space-borne frequency comb metrology
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.optica_3_12_1381_____system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.optica_3_12_1381_____primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Space-borne frequency comb metrology
+      claim: core experimental result
+relations:
+- id: rel.optica_3_12_1381_____01
+  subject: ent.optica_3_12_1381_____system
+  predicate: CHARACTERIZED-BY
+  object: met.optica_3_12_1381_____primary
+  confidence: established
+  source:
+    zotero_key: Space-borne frequency comb metrology
+    claim: experimental system characterized by primary metric

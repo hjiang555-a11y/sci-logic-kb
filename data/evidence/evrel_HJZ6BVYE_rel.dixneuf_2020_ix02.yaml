@@ -1,8 +1,0 @@
-evidence: 全光纤MOPA配RIN伺服
-id: evrel_HJZ6BVYE_rel.dixneuf_2020_ix02
-metadata:
-  source_paper: dixneuf2020
-  zotero_key: HJZ6BVYE
-object: pri.high_power_low_rin_fiber_laser_design_d20
-predicate: IMPLEMENTS
-subject: meth.fiber_mopa_with_rin_servo_d20

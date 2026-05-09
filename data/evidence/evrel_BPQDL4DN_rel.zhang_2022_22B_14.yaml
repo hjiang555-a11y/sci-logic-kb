@@ -1,9 +1,0 @@
-evidence: The beat signal between the comb and a 1555-nm ultra-stable laser is controlled
-  by the EOM and PZT in the laser cavity
-id: evrel_BPQDL4DN_rel.zhang_2022_22B_14
-metadata:
-  source_paper: zhang2022b
-  zotero_key: BPQDL4DN
-object: ent.fp_cavity_system
-predicate: CONDITIONED-BY
-subject: ent.all_pm_erfiber_comb_z22b

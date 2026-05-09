@@ -1,9 +1,0 @@
-evidence: both frequency comparison and spectral information are obtained from the
-  interferograms
-id: evrel_AZ25GQE3_rel.han_2024_an20
-metadata:
-  source_paper: han2024
-  zotero_key: AZ25GQE3
-object: meth.bistatic_two_way_dcs_protocol_h24
-predicate: OPERATIONALIZED-AS
-subject: met.freq_accuracy_dcs_h24

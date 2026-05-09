@@ -1,8 +1,0 @@
-evidence: nonlinear polarization-rotation mode-locked laser
-id: evrel_V7MNFM68_rel.zhang_2017_ha17_01
-metadata:
-  source_paper: zhang2017b
-  zotero_key: V7MNFM68
-object: ent.er_fiber_frequency_comb
-predicate: PART-OF
-subject: ent.ntsc_polarization_rotation_eom_comb_z17

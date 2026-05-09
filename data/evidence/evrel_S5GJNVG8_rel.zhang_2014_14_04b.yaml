@@ -1,8 +1,0 @@
-evidence: laser frequency stabilization
-id: evrel_S5GJNVG8_rel.zhang_2014_14_04b
-metadata:
-  source_paper: zhang2014_ram
-  zotero_key: S5GJNVG8
-object: meth.pdh_locking
-predicate: IMPLEMENTS
-subject: meth.dual_channel_ram_cancellation_z14

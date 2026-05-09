@@ -1,9 +1,0 @@
-evidence: the threshold scales with the inverse Q factor squared, implying that high
-  Q can give a dramatic reduction in required optical power
-id: evrel_2ADYRC8C_rel.kippenberg_2007_11_09
-metadata:
-  source_paper: kippenberg2011
-  zotero_key: 2ADYRC8C
-object: met.parametric_oscillation_threshold
-predicate: CHARACTERIZED-BY
-subject: ent.microresonator_frequency_comb

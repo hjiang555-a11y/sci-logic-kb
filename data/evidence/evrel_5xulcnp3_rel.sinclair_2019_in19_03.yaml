@@ -1,8 +1,0 @@
-evidence: atmospheric turbulence limits free-space TWTFT precision
-id: evrel_5xulcnp3_rel.sinclair_2019_in19_03
-metadata:
-  source_paper: sinclair2019_5xulcnp3
-  zotero_key: 5xulcnp3
-object: pri.atmospheric_optical_phase_noise_power_law
-predicate: BOUNDED-BY
-subject: ent.free_space_optical_tf_link

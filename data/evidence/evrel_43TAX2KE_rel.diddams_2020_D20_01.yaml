@@ -1,9 +1,0 @@
-evidence: Self-referencing is the foundational technique enabling optical frequency
-  combs to provide absolute optical frequency measurement.
-id: evrel_43TAX2KE_rel.diddams_2020_D20_01
-metadata:
-  source_paper: picque2020
-  zotero_key: 43TAX2KE
-object: pri.self_referencing_f2f
-predicate: ENABLED-BY
-subject: ent.optical_frequency_comb

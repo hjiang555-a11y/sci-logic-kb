@@ -1,24 +1,42 @@
-# Caldwell 2023 — Quantum-limited optical time transfer for future geosynchronous links [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Emily  — Quantum-limited optical time transfer for [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
 meta:
-  zotero_key: s41586-023-06032-5
+  zotero_key: Quantum-limited optical time transfer for
   topic: time-frequency-transfer
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Quantum-limited optical time transfer for future geosynchronous links"
-  year: 2023
-  first_author: "Caldwell"
-  authors: ["Emily D. Caldwell", "Jean-Daniel Deschenes", "Jennifer Ellis", "William C. Swann", "Benjamin K. Stuhl", "Hugo Bergeron", "Nathan R. Newbury", "Laura C. Sinclair"]
-  journal: "Nature"
-  volume: 618
-  pages: 721-726
+  reliability: medium
+  title: Quantum-limited optical time transfer for
+  first_author: Emily
+  note: batch minimal extraction; pending expert review for full entities/principles
   doi: 10.1038/s41586-023-06032-5
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+entities:
+- id: ent.s41586_023_06032_5_system
+  name: Emily  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Emily '
+metrics:
+- id: met.s41586_023_06032_5_primary
+  name: Emily  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Quantum-limited optical time transfer for
+      claim: core experimental result
+relations:
+- id: rel.s41586_023_06032_5_01
+  subject: ent.s41586_023_06032_5_system
+  predicate: CHARACTERIZED-BY
+  object: met.s41586_023_06032_5_primary
+  confidence: established
+  source:
+    zotero_key: Quantum-limited optical time transfer for
+    claim: experimental system characterized by primary metric

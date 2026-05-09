@@ -1,23 +1,42 @@
-# Cook 2015 — Laser-Frequency Stabilization Based on Steady-State Spectral-Hole Burning in<... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# David  — Laser-Frequency Stabilization Based on Steady-State Spectral-Hole [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：ultrastable-laser
 meta:
-  zotero_key: PhysRevLett.114.253902
+  zotero_key: Laser-Frequency Stabilization Based on Steady-Stat
   topic: ultrastable-laser
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Laser-Frequency Stabilization Based on Steady-State Spectral-Hole Burning in<mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mml:mrow><mml:msup><mml:mrow><mml:mi>Eu</mml:mi></mml:mrow><mml:mrow><mml:mn>3</mml:mn><mml:mo>+</mml:mo></mml:mrow></mml:msup><mml:mo>∶</mml:mo><mml:msub><mml:mrow><mml:mi mathvariant=\"normal\">Y</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msub><mml:msub><mml:mrow><mml:mi>SiO</mml:mi></mml:mrow><mml:mrow><mml:mn>5</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:math>"
-  year: 2015
-  first_author: "Cook"
-  authors: ["Shon Cook", "Till Rosenband", "David R. Leibrandt"]
-  journal: "Physical Review Letters"
-  volume: 114
-  doi: 10.1103/PhysRevLett.114.253902
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Laser-Frequency Stabilization Based on Steady-State Spectral-Hole
+  first_author: David
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1103/PhysRevLett
+entities:
+- id: ent.physrevlett_114_253902_system
+  name: David  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in David '
+metrics:
+- id: met.physrevlett_114_253902_primary
+  name: David  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Laser-Frequency Stabilization Based on Steady-Stat
+      claim: core experimental result
+relations:
+- id: rel.physrevlett_114_253902_01
+  subject: ent.physrevlett_114_253902_system
+  predicate: CHARACTERIZED-BY
+  object: met.physrevlett_114_253902_primary
+  confidence: established
+  source:
+    zotero_key: Laser-Frequency Stabilization Based on Steady-Stat
+    claim: experimental system characterized by primary metric

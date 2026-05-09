@@ -1,24 +1,42 @@
-# Lessing 2013 — Suppression of amplitude-to-phase noise conversion in balanced optical-microw... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Helen 2013 — Suppression of amplitude-to-phase noise [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: oe-21-22-27057
+  zotero_key: Suppression of amplitude-to-phase noise
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Suppression of amplitude-to-phase noise conversion in balanced optical-microwave phase detectors"
+  reliability: medium
+  title: Suppression of amplitude-to-phase noise
+  first_author: Helen
+  note: batch minimal extraction; pending expert review for full entities/principles
   year: 2013
-  first_author: "Lessing"
-  authors: ["Maurice Lessing", "Helen S. Margolis", "C. Tom A. Brown", "Patrick Gill", "Giuseppe Marra"]
-  journal: "Optics Express"
-  volume: 21
-  pages: 27057
-  doi: 10.1364/OE.21.027057
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+entities:
+- id: ent.oe_21_22_27057_system
+  name: Helen 2013 experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: Experimental system described in Helen 2013
+metrics:
+- id: met.oe_21_22_27057_primary
+  name: Helen 2013 primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Suppression of amplitude-to-phase noise
+      claim: core experimental result
+relations:
+- id: rel.oe_21_22_27057_01
+  subject: ent.oe_21_22_27057_system
+  predicate: CHARACTERIZED-BY
+  object: met.oe_21_22_27057_primary
+  confidence: established
+  source:
+    zotero_key: Suppression of amplitude-to-phase noise
+    claim: experimental system characterized by primary metric

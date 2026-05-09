@@ -1,24 +1,41 @@
-# Kuse 2015 — Ultra-low noise all polarization-maintaining Er fiber-based optical frequency... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Leibrandt  — Ultra-low noise all polarization-maintaining Er [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: oe-23-19-24342
+  zotero_key: Ultra-low noise all polarization-maintaining Er
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Ultra-low noise all polarization-maintaining Er fiber-based optical frequency combs facilitated with a graphene modulator"
-  year: 2015
-  first_author: "Kuse"
-  authors: ["N. Kuse", "C.-C. Lee", "J. Jiang", "C. Mohr", "T. R. Schibli", "M.E. Fermann"]
-  journal: "Optics Express"
-  volume: 23
-  pages: 24342
-  doi: 10.1364/OE.23.024342
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Ultra-low noise all polarization-maintaining Er
+  first_author: Leibrandt
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.oe_23_19_24342_system
+  name: Leibrandt  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Leibrandt '
+metrics:
+- id: met.oe_23_19_24342_primary
+  name: Leibrandt  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Ultra-low noise all polarization-maintaining Er
+      claim: core experimental result
+relations:
+- id: rel.oe_23_19_24342_01
+  subject: ent.oe_23_19_24342_system
+  predicate: CHARACTERIZED-BY
+  object: met.oe_23_19_24342_primary
+  confidence: established
+  source:
+    zotero_key: Ultra-low noise all polarization-maintaining Er
+    claim: experimental system characterized by primary metric

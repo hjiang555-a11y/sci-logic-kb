@@ -1,8 +1,0 @@
-evidence: vibrations, entering through supports, cause the cavity to deform
-id: evrel_VU2V2PTX_rel.webster_2008_e08_03
-metadata:
-  source_paper: webster2008
-  zotero_key: VU2V2PTX
-object: ent.vibration_environment
-predicate: CONDITIONED-BY
-subject: ent.fp_cavity_system

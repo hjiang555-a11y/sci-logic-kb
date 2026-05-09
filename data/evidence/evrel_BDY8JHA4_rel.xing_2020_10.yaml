@@ -1,9 +1,0 @@
-evidence: nonlinear self-compression method combines spectral broadening and compression
-  in one single fiber
-id: evrel_BDY8JHA4_rel.xing_2020_10
-metadata:
-  source_paper: xing2020
-  zotero_key: BDY8JHA4
-object: pri.all_fiber_nonlinear_self_compression_2um
-predicate: ENABLED-BY
-subject: meth.ssfs_tdf_cpa_self_compression_comb_x20

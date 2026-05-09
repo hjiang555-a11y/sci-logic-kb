@@ -1,8 +1,0 @@
-evidence: Over a three-day period, the linear drift was <1 mHz/s at 1542 nm
-id: evrel_N9AGEQ8S_rel.zhang_2019_17_03
-metadata:
-  source_paper: zhang2017
-  zotero_key: N9AGEQ8S
-object: met.cavity_frequency_drift_z17
-predicate: CHARACTERIZED-BY
-subject: ent.si_crystal_fp_cavity_4k_r19

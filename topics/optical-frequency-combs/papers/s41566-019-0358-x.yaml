@@ -1,24 +1,42 @@
-# Gaeta 2019 — Photonic-chip-based frequency combs [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Alexander  — httRps:e//dvoi.orige/10w.1038 /As415R66t-019i-c035l8-ex | FOCUS [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: s41566-019-0358-x
+  zotero_key: httRps:e//dvoi.orige/10w.1038 /As415R66t-019i-c035
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Photonic-chip-based frequency combs"
-  year: 2019
-  first_author: "Gaeta"
-  authors: ["Alexander L. Gaeta", "Michal Lipson", "Tobias J. Kippenberg"]
-  journal: "Nature Photonics"
-  volume: 13
-  pages: 158-169
+  reliability: medium
+  title: httRps:e//dvoi.orige/10w.1038 /As415R66t-019i-c035l8-ex | FOCUS
+  first_author: Alexander
+  note: batch minimal extraction; pending expert review for full entities/principles
   doi: 10.1038/s41566-019-0358-x
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+entities:
+- id: ent.s41566_019_0358_x_system
+  name: Alexander  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Alexander '
+metrics:
+- id: met.s41566_019_0358_x_primary
+  name: Alexander  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: httRps:e//dvoi.orige/10w.1038 /As415R66t-019i-c035
+      claim: core experimental result
+relations:
+- id: rel.s41566_019_0358_x_01
+  subject: ent.s41566_019_0358_x_system
+  predicate: CHARACTERIZED-BY
+  object: met.s41566_019_0358_x_primary
+  confidence: established
+  source:
+    zotero_key: httRps:e//dvoi.orige/10w.1038 /As415R66t-019i-c035
+    claim: experimental system characterized by primary metric

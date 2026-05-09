@@ -1,0 +1,52 @@
+chain_id: comb_frequency_accuracy
+question: How accurately can frequency combs measure absolute optical frequencies?
+domain: optical-frequency-combs
+confidence: draft
+last_updated: '2026-05-09'
+current_best:
+  value: Sub-10^-16 absolute uncertainty; 100-200 as residual timing; <10^-20 instability at 10^4 s
+  system: Er:fiber comb (Yan 2015)
+limiting_principle:
+  id: pri.gain_lifetime_servo_bandwidth_limit
+  name: Comb frequency ruler accuracy limited by f_CEO and f_rep traceability
+  defined_by: Multiple (Holzwarth 2000, Udem 2002, Yan 2015)
+  statement: f_n = n*f_rep + f_CEO. Accuracy depends on f_CEO stabilization precision and f_rep traceability to a primary standard.
+timeline:
+- year: 2000
+  value: 5.1x10^-16
+  system: Holzwarth self-referenced PCF comb
+  note: 'Proof of concept: comb as ruler'
+- year: 2002
+  value: 1.9x10^-14 (H 1S-2S)
+  system: Udem hydrogen spectroscopy
+  note: Limited by spectrometer
+- year: 2015
+  value: 100-200 as timing uncertainty
+  system: Yan Er:fiber comb ring
+  note: Comb-limited, not reference-limited
+- year: 2017
+  value: <5x10^-14
+  system: Beha EOM comb
+  note: EO comb as frequency ruler
+- year: 2018
+  value: 9.7x10^-21 mod sigma_y @126500s
+  system: Kashiwagi inter-branch correlation
+  note: Ultimate self-characterization
+edges:
+- from: Comb absolute frequency accuracy
+  to: pri.gain_lifetime_servo_bandwidth_limit
+  relation: BOUNDED-BY
+- from: pri.gain_lifetime_servo_bandwidth_limit
+  to: Optical clock reference (<10^-18)
+  relation: RESOLVED-BY
+  status: in_progress
+- from: 'Current: 100-200 as timing'
+  to: 'Target: <10 as (optical clock regime)'
+  relation: REMAINING-GAP (~10-20x)
+evidence:
+- relation_id: rel.holzwarth_2000_ol00_01
+  claim: first self-referenced comb at 5.1x10^-16 uncertainty
+- relation_id: rel.udem_2001_02_02
+  claim: optical frequency measurement accuracy at 1.9x10^-14
+- relation_id: rel.beha_2017_01
+  claim: EOM comb frequency accuracy <5x10^-14

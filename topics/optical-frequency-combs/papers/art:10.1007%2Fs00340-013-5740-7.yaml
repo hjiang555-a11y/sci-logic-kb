@@ -1,24 +1,42 @@
-# Dolgovskiy 2013 — Ultra-stable microwave generation with a diode-pumped solid-state laser in th... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Appl.Phys.B(2014)116:593–601 [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: art:10.1007%2Fs00340-013-5740-7
+  zotero_key: Appl.Phys.B(2014)116:593–601
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Ultra-stable microwave generation with a diode-pumped solid-state laser in the 1.5-μm range"
-  year: 2013
-  first_author: "Dolgovskiy"
-  authors: ["Vladimir Dolgovskiy", "Stéphane Schilt", "Nikola Bucalovic", "Gianni Di Domenico", "Serge Grop", "Benoît Dubois", "Vincent Giordano", "Thomas Südmeyer"]
-  journal: "Applied Physics B"
-  volume: 116
-  pages: 593-601
+  reliability: medium
+  title: Appl.Phys.B(2014)116:593–601
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
   doi: 10.1007/s00340-013-5740-7
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+entities:
+- id: ent.art_10_1007_2fs00340_013_5740__system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.art_10_1007_2fs00340_013_5740__primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Appl.Phys.B(2014)116:593–601
+      claim: core experimental result
+relations:
+- id: rel.art_10_1007_2fs00340_013_5740__01
+  subject: ent.art_10_1007_2fs00340_013_5740__system
+  predicate: CHARACTERIZED-BY
+  object: met.art_10_1007_2fs00340_013_5740__primary
+  confidence: established
+  source:
+    zotero_key: Appl.Phys.B(2014)116:593–601
+    claim: experimental system characterized by primary metric

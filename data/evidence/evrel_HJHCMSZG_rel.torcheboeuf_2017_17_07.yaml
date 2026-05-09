@@ -1,9 +1,0 @@
-evidence: solid-state lasers exhibit lower quantum-limited timing jitter compared
-  to fiber lasers due to higher intracavity peak power
-id: evrel_HJHCMSZG_rel.torcheboeuf_2017_17_07
-metadata:
-  source_paper: torcheboeuf2017
-  zotero_key: HJHCMSZG
-object: ent.er_fiber_frequency_comb
-predicate: COMPETES-WITH
-subject: ent.dpssl_eryb_eom_comb_t17

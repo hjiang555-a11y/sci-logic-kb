@@ -1,0 +1,176 @@
+topic: frequency-standards
+generated: 2026-05-09 01:47 UTC
+schema_version: v5.0-evidence
+summary:
+  total_evidence_units: 7
+  unique_limiting_principles: 6
+  with_breakthrough_paths: 2
+  with_resolved_limits: 0
+  with_active_limits: 0
+evidence_groups:
+- limiting_principle: pri.dick_effect
+  supporting_papers: 2
+  paper_list:
+  - fortier2026.yaml
+  - zhao2008.yaml
+  year_range: 2008-2026
+  first_authors:
+  - Fortier
+  - 赵文宇
+  best_evidence:
+    paper: fortier2026.yaml
+    author: Fortier
+    year: 2026
+    claim: the Dick effect... can exceed the QPN limit when the clock laser noise is significant
+    is_system_limit: true
+    limit_status: null
+  breakthrough_paths:
+  - direction: pri.quantum_projection_noise_limit
+    expected_gain: 更好的超稳激光（10⁻¹⁸ 级）或零死时间操作 → Dick 效应降至 QPN 以下
+    status: in_progress
+    source:
+      zotero_key: BWR7TEZ6
+      claim: can still achieve uncertainties below 2 × 10⁻¹⁸ when the cavity-stabilized local oscillator is limited to fractional instabilities at the 10⁻¹⁶ level
+  evidence_units:
+  - relation_id: rel.fortier_2025_26_05
+    paper: fortier2026.yaml
+    author: Fortier
+    year: 2026
+    is_system_limit: true
+    limit_status: null
+    verification: observed
+    claim: the Dick effect... can exceed the QPN limit when the clock laser noise is significant
+  - relation_id: rel.Z08_03
+    paper: zhao2008.yaml
+    author: 赵文宇
+    year: 2008
+    is_system_limit: false
+    limit_status: conditional
+    verification: ''
+    claim: 由于 Dick 效应，频率综合器相位噪声影响喷泉钟的输出频率稳定度
+- limiting_principle: pri.cold_collisional_shift_cesium
+  supporting_papers: 1
+  paper_list:
+  - clairon1995.yaml
+  year_range: 1995-1995
+  first_authors:
+  - Clairon
+  best_evidence:
+    paper: clairon1995.yaml
+    author: Clairon
+    year: 1995
+    claim: cold collisions will be the limiting effect for long-term stability and accuracy.
+    is_system_limit: true
+    limit_status: null
+  breakthrough_paths: []
+  evidence_units:
+  - relation_id: rel.clairon_1995_lairon1995_03
+    paper: clairon1995.yaml
+    author: Clairon
+    year: 1995
+    is_system_limit: true
+    limit_status: null
+    verification: observed
+    claim: cold collisions will be the limiting effect for long-term stability and accuracy.
+- limiting_principle: pri.qpn_dick_two_fundamental_limits_dfl16
+  supporting_papers: 1
+  paper_list:
+  - diddams2016.yaml
+  year_range: 2016-2016
+  first_authors:
+  - Diddams
+  best_evidence:
+    paper: diddams2016.yaml
+    author: Diddams
+    year: 2016
+    claim: optical clock instability is limited in tandem by quantum projection noise and the Dick effect.
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths: []
+  evidence_units:
+  - relation_id: rel.diddams_2016_FL16_02
+    paper: diddams2016.yaml
+    author: Diddams
+    year: 2016
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: optical clock instability is limited in tandem by quantum projection noise and the Dick effect.
+- limiting_principle: pri.quantum_projection_noise_limit
+  supporting_papers: 1
+  paper_list:
+  - fortier2026.yaml
+  year_range: 2026-2026
+  first_authors:
+  - Fortier
+  best_evidence:
+    paper: fortier2026.yaml
+    author: Fortier
+    year: 2026
+    claim: the quantum projection noise limit to stability
+    is_system_limit: false
+    limit_status: null
+  breakthrough_paths:
+  - direction: pri.dick_effect
+    expected_gain: 消除 Dick 效应（零死时间操作或 10⁻¹⁸ 超稳激光）→ 直接达到 QPN 极限
+    status: in_progress
+    source:
+      zotero_key: BWR7TEZ6
+      claim: Mitigation therefore requires minimizing the Dick effect
+  evidence_units:
+  - relation_id: rel.fortier_2025_26_04
+    paper: fortier2026.yaml
+    author: Fortier
+    year: 2026
+    is_system_limit: false
+    limit_status: null
+    verification: calculated
+    claim: the quantum projection noise limit to stability
+- limiting_principle: pri.sr_clock_systematic_budget_framework_l08
+  supporting_papers: 1
+  paper_list:
+  - ludlow2008_thesis.yaml
+  year_range: 2008-2008
+  first_authors:
+  - Ludlow
+  best_evidence:
+    paper: ludlow2008_thesis.yaml
+    author: Ludlow
+    year: 2008
+    claim: the total systematic uncertainty budget of the JILA Sr clock is constructed as the quadrature sum of eight independently evaluated contributions.
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths: []
+  evidence_units:
+  - relation_id: rel.ludlow_2008_08T_03
+    paper: ludlow2008_thesis.yaml
+    author: Ludlow
+    year: 2008
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: the total systematic uncertainty budget of the JILA Sr clock is constructed as the quadrature sum of eight independently evaluated contributions.
+- limiting_principle: pri.blackbody_radiation_stark_shift
+  supporting_papers: 1
+  paper_list:
+  - ludlow2015.yaml
+  year_range: 2015-2015
+  first_authors:
+  - Ludlow
+  best_evidence:
+    paper: ludlow2015.yaml
+    author: Ludlow
+    year: 2015
+    claim: atomic response to room-temperature blackbody radiation
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths: []
+  evidence_units:
+  - relation_id: rel.ludlow_2015_ud15_02
+    paper: ludlow2015.yaml
+    author: Ludlow
+    year: 2015
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: atomic response to room-temperature blackbody radiation

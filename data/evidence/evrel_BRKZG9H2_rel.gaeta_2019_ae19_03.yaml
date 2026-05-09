@@ -1,9 +1,0 @@
-evidence: chip-based platforms offer several key features for performing SCG and KCG
-  compared with fibre-based platforms
-id: evrel_BRKZG9H2_rel.gaeta_2019_ae19_03
-metadata:
-  source_paper: gaeta2019
-  zotero_key: BRKZG9H2
-object: meth.chip_scg_comb_generation_g19
-predicate: OPERATIONALIZED-AS
-subject: ent.chip_scg_waveguide_g19

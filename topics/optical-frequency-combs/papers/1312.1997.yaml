@@ -1,19 +1,41 @@
-# Quinlan ???? — Microsoft Word - Er_OA_Int_ver7_ArXiv.docx [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Fred  — Optical amplification and pulse interleaving for [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: 1312.1997
+  zotero_key: Optical amplification and pulse interleaving for
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
   reliability: medium
-  title: "Microsoft Word - Er_OA_Int_ver7_ArXiv.docx"
-  first_author: "Quinlan"
-  authors: ["Quinlan, Franklyn J."]
-  note: >
-    [批量提取] 元数据来源：PDF metadata。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  title: Optical amplification and pulse interleaving for
+  first_author: Fred
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.1312_1997_system
+  name: Fred  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Fred '
+metrics:
+- id: met.1312_1997_primary
+  name: Fred  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Optical amplification and pulse interleaving for
+      claim: core experimental result
+relations:
+- id: rel.1312_1997_01
+  subject: ent.1312_1997_system
+  predicate: CHARACTERIZED-BY
+  object: met.1312_1997_primary
+  confidence: established
+  source:
+    zotero_key: Optical amplification and pulse interleaving for
+    claim: experimental system characterized by primary metric

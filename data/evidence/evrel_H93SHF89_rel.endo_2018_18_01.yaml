@@ -1,9 +1,0 @@
-evidence: monolithic Er:glass OFC achieves free-running stability of ~1×10^-19 at
-  1 s gate time
-id: evrel_H93SHF89_rel.endo_2018_18_01
-metadata:
-  source_paper: endo2018
-  zotero_key: H93SHF89
-object: met.free_running_freq_instability_e18
-predicate: CHARACTERIZED-BY
-subject: ent.monolithic_erglass_comb_e18

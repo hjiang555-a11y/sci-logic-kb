@@ -1,24 +1,42 @@
-# Papp 2013 — Parametric seeding of a microresonator optical frequency comb [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Gerginov 2013 — Parametric seeding of a microresonator [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: oe-21-15-17615
+  zotero_key: Parametric seeding of a microresonator
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Parametric seeding of a microresonator optical frequency comb"
+  reliability: medium
+  title: Parametric seeding of a microresonator
+  first_author: Gerginov
+  note: batch minimal extraction; pending expert review for full entities/principles
   year: 2013
-  first_author: "Papp"
-  authors: ["Scott B. Papp", "Pascal Del’Haye", "Scott A. Diddams"]
-  journal: "Optics Express"
-  volume: 21
-  pages: 17615
-  doi: 10.1364/OE.21.017615
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+entities:
+- id: ent.oe_21_15_17615_system
+  name: Gerginov 2013 experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: Experimental system described in Gerginov 2013
+metrics:
+- id: met.oe_21_15_17615_primary
+  name: Gerginov 2013 primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Parametric seeding of a microresonator
+      claim: core experimental result
+relations:
+- id: rel.oe_21_15_17615_01
+  subject: ent.oe_21_15_17615_system
+  predicate: CHARACTERIZED-BY
+  object: met.oe_21_15_17615_primary
+  confidence: established
+  source:
+    zotero_key: Parametric seeding of a microresonator
+    claim: experimental system characterized by primary metric

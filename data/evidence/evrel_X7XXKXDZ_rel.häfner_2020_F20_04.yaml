@@ -1,8 +1,0 @@
-evidence: vibration isolation table reduces vibrations by more than 20 dB for >5 Hz
-id: evrel_X7XXKXDZ_rel.häfner_2020_F20_04
-metadata:
-  source_paper: hafner2020
-  zotero_key: X7XXKXDZ
-object: ent.vibration_environment
-predicate: CONDITIONED-BY
-subject: ent.transportable_12cm_cavity_h20

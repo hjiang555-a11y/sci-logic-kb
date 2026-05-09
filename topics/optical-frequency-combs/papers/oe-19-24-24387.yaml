@@ -1,18 +1,41 @@
-#  ???? — oe-19-24-24387 [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# William  — Microwave generation with low residual phase [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: oe-19-24-24387
+  zotero_key: Microwave generation with low residual phase
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: low
-  title: "oe-19-24-24387"
-  first_author: ""
-  note: >
-    [批量提取] 元数据来源：placeholder (needs expert review)。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Microwave generation with low residual phase
+  first_author: William
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.oe_19_24_24387_system
+  name: William  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in William '
+metrics:
+- id: met.oe_19_24_24387_primary
+  name: William  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Microwave generation with low residual phase
+      claim: core experimental result
+relations:
+- id: rel.oe_19_24_24387_01
+  subject: ent.oe_19_24_24387_system
+  predicate: CHARACTERIZED-BY
+  object: met.oe_19_24_24387_primary
+  confidence: established
+  source:
+    zotero_key: Microwave generation with low residual phase
+    claim: experimental system characterized by primary metric

@@ -1,8 +1,0 @@
-evidence: T2L2 ... time transfer by laser link
-id: evrel_7t65sn78_rel.exertier_2016_xe16_01
-metadata:
-  source_paper: exertier2016_7t65sn78
-  zotero_key: 7t65sn78
-object: ent.satellite_microwave_time_transfer_link
-predicate: PART-OF
-subject: ent.t2l2_laser_time_transfer

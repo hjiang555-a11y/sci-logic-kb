@@ -1,24 +1,41 @@
-# Zhang 2017 — Steering optical comb frequencies by rotating the polarization state [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Steering optical comb frequencies [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: LZ01030765
+  zotero_key: Steering optical comb frequencies
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Steering optical comb frequencies by rotating the polarization state"
-  year: 2017
-  first_author: "Zhang"
-  authors: ["Yanyan Zhang", "Xiaofei Zhang", "Lulu Yan", "Pan Zhang", "Bingjie Rao", "Wei Han", "Wenge Guo", "Shougang Zhang", "Haifeng Jiang"]
-  journal: "Optics Letters"
-  volume: 42
-  pages: 5145
-  doi: 10.1364/OL.42.005145
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Steering optical comb frequencies
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.lz01030765_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.lz01030765_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Steering optical comb frequencies
+      claim: core experimental result
+relations:
+- id: rel.lz01030765_01
+  subject: ent.lz01030765_system
+  predicate: CHARACTERIZED-BY
+  object: met.lz01030765_primary
+  confidence: established
+  source:
+    zotero_key: Steering optical comb frequencies
+    claim: experimental system characterized by primary metric

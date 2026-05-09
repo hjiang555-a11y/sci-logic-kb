@@ -1,8 +1,0 @@
-evidence: combine fiber Brillouin amplifiers with a repeater laser station
-id: evrel_ZG45BBYV_rel.koke_2019_ok19_03
-metadata:
-  source_paper: koke2019
-  zotero_key: ZG45BBYV
-object: ent.brillouin_rls_1400km_link_k19
-predicate: OPERATIONALIZED-AS
-subject: meth.brillouin_rls_hybrid_1400km_k19

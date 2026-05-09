@@ -1,9 +1,0 @@
-evidence: the main factor affecting the frequency instability of fiber OFCs is environmental
-  disturbance in the out-of-loop fiber
-id: evrel_BPQDL4DN_rel.zhang_2022_22B_11
-metadata:
-  source_paper: zhang2022b
-  zotero_key: BPQDL4DN
-object: pri.thermal_drift_out_of_loop_fiber_noise
-predicate: BOUNDED-BY
-subject: met.out_of_loop_instability_z22b

@@ -1,8 +1,0 @@
-evidence: cavity-stabilized laser system with a reduced thermal noise floor
-id: evrel_RAC23NZV_rel.jiang_2011_I01
-metadata:
-  source_paper: jiang2011
-  zotero_key: RAC23NZV
-object: ent.fp_cavity_system
-predicate: PART-OF
-subject: ent.low_thermal_noise_cavity_j11

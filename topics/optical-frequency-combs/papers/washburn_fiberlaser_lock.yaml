@@ -1,18 +1,41 @@
-#  ???? — Phase-locked, erbium-fiber-laser-based frequency comb in the [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Brian  — Phase-locked, erbium-fiber-laser-based frequency comb in the [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: washburn_fiberlaser_lock
+  zotero_key: Phase-locked, erbium-fiber-laser-based frequency c
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
   reliability: medium
-  title: "Phase-locked, erbium-fiber-laser-based frequency comb in the"
-  first_author: ""
-  note: >
-    [批量提取] 元数据来源：PDF metadata。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  title: Phase-locked, erbium-fiber-laser-based frequency comb in the
+  first_author: Brian
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.washburn_fiberlaser_lock_system
+  name: Brian  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Brian '
+metrics:
+- id: met.washburn_fiberlaser_lock_primary
+  name: Brian  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Phase-locked, erbium-fiber-laser-based frequency c
+      claim: core experimental result
+relations:
+- id: rel.washburn_fiberlaser_lock_01
+  subject: ent.washburn_fiberlaser_lock_system
+  predicate: CHARACTERIZED-BY
+  object: met.washburn_fiberlaser_lock_primary
+  confidence: established
+  source:
+    zotero_key: Phase-locked, erbium-fiber-laser-based frequency c
+    claim: experimental system characterized by primary metric

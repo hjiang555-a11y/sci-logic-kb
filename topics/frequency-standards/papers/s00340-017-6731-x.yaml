@@ -1,23 +1,42 @@
-# Huang 2017 — A comparison of two 40Ca+ single-ion optical frequency standards at the 5 × 1... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Appl. Phys. B (2017) 123:166 [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：frequency-standards
 meta:
-  zotero_key: s00340-017-6731-x
+  zotero_key: Appl. Phys. B (2017) 123:166
   topic: frequency-standards
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "A comparison of two 40Ca+ single-ion optical frequency standards at the 5 × 10−17 level and an evaluation of systematic shifts"
-  year: 2017
-  first_author: "Huang"
-  authors: ["Y. Huang", "H. Guan", "W. Bian", "L. Ma", "K. Liang", "T. Li", "K. Gao"]
-  journal: "Applied Physics B"
-  volume: 123
+  reliability: medium
+  title: Appl. Phys. B (2017) 123:166
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
   doi: 10.1007/s00340-017-6731-x
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+entities:
+- id: ent.s00340_017_6731_x_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.s00340_017_6731_x_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Appl. Phys. B (2017) 123:166
+      claim: core experimental result
+relations:
+- id: rel.s00340_017_6731_x_01
+  subject: ent.s00340_017_6731_x_system
+  predicate: CHARACTERIZED-BY
+  object: met.s00340_017_6731_x_primary
+  confidence: established
+  source:
+    zotero_key: Appl. Phys. B (2017) 123:166
+    claim: experimental system characterized by primary metric

@@ -1,9 +1,0 @@
-evidence: A radical alternative is to use an optical fiber delay line as a frequency
-  reference to stabilize laser frequency
-id: evrel_SI2N2B8N_rel.li_2009_i03
-metadata:
-  source_paper: li2009a
-  zotero_key: SI2N2B8N
-object: ent.fiber_delay_line_reference
-predicate: PART-OF
-subject: ent.titanium_fiber_spool_l09

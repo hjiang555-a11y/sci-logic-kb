@@ -1,9 +1,0 @@
-evidence: Hollow core antiresonant fibers offer new possibilities in the near infrared
-  and visible spectral range
-id: evrel_2F3PD62T_rel.belardi_2015_e01
-metadata:
-  source_paper: belardi2015
-  zotero_key: 2F3PD62T
-object: ent.fiber_interferometer
-predicate: PART-OF
-subject: ent.antiresonant_hollow_core_fiber

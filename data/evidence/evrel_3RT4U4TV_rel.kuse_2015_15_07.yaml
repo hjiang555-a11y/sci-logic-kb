@@ -1,9 +1,0 @@
-evidence: The all-PM Er:fiber comb is an ultra-low-noise implementation of optical
-  frequency comb technology suitable for field-deployable applications.
-id: evrel_3RT4U4TV_rel.kuse_2015_15_07
-metadata:
-  source_paper: kuse2015
-  zotero_key: 3RT4U4TV
-object: ent.optical_frequency_comb
-predicate: PART-OF
-subject: ent.all_pm_er_fiber_comb_k15

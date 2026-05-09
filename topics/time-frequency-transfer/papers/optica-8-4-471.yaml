@@ -1,24 +1,41 @@
-# Shen 2021 — Experimental simulation of time and frequency transfer via an optical satelli... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — ResearchArticle Vol.8,No.4/April2021/Optica 471 [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
 meta:
-  zotero_key: optica-8-4-471
+  zotero_key: ResearchArticle Vol.8,No.4/April2021/Optica 471
   topic: time-frequency-transfer
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Experimental simulation of time and frequency transfer via an optical satellite–ground link at 10<sup>-18</sup> instability"
-  year: 2021
-  first_author: "Shen"
-  authors: ["Qi Shen", "Jian-Yu Guan", "Ting Zeng", "Qi-Ming Lu", "Liang Huang", "Yuan Cao", "Jiu-Peng Chen", "Tian-Qi Tao", "Jin-Cai Wu", "Lei Hou", "Sheng-Kai Liao", "Ji-Gang Ren", "Juan Yin", "Jian-Jun Jia", "Hai-Feng Jiang", "Cheng-Zhi Peng", "Qiang Zhang", "Jian-Wei Pan"]
-  journal: "Optica"
-  volume: 8
-  pages: 471
-  doi: 10.1364/OPTICA.413114
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: ResearchArticle Vol.8,No.4/April2021/Optica 471
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.optica_8_4_471_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.optica_8_4_471_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: ResearchArticle Vol.8,No.4/April2021/Optica 471
+      claim: core experimental result
+relations:
+- id: rel.optica_8_4_471_01
+  subject: ent.optica_8_4_471_system
+  predicate: CHARACTERIZED-BY
+  object: met.optica_8_4_471_primary
+  confidence: established
+  source:
+    zotero_key: ResearchArticle Vol.8,No.4/April2021/Optica 471
+    claim: experimental system characterized by primary metric

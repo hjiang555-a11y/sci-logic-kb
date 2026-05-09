@@ -1,9 +1,0 @@
-evidence: The octave-spanning Si₃N₄ microcomb requires ~120 mW pump power for single-soliton
-  and ~40 mW for multi-soliton states.
-id: evrel_6JY7ZNWX_rel.li_2017_17_01
-metadata:
-  source_paper: li2017
-  zotero_key: 6JY7ZNWX
-object: met.microcomb_soliton_pump_power_threshold
-predicate: CHARACTERIZED-BY
-subject: ent.octave_si3n4_microcomb_l17

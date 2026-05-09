@@ -1,8 +1,0 @@
-evidence: absolute instability of ≤8×10^-16 at 1s
-id: evrel_YMWK52FQ_rel.fortier_2011_o02
-metadata:
-  source_paper: fortier2011
-  zotero_key: YMWK52FQ
-object: met.ofd_microwave_instability_fortier2011
-predicate: CHARACTERIZED-BY
-subject: ent.ti_sapphire_ofd_photonic_osc_fortier2011

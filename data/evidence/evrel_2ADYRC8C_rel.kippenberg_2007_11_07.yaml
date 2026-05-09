@@ -1,9 +1,0 @@
-evidence: Dispersion... ultimately limits this conversion process and leads to a finite
-  bandwidth of the comb generation process
-id: evrel_2ADYRC8C_rel.kippenberg_2007_11_07
-metadata:
-  source_paper: kippenberg2011
-  zotero_key: 2ADYRC8C
-object: pri.microresonator_anomalous_dispersion
-predicate: BOUNDED-BY
-subject: ent.microresonator_frequency_comb

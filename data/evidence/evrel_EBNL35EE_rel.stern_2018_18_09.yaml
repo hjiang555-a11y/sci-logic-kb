@@ -1,8 +1,0 @@
-evidence: comb formation as the microresonator is tuned using its integrated microheater
-id: evrel_EBNL35EE_rel.stern_2018_18_09
-metadata:
-  source_paper: stern2018
-  zotero_key: EBNL35EE
-object: meth.laser_tuning_soliton_access
-predicate: DERIVED-FROM
-subject: meth.electrical_soliton_tuning_s18

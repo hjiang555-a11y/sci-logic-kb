@@ -1,8 +1,0 @@
-evidence: nuclear clocks represent an emerging class of frequency standards
-id: evrel_BWR7TEZ6_rel.fortier_2025_26_03
-metadata:
-  source_paper: fortier2026
-  zotero_key: BWR7TEZ6
-object: ent.optical_frequency_standard
-predicate: PART-OF
-subject: ent.nuclear_clock_229th

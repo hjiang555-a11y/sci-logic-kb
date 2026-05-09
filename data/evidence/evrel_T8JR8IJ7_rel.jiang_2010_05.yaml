@@ -1,8 +1,0 @@
-evidence: AOM in reference arm for heterodyne detection of frequency error
-id: evrel_T8JR8IJ7_rel.jiang_2010_05
-metadata:
-  source_paper: jiang2010
-  zotero_key: T8JR8IJ7
-object: pri.aom_heterodyne_fiber_detection
-predicate: ENABLED-BY
-subject: meth.fiber_delay_locking

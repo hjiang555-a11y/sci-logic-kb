@@ -1,9 +1,0 @@
-evidence: the overlapping Allan deviation has the same expected value as the Allan
-  deviation but with improved confidence.
-id: evrel_RILEY2008-NIST-SP1065_rel.riley_2008_08_02
-metadata:
-  source_paper: riley2008
-  zotero_key: RILEY2008-NIST-SP1065
-object: meth.allan_deviation_adev
-predicate: DERIVED-FROM
-subject: meth.overlapping_allan_deviation_oadev

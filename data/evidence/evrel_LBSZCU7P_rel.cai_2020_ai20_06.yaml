@@ -1,8 +1,0 @@
-evidence: fiber actuator with a large tuning range and a high control bandwidth
-id: evrel_LBSZCU7P_rel.cai_2020_ai20_06
-metadata:
-  source_paper: cai2020
-  zotero_key: LBSZCU7P
-object: pri.single_fiber_mechanical_actuator
-predicate: ENABLED-BY
-subject: meth.compact_single_actuator_er_comb_lock

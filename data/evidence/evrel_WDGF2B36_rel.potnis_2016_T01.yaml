@@ -1,8 +1,0 @@
-evidence: broadband low-noise photodetector for Pound-Drever-Hall laser stabilization
-id: evrel_WDGF2B36_rel.potnis_2016_T01
-metadata:
-  source_paper: potnis2016
-  zotero_key: WDGF2B36
-object: meth.pdh_locking
-predicate: PART-OF
-subject: ent.pdh_photodetector_p16

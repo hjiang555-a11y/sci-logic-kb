@@ -1,9 +1,0 @@
-evidence: loss modulation bypasses the gain medium and therefore offers a modulation
-  bandwidth beyond the gain lifetime limit
-id: evrel_L6ZZII7R_rel.lee_2015_ee15_03
-metadata:
-  source_paper: lee2015
-  zotero_key: L6ZZII7R
-object: pri.gain_lifetime_servo_bandwidth_limit
-predicate: BOUNDED-BY
-subject: pri.monolithic_sesam_graphene_bypass_gain_lifetime_l15

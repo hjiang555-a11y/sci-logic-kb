@@ -1,9 +1,0 @@
-evidence: maximum acceleration sensitivity is 2.5×10⁻¹¹/g, the lowest passive sensitivity
-  to be reported for an optical cavity
-id: evrel_A96XGR82_rel.webster_2011_11_03
-metadata:
-  source_paper: webster2011
-  zotero_key: A96XGR82
-object: met.acceleration_sensitivity_w11
-predicate: CHARACTERIZED-BY
-subject: ent.cubic_force_insensitive_cavity_w11

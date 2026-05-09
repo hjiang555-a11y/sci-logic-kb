@@ -1,8 +1,0 @@
-evidence: uncertainty of 2.0×10⁻¹⁸
-id: evrel_BOTHWELL2019_rel.bothwell_2019_ot19_02
-metadata:
-  source_paper: bothwell2019
-  zotero_key: BOTHWELL2019
-object: met.optical_clock_fractional_uncertainty
-predicate: CHARACTERIZED-BY
-subject: ent.jila_sri_sr_clock_b19

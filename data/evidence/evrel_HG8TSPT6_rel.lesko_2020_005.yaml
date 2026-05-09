@@ -1,8 +1,0 @@
-evidence: 40.6 mrad integrated optical beat phase noise (100 Hz–10 MHz)
-id: evrel_HG8TSPT6_rel.lesko_2020_005
-metadata:
-  source_paper: lesko2020
-  zotero_key: HG8TSPT6
-object: met.fbeat_phase_noise_integrated_l20
-predicate: CHARACTERIZED-BY
-subject: ent.ghz_turnkey_erfiber_comb_l20

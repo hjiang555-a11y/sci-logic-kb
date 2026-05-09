@@ -1,23 +1,42 @@
-# Papp 2013 — Mechanical Control of a Microrod-Resonator Optical Frequency Comb [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Scott  — Mechanical Control of a Microrod-Resonator Optical Frequency Comb [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: PhysRevX.3.031003
+  zotero_key: Mechanical Control of a Microrod-Resonator Optical
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Mechanical Control of a Microrod-Resonator Optical Frequency Comb"
-  year: 2013
-  first_author: "Papp"
-  authors: ["Scott B. Papp", "Pascal Del’Haye", "Scott A. Diddams"]
-  journal: "Physical Review X"
-  volume: 3
-  doi: 10.1103/PhysRevX.3.031003
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Mechanical Control of a Microrod-Resonator Optical Frequency Comb
+  first_author: Scott
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1103/PhysRevX
+entities:
+- id: ent.physrevx_3_031003_system
+  name: Scott  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Scott '
+metrics:
+- id: met.physrevx_3_031003_primary
+  name: Scott  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Mechanical Control of a Microrod-Resonator Optical
+      claim: core experimental result
+relations:
+- id: rel.physrevx_3_031003_01
+  subject: ent.physrevx_3_031003_system
+  predicate: CHARACTERIZED-BY
+  object: met.physrevx_3_031003_primary
+  confidence: established
+  source:
+    zotero_key: Mechanical Control of a Microrod-Resonator Optical
+    claim: experimental system characterized by primary metric

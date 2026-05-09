@@ -1,8 +1,0 @@
-evidence: cavity-stabilized 1565 nm cw fiber laser ... reference laser
-id: evrel_D9ANIZW6_rel.sinclair_2014_14_16
-metadata:
-  source_paper: sinclair2014
-  zotero_key: D9ANIZW6
-object: ent.fp_cavity_system
-predicate: CONDITIONED-BY
-subject: ent.ruggedized_field_comb_s14

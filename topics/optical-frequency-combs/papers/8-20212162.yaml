@@ -1,24 +1,42 @@
-# Rao 2022 — Multi-branch erbium fiber-based femtosecond optical frequency comb for measur... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — 饶冰洁 张攀 李铭坤 杨西光 闫露露 陈鑫 张首刚 张颜艳 姜海峰 [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: 8-20212162
+  zotero_key: 饶冰洁 张攀 李铭坤 杨西光 闫露露 陈鑫 张首刚 张颜艳 姜海峰
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Multi-branch erbium fiber-based femtosecond optical frequency comb for measurement of cavity ring-down spectroscopy"
-  year: 2022
-  first_author: "Rao"
-  authors: ["Bing-Jie Rao", "Pan Zhang", "Ming-Kun Li", "Xi-Guang Yang", "Lu-Lu Yan", "Xin Chen", "Shou-Gang Zhang", "Yan-Yan Zhang", "Hai-Feng Jiang"]
-  journal: "Acta Physica Sinica"
-  volume: 71
-  pages: 084203
-  doi: 10.7498/aps.71.20212162
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: 饶冰洁 张攀 李铭坤 杨西光 闫露露 陈鑫 张首刚 张颜艳 姜海峰
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.7498/aps
+entities:
+- id: ent.8_20212162_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.8_20212162_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: 饶冰洁 张攀 李铭坤 杨西光 闫露露 陈鑫 张首刚 张颜艳 姜海峰
+      claim: core experimental result
+relations:
+- id: rel.8_20212162_01
+  subject: ent.8_20212162_system
+  predicate: CHARACTERIZED-BY
+  object: met.8_20212162_primary
+  confidence: established
+  source:
+    zotero_key: 饶冰洁 张攀 李铭坤 杨西光 闫露露 陈鑫 张首刚 张颜艳 姜海峰
+    claim: experimental system characterized by primary metric

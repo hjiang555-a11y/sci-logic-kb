@@ -1,9 +1,0 @@
-evidence: Open-path DCS field monitoring relies on atmospheric inversion modeling
-  to attribute and quantify regional trace-gas sources.
-id: evrel_2QU7BQ44_rel.coburn_2018_B18_02
-metadata:
-  source_paper: coburn2018
-  zotero_key: 2QU7BQ44
-object: pri.open_path_dcs_attribution_chain
-predicate: ENABLED-BY
-subject: meth.open_path_dcs_field_monitoring

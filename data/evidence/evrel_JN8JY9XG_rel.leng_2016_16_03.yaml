@@ -1,8 +1,0 @@
-evidence: optical filter is utilized to suppress the dispersion influence
-id: evrel_JN8JY9XG_rel.leng_2016_16_03
-metadata:
-  source_paper: leng2016
-  zotero_key: JN8JY9XG
-object: pri.optical_filter_dispersion_suppression
-predicate: ENABLED-BY
-subject: meth.comb_rf_fiber_transfer

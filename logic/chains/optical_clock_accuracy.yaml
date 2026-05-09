@@ -1,0 +1,113 @@
+chain_id: optical_clock_accuracy
+question: "What are the fundamental limits to optical atomic clock stability and systematic uncertainty, and how are they being overcome?"
+domain: frequency-standards
+confidence: draft
+last_updated: 2026-05-09
+
+current_best:
+  value: "systematic uncertainty < 10⁻¹⁸; instability ~5×10⁻¹⁷/√τ"
+  systems: "²⁷Al⁺ quantum logic clock (NIST); ⁸⁷Sr optical lattice clock (JILA)"
+  note: "Optical clocks have surpassed microwave fountain clocks by 100× in accuracy. The two fundamental stability limits are quantum projection noise (QPN) and the Dick effect."
+
+limiting_principle:
+  id: pri.quantum_projection_noise_limit
+  name: "Quantum projection noise (QPN)"
+  statement: >
+    The fundamental quantum limit to clock stability: σ_y(τ) ∝ 1/(ν₀ · √(N · T · τ)),
+    where ν₀ is the clock transition frequency, N is the number of atoms, and T is the
+    interrogation time. For single-ion clocks (N=1), longer T is required; for lattice
+    clocks (N≈10⁴), statistical averaging is faster.
+  defined_by: fortier2026.yaml
+  evidence_count: 1
+
+secondary_limits:
+  - id: pri.dick_effect
+    name: "Dick effect — aliasing of clock laser noise"
+    statement: >
+      Periodic interrogation (dead-time between measurements) aliases high-frequency
+      clock laser phase noise into the measurement band. The Dick effect can exceed
+      QPN when the clock laser noise is significant. Eliminated by zero-dead-time
+      operation or 10⁻¹⁸-level ultrastable clock lasers.
+    breakthrough: "Zero-dead-time operation (Schioppo 2017) or improved clock laser (cross-topic from ultrastable-laser chain)"
+
+  - id: pri.blackbody_radiation_stark_shift
+    name: "Blackbody radiation (BBR) Stark shift"
+    statement: >
+      Room-temperature blackbody radiation induces a Stark shift on the clock transition.
+      This is the dominant systematic uncertainty for optical lattice clocks at ~2×10⁻¹⁸.
+      Mitigated by cryogenic operation or in-situ BBR characterization.
+    breakthrough: "Cryogenic Sr lattice clock (Bothwell 2019) or differential BBR shield"
+
+  - id: pri.cold_collisional_shift_cesium
+    name: "Cold collision shift in Cs fountains"
+    statement: >
+      Density-dependent collisional frequency shift is the primary systematic for
+      Cs fountain clocks. Limits accuracy to ~3×10⁻¹⁶ for Cs fountains (vs <10⁻¹⁸ for optical).
+      This is why optical clocks have overtaken Cs fountains as primary standards.
+
+condition_variables:
+  - symbol: "N"
+    name: "Number of atoms interrogated"
+    effect: "σ_y ∝ 1/√N — lattice clocks (N~10⁴) have fundamental advantage over single-ion (N=1)"
+    ion_clock: "N=1, long T needed (e.g., 1 s for Al⁺)"
+    lattice_clock: "N≈10³-10⁴, faster statistical convergence"
+
+  - symbol: "dead_time"
+    name: "Interrogation dead time fraction"
+    effect: "Higher dead time → stronger Dick effect aliasing"
+    standard: "~50% dead time in typical clock cycles"
+    zero_dead_time: "Schioppo 2017 demonstrated ZDT operation, eliminating Dick effect"
+
+breakthrough_narrative: >
+  Optical atomic clocks face two fundamental stability limits that together determine
+  the ultimate clock performance.
+  
+  Quantum projection noise (QPN) is the irreducible quantum limit. For single-ion clocks
+  (²⁷Al⁺, ¹⁷¹Yb⁺), overcoming QPN requires long interrogation times (T→1 s) and
+  ultrastable clock lasers (cross-topic: ultrastable-laser chain). For lattice clocks
+  (⁸⁷Sr, ¹⁷¹Yb), the large atom number (N≈10⁴) provides statistical advantage.
+  
+  The Dick effect arises from the periodic interrogation cycle: dead time between
+  measurements aliases clock laser phase noise into the measurement band. When the
+  clock laser has significant residual noise (σ_y > 10⁻¹⁷), the Dick effect dominates
+  over QPN. Two solutions converge: (1) zero-dead-time operation (Schioppo 2017),
+  and (2) better clock lasers (the entire ultrastable-laser chain feeds into this).
+  
+  For systematic uncertainty, the dominant limit for lattice clocks is the BBR Stark
+  shift (~2×10⁻¹⁸ at room temperature). Cryogenic operation (Bothwell 2019) or
+  differential shielding can push this below 10⁻¹⁸.
+  
+  For Cs fountain clocks, the cold collision shift limits accuracy to ~3×10⁻¹⁶,
+  explaining why the field has shifted decisively to optical clocks for primary
+  frequency standards (Fortier 2026, Dimarcq 2024).
+
+edges:
+  - from: "Optical clock stability"
+    to: pri.quantum_projection_noise_limit
+    relation: "BOUNDED-BY (fundamental)"
+  - from: "Optical clock stability"
+    to: pri.dick_effect
+    relation: "BOUNDED-BY (practical, dominates when laser noise > QPN)"
+  - from: pri.dick_effect
+    to: "Zero-dead-time operation"
+    relation: "RESOLVED-BY"
+    status: demonstrated
+  - from: pri.quantum_projection_noise_limit
+    to: "Longer T + ultrastable clock laser"
+    relation: "CONDITIONED-BY (ultrastable-laser chain)"
+  - from: "Optical clock systematic"
+    to: pri.blackbody_radiation_stark_shift
+    relation: "BOUNDED-BY (2×10⁻¹⁸ at room temp)"
+  - from: "Systematic: <10⁻¹⁸"
+    to: "Target: 10⁻¹⁹ for SI redefinition"
+    relation: "REMAINING-GAP (~10×)"
+
+evidence:
+  - relation_id: rel.fortier_2025_26_04
+    claim: "the quantum projection noise limit to stability"
+  - relation_id: rel.fortier_2025_26_05
+    claim: "the Dick effect... can exceed the QPN limit"
+  - relation_id: rel.clairon_1995_lairon1995_03
+    claim: "cold collisions will be the limiting effect for long-term stability"
+  - relation_id: rel.ludlow_2015_ud15_02
+    claim: "atomic response to room-temperature blackbody radiation"

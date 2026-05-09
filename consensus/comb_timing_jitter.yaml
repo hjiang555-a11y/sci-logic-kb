@@ -1,0 +1,64 @@
+metric: met.comb_timing_jitter
+metric_name: "Optical frequency comb absolute timing jitter and phase noise"
+context: "OFC as the time-frequency application gateway — the core output metric determining microwave generation quality"
+domain: optical-frequency-combs
+updated: 2026-05-09
+confidence: established
+
+consensus:
+  best_demonstrated_jitter: "139 attoseconds (f_beat, 1 Hz-1 MHz integration)"
+  best_demonstrated_system: "Digital servo all-PM Er:fiber comb (Wang 2025)"
+  best_demonstrated_fceo_jitter: "0.12 fs (f_beat, Zhang 2022); 469 mrad (f_ceo, Wang 2025)"
+  best_demonstrated_phase_noise: "<-180 dBc/Hz @ 1 MHz offset (Kalubovilage 2022)"
+  best_demonstrated_residual_jitter: "<1 fs inter-mode timing jitter (Endo 2018, BOMPD locked to ultrastable laser)"
+  theoretical_limit: "Shot noise floor (~50 as estimated); photodetection quantum limit"
+  remaining_gap: "~3× from current best (139 as) to shot noise limit (~50 as)"
+  contested: false
+
+timeline:
+  - year: 2007
+    value: "0.99 rad² integrated f_CEO noise"
+    system: "McFerran — first Er:fiber comb f_CEO lock"
+    significance: "First characterization of f_CEO phase noise; 80 kHz servo bandwidth"
+  - year: 2010
+    value: "-111 dBc/Hz @1 Hz, 11.55 GHz"
+    system: "Le Coq — CSO-referenced optical frequency division"
+    significance: "First CSO → comb → microwave chain with record phase noise"
+  - year: 2011
+    value: "760 as (1 Hz-5 GHz)"
+    system: "Fortier — Ti:Sapphire OFD"
+    significance: "First sub-femtosecond absolute timing jitter"
+  - year: 2012
+    value: "420 as (1 Hz-5 GHz)"
+    system: "Fortier — 10 GHz hybrid oscillator"
+    significance: "Near fundamental thermal limits; benchmark for a decade"
+  - year: 2013
+    value: "-177 dBc/Hz absolute phase noise floor"
+    system: "Fortier — MUTC photodiode 10 GHz"
+    significance: "Lowest demonstrated microwave phase noise from OFD"
+  - year: 2015
+    value: "MHz f_CEO bandwidth"
+    system: "Kuse — graphene intracavity modulator"
+    significance: "Bypasses EDFA gain lifetime servo bandwidth limit"
+  - year: 2017
+    value: "0.53 rad f_CEO; 0.86 rad f_beat"
+    system: "Zhang — all-PM Er:fiber comb"
+    significance: "Sub-radian integrated phase noise for both degrees of freedom"
+  - year: 2018
+    value: "<1 fs inter-mode timing jitter"
+    system: "Endo — BOMPD locked to ultrastable laser"
+    significance: "Sub-fs residual timing jitter between comb modes"
+  - year: 2022
+    value: "0.12 fs f_beat jitter; 0.55 fs f_CEO jitter"
+    system: "Zhang — advanced all-PM Er:fiber comb"
+    significance: "Record 120 attosecond f_beat timing jitter"
+  - year: 2022
+    value: "<-180 dBc/Hz @ 1 MHz offset"
+    system: "Kalubovilage — 8 GHz photonic microwave"
+    significance: "Lowest demonstrated 8 GHz phase noise floor"
+  - year: 2025
+    value: "139 as f_beat jitter; 168 mrad f_beat phase noise"
+    system: "Wang — digital servo all-PM Er:fiber comb"
+    significance: "Current record: 139 attosecond absolute timing jitter"
+
+trend: "Timing jitter improved from 760 as (2011) → 420 as (2012) → 139 as (2025) — a 5.5× improvement over 14 years. The rate of improvement slowed after 2012 as systems approached fundamental thermal and shot noise limits."

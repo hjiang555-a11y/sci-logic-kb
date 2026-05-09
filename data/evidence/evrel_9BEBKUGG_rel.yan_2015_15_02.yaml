@@ -1,9 +1,0 @@
-evidence: repetition rate is phase-stabilized to a continuous-wave laser with both
-  an intra-cavity electro-optic modulator and a piezo-transducer
-id: evrel_9BEBKUGG_rel.yan_2015_15_02
-metadata:
-  source_paper: yan2015
-  zotero_key: 9BEBKUGG
-object: pri.intracavity_eom_fast_rep_rate_control
-predicate: ENABLED-BY
-subject: meth.er_fiber_comb_dual_actuator_stabilization

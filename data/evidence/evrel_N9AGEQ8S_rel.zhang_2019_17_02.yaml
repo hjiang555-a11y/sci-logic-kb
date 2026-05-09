@@ -1,8 +1,0 @@
-evidence: the median of the linewidth distribution is 17 mHz at 1542 nm
-id: evrel_N9AGEQ8S_rel.zhang_2019_17_02
-metadata:
-  source_paper: zhang2017
-  zotero_key: N9AGEQ8S
-object: met.laser_linewidth_z17
-predicate: CHARACTERIZED-BY
-subject: ent.si_crystal_fp_cavity_4k_r19

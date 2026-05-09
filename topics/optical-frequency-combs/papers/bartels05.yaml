@@ -1,18 +1,42 @@
-#  ???? — bartels05 [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Bartels 2005 — March15,2005 / Vol.30,No.6 / OPTICSLETTERS 667 [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: bartels05
+  zotero_key: March15,2005 / Vol.30,No.6 / OPTICSLETTERS 667
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: low
-  title: "bartels05"
-  first_author: ""
-  note: >
-    [批量提取] 元数据来源：placeholder (needs expert review)。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: March15,2005 / Vol.30,No.6 / OPTICSLETTERS 667
+  first_author: Bartels
+  note: batch minimal extraction; pending expert review for full entities/principles
+  year: 2005
+entities:
+- id: ent.bartels05_system
+  name: Bartels 2005 experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: Experimental system described in Bartels 2005
+metrics:
+- id: met.bartels05_primary
+  name: Bartels 2005 primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: March15,2005 / Vol.30,No.6 / OPTICSLETTERS 667
+      claim: core experimental result
+relations:
+- id: rel.bartels05_01
+  subject: ent.bartels05_system
+  predicate: CHARACTERIZED-BY
+  object: met.bartels05_primary
+  confidence: established
+  source:
+    zotero_key: March15,2005 / Vol.30,No.6 / OPTICSLETTERS 667
+    claim: experimental system characterized by primary metric

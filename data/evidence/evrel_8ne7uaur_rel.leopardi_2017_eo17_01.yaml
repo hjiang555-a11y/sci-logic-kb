@@ -1,8 +1,0 @@
-evidence: frequency comb to enable optical clock comparison via fiber links
-id: evrel_8ne7uaur_rel.leopardi_2017_eo17_01
-metadata:
-  source_paper: leopardi2017_8ne7uaur
-  zotero_key: 8ne7uaur
-object: ent.single_branch_erfiber_comb_l17
-predicate: CONDITIONED-BY
-subject: ent.coherent_optical_fiber_link

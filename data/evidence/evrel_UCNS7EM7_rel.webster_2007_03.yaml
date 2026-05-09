@@ -1,8 +1,0 @@
-evidence: vertical response <0.1 kHz/ms⁻²
-id: evrel_UCNS7EM7_rel.webster_2007_03
-metadata:
-  source_paper: webster2007
-  zotero_key: UCNS7EM7
-object: met.acceleration_sensitivity_vertical_w07
-predicate: CHARACTERIZED-BY
-subject: ent.cutout_cavity_mount_w07

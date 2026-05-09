@@ -1,8 +1,0 @@
-evidence: floor ≈2×10⁻¹⁵ for averaging times in the range 0.5–100 s
-id: evrel_VU2V2PTX_rel.webster_2008_e08_02
-metadata:
-  source_paper: webster2008
-  zotero_key: VU2V2PTX
-object: met.fractional_freq_instability_w08
-predicate: CHARACTERIZED-BY
-subject: ent.fp_cavity_system

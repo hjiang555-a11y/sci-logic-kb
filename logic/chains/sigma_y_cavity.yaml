@@ -1,0 +1,132 @@
+chain_id: sigma_y_cavity_stability
+question: "What determines the ultimate fractional frequency instability σ_y(τ≈1s) of FP cavity-stabilized lasers, and how can it be improved?"
+domain: ultrastable-laser
+confidence: draft
+last_updated: 2026-05-09
+
+current_best:
+  value: "mod σ_y = 2.5×10⁻¹⁷"
+  averaging_time: "10 s (flicker floor)"
+  system: "17 K Si cavity + AlGaAs crystalline coating (Lee 2026)"
+  cavity_length: "6 cm"
+  temperature: "17 K"
+  institution: "JILA / PTB"
+
+limiting_principle:
+  id: pri.brownian_thermal_noise_fdt
+  name: "Brownian thermal noise (Fluctuation-Dissipation Theorem)"
+  statement: >
+    The mechanical dissipation in mirror coatings and substrates, driven by thermal
+    fluctuations at temperature T, imposes a fundamental frequency noise floor
+    S_ν(f) ∝ k_B·T·φ/(L·w₀) · f⁻¹/². In the flicker regime (τ～0.1-100 s),
+    this translates to σ_y(τ) ∝ √(k_B·T·φ/(L·w₀)).
+  defined_by: numata2004.yaml
+  evidence_count: 32
+
+condition_variables:
+  - symbol: "φ_coating"
+    name: "Coating mechanical loss angle"
+    effect: "Linear in σ_y — 10× reduction in φ → 10× reduction in σ_y"
+    ibs_baseline:
+      material: "SiO₂/Ta₂O₅ IBS"
+      value: "φ ≈ 4×10⁻⁴ (room temp); φ ≈ 5×10⁻⁴ (4 K)"
+      source: "numata2004 / robinson2019"
+    algaas_current:
+      material: "AlGaAs/GaAs crystalline coating"
+      value: "φ ≤ 2.5×10⁻⁵ (room temp); φ ~ 4.5×10⁻⁶ (10 K)"
+      source: "cole2013 / lee2026"
+    bottleneck: "Crystalline coating manufacturing yield and birefringence"
+
+  - symbol: "T"
+    name: "Operating temperature"
+    effect: "σ_y ∝ √T — cooling from 300K to 17K gives ~4× direct reduction"
+    room_temp: "300 K — thermal noise limits σ_y to ~8×10⁻¹⁷ (48cm ULE, Häfner 2015)"
+    cryo_124k: "124 K (Si CTE first zero) — σ_y = 4×10⁻¹⁷ (Matei 2017)"
+    cryo_17k: "17 K (Si CTE second zero) — σ_y = 2.5×10⁻¹⁷ (Lee 2026, world record)"
+    cryo_sub5k: "<5 K — σ_y ≈ (4±1)×10⁻¹⁷ (Chen 2025, still IBS-limited)"
+    bottleneck: "Cryocooler vibration coupling; diminishing returns below 17K"
+
+  - symbol: "L"
+    name: "Cavity length"
+    effect: "σ_y ∝ 1/L — longer cavity dilutes coating noise fraction"
+    typical: "6-10 cm (most cryogenic Si cavities)"
+    long_room: "48 cm (Häfner 2015, room temp) → 8×10⁻¹⁷ thermal limit"
+    longest: "68 cm (Parke 2025) → storage time 295 μs, F=410,000"
+    bottleneck: "Vibration sensitivity increases with L; engineering complexity"
+
+  - symbol: "w₀"
+    name: "Beam spot radius on cavity mirrors"
+    effect: "σ_y ∝ 1/w₀ — larger spot dilutes thermal noise"
+    bottleneck: "Limited by cavity mirror curvature and diffraction; diminishing returns"
+
+breakthrough_narrative: >
+  The FP cavity σ_y limit is a story of three parallel approaches converging on a single goal.
+  
+  In 1999, Young demonstrated sub-Hz linewidths but was limited by ULE substrate thermal
+  noise at ~3×10⁻¹⁶. Numata (2004) formalized the FDT theory, showing that mirror coatings
+  dominate the thermal noise budget for typical cavities.
+  
+  Three breakthroughs followed:
+  
+  1. COATING PATH: Cole (2013) demonstrated AlGaAs/GaAs crystalline coatings with 10× lower
+     mechanical loss than IBS, proving that the coating material — not geometry — is the
+     fundamental bottleneck. Lee (2026) combined AlGaAs coatings with cryogenic Si at 17K
+     to achieve the current world record of 2.5×10⁻¹⁷.
+  
+  2. CRYOGENIC PATH: Kessler (2012) showed that Si single crystals at 124K (CTE zero) offer
+     1000× higher mechanical Q than room-temperature ULE. Matei (2017) reached 4×10⁻¹⁷ at
+     124K. Robinson (2019) pushed to 4K where CTE asymptotically approaches zero.
+  
+  3. LONG CAVITY PATH: Häfner (2015) used a 48cm room-temperature ULE cavity to reach
+     8×10⁻¹⁷ thermal limit. Parke (2025) extended to 68cm with 295μs storage time.
+  
+  The convergence point is Lee 2026: 17K Si (cryogenic) + AlGaAs coating (crystalline)
+  + optimized vibration isolation = 2.5×10⁻¹⁷. The remaining gap to the theoretical
+  limit (~10⁻¹⁸) is ~25×, dominated by residual coating loss and temperature-dependent
+  effects in AlGaAs below 17K.
+
+edges:
+  - from: "FP cavity σ_y(1s)"
+    to: pri.brownian_thermal_noise_fdt
+    relation: "BOUNDED-BY (primary, 32 papers)"
+  - from: pri.brownian_thermal_noise_fdt
+    to: "φ_coating → AlGaAs crystalline"
+    relation: "RESOLVED-BY (Cole 2013, Lee 2026)"
+    status: demonstrated
+  - from: pri.brownian_thermal_noise_fdt
+    to: "T → cryogenic Si"
+    relation: "RESOLVED-BY (Kessler 2012, Matei 2017, Lee 2026)"
+    status: demonstrated
+  - from: pri.brownian_thermal_noise_fdt
+    to: "L → long cavity"
+    relation: "RESOLVED-BY (Häfner 2015, Parke 2025)"
+    status: demonstrated
+  - from: "φ_coating → AlGaAs crystalline"
+    to: "Next: GaP/SiN coatings, φ < 10⁻⁶ at cryo"
+    relation: "NEXT-BREAKTHROUGH"
+    status: proposed
+  - from: "Current: σ_y = 2.5×10⁻¹⁷"
+    to: "Theoretical limit: σ_y ≈ 10⁻¹⁸"
+    relation: "REMAINING-GAP (~25×)"
+
+evidence:
+  - relation_id: rel.cole_2013_05
+    claim: "current bounds of stability and sensitivity are dictated by the excess mechanical damping of the high-reflectivity coatings"
+  - relation_id: rel.lee_2026_02
+    claim: "fractional frequency stability of 2.5×10⁻¹⁷ at 10 s is four times better than expected for dielectric mirrors"
+  - relation_id: rel.numata_2017_01
+    claim: "thermal noise from the mirrors and spacer forms the fundamental limit"
+  - relation_id: rel.kessler_2012_06
+    claim: "silicon's high mechanical Q at 124K reduces Brownian noise by orders of magnitude"
+  - relation_id: rel.matei_2017_03
+    claim: "mod σ_y = 4×10⁻¹⁷, consistent with the predicted coating thermal noise floor"
+  - relation_id: rel.robinson_2019_07
+    claim: "we extract a loss angle for the SiO₂/Ta₂O₅ mirror coatings to be ϕ = 5.15×10⁻⁴"
+  - relation_id: rel.häfner_2015_05
+    claim: "48 cm ULE cavity achieves < 1×10⁻¹⁶, with thermal noise floor ~8×10⁻¹⁷"
+  - relation_id: rel.parke_2025_05
+    claim: "68 cm cavity with 295 μs storage time, F=410,000"
+  - relation_id: rel.chen_2025_he02
+    claim: "fundamentally limited by the Brownian thermal noise at sub-5K temperatures"
+  - relation_id: rel.webster_2008_e08_01
+    claim: "first comprehensive verification that thermal noise limits cavity-stabilized lasers"

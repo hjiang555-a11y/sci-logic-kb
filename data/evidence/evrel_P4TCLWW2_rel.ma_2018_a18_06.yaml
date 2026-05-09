@@ -1,9 +1,0 @@
-evidence: intrinsic noise, linewidth, or timing jitter generally scales up with the
-  repetition rate
-id: evrel_P4TCLWW2_rel.ma_2018_a18_06
-metadata:
-  source_paper: ma2018
-  zotero_key: P4TCLWW2
-object: pri.high_frep_bandwidth_power_tradeoff
-predicate: BOUNDED-BY
-subject: met.integrated_phase_noise_750mhz_yb_m18

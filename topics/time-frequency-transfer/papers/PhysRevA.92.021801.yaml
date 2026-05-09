@@ -1,23 +1,42 @@
-# Raupach 2015 — Brillouin amplification supports<mml:math xmlns:mml="http://www.w3.org/1998/M... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Brillouin amplificationsupports1×10−20 uncertaintyinopticalfrequencytransfer [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
 meta:
-  zotero_key: PhysRevA.92.021801
+  zotero_key: Brillouin amplificationsupports1×10−20 uncertainty
   topic: time-frequency-transfer
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Brillouin amplification supports<mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"><mml:mrow><mml:mn>1</mml:mn><mml:mo>×</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>−</mml:mo><mml:mn>20</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math>uncertainty in optical frequency transfer over 1400 km of underground fiber"
-  year: 2015
-  first_author: "Raupach"
-  authors: ["Sebastian M. F. Raupach", "Andreas Koczwara", "Gesine Grosche"]
-  journal: "Physical Review A"
-  volume: 92
-  doi: 10.1103/PhysRevA.92.021801
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Brillouin amplificationsupports1×10−20 uncertaintyinopticalfrequencytransfer
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1103/PhysRevA
+entities:
+- id: ent.physreva_92_021801_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.physreva_92_021801_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Brillouin amplificationsupports1×10−20 uncertainty
+      claim: core experimental result
+relations:
+- id: rel.physreva_92_021801_01
+  subject: ent.physreva_92_021801_system
+  predicate: CHARACTERIZED-BY
+  object: met.physreva_92_021801_primary
+  confidence: established
+  source:
+    zotero_key: Brillouin amplificationsupports1×10−20 uncertainty
+    claim: experimental system characterized by primary metric

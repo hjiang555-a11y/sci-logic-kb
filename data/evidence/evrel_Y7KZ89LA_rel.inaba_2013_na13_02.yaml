@@ -1,8 +1,0 @@
-evidence: phase locking a comb mode to an ultrastable master laser at 1064 nm
-id: evrel_Y7KZ89LA_rel.inaba_2013_na13_02
-metadata:
-  source_paper: inaba2013
-  zotero_key: Y7KZ89LA
-object: ent.fiber_comb_linewidth_transfer_yb_clock_i13
-predicate: OPERATIONALIZED-AS
-subject: meth.fiber_comb_linewidth_transfer_i13

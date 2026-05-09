@@ -1,9 +1,0 @@
-evidence: CW laser locked to known molecular transition provides the absolute frequency
-  anchor for all comb teeth
-id: evrel_59ULFL9Y_rel.yi_2016_I16_05
-metadata:
-  source_paper: yi2016
-  zotero_key: 59ULFL9Y
-object: pri.molecular_rovibrational_fingerprint
-predicate: CONDITIONED-BY
-subject: ent.line_referenced_eo_comb_y16

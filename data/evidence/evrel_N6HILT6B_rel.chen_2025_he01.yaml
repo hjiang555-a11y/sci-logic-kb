@@ -1,8 +1,0 @@
-evidence: 10-cm-long silicon cavity
-id: evrel_N6HILT6B_rel.chen_2025_he01
-metadata:
-  source_paper: chen2025
-  zotero_key: N6HILT6B
-object: ent.fp_cavity_system
-predicate: PART-OF
-subject: ent.si_crystal_fp_cavity_sub5k_c25

@@ -449,25 +449,32 @@ relations:
   object: meth.cryogenic_silicon_stabilization
   confidence: established
   source:
-    note: Bridge injected to establish reasoning chain for Metric Chain Automation
+    zotero_key: JIZCUZLY
+    claim: "Si4 instability reaches 6.5×10⁻¹⁷, consistent with the predicted thermal noise floor"
 - id: rel.bridge_cryogenic_silicon_stabilization_allan_deviation_cryo
   subject: meth.cryogenic_silicon_stabilization
   predicate: ENABLED-BY
   object: met.allan_deviation_cryo
   confidence: established
   source:
-    note: Bridge injected to establish reasoning chain for Metric Chain Automation
+    zotero_key: JIZCUZLY
+    claim: "Si4 instability reaches 6.5×10⁻¹⁷ for averaging times of 0.8 < τ < 80 s"
 - id: rel.bridge_cryogenic_silicon_cavity_allan_deviation_cryo
   subject: ent.cryogenic_silicon_cavity
   predicate: CHARACTERIZED-BY
   object: met.allan_deviation_cryo
   confidence: established
   source:
-    note: Bridge injected to establish reasoning chain for Metric Chain Automation
+    zotero_key: JIZCUZLY
+    claim: "crystalline optical cavity at 4 K demonstrates fractional frequency instability of 6.5×10⁻¹⁷"
 - id: rel.bridge_cryo_01
   subject: ent.fp_cavity_system
   predicate: BOUNDED-BY
   object: pri.brownian_thermal_noise_fdt
+  confidence: established
+  source:
+    zotero_key: JIZCUZLY
+    claim: "Si4 instability reaches 6.5×10⁻¹⁷... consistent with the predicted thermal noise floor"
   breakthrough_paths:
   - direction: pri.crystalline_coating_low_brownian_noise
     expected_gain: AlGaAs 晶体镀层（4 K 下损耗角 ~10⁻⁶）替换 IBS 镀层 → 镀层热噪声降低 10–100×

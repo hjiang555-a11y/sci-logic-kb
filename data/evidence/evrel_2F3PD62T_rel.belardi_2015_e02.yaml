@@ -1,9 +1,0 @@
-evidence: the wavelengths λk of maximum optical transmission ('antiresonance wavelengths')
-  are given by the formula
-id: evrel_2F3PD62T_rel.belardi_2015_e02
-metadata:
-  source_paper: belardi2015
-  zotero_key: 2F3PD62T
-object: pri.antiresonant_hollow_core_guidance
-predicate: ENABLED-BY
-subject: ent.antiresonant_hollow_core_fiber

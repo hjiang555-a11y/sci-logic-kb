@@ -1,9 +1,0 @@
-evidence: detect the f_ceo signal with an all-fiber supercontinuum generation and
-  a common-path f-2f configuration
-id: evrel_9RFKI5SH_rel.zhang_2017_hOFC17_13
-metadata:
-  source_paper: zhang2017
-  zotero_key: 9RFKI5SH
-object: pri.self_referencing_f2f
-predicate: ENABLED-BY
-subject: meth.pump_current_modulation_fceo_lock_z17

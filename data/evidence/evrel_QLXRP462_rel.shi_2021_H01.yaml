@@ -1,8 +1,0 @@
-evidence: coating may strongly increase the overall fiber expansion
-id: evrel_QLXRP462_rel.shi_2021_H01
-metadata:
-  source_paper: shi2021
-  zotero_key: QLXRP462
-object: pri.hcf_coating_thermal_sensitivity
-predicate: CONDITIONED-BY
-subject: ent.fiber_interferometer

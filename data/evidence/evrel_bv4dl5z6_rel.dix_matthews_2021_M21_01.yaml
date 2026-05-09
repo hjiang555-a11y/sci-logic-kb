@@ -1,8 +1,0 @@
-evidence: phase-stabilized optical frequency transfer over a ... free-space link
-id: evrel_bv4dl5z6_rel.dix_matthews_2021_M21_01
-metadata:
-  source_paper: dix-matthews2021_bv4dl5z6
-  zotero_key: bv4dl5z6
-object: ent.free_space_optical_tf_link
-predicate: PART-OF
-subject: ent.uwa_265m_active_tiptilt_link_dm21

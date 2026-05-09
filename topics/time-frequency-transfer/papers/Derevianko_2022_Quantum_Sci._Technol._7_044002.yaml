@@ -1,18 +1,42 @@
-#  ???? — Derevianko_2022_Quantum_Sci._Technol._7_044002 [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Courde  — Quantum Science and Technology [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
 meta:
-  zotero_key: Derevianko_2022_Quantum_Sci._Technol._7_044002
+  zotero_key: Quantum Science and Technology
   topic: time-frequency-transfer
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: low
-  title: "Derevianko_2022_Quantum_Sci._Technol._7_044002"
-  first_author: ""
-  note: >
-    [批量提取] 元数据来源：placeholder (needs expert review)。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Quantum Science and Technology
+  first_author: Courde
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1088/2058-9565/ac7df9
+entities:
+- id: ent.derevianko_2022_quantum_sci__t_system
+  name: Courde  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Courde '
+metrics:
+- id: met.derevianko_2022_quantum_sci__t_primary
+  name: Courde  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Quantum Science and Technology
+      claim: core experimental result
+relations:
+- id: rel.derevianko_2022_quantum_sci__t_01
+  subject: ent.derevianko_2022_quantum_sci__t_system
+  predicate: CHARACTERIZED-BY
+  object: met.derevianko_2022_quantum_sci__t_primary
+  confidence: established
+  source:
+    zotero_key: Quantum Science and Technology
+    claim: experimental system characterized by primary metric

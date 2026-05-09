@@ -1,8 +1,0 @@
-evidence: substantial reduction in detection noise
-id: evrel_MPWLNUIH_rel.galland_2020_A03
-metadata:
-  source_paper: galland2020
-  zotero_key: MPWLNUIH
-object: meth.double_heterodyne_shb_probing
-predicate: CHARACTERIZES
-subject: met.noise_reduction_g20

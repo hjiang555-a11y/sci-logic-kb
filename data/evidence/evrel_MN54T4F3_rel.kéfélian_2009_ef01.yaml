@@ -1,9 +1,0 @@
-evidence: frequency noise of the fiber-stabilized laser below 1 Hz²/Hz over 1 Hz to
-  10 kHz
-id: evrel_MN54T4F3_rel.kéfélian_2009_ef01
-metadata:
-  source_paper: kefelian2009
-  zotero_key: MN54T4F3
-object: met.freq_noise_psd_fiber_kef09
-predicate: CHARACTERIZED-BY
-subject: ent.fiber_interferometer

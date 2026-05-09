@@ -1,0 +1,76 @@
+chain_id: si_second_redefinition
+question: "What are the scientific and metrological requirements for redefining the SI second from microwave (Cs) to optical frequency standards?"
+domain: timescales
+confidence: draft
+last_updated: 2026-05-09
+
+current_best:
+  value: "Roadmap target: ≥3 independent optical clocks with systematic uncertainty < 10⁻¹⁸ and ≥3 independent frequency ratio measurements at <5×10⁻¹⁸"
+  status: "Several optical clocks have demonstrated <10⁻¹⁸ uncertainty. Ratio measurements at <5×10⁻¹⁸ demonstrated (Boulder/Boulder; SYRTE/PTB; RIKEN; NICT)"
+  note: "The Consultative Committee for Time and Frequency (CCTF) has proposed a roadmap. The redefinition requires demonstrating that optical clocks can realize the second with better accuracy than Cs fountains."
+
+limiting_principle:
+  id: pri.redefinition_criteria_second
+  name: "CCTF criteria for SI second redefinition"
+  statement: >
+    The CCTF roadmap requires: (1) ≥3 independent optical clocks (different species
+    and/or institutions) with validated systematic uncertainty <10⁻¹⁸; (2) ≥3 independent
+    optical frequency ratio measurements at <5×10⁻¹⁸; (3) regular contributions to TAI
+    from optical clocks; (4) sustained operation demonstrating reliability.
+  defined_by: dimarcq2024.yaml
+
+condition_variables:
+  - symbol: "clock_count"
+    name: "Number of validated optical clocks"
+    current: ">5 labs operating Sr/Yb/Al⁺/Yb⁺ clocks at <10⁻¹⁷, several at <10⁻¹⁸"
+    target: "≥3 at <10⁻¹⁸ validated uncertainty"
+
+  - symbol: "ratio_measurements"
+    name: "Independent optical frequency ratios"
+    current: "Sr/Yb, Al⁺/Yb⁺, Sr/Hg⁺ ratios demonstrated at <5×10⁻¹⁸"
+    target: "≥3 independent ratios at <5×10⁻¹⁸"
+
+  - symbol: "tai_contribution"
+    name: "Regular contribution to TAI"
+    current: "Several labs contribute optical clock data to TAI on campaign basis"
+    target: "Sustained, regular operation as secondary representations"
+
+breakthrough_narrative: >
+  The SI second has been defined by the Cs hyperfine transition (9.192631770 GHz) since
+  1967. Optical clocks now outperform Cs fountains by 100× in accuracy (<10⁻¹⁸ vs 3×10⁻¹⁶),
+  motivating redefinition based on an optical transition.
+  
+  The CCTF roadmap (Dimarcq 2024) requires: validated clocks, independent ratio
+  measurements, and demonstrated reliability. The scientific motivation extends beyond
+  metrology: better clocks enable tests of fundamental physics (dark matter detection,
+  gravitational wave detection via clock networks), relativistic geodesy (1 cm height
+  resolution via gravitational redshift), and improved GNSS.
+  
+  Remaining challenges: (1) demonstrating sustained operation at <10⁻¹⁸ in multiple
+  labs, (2) intercontinental clock comparisons at <10⁻¹⁸ via fiber links, (3) consensus
+  on which optical transition(s) to adopt, and (4) the role of the Th-229 nuclear clock
+  as a potential future standard with even lower sensitivity to environmental perturbations.
+
+edges:
+  - from: "SI second (Cs, 1967)"
+    to: pri.redefinition_criteria_second
+    relation: "TO-BE-REPLACED-BY"
+  - from: pri.redefinition_criteria_second
+    to: "≥3 independent optical clocks at <10⁻¹⁸"
+    relation: "REQUIRES"
+    status: in_progress
+  - from: pri.redefinition_criteria_second
+    to: "≥3 frequency ratios at <5×10⁻¹⁸"
+    relation: "REQUIRES"
+    status: demonstrated
+  - from: "Current: campaign-mode operation"
+    to: "Target: sustained TAI contribution"
+    relation: "REMAINING-GAP"
+
+evidence:
+  - relation_id: rel.dimarcq_2021_24_01
+    claim: "roadmap toward a redefinition of the SI second based on optical frequency standards"
+  - relation_id: rel.chou_2010_04
+    claim: "optical clocks can detect gravitational redshift at 1 cm height resolution"
+  - relation_id: rel.kleppner_2006_02
+    claim: "geoid model uncertainty limits practical time comparison via gravitational redshift"

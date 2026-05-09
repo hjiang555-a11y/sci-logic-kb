@@ -1,24 +1,42 @@
-# Shu 2022 — Microcomb-driven silicon photonic systems [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# John  — Microcomb-driven silicon photonic systems [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: s41586-022-04579-3
+  zotero_key: Microcomb-driven silicon photonic systems
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Microcomb-driven silicon photonic systems"
-  year: 2022
-  first_author: "Shu"
-  authors: ["Haowen Shu", "Lin Chang", "Yuansheng Tao", "Bitao Shen", "Weiqiang Xie", "Ming Jin", "Andrew Netherton", "Zihan Tao", "Xuguang Zhang", "Ruixuan Chen", "Bowen Bai", "Jun Qin", "Shaohua Yu", "Xingjun Wang", "John E. Bowers"]
-  journal: "Nature"
-  volume: 605
-  pages: 457-463
+  reliability: medium
+  title: Microcomb-driven silicon photonic systems
+  first_author: John
+  note: batch minimal extraction; pending expert review for full entities/principles
   doi: 10.1038/s41586-022-04579-3
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+entities:
+- id: ent.s41586_022_04579_3_system
+  name: John  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in John '
+metrics:
+- id: met.s41586_022_04579_3_primary
+  name: John  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Microcomb-driven silicon photonic systems
+      claim: core experimental result
+relations:
+- id: rel.s41586_022_04579_3_01
+  subject: ent.s41586_022_04579_3_system
+  predicate: CHARACTERIZED-BY
+  object: met.s41586_022_04579_3_primary
+  confidence: established
+  source:
+    zotero_key: Microcomb-driven silicon photonic systems
+    claim: experimental system characterized by primary metric

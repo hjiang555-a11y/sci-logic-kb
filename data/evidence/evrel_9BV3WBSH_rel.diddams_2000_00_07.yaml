@@ -1,9 +1,0 @@
-evidence: optical frequency determined with statistical uncertainty of about 50 Hz
-  via femtosecond comb measurement
-id: evrel_9BV3WBSH_rel.diddams_2000_00_07
-metadata:
-  source_paper: diddams2000
-  zotero_key: 9BV3WBSH
-object: meth.octave_f2f_optical_frequency_measurement
-predicate: OPERATIONALIZED-AS
-subject: met.optical_frequency_measurement_uncertainty_d00

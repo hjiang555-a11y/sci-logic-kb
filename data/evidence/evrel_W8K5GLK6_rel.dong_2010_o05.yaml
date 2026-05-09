@@ -1,9 +1,0 @@
-evidence: laser frequency stabilization system based on all-fiber Michelson interferometer
-  with heterodyne detection
-id: evrel_W8K5GLK6_rel.dong_2010_o05
-metadata:
-  source_paper: dong2015
-  zotero_key: W8K5GLK6
-object: meth.fiber_delay_locking
-predicate: OPERATIONALIZED-AS
-subject: met.freq_noise_psd_fiber_dong15

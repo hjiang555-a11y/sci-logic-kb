@@ -1,9 +1,0 @@
-evidence: the specified fractional frequency instability of the I-SOC microwave link
-  sigma_MWLgg accounts for... flicker floor at the 5.0e-19 level [#SR-PL-09]
-id: evrel_SCI-ESA-HRE-ESR-ISOC_rel.cacciapuoti_2017_17_12
-metadata:
-  source_paper: cacciapuoti2017
-  zotero_key: SCI-ESA-HRE-ESR-ISOC
-object: met.space_to_ground_link_instability
-predicate: CHARACTERIZED-BY
-subject: ent.microwave_link_mwl

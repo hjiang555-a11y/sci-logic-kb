@@ -1,9 +1,0 @@
-evidence: the Fourier transform of ... a pulse train ... comb with spacing set by
-  the repetition rate ... offset frequency set by the CEO frequency
-id: evrel_NHJ84W8G_rel.newbury_2005_ewb05_01
-metadata:
-  source_paper: newbury2005
-  zotero_key: NHJ84W8G
-object: pri.comb_equation
-predicate: DERIVED-FROM
-subject: pri.fiber_comb_perturbative_response_theory

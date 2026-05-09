@@ -1,8 +1,0 @@
-evidence: fiber interferometer locking achieves ultra-low frequency noise
-id: evrel_T8JR8IJ7_rel.jiang_2010_03
-metadata:
-  source_paper: jiang2010
-  zotero_key: T8JR8IJ7
-object: meth.fiber_delay_locking
-predicate: OPERATIONALIZED-AS
-subject: met.freq_noise_psd_fiber

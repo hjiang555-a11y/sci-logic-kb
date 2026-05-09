@@ -1,8 +1,0 @@
-evidence: spectral broadening of fs pulses to more than one optical octave
-id: evrel_ZNCBFZR5_rel.holzwarth_2000_ol00_04
-metadata:
-  source_paper: holzwarth2000
-  zotero_key: ZNCBFZR5
-object: pri.supercontinuum_octave_spanning
-predicate: ENABLED-BY
-subject: pri.octave_spanning_enables_f2f_self_reference

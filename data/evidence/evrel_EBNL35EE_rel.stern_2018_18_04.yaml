@@ -1,9 +1,0 @@
-evidence: a high-Q nonlinear microresonator ... serves two purposes ... back-reflection
-  ... and ... generates a frequency comb through parametric FWM
-id: evrel_EBNL35EE_rel.stern_2018_18_04
-metadata:
-  source_paper: stern2018
-  zotero_key: EBNL35EE
-object: ent.battery_operated_microcomb_s18
-predicate: PART-OF
-subject: ent.nonlinear_microring_dual_role_s18

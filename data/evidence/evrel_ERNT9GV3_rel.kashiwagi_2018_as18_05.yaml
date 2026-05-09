@@ -1,8 +1,0 @@
-evidence: 1.4×10⁻¹⁶ and 1.8×10⁻¹⁶ at a 1-s averaging time
-id: evrel_ERNT9GV3_rel.kashiwagi_2018_as18_05
-metadata:
-  source_paper: kashiwagi2018
-  zotero_key: ERNT9GV3
-object: met.relative_frequency_instability_allan_k18
-predicate: CHARACTERIZED-BY
-subject: ent.multi_branch_fiber_comb_k18

@@ -1,9 +1,0 @@
-evidence: referenced to a GPS-disciplined clock that provides absolute traceability
-  to the SI second
-id: evrel_9YYDT9H4_rel.metcalf_2019_19_10
-metadata:
-  source_paper: metcalf2019
-  zotero_key: 9YYDT9H4
-object: pri.gps_disciplined_si_traceability
-predicate: ENABLED-BY
-subject: meth.eo_sin_astrocomb_calibration_m19

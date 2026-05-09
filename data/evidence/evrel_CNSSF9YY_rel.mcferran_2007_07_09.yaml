@@ -1,9 +1,0 @@
-evidence: noise on the pump power will lead to linearly correlated noise on fceo and
-  fr
-id: evrel_CNSSF9YY_rel.mcferran_2007_07_09
-metadata:
-  source_paper: mcferran2007
-  zotero_key: CNSSF9YY
-object: met.pump_laser_rin_m07
-predicate: CONDITIONED-BY
-subject: ent.pump_noise_suppressed_erfiber_comb_m07

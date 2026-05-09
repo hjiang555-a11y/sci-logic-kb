@@ -1,8 +1,0 @@
-evidence: kx=6.7(3)×10⁻¹¹/g, ky=8.4(4)×10⁻¹¹/g, kz=5.5(3)×10⁻¹¹/g
-id: evrel_YKPFKDD9_rel.kessler_2012_07
-metadata:
-  source_paper: kessler2012
-  zotero_key: YKPFKDD9
-object: met.vibration_sensitivity_k12
-predicate: CHARACTERIZED-BY
-subject: ent.si_crystal_fp_cavity_k12

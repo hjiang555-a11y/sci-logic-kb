@@ -1,9 +1,0 @@
-evidence: graphene electro-optic modulator ... gate-variable optical transitions in
-  graphene
-id: evrel_L6ZZII7R_rel.lee_2015_ee15_04
-metadata:
-  source_paper: lee2015
-  zotero_key: L6ZZII7R
-object: pri.intracavity_graphene_fast_modulation
-predicate: ENABLED-BY
-subject: pri.monolithic_sesam_graphene_bypass_gain_lifetime_l15

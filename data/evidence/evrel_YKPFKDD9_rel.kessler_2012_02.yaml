@@ -1,9 +1,0 @@
-evidence: silicon single crystal... insensitive to temperature fluctuations... minimum
-  cavity length at 124.2 K
-id: evrel_YKPFKDD9_rel.kessler_2012_02
-metadata:
-  source_paper: kessler2012
-  zotero_key: YKPFKDD9
-object: pri.silicon_cte_zero_crossing_124k
-predicate: ENABLED-BY
-subject: ent.si_crystal_fp_cavity_k12

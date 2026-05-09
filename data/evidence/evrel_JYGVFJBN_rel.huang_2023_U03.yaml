@@ -1,8 +1,0 @@
-evidence: 锁定到光纤延迟线
-id: evrel_JYGVFJBN_rel.huang_2023_U03
-metadata:
-  source_paper: huang2023
-  zotero_key: JYGVFJBN
-object: pri.fiber_delay_line_frequency_ref
-predicate: IMPLEMENTS
-subject: meth.fiber_delay_locking

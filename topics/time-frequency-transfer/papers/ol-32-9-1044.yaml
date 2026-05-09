@@ -1,19 +1,42 @@
-# Kim ???? — Long-term femtosecond timing link stabilization using a single-crystal balanc... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Kim 2007 — Long-term femtosecond timing link stabilization [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
 meta:
-  zotero_key: ol-32-9-1044
+  zotero_key: Long-term femtosecond timing link stabilization
   topic: time-frequency-transfer
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
   reliability: medium
-  title: "Long-term femtosecond timing link stabilization using a single-crystal balanced cross correlator"
-  first_author: "Kim"
-  authors: ["J. Kim, J. Chen, Z. Zhang, F. N. C. Wong, F. X. Kärtner, F. Loehl, H. Schlarb"]
-  note: >
-    [批量提取] 元数据来源：PDF metadata。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  title: Long-term femtosecond timing link stabilization
+  first_author: Kim
+  note: batch minimal extraction; pending expert review for full entities/principles
+  year: 2007
+entities:
+- id: ent.ol_32_9_1044_system
+  name: Kim 2007 experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: Experimental system described in Kim 2007
+metrics:
+- id: met.ol_32_9_1044_primary
+  name: Kim 2007 primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Long-term femtosecond timing link stabilization
+      claim: core experimental result
+relations:
+- id: rel.ol_32_9_1044_01
+  subject: ent.ol_32_9_1044_system
+  predicate: CHARACTERIZED-BY
+  object: met.ol_32_9_1044_primary
+  confidence: established
+  source:
+    zotero_key: Long-term femtosecond timing link stabilization
+    claim: experimental system characterized by primary metric

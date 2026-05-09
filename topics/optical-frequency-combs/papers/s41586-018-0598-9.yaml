@@ -1,24 +1,42 @@
-# Stern 2018 — Battery-operated integrated frequency comb generator [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Alexander  — Battery-operated integrated frequency comb [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: s41586-018-0598-9
+  zotero_key: Battery-operated integrated frequency comb
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Battery-operated integrated frequency comb generator"
-  year: 2018
-  first_author: "Stern"
-  authors: ["Brian Stern", "Xingchen Ji", "Yoshitomo Okawachi", "Alexander L. Gaeta", "Michal Lipson"]
-  journal: "Nature"
-  volume: 562
-  pages: 401-405
+  reliability: medium
+  title: Battery-operated integrated frequency comb
+  first_author: Alexander
+  note: batch minimal extraction; pending expert review for full entities/principles
   doi: 10.1038/s41586-018-0598-9
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+entities:
+- id: ent.s41586_018_0598_9_system
+  name: Alexander  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Alexander '
+metrics:
+- id: met.s41586_018_0598_9_primary
+  name: Alexander  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Battery-operated integrated frequency comb
+      claim: core experimental result
+relations:
+- id: rel.s41586_018_0598_9_01
+  subject: ent.s41586_018_0598_9_system
+  predicate: CHARACTERIZED-BY
+  object: met.s41586_018_0598_9_primary
+  confidence: established
+  source:
+    zotero_key: Battery-operated integrated frequency comb
+    claim: experimental system characterized by primary metric

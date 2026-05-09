@@ -1,9 +1,0 @@
-evidence: a portion of the HNLF output was guided to an f-2f interferometer to detect
-  the CEO beat of the comb
-id: evrel_ERNT9GV3_rel.kashiwagi_2018_as18_04
-metadata:
-  source_paper: kashiwagi2018
-  zotero_key: ERNT9GV3
-object: pri.self_referencing_f2f
-predicate: ENABLED-BY
-subject: ent.multi_branch_fiber_comb_k18

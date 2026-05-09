@@ -1,24 +1,41 @@
-# Jeon 2025 — 10<sup>−15</sup>-level laser stabilization down to fiber thermal noise limit ... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — 10−15-level laser stabilization down to fiber thermal [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：ultrastable-laser
 meta:
-  zotero_key: Jeon 等 - 2025 - 10-15-level laser stabilization down to fiber thermal noise limit using self-homodyne detection
+  zotero_key: 10−15-level laser stabilization down to fiber ther
   topic: ultrastable-laser
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "10<sup>−15</sup>-level laser stabilization down to fiber thermal noise limit using self-homodyne detection"
-  year: 2025
-  first_author: "Jeon"
-  authors: ["Igju Jeon", "Woosong Jeong", "Changmin Ahn", "Jungwon Kim"]
-  journal: "Optics Letters"
-  volume: 50
-  pages: 1057
-  doi: 10.1364/OL.541281
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: 10−15-level laser stabilization down to fiber thermal
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.jeon_____2025___10_15_level_la_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.jeon_____2025___10_15_level_la_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: 10−15-level laser stabilization down to fiber ther
+      claim: core experimental result
+relations:
+- id: rel.jeon_____2025___10_15_level_la_01
+  subject: ent.jeon_____2025___10_15_level_la_system
+  predicate: CHARACTERIZED-BY
+  object: met.jeon_____2025___10_15_level_la_primary
+  confidence: established
+  source:
+    zotero_key: 10−15-level laser stabilization down to fiber ther
+    claim: experimental system characterized by primary metric

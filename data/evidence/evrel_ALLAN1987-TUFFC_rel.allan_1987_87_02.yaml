@@ -1,9 +1,0 @@
-evidence: Allan deviation provides not only a converging measure but also, through
-  its slope on log-log axes, identification of the dominant power-law noise process.
-id: evrel_ALLAN1987-TUFFC_rel.allan_1987_87_02
-metadata:
-  source_paper: allan1987
-  zotero_key: ALLAN1987-TUFFC
-object: pri.sigma_y_slope_identifies_noise_type
-predicate: CHARACTERIZED-BY
-subject: meth.allan_deviation_adev

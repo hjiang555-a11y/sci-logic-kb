@@ -1,8 +1,0 @@
-evidence: DCS has shown excellent immunity to turbulent speckle
-id: evrel_AZ25GQE3_rel.han_2024_an18
-metadata:
-  source_paper: han2024
-  zotero_key: AZ25GQE3
-object: pri.turbulence_speckle_freeze_dcs
-predicate: BOUNDED-BY
-subject: met.open_path_length_dcs_h24

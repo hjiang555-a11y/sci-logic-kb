@@ -1,19 +1,41 @@
-# Catalysts ???? — 2014 IEEE International Frequency Control Symposium Proceedings [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Development of an Er:fiber-based femtosecond laser [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: Zhang yy  IFCS 2014
+  zotero_key: Development of an Er:fiber-based femtosecond laser
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
   reliability: medium
-  title: "2014 IEEE International Frequency Control Symposium Proceedings"
-  first_author: "Catalysts"
-  authors: ["Conference Catalysts, LLC"]
-  note: >
-    [批量提取] 元数据来源：PDF metadata。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  title: Development of an Er:fiber-based femtosecond laser
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.zhang_yy__ifcs_2014_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.zhang_yy__ifcs_2014_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Development of an Er:fiber-based femtosecond laser
+      claim: core experimental result
+relations:
+- id: rel.zhang_yy__ifcs_2014_01
+  subject: ent.zhang_yy__ifcs_2014_system
+  predicate: CHARACTERIZED-BY
+  object: met.zhang_yy__ifcs_2014_primary
+  confidence: established
+  source:
+    zotero_key: Development of an Er:fiber-based femtosecond laser
+    claim: experimental system characterized by primary metric

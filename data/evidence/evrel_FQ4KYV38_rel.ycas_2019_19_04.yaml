@@ -1,8 +1,0 @@
-evidence: turbulence-driven phase front distortions are common mode
-id: evrel_FQ4KYV38_rel.ycas_2019_19_04
-metadata:
-  source_paper: ycas2019
-  zotero_key: FQ4KYV38
-object: ent.atmospheric_turbulence_channel
-predicate: CONDITIONED-BY
-subject: ent.midir_dcs_vocs_y19

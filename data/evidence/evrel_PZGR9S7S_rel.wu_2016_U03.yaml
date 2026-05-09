@@ -1,8 +1,0 @@
-evidence: approaching the thermal noise limit of the reference cavities
-id: evrel_PZGR9S7S_rel.wu_2016_U03
-metadata:
-  source_paper: wu2016
-  zotero_key: PZGR9S7S
-object: pri.brownian_thermal_noise_fdt
-predicate: BOUNDED-BY
-subject: ent.ule_cavity_10cm_w16

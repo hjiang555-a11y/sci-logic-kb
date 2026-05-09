@@ -1,8 +1,0 @@
-evidence: Mid-infrared (MIR) spectrometers are invaluable tools for molecular fingerprinting
-id: evrel_7HSU6V7Q_rel.hoghooghi_2022_22_04
-metadata:
-  source_paper: hoghooghi2022
-  zotero_key: 7HSU6V7Q
-object: pri.molecular_rovibrational_fingerprint
-predicate: CONDITIONED-BY
-subject: ent.broadband_1ghz_mir_comb_h22

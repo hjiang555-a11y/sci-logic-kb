@@ -1,9 +1,0 @@
-evidence: A beat note between the CW laser output at 1542 nm and the nearest comb
-  mode of the CEO-locking branch output was used as a reference signal for the FNDC
-id: evrel_ERNT9GV3_rel.kashiwagi_2018_as18_03
-metadata:
-  source_paper: kashiwagi2018
-  zotero_key: ERNT9GV3
-object: ent.multi_branch_fiber_comb_k18
-predicate: PART-OF
-subject: ent.fndc_reference_cw_laser_1542nm_k18

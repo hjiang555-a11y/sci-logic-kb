@@ -1,7 +1,8 @@
 # Contributing to sci-logic-kb
 
 > 这份文档规定**如何向知识库贡献内容**——单篇论文摄入的标准流程、节点设计判据、质量门。
->
+> 
+> **v5.0 新增**: 推理链和共识报告的贡献规范见本文末尾 [§推理链贡献](#推理链贡献)。
 > 补充关系：
 > - 规范（真源）：[SCHEMA.md](SCHEMA.md)
 > - 审核入口（专家视角）：[docs/REVIEW_GUIDE.md](docs/REVIEW_GUIDE.md)
@@ -15,9 +16,9 @@
 用作 PR 模板与 AI agent 的共享 checklist。勾选完成项以进入合并流程。
 
 ### Step 1 · 准备
-- [ ] 从 `QUEUE.md`（若存在）或 issue 中选定目标论文
+- [ ] 从 issue 或 `reports/active/ingestion_queue.txt` 中选定目标论文
 - [ ] 记录 `ZOTERO_KEY`、`DOI`、`first_author`、`year`
-- [ ] 确认论文的专题归属（超稳激光 / 光学频率梳 / …；若跨专题标注 shared）
+- [ ] 确认论文的专题归属（`ultrastable-laser` / `optical-frequency-combs` / `frequency-standards` / `time-frequency-transfer` / `timescales` / `shared`）
 
 ### Step 2 · 阅读与提取
 - [ ] 阅读摘要、引言、方法、结果、讨论（至少这 5 节）
@@ -182,3 +183,26 @@ PR 审核时若发现向根目录新增非入口文件，应在 review 中要求
 ---
 
 > 本文件是"路由器"：具体判据由 SCHEMA.md 决定，具体查询由 docs/USAGE.md 指导，AI 行为由 CLAUDE.md 规范。
+
+
+## 推理链贡献 (v5.0+)
+
+### 何时贡献推理链
+
+当限制原理被 ≥3 篇论文引用且有明确突破路径时，应编写推理链。
+
+### 推理链 Checklist
+
+- [ ] 选择核心问题（一条链只回答一个问题）
+- [ ] `limiting_principle.id` 必须是 v4.5 中已定义的 `pri.*`
+- [ ] `evidence[].relation_id` 必须是 v4.5 中实际的 relation ID
+- [ ] 编写 >=50 词的 `breakthrough_narrative` 因果叙述
+- [ ] 运行 `python scripts/validate_chains.py --strict` 验证
+- [ ] 文件保存在 `logic/chains/<chain_id>.yaml`，模板参考 `logic/chains/sigma_y_cavity.yaml`
+
+### 共识报告 Checklist
+
+- [ ] 选择有 >=3 个数据点的关键指标
+- [ ] 构建时间线（优先首次演示和当前最佳）
+- [ ] 填写 `best_demonstrated_value`, `theoretical_limit`, `remaining_gap`
+- [ ] 文件保存在 `consensus/<metric_safe_name>.yaml`

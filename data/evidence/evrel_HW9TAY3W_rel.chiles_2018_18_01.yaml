@@ -1,9 +1,0 @@
-evidence: LPCVD silicon nitride has been a highly successful material... PECVD is
-  a straightforward and commercially favorable processing technique
-id: evrel_HW9TAY3W_rel.chiles_2018_18_01
-metadata:
-  source_paper: chiles2018
-  zotero_key: HW9TAY3W
-object: ent.si3n4_integrated_comb
-predicate: COMPETES-WITH
-subject: ent.deuterated_sin_photonic_platform_c18

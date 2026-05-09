@@ -42,6 +42,9 @@ relations:
   predicate: BOUNDED-BY
   object: pri.brownian_thermal_noise_fdt
   confidence: established
+  source:
+    zotero_key: "N/A"
+    claim: "Logic bridge: FP cavity stability is fundamentally bounded by Brownian thermal noise per Fluctuation-Dissipation Theorem"
   file: /data/sci-logic-kb/topics/ultrastable-laser/papers/logic_bridge_poc.yaml
 - id: rel.logic_bridge_02
   subject: pri.brownian_thermal_noise_fdt

@@ -1,24 +1,53 @@
-# Grabielle 2025 — Locking noise in laser frequency stabilization to an optical fiber delay line [framework]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Grabielle 2025 — FDL locking noise characterization [evidence]
+# 提取者：AI
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：shared
 meta:
   zotero_key: oe-33-16-35028
   topic: shared
-  source_type: journal_paper
-  contribution_type: framework
+  source_type: technical_paper
+  contribution_type: evidence
   reliability: high
-  title: "Locking noise in laser frequency stabilization to an optical fiber delay line"
+  title: Locking noise in laser frequency stabilization to an optical fiber delay line
   year: 2025
-  first_author: "Grabielle"
-  authors: ["Stéphanie Grabielle", "Debanjan Show", "Frédéric Audo", "Jean-Pierre Coulon", "Fabien Kéfélian"]
-  journal: "Optics Express"
+  first_author: Grabielle
+  journal: Optics Express
   volume: 33
-  pages: 35028
-  doi: 10.1364/OE.569203
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  pages: '35028'
+  doi: 10.1364/OE.33.035028
+  note: ARTEMIS laboratory study characterizing the fundamental locking noise floor in fiber delay line (FDL) laser stabilization. Identifies white frequency noise floor from servo nonlinearity as the limiting
+    factor.
+principles:
+- id: pri.fdl_locking_noise_white_floor
+  name: FDL locking white frequency noise floor from servo nonlinearity
+  tier: engineering
+  verification_status: observed
+  statement: Fiber delay line laser frequency stabilization exhibits a white frequency noise floor that arises from nonlinearity in the servo locking loop, distinct from the fundamental fiber thermal noise
+    limit. This locking noise limits the achievable frequency stability at short integration times.
+  domain: laser frequency stabilization, fiber interferometry
+  conditions: FDL-based laser stabilization; finite servo bandwidth; fiber delay > coherence time of unlocked laser
+  source_claim: locking noise in laser frequency stabilization... white frequency noise floor that limited the locking performance
+metrics:
+- id: met.fdl_locking_noise_floor_g25
+  name: FDL locking noise white frequency floor
+  unit: Hz²/Hz
+  role: primary
+  description: White frequency noise floor from FDL servo locking nonlinearity
+  demonstrated_value:
+    value: characterized white frequency noise floor
+    conditions: FDL-based laser stabilization system, ARTEMIS lab
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: oe-33-16-35028
+      claim: white frequency noise floor that limited the locking performance
+relations:
+- id: rel.grabielle_2025_01
+  subject: met.fdl_locking_noise_floor_g25
+  predicate: CHARACTERIZED-BY
+  object: pri.fdl_locking_noise_white_floor
+  confidence: established
+  source:
+    zotero_key: oe-33-16-35028
+    claim: locking noise... white frequency noise floor

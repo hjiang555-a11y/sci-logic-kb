@@ -1,9 +1,0 @@
-evidence: the feedback bandwidth for the phase-lock of the offset frequency has been
-  limited by the laser gain lifetime
-id: evrel_NHJ84W8G_rel.newbury_2005_ewb05_02
-metadata:
-  source_paper: newbury2005
-  zotero_key: NHJ84W8G
-object: pri.gain_lifetime_servo_bandwidth_limit
-predicate: BOUNDED-BY
-subject: pri.fiber_comb_perturbative_response_theory

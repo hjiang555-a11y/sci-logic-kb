@@ -1,9 +1,0 @@
-evidence: '#PSO-01 Measurement of the Earth gravitational red-shift effect to a fractional
-  uncertainty of 2e-7'
-id: evrel_SCI-ESA-HRE-ESR-ISOC_rel.cacciapuoti_2017_17_16
-metadata:
-  source_paper: cacciapuoti2017
-  zotero_key: SCI-ESA-HRE-ESR-ISOC
-object: met.earth_grs_test_uncertainty
-predicate: CHARACTERIZED-BY
-subject: ent.space_optical_clock_mission

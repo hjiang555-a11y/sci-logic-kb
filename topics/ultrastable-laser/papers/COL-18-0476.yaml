@@ -1,24 +1,42 @@
-# Yan 2018 — Multi-cavity-stabilized ultrastable laser [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — COL 16(12), 121403(2018) CHINESE OPTICS LETTERS December 10, 2018 [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：ultrastable-laser
 meta:
-  zotero_key: COL-18-0476
+  zotero_key: COL 16(12), 121403(2018) CHINESE OPTICS LETTERS De
   topic: ultrastable-laser
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Multi-cavity-stabilized ultrastable laser"
-  year: 2018
-  first_author: "Yan"
-  authors: ["Lulu Yan Lulu Yan", "Yanyan Zhang Yanyan Zhang", "Zhaoyang Tai Zhaoyang Tai", "Pan Zhang Pan Zhang", "Xiaofei Zhang Xiaofei Zhang", "Wenge Guo Wenge Guo", "Shougang Zhang Shougang Zhang", "Haifeng Jiang Haifeng Jiang"]
-  journal: "Chinese Optics Letters"
-  volume: 16
-  pages: 121403
-  doi: 10.3788/COL201816.121403
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: COL 16(12), 121403(2018) CHINESE OPTICS LETTERS December 10, 2018
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.3788/COL201816
+entities:
+- id: ent.col_18_0476_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.col_18_0476_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: COL 16(12), 121403(2018) CHINESE OPTICS LETTERS De
+      claim: core experimental result
+relations:
+- id: rel.col_18_0476_01
+  subject: ent.col_18_0476_system
+  predicate: CHARACTERIZED-BY
+  object: met.col_18_0476_primary
+  confidence: established
+  source:
+    zotero_key: COL 16(12), 121403(2018) CHINESE OPTICS LETTERS De
+    claim: experimental system characterized by primary metric

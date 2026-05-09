@@ -1,8 +1,0 @@
-evidence: ultra-stable optical cavities... Fabry-Pérot
-id: evrel_U4Z95559_rel.tao_2018_O01
-metadata:
-  source_paper: tao2018
-  zotero_key: U4Z95559
-object: ent.fp_cavity_system
-predicate: PART-OF
-subject: ent.robust_cuboid_cavity_t18

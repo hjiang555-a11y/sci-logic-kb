@@ -1,8 +1,0 @@
-evidence: Thermal control maintained lock across payload temperature profile.
-id: evrel_BWX8NI2P_rel.lezius_2016_ez12
-metadata:
-  source_paper: lezius2016
-  zotero_key: BWX8NI2P
-object: pri.thermal_drift_comb_offsets
-predicate: BOUNDED-BY
-subject: ent.spaceborne_erfiber_comb_l16

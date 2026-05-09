@@ -1,9 +1,0 @@
-evidence: compact, high-performance all-PM Er:fiber frequency comb with single fiber
-  actuator
-id: evrel_LBSZCU7P_rel.cai_2020_ai20_04
-metadata:
-  source_paper: cai2020
-  zotero_key: LBSZCU7P
-object: ent.compact_pm_er_comb_cai20
-predicate: OPERATIONALIZED-AS
-subject: meth.compact_single_actuator_er_comb_lock

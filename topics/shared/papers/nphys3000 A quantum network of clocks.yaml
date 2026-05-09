@@ -1,24 +1,54 @@
 # Kómár 2014 — A quantum network of clocks [framework]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# 提取者：AI
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：shared
 meta:
-  zotero_key: nphys3000 A quantum network of clocks
+  zotero_key: nphys3000
   topic: shared
-  source_type: journal_paper
+  source_type: theoretical_paper
   contribution_type: framework
   reliability: high
-  title: "A quantum network of clocks"
+  title: A quantum network of clocks
   year: 2014
-  first_author: "Kómár"
-  authors: ["P. Kómár", "E. M. Kessler", "M. Bishof", "L. Jiang", "A. S. Sørensen", "J. Ye", "M. D. Lukin"]
-  journal: "Nature Physics"
+  first_author: Kómár
+  journal: Nature Physics
   volume: 10
   pages: 582-587
-  doi: 10.1038/NPHYS3000
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  doi: 10.1038/nphys3000
+  note: Harvard/MIT/Copenhagen/JILA collaboration. Proposes a quantum cooperative protocol for operating a network of geographically remote optical atomic clocks using nonlocal entangled states. Demonstrates
+    optimal utilization of global quantum resources for clock networks.
+principles:
+- id: pri.quantum_clock_network_entanglement
+  name: Quantum entanglement-enhanced clock network protocol
+  tier: domain
+  verification_status: calculated
+  statement: A network of spatially separated optical atomic clocks can achieve measurement precision beyond the standard quantum limit by sharing nonlocal entangled states. The cooperative protocol optimally
+    allocates entanglement resources across the network, approaching the Heisenberg limit for global parameter estimation.
+  domain: quantum metrology, clock networks
+  key_insight: Entanglement shared across a clock network provides a resource that scales better than independent clock operation, enabling global timekeeping precision beyond classical limits
+  conditions: Geographically remote optical clocks; quantum network infrastructure for entanglement distribution; sufficiently low decoherence
+  source_claim: by combining precision metrology and quantum networks, we propose a quantum cooperative protocol for operating a network of geographically remote optical atomic clocks
+metrics:
+- id: met.quantum_clock_network_precision_gain
+  name: Quantum clock network precision enhancement
+  unit: dimensionless (gain factor vs SQL)
+  role: primary
+  description: Precision improvement of quantum-entangled clock network over independent clock operation (standard quantum limit)
+  demonstrated_value:
+    value: Heisenberg-limited scaling with atom number (theory proposal)
+    conditions: M entangled clocks, each with N atoms; ideal entanglement distribution
+    verification_status: calculated
+    confidence: established
+    source:
+      zotero_key: nphys3000
+      claim: optimal utilization of global resources... network can be operated near the Heisenberg limit
+relations:
+- id: rel.komar_2014_01
+  subject: pri.quantum_clock_network_entanglement
+  predicate: ENABLED-BY
+  object: met.quantum_clock_network_precision_gain
+  confidence: established
+  source:
+    zotero_key: nphys3000
+    claim: near the Heisenberg limit

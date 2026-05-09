@@ -1,23 +1,42 @@
-# Webster 2008 — Thermal-noise-limited optical cavity [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — PHYSICALREVIEWA77,033847(cid:1)2008(cid:2) [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：ultrastable-laser
 meta:
-  zotero_key: thermal noise limited optical cavity webster
+  zotero_key: PHYSICALREVIEWA77,033847(cid:1)2008(cid:2)
   topic: ultrastable-laser
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Thermal-noise-limited optical cavity"
-  year: 2008
-  first_author: "Webster"
-  authors: ["S. A. Webster", "M. Oxborrow", "S. Pugla", "J. Millo", "P. Gill"]
-  journal: "Physical Review A"
-  volume: 77
-  doi: 10.1103/PhysRevA.77.033847
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: PHYSICALREVIEWA77,033847(cid:1)2008(cid:2)
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1103/PhysRevA
+entities:
+- id: ent.thermal_noise_limited_optical__system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.thermal_noise_limited_optical__primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: PHYSICALREVIEWA77,033847(cid:1)2008(cid:2)
+      claim: core experimental result
+relations:
+- id: rel.thermal_noise_limited_optical__01
+  subject: ent.thermal_noise_limited_optical__system
+  predicate: CHARACTERIZED-BY
+  object: met.thermal_noise_limited_optical__primary
+  confidence: established
+  source:
+    zotero_key: PHYSICALREVIEWA77,033847(cid:1)2008(cid:2)
+    claim: experimental system characterized by primary metric

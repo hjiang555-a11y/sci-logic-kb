@@ -1,8 +1,0 @@
-evidence: frequency stability for a single system is about 1.6×10^-16 at 1s
-id: evrel_5K2FFLPG_rel.le_coq_2010_02
-metadata:
-  source_paper: lecoq2010
-  zotero_key: 5K2FFLPG
-object: met.microwave_instability_lecoq2010_1s
-predicate: CHARACTERIZED-BY
-subject: ent.er_fiber_ofd_lecoq2010

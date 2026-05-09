@@ -2,28 +2,44 @@
 
 # Ultrastable Laser — Topic Index
 
-> Auto-generated 2026-05-04 04:06 UTC · 114 papers · 395 nodes · 396 relations
+> Auto-generated 2026-05-09 06:38 UTC · 143 papers · 499 nodes · 448 relations
 
 ## Entities
 
 | ID | Name | Level | Source |
 |----|------|------:|--------|
+| `ent.030201__1__system` | Webster  experimental system | 2 | [030201 (1)](topics/ultrastable-laser/papers/030201 (1).yaml) |
+| `ent.1_4898334_system` | experimental system | 2 | [1.4898334](topics/ultrastable-laser/papers/1.4898334.yaml) |
+| `ent.1_s2_0_s2095927325008813_main_system` | experimental system | 2 | [1-s2.0-S2095927325008813-main](topics/ultrastable-laser/papers/1-s2.0-S2095927325008813-main.yaml) |
+| `ent.20170282_full_system` | experimental system | 2 | [20170282.full](topics/ultrastable-laser/papers/20170282.full.yaml) |
+| `ent.2905_6_system` | experimental system | 2 | [2905-6](topics/ultrastable-laser/papers/2905-6.yaml) |
 | `ent.agile_laser_system` | 可捷变超低噪声激光系统（Jiang 2010） | ext | [jiang2010](topics/ultrastable-laser/papers/jiang2010.yaml) |
 | `ent.algaas_crystalline_mirror_c13` | AlGaAs/GaAs 晶体镀层腔镜 | 2 | [cole2013](topics/ultrastable-laser/papers/cole2013.yaml) |
+| `ent.an_optical_fiber_spool_for_las_system` | Huang  experimental system | 2 | [An optical fiber spool for laser stabilization with reduced acceleration sensitivity to 10-12-g](topics/ultrastable-laser/papers/An optical fiber spool for laser stabilization with reduced acceleration sensitivity to 10-12-g.yaml) |
+| `ent.an_ultra_low_frequency_noise_l_system` | experimental system | 2 | [An_Ultra-Low_Frequency_Noise_Laser_Based_on_Al](topics/ultrastable-laser/papers/An_Ultra-Low_Frequency_Noise_Laser_Based_on_Al.yaml) |
 | `ent.antiresonant_hollow_core_fiber` | 反谐振空心光纤（HC-ARF） | 2 | [belardi2015](topics/ultrastable-laser/papers/belardi2015.yaml) |
+| `ent.ao_54_5_1152__1__system` | 2015 experimental system | 2 | [ao-54-5-1152 (1)](topics/ultrastable-laser/papers/ao-54-5-1152 (1).yaml) |
+| `ent.argence_oe_2012_system` | Swallows  experimental system | 2 | [Argence oe 2012](topics/ultrastable-laser/papers/Argence oe 2012.yaml) |
+| `ent.art_10_1007_2fbf01081271_system` | experimental system | 2 | [art:10.1007%2FBF01081271](topics/ultrastable-laser/papers/art:10.1007%2FBF01081271.yaml) |
+| `ent.art_10_1007_2fbf01091215_system` | Flood  experimental system | 2 | [art:10.1007%2FBF01091215](topics/ultrastable-laser/papers/art:10.1007%2FBF01091215.yaml) |
 | `ent.boost_cubic_cavity_s19` | BOOST 立方 ULE 参考腔（Sanjuan 2019） | 2 | [sanjuan2019](topics/ultrastable-laser/papers/sanjuan2019.yaml) |
 | `ent.brewster_eom_t16` | 布儒斯特角 EOM（Tai 2016） | 2 | [tai2016](topics/ultrastable-laser/papers/tai2016.yaml) |
 | `ent.briles2010_high_bw_pzt_mirror` | Briles 2010 180 kHz 伺服带宽 PZT 驱动镜（JILA） | — | [briles2010](topics/ultrastable-laser/papers/briles2010.yaml) |
 | `ent.brillouin_fiber_laser_l19` | 光纤布里渊激光器（Loh 2019） | 1 | [loh2019](topics/ultrastable-laser/papers/loh2019.yaml) |
+| `ent.characterization_of_the_long_t_system` | Akamatsu  experimental system | 2 | [Characterization of the long-term2018](topics/ultrastable-laser/papers/Characterization of the long-term2018.yaml) |
 | `ent.chip_photonic_mw_oscillator_k24` | 芯片光子微波振荡器（Kudelin 2024） | 2 | [kudelin2024](topics/ultrastable-laser/papers/kudelin2024.yaml) |
+| `ent.col_18_0476_system` | experimental system | 2 | [COL-18-0476](topics/ultrastable-laser/papers/COL-18-0476.yaml) |
 | `ent.compact_pmo_giunta20b` | 紧凑光子微波振荡器 PMO（Giunta 2020b） | 2 | [giunta2020b](topics/ultrastable-laser/papers/giunta2020b.yaml) |
 | `ent.compact_transportable_cavity_c14` | STE-QUEST 紧凑可搬运参考腔（Chen 2014） | 2 | [chen2014](topics/ultrastable-laser/papers/chen2014.yaml) |
 | `ent.compact_ule_cavity_25mm_d17` | 25 mm ULE 圆柱参考腔（Davila-Rodriguez 2017） | 2 | [davilarodriguez2017](topics/ultrastable-laser/papers/davilarodriguez2017.yaml) |
+| `ent.cpl34_090602_2017_0572w_system` | experimental system | 2 | [cpl34-090602-2017-0572w](topics/ultrastable-laser/papers/cpl34-090602-2017-0572w.yaml) |
 | `ent.cryogenic_silicon_cavity` | 低温单晶硅参考腔 | 1 | [logic_bridge_poc](topics/ultrastable-laser/papers/logic_bridge_poc.yaml) |
 | `ent.cubic_dual_cavity_c20` | 10 cm 立方双 FP 腔（Chen 2020） | 2 | [chen2020](topics/ultrastable-laser/papers/chen2020.yaml) |
 | `ent.cubic_force_insensitive_cavity_w11` | 立方体力不敏感光学腔（Webster 2011） | 2 | [webster2011](topics/ultrastable-laser/papers/webster2011.yaml) |
 | `ent.cutout_cavity_mount_w07` | 切口腔体安装设计（Webster 2007） | 2 | [webster2007](topics/ultrastable-laser/papers/webster2007.yaml) |
 | `ent.double_winding_fiber_spool_hjc19` | 双缠绕抗振光纤盘（Huang JC 2019b） | 2 | [huangjc2019b](topics/ultrastable-laser/papers/huangjc2019b.yaml) |
+| `ent.drever_____1983___laser_phase__system` | experimental system | 2 | [Drever 等 - 1983 - Laser phase and frequency stabilization using an optical resonator](topics/ultrastable-laser/papers/Drever 等 - 1983 - Laser phase and frequency stabilization using an optical resonator.yaml) |
+| `ent.eftf09_jiang_et_al_proceeding_system` | experimental system | 2 | [eftf09 jiang et al proceeding](topics/ultrastable-laser/papers/eftf09 jiang et al proceeding.yaml) |
 | `ent.eom` | 电光调制器（EOM） | 2 | [drever1983](topics/ultrastable-laser/papers/drever1983.yaml) |
 | `ent.european_fiber_network_sc21` | 欧洲 2220 km 光纤计量网络（Schioppo 2021） | 2 | [schioppo2021](topics/ultrastable-laser/papers/schioppo2021.yaml) |
 | `ent.fiber_delay_line_reference` | 光纤延迟线参考系统（类级别实体） | 1 | [li2009a](topics/ultrastable-laser/papers/li2009a.yaml) |
@@ -34,34 +50,70 @@
 | `ent.freespace_tf_link_113km_sh22` | 113 km 自由空间时频传递链路（Shen 2022） | 2 | [shen2022](topics/ultrastable-laser/papers/shen2022.yaml) |
 | `ent.gw_photodetector_g16` | 高功率超低噪声光电探测器（Grote 2016） | 2 | [grote2016](topics/ultrastable-laser/papers/grote2016.yaml) |
 | `ent.high_power_low_rin_fiber_laser_d20` | 365 W 超低 RIN 全光纤单频激光（Dixneuf 2020） | 2 | [dixneuf2020](topics/ultrastable-laser/papers/dixneuf2020.yaml) |
+| `ent.highly_stable_piezoelectricall_system` | Evgeny  experimental system | 2 | [Highly stable piezoelectrically tunable optical cavities](topics/ultrastable-laser/papers/Highly stable piezoelectrically tunable optical cavities.yaml) |
+| `ent.jeon_____2025___10_15_level_la_system` | experimental system | 2 | [Jeon 等 - 2025 - 10-15-level laser stabilization down to fiber thermal noise limit using self-homodyne detection](topics/ultrastable-laser/papers/Jeon 等 - 2025 - 10-15-level laser stabilization down to fiber thermal noise limit using self-homodyne detection.yaml) |
+| `ent.jiang_ipc11_system` | experimental system | 2 | [Jiang IPC11](topics/ultrastable-laser/papers/Jiang IPC11.yaml) |
+| `ent.jiang_oe_system` | Harris  experimental system | 2 | [Jiang_OE](topics/ultrastable-laser/papers/Jiang_OE.yaml) |
+| `ent.josab_27_5_914_system` | 2010 experimental system | 2 | [josab-27-5-914](topics/ultrastable-laser/papers/josab-27-5-914.yaml) |
 | `ent.large_area_crystalline_coating_m18` | 大面积 GaAs/AlGaAs 晶体镀层（2 英寸） | 2 | [marchio2018](topics/ultrastable-laser/papers/marchio2018.yaml) |
 | `ent.laser_source` | 激光源（外围条件） | ext | [young1999](topics/ultrastable-laser/papers/young1999.yaml) |
+| `ent.li_11_eftf_ifcs_system` | experimental system | 2 | [Li 11 EFTF IFCS](topics/ultrastable-laser/papers/Li 11 EFTF IFCS.yaml) |
+| `ent.limits_of_coupling_efficiency__system` | experimental system | 2 | [Limits_of_Coupling_Efficiency_Into_Hollow-Core](topics/ultrastable-laser/papers/Limits_of_Coupling_Efficiency_Into_Hollow-Core.yaml) |
 | `ent.long_cavity_68cm_p25` | 68 cm 长 FP 参考腔 | 2 | [parke2025](topics/ultrastable-laser/papers/parke2025.yaml) |
 | `ent.low_thermal_noise_cavity_j11` | 低热噪声 FP 参考腔（Jiang 2011） | 2 | [jiang2011](topics/ultrastable-laser/papers/jiang2011.yaml) |
+| `ent.lz01028367_system` | Shaddock  experimental system | 2 | [LZ01028367](topics/ultrastable-laser/papers/LZ01028367.yaml) |
+| `ent.lz01029465_system` | experimental system | 2 | [LZ01029465](topics/ultrastable-laser/papers/LZ01029465.yaml) |
+| `ent.millo_____2009___ultrastable_l_system` | Millo  experimental system | 2 | [Millo 等 - 2009 - Ultrastable lasers based on vibration insensitive cavities](topics/ultrastable-laser/papers/Millo 等 - 2009 - Ultrastable lasers based on vibration insensitive cavities.yaml) |
 | `ent.mirror_coating` | 腔镜高反射镀层 | 2 | [numata2004](topics/ultrastable-laser/papers/numata2004.yaml) |
 | `ent.mirror_substrate` | 腔镜基底（底物） | 2 | [numata2004](topics/ultrastable-laser/papers/numata2004.yaml) |
 | `ent.ndyag_946nm_laser_d19` | 946 nm Nd:YAG 数字锁定超稳激光 | 2 | [didier2019](topics/ultrastable-laser/papers/didier2019.yaml) |
 | `ent.nexcera_optical_cavity_k18` | NEXCERA N118C 光学谐振腔 | 2 | [kwong2018](topics/ultrastable-laser/papers/kwong2018.yaml) |
+| `ent.nphoton_2012_217_system` | experimental system | 2 | [nphoton.2012.217](topics/ultrastable-laser/papers/nphoton.2012.217.yaml) |
+| `ent.nphoton_2013_174_system` | Garrett  experimental system | 2 | [nphoton.2013.174](topics/ultrastable-laser/papers/nphoton.2013.174.yaml) |
 | `ent.npl_ule_cavity_laser_sc21` | NPL 超稳激光（48.5 cm ULE 腔，Schioppo 2021） | 2 | [schioppo2021](topics/ultrastable-laser/papers/schioppo2021.yaml) |
+| `ent.oe_25_13_15539_system` | experimental system | 2 | [oe-25-13-15539](topics/ultrastable-laser/papers/oe-25-13-15539.yaml) |
+| `ent.oe_27_10_14121_system` | experimental system | 2 | [oe-27-10-14121](topics/ultrastable-laser/papers/oe-27-10-14121.yaml) |
+| `ent.ol_47_20_5441_system` | experimental system | 2 | [ol-47-20-5441](topics/ultrastable-laser/papers/ol-47-20-5441.yaml) |
+| `ent.ol_50_10_3405_system` | Adam  experimental system | 2 | [ol-50-10-3405](topics/ultrastable-laser/papers/ol-50-10-3405.yaml) |
+| `ent.ol_kefelian_et_al_2009_system` | experimental system | 2 | [OL kefelian et al 2009](topics/ultrastable-laser/papers/OL kefelian et al 2009.yaml) |
+| `ent.opt__lett__39_7___1980_1983__2_system` | experimental system | 2 | [Opt. Lett. 39(7), 1980-1983 (2014)](topics/ultrastable-laser/papers/Opt. Lett. 39(7), 1980-1983 (2014).yaml) |
+| `ent.optica_8_2_216_system` | experimental system | 2 | [optica-8-2-216](topics/ultrastable-laser/papers/optica-8-2-216.yaml) |
 | `ent.optical_freq_purification_station_w24` | 光频净化中继站（Wang 2024a） | 2 | [wang2024a](topics/ultrastable-laser/papers/wang2024a.yaml) |
+| `ent.optics_letters__vol__36_issue__system` | 2011 experimental system | 2 | [Optics Letters, Vol. 36 Issue 18, pp.3572-3574 (2011)](topics/ultrastable-laser/papers/Optics Letters, Vol. 36 Issue 18, pp.3572-3574 (2011).yaml) |
 | `ent.pdh_photodetector_p16` | 宽带低噪声 PDH 光电探测器（Potnis 2016） | 2 | [potnis2016](topics/ultrastable-laser/papers/potnis2016.yaml) |
+| `ent.photonic_generation_of_rf_and__system` | experimental system | 2 | [Photonic generation of RF and microwave signal with relative frequency instability of 10-15](topics/ultrastable-laser/papers/Photonic generation of RF and microwave signal with relative frequency instability of 10-15.yaml) |
+| `ent.physreva_106_023501_system` | experimental system | 2 | [PhysRevA.106.023501](topics/ultrastable-laser/papers/PhysRevA.106.023501.yaml) |
+| `ent.physrevb_68_085109__1__system` | Sun  experimental system | 2 | [PhysRevB.68.085109 (1)](topics/ultrastable-laser/papers/PhysRevB.68.085109 (1).yaml) |
+| `ent.physrevlett_102_163601_system` | experimental system | 2 | [PhysRevLett.102.163601](topics/ultrastable-laser/papers/PhysRevLett.102.163601.yaml) |
+| `ent.physrevlett_111_237402_system` | David  experimental system | 2 | [PhysRevLett.111.237402](topics/ultrastable-laser/papers/PhysRevLett.111.237402.yaml) |
+| `ent.physrevlett_114_253902_system` | David  experimental system | 2 | [PhysRevLett.114.253902](topics/ultrastable-laser/papers/PhysRevLett.114.253902.yaml) |
+| `ent.physrevlett_118_263202_system` | Linewidth  experimental system | 2 | [PhysRevLett.118.263202](topics/ultrastable-laser/papers/PhysRevLett.118.263202.yaml) |
+| `ent.physrevlett_93_250602_system` | experimental system | 2 | [PhysRevLett.93.250602](topics/ultrastable-laser/papers/PhysRevLett.93.250602.yaml) |
 | `ent.piezo_tunable_cavity_m13` | 压电可调谐高精细度参考腔 | 2 | [mohle2013](topics/ultrastable-laser/papers/mohle2013.yaml) |
 | `ent.ppln_shg_module_h19` | PPLN 波导二次谐波产生模块 | 2 | [herbers2019](topics/ultrastable-laser/papers/herbers2019.yaml) |
 | `ent.rb_atom_interferometer_o19` | Ramsey-Bordé 原子干涉仪稳频（Olson 2019） | 1 | [olson2019](topics/ultrastable-laser/papers/olson2019.yaml) |
 | `ent.recirculating_fiber_interferometer_g25` | 全光纤循环干涉仪（Gao 2025） | 2 | [gao2025](topics/ultrastable-laser/papers/gao2025.yaml) |
 | `ent.remote_timing_synchronization_network` | 远程飞秒时序同步网络 | 1 | [kim2008](topics/ultrastable-laser/papers/kim2008.yaml) |
 | `ent.robust_cuboid_cavity_t18` | 抗冲击方形 ULE 参考腔（Tao 2018） | 2 | [tao2018](topics/ultrastable-laser/papers/tao2018.yaml) |
+| `ent.rsi25_ar_00618_system` | experimental system | 2 | [RSI25-AR-00618](topics/ultrastable-laser/papers/RSI25-AR-00618.yaml) |
+| `ent.s20180751_system` | experimental system | 2 | [s20180751](topics/ultrastable-laser/papers/s20180751.yaml) |
+| `ent.s41467_021_27884_3_system` | experimental system | 2 | [s41467-021-27884-3](topics/ultrastable-laser/papers/s41467-021-27884-3.yaml) |
 | `ent.self_balancing_long_cavity_h15` | 自平衡安装长 ULE 腔（Häfner 2015） | 2 | [hafner2015](topics/ultrastable-laser/papers/hafner2015.yaml) |
 | `ent.shb_eu_yso_reference_l13` | Eu³⁺:Y₂SiO₅ 光谱烧孔频率参考 | 1 | [leibrandt2013](topics/ultrastable-laser/papers/leibrandt2013.yaml) |
 | `ent.si_crystal_17k_fp_cavity_l26` | Si 单晶低温 FP 腔（17 K，AlGaAs 晶体镀层，Lee 2026） | 2 | [lee2026](topics/ultrastable-laser/papers/lee2026.yaml) |
 | `ent.si_crystal_fp_cavity_4k_r19` | 4 K 硅单晶 FP 参考腔（Robinson 2019，Si4） | 2 | [robinson2019](topics/ultrastable-laser/papers/robinson2019.yaml) |
 | `ent.si_crystal_fp_cavity_k12` | 硅单晶低温 FP 参考腔 | 2 | [kessler2012](topics/ultrastable-laser/papers/kessler2012.yaml) |
 | `ent.si_crystal_fp_cavity_sub5k_c25` | Sub-5K 10 cm 硅单晶 FP 腔（Chen 2025，Si1） | 2 | [chen2025](topics/ultrastable-laser/papers/chen2025.yaml) |
+| `ent.siliconcavity_xtal_coating_noi_system` | William  experimental system | 2 | [SiliconCavity Xtal Coating noise_Optica 2023](topics/ultrastable-laser/papers/SiliconCavity Xtal Coating noise_Optica 2023.yaml) |
 | `ent.space_cavity_prototype_a12` | 空间超稳腔原型（Argence 2012） | 2 | [argence2012](topics/ultrastable-laser/papers/argence2012.yaml) |
 | `ent.spacer_ule` | 腔间隔物（ULE/Zerodur） | 2 | [numata2004](topics/ultrastable-laser/papers/numata2004.yaml) |
 | `ent.spherical_ule_cavity_l13b` | 球形 ULE 腔（Leibrandt 2013b） | 2 | [leibrandt2013b](topics/ultrastable-laser/papers/leibrandt2013b.yaml) |
+| `ent.srep24969__1__system` | experimental system | 2 | [srep24969 (1)](topics/ultrastable-laser/papers/srep24969 (1).yaml) |
 | `ent.superradiant_laser_m09` | 超辐射激光（Meiser 2009 理论） | 1 | [meiser2009](topics/ultrastable-laser/papers/meiser2009.yaml) |
+| `ent.tao_chen2018_article_avibratio_system` | Tao 2018 experimental system | 2 | [Tao-Chen2018_Article_AVibration-insensitive-ca](topics/ultrastable-laser/papers/Tao-Chen2018_Article_AVibration-insensitive-ca.yaml) |
+| `ent.temperature_insensitive_delay__system` | experimental system | 2 | [Temperature_Insensitive_Delay-Line_Fiber_Inter](topics/ultrastable-laser/papers/Temperature_Insensitive_Delay-Line_Fiber_Inter.yaml) |
 | `ent.thermal_environment` | 热环境条件（温度稳定性） | ext | [jiang2010](topics/ultrastable-laser/papers/jiang2010.yaml) |
+| `ent.thermal_noise_limited_optical__system` | experimental system | 2 | [thermal noise limited optical cavity webster](topics/ultrastable-laser/papers/thermal noise limited optical cavity webster.yaml) |
 | `ent.titanium_fiber_spool_l09` | 钛合金低振动灵敏度光纤线轴（Li 2009a） | 2 | [li2009a](topics/ultrastable-laser/papers/li2009a.yaml) |
 | `ent.transportable_12cm_cavity_h20` | 可搬运 12 cm ULE 参考腔（Häfner 2020） | 2 | [hafner2020](topics/ultrastable-laser/papers/hafner2020.yaml) |
 | `ent.two_stage_pdh_lock_young99` | 两级 PDH 锁频系统（Young 1999） | 2 | [young1999](topics/ultrastable-laser/papers/young1999.yaml) |
@@ -319,6 +371,7 @@
 | ID | Name | Best Value | Source |
 |----|------|------------|--------|
 | `met.accel_sensitivity_d17` | 腔轴方向加速度灵敏度（最小化后） | ~4.5×10⁻¹⁰ | [davilarodriguez2017](topics/ultrastable-laser/papers/davilarodriguez2017.yaml) |
+| `met.an_ultra_low_frequency_noise_l_primary` | primary metric | see paper | [An_Ultra-Low_Frequency_Noise_Laser_Based_on_Al](topics/ultrastable-laser/papers/An_Ultra-Low_Frequency_Noise_Laser_Based_on_Al.yaml) |
 | `met.fiber_laser_linewidth_hjc19` | 全光纤激光线宽（Huang JC 2019） | 0.2 Hz (200 mHz) | [huangjc2019](topics/ultrastable-laser/papers/huangjc2019.yaml) |
 | `met.fiber_laser_noise_reduction_j09` | 相对原始噪声降低量 | >40 | [jiang2009a](topics/ultrastable-laser/papers/jiang2009a.yaml) |
 | `met.fiber_spool_free_fiber_sensitivity_l09` | 尾纤约束对振动灵敏度的影响 | 在 5×10⁻¹¹ 量级，随约束方式显著变化（高张力可降低至更低值） | [li2009a](topics/ultrastable-laser/papers/li2009a.yaml) |
@@ -369,7 +422,7 @@
 | ID | Name | Best Value | Source |
 |----|------|------------|--------|
 | `met.algaas_coating_loss_angle_17k_l26` | AlGaAs 晶体镀层损耗角（Lee 2026，17 K） | φ_AlGaAs(17K) < 2.3×10⁻⁵（上限，FP 腔热噪声测量） | [lee2026](topics/ultrastable-laser/papers/lee2026.yaml) |
-| `met.algaas_coating_loss_angle_c13` | AlGaAs 晶体镀层损耗角（Cole 2013） | φ_AlGaAs ≤ 2.5×10⁻⁵（室温上限，FP 腔测量）；对比 IBS 最优 φ ~ 2×10⁻⁴ | [cole2013](topics/ultrastable-laser/papers/cole2013.yaml) |
+| `met.algaas_coating_loss_angle_c13` | AlGaAs 晶体镀层损耗角（Cole 2013） | — | [cole2013](topics/ultrastable-laser/papers/cole2013.yaml) |
 | `met.algaas_coating_loss_angle_ibs_4k_r19` | IBS 镀层损耗角（Robinson 2019，4 K Si 腔提取） | φ_IBS(4K) = 5.15×10⁻⁴（SiO₂/Ta₂O₅ IBS 镀层） | [robinson2019](topics/ultrastable-laser/papers/robinson2019.yaml) |
 | `met.algaas_coating_loss_angle_kedar23` | AlGaAs 晶体镀层损耗角上限（Kedar 2023） | φ < 4.1×10⁻⁴ (4.7K); φ < 1.2×10⁻⁴ (16.7K) | [kedar2023](topics/ultrastable-laser/papers/kedar2023.yaml) |
 | `met.algaas_finesse_cole16` | AlGaAs 晶体镀层腔精细度（Cole 2016） | >3×10⁵ | [cole2016](topics/ultrastable-laser/papers/cole2016.yaml) |
@@ -386,19 +439,34 @@
 
 | ID | Name | Best Value | Source |
 |----|------|------------|--------|
+| `met.030201__1__primary` | Webster  primary metric | see paper | [030201 (1)](topics/ultrastable-laser/papers/030201 (1).yaml) |
+| `met.1_4898334_primary` | primary metric | see paper | [1.4898334](topics/ultrastable-laser/papers/1.4898334.yaml) |
+| `met.1_s2_0_s2095927325008813_main_primary` | primary metric | see paper | [1-s2.0-S2095927325008813-main](topics/ultrastable-laser/papers/1-s2.0-S2095927325008813-main.yaml) |
+| `met.20170282_full_primary` | primary metric | see paper | [20170282.full](topics/ultrastable-laser/papers/20170282.full.yaml) |
+| `met.2905_6_primary` | primary metric | see paper | [2905-6](topics/ultrastable-laser/papers/2905-6.yaml) |
 | `met.algaas_absorption_1064_cole16` | AlGaAs 晶体镀层 1064 nm 吸收（Cole 2016） | <1 ppm | [cole2016](topics/ultrastable-laser/papers/cole2016.yaml) |
 | `met.algaas_optical_loss_cole16` | AlGaAs 晶体镀层超额光学损耗（Cole 2016） | 3 ppm (scatter + absorption, NIR 1064-1560 nm) | [cole2016](topics/ultrastable-laser/papers/cole2016.yaml) |
+| `met.an_optical_fiber_spool_for_las_primary` | Huang  primary metric | see paper | [An optical fiber spool for laser stabilization with reduced acceleration sensitivity to 10-12-g](topics/ultrastable-laser/papers/An optical fiber spool for laser stabilization with reduced acceleration sensitivity to 10-12-g.yaml) |
+| `met.ao_54_5_1152__1__primary` | 2015 primary metric | see paper | [ao-54-5-1152 (1)](topics/ultrastable-laser/papers/ao-54-5-1152 (1).yaml) |
+| `met.argence_oe_2012_primary` | Swallows  primary metric | see paper | [Argence oe 2012](topics/ultrastable-laser/papers/Argence oe 2012.yaml) |
+| `met.art_10_1007_2fbf01081271_primary` | primary metric | see paper | [art:10.1007%2FBF01081271](topics/ultrastable-laser/papers/art:10.1007%2FBF01081271.yaml) |
+| `met.art_10_1007_2fbf01091215_primary` | Flood  primary metric | see paper | [art:10.1007%2FBF01091215](topics/ultrastable-laser/papers/art:10.1007%2FBF01091215.yaml) |
 | `met.backscattering_coefficient_hcf_mb21` | 背向散射系数（Michaud-Belleau 2021，AR-HCF） | −118 dB/m | [michaudbelleau2021](topics/ultrastable-laser/papers/michaudbelleau2021.yaml) |
 | `met.beam_quality_d20` | 光束质量M²（Dixneuf 2020） | <1.1 | [dixneuf2020](topics/ultrastable-laser/papers/dixneuf2020.yaml) |
 | `met.beam_waist_parameter_k66` | 光束腰斑参数（理论） | 由腔参数决定 | [kogelnik1966](topics/ultrastable-laser/papers/kogelnik1966.yaml) |
 | `met.cavity_storage_time_p25` | 光学腔存储时间 | 295 ± 2 μs | [parke2025](topics/ultrastable-laser/papers/parke2025.yaml) |
+| `met.characterization_of_the_long_t_primary` | Akamatsu  primary metric | see paper | [Characterization of the long-term2018](topics/ultrastable-laser/papers/Characterization of the long-term2018.yaml) |
 | `met.chip_mw_instability_k24` | 芯片微波振荡器分数频率不稳定度（Kudelin 2024） | 1.7×10⁻¹⁵ | [kudelin2024](topics/ultrastable-laser/papers/kudelin2024.yaml) |
+| `met.col_18_0476_primary` | primary metric | see paper | [COL-18-0476](topics/ultrastable-laser/papers/COL-18-0476.yaml) |
+| `met.cpl34_090602_2017_0572w_primary` | primary metric | see paper | [cpl34-090602-2017-0572w](topics/ultrastable-laser/papers/cpl34-090602-2017-0572w.yaml) |
 | `met.crystalline_coating_absorption_m18` | 晶体镀层光学吸收 | ≤0.8 ppm (fused silica substrate) | [marchio2018](topics/ultrastable-laser/papers/marchio2018.yaml) |
 | `met.crystalline_coating_tis_m18` | 晶体镀层总积分散射（TIS） | 6–9.5 ppm | [marchio2018](topics/ultrastable-laser/papers/marchio2018.yaml) |
 | `met.cte_shift_fs_mirror_leg10` | FS 镜引起的 CTE 零点温度偏移（Legero 2010） | ~20 K (降低) | [legero2010](topics/ultrastable-laser/papers/legero2010.yaml) |
 | `met.cte_zero_crossing_tuning_range_leg10` | CTE 零点温度调谐范围（Legero 2010） | ~30 K | [legero2010](topics/ultrastable-laser/papers/legero2010.yaml) |
 | `met.detection_snr_improvement_g20` | 探测信噪比改善（Galland 2020） | 改善（具体数值未给出） | [galland2020](topics/ultrastable-laser/papers/galland2020.yaml) |
 | `met.digital_noise_contribution_xia25` | 数字电子系统噪声贡献（Xia 2025） | 2.9×10⁻¹⁶ | [xia2025](topics/ultrastable-laser/papers/xia2025.yaml) |
+| `met.drever_____1983___laser_phase__primary` | primary metric | see paper | [Drever 等 - 1983 - Laser phase and frequency stabilization using an optical resonator](topics/ultrastable-laser/papers/Drever 等 - 1983 - Laser phase and frequency stabilization using an optical resonator.yaml) |
+| `met.eftf09_jiang_et_al_proceeding_primary` | primary metric | see paper | [eftf09 jiang et al proceeding](topics/ultrastable-laser/papers/eftf09 jiang et al proceeding.yaml) |
 | `met.electronic_noise_reduction_factor_g16` | 电子噪声降低倍数（Grote 2016） | >4 | [grote2016](topics/ultrastable-laser/papers/grote2016.yaml) |
 | `met.eu_yso_t2_k03` | Eu³⁺:Y₂SiO₅ 光学退相时间（Könz 2003） | T₂ up to 2.6 ms | [konz2003](topics/ultrastable-laser/papers/konz2003.yaml) |
 | `met.fiber_freq_stability_hjc19` | 全光纤频率稳定度（Huang JC 2019） | 3×10⁻¹⁵ @ 1–10 s | [huangjc2019](topics/ultrastable-laser/papers/huangjc2019.yaml) |
@@ -407,28 +475,59 @@
 | `met.frequency_band_g16` | 有效频段（Grote 2016） | >1 | [grote2016](topics/ultrastable-laser/papers/grote2016.yaml) |
 | `met.frequency_range_a13` | 改善频率范围（Aasi 2013） | 150 Hz 以上 | [aasi2013](topics/ultrastable-laser/papers/aasi2013.yaml) |
 | `met.frequency_stability_g17` | 频率稳定度（Gobron 2017） | 与标准FMS方法相当或更好 | [gobron2017](topics/ultrastable-laser/papers/gobron2017.yaml) |
+| `met.highly_stable_piezoelectricall_primary` | Evgeny  primary metric | see paper | [Highly stable piezoelectrically tunable optical cavities](topics/ultrastable-laser/papers/Highly stable piezoelectrically tunable optical cavities.yaml) |
 | `met.impact_resistance_t18` | 抗冲击加速度（Tao 2018） | >100g (ULE cavity, 20 mm drop); >250g (Al model, 250 mm dro… | [tao2018](topics/ultrastable-laser/papers/tao2018.yaml) |
+| `met.jeon_____2025___10_15_level_la_primary` | primary metric | see paper | [Jeon 等 - 2025 - 10-15-level laser stabilization down to fiber thermal noise limit using self-homodyne detection](topics/ultrastable-laser/papers/Jeon 等 - 2025 - 10-15-level laser stabilization down to fiber thermal noise limit using self-homodyne detection.yaml) |
+| `met.jiang_ipc11_primary` | primary metric | see paper | [Jiang IPC11](topics/ultrastable-laser/papers/Jiang IPC11.yaml) |
+| `met.jiang_oe_primary` | Harris  primary metric | see paper | [Jiang_OE](topics/ultrastable-laser/papers/Jiang_OE.yaml) |
+| `met.josab_27_5_914_primary` | 2010 primary metric | see paper | [josab-27-5-914](topics/ultrastable-laser/papers/josab-27-5-914.yaml) |
+| `met.li_11_eftf_ifcs_primary` | primary metric | see paper | [Li 11 EFTF IFCS](topics/ultrastable-laser/papers/Li 11 EFTF IFCS.yaml) |
+| `met.limits_of_coupling_efficiency__primary` | primary metric | see paper | [Limits_of_Coupling_Efficiency_Into_Hollow-Core](topics/ultrastable-laser/papers/Limits_of_Coupling_Efficiency_Into_Hollow-Core.yaml) |
 | `met.locking_bandwidth_g25` | 锁定带宽（Grabielle 2025） | 增大后的带宽（具体值未给出） | [grabielle2025](topics/ultrastable-laser/papers/grabielle2025.yaml) |
 | `met.locking_noise_floor_g25` | 锁定噪声底限（Grabielle 2025） | white frequency noise floor (具体值未给出) | [grabielle2025](topics/ultrastable-laser/papers/grabielle2025.yaml) |
 | `met.long_term_instability_s19` | 长期频率不稳定度（Sanjuan 2019） | ~10⁻¹⁴ @ 5400 s (Allan deviation) | [sanjuan2019](topics/ultrastable-laser/papers/sanjuan2019.yaml) |
 | `met.long_term_instability_w16` | 长期频率不稳定度（Wu 2016） | 1×10⁻¹⁵ @ 100–4000 s | [wu2016](topics/ultrastable-laser/papers/wu2016.yaml) |
+| `met.lz01028367_primary` | Shaddock  primary metric | see paper | [LZ01028367](topics/ultrastable-laser/papers/LZ01028367.yaml) |
+| `met.lz01029465_primary` | primary metric | see paper | [LZ01029465](topics/ultrastable-laser/papers/LZ01029465.yaml) |
+| `met.millo_____2009___ultrastable_l_primary` | Millo  primary metric | see paper | [Millo 等 - 2009 - Ultrastable lasers based on vibration insensitive cavities](topics/ultrastable-laser/papers/Millo 等 - 2009 - Ultrastable lasers based on vibration insensitive cavities.yaml) |
 | `met.noise_reduction_g20` | 探测噪声降低（Galland 2020） | 显著降低（具体数值未给出） | [galland2020](topics/ultrastable-laser/papers/galland2020.yaml) |
+| `met.nphoton_2012_217_primary` | primary metric | see paper | [nphoton.2012.217](topics/ultrastable-laser/papers/nphoton.2012.217.yaml) |
+| `met.nphoton_2013_174_primary` | Garrett  primary metric | see paper | [nphoton.2013.174](topics/ultrastable-laser/papers/nphoton.2013.174.yaml) |
+| `met.oe_25_13_15539_primary` | primary metric | see paper | [oe-25-13-15539](topics/ultrastable-laser/papers/oe-25-13-15539.yaml) |
+| `met.oe_27_10_14121_primary` | primary metric | see paper | [oe-27-10-14121](topics/ultrastable-laser/papers/oe-27-10-14121.yaml) |
+| `met.ol_47_20_5441_primary` | primary metric | see paper | [ol-47-20-5441](topics/ultrastable-laser/papers/ol-47-20-5441.yaml) |
+| `met.ol_50_10_3405_primary` | Adam  primary metric | see paper | [ol-50-10-3405](topics/ultrastable-laser/papers/ol-50-10-3405.yaml) |
+| `met.ol_kefelian_et_al_2009_primary` | primary metric | see paper | [OL kefelian et al 2009](topics/ultrastable-laser/papers/OL kefelian et al 2009.yaml) |
+| `met.opt__lett__39_7___1980_1983__2_primary` | primary metric | see paper | [Opt. Lett. 39(7), 1980-1983 (2014)](topics/ultrastable-laser/papers/Opt. Lett. 39(7), 1980-1983 (2014).yaml) |
+| `met.optica_8_2_216_primary` | primary metric | see paper | [optica-8-2-216](topics/ultrastable-laser/papers/optica-8-2-216.yaml) |
 | `met.optical_optical_sync_jitter_k08` | 远程光-光同步时序抖动（Kim 2008） | 0.4 fs r.m.s.（22 mHz–2.3 MHz） | [kim2008](topics/ultrastable-laser/papers/kim2008.yaml) |
+| `met.optics_letters__vol__36_issue__primary` | 2011 primary metric | see paper | [Optics Letters, Vol. 36 Issue 18, pp.3572-3574 (2011)](topics/ultrastable-laser/papers/Optics Letters, Vol. 36 Issue 18, pp.3572-3574 (2011).yaml) |
 | `met.output_power_d20` | 输出功率（Dixneuf 2020） | 365 W (350 W isolated) | [dixneuf2020](topics/ultrastable-laser/papers/dixneuf2020.yaml) |
 | `met.pd_bandwidth_p16` | 光电探测器带宽（Potnis 2016） | DC to 50 MHz | [potnis2016](topics/ultrastable-laser/papers/potnis2016.yaml) |
 | `met.pd_noise_voltage_density_p16` | 光电探测器噪声电压谱密度（Potnis 2016） | ~2 nV/√Hz @ 10 MHz | [potnis2016](topics/ultrastable-laser/papers/potnis2016.yaml) |
+| `met.photonic_generation_of_rf_and__primary` | primary metric | see paper | [Photonic generation of RF and microwave signal with relative frequency instability of 10-15](topics/ultrastable-laser/papers/Photonic generation of RF and microwave signal with relative frequency instability of 10-15.yaml) |
+| `met.physreva_106_023501_primary` | primary metric | see paper | [PhysRevA.106.023501](topics/ultrastable-laser/papers/PhysRevA.106.023501.yaml) |
+| `met.physrevb_68_085109__1__primary` | Sun  primary metric | see paper | [PhysRevB.68.085109 (1)](topics/ultrastable-laser/papers/PhysRevB.68.085109 (1).yaml) |
+| `met.physrevlett_102_163601_primary` | primary metric | see paper | [PhysRevLett.102.163601](topics/ultrastable-laser/papers/PhysRevLett.102.163601.yaml) |
+| `met.physrevlett_111_237402_primary` | David  primary metric | see paper | [PhysRevLett.111.237402](topics/ultrastable-laser/papers/PhysRevLett.111.237402.yaml) |
+| `met.physrevlett_114_253902_primary` | David  primary metric | see paper | [PhysRevLett.114.253902](topics/ultrastable-laser/papers/PhysRevLett.114.253902.yaml) |
+| `met.physrevlett_118_263202_primary` | Linewidth  primary metric | see paper | [PhysRevLett.118.263202](topics/ultrastable-laser/papers/PhysRevLett.118.263202.yaml) |
+| `met.physrevlett_93_250602_primary` | primary metric | see paper | [PhysRevLett.93.250602](topics/ultrastable-laser/papers/PhysRevLett.93.250602.yaml) |
 | `met.piezo_tuning_range_m13` | 压电调谐范围 | >1.5 GHz (>1 FSR) | [mohle2013](topics/ultrastable-laser/papers/mohle2013.yaml) |
 | `met.pmo_residual_noise_giunta20b` | 12 GHz PMO 分频/探测残余噪声底（Giunta 2020b） | −115 dBc/Hz @ 1 Hz | [giunta2020b](topics/ultrastable-laser/papers/giunta2020b.yaml) |
 | `met.power_handling_capacity_g16` | 功率处理能力（Grote 2016） | 5–50 | [grote2016](topics/ultrastable-laser/papers/grote2016.yaml) |
 | `met.power_stability_d20` | 功率长期稳定性（Dixneuf 2020） | <0.7% RMS | [dixneuf2020](topics/ultrastable-laser/papers/dixneuf2020.yaml) |
 | `met.ptb_si_cavity_instability_sc21` | PTB 低温 Si 腔超稳激光不稳定度（Schioppo 2021） | 4×10⁻¹⁷ | [schioppo2021](topics/ultrastable-laser/papers/schioppo2021.yaml) |
-| `met.ram_fractional_instability` | RAM引起的分数频率不稳定度 | σ_y ≤ 1×10⁻¹⁶（35 mm腔，κ=28 kHz，σ_RAM=1 ppm） | [zhang2014_ram](topics/ultrastable-laser/papers/zhang2014_ram.yaml) |
+| `met.ram_fractional_instability` | RAM引起的分数频率不稳定度 | — | [zhang2014_ram](topics/ultrastable-laser/papers/zhang2014_ram.yaml) |
 | `met.ram_fractional_instability_p25` | RAM 引起的分数频率不稳定度 | 3×10⁻¹⁹ @ 10–100 s | [parke2025](topics/ultrastable-laser/papers/parke2025.yaml) |
 | `met.rayleigh_range_k66` | 瑞利范围（理论） | z_R = πw₀²/λ | [kogelnik1966](topics/ultrastable-laser/papers/kogelnik1966.yaml) |
 | `met.rb_interferometer_stability_o19` | RB 干涉仪稳频不稳定度（Olson 2019） | <2×10⁻¹⁶ @ 10–1000 s | [olson2019](topics/ultrastable-laser/papers/olson2019.yaml) |
 | `met.rin_level_d20` | 相对强度噪声（Dixneuf 2020） | -160 dBc/Hz @ 2–10 kHz | [dixneuf2020](topics/ultrastable-laser/papers/dixneuf2020.yaml) |
 | `met.rin_suppression_bandwidth_n08` | RIN抑制带宽（Nelson 2008） | 10 MHz | [nelson2008](topics/ultrastable-laser/papers/nelson2008.yaml) |
 | `met.rin_suppression_ratio_n08` | RIN抑制比（Nelson 2008） | 10–50 dB | [nelson2008](topics/ultrastable-laser/papers/nelson2008.yaml) |
+| `met.rsi25_ar_00618_primary` | primary metric | see paper | [RSI25-AR-00618](topics/ultrastable-laser/papers/RSI25-AR-00618.yaml) |
+| `met.s20180751_primary` | primary metric | see paper | [s20180751](topics/ultrastable-laser/papers/s20180751.yaml) |
+| `met.s41467_021_27884_3_primary` | primary metric | see paper | [s41467-021-27884-3](topics/ultrastable-laser/papers/s41467-021-27884-3.yaml) |
 | `met.sensitivity_improvement_a13` | 灵敏度改善（Aasi 2013） | 改善具体数值未给出，但超过量子散粒噪声极限 | [aasi2013](topics/ultrastable-laser/papers/aasi2013.yaml) |
 | `met.servo_bandwidth` | 伺服带宽（Unity Gain Frequency） | 约 230 Hz（Chabbra 2021 实验值） | [shaddock1999](topics/ultrastable-laser/papers/shaddock1999.yaml) |
 | `met.servo_bandwidth_d20` | RIN伺服带宽（Dixneuf 2020） | 1 MHz | [dixneuf2020](topics/ultrastable-laser/papers/dixneuf2020.yaml) |
@@ -436,13 +535,18 @@
 | `met.shb_absolute_stability_l13` | SHB 绝对稳定度（vs H-maser, Leibrandt 2013） | 1×10⁻¹⁵/√τ, drift 5×10⁻¹⁸/s | [leibrandt2013](topics/ultrastable-laser/papers/leibrandt2013.yaml) |
 | `met.shb_environmental_sensitivity_thorpe11` | SHB 环境灵敏度（Thorpe 2011） | temperature: 16 kHz/K²; pressure: -11.4 Hz/Pa; acceleration… | [thorpe2011](topics/ultrastable-laser/papers/thorpe2011.yaml) |
 | `met.shb_relative_stability_l13` | SHB 双晶体相对稳定度（Leibrandt 2013） | 5.5×10⁻¹⁷ @ 204 s (quadratic drift removed) | [leibrandt2013](topics/ultrastable-laser/papers/leibrandt2013.yaml) |
+| `met.siliconcavity_xtal_coating_noi_primary` | William  primary metric | see paper | [SiliconCavity Xtal Coating noise_Optica 2023](topics/ultrastable-laser/papers/SiliconCavity Xtal Coating noise_Optica 2023.yaml) |
 | `met.snr_improvement_g17` | 信噪比提升（Gobron 2017） | 具体数值未给出，但理论上更优 | [gobron2017](topics/ultrastable-laser/papers/gobron2017.yaml) |
 | `met.spectral_distortion_immunity_g17` | 光谱畸变免疫性（Gobron 2017） | 不受烧孔功率引起的畸变影响 | [gobron2017](topics/ultrastable-laser/papers/gobron2017.yaml) |
 | `met.spectral_hole_lifetime_k03` | 光谱孔寿命（Könz 2003） | 1 s @ 18 K to >20 days @ 2 K | [konz2003](topics/ultrastable-laser/papers/konz2003.yaml) |
 | `met.sr_clock_instability_l18` | Sr 钟频率稳定度（Li 2018） | <3.2×10⁻¹⁶ short-term, 1.8×10⁻¹⁵/√τ | [li2018](topics/ultrastable-laser/papers/li2018.yaml) |
+| `met.srep24969__1__primary` | primary metric | see paper | [srep24969 (1)](topics/ultrastable-laser/papers/srep24969 (1).yaml) |
 | `met.steady_state_shb_stability_c15` | 稳态 SHB 稳频稳定度（Cook 2015） | 1.0×10⁻¹⁵/√τ → 8.5×10⁻¹⁷ @ 73 s | [cook2015](topics/ultrastable-laser/papers/cook2015.yaml) |
+| `met.tao_chen2018_article_avibratio_primary` | primary metric | see paper | [Tao-Chen2018_Article_AVibration-insensitive-ca](topics/ultrastable-laser/papers/Tao-Chen2018_Article_AVibration-insensitive-ca.yaml) |
+| `met.temperature_insensitive_delay__primary` | primary metric | see paper | [Temperature_Insensitive_Delay-Line_Fiber_Inter](topics/ultrastable-laser/papers/Temperature_Insensitive_Delay-Line_Fiber_Inter.yaml) |
 | `met.thermal_noise_freq_psd` | 热噪声频率噪声谱密度（刚性腔极限） | ~0.13 × (1Hz/f)^(1/2) Hz/√Hz | [numata2004](topics/ultrastable-laser/papers/numata2004.yaml) |
-| `met.thermal_noise_psd_hcf_mb22` | 空心光纤热噪声功率谱密度（Michaud-Belleau 2022） | ≈1.3×10⁻¹⁷ (rad²/Hz)/m @30 kHz | [michaudbelleau2022](topics/ultrastable-laser/papers/michaudbelleau2022.yaml) |
+| `met.thermal_noise_limited_optical__primary` | primary metric | see paper | [thermal noise limited optical cavity webster](topics/ultrastable-laser/papers/thermal noise limited optical cavity webster.yaml) |
+| `met.thermal_noise_psd_hcf_mb22` | 空心光纤热噪声功率谱密度（Michaud-Belleau 2022） | — | [michaudbelleau2022](topics/ultrastable-laser/papers/michaudbelleau2022.yaml) |
 | `met.timing_link_stability_k08` | 定时稳定光纤链路残余时差（Kim 2008） | 6.4 fs r.m.s. @ 72 h；0.36 fs r.m.s. @ 10 ms–1 s | [kim2008](topics/ultrastable-laser/papers/kim2008.yaml) |
 | `met.transmission_bandwidth_hcarf_b15` | 传输带宽（Belardi 2015，HC-ARF） | 0.75–1.6 μm | [belardi2015](topics/ultrastable-laser/papers/belardi2015.yaml) |
 | `met.visible_attenuation_hcarf_b15` | 可见光最小衰减（Belardi 2015，HC-ARF） | 175 dB/km @ 480 nm | [belardi2015](topics/ultrastable-laser/papers/belardi2015.yaml) |

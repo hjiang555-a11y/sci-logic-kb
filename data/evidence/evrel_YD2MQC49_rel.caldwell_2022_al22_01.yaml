@@ -1,8 +1,0 @@
-evidence: self-referenced optical frequency comb
-id: evrel_YD2MQC49_rel.caldwell_2022_al22_01
-metadata:
-  source_paper: caldwell2022
-  zotero_key: YD2MQC49
-object: ent.optical_frequency_comb
-predicate: PART-OF
-subject: ent.tpfc_quantum_limited_ranging_c22

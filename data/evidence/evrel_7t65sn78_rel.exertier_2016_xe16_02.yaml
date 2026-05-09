@@ -1,8 +1,0 @@
-evidence: GPS common-view time transfer
-id: evrel_7t65sn78_rel.exertier_2016_xe16_02
-metadata:
-  source_paper: exertier2016_7t65sn78
-  zotero_key: 7t65sn78
-object: ent.satellite_microwave_time_transfer_link
-predicate: PART-OF
-subject: ent.gps_common_view_time_transfer

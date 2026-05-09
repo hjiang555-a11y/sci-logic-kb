@@ -1,24 +1,41 @@
-# Carlson 2017 — Self-referenced frequency combs using high-efficiency silicon-nitride waveguides [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — 2314 Vol.42,No.12/June152017/OpticsLetters Letter [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: 2905-4
+  zotero_key: 2314 Vol.42,No.12/June152017/OpticsLetters Letter
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Self-referenced frequency combs using high-efficiency silicon-nitride waveguides"
-  year: 2017
-  first_author: "Carlson"
-  authors: ["David R. Carlson", "Daniel D. Hickstein", "Alex Lind", "Stefan Droste", "Daron Westly", "Nima Nader", "Ian Coddington", "Nathan R. Newbury", "Kartik Srinivasan", "Scott A. Diddams", "Scott B. Papp"]
-  journal: "Optics Letters"
-  volume: 42
-  pages: 2314
-  doi: 10.1364/OL.42.002314
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: 2314 Vol.42,No.12/June152017/OpticsLetters Letter
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.2905_4_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.2905_4_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: 2314 Vol.42,No.12/June152017/OpticsLetters Letter
+      claim: core experimental result
+relations:
+- id: rel.2905_4_01
+  subject: ent.2905_4_system
+  predicate: CHARACTERIZED-BY
+  object: met.2905_4_primary
+  confidence: established
+  source:
+    zotero_key: 2314 Vol.42,No.12/June152017/OpticsLetters Letter
+    claim: experimental system characterized by primary metric

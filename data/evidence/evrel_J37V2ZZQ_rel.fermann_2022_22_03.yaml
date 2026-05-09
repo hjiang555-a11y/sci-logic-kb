@@ -1,8 +1,0 @@
-evidence: Additional noise arises from fiber amplifiers, nonlinear fibers
-id: evrel_J37V2ZZQ_rel.fermann_2022_22_03
-metadata:
-  source_paper: fermann2022
-  zotero_key: J37V2ZZQ
-object: pri.scg_added_noise_in_frequency_transfer
-predicate: BOUNDED-BY
-subject: ent.precision_frequency_transfer_system_f22

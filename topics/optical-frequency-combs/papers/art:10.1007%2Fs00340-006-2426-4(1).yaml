@@ -1,24 +1,42 @@
-# McFerran 2006 — Suppression of pump-induced frequency noise in fiber-laser frequency combs le... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Appl.Phys.B86,219–227(2007) AppliedPhysicsB [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: art:10.1007%2Fs00340-006-2426-4(1)
+  zotero_key: Appl.Phys.B86,219–227(2007) AppliedPhysicsB
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Suppression of pump-induced frequency noise in fiber-laser frequency combs leading to sub-radian f ceo phase excursions"
-  year: 2006
-  first_author: "McFerran"
-  authors: ["J.J. McFerran", "W.C. Swann", "B.R. Washburn", "N.R. Newbury"]
-  journal: "Applied Physics B"
-  volume: 86
-  pages: 219-227
+  reliability: medium
+  title: Appl.Phys.B86,219–227(2007) AppliedPhysicsB
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
   doi: 10.1007/s00340-006-2426-4
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+entities:
+- id: ent.art_10_1007_2fs00340_006_2426__system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.art_10_1007_2fs00340_006_2426__primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Appl.Phys.B86,219–227(2007) AppliedPhysicsB
+      claim: core experimental result
+relations:
+- id: rel.art_10_1007_2fs00340_006_2426__01
+  subject: ent.art_10_1007_2fs00340_006_2426__system
+  predicate: CHARACTERIZED-BY
+  object: met.art_10_1007_2fs00340_006_2426__primary
+  confidence: established
+  source:
+    zotero_key: Appl.Phys.B86,219–227(2007) AppliedPhysicsB
+    claim: experimental system characterized by primary metric

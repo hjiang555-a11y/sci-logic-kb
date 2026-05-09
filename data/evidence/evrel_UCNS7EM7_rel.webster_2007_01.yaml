@@ -1,8 +1,0 @@
-evidence: optical cavity designed to be insensitive to vibration in all directions
-id: evrel_UCNS7EM7_rel.webster_2007_01
-metadata:
-  source_paper: webster2007
-  zotero_key: UCNS7EM7
-object: ent.fp_cavity_system
-predicate: PART-OF
-subject: ent.cutout_cavity_mount_w07

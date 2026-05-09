@@ -1,8 +1,0 @@
-evidence: microwave frequency transfer over a 112-km urban fiber link
-id: evrel_6z466ig4_rel.xue_2020_ue20_01
-metadata:
-  source_paper: xue2020_6z466ig4
-  zotero_key: 6z466ig4
-object: ent.rf_over_fiber_time_transfer_link
-predicate: PART-OF
-subject: ent.ntsc_112km_urban_rf_link_x20

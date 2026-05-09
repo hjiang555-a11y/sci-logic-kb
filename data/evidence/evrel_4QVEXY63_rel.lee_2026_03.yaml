@@ -1,9 +1,0 @@
-evidence: 6-cm-long cryogenic silicon cavity operated at 17 K... uses two 1 m radius
-  of curvature mirrors made of alternating layers of crystalline GaAs/AlGaAs
-id: evrel_4QVEXY63_rel.lee_2026_03
-metadata:
-  source_paper: lee2026
-  zotero_key: 4QVEXY63
-object: ent.si_crystal_17k_fp_cavity_l26
-predicate: PART-OF
-subject: ent.algaas_crystalline_mirror_c13

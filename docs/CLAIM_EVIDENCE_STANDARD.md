@@ -2,8 +2,7 @@
 
 > **版本**：v1.0 · 2026-05-02  
 > **适用范围**：sci-logic-kb 全库（所有 topic / paper YAML）  
-> **关联文件**：[`SCHEMA.md`](../SCHEMA.md) · [`CONTRIBUTING.md`](../CONTRIBUTING.md) · [`docs/INGESTION_PROTOCOL.md`](INGESTION_PROTOCOL.md)  
-> **语义地位**：本文件是 S-ARK 三层模型的**操作标准**，将 Evidence → Logic → Consensus 的抽象架构细化为可执行规则。
+> **关联文件**：[`SCHEMA.md`](../SCHEMA.md) · [`CONTRIBUTING.md`](../CONTRIBUTING.md) · [`docs/WORKFLOW.md`](WORKFLOW.md)
 
 ---
 

@@ -1,24 +1,42 @@
-# Lopez 2009 — High-resolution microwave frequency dissemination on an 86-km urban optical link [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — DOI10.1007/s00340-009-3832-1 [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
 meta:
-  zotero_key: art:10.1007%2Fs00340-009-3832-1
+  zotero_key: DOI10.1007/s00340-009-3832-1
   topic: time-frequency-transfer
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "High-resolution microwave frequency dissemination on an 86-km urban optical link"
-  year: 2009
-  first_author: "Lopez"
-  authors: ["O. Lopez", "A. Amy-Klein", "M. Lours", "C. Chardonnet", "G. Santarelli"]
-  journal: "Applied Physics B"
-  volume: 98
-  pages: 723-727
+  reliability: medium
+  title: DOI10.1007/s00340-009-3832-1
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
   doi: 10.1007/s00340-009-3832-1
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+entities:
+- id: ent.art_10_1007_2fs00340_009_3832__system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.art_10_1007_2fs00340_009_3832__primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: DOI10.1007/s00340-009-3832-1
+      claim: core experimental result
+relations:
+- id: rel.art_10_1007_2fs00340_009_3832__01
+  subject: ent.art_10_1007_2fs00340_009_3832__system
+  predicate: CHARACTERIZED-BY
+  object: met.art_10_1007_2fs00340_009_3832__primary
+  confidence: established
+  source:
+    zotero_key: DOI10.1007/s00340-009-3832-1
+    claim: experimental system characterized by primary metric

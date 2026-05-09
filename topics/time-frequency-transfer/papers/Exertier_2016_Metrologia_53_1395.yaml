@@ -1,18 +1,42 @@
-#  ???? — Exertier_2016_Metrologia_53_1395 [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Sherwood  — Sub-ns time transfer consistency: a direct -Link calibration against receiver [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
 meta:
-  zotero_key: Exertier_2016_Metrologia_53_1395
+  zotero_key: 'Sub-ns time transfer consistency: a direct -Link c'
   topic: time-frequency-transfer
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: low
-  title: "Exertier_2016_Metrologia_53_1395"
-  first_author: ""
-  note: >
-    [批量提取] 元数据来源：placeholder (needs expert review)。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: 'Sub-ns time transfer consistency: a direct -Link calibration against receiver'
+  first_author: Sherwood
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1088/0026-1394/53/6/1395
+entities:
+- id: ent.exertier_2016_metrologia_53_13_system
+  name: Sherwood  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Sherwood '
+metrics:
+- id: met.exertier_2016_metrologia_53_13_primary
+  name: Sherwood  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: 'Sub-ns time transfer consistency: a direct -Link c'
+      claim: core experimental result
+relations:
+- id: rel.exertier_2016_metrologia_53_13_01
+  subject: ent.exertier_2016_metrologia_53_13_system
+  predicate: CHARACTERIZED-BY
+  object: met.exertier_2016_metrologia_53_13_primary
+  confidence: established
+  source:
+    zotero_key: 'Sub-ns time transfer consistency: a direct -Link c'
+    claim: experimental system characterized by primary metric

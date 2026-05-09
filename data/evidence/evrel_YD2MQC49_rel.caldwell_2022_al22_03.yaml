@@ -1,8 +1,0 @@
-evidence: 1/77
-id: evrel_YD2MQC49_rel.caldwell_2022_al22_03
-metadata:
-  source_paper: caldwell2022
-  zotero_key: YD2MQC49
-object: met.tpfc_photon_per_pulse_c22
-predicate: CHARACTERIZED-BY
-subject: ent.tpfc_quantum_limited_ranging_c22

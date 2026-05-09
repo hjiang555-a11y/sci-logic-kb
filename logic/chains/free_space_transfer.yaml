@@ -1,0 +1,79 @@
+chain_id: free_space_transfer
+question: What limits optical time-frequency transfer through free space, and how close are we to satellite-based global clock networks?
+domain: time-frequency-transfer
+confidence: draft
+last_updated: '2026-05-09'
+current_best:
+  value: sigma_y = 6.1e-21 @ 300 s (2 km); <4e-19 @ 113 km; 102 dB link budget supports ground-GEO
+  system: Gozzard 2022 (2 km), Shen 2022 (113 km), Caldwell 2023 (quantum limit)
+  note: 'Free-space transfer is fundamentally different from fiber: atmospheric turbulence replaces PMD, satellite Doppler requires active compensation, link budget constrains distance'
+limiting_principle:
+  id: pri.atmospheric_optical_phase_noise_power_law
+  name: Atmospheric turbulence phase noise
+  statement: 'Atmospheric temperature fluctuations produce refractive index variations. Phase noise PSD follows Kolmogorov power law: S_phi(f) proportional to f^(-8/3). Timing jitter: S_jitter(f) proportional
+    to f^(-6.7/3).'
+  defined_by: caldwell2020.yaml
+condition_variables:
+- symbol: Cn2
+  name: Atmospheric refractive index structure constant
+  effect: Determines turbulence strength; varies diurnally and with weather
+- symbol: L
+  name: Link distance
+  effect: Phase variance proportional to L (horizontal); different scaling for vertical/slant paths. 2 km demonstrated at 6.1e-21; 113 km at <4e-19; GEO target at 40,000 km
+- symbol: link_budget
+  name: Optical link budget
+  effect: Loss proportional to 1/L2. Quantum-limited detection (Caldwell 2023) supports 102 dB loss with 4.0 mW
+- symbol: satellite_doppler
+  name: Satellite Doppler shift
+  effect: LEO 10e-5; GEO 10e-8. Requires active pre-compensation or two-way cancellation
+vs_fiber:
+  fiber_advantage: Continuous operation; no atmospheric limits; PMD is bottleneck
+  fiber_disadvantage: Requires physical infrastructure; cannot cross oceans
+  free_space_advantage: Global coverage via satellites; no physical infrastructure
+  free_space_disadvantage: Atmospheric turbulence; satellite pass windows; higher link loss
+timeline:
+- year: 2016
+  value: 'Tip-tilt tracking: TDEV ~165 as @ >100 s'
+  system: Sinclair — 12 km active tip-tilt
+  significance: Active beam steering demonstrated
+- year: 2019
+  value: <1 fs TDEV with 10e-7 Doppler
+  system: Bergeron — 4 km motion compensation
+  significance: Doppler immunity at sub-fs level
+- year: 2020
+  value: Atmospheric jitter PSD characterized
+  system: Caldwell — Kolmogorov validated
+  significance: Fundamental noise mechanism quantified
+- year: 2022
+  value: 6.1e-21 @ 300 s
+  system: Gozzard — 2 km free-space transfer
+  significance: Free-space reaches fiber parity at metro scale
+- year: 2022
+  value: <4e-19 @ 113 km
+  system: Shen — 113 km free-space link
+  significance: Longest free-space link demonstrated
+- year: 2023
+  value: 102 dB quantum-limited budget
+  system: Caldwell — ground-GEO feasible
+  significance: Satellite-based global clock networks technically viable
+edges:
+- from: Free-space transfer instability
+  to: pri.atmospheric_optical_phase_noise_power_law
+  relation: BOUNDED-BY (fundamental)
+- from: pri.atmospheric_optical_phase_noise_power_law
+  to: Tip-tilt active tracking + aperture averaging
+  relation: RESOLVED-BY (Sinclair 2016)
+  status: demonstrated
+- from: Free-space transfer instability
+  to: Link budget (1/L2 scaling)
+  relation: BOUNDED-BY
+- from: Link budget (1/L2 scaling)
+  to: Quantum-limited detection (102 dB)
+  relation: RESOLVED-BY (Caldwell 2023)
+  status: demonstrated
+- from: 'Current: 6.1e-21 @ 2 km'
+  to: 'Target: 10e-20 ground-LEO per pass'
+  relation: REMAINING-GAP (~10x distance scaling)
+evidence:
+- relation_id: rel.sinclair_2019_in19_03
+  claim: atmospheric optical phase noise follows power law spectrum

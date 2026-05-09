@@ -1,24 +1,42 @@
-# Kim 2022 — Improved interspecies optical clock comparisons through differential spectros... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# May  — Improved interspecies optical clock [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：frequency-standards
 meta:
-  zotero_key: s41567-022-01794-7
+  zotero_key: Improved interspecies optical clock
   topic: frequency-standards
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Improved interspecies optical clock comparisons through differential spectroscopy"
-  year: 2022
-  first_author: "Kim"
-  authors: ["May E. Kim", "William F. McGrew", "Nicholas V. Nardelli", "Ethan R. Clements", "Youssef S. Hassan", "Xiaogang Zhang", "Jose L. Valencia", "Holly Leopardi", "David B. Hume", "Tara M. Fortier", "Andrew D. Ludlow", "David R. Leibrandt"]
-  journal: "Nature Physics"
-  volume: 19
-  pages: 25-29
+  reliability: medium
+  title: Improved interspecies optical clock
+  first_author: May
+  note: batch minimal extraction; pending expert review for full entities/principles
   doi: 10.1038/s41567-022-01794-7
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+entities:
+- id: ent.s41567_022_01794_7_system
+  name: May  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in May '
+metrics:
+- id: met.s41567_022_01794_7_primary
+  name: May  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Improved interspecies optical clock
+      claim: core experimental result
+relations:
+- id: rel.s41567_022_01794_7_01
+  subject: ent.s41567_022_01794_7_system
+  predicate: CHARACTERIZED-BY
+  object: met.s41567_022_01794_7_primary
+  confidence: established
+  source:
+    zotero_key: Improved interspecies optical clock
+    claim: experimental system characterized by primary metric

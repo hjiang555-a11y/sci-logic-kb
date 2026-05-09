@@ -1,9 +1,0 @@
-evidence: multisegment nanophotonic waveguides that combine engineered dispersion
-  and chirped quasi-phase matching for efficient supercontinuum generation
-id: evrel_8IPE8B8T_rel.wu_2024_24_03
-metadata:
-  source_paper: wu2024
-  zotero_key: 8IPE8B8T
-object: pri.chirped_qpm_broadband_chi2_sc
-predicate: ENABLED-BY
-subject: meth.tf_ln_uv_vis_comb_generation

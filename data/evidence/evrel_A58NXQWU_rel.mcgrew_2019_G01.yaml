@@ -1,8 +1,0 @@
-evidence: 1 × 10^-16 accuracy for optical clock ratios
-id: evrel_A58NXQWU_rel.mcgrew_2019_G01
-metadata:
-  source_paper: mcgrew2019
-  zotero_key: A58NXQWU
-object: met.absolute_freq_ratio_mcgrew2019
-predicate: CHARACTERIZED-BY
-subject: ent.yb_optical_lattice_clock

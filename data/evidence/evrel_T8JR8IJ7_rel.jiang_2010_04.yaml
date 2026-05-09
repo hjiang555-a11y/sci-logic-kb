@@ -1,8 +1,0 @@
-evidence: uses fiber delay line as frequency reference
-id: evrel_T8JR8IJ7_rel.jiang_2010_04
-metadata:
-  source_paper: jiang2010
-  zotero_key: T8JR8IJ7
-object: pri.fiber_delay_line_frequency_ref
-predicate: ENABLED-BY
-subject: meth.fiber_delay_locking

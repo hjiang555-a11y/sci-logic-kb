@@ -1,9 +1,0 @@
-evidence: comb-based optical two-way time-frequency transfer over two spatially separated
-  optical links
-id: evrel_9ltylbj8_rel.swann_2019_wa19_01
-metadata:
-  source_paper: swann2019_9ltylbj8
-  zotero_key: 9ltylbj8
-object: ent.free_space_optical_tf_link
-predicate: PART-OF
-subject: ent.anisoplanatism_study_link_sw19

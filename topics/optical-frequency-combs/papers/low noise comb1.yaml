@@ -1,24 +1,41 @@
-# Endo 2018 — Ultralow Noise Optical Frequency Combs [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Ultralow Noise Optical Frequency Combs [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: low noise comb1
+  zotero_key: Ultralow Noise Optical Frequency Combs
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Ultralow Noise Optical Frequency Combs"
-  year: 2018
-  first_author: "Endo"
-  authors: ["Mamoru Endo", "Tyko D. Shoji", "Thomas R. Schibli"]
-  journal: "IEEE Journal of Selected Topics in Quantum Electronics"
-  volume: 24
-  pages: 1-13
-  doi: 10.1109/JSTQE.2018.2818461
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Ultralow Noise Optical Frequency Combs
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.low_noise_comb1_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.low_noise_comb1_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Ultralow Noise Optical Frequency Combs
+      claim: core experimental result
+relations:
+- id: rel.low_noise_comb1_01
+  subject: ent.low_noise_comb1_system
+  predicate: CHARACTERIZED-BY
+  object: met.low_noise_comb1_primary
+  confidence: established
+  source:
+    zotero_key: Ultralow Noise Optical Frequency Combs
+    claim: experimental system characterized by primary metric

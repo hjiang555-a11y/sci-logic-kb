@@ -1,9 +1,0 @@
-evidence: Comb operated on TEXUS-51 sounding rocket providing ~6 min ballistic microgravity
-  at 254 km apogee
-id: evrel_BWX8NI2P_rel.lezius_2016_ez10
-metadata:
-  source_paper: lezius2016
-  zotero_key: BWX8NI2P
-object: ent.texus51_rocket_platform
-predicate: CONDITIONED-BY
-subject: ent.spaceborne_erfiber_comb_l16

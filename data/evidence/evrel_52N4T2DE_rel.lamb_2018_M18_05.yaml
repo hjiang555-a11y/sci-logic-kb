@@ -1,8 +1,0 @@
-evidence: microcomb-mediated comparison of two ultrastable optical-reference cavities
-id: evrel_52N4T2DE_rel.lamb_2018_M18_05
-metadata:
-  source_paper: lamb2018
-  zotero_key: 52N4T2DE
-object: ent.fp_cavity_system
-predicate: CONDITIONED-BY
-subject: ent.kerr_microcomb_photonic_chip_sc_l18

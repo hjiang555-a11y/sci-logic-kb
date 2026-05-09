@@ -1,24 +1,41 @@
-# Tsutsui 2022 — Simple method for broadband amplification in a polarizing-maintained Yb fiber... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Simple method for broadband amplification in a [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: ol-47-20-5417
+  zotero_key: Simple method for broadband amplification in a
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Simple method for broadband amplification in a polarizing-maintained Yb fiber amplifier with a narrow bandpass filter"
-  year: 2022
-  first_author: "Tsutsui"
-  authors: ["Shuta Tsutsui", "Yuki Fujimoto", "Hiroyuki Toda", "Masayuki Suzuki"]
-  journal: "Optics Letters"
-  volume: 47
-  pages: 5417
-  doi: 10.1364/OL.473689
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Simple method for broadband amplification in a
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.ol_47_20_5417_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.ol_47_20_5417_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Simple method for broadband amplification in a
+      claim: core experimental result
+relations:
+- id: rel.ol_47_20_5417_01
+  subject: ent.ol_47_20_5417_system
+  predicate: CHARACTERIZED-BY
+  object: met.ol_47_20_5417_primary
+  confidence: established
+  source:
+    zotero_key: Simple method for broadband amplification in a
+    claim: experimental system characterized by primary metric

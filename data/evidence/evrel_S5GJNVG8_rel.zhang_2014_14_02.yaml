@@ -1,9 +1,0 @@
-evidence: active servo comprising in-phase and quadrature RAM corrections allows frequency
-  stabilization comparable to fundamental thermal noise limit
-id: evrel_S5GJNVG8_rel.zhang_2014_14_02
-metadata:
-  source_paper: zhang2014_ram
-  zotero_key: S5GJNVG8
-object: pri.ram_active_cancellation
-predicate: ENABLED-BY
-subject: meth.pdh_locking

@@ -71,11 +71,11 @@ methods:
   key_technique: 抽真空压力控制与噪声谱测量
   note: 该方法首次系统评估空心光纤热噪声，揭示气体热传导噪声主导机制
 metrics:
-- id: met.thermal_noise_psd_hcf_mb22
-  name: 空心光纤热噪声功率谱密度（Michaud-Belleau 2022）
-  unit: (rad²/Hz)/m
-  description: 单位光学长度的相位噪声功率谱密度
-  demonstrated_value:
+  - id: met.thermal_noise_psd_hcf_mb22
+    name: 空心光纤热噪声功率谱密度（Michaud-Belleau 2022）
+    unit: (rad²/Hz)/m
+    description: 单位光学长度的相位噪声功率谱密度
+    demonstrated_value:
     value: ≈1.3×10⁻¹⁷ (rad²/Hz)/m @30 kHz
     conditions: 大模场面积 NANF, 抽真空密封至 0.15 atm, 1550 nm
     verification_status: observed
@@ -84,7 +84,7 @@ metrics:
       zotero_key: 4GT5VD54
       claim: the lowest thermal noise power per unit optical length ever measured
         in a fiber (≈1.3×10⁻¹⁷ (rad²/Hz)/m at 30 kHz)
-  historical_landmarks:
+    historical_landmarks:
     first_demonstration:
       value: ≈1.3×10⁻¹⁷ (rad²/Hz)/m @30 kHz
       year: 2022

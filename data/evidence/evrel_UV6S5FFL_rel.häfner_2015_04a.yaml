@@ -1,9 +1,0 @@
-evidence: self-balancing mount was essential to reliably reach sensitivities to acceleration
-  of below 2×10⁻¹⁰/g in all directions
-id: evrel_UV6S5FFL_rel.häfner_2015_04a
-metadata:
-  source_paper: hafner2015
-  zotero_key: UV6S5FFL
-object: meth.self_balancing_mount_h15
-predicate: IMPLEMENTS
-subject: ent.self_balancing_long_cavity_h15

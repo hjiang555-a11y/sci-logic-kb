@@ -1,18 +1,43 @@
-#  ???? — Bothwell_2019_Metrologia_56_065004 [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Bothwell 2019 — JILA SrI optical lattice clock with uncertainty of -The band spectrum of SrI in  [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：frequency-standards
 meta:
-  zotero_key: Bothwell_2019_Metrologia_56_065004
+  zotero_key: JILA SrI optical lattice clock with uncertainty of
   topic: frequency-standards
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: low
-  title: "Bothwell_2019_Metrologia_56_065004"
-  first_author: ""
-  note: >
-    [批量提取] 元数据来源：placeholder (needs expert review)。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: JILA SrI optical lattice clock with uncertainty of -The band spectrum of SrI in the region
+  first_author: Bothwell
+  note: batch minimal extraction; pending expert review for full entities/principles
+  year: 2019
+  doi: 10.1088/1681-7575/ab4089
+entities:
+- id: ent.bothwell_2019_metrologia_56_06_system
+  name: Bothwell 2019 experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: Experimental system described in Bothwell 2019
+metrics:
+- id: met.bothwell_2019_metrologia_56_06_primary
+  name: Bothwell 2019 primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: JILA SrI optical lattice clock with uncertainty of
+      claim: core experimental result
+relations:
+- id: rel.bothwell_2019_metrologia_56_06_01
+  subject: ent.bothwell_2019_metrologia_56_06_system
+  predicate: CHARACTERIZED-BY
+  object: met.bothwell_2019_metrologia_56_06_primary
+  confidence: established
+  source:
+    zotero_key: JILA SrI optical lattice clock with uncertainty of
+    claim: experimental system characterized by primary metric

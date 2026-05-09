@@ -1,8 +1,0 @@
-evidence: fast servo of the repetition rate (~230 kHz)
-id: evrel_R4M8SE4F_rel.zhang_2015_15_02
-metadata:
-  source_paper: zhang2015
-  zotero_key: R4M8SE4F
-object: met.frep_servo_bandwidth_z15
-predicate: CHARACTERIZED-BY
-subject: ent.er_fiber_intracavity_eom_comb_z15

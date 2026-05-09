@@ -1,8 +1,0 @@
-evidence: cavity thermal noise-limited laser frequency instability... 4.3×10⁻¹⁶
-id: evrel_Z37PT8RC_rel.chen_2020_H02
-metadata:
-  source_paper: chen2020
-  zotero_key: Z37PT8RC
-object: pri.brownian_thermal_noise_fdt
-predicate: BOUNDED-BY
-subject: ent.cubic_dual_cavity_c20

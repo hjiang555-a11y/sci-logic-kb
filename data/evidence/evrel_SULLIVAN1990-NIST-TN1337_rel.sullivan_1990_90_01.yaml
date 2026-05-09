@@ -1,9 +1,0 @@
-evidence: Modified Allan variance replaces the sin⁴ transfer function kernel with
-  sin⁶ by phase-averaging over n samples.
-id: evrel_SULLIVAN1990-NIST-TN1337_rel.sullivan_1990_90_01
-metadata:
-  source_paper: sullivan1990
-  zotero_key: SULLIVAN1990-NIST-TN1337
-object: pri.modified_allan_kernel_resolves_pm_noise
-predicate: DERIVED-FROM
-subject: meth.modified_allan_deviation_mdev

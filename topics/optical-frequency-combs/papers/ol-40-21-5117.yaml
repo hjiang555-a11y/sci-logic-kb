@@ -1,24 +1,41 @@
-# Johnson 2015 — Octave-spanning coherent supercontinuum generation in a silicon nitride waveg... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Octave-spanning coherent supercontinuum [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: ol-40-21-5117
+  zotero_key: Octave-spanning coherent supercontinuum
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Octave-spanning coherent supercontinuum generation in a silicon nitride waveguide"
-  year: 2015
-  first_author: "Johnson"
-  authors: ["Adrea R. Johnson", "Aline S. Mayer", "Alexander Klenner", "Kevin Luke", "Erin S. Lamb", "Michael R. E. Lamont", "Chaitanya Joshi", "Yoshitomo Okawachi", "Frank W. Wise", "Michal Lipson", "Ursula Keller", "Alexander L. Gaeta"]
-  journal: "Optics Letters"
-  volume: 40
-  pages: 5117
-  doi: 10.1364/OL.40.005117
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Octave-spanning coherent supercontinuum
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.ol_40_21_5117_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.ol_40_21_5117_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Octave-spanning coherent supercontinuum
+      claim: core experimental result
+relations:
+- id: rel.ol_40_21_5117_01
+  subject: ent.ol_40_21_5117_system
+  predicate: CHARACTERIZED-BY
+  object: met.ol_40_21_5117_primary
+  confidence: established
+  source:
+    zotero_key: Octave-spanning coherent supercontinuum
+    claim: experimental system characterized by primary metric

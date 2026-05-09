@@ -1,8 +1,0 @@
-evidence: ultra-low-expansion glass reference cavity
-id: evrel_X7XXKXDZ_rel.häfner_2020_F20_01
-metadata:
-  source_paper: hafner2020
-  zotero_key: X7XXKXDZ
-object: ent.fp_cavity_system
-predicate: PART-OF
-subject: ent.transportable_12cm_cavity_h20

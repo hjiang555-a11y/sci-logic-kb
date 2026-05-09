@@ -1,9 +1,0 @@
-evidence: the complete JILA Sr clock system integrates Zeeman slowing, blue/red MOTs,
-  magic-wavelength lattice trapping...
-id: evrel_LUDLOW2008-THESIS-JILA_rel.ludlow_2008_08T_01
-metadata:
-  source_paper: ludlow2008_thesis
-  zotero_key: LUDLOW2008-THESIS-JILA
-object: ent.optical_lattice_clock
-predicate: OPERATIONALIZED-AS
-subject: meth.sr_optical_lattice_clock_stack_l08

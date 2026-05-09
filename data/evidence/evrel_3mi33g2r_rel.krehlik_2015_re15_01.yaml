@@ -1,8 +1,0 @@
-evidence: active delay stabilization ... unlimited range of compensation
-id: evrel_3mi33g2r_rel.krehlik_2015_re15_01
-metadata:
-  source_paper: krehlik2015_3mi33g2r
-  zotero_key: 3mi33g2r
-object: pri.hybrid_analog_digital_delay_compensation
-predicate: ENABLED-BY
-subject: ent.rf_over_fiber_time_transfer_link

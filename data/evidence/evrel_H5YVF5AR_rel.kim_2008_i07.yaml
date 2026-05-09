@@ -1,8 +1,0 @@
-evidence: the timing jitter in a 1 MHz bandwidth integrated over 10 h is 6.8 fs (r.m.s.)
-id: evrel_H5YVF5AR_rel.kim_2008_i07
-metadata:
-  source_paper: kim2008
-  zotero_key: H5YVF5AR
-object: met.optical_microwave_sync_jitter_k08
-predicate: CHARACTERIZED-BY
-subject: ent.remote_timing_synchronization_network

@@ -1,9 +1,0 @@
-evidence: Combs can also be produced from a continuous wave (CW) laser through the
-  nonlinear optical process of parametric frequency conversion in optical microresonators
-id: evrel_2ADYRC8C_rel.kippenberg_2007_11_05
-metadata:
-  source_paper: kippenberg2011
-  zotero_key: 2ADYRC8C
-object: pri.parametric_four_wave_mixing_comb
-predicate: ENABLED-BY
-subject: meth.cw_pumped_microcomb_generation

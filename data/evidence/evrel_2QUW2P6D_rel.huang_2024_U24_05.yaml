@@ -1,9 +1,0 @@
-evidence: Comb-calibrated FMCW coherent sensing offers an alternative to dual-comb
-  ranging/imaging for NLOS 3D reconstruction scenarios.
-id: evrel_2QUW2P6D_rel.huang_2024_U24_05
-metadata:
-  source_paper: huang2024
-  zotero_key: 2QUW2P6D
-object: meth.dual_comb_spectroscopy
-predicate: COMPETES-WITH
-subject: meth.comb_calibrated_fmcw_nlos_imaging

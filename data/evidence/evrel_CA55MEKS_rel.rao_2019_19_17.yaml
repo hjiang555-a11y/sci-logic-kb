@@ -1,8 +1,0 @@
-evidence: 重复频率稳定度受限于测量计数器的噪声水平
-id: evrel_CA55MEKS_rel.rao_2019_19_17
-metadata:
-  source_paper: rao2019
-  zotero_key: CA55MEKS
-object: pri.microwave_reference_transfer_to_optical_comb
-predicate: BOUNDED-BY
-subject: met.frep_inloop_instability_r19

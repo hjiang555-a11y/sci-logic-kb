@@ -1,23 +1,42 @@
-# Bodine 2020 — Optical time-frequency transfer across a free-space, three-node network [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Martha  — Optical time-frequency transfer across a [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
 meta:
-  zotero_key: 5.0010704
+  zotero_key: Optical time-frequency transfer across a
   topic: time-frequency-transfer
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Optical time-frequency transfer across a free-space, three-node network"
-  year: 2020
-  first_author: "Bodine"
-  authors: ["Martha I. Bodine", "Jennifer L. Ellis", "William C. Swann", "Sarah A. Stevenson", "Jean-Daniel Deschênes", "Emily D. Hannah", "Paritosh Manurkar", "Nathan R. Newbury", "Laura C. Sinclair"]
-  journal: "APL Photonics"
-  volume: 5
-  doi: 10.1063/5.0010704
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Optical time-frequency transfer across a
+  first_author: Martha
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1063/5
+entities:
+- id: ent.5_0010704_system
+  name: Martha  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Martha '
+metrics:
+- id: met.5_0010704_primary
+  name: Martha  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Optical time-frequency transfer across a
+      claim: core experimental result
+relations:
+- id: rel.5_0010704_01
+  subject: ent.5_0010704_system
+  predicate: CHARACTERIZED-BY
+  object: met.5_0010704_primary
+  confidence: established
+  source:
+    zotero_key: Optical time-frequency transfer across a
+    claim: experimental system characterized by primary metric

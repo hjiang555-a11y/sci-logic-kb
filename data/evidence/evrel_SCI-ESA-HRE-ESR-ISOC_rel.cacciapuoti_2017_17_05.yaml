@@ -1,9 +1,0 @@
-evidence: we also describe the performance of an optional link, the frequency comb
-  optical link FCOL
-id: evrel_SCI-ESA-HRE-ESR-ISOC_rel.cacciapuoti_2017_17_05
-metadata:
-  source_paper: cacciapuoti2017
-  zotero_key: SCI-ESA-HRE-ESR-ISOC
-object: ent.space_optical_clock_mission
-predicate: PART-OF
-subject: ent.frequency_comb_optical_link_fcol

@@ -1,9 +1,0 @@
-evidence: require high-damage-threshold, low-dispersion mirror coatings in order to
-  overcome currently observed sporadic mirror damages
-id: evrel_H4DKWZWF_rel.hartl_2007_07_08
-metadata:
-  source_paper: hartl2007
-  zotero_key: H4DKWZWF
-object: pri.mirror_damage_threshold_limit
-predicate: BOUNDED-BY
-subject: ent.cavity_enhanced_yb_comb_h07

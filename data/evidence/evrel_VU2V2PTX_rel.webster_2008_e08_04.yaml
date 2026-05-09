@@ -1,9 +1,0 @@
-evidence: The laser is stabilized to a vibration-insensitive ULE cavity using PDH
-  locking
-id: evrel_VU2V2PTX_rel.webster_2008_e08_04
-metadata:
-  source_paper: webster2008
-  zotero_key: VU2V2PTX
-object: meth.vibration_insensitive_cavity_lock_w08
-predicate: OPERATIONALIZED-AS
-subject: met.fractional_freq_instability_w08

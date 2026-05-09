@@ -1,9 +1,0 @@
-evidence: At a 10,000 s averaging time, the purified optical frequency achieves a
-  stability of 8.43×10⁻¹⁹.
-id: evrel_CYS7GEVR_rel.wang_2024_02
-metadata:
-  source_paper: wang2024a
-  zotero_key: CYS7GEVR
-object: ent.optical_freq_purification_station_w24
-predicate: CHARACTERIZED-BY
-subject: met.purified_freq_instability_10ks_w24

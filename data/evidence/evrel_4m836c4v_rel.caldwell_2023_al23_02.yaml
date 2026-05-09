@@ -1,9 +1,0 @@
-evidence: near quantum-limited acquisition and timing at 10,000 times lower received
-  power
-id: evrel_4m836c4v_rel.caldwell_2023_al23_02
-metadata:
-  source_paper: caldwell2023_4m836c4v
-  zotero_key: 4m836c4v
-object: pri.quantum_limited_photon_counted_ott
-predicate: OPERATIONALIZED-AS
-subject: ent.quantum_limited_ott_hawaii_c23

@@ -1,9 +1,0 @@
-evidence: erbium-fiber-laser-based optical frequency comb with an intra-cavity electro-optic
-  modulator
-id: evrel_R4M8SE4F_rel.zhang_2015_15_01
-metadata:
-  source_paper: zhang2015
-  zotero_key: R4M8SE4F
-object: ent.er_fiber_frequency_comb
-predicate: PART-OF
-subject: ent.er_fiber_intracavity_eom_comb_z15

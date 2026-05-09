@@ -1,9 +1,0 @@
-evidence: A simple BPD can effectively suppress the coupling of intensity noise of
-  the laser to be stabilized to the frequency noise
-id: evrel_SBPRDKPV_rel.jeon_2025_e04
-metadata:
-  source_paper: jeon2025
-  zotero_key: SBPRDKPV
-object: pri.self_homodyne_balanced_detection
-predicate: ENABLED-BY
-subject: meth.self_homodyne_fiber_locking

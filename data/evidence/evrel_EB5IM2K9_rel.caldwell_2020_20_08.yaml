@@ -1,9 +1,0 @@
-evidence: Greenwood et al. to propose a new, empirically-derived spectrum ... exhibits
-  a more gradual rolloff below κ=1/L0 than the von Kármán spectrum
-id: evrel_EB5IM2K9_rel.caldwell_2020_20_08
-metadata:
-  source_paper: caldwell2020
-  zotero_key: EB5IM2K9
-object: pri.kolmogorov_turbulence_timing_jitter
-predicate: DERIVED-FROM
-subject: pri.greenwood_tarazano_outer_scale_rolloff

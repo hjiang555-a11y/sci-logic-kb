@@ -1,9 +1,0 @@
-evidence: Finally, we measured the residual acceleration on the vibration isolation
-  platform to infer the instability caused mainly by seismic vibrations
-id: evrel_NU79W75P_rel.herbers_2022_er22_03
-metadata:
-  source_paper: herbers2022
-  zotero_key: NU79W75P
-object: ent.vibration_environment
-predicate: CONDITIONED-BY
-subject: ent.fp_cavity_system

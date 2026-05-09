@@ -1,0 +1,2629 @@
+topic: optical-frequency-combs
+generated: 2026-05-09 06:13 UTC
+schema_version: v5.0-evidence
+summary:
+  total_evidence_units: 97
+  unique_limiting_principles: 78
+  with_breakthrough_paths: 77
+  with_resolved_limits: 0
+  with_active_limits: 0
+evidence_groups:
+- limiting_principle: pri.gain_lifetime_servo_bandwidth_limit
+  supporting_papers: 5
+  paper_list:
+  - kuse2015.yaml
+  - lee2015.yaml
+  - newbury2005.yaml
+  - zhang2015.yaml
+  - zhang2017b.yaml
+  year_range: 2005-2017
+  first_authors:
+  - Kuse
+  - Lee
+  - Newbury
+  - Zhang
+  best_evidence:
+    paper: kuse2015.yaml
+    author: Kuse
+    year: 2015
+    claim: feedback bandwidth for pump current modulation is limited by the response time of the gain medium
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: pri.intracavity_graphene_fast_modulation
+    expected_gain: 绕过增益寿命限制，带宽达 MHz
+    status: demonstrated
+    source:
+      zotero_key: 3RT4U4TV
+  - direction: ent.monolithic_sesam_graphene_device_l15
+    expected_gain: 单片集成 SESAM+graphene → >5 MHz 稳频带宽（超越增益寿命限制）
+    status: demonstrated
+    source:
+      zotero_key: L6ZZII7R
+  - direction: pri.intracavity_eom_frep_wideband_feedback
+    expected_gain: 腔内 EOM 绕过增益寿命限制
+    status: demonstrated
+    source:
+      zotero_key: R4M8SE4F
+  evidence_units:
+  - relation_id: rel.kuse_2015_15_06
+    paper: kuse2015.yaml
+    author: Kuse
+    year: 2015
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: feedback bandwidth for pump current modulation is limited by the response time of the gain medium
+  - relation_id: rel.lee_2015_ee15_03
+    paper: lee2015.yaml
+    author: Lee
+    year: 2015
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: loss modulation bypasses the gain medium and therefore offers a modulation bandwidth beyond the gain lifetime limit
+  - relation_id: rel.newbury_2005_ewb05_02
+    paper: newbury2005.yaml
+    author: Newbury
+    year: 2005
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: the feedback bandwidth for the phase-lock of the offset frequency has been limited by the laser gain lifetime
+  - relation_id: rel.zhang_2015_15_06
+    paper: zhang2015.yaml
+    author: Zhang
+    year: 2015
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: Traditionally, fr is stabilized through ... limited by pump-power actuator bandwidth
+  - relation_id: rel.zhang_2017_ha17_03
+    paper: zhang2017b.yaml
+    author: Zhang
+    year: 2017
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: broadband associated with high performance ... large dynamic range associated with good robustness
+- limiting_principle: pri.high_frep_bandwidth_power_tradeoff
+  supporting_papers: 3
+  paper_list:
+  - bartels2009.yaml
+  - ma2018.yaml
+  - wang2014.yaml
+  year_range: 2009-2018
+  first_authors:
+  - Bartels
+  - Ma
+  - Wang
+  best_evidence:
+    paper: bartels2009.yaml
+    author: Bartels
+    year: 2009
+    claim: Combs with large mode spacings ... have required compromises both in terms of bandwidth and average power
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: meth.klm_10ghz_comb_self_reference
+    expected_gain: 同时满足 10 GHz + 自参考 + 单齿可分辨
+    status: demonstrated
+    source:
+      zotero_key: RDBWYLKJ
+  - direction: meth.bulk_eom_pzt_750mhz_yb_lock
+    expected_gain: 体晶 EOM + 单级 PZT 将高重频 Yb:fiber 梳推入紧锁域
+    status: demonstrated
+    source:
+      zotero_key: P4TCLWW2
+  evidence_units:
+  - relation_id: rel.bartels_2009_ar09_04
+    paper: bartels2009.yaml
+    author: Bartels
+    year: 2009
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: Combs with large mode spacings ... have required compromises both in terms of bandwidth and average power
+  - relation_id: rel.ma_2018_a18_06
+    paper: ma2018.yaml
+    author: Ma
+    year: 2018
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: intrinsic noise, linewidth, or timing jitter generally scales up with the repetition rate
+  - relation_id: rel.wang_2014_14_06
+    paper: wang2014.yaml
+    author: Wang
+    year: 2014
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: limited by the ring cavity length, high fundamental repetition rate fiber lasers are still difficult to build
+- limiting_principle: pri.pump_rin_to_fceo_coupling
+  supporting_papers: 2
+  paper_list:
+  - lesko2020.yaml
+  - mcferran2007.yaml
+  year_range: 2007-2020
+  first_authors:
+  - Lesko
+  - McFerran
+  best_evidence:
+    paper: lesko2020.yaml
+    author: Lesko
+    year: 2020
+    claim: "\"f_CEO servo bandwidth limited to 20 kHz by pump current modulation actuator;\n pump RIN coupling to f_CEO sets residual phase noise floor at 438 mrad\"\n"
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: meth.aom_feedforward_fceo
+    expected_gain: 'AOM 前馈可将 f_CEO 伺服带宽从 20 kHz 扩展至 >100 kHz， 预期将积分相位噪声从 438 mrad 降至与光学锁相当的 ~50 mrad 量级
+
+      '
+    status: proposed
+    source:
+      claim: "\"pump current modulation bandwidth of 20 kHz limits f_CEO servo;\n AOM feed-forward or faster actuator could improve performance\"\n"
+      paper: Lesko et al. 2020, OSA Continuum 3(8), 2070–2079
+  - direction: meth.pump_current_feedback_fceo_lock
+    expected_gain: 用更低 RIN 的 DFB 泵二极管（若适配功率）可进一步压低白底
+    status: proposed
+    source:
+      zotero_key: CNSSF9YY
+      claim: There are distributed feedback diode lasers that have significantly lower RIN levels although, unfortunately, they are not at present commercially available at the appropriate power levels
+  evidence_units:
+  - relation_id: rel.lesko_2020_006
+    paper: lesko2020.yaml
+    author: Lesko
+    year: 2020
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: "\"f_CEO servo bandwidth limited to 20 kHz by pump current modulation actuator;\n pump RIN coupling to f_CEO sets residual phase noise floor at 438 mrad\"\n"
+  - relation_id: rel.mcferran_2007_07_10
+    paper: mcferran2007.yaml
+    author: McFerran
+    year: 2007
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: the observed level of white noise appears higher than expected ... presumably responsible for the lower limit on the linewidth observed in Fig. 4 at high pump currents
+  - relation_id: rel.mcferran_2007_07_11
+    paper: mcferran2007.yaml
+    author: McFerran
+    year: 2007
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: This limit is a result of accumulated phase shifts within the current-modulation circuit for the pump diode, and servo
+- limiting_principle: pri.taylor_frozen_turbulence_hypothesis
+  supporting_papers: 1
+  paper_list:
+  - caldwell2020.yaml
+  year_range: 2020-2020
+  first_authors:
+  - Caldwell
+  best_evidence:
+    paper: caldwell2020.yaml
+    author: Caldwell
+    year: 2020
+    claim: a breakdown of Taylor's frozen-turbulence hypothesis which might be possible for our measurements due to the low perpendicular wind speeds
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: meth.micrometeorological_cn2_retrieval_c20
+    expected_gain: 以水平总风速 U 替代 V⊥ 可缓解 V⊥→0 奇点（U 通常大于 V⊥）
+    status: proposed
+    source:
+      zotero_key: EB5IM2K9
+      claim: U was greater than ⟨V⊥⟩ 98% of the time ... would cause the zero-wind-speed asymptotic behavior less frequently
+  evidence_units:
+  - relation_id: rel.caldwell_2020_20_07
+    paper: caldwell2020.yaml
+    author: Caldwell
+    year: 2020
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: a breakdown of Taylor's frozen-turbulence hypothesis which might be possible for our measurements due to the low perpendicular wind speeds
+  - relation_id: rel.caldwell_2020_20_10
+    paper: caldwell2020.yaml
+    author: Caldwell
+    year: 2020
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: The ratio of comb-retrieved Cn² to sonic-retrieved Cn² is asymptotically high at ⟨V⊥⟩ = 0 m/s
+- limiting_principle: pri.photon_starved_open_path_dcs_limit
+  supporting_papers: 2
+  paper_list:
+  - han2024.yaml
+  - ycas2019.yaml
+  year_range: 2019-2024
+  first_authors:
+  - Han
+  - Ycas
+  best_evidence:
+    paper: han2024.yaml
+    author: Han
+    year: 2024
+    claim: The main obstacle to the longer distance of DCS is the low signal-to-noise ratio
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: meth.bistatic_two_way_dcs_protocol_h24
+    expected_gain: 消除反射镜几何损耗，使 100 km 级单程链路可行
+    status: demonstrated
+    source:
+      zotero_key: AZ25GQE3
+      claim: the link loss can be sharply reduced compared with the previous monostatic round-trip protocol
+  - direction: pri.coherent_averaging_background_noise_suppression
+    expected_gain: √N 压低散粒/探测器噪声，直达 nW 回波下的可测灵敏度
+    status: demonstrated
+    source:
+      zotero_key: AZ25GQE3
+      claim: coherent averaging possible, which can resist background noise such as shot noise and detector noise
+  - direction: pri.bandwidth_power_tradeoff_long_path_comb
+    expected_gain: 发射功率 1 W + 窄 7 nm 带宽 → 足够梳齿功率密度穿透 83 dB
+    status: demonstrated
+    source:
+      zotero_key: AZ25GQE3
+      claim: we develop high-power optical combs and ultrasensitive detection set-up to cope with the large loss of the link
+  - direction: meth.midir_dcs_vocs_protocol_y19
+    expected_gain: '更大回射器口径（127 mm → 多元阵列）+ 更均匀望远镜照明设计， 可降低残余基线并在 1 km 以上保持 ppb 级 VOC 灵敏度
+
+      '
+    status: proposed
+    source:
+      zotero_key: FQ4KYV38
+      claim: Future work should consider more sophisticated telescope designs for more uniform detector illumination
+  evidence_units:
+  - relation_id: rel.han_2024_an17
+    paper: han2024.yaml
+    author: Han
+    year: 2024
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: The main obstacle to the longer distance of DCS is the low signal-to-noise ratio
+  - relation_id: rel.ycas_2019_19_18
+    paper: ycas2019.yaml
+    author: Ycas
+    year: 2019
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: path length was extended to 1 km... improving sensitivity to ambient gases at the cost of increased spectral clutter
+- limiting_principle: pri.inter_branch_fiber_noise_degradation
+  supporting_papers: 2
+  paper_list:
+  - hisai2021.yaml
+  - kashiwagi2018.yaml
+  year_range: 2018-2021
+  first_authors:
+  - Hisai
+  - Kashiwagi
+  best_evidence:
+    paper: hisai2021.yaml
+    author: Hisai
+    year: 2021
+    claim: each branch is individually optimized
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: meth.fiber_noise_difference_cancellation_k18
+    expected_gain: 支间相对不确定度从 >10⁻¹⁸ 降至 10⁻²⁰ 级
+    status: demonstrated
+    source:
+      zotero_key: ERNT9GV3
+      claim: The cancellation improved the frequency uncertainty to a low level of 10⁻²⁰ at a 100000-s averaging time
+  evidence_units:
+  - relation_id: rel.hisai_2021_is21_03
+    paper: hisai2021.yaml
+    author: Hisai
+    year: 2021
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: each branch is individually optimized
+  - relation_id: rel.kashiwagi_2018_as18_10
+    paper: kashiwagi2018.yaml
+    author: Kashiwagi
+    year: 2018
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: The inter-branch/path phase noise differences degrade the frequency stabilities
+- limiting_principle: pri.photodetection_shot_noise_limit
+  supporting_papers: 2
+  paper_list:
+  - kalubovilage2022.yaml
+  - portuondo-campa2015.yaml
+  year_range: 2015-2022
+  first_authors:
+  - Kalubovilage
+  - Portuondo-Campa
+  best_evidence:
+    paper: kalubovilage2022.yaml
+    author: Kalubovilage
+    year: 2022
+    claim: The photonic microwave phase noise floor is ultimately bounded by photodetection shot noise; a cryogenically cooled power splitter was used to suppress thermal noise and reveal this limit.
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: meth.monolithic_free_running_photonic_microwave
+    expected_gain: 提高光平均功率 P_avg 或改善光电探测器量子效率降低散粒噪声本底
+    status: proposed
+    source:
+      zotero_key: 3VF89TBF
+  - direction: pri.pulse_interleaver_rep_rate_multiplication
+    expected_gain: 将 f_rep 倍增至接近 f_µw 提升探测器饱和电流与目标谐波功率，使 L_shot(f) 按 ī·P_RF 下压；PM + PBC 末级再提 ~3 dB
+    status: demonstrated
+    source:
+      zotero_key: BESI3AEE
+      claim: such a construction allows for a net output power almost 3 dB higher than in the case of non-polarizing fiber combiners
+  - direction: meth.dpssl_interleaver_photonic_microwave_pc15
+    expected_gain: 替换 PIN InGaAs 为 mUTC 光电探测器（线性工作光功率 >100 mW，无放大输出 >10 dBm @ 10 GHz），去掉微波放大器，消除其残余相噪，并启用 [Quinlan 2013] 短脉冲探测散粒相关效应 → 压至 cw 散粒极限以下
+    status: proposed
+    source:
+      zotero_key: BESI3AEE
+      claim: Combining the high stability of the optical oscillator described here with the large power-handling capabilities of mUTC photodetectors should allow in the near future reaching even lower phase-noise
+        performances
+  evidence_units:
+  - relation_id: rel.kalubovilage_2022_B22_03
+    paper: kalubovilage2022.yaml
+    author: Kalubovilage
+    year: 2022
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: The photonic microwave phase noise floor is ultimately bounded by photodetection shot noise; a cryogenically cooled power splitter was used to suppress thermal noise and reveal this limit.
+  - relation_id: rel.portuondo_campa_2015_C15_09
+    paper: portuondo-campa2015.yaml
+    author: Portuondo-Campa
+    year: 2015
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: all three plateaus exceed the corresponding calculated cw shot-noise limits by about 3 dB
+- limiting_principle: pri.residual_free_space_path_noise_floor
+  supporting_papers: 1
+  paper_list:
+  - kashiwagi2018.yaml
+  year_range: 2018-2018
+  first_authors:
+  - Kashiwagi
+  best_evidence:
+    paper: kashiwagi2018.yaml
+    author: Kashiwagi
+    year: 2018
+    claim: the limitation will be optical path length fluctuation of the uncancelled free-space parts caused by the environmental change
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: meth.fiber_noise_difference_cancellation_k18
+    expected_gain: 延长 FNDC 覆盖范围至 f_CEO 探测路径 & FNDC 探测自由空间段（封装/真空化或全光纤化）→ 进入 10⁻²¹
+    status: proposed
+    source:
+      zotero_key: ERNT9GV3
+      claim: To reach a frequency uncertainty of 10⁻²¹ order, further improvement is required, such as shortening the out-of-loop path length and reducing the power supply noise
+  - direction: meth.wideband_optical_frequency_synthesis
+    expected_gain: 以超稳激光 + 光相位追踪替代 1542 nm 松锁 CW 参考，进一步压低短期 1-s 地板
+    status: demonstrated
+    source:
+      zotero_key: UFWLAXMA
+      claim: real-time optical phase tracking with ultra-low-noise frequency combs
+  evidence_units:
+  - relation_id: rel.kashiwagi_2018_as18_11
+    paper: kashiwagi2018.yaml
+    author: Kashiwagi
+    year: 2018
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: the limitation will be optical path length fluctuation of the uncancelled free-space parts caused by the environmental change
+  - relation_id: rel.kashiwagi_2018_as18_12
+    paper: kashiwagi2018.yaml
+    author: Kashiwagi
+    year: 2018
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: some part of the optical path length fluctuation was not cancelled; the f_CEO beat detection path and part of the beat detection path for the FNDC
+- limiting_principle: pri.microresonator_anomalous_dispersion
+  supporting_papers: 2
+  paper_list:
+  - kippenberg2011.yaml
+  - kippenberg2018.yaml
+  year_range: 2011-2018
+  first_authors:
+  - Kippenberg
+  best_evidence:
+    paper: kippenberg2011.yaml
+    author: Kippenberg
+    year: 2011
+    claim: Dispersion... ultimately limits this conversion process and leads to a finite bandwidth of the comb generation process
+    is_system_limit: &id001
+      current: true
+      conditions: 梳带宽由色散限制；Kerr 模式牵引可部分扩展
+    limit_status: null
+  breakthrough_paths:
+  - direction: pri.microresonator_anomalous_dispersion
+    expected_gain: ''
+    status: ''
+    source:
+      zotero_key: ''
+      claim: dispersion engineering through suitable resonator coatings
+  - direction: pri.dispersive_wave_generation
+    expected_gain: ''
+    status: ''
+    source:
+      zotero_key: ''
+      claim: DKSs with two dispersive waves that can cover a full octave
+  evidence_units:
+  - relation_id: rel.kippenberg_2007_11_07
+    paper: kippenberg2011.yaml
+    author: Kippenberg
+    year: 2011
+    is_system_limit: *id001
+    limit_status: null
+    verification: observed
+    claim: Dispersion... ultimately limits this conversion process and leads to a finite bandwidth of the comb generation process
+  - relation_id: rel.kippenberg_2017_18_07
+    paper: kippenberg2018.yaml
+    author: Kippenberg
+    year: 2018
+    is_system_limit:
+      current: true
+      conditions: 梳带宽由色散限制；色散波和色散工程可部分突破
+    limit_status: null
+    verification: observed
+    claim: '"Dispersion... ultimately limits this conversion process and leads to a finite  bandwidth of the comb generation process"
+
+      '
+- limiting_principle: pri.vibration_cavity_length_coupling
+  supporting_papers: 2
+  paper_list:
+  - lezius2016.yaml
+  - sinclair2014.yaml
+  year_range: 2014-2016
+  first_authors:
+  - Lezius
+  - Sinclair
+  best_evidence:
+    paper: lezius2016.yaml
+    author: Lezius
+    year: 2016
+    claim: Mechanical vibration identified as principal environmental stressor.
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: pri.ruggedized_erfiber_comb_space_qualification
+    expected_gain: Monolithic packaging + potted fiber spools suppress vibration-to-cavity-length coupling.
+    status: demonstrated
+    source:
+      claim: Comb remained locked under 8.1 g_rms random vibration.
+  - direction: meth.flight_operation_protocol_l16
+    expected_gain: Wide-capture-range servos absorb residual launch-induced excursions.
+    status: demonstrated
+    source: {}
+  - direction: pri.pm_fiber_splice_vibration_immunity
+    expected_gain: 全 PM 光纤 + 灌胶 + 光纤组件环氧固定，压制 f_ceo 对振动的敏感度至不可测水平
+    status: demonstrated
+    source:
+      zotero_key: D9ANIZW6
+      claim: as the vibration was increased beyond 1g, the fceo phase noise was unchanged
+  evidence_units:
+  - relation_id: rel.lezius_2016_ez11
+    paper: lezius2016.yaml
+    author: Lezius
+    year: 2016
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: Mechanical vibration identified as principal environmental stressor.
+  - relation_id: rel.sinclair_2014_14_18
+    paper: sinclair2014.yaml
+    author: Sinclair
+    year: 2014
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: tight phase locking to a cw reference laser via high-bandwidth feedback to the laser cavity length ... PZT attached directly to the fiber-laser cavity with careful damping of any fiber resonances
+- limiting_principle: pri.fiber_modal_noise_nir_rv_limit
+  supporting_papers: 1
+  paper_list:
+  - metcalf2019.yaml
+  year_range: 2019-2019
+  first_authors:
+  - Metcalf
+  best_evidence:
+    paper: metcalf2019.yaml
+    author: Metcalf
+    year: 2019
+    claim: leading to fiber modal noise, which is known to be worse in the NIR than the optical
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: meth.common_comb_differential_rv_test
+    expected_gain: 把差分仪器漂移降到 <10 cm/s（仪器端非瓶颈）， 暴露模态噪声残差为主导项
+    status: demonstrated
+    source:
+      zotero_key: 9YYDT9H4
+      claim: 6 cm/s at 300 min
+  - direction: pri.nanophotonic_supercontinuum_low_power
+    expected_gain: 片上单模 SC 替代多模光纤段，减少模态干涉源
+    status: proposed
+    source:
+      zotero_key: 9YYDT9H4
+      claim: Further improvements ... should be possible with algorithmic improvements, better characterization of the NIR detectors, and better modal scrambling
+  - direction: meth.astro_comb_rv_calibration
+    expected_gain: 更激进的扰模 + 探测器定标改进，接近 3.7 cm/s 光子极限
+    status: proposed
+    source:
+      zotero_key: 9YYDT9H4
+      claim: Further improvements towards the photon-limited precision should be possible with algorithmic improvements, better characterization of the NIR detectors, and better modal scrambling
+  evidence_units:
+  - relation_id: rel.metcalf_2019_19_12
+    paper: metcalf2019.yaml
+    author: Metcalf
+    year: 2019
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: leading to fiber modal noise, which is known to be worse in the NIR than the optical
+  - relation_id: rel.metcalf_2019_19_13
+    paper: metcalf2019.yaml
+    author: Metcalf
+    year: 2019
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: RV scatter is currently about 5 times greater than the photon-limited precision (3.7 cm/s in 10 min)
+- limiting_principle: pri.microwave_reference_transfer_to_optical_comb
+  supporting_papers: 1
+  paper_list:
+  - rao2019.yaml
+  year_range: 2019-2019
+  first_authors:
+  - Rao
+  best_evidence:
+    paper: rao2019.yaml
+    author: Rao
+    year: 2019
+    claim: 重复频率稳定度受限于测量计数器的噪声水平
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: meth.wideband_optical_frequency_synthesis
+    expected_gain: 引入超稳激光 + 光相位追踪作为光频参考，绕过微波参考相噪天花板，达 10⁻¹⁷ 量级
+    status: demonstrated
+    source:
+      zotero_key: CA55MEKS
+      claim: 重复频率稳定度受限于测量计数器的噪声水平
+  - direction: meth.optical_frequency_counting
+    expected_gain: 若把梳锁定至光频标准（如 Sr/Yb 光钟）而非微波，可将 D1 绝对频率测量推进到 < 1 Hz
+    status: proposed
+    source:
+      zotero_key: CA55MEKS
+      claim: 满足其千赫兹频率测量准确度的需要
+  evidence_units:
+  - relation_id: rel.rao_2019_19_17
+    paper: rao2019.yaml
+    author: Rao
+    year: 2019
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: 重复频率稳定度受限于测量计数器的噪声水平
+  - relation_id: rel.rao_2019_19_18
+    paper: rao2019.yaml
+    author: Rao
+    year: 2019
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: 百秒 2×10⁻¹⁴ 的稳定度可以为 Li 原子 D1 线频率测量提供 10 Hz 量级的频率测量
+- limiting_principle: pri.eom_acoustic_resonance_limit_t17
+  supporting_papers: 2
+  paper_list:
+  - torcheboeuf2017.yaml
+  - zhang2012c.yaml
+  year_range: 2012-2017
+  first_authors:
+  - Torcheboeuf
+  - Zhang
+  best_evidence:
+    paper: torcheboeuf2017.yaml
+    author: Torcheboeuf
+    year: 2017
+    claim: limited by sharp resonances observed around 900 kHz
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths: []
+  evidence_units:
+  - relation_id: rel.torcheboeuf_2017_17_06
+    paper: torcheboeuf2017.yaml
+    author: Torcheboeuf
+    year: 2017
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: limited by sharp resonances observed around 900 kHz
+  - relation_id: rel.zhang_2012_12_05
+    paper: zhang2012c.yaml
+    author: Zhang
+    year: 2012
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: limited by sharp resonances observed around 900 kHz
+- limiting_principle: pri.digital_servo_latency_bandwidth_tradeoff
+  supporting_papers: 1
+  paper_list:
+  - wang2025.yaml
+  year_range: 2025-2025
+  first_authors:
+  - Wang
+  best_evidence:
+    paper: wang2025.yaml
+    author: Wang
+    year: 2025
+    claim: the control bandwidth of the digital servo system is constrained by substantial computational latency
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: meth.low_latency_iq_phase_detection_w25
+    expected_gain: IQ 解调 50 ns → 带宽从 ~100 kHz 级提升到 1.1 MHz
+    status: demonstrated
+    source:
+      zotero_key: CEB7L6EM
+      claim: demodulation latency is reduced to 50 ns ... control bandwidth of 1.1 MHz
+  - direction: pri.digital_servo_latency_bandwidth_tradeoff
+    expected_gain: ASIC / 更高时钟 FPGA 把 τ_total 压至 <50 ns，原则上支持 >5 MHz；需同步改善 ADC 相噪
+    status: proposed
+    source:
+      zotero_key: CEB7L6EM
+      claim: latency ... from intrinsic delays of hardware components
+  evidence_units:
+  - relation_id: rel.wang_2025_25_10
+    paper: wang2025.yaml
+    author: Wang
+    year: 2025
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: the control bandwidth of the digital servo system is constrained by substantial computational latency
+  - relation_id: rel.wang_2025_25_11
+    paper: wang2025.yaml
+    author: Wang
+    year: 2025
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: The results show that increasing delay degrades both [phase noise and long-term stability]
+- limiting_principle: pri.kolmogorov_turbulence_timing_jitter
+  supporting_papers: 1
+  paper_list:
+  - caldwell2020.yaml
+  year_range: 2020-2020
+  first_authors:
+  - Caldwell
+  best_evidence:
+    paper: caldwell2020.yaml
+    author: Caldwell
+    year: 2020
+    claim: the PSD approximately follows the -8/3 power law predicted by theory
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: meth.bistatic_two_way_dcs_protocol_h24
+    expected_gain: 两端互易协议消除 piston 噪声（非折返反射路径）
+    status: demonstrated
+    source:
+      zotero_key: AZ25GQE3
+      claim: Since the comb passes through the atmosphere only once and no reflector is required, the link loss can be sharply reduced
+  - direction: pri.taylor_frozen_turbulence_hypothesis
+    expected_gain: 高风速下 Taylor 假设成立 → 模型预测残差可进一步降低
+    status: demonstrated
+    source:
+      zotero_key: EB5IM2K9
+      claim: with some indication that agreement may continue to improve with higher wind speed
+  - direction: pri.greenwood_tarazano_outer_scale_rolloff
+    expected_gain: 采用 G-T 谱而非 von Kármán 谱避免低频 timing 方差低估
+    status: demonstrated
+    source:
+      zotero_key: EB5IM2K9
+      claim: the gradual rolloff of the Greenwood-Tarazano better fits the data than the more dramatic von Kármán model
+  evidence_units:
+  - relation_id: rel.caldwell_2020_20_06
+    paper: caldwell2020.yaml
+    author: Caldwell
+    year: 2020
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: the PSD approximately follows the -8/3 power law predicted by theory
+- limiting_principle: pri.tpfc_tracking_oscillator_quantum_limit_c22
+  supporting_papers: 1
+  paper_list:
+  - caldwell2022.yaml
+  year_range: 2022-2022
+  first_authors:
+  - Caldwell
+  best_evidence:
+    paper: caldwell2022.yaml
+    author: Caldwell
+    year: 2022
+    claim: quantum-limited sensitivity
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: pri.tpfc_digital_coherent_pulse_control_c22
+    expected_gain: TPFC 实时控制 → 追踪振荡器模式 → 散粒噪声极限
+    status: demonstrated
+    source:
+      zotero_key: YD2MQC49
+  evidence_units:
+  - relation_id: rel.caldwell_2022_al22_04
+    paper: caldwell2022.yaml
+    author: Caldwell
+    year: 2022
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: quantum-limited sensitivity
+- limiting_principle: pri.sin_waveguide_low_power_f2f_c17
+  supporting_papers: 1
+  paper_list:
+  - carlson2017.yaml
+  year_range: 2017-2017
+  first_authors:
+  - Carlson
+  best_evidence:
+    paper: carlson2017.yaml
+    author: Carlson
+    year: 2017
+    claim: high nonlinearity of silicon nitride, which can provide two octaves of spectral broadening with incident energies of only 110 pJ
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths: []
+  evidence_units:
+  - relation_id: rel.carlson_2017_ar17_03
+    paper: carlson2017.yaml
+    author: Carlson
+    year: 2017
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: high nonlinearity of silicon nitride, which can provide two octaves of spectral broadening with incident energies of only 110 pJ
+- limiting_principle: pri.shg_sfm_combined_astrocomb_continuous_coverage_c24
+  supporting_papers: 1
+  paper_list:
+  - cheng2024.yaml
+  year_range: 2024-2024
+  first_authors:
+  - Cheng
+  best_evidence:
+    paper: cheng2024.yaml
+    author: Cheng
+    year: 2024
+    claim: '"Second-harmonic generation of near-infrared mode-locked lasers has produced narrowband astrocombs at 400 nm.  ...Our concept achieves a broad, continuous spectrum by combining SHG and SFM in
+      an MgO:P'
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: ''
+    expected_gain: ''
+    status: ''
+    source: {}
+  evidence_units:
+  - relation_id: rel.cheng_2024_heng24_01
+    paper: cheng2024.yaml
+    author: Cheng
+    year: 2024
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: '"Second-harmonic generation of near-infrared mode-locked lasers has produced narrowband astrocombs at 400 nm.  ...Our concept achieves a broad, continuous spectrum by combining SHG and SFM in
+      an MgO:P'
+- limiting_principle: pri.isotope_substitution_absorption_shift
+  supporting_papers: 1
+  paper_list:
+  - chiles2018.yaml
+  year_range: 2018-2018
+  first_authors:
+  - Chiles
+  best_evidence:
+    paper: chiles2018.yaml
+    author: Chiles
+    year: 2018
+    claim: peak propagation loss of 5.2 dB/cm at 2.04 μm
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths: []
+  evidence_units:
+  - relation_id: rel.chiles_2018_18_07
+    paper: chiles2018.yaml
+    author: Chiles
+    year: 2018
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: peak propagation loss of 5.2 dB/cm at 2.04 μm
+- limiting_principle: pri.microwave_referenced_comb_coherence_limit
+  supporting_papers: 1
+  paper_list:
+  - chou2020.yaml
+  year_range: 2020-2020
+  first_authors:
+  - Chou
+  best_evidence:
+    paper: chou2020.yaml
+    author: Chou
+    year: 2020
+    claim: Our resolution is currently limited by the coherence of the microwave-referenced OFC and can be further improved to the sub-hertz level
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: meth.wideband_optical_frequency_synthesis
+    expected_gain: 将 OFC 锁至超稳激光 / 光钟 → sub-Hz 线宽（>10³ 倍提升）
+    status: proposed
+    source:
+      zotero_key: DUJ8VXBR
+      claim: can be further improved to the sub-hertz level (Bartels et al. 2004)
+  evidence_units:
+  - relation_id: rel.chou_2020_ho20_10
+    paper: chou2020.yaml
+    author: Chou
+    year: 2020
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: Our resolution is currently limited by the coherence of the microwave-referenced OFC and can be further improved to the sub-hertz level
+- limiting_principle: pri.trap_rf_field_stark_systematic
+  supporting_papers: 1
+  paper_list:
+  - chou2020.yaml
+  year_range: 2020-2020
+  first_authors:
+  - Chou
+  best_evidence:
+    paper: chou2020.yaml
+    author: Chou
+    year: 2020
+    claim: uncertainty in the trap radio-frequency electric field in our current setup limits uncertainties in extrapolation of line centers to zero electric field to hundreds of hertz
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: pri.state_prepared_single_ion_spectroscopy
+    expected_gain: 迁移至对阱 RF 场不敏感的分子物种 → sub-Hz / <10⁻¹² 绝对精度
+    status: proposed
+    source:
+      zotero_key: DUJ8VXBR
+      claim: the measurement accuracy could be improved to the sub-hertz (<1 part per trillion) level with improvements of the apparatus or for molecules that are less sensitive to the trap field
+  - direction: meth.single_ion_ofc_quantum_logic_spectroscopy_c20
+    expected_gain: 改进阱场控制与补偿电极对准 → kHz → 百 Hz 级系统
+    status: proposed
+    source:
+      zotero_key: DUJ8VXBR
+      claim: A more detailed study of these effects is ongoing, and we expect that they can be better controlled in future experiments
+  evidence_units:
+  - relation_id: rel.chou_2020_ho20_11
+    paper: chou2020.yaml
+    author: Chou
+    year: 2020
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: uncertainty in the trap radio-frequency electric field in our current setup limits uncertainties in extrapolation of line centers to zero electric field to hundreds of hertz
+- limiting_principle: pri.dual_comb_coherent_averaging_snr_scaling
+  supporting_papers: 1
+  paper_list:
+  - coddington2010.yaml
+  year_range: 2010-2010
+  first_authors:
+  - Coddington
+  best_evidence:
+    paper: coddington2010.yaml
+    author: Coddington
+    year: 2010
+    claim: SNR on a single scan will be limited by dynamic range constraints
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: meth.adaptive_sampling_correction
+    expected_gain: 在部分相干或自由运行梳条件下恢复相干平均能力，延长有效相干时间
+    status: demonstrated
+    source:
+      zotero_key: RZME5CH8
+      claim: adaptive sampling enables coherent averaging with free-running combs
+  - direction: meth.cavity_enhanced_dcs
+    expected_gain: 样品腔增强吸收灵敏度 10²–10⁴ 倍
+    status: demonstrated
+    source:
+      zotero_key: RZME5CH8
+      claim: cavity-enhanced DCS
+  evidence_units:
+  - relation_id: rel.coddington_2010_10_06
+    paper: coddington2010.yaml
+    author: Coddington
+    year: 2010
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: SNR on a single scan will be limited by dynamic range constraints
+- limiting_principle: pri.mutual_coherence_requirement
+  supporting_papers: 1
+  paper_list:
+  - coddington2016.yaml
+  year_range: 2016-2016
+  first_authors:
+  - Coddington
+  best_evidence:
+    paper: coddington2016.yaml
+    author: Coddington
+    year: 2016
+    claim: '"the importance of a long coherent averaging time, or equivalently a long effective mutual coherence time between combs, which sets the maximum possible τ"
+
+      '
+    is_system_limit: true
+    limit_status: null
+  breakthrough_paths:
+  - direction: meth.adaptive_sampling_correction
+    expected_gain: ''
+    status: demonstrated
+    source:
+      zotero_key: ''
+      claim: real-time, continuous coherent averaging for 24 h with record levels of SNRs
+  evidence_units:
+  - relation_id: rel.coddington_2014_16_09
+    paper: coddington2016.yaml
+    author: Coddington
+    year: 2016
+    is_system_limit: true
+    limit_status: null
+    verification: observed
+    claim: '"the importance of a long coherent averaging time, or equivalently a long effective mutual coherence time between combs, which sets the maximum possible τ"
+
+      '
+- limiting_principle: pri.microwave_reference_noise_limit
+  supporting_papers: 1
+  paper_list:
+  - diddams2000.yaml
+  year_range: 2000-2000
+  first_authors:
+  - Diddams
+  best_evidence:
+    paper: diddams2000.yaml
+    author: Diddams
+    year: 2000
+    claim: the microwave oscillator controlling Δ provides the current noise limitation, as the observed 6×10⁻¹²/√τ instability is nearly equal to that specified for our microwave standard
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: meth.wideband_optical_frequency_synthesis
+    expected_gain: 使用超稳激光作为光频参考 + 光相位追踪，达到 10⁻²⁰
+    status: demonstrated
+    source:
+      zotero_key: UFWLAXMA
+      claim: real-time optical phase tracking with ultra-low-noise frequency combs
+  evidence_units:
+  - relation_id: rel.diddams_2000_00_08
+    paper: diddams2000.yaml
+    author: Diddams
+    year: 2000
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: the microwave oscillator controlling Δ provides the current noise limitation, as the observed 6×10⁻¹²/√τ instability is nearly equal to that specified for our microwave standard
+- limiting_principle: pri.vipa_spatial_comb_mode_resolution_d07
+  supporting_papers: 1
+  paper_list:
+  - diddams2007.yaml
+  year_range: 2007-2007
+  first_authors:
+  - Diddams
+  best_evidence:
+    paper: diddams2007.yaml
+    author: Diddams
+    year: 2007
+    claim: '"an efficient means of simultaneously identifying, addressing and measuring the amplitude or relative phase  of individual modes has not existed. Here we use a high-resolution disperser to separate
+      th'
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: ''
+    expected_gain: ''
+    status: ''
+    source: {}
+  evidence_units:
+  - relation_id: rel.diddams_2007_id07_01
+    paper: diddams2007.yaml
+    author: Diddams
+    year: 2007
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: '"an efficient means of simultaneously identifying, addressing and measuring the amplitude or relative phase  of individual modes has not existed. Here we use a high-resolution disperser to separate
+      th'
+- limiting_principle: pri.ofc_noise_hierarchy
+  supporting_papers: 1
+  paper_list:
+  - endo2018.yaml
+  year_range: 2018-2018
+  first_authors:
+  - Endo
+  best_evidence:
+    paper: endo2018.yaml
+    author: Endo
+    year: 2018
+    claim: noise sources ranked from quantum (Schawlow-Townes) to technical (pump RIN, vibration, temperature, ASE, nonlinear phase noise); fiber OFCs have larger technical noise than solid-state
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: pri.monolithic_cavity_intrinsic_noise_reduction
+    expected_gain: 自由运转不稳定度从 ~10⁻¹³（光纤梳）提升至 ~10⁻¹⁹（整体式固态腔）
+    status: demonstrated
+    source: 'Endo 2018: monolithic Er:glass OFC free-running ~1×10⁻¹⁹ @ 1 s'
+  - direction: meth.balanced_optical_microwave_phase_detector
+    expected_gain: 锁定后定时抖动 <1 fs（sub-attosecond 目标）
+    status: demonstrated
+    source: 'Endo 2018: BOMPD sub-fs residual jitter'
+  evidence_units:
+  - relation_id: rel.endo_2018_18_03
+    paper: endo2018.yaml
+    author: Endo
+    year: 2018
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: noise sources ranked from quantum (Schawlow-Townes) to technical (pump RIN, vibration, temperature, ASE, nonlinear phase noise); fiber OFCs have larger technical noise than solid-state
+- limiting_principle: pri.scg_added_noise_in_frequency_transfer
+  supporting_papers: 1
+  paper_list:
+  - fermann2022.yaml
+  year_range: 2022-2022
+  first_authors:
+  - Fermann
+  best_evidence:
+    paper: fermann2022.yaml
+    author: Fermann
+    year: 2022
+    claim: Additional noise arises from fiber amplifiers, nonlinear fibers
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths: []
+  evidence_units:
+  - relation_id: rel.fermann_2022_22_03
+    paper: fermann2022.yaml
+    author: Fermann
+    year: 2022
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: Additional noise arises from fiber amplifiers, nonlinear fibers
+- limiting_principle: pri.raman_limits_min_fsr_microcomb
+  supporting_papers: 1
+  paper_list:
+  - gaeta2019.yaml
+  year_range: 2019-2019
+  first_authors:
+  - Gaeta
+  best_evidence:
+    paper: gaeta2019.yaml
+    author: Gaeta
+    year: 2019
+    claim: 'Raman oscillation (that is, lasing) can compete with and disrupt comb formation and cavity-soliton formation. This can be overcome by suppressing the Raman gain by operating with a sufficiently
+      large '
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: pri.microresonator_anomalous_dispersion
+    expected_gain: 采用 g_K ≥ g_R 的平台（Si3N4、SiO2、CaF2）绕开该限制
+    status: demonstrated
+    source:
+      zotero_key: BRKZG9H2
+      claim: If gK ≥ gR, then pure KCG is always possible for any FSR, as is the case for CaF2
+  - direction: pri.chip_dispersion_engineering_high_index_contrast
+    expected_gain: 通过色散工程将 FSR 提升到 Raman 增益峰之间（如金刚石 FSR>454 GHz）
+    status: demonstrated
+    source:
+      zotero_key: BRKZG9H2
+      claim: operating with a sufficiently large FSR such that the Raman gain peak is located between two microresonator modes
+  evidence_units:
+  - relation_id: rel.gaeta_2019_ae19_12
+    paper: gaeta2019.yaml
+    author: Gaeta
+    year: 2019
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: 'Raman oscillation (that is, lasing) can compete with and disrupt comb formation and cavity-soliton formation. This can be overcome by suppressing the Raman gain by operating with a sufficiently
+      large '
+- limiting_principle: pri.chip_comb_platform_tradeoff_space
+  supporting_papers: 1
+  paper_list:
+  - gaeta2019.yaml
+  year_range: 2019-2019
+  first_authors:
+  - Gaeta
+  best_evidence:
+    paper: gaeta2019.yaml
+    author: Gaeta
+    year: 2019
+    claim: Table 1 shows a summary of the linear and nonlinear properties of various platforms... whether KCG or SCG has been observed
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: meth.cw_pumped_microcomb_generation
+    expected_gain: 在同一平台上通过异构集成（如 LiNbO3 键合 Si3N4）兼顾 χ(2)、高 Q 与 CMOS 兼容
+    status: proposed
+    source:
+      zotero_key: BRKZG9H2
+      claim: we foresee wide adoption of these chip-comb technologies across a broad range of environments
+  - direction: pri.chip_dispersion_engineering_high_index_contrast
+    expected_gain: 通过 Damascene reflow + 亚埃级表面粗糙度使 Si3N4 Q>37M，同时保持色散工程自由度
+    status: demonstrated
+    source:
+      zotero_key: BRKZG9H2
+      claim: Damascene process that allows for large waveguide sizes and ultrasmooth preform reflow to produce high Q
+  evidence_units:
+  - relation_id: rel.gaeta_2019_ae19_13
+    paper: gaeta2019.yaml
+    author: Gaeta
+    year: 2019
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: Table 1 shows a summary of the linear and nonlinear properties of various platforms... whether KCG or SCG has been observed
+- limiting_principle: pri.dissipative_kerr_soliton
+  supporting_papers: 1
+  paper_list:
+  - gaeta2019.yaml
+  year_range: 2019-2019
+  first_authors:
+  - Gaeta
+  best_evidence:
+    paper: gaeta2019.yaml
+    author: Gaeta
+    year: 2019
+    claim: the single-soliton state, the ratio of the power in the comb to the input pump power is typically 1–3%. This efficiency can be increased roughly linearly with the number of cavity solitons
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: pri.dark_pulse_normal_dispersion_comb
+    expected_gain: 正常 GVD 暗脉冲/platicon 提供显著更高的转换效率
+    status: demonstrated
+    source:
+      zotero_key: BRKZG9H2
+      claim: normal-GVD combs offer a number of advantages over soliton-mode-locked combs including higher conversion efficiency from the pump to the comb
+  - direction: pri.soliton_crystal_multistability
+    expected_gain: 多孤子/孤子晶体态效率 ∝ N
+    status: demonstrated
+    source:
+      zotero_key: BRKZG9H2
+      claim: This efficiency can be increased roughly linearly with the number of cavity solitons
+  evidence_units:
+  - relation_id: rel.gaeta_2019_ae19_18
+    paper: gaeta2019.yaml
+    author: Gaeta
+    year: 2019
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: the single-soliton state, the ratio of the power in the comb to the input pump power is typically 1–3%. This efficiency can be increased roughly linearly with the number of cavity solitons
+- limiting_principle: pri.turbulence_speckle_freeze_dcs
+  supporting_papers: 1
+  paper_list:
+  - han2024.yaml
+  year_range: 2024-2024
+  first_authors:
+  - Han
+  best_evidence:
+    paper: han2024.yaml
+    author: Han
+    year: 2024
+    claim: DCS has shown excellent immunity to turbulent speckle
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: meth.adaptive_sampling_correction
+    expected_gain: 进一步把湍流相位抖动折算进实时相位校正，延长相干窗口
+    status: proposed
+    source:
+      zotero_key: AZ25GQE3
+      claim: real-time phase correction method would improve precision and time resolution
+  evidence_units:
+  - relation_id: rel.han_2024_an18
+    paper: han2024.yaml
+    author: Han
+    year: 2024
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: DCS has shown excellent immunity to turbulent speckle
+- limiting_principle: pri.bandwidth_power_tradeoff_long_path_comb
+  supporting_papers: 1
+  paper_list:
+  - han2024.yaml
+  year_range: 2024-2024
+  first_authors:
+  - Han
+  best_evidence:
+    paper: han2024.yaml
+    author: Han
+    year: 2024
+    claim: but at the cost of a bandwidth of only 50 cm⁻¹ ... cannot measure CH4
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: pri.nonlinear_frequency_conversion_comb
+    expected_gain: 孤子自频移等非线性方案可在保持高功率同时展宽至 1.6–1.7 μm，覆盖 CH₄ 带
+    status: proposed
+    source:
+      zotero_key: AZ25GQE3
+      claim: soliton self-frequency shift can be applied to OFCs to simultaneously develop high-power and large bandwidths to enable more GHG measurements such as CH4
+  evidence_units:
+  - relation_id: rel.han_2024_an19
+    paper: han2024.yaml
+    author: Han
+    year: 2024
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: but at the cost of a bandwidth of only 50 cm⁻¹ ... cannot measure CH4
+- limiting_principle: pri.mirror_damage_threshold_limit
+  supporting_papers: 1
+  paper_list:
+  - hartl2007.yaml
+  year_range: 2007-2007
+  first_authors:
+  - Hartl
+  best_evidence:
+    paper: hartl2007.yaml
+    author: Hartl
+    year: 2007
+    claim: require high-damage-threshold, low-dispersion mirror coatings in order to overcome currently observed sporadic mirror damages
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: pri.coherent_pulse_addition_passive_cavity
+    expected_gain: 新型高损伤阈值低色散宽带介质镀层可在同等精细度下推高强度上限
+    status: proposed
+    source:
+      zotero_key: H4DKWZWF
+      claim: high-damage-threshold, low-dispersion mirror coatings
+  evidence_units:
+  - relation_id: rel.hartl_2007_07_08
+    paper: hartl2007.yaml
+    author: Hartl
+    year: 2007
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: require high-damage-threshold, low-dispersion mirror coatings in order to overcome currently observed sporadic mirror damages
+- limiting_principle: pri.mode_overlap_limits_fceo_snr
+  supporting_papers: 1
+  paper_list:
+  - hickstein2017.yaml
+  year_range: 2017-2017
+  first_authors:
+  - Hickstein
+  best_evidence:
+    paper: hickstein2017.yaml
+    author: Hickstein
+    year: 2017
+    claim: poor mode overlap between the supercontinuum (in the TM00 mode) and the phase-matched second harmonic (in a higher-order TM mode) hinders detection of the f_CEO
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: meth.on_chip_f2f_stabilization
+    expected_gain: 加入 on-chip 模式转换器，使相位匹配 SHG 回到 TM00，SNR 预期 >37 dB
+    status: proposed
+    source:
+      zotero_key: CML5935T
+      claim: on-chip mode converters could be used to provide both phase-matched SHG and mode overlap
+  evidence_units:
+  - relation_id: rel.hickstein_2017_17_11
+    paper: hickstein2017.yaml
+    author: Hickstein
+    year: 2017
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: poor mode overlap between the supercontinuum (in the TM00 mode) and the phase-matched second harmonic (in a higher-order TM mode) hinders detection of the f_CEO
+- limiting_principle: pri.phase_matching_bandwidth_limit_chi2
+  supporting_papers: 1
+  paper_list:
+  - hickstein2017.yaml
+  year_range: 2017-2017
+  first_authors:
+  - Hickstein
+  best_evidence:
+    paper: hickstein2017.yaml
+    author: Hickstein
+    year: 2017
+    claim: this phase-matching mechanism provides a phase-matching bandwidth of only a few nanometers
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: pri.nonlinear_frequency_conversion_comb
+    expected_gain: 周期极化（PPLN/PP-LiNbO3-on-insulator）或 chirped QPM 扩展相位匹配带宽到数十–数百 nm
+    status: proposed
+    source:
+      zotero_key: CML5935T
+      claim: periodically poled LiNbO3 (PPLN) have demonstrated supercontinuum generation via cascaded χ(2) processes
+  evidence_units:
+  - relation_id: rel.hickstein_2017_17_12
+    paper: hickstein2017.yaml
+    author: Hickstein
+    year: 2017
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: this phase-matching mechanism provides a phase-matching bandwidth of only a few nanometers
+- limiting_principle: pri.octave_spanning_enables_f2f_self_reference
+  supporting_papers: 1
+  paper_list:
+  - holzwarth2000.yaml
+  year_range: 2000-2000
+  first_authors:
+  - Holzwarth
+  best_evidence:
+    paper: holzwarth2000.yaml
+    author: Holzwarth
+    year: 2000
+    claim: broadened to more than an optical octave
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: pri.supercontinuum_octave_spanning
+    expected_gain: PCF 非线性展宽至 > 1 倍频程 → 首次 f-2f 自参考
+    status: demonstrated
+    source:
+      zotero_key: ZNCBFZR5
+  evidence_units:
+  - relation_id: rel.holzwarth_2000_ol00_03
+    paper: holzwarth2000.yaml
+    author: Holzwarth
+    year: 2000
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: broadened to more than an optical octave
+- limiting_principle: pri.diode_pumped_octave_comb_portability_h01
+  supporting_papers: 1
+  paper_list:
+  - holzwarth2001.yaml
+  year_range: 2001-2001
+  first_authors:
+  - Holzwarth
+  best_evidence:
+    paper: holzwarth2001.yaml
+    author: Holzwarth
+    year: 2001
+    claim: '"Although Ti:sapphire lasers are convenient laboratory workhorses, they cannot be directly diode pumped;  instead, costly large-frame Ar-ion or frequency-doubled Nd:YAG lasers are needed for
+      pumping. '
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: ''
+    expected_gain: ''
+    status: ''
+    source: {}
+  evidence_units:
+  - relation_id: rel.holzwarth_2001_ol01
+    paper: holzwarth2001.yaml
+    author: Holzwarth
+    year: 2001
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: '"Although Ti:sapphire lasers are convenient laboratory workhorses, they cannot be directly diode pumped;  instead, costly large-frame Ar-ion or frequency-doubled Nd:YAG lasers are needed for
+      pumping. '
+- limiting_principle: pri.kerr_asymmetry_induced_frep_difference_i16
+  supporting_papers: 1
+  paper_list:
+  - ideguchi2016.yaml
+  year_range: 2016-2016
+  first_authors:
+  - Ideguchi
+  best_evidence:
+    paper: ideguchi2016.yaml
+    author: Ideguchi
+    year: 2016
+    claim: '"Since mode-locked lasers (free-running combs) have independent fluctuations in their pulse repetition rate and carrier-envelope phase,  their dual-comb interferogram is significantly distorted...
+      How'
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: ''
+    expected_gain: ''
+    status: ''
+    source: {}
+  evidence_units:
+  - relation_id: rel.ideguchi_2016_de01
+    paper: ideguchi2016.yaml
+    author: Ideguchi
+    year: 2016
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: '"Since mode-locked lasers (free-running combs) have independent fluctuations in their pulse repetition rate and carrier-envelope phase,  their dual-comb interferogram is significantly distorted...
+      How'
+- limiting_principle: pri.brillouin_amplification_long_distance_k19
+  supporting_papers: 1
+  paper_list:
+  - koke2019.yaml
+  year_range: 2019-2019
+  first_authors:
+  - Koke
+  best_evidence:
+    paper: koke2019.yaml
+    author: Koke
+    year: 2019
+    claim: fiber Brillouin amplifiers
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: meth.brillouin_rls_hybrid_1400km_k19
+    expected_gain: 首次 Brillouin + RLS 组合 → 1400 km Continental-scale
+    status: demonstrated
+    source:
+      zotero_key: ZG45BBYV
+  evidence_units:
+  - relation_id: rel.koke_2019_ok19_02
+    paper: koke2019.yaml
+    author: Koke
+    year: 2019
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: fiber Brillouin amplifiers
+- limiting_principle: pri.thermal_drift_comb_offsets
+  supporting_papers: 1
+  paper_list:
+  - lezius2016.yaml
+  year_range: 2016-2016
+  first_authors:
+  - Lezius
+  best_evidence:
+    paper: lezius2016.yaml
+    author: Lezius
+    year: 2016
+    claim: Thermal control maintained lock across payload temperature profile.
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: pri.ruggedized_erfiber_comb_space_qualification
+    expected_gain: Active baseplate thermal control keeps f_rep/f_ceo servos within capture range.
+    status: demonstrated
+    source: {}
+  evidence_units:
+  - relation_id: rel.lezius_2016_ez12
+    paper: lezius2016.yaml
+    author: Lezius
+    year: 2016
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: Thermal control maintained lock across payload temperature profile.
+- limiting_principle: pri.thermo_optic_soliton_access_barrier
+  supporting_papers: 1
+  paper_list:
+  - li2017.yaml
+  year_range: 2017-2017
+  first_authors:
+  - Li
+  best_evidence:
+    paper: li2017.yaml
+    author: Li
+    year: 2017
+    claim: accessing such states is complicated by thermo-optic dispersion
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: pri.adjacent_mode_thermal_stabilization
+    expected_gain: 无需快反馈即可稳定访问单孤子态，降低系统复杂度
+    status: demonstrated
+    source:
+      zotero_key: 6JY7ZNWX
+      claim: an adjacent mode family member ... helps stabilize the thermal dynamics
+  - direction: meth.laser_tuning_soliton_access
+    expected_gain: 简化控制硬件到只用 CW 激光慢调谐
+    status: demonstrated
+    source:
+      zotero_key: 6JY7ZNWX
+  evidence_units:
+  - relation_id: rel.li_2017_17_05
+    paper: li2017.yaml
+    author: Li
+    year: 2017
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: accessing such states is complicated by thermo-optic dispersion
+- limiting_principle: pri.fiber_resistive_modulator_frep_tuning_m18
+  supporting_papers: 1
+  paper_list:
+  - manurkar2018.yaml
+  year_range: 2018-2018
+  first_authors:
+  - Manurkar
+  best_evidence:
+    paper: manurkar2018.yaml
+    author: Manurkar
+    year: 2018
+    claim: fiber resistive modulator ... consuming ~77 mW/°C
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths: []
+  evidence_units:
+  - relation_id: rel.manurkar_2018_an18_03
+    paper: manurkar2018.yaml
+    author: Manurkar
+    year: 2018
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: fiber resistive modulator ... consuming ~77 mW/°C
+- limiting_principle: pri.optical_phase_detection_fiber_link_m12
+  supporting_papers: 1
+  paper_list:
+  - marra2012.yaml
+  year_range: 2012-2012
+  first_authors:
+  - Marra
+  best_evidence:
+    paper: marra2012.yaml
+    author: Marra
+    year: 2012
+    claim: Using an optical phase detection technique we measure the noise introduced by the fiber link and suppress it
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: meth.optical_phase_detection_comb_transfer_m12
+    expected_gain: 达到与单频超稳激光传递同级稳定度，但覆盖整个梳结构
+    status: demonstrated
+    source:
+      zotero_key: P7A5Z647
+  evidence_units:
+  - relation_id: rel.marra_2012_ar12_03
+    paper: marra2012.yaml
+    author: Marra
+    year: 2012
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: Using an optical phase detection technique we measure the noise introduced by the fiber link and suppress it
+- limiting_principle: pri.er_yb_co_doping_pump_noise_suppression_n23
+  supporting_papers: 1
+  paper_list:
+  - nardelli2023.yaml
+  year_range: 2023-2023
+  first_authors:
+  - Nardelli
+  best_evidence:
+    paper: nardelli2023.yaml
+    author: Nardelli
+    year: 2023
+    claim: low intrinsic noise ... co-doping of Er and Yb that suppresses high-frequency pump intensity noise
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths: []
+  evidence_units:
+  - relation_id: rel.nardelli_2023_ar23_03
+    paper: nardelli2023.yaml
+    author: Nardelli
+    year: 2023
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: low intrinsic noise ... co-doping of Er and Yb that suppresses high-frequency pump intensity noise
+- limiting_principle: pri.microcomb_subcomb_offset_p13
+  supporting_papers: 1
+  paper_list:
+  - papp2013.yaml
+  year_range: 2013-2013
+  first_authors:
+  - Papp
+  best_evidence:
+    paper: papp2013.yaml
+    author: Papp
+    year: 2013
+    claim: the subcomb offset from equidistance can be tuned through zero by changing the line spacing … simply tuning the subcomb offset to zero with Δν does not necessarily yield the type of equidistant
+      comb
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: pri.injection_locked_equidistant_microcomb_p13
+    expected_gain: 通过 pump-seed FWM 注入锁定主导子梳，跨 >54 模等间距偏差 ≤2 Hz
+    status: demonstrated
+    source:
+      zotero_key: BG93PZPK
+      claim: parametric amplification of the offset-free lines to at least microcomb mode 54
+  - direction: meth.laser_tuning_soliton_access
+    expected_gain: 以耗散 Kerr 孤子机制直接给出确定性、严格等间距的单态梳，打破 subcomb 族竞争
+    status: demonstrated
+    source:
+      zotero_key: BG93PZPK
+      claim: a number of interesting microcomb operating regimes have been reported including … the generation of soliton waveforms
+  evidence_units:
+  - relation_id: rel.papp_2013_13_14
+    paper: papp2013.yaml
+    author: Papp
+    year: 2013
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: the subcomb offset from equidistance can be tuned through zero by changing the line spacing … simply tuning the subcomb offset to zero with Δν does not necessarily yield the type of equidistant
+      comb
+- limiting_principle: pri.parametric_seeding_microcomb_spacing_control
+  supporting_papers: 1
+  paper_list:
+  - papp2013.yaml
+  year_range: 2013-2013
+  first_authors:
+  - Papp
+  best_evidence:
+    paper: papp2013.yaml
+    author: Papp
+    year: 2013
+    claim: Parametric phase matching depends on numerous parameters, and is apparently influenced by the line spacing of the emergent comb
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: meth.laser_tuning_soliton_access
+    expected_gain: 孤子态下 Δν 由孤子重复率决定，可通过泵失谐/热控连续大范围调
+    status: demonstrated
+    source:
+      zotero_key: BG93PZPK
+      claim: future experiments will focus on … ∼picosecond optical waveforms associated with the microcomb spectra
+  evidence_units:
+  - relation_id: rel.papp_2013_13_15
+    paper: papp2013.yaml
+    author: Papp
+    year: 2013
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: Parametric phase matching depends on numerous parameters, and is apparently influenced by the line spacing of the emergent comb
+- limiting_principle: pri.mechanical_microrod_frep_control_p13b
+  supporting_papers: 1
+  paper_list:
+  - papp2013b.yaml
+  year_range: 2013-2013
+  first_authors:
+  - Papp
+  best_evidence:
+    paper: papp2013b.yaml
+    author: Papp
+    year: 2013
+    claim: '"Future metrology applications of microcombs will require stabilization of the line spacing  with respect to fixed-optical and microwave frequency standards.  ...We have improved the residual
+      line-spa'
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: ''
+    expected_gain: ''
+    status: ''
+    source: {}
+  evidence_units:
+  - relation_id: rel.papp_2013_ap13b_01
+    paper: papp2013b.yaml
+    author: Papp
+    year: 2013
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: '"Future metrology applications of microcombs will require stabilization of the line spacing  with respect to fixed-optical and microwave frequency standards.  ...We have improved the residual
+      line-spa'
+- limiting_principle: pri.thermal_instability_dks_access
+  supporting_papers: 1
+  paper_list:
+  - pasquazi2018.yaml
+  year_range: 2018-2018
+  first_authors:
+  - Pasquazi
+  best_evidence:
+    paper: pasquazi2018.yaml
+    author: Pasquazi
+    year: 2018
+    claim: Thermal effects have proved to be an important challenge
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths: []
+  evidence_units:
+  - relation_id: rel.pasquazi_2016_18_03
+    paper: pasquazi2018.yaml
+    author: Pasquazi
+    year: 2018
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: Thermal effects have proved to be an important challenge
+- limiting_principle: pri.microcomb_self_injection_locking
+  supporting_papers: 1
+  paper_list:
+  - pasquazi2018.yaml
+  year_range: 2018-2018
+  first_authors:
+  - Pasquazi
+  best_evidence:
+    paper: pasquazi2018.yaml
+    author: Pasquazi
+    year: 2018
+    claim: self-injection locking mechanisms for coherence control
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths: []
+  evidence_units:
+  - relation_id: rel.pasquazi_2016_18_08
+    paper: pasquazi2018.yaml
+    author: Pasquazi
+    year: 2018
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: self-injection locking mechanisms for coherence control
+- limiting_principle: pri.high_temp_gas_suppresses_steady_state_plasma_p18
+  supporting_papers: 1
+  paper_list:
+  - porat2018.yaml
+  year_range: 2018-2018
+  first_authors:
+  - Porat
+  best_evidence:
+    paper: porat2018.yaml
+    author: Porat
+    year: 2018
+    claim: '"Having identified the steady-state plasma as the main limitation for phase matching,  we study its formation dynamics... by using high-temperature gas mixtures to increase v_gas,  we reduce
+      ξ_beam an'
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: ''
+    expected_gain: ''
+    status: ''
+    source: {}
+  evidence_units:
+  - relation_id: rel.porat_2018_or01
+    paper: porat2018.yaml
+    author: Porat
+    year: 2018
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: '"Having identified the steady-state plasma as the main limitation for phase matching,  we study its formation dynamics... by using high-temperature gas mixtures to increase v_gas,  we reduce
+      ξ_beam an'
+- limiting_principle: pri.amplifier_residual_phase_noise_limit
+  supporting_papers: 1
+  paper_list:
+  - portuondo-campa2015.yaml
+  year_range: 2015-2015
+  first_authors:
+  - Portuondo-Campa
+  best_evidence:
+    paper: portuondo-campa2015.yaml
+    author: Portuondo-Campa
+    year: 2015
+    claim: the residual phase-noise of the amplifiers limits the achieved phase-noise floor far from the carrier
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: meth.dpssl_interleaver_photonic_microwave_pc15
+    expected_gain: 采用 mUTC 高饱和光电探测器提供足够 RF 功率直驱混频器，去除放大器 → 远载波本底直接降至 cw 散粒极限乃至相关压缩区
+    status: proposed
+    source:
+      zotero_key: BESI3AEE
+      claim: The use of photodetectors with higher saturation photocurrent such as modified uni-traveling carrier (mUTC) photodiodes should allow reaching sufficient microwave powers for driving the mixer
+        without amplifiers
+  evidence_units:
+  - relation_id: rel.portuondo_campa_2015_C15_10
+    paper: portuondo-campa2015.yaml
+    author: Portuondo-Campa
+    year: 2015
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: the residual phase-noise of the amplifiers limits the achieved phase-noise floor far from the carrier
+- limiting_principle: pri.nir_to_visible_shg_comb_link_r19
+  supporting_papers: 1
+  paper_list:
+  - rao2019.yaml
+  year_range: 2019-2019
+  first_authors:
+  - Rao
+  best_evidence:
+    paper: rao2019.yaml
+    author: Rao
+    year: 2019
+    claim: 单模能量为 208 nW…满足后续与单频激光拍频所需的能量（一般来说，单模能量为 100 nW 的激光信号拍频后可以产生 30 dB 的信号）
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: pri.nonlinear_frequency_conversion_comb
+    expected_gain: 改用 PM-HNLF、色散工程设计的硅基波导 SC 源或多级 PPLN 级联，进一步把 671 nm 单模功率推向 µW 级
+    status: proposed
+    source:
+      zotero_key: CA55MEKS
+  evidence_units:
+  - relation_id: rel.rao_2019_19_19
+    paper: rao2019.yaml
+    author: Rao
+    year: 2019
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: 单模能量为 208 nW…满足后续与单频激光拍频所需的能量（一般来说，单模能量为 100 nW 的激光信号拍频后可以产生 30 dB 的信号）
+- limiting_principle: pri.dual_branch_differential_phase_noise_cancellation_r18
+  supporting_papers: 1
+  paper_list:
+  - rolland2018.yaml
+  year_range: 2018-2018
+  first_authors:
+  - Rolland
+  best_evidence:
+    paper: rolland2018.yaml
+    author: Rolland
+    year: 2018
+    claim: actively canceling the differential phase noise of a dual-branch ... frequency comb
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: meth.dual_branch_fceo_locking_passive_cancellation_r18
+    expected_gain: 将双支路劣化从 10⁻¹⁶ 降至 10⁻¹⁸（首次）
+    status: demonstrated
+    source:
+      zotero_key: U5C8AJYM
+  evidence_units:
+  - relation_id: rel.rolland_2018_ol18_03
+    paper: rolland2018.yaml
+    author: Rolland
+    year: 2018
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: actively canceling the differential phase noise of a dual-branch ... frequency comb
+- limiting_principle: pri.nonlinear_frequency_conversion_comb
+  supporting_papers: 1
+  paper_list:
+  - schliesser2012.yaml
+  year_range: 2012-2012
+  first_authors:
+  - Schliesser
+  best_evidence:
+    paper: schliesser2012.yaml
+    author: Schliesser
+    year: 2012
+    claim: imperfect phase-matching is often the limiting factor for the achieved bandwidth because the poling period is optimized for only part of the comb spectrum
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths: []
+  evidence_units:
+  - relation_id: rel.schliesser_2011_12_09
+    paper: schliesser2012.yaml
+    author: Schliesser
+    year: 2012
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: imperfect phase-matching is often the limiting factor for the achieved bandwidth because the poling period is optimized for only part of the comb spectrum
+- limiting_principle: met.mid_ir_spectral_coverage
+  supporting_papers: 1
+  paper_list:
+  - schliesser2012.yaml
+  year_range: 2012-2012
+  first_authors:
+  - Schliesser
+  best_evidence:
+    paper: schliesser2012.yaml
+    author: Schliesser
+    year: 2012
+    claim: the spectral span is limited only by the spectral bandwidths of the source and detector
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths: []
+  evidence_units:
+  - relation_id: rel.schliesser_2011_12_10
+    paper: schliesser2012.yaml
+    author: Schliesser
+    year: 2012
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: the spectral span is limited only by the spectral bandwidths of the source and detector
+- limiting_principle: pri.microcomb_replaces_laser_array_for_wdm_s22
+  supporting_papers: 1
+  paper_list:
+  - shu2022.yaml
+  year_range: 2022-2022
+  first_authors:
+  - Shu
+  best_evidence:
+    paper: shu2022.yaml
+    author: Shu
+    year: 2022
+    claim: the transmitter achieves a total data transmission rate of 448 Gbit s⁻¹, with 7 channels under the FEC threshold
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: meth.laser_tuning_soliton_access
+    expected_gain: 通过更强泵浦 + 更高 Q 微腔，让 DFB 激励下全部 20 通道进入 FEC 余量 → 回到 2 Tbit/s 级
+    status: proposed
+    source:
+      zotero_key: AT5ZTB9M
+      claim: The performance of these systems can be further improved by optimizing the integrated devices or employing superior signal-processing techniques
+  - direction: pri.normal_dispersion_dark_pulse_s22
+    expected_gain: 进一步定量化 avoided mode-crossing 设计，提升单齿功率与平坦度，扩展可用通道数至 >30
+    status: proposed
+    source:
+      zotero_key: AT5ZTB9M
+      claim: Additional multiplexing techniques (such as space-division) ... can further scale the system capacity
+  evidence_units:
+  - relation_id: rel.shu_2022_22_16
+    paper: shu2022.yaml
+    author: Shu
+    year: 2022
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: the transmitter achieves a total data transmission rate of 448 Gbit s⁻¹, with 7 channels under the FEC threshold
+- limiting_principle: pri.vibration_fopt_linear_coupling
+  supporting_papers: 1
+  paper_list:
+  - sinclair2014.yaml
+  year_range: 2014-2014
+  first_authors:
+  - Sinclair
+  best_evidence:
+    paper: sinclair2014.yaml
+    author: Sinclair
+    year: 2014
+    claim: integrated phase noise on fopt increased roughly linearly with vibration level at 3.8 rad/g
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: pri.transportable_cavity_reference_coupling
+    expected_gain: 采用车载低加速度灵敏度的腔稳参考（如 Leibrandt 2011/2013，<10⁻¹² /g）以消除 f_opt 相对相噪对参考激光漂移的依赖
+    status: proposed
+    source:
+      zotero_key: D9ANIZW6
+      claim: Even more stable comb operation would be achieved using a robust, mobile, cavity-stabilized cw reference laser
+  - direction: pri.pm_fiber_splice_vibration_immunity
+    expected_gain: 改进机械封装 + 加气动隔振（2.5 Hz air-mount）可映射到船/卡车/C-5 等平台振动谱内
+    status: demonstrated
+    source:
+      zotero_key: D9ANIZW6
+      claim: the frequency comb so mounted should maintain successful operation on a ship, in a truck traveling across U.S. highways, and in a C-5 aircraft
+  evidence_units:
+  - relation_id: rel.sinclair_2014_14_17
+    paper: sinclair2014.yaml
+    author: Sinclair
+    year: 2014
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: integrated phase noise on fopt increased roughly linearly with vibration level at 3.8 rad/g
+- limiting_principle: pri.buffer_gas_cooling_spectral_simplification_s16
+  supporting_papers: 1
+  paper_list:
+  - spaun2016.yaml
+  year_range: 2016-2016
+  first_authors:
+  - Spaun
+  best_evidence:
+    paper: spaun2016.yaml
+    author: Spaun
+    year: 2016
+    claim: '"CE-DFCS... still suffers from spectral congestion.  Here we show that this problem can be overcome by using buffer gas cooling to produce continuous, cold samples  of molecules that are then
+      subjecte'
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: ''
+    expected_gain: ''
+    status: ''
+    source: {}
+  evidence_units:
+  - relation_id: rel.spaun_2016_pa01
+    paper: spaun2016.yaml
+    author: Spaun
+    year: 2016
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: '"CE-DFCS... still suffers from spectral congestion.  Here we show that this problem can be overcome by using buffer gas cooling to produce continuous, cold samples  of molecules that are then
+      subjecte'
+- limiting_principle: pri.packaging_loss_limits_wallplug_efficiency_s18
+  supporting_papers: 1
+  paper_list:
+  - stern2018.yaml
+  year_range: 2018-2018
+  first_authors:
+  - Stern
+  best_evidence:
+    paper: stern2018.yaml
+    author: Stern
+    year: 2018
+    claim: This corresponds to a 3.4% wall-plug efficiency ... In future implementations, the RSOA could be placed directly on the silicon substrate, through passively aligned mounting or material bonding
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: pri.pump_comb_copackaging_swap_reduction_s18
+    expected_gain: 被动对准/键合封装，将 Pelec 再压 2–5×，释放余量供 f-2f 链路
+    status: proposed
+    source:
+      zotero_key: EBNL35EE
+      claim: passively aligned mounting or material bonding, taking advantage of the infrastructure for assembly and packaging of III–V and silicon chips
+  evidence_units:
+  - relation_id: rel.stern_2018_18_18
+    paper: stern2018.yaml
+    author: Stern
+    year: 2018
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: This corresponds to a 3.4% wall-plug efficiency ... In future implementations, the RSOA could be placed directly on the silicon substrate, through passively aligned mounting or material bonding
+- limiting_principle: pri.high_Q_si3n4_low_threshold_soliton_s18
+  supporting_papers: 1
+  paper_list:
+  - stern2018.yaml
+  year_range: 2018-2018
+  first_authors:
+  - Stern
+  best_evidence:
+    paper: stern2018.yaml
+    author: Stern
+    year: 2018
+    claim: simulations indicate that a soliton-state frequency comb can be generated with 700 µW of pump power in the bus waveguide just before the microresonator
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: pri.high_Q_si3n4_low_threshold_soliton_s18
+    expected_gain: Si3N4 Q 从 8×10⁶ 提升至 3×10⁷，阈值 Popt 再降一个量级至 ~100 µW
+    status: proposed
+    source:
+      zotero_key: EBNL35EE
+      claim: Si3N4 microresonators were recently demonstrated with record low parametric oscillation thresholds due to the high quality factors (Q > 3 × 10⁷)
+  evidence_units:
+  - relation_id: rel.stern_2018_18_19
+    paper: stern2018.yaml
+    author: Stern
+    year: 2018
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: simulations indicate that a soliton-state frequency comb can be generated with 700 µW of pump power in the bus waveguide just before the microresonator
+- limiting_principle: pri.pump_comb_copackaging_swap_reduction_s18
+  supporting_papers: 1
+  paper_list:
+  - stern2018.yaml
+  year_range: 2018-2018
+  first_authors:
+  - Stern
+  best_evidence:
+    paper: stern2018.yaml
+    author: Stern
+    year: 2018
+    claim: Pelec less than 100 mW, enabling battery-operation applications
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: meth.cw_pumped_microcomb_generation
+    expected_gain: 引入更高效率 III–V 增益材料 + 直接片上集成，进一步降低泵电功耗
+    status: proposed
+    source:
+      zotero_key: EBNL35EE
+  evidence_units:
+  - relation_id: rel.stern_2018_18_20
+    paper: stern2018.yaml
+    author: Stern
+    year: 2018
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: Pelec less than 100 mW, enabling battery-operation applications
+- limiting_principle: pri.microcomb_rv_calibration_limit
+  supporting_papers: 1
+  paper_list:
+  - suh2019.yaml
+  year_range: 2019-2019
+  first_authors:
+  - Suh
+  best_evidence:
+    paper: suh2019.yaml
+    author: Suh
+    year: 2019
+    claim: '''the offset frequency imprecision was the principal source of instability in the comb calibration'''
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: pri.microcomb_to_astrocomb_adaptation
+    expected_gain: 若 f0 参考升级为光钟/光纤链路稳定的光学参考，可将 f0 抖动从 ~1 MHz 降至 <<1 kHz，RV 等效 <<1 mm/s。
+    status: proposed
+    source: 'Discussion: 作者指出未来可用更稳定光学参考替代 HCN。'
+  - direction: meth.laser_tuning_soliton_access
+    expected_gain: 更稳定的孤子泵浦伺服与包络稳定，降低梳线幅度扰动对质心提取的影响。
+    status: proposed
+    source: 方法节：AOM + 服控孤子平均功率为现有手段。
+  evidence_units:
+  - relation_id: rel.suh_2019_uh14
+    paper: suh2019.yaml
+    author: Suh
+    year: 2019
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: '''the offset frequency imprecision was the principal source of instability in the comb calibration'''
+- limiting_principle: pri.native_mode_spacing_matching
+  supporting_papers: 1
+  paper_list:
+  - suh2019.yaml
+  year_range: 2019-2019
+  first_authors:
+  - Suh
+  best_evidence:
+    paper: suh2019.yaml
+    author: Suh
+    year: 2019
+    claim: '''comb line frequency spacing that is not resolvable by astronomical spectrographs … has necessitated special spectral filters'''
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: pri.microcomb_to_astrocomb_adaptation
+    expected_gain: 采用更高效的非线性芯片（Si3N4, AlGaAs）展宽至可见/近紫外，覆盖 HIRES/HARPS 工作带。
+    status: proposed
+    source: Discussion；后续文献 Obrzud 2019 / Suh-Vahala 后续工作。
+  evidence_units:
+  - relation_id: rel.suh_2019_uh15
+    paper: suh2019.yaml
+    author: Suh
+    year: 2019
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: '''comb line frequency spacing that is not resolvable by astronomical spectrographs … has necessitated special spectral filters'''
+- limiting_principle: pri.intra_pulse_dfg_super_octave_mir_t18
+  supporting_papers: 1
+  paper_list:
+  - timmers2018.yaml
+  year_range: 2018-2018
+  first_authors:
+  - Timmers
+  best_evidence:
+    paper: timmers2018.yaml
+    author: Timmers
+    year: 2018
+    claim: '"Despite decades of interest and effort, this portion of the electromagnetic spectrum remains challenging  to cover with conventional laser technologies. ...we introduce a solution for bright,
+      stabili'
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: ''
+    expected_gain: ''
+    status: ''
+    source: {}
+  evidence_units:
+  - relation_id: rel.timmers_2018_im01
+    paper: timmers2018.yaml
+    author: Timmers
+    year: 2018
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: '"Despite decades of interest and effort, this portion of the electromagnetic spectrum remains challenging  to cover with conventional laser technologies. ...we introduce a solution for bright,
+      stabili'
+- limiting_principle: pri.waveguide_loss_comb_limit
+  supporting_papers: 1
+  paper_list:
+  - wang2017.yaml
+  year_range: 2017-2017
+  first_authors:
+  - Wang
+  best_evidence:
+    paper: wang2017.yaml
+    author: Wang
+    year: 2017
+    claim: Si waveguide propagation loss limits how long the extended cavity (and hence how dense the comb) can be made while preserving mode-locking.
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths: []
+  evidence_units:
+  - relation_id: rel.wang_2017_an11
+    paper: wang2017.yaml
+    author: Wang
+    year: 2017
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: Si waveguide propagation loss limits how long the extended cavity (and hence how dense the comb) can be made while preserving mode-locking.
+- limiting_principle: pri.group_velocity_dispersion_comb_limit
+  supporting_papers: 1
+  paper_list:
+  - wang2017.yaml
+  year_range: 2017-2017
+  first_authors:
+  - Wang
+  best_evidence:
+    paper: wang2017.yaml
+    author: Wang
+    year: 2017
+    claim: Residual GVD in the composite cavity limits comb bandwidth and equidistance.
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths: []
+  evidence_units:
+  - relation_id: rel.wang_2017_an12
+    paper: wang2017.yaml
+    author: Wang
+    year: 2017
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: Residual GVD in the composite cavity limits comb bandwidth and equidistance.
+- limiting_principle: pri.linewidth_enhancement_factor_limit
+  supporting_papers: 1
+  paper_list:
+  - wang2017.yaml
+  year_range: 2017-2017
+  first_authors:
+  - Wang
+  best_evidence:
+    paper: wang2017.yaml
+    author: Wang
+    year: 2017
+    claim: Per-tooth linewidth is set by semiconductor amplitude-phase coupling (α-factor).
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths: []
+  evidence_units:
+  - relation_id: rel.wang_2017_an13
+    paper: wang2017.yaml
+    author: Wang
+    year: 2017
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: Per-tooth linewidth is set by semiconductor amplitude-phase coupling (α-factor).
+- limiting_principle: pri.all_fiber_nonlinear_self_compression_2um
+  supporting_papers: 1
+  paper_list:
+  - xing2020.yaml
+  year_range: 2020-2020
+  first_authors:
+  - Xing
+  best_evidence:
+    paper: xing2020.yaml
+    author: Xing
+    year: 2020
+    claim: the main peak contains about 32 % of total power ... Improving the pulse quality from the first compression stage will contribute to higher power in the central pulse
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: meth.ssfs_tdf_cpa_self_compression_comb_x20
+    expected_gain: 改善一级压缩脉冲质量（例如 L-band EDFA + 高掺杂 TDF），提高主峰能量比与峰值功率
+    status: proposed
+    source:
+      zotero_key: BDY8JHA4
+      claim: An L-band EDFA with a larger doping concentration TDF can be a simple improvement
+  - direction: pri.all_fiber_nonlinear_self_compression_2um
+    expected_gain: 末级 PCF 替代 HNLF2，可在 100 MHz 下达到 mW 级峰值能量并进一步压缩
+    status: proposed
+    source:
+      zotero_key: BDY8JHA4
+      claim: milliwatt-level peak powers at a 100 MHz repetition rate should be feasible with a photonic crystal fiber at the last compression stage
+  evidence_units:
+  - relation_id: rel.xing_2020_15
+    paper: xing2020.yaml
+    author: Xing
+    year: 2020
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: the main peak contains about 32 % of total power ... Improving the pulse quality from the first compression stage will contribute to higher power in the central pulse
+- limiting_principle: pri.fabry_perot_mode_filter_astro_comb
+  supporting_papers: 1
+  paper_list:
+  - ycas2012.yaml
+  year_range: 2012-2012
+  first_authors:
+  - Ycas
+  best_evidence:
+    paper: ycas2012.yaml
+    author: Ycas
+    year: 2012
+    claim: RV precision limited by spectrograph calibration stability and modal noise rather than the comb itself
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: meth.astro_comb_rv_calibration
+    expected_gain: 联合光谱仪稳定化 → cm/s 级 RV（未来目标）
+    status: proposed
+    source:
+      zotero_key: 3JN2PBKX
+  evidence_units:
+  - relation_id: rel.ycas_2012_C12_04
+    paper: ycas2012.yaml
+    author: Ycas
+    year: 2012
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: RV precision limited by spectrograph calibration stability and modal noise rather than the comb itself
+- limiting_principle: pri.dfg_power_atmospheric_window_tradeoff
+  supporting_papers: 1
+  paper_list:
+  - ycas2019.yaml
+  year_range: 2019-2019
+  first_authors:
+  - Ycas
+  best_evidence:
+    paper: ycas2019.yaml
+    author: Ycas
+    year: 2019
+    claim: 5 mW of light from each comb is coupled into a single-mode ZrF4 fiber
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: meth.dfg_comb_generation
+    expected_gain: '更高泵浦功率（>10 W PM Er 光纤梳）或腔内增强 DFG， 将单梳 MIR 功率由 5 mW 提升至 50–100 mW，SNR × 10
+
+      '
+    status: proposed
+    source:
+      zotero_key: FQ4KYV38
+      claim: With even broader spectral coverage, similar performance should be achievable for other important hazardous pollutants such as BTEX
+  evidence_units:
+  - relation_id: rel.ycas_2019_19_17
+    paper: ycas2019.yaml
+    author: Ycas
+    year: 2019
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: 5 mW of light from each comb is coupled into a single-mode ZrF4 fiber
+- limiting_principle: pri.hitran_voigt_declutter_trace_retrieval
+  supporting_papers: 1
+  paper_list:
+  - ycas2019.yaml
+  year_range: 2019-2019
+  first_authors:
+  - Ycas
+  best_evidence:
+    paper: ycas2019.yaml
+    author: Ycas
+    year: 2019
+    claim: spectral structure at the 3% level remains... incomplete baseline removal... small inaccuracies in the Hitran 2016 line-shape parameters... deviations from the Voigt line shape
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: pri.hitran_voigt_declutter_trace_retrieval
+    expected_gain: '引入 Speed-Dependent Voigt / Hartmann–Tran 线型（HTP）， 加上 H₂O 连续吸收模型，可把残余基线从 3% 压至 <1%， 从而在 1 km 路径保持 ppb 以下 VOC 灵敏度
+
+      '
+    status: proposed
+    source:
+      zotero_key: FQ4KYV38
+      claim: deviations from the Voigt line shape that are relevant for the saturated lines observed
+  evidence_units:
+  - relation_id: rel.ycas_2019_19_19
+    paper: ycas2019.yaml
+    author: Ycas
+    year: 2019
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: spectral structure at the 3% level remains... incomplete baseline removal... small inaccuracies in the Hitran 2016 line-shape parameters... deviations from the Voigt line shape
+- limiting_principle: pri.fundamental_ch_stretch_enhancement_mir
+  supporting_papers: 1
+  paper_list:
+  - ycas2019.yaml
+  year_range: 2019-2019
+  first_authors:
+  - Ycas
+  best_evidence:
+    paper: ycas2019.yaml
+    author: Ycas
+    year: 2019
+    claim: access fundamental vibrational transitions further in the infrared, which can be 1000 times stronger
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: meth.dfg_comb_generation
+    expected_gain: '级联 DFG 或 OPO/OPA 向 5–12 µm 指纹区延拓， 将可探测 VOC 从 C-H 基频扩展到 C=O、C-O、C-Cl 等官能团
+
+      '
+    status: proposed
+    source:
+      zotero_key: FQ4KYV38
+      claim: With even broader spectral coverage, similar performance should be achievable for other important hazardous pollutants such as benzene, toluene, ethylbenzene, and xylenes (BTEX)
+  evidence_units:
+  - relation_id: rel.ycas_2019_19_20
+    paper: ycas2019.yaml
+    author: Ycas
+    year: 2019
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: access fundamental vibrational transitions further in the infrared, which can be 1000 times stronger
+- limiting_principle: pri.am_pm_conversion_photodetection
+  supporting_papers: 1
+  paper_list:
+  - zhang2012c.yaml
+  year_range: 2012-2012
+  first_authors:
+  - Zhang
+  best_evidence:
+    paper: zhang2012c.yaml
+    author: Zhang
+    year: 2012
+    claim: amplitude-to-phase coupling in the photodetection process is a strong limitation
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths: []
+  evidence_units:
+  - relation_id: rel.zhang_2012_12_06
+    paper: zhang2012c.yaml
+    author: Zhang
+    year: 2012
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: amplitude-to-phase coupling in the photodetection process is a strong limitation
+- limiting_principle: pri.servo_bandwidth_limited_comb_locking
+  supporting_papers: 1
+  paper_list:
+  - zhang2017.yaml
+  year_range: 2017-2017
+  first_authors:
+  - Zhang
+  best_evidence:
+    paper: zhang2017.yaml
+    author: Zhang
+    year: 2017
+    claim: the locking loop still has a relatively low servo bandwidth, which is indicated by the obvious gain bump at about 10 kHz
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: meth.eom_pzt_dual_actuator_frep_lock_z17
+    expected_gain: 改用腔内 EOM 等快执行器作为 f_ceo 高速通道，突破泵浦调制带宽限制
+    status: proposed
+    source:
+      zotero_key: 9RFKI5SH
+      claim: the feedback loop must be improved in subsequent work
+  evidence_units:
+  - relation_id: rel.zhang_2017_hOFC17_14
+    paper: zhang2017.yaml
+    author: Zhang
+    year: 2017
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: the locking loop still has a relatively low servo bandwidth, which is indicated by the obvious gain bump at about 10 kHz
+- limiting_principle: pri.am_to_pm_conversion_in_comb
+  supporting_papers: 1
+  paper_list:
+  - zhang2017.yaml
+  year_range: 2017-2017
+  first_authors:
+  - Zhang
+  best_evidence:
+    paper: zhang2017.yaml
+    author: Zhang
+    year: 2017
+    claim: The RIN of the mode-locked laser plays a key role in amplitude-to-phase conversion of f_rep detection and the conversion of intensity noise to f_ceo noise in optical combs.
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: pri.npe_nalm_hybrid_mode_locking
+    expected_gain: 通过 NPE 快饱和吸收降低 RIN → 降低 AM-PM 转换带来的 f_ceo 残余相噪
+    status: demonstrated
+    source:
+      zotero_key: 9RFKI5SH
+      claim: the RIN is as low as schemes based on pure NPE
+  evidence_units:
+  - relation_id: rel.zhang_2017_hOFC17_15
+    paper: zhang2017.yaml
+    author: Zhang
+    year: 2017
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: The RIN of the mode-locked laser plays a key role in amplitude-to-phase conversion of f_rep detection and the conversion of intensity noise to f_ceo noise in optical combs.
+- limiting_principle: pri.cavity_enhanced_hhg_comb
+  supporting_papers: 1
+  paper_list:
+  - zhang2022.yaml
+  year_range: 2022-2022
+  first_authors:
+  - Zhang
+  best_evidence:
+    paper: zhang2022.yaml
+    author: Zhang
+    year: 2022
+    claim: the typical bandwidth of a VUV comb is smaller than the uncertainty range of the 229mTh transition
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: meth.tunable_vuv_comb_generation_cavity_hhg
+    expected_gain: 通过调谐基频中心波长覆盖 229mTh 不确定度全部区间
+    status: demonstrated
+    source:
+      zotero_key: 25EY6V8L
+  evidence_units:
+  - relation_id: rel.zhang_2022_22_06
+    paper: zhang2022.yaml
+    author: Zhang
+    year: 2022
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: the typical bandwidth of a VUV comb is smaller than the uncertainty range of the 229mTh transition
+- limiting_principle: pri.thermal_drift_out_of_loop_fiber_noise
+  supporting_papers: 1
+  paper_list:
+  - zhang2022b.yaml
+  year_range: 2022-2022
+  first_authors:
+  - Zhang
+  best_evidence:
+    paper: zhang2022b.yaml
+    author: Zhang
+    year: 2022
+    claim: the main factor affecting the frequency instability of fiber OFCs is environmental disturbance in the out-of-loop fiber
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: meth.temperature_matched_multibranch_stabilization
+    expected_gain: 支路长度 ±1 cm + 温度 ±0.2 °C → out-of-loop 5.5×10⁻¹⁹ @4000 s
+    status: demonstrated
+    source:
+      zotero_key: BPQDL4DN
+      claim: we ensure that the fiber length error between different branches is within ±1 cm, and the temperature control range is within ±0.2 °C
+  - direction: meth.wideband_optical_frequency_synthesis
+    expected_gain: out-of-loop 可进一步压到 ~10⁻²⁰
+    status: demonstrated
+    source:
+      zotero_key: BPQDL4DN
+      claim: Real-time phase tracking technology can be used to compensate for optical phase drift due to thermal drift, which improves an OFC's relative instability at a low level of 10⁻²⁰
+  evidence_units:
+  - relation_id: rel.zhang_2022_22B_11
+    paper: zhang2022b.yaml
+    author: Zhang
+    year: 2022
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: the main factor affecting the frequency instability of fiber OFCs is environmental disturbance in the out-of-loop fiber
+- limiting_principle: pri.multibranch_vs_single_branch_tradeoff
+  supporting_papers: 1
+  paper_list:
+  - zhang2022b.yaml
+  year_range: 2022-2022
+  first_authors:
+  - Zhang
+  best_evidence:
+    paper: zhang2022b.yaml
+    author: Zhang
+    year: 2022
+    claim: multi-branch architecture ... results in more uncompensated fiber paths, which degrades the out-of-loop frequency instability of an OFC
+    is_system_limit: null
+    limit_status: null
+  breakthrough_paths:
+  - direction: meth.temperature_matched_multibranch_stabilization
+    expected_gain: 保留多支路 SNR 优势的同时将 OOL 压到 5.5×10⁻¹⁹
+    status: demonstrated
+    source:
+      zotero_key: BPQDL4DN
+      claim: we adopt a simple and effective method. That is done to ensure that the length and temperature between the different branch fibers are coincident
+  evidence_units:
+  - relation_id: rel.zhang_2022_22B_12
+    paper: zhang2022b.yaml
+    author: Zhang
+    year: 2022
+    is_system_limit: null
+    limit_status: null
+    verification: ''
+    claim: multi-branch architecture ... results in more uncompensated fiber paths, which degrades the out-of-loop frequency instability of an OFC

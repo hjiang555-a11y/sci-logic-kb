@@ -1,9 +1,0 @@
-evidence: a breakdown of Taylor's frozen-turbulence hypothesis which might be possible
-  for our measurements due to the low perpendicular wind speeds
-id: evrel_EB5IM2K9_rel.caldwell_2020_20_07
-metadata:
-  source_paper: caldwell2020
-  zotero_key: EB5IM2K9
-object: pri.taylor_frozen_turbulence_hypothesis
-predicate: BOUNDED-BY
-subject: met.timing_jitter_psd_atmospheric_c20

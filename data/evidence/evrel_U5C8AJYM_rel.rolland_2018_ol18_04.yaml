@@ -1,9 +1,0 @@
-evidence: detect and stabilize f_ceo while simultaneously correlating differential
-  phase noise
-id: evrel_U5C8AJYM_rel.rolland_2018_ol18_04
-metadata:
-  source_paper: rolland2018
-  zotero_key: U5C8AJYM
-object: ent.dual_branch_er_comb_rolland18
-predicate: OPERATIONALIZED-AS
-subject: meth.dual_branch_fceo_locking_passive_cancellation_r18

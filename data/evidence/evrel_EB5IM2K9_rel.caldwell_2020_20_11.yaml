@@ -1,9 +1,0 @@
-evidence: the factor of 4 comes from treating the timing jitter ... two separate random
-  variables, X and Y
-id: evrel_EB5IM2K9_rel.caldwell_2020_20_11
-metadata:
-  source_paper: caldwell2020
-  zotero_key: EB5IM2K9
-object: ent.bistatic_two_way_optical_link_h24
-predicate: COMPETES-WITH
-subject: ent.two_way_comb_timing_link_c20

@@ -1,9 +1,0 @@
-evidence: Yb:fiber comb amplified to >50 W average power with <150 fs pulse duration
-  before cavity-enhanced HHG
-id: evrel_25EY6V8L_rel.zhang_2022_22_02
-metadata:
-  source_paper: zhang2022
-  zotero_key: 25EY6V8L
-object: met.ir_power_before_hhg_z22
-predicate: CHARACTERIZED-BY
-subject: ent.tunable_vuv_comb_z22

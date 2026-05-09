@@ -1,9 +1,0 @@
-evidence: variations in the refractive index of air cause fluctuations in the time-of-flight
-  of laser light
-id: evrel_EB5IM2K9_rel.caldwell_2020_20_02
-metadata:
-  source_paper: caldwell2020
-  zotero_key: EB5IM2K9
-object: ent.atmospheric_turbulence_channel
-predicate: CONDITIONED-BY
-subject: ent.two_way_comb_timing_link_c20

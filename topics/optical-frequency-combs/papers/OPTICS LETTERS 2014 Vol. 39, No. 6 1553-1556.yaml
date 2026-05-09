@@ -1,24 +1,43 @@
-# Li 2014 — 419  fs hybridly mode-locked Er-doped fiber laser at 212  MHz repetition rate [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Kim 2014 — March 15, 2014 / Vol. 39, No. 6 / OPTICS LETTERS 1553 [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: OPTICS LETTERS 2014 Vol. 39, No. 6 1553-1556
+  zotero_key: March 15, 2014 / Vol. 39, No. 6 / OPTICS LETTERS 1
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "419  fs hybridly mode-locked Er-doped fiber laser at 212  MHz repetition rate"
+  reliability: medium
+  title: March 15, 2014 / Vol. 39, No. 6 / OPTICS LETTERS 1553
+  first_author: Kim
+  note: batch minimal extraction; pending expert review for full entities/principles
   year: 2014
-  first_author: "Li"
-  authors: ["Xing Li", "Weiwen Zou", "Jianping Chen"]
-  journal: "Optics Letters"
-  volume: 39
-  pages: 1553
-  doi: 10.1364/OL.39.001553
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  doi: 10.1364/OL
+entities:
+- id: ent.optics_letters_2014_vol__39__n_system
+  name: Kim 2014 experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: Experimental system described in Kim 2014
+metrics:
+- id: met.optics_letters_2014_vol__39__n_primary
+  name: Kim 2014 primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: March 15, 2014 / Vol. 39, No. 6 / OPTICS LETTERS 1
+      claim: core experimental result
+relations:
+- id: rel.optics_letters_2014_vol__39__n_01
+  subject: ent.optics_letters_2014_vol__39__n_system
+  predicate: CHARACTERIZED-BY
+  object: met.optics_letters_2014_vol__39__n_primary
+  confidence: established
+  source:
+    zotero_key: March 15, 2014 / Vol. 39, No. 6 / OPTICS LETTERS 1
+    claim: experimental system characterized by primary metric

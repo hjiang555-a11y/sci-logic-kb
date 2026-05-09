@@ -1,8 +1,0 @@
-evidence: high degree of phase correlation between the teeth of the frequency comb
-id: evrel_QEJS62JG_rel.zhang_2024_ha24_03
-metadata:
-  source_paper: zhang_s2024
-  zotero_key: QEJS62JG
-object: pri.comb_equation
-predicate: ENABLED-BY
-subject: pri.gated_detection_phase_coherent_snr_enhancement_z24

@@ -1,9 +1,0 @@
-evidence: the frequency noise level reaches the thermal noise limit of the 1-km fiber
-  round trip ... in the 4–200 Hz Fourier frequency range
-id: evrel_SBPRDKPV_rel.jeon_2025_e08
-metadata:
-  source_paper: jeon2025
-  zotero_key: SBPRDKPV
-object: pri.fiber_thermal_noise_wanser
-predicate: BOUNDED-BY
-subject: ent.fiber_interferometer

@@ -1,8 +1,0 @@
-evidence: Thousands of equidistant comb lines generated across the C-band
-id: evrel_GY48UQ7F_rel.wang_2017_an05
-metadata:
-  source_paper: wang2017
-  zotero_key: GY48UQ7F
-object: met.number_of_comb_lines_w17
-predicate: CHARACTERIZED-BY
-subject: ent.iii_v_on_si_ultradense_comb_w17

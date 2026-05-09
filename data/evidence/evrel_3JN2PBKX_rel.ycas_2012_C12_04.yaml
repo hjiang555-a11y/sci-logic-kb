@@ -1,9 +1,0 @@
-evidence: RV precision limited by spectrograph calibration stability and modal noise
-  rather than the comb itself
-id: evrel_3JN2PBKX_rel.ycas_2012_C12_04
-metadata:
-  source_paper: ycas2012
-  zotero_key: 3JN2PBKX
-object: pri.fabry_perot_mode_filter_astro_comb
-predicate: BOUNDED-BY
-subject: met.astro_comb_rv_precision_y12

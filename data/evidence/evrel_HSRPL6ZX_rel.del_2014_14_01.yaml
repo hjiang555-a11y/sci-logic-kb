@@ -1,9 +1,0 @@
-evidence: microresonator-based optical frequency combs generated in a fused silica
-  microrod resonator
-id: evrel_HSRPL6ZX_rel.del_2014_14_01
-metadata:
-  source_paper: delhaye2014
-  zotero_key: HSRPL6ZX
-object: ent.microresonator_frequency_comb
-predicate: PART-OF
-subject: ent.silica_microrod_comb_d14

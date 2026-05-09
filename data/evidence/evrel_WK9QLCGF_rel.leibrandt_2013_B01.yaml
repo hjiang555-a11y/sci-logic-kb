@@ -1,9 +1,0 @@
-evidence: optical frequency reference based on spectral hole burning... compared to
-  a Fabry-Pérot cavity
-id: evrel_WK9QLCGF_rel.leibrandt_2013_B01
-metadata:
-  source_paper: leibrandt2013
-  zotero_key: WK9QLCGF
-object: ent.fp_cavity_system
-predicate: COMPETES-WITH
-subject: ent.shb_eu_yso_reference_l13

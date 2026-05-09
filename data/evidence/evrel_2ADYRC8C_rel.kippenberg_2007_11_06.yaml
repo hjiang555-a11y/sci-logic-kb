@@ -1,9 +1,0 @@
-evidence: parametric frequency conversion will annihilate two pump photons and create
-  a new pair of photons
-id: evrel_2ADYRC8C_rel.kippenberg_2007_11_06
-metadata:
-  source_paper: kippenberg2011
-  zotero_key: 2ADYRC8C
-object: pri.parametric_four_wave_mixing_comb
-predicate: ENABLED-BY
-subject: ent.microresonator_frequency_comb

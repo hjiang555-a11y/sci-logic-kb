@@ -1,9 +1,0 @@
-evidence: The comb-calibrated FMCW sensor achieves 652 fs temporal resolution, with
-  potential to reach 70 fs using broadband lasers.
-id: evrel_2QUW2P6D_rel.huang_2024_U24_01
-metadata:
-  source_paper: huang2024
-  zotero_key: 2QUW2P6D
-object: met.fmcw_temporal_resolution_h24
-predicate: CHARACTERIZED-BY
-subject: ent.comb_calibrated_fmcw_nlos_sensor_h24

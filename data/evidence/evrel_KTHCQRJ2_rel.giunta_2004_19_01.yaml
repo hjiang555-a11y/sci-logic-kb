@@ -1,9 +1,0 @@
-evidence: If the two quantities f_rep and f_CEO are known (and, ideally, referenced
-  through phase-locks), the frequency ruler is established
-id: evrel_KTHCQRJ2_rel.giunta_2004_19_01
-metadata:
-  source_paper: giunta2019
-  zotero_key: KTHCQRJ2
-object: pri.self_referencing_f2f
-predicate: ENABLED-BY
-subject: ent.optical_frequency_comb

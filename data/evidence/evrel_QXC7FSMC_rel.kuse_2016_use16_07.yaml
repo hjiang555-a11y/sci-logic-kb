@@ -1,9 +1,0 @@
-evidence: NALM vs graphene EOM approaches both achieve all-PM low-noise Er fiber combs
-  with different mechanisms
-id: evrel_QXC7FSMC_rel.kuse_2016_use16_07
-metadata:
-  source_paper: kuse2016
-  zotero_key: QXC7FSMC
-object: ent.all_pm_er_fiber_comb_k15
-predicate: COMPETES-WITH
-subject: ent.all_pm_er_nalm_comb_k16

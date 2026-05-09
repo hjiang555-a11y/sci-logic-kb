@@ -1,8 +1,0 @@
-evidence: narrowest linewidth of an FDL-stabilized laser
-id: evrel_F2GG2N6W_rel.huang_2019_JC01
-metadata:
-  source_paper: huangjc2019
-  zotero_key: F2GG2N6W
-object: met.fiber_laser_linewidth_hjc19
-predicate: CHARACTERIZED-BY
-subject: ent.fiber_interferometer

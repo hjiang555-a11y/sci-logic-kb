@@ -1,9 +1,0 @@
-evidence: the noise suppression effect of the digital servo inside the FNC and LPS
-  loops reached 75 dB and 40 dB at 1 Hz, respectively.
-id: evrel_IUCMUIEI_rel.xia_2025_02
-metadata:
-  source_paper: xia2025
-  zotero_key: IUCMUIEI
-object: meth.fiber_link_phase_noise_cancellation_w16
-predicate: ENABLED-BY
-subject: ent.fpga_multiloop_autolock_xia25

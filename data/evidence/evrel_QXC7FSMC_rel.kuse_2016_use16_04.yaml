@@ -1,9 +1,0 @@
-evidence: A fully stabilized all polarization-maintaining Er frequency comb with a
-  nonlinear amplifying loop mirror is demonstrated
-id: evrel_QXC7FSMC_rel.kuse_2016_use16_04
-metadata:
-  source_paper: kuse2016
-  zotero_key: QXC7FSMC
-object: ent.all_pm_er_nalm_comb_k16
-predicate: OPERATIONALIZED-AS
-subject: meth.nalm_all_pm_er_comb_stabilization

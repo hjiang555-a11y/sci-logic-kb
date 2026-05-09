@@ -1,9 +1,0 @@
-evidence: obtaining −83 dBc/Hz at 1 Hz and <−166 dBc/Hz for offsets greater than 5
-  kHz.
-id: evrel_H7A8L8LT_rel.giunta_2020_03
-metadata:
-  source_paper: giunta2020b
-  zotero_key: H7A8L8LT
-object: met.pmo_phase_noise_12ghz_giunta20b
-predicate: CHARACTERIZED-BY
-subject: ent.compact_pmo_giunta20b

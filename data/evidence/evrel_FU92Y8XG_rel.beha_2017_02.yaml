@@ -1,9 +1,0 @@
-evidence: they achieve <5×10⁻¹⁴ fractional accuracy and stability, which opens a novel
-  regime for tunable combs with wide mode spacing
-id: evrel_FU92Y8XG_rel.beha_2017_02
-metadata:
-  source_paper: beha2017
-  zotero_key: FU92Y8XG
-object: ent.eom_frequency_comb
-predicate: CHARACTERIZED-BY
-subject: met.eom_comb_frequency_accuracy

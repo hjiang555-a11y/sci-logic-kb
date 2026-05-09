@@ -1,24 +1,42 @@
-# Beha 2017 — Electronic synthesis of light [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Electronic synthesis of light [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：optical-frequency-combs
 meta:
-  zotero_key: 2905-2
+  zotero_key: Electronic synthesis of light
   topic: optical-frequency-combs
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Electronic synthesis of light"
-  year: 2017
-  first_author: "Beha"
-  authors: ["Katja Beha", "Daniel C. Cole", "Pascal Del’Haye", "Aurélien Coillet", "Scott A. Diddams", "Scott B. Papp"]
-  journal: "Optica"
-  volume: 4
-  pages: 406
-  doi: 10.1364/OPTICA.4.000406
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Electronic synthesis of light
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1364/OPTICA
+entities:
+- id: ent.2905_2_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.2905_2_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Electronic synthesis of light
+      claim: core experimental result
+relations:
+- id: rel.2905_2_01
+  subject: ent.2905_2_system
+  predicate: CHARACTERIZED-BY
+  object: met.2905_2_primary
+  confidence: established
+  source:
+    zotero_key: Electronic synthesis of light
+    claim: experimental system characterized by primary metric

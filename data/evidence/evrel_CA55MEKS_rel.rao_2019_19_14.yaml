@@ -1,8 +1,0 @@
-evidence: 通过电光晶体和压电陶瓷改变飞秒激光光源腔长来控制重复频率 frep
-id: evrel_CA55MEKS_rel.rao_2019_19_14
-metadata:
-  source_paper: rao2019
-  zotero_key: CA55MEKS
-object: pri.dual_actuator_eom_pzt_frep_control
-predicate: ENABLED-BY
-subject: meth.eom_pzt_cavity_length_frep_lock_r19

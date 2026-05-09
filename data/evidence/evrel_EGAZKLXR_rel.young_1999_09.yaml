@@ -1,9 +1,0 @@
-evidence: protect cavity from vibrational noise by mounting vacuum chamber on passively
-  isolated optical table
-id: evrel_EGAZKLXR_rel.young_1999_09
-metadata:
-  source_paper: young1999
-  zotero_key: EGAZKLXR
-object: ent.fp_cavity_system
-predicate: PART-OF
-subject: ent.vibration_isolation

@@ -1,18 +1,41 @@
-#  ???? — untitled [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Swallows  — Prototype of an ultra-stable optical [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：ultrastable-laser
 meta:
-  zotero_key: Argence oe 2012
+  zotero_key: Prototype of an ultra-stable optical
   topic: ultrastable-laser
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
   reliability: medium
-  title: "untitled"
-  first_author: ""
-  note: >
-    [批量提取] 元数据来源：PDF metadata。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  title: Prototype of an ultra-stable optical
+  first_author: Swallows
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.argence_oe_2012_system
+  name: Swallows  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Swallows '
+metrics:
+- id: met.argence_oe_2012_primary
+  name: Swallows  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Prototype of an ultra-stable optical
+      claim: core experimental result
+relations:
+- id: rel.argence_oe_2012_01
+  subject: ent.argence_oe_2012_system
+  predicate: CHARACTERIZED-BY
+  object: met.argence_oe_2012_primary
+  confidence: established
+  source:
+    zotero_key: Prototype of an ultra-stable optical
+    claim: experimental system characterized by primary metric

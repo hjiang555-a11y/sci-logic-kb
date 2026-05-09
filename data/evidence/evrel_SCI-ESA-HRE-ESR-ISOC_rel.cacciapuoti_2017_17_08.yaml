@@ -1,9 +1,0 @@
-evidence: When two or more clocks are in common-view of the ISS, they can be compared/synchronized
-  directly
-id: evrel_SCI-ESA-HRE-ESR-ISOC_rel.cacciapuoti_2017_17_08
-metadata:
-  source_paper: cacciapuoti2017
-  zotero_key: SCI-ESA-HRE-ESR-ISOC
-object: pri.common_view_clock_comparison
-predicate: OPERATIONALIZED-AS
-subject: ent.space_optical_clock_mission

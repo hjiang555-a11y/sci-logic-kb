@@ -1,9 +1,0 @@
-evidence: The fractional length stability of typical 10 cm long cavities is limited
-  to a flicker floor at the 10⁻¹⁵ level, attributed to inevitable thermal noise
-id: evrel_MW3RDB68_rel.legero_2010_eg02
-metadata:
-  source_paper: legero2010
-  zotero_key: MW3RDB68
-object: pri.brownian_thermal_noise_fdt
-predicate: BOUNDED-BY
-subject: ent.fp_cavity_system

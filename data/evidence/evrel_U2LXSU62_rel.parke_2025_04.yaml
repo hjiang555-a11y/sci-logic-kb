@@ -1,9 +1,0 @@
-evidence: active cancellation can reduce the RAM-induced deviations... by more than
-  two orders of magnitude
-id: evrel_U2LXSU62_rel.parke_2025_04
-metadata:
-  source_paper: parke2025
-  zotero_key: U2LXSU62
-object: met.ram_fractional_instability_p25
-predicate: CHARACTERIZED-BY
-subject: meth.pdh_locking

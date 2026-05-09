@@ -1,9 +1,0 @@
-evidence: leading to fiber modal noise, which is known to be worse in the NIR than
-  the optical
-id: evrel_9YYDT9H4_rel.metcalf_2019_19_12
-metadata:
-  source_paper: metcalf2019
-  zotero_key: 9YYDT9H4
-object: pri.fiber_modal_noise_nir_rv_limit
-predicate: BOUNDED-BY
-subject: met.stellar_rv_precision_nir_m19

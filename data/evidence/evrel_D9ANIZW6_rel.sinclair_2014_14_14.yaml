@@ -1,9 +1,0 @@
-evidence: The 2.4–5 fs pulse-to-pulse timing jitter is achieved through the all-PM
-  fiber comb with optical lock under mobile vibration conditions.
-id: evrel_D9ANIZW6_rel.sinclair_2014_14_14
-metadata:
-  source_paper: sinclair2014
-  zotero_key: D9ANIZW6
-object: meth.ruggedized_fiber_comb_optical_lock_s14
-predicate: OPERATIONALIZED-AS
-subject: met.pulse_to_pulse_timing_jitter_s14

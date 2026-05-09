@@ -1,24 +1,42 @@
-# Delva 2017 — Clocks in Space for Tests of Fundamental Physics [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — SpaceSciRev(2017)212:1385–1421 [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：frequency-standards
 meta:
-  zotero_key: Delva2017_Article_ClocksInSpaceForTestsOfFunda
+  zotero_key: SpaceSciRev(2017)212:1385–1421
   topic: frequency-standards
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Clocks in Space for Tests of Fundamental Physics"
-  year: 2017
-  first_author: "Delva"
-  authors: ["Pacôme Delva", "Aurélien Hees", "Peter Wolf"]
-  journal: "Space Science Reviews"
-  volume: 212
-  pages: 1385-1421
+  reliability: medium
+  title: SpaceSciRev(2017)212:1385–1421
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
   doi: 10.1007/s11214-017-0361-9
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+entities:
+- id: ent.delva2017_article_clocksinspac_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.delva2017_article_clocksinspac_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: SpaceSciRev(2017)212:1385–1421
+      claim: core experimental result
+relations:
+- id: rel.delva2017_article_clocksinspac_01
+  subject: ent.delva2017_article_clocksinspac_system
+  predicate: CHARACTERIZED-BY
+  object: met.delva2017_article_clocksinspac_primary
+  confidence: established
+  source:
+    zotero_key: SpaceSciRev(2017)212:1385–1421
+    claim: experimental system characterized by primary metric

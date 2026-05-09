@@ -1,8 +1,0 @@
-evidence: frequency noise comparable to ULE cavity-stabilized laser at 30-3000 Hz
-id: evrel_T8JR8IJ7_rel.jiang_2010_01
-metadata:
-  source_paper: jiang2010
-  zotero_key: T8JR8IJ7
-object: met.freq_noise_psd_fiber
-predicate: CHARACTERIZED-BY
-subject: ent.agile_laser_system

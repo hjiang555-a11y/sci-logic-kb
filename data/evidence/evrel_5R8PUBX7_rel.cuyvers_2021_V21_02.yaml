@@ -1,9 +1,0 @@
-evidence: The heterogeneous III-V-on-SiN MLL demonstrates an optical linewidth below
-  200 kHz.
-id: evrel_5R8PUBX7_rel.cuyvers_2021_V21_02
-metadata:
-  source_paper: cuyvers2021
-  zotero_key: 5R8PUBX7
-object: met.mll_optical_linewidth_c21
-predicate: CHARACTERIZED-BY
-subject: ent.hetero_iii_v_sin_mll_comb_c21

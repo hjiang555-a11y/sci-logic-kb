@@ -1,9 +1,0 @@
-evidence: The DPSSL comb with PM interleaver competes with monolithic mode-locked
-  laser combs as alternative low-phase-noise photonic microwave sources.
-id: evrel_BESI3AEE_rel.portuondo_campa_2015_C15_12
-metadata:
-  source_paper: portuondo-campa2015
-  zotero_key: BESI3AEE
-object: ent.monolithic_modelocked_laser_comb_k22
-predicate: COMPETES-WITH
-subject: ent.dpss_comb_interleaver_pc15

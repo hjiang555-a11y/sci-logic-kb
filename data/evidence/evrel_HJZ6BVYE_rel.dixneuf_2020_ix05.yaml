@@ -1,8 +1,0 @@
-evidence: 1 MHz bandwidth servo
-id: evrel_HJZ6BVYE_rel.dixneuf_2020_ix05
-metadata:
-  source_paper: dixneuf2020
-  zotero_key: HJZ6BVYE
-object: meth.fiber_mopa_with_rin_servo_d20
-predicate: CHARACTERIZES
-subject: met.servo_bandwidth_d20

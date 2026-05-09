@@ -1,9 +1,0 @@
-evidence: High sensitivity achieved by optical heterodyne detection with sidebands
-  from rf phase modulation
-id: evrel_694DPR5F_rel.drever_1983_02
-metadata:
-  source_paper: drever1983
-  zotero_key: 694DPR5F
-object: pri.pdh_heterodyne_detection
-predicate: ENABLED-BY
-subject: meth.pdh_locking

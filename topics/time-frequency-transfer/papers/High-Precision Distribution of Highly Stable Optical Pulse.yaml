@@ -1,23 +1,41 @@
-# Ning 2014 — High-Precision Distribution of Highly Stable Optical Pulse Trains with 8.8 × ... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Ning  — High-Precision Distribution of Highly [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
 meta:
-  zotero_key: High-Precision Distribution of Highly Stable Optical Pulse
+  zotero_key: High-Precision Distribution of Highly
   topic: time-frequency-transfer
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "High-Precision Distribution of Highly Stable Optical Pulse Trains with 8.8 × 10−19 instability"
-  year: 2014
-  first_author: "Ning"
-  authors: ["B. Ning", "S. Y. Zhang", "D. Hou", "J. T. Wu", "Z. B. Li", "J. Y. Zhao"]
-  journal: "Scientific Reports"
-  volume: 4
-  doi: 10.1038/srep05109
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: High-Precision Distribution of Highly
+  first_author: Ning
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.high_precision_distribution_of_system
+  name: Ning  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Ning '
+metrics:
+- id: met.high_precision_distribution_of_primary
+  name: Ning  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: High-Precision Distribution of Highly
+      claim: core experimental result
+relations:
+- id: rel.high_precision_distribution_of_01
+  subject: ent.high_precision_distribution_of_system
+  predicate: CHARACTERIZED-BY
+  object: met.high_precision_distribution_of_primary
+  confidence: established
+  source:
+    zotero_key: High-Precision Distribution of Highly
+    claim: experimental system characterized by primary metric

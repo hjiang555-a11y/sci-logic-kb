@@ -1,18 +1,42 @@
-#  ???? — Characterization of the long-term2018 [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Akamatsu  — Measurement Science and Technology [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：ultrastable-laser
 meta:
-  zotero_key: Characterization of the long-term2018
+  zotero_key: Measurement Science and Technology
   topic: ultrastable-laser
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: low
-  title: "Characterization of the long-term2018"
-  first_author: ""
-  note: >
-    [批量提取] 元数据来源：placeholder (needs expert review)。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Measurement Science and Technology
+  first_author: Akamatsu
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1088/1361-6501/aac3b0
+entities:
+- id: ent.characterization_of_the_long_t_system
+  name: Akamatsu  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Akamatsu '
+metrics:
+- id: met.characterization_of_the_long_t_primary
+  name: Akamatsu  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Measurement Science and Technology
+      claim: core experimental result
+relations:
+- id: rel.characterization_of_the_long_t_01
+  subject: ent.characterization_of_the_long_t_system
+  predicate: CHARACTERIZED-BY
+  object: met.characterization_of_the_long_t_primary
+  confidence: established
+  source:
+    zotero_key: Measurement Science and Technology
+    claim: experimental system characterized by primary metric

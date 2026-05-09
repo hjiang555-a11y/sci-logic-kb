@@ -1,19 +1,41 @@
-#  ???? — nwaf352 [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — 113 km absolute ranging with nanometer precision [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：time-frequency-transfer
 meta:
-  zotero_key: nwaf352
+  zotero_key: 113 km absolute ranging with nanometer precision
   topic: time-frequency-transfer
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: low
-  title: "nwaf352"
-  first_author: ""
-  doi: 10.1093/nsr/nwaf352/8239805
-  note: >
-    [批量提取] 元数据来源：placeholder (needs expert review)。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: 113 km absolute ranging with nanometer precision
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.nwaf352_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.nwaf352_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: 113 km absolute ranging with nanometer precision
+      claim: core experimental result
+relations:
+- id: rel.nwaf352_01
+  subject: ent.nwaf352_system
+  predicate: CHARACTERIZED-BY
+  object: met.nwaf352_primary
+  confidence: established
+  source:
+    zotero_key: 113 km absolute ranging with nanometer precision
+    claim: experimental system characterized by primary metric

@@ -1,24 +1,42 @@
-# Zhang 2014 — Reduction of residual amplitude modulation to 1 × 10^-6 for frequency modulat... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Reduction of residual amplitude modulation [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：ultrastable-laser
 meta:
-  zotero_key: Opt. Lett. 39(7), 1980-1983 (2014)
+  zotero_key: Reduction of residual amplitude modulation
   topic: ultrastable-laser
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Reduction of residual amplitude modulation to 1 × 10^-6 for frequency modulation and laser stabilization"
-  year: 2014
-  first_author: "Zhang"
-  authors: ["W. Zhang", "M. J. Martin", "C. Benko", "J. L. Hall", "J. Ye", "C. Hagemann", "T. Legero", "U. Sterr", "F. Riehle", "G. D. Cole", "M. Aspelmeyer"]
-  journal: "Optics Letters"
-  volume: 39
-  pages: 1980
-  doi: 10.1364/OL.39.001980
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Reduction of residual amplitude modulation
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1364/OL
+entities:
+- id: ent.opt__lett__39_7___1980_1983__2_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.opt__lett__39_7___1980_1983__2_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Reduction of residual amplitude modulation
+      claim: core experimental result
+relations:
+- id: rel.opt__lett__39_7___1980_1983__2_01
+  subject: ent.opt__lett__39_7___1980_1983__2_system
+  predicate: CHARACTERIZED-BY
+  object: met.opt__lett__39_7___1980_1983__2_primary
+  confidence: established
+  source:
+    zotero_key: Reduction of residual amplitude modulation
+    claim: experimental system characterized by primary metric

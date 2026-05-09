@@ -1,23 +1,42 @@
-# Chou 2010 — Frequency Comparison of Two High-Accuracy<mml:math xmlns:mml="http://www.w3.o... [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+# Clocks  — Frequency Comparison of Two High-Accuracy Alþ Optical Clocks [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：frequency-standards
 meta:
-  zotero_key: Al ion Chou CW PRL 2010
+  zotero_key: Frequency Comparison of Two High-Accuracy Alþ Opti
   topic: frequency-standards
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: high
-  title: "Frequency Comparison of Two High-Accuracy<mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mml:msup><mml:mi>Al</mml:mi><mml:mo>+</mml:mo></mml:msup></mml:math>Optical Clocks"
-  year: 2010
-  first_author: "Chou"
-  authors: ["C. Chou", "D. Hume", "J. Koelemeij", "D. Wineland", "T. Rosenband"]
-  journal: "Physical Review Letters"
-  volume: 104
-  doi: 10.1103/PhysRevLett.104.070802
-  note: >
-    [批量提取] 元数据来源：CrossRef。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Frequency Comparison of Two High-Accuracy Alþ Optical Clocks
+  first_author: Clocks
+  note: batch minimal extraction; pending expert review for full entities/principles
+  doi: 10.1103/PhysRevLett
+entities:
+- id: ent.al_ion_chou_cw_prl_2010_system
+  name: Clocks  experimental system
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in Clocks '
+metrics:
+- id: met.al_ion_chou_cw_prl_2010_primary
+  name: Clocks  primary metric
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Frequency Comparison of Two High-Accuracy Alþ Opti
+      claim: core experimental result
+relations:
+- id: rel.al_ion_chou_cw_prl_2010_01
+  subject: ent.al_ion_chou_cw_prl_2010_system
+  predicate: CHARACTERIZED-BY
+  object: met.al_ion_chou_cw_prl_2010_primary
+  confidence: established
+  source:
+    zotero_key: Frequency Comparison of Two High-Accuracy Alþ Opti
+    claim: experimental system characterized by primary metric

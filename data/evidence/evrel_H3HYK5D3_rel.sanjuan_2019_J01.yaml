@@ -1,8 +1,0 @@
-evidence: high-finesse optical cavity
-id: evrel_H3HYK5D3_rel.sanjuan_2019_J01
-metadata:
-  source_paper: sanjuan2019
-  zotero_key: H3HYK5D3
-object: ent.fp_cavity_system
-predicate: PART-OF
-subject: ent.boost_cubic_cavity_s19

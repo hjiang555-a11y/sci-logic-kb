@@ -1,0 +1,77 @@
+chain_id: comb_phase_noise_timing_jitter
+question: What limits the phase noise and timing jitter of optical frequency combs, and how close are we to the quantum limit?
+domain: optical-frequency-combs
+confidence: draft
+last_updated: '2026-05-09'
+current_best:
+  value: '10 GHz absolute timing jitter: 420 attoseconds (1 Hz-5 GHz)'
+  system: Fortier 2012 10 GHz hybrid oscillator
+limiting_principle:
+  id: pri.gain_lifetime_servo_bandwidth_limit
+  name: Gain lifetime limits f_CEO servo bandwidth
+  defined_by: kuse2015.yaml
+  statement: Er:fiber upper-state lifetime limits pump-modulation f_CEO servo bandwidth to ~20 kHz, constraining integrated phase noise.
+condition_variables:
+- symbol: f_CEO_bandwidth
+  name: f_CEO servo bandwidth
+  effect: Pump modulation 20 kHz -> graphene/EOM MHz bandwidth
+  milestones:
+  - '2007: McFerran 80 kHz, 0.99 rad2 noise'
+  - '2015: Kuse graphene modulator MHz BW'
+  - '2020: Lesko AOM feedforward >100 kHz'
+- symbol: optical_reference
+  name: Optical reference quality
+  effect: sigma_y(microwave) = sigma_y(optical) / N via OFD
+  milestones:
+  - '2011: Fortier 760 as jitter'
+  - '2012: Fortier 420 as jitter @10 GHz'
+  - '2014: Nicolodi 10^-18 purity transfer'
+timeline:
+- year: 2007
+  value: 0.99 rad2 f_CEO noise
+  system: McFerran Er:fiber
+  note: First f_CEO lock characterization
+- year: 2010
+  value: -111 dBc/Hz @1Hz, 11.55 GHz
+  system: Le Coq CSO-referenced OFD
+  note: CSO-comb-microwave chain
+- year: 2011
+  value: 760 as (1 Hz-5 GHz)
+  system: Fortier Ti:Sapphire OFD
+  note: First sub-fs demonstration
+- year: 2012
+  value: 420 as absolute jitter
+  system: Fortier 10 GHz hybrid
+  note: Near fundamental thermal limits
+- year: 2014
+  value: 10^-18 spectral purity transfer
+  system: Nicolodi optical-to-optical
+  note: Ultimate optical division
+- year: 2015
+  value: MHz f_CEO bandwidth
+  system: Kuse graphene modulator
+  note: Bypasses gain lifetime limit
+- year: 2020
+  value: AOM feedforward >100 kHz
+  system: Lesko 1 GHz turnkey comb
+  note: 438->50 mrad target
+edges:
+- from: Comb microwave phase noise
+  to: pri.gain_lifetime_servo_bandwidth_limit
+  relation: BOUNDED-BY
+- from: pri.gain_lifetime_servo_bandwidth_limit
+  to: Graphene/EOM modulators (MHz BW)
+  relation: RESOLVED-BY
+  status: demonstrated
+- from: 'Current: 420 as jitter'
+  to: 'Quantum limit: shot noise floor'
+  relation: REMAINING-GAP (~5-10x)
+evidence:
+- relation_id: rel.kuse_2015_15_06
+  claim: f_CEO servo bandwidth limited by EDFA gain lifetime
+- relation_id: rel.fortier_2011_o01
+  claim: 760 as absolute timing jitter via optical frequency division
+- relation_id: rel.nicolodi_2014_01
+  claim: spectral purity transfer at 10^-18 level
+- relation_id: rel.lesko_2020_006
+  claim: AOM feedforward extends effective f_CEO bandwidth

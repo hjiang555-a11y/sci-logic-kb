@@ -1,8 +1,0 @@
-evidence: ultrastable long-distance fibre-optic time transfer
-id: evrel_3mi33g2r_rel.krehlik_2015_re15_03
-metadata:
-  source_paper: krehlik2015_3mi33g2r
-  zotero_key: 3mi33g2r
-object: met.rf_over_fiber_link_instability
-predicate: CHARACTERIZED-BY
-subject: ent.rf_over_fiber_time_transfer_link

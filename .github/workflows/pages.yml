@@ -1,16 +1,16 @@
-name: GitHub Pages
+name: Deploy Site
 
 on:
   push:
     branches: [main]
     paths:
-      - 'docs/graph/**'
-      - 'INDEX*.md'
-      - 'README.md'
-      - 'topics/**/synthesis/*.md'
-      - 'reports/active/*.md'
-      - 'reports/README.md'
+      - 'topics/**/*.yaml'
+      - 'logic/chains/*.yaml'
+      - 'consensus/*.yaml'
+      - 'scripts/build_site.py'
       - '.github/workflows/pages.yml'
+  schedule:
+    - cron: '0 0 * * 0'  # Weekly rebuild
   workflow_dispatch:
 
 permissions:
@@ -23,7 +23,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  build-and-deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -31,13 +31,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/configure-pages@v4
+      - uses: actions/setup-python@v5
         with:
-          enablement: true
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Build static site
+        run: python scripts/build_site.py
+
+      - uses: actions/configure-pages@v4
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: 'docs/site'
 
       - name: Deploy to GitHub Pages
         id: deployment

@@ -1,9 +1,0 @@
-evidence: temperature (16 kHz K⁻²), pressure (-11.4 Hz Pa⁻¹) and acceleration (7×10⁻¹²
-  g⁻¹)
-id: evrel_Q2MRB267_rel.thorpe_2011_H02
-metadata:
-  source_paper: thorpe2011
-  zotero_key: Q2MRB267
-object: met.shb_environmental_sensitivity_thorpe11
-predicate: CHARACTERIZED-BY
-subject: ent.shb_eu_yso_reference_l13

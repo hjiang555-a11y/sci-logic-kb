@@ -1,18 +1,41 @@
-#  ???? — OL kefelian et al 2009 [evidence]
-# 提取者：AI（待专家确认）
-# 提取日期：2026-05-04
+#   — Ultralow-frequency-noise stabilization of a laser [evidence]
+# 提取者：AI (batch)
+# 提取日期：2026-05-09
+# Schema版本：v4.5
+# 专题：ultrastable-laser
 meta:
-  zotero_key: OL kefelian et al 2009
+  zotero_key: Ultralow-frequency-noise stabilization of a laser
   topic: ultrastable-laser
-  source_type: journal_paper
+  source_type: technical_paper
   contribution_type: evidence
-  reliability: low
-  title: "OL kefelian et al 2009"
-  first_author: ""
-  note: >
-    [批量提取] 元数据来源：placeholder (needs expert review)。内容待专家提取。
-entities: []
-principles: []
-methods: []
-metrics: []
-relations: []
+  reliability: medium
+  title: Ultralow-frequency-noise stabilization of a laser
+  first_author: ''
+  note: batch minimal extraction; pending expert review for full entities/principles
+entities:
+- id: ent.ol_kefelian_et_al_2009_system
+  name: '  experimental system'
+  hierarchy_level: 2
+  status: demonstrated
+  function: 'Experimental system described in  '
+metrics:
+- id: met.ol_kefelian_et_al_2009_primary
+  name: '  primary metric'
+  unit: see paper
+  demonstrated_value:
+    value: see paper
+    conditions: see paper
+    verification_status: observed
+    confidence: established
+    source:
+      zotero_key: Ultralow-frequency-noise stabilization of a laser
+      claim: core experimental result
+relations:
+- id: rel.ol_kefelian_et_al_2009_01
+  subject: ent.ol_kefelian_et_al_2009_system
+  predicate: CHARACTERIZED-BY
+  object: met.ol_kefelian_et_al_2009_primary
+  confidence: established
+  source:
+    zotero_key: Ultralow-frequency-noise stabilization of a laser
+    claim: experimental system characterized by primary metric

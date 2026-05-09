@@ -1,8 +1,0 @@
-evidence: improve the stability of the best clocks by 2 orders of magnitude
-id: evrel_WW9ESVMK_rel.meiser_2009_E01
-metadata:
-  source_paper: meiser2009
-  zotero_key: WW9ESVMK
-object: ent.fp_cavity_system
-predicate: COMPETES-WITH
-subject: ent.superradiant_laser_m09

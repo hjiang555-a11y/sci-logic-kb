@@ -1,9 +1,0 @@
-evidence: structured central region of the spectrum with smooth wings covering about
-  one octave is a general indication of successful self-compression
-id: evrel_BDY8JHA4_rel.xing_2020_13
-metadata:
-  source_paper: xing2020
-  zotero_key: BDY8JHA4
-object: pri.supercontinuum_octave_spanning
-predicate: DERIVED-FROM
-subject: pri.all_fiber_nonlinear_self_compression_2um
