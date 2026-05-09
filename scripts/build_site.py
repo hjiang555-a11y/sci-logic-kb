@@ -70,12 +70,12 @@ class SiteBuilder:
 <a href="{home}consensus/">Consensus</a> <a href="{home}dashboard/">Dashboard</a></nav>
 <main>"""
 
-    def page(self, title, depth, body):
+    def page(self, title, depth, body, extra_head='', extra_script=''):
         css = '../' * depth + 'style.css' if depth > 0 else 'style.css'
         return f"""<!DOCTYPE html><html lang="en">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>{title} · sci-logic-kb</title><link rel="stylesheet" href="{css}"></head>
-<body>{self.nav(depth)}{body}</main><footer>sci-logic-kb v5.0 · Generated {self.now}</footer></body></html>"""
+<title>{title} · sci-logic-kb</title><link rel="stylesheet" href="{css}">{extra_head}</head>
+<body>{self.nav(depth)}{body}</main>{extra_script}<footer>sci-logic-kb v5.0 · Generated {self.now}</footer></body></html>"""
 
     def collect(self):
         topics_dir = os.path.join(self.repo, "topics")
@@ -144,14 +144,25 @@ class SiteBuilder:
         lw=self.lint_data.get('warnings',0)
 
         b=''
-        b+='<h1>sci-logic-kb v5.0</h1><p style="color:#64748b">Time-frequency metrology knowledge base</p>'
+        b+='<h1>sci-logic-kb v5.0</h1><p style="color:#64748b;margin-bottom:16px">Time-frequency metrology knowledge base — 问三个问题：极限在哪、为什么卡、怎样突破</p>'
+        
+        # Search box
+        b+='<input type="text" id="search" class="search-box" placeholder="搜索论文、指标、原理... (e.g. σ_y, Brownian, AlGaAs, fountain)" oninput="doSearch(this.value)">'
+        b+='<div id="search-results" style="display:none"><h3>Results</h3><div id="results-list"></div></div>'
+        
+        # Quick answers
+        b+='<div class="grid" style="margin-bottom:20px">'
+        b+=f'<a href="consensus/#met.fractional_frequency_instability"><div class="card"><h3>🇺🇸 极限在哪？</h3><p>FP腔 σ_y = <strong>2.5×10⁻¹⁷</strong> (Lee 2026)</p><p style="font-size:12px;color:#64748b">→ 共识时间线</p></div></a>'
+        b+=f'<a href="chains/#sigma_y_cavity_stability"><div class="card"><h3>🔬 为什么卡？</h3><p>Brownian热噪声 → 镀层损耗角 φ</p><p style="font-size:12px;color:#64748b">→ 推理链</p></div></a>'
+        b+=f'<a href="chains/#comb_phase_noise_timing_jitter"><div class="card"><h3>📡 OFC出口</h3><p>时序抖动 <strong>139 as</strong> (Wang 2025)</p><p style="font-size:12px;color:#64748b">→ 梳齿噪声链</p></div></a>'
+        b+='</div>'
+        
+        # Stats
         b+='<div class="grid">'
         b+=f'<div class="card stat"><div class="stat-val">{total}</div><div class="stat-lbl">Papers</div></div>'
         b+=f'<div class="card stat"><div class="stat-val">{wc}<span class="dim">/{total}</span></div><div class="stat-lbl">With Content</div></div>'
         b+=f'<div class="card stat"><div class="stat-val">{len(self.chains)}</div><div class="stat-lbl">Reasoning Chains</div></div>'
         b+=f'<div class="card stat"><div class="stat-val">{len(self.consensus)}</div><div class="stat-lbl">Consensus Reports</div></div>'
-        b+=f'<div class="card stat"><div class="stat-val">{bt}</div><div class="stat-lbl">BOUNDED-BY</div></div>'
-        b+=f'<div class="card stat"><div class="stat-val">{btp}</div><div class="stat-lbl">Breakthrough Paths</div></div>'
         b+='</div>'
 
         health=f'<span class="badge badge-{"ok" if le==0 else "err"}">Lint: {le} errors</span> '
@@ -184,7 +195,12 @@ class SiteBuilder:
             b+=f'<a href="consensus/#{c["metric"]}"><div class="card"><h3>{c["domain"]}</h3><p>{escape(c.get("name","")[:100])}</p><p>{len(c["timeline"])} entries</p></div></a>'
         b+='</div>'
 
-        with open(os.path.join(self.out,'index.html'),'w') as f: f.write(self.page('Knowledge Base',0,b))
+        with open(os.path.join(self.out,'index.html'),'w') as f:
+            search_js = """<script>
+async function doSearch(q){var r=document.getElementById('search-results'),l=document.getElementById('results-list');if(!q||q.length<2){r.style.display='none';return}
+r.style.display='block';l.innerHTML='Searching...';try{var d=await(await fetch('api/data.json')).json();var re=new RegExp(q.replace(/[.*+?^${}()|[\\]\\\\]/g,'\\\\$&'),'i');var m=d.papers.filter(function(p){return re.test(p.title)||re.test(p.author)||re.test(p.topic)||re.test(p.year)}).slice(0,20);l.innerHTML=m.length?m.map(function(p){return'<div class=card><strong>'+p.year+'</strong> '+p.author+' &middot; <a href=\"topics/'+p.topic+'/\">'+p.topic+'</a><br>'+p.title.substring(0,150)+'</div>'}).join(''):'No results for "'+q+'"'}catch(e){l.innerHTML='Search unavailable (load api/data.json)'}}
+</script>"""
+            f.write(self.page('Knowledge Base',0,b,'',search_js))
 
     def build_topics(self):
         os.makedirs(os.path.join(self.out,'topics'),exist_ok=True)
