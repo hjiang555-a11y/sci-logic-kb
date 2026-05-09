@@ -34,7 +34,8 @@
 | 文件 | 说明 |
 |------|------|
 | [`active/shared_node_candidates.md`](active/shared_node_candidates.md) | 跨文件复用候选节点 |
-| [`active/knowledge_base_assessment_report.md`](active/knowledge_base_assessment_report.md) | 知识库总体评估 |
+| [`active/knowledge_base_assessment_report.md`](active/knowledge_base_assessment_report.md) | 知识库总体评估（v4.4 旧快照，待归档） |
+| [`active/project_alignment_assessment_2026-05-07.md`](active/project_alignment_assessment_2026-05-07.md) | **2026-05-07 · 项目整合与对齐评估**（SCHEMA v5.0 → 周边文档漂移诊断 + 三阶段执行清单） |
 | [`active/llm_wiki_analysis.md`](active/llm_wiki_analysis.md) | LLM Wiki 模式分析（v4.2 运维层设计依据） |
 
 ### 1.3 Ingest plan（待处理论文候选）
